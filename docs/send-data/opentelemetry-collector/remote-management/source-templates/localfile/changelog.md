@@ -5,6 +5,10 @@ sidebar_label: Changelog
 description: Changelog for Local File source template for OpenTelemetry.
 ---
 
+## [2.1.1] - 2025-01-27
+### Fixed
+- Schema validations
+
 ## [2.1.0] - 2024-10-26
 
 ### Added

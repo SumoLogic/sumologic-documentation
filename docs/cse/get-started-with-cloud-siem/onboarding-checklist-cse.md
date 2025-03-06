@@ -45,7 +45,7 @@ Cloud SIEM must be enabled by Sumo Logic before it is accessible. Once enabled, 
 To further set up your instance, you may consider setting up a custom sub-domain. You can also enable Support Access if you would like Sumo Logic Support to be able to access your environment for assistance.
 
 See:
-* The [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) section of the [Manage Organization Settings](/docs/manage/manage-subscription/manage-org-settings/) article
+* The [Set up a custom subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings#set-up-a-customsubdomain) section of the [Manage Organization Settings](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings) article
 * [Enable a Support Account](/docs/manage/security/enable-support-account/)
 
 ### Set up users
@@ -130,16 +130,16 @@ Perform the following tasks to install security apps that provide data to Cloud 
 
 Install the Cloud SIEM App to monitor data that is parsed, along with all the signals and insights that records generate. The app contains multiple folders of searches and dashboards related to Cloud SIEM.
 
-Also install any out-of-the-box apps or dashboards for security data sources we support, including CrowdStrike’s Threat Intel Quick Analysis app. These apps are useful for quick visualizations and configuring context actions to pivot directly to from Cloud SIEM.
+Also install any out-of-the-box apps or dashboards for security data sources we support, including the Threat Intel Quick Analysis app. These apps are useful for quick visualizations and configuring context actions to pivot directly to from Cloud SIEM.
 
 See:
 * [Enterprise Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/)
 * [Security and Threat Detection](/docs/integrations/security-threat-detection/)
 * [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)
 
-#### Import Crowdstrike threat intel searches
+#### Import threat intel searches
 
-You can configure Crowdstrike threat indicator matches from the Threat Intel Quick Analysis app to become signals within Cloud SIEM using scheduled searches. An example would be to fire a Cloud SIEM signal from a scheduled search when there is a highly malicious threat intel match on device IPs. Review other current scheduled search alerts that might be candidates for generating signals.
+You can configure Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) matches from the Threat Intel Quick Analysis app to become signals within Cloud SIEM using scheduled searches. An example would be to fire a Cloud SIEM signal from a scheduled search when there is a highly malicious threat intel match on device IPs. Review other current scheduled search alerts that might be candidates for generating signals.
 
 See:
 * [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)
@@ -169,9 +169,9 @@ See: [Create and Use Network Blocks](/docs/cse/administration/create-use-network
 
 ### Configure threat intel feeds
 
-Cloud SIEM heavily leverages threat intelligence to do real-time comparisons against known bad indicators. You can configure popular free threat feeds. But if your security team pays for premium threat intelligence (such as RecordedFuture, Anomali, Crowdstrike, ThreatConnect, etc), you can configure these too.
+Cloud SIEM heavily leverages threat intelligence to do real-time comparisons against known bad indicators. You can configure popular free threat feeds. But if your security team pays for premium threat intelligence (such as RecordedFuture, Anomali, Crowdstrike, ThreatConnect, and so on), you can configure these too.
 
-See: [Create a Custom Threat Intel Source](/docs/cse/administration/create-custom-threat-intel-source/)
+See: [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators)
 
 ### Create lists
 Perform the following steps to create lists to allow or suppress information monitored for Cloud SIEM.

@@ -54,39 +54,20 @@ Learn to set up NGINX for non-Kubernetes Sources.
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx. The following tasks are required:
 
-### Step 1: Configure Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using Nginx in a Kubernetes environment, create the fields:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_webserver_system`
-* `pod_labels_webserver_farm`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using Nginx in a non-Kubernetes environment, create the fields:
+As part of the app installation process, the following fields will be created by default:
 * `component`
 * `environment`
 * `webserver_system`
 * `webserver_farm`
 * `pod`
 
-</TabItem>
-</Tabs>
-
+Additionally, if you are using Nginx in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_webserver_system`
+* `pod_labels_webserver_farm`
 
 ### Step 2: Configure Nginx Logs and Metrics Collection
 
@@ -216,27 +197,9 @@ This section explains the steps to collect Nginx logs from a Kubernetes environm
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
-3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-   2. Click the + Add button on the top right of the table.
-   3. The **Add Field Extraction Rule** form will appear.
-   4. Enter the following options:
-     * **Rule Name**. Enter the name as **App Observability - Webserver**.
-     * **Applied At.** Choose **Ingest Time.**
-     * **Scope**. Select **Specific Data.**
-     * **Scope**: Enter the following keyword search expression.
-      ```sql
-      pod_labels_environment=* pod_labels_component=webserver pod_labels_webserver_farm=* pod_labels_webserver_system=*
-      ```
-     * **Parse Expression**. Enter the following parse expression.
-     ```sql
-     if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-     | pod_labels_component as component
-     | pod_labels_webserver_system as webserver_system
-     | pod_labels_webserver_farm as webserver_farm
-     ```
-   5. Click **Save** to create the rule.
-
+<br/>
+**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityNginxWebserverFER** is automatically created for Nginx Application Components.
+<br/>
 </TabItem>
 <TabItem value="non-k8s">
 
@@ -380,96 +343,6 @@ At this point, Telegraf should start collecting the Nginx metrics and forward th
 </TabItem>
 </Tabs>
 
-
-## Installing Nginx Monitors
-
-* To install these alerts, you need to have the Manage Monitors role capability.
-* Alerts can be installed by either importing a JSON file or a Terraform script.
-
-To view the full list, see [Nginx](#nginx-alerts). There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for detail.
-
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx/nginx.json) that describes the monitors.
-2. This JSON file contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Nginx farms, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=nginx` with `<Your Custom Filter>`. Custom filter examples:
-   * For alerts applicable only to a specific farm, your custom filter would be `webserver_farm=nginx-standalone.01`.
-   * For alerts applicable to all farms that start with nginx-standalone, your custom filter would be `webserver_system=nginx-standalone*`.
-   * For alerts applicable to a specific farm within a production environment, your custom filter would be,`webserver_farm=nginx-1` and `environment=standalone`. This assumes you have set the optional environment tag while configuring collection.
-3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-4. Click **Add**.
-5. Click Import and then copy-paste the above JSON to import monitors.
-
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Nginx folder under **Monitors** to configure them. See the [Monitors document](/docs/alerts/monitors) to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
-
-
-### Method B: Using a Terraform script
-
-1. **Generate a Sumo Logic access key and ID** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#from-the-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
-3. **Download the Sumo Logic Terraform package for Nginx alerts** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Nginx). You can either download it through the “git clone” command or as a zip file.
-4. **Alert Configuration** After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Nginx/`.
-   * Edit the **nginx.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
-   ```sql
-   access_id   = "<SUMOLOGIC ACCESS ID>" \
-   access_key  = "<SUMOLOGIC ACCESS KEY>" \
-   environment = "<SUMOLOGIC DEPLOYMENT>"
-   ```
-   * The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific farms or environments, update the variable `nginx_data_source`. Custom filter examples:
-   * A specific farm `webserver_farm=nginx.standalone.01`.
-   * All farms in an environment `environment=standalone`.
-   * For alerts applicable to all farms that start with `nginx-standalone`, your custom filter would be `webserver_farm=nginx-standalone*`.
-   * For alerts applicable to a specific farm within a production environment, your custom filter would be `webserver_system=nginx-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection). All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter monitors_disabled to false in this file.
-
-  By default, the monitors are configured in a monitor folder called “Nginx”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `nginx.auto.tfvars` file.
-
-5. If you would like the alerts to send email or connection notifications, configure the file **nginx_notifications.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
-
-```bash title="Pagerduty Connection Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email Notifications Example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-6. **Install the Alerts**
-    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**Nginx**/ and run `terraform init. `This will initialize Terraform and will download the required components.
-    2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
-    3. Run `terraform apply`.
-7. **Post Installation**
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
-
-:::note
-There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
-:::
-
 ## Installing the Nginx app
 
 This section demonstrates how to install the Nginx app.
@@ -547,7 +420,7 @@ You can use schedule searches to send alerts to yourself whenever there is an ou
 The **Nginx - Threat Intel** dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Threat-Intel.png')} alt="Nginx-Threat-Intel" />
 
@@ -607,6 +480,17 @@ Use this dashboard to:
 * Gain information about the total requests handled by Nginx Server per second. This helps you understand read, write requests on Nginx Server.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Connections-and-Requests.png')} alt="Nginx-Connections-and-Requests" />
+
+## Installing Nginx monitors
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+:::note
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Nginx alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
+:::
+
+To view the full list, see [Nginx](#nginx-alerts).
 
 ## Nginx Alerts
 
