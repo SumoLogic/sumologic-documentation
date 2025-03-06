@@ -21,7 +21,7 @@ The first rule is generic and matches all messages:
 **Scope:**
 
 ```sql
-sourceCategory=networking/cisco/fwsm
+_sourceCategory=networking/cisco/fwsm
 ```
 
 **Extraction Rule:**
