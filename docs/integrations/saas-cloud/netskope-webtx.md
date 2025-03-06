@@ -85,7 +85,7 @@ This app uses Sumo Logic’s [Netskope WebTx Source](/docs/send-data/hosted-coll
 
 ## Sample queries
 
-```sql title="Recent Access Activities"
+```sql title="Total Transactions"
 _sourceCategory="Labs/NetskopeWebTx"
 | json "sc-bytes","cs-bytes", "cs-uri", "x-c-country","x-s-country", "x-cs-app", "cs-content-type", "x-cs-traffic-type", "sc-status", "cs-method", "cs-dns", "cs-host", "x-s-longitude", "x-s-latitude", "x-category-id", "x-category", "x-c-latitude", "x-c-longitude", "x-c-region", "x-cs-access-method", "x-c-device", "x-type", "x-c-os", "time-taken", "x-transaction-id","cs-username" as sc_bytes,cs_bytes, cs_uri, x_c_country,x_s_country, x_cs_app, cs_content_type, x_cs_traffic_type, sc_status, cs_method, cs_dns, cs_host, x_s_longitude, x_s_latitude, x_category_id, x_category, x_c_latitude, x_c_longitude, x_c_region, x_cs_access_method, x_c_device, x_type, x_c_os, time_taken, x_transaction_id, cs_username nodrop
 
