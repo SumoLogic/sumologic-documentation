@@ -161,9 +161,9 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Cisco AMP - Overview** dashboard is a comprehensive tool that provides security analysts with a high-level summary of key cybersecurity metrics. It tracks total security events, newly detected threats, and recent endpoint activities, offering real-time visibility into the organization's threat landscape. By categorizing threats according to severity levels and types, the dashboard helps analysts quickly identify and prioritize response actions. It also highlights key information on top threat actors and prevalent attack techniques, enhancing threat intelligence and supporting robust incident response strategies. Continuous monitoring of threat trends and endpoint activities empowers analysts to proactively mitigate risks, ensuring a resilient cybersecurity defense posture and effective threat management. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Cisco-AMP/Cisco+AMP+-+Overview+(2).png')} alt="Cisco AMP Overview" style={{border: '1px solid gray'}} width="800" />
+The **Cisco AMP - Overview** dashboard is a comprehensive tool that provides security analysts with a high-level summary of key cybersecurity metrics. It tracks total security events, newly detected threats, and recent endpoint activities, offering real-time visibility into the organization's threat landscape. By categorizing threats according to severity levels and types, the dashboard helps analysts quickly identify and prioritize response actions. It also highlights key information on top threat actors and prevalent attack techniques, enhancing threat intelligence and supporting robust incident response strategies. Continuous monitoring of threat trends and endpoint activities empowers analysts to proactively mitigate risks, ensuring a resilient cybersecurity defense posture and effective threat management. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Cisco-AMP/Cisco-AMP-Overview.png')} alt="Cisco-AMP-Overview-Dashboard" style={{border: '1px solid gray'}} width="800" />
  
-## Create monitors for Cisco AMP app
+## Create monitors for the Cisco AMP app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
