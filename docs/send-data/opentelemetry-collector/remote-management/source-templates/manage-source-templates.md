@@ -69,7 +69,7 @@ For more details on source templates, see [Installed Collector Sources](/docs/se
 
 To edit a source template:
 
-1. In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). Go to the Sumo Logic top menu and select **Configuration > Collection > Source Template**.
 1. Select the source template that you need to edit, and click **Edit**. Or, click the kebab menu against the selected source template and click **Edit** from the dropdown.
 1. Change the required configuration in the source template configuration page, and click **Next**.
 1. If required, update the collectors on the **Link Collectors** page.
