@@ -21,10 +21,10 @@ Sumo Logic enables you to seamlessly gather and analyze valuable insights from d
 
 ## Data collected
 
-| Polling Interval | Data | Description |
-| :--- | :--- | :--- |
-| 12 hours | Collector API | The Collector API allows you to collect the list of collectors. |
-| 5 minutes | Source API | The Source API allows you to collect the list of sources for each collectorId. |
+| Polling Interval | Data |
+| :-- | :-- | 
+| 12 hours | [Collector API](/docs/api/collector-management/collector-api-methods-examples/#get-a-list-of-collectors) | 
+| 5 minutes | [Source API](/docs/api/collector-management/source-api/#list-sources) |
 
 ## Setup
 
