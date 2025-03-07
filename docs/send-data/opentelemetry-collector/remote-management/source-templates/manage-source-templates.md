@@ -99,9 +99,9 @@ You cannot upgrade a source template if there are any incompatible collector ver
 
 You can enable or disable a source template to optimize your data flow management. Below are some of the key benefits of enabling or disabling the source template:
 
-- **Cost Efficiency:** Proactively manage and reduce costs associated with excessive or unnecessary data ingestion.
-- **Compliance Protection:** Safeguard your organization from compliance violations by preventing potential exposure of sensitive information in logs.
-- **Agility in Response:** Quickly address misconfigurations or anomalies in your data sources without disrupting other crucial workflows.
+- **Cost efficiency:** Proactively manage and reduce costs associated with excessive or unnecessary data ingestion.
+- **Compliance protection:** Safeguard your organization from compliance violations by preventing potential exposure of sensitive information in logs.
+- **Agility in response:** Quickly address misconfigurations or anomalies in your data sources without disrupting other crucial workflows.
 
 Follow the below steps to enable or disable a source template:
 1. In the main Sumo Logic menu, select **Manage Data** > **Collection** > **Source Template**.<br/><img src={useBaseUrl('img/send-data/st-landing-page.png')} alt="source-template-landing-page" style={{border:'1px solid gray'}} width="800"/>
