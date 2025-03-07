@@ -121,7 +121,7 @@ In the Sumo Logic Azure Metrics source configuration,
 
 ### Configure logs collection
 
-:::note Prerequiste
+:::note Prerequisite
 Use existing resource group or create a new one for deploying Azure container instances.
 :::
 
@@ -140,7 +140,7 @@ Use existing resource group or create a new one for deploying Azure container in
       * **URI**. Update the `[PrivateKey]` with the path present in the HTTP source endpoint as configured in the Step 1.
       * **header**. Update the X-Sumo-Fields header and replace the following values to enrich the logs with additional metadata, which helps with panel queries.
          - `resource_name`. Name of the Azure container instances resource.
-         - `resource_group`. Name of the resource group where the Azure container instances resource is present. Ensure that you use the same resource group created in the prerequiste section.
+         - `resource_group`. Name of the resource group where the Azure container instances resource is present. Ensure that you use the same resource group created in the prerequisite section.
          - `subscription_id`. ID associated with a subscription where the Azure container instances resource is present.
          - `location`. The region to which the Azure container instances resource name belongs to.
 1. Create and push a custom fluentbit image using a [Docker file](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Dockerfile) and [output_conf.yaml](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/output_conf.yaml) to any container repository.
