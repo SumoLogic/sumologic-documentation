@@ -2542,6 +2542,7 @@ integrations: [
           'integrations/saas-cloud/mimecast',
           'integrations/saas-cloud/miro',
           'integrations/saas-cloud/microsoft-graph-azure-ad-reporting',
+          'integrations/saas-cloud/netskope-webtx',
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
