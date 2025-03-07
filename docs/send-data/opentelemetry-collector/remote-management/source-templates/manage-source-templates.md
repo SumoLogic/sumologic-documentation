@@ -104,7 +104,7 @@ You can enable or disable a source template to optimize your data flow managemen
 - **Agility in response:** Quickly address misconfigurations or anomalies in your data sources without disrupting other crucial workflows.
 
 Follow the below steps to enable or disable a source template:
-1. In the main Sumo Logic menu, select **Manage Data** > **Collection** > **Source Template**.<br/><img src={useBaseUrl('img/send-data/st-landing-page.png')} alt="source-template-landing-page" style={{border:'1px solid gray'}} width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). Go to the Sumo Logic top menu and select **Configuration > Collection > Source Template**.<br/><img src={useBaseUrl('img/send-data/st-landing-page.png')} alt="source-template-landing-page" style={{border:'1px solid gray'}} width="800"/>
 1. Select the source template that you need to enable or disable. Click **More Actions** > **Enable** or **Disable** the source template. Or, click the kebab menu against the selected source template and click **Enable** or **Disable** from the dropdown.<br/><img src={useBaseUrl('img/send-data/enable-st.png')} alt="enable-source-template" style={{border:'1px solid gray'}} width="800"/>
 1. Enter **CONFIRM** and click the **Confirm** button to complete the action.<br/><img src={useBaseUrl('img/send-data/enable-confirm-st.png')} alt="confirm-enable-source-template" style={{border:'1px solid gray'}} width="600"/>
 
