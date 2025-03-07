@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="80"/>
 
-Sumo Logic enables users to seamlessly gather and analyze valuable insights from diverse sources. By leveraging its robust API capabilities, you can efficiently extract, transform, and load data into your analytics pipeline. This streamlined process allows you to harness the power of real-time data analysis, improving decision-making, troubleshooting, and overall operational efficiency within your organization.
+Sumo Logic enables you to seamlessly gather and analyze valuable insights from diverse sources. By leveraging its robust API capabilities, you can efficiently extract, transform, and load data into your analytics pipeline. This streamlined process allows you to harness the power of real-time data analysis, improving decision-making, troubleshooting, and overall operational efficiency within your organization.
 
 ## Data collected
 
@@ -30,30 +30,28 @@ Sumo Logic enables users to seamlessly gather and analyze valuable insights from
 
 ### Vendor configuration
 
-The Sumo Collection Source requires you to provide the Deployment region, Access ID, and Access Key to access the data.
+The Sumo Collection source requires you to provide the **Deployment**, **Access ID**, and **Access Key** to access the data.
 
 #### Deployment
 
-The Sumo Logic integration requires the configuration of the Sumo Logic domain.
-
-Sumo Logic API Regions are:
+Identify your **Deployement** region based on your Base URL. The deployment region can be selected from the list below.
 
 | Region | URL |
 |:--|:--|
-| AU |	`https://api.au.sumologic.com/` |
-| CA |	`https://api.ca.sumologic.com/` |
-| DE |	`https://api.de.sumologic.com/` |
-| EU | `https://api.eu.sumologic.com/`|
+| AU  |	`https://api.au.sumologic.com/`  |
+| CA  |	`https://api.ca.sumologic.com/`  |
+| DE  |	`https://api.de.sumologic.com/`  |
+| EU  | `https://api.eu.sumologic.com/`  |
 | FED |	`https://api.fed.sumologic.com/` |
-| IN |	`https://api.in.sumologic.com/` |
-| JP |	`https://api.jp.sumologic.com/` |
-| KR |	`https://api.kr.sumologic.com/` |
-| US1 |	`https://api.sumologic.com/` |
+| IN  |	`https://api.in.sumologic.com/`  |
+| JP  |	`https://api.jp.sumologic.com/`  |
+| KR  |	`https://api.kr.sumologic.com/`  |
+| US1 |	`https://api.sumologic.com/`     |
 | US2 |	`https://api.us2.sumologic.com/` |
 
 #### Access ID and Access Key
 
-Follow the steps mentioned under the **Create an access key** section in the [Access Keys](/docs/manage/security/access-keys/#create-an-access-key) document to generate the Access ID and Access Key.
+To generate the Access ID and Access Key, refer to [Create an access key](/docs/manage/security/access-keys/#create-an-access-key).
 
 ### Source configuration
 
@@ -69,17 +67,14 @@ To configure a Sumo Collection Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Deployment**. Select the deployment region from the dropdown. For example, `AU`.
-1. **Access ID**. Enter the Access ID collected from the [Sumo Collection](#access-id-and-access-key) platform. For example, `sug2lhtaa1g6xk`.
-1. **Access Key**. Enter the Access Key collected from the [Sumo Collection](#access-id-and-access-key) platform. For example, `00xxxxxx-xxx2-9316-7xx42xxx1x41`.
-1. (Optional) **Collector Type**. Specify the collector type:
-  - Installed
-  - Dead
-  - Hosted
-  - Alive
-11. (Optional) **Collect Source Details**. Check the box to collect the source details.
-12. (Optional) **Filters**. Click the **+Add** button to define the filters you want to associate. Each filter needs a **Field Name** (key) and **Field Value** (value). For key-value pairs, the length is set to 256 characters and the API accepts a maximum length of 1024 characters for the filter.
-13. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
-14. When you are finished configuring the Source, click **Save**.
+1. **Access ID**. Enter the Access ID collected from the [vendor configuration](#access-id-and-access-key). For example, `sug2lhtaa1g6xk`.
+1. **Access Key**. Enter the Access Key collected from the [vendor configuration](#access-id-and-access-key). For example, `00xxxxxx-xxx2-9316-7xx42xxx1x41`.
+1. (Optional) **Collector Type**. Select the type of collector: Installed and/or Hosted.
+1. **Collector API Interval**. Set how often the source needs to check for new collector data. The polling interval is set for 12 hours by default. You can adjust it based on your needs.
+1. (Optional) **Collect Source Details**. Check the box to collect the source details.
+1. **Source API Interval**. Set how often the source needs to check for new source data. The polling interval is set for 5 minutes by default. You can adjust it based on your needs.
+1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
+1. When you are finished configuring the Source, click **Save**.
 
 ## JSON schema
 
@@ -105,7 +100,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | collectorType | String | No | `null` | The type of collectors. | `Installed` |
 | pollingIntervalCollectorHour | Integer | Yes | `12` | Time interval (in hours) after which the source will check for new data from the collector API. <br/>Default: 12 <br/>Min: 1 <br/>Max: 24 | |
 | collectSources | Boolean | Yes | `False` | Collects the source details when enabled. | |
-| pollingIntervalSourceMin | Integer | Yes | `5` | Time interval (in hours) after which the source will check for new data for the API. <br/>Default: 5 <br/>Min: 1 <br/>Max: 60 | |
+| pollingIntervalSourceMin | Integer | Yes | `5` | Time interval (in minutes) after which the source will check for new data from the source API. <br/>Default: 5 <br/>Min: 1 <br/>Max: 60 | |
 | filters | Array | No | `null` | An array of key-value pairs to filter the data. For key-value pairs, the length is set to 256 characters and the API accepts a maximum length of 1024 characters for the filter. | |
 
 ### JSON example
