@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatdown-oneview.png')} alt="threatdown-oneview" width="100"/>
 
 ***Version: 1.0  
-Updated: Mar 6, 2025***
+Updated: Mar 7, 2025***
 
 Malwarebytes ThreatDown OneView (MBOV) provides your business with a powerful and affordable security management platform that gives security teams maximum control. OneView streamlines endpoint security management by providing out-of-the-box security policies, scans, and remediation.
 
@@ -55,4 +55,4 @@ Threat Intelligence Reputation
 
 ## Change Log
 
-* March 6, 2025 - First upload
+* March 7, 2025 - First upload
