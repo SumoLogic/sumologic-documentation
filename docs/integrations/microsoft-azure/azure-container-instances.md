@@ -121,7 +121,7 @@ In the Sumo Logic Azure Metrics source configuration,
 
 ### Configure logs collection
 
-:::note Prerequisite
+:::note Prerequiste
 Use existing resource group or create a new one for deploying Azure container instances.
 :::
 
@@ -133,7 +133,7 @@ Use existing resource group or create a new one for deploying Azure container in
       :::
    * Outputs pipeline uses the [http output plugin](https://docs.fluentbit.io/manual/pipeline/outputs/http). Follow the below steps to update other outputs pipeline parameters:
       * **format**. Data format by which you can send logs to Sumo Logic. By default, the format key will be assigned with *json_lines*.
-      * **compress**. Payload compression mechanism. By default, the compresion is enabled and uses `gzip`.
+      * **compress**. Payload compression mechanism. By default, the compression is enabled and uses `gzip`.
       * **host**. Update the host depending on your [Sumo Logic Orgs deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
       * **tls**. This field will be in *on* condition to enable the TLS support. By default, Sumo Logic only supports **tls** in *on* condition.
       * **tls.verify**. This field will be in *off* condition to disable the certificate validation. By default, Sumo Logic only supports **tls.verify** in *off* condition.
