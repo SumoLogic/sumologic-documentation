@@ -15,7 +15,7 @@ import TerraformExample from '!!raw-loader!/files/c2c/sumo-collection/example.tf
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="80"/>
+<img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="60"/>
 
 Sumo Logic enables you to seamlessly gather and analyze valuable insights from diverse sources. By leveraging its robust API capabilities, you can efficiently extract, transform, and load data into your analytics pipeline. This streamlined process allows you to harness the power of real-time data analysis, improving decision-making, troubleshooting, and overall operational efficiency within your organization.
 
@@ -34,7 +34,7 @@ The Sumo Collection source requires you to provide the **Deployment**, **Access 
 
 #### Deployment
 
-Identify your **Deployement** region based on your Base URL. The deployment region can be selected from the list below.
+Identify your **Deployment** region based on your Base URL. The deployment region can be selected from the list below.
 
 | Region | URL |
 |:--|:--|
@@ -72,7 +72,7 @@ To configure a Sumo Collection Source:
 1. (Optional) **Collector Type**. Select the type of collector: Installed and/or Hosted.
 1. **Collector API Interval**. Set how often the source needs to check for new collector data. The polling interval is set for 12 hours by default. You can adjust it based on your needs.
 1. (Optional) **Collect Source Details**. Check the box to collect the source details.
-1. **Source API Interval**. Set how often the source needs to check for new source data. The polling interval is set for 5 minutes by default. You can adjust it based on your needs.
+    1. **Source API Interval**. Set how often the source needs to check for new source data. The polling interval is set for 5 minutes by default. You can adjust it based on your needs.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
