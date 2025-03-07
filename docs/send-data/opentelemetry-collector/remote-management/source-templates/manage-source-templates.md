@@ -95,7 +95,7 @@ You cannot upgrade a source template if there are any incompatible collector ver
 1. Click the **Delete** button (or use the kebab menu against the selected source template, click **Delete** from the dropdown).
 1. Confirm the deletion. The source template will be removed from the **Source Template** page and unlinked from all collectors.
 
-## Enable/Disable a source template
+## Enable/disable a source template
 
 You can enable or disable a source template to optimize your data flow management. Below are some of the key benefits of enabling or disabling the source template:
 
