@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope-WebTx-icon" width="50" />
 
-Netskope WebTx is a solution that provides visibility and insights into web transactions, helping organizations monitor, analyze, and secure their web traffic. Integrating Netskope WebTx with Sumo Logic helps you monitor and analyze web traffic through Netskope's security cloud services in real-time or over a specified period. By aggregating data on transactions, user behavior, operating systems, locations, and more, the app offers insights to detect security threats, manage traffic, optimize response times, and ensure compliance. With customizable dashboards and reports, it supports organizations in maintaining a strong security posture while using cloud applications and services.
+Netskope WebTx solution provides visibility and insights into web transactions, helping you to monitor, analyze, and secure web traffic. Integrating Netskope WebTx with Sumo Logic helps you to monitor and analyze web traffic through Netskope's security cloud services in real-time or over a specified period. By aggregating data on transactions, user behavior, operating systems, locations, and more, this app offers insights to detect security threats, manage traffic, optimize response times, and ensure compliance. With customizable dashboards and reports, it supports you in maintaining a strong security posture while using cloud applications and services.
 
 :::info
 This app includes [built-in monitors](#netskope-webtx-alerts). For details on creating custom monitors, refer to the [Create monitors for Netskope WebTx app](#create-monitors-for-the-netskope-webtx-app).
