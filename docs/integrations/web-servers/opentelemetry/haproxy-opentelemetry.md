@@ -302,7 +302,7 @@ The **HAProxy - Threat Analysis** dashboard provides an at-a-glance view of thre
 
 Use this dashboard to:
 
-- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-faq) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Threat-Analysis.png' alt="Threat Analysis" />
 

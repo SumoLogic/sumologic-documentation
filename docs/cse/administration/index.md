@@ -30,8 +30,8 @@ Learn about onboarding tasks and best practices for Cloud SIEM administrators. I
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/administration/create-custom-threat-intel-source"><img src={useBaseUrl('img/icons/security/world-class-security.png')} alt="Shield with a globe icon" width="40"/><h4>Create a Custom Threat Intelligence Source</h4></a>
-  <p>Learn how to create and manage Custom Threat Sources.</p>
+  <a href="/docs/cse/administration/create-custom-threat-intel-source"><img src={useBaseUrl('img/icons/security/world-class-security.png')} alt="Shield with a globe icon" width="40"/><h4>Custom Threat Intelligence Sources</h4></a>
+  <p>Learn how manage custom threat intelligence sources.</p>
   </div>
 </div>
 <div className="box smallbox card">
