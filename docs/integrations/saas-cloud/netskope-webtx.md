@@ -2,7 +2,7 @@
 id: netskope-webtx
 title: Netskope WebTx
 sidebar_label: Netskope WebTx
-description: The Sumo Logic app for Netskope WebTx collects transaction events from the Netskope platform enhancing visibility into web transactions.
+description: The Sumo Logic app for Netskope WebTx collects transaction events from the Netskope platform to enhance visibility into your web transactions.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
