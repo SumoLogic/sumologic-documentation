@@ -158,7 +158,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Netskope WebTx - Embargoed Geo Locations of Clients Performing Web Transactions` | This alert is triggered when access from client IP addresses geolocated in embargoed or sanctioned regions is detected and logged, ensuring compliance with regulations and corporate policies. | Critical | Count > 1 |
+| `Netskope WebTx - Embargoed Geo Locations of Clients Performing Web Transactions` | This alert is triggered when data access is detected from client IP addresses located in embargoed or sanctioned regions. This alert ensures compliance with regulations and corporate policies. | Critical | Count > 1 |
 | `Netskope WebTx - Embargoed Geo Locations of Servers of Web Transactions` | This alert is triggered when access from server IP addresses geolocated in embargoed or sanctioned regions is detected and logged, ensuring compliance with regulations and corporate policies. | Critical | Count > 1|
 | `Netskope WebTx - Large Data Download Events` | This alert is triggered when abnormally large transactions are downloaded, helping detect potential data exfiltration or abuse of cloud storage services. | Critical | Count > 1|
 | `Netskope WebTx - Latency in Web Requests` | This alert is triggered when unusual high latency on the response times (time-taken) of web requests is detected. This indicates server overload, network problems, or a DDoS attack. | Critical | Count > 1|
