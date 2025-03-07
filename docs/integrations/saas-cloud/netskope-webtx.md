@@ -17,7 +17,7 @@ This app includes [built-in monitors](#netskope-webtx-alerts). For details on cr
 
 ## Log types
 
-This app uses Sumo Logic’s [Netskope WebTx Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source/) to collect the transaction events from the Netskope platform.
+This app uses Sumo Logic’s [Netskope WebTx Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source/) to collect the web transaction logs from the Netskope platform.
 
 ## Sample log message
 
