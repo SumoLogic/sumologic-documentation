@@ -15,20 +15,31 @@ This article describes the status of Cloud SIEM rules and how to address rules t
 ## View a rule's status
 
 You can see a rule's status while viewing the rule:
-* On the rule list page: <br/><img src={useBaseUrl('img/cse/rule-status-on-list-page.png')} alt="Rule status on list page" style={{border: '1px solid gray'}} width="800"/>
+* On the rules list page: <br/><img src={useBaseUrl('img/cse/rule-status-on-list-page.png')} alt="Rule status on list page" style={{border: '1px solid gray'}} width="800"/>
 * On the rule details page: <br/><img src={useBaseUrl('img/cse/rule-status-on-detail-page.png')} alt="Rule status on details page" style={{border: '1px solid gray'}} width="800"/>
+
+## Search for rules by status
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.
+1. Click **Filters** at the top of the **Rules** screen.
+1. Select the **Status** field.<br/><img src={useBaseUrl('img/cse/filter-on-rule-status-1.png')} alt="Filter on rule status" style={{border: '1px solid gray'}} width="300"/>
+1. For **Operator** select **is**.
+1. Select the status to filter on.<br/><img src={useBaseUrl('img/cse/filter-on-rule-status-2.png')} alt="Select status to filter on" style={{border: '1px solid gray'}} width="400"/><br/>
 
 ## Kinds of rule status
 
-Following are the different kinds of rule statuses. A rule's status can change depending on whether it exceeds [rule limits](#rule-limits).
+Following are the different kinds of rule status. A rule's status can change depending on whether it exceeds [rule limits](#rule-limits).
 
 | Status | Description | Action required |
 | :-- | :-- | :-- |
 | **Active** | The rule is executing normally. | No action required. |
-| **Degraded** | The rule is approaching a rule limit and it is removed from execution for one hour to allow processing to catch up. At the end of the hour, the rule is allowed to execute again and its status changes back to Active. | Click the information button <img src={useBaseUrl('img/cse/rule-degraded-info-button.png')} alt="Rule degraded information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may want to edit the rule to reduce the chance it will become degraded again later. |
-| **Disabled** | The rule was manually disabled using the toggle in the UI, or was disabled with the API. | Enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
-| **Failed** | The rule exceeded a rule limit and was automatically disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-failed-info-button.png')} alt="Rule failed information button" width="20"/> on the **Failed** label for details about the failure.  Depending on the reasons provided in the details, you may need to edit the rule to prevent it from failing again in the future. After addressing the reasons for the failure, enable the rule with the toggle in the UI, or enable the rule with the API. |
+| **Degraded** | The rule is approaching a rule limit and it is removed from execution for one hour to allow processing to catch up. At the end of the hour, the rule is allowed to execute again and its status changes back to Active. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may want to edit the rule to reduce the chance it will become degraded again later. |
+| **Disabled** | The rule was manually disabled using the toggle in the UI, or was disabled with the API. | Enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). | 
+| **Failed** | The rule exceeded a rule limit and was automatically disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Failed** label for details about the failure.  Depending on the reasons provided in the details, you may need to edit the rule to prevent it from failing again in the future. <br/><br/>After addressing the reasons for the failure, enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
+
+<!-- For DOCS-72 - Rule limits
 | **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-warning-info-button.png')} alt="Rule warning information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled. |
+-->
 
 ## Rule limits
 
@@ -36,11 +47,19 @@ Limits are set on how often a rule fires so that the system is not overloaded. F
 
 | Type | Limit |
 | :-- | :-- |
-| Total allowed custom rules of each [rule type](/docs/cse/rules/about-cse-rules/#rule-types) | 100 <!-- <br/>200 - Tier 2<br/>500 - Tier 3 --> |
-| Signals per hour | 50K<!-- - Tier 1<br/>100K - Tier 2<br/>150K - Tier 3 -->|
-| Signals per 24 hours | 1M<!-- Tier 1<br/>2M - Tier 2<br/>3M - Tier 3 --> |
-| Matched records per day* | 200K<!-- - Tier 1<br/>400K - Tier 2<br/>600K - Tier 3 --> |
-| Rule group cardinality per day** | 100K<!-- - Tier 1<br/>200K - Tier 2<br/>300K - Tier 3 --> |
+| Signals per hour | 100K |
+| Signals per 24 hours | 1M |
+
+<!-- For DOCS-72 - Rule limits
+| Type | Limit |
+| :-- | :-- |
+| Total allowed custom rules of each [rule type](/docs/cse/rules/about-cse-rules/#rule-types) | 100 - Tier 1 <br/>200 - Tier 2<br/>500 - Tier 3 |
+| Signals per hour | 50K- Tier 1<br/>100K - Tier 2<br/>150K - Tier 3 |
+| Signals per 24 hours | 1M Tier 1<br/>2M - Tier 2<br/>3M - Tier 3 |
+| Matched records per day* | 200K - Tier 1<br/>400K - Tier 2<br/>600K - Tier 3 |
+| Rule group cardinality per day** | 100K Tier 1<br/>200K - Tier 2<br/>300K - Tier 3 |
+| Matched records per day* | 200K |
+| Rule group cardinality per day** | 100K |
 
 *Applies to all [rule types](/docs/cse/rules/about-cse-rules/#rule-types) except match rules. 
 <br/>**Group cardinality is the number of distinct key values in a grouping function of a complex rule type. For instance, if a rule is grouped by email address, the cardinality would be the total number of distinct email addresses.
@@ -49,29 +68,49 @@ Limits are set on how often a rule fires so that the system is not overloaded. F
 Rule limits can be higher if you are in a higher tenant tier level. If you have questions about what your tenant tier level is, contact your Sumo Logic account representative or [contact Sumo Logic Support](https://support.sumologic.com/support/s/).
 :::
 
+-->
+
 ## Query for rule status changes
 
-You can query audit logs for rule status changes. (For more information about querying audit logs, see [Cloud SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/).)
+You can query audit logs for rule status changes. For more information about querying audit logs, see [Cloud SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/) and [Cloud SIEM audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/#cloud-siem-audit-log-definitions).
 
 ### Example query for rule status changes
 
-The following query queries for match rules whose status was changed automatically to `Warning` by the system:
+The following query queries for match rules whose status was changed automatically to `Failed` by the system:
 
 ```sql
 _index=sumologic_system_events _sourceCategory=cseRule
 | json field=_raw "templatedMatchRule.status"
 | where eventname = "TemplatedMatchRuleUpdated" 
-| where templatedMatchRule.status = "Warning"
+| where templatedMatchRule.status = "Failed"
 ```
 
 You can set up this query for one or multiple rules, with one or multiple statuses.
-* To query for other rule types, replace the `field` and `eventname` strings. 
-* To query for for other statuses, replace `Warning` in the example above with another status. For example:
+* To query for other rule types:
+    * Replace `templatedMatchRule` in the `field` string in the example above with:
+       * `AggregationRule`
+       * `ChainRule`
+       * `FirstSeenRule`
+       * `MatchRule`
+       * `OutlierRule`
+       * `ThresholdRule`
+    * Replace `TemplatedMatchRuleUpdated` in the `eventname` string in the example above with:
+       * `AggregationRuleUpdated`
+       * `ChainRuleUpdated`
+       * `FirstSeenRuleUpdated`
+       * `MatchRuleUpdated`
+       * `OutlierRuleUpdated`
+       * `ThresholdRuleUpdated`
+* To query for for other statuses, replace `Failed` in the example above with another status:
    * `"Active"`
    * `"Degraded"`
    * `"Disabled"`
    * `"Failed"`
+
+<!-- For DOCS-72 - Rule limits
+
    * `"Warning"`
+   -->
 
 ### Example query for disabled rules
 
