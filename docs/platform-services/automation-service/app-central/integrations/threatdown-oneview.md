@@ -45,7 +45,7 @@ Threat Intelligence Reputation
 1. The integration details will appear. Click on the **"+"** button to add a new resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview1.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview1" width="100"/>
 1. Label and populate all the required fields (\*).
     1. **Label**. Add a name for the resource.
-    1. **URL**. Enter your ThreatDown Oneview site URL. For example, `https://api.malwarebytes.com/`.
+    1. **URL**. Enter your ThreatDown Oneview site URL.
     1. **Client ID**. Enter your Client ID.
     1. **Client Secret**. Enter your Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview2.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview2" width="400"/>
 1. Click **SAVE**.
