@@ -107,11 +107,7 @@ Create the following metrics rules by following the instructions in [Create a me
 
 ### Configure metrics collection
  
-For metrics collection follow guidelines in [Azue Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/).
- 
-While you configure metrics collection you need to tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
- 
-Also you need to configure namespaces as shown below. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instance-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
+  Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
 
 ### Configure logs collection
 
