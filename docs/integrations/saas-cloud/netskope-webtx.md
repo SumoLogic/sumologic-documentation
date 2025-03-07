@@ -163,7 +163,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `Netskope WebTx - Large Data Download Events` | This alert is triggered when abnormally large transactions are downloaded, helping detect potential data exfiltration or abuse of cloud storage services. | Critical | Count > 1|
 | `Netskope WebTx - Latency in Web Requests` | This alert is triggered when unusual high latency on the response times (time-taken) of web requests is detected. This indicates server overload, network problems, or a DDoS attack. | Critical | Count > 1|
 | `Netskope WebTx - Suspicious Login from Unusual Location` | This alert is triggered when unauthorized user access or account compromise are detected. Logins from geographic locations that deviate from the usual user patterns are flagged. | Critical | Count > 1|
-| `Netskope WebTx - Unauthorized Access Attempts` | This alert is triggered when failed login attempts or resource access are detected, highlighting potential breaches using status codes like "401 Unauthorized" and unusually frequent attempts from a single IP. | Critical | Count > 2|
+| `Netskope WebTx - Unauthorized Access Attempts` | This alert is triggered when failed login attempts or resource access are detected. This highlights potential breaches using status codes like "401 Unauthorized" and unusual frequent attempts from a single IP. | Critical | Count > 2|
 
 ## Upgrading/Downgrading the Netskope WebTx app (Optional)
 
