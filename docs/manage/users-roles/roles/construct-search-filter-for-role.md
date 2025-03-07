@@ -20,7 +20,6 @@ The explanations of the behavior of each example filter assume that no other rol
 The sections below list search filter limitations, and describe how you can use keywords, wildcards, metadata, and logical operators in filters. 
 
 * Role filters should include only keyword expressions or built-in metadata field expressions using these fields: `_sourcecategory`, `_collector`, `_source`, `_sourcename`, `_sourcehost`.
-* Using `_index` or `_view` in a role filter scope is not supported.
 * Role filters cannot include vertical pipes (`|`).
 * Role filters apply to log searches, not metric searches.
 * The [_dataTier](/docs/manage/partitions/data-tiers/searching-data-tiers/) search modifier is not supported in role filters.
