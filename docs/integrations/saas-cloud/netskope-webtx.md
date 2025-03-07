@@ -142,7 +142,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Netskope WebTx - Overview** dashboard in Sumo Logic provides insights into web transaction data, helping you monitor, analyze, and secure your web traffic. It includes key metrics like total web transactions, average transaction time, and network performance. The dashboard highlights the most active users, breaks down transactions by operating system, and shows regional patterns through geographic distributions. It also categorizes transactions by log type and status, monitors top domains and hosts, and tracks popular transaction methods. With recent transaction data, the dashboard is a valuable tool for both operational management and strategic planning.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Netskope+WebTx/Netskope+WebTx+-+Overview.png' alt="Netskope-WebTx-Overview" />
+The **Netskope WebTx - Overview** dashboard provides insights into web transaction data, helping you monitor, analyze, and secure your web traffic. It includes key metrics like total web transactions, average transaction time, and network performance. The dashboard highlights the most active users, breaks down transactions by operating system, and shows regional patterns through geographic distributions. It also categorizes transactions by log type and status, monitors top domains and hosts, and tracks popular transaction methods. With recent transaction data, the dashboard is a valuable tool for both operational management and strategic planning.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Netskope+WebTx/Netskope+WebTx+-+Overview.png' alt="Netskope-WebTx-Overview" />
 
 ### Security Overview
 
