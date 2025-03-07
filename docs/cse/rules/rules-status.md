@@ -36,13 +36,13 @@ Limits are set on how often a rule fires so that the system is not overloaded. F
 
 | Type | Limit |
 | :-- | :-- |
-| Total allowed custom rules of each [rule type](/docs/cse/rules/rules-status/#rule-types) | 100 <!-- <br/>200 - Tier 2<br/>500 - Tier 3 --> |
+| Total allowed custom rules of each [rule type](/docs/cse/rules/about-cse-rules/#rule-types) | 100 <!-- <br/>200 - Tier 2<br/>500 - Tier 3 --> |
 | Signals per hour | 50K<!-- - Tier 1<br/>100K - Tier 2<br/>150K - Tier 3 -->|
 | Signals per 24 hours | 1M<!-- Tier 1<br/>2M - Tier 2<br/>3M - Tier 3 --> |
 | Matched records per day* | 200K<!-- - Tier 1<br/>400K - Tier 2<br/>600K - Tier 3 --> |
 | Rule group cardinality per day** | 100K<!-- - Tier 1<br/>200K - Tier 2<br/>300K - Tier 3 --> |
 
-*Applies to all [rule types](/docs/cse/rules/rules-status/#rule-types) except match rules. 
+*Applies to all [rule types](/docs/cse/rules/about-cse-rules/#rule-types) except match rules. 
 <br/>**Group cardinality is the number of distinct key values in a grouping function of a complex rule type. For instance, if a rule is grouped by email address, the cardinality would be the total number of distinct email addresses.
 
 :::note
