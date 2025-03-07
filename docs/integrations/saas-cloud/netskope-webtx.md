@@ -146,7 +146,7 @@ The **Netskope WebTx - Overview** dashboard provides insights into web transacti
 
 ### Security Overview
 
-The **Netskope WebTx - Security Overview** dashboard in Sumo Logic provides a strategic view of web transaction security for network administrators and security teams. It aggregates key security metrics to identify high-risk activities, such as transactions with embargoed locations, unauthorized access attempts, and unusual request latency. The dashboard also monitors access patterns to cloud storage from risky countries, potential data exfiltration, and trends in data uploads and downloads, helping safeguard against data breaches and improve compliance and security strategies.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Netskope+WebTx/Netskope+WebTx+-+Security+Overview.png' alt="Netskope-WebTx-Security-Overview" />
+The **Netskope WebTx - Security Overview** dashboard provides a strategic view of web transaction security for network administrators and security teams. It aggregates key security metrics to identify high-risk activities, such as transactions with embargoed locations, unauthorized access attempts, and unusual request latency. The dashboard also monitors access patterns to cloud storage from risky countries, potential data exfiltration, and trends in data uploads and downloads, helping safeguard against data breaches and improve compliance and security strategies.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Netskope+WebTx/Netskope+WebTx+-+Security+Overview.png' alt="Netskope-WebTx-Security-Overview" />
 
 ## Create monitors for the Netskope WebTx app
 
