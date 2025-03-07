@@ -501,6 +501,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source',
                 //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
