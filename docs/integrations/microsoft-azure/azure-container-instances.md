@@ -24,9 +24,12 @@ For more information on supported dimensions, refer to [Azure documentation](htt
 ## Setup
 
 * Set up application logs collection using fluent-bit sidecar container using the [http output plugin](https://docs.fluentbit.io/manual/1.5/pipeline/outputs/http) and the [tail input plugin](https://docs.fluentbit.io/manual/1.5/pipeline/inputs/tail). You must explicitly enable fluent-bit collection for each container group which you want to monitor.
-* Set up metrics collection using [Azure Metrics Source (Beta)](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/).
-
-
+* Set up metrics collection using Azure Metrics Source.
+  
+  :::note
+  Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
+  :::
+  
 ### Configure field in field schema
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
@@ -86,6 +89,10 @@ Create the following Field Extraction Rule(s) (FER) for Azure Storage by followi
 
 ### Configure metric rules
 
+:::note
+Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
+:::
+
 Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule).
 
 #### Azure observability metadata extraction container instance level
@@ -104,10 +111,6 @@ Create the following metrics rules by following the instructions in [Create a me
    | provider_name     | MICROSOFT.CONTAINERINSTANCE |
    | resource_type     | $resourceId._3              |
    | resource_name     | $resourceId._4              |
-
-### Configure metrics collection
- 
-  Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
 
 ### Configure logs collection
 
