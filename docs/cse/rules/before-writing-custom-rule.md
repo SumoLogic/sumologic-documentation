@@ -104,13 +104,3 @@ Now we have a query we can use as the rule expression for our rule. Note that
 You can use an expression like this example in any rule type. Here is an example Match rule with the expression, shown in the rules editor.
 
 <img src={useBaseUrl('img/cse/example-in-editor.png')} alt="Example in editor" width="700"/>
-
-## Degraded rules
-
-A degraded rule is one that has had a portion of the rule shut off to prevent it from exceeding a processing limit. If you write a custom rule that becomes degraded, you must tune the rule to correct the problem.
-
-For example, rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, the particular value will be ignored, but the rest of the rule is still be used. In this case, Cloud SIEM might display a message like this:
-
-`The aggregation on the group key 'admin@company.com' has a record volume exceeding the supported limit, and has been disabled. Consider tuning the rule to exclude records producing this group key.`
-
-To resolve a degraded rule issue, create a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions/) to address the portion of the rule causing the rule degradation.
