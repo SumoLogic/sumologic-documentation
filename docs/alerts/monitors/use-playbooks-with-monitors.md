@@ -32,7 +32,7 @@ For more information, see [Add an automated playbook to a monitor](/docs/alerts/
 
 ### When viewing an alert
 
-1. On the [alert page](/docs/alerts/monitors/alert-response/#alert-page), open an alert.
+1. Go to your **Alert List** and click on any alert to open its [details page](/docs/alerts/monitors/alert-response/#alert-details).
 1. Click the **Playbook** button. The attached playbooks, if assigned during Monitor configuration, are displayed along with their execution status.
 1. Click the name of an attached playbook. <br/>The playbook is opened in the Automation Service.
 
@@ -58,7 +58,7 @@ After you add playbooks to the monitor, when the monitor triggers an alert, the 
 
 Once a monitor triggers an alert with one or more attached playbooks, you can view the playbooks for the alert.
 
-1. On the [alert page](/docs/alerts/monitors/alert-response/#alert-page), open an alert that has attached playbooks.
+1. Go to your **Alert List** and click on any alert to open its [details page](/docs/alerts/monitors/alert-response/#alert-details).
 1. Click the **Playbook** button. The attached playbooks are displayed. <br/><img src={useBaseUrl('img/alerts/monitors/view-playbooks-on-alert.png')} alt="View playbooks for an alert" style={{border: '1px solid gray'}} width="800" />
 1. Hover your mouse over the icon to the right of the playbook name to view the status of the playbooks:
 

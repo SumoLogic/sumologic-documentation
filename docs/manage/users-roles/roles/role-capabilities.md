@@ -104,7 +104,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 | View Monitors	| If [monitors folder permissions](/docs/alerts/monitors/settings/#monitor-folder-permissions) are enabled for your org, users with this capability can view folders on the [Monitors](/docs/alerts/monitors) page to which they've been granted View access, and the Monitors contained in those folders.|
 | Manage Monitors	| Users with this capability can create new folders and [monitors](/docs/alerts/monitors), and grant other roles permissions to the folders they create. If [monitors folder permissions](/docs/alerts/monitors/settings/#monitor-folder-permissions) are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.|
 | Admin Monitors	| If [monitors folder permissions](/docs/alerts/monitors/settings/#monitor-folder-permissions) are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the Monitors page. This is similar to the Content Administrator capability of the Content Library.|
-| View Alerts	| View alerts on the [Alert page](/docs/alerts/monitors/alert-response#alert-page).|
+| View Alerts	| View alerts on the [Alert page](/docs/alerts/monitors/alert-response).|
 | View Muting Schedules	| Required for viewing the [Muting Schedules](/docs/alerts/monitors/muting-schedules) page and schedule definitions.|
 | Manage Muting Schedules	| Required for creating, editing, and deleting Muting Schedules.|
 
