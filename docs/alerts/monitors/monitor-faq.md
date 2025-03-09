@@ -38,7 +38,7 @@ You need to replace `<monitorId>` with the ID of the monitor.
 A common reason a metric monitor is disabled is the cardinality limit was exceeded. The default cardinality limits for metrics monitors are:
 * An aggregate metrics monitor can evaluate up to 15,000 time series.
 * A non-aggregate Metrics monitor can evaluate up to 3,000 time series.
-* For join queries, a cardinality limit of 3,000 rows is applied. These are query row output cardinality limit for join queries like (#A/#B) * 100 in #C row and similarly other queries.
+* For join queries, a cardinality limit of 3,000 rows is applied. These are query row output cardinality limit for join queries like `(#A/#B) * 100 in #C row` and similarly other queries.
 
 For example, if you use Kubernetes and have 20,000 pods in your deployment, a query that spans all pods, like the following, will result in the cardinality error.
 
