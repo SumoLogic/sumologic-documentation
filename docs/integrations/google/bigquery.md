@@ -25,7 +25,9 @@ The Google BigQuery App uses:
 ```
 
 ### Sample metric messages
+```json
 {"queryId":"A","_source":"google-bigquery-metrics","cloud.platform":"gcp_bigquery","priority":"interactive","_metricId":"3F6GF8wrLEJvzydQF-DlQQ","location":"us-central1","raw_metric":"bigquery.googleapis.com/query/count","_sourceName":"Http Input","_sourceCategory":"Labs/google-bigquery-metrics","_contentType":"Carbon2","Statistic":"Average","project_id":"prodproject","metric":"query/count","_collectorId":"0000000011113650","_sourceId":"0000000064F1F058","cloud.provider":"gcp","_collector":"Labs - google-bigquery-metrics","max":1,"min":0,"avg":0.0283,"sum":1.5,"latest":0,"count":53}
+```
 
 ### Sample Logs queries
 
@@ -156,8 +158,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-</TabItem>
-</Tabs>
 
 ## Viewing Google BigQuery dashboards
 

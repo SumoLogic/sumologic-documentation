@@ -28,9 +28,9 @@ The Sumo Logic app for Google Cloud Load Balancer uses the following logs :
 
 The Sumo Logic app for Google Cloud Load Balancer uses these [metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-loadbalancing).
 
-- Global External - Metric for this type are of the format https/<metric_name>
-- Regional External - Metric for this type are of the format https/external/regional/<metric_name>
-- Internal - Metric for this type are of the format “https/internal/<metric_name>”
+- Global External - Metric for this type are of the format "https/metric_name"
+- Regional External - Metric for this type are of the format "https/external/regional/metric_name"
+- Internal - Metric for this type are of the format “https/internal/metric_name”
 
 ### Sample log messages
 
@@ -39,7 +39,9 @@ The Sumo Logic app for Google Cloud Load Balancer uses these [metrics](https://c
 ```
 
 ### Sample metric messages
+```json
 {"queryId":"A","client_country":"Brazil","_source":"sumo GCP metric test","cloud.platform":"gcp_loadbalancing","_metricId":"K0zIDUIKXKkbaldwOnoVzw","backend_scope":"us-central1-c","raw_metric":"loadbalancing.googleapis.com/https/backend_latencies","url_map_name":"sumo-alb","_sourceName":"sumo GCP metric test","backend_scope_type":"ZONE","backend_target_type":"BACKEND_SERVICE","response_code":"200","backend_name":"instance-group-sumo","matched_url_path_rule":"UNMATCHED","proxy_continent":"America","_sourceCategory":"anrms/gcp/computeengine","_contentType":"GcpMetrics","load_balancing_scheme":"EXTERNAL","Statistic":"SampleCount","response_code_class":"200","cache_result":"DISABLED","project_id":"appdev-project-240622","metric":"https/backend_latencies","backend_type":"INSTANCE_GROUP","_collectorId":"000000000DFDF2E8","backend_target_name":"backend-service-sumo","region":"global","_sourceId":"000000004DEE1CBC","cloud.provider":"gcp","_sourceHost":"GCP","_collector":"sumoPrivate","protocol":"HTTP/1.1","forwarding_rule_name":"alb-frontend","target_proxy_name":"sumo-alb-target-proxy","max":4,"min":4,"avg":4,"sum":4,"latest":4,"count":1}
+```
 
 ### Sample logs queries
 
@@ -183,72 +185,49 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-### Overview
+Under the installed app folder you will see different folders for differnt type of Application load balancer namely - 
+- Global External
+- Internal
+- Regional External
 
+Each folder has its own set of dashboard based on respective logs and metrics.
+Following are the set of dashboards which you will get for each load balancer.
+
+:::note
+For log based dashboards the dashboard filter are based metric values. In metrics load balancer name for regional external and internal load balancer is prefixed with "URL_MAP". Panel queries are adjusted for this and filter works accordingly.
+:::
+
+### Overview
 
 See an overview of Google Cloud Load Balancing activity, including request locations, browsers and operating systems used, error status codes, requests by load balancer, bytes sent and received, and message severity over time.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-overview.png')} alt="Google Load Balancing dashboards" />
 
-**Request Location**. A world map showing the locations of requests over the last 24 hours.
-
-**Browsers and Operating Systems**. A stacked column chart that shows the breakdown of requests by operating system (MacOS, Windows, and Other), and for each operating system, the breakdown of requests by browser type (Firefox, Mozilla, Chrome, Internet Explorer, and Other) over the last 24 hours.
-
-**4xx and 5xx Status Codes**. A horizontal bar chart that shows the count of 4xx response codes and the count of 5xx response codes for each load balancer over the last 24 hours.
-
-**Requests by Load Balancer**. A horizontal bar chart that shows the count of requests for each load balancer over the last 24 hours.
-
-**Bytes Sent and Received**. A horizontal bar chart that shows the total byes sent and the total bytes received for each load balancer over the last 24 hours.
-
-**Severity Over Time**. A line chart that shows the count of messages of each level (info, warning, error, critical, alert, and emergency) over the last 24 hours.
-
 
 ### Request Analysis
-20
-
-
 See information about request activity in Google Cloud Load Balancing, including request locations, requests by type over time, requests by load balancer over time, KBs sent and received by number of requests, and total requests by load balancer.
 
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-request-analysis.png')} alt="Google Load Balancing dashboards" />
 
-
-**Request Location**. A world map showing the locations of requests over the last 24 hours.
-
-**Requests by Type Over Time**. A line chart showing the count of requests by type (get, post, put, delete, patch, and other) over the last 24 hours.
-
-**KBs Sent, received by Number of Requests.** A combination chart showing a bar chart of request counts, and a line chart showing data received and data sent over the last 24 hours.
-
-**Requests by Load Balancer Over Time.** A line chart showing the count of requests by load balancer over the last 24 hours.
-
-**Number of Requests - Outlier**. Shows instances where the count of requests was significantly significant, more than three standard deviations from the running average over the last 24 hours.
-
-**Total Requests by Load Balancer.** A bar chart that shows the total count of requests by load balancer over the last 24 hours.
-
-
 ### Status Analysis
-22
-
-
 See information about the status of requests in Google Cloud Load Balancing, including status codes per project, over time, and by load balancer; location of 4xx and 5xx responses; and 4xx and 5xx responses by load balancer.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-status-analysis.png')} alt="Google Load Balancing dashboards" />
 
-**Status Codes per Project**. A stacked column chart that shows a breakdown of the count of status codes by type ( 2xx, 3xx, 4xx, 5xx, others) for each project over the last 24 hours.
+### Bytes count
+This dashboard help you monitor Byte Count between client- load balancer and load balancer - backend. You can monitor total bytes, average bytes and trend for request and response.
+<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-bytes-count.png')} alt="Google Load Balancing dashboards" />
 
-**Status Codes Over Time**. A stacked column chart that shows a breakdown of count of status codes by type ( 2xx, 3xx, 4xx, 5xx, others) over the last 24 hours.
+### Latency
+This dashboard helps you monitor average latency between client- load balancer and load balancer - backend. You can also monitor latency by response code, latency trends and latency by load balancer.
 
-**Status Codes per Load Balancer**. A horizontal bar chart that shows the breakdown of the count of status codes by type (2xx, 3xx, 4xx, 5xx, others) for each load balancer  over the last 24 hours.
+<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-latency.png')} alt="Google Load Balancing dashboards" />
 
-**Status Details Breakdown**. A donut chart that shows the count of specific load balancer status messages over the last 24 hours.
+### Requests
+This dashboard helps you monitor total request count between client- load balancer and load balancer - backend. You can also monitor request count by response code, response code by backends, and trends for different response code classes - 2x, 3xx, 4xx and 5xx
 
-**5xx  Status Code Locations.** A world map that shows the locations of 5xx status codes over the last 24 hours.
-
-**5xx Status Code Per Load Balancer.** A stacked column chart that shows the count of 5xx status codes by load balancer over the last 24 hours.
-
-**4xx Status Codes Locations**. A world map that shows the locations of 4xx status codes over the last 24 hours.
-
-**4xx Status Code Per Load Balancer**.  A stacked column chart that shows the count of 4xx status codes by load balancer over the last 24 hours.
+<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-requests.png')} alt="Google Load Balancing dashboards" />
 
 ## Upgrade/Downgrade the Google Cloud Load Balancing app (Optional)
 
@@ -261,3 +240,17 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Create monitors for GCP load balancer app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### GCP load balancer alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `GCP Application Load Balancer - High 4XX Errors` | This alert fires where there are too many HTTP requests (default >5%) with a response status of 4xx within an interval of 5 minutes are detected for any type of application load balancer. | Count >= 5 | Count < 5 |
+| `GCP Application Load Balancer - High 5XX Errors` | This alert fires where there are too many HTTP requests (default >5%) with a response status of 5xx within an interval of 5 minutes are detected for any type of application load balancer. | Count >= 5 | Count < 5 |
+| `GCP Application Load Balancer - High Latency` | This alert fires when we detect that the average latency for a given Application load balancer (any type) within a time interval of 5 minutes is greater than given value (default three seconds). | Count >= 3000 | Count < 3000 |
