@@ -2,7 +2,7 @@
 id: rules-status
 title: Rules Status
 sidebar_label: Rules Status
-description: Learn how about Cloud SIEM rules status and how to mitigate rules in a degraded or failed state.
+description: Learn about Cloud SIEM rules statuses and how to address rules in a degraded or failed state.
 keywords:
   - cloud siem
   - rules
