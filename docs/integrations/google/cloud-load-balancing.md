@@ -9,12 +9,28 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/google/clb.png')} alt="thumbnail icon" width="50"/>
 
-Google Cloud Load Balancing is Google’s load balancing service for Google Cloud Platform. The Sumo Logic App for Google Cloud Load Balancing helps you monitor load balancing activity.  The preconfigured dashboards provide insight into request locations and volume, response codes, and request and response data by load balancer.
+Google Cloud Load Balancing is Google’s load balancing service for Google Cloud Platform. The Sumo Logic App for Google Cloud Load Balancing helps you monitor your **Application load balancer** activity. There are 3 types of Application load balancer available in GCP:
+- Global External
+- Regional External
+- Internal
+
+Each type of Application load balancer has its own set of log structure and metrics. Thus the app is divided into 3 folders,each folder having respective dashboards for each type.
+The preconfigured dashboards provide insight into request locations and volume, response codes, and request and response data by load balancer with help for logs and metrics.
 
 ## Log types
 
-The app uses the following log type:
-* [Cloud Load Balancing Request Logs](https://cloud.google.com/compute/docs/load-balancing/http/#logging)
+The Sumo Logic app for Google Cloud Load Balancer uses the following logs : 
+- [Global External logging](https://cloud.google.com/load-balancing/docs/https/https-logging-monitoring)
+- [Regional External logging](https://cloud.google.com/load-balancing/docs/https/https-reg-logging-monitoring)
+- [Internal logging](https://cloud.google.com/load-balancing/docs/l7-internal/monitoring#logs_sampling_and_collection)
+
+## Metric types
+
+The Sumo Logic app for Google Cloud Load Balancer uses these [metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-loadbalancing).
+
+- Global External - Metric for this type are of the format https/<metric_name>
+- Regional External - Metric for this type are of the format https/external/regional/<metric_name>
+- Internal - Metric for this type are of the format “https/internal/<metric_name>”
 
 ### Sample log messages
 
@@ -22,7 +38,10 @@ The app uses the following log type:
 {"remoteIp":"98.243.249.133","requestUrl":"http:\/\/35.201.123.100\/","requestMethod":"POST","serverIp":"10.128.0.9","responseSize":"415","userAgent":"Mozilla\/5.0 (Windows NT 6.3; WOW64; Trident\/7.0; rv:11.0) like Gecko","requestSize":"1347","status":501}
 ```
 
-### Sample queries
+### Sample metric messages
+{"queryId":"A","client_country":"Brazil","_source":"sumo GCP metric test","cloud.platform":"gcp_loadbalancing","_metricId":"K0zIDUIKXKkbaldwOnoVzw","backend_scope":"us-central1-c","raw_metric":"loadbalancing.googleapis.com/https/backend_latencies","url_map_name":"sumo-alb","_sourceName":"sumo GCP metric test","backend_scope_type":"ZONE","backend_target_type":"BACKEND_SERVICE","response_code":"200","backend_name":"instance-group-sumo","matched_url_path_rule":"UNMATCHED","proxy_continent":"America","_sourceCategory":"anrms/gcp/computeengine","_contentType":"GcpMetrics","load_balancing_scheme":"EXTERNAL","Statistic":"SampleCount","response_code_class":"200","cache_result":"DISABLED","project_id":"appdev-project-240622","metric":"https/backend_latencies","backend_type":"INSTANCE_GROUP","_collectorId":"000000000DFDF2E8","backend_target_name":"backend-service-sumo","region":"global","_sourceId":"000000004DEE1CBC","cloud.provider":"gcp","_sourceHost":"GCP","_collector":"sumoPrivate","protocol":"HTTP/1.1","forwarding_rule_name":"alb-frontend","target_proxy_name":"sumo-alb-target-proxy","max":4,"min":4,"avg":4,"sum":4,"latest":4,"count":1}
+
+### Sample logs queries
 
 ```bash title="Status codes per load balancer"
 _sourceCategory=*gcp* data logName resource "\"type\":\"http_load_balancer\""
@@ -38,6 +57,11 @@ _sourceCategory=*gcp* data logName resource "\"type\":\"http_load_balancer\""
 | sum(resp_200) as tot_200, sum(resp_300) as tot_300, sum(resp_400) as tot_400, sum(resp_500) as tot_500, sum(resp_others) as tot_others by load_balancer, project
 ```
 
+### Sample metric query
+```bash title="Total Backend Bytes"
+project_id=* region=global cloud.platform=gcp_loadbalancing url_map_name=*  metric=https/backend_request_bytes_count statistic=average !url_map_name="" | quantize to 5m using sum | sum
+```
+
 ## Collect Logs for Google Cloud Load Balancing
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Load Balancing.
@@ -46,20 +70,22 @@ This page describes the Sumo pipeline for ingesting logs from Google Cloud Platf
 
 The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo’s Google Cloud Platform (GCP) source running on a hosted collector.
 
-The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Stackdriver. You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
+The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Google Cloud Logging [Log Router](https://cloud.google.com/logging/docs/routing/overview). You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
 
 <img src={useBaseUrl('img/integrations/google/GCP_Collection_Overview.png')} alt="Google integrations" />
 
-### Configuring collection for GCP uses the following process:
+### Configuring collection for GCP
+
+Configuring collection for GCP uses the following process:
 
 1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**.
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
-3. Create an export of GCP logs from Google Stackdriver Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
+3. Create an export of GCP logs from Google Log Router Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
 
 See the following sections for configuration instructions.
 
 :::note
-Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
+Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Logs router.
 :::
 
 ### Configure a Google Cloud Platform Source
@@ -95,7 +121,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](/docs/integrations/google/app-engine#collecting-logs-for-the-google-app-engine-app).
 
-1. Create a Pub/Sub Topic in GCP. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
+1. Create a Pub/Sub Topic in GCP. Refer to the [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 2. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
    * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**.
 
@@ -127,8 +153,21 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
   1. Enter a Sink Name. For example, "gce-vm-instance".
   2. Select "Cloud Pub/Sub" as the **Sink Service**.
   3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
-  4. In **Choose logs to include in sink** section for `resource_type`, replace `"<resource_variable>"` with `"http_load_balancer"`.
+  4. In **Choose logs to include in sink** section for `resource_type`, replace `"<resource_variable>"` with 
+    - `"http_load_balancer"` - For global external application load balancer.
+    - `"http_external_regional_lb_rule"` - For regional external application load balancer.
+    - `"internal_http_lb_rule"` - For internal application load balancer.
   5. Click **Create Sync**.
+
+:::note
+By default, GCP logs are stored within Cloud Logging, but you can configure Log Router to exclude them as detailed [here](https://cloud.google.com/logging/docs/exclusions#overview) without affecting the export to Sumo Logic as outlined above.
+:::
+
+## Collecting Metric for the Google Cloud Load Balancer app
+For metric collection in Sumo Logic use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
+
+1. Setup the [Google Service Account](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
+1. [Setup a GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Cloud Load Balancer** as the service from dropdown to get the Google cloud function metrics.
 
 ## Install the Google Cloud Load Balancing app
 

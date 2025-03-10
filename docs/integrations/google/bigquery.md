@@ -11,14 +11,23 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/google/bigquery.png')} alt="thumbnail icon" width="50"/>
 
-The Google BigQuery App helps you monitor data and activity in your BigQuery data warehouse. The preconfigured dashboards provide insight into the projects, operations, queries, user management operations, user activities, and billed GBs in BigQuery.
+The Google BigQuery App helps you monitor data and activity in your BigQuery data warehouse. The preconfigured dashboards provide insight into the projects, operations, queries, job performance, user management operations, user activities, storage, slots and billed GBs in BigQuery using audit logs and metrics.
 
-## Log types  
+## Log abd Metric types
 
 The Google BigQuery App uses:
 * [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including BigQuery.
+* [Google Cloud Metrics for Bigquery] (https://cloud.google.com/monitoring/api/metrics_gcp#gcp-bigquery)
 
-### Sample queries
+### Sample Log messages
+```json
+{"message":{"data":{"insertId":"561F93BB34A71.A304412.BB00EA40","logName":"projects/bmlabs-loggen/logs/cloudaudit.googleapis.com%2Factivity","protoPayload":{"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"player3"},"authorizationInfo":[{"granted":true,"permission":"bigquery.datasets.create","resource":"projects/bmlabs-loggen"}],"methodName":"datasetservice.insert","requestMetadata":{"callerIp":"2601:246:4b02:580d:c5c4:83c5:4337:c5e5","callerSuppliedUserAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36,gzip(gfe)"},"resourceName":"projects/bmlabs-loggen/datasets","serviceData":{"@type":"type.googleapis.com/google.cloud.bigquery.logging.v1.AuditData","datasetInsertRequest":{"resource":{"acl":{},"createTime":"2025-03-10T11:44:29.803IST","datasetName":{"datasetId":"empty","projectId":"bmlabs-loggen"},"info":{},"updateTime":"2025-03-10T11:44:29.803IST"}},"datasetInsertResponse":{"resource":{"acl":{"entries":[{"role":"WRITER","specialGroup":"PROJECT_WRITERS","viewName":{}},{"role":"OWNER","specialGroup":"PROJECT_OWNERS","viewName":{}},{"role":"OWNER","specialGroup":"PROJECT_OWNERS","userEmail":"player3","viewName":{}},{"role":"READER","specialGroup":"PROJECT_READERS","viewName":{}}]},"createTime":"2025-03-10T11:44:29.803IST","datasetName":{"datasetId":"empty","projectId":"bmlabs-loggen"},"info":{},"updateTime":"2025-03-10T11:44:29.803IST"}}},"serviceName":"bigquery.googleapis.com","status":{}},"receiveTimestamp":"2025-03-10T11:44:29.803IST","resource":{"labels":{"project_id":"bmlabs-loggen"},"type":"bigquery_resource"},"severity":"NOTICE","timestamp":"2025-03-10T11:44:29.803IST"},"attributes":{"logging.googleapis.com/timestamp":"2025-03-10T11:44:29.803IST"},"message_id":"19361990627331","messageId":"19361990627331","publish_time":"2025-03-10T11:44:29.803IST","publishTime":"2025-03-10T11:44:29.803IST"},"subscription":"projects/bmlabs-loggen/subscriptions/push-to-sumo"}
+```
+
+### Sample metric messages
+{"queryId":"A","_source":"google-bigquery-metrics","cloud.platform":"gcp_bigquery","priority":"interactive","_metricId":"3F6GF8wrLEJvzydQF-DlQQ","location":"us-central1","raw_metric":"bigquery.googleapis.com/query/count","_sourceName":"Http Input","_sourceCategory":"Labs/google-bigquery-metrics","_contentType":"Carbon2","Statistic":"Average","project_id":"prodproject","metric":"query/count","_collectorId":"0000000011113650","_sourceId":"0000000064F1F058","cloud.provider":"gcp","_collector":"Labs - google-bigquery-metrics","max":1,"min":0,"avg":0.0283,"sum":1.5,"latest":0,"count":53}
+
+### Sample Logs queries
 
 ```bash title="Created Resources Over Time"
 _sourceCategory=*gcp* logName resource "type":"bigquery_resource"
@@ -30,49 +39,14 @@ _sourceCategory=*gcp* logName resource "type":"bigquery_resource"
 | transpose row _timeslice column project
 ```
 
-## Collection configuration and app installation
+### Sample Metric queries
+```bash title="In Flight Queries Trend"
+cloud.provider=gcp project_id=* location=* metric=query/count statistic=average 
+| quantize using sum
+| sum by project_id , location
+```
 
-Choose one of the following methods to configure the Google BigQuery source and install the app:
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Cloud-to-cloud source setup and app installation"
-  values={[
-    {label: 'Cloud-to-cloud source setup and app installation', value: 'Cloud-to-cloud source setup and app installation'},
-    {label: 'HTTP source setup and app installation', value: 'HTTP source setup and app installation'}
-  ]}>
-
-<TabItem value="Cloud-to-cloud source setup and app installation">
-
-import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
-
-<CollectionConfiguration/>
-
-:::important
-Use the [Cloud-to-Cloud Integration for Google BigQuery](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Google BigQuery app is properly integrated and configured to collect and analyze your Google BigQuery data.
-:::
-
-### Create a new collector and install the app
-
-import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
-
-<AppCollectionOPtion1/>
-
-### Use an existing collector and install the app
-
-import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
-
-<AppCollectionOPtion2/>
-
-### Use an existing source and install the app
-
-import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
-
-<AppCollectionOPtion3/>
-
-</TabItem>
-
-<TabItem value="HTTP source setup and app installation">
+## Collect Logs for Google BigQuery
 
 This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google BigQuery App.
 
@@ -80,7 +54,7 @@ This section describes the Sumo pipeline for ingesting logs from Google Cloud Pl
 
 The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo’s Google Cloud Platform (GCP) source running on a hosted collector.
 
-The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Stackdriver. You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
+The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Google Cloud Logging [Log Router](https://cloud.google.com/logging/docs/routing/overview). You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
 
 <img src={useBaseUrl('img/integrations/google/GCP_Collection_Overview.png')} alt="Google integrations" />
 
@@ -88,15 +62,17 @@ The GCP service generates logs which are exported and published to a Google Pub/
 
 Configuring collection for GCP uses the following process:
 
-[Step 1: Configure a Google Cloud Platform Source](#step-1-configure-a-google-cloud-platform-source). Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**.<br/>
-[Step 2: Configure a Pub/Sub Topic for GCP](#step-2-configure-a-pubsub-topic-for-gcp). Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.<br/>
-[Step 3: Create export of Google BigQuery logs from Google Logging](#step-3-create-export-of-google-bigquery-logs-from-google-logging). Create an export of GCP logs from Google Stackdriver Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
+1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**.
+2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
+3. Create an export of GCP logs from Google Log Router Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
+
+See the following sections for configuration instructions.
 
 :::note
-Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
+Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Logs router.
 :::
 
-#### Step 1: Configure a Google Cloud Platform Source
+### Configure a Google Cloud Platform Source
 
 The Google Cloud Platform (GCP) Source receives log data from Google Pub/Sub.
 
@@ -124,11 +100,11 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 10. When you are finished configuring the Source, click **Save**.
 
-#### Step 2: Configure a Pub/Sub Topic for GCP
+### Configure a Pub/Sub Topic for GCP
 
 You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](/docs/integrations/google/app-engine#collecting-logs-for-the-google-app-engine-app).
 
-1. Create a Pub/Sub Topic in GCP. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
+1. Create a Pub/Sub Topic in GCP. Refer to the [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 2. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
     * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**.
 
@@ -149,7 +125,7 @@ We recommend the following:
 * Shard messages across topics within the above data limits.
 * Ask GCP to increase the allowable capacity for the topic.
 
-#### Step 3: Create export of Google BigQuery logs from Google Logging
+### Create export of Google BigQuery logs from Google Logging
 
 In this step you export logs to the Pub/Sub topic you created in the previous step.
 
@@ -161,6 +137,16 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
    3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
    4. In **Choose logs to include in sink** section for resource_type, replace "`<resource_variable>`" with "`bigquery_resource`".<br/><img src={useBaseUrl('img/integrations/google/resourcevar.png')} alt="Google integrations" width="400" />
    5. Click **Create Sync**.
+
+:::note
+By default, GCP logs are stored within Cloud Logging, but you can configure Log Router to exclude them as detailed [here](https://cloud.google.com/logging/docs/exclusions#overview) without affecting the export to Sumo Logic as outlined above.
+:::
+
+## Collecting Metric for the Google Cloud Load Balancer app
+For metric collection in Sumo Logic use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
+
+1. Setup the [Google Service Account](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
+1. [Setup a GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Big Query** as the service from dropdown to get the Google cloud function metrics.
 
 ### Installing the Google BigQuery app
 
