@@ -24,7 +24,7 @@ You can see a rule's status while viewing the rule:
 1. Click **Filters** at the top of the **Rules** screen.
 1. Select the **Status** field.<br/><img src={useBaseUrl('img/cse/filter-on-rule-status-1.png')} alt="Filter on rule status" style={{border: '1px solid gray'}} width="300"/>
 1. For **Operator** select **is**.
-1. Select the status to filter on.<br/><img src={useBaseUrl('img/cse/filter-on-rule-status-2.png')} alt="Select status to filter on" style={{border: '1px solid gray'}} width="400"/><br/>
+1. Select a status.<br/><img src={useBaseUrl('img/cse/filter-on-rule-status-2.png')} alt="Select status to filter on" style={{border: '1px solid gray'}} width="400"/><br/>
 
 ## Kinds of rule status
 
@@ -33,13 +33,23 @@ Following are the different kinds of rule status. A rule's status can change dep
 | Status | Description | Action required |
 | :-- | :-- | :-- |
 | **Active** | The rule is executing normally. | No action required. |
-| **Degraded** | The rule is approaching a rule limit and it is removed from execution for one hour to allow processing to catch up. At the end of the hour, the rule is allowed to execute again and its status changes back to Active. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may want to edit the rule to reduce the chance it will become degraded again later. |
+| **Degraded** | The rule is approaching a rule limit and it is removed from execution for one hour to allow processing to catch up. At the end of the hour, the rule is allowed to execute again and its status changes back to Active. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may want to edit the rule to reduce the chance it will become degraded again later. See [Degraded rules](#degraded-rules) below for more information. |
 | **Disabled** | The rule was manually disabled using the toggle in the UI, or was disabled with the API. | Enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). | 
 | **Failed** | The rule exceeded a rule limit and was automatically disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Failed** label for details about the failure.  Depending on the reasons provided in the details, you may need to edit the rule to prevent it from failing again in the future. <br/><br/>After addressing the reasons for the failure, enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
 
 <!-- For DOCS-72 - Rule limits
 | **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-warning-info-button.png')} alt="Rule warning information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled. |
 -->
+
+### Degraded rules
+
+A degraded rule is one that has been temporarily shut off to prevent it from exceeding a processing limit. If you write a [custom rule](docs/cse/rules/before-writing-custom-rule/) that becomes degraded, you must tune the rule to correct the problem.
+
+For example, rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, Cloud SIEM might display a message like this:
+
+`The aggregation on the group key 'admin@company.com' has a record volume exceeding the supported limit, and has been disabled. Consider tuning the rule to exclude records producing this group key.`
+
+To resolve a degraded rule issue, create a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions/) to address the portion of the rule causing the rule degradation.
 
 ## Rule limits
 
@@ -74,72 +84,44 @@ Rule limits can be higher if you are in a higher tenant tier level. If you have 
 
 You can query audit logs for rule status changes. For more information about querying audit logs, see [Cloud SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/) and [Cloud SIEM audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/#cloud-siem-audit-log-definitions).
 
-### Example query for rule status changes
+### Query for disabled rules
 
-The following query queries for match rules whose status was changed automatically to `Failed` by the system:
-
-```sql
-_index=sumologic_system_events _sourceCategory=cseRule
-| json field=_raw "templatedMatchRule.status"
-| where eventname = "TemplatedMatchRuleUpdated" 
-| where templatedMatchRule.status = "Failed"
-```
-
-You can set up this query for one or multiple rules, with one or multiple statuses.
-* To query for other rule types:
-    * Replace `templatedMatchRule` in the `field` string in the example above with:
-       * `AggregationRule`
-       * `ChainRule`
-       * `FirstSeenRule`
-       * `MatchRule`
-       * `OutlierRule`
-       * `ThresholdRule`
-    * Replace `TemplatedMatchRuleUpdated` in the `eventname` string in the example above with:
-       * `AggregationRuleUpdated`
-       * `ChainRuleUpdated`
-       * `FirstSeenRuleUpdated`
-       * `MatchRuleUpdated`
-       * `OutlierRuleUpdated`
-       * `ThresholdRuleUpdated`
-* To query for for other statuses, replace `Failed` in the example above with another status:
-   * `"Active"`
-   * `"Degraded"`
-   * `"Disabled"`
-   * `"Failed"`
-
-<!-- For DOCS-72 - Rule limits
-
-   * `"Warning"`
-   -->
-
-### Example query for disabled rules
-
-If you want to query simply for match rules that are disabled, you could execute a query like this:
+Use the following query to find rules that are disabled. It finds rules that are manually disabled by users (in `_index=sumologic_audit_events`) or automatically disabled by the system (in `_index=sumologic_system_events`).
 
 ```sql
 (_index=sumologic_audit_events OR _index=sumologic_system_events) _sourceCategory=cseRule
-| json field=_raw "templatedMatchRule.enabled"
-| where eventname = "TemplatedMatchRuleUpdated" 
-| where templatedMatchRule.enabled = "false"
+| where (%"aggregationrule.enabled" = "false" 
+or %"chainrule.enabled" = "false"
+or %"firstseenrule.enabled" = "false"
+or %"matchrule.enabled" = "false"
+or %"outlierrule.enabled" = "false"
+or %"templatedMatchRule.enabled" = "false"
+or %"thresholdrule.enabled" = "false")
 ```
 
-This query looks for match rules that were manually disabled (`_index=sumologic_audit_events`) or automatically disabled by the system (`_index=sumologic_system_events`).
+### Query for updated rules
+
+Use the following query to find rules that have been updated. This query finds rules that are updated for any reason. The update may not result in a status change for the rule.
+
+```sql
+(_index=sumologic_audit_events OR _index=sumologic_system_events) _sourceCategory=cseRule
+| where (eventName = "AggregationRuleUpdated" 
+or eventName = "ChainRuleUpdated" 
+or eventName = "FirstSeenRuleUpdated"
+or eventName = "MatchRuleUpdated" 
+or eventName = "OutlierRuleUpdated"
+or eventName = "TemplatedMatchRuleUpdated"
+or eventName = "ThresholdRuleUpdated" )
+| sort by eventName asc
+```
 
 ## Create a monitor to alert on rule status changes
 
 You can [create a monitor](/docs/alerts/monitors/create-monitor/) to generate alerts when rules statuses change. This will alert you when you need to take action.
 
-For example, you could use the [example query for rule status changes](#example-query-for-rule-status-changes) above in your monitor. It will alert when the status of match rules change to `Warning`. 
+For example, you could use the [query for disabled rules](#query-for-disabled-rules) above in your monitor. It will alert when rules are disabled. 
 
 <img src={useBaseUrl('img/cse/example-monitor-for-rule-status-change.png')} alt="Example monitor for rule status change" style={{border: '1px solid gray'}} width="700"/>
 
-## Degraded rules
 
-A degraded rule is one that has had a portion of the rule shut off to prevent it from exceeding a processing limit. If you write a custom rule that becomes degraded, you must tune the rule to correct the problem.
-
-For example, rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, the particular value will be ignored, but the rest of the rule is still be used. In this case, Cloud SIEM might display a message like this:
-
-`The aggregation on the group key 'admin@company.com' has a record volume exceeding the supported limit, and has been disabled. Consider tuning the rule to exclude records producing this group key.`
-
-To resolve a degraded rule issue, create a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions/) to address the portion of the rule causing the rule degradation.
 
