@@ -43,7 +43,7 @@ Following are the different kinds of rule status. A rule's status can change dep
 
 ### Degraded rules
 
-A degraded rule is one that has been temporarily shut off to prevent it from exceeding a processing limit. If you write a [custom rule](docs/cse/rules/before-writing-custom-rule/) that becomes degraded, you must tune the rule to correct the problem.
+A degraded rule is one that has been temporarily shut off to prevent it from exceeding a processing limit. If you write a [custom rule](/docs/cse/rules/before-writing-custom-rule/) that becomes degraded, you must tune the rule to correct the problem.
 
 For example, rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, Cloud SIEM might display a message like this:
 
