@@ -501,6 +501,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source',
                 //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
@@ -2541,6 +2542,7 @@ integrations: [
           'integrations/saas-cloud/mimecast',
           'integrations/saas-cloud/miro',
           'integrations/saas-cloud/microsoft-graph-azure-ad-reporting',
+          'integrations/saas-cloud/netskope-webtx',
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
@@ -2853,6 +2855,7 @@ integrations: [
           link: {type: 'doc', id: 'cse/rules/index'},
           items: [
             'cse/rules/about-cse-rules',
+            'cse/rules/rules-status',
             'cse/rules/before-writing-custom-rule',
             'cse/rules/cse-rules-syntax',
             'cse/rules/write-match-rule',
