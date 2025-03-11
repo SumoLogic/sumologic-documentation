@@ -7,7 +7,9 @@ description: Learn how to collect SentinelOne log messages and send them to Sumo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section has instructions for collecting SentinelOne log messages and sending them to Sumo Logic to be ingested by Cloud SIEM.
+This section has instructions for collecting SentinelOne log messages for CEF and Syslog ingest and sending them to Sumo Logic to be ingested by Cloud SIEM. 
+
+To collect data such as activities, agents, and threats, use the [SentinelOne Mgmt API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source/).
 
 ## Step 1: Configure collection
 
