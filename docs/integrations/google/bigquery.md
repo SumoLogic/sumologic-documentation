@@ -11,15 +11,15 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/google/bigquery.png')} alt="thumbnail icon" width="50"/>
 
-The Google BigQuery App helps you monitor data and activity in your BigQuery data warehouse. The preconfigured dashboards provide insight into the projects, operations, queries, job performance, user management operations, user activities, storage, slots and billed GBs in BigQuery using audit logs and metrics.
+The Google BigQuery App helps you monitor the data and activities in your BigQuery data warehouse. With audit logs and analytics, the preconfigured dashboards offer insight into BigQuery's projects, operations, queries, job performance, user management operations, user activities, storage, slots, and billed gigabytes.
 
-## Log and Metric types
+## Log and metric types
 
 The Google BigQuery App uses:
 * [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including BigQuery.
 * [Google Cloud Metrics for Bigquery] (https://cloud.google.com/monitoring/api/metrics_gcp#gcp-bigquery)
 
-### Sample Log messages
+### Sample log messages
 ```json
 {"message":{"data":{"insertId":"561F93BB34A71.A304412.BB00EA40","logName":"projects/bmlabs-loggen/logs/cloudaudit.googleapis.com%2Factivity","protoPayload":{"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"player3"},"authorizationInfo":[{"granted":true,"permission":"bigquery.datasets.create","resource":"projects/bmlabs-loggen"}],"methodName":"datasetservice.insert","requestMetadata":{"callerIp":"2601:246:4b02:580d:c5c4:83c5:4337:c5e5","callerSuppliedUserAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36,gzip(gfe)"},"resourceName":"projects/bmlabs-loggen/datasets","serviceData":{"@type":"type.googleapis.com/google.cloud.bigquery.logging.v1.AuditData","datasetInsertRequest":{"resource":{"acl":{},"createTime":"2025-03-10T11:44:29.803IST","datasetName":{"datasetId":"empty","projectId":"bmlabs-loggen"},"info":{},"updateTime":"2025-03-10T11:44:29.803IST"}},"datasetInsertResponse":{"resource":{"acl":{"entries":[{"role":"WRITER","specialGroup":"PROJECT_WRITERS","viewName":{}},{"role":"OWNER","specialGroup":"PROJECT_OWNERS","viewName":{}},{"role":"OWNER","specialGroup":"PROJECT_OWNERS","userEmail":"player3","viewName":{}},{"role":"READER","specialGroup":"PROJECT_READERS","viewName":{}}]},"createTime":"2025-03-10T11:44:29.803IST","datasetName":{"datasetId":"empty","projectId":"bmlabs-loggen"},"info":{},"updateTime":"2025-03-10T11:44:29.803IST"}}},"serviceName":"bigquery.googleapis.com","status":{}},"receiveTimestamp":"2025-03-10T11:44:29.803IST","resource":{"labels":{"project_id":"bmlabs-loggen"},"type":"bigquery_resource"},"severity":"NOTICE","timestamp":"2025-03-10T11:44:29.803IST"},"attributes":{"logging.googleapis.com/timestamp":"2025-03-10T11:44:29.803IST"},"message_id":"19361990627331","messageId":"19361990627331","publish_time":"2025-03-10T11:44:29.803IST","publishTime":"2025-03-10T11:44:29.803IST"},"subscription":"projects/bmlabs-loggen/subscriptions/push-to-sumo"}
 ```
@@ -29,7 +29,7 @@ The Google BigQuery App uses:
 {"queryId":"A","_source":"google-bigquery-metrics","cloud.platform":"gcp_bigquery","priority":"interactive","_metricId":"3F6GF8wrLEJvzydQF-DlQQ","location":"us-central1","raw_metric":"bigquery.googleapis.com/query/count","_sourceName":"Http Input","_sourceCategory":"Labs/google-bigquery-metrics","_contentType":"Carbon2","Statistic":"Average","project_id":"prodproject","metric":"query/count","_collectorId":"0000000011113650","_sourceId":"0000000064F1F058","cloud.provider":"gcp","_collector":"Labs - google-bigquery-metrics","max":1,"min":0,"avg":0.0283,"sum":1.5,"latest":0,"count":53}
 ```
 
-### Sample Logs queries
+### Sample logs queries
 
 ```bash title="Created Resources Over Time"
 _sourceCategory=*gcp* logName resource "type":"bigquery_resource"
@@ -41,14 +41,14 @@ _sourceCategory=*gcp* logName resource "type":"bigquery_resource"
 | transpose row _timeslice column project
 ```
 
-### Sample Metric queries
+### Sample metric queries
 ```bash title="In Flight Queries Trend"
 cloud.provider=gcp project_id=* location=* metric=query/count statistic=average 
 | quantize using sum
 | sum by project_id , location
 ```
 
-## Collect Logs for Google BigQuery
+## Collect logs for Google BigQuery
 
 This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google BigQuery App.
 
@@ -62,13 +62,13 @@ The GCP service generates logs which are exported and published to a Google Pub/
 
 ### Configuring collection for GCP
 
-Configuring collection for GCP uses the following process:
+Follow the steps below to configure the collection for GCP:
 
 1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**.
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
 3. Create an export of GCP logs from Google Log Router Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
 
-See the following sections for configuration instructions.
+Refer to the following sections for configuration instructions.
 
 :::note
 Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Logs router.
@@ -144,8 +144,8 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 By default, GCP logs are stored within Cloud Logging, but you can configure Log Router to exclude them as detailed [here](https://cloud.google.com/logging/docs/exclusions#overview) without affecting the export to Sumo Logic as outlined above.
 :::
 
-## Collecting Metric for the Google Cloud Load Balancer app
-For metric collection in Sumo Logic use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
+## Collecting metrics for the Google Cloud Load Balancer app
+For metrics collection in Sumo Logic, use the [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
 
 1. Setup the [Google Service Account](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
 1. [Setup a GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Big Query** as the service from dropdown to get the Google cloud function metrics.
@@ -167,7 +167,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-See an overview of queries, projects, and operations in Google BigQuery. Monitor query request location, project by billing and latency. 
+See an overview of queries, projects, and operations in Google BigQuery. Monitor query request location, project by billing, and latency. 
 
 <img src={useBaseUrl('img/integrations/google/Google-Bigquery-Overview.png')} alt="Google BigQuery dashboards" />
 
@@ -180,7 +180,7 @@ See information about Google BigQuery operations, including an operations breakd
 
 ### Queries
 
-See information about queries in Google BigQuery, including billed GBs, latency, errors and query failures.
+See information about queries in Google BigQuery, including billed GBs, latency, errors, and query failures.
 
 <img src={useBaseUrl('img/integrations/google/Google-Bigquery-Queries.png')} alt="Google BigQuery dashboards" />
 
@@ -216,7 +216,7 @@ See information about users  in Google BigQuery, including query operations, bil
 <img src={useBaseUrl('img/integrations/google/Google-Bigquery-Users.png')} alt="Google BigQuery dashboards" />
 
 
-### Query and Job Performance
+### Query and job performance
 
  See information about query execution times, job throughput, and scanned bytes to monitor performance trends and optimize query efficiency.
 
@@ -224,13 +224,13 @@ See information about users  in Google BigQuery, including query operations, bil
 <img src={useBaseUrl('img/integrations/google/Google-BigQuery-Query-and-Job-Performance.png')} alt="Google BigQuery dashboards" />
 
 
-### Slots and Reservation
+### Slots and reservation
 
  See information about slot allocation, reservation usage, and capacity commitments to manage and optimize BigQuery resource utilization.
 
 <img src={useBaseUrl('img/integrations/google/Google-BigQuery-Slots-and-Reservation.png')} alt="Google BigQuery dashboards" />
 
-### Storage and Ingestion
+### Storage and ingestion
 
   See information about data storage, table counts, and ingestion metrics to track data volume, monitor upload performance, and control costs.
 
@@ -254,7 +254,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Google BigQuery Alerts
+### Google BigQuery alerts
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|

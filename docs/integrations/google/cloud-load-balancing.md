@@ -26,11 +26,11 @@ The Sumo Logic app for Google Cloud Load Balancer uses the following logs :
 
 ## Metric types
 
-The Sumo Logic app for Google Cloud Load Balancer uses these [metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-loadbalancing).
+The Sumo Logic app for Google Cloud Load Balancer uses the following three [metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-loadbalancing):
 
-- Global External - Metric for this type are of the format "https/metric_name"
-- Regional External - Metric for this type are of the format "https/external/regional/metric_name"
-- Internal - Metric for this type are of the format “https/internal/metric_name”
+- **Global External**. Metrics for this type are of the format "https/metric_name".
+- **Regional External**. Metrics for this type are of the format "https/external/regional/metric_name".
+- **Internal**. Metric for this type are of the format “https/internal/metric_name”.
 
 ### Sample log messages
 
@@ -165,8 +165,8 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 By default, GCP logs are stored within Cloud Logging, but you can configure Log Router to exclude them as detailed [here](https://cloud.google.com/logging/docs/exclusions#overview) without affecting the export to Sumo Logic as outlined above.
 :::
 
-## Collecting Metric for the Google Cloud Load Balancer app
-For metric collection in Sumo Logic use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
+## Collecting metrics for the Google Cloud Load Balancer app
+For metrics collection in Sumo Logic, use the [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
 
 1. Setup the [Google Service Account](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
 1. [Setup a GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Cloud Load Balancer** as the service from dropdown to get the Google cloud function metrics.
@@ -185,7 +185,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-Under the installed app folder you will see different folders for different type of Application load balancer namely - 
+Under the installed app folder you will see different folders for different types of Application load balancers named as follows: 
 - Global External
 - Internal
 - Regional External
@@ -216,16 +216,16 @@ See information about the status of requests in Google Cloud Load Balancing, inc
 <img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-status-analysis.png')} alt="Google Load Balancing dashboards" />
 
 ### Bytes count
-This dashboard help you monitor Byte Count between client- load balancer and load balancer - backend. You can monitor total bytes, average bytes and trend for request and response.
+This dashboard helps you monitor the Byte Count between the client-load balancer and load balancer-backend. You can monitor total bytes, average bytes, and trends for request and response.
 <img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-bytes-count.png')} alt="Google Load Balancing dashboards" />
 
 ### Latency
-This dashboard helps you monitor average latency between client- load balancer and load balancer - backend. You can also monitor latency by response code, latency trends and latency by load balancer.
+This dashboard helps you monitor the average latency between the client-load balancer and load balancer-backend. You can also monitor latency by response code, latency trends, and latency by load balancer.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-latency.png')} alt="Google Load Balancing dashboards" />
 
 ### Requests
-This dashboard helps you monitor total request count between client- load balancer and load balancer - backend. You can also monitor request count by response code, response code by backends, and trends for different response code classes - 2x, 3xx, 4xx and 5xx
+This dashboard helps you monitor the total request count between the client-load balancer and load balancer-backend. You can also monitor request count by response code, response code by backends, and trends for different response code classes - 2x, 3xx, 4xx, and 5xx.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-requests.png')} alt="Google Load Balancing dashboards" />
 
