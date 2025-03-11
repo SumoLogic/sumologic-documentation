@@ -26,39 +26,9 @@ This app is tested with the following Oracle versions:
 
 This section provides instructions for configuring logs and metrics collection for the Sumo Logic app for the Oracle.
 
-### Step 1: Configure Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-:::note
-This step is not needed if you are using the application components solution terraform script.
-:::
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using Oracle in a Kubernetes environment, create the fields:
-
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-* `pod_labels_db_cluster_address`
-* `pod_labels_db_cluster_port`
-
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using Oracle in a non-Kubernetes environment, create the fields:
-
+As part of the app installation process, the following fields will be created by default:
 * `component`
 * `environment`
 * `db_system`
@@ -66,8 +36,15 @@ If you're using Oracle in a non-Kubernetes environment, create the fields:
 * `db_cluster_address`
 * `db_cluster_port`
 
-</TabItem>
-</Tabs>
+Additionally, if you are using Oracle in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 
 ### Step 2: Configure Oracle Logs and Metrics Collection  
@@ -252,27 +229,8 @@ annotations:
 2. The Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
 
-**Add an FER to normalize the fields in Kubernetes environments**
-
-This step is not needed if you're using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-1. Click the **+Add** button on the top right of the table.
-1. The **Add Field Extraction Rule** form will appear. Enter the following options:
-   1. **Rule Name**. Enter the name as **App Observability - database**.
-   2. **Applied At**. Choose **Ingest Time**.
-   3. **Scope**. Select **Specific Data**.
-   4. **Scope**: Enter the following keyword search expression.
-   ```sql
-   pod_labels_environment=* pod_labels_component=database pod_labels_db_cluster=* pod_labels_db_system=*
-   ```
-   5. **Parse Expression**. Enter the following parse expression.
-   ```sql
-   if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-   | pod_labels_component as component
-   | pod_labels_db_system as db_system
-   | if(!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
-   ```
-1. Click **Save** to create the rule.
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, a Field Extraction Rule named  **AppObservabilityOracleDatabaseFER** is automatically created for Database Application Components.
+<br/>
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -445,9 +403,20 @@ At this point, Telegraf should start collecting the Oracle metrics and forward t
 </TabItem>
 </Tabs>
 
-## Oracle Alerts
+## Create monitors for Oracle app
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Oracle databases are available and performing as expected. These alerts are built, based on logs and metrics datasets, have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Oracle cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [Oracle Alerts](/docs/integrations/databases/oracle#oracle-alerts).
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+:::note
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Oracle Alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
+:::
+
+### Oracle alerts
 
 | Alert Type (Metrics/Logs) | Alert Name    | Alert Description    | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:------------------|:-------------|:----------------|:-----------------|:-----------------|:-------------------|
@@ -474,92 +443,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 | Metrics | Oracle - User Limit Critical | This alert fires when concurrent user sessions usage is over 90% | Critical | >=90 | < 90 |
 | Metrics | Oracle - User Limit Warning | This alert fires when concurrent user sessions usage is over 80% | Warning | >=80 | < 80 |
 
-## Installing Oracle Monitors
 
-* To install these alerts, you need to have the **Manage Monitors** role capability.
-* Alerts can be installed by either importing a JSON file or a Terraform script.
-
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Oracle/Oracle.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Oracle/Oracle.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Oracle clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=oracle` with `<Your Custom Filter>`.
-
-Custom filter examples:
-
-1. For alerts applicable only to a specific cluster, your custom filter would be `db_cluster=oracle-prod.01`.
-2. For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be,`db_cluster=oracle-prod*`.
-3. For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=oracle-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
-4. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-5. Click **Add**.
-6. Click Import and then copy-paste the above JSON to import monitors.
-
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Oracle folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
-
-### Method B: Using a Terraform script
-
-1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**.
-3. **Download the Sumo Logic Terraform package for Oracle alerts**. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Oracle). You can either download it through the “git clone” command or as a zip file.
-4. **Alert Configuration**. After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/**. Edit the **Oracle.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
-   ```bash
-   access_id   = "<SUMOLOGIC ACCESS ID>"
-   access_key  = "<SUMOLOGIC ACCESS KEY>"
-   environment = "<SUMOLOGIC DEPLOYMENT>"
-   ```
-   The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable **’oracle_data_source’**. Custom filter examples:
-      1. A specific cluster ‘`db_cluster=oracle.prod.01`’.
-      2. All clusters in an environment ‘`environment=prod`’.
-      3. For alerts applicable to all clusters that start with oracle-prod, your custom filter would be: ‘`db_cluster=qracle-prod*`’.
-      4. For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=oracle-1` and `environment=prod`. (This assumes you have set the optional environment tag while configuring collection).
-
-   All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
-
-   By default, the monitors are configured in a monitor folder called **Oracle**, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `Oracle.auto.tfvars` file.
-
-   If you would like the alerts to send email or connection notifications, configure these in the file `Oracle_notifications.auto.tfvars`. For configuration examples, refer to the next section.
-5. **Email and Connection Notification Configuration Examples**. Modify the file **Oracle_notifications.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
-```bash title="Pagerduty Connection Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email Notifications Example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-6. **Install the Alerts**.
-    1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/` and run `terraform init`. This will initialize Terraform and will download the required components.
-    2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
-    3. Run `terraform apply`.
-7. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
-
-There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 
 ## Performance Metrics Script Setup
 
