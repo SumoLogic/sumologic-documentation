@@ -137,19 +137,7 @@ The below tables displays the response for each text box in this section.
   * Use regex `.*` for auto-subscribing all log groups.
  :::
 
-## Step 9: Sumo Logic Root Cause Explorer Sources
-
-The below tables displays the response for the text box in this section.
-
-| Prompt | Guideline |
-|:--|:--|
-| Select the Sumo Logic Root Cause Explorer Source | <ul><li>**Inventory Source** - Creates a Sumo Logic Inventory Source used by Root Cause Explorer. The AWS Inventory Source collects the inventory of AWS resources in your AWS account, such as EC2 and RDS instances, including all metadata and tags applied to those resources. We use this data to construct a topology of resources, such as which resource talks to or depends upon which other resources, and so on.</li><li>**X-Ray Source** - Creates a Sumo Logic AWS X-Ray Source used by Root Cause Explorer. The AWS X-Ray source collects the AWS X-Ray service graph, as well as service-level metrics such as latency, throughput, and error rate. The service graph allows us to figure out which service depends on which other services.</li><li>**Both** - Install both Inventory and Xray sources.</li><li>**None** - Skips installation of both sources.</li></ul> |
-
-:::important
-The AWS Inventory Source and AWS X-Ray Source are usable only by the Root Cause Explorer and are not exposed anywhere else in the Sumo Logic SaaS Log Analytics Platform. For more information, see [Root Cause Explorer](/docs/observability/root-cause-explorer/). 
-:::
-
-## Step 10: Sumo Logic AWS ELB Classic Log Source
+## Step 9: Sumo Logic AWS ELB Classic Log Source
 
 The below tables displays the response for each text box in this section.
 
@@ -161,7 +149,7 @@ The below tables displays the response for each text box in this section.
 | AWS S3 Bucket Name | If you selected "No" to create a new source above, skip this step. Provide a name of an existing S3 bucket name where you would like to store ELB Classic logs. If this is empty, a new bucket will be created in the region. |
 | Path Expression for the Existing  ELB Classic logs | This is required in case the above existing bucket is already configured to receive ELB Classic access logs. If this is blank, Sumo Logic will store logs in the path expression: `classicloadbalancing/AWSLogs/*` |
 
-## Step 11: App Installation and Sharing
+## Step 10: App Installation and Sharing
 
 The below tables displays the response for each text box in this section.
 
@@ -170,7 +158,7 @@ The below tables displays the response for each text box in this section.
 | Location where you want the App to be Installed | <ul><li>**Personal Folder** - Installs App in user's Personal folder.</li><li>**Admin Recommended Folder** - Installs App in Admin Recommended Folder</li></ul> |
 | Do you want to share App with whole organization | <ul><li>**True** - Installed App will have view permission to all members of the organization. </li><li>**False** - Installed App will be visible only to user installing the solution.</li></ul> |
 
-## Step 12: Create stack
+## Step 11: Create stack
 
 1. Under **Capabilities and transforms**, click each checkbox.<br/><img src={useBaseUrl('img/observability/CFT_Capabilities_Transforms.png')} style={{border: '1px solid gray'}} alt="CFT_Capabilities_Transforms" width="800"/>
 1. Click **Create Stack**.
