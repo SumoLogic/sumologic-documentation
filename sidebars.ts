@@ -1094,6 +1094,19 @@ module.exports = {
             'manage/security/saml/view-saml-debug-information',
           ]
         },
+        {
+          type: 'category',
+          label: 'SCIM Provisioning',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/security/scim/index'},
+          items: [
+            'manage/security/scim/about-scim-provisioning',
+            'manage/security/scim/provision-from-microsoft-entra-id',
+            'manage/security/scim/provision-from-okta',
+            'manage/security/scim/provision-from-onelogin',
+          ]
+        },
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
