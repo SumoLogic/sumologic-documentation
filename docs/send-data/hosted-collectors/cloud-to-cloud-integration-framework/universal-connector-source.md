@@ -417,8 +417,11 @@ The syntax for this function requires a timestamp format as a single argument. S
 | Template Example                                                    | Output                                 |
 | :------------------------------------------------------------------ | :------------------------------------- |
 | `{{ .WindowStartUTC "2006-01-02T15:04:05Z" }}`                      | `2024-03-07T20:15:56Z`                 |
+| `{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ssZ" }}`                      | `2024-03-07T20:15:56Z`                 |
 | `{{ .WindowStartUTC "2006-01-02T15:04:05.999999Z07:00" }}`          | `2024-03-07T20:15:56.905571Z`          |
+| `{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}`               | `2024-03-07T20:15:56.905571Z`          |
 | `greaterThan:{{ .WindowStartUTC "2006-01-02T15:04:05.999Z07:00" }}` | `greaterThan:2024-03-07T20:15:56.905Z` |
+| `greaterThan:{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}`      | `greaterThan:2024-03-07T20:15:56.905Z` |
 
 ### WindowStartLocation
 
@@ -437,8 +440,11 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 | Template Example                                                                         | Output                                      |
 | :--------------------------------------------------------------------------------------- | :------------------------------------------ |
 | `{{ .WindowStartLocation "US/Eastern" "2006-01-02T15:04:05Z" }}`                         | `2024-03-07T15:15:56-05:00`                 |
+| `{{ .WindowStartLocation "US/Eastern" "yyyy-MM-ddTHH:mm:ssZ" }}`                         | `2024-03-07T15:15:56-05:00`                 |
 | `{{ .WindowStartLocation "US/Pacific" "2006-01-02T15:04:05.999999Z07:00" }}`             | `2024-03-07T12:15:56.905-08:00`             |
+| `{{ .WindowStartLocation "US/Pacific" "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}`                  | `2024-03-07T12:15:56.905-08:00`             |
 | `greaterThan:{{ .WindowStartLocation "Europe/Berlin" "2006-01-02T15:04:05.999Z07:00" }}` | `greaterThan:2024-03-07T21:15:56.905+01:00` |
+| `greaterThan:{{ .WindowStartLocation "Europe/Berlin" "yyyy-MM-ddTHH:mm:ss.SSSZ" }}`      | `greaterThan:2024-03-07T21:15:56.905+01:00` |
 
 ### WindowEndUTC
 
@@ -453,10 +459,13 @@ The syntax for this function requires a timestamp format as a single argument. R
 | Template Example                                               | Output                              |
 | :------------------------------------------------------------- | :---------------------------------- |
 | `{{ .WindowEndUTC "2006-01-02T15:04:05Z" }}`                   | `2024-03-07T20:15:56Z`              |
+| `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ssZ" }}`                   | `2024-03-07T20:15:56Z`              |
 | `{{ .WindowEndUTC "2006-01-02T15:04:05.999999Z07:00" }}`       | `2024-03-07T20:15:56.905571Z`       |
+| `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}`            | `2024-03-07T20:15:56.905571Z`       |
 | `{{ .WindowEndUTC "epoch" }}`                                  | `1709842556`                        |
 | `{{ .WindowEndUTC "epochMilli" }}`                             | `1709842556000`                     |
 | `lessThan:{{ .WindowEndUTC "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T20:15:56.905Z` |
+| `lessThan:{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}`      | `lessThan:2024-03-07T20:15:56.905Z` |
 
 ### WindowEndLocation
 
@@ -475,12 +484,15 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 | Template Example                                                                    | Output                                   |
 | :---------------------------------------------------------------------------------- | :--------------------------------------- |
 | `{{ .WindowEndLocation "US/Eastern" "2006-01-02T15:04:05Z" }}`                      | `2024-03-07T15:15:56-05:00`              |
+| `{{ .WindowEndLocation "US/Eastern" "yyyy-MM-ddTHH:mm:ssZ" }}`                      | `2024-03-07T15:15:56-05:00`              |
 | `{{ .WindowEndLocation "US/Pacific" "2006-01-02T15:04:05.999999Z07:00" }}`          | `2024-03-07T12:15:56.905-08:00`          |
+| `{{ .WindowEndLocation "US/Pacific" "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}`               | `2024-03-07T12:15:56.905-08:00`          |
 | `lessThan:{{ .WindowEndLocation "Europe/Berlin" "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T21:15:56.905+01:00` |
+| `lessThan:{{ .WindowEndLocation "Europe/Berlin" "yyyy-MM-ddTHH:mm:ss.SSSZ" }}`      | `lessThan:2024-03-07T21:15:56.905+01:00` |
 
 ## Timestamp Formatting
 
-The source uses the the [Go programming language timestamp formatting](https://go.dev/src/time/format.go). See the table below for references and examples.
+The source uses the the [Go programming language timestamp formatting](https://go.dev/src/time/format.go) and the Human readable timestamp formatting. See the table below for references and examples.
 
 :::sumo[Best Practice]
 We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO) as a quick way to locally test timestamp parsing with a format before configuring the source.
@@ -488,39 +500,41 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 
 ### Format Reference
 
-| Date Format                                 | Reference Value                                                       |
-| :------------------------------------------ | :-------------------------------------------------------------------- |
-| Year                                        | `2006`                                                                |
-| Month Full Name                             | `January`                                                             |
-| Month Abbreviated Name                      | `Jan`                                                                 |
-| Month Zero Leading Number                   | `01`                                                                  |
-| Month Number                                | `1`                                                                   |
-| Day Zero Leading Number                     | `02`                                                                  |
-| Day Number                                  | `2`                                                                   |
-| Day Weekday Full Name                       | `Monday`                                                              |
-| Day Weekday Abbreviated Name                | `Mon`                                                                 |
-| 24 Hour Zero Leading Number                 | `15`                                                                  |
-| 12 Hour Zero Leading Number                 | `03`                                                                  |
-| 12 Hour Number                              | `3`                                                                   |
-| Minute Zero Leading Number                  | `04`                                                                  |
-| Minute Number                               | `4`                                                                   |
-| Second Zero Leading Number                  | `05`                                                                  |
-| Second Number                               | `5`                                                                   |
-| Fractional Seconds                          | `.999` Milliseconds, `.999999` Microseconds, `.999999999` Nanoseconds |
-| AM/PM Uppercase                             | `PM`                                                                  |
-| AM/PM Lowercase                             | `pm`                                                                  |
-| Timezone Offset without Colon Use Z for UTC | `Z0700`                                                               |
-| Timezone Offset with Colon Use Z for UTC    | `Z07:00`                                                              |
-| Timezone Offset without Colon               | `-0700`                                                               |
-| Timezone Offset with Colon                  | `-07:00`                                                              |
-| Timezone Abbreviated Name                   | `MST`                                                                 |
+| Date Format                                 | Reference Value                                                       | Human Readable Referencce Value                                        |
+| :------------------------------------------ | :-------------------------------------------------------------------- | :--------------------------------------------------------------------- |
+| Year                                        | `2006`                                                                | `yyyy`                                                                 |
+| Month Full Name                             | `January`                                                             | `-`                                                                    |
+| Month Abbreviated Name                      | `Jan`                                                                 | `MMM`                                                                  |
+| Month Zero Leading Number                   | `01`                                                                  | `MM`                                                                   |
+| Month Number                                | `1`                                                                   | `-`                                                                    |
+| Day Zero Leading Number                     | `02`                                                                  | `dd`                                                                   |
+| Day Number                                  | `2`                                                                   | `-`                                                                    |
+| Day Weekday Full Name                       | `Monday`                                                              | `-`                                                                    |
+| Day Weekday Abbreviated Name                | `Mon`                                                                 | `-`                                                                    |
+| 24 Hour Zero Leading Number                 | `15`                                                                  | `HH`                                                                   |
+| 12 Hour Zero Leading Number                 | `03`                                                                  | `-`                                                                    |
+| 12 Hour Number                              | `3`                                                                   | `-`                                                                    |
+| Minute Zero Leading Number                  | `04`                                                                  | `mm`                                                                   |
+| Minute Number                               | `4`                                                                   | `-`                                                                    |
+| Second Zero Leading Number                  | `05`                                                                  | `ss`                                                                   |
+| Second Number                               | `5`                                                                   | `-`                                                                    |
+| Fractional Seconds                          | `.999` Milliseconds, `.999999` Microseconds, `.999999999` Nanoseconds | `.SSS` Milliseconds, `.SSSSSS` Microseconds, `.SSSSSSSSS` Nanoseconds` |
+| AM/PM Uppercase                             | `PM`                                                                  | `a`                                                                    |
+| AM/PM Lowercase                             | `pm`                                                                  | `aa`                                                                   |
+| Timezone Offset without Colon Use Z for UTC | `Z0700`                                                               | `Z`                                                                    |
+| Timezone Offset with Colon Use Z for UTC    | `Z07:00`                                                              | `Z`                                                                    |
+| Timezone Offset without Colon               | `-0700`                                                               | `-HHmm`                                                                |
+| Timezone Offset with Colon                  | `-07:00`                                                              | `-HH:mm`                                                               |
+| Timezone Abbreviated Name                   | `MST`                                                                 | `zzz`                                                                  |
 
 ### Format Examples
 
 | Standard              | Timestamp in Log                 | Timestamp Format                      |
 | :-------------------- | :------------------------------- | :------------------------------------ |
 | RFC 3339              | `2024-02-01T16:07:57Z`           | `2006-01-02T15:04:05Z07:00`           |
+| RFC 3339              | `2024-02-01T16:07:57Z`           | `yyyy-MM-ddTHH:mm:ssZ`                |
 | RFC 3339 Nano Seconds | `2024-02-01T16:07:57.541468757Z` | `2006-01-02T15:04:05.999999999Z07:00` |
+| RFC 3339 Nano Seconds | `2024-02-01T16:07:57.541468757Z` | `yyyy-MM-ddTHH:mm:ss.SSSSSSSSSZ`      |
 | Epoch                 | `1706803677`                     | `epoch`                               |
 | Epoch in Milliseconds | `1706803677000`                  | `epochMilli`                          |
 
