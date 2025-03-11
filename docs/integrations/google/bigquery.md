@@ -167,23 +167,9 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-See an overview of queries, projects, and operations in Google BigQuery.
+See an overview of queries, projects, and operations in Google BigQuery. Monitor query request location, project by billing and latency. 
 
 <img src={useBaseUrl('img/integrations/google/Google-Bigquery-Overview.png')} alt="Google BigQuery dashboards" />
-
-**Query Request Locations.** Shows the number of query requests in the last 24 hours and their location on a map.
-
-**Top Projects by Billed GB.** Shows the top projects based on total billed gigabytes in the last 24 hours on a column graph.
-
-**Operations Over Time.** Shows operations over time in the last 24 hours on a column graph.
-
-**Top 10 Queries by Latency(s).** Shows top 10 queries based on latency in the last 24 hours on a table.
-
-**Top 10 Queries by Billed GB.** Shows top 10 queries based on billed gigabytes in the last 24 hours on a table.
-
-**Top 10 Users by Billed GB.** Shows top 10 users based on billed gigabytes in the last 24 hours on a table.
-
-**Operations Breakdown.** Shows a count of all operations in the last 24 hours on a pie graph.
 
 
 ### Management
@@ -192,36 +178,9 @@ See information about Google BigQuery operations, including an operations breakd
 
 <img src={useBaseUrl('img/integrations/google/Google-Bigquery-mgmt.png')} alt="Google BigQuery dashboards" />
 
-**Operations.** Shows a count of all operations in the last 24 hours on a pie graph.
-
-**Dataset Service Operations Over Time.** Shows the number of dataset service operations and errors over time in the last 24 hours on a column graph.
-
-**Operations by Project.** Shows trends in operations by project in the last 24 hours on a line graph.
-
-**Table Service Operations Over Time.** Shows the number of table service operations and errors over time in the last 24 hours on a line graph.
-
-**Operation Failures by Project.** Shows trends operation failures by project in the last 24 hours on a line graph.
-
-**Operation Failure Percentage.** Shows the percentage of operations that fail in the last 24 hours.
-
-**Recent Operation Failures.** Shows a table with recent operations that failed in the last 24 hours.
-
-**Failed Operation Locations.** Shows the location of failed operations in the last 24 hours on a world map.
-
-**Table Service Operation Error Outliers.** Shows the number of table service operation error outliers in the last 24 hours on a column graph.
-
-**Dataset Service Operation Error Outliers.** Shows the number of dataset service operation error outliers in the last 24 hours on a column graph.
-
-**Authorization Failures Over Time.** Shows the number of total authorization failures over time in the last 24 hours on a column graph.
-
-**Recent Authorization Failures.** Shows a table with recent authorizations that failed in the last 24 hours.
-
-**Location of Authorization Failures.** Shows the location of failed operations in the last 24 hours on a world map.
-
-
 ### Queries
 
-See information about queries in Google BigQuery, including billed GBs, latency, and errors.
+See information about queries in Google BigQuery, including billed GBs, latency, errors and query failures.
 
 <img src={useBaseUrl('img/integrations/google/Google-Bigquery-Queries.png')} alt="Google BigQuery dashboards" />
 
@@ -257,29 +216,25 @@ See information about users  in Google BigQuery, including query operations, bil
 <img src={useBaseUrl('img/integrations/google/Google-Bigquery-Users.png')} alt="Google BigQuery dashboards" />
 
 
-**Location of Users Executing Queries.** Shows the number of users executing queries in the last 24 hours and their location on a map.
+### Query and Job Performance
 
-**User Management Operations.** Shows the number of user management operations in the last 24 hours on a column graph.
+ See information about query execution times, job throughput, and scanned bytes to monitor performance trends and optimize query efficiency.
 
-**Top 10 Users by Query Executions.** Shows a table with top 10 users based on query executions in the last 24 hours.
 
-**Top 10 Users by Billed GB.** Shows a table with top 10 users based on billed gigabytes in the last 24 hours.
+<img src={useBaseUrl('img/integrations/google/Google-BigQuery-Query-and-Job-Performance.png')} alt="Google BigQuery dashboards" />
 
-**Top 10 Users by Latency (s).** Shows a table with top 10 users based on latency in the last 24 hours.
 
-**Query Executions by User Over Time.** Shows trends in query executions based on users over time in the last 24 hours on a line graph.
+### Slots and Reservation
 
-**Billed GB by User Over Time.** Shows trends in billed gigabytes based users over time in the last 24 hours on a line graph.
+ See information about slot allocation, reservation usage, and capacity commitments to manage and optimize BigQuery resource utilization.
 
-**Latency (s) by Users Over Time.** Shows trends in latency based on users over time in the last 24 hours on a line graph.
+<img src={useBaseUrl('img/integrations/google/Google-BigQuery-Slots-and-Reservation.png')} alt="Google BigQuery dashboards" />
 
-**Top 10 Users by Errors.** Shows a table with top 10 users based on errors in the last 24 hours.
+### Storage and Ingestion
 
-**Recent Query Failures by User.** Shows a table with recent query failures in the last 24 hours.
+  See information about data storage, table counts, and ingestion metrics to track data volume, monitor upload performance, and control costs.
 
-**Errors by User Over Time.** Shows trends in errors based on users over time in the last 24 hours on a line graph.
-
-**Location of Users with Errors.** Shows the number of users with errors in the last 24 hours and their location on a map.
+<img src={useBaseUrl('img/integrations/google/Google-BigQuery-Storage-and-Ingestion.png')} alt="Google BigQuery dashboards" />
 
 ## Upgrade/Downgrade the Google BigQuery app (Optional)
 
@@ -292,3 +247,22 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Create monitors for Google BigQuery app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Google BigQuery Alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `BigQuery - Authorization Failure Spike` | This alert is triggered when authorization failures significantly increase (Default 5), indicating potential issues with access control or malicious activity that require further investigation. | Count > 5 | Count < = 5 |
+| `BigQuery - High In-Flight Jobs` | This alert is triggered when the number of in-flight jobs exceeds given value (Default 50), indicating a potentially unusual workload that may require attention. | Count > 50 | Count < = 50 |
+| `BigQuery - High Query Billing` | This alert is triggered when the billed bytes scanned per query statement exceed a defined threshold (Default 5 GB), indicating potential cost overruns in query usage. | Count > 5000000000 | Count < = 5000000000 |
+| `BigQuery - High Query Execution Times` | This alert is triggered when the average query execution time exceeds given value (Default 60 seconds), indicating potential performance issues. | Count > 60 | Count < = 60 |
+| `BigQuery - High Query Failures` | This alert is triggered when there is a high number of query failures in BigQuery (Default 5). | Count > 5 | Count < = 5 |
+| `BigQuery - High Slot Allocation` | This alert is triggered when the number of BigQuery slots allocated exceeds given value (Default 100), indicating potential resource pressure or misconfiguration. | Count > 100 | Count < = 100 |
+| `BigQuery - High Streaming Upload Billing` | This alert is triggered when billed bytes for data uploads exceed a defined threshold (Default 10 GB), indicating potential cost overruns in data ingestion. | Count > 10000000000 | Count < = 10000000000 |
+| `BigQuery - User Privilege Escalation` | This alert is triggered when new admin permissions are granted in BigQuery, indicating potential user privilege escalation. | Count > 0 | Count < = 0 |
