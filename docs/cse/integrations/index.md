@@ -42,8 +42,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/integrations/enrichments-and-indicators')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Icon of two screens" width="40"/><h4>Enrichments and Threat Indicators</h4></a>
-  <p>Learn how enrichments can add threat indicators to show risk level in insights and entities.</p>
+  <a href={useBaseUrl('docs/cse/integrations/enrichments-and-indicators')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Icon of two screens" width="40"/><h4>Enrichments</h4></a>
+  <p>Learn how enrichments can add information to signals, entities, and insights.</p>
   </div>
 </div>
 </div>
