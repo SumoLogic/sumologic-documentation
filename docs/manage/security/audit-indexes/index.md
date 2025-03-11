@@ -29,31 +29,31 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/security/audit-indexes/audit-index"><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Audit Index</h4></a>
+  <a href={useBaseUrl('docs/manage/security/audit-indexes/audit-index')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Audit Index</h4></a>
   <p>Collect event logs in plain text on account activities, such as account management, user activity, scheduled searches, and alerting.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/security/audit-indexes/search-audit-index"><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Search Audit Index</h4></a>
+  <a href={useBaseUrl('docs/manage/security/audit-indexes/search-audit-index')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Search Audit Index</h4></a>
   <p>Collect event logs on search activities in your account.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/security/audit-indexes/audit-event-index"><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Audit Event Index</h4></a>
+  <a href={useBaseUrl('docs/manage/security/audit-indexes/audit-event-index')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Audit Event Index</h4></a>
   <p>Collect event logs in JSON format on account activities for a wide range of actions.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/security/audit-indexes/system-event-index"><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>System Event Index</h4></a>
+  <a href={useBaseUrl('docs/manage/security/audit-indexes/system-event-index')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>System Event Index</h4></a>
   <p>Collect event logs in JSON format on system activities.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/security/audit-indexes/documentation-audit-log-definitions"><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Documentation for Audit Log Definitions</h4></a>
+  <a href={useBaseUrl('docs/manage/security/audit-indexes/documentation-audit-log-definitions')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Documentation for Audit Log Definitions</h4></a>
   <p>See Audit Event Log Definitions documentation for audited events.</p>
   </div>
 </div>
