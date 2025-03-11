@@ -492,7 +492,7 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 
 ## Timestamp Formatting
 
-The source uses the the [Go programming language timestamp formatting](https://go.dev/src/time/format.go) and the Human readable timestamp formatting. See the table below for references and examples.
+The source uses the [Go programming language timestamp formatting](https://go.dev/src/time/format.go) and the Human readable timestamp formatting. See the table below for references and examples.
 
 :::sumo[Best Practice]
 We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO) as a quick way to locally test timestamp parsing with a format before configuring the source.
