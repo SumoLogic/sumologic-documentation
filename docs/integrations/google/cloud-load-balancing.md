@@ -185,7 +185,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-Under the installed app folder you will see different folders for differnt type of Application load balancer namely - 
+Under the installed app folder you will see different folders for different type of Application load balancer namely - 
 - Global External
 - Internal
 - Regional External

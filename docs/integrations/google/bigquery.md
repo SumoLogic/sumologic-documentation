@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Google BigQuery App helps you monitor data and activity in your BigQuery data warehouse. The preconfigured dashboards provide insight into the projects, operations, queries, job performance, user management operations, user activities, storage, slots and billed GBs in BigQuery using audit logs and metrics.
 
-## Log abd Metric types
+## Log and Metric types
 
 The Google BigQuery App uses:
 * [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including BigQuery.
