@@ -14,12 +14,12 @@ Google Cloud Load Balancing is Google’s load balancing service for Google Clou
 - Regional External
 - Internal
 
-Each type of Application load balancer has its own set of log structure and metrics. Thus the app is divided into 3 folders,each folder having respective dashboards for each type.
-The preconfigured dashboards provide insight into request locations and volume, response codes, and request and response data by load balancer with help for logs and metrics.
+Each type of Application load balancer has its own set of log structure and metrics. To accommodate this, the app is organized into three folders, each containing dashboards specific to the respective load balancer type.
+The preconfigured dashboards provide insights into request locations and volume, response codes, and request and response data by load balancer with help for logs and metrics.
 
 ## Log types
 
-The Sumo Logic app for Google Cloud Load Balancer uses the following logs : 
+The Sumo Logic app for Google Cloud Load Balancer uses the following logs:
 - [Global External logging](https://cloud.google.com/load-balancing/docs/https/https-logging-monitoring)
 - [Regional External logging](https://cloud.google.com/load-balancing/docs/https/https-reg-logging-monitoring)
 - [Internal logging](https://cloud.google.com/load-balancing/docs/l7-internal/monitoring#logs_sampling_and_collection)
@@ -171,8 +171,8 @@ By default, GCP logs are stored within Cloud Logging, but you can configure Log 
 ## Collecting metrics for the Google Cloud Load Balancer app
 For metrics collection in Sumo Logic, use the [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
 
-1. Setup the [Google Service Account](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
-1. [Setup a GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Cloud Load Balancer** as the service from dropdown to get the Google cloud function metrics.
+1. Set up the [Google Service Account](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
+1. Set up a [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source, select **Cloud Load Balancer** as the service from dropdown to get the Google Cloud function metrics.
 
 ## Install the Google Cloud Load Balancing app
 
@@ -188,7 +188,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-Under the installed app folder you will see different folders for different types of Application load balancers named as follows: 
+Under the installed app folder, you will see different folders for different types of Application load balancers named as follows: 
 - Global External
 - Internal
 - Regional External
@@ -196,7 +196,7 @@ Under the installed app folder you will see different folders for different type
 Each folder has its own set of dashboard based on respective logs and metrics.
 
 :::note
-For log based dashboards the dashboard filter are based metric values. In metrics load balancer name for regional external and internal load balancer is prefixed with "URL_MAP". Panel queries are adjusted for this and filter works accordingly.
+For log-based dashboards, filters are based metric values. In metrics load balancers, the names for regional external and internal load balancer are prefixed with "URL_MAP". Panel queries are adjusted accordingly, ensuring filters functions as expected.
 :::
 
 ### Global External - Overview
@@ -317,7 +317,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 ### GCP load balancer alerts
 These alerts are metric based and will work for all three type of Application load balancers. 
 
-| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+| Alert Name  | Alert Description and Conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
 | `GCP Application Load Balancer - High 4XX Errors` | This alert fires where there are too many HTTP requests (default >5%) with a response status of 4xx within an interval of 5 minutes are detected for any type of application load balancer. | Count >= 5 | Count < 5 |
 | `GCP Application Load Balancer - High 5XX Errors` | This alert fires where there are too many HTTP requests (default >5%) with a response status of 5xx within an interval of 5 minutes are detected for any type of application load balancer. | Count >= 5 | Count < 5 |
