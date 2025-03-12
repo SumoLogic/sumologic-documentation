@@ -9,6 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This article describes how to provision users into Sumo Logic from Okta.
 
+## Prerequisites
+
+### Set up SAML
+
+You must [set up SAML for single sign-on](/docs/manage/security/saml/set-up-saml) in your Sumo Logic instance. This creates a single sign-on URL (Assertion Consumer URL) and entity ID in your Sumo Logic [SAML configuration](/docs/manage/security/saml/set-up-saml/#review-saml-configuration). You will copy these values so they can be used in the new provisioning app you create in Okta.
+
 ## Configure provisioning from Okta
 
 ### Step 1: Create the app
@@ -23,7 +29,9 @@ This article describes how to provision users into Sumo Logic from Okta.
 ### Step 2: Configure provisioning
 
 1. Click the **General** tab for the app.
-1. In the upper-right corner of the **App Settings** dialog for the app, click **Edit**. 
-1. For **Provisioning** select **SCIM** and click **Save**.<br/><img src={useBaseUrl('img/security/provision-okta-scim-provisioning-setting.png')} alt="SCIM provisioning setting for the app" style={{border: '1px solid gray'}} width="800" />
+1. Click **Edit** in the upper-right corner of the **App Settings** dialog for the app. 
+1. For **Provisioning**, select **SCIM**.<br/><img src={useBaseUrl('img/security/provision-okta-scim-provisioning-setting.png')} alt="SCIM provisioning setting for the app" style={{border: '1px solid gray'}} width="800" />
+1. Click **Save**. A **Provisioning** tab appears for the app.
+1. Click the **Provisioning** tab, **Integration** in the left menu, and click **Edit**.
 1. 
 
