@@ -437,3 +437,19 @@ If you need to follow HIPAA compliance, it is important to explicitly communicat
 You can request retention period times different from those declared in the tables above, as long as the retention period requested is greater than 1 day yet less than 5000 days.
 
 In order to do that, please open a [Support ticket](/docs/get-started/help#support) with your request.
+
+## Static IP Addresses
+
+The following table provides the static IP addresses used for Cloud SOAR by deployment. These are provided in case you want to explicitly allow the IP addresses on the integrations you install.
+
+| Deployment | Static IP addresses |
+|:------------|:----------|
+| AU         | 13.237.251.71 |
+| CA         | 15.222.181.69 |
+| DE         | 18.184.129.195 |
+| EU         | 63.34.175.126 |
+| IN         | 3.6.125.57 |
+| JP         | 18.178.171.229 |
+| KR         | 43.202.239.158  |
+| US1        | 3.220.183.150 |
+| US2        | 44.241.8.12 |
