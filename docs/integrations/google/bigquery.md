@@ -176,36 +176,13 @@ See an overview of queries, projects, and operations in Google BigQuery. Monitor
 
 See information about Google BigQuery operations, including an operations breakdown, dataset service and table service operations over time, operations and operations failures by project, location, and over time.
 
-<img src={useBaseUrl('img/integrations/google/Google-Bigquery-mgmt.png')} alt="Google BigQuery dashboards" />
+<img src={useBaseUrl('img/integrations/google/Google-Bigquery-Management.png')} alt="Google BigQuery dashboards" />
 
 ### Queries
 
 See information about queries in Google BigQuery, including billed GBs, latency, errors, and query failures.
 
 <img src={useBaseUrl('img/integrations/google/Google-Bigquery-Queries.png')} alt="Google BigQuery dashboards" />
-
-
-**Location of Query Requests.** Shows the number of query requests in the last 24 hours and their location on a map.
-
-**Billed GB, Latency (s), Errors Over Time.** Shows trends in billed gigabytes and latency over time in the last 24 hours on a line graph. Also shows the number of errors over time in the last 24 hours on a column graph.
-
-**Query Statistics by Project.** Shows a table with query statistics based on projects in the last 24 hours.
-
-**Billed GB Over Time.** Shows trends in billed gigabytes over time in the last 24 hours on a line graph.
-
-**Top 10 Queries by Billed GB.** Shows a table with top 10 queries based on billed gigabytes in the last 24 hours.
-
-**Latency (s) Over Time.** Shows trends in latency over time in the last 24 hours on a line graph.
-
-**Top 10 Queries by Latency (s).** Shows a table with top 10 queries based on latency in the last 24 hours.
-
-**Errors Over Time.** Shows trends in errors over time in the last 24 hours on a line graph.
-
-**Top 10 Queries by Errors.** Shows a table with top 10 queries based on errors in the last 24 hours.
-
-**Recent Query Failures.** Shows a table with recent query failures in the last 24 hours.
-
-**Location of Failed Executions.** Shows the number of failed executions in the last 24 hours and their location on a map.
 
 
 ### Users

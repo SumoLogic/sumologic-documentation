@@ -152,13 +152,16 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="Google integrations" />
 2. Click **Create Sink**.<br/><img src={useBaseUrl('img/integrations/google/sink.png')} alt="Google integrations" />
 3. As part of **Create logs routing sink**, add the following information.
-  1. Enter a Sink Name. For example, "gce-vm-instance".
+  1. Enter a Sink Name. For example, "gcp-load-balance".
   2. Select "Cloud Pub/Sub" as the **Sink Service**.
   3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
-  4. In **Choose logs to include in sink** section for `resource_type`, replace `"<resource_variable>"` with 
+  4. In **Choose logs to include in sink** section for `resource_type`, use query `resource.type="http_load_balancer" OR resource.type="http_external_regional_lb_rule" OR resource.type="internal_http_lb_rule"`. The three resource type are for different type of load balancer.
+
     - `"http_load_balancer"` - For global external application load balancer.
     - `"http_external_regional_lb_rule"` - For regional external application load balancer.
     - `"internal_http_lb_rule"` - For internal application load balancer.
+
+    You can include resource type which are assciated with the load balancer which need to get monitored.
   5. Click **Create Sync**.
 
 :::note
@@ -191,43 +194,107 @@ Under the installed app folder you will see different folders for different type
 - Regional External
 
 Each folder has its own set of dashboard based on respective logs and metrics.
-Following are the set of dashboards which you will get for each load balancer.
 
 :::note
 For log based dashboards the dashboard filter are based metric values. In metrics load balancer name for regional external and internal load balancer is prefixed with "URL_MAP". Panel queries are adjusted for this and filter works accordingly.
 :::
 
-### Overview
+### Global External - Overview
 
 See an overview of Google Cloud Load Balancing activity, including request locations, browsers and operating systems used, error status codes, requests by load balancer, bytes sent and received, and message severity over time.
 
-<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-overview.png')} alt="Google Load Balancing dashboards" />
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Global-External-Overview.png')} alt="Google Load Balancing dashboards" />
 
 
-### Request Analysis
+### Global External - Request Analysis
 See information about request activity in Google Cloud Load Balancing, including request locations, requests by type over time, requests by load balancer over time, KBs sent and received by number of requests, and total requests by load balancer.
 
 
-<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-request-analysis.png')} alt="Google Load Balancing dashboards" />
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Global-External-Request-Analysis.png')} alt="Google Load Balancing dashboards" />
 
-### Status Analysis
+### Global External - Status Analysis
 See information about the status of requests in Google Cloud Load Balancing, including status codes per project, over time, and by load balancer; location of 4xx and 5xx responses; and 4xx and 5xx responses by load balancer.
 
-<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-status-analysis.png')} alt="Google Load Balancing dashboards" />
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Global-External-Status-Analysis.png')} alt="Google Load Balancing dashboards" />
 
-### Bytes count
-This dashboard helps you monitor the Byte Count between the client-load balancer and load balancer-backend. You can monitor total bytes, average bytes, and trends for request and response.
-<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-bytes-count.png')} alt="Google Load Balancing dashboards" />
+### Global External - Bytes count
+This dashboard help you monitor Byte Count between client- load balancer and load balancer - backend. You can monitor total bytes, average bytes and trend for request and response.
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Global-External-Bytes-Count.png')} alt="Google Load Balancing dashboards" />
 
-### Latency
-This dashboard helps you monitor the average latency between the client-load balancer and load balancer-backend. You can also monitor latency by response code, latency trends, and latency by load balancer.
+### Global External - Latency
+This dashboard helps you monitor average latency between client- load balancer and load balancer - backend. You can also monitor latency by response code, latency trends and latency by load balancer.
 
-<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-latency.png')} alt="Google Load Balancing dashboards" />
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Global-External-Latency.png')} alt="Google Load Balancing dashboards" />
 
-### Requests
-This dashboard helps you monitor the total request count between the client-load balancer and load balancer-backend. You can also monitor request count by response code, response code by backends, and trends for different response code classes - 2x, 3xx, 4xx, and 5xx.
+### Global External - Requests
+This dashboard helps you monitor total request count between client- load balancer and load balancer - backend. You can also monitor request count by response code, response code by backends, and trends for different response code classes - 2x, 3xx, 4xx and 5xx
 
-<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-requests.png')} alt="Google Load Balancing dashboards" />
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Global-External-Requests.png')} alt="Google Load Balancing dashboards" />
+
+### Internal - Overview
+
+See an overview of Google Cloud Load Balancing activity, including request locations, browsers and operating systems used, error status codes, requests by load balancer, bytes sent and received, and message severity over time.
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Internal-Overview.png')} alt="Google Load Balancing dashboards" />
+
+
+### Internal - Request Analysis
+See information about request activity in Google Cloud Load Balancing, including request locations, requests by type over time, requests by load balancer over time, KBs sent and received by number of requests, and total requests by load balancer.
+
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Internal-Request-Analysis.png')} alt="Google Load Balancing dashboards" />
+
+### Internal - Status Analysis
+See information about the status of requests in Google Cloud Load Balancing, including status codes per project, over time, and by load balancer; location of 4xx and 5xx responses; and 4xx and 5xx responses by load balancer.
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Internal-Status-Analysis.png')} alt="Google Load Balancing dashboards" />
+
+### Internal - Bytes count
+This dashboard help you monitor Byte Count between client- load balancer and load balancer - backend. You can monitor total bytes, average bytes and trend for request and response.
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Internal-Bytes-Count.png')} alt="Google Load Balancing dashboards" />
+
+### Internal - Latency
+This dashboard helps you monitor average latency between client- load balancer and load balancer - backend. You can also monitor latency by response code, latency trends and latency by load balancer.
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Internal-Latency.png')} alt="Google Load Balancing dashboards" />
+
+### Internal - Requests
+This dashboard helps you monitor total request count between client- load balancer and load balancer - backend. You can also monitor request count by response code, response code by backends, and trends for different response code classes - 2x, 3xx, 4xx and 5xx
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Internal-Requests.png')} alt="Google Load Balancing dashboards" />
+
+### Regional External - Overview
+
+See an overview of Google Cloud Load Balancing activity, including request locations, browsers and operating systems used, error status codes, requests by load balancer, bytes sent and received, and message severity over time.
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Regional-External-Overview.png')} alt="Google Load Balancing dashboards" />
+
+
+### Regional External - Request Analysis
+See information about request activity in Google Cloud Load Balancing, including request locations, requests by type over time, requests by load balancer over time, KBs sent and received by number of requests, and total requests by load balancer.
+
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Regional-External-Request-Analysis.png')} alt="Google Load Balancing dashboards" />
+
+### Regional External - Status Analysis
+See information about the status of requests in Google Cloud Load Balancing, including status codes per project, over time, and by load balancer; location of 4xx and 5xx responses; and 4xx and 5xx responses by load balancer.
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Regional-External-Status-Analysis.png')} alt="Google Load Balancing dashboards" />
+
+### Regional External - Bytes count
+This dashboard help you monitor Byte Count between client- load balancer and load balancer - backend. You can monitor total bytes, average bytes and trend for request and response.
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Regional-External-Bytes-Count.png')} alt="Google Load Balancing dashboards" />
+
+### Regional External - Latency
+This dashboard helps you monitor average latency between client- load balancer and load balancer - backend. You can also monitor latency by response code, latency trends and latency by load balancer.
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Regional-External-Latency.png')} alt="Google Load Balancing dashboards" />
+
+### Regional External - Requests
+This dashboard helps you monitor total request count between client- load balancer and load balancer - backend. You can also monitor request count by response code, response code by backends, and trends for different response code classes - 2x, 3xx, 4xx and 5xx
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Regional-External-Requests.png')} alt="Google Load Balancing dashboards" />
+
 
 ## Upgrade/Downgrade the Google Cloud Load Balancing app (Optional)
 
@@ -248,6 +315,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 <CreateMonitors/>
 
 ### GCP load balancer alerts
+These alerts are metric based and will work for all three type of Application load balancers. 
 
 | Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
