@@ -161,7 +161,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
     - `"http_external_regional_lb_rule"` - For regional external application load balancer.
     - `"internal_http_lb_rule"` - For internal application load balancer.
 
-    You can include resource type which are assciated with the load balancer which need to get monitored.
+    You can include resource type which are associated with the load balancer which need to get monitored.
   5. Click **Create Sync**.
 
 :::note
