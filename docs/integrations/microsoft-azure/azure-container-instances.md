@@ -16,22 +16,20 @@ For Azure Container Instances, you can collect the following logs and metrics:
 
 * **Audit Logs**. The activity log contains subscription-level events that track operations for each Azure resource as seen from outside that resource. For more details, refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/container-instances/monitor-azure-container-instances#azure-activity-log).
 * **Resource Logs**. Capture container creation, execution, and failure logs. Refer to the [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-monitor#resource-logs) to know about the schema for resource logs.
-* **Metrics**. Metrics for Azure Container Instances are in the following namespaces:
+* **Metrics**. Metrics for Azure Container Instances are in the following namespace:
   * [Microsoft.ContainerInstance/containerGroups](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-containerinstance-containergroups-metrics)
 
-For more information on supported dimensions, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-monitor#metrics).
+For more information on supported dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-monitor#metrics).
 
 ## Setup
 
-Azure service sends monitoring data to Azure Monitor, which can then [stream data to an event hub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
-
-* Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-* Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
-
-You must explicitly enable diagnostic settings for each domain, namespaces, custom topic, and system topic you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
-
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AzureContainerInstances/Logs`, `Azure/AzureContainerInstances/Metrics`.
-
+* Set up application logs collection using fluent-bit sidecar container using the [http output plugin](https://docs.fluentbit.io/manual/1.5/pipeline/outputs/http) and the [tail input plugin](https://docs.fluentbit.io/manual/1.5/pipeline/inputs/tail). You must explicitly enable fluent-bit collection for each container group which you want to monitor.
+* Set up metrics collection using Azure Metrics Source.
+  
+  :::note
+  Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
+  :::
+  
 ### Configure field in field schema
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
@@ -111,39 +109,48 @@ Create the following metrics rules by following the instructions in [Create a me
    | resource_name     | $resourceId._4              |
 
 ### Configure metrics collection
- 
-For metrics collection follow guidelines in [Azue Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/).
- 
-While you configure metrics collection you need to tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
- 
-Also you need to configure namespaces as shown below. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instance-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
+
+:::note
+Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
+:::
+
+In the Sumo Logic Azure Metrics source configuration,
+
+- Tag the location field in the source with correct Azure resource location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
+- Configure namespaces as `Microsoft.ContainerInstance/containerGroups`. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instance-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
 
-1. Add a hosted collector and [HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-2. Create and push a custom image using a <a href="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Dockerfile" target="_blank">Docker file</a> and <a href="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/output_conf.yaml" target="_blank">output_conf.yaml</a> onto a Docker hub.
-3. Use existing resource group or create a new one in Azure.
-4. Update the <a href="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/logging-sidecar-deploy.yaml" target="_blank">**logging-sidecar-deploy.yaml**</a> file with your own application image whose logs you want to collect. In the file we have used nginx application as an example whose log files(access logs and error logs) are created in a shared volume(/var/log/nginx).
-4. Deploy the <a href="/files/logging-sidecar-deploy.yaml" target="_blank">**logging-sidecar-deploy.yaml**</a> Azure template.
-   * parameter - `/fluent-bit/bin/fluent-bit` is fluent-bit executable path.
-   * parameter - `-c /root/output_conf.yaml` is fluent-bit configuration file path.
-      * Inputs parameters in the `output_conf.yaml` file.
-         * **tail**. Read logs command name.
-         * **path**. Log file path from where fluent bit collector is collecting logs.
-      * Outputs parameters in the `output_conf.yaml` file.
-          * **name*. HTTP output collector. By default, the name key will be assigned with *http* as value.
-          * **format**. Data format by which you can send logs to Sumo Logic. By default, the format key will be assigned with *json_lines* as value.
-          * **compress**. Payload compression mechanism. The recommended file type from Sumo Logic is `gzip`.
-          * **match**. Log matching rule.
-          * **host**. Sumo Logic collector host.
-          * **port**. Sumo Logic collector port.
-          * **tls=on**. By default, *on* value will be assigned to enable the TLS support.
-          * **tls.verify**. By default, *off* value will be assigned to disable the certificate validation.
-          * **URI**. Sumo Logic HTTP collector URI.
-          * **json_date_key**. Name of the date field in output.
-          * **header**. X-Sumo-Fields header used to tag fields during logs collection.
+:::note Prerequisite
+Use existing resource group or create a new one for deploying Azure container instances.
+:::
 
-To learn more details on how to deploy azure container instance, refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-quickstart).
+1. Add a hosted collector and [HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
+1. Download and update the [output_conf.yaml](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/output_conf.yaml) file with the following configurations:
+   * Inputs pipeline uses the [tail input plugin](https://docs.fluentbit.io/manual/pipeline/inputs/tail). Update the path parameter value with the pattern specifying a specific log file or multiple ones through the use of common wildcards. 
+      :::info
+      Multiple patterns separated by commas are also allowed.
+      :::
+   * Outputs pipeline uses the [http output plugin](https://docs.fluentbit.io/manual/pipeline/outputs/http). Follow the below steps to update other outputs pipeline parameters:
+      * **format**. Data format by which you can send logs to Sumo Logic. By default, the format key will be assigned with *json_lines*.
+      * **compress**. Payload compression mechanism. By default, the compression is enabled and uses `gzip`.
+      * **host**. Update the host depending on your [Sumo Logic Orgs deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+      * **tls**. This field will be in *on* condition to enable the TLS support. By default, Sumo Logic only supports **tls** in *on* condition.
+      * **tls.verify**. This field will be in *off* condition to disable the certificate validation. By default, Sumo Logic only supports **tls.verify** in *off* condition.
+      * **URI**. Update the `[PrivateKey]` with the path present in the HTTP source endpoint as configured in the Step 1.
+      * **header**. Update the X-Sumo-Fields header and replace the following values to enrich the logs with additional metadata, which helps with panel queries.
+         - `resource_name`. Name of the Azure container instances resource.
+         - `resource_group`. Name of the resource group where the Azure container instances resource is present. Ensure that you use the same resource group created in the prerequisite section.
+         - `subscription_id`. ID associated with a subscription where the Azure container instances resource is present.
+         - `location`. The region to which the Azure container instances resource name belongs to.
+1. Create and push a custom fluentbit image using a [Docker file](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Dockerfile) and [output_conf.yaml](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/output_conf.yaml) to any container repository.
+1. Download and update the [logging-sidecar-deploy.yaml](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/logging-sidecar-deploy.yaml) file with the following configurations:
+   - Update the `location` value with the region where the Azure container instances resource will be deployed.
+   - Update the `name` value with the name of the Azure container instances resource. Ensure that this value is same as the `resource_name` in the `output_conf.yaml` file.
+   - Update the `nginx` container with your own application image whose logs you want to collect. For example, in the `logging-sidecar-deploy.yaml` file we have used nginx application as an example whose log files are created in a shared volume (/var/log/nginx).
+   - In the `fluentbit` container, replace the `{custom-fluentbit-image-path}` with the custom fluentbit image path that you created in the Step 2.
+   - In the `imageRegistryCredentials` property, enter your image repository server, username, and password.
+1. Deploy the [logging-sidecar-deploy.yaml](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/logging-sidecar-deploy.yaml) Azure template, refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-multi-container-yaml#deploy-the-container-group).
 
 #### Activity Logs
 
