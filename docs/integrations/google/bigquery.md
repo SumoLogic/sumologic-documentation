@@ -145,7 +145,7 @@ By default, GCP logs are stored within Cloud Logging, but you can configure Log 
 :::
 
 ## Collecting metrics for the Google Cloud Load Balancer app
-For metrics collection in Sumo Logic, use the [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
+For metrics collection in Sumo Logic, use the [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
 
 1. Set up the [Google Service Account](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
 1. Set up a [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source, select **Big Query** as the service from dropdown to get the Google Cloud function metrics.

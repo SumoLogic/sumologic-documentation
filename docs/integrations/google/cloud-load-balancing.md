@@ -155,13 +155,13 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
   1. Enter a Sink Name. For example, "gcp-load-balance".
   2. Select "Cloud Pub/Sub" as the **Sink Service**.
   3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
-  4. In **Choose logs to include in sink** section for `resource_type`, use query `resource.type="http_load_balancer" OR resource.type="http_external_regional_lb_rule" OR resource.type="internal_http_lb_rule"`. The three resource type are for different type of load balancer.
+  4. In the **Choose logs to include in sink** section for `resource_type`, use query `resource.type="http_load_balancer" OR resource.type="http_external_regional_lb_rule" OR resource.type="internal_http_lb_rule"`. Following are the three resource types for the different types of load balancers:
 
     - `"http_load_balancer"` - For global external application load balancer.
     - `"http_external_regional_lb_rule"` - For regional external application load balancer.
     - `"internal_http_lb_rule"` - For internal application load balancer.
 
-    You can include resource type which are associated with the load balancer which need to get monitored.
+    You can include resource types associated with the load balancer that need to be monitored.
   5. Click **Create Sync**.
 
 :::note
@@ -169,7 +169,7 @@ By default, GCP logs are stored within Cloud Logging, but you can configure Log 
 :::
 
 ## Collecting metrics for the Google Cloud Load Balancer app
-For metrics collection in Sumo Logic, use the [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
+For metrics collection in Sumo Logic, use the [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
 
 1. Set up the [Google Service Account](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
 1. Set up a [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source, select **Cloud Load Balancer** as the service from dropdown to get the Google Cloud function metrics.
@@ -227,7 +227,7 @@ This dashboard helps you monitor average latency between client- load balancer a
 <img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Global-External-Latency.png')} alt="Google Load Balancing dashboards" />
 
 ### Global External - Requests
-This dashboard helps you monitor total request count between client- load balancer and load balancer - backend. You can also monitor request count by response code, response code by backends, and trends for different response code classes - 2x, 3xx, 4xx and 5xx
+This dashboard helps you monitor total request count between client - load balancer and load balancer - backend. You can also monitor request count by response code, response code by backends, and trends for different response code classes - 2x, 3xx, 4xx and 5xx.
 
 <img src={useBaseUrl('img/integrations/google/Google-Cloud-Application-Load-Balancer-Global-External-Requests.png')} alt="Google Load Balancing dashboards" />
 
