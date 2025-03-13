@@ -71,8 +71,15 @@ To configure a Sysdig Secure Source:
 1. **Base URL**. Enter the [Sysdig Secure platform](#base-url) Base URL. For example, `https://api.us2.sysdig.com`.
 1. **Bearer Token**. Enter the Sysdig Secure API token collected from the [Sysdig Secure](#bearer-token) platform. For example, `t3fPdsbxxxxxxxxxp4D6hbi4`.
 1. (Optional) **Filters**. Click the **+Add** button to define the filters you want to associate. Each filter needs a **Field Name** (key) and **Field Value** (value). For key-value pairs, the length is set to 256 characters and the API accepts a maximum length of 1024 characters for the filter.
+1. (Optional) The **Polling Interval** is set for 24 hours by default. You can adjust it upto 168 hours based on your needs.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+Each detailed log will be broken down into two logs, one for packages and one for vulnerabilities based on the size of the messages. These broken down packages and vulnerabilities logs will be tied with `resultId`, `resourceId`, `assetType`, `metadata`, and `stage` seperately and this newly created object will be sent to Sumo Logic.
+- `resultId` and `resourceId` will be collected from the **Runtime Result API**.
+- `assetType`, `metadata`, and `stage` will be collected from the **Result API**.
+:::
 
 ## JSON schema
 
@@ -95,6 +102,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | baseURL | String | Yes | `null` | The Sysdig base URL of your region. | `https://api.us2.sysdig.com` |
 | apiToken | String | Yes | `null` | The API token of your Sysdig account. | `t3fPdsbxxxxxxxxxp4D6hbi4` |
 | filters | Array | No | `null` | An array of key-value pairs to filter the data. For key-value pairs, the length is set to 256 characters and the API accepts a maximum length of 1024 characters for the filter. |  |
+| pollingIntervalRuntimeResultHrs | String | Yes | `24 Hours` | This sets how often the source checks for data. <br/>**Default**: 24 hours<br/>**Minimum**: 24 hours<br/>**Maximum**: 168 hours |  |
 
 ### JSON example
 
