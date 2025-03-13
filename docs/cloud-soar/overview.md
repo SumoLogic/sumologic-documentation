@@ -5,6 +5,7 @@ sidebar_label: Overview
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import StaticIpAddresses from '../reuse/static-ips-automation-service.md';
 
 Cloud SOAR fully automates triage, investigation, and remediation of threats for any security professional. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
 
@@ -437,3 +438,9 @@ If you need to follow HIPAA compliance, it is important to explicitly communicat
 You can request retention period times different from those declared in the tables above, as long as the retention period requested is greater than 1 day yet less than 5000 days.
 
 In order to do that, please open a [Support ticket](/docs/get-started/help#support) with your request.
+
+## Static IP addresses
+
+The following table provides the static IP addresses used for Cloud SOAR by deployment. These are provided in case you want to explicitly allow the IP addresses on the integrations you install.
+
+<StaticIpAddresses/>
