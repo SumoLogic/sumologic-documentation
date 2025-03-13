@@ -76,7 +76,7 @@ To configure a Sysdig Secure Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-Each detailed log will be broken down into two logs, one for packages and one for vulnerabilities based on the size of the messages. These broken down packages and vulnerabilities logs will be tied with `resultId`, `resourceId`, `assetType`, `metadata`, and `stage` seperately and this newly created object will be sent to Sumo Logic.
+Each detailed log will be broken down into two logs, one for packages and one for vulnerabilities based on the size of the messages. These broken down packages and vulnerabilities logs will be tied with `resultId`, `resourceId`, `assetType`, `metadata`, and `stage` separately and this newly created object will be sent to Sumo Logic.
 - `resultId` and `resourceId` will be collected from the **Runtime Result API**.
 - `assetType`, `metadata`, and `stage` will be collected from the **Result API**.
 :::
