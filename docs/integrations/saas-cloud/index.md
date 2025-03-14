@@ -257,6 +257,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/netskope-webtx"><img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="icon" width="40"/><h4>Netskope WebTx</h4></a>
+  <p>Monitor, analyze, and secure your web traffic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/opsgenie"><img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="icon" width="50"/><h4>Opsgenie</h4></a>
   <p>Gain insight into your incidents and event handling operations.</p>
   </div>

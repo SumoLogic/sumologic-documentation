@@ -80,8 +80,9 @@ The following attributes are required:
          * `user-account`. User ID. (Entity type in Cloud SIEM is `user_username`.)
        * **source** (string). User-provided text to identify the source of the indicator. For example, `TAXII2Source`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
+       * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the Cloud SIEM UI. See [View threat indicators in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
+       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the Cloud SIEM UI. See [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).) <br/>Following are valid values:
           * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
           * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
           * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
@@ -114,6 +115,11 @@ When uploading a CSV file with the UI, the format should be the same as used for
 0002,192.0.2.1,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
 ```
 
+:::tip
+* Even if you are not providing values for the optional `actors` and/or `killChain` fields, you must include comma delimiters in the CSV file for where they would normally appear. Otherwise, the file will be rejected during uploading with the error “Indicator data failed to import.”
+* Do not include a header row as the first row of the CSV file. Otherwise, the file will be rejected during uploading with the error “Indicator data failed to import.”
+:::
+
 ### Required attributes
 
 For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v).
@@ -136,7 +142,7 @@ Columns for the following attributes are required in the upload file:
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the Cloud SIEM UI. See [View threat indicators in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
+       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the Cloud SIEM UI. See [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).) <br/>Following are valid values:
           * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
           * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
           * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
