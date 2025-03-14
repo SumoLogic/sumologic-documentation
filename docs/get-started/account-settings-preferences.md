@@ -29,7 +29,7 @@ Under **My Profile**, the following information is displayed:
 
 If you're an Administrator, you can [manage users/roles, change user passwords](/docs/manage/users-roles), and more.
 
-### Change Email address
+### Change email address
 
 1. Access your [Preferences](#accessing-preferences).
 1. Under **My Profile**, click **Change Email**.
