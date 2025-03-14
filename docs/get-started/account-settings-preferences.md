@@ -35,7 +35,7 @@ If you're an Administrator, you can [manage users/roles, change user passwords](
 1. Under **My Profile**, click **Change Email**.
 1. In the dialog that appears, enter your new email address and follow the verification steps.
 
-### Change Password
+### Change password
 
 1. Access your [Preferences](#accessing-preferences).
 1. Under **My Profile**, click **Change Password**.
