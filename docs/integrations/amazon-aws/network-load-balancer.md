@@ -79,7 +79,7 @@ json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name",
 | fields region, namespace, networkloadbalancer, accountid
 ```
 
-## Metric Rrules
+## Metric rules
 
 Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
 

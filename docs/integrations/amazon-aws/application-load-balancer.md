@@ -155,9 +155,9 @@ json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name",
 
 Now that you have set up collection for AWS Application Load Balancer, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-<AppInstall/>
+<AppInstallNoDataSourceV2/>
 
 ## Viewing AWS Application Load Balancer dashboards
 
