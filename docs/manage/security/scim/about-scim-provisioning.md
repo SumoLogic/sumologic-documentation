@@ -7,7 +7,9 @@ description: Learn about provisioning users into Sumo Logic using SCIM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes the general process for provisioning users into Sumo Logic using System for Cross-domain Identity Management (SCIM).
+This article describes the general process for provisioning users into Sumo Logic from SCIM provisioning providers. 
+
+SCIM provisioning in Sumo Logic uses the [SCIM User Management APIs](/docs/api/scim-user/).
 
 See the following articles for directions to configure specific provisioning providers:
 * [Provision from Microsoft Entra ID](/docs/manage/security/scim/provision-from-microsoft-entra-id/)

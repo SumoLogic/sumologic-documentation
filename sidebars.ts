@@ -3103,6 +3103,7 @@ integrations: [
         'api/saml-configuration',
         'api/scan-budget',
         'api/scheduled-views',
+        'api/scim-user',
         'api/search-job',
         'api/service-allowlist',
         'api/service-map',
