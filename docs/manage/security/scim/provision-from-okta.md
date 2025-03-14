@@ -34,7 +34,7 @@ When you create the access key, copy its access ID and access key values. You wi
 1. Select **SAML 2.0** and click **Next**.<br/><img src={useBaseUrl('img/security/provision-okta-select-saml-20.png')} alt="Select SAML 2.0" style={{border: '1px solid gray'}} width="550" />
 1. Provide a name in the **App Name** field and click **Next**.<br/><img src={useBaseUrl('img/security/provision-okta-app-name.png')} alt="App Name field" style={{border: '1px solid gray'}} width="500" />
 1. Enter the **Single sign-on URL** and **Audience URI (SP Entity ID)** for your Sumo Logic instance:<br/><img src={useBaseUrl('img/security/provision-okta-configure-saml.png')} alt="Configure SAML for the app" style={{border: '1px solid gray'}} width="600" /><br/>Obtain the single sign-on URL (Assertion Consumer URL) and entity ID from the SAML configuration of the Sumo Logic tenant where you will provision users (see [Prerequisites](#prerequisites)).<br/><img src={useBaseUrl('img/security/provision-sumo-logic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
-1. Click **Next** and click **Finish**. The app displays in Okta.
+1. Click **Next** and click **Finish**. The app displays in Okta.<br/><img src={useBaseUrl('img/security/provision-okta-new-app.png')} alt="New app in Okta" style={{border: '1px solid gray'}} width="800" />
 
 ### Step 2: Configure provisioning
 
@@ -87,7 +87,7 @@ When you create the access key, copy its access ID and access key values. You wi
       1. **User permission**. Select **Read-Write**.
       1. Click **Save**.<br/><img src={useBaseUrl('img/security/provision-okta-add-roles-attribute.png')} alt="Add roles attribute to Okta user" style={{border: '1px solid gray'}} width="500" />
 1. Add the **Roles** attribute to the provisioning app user profile:
-   1. Navigate to **Directory > Profile Editor** and select the user for the app you created in [Step 1](#step-1-create-the-app).<br/><img src={useBaseUrl('img/security/provision-okta-scim-app-user.png')} alt="Add roles attribute to provisioning app user" style={{border: '1px solid gray'}} width="700" />
+   1. Navigate to **Directory > Profile Editor** and select the user for the app you created in Step 1.<br/><img src={useBaseUrl('img/security/provision-okta-scim-app-user.png')} alt="Add roles attribute to provisioning app user" style={{border: '1px solid gray'}} width="700" />
    1. In the **Profile Editor**, click **Add Attribute**.<br/><img src={useBaseUrl('img/security/provision-okta-add-attribute-to-provisioning-user.png')} alt="Add Attribute button" style={{border: '1px solid gray'}} width="700" />
 1. Fill out the **Add Attribute** dialog:
       1. **Data type**. Select **string**.
@@ -95,12 +95,68 @@ When you create the access key, copy its access ID and access key values. You wi
       1. **Variable name**. Enter `roles`.
       1. **External name**. Enter `roles.^[primary==true].value`.
       1. **External namespace**. Enter `urn:ietf:params:scim:schemas:core:2.0:User`.
-      1. For **Enum** select **Define enumerated list of values** and enter the following:
+      1. For **Enum** select **Define enumerated list of values** and enter the same roles you added to the Okta user above:
          | Display name | Value |
          | :-- | :-- |
          | `User` | `user` |
          | `Administrator` | `administrator` |
          | `Analyst` | `analyst` |
       1. **Attribute type**. Select **Group**.
-      1. Click **Save**.
-   1. Click **Save**.<br/><img src={useBaseUrl('img/security/provision-okta-add-role-attribute-to-provisioning-user.png')} alt="Add roles attribute to provisioning app user" style={{border: '1px solid gray'}} width="500" />
+      1. Click **Save**.<br/><img src={useBaseUrl('img/security/provision-okta-add-role-attribute-to-provisioning-user.png')} alt="Add roles attribute to provisioning app user" style={{border: '1px solid gray'}} width="500" />
+
+### Step 4: Configure attribute mappings
+
+1. Navigate to **Applications > Applications** and select the app you created in Step 1.<br/><img src={useBaseUrl('img/security/provision-okta-new-app.png')} alt="New app in Okta" style={{border: '1px solid gray'}} width="800" />
+1. Edit the attributes pushed from Okta to the provisioning app.
+   1. Select **To App**.
+   1. Select the **Provisioning** tab and scroll down to the **`<App Name>` Attribute Mappings** section.
+   1. Delete all the attributes except:
+      * Username
+      * Given name
+      * Family name
+      * Email<br/><img src={useBaseUrl('img/security/provision-okta-attribute-mappings.png')} alt="App attribute mappings" style={{border: '1px solid gray'}} width="700" />
+1. Edit attributes that will be pushed from the provisioning app to Okta.
+   1. Select **To Okta**.
+   1. Select the **Provisioning** tab and scroll down to the **Okta Attribute Mappings** section.
+   1. Delete all the attributes except:
+      * User name
+      * First name
+      * Last name
+      * Primary email<br/><img src={useBaseUrl('img/security/provision-okta-attribute-mappings-to-okta.png')} alt="App attribute mappings" style={{border: '1px solid gray'}} width="700" />
+1. Edit the attributes in the app profile.
+   1. Navigate to **Directory > Profile Editor** and select the user for the app you created in Step 1.<br/><img src={useBaseUrl('img/security/provision-okta-scim-app-user.png')} alt="Select app user in profile editor" style={{border: '1px solid gray'}} width="800" />
+   1. Delete all the attributes except:
+      * User name
+      * Given name
+      * Family name
+      * Primary email
+      * Roles<br/><img src={useBaseUrl('img/security/provision-okta-profile-editor-app-attributes.png')} alt="Delete attributes from profile" style={{border: '1px solid gray'}} width="700" />
+
+### Step 5: Assign the app to people
+
+1. Select the app's **Assignments** tab.
+1. Select **Assign > Assign to people**.<br/><img src={useBaseUrl('img/security/provision-okta-assign-to-people.png')} alt="Assign to people" style={{border: '1px solid gray'}} width="700" />
+1. Select a user and click **Assign**.<br/><img src={useBaseUrl('img/security/provision-okta-select-user.png')} alt="Assign person" style={{border: '1px solid gray'}} width="500" />
+1. Select a role for the user.<br/><img src={useBaseUrl('img/security/provision-okta-assign-role.png')} alt="Assign a role to the person" style={{border: '1px solid gray'}} width="500" />
+1. Click **Save and go back**.
+1. Continue to assign users. When finished, click click **Done**.
+1. The assigned users are displayed in the **Assignments** tab.
+
+### Step 6: Verify provisioning
+
+As soon as users are assigned to the app, they are provisioned into Sumo Logic. 
+
+1. Verify in Okta.
+   1. Navigate to **Reports > System Log** to see the log. 
+   1. The log should show that users you added to the app are pushed to Sumo Logic with an event info message like **Push new user to external application SUCCESS**.
+1. Verify in Sumo Logic.
+   1. Log in to the Sumo Logic instance that you linked to the provisioning app in Step 2 when you provided the Assertion Consumer URL and entity ID.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. 
+   1. Search for the users provisioned from Okta. 
+   1. You should see the users listed, and with the role given to when you assigned them to the app in Okta.
+
+## Syncing between Okta and Sumo Logic
+
+When you modify the name, email, or role of a user assigned the app in Okta, the changes will be synced to the corresponding user in Sumo Logic.
+
+If you unassign a user from the app in Okta, the corresponding user is deactivated in Sumo Logic. (If you later try to reassign that same user to the app, it will result in an error in Sumo Logic. You must delete the old user from Sumo Logic first so that the user can be provisioned once again from Okta.)
