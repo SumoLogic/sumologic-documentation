@@ -36,10 +36,7 @@ Following are the different kinds of rule status. A rule's status can change dep
 | **Degraded** | The rule is approaching a rule limit and it is removed from execution for one hour to allow processing to catch up. At the end of the hour, the rule is allowed to execute again and its status changes back to Active. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may want to edit the rule to reduce the chance it will become degraded again later. See [Degraded rules](#degraded-rules) below for more information. |
 | **Disabled** | The rule was manually disabled using the toggle in the UI, or was disabled with the API. | Enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). | 
 | **Failed** | The rule exceeded a rule limit and was automatically disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Failed** label for details about the failure.  Depending on the reasons provided in the details, you may need to edit the rule to prevent it from failing again in the future. <br/><br/>After addressing the reasons for the failure, enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
-
-<!-- For DOCS-72 - Rule limits
-| **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-warning-info-button.png')} alt="Rule warning information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled. |
--->
+| **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled. |
 
 ### Degraded rules
 
@@ -57,12 +54,6 @@ Limits are set on how often a rule fires so that the system is not overloaded. F
 
 | Type | Limit |
 | :-- | :-- |
-| Signals per hour | 100K |
-| Signals per 24 hours | 1M |
-
-<!-- For DOCS-72 - Rule limits
-| Type | Limit |
-| :-- | :-- |
 | Total allowed custom rules of each [rule type](/docs/cse/rules/about-cse-rules/#rule-types) | 100 - Tier 1 <br/>200 - Tier 2<br/>500 - Tier 3 |
 | Signals per hour | 50K- Tier 1<br/>100K - Tier 2<br/>150K - Tier 3 |
 | Signals per 24 hours | 1M Tier 1<br/>2M - Tier 2<br/>3M - Tier 3 |
@@ -77,8 +68,6 @@ Limits are set on how often a rule fires so that the system is not overloaded. F
 :::note
 Rule limits can be higher if you are in a higher tenant tier level. If you have questions about what your tenant tier level is, contact your Sumo Logic account representative or [contact Sumo Logic Support](https://support.sumologic.com/support/s/).
 :::
-
--->
 
 ## Query for rule status changes
 
