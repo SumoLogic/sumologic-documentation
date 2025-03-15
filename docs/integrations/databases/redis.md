@@ -459,7 +459,7 @@ There are limits for how many alerts can be enabled - please see the [Alerts FAQ
 4. Click **Import** to import monitors from the JSON above.
 
 :::note
-Monitors are disabled by default. Once you have installed the alerts via this method, navigate to the Redis folder under **Monitors** to configure them. See [Monitor Settings](/docs/alerts/monitors/settings/#monitor-details-pane) to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of [Create a Monitor](/docs/alerts/monitors/create-monitor).
+Monitors are disabled by default. Once you have installed the alerts via this method, navigate to the Redis folder under **Monitors** to configure them. See [Monitor Settings](/docs/alerts/monitors/settings/#monitor-details) to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of [Create a Monitor](/docs/alerts/monitors/create-monitor).
 :::
 
 ### Method B: Using a Terraform script
