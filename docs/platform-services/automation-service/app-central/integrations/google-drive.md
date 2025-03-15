@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
 ***Version: 1.1  
-Updated: Feb 28, 2025***
+Updated: Mar 5, 2025***
 
 Google Drive is Google's cloud-based storage and file-sharing service, enabling users to store, sync, and collaborate on files from any device.
 
@@ -51,4 +51,4 @@ To create a Service Account in Google Workspace and generate the JSON file neede
 ## Change Log
 
 * October 13, 2023 (v1.0) - First upload
-* February 28, 2025 (v1.1) - Updated List Permissions action
+* March 05, 2025 (v1.1) - Updated List Permissions and Delete Permission actions.

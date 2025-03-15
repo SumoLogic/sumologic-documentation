@@ -507,6 +507,12 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="75"/><h4>Sumo Collection</h4></a>
+        <p>Learn how to collect the list of collectors and their sources using the Sumo Logic Collector API and Sources API.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="150"/><h4>Symantec Endpoint Security Source</h4></a>
         <p>Learn to collect incidents and incident events from the Symantec Endpoint Security platform.</p>
         </div>
@@ -579,7 +585,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/zerofox_logo.png')} alt="Thumbnail icon" width="45"/><h4>ZeroFox</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source"><img src={useBaseUrl('img/integrations/misc/zerofox-logo.png')} alt="Thumbnail icon" width="50"/><h4>ZeroFox</h4></a>
         <p>Learn to collect threat indicators using the ZeroFox API and send them to Sumo Logic for analysis.</p>
         </div>
       </div>

@@ -15,7 +15,7 @@ import MyComponentSource from '!!raw-loader!/files/c2c/taxii-2/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/taxii-2/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The STIX/TAXII 2 Client source supports collecting threat intelligence indicators from STIX/TAXII 2.0 and 2.1 versions. For more information about Sumo Logic threat intelligence, see [About Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/). 
+The STIX/TAXII 2 Client source supports collecting threat intelligence indicators from STIX/TAXII 2.0 and 2.1 versions. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/). 
 
 The legacy STIX/TAXII 1.x versions are not supported with this source. Use [STIX/TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source/) for version 1.x versions.
 

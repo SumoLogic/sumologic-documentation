@@ -15,7 +15,7 @@ import MyComponentSource from '!!raw-loader!/files/c2c/taxii-1/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/taxii-1/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The STIX/TAXII 1 Client source supports collecting threat intelligence indicators from STIX/TAXII 1.x and sending them to Sumo Logic as normalized threat indicators. For more information about Sumo Logic threat intelligence, see [About Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
+The STIX/TAXII 1 Client source supports collecting threat intelligence indicators from STIX/TAXII 1.x and sending them to Sumo Logic as normalized threat indicators. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
 
 [STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. 
 
