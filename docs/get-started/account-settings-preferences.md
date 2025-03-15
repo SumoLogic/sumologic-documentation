@@ -162,7 +162,7 @@ Keep this option selected if you'd like to run a saved search as soon as you sel
 
 ### Alerts
 
-Select these preferences to manage how alerts are handled. For more information, see [Notification preferences](/docs/alerts/monitors/alert-response/#notification-preferences).
+Click any of the following checkboxes to enable your desired preferences:<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
 
 #### Display alert badge when my subscribed monitors are triggered
 
@@ -174,11 +174,11 @@ Select this option to receive notifications only for monitors you're subscribed 
 
 #### Enable "Active alerts only" as default filter
 
-By default, your alerts list only displays alerts with an active status. Alerts with a resolved status are excluded.
+By default, your alerts list only displays alerts with an active status. Alerts with a resolved status are excluded.<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
 
 #### Enable "My subscriptions" as default filter
 
-By default, alerts you are subscribed to will appear in your alerts list.
+By default, alerts you are subscribed to will appear in your alerts list.<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
 
 ### New UI
 
