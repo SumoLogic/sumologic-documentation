@@ -146,6 +146,22 @@ Keep this option selected to automatically open the search autocomplete dialog w
 
 By default, saved searches run automatically when selected. Deselect this option if you prefer to start searches manually.
 
-### Alert Notifications and Alerts List
+### Alerts
 
-See [Notification Preferences](/docs/alerts/monitors/alert-response/#notification-preferences).
+Click any of the following checkboxes to enable your desired preferences:<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
+
+#### Display alert badge when my subscribed monitors are triggered
+
+Select this option to display a badge icon in the UI when you receive an alert for a monitor you're subscribed to.
+
+#### Notify about only subscribed monitors
+
+Select this option to receive notifications only for monitors you're subscribed to.
+
+#### Enable "Active alerts only" as default filter
+
+By default, your alerts list only displays alerts with an active status. Alerts with a resolved status are excluded.<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
+
+#### Enable "My subscriptions" as default filter
+
+By default, alerts you are subscribed to will appear in your alerts list.<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
