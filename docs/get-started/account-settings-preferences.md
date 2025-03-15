@@ -13,8 +13,9 @@ You can review and update your personal account settings and login credentials a
 
 ## Accessing preferences
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.
-1. Update your preferences as needed.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**.
+
+<img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
 
 ## My Profile
 
@@ -27,7 +28,9 @@ Under **My Profile**, the following information is displayed:
 * **Organization ID**. Your Sumo Logic org ID.
 * **Roles**. The Sumo Logic [roles](/docs/manage/users-roles/roles/add-remove-users-role/) assigned to your user account.
 
-If you're an Administrator, you can [manage users/roles, change user passwords](/docs/manage/users-roles), and more.
+<img src={useBaseUrl('img/get-started/my-profile.png')} alt="preference settings" style={{border: '1px solid gray'}} width="500" />
+
+If you're an Administrator, you can [manage users](/docs/manage/users-roles/users/), [assign roles](/docs/manage/users-roles/roles), and more.
 
 ### Change email address
 
@@ -42,16 +45,16 @@ If you're an Administrator, you can [manage users/roles, change user passwords](
 1. Enter your current password, and then enter the new password twice to verify it.
 1. Click **OK** to finalize the change.
 
-Admins can [reset passwords](/docs/manage/users-roles/users/reset-user-password) on behalf of users in their org.
-
 You can also reset your from your login screen by clicking **Forgot your password?**.
+
+If you're an Administrator, you can [reset passwords](/docs/manage/users-roles/users/reset-user-password) for users in your org.
 
 ## My Security Settings
 
 This section allows you to enable 2-step verification and view backup codes.
 
 :::note
-This section appears only if an administrator has made 2-step verification mandatory for your organization. For more information, see [2-Step Verification for Administrators](/docs/manage/security/2-step-verification-admins/).
+The **My Security Settings** section is visible only if an administrator has made 2-step verification mandatory for your organization. For more details, see [2-Step Verification for Administrators](/docs/manage/security/2-step-verification-admins).
 :::
 
 To set up 2-Step Verification, you will need to install a Time-Based One-Time Password (TOTP) app, which will automatically generate an authentication code that changes after a certain period of time.
@@ -66,6 +69,8 @@ To set up 2-Step Verification, you will need to install a Time-Based One-Time Pa
 ## My Preferences
 
 These settings apply only to your personal account and do not affect other users in your organization. Changes take effect the next time you sign in.
+
+<img src={useBaseUrl('img/get-started/my-preferences.png')} alt="preference settings" style={{border: '1px solid gray'}} width="600" />
 
 ### Timezone and Date Format
 
@@ -112,6 +117,17 @@ Choose how long your Sumo Logic session remains active before timing out. Option
 
 For details on web session timeouts and multi-account access, see [Multi-Account Access](/docs/manage/users-roles/users/multi-account-access).
 
+
+### Navigation
+
+#### Open all navigation menu items in new browser tabs by default
+
+By default, selecting a menu link in the left navigation pane opens it in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="150" />
+
+Enabling this preference hides the **Open in New Tab** button on navigation menu links.
+
+However, even when this preference is enabled, the **Open in New Tab** button remains visible for menu items with subfolders, allowing you to click the menu item to view its subfolders and open them in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button-on-folder.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="250" />
+
 ### Theme
 
 Select to show the user interface in a **Dark theme** or **Light theme**.
@@ -146,20 +162,6 @@ Keep this option selected to automatically open the search autocomplete dialog w
 
 By default, saved searches run automatically when selected. Deselect this option if you prefer to start searches manually.
 
-### Log Search
-
-#### Show confirmation dialog when closing a tab
-
-On the Search page, if you want to be prompted with a confirmation dialog before you can close a search tab, select this checkbox.
-
-#### Enable autocomplete
-
-Use `<Esc>` or `<Alt>` `<Space>` to open it manually) Keep this option selected if you'd like to open the [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog.
-
-#### Automatically run the search after selecting it from a list of saved searches
-
-Keep this option selected if you'd like to run a saved search as soon as you select it. Deselect the option if you'd like to start the search manually.
-
 ### Alerts
 
 Click any of the following checkboxes to enable your desired preferences:<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
@@ -179,15 +181,3 @@ By default, your alerts list only displays alerts with an active status. Alerts 
 #### Enable "My subscriptions" as default filter
 
 By default, alerts you are subscribed to will appear in your alerts list.<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
-
-### New UI
-
-#### Open navigation menu links in a new tab by default
-
-By default, a new tab opens every time you select a menu link in the left navigation pane.
-
-:::tip
-Selecting this preference hides the **Open in New Tab** button on navigation menu links. <br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="100" />
-
-However, the **Open in New Tab** button will still appear on menu items with subfolders. This allows you to either click the menu item to see its subfolders, or to click the **Open in New Tab** to open the menu item in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button-on-folder.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="200" />
-:::
