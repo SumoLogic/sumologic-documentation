@@ -11,12 +11,6 @@ This article describes how to provision users into Sumo Logic from Okta.
 
 ## Prerequisites
 
-### Set up SAML
-
-If it is not already set up, [set up SAML for single sign-on with Okta](/docs/manage/security/saml/integrate-sumo-logic-with-okta/) in the Sumo Logic instance where you will provision users. This will allow connection to Sumo Logic for provisioning. Copy the single sign-on URL (Assertion Consumer URL) and entity ID from your Sumo Logic [SAML configuration](/docs/manage/security/saml/set-up-saml/#review-saml-configuration). You will use them when you set up provisioning.
-
-<img src={useBaseUrl('img/security/provision-sumo-logic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
-
 ### Create an access key
 
 Create an [access key](/docs/manage/security/access-keys/) using a service account. This access key will provide authorization to provision users from Okta into Sumo Logic.
@@ -26,6 +20,12 @@ When you create the access key, copy its access ID and access key values. You wi
    * Username: Access ID
    * Password: Access key
 * Bearer token<br/>Use [Base64 encoding](https://www.base64encode.org/) to Base64 encode `<access ID>:<access key>`.
+
+### Set up SAML
+
+If it is not already set up, [set up SAML for single sign-on with Okta](/docs/manage/security/saml/integrate-sumo-logic-with-okta/) in the Sumo Logic instance where you will provision users. This will allow connection to Sumo Logic for provisioning. Copy the single sign-on URL (Assertion Consumer URL) and entity ID from your Sumo Logic [SAML configuration](/docs/manage/security/saml/set-up-saml/#review-saml-configuration). You will use them when you set up provisioning.
+
+<img src={useBaseUrl('img/security/provision-sumo-logic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
 
 ## Configure provisioning from Okta
 

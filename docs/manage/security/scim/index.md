@@ -6,7 +6,7 @@ description: Learn how to provision users into Sumo Logic using SCIM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Learn how to provision users into Sumo Logic using System for Cross-domain Identity Management (SCIM).
+Learn how to provision and deprovision users in Sumo Logic using SCIM (System for Cross-domain Identity Management).
 
 This section contains the following articles:
 

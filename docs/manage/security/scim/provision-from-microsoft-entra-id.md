@@ -73,19 +73,24 @@ When you [configure SAML in Sumo Logic](/docs/manage/security/saml/integrate-sum
       * roles[primary eq "True"].value
    1. Click **Save**.<br/><img src={useBaseUrl('img/security/provision-azure-attribute-mappings.png')} alt="Attribute mappings" style={{border: '1px solid gray'}} width="600" />
 1. Click the **Home > `<app name>` | Provisioning** link in the top left corner of the screen. This returns you to the **Provisioning** tab.
-1. For **Provisioning Status** select **On** to enable provisioning.
-1. Click **Save**.<br/><img src={useBaseUrl('img/security/provision-azure-provisioning-status.png')} alt="Provisioning status" style={{border: '1px solid gray'}} width="600" />
 
 ### Step 5: Test provisioning
 
-1. In the app, select **Overview**.
+1. In the app, select **Manage > Provisioning**.
+1. For **Provisioning Status** select **On** to enable provisioning.
+1. Click **Save**.<br/><img src={useBaseUrl('img/security/provision-azure-provisioning-status.png')} alt="Provisioning status" style={{border: '1px solid gray'}} width="600" />
+1. Select **Overview**.
 1. Select **Provision on demand**.<br/><img src={useBaseUrl('img/security/provision-azure-provision-on-demand.png')} alt="Provision on demand" style={{border: '1px solid gray'}} width="600" />
 1. Users assigned the app will be provisioned into Sumo Logic. 
 
 As long as the app's provisioning status is on, the app runs auto provisioning every 40 minutes.
 
+:::note
+By default, users will be assigned the `User` role in Sumo Logic. (The `User` role must already be set up in Sumo Logic to allow users to be provisioned with that role.)
+:::
+
 ## Syncing between Microsoft Entra ID and Sumo Logic
 
-When you modify the name, email, or role of a user assigned the app in Microsoft Entra ID, the changes will be synced to the corresponding user in Sumo Logic.
+When you modify the name or email of a user assigned the app in Microsoft Entra ID, the changes will be synced to the corresponding user in Sumo Logic.
 
 If you unassign a user from the app in Microsoft Entra ID, the corresponding user is deactivated in Sumo Logic. (If you later try to reassign that same user to the app, it will result in an error in Sumo Logic. You must delete the old user from Sumo Logic first so that the user can be provisioned once again from Microsoft Entra ID.)
