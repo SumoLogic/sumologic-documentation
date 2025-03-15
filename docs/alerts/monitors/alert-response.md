@@ -323,12 +323,4 @@ To cancel an inherited subscription, you'll need to remove the subscription from
 
 ## Notification preferences
 
-Alert notification preferences give you granular control over specific monitor activity you want to follow.<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="alert-list-page-bell-border" width="400"/>
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.
-2. Click on any of the following checkboxes to enable your desired preferences:
-   * **Display alert badge when my subscribed monitors are triggered**. the bell icon is displayed in the top nav
-   * **Notify about only subscribed monitors**. the bell icon will only push notifications for monitors you're subscribed to
-   * **Enable "Active alerts only" as default filter**. your Alerts list, by default, will only display alerts with an Active status (excludes Resolved ones)<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" width="450" />
-   * **Enable "My subscriptions" as default filter**. your Alerts list, by default, will only display alerts you're subscribed to<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" width="450" />
-3. Click **Save** when you're done.
+Alert notification preferences give you granular control over specific monitor activity you want to follow. For more information, see [Alert preferences](/docs/get-started/account-settings-preferences/#alerts).
