@@ -7,7 +7,7 @@ description: Learn how to provision users into Sumo Logic from Microsoft Entra I
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to provision users into Sumo Logic from Microsoft Entra ID (formerly Azure Active Directory).
+This article describes how to provision users into Sumo Logic with Microsoft Entra ID (formerly Azure Active Directory).
 
 ## Prerequisites
 
@@ -17,11 +17,11 @@ Create an [access key](/docs/manage/security/access-keys/) using a service accou
 
 When you create the access key, copy its access ID and access key values. You will enter these when you use [Base64 encoding](https://www.base64encode.org/) to Base64 encode `<access ID>:<access key>` to generate a token.
 
-## Configure provisioning from Microsoft Entra ID
+## Configure provisioning with Microsoft Entra ID
 
 ### Step 1: Create the app
 
-1. Log in to Microsoft Azure.
+1. Log in to [Microsoft Azure](http://portal.azure.com/) as an administrator.
 1. Navigate to Microsoft Entra ID. (You can use the search bar to locate it.)
 1. Navigate to **Manage > Enterprise Applications**.
 1. Click **New application**.<br/><img src={useBaseUrl('img/security/provision-azure-new-app.png')} alt="Create new application" style={{border: '1px solid gray'}} width="800" />

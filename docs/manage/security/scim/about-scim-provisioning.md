@@ -20,7 +20,7 @@ See the following articles for directions to configure specific provisioning pro
 
 ### Create an access key
 
-Before configuring a provisioning provider, you must create an [access key](/docs/manage/security/access-keys/) using a service account. This access key will provide authorization to provision users from the provider into Sumo Logic.
+Before configuring a provisioning provider, create an [access key](/docs/manage/security/access-keys/) using a service account. This access key will provide authorization to provision users from the provider into Sumo Logic.
 
 When you create the access key, copy its access ID and access key values. Depending on the provider you configure, you will enter these when you set up provisioning to use one of the following authorization methods:
 * Basic authentication

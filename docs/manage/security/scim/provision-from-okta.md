@@ -7,7 +7,7 @@ description: Learn how to provision users into Sumo Logic from Okta.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to provision users into Sumo Logic from Okta.
+This article describes how to provision users into Sumo Logic with Okta.
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ If it is not already set up, [set up SAML for single sign-on with Okta](/docs/ma
 
 <img src={useBaseUrl('img/security/provision-sumo-logic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
 
-## Configure provisioning from Okta
+## Configure provisioning with Okta
 
 ### Step 1: Create the app
 
@@ -38,7 +38,7 @@ If it is not already set up, [set up SAML for single sign-on with Okta](/docs/ma
 1. Enter the **Single sign-on URL** and **Audience URI (SP Entity ID)** for your Sumo Logic instance:<br/><img src={useBaseUrl('img/security/provision-okta-configure-saml.png')} alt="Configure SAML for the app" style={{border: '1px solid gray'}} width="600" /><br/>Obtain the single sign-on URL (Assertion Consumer URL) and entity ID from the SAML configuration of the Sumo Logic tenant where you will provision users (see [Prerequisites](#prerequisites)).<br/><img src={useBaseUrl('img/security/provision-sumo-logic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
 1. Click **Next** and click **Finish**. The app displays in Okta.<br/><img src={useBaseUrl('img/security/provision-okta-new-app.png')} alt="New app in Okta" style={{border: '1px solid gray'}} width="800" />
 
-### Step 2: Configure provisioning
+### Step 2: Set up provisioning
 
 1. Configure the general settings for the app:
    1. Click the **General** tab.
@@ -106,7 +106,7 @@ If it is not already set up, [set up SAML for single sign-on with Okta](/docs/ma
       1. **Attribute type**. Select **Group**.
       1. Click **Save**.<br/><img src={useBaseUrl('img/security/provision-okta-add-role-attribute-to-provisioning-user.png')} alt="Add roles attribute to provisioning app user" style={{border: '1px solid gray'}} width="500" />
 
-### Step 4: Configure attribute mappings
+### Step 4: Set up attribute mappings
 
 1. Navigate to **Applications > Applications** and select the app you created in Step 1.<br/><img src={useBaseUrl('img/security/provision-okta-new-app.png')} alt="New app in Okta" style={{border: '1px solid gray'}} width="800" />
 1. Edit the attributes pushed from Okta to the provisioning app.
