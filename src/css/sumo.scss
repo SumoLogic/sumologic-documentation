@@ -1413,7 +1413,7 @@ html[data-theme='dark'] .featureImage {
   border-radius: 10px;
 }
 
-/* RSS Button */
+// RSS Button
 .rss {
   background: linear-gradient(90deg, #d97706, #b45309);
   color: white;
@@ -1428,15 +1428,18 @@ html[data-theme='dark'] .featureImage {
   border: none;
 }
 
-/* RSS Button Hover Effect */
+// RSS Button
 .rss:hover {
   background: linear-gradient(90deg, #b45309, #92400e);
   color: white;
   text-decoration: none;
 }
 
+// RSS link text
+.small-text {
+  font-size: 12px;
+}
 
-/* Storylane iFrame embed */
 .sl-embed {
   position: relative;
   padding-bottom: calc(49.38% + 27px);
@@ -1445,7 +1448,6 @@ html[data-theme='dark'] .featureImage {
 //transform: scale(1);
 }
 
-/* Storylane iFrame embed */
 .sl-demo {
   position: absolute;
   top: 0;
