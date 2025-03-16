@@ -13,19 +13,19 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/observability/aws/other-configurations-tools/add-new-aws-service"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="40"/><h4>Add a New AWS Service</h4></a>
+  <a href={useBaseUrl('docs/observability/aws/other-configurations-tools/add-new-aws-service')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="40"/><h4>Add a New AWS Service</h4></a>
   <p>Learn how to add a new dashboard to the Hierarchy.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/observability/aws/other-configurations-tools/add-fields-to-existing-host-metrics-sources"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Add Fields to Existing Host Metrics Sources</h4></a>
+  <a href={useBaseUrl('docs/observability/aws/other-configurations-tools/add-fields-to-existing-host-metrics-sources')}><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Add Fields to Existing Host Metrics Sources</h4></a>
   <p>Learn how to update the AWS Observability view hierarchy and existing host metrics.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/observability/aws/other-configurations-tools/integrate-control-tower-accounts"><img src={useBaseUrl('img/icons/integrations.png')} alt="icon" width="40"/><h4>Integrate Control Tower Accounts with AWS Observability</h4></a>
+  <a href={useBaseUrl('docs/observability/aws/other-configurations-tools/integrate-control-tower-accounts')}><img src={useBaseUrl('img/icons/integrations.png')} alt="icon" width="40"/><h4>Integrate Control Tower Accounts with AWS Observability</h4></a>
   <p>Learn how to update the AWS Observability solution with AWS Control Tower-managed Accounts.</p>
   </div>
 </div>
