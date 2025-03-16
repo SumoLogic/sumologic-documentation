@@ -16,5 +16,5 @@ hypot(<a>, <b>) as <field>
 ## Example
 
 ```sql
-hypot(3, 4) as c // c = 5
+* | hypot(3, 4) as c
 ```
