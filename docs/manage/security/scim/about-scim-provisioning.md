@@ -12,9 +12,9 @@ You can provision and deprovision users in Sumo Logic using SCIM (System for Cro
 ## Directions for provisioning providers
 
 See the following articles for directions to configure specific provisioning providers:
-* [Provision from Microsoft Entra ID](/docs/manage/security/scim/provision-from-microsoft-entra-id/)
-* [Provision from Okta](/docs/manage/security/scim/provision-from-okta/)
-* [Provision from OneLogin](/docs/manage/security/scim/provision-from-onelogin/)
+* [Provision with Microsoft Entra ID](/docs/manage/security/scim/provision-with-microsoft-entra-id/)
+* [Provision with Okta](/docs/manage/security/scim/provision-with-okta/)
+* [Provision with OneLogin](/docs/manage/security/scim/provision-with-onelogin/)
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ See the following articles for directions to configure specific provisioning pro
 
 Before configuring a provisioning provider, create an [access key](/docs/manage/security/access-keys/) using a service account. This access key will provide authorization to provision users from the provider into Sumo Logic.
 
-When you create the access key, copy its access ID and access key values. Depending on the provider you configure, you will enter these when you set up provisioning to use one of the following authorization methods:
+When you create the access key, copy its access ID and access key values. You will enter these when you set up provisioning to use one of the following authorization methods:
 * Basic authentication
    * Username: Access ID
    * Password: Access key

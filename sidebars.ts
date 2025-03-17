@@ -1102,9 +1102,9 @@ module.exports = {
           link: {type: 'doc', id: 'manage/security/scim/index'},
           items: [
             'manage/security/scim/about-scim-provisioning',
-            'manage/security/scim/provision-from-microsoft-entra-id',
-            'manage/security/scim/provision-from-okta',
-            'manage/security/scim/provision-from-onelogin',
+            'manage/security/scim/provision-with-microsoft-entra-id',
+            'manage/security/scim/provision-with-okta',
+            'manage/security/scim/provision-with-onelogin',
           ]
         },
         'manage/security/set-password-policy',

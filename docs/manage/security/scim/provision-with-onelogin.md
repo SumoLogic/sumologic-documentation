@@ -1,13 +1,13 @@
 ---
-id: provision-from-onelogin 
-title: Provision from OneLogin
-sidebar_label: Provision from OneLogin
-description: Learn how to provision users into Sumo Logic from OneLogin. 
+id: provision-with-onelogin 
+title: Provision with OneLogin
+sidebar_label: Provision with OneLogin
+description: Learn how to provision users in Sumo Logic with OneLogin. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to provision users into Sumo Logic with OneLogin.
+This article describes how to provision users in Sumo Logic with OneLogin.
 
 ## Prerequisites
 
@@ -117,7 +117,20 @@ On the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint for 
    1. Select **Users**.
    1. Click **Pending** on the user you want to approve for provisioning.<br/><img src={useBaseUrl('img/security/provision-onelogin-approve-user.png')} alt="Pending user" style={{border: '1px solid gray'}} width="800" />
    1. Click **Approve**.<br/><img src={useBaseUrl('img/security/provision-onelogin-approve-dialog.png')} alt="Approve dialog" style={{border: '1px solid gray'}} width="400" />
-   1. The user is provisioned to Sumo Logic.
+   1. The user is provisioned to Sumo Logic.f
+
+### Step 6: Verify provisioning
+
+Users assigned to the app are provisioned into Sumo Logic. 
+
+1. Verify in OneLogin:
+   1. In the main menu, select **Provisioning** and then select the **Monitoring** tab.
+   1. The events for provisioned users should appear. Click an event for details.
+1. Verify in Sumo Logic:
+   1. Log in to the Sumo Logic instance that you linked to the provisioning app in Step 2 when you provided the Assertion Consumer URL and entity ID.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. 
+   1. Search for the users provisioned from OneLogin. 
+   1. You should see the users listed, and with the role given to when you assigned them to the app in OneLogin.
 
 ## Syncing between OneLogin and Sumo Logic
 

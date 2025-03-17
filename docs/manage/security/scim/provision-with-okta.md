@@ -1,13 +1,13 @@
 ---
-id: provision-from-okta 
-title: Provision from Okta
-sidebar_label: Provision from Okta
-description: Learn how to provision users into Sumo Logic from Okta. 
+id: provision-with-okta 
+title: Provision with Okta
+sidebar_label: Provision with Okta
+description: Learn how to provision users in Sumo Logic with Okta. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to provision users into Sumo Logic with Okta.
+This article describes how to provision users in Sumo Logic with Okta.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ When you create the access key, copy its access ID and access key values. You wi
 
 ### Set up SAML
 
-If it is not already set up, [set up SAML for single sign-on with Okta](/docs/manage/security/saml/integrate-sumo-logic-with-okta/) in the Sumo Logic instance where you will provision users. This will allow connection to Sumo Logic for provisioning. Copy the single sign-on URL (Assertion Consumer URL) and entity ID from your Sumo Logic [SAML configuration](/docs/manage/security/saml/set-up-saml/#review-saml-configuration). You will use them when you set up provisioning.
+If it is not already set up, [set up SAML for single sign-on with Okta](/docs/manage/security/saml/integrate-sumo-logic-with-okta/) in the Sumo Logic instance where you will provision users. This will allow connection to Sumo Logic for provisioning. Copy the single sign-on URL (Assertion Consumer URL) and entity ID from your Sumo Logic SAML configuration. You will use them when you set up provisioning.
 
 <img src={useBaseUrl('img/security/provision-sumo-logic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
 
@@ -148,10 +148,10 @@ If it is not already set up, [set up SAML for single sign-on with Okta](/docs/ma
 
 As soon as users are assigned to the app, they are provisioned into Sumo Logic. 
 
-1. Verify in Okta.
+1. Verify in Okta:
    1. Navigate to **Reports > System Log** to see the log. 
    1. The log should show that users you added to the app are pushed to Sumo Logic with an event info message like **Push new user to external application SUCCESS**.
-1. Verify in Sumo Logic.
+1. Verify in Sumo Logic:
    1. Log in to the Sumo Logic instance that you linked to the provisioning app in Step 2 when you provided the Assertion Consumer URL and entity ID.
    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. 
    1. Search for the users provisioned from Okta. 
