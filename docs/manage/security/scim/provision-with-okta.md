@@ -58,7 +58,7 @@ If it is not already set up, [set up SAML for single sign-on with Okta](/docs/ma
          * **Basic Auth**. Basic authentication method. If you choose this method, enter your access key credentials in the fields that appear:
             * **Username**. Enter your access ID.
             * **Password**. Enter your access key.
-         * **HTTP Header**. HTTP authorization header method. If you choose this option, use [Base64 encoding](https://www.base64encode.org/) to encode `<access ID>:<access key>` and enter the resulting value into the **Authorization | Bearer Token** fields that appears.<br/><img src={useBaseUrl('img/security/provision-okta-provisioning-tab.png')} alt="Provisioning tab" style={{border: '1px solid gray'}} width="800" />
+         * **HTTP Header**. HTTP authorization header method. If you choose this option, use [Base64 encoding](https://www.base64encode.org/) to encode `<access ID>:<access key>` and enter the resulting value into the **Authorization | Bearer Token** field that appears.<br/><img src={useBaseUrl('img/security/provision-okta-provisioning-tab.png')} alt="Provisioning tab" style={{border: '1px solid gray'}} width="800" />
     1. Click **Test Connector Configuration**. The results display:<br/><img src={useBaseUrl('img/security/provision-okta-test-connection.png')} alt="Test connector configuration" style={{border: '1px solid gray'}} width="300" />
     1. Click **Close** on the **Test Connector Configuration** dialog.
     1. Click **Save** to save the app provisioning integration settings.

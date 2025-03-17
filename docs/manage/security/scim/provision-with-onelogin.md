@@ -117,7 +117,7 @@ On the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint for 
    1. Select **Users**.
    1. Click **Pending** on the user you want to approve for provisioning.<br/><img src={useBaseUrl('img/security/provision-onelogin-approve-user.png')} alt="Pending user" style={{border: '1px solid gray'}} width="800" />
    1. Click **Approve**.<br/><img src={useBaseUrl('img/security/provision-onelogin-approve-dialog.png')} alt="Approve dialog" style={{border: '1px solid gray'}} width="400" />
-   1. The user is provisioned to Sumo Logic.f
+   1. The user is provisioned to Sumo Logic.
 
 ### Step 6: Verify provisioning
 
