@@ -31,5 +31,5 @@ Click the gears icon in the top-right corner of the **Messages** tab, and then
 ![export fields](/img/search/get-started-search/search-basics/export-search-results/export-fields.png)
 
 :::info
-Audit events will be generated for every search results export (displayed fields or all fields). Administrators can now view these audit events to ensure that no sensitive data is exported.
+Audit events will be generated for every search results export (displayed fields or all fields). Administrators can use `_sourceCategory=content` to view these audit events to ensure that no sensitive data is exported.
 :::
