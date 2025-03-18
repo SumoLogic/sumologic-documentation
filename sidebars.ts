@@ -3090,6 +3090,7 @@ integrations: [
         'api/scan-budget',
         'api/scheduled-views',
         'api/search-job',
+        'api/search-job-v2',
         'api/service-allowlist',
         'api/service-map',
         'api/slo-management',
