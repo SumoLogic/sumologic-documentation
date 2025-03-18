@@ -30,7 +30,11 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
   * View Monitors
   * Manage Entity Type Configs
   * Create access keys
-* **Sumo Logic Access ID and Key**. When you deploy the solution, you’ll need to supply a Sumo Logic Access ID and Access Key, which enable you to use Sumo Logic APIs. Make sure you have the role capabilities listed above before generating the Access ID and Key.
+  * **Sumo Logic Access ID and Key**. When you deploy the solution, you’ll need to supply a Sumo Logic Access ID and Access Key, which enable you to use Sumo Logic APIs. Make sure you select default scope before generating the Access ID and Key.
+  ![Default-Scope.png](/img/observability/Default-Scope.png)
+  :::note
+  For the AWS Observability Solution, you must use the default scope when generating the Access ID and Key; custom scopes are not supported.
+  :::
 * **AWS credentials**. To deploy the solution, you will need to log onto the AWS Console. For the CloudFormation template deployment option, your AWS role must have the permissions described by this [JSON file](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/AWSObservabilityCFTemplatePermissions.json). As necessary, you may add JSON text to an existing or a new policy associated with an AWS IAM role as described in the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html). For Terraform deployment options, see the \*.tmpl files in this folder [aws-observability-terraform/source-module/templates/](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform/source-module/templates).
 * Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and configure the AWS CLI as described in the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) if you would like to use an AWS profile for Terraform script based deployment.
 * The AWS Observability solution comes with pre-packaged alerts in the form of Sumo Logic Monitors. To understand more about their capabilities please visit the Monitors page.
