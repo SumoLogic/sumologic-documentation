@@ -21,7 +21,7 @@ Collector Management APIs are not yet built with OpenAPI specifications and ther
 
 ## Installed Collector and Hosted Collector
 
-Collector Management APIs for Installed and Hosted collectors are not yet built with OpenAPI specifications and therefore are not included in our [Swagger documents](https://api.sumologic.com/docs/). For legacy installed collectors or sources refer to the legacy API documentation for [collectors](/docs/api/collector-management/collector-api-methods-examples/) or [sources](/docs/api/collector-management/source-api/).
+Collector Management APIs for Installed and Hosted collectors are not yet built with OpenAPI specifications and therefore are not included in our [Swagger documents](https://api.sumologic.com/docs/). For legacy installed collectors or sources, refer to our legacy [collectors](/docs/api/collector-management/collector-api-methods-examples/) or [sources](/docs/api/collector-management/source-api/) API documentation.
 
 ## OpenTelemetry Collector
 
