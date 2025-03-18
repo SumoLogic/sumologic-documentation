@@ -13,7 +13,7 @@ This article describes how to provision users in Sumo Logic with OneLogin.
 
 ### Create an access key
 
-Create an [access key](/docs/manage/security/access-keys/) using a service account. This access key will provide authorization to provision users from OneLogin into Sumo Logic.
+Create an [access key](/docs/manage/security/access-keys/). (We recommend using a service account to create the access key.) This access key will provide authorization to provision users from OneLogin into Sumo Logic.
 
 When you create the access key, copy its access ID and access key values. You will enter these when you use [Base64 encoding](https://www.base64encode.org/) to Base64 encode `<access ID>:<access key>` to generate a token.
 
@@ -33,7 +33,7 @@ When you create the access key, copy its access ID and access key values. You wi
 Follow the directions in [Configure a SAML app in OneLogin](/docs/manage/security/saml/integrate-onelogin/#configure-a-saml-app-in-onelogin) beginning with the step where you configure the **SSO** tab.<br/><img src={useBaseUrl('img/security/provision-onelogin-sso-tab.png')} alt="SSO tab" style={{border: '1px solid gray'}} width="700" />
 
 :::note
-On the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the SCIM API using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`. You will perform additional configuration of the app later.
+On the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`. You will perform additional configuration of the app later.
 :::
 
 ### Step 3: Set up roles
@@ -62,7 +62,7 @@ On the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint for 
 1. Configure the app:
    1. Enter the **SAML Audience URL** (entity ID) and **SAML Consumer URL** (assertion consumer URL) for your Sumo Logic instance:<br/><img src={useBaseUrl('img/security/provision-onelogin-configuration.png')} alt="Configuration for the app" style={{border: '1px solid gray'}} width="700" /><br/>Obtain the assertion consumer URL and entity ID from the SAML configuration of the Sumo Logic tenant where you will provision users. You set up this [SAML configuration](/docs/manage/security/saml/integrate-onelogin/#configure-saml-in-sumo) in Step 2.<br/><img src={useBaseUrl('img/security/provision-onelogin-sumologic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
    1. For **API Status**, click **Enable**.
-   1. For **SCIM Base URL**, ensure that you have entered the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the SCIM API using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`.
+   1. For **SCIM Base URL**, ensure that you have entered the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`.
    1. For **SCIM JSON Template**, enter the following:
       ```json
       {

@@ -13,7 +13,7 @@ This article describes how to provision users in Sumo Logic with Microsoft Entra
 
 ### Create an access key
 
-Create an [access key](/docs/manage/security/access-keys/) using a service account. This access key will provide authorization to provision users from Microsoft Entra ID into Sumo Logic.
+Create an [access key](/docs/manage/security/access-keys/). (We recommend using a service account to create the access key.) This access key will provide authorization to provision users from Microsoft Entra ID into Sumo Logic.
 
 When you create the access key, copy its access ID and access key values. You will enter these when you use [Base64 encoding](https://www.base64encode.org/) to Base64 encode `<access ID>:<access key>` to generate a token.
 
@@ -68,7 +68,7 @@ Create roles that the users will have in Sumo Logic (for example, `Analyst` and 
 1. In the app select **Manage > Provisioning**.<br/><img src={useBaseUrl('img/security/provision-azure-provisioning.png')} alt="Connect your application" style={{border: '1px solid gray'}} width="600" />
 1. For **Provisioning Mode**, select **Automatic**.
 1. Enter **Admin Credentials**:
-   1. In **Tenant URL**, enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the SCIM API using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`.
+   1. In **Tenant URL**, enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`.
    1. For **Secret Token**, use [Base64 encoding](https://www.base64encode.org/) to encode `<access ID>:<access key>` (see [Prerequisites](#prerequisites)). Enter the resulting value into the **Secret Token** field.
    1. Click **Test Connection**. If successful, a message like this appears: **Testing connection to `<app name>`. The supplied credentials are authorized to enable provisioning**.
 1. Set up mappings:

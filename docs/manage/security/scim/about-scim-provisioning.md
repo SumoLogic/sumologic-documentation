@@ -7,9 +7,7 @@ description: Learn about provisioning users into Sumo Logic using SCIM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can provision and deprovision users in Sumo Logic using SCIM ([System for Cross-domain Identity Management](https://scim.cloud/)). Any identity provider that is SCIM 2 compliant can integrate with Sumo Logic for provisioning.
-
-SCIM provisioning in Sumo Logic uses [SCIM User Management APIs](/docs/api/scim-user/).
+You can utilize Sumo Logic [SCIM User Management APIs](/docs/api/scim-user/) to automatically provision and deprovision users in Sumo Logic when users are created or removed within your identity provider. Sumo Logic can be integrated with any identity provider that is [SCIM 2](https://scim.cloud/) compliant.
 
 ## Directions for specific providers
 
@@ -28,7 +26,7 @@ Although the process will differ depending on your provider, following are the g
 
 #### Create an access key
 
-Before configuring a provider, create an [access key](/docs/manage/security/access-keys/) using a service account. This access key will provide authorization to provision users from the provider into Sumo Logic.
+Before configuring a provider, create an [access key](/docs/manage/security/access-keys/). (We recommend using a service account to create the access key.) This access key will provide authorization to provision users from the provider into Sumo Logic.
 
 When you create the access key, copy its access ID and access key values. You will enter these when you set up provisioning to use one of the following authorization methods:
 * Basic authentication
@@ -62,7 +60,7 @@ Assign users to your app. All users assigned to the app will be provisioned.
 
 When you set up provisioning for the app, provide a Sumo Logic access key to authorize access to Sumo Logic. (See [Create an access key](#create-an-access-key) above.) 
 
-For the SCIM base URL, provide the Sumo Logic [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the SCIM API using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`. 
+For the SCIM base URL, provide the Sumo Logic [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`. 
 
 ### Step 6: Verify provisioning
 

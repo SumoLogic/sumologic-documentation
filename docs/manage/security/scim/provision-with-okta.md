@@ -13,7 +13,7 @@ This article describes how to provision users in Sumo Logic with Okta.
 
 ### Create an access key
 
-Create an [access key](/docs/manage/security/access-keys/) using a service account. This access key will provide authorization to provision users from Okta into Sumo Logic.
+Create an [access key](/docs/manage/security/access-keys/). (We recommend using a service account to create the access key.) This access key will provide authorization to provision users from Okta into Sumo Logic.
 
 When you create the access key, copy its access ID and access key values. You will enter these when you set up provisioning to use one of the following authorization methods:
 * Basic authentication
@@ -48,7 +48,7 @@ If it is not already set up, [set up SAML for single sign-on with Okta](/docs/ma
 1. Configure provisioning integration settings:
    1. Click the **Provisioning** tab. 
    1. Click **Integration** in the left menu, and then click **Edit**.
-   1. **SCIM connector base URL**. Enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the SCIM API using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`.
+   1. **SCIM connector base URL**. Enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`.
    1. **Unique identifier field for users**. Enter `userName`.
    1. **Supported provisioning actions**. Select:
       * **Import New Users and Profile Updates**
