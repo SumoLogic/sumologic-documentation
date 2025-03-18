@@ -16,13 +16,12 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints. See the topics below for Collector API and Source API methods and examples, as well as upgrading and downgrading Collectors using the API.
 
 :::warning
-Collector Management APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs/). Instead, refer to the below documentation.
+Collector Management APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs/). Instead, refer to the documentation below.
 :::
 
 ## Installed Collector and Hosted Collector
 
-Collector Management APIs for Installed and Hosted collectors are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs/). Instead, refer to the documentation in this section.
-
+Collector Management APIs for Installed and Hosted collectors are not yet built with OpenAPI specifications and therefore are not included in our [Swagger documents](https://api.sumologic.com/docs/). For legacy installed collectors or sources refer to the legacy API documentation for [collectors](/docs/api/collector-management/collector-api-methods-examples/) or [sources](/docs/api/collector-management/source-api/).
 
 ## OpenTelemetry Collector
 
