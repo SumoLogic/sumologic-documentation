@@ -30,7 +30,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
   * View Monitors
   * Manage Entity Type Configs
   * Create access keys
-  * **Sumo Logic Access ID and Key**. When you deploy the solution, you’ll need to supply a Sumo Logic Access ID and Access Key, which enable you to use Sumo Logic APIs. Make sure you select default scope before generating the Access ID and Key.
+  * **Sumo Logic Access ID and Key**. When you deploy the solution, you’ll need to supply a Sumo Logic Access ID and Access Key, which enable you to use Sumo Logic APIs. Make sure you select default scope and have the role capabilities listed above before generating the Access ID and Key.
   ![Default-Scope.png](/img/observability/Default-Scope.png)
   :::note
   For the AWS Observability Solution, you must use the default scope when generating the Access ID and Key; custom scopes are not supported.
