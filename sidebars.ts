@@ -448,6 +448,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source',                
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source',
