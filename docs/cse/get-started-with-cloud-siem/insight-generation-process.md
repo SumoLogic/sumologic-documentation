@@ -6,13 +6,28 @@ description: Learn how Cloud SIEM correlates signals by entity to create insight
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe'; 
 
 This page explains Cloud SIEM's insight generation process. 
 
 The concept of an *entity* is central to the process Cloud SIEM uses to correlate signals and create insights. So, what is an entity? In Cloud SIEM, an entity is a actor, for example, a  hostname, username, or MAC address encountered in an incoming message. For more information about entities and entity types, see [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities).
 
+:::sumo Micro Lesson
 Watch this micro lesson to learn how insights are created.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/5un1z2hwoe?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: How are Insights Created? Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/MjzJlozR6mE?rel=0"
         width="854px"
         height="480px"
@@ -23,9 +38,9 @@ Watch this micro lesson to learn how insights are created.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
-
+:::
 
 ## Entities in messages are mapped to entity-type schema attributes
 

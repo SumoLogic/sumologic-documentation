@@ -25,9 +25,15 @@ What you'll learn:
 
 You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-started/sign-up).
 
-## Getting started with kickstart data in your trial
+## Getting started with Kickstart Data in your trial
 
-With your [trial](/docs/get-started/sign-up), you can access preloaded placeholder Kickstart Data to explore Sumo Logic instantly without setting up your own data. This feature helps trial users see immediate value and bypass setup barriers like firewall and security configurations.
+With your [Sumo Logic trial](/docs/get-started/sign-up), you can access preloaded placeholder Kickstart Data to explore Sumo Logic instantly prior to setting up your own data. This feature helps trial users see immediate value and bypass setup barriers like firewall and security configurations.
+
+:::warning limitations
+* Your trial workflow—Kickstart Data or custom data—is automatically determined by marketing-based user profiling. Manual selection of a workflow is not currently supported.
+* This feature is only available to select trial users during the initial rollout phase.
+* Kickstart Data is available for a maximum of 7 days. After this period, you must begin ingesting your own data to continue using Sumo Logic.
+:::
 
 ### Key benefits
 
@@ -46,14 +52,9 @@ With your [trial](/docs/get-started/sign-up), you can access preloaded placehold
     * Analyze sample data.
     * Perform log searches.
     * Invite team members to join and explore the platform with you.
-4. **Seamless transition to real data**. After you complete the sample data onboarding steps, you can set up your own data ingestion while continuing to use the platform’s core features. When your trial ends, Kickstart Data is deactivated automatically.
+4. **Seamless transition to real data**. Kickstart Data is available for only 7 days. After that, you must set up your own data ingestion while continuing to use the platform’s core features. When your trial ends, Kickstart Data is deactivated automatically.
 
 You can skip Kickstart Data anytime and begin ingesting your own data.
-
-:::warning limitations
-* User profiling for selection. Your assignment to either placeholder data or your own data workflow is determined by user profiling data from marketing. You won't be able to manually select your preferred workflow.
-* Limited availability. At launch, the placeholder data option will only be available to select trial users based on profiling.
-:::
 
 ## Step 1: Get your data into Sumo
 
@@ -155,6 +156,5 @@ Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a su
 * [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/)
 * [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart). Get up and running with the Sumo Logic Kubernetes solution in minutes.
 * [Traces Quickstart](/docs/apm/traces/quickstart). This guide demonstrates how to measure application microservice performance.
-* [Ingest Budgets Quickstart](/docs/manage/ingestion-volume/ingest-budgets/daily-volume/quickstart). Learn how to create and use Ingest Budgets.
 
 See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-training-portal).

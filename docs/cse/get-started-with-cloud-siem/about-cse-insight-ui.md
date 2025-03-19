@@ -6,6 +6,7 @@ description: Learn about the contents of the insights UI in Cloud SIEM.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe'; 
 
 This topic describes the Cloud SIEM UI for working with insights. 
 
@@ -73,13 +74,17 @@ You can use the **Filters** area near the top of the page to narrow down the ins
 * Status
 * Tags
 
-### Multi-insights list page
+### View insights in child organizations
 
-We offer an insights list page where you can see a list of all insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
+If you manage a parent organization with child organizations that also use Cloud SIEM, you can see a list of all insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
 
-This multi-insights list page (also known as a "federated" page) shows insights just as in a normal [insights list page](#insights-list-page). However, when you click an insight on the page, it opens the insight's details in the child organization's UI. You can use also use the [board view](#board-view) on the multi-insights page to move insights to different statuses.
+This multi-insights list page (also known as a "federated" page) shows insights just as in a normal [insights list page](#insights-list-page). However, when you click an insight on the page, it opens the insight's details in the child organization's UI. You can also use the [board view](#board-view) on the multi-insights page to move insights to different statuses.
 
-The multi-insights list page requires a special environment be set up for it. To have a multi-insights list page set up for your company, contact your Sumo Logic account representative, or contact [Sumo Logic Support](https://support.sumologic.com/support/s/).
+To be able to see insights in child organizations, [add child organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list.
+
+<!--
+For more information, see [Multi-insights list page in Cloud SIEM](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps/#multi-insights-list-page-in-cloud-siem).
+-->
 
 ## Insight details page
 
@@ -231,8 +236,23 @@ In addition, the following can appear in the graph:
 * **Threat indicators**. Any entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the entity will be highlighted in red or yellow accordingly.
 * **Hover**. If you hover over an entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn more about the entity relationship graph.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/7kpacy65bq?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SIEM Entity Timeline &amp; Relationship Graph Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/GTTwjB8y_5k?rel=0"
         width="854px"
         height="480px"
@@ -243,8 +263,9 @@ Watch this micro lesson to learn more about the entity relationship graph.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe'; 
+:::
 
 #### Entity details in the right pane
 

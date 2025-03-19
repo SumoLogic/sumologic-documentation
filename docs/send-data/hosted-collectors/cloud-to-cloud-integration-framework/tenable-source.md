@@ -26,9 +26,9 @@ The Tenable Source provides a secure endpoint to ingest audit-log events, vulner
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Export API](https://developer.tenable.com/reference/exports-vulns-request-export) |
-| 5 min |  [Audit logs](https://developer.tenable.com/reference/audit-log-events) |
-| 5 min |  [Exports assets](https://developer.tenable.com/reference/exports-assets-request-export) |
+| 1 h |  [Export API](https://developer.tenable.com/reference/exports-vulns-request-export) |
+| 12 h |  [Exports assets](https://developer.tenable.com/reference/exports-assets-request-export) |
+| 24 h |  [Audit logs](https://developer.tenable.com/reference/audit-log-events) |
 
 ## Setup
 

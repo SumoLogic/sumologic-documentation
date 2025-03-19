@@ -42,7 +42,7 @@ Kubernetes views provide a visual hierarchy of the clusters in your environment 
 
 ### Application service views
 
-Application Monitoring provides three Service and Application dashboard views. This allows you to review tracing data by application (all or grouped), environment, and services by top level and breaking down their health by application. This helps you review the most active operations performed on specified applications and services. See [Service Map Traces](/docs/apm/traces/services-list-map) and [Sumo Logic Apps](/docs/integrations) for more info. <br/><img src={useBaseUrl('img/dashboards/explore/apm-service-view.png')} alt="Application monitoring" style={{border: '1px solid gray'}} width="300"/>
+Application Monitoring provides three Service and Application dashboard views. This allows you to review tracing data by application (all or grouped), environment, and services by top level and breaking down their health by application. This helps you review the most active operations performed on specified applications and services. See [Service Map Traces](/docs/apm/services-list-map) and [Sumo Logic Apps](/docs/integrations) for more info. <br/><img src={useBaseUrl('img/dashboards/explore/apm-service-view.png')} alt="Application monitoring" style={{border: '1px solid gray'}} width="300"/>
 
 ### Real User Monitoring
 
@@ -163,6 +163,19 @@ Navigation capabilities allow you to quickly locate the object that needs debugg
 
 :::sumo micro lesson
 
+<Iframe url="https://fast.wistia.net/embed/iframe/6kfzt3kzos?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Kubernetes Observability Demo - Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
         width="854px"
         height="480px"
@@ -173,6 +186,7 @@ Navigation capabilities allow you to quickly locate the object that needs debugg
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 

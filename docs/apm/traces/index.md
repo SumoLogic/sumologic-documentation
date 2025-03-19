@@ -32,7 +32,7 @@ This guide provides information to work with your tracing data.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/apm/traces/services-list-map"><img src={useBaseUrl('img/apm/traces/servicemap.png')} alt="icon" width="33"/><h4>Services List and Services Map</h4></a>
+  <a href="/docs/apm/services-list-map"><img src={useBaseUrl('img/apm/traces/servicemap.png')} alt="icon" width="33"/><h4>Services List and Services Map</h4></a>
   <p>View your application topology and investigate microservice interactions.</p>
   </div>
 </div>
@@ -44,7 +44,7 @@ This guide provides information to work with your tracing data.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/apm/traces/spans"><img src={useBaseUrl('img/icons/operations/distributed-operations.png')} alt="icon" width="30"/><h4>Span Analytics and Queries</h4></a>
+  <a href="/docs/apm/spans"><img src={useBaseUrl('img/icons/operations/distributed-operations.png')} alt="icon" width="30"/><h4>Span Analytics and Queries</h4></a>
   <p>Learn how to use the Spans page to explore your span data.</p>
   </div>
 </div>

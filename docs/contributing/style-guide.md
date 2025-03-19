@@ -856,7 +856,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
    1. Ordered sub-list.
 1. And another item.
 
-  More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/traces/span-hover-view.png)
+  More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/span-hover-view.png)
 
 ```
 </TabItem>
@@ -868,7 +868,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
 1. Actual numbers do not matter, just that it is a number.
    1. Ordered sub-list.
 1. And another item.
-   * More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/traces/span-hover-view.png)
+   * More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/span-hover-view.png)
 
 </TabItem>
 </Tabs>
@@ -1373,7 +1373,7 @@ Markdown | Less | Pretty
 | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
 | Duration | 12.582 ms | The amount of time the trace spans.  |
 | Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/traces/span-hover-view.png) |
+| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/span-hover-view.png) |
 | Number of errors | 0 | The number of errors in the trace. |
 | Status | 200 | The HTTP status code of the trace. |
 
@@ -1533,6 +1533,8 @@ If you need to use mouse actions to be specific, use:
 
 ## Videos
 
+### YouTube
+
 To embed a YouTube video on a doc:
 
 1. Copy and paste the following code into your page (including the `import Iframe` line).
@@ -1596,3 +1598,50 @@ import Iframe from 'react-iframe';
 
 </TabItem>
 </Tabs>
+
+### Other video types
+
+You can use similar coding to embed videos from other vendors than YouTube. Following is example coding to embed videos from Wistia.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```html
+<Iframe url="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+<Iframe url="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+</TabItem>
+</Tabs>
+
+:::note
+Typically you must include `import Iframe from 'react-iframe';` with the markdown. It is not included in the example above because it was already called in the previous markdown for YouTube.
+:::

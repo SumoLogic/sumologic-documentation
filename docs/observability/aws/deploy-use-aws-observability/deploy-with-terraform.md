@@ -64,7 +64,7 @@ System Files:
 
 Before you run the Terraform script, perform the following actions on a server machine of your choice:
 
-1. Install [Terraform](https://www.terraform.io/) version [0.13.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
+1. Install [Terraform](https://www.terraform.io/) version [1.6.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
     ```bash
     $ terraform --version
     ```
@@ -647,7 +647,7 @@ The following table provides a list of all source parameters and their default v
 ### Configure collection of CloudWatch metrics
 
 :::note
-To migrate CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform).
+To migrate from legacy CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform).
 :::
 
 #### collect_cloudwatch_metrics
@@ -676,7 +676,7 @@ collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 
 Provide details for the Sumo Logic CloudWatch Metrics source. If not provided, then defaults will be used.
 
-* `limit_to_namespaces`. Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source.
+* `limit_to_namespaces`. Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source. You can provide both AWS and custom namespaces. 
 
 Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See the relevant docs for the [Kinesis Firehose Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) and the [CloudWatch Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for details on which namespaces they support.
 
@@ -703,7 +703,8 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
    "AWS/NetworkELB",
    "AWS/SQS",
    "AWS/SNS"
- ],
+ ], 
+ "tag_filters": [],
  "source_category": "aws/observability/cloudwatch/metrics",
  "source_name": "CloudWatch Metrics (Region)"
 }
@@ -713,8 +714,8 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
 
 The following override example collects only DynamoDB and Lambda namespaces with source_category set to `"aws/observability/cloudwatch/metrics/us-east-1"`:
 
-```json
-Cloudwatch_metrics_source_details = {
+```json title="cloudwatch_metrics_source_details"
+cloudwatch_metrics_source_details = {
  "bucket_details": {
    "bucket_name": "",
    "create_bucket": true,
@@ -724,12 +725,26 @@ Cloudwatch_metrics_source_details = {
  "fields": {},
  "limit_to_namespaces": [
    "AWS/DynamoDB",
-   "AWS/Lambda"
-  ],
+   "AWS/Lambda",
+   "CWAgent"
+  ], 
+ "tag_filters": [{
+      "type":"TagFilters",
+      "namespace" : "AWS/DynamoDB",
+      "tags": ["env=prod;dev"]
+    },{
+      "type": "TagFilters",
+      "namespace": "AWS/Lambda",
+      "tags": ["env=prod"]
+ }],
  "source_category": "aws/observability/cloudwatch/metrics/us-east-1",
  "source_name": "CloudWatch Metrics us-east-1"
 }
 ```
+
+:::note
+All namespaces specified in `tag_filters` must be included in `limit_to_namespaces`. Filters are not supported for custom metrics.
+:::
 
 #### cloudwatch_metrics_source_url
 
@@ -1243,23 +1258,26 @@ auto_enable_logs_subscription="New"
 
 ### auto_enable_logs_subscription_options
 
-`filter`. Enter regex for matching logGroups for AWS Lambda only. The regex will check the name. See [Configuring Parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination).
+* `filter`. Enter regex for matching logGroups for AWS Lambda only. The regex will check the name. See [Configuring Parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters).
+* `tags_filter`. Enter comma separated key value pairs for filtering logGroups using tags. Ex KeyName1=string,KeyName2=string. This is optional leave it blank if tag based filtering is not needed. See [Configuring Parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters)   
 
 **Default value:**
 
 ```json
 {
- "filter": "apigateway|lambda|rds"
+ "filter": "apigateway|lambda|rds",
+ "tags_filter": ""
 }
 ```
 
-**Default JSON:**
+**Override Example JSON:**
 
 The following example includes all log groups that match `"lambda-cloudwatch-logs"`:
 
 ```
 auto_enable_logs_subscription_options = {
  "filter": "lambda-cloudwatch-logs"
+ "tags_filter": "Environment=Production,Application=MyApp"
 }
 ```
 
@@ -1650,6 +1668,16 @@ The package is [sumologic-sdk](https://pypi.org/project/sumologic-sdk/) and inst
   ```sql
   pip install sumologic-sdk
   ```
+### Invalid IAM role OR AccessDenied
+#### Error Message
+
+```
+Invalid IAM role OR AccessDenied
+```
+#### Solution
+
+- Refer to [Edit, deactivate, or delete access keys](/docs/manage/security/access-keys/#edit-deactivate-or-delete-access-keys) for access keys activation. 
+- Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues.
 
 ### Argument named *managed_apps* is not expected
 #### Error Message
