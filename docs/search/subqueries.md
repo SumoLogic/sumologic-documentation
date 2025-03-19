@@ -385,11 +385,11 @@ _sourceCategory=weblogs
 | json field=_raw "service.action.networkConnectionAction.connectionDirection" as connectionDirection
 | where connectionDirection = "OUTBOUND"
 | json field=remoteipdetails "ipAddressV4" as src_ip
-| lookup type, actor, raw, threatlevel from sumo://threat/cs on src_ip=threat
+| lookup type, actor, raw, threatlevel from sumo://threat/i471 on src_ip=threat
 | where threatlevel = "high"
 | compose src_ip]
 ```
-<!-- Replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+<!-- Replace code example with this after `sumo://threat/i471` is replaced by `threatlookup`:
 ```sql
 _sourceCategory=weblogs
 [subquery:_sourceCategory="Labs/SecDemo/guardduty" "EC2 Instance" "communicating on an unusual server port 22"

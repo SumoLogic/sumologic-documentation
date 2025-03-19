@@ -116,17 +116,17 @@ Perform the steps in the following sections to migrate to the `_sumo_global_feed
 
 #### hasThreatMatch rule syntax
 
-If no source is explicitly provided in the [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch) syntax in your rules, no change is needed:
-* By default, until April 30, 2025 the rules point to the legacy `_sumo_global_feed_cs` source (and the rest of your tenant-specific sources). 
-* After April 30, 2025, the rules point to the new `_sumo_global_feed` source (and the rest of your tenant-specific sources).
-
-However, if you have `hasThreatMatch` rules that explicitly point to the legacy `_sumo_global_feed_cs` source, change them to point to `_sumo_global_feed` source. For example: 
+If you have rules with [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch) syntax that explicitly point to the legacy `_sumo_global_feed_cs` source, change them to point to `_sumo_global_feed` source. For example: 
 * Change this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="_sumo_global_feed_cs")` 
 * To this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="_sumo_global_feed")`
 
+If no source is explicitly provided in your rules with `hasThreatMatch` syntax, no change is needed:
+* By default, until April 30, 2025 the rules point to the legacy `_sumo_global_feed_cs` source (and the rest of your tenant-specific sources). 
+* After April 30, 2025, the rules point to the new `_sumo_global_feed` source (and the rest of your tenant-specific sources).
+
 #### lookup operator
 
-If you have created `lookup` operator queries that point to `sumo://threat/cs` (which directs to the legacy `_sumo_global_feed` source), change them to point to `sumo://threat/i471` (which directs to the new `_sumo_global_feed` source). For example:
+If you have created queries with the [`lookup`](/docs/search/search-query-language/search-operators/lookup/) search operator that explicitly point to `sumo://threat/cs` (the legacy `_sumo_global_feed_cs` source), change them to point to `sumo://threat/i471` (the new `_sumo_global_feed` source). For example:
 * Change this:
    ```
    | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
@@ -135,9 +135,10 @@ If you have created `lookup` operator queries that point to `sumo://threat/cs` (
    ```
    | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/i471 on threat=src_ip
    ```
+After April 30, 2025, all `lookup`operator queries pointing to `sumo://threat/cs` will be directed to the new `_sumo_global_feed` source.
 
 #### threatip search operator
 
-If you use the [threatip](/docs/search/search-query-language/search-operators/threatip/) search operator, no change is needed: 
+If you use the [`threatip`](/docs/search/search-query-language/search-operators/threatip/) search operator, no change is needed: 
 * By default, until April 30, 2025, the `threatip` operator points to the legacy `_sumo_global_feed_cs` source.
 * After April 30, 2025, the `threatip` operator points to the new `_sumo_global_feed` source.
