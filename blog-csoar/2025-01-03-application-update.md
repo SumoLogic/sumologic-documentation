@@ -23,7 +23,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ### Bug Fixes
 
 * Playbooks:
-   * Added validations for required fields in playbook nodes.
+   * Added validations for required fields in playbook nodes. 
    * Updated error messages for required fields.
 * Integrations:
    * Fixed an issue with API authorization in the Sumo Logic Log Analytics integration.
