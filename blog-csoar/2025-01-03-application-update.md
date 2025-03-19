@@ -9,21 +9,21 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<a href="https://help.sumologic.com/release-notes-csoar/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
+
 
 ### Changes and Enhancements
 
 #### Platform
 
 * Playbooks:
-   * Performance optimisations on Incidents page. 
-   * Faster onboarding and provisioning for new Cloud SOAR and Automation service customers. 
+   * Performance optimisations on Incidents page.
+   * Faster onboarding and provisioning for new Cloud SOAR and Automation service customers.
    * Display Integration Name and Cartesian product in node details popup.
 
 ### Bug Fixes
 
 * Playbooks:
-   * Added validations for required fields in playbook nodes. 
+   * Added validations for required fields in playbook nodes.
    * Updated error messages for required fields.
 * Integrations:
    * Fixed an issue with API authorization in the Sumo Logic Log Analytics integration.

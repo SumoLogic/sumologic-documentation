@@ -1401,7 +1401,11 @@ html[data-theme='dark'] .featureImage {
   color: var(--subtle);
 }
 
-// Beta badge
+
+
+
+// Sumo badges
+
 .beta {
   background: #C6007E;
   color: white;
@@ -1411,33 +1415,6 @@ html[data-theme='dark'] .featureImage {
   text-decoration: none;
   margin-right: 10px;
   border-radius: 10px;
-}
-
-// RSS Button
-.rss {
-  background: linear-gradient(90deg, #d97706, #b45309);
-  color: white;
-  font-weight: 600;
-  font-size: 12px;
-  padding: 0px 4px;
-  text-decoration: none;
-  text-align: left;
-  border-radius: 4px;
-  display: inline-block;
-  margin-bottom: 16px;
-  border: none;
-}
-
-// RSS Button
-.rss:hover {
-  background: linear-gradient(90deg, #b45309, #92400e);
-  color: white;
-  text-decoration: none;
-}
-
-// RSS link text
-.small-text {
-  font-size: 12px;
 }
 
 .sl-embed {
