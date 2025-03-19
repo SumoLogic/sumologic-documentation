@@ -16,8 +16,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 #### Platform
 
 * Playbooks:
-   * Performance optimisations on Incidents page.
-   * Faster onboarding and provisioning for new Cloud SOAR and Automation service customers.
+   * Performance optimisations on Incidents page. 
+   * Faster onboarding and provisioning for new Cloud SOAR and Automation service customers. 
    * Display Integration Name and Cartesian product in node details popup.
 
 ### Bug Fixes
