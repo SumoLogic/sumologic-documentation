@@ -89,7 +89,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 ### Errors and Failures
 
 **Azure Key Vaults - Errors and Failures** dashboard provides detailed information on what is happening (errors or recent failure events) in a Key Vault.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Errors-and-Failures.png')} alt="Azure Key Vault - Errors and Failurs dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Errors-and-Failures.png')} alt="Azure Key Vault - Errors and Failures dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
