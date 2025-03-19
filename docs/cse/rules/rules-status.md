@@ -33,9 +33,9 @@ Following are the different kinds of rule status. A rule's status can change dep
 | Status | Description | Action required |
 | :-- | :-- | :-- |
 | **Active** | The rule is executing normally. | No action required. |
-| **Degraded** | The rule is approaching a rule limit and it is removed from execution for one hour to allow processing to catch up. At the end of the hour, the rule is allowed to execute again and its status changes back to Active. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may want to edit the rule to reduce the chance it will become degraded again later. See [Degraded rules](#degraded-rules) below for more information. |
+| **Degraded** | The rule encountered a problem during processing and is removed from execution until the problem is resolved. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may need to edit the rule to reduce the chance it will become degraded again later. See [Degraded rules](#degraded-rules) below for more information. |
 | **Disabled** | The rule was manually disabled using the toggle in the UI, or was disabled with the API. | Enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). | 
-| **Failed** | The rule exceeded a rule limit and was automatically disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Failed** label for details about the failure.  Depending on the reasons provided in the details, you may need to edit the rule to prevent it from failing again in the future. <br/><br/>After addressing the reasons for the failure, enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
+| **Failed** | The rule encountered a problem that resulted in its being automatically disabled. For example, processing the rule caused the system to exceed a rule limit. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Failed** label for details about the failure. Depending on the reason provided in the details, you may need to edit the rule to prevent it from failing again in the future. <br/><br/>After addressing the reason for the failure, enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
 
 <!-- For DOCS-72 - Rule limits
 | **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-warning-info-button.png')} alt="Rule warning information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled. |
@@ -43,13 +43,17 @@ Following are the different kinds of rule status. A rule's status can change dep
 
 ### Degraded rules
 
-A degraded rule is one that has been temporarily shut off to prevent it from exceeding a processing limit. If you write a [custom rule](/docs/cse/rules/before-writing-custom-rule/) that becomes degraded, you must tune the rule to correct the problem.
+A degraded rule is one that has been temporarily removed from execution because a problem was encountered during rule processing. After the problem is resolved, the rule returns to execution.
 
-For example, rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, Cloud SIEM might display a message like this:
+Rules can be degraded for many reasons, such as a failure to parse the rule. If the rule is degraded because it is approaching a rule limit, it is removed for one hour to allow processing to catch up, and at the end of the hour, the rule is allowed to execute again and its status changes back to Active.
 
-`The aggregation on the group key 'admin@company.com' has a record volume exceeding the supported limit, and has been disabled. Consider tuning the rule to exclude records producing this group key.`
+If you write a [custom rule](/docs/cse/rules/before-writing-custom-rule/) that becomes degraded, you must tune the rule to correct the problem. Create a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions/) to address the portion of the rule causing the rule degradation.
 
-To resolve a degraded rule issue, create a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions/) to address the portion of the rule causing the rule degradation.
+Following are some situations when a rule can be become degraded:
+* When a rule cannot be parsed, a message like this can appear when you click the information button on the "Degraded" rule status:
+   <br/>`Failure to parse rule: Line 1:2 mismatched input 'Unknown' expecting {<EOF>, '[', '.', AND, BETWEEN, IN, IS, LIKE, MATCHES, NOT, OR, RLIKE, EQ, '<=>', '<>', '!=', '<', LTE, '>', GTE, '+', '-', '*', '/', '%', WS}` 
+* Rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, Cloud SIEM might display a message like this when you click the information button on the "Degraded" rule status:
+   <br/>`The aggregation on the group key 'admin@company.com' has a record volume exceeding the supported limit, and has been disabled. Consider tuning the rule to exclude records producing this group key.`
 
 ## Rule limits
 
