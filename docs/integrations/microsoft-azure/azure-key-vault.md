@@ -73,43 +73,43 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Azure Key Vault - Overview** dashboard allows you to monitor and analyze your key vault's usage metrics, including API hits, vault usage, and average latencies. Gain insights into the performance of your vaults.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Overview.png')} alt="Azure Key Vault dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Overview.png')} alt="Azure Key Vault - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Operations Overview
 
 **Azure Key Vaults - Operations** Overview dashboard provides insights of operational logs for your key vaults. Monitor key, secret, and certificate operations, including creation, storage, deletion, retrieval, setting, and recovery. Gain insights into key activities for effective management.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Operations-Overview.png')} alt="Azure Key Vault dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Operations-Overview.png')} alt="Azure Key Vault  - Operations Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Operations Detailed
 
 **Azure Key Vaults - Operations Detailed** dashboard provides insights of operational logs for your key vaults. Monitor key, secret, and certificate operations, including creation, storage, deletion, retrieval, setting, and recovery in detailed views. Gain insights into key activities for effective management.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Operations-Detailed.png')} alt="Azure Key Vault dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Operations-Detailed.png')} alt="Azure Key Vault - Operations Detailed dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Errors and Failures
 
 **Azure Key Vaults - Errors and Failures** dashboard provides detailed information on what is happening (errors or recent failure events) in a Key Vault.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Errors-and-Failures.png')} alt="Azure Key Vault dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Errors-and-Failures.png')} alt="Azure Key Vault - Errors and Failurs dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
-**Azure Key Vaults - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Key Vaults resources Use this dashboard to: Monitor the distribution of operation types and their success rates to ensure proper functioning of your Key Vaults. Identify potential issues by analyzing the top operations causing errors and correlating them with specific users or applications. Track recent write and delete operations to maintain an audit trail of changes made to your Key Vaults.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Administrative-Operations.png')} alt="Azure Key Vault dashboards" />
+**Azure Key Vaults - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Key Vaults resources Use this dashboard to monitor the distribution of operation types and their success rates to ensure proper functioning of your Key Vaults. Identify potential issues by analyzing the top operations causing errors and correlating them with specific users or applications. Track recent write and delete operations to maintain an audit trail of changes made to your Key Vaults.
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Administrative-Operations.png')} alt="Azure Key Vault - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 
-**Azure Key Vaults - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Key Vaults resources. Use this dashboard to: Monitor the success and failure rates of policy events to ensure proper configuration and compliance. Track and analyse recent recommendations to improve the performance and security of your Vaults setup. Identify trends in policy events and recommendations over time to proactively address potential issues.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Policy-and-Recommendations.png')} alt="Azure Key Vault dashboards" />
+**Azure Key Vaults - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Key Vaults resources. Use this dashboard to monitor the success and failure rates of policy events to ensure proper configuration and compliance. Track and analyse recent recommendations to improve the performance and security of your Vaults setup. Identify trends in policy events and recommendations over time to proactively address potential issues.
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Policy-and-Recommendations.png')} alt="Azure Key Vault - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Vault Health
 
 **Azure Key Vaults - Vault Health** dashboard allows you to monitor and analyze your key vault's usage metrics, including API hits, vault usage, and average latencies. Gain insights into the health of your vaults.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Vault-Health.png')} alt="Azure Key Vault dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Vault-Health.png')} alt="Azure Key Vault - Vault Health dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Compliance
 
 **Azure Key Vaults - Compliance** dashboard provides detailed information on what is happening with polices and compliance related events in a Key Vault and gives an overview of the objects (Keys, Secrets, etc) are adhering to specific compliance and policies in Azure.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Compliance.png')} alt="Azure Key Vault dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Compliance.png')} alt="Azure Key Vault - Compliance dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Azure Key Vaults app
 
@@ -123,9 +123,9 @@ These alerts are metric based and will work for all Key Vaults.
 | Alert Name                                                                                                                                             | Alert Description and Conditions                                                               | Alert Condition | Recover Condition |
 |:-------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------|:----------------|:------------------|
 | `Azure Key Vaults - Availability drops below 100%`                                                                                                     | This alert is triggered when availability drops under 100% are detected for any Key Vaults.    | Count < 100     | Count = 100       |
-| `Azure Key Vaults - Keys, Secrets, Certificates Expired Alert`                                                                                         | This alert trigger when any Keys, Secrets, Certificates has expired for any of Key Vaults.     | Count >= 1      | Count < 1         |
-| `Azure Key Vaults - Keys, Secrets, Certificates Near Expiry Alert`                                                                                     | This alert trigger when any Keys, Secrets, Certificates are near expiry for any of Key Vaults. | Count >= 1      | Count < 1         |
-| `Azure Key Vaults - Latency is greater than 1000 ms`                                                                                                   | This alert is triggered when latency of Vaults goes above below 1000ms.                        | Count >= 1000   | Count < 1000      |
+| `Azure Key Vaults - Keys, Secrets, Certificates Expired Alert`                                                                                         | This alert triggers when any Keys, Secrets, or Certificates have expired for any Key Vaults.     | Count >= 1      | Count < 1         |
+| `Azure Key Vaults - Keys, Secrets, Certificates Near Expiry Alert`                                                                                     | This alert triggers when any Keys, Secrets, or Certificates are near expiry for any Key Vaults. | Count >= 1      | Count < 1         |
+| `Azure Key Vaults - Latency is greater than 1000 ms`                                                                                                   | This alert is triggered when latency of Vaults goes above 1000ms.                        | Count >= 1000   | Count < 1000      |
 | `Azure Key Vaults - Overall Vault Saturation is greater than 75%`                                                                                      | This alert is triggered when Overall vault saturation of any vaults is greater than 75%.       | Count >= 75     | Count < 75        |
 
 ## Troubleshooting
