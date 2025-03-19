@@ -771,7 +771,7 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
    <td>timeZone </td>
    <td>String </td>
    <td>Yes</td>
-   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/><p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p></td>
+   <td>The time zone if from/to is not in milliseconds. See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/><p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p></td>
   </tr>
   <tr>
    <td>byReceiptTime</td>
@@ -784,6 +784,12 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
    <td>String </td>
    <td>No</td>
    <td>This enables <a href="/docs/search/get-started-with-search/build-search/dynamic-parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>. </td>
+  </tr>
+   <tr>
+   <td>requiresRawMessages</td>
+   <td>Boolean</td>
+   <td>No </td>
+   <td>Define as <code>false</code> to slightly improve the performance of aggregate queries as raw messages will not be computed. By default, the condition is set to <code>true</code>. </td>
   </tr>
 </table>
 
