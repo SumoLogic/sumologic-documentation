@@ -31,7 +31,7 @@ Modifying the query will apply your data access level to the scheduled search. Y
 :::note
 It may take up to 20 minutes for changes in alert conditions to take effect. If you cannot wait 20 minutes, one option is to create a new scheduled search using the *Save As* query option in the search UI.
 :::
-If Sumo presents a "Cannot Edit Scheduled Search" message, refer to the section below.
+If Sumo Logic presents a "Cannot Edit Scheduled Search" message, refer to the section below.
 
 ### Edit permissions
 
