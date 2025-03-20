@@ -14,6 +14,19 @@ To collect [traces](/docs/apm/traces) and RUM metrics from a browser, you'll fir
 :::sumo Micro Lesson
 Using the RUM HTTP Traces App for Manual Testing.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/qmxk5wxqu5?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Using the RUM HTTP Traces App for Manual Testing Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old 
 <Iframe url="https://www.youtube.com/embed/CduT1sqSPmE?rel=0"
         width="854px"
         height="480px"
@@ -24,7 +37,7 @@ Using the RUM HTTP Traces App for Manual Testing.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-
+--> 
 :::
 
 ## Prerequisites
@@ -45,7 +58,7 @@ To configure a RUM HTTP Traces source:
    * **Description**. (Optional) description of the Source.
    * **Source Host** and **Source Category**. (Optional) Enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data. We recommend you specify a Source Category indicating the data is from a browser.<br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Source.png')} alt="Real User Monitoring HTTP Traces source icon" style={{border: '1px solid gray'}} width="600" />
 1. Enter **Advanced options for Browser RUM**.<br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Source-Advanced.png')} alt="Advanced options for Browser RUM" style={{border: '1px solid gray'}} width="400"/>
-   * **Application Name**. (Recommended) Add an **Application Name** tag of a text string to show for the app name in spans (for example, `bookings-app`). This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](/docs/apm/traces/services-list-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
+   * **Application Name**. (Recommended) Add an **Application Name** tag of a text string to show for the app name in spans (for example, `bookings-app`). This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](/docs/apm/services-list-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
    * **Service Name**. (Required) Add a **Service Name** of a text string to show for the service name in spans (for example, `bookings-web-app`). This setting is saved in the script for `name_of_your_web_service`. To set up a service name dynamically (e.g., to have different service names for micro-frontend packages), leverage the `getOverriddenServiceName` function inside your page code to overwrite the default service name (requires RUM script v4.2.0 or higher). Service names should be of low cardinality and should describe parts of your website above page level. Here's an example code leveraging that function:
        ```javascript
        window.sumoLogicOpenTelemetryRum.initialize({

@@ -4,7 +4,7 @@ title: Dragos Source
 sidebar_label: Dragos
 tags:
     - Dragos
-description: Collect address, asset, vulnerability, and zone details from the Dragos API and send them to Sumo Logic.
+description: Collect address, asset, vulnerability, notification, and zone details from the Dragos API and send them to Sumo Logic.
 ---
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/dragos/example.json';
@@ -17,13 +17,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Dragos is a cybersecurity platform with an ecosystem tailored for industrial environments, including Industrial Control Systems (ICS), Supervisory Control and Data Acquisition (SCADA), Distributed Control System (DCS), and Operational Technology (OT) environments.
 Dragos's Operational Technology (OT) offers clear visibility into your Industrial Control System (ICS) assets and communications. It monitors networks, detects threats, and addresses vulnerabilities without causing disruptions or shutdowns, helping you respond confidently to potential threats.
 
-The Dragos source collects address, asset, vulnerability, and zone details from the Dragos API and sends it to Sumo Logic for streamlined analysis.
+The Dragos source collects address, asset, vulnerability, notification, and zone details from the Dragos API and sends it to Sumo Logic for streamlined analysis.
 
 ## Data collected
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 minutes | Vulnerability |
+| 5 minutes | Vulnerabilities |
+| 5 minutes | Notifications |
 | 24 hours | Addresses |
 | 24 hours | Zones |
 | 24 hours | Assets |
@@ -89,15 +90,16 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | requestEndpoint | String | Yes | `null` | The API URL to fetch the data from the Dragos log source. | `https://sumologic-dragos.cxc.dragos.cloud/` |
 | apiID | String | Yes | `null` | API ID of your account for authorization. | `036fxxxx-b642-xxxx-99d3-fcxxxx2exxxx` |
 | apiSecret | String | Yes | `null` | API Secret of your account for authorization. | `xxxU1TxxxxxxxxKSJwHYOpK37xxxxxxxxrEHAkU91xxxxxxxxxFrrJ06xxx` |
-| pollingIntervalVulnerabilityMin | String | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data for API.<br/>**Default**: 5 minutess <br/>**Minimum**: 5 minutes<br/>**Maximum**: 60 minutes |  |
+| pollingIntervalVulnerabilityMin | String | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data for API.<br/>**Default**: 5 minutes <br/>**Minimum**: 5 minutes<br/>**Maximum**: 60 minutes |  |
 | pollingIntervalAddressesHour | String | Yes | `24 hours` | Time interval (in hours) after which the source will check for new data for API.<br/>**Default**: 24 hours<br/>**Minimum**: 12 hours<br/>**Maximum**: 24 hours |  |
 | pollingIntervalZonesHour | String | Yes | `24 hours` | Time interval (in hours) after which the source will check for new data for API.<br/>**Default**: 24 hours<br/>**Minimum**: 12 hours<br/>**Maximum**: 24 hours |  |
 | pollingIntervalAssetsHour | String | Yes | `24 hours` | Time interval (in hours) after which the source will check for new data for API.<br/>**Default**: 24 hours<br/>**Minimum**: 12 hours<br/>**Maximum**: 24 hours |  |
-| collectAddressDetails | Boolean | No | `True` | Specify if you need to collect the address details. |  |
-| collectZoneDetails | Boolean | No | `True` | Specify if you need to collect the zone details. |  |
-| collectDeviceDetails | Boolean | No | `True` | Specify if you need to collect the assets details. |  |
-| collectVulnerabilityDetails | Boolean | No | `True` | Specify if you need to collect the vulnerability details. |  |
-
+| pollingIntervalNotificationMin | String | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data for API.<br/>**Default**: 5 minutes <br/>**Minimum**: 5 minutes<br/>**Maximum**: 60 minutes |  |
+| collectAddressDetails | Boolean | No | `False` | Specify if you need to collect the address details. |  |
+| collectZoneDetails | Boolean | No | `False` | Specify if you need to collect the zone details. |  |
+| collectDeviceDetails | Boolean | No | `False` | Specify if you need to collect the assets details. |  |
+| collectVulnerabilityDetails | Boolean | No | `False` | Specify if you need to collect the vulnerability details. |  |
+| collectNotificationDetails | Boolean | No | `False` | Specify if you need to collect the notification details. |  |
 ### JSON example
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>

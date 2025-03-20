@@ -7,7 +7,7 @@ description: Learn about how Cloud SIEM normalizes usernames and hostnames durin
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Cloud SIEM normalizes usernames and hostnames in Records during the parsing and mapping process. This allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form.
+Cloud SIEM normalizes usernames and hostnames in records during the parsing and mapping process. This allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form.
 
 ## Getting data into Cloud SIEM for normalization
 
@@ -114,7 +114,7 @@ The raw name is populated in the un-normalized name field:
 
 `user_username_raw = bob`
 
-The same would logic would apply to a hostname:
+The same logic would apply to a hostname:
 
 `device_hostname = desktop1 `
 

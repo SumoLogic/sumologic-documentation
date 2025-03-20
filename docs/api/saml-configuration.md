@@ -30,11 +30,10 @@ The [SAML Configuration](/docs/manage/security/saml/set-up-saml) Management API 
 | US1        | https://api.sumologic.com/docs/#tag/samlConfigurationManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/samlConfigurationManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Security
     * Manage SAML
 
--->

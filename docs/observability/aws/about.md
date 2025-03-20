@@ -13,8 +13,22 @@ Despite all of these services being a part of AWS, troubleshooting across differ
 
 The Sumo Logic AWS Observability solution and Root Cause Explorer pull and analyze data across key AWS services and accounts, establish activity baselines, and determine causes for application incidents and high deviation events.
 
+:::sumo Micro Lesson
 Watch the following micro lesson to learn about our AWS Observability solution.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/fz0hceixkc?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Monitoring and Troubleshooting with AWS Observability Solution Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/p_LaUPAer6I?rel=0"
      width="854px"
      height="480px"
@@ -25,6 +39,9 @@ Watch the following micro lesson to learn about our AWS Observability solution.
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
+
+:::
 
 #### AWS Observability Solution  
 

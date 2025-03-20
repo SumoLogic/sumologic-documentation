@@ -69,7 +69,7 @@ sso : ip-192-0-2-0 : alex@travellogic.com :
 "Successful Login" : "2024-05-25T22:11:42"
 ```
 
-First, the message is parsed into a set of key-value pairs. This process also fixes basic formatting. This step creates semi-structured data. For example, instead of `ip-192-0-2-0`, the parsing step extracts the IP address into a key-value pair, where the key is something like `srcDeviceIP` and the value is `192.0.2.0`, with the hyphens normalized to dots. Then, this information is mapped onto the Cloud SIEM schema. Finally, the record is enriched with information from match lists or threat intelligence databases, such as its [CrowdStrike threat level](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq). These normalized records are then sent down the Cloud SIEM pipeline and compared to rules. 
+First, the message is parsed into a set of key-value pairs. This process also fixes basic formatting. This step creates semi-structured data. For example, instead of `ip-192-0-2-0`, the parsing step extracts the IP address into a key-value pair, where the key is something like `srcDeviceIP` and the value is `192.0.2.0`, with the hyphens normalized to dots. Then, this information is mapped onto the Cloud SIEM schema. Finally, the record is enriched with information from match lists or Sumo Logic [threat intelligence](/docs/security/threat-intelligence/). These normalized records are then sent down the Cloud SIEM pipeline and compared to rules. 
 
 ### Extracting security insights from Cloud SIEM
 
@@ -303,8 +303,8 @@ If you do decide to write a custom rule, insight, or rule tuning expression, the
 
 You're updating some of the firewalls in your system, and you don't want to trigger unnecessary alerts. Write a rule tuning expression that will allow yourself to bypass firewall-related rules.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rule Tuning**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
-1. On the **Rule Tuning** page, click **Create**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**. Then in the top menu, select **Content > Rule Tuning**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
+1. On the **Rule Tuning** page, click **Add Rule Tuning Expression**.
 1. Name your rule tuning expression.
 1. **Tune selected Rules** should be selected by default. 
 1. Use the **Type to add a Rule** search bar to find rules to add your expression to.
@@ -400,7 +400,7 @@ But what if you want to be alerted right away when a certain rule is triggered?
 You want to be alerted right away when your new custom match rule is triggered. Create a custom insight that looks for only this rule.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu, select **Content > Custom Insights**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.
-1. Click **Create**.
+1. Click **Add Custom Insight**.
 1. Give your custom insight a name.
 1. Under **When Signals are created from the following** select **rules**.
 1. In **Type to add a rule**, search for the rule you created in [Write a match rule](#write-a-match-rule) and add it to your custom insight.
