@@ -20,11 +20,11 @@ Jira is a proprietary issue tracking product developed by Atlassian that allows 
 * **Get Issue** *(Enrichment)* - Returns the details for an issue.
 * **Get Issue Comments** *(Enrichment)* - Get the comments of issue.
 * **List Issue Fields** *(Enrichment)* - List the issue fields.
-* **List Issue Transitions** *(Enrichment)* - Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue's .status.
+* **List Issue Transitions** *(Enrichment)* - Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue's status.
 * **List Issue Types** *(Enrichment)* - List the types of issue.
 * **List Projects** *(Enrichment)* - List the current projects.
 * **List Statuses** *(Enrichment)* - Returns a list of the statuses.
-* **List Users** *(Enrichment)* - Returns a list of all users
+* **List Users** *(Enrichment)* - Returns a list of all users.
 * **Search Into Issues** *(Enrichment)* - Search Jira Issues.
 * **Update Issue** (*Notification*) - Update the specified issue field with the specified value.
 
