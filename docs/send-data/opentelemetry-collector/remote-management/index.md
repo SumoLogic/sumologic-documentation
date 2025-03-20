@@ -23,7 +23,12 @@ The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opente
   allowfullscreen
 />
 :::
+
   
+  **If you want to manage the collector with local configs, you MUST check this box otherwise by default the collector will only be managed by remote**
+![image](https://github.com/user-attachments/assets/80b64ddb-f88a-4129-bb82-76c48e3544dd)
+
+
 **Key features**
 
 * **Tagging collectors**. Tag your OpenTelemetry collectors to categorize and group them. These tags enrich your data, allowing you to use them effectively in dashboards and searches.
