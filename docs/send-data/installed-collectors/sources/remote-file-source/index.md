@@ -5,8 +5,9 @@ description: You can collect file tail data from a remote system using SSH.
 ---
 
 import CollBegin from '../../../../reuse/collection-should-begin-note.md';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Log files collected using a Remote File Source must be encoded in UTF-8 or ASCII. If you are editing a Source, metadata changes are reflected going forward. Metadata for previously collected log data will not be retroactively changed.
+If you are editing a Source, metadata changes are reflected going forward. Metadata for previously collected log data will not be retroactively changed.
 
 Sumo Logic scans remote directories every 30 seconds.
 
@@ -50,9 +51,7 @@ To configure a Remote File Source:
     ![remote file source credential input.png](/img/send-data/remote-file-source-credential-input.png)
 
 1. Set any of the following under **Advanced.**
-
-    ![Local File UI June 2021.png](/img/send-data/Local-File-UI.png)
-
+<img src={useBaseUrl('/img/send-data/advanced-options-remote-file-source.png')} alt="Thumbnail icon" width="600" />
     * **Denylist.** Optional. Add any files to be excluded by including one or more path expressions separated by commas. Note that this field takes a maximum of 10240 characters.
     * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
       * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
