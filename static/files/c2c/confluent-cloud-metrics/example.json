@@ -1,0 +1,33 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+                    "name": "Confluent Cloud Metrics",
+                    "clientId": "U5XXXYZYGAXXXFRZ",
+                    "clientSecret": "X2OSZAI4YEn5lZ0cXXXuZ556WlbKYvHPHSCTXXXyFN8dfz",
+                    "resourceKafkaId": true,
+                    "resourceConnectorId": false,
+                    "resourceKSQLId": false,
+                    "resourceSchemaRegistryId": true,
+                    "resourceComputePoolId": false,
+                    "metric": true,
+                    "ignoreFailedMetrics": true,
+                    "pollingIntervalMin": 5,
+                    "kafkaId": [
+                                "id1",
+                                "id2"
+                               ],
+                    "schemaRegistryId": [
+                                         "id3",
+                                         "id4"
+                                        ],
+                    "metrics": [
+                                "example metric"
+                               ]
+                  },
+        "schemaRef": {
+                      "type": "Confluent Cloud Metrics"
+                     },
+        "sourceType": "Universal"
+    }
+}
