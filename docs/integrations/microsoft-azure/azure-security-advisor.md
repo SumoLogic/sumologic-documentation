@@ -116,7 +116,7 @@ To send Azure Advisor events to Sumo Logic, you can configure the [Azure Advisor
 
 Refer to [Create Azure Advisor alerts in the Azure portal](https://learn.microsoft.com/en-us/azure/advisor/advisor-alerts-portal) to configure an Azure Advisor alert for Sumo Logic.
 Sumo Logic recommends you to select the **Category and impact level** option in the **Condition** section while creating the alert.
-<img src={useBaseUrl('img/integrations/microsoft-azure/create-advisor-alert.png')} alt="Thumbnail icon" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/create-advisor-alert.png')} alt="Edit Advisor alert" style={{border: '1px solid gray'}} width="800" />
 
 ### Step 3: Create an action group
 
