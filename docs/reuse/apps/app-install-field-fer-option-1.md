@@ -9,6 +9,7 @@ To install the app, do the following:
 1. Click **Next** in the **Setup Data** section.
 1. In the **Configure** section of your respective app, complete the following fields.
     1. **Field Name**. If you already have collectors and sources setup, select the configured metadata field name (eg _sourcecategory) or specify other custom metadata (eg: _collector) along with its metadata **Field Value** .
+    2. **Is K8S deployment involved**. Specify if resources being monitored are partially or fully deployed on Kubernetes (K8s)
 1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 **Post-installation**

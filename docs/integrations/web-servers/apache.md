@@ -114,23 +114,7 @@ The predefined searches in the Apache app are based on the Apache Access logs an
 
 This section provides instructions for configuring log and metrics collection for the Sumo Logic app for Apache.
 
-### Step 1: Configure fields in Sumo Logic
-
-As part of the app installation process, the following fields will be created by default:
-* `component`
-* `environment`
-* `webserver_system`
-* `webserver_farm`
-
-Additionally, if you're using Apache in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_webserver_system`
-* `pod_labels_webserver_farm`
-
-For information on setting up fields, see [Fields](/docs/manage/fields).
-
-### Step 2: Configure Your Environment for Apache Logs and Metrics Collection
+### Configure Your Environment for Apache Logs and Metrics Collection
 
 Sumo Logic supports collection of logs and metrics data from Apache in both Kubernetes and non-Kubernetes environments. Please click on the appropriate link below based on the environment where your Apache farms are hosted.
 
@@ -408,34 +392,27 @@ For error logs, following directives are to be noted:
 
 ## Installing the Apache app
 
-Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic app for Apache to use the pre-configured Searches and dashboards.
+import AppInstall2 from '../../reuse/apps/app-install-field-fer-option-1.md';
 
-To install the app, do the following:
-1. Locate and select the app you need from the **App Catalog**.
-2. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click images in **Dashboard Preview** section.
-3. Click **Add Integration**.
-4. In **Setup Data** step you would see **Open Setup Doc** button with link to this document. Click **Next** to proceed.
-5. In the **Configure Apache** step, complete the following fields.
-   * **Apache Log Source**. Choose **Enter a Custom Data Filter** and enter a custom filter. Examples:
-     * For all Apache web server farms: `webserver_system=apache webserver_farm=*`
-     * For a specific web server farm: `webserver_system=apache webserver_farm=apache.dev.01`
-   * Select location in the library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-   * **Folder Name** You can retain the existing name, or enter a name of your choice for the app.
-5. Click **Next**.
+<AppInstall2/>
 
-For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations).
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `webserver_system`
+* `webserver_farm`
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+Additionally, if you're using Apache in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_webserver_system`
+* `pod_labels_webserver_farm`
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+## Viewing Apache dashboards​
 
-## Viewing Apache dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-This section provides descriptions of each of the app dashboards.
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+<ViewDashboards/>
 
 ### Overview
 
@@ -559,24 +536,13 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Status.png')} alt="test" />
 
-## Installing Apache monitors
-
-This section provides instructions for installing the Sumo Logic Monitors for Apache. These instructions assume you have already set up collection as described in the [Collecting Logs and Metrics for Apache](#collecting-logs-and-metrics-for-apache) page.
-
-Sumo Logic has provided a predefined set of alerts, which can be imported and available through [Sumo Logic monitors](/docs/alerts/monitors), to help you proactively monitor your Apache Web servers and farms. These monitors are built based on metrics and logs datasets and include pre-set thresholds based on industry best practices and recommendations.
-
-For details about individual alerts, see [Apache alerts](#apache-alerts).
+## Create monitors for Apache app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
+<CreateMonitors/>
 
 ## Apache Alerts
-
-Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 <details>
 <summary>Here are the alerts available for Apache (click to expand).</summary>

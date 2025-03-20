@@ -6,9 +6,7 @@ To update the app, do the following:
     1. If the upgrade does not have any configuration or property changes, you will be redirected to the **Preview & Done** section.
     1. If the upgrade has any configuration or property changes, you will be redirected to **Setup Data** page.
         1. In the **Configure** section of your respective app, complete the following fields.
-            - **Key**. Select either of these options for the data source.
-                * Choose **Source Category** and select a source category from the list for **Default Value**.
-                * Choose **Custom** and enter a custom metadata field. Insert its value in **Default Value**.
+            1. **Field Name**. If you already have collectors and sources setup, select the configured metadata field name (eg _sourcecategory) or specify other custom metadata (eg: _collector) along with its metadata **Field Value** .
         1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 **Post-update**
