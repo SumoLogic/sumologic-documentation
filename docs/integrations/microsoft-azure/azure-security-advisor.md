@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The **Azure Security - Advisor** app provides security analysts visibility into Azure Advisor’s recommendations on security, reliability, operational excellence, and cost optimization. It helps organizations proactively address risks, improve the cloud infrastructure's resiliency, and optimize Azure resource use.
 
 :::info
-This app includes [built-in monitors](#azure-security-advisor-alerts). For details on creating custom monitors, refer to [Create monitors for Azure Security - Advisor app](#create-monitors-for-azure-security-advisor-app).
+This app includes [built-in monitors](#azure-security---advisor-alerts). For details on creating custom monitors, refer to [Create monitors for Azure Security - Advisor app](#create-monitors-for-the-azure-security---advisor-app).
 :::
 
 ## Log types
@@ -116,11 +116,14 @@ To send Azure Advisor events to Sumo Logic, you can configure the [Azure Advisor
 
 Refer to [Create Azure Advisor alerts in the Azure portal](https://learn.microsoft.com/en-us/azure/advisor/advisor-alerts-portal) to configure an Azure Advisor alert for Sumo Logic.
 Sumo Logic recommends you to select the **Category and impact level** option in the **Condition** section while creating the alert.
+<img src={useBaseUrl('img/integrations/microsoft-azure/create-advisor-alert.png')} alt="Thumbnail icon" />
 
 ### Step 3: Create an action group
 
 Refer to [Create an action group in the Azure portal](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups) to create an action group for the Azure Advisor alert in step 2.
+
 Sumo Logic recommends you to select the **Action type** as **Webhook** and then provide the Sumo Logic HTTP Source URL that you collected from step 1.
+<img src={useBaseUrl('img/integrations/microsoft-azure/create-action-group.png')} alt="Thumbnail icon" />
 
 ## Installing the Azure Security - Advisor app   
 
@@ -130,7 +133,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing the Azure Service Bus dashboards
+## Viewing the Azure Security - Advisor dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -138,19 +141,19 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Advisor Security Recommendations
 
-The **Azure Security - Advisor Security Recommendations** provides security analysts with insights into security recommendations from Azure Advisor, categorized by severity (high, medium, low) to help prioritize risks. It highlights affected resource types and assets, enabling quick identification of vulnerabilities. A trend analysis graph visualizes recommendation patterns over time, tracking improvements and recurring risks. The Top Action Plan section lists prioritized recommendations with timestamps and affected resources for efficient remediation. Additionally, a summary of recommendations offers a broader view of risks across Azure services, helping security teams enhance their security posture and mitigate vulnerabilities.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+Advisor/Azure+Security++-+Advisor+Security+Recommendations.png')} alt="Advisor Security Recommendations" style={{border: '1px solid gray'}} width="800" />
+The **Azure Security - Advisor Security Recommendations** dashboard provides security analysts with insights into security recommendations from Azure Advisor, categorized by severity (high, medium, low) to help prioritize risks. It highlights affected resource types and assets, enabling quick identification of vulnerabilities. A trend analysis graph visualizes recommendation patterns over time, tracking improvements and recurring risks. The Top Action Plan section lists prioritized recommendations with timestamps and affected resources for efficient remediation. Additionally, a summary of recommendations offers a broader view of risks across Azure services, helping security teams enhance their security posture and mitigate vulnerabilities.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+Advisor/Azure+Security++-+Advisor+Security+Recommendations.png')} alt="Advisor Security Recommendations" style={{border: '1px solid gray'}} width="800" />
 
 ### Advisor Cost Recommendations
 
-The **Azure Security - Advisor Cost Recommendations** provides security analysts with cost optimization strategies for Azure, helping identify idle and underutilized resources to reduce cloud spending. It categorizes recommendations by impact level, highlighting priority areas for cost-saving actions. The Affected Resources panel identifies services, such as compute disks, that may benefit from resizing or deallocation. A timeline visualization tracks cost recommendations over time to monitor trends and assess optimization effectiveness. The Cost Recommendation Summary details recommendations, their impact, and associated resources, aiding informed decision-making. This dashboard helps maintain financial efficiency while ensuring optimal resource utilization in Azure.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+Advisor/Azure+Security++-+Advisor+Cost+Recommendations.png')} alt="Advisor Cost Recommendations" style={{border: '1px solid gray'}} width="800" />
+The **Azure Security - Advisor Cost Recommendations** dashboard provides security analysts with cost optimization strategies for Azure, helping identify idle and underutilized resources to reduce cloud spending. It categorizes recommendations by impact level, highlighting priority areas for cost-saving actions. The Affected Resources panel identifies services, such as compute disks, that may benefit from resizing or deallocation. A timeline visualization tracks cost recommendations over time to monitor trends and assess optimization effectiveness. The Cost Recommendation Summary details recommendations, their impact, and associated resources, aiding informed decision-making. This dashboard helps maintain financial efficiency while ensuring optimal resource utilization in Azure.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+Advisor/Azure+Security++-+Advisor+Cost+Recommendations.png')} alt="Advisor Cost Recommendations" style={{border: '1px solid gray'}} width="800" />
 
 ### Advisor Reliability Recommendations
 
-The **Azure Security - Advisor Reliability Recommendations** provides security analysts with insights into reliability risks affecting business-critical applications. It categorizes recommendations by severity (high, medium, low) to help prioritize reliability concerns. The dashboard highlights affected resource types and assets for quick identification of infrastructure issues. A timeline visualization tracks recommendation trends, offering insights into recurring risks. The Top Action Plan section lists prioritized recommendations with timestamps and affected resources for efficient remediation. Additionally, the Security Recommendation Summary provides an overview of reliability risks across Azure services. This dashboard helps security teams enhance system resilience, minimize downtime, and ensure optimal application performance. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+Advisor/Azure+Security++-+Advisor+Reliability+Recommendations.png')} alt="Advisor Reliability Recommendations" style={{border: '1px solid gray'}} width="800" />
+The **Azure Security - Advisor Reliability Recommendations** dashboard provides security analysts with insights into reliability risks affecting business-critical applications. It categorizes recommendations by severity (high, medium, low) to help prioritize reliability concerns. The dashboard highlights affected resource types and assets for quick identification of infrastructure issues. A timeline visualization tracks recommendation trends, offering insights into recurring risks. The Top Action Plan section lists prioritized recommendations with timestamps and affected resources for efficient remediation. Additionally, the Security Recommendation Summary provides an overview of reliability risks across Azure services. This dashboard helps security teams enhance system resilience, minimize downtime, and ensure optimal application performance. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+Advisor/Azure+Security++-+Advisor+Reliability+Recommendations.png')} alt="Advisor Reliability Recommendations" style={{border: '1px solid gray'}} width="800" />
 
 ### Advisor Operational Excellence Recommendations
 
-The **Azure Security - Advisor Operational Excellence Recommendations** provides security analysts with insights into optimizing process workflows, enhancing resource manageability, and enforcing deployment best practices. It categorizes recommendations by impact (medium and low) to help prioritize improvements for streamlining cloud operations. The Affected Resources panel highlights impacted services, with a focus on Azure Kubernetes Service (AKS) clusters. A timeline visualization tracks trends in recommendations over time, offering a historical perspective on operational issues. The Recommendation Summary details specific recommendations and associated resources for targeted action. This dashboard helps security teams improve system reliability and maintain efficient cloud operations.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+Advisor/Azure+Security++-+Advisor+Operational+Excellence+Recommendations.png')} alt="Advisor Operational Excellence Recommendations" style={{border: '1px solid gray'}} width="800" />
+The **Azure Security - Advisor Operational Excellence Recommendations** dashboard provides security analysts with insights into optimizing process workflows, enhancing resource manageability, and enforcing deployment best practices. It categorizes recommendations by impact (medium and low) to help prioritize improvements for streamlining cloud operations. The Affected Resources panel highlights impacted services, with a focus on Azure Kubernetes Service (AKS) clusters. A timeline visualization tracks trends in recommendations over time, offering a historical perspective on operational issues. The Recommendation Summary details specific recommendations and associated resources for targeted action. This dashboard helps security teams improve system reliability and maintain efficient cloud operations.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+Advisor/Azure+Security++-+Advisor+Operational+Excellence+Recommendations.png')} alt="Advisor Operational Excellence Recommendations" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for the Azure Security - Advisor app
 
@@ -158,7 +161,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Azure Security - Advisor alerts
+### Azure Security - Advisor alerts 
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
