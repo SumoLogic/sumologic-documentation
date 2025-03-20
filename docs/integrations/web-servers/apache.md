@@ -112,10 +112,6 @@ The predefined searches in the Apache app are based on the Apache Access logs an
 
 ## Collecting logs and metrics for Apache
 
-This section provides instructions for configuring log and metrics collection for the Sumo Logic app for Apache.
-
-### Configure Your Environment for Apache Logs and Metrics Collection
-
 Sumo Logic supports collection of logs and metrics data from Apache in both Kubernetes and non-Kubernetes environments. Please click on the appropriate link below based on the environment where your Apache farms are hosted.
 
 <Tabs
@@ -144,7 +140,7 @@ In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collec
 Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator. If you're not, see [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
 :::
 
-#### Configure Metrics Collection
+### Configure Metrics Collection
 
 Follow the steps below to collect metrics from a Kubernetes environment:
 
@@ -203,7 +199,7 @@ annotations:
   component="webserver" and webserver_system="apache"
   ```
 
-#### Configure Logs Collection
+### Configure Logs Collection
 
 This section explains the steps to collect Apache logs from a Kubernetes environment.
 
@@ -243,7 +239,7 @@ We use the Telegraf Operator for Apache metrics collection and the Sumo Logic In
 
 This section provides instructions for configuring metrics collection for the Sumo Logic app for Apache. Follow the instructions to set up metrics collection for each server belonging to a Apache server farm:
 
-#### Configure Metrics Collection from a Apache Server
+### Configure Metrics Collection from a Apache Server
 
 1. **Configure Metrics in Apache**. Before you can configure Sumo Logic to ingest metrics, you must turn on [server-status](https://httpd.apache.org/docs/2.4/mod/mod_status.html) for Apache. For this, edit the Apache conf file (httpd.conf).
    * Uncomment this line if not already done in the httpd.conf: `LoadModule status_module libexec/apache2/mod_status.so`
@@ -320,7 +316,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 At this point, Apache metrics should start flowing into Sumo Logic.
 
-#### Configure Logs Collection from an Apache server
+### Configure Logs Collection from an Apache server
 This section provides instructions for configuring collection of logs from Apache running on a non-Kubernetes environment.
 
 Apache logs (access logs and error logs) are stored in log files.
@@ -392,7 +388,7 @@ For error logs, following directives are to be noted:
 
 ## Installing the Apache app
 
-import AppInstall2 from '../../reuse/apps/app-install-field-fer-option-1.md';
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
 <AppInstall2/>
 
