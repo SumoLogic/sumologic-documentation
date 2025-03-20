@@ -2821,6 +2821,7 @@
   "/cid/30038": "/docs/integrations/microsoft-azure/azure-analysis-services",
   "/cid/30039": "/docs/integrations/microsoft-azure/microsoft-dynamics365-customer-insights",
   "/cid/30040": "/docs/integrations/microsoft-azure/azure-hdinsight",
+  "/cid/30041": "/docs/integrations/microsoft-azure/azure-security-advisor",
   "/cid/21001": "/docs/integrations/google/cloud-alloydb-for-postgresql",
   "/cid/21342": "/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source",
   "/cid/21343": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source",
