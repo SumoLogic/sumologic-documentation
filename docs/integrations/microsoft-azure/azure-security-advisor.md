@@ -120,7 +120,7 @@ Sumo Logic recommends you to select the **Category and impact level** option in 
 
 ### Step 3: Create an action group
 
-Refer to [Create an action group in the Azure portal](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups) to create an action group for the Azure Advisor alert in step 2.
+Refer to [Create an action group in the Azure portal](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups#create-an-action-group-in-the-azure-portal) to create an action group for the Azure Advisor alert in step 2.
 
 Sumo Logic recommends you to select the **Action type** as **Webhook** and then provide the Sumo Logic HTTP Source URL that you collected from step 1.
 <img src={useBaseUrl('img/integrations/microsoft-azure/create-action-group.png')} alt="Thumbnail icon" />
