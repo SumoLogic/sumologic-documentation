@@ -1,10 +1,9 @@
 ---
-title: Threat Intelligence New Global Feed (Security)
+title: April 1, 2025 - Application Update
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
-  - security
-  - threat intel
-hide_table_of_contents: true
+  - threat intelligence
+hide_table_of_contents: true    
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
