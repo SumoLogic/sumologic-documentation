@@ -61,9 +61,11 @@ Watch this micro lesson to learn more about first seen rules.
 
 ## Baselines for first seen rules
 
-A first seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is simply a filter condition that defines what incoming records the rule will apply to. For each first seen rule, Cloud SIEM automatically creates a baseline model of normal behavior for a defined learning period (by default for the last 30 days) evidenced by records that match the Rule Expression. As soon as you save or update a first seen rule, the baseline is built using existing data collected. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete.
+A first seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is simply a filter condition that defines what incoming records the rule will apply to. For each first seen rule, Cloud SIEM automatically creates a baseline model of normal behavior for a defined time period (by default for the last 30 days) evidenced by records that match the Rule Expression. The activity found during this period is considered normal behavior and will not be alerted on. As soon as you save or update a first seen rule, the baseline is built using existing data collected. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete.
 
-Once the baseline is created, when an incoming record includes matching activity not seen during the baseline learning period, the rule creates a signal. 
+Once the baseline is created, when an incoming record includes matching activity not seen during the baseline learning period, the rule creates a signal identifying the activity as *first seen*. The signal indicates that the activity is first seen:
+ 
+<img src={useBaseUrl('img/cse/first-seen-signal-example.png')} alt="First seen signal example" style={{border: '1px solid gray'}} width="600"/>
 
 For example, for the “First time a user logged in from a new geographic location” use case, Cloud SIEM will build a baseline model of all the geolocations from where a logon event is seen for the entity (user). Once the baseline is created, Cloud SIEM will create a signal for every new geolocation detected and incrementally add to the baseline.
 
