@@ -46,3 +46,12 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 1. Select the row for the user you want to edit and choose **Edit** from the three-dot kebab options menu.
 1. An edit pane appears on the right side of the page. For information about edit options, see [Create a user](#create-a-user) above.
 1. After editing the user, click **Save**.
+
+## Test a user's log access rights
+
+A user's permissions in Sumo Logic are determined by the [roles the user is assigned](/docs/manage/users-roles/roles/add-remove-users-role/). After assigning roles to a user, you can test the user to see if it displays the expected log access behavior based on its assigned roles. (You can also test a role. See [Test a role's log access rights](/docs/manage/users-roles/roles/create-manage-roles/#test-a-roles-log-access-rights).)
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. 
+1. Select a user. 
+1. Click **More Actions > Emulate log search**. The search will be emulated for the permissions of the user.<br/><img src={useBaseUrl('img/users-roles/select-emulate-log-search.png')} alt="Emulate log search for a user" style={{border: '1px solid black'}} width="200"/>
+1. Enter your search parameters in the log search emulation window. The search will return only what is allowed for the user.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-as-user.png')} alt="Emulate log search window" style={{border: '1px solid black'}} width="800"/>

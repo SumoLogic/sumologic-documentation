@@ -7,11 +7,22 @@ description: Learn how to set up a ThreatQ source.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<!-- For threat intel. Once we support cat with the threatlookup search operator, REPLACE THE CONTENTS OF THIS ARTICLE WITH THE FOLLOWING:
+
+ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. If you have a ThreatQ subscription, you can leverage ThreatQ threat intel feeds. 
+
+To do so, [ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) from your ThreatQ source.
+
+## Looking for ThreatQ indicators using Cloud SIEM rules
+
+Threat Intelligence sources are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your Threat Intelligence sources. When a record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
+-->
+
 This topic has information about configuring a ThreatQ source in Cloud SIEM.
 
-ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. 
+ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. 
 
-If you have a ThreatQ subscription, Cloud SIEM’s ThreatQ integration allows you to leverage ThreatQ threat intel feeds. 
+If you have a ThreatQ subscription, Cloud SIEM’s ThreatQ integration allows you to leverage ThreatQ threat intel feeds. 
 
 To do so, you simply configure a ThreatQ source in Cloud SIEM. You supply the information Cloud SIEM needs to connect to ThreatQ and fetch feed updates on a periodic basis.
 
@@ -51,7 +62,7 @@ Because the threat intel information is persisted within records, you can refere
 
 `array_contains(listMatches, "threat_intel_list_name")`
 
-where 
+where 
 
 `threat_intel_list_name` is the name of the threat intel list.
 
@@ -60,4 +71,3 @@ If the name of the list you are referencing with `array_contains` contains any s
 :::
 
 For more information, see [Rules and other content](/docs/cse/rules/about-cse-rules#rules-and-other-content) in the *About Cloud SIEM Rules* topic.  
- 

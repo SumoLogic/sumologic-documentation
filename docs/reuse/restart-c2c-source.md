@@ -1,4 +1,4 @@
-If your Source encounters ThirdPartyConfig errors, you can restart it from either the Sumo Logic UI or Sumo Logic API.
+If your Source encounters VendorConfig errors, you can restart it from either the Sumo Logic UI or Sumo Logic API.
 
 #### UI
 

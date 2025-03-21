@@ -113,15 +113,33 @@ _sourceCategory="Labs/CrowdStrikeFalconFileVantage" entity_type file
 | sort by frequency, action_type
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions provided to set up [Cloud-to-Cloud Integration for CrowdStrike Falcon FileVantage Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your CrowdStrike Falcon FileVantage app is properly integrated and configured to collect and analyze your CrowdStrike Falcon FileVantage data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the CrowdStrike Falcon FileVantage app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for CrowdStrike Falcon FileVantage](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your CrowdStrike Falcon FileVantage app is properly integrated and configured to collect and analyze your CrowdStrike Falcon FileVantage data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing CrowdStrike Falcon FileVantage dashboards
 

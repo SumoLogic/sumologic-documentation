@@ -14,11 +14,11 @@ Cloud SIEM supports several types of [signal suppression](/docs/cse/records-sign
 
 You can create suppressed lists from the Cloud SIEM UI or using the Cloud SIEM API. A suppressed list can contain a set of indicators—IPs, hostnames, or any other type that you can use in a match list—and then any signal that has a record containing a listed indicator will be suppressed. 
 
-Here is an example of a suppressed list.
+Here are some sample suppressed lists:
 
 <img src={useBaseUrl('img/cse/suppressed-list.png')} alt="Suppressed list" style={{border: '1px solid gray'}} width="800"/>
 
-Note that the list has a **Target Column**, which you define when you create the list. The target column indicates what type of record fields should be compared to the suppressed list, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are suppressed lists used](#how-are-suppressed-lists-used).
+Note that each suppressed list has a **Target Column**, which you define when you create the list. The target column indicates what type of record fields should be compared to the suppressed list, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are suppressed lists used](#how-are-suppressed-lists-used).
 
 When you create a suppressed list, you can choose one of the following as its target column.
 
@@ -75,24 +75,24 @@ A suppressed list can contain up to 50,000 items.
 Perform the steps below to create a suppressed list and add an indicator to it using the Cloud SIEM UI.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Suppressed Lists**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Suppressed Lists**. You can also click the **Go To...** menu at the top of the screen and select **Suppressed Lists**.  
-1. Click **Create**. <br/><img src={useBaseUrl('img/cse/suppressed-lists.png')} alt="Create a suppressed list" style={{border: '1px solid gray'}} width="800"/>
-1. On the **New Suppressed List** popup, enter the following:
+1. Click **Add Suppressed List**. <br/><img src={useBaseUrl('img/cse/suppressed-lists.png')} alt="Create a suppressed list" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Add Suppressed List** popup, enter the following:
    1. **Name**. Name of the suppressed list.
    1. **Description**. Enter a description for the list. 
-   1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
    1. **Target Column**. The type of record field to which items on the list should be compared.
        :::note
        If you want to create a custom target column, click **Manage Custom Columns**. For more information, see [Custom Match List Columns](/docs/cse/match-lists-suppressed-lists/custom-match-list-columns).
        :::
-   1. Click **Create**.
+      1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
+      1. Click **Save**.
 1. The suppressed list now appears on the **Suppressed Lists** page.
 1. Click the name of the suppressed list to open it.
-1. On the **Suppressed List > Details** page, click **Add List Item**. <br/><img src={useBaseUrl('img/cse/add-list-item.png')} alt="Add list item" style={{border: '1px solid gray'}} width="800"/>
-1. On the **New Suppressed List Item** popup, enter:
+1. On the **Suppressed List > Details** page, click **Add Suppressed List Item**. <br/><img src={useBaseUrl('img/cse/add-list-item.png')} alt="Add list item" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Add Suppressed List Item** popup, enter:
    1. **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the target column for the list. For example, if the target column is Domain, enter a domain.
    1. **Description**. (Optional) Enter a description of the list item.
    1. **Expiration**. (Optional) The date and time at which the list item should be removed from the list.
-   1. Click **Add** to add the item to the list.
+   1. Click **Save** to add the item to the list.
 1. The item now appears on the list.
 
 ## Import a list of indicators 
@@ -127,7 +127,7 @@ specified:
 ### Upload file 
 
 1. On the **Suppressed Lists** page, click the name of the list.
-1. Click **Import Indicators**.
+1. Click **Import Items**.
 1. On the import popup:
    1. Drag your file onto the import popup, or click to navigate to the file, and then click Import.
    1. Optionally, you can enter an expiration for the indicators on the list. If you do, it will override any expirations that are defined in the file. Enter the expiration in any ISO date format. For example: `2022-12-31`
