@@ -333,13 +333,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         </div>
         <div className="box smallbox card">
           <div className="container">
-          <img src={useBaseUrl('img/integrations/amazon-aws/alb.png')} alt="Thumbnail icon" width="50"/>
-          <h4><a href="/docs/integrations/amazon-aws/elastic-load-balancing">AWS Elastic Load Balancing</a></h4>
-          <p>A guide to the Sumo Logic app for AWS ELB.</p>
-          </div>
-        </div>
-        <div className="box smallbox card">
-          <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/lambda.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/lambda">AWS Lambda</a></h4>
           <p>A guide to the Sumo Logic app for AWS Lambda.</p>
@@ -379,5 +372,12 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
     <h4><a href="/docs/integrations/amazon-aws/threat-intel">AWS Foundations Benchmark App</a></h4>
     <p>A guide to the Sumo Logic app for AWS Threat Intel.</p>
 </div>    
+</div>
+  <div className="box smallbox card">
+    <div className="container">
+    <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Thumbnail icon" width="50"/>
+    <h4><a href="/docs/security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws">Cloud Infrastructure Security for AWS</a></h4>
+    <p>A guide to our Cloud Infrastructure Security for AWS app.</p>
+  </div>    
 </div>
 </div>

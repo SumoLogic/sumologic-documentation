@@ -8,7 +8,7 @@ To setup source in the existing collector and install the app, do the following:
     :::
 1. In the **Set Up Collection** section of your respective app, select **Use an existing Collector**.
 1. From the **Select Collector** dropdown, select the collector that you want to setup your source with and click **Next**.
-1. Use the new [Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) to configure the source.
+1. Configure the source as specified in the `Info` box above, ensuring all required fields are included.
 1. In the **Configure** section of your respective app, complete the following fields.
     1. **Key**. Select either of these options for the data source.
         * Choose **Source Category** and select a source category from the list for **Default Value**.

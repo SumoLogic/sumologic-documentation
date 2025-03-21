@@ -8,7 +8,7 @@ description: This Sumo Logic App for Microsoft Exchange Trace logs provides visi
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-The MessageTrace API offers insight into the handling of emails that have gone through Office 365 for an organization. The Sumo Logic Microsoft Exchange Trace Logs App provides information on the delivery status of messages including Delivered, Failed, Quarantined, Pending, and Spam. The app dashboard analyzes message size, sender and receiver locations, and provides threat analysis by utilizing the CrowdStrike threat detection feed.
+The MessageTrace API offers insight into the handling of emails that have gone through Office 365 for an organization. The Sumo Logic Microsoft Exchange Trace Logs App provides information on the delivery status of messages including Delivered, Failed, Quarantined, Pending, and Spam. The app dashboard analyzes message size, sender and receiver locations, and provides threat analysis by utilizing Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 ## Log types
 

@@ -81,7 +81,7 @@ The tuning expression is AND’d with the rule expression—the rule will only g
 
 Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when Cloud SIEM updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
-You create tuning expressions on the **Rule Tuning** page, which is available from the **Content** menu. When you create a tuning expression, you have the option of applying to all of your rules, or to selected rules. Or, you can apply tuning expressions when you create a rule. You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules. For more information, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions).
+You create tuning expressions on the **Rule Tuning** page. When you create a tuning expression, you have the option of applying to all of your rules, or to selected rules. Or, you can apply tuning expressions when you create a rule. You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules. For more information, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions).
 
 ## "On Entity" configuration
 
@@ -134,9 +134,9 @@ This section describes what [match lists](/docs/cse/match-lists-suppressed-lists
 
 Match lists are lists of important indicators and identifiers, typically configured by a Cloud SIEM analyst. Match lists are often used to define allowlists of entities, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for records that contain one of a certain set of IP addresses. 
 
-Here’s an example of a match list in the Cloud SIEM UI. 
+Here are some match lists in Cloud SIEM.   
 
-<img src={useBaseUrl('img/cse/example-match-list.png')} alt="Example match list" width="800"/>
+<img src={useBaseUrl('img/cse/example-match-lists.png')} alt="Example match list" width="800"/>
 
 You can take advantage of match lists in rules, but match lists actually come into play when records are ingested. Here’s how it works:  When a record is ingested, Cloud SIEM compares the entries in all match lists to fields in the record. Of course, Cloud SIEM doesn’t compare the entries in a given match list to all fields in a record; it wouldn’t make sense to compare a domain name to an IP address. You could say that Cloud SIEM understands the difference between apples and oranges: Cloud SIEM distinguishes which record fields contain IP addresses, which contain domain name and so on. So, Cloud SIEM compares a match list of IP addresses to record fields that contain IP addresses. Similarly, Cloud SIEMs compares a match list of usernames to record fields that contain usernames. For more information about how that works, see [Match Fields Reference](/docs/cse/match-lists-suppressed-lists/match-fields-reference). 
 
@@ -181,42 +181,7 @@ This example below checks a record for a field named `listMatches` that contains
 
 ### Threat Intelligence
 
-Cloud SIEM’s Threat Intelligence lists are very similar to match lists, and you leverage them in rules in the same way. Threat Intelligence lists contain values that, when encountered in a record, are clear indicators of compromise. To create a new source of Threat Intelligence, see [Create a Custom Threat Intelligence Source](/docs/cse/administration/create-custom-threat-intel-source/).
+Threat Intelligence sources contain values that, when encountered in a record, are clear indicators of compromise. To create a new source of Threat Intelligence, see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
 
-Here’s an example of a Threat Intelligence list in the Cloud SIEM UI. 
+Threat Intelligence sources are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your Threat Intelligence sources. When a record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
 
-<img src={useBaseUrl('img/cse/example-threat-intl.png')} alt="Example threat intelligence list" width="800"/>
-
-Like match lists, Threat Intelligence lists are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your configured Threat Intelligence lists.
-
-When a record contains a value that matches an entry in one or more Threat Intelligence lists, just like with match list data, two fields in the record get populated: a `listMatches` field that contains the names of Threat Intelligence lists that the record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
-
-For example, given a record whose `SourceIp` column matches a entry in My Threat Intelligence List, the `listMatches` field added to the record would look like this:
-
-```sql
-listMatches: \['threat_Ip_My_Threat_Intel_List', 'source:My_Threat_Intel_List', 'column:Ip', 'column:SrcIp' 'threat'\]
-```
-where:
-
-* `threat_Ip_My_Threat_Intel_List` is formed by concatenating the following, separated by underscore characters (_):
-   * the string `threat` 
-   * the type of the column–Ip Domain, FileHash, and so on–in the record that matched an Indicator from the threat intelligence source
-* The name of the threat intelligence source, with embedded spaces replaced by underscore characters (_).
-* `source:My_Threat_Intel_List` identifies the threat intelligence list.
-* `column:Ip` identifies the type of the field where the match was found.
-* `column:SrcIp` identifies the name of the field where the match was found.
-* `threat `is a string that Cloud SIEM uses to indicate that the record field matched a threat source, rather than another type of list.
-  
-Because the threat intelligence information is persisted within records, you can reference it downstream in both rules and search. To leverage the information in a rule, you extend your rule expression with the `array_contains` function. The syntax is:
-
-```sql
-array_contains(listMatches, "threat-intel-list-name")
-```
-
-where 
-
-`threat-intel-list`  is the name of the Threat Intelligence list.
-
-:::note
-If your `array_contains` statement refers to a threat intelligence source whose name contains embedded spaces, be sure to replace the spaces with underscores.
-::: 

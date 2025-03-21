@@ -248,7 +248,14 @@ module.exports = {
         },
       },
     // SEO Global Metadata
-    metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
+    metadata: [
+      {
+        name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts',
+      },
+      {
+        name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
+      },
+    ],
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -317,6 +324,12 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
+                sidebarId: 'integrations',
+                label: 'Apps and Integrations',
+                icon: 'grid_view',
+              },
+              {
+                type: 'docSidebar',
                 sidebarId: 'security',
                 label: 'Security',
                 icon: 'security',
@@ -329,9 +342,9 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'integrations',
-                label: 'Apps and Integrations',
-                icon: 'grid_view',
+                sidebarId: 'dashboards',
+                label: 'Dashboards',
+                icon: 'dashboard',
               },
               {
                 type: 'docSidebar',
@@ -350,12 +363,6 @@ module.exports = {
                 sidebarId: 'observability',
                 label: 'Observability',
                 icon: 'speed',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'dashboards',
-                label: 'Dashboards',
-                icon: 'dashboard',
               },
               {
                 type: 'docSidebar',
@@ -394,34 +401,6 @@ module.exports = {
             label: 'Release Notes',
             position: 'left',
             to: '/docs/release-notes',
-            type: 'dropdown',
-            items:[
-              {
-                label: 'Service',
-                to: 'release-notes-service',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Cloud SIEM',
-                to: 'release-notes-cse',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Cloud SOAR',
-                to: 'release-notes-csoar',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Collector',
-                to: 'release-notes-collector',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Developer',
-                to: 'release-notes-developer',
-                icon: 'rss_feed',
-              },
-            ]
           },
           {
             type: 'search',

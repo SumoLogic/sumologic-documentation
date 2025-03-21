@@ -182,7 +182,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td>The backshift operator compares values as they change over time. Backshift can be used with rollingstd, smooth, or any other operators whose results could be affected by spikes of data (where a spike could possibly throw off future results).</td>
    <td>_backshift</td>
    <td>Can be used in Dashboard Panels, but in the search they must be included after the first <code>group-by</code> phrase.</td>
-   <td><code>_sourcecategory=katta <br/>| timeslice by 1m <br/>| count by _timeslice,_sourcehost <br/>| sort + _timeslice <br/>| backshift _count,1 by _sourcehost</code></td>
+   <td><code>_sourceCategory=katta <br/>| timeslice by 1m <br/>| count by _timeslice,_sourcehost <br/>| sort + _timeslice <br/>| backshift _count,1 by _sourcehost</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/base64decode">base64Decode</a></td>
@@ -266,7 +266,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td>The formatDate operator allows you to format dates in log files as a string in the format you require, such as US date formatting, European formatting, timestamps, etc.</td>
    <td></td>
    <td></td>
-   <td><code>* | formatDate(now(), "YYYY-MM-dd") as today</code></td>
+   <td><code>* | formatDate(now(), "yyyy-MM-dd") as today</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/geo-lookup-map">geo lookup</a></td>
@@ -453,7 +453,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/now">now</a></td>
-   <td>The now operator returns the current epoch time in milliseconds. It can be used with the <a href="/docs/search/search-query-language/search-operators/formatDate">formatDate</a> operator to get the formatted current time.</td>
+   <td>The now operator returns the current epoch time in milliseconds. It can be used with the <a href="/docs/search/search-query-language/search-operators/formatdate">formatDate</a> operator to get the formatted current time.</td>
    <td></td>
    <td>Can be used in Dashboard Panels, but the <code>now()</code> time presented in Live mode (the time the data is processed) doesn't match the search time, so the results are different.<br/>
    The results for search could be hours or days later than the time presented in Live mode.</td>

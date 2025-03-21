@@ -22,16 +22,21 @@ Sumo Logic Copilot is our AI-powered assistant that accelerates investigations a
 
 With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
 
-<Iframe url="https://www.youtube.com/embed/yaeepHSaNKk?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
+:::sumo Micro Lesson
+Watch this micro lesson to learn about Copilot.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/o9uftxw012?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 
 ## Key features
@@ -53,7 +58,6 @@ Sumo Logic Copilot leverages foundational models provided by Amazon Bedrock, inh
 * [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/security-compliance/)
 
 Additionally, all aspects of our service, including Copilot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
-
 
 * **Customer data privacy**. Copilot ensures customer data remains private and secure. No customer data or PII is used to train the AI models. Context for AI processing is limited to schema and field samples, reviewed for legal and compliance purposes.
 * **Rolling data expiration**. Some features may store query history temporarily for performance, but data is expired on a rolling basis.
@@ -77,29 +81,33 @@ In this section, you'll learn the recommended workflow for using Copilot effecti
 
 To start using Copilot:
 
-From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), navigate to the **Copilot** tab.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
+From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **Copilot** tab.<br/><img src={useBaseUrl('img/search/copilot/classic-ui-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
 
-From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/copilot-tab-new.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
+From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/left-nav.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
 
-### Step 2: Review the auto-selected source
+### Step 2: Review and adjust the auto-selected source
 
-Review the auto-selected **Source Category** and adjust it if needed. The source category is selected based on Copilot’s assessment of user intent. You can also type a source expression in the box. In either approach, you are defining the scope of your exploration.
+Copilot automatically selects a source category based on its assessment of user intent. Review the selection and adjust it if needed. You can also manually enter a source expression to define the scope of your exploration.  
 
-In this example, we'll select a source for AWS WAF. For indexes, type `_index=<index name>`. Autocompletion is supported for sources; type a few words, view source suggestions and pick one.
+For example, to explore AWS WAF logs, select the appropriate source. For indexes, use `_index=<index name>`. Autocompletion is supported—start typing a few words to see source suggestions and choose one.
 
-<img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="700" />
 
-### Step 3: Execute a Suggestion
+### Step 3: Execute a query
+
+#### Click a suggestion
 
 Click on any of the prebuilt **Suggestions** prompts to launch your investigation. These AI-curated natural language insights are tailored to the specific source you've chosen.
 
 In this example, we'll click `Count the number of log entries by the collector ID`. This translates the insight to a log query and renders results.
 
-<img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
-### Step 4: Ask a question
+You can pin a suggestion for easy access later. Just hover over a suggestion and click **Pin suggestion** (pin icon). The pinned suggestion will stay at the top of your **Suggestions** list within that conversation.
 
-In the **Ask Something...** field, you can manually enter a natural language prompt similar to the prebuilt ones under **Suggestions**. In addition, use autocompletions if appropriate. Type a word in the search bar to trigger completions based on the keyword.
+#### Ask a question
+
+In the **Ask Something...** field, you can manually enter a natural language prompt, similar to the prebuilt options under **Suggestions**. You can also use autocompletion—start typing a keyword to see relevant suggestions.
 
 <img src={useBaseUrl('img/search/copilot/manual-entry.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
@@ -118,7 +126,7 @@ In the **Ask Something...** field, you can manually enter a natural language pro
 
 Broad questions may not yield accurate results. For best outcomes, frame your queries around a small, well-defined problem. If Copilot is unable to translate your prompt into a query, it will display "Failed translation".
 
-Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/copilot-periods.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
+Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/periods-query-syntax.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
 #### Tips and tricks
 
@@ -174,7 +182,7 @@ By default, Copilot searches run with a 15-minute time range. If your search ret
 
 Copilot will automatically attempt to visualize your data. For example, a query like `Top ip by geo` will trigger a geo lookup and display the results on a map:
 
-<img src={useBaseUrl('img/search/copilot/copilot-geo-chart.png')} alt="Copilot chart types" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/copilot/geo-chart.png')} alt="Copilot chart types" style={{border: '1px solid gray'}} width="800" />
 
 The following rules are used to deduce chart type:
 * If both latitude and longitude fields exist, it returns a MAP chart type.
@@ -214,30 +222,36 @@ _sourceCategory=* "{" "}"
 | sum(_count) by _sourceCategory
 ```
 
-If your log query contains a mix of JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding `{` to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
+If your log query contains a mix of JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding a left curly brace (`{`) to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
+
+#### Edit Title
+
+Copilot automatically updates conversation titles based on your query. You can also set a custom title by clicking the "Edit Title" (pencil) icon. This helps keep investigations organized and easier to revisit.
 
 #### History
 
-Conversation History saves all previous queries and suggestions, allowing you to backtrack and refine your investigation. For example, if a status code analysis yields inconclusive results, revisit earlier queries to explore other hypotheses.
+The conversation history feature saves all previous queries and suggestions, allowing you to backtrack and refine your investigation. For example, if a status code analysis yields inconclusive results, you can revisit earlier queries to explore other possibilities.
 
-This functionality comes in handy when you're working on multiple incidents at the same time. To view Copilot interactions related to an incident, click **History**.
-<br/><img src={useBaseUrl('img/search/copilot/history.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
+This functionality can be useful when you're working on multiple incidents at the same time. To view Copilot interactions related to an incident, click **History**.<br/><img src={useBaseUrl('img/search/copilot/history.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="700" />
 
-You can resume a conversation in two ways:
+There are two ways to resume a conversation:
 
-* Click the **Resume conversation** icon to pick up from the last query in a conversation.<br/><img src={useBaseUrl('img/search/copilot/resume-convo-history1.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="600" />
-* Click on the row in the conversation history, and then click the gray area on the right side to resume from a specific query in a conversation.<br/><img src={useBaseUrl('img/search/copilot/resume-convo-history2.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="600" />
+* Click the "Resume Conversation" icon to pick up from the last query in a conversation.<br/><img src={useBaseUrl('img/search/copilot/resume-convo-history1.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="600" />
+* Click on any row in a conversation history, then click the "Open in Copilot" icon to resume from a specific query in a conversation.<br/><img src={useBaseUrl('img/search/copilot/resume-convo-history2.png')} alt="Copilot History" style={{border: '1px solid gray'}} width="600" />
 
 #### New Conversation
 
 To start a fresh exploration, click **New Conversation**. This clears your current session and allows you to begin with a clean slate.<br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="700" />
 
 
-### Step 5: Open in Log Search
+### Step 4: Open in Log Search
 
-Click the **Open in Log Search** icon, which will copy your query from Copilot over to a new log search, allowing you to utilize all of Sumo Logic's search functionality. You can continue investigating, save the search, and remediate.
+You can open your query in [Log Search](/docs/search) to access Sumo Logic’s full search functionality. This allows you to continue investigating, refine your query, save the search, or take action as needed.
 
-<img src={useBaseUrl('img/search/copilot/open-in-log-search.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="600" />
+There are two ways to do this:
+
+* From your conversation, click the "Open in Log Search" icon.<br/><img src={useBaseUrl('img/search/copilot/open-in-log-search1.png')} alt="Copilot open in log search" style={{border: '1px solid gray'}} width="600" />
+* From your conversation history, hover over any row, then click the "Open in Log Search" icon.<br/><img src={useBaseUrl('img/search/copilot/open-in-log-search2.png')} alt="Open Copilot query in log search from History" style={{border: '1px solid gray'}} width="800" />
 
 ## Example queries
 
@@ -273,17 +287,17 @@ You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried abo
    ```
    Count logs by action. Sort the results.
    ```
-   <img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-1.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="500" />
+   <img src={useBaseUrl('img/search/copilot/cloud-siem-1.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="500" />
 1. As soon as you do that, you can look at the **Suggestions** section on the right. These suggestions are curated based on their relevance to this Cloud SIEM source. You pick a suggestion to compare results to the last hour:
    ```
    Count logs by action. Sort the results. versus the previous 1h
    ```
-   Notice the system translated the suggestion to a log query and rendered results as a bar graph with no user input. <br/><img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-2.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
+   Notice the system translated the suggestion to a log query and rendered results as a bar graph with no user input. <br/><img src={useBaseUrl('img/search/copilot/cloud-siem-2.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
 1. Switching to table view, you notice "Malicious” in the search results. So, you add in `Filter results by action contains Malicious` to the query:
    ```
    Count logs by action. Sort the results. Filter results by action contains Malicious.
    ```
-   <img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-3.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
+   <img src={useBaseUrl('img/search/copilot/cloud-siem-3.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
    :::note
    If `Malicious` doesn't work, try `Malicious*`. Sumo Logic is case sensitive.
    :::
@@ -291,7 +305,7 @@ You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried abo
    ```
    Count logs by action, url, user. Sort the results. Filter results by action contains Malicious.
    ```
-   <img src={useBaseUrl('img/search/copilot/copilot-cloud-siem-4.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
+   <img src={useBaseUrl('img/search/copilot/cloud-siem-4.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="800" />
 1. Even though the activity was blocked, you can investigate the affected users in the endpoint records next.
 
 To summarize, you conclude there is malicious activity originating from certain users who need to be investigated further.

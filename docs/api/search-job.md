@@ -31,7 +31,7 @@ The Search Job API is available to Enterprise accounts.
 
 <ApiIntro/>
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
@@ -41,7 +41,6 @@ The Search Job API is available to Enterprise accounts.
 * Security
     * Manage Access Keys
 
--->
 
 ## Endpoints for API access
 
@@ -621,7 +620,7 @@ The metadata fields `_sourceHost`, `_sourceName`, and `_sourceCategory`, which a
 ### Page through the records found by a Search Job
 
 <details>
-<summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;/records?offset=&#123;OFFSET]&limit=&#123;LIMIT&#125;</code></summary>
+<summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;/records?offset=&#123;OFFSET&#125;&limit=&#123;LIMIT&#125;</code></summary>
 <p/>
 
 The search job status informs the user as to the number of produced records, if the query performs an aggregation. Those records can be requested using a paging API call (step 6 in the process flow), just as the message can be requested.
@@ -772,7 +771,7 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
    <td>timeZone </td>
    <td>String </td>
    <td>Yes</td>
-   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/><p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p></td>
+   <td>The time zone if from/to is not in milliseconds. See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/><p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p></td>
   </tr>
   <tr>
    <td>byReceiptTime</td>
@@ -785,6 +784,12 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
    <td>String </td>
    <td>No</td>
    <td>This enables <a href="/docs/search/get-started-with-search/build-search/dynamic-parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>. </td>
+  </tr>
+   <tr>
+   <td>requiresRawMessages</td>
+   <td>Boolean</td>
+   <td>No </td>
+   <td>Set as <code>false</code> to slightly improve the performance of aggregate queries as raw messages will not be generated. By default, the parameter value is set to <code>true</code>. </td>
   </tr>
 </table>
 
