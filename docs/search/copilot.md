@@ -25,7 +25,7 @@ With its intuitive interface, Copilot automatically generates log searches from 
 :::sumo Micro Lesson
 Watch this micro lesson to learn about Copilot.
 
-<Iframe url="https://fast.wistia.net/embed/iframe/o9uftxw012?web_component=true&seo=true&videoFoam=false"
+<Iframe url="https://fast.wistia.net/embed/iframe/t67ovt9hqj?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
   id="wistiaVideo"
