@@ -24,10 +24,9 @@ The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opente
 />
 :::
 
-  
-  **If you want to manage the collector with local configs, you MUST check this box otherwise by default the collector will only be managed by remote**
-![image](https://github.com/user-attachments/assets/80b64ddb-f88a-4129-bb82-76c48e3544dd)
-
+:::note
+If you want to manage the collector using local configuration files, make sure to check the **Locally Manage Collector** box. If left unchecked, the collector will be managed exclusively by remote configuration by default.<br/><img src={useBaseUrl('img/send-data/remote-mgmt-local.png')} alt="Locally Manage Collector checkbox" />
+:::
 
 **Key features**
 
