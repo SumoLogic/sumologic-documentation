@@ -37,27 +37,26 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure Event Grid namespace that you want to monitor.
-   1. Choose `Stream to an event hub` as destination.
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each Azure Event Grid namespace that you want to monitor.
+   1. Choose `Stream to an event hub` as the destination.
    1. Select `AllMetrics`.
-   1. Use the Event Hub namespace created by the ARM template in Step 2 above. You can create a new Event Hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-event-grid-metrics.png')} alt="Azure event grid metrics" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Event Grid Tag Location" style={{border: '1px solid gray'}} width="400" />
+   1. Use the Event Hub namespace created by the ARM template configured in the previous step. You can create a new Event Hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-event-grid-metrics.png')} alt="Azure event grid metrics" style={{border: '1px solid gray'}} width="800" />
+1. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Event Grid Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 ### Configure logs collection
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 #### Diagnostic logs
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform below steps for each Azure Event Grid namespace that you want to monitor.
+1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform the steps below for each Azure Event Grid namespace that you want to monitor.
    1. Choose `Stream to an event hub` as the destination.
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-eventgrid-logs.png')} alt="Azure Event Grid logs" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Event Grid Tag Location" style={{border: '1px solid gray'}} width="400" />
+1. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Event Grid Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity Logs
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
-
+To collect activity logs, refer to the [Collecting Logs for the Azure Audit App from Event Hub](/docs/integrations/microsoft-azure/audit) section in the Azure Audit documentation. Do not perform this step in case you are already collecting activity logs for a subscription.
 :::note
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
 :::
@@ -70,7 +69,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-**Azure Key Vault - Overview** dashboard allows you to monitor and analyze your key vault's usage metrics, including API hits, vault usage, and average latencies. Gain insights into the performance of your vaults.
+**Azure Key Vaults - Overview** dashboard allows you to monitor and analyze your key vault's usage metrics, including API hits, vault usage, and average latencies. Gain insights into the performance of your vaults.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureKeyVaults/Azure-Key-Vaults-Overview.png')} alt="Azure Key Vault - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
