@@ -10,9 +10,7 @@ To setup source in the existing collector and install the app, do the following:
 1. From the **Select Collector** dropdown, select the collector that you want to setup your source with and click **Next**.
 1. Configure the source as specified in the `Info` box above, ensuring all required fields are included.
 1. In the **Configure** section of your respective app, complete the following fields.
-    1. **Key**. Select either of these options for the data source.
-        * Choose **Source Category** and select a source category from the list for **Default Value**.
-        * Choose **Custom**, and enter a custom metadata field. Insert its value in **Default Value**.
+    1. **Field Name**. If you already have collectors and sources setup, select the configured metadata field name (eg _sourcecategory) or specify other custom metadata (eg: _collector) along with its metadata **Field Value** .
 1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 **Post-installation**
