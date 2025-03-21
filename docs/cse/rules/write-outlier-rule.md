@@ -66,7 +66,7 @@ Watch this micro lesson to learn more about outlier rules.
 
 When you create the rule, you can set the amount of time Cloud SIEM analyzes data to create a baseline model of behavior, with the default period being for the last 30 days. You can set the rule to build data hourly or daily, depending on how frequently you believe events of interest will occur, and how much data you want to gather. Data for the baseline is retained by default for 90 days. In the rule, you set the model sensitivity threshold to calculate outlier activity based on the number of standard deviations from the mean (z‑score). 
 
-As soon as you save or update an outlier rule, the baseline is built using existing data collected. So if your baseline learning period is for the last 30 days (the default), the system uses data from the previous 30 days to build the baseline. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete.
+As soon as you save or update an outlier rule, the baseline is built using existing data collected. So if your baseline learning period is for the last 30 days (the default), the system uses data from the last 30 days to build the baseline. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete.
 
 Once the baseline is created, Cloud SIEM tracks aggregates of count, sum, min, max, and averages of record values, and creates a signal when deviations from the mean occurs. For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, Cloud SIEM builds a baseline model of counts of authentication failures that are associated with a user over time, and creates a signal when outlier behavior is detected:
 
@@ -77,7 +77,7 @@ After your rule starts generating signals, evaluate them to determine if they tr
 :::tip
 Sumo Logic ensures that rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and outlier rules are no exception.
 
-On the rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
+On the rule detail page, if you view the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
 
 For more information, see [Troubleshoot baseline problems](/docs/cse/rules/rules-status/#troubleshoot-baseline-problems).
 :::

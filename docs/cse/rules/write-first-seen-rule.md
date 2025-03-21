@@ -61,16 +61,16 @@ Watch this micro lesson to learn more about first seen rules.
 
 ## Baselines for first seen rules
 
-A first seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is simply a filter condition that defines what incoming records the rule will apply to. For each first seen rule, Cloud SIEM automatically creates a baseline model of normal behavior for a defined learning period (by default for the last 30 days) evidenced by records that match the Rule Expression. Once the baseline is created, when an incoming record includes matching activity not seen during the baseline learning period, the rule creates a signal.
+A first seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is simply a filter condition that defines what incoming records the rule will apply to. For each first seen rule, Cloud SIEM automatically creates a baseline model of normal behavior for a defined learning period (by default for the last 30 days) evidenced by records that match the Rule Expression. As soon as you save or update a first seen rule, the baseline is built using existing data collected. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete.
+
+Once the baseline is created, when an incoming record includes matching activity not seen during the baseline learning period, the rule creates a signal. 
 
 For example, for the “First time a user logged in from a new geographic location” use case, Cloud SIEM will build a baseline model of all the geolocations from where a logon event is seen for the entity (user). Once the baseline is created, Cloud SIEM will create a signal for every new geolocation detected and incrementally add to the baseline.
-
-As soon as you save or update a first seen rule, the baseline is built using existing data collected. So if your baseline learning period is for the last 30 days (the default), the system uses data from the previous 30 days to build the baseline. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. 
 
 :::tip
 Sumo Logic ensures that rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and first seen rules are no exception.
 
-On the rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
+On the rule detail page, if you view the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
 
 For more information, see [Troubleshoot baseline problems](/docs/cse/rules/rules-status/#troubleshoot-baseline-problems).
 :::
@@ -152,7 +152,7 @@ with **has a new value for the field(s)** set to `srcDeviceIP_countryName`
 
 ### With a global baseline
 
-With a global baseline, and the default baseline learning period of the last 30 days, the rule creates a baseline of all geolocations that users logged in from for the previous 30 days. If a new geolocation is detected, a signal will be created. Then, if a new hire (that wasn’t part of the 30 day baseline) logs in from any geolocation, a signal
+With a global baseline, and the default baseline learning period of the last 30 days, the rule creates a baseline of all geolocations that users logged in from for the last 30 days. If a new geolocation is detected, a signal will be created. Then, if a new hire (that wasn’t part of the 30 day baseline) logs in from any geolocation, a signal
 will be created. As a global baseline, the 30 day baseline is shared across all entities.
 
 ### With per-entity baselines
