@@ -51,7 +51,7 @@ To configure a Remote File Source:
     ![remote file source credential input.png](/img/send-data/remote-file-source-credential-input.png)
 
 1. Set any of the following under **Advanced.**
-<img src={useBaseUrl('/img/send-data/advanced-options-remote-file-source.png')} alt="Thumbnail icon" width="600" />
+<img src={useBaseUrl('/img/send-data/advanced-options-remote-file-source.png')} alt="Advanced options for log" style={{border: '1px solid gray'}} width="600" />
     * **Denylist.** Optional. Add any files to be excluded by including one or more path expressions separated by commas. Note that this field takes a maximum of 10240 characters.
     * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
       * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
