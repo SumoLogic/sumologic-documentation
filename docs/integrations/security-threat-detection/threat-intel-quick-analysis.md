@@ -27,9 +27,10 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ## Threat Intel optimization
 
-The Threat Intel Quick Analysis App provides baseline queries. You can further optimize and enhance these queries for the log and events types being scanned for threats. Use the following guidelines to customize your Threat Intel queries:
+The Threat Intel Quick Analysis App provides baseline queries. You can further optimize and enhance these queries for the log and events types being scanned for threats. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**.
 
-Filter out unwanted logs before you use lookup operator
+Use the following guidelines to customize your Threat Intel queries:
+* Filter out unwanted logs before you use lookup operator
 * Use keywords
 * Use the where operator
 * Use general search optimization rules
@@ -40,10 +41,10 @@ _sourceCategory=cylance "IP Address"
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where !isNull(ip_address)
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
-| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
+| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/i471 on threat=ip_address
 ```
 
-<!-- Replace section content with this after `sumo://threat/cs` is replaced by `threatlookup`:
+<!-- Replace section content with this after `sumo://threat/i471` is replaced by `threatlookup`:
 
 The app provides baseline queries that utilize the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/) to look for threat intelligence data. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. 
 
@@ -97,7 +98,7 @@ Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-e
    ```
 1. Customize your query so you can use parsed fields from FER with the lookup operator, where src_ip is the parsed field from FER (see step # 1). For example:
    ```
-   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
+   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/i471 on threat=src_ip
    | json field=raw "labels[*].name" as label_name
    | replace(label_name, "\\/","->") as label_name
    | replace(label_name, "\""," ") as label_name
@@ -106,7 +107,7 @@ Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-e
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name
    | sort by threat_count
    ``` 
-<!-- Replace the preceding step with the following after `sumo://threat/cs` is replaced by `threatlookup`:   
+<!-- Replace the preceding step with the following after `sumo://threat/i471` is replaced by `threatlookup`:   
 1. Customize your query so you can use parsed fields from the Field Extraction Rule with the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/), where `src_ip` is the parsed field from the FER. For example:
    ```
    | threatlookup singleIndicator src_ip
@@ -124,7 +125,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
 
 1. Create a scheduled view. For example, for Cylance, create a scheduled view, **cylance_threat**:
    ```
-   _sourceCategory=cylance | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
+   _sourceCategory=cylance | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/i471 on threat=src_ip
    | json field=raw "labels[*].name" as label_name
    | replace(label_name, "\\/","->") as label_name
    | replace(label_name, "\""," ") as label_name
@@ -133,7 +134,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
    | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
    ```
-<!-- Replace the preceding code with the following after `sumo://threat/cs` is replaced by `threatlookup`:
+<!-- Replace the preceding code with the following after `sumo://threat/i471` is replaced by `threatlookup`:
    ```
     _sourceCategory=cylance
     | threatlookup singleIndicator src_ip
@@ -150,7 +151,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
      | count by src_ip
      ```
 
-<!-- Hide this FAQ section until after `sumo://threat/cs` is replaced by `threatlookup`:
+<!-- Hide this FAQ section until after `sumo://threat/i471` is replaced by `threatlookup`:
 
 ## Threat Intel FAQ
 
