@@ -33,15 +33,15 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+:::note
+Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
+:::
 
-1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each Azure Event Grid namespace that you want to monitor.
-   1. Choose `Stream to an event hub` as the destination.
-   1. Select `AllMetrics`.
-   1. Use the Event Hub namespace created by the ARM template configured in the previous step. You can create a new Event Hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-event-grid-metrics.png')} alt="Azure event grid metrics" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Event Grid Tag Location" style={{border: '1px solid gray'}} width="400" />
+In the Sumo Logic Azure Metrics source configuration,
+
+- Tag the location field in the source with correct Azure resource location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Key Vaults Location" style={{border: '1px solid gray'}} width="400" />
+- Configure namespaces as `Microsoft.KeyVault/vaults` and `Microsoft.KeyVault/managedhsms`. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-key-vaults-namespaces.png')} alt="Azure Key Vaults Namespaces" style={{border: '1px solid gray'}} width="500" />
+
 
 ### Configure logs collection
 
