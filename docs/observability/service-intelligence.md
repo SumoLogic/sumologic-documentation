@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Service Intelligence uses AI to generate a map of system services, revealing areas that require attention. It surfaces real-time signals for issues such as latency, errors, high traffic, and security anomalies, providing actionable paths for root-cause analysis.
 
-The functionality of Service Intelligence is similar to that of the [Services list and map](/docs/apm/traces/services-list-map/), but uses AI to generate the list and map, providing deeper insights and more targeted surfacing for areas of concern.
+The functionality of Service Intelligence is similar to that of the [Services list and map](/docs/apm/services-list-map/), but uses AI to generate the list and map, providing deeper insights and more targeted surfacing for areas of concern.
 
 ## What is Service Intelligence?
 
