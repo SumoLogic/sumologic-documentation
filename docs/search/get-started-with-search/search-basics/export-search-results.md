@@ -29,3 +29,7 @@ You can export message fields to a CSV file, either just the fields displayed, o
 Click the gears icon in the top-right corner of the **Messages** tab, and then select **Export** **(Display Fields)** to export only the messages displayed, or **Export (All Fields)** to export all message fields. If the export is successful, your browser will automatically download the data and save it to a CSV file.  
 
 ![export fields](/img/search/get-started-search/search-basics/export-search-results/export-fields.png)
+
+:::info
+Audit events will be generated for every search results export (displayed fields or all fields). Administrators can use `_sourceCategory=content` with `eventName:"SearchExported"` to view these [audit events](/docs/manage/security/audit-indexes/audit-event-index/) to ensure that no sensitive data is exported.
+:::
