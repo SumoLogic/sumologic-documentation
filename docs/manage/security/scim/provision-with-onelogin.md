@@ -25,15 +25,19 @@ When you create the access key, copy its access ID and access key values. You wi
 1. Select **Applications > Applications**.
 1. Click **Add App**.<br/><img src={useBaseUrl('img/security/provision-onelogin-add-app.png')} alt="Add app button" style={{border: '1px solid gray'}} width="700" />
 1. Select **SCIM Provisioner with SAML (SCIM v2 Enterprise)**.
-1. Change the **Display Name**.
+1. Change the **Display Name** to the name you want to use for your app.
 1. Click **Save**.<br/><img src={useBaseUrl('img/security/provision-onelogin-rename-app.png')} alt="Display name of the app" style={{border: '1px solid gray'}} width="700" />
 
 ### Step 2: Set up single sign-on
 
-Follow the directions in [Configure a SAML app in OneLogin](/docs/manage/security/saml/integrate-onelogin/#configure-a-saml-app-in-onelogin) beginning with the step where you configure the **SSO** tab.<br/><img src={useBaseUrl('img/security/provision-onelogin-sso-tab.png')} alt="SSO tab" style={{border: '1px solid gray'}} width="700" />
+Follow the directions in [Configure a SAML app in OneLogin](/docs/manage/security/saml/integrate-onelogin/#configure-a-saml-app-in-onelogin) beginning with the step where you configure the **SSO** tab.
+
+<img src={useBaseUrl('img/security/provision-onelogin-sso-tab.png')} alt="SSO tab" style={{border: '1px solid gray'}} width="700" />
+
+When you follow these instructions, on the **Configuration** tab you'll add the **SAML Audience URL** and **SAML Consumer URL**. Obtain these values from the assertion consumer URL and entity ID on the [SAML configuration](/docs/manage/security/saml/integrate-onelogin/#configure-saml-in-sumo) of the Sumo Logic tenant where you will provision users. <br/><img src={useBaseUrl('img/security/provision-onelogin-sumologic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
 
 :::note
-On the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`. You will perform additional configuration of the app later.
+Also on the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`. You will perform additional configuration of the app later.
 :::
 
 ### Step 3: Set up roles
@@ -54,7 +58,7 @@ On the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint for 
    1. Click **Save**.
    1. In **Value** select **roles (Custom)**.
    1. Click **Save**.<br/><img src={useBaseUrl('img/security/provision-onelogin-role-parameter.png')} alt="Role parameter field" style={{border: '1px solid gray'}} width="400" />
-1. Add the rest of the parameters as shown:<br/><img src={useBaseUrl('img/security/provision-onelogin-all-parameters.png')} alt="All parameters" style={{border: '1px solid gray'}} width="700" />
+1. Add the rest of the parameters as shown. When you add the custom parameters, select **Include in SAML assertion**.<br/><img src={useBaseUrl('img/security/provision-onelogin-all-parameters.png')} alt="All parameters" style={{border: '1px solid gray'}} width="700" />
 
 ### Step 4: Set up provisioning
 
