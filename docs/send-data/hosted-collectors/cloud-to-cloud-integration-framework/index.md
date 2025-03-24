@@ -195,6 +195,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source"><img src={useBaseUrl('img/send-data/confluent-cloud-metrics.png')} alt="icon" width="120"/><h4>Confluent Cloud Metrics</h4></a>
+  <p>Learn how to collect metrics from the Confluent Cloud Metrics platform and send them to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>Crowdstrike</h4></a>
   <p>Provides a secure endpoint to receive event data from the CrowdStrike Streams API.</p>
   </div>
@@ -503,6 +509,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source"><img src={useBaseUrl('img/send-data/stix-logo.png')} alt="icon" width="75"/><h4>STIX/TAXII 2 Client</h4></a>
         <p>Learn how to set up a STIX/TAXII 2.x client to collect threat intelligence indicators into the Sumo Logic environment.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="75"/><h4>Sumo Collection</h4></a>
+        <p>Learn how to collect the list of collectors and their sources using the Sumo Logic Collector API and Sources API.</p>
         </div>
       </div>
       <div className="box smallbox card">
