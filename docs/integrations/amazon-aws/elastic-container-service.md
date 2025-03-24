@@ -296,7 +296,7 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 
 ## Creating Field Extraction Rule(s)
 
-Create Field Extraction Rule for CloudTrail Logs ([learn more](/docs/manage/field-extractions/create-field-extraction-rule)).
+Create a Field Extraction Rule for CloudTrail Logs ([learn more](/docs/manage/field-extractions/create-field-extraction-rule)).
 ```sql
 Rule Name: AwsObservabilityECSCloudTrailLogsFER
 Applied at: Ingest Time
@@ -315,7 +315,7 @@ This section has instructions for collecting logs and metrics for the Amazon ECS
 ### Collect Metrics for Amazon ECS
 
 1. Sumo Logic supports collecting metrics using two source types:
-   * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
+   * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended) or
    * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
    :::note
       Amazon ECS metrics use the AWS/ECS namespace
@@ -353,7 +353,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Amazon ECS - Overview** dashboard provides an overview of CPU and memory utilization across all your ECS clusters and services. The customer upon checking the dashboard can determine which services are high in utilization and accordingly make decisions for the ECS deployment.
+The **Amazon ECS - Overview** dashboard provides an overview of CPU and memory utilization across all your ECS clusters and services. You can determine which services are high in utilization and accordingly make decisions for the ECS deployment.
 
 Use this dashboard to:
 
@@ -362,7 +362,7 @@ Use this dashboard to:
 * Identify clusters or services with unusually high or low resource usage or reservation percentages.
 * View details of individual clusters and services, including their regions and associated accounts.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Overview.png' />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Overview.png' alt="Amazon ECS - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit Events
 
@@ -375,7 +375,7 @@ Use this dashboard to:
 * Examine details and trends for created, updated and deleted ECS resources.
 * Investigate specific container registration and deregistration events in different regions and clusters.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Audit-Events.png' />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Audit-Events.png' alt="Amazon ECS - Audit Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Resource Utilization
 
@@ -390,7 +390,7 @@ Use this dashboard to:
 * Identify performance bottlenecks or underutilized resources in your ECS environment.
 * Compare utilization patterns between clusters and individual services to optimize resource allocation.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Resource-Utilization.png' />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Resource-Utilization.png' alt="Amazon ECS - Resource Utilization" style={{border: '1px solid gray'}} width="800" />
 
 ### Resource Reservation
 
@@ -406,4 +406,4 @@ Use this dashboard to:
 * Compare reservation patterns between different types of resources (CPU, memory, GPU) over time.
 
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Resource-Reservation.png' />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Resource-Reservation.png' alt="Amazon ECS - Resource Reservation" style={{border: '1px solid gray'}} width="800" />
