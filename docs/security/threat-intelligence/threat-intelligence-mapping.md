@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Global feed mapping
 
-Sumo Logic provides an out-of-the-box a `_sumo_global_feed` source of threat intelligence indicators supplied by Sumo Logic. You can see it in the [**Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab). This source is a default source and cannot be changed or deleted. 
+Sumo Logic provides an out-of-the-box a `_sumo_global_feed_i471` source of threat intelligence indicators supplied by Sumo Logic. You can see it in the [**Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab). This source is a default source and cannot be changed or deleted. 
 
 In the threat intelligence datastore, the schema is mapped to normalized values to provide ease of interoperability with the schema from other threat intelligence sources:
 
