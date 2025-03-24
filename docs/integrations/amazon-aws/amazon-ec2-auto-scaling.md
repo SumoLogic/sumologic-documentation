@@ -99,7 +99,7 @@ account=account region=region autoscalinggroupname=cartService namespace=aws/aut
 ```
 
 ## Collecting logs and metrics for the Amazon EC2 Auto Scaling
-When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 ### Collect Cloudtrail logs
 
@@ -132,7 +132,7 @@ Namespace for Amazon EC2 Auto-scaling Service is AWS/AutoScaling.
 
 ## Field Extraction Rule(s)
 
-Create Field Extraction Rule (FER) for Amazon EC2 Auto-scaling access logs and Cloudtrail logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+Create a Field Extraction Rule (FER) for Amazon EC2 Auto-scaling access logs and Cloudtrail logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 **Amazon EC2 Auto Scaling CloudTrail logs**
 
