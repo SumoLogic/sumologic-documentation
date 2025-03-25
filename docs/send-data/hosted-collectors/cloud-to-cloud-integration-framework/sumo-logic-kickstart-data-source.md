@@ -21,7 +21,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="thumbnail icon" width="55"/>
 
-Sumo Logic Kickstart Data source is designed for ingesting logs and metrics into Sumo Logic for the OpenTelemetry demo application. The data source is engineered to provide a continuous stream of data that simulates a specific scenario, highlighting latency spikes across various services.
+The Sumo Logic Kickstart Data source ingests logs and metrics into Sumo Logic for our pre-loaded OpenTelemetry demo application. This source is engineered to provide a continuous stream of data that simulates a specific scenario, highlighting latency spikes across various services.
+
+:::tip
+Learn more about [Kickstart Data](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
+:::
 
 ## Data collected
 
@@ -36,10 +40,15 @@ Sumo Logic Kickstart Data source is designed for ingesting logs and metrics into
 
 ### Source configuration
 
+The Kickstart Data source is pre-installed for all users upon creation of a new org.
+
+<details>
+<summary>If you do not see the source, follow the below steps.</summary>
+
 When you create a Sumo Logic Kickstart Data source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure the Sumo Logic Kickstart Data Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+To configure the Sumo Logic Kickstart Data source:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Sumo Logic Kickstart Data** icon.
 1. Enter a **Name** to display for the source in the Sumo Logic web application. The description is optional.
@@ -51,6 +60,8 @@ To configure the Sumo Logic Kickstart Data Source:
 1. In **API Secret**, enter your API Secret ID collected from the Sumo Logic Kickstart Data platfrorm.
 1. **Data Type** You have the option to choose the type of ingestion. Default is `OTEL` for the OpenTelemetry demo application.
 1. When you are finished configuring the source, click **Save**.
+
+</details>
 
 ## JSON schema
 
