@@ -50,7 +50,7 @@ To configure a Mandiant Threat Intel source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **API Key ID**. Enter the API key ID collected from the Mandiant Threat Intel platform.
 1. **API Secret**. Enter the API secret collected from the from the Mandiant Threat Intel platform.
-1. **Sumo Logic Threat Intel Source ID**. Enter your Sumo Logic namespace ID in which the indicators will be stored.
+1. **Sumo Logic Threat Intel Source ID**. Enter the name you want to use for the Mandiant source that will be created in the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab in Sumo Logic. The Mandiant threat intelligence indicators will be stored in this source. Do not use spaces in the name.
 1. **Polling Interval**. The polling interval is set for 5 minutes by default. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the source, click **Save**.
