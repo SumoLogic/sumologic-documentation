@@ -122,7 +122,7 @@ For details on web session timeouts and multi-account access, see [Multi-Account
 
 #### Open all navigation menu items in new browser tabs by default
 
-By default, selecting a menu link in the left navigation pane opens it in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="150" />
+By default, selecting a menu link in the left navigation pane opens it in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="125" />
 
 Enabling this preference hides the **Open in New Tab** button on navigation menu links.
 
