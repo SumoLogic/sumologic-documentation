@@ -29,9 +29,9 @@ The activation link expires after 3 days. If it expires, you’ll need to comple
 1. Fill out the **Activate Your Account** form, then click **Activate**.
 1. Follow the setup guide to install a data collector and start ingesting data.
 
-#### Kickstart Data
-
-Get started with Sumo Logic effortlessly using [Kickstart Data](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial), preloaded sample data and dashboards designed to help you explore and understand the platform’s capabilities. You can immediately dive into our features like log search and alerts prior to setting up your own data collection. Whether you're new to Sumo Logic or evaluating its features, Kickstart Data offers a hands-on way to experience the platform's power.
+:::tip
+Get started with Sumo Logic effortlessly using **Kickstart Data**, preloaded sample data and dashboards designed to help you explore and understand the platform’s capabilities. You can immediately dive into our features like log search and alerts prior to setting up your own data collection. Whether you're new to Sumo Logic or evaluating its features, Kickstart Data offers a hands-on way to experience the platform's power. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
+:::
 
 ### Set up data collection
 
