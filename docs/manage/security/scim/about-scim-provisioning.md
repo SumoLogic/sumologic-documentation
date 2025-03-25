@@ -60,7 +60,7 @@ Assign users to your app. All users assigned to the app will be provisioned.
 
 When you set up provisioning for the app, provide a Sumo Logic access key to authorize access to Sumo Logic. (See [Create an access key](#create-an-access-key) above.) 
 
-For the SCIM base URL, provide the Sumo Logic [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`. 
+For the SCIM base URL, provide the Sumo Logic [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`. 
 
 ### Step 6: Verify provisioning
 

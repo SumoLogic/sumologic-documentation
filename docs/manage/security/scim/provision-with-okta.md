@@ -48,7 +48,7 @@ If it is not already set up, [set up SAML for single sign-on with Okta](/docs/ma
 1. Configure provisioning integration settings:
    1. Click the **Provisioning** tab. 
    1. Click **Integration** in the left menu, and then click **Edit**.
-   1. **SCIM connector base URL**. Enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim`.
+   1. **SCIM connector base URL**. Enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`.
    1. **Unique identifier field for users**. Enter `userName`.
    1. **Supported provisioning actions**. Select:
       * **Import New Users and Profile Updates**
