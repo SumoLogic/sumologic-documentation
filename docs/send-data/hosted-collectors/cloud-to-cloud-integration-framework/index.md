@@ -195,6 +195,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source"><img src={useBaseUrl('img/send-data/confluent-cloud-metrics.png')} alt="icon" width="120"/><h4>Confluent Cloud Metrics</h4></a>
+  <p>Learn how to collect metrics from the Confluent Cloud Metrics platform and send them to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>Crowdstrike</h4></a>
   <p>Provides a secure endpoint to receive event data from the CrowdStrike Streams API.</p>
   </div>
