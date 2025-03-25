@@ -54,7 +54,7 @@ An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
 
 While the search job is running you need to request the job status based on the search job ID. The API keeps the search job alive by either polling for status every 20 to 30 seconds or gathering results. If the search job is not kept alive by API requests, it is canceled. When a search job is canceled for inactivity, you will get a 404 status.
 
-You must enable cookies for subsequent requests to the search job. A 404 status (Page Not Found) on a follow-up request may be due to a cookie not accompanying the request.
+You should send ACCESSID:ACCESSKEY pair with every Search Job API request. A 404 status (Page Not Found) on a follow-up request may be due to a cookie not accompanying the request or due to a missing/incorrect ACCESSID:ACCESSKEY pair.
 
 There's a query timeout after eight hours, even if the API is polling and making requests. If you are running very few queries, you may be able to go a little longer, but you can expect most of your queries to end after eight hours.
 
