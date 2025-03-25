@@ -107,7 +107,7 @@ Sumo Logic provides the following out-of-the-box default sources of threat indic
 * **_sumo_global_feed_cs**. This is a legacy source of threat indicators maintained by Sumo Logic. ***This source will be discontinued on April 30, 2025***. If you want to stop using this source before April 30, disable the source on the [Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab).
 
 :::warning
-To maintain uninterrupted threat intelligence operation, if you have created rules or queries that explicitly reference the legacy `_sumo_global_feed_cs` source, follow the directions below to update the rule or queries to use the new `_sumo_global_feed_i471` source ***before April 30, 2025***.
+To maintain uninterrupted threat intelligence operation, if you have created rules, saved searches, monitors or dashboard panel queries that explicitly reference the legacy `_sumo_global_feed_cs` source, follow the directions below to update them to use the new `_sumo_global_feed_i471` source ***before April 30, 2025***.
 :::
 
 ### Migrate to the new global feed source
