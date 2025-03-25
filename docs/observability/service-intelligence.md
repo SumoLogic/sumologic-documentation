@@ -30,37 +30,49 @@ To open Service Intelligence, in the main Sumo Logic menu of the [**New UI**](/d
 
 ### View a service list and map
 
-The service list and map visually maps out your application environment, giving you a greater understanding of your application architecture, hierarchy, and dependencies between monitored microservices. Health and load of each microservice is reflected in size and color of nodes in the map to help you spot potential problems and bottlenecks in your application infrastructure.
- 
-1. When you first open Service Intelligence, a list of services is displayed to the left, and and a map of services is displayed in the center. These services are automatically identified by AI analysis of logs in your entire enterprise. <br/><img src={useBaseUrl('img/observability/service-intelligence-initial-map.png')} alt="Service Intelligence list and map" style={{border: '1px solid gray'}} width="800" />
-1. The legend at the bottom of the screen shows that red nodes in the map represent anomalies, while blue nodes indicate normal, expected activity. Use the zoom buttons to resize the map.<br/><img src={useBaseUrl('img/observability/service-intelligence-size-buttons.png')} alt="Resize buttons" style={{border: '1px solid gray'}} width="200" />
-1. To refresh the list of services and the map:
-    1. Click the **Regenerate Map** button in the upper right to toggle the **Regenerate Map** panel.<br/><img src={useBaseUrl('img/observability/service-intelligence-regenerate-map.png')} alt="Regenerate map" style={{border: '1px solid gray'}} width="125" />
-    1. Click **Regenerate** in the **Regenerate Map** panel to right. The service list and map will be regenerated with the last 15 minutes' worth of data.
-    :::warning
-    It is only necessary to regenerate the map if it has been longer than 15 minutes since the map was last generated. Do not regenerate the map multiple times in quick succession, because doing so will not result in new results.
-    :::
-    1. To provide feedback on the map, select from the available **Issues** or **Variations** on the **Regenerate Map** panel. We use this feedback to fine-tune map output. 
+The service list and map visually represents your application environment, giving you a greater understanding of your application architecture, hierarchy, and dependencies between monitored microservices. Health and load of each microservice is reflected in size and color of nodes in the map to help you spot potential problems and bottlenecks in your application infrastructure.
 
-### View the signals summary
+Perform the following steps to explore the UI: 
+1. When you first open Service Intelligence, a list of services is displayed to the left, and and a map of the services is displayed to the right. These services are automatically identified by AI analysis of logs in your entire enterprise. <br/><img src={useBaseUrl('img/observability/service-intelligence-initial-map.png')} alt="Service Intelligence list and map" style={{border: '1px solid gray'}} width="800" />
+1. The legend at the bottom of the screen shows that gold nodes in the map represent services with signals, while blue nodes indicate normal, expected activity. Use the zoom buttons to resize the map.<br/><img src={useBaseUrl('img/observability/service-intelligence-size-buttons.png')} alt="Resize buttons" style={{border: '1px solid gray'}} width="200" />
+1. Click the <img src={useBaseUrl('img/observability/map-view-button.png')} alt="Map view button" style={{border: '1px solid gray'}} width="30" /> button in the upper right to refresh the services list and map. A dropdown menu displays:<br/><img src={useBaseUrl('img/observability/service-intelligence-regenerate-map.png')} alt="Refresh view" style={{border: '1px solid gray'}} width="200" />
+<br/>Select one of the following:
+    * **Latest View**. Displays the latest view available. This represents the state of the services in the last 15 minutes.
+    * **Historical View**. Displays the next most recent view.
+    * **Regenerate View**. Displays the following:<br/><img src={useBaseUrl('img/observability/regenerate-map.png')} alt="Regenerate map" style={{border: '1px solid gray'}} width="250" />
+        1. Select from **Concerns** to provide feedback about the current view, and select from **Variations** to request how AI should automatically adjust regeneration. 
+        1. Click **Regenerate** to regenerate the service list and map with the last 15 minutes' worth of data.
+            :::warning
+            It is only necessary to regenerate if it has been longer than 15 minutes since last generation. Do not regenerate multiple times in quick succession, because doing so will not result in new results.
+            :::
+1. Click **History** in the upper right to select previously-generated views.<br/><img src={useBaseUrl('img/observability/history.png')} alt="Services history" style={{border: '1px solid gray'}} width="250" /><br/>To open a view:
+   * Select a previous view directly from the list, or
+   * Click **Select Date** and **Select Time** to find a specific view.
 
-Clicking the **Insights** button displays a **Signals Summary** panel that shows a summary of service signals and steps to take to remediate issues.
+### View a summary of all service activity
 
-1. Click the **Insights** (light bulb) button in the upper right. <br/><img src={useBaseUrl('img/observability/service-intelligence-insights-button.png')} alt="Insights button" style={{border: '1px solid gray'}} width="125" />
-1. The **Signals Summary** displays findings, for example:<br/><img src={useBaseUrl('img/observability/service-intelligence-signals-summary.png')} alt="Signals summary" style={{border: '1px solid gray'}} width="300" />
+Service Intelligence provides an AI-generated summary of all detected service signals and steps to take to remediate issues.
+
+1. Click the summary button to the right of the services map. <img src={useBaseUrl('img/observability/summary-button.png')} alt="Summary button" width="30" /><br/>A **Summary** panel displays:<br/><img src={useBaseUrl('img/observability/service-intelligence-signals-summary.png')} alt="Signals summary" style={{border: '1px solid gray'}} width="300" />
 1. The summary contains observations, root cause analysis, and next steps. Carefully review the summary to learn actions you can take. 
 
-### View service signals
+### View the summary for a single service
 
-When you select a service in the list or a node in the map, a **Service Signals** panel displays to the right. The panel contains findings about the service with log examples and steps you can take to remediate problems with the service.
+When you select a service in the list or a node in the map that has signals, a summary panel displays to the right. The panel contains findings about the service with log examples and steps you can take to remediate problems with the service.
 
-1. Click the **Insights** (light bulb) button in the upper right.
-1. Click a service in the list on the left, or click an individual node in the map. In the following example, we've selected the Checkout Service.<br/><img src={useBaseUrl('img/observability/service-intelligence-checkout-service-example.png')} alt="Checkout Service example" style={{border: '1px solid gray'}} width="800" />
-1. Notice how the **Service Signals** panel displays signals of interest. When you click **Show Log Example** for one of these signals, it displays an example of a log entry that illustrates the issue. You can use this information to query for logs with similar content.<br/><img src={useBaseUrl('img/observability/service-intelligence-log-example.png')} alt="Log example" style={{border: '1px solid gray'}} width="300" />
-1. Scroll to the bottom of the **Service Signals** pane to the **Next Steps** section. This section describes concrete steps you can take to remediate issues identified in the selected node.<br/><img src={useBaseUrl('img/observability/service-intelligence-next-steps.png')} alt="Service Intelligence next steps" style={{border: '1px solid gray'}} width="300" />
-1.  From the **Next Steps** section, you can also:
-     * View transactions dependent on the selected node.
-     * Open [Copilot](/docs/search/copilot/) to investigate further.
+1. At the top of the screen, use the following controls to filter results:<br/><img src={useBaseUrl('img/observability/filter-results.png')} alt="Filter results" style={{border: '1px solid gray'}} width="800" />
+   * **Search Services**. Enter keywords to search services names.
+   * **Signal Type**. Select the signal types to search for:
+      * **Latency**. An increase or decrease in latency of the requests to the system.
+      * **Traffic**. An increase or decrease in traffic requests to the service.
+      * **Error**. Error signals detected.
+      * **Saturation**. A change in resource usage of the system.
+      * **Security**. Logs that indicate security concerns. 
+   * **Services with Signals**. Show only services with signals. Normally operating services will not be shown. 
+1. Click a service in the list, or a node in the map. A **Summary** panel displays to the right showing signals of interest:<br/><img src={useBaseUrl('img/observability/service-intelligence-service-example.png')} alt="Service summary example" style={{border: '1px solid gray'}} width="800" />
+1. When you click an expand arrow on a signal, it displays an example of a log entry that illustrates the issue. You can use this information to query for logs with similar content.<br/><img src={useBaseUrl('img/observability/service-intelligence-log-example.png')} alt="Log example" style={{border: '1px solid gray'}} width="300" />
+1. Scroll to the bottom of the **Summary** pane to the **Next Steps** section. This section describes concrete steps you can take to remediate issues identified in the selected service.<br/><img src={useBaseUrl('img/observability/service-intelligence-next-steps.png')} alt="Service Intelligence next steps" style={{border: '1px solid gray'}} width="300" />
+1. Open [Copilot](/docs/search/copilot/) to investigate further.
 
 ## FAQ
 
@@ -72,28 +84,28 @@ Data for Service Intelligence is generated by our AI system leveraging Claude on
 
 There is a high degree of confidence in the AI outputs as verified through human judging of sample sets. Sumo Logic internally relies on the human judging process and follows that up with tuning the dataset or the prompt.
 
-Furthermore, you can provide feedback on the map in the **Regenerate Map** panel, such as noting it is missing services.
+Furthermore, you can provide feedback on the map in the **Regenerate** panel, such as noting it is missing services.
 
 ### What is generated ? 
 
-Data is generated by passing a sample of data to the LLM for the past 15 minutes along with a prompt. This returns a "service summary" (also known as "insights") of logs along with log messages related to the signals generated, with a hypothesis of the problem and next steps for further exploration.
+Data is generated by passing a sample of data to the LLM for the past 15 minutes along with a prompt. This returns a "service summary" of logs along with log messages related to the signals generated, with a hypothesis of the problem and next steps for further exploration.
 
-Our AI delivers actionable intelligence in near-real-time via log analysis only. The resulting service map highlights the interconnection of various services and components. The summary and signals highlight what services are functioning normally, and any that might have errors, high traffic, or latency issues. Clicking on an individual service you can view the specific signals generated for the service. Next steps are suggested for how to resolve any issues that might be present. From there, you can view example log lines, and dig deeper into the logs if needed. 
+Our AI delivers actionable intelligence in near-real-time via log analysis only. The resulting service map highlights the interconnection of various services and components. The summary and signals highlight what services are functioning normally, and any that might have errors, high traffic, or latency issues. Clicking on an individual service lets you view the specific signals generated for the service. Next steps are suggested for how to resolve any issues that might be present. From there, you can view example log lines, and dig deeper into the logs if needed. 
 
 ### How does regeneration work ?
 
-Regeneration takes the same sampled data that was used for the first attempt and sends it to the model again, along with special instructions based on the user’s feedback about whether anything looked incorrect (missing services, wrong connections, service names), and how different they want the result to be (subtly different, or very different). 
+Regeneration takes the same sampled data that was used for the first attempt and sends it to the model again, along with special instructions based on your feedback about whether anything looked incorrect (missing services, wrong connections, service names), and how different they want the result to be (subtly different, or very different). 
 
 The idea is that the model gets to try again with a hint about what to focus on. The new result may be the same or different, and it may or not be more correct than the original result. 
 
 ### What are the signal types?
 
 The signal types are: 
-* **Latency**. Increase or decrease in latency of the requests to the system.
+* **Latency**. An increase or decrease in latency of the requests to the system.
 * **Traffic**. An increase or decrease in traffic requests to the service.
-* **Error**. The count of error signals detected.
+* **Error**. Error signals detected.
 * **Saturation**. A change in resource usage of the system.
-* **Security**. The count of logs that indicate security concerns. 
+* **Security**. Logs that indicate security concerns. 
 
 These signals are extracted based on the logs observed for the last 15 minutes.
 
