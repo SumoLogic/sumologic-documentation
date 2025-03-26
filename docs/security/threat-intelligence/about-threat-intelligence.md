@@ -104,7 +104,7 @@ _index=sumologic_audit_events _sourceCategory=threatIntelligence
 
 Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources: 
 * **_sumo_global_feed_i471**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/).
-* **_sumo_global_feed_cs**. This is a legacy source of threat indicators maintained by Sumo Logic. ***This source will be discontinued on April 30, 2025***. If you want to stop using this source before April 30, disable the source on the [Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab).
+* **_sumo_global_feed_cs**. This is a legacy source of threat indicators maintained by Sumo Logic. ***This source will be discontinued on April 30, 2025***.
 
 :::warning
 To maintain uninterrupted threat intelligence operation, if you have created rules, saved searches, monitors or dashboard panel queries that explicitly reference the legacy `_sumo_global_feed_cs` source, follow the directions below to update them to use the new `_sumo_global_feed_i471` source ***before April 30, 2025***.
@@ -116,21 +116,25 @@ Perform the steps in the following sections to migrate to the `_sumo_global_feed
 
 #### hasThreatMatch rule syntax
 
-If no source is explicitly provided in your rules with [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch) syntax, no change is needed:
-* By default, until April 30, 2025 the rules point to the legacy `_sumo_global_feed_cs` source (and the rest of your tenant-specific sources). 
+In most cases, no change is needed if you use [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch) in your rules:
+* Until April 30, 2025 the rules point to the legacy `_sumo_global_feed_cs` source (and the rest of your tenant-specific sources). 
 * After April 30, 2025, the rules point to the new `_sumo_global_feed_i471` source (and the rest of your tenant-specific sources).
 
-If you have rules with hasThreatMatch syntax that explicitly point to the legacy `_sumo_global_feed_cs` source, change them to point to `_sumo_global_feed_i471` source. For example: 
-* Change this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="_sumo_global_feed_cs")` 
-* To this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="_sumo_global_feed_i471")`
+You may need to make changes in these scenarios:
+* If you have rules with `hasThreatMatch` syntax that explicitly point to the legacy `_sumo_global_feed_cs` source, change them to point to `_sumo_global_feed_i471` source. For example: 
+   * Change this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="_sumo_global_feed_cs")` 
+   * To this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="_sumo_global_feed_i471")`
+* The `domain-name` and `email-addr` types are not supported in Intel 471. If you filter for these types using `hasThreatMatch`, update your rule syntax to remove them.
 
 #### lookup operator
 
-No change is needed on your part to address changes to the [lookup](/docs/search/search-query-language/search-operators/lookup/) search operator.
+In most cases, no change is needed if you use the [lookup](/docs/search/search-query-language/search-operators/lookup/) search operator to point to `sumo://threat/cs`:
+* Until April 30, 2025, queries in dashboards that use the `lookup` search operator to point to `sumo://threat/cs` (the legacy `_sumo_global_feed_cs` source) are now updated to point to `sumo://threat/i471` (the new `_sumo_global_feed_i471` source). For examples, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) app. 
+* After April 30, 2025, any `lookup` operator queries pointing to `sumo://threat/cs` will be directed to the new `_sumo_global_feed_i471` source.
 
-Queries in dashboards that use the `lookup` search operator to point to `sumo://threat/cs` (the legacy `_sumo_global_feed_cs` source) will now point to `sumo://threat/i471` (the new `_sumo_global_feed_i471` source). For examples, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) app.
-
-After April 30, 2025, all `lookup` operator queries pointing to `sumo://threat/cs` will be directed to the new `_sumo_global_feed_i471` source.
+You may need to make changes in these scenarios:
+* The `domain-name` and `email-addr` types are not supported in Intel 471. If you filter for these types using the `lookup` operator, update your queries to remove them.
+* If you parse the `raw` field returned from the `lookup` operation, you will see different fields when you use the new `_sumo_global_feed_i471` source. To avoid problems with fields not returning data, use a [nodrop](/docs/search/search-query-language/parse-operators/parse-nodrop-option/) clause.
 
 #### threatip search operator
 
