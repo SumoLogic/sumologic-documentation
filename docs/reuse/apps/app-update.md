@@ -1,5 +1,7 @@
 To update the app, do the following:
-
+:::note
+    Next-Gen App: To install or update the app, you must be an account administrator or a user with Manage Apps, Manage Monitors, Manage Fields, Manage Metric Rules, Manage Collectors capability depending upon the different content types part of the app.
+:::
 1. Select **App Catalog**.
 1. In the **Search Apps** field, search for and then select your app. <br/>Optionally, you can identify apps that can be upgraded in the **Upgrade available** section.
 1. To upgrade the app, select **Upgrade** from the **Manage** dropdown.
