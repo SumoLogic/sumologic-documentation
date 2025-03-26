@@ -19,6 +19,7 @@ Follow the steps in this topic to install or uninstall a collector on Windows.�
 * Windows Server 2016
 * Windows Server 2019
 * Windows Server 2022
+* Windows Server 2025
 * Single core, 512MB RAM
 * 8GB disk space
 * Package installers require TLS 1.2 or higher.
