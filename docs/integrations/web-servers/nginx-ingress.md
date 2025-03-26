@@ -64,7 +64,15 @@ It’s assumed that you are using the latest helm chart version if not please up
 <br/>
 ## Installing the Nginx Ingress app
 import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
+
 <AppInstall2/>
+
+Additionally, if you're using Nginx Ingress in the Kubernetes environment, the following fields will be created automatically during the app installation process:
+
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_webserver_system`
+* `pod_labels_webserver_farm`
 
 ## Viewing Nginx Ingress dashboards
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';

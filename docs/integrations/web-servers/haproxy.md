@@ -398,7 +398,7 @@ Additionally, if you're using HAProxy in the Kubernetes environment, the followi
 
 ## Viewing HAProxy Dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md'
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 

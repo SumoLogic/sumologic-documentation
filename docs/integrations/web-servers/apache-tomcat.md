@@ -540,6 +540,7 @@ At this point, Tomcat logs should start flowing into Sumo Logic.
 ## Installing the Apache Tomcat app
 
 import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
+
 <AppInstall2/>
 
 As part of the app installation process, the following fields will be created by default:
@@ -560,6 +561,7 @@ For information on setting up fields, see [Fields](/docs/manage/fields).
 ## Viewing Apache Tomcat dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
 <ViewDashboards/>
 
 ### Overview

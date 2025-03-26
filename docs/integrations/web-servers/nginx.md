@@ -350,6 +350,7 @@ Additionally, if you are using Nginx in the Kubernetes environment, the followin
 ## Viewing Nginx Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
 <ViewDashboards/>
 
 ### Overview
