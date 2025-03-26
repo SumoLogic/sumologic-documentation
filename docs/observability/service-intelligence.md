@@ -28,33 +28,18 @@ Engineers that are responsible for maintaining the uptime of a service would ben
 
 To open Service Intelligence, in the main Sumo Logic menu of the [**New UI**](/docs/get-started/sumo-logic-ui), select **Service Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Service Intelligence**. (Service Intelligence is not available in the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).)
 
-### View a service list and map
+When you first open Service Intelligence, a list of services is displayed to the left, and and a map of the services is displayed to the right. These services are automatically identified by AI analysis of logs in your entire enterprise. 
 
-The service list and map visually represents your application environment, giving you a greater understanding of your application architecture, hierarchy, and dependencies between monitored microservices. Health and load of each microservice is reflected in size and color of nodes in the map to help you spot potential problems and bottlenecks in your application infrastructure.
+The service list and map visually represents your application environment, giving you a greater understanding of your application architecture, hierarchy, and dependencies between monitored microservices. Health of each microservice is reflected in the color of nodes in the map to help you spot potential problems and bottlenecks in your application infrastructure.
 
-Perform the following steps to explore the UI: 
-1. When you first open Service Intelligence, a list of services is displayed to the left, and and a map of the services is displayed to the right. These services are automatically identified by AI analysis of logs in your entire enterprise. <br/><img src={useBaseUrl('img/observability/service-intelligence-initial-map.png')} alt="Service Intelligence list and map" style={{border: '1px solid gray'}} width="800" />
-1. The legend at the bottom of the screen shows that gold nodes in the map represent services with signals, while blue nodes indicate normal, expected activity. Use the zoom buttons to resize the map.<br/><img src={useBaseUrl('img/observability/service-intelligence-size-buttons.png')} alt="Resize buttons" style={{border: '1px solid gray'}} width="200" />
-1. Click the <img src={useBaseUrl('img/observability/map-view-button.png')} alt="Map view button" style={{border: '1px solid gray'}} width="30" /> button in the upper right to refresh the services list and map. A dropdown menu displays:<br/><img src={useBaseUrl('img/observability/service-intelligence-regenerate-map.png')} alt="Refresh view" style={{border: '1px solid gray'}} width="200" />
-<br/>Select one of the following:
-    * **Latest View**. Displays the latest view available. This represents the state of the services in the last 15 minutes.
-    * **Historical View**. Displays the next most recent view.
-    * **Regenerate View**. Displays the following:<br/><img src={useBaseUrl('img/observability/regenerate-map.png')} alt="Regenerate map" style={{border: '1px solid gray'}} width="250" />
-        1. Select from **Concerns** to provide feedback about the current view, and select from **Variations** to request how AI should automatically adjust regeneration. 
-        1. Click **Regenerate** to regenerate the service list and map with the last 15 minutes' worth of data.
-            :::warning
-            It is only necessary to regenerate if it has been longer than 15 minutes since last generation. Do not regenerate multiple times in quick succession, because doing so will not result in new results.
-            :::
-1. Click **History** in the upper right to select previously-generated views.<br/><img src={useBaseUrl('img/observability/history.png')} alt="Services history" style={{border: '1px solid gray'}} width="250" /><br/>To open a view:
-   * Select a previous view directly from the list, or
-   * Click **Select Date** and **Select Time** to find a specific view.
+<img src={useBaseUrl('img/observability/service-intelligence-initial-map.png')} alt="Service Intelligence list and map" style={{border: '1px solid gray'}} width="800" />
 
 ### View a summary of all service activity
 
 Service Intelligence provides an AI-generated summary of all detected service signals and steps to take to remediate issues.
 
 1. Click the summary button to the right of the services map. <img src={useBaseUrl('img/observability/summary-button.png')} alt="Summary button" width="30" /><br/>A **Summary** panel displays:<br/><img src={useBaseUrl('img/observability/service-intelligence-signals-summary.png')} alt="Signals summary" style={{border: '1px solid gray'}} width="300" />
-1. The summary contains observations, root cause analysis, and next steps. Carefully review the summary to learn actions you can take. 
+1. The summary contains observations, root cause analysis, and next steps. Carefully review the summary to learn actions you can take to address the findings. 
 
 ### View the summary for a single service
 
@@ -73,6 +58,24 @@ When you select a service in the list or a node in the map that has signals, a s
 1. When you click an expand arrow on a signal, it displays an example of a log entry that illustrates the issue. You can use this information to query for logs with similar content.<br/><img src={useBaseUrl('img/observability/service-intelligence-log-example.png')} alt="Log example" style={{border: '1px solid gray'}} width="300" />
 1. Scroll to the bottom of the **Summary** pane to the **Next Steps** section. This section describes concrete steps you can take to remediate issues identified in the selected service.<br/><img src={useBaseUrl('img/observability/service-intelligence-next-steps.png')} alt="Service Intelligence next steps" style={{border: '1px solid gray'}} width="300" />
 1. Open [Copilot](/docs/search/copilot/) to investigate further.
+
+### Explore the Service Intelligence UI
+
+Perform the following steps to explore the UI: 
+1. The legend at the bottom of the screen shows that gold nodes in the map represent services with signals, while blue nodes indicate normal, expected activity. Use the zoom buttons to resize the map.<br/><img src={useBaseUrl('img/observability/service-intelligence-size-buttons.png')} alt="Resize buttons" style={{border: '1px solid gray'}} width="200" />
+1. Click the <img src={useBaseUrl('img/observability/map-view-button.png')} alt="Map view button" style={{border: '1px solid gray'}} width="30" /> button in the upper right to refresh the services list and map. A dropdown menu displays:<br/><img src={useBaseUrl('img/observability/service-intelligence-regenerate-map.png')} alt="Refresh view" style={{border: '1px solid gray'}} width="200" />
+<br/>Select one of the following:
+    * **Latest View**. Displays the latest view available. This represents the state of the services in the last 15 minutes.
+    * **Historical View**. Displays the next most recent view.
+    * **Regenerate View**. Displays the following:<br/><img src={useBaseUrl('img/observability/regenerate-map.png')} alt="Regenerate map" style={{border: '1px solid gray'}} width="250" />
+        1. Select from **Concerns** to provide feedback about the current view, and select from **Variations** to request how AI should automatically adjust regeneration. 
+        1. Click **Regenerate** to regenerate the service list and map with the last 15 minutes' worth of data.
+            :::warning
+            It is only necessary to regenerate if it has been longer than 15 minutes since last generation. Do not regenerate multiple times in quick succession, because doing so will not result in new results.
+            :::
+1. Click **History** in the upper right to select previously-generated views.<br/><img src={useBaseUrl('img/observability/history.png')} alt="Services history" style={{border: '1px solid gray'}} width="250" /><br/>To open a view:
+   * Select a previous view directly from the list, or
+   * Click **Select Date** and **Select Time** to find a specific view.
 
 ## FAQ
 
