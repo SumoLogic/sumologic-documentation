@@ -11,7 +11,7 @@ AWS provides over 150 discrete services including compute, network, storage, dat
 
 Despite all of these services being a part of AWS, troubleshooting across different services can be problematic when you use separate AWS accounts to manage costs and give teams independent administrative control. Different AWS accounts often have different settings across Availability Zones or Regions, which makes it difficult to get a clear picture of overall application health.
 
-The Sumo Logic AWS Observability solution and analyze data across key AWS services and accounts, establish activity baselines, and determine causes for application incidents and high deviation events.
+The Sumo Logic AWS Observability solution analyze data across key AWS services and accounts, establish activity baselines, and determine causes for application incidents and high deviation events.
 
 :::sumo Micro Lesson
 Watch the following micro lesson to learn about our AWS Observability solution.
