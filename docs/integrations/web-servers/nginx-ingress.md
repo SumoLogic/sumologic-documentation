@@ -35,15 +35,6 @@ In the Kubernetes environment, we use our Sumo Logic Kubernetes collection. You 
 
 Configuring log and metric collection for the Nginx Ingress app includes the following tasks:
 
-### Step 1: Configure fields in Sumo Logic
-
-Additionally, if you're using Nginx Ingress in the Kubernetes environment, the following fields will be created automatically during the app installation process:
-
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_webserver_system`
-* `pod_labels_webserver_farm`
-
 ### Step 2: Configure Nginx Ingress Logs and Metrics Collection
 
 Sumo Logic supports the collection of logs and metrics data from Nginx Ingress in Kubernetes environments.
@@ -72,35 +63,13 @@ It’s assumed that you are using the latest helm chart version if not please up
 **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityNginxIngressWebserverFER** is automatically created for Nginx Application Components.
 <br/>
 ## Installing the Nginx Ingress app
-
-This section demonstrates how to install the Nginx Ingress app. These instructions assume you have already set up the collection as described above.
-
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   2. **Data Source.**
-   3. Choose **Enter a Custom Data Filter**, and enter a custom Nginx Ingress farm filter. Examples:
-      1. For all Nginx Ingress farms: `webserver_farm=*`.
-      2. For a specific farm: `webserver_farm=nginx-ingress.dev.01`.
-      3. Farms within a specific environment: `webserver_farm=nginx-ingress.dev.01` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
-      4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
+<AppInstall2/>
 
 ## Viewing Nginx Ingress dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+<ViewDashboards/>
 
 ### Overview
 
@@ -220,21 +189,16 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Controller-Metrics.png')} alt="Nginx-Ingress-Controller-Metrics" />
 
-## Installing Nginx Ingress monitors
+## Create monitors for Nginx Ingress app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-After [setting up collection](/docs/integrations/web-servers/nginx), you can proceed to installing the Nginx Ingress monitors, app, and view examples of each of dashboard.
-
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Nginx Ingress alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
+<CreateMonitors/>
 
 ## Nginx Ingress Alerts
 
-Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
-
+<details>
+<summary>Here are the alerts available for Nginx Ingress (click to expand).</summary>
 | Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:---|:---|:---|:---|:---|:---|
 | Logs | Nginx Ingress - Access from Highly Malicious Sources | This alert fires when an Nginx Ingress server is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
@@ -242,3 +206,4 @@ Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors
 | Logs | Nginx Ingress - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Critical | > 0 | 0 |
 | Logs | Nginx Ingress - Critical Error Messages | This alert fires when we detect critical error messages for a given Nginx Ingress server. | Critical | > 0 | 0 |
 | Metrics | Nginx Ingress - Dropped Connections | This alert fires when we detect dropped connections for a given Nginx Ingress server. | Critical | > 0 | 0 |
+</details>

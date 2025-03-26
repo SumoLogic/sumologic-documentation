@@ -116,7 +116,7 @@ Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distributio
 
 In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
-#### Collect Logs for Nginx Plus in Kubernetes environment
+### Collect Logs for Nginx Plus in Kubernetes environment
 
 Nginx Plus app supports the default access logs and error logs format.
 
@@ -126,7 +126,7 @@ Nginx Plus app supports the default access logs and error logs format.
 4. To get log data from Nginx Pods - all nginx logs must be redirected to standard output “**stdout**” and standard error “**stderr**”.
 
 
-#### Collect Metrics for Nginx Plus in Kubernetes environment  
+### Collect Metrics for Nginx Plus in Kubernetes environment  
 
 Nginx Plus app supports the metrics for Nginx Plus.
 
@@ -162,7 +162,7 @@ We use the Telegraf operator for Nginx Plus metric collection and Sumo Logic Ins
 
 Telegraf runs on the same system as Nginx Plus, and uses the [Nginx Plus input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) to obtain Nginx Plus metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx on the other hand are sent to either a Sumo Logic Local File source.
 
-#### Collect Logs for Nginx Plus in Non-Kubernetes environment
+### Collect Logs for Nginx Plus in Non-Kubernetes environment
 
 Nginx Plus app supports the default access logs and error logs format.
 
@@ -221,7 +221,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 </details>
 
-#### Collect Metrics for Nginx Plus in Non-Kubernetes environment
+### Collect Metrics for Nginx Plus in Non-Kubernetes environment
 
 Nginx Plus app supports the metrics for Nginx Plus.
 
@@ -300,9 +300,9 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ## Viewing Nginx Plus Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -491,19 +491,16 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-TCP-UDP-Zones.png')} alt="tk" />
 
-## Installing Nginx Plus monitors
+## Create monitors for Nginx Plus app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Nginx Plus alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
+<CreateMonitors/>
 
 ## Nginx Plus Alerts
 
-Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx Plus server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
-
+<details>
+<summary>Here are the alerts available for Nginx Plus (click to expand).</summary>
 | Name | Description | Alert Condition | Recover Condition |
 |:---|:---|:---|:---|
 | Nginx Plus - Dropped Connections | This alert fires when we detect dropped connections for a given Nginx Plus server. | > 0 | < = 0 |
@@ -511,3 +508,4 @@ Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors
 | Nginx Plus - Access from Highly Malicious Sources | This alert fires when an Nginx Plus is accessed from highly malicious IP addresses. | > 0 | < = 0 |
 | Nginx Plus - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | > 0 | < = 0 |
 | Nginx Plus - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | > 0 | < = 0 |
+</details>

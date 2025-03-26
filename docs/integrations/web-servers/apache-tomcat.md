@@ -19,23 +19,6 @@ Before installing the Sumo Logic app, Apache Tomcat must be set up and configure
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Apache Tomcat. Configuring log and metric collection for the Apache Tomcat app includes the following tasks.
 
-### Step 1: Configure fields in Sumo Logic
-
-As part of the app installation process, the following fields will be created by default:
-* `component`
-* `environment`
-* `webserver_system`
-* `webserver_farm`
-* `pod`
-
-Additionally, if you are using Apache Tomcat in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_webserver_system`
-* `pod_labels_webserver_farm`
-
-For information on setting up fields, see [Fields](/docs/manage/fields).
-
 ### Step 2: Configure Collection for Apache Tomcat
 
 <Tabs
@@ -72,7 +55,7 @@ Follow the below instructions to set up metrics collection:
 It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 
 
-#### Step 1: Configure Metrics Collection
+### Step 1: Configure Metrics Collection
 
 This section explains the steps to collect Apache Tomcat metrics from a Kubernetes environment.
 
@@ -213,7 +196,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 1. Verify metrics in Sumo Logic.
 
-#### Step 2: Configure Logs Collection
+### Step 2: Configure Logs Collection
 
 This section explains the steps to collect Apache Tomcat logs from a Kubernetes environment.
 
@@ -280,7 +263,7 @@ This section provides instructions for configuring metrics collection for the Su
     1. Configure logging in Apache Tomcat
     2. Configure Sumo Logic Installed Collector
 
-#### Step 1: Configure Metrics Collection
+### Step 1: Configure Metrics Collection
 
 1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
 1. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/http-source/logs-metrics)Make a note of the **HTTP Source URL**.
@@ -501,7 +484,7 @@ Once you have finalized your telegraf.conf file, you can start or reload the tel
 
 At this point, Tomcat metrics should start flowing into Sumo Logic.
 
-#### Step 2 Configure Logs Collection
+### Step 2 Configure Logs Collection
 
 This section provides instructions for configuring log collection for Apache Tomcat running on a non-kubernetes environment for the Sumo Logic App for Apache Tomcat.
 
@@ -556,34 +539,28 @@ At this point, Tomcat logs should start flowing into Sumo Logic.
 
 ## Installing the Apache Tomcat app
 
-The Sumo Logic app for Apache Tomcat provides pre-configured Dashboards for Access, Catalina.out, and Garbage Collection logs.
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
+<AppInstall2/>
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `webserver_system`
+* `webserver_farm`
+* `pod`
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-:::note
-Version selection is not available for all apps.
-:::
-3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   2. **Data Source.**
-     * Choose **Enter a Custom Data Filter**, and enter a custom filter for Apache Tomcat  webserver farm. Examples:
-     * For all Apache Tomcat webserver farms webserver_farm=*
-     * For a specific webserver farms: webserver_farm=tomcat.dev.01.
-     * Clusters within a specific environment: `webserver_farm=tomcat-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection)  
-4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-5. Click **Add to Library**.
+Additionally, if you are using Apache Tomcat in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_webserver_system`
+* `pod_labels_webserver_farm`
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ## Viewing Apache Tomcat dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+<ViewDashboards/>
 
 ### Overview
 
@@ -599,7 +576,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Overview.png')} alt="test" />
 
 
-#### Visitor Locations
+### Visitor Locations
 
 The **Apache Tomcat - Visitor Locations** dashboard provides a high-level view of Tomcat visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
 
@@ -720,19 +697,15 @@ The **Apache Tomcat  - MemoryPool** dashboard provides a memory of your JMX Apac
 
 To help determine if the Apache Tomcat server is available and performing well, the [Sumo Logic monitors](/docs/alerts/monitors) are provided with out-of-box alerts.
 
-## Installing Apache Tomcat monitors
-
-Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [Apache Tomcat alerts](/docs/integrations/web-servers/apache-tomcat#apache-tomcat-alerts).
+## Create monitors for Apache Tomcat
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
+<CreateMonitors/>
 
 ## Apache Tomcat Alerts
-
+<details>
+<summary>Here are the alerts available for Apache Tomcat (click to expand).</summary>
 <table>
   <tr>
    <td>Alert Name </td>
@@ -771,3 +744,4 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
    <td> 0   </td>
   </tr>
 </table>
+</details>

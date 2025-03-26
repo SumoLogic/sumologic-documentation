@@ -77,21 +77,6 @@ This section provides instructions for configuring logs and metrics collection f
 
 Configuring log and metric collection for the HAProxy app includes the following tasks:
 
-### Step 1: Configure fields in Sumo Logic
-
-As part of the app installation process, the following fields will be created by default:
-  * `component`
-  * `environment`
-  * `proxy_system`
-  * `proxy_cluster`
-  * `pod`
-
-Additionally, if you're using HAProxy in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
-  * `pod_labels_component`
-  * `pod_labels_environment`
-  * `pod_labels_proxy_system`
-  * `pod_labels_proxy_cluster`
-
 ### Step 2: Configure Collection for HAProxy
 
 Sumo Logic supports collection of logs and metrics data from HAProxy in both Kubernetes and non-Kubernetes environments.
@@ -120,7 +105,7 @@ In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collec
 It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
-#### Configure Metrics Collection
+### Configure Metrics Collection
 
 This section explains the steps to collect HAProxy metrics from a Kubernetes environment. In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment.
 
@@ -162,7 +147,7 @@ annotations:
 4. Verify metrics in Sumo Logic.
 
 
-#### Configure Logs Collection
+### Configure Logs Collection
 
 This section explains the steps to collect HAProxy logs from a Kubernetes environment.
 
@@ -215,7 +200,7 @@ We use the Telegraf operator for HAProxy metric collection and Sumo Logic Instal
 
 This section provides instructions for configuring metrics collection for the Sumo Logic app for HAProxy.
 
-#### Configure Metrics Collection
+### Configure Metrics Collection
 
 1. Configure a Hosted Collector: To create a new Sumo Logic hosted collector, perform the steps in the[Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
 2. Configure an HTTP Logs and Metrics Source: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the **HTTP Source URL**.
@@ -260,7 +245,7 @@ Once you have finalized your telegraf.conf file, you can start or reload the tel
 
 At this point, HAProxy metrics should start flowing into Sumo Logic.
 
-#### Configure Logs Collection
+### Configure Logs Collection
 
 This section provides instructions for configuring log collection for HAProxy running on a non-Kubernetes environment for the Sumo Logic app for HAProxy.
 
@@ -394,11 +379,28 @@ component="proxy" proxy_cluster="<Your-HAProxy-Server>" proxy_system="haproxy"
 
 Now that you have set up collection for HAProxy, you can install the HAProxy app to use the pre-configured searches and dashboard that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-<AppInstall/>
+<AppInstall2/>
+
+As part of the app installation process, the following fields will be created by default:
+  * `component`
+  * `environment`
+  * `proxy_system`
+  * `proxy_cluster`
+  * `pod`
+
+Additionally, if you're using HAProxy in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+  * `pod_labels_component`
+  * `pod_labels_environment`
+  * `pod_labels_proxy_system`
+  * `pod_labels_proxy_cluster`
 
 ## Viewing HAProxy Dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md'
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -505,20 +507,15 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/HAProxy-WebServerOperations.png')} alt="test" />
 
-## Installing the HAProxy monitors
-
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a HAProxy cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [HAProxy alerts](#haproxy-alerts).
+## Create monitors for HAProxy app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the HAProxy alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
-
+<CreateMonitors/>
 
 ## HAProxy Alerts
-
+<details>
+<summary>Here are the alerts available for Haproxy (click to expand).</summary>
 | Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:---|:---|:---|:---|:---|:---|
 | Logs | HAProxy - Access from Highly Malicious Sources | This alert fires when an HAProxy is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
@@ -534,3 +531,4 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | Metrics | HAProxy - Retry High | there is a high retry rate | Warning | >0 | < = 0 |
 | Metrics | HAProxy - High Server Connection Errors | there are too many connection errors to backend servers. | Warning | >100 | < = 100 |
 | Metrics | HAProxy - Server Healthcheck Failure | server healthchecks are failing. | Warning | >0 | < = 0 |
+</details>

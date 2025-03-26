@@ -54,21 +54,6 @@ Learn to set up NGINX for non-Kubernetes Sources.
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx. The following tasks are required:
 
-### Step 1: Configure fields in Sumo Logic
-
-As part of the app installation process, the following fields will be created by default:
-* `component`
-* `environment`
-* `webserver_system`
-* `webserver_farm`
-* `pod`
-
-Additionally, if you are using Nginx in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_webserver_system`
-* `pod_labels_webserver_farm`
-
 ### Step 2: Configure Nginx Logs and Metrics Collection
 
 Sumo Logic supports the collection of logs and metrics data from Nginx in both Kubernetes and non-Kubernetes environments. Please click on the appropriate links below based on the environment where your Nginx farms are hosted.
@@ -97,7 +82,7 @@ In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collec
 It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
-#### Configure Metrics Collection
+### Configure Metrics Collection
 
 This section explains the steps to collect Nginx metrics from a Kubernetes environment.
 
@@ -276,7 +261,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 </details>
 
-#### Configure Metrics Collection
+### Configure Metrics Collection
 
 #### Set up a Sumo Logic HTTP Source
 
@@ -345,31 +330,27 @@ At this point, Telegraf should start collecting the Nginx metrics and forward th
 
 ## Installing the Nginx app
 
-This section demonstrates how to install the Nginx app.
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-1. From the **App Catalog**, search for and select the Nginx app.
-2. Select the version of the service you're using and click **Add to Library**.  
-   :::note
-   Version selection is not available for all apps.
-   :::
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Nginx farm filter. Examples:
-       1. For all Nginx farms, `webserver_farm=*`.
-       2. For a specific farm, `webserver_farm=nginx.dev.01`.
-       3. Farms within a specific environment, `webserver_farm=nginx.dev.01` and `environment=prod`. (This assumes you have set the optional environment tag while configuring collection).
-3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+<AppInstall2/>
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `webserver_system`
+* `webserver_farm`
+* `pod`
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+Additionally, if you are using Nginx in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_webserver_system`
+* `pod_labels_webserver_farm`
 
 ## Viewing Nginx Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+<ViewDashboards/>
 
 ### Overview
 
@@ -481,21 +462,15 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Connections-and-Requests.png')} alt="Nginx-Connections-and-Requests" />
 
-## Installing Nginx monitors
+## Create monitors for Nginx app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Nginx alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
-
-To view the full list, see [Nginx](#nginx-alerts).
+<CreateMonitors/>
 
 ## Nginx Alerts
-
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
-
+<details>
+<summary>Here are the alerts available for Nginx (click to expand).</summary>
 | Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:---|:---|:---|:---|:---|:---|
 | Logs | Nginx - Access from Highly Malicious Sources | This alert fires when an Nginx server is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
@@ -503,3 +478,4 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 | Logs | Nginx - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Critical | > 0 | 0 |
 | Logs | Nginx - Critical Error Messages | This alert fires when we detect critical error messages for a given Nginx server. | Critical | > 0 | 0 |
 | Metrics | Nginx - Dropped Connections | This alert fires when we detect dropped connections for a given Nginx server. | Critical | > 0 | 0 |
+</details>
