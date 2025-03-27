@@ -265,6 +265,14 @@ Assuming you have used the modified template which uses standard/premium plan fo
 
     ![azureblob-subnet](/img/send-data/azureblob-subnet.png)
 
+## Upgrading Azure Functions
+
+1. Go to the resource group where ARM template was deployed and go to each of the function apps.
+    ![azurefunctionapp-list](/img/send-data/azure_functionapp.png)
+1. Go to `Deployment -> Deployment Center` and click on `Sync`.
+    ![azurefunctionapp-sync](/img/send-data/azure_upgrade_sync.png)
+1. Go to `Logs` tab and check the `Status` column, it should show `Success`.
+    ![azurefunctionapp-status](/img/send-data/azure_upgrade_status.png)
 
 ## Collection testing performance numbers
 

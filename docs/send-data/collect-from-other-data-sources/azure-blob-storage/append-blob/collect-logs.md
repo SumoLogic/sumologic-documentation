@@ -201,6 +201,15 @@ This assumes that your storage account access is enabled for selected networks.
 1. Add the outbound ip addresses (copied in step 2.iv) from both BlobTaskConsumer function under Firewall with each ip in a single row of Address range column.
 1. Verify by going to the subnet. You should see Subnet delegation and service endpoints as shown in the screenshot below. <br/>![azureblob-subnet](/img/send-data/azureblob-subnet.png)
 
+## Upgrading Azure Functions
+
+1. Go to the resource group where ARM template was deployed and go to each of the function apps.
+    ![azurefunctionapp-list](/img/send-data/azure_functionapp.png)
+1. Go to `Deployment -> Deployment Center` and click on `Sync`.
+    ![azurefunctionapp-sync](/img/send-data/azure_upgrade_sync.png)
+1. Go to `Logs` tab and check the `Status` column, it should show `Success`.
+    ![azurefunctionapp-status](/img/send-data/azure_upgrade_status.png)
+
 ## Azure Append Blob Limitations
 
 1. By default the boundary regex used for json and log files are defined below. You can override it by updating `getBoundaryRegex` method of `AzureBlobTaskConsumer` function.
