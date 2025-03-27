@@ -52,7 +52,7 @@ which provides results like:
 | toLowerCase ("B101CD29E18A515753409AE86CE68A4CEDBE0D640D385EB24B9BBB69CF8186AE") as hash
 | count hash
 | fields -_count
-| lookup raw from sumo://threat/i471 on threat = hash{code}
+| lookup raw from sumo://threat/cs on threat = hash{code}
 ```
 
 <!-- Replace code example with this after `sumo://threat/i471` is replaced by `threatlookup`:

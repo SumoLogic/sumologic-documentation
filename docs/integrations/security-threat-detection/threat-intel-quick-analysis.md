@@ -41,7 +41,7 @@ _sourceCategory=cylance "IP Address"
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where !isNull(ip_address)
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
-| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/i471 on threat=ip_address
+| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
 ```
 
 <!-- Replace section content with this after `sumo://threat/i471` is replaced by `threatlookup`:
@@ -98,7 +98,7 @@ Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-e
    ```
 1. Customize your query so you can use parsed fields from FER with the lookup operator, where src_ip is the parsed field from FER (see step # 1). For example:
    ```
-   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/i471 on threat=src_ip
+   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
    | json field=raw "labels[*].name" as label_name
    | replace(label_name, "\\/","->") as label_name
    | replace(label_name, "\""," ") as label_name
@@ -125,7 +125,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
 
 1. Create a scheduled view. For example, for Cylance, create a scheduled view, **cylance_threat**:
    ```
-   _sourceCategory=cylance | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/i471 on threat=src_ip
+   _sourceCategory=cylance | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
    | json field=raw "labels[*].name" as label_name
    | replace(label_name, "\\/","->") as label_name
    | replace(label_name, "\""," ") as label_name

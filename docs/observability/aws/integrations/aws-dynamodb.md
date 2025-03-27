@@ -60,7 +60,7 @@ _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynam
 | where Region matches "*" and tolowercase(entity) matches "*"
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | count as ip_count by ip_address
-| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/i471 on threat=ip_address
+| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
 | json field=raw "labels[*].name" as label_name
 | replace(label_name, "\\/","->") as label_name
 | replace(label_name, "\""," ") as label_name

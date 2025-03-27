@@ -31,8 +31,8 @@ You can also add threat intelligence indicators using a collector or the API. Se
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
 :::note
-* The `_sumo_global_feed_i471` source is a default source and cannot be changed or deleted.
-* The default storage limit is 10 million total indicators (not including any indicators provided by Sumo Logic such as the `_sumo_global_feed_i471` source).
+* The `_sumo_global_feed_cs` and `SumoLogic_ThreatIntel` sources are default sources and cannot be changed or deleted.
+* The default storage limit is 10 million total indicators (not including any indicators provided by Sumo Logic such as in the `_sumo_global_feed_cs` and `SumoLogic_ThreatIntel` sources).
 :::
 
 ## Add indicators in the Threat Intelligence tab

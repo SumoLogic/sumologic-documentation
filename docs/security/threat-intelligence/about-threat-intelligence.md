@@ -18,10 +18,10 @@ In Sumo Logic, threat intelligence indicators are supplied by sources listed on 
 * [**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
 The sources on the **Threat Intelligence** tab include:
-* **Global feeds**. Out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources. See [Sumo Logic global feed source](#sumo-logic-global-feed-source) below.
+* **Global feeds**. Out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources. See [Sumo Logic threat intelligence sources](#sumo-logic-threat-intelligence-sources) below.
 * **Other sources**. The other sources on the tab are imported by Cloud SIEM administrators so that Cloud SIEM analysts can use them to find threats. See [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) to learn how to add other sources.
 
-Cloud SIEM analysts can use any of these sources to find threats (see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). In addition, all Sumo Logic users can run queries against the indicators in the global feed to uncover threats (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
+Cloud SIEM analysts can use any of these sources to find threats (see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). In addition, all Sumo Logic users can run queries against the indicators in the Sumo Logic threat intelligence source to uncover threats (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
 
 <CloudSIEMThreatIntelNote/>
 
@@ -100,44 +100,44 @@ Use a search like the following:
 _index=sumologic_audit_events _sourceCategory=threatIntelligence
 ```
 
-## Sumo Logic global feed source
+## Sumo Logic threat intelligence sources
 
-Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources: 
-* **_sumo_global_feed_i471**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/).
+Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources:
 * **_sumo_global_feed_cs**. This is a legacy source of threat indicators maintained by Sumo Logic. ***This source will be discontinued on April 30, 2025***.
+* **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/).
 
 :::warning
-To maintain uninterrupted threat intelligence operation, if you have created rules, saved searches, monitors or dashboard panel queries that explicitly reference the legacy `_sumo_global_feed_cs` source, follow the directions below to update them to use the new `_sumo_global_feed_i471` source ***before April 30, 2025***.
+To maintain uninterrupted threat intelligence operation, if you have created rules, saved searches, monitors or dashboard panel queries that explicitly reference the legacy `_sumo_global_feed_cs` source, follow the directions below to update them to use the new `SumoLogic_ThreatIntel` source ***before April 30, 2025***.
 :::
 
-### Migrate to the new global feed source
+### Migrate to the new source
 
-Perform the steps in the following sections to migrate to the `_sumo_global_feed_i471` source. 
+Perform the steps in the following sections to migrate to the `SumoLogic_ThreatIntel` source. 
 
 #### hasThreatMatch rule syntax
 
 In most cases, no change is needed if you use [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch) in your rules:
 * Until April 30, 2025 the rules point to the legacy `_sumo_global_feed_cs` source (and the rest of your tenant-specific sources). 
-* After April 30, 2025, the rules point to the new `_sumo_global_feed_i471` source (and the rest of your tenant-specific sources).
+* After April 30, 2025, the rules point to the new `SumoLogic_ThreatIntel` source (and the rest of your tenant-specific sources).
 
 You may need to make changes in these scenarios:
-* If you have rules with `hasThreatMatch` syntax that explicitly point to the legacy `_sumo_global_feed_cs` source, change them to point to `_sumo_global_feed_i471` source. For example: 
+* If you have rules with `hasThreatMatch` syntax that explicitly point to the legacy `_sumo_global_feed_cs` source, change them to point to `SumoLogic_ThreatIntel` source. For example: 
    * Change this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="_sumo_global_feed_cs")` 
-   * To this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="_sumo_global_feed_i471")`
+   * To this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="SumoLogic_ThreatIntel")`
 * The `domain-name` and `email-addr` types are not supported in Intel 471. If you filter for these types using `hasThreatMatch`, update your rule syntax to remove them.
 
 #### lookup operator
 
 In most cases, no change is needed if you use the [lookup](/docs/search/search-query-language/search-operators/lookup/) search operator to point to `sumo://threat/cs`:
-* Until April 30, 2025, queries in dashboards that use the `lookup` search operator to point to `sumo://threat/cs` (the legacy `_sumo_global_feed_cs` source) are now updated to point to `sumo://threat/i471` (the new `_sumo_global_feed_i471` source). For examples, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) app. 
-* After April 30, 2025, any `lookup` operator queries pointing to `sumo://threat/cs` will be directed to the new `_sumo_global_feed_i471` source.
+* Until April 30, 2025, queries in apps that use the `lookup` search operator to point to `sumo://threat/cs` (the legacy `_sumo_global_feed_cs` source) are unchanged. For examples, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) app. 
+* After April 30, 2025, queries in apps that use the `lookup` operator to point to `sumo://threat/cs` are updated to point to `sumo://threat/i471` instead (the new `SumoLogic_ThreatIntel` source). **You must upgrade your apps to get this update.** In the App Catalog, open apps labeled **Upgrade Available** and select **Manage > Upgrade**.
 
 You may need to make changes in these scenarios:
 * The `domain-name` and `email-addr` types are not supported in Intel 471. If you filter for these types using the `lookup` operator, update your queries to remove them.
-* If you parse the `raw` field returned from the `lookup` operation, you will see different fields when you use the new `_sumo_global_feed_i471` source. To avoid problems with fields not returning data, use a [nodrop](/docs/search/search-query-language/parse-operators/parse-nodrop-option/) clause.
+* If you parse the `raw` field returned from the `lookup` operation, you will see different fields when you use the new `SumoLogic_ThreatIntel` source. To avoid problems with fields not returning data, use a [nodrop](/docs/search/search-query-language/parse-operators/parse-nodrop-option/) clause.
 
 #### threatip search operator
 
 If you use the [threatip](/docs/search/search-query-language/search-operators/threatip/) search operator, no change is needed: 
-* By default, until April 30, 2025, the `threatip` operator points to the legacy `_sumo_global_feed_cs` source.
-* After April 30, 2025, the `threatip` operator points to the new `_sumo_global_feed_i471` source.
+* Until April 30, 2025, the `threatip` operator points to the legacy `_sumo_global_feed_cs` source.
+* After April 30, 2025, the `threatip` operator points to the new `SumoLogic_ThreatIntel` source.

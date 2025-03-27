@@ -217,6 +217,6 @@ cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM
 ```
 
 :::note
-You cannot use the cat search operator with the `_sumo_global_feed_i471` source.
+You cannot use the cat search operator with the `SumoLogic_ThreatIntel` source.
 :::
 -->

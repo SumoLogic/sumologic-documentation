@@ -4,7 +4,7 @@ title: threatip Search Operator
 sidebar_label: threatip
 ---
 
-The `threatip` operator correlates data in the `_sumo_global_feed_i471` [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) source based on IP addresses from your log data. This provides security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. 
+The `threatip` operator correlates data in the [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) based on IP addresses from your log data. This provides security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. 
 
 <!-- 
 You can also use the [`threatlookup`](/docs/search/search-query-language/search-operators/threatlookup/) search operator to search threat intelligence indicators.
