@@ -59,7 +59,7 @@ Use this dashboard to:
 
 ### Sumo Logic Kickstart Data - Security
 
-Sumo Logic Kickstart Data - Security dashboard provides details on security events and failed sign-in attempts across multiple geographical locations. This dashboard enables users to monitor and analyze security-related data in real-time.
+The **Sumo Logic Kickstart Data - Security** dashboard provides details on security events and failed sign-in attempts across multiple geographical locations. This dashboard enables users to monitor and analyze security-related data in real-time.
 
 Use this dashboard to:
 * Identify potential security threats by visualizing the geolocation of clients and the volume of activity from different regions.
