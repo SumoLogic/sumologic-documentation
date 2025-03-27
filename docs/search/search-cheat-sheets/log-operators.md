@@ -392,7 +392,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/behavior-insights/logexplain">logexplain</a></td>
    <td>The logexplain operator allows you to compare sets of structured logs based on events you're interested in. Structured logs can be in JSON, CSV, key-value, or any structured format.</td>
    <td>_explanation<br/>_relevance<br/>_test_coverage<br/>_control_coverage</td>
-   <td>Not supported with <a href="/docs/alerts/scheduled-searches/create-real-time-alert">Real Time alerts</a>.<br/><a href="/docs/search/time-compare">Time Compare</a> and the <a href="/docs/search/search-query-language/search-operators/compare">compare operator</a> are not supported against LogExplain results.</td>
+   <td><a href="/docs/search/time-compare">Time Compare</a> and the <a href="/docs/search/search-query-language/search-operators/compare">compare operator</a> are not supported against LogExplain results.</td>
    <td><code>_sourceCategory=stream <br/>| if(_raw matches "error", 1, 0) as hasError<br/>| logexplain hasError == 1 on _sourceHost</code></td>
   </tr>
   <tr>
@@ -413,7 +413,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/behavior-insights/logreduce/logreduce-values">logreduce values</a></td>
    <td>The logreduce values operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format.</td>
    <td>_cluster_id<br/>_signature<br/>_count</td>
-   <td>Not supported with <a href="/docs/alerts/scheduled-searches/create-real-time-alert">Real Time alerts</a>.</td>
+   <td></td>
    <td><code>_sourceCategory= *cloudtrail* errorCode<br/>| json field=_raw "eventSource" as eventSource<br/>| json field=_raw "eventName" as eventName<br/>| json field=_raw "errorCode" as errorCode<br/>| logreduce values on eventSource, eventName, errorCode</code></td>
   </tr>
   <tr>

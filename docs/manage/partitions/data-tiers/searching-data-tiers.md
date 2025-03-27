@@ -73,7 +73,6 @@ The `_dataTier` search modifier is not supported in:
 
 * Live mode dashboards
 * Role search filters
-* Real time alerts
 * Partition routing expressions
 * Logs-to-Metrics rules
 * In scheduled searches, setting `_dataTier` to All, Frequent, or Infrequent is not supported.
