@@ -161,25 +161,59 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 ## Viewing Amazon EC2 Auto Scaling dashboards
 
-### AWS EC2 Auto Scaling - CloudTrail Audit
-The **AWS EC2 Auto Scaling - CloudTrail Audit** dashboard provides a comprehensive overview of AWS EC2 Auto Scaling activities and CloudTrail audit logs. The dashboard displays information on event locations, top error codes, users with highest failure rates, disruptive events, error details, successful events, event status, and active users/roles.
+### Amazon EC2 Autoscaling - Overview
+The **Amazon EC2 Autoscaling - Overview** dashboard provides an overview of Amazon EC2 Autoscaling operations, offering insights into instance capacity, error messages, user agents, and disruptive events. It allows users to monitor and analyze the performance and behavior of their autoscaling groups in real-time.
 
 Use this dashboard for:
-* Monitoring the overall health and performance of your AWS EC2 Auto Scaling groups
+* Monitoring the current capacity of EC2 instances, including group and warm pool instances
+* Tracking the desired capacity of autoscaling groups
+* Identifying and troubleshooting common error messages related to autoscaling operations
+* Monitoring disruptive events such as group updates, instance detachments, and policy changes
+
+<img src={useBaseUrl('img/integrations/01.-Amazon-EC2-Auto-Scaling-Overview.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+
+### Amazon EC2 Auto Scaling - CloudTrail Audit
+The **Amazon EC2 Auto Scaling - CloudTrail Audit** dashboard provides a comprehensive overview of Amazon EC2 Auto Scaling activities and CloudTrail audit logs. The dashboard displays information on event locations, top error codes, users with highest failure rates, disruptive events, error details, successful events, event status, and active users/roles.
+
+Use this dashboard for:
+* Monitoring the overall health and performance of your Amazon EC2 Auto Scaling groups
 * Identifying and troubleshooting common errors and failures in auto-scaling operations
 * Tracking user activities and potential security concerns related to auto-scaling events
 * Analyzing trends in event types, success rates, and failure patterns over time
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Auto-Scaling-CloudTrail-Audit.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/integrations/02.-Amazon-EC2-Auto-Scaling-CloudTrail-Audit.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
 
-### AWS EC2 Autoscaling - Metrics
-The **AWS EC2 Autoscaling - Metrics** provides a detailed overview of AWS EC2 Autoscaling metrics. It consists of multiple graphs that display various aspects of autoscaling group instances, capacity, and warm pool statistics. The dashboard is divided into three main sections: Auto Scaling Group Instances, Auto Scaling Group Capacity, and Auto Scaling Group Warm Pool.
+### Amazon EC2 Auto Scaling - Instances
+The **Amazon EC2 Auto Scaling - Instances** dashboard provides a detailed overview of Amazon EC2 Auto Scaling instance metrics, allowing users to monitor and analyze the behavior of their auto scaling groups across different autoscaling groups. It offers real-time insights into instance capacities, states, and group configurations.
 
 Use this dashboard for:
-* Monitoring the real-time performance and health of your AWS EC2 autoscaling groups
-* Tracking desired capacity, in-service instances, and group size limits for each service
-* Analyzing the total, pending, standby, and terminating instances in your autoscaling groups
-* Observing fluctuations in group total capacity, in-service capacity, pending capacity, and standby capacity
-* Managing and optimizing your warm pool configuration and capacity
+* Tracking the desired capacity and actual in-service instances for each auto scaling group
+* Monitoring the minimum and maximum group size limits to ensure proper scaling boundaries
+* Observing the total number of instances in each group, including their various states (pending, standby, and terminating)
+* Comparing instance metrics across different auto scaling groups
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Autoscaling-Metrics.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/integrations/03.-Amazon-EC2-Auto-Scaling-Instances.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+
+### Amazon EC2 Auto Scaling - Capacity
+The **Amazon EC2 Auto Scaling - Capacity** dashboard provides a comprehensive view of Amazon EC2 Auto Scaling group capacity metrics, offering insights into the total, in-service, pending, standby, and terminating capacities for different autoscaling groups. It allows users to monitor and analyze the capacity fluctuations and states of their auto scaling groups over time.
+
+Use this dashboard for:
+* Tracking the total capacity of auto scaling groups across different auto scaling groups
+* Monitoring the in-service capacity to ensure adequate resources are available to handle current workloads
+* Analyzing standby capacity to understand the reserve resources available for quick scaling
+* Tracking terminating capacity to monitor the scale-in process and resource optimization
+* Detecting potential issues in the scaling process, such as instances stuck in pending or terminating states
+
+<img src={useBaseUrl('img/integrations/04.-Amazon-EC2-Auto-Scaling-Capacity.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+
+### Amazon EC2 Auto Scaling - Warm Pool
+The **Amazon EC2 Auto Scaling - Warm Pool** dashboard provides a detailed view of Amazon EC2 Auto Scaling Warm Pool metrics, offering insights into the capacity and state of pre-initialized instances ready to quickly respond to sudden traffic spikes or workload demands. It allows users to monitor and analyze the warm pool behavior across different autoscaling groups.
+
+Use this dashboard for:
+* Tracking the total and desired capacity of warm pools for each autoscaling group
+* Monitoring the minimum size of warm pools to ensure adequate reserve capacity
+* Observing pending capacity in warm pools to identify potential delays in instance preparation
+* Monitoring the terminating capacity in warm pools to understand instance lifecycle
+* Optimizing warm pool size and capacity to improve application responsiveness during sudden load increases
+
+<img src={useBaseUrl('img/integrations/05.-Amazon-EC2-Auto-Scaling-Warm-Pool.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
