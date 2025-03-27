@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.0  
-Updated: April 19, 2024***
+***Version: 1.1  
+Updated: March 26, 2025***
 
 AWS WAF is a web application firewall that helps protect web applications from attacks by allowing you to configure rules that allow, block, or monitor (count) web requests based on conditions that you define.
 
@@ -30,6 +30,7 @@ AWS WAF is a web application firewall that helps protect web applications from a
 * **List Resources for Web ACLs** (*Enrichment*) - Retrieves a list of the Amazon Resource Names (ARNs) for the regional resources that are associated with the specified web ACL.
 * **List Rule Groups** (*Enrichment*) - Retrieves a list of RuleGroupSummary objects for the rule groups that you manage.
 * **List Web ACLs** (*Enrichment*) - Retrieves a list of WebACLSummary objects for the web ACLs that you manage.
+* **Update IP Set** (*Containment*) - Updates the specified IPSet.
 
 
 ## External Libraries
@@ -39,4 +40,5 @@ AWS WAF is a web application firewall that helps protect web applications from a
 
 ## Change Log
 
-* April 19, 2024 - First upload
+* April 19, 2024 (v1.0)- First upload
+* March 26, 2025 (v1.1) - Added **Update IP Set** action: This new action allows users to add or remove IPs from an existing IP Set.
