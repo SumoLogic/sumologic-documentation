@@ -7,6 +7,7 @@ description: Get an overview of how the Automation Service allows you to automat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ActionsLimitQuery from '../../reuse/actions-limit-query.md';
+import StaticIpAddresses from '../../reuse/static-ips-automation-service.md';
 
 The Automation Service allows you to set up actions that run automatically when certain conditions are met in Sumo Logic. These automated actions help you to respond quickly to a wide arrange of events. 
 
@@ -101,3 +102,9 @@ To prevent abuse of system resources or runaway processes, the Automation Servic
 <ActionsLimitQuery/>
 
 Each execution of Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions counts toward the actions limit. User Choice, IF, and Task actions do not count toward the actions limit.
+
+## Static IP addresses
+
+The following table provides the static IP addresses used for the Automation Service by deployment. These are provided in case you want to explicitly allow the IP addresses on the integrations you install.
+
+<StaticIpAddresses/>
