@@ -28,7 +28,7 @@ Engineers that are responsible for maintaining the uptime of a service would ben
 
 To open AI-Driven Investigation, in the main Sumo Logic menu of the [**New UI**](/docs/get-started/sumo-logic-ui), select **AI-Driven Investigation**. (AI-Driven Investigation is not available in the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).)
 
-When you first open AI-Driven Investigation, a list of services is displayed to the left, and and a map of the services is displayed to the right. These services are automatically identified by AI analysis of logs in your entire enterprise. 
+When you first open AI-Driven Investigation, a list of services is displayed to the left, and a map of the services is displayed to the right. These services are automatically identified by AI analysis of logs in your entire enterprise. 
 
 The service list and map visually represents your application environment, giving you a greater understanding of your application architecture, hierarchy, and dependencies between monitored microservices. Health of each microservice is reflected in the color of nodes in the map to help you spot potential problems and bottlenecks in your application infrastructure.
 
@@ -45,7 +45,7 @@ AI-Driven Investigation provides an AI-generated summary of all detected service
 
 When you select a service in the list or a node in the map that has signals, a summary panel displays to the right. The panel contains findings about the service with log examples and steps you can take to remediate problems with the service.
 
-1. At the top of the screen, use the following controls to filter results:<br/><img src={useBaseUrl('img/observability/filter-results.png')} alt="Filter results" style={{border: '1px solid gray'}} width="800" />
+1. To find services to investigate, at the top of the screen use the following controls:<br/><img src={useBaseUrl('img/observability/filter-results.png')} alt="Filter results" style={{border: '1px solid gray'}} width="800" />
    * **Search Services**. Enter keywords to search services names.
    * **Signal Type**. Select the signal types to search for:
       * **Latency**. An increase or decrease in latency of the requests to the system.
