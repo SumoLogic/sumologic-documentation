@@ -148,7 +148,6 @@ The results only contain the values from the key-value pairs, the keys (field n
     * In Scheduled Views
     * Inside FERs
     * Auto Refresh Dashboards
-    * Real Time Scheduled Searches
 
 ## Example subquery 
 

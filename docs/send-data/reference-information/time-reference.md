@@ -273,7 +273,7 @@ They will see the same data, just displayed using their custom set time zone. Fo
 
 The **Time Range** field on the **Search** page uses the time zone that is set for the Sumo Logic user interface. This is either the default time zone used in the web browser and set by the operating system, or the **Default Timezone** setting on the **Preferences** page, if you have set this option.
 
-When you create a [Scheduled Search](/docs/alerts/scheduled-searches) or a [real-time alert](/docs/alerts/scheduled-searches/create-real-time-alert), the time range of the search that you save uses the time zone that is set for the Sumo Logic user interface. If you have changed the time zone using the **Default Timezone** setting, this time zone will be used for your Scheduled Searches and Real Time Alerts.
+When you create a [Scheduled Search](/docs/alerts/scheduled-searches), the time range of the search that you save uses the time zone that is set for the Sumo Logic user interface. If you have changed the time zone using the **Default Timezone** setting, this time zone will be used for your Scheduled Searches.
 
 :::note
 The **Default Timezone** setting does not automatically update the configurations of existing Scheduled Searches or real-time alerts. If you'd like your Scheduled Searches and real-time alerts to use the same time zone as your user interface, you'll need to edit them to do so, and save them.

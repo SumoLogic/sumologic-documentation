@@ -59,9 +59,7 @@ Syntax section. For example, 
     To address this situation, try one or more of these options:
     * Reduce the [time range](/docs/search/get-started-with-search/build-search/set-time-range) of your search to reduce the scope.
     * Reduce the scope of your search by using parameters (such as `maxlogs`, `maxspan`, or `endswith`) that are listed above in the [Parameters](#parameters) section.
-    * Run a second `transactionize` operator immediately after your first one. This will take the potentially ungrouped messages of your first `transactionize` search and group them correctly.  
-         
-* Transactionize is not supported in [Real Time scheduled searches](../../../alerts/scheduled-searches/create-real-time-alert.md).
+    * Run a second `transactionize` operator immediately after your first one. This will take the potentially ungrouped messages of your first `transactionize` search and group them correctly.
 
 ## Example
 
