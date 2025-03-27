@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 We’re excited to announce a new `_sumo_global_feed_i471` source for Sumo Logic Threat Intelligence incorporating Indicators of Compromise (IoC) from [Intel 471](https://intel471.com/). Analysts can use this out-of-the-box default source of threat indicators to aid in security analysis.
 
 :::warning
-On April 30 2025, we will discontinue our legacy `_sumo_global_feed_cs` source. If you have rules that explicitly point to this source, update them to use the new `_sumo_global_feed_i471` source.
+On April 30, 2025, we will discontinue our legacy `_sumo_global_feed_cs` source. If you have rules that explicitly point to this source, update them to use the new `_sumo_global_feed_i471` source.
 :::
 
 [Learn more](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-global-feed-source).
