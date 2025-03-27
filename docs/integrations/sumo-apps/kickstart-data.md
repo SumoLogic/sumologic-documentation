@@ -47,7 +47,7 @@ Use this dashboard to:
 
 ### Sumo Logic Kickstart Data - Business KPIs
 
-Sumo Logic Kickstart Data - Business KPIs dashboard provides details on revenue metrics, geographical distribution, and user journey time for business performance analysis.
+The **Sumo Logic Kickstart Data - Business KPIs** dashboard provides details on revenue metrics, geographical distribution, and user journey time for business performance analysis.
 
 Use this dashboard to:
 * Monitor revenue trends and forecast future earnings to make informed business decisions.
