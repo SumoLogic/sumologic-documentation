@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Use the global feed in a log search
 
-The [Sumo Logic global feed sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-global-feed-sources) in the threat intelligence datastore contain threat indicators supplied by third party intel vendors and maintained by Sumo Logic. 
+The [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) in the threat intelligence datastore contain threat indicators supplied by third party intel vendors and maintained by Sumo Logic. 
 
 <img src={useBaseUrl('img/security/global-feed-threat-intelligence-tab-example.png')} alt="Global feed in the Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
@@ -31,7 +31,7 @@ All the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/secur
 
 ## Use the threatip search operator
 
-To find threats using IP addresses, use the `threatip` search operator. This operator correlates data in the [Sumo Logic global feed sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-global-feed-sources) based on IP addresses from your log data.
+To find threats using IP addresses, use the `threatip` search operator. This operator correlates data in the [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) based on IP addresses from your log data.
 
 For more information, see [threatip Search Operator](/docs/search/search-query-language/search-operators/threatip/).
 
