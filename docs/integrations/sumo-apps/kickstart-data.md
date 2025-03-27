@@ -35,7 +35,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Sumo Logic Kickstart Data - Application Health
 
-Sumo Logic Kickstart Data - Application Health dashboard provides details on user journey, interface performance, and internal server metrics for an e-commerce application.
+The **Sumo Logic Logic Kickstart Data - Application Health** dashboard provides details on user journey, interface performance, and internal server metrics for an e-commerce application.
 
 Use this dashboard to:
 * Monitor the user journey funnel from home page visits to completed payments, identifying potential drop-off points in the conversion process.
