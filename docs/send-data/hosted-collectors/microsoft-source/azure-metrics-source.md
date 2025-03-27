@@ -49,6 +49,9 @@ When you create a Azure Metrics source, you add it to a Hosted Collector. Before
 To configure the Azure Metrics Source:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the collectors page, click **Add Source** next to a Hosted Collector.
+  :::note
+      Make sure the hosted collector is tagged with tenant_name field for the out of the box Azure apps to work. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+  :::
 1. Search for and select **Azure Metrics** icon.
 1. Enter a **Name** to display for the source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
@@ -62,9 +65,10 @@ To configure the Azure Metrics Source:
 1. **Environment**. Select the environment from the dropdown from which you would like to collect metrics.
 1. **Azure Regions**. Select **All Regions**, if you want to collect metrics from all regions. Or, click **Select Regions** to select the region of your choice from the dropdown to collect metrics.
 1. **Azure Namespaces**. Select **All Namespaces**, if you want to collect metrics with all namespaces. Or, click **Select Namespaces** to select the namespaces of your choice from the dropdown to collect metrics.
-1. **Tags Filter**. Select any tag filter from the dropdown to enforce it with the each namespace. This helps you to further fine-tune from which resources you would like to collect metrics.
+1. **Tags Filter**. Select any tag filter from the dropdown to enforce it with the each namespace. This helps you to further fine-tune from which resources you would like to collect metrics. It only supports resource tags which are custom user-configured key-value pairs on the azure resource. This approach allows for dynamic discovery, so for example if the resources are ephemeral or if any new resources are created in the same namespace , region and are tagged with same key-value pairs as configured in the source, their metrics can be collected automatically.
 1. **Scan Interval**.  This option sets how often the source is scanned. Setting a shorter frequency increases message volume, and can cause your deployment to incur additional charges. The minimum acceptable scan interval is 1 minute.
 1. **Processing Rules for Metrics (Optional)**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](/docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules).
+    ![filtersprocessingrules.png](/img/send-data/filtersprocessingrules.png)
 
 ## JSON configuration
 
