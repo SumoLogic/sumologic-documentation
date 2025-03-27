@@ -1,11 +1,11 @@
 ---
 id: create-real-time-alert
-title: Create a Scheduled Search Real-Time Alert
+title: Manage Real-Time Scheduled Search Alerts (Deprecated)
 description: Real-time alerts notify you of error conditions right when they occur.
 ---
 
 :::warning Solution Deprecated
-The ability to create new real-time alert scheduled searches has been deprecated. While you can no longer create new real-time alerts, existing real-time alerts will continue to function as before. [Learn more](/docs/alerts/scheduled-searches/deprecation).
+Real-Time Scheduled Searches will be deprecated on May 15, 2025. Existing searches will be automatically converted to [15-minute scheduled search frequency windows](/docs/alerts/scheduled-searches/schedule-search/#step-2-set-run-frequency) unless your account was explicitly excluded. If you need real-time alerts, we recommend transitioning to [Monitors](/docs/alerts/monitors/overview).
 :::
 
 Real-time alerts are scheduled searches that run nearly continuously. This means that you're informed in real time when error conditions exist.
