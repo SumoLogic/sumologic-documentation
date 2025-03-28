@@ -21,16 +21,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This feature is in Beta. To participate, contact your Sumo Logic account executive or [enroll here](https://forms.gle/LozrrAppM9FM94tS9).
 
-Unstructured Logs Support for [Sumo Logic Copilot](/docs/search/copilot), our AI assistant, enables it to understand and provide insights from raw, text-based logs—even if they don't follow a structured format like JSON. This means you can ask questions in plain English and get meaningful results from nearly any log data, without requiring Field Extraction Rules (FERs).
+Unstructured Logs Support for [Sumo Logic Copilot](/docs/search/copilot), our AI assistant, enables it to understand and provide insights from raw, text-based logs, even if they don't follow a structured format like JSON. This means you can ask questions in plain English and get meaningful results from nearly any log data, without requiring Field Extraction Rules (FERs).
 
 ## What's new
 
-Previously, Copilot worked best on structured (JSON) logs. Now, it automatically applies parsing logic to unstructured logs, even if no FERs are configured. This allows Copilot to interpret logs from many popular data sources out-of-the-box.
+Currently, [Copilot works best on structured (JSON) logs](/docs/search/copilot/#compatible-log-formats). With this beta update, Copilot automatically applies parsing logic to unstructured logs, even if no FERs are configured. This allows Copilot to interpret logs from many popular data sources out-of-the-box and enables support for a broader range of log types.
 
-Copilot learns from usage patterns—if a log source is already used in dashboards or commonly queried, it’s more likely to produce strong results.
+Copilot learns from usage patterns; if a log source is already used in dashboards or commonly queried, it’s more likely to produce accurate, actionable results.
 
 * **Broader coverage**. Copilot now parses and generates insights from unstructured log formats, even without FERs, making it useful for environments that include custom or inconsistent log types.
-* **Improved usability**. Ask questions in natural language. Copilot interprets your intent and suggests relevant searches—even for raw, non-JSON logs.
+* **Improved usability**. Ask questions in natural language. Copilot interprets your intent and suggests relevant searches, even for raw, non-JSON logs.
 * **Performance and reliability**. Response times and suggestion accuracy are consistent with Copilot’s structured log experience.
 * **Security and compliance**. The same strict data handling and privacy standards apply. Unstructured Logs Support builds on Copilot’s secure foundation.
 * **Common use cases**.
@@ -46,15 +46,15 @@ Copilot learns from usage patterns—if a log source is already used in dashboar
   - “Find logs with IP 192.0.2.0”
   - “What are the top 5 errors from nginx logs today?”
 * Use dashboards to monitor your log sources. Copilot performs better when logs are part of existing queries and visualizations.
-* Logs with clear timestamps, separators (like commas or tabs), and consistent patterns tend to yield better results.
+* Logs with consistent formats, clear timestamps, and standard separators (like commas or tabs) yield better results.
 
 ## Related updates
 
 These recent Copilot enhancements make it even easier to work with unstructured logs:
 
-* **Dynamic conversation titles**. Your queries are automatically named for easy organization and retrieval.
+* **Dynamic conversation titles**. Your queries are automatically titled for easy organization and retrieval.
 * **"Open in Copilot" for alerts**. Investigate alerts directly in Copilot without losing context.
-* **Suggestion pinning**. Pin suggestions inside a conversation to revisit them during your investigation.
+* **Suggestion pinning**. Pin suggestions inside a conversation to revisit them later.
 
 ## FAQ
 
