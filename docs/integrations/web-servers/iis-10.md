@@ -42,15 +42,6 @@ Sumo Logic supports the collection of logs and metrics data from IIS server in s
 
 Sumo Logic uses the Telegraf operator for IIS metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting IIS logs. The diagram below illustrates the components of the IIS collection in a standalone environment. Telegraf uses the [Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain IIS metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from IIS Server are collected by a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
-### Configure fields in Sumo Logic
-
-Following fields will be created automatically as a part of app installation process:
-* `component`
-* `environment`
-* `webserver_system`
-* `webserver_farm`
-* `pod`
-
 ### Configure log collection
 
 This section provides instructions for configuring log collection for IIS running on a standalone environment for the Sumo Logic app for IIS.
@@ -78,7 +69,7 @@ This section provides instructions for configuring log collection for IIS runnin
      ```
    * **Performance Logs**. These logs are output of Perfmon queries which will be configured at Installed Collector, "**Windows Performance**" Source.
 
-#### Enable logging on your IIS Server
+### Enable logging on your IIS Server
 
 If logging is not already enabled on your IIS Server, perform the following steps to enable it:
 
@@ -90,14 +81,14 @@ If logging is not already enabled on your IIS Server, perform the following step
 
 For more information about IIS log format and log configuration, see [Microsoft | Enhanced Logging for IIS 8.5](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-85/enhanced-logging-for-iis85).
 
-#### Verify that log files are created
+### Verify that log files are created
 
 Perform the following tasks to ensure that log files are being created:
 
 1. Open a command-line window and change directories to `C:\inetpub\Logs\LogFiles`. This is the same path you will enter when you configure the Source to collect these files.
 1. Under the \W3SVC1 directory, you should see one or more files with a .log extension. If the file is present, you can collect it.
 
-#### Enable HTTP Error Logs on your Windows Server
+### Enable HTTP Error Logs on your Windows Server
 
 Perform the following task to enable HTTP Error Logs on your Windows Server that is hosting the IIS Server:
 
@@ -107,11 +98,11 @@ Perform the following task to enable HTTP Error Logs on your Windows Server that
    C:\Windows\System32\LogFiles\HTTPERR
    ```
 
-#### Configure an Installed Collector
+### Configure an Installed Collector
 
 If you have not already done so, install and configure an installed collector for Windows by following the [Install a Collector on Windows](/docs/send-data/installed-collectors/windows) documentation.
 
-#### Configure Source for IIS Access Logs
+### Configure Source for IIS Access Logs
 
 This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex. Sumo Logic recommends using a Local File Source whenever possible. To configure a local file source for IIS Access Logs, do the following:
 
@@ -139,7 +130,7 @@ This section demonstrates how to configure a Local File Source for IIS Access Lo
 
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS Access log files to the Sumo Logic service.
 
-#### Configure Source for HTTP Error Logs
+### Configure Source for HTTP Error Logs
 
 This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10). To configure a local file source for HTTP Error Logs, do the following:
 
@@ -167,7 +158,7 @@ This section demonstrates how to configure a Local File Source for HTTP Error Lo
 
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS HTTP Error log files to the Sumo Logic service.
 
-#### Configure Source for IIS Performance (Perfmon) Logs
+### Configure Source for IIS Performance (Perfmon) Logs
 
 This section demonstrates how to configure a Windows Performance Source, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10). Use the appropriate source for your environment:
 * [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source) (**recommended**)
@@ -198,7 +189,7 @@ To configure a Source for IIS Performance Logs, do the following:
 
 ### Configure metrics collection
 
-#### Set up a Sumo Logic HTTP Source
+### Set up a Sumo Logic HTTP Source
 
 1. **Configure a Hosted Collector for Metrics**. To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
@@ -210,7 +201,7 @@ To configure a Source for IIS Performance Logs, do the following:
     3. Select **Save**.
     4. Take note of the URL provided once you click **Save**. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 
-#### Set up Telegraf
+### Set up Telegraf
 
 1. **Install Telegraf if you haven’t already**. Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
 2. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the[ Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
@@ -414,35 +405,22 @@ At this point, Telegraf should start collecting the IIS Server metrics and forwa
 
 ## Installing the IIS app
 
-This section demonstrates how to install the IIS app and assumes you have already set up the collection as described in [Collect Logs and Metrics for the IIS](#collecting-logs-and-metrics-for-the-iis-app).
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-To install the app:
+<AppInstall2/>
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-  :::note
-  Version selection is not available for all apps.
-  :::
-3. To install the app, complete the following fields.
-   1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-   2. **Data Source**. Choose **Enter a Custom Data Filter**, and enter a custom IIS Server farm filter. Examples:
-     * For all IIS Server farms, `webserver_farm=*`.
-     * For a specific farm, `webserver_farm=iis.dev.01`.
-     * Farms within a specific environment, `webserver_farm=iis.dev.01` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
-3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+Following fields will be created automatically as a part of app installation process:
+* `component`
+* `environment`
+* `webserver_system`
+* `webserver_farm`
+* `pod`
 
 ## Viewing IIS Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -603,19 +581,16 @@ Use this dashboard to monitor the following key metrics:
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-Web-Service.png')} alt="IIS-Web-Service" />
 
-
 ## Installing IIS monitors
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the IIS alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
+<CreateMonitors/>
 
 ## Using IIS Alerts
 
-Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the IIS server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
+<details>
+<summary>Here are the alerts available for IISv10 (click to expand).</summary>
 
 | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:---|:---|:---|:---|:---|
@@ -626,3 +601,4 @@ Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors
 | IIS - Slow Response Time | This alert fires when the response time for a given IIS server is greater than one second. | Warning | > 0 | 0 |
 | IIS - ASP.NET Application Errors | This alert fires when we detect an error in the ASP.NET applications running on an IIS server. | Warning | >0 | < = 0 |
 | IIS - Blocked Async IO Requests | This alert fires when we detect that there are blocked async I/O requests on an IIS server. | Warning | >0 | < = 0 |
+</details>
