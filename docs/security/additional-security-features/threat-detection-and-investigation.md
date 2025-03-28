@@ -288,7 +288,7 @@ We need a way to see if any of the IP addresses we have logged are known threats
    _sourceCategory=Labs/AWS/CloudTrail
    | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" multi
    | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
-   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address nodrop
+   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
    | where type="ip_address" and !isNull(malicious_confidence)
    | if (isEmpty(actor), "Unassigned", actor) as Actor
    | parse field=raw "\"ip_address_types\":[\"*\"]" as ip_address_types nodrop
