@@ -386,7 +386,7 @@ _sourceCategory=weblogs
 | where connectionDirection = "OUTBOUND"
 | json field=remoteipdetails "ipAddressV4" as src_ip
 | lookup type, actor, raw, threatlevel from sumo://threat/cs on src_ip=threat
-| where threatlevel = "high"
+| where threatlevel = "high" nodrop
 | compose src_ip]
 ```
 <!-- Replace code example with this after `sumo://threat/i471` is replaced by `threatlookup`:

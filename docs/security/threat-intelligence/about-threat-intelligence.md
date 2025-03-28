@@ -134,7 +134,11 @@ In most cases, no change is needed if you use the [lookup](/docs/search/search-q
 
 You may need to make changes in these scenarios:
 * The `domain-name` and `email-addr` types are not supported in Intel 471. If you filter for these types using the `lookup` operator, update your queries to remove them.
-* If you parse the `raw` field returned from the `lookup` operation, you will see different fields when you use the new `SumoLogic_ThreatIntel` source. To avoid problems with fields not returning data, use a [nodrop](/docs/search/search-query-language/parse-operators/parse-nodrop-option/) clause.
+* If you parse the `raw` field returned from the `lookup` operation, you will see different fields when you use the new `SumoLogic_ThreatIntel` source. To avoid problems with fields not returning data, use a [nodrop](/docs/search/search-query-language/parse-operators/parse-nodrop-option/) clause. In the following excerpt from a query, `nodrop` is added at the end of the line where `field=raw` is called:
+   ```
+   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address 
+   | json field=raw "labels[*].name" as label_name nodrop
+   ```
 
 #### threatip search operator
 
