@@ -12,6 +12,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### New method for building baselines
 
-We're happy to announce that now when you create or update a first seen or outlier rule, the baseline starts building immediately using data already in the system. Typically, the baseline is done in minutes. Now you don't have to wait days for a baseline learning period to end before a baseline is built and ready to use, allowing you to get value more quickly from your first seen and outlier rules. This will also allow you to iterate your first seen and outlier rules rapidly, cutting down tuning time from weeks to minutes.
+We're happy to announce that now when you create or update a first seen or outlier rule, the baseline starts building immediately using existing system data. Typically, the baseline is ready within minutes. You no longer need to wait days for the baseline learning period to complete before it becomes usable. This change enables you to gain insights faster and iterate on your first seen and outlier rules rapidly, reducing tuning time from weeks to minutes.
 
 To learn more, see our information about baselines for [first seen rules](/docs/cse/rules/write-first-seen-rule/) and [outlier rules](/docs/cse/rules/write-outlier-rule/#baselines-for-outlier-rules).
