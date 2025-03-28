@@ -31,7 +31,6 @@ This document will help you to migrate CloudWatch Source to Kinesis Firehose Sou
     collect_cloudtrail_logs = "false"
     collect_classic_lb_logs = "false"
     collect_elb_logs = "false"
-    collect_root_cause_data = "None"
     }
     ```
 1. Verify the following:
