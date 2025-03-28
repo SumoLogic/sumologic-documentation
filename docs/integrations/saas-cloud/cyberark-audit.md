@@ -113,7 +113,7 @@ import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
 <AppCollectionOPtion3/>
 
-## Viewing the CrowdStrike Spotlight dashboards​​
+## Viewing the CyberArk Audit dashboards​​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
