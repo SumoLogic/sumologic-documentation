@@ -53,7 +53,7 @@ To configure a TAXII 2 Client Source:
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Sumo Logic Threat Intel Source ID**. Provide your own threat intelligence source ID. This is useful for organizing multiple sources.
+1. **Sumo Logic Threat Intel Source ID**. Enter the name you want to use for the source that will be created in the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab in Sumo Logic. The threat intelligence indicators will be stored in this source. Do not use spaces in the name.
 1. **Authentication**. Select the authentication type:
    * **Basic**. Provide your vendor username and password.
    * **API Key**. Provide:
