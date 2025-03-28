@@ -2142,6 +2142,7 @@
   "/cid/4019": "/docs/send-data/installed-collectors/sources/script-action",
   "/cid/4412": "/docs/integrations/saas-cloud/crowdstrike-fdr-host-inventory",
   "/cid/44122": "/docs/integrations/saas-cloud/crowdstrike-spotlight",
+  "/cid/44124": "/docs/integrations/saas-cloud/cyberark-audit",
   "/cid/44123": "/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage",
   "/cid/4020": "/docs/search/behavior-insights/logreduce",
   "/cid/4021": "/docs/search/search-query-language/search-operators/accum",
