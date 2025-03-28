@@ -37,10 +37,9 @@ When you configure the event hubs source or HTTP source, plan your source catego
 Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
 :::
 
-In the Sumo Logic Azure Metrics source configuration,
-
-- Configure namespaces as `Microsoft.KeyVault/vaults` and `Microsoft.KeyVault/managedhsms`. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-key-vaults-namespaces.png')} alt="Azure Key Vaults Namespaces" style={{border: '1px solid gray'}} width="500" />
-
+1. To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
+1. In the Sumo Logic Azure Metrics source configuration, configure namespaces as `Microsoft.KeyVault/vaults` and `Microsoft.KeyVault/managedhsms`.
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-key-vaults-namespaces.png')} alt="Azure Key Vaults Namespaces" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
 
