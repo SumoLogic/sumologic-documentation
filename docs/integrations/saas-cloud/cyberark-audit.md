@@ -142,7 +142,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
 | `CyberArk Audit - Events from Embargoed Locations` | This alert is triggered when CyberArk activity is detected from embargoed or restricted locations. This may indicate unauthorized access attempts from high-risk regions. | High | Count > 0 | 
-| `CyberArk Audit - Excessive Password Resets` | This alert is triggered when an unusually high number of password resets occur within a short period. This could be a sign of compromised accounts or malicious insider activity. | High | Count > 5 |
+| `CyberArk Audit - Excessive Password Resets` | This alert is triggered when an unusual high number of password resets occur within a short period. This could be a sign of compromised accounts or malicious insider activity. | High | Count > 5 |
 | `CyberArk Audit - Failed Login Attempts` | This alert is triggered when repeated failed login attempts are detected, indicating brute force attacks or unauthorized attempts to access privileged accounts. | Critical | Count > 0|
 | `CyberArk Audit - Multiple Failed Vault Access Attempts` | This alert notifies you when multiple failed attempts are made to access the CyberArk vault, signaling potential credential theft or unauthorized access attempts. | Critical | Count > 3|
 | `CyberArk Audit - OAuth Token Generation Events from Embargoed Locations` | This alert is triggered when OAuth tokens are generated from embargoed locations, which may indicate a potential security breach or misuse of privileged access. | High | Count > 0|
