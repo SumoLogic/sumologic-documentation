@@ -42,10 +42,4 @@ See the following articles to learn about Sumo Logic's threat intelligence capab
   <p>Learn how to format upload files containing threat intelligence indicators.</p>
   </div>
 </div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/security/threat-intelligence/threat-intelligence-mapping"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Threat Intelligence Mapping</h4></a>
-  <p>Learn about mapping of threat intelligence indicators to Sumo Logic.</p>
-  </div>
-</div>
 </div>
