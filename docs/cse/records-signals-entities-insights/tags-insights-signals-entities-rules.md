@@ -39,15 +39,9 @@ summarizes this behavior.
 
 ## View tags
 
-You can view tags on the pages that provide summary views of insights, signals, entities, and rules. You can also view the tags assigned to an item on the detailed page you see when you navigate to a particular insight, signal, entity, or rule. 
+You can view tags on the details pages of insights, signals, entities, or rules. 
 
-This is an overview of an insight from the insights page. Multiple schema key tags are attached to the insight.
-
-<img src={useBaseUrl('img/cse/insight-list-tags.png')} alt="Insight list tags" style={{border: '1px solid gray'}} width="800"/>
-
-The screenshot below shows an entity to which a schema tag is attached.
-
-<img src={useBaseUrl('img/cse/entity-list-tags.png')} alt="Entity list tags" style={{border: '1px solid gray'}} width="800"/>
+Following is the details view of an insight showing multiple schema key tags attached to the insight:<br/><img src={useBaseUrl('img/cse/insight-list-tags.png')} alt="Insight list tags" style={{border: '1px solid gray'}} width="300"/>
 
 ## Tag actions
 
@@ -75,7 +69,7 @@ difference is where you do the tagging. 
 1. The UI for tagging is at the bottom of the **Details** pane.
 2. To add a tag, follow the instructions in [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/tag-an-entity.png')} alt="Tag an entity" style={{border: '1px solid gray'}} width="350"/>
 
-### UI for tagging an Cloud SIEM-generated insight
+### UI for tagging a Cloud SIEM-generated insight
 
 Note that in addition to tags that you manually assign to an insight, an insight will inherit any tags that were applied to the content that went into the insight—the entity and the rule(s) or custom insight definitions that created the included signals—will automatically be inherited (and aggregated) by the insight. 
 
@@ -122,15 +116,3 @@ Note that in addition to tags that you manually assign to an insight, an insight
 1. Click in the **Filters** area and select **Tags** from the **Fields** list.<br/><img src={useBaseUrl('img/cse/search-rules-by-tag.png')} alt="Search rules by tag" style={{border: '1px solid gray'}} width="400"/>
 1. Choose **contain** or **do not contain** from the **Operators** list.<br/><img src={useBaseUrl('img/cse/operators-for-rules.png')} alt="Operators" style={{border: '1px solid gray'}} width="250"/>  
 1. Select a tag from either the **Schema Keys** or **Keyword Tags** list. If you select a tag from the **Schema Keys** list, you are prompted to select a value, and items that match are listed. If you select a tag from the **Keywords Tags** list, items that match are listed. Note that if an item has a Mitre-related tag, an icon appears next to it. Click the icon to view a Mitre page on the Tactic or Technique.
-
-### Filter a list view by clicking a tag
-
-On the insights, signals, rules, or entities page, you can click a tag to filter the list. For example, if you click the **Tactic: TA0005 - Defense Evasion** tag on an insight, like this:
-
-<img src={useBaseUrl('img/cse/filter-list-by-tag.png')} alt="Filter list by tag" style={{border: '1px solid gray'}} width="800"/>
-
-the page will be filtered to show only insights that have that tag:
-
-<img src={useBaseUrl('img/cse/filtered-list.png')} alt="Filtered list" style={{border: '1px solid gray'}} width="800"/>
-
- 
