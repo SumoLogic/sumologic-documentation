@@ -43,7 +43,7 @@ Watch this micro lesson to learn more about Global Intelligence for insights.
 ## What is a Global Confidence score?
 An insight’s Global Confidence score represents a level of confidence, predicted by Sumo Logic’s Global Intelligence machine learning model, that the insight is actionable. 
 
-<img src={useBaseUrl('img/cse/closeup.png')} alt="Global confidence score example" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/cse/closeup.png')} alt="Global confidence score example" style={{border: '1px solid gray'}} width="300"/>
 
 The score is generated based on the underlying pattern of signals in an insight. The model compares this pattern to previously observed patterns from insights that were closed with either a **False Positive** or **Resolved** resolution. The model does such comparisons broadly—across the global installed base of Cloud SIEM customers—so it can generate a Confidence score based on the patterns seen at one customer when encountered at another. In addition to leveraging the patterns discovered across the Cloud SIEM installed base, the model customizes scores for insights in your account based on your customized content, including tuned and custom rules.
 
@@ -60,7 +60,7 @@ The only prerequisite for taking full advantage of Confidence scores is to make 
 ## Using Global Confidence scores
 The Global Confidence score is a valuable data point to consider when prioritizing which insights to triage first.
 
-An insight’s Confidence score is shown for each insight on the insights list page. You can sort the insight list by the Global Confidence score, as well as by Severity.
+An insight’s Confidence score is shown for each insight on the insights list page. On the board page, you can sort the insight list by the Global Confidence score, as well as by Severity.
 
-<img src={useBaseUrl('img/cse/Confidence-Screenshot.png')} alt="Global confidence screen image example" width="800"/>
+<img src={useBaseUrl('img/cse/Confidence-Screenshot.png')} alt="Global confidence screen image example" width="250"/>
  
