@@ -58,6 +58,10 @@ If the log message is in JSON format, the log level detection method searches fo
 
 And if the log message is in a non-JSON format, the log level detection method looks for keywords such as "debug", "info/information", "warn/warning", and "error". If any of these keywords are found in the log message, their corresponding values will be considered and displayed in the results. 
 
+:::note
+Sumo Logic does not have any source specific special logic for log level extraction except for OTEL. For OTEL sources, `severityTextField` is used with `severityNumber` as fallback, if `severityTextField` is not populated. For more details, refer to the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/).
+:::
+
 :::info
 If multiple log levels are detected in the message, they will be prioritized in the following order: ERROR > WARN > INFO > DEBUG.
 :::
