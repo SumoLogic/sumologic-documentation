@@ -18,7 +18,7 @@ In Sumo Logic, threat intelligence indicators are supplied by sources listed on 
 * [**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
 The sources on the **Threat Intelligence** tab include:
-* **Global feeds**. Out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources. See [Sumo Logic threat intelligence sources](#sumo-logic-threat-intelligence-sources) below.
+* **Sumo Logic sources**. Out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources. See [Sumo Logic threat intelligence sources](#sumo-logic-threat-intelligence-sources) below.
 * **Other sources**. The other sources on the tab are imported by Cloud SIEM administrators so that Cloud SIEM analysts can use them to find threats. See [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) to learn how to add other sources.
 
 Cloud SIEM analysts can use any of these sources to find threats (see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). In addition, all Sumo Logic users can run queries against the indicators in the Sumo Logic threat intelligence source to uncover threats (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
@@ -103,8 +103,8 @@ _index=sumologic_audit_events _sourceCategory=threatIntelligence
 ## Sumo Logic threat intelligence sources
 
 Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources:
-* **_sumo_global_feed_cs**. This is a legacy source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). ***This source will be discontinued on April 30, 2025***.
 * **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/).
+* **_sumo_global_feed_cs**. This is a legacy source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). ***This source will be discontinued on April 30, 2025***.
 
 <!-- Unhide the article and add this link if we think it's necessary:
 For information about mapping fields to the new source, see [Threat Intelligence Mapping](/docs/security/threat-intelligence/threat-intelligence-mapping/).
