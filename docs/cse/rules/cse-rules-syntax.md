@@ -671,7 +671,7 @@ For example:
 * `hasThreatMatch([dstDevice_ip], confidence > 1 AND (type="ipv4-addr" OR type="ipv6-addr"))` 
 * `hasThreatMatch([file_hash_imphash, file_hash_md5, file_hash_pehash, file_hash_ssdeep, file_hash_sha1, file_hash_sha256], confidence > 1 AND type="file:hashes")` 
 * `hasThreatMatch([http_url], confidence > 1 AND type="url")` 
-* `hasThreatMatch([srcDevice_ip], confidence > 1 AND (type="ipv4-addr" OR type="ipv6-addr"))`
+* `hasThreatMatch([dstDevice_ip, srcDevice_ip], (confidence >1 AND confidence <50) AND (type='ipv4-addr' OR type='ipv6-addr'))`
 
 Following are the standard indicator types you can filter on:
 * `file:hashes`. File hash. (If you want to add the hash algorithm, enter `file:hashes.<HASH-TYPE>`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.)
