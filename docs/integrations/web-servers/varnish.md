@@ -504,7 +504,7 @@ The **Varnish - Threat Intel** dashboard provides an at-a-glance view of threats
 
 Use this dashboard to:
 * To gain insights and understand threats in incoming traffic and discover potential IOCs.
-* Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) threat feed.
+* Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src={useBaseUrl('img/integrations/web-servers/Varnish-Threat-Intel.png')} alt="Varnish dashboard" />
 

@@ -232,6 +232,11 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/api/threat-intel-ingest"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Thumbnail icon" width="50"/><h4>Threat Intel Ingest</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
     <a href="/docs/api/token-management"><img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/><h4>Tokens</h4></a>
   </div>
 </div>

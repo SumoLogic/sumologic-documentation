@@ -17,5 +17,5 @@ sqrt(<x>) as <field>
 ## Example
 
 ```sql
-sqrt(4) as v // v = 2
+* | sqrt(4) as v
 ```
