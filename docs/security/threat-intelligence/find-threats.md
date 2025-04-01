@@ -1,7 +1,7 @@
 ---
 slug: /security/threat-intelligence/find-threats
 title: Find Threats with Log Queries
-sidebar_label: Find Threats 
+sidebar_label: Find Threats with Log Queries
 description: Perform searches to find matches to data in threat intelligence indicators.
 ---
 

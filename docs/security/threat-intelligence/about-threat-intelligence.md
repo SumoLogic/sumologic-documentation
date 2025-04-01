@@ -87,7 +87,7 @@ After threat indicator sources are ingested, they appear on the **Threat Intelli
 Here is the typical workflow to set up and use threat intelligence indicators:
 
 1. A system administrator [ingests threat intelligence indicators](#ingest-threat-intelligence-indicators) and adds them to the threat intelligence data store. For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up the collector to obtain indicators from Federal, vendor, or open services. Ingested indicators appear on the [**Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab). You can manually add more indicators as needed, such as your own private indicators, using the **Threat Intelligence** tab or the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs.
-1. Analysts use the threat indicators data to uncover threats using [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function) or [manual searches](/docs/security/threat-intelligence/find-threats/).
+1. Analysts use the threat indicators data to uncover threats using [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function).
 1. A system administrator occasionally checks to see why a connector isn’t ingesting data, or to see how much storage all the indicators are using. They may <!--[run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to--> examine their indicators, and then if needed, [delete indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#delete-threat-intelligence-indicators).
 
 ## Audit logging for threat intelligence
@@ -107,7 +107,7 @@ Sumo Logic provides the following out-of-the-box default sources of threat indic
 * **_sumo_global_feed_cs**. This is a legacy source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). ***This source will be discontinued on April 30, 2025***.
 
 :::warning
-To maintain uninterrupted threat intelligence operation, if you have created rules, saved searches, monitors or dashboard panel queries that explicitly reference the legacy `_sumo_global_feed_cs` source, follow the directions below to update them to use the new `SumoLogic_ThreatIntel` source ***before April 30, 2025***.
+To maintain uninterrupted threat intelligence operation, if you have created rules, saved searches, monitors, or dashboard panel queries that explicitly reference the legacy `_sumo_global_feed_cs` source, follow the directions below to update them to use the new `SumoLogic_ThreatIntel` source ***before April 30, 2025***.
 :::
 
 ### Migrate to the new source
@@ -129,7 +129,7 @@ You may need to make changes in these scenarios:
 #### lookup operator
 
 In most cases, no change is needed if you use the [lookup](/docs/search/search-query-language/search-operators/lookup/) search operator to point to `sumo://threat/cs`:
-* Until April 30, 2025, queries in apps that use the `lookup` search operator to point to `sumo://threat/cs` (the legacy `_sumo_global_feed_cs` source) are unchanged. For examples, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) app. 
+* Until April 30, 2025, queries in apps that use the `lookup` search operator to point to `sumo://threat/cs` (the legacy `_sumo_global_feed_cs` source) are unchanged. For examples, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app. See [Threat Intel Optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) for guidance on using those queries.
 * After April 30, 2025, queries in apps that use the `lookup` operator to point to `sumo://threat/cs` are updated to point to `sumo://threat/i471` instead (the new `SumoLogic_ThreatIntel` source). **You must upgrade your apps to get this update.** In the App Catalog, open apps labeled **Upgrade Available** and select **Manage > Upgrade**.
 
 You may need to make changes in these scenarios:
