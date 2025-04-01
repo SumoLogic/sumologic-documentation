@@ -941,7 +941,11 @@ https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80
 
 ## Bash this Search Job
 
-You can use the following script to exercise the API.
+You can use the following script to exercise the API. 
+
+:::note
+Ensure that you send ACCESSID/ACCESSKEY pair even if cookies are sent for the Search Job APIs.
+:::
 
 ```bash
 #!/bin/bash

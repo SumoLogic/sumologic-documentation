@@ -79,7 +79,7 @@ To configure the CrowdStrike Threat Intel Source:
 1. In **Region**, choose the region as per your Base URL. See [Region](#region) section to know your region.
 1. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
 1. In **Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
-1. In **Sumo Logic Threat Intel Source ID**, enter the Sumo Logic namespace in which the indicators are stored.
+1. In **Sumo Logic Threat Intel Source ID**, enter the name you want to use for the CrowdStrike source that will be created in the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab in Sumo Logic. The CrowdStrike threat intelligence indicators will be stored in this source. Do not use spaces in the name.
 1. (Optional) In **Mallicious Confidence**, enter the type of confidence to collect data from. Possible values: `high`, `medium`,`low`, or `unverified`.
 1. The **Polling Interval** is set for one hour by default, you can adjust it based on your needs. This sets how often the integration will fetch complete vulnerability instance data that has been updated within most recent polling interval duration.
 1. When you are finished configuring the Source, click **Save**.
