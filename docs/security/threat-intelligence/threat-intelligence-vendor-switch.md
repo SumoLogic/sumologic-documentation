@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This article provides guidance on our switching from the legacy **_sumo_global_feed_cs** source supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/) to the **SumoLogic_ThreatIntel** source supplied by [Intel 471](https://intel471.com/).
 
 :::warning
-*The **_sumo_global_feed_cs** source will be discontinued on April 30, 2025*. For more information, see [Sumo Logic Threat Intelligence Sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources).
+*The **_sumo_global_feed_cs** source will be discontinued on April 30, 2025*. For more information, see [Sumo Logic Threat Intelligence Sources](/docs/security/threat-intelligence/about-threat-intelligence).
 :::
 
 Switching to the Intel 471 global threat feed from CrowdStrike will introduce differences in the threat indicator content. Namely, the `raw` field from the `lookup` operator, and the `raw_threat` field from the `threatip` operator will contain different JSON-formatted fields. Sophisticated, security-centric Sumo Logic platform queries sometimes use these fields for searches and dashboards.
