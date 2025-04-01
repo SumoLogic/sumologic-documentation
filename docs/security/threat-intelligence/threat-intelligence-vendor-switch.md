@@ -24,7 +24,7 @@ Importantly, the intel vendors themselves control what appears in these "raw" fi
 
 Beginning April 1, 2025, customers can experiment with the Intel 471 feed by referencing the `sumo://threat/i471` lookup table as a parameter to the [`lookup` search operator](/docs/search/search-query-language/search-operators/lookup). (It isn't possible to do the same for `threatip`, though its `raw_threat` field is the same as the `lookup` operator's `raw` field.)  On April 30, 2025, the global CrowdStrike feed will be fully replaced by Intel 471 in the Sumo Logic platform, and references to the old feed will automatically be updated to point to the new feed.
 
-Sumo Logic's native security applications will be updated to accommodate this vendor change. Customers need only update queries in their apps to take advantage of this by April 30th, 2025. For examples of queries using the `lookup` operator, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) app.
+Sumo Logic's native security applications will be updated to support this vendor change. To take advantage of the new Intel 471 feed, customers only need to update queries in their custom apps by April 30, 2025. For examples of queries using the `lookup` operator, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) app.
 
 ## How do I know if I ought to update a search or dashboard?
 
