@@ -1,4 +1,4 @@
-resource "sumologic_cloud_to_cloud_source" "lastpass-source" {
+resource "sumologic_cloud_to_cloud_source" "smartsheet-source" {
   collector_id = sumologic_collector.collector.id
   schema_ref = {
     type = "Smartsheet"
