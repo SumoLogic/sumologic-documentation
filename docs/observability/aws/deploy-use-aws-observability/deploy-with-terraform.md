@@ -112,7 +112,7 @@ Before you run the Terraform script, perform the following actions on a server m
     export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
     export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
     ```
-    Provide your Sumo Logic deployment for the SUMOLOGIC_ENV variable. For example: au, ca, de, eu, jp, us2, in, fed, kr, or us1. For more information on Sumo Logic deployments, see *Sumo Logic Endpoints and Firewall Security*. 
+    Provide your Sumo Logic deployment for the SUMOLOGIC_ENV variable. For example: au, ca, de, eu, jp, us2, fed, kr, or us1. For more information on Sumo Logic deployments, see *Sumo Logic Endpoints and Firewall Security*. 
    * Run fields.sh using this command:
       ```bash
       $ sh fields.sh
@@ -1468,30 +1468,30 @@ module "sumo-module" {
 
 The following table provides a list of all source parameters and their default values. See the [sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars](http://sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars) file for complete code.
 
-| Parameter | Description | Default |
-|:--|:--|:--|
-| `access_id` | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.	| Ignore if already configured in **main.auto.tfvars** file. |
-| `access_key` | Sumo Logic Access Key. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file.
-| `environment` | Enter au, ca, de, eu, jp, us2, in, fed, kr, or us1. See Sumo Logic Endpoints and Firewall Security for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file. |
-| `sumologic_organization_id` | You can find your org on the Preferences page in the Sumo Logic UI. For more information, see the Preferences Page topic. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources." See Preferences Page. | Ignore if already configured in main.auto.tfvars file. |
-| `apps_folder_name` | Provide a folder name where all the apps will be installed under your Personal folder. Default value is "AWS Observability Apps". | `"AWS Observability Apps"`  |
-| `monitors_folder_name` | Provide a folder name where all the monitors will be installed under the Personal folder of the user whose access keys you have entered. Default value will be "AWS Observability Monitors". | `"AWS Observability Monitors"` |
-| `folder_installation_location` | Indicates where to install the app folder. Enter "Personal Folder" for installing in the "Personal" folder and "Admin Recommended Folder" for installing in "Admin Recommended" folder. | `"Personal Folder"` |
-| `folder_share_with_org` | Indicates if "AWS Observability App" folder should be shared with the entire organization. true to enable sharing; false to disable sharing. | `true` |
-| `alb_monitors_disabled` | Indicates if the ALB Apps monitors should be enabled or disabled. | `true` |
-| `apigateway_monitors_disabled` | Indicates if the API Gateway Apps monitors should be enabled or disabled. | `true` |
-| `sns_monitors_disabled` | Indicates if the SNS Apps monitors should be enabled | `true` |
-| `sqs_monitors_disabled` | Indicates if the SQS Apps monitors should be enabled | `true` |
-| `dynamodb_monitors_disabled` | Indicates if the DynamoDB Apps monitors should be enabled or disabled. | `true` |
-| `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled. | `true` |
-| `ecs_monitors_disabled` | Indicates if the ECS Apps monitors should be enabled or disabled. | `true` |
-| `elasticache_monitors_disabled` | Indicates if the ElastiCache Apps monitors should be enabled or disabled. | `true` |
-| `lambda_monitors_disabled` | Indicates if the Lambda Apps monitors should be enabled or disabled. | `true` |
-| `nlb_monitors_disabled` | Indicates if the NLB Apps monitors should be enabled or disabled. | `true` |
-| `rds_monitors_disabled` | Indicates if the RDS Apps monitors should be enabled or disabled. | `true` |
-| `group_notifications` | Indicates if individual items that meet trigger conditions should be grouped. Defaults to `true`.	 | `true` |
-| `email_notifications`	Email Notifications to be sent by the alert. | `[ ]` |
-| `connection_notifications` | Connection Notifications to be sent by the alert. | `[ ]` |
+| Parameter | Description                                                                                                                                                                                                                                                                        | Default |
+|:--|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--|
+| `access_id` | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.	                                                                                                                           | Ignore if already configured in **main.auto.tfvars** file. |
+| `access_key` | Sumo Logic Access Key. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.                                                                                                                           | Ignore if already configured in main.auto.tfvars file.
+| `environment` | Enter au, ca, de, eu, jp, us2, fed, kr, or us1. See Sumo Logic Endpoints and Firewall Security for information. Ignore this setting if you entered it in Source Parameters.                                                                                                        | Ignore if already configured in main.auto.tfvars file. |
+| `sumologic_organization_id` | You can find your org on the Preferences page in the Sumo Logic UI. For more information, see the Preferences Page topic. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources." See Preferences Page.                                                    | Ignore if already configured in main.auto.tfvars file. |
+| `apps_folder_name` | Provide a folder name where all the apps will be installed under your Personal folder. Default value is "AWS Observability Apps".                                                                                                                                                  | `"AWS Observability Apps"`  |
+| `monitors_folder_name` | Provide a folder name where all the monitors will be installed under the Personal folder of the user whose access keys you have entered. Default value will be "AWS Observability Monitors".                                                                                       | `"AWS Observability Monitors"` |
+| `folder_installation_location` | Indicates where to install the app folder. Enter "Personal Folder" for installing in the "Personal" folder and "Admin Recommended Folder" for installing in "Admin Recommended" folder.                                                                                            | `"Personal Folder"` |
+| `folder_share_with_org` | Indicates if "AWS Observability App" folder should be shared with the entire organization. true to enable sharing; false to disable sharing.                                                                                                                                       | `true` |
+| `alb_monitors_disabled` | Indicates if the ALB Apps monitors should be enabled or disabled.                                                                                                                                                                                                                  | `true` |
+| `apigateway_monitors_disabled` | Indicates if the API Gateway Apps monitors should be enabled or disabled.                                                                                                                                                                                                          | `true` |
+| `sns_monitors_disabled` | Indicates if the SNS Apps monitors should be enabled                                                                                                                                                                                                                               | `true` |
+| `sqs_monitors_disabled` | Indicates if the SQS Apps monitors should be enabled                                                                                                                                                                                                                               | `true` |
+| `dynamodb_monitors_disabled` | Indicates if the DynamoDB Apps monitors should be enabled or disabled.                                                                                                                                                                                                             | `true` |
+| `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled.                                                                                                                                                                                                          | `true` |
+| `ecs_monitors_disabled` | Indicates if the ECS Apps monitors should be enabled or disabled.                                                                                                                                                                                                                  | `true` |
+| `elasticache_monitors_disabled` | Indicates if the ElastiCache Apps monitors should be enabled or disabled.                                                                                                                                                                                                          | `true` |
+| `lambda_monitors_disabled` | Indicates if the Lambda Apps monitors should be enabled or disabled.                                                                                                                                                                                                               | `true` |
+| `nlb_monitors_disabled` | Indicates if the NLB Apps monitors should be enabled or disabled.                                                                                                                                                                                                                  | `true` |
+| `rds_monitors_disabled` | Indicates if the RDS Apps monitors should be enabled or disabled.                                                                                                                                                                                                                  | `true` |
+| `group_notifications` | Indicates if individual items that meet trigger conditions should be grouped. Defaults to `true`.	                                                                                                                                                                                 | `true` |
+| `email_notifications`	Email Notifications to be sent by the alert. | `[ ]`                                                                                                                                                                                                                                                                              |
+| `connection_notifications` | Connection Notifications to be sent by the alert.                                                                                                                                                                                                                                  | `[ ]` |
 | `parent_folder_id` | The folder ID is automatically generated. Do not enter a value for this parameter. This is the folder ID to install the apps into. A folder using the provided name will be added in "apps_folder_name". If the folder ID is empty, apps will be installed in the Personal folder. | Ignore this parameter. |
 
 ## Troubleshooting
