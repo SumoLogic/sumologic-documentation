@@ -106,10 +106,6 @@ Sumo Logic provides the following out-of-the-box default sources of threat indic
 * **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/).
 * **_sumo_global_feed_cs**. This is a legacy source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). ***This source will be discontinued on April 30, 2025***.
 
-<!-- Unhide the article and add this link if we think it's necessary:
-For information about mapping fields to the new source, see [Threat Intelligence Mapping](/docs/security/threat-intelligence/threat-intelligence-mapping/).
--->
-
 :::warning
 To maintain uninterrupted threat intelligence operation, if you have created rules, saved searches, monitors or dashboard panel queries that explicitly reference the legacy `_sumo_global_feed_cs` source, follow the directions below to update them to use the new `SumoLogic_ThreatIntel` source ***before April 30, 2025***.
 :::

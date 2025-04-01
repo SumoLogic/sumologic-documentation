@@ -3033,7 +3033,6 @@ integrations: [
         'security/threat-intelligence/find-threats',
         'security/threat-intelligence/threat-indicators-in-cloud-siem',
         'security/threat-intelligence/upload-formats',
-        //'security/threat-intelligence/threat-intelligence-mapping',
       ],
     },  
   ],
