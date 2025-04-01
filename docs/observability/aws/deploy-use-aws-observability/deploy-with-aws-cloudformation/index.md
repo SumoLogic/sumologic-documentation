@@ -55,7 +55,7 @@ AWS Observability integrates with the [AWS Observability view](/docs/dashboards/
 
 ## Step 2: Sumo Logic access configuration 
 
-The below tables displays the response for each text box in this section.
+The table below displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
@@ -68,7 +68,7 @@ The below tables displays the response for each text box in this section.
 
 ## Step 3: AWS account alias 
 
-The below tables displays the response for each text box in this section.
+The table below displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
@@ -78,7 +78,7 @@ The below tables displays the response for each text box in this section.
 
 ## Step 4: Sumo Logic AWS Observability apps and Alerts
 
-You should only install the AWS Observability apps and alerts the first time you run the template.<br/> The below tables displays the response for each text box in this section.
+You should only install the AWS Observability apps and alerts the first time you run the template.<br/> The table below displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
@@ -86,7 +86,7 @@ You should only install the AWS Observability apps and alerts the first time you
 
 ## Step 5: Sumo Logic AWS CloudWatch Metrics Sources
 
-The below tables displays the response for each text box in this section.
+The table below displays the response for each text box in this section.
 
 | Prompt | Guideline                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | :-- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -97,7 +97,7 @@ The below tables displays the response for each text box in this section.
 
 ## Step 6: Sumo Logic AWS ALB Log Source
 
-The below tables displays the response for each text box in this section.
+The table below displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
@@ -109,7 +109,7 @@ The below tables displays the response for each text box in this section.
 
 ## Step 7: Sumo Logic AWS CloudTrail Source
 
-The below tables displays the response for each text box in this section.
+The table below displays the response for each text box in this section.
 
 If you are collecting AWS CloudTrail logs from multiple AWS accounts into a common S3 bucket, please run the CloudFormation template in the account that has the S3 bucket and please see the Centralized CloudTrail Log Collection [help page](centralized-aws-cloudtrail-log-collection.md).
 
@@ -122,7 +122,7 @@ If you are collecting AWS CloudTrail logs from multiple AWS accounts into a comm
 
 ## Step 8: Sumo Logic AWS CloudWatch logs
 
-The below tables displays the response for each text box in this section.
+The table below displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
@@ -139,7 +139,7 @@ The below tables displays the response for each text box in this section.
 
 ## Step 9: Sumo Logic AWS ELB Classic Log Source
 
-The below tables displays the response for each text box in this section.
+The table below displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
@@ -151,7 +151,7 @@ The below tables displays the response for each text box in this section.
 
 ## Step 10: App Installation and Sharing
 
-The below tables displays the response for each text box in this section.
+The table below displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
