@@ -743,7 +743,6 @@
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Security_Hub": "/docs/integrations/amazon-aws/security-hub",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Security_Hub/1-Ingest-findings-into-AWS-Security_Hub": "/docs/integrations/amazon-aws/security-hub",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Security_Hub/2-Collect-findings-for-the-AWS-Security-Hub-App": "/docs/integrations/amazon-aws/security-hub",
-  "/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Security_Hub/2-Collect-Findings-for-the-AWS-Security-Hub-App": "/docs/integrations/amazon-aws/security-hub",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Security_Hub/3-Install_the_AWS_Security_Hub_App_and_view_the_Dashboards": "/docs/integrations/amazon-aws/security-hub",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_WAF": "/docs/integrations/amazon-aws/waf",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_WAF/Collect_Logs_for_the_AWS_WAF_App": "/docs/integrations/amazon-aws/waf",
