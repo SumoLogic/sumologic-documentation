@@ -26,11 +26,11 @@ Beginning April 1, 2025, customers can experiment with the Intel 471 feed by ref
 
 Sumo Logic's native security applications will be updated to support this vendor change. To take advantage of the new Intel 471 feed, customers only need to update queries in their custom apps by April 30, 2025. For examples of queries using the `lookup` operator, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) app.
 
-## How do I know if I ought to update a search or dashboard?
+## How do I know if I need to update a search or dashboard?
 
-If you reference `json field=raw` or `parse field=raw` (or `raw_threat`, in the case of the `threatip` operator), you are extracting vendor-specific data that might need to be updated.
+If your queries reference `json field=raw` or `parse field=raw` (or `raw_threat`, in the case of the `threatip` operator), you are extracting vendor-specific data that might need to be updated.
 
-Additionally, the Intel 471 source at present includes no domain or email indicators, instead prioritizing IP addresses, URLs, and file hashes. 
+Additionally, the Intel 471 source currently does not include domain or email indicators, instead prioritizing IP addresses, URLs, and file hashes. 
 
 ## How can I translate CrowdStrike-specific fields to Intel 471-specific fields?
 
