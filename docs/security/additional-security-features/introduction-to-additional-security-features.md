@@ -7,7 +7,7 @@ description: Learn basic concepts about using logs for security use cases.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic’s Logs for Security provides a foundation for security operations, with a unified platform to ingest, store, and analyze security logs in real-time. AI-powered search enables teams to quickly find relevant logs, while anomaly detection highlights unusual patterns for further review. 
+Sumo Logic’s Logs for Security provides a comprehensive foundation for security operations, with a unified platform to ingest, store, and analyze security logs in real time. AI-powered search enables teams to quickly find relevant logs, while anomaly detection highlights unusual patterns for further review. 
 
 Unlike fragmented log solutions, Sumo Logic seamlessly integrates across cloud, hybrid, and on-prem environments, reducing complexity and ensuring complete visibility. 
 
