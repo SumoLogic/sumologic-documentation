@@ -34,7 +34,7 @@ Additionally, the Intel 471 source currently does not include domain or email in
 
 ## How can I translate CrowdStrike-specific fields to Intel 471-specific fields?
 
-It may not be possible to translate CrowdStrike-specific fields to Intel 471-specific fields, because they capture and prioritize different aspects of indicators of compromise. 
+In many cases, it may not be possible to translate CrowdStrike-specific fields to Intel 471-specific fields, as the two vendors emphasize different aspects of indicators of compromise. However, the table below provides approximate mappings to help you start adapting your queries.
 
 ### Approximate field mappings
 
