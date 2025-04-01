@@ -137,6 +137,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/cyberark-audit"><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk Audit</h4></a>
+  <p>Gather information about your organization's cybersecurity practices to strengthen security.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/digital-guardian-arc"><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Thumbnail icon" width="40"/><h4>Digital Guardian ARC</h4></a>
   <p>Monitor, detect, and respond to critical events.</p>
   </div>
