@@ -163,6 +163,14 @@ Since this source contains logs from multiple regions, make sure that you do not
 :::
 
 
+## Installing the Azure Service Bus app
+
+Now that you have set up data collection, install the Azure Service Bus Sumo Logic app to use the pre-configured [dashboards](#viewing-the-azure-service-bus-app-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+
+<AppInstallNoDataSourceV2/>
+
 ## Viewing the Azure Service Bus dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';

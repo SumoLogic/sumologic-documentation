@@ -168,6 +168,14 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
 :::
 
+## Installing the Azure Event Grid app
+
+Now that you have set up data collection, install the Azure Event Grid Sumo Logic app to use the pre-configured [dashboards](#viewing-the-azure-event-grid-dashboards) that provide visibility into your environment for real-time analysis of azure resources.
+
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+
+<AppInstallNoDataSourceV2/>
+
 ## Viewing the Azure Event Grid dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
