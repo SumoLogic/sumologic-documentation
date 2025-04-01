@@ -49,12 +49,12 @@ This section provides a listing of configuration prompts for the CloudFormation 
 
 ### Sumo Logic Access Configuration (Required)
 
-| Prompt | Guideline |
-|:--|:--|
-| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed, kr, or us1. For more information on Sumo Logic deployments, see the [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) topic. |
-| Sumo Logic Access ID | Sumo Logic Access ID. For more information, see [Access Keys](/docs/manage/security/access-keys). |
-| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
-| Delete Fields when stack is deleted | True. Deletes the Account and Namespace fields from the Host Metric Sources when the stack is deleted.<br/>False. Keeps the fields in Host Metric Sources when the stack is deleted. |
+| Prompt | Guideline                                                                                                                                                                                                                                        |
+|:--|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, fed, kr, or us1. For more information on Sumo Logic deployments, see the [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) topic. |
+| Sumo Logic Access ID | Sumo Logic Access ID. For more information, see [Access Keys](/docs/manage/security/access-keys).                                                                                                                                                |
+| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls.                                                                                                                                                                                |
+| Delete Fields when stack is deleted | True. Deletes the Account and Namespace fields from the Host Metric Sources when the stack is deleted.<br/>False. Keeps the fields in Host Metric Sources when the stack is deleted.                                                             |
 
 ### AWS account alias (Required)
 
