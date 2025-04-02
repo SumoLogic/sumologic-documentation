@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql-elastic-pool.png')} alt="Thumbnail icon" width="50"/>
 
-The [Azure SQL Elastic Pools](https://learn.microsoft.com/en-us/azure/azure-sql/database/elastic-pool-overview?view=azuresql) are a simple, cost-effective solution for managing and scaling multiple databases that have varying and unpredictable usage demands. This integration helps in monitoring resource utilization of your elastic pools.
+The [Azure SQL Elastic Pools](https://learn.microsoft.com/en-us/azure/azure-sql/database/elastic-pool-overview?view=azuresql) are a simple, cost-effective solution for managing and scaling multiple databases that have varying and unpredictable usage demands. This integration helps in monitoring the resource utilization of your elastic pools.
 
 ## Log and metric types
 
@@ -28,15 +28,15 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, onto an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
 1. Create a hosted collector and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure SQL Elastic Pool that you want to monitor.
-   * Choose `Stream to an event hub` as destination.
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each Azure SQL Elastic Pool that you want to monitor.
+   * Choose `Stream to an event hub` as the destination.
    * Select `Basic`.
-   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
 ## Troubleshooting
 
