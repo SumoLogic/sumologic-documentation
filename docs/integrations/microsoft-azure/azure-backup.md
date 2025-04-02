@@ -43,7 +43,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 1. Create a hosted collector and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure Backup Vault that you want to monitor.
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each Azure Backup Vault that you want to monitor.
    * Choose `Stream to an event hub` as destination.
    * Select `Health`.
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
@@ -53,7 +53,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-2. To create the Diagnostic settings in Azure portal, refer to the Azure documentation for [Recovery Service Vaults](https://learn.microsoft.com/en-us/azure/backup/configure-reports?tabs=recovery-services-vaults#2-configure-diagnostics-settings-for-your-vaults) and [Backup Vaults](https://learn.microsoft.com/en-us/azure/backup/configure-reports?tabs=backup-vaults#2-configure-diagnostics-settings-for-your-vaults) respectively. Perform below steps for each Azure Backup Vault that you want to monitor.
+2. To create the Diagnostic settings in Azure portal, refer to the Azure documentation for [Recovery Service Vaults](https://learn.microsoft.com/en-us/azure/backup/configure-reports?tabs=recovery-services-vaults#2-configure-diagnostics-settings-for-your-vaults) and [Backup Vaults](https://learn.microsoft.com/en-us/azure/backup/configure-reports?tabs=backup-vaults#2-configure-diagnostics-settings-for-your-vaults) respectively. Perform the steps below for each Azure Backup Vault that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select the following events for respective vault type:
         * Backup Vault: `CoreAzureBackup, AddonAzureBackupJobs, AddonAzureBackupPolicy, and AddonAzureBackupProtectedInstance`.
