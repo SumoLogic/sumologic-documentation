@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 For Azure Event Grid, you can collect the following logs and metrics:
 
 * **Resource Logs**. Publish and delivery failure logs by Event Grid resources. It also includes audit traces for data plane operations including public and private access operations. The schema for resource logs is described [here](https://learn.microsoft.com/en-us/azure/event-grid/monitor-push-reference#resource-logs).
-* **Metrics**. Metrics for Azure Event Grid are in below namespaces:
+* **Metrics**. Metrics for Azure Event Grid are in the namespaces below:
   * [Microsoft.EventGrid/domains](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-domains-metrics)
   * [Microsoft.EventGrid/systemTopics](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-systemtopics-metrics)
   * [Microsoft.EventGrid/topics](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-topics-metrics)
@@ -32,7 +32,7 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 * Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
 
-You must explicitly enable diagnostic settings for each domain, namespaces, custom topic, and system topic you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
+You must explicitly enable diagnostic settings for each domain, namespace, custom topic, and system topic you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/EventGrid/Logs`, `Azure/EventGrid/Metrics`.
 
@@ -41,13 +41,13 @@ When you configure the event hubs source or HTTP source, plan your source catego
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 1. Search for the following fields:
    - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs to.
+   - `location`. The region to which the resource name belongs.
    - `subscription_id`. ID associated with a subscription where the resource is present.
    - `resource_group`. The resource group name where the Azure resource is present.
    - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
    - `resource_type`. Azure resource type (for example, storage accounts).
    - `resource_name`. The name of the resource (for example, storage account name).
-   - `service_type`. Type of the service that can be accessed with a Azure resource.
+   - `service_type`. Type of the service that can be accessed with an Azure resource.
    - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Event Grid service is Subscriptions).
 1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
 
@@ -137,28 +137,28 @@ If this rule already exists, there is no need to create it again.
 
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, onto an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
 1. Create a hosted collector and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure Event Grid namespace that you want to monitor.
-   1. Choose `Stream to an event hub` as destination.
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each Azure Event Grid namespace that you want to monitor.
+   1. Choose `Stream to an event hub` as the destination.
    1. Select `AllMetrics`.
    1. Use the Event Hub namespace created by the ARM template in Step 2 above. You can create a new Event Hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-event-grid-metrics.png')} alt="Azure event grid metrics" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Event Grid Tag Location" style={{border: '1px solid gray'}} width="400" />
+1. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Event Grid Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 ### Configure logs collection
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 #### Diagnostic logs
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform below steps for each Azure Event Grid namespace that you want to monitor.
+1. To create the Diagnostic settings in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform the steps below for each Azure Event Grid namespace that you want to monitor.
    1. Choose `Stream to an event hub` as the destination.
    1. Select `allLogs`.
-   1. Use the Event Hub namespace and Event Hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+   1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-eventgrid-logs.png')} alt="Azure Event Grid logs" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Event Grid Tag Location" style={{border: '1px solid gray'}} width="400" />
+1. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Event Grid Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity Logs
 
@@ -170,7 +170,7 @@ Since this source contains logs from multiple regions, make sure that you do not
 
 ## Installing the Azure Event Grid app
 
-Now that you have set up data collection, install the Azure Event Grid Sumo Logic app to use the pre-configured [dashboards](#viewing-the-azure-event-grid-dashboards) that provide visibility into your environment for real-time analysis of azure resources.
+Now that you have set up data collection, install the Azure Event Grid Sumo Logic app to use the pre-configured [dashboards](#viewing-the-azure-event-grid-dashboards) that provide visibility into your environment for real-time analysis of Azure resources.
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
@@ -190,7 +190,7 @@ Use this dashboard to:
 * Monitor request patterns by location and network access type to optimize resource allocation and improve latency.
 * Analyze authentication types to ensure proper security measures are in place and identify potential unauthorized access attempts.
 * Track delivery and publish failures by topic to quickly identify and resolve issues affecting event distribution.
-* Correlate publish success latency with destination processing duration to optimize end-to-end event handling performance.
+* Correlate publish success latency with destination processing duration to optimize the end-to-end event handling performance.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Overview.png')} alt="Azure Event Grid - Overview" style={{border: '1px solid gray'}} width="800" />
 
@@ -199,7 +199,7 @@ Use this dashboard to:
 **Azure Event Grid - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Event Grid resources.
 
 Use this dashboard to:
-* Monitor the distribution of operation types and their success rates to ensure proper functioning of your Event Grid system.
+* Monitor the distribution of operation types and their success rates to ensure the proper functioning of your Event Grid system.
 * Identify potential issues by analyzing the top operations causing errors and correlating them with specific users or applications.
 * Track recent write and delete operations to maintain an audit trail of changes made to your Event Grid configuration.
 
