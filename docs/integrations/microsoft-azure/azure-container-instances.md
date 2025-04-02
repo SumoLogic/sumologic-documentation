@@ -125,7 +125,7 @@ In the Sumo Logic Azure Metrics source configuration,
 Use existing resource group or create a new one for deploying Azure container instances.
 :::
 
-1. Create hosted collector and tag tenant_name field
+1. Create a hosted collector and tag the `tenant_name` field
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. Download and update the [output_conf.yaml](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/output_conf.yaml) file with the following configurations:
