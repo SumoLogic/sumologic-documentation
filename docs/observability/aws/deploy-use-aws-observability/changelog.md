@@ -9,6 +9,19 @@ This section provides details on the available versions of the AWS Observability
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
 
+## v2.12.0, 01-Apr-2025
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.12.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+Updates:
+* Updated the SAM Lambda runtime from Node.js v20.x to v22.x.
+* Updated the Lambda runtime to Node.js v22.x in the CloudFormation template for `AWS CloudWatch Logs with Dead Letter Queue Support`.
+* Updated the SecurityHub SAM Lambda runtime from Python v3.11 to v3.13.
+* Updated Lambda runtime to Python v3.13 in the CloudFormation template for `Kinesis Metric Collection`
+* Discontinued support for Mumbai deployment.
+* Updated 9 apps and 4 monitors to accommodate new threat intel feed: AWS Application Load Balancer, AWS API Gateway, AWS Classic Load Balancer, AWS DynamoDB, AWS EC2, AWS Lambda, Amazon RDS, Amazon SNS, Amazon SQS.
+
 ## v2.11.0, 24-Jan-2025
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.11.0/sumologic_observability.master.template.yaml`
 
