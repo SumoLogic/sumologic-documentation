@@ -67,22 +67,38 @@ messaging_cluster=* messaging_system="kafka" \
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Kafka.
 
-### Step 1: Configure fields in Sumo Logic
+### Configure Fields in Sumo Logic
 
-The following [fields](/docs/manage/fields/) will always be created automatically as a part of the app installation process:
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
+
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
+
+If you're using Kafka in a Kubernetes environment, create the fields:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_messaging_system`
+* `pod_labels_messaging_cluster`
+
+</TabItem>
+<TabItem value="non-k8s">
+
+If you're using Kafka in a non-Kubernetes environment, create the fields:
 * `component`
 * `environment`
 * `messaging_system`
 * `messaging_cluster`
 * `pod`
 
-If you're using Kafka in a Kubernetes environment, the following additional fields will be automatically created as a part of the app installation process:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_messaging_system`
-* `pod_labels_messaging_cluster`
-
-For information on setting up fields, see [Fields](/docs/manage/fields).
+</TabItem>
+</Tabs>
 
 ### Configure Collection for Kafka
 
@@ -214,7 +230,30 @@ This section explains the steps to collect Kafka logs from a Kubernetes environm
     kubectl describe pod <Kafka_pod_name>
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-3. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityMessagingKafkaFER** is automatically created.
+3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Messaging Application Components. To do so:
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
+   2. Click the **+ Add** button on the top right of the table.
+   3. The **Add Field Extraction Rule** form will appear. Enter the following options:
+     * **Rule Name**. Enter the name as **App Component Observability - Messaging.**
+     * **Applied At**. Choose Ingest Time
+     * **Scope**. Select Specific Data
+     * Scope: Enter the following keyword search expression:
+      ```sql
+      pod_labels_environment=* pod_labels_component=messaging
+      pod_labels_messaging_system=kafka pod_labels_messaging_cluster=*
+      ```
+     * **Parse Expression**. Enter the following parse expression:
+      ```sql
+      if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+      | pod_labels_component as component
+      | pod_labels_messaging_system as messaging_system
+      | pod_labels_messaging_cluster as messaging_cluster
+      ```
+   4. Click **Save** to create the rule.
+   5. Verify logs are flowing into Sumo Logic by running the following logs query:
+    ```sql
+    component="messaging" and messaging_system="kafka"
+    ```
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -350,6 +389,93 @@ At this point, Kafka metrics and logs should start flowing into Sumo Logic.
 
 </TabItem>
 </Tabs>
+
+## Installing Kafka Alerts
+
+This section and below provide instructions for installing the Sumo App and Alerts for Kafka and descriptions of each of the app dashboards. These instructions assume you have already set up the collection as described in [Collect Logs and Metrics for Kafka](#collecting-logs-and-metrics-for-kafka).
+
+#### Pre-Packaged Alerts
+
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Kafka cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations. See [Kafka Alerts](#kafka-alerts) for more details.
+
+* To install these alerts, you need to have the Manage Monitors role capability.
+* Alerts can be installed by either importing a JSON or a Terraform script.
+* There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
+
+
+### Method A: Importing a JSON file
+
+1. Download a[ JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/kubernetes/kubernetes.json) that describes the monitors.
+    1. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Kafka/Kafka_Alerts.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Kafka clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `'messaging_system=kafka `with `'<Your Custom Filter>`. Custom filter examples:
+     * For alerts applicable only to a specific cluster, your custom filter would be: `messaging_cluster=Kafka-prod.01`
+     * For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be: `messaging_cluster=Kafka-prod*`
+     * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `messaging_cluster=Kafka-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
+   2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
+   3. Click **Add**
+   4. Click Import to import monitors from the JSON above.
+
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
+
+### Method B: Using a Terraform script
+
+1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Identify which deployment your Sumo Logic account is in using [this link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
+3. Download the Sumo Logic Terraform package for Kafka alerts. The alerts package is available in the Sumo Logic [GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Kafka). You can either download it through the “git clone” command or as a zip file.
+4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Kafka`.
+   1. Edit the `monitor.auto.tfvars` file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
+    ```bash
+    access_id   = "<SUMOLOGIC ACCESS ID>"
+    access_key  = "<SUMOLOGIC ACCESS KEY>"
+    environment = "<SUMOLOGIC DEPLOYMENT>"
+    ```
+   2. The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `’kafka_data_source’`. Custom filter examples:
+     * For alerts applicable only to a specific cluster, your custom filter would be: `messaging_cluster=Kafka-prod.01`
+     * For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be: `messaging_cluster=Kafka-prod*`
+     * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `messaging_cluster=Kafka-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
+
+All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
+
+By default, the monitors are configured in a monitor folder called “Kafka”, if you would like to change the name of the folder, update the monitor folder name in this file.
+
+5. To send email or connection notifications, modify the file `notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See [this document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
+
+```bash title="Pagerduty Connection Example"
+connection_notifications = [
+    {
+      connection_type       = "PagerDuty",
+      connection_id         = "<CONNECTION_ID>",
+      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
+      run_for_trigger_types = ["Critical", "ResolvedCritical"]
+    },
+    {
+      connection_type       = "Webhook",
+      connection_id         = "<CONNECTION_ID>",
+      payload_override      = "",
+      run_for_trigger_types = ["Critical", "ResolvedCritical"]
+    }
+  ]
+```
+
+Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the[ Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
+
+```bash title="Email Notifications Example"
+email_notifications = [
+    {
+      connection_type       = "Email",
+      recipients            = ["abc@example.com"],
+      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
+      time_zone             = "PST",
+      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
+      run_for_trigger_types = ["Critical", "ResolvedCritical"]
+    }
+  ]
+```
+
+6. Install the Alerts
+   1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Kafka/` and run terraform init. This will initialize Terraform and will download the required components.
+   2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
+   3. Run `terraform apply`.
+7. **Post Installation.** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of[ this document](/docs/alerts/monitors/create-monitor).
 
 
 ## Installing the Kafka App
@@ -599,17 +725,6 @@ Use this dashboard to:
 
 
 ## Kafka Alerts
-
-#### Pre-packaged alerts
-
-Sumo Logic has provided out-of-the-box alerts available through [monitors](/docs/alerts/monitors) to help you quickly determine if the Kafka cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
-
-:::note
-There are limits to how many alerts can be enabled. See [Monitors FAQ](/docs/alerts/monitors/monitor-faq) for details.
-::: 
-:::note permissions required
-To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
-:::
 
 | Alert Name                                  | Alert Description and conditions                                                                                                                        | Alert Condition | Recover Condition |
 |:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
