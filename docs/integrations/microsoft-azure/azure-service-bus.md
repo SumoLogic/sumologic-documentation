@@ -35,13 +35,13 @@ When you configure the Event Hubs source or HTTP source, plan your source catego
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 1. Search for the following fields:
    - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs to.
+   - `location`. The region to which the resource name belongs.
    - `subscription_id`. ID associated with a subscription where the resource is present.
    - `resource_group`. The resource group name where the Azure resource is present.
    - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
    - `resource_type`. Azure resource type (for example, storage accounts).
    - `resource_name`. The name of the resource (for example, storage account name).
-   - `service_type`. Type of the service that can be accessed with a Azure resource.
+   - `service_type`. Type of the service that can be accessed with an Azure resource.
    - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Service Bus service is Subscriptions).
 1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
 
@@ -131,28 +131,28 @@ If this rule already exists, there is no need to create it again.
 
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, onto an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
 1. Create a hosted collector and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure Service Bus namespace that you want to monitor.
-   * Choose `Stream to an event hub` as destination.
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each Azure Service Bus namespace that you want to monitor.
+   * Choose `Stream to an event hub` as the destination.
    * Select `AllMetrics`.
-   * Use the Event Hub namespace created by the ARM template in Step 2 above. You can create a new Event Hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-service-bus-metrics.png')} alt="Azure service bus metrics" style={{border: '1px solid gray'}} width="800" />
-   * Tag the location and entityname fields in the source with right values. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Service-Bus-Tag-Metric-Fields.png')} alt="Azure Service Bus Tag location and entityname" style={{border: '1px solid gray'}} width="400" />
+   * Use the Event Hub namespace created by the ARM template in Step 2 above. You can create a new Event Hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-service-bus-metrics.png')} alt="Azure service bus metrics" style={{border: '1px solid gray'}} width="800" />
+   * Tag the location and entityname fields in the source with the right values. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Service-Bus-Tag-Metric-Fields.png')} alt="Azure Service Bus Tag location and entityname" style={{border: '1px solid gray'}} width="400" />
 
 ### Configure logs collection
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 #### Diagnostic logs
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform below steps for each Azure Service Bus namespace that you want to monitor.
+1. To create the Diagnostic settings in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform the steps below for each Azure Service Bus namespace that you want to monitor.
    1. Choose `Stream to an event hub` as the destination.
    1. Select `allLogs`.
-   1. Use the Event Hub namespace and Event Hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+   1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-servicebus-logs.png')} alt="Azure Service Bus logs" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Service Bus Tag Location" style={{border: '1px solid gray'}} width="400" />
+1. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Service Bus Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity Logs
 
