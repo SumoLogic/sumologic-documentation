@@ -30,7 +30,7 @@ AI-Driven Investigations provides developers, security, and IT operations teams 
 
 To open AI-Driven Investigations, in the main Sumo Logic menu of the [**New UI**](/docs/get-started/sumo-logic-ui), select **AI-Driven Investigations**.
 
-When you first open AI-Driven Investigations, the display of an investigation will include a list of services to the left, and a map of the services to the right. These services are automatically identified by AI analysis of logs in your environment.
+When you first open AI-Driven Investigations, the display of an investigation will include a list of services to the left, and a map of the services to the right. These services are automatically identified by AI analysis of logs in your environment. 
 
 The service list and map visually represents your application environment, giving you a greater understanding of your application architecture, hierarchy, and dependencies between microservices. Health of each microservice is reflected in the color of nodes in the map to help you spot potential problems and bottlenecks in your application infrastructure.
 
