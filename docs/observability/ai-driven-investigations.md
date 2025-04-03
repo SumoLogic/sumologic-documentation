@@ -60,7 +60,7 @@ When you select a service in the list or a node in the map that has signals, a s
 1. Click a service in the list, or a node in the map. The **App Service Summary** panel displays to the right showing signals of interest and recommended next steps.<br/><img src={useBaseUrl('img/observability/service-intelligence-service-example.png')} alt="Service summary example" style={{border: '1px solid gray'}} width="800" />
 1. Click an expand arrow on a signal to view an example of a log entry that illustrates the issue. You can use this information to query for logs with similar content.<br/><img src={useBaseUrl('img/observability/service-intelligence-log-example.png')} alt="Log example" style={{border: '1px solid gray'}} width="300" />
 1. Scroll to the bottom of the **App Service Summary** pane to the **Next Steps** section. This section describes concrete steps you can take to remediate issues identified in the selected service.<br/><img src={useBaseUrl('img/observability/service-intelligence-next-steps.png')} alt="AI-Driven Investigations next steps" style={{border: '1px solid gray'}} width="300" />
-1. [Open Copilot](/docs/search/copilot/#step-1-open-copilot) <img src={useBaseUrl('img/observability/copilot-logo.png')} alt="Copilot logo" width="20" /> to investigate further.
+1. Click <img src={useBaseUrl('img/observability/copilot-logo.png')} alt="Copilot logo" width="20" /> to [open Copilot](/docs/search/copilot/#step-1-open-copilot). Copilot is populated with query information derived from Next Steps. Use Copilot to investigate further. 
 
 ### Explore the AI-Driven Investigations UI
 
