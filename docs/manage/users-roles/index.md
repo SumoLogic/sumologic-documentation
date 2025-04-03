@@ -27,13 +27,13 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/users-roles/roles/role-based-access-control"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="User and gear icon" width="40"/><h4>Manage Roles</h4></a>
+  <a href={useBaseUrl('docs/manage/users-roles/roles/role-based-access-control')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="User and gear icon" width="40"/><h4>Manage Roles</h4></a>
   <p>Learn how to use roles to determine the functions that users can perform in Sumo Logic and the data they can view.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/users-roles/roles/create-manage-roles"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="User and gear icon" width="40"/><h4>Manage Users</h4></a>
+  <a href={useBaseUrl('docs/manage/users-roles/roles/create-manage-roles')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="User and gear icon" width="40"/><h4>Manage Users</h4></a>
   <p>Learn how to create user accounts and assign roles to users.</p>
   </div>
 </div>
