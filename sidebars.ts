@@ -2517,6 +2517,7 @@ integrations: [
           'integrations/saas-cloud/cisco-amp',
           'integrations/saas-cloud/cisco-meraki-c2c',
           'integrations/saas-cloud/cisco-umbrella',
+          'integrations/saas-cloud/cisco-vulnerability-management',          
           'integrations/saas-cloud/citrix-cloud',
           'integrations/saas-cloud/cloudflare',
           'integrations/saas-cloud/code42-incydr',
