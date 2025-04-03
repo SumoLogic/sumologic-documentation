@@ -79,7 +79,7 @@ Perform the following steps to explore the UI:
             It is only necessary to regenerate if it has been longer than 15 minutes since last generation. Do not regenerate multiple times in quick succession, because doing so will not result in new results.
             :::
    * Click the **Mark as verified** <img src={useBaseUrl('img/observability/service-intelligence-thumbs-up.png')} alt="Mark as verified button" width="20" /> button to provide feedback that the current services list and map are good.
-   * Click the **Needs improvement** <img src={useBaseUrl('img/observability/service-intelligence-thumbs-down.png')} alt="Needs improvement button" width="20" /> button to provide feedback that the current services list and map need work. In the provided box, describe what was unclear, inaccurate, or unhelpful.
+   * Click the **Needs improvement** <img src={useBaseUrl('img/observability/service-intelligence-thumbs-down.png')} alt="Needs improvement button" width="20" /> button to provide feedback that the current services list and map need work. In the provided box, describe what was unclear, inaccurate, or unhelpful. 
 
 ## FAQ
 
