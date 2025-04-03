@@ -20,6 +20,7 @@ Updates:
 * Updated the SecurityHub SAM Lambda runtime from Python v3.11 to v3.13.
 * Updated Lambda runtime to Python v3.13 in the CloudFormation template for `Kinesis Metric Collection`
 * Discontinued support for Mumbai deployment.
+* Updated 9 apps and 4 monitors to accommodate new threat intel feed: AWS Application Load Balancer, AWS API Gateway, AWS Classic Load Balancer, AWS DynamoDB, AWS EC2, AWS Lambda, Amazon RDS, Amazon SNS, Amazon SQS.
 
 ## v2.11.0, 24-Jan-2025
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.11.0/sumologic_observability.master.template.yaml`
