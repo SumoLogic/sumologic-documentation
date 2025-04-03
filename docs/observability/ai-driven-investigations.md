@@ -103,7 +103,7 @@ Our AI delivers actionable intelligence in near-real-time via log analysis only.
 
 Regeneration takes the same sampled data that was used for the first attempt and sends it to the model again, along with special instructions based on your feedback about whether anything looked incorrect (missing services, wrong connections, service names), and how different they want the result to be (subtly different, or very different). 
 
-The idea is that the model gets to try again with a hint about what to focus on. The new result may be the same or different, and it may or not be more correct than the original result.
+The idea is that the model gets to try again with a hint about what to focus on. The new result may be the same or different, and it may or not be more correct than the original result. 
 
 ### What are the signal types?
 
