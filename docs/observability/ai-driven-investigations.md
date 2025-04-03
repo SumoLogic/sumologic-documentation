@@ -116,7 +116,7 @@ The signal types are:
 
 These signals are extracted based on the logs observed for the last 15 minutes.
 
-### Is customer data used to train the model?
+### Is customer data used to train the model? 
 
 No customer data is used to train the model. We use a Foundation Model (FM) with custom prompts that don’t use customer data to train.
 
