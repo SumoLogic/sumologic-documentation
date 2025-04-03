@@ -64,7 +64,7 @@ When you select a service in the list or a node in the map that has signals, a s
 
 ### Explore the AI-Driven Investigations UI
 
-Perform the following steps to explore the UI:
+Perform the following steps to explore the UI: 
 1. The legend at the bottom of the screen shows that gold nodes in the map represent services with signals, while blue nodes indicate normal, expected activity. Use the zoom buttons to resize the map.<br/><img src={useBaseUrl('img/observability/service-intelligence-size-buttons.png')} alt="Resize buttons" style={{border: '1px solid gray'}} width="200" />
 1. Click **Refresh** to refresh the services list and map with the most current version.<br/><img src={useBaseUrl('img/observability/service-intelligence-refresh.png')} alt="Refresh button" style={{border: '1px solid gray'}} width="150" />
 1. Click **History** to browse previously-generated versions.<br/><img src={useBaseUrl('img/observability/service-intelligence-history.png')} alt="Refresh button" style={{border: '1px solid gray'}} width="150" /><br/><img src={useBaseUrl('img/observability/service-intelligence-history-dialog.png')} alt="Services history" style={{border: '1px solid gray'}} width="250" />
