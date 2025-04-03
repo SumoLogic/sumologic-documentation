@@ -107,7 +107,7 @@ Sumo Logic provides the following out-of-the-box default sources of threat indic
 * **_sumo_global_feed_cs**. This is a legacy source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). ***This source will be discontinued on April 30, 2025***.
 
 :::warning
-To maintain uninterrupted threat intelligence operation, if you have created rules, saved searches, monitors, or dashboard panel queries that explicitly reference the legacy `_sumo_global_feed_cs` source, follow the directions below to update them to use the new `SumoLogic_ThreatIntel` source ***before April 30, 2025***.
+To maintain uninterrupted threat intelligence operation, if you have created rules, saved searches, monitors, or dashboard panel queries that explicitly reference the legacy `_sumo_global_feed_cs` source, follow the directions below to update them to use the new `SumoLogic_ThreatIntel` source ***before April 30, 2025***. If you need assistance, contact [Support](https://support.sumologic.com/support/).
 :::
 
 ### Migrate to the new source
