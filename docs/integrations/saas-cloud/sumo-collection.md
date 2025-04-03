@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Collection app is a comprehensive tool that offers detailed insights into the health and status of Sumo Logic collectors and sources. It enables efficient management and monitoring by tracking key parameters such as collector types, versions, operational status, and source metrics through intuitive analytics and visualizations. By providing organizations with the data they need to make informed decisions and optimize their data management strategies, the app enhances operational efficiency and facilitates proactive issue identification within the Sumo Logic ecosystem.
 
-With its comprehensive overview of collector and source activities, the app strengthens data collection infrastructure. Leveraging its analytics and visualization capabilities, organizations can drive data-driven decisions, optimize performance, and ensure seamless data collection within the Sumo Logic environment.
+With its comprehensive overview of collector and source activities, the app strengthens data collection infrastructure. Leveraging its analytics and visualization capabilities, organizations can make data-driven decisions, optimize performance, and ensure seamless data collection within the Sumo Logic environment.
 
 :::info
 This app includes [built-in monitors](#sumo-collection-monitors). For details on creating custom monitors, refer to [Create monitors for Sumo Collection app](#create-monitors-for-sumo-collection-app).
