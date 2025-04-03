@@ -36,7 +36,7 @@ Learn more about [Kickstart Data](/docs/get-started/quickstart/#getting-started-
 
 ### Source configuration
 
-The Kickstart Data source is pre-installed for all users upon creation of a [new organization](docs/manage/manage-subscription/create-and-manage-orgs).
+The Kickstart Data source is pre-installed for all users upon creation of a [new organization](/docs/manage/manage-subscription/create-and-manage-orgs).
 
 ## FAQ
 

@@ -27,7 +27,7 @@ This app uses [Sumo Logic Kickstart Data source](/docs/send-data/hosted-collecto
 
 ## Installing the Sumo Logic Kickstart Data app
 
-The Kickstart Data app is pre-installed for all users upon creation of a [new organization](docs/manage/manage-subscription/create-and-manage-orgs).
+The Kickstart Data app is pre-installed for all users upon creation of a [new organization](/docs/manage/manage-subscription/create-and-manage-orgs).
 
 1. Navigate to **App Catalog > Installed Apps** to find the Kickstart app.
 1. Click the **Kickstart Data** app tile.
