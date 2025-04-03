@@ -136,7 +136,7 @@ _sourceCategory=weblogs
 | compose src_ip]
 ```
 
-<!-- Add this after sumo://threat/cs is replaced by threatlookup":
+<!-- Add this after sumo://threat/i471 is replaced by threatlookup":
 
 ### Threatlookup queries in dashboards
 
@@ -217,6 +217,6 @@ cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM
 ```
 
 :::note
-You cannot use the cat search operator with the `_sumo_global_feed_cs` source.
+You cannot use the cat search operator with the `SumoLogic_ThreatIntel` source.
 :::
 -->
