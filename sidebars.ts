@@ -2559,6 +2559,7 @@ integrations: [
           'integrations/saas-cloud/sentinelone',
           'integrations/saas-cloud/slack',
           'integrations/saas-cloud/sophos',
+          'integrations/saas-cloud/sumo-collection',
           'integrations/saas-cloud/symantec-endpoint-security-service',
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/tenable',
