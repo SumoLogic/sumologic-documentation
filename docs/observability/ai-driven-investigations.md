@@ -38,10 +38,11 @@ The service list and map visually represents your application environment, givin
 
 ### View a summary of all service activity
 
-AI-Driven Investigations provides an AI-generated summary of all detected service signals and steps to take to remediate issues.
+AI-Driven Investigations provides an AI-generated summary of all detected service signals and steps to remediate issues.
 
-1. Click the summary button to the right of the services map. <img src={useBaseUrl('img/observability/summary-button.png')} alt="Summary button" width="30" /><br/>A **Summary** panel displays:<br/><img src={useBaseUrl('img/observability/service-intelligence-signals-summary.png')} alt="Signals summary" style={{border: '1px solid gray'}} width="300" />
-1. The summary contains observations, root cause analysis, and next steps. Carefully review the summary to learn actions you can take to address the findings. 
+1. Click the summary button to the right of the services map.<br/><img src={useBaseUrl('img/observability/summary-button.png')} alt="Summary button" style={{border: '1px solid gray'}} width="400" />
+1. The **Summary** panel will open, displaying observations, root cause analysis, and recommended next steps.<br/><img src={useBaseUrl('img/observability/service-intelligence-signals-summary.png')} alt="Signals summary" style={{border: '1px solid gray'}} width="300" />
+1. Carefully review the summary to learn actions you can take to address the findings.
 
 ### View the summary for a single service
 
@@ -54,26 +55,26 @@ When you select a service in the list or a node in the map that has signals, a s
       * **Traffic**. An increase or decrease in traffic requests to the service.
       * **Error**. Error signals detected.
       * **Saturation**. A change in resource usage of the system.
-      * **Security**. Logs that indicate security concerns. 
-   * **Services with Signals**. Show only services with signals. Normally operating services will not be shown. 
-1. Click a service in the list, or a node in the map. A **Summary** panel displays to the right showing signals of interest:<br/><img src={useBaseUrl('img/observability/service-intelligence-service-example.png')} alt="Service summary example" style={{border: '1px solid gray'}} width="800" />
-1. When you click an expand arrow on a signal, it displays an example of a log entry that illustrates the issue. You can use this information to query for logs with similar content.<br/><img src={useBaseUrl('img/observability/service-intelligence-log-example.png')} alt="Log example" style={{border: '1px solid gray'}} width="300" />
-1. Scroll to the bottom of the **Summary** pane to the **Next Steps** section. This section describes concrete steps you can take to remediate issues identified in the selected service.<br/><img src={useBaseUrl('img/observability/service-intelligence-next-steps.png')} alt="AI-Driven Investigations next steps" style={{border: '1px solid gray'}} width="300" />
+      * **Security**. Logs that indicate security concerns.
+   * **Services with Signals**. Show only services with signals. Normally operating services will not be shown.
+1. Click a service in the list, or a node in the map. The **App Service Summary** panel displays to the right showing signals of interest and recommended next steps.<br/><img src={useBaseUrl('img/observability/service-intelligence-service-example.png')} alt="Service summary example" style={{border: '1px solid gray'}} width="800" />
+1. Click an expand arrow on a signal to view an example of a log entry that illustrates the issue. You can use this information to query for logs with similar content.<br/><img src={useBaseUrl('img/observability/service-intelligence-log-example.png')} alt="Log example" style={{border: '1px solid gray'}} width="300" />
+1. Scroll to the bottom of the **App Service Summary** pane to the **Next Steps** section. This section describes concrete steps you can take to remediate issues identified in the selected service.<br/><img src={useBaseUrl('img/observability/service-intelligence-next-steps.png')} alt="AI-Driven Investigations next steps" style={{border: '1px solid gray'}} width="300" />
 1. [Open Copilot](/docs/search/copilot/#step-1-open-copilot) <img src={useBaseUrl('img/observability/copilot-logo.png')} alt="Copilot logo" width="20" /> to investigate further.
 
 ### Explore the AI-Driven Investigations UI
 
 Perform the following steps to explore the UI: 
 1. The legend at the bottom of the screen shows that gold nodes in the map represent services with signals, while blue nodes indicate normal, expected activity. Use the zoom buttons to resize the map.<br/><img src={useBaseUrl('img/observability/service-intelligence-size-buttons.png')} alt="Resize buttons" style={{border: '1px solid gray'}} width="200" />
-1. Click **Refresh** in the upper right to refresh the services list and map with the most current version.<br/><img src={useBaseUrl('img/observability/service-intelligence-refresh-button.png')} alt="Refresh button" style={{border: '1px solid gray'}} width="100" />
-1. Click **History** in the upper right to select previously-generated versions.<br/><img src={useBaseUrl('img/observability/service-intelligence-history.png')} alt="Services history" style={{border: '1px solid gray'}} width="250" />
+1. Click **Refresh** to refresh the services list and map with the most current version.<br/><img src={useBaseUrl('img/observability/service-intelligence-refresh.png')} alt="Refresh button" style={{border: '1px solid gray'}} width="150" />
+1. Click **History** to browse previously-generated versions.<br/><img src={useBaseUrl('img/observability/service-intelligence-history.png')} alt="Refresh button" style={{border: '1px solid gray'}} width="150" /><br/><img src={useBaseUrl('img/observability/service-intelligence-history-dialog.png')} alt="Services history" style={{border: '1px solid gray'}} width="250" />
    1. To open a version, select a previous version directly from the list. When you select a version, the time and date of the version appears at the top of the page:<br/><img src={useBaseUrl('img/observability/service-intelligence-historical-view-time.png')} alt="Timestamp" style={{border: '1px solid gray'}} width="250" />
    1. Click **Select Date** and **Select Time** to find a specific version. You can search for a time in the past 14 days for a desired investigation. 
    1. If an investigation does not exist for a specific date and time, you can generate it.<br/><img src={useBaseUrl('img/observability/service-intelligence-generate-button.png')} alt="Generate an investigation" style={{border: '1px solid gray'}} width="250" /> 
 1. Click the buttons on the right to regenerate the services list and map or provide feedback:<br/><img src={useBaseUrl('img/observability/service-intelligence-regenerate-and-feedback-buttons.png')} alt="Regenerate and feedback buttons" width="50" />
    * Click the **Regenerate** <img src={useBaseUrl('img/observability/service-intelligence-regenerate-button.png')} alt="Regenerate button" width="20" /> button to display this dialog:<br/><img src={useBaseUrl('img/observability/regenerate-map.png')} alt="Regenerate map" style={{border: '1px solid gray'}} width="250" />
-        1. Select from **Concerns** to provide feedback about the current view, and select from **Variations** to request how AI should automatically adjust regeneration. 
-        1. Click **Regenerate** to regenerate the service list and map with the last 15 minutes' worth of data.
+        1. Select from **Concerns** to provide feedback about the current view, and select from **Variations** to request how AI should automatically adjust regeneration.
+        1. Click **Regenerate** to regenerate the service list and map using the last 15 minutes of data.
             :::warning
             It is only necessary to regenerate if it has been longer than 15 minutes since last generation. Do not regenerate multiple times in quick succession, because doing so will not result in new results.
             :::
@@ -92,13 +93,13 @@ There is a high degree of confidence in the AI outputs as verified through human
 
 Furthermore, you can provide feedback, such as noting it is missing services.
 
-### What is generated ? 
+### What information is generated?
 
 Data is generated by passing a sample of data to the LLM for the past 15 minutes along with a prompt. This returns a "service summary" of logs along with log messages related to the signals generated, with a hypothesis of the problem and next steps for further exploration.
 
 Our AI delivers actionable intelligence in near-real-time via log analysis only. The resulting service map highlights the interconnection of various services and components. The summary and signals highlight what services are functioning normally, and any that might have errors, high traffic, or latency issues. Clicking on an individual service lets you view the specific signals generated for the service. Next steps are suggested for how to resolve any issues that might be present. From there, you can view example log lines, and dig deeper into the logs if needed. 
 
-### How does regeneration work ?
+### How does regeneration work?
 
 Regeneration takes the same sampled data that was used for the first attempt and sends it to the model again, along with special instructions based on your feedback about whether anything looked incorrect (missing services, wrong connections, service names), and how different they want the result to be (subtly different, or very different). 
 
