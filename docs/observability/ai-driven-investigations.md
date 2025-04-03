@@ -112,7 +112,7 @@ The signal types are:
 * **Traffic**. An increase or decrease in traffic requests to the service.
 * **Error**. Error signals detected.
 * **Saturation**. A change in resource usage of the system.
-* **Security**. Logs that indicate security concerns.
+* **Security**. Logs that indicate security concerns. 
 
 These signals are extracted based on the logs observed for the last 15 minutes.
 
