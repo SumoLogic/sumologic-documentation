@@ -7,10 +7,7 @@ keywords:
   - cloud-to-cloud
 description: Learn how to collect audit reporting events from Sumo Logic Kickstart Data platform.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/sumo-logic-kickstart-data/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/sumo-logic-kickstart-data/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/sumo-logic-kickstart-data/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
