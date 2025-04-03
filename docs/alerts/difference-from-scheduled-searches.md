@@ -16,7 +16,7 @@ Scheduled Searches address two primary use cases:
 
 ## Monitors
 
-Monitors are specifically designed for the first use case: alerting. They offer additional capabilities such as auto-resolution and support for multiple notification channels. Any Scheduled Searches created for alerting purposes can be moved to Monitors, including [real-time Scheduled Searches](/docs/alerts/scheduled-searches/create-real-time-alert).
+Monitors are specifically designed for the first use case: alerting. They offer additional capabilities such as auto-resolution and support for multiple notification channels. Any Scheduled Searches created for alerting purposes can be moved to Monitors.
 
 ## Feature differences
 

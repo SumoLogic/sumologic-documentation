@@ -24,7 +24,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Aggregate](/docs/search/search-query-language/group-aggregate-operators)**. A group of data returned by a search, displayed in a simple table in the Aggregates tab of the Search page.
 
-**[Alert](/docs/alerts)**. A notification you can configure for a scheduled search. There are multiple alert types: Email, Script Action, ServiceNow Connection, Webhook, Save to Index, and Real Time Alerts.
+**[Alert](/docs/alerts)**. A notification you can configure for a scheduled search. There are multiple alert types, such as Email, Script Action, ServiceNow Connection, Webhook, and Save to Index.
 
 **[Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. Sumo Logic’s Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 

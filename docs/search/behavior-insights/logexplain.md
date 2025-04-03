@@ -53,7 +53,6 @@ With the provided results you can:
 
 * Field values must be categorical.
 * [Built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata) are not supported.
-* Not supported with [Real Time alerts](../../alerts/scheduled-searches/create-real-time-alert.md).
 * [Time Compare](/docs/search/time-compare) and the [`compare` operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogExplain results.
 * Response fields `_explanation`, `_relevance`, `_test_coverage`,  and  `_control_coverage` are not supported with [Dashboard filters](/docs/dashboards/filter-template-variables).
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.

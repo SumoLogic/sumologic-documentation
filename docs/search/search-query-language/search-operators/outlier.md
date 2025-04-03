@@ -128,7 +128,11 @@ This example will only produce an aggregation table, not a chart, but the indica
 
 ### Alert on an outlier
 
-This query counts the number of errors over time and sends an alert when an outlier is detected. When an outlier is detected, the value of `<field_name>_violation` will be set to 1. In the example below, the `<field_name>` is `_count`. By creating a [Real Time Alert](/docs/alerts/scheduled-searches/create-real-time-alert.md) and sending a notification if greater than 0 results are found, you can alert on an outlier.
+This query counts the number of errors over time and sends an alert when an outlier is detected. When an outlier is detected, the value of `<field_name>_violation` will be set to 1.
+
+<!-- Real Time Alerts deprecated. Replace example. See DOCS-782.
+
+In the example below, the `<field_name>` is `_count`. By creating a [Real Time Alert](/docs/alerts/scheduled-searches/create-real-time-alert.md) and sending a notification if greater than 0 results are found, you can alert on an outlier.
 
 ```sql
 "error"
@@ -139,6 +143,7 @@ This query counts the number of errors over time and sends an alert when an ou
 | outlier delta
 | where delta_violation = 1
 ```
+-->
 
 ### Multidimensional Outlier Detection
 

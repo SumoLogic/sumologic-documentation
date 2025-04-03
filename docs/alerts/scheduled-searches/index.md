@@ -23,8 +23,8 @@ A _Scheduled Search_ is a standard [Log Search](/docs/search) that you save and 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/alerts/scheduled-searches/create-real-time-alert"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="icon" width="40"/><h4>Create a Scheduled Search Real-Time Alert</h4></a>
-  <p>Learn how to create an alert to get notified in real-time when error conditions exist.</p>
+  <a href="/docs/alerts/scheduled-searches/create-real-time-alert"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="icon" width="40"/><h4>Manage Real-Time Scheduled Search Alerts (Deprecated) </h4></a>
+  <p>Learn how to manage existing alerts to get notified in real-time when error conditions exist.</p>
   </div>
 </div>
 <div className="box smallbox card">
