@@ -26,6 +26,7 @@ Kandji is the Apple device management and security platform that empowers secure
 | 12 hours |  [List Devices](https://api-docs.kandji.io/#78209960-31a7-4e3b-a2c0-95c7e65bb5f9) |
 | 12 hours |  [Device Activities](https://api-docs.kandji.io/#80710108-fbdb-4dfd-af84-50adf15c5a23) |
 | 12 hours |  [Device Details](https://api-docs.kandji.io/#efa2170d-e5f7-4b97-8f4c-da6f84ba58b5) |
+| 12 hours |  [Device Apps](https://api-docs.kandji.io/#f8cd9733-89b6-40f0-a7ca-76829c6974df) |
 
 ## Setup
 
@@ -61,7 +62,7 @@ To configure Kandji Source:
 1. In **Bearer Token**, enter the bearer token collected from the Kandji platform.
 1. Select the **Collect Threat Details** checkbox to collect threat data. By default, **Collect Threat Details** checkbox will be selected.
 1. The **Threat Details Interval** is set for 5 minutes by default. You can adjust it based on your needs.
-1. In the Devices section, select the type of devices data: **Collect Devices**, **Collect Device Activities**, and/or **Collect Device Details**.
+1. In the Devices section, select the type of devices data: **Collect Devices**, **Collect Device Activities**, **Collect Device Details**, and/or **Collect Device Apps**.
 1. The **Devices Interval** is set for 12 hours hours by default. You can adjust it based on your needs.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, deny list, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
@@ -92,6 +93,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | collectDevices | Boolean | No | `null` | Specify if we need to collect the tenant's devices. |  |
 | collectDeviceActivities | Boolean | No | `null` | Specify if we need to collect the Device activity of the tenant. |  |
 | collectDeviceDetails | Boolean | No | `null` | Specify if we need to collect the Device details of the tenant. |  |
+| collectDeviceApps | Boolean | No | `null` | Specify if we need to collect the Device apps of the tenant. |  |
 
 ### JSON example
 
