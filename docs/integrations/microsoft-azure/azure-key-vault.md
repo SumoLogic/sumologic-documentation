@@ -59,6 +59,15 @@ To collect activity logs, refer to the [Collecting Logs for the Azure Audit App 
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
 :::
 
+
+## Installing the Azure Key Vault app
+
+Now that you have set up data collection, install the Azure Key Vault Sumo Logic app to use the pre-configured [dashboards](#viewing-the-azure-key-vault-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+
+<AppInstallNoDataSourceV2/>
+
 ## Viewing the Azure Key Vault dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
