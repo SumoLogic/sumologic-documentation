@@ -102,7 +102,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/cisco-vulnerability-management"><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="80"/><h4>Cisco Vulnerability Management</h4></a>
-  <p>Monitor and manage software vulnerabilities.</p>
+  <p>Monitor and manage your organizations software vulnerabilities.</p>
   </div>
 </div>
 <div className="box smallbox card">
