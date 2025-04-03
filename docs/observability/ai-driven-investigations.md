@@ -120,7 +120,7 @@ These signals are extracted based on the logs observed for the last 15 minutes.
 
 No customer data is used to train the model. We use a Foundation Model (FM) with custom prompts that don’t use customer data to train.
 
-### What sort of instrumentation is required?
+### What sort of instrumentation is required? 
 
 No instrumentation is required. You can send your structured and unstructured data to Sumo Logic through normal data collection to drive s.
 
