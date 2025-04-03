@@ -107,7 +107,7 @@ The idea is that the model gets to try again with a hint about what to focus on.
 
 ### What are the signal types?
 
-The signal types are:
+The signal types are: 
 * **Latency**. An increase or decrease in latency of the requests to the system.
 * **Traffic**. An increase or decrease in traffic requests to the service.
 * **Error**. Error signals detected.
