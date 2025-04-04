@@ -53,7 +53,7 @@ The supported functions are:
 Return the time series in which the average value of the CPU_User metric is greater than 95:
 
 ```sql
-metric=CPU_User | filter avg > 95`
+metric=CPU_User | filter avg > 95
 ```
 
 **Example 2**
