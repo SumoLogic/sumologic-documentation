@@ -48,7 +48,7 @@ For example, as you start typing, the system provides relevant metadata options 
 Automatically receive suggestions for relevant [fields](/docs/manage/fields) in structured data like JSON logs, making field discovery much easier.
 
 * **Field suggestions**. For structured logs, the system automatically suggests relevant fields such as `userID`, `eventType`, or `timestamp` as you type. This eliminates the need for manual inspection of logs, making it easier to filter and aggregate data.
-* **Inline suggestions**. An inline suggestion is a real-time, context-aware recommendation within the search editor. By default, the first dropdown suggestion is treated as an inline suggestion but you can use the keyboard navigations to view other suggestions as inline suggestion. To apply an inline suggestion, simply press the Tab key.
+* **Inline suggestions**. An inline suggestion is a real-time, context-aware recommendation within the search editor. By default, the first item in the dropdown is treated as an inline suggestion, but you can use the keyboard navigations to explore other suggestions, which will be shown inline. To apply an inline suggestion, press the Tab key.
 
 ### Next operator prediction
 
