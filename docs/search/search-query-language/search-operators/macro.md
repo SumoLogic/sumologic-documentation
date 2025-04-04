@@ -60,6 +60,14 @@ To create a macro, follow the steps below:
   - `isReservedIP`
   - `isValidIPv4`
   - `isValidIPv6`
+  - `matches`
+- You can only use the below listed rules language functions:
+  - `<=`
+  - `>=`
+  - `==`
+  - `!=`
+  - `<`
+  - `>`
 
 ### Example without arguments
 
