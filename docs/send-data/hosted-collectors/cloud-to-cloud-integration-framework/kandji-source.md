@@ -5,7 +5,7 @@ sidebar_label: Kandji
 tags:
   - cloud-to-cloud
   - kandji-edr
-description: The Kandji Source provides a secure endpoint to receive threat details, devices list, device activities, and device details from the Kandji platform.
+description: The Kandji Source provides a secure endpoint to receive threat details, devices list, device activities, device details, and device app information from the Kandji platform.
 ---
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/kandji/example.json';
@@ -40,7 +40,8 @@ The Kandji source requires you to provide the Endpoint URL and Bearer Token. Fol
 ### Source configuration
 
 :::note
-Threat Details endpoint is only available for EDR customers.
+- Threat Details endpoint is only available for EDR customers.
+- For iPhone and iPad, the preinstalled Apple device apps will not be reported.
 :::
 
 :::info
