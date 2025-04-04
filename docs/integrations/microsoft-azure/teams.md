@@ -97,7 +97,7 @@ Use this dashboard to:
 
 ### User Sessions
 
-The **Teams - User Sessions** dashboard provides an in depth view of the user logins and related statistics in your Teams environment
+The **Teams - User Sessions** dashboard provides an in depth view of the user logins and related statistics in your Teams environment.
 
 Use this dashboard to:
 * Identify user sessions relative to their locations and compare login statistics over time.
