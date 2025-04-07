@@ -114,7 +114,7 @@ The raw name is populated in the un-normalized name field:
 
 `user_username_raw = bob`
 
-The same would logic would apply to a hostname:
+The same logic would apply to a hostname:
 
 `device_hostname = desktop1 `
 

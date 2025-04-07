@@ -87,9 +87,8 @@ Note that in addition to tags that you manually assign to an insight, an insight
 ### UI for tagging a custom insight
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Custom Insights**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  
-1. Navigate to a custom insight.
-1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the insight editor.
-1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Tag a custom insight" style={{border: '1px solid gray'}} width="600"/>
+1. Navigate to a custom insight and select it.
+1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the insight editor. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Tag a custom insight" style={{border: '1px solid gray'}} width="600"/>
 
 ## Apply a schema key tag
 

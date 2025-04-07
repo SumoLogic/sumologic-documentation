@@ -1056,6 +1056,32 @@ It means that Custom Resource Definition has not been applied by Helm. It is [He
 kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.44.0/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
 ```
 
+### Hung/Stuck OpenTelemetryCollector K8s CRD
+
+To patch and delete CustomResourceDefinitions in Kubernetes
+
+```shell
+kubectl patch crd/opentelemetrycollectors.opentelemetry.io -p '{"metadata":{"finalizers":[]}}' --type=merge
+```
+
+Confirm that the finalizer has been removed
+
+```shell
+kubectl get opentelemetrycollectors.opentelemetry.io -o yaml > my-resource.yaml
+```
+
+If the patch command doesn't work, please edit the CRD to remove the finalizer
+
+```shell
+kubectl edit crd opentelemetrycollectors.opentelemetry.io
+```
+
+Finally, delete the CRD
+
+```shell
+kubectl delete crd/opampbridges.opentelemetry.io
+```
+
 ## Using Sumo Logic Mock
 
 Sumo Logic Mock is debugging tool, which helps to see what exactly is being sent from the Sumo Logic Collection to Sumo Logic. It may help with finding if there are any missing metrics, logs, traces, or parts of them like labels or metadata.

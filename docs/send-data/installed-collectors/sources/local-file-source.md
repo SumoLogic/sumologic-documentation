@@ -60,8 +60,8 @@ When the Sumo collector accesses a log file to read its content, the collector o
     You can have up to 32 nested symbolic links within a path expression.
     :::
 
-   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. This setting applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set this to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the **collection should begin** timestamp.
-
+   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. For example, let's say that you have a file with a modified time of `2025-01-16 16:18:18`, and the log lines within that file contain message timestamps ranging from `2025-01-11` to `2025-01-16`. Now, if **Collection should begin** is set to `2025-01-16`, the entire file will be collected including all the messages with timestamps prior to `2025-01-16`. This is because the **Collection should begin** is based solely on the file's modified time and not the individual message timestamps within the file.
+     
     :::note
     Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
     :::
@@ -91,6 +91,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. Set any of the following options under **Advanced**:
+<img src={useBaseUrl('/img/send-data/advanced-options-local-file-source.png')} alt="Advanced options for log" style={{border: '1px solid gray'}} width="600"/>
 
    * **Denylist.** Enter the path for files to exclude from the Source collection. Wildcard syntax is allowed when specifying unwanted files. For example, if you are collecting` /var/log/*.log` but don’t want to collect `unwanted*.log`, then specify `/var/log/unwanted*.log`. You can also exclude subdirectories, for example, if you are collecting` /var/log/**/*.log` but do not want to collect anything from `/var/log/unwanted `directory, specify `/var/log/unwanted`. You do not need to denylist compressed files that end with the file extensions tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files. Sumo Logic, automatically excludes these compressed file extensions when collecting data.  tar.gz files are supported
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.

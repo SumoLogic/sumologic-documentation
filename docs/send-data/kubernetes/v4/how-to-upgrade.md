@@ -5,6 +5,15 @@ sidebar_label: How to Upgrade
 description: This page describes how to upgrade Kubernetes Collection to v4.
 ---
 
+This guide walks you through upgrading to Sumo Logic Kubernetes Collection v4.0.0, including key changes, migration steps, and best practices to ensure a smooth transition. Here's what’s new:
+
+* OpenTelemetry (OTel) as the default metrics pipeline
+* Removal of Fluent Bit and Fluentd configurations
+* New ServiceMonitors and OTel processors for filtering metrics
+* Updated CRDs for OpenTelemetry Operator
+
+Before proceeding, ensure you meet the requirements and review the necessary configuration changes detailed in this guide.
+
 ## Requirements
 
 - `helm3`
@@ -44,19 +53,17 @@ There are several scenarios here, depending on the exact use case:
 
    You'll need to delete the remote write definition and [add an equivalent filter processor][otel_metrics_filter] rule to OTel.
 
-### Upgrade the Kubernetes App
+### Upgrade the Kubernetes app
 
-**When?**: If you use the [Sumo Logic Kubernetes App](/docs/integrations/containers-orchestration/kubernetes/)
+**When?**: If you use the [Sumo Logic Kubernetes app](/docs/integrations/containers-orchestration/kubernetes/)
 
-Recording rule metrics removed in version 4 were used in the Sumo Kubernetes App. A new version of the App must be installed to ensure
-compatibility with version 4 of Helm Chart. See [here][k8s_app_upgrade] for upgrade instructions.
+Recording rule metrics removed in version 4 were used in the Sumo Logic Kubernetes app. A new version of the app must be installed to ensure compatibility with version 4 of Helm Chart. See [here][k8s_app_upgrade] for upgrade instructions.
 
 [k8s_app_upgrade]: /docs/integrations/containers-orchestration/kubernetes/#upgradedowngrade-the-kubernetes-app
 
 #### Using the new app with v3
 
-To make the migration simpler, it's possible to configure v3 to be compatible with the new App. This way, you can migrate to the new App
-before migrating to version 4. The configuration for version 3 is the following:
+To make the migration simpler, it's possible to configure v3 to be compatible with the new app. This way, you can migrate to the new app before migrating to version 4. The configuration for version 3 is the following:
 
 ```yaml
 kube-prometheus-stack:
@@ -79,6 +86,44 @@ kube-prometheus-stack:
 ```
 
 #### Update custom resource definition for OpenTelemetry operator
+
+:::note
+Starting with v4.12.0, please follow the steps below.
+:::
+
+Delete any existing CRDs:
+
+```shell
+kubectl delete crd instrumentations.opentelemetry.io
+
+kubectl delete crd opentelemetrycollectors.opentelemetry.io
+
+kubectl delete crd opampbridges.opentelemetry.io
+```
+
+Install the CRDs below:
+
+```shell
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_opampbridges.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetrycollector.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetryinstrumentation.yaml --force-conflicts
+```
+
+Then, annotate and label these CRDs as below:
+
+```shell
+kubectl annotate crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io \
+  meta.helm.sh/release-name=${RELEASE_NAME} \
+  meta.helm.sh/release-namespace=${RELEASE_NAMESPACE}
+
+kubectl label crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io app.kubernetes.io/managed-by=Helm
+```
+
+:::note
+CRDs prior to v4.12.0 are below.
+:::
 
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.56.1/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
@@ -106,6 +151,28 @@ kube-prometheus-stack:
     enabled: true
   prometheusOperator:
     enabled: true
+```
+
+Starting with v4.12.0, please use the configuration below:
+
+```yaml
+sumologic:
+  metrics:
+    collector:
+      otelcol:
+        enabled: false
+    remoteWriteProxy:
+      enabled: true
+
+kube-prometheus-stack:
+  prometheus:
+    enabled: true
+  prometheusOperator:
+    enabled: true
+
+opentelemetry-operator:
+  crds:
+    create: true
 ```
 
 ## Remove remaining Fluent Bit and Fluentd configuration
@@ -169,7 +236,7 @@ tracesSampler:
 
 ## Running the helm upgrade
 
-Once you've taken care of any manual steps necessary for your configuration, run the helm upgrade:
+Once you've taken care of any manual steps necessary for your configuration, run the `helm upgrade`:
 
 ```bash
 helm upgrade --namespace "${NAMESPACE}" "${HELM_RELEASE_NAME}" sumologic/sumologic --version=4.0.0 -f new-values.yaml
