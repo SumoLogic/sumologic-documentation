@@ -128,17 +128,7 @@ This example will only produce an aggregation table, not a chart, but the indica
 
 ### Alert on an outlier
 
-This query counts the number of errors over time and sends an alert when an outlier is detected. When an outlier is detected, the value of `<field_name>_violation` will be set to 1. In the example below, the `<field_name>` is `_count`. By creating a [Real Time Alert](/docs/alerts/scheduled-searches/create-real-time-alert.md) and sending a notification if greater than 0 results are found, you can alert on an outlier.
-
-```sql
-"error"
-| timeslice by 15m
-| count as today by _timeslice
-| compare timeshift -1d as vs_yesterday // create a delta field that represents the difference between historical and current data
-| (today - today_vs_yesterday) as delta // use an Outlier to statistically monitor spikes or dips in the delta
-| outlier delta
-| where delta_violation = 1
-```
+To alert an Outlier, check the `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <consecutive> consecutive out of <window> data points` checkbox in the **Trigger Type** section while creating the monitor. For more information, refer to the [Trigger Type - Outlier detection method](/docs/alerts/monitors/create-monitor/#outlier-detection-method).
 
 ### Multidimensional Outlier Detection
 
