@@ -116,6 +116,10 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <a href="/files/c2c/sysdig-secure/example.tf" target="_blank">Download example</a>
 
+## Limitation 
+
+While ingesting runtime resultIds, this source supports a maximum of 9,000 active resultIds, exceeding this limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.
+
 ## FAQ
 
 :::info
