@@ -91,17 +91,14 @@ You can register webhooks for a [Group](https://docs.gitlab.com/ee/user/project/
 Refer to the [GitLab Webhooks documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#configure-a-webhook) to understand more.
 
 
-### Step 3: Enable GitLab Event tagging at Sumo Logic
+### Step 3: GitLab Event tagging at Sumo Logic
 
 To properly identify the event type for incoming events, Sumo Logic automatically adds the [x-gitlab-event](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html#push-events) event type to the [Fields](/docs/manage/fields) during app installation.
 
 ## Installing the GitLab App
 
-
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
-
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+<AppInstall2/>
 
 ### Troubleshooting
 
@@ -123,6 +120,9 @@ Do the following to resolve:
 
 
 ## Viewing GitLab Dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+<ViewDashboards/>
 
 ### Overview
 

@@ -156,17 +156,15 @@ To configure a GitHub Webhook:
 6. Click **Add Webhook**.
 
 
-### Enable GitHub Event tagging at Sumo Logic
+### GitHub Event tagging at Sumo Logic
 
-To properly identify the event type for incoming events, Sumo Logic automatically adds the [x-github-event](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) event type to the [Fields](/docs/manage/fields) during app installation.
+To properly identify the event type for incoming events (for example, repo:push events), Sumo Logic automatically adds the [x-github-event](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) event type to the [Fields](/docs/manage/fields) during app installation.
 
 ## Installing the GitHub App
 
-Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and dashboards to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+<AppInstall2/>
 
 #### Troubleshooting
 
@@ -177,6 +175,9 @@ If you are getting the following error after installing the app - `Field x-githu
 
 
 ## Viewing ​GitHub Dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+<ViewDashboards/>
 
 ### Overview
 

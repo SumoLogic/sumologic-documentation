@@ -1,5 +1,7 @@
 To set up collection and install the app, do the following:
-
+:::note
+    Next-Gen App: To install or update the app, you must be an account administrator or a user with Manage Apps, Manage Monitors, Manage Fields, Manage Metric Rules, Manage Collectors capability depending upon the different content types part of the app.
+:::
 1. Select **App Catalog**.
 1. In the 🔎 **Search Apps** field, run a search for your desired app, then select it.
 1. Click **Install App**.
@@ -13,11 +15,9 @@ To set up collection and install the app, do the following:
         * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
         * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
     1. Click **Next**.
-1. Use the new [Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) to configure the source.
+1. Configure the source as specified in the `Info` box above, ensuring all required fields are included.
 1. In the **Configure** section of your respective app, complete the following fields.
-    1. **Key**. Select either of these options for the data source.
-        * Choose **Source Category** and select a source category from the list for **Default Value**.
-        * Choose **Custom**, and enter a custom metadata field. Insert its value in **Default Value**.
+    1. **Field Name**. If you already have collectors and sources setup, select the configured metadata field name (eg _sourcecategory) or specify other custom metadata (eg: _collector) along with its metadata **Field Value** .
 1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 **Post-installation**

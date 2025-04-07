@@ -140,25 +140,19 @@ If you want to deployment events to multiple Sumo Logic orgs, include a `-pipe` 
 
 For reference: This is how the [bitbucket-pipelines.yml](https://bitbucket.org/app-dev-sumo/backendservice/src/master/bitbucket-pipelines.yml) looks after adding deploy pipe code to our sample Bitbucket CI/CD pipeline.
 
-### Step 4: Enable Bitbucket Event-Key tagging at Sumo Logic
+### Step 4: Bitbucket Event-Key tagging at Sumo Logic
 
 To properly identify the event type for incoming events (for example, repo:push events), Sumo Logic automatically adds the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type to the [Fields](/docs/manage/fields) during app installation.
 
 ## Installing the Bitbucket App
 
-This section provides instructions for installing the Bitbucket app.
-
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+<AppInstall2/>
 
 ## Viewing Bitbucket Dashboards
 
-This section provides descriptions and examples for each of the pre-configured app dashboards.
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+<ViewDashboards/>
 
 ### Overview
 
