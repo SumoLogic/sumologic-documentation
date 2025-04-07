@@ -87,11 +87,13 @@ To configure log collection for the Opsgenie App, do the following:
 ## Installing the Opsgenie App
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
 <AppInstall2/>
 
 ## Viewing OpsGenie Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
 <ViewDashboards/>
 
 ### Overview

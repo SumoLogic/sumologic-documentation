@@ -164,6 +164,7 @@ To properly identify the event type for incoming events (for example, repo:push 
 
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
 <AppInstall2/>
 
 #### Troubleshooting
@@ -177,6 +178,7 @@ If you are getting the following error after installing the app - `Field x-githu
 ## Viewing ​GitHub Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
 <ViewDashboards/>
 
 ### Overview

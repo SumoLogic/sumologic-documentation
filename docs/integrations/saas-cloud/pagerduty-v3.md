@@ -94,11 +94,13 @@ In the next section, install the Sumo Logic App for PagerDuty V3.
 ## Installing the PagerDuty V3 App
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
 <AppInstall2/>
 
 ## Viewing PagerDuty V3 Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
 <ViewDashboards/>
 
 ### Overview

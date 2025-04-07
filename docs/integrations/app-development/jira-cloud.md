@@ -170,11 +170,13 @@ When you configure the Webhook, enter the URL for the HTTP source you created in
 ## Installing the Jira Cloud App
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
 <AppInstall2/>
 
 ## Viewing Jira Cloud Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
 <ViewDashboards/>
 
 ### Issue Overview

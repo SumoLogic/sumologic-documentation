@@ -98,6 +98,7 @@ To properly identify the event type for incoming events, Sumo Logic automaticall
 ## Installing the GitLab App
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
 <AppInstall2/>
 
 ### Troubleshooting
@@ -122,6 +123,7 @@ Do the following to resolve:
 ## Viewing GitLab Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
 <ViewDashboards/>
 
 ### Overview

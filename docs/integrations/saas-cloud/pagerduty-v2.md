@@ -71,11 +71,13 @@ To create a PagerDuty V2 Webhook, do the following:
 ## Installing the PagerDuty V2 App
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
 <AppInstall2/>
 
 ## Viewing PagerDuty v2 Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
 <ViewDashboards/>
 
 ### Overview

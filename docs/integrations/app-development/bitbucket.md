@@ -147,11 +147,13 @@ To properly identify the event type for incoming events (for example, repo:push 
 ## Installing the Bitbucket App
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
 <AppInstall2/>
 
 ## Viewing Bitbucket Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
 <ViewDashboards/>
 
 ### Overview
