@@ -15,7 +15,7 @@ See the following articles to learn about Sumo Logic's threat intelligence capab
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/security/threat-intelligence/about-threat-intelligence"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>About Threat Intelligence</h4></a>
-  <p>Get an osverview of Sumo Logic's threat intelligence capabilities.</p>
+  <p>Get an overview of Sumo Logic's threat intelligence capabilities.</p>
   </div>
 </div>
 <div className="box smallbox card">
