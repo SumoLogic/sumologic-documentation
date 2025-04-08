@@ -118,7 +118,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ## Limitation 
 
-While ingesting runtime resultIds, this source supports a maximum of 9,000 active resultIds, exceeding this limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.
+While ingesting runtime `resultId`, this source supports a maximum of 9,000 active instances of `resultId`. Exceeding this limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.
 
 ## FAQ
 
