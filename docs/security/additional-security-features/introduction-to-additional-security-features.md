@@ -7,7 +7,15 @@ description: Learn basic concepts about using logs for security use cases.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-"Logs for Security" is Sumo Logic's full set of features that leverage logs for security use cases. These features includes apps, customizable dashboards, and tools to analyze your security data. This allows you to use Sumo Logic's core functionality, including data collection, ingestion, and storage, to produce findings that help protect your attack surfaces from threats.
+Sumo Logic’s Logs for Security provides a comprehensive foundation for security operations, with a unified platform to ingest, store, and analyze security logs in real time. AI-powered search enables teams to quickly find relevant logs, while anomaly detection highlights unusual patterns for further review. 
+
+Unlike fragmented log solutions, Sumo Logic seamlessly integrates across cloud, hybrid, and on-prem environments, reducing complexity and ensuring complete visibility into your infrastructure.
+
+Security teams can quickly access log data for security log management, cloud security monitoring, and compliance reporting. By prioritizing a logs-first approach, Sumo Logic empowers you to move beyond manual log analysis and manage your security posture with greater efficiency.
+
+## What's included?
+
+"Logs for Security" is Sumo Logic's full set of features that leverage logs for security use cases. These features include apps, customizable dashboards, and tools to analyze your security data. This allows you to use Sumo Logic's core functionality, including data collection, ingestion, and storage, to produce findings that help protect your attack surfaces from threats.
 
 You can use Sumo Logic logs for:
 * [Threat detection and investigation](/docs/security/additional-security-features/threat-detection-and-investigation). Identify and explore threats or security-related events within your assets, applications, or networks as quickly and effectively as possible.
