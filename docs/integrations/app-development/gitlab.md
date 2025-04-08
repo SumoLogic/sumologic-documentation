@@ -91,21 +91,15 @@ You can register webhooks for a [Group](https://docs.gitlab.com/ee/user/project/
 Refer to the [GitLab Webhooks documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#configure-a-webhook) to understand more.
 
 
-### Step 3: Enable GitLab Event tagging at Sumo Logic
+### Step 3: GitLab Event tagging at Sumo Logic
 
-Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-gitlab-event](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html#push-events) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
-2. Add Field ‎**x-GitLab-event**‎.
-
+To properly identify the event type for incoming events, Sumo Logic automatically adds the [x-gitlab-event](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html#push-events) event type to the [Fields](/docs/manage/fields) during app installation.
 
 ## Installing the GitLab App
 
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
-
+<AppInstall2/>
 
 ### Troubleshooting
 
@@ -127,6 +121,10 @@ Do the following to resolve:
 
 
 ## Viewing GitLab Dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
