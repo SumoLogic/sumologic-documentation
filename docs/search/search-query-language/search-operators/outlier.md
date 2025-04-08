@@ -128,7 +128,7 @@ This example will only produce an aggregation table, not a chart, but the indica
 
 ### Alert on an outlier
 
-To alert an Outlier, check the `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <consecutive> consecutive out of <window> data points` checkbox in the **Trigger Type** section while creating the monitor. For more information, refer to the [Trigger Type - Outlier detection method](/docs/alerts/monitors/create-monitor/#outlier-detection-method).
+To alert on an outlier, check the `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <consecutive> consecutive out of <window> data points` checkbox in the **Trigger Type** section while creating the monitor. For more information, refer to the [Trigger Type - Outlier detection method](/docs/alerts/monitors/create-monitor/#outlier-detection-method).
 
 ### Multidimensional Outlier Detection
 
