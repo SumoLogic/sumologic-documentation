@@ -17,6 +17,10 @@ With its comprehensive overview of collector and source activities, the app stre
 This app includes [built-in monitors](#sumo-collection-monitors). For details on creating custom monitors, refer to [Create monitors for Sumo Collection app](#create-monitors-for-sumo-collection-app).
 :::
 
+:::tip
+For related info on collector health events, see [this doc](/docs/manage/health-events).
+:::
+
 ## Log types
 
 This app uses Sumo Logic’s [Sumo Collection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source/) to collect the collectors and source logs from the Sumo Logic platform.
