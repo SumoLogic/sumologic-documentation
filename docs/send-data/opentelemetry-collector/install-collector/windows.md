@@ -18,7 +18,7 @@ Minimal resource requirements are the following:
 * 200 MB of disk space
 * 64 MB of RAM
 
-Supported Versions
+Supported Versions:
 
 * Windows 10 and up, Windows Server 2016 and up
 
@@ -29,6 +29,14 @@ You can install our OpenTelemetry Collector using either of the following method
 * [UI Installation](#ui-installation)
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
+
+:::info
+Whitelist the following repository URLs to allow a seamless installation:
+
+* [packages.sumologic.com](https://packages.sumologic.com/)
+* [d3fo0g5hm7lbuv.cloudfront.net](https://d3fo0g5hm7lbuv.cloudfront.net/)
+* [packagecloud.io](https://packagecloud.io/)
+:::
 
 ### UI Installation
 
