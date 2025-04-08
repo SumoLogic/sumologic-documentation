@@ -125,6 +125,7 @@ In this step, you configure a Hosted Collector to receive Webhook Events from Bi
 8. **Triggers** - Click on Choose from a full list of triggers, and choose all triggers under Repository, Issue and Pull Request.
 9. Click **Save**
 
+
 ### Step 3: Configure the Bitbucket CI/CD Pipeline to Collect Deploy Events
 
 A Bitbucket pipe needs to be configured to send code deploy status to Sumo Logic. Add the following pipe code to the step section of your deployment part of the `bitbucket-pipelines.yml` file. Replace `SUMOLOGIC_HTTP_URL` with HTTP Source URL configured in Step 1.
@@ -140,9 +141,14 @@ If you want to deployment events to multiple Sumo Logic orgs, include a `-pipe` 
 
 For reference: This is how the [bitbucket-pipelines.yml](https://bitbucket.org/app-dev-sumo/backendservice/src/master/bitbucket-pipelines.yml) looks after adding deploy pipe code to our sample Bitbucket CI/CD pipeline.
 
+
 ### Step 4: Enable Bitbucket Event-Key tagging at Sumo Logic
 
-To properly identify the event type for incoming events (for example, repo:push events), Sumo Logic automatically adds the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type to the [Fields](/docs/manage/fields) during app installation.
+Sumo Logic needs to understand the event type for incoming events (for example, repo:push events). To enable this, the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+2. Add Field ‎**X-Event-Key**‎.<br/><img src={useBaseUrl('img/integrations/app-development/BB_Collect_Log.png')} alt="Bitbucket" />
+
 
 ## Installing the Bitbucket App
 
