@@ -49,7 +49,7 @@ The **Overview** dashboard shows you the frequency of Domain threats by Actor, L
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Overview_Dashboard.png')} alt="Threat Intel Dashboard" />
 
-* **Welcome to the Threat Intel Quick Analysis App.** Informational panel to help you find information on [optimization](#threat-intel-optimization) and [FAQs](#threat-intel-faq) on working with the Threat Intel database.
+* **Welcome to the Threat Intel Quick Analysis App.** Informational panel to help you work with the app.
 * **Number of Log Lines (Events) Scanned for Threats.** Count of log lines scanned across all selected sources for the last 15 minutes.  
 * **IP Threat Count.** Count of threats related to malicious IPs, for the last 15 minutes.
 * **File Name Threat Count.** Count of threats related to malicious file names, for the last 15 minutes.  
@@ -241,37 +241,6 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
    | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
    ```
-2. Now, you can run your Threat Intel query on top of this view:
-  ```sql
-  _view=cylance_threat
-  | count by src_ip
-  ```
-  
-## Threat Intel FAQ
-
-#### What is the CrowdStrike Integration for Sumo Logic?
-
-Sumo Logic has expanded its security offerings by allowing customers to analyze their logs for potential threats and indicators of compromise. In partnership with CrowdStrike, Sumo Logic maintains an updated Threat Intelligence database that can be correlated with log data through queries. The Sumo Logic / CrowdStrike integration has two parts:
-
-* Sumo Logic maintains an up-to-date copy of CrowdStrike’s threat database.
-* Sumo customers can now use the CrowdStrike database in threat analysis queries over their logs (through a new lookup operator).
-
-The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
-
-
-
-#### What does the Threat Intel Quick Analysis App do?
-
-This App scans all Sumo logs and parses (using regex) IP/Email/URL/Domain/File Name fields for comparison against the threat feed from CrowdStrike. Think of it as an Inner Join between parsed fields and the threat table.
-
-This application can be slow to load depending on the volume of data you scan based on time, source category, etc.  We **highly recommend** that you apply additional filter conditions as you screen your logs or run these types of searches on a schedule.
-
-
-
-#### How often do you refresh the threat feed from CrowdStrike?
-
-The database is updated once per day. We have implemented a multi-layer cache for performance enhancements rather than returning to the master database on each query.
-=======
 <!-- Replace the preceding code with the following after `sumo://threat/cs` is replaced by `threatlookup`:
    ```
     _sourceCategory=cylance
@@ -283,7 +252,7 @@ The database is updated once per day. We have implemented a multi-layer cache fo
     | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
    ```
    -->
-1. Now, you can run your Threat Intel query on top of this view:
+2. Now, you can run your Threat Intel query on top of this view:
      ```sql
      _view=cylance_threat
      | count by src_ip
