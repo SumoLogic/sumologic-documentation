@@ -3036,7 +3036,7 @@ integrations: [
         'security/threat-intelligence/upload-formats',
         'security/threat-intelligence/threat-intelligence-mapping',
       ],
-    },
+    },  
   ],
   api: [
     {
