@@ -21,13 +21,14 @@ Previously, it was recommended to use receipt time instead of message time to av
 Currently, **Searchable Time** is only available for the Log Search UI page and Scheduled Search queries.
 :::
 
-## Configure queries to run the Searchable Time
+## Run a search by Searchable Time
 
-To run a query utilizing **Searchable Time**, you can add the following query flag to your request. This flag will override either the Message Time or Receipt Time, allowing the query to execute based on Searchable Time. If the query flag is not enabled for the particular customer or feature, it will be ignored without any warning.
+Follow the below steps to run a search by Searchable Time:
 
-```_queryFlag = useSearchableTime```
-
-In the results section, you will find **Searchable Time** listed in the **Displayed Fields** of the Field Browser.
+1. Enter your query in the search text box.
+1. Choose the time range for the query.
+1. Click the gear icon to open the **Search Config** menu and toggle **Searchable Time** on.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-option.png')} alt="searchable-time-option" style={{border:'1px solid gray'}} width="500" />     
+1. Review the search results for wide discrepancies between message time, receipt time, and searchable time.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-results-messages-tab.png')} alt="searchable-time-results-messages-tab" style={{border:'1px solid gray'}} width="800" />
 
 ## Limitations
 
