@@ -10,12 +10,6 @@ description: Learn how to collect audit reporting events from Sumo Logic Kicksta
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 <img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="thumbnail icon" width="55"/>
 
 The Sumo Logic Kickstart Data source ingests logs and metrics into Sumo Logic for our pre-loaded OpenTelemetry demo application. This source is engineered to provide a continuous stream of data that simulates a specific scenario, highlighting latency spikes across various services.
