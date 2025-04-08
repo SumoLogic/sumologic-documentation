@@ -6,36 +6,18 @@ description: Span Analytics APIs allow you to browse spans collected in the syst
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiErrors from '../reuse/api-errors.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/operations/distributed-operations.png')} alt="Thumbnail icon" width="50"/>
 
-The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information, see [Spans](/docs/apm/traces/spans).
+The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information, see [Spans](/docs/apm/spans).
 
 :::tip Other Tracing APIs
 See also: [Service Map APIs](/docs/api/service-map) and [Traces APIs](/docs/api/tracing).
 
 Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
 :::
-
-
-## Endpoints for API access  
-
-Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
-
-See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
-
-An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
-
-
-## Session Timeout
-
-While the span analytics query is running you need to request the query status based on the query ID. The API keeps the query alive by either polling for status or gathering results. If the search job is not kept alive by API requests, it is canceled after fifteen minutes. When a query is canceled after fifteen minutes of inactivity, you will get a 404 status.
-
-## Errors
-
-import ApiErrors from '../reuse/api-errors.md';
-
-<ApiErrors/>
 
 ## Documentation   
 
@@ -52,5 +34,30 @@ Select the documentation link for your deployment:
 | FED        | https://api.fed.sumologic.com/docs/#tag/spanAnalytics |
 | IN         | https://api.in.sumologic.com/docs/#tag/spanAnalytics  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/spanAnalytics  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/spanAnalytics  |
 | US1        | https://api.sumologic.com/docs/#tag/spanAnalytics     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/spanAnalytics |
+
+## Required role capabilities
+
+<ApiRoles/>
+
+* Data Management
+    * Download Search Results
+    * View Collectors
+
+## Endpoints for API access  
+
+Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
+
+See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
+
+An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
+
+## Session Timeout
+
+While the span analytics query is running you need to request the query status based on the query ID. The API keeps the query alive by either polling for status or gathering results. If the search job is not kept alive by API requests, it is canceled after fifteen minutes. When a query is canceled after fifteen minutes of inactivity, you will get a 404 status.
+
+## Errors
+
+<ApiErrors/>

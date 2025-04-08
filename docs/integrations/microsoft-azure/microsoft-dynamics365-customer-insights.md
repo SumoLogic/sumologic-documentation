@@ -37,7 +37,7 @@ Follow the [prerequisites](https://learn.microsoft.com/en-us/dynamics365/custome
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. Create an Event Hubs namespace as described in [step 2 of the prerequisites section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#prerequisites). Here, you do not have to create an Event Hub Instance in step 3 since `Microsoft Dynamics 365 Customer Insights` automatically creates the below two Event Hubs:
+1. Create an Event Hubs namespace as described in step 2 of [Vendor configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#vendor-configuration). Here, you do not have to create an Event Hub Instance in step 3 since `Microsoft Dynamics 365 Customer Insights` automatically creates the below two Event Hubs:
     * **insight-logs-audit**. It contains audit events.
     * **insight-logs-operational**. It contains operational events.
 2. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) for the entire namespace with the `Listen` claim or you can use the existing default `RootManageSharedAccessKey` policy. Copy the `Primary key` associated with this policy. For more details, refer to steps 4 and 5 of the [Vendor configuration section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#vendor-configuration).

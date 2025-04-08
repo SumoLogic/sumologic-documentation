@@ -43,7 +43,7 @@ In this step, you configure a Syslog Source to collect Linux OS log messages. Yo
 
 ### Configure an Installed Collector
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.
@@ -63,7 +63,7 @@ In this step, you configure a Syslog Source to collect Linux OS log messages. Yo
 
 ### Configure a Syslog Source
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 
@@ -86,6 +86,6 @@ In this step, you configure forwarding to the the Syslog Source. Follow the ins
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  Kanso-->
-1. On the **Log Mappings** page search for "Linux OS" and check under  **Record Volume.** A list of mappers for Linux OS Syslog will appear and you can see if logs are coming in. <br/><img src={useBaseUrl('img/cse/record-volume.png')} alt="Record volume" style={{border: '1px solid gray'}} width="600"/>
-1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Linux OS security records.<br/><img src={useBaseUrl('img/cse/search.png')} alt="Search" style={{border: '1px solid gray'}} width="400"/>  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. On the **Log Mappings** tab search for "Linux OS" and check the **Records** columns. A list of mappers for Linux OS Syslog will appear and you can see if logs are coming in.
+1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Linux OS security records.<br/><img src={useBaseUrl('img/cse/search.png')} alt="Search" style={{border: '1px solid gray'}} width="400"/>  

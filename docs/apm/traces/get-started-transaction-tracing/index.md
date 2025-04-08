@@ -59,7 +59,7 @@ Learn how to collect telemetry data from applications written in the following p
 </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/traces/go-logo.png')} alt="thumbnail icon" width="130"/>
+    <img src={useBaseUrl('img/apm/traces/go-logo.png')} alt="thumbnail icon" width="130"/>
     <h4><a href="/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go">Go (Golang)</a></h4>
     </div>
   </div>

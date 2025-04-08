@@ -28,7 +28,7 @@ Hover your mouse over the status icon to view a tooltip with a count of the dete
 **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/).
 
 :::note
-The checkbox only shows up if you have CSE and if the C2C already have CSE content like parsers and rules.
+The checkbox only shows up if you have Cloud SIEM and if the C2C already has Cloud SIEM content like parsers and rules.
 :::
 
 | Field | Value | Description |
@@ -41,9 +41,9 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
-| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry indefinitely. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | FirstPartyGenericError |
+| VendorConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | VendorConfigError  |
+| VendorGeneric | Normally due to an error communicating with the vendor generic APIs. | Yes | The Source will retry indefinitely. | VendorGenericError |
+| SumoLogicGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | SumoLogicGenericError |
 
 ## Restarting your Source
 

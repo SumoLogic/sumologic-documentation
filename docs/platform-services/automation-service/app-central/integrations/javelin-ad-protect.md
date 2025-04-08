@@ -1,7 +1,6 @@
 ---
 title: Javelin AD Protect
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

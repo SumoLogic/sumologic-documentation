@@ -3,7 +3,6 @@ slug: /apm
 title: Application Performance Monitoring
 sidebar_label: APM, RUM, and Traces
 description: Monitor user and app behavior with Sumo Logic trace analytics and real user monitoring.
-tags: [apm]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

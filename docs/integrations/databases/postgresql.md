@@ -20,7 +20,7 @@ This guide provides an overview of the Sumo app for PostgreSQL features and Dash
 [PostgreSQL](https://www.postgresql.org/) is an open source object-relational database that extends the robustness SQL language to safely store and scale extensive data workloads.
 
 
-## Sample Logs and Queries
+## Sample log messages
 
 ```json title="Sample Kubernetes log message"
 {
@@ -35,7 +35,9 @@ This guide provides an overview of the Sumo app for PostgreSQL features and Dash
 2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
 ```
 
-This sample Query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
+## Sample queries
+
+This sample query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
 
 ```txt title="Query String"
 _sourceCategory=/PostgreSQL/*  db_system=postgresql db_cluster={{db_cluster}}
@@ -46,7 +48,7 @@ _sourceCategory=/PostgreSQL/*  db_system=postgresql db_cluster={{db_cluster}}
 | count by date, time, severity, db, user, msg
 ```
 
-## Collecting Logs and Metrics from PostgreSQL
+## Collecting logs and metrics from PostgreSQL
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for PostgreSQL. This app works for PostgreSQL database clusters running on PostgreSQL versions 11.x or 12.x.
 
@@ -235,7 +237,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
   Since pods are frequently killed and spawned it’s recommended to use operators like this [postgresql operator](https://github.com/CrunchyData/postgres-operator) so that when new pods are created the annotations and labels are automatically applied using the ConfigMap or CRD based configurations.
 
 5. Add an FER to normalize the fields in Kubernetes environments. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
-   1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
    2. Click the **+ Add** button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
    4. Enter the following options:
@@ -358,7 +360,7 @@ Perform the steps outlined below for each PostgreSQL database server.
     Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQL address” Entities.
     :::
 
-   3. Ensure that the `db_cluster` and `environment` values are the same as they were configured in the [Configure and start telegraf section](#configure-and-start-telegraf).
+   3. Ensure that the `db_cluster` and `environment` values are the same as they were configured for Telegraf in the [Configure metrics collection](#configure-metrics-collection-1).
    4. Configure the **Advanced** section:
       * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
       * **Time Zone.** Use **the timezone from log file** option.
@@ -426,7 +428,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#from-the-preferences-page). Please identify which deployment your Sumo Logic account is in, using this [ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using this [ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for PostgreSQL alerts: The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/postgresql). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**postgresql**/
@@ -504,10 +506,10 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Version selection is not available for all apps.
 :::
 3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom PostgreSQL cluster filter. Examples:
       * For all PostgreSQL clusters: `db_cluster=**`
-      * For a specific cluster: `db_cluster=postgresql.dev.01`. 
+      * For a specific cluster: `db_cluster=postgresql.dev.01`.
       * Clusters within a specific environment: `db_cluster=postgresql-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection)
    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library.**
@@ -613,150 +615,6 @@ Use this dashboard to:
 * Monitor sequential scans and index scans and determine if executed queries are accessing them for a relation.
 * Track index utilization of existing indexes in a relation.
 
-## PostgreSQL Metrics
-
-Here are the metrics available for PostgreSQL.
-
-<table><small>
-  <tr>
-   <td>PostgreSQL Metrics List</td>
-  </tr>
-  <tr>
-   <td>postgresql_numbackends</td>
-  </tr>
-  <tr>
-   <td>postgresql_xact_commit</td>
-  </tr>
-  <tr>
-   <td>postgresql_xact_rollback</td>
-  </tr>
-  <tr>
-   <td>postgresql_blks_read   </td>
-  </tr>
-  <tr>
-   <td>postgresql_blks_hit   </td>
-  </tr>
-  <tr>
-   <td>postgresql_tup_inserted   </td>
-  </tr>
-  <tr>
-   <td>postgresql_tup_updated   </td>
-  </tr>
-  <tr>
-   <td>postgresql_tup_deleted   </td>
-  </tr>
-  <tr>
-   <td>postgresql_deadlocks   </td>
-  </tr>
-  <tr>
-   <td>postgresql_tup_fetched   </td>
-  </tr>
-  <tr>
-   <td>postgresql_tup_returned   </td>
-  </tr>
-  <tr>
-   <td>postgresql_checkpoints_timed   </td>
-  </tr>
-  <tr>
-   <td>postgresql_checkpoints_req   </td>
-  </tr>
-  <tr>
-   <td>postgresql_buffers_checkpoint   </td>
-  </tr>
-  <tr>
-   <td>postgresql_buffers_clean   </td>
-  </tr>
-  <tr>
-   <td>postgresql_buffers_backend   </td>
-  </tr>
-  <tr>
-   <td>postgresql_stat_ssl_compression_count   </td>
-  </tr>
-  <tr>
-   <td>postgresql_replication_delay   </td>
-  </tr>
-  <tr>
-   <td>postgresql_replication_lag   </td>
-  </tr>
-  <tr>
-   <td>postgresql_replay_lag   </td>
-  </tr>
-  <tr>
-   <td>postgresql_flush_lag   </td>
-  </tr>
-  <tr>
-   <td>postgresql_write_lag   </td>
-  </tr>
-  <tr>
-   <td>postgresql_db_size   </td>
-  </tr>
-  <tr>
-   <td>postgresql_num_locks </td>
-  </tr>
-  <tr>
-   <td>postgresql_seq_scan   </td>
-  </tr>
-  <tr>
-   <td>postgresql_seq_tup_read   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_scan   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_tup_fetch   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_tup_ins   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_tup_upd   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_tup_del   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_tup_hot_upd   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_live_tup   </td>
-  </tr>
-  <tr>
-   <td>postgresql_n_dead_tup</td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_scan   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_tup_read   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_tup_fetch   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_blks_read </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_blks_hit   </td>
-  </tr>
-  <tr>
-   <td>postgresql_heap_blks_read   </td>
-  </tr>
-  <tr>
-   <td>postgresql_heap_blks_hit   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_blks_read   </td>
-  </tr>
-  <tr>
-   <td>postgresql_idx_blks_hit   </td>
-  </tr>
-  <tr>
-   <td>postgresql_index_size   </td>
-  </tr>
-  <tr>
-   <td>postgresql_table_size   </td>
-  </tr></small>
-</table>
 
 
 ## PostgreSQL Alerts
@@ -765,17 +623,71 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 
 **Sumo Logic provides the following out-of-the-box alerts for PostgreSQL:**
 
-The  metrics queries are derived as per[ Prometheus rules](https://awesome-prometheus-alerts.grep.to/rules.html).
+The metrics queries are derived as per [Prometheus rules](https://awesome-prometheus-alerts.grep.to/rules.html).
 
 | Alert Name                                        | Alert Description and conditions                                                                                                                                                                                                | Alert Condition                                                                                            | Recover Condition                 |
 |:---------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------|:-----------------------------------|
-| PostgreSQL - Instance Down                        | This alert fires when the Postgres instance is down                                                                                                                                                                             | `>=`1                                                                                                        | < 1                               |
-| PostgreSQL - TooManyConnections                   | This alert fires when we detect that a PostgreSQL instance has too many (90% of allowed) connections)                                                                                                                           | `>=` 90                                                                                                      | < 90                              |
-| PostgreSQL - SlowQueries                          | This alert fires when we detect that the PostgreSQL instance is executing slow queries                                                                                                                                          | `>=` 1                                                                                                       | < 1                               |
-| PostgreSQL - Commit Rate Low                      | This alert fires when we detect that Postgres seems to be processing very few transactions.                                                                                                                                     | commit rate < 10                                                                                           | commit rate `>=` 10                 |
+| PostgreSQL - Instance Down                        | This alert fires when the Postgres instance is down                                                                                                                                                                             | \>= 1                                                                                                        | < 1                               |
+| PostgreSQL - TooManyConnections                   | This alert fires when we detect that a PostgreSQL instance has too many (90% of allowed) connections)                                                                                                                           | \>= 90                                                                                                      | < 90                              |
+| PostgreSQL - SlowQueries                          | This alert fires when we detect that the PostgreSQL instance is executing slow queries                                                                                                                                          | \>= 1                                                                                                       | < 1                               |
+| PostgreSQL - Commit Rate Low                      | This alert fires when we detect that Postgres seems to be processing very few transactions.                                                                                                                                     | commit rate < 10                                                                                           | commit rate \>= 10                 |
 | PostgreSQL - High Rate of Statement Timeout       | This alert fires when we detect Postgres transactions show a high rate of statement timeouts                | timeout rate > 3                                                                                           | timeout rate < 3                  |
-| PostgreSQL - High Rate Deadlock                   | This alert fires when we detect deadlocks in a Postgres instance     | deadlock rate `>=`1          | deadlock rate `<`1                  |
+| PostgreSQL - High Rate Deadlock                   | This alert fires when we detect deadlocks in a Postgres instance     | deadlock rate \>= 1          | deadlock rate \< 1                  |
 | PostgreSQL - High Replication Lag                 | This alert fires when we detect that the Postgres Replication lag (in bytes) is high.                                                                                                                                           | > 1000000000 bytes                                                                                         | < 1000000000 bytes                |
-| PostgreSQL - SSL Compression Active               | This alert fires when we detect database connections with SSL compression are enabled. This may add significant jitter in replication delay. Replicas should turn off SSL compression via `sslcompression=0` in `recovery.conf` | > 0                 | `<=` 0                              |
+| PostgreSQL - SSL Compression Active               | This alert fires when we detect database connections with SSL compression are enabled. This may add significant jitter in replication delay. Replicas should turn off SSL compression via `sslcompression=0` in `recovery.conf` | > 0                 | \<= 0                              |
 | PostgreSQL - Too Many Locks Acquired              | This alert fires when we detect that there are too many locks acquired on the database. If this alert happens frequently, you may need to increase the postgres setting max_locks_per_transaction.                              | > 20 percent of max allowed locks assuming default max connection = 100 and max_locks per transaction = 64 | < 20 percent of max allowed locks |
-| PostgreSQL - Access from Highly Malicious Sources | This alert will fire when a Postgres instance is accessed from known malicious IP addresses.                                                                                                                                    | > 0                                                                                                        | `<=` 0                              |
+| PostgreSQL - Access from Highly Malicious Sources | This alert will fire when a Postgres instance is accessed from known malicious IP addresses.                                                                                                                                    | > 0                                                                                                        | \<= 0                              |
+
+
+## PostgreSQL Metrics
+
+<details>
+<summary>Here are the metrics available for PostgreSQL (click to expand).</summary>
+
+postgresql_numbackends<br/>
+postgresql_xact_commit<br/>
+postgresql_xact_rollback<br/>
+postgresql_blks_read<br/>
+postgresql_blks_hit<br/>
+postgresql_tup_inserted<br/>
+postgresql_tup_updated<br/>
+postgresql_tup_deleted<br/>
+postgresql_deadlocks<br/>
+postgresql_tup_fetched<br/>
+postgresql_tup_returned<br/>
+postgresql_checkpoints_timed<br/>
+postgresql_checkpoints_req<br/>
+postgresql_buffers_checkpoint<br/>
+postgresql_buffers_clean<br/>
+postgresql_buffers_backend<br/>
+postgresql_stat_ssl_compression_count<br/>
+postgresql_replication_delay<br/>
+postgresql_replication_lag<br/>
+postgresql_replay_lag<br/>
+postgresql_flush_lag<br/>
+postgresql_write_lag<br/>
+postgresql_db_size<br/>
+postgresql_num_locks<br/>
+postgresql_seq_scan<br/>
+postgresql_seq_tup_read<br/>
+postgresql_idx_scan<br/>
+postgresql_idx_tup_fetch<br/>
+postgresql_n_tup_ins<br/>
+postgresql_n_tup_upd<br/>
+postgresql_n_tup_del<br/>
+postgresql_n_tup_hot_upd<br/>
+postgresql_n_live_tup<br/>
+postgresql_n_dead_tup<br/>
+postgresql_idx_scan<br/>
+postgresql_idx_tup_read<br/>
+postgresql_idx_tup_fetch<br/>
+postgresql_idx_blks_read<br/>
+postgresql_idx_blks_hit<br/>
+postgresql_heap_blks_read<br/>
+postgresql_heap_blks_hit<br/>
+postgresql_idx_blks_read<br/>
+postgresql_idx_blks_hit<br/>
+postgresql_index_size<br/>
+postgresql_table_size<br/>
+
+</details>

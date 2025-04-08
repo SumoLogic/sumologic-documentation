@@ -1,7 +1,6 @@
 ---
 title: CrowdStrike Falcon Intelligence
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

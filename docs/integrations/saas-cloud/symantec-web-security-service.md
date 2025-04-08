@@ -51,7 +51,7 @@ This app uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/
     ]
 }
 ```
-## Sample query
+## Sample queries
 
 ```sql title="Unique Inbound Domains"
 _sourceCategory=swssDev
@@ -61,27 +61,33 @@ _sourceCategory=swssDev
 | count_distinct(id)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Symantec Web Security Service Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source/) for the Symantec Web Security Service App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Symantec Web Security Service Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Symantec Web Security Service app is properly integrated and configured to collect and analyze your Symantec Web Security Service data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Symantec Web Security Service app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Symantec Web Security Service](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Symantec Web Security Service app is properly integrated and configured to collect and analyze your Symantec Web Security Service data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Upgrading the Symantec Web Security Service app (Optional)
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+<AppCollectionOPtion1/>
 
-<AppUpdate/>
+### Use an existing collector and install the app
 
-## Uninstalling the Symantec Web Security Service app (Optional)
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+<AppCollectionOPtion2/>
 
-<AppUninstall/>
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Symantec Web Security Service dashboards
 
@@ -96,3 +102,15 @@ The **Symantec Web Security Service - Security Overview** dashboard provides a c
 ### Web Activity Overview
 
 The **Symantec Web Security Service - Web Activity Overview** dashboard provides a comprehensive view of the web activity status through various widgets. It includes widgets for blocked websites by category, blocked user agents, number of blocked sites over time, blocked sites, bytes sent/received over time, Layer 4 result actions, requests by the user, time spent processing requests by the user, bandwidth usage by user, web activity by total hits, web activity by unique users, and top 10 URI extensions. This information helps you to monitor and manage network security in real time, which allows you to quickly identify and respond to potential threats. With Symantec Web Security Service, businesses can ensure a safe browsing experience and protect against various online threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Web-Activity-Overview.png')} alt="Symantec-Web-Security-Service-Web-Activity-Overview" width="800"/>
+
+## Upgrade/Downgrade the Symantec Web Security Service app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Symantec Web Security Service app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

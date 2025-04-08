@@ -64,7 +64,7 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket in y
 2. Confirm that logs are being delivered to the Amazon S3 bucket.
 
 
-## Collecting Logs for the AWS CloudTrail App
+## Collecting logs for the AWS CloudTrail App
 
 This section has instructions for configuring log collection for the AWS CloudTrail app. If you have more than one environment that generates CloudTrail data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment. Learn more [here](#configuring-the-aws-cloudtrail-app-in-multiple-environments).
 
@@ -77,7 +77,7 @@ To configure an AWS CloudTrail Source, perform these steps:
 3. [Enable Sumo to track AWS Admin activity](#enable-sumo-logic-to-track-aws-admin-activity). This step is optional, but if you do not do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
 4. Install the Sumo Logic App for AWS CloudTrail.
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account.md) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account) at any time.
 
 
 ### Field Extraction Template

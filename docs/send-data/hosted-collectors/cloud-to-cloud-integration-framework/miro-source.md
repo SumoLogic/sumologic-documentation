@@ -7,7 +7,7 @@ description: Learn how to configure the Miro Source Cloud-to-Cloud connector for
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/miro-logo.png')} alt="img/send-data/miro-logo.png" width="50"/>
+<img src={useBaseUrl('img/send-data/miro-logo.png')} alt="Miro logo" width="50"/>
 
 The Miro Source API integration ingests audit logs obtained from the [Audit log API](https://developers.miro.com/docs/rest-api-reference-guide#audit-logs). You will be able to collect audit logs activity from your Miro platform using our new Miro Cloud-to-Cloud Source connector.
 

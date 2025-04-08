@@ -176,7 +176,7 @@ _sourceCategory=aws/guardduty
 
 </details>
 
-## Collecting Logs for the Amazon GuardDuty App
+## Collecting logs for the Amazon GuardDuty App
 
 This section has instructions for collecting logs for the Amazon GuardDuty App.
 

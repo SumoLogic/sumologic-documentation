@@ -21,7 +21,7 @@ The Cisco ASA App gives you insight into website visitor patterns, monitors infr
 The Cisco ASA App assumes logs from the Cisco Adaptive Security Appliance (ASA) firewall product.
 
 
-### Sample log
+### Sample log messages
 
 ```json
 Tue Aug 15 23:30:09 %ASA-6-302016: Teardown UDP connection 40 for outside:44.44.4.4/500 to inside:44.44.2.2/500 duration 0:02:02 bytes 1416
@@ -103,18 +103,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Cisco ASA app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Cisco ASA app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Cisco ASA dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -166,3 +154,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Parameterized Search.** Log Details with counts.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-ASA-Logs-Analytics.png')} alt="Cisco_ASA dashboards" />
+
+## Upgrade/Downgrade the Cisco ASA app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cisco ASA app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

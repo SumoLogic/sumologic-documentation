@@ -146,7 +146,7 @@ on t1.denomGroup = t2.denomGroup
 
 </details>
 
-## Collecting Logs for the Global Intelligence for AWS CloudTrail DevOps App
+## Collecting logs for the Global Intelligence for AWS CloudTrail DevOps App
 
 If you already have AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps in this section and go to [Installing the App](#installing-the-global-intelligence-for-aws-cloudtrail-devops-app).
 

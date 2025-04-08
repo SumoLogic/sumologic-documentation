@@ -1,7 +1,6 @@
 ---
 title: Tufin SecureChange
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

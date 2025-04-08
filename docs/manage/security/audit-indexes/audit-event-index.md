@@ -11,36 +11,21 @@ description: The Audit Event Index provides event logs in JSON on your account's
 | Cloud Flex | Trial, Enterprise |
 | Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-The **Audit Event Index** contains event logs in JSON format on account activities, allowing you to monitor and audit changes. Enterprise accounts have the Audit Event Index enabled and available to search by default. You can use the [Enterprise Audit Apps](/docs/integrations/sumo-apps/enterprise-audit) to visually display data from the Audit Event Index for monitoring and analysis.
+The Audit Event Index contains event logs in JSON format on account activities, allowing you to monitor and audit changes. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API. Enterprise accounts have the Audit Event Index enabled and available to search by default. You can use the [Enterprise Audit Apps](/docs/integrations/sumo-apps/enterprise-audit) to visually display data from the Audit Event Index for monitoring and analysis.
+
+This index is separate from the [System Event Index](/docs/manage/security/audit-indexes/system-event-index), which shows events triggered by Sumo Logic rather than user action events. 
 
 This index is improved and different from the [Audit Index](/docs/manage/security/audit-indexes/audit-index), and there is some overlap of audited events. The Audit Index provides event logs in plain text and audits when account limits are reached and operation failures, like throttling and scheduled search events.
 
 ## Documentation 
 
-All available audited events are documented for your reference. This documentation is hosted on each deployment, instead of on this document. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
-
-Select the documentation link for your deployment:
-
-| Deployment | Documentation URL |
-|:--|:--|
-| AU | https://service.au.sumologic.com/audit/docs  |
-| CA | https://service.ca.sumologic.com/audit/docs  |
-| DE | https://service.de.sumologic.com/audit/docs  |
-| EU | https://service.eu.sumologic.com/audit/docs  |
-| FED | https://service.fed.sumologic.com/audit/docs |
-| IN | https://service.in.sumologic.com/audit/docs  |
-| JP | https://service.jp.sumologic.com/audit/docs  |
-| US1 | https://service.sumologic.com/audit/docs     |
-| US2 | https://service.us2.sumologic.com/audit/docs |
+All available audited events are documented for your reference. See [Documentation for Audit Log Definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/).
 
 ## Search the Audit Event Index
 
-Searching the Audit Event Index is the same as running a normal search against your ingested data. You specify the `_index` metadata field with one of these values: 
+Searching the Audit Event Index is the same as running a normal search against your ingested data. You specify the `_index` metadata field with `sumologic_audit_events`. 
 
-* `sumologic_audit_events`. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API.
-* `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic, for example, throttling events, rules triggered, and so on.  
-
-For example, to search for user action events:
+For example, to search for audit events:
 
 1. In the Search page, enter the following: `_index=sumologic_audit_events`  
      :::important
@@ -57,17 +42,12 @@ This Audit Event Index has detailed JSON logs for the following features. To sea
 _index=sumologic_audit_events _sourceCategory=accessKeys
 ```
 
-To search for system action events for data forwarding, you would use the query:
-
-```sql
-_index=sumologic_system_events _sourceCategory=dataForwarding
-```
-
 | Product Feature | _sourceCategory Value  |
 | :-- | :-- |
 | [Access Keys](/docs/manage/security/access-keys/) | `accessKeys` |
 | [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
-| [Automation Service](/docs/platform-services/automation-service/automation-service-audit-logging/) and [Cloud SOAR](/docs/cloud-soar/audit-event-index/) | `oar*` |
+| [Automation Service and Cloud SOAR](/docs/platform-services/automation-service/automation-service-audit-logging/) | `oar*` |
+| [Cloud SIEM](/docs/cse/administration/cse-audit-logging/) | `cse*` |
 | [Collection](/docs/send-data/collection) | `collection` |
 | [Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) | `connections` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
@@ -86,6 +66,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | Security Policy: [Support Account Access](/docs/manage/security/enable-support-account) | `supportAccount` |
 | [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses) | `serviceAllowlist` |
 | [Support Account](/docs/manage/security/enable-support-account) | `supportAccount` |
+| [Threat Intelligence](/docs/security/threat-intelligence/) | `threatIntelligence` |
 | [Tracing Ingest](/docs/apm/traces/tracing-ingest) | `tracingIngest` |
 | [Transformation Rules](/docs/metrics/metrics-transformation-rules) | `transformationRules` |
 | [Users](/docs/manage/users-roles) | `users` |
@@ -151,4 +132,4 @@ Each audit event log has common keys that categorize it to a product area and pr
 
 ## Index retention period
 
-By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
+By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partition, `sumologic_audit_events`. For more information, see [Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).

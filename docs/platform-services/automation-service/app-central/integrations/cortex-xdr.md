@@ -1,15 +1,14 @@
 ---
 title: Cortex XDR
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cortex-xdr.png')} alt="cortex-xdr" width="100"/>
 
-***Version: 1.4  
-Updated: Mar 4, 2024***
+***Version: 1.5  
+Updated: Oct 15, 2024***
 
 Query data and utilize actions in Palo Alto Networks Cortex XDR.
 
@@ -46,3 +45,4 @@ XDR
     + Alerts Cortex XDR Daemon: refactored
 * July 11, 2023 (v1.3) - Removed leading/trailing spaces
 * March 4, 2024 (v1.4) - Updated code for compatibility with Python 3.12
+* October 15, 2024 (v1.5) - Fixed the timeout error.

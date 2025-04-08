@@ -84,27 +84,33 @@ Before you begin setting up log collection, review the required prerequisites an
   ```
 * You may do the configuration steps on a  system with a web browser for authentication via OAuth2, and then move the configuration folder to your production system. Or if your production system has a web browser, all steps may be done on that system.
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up collection, follow the instructions in [Salesforce Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source). These instructions will guide you through the process of creating a source using the Salesforce Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Salesforce app is properly integrated and configured to collect and analyze your Salesforce data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Salesforce app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Salesforce](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Salesforce app is properly integrated and configured to collect and analyze your Salesforce data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Upgrading the Salesforce app (Optional)
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+<AppCollectionOPtion1/>
 
-<AppUpdate/>
+### Use an existing collector and install the app
 
-## Uninstalling the Salesforce app (Optional)
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+<AppCollectionOPtion2/>
 
-<AppUninstall/>
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Salesforce dashboards​
 
@@ -254,3 +260,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Failed Logins by Browser.** Displays details of failed logins by web browser in a pie chart for the last seven days.
 
 **API Login Trend by Type.** Provides details on the number and type of APIs used to login in a stacked column chart on a timeline for the last seven days.
+
+## Upgrade/Downgrade the Salesforce app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Salesforce app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

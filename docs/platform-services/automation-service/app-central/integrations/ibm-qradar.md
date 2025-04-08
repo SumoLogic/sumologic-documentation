@@ -1,7 +1,6 @@
 ---
 title: IBM QRadar
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -1,7 +1,6 @@
 ---
 title: FireEye Email Security (EX)
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

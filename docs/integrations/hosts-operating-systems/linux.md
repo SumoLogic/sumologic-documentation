@@ -67,18 +67,6 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Upgrading the Linux app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Linux app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Linux dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -125,6 +113,7 @@ Meta field: `SourceCategory = OS/Linux/System`
 Meta field: `SourceCategory=OS/Linux/Security`
 
 These logs might have also been collected by the Collector (if selected during its installation).
+
 
 ### User Activity
 
@@ -304,3 +293,15 @@ _sourceCategory=OS/Linux/System ("exiting" or "exited" or "terminating" or "term
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[\d+\]|):\s+"
 | where process_name !=""
 ```
+
+## Upgrade/Downgrade the Linux app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Linux app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

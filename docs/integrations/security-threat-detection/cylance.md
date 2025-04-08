@@ -66,7 +66,7 @@ _sourceCategory=*cylance* "Event Type:" AuditLog
 | transpose row _timeslice column event_name
 ```
 
-## Collecting Logs for the Cylance app
+## Collecting logs for the Cylance app
 
 This procedure demonstrates how to collect logs from Cylance into Sumo Logic. Cylance applies artificial intelligence, algorithmic science, and machine learning to cyber security, and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the threat events data from Cylance and other data sources, you can reduce your security risk and improve your overall security posture.
 
@@ -200,18 +200,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Cylance app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Cylance app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Cylance dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -325,3 +313,15 @@ Use this dashboard to:
 * Monitor users overriding, updating policies manually using Cylance Web Console.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Cylance-AuditLog.png')} alt="Cylance dashboards" />
+
+## Upgrade/Downgrade the Cylance app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cylance app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

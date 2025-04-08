@@ -1,7 +1,6 @@
 ---
 title: Prisma Cloud
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -21,7 +20,7 @@ Receive alerts from Prisma Cloud CSPM and perform configuration searches to retr
 
 ## Prisma Cloud configuration
 
-Prisma Cloud requires an API access key to enable programmatic access to the REST API. By default, only the System Admin has API access and can enable API access for other administrators. To generate an access key, see [Create and Manage Access Keys](https://docs.prismacloud.io/en/classic/cspm-admin-guide/manage-prisma-cloud-administrators/create-access-keys#idb225a52a-85ea-4b0c-9d69-d2dfca250e16).
+Prisma Cloud requires an API access key to enable programmatic access to the REST API. By default, only the System Admin has API access and can enable API access for other administrators. To generate an access key, see [Create and Manage Access Keys](https://docs.prismacloud.io/en/enterprise-edition/content-collections/administration/create-access-keys).
 
 ## Category
 

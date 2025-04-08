@@ -13,7 +13,13 @@ The Data Volume Index provides data for logs and metrics:
 * **Logs and Tracing.** Ingest volume in bytes and the number of log messages. Tracing ingest volume in billed bytes and spans count. See [Log and Tracing Data Volume Index](log-tracing-data-volume-index.md) for details.
 * **Metrics.** Ingest volume measured in data points. See [Metrics Ingest Data Volume Index](metrics-data-volume-index.md) for details.
 
-The Data Volume Index must be manually enabled by an administrator. The index then begins populating. A set of messages within the index is created every five minutes. The data does not backfill and is provided to the index only when the option is enabled.
+If you are a user of Credits package accounts, the Data Volume Index should be manually enabled by an administrator by toggling the **Enable Granular Data Tracking** button. The index then begins populating. A set of messages within the index is created every five minutes. The data does not backfill and is provided to the index only when the option is enabled.
+
+:::note
+Data Volume Index will be enabled by default for Flex package accounts.
+:::
+
+<img src={useBaseUrl('/img/manage/account/enable-data-volume.png')} alt="Enable Granular Data Tracking" style={{border:'1px solid gray'}} width="800"/> 
 
 After the Data Volume Index is enabled, you can access it using this search query: 
 
@@ -25,16 +31,15 @@ _index=sumologic_volume
 Creating an Index typically adds a nominal amount of data to your overall volume (approximately one to two percent) when pre-aggregated. Depending on your Sumo Logic account type and subscription, this data will count against your data volume quota.
 :::
 
-## Enable the Data Volume Index
+## Granular Data Tracking
 
-The Data Volume Index must be enabled by an administrator.
+Granular Data Tracking is a part of usage management that allows you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription. This should be manually enabled by an administrator if you are a user of Credits package accounts and this will be enabled by default for Flex package accounts. A set of messages within the index is created every five minutes. The data does not backfill and is provided to the index only when the option is enabled.
 
-To enable the Data Volume Index:
+### Disable Granular Data Tracking
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Data Management**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**. Kanso-->
-1. Under **Data Volume**, select **Enable**. <br/>![data_volume_check_box.png](/img/ingestion-volume/data_volume_check_box.png)
-
-A message confirms that the feature is enabled.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
+1. Click the gear icon <img src={useBaseUrl('/img/manage/account/gear-icon-accounts-page.png')} alt="gear-icon-accounts-page" width="40"/> in the top left panel of the **Account Overview** page.
+1. Click **Disable Granular Data Tracking**.<br/><img src={useBaseUrl('/img/manage/account/disable-granular-data-tracking.png')} alt="Disable Granular Data Tracking" style={{border:'1px solid gray'}} width="700"/> 
 
 ## Guide contents
 

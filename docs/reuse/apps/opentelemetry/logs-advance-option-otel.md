@@ -1,0 +1,5 @@
+**Advance options** for log collection can be used as follows:
+   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source by configuring the following:
+      - **Timestamp locator**. Use a [Go regular expression](https://github.com/google/re2/wiki/Syntax) to match the timestamp in your logs. Ensure the regular expression includes a named capture group called `timestamp_field`.
+      - **Layout**. Specify the exact layout of the timestamp to be parsed. For example, `- %Y-%m-%dT%H:%M:%S.%LZ`. To learn more about the formatting rules, refer to [this guide](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/internal/coreinternal/timeutils/internal/ctimefmt/ctimefmt.go#L68).
+      - **Location (Time zone)**. Define the geographic location (timezone) to use when parsing a timestamp that does not include a timezone. The available locations depend on the local IANA Time Zone database. For example, `America/New_York`. See more examples [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).

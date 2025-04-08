@@ -23,5 +23,5 @@ The Details tab of the new report template window allows you to specify a unique
 The Sections tab of the new report template window allows you to drag and drop sections of the incident into the report template. All incident sections are listed in the left-hand pane. Dragging incident sections to the right-hand pane will add the section to the report template.
 Sections will be printed in the report in the order they appear in the right-hand pane. Once satisfied with the selection, click **Save**.
 
-<img src={useBaseUrl('img/cloud-soar/image45.png')} alt="Report Template Sections" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/cloud-soar/image45.png')} alt="'Create report template' dialog" style={{border: '1px solid gray'}} width="400"/>
 

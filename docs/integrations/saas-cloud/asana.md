@@ -53,7 +53,7 @@ This app uses Asana Source to collect [Audit Logs](https://developers.asana.com/
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Events by App Authorization"
 _sourceCategory="asana-app"
@@ -63,27 +63,33 @@ _sourceCategory="asana-app"
 | sort by frequency
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Asana Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source/) for the Asana app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Asana Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Asana app is properly integrated and configured to collect and analyze your Asana data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Asana app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Asana](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Asana app is properly integrated and configured to collect and analyze your Asana data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Upgrading the Asana app (Optional)
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+<AppCollectionOPtion1/>
 
-<AppUpdate/>
+### Use an existing collector and install the app
 
-## Uninstalling the Asana app (Optional)
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+<AppCollectionOPtion2/>
 
-<AppUninstall/>
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Asana dashboards
 
@@ -94,3 +100,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 ### Overview
 
 The **Asana - Overview** dashboard presents a comprehensive overview of audit events related to actions taken on Asana. It includes widgets for user logins from risky locations, number of users invited, password change events, events by user authorization, user login events over time, content exports by resource, events by role change, events by team status, events by app authorization, events by access token authorization, deletion events, and geographical locations of user login. Overall, this dashboard provides quick access to pertinent information, making it a useful tool for improving event management. Also, the recent admin settings and recent access control events widgets offer a concise overview of recent events related to respective categories. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Asana-Overview.png')} alt="Asana-Overview" width="750"/>
+
+## Upgrade/Downgrade the Asana app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Asana app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

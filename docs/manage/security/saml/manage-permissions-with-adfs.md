@@ -4,6 +4,8 @@ title: Manage Permissions with ADFS
 description: You can manage Sumo Logic user permissions using ADFS and SAML.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::important
 Sumo Logic provides this information about configuring ADFS as a courtesy to customers. These instructions apply to ADFS, which is a Microsoft product, and is NOT supported by Sumo Logic. If you have any issues regarding these instructions, refer to the Microsoft ADFS documentation or Microsoft support services [https://msdn.microsoft.com/en-us/lib.../bb897402.aspx](https://msdn.microsoft.com/en-us/library/bb897402.aspx).
 :::
@@ -32,18 +34,13 @@ To create a new Claim Rule:
 1. Open the ADFS Management application.
 1. Click **Edit Claims**.
 1. Select the template **Send Claims Using a Custom Rule**.
-1. Click **Next**.
-
-    ![Edit Rule](/img/security/create_claim_rule.png)
-
+1. Click **Next**. <br/><img src={useBaseUrl('img/security/create_claim_rule.png')} alt="Edit Rule dialog" style={{border: '1px solid gray'}} width="500" />
 1. For **Claim rule name**, enter **Get AD Groups**.
-
 1. For **Custom rule**, copy and paste the following code:
     ```
     c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
     => add(store = "Active Directory", types = ("http://temp/variable"), query = ";tokenGroups;{0}", param = c.Value);
     ```
-
 1. Click **OK**.
 
 ## Create a New Role
@@ -69,19 +66,13 @@ Here is a sample Role attribute contained within the XML Assertion:
 To create a new Role:
 
 1. In the ADFS Management Application, click **Edit Claims**.
-
-1. Select the template **Send Claims Using a Custom Rule**.
-
-    ![Custom rule](/img/security/create_role.png)
-
+1. Select the template **Send Claims Using a Custom Rule**. <br/><img src={useBaseUrl('img/security/create_role.png')} alt="Roles Translation dialog" style={{border: '1px solid gray'}} width="500" />
 1. For **Claim rule** name, enter **Roles Translation**.
 1. For **Custom rule**, copy and paste the following code:
-
     ```
     c:[Type == "http://temp/variable", Value =~ "(?i)^SUMO_"]
     => issue(Type = "https://sumologic.com/SAML/Attributes/Role", Value = RegExReplace(c.Value, "SUMO_", ""));
     ```
-
 1. Click **OK**.
 
 ## Update the Roles Attribute in Sumo Logic
@@ -90,10 +81,8 @@ Now that you have setup SAML successfully, update the Roles Attribute (Optional)
 
 To update the roles attribute:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > SAML**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. Kanso-->
-1. Click **Configure**.
-
-    ![Roles attribute](/img/security/roles-attribute2.png)
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
+1. Click **Configure**. <br/><img src={useBaseUrl('img/security/roles-attribute2.png')} alt="Roles attribute" style={{border: '1px solid gray'}} width="300" />
 1. Activate the **Roles Attribute (Optional)** check box.
 1. Enter the URL, for example, `https://sumologic.com/SAML/Attributes/Role`.
 1. Click **Save**.

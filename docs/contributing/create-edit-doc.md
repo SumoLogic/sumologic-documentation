@@ -31,6 +31,19 @@ Submitting a minor fix, such as correcting a typo, is very easy and can be done 
 :::sumo Micro Lesson
 Check out this brief tutorial on how to submit a basic change to our docs.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/83p9f6qa6n?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Contributing to Sumo Docs: Simple Edits Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/2ONgNj8pNLY?rel=0"
         width="854px"
         height="480px"
@@ -38,11 +51,12 @@ Check out this brief tutorial on how to submit a basic change to our docs.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-        <br/>
+:::
 
 <details>
 <summary>View text instructions</summary>

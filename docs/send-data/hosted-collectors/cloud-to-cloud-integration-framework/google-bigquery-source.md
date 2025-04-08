@@ -26,6 +26,10 @@ Google Cloud’s BigQuery is a fully managed enterprise data warehouse that help
 
 ## Setup
 
+:::note
+Make sure that you have [BigQuery Data Viewer](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataViewer) and [BigQuery Job User](https://cloud.google.com/bigquery/docs/access-control#bigquery.jobUser) permissions when creating the service account for the Big Query source.
+:::
+
 ### Vendor configuration
 
 Follow the below steps to get the Service Account's Credential JSON file to run BigQuery jobs:
@@ -46,7 +50,7 @@ When you create an Google BigQuery Source, you add it to a Hosted Collector. Bef
    Before setting up the integration, test out the query with the checkpointing logic and a specific checkpoint value in the Google BigQuery console.
 :::
 To configure an Google BigQuery Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Google BigQuery**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -159,13 +163,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/google-bigquery/example.json)
+<a href="/files/c2c/google-bigquery/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/google-bigquery/example.tf)
+<a href="/files/c2c/google-bigquery/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

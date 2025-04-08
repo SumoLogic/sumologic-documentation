@@ -1,6 +1,10 @@
 # Algolia-Crawler-Verif: 4E25C3C253AC39D1
 
 User-agent: *
-Allow: /
-Disallow: /reuse/
+Disallow: /docs/reuse/
+Disallow: /docs/tags/
+Disallow: /ja/docs/
+Disallow: /cid-redirects.json/
+Disallow: /files/
+
 Sitemap: https://help.sumologic.com/sitemap.xml

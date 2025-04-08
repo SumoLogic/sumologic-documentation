@@ -1,7 +1,7 @@
 ---
 id: account-settings-preferences
 title: Setting Account Preferences and Credentials
-sidebar_label: Account Preferences
+sidebar_label: Account preferences
 description: Update and manage your Sumo Logic account.
 ---
 
@@ -9,11 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/>
 
-You can review and update your account settings and login credentials at any time in your user **Preferences**. The **Preferences** page contains settings that apply to your account only and do not affect other users in your organization.
+You can review and update your personal account settings and login credentials at any time. The **Preferences** page contains settings that apply only to your account and do not affect other users in your organization.
 
-To access preferences:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
-1. Update your preferences as needed. <br/><img src={useBaseUrl('img/get-started/preference-settings.png')} alt="Preferences" style={{border: '1px solid gray'}} width="600" />
+## Accessing preferences
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**.
+
+<img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
 
 ## My Profile
 
@@ -24,57 +26,55 @@ Under **My Profile**, the following information is displayed:
 * **Email**. The email address associated with your account.
 * **Password**. The password you entered when activating your account. You can reset your password.
 * **Organization ID**. Your Sumo Logic org ID.
-* **Roles** - The Sumo Logic [roles](/docs/manage/users-roles/roles/add-remove-users-role/) assigned to your user account.
+* **Roles**. The Sumo Logic [roles](/docs/manage/users-roles/roles/add-remove-users-role/) assigned to your user account.
 
-### Change Email address
+<img src={useBaseUrl('img/get-started/my-profile.png')} alt="preference settings" style={{border: '1px solid gray'}} width="500" />
 
-As a Sumo Logic user, you can change your own email address as necessary.
+If you're an Administrator, you can [manage users](/docs/manage/users-roles/users/), [assign roles](/docs/manage/users-roles/roles), and more.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
-1. Under the **My Profile** section, click **Change Email**.<br/>![Change email](/img/get-started/change-email.png)
-1. In the **Change Email Address** dialog, enter your new email address, and then follow the verification steps.
+### Change email address
+
+1. Access your [Preferences](#accessing-preferences).
+1. Under **My Profile**, click **Change Email**.
+1. In the dialog that appears, enter your new email address and follow the verification steps.
 
 ### Change password
 
-To change your password:
-
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
+1. Access your [Preferences](#accessing-preferences).
 1. Under **My Profile**, click **Change Password**.
 1. Enter your current password, and then enter the new password twice to verify it.
-1. Click **OK** to finish resetting your password.
+1. Click **OK** to finalize the change.
 
-### Forgot password
+You can also reset your from your login screen by clicking **Forgot your password?**.
 
-Forgot your password? You can reset it from the login screen.
-
-<img src={useBaseUrl('img/get-started/reset-password.png')} alt="Reset password"  style={{border: '1px solid gray'}} width="300"/>
-
-:::info For Administrators
-[Learn more](/docs/get-started/onboarding-checklists/#users-roles-and-security) about managing users/roles and more Administrator settings.
-:::
+If you're an Administrator, you can [reset passwords](/docs/manage/users-roles/users/reset-user-password) for users in your org.
 
 ## My Security Settings
 
-You can enable 2-Step Verification and view backup codes here. This section displays only if an administrator has made 2-Step Verification required for your organization. See [2-Step Verification for Administrators](/docs/manage/security/2-step-verification-admins/).
+This section allows you to enable 2-step verification and view backup codes.
 
-To set up 2-Step Verification, you will need to install a Time-Based One-Time Password (TOTP) application, which will automatically generate an authentication code that changes after a certain period of time.
+:::note
+The **My Security Settings** section is visible only if an administrator has made 2-step verification mandatory for your organization. For more details, see [2-Step Verification for Administrators](/docs/manage/security/2-step-verification-admins).
+:::
+
+To set up 2-Step Verification, you will need to install a Time-Based One-Time Password (TOTP) app, which will automatically generate an authentication code that changes after a certain period of time.
 
 1. Download one of the following apps:
-    - For Android, iOS and Blackberry. [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en).
-    - For Android and iOS. [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile).
-    - For Windows Phone. [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj).
-1. Scan the QR code displayed on your screen with your TOTP App.
-1. After the TOTP App is configured, enter two consecutive authentication codes.
-
-## My Access Keys
-
-In Sumo Logic, you'll need an access key to register new Collectors and use Sumo Logic APIs. If you have a role that grants the **Create Access Keys** capability, you can create and manage your own Access Keys. For more information, see [Access Keys](/docs/manage/security/access-keys).
+    - For Android, iOS and Blackberry: [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en).
+    - For Android and iOS: [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile).
+    - For Windows Phone: [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj).
+1. Scan the QR code displayed on your screen with your TOTP app.
+1. After the TOTP app is configured, enter two consecutive authentication codes.
 
 ## My Preferences
 
-Preference settings are only changed for your personal account; they do not affect any other users in your organization. Any changes you make to your preferences take effect the next time you sign in, not during the current session.
+These settings apply only to your personal account and do not affect other users in your organization. Changes take effect the next time you sign in.
 
-### Default Timezone
+<img src={useBaseUrl('img/get-started/my-preferences.png')} alt="preference settings" style={{border: '1px solid gray'}} width="600" />
+
+### Timezone and Date Format
+
+#### Default Timezone
 
 If you want the Sumo Logic user interface to use your local time zone, or a time zone different from the time zone used in the timestamp of your log messages, change the setting here. This is a personal setting, and does not change the time zone for anyone else in your organization.
 
@@ -84,68 +84,100 @@ This option overrides the timezone set in your web browser, and affects all hour
 
 This setting is enabled by default. To not show the timezone offset in displayed timestamps, deselect this checkbox.
 
-### Date format
+#### Date format
 
 Select from the following international date format options:
+
 * Use the browser's default date format.
 * MM/DD/YYYY (04/22/2015)
-* DD/MM/YYYY (22/04/2015
+* DD/MM/YYYY (22/04/2015)
 * YYYY/MM/DD (2015/04/22)
 
 :::danger
-If you change the date format option, it will affect your saved searches in the Library. Any saved searches that use absolute dates for their time range must be modified to use the new date format. Scheduled searches will continue to run properly. You would need to modify the date format only if you rescheduled the search.
+Changing the date format option will affect your saved searches in the Library. Any saved searches that use absolute dates for their time range must be updated to reflect the new format. Scheduled Searches will continue to run as expected, but you will need to modify the date format if you reschedule a search.
 :::
 
-### Web session Timeout
+### General Settings
 
-Choose an option to set the length of time before your Sumo Logic session times out. Options include 5 minutes to 7 days. For information on web session timeouts and Multi-account Access, see [Multi-account Access].
-
-### Receive email notifications whenever content is shared with you
+#### Receive email notifications whenever content is shared with you
 
 Receive an email when [content is shared with you in Sumo Logic](/docs/manage/content-sharing/), such as log searches, metric searches, dashboards, and folders.
 
-### Enable keyboard shortcuts
+#### Enable keyboard shortcuts
 
-[Keyboard shortcuts](/docs/get-started/keyboard-shortcuts) are enabled by default. Press ? to see the list of shortcuts. To disable keyboard shortcuts, for example, if they conflict with an international keyboard, deselect the checkbox.
+[Keyboard shortcuts](/docs/get-started/keyboard-shortcuts) are enabled by default. Press **?** to see the list of shortcuts. To disable keyboard shortcuts, for example, if they conflict with an international keyboard, deselect the checkbox.
 
 :::note
-Keyboard shortcuts are disabled when typing in the [search text box].
+Keyboard shortcuts are disabled when typing in the [search text box](/docs/search/get-started-with-search/search-page/).
 :::
 
-### Automatically run the search after selecting it from a list of saved searches
+### Web Session Timeout
 
-Keep this option selected if you'd like to run a saved search as soon as you select it. Deselect the option if you'd like to start the search manually.
+Choose how long your Sumo Logic session remains active before timing out. Options range from 5 minutes to 7 days.
 
-### Show confirmation dialog when closing a search tab
+For details on web session timeouts and multi-account access, see [Multi-Account Access](/docs/manage/users-roles/users/multi-account-access).
 
-On the Search page, if you want to be prompted with a confirmation dialog before you can close a search tab, select this checkbox.
 
-### Enable autocomplete
+### Navigation
 
-Use `<Esc>` or `<Alt>` `<Space>` to open it manually) Keep this option selected if you'd like to open the [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog.
+#### Open all navigation menu items in new browser tabs by default
 
-### Reopen previous tabs upon login
+By default, selecting a menu link in the left navigation pane opens it in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="125" />
 
-If you want to reopen the tabs from your previous session when you login to a new session, select this checkbox.
+Enabling this preference hides the **Open in New Tab** button on navigation menu links.
+
+However, even when this preference is enabled, the **Open in New Tab** button remains visible for menu items with subfolders, allowing you to click the menu item to view its subfolders and open them in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button-on-folder.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="250" />
 
 ### Theme
 
 Select to show the user interface in a **Dark theme** or **Light theme**.
 
-This setting only applies to the user interface in the [Automation Service](/docs/platform-services/automation-service/), [Cloud SIEM](/docs/cse/), and [Cloud SOAR](/docs/cloud-soar/).
+This setting applies only to the user interface in the [Automation Service](/docs/platform-services/automation-service/), [Cloud SIEM](/docs/cse/), and [Cloud SOAR](/docs/cloud-soar/). A global setting is not supported at this time.
 
-:::note
-You can also set a dark them or light theme for dashboards. See [Dark Theme](/docs/dashboards/about/#dark-theme).
-:::
+You can also apply a [dark theme specifically for dashboards](/docs/dashboards/about/#dark-theme).
 
 ### Query Editing
 
-Select one of the following options:
-- `<Enter>` runs the query, `<Alt>` `<Enter>` creates a new line.
-- `<Alt>` `<Enter>` runs the query, `<Enter>` creates a new line.
+Select how you want to execute and format queries:
 
-If you have changed any settings, click **Save**.
+* **Return** to run the query, **Shift + Return** to create a new line. Suggestions appear automatically. Use **Tab** or **Enter** to select a suggestion.  
+* **Command + Return** to run the query, **Return** to create a new line. Suggestions appear as you type. Use **Tab** to select a suggestion.  
 
-### Alert Notifications and Alerts List
+After making any changes, click **Save**.
 
-See [Notification Preferences](/docs/alerts/monitors/alert-response/#notification-preferences).
+### Log Search
+
+#### Show confirmation dialog when closing a tab
+
+On the Search page, enable this option if you want to be prompted with a confirmation dialog before you can close a search tab.
+
+#### Enable autocomplete
+
+Keep this option selected to automatically open the search autocomplete dialog when editing a query.
+
+* To manually open the dialog, use `<Esc>` or `<Alt>` `<Space>`.
+* Deselect this option to disable [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete).
+
+#### Automatically run the search after selecting it from a list of saved searches
+
+By default, saved searches run automatically when selected. Deselect this option if you prefer to start searches manually.
+
+### Alerts
+
+Click any of the following checkboxes to enable your desired preferences:<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
+
+#### Display alert badge when my subscribed monitors are triggered
+
+Select this option to display a badge icon in the UI when you receive an alert for a monitor you're subscribed to.
+
+#### Notify about only subscribed monitors
+
+Select this option to receive notifications only for monitors you're subscribed to.
+
+#### Enable "Active alerts only" as default filter
+
+By default, your alerts list only displays alerts with an active status. Alerts with a resolved status are excluded.<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
+
+#### Enable "My subscriptions" as default filter
+
+By default, alerts you are subscribed to will appear in your alerts list.<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />

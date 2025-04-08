@@ -12,7 +12,7 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail
 
 
 
-## Collecting Logs for the PCI Compliance for AWS CloudTrail App
+## Collecting logs for the PCI Compliance for AWS CloudTrail App
 
 This section provides instructions for collecting logs for the the PCI Compliance for AWS CloudTrail App.
 

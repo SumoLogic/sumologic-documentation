@@ -1,7 +1,6 @@
 ---
 title: McAfee Network Security Platform Manager (NSM)
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

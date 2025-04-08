@@ -1,7 +1,6 @@
 ---
 title: Have I Been Pwned
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

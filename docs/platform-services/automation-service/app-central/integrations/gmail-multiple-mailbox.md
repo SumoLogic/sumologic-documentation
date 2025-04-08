@@ -1,7 +1,6 @@
 ---
 title: Gmail Multiple Mailbox
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -13,7 +13,7 @@ To use Sumo Logic for threat detection and investigation, you can use [pre-built
 
 [Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation.
 * [**Security Analytics**](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment.
-* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database.
+* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 * [**Cloud security monitoring and analytics**](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
 * [**Global Intelligence Service**](/docs/integrations/global-intelligence/). Apps that provide real-time security intelligence for detection, prioritization, investigation, and workflow.
 
@@ -63,14 +63,14 @@ After you build the dashboard to find and monitor security events, we'll show yo
 
 * Detect brute force attempts by monitoring AWS CloudTrail data for a high number of failed login attempts within a period of time. Brute force attacks are when a hacker tries many different passwords to attempt to gain access. These attacks are a common cause of security breaches on governments, businesses, organizations, and private individuals.
 * Detect land speed violations by using geo lookup location data and combining it with timestamps and the Haversine formula. Land speed violations, also known as impossible travel, are a type of suspicious activity where a user logs in to an account in two different locations within a short period of time. If there are two logins to the same account on opposite sides of the globe in the same hour, at least one of those logins was probably illegitimate.
-* Look up user information with CrowdStrike to see if any of the IP addresses you have logged are known threats or have been tied to malicious activity.   
+* Look up user information with Sumo Logic [threat intelligence](/docs/security/threat-intelligence/find-threats/) to see if any of the IP addresses you have logged are known threats or have been tied to malicious activity.   
 
 ### Step 1: Monitor user activity with a dashboard
 
 We are going to create a dashboard to look at our security activity in several different ways.  In this step you will query CloudTrail logs to create a Top 10 User Activity list, turn it into a bar chart, and add it to your dashboard.  
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Dashboard**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  Kanso--> 
-1. Select a **Time Series** panel.<br/><img src={useBaseUrl('img/csa/time-series-panel.png')} alt="Time series panel" style={{border: '1px solid gray'}} width="600"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  
+1. Select a **Time Series** panel.<br/><img src={useBaseUrl('img/csa/time-series-panel.png')} alt="A screenshot showing Time Series selected" style={{border: '1px solid gray'}} width="600"/>
 1. Create a CloudTrail query to identify bad actors.  
    1. Copy or type the following query to the query window. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
      ```
@@ -84,11 +84,11 @@ We are going to create a dashboard to look at our security activity in several d
      | transpose row actor column event_type
      ```
      <br/>Notice how this query searches AWS CloudTrail logs to extract the user, event, IP addresses, and event names as metadata using a parse json command, so you can use the extracted values to monitor user activity.
-   1. In the upper right, change the time frame for the query to be for the last 24 hours.<br/><img src={useBaseUrl('img/csa/24-hours.png')} alt="Twenty-four hours" style={{border: '1px solid gray'}} width="300"/>
+   1. In the upper right, change the time frame for the query to be for the last 24 hours.<br/><img src={useBaseUrl('img/csa/24-hours.png')} alt="A screenshot showing 24 hours selected" style={{border: '1px solid gray'}} width="300"/>
    1. Press Enter or click the magnifying glass icon to run the search.
-1. In the **Panel Settings** area, change the chart type to **Bar**.<br/><img src={useBaseUrl('img/csa/bar-chart-setting.png')} alt="Bar chart setting" style={{border: '1px solid gray'}} width="800"/>
-1. In the upper left corner of your bar chart, change the panel title to **Top 10 User Activity**.<br/><img src={useBaseUrl('img/csa/top-10-user-activity-panel.png')} alt="Rename dashboard panel" style={{border: '1px solid gray'}} width="400"/>
-1. Click the **Add to Dashboard** button in the top right corner. The dashboard displays the panel you created.<br/><img src={useBaseUrl('img/csa/example-dashboard.png')} alt="Example dashboard" style={{border: '1px solid gray'}} width="800"/>
+1. In the **Panel Settings** area, change the chart type to **Bar**.<br/><img src={useBaseUrl('img/csa/bar-chart-setting.png')} alt="Chart tab showing the Bar chart type selected" style={{border: '1px solid gray'}} width="800"/>
+1. In the upper left corner of your bar chart, change the panel title to **Top 10 User Activity**.<br/><img src={useBaseUrl('img/csa/top-10-user-activity-panel.png')} alt="Chart type showing the name changed to 'Top 10 User Activity'" style={{border: '1px solid gray'}} width="400"/>
+1. Click the **Add to Dashboard** button in the top right corner. The dashboard displays the panel you created.<br/><img src={useBaseUrl('img/csa/example-dashboard.png')} alt="The example dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Step 2: Create dashboard template variables
 
@@ -278,29 +278,60 @@ A "landspeed violation" occurs when a user logs in from an IP address and then l
 1. Rename this panel **Landspeed Violation**.
 1. Click the **Add to Dashboard** button.
 
-### Step 7: Look up user information with CrowdStrike
+### Step 7: Look up user information with Sumo Logic threat intelligence
 
-We need a way to see if any of the IP addresses we have logged are known threats or have been tied to malicious activity. Sumo Logic has a partnership with [CrowdStrike](https://www.crowdstrike.com), which allows us to look up IP addresses, email addresses, URLs, and other entities to see if they are known by CrowdStrike.
+We need a way to see if any of the IP addresses we have logged are known threats or have been tied to malicious activity. Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) allows us to look up IP addresses, email addresses, URLs, and other entities to see if they are known as threat vectors.
 
 1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid gray'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
-     ```
-     _sourceCategory=Labs/AWS/CloudTrail
-     | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" multi
-     | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
-     | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
-     | where type="ip_address" and !isNull(malicious_confidence)
-     | if (isEmpty(actor), "Unassigned", actor) as Actor
-     | parse field=raw "\"ip_address_types\":[\"*\"]" as ip_address_types nodrop
-     | parse field=raw "\"kill_chains\":[\"*\"]" as kill_chains nodrop
-     | timeslice 1m
-     | count _timeslice, ip_address, malicious_confidence, actor, kill_chains, ip_address_types, _sourceCategory, _source
-     | fields - ip_address,malicious_confidence,actor,kill_chains,ip_address_types,_sourceCategory,_source | count by _timeslice
-     | outlier _count window=5,threshold=3,consecutive=1,direction=+-
-     ```
-1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. (It's possible there have been no landspeed violations in the selected time frame, in which case no results will display.)
+   ```
+   _sourceCategory=Labs/AWS/CloudTrail
+   | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" multi
+   | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
+   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
+   | where type="ip_address" and !isNull(malicious_confidence)
+   | if (isEmpty(actor), "Unassigned", actor) as Actor
+   | parse field=raw "\"ip_address_types\":[\"*\"]" as ip_address_types nodrop
+   | parse field=raw "\"kill_chains\":[\"*\"]" as kill_chains nodrop
+   | timeslice 1m
+   | count _timeslice, ip_address, malicious_confidence, actor, kill_chains, ip_address_types, _sourceCategory, _source
+   | fields - ip_address,malicious_confidence,actor,kill_chains,ip_address_types,_sourceCategory,_source | count by _timeslice
+   | outlier _count window=5,threshold=3,consecutive=1,direction=+-
+   ```
+<!-- Replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+   ```
+   _sourceCategory=Labs/AWS/CloudTrail 
+   | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
+   | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
+   | count as ip_count by ip_address
+
+   | threatlookup singleIndicator ip_address
+
+   // normalize confidence level to a string 
+   | if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "unknown")))) as threat_confidence
+
+   // filter for threat confidence
+   | where  threat_confidence matches "*"
+
+   //rename to match threat_<foo> convention
+   | %"_threatlookup.actors" as threat_actors
+   | %"_threatlookup.type" as type
+   | %"_threatlookup.threat_type" as threat_type
+
+   //convert threat valid from to human readable time
+   | toLong(%"_threatlookup.valid_from" * 1000) as %"_threatlookup.valid_from"
+   | formatDate(%"_threatlookup.valid_from", "MM-dd-yyyy") as threat_valid_from
+
+   | where type matches "ipv4-addr*" and !isNull(threat_confidence)
+
+   | if (isEmpty(threat_actors), "Unassigned", threat_actors) as threat_actors
+
+   |sum (ip_count) as threat_count
+   ```
+   -->
+1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. 
 1. Under **Chart Type**, select **Line Chart**.
-1. Rename this panel **CrowdStrike Data**.
+1. Rename this panel **IP Threat Count**.
 1. Click the **Add to Dashboard** button.
 
 :::tip

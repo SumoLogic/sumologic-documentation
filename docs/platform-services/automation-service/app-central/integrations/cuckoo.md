@@ -1,7 +1,6 @@
 ---
 title: Cuckoo
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

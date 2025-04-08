@@ -1,7 +1,7 @@
 ---
 slug: /apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript
-title: JavaScript OpenTelemetry auto-instrumentation
-sidebar_label: JavaScript OpenTelemetry auto-instrumentation
+title: JavaScript OpenTelemetry Auto-Instrumentation
+sidebar_label: OpenTelemetry Auto-Instrumentation
 description: Learn how to instrument your JavaScript/NodeJS services using the Sumo Logic distribution for OpenTelemetry JS (recommended) or the official OpenTelemetry distribution.
 ---
 
@@ -11,7 +11,7 @@ You can instrument your JavaScript/NodeJS services by using either the [official
 
 The OpenTelemetry-JS community supports all active versions of NodeJS. See a [list of supported runtimes](https://github.com/open-telemetry/opentelemetry-js#supported-runtimes). 
 
-The instructions below apply to the **OpenTelemetry JavaScript Instrumentation** in version **1.8.0/0.41.1**.
+The instructions below apply to the **OpenTelemetry JavaScript Instrumentation** in version **1.9.0/0.48.0**.
 
 There are a few simple steps to instrument your application and obtain telemetry data.
 
@@ -22,8 +22,8 @@ You must install the packages listed below to apply the instrumentation and expo
 :::
 
 ```bash
-npm install --save @opentelemetry/api@1.8.0
-npm install --save @opentelemetry/auto-instrumentations-node@0.41.1
+npm install --save @opentelemetry/api@1.9.0
+npm install --save @opentelemetry/auto-instrumentations-node@0.48.0
 ```
 
 ### Instrumentation configuration
@@ -84,7 +84,7 @@ Remember to provide configuration using environment variables:
   * [Set up traces collection for Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md)
   * [Set up traces collection for other environments usage](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md)
 * `OTEL_SERVICE_NAME`. A logical service name that represents its business logic.
-* `OTEL_RESOURCE_ATTRIBUTES`. Set "application" name attribute which should represent its business logic and extra attributes attached to all spans. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels).
+* `OTEL_RESOURCE_ATTRIBUTES`. Set "application" name attribute which should represent its business logic and extra attributes attached to all spans. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Add services panel to dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard).
 
 **Example:**
 
@@ -104,17 +104,44 @@ npm i -g @sumologic/opentelemetry-node
 ### Instrumented packages
 
 The Sumo Logic OpenTelemetry for JS instrumentation enables all officially supported core and contrib auto-instrumentation plugins defined in [@opentelemetry/auto-instrumentations-node](https://www.npmjs.com/package/@opentelemetry/auto-instrumentations-node), including:
-* [@opentelemetry/instrumentation-dns](https://www.npmjs.com/package/@opentelemetry/instrumentation-dns)
-* [@opentelemetry/instrumentation-http](https://www.npmjs.com/package/@opentelemetry/instrumentation-http)
-* [@opentelemetry/instrumentation-grpc](https://www.npmjs.com/package/@opentelemetry/instrumentation-grpc)
-* [@opentelemetry/instrumentation-express](https://www.npmjs.com/package/@opentelemetry/instrumentation-express)
-* [@opentelemetry/instrumentation-koa](https://www.npmjs.com/package/@opentelemetry/instrumentation-koa)
-* [@opentelemetry/instrumentation-graphql](https://www.npmjs.com/package/@opentelemetry/instrumentation-graphql)
-* [@opentelemetry/instrumentation-ioredis](https://www.npmjs.com/package/@opentelemetry/instrumentation-ioredis)
-* [@opentelemetry/instrumentation-redis](https://www.npmjs.com/package/@opentelemetry/instrumentation-redis)
-* [@opentelemetry/instrumentation-pg](https://www.npmjs.com/package/@opentelemetry/instrumentation-pg)
-* [@opentelemetry/instrumentation-mongodb](https://www.npmjs.com/package/@opentelemetry/instrumentation-mongodb)
-* [@opentelemetry/instrumentation-mysql](https://www.npmjs.com/package/@opentelemetry/instrumentation-mysql)
+* [opentelemetry/instrumentation-amqplib](https://www.npmjs.com/package/@opentelemetry/instrumentation-amqplib)
+* [opentelemetry/instrumentation-aws-lambda](https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-lambda)
+* [opentelemetry/instrumentation-aws-sdk](https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk)
+* [opentelemetry/instrumentation-bunyan](https://www.npmjs.com/package/@opentelemetry/instrumentation-bunyan)
+* [opentelemetry/instrumentation-cassandra-driver](https://www.npmjs.com/package/@opentelemetry/instrumentation-cassandra-driver
+* [opentelemetry/instrumentation-connect](https://www.npmjs.com/package/@opentelemetry/instrumentation-connect)
+* [opentelemetry/instrumentation-cucumber](https://www.npmjs.com/package/@opentelemetry/instrumentation-cucumber
+* [opentelemetry/instrumentation-dataloader](https://www.npmjs.com/package/@opentelemetry/instrumentation-dataloader)
+* [opentelemetry/instrumentation-dns](https://www.npmjs.com/package/@opentelemetry/instrumentation-dns)
+* [opentelemetry/instrumentation-express](https://www.npmjs.com/package/@opentelemetry/instrumentation-express)
+* [opentelemetry/instrumentation-fastify](https://www.npmjs.com/package/@opentelemetry/instrumentation-fastify)
+* [opentelemetry/instrumentation-fs](https://www.npmjs.com/package/@opentelemetry/instrumentation-fs)
+* [opentelemetry/instrumentation-generic-pool](https://www.npmjs.com/package/@opentelemetry/instrumentation-generic-pool)
+* [opentelemetry/instrumentation-graphql](https://www.npmjs.com/package/@opentelemetry/instrumentation-graphql)
+* [opentelemetry/instrumentation-grpc](https://www.npmjs.com/package/@opentelemetry/instrumentation-grpc)
+* [opentelemetry/instrumentation-hapi](https://www.npmjs.com/package/@opentelemetry/instrumentation-hapi)
+* [opentelemetry/instrumentation-http](https://www.npmjs.com/package/@opentelemetry/instrumentation-http)
+* [opentelemetry/instrumentation-ioredis](https://www.npmjs.com/package/@opentelemetry/instrumentation-ioredis)
+* [opentelemetry/instrumentation-knex](https://www.npmjs.com/package/@opentelemetry/instrumentation-knex)
+* [opentelemetry/instrumentation-koa](https://www.npmjs.com/package/@opentelemetry/instrumentation-koa)
+* [opentelemetry/instrumentation-lru-memoizer](https://www.npmjs.com/package/@opentelemetry/instrumentation-lru-memoizer)
+* [opentelemetry/instrumentation-memcached](https://www.npmjs.com/package/@opentelemetry/instrumentation-memcached)
+* [opentelemetry/instrumentation-mongodb](https://www.npmjs.com/package/@opentelemetry/instrumentation-mongodb)
+* [opentelemetry/instrumentation-mongoose](https://www.npmjs.com/package/@opentelemetry/instrumentation-mongoose)
+* [opentelemetry/instrumentation-mysql](https://www.npmjs.com/package/@opentelemetry/instrumentation-mysql)
+* [opentelemetry/instrumentation-mysql2](https://www.npmjs.com/package/@opentelemetry/instrumentation-mysql2)
+* [opentelemetry/instrumentation-nestjs-core](https://www.npmjs.com/package/@opentelemetry/instrumentation-nestjs-core)
+* [opentelemetry/instrumentation-net](https://www.npmjs.com/package/@opentelemetry//instrumentation-net)
+* [opentelemetry/instrumentation-pg](https://www.npmjs.com/package/@opentelemetry/instrumentation-pg)
+* [opentelemetry/instrumentation-pino](https://www.npmjs.com/package/@opentelemetry/instrumentation-pino)
+* [opentelemetry/instrumentation-redis](https://www.npmjs.com/package/@opentelemetry/instrumentation-redis)
+* [opentelemetry/instrumentation-redis-4](https://www.npmjs.com/package/@opentelemetry/instrumentation-redis-4)
+* [opentelemetry/instrumentation-restify](https://www.npmjs.com/package/@opentelemetry/instrumentation-restify)
+* [opentelemetry/instrumentation-router](https://www.npmjs.com/package/@opentelemetry/instrumentation-router)
+* [opentelemetry/instrumentation-socket.io](https://www.npmjs.com/package/@opentelemetry/instrumentation-socket.io)
+* [opentelemetry/instrumentation-tedious](https://www.npmjs.com/package/@opentelemetry/instrumentation-tedious)
+* [opentelemetry/instrumentation-undici](https://www.npmjs.com/package/@opentelemetry/instrumentation-undici)
+* [opentelemetry/instrumentation-winston](https://www.npmjs.com/package/@opentelemetry/instrumentation-winston)
 
 ### Limitations
 

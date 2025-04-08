@@ -65,7 +65,7 @@ The Sumo Logic integration for Mailgun ingests email events into Sumo Logic thro
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/mailgun"
@@ -115,18 +115,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the iLeMailgunrt app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Mailgun app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Mailgun dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -144,3 +132,15 @@ The **Mailgun - Overview** dashboard offers a comprehensive overview of email sy
 The **Mailgun - Failed, Complained Events** dashboard offers a holistic view of email system performance and user interactions, featuring panels like Failed Events, Severity, Top Failure Codes, Top Failure Reasons, Top Sender and Recipient for Failure Events, Recent Failed Events, Complained Events, Top Sender and Recipient for Complained Events, Top Subject for Complained Events, Event Geolocation, and Recent Complained Events. This dashboard equips Mailgun users to closely monitor email delivery, assess issues, understand complaint patterns, and track geographic trends in events and complaints, facilitating effective email management and optimization.
 
 <img src={useBaseUrl('img/integrations/webhooks/mailgun_failedComplainedEvents.png')} style={{border: '1px solid black'}} alt="Mailgun - Failed, Complained Events"/>
+
+## Upgrade/Downgrade the iLeMailgunrt app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Mailgun app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -1,7 +1,6 @@
 ---
 title: Active Directory V2
 description: ''
-tags: []
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

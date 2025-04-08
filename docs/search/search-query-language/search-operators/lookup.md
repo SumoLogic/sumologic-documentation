@@ -6,7 +6,7 @@ sidebar_label: lookup
 
 The `lookup` operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query. You create a lookup table using the lookup UI or the [Lookup API](/docs/api/lookup-tables). You can populate a lookup table by uploading a CSV file using the Lookup API, or by using the [`save` operator](/docs/search/search-query-language/search-operators/save) to save the results of a log query. 
 
-For information about lookup tables, see [Create and Manage Lookup Tables](/docs/search/lookup-tables/create-lookup-table.md).
+For information about lookup tables, see [Lookup Tables](/docs/search/lookup-tables/).
 
 ## Rules and limitations
 
@@ -15,6 +15,7 @@ This section describes requirements and limitations for the `lookup` operator an
 ### Requirements 
 
 * The size limit for a lookup table is 100 MB.
+* The size limit for a lookup field value is less than 1024 Bytes.
 * The `lookup` operator matches event field names and values to lookup table field names and values in a case-insensitive manner. 
 * The columns you specify in the join condition for the lookup must be of the same data type. For example, if the event field on the left side of the join is an integer, the lookup field on the right side must also be integer. You can cast data to a string or numeric value. For more information, see [Casting Data to a Number or String](/docs/search/search-query-language/search-operators/manually-cast-data-string-number).
 
@@ -60,12 +61,12 @@ You can only perform a lookup using fields defined as primary keys. If the key c
 
 * `srcDevice_ip`
 * `eventTime`
-* `sourceCategory`
+* `_sourceCategory`
 
 your lookup query scope must include:
 
 ```sql
-... on srcDevice_ip=srcDevice_ip and eventTime=eventTime and sourceCategory=sourceCategory
+... on srcDevice_ip=srcDevice_ip and eventTime=eventTime and _sourceCategory=sourceCategory
 ```
 
 ## Syntax 
@@ -88,7 +89,7 @@ Where:
 
     To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot kebab menu for the table.   
 
-    ![more-options-lookup.png](/img/search/searchquerylanguage/search-operators/more-options-lookup.png)
+    ![A screenshot of the Sumo Logic user interface displaying the 'Suspicious Users' row selected, with a red box around the three-dot kebab icon.](/img/search/searchquerylanguage/search-operators/more-options-lookup.png)
 
 * `joinColumn-x` is a list of pairs of field names that define the relationship between values in the log data results with matching values in the lookup table, for example:  
 

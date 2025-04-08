@@ -19,7 +19,7 @@ With the Sumo Logic app for Miro, security teams can stay on top of potential se
 
 This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://developers.miro.com/v1.0/reference/get-logs) from Miro.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Audit Log"
 {
@@ -54,7 +54,7 @@ This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://develop
       "id": "450256789"
 }
 ```
-## Sample query
+## Sample queries
 
 ```sql title="Total Phishing Security Tests"
 _sourceCategory=miro
@@ -65,27 +65,33 @@ _sourceCategory=miro
 | count_distinct (id)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions for setting up [Cloud-to-Cloud Integration for Miro](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source/) source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Miro app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Miro](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Miro app is properly integrated and configured to collect and analyze your Miro data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Upgrading the Miro app (Optional)
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+<AppCollectionOPtion1/>
 
-<AppUpdate/>
+### Use an existing collector and install the app
 
-## Uninstalling the Miro app (Optional)
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+<AppCollectionOPtion2/>
 
-<AppUninstall/>
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Miro dashboards​
 
@@ -108,3 +114,15 @@ The **Miro - Security Events** dashboard provides a comprehensive overview of yo
 The widgets allow you to track and analyze your security events, including the number of sign-in security events, account creation, deletion, deactivation, and reactivation. The Distribution of Sign-in Security Events widget provides an overview of sign-in patterns across different events, while the Sign-in over time by Authentication Methods widget offers a breakdown of sign-ins by the authentication method. The Sign-in from Risky Geo-Locations widget helps you to identify geographic locations that pose a higher risk to your security. A dashboard is a useful tool for monitoring and improving your security by providing quick access to relevant information.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Security-Events.png' alt="Miro-Security-Events.png" />
+
+## Upgrade/Downgrade the Miro app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Miro app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -1,14 +1,13 @@
 ---
 title: Palo Alto Networks Panorama V2
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/palo-alto-networks-panorama-v2.png')} alt="palo-alto-networks-panorama-v2" width="100"/>
 
-***Version: 2.4  
-Updated: Sep 19, 2023***
+***Version: 2.5  
+Updated: May 29, 2024***
 
 Utilize Palo Alto Panorama to list current applications and issue containment actions during incident investigation.
 
@@ -85,3 +84,4 @@ Utilize Palo Alto Panorama to list current applications and issue containment ac
 * July 21, 2023 (v2.2) - Updated the integration with Environmental Variables
 * September 4, 2023 (v2.3) - Fixed a bug where if the timeout was not specified, an error would occur
 * September 19, 2023 (v2.4) - Versioning
+* May 29, 2024 (v2.5) - Docker updated

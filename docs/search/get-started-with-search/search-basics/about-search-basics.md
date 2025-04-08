@@ -12,6 +12,19 @@ import Iframe from 'react-iframe';
 
 How to search data using the Basic Search Mode in Sumo Logic.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/deo5m3f7jy?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Basic Search Mode Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/Ps2YperJyZo?rel=0"
         width="854px"
         height="480px"
@@ -19,9 +32,10 @@ How to search data using the Basic Search Mode in Sumo Logic.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
@@ -31,7 +45,7 @@ In the **Search** tab, a search query is typically formatted something like th
 
 Start with a basic search:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> Click the **+ New** button at the top of the screen and select **Log Search**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
 1. Enter a simple key term like "error" in the search field, or type an asterisk wildcard (`*`) to find all messages. 
 1. Hit **Enter** or click **Start**.
 1. Sumo Logic returns all the log entries containing the search term in the **Messages** tab below the histogram.
@@ -46,7 +60,7 @@ Here's an example:
 
 This query means:
 
-![query syntax](/img/reuse/query-search/query-syntax-new.png)
+![A diagram illustrating a Sumo Logic query. The query is '_sourcecategory=apache | parse "* - -" as src_ip | count by src_ip | sort_count'. The diagram breaks down the query into three parts: a keyword expression '_sourcecategory=apache' to specify the source category (in this case, a metadata field), parsing out the IP address into a field named 'src_ip' using an endpoint anchor 'parse "* - -" as src_ip', and counting and sorting the results 'count by src_ip | sort_count'.](/img/reuse/query-search/query-syntax-new.png)
 
 As queries get longer and more complex, it is a best practice to format your queries by using a soft return before the pipes, such as:
 

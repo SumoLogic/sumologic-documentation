@@ -120,28 +120,33 @@ _sourceCategory=msgip-app-src riskEventType
 | count(risk_id) by risk_level
 | sort by _count
 ```
+## Collection configuration and app installation
 
-## Collecting Logs for Microsoft Graph Identity Protection API
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-This section explains how to collect logs from Microsoft Graph Identity Protection API and ingest them into Sumo Logic. For details, see [Cloud-to-Cloud-Integration for Microsoft Graph Identity Protection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source/) to create the source and use the same source category while installing the app.
+<CollectionConfiguration/>
 
-## Installing the Microsoft Graph Identity Protection app
+:::important
+Use the [Cloud-to-Cloud Integration for Microsoft Graph Identity Protection](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Microsoft Graph Identity Protection app is properly integrated and configured to collect and analyze your Microsoft Graph Identity Protection data.
+:::
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+### Create a new collector and install the app
 
-<AppInstall2/>
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-## Upgrading the Microsoft Graph Identity Protection app (Optional)
+<AppCollectionOPtion1/>
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+### Use an existing collector and install the app
 
-<AppUpdate/>
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-## Uninstalling the Microsoft Graph Identity Protection app (Optional)
+<AppCollectionOPtion2/>
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+### Use an existing source and install the app
 
-<AppUninstall/>
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Microsoft Graph Identity Protection dashboards
 
@@ -164,3 +169,15 @@ This dashboard provides insights into the risks detected in the organization. It
 This dashboard helps to monitor and manage the risky users of your organization. It visualizes the distribution of risky users by status, level, state, and processing state. It also provides a list of various actions performed to mitigate the risks with their frequency. It displays the table of summary of all the risky users.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Graph-Identity-Protection/Microsoft-Graph-Identity-Protection-Risky-Users.png' alt="Microsoft Graph Identity Protection Risky Users" />
+
+## Upgrade/Downgrade the Microsoft Graph Identity Protection app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Graph Identity Protection app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

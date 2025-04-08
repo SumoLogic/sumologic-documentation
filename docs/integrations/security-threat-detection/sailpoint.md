@@ -107,27 +107,33 @@ _sourceCategory=Labs/sailpoint
 | sort by _count
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions for setting up [Cloud-to-Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the SailPoint app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for SailPoint](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your SailPoint app is properly integrated and configured to collect and analyze your SailPoint data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Upgrading the SailPoint app (Optional)
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+<AppCollectionOPtion1/>
 
-<AppUpdate/>
+### Use an existing collector and install the app
 
-## Uninstalling the SailPoint app (Optional)
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+<AppCollectionOPtion2/>
 
-<AppUninstall/>
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing SailPoint dashboards
 
@@ -158,3 +164,15 @@ The **SailPoint - Failed Authentications** dashboard shows the details of failed
 The **SailPoint - Security** dashboard provides a summary of source deletion events in source management operations.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Security.png')} alt="security"/>
+
+## Upgrade/Downgrade the SailPoint app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the SailPoint app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -1,7 +1,6 @@
 ---
 title: OpenText EnCase Endpoint Security
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

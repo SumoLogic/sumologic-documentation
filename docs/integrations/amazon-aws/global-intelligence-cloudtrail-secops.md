@@ -355,7 +355,7 @@ _sourceCategory=Labs/AWS/CloudTrail/Analytics
 In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
 
 
-## Collecting Logs for the GI for AWS CloudTrail SecOps App
+## Collecting logs for the GI for AWS CloudTrail SecOps App
 
 This section provides an overview of the log collection process and instructions for configuring log collection for the Sumo Logic App for Gl CloudTrail.
 

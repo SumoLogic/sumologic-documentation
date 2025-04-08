@@ -45,7 +45,7 @@ Cloud SIEM must be enabled by Sumo Logic before it is accessible. Once enabled, 
 To further set up your instance, you may consider setting up a custom sub-domain. You can also enable Support Access if you would like Sumo Logic Support to be able to access your environment for assistance.
 
 See:
-* The [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) section of the [Manage Organization Settings](/docs/manage/manage-subscription/manage-org-settings/) article
+* The [Set up a custom subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings#set-up-a-customsubdomain) section of the [Manage Organization Settings](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings) article
 * [Enable a Support Account](/docs/manage/security/enable-support-account/)
 
 ### Set up users
@@ -59,7 +59,7 @@ Cloud SIEM access is controlled through the unified role-based access controls (
    * Cloud SIEM
       * View Cloud SIEM
       * Insights
-         * Comment on Insights
+         * Comment on insights
 * **Cloud SIEM Administrator**<br/>Add the following capabilities (add all capabilities under Cloud SIEM):
    * Cloud SIEM
       * View Cloud SIEM
@@ -96,11 +96,13 @@ See:
 
 #### Configure partitions
 
-Cloud SIEM Insights are stored within two audit partitions. These partitions also store configuration changes made to the Cloud SIEM environment. Because historical reporting of this information may be required, we recommend increasing the retention of these two partitions to 365 days:
+Cloud SIEM insights are stored within two audit partitions. These partitions also store configuration changes made to the Cloud SIEM environment. Because historical reporting of this information may be required, we recommend increasing the retention of these two partitions to 365 days:
 * `_index=sumologic_audit_events`
 * `_index=sumologic_system_events`
 
-See: The [Search the Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index#search-the-audit-event-index) section of the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) article
+See: 
+* [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/#index-retention-period)
+* [System Event Index](/docs/manage/security/audit-indexes/system-event-index/#index-retention-period)
 
 #### Create parsers
 
@@ -126,18 +128,18 @@ Perform the following tasks to install security apps that provide data to Cloud 
 
 #### Install security apps
 
-Install the Cloud SIEM App to monitor data that is parsed, along with all the signals and Insights that records generate. The app contains multiple folders of searches and dashboards related to Cloud SIEM.
+Install the Cloud SIEM App to monitor data that is parsed, along with all the signals and insights that records generate. The app contains multiple folders of searches and dashboards related to Cloud SIEM.
 
-Also install any out-of-the-box apps or dashboards for security data sources we support, including CrowdStrike’s Threat Intel Quick Analysis app. These apps are useful for quick visualizations and configuring context actions to pivot directly to from Cloud SIEM.
+Also install any out-of-the-box apps or dashboards for security data sources we support, including the Threat Intel Quick Analysis app. These apps are useful for quick visualizations and configuring context actions to pivot directly to from Cloud SIEM.
 
 See:
 * [Enterprise Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/)
 * [Security and Threat Detection](/docs/integrations/security-threat-detection/)
 * [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)
 
-#### Import Crowdstrike threat intel searches
+#### Import threat intel searches
 
-You can configure Crowdstrike threat indicator matches from the Threat Intel Quick Analysis app to become signals within Cloud SIEM using scheduled searches. An example would be to fire a Cloud SIEM signal from a scheduled search when there is a highly malicious threat intel match on device IPs. Review other current scheduled search alerts that might be candidates for generating signals.
+You can configure Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) matches from the Threat Intel Quick Analysis app to become signals within Cloud SIEM using scheduled searches. An example would be to fire a Cloud SIEM signal from a scheduled search when there is a highly malicious threat intel match on device IPs. Review other current scheduled search alerts that might be candidates for generating signals.
 
 See:
 * [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)
@@ -149,27 +151,27 @@ Work with Professional Services to perform the tasks in the following sections t
 
 ### Set detection thresholds
 
-One of the most important aspects of Cloud SIEM is detection configuration for Insight generation. While you can define the detection window and the threshold Activity Score for Insight generation yourself, in most cases the default settings are ideal.
+One of the most important aspects of Cloud SIEM is detection configuration for insight generation. While you can define the detection window and the threshold Activity Score for insight generation yourself, in most cases the default settings are ideal.
 
 See: [Set Insight Generation Window and Threshold](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/)
 
 ### Create custom statuses
 
-Cloud SIEM statuses allow you to organize your incident response pipeline and track the progress of Insight remediation. Create custom statuses as needed for your environment.
+Cloud SIEM statuses allow you to organize your incident response pipeline and track the progress of insight remediation. Create custom statuses as needed for your environment.
 
 See: [Managing Custom Insight Statuses](/docs/cse/administration/manage-custom-insight-statuses/)
 
 ### Define network blocks
 
-Network blocks tag records with descriptive information that will help analysts and responders have the context of records, signals, and Insights. To define network blocks, you can often export the information from DHCP servers or other network devices.
+Network blocks tag records with descriptive information that will help analysts and responders have the context of records, signals, and insights. To define network blocks, you can often export the information from DHCP servers or other network devices.
 
 See: [Create and Use Network Blocks](/docs/cse/administration/create-use-network-blocks/)
 
 ### Configure threat intel feeds
 
-Cloud SIEM heavily leverages threat intelligence to do real-time comparisons against known bad indicators. You can configure popular free threat feeds. But if your security team pays for premium threat intelligence (such as RecordedFuture, Anomali, Crowdstrike, ThreatConnect, etc), you can configure these too.
+Cloud SIEM heavily leverages threat intelligence to do real-time comparisons against known bad indicators. You can configure popular free threat feeds. But if your security team pays for premium threat intelligence (such as RecordedFuture, Anomali, Crowdstrike, ThreatConnect, and so on), you can configure these too.
 
-See: [Create a Custom Threat Intel Source](/docs/cse/administration/create-custom-threat-intel-source/)
+See: [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators)
 
 ### Create lists
 Perform the following steps to create lists to allow or suppress information monitored for Cloud SIEM.
@@ -210,15 +212,15 @@ Perform the following tasks to create actions to run in Cloud SIEM.
 
 #### Create Cloud SIEM actions
 
-You can create actions in Cloud SIEM to issue notifications when certain events occur. For example, you can create an action that sends information about an Insight to another system, either automatically when the Insight is created, or on-demand from the Insight's **Actions** menu. You can also create actions for other use cases, such as integrations with tools (for example, Jira, Slack, etc.), or to send an email to analysts when they are assigned Insights.
+You can create actions in Cloud SIEM to issue notifications when certain events occur. For example, you can create an action that sends information about an insight to another system, either automatically when the insight is created, or on-demand from the insight's **Actions** menu. You can also create actions for other use cases, such as integrations with tools (for example, Jira, Slack, etc.), or to send an email to analysts when they are assigned insights.
 
 See: [Create Cloud SIEM Actions](/docs/cse/administration/create-cse-actions/)
 
-#### Create Context Actions
+#### Create context actions
 
-A Context Action is an option that a Cloud SIEM analyst can use to query an external system for information about an Entity, IOC, or data encountered in a Record. For example, you could create a Context Action to check an IP address against a threat intel service, look up a username, or run a log search in Sumo Logic for a hostname.
+A context action is an option that a Cloud SIEM analyst can use to query an external system for information about an entity, IOC, or data encountered in a record. For example, you could create a context action to check an IP address against a threat intel service, look up a username, or run a log search in Sumo Logic for a hostname.
 
-You could also create a Context Action to show users’ Google activity. For example, install the Google Workspace app and set up the User Activity dashboard. Then create a context action to pivot directly to the dashboard from Cloud SIEM usernames.
+You could also create a context action to show users’ Google activity. For example, install the Google Workspace app and set up the User Activity dashboard. Then create a context action to pivot directly to the dashboard from Cloud SIEM usernames.
 
 See:
 * [Create Cloud SIEM Context Actions](/docs/cse/administration/create-cse-context-actions/)
@@ -245,7 +247,7 @@ See: [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/)
 
 #### Configure First Seen rule baseline
 
-First Seen rules allow you to generate a signal when behavior by an Entity (such as a user) is encountered that hasn't been seen before. Cloud SIEM automatically creates a baseline model of normal behavior over a 30-day period. Typically longer baselines (such as 30 days) reduce alert noise. However, for testing purposes, you may want to reduce the time window to generate signal data before the full baseline window has occurred.
+First Seen rules allow you to generate a signal when behavior by an entity (such as a user) is encountered that hasn't been seen before. Cloud SIEM automatically creates a baseline model of normal behavior over a 30-day period. Typically longer baselines (such as 30 days) reduce alert noise. However, for testing purposes, you may want to reduce the time window to generate signal data before the full baseline window has occurred.
 
 See: [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule/)
 
@@ -257,6 +259,6 @@ See: [Improve Rules with Insight Trainer](/docs/cse/rules/insight-trainer/)
 
 ### Configure the Automation Service
 
-The Automation Service allows you to automate smart actions, including enrichments and notifications. You can run automations manually, or at Insight creation or closure.
+The Automation Service allows you to automate smart actions, including enrichments and notifications. You can run automations manually, or at insight creation or closure.
 
 See: [Automation](/docs/cse/automation/)

@@ -1,5 +1,5 @@
 To uninstall the app, do the following:
 
-1. From the Sumo Logic navigation, select **App Catalog**.
-1. In the **Search Apps** field, search for and then select your app. 
+1. Select **App Catalog**.
+1. In the 🔎 **Search Apps** field, run a search for your desired app, then select it.
 1. Click **Uninstall**.

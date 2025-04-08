@@ -6,7 +6,7 @@ description: Box Plot Chart graphically depicts groups of data using quartiles, 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A Box Plot Chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters. In Box Plot charts, the bottom and top of the box represent the first and third quartiles; the band inside the box represents the median.<br/><img src={useBaseUrl('img/dashboards-new/panels/box-plot-charts/Box-plot.png')} alt="Box-plot" width="800"/>
+A Box Plot Chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters. In Box Plot charts, the bottom and top of the box represent the first and third quartiles; the band inside the box represents the median.<br/><img src={useBaseUrl('img/dashboards/panels/box-plot-charts/Box-plot.png')} alt="Box-plot" width="800"/>
 
 To create Box Plot Chart panels, your query must include:
 
@@ -50,7 +50,7 @@ _sourceCategory=vpc  
 ## Create a Box Plot chart:
 
 To add a panel with a box plot chart:
-1. Create or open a Dashboard and click on **Add Panel > Time Series or Add Panel > Categorical**.<br/><img src={useBaseUrl('img/dashboards-new/panels/box-plot-charts/time-series-or-categorical.png')} alt="time-series-or-categorical" width="600"/>
+1. Create or open a Dashboard and click on **Add Panel > Time Series or Add Panel > Categorical**.<br/><img src={useBaseUrl('img/dashboards/panels/box-plot-charts/time-series-or-categorical.png')} alt="time-series-or-categorical" width="600"/>
 1. Type a supported query in the Search box, including all of the required field names and press **Enter** for it to run.
-1. Once the search results appear, select **Box Plot** from the **Chart Type** dropdown.<br/><img src={useBaseUrl('img/dashboards-new/panels/box-plot-charts/charts_box_plot.png')} alt="charts_box_plot" width="800"/>
+1. Once the search results appear, select **Box Plot** from the **Chart Type** dropdown.<br/><img src={useBaseUrl('img/dashboards/panels/box-plot-charts/charts_box_plot.png')} alt="charts_box_plot" width="800"/>
 1. [Modify the chart](/docs/dashboards/panels/modify-chart) as desired.

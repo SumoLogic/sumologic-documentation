@@ -143,7 +143,7 @@ sumo.datasource=windows deployment.environment={{deployment.environment}} host.g
 | sort by _timeslice
 ```
 
-## Sample Logs
+## Sample log messages
 
 ```json
 {
@@ -264,3 +264,19 @@ Track user activities such as password changes, password resets, excessive faile
 Track your Windows Update activities.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/Windows-PCI-Req-06-Windows-Updates-Activity.png' alt="Windows - PCI Req 06 - Windows Updates Activity" />
+
+## Create monitors for PCI Compliance For Windows JSON app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### PCI Compliance For Windows JSON alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows PCI - Critical Policy Changes` | This alert is triggered when modifications to security policies or audit policies are detected, indicating potential changes to the system's security posture. It supports PCI DSS Requirements `10.2.2` (track changes to system-level objects) and `10.2.5.b` (track use of identification and authentication mechanisms). | Count >= 1 | Count < 1 |
+| `Windows PCI - Excessive Failed Login Attempts` | This alert is triggered when there are multiple authentication failures detected across Windows environments. These are monitored across different authentication mechanisms like local Windows authentication, Kerberos, and network logons. It correlates failure patterns with specific error codes to identify potential security threats such as password guessing, account enumeration, or attempts to access disabled accounts. This helps security teams differentiate between benign issues and malicious activities. | Count >= 5 | Count < 5 |
+| `Windows PCI - Failed Windows Updates` | This alert is triggered when Windows update failures are detected, which could leave systems vulnerable to known exploits. It aligns with PCI DSS Requirement `6.2.0` for installing critical security patches within one month of release. | Count > = 3 | Count < 3 |
+| `Windows PCI - Security Audit Log Tampering` | This alert is triggered when attempt is detected to clear or tamper with Windows security audit logs, indicating potential attempts to hide malicious activities. It supports PCI DSS Requirements `10.2.0` (implement automated audit trails) and `10.3.0` (record audit trail entries). | Count > = 1 | Count < 1 |
+| `Windows PCI - User Account State Change` | This alert is triggered when critical user account state changes are detected, including account creation, deletion, enablement, and disablement. This supports PCI DSS Requirement 8.1.3 for immediately revoking access for terminated users. | Count > = 1 | Count < 1 |

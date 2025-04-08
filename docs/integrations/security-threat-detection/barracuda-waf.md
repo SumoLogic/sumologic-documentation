@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Barracuda Web Application Firewall protects your web, mobile and API applications from being compromised, prevents data breaches, ensure protection from web attacks, provide control access and authentication.
 
-The Barracuda WAF App analyzes traffic flowing through the Barracuda WAF and provides pre-configured dashboards that allow you to monitor WAF traffic as well to analyze various types of attacks detected both by Barracuda and Sumo Logic’s own [Threat Intelligence database](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq#What_is_the_CrowdStrike_Integration_for_Sumo_Logic.3F).
+The Barracuda WAF App analyzes traffic flowing through the Barracuda WAF and provides pre-configured dashboards that allow you to monitor WAF traffic as well to analyze various types of attacks detected both by Barracuda and Sumo Logic’s own [threat intelligence database](/docs/integrations/security-threat-detection/threat-intel-quick-analysis).
 
 
 ## Log types
@@ -53,7 +53,7 @@ _sourceCategory=Labs/loggen/barracuda " TR "
 | limit 5
 ```
 
-## Collecting Logs for Barracuda WAF app
+## Collecting logs for Barracuda WAF app
 
 This section shows you how to configure collection for the Barracuda WAF App to use with the predefined searches and dashboards.
 
@@ -155,18 +155,6 @@ Now that you have configured log collection for Barracuda WAF, install the Sumo 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
-
-## Upgrading the Barracuda WAF app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Barracuda WAF app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing Barracuda WAF dashboards
 
@@ -276,3 +264,15 @@ Use this dashboard to:
 * Determine top clients accessing your web applications and optimize WAF configurations as needed.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_Client_Traffic.png')} alt="Barracuda WAF dashboards" />
+
+## Upgrade/Downgrade the Barracuda WAF app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Barracuda WAF app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

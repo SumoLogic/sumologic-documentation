@@ -2,8 +2,24 @@
   color: var(--ifm-navbar-link-hover-color);
 }
 
-.link__label {
+[data-theme='light'] .link__label {
     font-size: 0.8rem !important;
+      color: var(--ifm-font-color-base);
+}
+
+[data-theme='dark'] .navbar__link {
+    font-size: 0.8rem !important;
+    color: var(--ifm-color-gray-100);
+}
+
+[data-theme='dark'] .link__label {
+    font-size: 0.8rem !important;
+      color: var(--ifm-color-gray-100);
+}
+
+[data-theme='light'] .navbar__link {
+    font-size: 0.8rem !important;
+    color: var(--ifm-font-color-base);
 }
 
 [data-theme='dark'] .link__label:hover {

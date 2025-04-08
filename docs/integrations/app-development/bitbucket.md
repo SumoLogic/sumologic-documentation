@@ -14,7 +14,7 @@ The Sumo Logic App for Bitbucket provides insights to development teams into how
 The Bitbucket App supports only Bitbucket Cloud.
 
 
-## Event Types
+## Event types
 
 Sumo Logic analyzes the following required types of logs for more efficient monitoring.
 
@@ -41,7 +41,7 @@ Refer to the [event documentation](https://confluence.atlassian.com/bitbucket/ev
 
 For log samples, refer to [Bitbucket Event Documentation](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html)
 
-### Sample Log
+### Sample log messages
 
 **Deploy Events** are triggered whenever code is pushed to test, staging, or production environments.
 * Success Code Deploys
@@ -98,7 +98,7 @@ _sourceCategory="bitbucket" production  deploymentEnvironment pipe_result_link d
 ```
 
 
-## Collecting Logs for Bitbucket App
+## Collecting logs for Bitbucket App
 
 This section provides instructions for configuring log collection for the Bitbucket App. Configuring log collection consists of the following tasks:
 
@@ -146,7 +146,7 @@ For reference: This is how the [bitbucket-pipelines.yml](https://bitbucket.org/a
 
 Sumo Logic needs to understand the event type for incoming events (for example, repo:push events). To enable this, the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 2. Add Field ‎**X-Event-Key**‎.<br/><img src={useBaseUrl('img/integrations/app-development/BB_Collect_Log.png')} alt="Bitbucket" />
 
 

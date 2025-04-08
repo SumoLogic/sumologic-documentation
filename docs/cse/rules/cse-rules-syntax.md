@@ -2,7 +2,7 @@
 id: cse-rules-syntax
 title: Cloud SIEM Rules Syntax
 sidebar_label: Rules Syntax
-description: Learn about the functions you can use when writing Cloud SIEM Rules.
+description: Learn about the functions you can use when writing Cloud SIEM rules.
 ---
 
 This topic describes commonly used Cloud SIEM rules language functions. Rules language functions are used in Cloud SIEM rule expressions. For information about rules and rule expressions, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules).
@@ -364,11 +364,11 @@ The following expression returns "3.141592653589793" (pi):
 
 Returns “true” if a specified array contains a particular value. 
 
-Cloud SIEM rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
+Cloud SIEM rules use `array_contains` statements to look for a value in a record field. This is useful if you want to check a record’s `listMatches field` for [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
 
 **Syntax for matching to lists**
 
-The syntax for checking for the existence of a Match List name or a threat intel list name in a Record’s `listMatches` field is: 
+The syntax for checking for the existence of a Match List name or a threat intel list name in a record’s `listMatches` field is: 
 
 `array_contains(listMatches, 'match_list_name')`
 
@@ -388,7 +388,7 @@ The syntax for checking to see if the the `fieldsTag` field contains a particula
 
 where:
 
-* `field `is the name of a Record field
+* `field `is the name of a record field
 * `keyword-tag` is a keyword tag
 
 **Syntax for matching to a schema key tag**
@@ -399,7 +399,7 @@ The syntax for checking to see if the the `fieldTag` field contains a particular
 
 where:
 
-* `field` is the name of a Record field
+* `field` is the name of a record field
 * `schema-key` is the name of a schema key tag
 * `schema-value` is the value of a schema key tag
 
@@ -623,6 +623,70 @@ Extracts the network prefix from an IPv4 address. 
 The following expression returns "10.10.1.0":
 
 `getCIDRPrefix("10.10.1.35", "24")`
+
+### hasThreatMatch
+
+The `hasThreatMatch` Cloud SIEM rules function matches incoming records in Cloud SIEM to [threat intelligence indicators](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/).
+
+When an entity is processed by a rule using the `hasThreatMatch` function and is a match, the entity is associated with a known indicator that has a threat type attribute. The entity can be associated with either `threatType` (in normalized JSON format and CSV format), or `indicator_types` (in STIX format).
+
+**Syntax**
+
+`hasThreatMatch([<fields>], <filters>, <indicators>)`
+
+Parameters:
+* `<fields>` is a list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
+* `<filters>` is a logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`. <br/>You can filter on the following indicator attributes:
+   * `actors`
+   * `confidence`
+   * `id`
+   * `indicator`
+   * `killChain`
+   * `source`
+   * `threatType`
+   * `type`
+   * `validFrom`
+   * `validUntil`
+* `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
+   * `active_indicators`. Match active indicators only (default).
+   * `expired_indicators`. Match expired indicators only.
+   * `all_indicators`. Match all indicators.
+
+**Examples**
+
+* `hasThreatMatch([srcDevice_ip])`
+* `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
+* `hasThreatMatch([srcDevice_ip], type="ipv4-addr")`
+* `hasThreatMatch([srcDevice_ip], confidence > 50)`
+* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="TAXII2Source")`
+* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50))`
+* `hasThreatMatch([srcDevice_ip], expired_indicators)`
+* `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
+
+#### Best practice
+
+As a best practice, always include filtering to narrow your match to just the types desired (that is, `type=`). This will ensure that your match expressions are not overly broad.
+
+For example:
+* `hasThreatMatch([dstDevice_ip], confidence > 1 AND (type="ipv4-addr" OR type="ipv6-addr"))` 
+* `hasThreatMatch([file_hash_imphash, file_hash_md5, file_hash_pehash, file_hash_ssdeep, file_hash_sha1, file_hash_sha256], confidence > 1 AND type="file:hashes")` 
+* `hasThreatMatch([device_hostname, srcDevice_hostname, dstDevice_hostname, http_hostname, http_referrerHostname, bro_ssl_serverName, bro_ntlm_domainame, bro_ssl_serverName_rootDomain, dns_queryDomain, dns_replyDomain, fromUser_authDomain, http_referrerDomain, http_url_rootDomain, http_url_fqdn], confidence > 1 AND (type="domain-name" OR type="url"))` 
+* `hasThreatMatch([http_url], confidence > 1 AND type="url")` 
+* `hasThreatMatch([srcDevice_ip], confidence > 1 AND (type="ipv4-addr" OR type="ipv6-addr"))`
+
+Following are the standard indicator types you can filter on:
+* `domain-name`. Domain name. 
+* `email-addr`. Email address. 
+* `file:hashes`. File hash. (If you want to add the hash algorithm, enter `file:hashes.<HASH-TYPE>`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.)
+* `file`. File name. 
+* `ipv4-addr`. IPv4 IP address. 
+* `ipv6-addr`. IPv6 IP address. 
+* `mac-addr`. Mac address name. 
+* `process`. Process name. 
+* `url`. URL. 
+* `user-account`. User ID or login name. 
+
+For more information about indicator types, see [Upload Formats for Threat Intelligence Indicators](/docs/security/threat-intelligence/upload-formats).
 
 ### haversine
 
@@ -1394,7 +1458,12 @@ Filters results based on the value of a boolean expression.  
 
 `... | where <boolean expression>`
 
-**Example**
+**Examples**
 
-`| where jsonArrayContains(field, “vuln_scanner”)`  
+* `| where jsonArrayContains(field, “vuln_scanner”)`
 
+* `| where` can be used at the beginning of an expression, as well as on subsequent lines after another syntax element has been used to start a preceding line. For example:
+   ```
+   | json field=fields "foo" as alias
+   | where toInt(alias) > 5
+   ```

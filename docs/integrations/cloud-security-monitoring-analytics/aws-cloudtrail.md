@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This set of CloudTrail monitoring and analytics dashboards provide one dashboard for the most critical analytics. Think of this bundle of dashboards as a good starting place to see trends and outliers on specific aspects of your CloudTrail data -- including access monitoring, login activity, system monitoring, privileged activity, and threat intelligence.
 
 
-## Collecting Logs for the AWS CloudTrail PCI Compliance App
+## Collecting logs for the AWS CloudTrail app
 
 This section has instructions for configuring log collection for the AWS CloudTrail app.
 
@@ -87,7 +87,7 @@ _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
 
 
-## Installing the PCI Compliance AWS CloudTrail App
+## Installing the AWS CloudTrail app
 
 Now that you have set up collection, install the Amazon CloudTrail - Cloud Security Monitoring and Analytics app to use the preconfigured searches and Dashboards that provide insight into your data.
 
@@ -95,17 +95,11 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing AWS CloudTrail Dashboards
+## Viewing AWS CloudTrail dashboards
 
-The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashboards that you can modify for your specific security operational needs.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-* Access Monitoring
-* Login Activity
-* Account and System Monitoring
-* Overview
-* Privileged Activity
-* Threat Intelligence
-
+<ViewDashboards/>
 
 ### Security Analytics - Access Monitoring
 

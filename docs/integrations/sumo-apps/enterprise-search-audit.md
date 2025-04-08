@@ -19,19 +19,6 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
-## Upgrading the Enterprise Search Audit app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Enterprise Search Audit app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
-
 ## Viewing Enterprise Search Audit App dashboards
 
 This page has information about the pre-built dashboards for the Enterprise Search Audit App and a description of each of the app dashboards.
@@ -98,3 +85,15 @@ To identify queries that span large time periods and are likely to be performanc
 * Identify the searches that do not apply any optimization techniques and could benefit from optimization.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Queries-Characteristics-and-Opportunities-to-Improve.png')} alt="Enterprise Search Audit - Queries Characteristics and Opportunities to Improve" />
+
+## Upgrade/Downgrade the Enterprise Search Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Enterprise Search Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

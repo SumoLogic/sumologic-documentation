@@ -1,7 +1,6 @@
 ---
 title: AWS Athena
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

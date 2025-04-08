@@ -1,8 +1,9 @@
 ---
 slug: /metrics
 title: Metrics
-description: Sumo Logic Metrics can measure infrastructure, application performance or custom business and operational data.
-tags: [metrics, metric]
+description: Sumo Logic metrics can measure infrastructure, application performance or custom business and operational data.
+keywords:
+  - metrics
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -55,20 +56,20 @@ Metrics are an effective tool for monitoring, troubleshooting, and identifying t
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/metrics/logs-to-metrics"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Logs to Metrics</h4></a>
+  <a href="/docs/metrics/logs-to-metrics"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Logs-to-Metrics</h4></a>
   <p>Set up rules to extract or create metrics from log data.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/metrics/metrics-dpm"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Metrics Data Ingestion</h4></a>
+  <p>View detailed information about your metrics data consumption.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/metrics/kubernetes-metrics"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Kubernetes Metrics</h4></a>
   <p>Kubernetes metrics are collected when you deploy our Kubernetes collection.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/metrics/metric-charts"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Metrics Charts</h4></a>
-  <p>Visualize metrics data in Sumo Logic.</p>
   </div>
 </div>
 </div>

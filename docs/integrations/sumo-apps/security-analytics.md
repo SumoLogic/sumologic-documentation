@@ -13,7 +13,7 @@ The Sumo Logic App for Security Analytics provides Dashboards that allow you to 
 
 ## Prerequisites
 
-* **For Sumo Logic Enterprise Security and Enterprise Suite accounts only.** For more information, see [Requesting Sumo Logic Enterprise Apps](/docs/integrations/sumo-apps#Requesting-Sumo-Logic-Enterprise-Apps).
+* **For Sumo Logic Enterprise Security and Enterprise Suite accounts only.** For more information, see [Apps for Sumo Logic](/docs/integrations/sumo-apps).
 
 
 ## Security Analytics App Dashboards

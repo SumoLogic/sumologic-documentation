@@ -8,7 +8,7 @@ description: Webhook connections allow you to send Sumo Logic alerts to third-pa
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::info Prerequisite
-To create a webhook connection, you'll need the [Manage Connections role capability](/docs/manage/users-roles/roles/role-capabilities). Contact your org administrator for assistance.
+To create a webhook connection, you need the View Connections and Manage Connections [role capabilities](/docs/manage/users-roles/roles/role-capabilities). Contact your org administrator for assistance.
 :::
 
 A _webhook_ is an HTTP callback, which is an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks.
@@ -25,7 +25,7 @@ Along with a fully customizable webhook connection, you can quickly create webho
 * [New Relic](new-relic.md)
 * [Opsgenie](opsgenie.md)
 * [PagerDuty](pagerduty.md)
-* [Service Now](/docs/alerts/webhook-connections/servicenow/set-up-connections)
+* [ServiceNow](/docs/alerts/webhook-connections/servicenow/set-up-connections)
 * [Slack](slack.md)
 
 Most services with a REST API should allow you to create a connection using the generic webhook.
@@ -40,7 +40,7 @@ The first step in integrating webhooks with Sumo Logic is to configure one or mo
 
 To set up a webhook connection:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. On the **Connections** page click the **+** button on the top right of the table.
 1. Click **Webhook**.
 1. In the **Create Connection** dialog, enter the **Name** of the connection.

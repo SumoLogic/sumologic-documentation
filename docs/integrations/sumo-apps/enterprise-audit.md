@@ -40,34 +40,24 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
-## Upgrading the Enterprise Audit apps (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Enterprise Audit apps (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Enterprise Audit App Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Enterprise Audit - Collector and Data Forwarding Management app
 
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Data_Forwarding_icon.png')} alt="test" />
 
-Enterprise Audit - Collector and Data Forwarding Management App dashboards present information on Collector, Sources activities, and data forwarding trends by destination types. This App has the following two dashboard categories:
+The **Enterprise Audit - Collector and Data Forwarding Management App** dashboards present information on Collector, Sources activities, and data forwarding trends by destination types. This app has the following two dashboard categories:
 * Collector Management
 * Data Forwarding Management
 
 
 #### Collector Management Overview
 
-Enterprise Audit - Collector Management Overview dashboard provides a high-level view of trends related to collector and source activities, collector upgrade requests, upgrade successes and failures, the number of ephemeral collectors created and deleted, and the number of clobber collectors that were deleted.
+The **Enterprise Audit - Collector Management Overview** dashboard provides a high-level view of trends related to collector and source activities, collector upgrade requests, upgrade successes and failures, the number of ephemeral collectors created and deleted, and the number of clobber collectors that were deleted.
 
 Use this dashboard to:
 * Review collector types, both hosted and installable.
@@ -79,9 +69,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Management_Overview.png')} alt="test" />
 
 
-#### Collector Activities 
+#### Collector Activities
 
-Enterprise Audit - Collector Activities dashboard provides detailed information on collector activities, such as top users by activity and a one-day time comparison. You can also review data on recent collector activities and upgrades, and use pre-populated filters for a granular view of selected data.
+The **Enterprise Audit - Collector Activities** dashboard provides detailed information on collector activities, such as top users by activity and a one-day time comparison. You can also review data on recent collector activities and upgrades, and use pre-populated filters for a granular view of selected data.
 
 Use this dashboard to:
 * Review the geographic locations where activities are performed.
@@ -93,7 +83,7 @@ Use this dashboard to:
 
 #### Collector Sources Activities
 
-Enterprise Audit - Collector Sources Activities dashboard provides detailed information on created, updated and deleted sources, the top collectors where sources were added, active users, and one-day time comparisons. You can use pre-populated filters for a more granular view of selected data.
+The **Enterprise Audit - Collector Sources Activities** dashboard provides detailed information on created, updated and deleted sources, the top collectors where sources were added, active users, and one-day time comparisons. You can use pre-populated filters for a more granular view of selected data.
 
 Use this dashboard to:
 * Review the geographic location where activities were performed.
@@ -105,7 +95,7 @@ Use this dashboard to:
 
 #### Data Forwarding Management Overview
 
-Enterprise Audit - Data Forwarding Management Overview dashboard provides an at-a-glance view of trends for destination types and the distribution of destination types, such as  Amazon S3, hitachi, Syslog, and Generic REST. Visual representations for the distribution of data forwarding destinations and data forwarding indexes are also shown.
+The **Enterprise Audit - Data Forwarding Management Overview** dashboard provides an at-a-glance view of trends for destination types and the distribution of destination types, such as  Amazon S3, hitachi, Syslog, and Generic REST. Visual representations for the distribution of data forwarding destinations and data forwarding indexes are also shown.
 
 Use this dashboard to:
 * Assess destination type trends.
@@ -118,7 +108,7 @@ Use this dashboard to:
 
 #### Data Forwarding Destination Activities
 
-Enterprise Audit - Data Forwarding Destination Activities dashboard provides detailed information on data forwarding destination activities. You can review trends for activities, their geographical locations, one-day times shift comparisons, user activity, and recent destination activities. For a more granular view of the data, you can use the pre populated filters.
+The **Enterprise Audit - Data Forwarding Destination Activities** dashboard provides detailed information on data forwarding destination activities. You can review trends for activities, their geographical locations, one-day times shift comparisons, user activity, and recent destination activities. For a more granular view of the data, you can use the pre populated filters.
 
 Use this dashboard to:
 
@@ -131,7 +121,7 @@ Use this dashboard to:
 
 #### Data Forwarding Index Activities
 
-Enterprise Audit - Data Forwarding Index Activities dashboard provides detailed information about data forwarding indexes that were created using partitions and scheduled views. You can review trends, geographical locations for data forwarding index activities, one-day time shift comparisons, user activities, as well as data on disabled indexes and recent index activities. For a more granular analysis of the data, you can use the pre-populated filters.
+The **Enterprise Audit - Data Forwarding Index Activities** dashboard provides detailed information about data forwarding indexes that were created using partitions and scheduled views. You can review trends, geographical locations for data forwarding index activities, one-day time shift comparisons, user activities, as well as data on disabled indexes and recent index activities. For a more granular analysis of the data, you can use the pre-populated filters.
 
 Use this dashboard to:
 
@@ -146,12 +136,12 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_Content_Management_icon.png')} alt="test" />
 
-Enterprise Audit - Content Management App dashboards provide information on content activities, such as content that is created, updated, deleted, imported, exported, copied, moved, publicly accessed, made visible to the public, and application installed.
+The **Enterprise Audit - Content Management App** dashboards provide information on content activities, such as content that is created, updated, deleted, imported, exported, copied, moved, publicly accessed, made visible to the public, and application installed.
 
 
 #### Content Management Overview
 
-Enterprise Audit - Content Management Overview dashboard provides a high-level view of system activities with data on content activities over time, top applications, top content, publicly accessed content, and exported content. You can also view data on user activity and top content on which permission are added and deleted.
+The **Enterprise Audit - Content Management Overview** dashboard provides a high-level view of system activities with data on content activities over time, top applications, top content, publicly accessed content, and exported content. You can also view data on user activity and top content on which permission are added and deleted.
 
 Use this dashboard to:
 
@@ -166,7 +156,7 @@ Use this dashboard to:
 
 #### Created, Deleted, Exported, Imported Content
 
-Enterprise Audit - Created, Deleted, Exported, Imported Content dashboard provides detailed information on content that is created, deleted, exported, and imported. The dashboard is organized according to activities performed by users in User Mode and Content Administrator Mode. You can view more granular data using pre-populated filters for Event Type, Content Type and Admin Mode.
+The **Enterprise Audit - Created, Deleted, Exported, Imported Content** dashboard provides detailed information on content that is created, deleted, exported, and imported. The dashboard is organized according to activities performed by users in User Mode and Content Administrator Mode. You can view more granular data using pre-populated filters for Event Type, Content Type and Admin Mode.
 
 Use the dashboard to:
 
@@ -181,7 +171,7 @@ Use the dashboard to:
 
 #### Updated, Moved, Copied Content
 
-Enterprise Audit- Updated, Moved, Copied Content dashboard provides detailed information about content that is updated, moved and copied. The dashboard is organized according to activities performed by users in User Mode and Content Administrator Mode. You can view more granular data using pre-populated filters for Event Type, Content Type and Admin Mode.
+The **Enterprise Audit- Updated, Moved, Copied Content** dashboard provides detailed information about content that is updated, moved and copied. The dashboard is organized according to activities performed by users in User Mode and Content Administrator Mode. You can view more granular data using pre-populated filters for Event Type, Content Type and Admin Mode.
 
 Use the dashboard to:
 
@@ -196,7 +186,7 @@ Use the dashboard to:
 
 #### Permission Updated, Synchronized Content
 
-Enterprise Audit- Permission Updated, Synchronized Content dashboard provides detailed information on content permissions that have been added or deleted, as well as content that has been synchronized. The dashboard is organized according to Content Synchronization and Content Permissions.
+The **Enterprise Audit- Permission Updated, Synchronized Content** dashboard provides detailed information on content permissions that have been added or deleted, as well as content that has been synchronized. The dashboard is organized according to Content Synchronization and Content Permissions.
 
 Use this dashboard to:
 
@@ -209,7 +199,7 @@ Use this dashboard to:
 
 #### Publicly Accessed, Application Installed
 
-Enterprise Audit- Publicly Accessed, Application Installed dashboard provides detailed information on installed applications, shared and publicly accessed content. The dashboard is organized according to installed applications and publicly accessed content. For a more granular view of the data, you can filter on Event Type, Content Type, Admin Mode, Visibility using the pre-populated filters.
+The **Enterprise Audit- Publicly Accessed, Application Installed** dashboard provides detailed information on installed applications, shared and publicly accessed content. The dashboard is organized according to installed applications and publicly accessed content. For a more granular view of the data, you can filter on Event Type, Content Type, Admin Mode, Visibility using the pre-populated filters.
 
 Use this dashboard to:
 
@@ -223,7 +213,7 @@ Use this dashboard to:
 
 #### Field Extraction Rule Activities
 
-Enterprise Audit - Field Extraction Rule Activities dashboard provides detailed information on the geographic location, active users, recent activities, trends, and one day time shift comparison for Field Extraction Rules. You can analyze more granular data using the pre-populated filters.
+The **Enterprise Audit - Field Extraction Rule Activities** dashboard provides detailed information on the geographic location, active users, recent activities, trends, and one day time shift comparison for Field Extraction Rules. You can analyze more granular data using the pre-populated filters.
 
 Use this dashboard to:
 * Review data on user field extraction rule activity.
@@ -257,7 +247,7 @@ Use this dashboard to:
 
 #### User Activities
 
-Enterprise Audit- User Activities dashboard provides detailed information about user activities, including top admins, one-day time comparison, and recent events. For a granular view of data, you can filter by event name and user active status using pre-populated filters.
+The **Enterprise Audit- User Activities** dashboard provides detailed information about user activities, including top admins, one-day time comparison, and recent events. For a granular view of data, you can filter by event name and user active status using pre-populated filters.
 
 Use this dashboard to:
 * Review activity trends and the geographic locations where activities are performed.
@@ -268,7 +258,7 @@ Use this dashboard to:
 
 #### Role Activities
 
-Enterprise Audit- Role Activities dashBoard provides detailed information on activities by user role, such as top capabilities, admin role activities, and recent events. For a granular view of data, you can filter by event name and system using pre-populated filters.
+The **Enterprise Audit- Role Activities** dashboard provides detailed information on activities by user role, such as top capabilities, admin role activities, and recent events. For a granular view of data, you can filter by event name and system using pre-populated filters.
 
 Use this dashboard to:
 
@@ -278,9 +268,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_Role_Activities.png')} alt="test" />
 
 
-#### User Session Activities 
+#### User Session Activities
 
-Enterprise Audit - User Session Activities dashBoard provides detailed information on user session activities, such as locked and unlocked account activities, top admins, current logged in and logged out users, and timed out users. For a more granular view of the data, you can filter by event name using the pre-populated filters.
+The **Enterprise Audit - User Session Activities** dashboard provides detailed information on user session activities, such as locked and unlocked account activities, top admins, current logged in and logged out users, and timed out users. For a more granular view of the data, you can filter by event name using the pre-populated filters.
 
 Use this dashboard to:
 
@@ -292,9 +282,9 @@ Use this dashboard to:
 
 #### User (Email, Password) Activities
 
-User(Email, Password) Activities dashBoard provides detailed information on user password and email activities, such as password changes, password resets by admins, and user email change requests and changes. For a more granular view of the data, you can filter by event name using the pre-populated filters.
+**User(Email, Password) Activities** dashboard provides detailed information on user password and email activities, such as password changes, password resets by admins, and user email change requests and changes. For a more granular view of the data, you can filter by event name using the pre-populated filters.
 
-Use this dashboard to :
+Use this dashboard to:
 
 * Review trends for password and email changes, as well as the top admins performing password resets.
 * Get an overview of the recent password resets and email changes, and the geographic locations where all email and password activities were performed.
@@ -304,7 +294,7 @@ Use this dashboard to :
 
 #### User Role Relationship Activities
 
-Enterprise Audit - User Role Relationship Activities dashboard provides detailed information on activities for user and role modification. You can review the top users that were added to and removed from roles, the top roles from which users were added and removed, and the top admins.
+The **Enterprise Audit - User Role Relationship Activities** dashboard provides detailed information on activities for user and role modification. You can review the top users that were added to and removed from roles, the top roles from which users were added and removed, and the top admins.
 
 Use this dashboard to:
 
@@ -318,12 +308,12 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_Security_Management_icon.png')} alt="test" />
 
-Enterprise Audit - Security Management App dashboard provide visibility into security posture, such as Access Key Activities, SAML Activities, Password Policy, Multi-Factor Authorization (MFA), and Service AllowList activities within your Sumo Logic Environment.
+The **Enterprise Audit - Security Management App** dashboard provide visibility into security posture, such as Access Key Activities, SAML Activities, Password Policy, Multi-Factor Authorization (MFA), and Service AllowList activities within your Sumo Logic Environment.
 
 
 #### Security Management Overview
 
-Enterprise Audit - Security Management Overview dashboard provides an at-a-glance view of security activities over time, user activity, the number of users who have been enabled and disabled MFA, and the geographic locations of security activities.
+The **Enterprise Audit - Security Management Overview** dashboard provides an at-a-glance view of security activities over time, user activity, the number of users who have been enabled and disabled MFA, and the geographic locations of security activities.
 
 Use this dashboard to:
 
@@ -337,7 +327,7 @@ Use this dashboard to:
 
 #### Password Policy, MFA, Service AllowList Activities
 
-Enterprise Audit - Password Policy, MFA, Service AllowList Activities dashboard provides detailed information about password policy creation, deletion, and updates. It also provides a high-level view of users that enable and disable multi factor authorization (MFA), service allowlist updates, as well as user and admin activities.
+**Enterprise Audit - Password Policy, MFA, Service AllowList Activities** dashboard provides detailed information about password policy creation, deletion, and updates. It also provides a high-level view of users that enable and disable multi factor authorization (MFA), service allowlist updates, as well as user and admin activities.
 
 Use this dashboard to:
 
@@ -350,7 +340,7 @@ Use this dashboard to:
 
 #### Access Key Activities
 
-Enterprise Audit - Access Key Activities dashBoard provides detailed information about access key activities, such as creation, deletion, and updates. You can also review trends, user activity, the number of active access keys, and one-day time comparisons. For more granular data, such as type of event or access key status, you can use the predefined filters.
+The **Enterprise Audit - Access Key Activities** dashboard provides detailed information about access key activities, such as creation, deletion, and updates. You can also review trends, user activity, the number of active access keys, and one-day time comparisons. For more granular data, such as type of event or access key status, you can use the predefined filters.
 
 Use this dashboard to:
 
@@ -362,7 +352,7 @@ Use this dashboard to:
 
 #### SAML Activities
 
-Enterprise Audit - SAML Activities dashboard provides detailed information about SAML activities, such as SAML lockdown and SAML configuration. You can also review AllowList user activities such as creating, deleting, and updating allowlists. You can view more granular data for an activity using the predefined filters.
+The **Enterprise Audit - SAML Activities** dashboard provides detailed information about SAML activities, such as SAML lockdown and SAML configuration. You can also review AllowList user activities such as creating, deleting, and updating allowlists. You can view more granular data for an activity using the predefined filters.
 
 Use this dashboard to:
 * Review SAML Lockdown trends, AllowList User and SAML configuration activities.
@@ -370,3 +360,15 @@ Use this dashboard to:
 * Review admin activities and one-day time shift comparisons.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_SAML_Activities.png')} alt="test" />
+
+## Upgrade/Downgrade the Enterprise Audit apps (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Enterprise Audit apps (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

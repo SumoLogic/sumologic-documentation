@@ -1,7 +1,6 @@
 ---
 title: FortiSandbox
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

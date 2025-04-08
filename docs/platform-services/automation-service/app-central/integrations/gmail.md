@@ -1,14 +1,13 @@
 ---
 title: Gmail
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
-**Version: 1.4  
-Updated: Oct 26, 2023**
+**Version: 1.5  
+Updated: June 26, 2024**
 
 Interact with filters, mail messages, and attachments in Google Mail.
 
@@ -137,3 +136,5 @@ Interact with filters, mail messages, and attachments in Google Mail.
 			* Added output mappings
 	+ Other general changes
 		- Code refactoring
+* June 26, 2024 (v1.5)
+	+ Update: The Send Email action now supports the new Cloud SOAR API. This update enables you to send incident attachments directly through the email action.

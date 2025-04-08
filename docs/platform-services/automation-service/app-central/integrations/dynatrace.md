@@ -1,7 +1,6 @@
 ---
 title: Dynatrace
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -19,7 +18,7 @@ Dynatrace is a cutting-edge solution that offers full-stack monitoring, enabling
 * **Get Events** *(Enrichment)* - Lists events based on the parameters provided.
 * **Get Problems Daemon** *(Daemon)* - Automatically returns the latest problems.
 * **Get Problems** *(Enrichment)* - Lists the problems (and their details) observed by Dynatrace during a relative period of time.
-* **Get Security Advices** *(Enrichment)* - Lists recommendations related to security problems using AI.
+* **Get Security Advice** *(Enrichment)* - Lists recommendations related to security problems using AI.
 * **Mute Security Problem** *(Containment)* - Mutes the specified security problem. Muted problems are hidden from the list of problems in the UI.
 * **Search Logs** *(Enrichment)* - Lists all log records based on the parameters provided.
 * **Search Metrics** *(Enrichment)* - Lists all metrics based on the parameters provided.

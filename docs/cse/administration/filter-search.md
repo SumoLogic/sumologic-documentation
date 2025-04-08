@@ -11,18 +11,20 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can filter and search the list pages in Cloud SIEM—**Insights**, **Signals**, **Entities**, **Records**, **Rules**, and **Network Blocks**—using the **Filter** bar near the top of the page.
+## Search in Cloud SIEM
 
-<img src={useBaseUrl('img/cse/list-page-search.png')} alt="Sumo Logic thumbnail logo" width="500" />
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Search Cloud SIEM**. You can also click the **Go To...** menu at the top of the screen and select **Search Cloud SIEM**. 
+1. Click in the **Find Insights, Signals, Entities and more...** search bar at the top of the page.<br/><img src={useBaseUrl('img/cse/list-page-search.png')} alt="Search box at the top of the page" width="400" />
+1. Enter text to search.
+1. To filter, click the filter icon <img src={useBaseUrl('img/cse/filter-icon.png')} alt="Filter icon" width="20" /> on the right side of the search box.
+1. Select a source to filter on. <br/><img src={useBaseUrl('img/cse/search-sources.png')} alt="Search sources" width="250" />
+1. A dropdown list of filters appears for that source. Select a field to filter on, or pick a suggestion.<br/><img src={useBaseUrl('img/cse/filter-options.png')} alt="List of fields to filter on" width="400"/>
+1. Continue to select options to filter on from the options presented.
 
-## Filter items
-When you click in the **Filters** bar, a dropdown list of filters appears. After you select a filter you’ll be presented with a dialog so you can specify your filtering criteria.
+## Search using regular expressions
 
-<img src={useBaseUrl('img/cse/filter-options.png')} alt="Sumo Logic thumbnail logo" width="250"/>
+You also enter a search string or regex in the search bar, and press Return to run a search. Note that Cloud SIEM's regular expression engine will return items that contain text matching the complete string. The engine implicitly adds anchors  (`^` and `$`) to the beginning and end of your regex.
 
-## Search items
-You also enter a search string or regex in the **Filter** bar, and press Return to run a search. Note that Cloud SIEM's regular expression engine will return items that contain text matching the complete string. The engine implicitly adds anchors  (`^` and `$`) to the beginning and end of your regex.
+Cloud SIEM search uses Elasticsearch. For regular expressions allowed for use in Cloud SIEM search, see [Regular expression syntax](https://www.elastic.co/guide/en/elasticsearch/reference/current/regexp-syntax.html) in the Elastic documentation.
 
-You can use `not` to search for items that do not contain a particular keyword, for example:
-
-`not:Initial Access`  
+You can use `not` to search for items that do not contain a particular keyword, for example: `not:Initial Access`  

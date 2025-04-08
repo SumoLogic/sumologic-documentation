@@ -13,6 +13,7 @@ import MyComponentSource from '!!raw-loader!/files/c2c/salesforce/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/salesforce/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="75"/>
 
@@ -37,21 +38,21 @@ The Consumer Key and Consumer Secret API tokens from Salesforce are required to
 1. The Salesforce Event Monitoring add-on is required to obtain all of the data presented in the app dashboards. The add-on enables access to all event types in the Salesforce EventLogFile, the LoginEvent object, Transaction Security, and the Event Monitoring Analytics App. For more information, see [Get Started with Event Monitoring](https://trailhead.salesforce.com/en/modules/event_monitoring/units/event_monitoring_intro) and [Enable Event Monitoring](https://help.salesforce.com/articleView?id=Enabling-Event-Monitoring&language=en_US&type=1).
 1. Create a dedicated user and profile for the integration as referred to in [Create User Profiles](https://help.salesforce.com/s/articleView?id=sf.emergency_response_admin_userprofiles.htm&type=5) and [Add a Single User](https://help.salesforce.com/s/articleView?id=sf.adding_new_users.htm&type=5) sections of the Salesforce Documentation.
 1. Go to the profile created in Step 1 and provide the following permissions required by the source:
-   * Under the **Administrative Permissions** page, select **API Enabled** and **Password Never Expires, View All Users, View Setup and Configuration**  
-   * Under **General User Permissions select**  **View Event Log Files** and **Run Reports**.  
-   * Under **Standard Object Permissions** select **Documents.**  
+   * Under the **Administrative Permissions** page, select **API Enabled** and **Password Never Expires, View All Users, View Setup and Configuration**
+   * Under **General User Permissions select**  **View Event Log Files** and **Run Reports**.
+   * Under **Standard Object Permissions** select **Documents.**
    * Also if your Salesforce portal requires a single sign on, you need to bypass this user by unchecking the **Is Single Sign-On Enabled** setting in the profile under the **System Permissions** group.
 1. Create a Connected App in Salesforce to generate the “Consumer Key” (client_id) and “Consumer Secret” (client_secret) API tokens if these are not already available. To do so:
-   * Login to Salesforce.  
+   * Login to Salesforce.
    * Go to **Setup > Platform Tools > Apps > App Manager**.
    * Select **New Connected App**. Enter the following [Basic Information](https://help.salesforce.com/articleView?id=connected_app_create_basics.htm&type=5).
      * **App Name**. Enter a name for your connected app name. For Example, Sumo Logic.
      * **API Name**. It defaults to a version of the app name without spaces. Keep the default value. 
-     * **Contact Email**. Enter your email id.   
-   * API (Enable OAuth Settings)   
+     * **Contact Email**. Enter your email id.
+   * API (Enable OAuth Settings)
      * Make sure **Enable OAuth Settings** is checked.
      * Provide the **Callback URL**.
-     * Select **OAuth Scope**. Access and manage your data (API).  
+     * Select **OAuth Scope**. Access and manage your data (API).
      * Under API (**Enable OAuth Settings**), select **Enable Client Credentials Flow**.
      * When you understand the security risks, accept the warning (if prompted).
      * Select **Save** and then **Continue**.
@@ -66,16 +67,16 @@ When you create a Salesforce Source, you add it to a Hosted Collector. Before 
 
 To configure a Salesforce Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Salesforce**.
 1. Enter a **Name** for the Source in the Sumo Logic console. The description is optional.
 1. For **Source Category (Optional)**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM.** Check the checkbox to forward your data to Cloud SIEM.      
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-1. **SignOn URL.** Enter your Sign on URL, e.g.  https://login.salesforce.com/services/oauth2/token.
+1. **SignOn URL.** Enter your Sign on URL. For example, `https://<MyDomainName>.my.salesforce.com/services/oauth2/token`.
 1. **Client ID.** Enter the Consumer Key of the ConnectedApp. 
 1. **Client Secret.** Enter the Consumer Secret of the ConnectedApp. 
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
@@ -120,13 +121,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/salesforce/example.json)
+<a href="/files/c2c/salesforce/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/salesforce/example.tf)
+<a href="/files/c2c/salesforce/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 
@@ -136,25 +137,37 @@ After you configure your Source, you should check the status of the source in th
 
 The following section details how you can resolve various errors: 
 
+### No client credentials user enabled
+
+**Error**: `{\"error\":\"invalid_grant\",\"error_description\":\"no client credentials user enabled\"}`. This is due to incorrect policies and permissions for authorization.
+
+**Solution**: To resolve this, if you have migrated your source from v2.1.1 to v3.x.x, make sure to follow the steps mentioned in **Vendor Configuration** section related to client credentials with attention.
+
+### Object type 'Document' is not supported
+
 **Error**: Object type 'Document' is not supported
 
-To resolve this: 
+**Solution**:
 
 1. In Salesforce, go to **Setup\>Administration\>Users\>Profile\>New Profile / Edit Profile**.
 1. Under **Standard Object Permissions** \> **Documents** select **Read** permission click on the **Save** button. 
 1. Now assign this profile to the user, whose credentials you have configured as part of the Salesforce Source.
 
+### Object type 'Report' is not supported
+
 **Error**: Object type 'Report' is not supported
 
-To resolve this:
+**Solution**:
 
 1. Go to **Setup\>Administration\>Users\>Profile**.
 1. Edit specific Profile which is assigned to the user
 1. Go to: **General User Permissions** and enable / disable **Run Reports**. **Run Reports** should be enabled for access to REPORT
 
+### Object type 'EventLogFile' is not supported
+
 **Error**: Object type 'EventLogFile' is not supported
 
-To resolve this:
+**Solution**:
 
 1. Go to **Setup\>Administration\>Users\>Permission Sets**.
 1. Create New Permission Set and assign to user or Edit specific Permission Set which is assigned to user.
@@ -167,9 +180,11 @@ To resolve this:
 If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
 :::
 
+### Object type ‘SetupAuditTrail’ is not supported
+
 **Error**: Object type ‘SetupAuditTrail’ is not supported
 
-To resolve this:
+**Solution**:
 
 1. Go to **Setup\>Administration\>Users\>Profile**.
 1. Edit specific Profile which is assigned to the user
@@ -179,47 +194,55 @@ To resolve this:
 If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
 :::
 
+### Token endpoint mismatch
+
 **Error**: Token Endpoint must match the format `"https://<hostname>/services/oauth2/token"`. This is due to incorrect source configuration.
 
-To resolve this:
+**Solution**: Provide the correct "SignOn Url". 
 
-1. Provide the correct "SignOn Url". 
+### Client identifier invalid
 
 **Error**: `{"error":"invalid_client_id","error_description":"client identifier invalid"}`. This is due to incorrect source configuration.
 
-To resolve this:
+**Solution**: Provide the correct “Client ID”.
 
-1. Provide the correct “Client ID”.
+### Invalid client credentials
 
 **Error**: `{"error":"invalid_client","error_description":"invalid client credentials"}`. This is due to incorrect source configuration.
 
-To resolve this:
+**Solution**: Provide the correct “Client Secret”. 
 
-1. Provide the correct “Client Secret”. 
+### Unknown error: Retry your request
 
 **Error**: `{"error":"unknown_error","error_description":"retry your request"}`. This is due to an invalid SignOn Url.
 
-To resolve this:
+**Solution**: Change it from login.salesforce.com to `<instanceURL>.salesforce.com`
 
-1. Change it from login.salesforce.com to `<instanceURL>.salesforce.com`
+### More Memory Required
 
 **Error**: MoreMemoryRequired: Available: 100 FileSize: 200. Please create a support ticket.
 
-To resolve this:
+**Solution**: Create a support ticket with sumo logic to increase the memory for your container.
 
-1. Please create a support ticket with sumo logic to increase the memory for your container.
+### Inconsistencies in Field Values
 
 **Error**: Inconsistencies in `DASHBOARD_ID_DERIVED_LOOKUP` Field Values
 
 You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has value, but in other logs, it's completely empty. This could be because of a problem with permissions.
 
-To resolve this: 
+**Solution**:
 
 1. In Salesforce, go to **Setup\>Administration\>Users\>Profile**.
 1. Click the **Edit** button for the user's profile you set up for the Salesforce Source.
 1. In the **Administrative Permissions** section, check the box for **Manage Reports in Public Folders** permission.
 1. In the **General User Permissions** section, check the box for **View My Team's Dashboards** permission.
 1. Click the **Save** button
+
+### Request not supported on this domain
+
+**Error**: `invalid_grant`
+
+**Solution**: Check your sign-on URL. If your sign-on URL is set to `https://login.salesforce.com/services/oauth2/token` you likely need to change it to another value, such as `https://<MyDomainName>.my.salesforce.com/services/oauth2/token`.
 
 ## FAQ
 

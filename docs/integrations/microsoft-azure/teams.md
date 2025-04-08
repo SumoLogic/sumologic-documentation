@@ -102,7 +102,7 @@ The **Teams - User Sessions** dashboard provides an in depth view of the user lo
 Use this dashboard to:
 * Identify user sessions relative to their locations and compare login statistics over time.
 * Understand the client platforms and versions that are being used.
-* Report on login IP addresses correlated to potential threats via Crowdstrike.
+* Report on login IP addresses correlated to potential threats via Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+User+Sessions.png')} alt="User Sessions" />
 

@@ -19,7 +19,8 @@ The Sumo Logic App for Gmail Trace Logs uses [Gmail Logs via BigQuery](https://s
 
 For details, see the [Schema for Gmail logs in BigQuery](https://support.google.com/a/answer/7230050?hl=en&ref_topic=7233311).
 
-### Sample logs
+### Sample log messages
+
 
 ```json
 {
@@ -135,17 +136,31 @@ _sourceCategory=Labs/GmailTraceLogs
 | count by message_set_type
 | sort by _count
 ```
+## Collection configuration and app installation
 
-## Collecting Logs for Gmail Trace Logs app
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-This section provides instructions for setting up [Cloud-to-Cloud-Integration for Gmail Trace Logs app](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source.md) to create the source and use the same source category while installing the app.
+<CollectionConfiguration/>
 
-## Installing the Gmail Trace Logs app
+:::important
+Use the [Cloud-to-Cloud Integration for Gmail Trace Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Gmail Trace Logs app is properly integrated and configured to collect and analyze your Gmail Trace Logs data.
+:::
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+### Create a new collector and install the app
 
-<AppInstall2/>
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
 ## Upgrading the Microsoft Teams app (optional)
 
@@ -159,7 +174,7 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
-## Viewing Gmail Trace Logs dashboards
+## Viewing the Gmail Trace Logs dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 

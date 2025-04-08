@@ -1,7 +1,6 @@
 ---
 title: VMware Workspace ONE
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

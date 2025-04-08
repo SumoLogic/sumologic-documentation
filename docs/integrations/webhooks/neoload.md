@@ -42,7 +42,7 @@ The Sumo Logic integration for NeoLoad ingests web events into Sumo Logic throug
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/neoload"
@@ -124,18 +124,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the NeoLoad app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the NeoLoad app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing NeoLoad dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -153,3 +141,15 @@ The **NeoLoad - Overview** dashboard offers a comprehensive view of your perform
 The **Neoload - Test Run Details** dashboard offers a comprehensive overview of performance testing initiatives, providing insights through multiple panels. It allows tracking Test Frequency, categorizing tests by Workspace and Projects, and monitoring trends in Status, Project-wise test trends, Quality status trends, and Test Scenario trends. Additionally, it provides visibility into tests correlated with Execution Time and Max#VUs, enabling in-depth analysis of test performance and informed decision-making for optimizing the testing strategy.
 
 <img src={useBaseUrl('img/integrations/webhooks/neoload_testRunDetails.png')} style={{border: '1px solid black'}} alt="Neoload - Test Run Details"/>
+
+## Upgrade/Downgrade the NeoLoad app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the NeoLoad app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -1,7 +1,6 @@
 ---
 title: Kaspersky TIP
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

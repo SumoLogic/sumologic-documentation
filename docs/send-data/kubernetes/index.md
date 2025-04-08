@@ -2,7 +2,9 @@
 slug: /send-data/kubernetes
 title: Kubernetes Helm Chart
 description: This section has instructions for collecting Kubernetes logs, metrics, and events, and how to enrich these analytics with deployment, pod, and service-level metadata.
-tags: [kubernetes, helm chart]
+keywords:
+  - kubernetes
+  - helm chart
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The focus of GuardDuty is on protecting AWS accounts, workloads, and data with intelligent threat detection. The corresponding Sumo Logic dashboards are designed to surface the most relevant security insights from that data to yield actionable processes to tackle specific security concerns within your AWS infrastructure. Utilizing this app allows you to stay ahead of changing attack surfaces in a repeatable way via cloud security monitoring and analytics dashboards that provide operational security awareness for Amazon GuardDuty data sources.
 
-## Collecting Logs
+## Collecting logs
 
 See [Collecting Logs for the Amazon GuardDuty App](/docs/integrations/amazon-aws/guardduty#collecting-logs-for-the-amazon-guardduty-app).
 

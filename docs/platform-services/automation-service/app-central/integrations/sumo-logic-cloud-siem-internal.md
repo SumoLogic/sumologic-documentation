@@ -1,7 +1,6 @@
 ---
 title: Sumo Logic Cloud SIEM Internal
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

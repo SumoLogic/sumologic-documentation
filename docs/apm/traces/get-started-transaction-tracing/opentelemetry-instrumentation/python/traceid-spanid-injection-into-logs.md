@@ -1,6 +1,6 @@
 ---
 id: traceid-spanid-injection-into-logs
-title: Python TraceId and SpanId injection into logs configuration
+title: Python TraceId and SpanId Injection into Logs Configuration
 sidebar_label: TraceId and SpanId injection into logs
 description: Learn how to configure traceId, spanId, and trace flags data injection into user logs in Python applications.
 ---

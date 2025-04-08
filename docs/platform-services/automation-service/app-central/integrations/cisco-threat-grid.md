@@ -1,7 +1,6 @@
 ---
 title: Cisco Threat Grid
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -1,7 +1,6 @@
 ---
 title: Alleantia
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

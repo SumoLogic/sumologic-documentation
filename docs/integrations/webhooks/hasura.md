@@ -56,7 +56,7 @@ The Sumo Logic integration for Hasura ingests events into Sumo Logic through an 
   }
 }
 ```
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/hasura"
@@ -108,18 +108,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Hasura app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Hasura app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Hasura dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -131,3 +119,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 The **Hasura - Overview** dashboard offers a comprehensive snapshot of data events and schema operations, providing valuable insights for effective management. It tracks the volume of Events Generated and their distribution by Operation, including Deleted events. It provides visibility into the Target Schema and Tables and analyzes data events by Table Schema and Trigger. The dashboard also highlights events by specific tables, enabling a deep dive into data trends. With trend analysis for Table Schema, Events by Table, Trigger, and Operation, users can make informed decisions about data architecture and operations. Additionally, it keeps users up to date with concise summaries of Recent Insertions, Updates, and Deletions, ensuring a real-time understanding of the data ecosystem.
 
 <img src={useBaseUrl('img/integrations/webhooks/hasura_overview.png')} style={{border: '1px solid black'}} alt="Hasura - Overview"/>
+
+## Upgrade/Downgrade the Hasura app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Hasura app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

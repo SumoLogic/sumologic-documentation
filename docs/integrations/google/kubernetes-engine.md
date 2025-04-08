@@ -206,7 +206,7 @@ _sourceCategory = "GKE Cloud Logs" logName reason host "\"type\":\"gke_cluster\"
 | fillmissing timeslice(1h)
 ```
 
-## Collecting Logs and Metrics for GKE - Control Plane app
+## Collecting logs and metrics for GKE - Control Plane app
 
 This section has instructions for configuring log and metric collection for the Sumo Logic app for GKE - Control Plane.
 

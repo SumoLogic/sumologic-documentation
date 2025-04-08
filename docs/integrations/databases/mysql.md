@@ -49,7 +49,7 @@ The Sumo Logic app for MySQL assumes the default MySQL Error log file format for
 
 The MySQL app dashboards dependent on error logs are based on the message types ERROR, NOTE, Warning, and Info. For more details on the MySQL log file format, see [http://dev.mysql.com/doc/refman/5.5/en/server-logs.html](http://dev.mysql.com/doc/refman/5.5/en/server-logs.html).
 
-### Sample Logs
+### Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -136,7 +136,7 @@ db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"
 </TabItem>
 </Tabs>
 
-## Collecting Logs and Metrics for MySQL
+## Collecting logs and metrics for MySQL
 
 Configuring log and metric collection for the MySQL app includes the following tasks.
 
@@ -346,7 +346,7 @@ Sumo Logic Kubernetes collection will automatically start collecting logs from t
 </details>
 
 2. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule), Database Application Components, assuming it does not already exist:
-   1. Go to **Manage Data > Logs > Field Extraction Rules**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
    2. Click the **+ Add**.
    3. The **Add Field Extraction** pane appears.
    4. **Rule Name.** Enter "App Observability - Database".
@@ -574,7 +574,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/mysql/mysql.json) that describes the monitors.
 2. Replace `$$mysql_data_source` with a custom source filter. To configure alerts for a specific database cluster, use a filter like `db_system=mysql` or `db_cluster=dev-mysql`. To configure the alerts for all of your clusters, set `$$mysql_data_source` to blank (`""`).
-3. Go to **Manage Data > Alerts > Monitors**.
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
 4. Click **Add**.
 5. Click **Import.**
 6. On the **Import Content popup**, enter "MySQL" in the Name field, paste in the JSON into the the popup, and click **Import**.  
@@ -583,7 +583,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 ### Method B: Using a Terraform script
 
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#create-your-access-key_on_Preferences_page).
+1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for MySQL monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
 4. Alert Configuration: After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory.
@@ -740,192 +740,125 @@ Use this dashboard to:
 
 This section describes the monitors provided with the MySQL app. These monitors are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
-<table>
-  <tr>
-   <td>Monitor name </td>
-   <td>Monitor description   </td>
-   <td>Alert Condition   </td>
-   <td>Recovery Condition   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Connection refused   </td>
-   <td>This alert fires when connections are refused when the limit of maximum connections is reached within 5 minute time interval.   </td>
-   <td> &#60;&#61; 1 </td>
-   <td>&#62; 1   </td>
-  </tr>
-  <tr>
-   <td>MySQL - High average query run time   </td>
-   <td>This alert fires when the average run time of SQL queries for a given schema is greater than or equal to one second within a time interval of 5 minutes.   </td>
-   <td>&#62;&#61; 1 </td>
-   <td> &#60; 1 </td>
-  </tr>
-  <tr>
-   <td>MySQL - High Innodb buffer pool utilization</td>
-   <td>This alert fires when we detect that the InnoDB buffer pool utilization is high (&#62;&#61;90%) within a 5 minute time interval.</td>
-   <td>&#62;&#61; 90 </td>
-   <td> &#60; 90 </td>
-  </tr>
-  <tr>
-   <td>MySQL - Large number of aborted connections   </td>
-   <td>This alert fires when we detect that there are 5 or more aborted connections identified within a time interval of 5 minutes.   </td>
-   <td>&#62;&#61; 5   </td>
-   <td> &#60; 5   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Large number of internal connection errors   </td>
-   <td>This alert fires when we detect that there are 5 or more internal connection errors within a time interval of 5 minutes.   </td>
-   <td>&#62;&#61; 5 </td>
-   <td> &#60; 5 </td>
-  </tr>
-  <tr>
-   <td>MySQL - Large number of slow queries   </td>
-   <td>This alert fires when we detect that there are 5 or more slow queries within a 5 minute time interval.   </td>
-   <td>&#62;&#61; 5   </td>
-   <td> &#60; 5   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Large number of statement errors </td>
-   <td>This alert fires when we detect that there are 5 or more statement errors within a 5 minute time interval.   </td>
-   <td>&#62;&#61; 5   </td>
-   <td> &#60; 5   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Large number of statement warnings   </td>
-   <td>This alert fires when we detect that there are 20 or more statement warnings within a 5 minute time interval.   </td>
-   <td>&#62;&#61; 20   </td>
-   <td> &#60; 20   </td>
-  </tr>
-  <tr>
-   <td>MySQL - No index used in the SQL statements   </td>
-   <td>This alert fires when we detect that there are 5 or more statements not using an index in the sql query within a 5 minute time interval.   </td>
-   <td>&#62;&#61; 5   </td>
-   <td> &#60; 5   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Excessive Slow Query Detected   </td>
-   <td>This alert fires when we detect the average time to execute a query is more than 5 seconds over a 24 hour time-period   </td>
-   <td>&#62;&#61;1   </td>
-   <td> &#60; 1   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Follower replication lag detected   </td>
-   <td>This alert fires when we detect that the average replication lag is greater than or equal to 900 seconds within a 5 minute time interval.   </td>
-   <td>&#62;&#61; 900 </td>
-   <td> &#60; 900   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Instance down </td>
-   <td>This alert fires when we detect that a MySQL instance is down within last 5 minutes interval.   </td>
-   <td>&#62;&#61;1   </td>
-   <td> &#60; 1</td>
-  </tr>
-</table>
+| Monitor name                          | Monitor description             | Alert Condition | Recovery Condition |
+|:------------|:-----------------------------|:----------------|:-------------------|
+| MySQL - Connection refused            | This alert fires when connections are refused when the limit of maximum connections is reached within a 5-minute time interval. | \<= 1           | > 1                |
+| MySQL - High average query run time   | This alert fires when the average run time of SQL queries for a given schema is greater than or equal to one second within a 5-minute interval. | >= 1           | < 1                |
+| MySQL - High Innodb buffer pool utilization | This alert fires when we detect that the InnoDB buffer pool utilization is high (>= 90%) within a 5-minute time interval.  | >= 90          | < 90               |
+| MySQL - Large number of aborted connections | This alert fires when we detect that there are 5 or more aborted connections identified within a 5-minute interval.         | >= 5           | < 5                |
+| MySQL - Large number of internal connection errors | This alert fires when we detect that there are 5 or more internal connection errors within a 5-minute interval.            | >= 5           | < 5                |
+| MySQL - Large number of slow queries  | This alert fires when we detect that there are 5 or more slow queries within a 5-minute time interval.                       | >= 5           | < 5                |
+| MySQL - Large number of statement errors | This alert fires when we detect that there are 5 or more statement errors within a 5-minute time interval.                  | >= 5           | < 5                |
+| MySQL - Large number of statement warnings | This alert fires when we detect that there are 20 or more statement warnings within a 5-minute time interval.              | >= 20          | < 20               |
+| MySQL - No index used in the SQL statements | This alert fires when we detect that there are 5 or more statements not using an index in the SQL query within a 5-minute time interval. | >= 5           | < 5                |
+| MySQL - Excessive Slow Query Detected | This alert fires when we detect the average time to execute a query is more than 5 seconds over a 24-hour time period.      | >= 1           | < 1                |
+| MySQL - Follower replication lag detected | This alert fires when we detect that the average replication lag is greater than or equal to 900 seconds within a 5-minute time interval. | >= 900         | < 900              |
+| MySQL - Instance down                 | This alert fires when we detect that a MySQL instance is down within the last 5-minute interval.                            | >= 1           | < 1                |
 
 
 ## MySQL Metrics
 
-Here are the Telegraf metrics for MySQL collected by the MySQL app.
+<details>
+<summary>Here are the Telegraf metrics for MySQL collected by the MySQL app (click to expand).</summary>
 
-<table><small>
-  <tr>
-   <td>mysql_aborted_clients<br/>
-mysql_aborted_connects<br/>
-mysql_bytes_received<br/>
-mysql_bytes_sent<br/>
-mysql_commands_delete<br/>
-mysql_commands_insert<br/>
-mysql_commands_select<br/>
-mysql_commands_update<br/>
-mysql_connection_errors_internal<br/>
-mysql_connection_errors_max_connections<br/>
-mysql_connections<br/>
-mysql_created_tmp_disk_tables<br/>
-mysql_created_tmp_files<br/>
-mysql_created_tmp_tables<br/>
-mysql_innodb_buffer_pool_pages_free<br/>
-mysql_innodb_buffer_pool_pages_total<br/>
-mysql_innodb_buffer_pool_read_requests<br/>
-mysql_innodb_buffer_pool_reads<br/>
-mysql_innodb_buffer_pool_wait_free<br/>
-mysql_innodb_data_fsyncs<br/>
-mysql_innodb_data_read<br/>
-mysql_innodb_data_writes<br/>
-mysql_innodb_log_waits<br/>
-mysql_innodb_row_lock_current_waits<br/>
-mysql_innodb_row_lock_waits<br/>
-mysql_innodb_rows_deleted<br/>
-mysql_innodb_rows_inserted<br/>
-mysql_innodb_rows_read<br/>
-mysql_innodb_rows_updated<br/>
-mysql_locked_connects<br/>
-mysql_mysqlx_connections_accepted<br/>
-mysql_mysqlx_connections_closed<br/>
-mysql_mysqlx_connections_rejected<br/>
-mysql_mysqlx_worker_threads<br/>
-mysql_mysqlx_worker_threads_active<br/>
-mysql_opened_files<br/>
-mysql_opened_tables<br/>
-mysql_perf_schema_events_statements_errors_total<br/>
-mysql_perf_schema_events_statements_no_index_used_total<br/>
-mysql_perf_schema_events_statements_rows_affected_total<br/>
-mysql_perf_schema_events_statements_rows_examined_total<br/>
-mysql_perf_schema_events_statements_rows_sent_total<br/>
-mysql_perf_schema_events_statements_seconds_total<br/>
-mysql_perf_schema_events_statements_sort_merge_passes_total<br/>
-mysql_perf_schema_events_statements_sort_rows_total<br/>
-mysql_perf_schema_events_statements_tmp_disk_tables_total<br/>
-mysql_perf_schema_events_statements_tmp_tables_total<br/>
-mysql_perf_schema_events_statements_total<br/>
-mysql_perf_schema_events_statements_warnings_total<br/>
-mysql_perf_schema_index_io_waits_seconds_total_delete</td>
-<td>mysql_perf_schema_index_io_waits_seconds_total_fetch<br/>
-mysql_perf_schema_index_io_waits_seconds_total_insert<br/>
-mysql_perf_schema_index_io_waits_seconds_total_update<br/>
-mysql_perf_schema_index_io_waits_total_delete<br/>
-mysql_perf_schema_index_io_waits_total_fetch<br/>
-mysql_perf_schema_index_io_waits_total_insert<br/>
-mysql_perf_schema_index_io_waits_total_update<br/>
-mysql_perf_schema_read<br/>
-mysql_perf_schema_read_high_priority<br/>
-mysql_perf_schema_read_no_insert<br/>
-mysql_perf_schema_read_normal<br/>
-mysql_perf_schema_read_with_shared_locks<br/>
-mysql_perf_schema_table_io_waits_seconds_total_delete<br/>
-mysql_perf_schema_table_io_waits_seconds_total_fetch<br/>
-mysql_perf_schema_table_io_waits_seconds_total_insert<br/>
-mysql_perf_schema_table_io_waits_seconds_total_update<br/>
-mysql_perf_schema_table_io_waits_total_delete<br/>
-mysql_perf_schema_table_io_waits_total_fetch<br/>
-mysql_perf_schema_table_io_waits_total_insert<br/>
-mysql_perf_schema_table_io_waits_total_update<br/>
-mysql_perf_schema_write<br/>
-mysql_perf_schema_write_allow_write<br/>
-mysql_perf_schema_write_concurrent_insert<br/>
-mysql_perf_schema_write_low_priority<br/>
-mysql_perf_schema_write_normal<br/>
-mysql_qcache_hits<br/>
-mysql_qcache_inserts<br/>
-mysql_queries<br/>
-mysql_questions<br/>
-mysql_select_full_join<br/>
-mysql_select_full_range_join<br/>
-mysql_select_range<br/>
-mysql_select_range_check<br/>
-mysql_select_scan<br/>
-mysql_slow_queries<br/>
-mysql_sort_merge_passes<br/>
-mysql_sort_range<br/>
-mysql_sort_rows<br/>
-mysql_sort_scan<br/>
-mysql_table_locks_immediate<br/>
-mysql_table_locks_waited<br/>
-mysql_table_open_cache_hits<br/>
-mysql_table_open_cache_misses<br/>
-mysql_table_open_cache_overflows<br/>
-mysql_threads_cached<br/>
-mysql_threads_connected<br/>
-mysql_threads_created<br/>
-mysql_threads_running<br/>
-mysql_uptime</td>
-  </tr></small>
-</table>
+mysql_aborted_clients <br/>
+mysql_aborted_connects <br/>
+mysql_bytes_received <br/>
+mysql_bytes_sent <br/>
+mysql_commands_delete <br/>
+mysql_commands_insert <br/>
+mysql_commands_select <br/>
+mysql_commands_update <br/>
+mysql_connection_errors_internal <br/>
+mysql_connection_errors_max_connections <br/>
+mysql_connections <br/>
+mysql_created_tmp_disk_tables <br/>
+mysql_created_tmp_files <br/>
+mysql_created_tmp_tables <br/>
+mysql_innodb_buffer_pool_pages_free <br/>
+mysql_innodb_buffer_pool_pages_total <br/>
+mysql_innodb_buffer_pool_read_requests <br/>
+mysql_innodb_buffer_pool_reads <br/>
+mysql_innodb_buffer_pool_wait_free <br/>
+mysql_innodb_data_fsyncs <br/>
+mysql_innodb_data_read <br/>
+mysql_innodb_data_writes <br/>
+mysql_innodb_log_waits <br/>
+mysql_innodb_row_lock_current_waits <br/>
+mysql_innodb_row_lock_waits <br/>
+mysql_innodb_rows_deleted <br/>
+mysql_innodb_rows_inserted <br/>
+mysql_innodb_rows_read <br/>
+mysql_innodb_rows_updated <br/>
+mysql_locked_connects <br/>
+mysql_mysqlx_connections_accepted <br/>
+mysql_mysqlx_connections_closed <br/>
+mysql_mysqlx_connections_rejected <br/>
+mysql_mysqlx_worker_threads <br/>
+mysql_mysqlx_worker_threads_active <br/>
+mysql_opened_files <br/>
+mysql_opened_tables <br/>
+mysql_perf_schema_events_statements_errors_total <br/>
+mysql_perf_schema_events_statements_no_index_used_total <br/>
+mysql_perf_schema_events_statements_rows_affected_total <br/>
+mysql_perf_schema_events_statements_rows_examined_total <br/>
+mysql_perf_schema_events_statements_rows_sent_total <br/>
+mysql_perf_schema_events_statements_seconds_total <br/>
+mysql_perf_schema_events_statements_sort_merge_passes_total <br/>
+mysql_perf_schema_events_statements_sort_rows_total <br/>
+mysql_perf_schema_events_statements_tmp_disk_tables_total <br/>
+mysql_perf_schema_events_statements_tmp_tables_total <br/>
+mysql_perf_schema_events_statements_total <br/>
+mysql_perf_schema_events_statements_warnings_total <br/>
+mysql_perf_schema_index_io_waits_seconds_total_delete <br/>
+mysql_perf_schema_index_io_waits_seconds_total_fetch <br/>
+mysql_perf_schema_index_io_waits_seconds_total_insert <br/>
+mysql_perf_schema_index_io_waits_seconds_total_update <br/>
+mysql_perf_schema_index_io_waits_total_delete <br/>
+mysql_perf_schema_index_io_waits_total_fetch <br/>
+mysql_perf_schema_index_io_waits_total_insert <br/>
+mysql_perf_schema_index_io_waits_total_update <br/>
+mysql_perf_schema_read <br/>
+mysql_perf_schema_read_high_priority <br/>
+mysql_perf_schema_read_no_insert <br/>
+mysql_perf_schema_read_normal <br/>
+mysql_perf_schema_read_with_shared_locks <br/>
+mysql_perf_schema_table_io_waits_seconds_total_delete <br/>
+mysql_perf_schema_table_io_waits_seconds_total_fetch <br/>
+mysql_perf_schema_table_io_waits_seconds_total_insert <br/>
+mysql_perf_schema_table_io_waits_seconds_total_update <br/>
+mysql_perf_schema_table_io_waits_total_delete <br/>
+mysql_perf_schema_table_io_waits_total_fetch <br/>
+mysql_perf_schema_table_io_waits_total_insert <br/>
+mysql_perf_schema_table_io_waits_total_update <br/>
+mysql_perf_schema_write <br/>
+mysql_perf_schema_write_allow_write <br/>
+mysql_perf_schema_write_concurrent_insert <br/>
+mysql_perf_schema_write_low_priority <br/>
+mysql_perf_schema_write_normal <br/>
+mysql_qcache_hits <br/>
+mysql_qcache_inserts <br/>
+mysql_queries <br/>
+mysql_questions <br/>
+mysql_select_full_join <br/>
+mysql_select_full_range_join <br/>
+mysql_select_range <br/>
+mysql_select_range_check <br/>
+mysql_select_scan <br/>
+mysql_slow_queries <br/>
+mysql_sort_merge_passes <br/>
+mysql_sort_range <br/>
+mysql_sort_rows <br/>
+mysql_sort_scan <br/>
+mysql_table_locks_immediate <br/>
+mysql_table_locks_waited <br/>
+mysql_table_open_cache_hits <br/>
+mysql_table_open_cache_misses <br/>
+mysql_table_open_cache_overflows <br/>
+mysql_threads_cached <br/>
+mysql_threads_connected <br/>
+mysql_threads_created <br/>
+mysql_threads_running <br/>
+mysql_uptime
+
+</details>

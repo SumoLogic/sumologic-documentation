@@ -128,7 +128,7 @@ _sourceCategory="azure/aks" "kube-scheduler"
 | fillmissing timeslice(1h)
 ```
 
-## Collecting Logs for the Kubernetes and AKS - Control Plane
+## Collecting logs for the Kubernetes and AKS - Control Plane
 
 The Sumo Logic [Kubernetes app](/docs/integrations/containers-orchestration/kubernetes) works in conjunction with the AKS - Control Plane app and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
 
@@ -155,7 +155,7 @@ This section walks you through the process of configuring a pipeline to send log
 	4. Enter a name.
 	5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
 	6. Select an Azure subscription.
-	7. **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
+	7. **Event hub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
 	8. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
 	9. Select **RootManageSharedAccessKey** from **Select event hub policy name** dropdown.
 	10. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-kuberetes.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-kuberetes" width="800"/>

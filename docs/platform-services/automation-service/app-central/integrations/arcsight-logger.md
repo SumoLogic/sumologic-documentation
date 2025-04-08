@@ -1,7 +1,6 @@
 ---
 title: Arcsight Logger
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

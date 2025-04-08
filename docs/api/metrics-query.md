@@ -3,10 +3,11 @@ id: metrics-query
 title: Metrics Query Management APIs
 sidebar_label: Metrics Query
 description: Metrics Query APIs allow you to execute queries on various metrics and retrieve multiple time-series (data-points) over time from HTTP endpoints.
-hide_table_of_contents: true
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/>
 
@@ -39,8 +40,6 @@ A metric query consists of a metric, one or more filters, and optionally, one or
 
 ## Documentation
 
-import ApiIntro from '../reuse/api-intro.md';
-
 <ApiIntro/>
 
 | Deployment | Documentation URL                                    |
@@ -52,5 +51,12 @@ import ApiIntro from '../reuse/api-intro.md';
 | FED        | https://api.fed.sumologic.com/docs/#tag/metricsQuery |
 | IN         | https://api.in.sumologic.com/docs/#tag/metricsQuery  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/metricsQuery  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/metricsQuery  |
 | US1        | https://api.sumologic.com/docs/#tag/metricsQuery     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/metricsQuery |
+
+## Required role capabilities
+
+<ApiRoles/>
+
+* Metrics (all role capabilities)

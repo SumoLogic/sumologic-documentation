@@ -1,6 +1,8 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 You can create multiple SAML configurations in Sumo. To create an additional SAML configuration, click the plus (**+**) icon to create a new configuration. Enter the settings for the new configuration, as described the previous section.
 
-![saml-config-list.png](/img/security/saml-config-list.png) 
+<img src={useBaseUrl('img/security/saml-config-list.png')} alt="Plus button on the Configuration List page" style={{border: '1px solid gray'}} width="500" />
 
 ### Require SAML for sign-in
 
@@ -25,7 +27,7 @@ The query results show, for each user that has accessed Sumo over the time range
 
 If the same user accessed Sumo using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used.
 
-![saml-use-query.png](/img/security/saml-use-query.png) 
+<img src={useBaseUrl('img/security/saml-use-query.png')} alt="Query results page showing a row for each method" style={{border: '1px solid gray'}} width="800" />
 
 ### Require SAML for sign-in
 Click Require SAML Sign In to require users to sign in using SAML.
@@ -34,17 +36,17 @@ Click Require SAML Sign In to require users to sign in using SAML.
 After you lock down SAML, any new users you allowlist will have to select Forgot Password from the login screen to recover their credentials. This is because a SAML-locked down user does NOT have a password.
 :::
 
-![require-saml](/img/security/require-saml.png)
+<img src={useBaseUrl('img/security/require-saml.png')} alt="Require SAML toggle on the Configuration List page" style={{border: '1px solid gray'}} width="800" />
 
 Sumo automatically adds your account under **Allow these users to sign in using passwords in addition to SAML** as an allowlisted user as a preventative measure to ensure you’re still able to access Sumo if you run into issues.
 
 Having only one user able to bypass SAML may not be convenient or practical if you have a global company or a large team. You can add additional allowlisted users by clicking the (+) icon next to **Allow these users to sign in using passwords in addition to SAML**:
 
-![allow-users](/img/security/allow-users.png)
+<img src={useBaseUrl('img/security/allow-users.png')} alt="Plus button on the allow users page" style={{border: '1px solid gray'}} width="600" />
 
 We do not recommend denying all users password access to Sumo even if you want to enforce log in by SAML. If you attempt to delete your last remaining allowlisted user, you will receive a warning that this is not a recommended practice:
 
-![prevent-password-based-login](/img/security/prevent-password-based-login.png)
+<img src={useBaseUrl('img/security/prevent-password-based-login.png')} alt="Prevent Password-Based Sign In message" style={{border: '1px solid gray'}} width="400" />
 
 ### SAML lockdown limitations
 There are user account changes an admin cannot perform when the **Require SAML Sign In** option is selected:

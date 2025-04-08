@@ -9,7 +9,7 @@ Obtaining telemetry data from applications written in Ruby has never been eas
 
 ## How to instrument your Ruby application?
 
-There are a few simple steps to instrument the application and export the telemetry data by [OpenTelemetry Protocol exporter](https://github.com/open-telemetry/opentelemetry-ruby/tree/opentelemetry-exporter-otlp/v0.26.3/exporter/otlp) - **version sdk=1.4.0, exporter=0.26.3**.
+There are a few simple steps to instrument the application and export the telemetry data by [OpenTelemetry Protocol exporter](https://github.com/open-telemetry/opentelemetry-ruby/tree/opentelemetry-exporter-otlp/v0.28.1/exporter/otlp) - **version sdk=1.5.0, exporter=0.28.1**.
 
 ## Step 1. Gems Installation  
 
@@ -18,15 +18,15 @@ Installation of the packages listed below is required to apply the instrumentati
 * **gem** command
 
    ```bash
-   gem install opentelemetry-sdk -v 1.4.0
-   gem install opentelemetry-exporter-otlp -v 0.26.3
+   gem install opentelemetry-sdk -v 1.5.0
+   gem install opentelemetry-exporter-otlp -v 0.28.1
    ```
 
 * **bundler**, the packages have to be inserted into your **gemfile** and **bundle install** command has to be run
 
    ```bash
-   gem 'opentelemetry-sdk', '1.4.0'
-   gem 'opentelemetry-exporter-otlp', '0.26.3'
+   gem 'opentelemetry-sdk', '1.5.0'
+   gem 'opentelemetry-exporter-otlp', '0.28.1'
    ```
 
 Installation of the gems above is mandatory. The next step is to install instrumentation packages corresponding to the libraries used in the application. A complete list of available plugins can be found [here](https://github.com/open-telemetry/opentelemetry-ruby/tree/master/instrumentation).
@@ -36,14 +36,14 @@ There are two solutions:
 * Installation of the specific packages - for example, if the application is a **Sinatra** HTTP server which is also performing some HTTP requests using **Net HTTP** package. To instrument all the incoming and outgoing requests corresponding instrumented packages have to be installed:
 
    ```bash
-   gem install opentelemetry-instrumentation-sinatra -v 0.23.2
-   gem install opentelemetry-instrumentation-net_http -v 0.22.4
+   gem install opentelemetry-instrumentation-sinatra -v 0.24.1
+   gem install opentelemetry-instrumentation-net_http -v 0.22.7
    ```
 
 * Installation of the “all in one” package - installing this package will install all available instrumentation packages:
 
    ```bash
-   gem install opentelemetry-instrumentation-all -v 0.60.0
+   gem install opentelemetry-instrumentation-all -v 0.62.1
    ```
 
 ## Step 2. Required code changes  
@@ -73,7 +73,7 @@ To enable instrumentation in the application and export the telemetry data it is
 
 ## Step 3. Telemetry data exporter configuration  
 
-The final step is to configure the exporter host and service name. This can be done [directly in the code](https://github.com/open-telemetry/opentelemetry-ruby/tree/opentelemetry-exporter-otlp/v0.26.3/exporter/otlp#how-do-i-get-started) or by environment variables. In this example, the exporter will be configured by environment variables.
+The final step is to configure the exporter host and service name. This can be done [directly in the code](https://github.com/open-telemetry/opentelemetry-ruby/tree/opentelemetry-exporter-otlp/v0.28.1/exporter/otlp#how-do-i-get-started) or by environment variables. In this example, the exporter will be configured by environment variables.
 
 * Environment variable sets the exporter to OTLP:
 

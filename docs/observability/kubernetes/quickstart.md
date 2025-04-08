@@ -23,11 +23,21 @@ As an alternative to this quickstart, you can use our in-product onboarding to a
 <img src={useBaseUrl('img/observability/k8s-onboarding.png')} alt="k8s-onboarding" />
 :::
 
-
 :::sumo Micro lesson
 
-Video: Quick Onboarding with Kubernetes.
+<Iframe url="https://fast.wistia.net/embed/iframe/8yo13sfpl2?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="MicroLesson - Quick Onboarding with Kubernetes Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
+<!-- old
 <Iframe url="https://www.youtube.com/embed/lLRtK1FaTgM?rel=0"
         width="854px"
         height="480px"
@@ -35,16 +45,16 @@ Video: Quick Onboarding with Kubernetes.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-
+-->
 
 :::
 
 ## Prerequisites
 
-* You must have a Sumo Logic account. If you do not have one, [sign up for a free trial](/get-started/sign-up.md#create-a-trial-account).
+* You must have a Sumo Logic account. If you do not have one, [sign up for a free trial](/get-started/sign-up.md).
 * Obtain your Sumo Logic [Access ID and Access Key](/docs/manage/security/access-keys).
 * Ensure that your Sumo Logic account has the Manage Content and Manage Collector [role capabilities](/docs/manage/users-roles/roles/role-capabilities/).
 

@@ -10,9 +10,9 @@ Setting up Tracing instrumentation for Java, Python, NodeJS, and .NET applicatio
 
 To enable the OpenTelemetry-Operator for the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection#sumologic-kubernetes-collection), you have to set `opentelemetry-operator.enabled=true`.
 
-The OpenTelemetry Operator needs to know how to instrument containers. For this purpose, the `Instrumentation` resource must be created in the namespace where you want to use auto-instrumentation. Setting `opentelemetry-operator.createDefaultInstrumentation` to `true` and `opentelemetry-operator.instrumentationNamespaces` will help with that.
+The OpenTelemetry Operator needs to know how to instrument containers. For this purpose, the `Instrumentation` resource must be created in the namespace where you want to use auto-instrumentation. Setting `instrumentation.createDefaultInstrumentation` to `true` and `instrumentation.instrumentationNamespaces` will help with that.
 
-The value of the flag `opentelemetry-operator.instrumentationNamespaces` is backslash comma-separated namespaces list, for example: `opentelemetry-operator.instrumentationNamespaces="ns1\,ns2\,ns3"`.
+The value of the flag `instrumentation.instrumentationNamespaces` is backslash comma-separated namespaces list. For example: `instrumentation.instrumentationNamespaces="ns1\,ns2\,ns3"`.
 
 1. Update dependencies:
 
@@ -31,11 +31,15 @@ The value of the flag `opentelemetry-operator.instrumentationNamespaces` is back
  --set sumologic.clusterName="<MY_CLUSTER_NAME>" \
  --set sumologic.traces.enabled=true \
  --set opentelemetry-operator.enabled=true \
- --set opentelemetry-operator.createDefaultInstrumentation=true \
- --set opentelemetry-operator.instrumentationNamespaces="ns1\,ns2"
+ --set instrumentation.createDefaultInstrumentation=true \
+ --set instrumentation.instrumentationNamespaces="ns1\,ns2"
  ```
 
 During the installation process, **OpenTelemetry Instrumentation** custom resources with all settings are deployed in the provided namespaces.
+
+:::note
+Updating the Sumo Logic Kubernetes Collection to a version newer than [4.8.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.8.0) may cause issues with chart installation if there is a customized configuration of the OpenTelemetry Operator. Refer to the required changes in the [parameters](https://github.com/SumoLogic/sumologic-kubernetes-collection/pull/3733/).
+:::
 
 ## Auto-instrumentation injection
 

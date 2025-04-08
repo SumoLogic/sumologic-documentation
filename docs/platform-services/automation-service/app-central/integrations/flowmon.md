@@ -1,7 +1,6 @@
 ---
 title: Flowmon
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

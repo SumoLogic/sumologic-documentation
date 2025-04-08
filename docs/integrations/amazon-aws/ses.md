@@ -113,7 +113,7 @@ Before you configure the log sources for the Amazon SES app, decide on the sourc
 
 ### Step 3: Collect Amazon SES events using CloudTrail
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select AWS CloudTrail as your AWS Source type.
 4. Enter a name for the new Source. A description is optional.
@@ -235,18 +235,6 @@ SES sends notifications to SNS in a JSON format. Any notification sent through S
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
-
-## Upgrading the Amazon SES app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Amazon SES app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing Amazon SES dashboards​
 
@@ -402,3 +390,15 @@ See information about complaints (a complaint occurs when a recipient reports th
 **Sending SourceIP.** See the IP addresses of the users sending emails generating complaint notifications in the last 24 hours.
 
 **Sending Identity.** See the identity of the users sending emails generating complaint notifications in the last 24 hours.
+
+## Upgrade/Downgrade the Amazon SES app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon SES app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

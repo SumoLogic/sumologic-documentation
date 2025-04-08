@@ -13,16 +13,15 @@ The Sumo Logic Kubernetes Control Plane App manages the master node control plan
 
 [Kubernetes](https://kubernetes.io/) is a system that automates the deployment, management, scaling, networking, and availability of container-based applications. Kubernetes container-orchestration allows you to easily deploy and manage multi-container applications at scale.
 
-There are two versions of the Kubernetes Control Plane app for:
+:::note
+Sumo Logic supports only Kubernetes versions 1.16 or later for the Kubernetes Control Plane app.
+:::
 
-1. Kubernetes 1.16 or later.
-2. Kubernetes 1.15 or earlier.
+## Log and metric types
 
-## Log and Metric Types
+The Kubernetes Control Plane app uses logs and metrics.
 
-The Kubernetes Control Plane App uses logs and metrics.
-
-### Log Sources
+### Log sources
 
 * [Kube API Server Logs](https://kubernetes.io/docs/concepts/overview/components/#kube-apiserver)
 * [Kube Control Manager Logs](https://kubernetes.io/docs/concepts/overview/components/#kube-controller-manager)
@@ -71,7 +70,7 @@ Post http://192.168.190.54:10255/stats/container/: dial tcp 192.168.190.54:10255
 connection refused"}
 ```
 
-### Metric Sources
+### Metric sources
 
 * Kubernetes API Server Metrics
 * Scheduler Metrics
@@ -94,7 +93,7 @@ _sourceCategory = *controller*
 | fillmissing timeslice(1h)
 ```
 
-## Collecting Logs and Metrics for the Kubernetes Control Plane App
+## Collecting logs and metrics for the Kubernetes Control Plane app
 
 See [Sumo Logic Kubernetes Collection](/docs/observability/kubernetes/collection-setup.md) for instructions on configuring log and metric collection for the Kubernetes Control Plane App.
 
@@ -102,7 +101,7 @@ See [Sumo Logic Kubernetes Collection](/docs/observability/kubernetes/collection
 Before installing the [Kubernetes Control Plane App](#installing-the-kubernetes-control-plane-app), you must set up collection for and install the [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes), which provides the services for managing and monitoring Kubernetes worker nodes.
 :::
 
-## Installing the Kubernetes Control Plane App
+## Installing the Kubernetes Control Plane app
 
 This section provides instructions for installing the Kubernetes Control Plane App, as well as descriptions and examples for each of the dashboards. The app installation process consists of the following tasks:
 
@@ -138,7 +137,7 @@ To determine custom data filters for source categories, do the following:
   | Kube API Server Log Source       | `kubernetes/kube/system/kube/apiserver`                                               |
   | Falco                            | please see configuration for `sumologic.logs.container.sourceCategory` in values.yaml |
 
-### Step 2. Install the App
+### Step 2. Install the app
 
 Now that you have set up collection for Kubernetes Control Plane, you can install the App and use the pre-configured searches and dashboards that provide insight into your data.
 
@@ -157,7 +156,7 @@ To install the app, do the following:
 5. **Advanced**. Select the location in the library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 6. Click **Add to Library**.
 
-## Viewing Kubernetes Control Plane Dashboards
+## Viewing Kubernetes Control Plane dashboards
 
 :::tip Filter with template variables
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).

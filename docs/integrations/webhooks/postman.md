@@ -16,7 +16,7 @@ Postman is an API development tool that streamlines API building, testing, modif
 
 The Sumo Logic app for Postman ingests Postman events into Sumo Logic through an outgoing webhook available in the Postman. For more information on supported events that are ingested through the Postman webhook, see the [Postman Documentation](https://learning.postman.com/docs/integrations/webhooks/).
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -67,7 +67,7 @@ The Sumo Logic app for Postman ingests Postman events into Sumo Logic through an
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory=webhook/postman "collection" "_postman_id"
@@ -126,18 +126,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Postman app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Postman app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Postman dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -161,3 +149,15 @@ The **Postman - Collections, Requests & Team Activity** provides valuable insigh
 The **Postman - Monitors** provides immediate notifications and real-time data regarding the results of API tests.
 
 <img src={useBaseUrl('img/integrations/webhooks/Postman-Monitors.png')} style={{border: '1px solid black'}} alt="Postman-Monitors"/>
+
+## Upgrade/Downgrade the Postman app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Postman app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

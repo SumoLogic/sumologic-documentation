@@ -1,7 +1,6 @@
 ---
 title: BitSight Security Performance Management
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

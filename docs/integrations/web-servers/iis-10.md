@@ -19,7 +19,7 @@ This app is tested with the following IIS versions:
 IIS app and integration are supported only on Windows.
 :::
 
-## Collecting Logs and Metrics for the IIS app
+## Collecting logs and metrics for the IIS app
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for IIS.
 
@@ -44,8 +44,7 @@ Sumo Logic uses the Telegraf operator for IIS metric collection and the [Install
 
 ### Configure fields in Sumo Logic
 
-Before you configure logs and metrics collection, you'll need to create the following Fields in Sumo Logic. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Fields](/docs/manage/fields).
-
+Following fields will be created automatically as a part of app installation process:
 * `component`
 * `environment`
 * `webserver_system`
@@ -413,105 +412,6 @@ To configure a Source for IIS Performance Logs, do the following:
 
 At this point, Telegraf should start collecting the IIS Server metrics and forward them to the Sumo Logic HTTP Source.
 
-## Installing IIS Monitors
-
-:::note permissions required
-To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
-:::
-
-Alerts can be installed by either importing a JSON file or a Terraform script. There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/IIS/IIS.json) that describes the monitors.
-2. The [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/IIS/IIS.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all IIS Server farms, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=iis` with `<Your Custom Filter>`. Custom filter examples:
-   * For alerts applicable only to a specific farm, your custom filter would be: `webserver_farm=iis-standalone.01`.
-   * For alerts applicable to all farms that start with `iis-standalone`, your custom filter would be: `webserver_system=iis-standalone*`.
-   * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_farm=iis-1` AND `environment=standalone`. This assumes you have set the optional environment tag while configuring collection.
-4. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
-5. Click **Add**.<br/><img src={useBaseUrl('img/integrations/web-servers/IIS-add.png')} alt="Add Monitor" />
-6. Click **Import** and then copy-paste the above JSON to import monitors.
-
-Monitors are disabled by default. Once you have installed the alerts using this method, navigate to the IIS folder under **Monitors** to configure them. See our [Monitors](/docs/alerts/monitors) documentation to enable monitors to send notifications to teams or connections. To get started adding monitors, see the instructions detailed in [this document](/docs/alerts/monitors/create-monitor).
-
-### Method B: Using a Terraform script
-
-1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#from-the-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. **Download and install Terraform**. You'll need to [download and install Terraform](https://www.terraform.io/downloads.html), version 0.13 or later.
-3. **Download the Sumo Logic Terraform package for IIS Server alerts**. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/IIS). You can either download it through the “git clone” command or as a zip file.
-4. **Alert Configuration**. After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/IIS/**.
-   * Edit the **IIS.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
-    ```sql
-    access_id   = "<SUMOLOGIC ACCESS ID>"
-    access_key  = "<SUMOLOGIC ACCESS KEY>"
-    environment = "<SUMOLOGIC DEPLOYMENT>"
-    ```
-
-The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific farms or environments, update the variable `iis_data_source`. Custom filter examples:
-   * A specific farm `webserver_farm=iis.standalone.01`.
-   * All farms in an environment ‘environment=standalone'.
-   * For alerts applicable to all farms that start with iis-standalone, your custom filter would be: `webserver_farm=iis-standalone*`.
-   * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_system=iis-1` and `environment=standalone`. This assumes you have set the optional environment tag while configuring collection.
-
-All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
-
-By default, the monitors are configured in a monitor **folder** called **IIS**, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `IIS.auto.tfvars` file.
-
-5. If you would like the alerts to send email or connection notifications, modify the file `IIS_notifications.auto.tfvars` and populate `connection_notifications` and `email_notifications` as per below examples.
-   ```bash title="Pagerduty Connection Example"
-   connection_notifications = [
-       {
-         connection_type       = "PagerDuty",
-         connection_id         = "<CONNECTION_ID>",
-         payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-         run_for_trigger_types = ["Critical", "ResolvedCritical"]
-       },
-       {
-         connection_type       = "Webhook",
-         connection_id         = "<CONNECTION_ID>",
-         payload_override      = "",
-         run_for_trigger_types = ["Critical", "ResolvedCritical"]
-       }
-     ]
-   ```
-   * Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-   * For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-   ```bash title="Email Notifications Example"
-   email_notifications = [
-       {
-         connection_type       = "Email",
-         recipients            = ["abc@example.com"],
-         subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-         time_zone             = "PST",
-         message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-         run_for_trigger_types = ["Critical", "ResolvedCritical"]
-       }
-     ]
-   ```
-6. Install the Alerts:
-    1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/IIS/` and run `terraform init`. This will initialize Terraform and will download the required components.
-    2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
-    3. Run `terraform apply`.
-7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
-
-There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
-
-
-## Using IIS Alerts
-
-Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the IIS server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
-
-| Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
-|:---|:---|:---|:---|:---|
-| IIS - Access from Highly Malicious Sources | This alert fires when an IIS server is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
-| IIS - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a 4xx response code. | Critical | > 0 | 0 |
-| IIS - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a 5xx response code. | Critical | > 0 | 0 |
-| IIS - Error Events | This alert fires when an error in the IIS logs is detected. | Critical | > 0 | 0 |
-| IIS - Slow Response Time | This alert fires when the response time for a given IIS server is greater than one second. | Warning | > 0 | 0 |
-| IIS - ASP.NET Application Errors | This alert fires when we detect an error in the ASP.NET applications running on an IIS server. | Warning | >0 | < = 0 |
-| IIS - Blocked Async IO Requests | This alert fires when we detect that there are blocked async I/O requests on an IIS server. | Warning | >0 | < = 0 |
-
 ## Installing the IIS app
 
 This section demonstrates how to install the IIS app and assumes you have already set up the collection as described in [Collect Logs and Metrics for the IIS](#collecting-logs-and-metrics-for-the-iis-app).
@@ -526,7 +426,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
   Version selection is not available for all apps.
   :::
 3. To install the app, complete the following fields.
-   1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
+   1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source**. Choose **Enter a Custom Data Filter**, and enter a custom IIS Server farm filter. Examples:
      * For all IIS Server farms, `webserver_farm=*`.
      * For a specific farm, `webserver_farm=iis.dev.01`.
@@ -702,3 +602,27 @@ Use this dashboard to monitor the following key metrics:
 * Miscellaneous
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-Web-Service.png')} alt="IIS-Web-Service" />
+
+
+## Installing IIS monitors
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+:::note
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the IIS alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
+:::
+
+## Using IIS Alerts
+
+Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the IIS server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
+
+| Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|:---|
+| IIS - Access from Highly Malicious Sources | This alert fires when an IIS server is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
+| IIS - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a 4xx response code. | Critical | > 0 | 0 |
+| IIS - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a 5xx response code. | Critical | > 0 | 0 |
+| IIS - Error Events | This alert fires when an error in the IIS logs is detected. | Critical | > 0 | 0 |
+| IIS - Slow Response Time | This alert fires when the response time for a given IIS server is greater than one second. | Warning | > 0 | 0 |
+| IIS - ASP.NET Application Errors | This alert fires when we detect an error in the ASP.NET applications running on an IIS server. | Warning | >0 | < = 0 |
+| IIS - Blocked Async IO Requests | This alert fires when we detect that there are blocked async I/O requests on an IIS server. | Warning | >0 | < = 0 |

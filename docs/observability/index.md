@@ -1,8 +1,9 @@
 ---
 slug: /observability
 title: Observability
-description: The Sumo Logic Observability solution provides tools that work together to ensure you are able to efficiently monitor, troubleshoot, and diagnose issues across a variety of environments.
-tags: [observability]
+description: Our Observability solution provides tools that work together to ensure you are able to efficiently monitor, troubleshoot, and diagnose issues across a variety of environments.
+keywords:
+  - observability
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -69,4 +70,3 @@ In this section, we'll introduce the following concepts:
 These ready-to-run apps are a good starting point for monitoring critical parts of your infrastructure that support a work-from-home workforce:  
 * [Work from Home Solution](/docs/observability/work-from-home-vpn). This solution allows you to monitor all aspects of the infrastructure you use to enable employees to work from home, safely and securely—including your productivity apps, and the services you use for SSO, remote access, endpoint security.   
 * [Sumo Logic App for Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki). You can use this app to monitor and troubleshoot network security, end-to-end performance, switch port management, and device management of your Cisco Meraki wireless infrastructure management platform.  
-

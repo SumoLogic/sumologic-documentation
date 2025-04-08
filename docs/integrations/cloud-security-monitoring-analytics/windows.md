@@ -17,7 +17,7 @@ This section provides instructions for configuring log collection for the Window
 
 The Windows - Cloud Security Monitoring and Analytics app uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -57,7 +57,7 @@ The Windows - Cloud Security Monitoring and Analytics app uses Windows Security 
 }
 ```
 
-### Sample query
+### Sample queries
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
@@ -90,18 +90,6 @@ For more information on local or remote Windows Event Log Source configuration, 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
-
-## Upgrading the Windows Cloud Security app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Windows Cloud Security app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing Windows Cloud Security dashboards​
 
@@ -188,3 +176,15 @@ The **Windows - Security Analytics - Default Accounts Usage** dashboard allows y
 **Use case:** Honeycomb visuals also point to potential hotspots, or in other words specific computers that may require further attention relative to typical expected behavior within your organization.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Default-Accounts-Usage.png')} alt="Windows cloud Security Analytics dashboards" />
+
+## Upgrade/Downgrade the Windows Cloud Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Windows Cloud Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

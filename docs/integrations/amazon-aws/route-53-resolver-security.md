@@ -53,18 +53,6 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Upgrading the Amazon Route 53 Resolver Security app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Amazon Route 53 Resolver Security app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Amazon Route 53 Resolver Security dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -73,7 +61,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Query Logging Overview
 
-The Query Logging Overview Dashboard provides insights into DNS activities such as DNS queries by location, VPC and instance ID. Additional security information is provided, including blocked and alerted DNS queries from the Route 53 DNS Resolver Firewall, and Threat Intel matches from Sumo Logic's CrowdStrike integration.
+The Query Logging Overview Dashboard provides insights into DNS activities such as DNS queries by location, VPC and instance ID. Additional security information is provided, including blocked and alerted DNS queries from the Route 53 DNS Resolver Firewall, and threat intel matches from Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Route-53-Resolver-Security-Query-Logging-Overview.png')} alt="Amazon Route 53 Resolver Security Dashboards" />
 
@@ -164,7 +152,7 @@ Panels include:
 
 ### Threat Intel
 
-The Threat Intel Dashboard provides details of AWS DNS Resolver Queries that matches the built-in CrowdStrike threat intelligence data with known malicious IP addresses and Domains, allowing for real-time security analytics to help detect threats in your environment and protect against cyber attacks.
+The Threat Intel Dashboard provides details of AWS DNS Resolver Queries that matches the Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) data with known malicious IP addresses and Domains, allowing for real-time security analytics to help detect threats in your environment and protect against cyber attacks.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Route-53-Resolver-Security-Threat-Intel.png')} alt="Amazon Route 53 Resolver Security Dashboards" />
 
@@ -178,3 +166,15 @@ Panels include:
 * Threat Table
 * Malicious URIs
 * Malicious IPs
+
+## Upgrade/Downgrade the Amazon Route 53 Resolver Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Route 53 Resolver Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

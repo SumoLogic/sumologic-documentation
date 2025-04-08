@@ -1,7 +1,6 @@
 ---
 title: Farsight Security DNSDB
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

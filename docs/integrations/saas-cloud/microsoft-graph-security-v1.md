@@ -9,10 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="icon" width="50"/>
 
-The Sumo Logic App for Microsoft Graph Security V1 enables you to identify security threats by analyzing alert logs and helps you to improve web security posture, proactively detect and mitigate potential security risks, and improve compliance with security policies and regulations.
+The Sumo Logic app for Microsoft Graph Security V1 enables you to identify security threats by analyzing alert logs and helps you to improve web security posture, proactively detect and mitigate potential security risks, and improve compliance with security policies and regulations.
 
 :::warning
-This version of the app uses alerts from Microsoft Graph API (https://learn.microsoft.com/en-us/graph/api/alert-list?view=graph-rest-1.0&tabs=http) and continues to be supported for existing customers who are bringing in alerts from that source. If you are setting up a new cloud-to-cloud source, it will use API V2 (https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) which is covered by the [Microsoft Graph Security V2 app](/docs/integrations/saas-cloud/microsoft-graph-security-v2).
+This version of the app uses alerts from [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/api/alert-list?view=graph-rest-1.0&tabs=http) and continues to be supported for existing customers who are bringing in alerts from that source. If you are setting up a new cloud-to-cloud source, it will use [API V2](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) which is covered by the [Microsoft Graph Security V2 app](/docs/integrations/saas-cloud/microsoft-graph-security-v2).
 :::
 
 Key features of the Microsoft Graph Security app include:
@@ -31,7 +31,10 @@ Learn more about [fields of alert](https://learn.microsoft.com/en-us/graph/api/r
 
 ## Sample log messages
 
-```json title="Sample Alert Log"
+<details>
+<summary>Sample Alert Log</summary>
+
+```json 
  {
            "azureSubscriptionId": null,
            "riskScore": null,
@@ -104,6 +107,7 @@ Learn more about [fields of alert](https://learn.microsoft.com/en-us/graph/api/r
            "vulnerabilityStates": []
        }
 ```
+</details>
 
 ## Sample queries
 
@@ -115,29 +119,33 @@ _sourceCategory="ms_graph"
 | count_distinct(alert_id)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions for setting up the [Cloud-to-Cloud Integration for Microsoft Graph Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Microsoft Graph Security app​
+<CollectionConfiguration/>
 
-This section has instructions for installing the Microsoft Graph Security app for Sumo Logic.
+:::important
+Use the [Cloud-to-Cloud Integration for Microsoft Graph Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Microsoft Graph Security app is properly integrated and configured to collect and analyze your Microsoft Graph Security data.
+:::
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+### Create a new collector and install the app
 
-<AppInstall2/>
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-## Upgrading the Microsoft Graph Security app (Optional)
+<AppCollectionOPtion1/>
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+### Use an existing collector and install the app
 
-<AppUpdate/>
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-## Uninstalling the Microsoft Graph Security app (Optional)
+<AppCollectionOPtion2/>
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+### Use an existing source and install the app
 
-<AppUninstall/>
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Microsoft Graph Security dashboards
 
@@ -150,3 +158,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 The **Microsoft Graph Security - Alerts Overview** dashboard provides a comprehensive overview of events which helps you to analyze security threats and take proactive measures to safeguard your organization. This dashboard features various widgets, including total alerts, high severity alerts, alerts by status, alerts by analyst feedback, alerts by confidence level, alerts by malware category, top analyst, and top alert categories.
 
 The geo-location widget highlights alerts from high-risk countries, making it easier to identify and respond to potential threats from specific locations. The severity and trend widgets provide a detailed overview of the frequency and severity of alerts over time, allowing you to take proactive measures to mitigate risks. The top users associated with the alerts widget helps you pinpoint and address potential security risks related to user behavior efficiently. The recent alerts widget offers a quick snapshot of the latest security activity, ensuring you are always up-to-date on the latest developments.<br/><img src={useBaseUrl('/img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Overview.png')} alt="Microsoft-Graph-Security-Alerts-Overview" />
+
+## Upgrade/Downgrade the Microsoft Graph Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Graph Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

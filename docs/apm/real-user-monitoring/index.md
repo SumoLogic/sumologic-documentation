@@ -2,7 +2,6 @@
 slug: /apm/real-user-monitoring
 title: Real User Monitoring (RUM)
 description: Real User Monitoring (RUM) gives you insights into the quality of customer interactions with the digital interfaces of your business.
-tags: [real user monitoring, rum]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +11,7 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <img src={useBaseUrl('img/icons/apm.png')} alt="icon" width="60"/>
 
-Real User Monitoring (RUM) gives you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This open-source powered and flexible capability brings you full visibility into what’s happening in your user's browser while interacting with your web applications.
+Real User Monitoring (RUM) gives you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This open-source-powered and flexible capability brings you full visibility into what’s happening in your user's browser while interacting with your web applications.
 
 RUM provides you visibility into end-to-end individual user transactions to quickly understand the user experience. You'll get insights into delays that occurred on the client, overall end-to-end transaction times, network timings, rendering events, and can perform high-level monitoring, alerting, as well as troubleshooting any potential slow-downs. You have full details about the specific performance of top user cohorts, their geographical locations, browsers, and operating systems. You can also fully understand the overall experience of all users and transactions of your digital business, all the time.
 
@@ -27,6 +26,19 @@ All data collected is compatible with OpenTelemetry and doesn't use proprietary 
 :::sumo Micro Lesson
 See Real User Monitoring in action.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/jfptjgwql1?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Real User Monitoring (RUM) 2.0 Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/3EMl3jyoZjA?rel=0"
         width="854px"
         height="480px"
@@ -34,9 +46,10 @@ See Real User Monitoring in action.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
@@ -48,10 +61,10 @@ See Real User Monitoring in action.
 
 Access Traces to confirm that your Sumo Logic service package has been upgraded to include Traces and Real User Monitoring.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Traces, click the **+ New** button at the top of the screen and select **Traces**. 
-<!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Traces, in the main Sumo Logic menu select **Application Monitoring > Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**. 
- Kanso-->
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**.
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access Traces, in the main Sumo Logic menu select **Observability**, and then under **Application Monitoring** select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
+ 
 
 ## Guides
 

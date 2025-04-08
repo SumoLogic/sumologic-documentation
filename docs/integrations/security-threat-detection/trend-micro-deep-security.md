@@ -150,18 +150,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Trend Micro Deep Security app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Trend Micro Deep Security app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Trend Micro Deep Security dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -275,3 +263,15 @@ The Sumo Logic app for Trend Micro - Deep Security provides the following filter
 * file
 * severity
 * signature_id
+
+## Upgrade/Downgrade the Trend Micro Deep Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Trend Micro Deep Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

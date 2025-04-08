@@ -188,20 +188,8 @@ In this section, we'll introduce the following concepts:
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href="/docs/search/search-query-language/search-operators/isnull-isempty-isblank"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isNull</h4></a>
-      <p>The `isNull` operator checks a string and returns a boolean value.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <a href="/docs/search/search-query-language/search-operators/isnull-isempty-isblank"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isEmpty</h4></a>
-      <p>The `isEmpty` operator checks if a string contains no characters and is only whitespace.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <a href="/docs/search/search-query-language/search-operators/isnull-isempty-isblank"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isBlank</h4></a>
-      <p>The `isBlank` operator checks if a string contains no characters, is only whitespace, and is null.</p>
+      <a href="/docs/search/search-query-language/search-operators/isnull-isempty-isblank"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isNull, isEmpty, isBlank</h4></a>
+      <p>The `isNull` operator checks a string and returns a boolean value, `isEmpty` if a string contains no characters, and `isBlank` if a string contains no characters, is only whitespace, and is null.</p>
       </div>
     </div>
     <div className="box smallbox card">
@@ -230,8 +218,8 @@ In this section, we'll introduce the following concepts:
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href="/docs/search/search-query-language/search-operators/isvalidip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isValidIP</h4></a>
-      <p>The `isValidIP` operator checks if the value is a valid IP address.</p>
+      <a href="/docs/search/search-query-language/search-operators/isvalidip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isValidIP, isValidIPv4, isValidIPv6</h4></a>
+      <p>The `isValidIP` operator checks if the value is a valid IP address. The `isValidIPv4` and `isValidIPv6` operators check if the value is a valid IPv4 or IPv6 address, respectively. </p>
       </div>
     </div>
     <div className="box smallbox card">
@@ -240,12 +228,24 @@ In this section, we'll introduce the following concepts:
       <p>The `join` operator combines records of two or more data streams.</p>
       </div>
     </div>
+      <div className="box smallbox card">
+      <div className="container">
+      <a href="/docs/search/search-query-language/search-operators/jsonarraycontains"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>jsonArrayContains</h4></a>
+      <p>Use the `jsonArrayContains` operator to determine whether a JSON array contains a particular item.</p>
+      </div>
+    </div>    
+    <div className="box smallbox card">
+      <div className="container">
+      <a href="/docs/search/search-query-language/search-operators/jsonarraysize"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>jsonArraySize</h4></a>
+      <p>Use the `jsonArraySize` operator to determine the size of a JSON array.</p>
+      </div>
+    </div>
   <div className="box smallbox card">
     <div className="container">
     <a href="/docs/search/search-query-language/search-operators/length"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>length</h4></a>
     <p>The `length` operator returns the number of characters in a string.</p>
     </div>
-</div>
+  </div>
   <div className="box smallbox card">
     <div className="container">
     <a href="/docs/search/search-query-language/search-operators/limit"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>limit</h4></a>
@@ -380,10 +380,16 @@ In this section, we'll introduce the following concepts:
         </div>
         <div className="box smallbox card">
           <div className="container">
-          <a href="/docs/search/search-query-language/search-operators/threatip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>threatip()</h4></a>
-          <p>The `threatip()` operator correlates CrowdStrike's threat intelligence data based on IP addresses from your log data, helping you detect threats in your environment.</p>
+          <a href="/docs/search/search-query-language/search-operators/threatip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>threatip</h4></a>
+          <p>Correlates threat intelligence data based on IP addresses from your log data, helping you detect threats in your environment.</p>
           </div>
         </div>
+        <!-- <div className="box smallbox card">
+          <div className="container">
+          <a href="/docs/search/search-query-language/search-operators/threatlookup"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>threatlookup</h4></a>
+          <p>Allows you to search logs for matches in threat intelligence indicators.</p>
+          </div>
+        </div> -->
         <div className="box smallbox card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/timeslice"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>timeslice()</h4></a>

@@ -61,31 +61,18 @@ This procedure applies to the **AWS Access** method part of the source configura
 
 Before generating the template, the source’s configuration must have the AWS-specific fields filled out (for example, Bucket Name, Path Expression, and so on). 
 
-1. Leave the **Access Method** option set to the default option **Role-based access (recommended)**.
-
-    ![access-method.png](/img/send-data/access-method.png)
-
+1. Leave the **Access Method** option set to the default option **Role-based access (recommended)**.<br/>  ![AWS Access configuration form in Sumo Logic showing options for 'Role-based access' and 'Key access', with 'Role-based access' selected and fields for Account ID, External ID, and Role ARN.](/img/send-data/access-method.png)
 1. Click **Generate role-based access template**.
-1. A CloudFormation template for the role is displayed in YAML format.
-
-    ![generated-template.png](/img/send-data/generated-template.png)
-
+1. A CloudFormation template for the role is displayed in YAML format.<br/>  ![CloudFormation template for IAM role-based access in Sumo Logic, detailing AWS Template Format Version, Description, Resources, SumoRole properties, AssumeRolePolicyDocument, policies such as SumoPolicy, and Outputs.](/img/send-data/generated-template.png)
 1. Click **Download** to save the template.
 1. Navigate to AWS CloudFormation, or click **AWS CloudFormation Console**. The button will take you to open https://console.aws.amazon.com/cloudformation, and will not run the template. You will still need to generate and download the template to proceed.
-1. Click **Create Stack**.
-
-    ![create-stack-option.png](/img/send-data/create-stack-option.png)
-
+1. Click **Create Stack**.<br/>![AWS CloudFormation interface with options like Stacks, StackSets, Exports, Designer, and Registry, and a highlighted 'Create stack' button.](/img/send-data/create-stack-option.png)
 1. On the **Create Stack** page:
-
    1. Choose **Template is ready.**
    1. Choose **Upload a template file**.
    1. Click **Choose file** and navigate to the .yaml file you downloaded from the Sumo Logic source configuration in the earlier step.
-   1. Click **Next**. 
-
-    ![save-stack.png](/img/send-data/save-stack.png)
-
-1. On the **Specify details** page, enter a name for the stack (for example, *sumo-S3-role-access*), and click `Next`.
+   1. Click **Next**. <br/>  ![AWS CloudFormation 'Create stack' interface showing steps to specify template, including options to prepare and specify the template with upload options.](/img/send-data/save-stack.png)
+1. On the **Specify details** page, enter a name for the stack (for example, *sumo-S3-role-access*), and click **Next**.
 1. On the **Configure stack options** page, enter tags, if desired, and click **Next**.
 1. On the **Review *stack-title-name*** page, scroll to the bottom and read the acknowledgement from AWS that this CloudFormation template might create IAM resources. Then, check the acknowledgement box, and click **Create stack**.
 1. Once the stack is created, the ARN for the role is displayed in the Outputs section. Copy the value provided for the ARN Key. The ARN should look something like `arn:aws:iam::123456789:role/....`
@@ -96,43 +83,31 @@ Before generating the template, the source’s configuration must have the AWS-s
 1. Sign in to the AWS Management Console and open the [IAM console](https://console.aws.amazon.com/iam/).
 1. In the navigation pane of the console, choose **Roles** and then choose **Create role**.
 1. On the **Create role** page:
-
    1. Click **Another AWS account** as the type of trusted entity.
-   1. **Account ID**. Enter the following Sumo Logic ID: *926226587429*
+   1. **Account ID**. Enter the following Sumo Logic ID: `926226587429`.
    1. In the **Options** section, checkmark the **Require external ID for better security**. 
    1. **External ID**. The External ID is formed from your Sumo Logic region identifier and your Sumo Logic account identifier in this format: *SumoDeployment:SumoAccountId* where:
-
-      * *SumoDeployment* is your Sumo Logic deployment entered in lowercase such as au, ca, de, eu, fed, in, jp, us1, or us1. To find your deployment, see Sumo Logic Endpoints by Deployment and Firewall Security.
-      * *SumoAccountId* is the Organization ID shown on your **Account Overview** in the Sumo Logic UI. You can access it by going to **Administration > Account > Account Overview**.
-
+      * *SumoDeployment* is your Sumo Logic deployment entered in lowercase such as au, ca, de, eu, fed, jp, kr, us1, or us2. To find your deployment, see Sumo Logic Endpoints by Deployment and Firewall Security.
+      * *SumoAccountId* is the Organization ID shown on your **Account Overview** in the Sumo Logic UI. You can access it by going to the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) page.
    1. **Require MFA**. Don’t select this option; it is not supported.
-   1. Click **Next: Permissions**.
-
-    ![create-role.png](/img/send-data/create-role.png)
-
+   1. Click **Next: Permissions**.<br/> ![AWS IAM 'Create role' interface specifying trusted entities and accounts, highlighting fields for Account ID and External ID.](/img/send-data/create-role.png)
 1. Click **Create policy**. The **Create policy** page opens in a separate window.
-1. Choose the **JSON** tab on the **Create policy** page.
-
-    ![create-policy-page.png](/img/send-data/create-policy-page.png)
-
+1. On the **Create policy** page, choose the **JSON** tab.<br/> ![AWS IAM 'Create policy' interface using JSON editor to define policy with fields for version and statement.](/img/send-data/create-policy-page.png)
 1. Paste in the JSON policy for your source type.
 1. Click **Next: Tags**.
 1. Enter tags, as desired. Click **Next: Review**.
 1. **Name**. Enter a name for your policy. Policy names must be unique within your AWS account. Policy names are case-insensitive, and can’t be changed once created.
-1. **Description**. (Optional)
-
-    ![create-policy-2.png](/img/send-data/create-policy-2.png)
-
+1. **Description**. (Optional)<br/>  ![AWS IAM 'Create policy' interface showing a summary of the policy named 's3-doc-access', with allowed actions on S3 service.](/img/send-data/create-policy-2.png)
 1. Click **Create policy**. 
 1. Return to the previous tab for the **Create role** page, and click the refresh button in the console.
 1. Filter by the name of the policy you created, and select the checkbox next to it.
 1. Click **Next:Tags**.
-15. Enter tags, as desired, and click **Next: Review**.
-16. On the **Create role - Review** page, enter a Role name.
-17. Review the configuration of the role, and click Create role.
-18. After creating the role, you will be returned to the **IAM > Roles** console. 
-19. Enter the name of the newly created role, and then select the role.
-20. Copy the Role ARN. When you create your Sumo Logic source, enter it in the Role ARN field. The ARN will look something like   `arn:aws:iam::123456789:role/...`
+1. Enter tags, as desired, and click **Next: Review**.
+1. On the **Create role - Review** page, enter a Role name.
+1. Review the configuration of the role, and click Create role.
+1. After creating the role, you will be returned to the **IAM > Roles** console. 
+1. Enter the name of the newly created role, and then select the role.
+1. Copy the Role ARN. When you create your Sumo Logic source, enter it in the Role ARN field. The ARN will look something like `arn:aws:iam::123456789:role/...`
 
 :::note
 It may take a few minutes after creating a role for it for authentication with AWS to work. This is due to AWS's [eventual consistency](https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency).
@@ -155,29 +130,19 @@ The instructions in this section are for creating a user using the AWS console. 
 1. Sign in to the AWS Management Console and open the [IAM console](https://console.aws.amazon.com/iam/).
 1. In the navigation pane of the console, choose **Users** and then choose **Add users**.
 1. On the **Add user** page: 
-
    1. **User name**. Enter a username for the new user. Enter a username for the new user.
    1. **Select AWS credentials type**. Click the checkbox next to **Access key - Programmatic access.**
    1. Click **Next: Permissions**.
-
 1. Select **Attach existing policies directly**.
 1. Click **Create policy**. This should open the **Create policy** page in a separate window.
-
    1. Choose the **JSON** tab on the **Create policy** page.
    1. Paste in the JSON policy for your source type.
-   1. Click **Next: Tags**.
-
-    ![create-policy-page.png](/img/send-data/create-policy-page.png)
-
+   1. Click **Next: Tags**.<br/>![AWS IAM 'Create policy' interface using JSON editor to define policy with fields for version and statement.](/img/send-data/create-policy-page.png)
 1. Enter tags as desired and click **Next: Review**.
 1. On the **Create policy** page.
-
    1. **Name**. Enter a name for your policy. Policy names must be unique within your AWS account. Policy names are case-insensitive and can’t be changed after creation.
    1. **Description**. (Optional)
-   1. Click **Create policy**.
-
-    ![create-policy-2.png](/img/send-data/create-policy-2.png)
-
+   1. Click **Create policy**.<br/> ![AWS IAM 'Create policy' interface showing a summary of the policy named 's3-doc-access', with allowed actions on S3 service.](/img/send-data/create-policy-2.png)
 1. Return to the previous tab for the **Add user** page, and click the refresh button in the policy list.
 1. Select the checkbox next to the policy, and click **Next: Tags**.
 1. Enter tags as desired. Click **Next: Review**.

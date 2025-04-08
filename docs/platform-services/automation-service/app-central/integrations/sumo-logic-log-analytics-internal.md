@@ -1,7 +1,6 @@
 ---
 title: Sumo Logic Log Analytics Internal
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

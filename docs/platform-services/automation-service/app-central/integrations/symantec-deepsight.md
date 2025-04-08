@@ -1,7 +1,6 @@
 ---
 title: Symantec DeepSight
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

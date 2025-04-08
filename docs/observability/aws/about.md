@@ -11,10 +11,24 @@ AWS provides over 150 discrete services including compute, network, storage, dat
 
 Despite all of these services being a part of AWS, troubleshooting across different services can be problematic when you use separate AWS accounts to manage costs and give teams independent administrative control. Different AWS accounts often have different settings across Availability Zones or Regions, which makes it difficult to get a clear picture of overall application health.
 
-The Sumo Logic AWS Observability solution and Root Cause Explorer pull and analyze data across key AWS services and accounts, establish activity baselines, and determine causes for application incidents and high deviation events.
+The Sumo Logic AWS Observability solution analyze data across key AWS services and accounts, establish activity baselines, and determine causes for application incidents and high deviation events.
 
+:::sumo Micro Lesson
 Watch the following micro lesson to learn about our AWS Observability solution.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/fz0hceixkc?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Monitoring and Troubleshooting with AWS Observability Solution Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/p_LaUPAer6I?rel=0"
      width="854px"
      height="480px"
@@ -22,9 +36,12 @@ Watch the following micro lesson to learn about our AWS Observability solution.
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
+
+:::
 
 #### AWS Observability Solution  
 
@@ -33,7 +50,6 @@ The **AWS Observability Solution** can be deployed across multiple accounts and 
 * Minimize the time it takes to get operational insights across your AWS infrastructure.
 * Identify elements that are subject to specific operational issues across your AWS infrastructure.
 * Minimize the time it takes to assign operational to the correct business units and functional teams in your AWS infrastructure.
-* Expedite troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS infrastructure using the Root Cause Explorer.
 
 The unified platform collects and provides logs, metrics, traces, and metadata for the Application, Microservices, Cloud, Orchestrator, and Container layers. The solution understands how the different datasets and services are connected, and stitches those relationships into an entity workflow that makes it more intuitive for users to get a holistic view of their service.
 

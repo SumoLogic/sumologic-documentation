@@ -22,7 +22,7 @@ This App has been tested with following Kafka versions:
 * 3.4.0
 
 
-## Sample Logs
+## Sample log messages
 
 ```json
 {
@@ -49,7 +49,7 @@ messaging_cluster=* messaging_system="kafka" \
 The list of metrics collected can be found [here](/docs/integrations/containers-orchestration/kafka/#kafka-metrics).
 
 
-## Collecting Logs and Metrics for Strimzi Kafka Pods
+## Collecting logs and metrics for Strimzi Kafka Pods
 
 Collection architecture is similar to Kafka and described [here](/docs/integrations/containers-orchestration/strimzi-kafka/#collecting-logs-and-metrics-for-strimzi-kafka-pods).
 
@@ -75,7 +75,7 @@ Before configuring the collection you will require below items
 
 2. Download [sumologic_values_eks.yaml](https://drive.google.com/file/d/1YYBmf2akxgfCjWSOdpO2nqf3KmpRc9y0/view?usp=sharing) file. This file contains the remote write configuration for metrics which the app uses. You can add or remove metrics depending upon your use case.
 
-3. Generate the Sumo Logic access ids and access keys in the Sumo Logic [portal](/docs/manage/security/access-keys/#generate-an-access-key).
+3. Generate the Sumo Logic access IDs and access keys in the Sumo Logic [portal](/docs/manage/security/access-keys/#create-an-access-key).
 
 4. Install the Sumo Logic Kubernetes Collection using **sumologic_values_eks.yaml** file (in folder) by following the instructions [here](/docs/send-data/kubernetes/install-helm-chart). Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator enabled. If you are not, then follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf/) to do so. The below command enables traces and telegraf operators using the credentials generated in the previous step and deploys the 2.10.0 helm chart version.
 
@@ -183,7 +183,7 @@ If your Kafka helm chart/pod is writing the logs to standard output then the [Su
 4. **Adding FER for normalizing fields**
 
   Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Messaging Application Components. To do so:
-    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
     2. Click the **+ Add** button on the top right of the table.
     3. The **Add Field Extraction Rule** form will appear. Enter the following options:
         * **Rule Name**. Enter the name as **App Component Observability - Messaging.**

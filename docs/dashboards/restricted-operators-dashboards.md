@@ -12,12 +12,11 @@ This page has information about restrictions and rules about using [Sumo Logic l
 The following operators cannot be used with dashboards:
 
 * `Details`
-* [`LogReduce`](/docs/search/logreduce/logreduce-operator)
-* [`LogCompare`](/docs/search/logcompare)
+* [`LogReduce`](/docs/search/behavior-insights/logreduce/logreduce-operator)
+* [`LogCompare`](/docs/search/behavior-insights/logcompare)
 * [`Parse multi`](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex/#parse-multi)
 * `Sample` (internal-use operator)
 * [`Save`](/docs/search/search-query-language/search-operators/save)
-* [`Transaction`](/docs/search/search-query-language/transaction-analytics/transaction-operator/)
 
 ## Auto refresh restrictions
 
@@ -27,8 +26,8 @@ The following operators cannot be used in Auto refresh:
 * `Details`
 * [`First`, `Last`](/docs/search/search-query-language/group-aggregate-operators/first-last/) - instead use the **withtime** option, see [`most_recent` and `least_recent`](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).
 * [`Join`](/docs/search/search-query-language/search-operators/join/)
-* [`LogReduce`](/docs/search/logreduce/logreduce-operator/)
-* [`LogCompare`](/docs/search/logcompare/)
+* [`LogReduce`](/docs/search/behavior-insights/logreduce/logreduce-operator/)
+* [`LogCompare`](/docs/search/behavior-insights/logcompare/)
 * [`Now`](/docs/search/search-query-language/search-operators/now)
 * [`Outlier`](/docs/search/search-query-language/search-operators/outlier/) will omit the first N (window size) data points in results because those data points are used in the training phase.
 * `Parse Using`

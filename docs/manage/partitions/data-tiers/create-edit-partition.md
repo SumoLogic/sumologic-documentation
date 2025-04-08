@@ -25,9 +25,9 @@ If you have a Sumo Logic Enterprise Suite account, you can take advantage of th
 
 ## Create a Partition
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
 1. Click **+ Add Partition**.
-1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/partitions-data-tiers/create-new-partition.png')} alt="create-new-partition.png" width="300"/>
+1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/create-new-partition.png')} alt="create-new-partition.png" width="300"/>
 1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
 1. **Data Tier**. (Enterprise Suite accounts only) Click the radio button for the tier where you want the Partition to reside.
 1. **Routing Expression**. Enter a [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the Partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](/docs/manage/fields). If you have an Enterprise Suite account, and are going to assign the Partition to the Infrequent Tier, see the information in the [Assigning Data to a Data Tier](/docs/manage/partitions/data-tiers#assigning-data-to-a-data-tier) section of the [Data Tiers](/docs/manage/partitions/data-tiers/) page.
@@ -48,7 +48,7 @@ If you have a Sumo Logic Enterprise Suite account, you can take advantage of th
 When designing partitions, keep the following in mind:
 * **Avoid using queries that are subject to change**. In order to benefit from using Partitions, they should be used for long-term message organization.
 * **Make the query as specific as possible**. Making the query specific will reduce the amount of data in the Partition, which increases search performance.
-* **Keep the query flexible**. Use a flexible query, such as `sourceCategory=*Apache*`, so that metadata can be adjusted without breaking the query.
+* **Keep the query flexible**. Use a flexible query, such as `_sourceCategory=*Apache*`, so that metadata can be adjusted without breaking the query.
 * **Group data together that is most often used together**. For example, create Partitions for categories such as web data, security data, or errors.
 * **Group data together that is used by teams**. Partitions are an excellent way to organize messages by role and teams within your organization.
 * **Avoid including too much data in your partition**. Send between 2% and 20% of your data to a Partition. Including 90% of the data in your index in a Partition won’t improve search performance.
@@ -85,10 +85,14 @@ Before changing the routing expression for a partition, consider the impact of t
 
 ### How to edit a partition
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+1. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
+  :::note 
+  You can see the suggestions only if there are two or more responses for the same column or section. 
+  :::
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
-1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane.png')} alt="edit-partition-pane.png" width="300"/>
+1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/edit-partition-pane.png')} alt="edit-partition-pane.png" width="300"/>
 1. **Routing Expression**. Enter a [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](/docs/manage/fields).
 1. **Retention Period**. Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of the Default Continuous Index**.
 1. **Data Forwarding**. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](/docs/manage/data-forwarding).
@@ -96,7 +100,7 @@ Before changing the routing expression for a partition, consider the impact of t
 ### Audit logging for routing expression changes
 
 If you change the routing expression for a partition, an event is
-written to the Audit Event Index with the following details:
+written to the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index) with the following details:
 
 * `EventName` is "PartitionUpdated"
 * `Subsystem` is "Partition"

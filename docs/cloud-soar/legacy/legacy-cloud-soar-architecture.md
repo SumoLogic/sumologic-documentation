@@ -8,7 +8,7 @@ description: Features of the legacy Cloud SOAR architecture.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::info
-This article only applies to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`. If it doesn't, refer to [Cloud SOAR Architecture](/docs/cloud-soar/architecture/) for documentation of our latest Cloud SOAR SaaS version.
+This article only applies to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`. If it doesn't, refer to [Cloud SOAR Architecture](/docs/cloud-soar/overview/#architecture) for documentation about the architecture of our latest Cloud SOAR SaaS version.
 :::
 
 ## Multi-Tenancy
@@ -24,7 +24,7 @@ All multi-tenant installations offer:
 - Individual administrators otherwise segregated to each tenant
 - Isolation of external actions (e.g., enrichment of indicators of compromise, containment actions prescribed to a host)
 
-<img src={useBaseUrl('img/cloud-soar/image5.png')} alt="Multi-tenancy" width="600"/>
+<img src={useBaseUrl('img/cloud-soar/image5.png')} alt="Multiple database symbols" width="600"/>
 
 ## Automated Responder Knowledge (DF-ARK)
 

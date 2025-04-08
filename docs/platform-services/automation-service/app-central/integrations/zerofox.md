@@ -1,7 +1,6 @@
 ---
-title: ZeroFOX
+title: ZeroFox
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -10,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: Jul 11, 2023***
 
-Query data and utilize action in ZeroFOX Platform.
+Query data and utilize action in ZeroFox Platform.
 
 ## Actions
 

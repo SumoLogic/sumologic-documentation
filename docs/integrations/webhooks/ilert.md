@@ -65,7 +65,7 @@ The Sumo Logic integration for iLert ingests alert events into Sumo Logic throug
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="webhook/ilert"
@@ -120,18 +120,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the iLert app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the iLert app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing iLert dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -143,3 +131,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 The **iLert - Overview** dashboard presents a comprehensive insight into the alert management system, featuring a range of informative panels. Starting with Unique Alert Generation statistics, it displays alerts categorized by their sources and highlights High-Priority alerts for immediate attention. The dashboard also tracks Pending and Resolved Alerts, providing a real-time overview of the alert status. Additionally, it offers a breakdown of alerts by priority, identifies the Top Active Responders, and analyses alert data based on event types and source trends. Users can efficiently spot event-type trends and review a concise summary of recent alerts.
 
 <img src={useBaseUrl('img/integrations/webhooks/iLert_overview.png')} style={{border: '1px solid black'}} alt="iLert-Overview"/>
+
+## Upgrade/Downgrade the iLert app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the iLert app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

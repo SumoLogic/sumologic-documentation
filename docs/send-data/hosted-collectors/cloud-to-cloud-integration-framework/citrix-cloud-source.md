@@ -32,7 +32,7 @@ The Citrix Cloud source collects the system, operation, and session logs using t
 
 ### Vendor configuration
 
-**Prerequisites**
+#### Prerequisites
 
 - The System logs are obtained using the [Citrix Cloud API](https://developer.cloud.com/citrix-cloud/citrix-cloud-api-overview/docs/get-started-with-citrix-cloud-apis).
    - To collect System logs from the Citrix Cloud platform, you must have an authorized Citrix Cloud account.
@@ -68,7 +68,7 @@ To get the **Citrix Cloud API token**, follow the steps below:
     :::
 1. Select the **API Access** tab.<br/><img src={useBaseUrl('img/send-data/api-access.png')} alt="<api-access.png>" width="650" />
 1. Give a name to your Secure Client, and click **Create Client**.<br/><img src={useBaseUrl('img/send-data/create-client.png')} alt="<create-client.png>" width="650" />
-1. A dialogue box will appear notifying you that your **Client ID** and **Secret key** have been successfully created. You can download or copy and paste the Client Id and Secret key to a folder location because you will need them when creating the [Citrix Cloud-to-Cloud Source](#set-up-citrix-cloud-source). <br/><img src={useBaseUrl('img/send-data/successful-credentials.png')} alt="<successful-credentials.png>" width="450" />
+1. A dialogue box will appear notifying you that your **Client ID** and **Secret key** have been successfully created. You can download or copy and paste the Client Id and Secret key to a folder location because you will need them when creating the [Citrix Cloud-to-Cloud Source](#source-configuration). <br/><img src={useBaseUrl('img/send-data/successful-credentials.png')} alt="<successful-credentials.png>" width="450" />
 1. After closing the previous dialogue box, copy and paste the **Customer Id**, which is written straight above the **Create Client** button, into a folder. Look at the red highlighted box.<br/><img src={useBaseUrl('img/send-data/customer-id.png')} alt="<customer-id.png>" width="650" />
 
 ### Source configuration
@@ -76,7 +76,7 @@ To get the **Citrix Cloud API token**, follow the steps below:
 When you create a Citrix Cloud Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the Citrix Cloud API:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Citrix Cloud**. 
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
@@ -127,13 +127,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/files/c2c/citrix-cloud/example.json)
+<a href="/files/c2c/citrix-cloud/example.json" target="_blank">Download example</a>
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/files/c2c/citrix-cloud/example.tf)
+<a href="/files/c2c/citrix-cloud/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 
@@ -203,7 +203,7 @@ Make sure that you have used the correct `customerId` is used to configure the s
 #### Solution
 
 - Make sure that you have used the correct `customerId` and `baseURL` are used to configure the source.
-- Make sure that the provided `customerId` has the DaaS Service enabled. Refer [Prerequisites](#prerequisites) section.
+- Make sure that the provided `customerId` has the DaaS Service enabled. Refer to the [Prerequisites](#prerequisites) section.
 
 ### Session Logs API error
 
@@ -214,7 +214,7 @@ Make sure that you have used the correct `customerId` is used to configure the s
 #### Solution
 
 - Make sure that the correct `customerId` and `baseURL` are used to configure the source.
-- Make sure that the provided customerId has the DaaS Service enabled. Refer [Prerequisites](#prerequisites) section.
+- Make sure that the provided customerId has the DaaS Service enabled. Refer to the [Prerequisites](#prerequisites) section.
 
 ## FAQ
 

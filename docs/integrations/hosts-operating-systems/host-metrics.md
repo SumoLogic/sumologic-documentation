@@ -204,18 +204,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Host Metrics app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Host Metrics app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Host Metrics dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -336,3 +324,15 @@ The supported filters are:
 * `_sourceHost`
 * `_source`
 * `_collector`
+
+## Upgrade/Downgrade the Host Metrics app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Host Metrics app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

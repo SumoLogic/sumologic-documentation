@@ -1,7 +1,6 @@
 ---
 title: CrowdStrike Falcon Discover
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

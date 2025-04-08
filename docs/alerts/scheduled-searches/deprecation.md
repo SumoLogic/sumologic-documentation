@@ -15,7 +15,7 @@ Monitors provide the same functionality as a Real-Time Scheduled Search, but off
 * [Alert Grouping](/docs/alerts/monitors/alert-grouping/)
 * [Playbook Support](/docs/alerts/monitors/alert-response/#alert-details)
 * [Integration into our Alert Response Page](/docs/alerts/monitors/alert-response/)
-* [AI-Driven Alerting](/release-notes-service/2024/03/12/alerts/)
+* [AI-Driven Alerting](/release-notes-service/2024/12/31/#march-12-2024-alerts)
 
 Furthermore, Monitors will continue to be the focus area for our Product and Engineering Teams for features and enhancements regarding alerting.
 
@@ -23,11 +23,11 @@ Furthermore, Monitors will continue to be the focus area for our Product and Eng
 
 After **May 29, 2024**, it will no longer be possible to create a new Scheduled Search with a frequency of Real-Time. We recommend you create a Monitor to address this use case. Note that this does not have any effect on the creation of new Scheduled Searches with other frequencies of 15 Minutes, Hourly, Daily, Weekly, or a specific Cron schedule for example.
 
-Real-Time Scheduled Searches that were created up until **May 29, 2024** will continue to function without any interruption for 1 year until **May 15, 2025**, and any edits to those schedules will still be supported until the next year.
+Real-Time Scheduled Searches that were created up until **May 29, 2024** will continue to function without any interruption for 1 year until **May 15, 2025**, and any edits to those schedules will still be supported until the next year. Please note, however, that if the frequency of an existing Real-Time Scheduled search is modified to a different parameter, it will not be able to be changed back to Real-Time.
 
 ## What do I need to do?
 
-Before **May 15, 2025**, please migrate any Real-Time Scheduled Searches to either Monitors or reduce its frequency to the minimum frequency of 15m.
+Before **May 15, 2025**, please migrate any Real-Time Scheduled Searches to either Monitors or reduce their frequency to the minimum of 15m or another suitable time range. Any Real-Time Scheduled Searches that remain after the deprecation date will automatically be converted to 15m schedules. For each automatic conversion, there will be a corresponding audit log for this activity written to your Sumo Logic instance. 
 
 ### Can I import a scheduled search into a monitor?
 

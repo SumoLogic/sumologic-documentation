@@ -19,7 +19,7 @@ The Sumo Logic for CIS AWS Foundations Benchmark App maps to Section 3 (Monitori
 The Sumo Logic App for CIS AWS Foundations Benchmark uses [CloudTrail](/docs/integrations/amazon-aws/cloudtrail.md) logs. For details on the specifics of which attributes are used, refer to Section 3 (Monitoring) of the [CIS AWS Benchmarks Foundation](https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf).
 
 
-## Collecting Logs for the CIS AWS Foundation Benchmark App
+## Collecting logs for the CIS AWS Foundation Benchmark App
 
 ### Configure Collector and Source
 
@@ -34,9 +34,9 @@ The CIS AWS Foundation Benchmark App ingests [AWS CloudTrail](/docs/integrations
 
 Now that you have configured CIS AWS Foundation Benchmark, install the Sumo Logic App for CIS AWS Foundation Benchmark to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 For context regarding the CIS AWS Foundation Benchmark App, check out this [blog](https://www.sumologic.com/blog/cis-aws-foundations-benchmark-monitoring/) where we describe the monitoring controls.
 

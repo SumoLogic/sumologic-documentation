@@ -19,7 +19,10 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
 
 ## Sample log messages
 
-```json title="Asset Log"
+<details>
+<summary>Asset Log</summary>
+
+```json
  {
   "assessed_for_policies": false,
   "assessed_for_vulnerabilities": true,
@@ -89,7 +92,12 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
   "unique_identifiers": []
 }
 ```
-```json title="Vulnerability Finding Log"
+</details>
+
+<details>
+<summary>Vulnerability Finding Log</summary>
+
+```json
 {
   "asset_id": "4b8cdd43-3bd3-411a-9597-41aedf04b62f-default-asset-519",
   "check_id": null,
@@ -108,8 +116,12 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
   "vulnerability_id": "generic-tcp-timestamp"
 }
 ```
+</details>
 
-```json title="Vulnerability Log"
+<details>
+<summary>Vulnerability Log</summary>
+
+```json
 {
   "added": "2018-02-06T00:00:00Z",
   "categories": "XSS,jQuery",
@@ -177,6 +189,8 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
   "title": "jQuery Vulnerability: CVE-2015-9251"
 }
 ```
+</details>
+
 ## Sample queries
 
 ```sql title="Assets by Type"
@@ -203,27 +217,33 @@ on vulnerability.id=asset_vulnerability.vulnerability_id // get information of a
 | limit 10
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source) for the Rapid7 app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Rapid7 Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Rapid7 app is properly integrated and configured to collect and analyze your Rapid7 data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Rapid7 app​
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Rapid7](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Rapid7 app is properly integrated and configured to collect and analyze your Rapid7 data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Upgrading the Rapid7 app (Optional)
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+<AppCollectionOPtion1/>
 
-<AppUpdate/>
+### Use an existing collector and install the app
 
-## Uninstalling the Rapid7 app (Optional)
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+<AppCollectionOPtion2/>
 
-<AppUninstall/>
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Rapid7 dashboards​​
 
@@ -238,3 +258,15 @@ The **Rapid7 - Assets Overview** dashboard provides a detailed summary of the as
 ### Vulnerabilities Overview
 
 The **Rapid7 - Vulnerabilities Overview** dashboard offers significant insights into vulnerability findings from the assets. It tracks the number of new and remediated vulnerability findings over the period. The dashboard includes visual representations of vulnerabilities categorized by severity and highlights the top 10 vulnerabilities related to assets. Additionally, it presents a summary of the leading 10 solutions utilized to address vulnerabilities and showcases recent vulnerability instances based on their most recent discovery time, along with information on the assets involved.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Rapid7-Vulnerabilities-Overview.png')} alt="Rapid7-Vulnerabilities-Overview" width="750"/>
+
+## Upgrade/Downgrade the Rapid7 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Rapid7 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

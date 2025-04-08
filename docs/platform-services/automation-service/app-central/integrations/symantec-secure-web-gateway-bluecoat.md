@@ -1,7 +1,6 @@
 ---
 title: Symantec Secure Web Gateway (Bluecoat)
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

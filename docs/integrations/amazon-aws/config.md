@@ -71,7 +71,7 @@ _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | sort _count
 ```
 
-## Collecting Logs for the AWS Config App
+## Collecting logs for the AWS Config App
 
 ### Prerequisites
 

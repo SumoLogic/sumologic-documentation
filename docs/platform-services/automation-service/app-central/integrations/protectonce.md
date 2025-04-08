@@ -1,7 +1,6 @@
 ---
 title: ProtectOnce
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

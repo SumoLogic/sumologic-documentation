@@ -1,7 +1,6 @@
 ---
 title: OneTrust
 description: ''
-tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

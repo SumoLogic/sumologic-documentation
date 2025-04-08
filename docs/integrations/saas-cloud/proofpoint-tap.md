@@ -25,7 +25,10 @@ This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to
 
 ## Sample log messages
 
-```json title="Sample Message Event"
+<details>
+<summary>Sample Message Event</summary>
+
+```json
  {
   "GUID": "qop94nlsUdvm1BsHU_8jdPXWYH0ZCndT",
   "QID": "3qk94m8jy1-1",
@@ -105,7 +108,12 @@ This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to
   "xmailer": null
 }
 ```
-```json title="Sample Clicks Log"
+</details>
+
+<details>
+<summary>Sample Clicks Log</summary>
+
+```json
 {
   "GUID": "6Qpm37_BE3mFckkZEAZtUSrA8t9FyQSm",
   "campaignID": "3qsaakgeb2-1",
@@ -126,6 +134,7 @@ This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to
   "threatUrl": "https://threatinsight.proofpoint.com/e659ac2e/threat/email/bb56ef875eca495366175"
 }
 ```
+</details>
 
 ## Sample queries
 
@@ -155,27 +164,33 @@ _sourceCategory="milan_proofpoint_tap" ("CLICK_PERMITTED" or "CLICK_BLOCKED")
 | count_distinct(id)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Proofpoint TAP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) for the Proofpoint TAP app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Proofpoint TAP source category, which you will need to use when installing the app. By following these steps, you can ensure that your Proofpoint TAP app is properly integrated and configured to collect and analyze your Proofpoint TAP data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Proofpoint TAP app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Proofpoint TAP](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Proofpoint TAP app is properly integrated and configured to collect and analyze your Proofpoint TAP data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Upgrading the Proofpoint TAP app (Optional)
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+<AppCollectionOPtion1/>
 
-<AppUpdate/>
+### Use an existing collector and install the app
 
-## Uninstalling the Proofpoint TAP app (Optional)
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+<AppCollectionOPtion2/>
 
-<AppUninstall/>
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Proofpoint TAP dashboards
 
@@ -190,3 +205,15 @@ The **Proofpoint TAP - Messages Overview** dashboard provides real-time analysis
 ### Clicks Overview
 
 The **Proofpoint TAP - Clicks Overview** dashboard offers real-time analysis of malicious URLs, providing insights into the trends of the click events. It presents the distribution of threats based on their categories and statuses. Furthermore, the dashboard displays the geographic locations of malicious URL clicks originating from high-risk countries and details about the top senders and receivers of the malicious URLs. Additionally, the dashboard offers a summary of recent click events, delivering a concise overview of the malicious URL click activity and highlighting any significant events that may require attention.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-TAP-Clicks-Overview.png')} alt="Proofpoint-TAP-Clicks-Overview"/>
+
+## Upgrade/Downgrade the Proofpoint TAP app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Proofpoint TAP app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -27,7 +27,7 @@ The `{AppName}` App uses...
 
 \Enter a list of log types, usually hyperlinked to vendor docs.\
 
-## Sample Log and Metrics messages
+## Sample log and metrics messages
 
 ### Log message
 

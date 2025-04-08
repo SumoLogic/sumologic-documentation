@@ -74,7 +74,7 @@ The infrastructure tab of the [Entity Inspector](../../dashboards/drill-down-to-
 Deployment-container combinations that have no requests or limits set are not candidates for optimization. No recommendations are computed in these cases. 
 :::
 
-### Concepts, Definitions and Methodology
+### Concepts, definitions and methodology
 
 It is relatively well known that DevOps staff concerned about Out of Memory (OOM) and CPU throttling may set high memory and CPU requests on their containers. This results in situations where Kubernetes clusters are over-provisioned compared to actual usage. Conversely, Kubernetes clusters may be underprovisioned, leading to risk of OOM and throttling and resulting downtime. 
 

@@ -1,7 +1,6 @@
 ---
 title: Microsoft Azure Security Center
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

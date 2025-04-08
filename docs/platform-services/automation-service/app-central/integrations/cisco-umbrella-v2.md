@@ -1,7 +1,6 @@
 ---
 title: Cisco Umbrella V2
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

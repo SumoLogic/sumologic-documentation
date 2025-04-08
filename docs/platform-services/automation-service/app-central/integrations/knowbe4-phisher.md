@@ -1,7 +1,6 @@
 ---
 title: KnowBe4 PhishER
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

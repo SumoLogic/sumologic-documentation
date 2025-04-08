@@ -12,14 +12,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic App for PagerDuty V2 collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services. The Sumo Logic App for PagerDuty V2 uses Webhooks V2, to provide enhanced context for alert object models.
 
 
-## Event Types
+## Event types
 
 The Sumo Logic App for PagerDuty V2 ingests PagerDuty incident Webhooks V2 messages, that are triggered by events that occur in your PagerDuty account and Services.
 
 For more information on the incident messages supported in Webhooks V2, see the PagerDuty documentation: [https://v2.developer.pagerduty.com/docs/webhooks-v2-overview](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview)
 
 
-### Sample Logs
+### Sample log messages
 
 For examples of incident.trigger, incident.acknowledge, incident.resolve, and incident.assign log messages, see the [PagerDuty Webhooks V2 Examples](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview#examples) page.
 
@@ -39,7 +39,7 @@ _sourceCategory=Labs/pagerduty_v2 "incident.trigger"
 ```
 
 
-## Collecting Logs for PagerDuty V2
+## Collecting logs for PagerDuty V2
 
 This section provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V2, to collect PagerDuty events.
 

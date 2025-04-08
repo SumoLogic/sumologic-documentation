@@ -1,7 +1,6 @@
 ---
 title: OpenAI ChatGPT
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

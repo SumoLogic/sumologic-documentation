@@ -24,7 +24,7 @@ The response field separates each value with a new line character and places
 
 This is an example of a response field with IP addresses:
 
-![values operator response field example.png](/img/search/searchquerylanguage/group-aggregate-operators/values-operator-response-field-example.png)
+![Screenshot of a list of IP addresses under the column header '_values' in Sumo Logic. The list includes IP addresses such as '1.250.157.76,' '109.64.133.250,' '112.109.95.26,' and several others.](/img/search/searchquerylanguage/group-aggregate-operators/values-operator-response-field-example.png)
 
 ### Limitation
 

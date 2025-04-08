@@ -10,12 +10,12 @@
   "secretKey": "XXXXV%DsznXXX!hxr479cXsxxnbkX@vxxrxkbfxc",
   "dataCollection": [
     "auditEvents",
-    "alerts",
+    "sessions",
     "fileEvents"
   ]
 },
         "schemaRef": {
-            "type": "Code42Incydr"
+            "type": "Code42 Incydr"
         },
         "sourceType": "Universal"
     }

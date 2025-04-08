@@ -1,7 +1,6 @@
 ---
 title: Syslog-NG
 description: ''
-tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -2,19 +2,18 @@
 id: carbon-black-cloud
 title: Carbon Black Cloud
 sidebar_label: Carbon Black Cloud
-description: The Carbon Black Cloud app analyzes alert and event data from the Endpoint Standard and Enterprise EDR products. app dashboards provide visibility into threats, TTPs, devices, and more.
+description: The Carbon Black Cloud app analyzes alert and event data from the Endpoint Standard and Enterprise EDR products. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="75"/>
 
-The Carbon Black Cloud app analyzes alert and event data from Endpoint Standard and Enterprise EDR products and provides comprehensive visibility into the security posture of your endpoints, enabling you to determine the effects of breaches in your environment. The app provides visibility into key endpoint security data with preconfigured dashboards for alerts, threats intelligence, feeds, sensors, alerts, users, hosts, processes, IOCs, devices and network status.
+The Carbon Black Cloud app analyzes alert and event data from Endpoint Standard and Enterprise EDR products and provides comprehensive visibility into the security posture of your endpoints, enabling you to determine the effects of breaches in your environment. The app provides visibility into key endpoint security data with pre-configured dashboards for alerts, threats intelligence, feeds, sensors, alerts, users, hosts, processes, IOCs, devices and network status.
 
 ## Log types
 
-The Carbon Black Cloud app uses the following Carbon Black Cloud log types, which are set to the Amazon S3 bucket sent by the [Carbon Black Cloud Forwarder](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/).
-
+The Carbon Black Cloud app uses the following Carbon Black Cloud log types:
 * Alert Data
 * Event Data
 
@@ -27,110 +26,66 @@ For sample log messages, see [Data Samples](https://developer.carbonblack.com/re
 #### Endpoint Standard
 
 ```sql title="Alerts"
-_sourceCategory = Labs/CarbonBlackCloudAlerts
-| json field=_raw "id", "alert_url" , "severity","category", "device_name","device_username", "target_value", "device_group", "threat_id", "device_os", "type", "status", "sensor_action", "process_name", "reason", "create_time" as alert_id, alert_url ,severity, category ,device_name, user,target_priority, device_group, incident_id, device_os, type, status, sensor_action, process_name, reason, create_time nodrop //s3
+_sourceCategory=CBCloud
+| json field=_raw "id", "alert_url" , "severity", "device_name","device_username", "device_target_value", "threat_id", "device_os", "type", "sensor_action", "process_name", "reason", "backend_timestamp","ttps" as alert_id, alert_url ,severity ,device_name, user,target_priority, incident_id, device_os, type, sensor_action, process_name, reason, backend_timestamp,ttps nodrop 
 | where type ="CB_ANALYTICS"
-| json "threat_indicators[*].ttps" as threatInfo_indicators nodrop
-| extract field=threatInfo_indicators "\"(?<indicators>.*?)\"(,|\])" multi nodrop
-| json field=_raw "threat_cause_actor_name", "threat_cause_threat_category", "threat_cause_reputation" as threat_actor, threat_category, threat_reputation nodrop
+| where !(ttps matches "[]") AND !isNull(ttps)
+| extract field=ttps "\"(?<indicators>.*?)\"(,|\])" multi nodrop
+| count by alert_id
+| count
 ```
 
 ```sql title="Events"
-_sourceCategory = Labs/CarbonBlackCloudEvents
-|json field=_raw "event_origin", "event_id", "event_description", "alert_id", "process_cmdline" as event_origin, event_id, event_description, alert_id, process_cmdline
+_sourceCategory = CBCloud
+| json field=_raw "event_origin", "event_id", "event_description", "alert_id", "process_cmdline" as event_origin, event_id, event_description, alert_id, process_cmdline
 | where event_origin="NGAV"
+| count by  event_origin, event_id, event_description, alert_id, process_cmdline
 ```
 
 #### Enterprise EDR
 
 ```sql title="Events"
-_sourceCategory = Labs/CarbonBlackCloudEvents
-|json field=_raw "event_origin",  "process_guid", "process_cmdline", "parent_cmdline", "process_username" as event_origin, process_guid, process_cmdline, parent_cmdline, process_username nodrop
+_sourceCategory = CBCloud
+| json field=_raw "event_origin",  "process_guid", "process_cmdline", "parent_cmdline", "process_username" as event_origin, process_guid, process_cmdline, parent_cmdline, process_username nodrop
 | where event_origin="EDR"
+| count by  event_origin, process_guid, process_cmdline, parent_cmdline, process_username
 ```
 
 ```sql title="Alerts"
-_sourceCategory = Labs/CarbonBlackCloudAlerts
-| json field=_raw "id", "alert_url" , "severity","category", "device_name","device_username", "target_value", "threat_id", "device_os", "type", "status", "process_name", "reason", "create_time" as alert_id, alert_url ,severity, category ,device_name, user,target_priority, incident_id, device_os, type, status, process_name, reason, create_time nodrop //s3
+_sourceCategory=CBCloud WATCHLIST
+| json field=_raw "id", "alert_url" , "severity", "device_name","device_username", "device_target_value", "threat_id", "device_os", "type", "sensor_action", "process_name", "reason", "backend_timestamp","ioc_id" as alert_id, alert_url ,severity ,device_name, user,target_priority, incident_id, device_os, type, sensor_action, process_name, reason, backend_timestamp,ioc_id nodrop //s3
 | where type ="WATCHLIST"
-| json "threat_indicators[*].ttps" as threatInfo_indicators nodrop
-| extract field=threatInfo_indicators "\"(?<indicators>.*?)\"(,|\])" multi nodrop
-| json field=_raw "threat_cause_actor_name", "threat_cause_threat_category", "threat_cause_reputation", "ioc_hit" as threat_actor, threat_category, threat_reputation, ioc_hit nodrop
+| count by alert_id
+| count
 ```
 
-## Collecting logs for Carbon Black Cloud
+## Collection configuration and app installation
 
-This section has instructions for configuring collection of Carbon Black Cloud event and alert logs. In the steps that follow, you'll set up two Sumo Logic S3 Sources, each of which will collect logs from an S3 bucket, and configure Carbon Black Cloud to send alert and event data to the S3 buckets.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-### Step 1: Create S3 bucket
+<CollectionConfiguration/>
 
-In this step, use the AWS Console to create an S3 bucket. Make a note of the name of the bucket name. Later in this procedure, you'll configure Carbon Black Data Forwarders to send logs to the bucket.  
-
-### Step 2: Create Sumo Logic S3 Sources
-
-In this step, you create two S3 Sources to collect logs from the S3 bucket you created in the previous step. One source will collect event logs from the bucket, the other source will collect alert logs.
-
-As a prerequisite, [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to the S3 bucket.
-
-#### S3 Source for event logs
-
-Follow these steps to set up an S3 Source to collect event logs from your S3 bucket. (For detailed instruction on S3 Source configuration options, see [Amazon S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
-
-
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
-2. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
-3. Select **Amazon S3**.
-4. Enter a name for the new Source. A description is optional.
-5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
-6. **Use AWS versioned APIs**? Select **No**
-7. **Bucket Name.** Enter the exact name of the S3 bucket you created above.
-8. **Path Expression.** Enter: `events/*`
-9. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs.
-:::note
-import CollBegin from '../../reuse/collection-should-begin-note.md';
-
-<CollBegin/>
+:::important
+Use the [Cloud-to-Cloud Integration for Carbon Black Cloud](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Carbon Black Cloud app is properly integrated and configured to collect and analyze your Carbon Black Cloud data.
 :::
-10. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.) Make a note of the Source Category you assign; you will need it when you install the  the Carbon Black Cloud app.
-11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
-    * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.  
 
-    * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+### Create a new collector and install the app
 
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-#### S3 Source for alert logs
+<AppCollectionOPtion1/>
 
-Follow the steps in [S3 Source for event logs](#s3-source-for-event-logs) above to create another S3 source that will collect alert logs from the S3 bucket. When creating the source, assign it its own source category value, and set the **Path Expression** to: `alerts/*`
+### Use an existing collector and install the app
 
-### Step 3: Configure Carbon Black Cloud to send alert and event logs to S3
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-In this step you configure two Carbon Black Data Forwarders to push event and alert logs to S3.  
+<AppCollectionOPtion2/>
 
-To configure the Data Forwarders, follow the [instructions](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/eventforwarder-api/) in VMware help.
+### Use an existing source and install the app
 
-When you configure a Data Forwarder, you supply an S3 bucket name and an **S3 prefix**. For both the forwarders specify the same S3 bucket—the one you created above. The value for the **S3 prefix** is different for each forwarder:
-* For the event forwarder, set **S3 prefix** to `events/`
-* For the alert forwarder, set **S3 prefix** to `alerts/`
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
-Please carefully evaluate this information to assure that your configuration reflects the data set you would like to send to Sumo Logic.
-
-## Installing the Carbon Black Cloud app
-
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
-
-<AppInstall2/>
-
-## Upgrading the Carbon Black Cloud app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Carbon Black Cloud app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
+<AppCollectionOPtion3/>
 
 ## Viewing Carbon Black Cloud dashboards​
 
@@ -187,7 +142,7 @@ Use this dashboard to:
 * See Alerts by device over time
 * See a breakdown of devices by OS and Process counts
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Endpoint-Standard-Alerts.png')} alt="Carbon_Black_Cloud dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Endpoint-Standard-Device.png')} alt="Carbon_Black_Cloud dashboards" />
 
 ### Endpoint Standard - TTPs
 
@@ -198,7 +153,7 @@ Use this dashboard to:
 * Identify any spikes in malicious activity
 * Help tune new policies and reduce false positives
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Endpoint-Standard-Device.png')} alt="Carbon_Black_Cloud dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Endpoint-Standard-TTPs.png')} alt="Carbon_Black_Cloud dashboards" />
 
 ### Enterprise EDR - Overview
 
@@ -253,3 +208,15 @@ Use this dashboard to:
 * Help tune new policies and reduce false positives
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Enterprise-EDR-IOCs.png')} alt="Carbon_Black_Cloud dashboards" />
+
+## Upgrade/Downgrade the Carbon Black Cloud app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Carbon Black Cloud app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

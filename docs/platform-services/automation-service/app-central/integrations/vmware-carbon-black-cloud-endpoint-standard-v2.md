@@ -1,7 +1,6 @@
 ---
 title: VMware Carbon Black Cloud Endpoint Standard V2
 description: ''
-tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
