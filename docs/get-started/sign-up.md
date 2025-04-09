@@ -13,29 +13,37 @@ After your trial, your account will automatically convert to a [Free account](#u
 
 ## Sign up through Sumo Logic
 
-To start your free trial:
+To start your free trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up) and register using either Google single sign-on (SSO) or your business email address.
 
-1. Go to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up).
-1. Register with a business email address to create your account.
-1. Check your inbox for the activation email and follow the steps below.
+### Register using Google SSO
 
-### Activate your account
-
-:::note
-The activation link expires after 3 days. If it expires, you’ll need to complete the sign-up process again.
-:::
-
-1. Open the activation email and click **Activate Now**. (If you do not see it, check your spam and trash folders.)
-1. Fill out the **Activate Your Account** form, then click **Activate**.
+1. Click **Continue with Google** and select your business Google account.
+1. Fill out the **Complete Your Account** form, then click **Activate**.
 1. Follow the setup guide to install a data collector and start ingesting data.
+
+### Register using your email address
+
+1. Click **Continue with email** and enter your business email address.
+1. Check your inbox for an activation email and click **Activate Now**.
+   :::note
+   The activation link expires after 3 days. If it expires, you’ll need to complete the sign-up process again.
+   :::
+1. Fill out the **Complete Your Account** form, then click **Activate**.
+1. Follow the setup guide to install a data collector and start ingesting data.
+
+## Sign in to Sumo Logic
+
+After registering, you can sign in using your email address and password, your Google account, or an [identity provider](/docs/manage/security/saml).
+
+<!-- same as https://github.com/SumoLogic/sumologic-documentation/pull/5174? -->
+
+### Set up data collection
 
 :::tip
 Get started with Sumo Logic effortlessly using **Kickstart Data**, preloaded sample data and dashboards designed to help you explore and understand the platform’s capabilities. You can immediately dive into our features like log search and alerts prior to setting up your own data collection. Whether you're new to Sumo Logic or evaluating its features, Kickstart Data offers a hands-on way to experience the platform's power. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
 :::
 
-### Set up data collection
-
-Upon first logging in, you'll be asked to select the platform (AWS, Kubernetes, Linux, Windows, macOS) from which you want to collect data. This will install the OpenTelemetry collector and relevant dashboards.
+Here, you'll need to select the platform (AWS, Kubernetes, Linux, Windows, macOS) from which you want to collect data. This will install the OpenTelemetry collector and relevant dashboards.
 * For AWS, you'll deploy a single account with a CloudFormation Template, CLI, or Terraform.
 * For Kubernetes, Linux, Windows, or macOS, you'll need to run the provided command in your Terminal or PowerShell.
 
@@ -74,7 +82,7 @@ For information on plan types and pricing, see [Sumo Logic Pricing](https://www.
 
 #### Essentials plans
 
-Using our self-service checkout, you can sign up for a Sumo Logic Essentials plan in just minutes using a credit card—no need to interact with the sales team. 
+Using our self-service checkout, you can sign up for a Sumo Logic Essentials plan in just minutes using a credit card—no need to interact with the sales team.
 
 - [Learn how to upgrade your plan with Credits account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account).
 - [Learn how to upgrade your plan with Flex account](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account).
