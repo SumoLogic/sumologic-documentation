@@ -22,8 +22,8 @@ Sumo Logic enables you to seamlessly gather and analyze valuable insights from d
 ## Data collected
 
 | Polling Interval | Data |
-| :-- | :-- | 
-| 12 hours | [Collector API](/docs/api/collector-management/collector-api-methods-examples/#get-a-list-of-collectors) | 
+| :-- | :-- |
+| 12 hours | [Collector API](/docs/api/collector-management/collector-api-methods-examples/#get-a-list-of-collectors) |
 | 5 minutes | [Source API](/docs/api/collector-management/source-api/#list-sources) |
 
 ## Setup
@@ -43,7 +43,6 @@ Identify your **Deployment** region based on your Base URL. The deployment regio
 | DE  |	`https://api.de.sumologic.com/`  |
 | EU  | `https://api.eu.sumologic.com/`  |
 | FED |	`https://api.fed.sumologic.com/` |
-| IN  |	`https://api.in.sumologic.com/`  |
 | JP  |	`https://api.jp.sumologic.com/`  |
 | KR  |	`https://api.kr.sumologic.com/`  |
 | US1 |	`https://api.sumologic.com/`     |
@@ -58,7 +57,7 @@ To generate the Access ID and Access Key, refer to [Create an access key](/docs/
 When you create a Sumo Collection Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Sumo Collection Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Sumo Collection**.
 1. Enter a **Name** for the Source. The description is optional.
