@@ -25,6 +25,114 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
+## Upgrading the Threat Intel Quick Analysis app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Threat Intel Quick Analysis app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Viewing Threat Intel Quick Analysis dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Overview
+
+The **Overview** dashboard shows you the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Overview_Dashboard.png')} alt="Threat Intel Dashboard" />
+
+* **Welcome to the Threat Intel Quick Analysis App.** Informational panel to help you work with the app.
+* **Number of Log Lines (Events) Scanned for Threats.** Count of log lines scanned across all selected sources for the last 15 minutes.  
+* **IP Threat Count.** Count of threats related to malicious IPs, for the last 15 minutes.
+* **File Name Threat Count.** Count of threats related to malicious file names, for the last 15 minutes.  
+* **URL Threat Count.** Count of threats related to malicious URLs, for the last 15 minutes.  
+* **Email Threat Count.** Count of threats related to malicious email addresses, for the last 15 minutes.  
+* **Domain Threat Count.** Count of threats related to malicious domains, for the last 15 minutes.  
+* **Threats by Malicious Confidence.**  Qualifies all threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.
+
+
+### Domain
+
+The **Domain** dashboard displays the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Domain_Dashboard.png')} alt="Threat Intel Dashboard" />
+
+* **Threat Count.** Count of threats related to malicious domains, for the last 15 minutes.  
+* **Threats by Malicious Confidence.** Qualifies domain threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.  
+* **Threats by Actor.** Count of threats related to malicious domains, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
+* **Threats by Sources.** Count of threats related to malicious domains, broken by Sources, for the last 15 minutes.  
+* **Threats Over Time.** Trends of domain threats over time for the last 60 minutes.  
+* **Threats Over Time by Sources.** Trends of domain threats over time, broken by Sources for the last 60 minutes.  
+* **Threats Table.** Listing of all domain threats, including Malicious Confidence, Actors and Sources.   
+
+### Email
+
+The **Email** dashboard displays the frequency of Email threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Email_Dashboard.png')} alt="Threat Intel Dashboard" />
+
+* **Threat Count.** Count of threats related to malicious emails addresses, for the last 15 minutes.  
+* **Threats by Malicious Confidence.** Qualifies email address threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.  
+* **Threat Breakdown by Sources.** Count of threats related to malicious email addresses, broken by Sources, for the last 15 minutes.  
+* **Threats Over Time.** Trends of email address threats over time for the last 60 minutes.  
+* **Threats Over Time by Sources.** Trends of email address threats over time, broken by Sources for the last 60 minutes.  
+* **Threats by Actor.** Count of threats related to malicious email addresses, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
+* **Threats Table.** Listing of all domain threats, including Malicious Confidence, Actors and Sources.
+
+
+### IP
+
+The **IP** dashboard displays the frequency of IP threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_IP_Dashboard.png')} alt="Threat Intel Dashboard" />
+
+* **Threat Count.** Count of threats related to malicious IPs, for the last 15 minutes.  
+* **Threats by Geo Location.** Count of threats related to malicious IPs, broken by geo location, for the last 15 minutes.
+* **Threat Breakdown by Sources.** Count of threats related to malicious IPs, broken by Sources, for the last 15 minutes.  
+* **Threats by Malicious Confidence.** Qualifies IP threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.  
+* **Threats by Actors.** Count of threats related to malicious IPs, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.  
+* **Threats Over Time.** Trends of IP threats over time for the last 60 minutes.  
+* **Threats Table.** Listing of all IP threats, including Malicious Confidence, Actors and Sources.  
+* **Threats Over Time by Sources.** Trends of IP threats over time, broken by Sources for the last 60 minutes.
+
+
+### URL
+
+The **URL** dashboard displays the frequency of URL threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_URL_Dashboard.png')} alt="Threat Intel Dashboard" />
+
+* **Threat Count.** Count of threats related to malicious URLs, for the last 15 minutes.  
+* **Threats by Sources.** Count of threats related to malicious URLs, broken by Sources, for the last 15 minutes.
+* **Threats by Actors.** Count of threats related to malicious URLs, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
+* **Threats by Malicious Confidence.** Qualifies URLP threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.
+* **Threats Over Time.** Trends of URL threats over time for the last 60 minutes.
+* **Threats Over Time by Sources.** Trends of URL threats over time, broken by Sources for the last 60 minutes.
+* **Threat Table.** Listing of threats identified by URL, including information on Malicious Confidence, Actors, Source, and count.
+
+
+### Hash 256
+
+The **Hash 256** dashboard displays the frequency of Hash 256 threats by Actor, Log Source, Malicious Confidence, and view trends over time.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Hash256_Dashboard.png')} alt="Threat Intel Dashboard" />
+
+* **Threat Count.** Count of total Hash 256 threats over the last 15 minutes.
+* **Threats by Malicious Confidence.** Qualifies Hash 256 threats for the last 60 minutes  into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine and displayed as a pie chart.
+* **Threat Breakdown by Sources.** Pie chart of Hash 256 threats over the last 60 minutes broken down by source.
+* **Threats Over Time.** Line chart of the number of Hash 256 threats over the last 60 minutes.
+* **Threat Breakdown by Source.** Line chart of the number of Hash 256 threats over the last 60 minutes, broken down by source.
+* **Threats by Actor.** Identifies Actors, if any, that can be attributed to Hash 256 threats over the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
+* **Threat Table.** Aggregation Table of Hash 256 threats over the last 15 minutes.
+
 ## Threat Intel optimization
 
 The Threat Intel Quick Analysis App provides baseline queries. You can further optimize and enhance these queries for the log and events types being scanned for threats. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**.
@@ -145,7 +253,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
     | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
    ```
    -->
-1. Now, you can run your Threat Intel query on top of this view:
+2. Now, you can run your Threat Intel query on top of this view:
      ```sql
      _view=cylance_threat
      | count by src_ip
@@ -229,6 +337,151 @@ You can further investigate bad IP triggers by updating your query to check the 
 -->
 
 ## Viewing Threat Intel Quick Analysis dashboards
+
+
+#### `malicious_confidence`
+
+**Data Type:** string<br/>
+**Description:** Indicates a confidence level by which an indicator is considered to be malicious. For example, a malicious file hash may always have a value of high while domains and IP addresses will very likely change over time. The malicious confidence level is also represented under the labels list in the JSON data structure.<br/>
+Once an indicator has been marked with a malicious confidence level, it continues to have that confidence level value until updated by CrowdStrike. If you think there is a false positive, please file a Support ticket, and we'll work with CrowdStrike to investigate the IOC in question and update the threat details.<br/>
+**Values:**
+
+* high
+* medium
+* low
+* unverified—This indicator has not been verified by a CrowdStrike Intelligence analyst or an automated system.
+* null—Indicates that Sumo Logic has no information about the threat record.
+
+---
+#### `published_date`
+
+**Data Type:** Timestamp in standard Unix time, UTC.<br/>
+**Description:** This is the date the indicator was first published.
+
+---
+#### `last_updated`
+
+**Data Type**: Timestamp in standard Unix time, UTC.<br/>
+**Description**: This is the date the indicator was last updated in CrowdStrike internal database.
+
+---
+#### `malware_family`
+
+**Data Type**: string<br/>
+**Description**: Indicates the malware family an indicator has been associated with. An indicator may be associated with more than one malware family. The malware family list is also represented under the labels list in the JSON data structure.
+
+---
+#### `kill_chain`
+
+**Data Type:** string<br/>
+**Description:** The point in the kill chain at which an indicator is associated. The kill chain list is also represented under the labels list in the JSON data structure.<br/>
+**Values:**  
+* reconnaissance—This indicator is associated with the research, identification, and selection of targets by a malicious actor.
+* weaponization—This indicator is associated with assisting a malicious actor create malicious content.
+* delivery—This indicator is associated with the delivery of an exploit or malicious payload.
+* exploitation—This indicator is associated with the exploitation of a target system or environment.
+* installation—This indicator is associated with the installation or infection of a target system with a remote access tool or other tool allowing for persistence in the target environment.
+* c2 (Command and Control)—This indicator is associated with malicious actor command and control.
+* actionOnObjectives—This indicator is associated with a malicious actor's desired effects and goals.
+
+---
+#### `labels`
+
+**Data Type:** string<br/>
+**Description:** The Intel Indicators API provides additional context around an indicator via the labels list. Some of these labels, such as `malicious_confidence` are accessible via the top-level data structure. All labels, including their associated timestamps, will be accessible via the labels list. The url string will look like: `https://intelapi.crowdstrike.com/indicator/v1/search/labels?equal=DomainType/DynamicDNS`.
+
+
+<table class="mt-responsive-table">
+    <thead>
+        <tr>
+            <th class="mt-column-width-20" scope="col"><strong>IOC Type</strong></th>
+            <th class="mt-column-width-80" scope="col"><strong>Values</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>DomainType</strong></td><td class="mt-column-width-80" data-th="Values">
+            <ul><li>DomainType/ActorControlled&mdash;It is believed the malicious actor is still in control of this domain.</li>
+                <li>DomainType/DGA&mdash;Domain is the result of malware utilizing a domain generation algorithm.</li>
+                <li>DomainType/DynamicDNS&mdash;Domain is owned or used by a dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/Afraid&mdash;Domain is owned or used by the Afraid.org dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/DYN&mdash;Domain is owned or used by the DYN dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/Hostinger&mdash;Domain is owned or used by the Hostinger dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/noIP&mdash;Domain is owned or used by the NoIP dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/Oray&mdash;Domain is owned or used by the Oray dynamic DNS service.</li>
+                <li>DomainType/KnownGood&mdash;Domain itself (or the domain portion of a URL) is known to be legitimate, despite having been associated with malware or malicious activity.</li>
+                <li>DomainType/LegitimateCompromised&mdash;Domain does not typically pose a threat but has been compromised by a malicious actor and may be serving malicious content.</li>
+                <li>DomainType/PhishingDomain&mdash;Domain has been observed to be part of a phishing campaign.</li>
+                <li>DomainType/Sinkholed&mdash;Domain is being sinkholed, likely by a security research team. This indicates that, while traffic to the domain likely has a malicious source, the IP address to which it is resolving is controlled by a legitimate 3rd party. It is no longer believed to be under the control of the actor.</li>
+                <li>DomainType/StrategicWebCompromise&mdash;While similar to the DomainType/LegitimateCompromised label, this label indicates that the activity is of a more targeted nature. Often, targeted attackers will compromise a legitimate domain that they know to be a watering hole frequently visited by the users at the organizations they are looking to attack.</li>
+                <li>DomainType/Unregistered&mdash;Domain is not currently registered with any registrars.</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>EmailAddressType</strong></td><td class="mt-column-width-80" data-th="Values">
+            <p>EmailAddressType/DomainRegistrant&mdash;Email address has been supplied in the registration information for known malicious domains.</p>
+            <p>EmailAddressType/SpearphishSender&mdash;Email address has been used to send spearphishing emails.</p></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type">&nbsp;</td>
+            <td class="mt-column-width-80" data-th="Values"><strong>IntelNews</strong>: The Intel Flash Report ID an indicator is associated with (For example, IntelNews/NEWS-060520151900).</td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type">            <p><strong>IPAddressType</strong></p></td>
+            <td class="mt-column-width-80" data-th="Values"><ul><li>IPAddressType/HtranDestinationNode&mdash;An IP address with this label is being used as a destination address with the HTran Proxy Tool.</li>
+                <li>IPAddressType/HtranProxy&mdash;An IP address with this label is being used as a relay or proxy node with the HTran Proxy Tool.</li>
+                <li>IPAddressType/LegitimateCompromised&mdash;It is suspected an IP address with this label is compromised by malicious actors.</li>
+                <li>IPAddressType/Parking&mdash;IP address is likely being used as parking IP address.</li>
+                <li>IPAddressType/PopularSite&mdash;IP address could be utilized for a variety of purposes and may appear more frequently than other IPs.</li>
+                <li>IPAddressType/SharedWebHost&mdash;IP address may be hosting more than one website.</li>
+                <li>IPAddressType/Sinkhole&mdash;IP address is likely a sinkhole being operated by a security researcher or vendor.</li>
+                <li>IPAddressType/TorProxy&mdash;IP address is acting as a TOR (The Onion Router) Proxy Malware/PoisonIvy Malware/Zeus Malware/DarkComet</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>Status</strong></td>
+            <td class="mt-column-width-80" data-th="Values"><ul><li>Status/ConfirmedActive&mdash;Indicator is likely to be currently supporting malicious activity</li><li>Status/ConfirmedInactive&mdash;Indicator is no longer used for malicious purposes.</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>Target</strong></td>
+            <td class="mt-column-width-80" data-th="Values"><p>The activity associated with this indicator is known to target the indicated vertical sector, which could be any of the following:</p>
+            <ul><li>Target/Aerospace Target/Agricultural Target/Chemical</li>
+                <li>Target/Defense</li>
+                <li>Target/Dissident</li>
+                <li>Target/Energy</li>
+                <li>Target/Extractive</li>
+                <li>Target/Financial</li>
+                <li>Target/Government</li>
+                <li>Target/Healthcare</li>
+                <li>Target/Insurance</li>
+                <li>Target/InternationalOrganizations</li>
+                <li>Target/Legal</li>
+                <li>Target/Manufacturing</li>
+                <li>Target/Media</li>
+                <li>Target/NGO</li>
+                <li>Target/Pharmaceutical</li>
+                <li>Target/Research</li>
+                <li>Target/Retail</li>
+                <li>Target/Shipping</li>
+                <li>Target/Technology</li>
+                <li>Target/Telecom</li>
+                <li>Target/Transportation</li>
+                <li>Target/Universities</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>ThreatType</strong></td><td class="mt-column-width-80" data-th="Values">
+            <ul><li>ThreatType/ClickFraud&mdash;Indicator is used by actors engaging in click or ad fraud.</li>
+                <li>ThreatType/Commodity&mdash;Indicator is used with commodity type malware such as Zeus or Pony Downloader.</li>
+                <li>ThreatType/PointOfSale&mdash;Indicator is associated with activity known to target point-of-sale machines such as AlinaPoS or BlackPoS.</li>
+                <li>ThreatType/Ransomware&mdash;Indicator is associated with ransomware malware such as Crytolocker or Cryptowall.</li>
+                <li>ThreatType/Suspicious&mdash;Indicator is not currently associated with a known threat type but should be considered suspicious.</li>
+                <li>ThreatType/Targeted&mdash;Indicator is associated with a known actor suspected to associated with a nation-state such as DEEP PANDA or ENERGETIC BEAR.</li>
+                <li>ThreatType/TargetedCrimeware&mdash;Indicator is associated with a known actor suspected to be engaging in criminal activity such as WICKED SPIDER.</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><br/><strong>Vulnerability</strong></td>
+            <td class="mt-column-width-80" data-th="Values"><br/>The CVE-XXXX-XXX vulnerability the indicator is associated with (e.g. <a href="https://intelapi.crowdstrike.com/indicator/v1/search/labels?equal=vulnerability/CVE-2012-0158" rel="freelink" title="https://intelapi.crowdstrike.com/indicator/v1/search/labels?equal=vulnerability/CVE-2012-0158">https://intelapi.crowdstrike.com/ind.../CVE-2012-0158</a> )</td>
+        </tr>
+    </tbody>
+</table>
 
 All dashboards include filters that you can use in Interactive Mode for further analysis of your Threat Intel Quick Analysis data. Because the Threat Intel Quick Analysis has the most bearing on recent threats, most panels are set to the 15 minute time range. You can adjust time ranges as needed.
 
@@ -319,3 +572,4 @@ See the frequency of SHA-256 threats by Actor, Log Source, Malicious Confidence,
 * **Threat Breakdown by Source.** Line chart of the number of SHA-256 threats over the last 60 minutes, broken down by source.
 * **Threats by Actor.** Identifies Actors, if any, that can be attributed to SHA-256 threats over the last 15 minutes. Actors are identified individuals, groups or nation-states associated to threats.
 * **Threat Table.** Aggregation Table of SHA-256 threats over the last 15 minutes.
+
