@@ -912,9 +912,29 @@ Delete the pod forcefully by adding `--force --grace-period=0` to the `kubectl d
 
 If you are running the out of the box rancher monitoring setup, you cannot run our Prometheus operator alongside it. The Rancher Prometheus Operator setup will actually kill and permanently terminate our Prometheus Operator instance and will prevent the metrics system from coming up. If you have the Rancher prometheus operator setup running, they will have to use the UI to disable it before they can install our collection process.
 
-### unmarshal errors: field collector_selector not found in type config.Config
+### Incorrect CRDs
 
-This typically points to a schema (CRD) that’s out of date. Ensure you have the correct CRDs applied in the cluster.
+If you receive errors similar to below, this typically points to a schema (CRD) that’s out of date. Ensure you have the correct CRDs applied in the cluster.
+
+```
+unmarshal errors: field collector_selector not found in type config.Config
+```
+
+### HorizontalPodAutoscaler (Metrics Server Disabled)
+
+If you receive warning events similar to below, this typically means that the HorizontalPodAutoscaler (HPA) cannot connect to the metrics-server or the metrics-server is disabled.
+
+```
+Warning   FailedGetResourceMetric   horizontalpodautoscaler/sumo-logic-sumologic-otelcol-metrics           failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server could not find the requested resource (get pods.metrics.k8s.io)
+```
+
+To resolve this, you can try enabling the metrics-server manually in the helm chart configuration:
+
+```yaml
+metrics-server:
+  enabled: true
+```
+
 
 ### Falco and Google Kubernetes Engine (GKE)
 
@@ -1034,6 +1054,32 @@ It means that Custom Resource Definition has not been applied by Helm. It is [He
 
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.44.0/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
+```
+
+### Hung/Stuck OpenTelemetryCollector K8s CRD
+
+To patch and delete CustomResourceDefinitions in Kubernetes
+
+```shell
+kubectl patch crd/opentelemetrycollectors.opentelemetry.io -p '{"metadata":{"finalizers":[]}}' --type=merge
+```
+
+Confirm that the finalizer has been removed
+
+```shell
+kubectl get opentelemetrycollectors.opentelemetry.io -o yaml > my-resource.yaml
+```
+
+If the patch command doesn't work, please edit the CRD to remove the finalizer
+
+```shell
+kubectl edit crd opentelemetrycollectors.opentelemetry.io
+```
+
+Finally, delete the CRD
+
+```shell
+kubectl delete crd/opampbridges.opentelemetry.io
 ```
 
 ## Using Sumo Logic Mock

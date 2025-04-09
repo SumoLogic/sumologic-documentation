@@ -91,8 +91,9 @@ We recommend you configure partitions to have less than 5 TB per day flowing int
 
 Default scope allows you to include or exclude the partitions in the search query, helping you to optimize the search cost. For example, if a query needs to run through 10 partitions, which consumes about 10 GB of search data, narrowing the search query using the default scope can improve the query performance and reduce scan cost. You can modify the default scope by selecting or deselecting the **Include this partition in default scope** checkbox when creating/updating your partition. Let's say that out of 10 partitions, you excluded two partitions. Now, when you run a query that does not have `_index` / `_view` term referenced in the query, the search will only consider the included partitions, reducing the amount of data scanned and lowering the cost.
 
+If you do not specify a partition name using `_index` or `_view`, or if you do not use metadata fields in your query scope that correspond to the routing expression of a partition, you will be billed for all default scope partitions that are not explicitly excluded. This also includes the `sumologic_default` partition.
 
-When partitions are marked as included and `_index` or `_view` is not referenced in the query, all included partitions will be considered by default. Default scope is also useful when `AND` or `OR` conditions are used in the query with `_index`. For example, consider you have three partitions: Partition A (Excluded), Partition B (Included), and Partition C (Included). Below are some scenarios:
+When partitions are marked as included and `_index` or `_view` is not referenced in the query, all partitions part of default scope will be considered by default. Default scope is also useful when `AND` or `OR` conditions are used in the query with `_index`. For example, consider you have three partitions: Partition A (Excluded), Partition B (Included), and Partition C (Included). Below are some scenarios:
 
 - When you run the query without referring to `_index`, for example `error | count`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope. 
 - When you run a query referring to an index term, for example `_index="Partition A"`, only Partition A will be considered for the query. 
@@ -112,3 +113,10 @@ Users will continue to have support for the `_dataTier` modifier while still mig
 After migrating to the Flex pricing, queries with the `_dataTier` modifier will continue to work as usual. The definition of `_dataTier=Continuous or Frequent or Infrequent` at the time of transition is a snapshot of the partitions that were part of the tier. This ensures a smooth transition to Flex pricing without encountering any issues.
 
 Once the move to Flex pricing is settled, based on the convenience of Administrators and Users, it is recommended to rewrite the queries to move away from the `_dataTier` modifier to improve the scope of queries. There is currently no set time to deprecate the support for the `_dataTier` modifier in Flex pricing.
+
+## Are audit index queries charged?
+
+Queries to the following [audit indexes](/docs/manage/security/audit-indexes/) are not charged:
+* `sumologic_audit_events`
+* `sumologic_system_events`
+* `sumologic_search_usage_per_query`

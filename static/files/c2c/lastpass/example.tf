@@ -7,6 +7,7 @@ resource "sumologic_cloud_to_cloud_source" "lastpass-source" {
           "name": "lastpass",
           "cid": "*****",
           "apiSecret": "*************",
+          "timeZone": "UTC",
           "pollingInterval": 5
   })
 }

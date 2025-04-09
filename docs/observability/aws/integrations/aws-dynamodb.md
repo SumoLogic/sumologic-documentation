@@ -61,13 +61,27 @@ _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynam
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | count as ip_count by ip_address
 | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
-| json field=raw "labels[*].name" as label_name
+| json field=raw "labels[*].name" as label_name nodrop
 | replace(label_name, "\\/","->") as label_name
 | replace(label_name, "\""," ") as label_name
 | where  type="ip_address" and !isNull(malicious_confidence)
 | if (isEmpty(actor), "Unassigned", actor) as Actor
 | sum (ip_count) as threat_count
 ```
+
+<!-- Replace code example with this after `sumo://threat/i471` is replaced by `threatlookup`:
+```sql title="All IP Threat Count"
+_sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynamodb.amazonaws.com\""
+| json "eventName", "awsRegion", "requestParameters.tableName", "sourceIPAddress", "userIdentity.userName" as event_name, Region, entity, ip_address, user
+| where Region matches "*" and tolowercase(entity) matches "*"
+| where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
+| count as ip_count by ip_address
+| threatlookup singleIndicator ip_address
+| where (_threatlookup.type="ipv4-addr" or _threatlookup.type="ipv6-addr") and !isNull(_threatlookup.confidence)
+| if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
+| sum (ip_count) as threat_count
+```
+-->
 
 ## Viewing AWS DynamoDB dashboards
 
