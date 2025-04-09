@@ -556,3 +556,7 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
   <summary>What timestamp is used for the data?</summary>
   <div>If you leave the time parsing configuration blank, it will cause the source to use current time for the collected logs. Be sure to configure the HTTP response log ingestion configuration section to ensure time parsing is correctly handled. The source will enter an error health status if time parsing is configured and is unsuccessful.</div>
 </details>
+
+## Additional resources
+
+* Blog: [Break down barriers to log collection with Sumo Logic’s Universal Connector](https://www.sumologic.com/blog/universal-connector/)

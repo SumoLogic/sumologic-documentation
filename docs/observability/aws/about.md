@@ -106,3 +106,9 @@ The following Sumo Logic [AWS Observability Solution apps](/docs/observability/a
 * [AWS Observability Classic Load Balancer](/docs/observability/aws/integrations/aws-classic-load-balancer). The [AWS Observability Classic Load Balancer](/docs/observability/aws/integrations/aws-classic-load-balancer) is a unified logs and metrics app that provides visibility into the health of your [AWS Classic Load Balancer](https://aws.amazon.com/elasticloadbalancing/classic-load-balancer/). The preconfigured dashboards provide insights into latency, request and host status, threat intel, and HTTP backend codes by Availability Zones.
 * [Amazon SNS](/docs/observability/aws/integrations/amazon-sns). The [Amazon SNS](/docs/observability/aws/integrations/amazon-sns) app provides insight into the operations and utilization of your [Amazon SNS](https://aws.amazon.com/sns) service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
 * [Amazon SQS](/docs/observability/aws/integrations/amazon-sqs). The [Amazon SQS](/docs/observability/aws/integrations/amazon-sqs) app provides insight into the operations and utilization of your [Amazon SQS](https://aws.amazon.com/sqs) service. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
+
+## Additional resources
+
+* Blog: [Lightning-fast troubleshooting for AWS: How to find the root cause fast with Sumo Logic](https://www.sumologic.com/blog/aws-observability-fast-troubleshooting/)
+* White paper: [Advancing Observability on AWS with Sumo Logic](https://www.sumologic.com/brief/advancing-observability-on-aws-with-sumo-logic/)
+* Demo: [AWS Logs for Monitoring and Troubleshooting](https://www.sumologic.com/demo/aws-logs-for-monitoring-and-troubleshooting/)

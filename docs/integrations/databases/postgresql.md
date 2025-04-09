@@ -691,3 +691,9 @@ postgresql_index_size<br/>
 postgresql_table_size<br/>
 
 </details>
+
+## Additional resources
+
+* Blogs: 
+   * [How to use Kubernetes to deploy Postgres](https://www.sumologic.com/blog/kubernetes-deploy-postgres/)
+   * [PostgreSQL vs MySQL](https://www.sumologic.com/blog/postgresql-vs-mysql/) 

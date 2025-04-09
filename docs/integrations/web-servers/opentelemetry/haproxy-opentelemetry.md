@@ -370,3 +370,8 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `HAProxy - Backend Server Down` | This alert is triggered when a backend server for a given HAProxy server is down. | Count > 0 | Count < = 0 |
 | `HAProxy - High Client (HTTP 4xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count > 0 | Count < = 0 |
 | `HAProxy - High Server (HTTP 5xx) Error Rate` | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Count > 0 | Count < = 0 |
+
+## Additional resources
+
+* Blog: [Everything you need to know about HAProxy log format](https://www.sumologic.com/blog/haproxy-log-format/)
+* App description: [HAProxy App for Sumo Logic](https://www.sumologic.com/application/haproxy/)

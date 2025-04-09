@@ -185,3 +185,9 @@ Threat Intelligence sources contain values that, when encountered in a record, a
 
 Threat Intelligence sources are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your Threat Intelligence sources. When a record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
 
+## Additional resources
+
+* Blogs: 
+   * [Secure your CI/CD pipelines from supply chain attacks with Sumo Logic’s Cloud SIEM rules](https://www.sumologic.com/blog/secure-azure-devops-github-supply-chain-attacks/)
+   * [Rule tuning – supercharge Cloud SIEM for better alerts](https://www.sumologic.com/blog/rule-tuning-cloud-siem-alert-fatigue/)
+* Cloud SIEM Content Catalog: [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md)

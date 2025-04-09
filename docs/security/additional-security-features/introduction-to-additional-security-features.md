@@ -62,3 +62,10 @@ Queries are the core of Sumo Logic's data processing platform. With queries, you
 * **Lookup tables**. Create lookup tables to enrich the log data received by Sumo Logic. See [Create a Lookup Table](/docs/search/lookup-tables/create-lookup-table/).
 * **Dashboards**. Dashboards to display a number of useful metrics in easy-to-read form to allow administrators to see system status at a glance. You can quickly set up custom dashboards from scratch. See [Create a Dashboard](/docs/dashboards/create-dashboard-new/).
 * **Alerts**. Automated alerts notify important personnel when there may be a potential threat. Again, Sumo Logic's analytics platform makes it simple. You can learn how to set up an alert in just a few minutes. See [Create a Monitor](/docs/alerts/monitors/create-monitor/).
+
+## Additional resources
+
+* Blogs: 
+   * [Why your security analytics needs proactive threat hunting](https://www.sumologic.com/blog/why-proactive-threat-hunting-is-a-necessity/)
+   * [Cloudy with a chance of breach: advanced threat hunting strategies for a hyperconnected and SaaSy world](https://www.sumologic.com/blog/threat-hunting-hybrid-cloud-environment/)
+* Glossary: [Threat detection and response (TDR) - definition & overview](https://www.sumologic.com/glossary/threat-detection-response/)

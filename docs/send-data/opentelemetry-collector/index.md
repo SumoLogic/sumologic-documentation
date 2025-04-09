@@ -76,7 +76,9 @@ In this section, we'll introduce the following concepts:
   </div>
 </div>
 
-## More information
+## Additional resources
 
-* [Sumo Logic Guide to OpenTelemetry](https://www.sumologic.com/guides/opentelemetry). Learn about the powerful observability tool OpenTelemetry and what it can provide for your business.
-* [OpenTelemetry Tutorials](https://www.sumologic.com/blog/common-opentelemetry-demo-application/). Learn how to use the common OpenTelemetry demo application with Sumo Logic.
+* Guide: [The Sumo Logic Guide to OpenTelemetry](https://www.sumologic.com/guides/opentelemetry)
+* Blogs: 
+   * [Learn how to use the common OpenTelemetry demo application with Sumo Logic](https://www.sumologic.com/blog/common-opentelemetry-demo-application/)
+   * [Take control of your OpenTelemetry Collectors with Otel Remote Management](https://www.sumologic.com/blog/otel-remote-management/)
