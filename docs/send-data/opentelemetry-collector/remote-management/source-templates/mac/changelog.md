@@ -9,6 +9,10 @@ description: Changelog for Mac source template for OpenTelemetry.
 ### Fixed
 - Schema validations
 
+## [4.0.1] - 2025-01-27
+### Fixed
+- Schema validations
+
 ## [4.0.0] - 2024-10-26
 
 ### Added

@@ -5,6 +5,10 @@ sidebar_label: Changelog
 description: Changelog for Nginx source template for OpenTelemetry.
 ---
 
+## [2.1.2] - 2025-04-11
+### Added
+- FAQ for source template
+
 ## [2.1.1] - 2025-01-27
 
 ### Fixed
