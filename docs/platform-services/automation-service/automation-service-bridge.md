@@ -9,6 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can only run custom actions or integrations outside of the Sumo Logic cloud in an "on-premise" environment. For on-premise environments, you need to install a bridge as described below.
 
+## Version
+
+The current version of the Automation Bridge is 3.10.
+
+Versions 2.1.1 and earlier are no longer supported.
+
 ## Requirements
 
 ### Hardware requirements
