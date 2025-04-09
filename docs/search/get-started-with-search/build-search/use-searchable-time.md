@@ -32,4 +32,4 @@ Follow the below steps to run a search by Searchable Time:
 
 ## Limitations
 
-- Subqueries are not supported on the Searchable Time.
+- Subqueries are not supported for Searchable Time.
