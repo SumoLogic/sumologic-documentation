@@ -63,7 +63,7 @@ If an existing Windows Server is not available, follow these steps to set up a n
 1. Install Active Directory Domain Services (AD DS).
    1. In **Server Manager**, select **Add roles and features**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-add-roles-and-features.png')} style={{border:'1px solid gray'}} alt="Add roles and features" width="600"/>
    1. Choose **Role-based or feature-based installation**.
-   1. Select the **Active Directory Domain Services (AD DS)** role.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-add-roles.png')} style={{border:'1px solid gray'}} alt="Add roles" width="600"/>
+   1. Select the **Active Directory Domain Services** (AD DS) role.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-add-roles.png')} style={{border:'1px solid gray'}} alt="Add roles" width="600"/>
    1. Proceed with the installation and wait for it to complete.
 1. Promote the server to a domain controller.
    1. After installation, navigate to **Server Manager > AD DS**.
@@ -84,11 +84,11 @@ To configure the Automation Service or Cloud SOAR to connect to an existing Acti
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the **Active Directory V2** integration and click on the row.
 1. The integration details will appear. Click on the **+** button to add a new resource.
-1. Populate all the required fields (\*), including: 
+1. Populate all the required fields (\*), including:
    * **Host**. The hostname or IP address of the AD server.
    * **Login Port**. The port used for LDAP authentication (the default is `389` for LDAP and `636` for LDAPS).
-   * **Login DN (Distinguished Name)**: Enter the distinguished name format (for example, `CN=Administrator,CN=Users,DC=csoar,DC=com`). See the following sections for information about how to get the login DN.
-   * **Password**: The corresponding password for the provided username.
+   * **Login DN (Distinguished Name)**. Enter the distinguished name format (for example, `CN=Administrator,CN=Users,DC=csoar,DC=com`). See the following sections for information about how to get the login DN.
+   * **Password**. The corresponding password for the provided username.
 1. Click **SAVE**.
 
 ### How to get login DN with a local account
@@ -120,18 +120,18 @@ The `DistinguishedName` field contains the full LDAP path.
 
 ### How to get login DN with a service account
 
-Once the service account is created in the Organization Unit: 
+Once the service account is created in the Organization Unit:
 1. Open PowerShell as an administrator.
 1. Run the following command:
    ```
    Get-ADUser -Identity <service-account-name>
-   ``` 
+   ```
 1. To view all the service accounts inside AD:
    ```
    Get-ADUser -Filter * | Select-Object Name, SamAccountName, DistinguishedName
    ```
-1. Example output:<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-dn-output-example.png')} style={{border:'1px solid gray'}} alt="DN example output" width="600"/>
-1. Below is the example path:<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-example-path.png')} style={{border:'1px solid gray'}} alt="Example path" width="700"/>
+1. Example output:<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-dn-output-example.png')} style={{border:'1px solid gray'}} alt="DN example output" width="700" height="120"/>
+1. Below is the example path:<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-example-path.png')} style={{border:'1px solid gray'}} alt="Example path" width="700" height="400"/>
 1. Add the `distinguishedName` as the **Login DN** and correct the password of the service account.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-edit-resource.png')} style={{border:'1px solid gray'}} alt="Edit resource" width="400"/><br/>Below is the full form of each term:<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-full-form.png')} style={{border:'1px solid gray'}} alt="Full form of terms" width="400"/>
 
 ## Change Log
