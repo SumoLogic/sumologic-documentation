@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-key-vault.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Key Vault](https://learn.microsoft.com/en-us/azure/iot-hub/iot-concepts-and-iot-hub) is a managed service hosted in the cloud that acts as a central message hub for communication between an IoT application and its attached devices. This integration helps in comprehensive monitoring of your key vaults requests, performance, failures, and latency.
+[Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/) is a cloud service that helps you securely store and manage secrets, keys, and certificates, you can use it to protect data for cloud apps and services. This integration helps in comprehensive monitoring of your key vaults operations, requests, failures, and latency.
 
 ## Log and metric types
 
