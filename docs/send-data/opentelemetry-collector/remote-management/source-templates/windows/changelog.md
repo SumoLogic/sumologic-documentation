@@ -5,6 +5,10 @@ sidebar_label: Changelog
 description: Changelog for Windows source template for OpenTelemetry.
 ---
 
+## [6.1.2] - 2025-04-11
+### Added
+- FAQ for source template
+
 ## [6.1.1] - 2025-01-27
 ### Fixed
 - Schema validations
