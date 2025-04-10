@@ -23,7 +23,7 @@ The Airtable API integration ingests audit logs periodically from the Airtable a
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 24 hours |  Audit Logs |
+| 5 minutes |  [Audit Logs](https://airtable.com/developers/web/api/audit-log-events) |
 
 ## Setup
 
