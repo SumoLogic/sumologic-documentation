@@ -207,23 +207,22 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
 1. Determine the location of the SQL server log file on Kubernetes. This can be determined from the SQLserver.conf for your SQL server cluster along with the mounts on the SQL server pods.
 2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
 3. Add the following annotation in addition to the existing annotations.
-```xml
-annotations:
-  tailing-sidecar: sidecarconfig;<mount>:<path_of_SQLserver_log_file>/<SQLserver_log_file_name>
-```
+   ```
+   annotations:
+     tailing-sidecar: sidecarconfig;<mount>:<path_of_SQLserver_log_file>/<SQLserver_log_file_name>
+   ```
 
-Example:
+   Example:
 
-```bash
-annotations:
-  tailing-sidecar: sidecarconfig;data:/var/opt/mssql/errorlog
-```
-
+   ```
+   annotations:
+     tailing-sidecar: sidecarconfig;data:/var/opt/mssql/errorlog
+   ```
 
 1. Make sure that the SQL server pods are running and annotations are applied by using the command:
-```xml
-kubectl describe pod <SQLserver_pod_name>
-```
+   ```xml
+   kubectl describe pod <SQLserver_pod_name>
+   ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
 4. Add a FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
@@ -231,23 +230,24 @@ kubectl describe pod <SQLserver_pod_name>
   2. Click the **+ Add Rule** button on the top right of the table.
   3. The **Add Field Extraction Rule** form will appear.
   4. Enter the following options:
-   * **Rule Name**. Enter the name as **App Observability - Proxy**.
-   * **Applied At**. Choose **Ingest Time**
-   * **Scope**. Select **Specific Data**
-   * **Scope**. Enter the following keyword search expression:
-  ```sql
-   pod_labels_environment=* pod_labels_component=database
-   pod_labels_db_system=*
-   pod_labels_db_cluster=*
-  ```
-  * **Parse Expression**. Enter the following parse expression:
- ```sql
- if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
- | pod_labels_component as component
- | pod_labels_db_system as db_system
- | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
- ```
-5. Click **Save** to create the rule.
+     * **Rule Name**. Enter the name as **App Observability - Proxy**.
+     * **Applied At**. Choose **Ingest Time**
+     * **Scope**. Select **Specific Data**
+     * **Scope**. Enter the following keyword search expression:
+        ```sql
+         pod_labels_environment=* pod_labels_component=database
+         pod_labels_db_system=*
+         pod_labels_db_cluster=*
+        ```
+     * **Parse Expression**. Enter the following parse expression:
+    
+       ```sql
+       if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+       | pod_labels_component as component
+       | pod_labels_db_system as db_system
+       | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
+       ```
+1. Click **Save** to create the rule.
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -322,8 +322,7 @@ At this point, the installed collector will start scanning the `ERRORLOG` and se
 
 Set up a Sumo Logic HTTP Source
 
-1. **Configure a Hosted Collector for Metrics.
-To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
+1. **Configure a Hosted Collector for Metrics**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
 2. Configure an HTTP Logs & Metrics source:
    * On the created Hosted Collector on the Collection Management screen, select **Add Source**.
    * Select **HTTP Logs & Metrics.**
