@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/observability/service-intelligence-icon.png')} alt="icon" width="50"/>
 
-AI-Driven Investigations uses AI to generate a map of system services, revealing areas that require attention. It surfaces real-time signals for issues such as latency, errors, high traffic, and security anomalies, providing actionable paths for root-cause analysis.
+AI-Driven Investigations uses AI to generate a map of system services, revealing areas that require attention. It surfaces real-time signals for issues such as latency and errors, providing actionable paths for root-cause analysis.
 
 The functionality of AI-Driven Investigations is similar to that of the [Services List and Map](/docs/apm/services-list-map/), but uses AI to generate the list and map, providing deeper insights and more targeted surfacing for areas of concern. No tracing setup is required.
 
@@ -40,7 +40,7 @@ The service list and map visually represents your application environment, givin
 
 AI-Driven Investigations provides an AI-generated summary of all detected service signals and steps to remediate issues.
 
-1. Click the summary button to the right of the services map.<br/><img src={useBaseUrl('img/observability/summary-button.png')} alt="Summary button" style={{border: '1px solid gray'}} width="400" />
+1. Click the summary button to the right of the services map.<br/><img src={useBaseUrl('img/observability/summary-button.png')} alt="Summary button" style={{border: '1px solid gray'}} width="150" />
 1. The **Summary** panel will open, displaying observations, root cause analysis, and recommended next steps.<br/><img src={useBaseUrl('img/observability/service-intelligence-signals-summary.png')} alt="Signals summary" style={{border: '1px solid gray'}} width="300" />
 1. Carefully review the summary to learn actions you can take to address the findings.
 
@@ -52,21 +52,18 @@ When you select a service in the list or a node in the map that has signals, a s
    * **Search Services**. Enter keywords to search services names.
    * **Signal Type**. Select the signal types to search for:
       * **Latency**. An increase or decrease in latency of the requests to the system.
-      * **Traffic**. An increase or decrease in traffic requests to the service.
-      * **Error**. Error signals detected.
-      * **Saturation**. A change in resource usage of the system.
-      * **Security**. Logs that indicate security concerns.
+      * **Errors**. Error signals detected.
    * **Services with Signals**. Show only services with signals. Normally operating services will not be shown.
 1. Click a service in the list, or a node in the map. The **App Service Summary** panel displays to the right showing signals of interest and recommended next steps.<br/><img src={useBaseUrl('img/observability/service-intelligence-service-example.png')} alt="Service summary example" style={{border: '1px solid gray'}} width="800" />
 1. Click an expand arrow on a signal to view an example of a log entry that illustrates the issue. You can use this information to query for logs with similar content.<br/><img src={useBaseUrl('img/observability/service-intelligence-log-example.png')} alt="Log example" style={{border: '1px solid gray'}} width="300" />
 1. Scroll to the bottom of the **App Service Summary** pane to the **Next Steps** section. This section describes concrete steps you can take to remediate issues identified in the selected service.<br/><img src={useBaseUrl('img/observability/service-intelligence-next-steps.png')} alt="AI-Driven Investigations next steps" style={{border: '1px solid gray'}} width="300" />
-1. Click <img src={useBaseUrl('img/observability/copilot-logo.png')} alt="Copilot logo" width="20" /> to [open Copilot](/docs/search/copilot/#step-1-open-copilot). Copilot is populated with query information derived from Next Steps. Use Copilot to investigate further. 
+1. Click <img src={useBaseUrl('img/observability/copilot-logo.png')} alt="Copilot logo" width="20" /> to [open Copilot](/docs/search/copilot/#step-1-open-copilot). Use Copilot to investigate further. 
 
 ### Explore the AI-Driven Investigations UI
 
 Perform the following steps to explore the UI: 
 1. The legend at the bottom of the screen shows that gold nodes in the map represent services with signals, while blue nodes indicate normal, expected activity. Use the zoom buttons to resize the map.<br/><img src={useBaseUrl('img/observability/service-intelligence-size-buttons.png')} alt="Resize buttons" style={{border: '1px solid gray'}} width="200" />
-1. Click **Refresh** to refresh the services list and map with the most current version.<br/><img src={useBaseUrl('img/observability/service-intelligence-refresh.png')} alt="Refresh button" style={{border: '1px solid gray'}} width="150" />
+1. Click **Generate Latest** to refresh the services list and map with the most current version.<br/><img src={useBaseUrl('img/observability/service-intelligence-refresh.png')} alt="Refresh button" style={{border: '1px solid gray'}} width="150" />
 1. Click **History** to browse previously-generated versions.<br/><img src={useBaseUrl('img/observability/service-intelligence-history.png')} alt="Refresh button" style={{border: '1px solid gray'}} width="150" /><br/><img src={useBaseUrl('img/observability/service-intelligence-history-dialog.png')} alt="Services history" style={{border: '1px solid gray'}} width="250" />
    1. To open a version, select a previous version directly from the list. When you select a version, the time and date of the version appears at the top of the page:<br/><img src={useBaseUrl('img/observability/service-intelligence-historical-view-time.png')} alt="Timestamp" style={{border: '1px solid gray'}} width="250" />
    1. Click **Select Date** and **Select Time** to find a specific version. You can search for a time in the past 14 days for a desired investigation. 
@@ -97,7 +94,7 @@ Furthermore, you can provide feedback, such as noting it is missing services.
 
 Data is generated by passing a sample of data to the LLM for the past 15 minutes along with a prompt. This returns a "service summary" of logs along with log messages related to the signals generated, with a hypothesis of the problem and next steps for further exploration.
 
-Our AI delivers actionable intelligence in near-real-time via log analysis only. The resulting service map highlights the interconnection of various services and components. The summary and signals highlight what services are functioning normally, and any that might have errors, high traffic, or latency issues. Clicking on an individual service lets you view the specific signals generated for the service. Next steps are suggested for how to resolve any issues that might be present. From there, you can view example log lines, and dig deeper into the logs if needed. 
+Our AI delivers actionable intelligence in near-real-time via log analysis only. The resulting service map highlights the interconnection of various services and components. The summary and signals highlight what services are functioning normally, and any that might have errors or latency issues. Clicking on an individual service lets you view the specific signals generated for the service. Next steps are suggested for how to resolve any issues that might be present. From there, you can view example log lines, and dig deeper into the logs if needed. 
 
 ### How does regeneration work?
 
@@ -109,10 +106,13 @@ The idea is that the model gets to try again with a hint about what to focus on.
 
 The signal types are: 
 * **Latency**. An increase or decrease in latency of the requests to the system.
+* **Errors**. Error signals detected.
+
+<!-- Add these back when they reappear:
 * **Traffic**. An increase or decrease in traffic requests to the service.
-* **Error**. Error signals detected.
 * **Saturation**. A change in resource usage of the system.
 * **Security**. Logs that indicate security concerns. 
+-->
 
 These signals are extracted based on the logs observed for the last 15 minutes.
 
