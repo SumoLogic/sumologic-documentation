@@ -30,7 +30,6 @@ For more information about threat intelligence, see [About Sumo Logic Threat Int
 | DE         | https://api.de.sumologic.com/docs/#tag/threatIntelIngest  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/threatIntelIngest  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/threatIntelIngest |
-| IN         | https://api.in.sumologic.com/docs/#tag/threatIntelIngest  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/threatIntelIngest  |
 | US1        | https://api.sumologic.com/docs/#tag/threatIntelIngest     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/threatIntelIngest |
