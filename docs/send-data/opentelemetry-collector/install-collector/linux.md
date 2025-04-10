@@ -22,7 +22,7 @@ Minimal resource requirements are the following:
 * 200 MB of disk space
 * 64 MB of RAM
 
-Supported Versions
+Supported Versions:
 
 * RHEL (7-9), Debian (9-11), Ubuntu (18-22), SUSE (ES12, ES15), Amazon Linux 2(AL2), Amazon Linux 2023(AL2023), CentOS (7, 8)
 
@@ -33,6 +33,14 @@ You can install our OpenTelemetry Collector using one of the following methods:
 * [UI Installation](#ui-installation)
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
+
+:::info
+Whitelist the following repository URLs to allow a seamless installation:
+
+* [packages.sumologic.com](https://packages.sumologic.com/)
+* [d3fo0g5hm7lbuv.cloudfront.net](https://d3fo0g5hm7lbuv.cloudfront.net/)
+* [packagecloud.io](https://packagecloud.io/)
+:::
 
 ### UI Installation
 
