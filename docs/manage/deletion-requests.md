@@ -91,8 +91,9 @@ To cancel a data deletion request:
 - Each deletion request can include up to 1 petabyte (PB) of scanned data.   
 - You can delete up to 100,000 messages per request.   
 - The maximum time range for each deletion request is one year.   
-- Your system can support up to 10 active concurrent deletion tasks across different customers. 
-
+- Your system can support up to 10 active concurrent deletion tasks across different customers.
+- Ensure that the requests initiated are not deleting the data prior to `1st February 2024`. Any request before this timestamp will fail in creation.
+  
 ## FAQ
 
 ### Handling future ingestion of sensitive data
