@@ -52,6 +52,12 @@ Set of scripts to perform actions within Cloud SOAR.
 
 Supervised Active Intelligence Automation
 
+## Configure Incident Tools in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 1, 2023 - First upload

@@ -19,7 +19,11 @@ Cyberint offers to proactively monitor and positively impact external risk expos
 * **Search Alerts** *(Enrichment)* - Returns a list of alerts based on the search criteria.
 * **Update Alerts** *(Containment)* - Updates the status of an alert by Alert ID.
 
-## Cyberint in Automation Service and Cloud SOAR
+## Configure Cyberint in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. To configure the integration, log in to the application, click on the **Integrations** menu item in the left sidebar and click on the installed **Cyberint** app. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-1.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
 2. The app details will appear. Click on the **+** button to add a new **Resource** (connection configuration). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-2.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>

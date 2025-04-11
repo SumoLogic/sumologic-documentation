@@ -35,6 +35,12 @@ List and create policies and rules with Fortinet FortiWeb.
 * **Create URL Access Rule** (*Containment*) - Create a new URL access rule.
 * **Create Inline Protection Profile** (*Containment) -* Create a new inline protection profile.
 
+## Configure FortiWeb in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 3, 2019 - First upload

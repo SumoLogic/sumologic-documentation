@@ -39,6 +39,12 @@ Interact with AWS GuardDuty during incident investigation.
 
 * [AWS GuardDuty](https://github.com/boto/boto3/blob/develop/LICENSE)
 
+## Configure AWS GuardDuty in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 24, 2020 - First upload

@@ -20,6 +20,12 @@ Search Censys for enrichment data during active investigation.
 * **View URL** (*Enrichment*) - Gather greater detailed data on a specific website.
 * **View Certificate** (*Enrichment*) - Gather greater detailed data on a specific certificate.
 
+## Configure Censys in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 31, 2020 - First upload

@@ -24,7 +24,11 @@ Cisco Stealthwatch provides easy to use and comprehensive APIs for reporting, ma
 * **Search Flows** *(Enrichment)* - Perform flow searches using basic criteria such as time range, IP address or range, port/protocols, and host groups.
 * **Search Events** *(Enrichment)* - Perform event searches based on the given criteria.
 
-## Cisco Stealthwatch in Automation Service and Cloud SOAR
+## Configure Cisco Stealthwatch in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.
