@@ -42,7 +42,7 @@ To create a Service Account in Google Workspace and generate the JSON file neede
 	'https://www.googleapis.com/auth/drive'
 17. Click Authorize.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-9.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
 
-## Configurte Google Drive in Automation Service and Cloud SOAR
+## Configure Google Drive in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
