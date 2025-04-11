@@ -16,9 +16,7 @@ Amazon EBS is recommended for data that must be quickly accessible and requires 
 * [CloudWatch Metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html)
 
 :::note
-* For [Cloudtrail log](https://docs.aws.amazon.com/ebs/latest/userguide/logging-ebs-apis-using-cloudtrail.html),
-Amazon EBS and Amazon EC2 are tightly integrated services. Most EBS-related events are captured and reflected as part of EC2 events, since EBS volumes are typically attached to EC2 instances for storage and compute operations.
-Visit the Amazon EC2 app for EBS related captured events.
+For [CloudTrail log](https://docs.aws.amazon.com/ebs/latest/userguide/logging-ebs-apis-using-cloudtrail.html), Amazon EBS and Amazon EC2 are tightly integrated services. Most EBS-related events are captured and reflected as part of EC2 events, since EBS volumes are typically attached to EC2 instances for storage and compute operations. See the [Amazon EC2 app](https://help.sumologic.com/docs/integrations/amazon-aws/ec2-cloudwatch-metrics/#events) for EBS related captured events.
 :::
 
 ## Setup
@@ -28,10 +26,10 @@ You can collect the metrics for Sumo Logic's Amazon Elastic Block Store (Amazon 
 
 Sumo Logic supports collecting metrics using two source types:
 
-* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended); or
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
-* Namespace for **Amazon Elastic Block Store** Service is **AWS/EBS**.
+* The namespace for **Amazon Elastic Block Store** Service is **AWS/EBS**.
    * ​​​**Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account field”.
 
 ## Installing the Elastic Block Store app  
@@ -47,8 +45,7 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
 :::note
-Most Amazon EBS metrics shown on the dashboard depend on the volume type and usage conditions.
-For more details, refer [CloudWatch Metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html)
+Most Amazon EBS metrics shown on the dashboard depend on the volume type and usage conditions. For more details, refer to [CloudWatch Metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html).
 :::
 
 ### Overview
