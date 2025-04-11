@@ -26,6 +26,8 @@ This article provides a quick reference to configure authentication for [integra
 
 ## Authentication needed for integrations
 
+### Authentication for common integrations
+
 Following is the authentication needed for commonly-used integrations:
 * **[HTTP Tools](/docs/platform-services/automation-service/app-central/integrations/http-tools/)**:
    * For **HTTP API URL** provide the resource-specific URL.
@@ -55,7 +57,7 @@ Following is the authentication needed for commonly-used integrations:
    * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
 
-## Integrations not requiring authentication
+### Integrations not requiring authentication
 
 These integrations execute without additional authentication:
 * [Basic Tools](/docs/platform-services/automation-service/app-central/integrations/basic-tools/)
@@ -63,15 +65,82 @@ These integrations execute without additional authentication:
 * [Sumo Logic Cloud SIEM Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem-internal/)
 * [Sumo Logic Log Analytics Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics-internal/)
 
-## FAQs about integration authentication
+## Troubleshooting general issues
 
-### Why isn't my Access Key working?
+### Sumo Logic access key doesn't work
+
+To resolve access key issues:
 * Confirm the Access ID and Access Key are correctly copied from the [Access Keys](/docs/manage/security/access-keys/) page.
 * Ensure your key has the **Default** scope and hasn't expired.
 * Verify the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) matches your deployment region (for example, `us1`, `us2`, `eu`).
-* Ensure permissions tied to your Access Key allow the specific integration actions being attempted.
-* If issues persist, regenerate your Access Key and retry.
+* Ensure permissions tied to your access key allow the specific integration actions being attempted.
+* If issues persist, regenerate your access key and retry.
 
-### What's the difference between Sumo Logic Log Analytics Internal and Sumo Logic Log Analytics?
-* [Sumo Logic Log Analytics Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics-internal/). Designed for internal actions; requires no additional authentication as it's integrated directly within the Sumo Logic environment. Used primarily for simple automation within the platform without external API calls.
-* [Sumo Logic Log Analytics](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics/). Requires API-based authentication (Access ID and Access Key) and is intended for external API calls or extended functionality beyond internal tools.
+### API endpoint and error issues
+
+To resolve API endpoint errors:
+* Validate integration setup via the third-party vendor’s dashboard or Postman.
+* Configure API tokens and access keys with the appropriate scope.
+* Check if authentication credentials and API parameters are correct. 
+* Review the vendor’s API documentation:
+   * Identify the correct authentication method.
+   * Define minimum permissions required.
+   * Validate endpoint URLs and API parameters. 
+
+Examples of vendor API documentation:
+   * [AbuseIPDB](https://www.abuseipdb.com/api.html)
+   * [CIRCL CVE Search](http://www.circle.lu/services/cve-search/)
+   * [Hatching Triage](https://github.com/hatching/triage/blob/main/README.md)
+   * [Mitre Matrix](https://attack.mitre.org/matrices/enterprise/)
+   * [Threat Crowd](https://github.com/AlienVault-OTX/ApiV2/blob/master/README.md)
+
+For additional help with APIs, [contact support](https://support.sumologic.com/support/s/).
+
+### Permissions issues
+
+Where possible, permissions should be granted in accordance with the principle of least privilege. 
+
+Permissions depend on the integration’s use case. Users should:
+* Refer to the vendor API documentation for required credentials.
+* Configure API tokens and access keys with the appropriate scope.
+
+### Vendor site is not available
+
+Use [Check-Host](https://check-host.net/) to monitor website and host availability and performance.
+
+## Troubleshooting vendor-specific issues
+
+### AWS integrations
+
+This section applies to all AWS integrations, (for example, [AWS EC2](/docs/platform-services/automation-service/app-central/integrations/aws-ec2/), [AWS S3](/docs/platform-services/automation-service/app-central/integrations/aws-s3/), etc.)
+
+#### Authentication method
+
+AWS recommends using IAM roles with temporary security credentials over long-term access keys for enhanced security. However, our AWS integrations currently support only access keys due to the need for dynamically managed credentials. 
+
+#### Regional configuration
+
+A single integration can be used across multiple AWS regions. However, if region-specific actions are required in playbooks, separate resources must be created, and conditional logic can be applied for selection.
+
+#### Service specifics
+
+* **Service name**. Use the name of the specific AWS service (for example, S3, EC2).
+* **Host/URL**. Must be service-specific and regional (for example, `s3.amazonaws.com`).
+* **Session token**. Required for temporary authentication.
+* **Scope**. Defines access permissions based on IAM policies.
+
+### CyberArk
+
+For [CyberArk PAM](/docs/platform-services/automation-service/app-central/integrations/cyberark-pam/), obtain client certificates, private keys, and root CA certificates via [CyberArk Docs](https://docs.cyberark.com/portal/latest/en/docs.htm).
+
+### Slack
+
+For the [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/) and [Sumo Logic Notifications](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/) integrations, a Slack OAuth token is required because the integration specifically sends notifications from Sumo Logic to Slack channels.
+
+### Sumo Logic Log Analytics
+
+Users often ask what is the difference between the Sumo Logic Log Analytics Internal and Sumo Logic Log Analytics integrations.
+
+[Sumo Logic Log Analytics Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics-internal/) is designed for internal actions. It requires no additional authentication as it's integrated directly within the Sumo Logic environment. It is used primarily for simple automation within the platform without external API calls.
+
+[Sumo Logic Log Analytics](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics/) requires API-based authentication (Access ID and Access Key) and is intended for external API calls or extended functionality beyond internal tools.
