@@ -55,20 +55,27 @@ The **Amazon EBS - Overview** dashboard offers a comprehensive view of the perfo
 Use this dashboard to:
 * Monitor EBS volume performance metrics like IOPS, throughput, and latency.
 * Track burst balance and queue depth to assess I/O efficiency.
-* Track data transfer activity to understand read/write patterns over time.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-EBS-Overview.png')} alt="Elastic Block Store" style={{border: '1px solid gray'}} />
 
 ### Performance Monitoring
 
-The **Amazon EBS - Performance** dashboard provides detail visibility into the performance and utilization of your EBS volumes, fast snapshot restore capabilities, and snapshot lifecycle. It enables monitoring of key metrics related to volume activity, data throughput, latency.
+The **Amazon EBS - Performance** dashboard provides detail visibility into the performance and utilization of your EBS volumes, fast snapshot restore capabilities, and snapshot lifecycle. It enables monitoring of key metrics related to volume activity, latency.
 
 Use this dashboard to:
-* Monitor EBS volume performance metrics like IOPS, throughput, and latency.
+* Monitor EBS volume performance metrics like latency, time spent on operations.
 * Track burst balance and queue depth to assess I/O efficiency.
 * Monitor status checks to detect degraded or impaired volumes and snapshot copy progress.
-* Track data transfer activity to understand read/write patterns over time.
 * Track Fast Snapshot Restore readiness and available restore credits.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-EBS-Performance.png')} alt="Elastic Block Store" style={{border: '1px solid gray'}} />
 
+The **Amazon EBS - Throughput and IOPS** dashboard provides detail visibility into the Throughput and IOPS utilization of your EBS volumes, It enables monitoring of key metrics related to volume IOPS activity, data throughput.
+
+Use this dashboard to:
+* Monitor EBS volume performance metrics like IOPS, throughput.
+* Monitor status checks to detect degraded or impaired volumes.
+* Track data transfer activity to understand read/write patterns over time.
+
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-EBS-Throughput-and-IOPS.png')} alt="Elastic Block Store" style={{border: '1px solid gray'}} />
