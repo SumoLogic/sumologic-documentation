@@ -38,7 +38,6 @@ This API manages your OpenTelemetry collectors.
 | DE | https://api.de.sumologic.com/docs/#tag/otCollectorManagementExternal |
 | EU | https://api.eu.sumologic.com/docs/#tag/otCollectorManagementExternal |
 | FED | https://api.fed.sumologic.com/docs/#tag/otCollectorManagementExternal |
-| IN | https://api.in.sumologic.com/docs/#tag/otCollectorManagementExternal |
 | JP | https://api.jp.sumologic.com/docs/#tag/otCollectorManagementExternal |
 | KR | https://api.kr.sumologic.com/docs/#tag/otCollectorManagementExternal |
 | US1 | https://api.sumologic.com/docs/#tag/otCollectorManagementExternal |
@@ -58,5 +57,3 @@ This API manages your OpenTelemetry collectors.
 In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
-
-

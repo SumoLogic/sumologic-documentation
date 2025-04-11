@@ -104,44 +104,4 @@ _index=sumologic_audit_events _sourceCategory=threatIntelligence
 
 Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources:
 * **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/).
-* **_sumo_global_feed_cs**. This is a legacy source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). ***This source will be discontinued on April 30, 2025***.
-
-:::warning
-To maintain uninterrupted threat intelligence operation, if you have created rules, saved searches, monitors, or dashboard panel queries that explicitly reference the legacy `_sumo_global_feed_cs` source, follow the directions below to update them to use the new `SumoLogic_ThreatIntel` source ***before April 30, 2025***. If you need assistance, contact [Support](https://support.sumologic.com/support/).
-:::
-
-### Migrate to the new source
-
-Perform the steps in the following sections to migrate to the `SumoLogic_ThreatIntel` source. 
-
-#### hasThreatMatch rule syntax
-
-In most cases, no change is needed if you use [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch) in your rules:
-* Until April 30, 2025 the rules point to the legacy `_sumo_global_feed_cs` source (and the rest of your tenant-specific sources). 
-* After April 30, 2025, the rules point to the new `SumoLogic_ThreatIntel` source (and the rest of your tenant-specific sources).
-
-You may need to make changes in these scenarios:
-* If you have rules with `hasThreatMatch` syntax that explicitly point to the legacy `_sumo_global_feed_cs` source, change them to point to `SumoLogic_ThreatIntel` source. For example: 
-   * Change this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="_sumo_global_feed_cs")` 
-   * To this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="SumoLogic_ThreatIntel")`
-* The `domain-name` and `email-addr` types are not supported in Intel 471. If you filter for these types using `hasThreatMatch`, update your rule syntax to remove them.
-
-#### lookup operator
-
-In most cases, no change is needed if you use the [lookup](/docs/search/search-query-language/search-operators/lookup/) search operator to point to `sumo://threat/cs`:
-* Until April 30, 2025, queries in apps that use the `lookup` search operator to point to `sumo://threat/cs` (the legacy `_sumo_global_feed_cs` source) are unchanged. For examples, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app. See [Threat Intel Optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) for guidance on using those queries.
-* After April 30, 2025, queries in apps that use the `lookup` operator to point to `sumo://threat/cs` are updated to point to `sumo://threat/i471` instead (the new `SumoLogic_ThreatIntel` source). **You must upgrade your apps to get this update.** In the App Catalog, open apps labeled **Upgrade Available** and select **Manage > Upgrade**.
-
-You may need to make changes in these scenarios:
-* The `domain-name` and `email-addr` types are not supported in Intel 471. If you filter for these types using the `lookup` operator, update your queries to remove them.
-* If you parse the `raw` field returned from the `lookup` operation, you will see different fields when you use the new `SumoLogic_ThreatIntel` source. To avoid problems with fields not returning data after April 30, 2025, use a [nodrop](/docs/search/search-query-language/parse-operators/parse-nodrop-option/) clause when you use `parse field=raw` or `json field=raw`. In the following excerpt from a query, `nodrop` is added at the end of the line where `json field=raw` is called:
-   ```
-   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
-   | json field=raw "labels[*].name" as label_name nodrop
-   ```
-
-#### threatip search operator
-
-If you use the [threatip](/docs/search/search-query-language/search-operators/threatip/) search operator, no change is needed: 
-* Until April 30, 2025, the `threatip` operator points to the legacy `_sumo_global_feed_cs` source.
-* After April 30, 2025, the `threatip` operator points to the new `SumoLogic_ThreatIntel` source.
+* **_sumo_global_feed_cs**. This is a source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). 

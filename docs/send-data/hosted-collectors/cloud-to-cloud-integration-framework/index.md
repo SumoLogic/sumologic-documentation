@@ -25,7 +25,6 @@ The following table provides the static IP addresses used for Cloud-to-Cloud Int
 | CA         | 3.96.85.212, 3.97.51.58, 3.96.95.249        |
 | DE         | 52.28.151.126, 18.193.176.46, 18.192.147.254        |
 | EU         | 54.74.133.34, 18.200.219.230, 54.216.109.182         |
-| IN         | 65.0.114.18, 3.7.177.71, 3.6.131.26      |
 | JP         | 52.69.8.121, 54.248.157.127, 18.182.95.102        |
 | KR    | 13.209.100.246, 3.37.181.174, 3.38.126.107  |
 | US1        | 54.209.19.175, 23.22.90.93, 23.22.11.54, 34.228.131.3, 34.237.107.105, 3.88.82.220 |
@@ -513,8 +512,14 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="75"/><h4>Sumo Collection</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="55"/><h4>Sumo Collection</h4></a>
         <p>Learn how to collect the list of collectors and their sources using the Sumo Logic Collector API and Sources API.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source"><img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="icon" width="120"/><h4>Sumo Logic Kickstart Data</h4></a>
+        <p>Learn how to collect audit reporting events using Sumo Logic sample data.</p>
         </div>
       </div>
       <div className="box smallbox card">
