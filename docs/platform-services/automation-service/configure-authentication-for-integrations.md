@@ -72,13 +72,14 @@ These integrations execute without additional authentication:
 To resolve access key issues:
 * Confirm the Access ID and Access Key are correctly copied from the [Access Keys](/docs/manage/security/access-keys/) page.
 * Ensure your key has the **Default** scope and hasn't expired.
-* Verify the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) matches your deployment region (for example, `us1`, `us2`, `eu`).
 * Ensure permissions tied to your access key allow the specific integration actions being attempted.
 * If issues persist, regenerate your access key and retry.
 
 ### API endpoint and error issues
 
-To resolve API endpoint errors:
+To resolve Sumo Logic API endpoint errors, verify the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) matches your deployment region (for example, `us1`, `us2`, `eu`).
+
+To resolve vendor API endpoint errors:
 * Validate integration setup via the third-party vendor’s dashboard or Postman.
 * Configure API tokens and access keys with the appropriate scope.
 * Check if authentication credentials and API parameters are correct. 
