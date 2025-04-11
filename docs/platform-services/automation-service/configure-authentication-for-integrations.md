@@ -28,7 +28,7 @@ This article provides a quick reference to configure authentication for [integra
 
 ### Authentication for common integrations
 
-Following is the authentication needed for commonly-used integrations:
+The following outlines the authentication requirements for commonly used integrations:
 * **[HTTP Tools](/docs/platform-services/automation-service/app-central/integrations/http-tools/)**:
    * For **HTTP API URL** provide the resource-specific URL.
    * In **Extra Headers** add required auth tokens (if applicable) as JSON input or key-value pairs. Verify that the auth token provided has the necessary permissions for the requested playbook actions. 
