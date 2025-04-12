@@ -21,6 +21,12 @@ MVISION EPO: SaaS-based centralized security management platform.
 * **Create Investigation** *(Notification)* - Creates an investigation in MVISION EDR.
 * **Fetch Events Daemon** *(Daemon)* - Automatically fetch all Events.
 
+## Configure McAfee MVISION in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * March 25, 2021 - First upload

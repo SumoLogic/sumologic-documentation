@@ -27,6 +27,12 @@ Issue containment actions during incident investigation through Palo Alto NGFW.
 
 * [xmltodict](https://github.com/martinblech/xmltodict)
 
+## Configure Palo Alto Networks in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 14, 2020 - First upload

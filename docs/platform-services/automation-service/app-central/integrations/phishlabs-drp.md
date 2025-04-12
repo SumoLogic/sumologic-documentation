@@ -21,7 +21,11 @@ Digital Risk Protection from PhishLabs protects your organization's critical dig
 * **List Case Types** *(Enrichment)* - Retrieve collection of available case types.
 * **Create Case** *(Containment)* - Submit a new case.
 
-## PhishLabs DRP in Automation Service and Cloud SOAR
+## Configure PhishLabs DRP in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

@@ -15,6 +15,12 @@ Utilize MXToolbox to gather MX records for enrichment data during incident inves
 
 * **Lookup** (*Enrichment*) - Lookup MX records for a specific domain.
 
+## Configure MxToolbox in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * February 14, 2020 - First upload

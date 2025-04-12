@@ -15,6 +15,12 @@ Submit URLs to Symantec WebPulse.
 
 * **Submit URL** (*Notification*) - Submit the specified URL.
 
+## Configure Symantec WebPulse in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 3, 2019 - First upload

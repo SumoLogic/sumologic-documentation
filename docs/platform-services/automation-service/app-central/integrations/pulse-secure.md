@@ -29,6 +29,12 @@ Block users and their associated IP addresses with Pulse Secure.
 
 Authentication, Identity, and Access Management.
 
+## Configure Pulse Secure in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * September 2, 2020 - First upload

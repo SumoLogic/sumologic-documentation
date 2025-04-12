@@ -20,7 +20,11 @@ Allows you to connect your mailbox with Cloud SOAR and receive mail via IMAP pro
 
 * **Incoming Mail Daemon** (*Daemon*) - Automatically get emails using IMAP and save emails.
 
-## IMAP configuration
+## Configure IMAP in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 ### Get JWT token
 
