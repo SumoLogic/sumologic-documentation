@@ -20,6 +20,12 @@ VMRay Platform products provide set of tools for malware detection and analysis.
 * **Get Sample Metadata** *(Enrichment)* - Get metadata details of sample by sample id or sample hash.
 * **Get Submission Status** *(Enrichment)* - Get all dynamic and static analysis of sample.
 
+## Configure VMRay in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * September 7, 2021 - First upload

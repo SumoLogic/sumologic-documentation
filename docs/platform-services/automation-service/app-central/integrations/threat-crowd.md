@@ -19,6 +19,12 @@ Search malicious indicators using Threat Crowd intelligence feeds.
 * **Search Antivirus** (*Enrichment*) - Search antivirus definitions.
 * **Search File** (*Enrichment*) - Search indicators for a specific file hash.
 
+## Configure Threat Crowd in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * September 17, 2019 - First upload

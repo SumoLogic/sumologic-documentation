@@ -16,6 +16,14 @@ Basic Tools implement some utils method to use inside Playbook
 * **Send Email** (*Notification*) - Send an email.
 * **Payload Regex** (*Custom*) - use regular expressions to extract data from the payload.
 
+## Configure Basic Tools in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+Basic Tools executes without additional authentication.
+
 ## Change Log
 
 * September 21, 2023 - First upload

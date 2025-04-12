@@ -28,6 +28,12 @@ Interact with FreshDesk contacts and tickets.
 * **Delete Ticket** (*Containment*) - Delete an existing ticket.
 * **Update Ticket On FreshDesk** (*Containment*) - Update a specific ticket in FreshDesk.
 
+## Configure FreshDesk in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * March 20, 2020 - First upload

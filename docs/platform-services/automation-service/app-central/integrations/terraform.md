@@ -38,7 +38,11 @@ Terraform is an open-source infrastructure as code software tool that provides a
 1. Then add a description and create your API token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-2.png')} style={{border:'1px solid gray'}} alt="terraform" width="600"/>
 1. Use the copy button to save your token. This token **will not be displayed again**, so make sure to save it to a safe place.
 
-## Terraform in Automation Service and Cloud SOAR
+## Configure Terraform in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
