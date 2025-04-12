@@ -52,7 +52,7 @@ This section provides instructions for configuring log and metric collection for
 
 ### Step 1: Configure fields in Sumo Logic
 
-The following [fields](/docs/manage/fields/) will always be created automatically as a part of the app installation process:
+The following [fields](/docs/manage/fields/) are created automatically as a part of the app installation process:
 * `component`
 * `environment`
 * `messaging_system`
