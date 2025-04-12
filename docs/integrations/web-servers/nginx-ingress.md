@@ -14,11 +14,11 @@ The Nginx Ingress app is a unified logs and metrics app that helps you monitor t
 This app is tested with the following Nginx Ingress versions:
 * For Kubernetes environments: Nginx version 1.21.3
 
-## Log and Metrics Types
+## Log and metrics types
 
 The Sumo Logic app for Nginx Ingress assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
-All [Dashboards](#viewing-nginx-ingress-dashboards) (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two.
+All [Dashboards](#viewing-nginx-ingress-dashboards) (except the Error logs Analysis dashboard) assume the Access log format. The Error Logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two.
 
 For more details on Nginx logs, see [Module ngx_http_log_module](http://nginx.org/en/docs/http/ngx_http_log_module.html).
 
@@ -35,7 +35,7 @@ In the Kubernetes environment, we use our Sumo Logic Kubernetes collection. You 
 
 Configuring log and metric collection for the Nginx Ingress app includes the following tasks:
 
-### Step 2: Configure Nginx Ingress Logs and Metrics Collection
+### Step 2: Configure Nginx Ingress logs and metrics collection
 
 Sumo Logic supports the collection of logs and metrics data from Nginx Ingress in Kubernetes environments.
 
@@ -45,7 +45,7 @@ It’s assumed that you are using the latest helm chart version if not please up
 
 1. Before you can configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx Ingress pods, so Prometheus can find the Nginx Ingress metrics. For instructions on Nginx Open Source, refer to [this documentation](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/).
 2. Ensure you have deployed the [Sumologic-Kubernetes-Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection), to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/send-data/kubernetes/install-helm-chart). Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx Ingress pods, based on the annotations set in Step 1, for the metrics. Logs and Metrics will automatically be sent to the respective [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) instances, which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
-3. Apply following labels to the Nginx Ingress pod.
+3. Apply the following labels to the Nginx Ingress pod.
   ```sql
   environment="prod_CHANGEME"
   component="webserver"
@@ -81,20 +81,20 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Nginx Ingress - Overview** dashboard provides an at-a-glance view of the NGINX server access locations, error logs along with connection metrics.
+The **Nginx Ingress - Overview** dashboard provides an at-a-glance view of the NGINX server access locations, error logs, and connection metrics.
 
 Use this dashboard to:
 * Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
 * Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
-* Get insights into Active and dropped connection.
+* Get insights into Active and dropped connections.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Overview.png')} alt="Nginx-Overview" />
 
 ### Error Logs
 
-The **Nginx Ingress - Error Logs Analysis** dashboard provides a high-level view of log level breakdowns, comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections and outliers, client requests, request trends, and request outliers.
+The **Nginx Ingress - Error Logs Analysis** dashboard provides a high-level view of log level breakdowns, comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections, outliers, client requests, request trends, and request outliers.
 
-The Nginx Ingress - Error Logs Analysis Dashboard provides a high-level view of log level breakdowns, comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections and outliers, client requests, request trends, and request outliers.
+The Nginx Ingress - Error Logs Analysis Dashboard provides a high-level view of log level breakdowns, comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections, outliers, client requests, request trends, and request outliers.
 
 Use this dashboard to:
 
@@ -121,7 +121,7 @@ The **Nginx Ingress -  Outlier Analysis** dashboard provides a high-level view o
 
 Use this dashboard to:
 
-* Detect outliers in your infrastructure with Sumo Logic’s machine learning algorithm.
+* Detect outliers in your infrastructure with Sumo Logic’s machine-learning algorithm.
 * To identify outliers in incoming traffic and the number of errors encountered by your servers.
 
 You can use schedule searches to send alerts to yourself whenever there is an outlier detected by Sumo Logic.
@@ -142,8 +142,8 @@ Use this dashboard to:
 The Nginx - Web Server Operations dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations, and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by a server, and the top URIs responsible for 404 responses.
 
 Use this dashboard to:
-* Gain insights into Client, Server Responses on Nginx Server. This helps you identify errors in Nginx Server.
-* To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
+* Gain insights into Client and Server Responses on the Nginx Server. This helps you identify errors in the Nginx Server.
+* To identify geo-locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Web-Server-Operations.png')} alt="Nginx-Ingress-Web-Server-Operations" />
 
@@ -162,7 +162,7 @@ Use this dashboard to:
 The **Nginx Ingress - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
 
 Use this dashboard to:
-* Gain insights into geographic locations of your user base.  This is useful for resource planning in different regions across the globe.
+* Gain insights into the geographic locations of your user base.  This is useful for resource planning in different regions across the globe.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Visitor-Locations.png')} alt="Nginx-Ingress-Visitor-Locations" />
 
@@ -182,14 +182,14 @@ The **Nginx Ingress - Connections and Requests Metrics** dashboard provides insi
 
 Use this dashboard to:
 
-* Gain information about active and dropped connections. This helps you identify the connection rejected by Nginx Server.
-* Gain information about the total requests handled by Nginx Server per second. This helps you understand read, write requests on Nginx Server.
+* Gain information about active and dropped connections. This helps you identify the connection rejected by the Nginx Server.
+* Gain information about the total requests handled by Nginx Server per second. This helps you understand read, and write requests on the Nginx Server.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Connections-and-Requests-Metrics.png')} alt="Nginx-Ingress-Connections-and-Requests-Metrics" />
 
 ### Controller Metrics
 
-The **Nginx Ingress - Ingress Controller Metrics** dashboard gives you insight on the status, reloads, failure of kubernetes Nginx ingress controller.
+The **Nginx Ingress - Ingress Controller Metrics** dashboard gives you insight into the status, reloads, and failure of the Kubernetes Nginx ingress controller.
 
 Use this dashboard to:
 * Gain information about Nginx ingress Controller status and reloads. This helps you understand the availability of Nginx Ingress controllers.
@@ -203,7 +203,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-## Nginx Ingress Alerts
+## Nginx Ingress alerts
 
 <details>
 <summary>Here are the alerts available for Nginx Ingress (click to expand).</summary>
