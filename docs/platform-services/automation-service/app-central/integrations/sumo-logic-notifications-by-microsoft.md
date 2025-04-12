@@ -16,20 +16,7 @@ Integration with Sumo Logic platform for monitors and Microsoft (Outlook) notifi
 
 * **Assess Alert Status** (*Scheduled*) - Periodically monitor status of a Sumo Logic alert and notify a Outlook user about an unresolved alert.
 
-## Configure Sumo Logic Notifications By Microsoft configuration
-
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
-
-<IntegrationsAuth/>
-
-1. In the main Sumo Logic menu, select your username and then **Preferences**. 
-2. From the preferences screen, in the section **My Access Keys**, click **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="600"/>
-3. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
-4. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
-   :::note
-   They won't be available again once you close this screen.
-   :::
-5. Click **Done** after you copied the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+## Sumo Logic Notifications By Microsoft configuration
 
 ### Register an application
 
@@ -75,7 +62,6 @@ The client secret, known also as an application password, is a string value of y
 4. Application permissions are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
 5. Select **Add a permission**, and add the following permissions (as shown in the screenshot). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-microsoft/sumo-logic-notifications-by-microsoft-1.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
-
 #### EWS API to be configured for these permissions
 
 Applications are authorized to call APIs when they are granted permissions by users/admins as part of the consent process. The list of configured permissions should include all the permissions the application needs.
@@ -108,6 +94,29 @@ Microsoft Graph (7)
     + Type: Application
     + Description: Read basic profiles of all users
     + Admin: Yes
+
+## Create an access key in Sumo Logic
+
+1. In the main Sumo Logic menu, select your username and then **Preferences**. 
+2. From the preferences screen, in the section **My Access Keys**, click **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="600"/>
+3. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+4. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
+   :::note
+   They won't be available again once you close this screen.
+   :::
+5. Click **Done** after you copied the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+
+## Configure Sumo Logic Notifications by Microsoft in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+   * For the first **API URL** field, provide the Microsoft Graph API URL.
+   * Specify the **Authentication Grant Type** and **Directory (Tenant) ID**.
+   * For **Client ID** and **Client Secret**, provide the Microsoft Graph client ID and secret obtained as described in [Add a client secret](#add-a-client-secret).
+   * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
+   * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
 
 ## Change Log
 * December 04, 2024 - First upload
