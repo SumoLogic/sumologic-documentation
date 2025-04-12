@@ -53,7 +53,7 @@ This App has been tested with following ActiveMQ versions:
 
 ### Step 1: Configure fields in Sumo Logic
 
-Configuring log and metric collection for the ActiveMQ App includes the following tasks:
+Configuring log and metric collection for the ActiveMQ app includes the following tasks:
 
 The following [fields](/docs/manage/fields/) will always be created automatically as a part of the app installation process:
 * `component`
