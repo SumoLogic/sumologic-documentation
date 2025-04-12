@@ -91,7 +91,7 @@ cloud.provider=gcp project_id=* metric=storage/object_count statistic=average
 
 ## Collect logs for Google Cloud Storage
 
-This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for collecting logs from Google Cloud Storage.
+This section describes the Sumo Logic pipeline for ingesting logs from Google Cloud Platform (GCP) services, and explains how to collect logs from Google Cloud Storage.
 
 ### Collection Process for GCP Services
 
