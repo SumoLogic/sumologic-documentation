@@ -24,6 +24,12 @@ Have I Been Pwned (HIBP) allows you to check if your personal data has been comp
 
 Database
 
+## Configure Have I Been Pwned in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * August 26, 2021 (v1.0) - First upload

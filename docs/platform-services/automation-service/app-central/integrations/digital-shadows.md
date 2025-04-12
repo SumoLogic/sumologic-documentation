@@ -15,6 +15,12 @@ Query Digital Shadows threat intelligence.
 
 * **Search Intelligence** (*Enrichment*) - Search Digital Shadows threat intelligence.
 
+## Configure Digital Shadows in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * February 21, 2019 - First upload

@@ -38,6 +38,12 @@ Perform actions on Microsoft EWS mailboxes, accounts, and security settings.
 * **List Distribution Group** (*Enrichment*) - List existing distribution groups or mail-enabled security groups.
 * **Get Distribution Group Members** (*Enrichment*) - Get the members of distribution groups and mail-enabled security groups.
 
+## Configure Microsoft EWS Extension in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * April 12, 2019 - First upload

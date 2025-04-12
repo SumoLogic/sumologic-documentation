@@ -43,6 +43,12 @@ Therefore, the first requirement is to enable ERS from the ISE admin UI.
       * System Admin
       * MnT Admin
    So you have to use both Admins Groups together to use all the actions inside CSOAR.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-3.png')} style={{border:'1px solid gray'}} alt="cisco-ise" width="800"/>
+
+## Configure Cisco ISE in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
    
 ## Change Log
 

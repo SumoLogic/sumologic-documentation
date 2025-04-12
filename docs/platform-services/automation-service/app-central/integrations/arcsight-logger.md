@@ -15,6 +15,12 @@ Query events in Micro Focus ArcSight Logger.
 
 * **Search Into Events Arcsight** (*Enrichment*) - Search events in ArcSight Logger.
 
+## Configure ArcSight Logger in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 31, 2019 - First upload

@@ -21,6 +21,12 @@ Create, update, search, and gather ticket information from ConnectWise.
 * **Add Notes To Ticket** (*Notification*) - Add a note to the ticket.
 * **List Ticket Notes** (*Notification*) - Gather all ticket notes.
 
+## Configure ConnectWise Manage in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * September 17, 2019 - First upload

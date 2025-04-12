@@ -15,6 +15,12 @@ Query Starlight events during active incident investigations with Cloud SOAR teg
 
 * **Search Into Events Starlight** (*Enrichment*) - Search into Starlight events.
 
+## Configure Stellar Cyber Starlight in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * September 3, 2020 - First upload

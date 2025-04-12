@@ -15,6 +15,12 @@ Initiate the triage of endpoints with Cyber Triage from Basis Technology.
 
 * **Triage Endpoint** (*Containment*) - Start the triage process on an endpoint.
 
+## Configure CyberTriage in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * August 17, 2021 - First upload
