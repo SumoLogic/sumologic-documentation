@@ -19,6 +19,12 @@ Utilize and manipulate files for incident investigation using OneDrive.
 * **Delete File** (*Containment*) - Delete a file from OneDrive.
 * **Upload File** (*Containment*) - Upload a file to OneDrive.
 
+## Configure Microsoft OneDrive in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * August 5, 2019 - First upload

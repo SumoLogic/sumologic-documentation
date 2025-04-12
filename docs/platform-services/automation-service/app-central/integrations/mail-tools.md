@@ -35,6 +35,11 @@ Set of scripts for Emails to perform actions within Cloud SOAR. You can add emai
 
 * [MSG Parser](https://github.com/vikramarsid/msg_parser/blob/master/LICENSE)
 
+## Configure Mail Tools in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 ## Change Log
 

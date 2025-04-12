@@ -26,6 +26,12 @@ Work with Alerts, Policies, Tasks, and other resources with Microsoft Azure Secu
 * **Update Security Policy** (*Containment*) - Update security policy information.
 * **Update Task Status** (*Containment*) - Update the status of a security task.
 
+## Configure Microsoft Azure Security Center in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * March 22, 2019 - First upload

@@ -20,6 +20,12 @@ ZIP Tools is used to work with archives, in particular to extract and save the C
 
 * **Unzip File** (*Custom*) - Extract from archive and save all CSV files as incident attachments.
 
+## Configure Zip Tools in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * December 23, 2020 - First upload

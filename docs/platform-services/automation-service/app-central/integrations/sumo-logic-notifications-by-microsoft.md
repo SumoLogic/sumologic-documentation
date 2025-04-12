@@ -16,7 +16,11 @@ Integration with Sumo Logic platform for monitors and Microsoft (Outlook) notifi
 
 * **Assess Alert Status** (*Scheduled*) - Periodically monitor status of a Sumo Logic alert and notify a Outlook user about an unresolved alert.
 
-## Sumo Logic Notifications By Microsoft configuration
+## Configure Sumo Logic Notifications By Microsoft configuration
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. In the main Sumo Logic menu, select your username and then **Preferences**. 
 2. From the preferences screen, in the section **My Access Keys**, click **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="600"/>

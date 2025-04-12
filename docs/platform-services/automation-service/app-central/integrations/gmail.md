@@ -80,7 +80,7 @@ Interact with filters, mail messages, and attachments in Google Mail.
 * [Gmail (python)](https://github.com/googleapis/google-auth-library-python/blob/master/LICENSE)
 * [Gmail (Google API)](https://github.com/googleapis/google-api-python-client/blob/master/LICENSE)
 
-## Configure Integration in Automation Service and Cloud SOAR
+## Configure Gmail in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 

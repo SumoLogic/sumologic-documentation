@@ -34,6 +34,12 @@ Set of scripts to perform actions within Cloud SOAR.
 
 Internal
 
+## Configure Triage Tools Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * November 30, 2021 - First upload
