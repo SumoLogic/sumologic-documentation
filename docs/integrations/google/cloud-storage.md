@@ -91,7 +91,7 @@ cloud.provider=gcp project_id=* metric=storage/object_count statistic=average
 
 ## Collect logs for Google Cloud Storage
 
-This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Storage.
+This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for collecting logs from Google Cloud Storage.
 
 ### Collection Process for GCP Services
 
@@ -107,12 +107,12 @@ Follow the steps below to configure the collection for GCP:
 
 1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**.
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
-3. Create an export of GCP logs from Google Log Router. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
+3. Create an export of GCP logs from Google Log Router. Exporting involves writing a filter that selects the log entries you want to export and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
 
 Refer to the following sections for configuration instructions.
 
 :::note
-Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Logs router.
+Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from the Logs router.
 :::
 
 ### Configure a Google Cloud Platform Source
@@ -122,10 +122,10 @@ The Google Cloud Platform (GCP) Source receives log data from Google Pub/Sub.
 :::note
 You can use the same GCP Source to receive log data from multiple GCP services. For example, you can send logs collected from Google Cloud Application Engine, Google Cloud IAM, and Google Cloud Audit.
 
-However, this is not recommended since you cannot define specific Source Category values to each GCP service. If you create a GCP Source for each service you can define a specific Source Category to each service.
+However, this is not recommended since you cannot define specific Source Category values for each GCP service. If you create a GCP Source for each service you can define a specific Source Category for each service.
 :::
 
-This Source will be a Google Pub/Sub-only Source, which means that it will only be usable for log data formatted as data coming from Google Pub/Sub.
+This Source will be a Google Pub/Sub-only Source, indicating that it will only be usable for log data formatted as data coming from Google Pub/Sub.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 
@@ -145,7 +145,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 8. **Advanced Options for Logs**.<br/><img src={useBaseUrl('img/integrations/google/GCP-advanced-options-Jan-22.png')} alt="Google integrations" />
 
   * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-  * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+  * **Time Zone**. There are two options for the Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
 
 9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
@@ -180,7 +180,7 @@ We recommend the following:
 
 ### Create export of Google Cloud Storage logs from Google Logging
 
-In this step you export logs to the Pub/Sub topic you created in the previous step.
+In this step, you export logs to the Pub/Sub topic you created in the previous step.
 
 1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="Google integrations" />
 
@@ -203,10 +203,10 @@ For metrics collection in Sumo Logic, use the [GCP Metric source](/docs/send-dat
 
 1. Set up the [Google Service Account](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
 
-2. Set up a [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source, select **Cloud Storage** as the service from dropdown to get the Google Cloud Storage metrics.
+2. Set up a [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source, select **Cloud Storage** as the service from the dropdown to get the Google Cloud Storage metrics.
 
 ## Installing the Google Cloud Storage App
-Now that you have set up collection for Google Cloud Storage, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up the collection for Google Cloud Storage, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
@@ -249,7 +249,7 @@ See information about key Google Cloud Storage usage metrics, operational activi
 
 ### Google Cloud Storage - Storage Optimization and Authorization
 
-See information about key Google Cloud Storage bucket optimization opportunities, including storage class distribution, object lifecycle management, and authorization patterns to identify potential cost savings and security improvements.
+See information about key Google Cloud Storage bucket optimization opportunities, including the storage class distribution, object lifecycle management, and authorization patterns to identify potential cost savings and security improvements.
 
 <img src={useBaseUrl('img/integrations/google/Google-Cloud-Storage-Storage-Optimization-and-Authorization.png')} alt="Google Cloud Storage dashboards" />
 
