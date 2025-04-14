@@ -26,6 +26,12 @@ Perform threat intelligence evidence gathering with Darktrace.
 * **Search Breach** *(Enrichment)* - Query breaches from Darktrace.
 * **Search Devices** *(Enrichment)* - Search capacity to interrogate the list of devices has seen on the network.
 
+## Configure DarkTrace in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 15, 2021 - First upload

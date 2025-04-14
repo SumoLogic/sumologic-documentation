@@ -19,6 +19,12 @@ OpenLDAP Software is an open-source implementation of the Lightweight Directory 
 
 * [LDAP3](https://github.com/cannatag/ldap3/blob/master/LICENSE.txt)
 
+## Configure OpenLDAP in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * October 05, 2022 - First upload

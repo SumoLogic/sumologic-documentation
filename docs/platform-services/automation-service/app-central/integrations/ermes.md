@@ -15,7 +15,11 @@ Ermes Intelligent Web Protection offers dynamic web threat protection based on t
 
 * **List All Events** (*Enrichment*) - Get Paginated Event Logs Using OAuth Token.
 
-## Ermes in Automation Service and Cloud SOAR
+## Configure Ermes in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

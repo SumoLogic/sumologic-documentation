@@ -44,6 +44,12 @@ Launch and manage scans and utilize Qualys scan data to enrich incident artifact
 
 * [xmltodict](https://github.com/martinblech/xmltodict/blob/master/LICENSE)
 
+## Configure Qualys in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * February 21, 2020 - First upload

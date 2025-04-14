@@ -18,6 +18,12 @@ Utilize McAfee Advanced Threat Defenseto gather file reputation and enrichment d
 * **File Reputation** (*Enrichment*) - Get the file reputation report for the specified file.
 * **Get Analyzer Profiles** (*Enrichment*) - Get all analyzer profiles.
 
+## Configure McAfee ATD in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * May 22, 2020 - First upload

@@ -24,6 +24,12 @@ Work with Access Rules, Domains, IP Policies and Recipient Policies in Fortinet 
 * **Create Inbound Recipient Policy** (*Containment*) - Create a new inbound recipient policy.
 * **Create Outbound Recipient Policy** (*Containment*) - Create a new outbound recipient policy.
 
+## Configure FortiMail in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 24, 2019 - First upload
