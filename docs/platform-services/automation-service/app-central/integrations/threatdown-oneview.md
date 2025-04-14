@@ -38,6 +38,21 @@ Malwarebytes ThreatDown OneView (MBOV) provides your business with a powerful an
 
 Threat Intelligence Reputation
 
+## ThreatDown Oneview Configurations
+
+Sign in to [Malwarebytes](https://oneview.threatdown.com/dashboard) with your Malwarebytes account.
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview5.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview5" width="400"/>
+
+## Generate an API Credentials
+
+Create an API Credentials from your Malwarebytes account:
+1. Once you logged into your malwarebytes account.
+2. Click on Integrate <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview6.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview6" width="250"/>
+3. Click on the **"+"** button to create credentials. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview7.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview7" width="450"/>
+4. Give name to the Application and Select required Accesses. (**Recommended** - Select all the Access.)
+5. After this you will get an Client ID and Client Secret.
+
 ## Configure ThreatDown Oneview in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
