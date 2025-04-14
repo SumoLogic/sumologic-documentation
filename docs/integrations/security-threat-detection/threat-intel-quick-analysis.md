@@ -152,7 +152,7 @@ _sourceCategory=cylance "IP Address"
 | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
 ```
 
-<!-- Replace section content with this after `sumo://threat/i471` is replaced by `threatlookup`:
+<!-- Per DOCS-643, replace section content with this after `sumo://threat/cs` is replaced by `threatlookup`:
 
 The app provides baseline queries that utilize the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/) to look for threat intelligence data. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. 
 
@@ -215,7 +215,7 @@ Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-e
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name
    | sort by threat_count
    ``` 
-<!-- Replace the preceding step with the following after `sumo://threat/i471` is replaced by `threatlookup`:   
+<!-- Per DOCS-643, replace the preceding step with the following after `sumo://threat/cs` is replaced by `threatlookup`:   
 1. Customize your query so you can use parsed fields from the Field Extraction Rule with the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/), where `src_ip` is the parsed field from the FER. For example:
    ```
    | threatlookup singleIndicator src_ip
@@ -242,7 +242,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
    | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
    ```
-<!-- Replace the preceding code with the following after `sumo://threat/i471` is replaced by `threatlookup`:
+<!-- Per DOCS-643, replace the preceding code with the following after `sumo://threat/cs` is replaced by `threatlookup`:
    ```
     _sourceCategory=cylance
     | threatlookup singleIndicator src_ip
@@ -259,7 +259,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
      | count by src_ip
      ```
 
-<!-- Hide this FAQ section until after `sumo://threat/i471` is replaced by `threatlookup`:
+<!-- Per DOCS-643, hide this FAQ section until after `sumo://threat/cs` is replaced by `threatlookup`:
 
 ## Threat Intel FAQ
 
