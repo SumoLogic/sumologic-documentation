@@ -188,9 +188,8 @@ ISSUES                                  DESCRIPTION                             
 WAFNonexistentItemException             Occurs when trying to access or delete a non-existent resource	            Double-check the Id, Name, and Scope. Use List APIs to confirm existence.
 WAFOptimisticLockException              Indicates a stale or missing LockToken when updating or deleting resources  Always fetch the latest LockToken using Get API before performing updates/deletes.
 WAFInvalidParameterException            One or more parameters are invalid or missing                               Verify that all required parameters are included and correctly formatted (e.g., CIDR for IP sets).
-ThrottlingException                     Request rate exceeds allowed TPS                                            Implement exponential backoff and retry logic. Respect rate limits defined in your account.
 AccessDeniedException                   Occurs when permissions are insufficient                                    Check IAM roles and policies assigned to the user or service making the request. Ensure wafv2:* permissions are included.
-Resource still appears after deletion   A deleted IPSet, RuleGroup, etc. still seems accessible in the UI or APIs   Allow a few seconds for propagation. Use Get<Type> or List<Type>s to confirm removal.
+Resource still appears after deletion   A deleted IPSet, RuleGroup, etc. still seems accessible in the UI or APIs   Allow a few seconds for propagation. Use Get <Action Type> or List <Action Type>s to confirm removal.
 IP addresses not being blocked          Traffic from listed IPs still reaches the application                       Ensure the IPSet is attached to a WebACL and the WebACL is associated with the resource (e.g., CloudFront or ALB).
 ````
 ### FAQs
