@@ -116,7 +116,9 @@ The left pane of the insight details page displays detailed information about th
 
 #### Insight summary (Beta)
 
-The **Summary** pane provides a detailed explanation of the insight, helping you more quickly understand the key activity and determine the best course of action. The pane uses AI and machine learning to generate the summary. Use the thumbs-up and thumbs-down arrow to provide your feedback on the effectiveness of the summary.
+The **Summary** pane provides a detailed explanation of the insight, helping you more quickly understand the key activity that contributed to the insight and determine the best course of action. 
+
+Sumo Logic uses AI and machine learning to generate the summary. Help us refine the tool by using the thumbs-up or thumbs-down arrow to provide your feedback on the effectiveness of the summary presented.
 
 :::note
 The insight summary is in [beta](/docs/manage/manage-subscription/beta-opt-in/). To participate, contact your Sumo account representative.
