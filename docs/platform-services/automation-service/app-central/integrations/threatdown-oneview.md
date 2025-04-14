@@ -50,8 +50,26 @@ Create an API Credentials from your Malwarebytes account:
 1. Once you logged into your malwarebytes account.
 2. Click on Integrate <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview6.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview6" width="250"/>
 3. Click on the **"+"** button to create credentials. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview7.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview7" width="450"/>
-4. Give name to the Application and Select required Accesses. (**Recommended** - Select all the Access.)
+4. Give name to the Application and Select required Accesses.
 5. After this you will get an Client ID and Client Secret.
+
+## Minimum Permissions Required for ThreatDown OneView Integration
+
+When configuring credentials for the integration, permissions can be set to Read, Write, and Execute. The minimum required permissions vary based on the type of actions being performed:
+
+For Enrichment Actions - 
+1. These actions only retrieve data
+2. Required Permission: Read
+
+For Containment Actions - 
+1. These actions perform changes or take action on endpoints and etc.
+2. Required Permissions: Write and Execute
+
+## Recommendation
+
+While it's possible to grant only the required permissions based on use case,
+we recommend assigning all three permissions — Read, Write, and Execute — during credential creation.
+This ensures full compatibility with all available actions in the integration and avoids permission-related failures in the future.
 
 ## Configure ThreatDown Oneview in Automation Service and Cloud SOAR
 
