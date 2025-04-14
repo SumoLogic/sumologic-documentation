@@ -9,10 +9,60 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: March 26, 2025***
 
+## Overview
+### Purpose
 AWS WAF is a web application firewall that helps protect web applications from attacks by allowing you to configure rules that allow, block, or monitor (count) web requests based on conditions that you define.
+This integration is designed to manage and retrieve WAF security configurations, including IP sets, regex pattern sets, rule groups, and WebACLs. It enables you to define, update, delete, and retrieve security rule assets that inspect and control web request traffic.
+
+### Use cases
+* Creating and managing IP allowlists/denylists
+* Defining regex-based pattern rules for request inspection
+* Grouping multiple rules in custom rule groups
+* Fetching details and summaries of rule components
+* Updating existing rules in response to new threats
+
+### Supported Versions
+This integration supports **WAFv2 API** actions and works with resources.
+It is compatible with all standard environments where WAFv2 actions are supported.
+
+### Prerequisites
+* IAM permissions for:
+  * **wafv2:CreateIPSet, DeleteIPSet, UpdateIPSet, GetIPSet, ListIPSets**
+  * **wafv2:CreateRegexPatternSet, DeleteRegexPatternSet, ListRegexPatternSets**
+  * **wafv2:CreateRuleGroup, DeleteRuleGroup, GetRuleGroup, ListRuleGroups**
+  * **wafv2:GetWebACL, ListWebACLs, ListResourcesForWebACL**
+  * **wafv2:GetManagedRuleSet, ListManagedRuleSets, ListAvailableManagedRuleGroups**
+* Proper region selection for WAFv2 API calls (**regional** or **global scope**)
+* API credentials with sufficient access
+
+### Limitations
+* Regex complexity may be limited by the WAF regex engine's constraints
+* All changes require propagation time before taking effect (~1-2 minutes)
+
+## Getting Started
+
+### Installation
+Install the AWS WAF application from app-central using Sumo Logic CSOAR UI.
+
+### Configuration
+After installing the AWS WAF application, create an AWS WAF resource to begin executing actions.
+Refer to the image below for guidance on creating an AWS WAF resource.
+
+<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-waf/aws-waf-1.png')} style={{border:'1px solid gray'}} alt="/aws-waf" width="800"/>
+
+Provide the following details:
+* Access Key
+* Secret Key
+* AWS Region
+* Scope
+* Automation Engine
+
+Once the information is filled in, click on Test to quickly verify that the provided details are correct.
+
+### Verification
+To verify the integration is working, execute any Enrichment action, or once resource created test the resource.
 
 ## Actions
-
 * **Create IP Set** (*Containment*) -  Creates an IPSet, used to identify web requests that originate from specific IP addresses or ranges of IP addresses.
 * **Create Regex Pattern Set** (*Containment*) - Creates a RegexPatternSet, which you reference in a RegexPatternSetReferenceStatement, to have AWS WAF inspect a web request component for the specified patterns.
 * **Create Rule Group** (*Containment*) - Creates a RuleGroup per the specifications provided.
@@ -32,6 +82,133 @@ AWS WAF is a web application firewall that helps protect web applications from a
 * **List Web ACLs** (*Enrichment*) - Retrieves a list of WebACLSummary objects for the web ACLs that you manage.
 * **Update IP Set** (*Containment*) - Updates the specified IPSet.
 
+## Usage
+### Basic Usage
+* Create an IP Set (allow/block IPs)
+* Create a Regex Pattern Set (match request components)
+* Group rules using Rule Groups
+* Retrieve or list existing components for monitoring or inspection
+### Advanced Usage
+* Bulk Listing & Auditing: List all rule groups, regex sets, IP sets, and WebACLs and map their usage across resources
+
+## API Reference
+### Configuration
+Each API call uses the following structure:
+* Method: Generally POST or GET depending on the action.
+* Authentication: AWS Signature V4
+* Scope: REGIONAL or CLOUDFRONT
+
+### Containment APIs
+**Create IP Set**
+* Method: POST
+* Action: CreateIPSet
+* Required Parameters:
+  * Name (string)
+  * Scope (REGIONAL | CLOUDFRONT)
+  * IPAddressVersion (IPV4 | IPV6)
+  * Addresses (list of IPs or CIDRs)
+  * Description (optional)
+````
+* Sample Request (Python)
+client.create_ip_set(
+    Name='BlockList',
+    Scope='REGIONAL',
+    IPAddressVersion='IPV4',
+    Addresses=['x.x.x.x/24'],
+    Description='Block bad IPs'
+)
+
+Sample Response (Json)
+{
+  "Summary": {
+    "Name": "BlockList",
+    "Id": "123abcde-4567-890a-bcde-1234567890ab",
+    "ARN": "arn:aws:wafv2:us-east-1:123456789012:regional/ipset/BlockList/123abcde-4567-890a-bcde-1234567890ab",
+    "Description": "Block bad IPs",
+    "LockToken": "e1b2c3d4-5678-9101-1121-314151617181"
+  }
+}
+````
+**Create Regex Pattern Set**
+* Method: POST
+* Action: CreateRegexPatternSet
+* Required Parameters:
+  * Name, Scope, RegularExpressionList, Description (optional)
+
+**Create Rule Group**
+* Method: POST
+* Action: CreateRuleGroup
+* Required Parameters:
+  * Name, Scope, Capacity, Rules, VisibilityConfig
+
+**Update IP Set**
+* Method: POST
+* Action: UpdateIPSet
+* Required Parameters:
+  * Id, LockToken, Name, Scope, Addresses
+
+**Delete IP Set / Regex Pattern Set / Rule Group**
+* Method: POST
+* Action: Delete_(TYPE)
+* Required Parameters:
+  * Id, Name, Scope, LockToken
+
+### Enrichment APIs
+**Get IP Set / Rule Group / Web ACL / Managed Rule Set**
+* Method: GET
+* Action: Get(Type) ex: Get IP Set/Get Rule Group
+* Required Parameters:
+  * Id, Name, Scope
+
+**List IP Sets / Regex Pattern Sets / Rule Groups / Web ACLs / Managed Rule Sets**
+* Method: GET
+* Action: List(Type)s
+* Optional Parameters: Limit, NextMarker
+
+**List Resources for Web ACLs**
+* Method: GET
+* Action: ListResourcesForWebACL
+* Required Parameters:
+  * WebACLArn
+
+### Rate Limits and Quotas
+````
+API Type	            Quota / Rate Limit
+IP sets per region          100
+Regex sets per region	    100
+Rule groups per region	    100
+API Transactions (TPS)	    ~5-10 TPS per account per API
+````
+**Limits may vary by region and can be increased via AWS Support.**
+
+## Troubleshooting
+### Common Issues
+````
+ISSUES                                  DESCRIPTION                                                                 SOLUTION
+WAFNonexistentItemException             Occurs when trying to access or delete a non-existent resource	            Double-check the Id, Name, and Scope. Use List APIs to confirm existence.
+WAFOptimisticLockException              Indicates a stale or missing LockToken when updating or deleting resources  Always fetch the latest LockToken using Get API before performing updates/deletes.
+WAFInvalidParameterException            One or more parameters are invalid or missing                               Verify that all required parameters are included and correctly formatted (e.g., CIDR for IP sets).
+ThrottlingException                     Request rate exceeds allowed TPS                                            Implement exponential backoff and retry logic. Respect rate limits defined in your account.
+AccessDeniedException                   Occurs when permissions are insufficient                                    Check IAM roles and policies assigned to the user or service making the request. Ensure wafv2:* permissions are included.
+Resource still appears after deletion   A deleted IPSet, RuleGroup, etc. still seems accessible in the UI or APIs   Allow a few seconds for propagation. Use Get<Type> or List<Type>s to confirm removal.
+IP addresses not being blocked          Traffic from listed IPs still reaches the application                       Ensure the IPSet is attached to a WebACL and the WebACL is associated with the resource (e.g., CloudFront or ALB).
+````
+### FAQs
+* Q1: Can I reuse an IPSet in different rule groups?
+  * Yes, an IPSet can be used in several rule groups or WebACLs. You don’t need to create a new one for each use.
+* Q2: What’s the difference between REGIONAL and CLOUDFRONT scopes?
+  * REGIONAL is used for AWS services like Application Load Balancers, API Gateway, and App Runner.
+  * CLOUDFRONT is specifically for CloudFront distributions and must be managed in the US East (N. Virginia) region.
+* Q3: Why aren’t my changes showing up right away?
+  * Updates can take a few moments to fully apply within AWS. Try retrieving the latest configuration using the appropriate Get<Type> API call to confirm.
+* Q4: What if the IP address I provide isn’t in CIDR format?
+  * If the IP isn’t formatted correctly (e.g., missing the CIDR suffix), AWS WAF will return a WAFInvalidParameterException. Make sure IPs follow the CIDR notation like 192.0.2.0/24.
+
+### Support
+* **[AWS WAF Documentation](https://docs.aws.amazon.com/waf/latest/developerguide/)**
+* **[AWS WAF API Reference](https://docs.aws.amazon.com/waf/latest/APIReference/)**
+* **[Contact AWS Support](https://aws.amazon.com/support)**
+
 ## External Libraries
 
 * [boto3](https://github.com/boto/boto3/blob/develop/LICENSE)
@@ -43,6 +220,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
 ## Change Log
-
+### Version History
 * April 19, 2024 (v1.0)- First upload
 * March 26, 2025 (v1.1) - Added **Update IP Set** action: This new action allows users to add or remove IPs from an existing IP Set.
+### Deprecation Notices
+* NA
