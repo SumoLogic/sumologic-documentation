@@ -46,7 +46,7 @@ Here's how it works:
     * Invite team members to join and explore the platform with you.
 1. **Transition to real data**. Kickstart Data is available for 7 days or until you start ingesting real data—whichever comes first. It deactivates automatically at the end of the trial, but can be skipped at any time.
 
-## Step 1: Get your data into Sumo Logic
+## Step 1: Get your data into Sumo
 
 The journey of 10,000 logs begins with a single collector. Your data analytics journey starts by sending your data to Sumo.
 
