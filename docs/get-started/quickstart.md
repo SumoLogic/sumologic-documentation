@@ -46,7 +46,7 @@ Here's how it works:
     * Invite team members to join and explore the platform with you.
 1. **Transition to real data**. Kickstart Data is available for 7 days or until you start ingesting real data—whichever comes first. It deactivates automatically at the end of the trial, but can be skipped at any time.
 
-## Step 1: Get your data into Sumo
+## Step 1: Get your data into Sumo Logic
 
 The journey of 10,000 logs begins with a single collector. Your data analytics journey starts by sending your data to Sumo.
 
@@ -58,7 +58,7 @@ OpenTelemetry is our preferred collector unless you're configuring security data
 
 #### OpenTelemetry Collector
 
-1. Log in to Sumo Logic.
+1. Sign in to Sumo Logic.
 1. In the main Sumo Logic menu, select **App Catalog**.
 1. Click the app you'd like to install.
 1. Click the **Add a New Collector** option during app installation.
@@ -69,7 +69,7 @@ OpenTelemetry is our preferred collector unless you're configuring security data
 
 #### Installed and Hosted Collector
 
-1. Log in to Sumo Logic.
+1. Sign in to Sumo Logic.
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. Select **Add Collector**.<br/><img src={useBaseUrl('img/get-started/WTS_Collector_page.png')} alt="Add Collector" />
 1. Choose from our [Hosted Collector](/docs/send-data/hosted-collectors) (web-hosted) or [Installed Collector](/docs/send-data/installed-collectors) (locally installed on your machine).
@@ -137,14 +137,14 @@ From the Sumo Logic Home page, click the **Learn** tab to access:
 Don't just learn it - master it! Get recognized as a Sumo Logic expert by completing the courses in the [Sumo Logic Certification Program](/docs/get-started/training-certification-faq/#what-certifications-does-sumo-logic-offer). We’re happy to help you get certified right from the product.
 
 
-## More Resources
+## Additional resources
+
+* [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/)
+* [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart)
+* [Traces Quickstart](/docs/apm/traces/quickstart)
+
+See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-training-portal).
 
 :::sumo Need help?
 Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).
 :::
-
-* [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/)
-* [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart). Get up and running with the Sumo Logic Kubernetes solution in minutes.
-* [Traces Quickstart](/docs/apm/traces/quickstart). This guide demonstrates how to measure application microservice performance.
-
-See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-training-portal).

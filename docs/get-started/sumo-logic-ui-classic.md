@@ -137,7 +137,7 @@ To launch a search, metrics visualization, or live tail session, do the followin
 
 ### View recent dashboards and searches 
 
-You see the Home landing page when you first log in to Sumo Logic. The Home page provides an at-a-glance view of the following:
+You see the Home landing page when you first sign in to Sumo Logic. The Home page provides an at-a-glance view of the following:
 
 * Recently opened dashboards
 * Recently run searches
