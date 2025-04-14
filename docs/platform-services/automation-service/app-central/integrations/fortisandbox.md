@@ -22,6 +22,12 @@ Fortinet FortiSandbox is a detection tool with threat prevention capabilities, w
 * **Add or Remove from Blacklist or Whitelist** *(Containment)* - Allow user to add/delete checksums to allow/block (white/black) list.
 * **Mark a Sample** *(Containment)* - Mark a sample as false negative/false positive.
 
+## Configure FortiSandbox in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * April 28, 2021 - First upload

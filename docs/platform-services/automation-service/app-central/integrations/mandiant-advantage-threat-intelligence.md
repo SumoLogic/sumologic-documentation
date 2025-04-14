@@ -22,7 +22,11 @@ Mandiant Threat Intelligence is a comprehensive and powerful SaaS platform that 
 1. On **Threat Intelligence** click **Settings**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mandiant-advantage-threat-intelligence/mandiant-advantage-threat-intelligence-2.png')} style={{border:'1px solid gray'}} alt="mandiant-advantage-threat-intelligence-2" width="800"/>
 1. Click on **Get Key ID And Secret**.
 
-## Mandiant Advantage Threat intelligence in Automation Service and Cloud SOAR
+## Configure Mandiant Advantage Threat intelligence in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

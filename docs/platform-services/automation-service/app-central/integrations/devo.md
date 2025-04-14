@@ -16,6 +16,12 @@ DEVO integration to query data from Devo.
 
 * **Query Data** (*Enrichment*) - Query data from DEVO.
 
+## Configure Devo in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * February 12, 2021 - First upload

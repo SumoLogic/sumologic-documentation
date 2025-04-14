@@ -21,7 +21,11 @@ The integration with IP-API allows users to lookup any IP address. IP-API is IP 
 1. In the main page, click on the section Manage API Keys.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ip-api/ip-api-1.png')} style={{border:'1px solid gray'}} alt="ip-api" width="600"/>
 1. Copy the API key and save it (temporarily) in a text editor. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ip-api/ip-api-2.png')} style={{border:'1px solid gray'}} alt="ip-api" width="600"/>
 
-## IP-API in Automation Service and Cloud SOAR
+## Configure IP-API in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

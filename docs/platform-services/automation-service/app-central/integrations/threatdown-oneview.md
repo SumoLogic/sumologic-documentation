@@ -38,7 +38,11 @@ Malwarebytes ThreatDown OneView (MBOV) provides your business with a powerful an
 
 Threat Intelligence Reputation
 
-## ThreatDown Oneview in Automation Service and Cloud SOAR
+## Configure ThreatDown Oneview in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.
