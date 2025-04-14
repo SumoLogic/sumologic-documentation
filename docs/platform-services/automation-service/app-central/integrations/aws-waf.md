@@ -149,20 +149,20 @@ Sample Response (Json)
 
 **Delete IP Set / Regex Pattern Set / Rule Group**
 * Method: POST
-* Action: Delete_(TYPE)
+* Action: Delete (Type)
 * Required Parameters:
   * Id, Name, Scope, LockToken
 
 ### Enrichment APIs
 **Get IP Set / Rule Group / Web ACL / Managed Rule Set**
 * Method: GET
-* Action: Get(Type) ex: Get IP Set/Get Rule Group
+* Action: Get (Type) ex: Get IP Set/Get Rule Group
 * Required Parameters:
   * Id, Name, Scope
 
 **List IP Sets / Regex Pattern Sets / Rule Groups / Web ACLs / Managed Rule Sets**
 * Method: GET
-* Action: List(Type)s
+* Action: List (Type)s
 * Optional Parameters: Limit, NextMarker
 
 **List Resources for Web ACLs**
@@ -200,7 +200,7 @@ IP addresses not being blocked          Traffic from listed IPs still reaches th
   * REGIONAL is used for AWS services like Application Load Balancers, API Gateway, and App Runner.
   * CLOUDFRONT is specifically for CloudFront distributions and must be managed in the US East (N. Virginia) region.
 * Q3: Why aren’t my changes showing up right away?
-  * Updates can take a few moments to fully apply within AWS. Try retrieving the latest configuration using the appropriate Get<Type> API call to confirm.
+  * Updates can take a few moments to fully apply within AWS. Try retrieving the latest configuration using the appropriate Get API call to confirm.
 * Q4: What if the IP address I provide isn’t in CIDR format?
   * If the IP isn’t formatted correctly (e.g., missing the CIDR suffix), AWS WAF will return a WAFInvalidParameterException. Make sure IPs follow the CIDR notation like 192.0.2.0/24.
 
