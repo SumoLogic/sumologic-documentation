@@ -114,6 +114,16 @@ The left pane of the insight details page displays detailed information about th
 1. **Comments.** Displays any comments that have been made on the insight, and a field for adding a comment.
 1. **Show Comments/History.** The controls allow you to switch between viewing the insight's comments and history. 
 
+#### Insight summary (Beta)
+
+The **Summary** pane provides a detailed explanation of the insight, helping you more quickly understand the key activity and determine the best course of action. The pane uses AI and machine learning to generate the summary. Use the thumbs-up and thumbs-down arrow to provide your feedback on the effectiveness of the summary.
+
+:::note
+The insight summary is in [beta](/docs/manage/manage-subscription/beta-opt-in/). To participate, contact your Sumo account representative.
+:::
+
+<img src={useBaseUrl('img/cse/insight-summary-pane.png')} alt="Insight summary" style={{border: '1px solid gray'}} width="300"/>
+
 ### Signal visualization area
 
 At the top of the insight details page, you’ll see a signal timeline that visualizes the insight’s attached signals, which are the signals that caused the insight to be created, and any signals that have been manually added to the insight.
