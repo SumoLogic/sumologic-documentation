@@ -20,7 +20,7 @@ To start your free trial:
 
 ### Register using Google SSO
 
-1. Click **Continue with Google** and select your business Google account.
+1. Click **Continue with Google** and select a Google account to use.
 1. Fill out the **Complete Your Account** form, then click **Activate**.
 1. Follow the setup guide to install a data collector and start ingesting data.
 
