@@ -10,45 +10,58 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Updated: March 26, 2025***
 
 ## Overview
+
 ### Purpose
+
 AWS WAF is a web application firewall that helps protect web applications from attacks by allowing you to configure rules that allow, block, or monitor (count) web requests based on conditions that you define.
 This integration is designed to manage and retrieve WAF security configurations, including IP sets, regex pattern sets, rule groups, and web access control lists (web ACLs). It enables you to define, update, delete, and retrieve security rule assets that inspect and control web request traffic.
 
 ### Use cases
+
 * Creating and managing IP allowlists/denylists
 * Defining regex-based pattern rules for request inspection
 * Grouping multiple rules in custom rule groups
 * Fetching details and summaries of rule components
 * Updating existing rules in response to new threats
 
-### Supported Versions
-This integration supports **WAFv2 API** actions and works with resources.
+### Supported versions
+
+This integration supports WAFv2 API actions and works with resources.
 It is compatible with all standard environments where WAFv2 actions are supported.
 
 ### Prerequisites
+
 * IAM permissions for:
-  * **wafv2:CreateIPSet, DeleteIPSet, UpdateIPSet, GetIPSet, ListIPSets**
-  * **wafv2:CreateRegexPatternSet, DeleteRegexPatternSet, ListRegexPatternSets**
-  * **wafv2:CreateRuleGroup, DeleteRuleGroup, GetRuleGroup, ListRuleGroups**
-  * **wafv2:GetWebACL, ListWebACLs, ListResourcesForWebACL**
-  * **wafv2:GetManagedRuleSet, ListManagedRuleSets, ListAvailableManagedRuleGroups**
-* Proper region selection for WAFv2 API calls (**regional** or **global scope**)
+  * `wafv2:CreateIPSet, DeleteIPSet, UpdateIPSet, GetIPSet, ListIPSets`
+  * `wafv2:CreateRegexPatternSet, DeleteRegexPatternSet, ListRegexPatternSets`
+  * `wafv2:CreateRuleGroup, DeleteRuleGroup, GetRuleGroup, ListRuleGroups`
+  * `wafv2:GetWebACL, ListWebACLs, ListResourcesForWebACL`
+  * `wafv2:GetManagedRuleSet, ListManagedRuleSets, ListAvailableManagedRuleGroups`
+* Proper region selection for WAFv2 API calls (`regional` or `global` scope)
 * API credentials with sufficient access
 
 ### Limitations
-* Regex complexity may be limited by the WAF regex engine's constraints
-* All changes require propagation time before taking effect (~1-2 minutes)
 
-## Getting Started
+* Regex complexity may be limited by the WAF regex engine's constraints.
+* All changes require propagation time before taking effect (~1-2 minutes).
+
+## Configure AWS WAF in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 ### Installation
-Install the AWS WAF application from app-central using Sumo Logic CSOAR UI.
+
+[Install](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central) the AWS WAF application from App Central.
 
 ### Configuration
+
 After installing the AWS WAF application, create an AWS WAF resource to begin executing actions.
+
 Refer to the image below for guidance on creating an AWS WAF resource.
 
-<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-waf/aws-waf-1.png')} style={{border:'1px solid gray'}} alt="/aws-waf" width="800"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-waf/aws-waf-1.png')} style={{border:'1px solid gray'}} alt="Edit Resource for AWS WAF" width="400"/>
 
 Provide the following details:
 * Access Key
@@ -60,9 +73,11 @@ Provide the following details:
 Once the information is filled in, click on Test to quickly verify that the provided details are correct.
 
 ### Verification
-To verify the integration is working, execute any Enrichment action, or once resource created test the resource.
+
+To verify the integration is working, execute any Enrichment action, or once the resource is created, test the resource.
 
 ## Actions
+
 * **Create IP Set** (*Containment*) -  Creates an IPSet, used to identify web requests that originate from specific IP addresses or ranges of IP addresses.
 * **Create Regex Pattern Set** (*Containment*) - Creates a RegexPatternSet, which you reference in a RegexPatternSetReferenceStatement, to have AWS WAF inspect a web request component for the specified patterns.
 * **Create Rule Group** (*Containment*) - Creates a RuleGroup per the specifications provided.
@@ -83,22 +98,29 @@ To verify the integration is working, execute any Enrichment action, or once res
 * **Update IP Set** (*Containment*) - Updates the specified IPSet.
 
 ## Usage
-### Basic Usage
-* Create an IP Set (allow/block IPs)
-* Create a Regex Pattern Set (match request components)
-* Group rules using Rule Groups
-* Retrieve or list existing components for monitoring or inspection
-### Advanced Usage
-* Bulk Listing & Auditing: List all rule groups, regex sets, IP sets, and WebACLs and map their usage across resources
 
-## API Reference
+### Basic usage
+
+* Create an IP Set (allow/block IPs).
+* Create a Regex Pattern Set (match request components).
+* Group rules using Rule Groups.
+* Retrieve or list existing components for monitoring or inspection.
+
+### Advanced usage
+
+Bulk Listing & Auditing: List all rule groups, regex sets, IP sets, and WebACLs and map their usage across resources.
+
+## API reference
+
 ### Configuration
+
 Each API call uses the following structure:
-* Method: Generally POST or GET depending on the action.
+* Method: Generally POST or GET depending on the action
 * Authentication: AWS Signature V4
 * Scope: REGIONAL or CLOUDFRONT
 
 ### Containment APIs
+
 **Create IP Set**
 * Method: POST
 * Action: CreateIPSet
@@ -212,12 +234,6 @@ IP addresses not being blocked          Traffic from listed IPs still reaches th
 ## External Libraries
 
 * [boto3](https://github.com/boto/boto3/blob/develop/LICENSE)
-
-## Configure AWS WAF in Automation Service and Cloud SOAR
-
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
-
-<IntegrationsAuth/>
 
 ## Change Log
 ### Version History
