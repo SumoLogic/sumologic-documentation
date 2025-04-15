@@ -114,18 +114,6 @@ The left pane of the insight details page displays detailed information about th
 1. **Comments.** Displays any comments that have been made on the insight, and a field for adding a comment.
 1. **Show Comments/History.** The controls allow you to switch between viewing the insight's comments and history. 
 
-#### Insight summary (beta)
-
-The insight **Summary** pane provides concise, actionable summaries of threat incidents based on triggered signals using AI. It consolidates key details to facilitate quick understanding and response by security teams.
-
-<img src={useBaseUrl('img/cse/insight-summary-pane.png')} alt="Insight summary" style={{border: '1px solid gray'}} width="300"/>
-
-:::note
-The insight summary is in [beta](/docs/manage/manage-subscription/beta-opt-in/). To participate, contact your Sumo account representative.
-
-Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide your feedback on the effectiveness of the summary presented.
-:::
-
 ### Signal visualization area
 
 At the top of the insight details page, you’ll see a signal timeline that visualizes the insight’s attached signals, which are the signals that caused the insight to be created, and any signals that have been manually added to the insight.
