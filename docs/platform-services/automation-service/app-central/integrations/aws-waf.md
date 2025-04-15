@@ -105,6 +105,7 @@ Each API call uses the following structure:
 * Required Parameters:
   * Name (string)
   * Scope (REGIONAL | CLOUDFRONT)
+  * Region
   * IPAddressVersion (IPV4 | IPV6)
   * Addresses (list of IPs or CIDRs)
   * Description (optional)
@@ -145,13 +146,13 @@ Sample Response (Json)
 * Method: POST
 * Action: UpdateIPSet
 * Required Parameters:
-  * Id, LockToken, Name, Scope, Addresses
+  * ID, Name, Scope, Add/Remove IP Addresses
 
 **Delete IP Set / Regex Pattern Set / Rule Group**
 * Method: POST
 * Action: Delete (Type)
 * Required Parameters:
-  * Id, Name, Scope, LockToken
+  * Name, ID, Scope, Region
 
 ### Enrichment APIs
 **Get IP Set / Rule Group / Web ACL / Managed Rule Set**
