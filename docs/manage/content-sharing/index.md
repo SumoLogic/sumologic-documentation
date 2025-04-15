@@ -50,9 +50,9 @@ To share content from the left navigation bar or the library:
     If you have an unsaved search, these options will not be available to you. We need a name saved for your search before we can offer this dialog. If you want to share an unsaved search, you can share a link from the available dialog.   
 
     <img src={useBaseUrl('img/content-sharing/unsaved-search.png')} alt="Unsaved search" style={{border: '1px solid gray'}} width="700"/>
-1. Optional. If you are sharing with a large Role, or a user who already expects access to this search, you can turn off **Notify recipients by email**. If you do want to send an email notification, we recommend that you include a note in the email for the recipients to indicate what to do with their new content and leave the option enabled.
+1. Optional. If you are sharing with a large role, or a user who already expects access to this search, you can turn off **Notify recipients by email**. If you do want to send an email notification, we recommend that you include a note in the email for the recipients to indicate what to do with their new content and leave the option enabled.
 1. Choose the level of access from view, edit, or manage. For details on permission levels, see [Available permission levels](#available-permission-levels).
-1. Optional. Choose **Advanced Options** to further refine access to the content. For details on these options, see [Available permission levels](#available-permission-levels).
+1. Optional. Choose **Advanced Access** to further refine access to the content. For details on these options, see [Available permission levels](#available-permission-levels).
 
     <img src={useBaseUrl('img/content-sharing/PermissionsShare.png')} alt="Permissions share" style={{border: '1px solid gray'}} width="700"/>
 
