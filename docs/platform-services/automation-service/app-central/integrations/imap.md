@@ -26,19 +26,23 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-### Get JWT token
+### Get Access Key and Access ID
 
-1. Collect the JWT token which is required later:
-    1. It can be found under the user **Profile**.
-    1. Just copy it temporarily in a text editor.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-1.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
+[Create an access key](/docs/manage/security/access-keys/#create-an-access-key) and copy the resulting **Access ID** and **Access Key**. Store the ID and access key (temporally) into a text editor.
+
+:::note
+The ID and key won't be available again once you close the confirmation screen.
+:::
+
 1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-2.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
 1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-3.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
 1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-4.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-4.png')} style={{border:'1px solid gray'}} alt="imap" width="200"/>
 1. Populate all the required fields (\*) and then click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-5.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
     * **IMAP Server**. For example: Imap.gmail.com, Outlook.office365.com, Imap.mail.yahoo.com
     * **Mailbox Account**. Only required if the Username isn't already an email address (for example: Username: admin, Mailbox Account: admin@test.com).
-    * **Cloud SOAR User JWT Token**. Enter the previously copied token.
+    * **Access ID**. The access ID that you copied earlier.
+    * **Access Key**. The access key that you copied earlier.
     * **Email Fetch Type (Daemon)**.
         * **Unseen/Unread**. Only fetch the mails which are currently UNSEEN or UNREAD.
         * **Fetch From Latest CSOAR Mail**. Fetch all mails from the mail server which are not yet stored on Cloud SOAR. For the first time it will fetch UNSEEN mails for the second run/execution. Pre-Filtering options can be used to pre-filter emails in the mail server. Only pre-filtered emails are imported and analyzed by Cloud SOAR.
@@ -64,8 +68,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
           As specified, all filters will be combined with **AND** operator.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-6.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
 
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-7.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-8.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
+1. Click **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-8.png')} style={{border:'1px solid gray'}} alt="imap" width="200"/>
 1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-9.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
 
 ### Testing Incoming Mail Daemon
