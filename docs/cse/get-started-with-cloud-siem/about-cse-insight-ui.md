@@ -116,14 +116,14 @@ The left pane of the insight details page displays detailed information about th
 
 #### Insight summary (beta)
 
-The **Summary** pane provides a detailed explanation of the insight, helping you more quickly understand the key activity that contributed to the insight and determine the best course of action. 
+The insight **Summary** pane provides concise, actionable summaries of threat incidents based on triggered signals using AI. It consolidates key details to facilitate quick understanding and response by security teams.
 
 <img src={useBaseUrl('img/cse/insight-summary-pane.png')} alt="Insight summary" style={{border: '1px solid gray'}} width="300"/>
 
 :::note
 The insight summary is in [beta](/docs/manage/manage-subscription/beta-opt-in/). To participate, contact your Sumo account representative.
 
-Sumo Logic uses AI and machine learning to generate the summary. Help us refine the tool by using the thumbs-up or thumbs-down arrow to provide your feedback on the effectiveness of the summary presented.
+Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide your feedback on the effectiveness of the summary presented.
 :::
 
 ### Signal visualization area
