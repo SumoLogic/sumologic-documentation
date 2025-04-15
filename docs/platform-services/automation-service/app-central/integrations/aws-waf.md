@@ -12,7 +12,7 @@ Updated: March 26, 2025***
 ## Overview
 ### Purpose
 AWS WAF is a web application firewall that helps protect web applications from attacks by allowing you to configure rules that allow, block, or monitor (count) web requests based on conditions that you define.
-This integration is designed to manage and retrieve WAF security configurations, including IP sets, regex pattern sets, rule groups, and WebACLs. It enables you to define, update, delete, and retrieve security rule assets that inspect and control web request traffic.
+This integration is designed to manage and retrieve WAF security configurations, including IP sets, regex pattern sets, rule groups, and web access control lists (web ACLs). It enables you to define, update, delete, and retrieve security rule assets that inspect and control web request traffic.
 
 ### Use cases
 * Creating and managing IP allowlists/denylists
