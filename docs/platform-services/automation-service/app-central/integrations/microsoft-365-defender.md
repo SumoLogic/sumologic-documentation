@@ -27,6 +27,12 @@ Refer to the [Microsoft 365 Defender](https://docs.microsoft.com/en-us/microsoft
 
 EDR
 
+## Configure Microsoft 365 Defender in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * April 8, 2021 - First upload

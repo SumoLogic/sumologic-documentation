@@ -18,10 +18,10 @@ In Sumo Logic, threat intelligence indicators are supplied by sources listed on 
 * [**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
 The sources on the **Threat Intelligence** tab include:
-* **_sumo_global_feed_cs**. This is an out-of-the-box default source of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit this source.
-* **Other sources**. The other sources on the tab are imported by Cloud SIEM administrators so that Cloud SIEM analysts can use them to find threats. 
+* **Sumo Logic sources**. Out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources. See [Sumo Logic threat intelligence sources](#sumo-logic-threat-intelligence-sources) below.
+* **Other sources**. The other sources on the tab are imported by Cloud SIEM administrators so that Cloud SIEM analysts can use them to find threats. See [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) to learn how to add other sources.
 
-Cloud SIEM analysts can use any of these sources to find threats (see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). In addition, all Sumo Logic users can run queries against the indicators in the global feed to uncover threats (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
+Cloud SIEM analysts can use any of these sources to find threats (see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). In addition, all Sumo Logic users can run queries against the indicators in the Sumo Logic threat intelligence source to uncover threats (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
 
 <CloudSIEMThreatIntelNote/>
 
@@ -72,7 +72,7 @@ A Cloud SIEM administrator must first ingest the indicators before they can be u
    * [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)
 * **The Threat Intelligence tab**. Use this tab to upload your own indicators. See [Add indicators in the Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab). See [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use when uploading indicators using this tab or APIs.
 
-After threat indicator sources are ingested, they appear on the **Threat Intelligence** tab and are ready to be used in [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function) or [manual searches](/docs/security/threat-intelligence/find-threats/).
+After threat indicator sources are ingested, they appear on the **Threat Intelligence** tab and are ready to be used in [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function).
 
 <CloudSIEMThreatIntelNote/>
 
@@ -87,7 +87,7 @@ After threat indicator sources are ingested, they appear on the **Threat Intelli
 Here is the typical workflow to set up and use threat intelligence indicators:
 
 1. A system administrator [ingests threat intelligence indicators](#ingest-threat-intelligence-indicators) and adds them to the threat intelligence data store. For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up the collector to obtain indicators from Federal, vendor, or open services. Ingested indicators appear on the [**Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab). You can manually add more indicators as needed, such as your own private indicators, using the **Threat Intelligence** tab or the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs.
-1. Analysts use the threat indicators data to uncover threats using [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function) or [manual searches](/docs/security/threat-intelligence/find-threats/).
+1. Analysts use the threat indicators data to uncover threats using [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function).
 1. A system administrator occasionally checks to see why a connector isn’t ingesting data, or to see how much storage all the indicators are using. They may <!--[run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to--> examine their indicators, and then if needed, [delete indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#delete-threat-intelligence-indicators).
 
 ## Audit logging for threat intelligence
@@ -99,3 +99,9 @@ Use a search like the following:
 ```
 _index=sumologic_audit_events _sourceCategory=threatIntelligence
 ```
+
+## Sumo Logic threat intelligence sources
+
+Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources:
+* **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/).
+* **_sumo_global_feed_cs**. This is a source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). 

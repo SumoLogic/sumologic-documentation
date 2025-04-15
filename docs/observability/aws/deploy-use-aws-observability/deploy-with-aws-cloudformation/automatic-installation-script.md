@@ -88,7 +88,6 @@ chmod +x DeployAWSOPosix.sh
 | Existing Sumo Logic Lambda CloudWatch Logs Source API URL | empty                                                                                                     |
 | Subscribe log groups to Sumo Logic Lambda Forwarder     | Both                                                                                                       |
 | Regex for AWS Lambda Log Groups                         | lambda                                                                                                    |
-| Select the Sumo Logic Root Cause Explorer Source        | Both                                                                                                       |
 | Enable ELB Classic Access logging                       | Both                                                                                                       |
 | Create Sumo Logic ELB Logs Source                       | Yes                                                                                                        |
 | Existing Sumo Logic ELB Classic Logs Source API URL     | empty                                                                                                      |

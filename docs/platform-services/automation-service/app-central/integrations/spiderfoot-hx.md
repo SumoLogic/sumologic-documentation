@@ -55,7 +55,11 @@ SpiderFoot's 200+ modules feed each other in a publisher/subscriber model to ens
 
 Log in to SpiderFoot, select your username from the menu, choose API Key and copy your API Key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/spiderfoot-hx/spiderfoot-hx-1.png')} style={{border:'1px solid gray'}} alt="spiderfoot" width="400"/>
 
-## SpiderFoot HX in Automation Service and Cloud SOAR
+## Configure SpiderFoot HX in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.
