@@ -413,3 +413,12 @@ We want your feedback! Let us know what you think by clicking the thumbs up or t
 You can also leave feedback on specific errors.
 
 <img src={useBaseUrl('img/search/copilot/feedback-error.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
+
+## Additional resources
+
+* Blogs:
+   * [Sumo Logic Mo Copilot: AI assistant for faster incident response and simplified troubleshooting](https://www.sumologic.com/blog/mo-copilot-ai-assistant/)
+   * [Designing Sumo Logic Mo Copilot for success](https://www.sumologic.com/blog/designing-mo-copilot-success/)
+   * [Differentiating Sumo Logic Mo Copilot using Amazon Bedrock](https://www.sumologic.com/blog/copilot-amazon-bedrock/)
+* Brief: [Sumo Logic's Mo Copilot speeds up response](https://www.sumologic.com/brief/sumo-logics-mo-copilot-speeds-up-response/)
+* Webinar: [Revolutionizing Incident Management with AI: Meet Mo Copilot](https://www.sumologic.com/webinar/revolutionizing-incident-management-with-ai-meet-mo-copilot/)
