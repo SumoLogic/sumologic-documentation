@@ -121,7 +121,7 @@ Each API call uses the following structure:
 
 ### Containment APIs
 
-**Create IP Set**
+#### Create IP Set
 * Method: POST
 * Action: CreateIPSet
 * Required Parameters:
@@ -131,8 +131,8 @@ Each API call uses the following structure:
   * IPAddressVersion (IPV4 | IPV6)
   * Addresses (list of IPs or CIDRs)
   * Description (optional)
-````
-* Sample Request (Python)
+
+```python title="Sample Request (Python)"
 client.create_ip_set(
     Name='BlockList',
     Scope='REGIONAL',
@@ -140,8 +140,9 @@ client.create_ip_set(
     Addresses=['x.x.x.x/24'],
     Description='Block bad IPs'
 )
+```
 
-Sample Response (Json)
+```json title="Sample Response (JSON)"
 {
   "Summary": {
     "Name": "BlockList",
@@ -151,93 +152,111 @@ Sample Response (Json)
     "LockToken": "e1b2c3d4-5678-9101-1121-314151617181"
   }
 }
-````
-**Create Regex Pattern Set**
+```
+
+#### Create Regex Pattern Set
 * Method: POST
 * Action: CreateRegexPatternSet
 * Required Parameters:
   * Name, Scope, RegularExpressionList, Description (optional)
 
-**Create Rule Group**
+#### Create Rule Group
 * Method: POST
 * Action: CreateRuleGroup
 * Required Parameters:
   * Name, Scope, Capacity, Rules, VisibilityConfig
 
-**Update IP Set**
+#### Update IP Set
 * Method: POST
 * Action: UpdateIPSet
 * Required Parameters:
   * ID, Name, Scope, Add/Remove IP Addresses
 
-**Delete IP Set / Regex Pattern Set / Rule Group**
+#### Delete IP Set / Regex Pattern Set / Rule Group
 * Method: POST
 * Action: Delete (Type)
 * Required Parameters:
   * Name, ID, Scope, Region
 
 ### Enrichment APIs
-**Get IP Set / Rule Group / Web ACL / Managed Rule Set**
+
+#### Get IP Set / Rule Group / Web ACL / Managed Rule Set
 * Method: GET
 * Action: Get (Type) ex: Get IP Set/Get Rule Group
 * Required Parameters:
   * Id, Name, Scope
 
-**List IP Sets / Regex Pattern Sets / Rule Groups / Web ACLs / Managed Rule Sets**
+#### List IP Sets / Regex Pattern Sets / Rule Groups / Web ACLs / Managed Rule Sets
 * Method: GET
 * Action: List (Type)s
 * Optional Parameters: Limit, NextMarker
 
-**List Resources for Web ACLs**
+#### List Resources for Web ACLs
 * Method: GET
 * Action: ListResourcesForWebACL
 * Required Parameters:
   * WebACLArn
 
-### Rate Limits and Quotas
-````
-API Type	            Quota / Rate Limit
-IP sets per region          100
-Regex sets per region	    100
-Rule groups per region	    100
-API Transactions (TPS)	    ~5-10 TPS per account per API
-````
-**Limits may vary by region and can be increased via AWS Support.**
+### Rate limits and quotas
+
+| API type | Quota/rate limit |
+| :-- | :-- |
+| IP sets per region  | 100 |
+| Regex sets per region | 100 |
+| Rule groups per region | 100 |
+| API transactions (TPS) | ~5-10 TPS per account per API |
+
+Limits may vary by region and can be increased via AWS Support.
 
 ## Troubleshooting
-### Common Issues
-````
-ISSUES                                  DESCRIPTION                                                                 SOLUTION
-WAFNonexistentItemException             Occurs when trying to access or delete a non-existent resource	            Double-check the Id, Name, and Scope. Use List APIs to confirm existence.
-WAFOptimisticLockException              Indicates a stale or missing LockToken when updating or deleting resources  Always fetch the latest LockToken using Get API before performing updates/deletes.
-WAFInvalidParameterException            One or more parameters are invalid or missing                               Verify that all required parameters are included and correctly formatted (e.g., CIDR for IP sets).
-AccessDeniedException                   Occurs when permissions are insufficient                                    Check IAM roles and policies assigned to the user or service making the request. Ensure wafv2:* permissions are included.
-Resource still appears after deletion   A deleted IPSet, RuleGroup, etc. still seems accessible in the UI or APIs   Allow a few seconds for propagation. Use Get <Action Type> or List <Action Type>s to confirm removal.
-IP addresses not being blocked          Traffic from listed IPs still reaches the application                       Ensure the IPSet is attached to a WebACL and the WebACL is associated with the resource (e.g., CloudFront or ALB).
-````
+
+### Common issues
+
+| Issue | Description | Solution |
+| :-- | :-- | :-- |
+| WAFNonexistentItemException | Occurs when trying to access or delete a non-existent resource. | Double-check the ID, Name, and Scope. Use List APIs to confirm existence. |
+| WAFOptimisticLockException | Indicates a stale or missing LockToken when updating or deleting resources.  | Always fetch the latest LockToken using Get API before performing updates/deletes.  |
+| WAFInvalidParameterException | One or more parameters are invalid or missing. |                              Verify that all required parameters are included and correctly formatted (for example, CIDR for IP sets). |
+| AccessDeniedException  | Occurs when permissions are insufficient.  | Check IAM roles and policies assigned to the user or service making the request. Ensure `wafv2:*` permissions are included. |
+| Resource still appears after deletion. | A deleted IPSet, RuleGroup, etc. still seems accessible in the UI or APIs.  | Allow a few seconds for propagation. Use Get `<action-type>` or List `<action-type>` to confirm removal. |
+| IP addresses not being blocked.  | Traffic from listed IPs still reaches the application. | Ensure the IPSet is attached to a WebACL and the WebACL is associated with the resource (for example, CloudFront or ALB). |
+
+
 ### FAQs
-* Q1: Can I reuse an IPSet in different rule groups?
-  * Yes, an IPSet can be used in several rule groups or WebACLs. You don’t need to create a new one for each use.
-* Q2: What’s the difference between REGIONAL and CLOUDFRONT scopes?
-  * REGIONAL is used for AWS services like Application Load Balancers, API Gateway, and App Runner.
-  * CLOUDFRONT is specifically for CloudFront distributions and must be managed in the US East (N. Virginia) region.
-* Q3: Why aren’t my changes showing up right away?
-  * Updates can take a few moments to fully apply within AWS. Try retrieving the latest configuration using the appropriate Get API call to confirm.
-* Q4: What if the IP address I provide isn’t in CIDR format?
-  * If the IP isn’t formatted correctly (e.g., missing the CIDR suffix), AWS WAF will return a WAFInvalidParameterException. Make sure IPs follow the CIDR notation like 192.0.2.0/24.
+
+#### Can I reuse an IPSet in different rule groups?
+
+Yes, an IPSet can be used in several rule groups or WebACLs. You don’t need to create a new one for each use.
+
+#### What’s the difference between REGIONAL and CLOUDFRONT scopes?
+
+REGIONAL is used for AWS services like Application Load Balancers, API Gateway, and App Runner.
+
+CLOUDFRONT is specifically for CloudFront distributions and must be managed in the US East (N. Virginia) region.
+
+#### Why aren’t my changes showing up right away?
+
+Updates can take a few moments to fully apply within AWS. Try retrieving the latest configuration using the appropriate Get API call to confirm.
+
+#### What if the IP address I provide isn’t in CIDR format?
+
+If the IP isn’t formatted correctly (for example, missing the CIDR suffix), AWS WAF will return a WAFInvalidParameterException. Make sure IPs follow the CIDR notation like 192.0.2.0/24.
 
 ### Support
-* **[AWS WAF Documentation](https://docs.aws.amazon.com/waf/latest/developerguide/)**
-* **[AWS WAF API Reference](https://docs.aws.amazon.com/waf/latest/APIReference/)**
-* **[Contact AWS Support](https://aws.amazon.com/support)**
 
-## External Libraries
+* [AWS WAF documentation](https://docs.aws.amazon.com/waf/latest/developerguide/)
+* [AWS WAF API reference](https://docs.aws.amazon.com/waf/latest/APIReference/)
+* [Contact AWS support](https://aws.amazon.com/support)
+
+## External libraries
 
 * [boto3](https://github.com/boto/boto3/blob/develop/LICENSE)
 
 ## Change Log
-### Version History
+
+### Version history
 * April 19, 2024 (v1.0)- First upload
-* March 26, 2025 (v1.1) - Added **Update IP Set** action: This new action allows users to add or remove IPs from an existing IP Set.
-### Deprecation Notices
+* March 26, 2025 (v1.1) - Added Update IP Set action. This new action allows users to add or remove IPs from an existing IP Set.
+
+### Deprecation notices
 * NA
