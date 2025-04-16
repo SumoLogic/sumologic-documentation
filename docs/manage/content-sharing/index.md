@@ -39,7 +39,7 @@ To share content from the left navigation bar or the library:
     <img src={useBaseUrl('img/content-sharing/share-search.png')} alt="Share search" width="150"/>
 
     :::note
-    * The **Share** option appears on the dropdown menu only if you have edit or manage permissions on the selected item. You cannot share the item if you only have view permissions on the item. See [Available permission levels](#available-permission-levels).
+    * The **Share** option appears on the dropdown menu only if you have permissions to grant access. See [Available permission levels](#available-permission-levels).
     * The **View in Library** option is present when you click the details icon from the left navigation bar. 
     :::
 
@@ -52,6 +52,9 @@ To share content from the left navigation bar or the library:
     <img src={useBaseUrl('img/content-sharing/unsaved-search.png')} alt="Unsaved search" style={{border: '1px solid gray'}} width="700"/>
 1. Optional. If you are sharing with a large role, or a user who already expects access to this search, you can turn off **Notify recipients by email**. If you do want to send an email notification, we recommend that you include a note in the email for the recipients to indicate what to do with their new content and leave the option enabled.
 1. Choose the level of access from view, edit, or manage. For details on permission levels, see [Available permission levels](#available-permission-levels).
+   :::note
+   App content can only be shared with view access.
+   :::
 1. Optional. Choose **Advanced Access** to further refine access to the content. For details on these options, see [Available permission levels](#available-permission-levels).
 
     <img src={useBaseUrl('img/content-sharing/PermissionsShare.png')} alt="Permissions share" style={{border: '1px solid gray'}} width="700"/>
