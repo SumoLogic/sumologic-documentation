@@ -221,20 +221,20 @@ This dashboard includes insights on incoming and outgoing source IP addresses, t
 
 ### VPC Activity
 
-The dashboard tracks network metrics like traffic trends, packets, and latency over the last hour. It shows trends in traffic and packets by Subnetwork ID, Source/Destination VM, and 
-average latency by Subnetwork ID, Source/Destination VPC. Additionally, it visualizes VPC flows by source/destination IP address and port, aiding in monitoring network activity effectively.
+This dashboard tracks network metrics like traffic trends, packets, and latency over the last hour. It shows trends in traffic and packets by Subnetwork ID, Source/Destination VM, and average latency by Subnetwork ID, Source/Destination VPC. Additionally, it visualizes VPC flows by source/destination IP address and port, aiding in monitoring network activity effectively.
 
 <img src={useBaseUrl('img/integrations/google/cloud-vpc-activity.png')} alt="Google Cloud VPC dashboards" />
 
 
 ### Advanced metrics
 
-The dashboard provides insights on message frequency, data transfer rates, packet transmission, and latency trends over the last hour. It includes visualizations such as outliers in messages per minute, trends in total bytes per minute, and packets sent per minute. Additionally, it displays box plots for total bytes, packets, and latency, offering a comprehensive view of the data distribution within the specified timeframe.
+This dashboard provides insights on message frequency, data transfer rates, packet transmission, and latency trends over the last hour. It includes visualizations such as outliers in messages per minute, trends in total bytes per minute, and packets sent per minute. Additionally, it displays box plots for total bytes, packets, and latency, offering a comprehensive view of the data distribution within the specified timeframe.
 
 <img src={useBaseUrl('img/integrations/google/cloud-vpc-Traffic.png')} alt="Google Cloud VPC dashboards" />
 
 ### Security and Direction
-The dashboard lists malicious IP (source and destination) with threat level and location. Along with that dashboard can be usd for traffic direction distribution and traffic activity by subnetwork id, project and time comparison of VPC flow logs.
+
+This dashboard lists malicious IPs (source and destination) with threat level and location. This dashboard can be used for traffic direction distribution and traffic activity by subnetwork ID, and project and time comparison of VPC flow logs.
 
 <img src={useBaseUrl('img/integrations/google/Google-Cloud-VPC-Security-and-Direction.png')} alt="Google Cloud VPC dashboards" />
 
