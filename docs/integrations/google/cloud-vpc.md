@@ -236,6 +236,8 @@ The dashboard provides insights on message frequency, data transfer rates, packe
 ### Security and Direction
 The dashboard lists malicious IP (source and destination) with threat level and location. Along with that dashboard can be usd for traffic direction distribution and traffic activity by subnetwork id, project and time comparison of VPC flow logs.
 
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-VPC-Security-and-Direction.png')} alt="Google Cloud VPC dashboards" />
+
 ## Upgrade/Downgrade the Google Cloud VPC app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
