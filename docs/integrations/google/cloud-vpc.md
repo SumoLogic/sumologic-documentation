@@ -260,5 +260,5 @@ These alerts are VPC flow log based.
 | Alert Name  | Alert Description and Conditions | Default Alert Condition | Default Recover Condition |
 |:--|:--|:--|:--|
 | `Google Cloud VPC - Access from Highly Malicious Sources Alert` | This alert gets triggered when an VPC is accessed from highly malicious IP addresses. | Count >= 1 | Count < 1 |
-| `Google Cloud VPC - Latency Alert` | This alert is triggered when latency of flow logs goes above threshold value (default is 1000 ms) | Value >= 1000 | Value < 1000 |
-| `Google Cloud VPC - Total traffic Alert` | This alert is triggered when the total traffic (in MB) for a subnetwork is greater then the threshold value (Default is 2GB) | Value >= 2000 | Value < 2000 |
+| `Google Cloud VPC - Latency Alert` | This alert is triggered when latency of any subnetwork goes above threshold value (default is 1000 ms) | Count >= 1 | Count < 1 |
+| `Google Cloud VPC - Total traffic Alert` | This alert is triggered when the total traffic (in MB) for a subnetwork is greater then the threshold value (Default is 2GB) | Count >= 1 | Value < 1 |
