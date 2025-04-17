@@ -73,7 +73,7 @@ Data can be in both a Partition and a Scheduled View because the two tools are u
 
 ## Additional methods to optimize Search performance
 
-### Use the smallest Time Range
+### Use the smallest time range
 
 Always set the search time range to the minimum duration required for your use case. This reduces the data volume and improves the query efficiency. When working with long time ranges, start by building and testing your search on a shorter time range. Once the search is finalized and validated, extend it to cover the entire period needed for your analysis. 
 
