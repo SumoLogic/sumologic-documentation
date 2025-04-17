@@ -65,8 +65,8 @@ Sometimes there may be a problem creating a baseline for a [first seen rule](/do
 * If the rule has a persistent Pending Baseline status, there might not be enough data in the system to build the baseline:
    *  Check the ingest configuration of your Cloud SIEM data sources and confirm the appropriate records are being added to the system.
    * The matching expression may not be using the right fields. Cloud SIEM records are normalized to a defined [schema](/docs/cse/schema/schema-attributes/). The matching expression and all other fields should use that schema and not the raw log field names.
-   * There may not be enough activity to build a baseline. Expand the baseline learning period to gather more activity.
-   * Make sure that the Sumo Logic system has been active and ingesting data for the full baseline learning period. For example, if the rule has a default baseline learning period of 30 days, but your company only started using Sumo Logic a few days ago, then the rule will remain in the Pending Baseline state until 30 days have passed. To resolve the issue, change the baseline learning period window.
+   * There may not be enough activity to build a baseline. Expand the baseline retention period to gather more activity.
+   * Make sure that the Sumo Logic system has been active and ingesting data for the full baseline retention period. For example, if the rule has a default baseline retention period of 90 days, but your company only started using Sumo Logic a few days ago, then the rule will remain in the Pending Baseline state until 90 days have passed. To resolve the issue, change the baseline retention period window.
   
 
 

@@ -64,9 +64,9 @@ Watch this micro lesson to learn more about outlier rules.
 
 ## Baselines for outlier rules
 
-When you create the rule, you can set the amount of time Cloud SIEM analyzes data to create a baseline model of behavior, with the default period being for the last 30 days. You can set the rule to build data hourly or daily, depending on how frequently you believe events of interest will occur, and how much data you want to gather. In the rule, you set the model sensitivity threshold to calculate outlier activity based on the number of standard deviations from the mean (z‑score). 
+When you create the rule, you can set the amount of time Cloud SIEM analyzes data to create a baseline model of behavior, with the default period being for the last 90 days. You can set the rule to build data hourly or daily, depending on how frequently you believe events of interest will occur, and how much data you want to gather. In the rule, you set the model sensitivity threshold to calculate outlier activity based on the number of standard deviations from the mean (z‑score). 
 
-As soon as you save or update an outlier rule, the baseline is built using existing data collected. So if your baseline learning period is for the last 30 days (the default), the system uses data from the last 30 days to build the baseline. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete.
+As soon as you save or update an outlier rule, the baseline is built using existing data collected. So if your baseline retention period is for the last 90 days (the default), the system uses data from the last 90 days to build the baseline. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete.
 
 Once the baseline is created, Cloud SIEM tracks aggregates of count, sum, min, max, and averages of record values, and creates a signal when deviations from the mean occurs. For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, Cloud SIEM builds a baseline model of counts of authentication failures that are associated with a user over time, and creates a signal when outlier behavior is detected:
 
@@ -86,7 +86,7 @@ For more information, see [Troubleshoot baseline problems](/docs/cse/rules/rules
 
 The screenshot below shows an outlier rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Create an outlier rule](#create-an-outlier-rule), below.
 
-<img src={useBaseUrl('img/cse/outlier-rule.png')} alt="Example outlier rule definition" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/cse/outlier-rule.png')} alt="Example outlier rule definition" style={{border: '1px solid gray'}} width="600" />
 
 
 ## Create an outlier rule
@@ -110,11 +110,9 @@ The settings in the **If Triggered** section are divided into two subsections, o
     :::
 1. **build a daily/hourly baseline**. Select the time window for building the baseline. It can either be a daily or hourly baseline.
 1. **for the entity(ies)**. Select one or more record fields for which you want baselines built. Selecting multiple fields will build a distinct baseline for a combination of entities.
-1. Set the baseline and retention settings:
-   1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The minimum is 4, and the maximum is 90. The default is 90 days.
-   1. **Baseline Learning Period (days)**. The minimum amount of time for which data points should be collected before firing a signal. The default is for the last 30 days.
+1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The minimum is 4, and the maximum is 90. The default is 90 days.
    :::note
-   The **Baseline Learning Period** must be shorter than the **Baseline Retention Period**. Also be aware that short baseline learning periods may generate false positive signals.
+   If the [retention period for logs](/docs/manage/partitions/manage-indexes-variable-retention/) is less than the baseline retention period, then the baseline will be created based on the logs retention time only.
    :::
 
 **Outlier Model Configuration**
