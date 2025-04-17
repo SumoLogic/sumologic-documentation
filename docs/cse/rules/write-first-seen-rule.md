@@ -109,7 +109,7 @@ The settings in the **If Triggered** section determine what records the rule wil
    For more information about how to select the type of base line, see the [Use case](#use-case-monitor-login-from-first-seen-geolocation), below.
    :::
 1. Set the baseline and retention settings:
-   1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The default is 90 days. You can decrease this period, but not increase it.
+   1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The minimum is 0, and the maximum is 90. The default is 90 days. 
    1. **Baseline Learning Period (days)**. The minimum amount of time for which data points should be collected before firing a signal. The default is for the last 30 days.
    :::note
    The **Baseline Learning Period** must be shorter than the **Baseline Retention Period**. Also be aware that short baseline learning periods can potentially generate false positive signals.
