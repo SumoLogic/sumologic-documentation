@@ -174,6 +174,10 @@ The **Sumo Collection - Collectors Overview** dashboard provides a comprehensive
 
 The **Sumo Collection - Sources Overview** dashboard provides offers a detailed view of data sources within Sumo Logic, enabling effective monitoring and management of data ingestion. It displays metrics such as total sources, source categorization, distribution of Cloud-to-Cloud (C2C) sources, and the health status of C2C sources. You can analyze sources by error states, identify top C2C vendors, and track error counts to resolve issues quickly. The dashboard also highlights specific error types like THIRD-PARTY-CONFIG and THIRD-PARTY-GENERIC, providing insights to optimize data flow and improve data quality. With its analytics and visualizations, you can proactively manage data sources, make informed decisions, and ensure reliable data ingestion within the Sumo Logic ecosystem.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sumo-Collection/Sumo+Collection+-+Sources+Overview.png' alt="Sources-Overview" />
 
+### Sources Time Lag
+
+The **Sumo Collection - Sources Time Lag** dashboard offers a comprehensive view of time delaysthat are affecting Cloud-to-Cloud (C2C) sources within the Sumo Logic platform. This dashboard is designed to help you to monitor data transmission efficiency by highlighting metrics such as average, maximum, and minimum time lags, while also identifying the top 10 sources with significant delays. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sumo-Collection/Sources-Time-Lag.png' alt="Sources-Time-Lag" />
+
 ## Create monitors for Sumo Collection app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
