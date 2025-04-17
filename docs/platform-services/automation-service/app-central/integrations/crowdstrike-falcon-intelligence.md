@@ -48,7 +48,11 @@ Create API clients to grant various levels of API access for Falcon Intelligence
 Record your API client secret somewhere safe. After the credential window is closed, the secret is no longer visible.
 :::
 
-## CrowdStrike Falcon Intelligence in Automation Service and Cloud SOAR
+## Configure CrowdStrike Falcon Intelligence in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for **CrowdStrike Falcon Intelligence** integration and click on the row.

@@ -74,6 +74,12 @@ To run the other actions, you need to have an API from **Team Integrations**:
 Please keep in mind that the API keys of the team integrations can only be used for the alerts/incidents of the specific team and the team-based configurations, whereas the API keys of the global integrations can be used for all of the API requests, including account-based configurations.
 :::
 
+## Configure Atlassian OpsGenie in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * March 22, 2024 - First upload

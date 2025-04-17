@@ -32,11 +32,15 @@ AWS WAF is a web application firewall that helps protect web applications from a
 * **List Web ACLs** (*Enrichment*) - Retrieves a list of WebACLSummary objects for the web ACLs that you manage.
 * **Update IP Set** (*Containment*) - Updates the specified IPSet.
 
-
 ## External Libraries
 
 * [boto3](https://github.com/boto/boto3/blob/develop/LICENSE)
 
+## Configure AWS WAF in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 ## Change Log
 

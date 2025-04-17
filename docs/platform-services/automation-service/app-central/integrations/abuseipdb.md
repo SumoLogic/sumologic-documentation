@@ -29,7 +29,11 @@ Enrich IP addresses with reputation information gathered from AbuseIPDB.
 4. Click on **Create Key**. 
 5. Copy the **API key**.
 
-## Configure AbuseIPDB
+## Configure AbuseIPDB in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation). 
 2. After the list of the integrations appears, search for the integration and click on the row.

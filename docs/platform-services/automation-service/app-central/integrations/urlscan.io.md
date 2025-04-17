@@ -22,6 +22,12 @@ Scan and analyze websites. When a URL is submitted to urlscan.io, an automated p
 * **Scan Search** (*Enrichment*) - Search for a specific scan.
 * **Scan URL** (*Enrichment*) - Scan and analyze suspicious websites.
 
+## Configure URLScan.io in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 12, 2019 - First upload

@@ -50,7 +50,11 @@ Follow these steps to create a Server-to-Server OAuth app:
 1. Activate your app. If you see errors that prevent activation, please address them. You will not be able to generate an access token to make API calls unless your app is activated. If your app is deactivated, existing tokens will no longer work. You can also choose to Deactivate your app in this section.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/zoom/zoom-6.png')} style={{border:'1px solid gray'}} alt="zoom" width="600" />
 1. The optional parameter timezone in the actions Update Meeting and Update User can be chosen form the table Timezones in the following [Abbreviation Lists](https://marketplace.zoom.us/docs/api-reference/other-references/abbreviation-lists/#timezones).
 
-## Zoom in Automation Service and Cloud SOAR
+## Configure Zoom in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

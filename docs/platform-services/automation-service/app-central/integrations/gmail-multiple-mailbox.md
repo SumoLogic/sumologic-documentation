@@ -54,6 +54,12 @@ Interact with multiple Gmail mailboxes.
 
 If the API has been recently enabled, wait a few minutes for the action to propagate to the systems and retry.
 
+## Configure Gmail Multiple Mailbox in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 19, 2020 - First upload
