@@ -75,7 +75,7 @@ Data can be in both a Partition and a Scheduled View because the two tools are u
 
 ### Use the smallest Time Range
 
-Always set the search time range to the minimum duration required for your use case. This reduces the data volume and improve the query efficiency. When working with long time ranges, start by building and testing your search on a shorter time range. Once the search is finalized and validated, extend it to cover the entire period needed for your analysis. 
+Always set the search time range to the minimum duration required for your use case. This reduces the data volume and improves the query efficiency. When working with long time ranges, start by building and testing your search on a shorter time range. Once the search is finalized and validated, extend it to cover the entire period needed for your analysis. 
 
 ### Use fields extracted by FERs
 
