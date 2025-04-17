@@ -212,9 +212,9 @@ The easiest way to analyze this query is going from the end backwards. In this q
 An advanced version of this query shows all metrics of `CPU_LoadAvg` for 1 minute, 5 minutes, and 15 minutes for top three servers according to the `CPU_LoadAvg_1min` (in the result sets returned by rows #A, #D and #E):
 
 ```sql
-#A: _sourceHost=nite-metricsstore-* CPU_LoadAvg_1min | topk(3,avg)
-#B: _sourceHost=nite-metricsstore-* CPU_LoadAvg_5min
-#C: _sourceHost=nite-metricsstore-* CPU_LoadAvg_15min
+#A: _sourceHost=nite-metricsstore-* metric=CPU_LoadAvg_1min | topk(3,avg)
+#B: _sourceHost=nite-metricsstore-* metric=CPU_LoadAvg_5min
+#C: _sourceHost=nite-metricsstore-* metric=CPU_LoadAvg_15min
 #D: (#B + 0 * #A) along _sourceHost
 #E: (#C + 0 * #A) along _sourceHost
 ```

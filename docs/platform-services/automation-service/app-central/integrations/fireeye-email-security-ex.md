@@ -17,6 +17,12 @@ Full stack email security solution for email analysis.
 * **Get ATI Details** (*Enrichment*) - Get the ATI details for the specified alert Id.
 * **Add YARA Rule** (*Containment*) - Add a new YARA rule from the specified file.
 
+## Configure FireEye Email Security (EX) in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 12, 2019 - First upload

@@ -27,6 +27,12 @@ State-of-the-art CTI technology for large enterprises, governments, and MSSPs.
 * **Update Enricher** (*Containment*) - Update enricher by ID.
 * **Get Enricher Details** (*Enrichment*) - Retrieve detail about an enricher by ID.
 
+## Configure EclecticIQ in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * November 15, 2021 - First upload

@@ -19,7 +19,11 @@ The IBM Maximo is a single, integrated cloud-based platform that uses AI, IoT an
 * **Close Ticket** (*Containment*) - Close ticket by ticket unique ID (uid).
 * **List Tickets** (*Enrichment*) - Retrieve a list of tickets, filtering is possible by providing filter key/value pair.
 
-## IBM Maximo in Automation Service and Cloud SOAR
+## Configure IBM Maximo in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

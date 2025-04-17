@@ -141,6 +141,11 @@ Once API permission are added then Admin must consent to a grant these permissio
 6. Click **+** and search for the user you want to assign the role to.
 7. Click **Save**.
 
+## Configure Microsoft EWS in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 ## Category
 

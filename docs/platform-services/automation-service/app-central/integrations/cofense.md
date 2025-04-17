@@ -16,6 +16,12 @@ Search Cofense for Threats and download Threat Reports.
 * **Get Report** (*Enrichment*) - Get a Threat Report and attach it to the Cloud SOAR incident.
 * **Search Threats** (*Enrichment*) - Search Threats based on the specified parameters.
 
+## Configure Cofense in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 10, 2019 - First upload

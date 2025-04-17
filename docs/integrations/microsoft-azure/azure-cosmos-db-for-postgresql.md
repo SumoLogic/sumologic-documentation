@@ -47,7 +47,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure Field Extraction Rules
 
-Create the following Field Extraction Rules (FER) for Azure Storage by following the instructions in the [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/). Create the below rules if they are not present.
+Create the following Field Extraction Rules (FER) for Azure Storage by following the instructions in the [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/). Create the rules below if they are not present.
 
 #### Azure location extraction FER
 
@@ -89,7 +89,7 @@ Create the following Field Extraction Rules (FER) for Azure Storage by following
 
 ### Configure metric rules
 
-Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule). Create the below rules if they are not present.
+Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule). Create the rules below if they are not present.
 
 #### Azure observability metadata extraction flexible PostgreSQL server level
 
@@ -116,8 +116,8 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 1. Create hosted collector and tag `tenant_name` field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Flexible PostgreSQL Server resource that you want to monitor.
+1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each Flexible PostgreSQL Server resource that you want to monitor.
    1. Choose `Stream to an event hub` as destination.
    1. Select `AllMetrics`.
    1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/export-metrics-diagnostic-settings-cosmosdbforpostgresql.png')} alt="Azure flexible postgresql server metrics" style={{border: '1px solid gray'}} width="800" />
@@ -132,7 +132,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    1. Choose **Stream to an event hub** as the destination.
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/export-logs-diagnostic-settings-cosmosdbforpostgresql.png')} alt="Azure flexible postgresql server logs" style={{border: '1px solid gray'}} width="800" />
-3. Set server parameters as below:
+3. Set server parameters as given below:
    - `log_statement`. Select **DDL**.
    - `log_lock_waits`. Set to **ON**. If required, you can also configure `deadlock_timeout`.
    - `log_connections`. Set to **ON**.

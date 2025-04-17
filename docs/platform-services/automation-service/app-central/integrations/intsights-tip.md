@@ -23,6 +23,12 @@ Intsight Threat Intelligence Platform.
 * **Get Alert List Daemon** (*Daemon*) - Get list of alerts ids by query.
 * **List Sources** (*Enrichment*) - Get ID, name and confidence level of each Ioc source, grouped by source type.
 
+## Configure Intsights TIP in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 15, 2020 - First upload
