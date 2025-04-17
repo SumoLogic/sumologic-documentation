@@ -73,9 +73,9 @@ Data can be in both a Partition and a Scheduled View because the two tools are u
 
 ## Additional methods to optimize Search performance
 
-### Use the smallest Time Range
+### Use the smallest time range
 
-Always set the search time range to the minimum duration required for your use case. This reduces the data volume and improve the query efficiency. When working with long time ranges, start by building and testing your search on a shorter time range. Once the search is finalized and validated, extend it to cover the entire period needed for your analysis. 
+Always set the search time range to the minimum duration required for your use case. This reduces the data volume and improves the query efficiency. When working with long time ranges, start by building and testing your search on a shorter time range. Once the search is finalized and validated, extend it to cover the entire period needed for your analysis. 
 
 ### Use fields extracted by FERs
 
@@ -116,7 +116,7 @@ _sourceCategory=Prod/User/Eventlog completed action
 
 ### Filter data before aggregation
 
-While filtering the date, reduces the result set to the smallest possible size before performing aggregate operations such as sum, min, max, and average. Also, use subquery in source expression instead of using `if` or `where` search operators. 
+While filtering the date, reduce the result set to the smallest possible size before performing aggregate operations such as sum, min, max, and average. Also, use subquery in source expression instead of using `if` or `where` search operators. 
 
 **Not recommended approach:**
 
@@ -138,9 +138,9 @@ _sourceCategory=Prod/User/Eventlog userName
 
 ### Remove redundant operators
 
-Remove the search operators in the query that are not referred or is not really required for the desired results. 
+Remove the search operators in the query that are not required for the desired results. 
 
-For example, let’s say you have a `sort` operator before an aggregation and this sorting does not make any difference to the aggregated results, resulting in reducing the performance. 
+For example, let’s say you have a `sort` operator before an aggregation, but this sorting does not make any difference to the aggregated results. 
 
 **Not recommended approach:**
 
@@ -240,7 +240,7 @@ _sourceCategory=Prod/User/Eventlog
 
 ### Avoid multiple parse multi statements
 
-A parse multi statement causes a single log to produce multiple logs in the results. But if a parse multi statement is followed by more parse multi statements, it can lead to data explosion and the query may never finish. Even if the query works the results may not be as expected.
+A parse `multi` statement causes a single log to produce multiple logs in the results. But if a parse `multi` statement is followed by more parse `multi` statements, it can lead to data explosion and the query may never finish. Even if the query works the results may not be as expected.
 
 For example, consider the below query where the assumption is that a single log line contains multiple users and multiple event names.
 
