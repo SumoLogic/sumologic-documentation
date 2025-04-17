@@ -218,28 +218,42 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-### Google Cloud Storage - Overview
+### Google Cloud Storage - Operational Overview
 
-See an overview of activity in Google Cloud Storage, including a breakdown of bucket and object operations, operations by project, and the top 10 locations, projects, buckets, and users by operation.
+Provide a high-level view of Google Cloud Storage activity, focusing on operation volumes, types, and key contributors across buckets and users/service accounts.
 
-<img src={useBaseUrl('img/integrations/google/google-cloud-storage-overview.png')} alt="Google Cloud Storage dashboards" />
-
-
-### Google Cloud Storage - Users
-
-See information about your Google Cloud Storage users, including user locations, user operations, creations and deletions by user, and errors.
-
-<img src={useBaseUrl('img/integrations/google/google-cloud-storage-users.png')} alt="Google Cloud Storage dashboards" />
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Storage-Operational-Overview.png')} alt="Google Cloud Storage dashboards" />
 
 
+### Google Cloud Storage - Access and Security
 
-### Google Cloud Storage - Buckets
+See information about access patterns, security configurations (IAM changes), and potential security events related to Google Cloud Storage.
 
-See information about buckets in Google Cloud Storage, including operations by bucket, bucket statistics, and creations and deletions.
-
-<img src={useBaseUrl('img/integrations/google/google-cloud-storage-buckets.png')} alt="Google Cloud Storage dashboards" />
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Storage-Access-and-Security.png')} alt="Google Cloud Storage dashboards" />
 
 
+### Google Cloud Storage - Object Activity
+
+See information about object-level interactions within Google Cloud Storage. Requires Data Access Logs to be enabled.
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Storage-Object-Activity.png')} alt="Google Cloud Storage dashboards" />
+
+### Google Cloud Storage - Error and Access Denied Analysis
+
+Analyze errors and specifically permission denied events within Google Cloud Storage to identify failure patterns, problematic operations, and potential security issues.
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Storage-Error-and-Access-Denied-Analysis.png')} alt="Google Cloud Storage dashboards" />
+
+
+### Google Cloud Storage - Usage and Activity Overview
+
+See information about high-level summary of storage consumption, data transfer volumes, and overall API activity for quick health checks and usage monitoring.
+
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Storage-Usage-and-Activity-Overview.png')} alt="Google Cloud Storage dashboards" />
+
+## Create monitors for Google Cloud Storage app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Google Cloud Storage - Operations and Error Analysis
 
@@ -252,16 +266,6 @@ See information about key Google Cloud Storage usage metrics, operational activi
 See information about key Google Cloud Storage bucket optimization opportunities, including storage class distribution, object lifecycle management, and authorization patterns to identify potential cost savings and security improvements.
 
 <img src={useBaseUrl('img/integrations/google/Google-Cloud-Storage-Storage-Optimization-and-Authorization.png')} alt="Google Cloud Storage dashboards" />
-
-### Google Cloud Storage - Usage and Activity Overview
-
-See information about high-level summary of storage consumption, data transfer volumes, and overall API activity for quick health checks and usage monitoring.
-
-<img src={useBaseUrl('img/integrations/google/Google-Cloud-Storage-Usage-and-Activity-Overview.png')} alt="Google Cloud Storage dashboards" />
-
-## Create monitors for Google Cloud Storage app
-
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
