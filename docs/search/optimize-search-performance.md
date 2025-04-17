@@ -138,9 +138,9 @@ _sourceCategory=Prod/User/Eventlog
 
 ### Remove redundant operators
 
-Remove the search operators in the query that are not referred or is not really required for the desired results. 
+Remove the search operators in the query that are not required for the desired results. 
 
-For example, let’s say you have a `sort` operator before an aggregation and this sorting does not make any difference to the aggregated results, resulting in reducing the performance. 
+For example, let’s say you have a `sort` operator before an aggregation, but this sorting does not make any difference to the aggregated results. 
 
 **Recommended approach:**
 
