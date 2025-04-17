@@ -116,7 +116,7 @@ _sourceCategory=Prod/User/Eventlog
 
 ### Filter data before aggregation
 
-While filtering the date, reduces the result set to the smallest possible size before performing aggregate operations such as sum, min, max, and average. Also, use subquery in source expression instead of using `if` or `where` search operators. 
+While filtering the date, reduce the result set to the smallest possible size before performing aggregate operations such as sum, min, max, and average. Also, use subquery in source expression instead of using `if` or `where` search operators. 
 
 **Recommended approach:**
 
