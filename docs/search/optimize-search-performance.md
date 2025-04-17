@@ -81,12 +81,6 @@ Always set the search time range to the minimum duration required for your use c
 
 Instead of relying on the `where` operator, filter the data using fields that are already extracted through the Field Extraction Rules (FERs) in the source expression. This approach is more efficient and improves query performance.
 
-**Recommended approach:**
-
-```
-sourceCategory=foo and field_a=value_a
-```
-
 **Not recommended approach:**
 
 ```
@@ -94,17 +88,15 @@ _sourceCategory=foo
 | where field_a="value_a"
 ```
 
-### Move terms from parse statement to source expression
-
-Adding the parsing terms in the source expression will help you enhance the search performance. A parse statement without `nodrop` drops the logs that could not parse the desired field. For example, `parse “completed * action“ as actionName` will remove logs that do not have **completed** and **action** terms. 
-
 **Recommended approach:**
 
 ```
-_sourceCategory=Prod/User/Eventlog completed action
-| parse “completed * action“ as actionName
-| count by actionName
+sourceCategory=foo and field_a=value_a
 ```
+
+### Move terms from parse statement to source expression
+
+Adding the parsing terms in the source expression will help you enhance the search performance. A parse statement without `nodrop` drops the logs that could not parse the desired field. For example, `parse “completed * action“ as actionName` will remove logs that do not have **completed** and **action** terms. 
 
 **Not recommended approach:**
 
@@ -114,9 +106,26 @@ _sourceCategory=Prod/User/Eventlog
 | count by actionName
 ```
 
+**Recommended approach:**
+
+```
+_sourceCategory=Prod/User/Eventlog completed action
+| parse “completed * action“ as actionName
+| count by actionName
+```
+
 ### Filter data before aggregation
 
 While filtering the date, reduces the result set to the smallest possible size before performing aggregate operations such as sum, min, max, and average. Also, use subquery in source expression instead of using `if` or `where` search operators. 
+
+**Not recommended approach:**
+
+```
+_sourceCategory=Prod/User/Eventlog
+| parse “userName: *, “ as user
+| count by user
+| where user="john"
+```
 
 **Recommended approach:**
 
@@ -127,28 +136,11 @@ _sourceCategory=Prod/User/Eventlog userName
 | count by user
 ```
 
-**Not recommended approach:**
-
-```
-_sourceCategory=Prod/User/Eventlog
-| parse “userName: *, “ as user
-| count by user
-| where user="john"
-```
-
 ### Remove redundant operators
 
 Remove the search operators in the query that are not referred or is not really required for the desired results. 
 
 For example, let’s say you have a `sort` operator before an aggregation and this sorting does not make any difference to the aggregated results, resulting in reducing the performance. 
-
-**Recommended approach:**
-
-```
-_sourceCategory=Prod/User/Eventlog
-| parse “userName: *, “ as user
-| count by user
-```
 
 **Not recommended approach:**
 
@@ -159,19 +151,19 @@ _sourceCategory=Prod/User/Eventlog
 | count by user
 ```
 
+**Recommended approach:**
+
+```
+_sourceCategory=Prod/User/Eventlog
+| parse “userName: *, “ as user
+| count by user
+```
+
 ### Merge operators
 
 If the same operators are used multiple times in different levels of query, if possible, try to merge these similar operators. Also, do not use the same operator multiple times to get the same value. This helps in reducing the number of passes performed on the data thereby improving the search performance.
 
 **Example 1:**
-
-    **Recommended approach:**
-
-    ```
-    _sourceCategory=Prod/User/Eventlog
-    | parse “completed * action in * ms“ as actionName, duration
-    | pct(duration, 95) by actionName
-    ```
 
     **Not recommended approach:**
 
@@ -182,7 +174,23 @@ If the same operators are used multiple times in different levels of query, if p
     | pct(duration, 95) by actionName
     ```
 
+    **Recommended approach:**
+
+    ```
+    _sourceCategory=Prod/User/Eventlog
+    | parse “completed * action in * ms“ as actionName, duration
+    | pct(duration, 95) by actionName
+    ```
+
 **Example 2:**
+
+    **Not recommended approach:**
+
+    ```
+    _sourceCategory=Prod/User/Eventlog
+    | parse “completed * action“ as actionName
+    | where toLowerCase(actionName) = “logIn” or toLowerCase(actionName) matches “abc*” or toLowerCase(actionName) contains “xyz"
+    ```
 
     **Recommended approach:**
 
@@ -191,14 +199,6 @@ If the same operators are used multiple times in different levels of query, if p
     | parse “completed * action“ as actionName
     | toLowerCase(actionName) as actionNameLowered
     | where actionNameLowered = “logIn” or actionNameLowered matches “abc*” or actionNameLowered contains “xyz”
-    ```
-
-    **Not recommended approach:**
-
-    ```
-    _sourceCategory=Prod/User/Eventlog
-    | parse “completed * action“ as actionName
-    | where toLowerCase(actionName) = “logIn” or toLowerCase(actionName) matches “abc*” or toLowerCase(actionName) contains “xyz"
     ```
 
 ### Use lookup on the lowest possible dataset
