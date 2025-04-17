@@ -240,7 +240,7 @@ _sourceCategory=Prod/User/Eventlog
 
 ### Avoid multiple parse multi statements
 
-A parse multi statement causes a single log to produce multiple logs in the results. But if a parse multi statement is followed by more parse multi statements, it can lead to data explosion and the query may never finish. Even if the query works the results may not be as expected.
+A parse `multi` statement causes a single log to produce multiple logs in the results. But if a parse `multi` statement is followed by more parse `multi` statements, it can lead to data explosion and the query may never finish. Even if the query works the results may not be as expected.
 
 For example, consider the below query where the assumption is that a single log line contains multiple users and multiple event names.
 
