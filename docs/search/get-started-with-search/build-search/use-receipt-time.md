@@ -1,7 +1,7 @@
 ---
 id: use-receipt-time
 title: Use Receipt Time
-description: You can display search results in the order that the Collector received the messages in milliseconds.
+description: Enable the Use Receipt Time feature to display search results in the order that the Collector received the messages in milliseconds.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
