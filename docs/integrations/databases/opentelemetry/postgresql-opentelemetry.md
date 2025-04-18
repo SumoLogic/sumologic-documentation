@@ -361,4 +361,4 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `PostgreSQL - SlowQueries Alert` | This alert gets triggered when we detect that the PostgreSQL instance is executing slow queries. | Count > 5 | Count < = 5 |
 | `Postgresql- Too Many Connections Alert` | PostgreSQL instance has too many connections. | Count > = 100 | Count < 100 |
 | `Postgresql - Too Many Locks Acquired Alert` | This alert is triggered when there are too many locks acquired on the database. Increase the postgres setting `max_locks_per_transaction`, if this alert occurs frequently. | Count > = 100 | Count < 100 |
-| `Postgresql- High Rate Deadlock` | This alert fires when we detect deadlocks in a Postgres instance | Count > = 1 | Count < 1 |
+| `Postgresql- High Rate Deadlock` | This alert is triggered when deadlocks in a Postgres instance are detected. | Count > = 1 | Count < 1 |
