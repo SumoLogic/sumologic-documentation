@@ -6,7 +6,7 @@ description: You can display search results in the order that the Collector rece
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<!-- When Intelliparse goes GA, structure:
+<!-- When Intelliparse goes GA, update this doc to reflect new Search Config...
 
 Parsing
 * Intelliparse
@@ -16,7 +16,6 @@ Parsing
 Timestamp
 * Message Time
 * Receipt Time
-
 -->
 
 By default, log searches run by Message time. Enable the **Use Receipt Time** setting to run the search by Receipt time, which is the timestamp when a log message hits the Sumo Logic receivers.
