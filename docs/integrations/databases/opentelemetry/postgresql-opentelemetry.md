@@ -247,7 +247,7 @@ Use this dashboard to:
 - Determine the number of active databases and clusters.
 - Drill-down into database errors, failed logins and slow queries.
 - Determine if your database or queries need to be tuned based on comparing the number of slow queries.
-- Active deadlock value, tuple operations trends
+- Active deadlock value and tuple operations trends.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Overview.png' alt="Overview" />
 
@@ -269,12 +269,11 @@ The **PostgreSQL - Database Metrics** dashboard allows you to monitor the databa
 Use this dashboard to:
 
 - Understand the behavior and performance of your database clusters.
-- Monitor database size and disk usage.
+- Monitor the database size and disk usage.
 - Identify top 5 and least 5 frequently scanned indexes.
-- Row return and fetched ratio, block hits by database
-- Number of Locks and Deadlocks
-- Rows Update Deleted Inserted count trend
-
+- Monitor the row return and fetched ratio, block hits by database.
+- Identify the number of Locks and Deadlocks.
+- Identify the rows Update/Deleted/Inserted count trend.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Database-Metrics.png' alt="Database Metrics" />
 
@@ -287,7 +286,7 @@ Use this dashboard to view:
 - Head Only Tuple updated by schema.
 - Disk block reads and Disk usage by schema.
 - Buffer hits and rows inserted, updated and deleted by schema.
-- Live rows by schema
+- Live rows by schema.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Schema-Metrics.png' alt="Schema Metrics" />
 
@@ -340,10 +339,8 @@ Use this dashboard to:
 - Monitor PostgreSQL relation metrics (disk blocks, buffer hits, and hot updates) trends over time.
 - Monitor index scans and size to determine if executed queries are accessing them for a relation.
 - Track index utilization of existing indexes in a relation.
-- Postgresql live and dead rows count trend
-- Sequential scans and index scans by relation
-- 
-
+- Monitor the Postgresql live and dead rows count trend.
+- Monitor the sequential scans and index scans by relation.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Relation-Metrics.png' alt="Relation Metrics" />
 
