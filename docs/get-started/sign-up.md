@@ -33,17 +33,11 @@ The activation link expires after 3 days. If it expires, you’ll need to comple
 Get started with Sumo Logic effortlessly using **Kickstart Data**, preloaded sample data and dashboards designed to help you explore and understand the platform’s capabilities. You can immediately dive into our features like log search and alerts prior to setting up your own data collection. Whether you're new to Sumo Logic or evaluating its features, Kickstart Data offers a hands-on way to experience the platform's power. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
 :::
 
-### Set up data collection
+<!--- direct user to Quickstart for next steps... 
 
-Upon first logging in, you'll be asked to select the platform (AWS, Kubernetes, Linux, Windows, macOS) from which you want to collect data. This will install the OpenTelemetry collector and relevant dashboards.
-* For AWS, you'll deploy a single account with a CloudFormation Template, CLI, or Terraform.
-* For Kubernetes, Linux, Windows, or macOS, you'll need to run the provided command in your Terminal or PowerShell.
+Next, you'll be taken to a step-by-step onboarding guide, where you can explore  w/sample data and getting your own data into Sumo  visualize your data via dashboards, run your first log search, set up alerts, install apps, and more.
 
-You'll also see an option to bypass setup and explore our [App Catalog](/docs/integrations), where you'll find a wide range of apps and easy-to-follow setup guides for installation.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
-
-When the installation is complete, click **Start using Sumo**.
-
-Your data will start flowing in a couple of minutes. Next, you'll be taken to a step-by-step onboarding guide, where you can visualize your data via dashboards, run your first log search, set up alerts, install apps, and more.
+-->
 
 ### Upgrade or continue with Free account
 
@@ -74,7 +68,7 @@ For information on plan types and pricing, see [Sumo Logic Pricing](https://www.
 
 #### Essentials plans
 
-Using our self-service checkout, you can sign up for a Sumo Logic Essentials plan in just minutes using a credit card—no need to interact with the sales team. 
+Using our self-service checkout, you can sign up for a Sumo Logic Essentials plan in just minutes using a credit card—no need to interact with the sales team.
 
 - [Learn how to upgrade your plan with Credits account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account).
 - [Learn how to upgrade your plan with Flex account](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account).
