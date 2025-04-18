@@ -2206,6 +2206,7 @@ integrations: [
          'integrations/microsoft-azure/azure-stream-analytics',
          'integrations/microsoft-azure/azure-synapse-analytics',
          'integrations/microsoft-azure/azure-virtual-network',
+         'integrations/microsoft-azure/azure-virtual-machine',
          'integrations/microsoft-azure/kubernetes',
          'integrations/microsoft-azure/azure-security-advisor',
          'integrations/microsoft-azure/azure-security-defender-for-cloud',
