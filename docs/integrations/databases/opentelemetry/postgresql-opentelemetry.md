@@ -339,7 +339,7 @@ Use this dashboard to:
 - Monitor PostgreSQL relation metrics (disk blocks, buffer hits, and hot updates) trends over time.
 - Monitor index scans and size to determine if executed queries are accessing them for a relation.
 - Track index utilization of existing indexes in a relation.
-- Monitor the Postgresql live and dead rows count trend.
+- Monitor the PostgreSQL live and dead rows count trend.
 - Monitor the sequential scans and index scans by relation.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Relation-Metrics.png' alt="Relation Metrics" />
@@ -360,5 +360,5 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `PostgreSQL - Instance Down Alert` | This alert gets triggered when the Postgres instance is down. | Count > = 1 | Count < 1 |
 | `PostgreSQL - SlowQueries Alert` | This alert gets triggered when we detect that the PostgreSQL instance is executing slow queries. | Count > 5 | Count < = 5 |
 | `Postgresql- Too Many Connections Alert` | PostgreSQL instance has too many connections. | Count > = 100 | Count < 100 |
-| `Postgresql - Too Many Locks Acquired Alert` | This alert is triggered when there are too many locks acquired on the database. Increase the postgres setting `max_locks_per_transaction`, if this alert occurs frequently. | Count > = 100 | Count < 100 |
-| `Postgresql- High Rate Deadlock` | This alert is triggered when deadlocks in a Postgres instance are detected. | Count > = 1 | Count < 1 |
+| `PostgreSQL - Too Many Locks Acquired Alert` | This alert is triggered when there are too many locks acquired on the database. Increase the postgres setting `max_locks_per_transaction`, if this alert occurs frequently. | Count > = 100 | Count < 100 |
+| `PostgreSQL - High Rate Deadlock` | This alert is triggered when deadlocks in a Postgres instance are detected. | Count > = 1 | Count < 1 |
