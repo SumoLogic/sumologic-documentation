@@ -32,7 +32,11 @@ Follow these steps to get your API key from Automox:
 1. Choose a name for this key and then click the button to generate the new key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-3.png')} style={{border:'1px solid gray'}} alt="automox-3" width="400"/>
 1. Copy the API key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-4.png')} style={{border:'1px solid gray'}} alt="automox-4" width="800"/>
 
-## Automox in Automation Service and Cloud SOAR
+## Configure Automox in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

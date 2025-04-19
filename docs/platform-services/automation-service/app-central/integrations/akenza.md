@@ -30,7 +30,11 @@ Updated: Jul 18, 2023***
 1. Log in to the Akenza platform with your email and password and follow the link for configuration.
 1. Create API key from GUI of Akenza by locating to API key and by clicking on the button Generate API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/akenza/akenza-1.png')} style={{border:'1px solid gray'}} alt="akenza-1" width="800"/>
 
-## Akenza in Automation Service and Cloud SOAR
+## Configure Akenza in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

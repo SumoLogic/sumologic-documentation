@@ -23,6 +23,12 @@ Interact with LogPoint events during incident investigations.
 
 This integration has been developed using a non-standard API that involves web scraping.
 
+## Configure LogPoint in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * September 3, 2020 - First upload

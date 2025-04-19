@@ -24,7 +24,6 @@ The [Health Events](/docs/manage/health-events) Management API allows you to vie
 | DE         | https://api.de.sumologic.com/docs/#tag/healthEvents  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/healthEvents  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/healthEvents |
-| IN         | https://api.in.sumologic.com/docs/#tag/healthEvents  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/healthEvents  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/healthEvents  |
 | US1        | https://api.sumologic.com/docs/#tag/healthEvents     |

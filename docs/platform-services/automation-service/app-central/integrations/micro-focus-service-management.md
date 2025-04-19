@@ -15,7 +15,11 @@ ESM SaaS is an analytics-driven enterprise service management solution that comb
 
 * **Micro Focus Create Incident** *(Containment)* - Create a new incident.
 
-## Micro Focus Service Management in Automation Service and Cloud SOAR
+## Configure Micro Focus Service Management in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

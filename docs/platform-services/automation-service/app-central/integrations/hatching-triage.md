@@ -22,6 +22,12 @@ Detonate files with Hatching Triage Malware Sandbox.
 
 * Reports are returned in JSON. To save a report as an incident attachment, use Cloud SOAR Incident Tool integration action"Save Report in Attachments".
 
+## Configure Hatching Triage in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 19, 2020 - First upload

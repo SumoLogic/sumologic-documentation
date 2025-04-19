@@ -26,6 +26,12 @@ Utilize and interact with Rapid7 Nexpose scan data during incident investigation
 * **Delete Site** *(Containment)* - Deletes a site.
 * **Get Assets Vulnerability** *(Enrichment)* - Returns the details for a vulnerability of a specific asset.
 
+## Configure Rapid7 Nexpose in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 24, 2020 - First upload
