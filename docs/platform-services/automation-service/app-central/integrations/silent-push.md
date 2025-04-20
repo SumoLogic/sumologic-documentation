@@ -24,6 +24,12 @@ The Silent Push integration identifies emerging threats before they launch by de
 * **IP Risk Score** *(Enrichment)* - Get the risk score of IP.
 * **Search Domain** *(Enrichment)* - Search the domain and get the info.
 
+## Configure Silent Push in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * July 15, 2024 - First upload

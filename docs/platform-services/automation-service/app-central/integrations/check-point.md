@@ -38,6 +38,12 @@ Utilize Check Point to gather enrichment data and issue containment actions duri
 
 Network Security
 
+## Configure Check Point in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * February 10, 2020 - First upload

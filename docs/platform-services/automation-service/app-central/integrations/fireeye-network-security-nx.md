@@ -19,6 +19,12 @@ Advanced network security solution for network traffic analysis.
 * **Add Snort Rule** (*Containment*) - Add a new Snort rule.
 * **Add YARA Rule** (*Containment*) - Add a new YARA rule.
 
+## Configure FireEye Network Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 19, 2019 - First upload

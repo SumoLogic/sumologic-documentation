@@ -34,6 +34,12 @@ Enrich incident evidence with threat intelligence data from AlienVault OTX.
 
 Threat Intelligence-Reputation
 
+## Configure AlienVault in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * October 3, 2019 - First upload

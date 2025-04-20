@@ -17,7 +17,11 @@ The Tufin SecureChange platform helps you to automates the process of changing s
 * **Search Application Connections** *(Enrichment)* - Retrieve existing connection.
 * **Get Connections Extended** *(Enrichment)* - Retrieve existing connections, with extended resources information.
 
-## Tufin SecureChange in Automation Service and Cloud SOAR
+## Configure Tufin SecureChange in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

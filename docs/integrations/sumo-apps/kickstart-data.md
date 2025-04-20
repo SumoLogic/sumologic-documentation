@@ -1,19 +1,13 @@
 ---
 id: kickstart-data
 title: Sumo Logic Kickstart Data
-sidebar_label: Sumo Logic Kickstart Data
+sidebar_label: Kickstart Data
 description: The Sumo Logic Kickstart Data app offers real-time insights for monitoring telemetry data from the OpenTelemetry Demo Astronomy application.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-<img src={useBaseUrl('img/integrations/sumo-apps/Sumo-Logic-Kickstart-Data-Icon.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/Sumo-Logic-Kickstart-Data-Icon.png')} alt="Thumbnail icon" width="100"/>
 
 The Sumo Logic Kickstart Data app offers real-time insights for monitoring telemetry data from our OpenTelemetry Demo Astronomy application. Featuring predefined searches and dashboards, this app enhances visibility into application performance and operational metrics.
 
@@ -34,7 +28,7 @@ The Kickstart Data app is pre-installed for all users upon creation of a [new or
 1. Go to **What's Included > Dashboards: View content in Library** to preview the dashboards.
 
 <details>
-<summary>If you do not see the app, follow the below steps.</summary>
+<summary>If you do not see the app, follow these steps (click to expand).</summary>
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 

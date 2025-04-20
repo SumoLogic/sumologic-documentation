@@ -21,6 +21,12 @@ Utilize Sophos Central enrichment data during incident investigations.
 * **Get Locations** (*Enrichment*) - Gather a list of all locations.
 * **Get Events** (*Enrichment*) - Gather Sophos Central events.
 
+## Configure Sophos Central in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * March 6, 2020 - First upload

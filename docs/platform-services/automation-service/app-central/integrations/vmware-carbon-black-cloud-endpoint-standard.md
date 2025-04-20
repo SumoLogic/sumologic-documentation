@@ -28,7 +28,11 @@ VMware Carbon Black Cloud Endpoint Standard Integration allows security operator
 1. Copy the API Credentials (API ID and API Secret Key).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-endpoint-standard/vmware-carbon-black-cloud-endpoint-standard-4.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-endpoint-standard" width="400"/>
 1. Also you will see the ORG KEY from **API Access,** you need to copy it.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-endpoint-standard/vmware-carbon-black-cloud-endpoint-standard-5.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-endpoint-standard" width="700"/>
 
-## VMware Carbon Black Cloud Enterprise EDR in Automation Service and Cloud SOAR
+## Configure VMware Carbon Black Cloud Enterprise EDR in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the VMware Carbon Black Cloud Enterprise EDR integration and click on it. The integration details will appear. Click on the "+" button to add a new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-endpoint-standard/vmware-carbon-black-cloud-endpoint-standard-8.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-endpoint-standard" width="600"/>

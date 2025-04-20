@@ -15,6 +15,12 @@ Query Exana Open DNS for DNS records.
 
 * **Search DNS Records** (*Enrichment*) - Search DNS records for a domain.
 
+## Configure Exana Open DNS in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * November 19, 2018 - First upload

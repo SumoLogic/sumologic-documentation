@@ -21,7 +21,11 @@ Farsight Security DNSDB® is the world’s largest DNS intelligence database tha
 
 Request your API Key from [https://www.farsightsecurity.com/solutions/dnsdb](https://www.farsightsecurity.com/solutions/dnsdb).
 
-## Farsight Security DNSDB in Automation Service and Cloud SOAR
+## Configure Farsight Security DNSDB in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

@@ -32,7 +32,6 @@ Select the documentation link for your deployment:
 | DE         | https://api.de.sumologic.com/docs/#tag/spanAnalytics  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/spanAnalytics  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/spanAnalytics |
-| IN         | https://api.in.sumologic.com/docs/#tag/spanAnalytics  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/spanAnalytics  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/spanAnalytics  |
 | US1        | https://api.sumologic.com/docs/#tag/spanAnalytics     |

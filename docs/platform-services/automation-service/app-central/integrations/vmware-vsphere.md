@@ -37,6 +37,12 @@ The following permissions are required for the integration:
 * For the **HOST**, use the _IP_ or _Domain_ of the vSphere node.
 * The port should be set to 443.
 
+## Configure VMware vSphere in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * August 30, 2019 - First upload
