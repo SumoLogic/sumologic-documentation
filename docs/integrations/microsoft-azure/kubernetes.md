@@ -254,7 +254,7 @@ The **Azure Kubernetes Service - Overview** dashboard provides insights like Aud
 
 ### Administrative Operations
 
-The **Azure Kubernetes Service - Administrative Operations** dashboard provides details like Top 10 Operations That Caused The Most Errors, Distribution by Operation Type (Read, Write and Delete), Distribution by Operations, Recent Write Operations, Recent Delete Operations, Users / Applications by Operation type, Distribution by Status.
+The **Azure Kubernetes Service - Administrative Operations** dashboard provides details like Top 10 Operations That Caused The Most Errors, Distribution by Operation Type (Read, Write, and Delete), Distribution by Operations, Recent Write Operations, Recent Delete Operations, Users / Applications by Operation type, and Distribution by Status.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Administrative-Operations.png')} alt="Azure Kubernetes Service - Administrative Operations" />
 
