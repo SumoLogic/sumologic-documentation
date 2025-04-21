@@ -260,7 +260,7 @@ The **Azure Kubernetes Service - Administrative Operations** dashboard provides 
 
 ### Audit
 
-The **Azure Kubernetes Service - Audit** dashboard provides details about Requests by Location, Failure by Operations, Failure by Stages, Failure by Reason, Distribution by Status Code, Top 10 Failed Resources, Successful Resource Details, Top 10 Users, Failure Trend by User, Failure Details.
+The **Azure Kubernetes Service - Audit** dashboard provides details about the Requests by Location, Failure by Operations, Failure by Stages, Failure by Reason, Distribution by Status Code, Top 10 Failed Resources, Successful Resource Details, Top 10 Users, Failure Trend by User, and Failure Details.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Audit.png')} alt="Azure Kubernetes Service - Audit" />
 
