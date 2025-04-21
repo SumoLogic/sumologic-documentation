@@ -21,23 +21,13 @@ To start your free trial:
 
 ### Activate your account
 
-:::note
 The activation link expires after 3 days. If it expires, you’ll need to complete the sign-up process again.
-:::
 
 1. Open the activation email and click **Activate Now**. (If you do not see it, check your spam and trash folders.)
 1. Fill out the **Activate Your Account** form, then click **Activate**.
 1. Follow the setup guide to install a data collector and start ingesting data.
 
-:::tip
-Get started with Sumo Logic effortlessly using **Kickstart Data**, preloaded sample data and dashboards designed to help you explore and understand the platform’s capabilities. You can immediately dive into our features like log search and alerts prior to setting up your own data collection. Whether you're new to Sumo Logic or evaluating its features, Kickstart Data offers a hands-on way to experience the platform's power. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
-:::
-
-<!--- direct user to Quickstart for next steps... 
-
-Next, you'll be taken to a step-by-step onboarding guide, where you can explore  w/sample data and getting your own data into Sumo  visualize your data via dashboards, run your first log search, set up alerts, install apps, and more.
-
--->
+Once your account is activated, check out the [Quickstart guide](/docs/get-started/quickstart) to begin your Sumo Logic journey. You'll walk through a step-by-step onboarding experience where you can explore preloaded Kickstart Data, try out log search and alerts, visualize data through sample dashboards, install apps, and prepare to ingest your own data—all without any setup required. Whether you're new to Sumo Logic or evaluating its features, this hands-on guide will help you quickly understand the platform's value.
 
 ### Upgrade or continue with Free account
 

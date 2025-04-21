@@ -27,30 +27,19 @@ You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-star
 
 ## Get Started page
 
-Welcome to Sumo! After signing up, be sure to head to **Get Started**, your customized onboarding dashboard / onboarding checklist / guide to next steps.
+Welcome to Sumo! After signing up, be sure to head to **Get Started** page, your personalized onboarding hub that guides you through key actions like sending data, exploring apps, and inviting teammates.
+
+<img src={useBaseUrl('img/get-started/kickstart-welcome-landing.png')} alt="Kickstart Data and onboarding welcome page" style={{border: '1px solid gray'}} width="600" />
 
 This dashboard will give you an instant view of key performance metrics using Kickstart sample data. You can explore how Sumo Logic monitors application health—no setup needed.
 
 ### Getting started with Kickstart Data in your trial
 
-As part of your Sumo Logic trial, Kickstart Data provides preloaded sample data and dashboards, letting you explore the platform immediately—no setup or data ingestion required. This helps you quickly understand Sumo Logic’s value without dealing with firewall or security configurations. Following are some key benefits:
+As part of your trial, Kickstart Data gives you instant access to preloaded sample log data and dashboards—no setup, data ingestion, or firewall configuration required—so you can immediately explore the value of Sumo Logic in a safe sandbox environment. No sensitive or real data is used, and the prebuilt dashboards offer a hands-on way to learn how to monitor applications, analyze trends, and respond to incidents.
 
-* **Immediate insights**. Explore Sumo Logic right away, without initial data setup, to quickly see its value and decide if it’s a fit for you.
-* **Quick setup**. Kickstart Data removes technical hurdles, making onboarding faster and easier.
-* **Guided experience**. Access pre-built dashboards and reports that demonstrate real-world scenarios, helping you make the most of your trial.
-* **Safe exploration**. Evaluate our platform in a secure environment with no exposure of sensitive data.
+The Kickstart sample data you see in the [sample app/dashboards](/docs/integrations/sumo-apps/kickstart-data) are [sourced from cloud-to-cloud data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source).
 
-Kickstart sample data and [app](/docs/integrations/sumo-apps/kickstart-data) are [sourced from cloud-to-cloud data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source). Here's how it works:
-
-1. **Sample dashboards**. When you first log in, you'll see sample data preloaded into Sumo Logic, tailored to your monitoring and troubleshooting use cases, along with log searches and the following dashboards:
-   * **Application reliability**. Metrics like Homepage Load Time, Checkout Errors, and Internal Server Orders.
-   * **Business KPIs**. Revenue Trends, Promo Performance, and Customer Feedback Metrics.
-   * **Security**. Security events and failed sign-in attempts across multiple geographical locations.
-1. **Onboarding checklist**. You will follow a guided checklist that helps you:
-    * Analyze the sample data.
-    * Perform log searches.
-    * Invite team members to join and explore the platform with you.
-1. **Transition to real data**. Kickstart Data is available for 7 days or until you start ingesting real data—whichever comes first. It deactivates automatically at the end of the trial, but can be skipped at any time. At this point, your **Get Started** hub page will convert to **Onboarding Tasks**.
+Once you're ready to work with your own data, follow the in-product prompts to begin ingesting logs via OpenTelemetry, Hosted Collectors, or Installed Collectors. The Kickstart experience will phase out automatically once you start ingesting real data or after 7 days—whichever comes first.
 
 ## Step 1: Get your data into Sumo
 
@@ -58,7 +47,7 @@ The journey of 10,000 logs begins with a single collector. Your data analytics j
 
 ### Set up data collection
 
-Upon first logging in, you'll be asked to select the platform (AWS, Kubernetes, Linux, Windows, macOS) from which you want to collect data. This will install the OpenTelemetry collector and relevant dashboards.
+To set up data collection, select the platform (AWS, Kubernetes, Linux, Windows, macOS) from which you want to collect data. This will install the OpenTelemetry collector and relevant dashboards.
 * For AWS, you'll deploy a single account with a CloudFormation Template, CLI, or Terraform.
 * For Kubernetes, Linux, Windows, or macOS, you'll need to run the provided command in your Terminal or PowerShell.
 
