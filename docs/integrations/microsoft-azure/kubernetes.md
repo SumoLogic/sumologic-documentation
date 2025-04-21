@@ -278,7 +278,7 @@ The **Azure Kubernetes Service - API Server** dashboard provides insights about 
 
 ### Cloud Control Manager
 
-The **Azure Kubernetes Service - Cloud Control Manager** dashboard provides insights about Severity Breakdown, Severity Over Time, Error Message Count, Error Log Stream.
+The **Azure Kubernetes Service - Cloud Control Manager** dashboard provides insights about the Severity Breakdown, Severity Over Time, Error Message Count, and Error Log Stream.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Cloud-Control-Manager.png')} alt="Azure Kubernetes Service - Cloud Control Manager" />
 
