@@ -302,7 +302,7 @@ The **Azure Kubernetes Service - Policy and Recommendations** dashboard provides
 
 ### Scheduler
 
-The **Azure Kubernetes Service - Scheduler** dashboard provides details about Severity Over Time, Severity Breakdown and Error Messages.
+The **Azure Kubernetes Service - Scheduler** dashboard provides details about the Severity Over Time, Severity Breakdown, and Error Messages.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Scheduler.png')} alt="Azure Kubernetes Service - Scheduler" />
 
