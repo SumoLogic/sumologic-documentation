@@ -296,7 +296,7 @@ The **Azure Kubernetes Service - Controller Manager** dashboard provides insight
 
 ### Policy and Recommendations
 
-The **Azure Kubernetes Service - Policy and Recommendations** dashboard provides details like Total Recommendation Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Recent Recommendation Events, Recommendation, Policy etc.
+The **Azure Kubernetes Service - Policy and Recommendations** dashboard provides details like Total Recommendation Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Recent Recommendation Events, Recommendation, and Policy.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Policy-and-Recommendations.png')} alt="Azure Kubernetes Service - Policy and Recommendations" />
 
