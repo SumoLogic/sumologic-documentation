@@ -39,7 +39,7 @@ The AKS - Control Plane app collects logs for the following [Azure Kubernetes Se
 * **kube-apiserver**. The API server exposes the underlying Kubernetes APIs. This component provides the interaction for management tools, such as kubectl or the Kubernetes dashboard.
 * **kube-scheduler**. The Scheduler determines what nodes can run the workload when you create or scale applications and then starts them.
 * **kube-controller-manager** - The Controller Manager oversees a number of smaller controllers that perform actions, such as replicating pods and handling node operations.
-* **cluster-autoscaler** - To keep up with application demands in AKS, you might need to adjust the number of nodes that run your workloads. The cluster autoscaler component watches for pods in your cluster that can't be scheduled because of resource constraints. When the cluster autoscaler detects issues, it scales up the number of nodes in the node pool to meet the application demands. It also regularly checks nodes for a lack of running pods and scales down the number of nodes as needed.
+* **cluster-autoscaler**. The cluster autoscaler component watches for pods in your cluster that can't be scheduled because of resource constraints. When the cluster autoscaler detects issues, it scales up the number of nodes in the node pool to meet the application demands. It also regularly checks nodes for a lack of running pods and scales down the number of nodes as needed.
 
 
 ### Sample log messages
