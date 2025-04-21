@@ -82,11 +82,11 @@ Once your account is activated—whether you signed up via the Sumo Logic websit
 
 You’ll walk through step-by-step instructions to:
 
-* Explore **Kickstart Data**, preloaded with sample log data and dashboards so you can try out features immediately—no setup or ingestion required  
-* Perform log searches, visualize data through dashboards, and test out real-time alerts  
-* Install recommended apps from the App Catalog  
-* Invite teammates and collaborate  
-* Start ingesting your own data when you’re ready  
+* Explore **Kickstart Data**, preloaded with sample log data and dashboards so you can try out features immediately—no setup or ingestion required.
+* Perform log searches, visualize data through dashboards, and test out real-time alerts.
+* Install recommended apps from the App Catalog.
+* Invite teammates and collaborate.
+* Start ingesting your own data when you’re ready.
 
 Whether you’re evaluating the platform or just getting started, this hands-on experience is designed to help you quickly understand the value of Sumo Logic and get up and running with confidence.
 
