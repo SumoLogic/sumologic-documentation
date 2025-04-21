@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-This feature is in Beta. To participate, contact your Sumo Logic account executive or [enroll here](https://forms.gle/LozrrAppM9FM94tS9).
+This feature is in Beta. For more information, contact your Sumo Logic account executive.
 
 Unstructured Logs Support for [Sumo Logic Copilot](/docs/search/copilot), our AI assistant, enables it to understand and provide insights from raw, text-based logs, even if they don't follow a structured format like JSON. This means you can ask questions in plain English and get meaningful results from nearly any log data, without requiring Field Extraction Rules (FERs).
 
@@ -21,46 +21,27 @@ Unstructured Logs Support for [Sumo Logic Copilot](/docs/search/copilot), our AI
 
 Currently, [Copilot works best on structured (JSON) logs](/docs/search/copilot/#compatible-log-formats). With this beta update, Copilot automatically applies parsing logic to unstructured logs, even if no FERs are configured. This allows Copilot to interpret logs from many popular data sources out-of-the-box and enables support for a broader range of log types.
 
-Copilot learns from usage patterns; if a log source is already used in dashboards or commonly queried, it’s more likely to produce accurate, actionable results.
-
 * **Broader coverage**. Copilot now parses and generates insights from unstructured log formats, even without FERs, making it useful for environments that include custom or inconsistent log types.
 * **Improved usability**. Ask questions in natural language. Copilot interprets your intent and suggests relevant searches, even for raw, non-JSON logs.
 * **Performance and reliability**. Response times and suggestion accuracy are consistent with Copilot’s structured log experience.
 * **Security and compliance**. The same strict data handling and privacy standards apply. Unstructured Logs Support builds on Copilot’s secure foundation.
 
-<!---
+<!-- Publish after https://sumologic.atlassian.net/browse/DOCS-832
+
 ### Powered by Intelliparse mode
 
-Behind the scenes, Copilot now uses [Intelliparse Mode](/docs/search/get-started-with-search/build-search/intelliparse) to automatically extract fields from unstructured logs. This new parsing engine discovers and applies parsing logic based on your existing dashboards—allowing Copilot to work with logs that don’t follow a consistent format.
+Copilot now uses [Intelliparse Mode](/docs/search/get-started-with-search/build-search/intelliparse) to extract fields from unstructured logs. This new parsing engine automatically applies parsing logic based on logs already used in your dashboards, allowing Copilot to work with raw logs that don’t follow a consistent format.
 
-You’ll see more meaningful results from raw logs without needing to create Field Extraction Rules (FERs) or define parsing logic manually.
+You’ll get more meaningful results from logs that are already powering visualizations and queries without needing to manually define parsing logic or create Field Extraction Rules (FERs).
 
-Copilot uses a hidden operator called `intelliparse`, which is automatically injected into queries when needed. You won't see it in the UI, but it’s what powers field extraction in unstructured logs.
-
-Example, let’s say you ask Copilot: `Show me the top failed login attempts from nginx logs.`
-
-If your nginx logs are unstructured, Copilot will:
-1. Identify relevant parsers from your dashboards
-2. Use the hidden `intelliparse` operator to apply those parsers
-3. Extract fields like `status`, `username`, or `ip_address`
-4. Return insights based on those parsed fields
--->
+Copilot uses a hidden `intelliparse` operator behind the scenes. It’s injected into relevant queries to extract fields, making unstructured logs easier to work with—no UI changes required.-->
 
 ### Common use cases
 
-* **Keyword-based search**. Search for IP addresses, error codes, or other patterns without needing a predefined schema.  
-* **Error triage**. Quickly identify the most common error messages in raw logs to speed up troubleshooting.  
-* **Threat hunting**. Detect suspicious activity, failed logins, or unusual patterns in plain-text logs.
-* **Smarter prioritization**. Frequently used data sources (such as those in dashboards or frequent queries) are prioritized for deeper insights.
-
-## Tips and best practices
-
-* Start with common natural language queries, like:
-  - “Show failed login attempts for the past 24 hours”
-  - “Find logs with IP 192.0.2.0”
-  - “What are the top 5 errors from nginx logs today?”
-* Use dashboards to monitor your log sources. Copilot performs better when logs are part of existing queries and visualizations.
-* Logs with consistent formats, clear timestamps, and standard separators (like commas or tabs) yield better results.
+* **General log exploration**. Ask questions about logs used in your dashboards—even if they don’t have predefined structure.
+* **Error triage**. Identify frequent errors in raw logs that already support visualizations in your environment.
+* **Security insights**. Surface signs of failed logins or anomalies from frequently queried log sources.
+* **Smarter prioritization**. Copilot focuses on unstructured logs that are already actively used, helping maximize relevance and value.
 
 ## Related updates
 
@@ -72,29 +53,13 @@ These recent Copilot enhancements make it even easier to work with unstructured 
 
 ## FAQ
 
-**Does this replace Field Extraction Rules (FERs)?**<br/>
-No. Copilot works with or without FERs. While FERs are useful for structured analysis, they're no longer required for Copilot to interpret unstructured logs.
-
 **Will Copilot interpret all my logs?**<br/>
 Copilot prioritizes data sources that are already used in dashboards or frequent queries. This improves the relevance of insights and helps focus on high-value logs.
 
 **How is this different from structured log support?**<br/>  
 Structured logs have predefined fields, allowing Copilot to map queries directly. For unstructured logs, Copilot uses AI and parsing techniques to infer structure on the fly.
 
-<!--
+<!-- Publish after https://sumologic.atlassian.net/browse/DOCS-832
 **How is Copilot able to understand unstructured logs?**<br/>
 Copilot uses a new parsing engine called [Intelliparse mode](/docs/search/get-started-with-search/build-search/intelliparse). It automatically extracts fields from raw logs using parsers discovered from your dashboards, so you don’t have to define parsing logic or FERs manually.
-https://sumologic.atlassian.net/browse/DOCS-752
 -->
-
-## Feedback and support
-
-We’re actively looking for customers to participate in the beta and provide feedback. Ideal participants:
-
-* Use dashboards for monitoring across most of their data sources  
-* Have some hands-on experience with Copilot
-* Are willing to provide detailed feedback during the beta  
-
-👉 [Click here to enroll](https://forms.gle/LozrrAppM9FM94tS9)
-
-To report issues or share feedback, reach out through your Sumo Logic account team.
