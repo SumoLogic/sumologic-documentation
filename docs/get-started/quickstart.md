@@ -144,7 +144,7 @@ From the Sumo Logic Home page, click the **Learn** tab to access:
 Don't just learn it - master it! Get recognized as a Sumo Logic expert by completing the courses in the [Sumo Logic Certification Program](/docs/get-started/training-certification-faq/#what-certifications-does-sumo-logic-offer). We’re happy to help you get certified right from the product.
 
 
-## More Resources
+## Additional information
 
 :::sumo Need help?
 Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).
