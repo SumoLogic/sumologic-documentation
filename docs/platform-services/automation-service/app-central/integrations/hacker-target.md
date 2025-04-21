@@ -24,6 +24,12 @@ Utilize Hacker Target's investigational tools during an incident.
 * **Whois Lookup** (*Enrichment*) - Retrieve Whois information for the specified IP address.
 * **Page Links** (*Enrichment*) - Parse the html of a website and extract links from the page.
 
+## Configure Hacker Target in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * December 19, 2019 - First upload

@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/censys-v2.png')} alt="censys" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/censys.png')} alt="censys" width="100"/>
 
 ***Version: 2.2  
 Updated: Jul 07, 2023***
@@ -19,6 +19,10 @@ Censys reduces your Internet attack surface by continually discovering unknown a
 * **View Certificate** (*Enrichment*) - Returns a list of hosts presenting the given certificate.
 
 ## Configure Censys V2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

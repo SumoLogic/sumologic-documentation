@@ -20,9 +20,13 @@ ServiceNow V2 SaaS is for technical management support - create, update, and gat
 * **Search Tickets** *(Enrichment)* - Retrieve a record from a table.
 * **ServiceNow Incidents Daemon** *(Daemon)* - Automatically retrieves new tickets.
 
-## ServiceNow V2 in Automation Service and Cloud SOAR
+## Configure ServiceNow V2 in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).2.png')} 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation). 
 1. After the list of the integrations appears, search for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-3.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/> 
 1. Populate all the required fields (\*):

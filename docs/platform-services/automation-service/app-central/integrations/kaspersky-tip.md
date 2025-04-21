@@ -15,6 +15,12 @@ Quickly determine whether an investigated object is dangerous or clean by reques
 
 * **Search Intelligence** (*Enrichment*) - Search for incident indicators from Kaspersky threat intelligence feeds.
 
+## Configure Kaspersky TIP in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * July 10, 2019 - First upload

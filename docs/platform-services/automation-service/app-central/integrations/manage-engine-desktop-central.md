@@ -25,6 +25,12 @@ Query data an utilize actions in Desktop Central unified endpoint management (UE
 * **Initiation Request** *(Containment)* - Get the device code as input for Polling Request action.
 * **Polling Request** *(Containment)* - Get the Access Token.
 
+## Configure Manage Engine Desktop Central in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * July 8, 2021 - First upload

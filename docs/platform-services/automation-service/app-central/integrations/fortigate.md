@@ -32,6 +32,12 @@ Work with Addresses, Policies and Services in Fortinet FortiGate.
 * **Update Address Group** (*Containment*) - Update an address group.
 * **Update Policy** (*Containment*) - Update a policy.
 
+## Configure FortiGate in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 24, 2019 - First upload

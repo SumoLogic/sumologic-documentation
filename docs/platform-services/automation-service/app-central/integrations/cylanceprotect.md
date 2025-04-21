@@ -51,6 +51,12 @@ All Other Regions: *https://protectapi-{region-code}.cylance.com/*
 
 * [Cylance Protect](https://github.com/jpadilla/pyjwt/blob/master/LICENSE)
 
+## Configure CylanceProtect in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * February 6, 2019 - First upload

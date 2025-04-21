@@ -26,7 +26,11 @@ Cisco Webex is a solution for video conferencing, online meetings, screen share,
 * **Send Message** (*Notification*) - Send a message.
 * **Update Room** (*Containment*) - Update a room.
 
-## Cisco Webex in Automation Service and Cloud SOAR
+## Configure Cisco Webex in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

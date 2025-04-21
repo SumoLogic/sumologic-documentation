@@ -30,7 +30,11 @@ To get access key and secret access key, you will need to follow these steps:
 1. Click on the **Create New Access Key** button.
 1. Your new access key and secret access key will be displayed on the screen. Make sure to copy and save them in a secure location as you will not be able to access them again.
 
-## Amazon Athena in Automation Service and Cloud SOAR
+## Configure Amazon Athena in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.
