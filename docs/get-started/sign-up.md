@@ -117,7 +117,7 @@ With your trial, you’ll have full access to our Enterprise plan to explore all
 
 </details>
 
-For information on plan types and pricing, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Manage Subscription](/docs/manage/manage-subscription).
+For information on plan types and pricing, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Manage Plan](/docs/manage/manage-subscription).
 
 #### Essentials plans
 
