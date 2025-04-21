@@ -3035,7 +3035,7 @@ integrations: [
         'security/threat-intelligence/threat-indicators-in-cloud-siem',
         'security/threat-intelligence/upload-formats',
       ],
-    },
+    },  
   ],
   api: [
     {
