@@ -343,7 +343,7 @@ These alerts are metric based and will work for all Key Vaults.
 |:--|:--|:--|:--|
 | `Azure Kubernetes Service - CPU Usage Percentage`  | This alert is triggered  when CPU usage percentage is greater than 95%. Also, a warning type alert will be triggered when CPU usage percentage is greater than 85%. | percentage >= 95   | percentage < 95  |
 | `Azure Kubernetes Service - Kube Node(s) Unreachable` | This alert is triggered when kube node(s) unreachable count greater than 1. | Count >= 1 | Count < 1  |
-| `Azure Kubernetes Service - Memory Working Set Percentage`                                                                                      | This alert triggers when memory working set percentage greater than 100.                                                                                                 | percentage >= 100 | percentage < 100  |
+| `Azure Kubernetes Service - Memory Working Set Percentage` | This alert is triggered when memory working set is greater than 100%. | percentage >= 100 | percentage < 100  |
 | `Azure Kubernetes Service - Node Disk Usage %` | This alert is triggered when node disk usage is greater than 80% . Also, a warning alert will be triggered when  node disk usage is greater than 70%. | percentage >= 80  | percentage < 80   |
 
 
