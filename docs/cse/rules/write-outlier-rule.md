@@ -112,7 +112,7 @@ The settings in the **If Triggered** section are divided into two subsections, o
 1. **for the entity(ies)**. Select one or more record fields for which you want baselines built. Selecting multiple fields will build a distinct baseline for a combination of entities.
 1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The minimum is 4, and the maximum is 90. The default is 90 days.
    :::note
-   If the [retention period for logs](/docs/manage/partitions/manage-indexes-variable-retention/) is less than the baseline retention period, then the baseline will be created based on the logs retention time only.
+   If the [retention period for logs](//docs/cse/administration/cse-data-retention/) is less than the baseline retention period, then the baseline will be created based on the logs retention time only.
    :::
 
 **Outlier Model Configuration**

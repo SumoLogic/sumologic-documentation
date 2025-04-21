@@ -110,7 +110,7 @@ The settings in the **If Triggered** section determine what records the rule wil
    :::
 1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The minimum is 1, and the maximum is 90. The default is 90 days.
    :::note
-   If the [retention period for logs](/docs/manage/partitions/manage-indexes-variable-retention/) is less than the baseline retention period, then the baseline will be created based on the logs retention time only.
+   If the [retention period for logs](/docs/cse/administration/cse-data-retention/) is less than the baseline retention period, then the baseline will be created based on the logs retention time only.
    :::
 
 ### Configure "Then Create a Signal" settings
