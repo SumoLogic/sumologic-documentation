@@ -27,6 +27,12 @@ AWS Private CA enables creation of private certificate authority (CA) hierarchie
 
 * [AWS Private Certificate Authority](https://github.com/boto/boto3/blob/develop/LICENSE)
 
+## Configure AWS Private Certificate Authority in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
  
 * March 8, 2024 - First upload

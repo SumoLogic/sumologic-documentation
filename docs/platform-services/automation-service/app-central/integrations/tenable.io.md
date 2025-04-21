@@ -31,6 +31,12 @@ Connect with Tenable.io to execute scans, get scan results and perform administr
 * **Target Info** (*Enrichment*) - Get basic information on a target.
 * **Target Vulnerabilities** (*Enrichment*) - Get vulnerability information for a target.
 
+## Configure Tenable.io in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * November 21, 2018 - First upload

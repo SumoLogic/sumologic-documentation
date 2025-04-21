@@ -18,6 +18,12 @@ Collect events from Qualys EDR.
 * **Count Events** (*Enrichment*) - Get number of events logged within a date range.
 * **Events Daemon Qualys** (*Daemon*) - Fetch events from Qualys EDR.
 
+## Configure Qualys EDR in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * August 17, 2021 - First upload

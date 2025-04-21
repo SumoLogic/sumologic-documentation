@@ -18,7 +18,11 @@ The Snyk is a platform allowing you to scan, prioritize, and fix security vulner
 * **List Projects** (*Enrichment*) - List all projects for an organization.
 * **List Latest Issues** (*Enrichment*) - Get list of latest issues.
 
-## Snyk in Automation Service and Cloud SOAR
+## Configure Snyk in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

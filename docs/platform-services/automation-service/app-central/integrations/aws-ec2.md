@@ -46,6 +46,12 @@ Using the integration with EC2, you can enrich incidents with specific EC2 data,
 
 * [AWS EC2](https://github.com/boto/boto3/blob/develop/LICENSE)
 
+## Configure AWS EC2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * October 9, 2019 - First upload
