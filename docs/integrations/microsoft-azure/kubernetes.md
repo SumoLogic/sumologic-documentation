@@ -339,7 +339,7 @@ The **Azure Kubernetes Service - Node Memory** dashboard provides insights about
 ### Azure Key Vaults alerts
 These alerts are metric based and will work for all Key Vaults.
 
-| Alert Name                                                                                                                                      | Alert Description and Conditions                                                                                                                                         | Alert Condition   | Recover Condition |
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
 | `Azure Kubernetes Service - CPU Usage Percentage`                                                                                               | This alert is triggered with critical type when cpu usage percentage when cpu usage percentage greater than 95% and triggered with warning type when greater than 85%.   | percentage < 95   | percentage >= 95  |
 | `Azure Kubernetes Service - Kube Node(s) Unreachable`                                                                                           | This alert is triggered when kube node(s) unreachable count greater than 1.                                                                                              | Count >= 1        | Count < 1         |
