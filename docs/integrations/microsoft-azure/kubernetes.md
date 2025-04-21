@@ -272,7 +272,7 @@ The **Azure Kubernetes Service - Audit Admin** dashboard details about the Reque
 
 ### API Server
 
-The **Azure Kubernetes Service - API Server** dashboard provides insights about Failed Urls, Total Requests by Url, Failed Methods, Total Requests by Method, Requests by Severity, Errors by Severity and Error Log Events.
+The **Azure Kubernetes Service - API Server** dashboard provides insights about the Failed Urls, Total Requests by Url, Failed Methods, Total Requests by Method, Requests by Severity, Errors by Severity, and Error Log Events.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-API-Server.png')} alt="Azure Kubernetes Service - API Server" />
 
