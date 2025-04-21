@@ -37,7 +37,7 @@ To find threats using IP addresses, use the `threatip` search operator. This ope
 
 For more information, see [threatip Search Operator](/docs/search/search-query-language/search-operators/threatip/).
 
-<!--
+<!-- Add per DOCS-815:
 ## threatlookup operator
 
 You can use the `threatlookup` search operator to find matches to indicators in any source in the Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) datastore. 
