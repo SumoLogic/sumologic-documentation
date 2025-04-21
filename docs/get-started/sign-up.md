@@ -76,7 +76,7 @@ For example, for 10GB/Day:
 - If the billing cycle is 31 days, the Reserved Capacity is 310GB.
 
 
-## After activation: what to expect
+## What to expect after activation
 
 Once your account is activated—whether you signed up via the Sumo Logic website or AWS Marketplace—you’ll be guided through a personalized onboarding experience. Head to the [Quickstart guide](/docs/get-started/quickstart) to begin your Sumo Logic journey.
 
