@@ -248,7 +248,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Overview
 
-The **Azure Kubernetes Service - Overview** dashboard provides insights like Audit Requests by Location, Active/Total Clusters, Clusters with API Server Errors, Clusters with Autoscaler Errors, Clusters with Kube Controller Manager Errors, Clusters with Scheduler Errors, Clusters with Cloud Control Manager Errors, Nodes Across Cluster and Critical Nodes Across Cluster.
+The **Azure Kubernetes Service - Overview** dashboard provides insights like Audit Requests by Location, Active/Total Clusters, Clusters with API Server Errors, Clusters with Autoscaler Errors, Clusters with Kube Controller Manager Errors, Clusters with Scheduler Errors, Clusters with Cloud Control Manager Errors, Nodes Across Cluster, and Critical Nodes Across Cluster.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Overview.png')} alt="Azure Kubernetes Service - Overview" />
 
