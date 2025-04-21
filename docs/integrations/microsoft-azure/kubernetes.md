@@ -34,12 +34,12 @@ The following are the minimum supported requirements for this application:
 
 The AKS - Control Plane app collects logs for the following [Azure Kubernetes Services](https://azure.microsoft.com/en-us/services/kubernetes-service/):
 
-* **kube-audit** - Contains all Kubernetes API Server audit logs including events with the get and list verbs. These events are useful for monitoring all of the interactions with the Kubernetes API.* **kube-audit** - Contains all Kubernetes API Server audit logs including events with the get and list verbs. These events are useful for monitoring all of the interactions with the Kubernetes API.
-* **kube-audit-admin** - Contains Kubernetes API Server audit logs excluding events with the get and list verbs. These events are useful for monitoring resource modification requests made to the Kubernetes API.
-* **kube-apiserver** - The API server exposes the underlying Kubernetes APIs. This component provides the interaction for management tools, such as kubectl or the Kubernetes dashboard.
-* **kube-scheduler** - The Scheduler determines what nodes can run the workload when you create or scale applications and then starts them.
-* **kube-controller-manager** - The Controller Manager oversees a number of smaller controllers that perform actions, such as replicating pods and handling node operations.
-* **cluster-autoscaler** - To keep up with application demands in AKS, you might need to adjust the number of nodes that run your workloads. The cluster autoscaler component watches for pods in your cluster that can't be scheduled because of resource constraints. When the cluster autoscaler detects issues, it scales up the number of nodes in the node pool to meet the application demands. It also regularly checks nodes for a lack of running pods and scales down the number of nodes as needed.
+* **kube-audit**. Contains all Kubernetes API Server audit logs including the events with get and list verbs. These events are useful for monitoring all of the interactions with the Kubernetes API.
+* **kube-audit-admin**. Contains Kubernetes API Server audit logs excluding events with the get and list verbs. These events are useful for monitoring the resource modification requests made to the Kubernetes API.
+* **kube-apiserver**. The API server exposes the underlying Kubernetes APIs. This component provides the interaction for management tools, such as kubectl or the Kubernetes dashboard.
+* **kube-scheduler**. The Scheduler determines what nodes can run the workload when you create or scale applications and then starts them.
+* **kube-controller-manager**. The Controller Manager oversees a number of smaller controllers that perform actions, such as replicating pods and handling node operations.
+* **cluster-autoscaler**. The cluster autoscaler component watches for pods in your cluster that can't be scheduled because of resource constraints. When the cluster autoscaler detects issues, it scales up the number of nodes in the node pool to meet the application demands. It also regularly checks nodes for a lack of running pods and scales down the number of nodes as needed.
 
 
 ### Sample log messages
@@ -209,9 +209,9 @@ Sumo Logic Metrics source is currently in Beta, to participate, contact your Sum
 In the Sumo Logic Azure Metrics source configuration,
 
 - Tag the location field in the source with correct Azure resource location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
-- Configure namespaces as `Microsoft.ContainerService/managedClusters`, `microsoft.kubernetes/connectedClusters`, `microsoft.kubernetesconfiguration/extensions`, `microsoft.hybridcontainerservice/provisionedClusters`. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-kubernetes-service-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
+- Configure the namespaces as `Microsoft.ContainerService/managedClusters`, `microsoft.kubernetes/connectedClusters`, `microsoft.kubernetesconfiguration/extensions`, and `microsoft.hybridcontainerservice/provisionedClusters`. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-kubernetes-service-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
 
-### Collecting logs collection for the Azure Kubernetes Cluster  
+### Collecting logs for the Azure Kubernetes Cluster  
 
 This section walks you through the process of configuring a pipeline to send logs from Azure Monitor to Sumo Logic.
 
@@ -248,67 +248,67 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Overview
 
-The **Azure Kubernetes Service - Overview** dashboard provides insights like Audit Requests by Location, Active/Total Clusters, Clusters with API Server Errors, Clusters with Autoscaler Errors, Clusters with Kube Controller Manager Errors, Clusters with Scheduler Errors, Clusters with Cloud Control Manager Errors, Nodes Across Cluster and Critical Nodes Across Cluster.
+The **Azure Kubernetes Service - Overview** dashboard provides insights like Audit Requests by Location, Active/Total Clusters, Clusters with API Server Errors, Clusters with Autoscaler Errors, Clusters with Kube Controller Manager Errors, Clusters with Scheduler Errors, Clusters with Cloud Control Manager Errors, Nodes Across Cluster, and Critical Nodes Across Cluster.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Overview.png')} alt="Azure Kubernetes Service - Overview" />
 
 ### Administrative Operations
 
-The **Azure Kubernetes Service - Administrative Operations** dashboard provides details like Top 10 Operations That Caused The Most Errors, Distribution by Operation Type (Read, Write and Delete), Distribution by Operations, Recent Write Operations, Recent Delete Operations, Users / Applications by Operation type, Distribution by Status.
+The **Azure Kubernetes Service - Administrative Operations** dashboard provides details like Top 10 Operations That Caused The Most Errors, Distribution by Operation Type (Read, Write, and Delete), Distribution by Operations, Recent Write Operations, Recent Delete Operations, Users / Applications by Operation type, and Distribution by Status.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Administrative-Operations.png')} alt="Azure Kubernetes Service - Administrative Operations" />
 
 ### Audit
 
-The **Azure Kubernetes Service - Audit** dashboard provides details about Requests by Location, Failure by Operations, Failure by Stages, Failure by Reason, Distribution by Status Code, Top 10 Failed Resources, Successful Resource Details, Top 10 Users, Failure Trend by User, Failure Details.
+The **Azure Kubernetes Service - Audit** dashboard provides details about the Requests by Location, Failure by Operations, Failure by Stages, Failure by Reason, Distribution by Status Code, Top 10 Failed Resources, Successful Resource Details, Top 10 Users, Failure Trend by User, and Failure Details.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Audit.png')} alt="Azure Kubernetes Service - Audit" />
 
 ### Audit Admin
 
-The **Azure Kubernetes Service - Audit Admin** dashboard details about Requests by Location, Failure by Operations, Failure by Stages, Failure by Reason, Distribution by Status Code, Top 10 Failed Resources, Successful Resource Details, Top 10 Users, Failure Trend by User, Failure Details.
+The **Azure Kubernetes Service - Audit Admin** dashboard details about the Requests by Location, Failure by Operations, Failure by Stages, Failure by Reason, Distribution by Status Code, Top 10 Failed Resources, Successful Resource Details, Top 10 Users, Failure Trend by User, and Failure Details.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Audit-Admin.png')} alt="Azure Kubernetes Service - Audit Admin" />
 
 ### API Server
 
-The **Azure Kubernetes Service - API Server** dashboard provides insights about Failed Urls, Total Requests by Url, Failed Methods, Total Requests by Method, Requests by Severity, Errors by Severity and Error Log Events.
+The **Azure Kubernetes Service - API Server** dashboard provides insights about the Failed Urls, Total Requests by Url, Failed Methods, Total Requests by Method, Requests by Severity, Errors by Severity, and Error Log Events.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-API-Server.png')} alt="Azure Kubernetes Service - API Server" />
 
 ### Cloud Control Manager
 
-The **Azure Kubernetes Service - Cloud Control Manager** dashboard provides insights about Severity Breakdown, Severity Over Time, Error Message Count, Error Log Stream.
+The **Azure Kubernetes Service - Cloud Control Manager** dashboard provides insights about the Severity Breakdown, Severity Over Time, Error Message Count, and Error Log Stream.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Cloud-Control-Manager.png')} alt="Azure Kubernetes Service - Cloud Control Manager" />
 
 ### Cluster Autoscaler
 
-The **Azure Kubernetes Service - Cluster Autoscaler** dashboard provides insights about Severity Breakdown, Severity Over Time, Error Message Count, Error Log Stream.
+The **Azure Kubernetes Service - Cluster Autoscaler** dashboard provides insights about the Severity Breakdown, Severity Over Time, Error Message Count, and Error Log Stream.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Cluster-Autoscaler.png')} alt="Azure Kubernetes Service - Cluster Autoscaler" />
 
 ### Controller Manager
 
-The **Azure Kubernetes Service - Controller Manager** dashboard provides insights about Severity Breakdown, Severity Over Time, Error Message Count, Error Log Stream.
+The **Azure Kubernetes Service - Controller Manager** dashboard provides insights about the Severity Breakdown, Severity Over Time, Error Message Count, and Error Log Stream.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Controller-Manager.png')} alt="Azure Kubernetes Service - Controller Manager" />
 
 ### Policy and Recommendations
 
-The **Azure Kubernetes Service - Policy and Recommendations** dashboard provides details like Total Recommendation Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Recent Recommendation Events, Recommendation, Policy etc.
+The **Azure Kubernetes Service - Policy and Recommendations** dashboard provides details like Total Recommendation Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Recent Recommendation Events, Recommendation, and Policy.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Policy-and-Recommendations.png')} alt="Azure Kubernetes Service - Policy and Recommendations" />
 
 ### Scheduler
 
-The **Azure Kubernetes Service - Scheduler** dashboard provides details about Severity Over Time, Severity Breakdown and Error Messages.
+The **Azure Kubernetes Service - Scheduler** dashboard provides details about the Severity Over Time, Severity Breakdown, and Error Messages.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Scheduler.png')} alt="Azure Kubernetes Service - Scheduler" />
 
 ### Apiserver
 
-The **Azure Kubernetes Service - Apiserver** dashboard provides insights about Average API Server CPU Usage (%), Average API Server Memory Usage (%), Average Inflight Requests Count, API Server CPU Usage (%), API Server Memory Usage (%) and Average Inflight Requests.
+The **Azure Kubernetes Service - Apiserver** dashboard provides insights about the Average API Server CPU Usage (%), Average API Server Memory Usage (%), Average Inflight Requests Count, API Server CPU Usage (%), API Server Memory Usage (%), and Average Inflight Requests.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Apiserver.png')} alt="Azure Kubernetes Service - Apiserver" />
 
@@ -339,12 +339,12 @@ The **Azure Kubernetes Service - Node Memory** dashboard provides insights about
 ### Azure Key Vaults alerts
 These alerts are metric based and will work for all Key Vaults.
 
-| Alert Name                                                                                                                                      | Alert Description and Conditions                                                                                                                                         | Alert Condition   | Recover Condition |
-|:------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------|:------------------|
-| `Azure Kubernetes Service - High CPU Usage`                                                                                               | This alert is triggered with critical type when cpu usage percentage when cpu usage percentage greater than 95% and triggered with warning type when greater than 85%.   | percentage < 95   | percentage >= 95  |
-| `Azure Kubernetes Service - Unreachable Kube Node(s)`                                                                                           | This alert is triggered when kube node(s) unreachable count greater than 1.                                                                                              | Count >= 1        | Count < 1         |
-| `Azure Kubernetes Service - High Memory Working Set`                                                                                      | This alert triggers when memory working set percentage greater than 100.                                                                                                 | percentage >= 100 | percentage < 100  |
-| `Azure Kubernetes Service - High Node Disk Usage`                                                                                                  | This alert is triggered with critical type when node disk usage % is greater than 80% and trigger with type warning when greater than 70%.                               | percentage >= 80  | percentage < 80   |
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Kubernetes Service - High CPU Usage`  | This alert is triggered  when CPU usage percentage is greater than 95%. Also, a warning type alert will be triggered when CPU usage percentage is greater than 85%. | percentage >= 95   | percentage < 95  |
+| `Azure Kubernetes Service - Unreachable Kube Node(s)` | This alert is triggered when kube node(s) unreachable count greater than 1. | Count >= 1 | Count < 1  |
+| `Azure Kubernetes Service - High Memory Working Set` | This alert is triggered when memory working set is greater than 100%. | percentage >= 100 | percentage < 100  |
+| `Azure Kubernetes Service - High Node Disk Usage` | This alert is triggered when node disk usage is greater than 80% . Also, a warning alert will be triggered when  node disk usage is greater than 70%. | percentage >= 80  | percentage < 80   |
 
 
 ## Troubleshooting
