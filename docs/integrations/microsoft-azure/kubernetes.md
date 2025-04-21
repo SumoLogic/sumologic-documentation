@@ -290,7 +290,7 @@ The **Azure Kubernetes Service - Cluster Autoscaler** dashboard provides insight
 
 ### Controller Manager
 
-The **Azure Kubernetes Service - Controller Manager** dashboard provides insights about Severity Breakdown, Severity Over Time, Error Message Count, Error Log Stream.
+The **Azure Kubernetes Service - Controller Manager** dashboard provides insights about the Severity Breakdown, Severity Over Time, Error Message Count, and Error Log Stream.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Controller-Manager.png')} alt="Azure Kubernetes Service - Controller Manager" />
 
