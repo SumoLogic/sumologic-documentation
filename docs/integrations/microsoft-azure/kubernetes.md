@@ -35,7 +35,7 @@ The following are the minimum supported requirements for this application:
 The AKS - Control Plane app collects logs for the following [Azure Kubernetes Services](https://azure.microsoft.com/en-us/services/kubernetes-service/):
 
 * **kube-audit**. Contains all Kubernetes API Server audit logs including the events with get and list verbs. These events are useful for monitoring all of the interactions with the Kubernetes API.
-* **kube-audit-admin** - Contains Kubernetes API Server audit logs excluding events with the get and list verbs. These events are useful for monitoring resource modification requests made to the Kubernetes API.
+* **kube-audit-admin**. Contains Kubernetes API Server audit logs excluding events with the get and list verbs. These events are useful for monitoring the resource modification requests made to the Kubernetes API.
 * **kube-apiserver**. The API server exposes the underlying Kubernetes APIs. This component provides the interaction for management tools, such as kubectl or the Kubernetes dashboard.
 * **kube-scheduler** - The Scheduler determines what nodes can run the workload when you create or scale applications and then starts them.
 * **kube-controller-manager** - The Controller Manager oversees a number of smaller controllers that perform actions, such as replicating pods and handling node operations.
