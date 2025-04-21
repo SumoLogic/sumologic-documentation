@@ -308,7 +308,7 @@ The **Azure Kubernetes Service - Scheduler** dashboard provides details about th
 
 ### Apiserver
 
-The **Azure Kubernetes Service - Apiserver** dashboard provides insights about Average API Server CPU Usage (%), Average API Server Memory Usage (%), Average Inflight Requests Count, API Server CPU Usage (%), API Server Memory Usage (%) and Average Inflight Requests.
+The **Azure Kubernetes Service - Apiserver** dashboard provides insights about the Average API Server CPU Usage (%), Average API Server Memory Usage (%), Average Inflight Requests Count, API Server CPU Usage (%), API Server Memory Usage (%), and Average Inflight Requests.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Apiserver.png')} alt="Azure Kubernetes Service - Apiserver" />
 
