@@ -156,3 +156,14 @@ The **Azure VM - Temp Disk** dashboard provides details on the operational activ
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
+
+### Azure Virtual Machine alerts
+These alerts are metric based and will work for all Virtual Machine.
+
+| Alert Name                                                                                        | Alert Description and Conditions                                                                             | Alert Condition  | Recover Condition |
+|:--------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------|:-----------------|:------------------|
+| `Azure Virtual Machine - Available Memory Monitor`                                                | This alert is triggered when memory drops under 1GB are detected for any VM.                                 | Count < 1        | Count >= 1        |
+| `Azure Virtual Machine - CPU Usage Percentage Monitor`                                            | This alert is triggered when CPU usage spikes above 80% are detected for any VM.                             | Count >= 80      | Count < 80        |
+| `Azure Virtual Machine - Availabilty Monitor`                                                     | This alert is triggered when VM Availability drops under 100% are detected for any VM.                       | Count < 1        | Count = 1         |
+| `Azure Virtual Machine - Data Disk IOPs Consumed Monitor`                                         | This alert is triggered when Data Disk IOPs consumption percentage spikes above 95% are detected for any VM. | Count > 95       | Count =< 95       |
+| `Azure Virtual Machine - OS Disk IOPs Consumed Monitor`                                           | This alert is triggered when OS Disk IOPs consumption percentage spikes above 95% are detected for any VM.   | Count > 95       | Count =< 95       |
