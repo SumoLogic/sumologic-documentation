@@ -50,7 +50,7 @@ tenant_name=* namespace=Microsoft.Compute/virtualMachines resource_name=*
 ### Configure metrics collection
 
 :::note
-Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
+The Sumo Logic metrics source for Azure is currently in Beta. To participate, contact your Sumo Logic account executive.
 :::
 
 1. To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
