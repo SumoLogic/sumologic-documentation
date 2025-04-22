@@ -1,5 +1,5 @@
 ---
-id: azure-kubernetes-service
+id: kubernetes
 title: Azure Kubernetes Service
 sidebar_label: Azure Kubernetes Service
 description: The Sumo Logic app for Azure Kubernetes Service (AKS) provides visibility into the AKS with operational insights into the Audit, API server, Scheduler, Cloud Control Manager, Kube Control Manager, Cluster Autoscalar, and worker nodes.
