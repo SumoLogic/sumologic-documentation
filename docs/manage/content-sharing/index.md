@@ -52,9 +52,6 @@ To share content from the left navigation bar or the library:
     <img src={useBaseUrl('img/content-sharing/unsaved-search.png')} alt="Unsaved search" style={{border: '1px solid gray'}} width="700"/>
 1. Optional. If you are sharing with a large role, or a user who already expects access to this search, you can turn off **Notify recipients by email**. If you do want to send an email notification, we recommend that you include a note in the email for the recipients to indicate what to do with their new content and leave the option enabled.
 1. Choose the level of access from view, edit, or manage. For details on permission levels, see [Available permission levels](#available-permission-levels).
-   :::note
-   App content can only be shared with view access.
-   :::
 1. Optional. Choose **Advanced Access** to further refine access to the content. For details on these options, see [Available permission levels](#available-permission-levels).
 
     <img src={useBaseUrl('img/content-sharing/PermissionsShare.png')} alt="Permissions share" style={{border: '1px solid gray'}} width="700"/>
@@ -72,6 +69,10 @@ import UiElements from '../../reuse/ui-elements.md';
 You can share your content with specific users or roles. As a best practice we recommend sharing at the search or dashboard level, or if you want to share a folder, share a subfolder. If all contents of the folder are shared, you can’t exclude a particular content item in a folder as private content.
 
 By default each permission level allows the user to grant that level of permission to another user. By default we assume that if a user has view access, for example, that they would be capable of deciding who should also have view access. If you have content where this is not the case, you can restrict their rights to allow others to have view, edit, or manage access.
+
+   :::note
+   App content can only be shared with view access. Edit and manage access is not allowed for installed apps.
+   :::
 
 Consider carefully what level of permissions users and roles need with
 your content:
