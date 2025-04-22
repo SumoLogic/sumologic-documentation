@@ -22,11 +22,7 @@ The following are the minimum supported requirements for this application:
   </tr>
   <tr>
    <td>Kubernetes </td>
-   <td>1.10 and later </td>
-  </tr>
-  <tr>
-   <td>AKS   </td>
-   <td>1.12.8   </td>
+   <td>1.30.10 and later </td>
   </tr>
 </table>
 
