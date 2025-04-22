@@ -186,7 +186,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Sumo Collection monitors
 
-| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
 | `C2C Sources with THIRD-PARTY-CONFIG Errors` | This alert is triggered when Cloud-to-Cloud (C2C) sources encounter THIRD-PARTY-CONFIG errors, causing potential issues in the data ingestion process. | Critical | Count > 0 |
 
