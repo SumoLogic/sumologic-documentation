@@ -78,7 +78,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Diagnostic logs
 
-1. To set up the Azure Event Hubs source in Sumo Logic, refer tothe  [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+1. To set up the Azure Event Hubs source in Sumo Logic, refer to the  [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform the steps below for each Azure Virtual Machine namespace that you want to monitor.
    1. Choose `Stream to an event hub` as the destination.
    1. Select `allLogs`.
