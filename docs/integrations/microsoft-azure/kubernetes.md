@@ -397,10 +397,3 @@ These alerts are metric based and will work for all Key Vaults.
 | `Azure Kubernetes Service - Unreachable Kube Node(s)` | This alert is triggered when kube node(s) unreachable count greater than 1. | Count >= 1 | Count < 1  |
 | `Azure Kubernetes Service - High Memory Working Set` | This alert is triggered when memory working set is greater than 100%. | percentage >= 100 | percentage < 100  |
 | `Azure Kubernetes Service - High Node Disk Usage` | This alert is triggered when node disk usage is greater than 80% . Also, a warning alert will be triggered when  node disk usage is greater than 70%. | percentage >= 80  | percentage < 80   |
-
-
-## Troubleshooting
-
-### HTTP Logs and Metrics Source used by Azure Functions
-
-To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
