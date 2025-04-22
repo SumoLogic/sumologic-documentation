@@ -22,7 +22,11 @@ An SSL certificate can be associated with one or more servers (IP address:port c
 * I strongly recommend you to not use the aggressive version of the Botnet C2 IP blacklist as it definitely will cause false positives. If you want to reduce the amount of false positives, do not use this option. If you want to get maximum protection and do not care about false positives, you can enable the action by selecting the checkbox (not recommended).
 * More info: 'https://sslbl.abuse.ch/'
 
-## Abuse.ch SSLBL Feed in Automation Service and Cloud SOAR
+## Configure Abuse.ch SSLBL Feed in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

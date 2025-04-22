@@ -49,7 +49,6 @@ Identify your **Deployment** region based on your Base URL. The deployment regio
 | DE  |	`https://api.de.sumologic.com/`  |
 | EU  | `https://api.eu.sumologic.com/`  |
 | FED |	`https://api.fed.sumologic.com/` |
-| IN  |	`https://api.in.sumologic.com/`  |
 | JP  |	`https://api.jp.sumologic.com/`  |
 | KR  |	`https://api.kr.sumologic.com/`  |
 | US1 |	`https://api.sumologic.com/`     |

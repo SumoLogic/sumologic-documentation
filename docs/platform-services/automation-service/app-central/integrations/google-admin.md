@@ -38,7 +38,11 @@ To create a Service Account in Google Workspace and generate the JSON file neede
 	'https://www.googleapis.com/auth/admin.reports.audit.readonly'
 17. Click Authorize.  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-admin/google-admin-9.png')} style={{border:'1px solid gray'}} alt="google-admin" width="800"/>
 
-## Google Admin in Automation Service and Cloud SOAR
+## Configure Google Admin in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 * **Label**. The desired name for the resource.
 * **User Service Account JSON**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.

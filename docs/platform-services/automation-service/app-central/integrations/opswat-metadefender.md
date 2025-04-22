@@ -21,6 +21,12 @@ MetaDefender is a cybersecurity platform for preventing and detecting cybersecur
 * **Detonate File** (*Enrichment*) - Scan with sandbox and get the result of the sandbox scan (Dynamic analysis).
 * **Get Hash Report** (*Enrichment*) - Look up a hash by MD5, SHA1, or SHA256.
 
+## Configure Opswat Metadefender in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * May 11, 2021 - First upload

@@ -17,6 +17,12 @@ Utilize Lastline AI-powered sandboxing to triage incidents.
 * **Get Analysis Results** (*Enrichment*) - Get results of file analysis
 * **File Reputation** (*Enrichment*) - Get reputation score of a file/hash
 
+## Configure Lastline Analyst in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 12, 2019 - First upload

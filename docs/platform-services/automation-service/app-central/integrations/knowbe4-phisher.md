@@ -22,7 +22,11 @@ KnowBe4 PhishER Identifies and responds to email threats faster with automatic p
 
 Follow the steps from the KnowBe4 PhishER [guide](https://developer.knowbe4.com/graphql/phisher/page/Introduction) to create your authentication credentials.
 
-**KnowBe4 PhishER in Cloud SOAR**
+## Configure KnowBe4 PhishER in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
