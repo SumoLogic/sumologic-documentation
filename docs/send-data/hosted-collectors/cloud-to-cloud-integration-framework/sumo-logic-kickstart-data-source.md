@@ -12,10 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="thumbnail icon" width="100"/>
 
-The Sumo Logic Kickstart Data source ingests logs and metrics into Sumo Logic for our pre-loaded OpenTelemetry demo application. This source is engineered to provide a continuous stream of data that simulates a specific scenario, highlighting latency spikes across various services.
+The Sumo Logic Kickstart Data source ingests logs and metrics into Sumo Logic for our pre-loaded [OpenTelemetry Demo Astronomy application](/docs/integrations/sumo-apps/kickstart-data), an e-commerce-style app that simulates real user interactions and system performance. It provides a continuous stream of data that highlights latency spikes across various services, enabling hands-on exploration of Sumo Logic features.
 
-:::tip
-Learn more about [Kickstart Data](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
+:::info
+Kickstart Data comes preloaded for new trial users and expires automatically after 20 days or when you begin ingesting your own data—whichever comes first. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
 :::
 
 ## Data collected
@@ -30,7 +30,7 @@ Learn more about [Kickstart Data](/docs/get-started/quickstart/#getting-started-
 
 ### Source configuration
 
-The Kickstart Data source is pre-installed for all users upon creation of a [new organization](/docs/manage/manage-subscription/create-and-manage-orgs).
+The Kickstart Data source is automatically included when a new organization is created. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
 
 ## Removing Kickstart Data from your environment
 
@@ -40,10 +40,10 @@ If you're done exploring Kickstart Data and want to purge it from your environme
 
 Kickstart Data is stored in a dedicated partition named `sample_otel_astronomy_shop`.
 
-1. Navigate to the **Partitions** page in the Sumo Logic UI. See [Managing Partitions](/docs/manage/partitions) for guidance.
+1. Navigate to the **Partitions** page (see [Edit the Retention Period](/docs/manage/partitions/manage-indexes-variable-retention/#edit-the-retention-period) for guidance).
 2. Locate the partition named `sample_otel_astronomy_shop`.
 3. Edit the retention period and set it to **1 day**.
-4. When prompted, click **Apply change now**.
+4. When prompted, click **Apply change now**.<br/><img src={useBaseUrl('img/send-data/kickstart-data-retention-partion-confirmation.png')} alt="kickstart-data-retention-partion-confirmation.png" width="350"/>
 
 Kickstart Data will be fully aged out and removed after 24 hours.
 
