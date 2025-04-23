@@ -34,7 +34,7 @@ Some of the inventory sources are strictly for collecting inventory data—such 
 Some inventory sources provide user inventory information, some provide computer inventory information, and some provide both. The table below lists currently available inventory sources.
 
 :::note
-The AWS Inventory Source collects the inventory of AWS resources in your AWS account. See [AWS Inventory Source](/docs/observability/root-cause-explorer/#aws-inventory-source).
+The AWS Inventory Source collects the inventory of AWS resources in your AWS account.
 :::
 
 | Inventory source | Type of source | Inventory data collected |
