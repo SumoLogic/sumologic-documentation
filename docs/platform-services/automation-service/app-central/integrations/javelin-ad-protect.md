@@ -15,6 +15,12 @@ Symantec Javelin AD Protect provide protection for Microsoft Active Directory fr
 
 * **Get Report** *(Enrichment)* - Get detailed alert information.
 
+## Configure Javelin AD Protect in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * November 26, 2018 - First upload

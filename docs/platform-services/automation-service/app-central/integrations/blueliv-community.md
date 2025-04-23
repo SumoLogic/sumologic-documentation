@@ -17,6 +17,12 @@ Enrich incident evidence with threat intelligence data from Blueliv.
 * **Recent Crime Servers** (*Enrichment*) - Returns full Crime Servers’ feed updates collected during the last 24 hours.
 * **Last Crime Servers** (*Enrichment*) - Returns full Crime Servers’ feed updates collected during the last 15 minutes.
 
+## Configure Blueliv Community in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 19, 2020 - First upload

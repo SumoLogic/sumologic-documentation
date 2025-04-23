@@ -24,6 +24,12 @@ Interact with AWS Security Hub through Insights and Findings.
 * **Update Finding** (*Containment*) - Update a finding with the specified information.
 * **Update Insight** (*Containment*) - Update the specified insight.
 
+## Configure AWS Security Hub in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * February 28, 2019 - First upload

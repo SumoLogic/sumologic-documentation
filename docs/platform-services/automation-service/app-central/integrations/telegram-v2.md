@@ -19,7 +19,11 @@ Send messages from Cloud SOAR integration with Telegram V2.
 
 In Telegram application, create new bot sending a message /newbot to Botfather. Choose name and username for your bot. After crating your bot you will receive a message with your token to access the HTTP API. Keep your token secure and store it safely.
 
-## Telegram V2 in Automation Service and Cloud SOAR
+## Configure Telegram V2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

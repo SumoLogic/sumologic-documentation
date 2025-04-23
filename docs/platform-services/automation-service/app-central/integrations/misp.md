@@ -25,6 +25,12 @@ Utilize MISP intelligence data during incident investigations.
 * **Update Attribute** (*Enrichment*) - Update an existing attribute.
 * **Update Event** (*Enrichment*) - Update an existing attribute.
 
+## Configure MISP in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * December 19, 2019 - First upload

@@ -38,6 +38,12 @@ The CrowdStrike Falcon integration allows you to pull and update Detections/Inci
 
 EDR
 
+## Configure CrowdStrike Falcon in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 3, 2021 - First upload

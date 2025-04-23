@@ -16,6 +16,12 @@ Utilize ThreatConnect intelligence data during incident investigations.
 * **Search Intelligence** (*Enrichment*) - Search ThreatConnect data for information matching the specified query.
 * **Update Intelligence** (*Notification*) - Update ThreatConnect intelligence data.
 
+## Configure ThreatConnect in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * December 19, 2019 - First upload
