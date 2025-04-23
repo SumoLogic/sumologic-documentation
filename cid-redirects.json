@@ -4099,7 +4099,6 @@
   "/Solutions/AWS_Observability_Solution/AWS_Observability_Application_Load_Balancer": "/docs/observability/aws/integrations/aws-application-load-balancer",
   "/Solutions/AWS_Observability_Solution/View_AWS_Observability_Solution_Dashboards": "/docs/observability/aws/deploy-use-aws-observability/view-dashboards",
   "/Solutions/AWS_Observability_Solution/Root_Cause_Explorer": "/docs/observability/root-cause-explorer-deprecation",
-  "/docs/observability/root-cause-explorer": "/docs/observability/root-cause-explorer-deprecation",
   "/Solutions/AWS_Observability_Solution/03_Set_Up_the_AWS_Observability_Solution": "/docs/observability/aws/about",
   "/Solutions/AWS_Observability_Solution/About_the_AWS_Observability_Solution": "/docs/observability/aws/about",
   "/Solutions/AWS_Observability_Solution/Set_Up_the_AWS_Observability_Solution": "/docs/observability/aws",
