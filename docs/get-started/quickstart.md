@@ -39,11 +39,11 @@ As part of your trial, Kickstart Data gives you instant access to preloaded samp
 
 The Kickstart sample data you see in the [sample app/dashboards](/docs/integrations/sumo-apps/kickstart-data) are [sourced from cloud-to-cloud data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source).
 
-Once you're ready to work with your own data, follow the in-product prompts to begin ingesting logs via OpenTelemetry, Hosted Collectors, or Installed Collectors. The Kickstart experience will phase out automatically once you start ingesting real data or after 7 days—whichever comes first.
+Once you're ready to work with your own data, follow the in-product prompts to begin ingesting logs via OpenTelemetry, Hosted Collectors, or Installed Collectors. The Kickstart experience will phase out automatically once you start ingesting real data or after 20 days—whichever comes first.
 
-## Step 1: Get your data into Sumo
+## Step 1: Get your data into Sumo Logic
 
-The journey of 10,000 logs begins with a single collector. Your data analytics journey starts by sending your data to Sumo.
+The journey of 10,000 logs begins with a single collector. Your data analytics journey starts by sending your data to Sumo Logic.
 
 ### Set up data collection
 
