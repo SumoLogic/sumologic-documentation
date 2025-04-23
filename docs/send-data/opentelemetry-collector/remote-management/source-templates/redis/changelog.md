@@ -5,7 +5,7 @@ sidebar_label: Changelog
 description: Changelog for Redis source template for OpenTelemetry.
 ---
 
-## [3.0.1] - 2025-04-11
+## [3.0.1] - 2025-04-23
 ### Added
 - FAQ for source template
 

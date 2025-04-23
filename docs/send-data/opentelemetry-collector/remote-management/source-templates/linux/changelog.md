@@ -5,7 +5,7 @@ sidebar_label: Changelog
 description: Changelog for Linux source template for OpenTelemetry.
 ---
 
-## [4.0.2] - 2025-04-11
+## [4.0.2] - 2025-04-23
 ### Added
 - FAQ for source template
 
