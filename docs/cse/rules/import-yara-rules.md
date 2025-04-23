@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This section has instructions for importing YARA rules from GitHub into Cloud SIEM.
 
-YARA rules are an open source framework for identifying malware. Cloud SIEM runs YARA rules against files uploaded by the [network sensor](/docs/cse/sensors/network-sensor-deployment-guide). When a file matches a YARA rule, Cloud SIEM creates a special record which results in a “file analysis” signal being created.  Once you’ve imported rules, Cloud SIEM will sync with the repository no less than every hour.
+YARA rules are an open source framework for identifying malware. Cloud SIEM runs YARA rules against files uploaded by the [network sensor](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/corelight-zeek/). When a file matches a YARA rule, Cloud SIEM creates a special record which results in a “file analysis” signal being created.  Once you’ve imported rules, Cloud SIEM will sync with the repository no less than every hour.
 
 To import YARA rules:
 
