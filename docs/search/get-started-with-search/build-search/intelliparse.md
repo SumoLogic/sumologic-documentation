@@ -26,7 +26,7 @@ You can now choose from three parsing options in the log search UI:
 * [**Auto Parse**](/docs/search/get-started-with-search/build-search/dynamic-parsing). JSON blocks within logs are automatically parsed.
 * **Manual**. No automatic parsing applied.
 
-<img src={useBaseUrl('img/search/get-started-search/build-search/log-search-parsing-modes.png')} alt="log-search-parsing-modes.png" width="700"/>
+<img src={useBaseUrl('img/search/get-started-search/build-search/log-search-parsing-modes.png')} alt="log-search-parsing-modes.png" style={{border: '1px solid gray'}} width="700"/>
 
 ## How Intelliparse mode works
 
@@ -70,9 +70,9 @@ will be parsed automatically in Intelliparse mode, extracting:
 Even if you don’t manually enable Intelliparse mode, you may encounter it when using [Sumo Logic Copilot](/docs/search/copilot).
 
 Copilot uses Intelliparse mode in the background to:
-* Automatically parse unstructured logs for natural language queries
-* Discover field names and values for more accurate suggestions and translations
-* Generate search queries that include the hidden `intelliparse` operator
+* Automatically parse unstructured logs for natural language queries.
+* Discover field names and values for more accurate suggestions and translations.
+* Generate search queries that include the hidden `intelliparse` operator.
 
 This integration allows Copilot to work with raw, unstructured log data; no setup required on your part.
 
