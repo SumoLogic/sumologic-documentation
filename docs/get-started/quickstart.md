@@ -46,7 +46,9 @@ Here's how it works:
     * Invite team members to join and explore the platform with you.
 1. **Transition to real data**. Kickstart Data is available for 7 days or until you start ingesting real data—whichever comes first. It deactivates automatically at the end of the trial, but can be skipped at any time.
 
-<!-- How to delete/override Kickstart Data -->
+:::tip For Admins
+If you're done exploring Kickstart Data and want to purge it from your environment, follow the steps under [Removing Kickstart Data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source#removing-kickstart-data) to remove it from your Sumo Logic account.
+:::
 
 ## Step 1: Get your data into Sumo
 
