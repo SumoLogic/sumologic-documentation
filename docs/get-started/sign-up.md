@@ -17,12 +17,10 @@ To start your free trial:
 
 1. Go to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up).
 1. Register with a business email address to create your account.
-1. Check your inbox for the activation email and follow the steps below.
-
-### Activate your account
-
-The activation link expires after 3 days. If it expires, you’ll need to complete the sign-up process again.
-
+1. Check your inbox for the activation email.
+   :::note
+   The activation link expires after 3 days. If it expires, you’ll need to complete the sign-up process again.
+   :::
 1. Open the activation email and click **Activate Now**. (If you do not see it, check your spam and trash folders.)
 1. Fill out the **Activate Your Account** form, then click **Activate**.
 1. After activating your account, follow the guidance in the [After Activation](#after-activation-what-to-expect) section to explore sample data, install apps, and start ingesting your own data.
@@ -41,7 +39,7 @@ To sign up through AWS Marketplace:
     - **Email**. Enter a business email address for your account (personal email addresses such as Gmail are not supported). If you have an existing Sumo Logic account, use a different email address. Signing up through AWS Marketplace requires a new email to create a separate Sumo Logic organization.
     - **Region**. Select your region: North America, Europe, or Australia.
     - **Service License Agreement**. Review and accept the [Service License Agreement](https://www.sumologic.com/service-agreement/) to proceed.
-1. Click **Sign Up**. Sumo Logic will send you an email to activate your account. Follow the instructions in the email to complete the [activation process](#activate-your-account)
+1. Click **Sign Up**. Sumo Logic will send you an email to activate your account. Follow the instructions in the email to complete the [activation process](#activate-your-account).
 1. At the end of the 30-day trial period for the Sumo Logic Log Analytics Platform (Pay-As-You-Go with 30-day Free Trial), the subscription converts to the paid subscription billed monthly based on actual usage.
 
 ### Upgrade your account
