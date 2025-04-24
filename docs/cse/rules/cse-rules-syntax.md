@@ -635,19 +635,19 @@ When an entity is processed by a rule using the `hasThreatMatch` function and is
 `hasThreatMatch([<fields>], <filters>, <indicators>)`
 
 Parameters:
-* `<fields>` is a list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
-* `<filters>` is a logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`. <br/>You can filter on the following indicator attributes:
-   * `actors`
-   * `confidence`
-   * `id`
-   * `indicator`
-   * `killChain`
-   * `source`
-   * `threatType`
-   * `type`
-   * `validFrom`
-   * `validUntil`
-* `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
+* **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
+* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`. <br/>You can filter on the following indicator attributes:
+   * `actors`. An identified threat actor such as an individual, organization, or group. 
+   * `confidence` Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
+   * `id`. ID of the indicator.
+   * `indicator`. Value of the indicator, such as an IP address, file name, email address, etc. 
+   * `killChain`. The various phases an attacker may undertake to achieve their objectives (for example, `reconnaissance`, `weaponization`, `delivery`, `exploitation`, `installation`, `command-and-control`, `actions-on-objectives`).
+   * `source`. The source in the Sumo Logic datastore displayed in the **Threat Intelligence** tab.
+   * `threatType`. The threat type of the indicator (for example, `anomalous-activity`, `anonymization`, `benign`, `compromised`, `malicious-activity`, `attribution`, `unknown`).
+   * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, etc.)
+   * `validFrom`. Beginning time this indicator is valid.
+   * `validUntil`. Ending time this indicator is valid. 
+* **`<indicators>`**. An optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
    * `active_indicators`. Match active indicators only (default).
    * `expired_indicators`. Match expired indicators only.
    * `all_indicators`. Match all indicators.
@@ -657,6 +657,8 @@ Parameters:
 As a best practice, always include filtering to narrow your match to just the types desired (that is, `type=`). This will ensure that your match expressions are not overly broad.
 
 Following are the standard indicator types you can filter on:
+* `domain-name`. Domain.
+* `email-addr`. Email.
 * `file:hashes`. File hash.
 * `file`. File name. 
 * `ipv4-addr`. IPv4 IP address. 
