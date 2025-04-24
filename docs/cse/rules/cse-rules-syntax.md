@@ -626,13 +626,9 @@ The following expression returns "10.10.1.0":
 
 ### hasThreatMatch
 
-Use the `hasThreatMatch` Cloud SIEM rules function to match incoming records in Cloud SIEM to [threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/). The function matches all sources in the **Threat Intelligence** tab, unless you specify a specific source. `hasThreatMatch` can also match values in [custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/).
+The `hasThreatMatch` Cloud SIEM rules function matches incoming records in Cloud SIEM to [threat intelligence indicators](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/).
 
 When an entity is processed by a rule using the `hasThreatMatch` function and is a match, the entity is associated with a known indicator that has a threat type attribute. The entity can be associated with either `threatType` (in normalized JSON format and CSV format), or `indicator_types` (in STIX format).
-
-:::tip
-To see standard rules that use the `hasThreatMatch` function, refer to the [Rules page in our Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) and search for rules with "Threat Intel" in the name.
-:::
 
 **Syntax**
 
@@ -666,10 +662,6 @@ Parameters:
 * `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50))`
 * `hasThreatMatch([srcDevice_ip], expired_indicators)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
-
-:::note
-Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value in the `confidence` attribute.
-:::
 
 #### Best practice
 
