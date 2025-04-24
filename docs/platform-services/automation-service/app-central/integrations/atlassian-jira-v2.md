@@ -12,6 +12,10 @@ Updated: September 2 , 2024***
 
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
 
+:::note
+This integration uses the [Jira REST API v2](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/#version).
+:::
+
 ## Actions
 
 * **Add Comment to Issue** *(Notification)* - Add a comment to the specified issue.
