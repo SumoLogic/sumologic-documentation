@@ -1,7 +1,7 @@
 ---
 id: remove-doc
 title: Move or Remove a Doc
-description: Learn how to properly remove a Sumo Logic doc.
+description: Learn how to properly move or remove a Sumo Logic doc.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
