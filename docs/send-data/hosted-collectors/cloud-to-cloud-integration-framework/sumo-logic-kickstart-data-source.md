@@ -12,10 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="thumbnail icon" width="100"/>
 
-The Sumo Logic Kickstart Data source ingests logs and metrics into Sumo Logic for our pre-loaded OpenTelemetry demo application. This source is engineered to provide a continuous stream of data that simulates a specific scenario, highlighting latency spikes across various services.
+The Sumo Logic Kickstart Data source ingests logs and metrics into Sumo Logic for our pre-loaded [OpenTelemetry Demo Astronomy application](/docs/integrations/sumo-apps/kickstart-data), an e-commerce-style app that simulates real user interactions and system performance. It provides a continuous stream of data that highlights latency spikes across various services, enabling hands-on exploration of Sumo Logic features.
 
-:::tip
-Learn more about [Kickstart Data](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
+:::info
+Kickstart Data comes preloaded for new trial users and expires automatically after 20 days or when you begin ingesting your own data—whichever comes first. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
 :::
 
 ## Data collected
@@ -30,7 +30,45 @@ Learn more about [Kickstart Data](/docs/get-started/quickstart/#getting-started-
 
 ### Source configuration
 
-The Kickstart Data source is pre-installed for all users upon creation of a [new organization](/docs/manage/manage-subscription/create-and-manage-orgs).
+The Kickstart Data source is automatically included when a new organization is created. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
+
+## Kickstart Data availability and cleanup
+
+Kickstart Data is included automatically in all new trial accounts to help users explore Sumo Logic without ingesting their own data. Here's how it works, and how to clean it up when you're ready.
+
+### Availability
+
+* Kickstart Data is accessible for up to 20 days after account creation or until the user begins ingesting their own data, whichever comes first.
+* The Kickstart collector and source (`sample_otel_astronomy_shop`) are automatically deleted after 7 days, but the data remains in the partition unless manually removed.
+* After 20 days, the Kickstart app, dashboards, and collector are no longer visible in the UI, but existing Kickstart Data may still be stored in your partitions.
+* Sumo Logic does not automatically uninstall the Kickstart app or disconnect the source when a user begins ingesting their own data. These steps must be performed manually if desired.
+
+### Cleanup instructions
+
+To fully remove Kickstart Data from your environment, follow these steps:
+
+#### Step 1: Reduce retention for the Kickstart partition
+
+1. Navigate to the **Partitions** page (see [Edit the Retention Period](/docs/manage/partitions/manage-indexes-variable-retention/#edit-the-retention-period) for guidance).
+2. Locate the partition named `sample_otel_astronomy_shop`.
+3. Edit the retention period and set it to **1 day**.
+4. When prompted, click **Apply change now**.<br/><img src={useBaseUrl('img/send-data/kickstart-data-retention-partion-confirmation.png')} alt="kickstart-data-retention-partion-confirmation.png" width="350"/>
+
+Kickstart Data will be fully aged out and removed after 24 hours.
+
+### Step 2: (Optional) Reduce retention for the default partition
+
+In some cases, a small amount of Kickstart Data may end up in the default partition `sumologic_default`.
+
+:::tip
+Only reduce retention on the default partition if you have not started ingesting your own production data. Lowering the retention period will delete all logs in the partition.
+:::
+
+1. While still on the **Partitions** page, locate the partition named `sumologic_default`.
+2. Edit the retention period and set it to **1 day**.
+3. Click **Apply change now**.
+4. After 24 hours, return to the partition settings and increase the retention back to your preferred duration (e.g., 30 days) to preserve ongoing ingested data.
+
 
 ## FAQ
 

@@ -1,0 +1,1 @@
+If you're done exploring Kickstart Data and want to purge it from your environment and Sumo Logic account, follow the steps under [Kickstart Data cleanup instructions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source#cleanup-instructions).

@@ -33,6 +33,20 @@ Welcome to Sumo! After signing up, be sure to head to **Get Started** page, your
 
 This dashboard will give you an instant view of key performance metrics using Kickstart sample data. You can explore how Sumo Logic monitors application health—no setup needed.
 
+1. **Sample dashboards**. When you first log in, you'll see sample data preloaded into Sumo Logic, tailored to your monitoring and troubleshooting use cases, along with log searches and the following dashboards:
+   * **Application reliability**. Metrics like Homepage Load Time, Checkout Errors, and Internal Server Orders.
+   * **Business KPIs**. Revenue Trends, Promo Performance, and Customer Feedback Metrics.
+   * **Security**. Security events and failed sign-in attempts across multiple geographical locations.
+1. **Onboarding checklist**. You will follow a guided checklist that helps you:
+    * Analyze the sample data.
+    * Perform log searches.
+    * Invite team members to join and explore the platform with you.
+1. **Transition to real data**. Kickstart Data is available for 20 days or until you start ingesting real data—whichever comes first. It deactivates automatically at the end of the trial, but can be skipped at any time.
+
+:::note For Admins
+For configuration information, refer to [Kickstart Data app](/docs/integrations/sumo-apps/kickstart-data) and [Kickstart Data source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source).
+:::
+
 ### Getting started with Kickstart Data in your trial
 
 As part of your trial, Kickstart Data gives you instant access to preloaded sample log data and dashboards—no setup, data ingestion, or firewall configuration required—so you can immediately explore the value of Sumo Logic in a safe sandbox environment. No sensitive or real data is used, and the prebuilt dashboards offer a hands-on way to learn how to monitor applications, analyze trends, and respond to incidents.
