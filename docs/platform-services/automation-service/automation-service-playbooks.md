@@ -226,6 +226,17 @@ Every time you publish a playbook, a new version of the playbook is retained. In
 
 <img src={useBaseUrl('img/platform-services/automation-service/playbook-versions.png')} alt="Playbook versions" style={{border:'1px solid gray'}} width="800"/>
 
+## Enable or disable a playbook
+
+You can enable a playbook for use, or disable it to prevent it from being used in automations. Whether a playbook is enabled or disabled displays in the **Status** column: <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-status-enabled-disabled.png')} alt="Playbook status column" style={{border:'1px solid gray'}} width="800"/>
+
+Status:
+* Enabled: <img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-symbol.png')} alt="Playbook enabled symbol" style={{border:'1px solid gray'}} width="40"/>
+* Disabled: <img src={useBaseUrl('img/platform-services/automation-service/playbook-disabled-symbol.png')} alt="Playbook disabled symbol" style={{border:'1px solid gray'}} width="40"/>
+
+
+
+
 ## Playbook preferences
 
 1. Click the preferences button in the upper-right corner of the screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-preferences.png')} alt="Playbook preferences button" style={{border:'1px solid gray'}} width="200"/>
