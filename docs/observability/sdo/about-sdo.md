@@ -52,6 +52,6 @@ Tools most commonly used in this phase are Jenkins, Harness, GitLab, CircleCI, a
 
 ### Monitor and Operate
 
-The operational phase in DevOps is where the production apps are actively managed by the DevOps and SRE team. All issues whether customer-facing or not typically flow through an incident management process and troubleshooting of apps is performed across the application and infrastructure stack. It is in this phase where auto-scaling of the infrastructure running the apps takes place.
+The operational phase in DevOps is where the production apps are actively managed by the DevOps and SRE team. All issues whether customer-facing or not typically flow through an incident management process and troubleshooting of apps is performed across the application and infrastructure stack. It is in this phase where auto scaling of the infrastructure running the apps takes place.
 
 Tools most commonly used in this phase are Cloud platform stacks, Jira, Opsgenie, and PagerDuty.

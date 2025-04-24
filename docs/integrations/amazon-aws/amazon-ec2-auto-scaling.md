@@ -121,7 +121,7 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 :::note
-Namespace for Amazon EC2 Auto-scaling Service is AWS/AutoScaling.
+Namespace for Amazon EC2 Auto Scaling Service is AWS/AutoScaling.
 :::
 
 ## Field in field schema
@@ -132,7 +132,7 @@ Namespace for Amazon EC2 Auto-scaling Service is AWS/AutoScaling.
 
 ## Field Extraction Rule(s)
 
-Create a Field Extraction Rule (FER) for Amazon EC2 Auto-scaling access logs and Cloudtrail logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+Create a Field Extraction Rule (FER) for Amazon EC2 Auto Scaling access logs and Cloudtrail logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 **Amazon EC2 Auto Scaling CloudTrail logs**
 
@@ -177,8 +177,8 @@ The **Amazon EC2 Auto Scaling - CloudTrail Audit** dashboard provides a comprehe
 
 Use this dashboard for:
 * Monitoring the overall health and performance of your Amazon EC2 Auto Scaling groups
-* Identifying and troubleshooting common errors and failures in auto-scaling operations
-* Tracking user activities and potential security concerns related to auto-scaling events
+* Identifying and troubleshooting common errors and failures in auto scaling operations
+* Tracking user activities and potential security concerns related to auto scaling events
 * Analyzing trends in event types, success rates, and failure patterns over time
 
 <img src={useBaseUrl('img/integrations/02.-Amazon-EC2-Auto-Scaling-CloudTrail-Audit.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
