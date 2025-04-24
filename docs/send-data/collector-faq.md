@@ -427,7 +427,7 @@ See [using _format for troubleshooting](/docs/send-data/reference-information/ti
 
 Sumo Logic assumes that all log message times fall within a window of -1 year through +2 days compared to the current time. Any log messages with a parsed timestamp outside of that window are automatically re-stamped with the current time.
 * Data older than 365 days can still be ingested. However, even if a custom timestamp is provided, it will be autocorrected to the current time unless technical support disables this function at the organization level.
-* To ingest data older than 365 days with the original timestamp intact, you must contact technical support to disable the autocorrection function at the org level.
+* To ingest data older than 365 days with the original timestamp intact, you'll need to contact [Support](https://support.sumologic.com/support/s) to disable the autocorrection function at the org level.
 
 #### Assumption: Data from a source will have similar timestamps
 
