@@ -1,6 +1,6 @@
 ---
 id: remove-doc
-title: Move or remove a Doc
+title: Move or Remove a Doc
 description: Learn how to properly remove a Sumo Logic doc.
 ---
 
