@@ -2,7 +2,9 @@
 id: create-real-time-alert
 title: Deprecation of Real-Time Scheduled Searches
 ---
-
+<head>
+ <meta name="robots" content="noindex" />
+</head>
 :::warning Deprecated Feature
 As of **May 15, 2025**, Real-Time Scheduled Searches are officially deprecated and no longer run in real time. All remaining Real-Time Scheduled Searches have been automatically converted to 15-minute schedules. For real-time alerting, use [Monitors](/docs/alerts/monitors/overview).
 :::
