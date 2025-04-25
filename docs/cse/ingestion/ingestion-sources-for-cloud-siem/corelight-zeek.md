@@ -63,7 +63,7 @@ After configuring the appropriate source, use one of the methods described below
 
 This configuration step is required to ensure that Cloud SIEM knows how to parse incoming Zeek logs, correctly map the log fields to schema attributes, and create Cloud SIEM records. The most important bit of information is what type of data a particular log contains. Zeek has a variety of log types, for example `conn` for TCP/UDP/ICMP connections, `http` for HTTP requests and replies, and `ftp` for FTP activity.
 
-So, how to determine whether a Zeek log is a `conn`, `http`, `ftp`, or some other log type? Zeek logs don’t contain a key that explicitly holds a value that is only the log type identifier. There are two options for dealing with this:
+So, how to determine whether a Zeek log is a `conn`, `http`, `ftp`, or some other log type? Zeek logs do not contain a key that explicitly holds a value that is only the log type identifier. There are two options for dealing with this:
 
 * Use Corelight to add a field to each Zeek log that identifies its log type. See [Use Corelight](#use-corelight) below.
 * Use Sumo Logic Field Extraction Rules (FERs) to create fields that provide the log type and other data that enables Cloud SIEM to parse and map the logs. See [Use FERs](#use-fers).
