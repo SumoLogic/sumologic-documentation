@@ -7,7 +7,7 @@ description: Learn how to sign up with Sumo Logic and create your account.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without the hassle of managing or scaling hardware or storage. Start your 30-day trial and explore the full capabilities of our Continuous Intelligence Platform™, including elastic scalability and powerful analytics.
+Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without the hassle of managing or scaling hardware or storage. Start your 30-day trial and explore the full capabilities of our Sumo Logic Log Analytics Platform, including elastic scalability and powerful analytics.
 
 After your trial, your account will automatically convert to a [Free account](#upgrade-or-continue-with-free-account), allowing you to continue with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time to unlock premium features. Choose to sign up through [Sumo Logic](#sign-up-through-sumo-logic) or the [AWS Marketplace](#sign-up-through-aws-marketplace) and start using Sumo Logic in minutes.
 
