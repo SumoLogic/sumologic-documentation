@@ -13,7 +13,7 @@ You can distribute the dashboard to people in your Sumo Logic organization who d
 
 :::info
 - For PNG format export, you will receive both embedded and attached copy of the dashboard to your email.
-- If a .pdf and/or .png export fails, an error email will be sent to your email ID.
+- If a PDF and/or PNG export fails, you’ll receive an error notification by email.
 :::
 
 ## Create a scheduled report
