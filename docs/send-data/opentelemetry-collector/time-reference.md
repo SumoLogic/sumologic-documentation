@@ -3,7 +3,7 @@ id: time-reference
 title: OTel Timestamp and Date Format Reference
 description: Learn about timestamp formats recognized by the Sumo Logic OpenTelemetry (OTel) Collector and available configuration options.
 keywords:
-  - time-stamp
+  - timestamp
   - otel-collector
 ---
 
