@@ -30,45 +30,56 @@ Kickstart Data comes preloaded for new trial users and expires automatically aft
 
 ### Source configuration
 
-The Kickstart Data source is automatically included when a new organization is created. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
+The Kickstart Data source is automatically included when you create a new organization during your trial. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
 
 ## Kickstart Data availability and cleanup
 
-Kickstart Data is included automatically in all new trial accounts to help users explore Sumo Logic without ingesting their own data. Here's how it works, and how to clean it up when you're ready.
+Kickstart Data is preloaded in all new Sumo Logic trial accounts to help you explore the platform without needing to ingest your own data. This sample data powers dashboards, log searches, and alerts using simulated application logs.
 
-### Availability
+Kickstart Data is streamed continuously throughout your trial. As a result, the total volume of sample data will grow daily unless you manually stop the collector.
 
-* Kickstart Data is accessible for up to 20 days after account creation or until the user begins ingesting their own data, whichever comes first.
-* The Kickstart collector and source (`sample_otel_astronomy_shop`) are automatically deleted after 7 days, but the data remains in the partition unless manually removed.
-* After 20 days, the Kickstart app, dashboards, and collector are no longer visible in the UI, but existing Kickstart Data may still be stored in your partitions.
-* Sumo Logic does not automatically uninstall the Kickstart app or disconnect the source when a user begins ingesting their own data. These steps must be performed manually if desired.
+note... In some cases, the Kickstart collector may remain active beyond the 7-day period originally expected. Be sure to manually delete the collector to fully stop data ingestion.
 
-### Cleanup instructions
+### How to remove Kickstart Data
 
-To fully remove Kickstart Data from your environment, follow these steps:
+You can wait for Kickstart Data to expire automatically at the end of your trial, or remove it manually at any time by following the steps below:
 
-#### Step 1: Reduce retention for the Kickstart partition
+#### Step 1: Delete the Kickstart Collector (recommended)
 
-1. Navigate to the **Partitions** page (see [Edit the Retention Period](/docs/manage/partitions/manage-indexes-variable-retention/#edit-the-retention-period) for guidance).
+[Edit the Retention Period](/docs/manage/partitions/manage-indexes-variable-retention/#edit-the-retention-period)
+
+1. In Sumo Logic, go to **Manage Data > Collection**.
+2. Locate the collector named `sample_otel_astronomy_shop`.
+3. Delete the collector to stop Kickstart Data ingestion.
+
+#### Step 2: Reduce retention on Kickstart partition
+
+1. Go to the **Partitions** page (see [Edit the Retention Period](/docs/manage/partitions/manage-indexes-variable-retention/#edit-the-retention-period) for guidance).
 2. Locate the partition named `sample_otel_astronomy_shop`.
-3. Edit the retention period and set it to **1 day**.
+3. Set the retention period to **1 day**.
 4. When prompted, click **Apply change now**.<br/><img src={useBaseUrl('img/send-data/kickstart-data-retention-partion-confirmation.png')} alt="kickstart-data-retention-partion-confirmation.png" width="350"/>
+5. Wait at least 24 hours for the data to be aged out.
 
-Kickstart Data will be fully aged out and removed after 24 hours.
-
-### Step 2: (Optional) Reduce retention for the default partition
+#### Step 3 (Optional) Adjust the default partition
 
 In some cases, a small amount of Kickstart Data may end up in the default partition `sumologic_default`.
 
-:::tip
-Only reduce retention on the default partition if you have not started ingesting your own production data. Lowering the retention period will delete all logs in the partition.
+:::caution
+Only proceed if you're certain you haven’t started ingesting your own logs, as this will remove **all** data in the default partition.
 :::
 
 1. While still on the **Partitions** page, locate the partition named `sumologic_default`.
 2. Edit the retention period and set it to **1 day**.
 3. Click **Apply change now**.
-4. After 24 hours, return to the partition settings and increase the retention back to your preferred duration (e.g., 30 days) to preserve ongoing ingested data.
+4. After 24 hours, restore your preferred retention setting by returning to the partition settings and increase the retention back to your preferred duration (e.g., 30 days) to preserve ongoing ingested data.
 
+### Known issue: Retention change may not fully remove old data
+
+Some users have reported that Kickstart Data remains in their account even after retention is reduced and 24+ hours have passed. Engineering is actively investigating this behavior. If you're still seeing older data:
+
+- Double-check that the partition retention was applied and saved correctly.
+- Confirm that the collector has been deleted to stop new data from arriving.
+- Reach out to [Support](https://support.sumologic.com/support/s) if the issue persists.
 
 ## FAQ
 
