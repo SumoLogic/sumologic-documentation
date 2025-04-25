@@ -36,10 +36,10 @@ Copilot uses a hidden `intelliparse` operator behind the scenes that's injected 
 
 ### Common use cases
 
-* **General log exploration**. Ask questions about logs used in your dashboards, even if they don’t have predefined structure.
-* **Error triage**. Identify frequent errors in raw logs that already support visualizations in your environment.
-* **Security insights**. Surface signs of failed logins or anomalies from frequently queried log sources.
-* **Smarter prioritization**. Copilot focuses on unstructured logs that are already actively used, helping maximize relevance and value.
+* **General log exploration**. Ask questions about unstructured logs that are already used in your dashboards, even if they lack predefined fields.
+* **Error triage**.  Investigate frequently visualized log data to surface patterns and recurring issues in unstructured formats.
+* **Security insights**. Detect anomalies or signs of failed logins by querying raw logs already powering security dashboards.
+* **Smarter prioritization**. Copilot focuses on unstructured logs that are visualized in dashboards, helping you get meaningful insights from high-value data sources.
 
 ## FAQ
 
