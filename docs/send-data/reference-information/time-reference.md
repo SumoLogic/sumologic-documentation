@@ -18,7 +18,7 @@ We support several options for timestamps, time zones, time ranges, and dates. 
 Because of the importance of timestamps, Sumo Logic indexes the timestamp of each message, making sure that data relevant to a query’s time range is returned properly in search results, which allows you to reconstruct a correct event timeline.
 
 :::info
-For details on timestamp and date formatting specific to the OpenTelemetry Collector, see the [OTel Timestamp and Date Format Reference](/docs/send-data/opentelemetry-collector/time-reference).
+For details on timestamp and date formatting specific to the Sumo Logic OpenTelemetry (OTel) Collector, see [Timestamps, Time Zones, Time Ranges, and Date Formats for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/time-reference).
 :::
 
 ## Timestamps

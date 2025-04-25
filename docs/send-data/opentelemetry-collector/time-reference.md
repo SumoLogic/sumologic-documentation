@@ -1,16 +1,21 @@
 ---
 id: time-reference
-title: OTel Timestamp and Date Format Reference
+title: Timestamps, Time Zones, Time Ranges, and Date Formats for OpenTelemetry Collector
+sidebar_label: Timestamps, Time Zones, Time Ranges, and Date Formats
 description: Learn about timestamp formats recognized by the Sumo Logic OpenTelemetry (OTel) Collector and available configuration options.
 keywords:
   - timestamp
-  - otel-collector
+  - otel collector
+  - time
+  - time reference
+  - timezone
+  - time zone
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::info
-This page lists the timestamp formats recognized by the Sumo Logic OpenTelemetry (OTel) Collector. For general information on how Sumo Logic parses and indexes timestamps across all data sources, see the [general time reference documentation](https://github.com/docs/send-data/reference-information/time-reference).
+This page lists timestamp formats, time zones, time ranges, and date handling specific to the Sumo Logic OpenTelemetry (OTel) Collector. For general timestamp and time management across all data sources, see [Timestamps, Time Zones, Time Ranges, and Date Formats](https://github.com/docs/send-data/reference-information/time-reference).
 :::
 
 We support several options for timestamps. When collecting log data, the timestamp attached to messages is vital, both for the integrity of the data in your account, and for accurate query results.
@@ -71,3 +76,27 @@ The timestamp is the part of a log message that marks the time that an event occ
 | `%m%d_%H:%M:%S.%f` | 0423_11:42:35.883 |
 | `%q/%g/%Y %l:%M:%S %p:%f` | 8/5/2023 3:31:18 AM:234 |
 | `%q/%d/%Y %I:%M:%S %p` | 9/28/2023 2:23:15 PM |
+
+## Specifying a custom timestamp format
+
+:::note Coming soon
+Guidance on configuring custom timestamp formats using `strptime` directives for the OpenTelemetry Collector will be added shortly.
+:::
+
+### Timezones
+
+:::note Coming soon
+Details on time zone handling for the OpenTelemetry Collector are currently being finalized.
+:::
+
+## Time ranges
+
+:::note Coming soon
+Information about how the OpenTelemetry Collector handles time ranges is currently being finalized.
+:::
+
+## Date format
+
+:::note Coming soon
+Additional details about supported date formats for the OpenTelemetry Collector will be added shortly.
+:::
