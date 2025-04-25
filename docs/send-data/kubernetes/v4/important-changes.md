@@ -11,6 +11,14 @@ This page describes the major changes and the necessary migration steps.
 
 ## Important changes
 
+### Kubernetes Attributes Processor support
+
+The [k8sattributesprocessor](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/k8sattributesprocessor/README.md) is now supported for logs and metrics metadata enrichment. This processor is disabled by default. To enable this processor for logs, set `metadata.logs.useSumoK8sProcessor` to `false`. To enable this processor for metrics, set `metadata.metrics.useSumoK8sProcessor` to `false`.
+
+:::note
+The Service name isn't part of the metadata enrichment with this new processor.
+:::
+
 ### Remove Fluent Bit and Fluentd
 
 As of version 3 of the Chart, Fluent Bit and Fluentd were replaced by the OpenTelemetry Collector by default. However, it was still possible to use Fluent Bit and/or Fluentd by changing the configuration. In version 4, this is no longer possible. For migration instructions, see the [v3 migration guide](/docs/send-data/kubernetes/v3/how-to-upgrade/).
@@ -69,3 +77,4 @@ kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-
 ### Use OTLP sources by default
 
 This Helm Chart automatically creates the necessary Collector and Sources in Sumo. Up until this point, these were generic HTTP sources accepting data in different formats. As Sumo now has native support for the OTLP protocol used by OpenTelemetry, we've decided to switch to using these new sources by default. This is a completely transparent change **unless** you use the `_sourceName` or `_source` fields in your Sumo queries.
+
