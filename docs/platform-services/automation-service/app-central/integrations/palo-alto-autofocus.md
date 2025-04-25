@@ -16,6 +16,12 @@ Utilize Palo Alto Auto Focus threat intelligence feeds during incident investiga
 * **Search Samples** (*Enrichment*) - Search for incident indicators from Palo Alto threat intelligence samples.
 * **Search Sessions** (*Enrichment*) - Search for incident indicators from Palo Alto threat intelligence sessions.
 
+## Configure Palo Alto AutoFocus in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * July 10, 2019 - First upload

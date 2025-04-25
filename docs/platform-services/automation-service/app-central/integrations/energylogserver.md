@@ -23,6 +23,12 @@ Query EnergyLogserver by using Elasticsearch API.
 * [Elasticsearch-py](https://github.com/elastic/elasticsearch-py/blob/master/LICENSE)
 * [Elasticsearch-dsl-pu](https://github.com/elastic/elasticsearch-dsl-py/blob/master/LICENSE)
 
+## Configure EnergyLogserver in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * March 4, 2021 - First upload

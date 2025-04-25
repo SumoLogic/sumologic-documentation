@@ -15,7 +15,11 @@ The Snort is a free open source network intrusion detection system and intrusion
 
 * **IP Blocklist** *(Enrichment)* - Fetch IP indicators from Snort.
 
-## Snort in Automation Service and Cloud SOAR
+## Configure Snort in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

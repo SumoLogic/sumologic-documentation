@@ -19,6 +19,12 @@ Query Claroty CTD, an OT scanner and monitoring system. Claroty CTD provides fun
 * **Get Alert** (*Enrichment*) - Find an alert by its ID.
 * **Query Alerts Daemon** (*Daemon*) -That fetch alerts.
 
+## Configure Claroty in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * March 24, 2021 - First upload

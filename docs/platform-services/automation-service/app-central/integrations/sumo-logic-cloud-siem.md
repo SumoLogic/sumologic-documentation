@@ -55,15 +55,19 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 The ID and key won't be available again once you close the confirmation screen.
 :::
 
-## Sumo Logic Cloud SIEM in Automation Service and Cloud SOAR
+## Configure Sumo Logic Cloud SIEM in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="500"/>
 1. Populate the resource fields as indicated.
     * **Label**. The name of the resource.
-    * **Sumo Logic API URL**. URL to the API of the Cloud SIEM instance `https://api.sumologic.com`.
-    * **Sumo Logic Cloud SIEM URL**. URL to the Cloud SIEM instance `https://service.sumologic.com/sec`.
+    * **Sumo Logic API URL**. URL to the API of the Cloud SIEM instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
+    * **Sumo Logic Cloud SIEM URL**. URL to the Cloud SIEM instance (for example, `https://service.sumologic.com/sec`).
     * **Access ID**. The access ID that you copied earlier.
     * **Access Key**. The access key that you copied earlier.
 1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-8.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
