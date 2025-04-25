@@ -17,7 +17,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="60"/>
 
-Sumo Logic enables you to seamlessly gather and analyze valuable insights from diverse sources. By leveraging its robust API capabilities, you can efficiently extract, transform, and load data into your analytics pipeline. This streamlined process allows you to harness the power of real-time data analysis, improving decision-making, troubleshooting, and overall operational efficiency within your organization.
+Sumo Logic's Cloud-to-Cloud (C2C) framework enables seamless data integration by leveraging API-based connections to collect insights from external systems and services. The Sumo Collection Source is part of this framework and is designed to gather a list of collectors and their associated sources directly from the Sumo Logic platform.
+
+This source supports both Installed and Hosted Collectors configured within a C2C environment. By using Sumo Logic’s API, it provides centralized, real-time visibility into collector and source health, operational status, and configuration metrics—helping teams proactively monitor deployments, troubleshoot issues, and maintain a reliable data collection pipeline.
+
+:::tip
+For related info on collector health events, see [this doc](/docs/manage/health-events).
+:::
 
 ## Data collected
 
