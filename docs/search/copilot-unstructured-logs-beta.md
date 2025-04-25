@@ -27,7 +27,7 @@ Currently, [Copilot works best on structured (JSON) logs](/docs/search/copilot/#
 
 ### Powered by Intelliparse mode
 
-Copilot now uses [Intelliparse Mode](/docs/search/get-started-with-search/build-search/intelliparse) to extract fields from unstructured logs. This new parsing engine automatically applies parsing logic based on logs already used in your dashboards, allowing Copilot to work with raw logs that don’t follow a consistent format.
+Copilot now uses [Intelliparse Mode](/docs/search/get-started-with-search/build-search/intelliparse-beta) to extract fields from unstructured logs. This new parsing engine automatically applies parsing logic based on logs already used in your dashboards, allowing Copilot to work with raw logs that don’t follow a consistent format.
 
 You’ll get more meaningful results from logs that are already powering visualizations and queries without needing to manually define parsing logic or create Field Extraction Rules (FERs).
 
