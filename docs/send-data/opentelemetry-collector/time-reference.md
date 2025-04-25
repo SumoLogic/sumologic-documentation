@@ -7,8 +7,6 @@ keywords:
   - otel-collector
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 We support several options for timestamps. When collecting log data, the timestamp attached to messages is vital, both for the integrity of the data in your account, and for accurate query results.
