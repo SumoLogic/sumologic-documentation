@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS CloudHSM provides customers with hardware security modules (HSMs) in the AWS Cloud. A hardware security module is a computing device that processes cryptographic operations and provides secure storage for cryptographic keys. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/cloudhsm/latest/userguide/hsm-metrics-cw.html)
 * [CloudWatch Logs](https://docs.aws.amazon.com/cloudhsm/latest/userguide/get-hsm-audit-logs-using-cloudwatch.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/cloudhsm/latest/userguide/get-api-logs-using-cloudtrail.html)

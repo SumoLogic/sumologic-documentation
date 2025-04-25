@@ -1,0 +1,23 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"Microsoft Graph Security API"
+      },
+      "state":{
+        "state":"Authenticated"
+      },
+      "config":{
+        "name":"Graph Security",
+        "tenant_id":"********",
+        "polling_interval":5,
+        "secret_key":"********",
+        "fields":{
+          "_siemForward":false
+        },
+        "category":"graph-api",
+        "application_id":"********"
+      },
+      "sourceType":"Universal"
+    }
+  }

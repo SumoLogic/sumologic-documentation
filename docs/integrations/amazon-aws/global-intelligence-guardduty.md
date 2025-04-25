@@ -15,7 +15,7 @@ This application name is abbreviated to **GI GuardDuty** in our documentation an
 
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.
 
-:::caution
+:::warning
 * Global Intelligence baselines are computed by aggregating data for a given customer across all their source categories defined for Amazon GuardDuty. As result, to enable meaningful comparisons, the app must be provided with all the source categories in your Sumo Logic account that are associated with Amazon GuardDuty. Follow the instructions on the [Custom Data Filters](/docs/get-started/apps-integrations#custom-data-filters) page to set up your app with custom data filters, specifying multiple source categories for Amazon GuardDuty.  
 * Threat score trends are not meaningful beyond the most recent 24 hours. This is because Global Intelligence baselines are the daily average over the most recent 7 days. As a result, the time range in the panels should not be changed beyond the most recent 24 hours.  
 * The `infer` operator is not intended for use outside of Sumo Logic Global Intelligence apps.
@@ -32,81 +32,81 @@ This feature is available in the following account plans.
 | Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
-### Sample Log message
+### Sample log message
 
 ```json
 {
-	"schemaVersion":"2.0",
-	"accountId":"656575676767",
-	"region":"us-east-1",
-	"partition":"aws",
-	"id":"1cb6b9059fa3c8cbb682a9a2501bfb13",
-	"arn":"arn:aws:guardduty:us-east-1:656575676767:detector/46554yhtu78yuhh5676777787hy06767/finding/1cb6b9059fa3c8cbb682a9a2501bfb13",
-	"type":"Trojan:EC2/BlackholeTraffic",
-	"resource":{
-		"resourceType":"Instance",
-		"instanceDetails":{
-			"instanceId":"i-99999999",
-			"instanceType":"m3.xlarge",
-			"launchTime":"2016-08-02T02:05:06Z",
-			"platform":null,
-			"productCodes":[
-				{
-					"productCodeId":"GeneratedFindingProductCodeId",
-					"productCodeType":"GeneratedFindingProductCodeType"
-				}
-			],
-			"iamInstanceProfile":{
-				"arn":"GeneratedFindingInstanceProfileArn",
-				"id":"GeneratedFindingInstanceProfileId"
-			},
-			"networkInterfaces":[
-				{
-					"networkInterfaceId":"eni-bfcffe88",
-					"privateIpAddresses":[
-						{
-							"privateDnsName":"GeneratedFindingPrivateName",
-							"privateIpAddress":"10.0.0.1"
-						}
-					],
-					"subnetId":"GeneratedFindingSubnetId",
-					"vpcId":"GeneratedFindingVPCId",
-					"privateDnsName":"GeneratedFindingPrivateDnsName",
-					"securityGroups":[
-						{
-							"groupName":"GeneratedFindingSecurityGroupName",
-							"groupId":"GeneratedFindingSecurityId"
-						}
-					],
-					"publicIp":"198.51.100.0",
-					"ipv6Addresses":[
+  "schemaVersion":"2.0",
+  "accountId":"656575676767",
+  "region":"us-east-1",
+  "partition":"aws",
+  "id":"1cb6b9059fa3c8cbb682a9a2501bfb13",
+  "arn":"arn:aws:guardduty:us-east-1:656575676767:detector/46554yhtu78yuhh5676777787hy06767/finding/1cb6b9059fa3c8cbb682a9a2501bfb13",
+  "type":"Trojan:EC2/BlackholeTraffic",
+  "resource":{
+    "resourceType":"Instance",
+    "instanceDetails":{
+      "instanceId":"i-99999999",
+      "instanceType":"m3.xlarge",
+      "launchTime":"2016-08-02T02:05:06Z",
+      "platform":null,
+      "productCodes":[
+        {
+          "productCodeId":"GeneratedFindingProductCodeId",
+          "productCodeType":"GeneratedFindingProductCodeType"
+        }
+      ],
+      "iamInstanceProfile":{
+        "arn":"GeneratedFindingInstanceProfileArn",
+        "id":"GeneratedFindingInstanceProfileId"
+      },
+      "networkInterfaces":[
+        {
+          "networkInterfaceId":"eni-bfcffe88",
+          "privateIpAddresses":[
+            {
+              "privateDnsName":"GeneratedFindingPrivateName",
+              "privateIpAddress":"10.0.0.1"
+            }
+          ],
+          "subnetId":"GeneratedFindingSubnetId",
+          "vpcId":"GeneratedFindingVPCId",
+          "privateDnsName":"GeneratedFindingPrivateDnsName",
+          "securityGroups":[
+            {
+              "groupName":"GeneratedFindingSecurityGroupName",
+              "groupId":"GeneratedFindingSecurityId"
+            }
+          ],
+          "publicIp":"198.51.100.0",
+          "ipv6Addresses":[
 
-					],
-					"publicDnsName":"GeneratedFindingPublicDNSName",
-					"privateIpAddress":"10.0.0.1"
-				}
-			],
-			"tags":[
-				{
-					"value":"GeneratedFindingInstaceValue1",
-					"key":"GeneratedFindingInstaceTag1"
-				},
-				{
-					"value":"GeneratedFindingInstaceTagValue2",
-					"key":"GeneratedFindingInstaceTag2"
-				}
-			]
-		}
-	}
+          ],
+          "publicDnsName":"GeneratedFindingPublicDNSName",
+          "privateIpAddress":"10.0.0.1"
+        }
+      ],
+      "tags":[
+        {
+          "value":"GeneratedFindingInstaceValue1",
+          "key":"GeneratedFindingInstaceTag1"
+        },
+        {
+          "value":"GeneratedFindingInstaceTagValue2",
+          "key":"GeneratedFindingInstaceTag2"
+        }
+      ]
+    }
+  }
 }
 ```
 
 
-### Sample Query
+### Sample queries
 
 The following query is from the threat score trend line in the **GI GuardDuty: Your Company v. Global Baseline** dashboard.
 
@@ -155,13 +155,13 @@ These tasks require the Manage Collectors and Manage Access Keys [role capabilit
 
 In this step, you need to generate access key and access ID from the Sumo Logic console. To generate an access key and access ID, do the following:
 
-1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#Create_an_access_key)) document.
+1. Follow the instructions as described in [Access Keys](/docs/manage/security/access-keys).
 2. Copy down both the values as you’ll need them to deploy the Sumo Logic GuardDuty Benchmark SAM App.
 
 
 #### Step 2: Deploy the Sumo Logic GI GuardDuty SAM App
 
-In this step, you deploy the SAM application, which creates the AWS resources described in the [process overview](#Process-overview).
+In this step, you deploy the SAM application, which creates the AWS resources described in the [process overview](#process-overview).
 
 To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
@@ -169,12 +169,12 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 2. Search for **sumologic-guardduty-benchmark** and click the app link when it appears.
 3. When the page for the Sumo app appears, click **Deploy**.
 4. In **Configure application parameters** panel, enter the following parameters:
-    * Access ID(Required): Sumo Logic Access ID generated from Step 1.
-    * Access Key(Required): Sumo Logic Access Key generated from Step 1.
-    * Deployment Name(Required): Deployment name (environment name in lower case as per [docs](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security)).
-    * Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
-    * Source Name: Enter the name of the HTTP Source which will be created within the collector.
-    * Source Category Name: Enter the name of the Source Category which will be used for writing search queries.
+    * Access ID (Required). Sumo Logic Access ID generated from Step 1.
+    * Access Key (Required). Sumo Logic Access Key generated from Step 1.
+    * Deployment Name (Required). Deployment name (environment name in lower case as per [docs](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security)).
+    * Collector Name. Enter the name of the Hosted Collector which will be created in Sumo Logic.
+    * Source Name. Enter the name of the HTTP Source which will be created within the collector.
+    * Source Category Name. Enter the name of the Source Category which will be used for writing search queries.
 5. Click **Deploy**.
 6. When the deployment is successful, click **View CloudFormation Stack**.
 7. In the Outputs section, copy the app folder name to search your personal folder in the Sumo Logic console.
@@ -201,7 +201,7 @@ Use this dashboard to:
 
 ### 02. Your Company v. Global Baseline
 
-**GI GuardDuty - 02. Your Company v. Global Baseline **dashboard compares your AWS environment against all Sumo Logic customers. The threat score (0=LOW RISK, 100=HIGH RISK) is a composite view of risk associated with GuardDuty findings and is impacted by severity, number of findings, deviation from global baseline and rarity of threats within Sumo Logic customers. In addition to the latest score, the trend line panel shows the 7 day trend of the threat score. My Prioritized Action Plan lists the change management actions in order of impact on GuardDuty security posture.
+**GI GuardDuty - 02. Your Company v. Global Baseline** dashboard compares your AWS environment against all Sumo Logic customers. The threat score (0=LOW RISK, 100=HIGH RISK) is a composite view of risk associated with GuardDuty findings and is impacted by severity, number of findings, deviation from global baseline and rarity of threats within Sumo Logic customers. In addition to the latest score, the trend line panel shows the 7 day trend of the threat score. My Prioritized Action Plan lists the change management actions in order of impact on GuardDuty security posture.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GI_GuardDuty_Your_Company_v_Baseline.png')} alt="GI GuardDuty" />
 

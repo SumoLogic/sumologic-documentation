@@ -1,17 +1,17 @@
 ---
 id: training-certification-faq
-title: Sumo Logic Training and Certification FAQ
-sidebar_label: Training and Certification
+title: Sumo Logic Training and Certifications FAQ
+sidebar_label: Training and certifications
 description: Learn more about the Sumo Logic Training and Certification Program.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/general/training.png')} alt="icon" width="50"/> <img src={useBaseUrl('img/icons/general/certification.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/general/training.png')} alt="training icon" width="50"/> <img src={useBaseUrl('img/icons/general/certification.png')} alt="certification icon" width="50"/>
 
 Learning at Sumo Logic will help you build the skills necessary to achieve your organization's goals using our platform to make the world’s apps reliable and secure.
 
-We offer courses online (live and on-demand) and in-person **for free**. Customized training is also available through our private offering.
+Our self-paced training, micro lessons, and scheduled instructor-led training are all **free**. And if you want customized private training for your team, you can pay for that through our private offering.
 
 * [**Sumo Logic Training Portal**](#training-portal), only available in-product, where you'll find our courses and certifications. To browse our certification descriptions, see [Sumo Logic Training and Certifications](https://www.sumologic.com/learn/certifications).
 * [**Sumo Logic Training Lab Environment**](#training-lab-environment), curated and set up to work along with our training curriculum.
@@ -22,16 +22,15 @@ We offer courses online (live and on-demand) and in-person **for free**. Customi
 ### How do I access the Training Portal?
 
 1. First, log in to Sumo Logic.
-1. From the **Home** page, click the **Certification** tab.
-1. Click **Get Certified**. You'll be redirected to the portal page, where you can access all courses and certifications.
+1. From the **Home** page, click the **Learn** tab.
+1. Click **Get Certified**. You'll be redirected to the portal page, where you can access all courses and certifications. <br/><img src={useBaseUrl('img/get-started/certifications.png')} alt="Get Certified" style={{border: '1px solid gray'}} width="500" />
 
-<details><summary><strong>Get Certified</strong> link not working? Make sure to verify your email address.</summary>
+<details>
+<summary><strong>Get Certified</strong> link not working? Make sure to verify your email address.</summary>
 
 For security reasons, you must must [verify your email address](#how-do-i-verify-my-email-address) in order to access [third-party services within Sumo Logic](#how-do-i-obtain-third-party-service-access). If you have a working Sumo Logic username and password, then your email address is considered verified.
 
 </details>
-
-![certs](/img/get-started/certifications.gif)
 
 ### How do I obtain third-party service access?
 
@@ -46,9 +45,9 @@ Users that do not authenticate to Sumo Logic using a username and password are r
 
 ### How do I verify my email address?
 
-To activate/verify your account:
+To activate your account:
 
-1. Go to **Help** > **Community**.<br/> ![verify-email](/img/get-started/verify-email.gif)
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help**, and then select **Community**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help**, and then select either **Community**.  
 1. You will be prompted to activate your account.
 1. Click **Send Activation/Verification Email**.
 1. Open the email and click **Verify Your Email**.
@@ -57,7 +56,7 @@ Now that your email is verified, you'll be able access to third-party services.
 
 ## Training Lab Environment
 
-The Training Lab Environment will enable you to get hands-on practice following the lessons covered in our learning experiences. A Sumo Logic environment curated to work with the examples and lab exercises provided with our courses is available 24/7 all year round for you to practice.
+The Training Lab Environment will enable you to get hands-on practice following the lessons covered in our learning experiences. A Sumo Logic environment curated to work with the examples and lab exercises provided with our courses is available 24/7 for you to practice.
 
 ### How do I access the Training Lab environment?
 
@@ -65,14 +64,14 @@ The Training Lab Environment will enable you to get hands-on practice following 
 1. Open a new window in a different browser. For example, if you're reading this on Chrome, open a Firefox window. Using separate browsers will keep you logged in to your regular Sumo Logic account and the training lab environment at the same time.
 1. In the new browser window, go to [https://service.sumologic.com](https://service.sumologic.com).
 1. Enter the credentials found at the top of the **Become a Sumo Expert** page of the **Training Portal**.
-  :::note
-  The Training Lab Environment password changes monthly, so you may have to check back there often.
-  :::
+    :::note
+    The Training Lab Environment password changes monthly, so you may have to check back there often.
+    :::
 1. You'll know you have access when you see **Sumo Logic Training** when you hover over the user in the bottom left corner.
 1. Save your training username for use during this training. It's a good idea to have both the Sumo Logic training lab environment and this self-paced program open in separate windows, so you can toggle between them.
-  :::important
-  Be careful not to take exams or self-paced courses with training account credentials!
-  :::
+    :::important
+    Be careful not to take exams or self-paced courses with training account credentials!
+    :::
 
 ### Where can I find the Training Lab credentials?
 
@@ -83,7 +82,7 @@ Credentials change monthly. We post them on the training portal in the **Become 
 
 ## Self-Paced Training
 
-With our Self-Paced eLearning, you can learn at your own pace, anywhere, without constraints. Our comprehensive product training as well as certification course will help you prepare  to pass the certification exams.
+With our self-paced eLearning, you can learn at your own pace, anywhere, without constraints. Our comprehensive product training as well as certification course will help you prepare to pass the certification exams.
 
 ### How do I access Self-Paced training?
 
@@ -93,12 +92,12 @@ Self-paced training is available in our [Training Portal](#how-do-i-access-the-t
 
 Everybody learns differently, we offer different options to adapt to your learning needs:
 
-* **Learning Paths**. you can learn at your own pace guided by our product oriented **Learning Paths**. The following **Learning Paths** are available under the **Become a Sumo Logic Expert** section of our **Training Portal**:
+* **Learning Paths**. Learn at your own pace guided by our product oriented **Learning Paths**. The following **Learning Paths** are available under the **Become a Sumo Logic Expert** section of our **Training Portal**:
    * General
    * Observability
    * Security
-* **Micro Lessons**. access our growing, curated library of quick tutorials, short demos and best practices, learn something new in just minutes. Check out the **Learn New Skills** section from our **Training Portal** to access this content.
-* **Recorded Live Training**. did you miss a Cert Jam or a workshop? Watch recordings of past sessions, download the student lab guide and a copy of the slides.
+* **Micro Lessons**. Access our growing, curated library of quick tutorials, short demos and best practices, learn something new in just minutes. Check out the **Learn New Skills** section from our **Training Portal** to access this content.
+* **Recorded Live Training**. Did you miss a Cert Jam or a workshop? Watch recordings of past sessions, download the student lab guide and a copy of the slides.
 
 
 ### How do I register for a Self-Paced course?
@@ -133,7 +132,7 @@ Make sure to complete all sections of the course.
 
 If you're seeing the following error when starting a new lesson, this is typically due to a browser setting.
 
-<img src={useBaseUrl('img/get-started/error.png')} alt="error" />
+<img src={useBaseUrl('img/get-started/error.png')} alt="Screenshot showing Sumo Logic data pipeline error regarding missing authentication cookie" />
 
 Here are some fixes:
 
@@ -183,15 +182,15 @@ Certified users become technical experts on setting up, managing and optimizing 
 -->
 
 
-**Sumo Logic Certified - Cloud Security Analytics**: Learn how our Threat Intelligence can help you stay on top of your environment by matching IOCs like IP address, domain names, email addresses, and MD5 hashes. Also learn how to analyze AWS data to monitor account usage and monitor security groups effectively.
+**Sumo Logic Certified - Cloud Infrastructure Security**: Learn how our Threat Intelligence can help you stay on top of your environment by matching IOCs like IP address, domain names, email addresses, and MD5 hashes. Also learn how to analyze AWS data to monitor account usage and monitor security groups effectively.
 
 <!--
 In this course, you'll create starter SOC queries as dashboard panels. These advanced operator queries help you monitor user activity across the globe, failed logins, land speed violations, brute force attacks, and more. You will create parameterized lookup tables for easy panel or dashboard pivots. You will learn how to export the starter SOC dashboard you created for use in your own environment. Lastly, you will be able to detect and investigate IOCs with the use of our embedded CrowdStrike database, which monitors malicious IPs addresses, and apply scheduled views as a best practice.
 -->
 
-**Sumo Logic Certified - Cloud SIEM Fundamentals**. Learn how Cloud SIEM ingests your data and turns it into actionable security Insights. Get hands-on practice with threat investigation, take actions on Insights, and learn the basics of SOC content creation, like writing rules and custom Insights.
+**Sumo Logic Certified - Cloud SIEM Fundamentals**. Learn how Cloud SIEM ingests your data and turns it into actionable security Insights. Get hands-on practice with threat investigation, take actions on Insights, and learn the basics of SOC content creation, like writing rules and custom insights.
 
-**Sumo Logic Certified - Cloud SIEM Administration**. Learn how to set up data ingestion for Cloud SIEM, including writing custom log and ingest mappings. Customize your environment with a deep dive into custom rules and Insight Actions.
+**Sumo Logic Certified - Cloud SIEM Administration**. Learn how to set up data ingestion for Cloud SIEM, including writing custom log and ingest mappings. Customize your environment with a deep dive into custom rules and insight actions.
 
 **Sumo Logic Certified - Cloud SOAR Fundamentals**. Learn how to automate your security operations center with playbooks, dashboards, and reports. Watch a playbook run in real time and export a customized dashboard.
 

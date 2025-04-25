@@ -4,6 +4,7 @@ title: Remote Windows Event Log Source
 description: Collect Windows event logs from a remote machine.
 ---
 
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 Set up a Remote Windows Event Log Source to use a single Sumo Logic Collector to collect Windows event log entries from multiple remote systems.
 
@@ -17,8 +18,8 @@ The following about setting up a Remote Windows Event Log Source:
 To configure a remote Windows Event Log Source:
 
 1. Complete the prerequisites for collecting remote events.
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-1. Find the name of the installed collector to which you'd like to add a source. Click **Add** and then choose** Add Source** from the pop-up menu.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. Find the name of the installed collector to which you'd like to add a source. Click **Add** and then choose **Add Source** from the pop-up menu.
 
     ![add source from collection page.png](/img/send-data/add-source-from-collection-page.png)
 
@@ -36,9 +37,9 @@ To configure a remote Windows Event Log Source:
 
    * **Name.** Type the name you'd like to display for this source in Sumo Logic. 
    * **Description.** Optional description.
-   * **Windows host(s).** Enter one or more hostnames for the Windows machines from which you want to collect Windows Events. If you'd like to collect from more than one remote host, separate the hostnames with a comma. (If you enter more than one hostname, each host must allow event log access from the same domain user. See the [prerequisites](preconfigure-machine-collect-remote-windows-events.md) for more information.) The hostname can be a maximum of 128 characters. 
+   * **Windows host(s).** Enter one or more hostnames for the Windows machines from which you want to collect Windows Events. If you'd like to collect from more than one remote host, separate the hostnames with a comma. (If you enter more than one hostname, each host must allow event log access from the same domain user. See the [prerequisites](preconfigure-machine-collect-remote-windows-events.md) for more information.) The hostname can be a maximum of 128 characters.
      :::note
-     The hostname values are parsed and applied to your event logs as `_sourceHost `[metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs. `Channel` or `LogFile` values are parsed and applied as `_sourceName` metadata automatically. The `_sourceHost` and `_sourceName` metadata fields are supported in log search but not LiveTail. 
+     The hostname values are parsed and applied to your event logs as `_sourceHost` [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs. `Channel` or `LogFile` values are parsed and applied as `_sourceName` metadata automatically. The `_sourceHost` and `_sourceName` metadata fields are supported in log search but not Live Tail.
      :::
    * **Source Category.** Enter a string to tag the logs collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](#configuring-sourcecategory-using-variables) below.
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
@@ -64,16 +65,16 @@ To configure a remote Windows Event Log Source:
      * **Event IDs.** (Available in Collector version 19.351-4 and later.) You can set allow and deny Windows Event ID filters to only collect important events. Select the checkbox next to the type of filter you want to set, we recommend only using one at a time. Your list needs to be a comma-separated list of event IDs.
      * **Metadata.** When the legacy format is selected choose whether you would like the collector to minimize the amount of data collected by omitting the full message text of each event. Core metadata fields such as event ID, timestamp, user name, as well as the unformatted event data will still be present. This can reduce data usage and increase event throughput, but will prevent many dashboards and apps from correctly extracting data. To omit full event text and only collect event metadata, the collector must have version 19.155 or later installed.
 
-   * **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either: 
+   * **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either:
      * Choose a predefined value from dropdown list, ranging from “Now” to “24 hours ago” to “All Time".
      * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example “-1w”. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m).
 
        :::note   
        When updating the **Collection should begin** setting you will need to restart the Collector.
        :::
-    
+
        :::note
-       {@import ../../../reuse/collection-should-begin-note.md}
+       <CollBegin/>
        :::
 
    * **Security Identifier**. Collectors on version 19.182 or later can map [security identifiers](https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows) (SIDs) to usernames. During collection, the `Security ``ID` field in your log `message` (if you selected **Complete Message**) is translated into the format of your choice. Choose:
@@ -94,7 +95,7 @@ To configure a remote Windows Event Log Source:
 
         If we would have chosen Security Identifier Only, the `Security ID` field would be `S-1-5-18`.
         If we would have chosen Username Only, the `Security ID` field would be `NT AUTHORITY\SYSTEM`.
- * Create any Processing Rules you'd like for the new Source.
+     * Create any Processing Rules you'd like for the new Source.
 
 1. Click **Save**.
 
@@ -102,7 +103,7 @@ You can return to this dialog and edit the settings for the Source at
 any time.
 
 ## Configuring sourceCategory using variables
-Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
+Sumo Logic Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
 
 :::note
 Not all Sources can define a Source Host value.

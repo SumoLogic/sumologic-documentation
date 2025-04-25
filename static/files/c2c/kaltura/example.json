@@ -1,0 +1,27 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"Kaltura"
+      },
+      "config":{
+        "name":"Kaltura",
+        "collectAll":true,
+        "partnerId":"*****",
+        "polling_interval":24,
+        "supportedApis":["baseEntry","auditTrail"],
+        "fields":{
+          "_siemForward":false
+        },
+        "token":"***********",
+        "tokenId":"*******",
+        "category":"sanbox/kaltura",
+        "apiBaseUrl":"https://www.kaltura.com",
+        "baseEntryInitLookback":1
+      },
+      "state":{
+        "state":"Collecting"
+      },
+      "sourceType":"Universal"
+    }
+  }

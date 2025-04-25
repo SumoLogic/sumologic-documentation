@@ -5,6 +5,9 @@ sidebar_label: FAQ
 description: Frequently asked questions (FAQs) about the AWS Observability Solution to monitor and troubleshoot your AWS cloud infrastructure.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
+
 This section provides frequently asked questions and information about the AWS Observability Solution to monitor and troubleshoot your AWS cloud infrastructure.
 
 
@@ -18,7 +21,7 @@ See [About the Observability Solution](/docs/observability/about.md) to learn mo
 
 ## What is AWS Observability?
 
-Our AWS Observability solution enables you to view your entire AWS environment in a single pane of glass, while seamlessly surfacing anomalous events of interest correlated with application incidents. It includes the AWS Observability Solution and Root Cause Explorer:
+Our AWS Observability solution enables you to view your entire AWS environment in a single pane of glass, while seamlessly surfacing anomalous events of interest correlated with application incidents.
 
 * **AWS Observability Solution** - Sumo Logic’s AWS Observability solution pulls in data across key AWS services and accounts to give a unified view of AWS environments. Easily navigate from overview dashboards into account, region, availability zone, or service specific views. Intuitive navigation ensures teams can quickly resolve issues, minimize downtime, and improve system availability. See [About AWS Observability](/docs/observability/aws/about.md).
 
@@ -28,11 +31,25 @@ See [AWS Observability Apps](/docs/observability/aws/integrations) for detailed
 
 Sumo Logic AWS Observability supports the following AWS services: EC2, ECS, RDS, ElastiCache, API Gateway, Lambda, DynamoDB, Application ELB, Classic ELB, Amazon SNS, Amazon SQS, and Network ELB.
 
-Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS.
+### What is AWS Observability centralized/hub page?
+
+The hub is designed to provide easy navigation to all features and functions of the AWS Observability solution in one place. From the hub, you can navigate to the dashboards, monitors (for alerting), and pre-baked log searches for troubleshooting that come with the AWS Observability solution.
+
+You can access the hub by clicking on the Home button and selecting the AWS Observability tab from the top menu bar.
+
+The hub has the following pages:
+
+**Explore your AWS Environment.** Provides you access to dashboards that help you monitor your AWS environment.
+**Troubleshoot with Logs.** Provides log searches to help you get started troubleshooting issues within your AWS environment.
+**View and Configure Alerts.** Provides you access to monitors that will alert you about issues within your AWS environment.
+**Explore Intelligent Benchmark Dashboards.** Provides you access to our global benchmark dashboards to help you compare your AWS environment with Sumo benchmarks and identify issues.
+**Invite your teammates.** Allows you to quickly add other users to your Sumo Logic account.
+ 
+ <img src={useBaseUrl('img/observability/aws_observability_hub_page.jpg')} alt="AWS Observability Hub" style={{border: '1px solid gray'}} width="800" />
 
 ### Can we monitor other AWS services?
 
-AWS Observability provides a view across AWS accounts, regions, namespaces, and entities to present an intuitive navigation flow. You can add additional services to the AWS hierarchy as dashboards based on logs and metrics data to the AWS Observability Explore views, expanding as you add new services.
+AWS Observability provides a view across AWS accounts, regions, namespaces, and entities to present an intuitive navigation flow. You can add additional services to the AWS hierarchy as dashboards based on logs and metrics data to the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), expanding as you add new services.
 
 Adding a service requires:
 
@@ -40,7 +57,7 @@ Adding a service requires:
 * Collect metrics for your service using a [Sumo Logic AWS CloudWatch metrics source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
 * Create at least one Sumo Logic dashboard based on CloudWatch metrics and log data to monitor the operations of the AWS Service.
 
-See [Add a New AWS Service to the AWS Observability Explore Hierarchy](/docs/observability/aws/other-configurations-tools/add-new-aws-service.md) to add a new service to the AWS Observability hierarchy. 
+See [Add a New AWS Service to the AWS Observability View Hierarchy](/docs/observability/aws/other-configurations-tools/add-new-aws-service.md) to add a new service to the AWS Observability hierarchy. 
 
 ### Does AWS Observability require logs and metrics?
 
@@ -49,15 +66,6 @@ For full functionality of the out-of-the-box dashboards, the solution requires C
 ### Who can use the new features? 
 
 Any Sumo Logic customer can leverage Sumo Logic AWS Observability solution features. 
-
-### Is there a demo of the solution?
-
-See the [Sumo Logic AWS Observability demo video](https://www.sumologic.com/video/aws-observability-demo/)
-for a demo of the solution.
-
-![aws-demo-video.jpg](/img/observability/aws-demo-video.jpeg)
-
-
 
 ## Setup and Deployment
 
@@ -127,10 +135,10 @@ There are two ways EC2 can be monitored. One way is to use the [CloudWatch metri
 The two types of metrics collected are not comparable thus can have different values for the same metrics.
 
 
-### Will new Lambdas or services get automatically added to the AWS Observability explore tab?
+### Will new Lambdas or services get automatically added to the AWS Observability view?
 
 New Lambda functions and new Application ELBs will automatically be
-added if you have selected the auto-subscribe options during the
+added to the [AWS Observability views](/docs/dashboards/explore-view/#aws-observability) if you have selected the auto-subscribe options during the
 CloudFormation stack deployment. 
 
 ### What type of tagging is used for AWS resources?
@@ -143,14 +151,14 @@ metadata sources need to be added for that account and will be mapped to
 Host metrics. Custom EC2 tags will be available through the metadata
 source.
 
+### What output formats do you support for CloudWatch metrics streams?
+
+Currently, we support [OpenTelemetry 0.7.0](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html) output format for CloudWatch metric streams.
+
+
 ### Are instance metrics collected from CloudWatch metrics or as Host metrics?
 
 EC2 dashboards are based on Host Metrics. 
-
-Root Cause Explorer supports both EC2 and Host Metrics:
-
-* Host Metrics: The namespace appears as "Host' in the namespace dropdown.
-* EC2: Through CloudWatch, it appears as "AWS/EC2".
 
 Host Metrics use a different format than CloudWatch. They can also refer
 to non-AWS in general, which is why Sumo Logic refers to them
@@ -158,7 +166,7 @@ generically as Host Metrics.
 
 ### Why are all entities or functions not available in Sumo Logic?
 
-AWS Observability integrates with Explore by populating metadata and
+AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and
 only shows entities with metrics coming in. If you do not see expected
 entities, make sure configurations are correct to collect and receive
 metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation)
@@ -166,7 +174,7 @@ for CloudFormation Template. You can configure metadata through
 deployment configuration or manually.
 
 For example, metrics for Lambda functions must be coming in for those
-entities to show in the Explore view. If you do not see Lambda
+entities to show in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). If you do not see Lambda
 functions, verify the CloudFormation stack is correctly configured
 including the AWS/Lambda namespace to collect metrics. For information,
 see 
@@ -174,41 +182,3 @@ see 
 ### Can load balancers be filtered as part of CloudFormation template setup?
 
 At this time, you cannot filter load balancers, such as sending specific ALBs to the AWS Observability solution.
-
-
-## Root Cause Explorer
-
-See [Root Cause Explorer](/docs/observability/root-cause-explorer.md) for more details.
-
-### What AWS services does it support?
-
-Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS. These services include the following:
-
-* AWS CloudWatch metrics for ALB, NLB, API Gateway, EC2, EBS, Lambda, ECS, RDS, DynamoDB, ElastiCache, Autoscaling groups
-* AWS Simple Notification Service (SNS)
-* AWS Simple Queueing Service (SQS)
-* AWS X-ray
-* Kubernetes metrics and hierarchy
-* OpenTelemetry metrics
-* Space Map
-
-### Who can use the new features?
-
-Root Cause Explorer is available for Cloud Flex Enterprise, Cloud Flex Credits Enterprise Operations, and Cloud Flex Credits Enterprise Suite account plans.
-
-### How does Root Cause Explorer work? 
-
-When issues occur in infrastructure and services, on-call staff
-typically triage an incident by attempting to correlate spikes at
-various levels in their application stack to analyze problem root cause
-and recovery options. At its core, Root Cause Explorer mimics this
-workflow with a combination of machine-learning and rules curated by
-AWS, Kubernetes, Tracing and troubleshooting experts. 
-
-It computes *Events of Interest (EOIs)* in AWS CloudWatch metrics, Open
-Telemetry trace metrics, host metrics, and Kubernetes metrics using the
-context associated with the incident.
-
-### How do I tune the Root Cause Explorer? 
-
-Anomalies are auto-generated and auto-correlated, meaning no manual work fine tuning thresholds. See [Root Cause Explorer](/docs/observability/root-cause-explorer.md) for troubleshooting information.

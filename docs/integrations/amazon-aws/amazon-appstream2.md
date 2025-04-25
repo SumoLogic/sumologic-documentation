@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon AppStream 2.0 is a fully managed application streaming service that provides users with instant access to their desktop applications from anywhere. AppStream 2.0 manages the AWS resources required to host and run your applications, scales automatically, and provides access to your users on demand. AppStream 2.0 provides users access to the applications they need on the device of their choice, with a responsive, fluid user experience that is indistinguishable from natively installed applications. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/appstream2/latest/developerguide/monitoring.html#monitoring-with-cloudwatch)
 * [CloudTrail Logs](https://docs.aws.amazon.com/appstream2/latest/developerguide/logging-using-cloudtrail.html)
 

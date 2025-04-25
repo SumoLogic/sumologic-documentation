@@ -4,7 +4,7 @@ title: cat Search Operator
 sidebar_label: cat
 ---
 
-You can use the `cat` operator to view the contents of a lookup table. Not supported in live dashboards or scheduled searches.
+You can use the `cat` operator to view the contents of a lookup table. Not supported in auto refresh dashboards or scheduled searches.
 
 ## Syntax
 
@@ -25,7 +25,7 @@ For example: 
 cat path://"/Library/Users/myusername@sumologic.com/Suspicious Users"
 ```
 
-To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot more options menu for the table.   
+To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot kebab menu for the table.   
  
 If your lookup table is very large, it may take a few minutes to display.
 

@@ -4,22 +4,23 @@ title: Parse JSON Formatted Logs
 description: The JSON operator allows you to extract values from JSON logs with most JSONPath expressions.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The JSON operator allows you to extract values from JSON logs with most [JSONPath](http://goessner.net/articles/JsonPath/) expressions. See the [supported JSONPath syntax elements](#supported-jsonpath-syntax-elements) below.
 
 :::note
-If the messages in your search results can be formatted as JSON, the **Messages** tab presents the option to display each message in JSON or raw format. See [Format JSON messages in search results](../../get-started-with-search/search-basics/view-search-results-json-logs.md).
+If the messages in your search results can be formatted as JSON, the **Messages** tab presents the option to display each message in JSON or raw format. See [Format JSON messages in search results](/docs/search/get-started-with-search/search-basics/view-search-results-json-logs/#format-jsonmessages-in-search-results).
 :::
 
 Because JSON supports both nested keys and arrays that contain ordered sequences of values, the Sumo Logic JSON operator allows you to extract:
 
-* Single, top-level fields.
-* Multiple fields.
-* Nested keys.
-* Keys in arrays.
+* Single, top-level fields
+* Multiple fields
+* Nested keys
+* Keys in arrays
 
 :::tip
-Not familiar with JSONPath syntax? Try our [UI generator](#ui-parse-generator)
-that can create the parse expression for a specific JSON key for you.
+Not familiar with JSONPath syntax? Try our [UI generator](#ui-parse-generator) that can create the parse expression for a specific JSON key for you.
 :::
 
 ## Syntax
@@ -33,9 +34,9 @@ that can create the parse expression for a specific JSON key for you.
 
 ## Options
 
-* `nodrop` - allows messages containing invalid JSON values to be displayed. For details, see [parse nodrop](parse-nodrop-option.md) and [using the nodrop option](#using-the-nodrop-option).
-* `field=<field_name>` - allows you to specify a field to parse other than the default message. For details, see [parse field](parse-field-option.md).
-* `auto` - automatically detects JSON objects in logs and extracts the key/value pairs. See [JSON auto option](#json-auto-option) for details.
+* `nodrop`. Allows messages containing invalid JSON values to be displayed. For details, see [parse nodrop](parse-nodrop-option.md) and [using the nodrop option](#using-thenodrop-option).
+* `field=<field_name>`. Allows you to specify a field to parse other than the default message. For details, see [parse field](parse-field-option.md).
+* `auto`. Automatically detects JSON objects in logs and extracts the key/value pairs. See [JSON auto option](#json-auto-option) for details.
 
 The following examples use this sample log message:
 
@@ -98,7 +99,7 @@ _index=audit_events
 
 produces results like:
 
-![json single key displayed on results table.png](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-single-key.png)
+![Screenshot of a Sumo Logic search result showing a table with extracted JSON fields including a single key accountId displayed in the results](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-single-key.png)
 
 ## Extracting multiple fields
 
@@ -112,7 +113,7 @@ _index=audit_events
 
 produces these results:
 
-![json multiple keys displayed in results.png](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-multiple-keys-displayed-in-results.png)
+![Screenshot of a Sumo Logic search result showing a table with multiple extracted JSON fields, such as accountId and eventName, displayed in the results](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-multiple-keys-displayed-in-results.png)
 
 In addition, you can assign names to fields that differ from their original key names. To use `aID` instead of `accountId` and `eName` instead of `eventName`, you'd use the `as` option like this:
 
@@ -122,7 +123,7 @@ _index=sumologic_audit_events | json "accountId", "eventName" as aID, eName | fi
 
 which gives you these results:
 
-![json rename key names.png](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-rename-key-names.png)
+![Screenshot of a Sumo Logic search result demonstrating the renaming of JSON keys where accountId is shown as aID and eventName as eName](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-rename-key-names.png)
 
 ## Extracting a nested key
 
@@ -144,11 +145,11 @@ You can instruct the JSON operator to extract `@baselineIntervals`, like this:
 * | json field=jsonobject "baselineIntervals"
 ```
 
-It returns a list of the values in the array:` ["2014-03-10T23:...", ""2014-03-11T05:..."]`.
+It returns a list of the values in the array: `["2014-03-10T23:...", ""2014-03-11T05:..."]`.
 
 like this:
 
-![json results](/img/reuse/query-search/json_results_baselineIntervals.png)
+![Screenshot of a Sumo Logic search result displaying JSON data with baseline intervals](/img/reuse/query-search/json_results_baselineIntervals.png)
 
 To refer to one specific entry in the array, provide the array's index: 
 
@@ -165,11 +166,11 @@ _sourceCategory=O365* | json "Actor[0].Type" as Actortype0 | json "Actor[1].Type
 
 The result of the query would look like this: 
 
-![ArrayElements.png](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/ArrayElements.png)
+![Screenshot of a Sumo Logic search result displaying parsed JSON data from an HTTP input](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/ArrayElements.png)
 
 ## Using the nodrop option
 
-By default, the JSON operator optimizes results by dropping messages that don't use the specified key or keys, or messages that use invalid JSON keys. Use the nodrop option to prevent this optimization, and set the extracted field values to null (empty):
+By default, the JSON operator optimizes results by dropping messages that do not use the specified key or keys, or messages that use invalid JSON keys. Use the `nodrop` option to prevent this optimization, and set the extracted field values to null (empty):
 
 ```sql
 * | json field=jsonobject "baselineIntervals[0]" nodrop
@@ -179,14 +180,14 @@ By default, the JSON operator optimizes results by dropping messages that don't 
 
 You can use wildcard (\*) to access the array elements in a JSON. For example, you can access Actor Type from an O365 JSON message using wildcard.
 
-![json wildcard example.png](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-wildcard-example.png)
+![A table displays columns for Time, jsonobject, and baselineintervals. The jsonobject column contains a JSON string with the "baselineintervals" key, listing various time intervals. The baselineintervals column shows the same time intervals extracted and formatted for easier readability.](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-wildcard-example.png)
 
 `_sourceCategory=O365*
 | json "Actor[*].Type" as Actortype`
 
 The result of the query would look like this:
 
-![wildcard example results.png](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/wildcard-example-results.png)
+![A table lists logs with columns for Time, actortype0, actortype1, Source Name, and Message. The Message column contains detailed JSON data, including fields such as CreationTime, Id, Operation, OrganizationId, RecordType, ResultStatus, UserKey, and Actor. The JSON object displays a record of a failed user update operation in Azure Active Directory, including user details and actor context.](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/wildcard-example-results.png)
 
 Next, if required, you can use the array elements to perform additional operations. For example, you can find the max of Type for a CreationTime and Id using this query:
 
@@ -200,13 +201,13 @@ _sourceCategory=O365*
 
 The result would look like this:
 
-![Output](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/MaxOutput.png)
+![Results for a query for Type for a CreationTime and Id](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/MaxOutput.png)
 
 ## JSON auto option
 
 Use the **json auto** option in a query to automatically detect JSON objects in logs and extract the key/value pairs without the need to specify fields in a parse statement. After the query runs, you can use the Field Browser to choose the fields you’d like to display. You can also operate on the extracted fields later in the query.
 
-If you don't specify any additional fields, the JSON objects are automatically detected and all of the key/value pairs are extracted. Note that messages that don't contain JSON are not dropped.
+If you do not specify any additional fields, the JSON objects are automatically detected and all of the key/value pairs are extracted. Note that messages that do not contain JSON are not dropped.
 
 The JSON portion does not need to span the entire log message. There can be some text before and after the JSON portion. The **json auto** operator automatically detects where the JSON object is located and parses it.
 
@@ -250,7 +251,7 @@ Example:
 * | json auto keys "<key1>", "<key2>" as <field1>, <field2>
 ```
 
-Use the **refonly** option to extract only the referenced keys. If you don't use this option, **json auto** will also extract all other JSON fields in the message.
+Use the **refonly** option to extract only the referenced keys. If you do not use this option, **json auto** will also extract all other JSON fields in the message.
 
 Example:
 
@@ -383,7 +384,7 @@ Sumo Logic can generate the parse expression for a specific JSON key for you. Th
 1. Right-click the key you want to parse and a menu will appear.
 1. Click **Parse selected key**.  
 
-    ![ui parse selected key option.png](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/ui-parse-selected-key-option.png)
+    ![Screenshot of the Sumo Logic UI demonstrating the right-click context menu to parse a selected JSON key, with an example key _BOOT_ID being added to the query](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/ui-parse-selected-key-option.png)
 
 1. In the query text box, where ever your cursor was last placed, a new  parse JSON operation is added that will parse the selected key. For example, `| json field=_raw "_BOOT_ID"`.
 
@@ -391,13 +392,13 @@ Sumo Logic can generate the parse expression for a specific JSON key for you. Th
 
 ### Unable to parse input as json
 
-By default the JSON operator optimizes results by dropping messages that don't have the fields or keys specified in your query or if the JSON is invalid. When a message is dropped the user interface provides a warning message: 
+By default the JSON operator optimizes results by dropping messages that do not have the fields or keys specified in your query or if the JSON is invalid. When a message is dropped the user interface provides a warning message: 
 
 ![unable to parse json warning message.png](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/unable-to-parse-json-warning-message.png)
 
 This is only a warning message to inform you that at least one log returned in the scope of the query did not have a specified key. 
 
-Use the [nodrop](parse-nodrop-option.md) option to prevent this optimization. For example, the following query is looking for the key `event` and it has specified not to drop messages that don't have this key:
+Use the [nodrop](parse-nodrop-option.md) option to prevent this optimization. For example, the following query is looking for the key `event` and it has specified not to drop messages that do not have this key:
 
 ```sql
 _sourceCategory="nginx"

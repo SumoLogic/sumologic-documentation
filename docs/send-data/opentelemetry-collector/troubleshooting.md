@@ -67,9 +67,9 @@ The behavior is the same as for any other collection method.
 #### How do I provide a proxy setting for the Sumo Logic OpenTelemetry Collector to connect to the Sumo Logic backend?
 
 If your Collector fails to connect to Sumo Logic, you may need to configure a proxy setting for the Sumo Logic OpenTelemetry Collector so that it can connect to the Sumo Logic backend. The information how to install the proxy has been provided on the Install Collector page for the specific platform.
-* [Linux Proxy](/docs/send-data/opentelemetry-collector/install-collector-linux/#using-proxy)
-* [Windows Proxy](/docs/send-data/opentelemetry-collector/install-collector-windows/#using-proxy)
-* [macOS Proxy](/docs/send-data/opentelemetry-collector/install-collector-macos/#using-proxy)
+* [Linux Proxy](/docs/send-data/opentelemetry-collector/install-collector/linux/#using-proxy)
+* [Windows Proxy](/docs/send-data/opentelemetry-collector/install-collector/windows/#using-proxy)
+* [macOS Proxy](/docs/send-data/opentelemetry-collector/install-collector/macos/#using-proxy)
 
 #### On macOS, does the Sumo Logic OpenTelemetry Collector stop sending data after some time?
 
@@ -116,12 +116,50 @@ On systems without systemd, the logs are available in the console output of the 
 On Windows, the logs are available in event viewer, or they can be listed using PowerShell:
 
 ```powershell
-Get-EventLog -LogName Application -Newest 100 -Source OtelcolSumo | Select-Object -Property ReplacementStrings
+Get-EventLog -LogName Application -Newest 100 -Source OtelcolSumo |  Select-Object @{Name='TimeGenerated'; Expression={($_.TimeGenerated).ToString("yyyy-MM-dd HH:mm:ss")}}, ReplacementStrings |  Format-Table -Wrap
 ```
 
 </TabItem>
 </Tabs>
 
+#### Sending the collector's logs to Sumo Logic
+
+If desired, you can change the collector's logging level and have the collector's logs be sent to Sumo Logic for analysis and troubleshooting. To do this, you'll need add the following to your collector's configuration (located in `/etc/otelcol-sumo/conf.d`):
+1. Create a new logging file in the `/var/log` directory. For example: `/var/log/otelcol.log`. Make sure this file has read and write permissions for the collector.
+2. Add the `telemetry` service to the collector config, and set the logging `level` (default = INFO) and `output_paths` parameters accordingly. See example config below.
+3. Add a fileog receiver to read from the output_paths that you've specified previously (i.e., `/var/log/otelcol.log`). This is the where the collectors log files are written.
+4. Make sure that you update your service pipelines to include this receiver so you can send them to Sumo Logic.
+   
+See the example configuration below, which sets the log level to `DEBUG`, the log output path to `/var/log/otelcol.log`, and has a filelog receiver to read the logs:
+```yaml
+receivers:
+  filelog/collector_files:
+    include:
+      - /var/log/otelcol.log
+    include_file_name: false
+    include_file_path_resolved: true
+    operators:
+    - type: move
+      from: attributes["log.file.path_resolved"]
+      to: resource["_sourceName"]
+
+service:
+  telemetry:
+    logs:
+      level: DEBUG
+      output_paths: /var/log/otelcol.log
+  pipelines:
+    logs:
+      receivers:
+        - filelog/collector_files
+      exporters:
+        - sumologic
+```
+
+Doing this will allow you to search the collectors logs in Sumo Logic by performing a log search similar to the following:
+```
+_collector="<collector name>" and _sourceName="/var/log/otelcol.log"
+```
 
 ### Accessing the collector's metrics
 
@@ -142,6 +180,48 @@ service:
       address: ":8889"
 ```
 
+#### Sending the collector's metrics to Sumo Logic
+
+If desired, you can send the collector's metrics to Sumo Logic for analysis and troubleshooting. To do this, you need add the following to your collector's configuration (located in `/etc/otelcol-sumo/conf.d`):
+1. Add the `telemetry` service to the collector config, and set the metric `level` (default = basic) and `address` parameters accordingly. See example config below.
+2. Add a prometheus receiver to scrape the collectors metrics.
+3. Make sure that you update your service pipelines to include this receiver so you can send them to Sumo Logic.
+   
+See the example configuration below, which sets the metrics level to `detailed` and has a prometheus receiver to scrape them:
+```yaml
+receivers:
+  prometheus:
+    trim_metric_suffixes: true
+    use_start_time_metric: true
+    start_time_metric_regex: .*
+    config:
+      scrape_configs:
+        - job_name: 'otel-collector'
+          scrape_interval: 5s
+          static_configs:
+            - targets: ['<internal IP of instance>:8888']
+
+service:
+  telemetry:
+    metrics:
+      level: detailed
+      address: 0.0.0.0:8888
+  pipelines:
+    metrics:
+      receivers:
+        - prometheus
+      exporters:
+        - sumologic
+```
+
+Doing this will allow you to search the collectors metrics in Sumo Logic by performing a metrics search similar to the following:
+```
+_collector="<collector name>"  _sourcename="otc metric input"
+```
+
+:::note
+You can find more information on customizing the collector's telemetry in the OpenTelemetry Documentation [Configuration](https://opentelemetry.io/docs/collector/configuration/#telemetry) section.
+:::
 
 
 ## Known Issues
@@ -152,17 +232,15 @@ After running the collector for the first time, changes to collector properties 
 
 To work around this, you need to delete the existing collector registration and register the collector again. To do this, you need to do two things:
 
+1. Delete the local collector registration file in `~/.sumologic-otel-collector/` and wait for 10 minutes for the collector to get offline.
 1. Remove the collector in Sumo Logic UI.
-   1. Log in to Sumo Logic.
-   1. Go to `Manage Data` - `Collection`.
+   1. Sign in to Sumo Logic platform.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
    1. Find your collector.
-   1. Click `Delete` on the right-hand side of the collector.
-2. Delete local collector registration file in `~/.sumologic-otel-collector/`.
 
-After that, the collector will register on next run.
+After that, the collector will register on the next run.
 
-If you delete the collector in the UI but not delete the local registration file,
-the collector will fail to start - see [Collector fails to start when deleted from UI](#collector-fails-to-start-when-deleted-from-ui).
+The collector will fail to start if you delete the collector in the UI but do not delete the local registration file. Refer to [Collector fails to start when deleted from UI](#collector-fails-to-start-when-deleted-from-ui).
 
 On the other hand, if you only delete the local registration file and do not delete the collector in the UI, a new collector will be created with current timestamp as a suffix, to prevent overwriting the existing collector.
 
@@ -170,10 +248,14 @@ On the other hand, if you only delete the local registration file and do not del
 
 After successful registration of collector, if you delete the collector in Sumo Logic UI, the collector will fail to start on next run. The error message is similar to the below:
 
-```
-2021-08-24T10:52:38.639Z  error  sumologicextension@v0.31.0/extension.go:373  Heartbeat error  {"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>", "collector_id": "0000000001A2B3C4", "error": "collector heartbeat request failed, status code: 401, body: {\n\"servlet\":\"rest\",\n\"message\":\"Could not authenticate.\",\n\"url\":\"/api/v1/collector/heartbeat\",\n\"status\":\"401\"\n}"}
-github.com/open-telemetry/opentelemetry-collector-contrib/extension/sumologicextension.(*SumologicExtension).heartbeatLoop
-github.com/open-telemetry/opentelemetry-collector-contrib/extension/sumologicextension@v0.31.0/extension.go:373
+```console
+2024-02-21T10:59:54.665+0100	info	extensions/extensions.go:37	Extension is starting...	{"kind": "extension", "name": "sumologic"}
+2024-02-21T10:59:54.666+0100	info	credentials/credentialsstore_localfs.go:147	Collector registration credentials retrieved from local fs	{"kind": "extension", "name": "sumologic", "path": "/var/lib/otelcol-sumo/credentials/f1e98079b6ff1105a0d1ba513531ef57364b326da18ccdea63da4c2cb811790a"}
+2024-02-21T10:59:54.666+0100	info	sumologicextension@v0.91.0-sumo-0/extension.go:238	Validating collector credentials...	{"kind": "extension", "name": "sumologic", "collector_credential_id": "AiN2lZaDWkWSWqHkBHy8", "collector_id": "00005AF3107B06F2"}
+2024-02-21T10:59:54.927+0100	info	sumologicextension@v0.91.0-sumo-0/extension.go:339	Found stored credentials, skipping registration	{"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>"}
+2024-02-21T10:59:55.068+0100	info	sumologicextension@v0.91.0-sumo-0/extension.go:816	Updating collector metadata	{"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>", "collector_id": "00005AF3107B06F2", "URL": "https://open-collectors.de.sumologic.com/api/v1/otCollectors/metadata", "body": "{\"hostDetails\":{\"name\":\"<your-collector-name>\",\"osName\":\"darwin\",\"osVersion\":\"14.3.1\",\"environment\":\"\"},\"collectorDetails\":{\"runningVersion\":\"v0.94.0-sumo-2\"},\"networkDetails\":{\"hostIpAddress\":\"192.168.0.133\"},\"tagDetails\":{\"deployment.environment\":\"default\",\"host.group\":\"default\",\"sumo.disco.enabled\":\"true\"}}\n"}
+2024-02-21T10:59:55.280+0100	warn	sumologicextension@v0.91.0-sumo-0/extension.go:836	Metadata API error response	{"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>", "collector_id": "00005AF3107B06F2", "status": 404, "body": ""}
+2024-02-21T10:59:55.280+0100	warn	sumologicextension@v0.91.0-sumo-0/extension.go:864	collector metadata update failed: collector metadata request failed: API error (status code: 404): 	{"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>", "collector_id": "00005AF3107B06F2"}
 ```
 
 To work around this, delete the local collector registration file at `~/.sumologic-otel-collector/`. The collector will re-register on next run.

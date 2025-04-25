@@ -3,6 +3,7 @@ id: bubble-charts
 title: Bubble Charts
 description: Bubble charts show you the size of data points in relation to two other dimensions.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Bubble charts are available in the [Dashboard](../about.md) platform.
 
@@ -27,25 +28,8 @@ _sourceCategory=service "message=User logged in" remote_ip
 
 To add a panel with a bubble chart:
 
-1. Create or open a Dashboard and click on **Add Panel > Categorical**.  
-
-    ![categorical.png](/img/dashboards-new/panels/bubble-charts/categorical.png)
-
-1. Provide a Log query and press **Enter** for it to run.
-
-    Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ](/docs/search/search-query-language/group-aggregate-operators) for a list.
-
-    ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
-
-1. Once the query runs you will need to flip the chart type to **Bubble** and set your **Dimensions**. A bubble chart requires three dimensions, including the aggregate.  
-
-    ![bubble chart.png](/img/dashboards-new/panels/bubble-charts/bubble-chart.png)
-
+1. Create or open a Dashboard and click on **Add Panel > Categorical**. <br/><img src={useBaseUrl('/img/dashboards/panels/bubble-charts/categorical.png')} style={{border: '1px solid gray'}} alt="categorical" width="700"/>
+1. Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press **Enter** for it to run. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ](/docs/search/search-query-language/group-aggregate-operators) for a list.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-log-query.png')} style={{border: '1px solid gray'}} alt="Add log query" width="700"/>
+1. Once the query runs you will need to flip the chart type to **Bubble** and set your **Dimensions**. A bubble chart requires three dimensions, including the aggregate.<br/><img src={useBaseUrl('/img/dashboards/panels/bubble-charts/bubble-chart.png')} style={{border: '1px solid gray'}} alt="bubble chart" width="700"/>
 1. [Modify the chart](./modify-chart.md) as desired.
-
-1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  
-
-    ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
-
-
- 
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} style={{border: '1px solid gray'}} alt="Add to Dashboard button" width="300"/>

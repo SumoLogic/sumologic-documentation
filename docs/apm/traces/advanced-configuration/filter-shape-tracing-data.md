@@ -5,9 +5,9 @@ sidebar_label: Filter and Shape Output Data
 description: Learn how to create and apply custom rules to shape tracing data.
 ---
 
-You may ask yourself, "What if I don't want to send all my trace data to Sumo Logic?". With our OpenTelemetry collector, you can define custom rules to filter and extract data based on your selection.
+You may ask yourself, "What if I do not want to send all my trace data to Sumo Logic?". With our OpenTelemetry collector, you can define custom rules to filter and extract data based on your selection.
 
-Our OpenTelemetry collector is uniquely capable of [shaping trace data at output](https://github.com/SumoLogic/opentelemetry-collector-contrib/tree/main/processor/cascadingfilterprocessor). You can define rules in a cascading fashion, assign different volume pool sizes to each rule, and give them different priorities.
+Our OpenTelemetry collector is uniquely capable of [shaping trace data at output](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/cascadingfilterprocessor). You can define rules in a cascading fashion, assign different volume pool sizes to each rule, and give them different priorities.
 
 Most of the following configuration rules are based on whole trace inspection (end-to-end trace duration) and the decision of whether to send a trace or not, is also based on all or none spans for the trace. Therefore it is important that a single collector working with that capability enabled **always sees a complete trace**.
 
@@ -15,7 +15,7 @@ Output-level filtering ensures you will always have valuable, useful, and cost-o
 
 For best results, perform filtering on a central instance of Aggregating OpenTelemetry Collector (see the following diagram), as it gives possibilities to act on whole trace, rather than individual span level.
 
-![env multiple agents bd.png](/img/traces/env-multiple-agents-bd.png)
+![env multiple agents bd.png](/img/apm/traces/env-multiple-agents-bd.png)
 
 The aggregating collector can receive data from local collectors/agents or directly from the tracing client.
 
@@ -104,12 +104,17 @@ service:
       exporters: ...
 ```
 
+By default, the cascading filter waits for 30 seconds before making the decision and can hold up to 100000 traces in memory (if available). This parameter can be fine-tuned using `decision_wait` and `num_traces` configuration options. More details on the usage are available at the [`cascadingfilterprocessor`](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/cascadingfilterprocessor) page. For examples, see:
 
-By default, cascading filter waits for 30 seconds before making the decision and can hold up to 100000 traces in memory (if available). This parameters can be fine-tuned using `decision_wait` and `num_traces` configuration options. More details on the usage is available at [`cascadingfilterprocessor`](https://github.com/SumoLogic/opentelemetry-collector-contrib/tree/main/processor/cascadingfilterprocessor) page. For examples, see:
+* Kubernetes collection (single traces-sampler pod): [custom-values-cascading-filter.yaml](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/instrumentation/custom-values-cascading-filter.yaml)
+* Non-Kubernetes collection: [sampler-configuration-template-with-cascading-filter.yaml](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/otelcolconfigs/sampler_configuration_template.yaml)
 
-* Kubernetes collection [custom-values-cascading-filter.yaml](https://github.com/SumoLogic/opentelemetry-collector-contrib/blob/main/examples/kubernetes/custom-values-cascading-filter.yaml)  
-* Non-Kubernetes collection [gateway-configuration-template-with-cascading-filter.yaml](https://github.com/SumoLogic/opentelemetry-collector-contrib/blob/main/examples/non-kubernetes/gateway-configuration-template-with-cascading-filter.yaml)
+## Multiple instances of cascading filter
 
+In case of multiple deployments sharing a single configuration map (k8s) or file of the traces-sampler (`cascading_filter` instances), an environment variable called `SUMO_COLLECTOR_INSTANCES` or `collector_instances` option should be used to scale down properly the `spans_per_second` global and policy limits. `SUMO_COLLECTOR_INSTANCES` should be a positive integer corresponding to the number of collectors with configured cascading filters, for example, `SUMO_COLLECTOR_INSTANCES=5`. As a result, configured the `spans_per_second` limit will be divided by 5 for global and policy limits.
+
+* Kubernetes collection (multiple traces-sampler pods): [multiple-cascading-filter-sampler-instances.yaml](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/instrumentation/multiple-cascading-filter-sampler-instances.yaml)
+* Non-Kubernetes collection: [sampler-configuration-multiple-instances-template.yaml](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/otelcolconfigs/sampler_configuration_multiple_instances_template.yaml)
 
 ## Resource sizing guide
 

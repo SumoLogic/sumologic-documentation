@@ -4,6 +4,9 @@ title: Source Log Encoding
 description: The type of log encoding supported by Sumo Logic depends on the Source you are using.
 ---
 
+:::note
+Encoding cannot be overridden by Field Extraction Rules (FERs).
+:::
 
 The type of log encoding supported by Sumo Logic depends on the source you are using.
 

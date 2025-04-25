@@ -4,10 +4,11 @@ title: Dashboard FAQ
 sidebar_label: FAQ
 description: Find answers to frequently asked questions about our Dashboards.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## How do I convert a Classic Dashboard to the dashboard framework?
 
-There is **not** an automatic conversion method from classic dashboards to the dashboard framework. The best way to convert a classic dashboard to the dashboard framework is to manually transfer over the panels you want to migrate.
+There is **not** an automatic conversion method from classic dashboards to the dashboard framework. The best way to convert a classic dashboard to the dashboard framework is to manually transfer over the panels you want to migrate. See [Steps to Migrate](/docs/dashboards/dashboards-migration/steps-to-migrate).
 
 ## How do I add filters to the dashboards?
 
@@ -22,7 +23,7 @@ The biggest differences between variables and filters are:
 1. Unlike filters, you have to declare variables in your query in order for them to filter the panel. To leverage a variable in a query you can reference it via mustache syntax as follows:
 
     ```sql
-    {\<variable_nam\>}}
+    {{<variable_name>}}
     ```
 
 1. Unlike filters, you get full control over where and how the placement is used in your query. Because of this, you can use variables to do a lot more than just filter your query. You can use them to dynamically change time slices across your panels, replace operator arguments, or serve as inputs for further transformation before doing the filtration.
@@ -55,12 +56,8 @@ The types of charts you will find in the time series panel include:
 
 ## How do I overlay logs and metrics on one panel?
 
-One of the valuable features in dashboards is that you can graph data on to the same panel across data sources very easily. Inside of each dashboard panel, you have the option of having up to 6 metrics and 6 logs query rows. To create a panel with both logs and metrics derived data, press the **Add a Panel** button, select **Time Series**, and you will launch the panel builder.
+One of the valuable features in dashboards is that you can graph data on to the same panel across data sources very easily. Inside of each dashboard panel, you have the option of having up to 6 metrics and 6 logs query rows. To create a panel with both logs and metrics derived data, press the **Add a Panel** button, select **Time Series**, and you will launch the panel builder.<br/><img src={useBaseUrl('/img/dashboards/dashboard-faq/Add-a-panel-button.png')} alt="Add a panel button" style={{border: '1px solid gray'}} width="600" />
 
-![Add a panel button.png](/img/dashboards-new/dashboard-new-faqs/Add-a-panel-button.png)
-
-To switch between a metrics query row and a logs query row, you just have to select the Logs query dropdown after the **#A** and change it to Metrics. To add multiple logs or metrics rows, hover over the last query row and press the + button.
-
-![Logs and metrics query options.png](/img/dashboards-new/dashboard-new-faqs/Logs-and-metrics-query-options.png)
+To switch between a metrics query row and a logs query row, you just have to select the Logs query dropdown after the **#A** and change it to Metrics. To add multiple logs or metrics rows, hover over the last query row and press the + button.<br/><img src={useBaseUrl('/img/dashboards/dashboard-faq/Logs-and-metrics-query-options.png')} alt="Logs and metrics query options" style={{border: '1px solid gray'}} width="600" />
 
 If you are in a time series panel, you can only graph items over time. This means that every logs query must be [timesliced](/docs/search/search-query-language/search-operators/timeslice) if you are going to graph it in a time series chart. If you want to count across categories, pick a category chart.

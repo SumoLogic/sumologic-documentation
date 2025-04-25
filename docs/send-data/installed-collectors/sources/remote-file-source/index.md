@@ -4,8 +4,10 @@ title: Remote File Source
 description: You can collect file tail data from a remote system using SSH.
 ---
 
+import CollBegin from '../../../../reuse/collection-should-begin-note.md';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Log files collected using a Remote File Source must be encoded in UTF-8 or ASCII. If you are editing a Source, metadata changes are reflected going forward. Metadata for previously collected log data will not be retroactively changed.
+If you are editing a Source, metadata changes are reflected going forward. Metadata for previously collected log data will not be retroactively changed.
 
 Sumo Logic scans remote directories every 30 seconds.
 
@@ -16,8 +18,8 @@ To collect remote Windows logs using CIFS/SMB, see CIFS/SMB, see [Prerequisite
 To configure a Remote File Source:
 
 1. First see [Prerequisites for Windows Remote File Collection](prerequisites-windows-remote-file-collection.md).
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-1. Find the name of the installed Collector here you'd like to add a Source. Click **Add** and then choose** Add **Source from the pop-up menu.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. Find the name of the installed Collector here you'd like to add a Source. Click **Add** and then choose **Add Source** from the pop-up menu.
 1. Select **Remote File** for the Source type.   
 
     ![Remote File Source icon.png](/img/send-data/Remote-File-Source-icon.png) 
@@ -32,7 +34,7 @@ To configure a Remote File Source:
      * Choose a predefined value from dropdown list, ranging from “Now” to “24 hours ago” to “All Time”.
      * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example “-1w”. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m).
      :::note
-     {@import ../../../../reuse/collection-should-begin-note.md}
+     <CollBegin/>
      :::
    * **Source Category.** Type any string to tag the logs collected from this Source with searchable metadata. For example, type firewall to tag all entries from this Source in a field called _sourceCategory. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below.
 
@@ -49,12 +51,10 @@ To configure a Remote File Source:
     ![remote file source credential input.png](/img/send-data/remote-file-source-credential-input.png)
 
 1. Set any of the following under **Advanced.**
-
-    ![Local File UI June 2021.png](/img/send-data/Local-File-UI.png)
-
+<img src={useBaseUrl('/img/send-data/advanced-options-remote-file-source.png')} alt="Advanced options for log" style={{border: '1px solid gray'}} width="600" />
     * **Denylist.** Optional. Add any files to be excluded by including one or more path expressions separated by commas. Note that this field takes a maximum of 10240 characters.
     * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-      * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+      * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
       * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
 
    * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
@@ -67,7 +67,7 @@ To configure a Remote File Source:
 
 ## Configuring sourceCategory and sourceHost using variables
 
-Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
+Sumo Logic Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
 
 :::note
 Not all Sources can define a Source Host value.

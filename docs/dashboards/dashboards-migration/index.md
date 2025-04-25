@@ -1,8 +1,7 @@
 ---
 slug: /dashboards/dashboards-migration
-title: Migrate to Dashboards
+title: Migrate Legacy Dashboards
 description: Learn how to migrate Dashboards (Classic) to Dashboards functionality.
-tags: [migration, dashboard]
 ---
 
 The **Migrate to Dashboards** functionality allows you to transform **Dashboards (Classic)** to the **Dashboards** format, with minimal intervention from post-migration activity.
@@ -17,4 +16,3 @@ The **Migrate to Dashboards** functionality allows you to transform **Dashboards
 - Supports [scheduled reports](/docs/dashboards/scheduled-report/) that deliver the report right to your inbox.
 - Has a modern user interface with enhanced user experience and performance.
 - Includes persistent support for new features, updates, and security enhancements.
-

@@ -8,13 +8,13 @@ description: This Sumo Logic App for Microsoft Exchange Trace logs provides visi
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-The MessageTrace API offers insight into the handling of emails that have gone through Office 365 for an organization. The Sumo Logic Microsoft Exchange Trace Logs App provides information on the delivery status of messages including Delivered, Failed, Quarantined, Pending, and Spam. The app dashboard analyzes message size, sender and receiver locations, and provides threat analysis by utilizing the CrowdStrike threat detection feed.
+The MessageTrace API offers insight into the handling of emails that have gone through Office 365 for an organization. The Sumo Logic Microsoft Exchange Trace Logs App provides information on the delivery status of messages including Delivered, Failed, Quarantined, Pending, and Spam. The app dashboard analyzes message size, sender and receiver locations, and provides threat analysis by utilizing Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 ## Log types
 
 The Sumo Logic App for Microsoft Exchange Trace Logs uses the [MessageTrace reports](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)). To learn about the Microsoft Exchange Trace logs fields, see the [Fields](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#fields) documentation.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -72,7 +72,7 @@ The Sumo Logic App for Microsoft Exchange Trace Logs uses the [MessageTrace repo
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Message Delivery Status"
 _sourceCategory="o365dummy"
@@ -87,14 +87,33 @@ _sourceCategory="o365dummy"
 | fillmissing timeslice, values all in status
 | transpose row _timeslice column status
 ```
+## Collection configuration and app installation
 
-## Collecting logs from Microsoft Exchange Trace Logs App
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-This section explains how to collect logs from Microsoft Exchange Trace logs Api and ingest them into Sumo Logic. Refer to the [Microsoft Exchange Trace Logs API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs) to create the source and use the same source category while installing the app.
+<CollectionConfiguration/>
 
-## Installing the Microsoft Exchange Trace Logs app
+:::important
+Use the [Cloud-to-Cloud Integration for Microsoft Exchange Trace Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Microsoft Exchange Trace Logs app is properly integrated and configured to collect and analyze your Microsoft Exchange Trace Logs data.
+:::
 
-{@import ../../reuse/apps/app-install.md}
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Microsoft Exchange Trace Logs Dashboards
 

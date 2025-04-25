@@ -11,19 +11,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
 
-The Sumo Logic App for AWS EC2 allows you to collect your EC2 instance metrics and display them using predefined dashboards. The App provides dashboards to display analysis of EC2 instance metrics for CPU, disk, network, EBS, Health Status Check, and EC2 CloudTrail Events. Also, it provides detailed insights into all CloudTrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
+The Sumo Logic app for AWS EC2 allows you to collect your EC2 instance metrics and display them using predefined dashboards. The app provides dashboards to display analysis of EC2 instance metrics for CPU, disk, network, EBS, Health Status Check, and EC2 CloudTrail Events. Also, it provides detailed insights into all CloudTrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
 
 ## Collecting CloudWatch Metrics and CloudTrail logs for AWS EC2
 
 This section describes the AWS EC2 app's data sources and instructions for setting up a metric collection.
 
-
-### Metrics Types
+### Metrics types
 
 For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html).
 
-
-### Sample Log
+### Sample log messages
 
 ```json title="Sample CloudTrail Log"
 {
@@ -71,8 +69,7 @@ For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AW
 }
 ```
 
-
-### Sample Queries
+### Sample queries
 
 ```sql title="CPU utilization (CloudWatch metric-based)"
 account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg
@@ -109,7 +106,7 @@ account={{account}} region={{region}} namespace={{namespace}} eventname eventsou
 
 AWS EC2 automatically monitors functions on your behalf, reporting [AWS EC2 metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html) through Amazon CloudWatch. These metrics are collected by our Hosted Collector by configuring the Amazon CloudWatch source.
 
-The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your EC2 instance metrics and display them using predefined dashboards. The App provides dashboards to analyze EC2 instance metrics for CPU, disk, network, EBS, and Health Status Check.
+The Sumo Logic app for AWS EC2 (CloudWatch Metrics) allows you to collect your EC2 instance metrics and display them using predefined dashboards. The app provides dashboards to analyze EC2 instance metrics for CPU, disk, network, EBS, and Health Status Check.
 
 
 ### CloudTrail EC2 Data Events
@@ -126,7 +123,7 @@ Sumo Logic supports collecting metrics using two source types:
 Namespace for **Amazon EC2** Service is **AWS/EC2**.
 :::
 
-* **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried through the **account** field.
+* **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. Metrics can be queried through the **account** field.
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Metadata+account.png')} alt="Metadata" />
 
 ### Collect CloudTrail EC2 Data Events
@@ -146,19 +143,20 @@ To configure a CloudTrail Source, perform these steps:
    DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions). The S3 bucket name is not part of the path. Don’t include the S3 bucket name when you are setting the Path Expression.
    :::
 5. **Source Category**. Enter `aws/observability/cloud trail/logs`.
-6. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried through the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Fields.png')} alt="Fields" />
+6. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried through the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Fields.png')} alt="Fields" />
 7. **Access Key ID and Secret Access Key**. Enter your [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
 8. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
-9. **Enable Timestamp Parsing**. Select the check box.
-10. **Time Zone**. Select **Ignore time zone** from the log file and instead select UTC.
-11. **Timestamp Format**. Select Automatically detect the format.
-12. **Enable Multiline Processing**. Select the check box and select **Infer Boundaries**.
+9. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+10. **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+11. **Timestamp Format.** Select **Automatically detect the format**.
+12. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 13. Click **Save**.
-
 
 ### Field in Field Schema
 
-Login to Sumo Logic,  go to **Manage Data** > **Logs** > **Fields**. Search for the “**instanceid**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. Search for the “**instanceid**” field.
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### CloudTrail Field Extraction Rule
@@ -191,7 +189,7 @@ Scope (Specific Data): account=* eventname eventsource "ec2.amazonaws.com"
 ```
 
 
-### Centralized AWS CloudTrail Log Collection
+### Centralized AWS CloudTrail log collection
 
 If you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
@@ -216,30 +214,20 @@ Enter a parse expression to create an “account” field that maps to the alias
 ```
 
 
-## Installing the AWS EC2 App
+## Installing the AWS EC2 app
 
-Now that you have set up collection for AWS EC2 metrics install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
-
-To install the app:
-
-Locate and install the AWS EC2 app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library** and complete the following fields.
-    * **App Name.** You can retain the existing name or enter a name of your choice for the app. 
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-3. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+Now that you have set up collection for AWS EC2 metrics install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 
-## Viewing AWS EC2 Dashboards
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
+
+## Viewing AWS EC2 dashboards
 
 ### Overview (CloudWatch Metrics)
 
-The **AWS EC2 Overview (CloudWatch Metrics) **dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
+The **AWS EC2 Overview (CloudWatch Metrics)** dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
 
 Use this dashboard to:
 
@@ -282,7 +270,7 @@ Use this dashboard to:
 
 ### CPU (CloudWatch Metrics)
 
-The **AWS EC2 CPU (CloudWatch Metrics) **dashboard provides detailed information about EC2 CPU usage like CPU utilization and CPU credits for burstable performance instances.
+The **AWS EC2 CPU (CloudWatch Metrics)** dashboard provides detailed information about EC2 CPU usage like CPU utilization and CPU credits for burstable performance instances.
 
 Use this dashboard to:
 * Monitor Average CPU utilization over time for EC2.

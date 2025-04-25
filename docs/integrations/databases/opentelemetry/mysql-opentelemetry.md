@@ -2,7 +2,7 @@
 id: mysql-opentelemetry
 title: MySQL - OpenTelemetry Collector
 sidebar_label: MySQL - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for MySQL.
+description: Learn about the Sumo Logic OpenTelemetry app for MySQL.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="Thumbnail icon" width="90" /> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for MySQL is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MySQL database clusters. Preconfigured dashboards and searches provide insight into the health of your MySQL clusters, replication status, error logs, query performance, slow queries, Innodb operations, failed logins and error logs.
+The Sumo Logic app for MySQL is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MySQL database clusters. Preconfigured dashboards and searches provide insight into the health of your MySQL clusters, replication status, error logs, query performance, slow queries, Innodb operations, failed logins, and error logs.
 
-This App supports MySQL version 8.0.
+This app supports MySQL version 8.0.
 
 We use the OpenTelemetry collector for MySQL metric collection and for collecting MySQL logs.
 
@@ -21,9 +21,13 @@ The diagram below illustrates the components of the MySQL collection for each da
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Schematics.png' alt="Schematics" />
 
-## Log and Metrics Types
+:::info
+This app includes [built-in monitors](#mysql-alerts). For details on creating custom monitors, refer to [Create monitors for MySQL app](#create-monitors-for-mysql-app).
+:::
 
-The Sumo Logic App for MySQL assumes the default MySQL Error log file format for error logs, and the MySQL Slow Query file format for slow query logs. For a list of metrics that are collected and used by the app, see [MySQL Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/mysqlreceiver/documentation.md).
+## Log and metrics types
+
+The Sumo Logic app for MySQL assumes the default MySQL Error log file format for error logs, and the MySQL Slow Query file format for slow query logs. For a list of metrics that are collected and used by the app, see [MySQL Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/mysqlreceiver/documentation.md).
 
 - The MySQL - Overview dashboard is based on logs from both the Error and Slow Query log formats, so as to correlate information between the two.
 - Dashboards in the Metrics folder are based on MySQL metrics.
@@ -42,49 +46,75 @@ The MySQL app dashboards dependent on error logs are based on the message types 
 
 ## Fields creation in Sumo Logic for MySQL
 
-Following are the [fields](/docs/manage/fields/) which will be created as part of MySQL App install if not already present. 
+Following are the [fields](/docs/manage/fields/) which will be created as part of MySQL app installation, if not already present. 
 
-- `db.cluster.name` - User configured. Enter a name to identify this MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- `db.system` - Has fixed value of **mysql**
-- `sumo.datasource` - Has fixed value of **mysql**
-- `db.node.name` - Has the value of host name of the machine which is being monitored
+- `db.cluster.name`. User configured. Enter a name to identify this MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- `db.system`. Has fixed value of **mysql**.
+- `sumo.datasource`. Has fixed value of **mysql**.
+- `db.node.name`. Has the value of host name of the machine which is being monitored.
 
 ## Prerequisites
 
-**For metric collection**: For metric collection [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver#prerequisites) are the prerequisites.
+### For metric collection
 
-**For log collection**: Configure MySQL to log to a local file(s). MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local my.cnf configuration file in the database directory.
+For metrics collection, you can find the prerequisites [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver#prerequisites).
+
+### For log collection
+
+Configure MySQL to log to a local file(s). MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local my.cnf configuration file in the database directory.
 
 1. Open `my.cnf` in a text editor.
 2. Set the following parameters in the `[mysqld]` section:
 
   ```sql
   [mysqld]
-        log_error = /var/log/mysql/error.log
-        slow_query_log=1
-        slow_query_log_file = /var/log/mysql/mysql-slow.log
-        long_query_time=2
-        long_query_time=2
+  log_error = /var/log/mysql/error.log
+  slow_query_log=1
+  slow_query_log_file = /var/log/mysql/mysql-slow.log
+  long_query_time=2
+  long_query_time=2
   ```
 
-[Error Logs](https://dev.mysql.com/doc/refman/8.0/en/error-log.html). By default, error logs are enabled and are logged at file specified by the `log_error` key.
+- **[Error Logs](https://dev.mysql.com/doc/refman/8.0/en/error-log.html)**. By default, error logs are enabled and are logged at file specified by the `log_error` key.
+- **[Slow Query Logs](https://dev.mysql.com/doc/refman/8.0/en/slow-query-log.html)**. `slow_query_log=1` enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
+- **[General Query Logs](https://dev.mysql.com/doc/refman/8.0/en/query-log.html)**. We do not recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL app.
 
-[Slow Query Logs](https://dev.mysql.com/doc/refman/8.0/en/slow-query-log.html). `slow_query_log=1` enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
+3. Save the `my.cnf` file.
+4. Restart the MySQL server: `sudo mysql.server restart`.
 
-[General Query Logs](https://dev.mysql.com/doc/refman/8.0/en/query-log.html). We don't recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL App.
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
 
-1. Save the `my.cnf` file.
-2. Restart the MySQL server: `sudo mysql.server restart`
+<LogsCollectionPrereqisites/>
+
+For Windows system, log files which are collected should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -104,11 +134,13 @@ Click on the **Download YAML File** button to get the yaml file.
 
 For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -117,6 +149,9 @@ For Linux platform, click **Download Environment Variables File** to get the fil
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -150,11 +185,36 @@ For Linux platform, click **Download Environment Variables File** to get the fil
   ```
 
 </TabItem>
+<TabItem value="Chef">
+
+import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
+
+<ChefEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
+
+<AnsEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
+
+<PuppetEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Logs
+<LogsOutro/>
+
+## Sample log messages
 
 ```json
 {
@@ -163,13 +223,13 @@ log:"2022-10-14T09:16:02.430542Z 63707 [Note] [MY-010926] [Server] Access denied
 }
 ```
 
-## Sample Metric
+## Sample metrics
 
 ```json
 {"queryId":"A","_source":"sumo_hosted_collector_otel_mysql","operation":"deleted","metric":"mysql.row_operations","db.cluster.name":"sumoCluster_otel","_collectorId":"000000000C59BB2E","deployment.environment":"sumodev_otel","_sourceId":"0000000000000000","unit":"1","db.system":"mysql","_sourceHost":"sumoOtelMysql","_collector":"sumo_hosted_collector_otel_mysql","max":0,"min":0,"avg":0,"sum":0,"latest":0,"count":4}
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample query is from the **Top 10 Slow Queries by Average Execution Time** panel.
 
@@ -184,33 +244,36 @@ db.system=mysql db.cluster.name={{db.cluster.name}} "User@Host"  "Query_time" 
 | sort by avg_time | limit  10
 ```
 
-
 This sample metrics query is from the **FSync Op Count** panel.
 
 ```sql title="Sample metrics query"
 sumo.datasource=mysql deployment.environment=* db.cluster.name=* db.node.name=* metric=mysql.operations operation=fsyncs  | sum
 ```
 
-## Viewing MySQL Dashboards
+## Viewing MySQL dashboards
+
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Overview
 
-The **MySQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, uptime and more.
+The **MySQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, and uptime.
 
 Use this dashboard to:
-- Quickly identify the state of a given database cluster
+- Quickly identify the state of a given database cluster.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Overview.png' alt="Overview" />
 
 ### Error Logs
 
-The **MySQL - Error Logs** dashboard provides insight into database error logs by specifically monitoring database shutdown/start events, errors over time, errors, warnings and crash recovery attempts.
+The **MySQL - Error Logs** dashboard provides insight into database error logs by specifically monitoring database shutdown/start events, errors over time, errors, warnings, and crash recovery attempts.
 
 Use this dashboard to:
 
-- Quickly identify errors and patterns in logs for troubleshooting
-- Monitor trends in error logs and identify outliers
-- Ensure that server start, server stop and crash recovery events are in line with expectations
+- Quickly identify errors and patterns in logs for troubleshooting.
+- Monitor trends in error logs and identify outliers.
+- Ensure that server start, server stop and crash recovery events are in line with expectations.
 - Dashboard filters allow you to narrow a search for database cluster.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Error-Logs.png' alt="Error Logs" />
@@ -221,7 +284,7 @@ The **MySQL - Failed Logins** dashboard provides insights into all failed login 
 
 Use this dashboard to:
 
-- Monitor all failed login attempts and identify any unusual or suspicious activity
+- Monitor all failed login attempts and identify any unusual or suspicious activity.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Failed-Logins.png' alt="Failed Logins" />
 
@@ -231,8 +294,8 @@ The **MySQL - Replication** dashboard provides insights into the state of databa
 
 Use this dashboard to:
 
-- Quickly determine reasons for replication failures
-- Monitor replication status trends
+- Quickly determine reasons for replication failures.
+- Monitor replication status trends.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Replication.png' alt="Replication" />
 
@@ -245,10 +308,10 @@ Note: Slow queries are queries that take 10 seconds or more to execute (default 
 Use this dashboard to:
 
 - Identify all slow queries
-- Quickly determine which queries have been identified as slow or excessive slow queries
-- Monitor users and hosts running slow queries
-- Determine which SQL commands are slower than others
-- Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
+- Quickly determine which queries have been identified as slow or excessive slow queries.
+- Monitor users and hosts running slow queries.
+- Determine which SQL commands are slower than others.
+- Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Slow-Queries.png' alt="Slow Queries" />
 
@@ -258,9 +321,28 @@ The **MySQL - Performance and Resource Metrics** dashboard allows you to monitor
 
 Use this dashboard to:
 
-- Understand the behavior and performance of your database clusters
-- Monitor key operational metrics around threads running, innodb waits and locks.
-- Monitor query execution trends to ensure they match up with expectations
-- Dashboard filters allow you to narrow a search for a specific database cluster
+- Understand the behavior and performance of your database clusters.
+- Monitor key operational metrics around threads running, innodb waits, and locks.
+- Monitor query execution trends to ensure they match up with expectations.
+- Dashboard filters allow you to narrow a search for a specific database cluster.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Performance-and-Resource-Metrics.png' alt="Performance and Resource Metrics" />
+
+## Create monitors for MySQL app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### MySQL alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `MySQL - Excessive Slow Query Detected Alert` | This alert gets triggered when we detect the average time to execute a query is more than 15 seconds over a 24 hour time-period. | Count > = 100 | Count < 100 |
+| `MySQL - Follower replication lag detected Alert` | This alert gets triggered when we detect that the average replication lag is greater than or equal to 900 seconds within a 5 minute time interval. | Count > = 900 | Count < 900 |
+| `MySQL - High average query run time Alert` | This alert gets triggered when the average run time of SQL queries for a given schema is greater than or equal to one second within a time interval of 5 minutes. | Count > = 10 | Count < 10 |
+| `MySQL - High Innodb buffer pool utilization Alert` | This alert gets triggered when we detect that the InnoDB buffer pool utilization is high (>=90%) within a 5 minute time interval. | Count > = 90 | Count < 90 |
+| `MySQL - Instance down Alert` | This alert gets triggered when we detect that a MySQL instance is down within last 5 minutes interval. | Count > = 1 | Count < 1 |
+| `MySQL - Large number of statement errors Alert` | This alert gets triggered when we detect that there are 5 or more statement errors within a 5 minute time interval. | Count > = 5 | Count < 5 |
+| `MySQL - Large number of statement warnings Alert` | This alert gets triggered when we detect that there are 20 or more statement warnings within a 5 minute time interval. | Count > = 20 | Count < 20 |
+| `MySQL - No index used in the SQL statements Alert` | This alert gets triggered when we detect that there are 5 or more statements not using an index in the SQL query within a 5 minute time interval. | Count > = 5 | Count < 5 |

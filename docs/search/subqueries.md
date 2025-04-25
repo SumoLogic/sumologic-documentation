@@ -5,17 +5,17 @@ title: Subqueries
 
 Subqueries allow you to filter and evaluate conditions for a query when you may not be sure of the exact filter or condition criteria, and you can write a short query to set them for you.
 
-Subqueries use one query to pass results back to another query to narrow down or evaluate the set of messages that are searched in that query. Sometimes this offers a faster approach than a `join`, where you'd have to unite large sets of data and then search through the results to form a conclusion. If you can do some processing to narrow down the scope of data, you can form a subquery.
+Subqueries use one query to pass results back to another query to narrow down or evaluate the set of messages that are searched in that query. Sometimes this offers a faster approach than a [`join`](/docs/search/search-query-language/search-operators/join), where you'd have to unite large sets of data and then search through the results to form a conclusion. If you can do some processing to narrow down the scope of data, you can form a subquery.
 
 Subqueries are a powerful way to filter for specific criteria, such as behaviors by a malicious actor or the shopping interests of your most effective user. However, because you are running two or more standalone queries to generate results, you'll need to factor in time for all of these separate queries to complete.
 
 In a subquery, the parent query contains the main body of the query while the child query contains the results necessary for filtering the parent query.
 
-* **Child query.** Handles the filtering. Runs first and provides intermediate input for the parent query. You can specify a different time range than the parent query.
-* **Parent query.** Depends on the input from a child query or queries to finish its execution.
+* **Child query**. Handles the filtering. Runs first and provides intermediate input for the parent query. You can specify a different time range than the parent query.
+* **Parent query**. Depends on the input from a child query or queries to finish its execution.
 
 :::note Limitations
-Subqueries are not supported in live dashboards, real-time Scheduled Searches, Field Extraction Rules, and Scheduled Views.
+Subqueries are not supported in auto refresh dashboards, real-time Scheduled Searches, Field Extraction Rules, and Scheduled Views.
 :::
 
 ## Syntax
@@ -36,7 +36,7 @@ Parent query
 Rest of parent query
 ```
 
-**Where operator syntax:**
+**`where` operator syntax:**
 
 ```sql
 Parent query
@@ -46,9 +46,9 @@ Parent query
 Rest of parent query
 ```
 
-You can use the not `!` option using the [where operator](/docs/search/search-query-language/search-operators/where) syntax, like `| where !\<subquer\>]`.
+You can use the not `!` option using the [`where` operator](/docs/search/search-query-language/search-operators/where) syntax, like `| where ![<subquery>]`.
 
-**If operator syntax:**
+**`if` operator syntax:**
 
 ```sql
 Parent query
@@ -70,8 +70,7 @@ The `parent query` can be any query that returns results. Always test it before
 `compose` controls the output of the child query that is provided to the parent query:
 
 :::note
-compose is not considered a standalone operator. It is designed to only
-work with a subquery.
+`compose` is not considered a standalone operator. It is designed to only work with a subquery.
 :::
 
 * **Fields from the child query that are returned to the parent query.** You can return more than one field to the parent query.
@@ -79,7 +78,7 @@ work with a subquery.
 
 For example, if the subquery generated the following results:
 
-| `_sourceHost`  | `_sourcecatagory` | `clientip`    |
+| `_sourceHost`  | `_sourceCategory` | `clientip`    |
 |:---------------|:------------------|:-------------|
 | prod-search-1 | stream           | 1.1.1.1     |
 | prod-remix-1  | remix            | 10.10.10.10 |
@@ -87,8 +86,8 @@ For example, if the subquery generated the following results:
 This would be converted to a single output as follows:
 
 ```sql
-(( _sourcehost="prod-search-1" AND _sourcecatagory=”stream” AND clientip=”1.1.1.1”) OR
-(_sourcehost=”prod-remix-1” AND _sourcecatagory=”remix” AND clientip=”10.10.10.10”))
+(( _sourceHost="prod-search-1" AND _sourceCategory=”stream” AND clientip=”1.1.1.1”) OR
+(_sourceHost=”prod-remix-1” AND _sourceCategory=”remix” AND clientip=”10.10.10.10”))
 ```
 
 * Results have `AND` between columns and `OR` between rows.
@@ -99,7 +98,7 @@ This would be converted to a single output as follows:
 `from=(<fromTime>) to=(<toTime>)` 
     The `subquery` can contain a different time range for the child query. By default, the child query runs on the same time range as the parent query. You can specify either relative time or absolute time. See [subquery with a different time range](#subquery-with-a-different-time-range) for examples and supported formats.
 
-`maxresults\<in\>` 
+`maxresults=<int>` 
     You can limit the number of results returned from the child to the parent query. To increase performance, we have made the default 2,500, but you can get up to 10,000 results.
 
 :::note
@@ -115,7 +114,7 @@ The keywords clause is not supported with `where` and `if` operations.
 
 Specifying `keywords` will only return the values from the key-value pairs, where the key is the field name. For example, if the subquery generated the following results:
 
-| `_sourceHost`  | `_sourcecatagory` | `clientip` |
+| `_sourceHost`  | `_sourceCategory` | `clientip` |
 |:---------------|:------------------|:-------------|
 | prod-search-1 | stream           | 1.1.1.1     |
 | prod-remix-1  | remix            | 10.10.10.10 |
@@ -134,8 +133,7 @@ The results only contain the values from the key-value pairs, the keys (field n
 
     `Subquery reached the maximum memory limit. Some records will be truncated.`   
 
-    You have reached your maximum results or memory limit for your child
-    query.
+    You have reached your maximum results or memory limit for your child query.
 * The Log Search view does not present a histogram for child queries.
 
     The histogram that appears represents only the parent query.
@@ -149,14 +147,12 @@ The results only contain the values from the key-value pairs, the keys (field n
 
     * In Scheduled Views
     * Inside FERs
-    * Live Dashboards
+    * Auto Refresh Dashboards
     * Real Time Scheduled Searches
 
 ## Example subquery 
 
-Let’s say that our company has a shopping website, and we want to track
-purchases made by our most active user. We can use `subquery` in this
-case to get the desired results using the following steps:
+Let’s say that our company has a shopping website, and we want to track purchases made by our most active user. We can use `subquery` in this case to get the desired results using the following steps:
 
 1. Create a query that gives us items checked out and items purchased by a specific user (parent query).
 1. Create a query that tracks the most active user on the website (child query).
@@ -196,7 +192,7 @@ The result of this query has the IP address (243.63.233.30) we want to pass to 
 
 Combine the two queries into a subquery to allow the parent query to harness the child query results. There are a few approaches to the subquery:
 
-* Include `keywords` so the IP address from the child query is used as a keyword in the search expression (before the first pipe, \|).
+* Include `keywords` so the IP address from the child query is used as a keyword in the search expression (before the first pipe, `|`).
 * Exclude the `keywords` argument so results are returned as a table, in key-value pairs, note that any fields (keys) returned must exist in the parent query results.
 * Use a subquery with a `where` or `if` operator.
     * If you filter the IP address in a `where` clause then you can substitute it with a subquery that dynamically generates the filter expression.
@@ -269,12 +265,12 @@ _sourceCategory=reinvent/travel/checkout
 You can use a subquery in an if operation since it can return a valid conditional statement, such as A=B. To evaluate a condition as either true or false you need the parent query to also return the same field name as the child query. Either parse the field manually in the query or rely on log metadata.
 
 :::note
-A query using a filter operator like `if` may take longer to run than a query that defines the filter within its search expression. See [best practices](#best-practices) for an example.
+A query using a filter operator like `if` may take longer to run than a query that defines the filter within its search expression. See [Best Practices](#best-practices) for an example.
 :::
 
 Once the parent query is ready and recognizes the same field name, in this case `src_ip`, place the child query in the parent query as the if condition. As mentioned in the syntax section, `keywords` is not supported with if operations.
 
-The following will create a field named `boolean` that is returned as true or false based on if our most active user's IP address is found. The subquery will return `(src_ip="243.63.233.30")` and the if operator checks it against the logs from the parent query, in this case, true if the src_ip is the same as the log evaluated from the parent query.
+The following will create a field named `boolean` that is returned as true or false based on if our most active user's IP address is found. The subquery will return `(src_ip="243.63.233.30")` and the if operator checks it against the logs from the parent query, in this case, true if the `src_ip` is the same as the log evaluated from the parent query.
 
 ```sql {5-7}
 _sourceCategory=reinvent/travel/checkout
@@ -310,7 +306,7 @@ To specify a relative time range, only provide the `from` argument. See the fo
 
 ```sql
 [subquery from=(-15m):error
-| count by _sourcehost
+| count by _sourceHost
 | topk(1, _count)
 | compose _sourceHost]
 | count by _sourceHost
@@ -320,7 +316,7 @@ To specify a relative time range, only provide the `from` argument. See the fo
 
 ```sql
 [subquery from=(2018/07/08 23:13:36) to=(2018/07/09 23:13:36):error
-| count by _sourcehost
+| count by _sourceHost
 | topk(1, _count)
 | compose _sourceHost]
 | count by _sourceHost
@@ -380,7 +376,7 @@ _sourceCategory=search "error while retrying to deploy index"
 
 ### Check Malicious Activity with Subquery
 
-The following search allows a security analyst how to track logs related to a malicious IP address that was flagged by Amazon GuardDuty and also by a CrowdStrike Threat feed. The subquery is returning the field `src_ip` with the IP addresses deemed as threats to the parent query, note that the keywords option was not used so the parent query will expect a field src_ip to exist. The results will include logs from the weblogs sourceCategory that have a `src_ip` value that was deemed a threat from the subquery.
+The following search allows a security analyst to track logs related to a malicious IP address that was flagged by Amazon GuardDuty and also by a [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) feed. The subquery is returning the field `src_ip` with the IP addresses deemed as threats to the parent query, note that the keywords option was not used so the parent query will expect a field src_ip to exist. The results will include logs from the weblogs sourceCategory that have a `src_ip` value that was deemed a threat from the subquery.
 
 ```sql
 _sourceCategory=weblogs
@@ -393,10 +389,23 @@ _sourceCategory=weblogs
 | where threatlevel = "high"
 | compose src_ip]
 ```
+<!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+```sql
+_sourceCategory=weblogs
+[subquery:_sourceCategory="Labs/SecDemo/guardduty" "EC2 Instance" "communicating on an unusual server port 22"
+| json field=_raw "service.action.networkConnectionAction.remoteIpDetails" as remoteIpDetails
+| json field=_raw "service.action.networkConnectionAction.connectionDirection" as connectionDirection
+| where connectionDirection = "OUTBOUND"
+| json field=remoteipdetails "ipAddressV4" as src_ip
+| threatlookup singleIndicator threat| if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "Unknown")))) as malicious_confidence
+| where malicious_confidence = "high"
+| compose src_ip]
+```
+-->
 
 ### Reference data from child query using save and lookup
 
-When you want to correlate data from different sources or conduct further aggregation on data from a child query without passing it with compose, since it would act upon the scope of the query limiting results, you can use the [save](/docs/search/search-query-language/search-operators/save-classic) and [lookup](/docs/search/search-query-language/search-operators/lookup-classic) operators to get the data you need in the parent query.
+When you want to correlate data from different sources or conduct further aggregation on data from a child query without passing it with `compose`, since it would act upon the scope of the query limiting results, you can use the [`save`](/docs/search/search-query-language/search-operators/save-classic) and [`lookup`](/docs/search/search-query-language/search-operators/lookup-classic) operators to get the data you need in the parent query.
 
 Updates to the newer version of [Lookup Tables](/docs/search/lookup-tables) are performed asynchronously. For this reason, saving to such lookup tables from a subquery isn't allowed. If you were to save data to a lookup table from a subquery and then query the same table from the parent query, it's possible that the data written to the table by the subquery might not be available, resulting in incorrect results.
 
@@ -437,16 +446,16 @@ Here are a few tips and tricks to help you have a smoother experience with subqu
 
 These concepts are covered in [How to Build a Search](/docs/search/get-started-with-search/build-search) documents.
 
-* Your queries will perform better if you have the child query in the search expression (before the first pipe, \|), rather than having it in the filter clause. The below examples highlight this point. In the first, we use subquery before the first pipe and it executes in 17 seconds:  
+* Your queries will perform better if you have the child query in the search expression (before the first pipe, `|`), rather than having it in the filter clause. The below examples highlight this point. In the first, we use subquery before the first pipe and it executes in 17 seconds:  
 
     ![17seconds.png](/img/search/sub-queries/17seconds.png)  
 
-    compare that to where subquery is used in the where clause and you
+    `compare` that to where subquery is used in the where clause and you
     can see it takes 29 seconds to execute:  
 
     ![29Seconds.png](/img/search/sub-queries/29Seconds.png)
 
-* If the child query is used to build the filter clause, try having the filter clause close to the search expression ( rather than having it further down in the query to improve performance. Your query should be more like the one on the right.
+* If the child query is used to build the filter clause, try having the filter clause close to the search expression (rather than having it further down in the query to improve performance. Your query should be more like the one on the right.
 
     ```sql title="Less Efficient"
     query scope

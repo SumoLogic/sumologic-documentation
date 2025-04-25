@@ -14,7 +14,7 @@ Key features and benefits of the Cisco Meraki - C2C app include:
 
 - **Comprehensive Organization Insights**. Gain valuable insights into your organizational configuration and operations, including API adoption, configuration template usage, and product distribution. Stay updated on the overall organization landscape and monitor key metrics for efficient management and optimization.
 - **Real-time Security Monitoring**. Monitor network security in real-time with insights on security events, blocked events, threat severity, and infected hosts. Identify potential threats, track attack origins and targets, and take proactive measures to enhance network security.
-- **Event Analysis and Trend Identification**. Analyze network events based on type, client associations, and SSIDs. Identify event patterns and trends to understand network activity and potential security risks. 
+- **Event Analysis and Trend Identification**. Analyze network events based on type, client associations, and SSIDs. Identify event patterns and trends to understand network activity and potential security risks.
 - **Client and SSID Monitoring**. Monitor your client activity and their association with specific SSIDs. Identify your client's geographical distribution to assess potential risks associated with the specific locations and keep track of your client's behaviour and network usage for effective management.
 - **Air Marshal Security Overview**. Provide wireless intrusion detection and prevention by monitoring security status and identifying potential vulnerabilities in the network.
 - **Enhanced Security Measures**. Monitor blocked connections, file scans, and malicious files to ensure a secure network environment. Prioritize your security efforts by identifying top clients and destinations based on security events and take proactive steps to protect the network and mitigate potential threats.
@@ -33,7 +33,7 @@ This app uses [Cisco Meraki source](/docs/send-data/hosted-collectors/cloud-to-c
 - [Get Network Events](https://developer.cisco.com/meraki/api-v1/#!get-network-events) sample log format.
 - [Get Network Wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal) sample log format.
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Total Organizations"
 _sourceCategory=cm_con2006 licensing
@@ -72,17 +72,39 @@ _sourceCategory=cm_con2006 wiredMacs
 | count
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up data ingestion for the Cisco Meraki - C2C app, follow the instructions provided at [Cisco Meraki Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source). These instructions will guide you through the process of creating a source using the Cisco Meraki source category, which you will need to use when installing the app. By following these steps, you can ensure that your Cisco Meraki - C2C app is properly integrated and configured to collect and analyze your Cisco Meraki data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Cisco Meraki - C2C app
+<CollectionConfiguration/>
 
-This section provides instructions on how to install the Cisco Meraki - C2C app, as well as examples of each of the dashboards. The App pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+:::important
+Use the [Cloud-to-Cloud Integration for Cisco Meraki](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Cisco Meraki app is properly integrated and configured to collect and analyze your Cisco Meraki data.
+:::
 
-{@import ../../reuse/apps/app-install.md}
+### Create a new collector and install the app
 
-## Viewing Cisco Meraki - C2C dashboards
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing the Cisco Meraki - C2C dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Organization Overview
 
@@ -95,3 +117,15 @@ The **Cisco Meraki - Appliance Security Events** dashboard provides real-time in
 ### Network Events and Air Marshal
 
 The **Cisco Meraki - Network Events and Air Marshal** dashboard provides you with a comprehensive overview of network activity, event timelines, and event type breakdown. It offers insights into associated clients and their respective SSIDs, highlighting recent association events. The geo locations of clients are displayed, allowing for easy identification of their geographical distribution. Additionally, this dashboard presents information on the SSID associated with clients and an Air Marshal overview to monitor security. Risky geo locations are highlighted to help you to identify potential threats and vulnerabilities. With these panels, the dashboard offers a holistic view of network performance, event analysis, client activity, and security monitoring. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Cisco-Meraki-Network-Events-and-Air-Marshal.png')} alt="Cisco-Meraki-Network-Events-and-Air-Marshal" />
+
+## Upgrade/Downgrade the Cisco Meraki - C2C app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cisco Meraki - C2C app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -40,12 +40,12 @@ In Sumo Logic, scheduled searches send alerts to other tools via webhook connect
 ## Create a Webhook Connection
 
 :::note
-You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 :::
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Opsgenie.
 
-1. In Sumo Logic, go to **Manage Data** > **Monitoring** > **Connections**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. Click **+ Add** and choose **Opsgenie** as the connection type.<br/> ![Opsgenie webhook button.png](/img/connection-and-integration/opsgenie-webhook-button.png)
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. Paste the **Integration Url** from Opsgenie into the **URL** field.

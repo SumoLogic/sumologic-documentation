@@ -4,9 +4,9 @@ title: matches Search Operator
 sidebar_label: matches
 ---
 
-The `matches` operator can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a boolean value; the operator can be used with where or if operators.
+The `matches` operator can be used to match a string to a wildcard pattern or an RE2-compliant regex. The operator returns a boolean value; the operator can be used with the `where` or `if` operators.
 
-Matches can be used in Dashboard Panels, and are very commonly used in conjunction with other operators to build robust queries.
+You can use `matches` in Dashboard Panels and in conjunction with other operators to build robust queries.
 
 ## Syntax
 
@@ -41,25 +41,25 @@ where !(<string expression> matches <pattern>)
 ## Rules
 
 * Patterns use asterisks `*` as wildcards.
-* Regex must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax).
+* Regex must be [RE2-compliant](https://github.com/google/re2/wiki/Syntax).
 
 ## Examples
 
 ### Matching with regex to filter results
 
-See a [case insensitive parse regex example](../parse-operators/parse-variable-patterns-using-regex.md).
+See a [case-insensitive parse regex example](../parse-operators/parse-variable-patterns-using-regex.md).
 
 This example is using a regex to match certain IPv4 addresses in a parsed field named `ip`. The regex we are using is:
 
 `12\.1[34][1-5]\.12\.12[3-7]`
 
-A query can use this regex with the **matches** operator with a **where** or **if** operator to filter the results. With a where operator you can filter the results to return only matching `ip` addresses:
+A query can use this regex with the `matches` operator with a `where` or `if` operator to filter the results. With a where operator you can filter the results to return only matching `ip` addresses:
 
 ```sql
 | where ip matches /12\.1[34][1-5]\.12\.12[3-7]/
 ```
 
-With an if operator you can return an additional boolean field, in this example the new field will be named `ip_group` and will have a value of `1` when the `ip` matched the regex:
+With an `if` operator, you can return an additional boolean field, in this example the new field will be named `ip_group` and will have a value of `1` when the `ip` matched the regex:
 
 ```sql
 | if(ip matches /12\.1[34][1-5]\.12\.12[3-7]/, 1,0) as ip_group
@@ -67,7 +67,7 @@ With an if operator you can return an additional boolean field, in this example
 
 ### Identifying the browsers and operating systems used to access your website
 
-Running a query containing a matches operator on Apache Access logs can show you the breakdown of the devices and browsers that are accessing your site. You can then create a Dashboard with this query. We have used a transpose operator in this query to allow us to name the axis of our column chart.
+Running a query containing a `matches` operator on Apache Access logs can show you the breakdown of the devices and browsers that are accessing your site. You can then create a Dashboard with this query. We have used a `transpose` operator in this query to allow us to name the axis of our column chart.
 
 Running a search like:
 
@@ -89,11 +89,11 @@ _sourceCategory=Apache/Access
 
 Produces aggregate results similar to the following, when you configure it to create a [stacked column chart](/docs/dashboards/panels/column-charts):
 
-![Matches](/img/search/searchquerylanguage/search-operators/matches.png)
+![Bar chart comparing the number of users by operating system (Android, MacOS, Other, Windows, iPad, iPhone) and web browser (Other, Safari, Internet Explorer, Chrome, Firefox). Windows users predominantly use Internet Explorer, followed by Chrome and Firefox. Android and MacOS users mainly use Safari, while iPad users are evenly split between Safari and Other. iPhone users show a smaller user base with Safari usage.](/img/search/searchquerylanguage/search-operators/matches.png)
 
 ### Viewing errors and warnings over time
 
-In this example, we will run a query against Windows logs to see the distribution of errors and warnings over the previous hours. Using a timeslice operator in the query breaks the results into one-hour buckets.
+In this example, we will run a query against Windows logs to see the distribution of errors and warnings over the previous hours. Using a `timeslice` operator in the query breaks the results into one-hour buckets.
 
 Running a search like:
 
@@ -109,13 +109,13 @@ _sourceCategory=OS/Windows (error or warning)
 | sort _timeslice asc
 ```
 
-Produces results similar to the following, when you configure it to be visualized as a [linechart](/docs/dashboards/panels/line-charts):
+Produces results similar to the following, when you configure it to be visualized as a [line chart](/docs/dashboards/panels/line-charts):
 
-![Matches Event](/img/search/searchquerylanguage/search-operators/Matches_Ex.png)
+![Line chart displaying the number of errors and warnings over time. Errors consistently range between 300 to 400 with slight fluctuations, while warnings remain relatively stable around 100. Both metrics show a sharp decline towards the end of the time period.](/img/search/searchquerylanguage/search-operators/Matches_Ex.png)
 
 ### Matching against parsed field values
 
-The matches operator can match against your parsed fields by using the [concat](concat.md) operator to add wildcards to the necessary location of your parsed field. The following example is parsing the instance value and then concatenating wildcards to the beginning and end of the parsed field. This provides the matches operator the necessary wildcards to match against.
+The matches operator can match against your parsed fields by using the [`concat`](concat.md) operator to add wildcards to the necessary location of your parsed field. The following example is parsing the instance value and then concatenating wildcards to the beginning and end of the parsed field. This provides the matches operator the necessary wildcards to match against.
 
 ```sql
 | parse "instance \"*\"" as instance

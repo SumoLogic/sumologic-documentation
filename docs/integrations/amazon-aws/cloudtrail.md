@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Amazon Web Services (AWS) CloudTrail](https://aws.amazon.com/cloudtrail/) records API calls made to AWS. The Sumo Logic App for CloudTrail ingests these logs, providing greater visibility into events that, in turn, allows for security and operations forensics. For example, you can use the Sumo Logic App for CloudTrail to analyze raw CloudTrail data to investigate user behavior patterns. Or, by correlating CloudTrail data with other data sets, you can get a broader understanding of events from operating systems, intrusion detection systems, or even application logs.
 
-## Sample Log Message
+## Sample log messages
 
 ```json
 {  
@@ -42,7 +42,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ```
 
 
-## Sample Query
+## Sample queries
 
 ```sql title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
@@ -64,9 +64,9 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket in y
 2. Confirm that logs are being delivered to the Amazon S3 bucket.
 
 
-## Collecting Logs for the AWS CloudTrail App
+## Collecting logs for the AWS CloudTrail App
 
-This section has instructions for configuring log collection for the AWS CloudTrail app. If you have more than one environment that generates CloudTrail data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment. Learn more [here](#Configuring-the-AWS-CloudTrail-App-in-multiple-environments).
+This section has instructions for configuring log collection for the AWS CloudTrail app. If you have more than one environment that generates CloudTrail data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment. Learn more [here](#configuring-the-aws-cloudtrail-app-in-multiple-environments).
 
 To configure an AWS CloudTrail Source, perform these steps:
 1. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
@@ -74,10 +74,10 @@ To configure an AWS CloudTrail Source, perform these steps:
   * Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
   * Create the CloudFormation stack in AWS Management Console using the template.
   * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer [Configuring your AWS source with CloudFormation](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-iam-role).
-3. [Enable Sumo to track AWS Admin activity](#Enable-Sumo-to-Track-AWS-Admin-Activity). This step is optional, but if you don't do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
+3. [Enable Sumo to track AWS Admin activity](#enable-sumo-logic-to-track-aws-admin-activity). This step is optional, but if you do not do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
 4. Install the Sumo Logic App for AWS CloudTrail.
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-account.md) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account) at any time.
 
 
 ### Field Extraction Template
@@ -139,21 +139,24 @@ Your search results should look similar to:
 
 Now that you have set up collection for AWS CloudTrail, install the Sumo Logic App for CloudTrail to use the pre-configured searches and dashboards that provide visibility into your environment.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 :::info
 
-<details><summary><strong>What if my data isn't displaying in all Panels?</strong></summary>
+<details>
+<summary><strong>What if my data isn't displaying in all Panels?</strong></summary>
 
 ### Scan interval issues
 
-Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS CloudTrail logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](#AWS-CloudTrail-App-Dashboards)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
+Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS CloudTrail logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](#viewing-aws-cloudtrail-dashboards)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
 
-Additionally, you can change the time range of a Panel. Even though these  have been preconfigured, they can be edited just like any other Panel. You'll find instructions in [Changing the Time Range of a Panel](/docs/dashboards-classic/edit-dashboards/set-time-range-dashboards.md).
+Additionally, you can change the time range of a Panel. Even though these  have been preconfigured, they can be edited just like any other Panel. You'll find instructions in [Changing the Time Range of a Panel](/docs/dashboards/set-custom-time-ranges).
 
 ### AWS Admin activity not tracked
 
-To track Admin activity in your AWS account, and to provide data for all Administrator Activity Panels in the User Monitoring Dashboard, you need to supply a list of admin users to Sumo. For instructions see [Enable Sumo to Track AWS Admin Activity](#Enable-Sumo-to-Track-AWS-Admin-Activity)
+To track Admin activity in your AWS account, and to provide data for all Administrator Activity Panels in the User Monitoring Dashboard, you need to supply a list of admin users to Sumo. For instructions see [Enable Sumo to Track AWS Admin Activity](#enable-sumo-logic-to-track-aws-admin-activity)
 
 </details>
 
@@ -274,7 +277,7 @@ See information about CloudTrail console logins, including location of users, lo
 
 **Outlier - Success Login**. Shows outliers in count of successful logins on a line chart with threshold for the last 24 hours.
 
-**Login Results - One Day Time Compare. **Shows the number of login successes and failures in an aggregation table, that compares the current count with the count from one day ago.
+**Login Results - One Day Time Compare.** Shows the number of login successes and failures in an aggregation table, that compares the current count with the count from one day ago.
 
 **Outlier - Failed Login**. Shows outliers in count of failed login attempts on a line chart with threshold for the last 24 hours.
 
@@ -287,18 +290,23 @@ See information about S3 public objects and buckets, including counts of new pub
 
 **New Public Objects**. Shows a count of new public objects for the last 24 hours.
 
-**New Public Objects by Object-Bucket. **Displays new public objects per object on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
+**New Public Objects by Object-Bucket.** Displays new public objects per object on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
 
-**New Public Objects Table. **Displays a table with new public objects in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
+**New Public Objects Table.** Displays a table with new public objects in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
 
 **Public Buckets**. Shows a count of public buckets for the last 24 hours.
 
 **Public Buckets**. Displays public buckets on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
 
-**Public Buckets Table. **Displays a table with public buckets in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
+**Public Buckets Table.** Displays a table with public buckets in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
 
 **Modified Public Objects**. Shows a count of public objects that have been modified in the last 24 hours.
 
 **Modified Public Objects-Bucket**. Displays modified public objects per object on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
 
 **Modified Public Objects Table**. Displays a table with modified public objects in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
+
+## Additional resources
+
+* Blog: [What is AWS CloudTrail?](https://www.sumologic.com/blog/what-is-aws-cloudtrail/)
+* App description: [Logs for Security app for AWS CloudTrail](https://www.sumologic.com/application/aws-cloudtrail/)

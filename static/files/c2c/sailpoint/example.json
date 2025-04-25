@@ -1,0 +1,19 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"SailPoint"
+      },
+      "config":{
+        "name": "Sail",
+        "org_name": "TenantName",
+        "supported_apis": ["Events", "Users"],
+        "client_id": "********",
+        "client_secret": "********",
+        "fields": {
+             "_siemForward": true
+        }
+      },
+      "sourceType":"Universal"
+    }
+  }

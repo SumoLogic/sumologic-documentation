@@ -13,11 +13,11 @@ The Sumo Logic App for Akamai DataStream is designed to monitor and analyze the 
 
 Akamai DataStream app provides pre-built queries that allow you to analyze your logs by various parameters, including response time, status code, request path, and more. In addition, this app includes dashboards that allow you to visualize your log data to easily understand the trends and patterns. You can also use these dashboards to monitor key metrics, such as request volume, response time, and error rate, which assists you in identifying any anomalies or issues.
 
-## Log Types
+## Log types
 
 This App uses Akamai Source to collect [DataStream 2 Logs](https://techdocs.akamai.com/datastream2/docs/log-format-1#sample-log-lines) for Akamai DataStream.
 
-### Sample Log Message
+### Sample log messages
 
 ```json title="DataStream 2"
 {
@@ -71,7 +71,7 @@ This App uses Akamai Source to collect [DataStream 2 Logs](https://techdocs.akam
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql
 _sourceCategory="akamai"
@@ -82,27 +82,33 @@ _sourceCategory="akamai"
 
 Follow the instructions for setting up [Integration for Akamai DataStream 2](https://techdocs.akamai.com/datastream2/docs/stream-sumo-logic) source and use the same source category while installing the app.
 
-## Installing the Akamai DataStream App
+## Installing the Akamai DataStream app
 
 Now that you have configured Akamai DataStream 2 logs, install the Sumo Logic App for Akamai DataStream to take advantage of the pre-configured searches and dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Viewing Akamai DataStream Dashboards​
+<AppInstall2/>
 
-### Akamai DataStream - Overview
+## Viewing Akamai DataStream dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Overview
 
 The **Akamai DataStream - Overview** dashboard displays the geo location of requests, requests from risky locations, cache hit ratio trend, URLs causing issues, and user agent breakdown.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Overview.png')} alt="Akamai-DataStream-Overview"/>
 
-### Akamai DataStream - Performance and Qos Monitoring
+### Performance and Qos Monitoring
 
 The **Akamai DataStream - Performance and Qos Monitoring** dashboard analyze response time and provides analysis between response time and requests, DNS lookup delay by geolocations, and shows transfer time by the requested path.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Performance-and-Qos-Monitoring.png')} alt="Akamai-DataStream-Performance-and-Qos-Monitoring"/>
 
-### Akamai DataStream - Requests Type
+### Requests Type
 
 The **Akamai DataStream - Requests Type** dashboard provides details about visitor platforms, breakdown of browsers and OS, cache hit ratio by content type, and requests with errors.
 
@@ -113,3 +119,15 @@ The **Akamai DataStream - Requests Type** dashboard provides details about visit
 The **Akamai DataStream - Video Streaming** dashboard displays details related to video streaming requests, and analyzes failed vs successful video streaming requests over time.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Video-Streaming.png')} alt="Akamai-DataStream-Video-Streaming"/>
+
+## Upgrade/Downgrade the Akamai DataStream app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Akamai DataStream app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

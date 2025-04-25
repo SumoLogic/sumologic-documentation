@@ -5,6 +5,7 @@ sidebar_label: Best Practices
 description: Best practices for creating a naming convention for good Source Category values and choosing the right installed data collector for your environment.
 ---
 
+import Iframe from 'react-iframe';
 
 ## Good and Bad Source Categories
 
@@ -33,6 +34,21 @@ Following the naming convention described previously, you could set the followin
 
 While the components at the beginning of the value do not add any obvious value, they do provide a high-level grouping of this data. This allows us to fulfill the three purposes of Source Categories.
 
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/wihnfxauzh?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Setting Source Category Values Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/vkKeJOBVVjk"
      width="854px"
      height="480px"
@@ -40,10 +56,11 @@ While the components at the beginning of the value do not add any obvious value,
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"      allowfullscreen
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"      allowfullscreen
      />
+-->
 
-import Iframe from 'react-iframe';
+:::
 
 ### Define the Scope of Searches
 

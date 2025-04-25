@@ -14,7 +14,7 @@ There are two fields operator modes:
 To specify the [order of returned fields](#ordering-fields) you must use the fields operator last, at the end of your query.
 
 :::note
-Fields are not returned in the specified order in Search Job API and Webhook results.
+Fields are not returned in the specified order in [Search Job API](/docs/api/search-job/) and Webhook results.
 :::
 
 ## Allowlist
@@ -30,7 +30,7 @@ _sourceCategory=Apache/Access
 
 The search results would look like this:  
 
-![Fields](/img/search/searchquerylanguage/search-operators/Fields.png)
+![A screenshot of a Sumo Logic table showing log entries with columns for time, method, status_code, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'. The log messages include HTTP request details. The host is 52.5.127.200, and the category is Apache/Access. The red box highlights the columns 'method' and 'status_code' which display the HTTP methods (e.g., GET) and their corresponding status codes (e.g., 200, 304).](/img/search/searchquerylanguage/search-operators/Fields.png)
 
 Allowlist queries allow all system internal fields (fields prefixed with an underscore "_") to pass.
 
@@ -72,7 +72,7 @@ _sourceCategory=Apache/Access
 
 The search results would look like this:
 
-![Fields_nonaggregate](/img/search/searchquerylanguage/search-operators/Fields_nonaggr.png)
+![A screenshot of a Sumo Logic table showing log entries with columns for time, method, status_code, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'. The log messages include HTTP request details. The host is 52.5.127.200, and the category is Apache/Access. The red box highlights the column headers for 'Time', 'method', 'status_code', and 'Message'.](/img/search/searchquerylanguage/search-operators/Fields_nonaggr.png)
 
 While the same query with an added *count by* statement to make it an aggregate query:
 
@@ -86,7 +86,7 @@ _sourceCategory=Apache/Access
 
 This would provide the following results:
 
-![](/img/reuse/query-search/fields_operator_aggregate.png)
+![A screenshot of a Sumo Logic table showing HTTP status codes and methods. The table has columns for status_code and method. The entries show various status codes (304, 503, 403, 200, 404, 500, 302, 401) all associated with the GET method.](/img/reuse/query-search/fields_operator_aggregate.png)
 
 ## Use a Field Name that Contains Spaces or Special Characters
 

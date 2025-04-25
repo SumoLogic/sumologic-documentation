@@ -40,7 +40,7 @@ Follow the below steps to configure the Papertrail webhook.
 6. Click **Create Alerts**.
 7. Verify Papertrail events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
-`_sourcecategory=webhook/papertrail`
+`_sourceCategory=webhook/papertrail`
 ```
 
 :::info

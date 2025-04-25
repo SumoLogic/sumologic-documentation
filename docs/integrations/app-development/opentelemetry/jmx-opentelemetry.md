@@ -2,7 +2,7 @@
 id: jmx-opentelemetry
 title: Java Management Extensions (JMX) - OpenTelemetry Collector
 sidebar_label: JMX - OTel Collector
-description: The Sumo Logic App for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
+description: The Sumo Logic app for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,12 +13,15 @@ import TabItem from '@theme/TabItem';
 
 Java Management Extensions (JMX) is a standard component of the Java Platform. JMX gives developers a standard and simple way to manage resources, including services, devices, and applications. JMX is dynamic, so you can manage and monitor resources as soon as they are created, implemented, or installed.
 
-The Sumo Logic App for JMX allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
+The Sumo Logic app for JMX allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
 
+:::info
+This app includes [built-in monitors](#jmx-alerts). For details on creating custom monitors, refer to [Create monitors for JMX app](#create-monitors-for-jmx-app).
+:::
 
 ## Metrics types
 
-The Sumo Logic App for JMX collects metrics from Java applications via the [JMX Receiver for OpenTelemetry](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver).
+The Sumo Logic app for JMX collects metrics from Java applications via the [JMX Receiver for OpenTelemetry](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver).
 
 The following types of metrics are collected from JMX:
 
@@ -30,7 +33,7 @@ The following types of metrics are collected from JMX:
 
 For more information on different metrics collected, refer to the [JMX receiver docs](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/jvm.md).
 
-### Sample query
+### Sample metrics query
 
 ```sql
 sumo.datasource=jmx metric=jvm.memory.heap.used
@@ -73,13 +76,17 @@ Below are docs for popular Java applications:
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up OpenTelemetry Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -95,11 +102,13 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-OTEL-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-OTEL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -108,6 +117,9 @@ Click on the **Download YAML File** button to get the yaml file.
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -137,9 +149,34 @@ Click on the **Download YAML File** button to get the yaml file.
   ```
 
 </TabItem>
+<TabItem value="Chef">
+
+import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
+
+<ChefEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
+
+<AnsEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
+
+<PuppetEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 :::note
 If you have multiple Java processes running on the same host, then you need to select **Add another Host** option under **More Actions** when installing an app to generate a new YAML configuration file for each of the Java process.
@@ -147,13 +184,11 @@ If you have multiple Java processes running on the same host, then you need to s
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-Add-New-Host.png' alt="Add Another Host" />
 :::
 
+## Viewing JMX dashboards
 
-
-## Viewing JMX Dashboards
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Overview
 
@@ -189,20 +224,31 @@ Use this dashboard to:
 
 ### Class Loading and Threads
 
-The **JMX - Class Loading and Threads** dashboard shows key information about the number and type of threads deadlocked, peak, and GC threads of your java virtual machine running on the deployment.
-
-Use this dashboard to:
-* Identify abnormal spikes in Threads and Loaded Classes.
+The **JMX - Class Loading and Threads** dashboard shows key information about the number and type of threads deadlocked, peak, and GC threads of your Java virtual machine running on the deployment. Use this dashboard to identify the abnormal spikes in Threads and Loaded Classes.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-Class-Loading-and-Threads.png' alt="Class Loading and Threads" />
 
-
 ### Memory Pool
 
-The **JMX - Memory Pool **dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
+The **JMX - Memory Pool** dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
 
 Use this dashboard to:
 * Gain insights into memory usage across different memory pools.
 * Gain insights into garbage collection impact on different memory pools.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-Memory-Pool.png' alt="Memory Pool" />
+
+## Create monitors for JMX app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### JMX alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `JMX - High Heap Memory Usage Alert` | This alert gets triggered when heap memory usage exceeds threshold. | Count < 20 | Count >= 20 |
+| `JMX - High Memory Pool Usage Alert` | This alert gets triggered when memory pool usage exceeds threshold. | Count < 20 | Count >= 20 |
+| `JMX - High Non Heap Memory Usage Alert` | This alert gets triggered when non heap memory usage exceeds threshold. | Count < 20 | Count >= 20 |
+| `JMX - High Number Of Classes Loaded Alert` | This alert gets triggered when high number of classes are loaded. | Count > 1000 | Count \<= 1000 |

@@ -1,0 +1,16 @@
+{
+    "api.version":"v1",
+    "source":{
+      "config":{
+        "name": "CrowdStrike FileVantage Source",
+        "base_url": "https://api.crowdstrike.com",
+        "client_id": "********",
+        "client_secret": "********",
+        "polling_interval": "15m"
+      },
+      "schemaRef":{
+        "type":"CrowdStrike FileVantage"
+      },
+      "sourceType":"Universal"
+    }
+  }

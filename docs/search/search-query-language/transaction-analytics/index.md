@@ -15,26 +15,26 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this section, we'll introduce the following concepts:
 
-<div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
+<div className="box-wrapper" >
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/search/search-query-language/transaction-analytics/merge-operator"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Merge Operator</h4></a>
   <p>Reduces a stream of events to a single event using a specified merge strategy.</p>
   </div>
 </div>
-<div className="box smallbox2 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/search/search-query-language/transaction-analytics/transaction-operator"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Transaction Operator</h4></a>
   <p>Analyze transaction data such as website sign-ups and e-commerce activity.</p>
   </div>
 </div>
-<div className="box smallbox3 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/search/search-query-language/transaction-analytics/flow-diagrams"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Flow Diagrams</h4></a>
   <p>Flow Diagrams can show the flow within a distributed system.</p>
   </div>
 </div>
-<div className="box smallbox4 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/search/search-query-language/transaction-analytics/transactionize-operator"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Transactionize Operator</h4></a>
   <p>Groups log messages that match on any fields you specify.</p>

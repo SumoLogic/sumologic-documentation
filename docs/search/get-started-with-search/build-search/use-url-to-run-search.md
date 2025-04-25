@@ -6,25 +6,25 @@ description: You can create a custom URL to launch a log search in Sumo Logic.
 
 You can create a custom URL to launch a log search in Sumo Logic.
 
+:::note
+The syntax in this article is for use in the [new UI](/docs/get-started/sumo-logic-ui/). For the [Classic UI](/docs/get-started/sumo-logic-ui-classic/), replace `log-search` in the URL syntax with `ui/#/search`.
+:::
+
 ## Syntax
 
 ```
-https://<endpoint>/ui/#/search/create?query=<urlEncodedQuery>&parameters=<param1:value1,param2:value2,param3=value3,...,paramN=valueN>&startTime=<start>&endTime=<end>
+https://<endpoint>/log-search/create?query=<urlEncodedQuery>&parameters=<param1:value1,param2:value2,param3=value3,...,paramN=valueN>&startTime=<start>&endTime=<end>
 ```
 
 * `<endpoint>` is your Sumo Logic service endpoint. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the endpoint URLs.
 * `<urlEncodedQuery>` is the text of your log search query in URL encoded format.
-* `<param1:value1,param2:value2,param3=value3,...,paramN=valueN>` is the query parameter part of a templatized query and the corresponding value for the query parameter. 
+* `<param1:value1,param2:value2,param3=value3,...,paramN=valueN>` is the query parameter part of a templatized query and the corresponding value for the query parameter.
 * `<start>` is the start of your log query time range, the value can be either:
-
     * in milliseconds since epoch.
-    * a [relative time range
-        expression](../search-basics/time-range-expressions.md).
-
+    * a [relative time range expression](/docs/search/get-started-with-search/search-basics/time-range-expressions).
 * `<end>` is the end of your log query time range, the value can be either:
-
     * in milliseconds since epoch.
-    * a [relative time range expression](../search-basics/time-range-expressions.md).  You can omit the `<end>` value and the current time (`now`) is assumed.
+    * a [relative time range expression](/docs/search/get-started-with-search/search-basics/time-range-expressions). You can omit the `<end>` value and the current time (`now`) is assumed.
 
 ## Examples
 
@@ -39,7 +39,7 @@ test query | count by _source
 The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). 
 
 ```
-https://service.sumologic.com/ui/#/search/create?query=test%20query%20%7C%20count%20by%20_source&startTime=-10w&endTime=-1w
+https://service.sumologic.com/log-search/create?query=test%20query%20%7C%20count%20by%20_source&startTime=-10w&endTime=-1w
 ```
 ### Templatized query URL
 
@@ -49,7 +49,7 @@ Create a URL for the following log query, using a relative time range expressio
 {{app_name}} error | count
 ```
 
-Assuming that user selects `billing` app from the list of apps, the final query is : 
+Assuming that user selects `billing` app from the list of apps, the final query is :
 
 ```sql
 billing error | count
@@ -58,5 +58,5 @@ billing error | count
 The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). 
 
 ```
-https://service.sumologic.com/ui/#/search/create?query={{app_name}}%20error%20%7C%20count&parameters=app_name:billing&startTime=-60m&endTime=-30m
+https://service.sumologic.com/log-search/create?query={{app_name}}%20error%20%7C%20count&parameters=app_name:billing&startTime=-60m&endTime=-30m
 ```

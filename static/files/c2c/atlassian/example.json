@@ -1,0 +1,25 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+            "name": "Atlassian Test",
+            "fields": {
+                "_siemForward": true
+            },
+            "pollingInterval": "1h",
+            "organizations": [
+                {
+                    "orgID": "**************",
+                    "token": "*******"
+                }
+            ]
+        },
+        "schemaRef": {
+            "type": "Atlassian"
+        },
+        "state": {
+            "state": "Collecting"
+        },
+        "sourceType": "Universal"
+    }
+}

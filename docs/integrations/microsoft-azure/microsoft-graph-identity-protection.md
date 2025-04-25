@@ -25,7 +25,7 @@ The App uses Microsoft Graph Identity Protection Source to collect [Risky Users]
 
 To learn about the Microsoft Graph Identity Protection API fields, see the [Risky Users](https://learn.microsoft.com/en-us/graph/api/resources/riskyuser?view=graph-rest-1.0#properties) and [Risk Detections](https://learn.microsoft.com/en-us/graph/api/resources/riskdetection?view=graph-rest-1.0#properties) documentation.
 
-### Sample Log Messages
+### Sample log messages
 
 This section contains log messages for both `Risky Users` and `Risk detections` sources.
 
@@ -78,7 +78,7 @@ This section contains log messages for both `Risky Users` and `Risk detections` 
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section contains the sample queries of both the `Risky Users` and `Risk detections`.
 
@@ -120,35 +120,39 @@ _sourceCategory=msgip-app-src riskEventType
 | count(risk_id) by risk_level
 | sort by _count
 ```
+## Collection configuration and app installation
 
-## Collecting Logs for Microsoft Graph Identity Protection API
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-This section explains how to collect logs from Microsoft Graph Identity Protection API and ingest them into Sumo Logic. For details, see [Cloud-to-Cloud-Integration for Microsoft Graph Identity Protection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source/) to create the source and use the same source category while installing the app.
+<CollectionConfiguration/>
 
-## Installing the Microsoft Graph Identity Protection App
+:::important
+Use the [Cloud-to-Cloud Integration for Microsoft Graph Identity Protection](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Microsoft Graph Identity Protection app is properly integrated and configured to collect and analyze your Microsoft Graph Identity Protection data.
+:::
 
-Locate and install the app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+### Create a new collector and install the app
 
-To install the app, follow the steps below:
-1. From the **App Catalog**, search for the app and select it.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is available only for limited number of apps. For details, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, enter the following fields.
-   1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-   2. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
-   3. **Advanced**. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
+<AppCollectionOPtion1/>
 
-The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
+### Use an existing collector and install the app
 
-## Viewing Microsoft Graph Identity Protection Dashboards
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-* You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing Microsoft Graph Identity Protection dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Risk Detections
 
@@ -165,3 +169,15 @@ This dashboard provides insights into the risks detected in the organization. It
 This dashboard helps to monitor and manage the risky users of your organization. It visualizes the distribution of risky users by status, level, state, and processing state. It also provides a list of various actions performed to mitigate the risks with their frequency. It displays the table of summary of all the risky users.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Graph-Identity-Protection/Microsoft-Graph-Identity-Protection-Risky-Users.png' alt="Microsoft Graph Identity Protection Risky Users" />
+
+## Upgrade/Downgrade the Microsoft Graph Identity Protection app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Graph Identity Protection app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

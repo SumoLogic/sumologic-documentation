@@ -14,7 +14,7 @@ The Sumo Logic App for Bitbucket provides insights to development teams into how
 The Bitbucket App supports only Bitbucket Cloud.
 
 
-## Event Types
+## Event types
 
 Sumo Logic analyzes the following required types of logs for more efficient monitoring.
 
@@ -41,7 +41,7 @@ Refer to the [event documentation](https://confluence.atlassian.com/bitbucket/ev
 
 For log samples, refer to [Bitbucket Event Documentation](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html)
 
-### Sample Log
+### Sample log messages
 
 **Deploy Events** are triggered whenever code is pushed to test, staging, or production environments.
 * Success Code Deploys
@@ -68,7 +68,7 @@ For log samples, refer to [Bitbucket Event Documentation](https://confluence.atl
 ```
 
 
-### Sample Query
+### Sample queries
 
 This section provides a sample from the **Failed Deployments** panel on the **Bitbucket Deployment** dashboard.
 
@@ -98,7 +98,7 @@ _sourceCategory="bitbucket" production  deploymentEnvironment pipe_result_link d
 ```
 
 
-## Collecting Logs for Bitbucket App
+## Collecting logs for Bitbucket App
 
 This section provides instructions for configuring log collection for the Bitbucket App. Configuring log collection consists of the following tasks:
 
@@ -120,11 +120,10 @@ In this step, you configure a Hosted Collector to receive Webhook Events from Bi
 3. From the links on the **Settings** page, click the **Webhooks** link.
 4. Click the **Add Webhook** button to create a Webhook for the repository. The **Add New Webhook** page appears.<br/><img src={useBaseUrl('img/integrations/app-development/Collect_Log_BB.png')} alt="Bitbucket" />
 5. Enter a **Title** with a short description.
-6. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](#Configure_Hosted_Collector_to_Receive_Bitbucket_events).
+6. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](#step-1-configure-hosted-collector-to-receive-bitbucket-events).
 7. Click on **Status** to make it **Active**.
 8. **Triggers** - Click on Choose from a full list of triggers, and choose all triggers under Repository, Issue and Pull Request.
 9. Click **Save**
-
 
 ### Step 3: Configure the Bitbucket CI/CD Pipeline to Collect Deploy Events
 
@@ -141,28 +140,21 @@ If you want to deployment events to multiple Sumo Logic orgs, include a `-pipe` 
 
 For reference: This is how the [bitbucket-pipelines.yml](https://bitbucket.org/app-dev-sumo/backendservice/src/master/bitbucket-pipelines.yml) looks after adding deploy pipe code to our sample Bitbucket CI/CD pipeline.
 
+### Step 4: Bitbucket Event-Key tagging at Sumo Logic
 
-### Step 4: Enable Bitbucket Event-Key tagging at Sumo Logic
-
-Sumo Logic needs to understand the event type for incoming events (for example, repo:push events). To enable this, the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
-
-1. From Sumo Logic, go to **Manage Date** > **Logs** > **[Fields](/docs/manage/fields.md#add-field)**.
-2. Add Field ‎**X-Event-Key**‎.<br/><img src={useBaseUrl('img/integrations/app-development/BB_Collect_Log.png')} alt="Bitbucket" />
-
+To properly identify the event type for incoming events (for example, repo:push events), Sumo Logic automatically adds the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type to the [Fields](/docs/manage/fields) during app installation.
 
 ## Installing the Bitbucket App
 
-This section provides instructions for installing the Bitbucket app.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-{@import ../../reuse/apps/app-install.md}
+<AppInstall2/>
 
 ## Viewing Bitbucket Dashboards
 
-This section provides descriptions and examples for each of the pre-configured app dashboards.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+<ViewDashboards/>
 
 ### Overview
 

@@ -1,0 +1,18 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"Proofpoint On Demand"
+      },
+      "config":{
+        "name":"PoD",
+        "api_secret":"********",
+        "supported_events":["message","maillog"],
+        "fields":{
+          "_siemForward":false
+        },
+        "cluster_id":"********"
+      },
+      "sourceType":"Universal"
+    }
+  }

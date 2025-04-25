@@ -9,7 +9,7 @@ description: You can configure a system for remote access by a Remote Windows Ev
 Use the instructions in this topic to configure a system for remote access by a Remote Windows Event Log Source. For information on collecting local Windows Event Logs, see [Configure a Local Windows Event Log Source](local-windows-event-log-source.md).
 
 :::important
-Windows events can only be collected, locally or remotely, from systems running Windows Server 2012 or later.
+Windows events can only be collected remotely from systems running Windows Server 2012 or later.
 :::
 
 There are two primary configuration requirements to enable remote event log collection:

@@ -4,6 +4,7 @@ title: Palo Alto Cortex XDR
 sidebar_label: Palo Alto Cortex XDR
 description: The Sumo Logic app for Palo Alto Cortex XDR provides comprehensive visibility and analysis of alerts and incidents to improve overall security posture.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/integrations/security-threat-detection/pan6.png')} alt="icon" width="100"/>
@@ -21,7 +22,8 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
 
 ## Sample log messages
 
-<details><summary>View Sample Log Message</summary>
+<details>
+<summary>View Sample Log Message</summary>
 
 ```json title="Alert Message"
 {
@@ -129,9 +131,10 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
 
 </details>
 
-## Sample Query
+## Sample queries
 
-<details><summary>View sample queries</summary>
+<details>
+<summary>View sample queries</summary>
 
 ```sql title="Alerts Triggered"
 _sourceCategory="palo_alto_cortex_xdr" "alert_id" "is_whitelisted"
@@ -157,17 +160,39 @@ _sourceCategory="palo_alto_cortex_xdr" "incident_id" "incident_name"
 ```
 </details>
 
-## Set up collection
+## Collection configuration and app installation
 
-Prior to installing the Palo Alto Cortex XDR app, you'll first need to set up the source by following the instructions provided at [Cloud-to-Cloud Integration Palo Alto Cortex XDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source). By following these steps, you can ensure that your Palo Alto Cortex XDR app is properly integrated and configured to collect and analyze your Palo Alto Cortex XDR data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Palo Alto Cortex XDR app​
+<CollectionConfiguration/>
 
-This section has instructions for installing the Sumo Logic app for Palo Alto Cortex XDR.
+:::important
+Use the [Cloud-to-Cloud Integration for Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Palo Alto Cortex XDR app is properly integrated and configured to collect and analyze your Palo Alto Cortex XDR data.
+:::
 
-{@import ../../reuse/apps/app-install.md}
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Palo Alto Cortex XDR dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Alerts Overview
 
@@ -176,3 +201,15 @@ The **Palo Alto Cortex XDR - Alerts Overview** dashboard provides real-time anal
 ### Incidents Overview
 
 The **Palo Alto Cortex XDR - Incidents Overview** dashboard provides the number of incidents created and disabled. This dashboard offers insights into the incidents based on severity over time and incidents by status. This dashboard also highlights the most frequently assigned users to handle incidents, information about the commonly observed MITRE techniques and tactics utilized, and a summary of recent incidents for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Incidents-Overview.png')} alt="Palo-Alto-Cortex-XDR-Incidents-Overview" width="800"/>
+
+## Upgrade/Downgrade the Palo Alto Cortex XDR app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Palo Alto Cortex XDR app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

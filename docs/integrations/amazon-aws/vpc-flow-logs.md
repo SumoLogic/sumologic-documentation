@@ -17,8 +17,8 @@ For more information on Amazon VPC Flow Logs, see [here](http://docs.aws.amazon.
 This section has instructions for collecting VPC Flow Logs using a CloudFormation template.
 
 VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. You can use either of these methods to collect Amazon VPC Flow Logs:
-* [Collect Amazon VPC Flow Logs using an Amazon S3 source](#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
-* [Collect Amazon VPC Flow Logs using a CloudFormation template](#collecting-amazon-vpc-flow-logs-using-an-amazon-s3-source)
+* [Collect Amazon VPC Flow Logs using an Amazon S3 source](#collecting-amazon-vpc-flow-logs-using-an-amazon-s3-source)
+* [Collect Amazon VPC Flow Logs using a CloudFormation template](#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
 
 Each method has advantages. Using an Amazon S3 source is more reliable, while using a CloudWatch Logs source with the CloudFormation template allows you to optimize your logs. With the CloudWatch Logs source and CloudFormation template, you can customize logs by adding more information and filtering out unwanted data. The Security Groups dashboard utilizes customized logs that are generated from the Lambda function and created with the CloudFormation template from logs sent to CloudWatch Logs.
 
@@ -63,15 +63,15 @@ To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
 
 #### Step 3: Create AWS functions and resources  
 
-Follow the steps on [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), starting with the [Download the CloudFormation template](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs#Download_the_CloudFormation_template) step and ending with the [Dealing with alarms](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs#Dealing_with_alarms) step. As you perform the procedure note the additional instructions below, regarding log format and optional environment variables.
+Follow the steps on [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), starting with the [Download the CloudFormation template](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-2-download-the-cloudformation-template) step and ending with the [Dealing with alarms](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#dealing-with-alarms) step. As you perform the procedure note the additional instructions below, regarding log format and optional environment variables.
 
 
 #### Configure LogFormat correctly (Required)  
 
-When you [Create a stack on the AWS CloudFormation console](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs#Create_a_stack_on_the_AWS_CloudFormation_console), in Step 5, make sure you select either VPC-JSON or VPC-RAW in the LogFormat field in the Specify Details window.
+When you [Create a stack on the AWS CloudFormation console](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-4-create-a-stack-on-the-aws-cloudformation-console), in step 5, make sure you select either VPC-JSON or VPC-RAW in the LogFormat field in the Specify Details window.
 
 #### Environment variables for VPC flow log collection (Optional)
-When you [Configure environment variables for Lambda functions](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs#Configure_environment_variables_for_Lambda_functions), in addition to the variables listed, you can optionally also define the following environment variables.
+When you [Configure environment variables for Lambda functions](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template#configure-environment-variables-for-lambda-functions-optional), in addition to the variables listed, you can optionally also define the following environment variables.
 
 If you define the environment variables below, do it for both of the Lambda functions created by the CloudFormation template.
 
@@ -93,9 +93,7 @@ If you define the environment variables below, do it for both of the Lambda func
   </tr>
   <tr>
    <td><code>VPC_CIDR_PREFIX</code></td>
-   <td>Comma-separated list of IP prefixes for filtering out internal traffic. For example <code>vpcCIDRprefix= 10.8.0.0,10.9.0.0</code> filters out logs whose <code>destinationIP</code> and <code>sourceIP</code> matches any of the two prefixes <code>10.8.0.0</code> and <code>10.9.0.0</code>.
-   <p><code>"Ex if VPC_CIDR_PREFIX = "10.0." then all the IP's with 10.0.*.* will match the prefix"</code></p>
-   </td>
+   <td>Comma-separated list of IP prefixes for filtering out internal traffic. For example <code>vpcCIDRprefix= 10.8.0.0,10.9.0.0</code> filters out logs whose <code>destinationIP</code> and <code>sourceIP</code> matches any of the two prefixes <code>10.8.0.0</code> and <code>10.9.0.0</code>.<p><code>"Ex if VPC_CIDR_PREFIX = "10.0." then all the IP's with 10.0.*.* will match the prefix"</code></p></td>
   </tr>
 </table>
 
@@ -177,7 +175,9 @@ json "message" as _rawvpc nodrop
 
 Now that you have configured Amazon VPC Flow Logs, install the Sumo Logic App for Amazon VPC Flow Logs to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Amazon VPC Flow Logs Dashboards
 

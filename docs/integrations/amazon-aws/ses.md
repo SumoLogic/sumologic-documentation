@@ -5,12 +5,13 @@ description: The Sumo App for Amazon SES provides operational insight into Amazo
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CollBegin from '../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/ses.png')} alt="Thumbnail icon" width="50"/>
 
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Sumo Logic App for Amazon SES helps you monitor the email platform activities. The app uses CloudTrail events and SES notifications, and provides pre-configured dashboards that provide insights on the status of the email delivery including bounced notifications, delivered notifications, and various SES CloudTrail events.
 
-## Log Types
+## Log types
 
 The Amazon SES App uses:
 * AWS CloudTrail events for SES. For more details, see [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail). 
@@ -19,7 +20,7 @@ The Amazon SES App uses:
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Amazon SES App helps you monitor the email platform activities, utilizing CloudTrail events and SES notifications (via SNS).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="CloudTrail log"
 {
@@ -75,7 +76,7 @@ Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and rece
 ```
 
 
-### Sample Query
+### Sample queries
 
 ```sql title="Top bounced email addresses"
 (_sourceCategory=aws-ses or _sourceCategory=AWS/SES/Notifications) "\"notificationType\":\"Bounce\""
@@ -92,7 +93,7 @@ Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and rece
 ```
 
 
-## Collecting Logs for the Amazon SES App
+## Collecting logs for the Amazon SES app
 
 This section provides instructions for collecting CloudTrail Event logs and SES Notifications Via SNS.
 
@@ -112,8 +113,8 @@ Before you configure the log sources for the Amazon SES app, decide on the sourc
 
 ### Step 3: Collect Amazon SES events using CloudTrail
 
-1. In Sumo Logic select** Manage Data > Collection > Collection**.
-2. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector, or one you have created for this purpose.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+2. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select AWS CloudTrail as your AWS Source type.
 4. Enter a name for the new Source. A description is optional.
 5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
@@ -124,25 +125,26 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
 6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:
 
-7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions) for details.
+7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use *one wildcard* (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions) for details.
 8. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
     * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m). If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
     :::note
-    {@import ../../reuse/collection-should-begin-note.md}
+    <CollBegin/>
     :::
 9. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called `_sourceCategory`.)
-10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md). Then define the fields you want to associate, each field needs a name (key) and value.
+10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Then define the fields you want to associate, each field needs a name (key) and value.
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
-    * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.  \
+    * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
     * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources).
     * **SNS Subscription Endpoint (Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file. Click the box below to open instructions:
 
-    <details><summary>Set up SNS in AWS</summary>
+    <details>
+    <summary>Set up SNS in AWS</summary>
 
     The following steps use the Amazon SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-sns-subscription-endpoint).
 
@@ -180,9 +182,9 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
 13. Set any of the following under **Advanced**:
   * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
     * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
-* **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
+* **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
     * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
     * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 14. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the AWS Source.
@@ -193,14 +195,14 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Configure an  [HTTP](/docs/send-data/hosted-collectors/http-source/logs-metrics) source.
-* **Name—**Enter a name to display for the new Source.
-* **Description—**Enter an optional description.
-* **Source Category—**Enter a source category, such as: AWS/SES/Events/Notifications
+* **Name** — Enter a name to display for the new Source.
+* **Description** — Enter an optional description.
+* **Source Category** — Enter a source category, such as: AWS/SES/Events/Notifications
 * **Timestamp Parsing Settings**:
-    * **Enable Timestamp Parsing—**True
-    * **Timezone—**Logs are sent in UTC by default and can be auto detected
-    * **Timestamp Format—**Auto Detect
-* Deselect checkbox—Enable Multiline Processing
+    * **Enable Timestamp Parsing** — True
+    * **Timezone** — Logs are sent in UTC by default and can be auto detected
+    * **Timestamp Format** — Auto Detect
+* **Deselect checkbox** — Enable Multiline Processing
 * **Enable** — One Message Per Request
 3. Click **Save.**
 
@@ -211,13 +213,13 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     **Note the SNS Topic ARN**, as you'll need it to set the subscription.
 
 5. Whenever the SNS topic referred to in the previous step receives SES notification, forward the received notification to registered subscribers of that SNS topic. Now, subscribe Sumo Logic endpoint as subscriber. Create a Subscription to the SNS Topic you just created, specifying the following:
-    * Topic ARN—from the [Step 4](#TopicARN).
+    * Topic ARN — from Step 4.
     * Protocol — **HTTPS**
-    * EndPoint — Sumo source Endpoint URL you noted in [Step 3](#EndpointURL).
+    * EndPoint — Sumo source Endpoint URL you noted in Step 3.
 6. After a subscription is created, Amazon SNS sends a [subscription confirmation ](http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm)message to the Sumo source endpoint. Do the following:
     * Go to the Sumo search box and execute the following:
      ```
-     _sourcecategory=AWS/SES/Events/Notifications SubscribeURL
+     _sourceCategory=AWS/SES/Events/Notifications SubscribeURL
      ```
     * Look in Sumo for the source category, and get the SubscribeURL field value. You need to confirm the subscription by entering the SubscribeURL field value in the **Subscription confirmation URL** field.
     * Go to **AWS Account > SNS service**, and select the subscription you just created. Then, choose **Confirm Subscription**, paste the SubscribeURL, and click **Confirm Subscription**.
@@ -228,34 +230,17 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 SES sends notifications to SNS in a JSON format. Any notification sent through SNS is by default wrapped into a JSON message. This then creates a nested JSON that is a nearly unreadable message. To prevent the problem of nested JSON messages, we highly recommend configuring SNS to use [raw message ](http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html)delivery option.
 :::
 
+## Installing the Amazon SES app
 
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Installing the Amazon SES App
+<AppInstall2/>
 
-Now that you have set up collection for Amazon SES, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+## Viewing Amazon SES dashboards​
 
-To install the app:
-1. From the **App Catalog**, search for and select the app. You can click **Preview Dashboards** to verify that you have the app you need.
-2. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-    2. **Data Source**. Select either of these options for **SES CloudTrail Log Source**, and **SES Notification Log Source**.
-        * Choose **Source Category**, and select a source category from the list.
-            * For SES CloudTrail Logs, provide sourceCategory as **AWS/CloudTrail**
-            * For SES Notification Logs, provide sourceCategory as **AWS/SES/Notifications**
-        * **Choose Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
-3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library] for information on working with the library in the new UI.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-
-## Viewing Amazon SES Dashboards
-
-This section provides examples of the Amazon SES App dashboards, along with descriptions of the features and functions.
-
+<ViewDashboards/>
 
 ### CloudTrail Events Overview
 
@@ -363,11 +348,11 @@ See the details of bounced notifications by email addresses, domains, bounce typ
 
 **Bounce Type Trend.** See the trend in the bounce types in the last 24 hours on a stacked column chart.
 
-**Transient Bounce. **MailBox Full. See the top 10 bounced email addresses of transient bounce type, and mailbox full bounce subtype, by count in the last 24 hours.
+**Transient Bounce.** MailBox Full. See the top 10 bounced email addresses of transient bounce type, and mailbox full bounce subtype, by count in the last 24 hours.
 
 **Transient Bounce**. Content Rejected. See the top 10 bounced email addresses of transient bounce type, and content rejected bounce subtype, by count in the last 24 hours.
 
-**Transient Bounce. **General. See the top 10 bounced email addresses of transient bounce type, and general subtype, by count in the last 24 hours.
+**Transient Bounce.** General. See the top 10 bounced email addresses of transient bounce type, and general subtype, by count in the last 24 hours.
 
 **Transient Bounce**. SubType Breakup. See the count of transient bounce type for each subtype in the last 24 hours on a pie chart.
 
@@ -377,9 +362,9 @@ See the details of bounced notifications by email addresses, domains, bounce typ
 
 **Transient Bounce.** Sub Type Trend. See the trend in the transient bounce type by subtype on a stacked column chart in the last 24 hours.
 
-**Permanent Bounce. ** Sub Type Trend. See the trend in the permanent bounce type by subtype on a stacked column chart in the last 24 hours.
+**Permanent Bounce.**  Sub Type Trend. See the trend in the permanent bounce type by subtype on a stacked column chart in the last 24 hours.
 
-**Undetermined Bounce. **Sub Type Trend. See the trend in the undetermined bounce type by subtype on a stacked column chart in the last 24 hours.
+**Undetermined Bounce.** Sub Type Trend. See the trend in the undetermined bounce type by subtype on a stacked column chart in the last 24 hours.
 
 
 ### Complaint Notifications
@@ -396,12 +381,24 @@ See information about complaints (a complaint occurs when a recipient reports th
 
 **Complaint Feedback Type Trend.** See the trend in the complaint feedback types in the last 24 hours on a stacked column chart.
 
-**Top Source Generating Complaints. **See the top 10 sources generating complaint notifications in the last 24 hours.
+**Top Source Generating Complaints.** See the top 10 sources generating complaint notifications in the last 24 hours.
 
-**Sending AccountId. **See the AWS Account Id of the accounts sending emails generating complaint notifications in the last 24 hours.
+**Sending AccountId.** See the AWS Account Id of the accounts sending emails generating complaint notifications in the last 24 hours.
 
-**Sending AWS Region. **See the AWS region of the accounts sending emails generating complaint notifications in the last 24 hours.
+**Sending AWS Region.** See the AWS region of the accounts sending emails generating complaint notifications in the last 24 hours.
 
-**Sending SourceIP. **See the IP addresses of the users sending emails generating complaint notifications in the last 24 hours.
+**Sending SourceIP.** See the IP addresses of the users sending emails generating complaint notifications in the last 24 hours.
 
-**Sending Identity. **See the identity of the users sending emails generating complaint notifications in the last 24 hours.
+**Sending Identity.** See the identity of the users sending emails generating complaint notifications in the last 24 hours.
+
+## Upgrade/Downgrade the Amazon SES app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon SES app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

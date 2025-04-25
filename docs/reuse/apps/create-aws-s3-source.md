@@ -21,19 +21,11 @@ Enabling event-based notifications is an S3 bucket-level operation that subscrib
 
 You can adjust the configuration of when and how AWS handles communication attempts with Sumo Logic. See [Setting Amazon SNS Delivery Retry Policies](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html) for details.
 
-:::sumo Micro Lesson
-
-This video covers the Sumo Logic S3 event notifications integration, which combines scan based discovery and event based discovery into a unified integration that gives you the ability to maintain a low latency integration for new content and provide assurances that no data was missed or dropped.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2vtjPfHQK1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-:::
-
 #### Create an AWS Source
 
 These configuration instructions apply to log collection from all AWS Source types.
 
-1. In Sumo Logic select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select your AWS Source type.
 4. Enter a name for the new Source. A description is optional.
@@ -46,13 +38,13 @@ These configuration instructions apply to log collection from all AWS Source typ
 8. **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either:
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
    * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m). If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
-   :::note
-   If you set **Collection should begin** to a collection time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.
-   :::
+     :::note
+     If you set **Collection should begin** to a collection time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.
+     :::
 9. For **Source Category**, enter any string to tag the output collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`. Some examples: `_sourceCategory: aws/observability/alb/logs` or `_sourceCategory: aws/observability/clb/logs`.
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. The following **Fields** are to be added in the source:
-    * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-    * Add a **region** field and assign it the value of respective AWS region where the Classic Load Balancer exists.
+    * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
+    * Add a **region** field and assign it the value of respective AWS region where the Load Balancer exists.
     * Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
@@ -60,48 +52,42 @@ These configuration instructions apply to log collection from all AWS Source typ
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role. Role-based access is recommended (this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product)).
     * For **Key access**, enter the **Access Key ID** and **Secret Access Key**. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
-    * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources).
-    * **SNS Subscription Endpoint (recommended option)**. New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file. We highly recommend using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts). Click the box below to open instructions:
-
-    <details><summary>Set up SNS in AWS</summary>
-
-    The following steps use the Amazon SNS Console. Alternatively, you can  instead use AWS CloudFormation (see [Using CloudFormation to Set Up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-sns-subscription-endpoint)).
-
-    1. To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click **Create URL** and use the provided endpoint URL when creating your subscription in step 3.
-    1. Go to **Services** > **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step. Make sure that the topic and the bucket are in the same region.
-    1. Again go to **Services >** **Simple Notification Service** and click **Create Subscription**. Paste the **Topic ARN** from step 2 above. Select **HTTPS** as the protocol and enter the **Endpoint** URL provided while creating the S3 source in Sumo Logic. Click **Create subscription** and a confirmation request will be sent to Sumo Logic. The request will be automatically confirmed by Sumo Logic.
-    1. Select the **Topic** created in step 2 and navigate to **Actions > Edit Topic Policy**. Use the following policy template, replace the `SNS-topic-ARN` and `bucket-name` placeholders in the `Resource` section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
-     ```json
-     {
-         "Version": "2008-10-17",
-         "Statement": [{
-             "Effect": "Allow",
-             "Principal": {
-                 "AWS": "*"
-             },
-             "Action": [
-                 "SNS:Publish"
-             ],
-             "Resource": "SNS-topic-ARN",
-             "Condition": {
-                 "ArnLike": {
-                     "aws:SourceArn": "arn:aws:s3:*:*:bucket-name"
-                 }
-             }
-         }]
-     }
-     ```
-    1. Go to Services > [S3](https://s3.console.aws.amazon.com/s3/buckets/) and select the bucket to which you want to attach the notifications. Navigate to **Properties > Events > Add Notification**. Enter a **Name** for the event notification. In the **Events** section select **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic you created in step 2 from the dropdown. Click **Save**.
-
-    </details>
-
+    * **Scan Interval**. Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources).
+    * **SNS Subscription Endpoint (recommended option)**. New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file. We highly recommend using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts). The following steps use the AWS SNS Console. (Alternatively, you can use AWS CloudFormation; see [Using CloudFormation to Set Up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-sns-subscription-endpoint)).
+       1. To set up the subscription, you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click **Create URL** and use the provided endpoint URL when creating your subscription in step B.
+       1. Go to **Services** > **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, which you’ll need for the next step. Make sure that the topic and the bucket are in the same region.
+       1. Again, go to **Services** > **Simple Notification Service** and click **Create Subscription**. Paste the **Topic ARN** from step B above. Select **HTTPS** as the protocol and enter the **Endpoint** URL provided while creating the S3 source in Sumo Logic. Click **Create subscription** and a confirmation request will be sent to Sumo Logic. The request will be automatically confirmed by Sumo Logic.
+       1. Select the **Topic** created in step B and navigate to **Actions > Edit Topic Policy**. Use the following policy template, replace the `SNS-topic-ARN` and `bucket-name` placeholders in the `Resource` section of the JSON policy with your actual SNS Topic ARN and S3 Bucket name:
+          ```json
+          {
+            "Version":"2008-10-17",
+            "Statement":[
+            {
+              "Effect":"Allow",
+              "Principal":{
+                "AWS":"*"
+                },
+                "Action":[
+                "SNS:Publish"
+                ],
+                "Resource":"SNS-topic-ARN",
+                "Condition":{
+                  "ArnLike":{
+                    "aws:SourceArn":"arn:aws:s3:*:*:bucket-name"
+                  }
+                }
+              }
+            ]
+          }
+          ```
+       1. Go to Services > [S3](https://s3.console.aws.amazon.com/s3/buckets/) and select the bucket to which you want to attach the notifications. Navigate to **Properties > Events > Add Notification**. Enter a **Name** for the event notification. In the **Events** section select **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic you created in step B from the dropdown. Click **Save**.
 13. Set any of the following under **Advanced**:
-   * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-   * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
-   * **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
-      * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
-      * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
+    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
+    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
+    * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
+       * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
+       * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 14. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the AWS Source.
 15. When you're finished configuring the Source, click **Save**.
 
@@ -116,9 +102,9 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 
 You can use this [community-supported script](https://github.com/SumoLogic/sumologic-content/tree/c67b9b81c7828708eeda1970da23b29129cf52c4/Retired%20Content/Retired%20Sumo%20Tools/Event_Based_S3_Automation) to configure event-based object discovery on existing AWS Sources.
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-2. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 10.C when creating your subscription.
-3. Complete steps 10.B through 10.E for [configuring SNS Notifications](#Configure-SNS-Notifications).
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+2. On the Collection page, navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 12.C when creating your subscription.
+3. Complete steps 12.B through 12.E under [Create an AWS Source > 12. Log File Discovery](#create-an-aws-source).
 
 
 #### Troubleshoot S3 Event Notifications
@@ -128,7 +114,7 @@ You can use this [community-supported script](https://github.com/SumoLogic/sumol
 Steps to troubleshoot:
 
 1. Refresh the Source’s page to view the latest status of the subscription in the SNS Subscription section by clicking **Cancel** then **Edit** on the Source in the Collection tab.
-2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10.E](#Configure-SNS-Notifications).
+2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [Create an AWS Source > 12. Log File Discovery > Step E](#create-an-aws-source).
 3. If you didn’t use CloudFormation, check that the SNS topic has a confirmed subscription to the URL in AWS console. A "Pending Confirmation" state likely means that you entered the wrong URL while creating the subscription.
 
 **In the Sumo Logic UI, under 'Log File Discovery', there is a green check with the message 'Sumo Logic has received an AWS validation request at this endpoint', but still high latencies.**

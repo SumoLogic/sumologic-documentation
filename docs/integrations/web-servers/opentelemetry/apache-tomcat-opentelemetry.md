@@ -2,7 +2,7 @@
 id: apache-tomcat-opentelemetry
 title: Apache Tomcat - OpenTelemetry Collector
 sidebar_label: Apache Tomcat - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Apache Tomcat.
+description: Learn about the Sumo Logic OpenTelemetry app for Apache Tomcat.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,23 +11,43 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/apache-tomcat.png')} alt="Thumbnail icon" width="65"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The [Apache Tomcat](https://tomcat.apache.org/tomcat-8.5-doc/index.html) app is a logs app that helps you get insight into visitor locations, traffic patterns, errors, resource utilization, garbage collection, web server operations and access from known malicious sources.
+The [Apache Tomcat](https://tomcat.apache.org/tomcat-8.5-doc/index.html) app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Apache Tomcat servers. Preconfigured dashboards provide insight into visitor locations, traffic patterns, errors, resource utilization, garbage collection, web server operations, and access from known malicious sources.
 
-Tomcat logs are sent to Sumo Logic through Opentelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+Tomcat logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and metrics are sent through the [JMX](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) receiver with the `target_system` set as [`tomcat`](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/tomcat.md). 
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Schematics.png' alt="Schematics" />
+
+:::info
+This app includes [built-in monitors](#apache-tomcat-alerts). For details on creating custom monitors, refer to [Create monitors for Apache Tomcat app](#create-monitors-for-apache-tomcat-app).
+:::
 
 ## Fields Created in Sumo Logic for Tomcat
 
 The following are the [Fields](/docs/manage/fields) that will be created as part of the Tomcat App install, if not already present.
 
-- `webengine.cluster.name`. User configured. Set a value of the cluster where your Tomcat instance resides. This will be tagged along with the data sent to Sumo.
-- `webengine.system`. Has a fixed value of **tomcat**.
-- `sumo.datasource`. Has a fixed value of **tomcat**.
+- `sumo.datasource`. Has a fixed value of `tomcat`.
+- `deployment.environment`. User configured. This is the deployment environment where the Tomcat cluster resides. For example: `dev`, `prod` or `qa`.
+- `webengine.cluster.name`. User configured. Set a value of the cluster where your Tomcat instance resides. This will be tagged along with the data sent to Sumo Logic.
+- `webengine.system`. Has a fixed value of `tomcat`.
+- `webengine.node.name`. Holds the value of the Fully Qualified Domain Name (FQDN) of the machine from which the OpenTelemetry collector is collecting logs and metrics.
 
-## Prerequisites
+### Prerequisites
 
-The Sumo Logic App for Apache Tomcat uses three types of logs:
+#### For metric collection
+
+JMX receiver collects Tomcat metrics from Tomcat server as part of the OpenTelemetry Collector (OTC).
+
+  1. Follow the instructions in [JMX - OpenTelemetry's prerequisites section](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry/#prerequisites) to download the [JMX Metric Gatherer](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/README.md). This gatherer is used by the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
+
+  2. Set the JMX port by setting it as part of `JAVA_OPTS` for Tomcat startup. Usually it is set in the `/etc/systemd/system/tomcat.service` or `C:\Program Files\apache-tomcat\bin\tomcat.bat` file.
+
+      ```json
+      JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=11099 -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.password.file=${TOMCAT_CONF_DIR}/jmx.password -Dcom.sun.management.jmxremote.access.file=${TOMCAT_CONF_DIR}/jmx.access"
+      ```
+
+#### For log collection
+
+The Sumo Logic app for Apache Tomcat uses three types of logs:
 
 1. Tomcat Access logs. [Log format description](https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html). Recommended pattern used is pattern="common".
 2. Tomcat Catalina.out logs. [Log format description](https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html)
@@ -35,31 +55,59 @@ The Sumo Logic App for Apache Tomcat uses three types of logs:
 
 By default, Tomcat logs are stored in `/usr/share/tomcat/logs/` The default directory for log files is listed in the `/usr/share/tomcat/conf/logging.properties` file.
 
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step, you will configure the yaml required for Tomcat Collection.
+In this step, you will configure the YAML required for Tomcat Collection.
 
-The path of the log file configured to capture tomcat logs is needed to be given here.
+The path of the log file configured to capture Tomcat logs is needed to be given here.
 
 The files are typically located in `/usr/share/tomcat/logs/*`. If you're using a customized path, check the Tomcat.conf file for this information.
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+For metrics, you're required to provide the JMX endpoint (default is `localhost:11099`) along with the `collection_interval` (default is 1 minute).
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-YAML.png' alt="YAML" />
+You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click the **Download YAML File** button to get the YAML file.
 
-### Step 3: Send logs and metrics to Sumo
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+### Step 3: Send logs and metrics to Sumo Logic
+
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -68,11 +116,14 @@ You can add any custom fields which you want to tag along with the data ingested
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
 
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Tomcat instance which needs to be monitored.
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the Tomcat instance which needs to be monitored.
 2. Restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
@@ -81,7 +132,7 @@ You can add any custom fields which you want to tag along with the data ingested
 </TabItem>
 <TabItem value="Windows">
 
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1. Copy the YAML file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2. Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
@@ -90,25 +141,50 @@ You can add any custom fields which you want to tag along with the data ingested
 </TabItem>
 <TabItem value="macOS">
 
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Tomcat instance which needs to be monitored.
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the Tomcat instance which needs to be monitored.
 2. Restart the otelcol-sumo process using the below command:
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
 
 </TabItem>
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Log Messages
+<LogsOutro/>
+
+## Sample log messages
 
 ```
 Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server startup in 63394 ms
 179.105.33.169 - - [13/Dec/2022:15:53:03 +0000] "PUT /aboutus/ HTTP/1.1" 404 76246453 "http://bing.com/Nutch-1.4" "-"
 ```
 
-## Sample Queries
+## Sample log queries
 
 ```sql
  %"sumo.datasource"=tomcat %"webengine.cluster.name"=*
@@ -121,15 +197,58 @@ Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server
 | transpose row _timeslice column component
 ```
 
-## Viewing Tomcat Dashboards
+## Sample metrics
+```
+{
+  "queryId":"A",
+  "_source":"apache-tomcat-otel",
+  "_metricId":"9kcuMkQW4hfMv_0DLpjnBg",
+  "webengine.node.name":"ip-54-163-207-30.ec2.internal",
+  "_sourceName":"Http Input",
+  "host.id":"i-071ade72d03650657",
+  "host.group":"tomcatHostGrp",
+  "telemetry.sdk.version":"1.38.0",
+  "os.type":"linux",
+  "sumo.datasource":"tomcat",
+  "_sourceCategory":"Labs/apache-tomcat-otel",
+  "deployment.environment":"dev",
+  "_contentType":"Carbon2",
+  "host.name":"ip-54-163-207-30.ec2.internal",
+  "metric":"tomcat.request_count",
+  "_collectorId":"000000000FAB6E04",
+  "_sourceId":"000000005A1D5A65",
+  "webengine.system":"tomcat",
+  "webengine.cluster.name":"tomcat_cluster",
+  "unit":"requests",
+  "telemetry.sdk.language":"java",
+  "telemetry.sdk.name":"opentelemetry",
+  "service.name":"unknown_service:java",
+  "_collector":"Labs - apache-tomcat-otel",
+  "proto_handler":"\"http-nio-8080\"",
+  "max":391,
+  "min":144,
+  "avg":213.86,
+  "sum":2994,
+  "latest":265,
+  "count":14
+}
+```
+
+## Sample metrics query
+
+```
+sumo.datasource=tomcat deployment.environment=* webengine.cluster.name=* webengine.node.name=* metric=tomcat.request_count  | sum by deployment.environment,webengine.cluster.name,webengine.node.name,proto_handler
+```
+
+## Viewing Tomcat dashboards
 
 ### Overview
 
-The **Apache Tomcat - Overview** Dashboard provides a high-level view of information on visitor geographic locations, responses over time, and number of error codes and top urls causing error.
+The **Apache Tomcat - Overview** dashboard offers a high-level view of visitor geographic locations, responses over time, error codes, and the top URLs causing errors. Additionally, it allows you to monitor requests, error counts and rates, as well as busy and idle threads for your Tomcat instance.
 
 Use this dashboard to:
 
-- Analyze http request about status code
+- Analyze http request about status code.
 - Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
 - Gain insights into Client, Server Responses on Tomcat Server. This helps you identify errors in Tomcat Server.
 
@@ -137,7 +256,7 @@ Use this dashboard to:
 
 #### Visitor Locations
 
-The **Apache Tomcat - Visitor Locations** Dashboard provides a high-level view of Tomcat visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
+The **Apache Tomcat - Visitor Locations** dashboard provides a high-level view of Tomcat visitor geographic locations both worldwide and in the U.S. Dashboard panels also show graphic trends for visits by country over time and visits by U.S. region over time.
 
 - Worldwide. Uses a geo lookup operation to display worldwide visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
 - Visits by Country Over Time. Displays the number of visitors by country in a stacked column chart on a timeline for the last hour.
@@ -148,7 +267,7 @@ The **Apache Tomcat - Visitor Locations** Dashboard provides a high-level view o
 
 ### Visitor Traffic Insight
 
-The **Apache Tomcat - Visitor Traffic Insight** Dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
+The **Apache Tomcat - Visitor Traffic Insight** dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
 
 Bytes Served. Displays bytes served in a single chart on a timeline for the last 60 minutes.
 
@@ -166,7 +285,7 @@ Top 10 Search Terms from Popular Search Engines. Displays a list of the top 10 s
 
 ### Web Server Operations
 
-The **Apache Tomcat - Web Server Operations** Dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by server, and the top URIs responsible for 404 responses.
+The **Apache Tomcat - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations and data for clients with high error rates, server errors over time, and non 200-response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by server, and the top URIs responsible for 404 responses.
 
 Non 200 Response Status Codes. Displays the number of non-200 response status codes in a bar chart for the past hour.
 
@@ -254,6 +373,28 @@ The **Apache Tomcat - Threat Intel** dashboard provides an at-a-glance view of t
 
 Use this dashboard to:
 
-- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Threat-Intel.png' alt="Threat intel" />
+
+
+### Connectors (metrics)
+
+The **Apache Tomcat - Connectors** dashboard provides an at-a-glance view of error count, request count, request processing time, total bytes sent/received, total connections, and thread (bust and ideal) information.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Connectors.png' alt="Threat intel" />
+
+## Create monitors for Apache Tomcat app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Apache Tomcat alerts
+
+| Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Apache Tomcat - Access from Highly Malicious Sources` | This alert is triggered when a Tomcat server is accessed from highly malicious IP addresses. | Count > 0 | Count < = 0 |
+| `Apache Tomcat - Error` | This alert is triggered when error count is greater than 0. | Count > 0 | Count < = 0 |
+| `Apache Tomcat - High Client (HTTP 4xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count > 0 | Count < = 0 |
+| `Apache Tomcat - High Server (HTTP 5xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 5xx. | Count > 0 | Count < = 0 |

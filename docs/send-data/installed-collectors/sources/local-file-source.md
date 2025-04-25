@@ -5,6 +5,7 @@ description: Create a Local File Source to collect log messages from the same ma
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 To collect log messages from files on the same machine where a Collector is installed, create a Local File Source.
 
@@ -40,8 +41,8 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
 ## Configure a Local File Source
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose** Add **Source from the pop-up menu.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.
 
     ![img](/img/send-data/add-source.png)    
 1. Select **Local File** for the Source type.
@@ -56,11 +57,11 @@ When the Sumo collector accesses a log file to read its content, the collector o
    * **File Path**. List the full path to the file you want to collect. For files on Windows systems (not including [Windows Events](local-windows-event-log-source.md)), enter the absolute path including the drive letter. Escape special characters with a backslash (\\). If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](remote-file-source/prerequisites-windows-remote-file-collection.md). Use a single asterisk wildcard \[\*\] for file or folder names \[var/foo/\*.log\]. Use two asterisks \[\*\*\] to recurse within directories and subdirectories \[var/\*\*/\*.log\]. File paths in both Linux and Windows are case sensitive.
 
     :::note
-    You can have up to 32 nested symbolic links within a path expression. 
+    You can have up to 32 nested symbolic links within a path expression.
     :::
 
-   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. This setting applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set this to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the **collection should begin** timestamp. 
-
+   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. For example, let's say that you have a file with a modified time of `2025-01-16 16:18:18`, and the log lines within that file contain message timestamps ranging from `2025-01-11` to `2025-01-16`. Now, if **Collection should begin** is set to `2025-01-16`, the entire file will be collected including all the messages with timestamps prior to `2025-01-16`. This is because the **Collection should begin** is based solely on the file's modified time and not the individual message timestamps within the file.
+     
     :::note
     Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
     :::
@@ -70,19 +71,19 @@ When the Sumo collector accesses a log file to read its content, the collector o
     You can either:
 
      * Choose a predefined value from the dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.
-     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example`-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m). When updating the **Collection should begin** setting you will need to restart the Collector. 
-     
+     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example, `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m). When updating the **Collection should begin** setting, you will need to restart the Collector.
+
      :::note
-     {@import ../../../reuse/collection-should-begin-note.md}
+     <CollBegin/>
      :::
 
    * **Source Host.** The hostname assigned by the operating system is used by default. The Source Host value is tagged to each log and stored in a searchable metadata field called _sourceHost. Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 128 characters.
 
-    You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below for details.
+    You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategoryand-sourcehost-using-variables) below for details.
 
    * **Source Category.** The Source Category value is tagged to each log and stored in a searchable metadata field called _sourceCategory. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 1,024 characters.
 
-    You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below for details.
+    You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategoryand-sourcehost-using-variables) below for details.
 
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
@@ -90,12 +91,13 @@ When the Sumo collector accesses a log file to read its content, the collector o
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. Set any of the following options under **Advanced**:
+<img src={useBaseUrl('/img/send-data/advanced-options-local-file-source.png')} alt="Advanced options for log" style={{border: '1px solid gray'}} width="600"/>
 
-   * **Denylist.** Enter the path for files to exclude from the Source collection. Wildcard syntax is allowed when specifying unwanted files. For example, if you are collecting` /var/log/*.log` but don’t want to collect `unwanted*.log`, then specify `/var/log/unwanted*.log`. You can also exclude subdirectories, for example, if you are collecting` /var/log/**/*.log` but do not want to collect anything from `/var/log/unwanted `directory, specify `/var/log/unwanted`. You don't need to denylist compressed files that end with the file extensions tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files. Sumo Logic, automatically excludes these compressed file extensions when collecting data.  tar.gz files are supported
+   * **Denylist.** Enter the path for files to exclude from the Source collection. Wildcard syntax is allowed when specifying unwanted files. For example, if you are collecting` /var/log/*.log` but don’t want to collect `unwanted*.log`, then specify `/var/log/unwanted*.log`. You can also exclude subdirectories, for example, if you are collecting` /var/log/**/*.log` but do not want to collect anything from `/var/log/unwanted `directory, specify `/var/log/unwanted`. You do not need to denylist compressed files that end with the file extensions tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files. Sumo Logic, automatically excludes these compressed file extensions when collecting data.  tar.gz files are supported
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone.** There are two options for Time Zone.
      * You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message.
-     * Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+     * Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
    * **Encoding.** UTF-8 is the default, but you can choose another encoding format from the menu.
    * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs.md) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
@@ -184,4 +186,4 @@ To resolve these issues you can adjust the fingerprint size to match your needs.
 1. Stop the current Collector service/process.
 1. Locate the following Collector configuration file, `/<sumo_install_dir>/config/collector.properties`
 1. Add the following parameter to change the default fingerprint size for all Sources on the Collector. The number represents bytes: `collector.wildcard.fpSize=2048`
-1. Restart the Collector process/service
+1. Restart the Collector process/service.

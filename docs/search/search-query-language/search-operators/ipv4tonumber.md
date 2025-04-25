@@ -7,7 +7,7 @@ sidebar_label: ipv4ToNumber
 The `ipv4ToNumber` operator allows you to convert an Internet Protocol version 4 (IPv4) IP address from the octet dot-decimal format to a decimal format. This decimal format makes it easier to compare one IP address to another, rather than relying on IP masking.
 
 :::tip
-The [CIDR operator](cidr.md) allows you to leverage CIDR (Classless Inter-Domain Routing) notation to narrow the analysis of IPv4 networks to specific subnets.
+The [CIDR operator](cidr.md) allows you to leverage _Classless Inter-Domain Routing_ (CIDR) notation to narrow the analysis of IPv4 networks to specific subnets.
 :::
 
 ## Syntax

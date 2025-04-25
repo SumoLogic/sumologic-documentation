@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 
 The Apache app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of Apache web server farms. Preconfigured dashboards and searches provide visibility into your environment for real-time or historical analysis: visitor locations, visitor access types, traffic patterns, errors, web server operations, resource utilization and access from known malicious sources.
 
-## Log Types and Metrics
+## Log types and Metrics
 The Sumo Logic app for Apache assumes:
-* The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html) has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](#Apache-Metrics).
+* The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html) has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](#apache-metrics).
 
 * The **Apache - Overview** dashboard is based on both Apache logs and metrics.
 * Dashboards in the Metrics folder are based on Apache metrics alone.
@@ -65,7 +65,7 @@ The Sumo Logic app for Apache assumes:
 </TabItem>
 </Tabs>
 
-### Sample Query
+### Sample queries
 
 This sample Query is from the **Top 5 Clients Causing 4xx Errors** panel of the Apache - Web server Operations dashboard.
 
@@ -110,41 +110,25 @@ The predefined searches in the Apache app are based on the Apache Access logs an
 * Apache - Top Referrers causing errors
 
 
-## Collecting Logs and Metrics for Apache
+## Collecting logs and metrics for Apache
 
 This section provides instructions for configuring log and metrics collection for the Sumo Logic app for Apache.
 
-### Step 1: Configure Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using Apache in a Kubernetes environment, create the fields:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_webserver_system`
-* `pod_labels_webserver_farm`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using Apache in a non-Kubernetes environment, create the fields:
+As part of the app installation process, the following fields will be created by default:
 * `component`
 * `environment`
 * `webserver_system`
 * `webserver_farm`
 
-</TabItem>
-</Tabs>
+Additionally, if you're using Apache in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_webserver_system`
+* `pod_labels_webserver_farm`
+
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Step 2: Configure Your Environment for Apache Logs and Metrics Collection
 
@@ -216,8 +200,8 @@ annotations:
          * `environment`: This is the deployment environment where the Apache webserver farm identified by the value of `urls` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
          * `webserver_farm`: Enter a name to uniquely identify this Apache Webserver farm. This Apache webserver farm name will be shown in the Sumo Logic dashboards.
 
-   :::caution **Do not modify the other values**
-   Modifying these values will cause the Sumo Logic apps to function incorrectly
+   :::warning **Do not modify the following values**
+   Modifying these values will cause the Sumo Logic apps to function incorrectly.
    * `telegraf.influxdata.com/class: sumologic-prometheus`: Instructs the Telegraf operator what output to use.
    * `prometheus.io/scrape: "true"`: Ensures our Prometheus will scrape the metrics.
    * `prometheus.io/port: "9273"`: Tells prometheus what ports to scrape on.
@@ -226,7 +210,7 @@ annotations:
       * `component: “webserver”`: Used by Sumo Logic apps to identify application components.
       * `webserver_system: “apache”`: Identifies the webserver system.
    :::     
-   * For more information on other parameters and properties that you can configure in the Telegraf agent globally, see [Configuring_Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf).
+   * For more information on other parameters and properties that you can configure in the Telegraf agent globally, see [Configuring_Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf).
    * For more information on configuring the Apache input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache).
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the configuration and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic by running the following metrics query:
@@ -251,40 +235,20 @@ This section explains the steps to collect Apache logs from a Kubernetes environ
       * `environment`: This is the deployment environment where the Apache webserver farm identified by the value of `urls` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `webserver_farm`: Enter a name to identify this Apache webserver farm. This Apache webserver farm name will be shown in the Sumo Logic dashboards.
 
-   :::caution **Do not modify the other values**
+   :::warning **Do not modify the following values**
    Modifying these values will cause the Sumo Logic apps to function incorrectly
    * `component: “webserver”`: This value is used by Sumo Logic apps to identify application components.
    * `webserver_system: “apache”`: This value identifies the webserver system.
    :::
-   * For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   * For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
    3. Make sure that the Apache pods are running and annotations are applied by using the command:
    ```xml
    kubectl describe pod <apache_pod_name>
    ```
-   The Sumo Logic Kubernetes Collection process will automatically capture the logs from `stdout`/`stderr` and will send the logs to Sumo Logic. For more information on deploying the Sumo Logic-Kubernetes-Collection, please see [this page](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
-2. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Web Server Application Components. To do so:
-   1. Go to **Manage Data > Logs > Field Extraction Rules**.
-   2. Click the **+ Add** button on the top right of the table.
-   3. The **Add Field Extraction Rule** form will appear. Enter the following options:
-     * **Rule Name**: Enter the name as **App Observability - Webserver**
-     * **Applied At:** Choose **Ingest Time**
-     * **Scope**: Select **Specific Data** and enter the following keyword search expression:
-     ```sql
-     pod_labels_environment=* pod_labels_component=webserver pod_labels_webserver_system=* pod_labels_webserver_farm=*
-     ```
-     * **Parse Expression:** Enter the following parse expression:
-     ```sql
-     if (!isEmpty(pod_labels_environment),  pod_labels_environment, "") as environment
-     | pod_labels_component as component
-     | pod_labels_webserver_system as webserver_system
-     | pod_labels_webserver_farm as webserver_farm
-     ```
-   4. Click **Save** to create the rule.
-   5. Verify logs are flowing into Sumo Logic by running the following logs query:
-    ```sql
-    component=webserver webserver_system=apache \
-    webserver_farm=<your_apache_webserver_farmname>
-    ```
+   The Sumo Logic Kubernetes Collection process will automatically capture the logs from `stdout`/`stderr` and will send the logs to Sumo Logic. For more information on deploying the Sumo Logic-Kubernetes-Collection, please see [this page](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
+<br/>
+**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityApacheWebserverFER** is automatically created for Apache Web Server Application Components.
+<br/>
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -359,7 +323,7 @@ This section provides instructions for configuring metrics collection for the Su
         * `url`: This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
       * In the `[agent]` section, set `interval` and `flush_interval` to `“60s”` to collect metric every 60 seconds.
 
-      :::caution **Do not modify the other values**
+      :::warning **Do not modify the following values**
       Modifying these values will cause the Sumo Logic apps to function incorrectly
       * `data_format = “prometheus”`, In the output plugins section, Metrics are sent in the Prometheus format to Sumo Logic
       * `component = “webserver”`: In the input plugins section, This value is used by Sumo Logic apps to identify application components.
@@ -397,8 +361,8 @@ For error logs, following directives are to be noted:
    * **Description.** (Optional)
    * **File Path (Required).** Enter the path to your apache access logs. The files are typically located in `/var/log/apache2/access_log`. If you're using a customized path, check the httpd.conf file for this information.
    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-   * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Access**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
-   * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
+   * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Access**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
+   * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
     * `component = webserver`
     * `webserver_system = apache`
     * `webserver_farm = <your_apache_webserver_farmname>`
@@ -408,7 +372,7 @@ For error logs, following directives are to be noted:
    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
    * **Time Zone.** Select Use time zone form log file, if none is detected use “Use Collector Default”
    * **Timestamp Format.** Select Automatically detect the format.
-   * **Encoding. **Select** **UTF-8 (Default).
+   * **Encoding.** Select UTF-8 (Default).
    * Apache Access logs are single-line logs, uncheck **Detect messages spanning multiple lines.**
    3. Click **Save**. At this point, Apache access logs should start flowing into Sumo Logic.
 4. **Configure a Local File Source for Apache error logs**. To add a Local File Source for Apache error log do the following
@@ -418,8 +382,8 @@ For error logs, following directives are to be noted:
     * **Description.** (Optional)
     * **File Path (Required).** Enter the path to your error_log. The files are typically located in `/var/log/apache2/error_log`. If you're using a customized path, check the httpd.conf file for this information.
     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
-    * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
+    * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
     ```sql
     component = webserver
     webserver_system = apache
@@ -442,89 +406,6 @@ For error logs, following directives are to be noted:
 </TabItem>
 </Tabs>
 
-## Installing Apache Monitors
-
-This section provides instructions for installing the Sumo Logic Monitors for Apache. These instructions assume you have already set up collection as described in the [Collecting Logs and Metrics for Apache](#Collecting-Logs-and-Metrics-for-Apache) page.
-
-Sumo Logic has provided a predefined set of alerts, which can be imported and available through [Sumo Logic monitors](/docs/alerts/monitors), to help you proactively monitor your Apache Web servers and farms. These monitors are built based on metrics and logs datasets and include pre-set thresholds based on industry best practices and recommendations.
-
-For details about individual alerts, see [Apache Alerts](#apache-alerts). To install these alerts, you need to have the Manage Monitors role capability. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules).
-
-You can install monitors by importing a JSON file or using a Terraform script.
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/apache/apache.json) that describes the monitors.
-2. In the json file, replace `$$apache_data_source` with a custom source filter like `webserver_farm=dev-apache` for setting up alerts for a specific web server farm. If you want to configure this for all your web server farms you can find and replace `$$apache_data_source` with blank `“”`.
-3. Go to **Manage Data** > **Monitoring** > **Monitors**.
-4. Click **Add**.
-5. Click **Import** and then copy paste the above JSON to import monitors. Name will be the folder name.
-
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Apache folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
-
-
-### Method B: Using a Terraform script
-
-1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Apache alerts. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/apache). You can either download it through the “git clone” command or as a zip file.
-4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/apache/`.
-   1. Edit the **apache.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
-    ```bash
-    access_id   = "<SUMOLOGIC ACCESS ID>"
-    access_key  = "<SUMOLOGIC ACCESS KEY>"
-    environment = "<SUMOLOGIC DEPLOYMENT>"
-    ```
-   2. The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific web server farm or environments, update the variable `apache_data_source`. Custom filter examples:
-      * A specific web server farm `webserver_farm=apache.prod.01`
-      * All web server farms in an environment `environment=prod`
-      * For alerts applicable to all web server farms that start with apache-prod: `webserver_farm=apache-prod*`
-      * For alerts applicable to a specific web server farm within a production environment: `webserver_farm=apache-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-
-  All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **`monitors_disabled`** to **`false`** in **apache.auto.tfvars** file.
-
-  By default, the monitors are configured in a monitor **folder** called “**Apache**”, if you would like to change the name of the folder, update the monitor folder name in “**folder**” key at **apache.auto.tfvars** file.
-
-5. If you would like the alerts to send email or connection notifications, modify the file **apache_notifications.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
-
-```bash title="Email Notifications Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email Notifications Example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-6. Install the Alerts.
-   1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**apache**/ and run **terraform init.** This will initialize Terraform and will download the required components.
-   2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
-   3. Run **terraform apply**.
-
 ## Installing the Apache app
 
 Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic app for Apache to use the pre-configured Searches and dashboards.
@@ -542,7 +423,7 @@ To install the app, do the following:
    * **Folder Name** You can retain the existing name, or enter a name of your choice for the app.
 5. Click **Next**.
 
-For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations).
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -678,229 +559,77 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Status.png')} alt="test" />
 
+## Installing Apache monitors
+
+This section provides instructions for installing the Sumo Logic Monitors for Apache. These instructions assume you have already set up collection as described in the [Collecting Logs and Metrics for Apache](#collecting-logs-and-metrics-for-apache) page.
+
+Sumo Logic has provided a predefined set of alerts, which can be imported and available through [Sumo Logic monitors](/docs/alerts/monitors), to help you proactively monitor your Apache Web servers and farms. These monitors are built based on metrics and logs datasets and include pre-set thresholds based on industry best practices and recommendations.
+
+For details about individual alerts, see [Apache alerts](#apache-alerts).
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+:::note
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
+:::
 
 ## Apache Alerts
 
 Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
-<details><summary>Click to expand. Here are the alerts available for Apache.</summary>
+<details>
+<summary>Here are the alerts available for Apache (click to expand).</summary>
 
-<table>
-  <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="2" >Apache - Critical Error Messages
-   </td>
-   <td rowspan="2" >This alert fires when we detect critical error messages for a given Apache server.
-   </td>
-   <td rowspan="2" >&#62; 0
-   </td>
-   <td rowspan="2" >0
-   </td>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-   <td rowspan="2" >Apache - Access from Highly Malicious Sources
-   </td>
-   <td rowspan="2" >This alert fires when an Apache is accessed from highly malicious IP addresses.
-   </td>
-   <td rowspan="2" >&#62; 0
-   </td>
-   <td rowspan="2" >0
-   </td>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-   <td rowspan="2" >Apache - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td rowspan="2" >This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td rowspan="2" > &#62; 0
-   </td>
-   <td rowspan="2" >0
-   </td>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-   <td rowspan="2" >Apache - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td rowspan="2" >This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td rowspan="2" > &#62;0
-   </td>
-   <td rowspan="2" >0
-   </td>
-  </tr>
-  <tr>
-  </tr>
-  <tr>
-   <td>Apache - High CPU Utilization
-   </td>
-   <td>This alert fires when the average CPU utilization within a 5 minute interval for an Apache Webserver farm instance is high (&#62;&#61;85%).
-   </td>
-   <td> &#62;&#61;85 </td>
-   <td>&#60;85
-   </td>
-  </tr>
-  <tr>
-   <td>Apache - Server Restarted</td>
-   <td>This alert fires when we detect low uptime (&#60; &#61; 10 minutes) for a given Apache server within a 5 minute interval.
-   </td>
-   <td> &#60;&#61;600</td>
-   <td> &#62;600</td>
-  </tr>
-</table>
+| Alert Name       | Alert Description  | Alert Condition | Recover Condition |
+|:----------------|:-------------------|:-----------------|:-------------------|
+| Apache - Critical Error Messages      | This alert fires when we detect critical error messages for a given Apache server.                        | > 0             | 0                 |
+| Apache - Access from Highly Malicious Sources | This alert fires when an Apache is accessed from highly malicious IP addresses.                            | > 0             | 0                 |
+| Apache - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.                | > 0             | 0                 |
+| Apache - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.                | > 0             | 0                 |
+| Apache - High CPU Utilization         | This alert fires when the average CPU utilization within a 5-minute interval for an Apache Webserver farm instance is high (>= 85%). | \>= 85           | < 85              |
+| Apache - Server Restarted             | This alert fires when we detect low uptime (\<= 10 minutes) for a given Apache server within a 5-minute interval. | \<= 600          | > 600             |
+
 
 </details>
 
 
 ## Apache Metrics
 
-<details><summary>Click to expand. Here are the metrics available for Apache.</summary>
+<details>
+<summary>Here are the metrics available for Apache (click to expand).</summary>
 
-<table><small>
-  <tr>
-   <td><strong>List of Apache Telegraf metrics</strong></td>
-  </tr>
-  <tr>
-   <td><code>apache_BusyWorkers</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_BytesPerReq</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_BytesPerSec</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_CPUChildrenSystem</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_CPUChildrenUser</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_CPULoad</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_CPUSystem</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_CPUUser</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_DurationPerReq</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_IdleWorkers</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_Load1</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_Load5</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_Load15</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_ParentServerConfigGeneration</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_ParentServerMPMGeneration</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_ReqPerSec</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_ServerUptimeSeconds</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_TotalAccesses</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_TotalDuration</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_TotalkBytes</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_Uptime</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_closing</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_dnslookup</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_finishing</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_idle_cleanup</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_keepalive</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_logging</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_open</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_reading</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_sending</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_starting</code>
-   </td>
-  </tr>
-  <tr>
-   <td><code>apache_scboard_waiting</code>
-   </td>
-  </tr></small>
-</table>
+apache_BusyWorkers<br/>
+apache_BytesPerReq<br/>
+apache_BytesPerSec<br/>
+apache_CPUChildrenSystem<br/>
+apache_CPUChildrenUser<br/>
+apache_CPULoad<br/>
+apache_CPUSystem<br/>
+apache_CPUUser<br/>
+apache_DurationPerReq<br/>
+apache_IdleWorkers<br/>
+apache_Load1<br/>
+apache_Load5<br/>
+apache_Load15<br/>
+apache_ParentServerConfigGeneration<br/>
+apache_ParentServerMPMGeneration<br/>
+apache_ReqPerSec<br/>
+apache_ServerUptimeSeconds<br/>
+apache_TotalAccesses<br/>
+apache_TotalDuration<br/>
+apache_TotalkBytes<br/>
+apache_Uptime<br/>
+apache_scboard_closing<br/>
+apache_scboard_dnslookup<br/>
+apache_scboard_finishing<br/>
+apache_scboard_idle_cleanup<br/>
+apache_scboard_keepalive<br/>
+apache_scboard_logging<br/>
+apache_scboard_open<br/>
+apache_scboard_reading<br/>
+apache_scboard_sending<br/>
+apache_scboard_starting<br/>
+apache_scboard_waiting<br/>
 
 </details>

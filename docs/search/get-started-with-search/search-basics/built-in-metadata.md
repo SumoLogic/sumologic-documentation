@@ -4,10 +4,27 @@ title: Built-in Metadata
 description: Metadata tags are attached to your log messages at ingest, which is very useful when you're searching log data.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 Sumo Logic has several metadata fields that are automatically tagged to ingested data. These metadata fields are referenced by the service in
 many ways, such as the user interface when managing Collection, and can be referenced in search queries.
 
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/sibzw75hsu?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Built-in Metadata Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/HNsXN5RoPwo"
         width="854px"
         height="480px"
@@ -15,11 +32,12 @@ many ways, such as the user interface when managing Collection, and can be refer
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe';
+:::
 
 #### Built-in metadata fields
 
@@ -35,7 +53,7 @@ You can run queries using any of the following built-in metadata fields:
 | `_size` | The size of the log message in bytes. |
 | `_source` | The name of the Source, determined by the name you entered when you [configured the Source](/docs/send-data/choose-collector-source). |
 | `_sourceCategory` | The category of the Source that collected the log message. This can be a maximum of 1,024 characters. |
-| `_sourceHost` | The host name of the Source. For local Sources the name of the Source is set when you [configure the Source](/docs/send-data/choose-collector-source). For remote Collectors, this field uses the remote host's name. The `_sourceHost` metadata field is populated using a reverse DNS lookup. If the name can't be resolved, `_sourceHost` is displayed as `localhost`. This can be a maximum of 128 characters. |
+| `_sourceHost` | The host name of the Source. For local Sources the name of the Source is set when you [configure the Source](/docs/send-data/choose-collector-source). For remote Collectors, this field uses the remote host's name. The `_sourceHost` metadata field is populated using a reverse DNS lookup. If the name cannot be resolved, `_sourceHost` is displayed as `localhost`. This can be a maximum of 128 characters. |
 | `_sourceName` | The name of the log file, determined by the path you entered when you [configured the Source](/docs/send-data/choose-collector-source). |
 | `_format` | The pattern used for parsing the timestamp. See [here](/docs/send-data/reference-information/time-reference.md) for more details. |
 | `_view` | The name of the index, view, or partition. |
@@ -52,7 +70,7 @@ To run a search using metadata fields:
 
     * Add wildcards at the front and back of any partial term or string to capture the most results.
     * If your metadata value contains spaces wrap it in quotes.
-    * Quotes and wildcards can't be used together.
+    * Quotes and wildcards cannot be used together.
     * Metadata tags are case-insensitive when searching.
 
 This table shows some examples and a description of each metadata type.
@@ -64,10 +82,11 @@ This table shows some examples and a description of each metadata type.
 | `_sourceCategory=*apache*`<br/>`_sourceCategory="Security Logs"` | Returns results from one or more Sources depending on whether the tag was applied to a single Source or a series of Sources. Entered when a Source is configured.  |
 | `_sourceHost=hostname`<br/>`_sourceHost=*RAS*` | Usually returns results from one Source, unless a value is entered at the Collector level for a Collector with more than one Source.<br/><br/>If the field is left blank when a Source is configured, the value for Source Host is taken from the host system value. A custom value can be entered at the Source or Collector configuration. Metadata values entered at Source level override Collector values.  |
 | `_sourceName=path/to/file/`<br/>`_sourceName=*path*` | Returns results from one or more Source paths. Entered when a Source is configured. Note that the metadata field `_sourceName` is not the name of the Source, but the file path.  |
+| `_view=sumologic_default`| Returns results more quickly and efficiently because the search runs against a smaller data set. This is a  separate subsets of data in your account where you put your special kind data.|
 
 In the **Messages** tab, each message displays its metadata tags:  
 
-![](/img/search/get-started-search/search-basics/msg-with-metadata.png)
+<img src={useBaseUrl('img/search/get-started-search/search-basics/msg-with-metadata.png')} style={{border:'1px solid gray'}} alt="msg-with-metadata" width="800"/>
 
 ## Search different values of a metadata field in the same query
 

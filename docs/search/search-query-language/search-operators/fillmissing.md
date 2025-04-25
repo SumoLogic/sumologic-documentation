@@ -7,11 +7,11 @@ sidebar_label: fillmissing
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The `fillmissing` operator allows you to specify groups that should be represented in data output. When you run a standard <a href="/docs/search/search-query-language/group-aggregate-operators">group-by</a> query, Sumo Logic only returns non-empty groups in the results. For example, if your query is grouping by timeslice, then only the timeslices that have data are returned.
+The `fillmissing` operator allows you to specify groups that should be represented in data output. When you run a standard [group-by](/docs/search/search-query-language/group-aggregate-operators) query, Sumo Logic only returns non-empty groups in the results. For example, if your query is grouping by `timeslice`, then only the timeslices that have data are returned.
 
 This can be a problem because:
 
-* The lack of data is sometimes also an interesting event, but there is no easy way to capture this information. For example, the [outlier](outlier.md) operator can't catch anomalies arising from missing data because it can only mark an existing timeslice as anomalous.
+* The lack of data is sometimes also an interesting event, but there is no easy way to capture this information. For example, the [`outlier`](outlier.md) operator cannot catch anomalies arising from missing data because it can only mark an existing timeslice as anomalous.
 * Missing data can lead to misleading visualizations. For example, if you plot a line chart across timeslices with missing data, the chart will interpolate across the missing timeslices and represent them deceptively as nonempty.
 
 The `fillmissing` operator addresses this shortcoming by allowing you to specify groups that should be represented in the output, even if those groups have no data.
@@ -57,7 +57,7 @@ The `fillmissing` operator supports the following types of generators:
 
 ### Default values for non-key fields
 
-When `fillmissing` appends a record to the output, the key fields of the record contain the missing values, while the remaining fields contain some constant value. You can configure the constant value for those fields. If you don't, a default value is assigned that depends on the type of the field:
+When `fillmissing` appends a record to the output, the key fields of the record contain the missing values, while the remaining fields contain some constant value. You can configure the constant value for those fields. If you do not, a default value is assigned that depends on the type of the field:
 
 | Field Type | Default Value |
 |:--|:--|
@@ -94,7 +94,7 @@ fillmissing <keyFieldGenerator> [, <keyFieldGenerator> ]  [ with <nonKeyFieldSpe
 
 ## Rules
 
-* In Live Dashboards, you must use the `fillmissing` operator after an aggregate operator.
+* In Auto Refresh Dashboards, you must use the `fillmissing` operator after an aggregate operator.
 * Buckets from the timeslice generator need to be based on a time period. Supported `<time_period>` values are weeks `(w)`, days `(d)`, hours `(h)`, minutes `(m)`, and seconds `(s)`.
 
 ## Examples

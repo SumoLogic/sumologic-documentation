@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Amazon Chime SDK is a set of real-time communications components that you can use to quickly add messaging, audio, video, and screen sharing capabilities to their web or mobile applications. You can use the Amazon Chime SDK to build real-time media applications that can send and receive audio and video and allow content sharing. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/chime-sdk/latest/dg/what-is-chime-sdk.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/chime-sdk/latest/dg/service-metrics.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/chime-sdk/latest/dg/pipeline-cloudtrail.html)
 

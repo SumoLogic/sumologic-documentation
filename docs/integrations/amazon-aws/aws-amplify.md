@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS Amplify is a set of purpose-built tools and features that enables frontend web and mobile developers to quickly and easily build full-stack applications on AWS. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html).
 
-## Log and Metric types
+## Log and metric types
 
 * [CloudWatch Metrics](https://docs.aws.amazon.com/amplify/latest/userguide/access-logs.html#monitoring-with-cloudwatch)
 * [CloudWatch Logs](https://docs.aws.amazon.com/amplify/latest/userguide/access-logs.html#monitoring-with-cloudwatch)

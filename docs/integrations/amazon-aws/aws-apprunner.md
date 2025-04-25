@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS App Runner is a fully managed container application service that lets you build, deploy, and run containerized web applications and API services without prior infrastructure or container experience. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/apprunner/latest/dg/what-is-apprunner.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/apprunner/latest/dg/monitor-cw.html)
 * [CloudWatch Logs](https://docs.aws.amazon.com/apprunner/latest/dg/monitor-cwl.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/apprunner/latest/dg/monitor-ct.html)

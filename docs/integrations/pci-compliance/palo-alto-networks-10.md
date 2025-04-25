@@ -1,41 +1,33 @@
 ---
 id: palo-alto-networks-10
 title: PCI Compliance for Palo Alto Networks 10
-description: The Sumo Logic App for PCI Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
+description: The Sumo Logic app for PCI Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
 
-The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
+The Sumo Logic app for Payment Card Industry (PCI) Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
 ## Prerequisites
 
 You must have Palo Alto Networks Web administrative user permissions to successfully set up collection.
 
-## Log Types
+## Log types
 
 <table>
   <tr>
-   <td><strong>Log type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Supported log format</strong>
-   </td>
-   <td><strong>For more information</strong>
-   </td>
+   <td><strong>Log type</strong> </td>
+   <td><strong>Description</strong>   </td>
+   <td><strong>Supported log format</strong>   </td>
+   <td><strong>For more information</strong>   </td>
   </tr>
   <tr>
-   <td>Traffic
-   </td>
-   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason.
-   </td>
-   <td>Syslog
-   </td>
-   <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/traffic-logs">Traffic Logs</a>
-   </td>
+   <td>Traffic   </td>
+   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason.   </td>
+   <td>Syslog   </td>
+   <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/traffic-logs">Traffic Logs</a>   </td>
   </tr>
 </table>
 
@@ -61,7 +53,6 @@ To configure a hosted collector with a Cloud Syslog source, do the following:
 3. Click **Save**.
 4. Copy the Token, host URL and TCP TLS Port to a safe place. You will need this information in the tasks that follow.
 
-
 ### Step 2. Define the destination for the logs
 
 In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
@@ -74,24 +65,21 @@ To create a server profile specifying  the log destination, do the following:
 4. In the **Syslog Server Profile** window, select the **Servers** tab and click **Add**.
 5. In the **Servers** window, specify the following information:
     1. **Name.** Sumo_CloudSyslog_EndPoint01
-    2. **Syslog Server.** URL from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+    2. **Syslog Server.** URL from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)
     3. **Transport**. SSL
-    4. **Port**. Port from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+    4. **Port**. Port from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)
     5. **Format**. IETF
     6. **Facility.** LOG_USER
 6. In the **Syslog Server Profile** window, select the **Custom Log Format** tab, and use the following custom format for the [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html) log type:
 ```
-,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection <Token from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)>
+,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection <Token from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)>
 ```
 7. Click OK.
 8. Commit the changes.
 
-
 ### Step 3. Configure syslog forwarding
 
-
 To configure syslog forwarding for each Traffic logs, follow the steps to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/configure-log-forwarding) as described in the Palo Networks documentation.
-
 
 ### Step 4. Verify logs in Palo Alto Networks
 
@@ -101,26 +89,23 @@ To verify the logs in Palo Alto Networks, do the following:
 
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, log in to Sumo Logic.
-3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source), such as:
+3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source), such as:
 `_sourceCategory = NW/PAN/V10`
 
-
-### Sample logs
+### Sample log messages
 
 The PCI Compliance for Palo Alto Networks 10 App uses [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html) logs.
-
 
 ```json
 Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TRAFFIC,drop,2304,2019/10/09 10:19:15,209.118.103.150,160.177.222.249,0.0.0.0,0.0.0.0,InternalServer,,,not-applicable,vsys1,inside,z1-FW-Transit,ethernet1/2,,All traffic,2019/10/09 10:19:15,0,1,63712,443,0,0,0x0,udp,deny,60,60,0,1,2019/10/09 10:19:15,0,any,0,0123456789,0x0,Netherlands,10.0.0.0-10.255.255.255,0,1,0,policy-deny,0,0,0,0,,SumPunFw07,from-policy,,,0,,0,,N/A,0,0,0,0,1202585d-b4d5-5b4c-aaa2-d80d77ba456e,0
 ```
 
-
-
-### Sample Query
+### Sample queries
 
 This example query is from the **Allowed Network Activity by Direction** panel of the **Accepted and Rejected Traffic** dashboard.
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```sql
 _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
@@ -166,16 +151,17 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
 
 </details>
 
-## Installing the PCI for Palo Alto Networks 10 App
+## Installing the PCI for Palo Alto Networks 10 app
 
-Now that you have set up collection for PCI for Palo Alto Networks 10 app, you can install app and use the preconfigured searches and dashboards that provide insight into your data.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-This app supports PAN-OS v10.
+<AppInstall2/>
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing PCI for Palo Alto Networks 10 dashboards
 
-## Viewing PCI for Palo Alto Networks 10 Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
+<ViewDashboards/>
 
 ### PCI Req 01 - Accepted and Rejected Traffic
 
@@ -190,7 +176,7 @@ This app supports PAN-OS v10.
 
 **Dashboard description:** View information about inbound and outbound traffic, including traffic to the cardholder data environment (CDE); details of inbound and outbound traffic; the top 10 hosts sending traffic; and the top 10 hosts receiving traffic.
 
-**Use case: **You can use this dashboard to monitor connections made from external IPs to internal IPs. You can identify top internal IPs receiving traffic from external IPs or sending traffic to external IPs. Similarly, this dashboard helps you identify the amount of traffic generated by different IPs crossing your organization's network boundary.
+**Use case:** You can use this dashboard to monitor connections made from external IPs to internal IPs. You can identify top internal IPs receiving traffic from external IPs or sending traffic to external IPs. Similarly, this dashboard helps you identify the amount of traffic generated by different IPs crossing your organization's network boundary.
 
 <img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-10-PCI-Req-01-Traffic-Direction-Monitoring.png')} alt="Palo Alto 10 dashboards" />
 
@@ -212,3 +198,15 @@ This app supports PAN-OS v10.
 
 
 <img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-10-PCI-Req-02-04-Insecure-Data-In-Transit.png')} alt="Palo Alto 10 dashboards" />
+
+## Upgrade/Downgrade the PCI for Palo Alto Networks 10 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the PCI for Palo Alto Networks 10 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

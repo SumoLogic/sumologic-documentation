@@ -1,0 +1,1 @@
+To use the APIs in this resource, the user or account executing APIs must have the following [role capabilities](/docs/manage/users-roles/roles/role-capabilities):

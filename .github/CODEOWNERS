@@ -1,11 +1,16 @@
-# Default owners for everything in the repo.
-* @stacykor @kimsauce @jpipkin1 @JV0812
+# More details: https://help.github.com/articles/about-codeowners
 
-# Owners of all files in the `/docs` directory and its subdirectories.
-/docs/   @kimsauce @stacykor @jpipkin1 @JV0812
+# Default owners for everything in the repo.
+* @kimsauce @jpipkin1 @JV0812 @mafsumo @amee-sumo
+
+# Owners of all files in the `/docs/integrations` directory.
+/docs/integrations/ @SumoLogic/sumoappdev @kimsauce @jpipkin1 @JV0812 @mafsumo @amee-sumo
+
+# Owners of all files in the `/docs/send-data/kubernetes` directory.
+/docs/send-data/kubernetes/ @SumoLogic/open-source-collection-team @SumoLogic/k8s-developers @kimsauce @jpipkin1 @JV0812 @mafsumo @amee-sumo
 
 # Owners of all files in the `/docs/send-data/opentelemetry-collector` directory and its subdirectories.
-/docs/send-data/opentelemetry-collector/  @SumoLogic/open-source-collection-team @kimsauce @stacykor @jpipkin1 @JV0812
+/docs/send-data/opentelemetry-collector/ @SumoLogic/open-source-collection-team @kimsauce @jpipkin1 @mafsumo @JV0812 @amee-sumo
 
 # GitHub workflow owners
 /.github/workflows/ @SumoLogic/open-source-collection-team @kimsauce

@@ -2,14 +2,14 @@
 id: aws-cloudtrail
 title: AWS CloudTrail - Cloud SIEM
 sidebar_label: AWS CloudTrail
-description: Configure a CloudTrail source on a hosted collector to ingest CloudTrail log messages to be parsed by CSE's CloudTrail system parser.
+description: Configure a CloudTrail source on a hosted collector to ingest CloudTrail log messages to be parsed by Cloud SIEM's CloudTrail system parser.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section has instructions for collecting AWS CloudTrail log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting AWS CloudTrail log messages and sending them to Sumo Logic to be ingested by Cloud SIEM.
 
-Sumo Logic CSE supports the default AWS CloudTrail log format which includes all version 2 fields. See [AWS CloudTrail log records documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-fields) for more details.
+Sumo Logic Cloud SIEM supports the default AWS CloudTrail log format which includes all version 2 fields. See [AWS CloudTrail log records documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-fields) for more details.
 
 ## Step 1: Enable AWS CloudTrail logs
 
@@ -27,26 +27,26 @@ In this step, you configure an HTTP Source to collect AWS CloudTrail log messa
 
 1. To create a new hosted collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector). 
 1. **Fields**. 
-    1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
+    1. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
     1. If all sources in this collector will be AWS CloudTrail sources, add an additional field with key `_parser` and value */Parsers/System/AWS/CloudTrail*.
 
 :::note
-It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
 :::
 
 ### Configure an AWS CloudTrail Source
 
 1. To configure a CloudTrail Source, see [Configure an AWS CloudTrail source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source).
 1. Configure fields as shown below to forward CloudTrail logs to the Cloud SIEM platform.
-    1. If you are not forwarding all sources in the hosted collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
+    1. If you are not forwarding all sources in the hosted collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
     1. Add another field named `_parser` with value */Parsers/System/AWS/CloudTrail*.
 14. Click **Save**.
 
 ## Step 3: Verify ingestion
 
-In this step, you verify that your logs are successfully making it into CSE. 
+In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>
-1. On the **Log Mappings** page search for "CloudTrail" and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/cloudtrail-record-volume.png')} alt="CloudTrail record volume" width="600"/>
-1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for CloudTrail security records.<br/><img src={useBaseUrl('img/cse/cloudtrail-search.png')} alt="CloudTrail search" width="400"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. On the **Log Mappings** tab search for "CloudTrail" and check the **Records** columns.
+1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for CloudTrail security records.<br/><img src={useBaseUrl('img/cse/cloudtrail-search.png')} alt="CloudTrail search" style={{border: '1px solid gray'}} width="400"/>
 

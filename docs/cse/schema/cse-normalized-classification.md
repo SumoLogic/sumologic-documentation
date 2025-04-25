@@ -1,37 +1,37 @@
 ---
 id: cse-normalized-classification
-title: CSE Normalized Classification
+title: Cloud SIEM Normalized Classification
 sidebar_label: Normalized Classification
-description: Learn about CSE's Normalized Classification Fields, schema fields that have an enforced output defined by CSE.
+description: Learn about Cloud SIEM's normalized classification fields, schema fields that have an enforced output defined by Cloud SIEM.
 ---
 
 
 
-This topic describes how CSE applies normalized classification to Records. 
+This topic describes how Cloud SIEM applies normalized classification to records. 
 
-In CSE Records can be classified at two levels. First, all Records are classified at a high level by Record Type. At a more detailed level, you can classify more specifically using Normalized Classification Fields alongside the mapped attributes within a Record.
+In Cloud SIEM records can be classified at two levels. First, all records are classified at a high level by record type. At a more detailed level, you can classify more specifically using normalized classification fields alongside the mapped attributes within a record.
 
-## Record Types
+## Record types
 
-Every CSE Record has a Record Type. A Record Type classifies the nature of the event that the Record describes. CSE Record Types include **Authentication,** **Endpoint**, **NetworkHTTP** and so on.
+Every Cloud SIEM record has a record type. A record type classifies the nature of the event that the record describes. Cloud SIEM record types include **Authentication,** **Endpoint**, **NetworkHTTP** and so on.
 
-A Record’s type is set by the [log mapping](/docs/cse/schema/create-structured-log-mapping) that processes it. For more information, see [CSE Record Types](/docs/cse/schema/cse-record-types).
+A record’s type is set by the [log mapping](/docs/cse/schema/create-structured-log-mapping) that processes it. For more information, see [Cloud SIEM Record Types](/docs/cse/schema/cse-record-types).
 
-## Normalized Classification Fields
+## Normalized classification fields
 
-For more granular classification of a Record, CSE uses *Normalized Classification Fields*. These are special normalized schema fields that have an enforced output defined by CSE. These fields provide a taxonomy that can be used to tie Records from multiple vendors and products together in a standard way. Rather than holistically trying to describe a Record as Record Type does, these fields exist alongside commonly used normalization schema fields which most often contain the what, where, and why of a particular Record. This allows for far more dynamic and specific classification of a Record than Record Type alone. 
+For more granular classification of a record, Cloud SIEM uses *normalized classification fields*. These are special normalized schema fields that have an enforced output defined by Cloud SIEM. These fields provide a taxonomy that can be used to tie records from multiple vendors and products together in a standard way. Rather than holistically trying to describe a record as record type does, these fields exist alongside commonly used normalization schema fields which most often contain the what, where, and why of a particular record. This allows for far more dynamic and specific classification of a record than record type alone. 
 
-Normalized Classification Fields are completely optional when creating a log mapping. When using Normalized Classification Fields, it is best to consider whether a parallel normalized schema field exists for the Record and whether there is an analogous enforced output available in the desired Normalized Classification Field. These fields will most typically utilize the lookup unless the vendor log output exactly matches the enforced outputs or a constant value is assigned.
+Normalized classification fields are completely optional when creating a log mapping. When using normalized classification fields, it is best to consider whether a parallel normalized schema field exists for the record and whether there is an analogous enforced output available in the desired normalized classification field. These fields will most typically utilize the lookup unless the vendor log output exactly matches the enforced outputs or a constant value is assigned.
 
 :::note
-* When creating a log mapping, if the output value used for a given Normalized Classification Field is not listed in the Enforced Output Values for that field, it will not be populated.
-* Normalized Classification Fields are a new feature and will be backfilled to existing out-of-the-box mappings over time.
+* When creating a log mapping, if the output value used for a given normalized classification field is not listed in the Enforced Output Values for that field, it will not be populated.
+* Normalized classification fields are a new feature and will be backfilled to existing out-of-the-box mappings over time.
 :::
 
 ## normalizedAction
 
 Complementary to the [action](/docs/cse/schema/schema-attributes) field, the `normalizedAction` field describes the initiation of an activity in a
-standard way across Records. `normalizedAction` is meant to describe an attempt to perform an action, using the success boolean as a modifier to indicate whether or not the action was successful. Note that `normalizedAction` should be used with [normalizedResource](/docs/cse/schema/cse-normalized-classification) to indicate where an action was attempted, or the resource or entity upon which the action was attempted.
+standard way across records. `normalizedAction` is meant to describe an attempt to perform an action, using the success boolean as a modifier to indicate whether or not the action was successful. Note that `normalizedAction` should be used with [normalizedResource](/docs/cse/schema/cse-normalized-classification) to indicate where an action was attempted, or the resource or entity upon which the action was attempted.
 
 | Enforced Output Value | Description |
 |:--|:--|
@@ -65,45 +65,45 @@ standard way across Records. `normalizedAction` is meant to describe an attempt
 
 ## normalizedResource
 
-Complementary to the [resource](/docs/cse/schema/schema-attributes) field, this field describes the resource being acted upon or otherwise referenced within a Record in a standard way across Records. Intended to be used to provide further normalized context to a Record, particularly in tandem with [normalizedAction](/docs/cse/schema/cse-normalized-classification).
+Complementary to the [resource](/docs/cse/schema/schema-attributes) field, this field describes the resource being acted upon or otherwise referenced within a record in a standard way across records. Intended to be used to provide further normalized context to a record, particularly in tandem with [normalizedAction](/docs/cse/schema/cse-normalized-classification).
 
 | Enforced Output Value | Description |
 |:--|:--|
-| account | Use where the resource being acted upon or referenced in a Record pertains to an account. |
-| application | Use where the resource being acted upon or referenced in a Record pertains to an application. |
-| backup | Use where the resource being acted upon or referenced in a Record pertains to a backup. |
-| bucket | Use where the resource being acted upon or referenced in a Record pertains to a specific bucket. Common in cloud computing. |
-| database | Use where the resource being acted upon or referenced in a Record pertains to a database. |
-| directory | Use where the resource being acted upon or referenced in a Record pertains to a directory or similar hierarchical organizational unit. |
-| email | Use where the resource being acted upon or referenced in a Record pertains to email or email delivery. |
-| file | Use where the resource being acted upon or referenced in a Record pertains to a file. |
-| group | Use where the resource being acted upon or referenced in a Record pertains to a group, for example, an organizational unit, security group, user group, computer group, access control list, and so on. |
-| instance | Use where the resource being acted upon or referenced in a Record pertains to a specific machine instance, typically virtual. Common in cloud computing. |
-| key | Use where the resource being acted upon or referenced in a Record pertains to a cryptographic key. |
-| malware | Use where the resource being acted upon or referenced in a Record pertains to malware itself or the prevention, detection, or removal of malware. |
-| network | Use where the resource being acted upon or referenced in a Record is or pertains to network traffic. |
-| operating system | Use where the resource being acted upon or referenced in a Record pertains to an operating system component. |
-| process | Use where the resource being acted upon or referenced in a Record pertains to a process |
-| role | Use where the resource being acted upon or referenced in a Record pertains to a role. Common in cloud computing. |
-| scheduled task | Use where the resource being acted upon or referenced in a Record pertains to a scheduled task or analogous functionality. |
-| service | Use where the resource being acted upon or referenced in a Record pertains to a service. |
+| account | Use where the resource being acted upon or referenced in a record pertains to an account. |
+| application | Use where the resource being acted upon or referenced in a record pertains to an application. |
+| backup | Use where the resource being acted upon or referenced in a record pertains to a backup. |
+| bucket | Use where the resource being acted upon or referenced in a record pertains to a specific bucket. Common in cloud computing. |
+| database | Use where the resource being acted upon or referenced in a record pertains to a database. |
+| directory | Use where the resource being acted upon or referenced in a record pertains to a directory or similar hierarchical organizational unit. |
+| email | Use where the resource being acted upon or referenced in a record pertains to email or email delivery. |
+| file | Use where the resource being acted upon or referenced in a record pertains to a file. |
+| group | Use where the resource being acted upon or referenced in a record pertains to a group, for example, an organizational unit, security group, user group, computer group, access control list, and so on. |
+| instance | Use where the resource being acted upon or referenced in a record pertains to a specific machine instance, typically virtual. Common in cloud computing. |
+| key | Use where the resource being acted upon or referenced in a record pertains to a cryptographic key. |
+| malware | Use where the resource being acted upon or referenced in a record pertains to malware itself or the prevention, detection, or removal of malware. |
+| network | Use where the resource being acted upon or referenced in a record is or pertains to network traffic. |
+| operating system | Use where the resource being acted upon or referenced in a record pertains to an operating system component. |
+| process | Use where the resource being acted upon or referenced in a record pertains to a process |
+| role | Use where the resource being acted upon or referenced in a record pertains to a role. Common in cloud computing. |
+| scheduled task | Use where the resource being acted upon or referenced in a record pertains to a scheduled task or analogous functionality. |
+| service | Use where the resource being acted upon or referenced in a record pertains to a service. |
 
 ## normalizedCause
 
-Complementary to the [cause](/docs/cse/schema/schema-attributes) field, this field describes the reason for any particular outcome in a Record in a standard way.
+Complementary to the [cause](/docs/cse/schema/schema-attributes) field, this field describes the reason for any particular outcome in a record in a standard way.
 
 |  Enforced Output Value |  Description |
 |:--|:--|
-| incorrect password | For a Record describing an authentication failure where the cause of the failure was an incorrect password. |
-| incorrect username | For a Record describing an authentication failure where the cause of the failure was an incorrect username. |
-| failed challenge | For a Record describing an authentication failure where the cause of the failure was a failed multi-factor authentication challenge or other secondary authentication challenge, such as a security question. |
-| system error | For a Record describing a failed operation where the cause of the failure was a system error. |
-| allow list | For a Record describing the successful outcome of an operation based on the presence of an object on an allow list. For instance, an Allow ACL. |
-| deny list | For a Record describing the failed outcome of an operation based on the presence of an object on a deny list. For instance, a Deny ACL. |
+| incorrect password | For a record describing an authentication failure where the cause of the failure was an incorrect password. |
+| incorrect username | For a record describing an authentication failure where the cause of the failure was an incorrect username. |
+| failed challenge | For a record describing an authentication failure where the cause of the failure was a failed multi-factor authentication challenge or other secondary authentication challenge, such as a security question. |
+| system error | For a record describing a failed operation where the cause of the failure was a system error. |
+| allow list | For a record describing the successful outcome of an operation based on the presence of an object on an allow list. For instance, an Allow ACL. |
+| deny list | For a record describing the failed outcome of an operation based on the presence of an object on a deny list. For instance, a Deny ACL. |
 
 ### success
 
-True or false showing whether or not an action or event Recorded in a log was successful. This field is either defined as a constant or based on a lookup in a mapping.
+True or false showing whether or not an action or event recorded in a log was successful. This field is either defined as a constant or based on a lookup in a mapping.
 
 ## normalizedSeverity
 

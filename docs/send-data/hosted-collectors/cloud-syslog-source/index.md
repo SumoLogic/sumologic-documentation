@@ -19,7 +19,7 @@ Sumo manages an elastic scaling set of syslog servers, which scales up and down
 syslog.collection.YOUR_DEPLOYMENT.sumologic.com
 ```
 
-where `YOUR_DEPLOYMENT` is `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For more information, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+where `YOUR_DEPLOYMENT` is `au`, `ca`, `de`, `eu`, `fed`, `jp`, `kr`, `us1`, or `us2`. For more information, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 :::important
 FIPS 140-2 compliance is not available for Cloud Syslog in the FedRAMP deployment. It is with great emphasis that you must recognize and understand that the responsibility to mitigate information spillage is solely yours. We have no insight into your data or how it is classified.
@@ -27,8 +27,8 @@ FIPS 140-2 compliance is not available for Cloud Syslog in the FedRAMP deploymen
 
 In the procedure below, you configure a Cloud Syslog Source, this will generate a Sumo Logic token and the endpoint hostname. Then you set up TLS by downloading a cert to your server. Download the **DigiCert** certificate
 from one of the following locations:
-* [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt)
-* [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem)
+* [https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt](https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt)
+* [https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.pem](https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.pem)
 
 Sumo Logic supports syslog clients, including syslog-ng and rsyslog. Follow the instructions in the appropriate section below to configure your server to send syslog data. If syslog data does not appear in Sumo Logic, refer to
 [Troubleshooting](#troubleshooting) below.
@@ -43,7 +43,7 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 
 To configure a cloud syslog source, do the following:
 
-1. In Sumo Logic select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 1. Select **Cloud Syslog**.
 1. Enter a **Name** to display for this source in Sumo. Description is optional.
@@ -56,7 +56,7 @@ To configure a cloud syslog source, do the following:
 1. Set any of the following under **Advanced**:
 
    * **Enable Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed.
-   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.
+   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format**. By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
 
 1. Create any Processing Rules you'd like for the new source.
@@ -190,4 +190,4 @@ If you followed the documentation for syslog-ng or rsyslog configurations but st
     21:46:35.955326 IP server-host > client-host.client-port: Flags [.], ack 389, win 181, options [nop,nop,TS val 112586129 ecr 523153927], length 0 ...
     ```
 
-1. If the previous steps don't solve the problem, file a support case with information about the specific Collector and Source setup. You can also include the `tcpdump` if available.
+1. If the previous steps do not solve the problem, file a support case with information about the specific Collector and Source setup. You can also include the `tcpdump` if available.

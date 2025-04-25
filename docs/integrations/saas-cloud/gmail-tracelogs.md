@@ -13,13 +13,13 @@ Gmail Trace Logs is a new Sumo Logic app based on the Gmail BigQuery Cloud-to-Cl
 
 The Sumo Logic App for Gmail Trace Logs helps monitor spam messages, malware, dropped messages and rejected messages. It allows you to view messages with objectionable content, messages detected by your **Security Sandbox**, and messages flagged by the Walled Garden Rule.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Gmail Trace Logs uses [Gmail Logs via BigQuery](https://support.google.com/a/topic/7233311?hl=en&ref_topic=2683886).
 
 For details, see the [Schema for Gmail logs in BigQuery](https://support.google.com/a/answer/7230050?hl=en&ref_topic=7233311).
 
-### Sample Logs
+### Sample log messages
 
 ```json
 {
@@ -123,7 +123,7 @@ For details, see the [Schema for Gmail logs in BigQuery](https://support.google.
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Gmail messages classifications"
 _sourceCategory=Labs/GmailTraceLogs
@@ -135,14 +135,33 @@ _sourceCategory=Labs/GmailTraceLogs
 | count by message_set_type
 | sort by _count
 ```
+## Collection configuration and app installation
 
-## Collecting Logs for Gmail Trace Logs app
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-This section provides instructions for setting up [Cloud-to-Cloud-Integration for Gmail Trace Logs App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source.md) to create the source and use the same source category while installing the app.
+<CollectionConfiguration/>
 
-## Installing the Gmail Trace Logs app
+:::important
+Use the [Cloud-to-Cloud Integration for Gmail Trace Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Gmail Trace Logs app is properly integrated and configured to collect and analyze your Gmail Trace Logs data.
+:::
 
-{@import ../../reuse/apps/app-install.md}
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Gmail Trace Logs Dashboards
 

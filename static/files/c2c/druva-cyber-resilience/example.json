@@ -1,0 +1,17 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config":{
+            "name": "Druva Cyber Resilience",
+            "description": "Collect Realize Events from Druva Cyber Resilience Product",
+            "category": "druva-cyber-resilience",
+            "baseURL": "https://apis.druva.com",
+            "clientID": "testclientid",
+            "secretKey": "*********"
+        },
+        "schemaRef": {
+            "type": "Druva Cyber Resilience"
+        },
+        "sourceType": "Universal"
+    }
+}

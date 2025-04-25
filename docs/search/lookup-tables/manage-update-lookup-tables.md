@@ -5,19 +5,17 @@ sidebar_label: Managing Lookup Tables
 description: Learn how to update, export, and share Lookup Tables.
 ---
 
-The page has information about updating, exporting, and sharing Lookup Tables. For information about creating a new Lookup Table, see [Create a Lookup Table](create-lookup-table.md).
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::note
-New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
-:::
+The page has information about updating, exporting, and sharing Lookup Tables. For information about creating a new Lookup Table, see [Create a Lookup Table](create-lookup-table.md).
 
 ## Update the contents of a lookup table
 
 This section has instructions for updating a lookup table. You can:
 
-* [Merge data](#merge-data-into-a-lookup-table) - Use this option to update existing rows with new values, or to add new rows to the lookup table. 
-* [Replace data](#replace-all-the-rows-in-a-lookup-table-with-new-rows) — Use this option to completely replace the data in the lookup table with the data in the .csv file. 
-* [Delete data](#delete-a-lookup-table) - Use this option to remove all the data in the lookup table. 
+* [Merge data](#merge-data-into-a-lookup-table). Use this option to update existing rows with new values, or to add new rows to the lookup table. 
+* [Replace data](#replace-all-the-rows-in-a-lookup-table-with-new-rows). Use this option to completely replace the data in the lookup table with the data in the .csv file. 
+* [Delete data](#delete-a-lookup-table). Use this option to remove all the data in the lookup table. 
 
 You can also use the [Lookups API](https://api.sumologic.com/docs/#tag/lookupManagement) to update a lookup table. 
 
@@ -37,23 +35,13 @@ Before you start, create a .csv file that contains the data you want to merge. N
 
 The file should have a .csv extension, and not be larger than 100 MB. The first row of the table should contain the names of the fields defined in the table schema. 
 
-For example:
+For example: `username,IPAddress,region`
 
-```
-username,IPAddress,region
-```
-
-1. Go to the Sumo Logic Library.
-1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot more options menu.
-1. The edit page for the lookup table appears.  
-
-    ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
-
+1. Go to your **Library**.
+1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot kebab menu.
+1. The edit page for the lookup table appears. <br/>  ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
 1. Click **Merge Data**.
-1. The **Merge Lookup Data** popup appears.  
-
-    ![merge-lookup-data.png](/img/search/lookup-tables/merge-lookup-data.png)
-
+1. The **Merge Lookup Data** popup appears.<br/> <img src={useBaseUrl('img/search/lookup-tables/merge-lookup-data.png')} alt="Merge Lookup Data popup" width="350"/>
 1. Click **Upload**.
 1. Navigate to the .csv file and click **Open**.
 1. Click **Done**.
@@ -64,24 +52,17 @@ You can use the **Replace Data** option to completely replace the data in a lo
 
 Before you start, create a .csv file that contains the rows you overwrite the lookup table with.  
 
-The file should have a .csv extension, and not be larger than 100 MB. The first row of the table should contain the names of the fields defined in the table schema. For example:
+The file should have a .csv extension, and not be larger than 100 MB. The first row of the table should contain the names of the fields defined in the table schema.
 
-`username,IPAddress,region`
+For example: `username,IPAddress,region`
 
 For a field that is configured to be boolean, make sure that the field value is either `true` or `false`. Field values are case-insensitive, so `TRUE` or `FALSE` are also fine. However, if a boolean field contains any other value, the value written to the table will be `false`.
 
-1. Go to the Sumo Logic Library.
-1. Mouse over the lookup table you want to view, and select **Edit**
-    from the three-dot more options menu.
-1. The edit page for the lookup table appears.  
-
-    ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
-
+1. Go to your **Library**.
+1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot kebab menu.
+1. The edit page for the lookup table appears. <br/>  ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
 1. Click **Replace Data**.
-1. The **Replace All Lookup Data** popup appears.  
-
-    ![replace-all-lookup-data.png](/img/search/lookup-tables/replace-all-lookup-data.png)
-
+1. The **Replace All Lookup Data** popup appears. <br/><img src={useBaseUrl('img/search/lookup-tables/replace-all-lookup-data.png')} alt="replace-all-lookup-data.png" width="350"/>
 1. Click **Upload**.
 1. Navigate to the .csv file and click **Open**.
 1. Click **Done.**
@@ -92,17 +73,11 @@ You can use the **Delete Data** option to remove all the data in a lookup table
 
 Follow the steps below to delete all of the contents of a lookup table:
 
-1. Go to the Sumo Logic Library.
-1. Mouse over the lookup table you want to delete, and select **Edit** from the three-dot more options menu.
-1. The edit page for the lookup table appears.  
-
-    ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
-
+1. Go to your **Library**.
+1. Mouse over the lookup table you want to delete, and select **Edit** from the three-dot kebab menu.
+1. The edit page for the lookup table appears.  <br/>  ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
 1. Click **Delete Data.**
-1. You are prompted to confirm that you want to delete the contents of the lookup file.  
-
-    ![delete-lookup-data.png](/img/search/lookup-tables/delete-lookup-data.png)
-
+1. You are prompted to confirm that you want to delete the contents of the lookup file. <br/><img src={useBaseUrl('img/search/lookup-tables/delete-lookup-data.png')} alt="delete-lookup-data.png" width="350"/>
 1. Enter `Delete`, and click **Delete**.
 
 ### Update a lookup table with the save operator
@@ -115,12 +90,9 @@ To save the results of a query to a lookup table in a scheduled search, see [Sav
 
 If you want to replicate a lookup table schema in a different folder in the Library, the process is to export it, and then import it into the desired folder. When you export a lookup table, the data it contains is not exported.
 
-1. Go to the Sumo Logic Library.
-1. Mouse over the lookup table you want to export, and select **Export** from the three-dot more options menu.
-1. The export popup presents the contents of the lookup table in JSON format.  
-
-    ![export-lookup-table.png](/img/search/lookup-tables/export-lookup-table.png)
-
+1. Go to your **Library**.
+1. Mouse over the lookup table you want to export, and select **Export** from the three-dot kebab menu.
+1. The export popup presents the contents of the lookup table in JSON format.<br/>   <img src={useBaseUrl('img/search/lookup-tables/export-lookup-table.png')} alt="export-lookup-table.png" width="350"/>
 1. Click **Copy** to copy the JSON to the clipboard, or **Download** to download a JSON file.
 1. Click **Done**. 
 1. To create new lookup table with the JSON, follow the instructions in [Import Content in the Library](/docs/get-started/library#import-content).
@@ -130,7 +102,7 @@ If you want to replicate a lookup table schema in a different folder in the Libr
 You can share a lookup table with other users, a role, or a combination
 of the two. 
 
-1. Go to the Sumo Logic Library.
+1. Go to your **Library**.
 1. Mouse over the row for a lookup table you want to share, and click the sharing icon towards the right side of the row. You’ll be prompted to enter the user and roles with whom you want to share the table, the level of access you want to grant, and other sharing options. For information about sharing, see [Share Content](/docs/manage/content-sharing).
 
 ## Delete a lookup table
@@ -139,9 +111,8 @@ You can also use the [Lookups API](https://api.sumologic.com/docs/#tag/lookupMan
 
 Follow the steps below to completely delete a lookup table:
 
-1. Go to the Sumo Logic Library.
-1. Mouse over the lookup table you want to delete, and select
-    **Delete** from the three-dot more options menu.
+1. Go to your **Library**.
+1. Mouse over the lookup table you want to delete, and select **Delete** from the three-dot kebab menu.
 
 ## View Lookup Table update status
 
@@ -149,7 +120,7 @@ When you are viewing a Lookup Table in the Library, you can view information abo
 
 You can toggle your view between **Lookup Actions Queue** and **Lookup Actions History** with the icons labeled **a** and **b** in the screenshot below, respectively.
 
-![lookup-actions-history.png](/img/search/lookup-tables/lookup-actions-history.png)
+<img src={useBaseUrl('img/search/lookup-tables/lookup-actions-history.png')} alt="lookup-actions-history.png" width="300"/>
 
 The notifications include what type of update was initiated and its status.
 
@@ -166,3 +137,20 @@ The status of an update can be one of the following:
 * **Completed**. The update operation was successfully completed.
 * **Completed with Warning**. The update operation was successful, but there were some warnings.  
 * **Error**. There was an issue in completing the update operation. 
+
+
+## FAQ
+
+### Upgrade the lookup table to avoid negative count results
+
+:::info
+Lookup schema matching is relaxed to allow Int-Long type mismatch to support the new behavioural change of the `count` operator.
+:::
+
+If the schema type is `Int` and the field type is `Long`, there can be possible overflow resulting in a negative count value after crossing the maximum integer value of `2147483647`. To resolve this, create a new lookup table with `long` data type and run the below query:
+
+```
+cat path://"<Lookup file Path>" | save path://"<New Lookup File Path>"
+```
+
+By doing so, the query will read the data from the existing lookup table in old file and migrate it to the new file.

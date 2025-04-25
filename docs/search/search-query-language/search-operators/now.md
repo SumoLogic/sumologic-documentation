@@ -30,14 +30,14 @@ Which returns results similar to:
 
 ### Return the current date using formatDate
 
-Use the following query with formatDate to return results for the current date formatted as YYYY-MM-dd.
+Use the following query with formatDate to return results for the current date formatted as yyyy-MM-dd.
 
 ```sql
-* | formatDate(now(), "YYYY-MM-dd") as today
+* | formatDate(now(), "yyyy-MM-dd") as today
 ```
 
 This returns the following results.
 
 ![Today](/img/search/searchquerylanguage/search-operators/Today.png)
 
-For more examples, see [formatDate](formatdate.md) operator.
+For more examples, see [`formatDate`](formatdate.md) operator.

@@ -55,7 +55,7 @@ Once you've set up a Hosted Collector and have your credentials ready, you're a
 
 To configure a Google Workspace Apps Audit Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Google Workspace Apps Audit**.
 1. For **Name**, type the name of the Source. Enter an optional Description.

@@ -1,0 +1,22 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+  "name": "Code42",
+  "description": "Code42",
+  "category": "code42",
+  "baseURL": "https://api.us.code42.com",
+  "clientID": "key-xxxx0316-xxxx-492d-xxxx-308184abxxx3",
+  "secretKey": "XXXXV%DsznXXX!hxr479cXsxxnbkX@vxxrxkbfxc",
+  "dataCollection": [
+    "auditEvents",
+    "sessions",
+    "fileEvents"
+  ]
+},
+        "schemaRef": {
+            "type": "Code42 Incydr"
+        },
+        "sourceType": "Universal"
+    }
+}

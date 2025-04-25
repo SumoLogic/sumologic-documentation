@@ -33,10 +33,10 @@ The upgrade may automatically be done in increments. In this case, you may exper
 
 To install an upgrade on one or more collectors:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click the **Upgrade Collectors** link.
 1. Determine if you'd like to install the upgrade on individual collectors or on all collectors simultaneously. Then, choose one of the following:
-    * Click **Update** next to the name of a collector to install the upgrade just on that specific collector. This option can be used if a policy prevents you from upgrading every collector at the same time of day, or if you can't deploy the upgrade all at once. Any collectors you choose not to upgrade will remain available in the upgrade dialog box so you can install the upgrade at a later time.
+    * Click **Update** next to the name of a collector to install the upgrade just on that specific collector. This option can be used if a policy prevents you from upgrading every collector at the same time of day, or if you cannot deploy the upgrade all at once. Any collectors you choose not to upgrade will remain available in the upgrade dialog box so you can install the upgrade at a later time.
     * If you can safely upgrade all collectors, click **Update All.**
     :::note
     We strongly advise you to validate collector upgrades on non-production hosts before upgrading production collectors.
@@ -53,7 +53,7 @@ Collectors that are offline or that have already been upgraded aren't eligible 
 You can choose to downgrade a Collector or Collectors to an earlier version for testing or other purpose. 
 
 To downgrade one or more collectors to an earlier build:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click the **Edit** link on the right of an installed collector.
 1. Click the **Change Version** beside the current version.
 1. Select the version to install. 
@@ -87,7 +87,7 @@ The steps to upgrade an Installed Collector using the command line are similar t
 
 Download the collector in either of the following ways:
 
-* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
+* On the [**Collection**](/docs/send-data/collection/) page, click **Add Collector**, click **Installed Collector**, and then click the link for the collector to begin the download.
 * Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) for a list of the URLs for your Linux version and deployment pod.
 
 See the following table for commands:
@@ -120,7 +120,7 @@ When one or more of your Collectors are eligible for an upgrade, you'll be notif
 ![Upgrade collectors with search](/img/collector/upgrade-collectors-icon.png)
 
 :::note
-If you are performing a manual upgrade, make sure that you backup your `\<sumo_hom\>/config` directory before you upgrade because it stores the current source information. If any issues occur during upgrade that leave the Collector unable to connect to the service, or result in missing sources, you can restore this directory and restart the Collector to address the problem.
+If you are performing a manual upgrade, make sure that you backup your `/<sumo_home>/config` directory before you upgrade because it stores the current source information. If any issues occur during upgrade that leave the Collector unable to connect to the service, or result in missing sources, you can restore this directory and restart the Collector to address the problem.
 :::
 
 ### Test Your New Collector in a Staging Environment

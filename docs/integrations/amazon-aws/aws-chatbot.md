@@ -14,7 +14,7 @@ You can also run AWS CLI commands in chat channels using AWS Chatbot.
 
 For more details, refer to the [AWS documentation](https://docs.aws.amazon.com//chatbot/latest/adminguide/what-is.html).
 
-## Log and Metric types
+## Log and metric types
 
 * [CloudWatch Metrics](https://docs.aws.amazon.com//chatbot/latest/adminguide/monitoring-cloudwatch.html#available-cloudwatch-metrics)
 * [CloudWatch Logs](https://docs.aws.amazon.com//chatbot/latest/adminguide/cloudwatch-logs.html)

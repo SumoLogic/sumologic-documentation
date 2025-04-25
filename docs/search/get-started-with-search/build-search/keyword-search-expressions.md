@@ -4,7 +4,7 @@ title: Keyword Search Expressions
 description: The text that comes before the first pipe symbol in a query is called the keyword expression or scope.
 ---
 
-A Keyword Search Expression defines the scope of data for the query.
+A _Keyword Search Expression_ defines the scope of data for the query.
 
 Boolean logic and wildcards enable you to search for multiple terms, express logic about term distribution within messages, and specify partial terms with wildcards. The keyword expression can include [built-in metadata fields](../search-basics/built-in-metadata.md) such as `_collector`, `_sourceCategory`, `_sourceName`, and `_sourceHost` as well as custom log metadata fields.
 
@@ -29,8 +29,8 @@ Keyword search expressions are often referred to as the **scope** of a query.
 * Supports boolean operators `NOT`, `AND`, `OR`. The precedence of boolean operators is `NOT`, `AND`, `OR`. Parentheses will override the precedence.
 * A wildcard `*` represents zero or more characters.
 * Supports built-in metadata fields created during configuration of Collectors and Sources, like `_sourceHost`, `_sourceCategory`, and `_sourceName`.
-* Supports custom [log metadata fields](/docs/manage/fields.md).
-* Punctuation characters are allowed (`- _ : / . + @ # $ % ^`).
+* Supports custom [log metadata fields](/docs/manage/fields).
+* Punctuation characters are allowed (`-`, `_`, `:`, `/`, `.`, `+`, `@`, `#`, `$`, `%`, `^`).
 * Expressions containing spaces or special characters must be enclosed in quotes (`" "`).
 * Keyword expressions are case-insensitive.
 * Parentheses group search expressions and provide the structure necessary to perform complex queries. Parentheses are necessary only if **both** of the following conditions apply:
@@ -52,7 +52,7 @@ Keyword search expressions are often referred to as the **scope** of a query.
 * `_sourceHost=Atlanta AND (_sourceCategory="win-app-logs" OR _sourceName="win-firewall-logs")`
 * `_sourceHost="10.1.12.22" AND_sourceCategory="my category" NOT _sourceCategory="some-other" AND _sourceName="/var/log/some.log"`
 
-It can be hard to create a search query if you don't know what data you have in your Sumo Logic environment. For simple example queries to discover existing Source Categories, Source Names, and Source Hosts, see [What Data Do I Have?](/docs/search/get-started-with-search/build-search)
+It can be hard to create a search query if you do not know what data you have in your Sumo Logic environment. For simple example queries to discover existing Source Categories, Source Names, and Source Hosts, see [What Data Do I Have?](/docs/search/get-started-with-search/build-search)
 
 ## Phrases
 
@@ -110,7 +110,7 @@ info
 
 To convert a string to all lowercase or all uppercase letters, you can use the [`toUpperCase` and `toLowerCase`](/docs/search/search-query-language/search-operators/tolowercase-touppercase) operators.
 
-## Normalization of Phrase Queries
+## Normalization of phrase queries
 
 Sumo Logic normalizes the way it matches raw messages to log query source expressions, regardless of the tier in which the data is stored. One of the effects/use-cases of normalization is the replacement of consecutive whitespace characters within quoted phrases with a single space character. This ensures that query results are consistent when searching data in the continuous/frequent/infrequent tiers.
 
@@ -119,11 +119,12 @@ Let’s understand the following terms:
 * **Source Expression**. Source Expression or the Search Expression of a query is the string that comes before the first pipe. The `_raw field` is matched against the source expression to filter the requested log lines.
 * **Whitespace Normalization**. Whitespace normalization means replacing a consecutive list of whitespace characters with a single space. We follow the Java convention of whitespace characters.
 
-:::tip Java convention of whitespace characters
+### Java convention of whitespace characters
 
-<details><summary>A character is a Java whitespace character if and only if it satisfies one of the following criteria (click to expand):</summary>
+A character is a Java whitespace character if and only if it satisfies one of the following criteria:
 
 It is a Unicode space character (SPACE_SEPARATOR, LINE_SEPARATOR, or PARAGRAPH_SEPARATOR) but is not also a non-breaking space ('\u00A0', '\u2007', '\u202F').
+
 ```
 It is '\t', U+0009 HORIZONTAL TABULATION.
 It is '\n', U+000A LINE FEED.
@@ -135,16 +136,14 @@ It is '\u001D', U+001D GROUP SEPARATOR.
 It is '\u001E', U+001E RECORD SEPARATOR.
 It is '\u001F', U+001F UNIT SEPARATOR
 ```
-</details>
-:::
 
-### Types of Whitespace Characters
+### Types of whitespace characters
 
 * **Multiple space whitespace character**. This character determines the multiple spaces present in the payload or in the source expression.
 
  For example, in the following query, there are multiple space characters present in `"VM Periodic" and "Task Thread"`, but normalization returns the same result as a single space whitespace character.
- ```
-  sourceCategory=stream_thread_dumps "VM Periodic_____Task Thread"
+ ```sql
+ _sourceCategory=stream_thread_dumps "VM Periodic_____Task Thread"
  ```
 
  :::note
@@ -153,9 +152,9 @@ It is '\u001F', U+001F UNIT SEPARATOR
 
 * **Tab whitespace character**. This character determines the tab whitespace character present in the payload or in the source expression.
 
- For example, in the the following query there is a tab character present in `"VM Periodic" and "Task Thread"`, but normalisation returns the same result as a single space whitespace character.
- ```
-  sourceCategory=stream_thread_dumps "VM Periodic_Task Thread"
+ For example, in the the following query there is a tab character present in `"VM Periodic" and "Task Thread"`, but normalization returns the same result as a single space whitespace character.
+ ```sql
+ _sourceCategory=stream_thread_dumps "VM Periodic_Task Thread"
  ```
 
  :::note
@@ -165,8 +164,8 @@ It is '\u001F', U+001F UNIT SEPARATOR
 * **New line character**. This character determines the new line whitespace character present in the payload or in the source expression.
 
  For example, in the following query, there is a new line after the string `Task`, but normalization returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line character.
- ```
- sourceCategory=stream_thread_dumps "VM Periodic Task\nThread"
+ ```sql
+ _sourceCategory=stream_thread_dumps "VM Periodic Task\nThread"
  ```
 
  :::note
@@ -176,14 +175,14 @@ It is '\u001F', U+001F UNIT SEPARATOR
 * **New line tab character**. This character determines the new line and tab whitespace characters present in the payload or source expression.
 
   For example, in the the following query, there is a new line and tab character after the string `Task`, but normalization returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line and a tab whitespace character.
- ```
- sourceCategory=stream_thread_dumps "VM Periodic Task\n\tThread"
- ```
- :::note
- The character `\n\t` is used to describe the new line + tab whitespace characters.
- :::
+  ```sql
+  _sourceCategory=stream_thread_dumps "VM Periodic Task\n\tThread"
+  ```
+  :::note
+  The character `\n\t` is used to describe the new line + tab whitespace characters.
+  :::
 
 All of the above queries containing various whitespace characters will accept a single space whitespace character by default and return the desired results. See the query below.
-```
-sourceCategory=stream_thread_dumps "VM Periodic Task Thread"
+```sql
+_sourceCategory=stream_thread_dumps "VM Periodic Task Thread"
 ```

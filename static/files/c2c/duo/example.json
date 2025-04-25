@@ -1,0 +1,21 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"Duo"
+      },
+      "config":{
+        "name":"Duo",
+        "description":"East field",
+        "domain":"api-********.duosecurity.com",
+        "integration_key":"********",
+        "secret_key":"********",
+        "fields":{
+          "_siemForward":false
+        },
+        "category":"eastTeamF",
+        "polling_interval":300
+      },
+      "sourceType":"Universal"
+    }
+  }

@@ -17,9 +17,12 @@ Rapid7 app provides vital information, including asset count, distribution of as
 
 This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Asset) and [vulnerabilities](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Vulnerability) from Rapid7.
 
-## Sample log message
+## Sample log messages
 
-```json title="Asset Log"
+<details>
+<summary>Asset Log</summary>
+
+```json
  {
   "assessed_for_policies": false,
   "assessed_for_vulnerabilities": true,
@@ -89,7 +92,12 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
   "unique_identifiers": []
 }
 ```
-```json title="Vulnerability Finding Log"
+</details>
+
+<details>
+<summary>Vulnerability Finding Log</summary>
+
+```json
 {
   "asset_id": "4b8cdd43-3bd3-411a-9597-41aedf04b62f-default-asset-519",
   "check_id": null,
@@ -108,8 +116,12 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
   "vulnerability_id": "generic-tcp-timestamp"
 }
 ```
+</details>
 
-```json title="Vulnerability Log"
+<details>
+<summary>Vulnerability Log</summary>
+
+```json
 {
   "added": "2018-02-06T00:00:00Z",
   "categories": "XSS,jQuery",
@@ -177,7 +189,9 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
   "title": "jQuery Vulnerability: CVE-2015-9251"
 }
 ```
-## Sample Query
+</details>
+
+## Sample queries
 
 ```sql title="Assets by Type"
 _sourceCategory="Rapid7" assessed_for_policies // fetches assets
@@ -203,37 +217,39 @@ on vulnerability.id=asset_vulnerability.vulnerability_id // get information of a
 | limit 10
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud to Cloud Integration Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source) for the Rapid7 app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Rapid7 Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Rapid7 app is properly integrated and configured to collect and analyze your Rapid7 data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Rapid7 app​
+<CollectionConfiguration/>
 
-This section has instructions for installing the Sumo Logic app for Rapid7.
+:::important
+Use the [Cloud-to-Cloud Integration for Rapid7](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Rapid7 app is properly integrated and configured to collect and analyze your Rapid7 data.
+:::
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. From the **App Catalog**, search for the app and select it.
-1. Select **Add Integration** button to install the app.
-1. Configure the **Rapid7** app using the steps described in the [Rapid7 Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source). If you already have set up your data, skip this step by clicking on **Next**.
-1. Complete the following fields:
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
+### Create a new collector and install the app
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-Dashboard panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
+<AppCollectionOPtion1/>
 
-## Viewing Rapid7 Dashboards​​
+### Use an existing collector and install the app
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
+<AppCollectionOPtion2/>
 
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing Rapid7 dashboards​​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Assets Overview
 
@@ -242,3 +258,15 @@ The **Rapid7 - Assets Overview** dashboard provides a detailed summary of the as
 ### Vulnerabilities Overview
 
 The **Rapid7 - Vulnerabilities Overview** dashboard offers significant insights into vulnerability findings from the assets. It tracks the number of new and remediated vulnerability findings over the period. The dashboard includes visual representations of vulnerabilities categorized by severity and highlights the top 10 vulnerabilities related to assets. Additionally, it presents a summary of the leading 10 solutions utilized to address vulnerabilities and showcases recent vulnerability instances based on their most recent discovery time, along with information on the assets involved.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Rapid7-Vulnerabilities-Overview.png')} alt="Rapid7-Vulnerabilities-Overview" width="750"/>
+
+## Upgrade/Downgrade the Rapid7 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Rapid7 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

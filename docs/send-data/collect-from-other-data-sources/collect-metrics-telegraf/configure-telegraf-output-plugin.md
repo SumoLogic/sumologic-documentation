@@ -83,10 +83,11 @@ You can use Telegraf [measurement filtering](https://docs.influxdata.com/telegra
 * `namepass`. An array of glob pattern strings. Only points whose measurement name matches a pattern in this list are emitted.
 * `fieldpass`. An array of glob pattern strings. Only fields whose field key matches a pattern in this list are emitted.
 
-Below, we’ve expanded the minimal configuration of of the Sumo Logic output plugin to collect  only available and free memory metrics from the memory input plugin:  
+Below, we’ve expanded the minimal configuration of of the Sumo Logic output plugin to collect only available and free memory metrics from the memory input plugin:  
 
 ```
-url = "https://events.sumologic.net/receiver/v1/http\<HTTPSourceCod\>" data_format = "carbon2"
+url = "https://events.sumologic.net/receiver/v1/http/<HTTPSourceCode>"
+data_format = "carbon2"
 ```
 
 ```

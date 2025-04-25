@@ -5,115 +5,107 @@ sidebar_label: Partner App Template
 description: Using the Sumo Logic Partner App Template.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::tip
 Copy this file and edit it for your App integration.
 :::
 
-This application has been developed and is supported by \<Partner Name\>. In case of technical questions, please contact \<Partner Name\> support at \<email address\> or \<phone number\>.
+<head>
+  <meta name="robots" content="noindex"/>
+</head>
 
-**Product Description:**
+<img src={useBaseUrl('path-to-your-icon.png')} alt="Thumbnail icon" width="45"/>
 
-<!-- Describe the application, then fill in the following table.-->
+(Introduction about the app)
 
-| Dashboard | Description |
-| :-- | :-- |
-| \<dashboard name\> | \<dashboard description\> |
+\Add the description from the app description above\
 
-## \<App Name\> Page
+## Log types and metrics
 
-<!--Add the description from the app description above.-->
+The `{AppName}` App uses...
 
-### Log Types
+\Enter a list of log types, usually hyperlinked to vendor docs.\
 
-The \<AppName\> App uses...
+## Sample log and metrics messages
 
-<!--Enter a list of log types, usually hyperlinked to vendor docs.-->
+### Log message
 
-### Sample Log Message
-
-<!--Get a sample from app developer and replace this text with it.-->
-
-### Sample Query
-
+```json title="Log message"
+\<add your log message here\>
 ```
+
+### Metric message
+
+```json title="Metric message"
+\<add your log message here\>
+```
+
+## Sample queries
+
+### Log query
+
+```sql title="Log query"
 \<add your query here\>
 ```
 
-## Collect Logs for \<AppName\>
+### Metric query
 
-<!--
-:::note
-Write the section heading and section to reflect what’s being collected: logs, metrics, or logs and metrics.
-:::
--->
+```sql title="Metric query"
+\<add your query here\>
+```
 
-This section has instructions for collecting logs for the Sumo App for \<AppName\>.
+## Prerequisites (Optional)
 
-### Collection process overview
+\Any steps like permissions or roles that the user should have for configuring the collection steps.\
 
-<!--
-:::note
-Include this section in the doc if collection process is more complex. Include a diagram, as appropriate. For an example, see [Collection process for GCP services](/docs/integrations/google/app-engine/#collection-process-for-gcp-services).  
-:::
--->
+## Collection configuration and app installation
 
-### Collection step 1. Step Description
+\This section instructions for collecting logs, metrics, or logs and metrics. You can also give link to collection docs if they are hosted publicly. Include a diagram, as appropriate. For an example, see [Collection process for GCP services](/docs/integrations/google/app-engine/#collection-process-for-gcp-services).\
 
-<!--Include a description and numbered list of steps. Copy, paste, and fill out for each step needed.
+### Step 1.
 
-1. First step.
-1. Second step.
--->
+\step description\
 
-### Collection step 2. Step Description
+### Step 2.
 
-### Collection step n. Step Description
+\step description\
 
-## Install the \<AppName\> App
+### Step n.
 
-This section has instructions for installing the Sumo App for \<AppName\>.
+\step description\
 
-## View the \<AppName\> Dashboards
+## Install the `{AppName}` app
 
-<!--Descriptions of each app dashboard.-->
+import AppInstall from '../../reuse/apps/app-install.md';
 
-## Install the Sumo Logic App
+<AppInstall/>
 
-Now that you have set up collection, install the Sumo Logic App for \<app name\> to use the preconfigured searches and Dashboards that provide insight into your data.
+## Viewing the `{AppName}` dashboards
 
-<!--Uncomment this line. This will add the App installation steps:
- {@import ../reuse/apps/app-install.md} -->
+import FilterDashboards from '../../reuse/filter-dashboards.md';
 
-## Dashboard filters
+<FilterDashboards/>
 
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+### Dashboard 1
 
-:::note
-You can use filters to drill down and examine the data on a granular level.
-:::
+\Descriptions of each app dashboard.\
+\This section has dashboard description, use cases, and screenshot for each dashboard.\
 
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+The Overview Dashboard provides a quick snapshot of ....
 
-Replace sample image with panel from your App Dashboard, using red box callout:
+ Use this dashboard to:
+- \use-case-1\
+- \use-case-2\
 
-Use the instructions from [Install Sumo Logic Apps](/docs/get-started/apps-integrations#install-apps-from-the-library) to install the \<Partner\> App.
+### Dashboard 2
 
-## \<Dashboard name\>
-
-<!--
-\<Copy, paste, and fill in this dashboard section for each dashboard. Enter a dashboard description from above.\> Use this dashboard to:
-
-* Enter a list of features. Example below.
+View stats and metrics related to ...
 
 Use this dashboard to:
+- \use-case-1\
+- \use-case-2\
 
-* Monitor high severity threats and scan attacks.
-* Review \<fill in\> for troubleshooting configuration issues.
-* Understand how to fine-tune \<fill in your product name\> based on \<fill in panel names\>.
+## Support
 
-\<Add your dashboard screenshot.\>
--->
+This application has been developed and is supported by `{app-owner-name}`. In case of any technical queries, contact support at `support contact`.

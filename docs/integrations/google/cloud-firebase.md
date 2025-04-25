@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Firebase is Google's mobile development platform. For more details, refer to the [GCP documentation](https://firebase.google.com/docs)
 
-## Log and Metric types
+## Log and metric types
 
 * [Google Cloud Metrics](https://cloud.google.com/monitoring/api/metrics_gcp)
 * [Platform Logs](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html)

@@ -5,18 +5,9 @@ sidebar_label: General Search Examples
 description: The General Search Examples cheat sheet provides examples of useful search queries for different use cases.
 ---
 
-
-:::sumo Query Library
-For a collection of customer created search queries and their use cases, see the [Sumo Logic Community Query Library](https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query-Library).
-:::
-
-:::note
-For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quickstart Tutorial](https://www.youtube.com/watch?v=ajuNTQeOYaI).  
-:::
-
 The examples use this sample Apache log message where applicable:
 
-```
+```sh
 10.154.181.28 - - [24/Jan/2012:12:34:58 -0700] "GET /Courses/Topics/54.htm HTTP/1.1"
 200 9951 "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.7 (KHTML, like Gecko)
 Chrome/16.0.912.75 Safari/535.7"
@@ -28,7 +19,7 @@ Host: raw_hosted_apps Name: /usr/sumo/collector-16.1-5/logs/reporter.log Categor
 Look for failed attempts to su or sudo to root.
 
 ```sql
-(``su`` OR ``sudo`` ) AND (fail* OR error)
+(su OR sudo ) AND (fail* OR error)
 ```
 
 Look for errors in sshd logs.
@@ -44,12 +35,12 @@ auth* AND (fail* OR error?) NOT _sourceCategory=routers
 ```
 
 :::sumo More Info
-For more information, see [Keyword Search Expression](../get-started-with-search/build-search/keyword-search-expressions.md)
+For more information, see [Keyword Search Expressions](../get-started-with-search/build-search/keyword-search-expressions.md).
 :::
 
-## Parse, Count, and Top Operators
+## Parse, Count, and Top operators
 
-Extract "from" and "to" fields. For example, if a raw event contains "From: Jane To: John", then from=Jane and to=John.
+Extract `"from"` and `"to"` fields. For example, if a raw event contains "From: Jane To: John", then from=Jane and to=John.
 
 ```sql
 * | parse "From: * To: *" as (from, to)
@@ -58,17 +49,17 @@ Extract "from" and "to" fields. For example, if a raw event contains "From: Jane
 Extract the source IP addresses using a regular expression for the four octets of an IP address.
 
 ```sql
-*| parse regex "(\<src_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+*| parse regex "(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 ```
 
-Identify all URL addresses visited, extract them as the "url" field.                                                         
+Identify all URL addresses visited, extract them as the `url` field.                                                         
 
 ```sql
 _sourceCategory=apache 
 | parse "GET * " as url
 ```
 
-Identify traffic from Source Category "apache" and extract the source addresses, message sizes, and the URLs visited.
+Identify traffic from Source Category `apache` and extract the source addresses, message sizes, and the URLs visited.
 
 ```sql
 _sourceCategory=apache
@@ -77,7 +68,7 @@ _sourceCategory=apache
 | parse "GET * " as url
 ```
 
-For the Source Category "apache", calculate the total number of bytes transferred to each source IP address.
+For the Source Category `apache`, calculate the total number of bytes transferred to each source IP address.
 
 ```sql
 _sourceCategory=apache 
@@ -86,7 +77,7 @@ _sourceCategory=apache 
 | count, sum(size) by src_IP
 ```
 
-For the Source Category "apache", calculate the average size of all successful HTTP responses.
+For the Source Category `apache`, calculate the average size of all successful HTTP responses.
 
 ```sql
 _sourceCategory=apache 
@@ -94,7 +85,7 @@ _sourceCategory=apache 
 | avg(size)
 ```
 
-For the Source Category "apache", extract src, size, and URL even if the size field is missing from the log message (nodrop).
+For the Source Category `apache`, extract src, size, and URL even if the size field is missing from the log message (`nodrop`).
 
 ```sql
 _sourceCategory=apache 
@@ -162,7 +153,7 @@ For more information, see [Parsing](/docs/search/search-query-language/parse-op
 
 ## Timeslice and Transpose
 
-For the Source Category "apache", count by status_code and timeslice of 1 hour.
+For the Source Category `apache`, count by `status_code` and [`timeslice`](/docs/search/search-query-language/search-operators/timeslice) of 1 hour.
 
 ```sql
 _sourceCategory=apache*
@@ -171,7 +162,7 @@ _sourceCategory=apache*
 | count by _timeslice, status_code
 ```
 
-For the Source Category "apache", count by status_code and timeslice of 1 hour, transpose status_code to column.
+For the Source Category `apache`, count by `status_code` and `timeslice` of 1 hour, transpose status_code to column.
 
 ```sql
 _sourceCategory=apache*
@@ -181,7 +172,7 @@ _sourceCategory=apache*
 | transpose row _timeslice column status_code
 ```
 
-For the Source Category "apache", count by status_code and timeslice into 5 buckets over search result.
+For the Source Category `apache`, count by `status_code` and `timeslice` into 5 buckets over search result.
 
 ```sql
 _sourceCategory=apache*
@@ -190,7 +181,7 @@ _sourceCategory=apache*
 | count by _timeslice, status_code
 ```
 
-For the Source Category "Apache/Access", count messages by status code categories, grouping all 200s, 300s, 400s, and 500s together.
+For the Source Category `Apache/Access`, count messages by status code categories, grouping all 200s, 300s, 400s, and 500s together.
 
 ```sql
 _sourceCategory=Apache/Access
@@ -203,7 +194,7 @@ _sourceCategory=Apache/Access
 | count(*), sum(resp_200) as tot_200, sum(resp_300) as tot_300, sum(resp_400) as tot_400, sum(resp_500) as tot_500, sum(resp_others) as tot_others by _timeslice
 ```
 
-Or alternately you can use:
+Or, alternately, you can use:
 
 ```sql
 _sourceCategory=Apache/Access
@@ -217,12 +208,12 @@ if(status_code matches "50*","500s","Other")))) as status_code_group
 ```
 
 :::sumo More Info
-For more information, see [Timeslice](/docs/search/search-query-language/search-operators/timeslice) and [Transpose](/docs/search/search-query-language/search-operators/transpose).
+For more information, see [`timeslice` operator](/docs/search/search-query-language/search-operators/timeslice) and [`transpose` operator](/docs/search/search-query-language/search-operators/transpose).
 :::
 
-## Conditional Operators
+## Conditional operators
 
-For the Source Category "apache", find all messages with a client error status code (40*):
+For the Source Category `apache`, find all messages with a client error status code (`40*`):
 
 ```sql
 _sourceCategory=apache*
@@ -230,7 +221,7 @@ _sourceCategory=apache*
 | where status_code matches "40*"
 ```
 
-For the Source Category "apache", count hits by browser:
+For the Source Category `apache`, count hits by browser:
 
 ```
 _sourceCategory=Apache/Access
@@ -242,7 +233,7 @@ _sourceCategory=Apache/Access
 | sum(ie) as ie, sum(firefox) as firefox, sum(safari) as safari, sum(chrome) as chrome
 ```
 
-Use the where operator to match only weekend days.
+Use the [`where` operator](/docs/search/search-query-language/search-operators/where) to match only weekend days.
 
 ```sql
 * | parse "day=*:" as day_of_week
@@ -264,10 +255,10 @@ Find version numbers that match numeric values 2, 3 or 1. Use the num operator t
 ```
 
 :::sumo More Info
-For more information, see [Where](/docs/search/search-query-language/search-operators/where) and [If](/docs/search/search-query-language/search-operators/if).
+For more information, see [`where` operator](/docs/search/search-query-language/search-operators/where) and [`if` operator](/docs/search/search-query-language/search-operators/if).
 :::
 
-## LogReduce Operator
+## LogReduce operator
 
 Use Sumo Logic’s clustering algorithm to look for patterns in error/exception incidents in your deployment.
 
@@ -277,13 +268,13 @@ exception* or fail* or error* or fatal*
 ```
 
 :::sumo More Info
-For more information, see [LogReduce](/docs/search/logreduce).
+For more information, see [LogReduce](/docs/search/behavior-insights/logreduce).
 :::
 
-## Add Metadata Fields
+## Add metadata fields
 
 For any query, you can increase specificity by adding metadata fields to the keyword expression. Metadata fields include `_sourceCategory`, `_sourceHost` , and `_sourceName`.
 
 Edit Source metadata in the **Collection** tab.
 
-For details see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
+For details, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).

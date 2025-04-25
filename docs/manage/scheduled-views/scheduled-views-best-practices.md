@@ -9,16 +9,16 @@ A Scheduled View reduces aggregate data down to the bare minimum, so they conta
 These items are required in Scheduled View queries:
 
 * **Always use an [aggregate](/docs/search/search-query-language/group-aggregate-operators) operator**. This will allow you to avoid duplicating data.
-* **Always run an aggregation by a [timeslice](/docs/search/search-query-language/search-operators/timeslice) operator.** If you don't, [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) will be used.
+* **Always run an aggregation by a [timeslice](/docs/search/search-query-language/search-operators/timeslice) operator.** If you do not, [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) will be used.
 
 Also, keep the following things in mind when you're creating Scheduled View queries:
 
 * **Avoid using queries that are likely to change.** A key benefit of using Scheduled Views is that they can index historical data, allowing you to identify long-term trends. If a query changes, you may lose some of the historical perspective.
-* **Keep the query flexible.** Using a flexible query, like `_sourceCategory=*Apache*` so that metadata changes don't break the query.
+* **Keep the query flexible.** Using a flexible query, like `_sourceCategory=*Apache*` so that metadata changes do not break the query.
 * **Consider using fields with more general values (fields with less specificity).** For example, you'd want to use "country" and "city" fields instead of "latitude" and "longitude".
-* **Use Partitions.** [Partitions](/docs/manage/partitions-data-tiers) allow you to reduce your query time even more. 
-* **Access historical data. **Your Scheduled View can go as far back as your retention period.
-* **Use more groups. **Plan for flexibility by including more groups. However, test your Scheduled View definition to understand how much additional data that extra groups will create.
+* **Use Partitions.** [Partitions](/docs/manage/partitions) allow you to reduce your query time even more. 
+* **Access historical data.** Your Scheduled View can go as far back as your retention period.
+* **Use more groups.** Plan for flexibility by including more groups. However, test your Scheduled View definition to understand how much additional data that extra groups will create.
 
 ## What types of operators are supported in Scheduled Views?
 
@@ -219,3 +219,9 @@ Now you can use **sum** on your records, because the counts are broken out. For 
 ```sql
 _view=nice_view_man | timeslice 1d | sum(_count) by _timeslice, status_code
 ```
+
+## FAQ
+
+### Upgrade your scheduled views to avoid negative count results
+
+The existing scheduled views will use the `Int` data type for the `count` operator, giving a negative count value after crossing the maximum integer value of `2147483647`. To resolve this, create a new scheduled view with the same starting date as the old scheduled view. These new scheduled views will utilize the `Long` data type for the `count` operator and will not provide negative values.

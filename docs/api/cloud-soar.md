@@ -3,27 +3,39 @@ id: cloud-soar
 title: Cloud SOAR APIs
 sidebar_label: Cloud SOAR
 description: The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
-hide_table_of_contents: true
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import CloudSoarApi from '../reuse/csoar-api-table.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="60"/>
 
-<!-- Add this once all customers are moved to Cloud SOAR Delivery 2, and remove all the documentation below for "incmansuite_ng:
-
 The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
 
-{@import ../reuse/api-intro.md}
+## Documentation
 
-{@import ../reuse/csoar-api-table.md}
+:::info
+If your instance URL is a subdomain of `soar.sumologic.com`, refer to [Inline API documentation](#inline-api-documentation) below.
+:::
 
--->
+<ApiIntro/>
 
-API documentation is available through your Cloud SOAR instance at the following URL:
+<CloudSoarApi/>
+
+### Inline API documentation
+
+For organizations having Cloud SOAR available at URLs matching the pattern `*.soar.sumologic.com`,  the API documentation is available through your Cloud SOAR instance at the following URL:
 
 ```
-http[s]:///<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
+https://<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
 ```
 
-For more information, see [Cloud SOAR APIs](/docs/cloud-soar/cloud-soar-apis/) in our [Cloud SOAR documentation](https://help.sumologic.com/docs/cloud-soar/).
+For more information, see [Legacy Cloud SOAR APIs](/docs/cloud-soar/legacy/legacy-cloud-soar-apis/).
+
+## Required role capabilities
+
+<ApiRoles/>
+
+* Cloud SOAR (all role capabilities)

@@ -1,46 +1,33 @@
 ---
 id: traceid-spanid-injection-into-logs-configuration
-title: TraceId and SpanId injection into logs configuration
-sidebar_label: TraceId and SpanId injection into logs configuration
-description: It is simple to configure traceId and spanId data injection into user logs in Java applications.
+title: Java TraceId and SpanId Injection into Logs Configuration
+sidebar_label: TraceId and SpanId Injection into Logs Configuration
+description: Learn how to configure traceId and spanId data injection into user logs in Java applications.
 ---
 
-It is very simple to configure **traceId** and **spanId** data injection into user logs in Java applications. In general, it is enough to add instrumented versions of the logging packages into project dependencies. **Log4j2** and **logback** loggers are supported since OpenTelemetry-Java-Instrumentation version [0.10.1](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/v0.10.1).
+This page describes how to configure **spanId** and **traceId** data injection into user logs in Java applications.
 
 ## Log4j instrumentation
 
 1. Add instrumented **Log4j2** and **OpenTelemetry-api** libraries into the project dependencies:
-
-   * Maven projects  
-
-       ```xml
-       <dependencies>
-       <dependency>
-           <groupId>io.opentelemetry.instrumentation</groupId>
-           <artifactId>opentelemetry-log4j-2.13.2</artifactId>
-           <version>1.9.2-alpha</version>
-           <scope>runtime</scope>
-       </dependency>
-       <dependency>
-           <groupId>io.opentelemetry</groupId>
-           <artifactId>opentelemetry-api</artifactId>
-           <version>1.26.0</version>
-       </dependency>
-       </dependencies>
-       ```
-
+   * Maven projects
+        ```xml
+        <dependencies>
+            <dependency>
+                <groupId>io.opentelemetry.instrumentation</groupId>
+                <artifactId>opentelemetry-log4j-context-data-2.17-autoconfigure</artifactId>
+                <version>2.6.0-alpha</version>
+                <scope>runtime</scope>
+            </dependency>
+        </dependencies>
+        ```
    * Gradle projects  
-
-       ```
-       dependencies {
-       runtimeOnly("io.opentelemetry.instrumentation:opentelemetry-log4j-2.13.2:1.9.2-alpha")
-       implementation("io.opentelemetry:opentelemetry-api:1.26.0")
-       }
-       ```
-     
-
-1. Update the **log4j2.xml** configuration file, typically stored in **resources** directory, with `traceId`, `spanId`, `and sampled` keys. The following is an example configuration.
-
+        ```gradle
+        dependencies {
+            runtimeOnly("io.opentelemetry.instrumentation:opentelemetry-log4j-context-data-2.17-autoconfigure:2.6.0-alpha")
+        }
+        ```
+1. Update the **log4j2.xml** configuration file, typically stored in **resources** directory, with `traceId`, `spanId`, and `sampled` keys. The following is an example configuration.
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <Configuration status="WARN">
@@ -60,30 +47,24 @@ It is very simple to configure **traceId** and **spanId** data injection into us
 ## Logback instrumentation
 
 1. Add instrumented **logback** library into the project dependencies:
-
    * Maven projects  
-
-       ```xml
-       <dependencies>
-       <dependency>
-           <groupId>io.opentelemetry.instrumentation</groupId>
-           <artifactId>opentelemetry-logback-1.0</artifactId>
-           <version>1.9.2-alpha</version>
-           <scope>runtime</scope>
-       </dependency>
-       </dependencies>
-       ```
-
-   * Gradle projects  
-
-       ```
-       dependencies {
-       runtimeOnly("io.opentelemetry.instrumentation:opentelemetry-logback-1.0:1.9.2-alpha")
-       }
-       ```
-
-1. Update the **logback.xml** configuration file, typically stored in the **resources** directory, with `traceId`, `spanId`, `and sampled` keys. The following is an example configuration.
-
+        ```xml
+        <dependencies>
+            <dependency>
+                <groupId>io.opentelemetry.instrumentation</groupId>
+                <artifactId>opentelemetry-logback-mdc-1.0</artifactId>
+                <version>2.6.0-alpha</version>
+                <scope>runtime</scope>
+            </dependency>
+        </dependencies>
+        ```
+   * Gradle projects
+        ```gradle
+        dependencies {
+            runtimeOnly("io.opentelemetry.instrumentation:opentelemetry-logback-mdc-1.0:2.6.0-alpha")
+        }
+        ```
+1. Update the **logback.xml** configuration file, typically stored in the **resources** directory, with `traceId`, `spanId`, and `sampled` keys. The following is an example configuration.
     ```xml
     <?xml version="1.0" encoding="UTF-8" ?>
     <configuration>
@@ -104,3 +85,7 @@ It is very simple to configure **traceId** and **spanId** data injection into us
 
     </configuration>
     ```
+
+:::note
+For more details, refer to the [Logger MDC auto-instrumentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/release/v2.6.x/docs/logger-mdc-instrumentation.md).
+:::

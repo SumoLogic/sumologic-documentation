@@ -19,23 +19,23 @@ Once you set up the webhook connection, you'll have the option to use it in a�
 
 You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 
-1. Go to **Manage Data** > **Monitoring** > **Connections**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. On the Connections page click **Add**.
 1. Click **New Relic**.
 1. In the Create Connection dialog, enter the name of the connection.
 1. (Optional) Enter a **Description** for the connection.
-1. Enter the **URL** for the endpoint. See [Create an API Key for New Relic Webhook](#create-an-api-key-for-new-relic-webhook).
-  ```
-  https://insights-collector.newrelic.com/v1/accounts/ACCOUNT_ID/events
-  ```
-1. Under **Insert Key**, enter your API Key generated from New Relic Insights. See [Create an API Key for New Relic Webhook](#webhook-connection-for-new-relic).
+1. Enter the **URL** for the endpoint. See [Create an API Key for New Relic Webhook](#create-an-api-keyfor-new-relic-webhook).
+   ```
+   https://insights-collector.newrelic.com/v1/accounts/ACCOUNT_ID/events
+   ```
+1. Under **Insert Key**, enter your API Key generated from New Relic Insights. See [Create an API Key for New Relic Webhook](#create-an-api-keyfor-new-relic-webhook).
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. Customize your **Payload** to include any information you want to send from your scheduled search to New Relic. See [Send Events to New Relic using a Webhook](#send-events-to-new-relic-insights-using-a-webhook). For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](set-up-webhook-connections.md).
 1. Click **Save**.
 
 ## Create an API key for New Relic webhook
 
-For the **Endpoint** and **Insert Key **fields of the webhook, you need to generate an API Key through the New Relic Insights UI:
+For the **Endpoint** and **Insert Key** fields of the webhook, you need to generate an API Key through the New Relic Insights UI:
 
 1. In your New Relic Insights account, under **Manage Data**, click **API Keys**.
 1. Click the **Add** button next to Insert Key.

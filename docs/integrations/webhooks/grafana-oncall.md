@@ -44,7 +44,7 @@ Follow the steps to configure the Grafana OnCall webhook.
 6. Click **Create Webhook**.
 7. Verify Grafana OnCall alerts are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
-`_sourcecategory=webhook/grafanaoncall`
+`_sourceCategory=webhook/grafanaoncall`
 ```
 
 :::info

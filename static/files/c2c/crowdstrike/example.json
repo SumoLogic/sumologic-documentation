@@ -1,0 +1,20 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"CrowdStrike"
+      },
+      "config":{
+        "name":"CrowdStrike",
+        "description":"East field",
+        "domain":"api.crowdstrike.com",
+        "secretKey":"********",
+        "clientID":"123",
+        "fields":{
+          "_siemForward":false
+        },
+        "category":"eastTeam"
+      },
+      "sourceType":"Universal"
+    }
+  }

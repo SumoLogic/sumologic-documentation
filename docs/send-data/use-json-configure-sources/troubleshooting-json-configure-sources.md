@@ -25,7 +25,7 @@ If the JSON is not valid the Collector will fail to read the contents of the fi
 com.sumologic.scala.collector.auth.UpdateFailedException: * Could not synchronize blade, failed to read the content of the json file
 ```
 
- * To help verify the format of your JSON you can copy and paste the content into a JSON validation tool such as [jsonlint.com](https://support.sumologic.com/hc/en-us/articles/jsonlint.com). jsonlint.com will highlight any potential formatting errors such as missing commas, quotes, curly braces, brackets, etc.
+ * To help verify the format of your JSON, you can copy and paste the content into a JSON validation tool such as [jsonlint.com](https://jsonlint.com). jsonlint.com will highlight any potential formatting errors such as missing commas, quotes, curly braces, brackets, etc.
  * We recommend using JSON from of an existing Collector to get a valid JSON configuration of Sources. See [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for details.
 
 ## Valid Source configuration

@@ -12,10 +12,7 @@ Welcome to Content Sharing. We've provided this FAQ to answer your basic questio
 When you share something directly with a user (or to their role) they will receive an email notification that they can click on to guide them to the item in Sumo.
 
 * The object will also be available in their Library view.
-* They can also toggle to the **Recently Shared with Me** section in the **Recents** tab on the left-nav to see what has been recently shared.
-
-    ![image1.gif](/img/content-sharing/recent-shared.gif)
-
+* They can also look in **Recent** in the left-nav to see what has been recently shared.
 * The share dialog associated with the item will reflect who the item is shared with and what level of access they have.
 
 ## Can I delete someone else's alerts?
@@ -29,7 +26,7 @@ It is possible that you shared an item that is nested within a folder. The Libra
 ## Can shared dashboards always run with viewer's role search filter instead of the creator's role search filter?
 
 Yes, for an individual dashboard, when you share the dashboard you can choose to share it with the "Viewer’s data access level", so that
-viewers will see it with their own role search filter. For more information, see [Set the Data Access Level for a Dashboard](/docs/dashboards-classic/get-started/set-data-access-level-dashboard.md). In addition, it is possible to set a security policy that ensures that all new dashboards will run with the viewer’s role search filter when shared. For more information, see [Data Access Level for Shared Dashboards](../security/data-access-level-shared-dashboards.md). 
+viewers will see it with their own role search filter. For more information, see [Set the Data Access Level for a Dashboard](/docs/dashboards/set-data-access-level). In addition, it is possible to set a security policy that ensures that all new dashboards will run with the viewer’s role search filter when shared. For more information, see [Data Access Level for Shared Dashboards](../security/data-access-level-shared-dashboards.md). 
 
 ## Can I share a folder with someone?
 

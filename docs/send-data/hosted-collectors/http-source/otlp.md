@@ -18,12 +18,11 @@ As indicated [here](/docs/apm/traces/quickstart/#prerequisites), the following p
 |:--|:--|
 | Credits | Enterprise Operations and Enterprise Suite. Essentials get up to 5 GB a day. |
 
-
 ## Create an OTLP/HTTP Source
 
 To configure an OTLP/HTTP Source:
 
-1. In the Sumo Logic web interface, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **OTLP/HTTP**. <br/> <img src={useBaseUrl('img/send-data/OTLP-HTTP-source-icon.png')} alt="OTLP:HTTP source icon" width="100"/>
 1. Enter a **Name** for the Source. A description is optional. <br/> ![OTLP:HTTP basic configuration settings.png](/img/send-data/OTLP-HTTP-basic-configuration-settings.png)
@@ -33,7 +32,7 @@ To configure an OTLP/HTTP Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. Set any of the following under **Advanced Options for Logs**: <br/> ![OTLP advanced options part 1.png](/img/send-data/OTLP-advanced-options-part-1.png)
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
 1. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the OTLP/HTTP Source. <br/>  ![OTLP processing rules.png](/img/send-data/OTLP-processing-rules.png)
 1. When you are finished configuring the Source, click **Save**.
@@ -121,4 +120,45 @@ export OTEL_METRICS_EXPORTER=otlp
 export OTEL_TRACES_EXPORTER=otlp
 export OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
 export OTEL_EXPORTER_OTLP_ENDPOINT=<source_url>
+```
+
+## JSON schema
+
+### Configuration Object
+
+| Parameter | Type | Required | Default | Description | Example |
+|:---|:---|:---|:---|:---|:---|
+| `name` | String | Yes | `null` | Type a desired name of the source. The name must be unique. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| `automaticDateParsing` | Boolean | No | True | Determines if timestamp information is parsed or not. Type `true` to enable automatic parsing of dates (the default setting); type `false` to disable. If disabled, no timestamp information is parsed at all. | |
+| `multilineProcessingEnabled` | Boolean | Yes | False | Type true to enable; type false to disable. The default setting is true. Consider setting to false to avoid unnecessary processing if you are collecting single message per line files (for example, Linux system.log). If you're working with multiline messages (for example, log4J or exception stack traces), keep this setting enabled. | |
+| `useAutolineMatching` | Boolean | Yes | False | Type true to enable if you'd like message boundaries to be inferred automatically; type false to prevent message boundaries from being automatically inferred (equivalent to the Infer Boundaries option in the UI). The default setting is true. | |
+| `contentType` | String | No | False | Defined based on the Source you are creating. | |
+| `forceTimeZone` | Boolean | No | False | Type `true` to force the Source to use a specific time zone, otherwise type `false` to use the time zone found in the logs. The default setting is false. | |
+| `cutoffTimestamp` | Long | No | 0 (collects all data) | Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch. | |
+| `encoding` | String | No | UTF-8 | Defines the encoding form. Default is "UTF-8"; options include "UTF-16"; "UTF-16BE"; "UTF-16LE". | |
+| `messagePerRequest` | Boolean | Yes | | When set to `true`, only a single message will be sent for each HTTP request. To disable this feature, set to `false`. You need to specify the common parameter `multilineProcessingEnabled` as false when setting `messagePerRequest` to `true`. | |
+| `sourcetype` | String | Yes | | HTTP source | |
+
+### JSON example
+
+``` json
+{
+  "api.version":"v1",
+  "source":{
+    "name":"OTLP_HTTP_SOURCE",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":false,
+    "useAutolineMatching":false,
+    "contentType":"Otlp",
+    "forceTimeZone":false,
+    "filters":[],
+    "cutoffTimestamp":0,
+    "encoding":"UTF-8",
+    "fields":{
+      
+    },
+    "messagePerRequest":false,
+    "sourceType":"HTTP"
+  }
+}
 ```

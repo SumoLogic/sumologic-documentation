@@ -12,15 +12,70 @@ Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for
 
 Amazon EBS is recommended for data that must be quickly accessible and requires long-term persistence. EBS volumes are particularly well-suited for use as the primary storage for file systems, databases, or for any applications that require fine granular updates and access to raw, unformatted, block-level storage. Amazon EBS is well suited to both database-style applications that rely on random reads and writes, and to throughput-intensive applications that perform long, continuous reads and writes. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html).
 
-## Log and Metric types
+## Metric type
 * [CloudWatch Metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html)
-* [CloudTrail Logs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-with-cloudtrail.html)
 
+:::note
+For [CloudTrail log](https://docs.aws.amazon.com/ebs/latest/userguide/logging-ebs-apis-using-cloudtrail.html), Amazon EBS and Amazon EC2 are tightly integrated services. Most EBS-related events are captured and reflected as part of EC2 events, since EBS volumes are typically attached to EC2 instances for storage and compute operations. See the [Amazon EC2 app](https://help.sumologic.com/docs/integrations/amazon-aws/ec2-cloudwatch-metrics/#events) for EBS related captured events.
+:::
 
 ## Setup
-You can collect the logs and metrics for Sumo Logic's Amazon Elastic Block Store (Amazon EBS) integration by following the below steps.
+You can collect the metrics for Sumo Logic's Amazon Elastic Block Store (Amazon EBS) integration by following the below steps.
 
-### Configure metrics collection
-* Collect **CloudWatch Metrics** with namespace `AWS/EBS` using the [AWS Kinesis Firehose for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/EBS` metrics and dimensions, refer to [Amazon Elastic Block Store (Amazon EBS) CloudWatch metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html).
-### Configure logs collection
-* Collect [AWS CloudTrail Logs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-with-cloudtrail.html) using [AWS CloudTrail](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) source. Amazon EC2 and Amazon EBS are integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or AWS service in Amazon EC2 and Amazon EBS. CloudTrail captures all API calls for Amazon EC2 and Amazon EBS as events, including calls from the console and from code calls to the APIs. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for Amazon EC2 and Amazon EBS. Using the information collected by CloudTrail, you can determine the request that was made to Amazon EC2 and Amazon EBS, the IP address from which the request was made, who made the request, when it was made, and additional details.
+### Collect CloudWatch Metrics
+
+Sumo Logic supports collecting metrics using two source types:
+
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+
+* The namespace for **Amazon Elastic Block Store** Service is **AWS/EBS**.
+   * ​​​**Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account field”.
+
+## Installing the Elastic Block Store app  
+
+Now that you have set up a collection for **Amazon Elastic Block Store**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-elastic-block-store-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+
+import AppInstall from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall/>
+
+## Viewing the Elastic Block Store dashboards  
+
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
+
+:::note
+Most Amazon EBS metrics shown on the dashboard depend on the volume type and usage conditions. For more details, refer to [CloudWatch Metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html).
+:::
+
+### Overview
+
+The **Amazon EBS - Overview** dashboard offers a comprehensive view of the performance and utilization throughout the lifecycle of your EBS volumes. It allows you to monitor essential metrics such as volume activity, data throughput, and latency.
+
+Use this dashboard to:
+* Monitor EBS volume performance metrics like IOPS, throughput, and latency.
+* Track burst balance and queue depth to assess I/O efficiency.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-EBS-Overview.png')} alt="Elastic Block Store" style={{border: '1px solid gray'}} />
+
+### Performance Monitoring
+
+The **Amazon EBS - Performance** dashboard provides detail visibility into the performance and utilization of your EBS volumes, fast snapshot restore capabilities, and snapshot lifecycle. It enables monitoring of key metrics related to volume activity, latency.
+
+Use this dashboard to:
+* Monitor EBS volume performance metrics like latency, time spent on operations.
+* Track burst balance and queue depth to assess I/O efficiency.
+* Monitor status checks to detect degraded or impaired volumes and snapshot copy progress.
+* Track Fast Snapshot Restore readiness and available restore credits.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-EBS-Performance.png')} alt="Elastic Block Store" style={{border: '1px solid gray'}} />
+
+The **Amazon EBS - Throughput and IOPS** dashboard provides detail visibility into the Throughput and IOPS utilization of your EBS volumes, It enables monitoring of key metrics related to volume IOPS activity, data throughput.
+
+Use this dashboard to:
+* Monitor EBS volume performance metrics like IOPS, throughput.
+* Monitor status checks to detect degraded or impaired volumes.
+* Track data transfer activity to understand read/write patterns over time.
+
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-EBS-Throughput-and-IOPS.png')} alt="Elastic Block Store" style={{border: '1px solid gray'}} />

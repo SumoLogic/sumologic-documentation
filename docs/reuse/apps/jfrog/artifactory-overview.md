@@ -23,8 +23,8 @@
 
 **Cache Hit Ratio.** Displays information on the cache hit ratio in a table chart, including details on repo, accepted cache deploy, accepted cache downloads, and cache hit ratio for the last 24 hours.
 
-**Accepted Downloads by Repo. **Shows information on accepted downloads by repo including details on repo and count for the last 24 hours.
+**Accepted Downloads by Repo.** Shows information on accepted downloads by repo including details on repo and count for the last 24 hours.
 
-**Remote Download Size (GB). **Displays the remote download size in GBs as a single value chart for the last 24 hours.
+**Remote Download Size (GB).** Displays the remote download size in GBs as a single value chart for the last 24 hours.
 
-**Remote Incomplete Downloads. **Displays the remote incomplete downloads in GB as a single value chart for the last 24 hours.
+**Remote Incomplete Downloads.** Displays the remote incomplete downloads in GB as a single value chart for the last 24 hours.

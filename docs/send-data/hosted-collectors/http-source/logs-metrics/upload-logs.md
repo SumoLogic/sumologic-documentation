@@ -49,11 +49,11 @@ Overridden metadata field values are not returned with [Search Autocomplete](/do
 
 | Setting | Header Name | Header Value |
 |:--|:--|:--|
-| Compressed data | `Content-Encoding` | Values can be either `gzip` or `deflate`<br/>Required if you are uploading compressed data. |
+| Compressed data | `Content-Encoding` | Values can be `zstd`, `gzip`, or `deflate`.<br/>Required if you are uploading compressed data. |
 | Custom Source Name | `X-Sumo-Name` | Desired source name.<br/>Useful if you want to override the source name configured for the source. |
 | Custom Source Host | `X-Sumo-Host` | Desired host name.<br/>Useful if you want to override the source host configured for the source. |
 | Custom Source Category | `X-Sumo-Category` | Desired source category.<br/>Useful if you want to override the source category configured for the source. |
-| Fields as custom metadata | `X-Sumo-Fields` | [Fields](/docs/manage/fields.md) need to be in a comma separated list of key-value pairs.  |
+| Fields as custom metadata | `X-Sumo-Fields` | [Fields](/docs/manage/fields) need to be in a comma separated list of key-value pairs.  |
 
 ## Command Line Examples
 

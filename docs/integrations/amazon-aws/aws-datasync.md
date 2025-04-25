@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS DataSync is an online data movement and discovery service that simplifies data migration and helps you quickly, easily, and securely transfer your file or object data to, from, and between AWS storage services. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html#accessing-metrics)
 * [CloudWatch Logs](https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html#cloudwatchlogs)
 * [CloudTrail Logs](https://docs.aws.amazon.com/datasync/latest/userguide/logging-using-cloudtrail.html)

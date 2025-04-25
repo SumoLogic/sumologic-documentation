@@ -1,66 +1,69 @@
 ---
 id: create-real-time-alert
-title: Create a Real-Time Alert
-sidebar_label: Create a Real-Time Alert
-description: Set up Real-Time Alerts to learn of error conditions right when they occur.
+title: Create a Scheduled Search Real-Time Alert
+description: Real-time alerts notify you of error conditions right when they occur.
 ---
 
-Real-Time Alerts are scheduled searches that run nearly continuously. That means that you're informed in real time when error conditions exist.
-
-When an alert condition is satisfied Sumo Logic triggers the selected alert type. Sumo Logic examines ingested data in a rolling window using the Time Range you define. Any time a new result is found, another email is sent.
-
-## When to Use
-
-Only use real-time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See
-how to [troubleshoot timestamp discrepancies](/docs/send-data/collector-faq#troubleshooting-time-discrepancies).
-
-Real-Time Alerts are not duplicated, which means that if a specific raw log message has triggered an alert once already, that same log message will not trigger an alert a second time.
-
-For example, if **Message X** caused an alert to be sent at **Time T,** and Sumo Logic detects **Message X** again at **Time T+1**, Sumo Logic does not send a second alert at **Time T+1**. But if Sumo Logic detects **Message Y** at **Time T+1**, a new alert is sent, because the root cause is different.
-
-:::important
-If the time zone of messages is set incorrectly, those logs won't be picked up by Real-Time Alerts.
+:::warning Solution Deprecated
+The ability to create new real-time alert scheduled searches has been deprecated. While you can no longer create new real-time alerts, existing real-time alerts will continue to function as before. [Learn more](/docs/alerts/scheduled-searches/deprecation).
 :::
 
-## Configure a Real-Time Alert
+Real-time alerts are scheduled searches that run nearly continuously. This means that you're informed in real time when error conditions exist.
 
-To set up a Real-Time Alert:
+When an alert condition is satisfied, Sumo Logic triggers the selected alert type and examines ingested data in a rolling window using the time range you define. When a new result is found, you'll receive an email.
 
-1. [Save a search](/docs/search/get-started-with-search/search-basics/save-search). 
-1. Click **Schedule this search**.<br/> ![RealTimeAlert](/img/alerts/save-real-time.png)
-1. **Run Frequency**. Select **Real Time**.
-1. For all other configuration options, see [Schedule a Search](schedule-search.md). 
-1. Click **Save**. 
+This document describes how to manage existing real-time alert scheduled searches. Although creating new real-time alerts is no longer supported, you can still view, edit, and delete existing ones.
+
+## When to use
+
+Only use real-time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). Learn about
+troubleshooting timestamp discrepancies [here](/docs/send-data/collector-faq#troubleshooting-time-discrepancies).
+
+Real-time alerts are not duplicated, which means that if a specific raw log message has triggered an alert once already, that same log message will not trigger an alert a second time.
+
+For example, if **Message X** caused an alert to be sent at **Time T**, and Sumo Logic detects **Message X** again at **Time T+1**, Sumo Logic does not send a second alert at **Time T+1**. But if Sumo Logic detects **Message Y** at **Time T+1**, a new alert is sent, because the root cause is different.
+
+:::important
+If the time zone of messages is set incorrectly, those logs won't be picked up by real-time alerts.
+:::
+
 
 ## Limitations
 
-* The time range of a Real-Time Alert must be between 5 and 15 minutes. 
+* The time range of a real-time alerts must be between 5 and 15 minutes. 
 * Searching by receipt time is not supported.
-* If your search query result is a subset of your previous run's result, a Real-Time Alert will not trigger. It will trigger only when there are new results compared to the previous run.
-* A maximum of 120 emails are sent per day per Real-Time Alert.
-* Aggregate real-time scheduled searches evaluate the first 1,000 results per search. For Example, if the scheduled search is supposed to return more than 1,000 results, reduce the scope of the search.
-* Non-Aggregate real-time scheduled searches evaluate the first 100 results per search. For Example, if the scheduled search is supposed to return more than 100 results, either convert it to aggregate scheduled search or reduce the scope of the search.
-* The [`_dataTier`](/docs/manage/partitions-data-tiers/data-tiers) search modifier is not supported in Real-Time Alert searches.
+* If your search query result is a subset of your previous run's result, a real-time alert will not trigger. It will trigger only when there are new results compared to the previous run.
+* A maximum of 120 emails are sent per day from real-time alerts.
+* Aggregate real-time scheduled searches evaluate the first 1,000 results per search. For example, if the scheduled search is supposed to return more than 1,000 results, reduce the scope of the search.
+* Non-aggregate real-time scheduled searches evaluate the first 100 results per search. For example, if the scheduled search is supposed to return more than 100 results, either convert it to aggregate scheduled search or reduce the scope of the search.
+* The [`_dataTier`](/docs/manage/partitions/data-tiers) search modifier is not supported in real-time alert searches.
 
-### Notification Results
+### Operator limitations
 
-The results from your search will vary based on the type of alert selected. The following table shows the differences. The above limitations still apply to this logic:
+* Some queries cannot be used in real-time alerts searches. Other operators can be used in real-time search, but in the search, they must be included after the first "group-by" phrase:
 
-| Alert Type | Results in Notification |
-| :-- | :-- |
-| [Webhook](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) | If the **Send a separate alert for each search result checkbox** is selected (in step 6), only new results from subsequent searches are sent in the alert payload. Otherwise, all results are sent. |
-| [Save to Index](save-to-index.md) | All results are saved from an **aggregate** query.<br/>Only new results from subsequent searches are saved from a **non-aggregate** query. |
-| [Save to Lookup](save-to-lookup.md) | All results are saved. |
-
-<!--If your query result is always a subset of your previous result, we will not send out notification any more.-->
-
-
-## Operator limitations
-
-1. Some queries can not be used in Real-Time Alert searches. Other operators can be used in Real-Time search, but in the search, they must be included after the first "group-by" phrase:
-
- | Not supported for Real-Time Alerts | Must be added after a "group by" phrase |
+ | Not supported for real-time alerts | Must be added after a "group by" phrase |
  | :-- | :-- |
- | <ul><li>Count_frequent</li><li>Details</li><li>First, Last - instead use the withtime option, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).</li><li>LogReduce</li><li>Now()</li><li>Outlier will omit the first N (window size) data points in results because those data points are used in the training phase.</li><li>Join</li><li>Parse using</li><li>queryStartTime()</li><li>queryEndTime()</li><li>Save</li><li>Sessionize</li><li>Subquery</li><li>Threat Intel</li><li>Trace</li><li>Timeslice greater than 1 day</li><li>Transactionize</li></ul> | <ul><li>Accum</li><li>Backshift</li><li>Diff</li><li>Join</li><li>Limit</li><li>RollingStd</li><li>Smooth</li><li>Sort</li><li>Top</li><li>Total</li><li>Transaction By Flow</li><li>Compare With can be used when your query's aggregate operation is grouped by a [timeslice](/docs/search/search-query-language/search-operators/timeslice). See number 2, below, for details.</li></ul> |
+ | <ul><li>Count_frequent</li><li>Details</li><li>First, Last - instead use the withtime option, see [`most_recent` and `least_recent`](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).</li><li>LogReduce</li><li>Now()</li><li>Outlier will omit the first N (window size) data points in results because those data points are used in the training phase.</li><li>Join</li><li>Parse using</li><li>queryStartTime()</li><li>queryEndTime()</li><li>Save</li><li>Sessionize</li><li>Subquery</li><li>Threat Intel</li><li>Trace</li><li>Timeslice greater than 1 day</li><li>Transactionize</li></ul> | <ul><li>Accum</li><li>Backshift</li><li>Diff</li><li>Join</li><li>Limit</li><li>RollingStd</li><li>Smooth</li><li>Sort</li><li>Top</li><li>Total</li><li>Transaction By Flow</li><li>Compare With can be used when your query's aggregate operation is grouped by a [`timeslice`](/docs/search/search-query-language/search-operators/timeslice).</li></ul> |
 
-2. Real time queries using [**time compare**](/docs/search/time-compare) need to have at least three timeslices within its time range. For example, if the time range is 10 minutes, your timeslices need to be no longer than 3 minutes so that there are at least three of them.
+* Real-time queries using [Time Compare](/docs/search/time-compare) need to have at least three timeslices within its time range. For example, if the time range is 10 minutes, your timeslices need to be no longer than 3 minutes so that there are at least three of them.
+
+## Viewing existing real-time alerts
+
+- Navigate to the **Alerts** section in your Sumo Logic dashboard.
+- Use the search functionality to locate existing real-time alerts.
+
+## Editing existing real-time alerts
+
+- Click on the real-time alert you wish to edit.
+- Make necessary changes to the alert parameters (such as conditions or notification settings).
+- Save your changes to update the alert.
+
+## Deleting existing real-time alerts
+
+- Select the real-time alert you want to delete.
+- Click the **Delete** button and confirm the deletion.
+
+## Alternatives to real-time alerts
+
+Since the creation of new real-time alerts is deprecated, we recommend using monitors to achieve similar functionality.

@@ -41,7 +41,7 @@ Both methods require a YAML file with the template. You can create a file with t
 
 1. Options can remain the default, click **Next** again. Review for mistakes then click **Create**.
 
-1. Go to **Services > [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties > Events > Add Notification**. Enter a **Name** for the event notification. In the **Events** section select, **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic that AWS created in step 5 from the dropdown. The name format is `SumoSNSTopic\<AWS::StackNam\>`. Click **Save**.
+1. Go to **Services > [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties > Events > Add Notification**. Enter a **Name** for the event notification. In the **Events** section select, **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic that AWS created in step 5 from the dropdown. The name format is `SumoSNSTopic-<AWS::StackName>`. Click **Save**.
 
 ## Use AWS Command Line Interface (CLI)
 
@@ -116,7 +116,7 @@ Resources:
 
 You can grant Sumo Logic access to your AWS Product with an IAM Role using CloudFormation. You can use the [AWS Command Line Interface](https://aws.amazon.com/cli/) (CLI) or [create a stack on the AWS CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html).
 
-1. Both methods require a YAML file with the CloudFormation template. You can create a file with the provided [YAML template](#yaml-template-to-set-up-an-iam-role) or download a generated template from the Sumo interface when creating your Source by clicking the **Generate role-based access template** button. The button will only become available after you input the bucket name.
+1. Both methods require a YAML file with the CloudFormation template. You can create a file with the provided [YAML template](#yaml-template-toset-up-an-iam-role) or download a generated template from the Sumo interface when creating your Source by clicking the **Generate role-based access template** button. The button will only become available after you input the bucket name.
 
 ![iam role generate cloudformation](/img/send-data/iam-role-generate-cloudformation-template-in-UI.png)
 

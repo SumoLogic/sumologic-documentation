@@ -44,7 +44,7 @@ Configure the webhook integration in ConfigCat to send events to the Sumo Logic 
 Follow the steps to configure the ConfigCat webhook.
 
 1. Sign in to the [ConfigCat account](https://app.configcat.com/auth/signup).
-2. Expand your product by clicking the three dots on the right of the product name.
+2. Expand your product by clicking the three-dot kebab menu on the right of the product name.
 3. Under this go to **Webhooks**.
 4. Click **Add Webhook**. The webhook form appears.
 5. Enter webhook form data as follows:
@@ -67,11 +67,10 @@ Follow the steps to configure the ConfigCat webhook.
 6. Click **Save Changes**.
 7. Verify ConfigCat events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
-`_sourcecategory=webhook/configcat`
+`_sourceCategory=webhook/configcat`
 ```
 
 :::info
 - For detailed information about webhook creation, refer to the [ConfigCat Documentation](https://configcat.com/docs/advanced/notifications-webhooks/).
 - For support, [contact ConfigCat](https://configcat.com/support/).
 :::
-

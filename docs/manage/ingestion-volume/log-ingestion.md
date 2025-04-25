@@ -5,6 +5,7 @@ description: When designing your deployment, consider how logs will be ingested 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 The rate of data creation is rarely constant. Whether your organization sees seasonal spikes, or if a new feature or product line produces huge increases in activity, Sumo Logic meets the needs of your organization, known or unknown, while maintaining the search performance you rely on.
 
@@ -16,7 +17,7 @@ When designing your deployment, it’s important to consider how logs will be in
 
 ## Account caps for storage and ingestion
 
-Sumo Logic imposes account caps on uploads to better protect your account from using On-Demand Capacity.
+Sumo Logic imposes account caps on uploads to better protect your account from exceeding data limits.
 
 * Storage usage is calculated by taking the average of your total storage usage in the current billing cycle. For example, if your storage limit is 500TB, you will be charged for extra on-demand storage only if the average of your total storage for the month exceeds 500TB at the end of your billing cycle, or if there is an excessive spike in usage (see the next bullet item).
 * Storage usage can exceed between 4 times to 10 times the daily maximum (depending on account size). Even if the cap is exceeded, log data is kept safely at the Collector level until quota is made available, at which time the data is ingested. 
@@ -36,11 +37,26 @@ Compressed files are decompressed before they are ingested, so they are ingested
 Part of managing spikes in activity is properly slowing the rate of ingestion while the demand is at its peak, known as throttling. (This section pertains to logs. For metrics, see [Metrics Throttling](../../metrics/manage-metric-volume/metric-throttling.md)).
 
 :::note
-All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions-data-tiers).
+All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers).
 :::
+
+:::sumo Micro Lesson
 
 Watch this micro lesson to learn more about throttling.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/gkx3mn2ux6?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Throttling Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/dlKy9DyS0W8?rel=0"
      width="854px"
      height="480px"
@@ -48,11 +64,12 @@ Watch this micro lesson to learn more about throttling.
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
 
-import Iframe from 'react-iframe';
+:::
 
 Throttling is enabled across all Collectors in an account. Sumo Logic measures the amount of data already committed to uploading against the number of previous requests and available resources (quota) in an account. In other words, Sumo Logic compares the current ingestion with the rate of ingest using a per minute rate that can be derived from the contracted Daily GB/day rate.
 
@@ -60,7 +77,7 @@ Throttling is enabled across all Collectors in an account. Sumo Logic measures t
 Throttling is not related to the monthly quota for an account. An account can be throttled when it exceeds the multiplier of the per-minute ingestion rate while being well within the monthly ingestion quota.
 :::
 
-Throttling is in place to protect both our customers and Sumo Logic from sudden and unexpectedly large increases in volume, which could result in your account using On-Demand Capacity, as well as ingest performance problems on the service side.
+Throttling is in place to protect both our customers and Sumo Logic from sudden and unexpectedly large increases in volume, as well as ingest performance problems on the service side.
 
 The multiplier for the per day average ingestion total varies based on the account size. 
 
@@ -89,7 +106,7 @@ You can use the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-i
 
 ## How can I be alerted when throttling takes place?
 
-If the audit index is enabled you can set up a scheduled search to send an alert when throttling occurs. For more information, see [Audit Index](../security/audit-index.md).  
+If the audit index is enabled you can set up a scheduled search to send an alert when throttling occurs. For more information, see [Audit Index](/docs/manage/security/audit-indexes/audit-index).  
 
 ## Ingestion with file changes
 

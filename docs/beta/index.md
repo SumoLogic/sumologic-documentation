@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Learn about our Beta features that are coming soon to general availability. To participate, contact your Sumo account executive.
 
-Betas are different than our generally available services in that they have additional terms and conditions for participation. You can [opt-in to beta terms and conditions](/docs/manage/manage-subscription/beta-opt-in.md), so that you only need to agree to the terms once.
+Betas are different than our generally available services in that they have additional terms and conditions for participation. You can [opt-in to beta terms and conditions](/docs/manage/manage-subscription/beta-opt-in), so that you only need to agree to the terms once.
 
 * We may make available to you a Preview, Limited Release, Alpha, Beta or other pre-release version of the service, applications, or APIs for non-production use (“Beta”).
 * Betas may have limited features, functions, indexing capacity, storage, data security, data continuity, data retention or other limitations as determined by Sumo Logic.

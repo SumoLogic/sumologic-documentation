@@ -6,6 +6,7 @@ description: Add an AWS CloudTrail Source to upload messages to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/send-data/cloudtrail-source.png')} alt="Thumbnail icon" width="50"/>
 
@@ -15,12 +16,21 @@ AWS CloudTrail records API calls made to AWS. This includes calls made using the
 You need to know where your CloudTrail log files are stored so you can provide the path to the AWS CloudTrail Source. Refer to AWS Documentation for [finding your CloudTrail log files](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html).
 :::
 
+:::sumo Tutorial
 
-import Iframe from 'react-iframe';
+<Iframe url="https://fast.wistia.net/embed/iframe/inopluxjef?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Set up an AWS CloudTrail Source Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
-:::sumo Micro Lesson
-Tutorial: Set up an AWS CloudTrail Source.
-
+<!-- old
 <Iframe url="https://www.youtube.com/embed/SQMzez_9PiU?rel=0"
         width="854px"
         height="480px"
@@ -28,9 +38,10 @@ Tutorial: Set up an AWS CloudTrail Source.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
@@ -40,21 +51,25 @@ Tutorial: Set up an AWS CloudTrail Source.
 1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html) in your AWS account. This will create an S3 bucket for you if you so choose.
 1. [Grant Sumo Logic access](grant-access-aws-product.md) to an Amazon S3 bucket created or used above.
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Select the hosted Collector for which you want to add the Source, and click **Add Source**. To create a new hosted collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. Select **AWS CloudTrail**.
-1. The page refreshes.
-    ![cloudtrail-source.png](/img/cse/cloudtrail-source.png)
+1. The page refreshes. <br/> ![cloudtrail-source.png](/img/cse/cloudtrail-source.png)
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **S3 Region**. Choose the AWS Region the S3 bucket resides in.
 1. **Bucket Name**. The name of your organizations S3 bucket as it appears in AWS.
 1. **Path Expression**. The path expression of the log file(s) in S3, can contain wildcards to include multiple log files.
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
-1. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in [Step 1](#step-1-enable-aws-cloudtrail-logs))  is a prerequisite for role-based access
+1. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in step 1)  is a prerequisite for role-based access
     * **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.   
         ![role-arn.png](/img/cse/role-arn.png)
     * **Key access**. Enter the Access Key ID and Secret Access Key. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+1. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
+10. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+11. **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+12. **Timestamp Format.** Select **Automatically detect the format**.
+13. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 1. Click **SAVE**.
 1. **Optional:** Install the Sumo Logic App for AWS CloudTrail.
 
@@ -64,40 +79,136 @@ CloudTrail log objects are generated by AWS as a single JSON **Records** arra
 
 The following is an example of an AWS CloudTrail file object:
 
-```
-{"Records":[{"eventVersion":"1.03","userIdentity":{"type":"Root","principalId":"XXXXXXXXXX","arn":
-"arn:aws:iam::XXXXXXXXXX:root","accountId":"XXXXXXXXXX","accessKeyId": "XXXXXXXXXXXXXXXX","sessionContext":
-{"attributes":{"mfaAuthenticated":"false", "creationDate":"2016-04-01T16:09:43Z"}}}, "eventTime":
-"2016-04-01T16:19:26Z","eventSource":"s3.amazonaws.com","eventName":"GetBucketLocation","awsRegion":
-"us-west-2","sourceIPAddress":" 192.168.1.1","userAgent":"[S3Console/0.4]","requestParameters":
-{"bucketName":"example"},"responseElements":null,"requestID":"DE61373E09329981","eventID":
-"d4877d6c-4bf2-4a46-82d5-c8d710905138","eventType":"AwsApiCall","recipientAccountId":"XXXXXXXXXX"},
-{"eventVersion": "1.03","userIdentity":"type":"Root","principalId":"XXXXXXXXXX","arn":
-"arn:aws:iam::XXXXXXXXXX:root","accountId": "XXXXXXXXXX","accessKeyId":"XXXXXXXXXXXXXXXX","sessionContext":
-{"attributes":{"mfaAuthenticated":"false", "creationDate":"2016-04-01T16:09:43Z"}}},"eventTime":
-"2016-04-01T16:19:26Z","eventSource":"s3.amazonaws.com", "eventName":"GetBucketLocation","awsRegion":
-"us-west-2","sourceIPAddress":" 192.168.1.1","userAgent": "[S3Console/0.4]","requestParameters":
-{"bucketName":"example"},"responseElements":null,"requestID": "F1A6B08803D73C5A","eventID":
-"2b4d6eea-ecb8-4853-a1d2-f0b6b931d5bf","eventType":"AwsApiCall","recipientAccountId":
-"XXXXXXXXXX"}, {"eventVersion":"1.04","userIdentity":"type":"Root","principalId":"XXXXXXXXXX","arn":
-"arn:aws:iam::XXXXXXXXXX:root","accountId":"XXXXXXXXXX","accessKeyId":"XXXXXXXXXXXXXXXX","sessionContext":
-{"attributes":{"mfaAuthenticated":"false","creationDate":"2016-04-01T16:09:43Z"}}},"eventTime":
-"2016-04-01T16:22:11Z","eventSource":"cloudtrail.amazonaws.com","eventName":"DescribeTrails","awsRegion":
-"us-west-2","sourceIPAddress":"10.1.1.1","userAgent":"console.amazonaws.com","requestParameters":
-{"trailNameList":[]},"responseElements":null,"requestID":"e36e19ff-f825-11e5-9015-0336c0231e57", "eventID":
-"9b5a6b39-0415-4c88-b7f1-698161bf028b","eventType":"AwsApiCall","recipientAccountId":
-"XXXXXXXXXX"},{"eventVersion": "1.04","userIdentity":"type":"Root","principalId":"XXXXXXXXXX",
-"arn":"arn:aws:iam::XXXXXXXXXX:root","accountId": "XXXXXXXXXX","accessKeyId":"XXXXXXXXXXXXXXXX",
-"sessionContext":{"attributes":{"mfaAuthenticated":"false", "creationDate":"2016-04-01T16:09:43Z"}}},
-"eventTime":"2016-04-01T16:22:34Z","eventSource":"cloudtrail.amazonaws.com", "eventName":"DescribeTrails",
-"awsRegion":"us-west-2","sourceIPAddress":"10.1.1.1","userAgent":"console.amazonaws.com", "requestParameters":
-{"trailNameList":[]},"responseElements":null,"requestID": "f0c79c48-f825-11e5-933d-65f8283355b7", "eventID":
-"2f9837ef-f727-45d7-a217-2974d27cb998","eventType": "AwsApiCall","recipientAccountId":"XXXXXXXXXX"}}
+```json
+{
+    "Records": [
+        {
+            "eventVersion": "1.03",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "XXXXXXXXXX",
+                "arn": "arn:aws:iam::XXXXXXXXXX:root",
+                "accountId": "XXXXXXXXXX",
+                "accessKeyId": "XXXXXXXXXXXXXXXX",
+                "sessionContext": {
+                    "attributes": {
+                        "mfaAuthenticated": "false",
+                        "creationDate": "2016-04-01T16:09:43Z"
+                    }
+                }
+            },
+            "eventTime": "2016-04-01T16:19:26Z",
+            "eventSource": "s3.amazonaws.com",
+            "eventName": "GetBucketLocation",
+            "awsRegion": "us-west-2",
+            "sourceIPAddress": " 192.168.1.1",
+            "userAgent": "[S3Console/0.4]",
+            "requestParameters": {
+                "bucketName": "example"
+            },
+            "responseElements": null,
+            "requestID": "DE61373E09329981",
+            "eventID": "d4877d6c-4bf2-4a46-82d5-c8d710905138",
+            "eventType": "AwsApiCall",
+            "recipientAccountId": "XXXXXXXXXX"
+        },
+        {
+            "eventVersion": "1.03",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "XXXXXXXXXX",
+                "arn": "arn:aws:iam::XXXXXXXXXX:root",
+                "accountId": "XXXXXXXXXX",
+                "accessKeyId": "XXXXXXXXXXXXXXXX",
+                "sessionContext": {
+                    "attributes": {
+                        "mfaAuthenticated": "false",
+                        "creationDate": "2016-04-01T16:09:43Z"
+                    }
+                }
+            },
+            "eventTime": "2016-04-01T16:19:26Z",
+            "eventSource": "s3.amazonaws.com",
+            "eventName": "GetBucketLocation",
+            "awsRegion": "us-west-2",
+            "sourceIPAddress": " 192.168.1.1",
+            "userAgent": "[S3Console/0.4]",
+            "requestParameters": {
+                "bucketName": "example"
+            },
+            "responseElements": null,
+            "requestID": "F1A6B08803D73C5A",
+            "eventID": "2b4d6eea-ecb8-4853-a1d2-f0b6b931d5bf",
+            "eventType": "AwsApiCall",
+            "recipientAccountId": "XXXXXXXXXX"
+        },
+        {
+            "eventVersion": "1.04",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "XXXXXXXXXX",
+                "arn": "arn:aws:iam::XXXXXXXXXX:root",
+                "accountId": "XXXXXXXXXX",
+                "accessKeyId": "XXXXXXXXXXXXXXXX",
+                "sessionContext": {
+                    "attributes": {
+                        "mfaAuthenticated": "false",
+                        "creationDate": "2016-04-01T16:09:43Z"
+                    }
+                }
+            },
+            "eventTime": "2016-04-01T16:22:11Z",
+            "eventSource": "cloudtrail.amazonaws.com",
+            "eventName": "DescribeTrails",
+            "awsRegion": "us-west-2",
+            "sourceIPAddress": "10.1.1.1",
+            "userAgent": "console.amazonaws.com",
+            "requestParameters": {
+                "trailNameList": []
+            },
+            "responseElements": null,
+            "requestID": "e36e19ff-f825-11e5-9015-0336c0231e57",
+            "eventID": "9b5a6b39-0415-4c88-b7f1-698161bf028b",
+            "eventType": "AwsApiCall",
+            "recipientAccountId": "XXXXXXXXXX"
+        },
+        {
+            "eventVersion": "1.04",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "XXXXXXXXXX",
+                "arn": "arn:aws:iam::XXXXXXXXXX:root",
+                "accountId": "XXXXXXXXXX",
+                "accessKeyId": "XXXXXXXXXXXXXXXX",
+                "sessionContext": {
+                    "attributes": {
+                        "mfaAuthenticated": "false",
+                        "creationDate": "2016-04-01T16:09:43Z"
+                    }
+                }
+            },
+            "eventTime": "2016-04-01T16:22:34Z",
+            "eventSource": "cloudtrail.amazonaws.com",
+            "eventName": "DescribeTrails",
+            "awsRegion": "us-west-2",
+            "sourceIPAddress": "10.1.1.1",
+            "userAgent": "console.amazonaws.com",
+            "requestParameters": {
+                "trailNameList": []
+            },
+            "responseElements": null,
+            "requestID": "f0c79c48-f825-11e5-933d-65f8283355b7",
+            "eventID": "2f9837ef-f727-45d7-a217-2974d27cb998",
+            "eventType": "AwsApiCall",
+            "recipientAccountId": "XXXXXXXXXX"
+        }
+    ]
+}
 ```
 
 CloudTrail events as seen in Sumo Logic:
 
-![coudtrail_events](/img/send-data/coudtrail_events.png)
+![cloudtrail_events](/img/send-data/cloudtrail_events.png)
 
 ## AWS Sources
 

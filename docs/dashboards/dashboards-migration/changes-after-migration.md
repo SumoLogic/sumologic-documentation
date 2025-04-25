@@ -28,7 +28,7 @@ This table shows the complete list of features that are changed after the implem
 | Metrics panel (Line) | <ul><li>Line width</li> <li>Axis settings</li> </ul> | <ul> <li>Chart stepping</li> </ul> |
 | Metrics panel (Area) | <ul> <li>Line width</li> <li>Chart stacking</li> <li>Axis settings</li> </ul> |
 | Metrics panel (Single Value) | <ul> <li>Statistic Type</li> <li>Label</li> <li>Show/hide value</li>  <li>No data behavior</li> <li>Thresholds</li> <li>Show color as: Text</li> </ul> | <ul><li>Rounding</li> <li>Show color as: Background</li> </ul> |
-| Metrics panel (Single Value (Gauge) | <ul><li>Statistic Type</li> <li>Label</li>  <li>Show/hide value</li>  <li>No data behavior</li> <li>Thresholds</li> <li>Gauge range settings</li> </ul> |
+| Metrics panel (Single Value (Gauge)) | <ul><li>Statistic Type</li> <li>Label</li>  <li>Show/hide value</li>  <li>No data behavior</li> <li>Thresholds</li> <li>Gauge range settings</li> </ul> |
 | Metrics panel (Single Value (Sparkline) | <ul> <li>Statistic Type</li> <li>Label</li>  <li>Show/hide value</li>  <li>No data behavior</li> <li>Thresholds</li> <li>Show color as: Text</li> </ul>| <ul><li>Rounding</li> <li>Show color as: Background</li> </ul>
 
 ## Color mapping
@@ -37,4 +37,4 @@ Dashboards (Classic) had 6 color schemes, while Dashboards have 11 color schemes
 
 With Dashboards (Classic), you could choose chart colors while setting it up. With Dashboards, you cannot choose your colors upfront, but you can [modify your color palette afterwards](/docs/dashboards/panels/modify-chart/#modifydisplay-settings).
 
-<img src={useBaseUrl('img/dashboards-new/color-mapping.png')} alt="icon" width="800"/>
+<img src={useBaseUrl('img/dashboards/color-mapping.png')} alt="icon" width="800"/>

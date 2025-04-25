@@ -5,7 +5,7 @@ sidebar_label: Run a Search from an Alert Email
 description: You can run a search directly from an Alert Email.
 ---
 
-When you receive an email created by an [Email Alert](create-email-alert.md)  in a Scheduled Search, only the first 25 results are displayed. (We don't want to flood your email with hundreds of thousands of search results.)
+When you receive an email created by an [Email Alert](create-email-alert.md)  in a Scheduled Search, only the first 25 results are displayed. (We do not want to flood your email with hundreds of thousands of search results.)
 
 **Do either of the following:**
 

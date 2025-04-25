@@ -13,26 +13,22 @@ The Enterprise Search Audit App provides immediate visibility into your account'
 
 Before you can use the Enterprise Search Audit App, an administrator must first enable the feature. For more information, see Enable and Manage the Search Audit Index.
 
+## Installing the Enterprise Search Audit app
 
-## Installing the Enterprise Search Audit App
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-Your administrator must enable Search Audit from Administration > Security > Policies before you can install this app.
+<AppInstallNoDataSourceV2/>
 
-To install the app:
-1. From App Catalog, search for the Enterprise Search Audit app.
-2. Click Enterprise Search Audit.
-3. Click Add to Library, this will open a window. Within the window click on Advanced and choose a location to install the app.
+## Viewing Enterprise Search Audit App dashboards
 
-
-1. Choose a location for Enterprise Search Audit in your Personal folder.
-2. Click Add to Library. A dialog will confirm the app is installed successfully.
-
-
-## Enterprise Search Audit App Dashboards
 This page has information about the pre-built dashboards for the Enterprise Search Audit App and a description of each of the app dashboards.
 
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Enterprise Search Audit - Search Overview
+
 The **Enterprise Search Audit - Search Overview** dashboard provides a high-level overview of search usage within your account. The panels also display current search usage in terms of the total number of queries, types of queries, and other query characteristics run by users.
 
 Use this dashboard to:
@@ -43,6 +39,7 @@ Use this dashboard to:
 
 
 ### Enterprise Search Audit - Data Tier Usage Over Time
+
 The Enterprise Search Audit - Data Tier Usage Over Time dashboard provides detailed insights into search usage by analytics tier. It displays the total number of searches and the types of queries run by users.
 
 Use this dashboard to:
@@ -54,6 +51,7 @@ Use this dashboard to:
 
 
 ### Enterprise Search Audit - User Insights
+
 The Enterprise Search Audit - User Insights dashboard provides a high-level view of your account's key search users. The dashboard panels provide information about top users' search usage in terms of search query count, data scanned and retrieved by tiers.
 
 Use this dashboard to:
@@ -65,6 +63,7 @@ Use this dashboard to:
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-User-Insights.png')} alt="Enterprise Search Audit - User Insights" />
 
 ### Enterprise Search Audit - Commonly Referenced Data Sources
+
 The Enterprise Search Audit - Commonly Referenced Data Sources dashboard provides insights into the key or most popular data sources and metadata referenced in users’ searches. The dashboard helps you understand what your users most commonly search for in your organization.
 
 Use this dashboard to:
@@ -76,6 +75,7 @@ Use this dashboard to:
 
 
 ### Enterprise Search Audit - Queries Characteristics and Opportunities to Improve
+
 The Enterprise Search Audit - Queries Characteristics and Opportunities to Improve dashboard provides information about which of your queries take and don’t take advantage of important optimization techniques and metadata to improve efficiency.
 
 Use this dashboard to:
@@ -85,3 +85,15 @@ To identify queries that span large time periods and are likely to be performanc
 * Identify the searches that do not apply any optimization techniques and could benefit from optimization.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Queries-Characteristics-and-Opportunities-to-Improve.png')} alt="Enterprise Search Audit - Queries Characteristics and Opportunities to Improve" />
+
+## Upgrade/Downgrade the Enterprise Search Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Enterprise Search Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -11,34 +11,34 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Cisco Umbrella provides analytics and visibility into DNS, Proxy, and Admin activity. It gives insights into Geolocation of traffic sources, blocked clients, top categories, and more. It also analyzes traffic passing through Umbrella SWG and selective proxy, and provides information on client requests, malware, AV detections, and traffic summary. The Admin Activity dashboard provides snapshots of changes made in Umbrella's settings.
 
-## Log Types
+## Log types
 
 Sumo Logic app for Cisco Umbrella uses the following log types:
 * [DNS Logs](https://docs.umbrella.com/deployment-umbrella/docs/log-formats-and-versioning#dns)
 * [Proxy Logs](https://docs.umbrella.com/deployment-umbrella/docs/log-formats-and-versioning#proxy)
 * [Admin Audit Logs](https://docs.umbrella.com/deployment-umbrella/docs/log-formats-and-versioning#audit)
 
-### Sample Log Messages
+### Sample log messages
 
 To know about the Sample Logs and Schema for Cisco Umbrella logs, [click here](https://docs.umbrella.com/deployment-umbrella/docs/log-formats-and-versioning#format).
 
-### Sample Query
+### Sample queries
 
 ```sql title="DNS Logs"
 _sourceCategory=Labs/cisco_umbrella
-| where _sourcename matches "*dnslogs*"
+| where _sourceName matches "*dnslogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as timestamp,identity,identites_all,internal_ip,external_ip,action,query_type,response_code,domain_name,categories,first_identity_type_matched,all_identity_types,blocked_categories
 ```
 
 ```sql title="Proxy Logs"
 _sourceCategory=Labs/cisco_umbrella
-| where _sourcename matches "*proxylogs*"
+| where _sourceName matches "*proxylogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as timestamp,policy_identity_label,internal_client_ip,external_client_ip,destination_ip,content_type,action,url,referer,user_agent,status_code,request_size,response_size,response_body_size,sha256,categories,av_detections,PUAs,AMP_disposition,AMP_malware_name,AMP_score,policy_identity_type,blocked_categories,identities,identity_types,request_method,DLP_status,certificate_errors,file_name,ruleset_ID,rule_ID,destination_list_IDs,isolate_action,file_action,warn_status
 ```
 
 ```sql title=Admin Logs"
 _sourceCategory=Labs/cisco_umbrella
-| where _sourcename matches "*auditlogs*"
+| where _sourceName matches "*auditlogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as  id, timestamp, email, user, type, action, ip, before, after
 ```
 
@@ -56,27 +56,32 @@ The Cisco Umbrella app offers logging to Amazon S3 as it has the ability to uplo
 
  <img src={useBaseUrl('img/integrations/saas-cloud/options-aws-s3.png')} alt="options aws s3 cisco" width="750"/>
 
-:::note
-If you're collecting from a Cisco Umbrella bucket, SNS Subscription Endpoint is not supported. For more information, see important note on using the [Sumo Logic Amazon S3 source for the Cisco-Managed S3 bucket](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/#cisco-umbrella)
-:::
+Collection from a Cisco-managed S3 bucket has the following limitations:
+
+* AWS versioned APIs are not supported. The **Use AWS versioned APIs** setting on the Source must be disabled.
+* S3 Event Notifications Integration is not supported, so you cannot use an SNS subscription endpoint.
+* Access must be provided with an Access ID and Key. Role-based access is not supported.
+* Use a prefix in the path expression so it doesn't point to the root directory.
+* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example:
+  * Bucket Name: `cisco-managed-us-east-1`
+  * Path Expression: `987654321_12e34c..../*`
+
 
 By having all your logs uploaded to an S3 bucket, you can then download logs automatically to keep in perpetuity in backup storage. Or, ingest the logs through your SIEM or another security tool to determine if any security events in these Umbrella logs coincide with events in other security tools.
 
 For more information, see [Cisco Umbrella Documentation](https://docs.umbrella.com/managed-services/docs/msc-manage-logs).
 
-## Installing Cisco Umbrella App
+## Installing the Cisco Umbrella app
 
-This section has instructions for installing the Cisco Umbrella App for Sumo Logic.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-{@import ../../reuse/apps/app-install.md}
+<AppInstall2/>
 
-## Viewing the Cisco Umbrella Dashboards
+## Viewing Cisco Umbrella dashboards
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<ViewDashboards/>
 
 ### Admin Activities
 
@@ -90,3 +95,15 @@ You can use filters to drill down and examine the data on a granular level. Filt
 
 **Cisco Umbrella - Proxy**. This dashboard provides insights into the traffic that has gone through Umbrella's Secure Web Gateway (SWG) or Selective Proxy. It gives you a clear view of the geographical location of the traffic sources, client requests by blocked or allowed actions, malware detections, blocked sources and URLs, anti-virus detections, traffic request/response size, and an overall traffic summary.
 By using the dashboard's filters, you can easily analyze the data by different key fields such as action, identity, malware, anti-virus detection, blocked category, referrer, and category.<br/><img src={useBaseUrl('img/integrations/saas-cloud/cisco-umbrella-proxy.png')} alt="cisco umbrella proxy" width="750"/>
+
+## Upgrade/Downgrade the Cisco Umbrella app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cisco Umbrella app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

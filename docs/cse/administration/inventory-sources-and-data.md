@@ -2,49 +2,53 @@
 id: inventory-sources-and-data
 title: Inventory Sources and Data
 sidebar_label: Inventory Sources and Data
-description: Inventory data is information about computers and users in your environment that CSE uses to provide context to Entities in the CSE UI.
+description: Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to entities in the Cloud SIEM UI.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about _inventory sources_ and the _inventory data_ they collect.
 
-Inventory data is information about computers and users in your environment that CSE uses to provide context to Entities in the CSE UI. For example, when an analyst is investigating a user or system, it might be beneficial to know the department or manager to which they belong.
+Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to entities in the Cloud SIEM UI. For example, when an analyst is investigating a user or system, it might be beneficial to know the department or manager to which they belong.
 
-In addition to providing context to CSE Insights and Entities, inventory data can be leveraged in other beneficial ways. For example, you can save computer and user information to a lookup table and use the data for search time enrichment. For more information, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table)
+In addition to providing context to Cloud SIEM insights and entities, inventory data can be leveraged in other beneficial ways. For example, you can save computer and user information to a lookup table and use the data for search time enrichment. For more information, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table).
 
-## Inventory data in the CSE UI
+## Inventory data in the Cloud SIEM UI
 
-The screenshots in this section show how CSE presents inventory data in the UI.
+The screenshots in this section show how Cloud SIEM presents inventory data in the UI.
 
-This screenshot shows inventory data for a user for a user on the **Insight Details** page. When you mouse over the **Entity** value a popup appears, and displays any inventory that is available for the Entity.
+This screenshot shows inventory data for a user for a user on the **Insight Details** page. When you mouse over the **Entity** value a popup appears, and displays any inventory that is available for the entity.
 
-<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="CSE image" width="400" />
+<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="Example inventory data on an insight" style={{border: '1px solid gray'}} width="400" />
 
 This screenshot shows the **Entity Details** page; inventory data is displayed for a user.
 
-<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="CSE image" width="400"/>
+<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="Example inventory data on an entity" style={{border: '1px solid gray'}} width="400"/>
 
 ## About inventory data sources
 
-Sumo Logic provides a number of [Sources](/docs/send-data/choose-collector-source) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. Each inventory source is listed in the [Inventory Source Mappings](#inventory-source-mappings) section below. The mapping table for each source shows the inventory attributes that are populated and the associated data source field or fields for each.
+Sumo Logic provides a number of [Sources](/docs/send-data/choose-collector-source) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. Each inventory source is listed in the [Inventory source mappings](#inventory-source-mappings) section below. The mapping table for each source shows the inventory attributes that are populated and the associated data source field or fields for each.
 
 Some of the inventory sources are strictly for collecting inventory data—such sources usually include “Inventory” in the source name, for example, the **Microsoft Azure AD Inventory Source**. A few of the sources that collect inventory data also collect event data. For example, the **Sailpoint Source** collects inventory data about users and also collects events from the SalePoint Search API.
 
 Some inventory sources provide user inventory information, some provide computer inventory information, and some provide both. The table below lists currently available inventory sources.
+
+:::note
+The AWS Inventory Source collects the inventory of AWS resources in your AWS account, but is usable only by the Root Cause Explorer. See [AWS Inventory Source](/docs/observability/root-cause-explorer/#aws-inventory-source).
+:::
 
 | Inventory source | Type of source | Inventory data collected |
 | :-- | :-- | :-- |
 | [Armis API Integration Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source) | Cloud-to-Cloud | Computer |
 | [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source) | Cloud-to-Cloud | Computer |
 | [CrowdStrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) | Cloud-to-Cloud | Computer |
-| [CSE AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source)| Cloud-to-Cloud | Computer |
+| [Cloud SIEM AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source)| Cloud-to-Cloud | Computer |
 | [Cylance](/docs/integrations/security-threat-detection/cylance) | Cloud-to-Cloud | Computer | <!-- The link goes to an app article. There is no Cylance source article in our docs. -->
 | [Google Workspace Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source) | Cloud-to-Cloud | User |
 | [Microsoft Azure AD Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source) | Cloud-to-Cloud | Computer and User |
 | [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) | Cloud-to-Cloud | User |
 | [Qualsys VMDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source) | Cloud-to-Cloud | Computer |
-| [Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source/) | Cloud-to-Cloud | Computer | 
+| [Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source/) | Cloud-to-Cloud | Computer |
 | [Sailpoint Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) | Cloud-to-Cloud | User |
 | [SentinelOne Mgmt API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source) | Cloud-to-Cloud | Computer |
 | [Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source) | Cloud-to-Cloud | Computer |  
@@ -56,13 +60,21 @@ Sumo Logic Sources that collect inventory data generally have a configuration se
 
 ## Searching inventory data
 
-You can search the inventory data collected by inventory sources in a log search tab in Sumo Logic. You can scope your search using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata), for example, by specifying the source category assigned to the inventory source:
+You can search the inventory data collected by inventory sources in a log search tab in Sumo Logic. To find all inventory data, use a search like this:
+
+```
+_siemDataType=Inventory
+```
+
+You can scope your search using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata), for example, by specifying the source category assigned to the inventory source:
 
 ```
 _sourceCategory=AD_inventory
 ```
 
-You can use run a broader search using `_siemDataType=Inventory`
+:::tip
+Inventory logs do not appear in `_index=_sec_record*` partitions. You cannot search for them in those indexes like you can other types of Cloud SIEM data. See [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#partitions-with-cloud-siem-data).
+:::
 
 ## Inventory source mappings  
 There are two types of normalized inventory objects, Computers and Users. Some sources only support one type of object, others both. For each inventory source mapped into the normalized inventory object, the original data is stored in the `rawRecord` attribute.
@@ -71,10 +83,10 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 | Inventory Attribute | Data Source Field | Note |
 | :-- | :-- | :-- |
-| uniqueId | "armis-" + id | A globally unique ID that distinguishes this object from inventory from all other sources | 
-| deviceUniqueId | id | A per-source unique ID | 
-| ip | ipAddress |  | 
-| mac | macAddress |  | 
+| uniqueId | "armis-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
+| deviceUniqueId | id | A per-source unique ID |
+| ip | ipAddress |  |
+| mac | macAddress |  |
 | natIp | ipAddress |  |
 | os | operatingSystem |  |
 | osVersion | operatingSystemVersion |  |
@@ -95,19 +107,19 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 | Inventory Attribute | Data Source Field | Note |  
 | :-- | :-- | :-- |
-| uniqueId | "crowdstrike-" + id | A globally unique ID that distinguishes this object from inventory from all other sources | 
-| deviceUniqueId | device_id | A per-source unique ID | 
-| groups | groups |  | 
-| hostname | hostname |  | 
-| normalizedHostname | hostname |  | 
-| ip | external_ip |  | 
-| mac | mac_address |  | 
-| natIp | local_ip |  | 
-| os | os_product_name |  | 
-| osVersion | os_version |  | 
+| uniqueId | "crowdstrike-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
+| deviceUniqueId | device_id | A per-source unique ID |
+| groups | groups |  |
+| hostname | hostname |  |
+| normalizedHostname | hostname |  |
+| ip | external_ip |  |
+| mac | mac_address |  |
+| natIp | local_ip |  |
+| os | os_product_name |  |
+| osVersion | os_version |  |
 
 
-### CSE AWS (EC2) Inventory Source - Computer
+### Cloud SIEM AWS (EC2) Inventory Source - Computer
 
 | Inventory Attribute | Data Source Field | Note |  
 | :-- | :-- | :-- |
@@ -185,29 +197,29 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 | Inventory Attribute | Data Source Field | Note |
 | :-- | :-- | :-- |
-| uniqueId | "qualys-" + id | A globally unique ID that distinguishes this object from inventory from all other sources | 
-| deviceUniqueId | assetUUID | A per-source unique ID | 
-| computerName  | assetName |  | 
-| normalizedComputername | assetName |  | 
-| hostname | assetName |  | 
-| normalizedHostname | assetName |  | 
-| ip | address |  | 
-| mac | networkInterfaceListData[“networkInterface”][0].macAddress |  | 
-| natIp | address |  | 
-| os | operatingSystem.osName |  | 
-| osVersion | operatingSystem.version |  | 
+| uniqueId | "qualys-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
+| deviceUniqueId | assetUUID | A per-source unique ID |
+| computerName  | assetName |  |
+| normalizedComputername | assetName |  |
+| hostname | assetName |  |
+| normalizedHostname | assetName |  |
+| ip | address |  |
+| mac | networkInterfaceListData[“networkInterface”][0].macAddress |  |
+| natIp | address |  |
+| os | operatingSystem.osName |  |
+| osVersion | operatingSystem.version |  |
 
 ### Rapid7 - Computer
 
 | Inventory Attribute | Data Source Field | Note |
 | :-- | :-- | :-- |
-| uniqueId | "rapid7-" + id | A globally unique ID that distinguishes this object from inventory from all other sources | 
-| deviceUniqueId | id | A per-source unique ID | 
-| groups | groups |  | 
-| ip | ip |  | 
-| natIp | ip |  | 
-| os | os_system_name |  | 
-| osVersion | os_version |  | 
+| uniqueId | "rapid7-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
+| deviceUniqueId | id | A per-source unique ID |
+| groups | groups |  |
+| ip | ip |  |
+| natIp | ip |  |
+| os | os_system_name |  |
+| osVersion | os_version |  |
 
 ### Sailpoint Source - User
 
@@ -223,17 +235,17 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 | Inventory Attribute | Data Source Field | Note |  
 | :-- | :-- | :-- |
-| uniqueId | sentinelOne-{id} | A globally unique ID that distinguishes this object from inventory from all other sources | 
-| groups | groupId |  | 
-| computerName | computerName |  | 
-| hostname | computerName |  | 
-| ip | lastIpToMgmt | Falls back to externalIp | 
-| mac | networkInterfaces[1].physical |  | 
-| natIp | externalIp |  | 
-| osName | os |  | 
-| osVersion | osRevision |  | 
-| location | locations[1].name |  | 
-| deviceUniqueId | uuid | A per-source unique ID | 
+| uniqueId | `sentinelOne-{id}` | A globally unique ID that distinguishes this object from inventory from all other sources | 
+| groups | groupId |  |
+| computerName | computerName |  |
+| hostname | computerName |  |
+| ip | lastIpToMgmt | Falls back to externalIp |
+| mac | networkInterfaces[1].physical |  |
+| natIp | externalIp |  |
+| osName | os |  |
+| osVersion | osRevision |  |
+| location | locations[1].name |  |
+| deviceUniqueId | uuid | A per-source unique ID |
 
 ### Tenable Source - Computer  
 

@@ -14,34 +14,19 @@ The transaction operator requires:
 * **One or more transaction IDs to group related log messages together.** You could use session IDs, IPs, username, email, or any other unique IDs that are relevant to your query. You will define transaction IDs in a query. The transaction IDs are extracted using operators such as [parse](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor) and [parse regex](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex).
 * **Mapping from a log message to a state.** Specify the mapping from a log message to a state through the syntax of the [matches](/docs/search/search-query-language/search-operators/matches) operator, or through fields that are already parsed.
 
-Check out the following overview video. It reviews a search provided in the Google Workspace App for building a document flow diagram.
-
-<Iframe url="https://www.youtube.com/embed/6wqOrpuRyls"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
-
 ## Syntax
 
 ```sql
 transaction on <field1> [, <field2>]... [fringe=<timespec>] with <states> results by [transactions | states | flow]
 ```
 
-States act as matching statements, searching your log for that specific state. These support wildcards ` *` to match on any characters. For example, in the following log, if one of the states you needed to capture was when a session is started based on your parsed field sessionId:
+States act as matching statements, searching your log for that specific state. These support wildcards `*` to match on any characters. For example, in the following log, if one of the states you needed to capture was when a session is started based on your parsed field sessionId:
 
 ```
 2018-02-15 13:00:28,799 -0800 INFO  [hostId=nite-spark-app-1] [module=sumo-app] [localUserName=sumo-app] [logger=sumo.app.SumoAppSearchSessionProtocolHandler] [thread=DTP-soa.sumo-app-soa.SearchSessionProtocol-32] [auth=Customer:0000000000000111:0000000000000111:0000000000000111:false:DefaultSumoSystemUser:-1:UNKNOWN] [sessionId=B6C329D84D1E37C6] [customer=0000000000000111] [remotemodule=sumo-app] Starting session B6C329D84D1E37C6
 ```
 
-you'd specify the state as a matching statement on the sessionId like this:
+you'd specify the state as a matching statement on the `sessionId` like this:
 
 ```sql
 | transaction on sessionid with "* Starting session *" as init
@@ -165,7 +150,7 @@ _sourceCategory=oursite
 
 Since transaction operator queries are constrained by a time window, some transactions may be cut off if they occur near the edges of the time window. It is possible to filter them out using the fringe argument.
 
-If *tw* is the time window for a query, then transactions that satisfy the following will be filtered out:
+If `tw` is the time window for a query, then transactions that satisfy the following will be filtered out:
 
 * ends in \[tw.start, tw.start + fringe)
 * starts in (tw.end - fringe, tw.end\]
@@ -199,7 +184,7 @@ The following examples can help you understand the way transaction works.
 
 When you use the transaction operator, it requires one or more transaction IDs to group related log messages together. For this ID, you can use session IDs, IPs, username, email, or any other unique IDs that are relevant to your query.
 
-In this example, using the browser sessionID as the transaction ID, we could define states for countdown_start and countdown_done:
+In this example, using the browser sessionID as the transaction ID, we could define states for `countdown_start` and `countdown_done`:
 
 ```sql
 ... | transaction on sessionid
@@ -228,8 +213,7 @@ _source=Syslog (New session) OR (Session deleted)
 | ((_end_time - _start_time)/1000)/60 as time_difference_minutes
 ```
 
-You reference the `_end_time` and `_start_time` fields to calculate the
-duration of the `sessionid`.
+You reference the `_end_time` and `_start_time` fields to calculate the duration of the `sessionid`.
 
 ![fields created by transaction.png](/img/search/searchquerylanguage/transaction-analytics/fields-created-by-transaction.png)
 
@@ -253,12 +237,10 @@ results by flow
 | count by fromstate, tostate
 ```
 
-could produce a Flow Diagram with normal drop-off rates at the different states: cart, shipping, billing, billingVerification, confirmation, and order shipped.
+could produce a Flow Diagram with normal drop-off rates at the different states: `cart`, `shipping`, `billing`, `billingVerification`, `confirmation`, and `ordershipped`.
 
 ![ecommerce flowchart.png](/img/search/searchquerylanguage/transaction-analytics/ecommerce-flowchart.png)
 
 Now, if you ran this query and saw results as shown below, where there is a big drop-off at the verification state, you'd determine that there is likely a problem with the verification service and start an investigation.
 
 ![ecommerce flowchart missing states.png](/img/search/searchquerylanguage/transaction-analytics/ecommerce-flowchart-missing-states.png)
-
- 

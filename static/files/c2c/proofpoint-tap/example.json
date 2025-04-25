@@ -1,0 +1,23 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"Proofpoint"
+      },
+      "config":{
+        "name":"Proofpoint",
+        "description":"East field",
+        "domain":"tap-api-v2.proofpoint.com",
+        "api_secret":"********",
+        "service_principal":"********",
+        "split_recipients":true,
+        "split_message_parts":false,
+        "fields":{
+          "_siemForward":false
+        },
+        "category":"eastTeamF",
+        "pollingInterval":300
+      },
+      "sourceType":"Universal"
+    }
+  }

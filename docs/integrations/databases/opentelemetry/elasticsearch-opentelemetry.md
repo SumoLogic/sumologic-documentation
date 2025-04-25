@@ -2,7 +2,7 @@
 id: elasticsearch-opentelemetry
 title: Elasticsearch - OpenTelemetry Collector
 sidebar_label: Elasticsearch - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Elasticsearch.
+description: Learn about the Sumo Logic OpenTelemetry app for Elasticsearch.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,41 +17,73 @@ We use the OpenTelemetry collector to collect Elasticsearch metrics and logs.
 
 The diagram below illustrates the components of the Elasticsearch collection for each database server. OpenTelemetry collector runs on the same host as Elasticsearch, and uses the [Elasticsearch Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/elasticsearchreceiver/) to obtain Elasticsearch metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Elasticsearch logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Schematics.png' alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Schematics-diagram.png' alt="Elasticsearch-Schematics" />
+
+:::info
+This app includes [built-in monitors](#elasticsearch-alerts). For details on creating custom monitors, refer to [Create monitors for Elasticsearch app](#create-monitors-for-elasticsearch-app).
+:::
 
 ## Fields Create in Sumo Logic for Elasticsearch
 
-Following are the [Fields](/docs/manage/fields/) which will be created as part of Elasticsearch App install, if not already present:
+Following are the [Fields](/docs/manage/fields/) which will be created as part of Elasticsearch app installation, if not already present:
 
 - `db.cluster.name`. User configured. Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - `db.system`. Has a fixed value of **elasticsearch**.
 - `sumo.datasource`. Has a fixed value of **elasticsearch**.
 - `db.node.name`. Has the value of host name of the machine which is being monitored.
 
-### Prerequisites
+## Prerequisites
+
+### For metrics collection
 
 This receiver supports Elasticsearch versions 7.9+.
 
 If Elasticsearch security features are enabled, you must have either the monitor or manage cluster privilege. See the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/authorization.html) for more information on authorization and [Security privileges](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-privileges.html).
 
-**Configure logging in Elasticsearch**. Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set `loglevel` to one of:
+### For logs collection
 
-* debug: a lot of information, useful for development/testing
-* verbose: includes information not often needed, but logs less than debug
-* notice (default value): moderately verbose, ideal for production environments
-* warning: only very important/critical messages are logged
+Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set `loglevel` to one of:
+
+* **debug**. A lot of information, useful for development/testing.
+* **verbose**. Includes information not often needed, but logs less than debug.
+* **notice** (default value). Moderately verbose, ideal for production environments.
+* **warning**. Only important/critical messages are logged.
 
 All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file.
 
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Collector.png' style={{border:'1px solid gray'}}  alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -68,11 +100,13 @@ You can add any custom fields which you want to tag along with the data ingested
 
 For Linux platform, click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/ElasticSearch-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/ElasticSearch-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -81,6 +115,9 @@ For Linux platform, click on **Download Environment Variables File** button to g
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -114,11 +151,36 @@ For Linux platform, click on **Download Environment Variables File** button to g
   ```
 
 </TabItem>
+<TabItem value="Chef">
+
+import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
+
+<ChefEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
+
+<AnsEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
+
+<PuppetEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Log Messages
+<LogsOutro/>
+
+## Sample log messages
 
 ```json
 {
@@ -132,7 +194,7 @@ For Linux platform, click on **Download Environment Variables File** button to g
 }
 ```
 
-## Sample OpenTelemetry metrics
+## Sample metrics
 
 ```json
 {
@@ -160,11 +222,11 @@ For Linux platform, click on **Download Environment Variables File** button to g
 }
 ```
 
-## Sample Queries
+## Sample queries
 
-### Logs
+### Sample logs query
 
-Sample log query from the **Errors** panel.
+This is a sample log query from the **Errors** panel.
 
 ```sql
 db.system=elasticsearch %"deployment.environment"={{deployment.environment}} db.cluster.name={{db.cluster.name}} ERROR | json "log" as _rawlog nodrop 
@@ -177,15 +239,19 @@ db.system=elasticsearch %"deployment.environment"={{deployment.environment}} db.
 | count
 ```
 
-### Metrics
+### Sample metrics query
 
-Metrics query from the **JVM Memory Used (MB)** panel.
+This is a sample metrics query from the **JVM Memory Used (MB)** panel.
 
 ```sql
 deployment.environment=* metric=jvm.memory.heap.used db.cluster.name=* db.node.name=* | sum by db.cluster.name, db.node.name
 ```
 
-## Viewing Elasticsearch Dashboards
+## Viewing Elasticsearch dashboards
+
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Overview
 
@@ -264,3 +330,27 @@ The **Elasticsearch - Operations** dashboard allows you to monitor server stats 
 The **Elasticsearch - Queries** dashboard shows Elasticsearch provides analytics on slow queries, and query shards.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Queries.png' alt="Resource Usage" />
+
+## Create monitors for Elasticsearch app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Elasticsearch alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Elasticsearch - Cluster Red Alert` | Elasticsearch Cluster red health status. | Count > = 1 | Count < 1 |
+| `Elasticsearch - Cluster Yellow Alert` | Elasticsearch Cluster yellow health status. | Count > 1 | Count < = 1 |
+| `Elasticsearch - Disk Out of Space Alert` | This alerts gets triggered when disk usage is over 90%. | Count > 90 | Count < = 90 |
+| `Elasticsearch - Error Log Too Many Alert` | This alert gets triggered when error logs exceeds threshold. | Count > = 1000 | Count < 1000 |
+| `Elasticsearch - Healthy Data Nodes Alert` | This alert gets triggered when missing data node in Elasticsearch cluster. | Count < = 1 | Count > 1 |
+| `Elasticsearch - Heap Usage Too High Alert` | This alert gets triggered when heap usage is over 90%. | Count > 90 | Count < = 90 |
+| `Elasticsearch - Initializing Shards Too Long Alert` | This alerts gets triggered when shard initialization takes more than 5 min. | Count > = 5 | Count < 5 |
+| `Elasticsearch - Pending Tasks Alert` | This alert gets triggered when Elasticsearch has pending tasks. | Count > = 5 | Count < 5 |
+| `Elasticsearch - Query Time Slow Alert` | This alert gets triggered when slow query time greater than 5 ms. | Count  >= 1 | Count < 1 |
+| `Elasticsearch - Query Time Too Slow Alert` | This alert gets triggered when Slow Query Too High (10 ms). | Count > = 1 | Count < 1 |
+| `Elasticsearch - Relocating Shards Too Long Alert` | This alert gets triggered when shards relocation take more than 5 min. | Count > = 5 | Count < 5 |
+| `Elasticsearch - Too Many Slow Query Alert` | This alert gets triggered when too many slow queries are found in 5 minutes window. | Count > = 10 | Count < 10 |
+| `Elasticsearch - Unassigned Shards Alert` | This alert gets triggered when Elasticsearch has unassigned shards. | Count > 5 | Count < = 5 |

@@ -3,7 +3,8 @@ id: quickstart
 title: Quickstart Your Sumo Logic Experience
 sidebar_label: Quickstart
 description: Follow our quickstart guide to get up and running with Sumo Logic in minutes.
-tags: [get started, getting started]
+keywords:
+  - quickstart
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -20,9 +21,30 @@ What you'll learn:
 * Monitor and troubleshoot your environment
 * Share your findings with your team
 
-## Before you begin
+## Prerequisites
 
 You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-started/sign-up).
+
+## Getting started with Kickstart Data in your trial
+
+As part of your Sumo Logic trial, Kickstart Data provides preloaded sample data and dashboards, letting you explore the platform immediately—no setup or data ingestion required. This helps you quickly understand Sumo Logic’s value without dealing with firewall or security configurations. Following are some key benefits:
+
+* **Immediate insights**. Explore Sumo Logic right away, without initial data setup, to quickly see its value and decide if it’s a fit for you.
+* **Quick setup**. Kickstart Data removes technical hurdles, making onboarding faster and easier.
+* **Guided experience**. Access pre-built dashboards and reports that demonstrate real-world scenarios, helping you make the most of your trial.
+* **Safe exploration**. Evaluate our platform in a secure environment with no exposure of sensitive data.
+
+Here's how it works:
+
+1. **Sample dashboards**. When you first log in, you'll see sample data preloaded into Sumo Logic, tailored to your monitoring and troubleshooting use cases, along with log searches and the following dashboards:
+   * **Application reliability**. Metrics like Homepage Load Time, Checkout Errors, and Internal Server Orders.
+   * **Business KPIs**. Revenue Trends, Promo Performance, and Customer Feedback Metrics.
+   * **Security**. Security events and failed sign-in attempts across multiple geographical locations.
+1. **Onboarding checklist**. You will follow a guided checklist that helps you:
+    * Analyze the sample data.
+    * Perform log searches.
+    * Invite team members to join and explore the platform with you.
+1. **Transition to real data**. Kickstart Data is available for 7 days or until you start ingesting real data—whichever comes first. It deactivates automatically at the end of the trial, but can be skipped at any time.
 
 ## Step 1: Get your data into Sumo
 
@@ -37,17 +59,19 @@ OpenTelemetry is our preferred collector unless you're configuring security data
 #### OpenTelemetry Collector
 
 1. Log in to Sumo Logic.
-1. Go to **App Catalog** and click the app you'd like to install.
+1. In the main Sumo Logic menu, select **App Catalog**.
+1. Click the app you'd like to install.
 1. Click the **Add a New Collector** option during app installation.
-  :::note
-  Only V2 apps have the **Add a New Collector** option.
-  :::
+   :::note
+   Only V2 apps have the **Add a New Collector** option.
+   :::
 1. After you've installed the collector, you'll be prompted with instructions to set up the source.
 
 #### Installed and Hosted Collector
 
 1. Log in to Sumo Logic.
-1. From the Home page, go to **Manage Data** > **Collection** > **Collection** tab, and select **Add Collector**.<br/><img src={useBaseUrl('img/get-started/WTS_Collector_page.png')} alt="icon" />
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. Select **Add Collector**.<br/><img src={useBaseUrl('img/get-started/WTS_Collector_page.png')} alt="Add Collector" />
 1. Choose from our [Hosted Collector](/docs/send-data/hosted-collectors) (web-hosted) or [Installed Collector](/docs/send-data/installed-collectors) (locally installed on your machine).
 
 ### Set up Source
@@ -69,17 +93,13 @@ Once your data is available in Sumo, you and your colleagues can search your log
 
 You can start a log search, metrics search, or live tail from the Sumo Home page by clicking the respective icon. For walkthrough instructions on how to create a query and parse the messages, see [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics/).
 
-![WTS Home Search Icons](/img/get-started/WTS_Home-Search-icons.png)
-
-The [Setup Wizard](/docs/send-data/setup-wizard) is a quick way to get started loading data into Sumo Logic, then searching an analyzing the data with Sumo Logic's predefined searches and dashboards.
-
 ## Step 3: Monitor and troubleshoot your environment
 
 Not sure how to use your data to monitor and and troubleshoot your environment? Sumo Logic offers a variety of Apps with predefined queries and visualizations that help you get up and running quickly.
 
 ### App Catalog
 
-You can **browse our library of available apps** by selecting **App Catalog** in the left navigation panel, then scrolling through the library or entering a name in the search field. For more information, see [Apps and Integrations](/docs/get-started/apps-integrations/).
+You can **browse our library of available apps** by selecting **App Catalog**, then scrolling through the library or entering a name in the search field. For more information, see [Apps and Integrations](/docs/get-started/apps-integrations/).
 
 ![Apps Catalog](/img/get-started/WTS_Apps-Catalog.png)
 
@@ -91,7 +111,7 @@ You can **view your data with predefined searches and dashboards** that facilita
 
 ## Step 4: Share your findings with your team
 
-You have downloaded an app and analyzed your data with searches and dashboards. You may even have [modified your dashboards](/docs/dashboards-classic/edit-dashboards/manage-dashboards), and now you want to share your findings with your team. You can easily share a dashboard by clicking the share icon in the top menu bar.
+You have downloaded an app and analyzed your data with searches and dashboards. You may even have [modified your dashboards](/docs/dashboards/panels/modify-chart), and now you want to share your findings with your team. You can easily share a dashboard by clicking the share icon in the top menu bar.
 
 ![Share Dashboard](/img/get-started/WTS_Share-dashboard.png)
 
@@ -112,7 +132,7 @@ From the Sumo Logic Home page, click the **Learn** tab to access:
 - Getting Started tutorials
 - Sumo docs, support, community, and training
 
-![Welcome Learn](/img/get-started/Welcome_learn.png)
+<img src={useBaseUrl('img/get-started/Welcome_learn.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="800" />
 
 Don't just learn it - master it! Get recognized as a Sumo Logic expert by completing the courses in the [Sumo Logic Certification Program](/docs/get-started/training-certification-faq/#what-certifications-does-sumo-logic-offer). We’re happy to help you get certified right from the product.
 
@@ -120,13 +140,11 @@ Don't just learn it - master it! Get recognized as a Sumo Logic expert by comple
 ## More Resources
 
 :::sumo Need help?
-Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/hc/en-us).
+Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).
 :::
 
 * [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/)
-* [AWS Observability Quickstart](/docs/observability/aws/quickstart). This guide will walk you through setting up the Sumo Logic AWS Observability integration.
 * [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart). Get up and running with the Sumo Logic Kubernetes solution in minutes.
-* [Traces Quickstart](/docs/apm/traces#quickstart). This guide demonstrates how to measure application microservice performance.
-* [Ingest Budgets Quickstart](/docs/manage/ingestion-volume/ingest-budgets/quickstart). Learn how to create and use Ingest Budgets.
+* [Traces Quickstart](/docs/apm/traces/quickstart). This guide demonstrates how to measure application microservice performance.
 
 See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-training-portal).

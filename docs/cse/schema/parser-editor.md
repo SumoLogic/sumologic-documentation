@@ -6,18 +6,55 @@ description: Learn how to use the Parser Editor to configure and test a custom p
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
-This topic has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers.
+This article has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers. We provide [parser templates](#parser-templates) that you can use as a starting point for creating custom parsers.
 
-For information about the Sumo Logic CSE parsing language, see [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide).
+For a complete list of standard parsers, see [Parsers](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
+
+See additional articles for more information about the Sumo Logic Cloud SIEM parsers:
+* [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide)
+* [Parsing Patterns](/docs/cse/schema/parsing-patterns)
+* [Troubleshoot Parsers](/docs/cse/troubleshoot/troubleshoot-parsers)
 
 :::note
 The instructions that follow assume that you have already written your parser code.
 :::
 
+:::sumo Micro Lesson
+
+Watch the following micro lesson to learn how to apply parsers to Cloud SIEM data sets.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/xqe7k7h2e4?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Applying Parsers to Cloud SIEM Data Sets Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- 
+<Iframe url="https://www.youtube.com/embed/CVaoD96Mhok?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
+-->
+
+:::
+
 ## Check parser code for mapping hints
 
-Your parser code must contain statements that tell CSE what log mapping to use when creating Records from the field dictionary the parser creates for log messages. 
+Your parser code must contain statements that tell Cloud SIEM what log mapping to use when creating records from the field dictionary the parser creates for log messages. 
 
 Make sure your parser code includes `MAPPER` statements that specify the vendor, product, and the event ID that the log messages to be parsed contain, and a `FORMAT` statement that defines the message format.
 
@@ -28,14 +65,14 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 
 ## Configure and test a custom parser
 
-1. Go to **Manage Data** > **Logs** > **Parsers**.<br/><img src={useBaseUrl('img/cse/add-button.png')} alt="Add button" width="800"/>
-1. Navigate to the folder where you’d like to create the parser. If you want to create a new folder, click **Add** and select **New Folder**.  You don’t have to organize your parsers in folders, but it's easier to manage them if you do.
-1. Click **Add** and select **New Parser** to display the **Create Parser** page.<br/><img src={useBaseUrl('img/cse/create-parser-annotated.png')} alt="Create parser" width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Parsers**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Parsers**. You can also click the **Go To...** menu at the top of the screen and select **Parsers**.  
+1. Navigate to the folder where you’d like to create the parser. If you want to create a new folder, click **Add** and select **New Folder**.  You don’t have to organize your parsers in folders, but it's easier to manage them if you do.<br/><img src={useBaseUrl('img/cse/add-button.png')} alt="Add button" style={{border: '1px solid gray'}} width="800"/>
+1. Click **Add** and select **New Parser** to display the **Create Parser** page.<br/><img src={useBaseUrl('img/cse/create-parser-annotated.png')} alt="Create parser" style={{border: '1px solid gray'}} width="800"/>
 1. **Name**. Enter a distinctive name for the parser. Typically the parser name indicates the product or service whose messages it will parse.
 1. **Description**. (Optional) Describe the parser.
 1. **Parser Configuration**. Paste your parser code in this area.
 1. **Import Messages from**. In this step, you enter or fetch messages that you’ll use to test whether the parser parses the messages correctly. There are three options:
-   * **Sumo Log Search**. You can enter a log search query to obtain a selected number of log messages. Follow the instructions in [Using Sumo log search](#using-sumo-log-search) below.
+   * **Sumo Log Search**. You can enter a log search query to obtain a selected number of log messages. Follow the instructions in [Using Sumo Logic log search](#using-sumo-logic-log-search) below.
    * **Saved Logs**. You can select a set of messages that you saved when previously using the **Paste Logs** option. Follow the instructions in [Using saved logs](#using-saved-logs) below.
    * **Paste Logs**. You can paste logs directly into the **Log Messages** area. Follow the instructions in [Using paste logs](#using-paste-logs) below. 
 
@@ -43,16 +80,16 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 
 1. After you’ve obtained sample messages using one of the methods above, click **Parse Logs**.
 1. If all of the sample messages are parsed successfully, you’ll see results like those shown below in the **Parsed Messages** section of the editor. The **Event Details** section shows the key-value pairs that were parsed from the raw message. If your results indicate that there were warnings, unparsed, or dropped messages, see [Understanding parsing failures and warnings](#understanding-parsing-failures-and-warnings).<br/><img src={useBaseUrl('img/cse/successsful-blurred.png')} alt="Successful parsing" width="800"/>
-  :::note
-  One of the two messages that was parsed was cut out of the screenshot to make the image shorter. 
-  :::
+    :::note
+    One of the two messages that was parsed was cut out of the screenshot to make the image shorter. 
+    :::
 1. Once your new parser is working, and you want to start using it, follow the instructions in [Configuring a source to use a parser](#configure-and-test-a-custom-parser).
 
 ## Get sample messages
 
 This section describes the three methods of obtaining messages for use in testing your parser.
 
-### Using Sumo log search
+### Using Sumo Logic log search
 
 To import messages by running a Sumo Logic search:
 
@@ -110,7 +147,7 @@ following categories:
 
 ## Create a local configuration for a system parser
 
-You can customize any of the system parsers that are built into CSE. When you open an system parser for editing, you'll see its code in the **System Configuration** section. For a system parser, the UI also provides an area for entering your customizations — that's the part of the page labeled **Local Configuration**. The [parsing language statements](/docs/cse/schema/parsing-language-reference-guide#attributes-used-in-all-stanza-types) you enter there will be executed in addition to the those in the system configuration. If a statement you add to the system configuration already exists in the system configuration, the local statement will override the system statement. For example, if the system configuration has:
+You can customize any of the system parsers that are built into Cloud SIEM. When you open an system parser for editing, you'll see its code in the **System Configuration** section. For a system parser, the UI also provides an area for entering your customizations — that's the part of the page labeled **Local Configuration**. The [parsing language statements](/docs/cse/schema/parsing-language-reference-guide#attributes-used-in-all-stanza-types) you enter there will be executed in addition to the those in the system configuration. If a statement you add to the system configuration already exists in the system configuration, the local statement will override the system statement. For example, if the system configuration has:
 
 `START_TIME_FIELD = eventTime`
 
@@ -130,54 +167,95 @@ The system configuration and local configuration are separate, so your customiza
 
 You can use a local configuration to override any statement in a system parser, and add additional logic to the parser using any of the statements supported by the parsing language.
 
-One use case for a local configuration to override one or more of a parser’s time handling statements. For example, if the logs to be parsed don’t have a timestamp, you could set [START_TIME_FIELD](/docs/cse/schema/parsing-language-reference-guide#start_time_field) = `_messagetime`. This causes the Sumo Logic core platform message time to be used as the `_starttime` in the field dictionary your parser creates from a message. Or, if the time formats in the logs to be parsed don't exactly match the format that a system parser assumes, you use a local configuration to specify a different [TIME_PARSER](/docs/cse/schema/parsing-language-reference-guide#time_parser) setting.
+One use case for a local configuration to override one or more of a parser’s time handling statements. For example, if the logs to be parsed don’t have a timestamp, you could set [START_TIME_FIELD](/docs/cse/schema/parsing-language-reference-guide#start_time_field) = `_messagetime`. This causes the Sumo Logic core platform message time to be used as the `_starttime` in the field dictionary your parser creates from a message. Or, if the time formats in the logs to be parsed do not exactly match the format that a system parser assumes, you use a local configuration to specify a different [TIME_PARSER](/docs/cse/schema/parsing-language-reference-guide#time_parser) setting.
 
 Another common reason to set up a local configuration is to pre-parse the content of a JSON object. If your parser is going to process an encapsulated JSON object, you can use a local configuration to pre-parse the original log message from the object.
 
 To create a local configuration:
 
-1. Go to **Manage Data** > **Logs** > **Parsers**.
-1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot more options menu.<br/><img src={useBaseUrl('img/cse/three-dot.png')} alt="Three dot" width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Parsers**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Parsers**. You can also click the **Go To...** menu at the top of the screen and select **Parsers**.  
+1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/three-dot.png')} alt="three-dot kebab" style={{border: '1px solid gray'}} width="800"/>
 1. The parser editor opens. The parser code is shown in the **System Configuration** area.<br/><img src={useBaseUrl('img/cse/system-parser-edit-button.png')} alt="System parser edit button" width="800"/>
 1. Paste your custom parser code in the **Local Configuration** area.
 1. Use one of the methods in **Get test messages** above, and then click **Parse Logs**.
 
 ## Move a parser
 
-You can move a parser from one location to another within the parser editor’s folder structure. To do so, navigate to the parser you want to move, and select **Move** from the three-dot more options menu. 
+You can move a parser from one location to another within the parser editor’s folder structure. To do so, navigate to the parser you want to move, and select **Move** from the three-dot kebab menu. 
 
 ## Export and import a parser
 
-You can export a parser as JSON, and import it to another Sumo Logic
-org.
+You can export a parser as JSON, and import it to another Sumo Logic org.
 
-1. Navigate to the parser you want to export and choose **Export** from the three-dot more options menu.
-1. On the **Export** popup, click **Copy to Clipboard** and then click **Done**.<br/><img src={useBaseUrl('img/cse/export.png')} alt="Export" width="600"/>
+1. Navigate to the parser you want to export and choose **Export** from the three-dot kebab menu.
+1. On the **Export** popup, click **Copy to Clipboard** and then click **Done**.<br/><img src={useBaseUrl('img/cse/export.png')} alt="Export dialog" width="600"/>
 1. Access the Sumo Logic org where you want to import the parser.
 1. Go to **Manage Data > Logs > Parsers**.
 1. Navigate to the folder where you want to store the parser.
-1. Choose **Import** from the three-dot more options menu.
-1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import" width="600"/>
+1. Choose **Import** from the three-dot kebab menu.
+1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import dialog" width="600"/>
 
-## Setting CSE log mapping information
+## Setting Cloud SIEM log mapping information
 
-In this step you configure one or more Log Mappings. If all of the messages your parser will process contain the same fields, and you want to create Records of the same type, a single Log Mapping will suffice. For some data sources, you will likely need to create more than one Log Mapping. For example:
+In this step you configure one or more Log Mappings. If all of the messages your parser will process contain the same fields, and you want to create records of the same type, a single Log Mapping will suffice. For some data sources, you will likely need to create more than one Log Mapping. For example:
 
-With some CloudTrail logs messages, you might want to create a different [Record type](/docs/cse/schema/cse-record-types), depending on the event ID in a message. In some cases, an Authorization Record is appropriate, while in others, an Audit or Audit Change Record would be a better fit. 
+With some CloudTrail logs messages, you might want to create a different [record type](/docs/cse/schema/cse-record-types), depending on the event ID in a message. In some cases, an authorization record is appropriate, while in others, an audit or audit change record would be a better fit. 
 
-In some CloudTrail messages, the field mapping (the mapping between a key in the field dictionary and a CSE Record) will vary, depending on the Event ID in the message. For example, you may want to map data into the CSE schema field action, but the data you want to map is located in different keys of the original CloudTrail JSON messages depending on the CloudTrail event type.
+In some CloudTrail messages, the field mapping (the mapping between a key in the field dictionary and a Cloud SIEM record) will vary, depending on the Event ID in the message. For example, you may want to map data into the Cloud SIEM schema field action, but the data you want to map is located in different keys of the original CloudTrail JSON messages depending on the CloudTrail event type.
 
 To create your mapping, see [Creating a Structured Log Mapping](/docs/cse/schema/create-structured-log-mapping). After setting up the mapping or mappings, complete the steps in [Configuring a source to use a parser](#configuring-a-source-to-use-a-parser), below.
 
 ## Configuring a source to use a parser
 
-This section explains how to configure a Sumo Logic core platform source to send the messages it collects to a parser. This involves configuring a Field for the source: you'll create a `_parser` Field that defines the path to the parser. 
+This section explains how to configure a Sumo Logic core platform source to send the messages it collects to a parser. This involves configuring a field for the source: you'll create a `_parser` field that defines the path to the parser. 
 
 1. Navigate to your custom parser in the editor.
-1. Hover over the row that contains the parser.<br/><img src={useBaseUrl('img/cse/more-options-for-parser.png')} alt="More options for parser" width="600"/>
-1. Click the three-dot more options icon, and select **Copy Path** and save the path.
-1. In Sumo Logic core platform, go to **Manage Data** > **Collection** > **Collection**.
+1. Hover over the row that contains the parser.
+1. Click the three-dot kebab icon, and select **Copy Path** and save the path.<br/><img src={useBaseUrl('img/cse/more-options-for-parser.png')} alt="More options for parser" style={{border: '1px solid gray'}} width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. Navigate to the source that produces the messages your custom parser will process.<br/><img src={useBaseUrl('img/cse/cloudtrail-source.png')} alt="CloudTrail source" width="500"/>
 1. Click **+Add Field**. 
-1. Two blank fields appear, below any Fields that have already been defined for the source. Enter `_parser` as the field name and the path to your parser as the value. <br/><img src={useBaseUrl('img/cse/new-field.png')} alt="New field" width="500"/>
+1. Two blank fields appear, below any fields that have already been defined for the source. Enter `_parser` as the field name and the path to your parser as the value. <br/><img src={useBaseUrl('img/cse/new-field.png')} alt="New field" width="500"/>
 <br/>An orange icon indicates that the `_parser` field has not been created in your Sumo Logic core platform org yet.
+
+## Parser templates
+
+We provide a number of parsers to extract data for normalization (see [Parsers](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md)). However, you might need to create custom parsers for data sources not included in the parsers we offer. For this reason, we provide parser templates to aid in creating your own custom parsers.
+
+### Access parser templates
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Parsers**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Parsers**. You can also click the **Go To...** menu at the top of the screen and select **Parsers**.  
+1. Open the **System** folder.
+1. Scroll down to the **Parser Templates** folder and open it.
+1. Browse the templates. Available formats include:
+   * CEF
+   * CSV
+   * JSON
+   * Key value
+   * LEEF
+   * Unstructured (regular expression)
+   * Windows XML
+   * XML
+
+<img src={useBaseUrl('img/cse/parser-templates.png')} alt="Parser templates" style={{border: '1px solid gray'}} width="800" />
+
+### What's inside the templates
+
+The parser templates cover common log formats and scenarios. Each template has two versions, one with verbose commentary on each component of the parser, and another without commentary that you can duplicate and use to quickly start creating a custom parser.
+
+:::sumo Micro Lesson
+
+Watch the following video for a walkthrough of the parser templates.
+
+<Iframe url="https://www.youtube.com/embed/GFzovRGhtDU?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
+
+:::

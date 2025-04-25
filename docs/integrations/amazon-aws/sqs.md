@@ -8,15 +8,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/sqs.png')} alt="Thumbnail icon" width="50"/>
 
-Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing service that makes it easy to decouple and scale microservices, distributed systems, and serverless applications. The Sumo Logic App for Amazon SQS is a unified logs and metrics (ULM) App that provides operational insights into your Amazon SQS utilization. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
+Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing service that makes it easy to decouple and scale microservices, distributed systems, and serverless applications. The Sumo Logic app for Amazon SQS is a unified logs and metrics (ULM) app that provides operational insights into your Amazon SQS utilization. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
 
-## Log and Metrics Types
-The App uses SQS logs and metrics for:
+## Log and Metrics types
+
+The app uses SQS logs and metrics for:
 * SQS CloudWatch Metrics. For details, [see here](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-monitoring-using-cloudwatch.html).
 * SQS operations using AWS CloudTrail. For details, [see here](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-logging-using-cloudtrail.html).
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -63,15 +64,15 @@ The App uses SQS logs and metrics for:
 }
 ```
 
-### Sample Query
+### Sample queries
 
-**Messages Received (Metrics-based)**:
+**Messages Received (Metrics-based)**
 
 ```sql
 metric=NumberOfMessagesReceived Statistic=Sum account=* region=* namespace=* queuename=* | sum by account, region, namespace, queuename
 ```
 
-**Top 10 users (CloudTrail Log-based)**:
+**Top 10 users (CloudTrail Log-based)**
 
 ```sql
 account=* region=* namespace=aws/sqs eventname eventsource "sqs.amazonaws.com"
@@ -89,7 +90,7 @@ account=* region=* namespace=aws/sqs eventname eventsource "sqs.amazonaws.com"
 | top 10 username by event_count, username asc
 ```
 
-## Collecting Logs and Metrics for the Amazon SQS App
+## Collecting logs and metrics for the Amazon SQS app
 
 ### Collect Metrics for AmazonSQS
 
@@ -102,7 +103,7 @@ Sumo Logic supports collecting metrics using two source types:
 Namespace for **Amazon SQS** Service is **AWS/SQS**
 :::
 
-**Metadata**: Add an account field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account” field.
+**Metadata**: Add an account field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account” field.
 
 ![Metadata](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/Metadata+account.png)
 
@@ -118,18 +119,20 @@ Namespace for **Amazon SQS** Service is **AWS/SQS**
     The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     :::
     * **Source Category**. Enter aws/observability/CloudTrail/logs.
-    * **Fields**. Add an account field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.<br/> ![Account Fields](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/Fields.png)
+    * **Fields**. Add an account field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.<br/> ![Account Fields](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/Fields.png)
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
     * **Log File Interval > Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-    * **Enable Timestamp Parsing**. Select the check box.
-    * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-    * **Timestamp Format**. Select Automatically detect the format.
-    * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+    * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+    * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+    * **Timestamp Format.** Select **Automatically detect the format**.
+    * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
 ## Field in Field Schema
 
-Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the `queuename` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. Search for the `queuename` field. 
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
 
 ## Field Extraction Rule(s)
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
@@ -154,6 +157,7 @@ json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountI
 ```
 
 ## Centralized AWS CloudTrail Log Collection
+
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present/update it as required.
 
 * **Rule Name**: AWS Accounts
@@ -170,33 +174,22 @@ In case you have a centralized collection of CloudTrail logs and are ingesting t
 | fields account
 ```
 
-## Installing the Amazon SQS App
+## Installing the Amazon SQS app
 
-Now that you have set up collection for Amazon SQS, install the Sumo Logic App to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon SQS, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall/>
 
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add Integration** and complete the following fields:
-   1. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-   2. **Select Folder Location for your App**. Select the location in the library (the default is the Personal folder in the library), or
-   3. Click **New Folder** to add a new folder.
-3. Click on **Next** and then exit to exit from the app catalog or back to edit name or location.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-## Viewing Amazon SQS Dashboards
+## Viewing Amazon SQS dashboards
 
 Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing service that makes it easy to decouple and scale microservices, distributed systems, and serverless applications.
 
-The Sumo Logic App for Amazon SQS provides operational insights into your Amazon SQS utilization. The App’s preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
+The Sumo Logic app for Amazon SQS provides operational insights into your Amazon SQS utilization. The app’s preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
 
 :::note
-We recommend using the [AWS Observability solution Explore View dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards).
+We recommend using the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability).
 :::
 
 ### Overview

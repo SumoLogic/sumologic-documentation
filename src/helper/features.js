@@ -173,7 +173,7 @@ export const features4 = [
       message: 'Cloud SOAR',
       description: 'Title for SOAR',
     }),
-    imageUrl: 'img/icons/security/SOC.png',
+    imageUrl: 'img/icons/security/soar-2-color-icon.png',
     description: (<Translate
       id='landing.feature.soar.desc'
       description='SOAR description'>

@@ -1,6 +1,6 @@
 ---
 id: source-info
-title: Cloud to Cloud Info
+title: Cloud-to-Cloud Info
 slug: /c2c/info
 tags:
   - cloud-to-cloud
@@ -23,20 +23,34 @@ On the [Collection page](/docs/manage/health-events#collection-page), the Health
 
 Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings. You can click on the status icon to open a Health Events panel with details on each detected issue.
 
+## Metadata fields
+
+**Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/).
+
+:::note
+The checkbox only shows up if you have Cloud SIEM and if the C2C already has Cloud SIEM content like parsers and rules.
+:::
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemForward` | <code>(true \| false)</code> | Set to `true` when **Forward To SIEM** is checked. |
+
 ## Error Types
 
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
-| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry indefinitely. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | FirstPartyGenericError |
+| VendorConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | VendorConfigError  |
+| VendorGeneric | Normally due to an error communicating with the vendor generic APIs. | Yes | The Source will retry indefinitely. | VendorGenericError |
+| SumoLogicGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | SumoLogicGenericError |
 
 ## Restarting your Source
 
-{@import ../../../reuse/restart-c2c-source.md}
+import RestartC2C from '../../../reuse/restart-c2c-source.md';
+
+<RestartC2C/>
 
 ## JSON Configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources), or [Sumo Logic Terraform Resource](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloud_to_cloud_source) if you are using Terraform,for more details.
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [How to use JSON to configure sources](/docs/send-data/use-json-configure-sources), or [Sumo Logic Terraform Resource](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloud_to_cloud_source) if you are using Terraform,for more details.

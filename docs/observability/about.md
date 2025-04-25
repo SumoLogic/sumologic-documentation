@@ -13,8 +13,21 @@ import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
 
-About Observability and how it's different from monitoring. The video also explains how Sumo Logic's Observability Solution helps in all the stages of the incident remediation process to ensure the production apps are functioning reliably.
+This video explains Observability and how it's different from monitoring. It also explains how Sumo Logic's Observability Solution helps in all the stages of the incident remediation process to ensure the production apps are functioning reliably.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/go7gwjrmkl?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Introduction to Observability Solution Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/FJG1zesNJs0?rel=0"
         width="854px"
         height="480px"
@@ -22,9 +35,10 @@ About Observability and how it's different from monitoring. The video also expla
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
@@ -32,7 +46,7 @@ About Observability and how it's different from monitoring. The video also expla
 
 Modern applications are increasingly complex, as they leverage distributed technologies, cloud infrastructure, and container and orchestration tools. In addition, the connections between microservices, orchestrators, and underlying cloud resources is also growing in complexity. This complexity leads to situations where unforeseen events, unknown unknowns in terms of risk, are more prevalent and come with mysterious behaviors and failure modes.  This can cause major issues in your overall incident remediation workflow, which can be broken down into three steps. 
 
-* **Monitor** critical indicators of reliability such as errors or latency. Sometimes these unknown unknown types errors don't directly impact the metrics that you are tracking, which makes monitoring the issues more difficult.  
+* **Monitor** critical indicators of reliability such as errors or latency. Sometimes these unknown unknown types errors do not directly impact the metrics that you are tracking, which makes monitoring the issues more difficult.  
 
 * **Diagnose** or isolate services or resources that might be the immediate cause of reliability issues. These unknown unknowns could impact systems in obscure ways. For example, the culprit service’s metrics might look alright, but a downstream service that consumes this service might have abnormal metrics, which could  lead an SRE down the wrong path. There is no tribal knowledge that can help guide the SRE in the right direction. 
 

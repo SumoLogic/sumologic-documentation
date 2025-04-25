@@ -41,16 +41,16 @@ You cannot restart a Collector if:
 
 To restart your Installed Collector in the Sumo Logic platform:
 
-1. Open the Collection page, go to **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Find the Installed Collector and click the information icon on the right of the row.
-1. The **API usage information** popup is displayed. Click the **Restart Collector** button on the bottom left.<br/>   ![restart collector button.png](/img/collector/restart-collector-button.png)
+1. The **API usage information** popup is displayed. Click the **Restart Collector** button on the bottom left.<br/>   ![restart collector button.png](/img/collector/restart-collector-button.png) 
 1. Click **Confirm **to send the restart request.<br/>   ![restart confirmation.png](/img/collector/restart-confirmation.png)
 1. The bottom left of the platform will provide a notification informing you the request was successful.<br/>   ![restart initiated.png](/img/collector/restart-initiated.png)
 1. A few minutes later another notification is provided, either **restarted successfully** or **restart request timeout**. Do not refresh the web page, see the [limitations](#limitations) section above for details.
 
 ## Audit restarts
 
-The [Audit Event Index](/docs/manage/security/audit-event-index.md) keeps
+The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index.md) keeps
 records of restart requests with the `getCollectorRestartRequested` event and restart completions with the `getCollectorRestartCompleted` event. The following is a simple [Search](/docs/search) query that returns these event logs:
 
 ```sql

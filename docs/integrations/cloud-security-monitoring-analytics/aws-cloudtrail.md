@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This set of CloudTrail monitoring and analytics dashboards provide one dashboard for the most critical analytics. Think of this bundle of dashboards as a good starting place to see trends and outliers on specific aspects of your CloudTrail data -- including access monitoring, login activity, system monitoring, privileged activity, and threat intelligence.
 
 
-## Collecting Logs for the AWS CloudTrail PCI Compliance App
+## Collecting logs for the AWS CloudTrail app
 
 This section has instructions for configuring log collection for the AWS CloudTrail app.
 
@@ -27,13 +27,13 @@ To configure an AWS CloudTrail Source, perform these steps:
    * Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
    * Create the CloudFormation stack in AWS Management Console using the template.
    * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, see [Configuring your AWS source with CloudFormation](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation).
-5. [Enable Sumo to track AWS Admin activity](/docs/integrations/amazon-aws/cloudtrail/#enable-sumo-logic-to-track-aws-admin-activity). This step is optional, but if you don't do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
+5. [Enable Sumo to track AWS Admin activity](/docs/integrations/amazon-aws/cloudtrail/#enable-sumo-logic-to-track-aws-admin-activity). This step is optional, but if you do not do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
 6. Install the Sumo Logic App for AWS CloudTrail.
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can upgrade your account at any time.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -72,7 +72,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 | parse "\"userName\":\"*\"" as user
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
@@ -87,27 +87,23 @@ _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
 
 
-## Installing the PCI Compliance AWS CloudTrail App
+## Installing the AWS CloudTrail app
 
 Now that you have set up collection, install the Amazon CloudTrail - Cloud Security Monitoring and Analytics app to use the preconfigured searches and Dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
 
-## Viewing AWS CloudTrail Dashboards
+<AppInstall/>
 
-The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashboards that you can modify for your specific security operational needs.
+## Viewing AWS CloudTrail dashboards
 
-* Access Monitoring
-* Login Activity
-* Account and System Monitoring
-* Overview
-* Privileged Activity
-* Threat Intelligence
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
+<ViewDashboards/>
 
 ### Security Analytics - Access Monitoring
 
-**Description: **See the details of security group activities and all AWS activities divided by read only and non read only.
+**Description:** See the details of security group activities and all AWS activities divided by read only and non read only.
 
 **Use Case:** Provides analysis of group activity events including revoking and authorizing access, creating and deleting groups, and other events.
 
@@ -125,7 +121,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 ### Security Monitoring - Account and System Monitoring
 
-**Description: **See the details of identity and access management for users, roles, access keys and other aspects of identity.
+**Description:** See the details of identity and access management for users, roles, access keys and other aspects of identity.
 
 **Use Case:** Provides analysis of IAM activity. Analysis of created and deleted users as well as a summary of IAM events. Created and deleted roles are evidenced. An additional set of analysis looks into password management, user changes in groups and other events.
 
@@ -142,7 +138,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 ### AWS CloudTrail - Security Analytics - Privileged Activity
 
-**Description: **Provides analytics on events that require elevated privileges.
+**Description:** Provides analytics on events that require elevated privileges.
 
 **Use Case:** Provides top events, trending and outliers on configuration changes, security group events, and security policy changes.
 
@@ -152,6 +148,6 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 **Description:** Review this dashboard for details on potential threats and IOCs for AWS CloudTrail.
 
-**Use Case: **Provides analysis on Threats Associated with CloudTrail Events, Threats By Actor, Threats by Events and I.P, Threats by Events and Result, Threats by Geo Location, Threats Over Time by Result.
+**Use Case:** Provides analysis on Threats Associated with CloudTrail Events, Threats By Actor, Threats by Events and I.P, Threats by Events and Result, Threats by Geo Location, Threats Over Time by Result.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Monitoring-Threat-Intelligence.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />

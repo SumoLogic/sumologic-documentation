@@ -1,23 +1,23 @@
 ---
 id: amazon-sns
 title: Amazon SNS
-description: The Sumo Logic App for Amazon SNS collects CloudTrail logs and CloudWatch metrics that provides insight into the operations and utilization of your SNS service.
+description: The Sumo Logic app for Amazon SNS collects CloudTrail logs and CloudWatch metrics that provides insight into the operations and utilization of your SNS service.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Sumo Logic App for Amazon SNS collects CloudTrail logs and CloudWatch metrics to provide is a unified logs and metrics App that provides insights into the operations and utilization of your SNS service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
+The Sumo Logic app for Amazon SNS collects CloudTrail logs and CloudWatch metrics to provide is a unified logs and metrics app that provides insights into the operations and utilization of your SNS service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
 
 
-## Log and Metrics Types
+## Log and metrics types
 
-The App uses SNS logs and metrics:
+The app uses SNS logs and metrics:
 
-* SNS CloudWatch Metrics. For details, see [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html).
-* SNS operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html).
+* [SNS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html)
+* [SNS operations using AWS CloudTrail](http://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html)
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -45,9 +45,7 @@ The App uses SNS logs and metrics:
 }
 ```
 
-
-
-### Sample Query
+### Sample queries
 
 ```sql title="Events By Status"
 account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\"sns.amazonaws.com\""
@@ -70,25 +68,22 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\
 | sort by _count, event_status asc
 ```
 
-
-### Sample Query (Metric based)
-
-```sql title="Messages Published"
+```sql title="Metric-based - Messages Published"
 account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicname}} metric=NumberOfMessagesPublished Statistic=Sum | sum
 ```
 
+## Viewing Amazon SNS dashboards
 
-## Viewing Amazon SNS Dashboards
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
-The Sumo Logic App for Amazon SNS collects CloudTrail logs and CloudWatch metrics to provide is a unified logs and metrics App that provides insights into the operations and utilization of your SNS service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
-
+<FilterDashboards/>
 
 ### Amazon SNS - Overview
 
 The **Amazon SNS - Overview** dashboard provides insights across CloudTrail events and metrics.
 
 Use this dashboard to:
-* Monitor events by status, type, topic names and  users.** **
+* Monitor events by status, type, topic names and  users.
 * Monitor number of messages and messages by publish size.
 * Monitor delivered and failed notifications.
 
@@ -101,7 +96,7 @@ The **Amazon SNS - Audit Events** dashboard provides insights across CloudTrail 
 Use this dashboard to:
 
 * Monitor successful and failed events by location.
-* Get trends of events by status, type.** **
+* Get trends of events by status, type.
 * Monitor successful and error events with error code in detail.
 * Get details of active topic names and users of both successful and error events.
 

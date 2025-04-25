@@ -6,7 +6,7 @@ description: Opt-in to Sumo Logic beta terms and conditions.
 
 In order to participate in Sumo Logic pre-release programs ("Betas"), you must access and opt in to the Sumo Logic beta participation terms and conditions in the Sumo Logic UI. These instructions assume that you are the Account Owner of your organization's Sumo Logic account.
 
-1. Go to **Administration** > **Account** in the Sumo Logic UI.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
 1. Select the **Beta Participation** tab.
 1. Under **Beta Features** click **Opt-in**.
 1. Please read the entire agreement.

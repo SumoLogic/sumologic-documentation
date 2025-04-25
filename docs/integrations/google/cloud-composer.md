@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cloud Composer is a managed Apache Airflow service that helps you create, schedule, monitor, and manage workflows.  For more details, refer to the [GCP documentation](https://cloud.google.com/composer/docs/how-to)
 
-## Log and Metric types
+## Log and metric types
 
 * [Google Cloud Metrics](https://cloud.google.com/monitoring/api/metrics_gcp)
 * [Platform Logs](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html)

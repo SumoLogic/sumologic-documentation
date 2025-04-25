@@ -39,7 +39,7 @@ This source is **not** yet available in the [Fed deployment](/docs/api/getting-s
 
 ## Data collected
 
-\Add all the data sources and respective pollig iterval information\
+\Add all the data sources and respective polling interval information\
 
 | Polling Interval | Data |
 | :--- | :--- |
@@ -51,13 +51,13 @@ Example:
 | --- | --- |
 | 5 min |  [Team Events](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events)
 
-### Sample log message
+### Sample log messages
 
 ```json title="example"
 Enter the log message in json format with the title.
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="example"
 Enter the log message in sql format with the title.
@@ -65,7 +65,7 @@ Enter the log message in sql format with the title.
 
 ## Setup
 
-To set up Cloud to Cloud Integration /source name/ Source for the /app name/ app, follow the instructions provided. These instructions will guide you through the process of creating a source using the /source name/ Source category, which you will need to use when installing the app. By following these steps, you can ensure that your /app name/ app is properly integrated and configured to collect and analyze your /app name/ data.
+To set up Cloud-to-Cloud Integration /source name/ Source for the /app name/ app, follow the instructions provided. These instructions will guide you through the process of creating a source using the /source name/ Source category, which you will need to use when installing the app. By following these steps, you can ensure that your /app name/ app is properly integrated and configured to collect and analyze your /app name/ data.
 
 ### Vendor configuration
 
@@ -81,13 +81,13 @@ Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cl
 
 ### Source configuration
 
-\Insert steps to configure the Source in the Sumo Logic UI\
+\Insert steps to configure the Source in the Sumo Logic UI.\
 
 Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#create-a-dropboxsource
 
 #### Metadata fields
 
-\Insert meta deta fields in the Sumo Logic UI. Update the below table accordingly.\
+\Insert metadata fields in the Sumo Logic UI. Update the below table accordingly.\
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
@@ -95,7 +95,7 @@ Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cl
 
 #### JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [How to Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for more details. 
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
@@ -103,7 +103,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration parameters](#config-object) | Yes | Source type specific values. |
 
-#### Config Object
+#### Config object
 
 \Add information about the configuration parameters. Update the below table accordingly.\
 
@@ -134,20 +134,24 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
 
 ## Installing the /app name/ app
 
 \Reuse the below content\
 
-{@import ../../reuse/filter-dashboards.md}
+import FilterDashboards from '../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ## Viewing /app name/ dashboards
 
 \Reuse the below content\
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ### /Dashboard name/
 
@@ -162,9 +166,3 @@ Use this dashboard to:
 * Understand how to fine-tune \<fill in your product name\> based on \<fill in panel names\>.
 
 <img src='https:///Dashboard-S3-link.png' style={{border: '1px solid black'}} alt="Dashboard-name" />
-
-
-
-
-
-

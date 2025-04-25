@@ -22,7 +22,7 @@ This App has been tested with following Kafka versions:
 * 3.4.0
 
 
-## Sample Logs
+## Sample log messages
 
 ```json
 {
@@ -33,7 +33,7 @@ This App has been tested with following Kafka versions:
 }
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample query string is from the Logs panel of the **Kafka - Logs** dashboard.
 
@@ -49,9 +49,9 @@ messaging_cluster=* messaging_system="kafka" \
 The list of metrics collected can be found [here](/docs/integrations/containers-orchestration/kafka/#kafka-metrics).
 
 
-## Collecting Logs and Metrics for Strimzi Kafka Pods
+## Collecting logs and metrics for Strimzi Kafka Pods
 
-Collection architecture is similar to Kafka and described [here](/docs/integrations/containers-orchestration/strimzi-kafka/#configure-collection-for-kafka).
+Collection architecture is similar to Kafka and described [here](/docs/integrations/containers-orchestration/strimzi-kafka/#collecting-logs-and-metrics-for-strimzi-kafka-pods).
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Strimzi Kafka.
 
@@ -75,9 +75,9 @@ Before configuring the collection you will require below items
 
 2. Download [sumologic_values_eks.yaml](https://drive.google.com/file/d/1YYBmf2akxgfCjWSOdpO2nqf3KmpRc9y0/view?usp=sharing) file. This file contains the remote write configuration for metrics which the app uses. You can add or remove metrics depending upon your use case.
 
-3. Generate the Sumo Logic access ids and access keys in the Sumo Logic [portal](/docs/manage/security/access-keys/#generate-an-access-key).
+3. Generate the Sumo Logic access IDs and access keys in the Sumo Logic [portal](/docs/manage/security/access-keys/#create-an-access-key).
 
-4. Install the Sumo Logic Kubernetes Collection using **sumologic_values_eks.yaml** file (in folder) by following the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md). Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator enabled. If you are not, then follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf/) to do so. The below command enables traces and telegraf operators using the credentials generated in the previous step and deploys the 2.10.0 helm chart version.
+4. Install the Sumo Logic Kubernetes Collection using **sumologic_values_eks.yaml** file (in folder) by following the instructions [here](/docs/send-data/kubernetes/install-helm-chart). Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator enabled. If you are not, then follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf/) to do so. The below command enables traces and telegraf operators using the credentials generated in the previous step and deploys the 2.10.0 helm chart version.
 
   ```bash
   helm upgrade --install sumologic sumologic/sumologic \
@@ -111,9 +111,9 @@ Follow these steps to collect metrics from a Kubernetes environment:
 
         Example:
 
-        ```bash
-          docker build --platform linux/amd64 -t "kafka:kafka-3.4.0" .
-          docker tag "kafka:kafka-3.4.0" public.ecr.aws/g0d6f4n6/strimzi-kafka-jolokia:kafka-3.4.0
+        ```
+        docker build --platform linux/amd64 -t "kafka:kafka-3.4.0" .
+        docker tag "kafka:kafka-3.4.0" public.ecr.aws/g0d6f4n6/strimzi-kafka-jolokia:kafka-3.4.0
         ```
     5. Push the images in your container repository. Strimzi supports both private container registries as well as public registries.You can either configure image pull secrets at the [Cluster operator level](https://strimzi.io/docs/operators/latest/full/using.html#ref-operator-cluster-str) or in the [PodTemplate section](https://strimzi.io/docs/operators/latest/full/using.html#type-PodTemplate-reference).
 
@@ -125,14 +125,14 @@ Follow these steps to collect metrics from a Kubernetes environment:
 
     2. In the tags sections(`[inputs.jolokia2_agent.tags]` and `[inputs.disk.tags]`), enter in values for the parameters marked with `<<CLUSTER_NAME>>,<<ENVIRONMENT>>` in the yaml file:
 
-        * `environment` - Replace `<<ENVIRONMENT>>` with the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `messaging_cluster` - Replace `<<CLUSTER_NAME>>` with a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. Replace `<<ENVIRONMENT>>` with the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `messaging_cluster`. Replace `<<CLUSTER_NAME>>` with a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-        Here’s an explanation for additional values set by this configuration that we request you **do not modify** these values as they will cause the Sumo Logic apps to not function correctly.
+        **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
 
-        * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-        * `prometheus.io/scrape: "true"` - This ensures our Prometheus plugin will scrape the metrics.
-        * `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape metrics from. This should not be changed.
+        * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+        * `prometheus.io/scrape: "true"`. This ensures our Prometheus plugin will scrape the metrics.
+        * `prometheus.io/port: "9273"`. This tells Prometheus what ports to scrape metrics from. This should not be changed.
         * In the tags sections(`[inputs.jolokia2_agent.tags]` and `[inputs.disk.tags]`)
           * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
           * `messaging_system: “kafka”` - This value identifies the database system.
@@ -150,10 +150,10 @@ If your Kafka helm chart/pod is writing the logs to standard output then the [Su
 1. **Add labels on your Kafka pods**
    1. Open **kafka-metrics-sumologic-telegraf.yaml** in any editor and go to **spec -> kafka -> template -> pod -> metadata -> labels** section.
    2. Enter in values for the parameters marked with `<<CLUSTER_NAME>>,<<ENVIRONMENT>>` in the yaml file:
-      * `environment` - Replace `<<ENVIRONMENT>>` with the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `messaging_cluster` - Replace `<<CLUSTER_NAME>>` with a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `environment`. Replace `<<ENVIRONMENT>>` with the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `messaging_cluster`. Replace `<<CLUSTER_NAME>>` with a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-      * Here’s an explanation for additional labels set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+      * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
         * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
         * `messaging_system: “kafka”` - This value identifies the messaging system.
 
@@ -173,7 +173,7 @@ If your Kafka helm chart/pod is writing the logs to standard output then the [Su
 
 3. **Configure Fields in Sumo Logic**
 
-    Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+    Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
     * `pod_labels_component`
     * `pod_labels_environment`
@@ -183,7 +183,7 @@ If your Kafka helm chart/pod is writing the logs to standard output then the [Su
 4. **Adding FER for normalizing fields**
 
   Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Messaging Application Components. To do so:
-    1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
+    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
     2. Click the **+ Add** button on the top right of the table.
     3. The **Add Field Extraction Rule** form will appear. Enter the following options:
         * **Rule Name**. Enter the name as **App Component Observability - Messaging.**
@@ -274,7 +274,10 @@ This section demonstrates how to install the Strimzi Kafka App.
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**.
+   :::note
+   Version selection is not available for all apps.
+   :::
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Kafka cluster filter. Examples:

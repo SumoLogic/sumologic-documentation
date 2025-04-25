@@ -27,14 +27,13 @@ The metrics collection pipeline for using Telegraf in a non-Kubernetes environme
 1. In non-Kubernetes environments, you'll need to install Telegraf on the system that hosts the application you want to monitor. For instructions, see [Install Telegraf](install-telegraf.md).
 2. Configure the appropriate application-specific input plugin and the Sumo Logic output plugin in the Telegraf configuration file. For more information, see [Configure Telegraf Input Plugins](configure-telegraf-input-plugins.md) and [Configure Telegraf Output Plugin for Sumo Logic](configure-telegraf-output-plugin.md).
 
-#### For applications that don't expose metrics
+#### For applications that do not expose metrics
 
 Some applications may not expose their metrics for another system to access, in which case you'll need to configure the application to expose the metrics so that Telegraf can collect them. Some examples:
-* To collect metrics from Nginx, you'd need to configure it to expose metrics in the Nginx configuration file. For more information, see [Collecting Logs and Metrics for Nginx (Legacy)](/docs/integrations/web-servers/nginx-legacy/#collecting-logs-and-metrics-for-nginx-legacy).
+* To collect metrics from Nginx, you'd need to configure it to expose metrics in the Nginx configuration file. For more information, see [Collecting Logs and Metrics for Nginx](/docs/integrations/web-servers/nginx).
 * To collect JMX metrics from a Java application, you'd need to configure the application to use [Jolokia](https://jolokia.org/agent.html), a JMX-HTTP bridge. For more information, see [Collecting Metrics for JMX](/docs/integrations/app-development/jmx/#collecting-metrics-for-jmx).
 
 You select an existing HTTP Source on a Hosted Collection as the destination for the Telegraf-collected metrics, or configure a new collector and source, as desired. 
-:::
 
 ## Telegraf in a Kubernetes deployment
 
@@ -69,27 +68,25 @@ Sumo Logic Distribution for OpenTelemetry Collector enriches the metrics with me
 
 ### Configuration process
 
-1. To start collecting metrics from a Telegraf-supported application input plugin, you'll need to install the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection),
-   which packages up all of these components as part of the collection process for the [Sumo Logic Kubernetes Solution](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
-  :::info What is Helm?
-  Helm is a Kubernetes package and operations manager. Helm charts simplify the process of deploying components to Kubernetes environments.
-  :::
-
+1. To start collecting metrics from a Telegraf-supported application input plugin, you'll need to install the [Sumo Logic Kubernetes Collection Helm Chart](/docs/send-data/kubernetes), which packages up all of these components as part of the collection process for the Sumo Logic Kubernetes Solution.
+   :::info What is Helm?
+   Helm is a Kubernetes package and operations manager. Helm charts simplify the process of deploying components to Kubernetes environments.
+   :::
 1. Enable the Telegraf Operator by setting `telegraf-operator.enabled=true` in configuration for the Sumo Logic Kubernetes Collection Helm Chart.
 
-  For example, suppose you're running Nginx in your Kubernetes cluster, and you've enabled the status module for Nginx.
-  The following annotation added the Nginx deployment instructs the Telegraf Operator to configure an Nginx input for telegraf to read those metrics.
+   For example, suppose you're running Nginx in your Kubernetes cluster, and you've enabled the status module for Nginx.
+   The following annotation added the Nginx deployment instructs the Telegraf Operator to configure an Nginx input for telegraf to read those metrics.
 
-  ```yaml
-  telegraf.influxdata.com/inputs: |+  
-    [[inputs.nginx]]
-      urls = ["http://localhost:8080/stub_status"]
-  ```
+   ```yaml
+   telegraf.influxdata.com/inputs: |+  
+     [[inputs.nginx]]
+       urls = ["http://localhost:8080/stub_status"]
+   ```
 
 1. Add these annotations to tell Telegraf to make its metrics available to Prometheus, and instruct Prometheus to discover the metrics.
 
-  ```yaml
-  telegraf.influxdata.com/class: sumologic-prometheus
-  prometheus.io/scrape: "true"
-  prometheus.io/port: "9273"
-  ```
+   ```yaml
+   telegraf.influxdata.com/class: sumologic-prometheus
+   prometheus.io/scrape: "true"
+   prometheus.io/port: "9273"
+   ```

@@ -4,7 +4,7 @@ title: isReservedIP Search Operator
 sidebar_label: isReservedIP
 ---
 
-The `isReservedIP` operator checks if an IPv4 address is reserved as defined by <a href="https://tools.ietf.org/html/rfc5735">RFC 5735</a> and returns a boolean.
+The `isReservedIP` operator checks if an IPv4 address is reserved as defined by [RFC 5735](https://tools.ietf.org/html/rfc5735) and returns a boolean.
 
 ## Syntax
 

@@ -13,9 +13,9 @@ For example, to find the most recent value of services you'd use the following o
 The `dedup` operator is supported for the following features:
 
 * [Log Search](/docs/search)
-* [Dashboards (New)](/docs/dashboards/about.md)
 * [Dashboards](/docs/dashboards), including live mode
 * [Scheduled Searches](/docs/alerts/scheduled-searches/schedule-search.md)
+* [Monitors](/docs/alerts/monitors/)
 
 ## Syntax
 
@@ -23,11 +23,28 @@ The `dedup` operator is supported for the following features:
 dedup [consecutive] [<int>] [by <field>[, <field2>, ...]]
 ```
 
-| Parameter | Description | Example |
-|:-- |:-- |:-- |
-| consecutive | Removes duplicate combinations of values that are in succession. | Remove only consecutive duplicate events. Keep non-consecutive duplicate events. In this example, duplicates must have the same combination of values as the source and host fields for them to be removed. Non-consecutive events with the same combination of source and host fields will be retained.<br/>`... | dedup consecutive by source, host` |
-| int | Specifies the number of most recent events to return. | For search results that have the same source value, keep the first three that occur and remove all subsequent search results.<br/>`... | dedup 3 by source` |
-| field | A comma-separated list of field names to remove duplicate values from. If no fields are specified, the query is run against _raw, the full raw log message.<br/>For example, `| dedup` is the same as `| dedup` by _raw. | Remove duplicate search results based on _sourceCategory.<br/>`... | dedup by _sourceCategory` |
+<table>
+  <tr>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Description</strong></td>
+   <td><strong>Example</strong></td>
+  </tr>
+  <tr>
+   <td>consecutive</td>
+   <td>removes duplicate combinations of values that are in succession.</td>
+   <td>Remove only consecutive duplicate events. Keep non-consecutive duplicate events. In this example, duplicates must have the same combination of values as the source and host fields for them to be removed. Non-consecutive events with the same combination of source and host fields will be retained.<br/><code>... | dedup consecutive by source, host</code></td>
+  </tr>
+  <tr>
+   <td>int</td>
+   <td>specifies the number of most recent events to return.</td>
+   <td>For search results that have the same source value, keep the first three that occur and remove all subsequent search results.<br/><code>... | dedup 3 by source</code></td>
+  </tr>
+  <tr>
+   <td>field</td>
+   <td>A comma-separated list of field names to remove duplicate values from. If no fields are specified, the query is run against <code>_raw</code>, the full raw log message.<br/>For example, <code>| dedup</code> is the same as  <code>| dedup by _raw</code>.</td>
+   <td>Remove duplicate search results based on _sourceCategory.<br/><code>... | dedup by _sourceCategory</code></td>
+  </tr>
+</table>
 
 ## Rules
 

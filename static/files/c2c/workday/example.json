@@ -1,0 +1,24 @@
+{
+    "api.version": "v1",
+    "source": {
+      "config": {
+        "name": "Workday Test",
+        "description": "Testing the workday source",
+        "category": "General",
+        "signOnReportURL": "https://wd2-impl-services1.workday.com...-_Copy",
+        "isuUsername": "SumoLogic",
+        "isuPassword": "**********",
+        "refreshTokenURL": "https://wd2-impl-services1.workday.com...token",
+        "clientID": "sldfsjdflk230sdflnk2342cxcoijs0",
+        "clientSecret": "**********",
+        "refreshToken": "**********",
+        "restApiURL": "https://wd2-impl-services1.workday.com...activityLogging",
+        "backfillDays": 1,
+        "pollingIntervalMinutes": 10
+      },
+      "schemaRef": {
+        "type": "Workday"
+      },
+      "sourceType": "Universal"
+    }
+  }

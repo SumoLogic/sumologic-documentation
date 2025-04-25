@@ -1,0 +1,20 @@
+{
+    "api.version":"v1",
+    "source":{
+         "config":{
+             "name":"Gmail Trace Log",
+             "category":"gmail",
+             "projectId":"Product123",
+             "datasetId":"Product123",
+             "privateKey":"*****************",
+             "tokenURI":"dshjfgbkjlafdhbdhfvhjksdg",
+             "clientEmail":"product123@gmail.com",
+             "dataLocation":"US",
+             "startTime":"24 Hours ago"
+         },
+         "schemaRef":{
+             "type":"Gmail Trace Logs"
+         },
+         "sourceType":"Universal"
+    }
+ }

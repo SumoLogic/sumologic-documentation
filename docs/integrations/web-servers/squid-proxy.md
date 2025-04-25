@@ -18,13 +18,13 @@ This app is tested with the following Squid Proxy versions:
 * Non-Kubernetes environments: Squid Proxy version: 6.0.0
 
 
-## Collecting Logs and Metrics for the Squid Proxy app
+## Collecting logs and metrics for the Squid Proxy app
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Squid Proxy.
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -82,7 +82,7 @@ Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distributio
 In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 :::note Prerequisites
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
 #### Configure Metrics Collection
@@ -100,7 +100,8 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
   ```
 3. Add annotations on your Squid Proxy pods.
 
-<details><summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
+<details>
+<summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
 
 ```sql
 annotations:
@@ -276,22 +277,22 @@ annotations:
 If you haven’t defined a farm in Squid Proxy, then enter ‘**default**’ for `proxy_cluster`.
 
 Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf SNMP Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SNMP input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf SNMP Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SNMP input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
   * In the tags section, which is `[inputs.snmp.tags]`
-    * `environment` - This is the deployment environment where the Squid Proxy cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-    * `proxy_cluster` - Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards.  
+    * `environment`. This is the deployment environment where the Squid Proxy cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+    * `proxy_cluster`. Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards.  
 
-Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
+**Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
 
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
 * `telegraf.influxdata.com/inputs`
   * In the tags section, which is `[inputs.snmp.tags]`
-    * `component: “proxy”` - This value is used by Sumo Logic apps to identify application components.
+    * `component: “proxy”`.  This value is used by Sumo Logic apps to identify application components.
     * `proxy_system: “squidproxy”` - This value identifies the proxy system.
 
-  For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+  For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
@@ -308,18 +309,17 @@ This section explains the steps to collect Squid Proxy logs from a Kubernetes en
     proxy_system="squidproxy"
     proxy_cluster="<cluster_CHANGEME>"
     ```
+   Enter in values for the following parameters (marked **CHANGE_ME** above):
+    * `environment`. This is the deployment environment where the Squid Proxy cluster identified by the value of `servers`  resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `proxy_cluster`. Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
 
-   Enter in values for the following parameters (marked in **bold and CHANGE_ME** above):
-    * `environment` - This is the deployment environment where the Squid Proxy cluster identified by the value of `servers`  resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * `proxy_cluster` - Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
-
-   Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
-    * `component: “proxy”` - This value is used by Sumo Logic apps to identify application components.
+   **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
+    * `component: “proxy”`.  This value is used by Sumo Logic apps to identify application components.
     * `proxy_system: “squidproxy”` - This value identifies the proxy system.
 
-For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-   2. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+   2. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app) here.
    3. Verify logs in Sumo Logic.
 
 2. **(Optional) Collecting Squid Proxy Logs from a Log File** Follow the steps below to capture Squid Proxy logs from a log file on Kubernetes.
@@ -342,7 +342,7 @@ For all other parameters, see [this doc](/docs/send-data/collect-from-other-data
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
 3. **Add an FER to normalize the fields in Kubernetes environments** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-   1. Go to **Manage Data > Logs > Field Extraction Rules**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
    2. Click the + Add button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear.
 
@@ -359,14 +359,15 @@ The process to set up collection for Squid Proxy data is done through the follow
 
 Squid Proxy app supports the default access logs and cache logs format.
 
-1. **Configure logging in Squid Proxy.** By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/var/log/squid/access.log`. If the access log is disabled then you must enable the access log following these [instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
+1. **Configure logging in Squid Proxy.** By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/var/log/squid/access.log`. If the access log is disabled then you must enable the access log following [these instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
 2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
    1. To collect logs directly from the Squid Proxy machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
    2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 4. **Configure a local file source**. Choose a method:
 
-<details><summary>For an Installed Collector</summary>
+<details>
+<summary>For an Installed Collector</summary>
 
 To collect logs directly from your Squid Proxy machine, use an Installed Collector and a Local File Source.  
 
@@ -376,7 +377,7 @@ To collect logs directly from your Squid Proxy machine, use an Installed Collect
 * **Description**. (Optional)
 * **File Path (Required)**. Enter the path to your access.log. The files are typically located in /var/log/squid/access.log. If you're using a customized path, check the squid.conf file for this information.
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 * **Fields.** Set the following fields
 ```bash
 component = proxy
@@ -396,7 +397,8 @@ environment = <Your_Environment_Name> #For example, Dev, QA, or Prod
 
 </details>
 
-<details><summary>For a Hosted Collector</summary>
+<details>
+<summary>For a Hosted Collector</summary>
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
@@ -405,7 +407,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 * **Name**. (Required)
 * **Description**. (Optional)
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced **section:
 * **Enable Timestamp Parsing**. Select **Extract timestamp information from log file entries**.
 * **Time Zone**. For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
@@ -432,16 +434,17 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
     3. Select **Save**.
     4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 2. **Enable SNMP agent on Squid Proxy**. By default, the [SNMP agent](https://wiki.squid-cache.org/Features/Snmp) will be disabled on squid proxy. You have to enable it. To enable the SNMP agent on squid, edit the configuration file of the squid proxy (squid.conf) and add the following section:
-  ```bash
-  acl snmppublic snmp_community public
-  snmp_port 3401
-  snmp_access allow snmppublic localhost
-  ```
+   ```bash
+   acl snmppublic snmp_community public
+   snmp_port 3401
+   snmp_access allow snmppublic localhost
+   ```
 3. **Set up Telegraf**.
-   1. Install Telegraf if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
+   1. Install Telegraf if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
    2. Configure and start Telegraf: as part of collecting metrics data from Telegraf, we'll use the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
-<details><summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
+<details>
+<summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
 
 ```sql
 [[inputs.snmp]]]
@@ -614,20 +617,20 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
      * Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration.
      * In the tags section, which is `[inputs.snmp.tags]`:
-     * `environment` - This is the deployment environment where the Squid Proxy server identified by the value of servers resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
-     * `proxy_cluster` - Enter a name to identify this Squid Proxy cluster. This cluster name will be shown in our dashboards.
+     * `environment`. This is the deployment environment where the Squid Proxy server identified by the value of servers resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+     * `proxy_cluster`. Enter a name to identify this Squid Proxy cluster. This cluster name will be shown in our dashboards.
      * In the output plugins section, which is `[[outputs.sumologic]]`:
      * `URL` - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
-     * Here’s an explanation for additional values set by this Telegraf configuration. We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
-     * `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
-     * `component - “proxy”` - In the input `[[inputs.snmp]]` plugins section. This value is used by Sumo Logic apps to identify application components.
-     * `proxy_system - “squidproxy”` - In the input plugins sections. This value identifies the proxy system.
+     * **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
+       * `data_format: “prometheus”`. In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+       * `component - “proxy”`. In the input `[[inputs.snmp]]` plugins section. This value is used by Sumo Logic apps to identify application components.
+       * `proxy_system - “squidproxy”`. In the input plugins sections. This value identifies the proxy system.
 
-  See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
+     See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
 
-  After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
+     After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
-  At this point, Telegraf should start collecting the Squid Proxy metrics and forward them to the Sumo Logic HTTP Source.
+     At this point, Telegraf should start collecting the Squid Proxy metrics and forward them to the Sumo Logic HTTP Source.
 
 4. Enter the following options:
    * **Rule Name**. Enter the name as **App Observability - Proxy**.
@@ -674,17 +677,17 @@ Custom filter examples:
 
 1. For alerts applicable only to a specific farm, your custom filter would be ‘`proxy_cluster=squidproxy-standalone.01`‘.
 2. For alerts applicable to all cluster that start with squidproxy-standalone, your custom filter would be '`proxy_cluster=squidproxy-standalone*`'.
-3. **For alerts applicable to a specific farm within a production environment, your custom filter would be `proxy_cluster=squidproxy-1`** and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
-4. Go to Manage Data > Alerts > Monitors.
+3. For alerts applicable to a specific farm within a production environment, your custom filter would be `proxy_cluster=squidproxy-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
+4. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 5. Click **Add**.
 6. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Squid Proxy folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Squid Proxy folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
 
 
 ### Method 2: Install the alerts using a Terraform script
 
-1. Generate a Sumo Logic access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these [instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Generate a Sumo Logic access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Squid Proxy alerts: The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SquidProxy). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/SquidProxy/.
@@ -698,7 +701,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
      * A specific cluster `squidproxy_cluster=squidproxy.standalone.01`.
      * All clusters in an environment `environment=standalone`.
      * For alerts applicable to all cluster that start with squidproxy-standalone, your custom filter would be `proxy_cluster=squidproxy-standalone*`.
-     * For alerts applicable to a specific farm within a production environment, your custom filter would be, `proxy_system=squidproxy` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
+     * For alerts applicable to a specific farm within a production environment, your custom filter would be `proxy_system=squidproxy` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
    3. All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
    4. By default, the monitors are configured in a monitor **folder** called “**SquidProxy**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `squidproxy.auto.tfvars` file.
 5. If you would like the alerts to send email or connection notifications, modify the file `squidproxy_notifications.auto.tfvars` and populate `connection_notifications` and `email_notifications` as per below examples.
@@ -719,7 +722,6 @@ connection_notifications = [
     }
   ]
 ```
-
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
@@ -736,12 +738,11 @@ email_notifications = [
     }
   ]
 ```
-
 6. Install the Alerts:
     1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SquidProxy**/ and run `terraform init`. This will initialize Terraform and will download the required components.
     2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
     3. Run **`terraform apply`**.
-7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in [this document](/docs/alerts/monitors/create-monitor).
 
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
@@ -753,9 +754,12 @@ This section demonstrates how to install the Squid Proxy app.
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**.
+:::note
+Version selection is not available for all apps.
+:::
 3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Squid Proxy cluster filter. Examples:
       * For all Squid Proxy clusters: `proxy_cluster=*`
       * For a specific farm; `proxy_cluster=squidproxy.dev.01`.
@@ -860,75 +864,9 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 
 **Sumo Logic provides the following out-of-the-box alerts**:
 
-<table>
-  <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Squid Proxy - High Latency
-   </td>
-   <td>This alert fires when latency on a node in a Squid Proxy cluster is higher than 3 seconds.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;&#61;3
-   </td>
-   <td>&#60;3
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Denied Request
-   </td>
-   <td>This alert fires when there are too many HTTP denied requests (>5%)
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-</table>
+| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|:---|:---|
+| Logs | Squid Proxy - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | Critical | > 0 | `<=`0 |
+| Logs | Squid Proxy - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Critical | >0 | `<=`0 |
+| Metrics | Squid Proxy - High Latency | This alert fires when latency on a node in a Squid Proxy cluster is higher than 3 seconds. | Critical | `>=`3 | `<`3 |
+| Logs | Squid Proxy - High Denied Request | This alert fires when there are too many HTTP denied requests (>5%) | Critical | >0 | `<=`0 |

@@ -5,14 +5,12 @@ sidebar_label: AWS ECS Fargate
 description: This page describes how to collect application container logs from AWS ECS Fargate and EC2 using AWS Firelens.
 ---
 
-
-
 This page describes how to collect application container logs from AWS ECS clusters launched with AWS Fargate using AWS FireLens. This method also works with ECS clusters with EC2 containers. However, the recommended method for collecting EC2 logs is to utilize the [Docker logging driver](docker-collection-methods.md).
  
 
-* [Collect Fargate container logs](#collect-fargate-container-logs)
-* [Collect EC2 container logs](#collect-ec2-container-logs)
-* [(Optional) Create a centralized fluentd aggregator](#optional-create-a-centralized-fluentd-aggregator)
+* [Collect Fargate container logs](#collectfargatecontainer-logs)
+* [Collect EC2 container logs](#collectec2container-logs)
+* [(Optional) Create a centralized fluentd aggregator](#optional-create-a-centralized-fluentdaggregator)
 * [Troubleshooting](#troubleshooting)
 
 ## Collection process overview
@@ -31,9 +29,9 @@ You can forward from Fluent Bit to Fluentd, and vice versa. For example, you cou
 
 This section show you how to create AWS resources and Sumo Logic resources for Fargate container log collection.  
 
-## Step 1: Add a hosted collector and HTTP source
+### Step 1: Add a hosted collector and HTTP source
 
-A  hosted collector allows you to upload data stored in the cloud to Sumo Logic, and an HTTP Source is an endpoint for receiving logs and metrics uploaded via a URL.
+A hosted collector allows you to upload data stored in the cloud to Sumo Logic, and an HTTP Source is an endpoint for receiving logs and metrics uploaded via a URL.
 
 :::note
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this URL to configure the task definition.
@@ -44,14 +42,14 @@ To add a hosted collection and HTTP source, do the following:
 1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
-## Step 2: Create an AWS task definition and service
+### Step 2: Create an AWS task definition and service
 
 A task definition is required to run Docker containers in Amazon ECS. You can define multiple containers in a task definition. The parameters that you use for the task definition depend on the launch type for the task. For more information about available parameters and the launch types they are valid for in a task definition, see the Amazon ECS [Task Definition Parameters](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html) documentation.
 
 ECS allows for two launch types, Fargate and EC2. Create the launch type that best suits your environment.
 
-* [Fargate](#collect-fargate-container-logs) - ECS manages your clusters.
-* [EC2](#collect-ec2-container-logs) - you manage your clusters.
+* [Fargate](#collectfargatecontainer-logs). ECS manages your clusters.
+* [EC2](#collectec2container-logs). You manage your own clusters.
 
 :::important
 The [AWS CLI](https://aws.amazon.com/cli/) and [ECS CLI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI_installation.html) must be installed and [configured](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-configure.html) before you create the task definition.
@@ -59,7 +57,7 @@ The [AWS CLI](https://aws.amazon.com/cli/) and [ECS CLI](https://docs.aws.ama
 
 You need to create a new task definition with a Log Router based on a *FluentBit *image and a container for your application using this [*JSON*](https://script-collection.s3.amazonaws.com/fargate/httpd_fargate_sumologic.json). 
 
-### Prerequisites
+#### Prerequisites
 
 Before creating the task definition, replace the following values in the sample JSON:
 
@@ -88,7 +86,7 @@ https://endpoint3.collection.us2.sumologic.com/receiver/v1/http/ExampleToken5Uil
              "Format": "json_lines"      }
 ```
 
-#### Source category 
+##### Source category 
 
 You can add a source category or a source name by passing the **Header** parameters inside **logConfiguration** options, as shown in the following example:
 
@@ -102,7 +100,7 @@ You can add a source category or a source name by passing the **Header** parame
 Currently, FireLens supports only one header. If you need to add multiple headers, you can create a custom fluent bit image and specify a custom fluent bit configuration.
 :::
 
-#### Application container  
+##### Application container  
 
 The sample JSON creates an [*httpd*](https://httpd.apache.org/) application container. In the **image** parameter, you can replace httpd with the application you are deploying, as shown in the following example:
 
@@ -113,7 +111,7 @@ The sample JSON creates an [*httpd*](https://httpd.apache.org/) application cont
         "logConfiguration": {
 ```
 
-#### CloudWatch group
+##### CloudWatch group
 
 In the sample JSON we've provided, the [FireLens](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html) Log Router container is configured to send its own logs to the CloudWatch group **"awslogs-ecs-fargate-sumo”**. We recommended you send the FireLens logs to CloudWatch to debug Fluent Bit Issues.
 
@@ -141,11 +139,11 @@ You can also create a log group with a different name. To do this, update the t
 You can choose not to send the FireLens container logs to CloudWatch by deleting the entire **options** block shown  from the JSON; this will not impact your ability to send logs to Sumo Logic. The [task execution role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html) executionRoleArn is also required for the awslogs logdriver. This can also be removed if this logdriver is not used.
 :::
 
-### Other properties
+#### Other properties
 
 You can modify other properties as desired, such as CPU, RAM, and the like. For more information, see the Amazon ECS [Task Definition Parameters](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html) documentation.
 
-#### Create the task definition
+##### Create the task definition
 
 To create the Fargate task definition, use the following command:
 
@@ -153,7 +151,7 @@ To create the Fargate task definition, use the following command:
 aws ecs register-task-definition --region us-west-1 --cli-input-json  file://httpd_fargate_sumologic.json
 ```
 
-#### Launch the service
+##### Launch the service
 
 You will use the following command syntax to launch the service. The command requires subnets and the security groups for the service.  You will need to substitute the cluster VPC, subnet, and security group variables with real values for your environment. You can determine your cluster VPC, subnets, and associated security group from the AWS console.
 
@@ -170,7 +168,7 @@ You can use the following command to determine the security group for the VPC
 aws ec2 describe-security-groups --filters Name=vpc-id,Values=VPC_ID --region us-west-1
 ```
 
-## Step 3: Verify logs in Sumo Logic
+### Step 3: Verify logs in Sumo Logic
 
 The previous steps showed you how to configure container log collection. This section shows you how to verify the logs are appearing in Sumo Logic.
 
@@ -252,101 +250,85 @@ At present, FireLens supports only one header in the task definition. If you nee
 For EC2, to store the fluent configuration on S3, do the following:
 
 1. Set the following as the log configuration:
-
-  ```
-  "logConfiguration": {
-      "logDriver": "awsfirelens",
-    }
-  ```
-
+   ```
+   "logConfiguration": {
+       "logDriver": "awsfirelens",
+     }
+   ```
 1. Set the following in your firelens configuration:
-
-  ```
-  "firelensConfiguration": {
-      "type": "fluentbit",
-      "options": {
-        "config-file-type": "s3",
-        "config-file-value": "arn:aws:s3:::yourbucket/yourdirectory/extra.conf"
-      }
-    },
-  ```
+   ```
+   "firelensConfiguration": {
+       "type": "fluentbit",
+       "options": {
+         "config-file-type": "s3",
+         "config-file-value": "arn:aws:s3:::yourbucket/yourdirectory/extra.conf"
+       }
+     },
+   ```
 
 For Fargate, to create, deploy, and use custom fluent bit image, do the following:
 
 1. Clone the AWS Fluent Bit Image available [here](https://github.com/aws/aws-for-fluent-bit).
 1. Add a new file with custom configuration at the root folder, fluent-bit-custom.conf.
-
-  ```
-  [OUTPUT]
-      Name       http
-      Match      *
-      Host       <endpoint>
-      URI        /receiver/v1/http/<token>
-      Port       443
-      Header     X-Sumo-Category ECS/FireLens/Custom/Fargate
-      Header     X-Sumo-Name ECS FireLens Custom
-      tls        on
-      tls.verify off
-      Format     json_lines
-  ```
-
+   ```
+   [OUTPUT]
+       Name       http
+       Match      *
+       Host       <endpoint>
+       URI        /receiver/v1/http/<token>
+       Port       443
+       Header     X-Sumo-Category ECS/FireLens/Custom/Fargate
+       Header     X-Sumo-Name ECS FireLens Custom
+       tls        on
+       tls.verify off
+       Format     json_lines
+   ```
 1. Replace endpoint and token as described in the [Prerequisites](#prerequisites) section.
 1. Modify the Docker file by doing the following:
-
    * Add the custom directory to store the fluent-bit-custom.conf in image, **/fluent-bit/etc/custom**, using the following command:
-
-    ```
-    RUN mkdir -p /fluent-bit/bin /fluent-bit/etc /fluent-bit/log /tmp/fluent-bit-master/ /fluent-bit/etc/custom
-    ```
-
+      ```
+      RUN mkdir -p /fluent-bit/bin /fluent-bit/etc /fluent-bit/log /tmp/fluent-bit-master/ /fluent-bit/etc/custom
+      ```
    * Add following line to copy fluent-bit-custom.conf to the custom directory:
 
-    ```
-    COPY fluent-bit-custom.conf /fluent-bit/etc/custom/fluent-bit-custom.conf
-    ```
-
+     ```
+     COPY fluent-bit-custom.conf /fluent-bit/etc/custom/fluent-bit-custom.conf
+     ```
 1. Modify the name of the Makefile, following a standard convention such as: **sumologic/aws:latest**
 1. Create the image with the command: **make release**
 1. Upload the image to a public repository with the command: **docker push sumologic/aws:latest**
 1. Modify the task definition to use the newly created image and set options to use the custom configuration, as follows:
+   ```
+   "firelensConfiguration": {
+     "type": "fluentbit",
+     "options": {
+       "enable-ecs-log-metadata": "true",
+       "config-file-type": "file",
+       "config-file-value": "/fluent-bit/etc/custom/fluent-bit-custom.conf"
+     }
+   }
+   ```
+   :::note
+   In this case, the application container doesn’t need the following options:
 
-  ```
-  "firelensConfiguration": {
-    "type": "fluentbit",
-    "options": {
-      "enable-ecs-log-metadata": "true",
-      "config-file-type": "file",
-      "config-file-value": "/fluent-bit/etc/custom/fluent-bit-custom.conf"
-    }
-  }
-  ```
-
-  :::note
-  In this case, the application container doesn’t need the following options:
-
-  ```
-  "logConfiguration": {
-    "logDriver": "awsfirelens",
-  }
-  ```
-  :::
-
+   ```
+   "logConfiguration": {
+     "logDriver": "awsfirelens",
+   }
+   ```
+   :::
 1. Create a new task definition using the sample [JSON](https://script-collection.s3.amazonaws.com/fargate/httpd_fargate_sumologic_external_config.json), and update account ID and Image name, then run the following command.
-
-  ```bash
-  aws ecs register-task-definition --region us-west-1 --cli-input-json file://httpd_fargate_sumologic_external_config.json
-  ```
-
+   ```bash
+   aws ecs register-task-definition --region us-west-1 --cli-input-json file://httpd_fargate_sumologic_external_config.json
+   ```
 1. Create the service by running the following command. You will need to substitute the subnet, and security group variables with real values for your environment. You can determine your cluster subnets and associated security group from the AWS console.
-
-  ```
-  aws ecs create-service       --cluster fargate-cluster      --service-name firelens-sumologic-fargate-ext-image       
-  --task-definition firelens-sumo-fargate-external-config-custom-image:1       --desired-count 1       
-  --region us-west-1       --launch-type "FARGATE"  --network-configuration
-  "awsvpcConfiguration={subnets=[subnet-1,subnet-2],securityGroups=[security group],assignPublicIp=ENABLED}"
-  ```
-
-1. [Verify logs in Sumo Logic](#step-3-verify-logs-in-sumo-logic).
+   ```
+   aws ecs create-service       --cluster fargate-cluster      --service-name firelens-sumologic-fargate-ext-image       
+   --task-definition firelens-sumo-fargate-external-config-custom-image:1       --desired-count 1       
+   --region us-west-1       --launch-type "FARGATE"  --network-configuration
+   "awsvpcConfiguration={subnets=[subnet-1,subnet-2],securityGroups=[security group],assignPublicIp=ENABLED}"
+   ```
+1. [Verify logs in Sumo Logic](#step-3verify-logs-in-sumo-logic).
 
 ## Troubleshooting
 

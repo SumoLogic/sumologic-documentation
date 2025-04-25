@@ -8,11 +8,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. The Sumo Logic App for AWS EC2 allows you to display your EC2 instance metrics (CloudWatch) using predefined dashboards. The App provides dashboards that analyze EC2 instance metrics for CPU, Disk, Network, EBS, and Health Status Checks, and detailed insights into all CloudTrail audit events associated with EC2 instances. It specifically helps identify changes, errors, and user activities.
 
-## Metrics Types 
+## Log and metrics types 
 
-For details on AWS EC2 metrics, see [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html).
+- [CloudTrail Amazon EC2 Data Events](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-with-cloudtrail.html)
+- [AWS EC2 metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html)
 
-### Sample log
+### Sample log messages
 
 ```json title="Sample CloudTrail log for EC2"
 {
@@ -55,7 +56,7 @@ For details on AWS EC2 metrics, see [here](https://docs.aws.amazon.com/AWSEC2/la
     }
 }
 ```
-### Sample Query
+### Sample queries
 
 ```sql title="CPU utilization (Cloudwatch metric)"
 account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg
@@ -87,11 +88,11 @@ account=* region=* namespace=aws/ec2 eventname eventsource "ec2.amazonaws.com" e
 | count as count by error_code | sort by count, error_code asc | limit 10
 ```
 
-## Install the AWS EC2 App and view the Dashboards
+## Viewing AWS EC2 dashboards
 
-This page provides examples and descriptions for each of the AWS Observability AWS EC2 pre-configured dashboards.
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
-The Sumo Logic App for AWS EC2 allows you to display your EC2 instance metrics (CloudWatch) using predefined dashboards. The App provides dashboards to display analysis of EC2 instance metrics for CPU, Disk, Network, EBS and Health Status Check. Also it provides detailed insights into all CloudTrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
+<FilterDashboards/>
 
 ### 1.1. AWS EC2 Overview (CloudWatch Metrics)
 

@@ -6,7 +6,7 @@ description: Frequently asked questions about collecting data into Sumo Logic th
 ---
 
 :::sumo
-To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Collect Data Forum](https://community.sumologic.com/s/topic/0TOE0000000g6anOAA/Collect-Data).
+To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Collect Data Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTCOWA2/collectors?tabset-cabe3=2).
 :::
 
 This section provides frequently asked questions about collecting data into Sumo Logic and the answers you need. 
@@ -31,14 +31,14 @@ This warning indicates that a brief lapse in network connectivity between your C
 Here are a few troubleshooting steps to try when your Collector is consistently unable to connect to the Service:
 
 1. Test DNS resolution and connectivity to the Sumo servers: 
- ```bash
- curl -i https://collectors.sumologic.com
- # you should see the word "Tweep" returned
- ```
+     ```bash
+     curl -i https://collectors.sumologic.com
+     # you should see the word "Tweep" returned
+     ```
 1. Check whether there is a significant delay in performing the DNS lookup:
- ```bash
- time nslookup collectors.sumologic.com
- ```
+     ```bash
+     time nslookup collectors.sumologic.com
+     ```
 1. Rule out dropped packets due to jumbo frames being unsupported by your network end points. For example, MTU being set to 9001 bytes vs. the age old default of 1500 bytes. In newer AWS EC2 VPC's, the MTU is set to 9001 by default. This is referred to as using [jumbo frames](https://en.wikipedia.org/wiki/Jumbo_frame) and can cause packet loss since not all devices on the internet support large packet sizes. [Path MTU Discovery](https://en.wikipedia.org/wiki/Path_MTU_Discovery) is responsible for ensuring that packets of the correct size are sent to each end point by first checking whether the end point can handle jumbo frames, and then resending the packet in smaller chunks until it's successfully sent. Packets will be dropped in cases where ICMP *Unreachable* messages are disabled on the receiving end since [Path MTU Discovery](https://en.wikipedia.org/wiki/Path_MTU_Discovery) relies on these messages to determine the correct packet size.
 
 #### Setting the default MTU on a Linux Operating System
@@ -102,7 +102,7 @@ When attempting to upgrade a Windows Collector from the UI, the upgrade fails an
 
 This is a known issue regarding upgrading a Windows collector from versions 19.60-x to the latest released version. The cause is a missing wrapper.dll file, which is required during a pre-check test of the Collector during upgrade. To correct this issue and allow the upgrade to succeed, perform the following steps on the affected host:
 
-1. Download the [wrapper-dll.zip](/files/wrapper-dll.zip) file attached to this article, which includes the missing wrapper.dll files.
+1. Download the <a href="/files/wrapper-dll.zip" target="_blank">wrapper-dll.zip</a> file attached to this article, which includes the missing wrapper.dll files.
 1. Stop the Sumo Logic Collector service running on the host.
 1. Unzip the downloaded file and place the extracted .dll files into the following directory, where \<version\> is the "current version" listed in the upgrade UI in Sumo Logic:
 
@@ -110,7 +110,9 @@ This is a known issue regarding upgrading a Windows collector from versions 19.6
 
 1. Restart the Sumo Logic Collector service.
 
-When these steps are complete, in Sumo Logic, go to **Manage Data** > **Collection** > **Collection**, click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
+     1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+
+     1. Click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
 
 
 ## Configure Limits for Collector Caching
@@ -175,7 +177,7 @@ You can revert back to a default configuration by removing the corresponding li
 
 #### Question
 
-Is it possible to delete data already collected into Sumo Logic? I've ingested some private information into my Sumo Logic account by mistake and I want to remove it so that search results don't show this data. Is this possible?
+Is it possible to delete data already collected into Sumo Logic? I've ingested some private information into my Sumo Logic account by mistake and I want to remove it so that search results do not show this data. Is this possible?
 
 #### Answer
 
@@ -300,9 +302,9 @@ To increase the maximum Java Heap size:
 1. On the computer running the Collector, open `install_directory/config/user.properties`.
 1. Add or locate the following parameter:
 
-  ```
-  wrapper.java.maxmemory=128
-  ```
+     ```
+     wrapper.java.maxmemory=128
+     ```
 
 1. Increase the `wrapper.java.maxmemory` value, based on the number of files you expect to collect from.
 
@@ -531,7 +533,7 @@ _source=<problem_child>
 | formatDate(fromMillis(_receipttime),"MM/dd hh:mm") as r
 | formatDate(fromMillis(_messagetime),"MM/dd hh:mm") as t
 | abs(_receipttime - _messagetime) as delt| delt/1000/60 as delt
-| min(delt), max(delt), avg(delt), stddev(delt), count(*) by _collector, _sourcename
+| min(delt), max(delt), avg(delt), stddev(delt), count(*) by _collector, _sourceName
 ```
 
 If the average, max, and min delay values are very close in range, then the time difference is most likely the symptom of an incorrect time zone setting. You’ll want to go back and ensure that your Source configurations line up correctly with the log messages. Switch to the raw messages tab and the “format” field shows how the timestamp is parsed from the file.
@@ -546,7 +548,9 @@ After installing a Collector and configuring a Source, your data should appear i
 
 #### Check the Status page of Sumo Logic
 
-In Sumo Logic, select **Manage Data > Collection > Status** to view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
+You can view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Status**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Status**. You can also click the **Go To...** menu at the top of the screen and select **Status**. 
 
 As long as you see that some messages are present, your Sumo Logic account is up and running. 
 
@@ -562,7 +566,7 @@ If your user account is not an administrator check your Role assignment for any
 
 #### Verify that your Collectors are running
 
-Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with ![green check circle.png](/img/reuse/green-check-circle.png). Stopped Collectors and Sources are marked with ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png). Stopped Collectors don't send any data.
+Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with ![green check circle.png](/img/reuse/green-check-circle.png). Stopped Collectors and Sources are marked with ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png). Stopped Collectors do not send any data.
 
 If a Collector is stopped, you can verify the Collector's status and restart it if necessary.
 
@@ -585,14 +589,14 @@ When you configure a Source, you can choose one of three timestamp options. Firs
 
 To view Source settings:
 
-1. select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Edit** to the right of the Source's name.
 1. Under **Advanced**, choose one of the following:
 
     ![img](/img/send-data/timezone_parsing_options.png)
 
    * Extract timestamp information from log file entries. Select this option if you'd like Sumo Logic to always extract timestamps from log messages. If no timestamp is detected, Sumo Logic uses the time when the data is received. Generally, this is the best option (it's also selected by default).
-   * Use time zone from log file. Choose a time zone that Sumo Logic can use if log files don't have a time stamp. If a Collector is running on a computer set to the UTC time zone without an offset, Sumo Logic will use this time zone.
+   * Use time zone from log file. Choose a time zone that Sumo Logic can use if log files do not have a time stamp. If a Collector is running on a computer set to the UTC time zone without an offset, Sumo Logic will use this time zone.
    * Ignore time zone from log file. Choose a time zone to override any time zone information found in log files. If you're collecting log files from disparate time zones, choose this option to set all your Sources to the same time zone.
 
 :::important

@@ -8,7 +8,7 @@ description: Learn how to send build and deploy events to Sumo Logic from Jenkin
 ## Prerequisites
 
 Use the latest [Sumo Logic Jenkins Plugin](https://plugins.jenkins.io/sumologic-publisher/#documentation)
-version of the plugin. You will be using [SumoUpload](https://github.com/SumoLogic/sumologic-jenkins-plugin#sumoupload)
+version of the plugin. You will be using [SumoUpload](https://github.com/jenkinsci/sumologic-publisher-plugin#sumoupload)
 function to send an event to Sumo Logic from your DevOps pipeline.
 
 As an example: Upload a Key-Value map as JSON to Sumo Logic.
@@ -50,28 +50,28 @@ commit_id | Required to tie GitHub data to Jenkins data. This is typically set a
 ## Method
 
 1. Define a wrapper function that calls `SumoUpload()` in your common library.
-  ```json
-  def sendDeliveryEvent(Map args) {
-    def deliveryEvent = [
-      "event_type": args.eventType,
-      "trace_id": args.traceId,     
-      "service": args.service,
-      "team": (args.team ?: "n/a"),
-      "user": (args.user ?: "n/a"),
-      "link": env.BUILD_URL,
-      "title": env.JOB_NAME,
-      "timeStamp": currentBuild.startTimeInMillis,
-      "message": "Build # ${env.BUILD_NUMBER}",
-      "env_name": (args.envName ?: "n/a"),
-      "result": currentBuild.currentResult ?: "unknown",
-      "git_url": (args.gitUrl ?: "n/a"),
-      "target_branch": (args.targetBranch ?: "n/a"),
-      "repository_name": (args.repositoryName ?: "n/a"),
-      "commit_id": (args.commitId ?: "n/a")
-    ]
-    SumoUpload(keyValueMap: deliveryEvent)
-  }
-  ```
+    ```json
+    def sendDeliveryEvent(Map args) {
+      def deliveryEvent = [
+        "event_type": args.eventType,
+        "trace_id": args.traceId,     
+        "service": args.service,
+        "team": (args.team ?: "n/a"),
+        "user": (args.user ?: "n/a"),
+        "link": env.BUILD_URL,
+        "title": env.JOB_NAME,
+        "timeStamp": currentBuild.startTimeInMillis,
+        "message": "Build # ${env.BUILD_NUMBER}",
+        "env_name": (args.envName ?: "n/a"),
+        "result": currentBuild.currentResult ?: "unknown",
+        "git_url": (args.gitUrl ?: "n/a"),
+        "target_branch": (args.targetBranch ?: "n/a"),
+        "repository_name": (args.repositoryName ?: "n/a"),
+        "commit_id": (args.commitId ?: "n/a")
+      ]
+      SumoUpload(keyValueMap: deliveryEvent)
+    }
+    ```
 1. Next, call the wrapper function from your pipeline in [Post Always script](https://www.jenkins.io/doc/book/pipeline/syntax/#post) after Deploy and Build Stages.
   ```json title="For Deploy Event"
   post{

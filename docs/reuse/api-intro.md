@@ -1,3 +1,5 @@
-Refer to [Getting Started](/docs/api/getting-started) for Sumo Logic API Authentication, Endpoints, and Security.
+To get started with Sumo Logic APIs, see [API Authentication, Endpoints, and Security](/docs/api/getting-started).
 
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+Our APIs are built with [OpenAPI](https://www.openapis.org/). You can generate client libraries in several languages and explore automated testing.
+
+To access our API documentation, navigate to the appropriate link based on your Sumo deployment. Deployment types differ based on geographic location and account creation date. If unsure, see [Which endpoint should I use?](/docs/api/getting-started#which-endpoint-should-i-should-use)

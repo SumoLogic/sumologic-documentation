@@ -49,7 +49,7 @@ You can determine the drain identifier by running the heroku drains command for
 
 Then, define an FER in Sumo.
 
-1. Go to **Manage Data > Logs > Field Extraction Rules**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
 1. **Rule Name**. Enter a name for the FER.
 1. **Scope**. Specify the _sourceCategory defined for the source to which you will be forwarding Heroku application logs. For example, if the _sourceCategory is "heroku", enter:
 

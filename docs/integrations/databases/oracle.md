@@ -16,7 +16,7 @@ This app is tested with the following Oracle versions:
 * Non-Kubernetes: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production - Version 19.3.0.0.0
 * Kubernetes: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production - Version 19.3.0.0.0
 
-## Log Types
+## Log types
 
 * Alert Logs
 * Listener Logs
@@ -28,7 +28,7 @@ This section provides instructions for configuring logs and metrics collection f
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 :::note
 This step is not needed if you are using the application components solution terraform script.
@@ -65,7 +65,6 @@ If you're using Oracle in a non-Kubernetes environment, create the fields:
 * `db_cluster`
 * `db_cluster_address`
 * `db_cluster_port`
-`
 
 </TabItem>
 </Tabs>
@@ -92,28 +91,18 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 <br/><img src={useBaseUrl('img/integrations/databases/oracle2.png')} alt="oracle" />
 
 The first service in the metrics pipeline is Telegraf. Telegraf collects metrics from Oracle. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator.
+
 Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
 
 In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
-Follow the below instructions to set up the metric collection:
-
-1. [Configure Metrics Collection](#configure-metrics-collection)
-    1. Configure Oracle pod to send Oracle metrics to Sumo Logic
-    2. Set up Kubernetes Collection with the Telegraf operator
-    3. Add annotations on your Oracle pods
-2. [Configure Logs Collection](#configure-logs-collection)
-    1. Configure logging in Oracle.
-    2. Add labels on your Oracle pods to capture logs from standard output.
-    3. Collecting Oracle Logs from a Log file.
-
 :::note Prerequisites
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
 #### Configure Metrics Collection
 
-This section explains the steps to collect Oracle metrics from a Kubernetes environment.
+This section explains how to collect Oracle metrics from a Kubernetes environment.
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
@@ -169,14 +158,14 @@ annotations:
 
 * If you haven’t defined a cluster in Oracle, enter `default` for `db_cluster`.
 * Enter values for the parameters marked `ENV_TO_BE_CHANGED` in the snippet above:
-   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Oracle input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+   * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Oracle input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
    * In the input plugins section:
       * **commands** - The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
    * In the tags section `[inputs.exec.tags]`:
-      * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.  
-      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
-      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+      * `environment`. This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster`. Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.  
+      * `db_cluster_address`. Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port`. Enter the database port. If not provided, a default port will be used.
       :::note
       `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
@@ -187,14 +176,14 @@ annotations:
       Pivoting to Tracing data from Entity Inspector is possible only for “Oracle address” Entities.
       :::
    * **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly:
-      * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-      * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+      * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+      * `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+      * `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
       * `telegraf.influxdata.com/inputs`
       * In the tags section [inputs.exec.tags]:
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “oracle”` - This value identifies the database system.
-   * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 
@@ -204,7 +193,7 @@ Verify metrics in Sumo Logic.
 
 This section explains the steps to collect Oracle logs from a Kubernetes environment.
 
-1. **(Recommended Method) Add labels on your Oracle pods to capture logs from standard output.** Make sure that the logs from Oracle are sent to stdout. Follow the instructions below to capture Oracle logs from stdout on Kubernetes.
+1. **(Recommended Method) Add labels on your Oracle pods to capture logs from standard output**. Make sure that the logs from Oracle are sent to stdout. Follow the instructions below to capture Oracle logs from stdout on Kubernetes.
 1. Apply following labels to the Oracle pod:    
 ```bash
 labels:
@@ -218,8 +207,8 @@ labels:
 
 Enter in values for the following parameters (marked in **ENV_TO_BE_CHANGED** above):
 
-* `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
-* `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
+* `environment`. This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
+* `db_cluster`. Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
 * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
 * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
@@ -237,9 +226,9 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Oracle ad
 * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
 * `db_system: “oracle”` - This value identifies the database system.
 
-For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app) here.
 1. Verify logs in Sumo Logic.
 1. **(Optional) Collecting Oracle Logs from a Log File**. Follow the steps below to capture Oracle logs from a log file on Kubernetes.
 1. Determine the location of the Oracle log file on Kubernetes. This can be determined from the Oracle.conf for your Oracle cluster along with the mounts on the Oracle pods.
@@ -266,12 +255,12 @@ annotations:
 **Add an FER to normalize the fields in Kubernetes environments**
 
 This step is not needed if you're using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-1. Go to **Manage Data > Logs > Field Extraction Rules.**
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
 1. Click the **+Add** button on the top right of the table.
 1. The **Add Field Extraction Rule** form will appear. Enter the following options:
    1. **Rule Name**. Enter the name as **App Observability - database**.
-   2. **Applied At.** Choose **Ingest Time.**
-   3. **Scope**. Select **Specific Data.**
+   2. **Applied At**. Choose **Ingest Time**.
+   3. **Scope**. Select **Specific Data**.
    4. **Scope**: Enter the following keyword search expression.
    ```sql
    pod_labels_environment=* pod_labels_component=database pod_labels_db_cluster=* pod_labels_db_system=*
@@ -308,44 +297,37 @@ The process to set up collection for Oracle data is done through the following s
 
 This section provides instructions for configuring log collection for Oracle running on a non-Kubernetes environment.
 
-Preview steps for Oracle log collection:
-
-1. Enable Oracle Logging
-2. Verify Log Files Path.
-3. Configure three Local log file Sources.
-4. Set Up Oracle Performance Metrics Script
-
 **Step 1. Enable Oracle Logging**       
 
 If logging is not currently enabled for the following logs, enable it.
 
 * **Alert log**
-* **Listener log**
-Enable Listener Log: The basic syntax of Listener Control utility commands is as follows
-  ```bash
-  lsnrctl command [listener_name]
-  lsnrctl set log_status on
-  ```
-* **Audit Log.** Follow [this](https://docs.oracle.com/cd/E11882_01/server.112/e10575/tdpsg_auditing.htm#TDPSG50000) guide to enable Audit Logs.
+* **Listener log**.
+  * Enable Listener Log: The basic syntax of Listener Control utility commands is as follows
+    ```bash
+    lsnrctl command [listener_name]
+    lsnrctl set log_status on
+    ```
+* **Audit Log**. Follow [this](https://docs.oracle.com/cd/E11882_01/server.112/e10575/tdpsg_auditing.htm#TDPSG50000) guide to enable Audit Logs.
 
-**Step 2. Verify Local logs file directories and Path.**
+**Step 2. Verify Local logs file directories and Path**
 
 * **Oracle Alert Logs**. For 11g and later releases (12c, 18c, 19c): By default, Oracle logs are stored in `$ORACLE_BASE/diag/rdbms/$DB_UNIQUE_NAME/$ORACLE_SID/trace/`.
    * The default directory for log files is value of `BACKGROUND_DUMP_DEST`. you can query the value of `BACKGROUND_DUMP_DEST`, an initialization parameter, where you can find Oracle alert log
-   ```
-   SQL> show parameter background_dump_dest;
-   ```
+     ```
+     SQL> show parameter background_dump_dest;
+     ```
 * **Oracle Listener Logs**. You can check listener log file with command:
     ```bash
     [oracle@sumolab alert]$ lsnrctl status
     ```
 * **Oracle Audit Logs**. By default, Oracle logs are stored in `$ORACLE_BASE/app/oracle/admin/orcl/adump`. The default directory for log files is value of `audit_file_dest`. you can query the value of `audit_file_dest`, an initialization parameter, where you can find the Oracle Audit log directory
-```
-SQL> show parameter audit
-```
-Audit Logs should be in either `XML, EXTENDED` or `{{OS }}` for app to work.
+  ```
+  SQL> show parameter audit
+  ```
+  Audit Logs should be in either `XML, EXTENDED` or `{{OS }}` for app to work.
 
-**Step 3. Configure three Local File Sources.**
+**Step 3. Configure three Local File Sources**
 
 In this step, you will configure three Local File sources on an installed collector, one for each of the following Oracle logs: Alert, Listener, and Audit.
 
@@ -353,42 +335,21 @@ Follow the instructions in [Local File Source](/docs/send-data/installed-collect
 
 When you configure the sources, plan your source categories to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example:
 
-<table>
-  <tr>
-   <td>Source
-   </td>
-   <td>Example Source Category
-   </td>
-  </tr>
-  <tr>
-   <td>Alert Logs
-   </td>
-   <td>DB/Oracle/Alert
-   </td>
-  </tr>
-  <tr>
-   <td>Listener Logs
-   </td>
-   <td>DB/Oracle/Listener
-   </td>
-  </tr>
-  <tr>
-   <td>Audit
-   </td>
-   <td>DB/Oracle/Audit
-   </td>
-  </tr>
-</table>
+| Source | Example Source Category |  
+|:---|:---|
+| Alert Logs | DB/Oracle/Alert |  
+| Listener Logs | DB/Oracle/Listener |  
+| Audit | DB/Oracle/Audit |  
 
 Add Following **Fields** on each Local File Source:
 
-* **Fields.** Set the following fields:
+* **Fields**. Set the following fields:
     * `component = database`.
     * `db_system = oracle`.
     * `db_cluster = <Your_Oracle_Cluster_Name>`. Enter **Default** if you do not have one.
-    * `environment = <Your_Environment_Name> `(for example, Dev, QA, or Prod).
-    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
-    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
+    * `environment = <Your_Environment_Name>`. (for example, Dev, QA, or Prod).
+    * `db_cluster_address`. Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port`. Enter the database port. If not provided, a default port will be used
 :::note
 `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
@@ -399,7 +360,7 @@ If your application connects directly to a given oracle node, rather than the wh
 Pivoting to Tracing data from Entity Inspector is possible only for “Oracle address” Entities.
 :::
 
-**Step 4. Set Up Oracle Performance Metrics Script.**
+**Step 4. Set Up Oracle Performance Metrics Script**
 
 The instructions for setting up the Oracle performance metrics script vary by operating system:
 
@@ -409,41 +370,26 @@ The instructions for setting up the Oracle performance metrics script vary by op
 
 #### Configure Metrics Collection
 
-#### Set up a Sumo Logic HTTP Source
+1. **Set up a Sumo Logic HTTP Source**.
+   1. Configure a Hosted Collector for Metrics. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
+2. **Configure an HTTP Logs & Metrics source**.
+   1. On the created Hosted Collector on the Collection Management screen, select Add Source.
+   2. Select **HTTP Logs & Metrics**.
+      1. **Name** (Required). Enter a name for the source.
+      2. **Description** (Optional).
+      3. **Source Category** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DB/Oracle/Metrics.
+   3. Select **Save**.
+   4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
+3. **Set up Telegraf**.
+   1. **Install Telegraf**, if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
+   2. **Install custom Python script to send Oracle metrics into Sumo** using the [following steps](https://github.com/SumoLogic/sumologic-integrations/tree/main/Oracle)
+   3. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send it to Sumo Logic.
 
-**Step 1. Configure a Hosted Collector for Metrics.**
-
-To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
-
-**Step 2. Configure an HTTP Logs & Metrics source:**
-
-1. On the created Hosted Collector on the Collection Management screen, select Add Source.
-2. Select **HTTP Logs & Metrics.**
-    1. **Name** (Required). Enter a name for the source.
-    2. **Description**(Optional).
-    3. **Source Category** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DB/Oracle/Metrics.
-3. Select** Save.**
-4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL **next to the source on the Collection Management screen.
-
-
-#### Set up Telegraf
-
-**Step 3. Install Telegraf**
-
-1. Install Telegraf if you haven’t already.
-    * Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
-2. **Install custom Python script to send Oracle metrics into Sumo**
-    * Use the[ following steps](https://github.com/SumoLogic/sumologic-integrations/tree/main/Oracle) to install a custom Python script to send Oracle metrics into Sumo.
-
-**Step 4. Configure and start Telegraf.**
-
-As part of collecting metrics data from Telegraf, we will use the [exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
-
-You can create a `telegraf.conf` file or modify an existing `telegraf.conf` file, then copy and paste the text below:
+   You can create a `telegraf.conf` file or modify an existing `telegraf.conf` file, then copy and paste the text below:
 
 ```sql
 [[inputs.exec]]
-  commands = ["/path_TO_BE_CHANGEME/exec_oracle_metrics.sh"]
+  commands = ["/path_TO_BE_CHANGED/exec_oracle_metrics.sh"]
   timeout = "5s"
   data_format = "influx"
   [inputs.exec.tags]
@@ -462,12 +408,12 @@ You can create a `telegraf.conf` file or modify an existing `telegraf.conf` file
 Enter values for fields annotated with `<ENV_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration
 
 * Input plugins section, which is `[[inputs.exec]]`:
-    * **commands**- The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
+    * **commands**. The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
 * In the tags section, which is `[inputs.exec.tags]`:
-    * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in our dashboards.
-    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
-    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+    * `environment`. This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `db_cluster`. Enter a name to identify this Oracle cluster. This cluster name will be shown in our dashboards.
+    * `db_cluster_address`. Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port`. Enter the database port. If not provided, a default port will be used.
     :::note
     `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
@@ -478,7 +424,7 @@ Enter values for fields annotated with `<ENV_TO_BE_CHANGED>` to the appropriate 
     Pivoting to Tracing data from Entity Inspector is possible only for “Oracle address” Entities.
     :::
 * In the output plugins section, which is `[[outputs.sumologic]]`:
-    * **URL** - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+    * **URL**. This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
 Here’s an explanation for additional values set by this Telegraf configuration.
 
@@ -490,9 +436,9 @@ There are additional values set by the Telegraf configuration.  We recommend not
 * `component: “database”`. In the input `[[inputs.exec]]` plugins section. This value is used by Sumo Logic apps to identify application components.
 * `db_system - “oracle”`. In the input plugins sections. This value identifies the database system.
 
-See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
+See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
 
-After you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from [this doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
+After you've finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from [this doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Telegraf should start collecting the Oracle metrics and forward them to the Sumo Logic HTTP Source.
 
@@ -503,21 +449,21 @@ At this point, Telegraf should start collecting the Oracle metrics and forward t
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Oracle databases are available and performing as expected. These alerts are built, based on logs and metrics datasets, have preset thresholds based on industry best practices and recommendations.
 
-| Alert Type (Metrics/Logs) | Alert Name       | Alert Description    | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
-|:---------------------------|:-------------------------|:----------------|:-----------------|:-----------------|:-------------------|
-| Logs                      | Oracle - Admin Restricted Command Execution | This alert fires when the Listener is unable to resolve a command.                                                           | Warning                           | > 0             | <= 0              |
-| Logs                      | Oracle - Archival Log Creation              | This alert fires when there is an archive log creation error.                                                                | Warning                           | > 0             | <= 0              |
-| Logs                      | Oracle - Block Corruption                   | This alert fires when we detect corrupted data blocks.                                                                       | Warning                           | > 0             | <= 0              |
-| Logs                      | Oracle - Database Crash                     | This alert fires when the database crashes.                                                                                  | Critical                          | >0              | <= 0              |
-| Logs                      | Oracle - Deadlock                           | This alert fires when deadlocks are detected.                                                                                | Warning                           | >5              | <= 0              |
-| Logs                      | Oracle - Fatal NI Connect Error             | This alert fires when we detect a "Fatal NI connect error".                                                                  | Warning                           | >0              | <= 0              |
-| Logs                      | Oracle - Internal Errors                    | This alert fires when internal errors are detected.                                                                          | Warning                           | >0              | <= 0              |
-| Logs                      | Oracle - Login Fail                         | This alert fires when we detect that a user cannot login.                                                                    | Warning                           | >0              | <= 0              |
-| Logs                      | Oracle - Possible Inappropriate Activity    | This alert fires when we detect possible inappropriate activity.                                                             | Warning                           | >0              | <= 0              |
-| Logs                      | Oracle - TNS Error                          | This alert fires when we detect TNS operations errors.                                                                       | Critical                          | >0              | <= 0              |
-| Logs                      | Oracle - Unable To Extend Tablespace        | This alert fires when we detect that we are unable to extend tablespaces.                                                    | Warning                           | >0              | <= 0              |
-| Logs                      | Oracle - Unauthorized Command Execution     | This alert fires when we detect that a user is not authorized to execute a requested listener command in an Oracle instance. | Warning                           | >0              | <= 0              |
-| Metrics                   | Oracle - Database Down                      | This alert fires when we detect that the Oracle database is down.                                                            | Critical                          | >0              | <= 0              |
+| Alert Type (Metrics/Logs) | Alert Name    | Alert Description    | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:------------------|:-------------|:----------------|:-----------------|:-----------------|:-------------------|
+| Logs                      | Oracle - Admin Restricted Command Execution | This alert fires when the Listener is unable to resolve a command.                                                           | Warning                           | > 0             | `<=` 0              |
+| Logs                      | Oracle - Archival Log Creation              | This alert fires when there is an archive log creation error.                                                                | Warning                           | > 0             | `<=` 0              |
+| Logs                      | Oracle - Block Corruption                   | This alert fires when we detect corrupted data blocks.                                                                       | Warning                           | > 0             | `<=` 0              |
+| Logs                      | Oracle - Database Crash                     | This alert fires when the database crashes.                                                                                  | Critical                          | >0              | `<=` 0              |
+| Logs                      | Oracle - Deadlock                           | This alert fires when deadlocks are detected.                                                                                | Warning                           | >5              | `<=` 0              |
+| Logs                      | Oracle - Fatal NI Connect Error             | This alert fires when we detect a "Fatal NI connect error".                                                                  | Warning                           | >0              | `<=` 0              |
+| Logs                      | Oracle - Internal Errors                    | This alert fires when internal errors are detected.                                                                          | Warning                           | >0              | `<=` 0              |
+| Logs                      | Oracle - Login Fail                         | This alert fires when we detect that a user cannot login.                                                                    | Warning                           | >0              | `<=` 0              |
+| Logs                      | Oracle - Possible Inappropriate Activity    | This alert fires when we detect possible inappropriate activity.                                                             | Warning                           | >0              | `<=` 0              |
+| Logs                      | Oracle - TNS Error                          | This alert fires when we detect TNS operations errors.                                                                       | Critical                          | >0              | `<=` 0              |
+| Logs                      | Oracle - Unable To Extend Tablespace        | This alert fires when we detect that we are unable to extend tablespaces.                                                    | Warning                           | >0              | `<=` 0              |
+| Logs                      | Oracle - Unauthorized Command Execution     | This alert fires when we detect that a user is not authorized to execute a requested listener command in an Oracle instance. | Warning                           | >0              | `<=` 0              |
+| Metrics                   | Oracle - Database Down                      | This alert fires when we detect that the Oracle database is down.                                                            | Critical                          | >0              | `<=` 0              |
 | Metrics                   | Oracle - High CPU Usage                     | This alert fires when CPU usage on a node in an Oracle cluster is high.                                                      | Critical                          | >=80            | < 80              |
 | Metrics                   | Oracle - Process Limit Critical             | This alert fires when process CPU utilization is over 90%                                                                    | Critical                          | >=90            | < 90              |
 | Metrics                   | Oracle - Process Limit Warning              | This alert fires when processes CPU utilization is over 80%                                                                  | Warning                           | >=80            | < 80              |
@@ -533,7 +479,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 * To install these alerts, you need to have the **Manage Monitors** role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
 
 ### Method A: Importing a JSON file
 
@@ -542,43 +488,38 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 
 Custom filter examples:
 
-1. For alerts applicable only to a specific cluster, your custom filter would be, `db_cluster=oracle-prod.01`.
+1. For alerts applicable only to a specific cluster, your custom filter would be `db_cluster=oracle-prod.01`.
 2. For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be,`db_cluster=oracle-prod*`.
 3. For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=oracle-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
-4. Go to **Manage Data** > **Alerts** > **Monitors**.
+4. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 5. Click **Add**.
 6. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Oracle folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Oracle folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
 
 ### Method B: Using a Terraform script
 
-1. **Generate a Sumo Logic access key and ID.** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.**
-3. **Download the Sumo Logic Terraform package for Oracle alerts.** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Oracle). You can either download it through the “git clone” command or as a zip file.
-4. **Alert Configuration.** After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/**
+1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**.
+3. **Download the Sumo Logic Terraform package for Oracle alerts**. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Oracle). You can either download it through the “git clone” command or as a zip file.
+4. **Alert Configuration**. After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/**. Edit the **Oracle.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
+   ```bash
+   access_id   = "<SUMOLOGIC ACCESS ID>"
+   access_key  = "<SUMOLOGIC ACCESS KEY>"
+   environment = "<SUMOLOGIC DEPLOYMENT>"
+   ```
+   The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable **’oracle_data_source’**. Custom filter examples:
+      1. A specific cluster ‘`db_cluster=oracle.prod.01`’.
+      2. All clusters in an environment ‘`environment=prod`’.
+      3. For alerts applicable to all clusters that start with oracle-prod, your custom filter would be: ‘`db_cluster=qracle-prod*`’.
+      4. For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=oracle-1` and `environment=prod`. (This assumes you have set the optional environment tag while configuring collection).
 
-Edit the **Oracle.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
+   All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
 
-```bash
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
-The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable **’oracle_data_source’**. Custom filter examples:
+   By default, the monitors are configured in a monitor folder called **Oracle**, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `Oracle.auto.tfvars` file.
 
-1. A specific cluster ‘`db_cluster=oracle.prod.01`’.
-2. All clusters in an environment ‘`environment=prod`’.
-3. For alerts applicable to all clusters that start with oracle-prod, your custom filter would be: ‘`db_cluster=qracle-prod*`’.
-4. For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=oracle-1` and `environment=prod`. (This assumes you have set the optional environment tag while configuring collection).
-
-All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
-
-By default, the monitors are configured in a monitor folder called **Oracle**, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `Oracle.auto.tfvars` file.
-
-If you would like the alerts to send email or connection notifications, configure these in the file `Oracle_notifications.auto.tfvars`. For configuration examples, refer to the next section.
-
-1. **Email and Connection Notification Configuration Examples**. Modify the file **Oracle_notifications.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
+   If you would like the alerts to send email or connection notifications, configure these in the file `Oracle_notifications.auto.tfvars`. For configuration examples, refer to the next section.
+5. **Email and Connection Notification Configuration Examples**. Modify the file **Oracle_notifications.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
     {
@@ -612,13 +553,13 @@ email_notifications = [
     }
   ]
 ```
-1. **Install the Alerts.**
-    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**Oracle**/ and run **terraform init. **This will initialize Terraform and will download the required components.
-    2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
-    3. Run **terraform apply**.
-1. **Post Installation.** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+6. **Install the Alerts**.
+    1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/` and run `terraform init`. This will initialize Terraform and will download the required components.
+    2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
+    3. Run `terraform apply`.
+7. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
-There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
+There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 
 ## Performance Metrics Script Setup
 
@@ -634,24 +575,20 @@ The database user that you use to run the SQL queries should have permission to 
 
 <table>
   <tr>
-   <td><strong>Query </strong>
-   </td>
-   <td><strong>SQL Command to Grant Permissions</strong>
-  </td>
+   <td><strong>Query </strong> </td>
+   <td><strong>SQL Command to Grant Permissions</strong></td>
   </tr>
   <tr>
    <td>For Queries 1 through 3</td>
    <td><p><code>SQL> grant select on sys.v_$tablespace to &#60;username&#62;;</code></p>
 <p><code>SQL> grant select on sys.dba_free_space to &#60;username&#62;;</code></p>
 <p><code>SQL> grant select on sys.v_$datafile to &#60;username&#62;;</code></p>
-<p><code>SQL> grant select on v_$sysstat to &#60;username&#62;;</code></p>
-   </td>
+<p><code>SQL> grant select on v_$sysstat to &#60;username&#62;;</code></p></td>
   </tr>
   <tr>
    <td>For Query 4</td>
    <td><p><code>SQL> grant select on sys.v_$session to &#60;username&#62;;</code></p>
-<p><code>SQL> grant select on sys.v_$process to &#60;username&#62;;</code></p>
-   </td>
+<p><code>SQL> grant select on sys.v_$process to &#60;username&#62;;</code></p></td>
   </tr>
   <tr>
    <td>For Queries 5 and 6</td>
@@ -688,33 +625,33 @@ sudo yum update && sudo yum install redhat-lsb-core
 In this step, you install Python 3.7.10 for Linux.
 
 1. Install Python using the following command.
-  ```bash
-  yum install python3 -y
-  ln -s /usr/bin/python3 /usr/bin/python
-  ```
+   ```bash
+   yum install python3 -y
+   ln -s /usr/bin/python3 /usr/bin/python
+   ```
 2. To check the Python version:
-  ```bash
-  python3 --version
-  Python 3.7.10
-  ```
+   ```bash
+   python3 --version
+   Python 3.7.10
+   ```
 3. In this step, you install pip if it’s not already installed. To determine whether pip is installed, run this command:
-  ```bash
-  $ pip3 -V
-  ```
-  If pip is not installed, you’ll see this message: `The program 'pip' is currently not installed`. To install pip, run this command:
-  ```bash
-  yum install python3-pip -y
-  ```
-  To verify the installation, run this command:
-  ```bash
-  $ pip3 -V
-  ```
-  You should see a message like this: `pip 20.2.2 from /usr/lib/python3.7/site-packages/pip (python 3.7)`.
+   ```bash
+   pip3 -V
+   ```
+   If pip is not installed, you’ll see the message `The program 'pip' is currently not installed`. To install pip, run this command:
+    ```bash
+    yum install python3-pip -y
+    ```
+   Verify the installation by running this command:
+    ```bash
+    $ pip3 -V
+    ```
+   You should see a message like this: `pip 20.2.2 from /usr/lib/python3.7/site-packages/pip (python 3.7)`.
 
 
 #### Install Oracle Instant Client on Linux 64bit OS
 
-1.  Install Oracle Instant Client packages.
+1. Install Oracle Instant Client packages.
   ```bash
   $ dnf install oracle-instantclient-release-el8 -y
   $ dnf install oracle-instantclient-basic
@@ -725,7 +662,7 @@ In this step, you install Python 3.7.10 for Linux.
   ```bash
   $ dnf install -y libaio libaio-devel
   ```
-3. Test the client
+3. Test the client.
   ```bash
   $ sqlplus username/password@//databasehost:1521/sidvalue
   SQL*Plus: Release 19.0.0.0.0 - Production on Thu Nov 25 12:42:35 2021
@@ -745,17 +682,17 @@ In this step, you install Python 3.7.10 for Linux.
 
 #### Set up cx_Oracle on Linux
 
-In this step, you'll set up cx_Oracle, an open-source Python interface to Oracle.
+In this step, you'll set up `cx_Oracle`, an open-source Python interface to Oracle.
 
-1. Install cx_Oracle.
-  ```bash
-  pip3 install cx_Oracle==7.3
-  ```
-2. Check the cx_oracle version.
-  ```bash
-  pip3 list | grep cx-Oracle
-  cx-Oracle (7.3.0)
-  ```
+1. Install `cx_Oracle`.
+   ```bash
+   pip3 install cx_Oracle==7.3
+   ```
+2. Check the `cx_oracle` version.
+   ```bash
+   pip3 list | grep cx-Oracle
+   cx-Oracle (7.3.0)
+   ```
 
 #### Set up and Configure Performance Metrics Script
 
@@ -763,21 +700,23 @@ In this step, you set up the performance metrics script.
 
 #### Download the script - Clone the git repo
 
-Clone the Sumo Logic Python performance metrics script and configuration files from the git repo inside a folder (for example: oracle_script) using below command:
+Clone the Sumo Logic Python performance metrics script and configuration files from the git repo inside a folder (for example: `oracle_script`) using below command:
 
 ```bash
-$ git clone git@github.com:SumoLogic/sumologic-oracle-perf-monitor.git
+git clone git@github.com:SumoLogic/sumologic-oracle-perf-monitor.git
 ```
 
 Once the script is cloned, navigate to `oracle_script/sumooracle`.
 
-Two files - [oracle-perf-monitor.cfg](https://github.com/SumoLogic/sumologic-oracle-perf-monitor/blob/main/sumooracle/oracle-perf-monitor.cfg) and [oracle-perf-monitor.py](https://github.com/SumoLogic/sumologic-oracle-perf-monitor/blob/main/sumooracle/oracle-perf-monitor.py) - should be present.
+Two files should be present:
+* [oracle-perf-monitor.cfg](https://github.com/SumoLogic/sumologic-oracle-perf-monitor/blob/main/sumooracle/oracle-perf-monitor.cfg)
+* [oracle-perf-monitor.py](https://github.com/SumoLogic/sumologic-oracle-perf-monitor/blob/main/sumooracle/oracle-perf-monitor.py)
 
 #### Configure the script
 
 Make the following updates to the script configuration file (`oracle-perf-monitor.cfg`). In the `[dbLogin]` section, supply values for each parameter:
 
-If you do not wish to keep the password in the configuration file, keep the oraPassword field blank. You can set the password in the environment variable **DB_PASSWORD.**
+If you do not wish to keep the password in the configuration file, keep the oraPassword field blank. You can set the password in the environment variable **DB_PASSWORD**.
 
 To set environment variable, add variable in your `~/.bash_profile` file in your environment:
 ```bash
@@ -785,8 +724,8 @@ export DB_PASSWORD = DB Password
 ```
 
 The script first tries to read the password from the config file, if the password is not found in the config file, it searches for an environment variable `DB_PASSWORD`.
-`[dbLogin]`
 
+`[dbLogin]`
 * `oraUser= database user id       example myuser123`
 * `oraPassword= user password      example mypwd123`
 * `oraHost=server name        example ip-101-25-17-22`
@@ -801,13 +740,13 @@ $ python3 oracle-perf-monitor.py
 
 #### Configure the Sumo Logic Script Source
 
-1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
-2. Find the name of the installed collector to which you'd like to add a Source. Click **Add.** Then choose **Add Source** from the pop-up menu.
-3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources, you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+2. Find the name of the installed collector to which you'd like to add a Source. Click **Add**. Then choose **Add Source** from the pop-up menu.
+3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources, you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts) the Collector.
    1. For **Name** enter any name you like, for instance, Oracle Server Script
    2. The **Description** is optional.
    3. For **Source Category**, enter the desired category. It can be any value you like, for example, `DB/Oracle/DBQueryScript`.
-   4. **Fields.** Set the following fields:
+   4. **Fields**. Set the following fields:
       * `component = database`
       * `db_system = oracle`
       * `db_cluster = <Your_Oracle_Cluster_Name>`. Enter **Default** if you do not have one.
@@ -866,7 +805,7 @@ Connected to:
 Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 Version 19.3.0.0.0
 ```
-6. Run some sample SQL queries to test the connection,
+6. Run some sample SQL queries to test the connection.
 ```sql
 SQL> select BANNER from v$version;
 BANNER
@@ -876,11 +815,11 @@ Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 
 #### Install cx_Oracle on Windows
 
-1. Use Python’s pip package to install cx_Oracle.
+1. Use Python’s pip package to install `cx_Oracle`.
 ```bash
 python3 -m pip install cx_Oracle==7.3
 ```
-2. Check the cx_Oracle version.
+2. Check the `cx_Oracle` version.
 ```bash
 C:\Users\Administrator>python3
 Python 3.7.10 (v2.7.18:8d21aa21f2, Apr 20 2020, 13:25:05) [MSC v.1500 64 bit (AMD64)] on win32
@@ -899,10 +838,10 @@ In this step, you set up the performance metrics script.
 
 Clone the Sumo Logic Python performance metrics script and configuration files from the git repo inside a folder (for example: oracle_script) using below command:
 ```bash
-$ git clone git@github.com:SumoLogic/sumologic-oracle-perf-monitor.git
+git clone git@github.com:SumoLogic/sumologic-oracle-perf-monitor.git
 ```
 
-Once the script is cloned, navigate to oracle_script/sumooracle.
+Once the script is cloned, navigate to `oracle_script/sumooracle`.
 
 Two files [oracle-perf-monitor.cfg](https://github.com/SumoLogic/sumologic-oracle-perf-monitor/blob/main/sumooracle/oracle-perf-monitor.cfg) and [oracle-perf-monitor.py](https://github.com/SumoLogic/sumologic-oracle-perf-monitor/blob/main/sumooracle/oracle-perf-monitor.py) should be present.
 
@@ -937,17 +876,17 @@ oracle_script/sumooracle>python3 oracle-perf-monitor.py
 
 #### Configure the Sumo Logic Script Source
 
-1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
-2. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add.** Then choose **Add Source** from the pop-up menu.
-3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
-    * For **Name** enter any name you like, for instance, **Oracle Server Script.**
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+2. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add**. Then choose **Add Source** from the pop-up menu.
+3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts) the Collector.
+    * For **Name** enter any name you like, for instance, **Oracle Server Script**.
     * The **Description** is optional.
     * For **Source Category**, enter the desired category. It can be any value you like, for example, `DB/Oracle/DBQueryScript`.
     * For **Frequency**, select desired frequency, for instance, 5 minutes.
     * For **Specify a timeout for your command**, select a value that is long enough that long-running queries can complete, for instance, 30 sec.
-    * For **Command**, select **Windows Script.**
+    * For **Command**, select **Windows Script**.
     * For **Script**, select **Type a path to the script to execute**, then enter: for instance `oracle_script/sumooracle\oracle-perf-monitor.py`.
-    * For **Working Directory**, enter: for instance oracle_script/sumooracle
+    * For **Working Directory**, enter: for instance `oracle_script/sumooracle`
     * Click **Save**.
 
 
@@ -955,24 +894,15 @@ oracle_script/sumooracle>python3 oracle-perf-monitor.py
 
 This section demonstrates how to install the Oracle app.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search for and select the app.
-1. Select the service version you're using and click Add to Library. Version selection applies only to a few apps currently. For more information, see the Install the Apps from the Library.
-1. To install the app, complete the following fields.
-   * **App Name**. You can retain the existing name or enter the app's name of your choice. 
-   * **Advanced**. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-1. Click Add to Library.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specify. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing Oracle Dashboards
 
 :::tip Filter with template variables  
 
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables).
 :::
 
 ### Overview
@@ -1082,7 +1012,7 @@ See information about database connections established by privileged users, conn
 
 **Unauthorized Command Execution**. The count of database commands that resulted in TNS-01190 errors over the previous 24 hours.
 
-**Possible InAppropriate Activity. **The count of lsnrctl commands the resulted in errors of the following types over the previous 24 hours: TNS-01169, TNS-01189, TNS-01190, "TNS-12508",  ORA-12525, ORA-28040, or ORA-12170.
+**Possible InAppropriate Activity**. The count of lsnrctl commands the resulted in errors of the following types over the previous 24 hours: TNS-01169, TNS-01189, TNS-01190, "TNS-12508",  ORA-12525, ORA-28040, or ORA-12170.
 
 **Connections By Privileged Users**. A donut chart that shows the breakdown of connections from privileged user accounts, such as root and administrator, over the previous 24 hours.
 
@@ -1194,7 +1124,7 @@ See database usage information obtained by the Oracle script source, including t
 
 **Maximum Wait Time (sec) by User**. A line chart that shows, for each user, the session wait times for each 5 minute timeslice over the last 60 minutes.
 
-**Top Session Wait Time Events.** A table that shows the top 10 event types associated with session waits, and the count of each event type.
+**Top Session Wait Time Events**. A table that shows the top 10 event types associated with session waits, and the count of each event type.
 
 **Recent Jobs in the database**. A table of information about recent database jobs, including when each job ran, low long it ran, and when it will next run.
 

@@ -11,14 +11,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Akamai Cloud Monitor allows you to analyze and correlate Akamai data with origin data in order to improve availability and performance of applications, improve end-user experience, gain deeper user insights, and enforce rigorous security controls. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Akamai Cloud Monitor assumes Akamai formatted logs, which provide one log message for each request.
 
 For information about Akamai Cloud Monitor log formats, contact [Akamai Support](https://www.akamai.com/us/en/support/) and request the document “Akamai Log Delivery User Guide.” Refer to “Appendix A: Log Formats and Examples."
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -85,8 +85,7 @@ For information about Akamai Cloud Monitor log formats, contact [Akamai Support]
 }
 ```
 
-
-### Sample Queries
+### Sample queries
 
 ```sql title="Top Error-causing URLs"
 _sourceCategory=akamai 50?
@@ -116,7 +115,6 @@ _sourceCategory=akamai waf denyRules reqHost
 | transpose row _timeslice column host
 ```
 
-
 ## Collect Logs for Akamai Cloud Monitor
 
 This procedure explains how to collect logs from Akamai Cloud Monitor and ingest them into Sumo Logic.
@@ -137,7 +135,7 @@ In Sumo Logic, create a new [Hosted Collector](/docs/send-data/hosted-collectors
 1. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 2. Configure the Source Fields as follows:
     1. **Name.** Required. For example, use Akamai.
-    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced** section:
     1. Check **Extract timestamp information from log file entries**.
     2. **Timezone.** Use time zone from log file. If none is present, use UTC.
@@ -169,25 +167,32 @@ Save the URL endpoint that is generated for your HTTP Source. You will use it to
 
 Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule).
 
-1. In Sumo Logic, go to **Manage Data > Logs > Field Extractions** and click **Add**.
-2. Configure the following fields:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
+1. Click **Add**.
+1. Configure the following fields:
     * **Rule Name.** Required (for example, Akamai Cloud Monitor).
-    * **Scope. **Use the Source Category you created for your HTTP Source (for example, akamai_cloud_monitor).
-    * **Parse Expression. **Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
-3. Click **Add**.
+    * **Scope.** Use the Source Category you created for your HTTP Source (for example, akamai_cloud_monitor).
+    * **Parse Expression.** Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
+1. Click **Add**.
 
 ```sql title="FER for Akamai Cloud Monitor"
 parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
 | parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
 ```
 
-## Installing the Akamai Cloud Monitor App
+## Installing the Akamai Cloud Monitor app
 
 Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and dashboards to analyze your Akamai data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Viewing Akamai Cloud Monitor Dashboards
+<AppInstall2/>
+
+## Viewing Akamai Cloud Monitor dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -283,3 +288,15 @@ Now that you have configured Akamai logs, install the Sumo Logic App for Akamai 
 <img src={useBaseUrl('img/integrations/saas-cloud/Akamai-Web-Application.png')} alt="akamai_cloud_monitor dashboard" />
 
 **Attacks (Individual Warn/Deny Events).** Uses a geo lookup operator to provide information on individual warn and deny events by IP address for the last hour and displays them on a map of the world.
+
+## Upgrade/Downgrade the Akamai Cloud Monitor app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Akamai Cloud Monitor app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

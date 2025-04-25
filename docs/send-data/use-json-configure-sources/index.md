@@ -6,7 +6,7 @@ description: Learn how to configure sources and processing rules using JSON.
 
 Installed Collector and Hosted Collector sources can be configured by using UTF-8 encoded JSON files. Installed Collectors can use JSON files to configure its Sources when using [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). You can also configure Sources for Hosted and Installed Collectors with the Collector Management API.
 
-:::caution Limitations
+:::warning Limitations
 This feature is **not supported** for our [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector).
 :::
 
@@ -49,24 +49,24 @@ Each source can have its own unique fields in addition to the generic fields lis
 
 | Field Type | Type Value |
 |:--|:--|
-| [Local File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-file-source) | LocalFile |
-| [Remote File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-file-source) | RemoteFileV2 |
-| [Local Windows Event Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-windows-event-log-source) | LocalWindowsEventLog |
+| [Local File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-filesource) | LocalFile |
+| [Remote File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-filesource) | RemoteFileV2 |
+| [Local Windows Event Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-windows-event-logsource) | LocalWindowsEventLog |
 | [Remote Windows Event Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-windows-event-log-source) | RemoteWindowsEventLog |
 | [Local Windows Performance Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-windows-performance-source) | LocalWindowsPerfMon |
 | [Remote Windows Performance Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-windows-performance-source) | RemoteWindowsPerfMon |
 | [Windows Active Directory Inventory Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#windows-active-directory-inventory-source) | ActiveDirectory |
-| [Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#syslog-source)	 | Syslog |
+| [Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#syslogsource)	 | Syslog |
 | [Script Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#script-source) | Script |
-| [Docker Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-log-source) | DockerLog |
+| [Docker Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-logsource) | DockerLog |
 
 ### Metrics Sources
 
 | Field Type | Type Value |
 |:--|:--|
-| [Host Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#host-metrics-source)  | SystemStats |
+| [Host Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#host-metricssource)  | SystemStats |
 | [Streaming Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#streaming-metrics-source) | StreamingMetrics |
-| [Docker Stats Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-stats-source) | DockerStats |
+| [Docker Stats Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-statssource) | DockerStats |
 
 ## Hosted Collectors
 
@@ -76,9 +76,9 @@ Each source can have its own unique fields in addition to the generic fields lis
 |:--|:--|
 | [Akamai SIEM API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source) | Universal |
 | [Amazon S3 Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-source) | Polling |
-| [AWS S3 Archive Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-archive-source) | Polling |
-| [AWS CloudFront Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudfront-source) | Polling |
-| [AWS CloudTrail Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudtrail-source) | Polling
+| [AWS S3 Archive Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awss3-archive-source) | Polling |
+| [AWS CloudFront Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudfrontsource) | Polling |
+| [AWS CloudTrail Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudtrailsource) | Polling
 | [AWS Elastic Load Balancing Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-elastic-load-balancing-source) | Polling |
 | [AWS Kinesis Firehose for Logs Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-kinesis-firehose-for-logs-source) | HTTP |
 | [Amazon S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-audit-source) | Polling |
@@ -91,7 +91,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [Cisco Meraki Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source) | Universal |
 | [Crowdstrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) | Universal |
 | [CrowdStrike Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) | 	Universal |
-| [CSE AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source) | Universal |
+| [Cloud SIEM AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source) | Universal |
 | [Cybereason Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source) | Universal |
 | [Duo Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) | Universal |
 | [Google Cloud Platform Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#google-cloud-platform-source) | HTTP |
@@ -100,6 +100,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source) | Universal |
 | [Netskope Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) | Universal |
 | [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) | Universal |
+| [OLTP Source](/docs/send-data/hosted-collectors/http-source/otlp/) | HTTP |
 | [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source) | Universal |
 | [Proofpoint On Demand Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source) | Universal |
 | [Proofpoint TAP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source) | Universal |
@@ -111,8 +112,9 @@ Each source can have its own unique fields in addition to the generic fields lis
 
 | Field Type | Type Value |
 |:--|:--|
-| [AWS CloudWatch Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudwatch-source) | Polling |
+| [AWS CloudWatch Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudwatchsource) | Polling |
 | [AWS Kinesis Firehose for Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources/#aws-kinesis-firehose-for-metricssource) | HTTP |
+| [OLTP Source](/docs/send-data/hosted-collectors/http-source/otlp/) | HTTP |
 
 ## Common parameters for log source types
 
@@ -149,7 +151,8 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
-| `filters` | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
+| `filters` | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward). Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
+| `hashAlgorithm` | string | No | md5 | Refer to [Hash Rules](/docs/send-data/collection/processing-rules/hash-rules/). You can also add available values ["MD5", "SHA-256"]. | modifiable |
 
 **When collection should begin**
 
@@ -335,14 +338,14 @@ To determine the sinkId for a data forwarding destination, you use the Sumo web 
 
 These instruction assume you have already created a data forwarding destination.
 
-1. Follow the instructions in [Configure processing rules for data forwarding](/docs/manage/data-archiving/installed-collectors.md#configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
+1. Follow the instructions in [Configure processing rules for data forwarding](/docs/manage/data-forwarding/installed-collectors#step-2-configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
 1. To view the JSON configuration for the source you updated in the previous step:
-   1. Select **Manage Data** > **Collection** > **Collection**. 
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
    1. Click the icon to the right of the source. The API usage information panel appears. Make a note of the sinkId in the filter section of the JSON.<br/>  ![sink id](/img/send-data/sinkId.png)
 1. Click the icon to the right of the Source. Make a note of the sinkId in the filter section of the JSON.
 1. Click Done to close the API usage information panel.
 1. Now that you have determined the sinkId for the data forwarding destination, delete the test rule.
-   1. Select **Manage Data** > **Collection** > **Collection**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
    1. Navigate to the source to which you added the test rule.
    1. In the **Processing Rules** section of the page, click the delete icon to the right of the test rule. <br/>![proc rule](/img/send-data/proc-rule.png)
 

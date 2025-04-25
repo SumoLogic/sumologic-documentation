@@ -1,0 +1,21 @@
+{
+    "api.version":"v1",
+    "source":{
+      "config":{
+        "name":"YL-Netskope",
+        "eventTypes":["page","application","infrastructure","audit"],
+        "fields":{
+          "_siemForward":false
+        },
+        "apiToken":"********",
+        "tenantID":"partners"
+      },
+      "schemaRef":{
+        "type":"Netskope"
+      },
+      "state":{
+        "state":"Collecting"
+      },
+      "sourceType":"Universal"
+    }
+  }

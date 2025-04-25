@@ -13,24 +13,27 @@ import TabItem from '@theme/TabItem';
 
 The **ActiveMQ** app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your ActiveMQ messaging clusters. Preconfigured dashboards provide insight into cluster status, nodes, producers, consumers, destinations, resource utilization, message rates, and error logs.
 
-
 We use the OpenTelemetry collector for ActiveMQ metrics and logs collection.
 
 The diagram below illustrates the components of the ActiveMQ collection for each ActiveMQ broker node. OpenTelemetry collector runs on the same host as ActiveMQ broker, and uses the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) to obtain ActiveMQ metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. ActiveMQ logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-OTel-Collection-architecture.png' alt="ActiveMQ OTel Collection architecture" />
 
-This app has been tested with following ActiveMQ versions:
-  * 5.17.4
-  * 5.18.2
+This app has been tested with the following ActiveMQ versions:
+  * `5.17.4`
+  * `5.18.2`
 
-## Log types and metrics
+:::info
+This app includes [built-in monitors](#activemq-alerts). For details on creating custom monitors, refer to [Create monitors for ActiveMQ app](#create-monitors-for-activemq-app).
+:::
 
-The Sumo Logic App for ActiveMQ assumes:
+## Log and metrics types
 
-- ActiveMQ app supports the below log format in the log4j2.properties file.
+The Sumo Logic app for ActiveMQ uses:
 
-  * [Audit Logs](https://activemq.apache.org/audit-logging):  Every management action made through JMX or Web Console management interface is logged in audit log files.
+- ActiveMQ app supports the below log format in the `log4j2.properties` file.
+
+  * [Audit Logs](https://activemq.apache.org/audit-logging). Every management action made through JMX or Web Console management interface is logged in audit log files.
 
     `appender.auditlog.layout.pattern=%d | %-5p | %m | %t%n`
 
@@ -38,13 +41,12 @@ The Sumo Logic App for ActiveMQ assumes:
 
     `appender.logfile.layout.pattern=%d | %-5p | %m | %c | %t%n%throwable{full}`
 
-
-- For a list of metrics that are collected and used by the app, see [ActiveMQ Metrics](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/activemq.md).
+- For a list of metrics that are collected and used by the app, refer to the [ActiveMQ Metrics](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/activemq.md).
 
 
 ## Fields creation in Sumo Logic for ActiveMQ
 
-Following are the [fields](/docs/manage/fields/) which will be created as part of ActiveMQ App install if not already present.
+Following are the [fields](/docs/manage/fields/) which will be created as part of ActiveMQ app installation, if not already present.
 
 * `messaging.cluster.name`. User configured. Enter a name to uniquely identify your ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * `messaging.node.name`. Has value of `host name`.
@@ -56,53 +58,64 @@ If process metrics are enabled it will also create [fields for JMX metrics](/doc
 
 ## Prerequisites
 
-#### Configure logging in ActiveMQ:
+### Configure logging in ActiveMQ
 
-  1. By default, ActiveMQ logs (`audit.log` and `activemq.log`) are stored in the directory called `${ACTIVEMQ_HOME}/data/activemq.log`. Make a note of this logs directory.
-
-  2. [Enable auditing](https://activemq.apache.org/audit-logging) if not enabled by default.
-
+1. By default, ActiveMQ logs (`audit.log` and `activemq.log`) are stored in the directory called `${ACTIVEMQ_HOME}/data/activemq.log`. Make a note of this logs directory.
+1. [Enable auditing](https://activemq.apache.org/audit-logging) if not enabled by default.
      `ACTIVEMQ_OPTS="$ACTIVEMQ_OPTS -Dorg.apache.activemq.audit=true"`
-
-  3. Ensure that below log formats are present in [logging configuration](https://activemq.apache.org/how-do-i-change-the-logging). Also make sure appropriate log level is set.
-
-      * [Audit Logs](https://activemq.apache.org/audit-logging):
-
+1. Ensure that below log formats are present in [logging configuration](https://activemq.apache.org/how-do-i-change-the-logging). Also make sure appropriate log level is set.
+  * [Audit Logs](https://activemq.apache.org/audit-logging):
         `appender.auditlog.layout.pattern=%d | %-5p | %m | %t%n`
-
-      * ActiveMQ Logs:
-
+  * ActiveMQ Logs:
         `appender.logfile.layout.pattern=%d | %-5p | %m | %c | %t%n%throwable{full}`
 
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
 
+<LogsCollectionPrereqisites/>
 
-#### Configure metrics in ActiveMQ:
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
 
-  1. Follow the instructions in [JMX - OpenTelemetry's prerequisites section](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry#prerequisites) to download the [JMX Metric Gatherer](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/README.md) used by the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
+### Configure metrics in ActiveMQ
 
-  2. Enable reads metrics from ActiveMQ servers via the [JMX MBeans](https://activemq.apache.org/jmx) by setting `useJmx="true"` in file config [ActiveMQ.xml](https://activemq.apache.org/xml-configuration.html)
-       ```xml
+1. Follow the instructions in [JMX - OpenTelemetry's prerequisites section](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry#prerequisites) to download the [JMX Metric Gatherer](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/README.md) used by the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
+1. Enable reads metrics from ActiveMQ servers via the [JMX MBeans](https://activemq.apache.org/jmx) by setting `useJmx="true"` in file config [ActiveMQ.xml](https://activemq.apache.org/xml-configuration.html)
+   ```xml
        <broker useJmx="true" brokerName="BROKER1">
        ...
        </broker>
-       ```
-
-  3. Set the JMX port by changing the `ACTIVEMQ_SUNJMX_START` parameter. Usually it is set in `/opt/activemq/bin/env` or `C:\Program Files\apache-activemq\bin\activemq.bat` file.
-
-      ```
-      ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=11099 -Dcom.sun.management.jmxremote.ssl=false  -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_CONF_DIR}/jmx.password -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF_DIR}/jmx.access"
-      ```
+   ```
+1. Set the JMX port by changing the `ACTIVEMQ_SUNJMX_START` parameter. Usually it is set in `/opt/activemq/bin/env` or `C:\Program Files\apache-activemq\bin\activemq.bat` file.
+   ```
+   ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=11099 -Dcom.sun.management.jmxremote.ssl=false  -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_CONF_DIR}/jmx.password -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF_DIR}/jmx.access"
+   ```
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up OpenTelemetry Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -121,15 +134,15 @@ Below is the input required:
 - **ActiveMQ process name**. Enter the ActiveMQ process name.It will be used for filtering process metrics based on process name.
 - **Fields**. `messaging.cluster.name` User configured. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-
-
 Click on the **Download YAML File** button to get the YAML file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-OTEL-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-OTEL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -138,62 +151,100 @@ Click on the **Download YAML File** button to get the YAML file.
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
 
-1.  Copy the YAML to the`/etc/otelcol-sumo/conf.d/` folder for the ActiveMQ instance which needs to be monitored.
-2.  Restart the collector using:
-  ```sh
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the ActiveMQ instance that needs to be monitored.
+1. Restart the collector using:
+  ```
   sudo systemctl restart otelcol-sumo
   ```
 
 </TabItem>
+
 <TabItem value="Windows">
 
-1.  Copy the YAML to the `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using:
-  ```sh
+1. Copy the YAML file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1. Restart the collector using:
+  ```
   Restart-Service -Name OtelcolSumo
   ```
 
 </TabItem>
+
 <TabItem value="macOS">
 
-1.  Copy the YAML to the `/etc/otelcol-sumo/conf.d/` folder in the ActiveMQ instance which needs to be monitored.
-2.  Restart the `otelcol-sumo` process using the below command:
-  ```sh
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the ActiveMQ instance which needs to be monitored.
+1. Restart the `otelcol-sumo` process using the below command:
+  ```
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
 
 </TabItem>
+
+<TabItem value="Chef">
+
+import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
+
+<ChefEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
+
+<AnsEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
+
+<PuppetEnv/>
+
+</TabItem>
+
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 
 ## Sample log messages
 
-*activemq.log*
-
-```json
+```json title="ActiveMQ Logs"
 2021-06-22 15:00:41,922 | DEBUG | Stopping transport tcp:///192.168.100.8:36302@61616 | org.apache.activemq.transport.tcp.TcpTransport | ActiveMQ BrokerService[localhost] Task-15300
 ```
 
-*audit.log*
-
-```json
+```json title="Audit Logs"
 2010-12-22 12:12:07,225 | INFO  | admin requested /admin/createDestination.action [JMSDestination='test' JMSDestinationType='queue' secret='4eb0bc3e-9d7a-4256-844c-24f40fda98f1' ] from 127.0.0.1 | qtp12205619-39
 2010-12-22 12:12:14,512 | INFO  | admin requested /admin/purgeDestination.action [JMSDestination='test' JMSDestinationType='queue' secret='eff6a932-1b58-45da-a64a-1b30b246cfc9' ] from 127.0.0.1 | qtp12205619-36
 2010-12-22 12:12:17,802 | INFO  | admin requested /admin/sendMessage.action [JMSTimeToLive='' JMSXGroupSeq='' AMQ_SCHEDULED_DELAY='' JMSType='' JMSMessageCountHeader='JMSXMessageCounter' JMSXGroupID='' JMSReplyTo='' JMSDestination='test' AMQ_SCHEDULED_PERIOD='' JMSText='Enter some text
 here for the message body...' JMSDestinationType='queue' AMQ_SCHEDULED_CRON='' JMSCorrelationID='' AMQ_SCHEDULED_REPEAT='' JMSMessageCount='1' secret='a0e1df62-14d6-4425-82a2-17aa01a16e7d' JMSPriority='' ] from 127.0.0.1 | qtp12205619-37
 ```
 
+## Sample metrics
+
+```sql
+"Query","metric","deployment.environment","host.name","messaging.cluster.name","messaging.node.name","messaging.system","os.type","sumo.datasource","broker","destination","unit","latest"
+```
+
+```sql
+"#A","activemq.message.wait_time.avg","testprod","ip-10-0-10-92","activemq_cluster","ip-10-0-10-92","activemq","linux","activemq","localhost","testtopic","ms","254.4"
+```
+
 ## Sample queries
 
 ### Log query
 
-This sample Query is from the **Events by Severity** panel of the **ActiveMQ - Logs** dashboard.
+This sample log query is from the **Events by Severity** panel of the **ActiveMQ - Logs** dashboard.
 
 ```sql
 sumo.datasource=activemq deployment.environment={{deployment.environment}} messaging.cluster.name={{messaging.cluster.name}} messaging.node.name={{messaging.node.name}}
@@ -204,29 +255,17 @@ sumo.datasource=activemq deployment.environment={{deployment.environment}} messa
 
 ### Metrics query
 
-Sample query from **Average Enqueue Latency** panel in **ActiveMQ - Destinations** dashboard.
+This sample metrics query from the **Average Enqueue Latency** panel of the **ActiveMQ - Destinations** dashboard.
 
-```
+```sql
 sumo.datasource=activemq deployment.environment={{deployment.environment}} messaging.cluster.name={{messaging.cluster.name}} messaging.node.name={{messaging.node.name}} destination={{destination}} !(destination=activemq.*)  metric=activemq.message.wait_time.avg | avg by destination,messaging.cluster.name
 ```
 
-
-## Sample metrics
-
-```
-"Query","metric","deployment.environment","host.name","messaging.cluster.name","messaging.node.name","messaging.system","os.type","sumo.datasource","broker","destination","unit","latest"
-```
-
-```
-"#A","activemq.message.wait_time.avg","testprod","ip-10-0-10-92","activemq_cluster","ip-10-0-10-92","activemq","linux","activemq","localhost","testtopic","ms","254.4"
-```
-
-
 ## Viewing the ActiveMQ dashboards
 
-### Dashboard filters with template variables
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Overview
 
@@ -241,7 +280,6 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Overview.png' alt="ActiveMQ dashboards" />
 
-
 ### Brokers
 
 The **ActiveMQ - Brokers** dashboard provides an at-a-glance view of the state of your brokers in the ActiveMQ cluster.
@@ -253,8 +291,6 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Brokers.png' alt="ActiveMQ dashboards" />
 
-
-
 ### Destinations
 
 The **ActiveMQ - Destinations** dashboard provides an at-a-glance view of the state of your topics/queues in ActiveMQ clusters.
@@ -265,9 +301,7 @@ Use this dashboard to:
 * Monitor producers, consumers and expired messages on topics/queues.
 * Determine the number of topics/queues.
 
-
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Destinations.png' alt="ActiveMQ dashboards" />
-
 
 ### Resource utilization
 
@@ -279,8 +313,6 @@ Use this dashboard to:
 * Gain insights into memory utilization by topics/queues.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Resource-Utilization.png' alt="ActiveMQ dashboards" />
-
-
 
 ### Logs
 
@@ -305,4 +337,22 @@ Use this dashboard to:
 * Quickly determine patterns across all audit logs in a given ActiveMQ cluster.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Audit.png' alt="ActiveMQ dashboards" />
+
+## Create monitors for ActiveMQ app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### ActiveMQ alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `ActiveMQ - High CPU Usage Alert` | This alert gets triggered when CPU usage on a node in a ActiveMQ cluster is high. | Count >= 80 | Count < 80 |
+| `ActiveMQ - High Memory Usage Alert` | This alert gets triggered when memory usage on a node in a ActiveMQ cluster is high. | Count >= 80 | Count < 80 |
+| `ActiveMQ - High Storage  Used Alert` | This alert gets triggered when there is high store usage on a node in a ActiveMQ cluster. | Count >= 80 | Count < 80 |
+| `ActiveMQ - Maximum Connection Alert` | This alert gets triggered when one node in ActiveMQ cluster exceeds the maximum allowed client connection limit. | Count >= 1 | Count < 1 |
+| `ActiveMQ - No Consumers on Queues Alert` | This alert gets triggered when a ActiveMQ queue has no consumers. | Count < 1 | Count >= 1 |
+| `ActiveMQ - Node Down Alert` | This alert gets triggered when a node in the ActiveMQ cluster is down. | Count >= 1 | Count < 1 |
+| `ActiveMQ - Too Many Connections Alert` | This alert gets triggered when there are too many connections to a node in a ActiveMQ cluster. | Count >= 1000 | Count < 1000 |
 

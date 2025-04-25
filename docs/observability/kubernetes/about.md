@@ -18,7 +18,8 @@ With the Sumo Logic Kubernetes Solution, you can monitor and troubleshoot contai
 
 ![K8s_Solution_Ingest_Ease-of-Use.png](/img/kubernetes/K8s_Solution_Ingest_Ease-of-Use.png)
 
-<details><summary>What is Kubernetes?</summary>
+<details>
+<summary>What is Kubernetes?</summary>
 
 Kubernetes is an open source container orchestration platform developed by [Google](https://cloud.google.com/kubernetes/), that is now managed by the [Cloud Native Computing Foundation](https://www.cncf.io/). 
 
@@ -48,7 +49,7 @@ The API server is the front door to Kubernetes. Any changes you make in the envi
 
 The etcd of the control plane is a value store that Kubernetes uses this for storing all of the desired states for the cluster. Changes in the cluster are compared to the desired state to determine the necessary response. For etcd, you should monitor the following:
 * Leader changes
-* Quorum - if quorum is lost, etcd falls into a read-only state and you can't make changes to the API or get new state coming back from your cluster
+* Quorum - if quorum is lost, etcd falls into a read-only state and you cannot make changes to the API or get new state coming back from your cluster
 * Disk space - if you lose your backup for etcd you may lose all the state for the entire cluster
 
 #### Controller Manager
@@ -96,6 +97,12 @@ The kube-proxy is a network proxy that runs on each node in your cluster. The ku
 
 ### Pods
 
-Pods reside on a given node, and a container can contain several pods. For pods, you should monitor:
-* Scheduler health for individual pods - so they don't get stuck in a restart loop
+Pods reside on a given node, and a pod can contain several containers. For pods, you should monitor:
+* Scheduler health for individual pods - so they do not get stuck in a restart loop
 * Pod health - availability, resource consumption, and performance
+
+## Additional resources
+
+* Blogs: 
+   * [Kubernetes DevSecOps](https://www.sumologic.com/blog/kubernetes-devsecops/)
+   * [Logging and monitoring Kubernetes](https://www.sumologic.com/blog/kubernetes-logs/)

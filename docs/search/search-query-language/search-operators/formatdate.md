@@ -22,12 +22,12 @@ A date String, in US-style date format if no format is specified. The date is in
 
 ### Parameters
 
-* **date** - milliseconds (13 digits), as a Long. You can also use formatDate with the [Now](now.md) operator.
-* **format** - any valid date and time pattern String accepted by Java’s [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html). For more details about specifying the **format** see [Timestamps, Time  Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference.md).
-* **timeZone** - a String, such as "America/Los_Angeles" or "Europe/London"
+* **date** - milliseconds (13 digits), as a Long. You can also use formatDate with the [`now`](now.md) operator.
+* **format** - any valid date and time pattern String accepted by Java’s [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html). For more details about specifying the **format** see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
+* **timeZone** - a string, such as "America/Los_Angeles" or "Europe/London"
 
 :::important
-Convert the date parameter to Long if necessary. Passing a String can produce the error: "Multiple definitions found for function formatDate(String, String)." The solution is to cast the date parameter using the [toLong](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator.
+Convert the date parameter to Long if necessary. Passing a String can produce the error: "Multiple definitions found for function formatDate(String, String)." The solution is to cast the date parameter using the [`toLong`](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator.
 :::
 
 ## Examples
@@ -42,9 +42,9 @@ Use the following query to return results for the current date using the date fo
 
 This creates the today column, and returns the following results.
 
-![FormatDate](/img/search/searchquerylanguage/search-operators/FormatDate.png)
+![A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM:SS.SSS -0700'.](/img/search/searchquerylanguage/search-operators/FormatDate.png)
 
-### European date format** **dd-MM-yyyy
+### European date format dd-MM-yyyy
 
 Use the following query to create a **today** column, and return the results using the European date format of day, month, year, **dd-MM-yyyy**.
 
@@ -54,7 +54,7 @@ Use the following query to create a **today** column, and return the results u
 
 This returns the following results:
 
-![EuropeanDateFormat](/img/search/searchquerylanguage/search-operators/EuropeanDateFormat.png)
+![A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'dd-MM-yyyy HH:MM.SSS -0700'.](/img/search/searchquerylanguage/search-operators/EuropeanDateFormat.png)
 
 ### US date format with a timestamp
 
@@ -66,7 +66,7 @@ This example creates a **today** column and uses the US date format with a tim
 
 Which returns results like:
 
-![DateTimestamp](/img/search/searchquerylanguage/search-operators/DateTimestamp.png)
+![A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM:SS.SSS -0700'.](/img/search/searchquerylanguage/search-operators/DateTimestamp.png)
 
 ### Find messages with incorrect timestamps
 
@@ -81,7 +81,7 @@ This query allows you to find messages with incorrect timestamps.
 
 This query produces results like this:
 
-![Incorrect Timestamp](/img/search/searchquerylanguage/search-operators/IncorrectTimestamp.png)
+![A screenshot of a Sumo Logic log query results table with columns for time, delay, delayinminutes, messagedate, receiptdate, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'.](/img/search/searchquerylanguage/search-operators/IncorrectTimestamp.png)
 
 ### Determine age of log messages
 
@@ -97,13 +97,13 @@ This query lets you determine the age of your log messages.
 
 Which produces results like this:
 
-![Message age](/img/search/searchquerylanguage/search-operators/MessageAge.png)
+![A screenshot of a Sumo Logic log query results table with columns for time, currenttime, messageage, messageageinminutes, messagedate, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'.](/img/search/searchquerylanguage/search-operators/MessageAge.png)
 
 ### Messages by Day of the Week
 
-To get the day of the week from your logs, you can reference your log's timestamps, which are stored as the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_messageTime`. You can also parse out any dates in your logs and use the [formatDate](formatdate.md) operator to get the day of the week.  
+To get the day of the week from your logs, you can reference your log's timestamps, which are stored as the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_messageTime`. You can also parse out any dates in your logs and use the [`formatDate`](formatdate.md) operator to get the day of the week.  
 
-Beginning with the `_messageTime` field, you can determine the day of the week, and then remove the days you don't want using the formatDate operator. This example query provides results only for Mondays:
+Beginning with the `_messageTime` field, you can determine the day of the week, and then remove the days you do not want using the formatDate operator. This example query provides results only for Mondays:
 
 ```sql
 | formatDate(_messagetime, "EEE") as day
@@ -117,7 +117,7 @@ This example query provides only weekday results:
 | where !(day="Sat" or day="Sun")
 ```
 
-If you don't use `_messageTime`, and instead parse out another timestamp, you can convert it to milliseconds and determine the day this way:
+If you do not use `_messageTime`, and instead parse out another timestamp, you can convert it to milliseconds and determine the day this way:
 
 ```sql
 | parseDate(parsedtime, "MM/dd/yyyy HH:mm:ss a") as inMilliseconds
@@ -136,14 +136,14 @@ _sourceCategory=sourceCategory
 You get the following results:
 
 | # | session | _count | _min | _max |
-|:--||-|-|-|
+|:--|:--|:--|:--|:--|
 |  1     | 7oEmE+KLpk1nVYpF | 22          | 1.35844e+12 | 1.35844e+12 |
 |  2     | 6uklr9UDkTOg79je | 412         | 1.35844e+12 | 1.35844e+12 |
 |  3     | q0K6ztX9IvpZWh1p | 18          | 1.35844e+12 | 1.35844e+12 |
 
 In the results, the **`_min`** and **`_max`** values are displayed as an epoch value. You can format these epoch values into a readable date with an experimental operator, **`toLong`**.
 
-* [toLong](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) casts the data into a Long data type as milliseconds.
+* [`toLong`](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) casts the data into a Long data type as milliseconds.
 
 Normally, to convert the epoch time into a date formatted string you'd do something like this:
 
@@ -151,7 +151,7 @@ Normally, to convert the epoch time into a date formatted string you'd do somet
 * | formatDate(_messagetime, "``MM-dd-``yyyy`` HH:mm:ss") as myDate
 ```
 
-However, in the case where you are using **Min** and **Max** to get the first and last values, you also need to convert the return value to a "Long" value type using the experimental [toLong](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator. This is because when you run the **Min** and **Max** operators, the return value gets reformatted as a "Double" value type that the formatDate operator can't read.
+However, in the case where you are using **Min** and **Max** to get the first and last values, you also need to convert the return value to a "Long" value type using the experimental [`toLong`](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator. This is because when you run the **Min** and **Max** operators, the return value gets reformatted as a "Double" value type that the formatDate operator cannot read.
 
 ```sql
 * | count, min(_messagetime) as mindate | formatDate(toLong(mindate))

@@ -7,7 +7,6 @@ description: A map chart visualizes metric query results by geographic location.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
 ## Map Charts
 
 A map chart visualizes metric query results by geographic location.
@@ -23,8 +22,7 @@ Your query can return multiple metrics, but there’s a limit to how many you ca
 ## Create a Map chart
 
 1. Enter a metrics query that returns dimensions that provide latitude and longitude. Your query can return multiple metrics, but there’s a limit to how many you can visualize. A cluster chart supports queries that return two metrics. A heat map supports a single metric.
-2. Open the **Chart **tab, and select **Map** as **Panel Type**.
-<img src={useBaseUrl('img/metrics/map-option.png')} alt="map-option.png"/>
+2. Open the **Chart** tab, and select **Map** as **Panel Type**. <br/><img src={useBaseUrl('img/metrics/map-option.png')} alt="map-option.png"/>
 3. If your query returns dimensions named _latitude_ and _longitude_, the chart tab will display a cluster chart on a world map. If the dimensions that contain latitude and longitude are not named _latitude_ and _longitude_, use the pull-downs in the **Coordinate Data** area to select the dimensions that contain the coordinates. <br/><img src={useBaseUrl('img/metrics/cluster-map-one-metric.png')} alt="cluster-map-one-metric.png"/>
 
 ## Interacting with a Map Chart

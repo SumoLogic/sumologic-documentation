@@ -19,19 +19,22 @@ To send data to Sumo Logic collector either in a Kubernetes or standalone setup,
 
 Set `meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.openCensusAgent.address=` to the endpoint of the receiving collector:
 
-* For [*Kubernetes collectors*](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md):  
-    ```
+* For [*Kubernetes collectors*](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md):
+
+    ```bash
     --set meshConfig.enableTracing=true
     --set meshConfig.defaultConfig.tracing.openCensusAgent.address=RELEASE_NAME-CHART_NAME-otelagent.NAMESPACE:55678
     ```
-* For [standalone collectors](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md):  
-    ```
+
+* For [standalone collectors](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md):
+
+    ```bash
     --set meshConfig.enableTracing=true
     --set meshConfig.defaultConfig.tracing.openCensusAgent.address=HOSTNAME:55678
     ```
 
 :::note
-OpenCensus agent by default uses **W3C** context propagation same as OpenTelemetry. It means no additional effort with setting context propagation on the OT instrumentation level. 
+OpenCensus agent by default uses **W3C** context propagation same as OpenTelemetry. It means no additional effort with setting context propagation on the OT instrumentation level.
 :::
 
 ### Zipkin exporter
@@ -39,13 +42,16 @@ OpenCensus agent by default uses **W3C** context propagation same as OpenTelemet
 Set `meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.zipkin.address=` to the URL of Sumo
 receiving collector:
 
-* For [*Kubernetes collectors*](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md):  
-    ```
+* For [*Kubernetes collectors*](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md):
+
+    ```bash
     --set meshConfig.enableTracing=true
     --set meshConfig.defaultConfig.tracing.zipkin.address=RELEASE_NAME-CHART_NAME-otelagent.NAMESPACE:9411
     ```
-* For [*standalone collectors*](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md):  
-    ```
+
+* For [*standalone collectors*](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md):
+
+    ```bash
     --set meshConfig.enableTracing=true
     --set meshConfig.defaultConfig.tracing.zipkin.address=HOSTNAME:9411
     ```
@@ -69,13 +75,13 @@ Before proceeding make sure you have the most recent versions of instrumentation
 
 The following is a Java example to set up b3 context propagation. Add the following parameter to JVM environment variables or command line:
 
-```
+```bash
 OTEL_PROPAGATORS=b3,tracecontext,baggage 
 ```
 
 For example:
 
-```
+```bash
 JAVA_TOOL_OPTIONS="-javaagent:path/to/opentelemetry-javaagent.jar"
 OTEL_TRACES_EXPORTER=otlp
 OTEL_PROPAGATORS=b3,tracecontext,baggage
@@ -85,7 +91,7 @@ OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APP_NAME
 
 Or
 
-```
+```bash
 java -javaagent:path/to/opentelemetry-javaagent.jar \
     -Dotel.traces.exporter=otlp \
     -Dotel.exporter.otlp.endpoint=http://OPENTELEMETRY_COLLECTOR_HOSTNAME:4317 \
@@ -97,44 +103,44 @@ java -javaagent:path/to/opentelemetry-javaagent.jar \
 
 ### Distributed Tracing customization
 
-See the [Configure tracing using MeshConfig and Pod annotations](https://istio.io/latest/docs/tasks/observability/distributed-tracing/configurability/mesh-and-proxy-config/) guide for information to configure any advanced capabilities on span data generation from Istio, such as probabilistic sampling, extending the length of some fields, or adding custom metadata/annotations to spans.
+See the [Configure tracing using MeshConfig and Pod annotations](https://istio.io/latest/docs/tasks/observability/distributed-tracing/mesh-and-proxy-config/) guide for information to configure any advanced capabilities on span data generation from Istio, such as probabilistic sampling, extending the length of some fields, or adding custom metadata/annotations to spans.
 
 ## Troubleshooting
 
 Every action requires restart of the pods involved in tracing.
 
-1. Validate if **meshConfig** options are properly configured. Execute:   
+1. Validate if **meshConfig** options are properly configured. Execute:
 
-    ```
+    ```bash
     kubectl get configmap istio –namespace istio-system –output "jsonpath={.data['mesh']}"
     ```
 
     Example output:
 
-    ![istio1.png](/img/traces/istio1.png)  
+    ![istio1.png](/img/apm/traces/istio1.png)  
 
     Check if correct values are set for `enableTracing` and `defaultConfig.tracing.EXPORTER_NAME.address`. If OpenCensus was configured, then Zipkin by default points to an Istio endpoint.
 
 1. Make sure the namespace is labeled. More details about sidecar injection can be found [here](https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/). To check if namespace is labeled, execute:  
 
-    ```
+    ```bash
     kubectl get namespace -L istio-injection
     ```
 
-    ![istio2.png](/img/traces/istio2.png)  
+    ![istio2.png](/img/apm/traces/istio2.png)  
 
 1. Make sure the `namespace` in which the application is running `istio-injection` label is set as `enabled`. If label value is disabled or not set then run:  
 
-    ```
+    ```bash
     kubectl label namespace NAMESPACE_NAME istio-injection=enabled --overwrite
     ```
 
 1. Check if exporter configuration was used by the sidecar container. To see the logs of istio-proxy container and look for values provided in the meshConfig, execute:  
 
-    ```
+    ```bash
     kubectl logs -n NAMESPACE POD_NAME istio-proxy
     ```
 
     Example output:  
 
-    ![istio3.png](/img/traces/istio3.png)
+    ![istio3.png](/img/apm/traces/istio3.png)

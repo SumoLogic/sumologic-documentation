@@ -12,7 +12,7 @@ Amazon CloudSearch is a fully managed service in the cloud that makes it easy to
 
 With Amazon CloudSearch you can search large collections of data such as web pages, document files, forum posts, or product information. You can quickly add search capabilities without having to become a search expert or worry about hardware provisioning, setup, and maintenance. As your volume of data and traffic fluctuates, Amazon CloudSearch scales to meet your needs. You can use Amazon CloudSearch to index and search both structured data and plain text. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/what-is-cloudsearch.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/cloudwatch-monitoring.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/logging-config-api-calls.html)
 

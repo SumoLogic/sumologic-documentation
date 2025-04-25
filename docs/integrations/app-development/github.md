@@ -7,17 +7,22 @@ description: Connects to your GitHub repository at the Organization or Repositor
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="Thumbnail icon" width="55"/>
 
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events through a webhook. These events populate the pre-configured Dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
 :::note
-The Sumo App for GitHub supports GitHub.com and GitHub Advanced Analytics, but not GitHub Enterprise. If you want to collect audit logs for [GitHub Enterprise](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/audit-log-events-for-your-enterprise), follow the instructions on how to [Stream GitHub Enterprise Audit Logs](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-amazon-s3) to an Amazon S3 bucket, and then use an [Amazon S3 source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/) to send those logs to Sumo Logic. This App does not work with the Enterprise Audit logs.
+If you want to collect audit logs for [GitHub Enterprise](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/audit-log-events-for-your-enterprise):
+
+1. Follow the instructions on [how to stream GitHub Enterprise Audit Logs to an Amazon S3 bucket](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-amazon-s3) or [Azure Event Hubs](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-azure-event-hubs).
+1. Use an [Amazon S3 source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) or [Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source) to send those logs to Sumo Logic. This app will work with [global webhook for Github enterprise](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-global-webhook-for-a-github-enterprise), [organization webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-an-organization-webhook) or [repository webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook).
+
+Make sure not to select the same webhook event type at multiple levels (i.e., enterprise, organization, or repository) to avoid ingesting duplicate data.
 :::
 
 This app includes dashboards for GHAS, but to be able to ingest GHAS events you must have a separate GHAS license.
 
-## Event Types
+## Event types
 
 The Sumo Logic App for GitHub ingests GitHub events via a webhook. Sumo Logic ingests all events, but only uses the following events in the Dashboards:
 * Fork
@@ -45,14 +50,14 @@ If you're just getting started with GitHub Events, see the Sumo Logic DevOps blo
 :::
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for GitHub gathers statistics and events from the GitHub Remote API on each host.
 
 First, configure a Collector and Source in Sumo Logic, then configure a GitHub Webhook using the HTTP Source Address created in Sumo Logic.
 
 
-### Sample Log Messages
+### Sample log messages
 
 GitHub sends all fields in the payload, documented according to [Event Type](https://developer.github.com/v3/activity/events/types/).
 
@@ -83,7 +88,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Commits Over Time"
 "commits" "https://api.github.com/repos"
@@ -111,7 +116,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 ```
 
 
-## Collecting Logs for GitHub
+## Collecting logs for GitHub
 
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level and ingests GitHub events via a webhook. These events populate the preconfigured dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
@@ -122,12 +127,13 @@ In this step, you configure a Hosted Collector to receive Webhook Events from Gi
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector), or select an existing hosted collector for the HTTP Source.
 2. Configure an[ HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) on the Hosted Collector.
-    * For Source Category, enter any string to tag the output collected from this Source, such as **GitHub**.
-    * Click **+Add Field** and provide the following:
+    1. For Source Category, enter any string to tag the output collected from this Source, such as `GitHub`.
+    1. Click **+Add Field** and provide the following:
         * **Field Name**. `_convertHeadersToFields`
         * **Value**. `true`
-    * Expand **Advanced Options for Logs (Optional)** section, then **uncheck (disable)** option, then **Extract timestamp information from log file entries** in **Timestamp Parsing**
-    * Click **Save** and make note of the HTTP address for the Source. You will supply it when you configure the GitHub Webhook in the next section.<br/><img src={useBaseUrl('img/integrations/app-development/Field_GitHub.png')} alt="Field_GitHub" />
+    1. Expand the **Advanced Options for Logs (Optional)** section. 
+    1. In the **Enable Timestamp Parsing** section, check **Extract timestamp information from log file entries**.
+    1. Click **Save** and make note of the HTTP address for the Source. You will supply it when you configure the GitHub Webhook in the next section.<br/><img src={useBaseUrl('img/integrations/app-development/Field_GitHub.png')} alt="Field_GitHub" />
 
 ### Configure a GitHub Webhook
 
@@ -150,28 +156,30 @@ To configure a GitHub Webhook:
 6. Click **Add Webhook**.
 
 
-### Enable GitHub Event tagging at Sumo Logic
+### GitHub Event tagging at Sumo Logic
 
-Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-github-event](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
-
-1. From Sumo Logic, go to **Manage Data** > **Logs** > [**Fields**](/docs/manage/fields.md#add-field).
-2. Add Field ‎**x-github-event**‎.<br/><img src={useBaseUrl('img/integrations/app-development/Field_x-github-event.png')} alt="Field_GitHub" />
-
+To properly identify the event type for incoming events (for example, repo:push events), Sumo Logic automatically adds the [x-github-event](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) event type to the [Fields](/docs/manage/fields) during app installation.
 
 ## Installing the GitHub App
 
-Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 #### Troubleshooting
 
 If you are getting the following error after installing the app - `Field x-github-event not found, please check the spelling and try again` - do the following to resolve:
-1. In Sumo Logic, click **Manage Data** > **Logs** > [Fields and](/docs/manage/fields.md#add-field) delete your **x-github-event**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. Delete your **x-github-event**.
 2. Add it again using the **Dropped Fields** option.
 
 
 ## Viewing ​GitHub Dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -184,7 +192,7 @@ Use this dashboard to:
 
 ### Branch Overview
 
-The **GitHub - Branch Overview **dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
+The **GitHub - Branch Overview** dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
 
 Use this dashboard to:
 
@@ -219,7 +227,7 @@ Use this dashboard to:
 
 ### Security
 
-The **GitHub - Security **dashboard provides detailed information on the security events and repositories.
+The **GitHub - Security** dashboard provides detailed information on the security events and repositories.
 
 Use this dashboard to:
 * Manage users.

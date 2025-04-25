@@ -26,17 +26,27 @@ The Sumo Logic app for Nginx Plus Ingress assumes Prometheus format Metrics for 
 
 ### Sample log messages
 
-```bash title="Access Log Example"
-{"timestamp":1621602688004,"log":"146.158.30.43 - - [21/May/2021:13:11:25 +0000] \"GET /nxp/demo-index.html HTTP/1.1\" 200 5099 \"https://example.com/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36\" \"-\"","stream":"stdout","time":"2021-05-21T13:11:25.355302489Z"}
+```json title="Access Log Example"
+{
+  "timestamp":1621602688004,
+  "log":"146.158.30.43 - - [21/May/2021:13:11:25 +0000] \"GET /nxp/demo-index.html HTTP/1.1\" 200 5099 \"https://example.com/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36\" \"-\"",
+  "stream":"stdout",
+  "time":"2021-05-21T13:11:25.355302489Z"
+}
 ```
 
-```bash title="Error Log Example"
-{"timestamp":1619792989032,"log":"2021/04/29 13:26:05 [error] 190#190: *8248713 open() \"/usr/share/nginx/html/favicon.ico\" failed (2: No such file or directory), client: 10.244.0.132, server: , request: \"GET /favicon.ico HTTP/1.1\", host: \"example.com\", referrer: \"https://example.com/dashboard.html\"","stream":"stderr","time":"2021-04-29T13:26:05.074748065Z"}
+```json title="Error Log Example"
+{
+  "timestamp":1619792989032,
+  "log":"2021/04/29 13:26:05 [error] 190#190: *8248713 open() \"/usr/share/nginx/html/favicon.ico\" failed (2: No such file or directory), client: 10.244.0.132, server: , request: \"GET /favicon.ico HTTP/1.1\", host: \"example.com\", referrer: \"https://example.com/dashboard.html\"",
+  "stream":"stderr",
+  "time":"2021-04-29T13:26:05.074748065Z"
+}
 ```
 
-### Sample Query
+### Sample queries
 
-This sample query is from the **Visitor Locations **panel of the **Nginx Plus Ingress - Overview** dashboard.
+This sample query is from the **Visitor Locations** panel of the **Nginx Plus Ingress - Overview** dashboard.
 
 ```
 Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}} _sourceCategory = *ingress*
@@ -51,16 +61,16 @@ Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}
 | sort _count
 ```
 
-## Collecting Logs and Metrics for Nginx Plus Ingress
+## Collecting logs and metrics for Nginx Plus Ingress
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Plus Ingress. This includes the following tasks:
 
-In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](/docs/observability/kubernetes/collection-setup).
+In the Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](/docs/observability/kubernetes/collection-setup).
 
-1. **Enable Logging in Nginx Plus Ingress**: Logging is enabled by default to standard output “**stdout**” and standard error “**stderr**”. If you need additional logging - all nginx logs must be redirected to **stdout** and **stderr**.
+1. **Enable Logging in Nginx Plus Ingress**: Logging is enabled by default to standard output “**stdout**” and standard error “**stderr**”. If you need additional logging, all nginx logs must be redirected to **stdout** and **stderr**.
 2. **Enable Metrics in Nginx Plus Ingress**: Before you configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx pods, so Prometheus can find the Nginx metrics.
    * For instructions on Nginx, refer to [this Nginx documentation](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
-3. **Deployment of Sumologic Kubernetes Collection**: Ensure you have deployed the [Sumologic-Kubernetes-Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection), to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md). Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx pods, based on the annotations set in Step 2, for the metrics. Logs and Metrics will automatically be sent to the respective [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) instances, which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
+3. **Deployment of Sumologic Kubernetes Collection**: Ensure you have deployed the [Sumologic-Kubernetes-Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection), to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/send-data/kubernetes/install-helm-chart). Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx pods, based on the annotations set in Step 2, for the metrics. Logs and Metrics will automatically be sent to the respective [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) instances, which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
 
 ### Field Extraction Rules
 
@@ -104,87 +114,11 @@ Use the following Parse Expression:
 \"*\"" as Client_Ip, Server, Method, URL, Host nodrop
 ```
 
-## Installing Nginx Plus Ingress Monitors
-
-To install these alerts, you need to have the[ Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability.
-
-Alerts can be installed by either importing them via a JSON or via a Terraform script.
-
-### Method A: Importing a JSON file
-
-1. Download the[ JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus-ingress/nginxplusingress.json) describing all the monitors.
-2. Replace **$$logs_data_source** with logs data source.
-    * For example, _sourceCategory=Labs/NginxIngress/Logs
-3. Go to Manage Data > Alerts > Monitors.
-4. Click **Add**.
-1. Click **Import** to import monitors from the JSON above.
-
-The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx** **Ingress** folder under **Monitors** to configure them. Refer[ document](/docs/alerts/monitors#add-a-monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
-
-### Method B: Using a Terraform script
-
-1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys#create-an-access-keyon-preferences-page) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later.
-3. Download the Sumo Logic Terraform package for Nginx Ingress alerts: The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus-ingress). You can either download it via the “git clone” command or as a zip file.
-4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/**. Edit the **nginxplusingress.auto.tfvars** file as per below instructions:
-   1. Add the Sumo Logic Access Key, Access Id, Deployment from Step 1.
-   ```sql
-   access_id   = "<YOUR SUMO ACCESS ID>"
-   access_key  = "<YOUR SUMO ACCESS KEY>"
-   environment = "<DEPLOYMENT>"
-   ```
-   2. Add `Logs_data_source` as the Sumo Logic data source for logs.
-   3. All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **monitors_disabled** to **false**.
-   4. All monitors are configured in a monitor folder called “**Nginx Plus Ingress**”, if you would like to change the name of the folder, update the parameter **folder**.
-5. Email and Connection Notification Configuration Examples: Modify the file **nginxplusingress.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
-
-```bash title="Pagerduty Connection Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the[ Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, refer to this[ document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email Notifications Example:"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-}
-```
-
-6. Install the Alerts:
-   1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/** and run **terraform init. **This will initialize Terraform and will download the required components.
-   2. Run `terraform plan` to view the monitors resources which will be created/modified by Terraform.
-   3. Run `terraform apply`.
-7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors#add-a-monitor).
-
-There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
-
-
 ## Installing the Nginx Plus Ingress app
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Nginx Plus Ingress Dashboards
 
@@ -242,7 +176,7 @@ You can use schedule searches to send alerts to yourself whenever there is an ou
 The **Nginx Plus Ingress - Threat Inte**l dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the[ Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using theSumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Threat-Intel.png')} alt="Nginx Plus Ingress" />
 
@@ -269,7 +203,7 @@ These insights can be useful for planning in which browsers, platforms, and oper
 
 ### Visitor Locations
 
-The **Nginx Plus Ingress - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
+The **Nginx Plus Ingress - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
 
 Use this dashboard to:
 * Gain insights into geographic locations of your user base.  This is useful for resource planning in different regions across the globe.
@@ -363,71 +297,25 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-TCP-UDP-Zones.png')} alt="Nginx Plus Ingress" />
 
+## Installing Nginx Plus Ingress monitors
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+:::note
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Nginx Plus Ingress alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
+:::
+
 ## Nginx Plus Ingress Alerts
 
 Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 Sumo Logic provides the following out-of-the-box alerts:
 
-<table>
-  <tr>
-   <td><strong>Alert Name</strong>
-   </td>
-   <td><strong>Alert Description</strong>
-   </td>
-   <td><strong>Alert Condition</strong>
-   </td>
-   <td><strong>Recover Condition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus Ingress - Dropped Connections
-   </td>
-   <td>This alert fires when we detect dropped connections for a given Nginx Plus server.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60;&#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus Ingress - Critical Error Messages
-   </td>
-   <td>This alert fires when we detect critical error messages for a given Nginx Plus server.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60;&#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus Ingress - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when an Nginx is accessed from highly malicious IP addresses.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60;&#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus Ingress - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60;&#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus Ingress - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60;&#61;0
-   </td>
-  </tr>
-</table>
+| Alert Name | Alert Description | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|
+| Nginx Plus Ingress - Dropped Connections | This alert fires when we detect dropped connections for a given Nginx Plus server. | > 0 | `<=`0 |
+| Nginx Plus Ingress - Critical Error Messages | This alert fires when we detect critical error messages for a given Nginx Plus server. | > 0 | `<=`0 |
+| Nginx Plus Ingress - Access from Highly Malicious Sources | This alert fires when an Nginx is accessed from highly malicious IP addresses. | > 0 | `<=`0 |
+| Nginx Plus Ingress - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | > 0 | `<=`0 |
+| Nginx Plus Ingress - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | > 0 | `<=`0 |

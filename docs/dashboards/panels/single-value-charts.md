@@ -3,8 +3,9 @@ id: single-value-charts
 title: Single Value Charts
 description: Displays the first record of your search results.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can use single value charts to display results for a search or metric query as a single value, for at-a-glance analysis. This page shows you how to create and tailor single value charts for searches. For information on single value charts for metrics, see [Create and Tailor Single Value Metrics Charts](/docs/metrics/metric-charts).
+You can use single value charts to display results for a search or metric query as a single value, for at-a-glance analysis. This page shows you how to create and tailor single value charts for searches. 
 
 A single value chart displays a single record from a search, in order to make that value stand out at a glance. If the query returns more than one value in the **Aggregates** tab, only the first value is displayed in the single value chart.
 
@@ -14,47 +15,31 @@ A single value chart is useful for summarizing a time series in a single value. 
 
 To add a panel with a single value chart:
 
-1. Create or open a Dashboard and click on **Add Panel > Single Value**.  
-
-    ![single value pane.png](/img/dashboards-new/panels/single-value-charts/single-value-pane.png)
-
+1. Create or open a Dashboard and click on **Add Panel > Single Value**.<br/><img src={useBaseUrl('/img/dashboards/panels/single-value-charts/single-value-pane.png')} alt="single value pane" style={{border: '1px solid gray'}} width="600" />
 1. Provide a Metrics or Logs query and press **Enter** for it to run.
 
     **Log query:**
 
-    Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list. By default, the query builder is set to **Logs**.
-
-    ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
+    Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list. By default, the query builder is set to **Logs**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-log-query.png')} alt="Add log query" style={{border: '1px solid gray'}} width="700" />
 
     **Metrics query:**
 
-    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set
-    to **Logs**.
+    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set to **Logs**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-log-query.png')} alt="Metrics selection for query builder" style={{border: '1px solid gray'}} width="700" />
 
-    ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
-
-    To create a metrics query utilize the [Metrics Query Builder](/docs/metrics/metrics-queries/metrics-explorer.md).   
-
-    ![new single value chart metrics.png](/img/dashboards-new/panels/single-value-charts/new-single-value-chart-metrics.png)
+    To create a metrics query utilize the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer.md).<br/><img src={useBaseUrl('/img/dashboards/panels/single-value-charts/new-single-value-chart-metrics.png')} alt="new single value chart metrics" style={{border: '1px solid gray'}} width="800" />
 
 1. [Modify the chart](./modify-chart.md) as desired.
-
-1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.
-
-    ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
 
 ### Boolean
 
-A boolean single value chart displays a value as true or false. For
-example, the following query checks if more than 100 errors are found.
+A boolean single value chart displays a value as true or false. For example, the following query checks if more than 100 errors are found.
 
 ```sql
 error | count as MyCount | if (MyCount> 100, true, false) as MyCount
 ```
 
-The boolean single value chart would look like the following.
-
-![Dashboard boolean single value chart.png](/img/dashboards-new/panels/single-value-charts/Dashboard-New-boolean-single-value-chart.png)
+The boolean single value chart would look like the following.<br/><img src={useBaseUrl('/img/dashboards/panels/single-value-charts/Dashboard-New-boolean-single-value-chart.png')} alt="Dashboard boolean single value chart" style={{border: '1px solid gray'}} width="700" />
 
 ## Sparkline
 

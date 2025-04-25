@@ -33,7 +33,7 @@ The predefined searches in the MySQL app are based on the following log types.
 * Slow Query Server Location. If your servers are not using private IP addresses, you can use the Slow Query Server Location search to visualize their locations on a map of the world.
 
 ## Log and Metrics Types
-The Sumo Logic app for MySQL assumes the default MySQL Error log file format for error logs, and the MySQL Slow Query file format for slow query logs. For a list of metrics that are collected and used by the app, see [MySQL Metrics](#MySQL_Metrics).
+The Sumo Logic app for MySQL assumes the default MySQL Error log file format for error logs, and the MySQL Slow Query file format for slow query logs. For a list of metrics that are collected and used by the app, see [MySQL Metrics](#mysql-metrics).
 * The **MySQL - Overview** dashboard is based on logs from both the Error and Slow Query log formats, so as to correlate information between the two.
 * Dashboards in the Metrics folder are based on MySQL metrics.
 * Dashboards in the Logs folder are based on MySQL logs from both the Error and Slow Query log formats.
@@ -49,7 +49,7 @@ The Sumo Logic app for MySQL assumes the default MySQL Error log file format for
 
 The MySQL app dashboards dependent on error logs are based on the message types ERROR, NOTE, Warning, and Info. For more details on the MySQL log file format, see [http://dev.mysql.com/doc/refman/5.5/en/server-logs.html](http://dev.mysql.com/doc/refman/5.5/en/server-logs.html).
 
-### Sample Logs
+### Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -63,10 +63,10 @@ The MySQL app dashboards dependent on error logs are based on the message types 
 
 ```json
 {
-	"timestamp":1617810938497,
-	"log":"2021-04-07T15:55:34.261220Z 0 [System] [MY-010931] [Server] /opt/bitnami/mysql/bin/mysqld: ready for connections. Version: '8.0.23'  socket: '/opt/bitnami/mysql/tmp/mysql.sock'  port: 3306  Source distribution.",
-	"stream":"stdout",
-	"time":"2021-04-07T15:55:34.261397194Z"
+  "timestamp":1617810938497,
+  "log":"2021-04-07T15:55:34.261220Z 0 [System] [MY-010931] [Server] /opt/bitnami/mysql/bin/mysqld: ready for connections. Version: '8.0.23'  socket: '/opt/bitnami/mysql/tmp/mysql.sock'  port: 3306  Source distribution.",
+  "stream":"stdout",
+  "time":"2021-04-07T15:55:34.261397194Z"
 }
 ```
 
@@ -80,7 +80,7 @@ The MySQL app dashboards dependent on error logs are based on the message types 
 </TabItem>
 </Tabs>
 
-### Sample Queries
+### Sample queries
 
 This sample query is from the MySQL - Logs dashboard > Logs panel.
 
@@ -136,13 +136,13 @@ db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"
 </TabItem>
 </Tabs>
 
-## Collecting Logs and Metrics for MySQL
+## Collecting logs and metrics for MySQL
 
 Configuring log and metric collection for the MySQL app includes the following tasks.
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -209,7 +209,7 @@ Ensure that you are monitoring your Kubernetes clusters with the Telegraf operat
 
 This configures metrics collection from Kubernetes.
 
-1. Add the following annotations to your MySQL pods, and make the edits described [below](#metric-annotations):
+1. Add the following annotations to your MySQL pods, and make the edits described below:
 ```sql
 primary:
   podAnnotations:
@@ -266,7 +266,7 @@ If your application connects directly to a given MySQL node, rather than the who
 
 Pivoting to Tracing data from Entity Inspector is possible only for “MySQL address” Entities.
 :::
-    * **DO NOT MODIFY** these configuration options; changing them will prevent the MySQL app from functioning correctly.
+    * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
       * `telegraf.influxdata.com/class: sumologic-prometheus` instructs the Telegraf operator what output to use.
       * `prometheus.io/scrape: "true"` ensures Prometheus will scrape the metrics.
       * `prometheus.io/port: "9273"` tells Prometheus what ports to scrape on.
@@ -285,9 +285,10 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MySQL add
 
 This section explains the steps to collect MySQL logs from a Kubernetes environment.
 
-1. Follow the steps in [Method A](#Option_A:_Collect_MySQL_logs_written_to_standard_output) or [Method B](#Option_B:_Collect_MySQL_logs_written_to_log_files), depending on whether your logs are being written to standard output or to log files.
+1. Follow the steps in Method A or Method B, depending on whether your logs are being written to standard output or to log files.
 
-<details><summary>Method 1: Collect MySQL logs written to standard output</summary>
+<details>
+<summary>Method A: Collect MySQL logs written to standard output</summary>
 
 If your MySQL Helm chart/pod is writing the logs to standard output, follow these steps:
 
@@ -310,11 +311,12 @@ There are additional configuration options that you should **not** modify, as ch
 
 For information about properties that can be configured globally in the Telegraf agent, see the [Configuration](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) documentation for Telegraf.
 
-The Sumo Logic Kubernetes Collection process will automatically capture the logs from stdout and send the logs to Sumo Logic. For more information on deploying the sumologic-kubernetes-collection, see [Collect Logs and Metrics for the Kubernetes app](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+The Sumo Logic Kubernetes Collection process will automatically capture the logs from stdout and send the logs to Sumo Logic. For more information on deploying the sumologic-kubernetes-collection, see [Collect Logs and Metrics for the Kubernetes app](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
 
 </details>
 
-<details><summary>Method B: Collect MySQL logs written to log files</summary>
+<details>
+<summary>Method B: Collect MySQL logs written to log files</summary>
 
 This method is recommend for Slow Query Logs. If your MySQL helm chart/pod is writing its logs to log files, you can use a sidecar to send log files to standard out. To do so:
 
@@ -344,7 +346,7 @@ Sumo Logic Kubernetes collection will automatically start collecting logs from t
 </details>
 
 2. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule), Database Application Components, assuming it does not already exist:
-   1. Go to **Manage Data > Logs > Field Extraction Rules**.
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
    2. Click the **+ Add**.
    3. The **Add Field Extraction** pane appears.
    4. **Rule Name.** Enter "App Observability - Database".
@@ -410,7 +412,7 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
   interval = "60s"
   flush_interval = "60s"
 ```
-6. Follow the instructions in [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) below to configure the settings in the `.conf` file.
+6. Follow the instructions in the **Setting values in telegraf.conf** step below to configure the settings in the `.conf` file.
 7. After updating the `telegraf.conf` file, start or reload the telegraf service using the [instructions](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service) in Telegraf documentation.
 8. At this point, MySQL metrics should start flowing into Sumo Logic.
 9. **Setting values in telegraf.conf**. Make the following updates to `telegraf.conf`.
@@ -429,8 +431,8 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
      gather_perf_events_statements = true
     ```
    * In the `[inputs.mysql.tags]` section:
-      * `environment` - Specify the deployment environment where the MySQL cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to uniquely identify the MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `environment`. Specify the deployment environment where the MySQL cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster`. Enter a name to uniquely identify the MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 :::note
@@ -468,11 +470,10 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
        slow_query_log=1
        slow_query_log_file = /var/log/mysql/mysql-slow.log
        long_query_time=2
-       long_query_time=2
    ```
      * [Error Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html). By default, error logs are enabled and are logged at file specified by the `log_error` key.
      * [Slow Query Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html). `slow_query_log=1` enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
-     * [General Query Logs](https://dev.mysql.com/doc/refman/5.7/en/query-log.html). We don't recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL app.
+     * [General Query Logs](https://dev.mysql.com/doc/refman/5.7/en/query-log.html). We do not recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL app.
    3. Save the `my.cnf` file.
    4. Restart the MySQL server:
     ```bash
@@ -484,15 +485,15 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
       * **Name.** (Required)
       * **Description**. (Optional)
       * **File Path** (Required). Enter the path to your error.log. The files are typically located in `/var/log/mysql/error.log`. If you're using a customized path, check the `my.cnf` file for this information.
-      * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host nameSource Category. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
-      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
+      * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host nameSource Category. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
+      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields).
       * `component = database`
       * `db_system = mysql`
       * `db_cluster = <your_mysql_cluster_name>`
       * `environment = <Environment_Name>`, such as dev, qa, or prod.
       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
-      The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
+      The values of `db_cluster` and `environment` should match those configured in the **Setting values in telegraf.conf** step above.
       :::note
       `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
 
@@ -523,15 +524,15 @@ At this point, MySQL error logs should start flowing into Sumo Logic.
       * **Description**. (Optional)
       * **File Path** (Required). Enter the path to your `mysql-slow.log`. The file is typically located in `/var/log/mysql/mysql-slow.log`. If you're using a customized path, check `my.cnf` file for this information.
       * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-      * **Source Category**. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
-      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
+      * **Source Category**. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
+      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields).
         * `component = database`
         * `db_system = mysql`
         * `db_cluster = <your_mysql_cluster_name>`
         * `environment = <Environment_Name>`, such as dev, qa, or prod.
         * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
         * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
-       The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
+       The values of `db_cluster` and `environment` should match those configured in the **Setting values in telegraf.conf** step above.
        :::note
        `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
@@ -561,30 +562,30 @@ At this point, MySQL slow query logs should start flowing into Sumo Logic.
 
 The next few sections provide instructions for installing Sumo Logic Monitors for MySQL, the app and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in Collecting MySQL Logs and Metrics.
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a MySQL cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [MySQL Alerts](#MySQL-Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a MySQL cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [MySQL Alerts](#mysql-alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
 
 ### Method A: Install Monitors by importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/mysql/mysql.json) that describes the monitors.
 2. Replace `$$mysql_data_source` with a custom source filter. To configure alerts for a specific database cluster, use a filter like `db_system=mysql` or `db_cluster=dev-mysql`. To configure the alerts for all of your clusters, set `$$mysql_data_source` to blank (`""`).
-3. Go to **Manage Data > Alerts > Monitors**.
+3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
 4. Click **Add**.
 5. Click **Import.**
-6. On the** Import Content popup**, enter "MySQL" in the Name field, paste in the JSON into the the popup, and click **Import**.  
+6. On the **Import Content popup**, enter "MySQL" in the Name field, paste in the JSON into the the popup, and click **Import**.  
 7. The monitors are created in a "MySQL" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 
 ### Method B: Using a Terraform script
 
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
+1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-3. Download the Sumo Logic Terraform package for MySQL monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
+3. Download the Sumo Logic Terraform package for MySQL monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
 4. Alert Configuration: After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory.
    1. Edit the `mysql.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
     ```sql
@@ -644,20 +645,11 @@ email_notifications = [
 
 ## Installing the MySQL app  
 
-Now that you have set up collection for MySQL, install the Sumo Logic app for MySQL to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection for MySQL, install the Sumo Logic app for MySQL to use the preconfigured searches and dashboards that provide insight into your data.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the App Catalog, search for and select the app.
-1. Select the service version you're using and click Add to Library. Version selection applies only to a few apps currently. For more information, see the Install the Apps from the Library.
-1. To install the app, complete the following fields.
-   * **App Name**. You can retain the existing name or enter the app's name of your choice.
-   * **Advanced**. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-1. Click Add to Library.
-
-Once an app is installed, it will appear in your Personal folder or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing MySQL dashboards
 
@@ -667,7 +659,7 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 ### Overview  
 
-The** MySQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, uptime and more.
+The **MySQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, uptime and more.
 
 Use this dashboard to:
 * Quickly identify the state of a given database cluster.
@@ -748,340 +740,125 @@ Use this dashboard to:
 
 This section describes the monitors provided with the MySQL app. These monitors are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
-<table>
-  <tr>
-   <td>Monitor name
-   </td>
-   <td>Monitor description
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recovery Condition
-   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Connection refused
-   </td>
-   <td>This alert fires when connections are refused when the limit of maximum connections is reached within 5 minute time interval.
-   </td>
-   <td> &#60;&#61; 1 </td>
-   <td>&#62; 1
-   </td>
-  </tr>
-  <tr>
-   <td>MySQL - High average query run time
-   </td>
-   <td>This alert fires when the average run time of SQL queries for a given schema is greater than or equal to one second within a time interval of 5 minutes.
-   </td>
-   <td>&#62;&#61; 1 </td>
-   <td> &#60; 1 </td>
-  </tr>
-  <tr>
-   <td>MySQL - High Innodb buffer pool utilization</td>
-   <td>This alert fires when we detect that the InnoDB buffer pool utilization is high (&#62;&#61;90%) within a 5 minute time interval.</td>
-   <td>&#62;&#61; 90 </td>
-   <td> &#60; 90 </td>
-  </tr>
-  <tr>
-   <td>MySQL - Large number of aborted connections
-   </td>
-   <td>This alert fires when we detect that there are 5 or more aborted connections identified within a time interval of 5 minutes.
-   </td>
-   <td>&#62;&#61; 5
-   </td>
-   <td> &#60; 5
-   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Large number of internal connection errors
-   </td>
-   <td>This alert fires when we detect that there are 5 or more internal connection errors within a time interval of 5 minutes.
-   </td>
-   <td>&#62;&#61; 5 </td>
-   <td> &#60; 5
-   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Large number of slow queries
-   </td>
-   <td>This alert fires when we detect that there are 5 or more slow queries within a 5 minute time interval.
-   </td>
-   <td>&#62;&#61; 5
-   </td>
-   <td> &#60; 5
-   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Large number of statement errors
-   </td>
-   <td>This alert fires when we detect that there are 5 or more statement errors within a 5 minute time interval.
-   </td>
-   <td>&#62;&#61; 5
-   </td>
-   <td> &#60; 5
-   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Large number of statement warnings
-   </td>
-   <td>This alert fires when we detect that there are 20 or more statement warnings within a 5 minute time interval.
-   </td>
-   <td>&#62;&#61; 20
-   </td>
-   <td> &#60; 20
-   </td>
-  </tr>
-  <tr>
-   <td>MySQL - No index used in the SQL statements
-   </td>
-   <td>This alert fires when we detect that there are 5 or more statements not using an index in the sql query within a 5 minute time interval.
-   </td>
-   <td>&#62;&#61; 5
-   </td>
-   <td> &#60; 5
-   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Excessive Slow Query Detected
-   </td>
-   <td>This alert fires when we detect the average time to execute a query is more than 5 seconds over a 24 hour time-period
-   </td>
-   <td>&#62;&#61;1
-   </td>
-   <td> &#60; 1
-   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Follower replication lag detected
-   </td>
-   <td>This alert fires when we detect that the average replication lag is greater than or equal to 900 seconds within a 5 minute time interval.
-   </td>
-   <td>&#62;&#61; 900
-   </td>
-   <td> &#60; 900
-   </td>
-  </tr>
-  <tr>
-   <td>MySQL - Instance down
-   </td>
-   <td>This alert fires when we detect that a MySQL instance is down within last 5 minutes interval.
-   </td>
-   <td>&#62;&#61;1
-   </td>
-   <td> &#60; 1
-   </td>
-  </tr>
-</table>
+| Monitor name                          | Monitor description             | Alert Condition | Recovery Condition |
+|:------------|:-----------------------------|:----------------|:-------------------|
+| MySQL - Connection refused            | This alert fires when connections are refused when the limit of maximum connections is reached within a 5-minute time interval. | \<= 1           | > 1                |
+| MySQL - High average query run time   | This alert fires when the average run time of SQL queries for a given schema is greater than or equal to one second within a 5-minute interval. | >= 1           | < 1                |
+| MySQL - High Innodb buffer pool utilization | This alert fires when we detect that the InnoDB buffer pool utilization is high (>= 90%) within a 5-minute time interval.  | >= 90          | < 90               |
+| MySQL - Large number of aborted connections | This alert fires when we detect that there are 5 or more aborted connections identified within a 5-minute interval.         | >= 5           | < 5                |
+| MySQL - Large number of internal connection errors | This alert fires when we detect that there are 5 or more internal connection errors within a 5-minute interval.            | >= 5           | < 5                |
+| MySQL - Large number of slow queries  | This alert fires when we detect that there are 5 or more slow queries within a 5-minute time interval.                       | >= 5           | < 5                |
+| MySQL - Large number of statement errors | This alert fires when we detect that there are 5 or more statement errors within a 5-minute time interval.                  | >= 5           | < 5                |
+| MySQL - Large number of statement warnings | This alert fires when we detect that there are 20 or more statement warnings within a 5-minute time interval.              | >= 20          | < 20               |
+| MySQL - No index used in the SQL statements | This alert fires when we detect that there are 5 or more statements not using an index in the SQL query within a 5-minute time interval. | >= 5           | < 5                |
+| MySQL - Excessive Slow Query Detected | This alert fires when we detect the average time to execute a query is more than 5 seconds over a 24-hour time period.      | >= 1           | < 1                |
+| MySQL - Follower replication lag detected | This alert fires when we detect that the average replication lag is greater than or equal to 900 seconds within a 5-minute time interval. | >= 900         | < 900              |
+| MySQL - Instance down                 | This alert fires when we detect that a MySQL instance is down within the last 5-minute interval.                            | >= 1           | < 1                |
 
 
 ## MySQL Metrics
 
-Here are the Telegraf metrics for MySQL collected by the MySQL app.
+<details>
+<summary>Here are the Telegraf metrics for MySQL collected by the MySQL app (click to expand).</summary>
 
-<table>
-  <tr>
-   <td><small>
-mysql_aborted_clients
-<br/>
-mysql_aborted_connects
-<br/>
-mysql_bytes_received
-<br/>
-mysql_bytes_sent
-<br/>
-mysql_commands_delete
-<br/>
-mysql_commands_insert
-<br/>
-mysql_commands_select
-<br/>
-mysql_commands_update
-<br/>
-mysql_connection_errors_internal
-<br/>
-mysql_connection_errors_max_connections
-<br/>
-mysql_connections
-<br/>
-mysql_created_tmp_disk_tables
-<br/>
-mysql_created_tmp_files
-<br/>
-mysql_created_tmp_tables
-<br/>
-mysql_innodb_buffer_pool_pages_free
-<br/>
-mysql_innodb_buffer_pool_pages_total
-<br/>
-mysql_innodb_buffer_pool_read_requests
-<br/>
-mysql_innodb_buffer_pool_reads
-<br/>
-mysql_innodb_buffer_pool_wait_free
-<br/>
-mysql_innodb_data_fsyncs
-<br/>
-mysql_innodb_data_read
-<br/>
-mysql_innodb_data_writes
-<br/>
-mysql_innodb_log_waits
-<br/>
-mysql_innodb_row_lock_current_waits
-<br/>
-mysql_innodb_row_lock_waits
-<br/>
-mysql_innodb_rows_deleted
-<br/>
-mysql_innodb_rows_inserted
-<br/>
-mysql_innodb_rows_read
-<br/>
-mysql_innodb_rows_updated
-<br/>
-mysql_locked_connects
-<br/>
-mysql_mysqlx_connections_accepted
-<br/>
-mysql_mysqlx_connections_closed
-<br/>
-mysql_mysqlx_connections_rejected
-<br/>
-mysql_mysqlx_worker_threads
-<br/>
-mysql_mysqlx_worker_threads_active
-<br/>
-mysql_opened_files
-<br/>
-mysql_opened_tables
-<br/>
-mysql_perf_schema_events_statements_errors_total
-<br/>
-mysql_perf_schema_events_statements_no_index_used_total
-<br/>
-mysql_perf_schema_events_statements_rows_affected_total
-<br/>
-mysql_perf_schema_events_statements_rows_examined_total
-<br/>
-mysql_perf_schema_events_statements_rows_sent_total
-<br/>
-mysql_perf_schema_events_statements_seconds_total
-<br/>
-mysql_perf_schema_events_statements_sort_merge_passes_total
-<br/>
-mysql_perf_schema_events_statements_sort_rows_total
-<br/>
-mysql_perf_schema_events_statements_tmp_disk_tables_total
-<br/>
-mysql_perf_schema_events_statements_tmp_tables_total
-<br/>
-mysql_perf_schema_events_statements_total
-<br/>
-mysql_perf_schema_events_statements_warnings_total
-<br/>
-mysql_perf_schema_index_io_waits_seconds_total_delete
-</small>
-</td>
-
-<td><small>
-mysql_perf_schema_index_io_waits_seconds_total_fetch
-<br/>
-mysql_perf_schema_index_io_waits_seconds_total_insert
-<br/>
-mysql_perf_schema_index_io_waits_seconds_total_update
-<br/>
-mysql_perf_schema_index_io_waits_total_delete
-<br/>
-mysql_perf_schema_index_io_waits_total_fetch
-<br/>
-mysql_perf_schema_index_io_waits_total_insert
-<br/>
-mysql_perf_schema_index_io_waits_total_update
-<br/>
-mysql_perf_schema_read
-<br/>
-mysql_perf_schema_read_high_priority
-<br/>
-mysql_perf_schema_read_no_insert
-<br/>
-mysql_perf_schema_read_normal
-<br/>
-mysql_perf_schema_read_with_shared_locks
-<br/>
-mysql_perf_schema_table_io_waits_seconds_total_delete
-<br/>
-mysql_perf_schema_table_io_waits_seconds_total_fetch
-<br/>
-mysql_perf_schema_table_io_waits_seconds_total_insert
-<br/>
-mysql_perf_schema_table_io_waits_seconds_total_update
-<br/>
-mysql_perf_schema_table_io_waits_total_delete
-<br/>
-mysql_perf_schema_table_io_waits_total_fetch
-<br/>
-mysql_perf_schema_table_io_waits_total_insert
-<br/>
-mysql_perf_schema_table_io_waits_total_update
-<br/>
-mysql_perf_schema_write
-<br/>
-mysql_perf_schema_write_allow_write
-<br/>
-mysql_perf_schema_write_concurrent_insert
-<br/>
-mysql_perf_schema_write_low_priority
-<br/>
-mysql_perf_schema_write_normal
-<br/>
-mysql_qcache_hits
-<br/>
-mysql_qcache_inserts
-<br/>
-mysql_queries
-<br/>
-mysql_questions
-<br/>
-mysql_select_full_join
-<br/>
-mysql_select_full_range_join
-<br/>
-mysql_select_range
-<br/>
-mysql_select_range_check
-<br/>
-mysql_select_scan
-<br/>
-mysql_slow_queries
-<br/>
-mysql_sort_merge_passes
-<br/>
-mysql_sort_range
-<br/>
-mysql_sort_rows
-<br/>
-mysql_sort_scan
-<br/>
-mysql_table_locks_immediate
-<br/>
-mysql_table_locks_waited
-<br/>
-mysql_table_open_cache_hits
-<br/>
-mysql_table_open_cache_misses
-<br/>
-mysql_table_open_cache_overflows
-<br/>
-mysql_threads_cached
-<br/>
-mysql_threads_connected
-<br/>
-mysql_threads_created
-<br/>
-mysql_threads_running
-<br/>
+mysql_aborted_clients <br/>
+mysql_aborted_connects <br/>
+mysql_bytes_received <br/>
+mysql_bytes_sent <br/>
+mysql_commands_delete <br/>
+mysql_commands_insert <br/>
+mysql_commands_select <br/>
+mysql_commands_update <br/>
+mysql_connection_errors_internal <br/>
+mysql_connection_errors_max_connections <br/>
+mysql_connections <br/>
+mysql_created_tmp_disk_tables <br/>
+mysql_created_tmp_files <br/>
+mysql_created_tmp_tables <br/>
+mysql_innodb_buffer_pool_pages_free <br/>
+mysql_innodb_buffer_pool_pages_total <br/>
+mysql_innodb_buffer_pool_read_requests <br/>
+mysql_innodb_buffer_pool_reads <br/>
+mysql_innodb_buffer_pool_wait_free <br/>
+mysql_innodb_data_fsyncs <br/>
+mysql_innodb_data_read <br/>
+mysql_innodb_data_writes <br/>
+mysql_innodb_log_waits <br/>
+mysql_innodb_row_lock_current_waits <br/>
+mysql_innodb_row_lock_waits <br/>
+mysql_innodb_rows_deleted <br/>
+mysql_innodb_rows_inserted <br/>
+mysql_innodb_rows_read <br/>
+mysql_innodb_rows_updated <br/>
+mysql_locked_connects <br/>
+mysql_mysqlx_connections_accepted <br/>
+mysql_mysqlx_connections_closed <br/>
+mysql_mysqlx_connections_rejected <br/>
+mysql_mysqlx_worker_threads <br/>
+mysql_mysqlx_worker_threads_active <br/>
+mysql_opened_files <br/>
+mysql_opened_tables <br/>
+mysql_perf_schema_events_statements_errors_total <br/>
+mysql_perf_schema_events_statements_no_index_used_total <br/>
+mysql_perf_schema_events_statements_rows_affected_total <br/>
+mysql_perf_schema_events_statements_rows_examined_total <br/>
+mysql_perf_schema_events_statements_rows_sent_total <br/>
+mysql_perf_schema_events_statements_seconds_total <br/>
+mysql_perf_schema_events_statements_sort_merge_passes_total <br/>
+mysql_perf_schema_events_statements_sort_rows_total <br/>
+mysql_perf_schema_events_statements_tmp_disk_tables_total <br/>
+mysql_perf_schema_events_statements_tmp_tables_total <br/>
+mysql_perf_schema_events_statements_total <br/>
+mysql_perf_schema_events_statements_warnings_total <br/>
+mysql_perf_schema_index_io_waits_seconds_total_delete <br/>
+mysql_perf_schema_index_io_waits_seconds_total_fetch <br/>
+mysql_perf_schema_index_io_waits_seconds_total_insert <br/>
+mysql_perf_schema_index_io_waits_seconds_total_update <br/>
+mysql_perf_schema_index_io_waits_total_delete <br/>
+mysql_perf_schema_index_io_waits_total_fetch <br/>
+mysql_perf_schema_index_io_waits_total_insert <br/>
+mysql_perf_schema_index_io_waits_total_update <br/>
+mysql_perf_schema_read <br/>
+mysql_perf_schema_read_high_priority <br/>
+mysql_perf_schema_read_no_insert <br/>
+mysql_perf_schema_read_normal <br/>
+mysql_perf_schema_read_with_shared_locks <br/>
+mysql_perf_schema_table_io_waits_seconds_total_delete <br/>
+mysql_perf_schema_table_io_waits_seconds_total_fetch <br/>
+mysql_perf_schema_table_io_waits_seconds_total_insert <br/>
+mysql_perf_schema_table_io_waits_seconds_total_update <br/>
+mysql_perf_schema_table_io_waits_total_delete <br/>
+mysql_perf_schema_table_io_waits_total_fetch <br/>
+mysql_perf_schema_table_io_waits_total_insert <br/>
+mysql_perf_schema_table_io_waits_total_update <br/>
+mysql_perf_schema_write <br/>
+mysql_perf_schema_write_allow_write <br/>
+mysql_perf_schema_write_concurrent_insert <br/>
+mysql_perf_schema_write_low_priority <br/>
+mysql_perf_schema_write_normal <br/>
+mysql_qcache_hits <br/>
+mysql_qcache_inserts <br/>
+mysql_queries <br/>
+mysql_questions <br/>
+mysql_select_full_join <br/>
+mysql_select_full_range_join <br/>
+mysql_select_range <br/>
+mysql_select_range_check <br/>
+mysql_select_scan <br/>
+mysql_slow_queries <br/>
+mysql_sort_merge_passes <br/>
+mysql_sort_range <br/>
+mysql_sort_rows <br/>
+mysql_sort_scan <br/>
+mysql_table_locks_immediate <br/>
+mysql_table_locks_waited <br/>
+mysql_table_open_cache_hits <br/>
+mysql_table_open_cache_misses <br/>
+mysql_table_open_cache_overflows <br/>
+mysql_threads_cached <br/>
+mysql_threads_connected <br/>
+mysql_threads_created <br/>
+mysql_threads_running <br/>
 mysql_uptime
-</small>
-   </td>
-  </tr>
-</table>
+
+</details>

@@ -1,0 +1,19 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"Box"
+      },
+      "config":{
+        "name":"box-test-1",
+        "fields":{
+          "_siemForward":false
+        },
+        "credentialsJson":"********"
+      },
+      "state":{
+        "state":"Collecting"
+      },
+      "sourceType":"Universal"
+    }
+  }

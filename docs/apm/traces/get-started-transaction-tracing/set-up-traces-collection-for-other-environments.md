@@ -18,7 +18,7 @@ Depending on the architecture of the environment, OpenTelemetry Collector can be
 
 Due to the fact that vital metadata (information about the host and its OS) is available only for collectors inside individual node/host, we recommend that instances of OpenTelemetry Collector should be run at least on each of the nodes/hosts as **agents**. Doing so allows you to collect metadata tags locally and also in case of high volume environments, to buffer the messages, reducing the number of requests for each individual collector instance.
 
-![OpenTelemetry Deployment](/img/traces/OpenTelemetry-Deployment.png)
+![OpenTelemetry Deployment](/img/apm/traces/OpenTelemetry-Deployment.png)
 
 ## Prerequisites
 
@@ -29,38 +29,22 @@ Due to the fact that vital metadata (information about the host and its OS) is a
 ## Installation steps for OpenTelemetry Collector Gateway
 
 :::tip
-[What if I don't want to send all the tracing data to Sumo Logic?](../advanced-configuration/filter-shape-tracing-data.md)
+[What if I do not want to send all the tracing data to Sumo Logic?](../advanced-configuration/filter-shape-tracing-data.md)
 :::
 
-### Step 1 - Generating tracing endpoint URL
+### Step 1 - Generating OTLP/HTTP Endpoint
 
-Installation steps require you to add a Source to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see Configure a Hosted Collector.
-
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-
-1. In the Collectors page, click **Add Source** next to a Hosted Collector.
-
-1. Select **HTTP Traces** from the available options.
-
-    ![http traces icon bd.png](/img/traces/traces-icon.png)
-
-1. Provide a name and click **Save**.
-
-    ![HTTP traces set up bd.png](/img/traces/HTTP-traces-set-up-bd.png)
-
-1. An HTTP address is presented. Save it, you'll need to put it into your OpenTelemetry Collector configuration.
-
-    ![http endpoint bd.png](/img/traces/http-endpoint-bd.png)
+Create new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
 ### Step 2 - Prepare config file
 
-**config.yaml** for OpenTelemetry Collector Gateway:**
+**config.yaml** for OpenTelemetry Collector Gateway:
 
-Use the sample [gateway configuration template available at GitHub](https://github.com/SumoLogic/opentelemetry-collector-contrib/blob/main/examples/non-kubernetes/gateway-configuration-template.yaml) and apply the following changes:
+Use the sample [gateway configuration template available at GitHub](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/otelcolconfigs/gateway_configuration_template.yaml) and apply the following changes:
 
- * ENDPOINT_URL needs to be replaced with the value retrieved in [Step 1](#step-1---generating-tracing-endpoint-url), point 5.
+* ENDPOINT_URL needs to be replaced with the value retrieved in [Step 1](#step-1---generating-otlphttp-endpoint).
 
-Please save the file as `config.yaml`. This file name will be used in next step. If you use a different filename, make note of that name.
+Save the file as `config.yaml`. This file name will be used in next step. If you use a different filename, make note of that name.
 
 ### Step 3 - Prepare the OpenTelemetry Collector binaries and run them
 
@@ -80,25 +64,25 @@ The templates provided above support the following protocols:
 
 A published Docker image could be used: 
 
-```
-public.ecr.aws/sumologic/sumologic-otel-collector:0.56.0-sumo-0
+```bash
+public.ecr.aws/sumologic/sumologic-otel-collector:0.97.0-sumo-1
 ```
 
 For example:
 
-```
+```bash
 docker run --rm -p 4317:4317 -p 4318:4318 -p 9411:9411 -p 6831:6831/udp -p 14250:14250 \
 -p 14268:14268 -p 55678:55678 -v "${PWD}/config.yaml":/conf/config.yaml \
-public.ecr.aws/sumologic/sumologic-otel-collector:0.56.0-sumo-0 \
+public.ecr.aws/sumologic/sumologic-otel-collector:0.97.0-sumo-1 \
 --config=/conf/config.yaml
 ```
 
 #### Option 2: Non-containerized environments
 
-For non-containerized environments, a binary can be downloaded from the project repository available under https://github.com/SumoLogic/sumologic-otel-collector/releases and run on a given node with the appropriate config, such as:
+For non-containerized environments, a binary can be downloaded from the project repository available under [https://github.com/SumoLogic/sumologic-otel-collector/releases](https://github.com/SumoLogic/sumologic-otel-collector/releases) and run on a given node with the appropriate config, such as:
 
-```
-otelcol-sumo-0.56.0-sumo-0-darwin_amd64 --config=config.yaml
+```bash
+otelcol-sumo-0.97.0-sumo-1-darwin_amd64 --config=config.yaml
 ```
 
 ### Step 4 - Connecting clients to OpenTelemetry Collector Gateway (if Agent is not used)
@@ -107,13 +91,13 @@ During [instrumentation of your application](/docs/apm/traces/get-started-trans
 
 OpenTelemetry tracing client libraries need to point spans accordingly to the protocol used. When a direct connection to OpenTelemetry Collector Gateway is used, the following settings can be used:
 
-* OTLP (HTTP): http://HOSTNAME:4318
-* OTLP (gRPC): http://HOSTNAME:4317
-* Jaeger GRPC: http://HOSTNAME:14250
-* Jaeger Thrift HTTP: http://HOSTNAME:14268
-* Jaeger Thrift Compact (UDP): HOSTNAME:6831
-* Zipkin: http://HOSTNAME:9411/api/v2/traces
-* OpenCensus: http://HOSTNAME:55678
+* OTLP (HTTP): `http://HOSTNAME:4318`
+* OTLP (gRPC): `http://HOSTNAME:4317`
+* Jaeger GRPC: `http://HOSTNAME:14250`
+* Jaeger Thrift HTTP: `http://HOSTNAME:14268`
+* Jaeger Thrift Compact (UDP): `HOSTNAME:6831`
+* Zipkin: `http://HOSTNAME:9411/api/v2/traces`
+* OpenCensus: `http://HOSTNAME:55678`
 
 Replace HOSTNAME with the host where the OpenTelemetry Collector/Agent is accessible. For example, this might be localhost or another address on the local node, depending on how the Agent was deployed.
 
@@ -123,7 +107,7 @@ With OpenTelemetry Collector Gateway running, you can run the agents, to which c
 
 ### Step 1 - Prepare config file
 
-Please use the [template config file available at GitHub](https://github.com/SumoLogic/opentelemetry-collector-contrib/blob/main/examples/non-kubernetes/agent-configuration-template.yaml) and
+Please use the [template config file available at GitHub](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/otelcolconfigs/agent_configuration_template.yaml) and
 make the following change (and others, as required):
 
 * HOSTNAME needs to be replaced with the address of the OpenTelemetry Collector Gateway installed in the previous section.
@@ -134,25 +118,25 @@ Please save the file as `agent-config.yaml`
 
 OpenTelemetry Collector is using the same binary regardless if it's running in Gateway or Agent mode.
 
-#### Option 1: Containerized environments 
+#### Option 1: Containerized environments
 
-A published Docker image could be used: `public.ecr.aws/sumologic/sumologic-otel-collector:0.56.0-sumo-0-sumo` 
+A published Docker image could be used: `public.ecr.aws/sumologic/sumologic-otel-collector:0.97.0-sumo-1`
 
 For example:
 
-```
+```bash
 docker run --rm -p 4317:4317 -p 4318:4318 -p 9411:9411 -p 6831:6831/udp -p 14250:14250 \
 -p 14268:14268 -p 55678:55678 -v "${PWD}/agent-config.yaml":/conf/config.yaml \
-public.ecr.aws/sumologic/sumologic-otel-collector:0.56.0-sumo-0 \
+public.ecr.aws/sumologic/sumologic-otel-collector:0.97.0-sumo-1 \
 --config=/conf/config.yaml
 ```
 
-#### Option 2: Non-containerized environments 
+#### Option 2: Non-containerized environments
 
-For non-containerized environments, a binary can be downloaded from the project repository available under https://github.com/SumoLogic/sumologic-otel-collector/releases/ and run on a given node with the appropriate config, such as:
+For non-containerized environments, a binary can be downloaded from the project repository available under [https://github.com/SumoLogic/sumologic-otel-collector/releases/](https://github.com/SumoLogic/sumologic-otel-collector/releases/) and run on a given node with the appropriate config, such as:
 
-```
-otelcol-sumo-0.56.0-sumo-0-darwin_amd64 --config agent-config.yaml
+```bash
+otelcol-sumo-0.97.0-sumo-1-darwin_amd64 --config agent-config.yaml
 ```
 
 ### Step 3 - Connecting clients to OpenTelemetry Collector Agent
@@ -165,7 +149,7 @@ Tracing client libraries need to point spans accordingly to the protocol used:
 * OTLP (gRPC): http://AGENT_HOSTNAME:4317
 * Jaeger GRPC: http://AGENT_HOSTNAME:14250
 * Jaeger Thrift HTTP: http://AGENT_HOSTNAME:14268
-* Jaeger Thrift Compact (UDP): AGENT_HOSTNAME:6831
+* Jaeger Thrift Compact (UDP): `AGENT_HOSTNAME:6831`
 * Zipkin: http://AGENT_HOSTNAME:9411/api/v2/traces
 * OpenCensus: http://AGENT_HOSTNAME:55678
 

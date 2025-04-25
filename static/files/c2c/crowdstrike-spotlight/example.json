@@ -1,0 +1,23 @@
+{
+    "api.version":"v1",
+    "source":{
+      "config":{
+        "name":"crowdstrike-spotlight",
+        "apiBaseUrl":"api.crowdstrike.com",
+        "clientId":"********",
+        "clientSecret":"********",      
+        "evaluationLogic":true,
+        "hostInfo":true,
+        "remediation":true,
+        "cve":true,      
+        "pollingInterval":1,
+        "fields":{
+          "_siemForward":false
+        }      
+      },
+      "schemaRef":{
+        "type":"Crowdstrike Spotlight"
+      },
+      "sourceType":"Universal"
+    }
+  }

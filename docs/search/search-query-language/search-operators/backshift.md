@@ -31,7 +31,7 @@ Use `backshift` to see the difference of fields between time points.
 Running a query like this:
 
 ```sql
-_sourcecategory=Labs/Apache/Access
+_sourceCategory=Labs/Apache/Access
 | timeslice by 1m
 | count by _timeslice
 | sort + _timeslice

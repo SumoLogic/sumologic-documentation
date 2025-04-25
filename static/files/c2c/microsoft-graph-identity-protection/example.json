@@ -1,0 +1,19 @@
+{
+    "api.version": "v1",
+    "source": {
+        "schemaRef": {
+            "type": "MS Graph Identity Protection"
+        },
+        "config": {
+            "name": "MS Graph Identity",
+            "tenant_id": "TenantID",
+            "supported_apis": ["RiskyUsers", "RiskDetections"],
+            "secret_key": "********",
+            "application_id": "ApplicationID",
+            "fields": {
+                "_siemForward": false
+            }
+        },
+        "sourceType": "Universal"
+    }
+}

@@ -84,7 +84,7 @@ To manually install the Debian package from a .deb file:
 Telegraf has native support for running as a Windows service. For additional information, see the Influx blog post [Using Telegraf on Windows](https://www.influxdata.com/blog/using-telegraf-on-windows/).
 
 :::note
-You must have administrative permissions to install a Windows service. Be sure to launch Powershell as administrator.
+You must have administrative permissions to install a Windows service. Be sure to launch PowerShell as administrator.
 :::
 
 1. Launch PowerShell as an administrator.
@@ -139,7 +139,7 @@ If you're seeing the following error in Microsoft’s Services Control Panel App
 
 This section documents the steps for setting up Telegraf in a Kubernetes environment. Due to the dynamic nature of Kubernetes, we use the Telegraf Operator. 
 
-1. First you need to set up Sumo Logic’s Kubernetes collection. If you haven't, go to [Installation with Helm](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md) and perform those setup steps.
+1. First you need to set up Sumo Logic’s Kubernetes collection. If you haven't, go to [Installation with Helm](/docs/send-data/kubernetes/install-helm-chart) and perform those setup steps.
 
     :::note
     When installing, make sure you enable the Telegraf Operator by adding this to the installation command: 

@@ -3,16 +3,17 @@ id: markdown-syntax
 title: Markdown Syntax
 description: Markdown Syntax options are supported in Dashboards.
 ---
-
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The following Markdown Syntax options are supported in Dashboards. When your syntax is supported, you will see "Markdown Supported" near the bottom left corner of the text box. Unsupported syntax prevents you from clicking the **Submit** button.
 
-Images in Text Panels are not supported.
+:::important
+Images, blockquotes, code blocks, URLs, and email addresses are not supported in the text panels.
+:::
 
 ## Basic text
 
-You don't need to apply any syntax to display basic text. Just type the phrase in the Text box.
+You do not need to apply any syntax to display basic text. Just type the phrase in the Text box.
 
 ## Bold/italic text
 
@@ -21,12 +22,6 @@ To make text italic, surround the phrase in `* *`. For example, `*This text will
 To make text bold, surround the phrase in `** **`. For example, `**This text will be bold**`.
 
 You can combine bold and italic syntax if you'd like.
-
-## Code formatting/block
-
-To make a snippet of text display as code, surround the phrase with: `‘ ‘ `
-
-To make a block of code, surround the content with: `‘‘‘ ‘‘‘`
 
 ## Headings
 
@@ -63,9 +58,7 @@ period. Indent by adding a space. 
     1. Indented Item Two
 ```
 
-This will be displayed in the Text Panel as:
-
-![Ordered list](/img/reuse/monitor-alert/markdown_ordered_list.png)
+This will be displayed in the Text Panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_ordered_list.png')} alt="Ordered list" style={{border: '1px solid gray'}} width="400" /> 
 
 ### Unordered Lists
 
@@ -80,9 +73,7 @@ will produce a bullet. Indent by adding a space.
     * Bullet Indent Two
 ```
 
- This will be displayed in the Text Panel as:
-
-![Markdown unordered list](/img/reuse/monitor-alert/markdown_unordered_list.png)
+ This will be displayed in the Text Panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_unordered_list.png')} alt="Markdown unordered list" style={{border: '1px solid gray'}} width="400" /> 
 
 ## Combined Lists
 
@@ -98,6 +89,8 @@ To created a combined, nested list of numbered and bulleted items, just precede 
     * Bullet Indent Two
 ```
 
-This will be displayed in the Text Panel as:
+This will be displayed in the Text Panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_combined_list.png')} alt="Combined list" style={{border: '1px solid gray'}} width="400" /> 
 
-![Combined list](/img/reuse/monitor-alert/markdown_combined_list.png)
+:::info
+To learn more about the supported markdown elements, refer to the [Markdown guide](https://markdownguide.offshoot.io/basic-syntax/#blockquotes-1).
+:::

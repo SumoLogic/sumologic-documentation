@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Memorystore for Redis is a fully managed service that is powered by the Redis in-memory data store, to build application caches that provide sub-millisecond data access. For more details, refer to the [GCP documentation](https://cloud.google.com/memorystore/docs/redis/redis-overview).
 
-## Log and Metric types
+## Log and metric types
 
 * [Google Cloud Metrics](https://cloud.google.com/monitoring/api/metrics_gcp)
 * [Platform Logs](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html)
@@ -25,7 +25,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Memorystore f
 
 * Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/memorystore/docs/redis/audit-logs#audit_log_permissions). To enable logging for Google Memorystore for Redis, refer to the [Google documentation](https://cloud.google.com/memorystore/docs/redis/audit-logs#enabling_audit_logging). For more detail on Memorystore for Redis operations being audited, refer to [audited operations](https://cloud.google.com/memorystore/docs/redis/audit-logs#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
-   (resource.type=audited_resource and resource.labels.service=redis.googleapis.com)
+   (resource.type=audited_resource AND resource.labels.service=redis.googleapis.com)
    ```
 * Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Memorystore for Redis platform logs include logs related to Redis instance. While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql

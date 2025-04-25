@@ -11,18 +11,12 @@ Use this page to determine which apps are available based on your account plan.
 
 <table>
   <tr>
-   <td>App
-   </td>
-   <td>Trial
-   </td>
-   <td>Essential
-   </td>
-   <td>Enterprise Operations
-   </td>
-   <td>Enterprise Security
-   </td>
-   <td>Enterprise Suite
-   </td>
+   <td>App   </td>
+   <td>Trial   </td>
+   <td>Essential </td>
+   <td>Enterprise Operations   </td>
+   <td>Enterprise Security   </td>
+   <td>Enterprise Suite   </td>
   </tr>
   <tr>
    <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops">Global Intelligence for AWS CloudTrail SecOps</a></td>
@@ -73,8 +67,7 @@ Use this page to determine which apps are available based on your account plan.
    <td>&#10003;</td>
   </tr>
   <tr>
-   <td>All other Apps
-   </td>
+   <td>All other Apps </td>
    <td> &#10003;</td>
    <td>&#10003;</td>
    <td>&#10003;</td>
@@ -89,14 +82,10 @@ Use this page to determine which apps are available based on your account plan.
 
 <table>
   <tr>
-   <td>App
-   </td>
-   <td>Trial
-   </td>
-   <td>Professional
-   </td>
-   <td>Enterprise
-   </td>
+   <td>App   </td>
+   <td>Trial </td>
+   <td>Professional   </td>
+   <td>Enterprise </td>
   </tr>
   <tr>
    <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops">Global Intelligence for AWS CloudTrail SecOps</a></td>
@@ -123,8 +112,7 @@ Use this page to determine which apps are available based on your account plan.
    <td>  &#10003;</td>
   </tr>
   <tr>
-   <td>All other Apps
-   </td>
+   <td>All other Apps </td>
    <td> &#10003;</td>
    <td> &#10003;</td>
    <td>  &#10003;</td>

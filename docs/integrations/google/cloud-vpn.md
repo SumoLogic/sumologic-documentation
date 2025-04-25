@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cloud VPN securely connects your peer network to your Virtual Private Cloud (VPC) network through an IPsec VPN connection. For more details, refer to the [GCP documentation](https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview).
 
-## Log and Metric types
+## Log and metric types
 
 * [Google Cloud Metrics](https://cloud.google.com/monitoring/api/metrics_gcp)
 * [Platform Logs](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html)

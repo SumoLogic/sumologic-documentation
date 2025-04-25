@@ -2,9 +2,16 @@
 id: docusign-source
 title: DocuSign
 sidebar_label: DocuSign
+tags:
+  - cloud-to-cloud
+  - docusign
 description: Learn how to collect customer event data from the DocuSign and send it to Sumo Logic.
 ---
 
+import CodeBlock from '@theme/CodeBlock';
+import ExampleJSON from '/files/c2c/docusign/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/docusign/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/docusign/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="40"/>
@@ -13,7 +20,17 @@ DocuSign pioneered the development of e-signature technology, and today DocuSign
 
 The DocuSign provides a secure endpoint to receive customer event data from the [DocuSign Monitor API](https://developers.docusign.com/docs/monitor-api/reference/monitor/dataset/getstream/). DocuSign Monitor helps organizations protect their agreements with round-the-clock activity tracking. The Monitor API delivers this activity tracking information directly to existing security stacks or data visualization tools—enabling teams to detect unauthorized activity, investigate incidents, and quickly respond to verified threats.
 
-## Prerequisites
+## Data collected
+
+| Polling Interval | Data |
+| :--- | :--- |
+| 5 min |  [Customer event data](https://developers.docusign.com/docs/monitor-api/reference/monitor/dataset/getstream/) |
+
+## Setup
+
+### Vendor configuration
+
+**Prerequisites**
 
 To collect event data from the DocuSign Monitor, you must meet the following criteria:
 * **Administrator access to an organization**. To call the DocuSign Monitor endpoint, you must impersonate a user with administrator access to your organization.
@@ -22,50 +39,35 @@ To collect event data from the DocuSign Monitor, you must meet the following cri
 * **Redirect Uri**. The redirect URI is the URI (URL) to which DocuSign will redirect the browser after authentication. [Set a redirect URI](https://developers.docusign.com/platform/configure-app/#how-to-set-a-redirect-uri)
 * **RSA Key Pair**. [Add the RSA key pair](https://developers.docusign.com/platform/configure-app/#add-the-rsa-key-pair)
 * **Application Consent**. Refer Step-1 of [Get an access token with JWT Grant](https://developers.docusign.com/platform/auth/jwt/jwt-get-token/)
-
-## Data Source
-
-The DocuSign API integration retrieves events data every 5 minutes.
-
-## Metadata Fields
-
-Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
-
-| Field Name | Value |
-| :--- | :--- |
-| _siemparser | /Parsers/System/DocuSign/DocuSign Monitor |
-
-## Setup and Configuration
-
 In this configuration, you will set up the DocuSign account and configure it to be authorized and authenticated to use customer event data from DocuSign Monitor API. To obtain the DocuSign auth token and customer event data, you will need the following parameters:
 
-### User ID
+#### User ID
 
 To get the User ID, follow the steps below:
 1. Log in to **DocuSign** account.
-2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="400" />
-3. Locate and copy the **User ID** available under **My Account Information**. <br/> <img src={useBaseUrl('img/send-data/docusign-user-id.png')} alt="<docusign-user-id.png>" width="400" />
+2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
+3. Locate and copy the **User ID** available under **My Account Information**. <br/> <img src={useBaseUrl('img/send-data/docusign-user-id.png')} alt="<docusign-user-id.png>" width="800" />
 :::note
-You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
+You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-to-Cloud Source](#source-configuration).
 :::
 
-### App
+#### App
 
 You must first create an app to get integration key and configure RSA Key Pair and Redirect URI. This key is required to get access token which will be used to authenticate DocuSign API. To create an app follow the steps below:
 
 1. Sign in to your **DocuSign** account.
-2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="400" />
-3. Navigate to **ADD APP AND INTEGRATION KEY**. <br/> <img src={useBaseUrl('img/send-data/docusign-add-app-integration-key.png')} alt="<docusign-add-app-integration-key.png>" width="400" />
+2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
+3. Navigate to **ADD APP AND INTEGRATION KEY**. <br/> <img src={useBaseUrl('img/send-data/docusign-add-app-integration-key.png')} alt="<docusign-add-app-integration-key.png>" width="700" />
 4. Enter value for **App Name** in a dialog box, and click on **CREATE APP**. <br/> <img src={useBaseUrl('img/send-data/docusign-create-app.png')} alt="<docusign-create-app.png>" width="400" />
-5. After creating your app, you'll be redirected to the app configuration page. Copy **Integration Key**. <br/> <img src={useBaseUrl('img/send-data/docusign-integration-key.png')} alt="<docusign-integration-key.png>" width="400" />
+5. After creating your app, you'll be redirected to the app configuration page. Copy **Integration Key**. <br/> <img src={useBaseUrl('img/send-data/docusign-integration-key.png')} alt="<docusign-integration-key.png>" width="700" />
   :::note
-  You'll need to provide your integration key while requesting [application consent](#app-consent) and creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
+  You'll need to provide your integration key while requesting [application consent](#app-consent) and creating the [DocuSign Cloud-to-Cloud Source](#setup).
   :::
 6. Leave **Authentication** settings as default as shown in below image. <br/> <img src={useBaseUrl('img/send-data/docusign-authetication.png')} alt="<docusign-integration-key.png>" width="400" />
 7. Click on **GENERATE RSA** under **Service Integration** to create new private and public key pair. <br/> <img src={useBaseUrl('img/send-data/docusign-generate-rsa.png')} alt="<docusign-generate-rsa.png>" width="450" />
 8. Copy **Private Key** from dialog and close the dialog. <br/> <img src={useBaseUrl('img/send-data/docusign-private-key.png')} alt="<docusign-private-key.png>" width="400" />  
   :::note
-  You'll need to provide RSA private key while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
+  You'll need to provide RSA private key while creating the [DocuSign Cloud-to-Cloud Source](#setup).
   :::
 9. Under **Redirect URIs**, click **ADD URI**, then enter `http://localhost` as your new redirect URI. <br/> <img src={useBaseUrl('img/send-data/docusign-redirect-uri.png')} alt="<docusign-redirect-uri.png>" width="400" />
   :::note
@@ -73,7 +75,7 @@ You must first create an app to get integration key and configure RSA Key Pair a
   :::
 10. Click **SAVE** to finish new app configuration.
 
-### App Consent
+#### App Consent
 
 Once your app is created, you need consent to make API calls. To request application consent, follow the steps below:
 1. Copy the below URL based on your account environment in the browser and press enter. Replace **INTEGRATION_KEY** and **REDIRECT_URI** with the values you copied in steps 5 and 9 of the [App](#app) section, respectively.
@@ -81,33 +83,15 @@ Once your app is created, you need consent to make API calls. To request applica
    * For the production environment, use `https://account.docusign.com/oauth/auth?response_type=code&scope=signature%20impersonation&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
 2.  Click **ALLOW ACCESS** to provide your consent. This should redirect you to **REDIRECT_URI**.
 
-## States
-
-A DocuSign Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
-
-A DocuSign Source goes through the following states when created:
-
-1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
-1. **Started**. A collection task is created on the Hosted Collector.
-1. **Initialized**. The task configuration is complete in Sumo Logic.
-1. **Authenticated**. The Source successfully authenticated with DocuSign.
-1. **Collecting**. The Source is actively collecting data from DocuSign.
-
-If the Source has any issues during any one of these states, it is placed in an **Error** state.
-
-When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
-
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
-
-## Set up DocuSign Source
+### Source configuration
 
 When you create a DocuSign Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the DocuSign source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
-3. Select **DocuSign** icon.  <br/><img src={useBaseUrl('img/send-data/docusign-icon.svg')} alt="docusign-icon.svg" width="60" />
-4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/docusign-config-main.png')} alt="docusign-config-main.png" width="400" />
+3. Search for and select **DocuSign**.
+4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -118,83 +102,47 @@ To configure the DocuSign source:
 10. In **RSA Private Key**, enter the rsa private key you generated. See step 8 of [App](#app) section.
 11. When you are finished configuring the Source, click **Save**.
 
-### Error types
+## Metadata fields
 
-When Sumo Logic detects an issue, it is tracked by Health Events. The following table shows three possible error types. It tells the reason for the error, if the source attempts to retry, and the name of the event log in the Health Event Index.
+If the integration is configured with the SIEM forward option, set the Metadata field `_siemparser` to `/Parsers/System/DocuSign/DocuSign Monitor`.
 
-| Type | Reason | Retries | Retry Behavior | Health Event Name |
-|:--|:--|:--|:--|:--|
-| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                    | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry indefinitely.                   | FirstPartyGenericError |
-
-### Restarting your Source
-
-If your Source encounters ThirdPartyConfig errors, you can restart it from either the Sumo Logic UI or Sumo Logic API.
-
-#### UI
-
-To restart your source in the Sumo Logic platform, follow the steps below:
-1. Open the Collection page, and go to **Manage Data** > **Collection** > **Collection**.
-2. Select the source and click the **information** icon on the right side of the row.
-3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left. <br/><img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button.png" width="400" />
-4. Click **Confirm** to send the restart request. <br/><img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm.png" width="400" />
-5. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/send-data/restart-source-initiated.png')} alt="restart-source-initiated.png" width="400" />
-
-#### API
-
-To restart your source using the Sumo Management API, follow the instructions below:
-* Method: POST
-* Example endpoint: `https://api.sumologic.com/api/v1/collectors/{collector_id}/sources/{source_id}/action/restart`.
-
-<details><summary>Which API endpoint should I use?</summary>
-
-{@import ../../../reuse/api-endpoints.md}
-
-</details>
-
-### JSON Configuration
+## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
-| Parameter | Type | Required | Description | Access |
+| Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | na |
-| `schemaRef` | JSON Object  | Yes | Use `{"type":"DocuSign"}` for DocuSign Source. | not modifiable |
-| `sourceType` | String | Yes | Use `Universal` for DocuSign Source. | not modifiable |
+| schemaRef | JSON Object  | `{"type":"DocuSign"}` | Yes | Define the specific schema type. |
+| sourceType | String | `"Universal"` | Yes | Type of source. |
+| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
-### Config Parameters
+### Configuration Object
 
-| Parameter | Type | Required | Description | Access |
-|:---|:---|:---|:---|:---|
-| `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
-| `description` | String  | No | Type the description of the Source. | modifiable |
-| `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
-| `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `env` | String | Yes | Environment of the DocuSign application. | modifiable |
-| `userId` | String | Yes | User ID of the DocuSign account. | modifiable |
-| `integrationKey` | String | Yes | Integration Key of the app. | modifiable |
-| `rsaPrivateKey` | String | Yes | RSA Private Key for the app. | modifiable |
+| Parameter | Type | Required | Default | Description | Example |
+|:--|:--|:--|:--|:--|:--|
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| env | String | Yes | `null` | Environment of the DocuSign application. |  |
+| userId | String | Yes | `null` | User ID of the DocuSign account. |  |
+| integrationKey | String | Yes | `null` | Integration Key of the app. |  |
+| rsaPrivateKey | String | Yes | `null` | RSA Private Key for the app. |  |
 
-### JSON Example
+### JSON example
 
-```json
-{
-   "api.version": "v1",
-   "source": {
-      "config": {
-         "name": "DocuSign",
-         "description": "Test Source",
-         "category": "source_category",
-         "env": "dev",
-         "userId": "9cfb472b-ef1f-4116-8df2-17c538xxxxxx",
-         "integrationKey": "215c96c6-19a6-48e9-955f-253593xxxxxx",
-         "rsaPrivateKey": "-----BEGIN RSA PRIVATE KEY----- xxxxxxx xxxxxxx xxxxx== -----END RSA PRIVATE KEY-----"
-      },
-      "schemaRef": {
-         "type": "DocuSign"
-      },
-      "sourceType": "Security"
-   }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+<a href="/files/c2c/docusign/example.json" target="_blank">Download example</a>
+
+### Terraform example
+
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+<a href="/files/c2c/docusign/example.tf" target="_blank">Download example</a>
+
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+:::

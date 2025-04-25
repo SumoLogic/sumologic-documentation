@@ -14,8 +14,7 @@ If possible, also use one or more keywords to limit the scope.
 
 ## Limit search time range
 
-Use the smallest [time range](set-time-range.md) required for your use case. When reviewing data over long time ranges, build and
-test your search against a shorter time range first, then extend the time range once the search is finalized.
+Use the smallest [time range](set-time-range.md) required for your use case. When reviewing data over long time ranges, build and test your search against a shorter time range first, then extend the time range once the search is finalized.
 
 ## Use fields extracted by FERs and avoid the where operator
 
@@ -47,7 +46,7 @@ _sourceCategory=foo
 
 ## Filter your data before aggregation
 
-When filtering data, make the result set you are working with as small as possible before conducting [aggregate](/docs/search/search-query-language/group-aggregate-operators) operations like sum, min, max, and average. According to [Be specific with search scope](#be-specific-with-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator).
+When filtering data, make the result set you are working with as small as possible before conducting [aggregate](/docs/search/search-query-language/group-aggregate-operators) operations like sum, min, max, and average. According to [Be specific with search scope](#be-specificwith-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-thewhere-operator).
 
 **Best approach:**
 
@@ -68,34 +67,27 @@ _sourceCategory=Prod/User/Eventlog
 
 ## Use parse anchor instead of parse regex for structured messages
 
-According to [Use fields extracts by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator), it is best to use pre-extracted fields. If you need to parse a field that is not pre-extracted, use [parse anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor). If you are dealing with unstructured messages that are more complex, leverage [parse regex](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex) and place it in a Field Extraction Rule.
+According to [Use fields extracts by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-thewhere-operator), it is best to use pre-extracted fields. If you need to parse a field that is not pre-extracted, use [parse anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor). If you are dealing with unstructured messages that are more complex, leverage [parse regex](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex) and place it in a Field Extraction Rule.
 
 ## When using parse regex avoid expensive tokens
 
-If you need to use parse regex, avoid the use of expensive operations like `.*`. Just as [Be specific with search scope](#be-specific-with-search-scope) states for your search scope, be as specific as you can with your regular expressions as well.
+If you need to use parse regex, avoid the use of expensive operations like `.*`. Just as [Be specific with search scope](#be-specificwith-search-scope) states for your search scope, be as specific as you can with your regular expressions as well.
 
-**Example log message:**
-
-```sql
+```json title="Example log message"
 52.87.131.109 - - [2016-09-12 20:13:52.870 +0000] "GET /blog/index.php HTTP/1.1" 304 8932
 ```
 
-**Best approach:**
-
-```sql
-| parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s"
+```sql title="Best approach"
+| parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s"
 ```
 
-**Least preferred approach:**
-
-```sql
-| parse regex "(\<client_i\>.*)\s-"
+```sql title="Least preferred approach"
+| parse regex "(?<client_ip>.*)\s-"
 ```
 
 ## Use partitions and scheduled views
 
-Sumo provides two index-based search optimization features: partitions and scheduled views. When you run a search against an partition or scheduled view, search results are returned more quickly and efficiently because the search is run against a smaller data set. For more
-information, see [Optimize Search Performance](../../optimize-search-performance.md).
+Sumo provides two index-based search optimization features: partitions and scheduled views. When you run a search against an partition or scheduled view, search results are returned more quickly and efficiently because the search is run against a smaller data set. For more information, see [Optimize Search Performance](../../optimize-search-performance.md).
 
 ## Use Search Parameters
 
@@ -143,5 +135,4 @@ _sourceCategory=Apache/Access and GET
 
 ## Pin searches with long time ranges
 
-A query with a longer time range can run past the default time window for Sumo Logic. To protect against an interruption in a query with a
-significant time range, [pin it](/docs/get-started/library#pinned-searches). A pinned search can run in the background for up to 24 hours.
+A query with a longer time range can run past the default time window for Sumo Logic. To protect against an interruption in a query with a significant time range, [pin it](/docs/get-started/library#pinned-searches). A pinned search can run in the background for up to 24 hours.

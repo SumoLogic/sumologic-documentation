@@ -2,7 +2,7 @@
 id: jira-opentelemetry
 title: Jira - OpenTelemetry Collector
 sidebar_label: Jira - OTel Collector
-description: The Sumo Logic App for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
+description: The Sumo Logic app for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events. 
+The Sumo Logic app for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events. 
 
 Jira logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
@@ -30,13 +30,33 @@ This section provides instructions for configuring log collection for Jira runni
 Follow the instructions to set up log collection.
 
 The Jira app uses the following log types:
-- **Jira Access Logs**. HTTP server access log files, in `logs/access_logs`,  in your JIRA Installation Directory.
+- **Jira Access Logs**. HTTP server access log files, in `logs/access_logs`, in your Jira Installation Directory.
 - **Jira Security Logs**. Security-related information, such as logins, logouts, session creation/destruction, and security denials from `atlassian-jira-security.log`.
-- **Jira Catalina Logs**. The application catalina log file, `logs/catalina.out`, in your JIRA Installation Directory.
+- **Jira Catalina Logs**. The application catalina log file, `logs/catalina.out`, in your Jira Installation Directory.
 - **Jira Webhooks**. Webhook events of types:
     - Issue
     - User
     - Sprint
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Configure hosted collector to receive Webhooks
 
@@ -67,17 +87,21 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
     - started (sprint_started)
     - closed (sprint_closed)
 
-When you configure the webhook, enter the URL for the [HTTP source you created](/docs/integrations/app-development/jira/#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
+When you configure the webhook, enter the URL for the [HTTP source you created](#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -90,11 +114,13 @@ Path of the different log file configured to capture Jira logs is needed to be g
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -103,6 +129,9 @@ Click on the **Download YAML File** button to get the yaml file.
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -127,26 +156,55 @@ Click on the **Download YAML File** button to get the yaml file.
   ```
 
 </TabItem>
+
 <TabItem value="macOS">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Jira instance that needs to be monitored.
 2. Restart the otelcol-sumo process using:
+
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
 
 </TabItem>
+
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
+
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Log Messages
+<LogsOutro/>
+
+## Sample log messages
 
 ```sh title="Sample Log Message (Non-Kubernetes environment)"
 bluechip-office - - 19/01/2023:05:02:10 Z "GET /jira/rest/gadget/1.0/averageage/generate?projectOrFilterId=filter-16392&periodName=monthly&daysprevious=730&width=428&height=285&inline=true&_=1541539601115 HTTP/1.1" 401 8509 "https://jira.kumoroku.com/jira/plugins/servlet/gadgets/ifr?container=atlassian&mid=17024&country=US&lang=en&view=default&view-params=%7B%22writable%22%3A%22true%22%7D&st=atlassian%3A7udmdg9B2kTj%2FIang%2FZBXDM3COYkLIHJIzAUYmw9QDAiuHR4StJpZph6bTEtMMfxwx46%2B7cTTIjSGz%2B%2FNBJa4GLMS7e3ijRtWhIEIi4u19i2WXZsBZ8ZP8AekcT1JzwwkH9lGt9IRgXmL05epIw8kYAzDpKI1E%2FdHLFYtwo7m1M%2FRSsPMdoYGmwUfuIHM6%2FKGMsCDzToTKRzay85Sw9O7Db6%2B7A9MkQm0BxSmX3hMpV%2BPWgw%2BKDuNwPC0HCzrkMb4V2M3pJE0qBbvJqM2O6ezII938KZBz0%2B1zKnC9Rw2ePrbrm7TjCWGiR77NxKFtowNo3Xfg%3D%3D&up_isConfigured=true&up_isPopup=false&up_refresh=15&up_projectOrFilterId=filter-
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample query is from the **Jira - Overview** dashboard > **Catalina Requests** panel.
 
@@ -219,3 +277,21 @@ The **Jira - Sprints Events** dashboard provides insights on sprint events in Ji
 The **Jira - User Events** dashboard provides information about user events in Jira, including the number of user events, trends, and users that have been updated, created, and deleted.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-User-Events.png' alt="User Events" />
+
+
+## Create monitors for Jira app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Jira alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Jira - Abnormal Session Creation Rate Alert` | This alert is triggered when there are unusual patterns in session creation/destruction that might indicate security issues or system problems. | Count >= 1 | Count < 1 |
+| `Jira - High Average Response Time Alert` | This alert is triggered when elevated response times in Jira are detected, indicating potential performance degradation. | Count >= 5000 | Count < 5000 |
+| `Jira - High HTTP 4xx Error Rate Alert` | This alert is triggered when there is increase in HTTP 4xx errors to detect service disruptions. | Count >= 50 | Count < 50 |
+| `Jira - High HTTP 5xx Error Rate Alert` | This alert is triggered when there is increase in HTTP 5xx errors to detect service disruptions. | Count >= 50 | Count < 50 |
+| `Jira - High Priority Issues Unassigned SLA Alert` | This alert is triggered when high-priority issues remain unassigned beyond the Default SLA threshold of 30 minutes (1800000 milliseconds). To adjust the SLA, update the value in the query to the desired time in milliseconds (e.g., 15 minutes = 900000, 1 hour = 3600000). | Count >= 1 | Count < 1 |
+| `Jira - Rapid Authentication Failures Alert` | This alert is triggered when a single user experiences more than 10 failed login attempts within 5 minutes, indicating potential password guessing attempts or account lockout issues. | Count > 10 | Count \<= 10 |

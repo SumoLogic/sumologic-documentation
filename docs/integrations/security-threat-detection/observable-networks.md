@@ -2,30 +2,30 @@
 id: observable-networks
 title: Observable Networks
 sidebar_label: Observable Networks
-description: The Observable Networks App allows you to monitor your Observable Networks deployment from Sumo Logic. The App Overview Dashboard provides insight to high-level data about your network.
+description: The Observable Networks app allows you to monitor your Observable Networks deployment from Sumo Logic. The app Overview dashboard provides insight to high-level data about your network.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="thumbnail icon" width="75"/>
 
-The Observable Networks App allows you to monitor your Observable Networks deployment from Sumo Logic. The App Overview Dashboard provides insight to high-level data about your network.
+The Observable Networks app allows you to monitor your Observable Networks deployment from Sumo Logic. The app Overview Dashboard provides insight to high-level data about your network.
 
 From Sumo Logic, you may also set up forwarding for log monitoring and authentication logs to Observable Networks. With log monitoring, Observable Networks can notify you when it detects that a Collector is missing, exposing gaps in your log coverage. Authentication log forwarding allows for more accurate and detailed alerts, using Sumo Logic log data to provide extra richness to Observable's Dynamic Endpoint Modeling algorithms.
 
 Observable Networks is a provider of network security technology and advanced threat detection services that identify compromised and misused networked devices. Observable's Dynamic Endpoint Modeling technology includes a cloud-based service platform incorporating automated security analytics and real-time traffic sensors to continuously model all devices on a network. Endpoint modeling is based on network traffic flow metadata and is indifferent to encryption. Observable makes it easy to readily understand normal and abnormal device behaviors, helping to identify compromised devices and facilitate faster remediation.
 
-For more information, please visit [http://www.observable.net/](http://www.observable.net/).
+For more information, visit [Observable Networks (via Cisco)](https://www.cisco.com/c/en/us/services/acquisitions/observable-networks.html).
 
-:::caution
+:::warning
 Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](/docs/integrations/security-threat-detection/observable-networks) if you have any questions.
 :::
 
-## Log Types
+## Log types
 
-The Sumo Logic App for Observable Networks assumes Observable Networks formatted logs, which provide one JSON message per request.
+The Sumo Logic app for Observable Networks assumes Observable Networks formatted logs, which provide one JSON message per request.
 
-## Collect Logs for the Observable Network App
+## Collect logs for the Observable Network app
 
 This section provides instructions for configuring log collection for the Observable Network App, as well as relevant log and query samples.
 
@@ -33,13 +33,11 @@ The Observable Networks App allows you to monitor your Observable Networks deplo
 
 Observable Networks is a provider of network security technology and advanced threat detection services that identify compromised and misused networked devices. Observable's Dynamic Endpoint Modeling technology includes a cloud-based service platform incorporating automated security analytics and real-time traffic sensors to continuously model all devices on a network. Endpoint modeling is based on network traffic flow metadata and is indifferent to encryption. Observable makes it easy to readily understand normal and abnormal device behaviors, helping to identify compromised devices and facilitate faster remediation.
 
-For more information, see [http://www.observable.net/](http://www.observable.net/).
-
+For more information, visit [Observable Networks (via Cisco)](https://www.cisco.com/c/en/us/services/acquisitions/observable-networks.html).
 
 ### Prerequisites
 
 From your Observable Networks portal, click **Settings** (gear icon) > **Integrations** > **Sumo Logic** > **Settings** and enter the Access ID, Access Key, and Source URL on the Sumo Logic Settings page. Before you begin, your Observable Networks portal must be properly configured. If you have any questions, contact [support@obsrvbl.com](mailto:support@obsrvbl.com).
-
 
 ### Configure a Collector
 
@@ -47,17 +45,15 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 Create an access key:
 
-1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. Click **Access Keys**.
 3. Add a new access key called Observable Networks, then save the new **Access ID** and **Access Key** values.
-
 
 ### Configure a Source
 
 Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Name the new source "observable" (case-sensitive). Deselect the check box **Enable Timestamp Parsing**.
 
 When the URL associated with the Source is displayed, copy the URL so you can use it to send files.
-
 
 ### Configure the Observable Portal
 
@@ -67,11 +63,9 @@ When the URL associated with the Source is displayed, copy the URL so you can us
 
 Your Observable Networks deployment will now publish alert and endpoint information to Sumo Logic.
 
-
 #### Configure Log Monitoring (optional)
 
 If you have Sumo Logic API access, you can integrate Observable Networks and Sumo Logic even further. You can configure Observable Networks to identify devices on your network that do not have Collectors installed. Additionally, Observable Networks can parse authentication log ("auth.log") data from certain Linux distributions (e.g., Ubuntu) to monitor user access.
-
 
 #### Identify Missing Collectors
 
@@ -99,7 +93,7 @@ To parse authentication logs:
 2. From the **Auth.log** dropdown, select the log configuration that represents the auth.log source.
 3. Click **Save**.
 
-### Sample Log Messages
+### Sample log message
 
 ```json
 {
@@ -143,7 +137,7 @@ To parse authentication logs:
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Recent Flow Counts"
 _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_count" as type, session_count
@@ -153,7 +147,6 @@ _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_
 | order by _timeslice
 ```
 
-
 ```sql title="Top Observation Host"
 _sourceCategory=observable
 | json field=_raw "obsrvbl_type", "source_info.name" as type, name
@@ -162,28 +155,31 @@ _sourceCategory=observable
 | order by _count desc
 ```
 
-## Install the Observable Networks App
+## Install the Observable Networks app
 
-This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and dashboards allow you to visually analyze your Observable Networks data at a glance.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-{@import ../../reuse/apps/app-install.md}
+<AppInstall2/>
 
-## Viewing Observable Networks Dashboards
+## Viewing Observable Networks dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
-The Observable Networks Overview Dashboard is intended to provide a high level at-a-glance view into your network.
-
+The Observable Networks Overview dashboard is intended to provide a high level at-a-glance view into your network.
 
 **Effective Session Count.** Displays the number of effective "flows" ("sessions") as a single value chart for the last hour.
 
 **Roles.** Provides a breakdown of the types of endpoints currently on the network in a pie chart for the last hour. Endpoint types could be WebServer, iOS, Printer, etc. Roles are published every hour, so this Panels displays the latest role distribution on your network.
 
-**Recent Alert Updates. **Shows a list of recently updated alerts in a table with a URL link to their alert detail page on the Observable Networks portal for the last six hours. Click the links for more details about an alert. If this Panel is empty, that means there have been no alerts for the last six hours.
+**Recent Alert Updates.** Shows a list of recently updated alerts in a table with a URL link to their alert detail page on the Observable Networks portal for the last six hours. Click the links for more details about an alert. If this Panel is empty, that means there have been no alerts for the last six hours.
 
 **Observation Origins.** Displays observations that relate to activity with external endpoints (e.g., "New External Server") on a map of the world for the last six hours.
 
-**Recent Observations. **Lists the latest observations on the system and their counts in a table for the last six hours. Observations are notable events about your network, which are the building blocks for alerts.
+**Recent Observations.** Lists the latest observations on the system and their counts in a table for the last six hours. Observations are notable events about your network, which are the building blocks for alerts.
 
 **Observations by Time.** Displays the frequency of each observation type as an area chart on a timeline for the last six hours.
 
@@ -196,3 +192,15 @@ The Observable Networks Overview Dashboard is intended to provide a high level a
 **Role History.** This multi-line graph shows the population of each role type on the network. Here you can track how the population of your network has changed over time. For example, the number of iOS devices and printers.
 
 **Top Observation Hosts.** This is simple query shows the hosts (sources) with the most observation counts.
+
+## Upgrade/Downgrade the Observable Networks app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Observable Networks app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

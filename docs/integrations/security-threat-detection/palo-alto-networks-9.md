@@ -2,14 +2,15 @@
 id: palo-alto-networks-9
 title: Palo Alto Networks 9
 sidebar_label: Palo Alto Networks 9
-description: The Sumo Logic App for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment.
+description: The Sumo Logic app for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="thumbnail icon" width="90"/>
 
-The Sumo Logic App for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment. New PANOS 9 features include:
+The Sumo Logic app for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment. New PANOS 9 features include:
+
 * GlobalProtect
 * Panorama
 * User-ID
@@ -20,19 +21,19 @@ The Sumo Logic App for Palo Alto Networks 9 utilizes PANOS 9 new features in pre
 [Palo Alto Networks](https://www.paloaltonetworks.com/) 9 provides consistent protection across the data center, perimeter, branch, mobile and cloud networks.
 
 
-## Log Types
+## Log types
 
-The Palo Alto Networks 9 App uses the following log types:
+The Palo Alto Networks 9 app uses the following log types:
 
-* [System](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/system-log-fields.html) Logs
-* [Configuration](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/config-log-fields.html) Logs
-* [USERID](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/user-id-log-fields.html) Logs
-* [HIPMatch](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/hip-match-log-fields.html) Logs
-* [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html) Logs
-* [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields.html) Logs
+* [System](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/system-log-fields) Logs
+* [Configuration](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/config-log-fields) Logs
+* [USERID](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/user-id-log-fields) Logs
+* [HIPMatch](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/hip-match-log-fields) Logs
+* [Traffic](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields) Logs
+* [Threat](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields) Logs
 
 
-### Sample Logs
+## Sample log messages
 
 ```json title="System logs"
 Oct 09 10:15:15 SumoRedfw01a 1,2019/10/09
@@ -74,7 +75,7 @@ Oct 09 10:21:11 SumPunFw07.sumotest.com 1,2019/10/09
 10.255.255.255,0,,0,,,1,,,,,,,,0,0,0,0,0,,SumPunFw07,,,,,0,,0,,N/A,code-execution,AppThreat-8189-5641,0x4,0,4294967295,,,6bbbbec9-d123-4d51-1204-6aefd221079b,0
 ```
 
-### Sample Query
+## Sample queries
 
 In the **Palo Alto Networks 9 - Threat Overview** dashboard, the following query detects **Dest IPs Observing Multiple Threats**.
 
@@ -87,9 +88,9 @@ _sourceCategory=Loggen/PAN* ",THREAT," !(",file," or ",url,")
 | limit 10
 ```
 
-## Collecting Logs for the Palo Alto Networks 9 App
+## Collecting logs for the Palo Alto Networks 9 app
 
-This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Networks 9. You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks. Configuring log collection for Palo Alto Networks 9 includes the following tasks:
+This section provides instructions for configuring log collection for the Sumo Logic app for Palo Alto Networks 9. You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks. Configuring log collection for Palo Alto Networks 9 includes the following tasks:
 
 ### Step 1. Create a hosted collector and Cloud Syslog source
 
@@ -100,7 +101,7 @@ To configure a hosted collector with a Cloud Syslog source, do the following:
 1. Log in to Sumo Logic and create a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Create a [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source) on the hosted collector, specifying the following:
     1. Enter a Source Name.
-    2. Provide a Source Category: **NW/PAN/V9**
+    2. Provide a Source Category. **NW/PAN/V9**.
 3. Click **Save**.
 4. Copy the Token, host URL and TCP TLS Port to a safe place. You will need this information in the tasks that follow.
 
@@ -116,45 +117,44 @@ To create a server profile specifying  the log destination, do the following:
 3. Click **Add** at the bottom of the screen and provide endpoint details and a profile name, such as Sumo_Logs_Profile01.
 4. In the **Syslog Server Profile** window, select the **Servers** tab and click **Add**.
 5. In the **Servers** window, specify the following information:
-   * **Name**: `Sumo_CloudSyslog_EndPoint01`
-   * **Syslog Server**: URL from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
-   * **Transport**: SSL
-   * **Port**: Port from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
-    * **Format**: `IETF`
-    * **Facility**: `LOG_USER`
-6. In the **Syslog Server Profile** window, select the **Custom Log Format** tab, and use the following custom format for the following log types. In each code snippet, you'll need your token from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source).
+   * **Name**. `Sumo_CloudSyslog_EndPoint01`
+   * **Syslog Server**. URL from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)
+   * **Transport**. SSL.
+   * **Port**. Port from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source).
+    * **Format**. `IETF`.
+    * **Facility**. `LOG_USER`.
+6. In the **Syslog Server Profile** window, select the **Custom Log Format** tab, and use the following custom format for the following log types. At the end of each code snippet, you'll need to add your [token from Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source).
     * [Config](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/config-log-fields.html).
-     ```
-     ,$receive_time,$serial,$type,$subtype,,$time_generated,$host,$vsys,$cmd,$admin,$client,$result,$path,$before-change-detail,$after-change-detail,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name<Token from Step 1>
-     ```
+      ```sh
+      ,$receive_time,$serial,$type,$subtype,,$time_generated,$host,$vsys,$cmd,$admin,$client,$result,$path,$before-change-detail,$after-change-detail,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name <Token from Step 1>
+      ```
     * [System](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/system-log-fields.html)
-     ```
-     ,$receive_time,$serial,$type,$subtype,,$time_generated,$vsys,$eventid,$object,,,$module,$severity,$opaque,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name
-    <Token from Step 1>
-     ```
+      ```sh
+      ,$receive_time,$serial,$type,$subtype,,$time_generated,$vsys,$eventid,$object,,,$module,$severity,$opaque,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name <Token from Step 1>
+      ```
     * [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields.html)
-     ```
-     ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$misc,$threatid,$category,$severity,$direction,$seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,$assoc_id,$ppid,$http_headers,$url_category_list,$rule_uuid,$http2_connection  <Token from Step 1>
-     ```
+      ```sh
+      ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$misc,$threatid,$category,$severity,$direction,$seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,$assoc_id,$ppid,$http_headers,$url_category_list,$rule_uuid,$http2_connection <Token from Step 1>
+      ```
     * [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html)
-     ```
-     ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection <Token from Step 1>
-     ```
+      ```sh
+      ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection <Token from Step 1>
+      ```
     * [HIPMatch](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/hip-match-log-fields.html)
-     ```
-     ,$_receive_time,$serial,$type,$subtype,,$time_generated,$srcuser,$vsys,$machinename,$os,$src,$matchname,$repeatcnt,$matchtype,,,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$vsys_id,$srcipv6,$hostid <Token from Step 1>
-     ```
+      ```sh
+      ,$_receive_time,$serial,$type,$subtype,,$time_generated,$srcuser,$vsys,$machinename,$os,$src,$matchname,$repeatcnt,$matchtype,,,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$vsys_id,$srcipv6,$hostid <Token from Step 1>
+      ```
     * [USERID](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/user-id-log-fields.html)
-     ```
-     ,$receive_time,$serial,$type,$subtype,,$time_generated,$vsys,$ip,$user,$datasourcename,$eventid,$repeatcnt,$timeout,$beginport,$endport,$datasource,$datasourcetype,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$vsys_id,$factortype,$factorcompletiontime,$factorno,,,$ugflags,$userbysource <Token from Step 1>
-     ```
+      ```sh
+      ,$receive_time,$serial,$type,$subtype,,$time_generated,$vsys,$ip,$user,$datasourcename,$eventid,$repeatcnt,$timeout,$beginport,$endport,$datasource,$datasourcetype,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$vsys_id,$factortype,$factorcompletiontime,$factorno,,,$ugflags,$userbysource <Token from Step 1>
+      ```
 7. Click **OK**.
 8. Commit the changes.
 
 
 ### Step 3. Configure syslog forwarding
 
-To configure syslog forwarding for each log type (`config`, `system`, `threat`, `traffic`, `HIPMatch`, `USERID`), follow the steps to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/configure-log-forwarding) as described in the Palo Networks documentation.
+To configure syslog forwarding for each log type (`config`, `system`, `threat`, `traffic`, `HIPMatch`, `USERID`), follow the steps to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/configure-log-forwarding) as described in the Palo Networks documentation.
 
 
 ### Step 4. Verify logs in Palo Alto Networks
@@ -164,27 +164,24 @@ In this step, you view logs using the Palo Alto Network Web interface to confirm
 To verify the logs in Palo Alto Networks, do the following:
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, log in to Sumo Logic.
-3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source), such as: `_sourceCategory = NW/PAN/V9`.
+3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source), such as:    
+   ```sql
+   _sourceCategory = NW/PAN/V9
+   ```
 
+## Install the Palo Alto Networks 9 app
 
+This section provides instructions for installing the Palo Alto Networks 9 app, along with examples of each of the dashboards that provide visual insights into your data.
 
-## Install the Palo Alto Networks 9 App
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-This section provides instructions for installing the Palo Alto Networks 9 App, along with examples of each of the dashboards that provide visual insights into your data.
+<AppInstall2/>
 
-This app supports PAN-OS v9.
+## Viewing Palo Alto Networks 9 dashboards​
 
-{@import ../../reuse/apps/app-install.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-## Viewing Palo Alto Networks 9 Dashboards
-
-### Dashboard filters
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<ViewDashboards/>
 
 ### Overview
 
@@ -200,7 +197,7 @@ The **Palo Alto Networks 9 - Overview** dashboard provides an at-a-glance view o
 
 ### Threat Overview
 
-The Palo Alto Networks 9 - Threat Overview dashboard provides insights into the types of threats on your network, threat severity, and threat comparisons over time. Panels also display information on threats impacting the most IPs, IPs receiving multiple threats, IPs generating threats, and users who are impacted by threats.
+The **Palo Alto Networks 9 - Threat Overview** dashboard provides insights into the types of threats on your network, threat severity, and threat comparisons over time. Panels also display information on threats impacting the most IPs, IPs receiving multiple threats, IPs generating threats, and users who are impacted by threats.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Threat-Overview.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -212,7 +209,7 @@ Use this dashboard to:
 
 ### Threat Analysis
 
-The Palo Alto Networks 9 - Threat Analysis dashboard provides detailed information on threats by type, severity, outliers, and trends over time. Panels also display details on non-critical and critical threat events, top source and destination IPs, as well as apps by severity, and threat categories.
+The **Palo Alto Networks 9 - Threat Analysis** dashboard provides detailed information on threats by type, severity, outliers, and trends over time. Panels also display details on non-critical and critical threat events, top source and destination IPs, as well as apps by severity, and threat categories.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Threat-Analysis.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -224,7 +221,7 @@ Use this dashboard to:
 
 ### High Severity Threats
 
-The Palo Alto Networks 9 - High Severity Threats dashboard provides visibility into high severity threats that are coming from and impacting the most hosts.
+The **Palo Alto Networks 9 - High Severity Threats** dashboard provides visibility into high severity threats that are coming from and impacting the most hosts.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-High-Severity-Threats.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -235,7 +232,7 @@ Use this dashboard to:
 
 ### Traffic Insight - File Activity
 
-The Palo Alto Networks 9 - Traffic Insight - File Activity dashboard provides visibility into file activity detected by PANOS firewall devices. Panels also display top apps, trends for events and file activity, and trends for file outlier activity.
+The **Palo Alto Networks 9 - Traffic Insight - File Activity** dashboard provides visibility into file activity detected by PANOS firewall devices. Panels also display top apps, trends for events and file activity, and trends for file outlier activity.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Insight-File-Activity.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -247,7 +244,7 @@ Use this dashboard to:
 
 ### Traffic Insight - Web Activity
 
-The Palo Alto Networks 9 - Traffic Insight Web Activity dashboard provides insights into user web activity on your network with the number of events, activity by category, top apps, URLs, and zones. Panels also show details on content types, zones, event and web activity trends, and web activity outliers.
+The **Palo Alto Networks 9 - Traffic Insight Web Activity** dashboard provides insights into user web activity on your network with the number of events, activity by category, top apps, URLs, and zones. Panels also show details on content types, zones, event and web activity trends, and web activity outliers.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Insight-Web-Activity.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -260,7 +257,7 @@ Use this dashboard to:
 
 ### Traffic Monitoring
 
-The Palo Alto Networks 9 - Traffic Monitoring dashboard provides insights into the traffic on your network, including protocol trends, top source and destination IPs, top app activities, geographic locations of public IPs, and top destination ports.
+The **Palo Alto Networks 9 - Traffic Monitoring** dashboard provides insights into the traffic on your network, including protocol trends, top source and destination IPs, top app activities, geographic locations of public IPs, and top destination ports.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -273,7 +270,7 @@ Use this dashboard to:
 
 ### Configuration Analysis
 
-The Palo Alto Networks 9 - Configuration Analysis dashboard provides visibility into device configuration activity on your network.
+The **Palo Alto Networks 9 - Configuration Analysis** dashboard provides visibility into device configuration activity on your network.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Configuration-Analysis.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -287,7 +284,7 @@ Use this dashboard to:
 
 ### HIPMatch Monitoring
 
-The Palo Alto Networks 9 - HIPMatch Monitoring dashboard provides visibility into the number of HIP events, HIP name, HIP type, and firewall devices accessing your network. Panels also show information on active hosts and users, as well as users and systems with multiple policy violations.
+The **Palo Alto Networks 9 - HIPMatch Monitoring** dashboard provides visibility into the number of HIP events, HIP name, HIP type, and firewall devices accessing your network. Panels also show information on active hosts and users, as well as users and systems with multiple policy violations.
 
 The [GlobalProtect Host Information Profile (HIP) matching](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/configure-hip-based-policy-enforcement.html) collects information on the security status of the end devices accessing your network. A firewall can allow or deny access to a host based on HIP-based security rules. HIP Match logs display traffic flows that match a [HIP Object](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/about-host-information/how-does-the-gateway-use-the-host-information-to-enforce-policy.html) or [HIP Profile](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/about-host-information/how-does-the-gateway-use-the-host-information-to-enforce-policy.html) configured for rules.
 
@@ -301,7 +298,7 @@ Use this dashboard to:
 
 ### System Monitoring
 
-The Palo Alto Networks 9 - System Monitoring dashboard provides insights into events on your network by type, severity, and trends. Panels also display data for objects by event type and severity level, and details on recent system feeds.
+The **Palo Alto Networks 9 - System Monitoring** dashboard provides insights into events on your network by type, severity, and trends. Panels also display data for objects by event type and severity level, and details on recent system feeds.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-System-Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -313,7 +310,7 @@ Use this dashboard to:
 
 ### USERID Monitoring
 
-The Palo Alto Networks 9 - USERID Monitoring dashboard provides insights into user activity on your network, with information on authentication factor, content type, and trends for content and new user activity. Panels also show details on the top firewall devices, source IPs, active users, and users who connected from multiple IPs.
+The **Palo Alto Networks 9 - USERID Monitoring** dashboard provides insights into user activity on your network, with information on authentication factor, content type, and trends for content and new user activity. Panels also show details on the top firewall devices, source IPs, active users, and users who connected from multiple IPs.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-USERID-Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -321,3 +318,15 @@ Use this dashboard to:
 * Monitor users logged into a device on an IP generating the traffic.
 * Detect which users are not using secure multi-factor authentication.
 * Get better visibility into the application activity at a user level so as to define policies based on users or groups of users.
+
+## Upgrade/Downgrade the Palo Alto Networks 9 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Palo Alto Networks 9 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

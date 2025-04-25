@@ -17,13 +17,13 @@ The Sumo Logic App for VMware Carbon Black provides visibility into key endpoint
 * **VMware ​​​​​​​Carbon Black Endpoint Standard** is a next-generation antivirus (NGAV) solution available through MSSPs or directly as software as a service through VMware Carbon Black’s Predictive Security Cloud (PSC).
 
 
-## Log Types
+## Log types
 
 Sumo Logic analyzes the following required VMware Carbon Black events for more efficient monitoring:
 * VMware Carbon Black EDR Events
 * VMware Carbon Black Endpoint Standard Events
 
-Carbon Black events are forwarded to Sumo Logic by Carbon Black, as defined in [Collect Logs for Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black#Collect-logs-for-VMware-Carbon-Black). For more information, see [Endpoint Detection Response](https://developer.carbonblack.com/reference/enterprise-response/) and [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) documentation.
+Carbon Black events are forwarded to Sumo Logic by Carbon Black, as defined in [Collect Logs for Carbon Black](#collect-logs-for-vmware-carbon-black). For more information, see [Endpoint Detection Response](https://developer.carbonblack.com/reference/enterprise-response/) and [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) documentation.
 
 
 ## Collect Logs for VMware Carbon Black
@@ -40,92 +40,65 @@ This section provides instructions for adding a hosted collector, HTTP, and S3 s
 
 For more in-depth information, see [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) and [EDR](https://developer.carbonblack.com/reference/enterprise-response/) documentation.
 
-
 ### Step 1: Add a Hosted Collector
 
 **To add a hosted collector**, perform the steps as defined on the page[ Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-
 
 ### Step 2: Configure Collection for VMware Carbon Black EDR
 
 To configure collection, add an HTTP Source, get credentials for VMware Carbon Black, and configure the event forwarder.
 
-
 #### Add an HTTP Source for VMware Carbon Black EDR
 
-
-**To add an HTTP source for VMware Carbon Black EDR do the following:
+To add an HTTP source for VMware Carbon Black EDR, do the following:
 
 1. Add [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for VMware Carbon Black EDR.
 
-
-
 When you configure the HTTP Sources, make sure to save the HTTP Source Address URLs. You will need these URLs later.
 
-
-
 #### Get credentials from VMware Carbon Black EDR
-9
 
-
-**VMware Carbon Black EDR event forwarder requires a RabbitMQ Username and Password.** Copy RabbitMQUser and RabbitMQPassword from /etc/cb.conf from the **VMware Carbon Black** **EDR** server. These will be required in the next step.
-
+**VMware Carbon Black EDR event forwarder requires a RabbitMQ Username and Password.** Copy RabbitMQUser and RabbitMQPassword from /etc/cb.conf from the **VMware Carbon Black EDR** server. These will be required in the next step.
 
 #### Configure the event forwarder for VMware Carbon Black EDR
 
 
 This section provides instructions for configuring the collection of **VMware Carbon Black EDR** events.
 
-
 The steps in the following procedure should be done as the “root” user on your target Linux system.
 
-To configure the collection of VMware Carbon Black EDR events:**
+To configure the collection of VMware Carbon Black EDR events:
 
 1. If it isn't already present, install the CbOpenSource repository.
-
-
-```bash
-cd /etc/yum.repos.d
-curl -O https://opensource.carbonblack.com/release/x86_64/CbOpenSource.repo
-```
-
-
+   ```bash
+   cd /etc/yum.repos.d
+   curl -O https://opensource.carbonblack.com/release/x86_64/CbOpenSource.repo
+   ```
 1. Install the RPM with YUM.
-
-```bash
-yum install cb-event-forwarder
-```
-
+   ```bash
+   yum install cb-event-forwarder
+   ```
 1. Configure [cb-event-forwarder](https://developer.carbonblack.com/reference/enterprise-response/event-forwarder/)
-* If installing on a machine _other than the_ Carbon Black EDR server, copy the RabbitMQ username and password into the rabbit_mq_username and rabbit_mq_password variables in /etc/cb/integrations/event-forwarder/cb-event-forwarder.conf file. Also fill out the cb_server_hostname with the hostname or IP address where the Carbon Black EDR server can be reached.
-* If the cb-event-forwarder is forwarding events from a Carbon Black EDR cluster, the cb_server_hostname should be set to the hostname or IP address of the Carbon Black EDR master node. More details [here](https://developer.carbonblack.com/reference/enterprise-response/event-forwarder/).
-* Additionally set the following variables in the cb-event-forwarder.conf:
+   * If installing on a machine _other than the_ Carbon Black EDR server, copy the RabbitMQ username and password into the rabbit_mq_username and rabbit_mq_password variables in /etc/cb/integrations/event-forwarder/cb-event-forwarder.conf file. Also fill out the cb_server_hostname with the hostname or IP address where the Carbon Black EDR server can be reached.
+   * If the cb-event-forwarder is forwarding events from a Carbon Black EDR cluster, the cb_server_hostname should be set to the hostname or IP address of the Carbon Black EDR master node. More details [here](https://developer.carbonblack.com/reference/enterprise-response/event-forwarder/).
+   * Additionally set the following variables in the cb-event-forwarder.conf:
         - `output_type` as http
         - `output_format` as JSON or LEEF as required
         - `httpout` as the HTTP Source Address from the previous step
-
-* Ensure that the configuration is correct, by running (as root) the cb-event-forwarder in check mode:
-
-```bash
-/usr/share/cb/integrations/event-forwarder/cb-event-forwarder -check
-```
-
-    If everything is OK, you will see a message starting with "Initialized output”. If there are errors, they will appear on your screen.
-
-1. Start and stop the service.
-
-    Once the service is installed, it is managed by the Upstart init system in CentOS 6.x. You can control the service with the initctl command:
-
-* To start the service:
-```bash
-initctl start cb-event-forwarder
-```
-
-* To stop the service:
-```bash
-initctl stop cb-event-forwarder
-```
-
+   * Ensure that the configuration is correct, by running (as root) the cb-event-forwarder in check mode:
+      ```bash
+      /usr/share/cb/integrations/event-forwarder/cb-event-forwarder -check
+      ```
+   If everything is OK, you will see a message starting with "Initialized output”. If there are errors, they will appear on your screen.
+1. Start and stop the service. Once the service is installed, it is managed by the Upstart init system in CentOS 6.x. You can control the service with the initctl command:
+   * To start the service:
+   ```bash
+   initctl start cb-event-forwarder
+   ```
+   * To stop the service:
+   ```bash
+   initctl stop cb-event-forwarder
+   ```
 
 Once the service is installed, it is configured to start automatically on system boot.
 
@@ -140,7 +113,6 @@ To add an S3 source for VMware Carbon Black Cloud Endpoint Standard, do the foll
 2. Add an S3 for Cloud Endpoint Standard as per the below example. Populate the bucket name and path as created in the previous step.
 
 ### Configure VMware Carbon Black Cloud Endpoint Standard to send alerts and events to S3
-
 
 **VMware Carbon Black Cloud Endpoint Standard** events will be pushed to S3 via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) and will be collected via [Sumo logic S3](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) source.
 
@@ -160,7 +132,7 @@ _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 For more information, see [Live Tail](/docs/search/live-tail).
 
 
-### Sample Log Messages
+### Sample log messages
 
 This section provides examples of JSON and LEEF log messages.
 
@@ -290,7 +262,7 @@ alliance_data_bit9endpointvisibility='74ccc9e8-ffc6-4e0b-ba88-0e947cf7b146' alli
 
 
 
-### Sample Query
+### Sample queries
 
 This section provides a sample query from the **Top Processes** panel of the **Carbon Black - EDR - Processes** dashboard.
 
@@ -330,7 +302,9 @@ This section demonstrates how to install the VMware Carbon Black EDR and Cloud E
 * **[VMware Carbon Black Endpoint Detection and Response (EDR)](https://www.carbonblack.com/products/edr/)** is an incident response and threat hunting solution that continuously records and stores unfiltered endpoint data, allowing security professionals to track potential threats in real-time.
 * **[VMware Carbon Black Cloud Endpoint Standard](https://www.carbonblack.com/products/endpoint-standard/)** is a next-generation antivirus (NGAV) and endpoint detection and  EDR solution.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing VMware Carbon Black Dashboards
 
@@ -342,12 +316,9 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
-
-
 ### EDR - Overview
 
 The **Carbon Black - EDR - Overview** dashboard provides a high-level view of the state of your network infrastructure and systems. The panels highlight detected threats, hosts, top feeds and IOC’s, top processes, top watchlists, and alert trends.
-
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-endpoint.png')} alt="Carbon Black - EDR Dashboard" />
 
@@ -357,8 +328,6 @@ Use this dashboard to:
 * Determine the top processes and threat indicators.
 * Track alerts.
 * Monitor hosts, users, watchlists and feeds.
-
-
 
 ### EDR - Alerts
 
@@ -374,8 +343,7 @@ Use this dashboard to:
 
 ### EDR - Feeds
 
-
-The** Carbon Black - EDR - Feeds** dashboard provides detailed information on total feeds, feed trends, top and recent feeds, feed comparisons, and processes related to feeds.
+The **Carbon Black - EDR - Feeds** dashboard provides detailed information on total feeds, feed trends, top and recent feeds, feed comparisons, and processes related to feeds.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Feeds.png')} alt="Carbon Black - EDR Dashboard" />
 
@@ -388,7 +356,7 @@ Use this dashboard to:
 
 ### EDR - Indicators of Compromise
 
-The** Carbon Black - EDR - Indicators of Compromise** dashboard shows details on indicators of a compromised environment, as well as status for IOCs. The panels also provide an at-a-glance view of top malicious IPv4 addresses, top IOC DNSs, queries and query based feeds.
+The **Carbon Black - EDR - Indicators of Compromise** dashboard shows details on indicators of a compromised environment, as well as status for IOCs. The panels also provide an at-a-glance view of top malicious IPv4 addresses, top IOC DNSs, queries and query based feeds.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Indicators-of-Compromise.png')} alt="Carbon Black - EDR Dashboard" />
 
@@ -399,10 +367,7 @@ Use this dashboard to:
 * Determine which queries receive the most hits.
 
 
-
-
 ### EDR - Network
-
 
 The **Carbon Black - EDR - Network** dashboard provides networking details for top protocols, local and remote ports, and unique IP addresses.
 
@@ -414,20 +379,15 @@ Use this dashboard to:
 * Monitor ports.
 * Review a list of CB servers.
 
-
-
-
 ### EDR - Processes
 
-
-The** Carbon Black - EDR - Processes** dashboard provides details on the processes that generate events.
+The **Carbon Black - EDR - Processes** dashboard provides details on the processes that generate events.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Processes.png')} alt="Carbon Black - EDR Dashboard" />
 
 Use this dashboard to:
 * Review processes used to modify registries and files.
 * Monitor command line processes, and top paths for processes that generate alerts.
-
 
 ### EDR - Sensors
 
@@ -440,26 +400,20 @@ Use this dashboard to:
 * Identify sensors that are not reporting over a specified time period.
 * Monitor sensor activity and rate spikes.
 
-
-
 ### EDR - Threat Intelligence
 
-The** Carbon Black - EDR - Threat Intelligence** dashboard allows you to monitor threats on your network, categorized by feed, score, and severity. You can view recent threats, trends over time,  and hosts affected by threats.
+The **Carbon Black - EDR - Threat Intelligence** dashboard allows you to monitor threats on your network, categorized by feed, score, and severity. You can view recent threats, trends over time,  and hosts affected by threats.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Threat-Intelligence.png')} alt="Carbon Black - EDR Dashboard" />
-
 
 Use this dashboard to:
 * Review threats over specified time periods.
 * Filter threats by severity to focus on high priority threats.
 * Identify hosts with the greatest number of threats.
 
-
-
 ### EDR - User and Host Alerts
 
-
-The** Carbon Black - EDR - User and Host Alerts** dashboard provides an at-a-glance view of user and host activity.
+The **Carbon Black - EDR - User and Host Alerts** dashboard provides an at-a-glance view of user and host activity.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-User-and-Host-Alerts.png')} alt="Carbon Black - EDR Dashboard" />
 
@@ -471,11 +425,9 @@ Use this dashboard to:
 * Review outbound and inbound alert activity.
 
 
-
-
 ### EDR - Watchlists Dashboard
 
-The** Carbon Black - EDR - Watchlists** dashboard provides details on watchlists, including the number of watchlists, top watchlists, trends, and comparisons over time.
+The **Carbon Black - EDR - Watchlists** dashboard provides details on watchlists, including the number of watchlists, top watchlists, trends, and comparisons over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Watchlists.png')} alt="Carbon Black - EDR Dashboard" />
 
@@ -487,7 +439,7 @@ Use this dashboard to:
 
 ### Endpoint Standard - Overview Dashboard
 
-The** Carbon Black - Endpoint Standard - Overview** dashboard provides a high-level view of the state of your network security, showing the number of detected threats, alerts, indicators of compromise, devices, users, and groups. The panels also highlight alert trends, top users, indicators, devices, applications, and reasons.
+The **Carbon Black - Endpoint Standard - Overview** dashboard provides a high-level view of the state of your network security, showing the number of detected threats, alerts, indicators of compromise, devices, users, and groups. The panels also highlight alert trends, top users, indicators, devices, applications, and reasons.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Overview.png')} alt="Carbon Black - EDR Dashboard" />
 
@@ -499,7 +451,7 @@ Use this dashboard to:
 
 ### Endpoint Standard - Indicators of Compromise Dashboard
 
-The** Carbon Black - Endpoint Standard - Indicators of Compromise** dashboard provides an at-a-glance view of indicators of threats to a secure network by severity, application, and the number of unique instances. A breakdown of each known indicator is also shown.
+The **Carbon Black - Endpoint Standard - Indicators of Compromise** dashboard provides an at-a-glance view of indicators of threats to a secure network by severity, application, and the number of unique instances. A breakdown of each known indicator is also shown.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Indicators-of-Compromise.png')} alt="Carbon Black - EDR Dashboard" />
 
@@ -535,7 +487,7 @@ Use this dashboard to:
 
 ### Endpoint Standard - Device Dashboard
 
-The** Carbon Black - Endpoint Standard - Device** dashboard provides a high-level view of the devices on your network, including the number of devices, geographic locations, and operating systems. The panels also show information on device groups, incidents, alert severity, and target priority.
+The **Carbon Black - Endpoint Standard - Device** dashboard provides a high-level view of the devices on your network, including the number of devices, geographic locations, and operating systems. The panels also show information on device groups, incidents, alert severity, and target priority.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Device.png')} alt="Carbon Black - EDR Dashboard" />
 

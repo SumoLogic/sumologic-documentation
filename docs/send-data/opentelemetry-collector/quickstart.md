@@ -23,9 +23,9 @@ In this quickstart, you'll run our OpenTelemetry collector directly on the machi
 
 We'll show a simple example of running a single collector, on a single machine, collecting a single metric. But of course, in the real world, you'll be dealing with hundreds or thousands of machines, each with as many metrics, and you'll be collecting much more nuanced information than simple system memory load.
 
-## Before you begin
+## Prerequisites
 
-* You'll need a Sumo Logic account. If you don't have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
+* You'll need a Sumo Logic account. If you do not have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
 * Review [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)
 
 
@@ -41,7 +41,7 @@ In this section, you'll install Sumo Logic’s OpenTelemetry collector on your m
 
 In this section, you'll create a new [installation token](/docs/manage/security/installation-tokens), which allows the collector to talk securely to Sumo Logic API and tells it what account to send the data to. This is secure enough that you can comfortably deploy it as an environment variable or as part of a script.
 
-1. Go to **Administration** > **Security** > **Installation Tokens**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Security > Installation Tokens**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account Security Settings** select **Installation Tokens**. You can also click the **Go To...** menu at the top of the screen and select **Installation Tokens**. 
 1. Click the **+ Add Token** button above the table. A panel named **Create Installation Token** appears to the right of the table.
 1. Input a unique name, then click **Save**.
 1. After you’ve created your token, don’t forget to copy it.
@@ -49,7 +49,8 @@ In this section, you'll create a new [installation token](/docs/manage/security/
 
 ### Step 3: Install the collector on the target machine
 
-<details><summary>What's a collector?</summary>
+<details>
+<summary>What's a collector?</summary>
 A collector is an executable program that collects and sends observability data. It typically runs directly on the node that is being monitored (this is the OTel agent).
 </details>
 
@@ -57,11 +58,11 @@ We've created a one-step installation script to make it easier to install the co
 
 1. First, set up an environment variable to hold the installation token you just created. Open up a shell and run the following command:
    ```bash
-   export SUMOLOGIC_INSTALL_TOKEN=<TOKEN>
+   export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
    ```
 1. Next, run the install script. You’ll need to use `sudo` here, so ensure you run this from an account with admin privileges.
    ```bash
-   curl -s https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- --installation-token "${SUMOLOGIC_INSTALL_TOKEN}"
+   curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s --
    ```
 1. After running the install script, you should see the following files installed:
    - `/usr/local/bin/otelcol-sumo`. The collector executable. This should be on your `PATH`.
@@ -82,21 +83,22 @@ receivers:
     scrapers:
       memory:
 
-  exporters:
-    logging:
-      loglevel: debug
+exporters:
+  debug:
+    verbosity: detailed
 
-  service:
-    pipelines:
-      metrics:
-        receivers:
-          - hostmetrics
-        exporters:
-          - sumologic
-          - logging
+service:
+  pipelines:
+    metrics:
+      receivers:
+        - hostmetrics
+      exporters:
+        - sumologic
+        - debug
 ```
 
-<details><summary>What are <code>receivers</code>, <code>exporters</code>, and <code>services</code>?</summary>
+<details>
+<summary>What are <code>receivers</code>, <code>exporters</code>, and <code>services</code>?</summary>
 
 The [`receivers` section](https://opentelemetry.io/docs/collector/configuration/#receivers) describes the sources from which we will collect observability data. The receiver is a component within the collector that understands how to receive data from a particular source. This will have custom code for understanding various types of services to derive metrics from (like Nginx or PostgreSQL). In this case, we’re going to be using the `hostmetrics` receiver, which can collect CPU, disk, and memory information from the host machine that the collector is running on. In that stanza, we specify that we want the collector to scrape information once every 5 seconds, and that we want to run the `memory` scraper. To learn more about `hostmetrics` receiver, check out the docs.
 
@@ -130,7 +132,7 @@ At this point, the collector should be running and sending memory stats data int
 
 Then after that, every 5 seconds you should see a line like:
 
-`[...] MetricsExporter {"kind": "exporter", "data_type": "metrics", "name": "logging", "#metrics": 1} [...]`
+`[...] MetricsExporter {"kind": "exporter", "data_type": "metrics", "name": "debug", "#metrics": 1} [...]`
 
 If you see that kind of output, the collector has successfully set up a connection to Sumo Logic and is sending memory stats metrics as expected. Great! Now let’s go find those in Sumo.
 
@@ -138,7 +140,8 @@ If you see that kind of output, the collector has successfully set up a connecti
 
 Back in the Sumo Logic UI:
 
-1. Navigate to **Manage Data** > **Collection** > **Collection** tab. You should see a list of running collectors there. One of those will be the collector we ran in the previous step. It should have a green **Healthy** status and its **Type** should be **OT Distro**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. You should see a list of running collectors there. One of those will be the collector we ran in the previous step. It should have a green **Healthy** status and its **Type** should be **OT Distro**.
 1. To see the metrics data, hover over the line, and two small icons will appear next to the collector's name. Click the icon to the right, **Open in Metrics**, which looks like a small graph.
 
 This will open a new tab that shows you the metrics coming from this collector. You should see a graph with three lines, one for each state of the `system.memory.usage` metric: `free`, `used`, and `inactive`.

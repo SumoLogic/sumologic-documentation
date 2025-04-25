@@ -3,37 +3,38 @@ id: transactionize-operator
 title: Transactionize Operator
 ---
 
+The _Transactionize_ operator groups log messages that match on any fields you specify. The groups created from the specified fields become the **transactions**.
 
+Unlike other "group by" operators, where the logs in a group must match on all defined fields, `transactionize` just needs one field to match in order to assign logs to the same group.
 
-The **Transactionize** operator groups log messages that match on any fields you specify. The groups created from the specified fields become the **transactions**.
-
-Unlike other "group by" operators, where the logs in a group must match on all defined fields, transactionize just needs one field to match in order to assign logs to the same group.
-
-The match can be transitive, meaning that logs are grouped when messages have adjacent matching fields. For example, all of the following logs would be grouped in a transactionize query:
+The match can be transitive, meaning that logs are grouped when messages have adjacent matching fields. For example, all of the following logs would be grouped in a `transactionize` query:
 
 A, , , ...  
 A, B, , ...  
 , B, C, ...
 
-In search results, the transactionize operator adds transaction fields. The fields are named starting with the specified alias prefix, or "_group" if no alias is specified. Transactionize adds the following fields:
+In search results, the `transactionize` operator adds transaction fields. The fields are named starting with the specified alias prefix, or `_group` if no alias is specified. Transactionize adds the following fields:
 
-* `_group.` An integral value unique to each group.
+* `_group`. An integral value unique to each group.
 * `_group_duration`. The duration of the transaction in milliseconds.
-* `_group_size.` The number of log messages in the transaction.
-* `_group_orphaned.` You can set when a field is not a member of the transaction, but you want to keep it for comparison or analysis by setting the`keepOrphans`` `parameter (described below in [Parameters](#parameters) below) to true.
-* `_group_signature.` DEPRECATED. Use the [merge operator](merge-operator.md) in the subquery instead.
+* `_group_size`. The number of log messages in the transaction.
+* `_group_orphaned`. You can set when a field is not a member of the transaction, but you want to keep it for comparison or analysis by setting the `keepOrphans` parameter (described below in [Parameters](#parameters) below) to true.
+* `_group_signature`. DEPRECATED. Use the [merge operator](merge-operator.md) in the subquery instead.
+
+:::tip
+Use the [`merge` operator](merge-operator.md), which reduces a stream of events to a single event using a specified merge strategy, as a subquery for the `transactionize` operator.
+:::
 
 ## Syntax
 
 * `transactionize <field>, <field>, <field> [as <field>]`
 * `transactionize <field> [as <field>] [<subquery>]`  
-    where `[<subquery>]` is executed on the results of the query for
-    each group, independently.
+    where `[<subquery>]` is executed on the results of the query for each group, independently.
 * `transactionize <field> [as <field>] <parameter> [<subquery>]`
 
 ### Parameters
 
-Parameters must follow the `as \<field\>]` clause, as shown in the above
+Parameters must follow the `as [<field>]` clause, as shown in the above
 Syntax section. For example,   
 
 ```sql
@@ -47,7 +48,7 @@ Syntax section. For example, 
 | `maxLogs = [n]` | The transaction ends if the number of log messages in the transaction exceeds the specified number.
 | `startsWith = [string] [;strict]` | Log messages that match the string start a new transaction. Example: `startsWith="foo"`<br/>By default, this is not strictly enforced and results could include groups that do not start with the specified string. The `;strict` option ensures any non-matching groups are not included. |
 | `endsWith = [string] [;strict]` | Log messages that match the string end the current transaction. Example: `endsWith="foo";strict`<br/>By default, this is not strictly enforced and results could include groups that do not end with the specified string. The `;strict` option ensures any non-matching groups are not included. |
-| `keepOrphans = [true or false]` | true by default. Useful when a field is not a member of the transaction, but you want to keep it for comparison or analysis.​​​​|
+| `keepOrphans = [true or false]` | false by default. Useful when a field is not a member of the transaction, but you want to keep it for comparison or analysis.​​​​|
 
 ## Limitations
 
@@ -56,11 +57,10 @@ Syntax section. For example, 
     `The transactionize operator has reached its memory limit; transactions could be emitted prematurely.`  
 
     To address this situation, try one or more of these options:
-    * Reduce the [time range](/docs/search/get-started-with-search/build-search/set-time-range.md) of your search to reduce the scope.
+    * Reduce the [time range](/docs/search/get-started-with-search/build-search/set-time-range) of your search to reduce the scope.
     * Reduce the scope of your search by using parameters (such as `maxlogs`, `maxspan`, or `endswith`) that are listed above in the [Parameters](#parameters) section.
-    * Run a second transactionize operator immediately after your first one. This will take the potentially ungrouped messages of your first transactionize search and group them correctly.  
+    * Run a second `transactionize` operator immediately after your first one. This will take the potentially ungrouped messages of your first `transactionize` search and group them correctly.  
          
-* Transactionize is not supported in [Dashboard Live mode](../../../dashboards-classic/restricted-operators-dashboards.md#live-mode-restrictions).
 * Transactionize is not supported in [Real Time scheduled searches](../../../alerts/scheduled-searches/create-real-time-alert.md).
 
 ## Example
@@ -71,7 +71,7 @@ Let’s say we are working with logs from a distributed system, where a request 
 
 With that in mind, the logs could look similar to:
 
-```
+```sh
 [system=001] [sessionId=a39eb7] processing request
 [system=002] [sessionId=982c8d] accepting request from system=001 with sessionId=a39eb7
 [system=002] [sessionId=982c8d] processing
@@ -79,9 +79,7 @@ With that in mind, the logs could look similar to:
 [system=003] [sessionId=3b7af9] processing
 ```
 
-To group the logs that belong to the same request, we can use parse
-nodrop to extract each session ID, then run transactionize to group the
-logs with a query similar to:
+To group the logs that belong to the same request, we can use [parse nodrop](/docs/search/search-query-language/parse-operators/parse-nodrop-option) to extract each session ID, then run `transactionize` to group the logs with a query similar to:
 
 ```sql
 | parse "[system=001] [sessionId=*]" as system1Id nodrop
@@ -96,5 +94,5 @@ For example:
 ![transactionalize.png](/img/search/searchquerylanguage/transaction-analytics/transactionalize.png)
 
 :::note
-To see an example of using the transactionize operator with merge, see [Merge Operator](merge-operator.md). 
+To see an example of using the `transactionize` operator with merge, see [`merge` operator](merge-operator.md). 
 :::

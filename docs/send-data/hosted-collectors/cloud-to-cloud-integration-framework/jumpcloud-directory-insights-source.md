@@ -2,9 +2,16 @@
 id: jumpcloud-directory-insights-source
 title: JumpCloud Directory Insights Source
 sidebar_label: JumpCloud Directory Insights
+tags:
+  - cloud-to-cloud
+  - jumpcloud-directory-insights
 description: Learn how to collect events data from the JumpCloud Directory Insight.
 ---
 
+import CodeBlock from '@theme/CodeBlock';
+import ExampleJSON from '/files/c2c/jumpcloud-directory-insights/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/jumpcloud-directory-insights/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/jumpcloud-directory-insights/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="jumpcloud-directory-insights-icon" width="120" />
@@ -13,41 +20,30 @@ JumpCloud's open directory platform unifies your technology stack across identit
 
 JumpCloud Directory Insights Source is used to collect Directory Insights Events from the JumpCloud platform using the REST API and send it to Sumo Logic.
 
-## Data source
+## Data collected
 
-The integration fetches events data using [REST API](https://docs.jumpcloud.com/api/insights/directory/1.0/index.html#section/Overview) provided by JumpCloud Directory Insight platform.
+| Polling Interval | Data |
+| :--- | :--- |
+| 5 min |  [Events data](https://docs.jumpcloud.com/api/insights/directory/1.0/index.html#section/Overview) |
 
-## Setup and configuration
+## Setup
+
+### Vendor configuration
 
 The JumpCloud Directory Insights source requires you to provide the **API Key** and **Organization ID** to access the source data.
 
 - To generate the **API Key**, follow the instructions mentioned in the [Jumpcloud documentation](https://docs.jumpcloud.com/api/insights/directory/1.0/index.html#section/Authentication-and-Authorization/Authentication).
 - To generate the **Organization ID**, follow the instructions mentioned in the [Jumpcloud documentation](https://jumpcloud.com/support/settings-in-admin-portal).
 
-## States
-
-JumpCloud Directory Insights source is a security platform that provides cloud-based security in a cost-effective manner that doesn't sacrifice security or functionality.
-When you create a JumpCloud Directory Insights source, it goes through the following stages:
-1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
-1. **Started**. A collection task is created on the Hosted Collector.
-1. **Initialized**. The task configuration is complete in Sumo Logic.
-1. **Authenticated**. The Source successfully authenticated with JumpCloud Directory Insights.
-1. **Collecting**. The Source is actively collecting data from JumpCloud Directory Insights.
-
-If the Source has any issues during any one of these states, it is placed in an **Error** state.
-
-When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
-
-## Create JumpCloud Directory Insights Source
+### Source configuration
 
 When you create a JumpCloud Directory Insights source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a JumpCloud Directory Insights source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **JumpCloud Directory Insights**.<br/> <img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-icon.png')} style={{border: '1px solid black'}} alt="jumpcloud-directory-insights-icon" width="120" />
-1. Enter a **Name** for the source. The description is optional. <br/><img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-config.png')} alt="jumpcloud-directory-insights-config.png" style={{border: '1px solid black'}} width="400" />
+1. Search for and select **JumpCloud Directory Insights**.
+1. Enter a **Name** for the source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -57,63 +53,46 @@ To configure a JumpCloud Directory Insights source:
 1. In **Service**, select the type of logs to collect. This allows you to limit the response to just the data you want.
 1. When you are finished configuring the Source, click **Save**.
 
-### Error types
+## Metadata fields
 
-When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason for the error, if the source attempts to retry, and the name of the event log in the Health Event Index.
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/System/JumpCloud/JumpCloud Directory Insights` | Set when **Forward To SIEM** is checked. |
 
-| Type | Reason | Retries | Retry Behavior | Health Event Name |
+## JSON schema
+
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
+
+| Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs. | Yes | The Source will retry indefinitely. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | FirstPartyGenericError |
+| schemaRef | JSON Object  | `{"type":"JumpCloud Directory Insights"}` | Yes | Define the specific schema type. |
+| sourceType | String | `"Universal"` | Yes | Type of source. |
+| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
-### Restarting your source
+### Configuration Object
 
-{@import ../../../reuse/restart-c2c-source.md}
-
-### JSON Configuration
-
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
-
-| Parameter | Type | Required | Description | Access |
-|:--|:--|:--|:--|:--|
-| `config` | JSON Object  | Yes | Contains the [configuration parameters](#config-parameters) of the Source. | n/a |
-| `schemaRef` | JSON Object  | Yes | Use `{"type":"JumpCloud Directory Insights"}` for JumpCloud Directory Insights Source. | not modifiable |
-| `sourceType` | String | Yes | Use `Universal` for JumpCloud Directory Insights. | not modifiable |
-
-### Config parameters
-
-| Parameter | Type | Required | Description | Access |
-|:---|:---|:---|:---|:---|
-| `name` | String | Yes | Type the desired name of the Source. It must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
-| `description` | String  | No | Type the description of the Source. | modifiable |
-| `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
-| `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `apiKey` | String | Yes | API Key generated from the JumpCloud Directory Insights platform. | modifiable |
-| `orgID` | String | Yes | Organization ID generated from the JumpCloud Directory Insights platform. | modifiable |
-| `service` | String | Yes | Type of logs from which you want to collect the data from. | modifiable |
+| Parameter | Type | Required | Default | Description | Example |
+|:--|:--|:--|:--|:--|:--|
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| apiKey | String | Yes | `null` | API Key generated from the JumpCloud Directory Insights platform. |  |
+| orgID | String | Yes | `null` | Organization ID generated from the JumpCloud Directory Insights platform. |  |
+| service | String | Yes | `null` | Type of logs from which you want to collect the data from. |  |
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "config": {
-            "name": "JumpCloud Directory Insights",
-            "description": "Collect Events from JumpCloud Directory Insights Product",
-            "category": "jumpcloud-directory-insights",
-            "apiKey": "ebf7b9d6e1****************",
-            "orgID": "64949312***************",
-            "service": "all"
-        },
-        "schemaRef": {
-            "type": "JumpCloud Directory Insights"
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+<a href="/files/c2c/jumpcloud-directory-insights/example.json" target="_blank">Download example</a>
+
+### Terraform example
+
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+<a href="/files/c2c/jumpcloud-directory-insights/example.tf" target="_blank">Download example</a>
+
 ## Troubleshooting
 
 After configuring your source, you should check the status of the source in the **Collectors** page > **Status** column. If the source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
@@ -126,3 +105,9 @@ After configuring your source, you should check the status of the source in the 
 
 **Error Code**: `402` <br />
 **Solution**: Make sure that the Directory Insights is enabled for the Organization.
+
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+:::

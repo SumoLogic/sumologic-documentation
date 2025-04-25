@@ -4,14 +4,20 @@ title: View SAML Debug Information
 description: Learn how to use Debug Mode to troubleshoot SAML issues.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you select the Debug Mode option for SAML  (**Administration > Security > SAML**), whenever an error occurs a debug page displays.
 
-![img](/img/security/saml-config-debug.png)  
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the SAML page, in the main Sumo Logic menu select **Administration > Security > SAML**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the SAML page, in the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
+ 
+
+When you select the Debug Mode option for SAML, whenever an error occurs a debug page displays. 
+
+<img src={useBaseUrl('img/security/saml-config-debug.png')} alt="Debug Mode option selected on the SAML tab" style={{border: '1px solid gray'}} width="800" />
 
 The debug page is displayed in a new browser window (not in the Sumo Web application). A new page is generated for each error.
 
-![Debug](/img/security/SAML_debug_page.png)
+<img src={useBaseUrl('img/security/SAML_debug_page.png')} alt="Example debug page" style={{border: '1px solid gray'}} width="600" />
 
 The Debug page includes:
 

@@ -27,7 +27,7 @@ Note the following:
 
 * Values that you want hashed must be expressed as a match group enclosed in "( )".
 * You can use an anchor to detect specific values. In addition, you can specify multiple match groups. If multiple match groups are specified, each of the values will be hashed uniquely.
-* The hash algorithm is MD5 (default) or 256. OpenTelemetry collectors only support 256.
+* The hash algorithm is MD5 (default) or SHA-256. OpenTelemetry collectors only support SHA-256.
 * If a match group isn't specified no data will be hashed.
-* Make sure you don't specify a regular expression that matches a full log line. Doing so will result in the entire log line being hashed.
+* Make sure you do not specify a regular expression that matches a full log line. Doing so will result in the entire log line being hashed.
 * If you need to hash values on multiple lines use single line modifiers (?s). For example: `memberid=(.*(?s).*session=.*?)\]`

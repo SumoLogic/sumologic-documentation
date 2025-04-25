@@ -27,7 +27,7 @@ Secure your Lambda Function URL or API Gateway method by selecting **AWS_IAM** f
 Have your webhook URL handy by copying and pasting it to a notepad. You'll need it to configure your webhook connection in the next section.
 :::
 
-To authenticate the Sumo Logic backend and allow webhook calls, you'll need to create in your AWS Account an IAM User account with very restricted privileges. Creating Lambda Function URL you need to create your own policy while building an API Gateway you can use AWS managed policy. In the following sections, you'll find detailed steps for both cases. 
+To authenticate the Sumo Logic backend and allow webhook calls, you'll need to create in your AWS Account an IAM User account with very restricted privileges. Creating Lambda Function URL you need to create your own policy while building an API Gateway you can use AWS managed policy. In the following sections, you'll find detailed steps for both cases.
 
 ### Lambda Function URL
 
@@ -64,12 +64,12 @@ If you're building an API Gateway to expose a Lambda function, you'll need to:
 ## Create a Webhook connection
 
 :::note
-You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 :::
 
 Configure the webhook connection to trigger the AWS Lambda function.
 
-1. Go to **Manage Data** > **Monitoring** > **Connections**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. On the **Connections** page, click **Add**.
 1. Click **AWS Lambda**.
 1. In the **Create Connection** dialog, enter:
@@ -84,5 +84,5 @@ Configure the webhook connection to trigger the AWS Lambda function.
     * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
     * **Alert Payload.** Under Alert Payload, which allows you to customize the alert notification, enter a JSON object accepted by your Lambda function. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
     * **Recovery Payload.** Under Recovery Payload, which allows you to customize the recovery notification, enter a JSON object accepted by your Lambda function. 
-1. Click **Test Alert or Test Recovery**. If the connection is made to your Lambda function successfully, you will see a 200 OK response message.
+1. Click **Test Alert or Test Recovery**. If the connection is made to your Lambda function successfully, you will see a `200 OK` response message.
 1. Click **Save**.

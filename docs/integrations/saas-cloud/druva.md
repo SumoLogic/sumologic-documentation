@@ -2,18 +2,18 @@
 id: druva
 title: Druva
 sidebar_label: Druva
-description: The Druva App for Sumo Logic provides real-time monitoring and security insight for Druva accounts, enabling prompt detection and response to potential security incidents through granular insights into user activity, alerts, and backup status.
+description: The Druva app for Sumo Logic provides real-time monitoring and security insight for Druva accounts, enabling prompt detection and response to potential security incidents through granular insights into user activity, alerts, and backup status.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/druva-icon.png')} alt="druva-icon.png" width="100"/>
 
-The Druva App for Sumo Logic enables real-time monitoring and security insight for your Druva account. This app provides critical event alerts and visibility into user activities, device and app usage, and backup and restore events. With this level of visibility, security teams can quickly detect and respond to potential security incidents. The Druva App for Sumo Logic is an essential tool for organizations looking to enhance their security operations.
+The Druva app for Sumo Logic enables real-time monitoring and security insight for your Druva account. This app provides critical event alerts and visibility into user activities, device and app usage, and backup and restore events. With this level of visibility, security teams can quickly detect and respond to potential security incidents. The Druva app for Sumo Logic is an essential tool for organizations looking to enhance their security operations.
 
-The Druva App for Sumo Logic leverages Sumo Logic's cloud-to-cloud Druva source to collect and analyze data from your Druva account. This app delivers granular insights into user activity, alerts, and backup status, enabling organizations to promptly identify and respond to potential security incidents.
+The Druva app for Sumo Logic leverages Sumo Logic's cloud-to-cloud Druva source to collect and analyze data from your Druva account. This app delivers granular insights into user activity, alerts, and backup status, enabling organizations to promptly identify and respond to potential security incidents.
 
-The Druva App offers the following capabilities:
+The Druva app offers the following capabilities:
 
 * Monitor user activity and identify any unauthorized access to sensitive data.
 * Detect and mitigate potential ransomware attacks.
@@ -21,13 +21,13 @@ The Druva App offers the following capabilities:
 * Monitor endpoint security and identify potential threats.
 * Orchestrate incident response workflows by integrating with other security tools.
 
-The Sumo Logic Druva App is a powerful tool for monitoring and protecting your data backups and archives. Organizations may gain important insights into their data security posture and respond quickly and efficiently to possible security events by leveraging Sumo Logic's Events API and advanced analytics capabilities.
+The Sumo Logic Druva app is a powerful tool for monitoring and protecting your data backups and archives. Organizations may gain important insights into their data security posture and respond quickly and efficiently to possible security events by leveraging Sumo Logic's Events API and advanced analytics capabilities.
 
-## Log Types
+## Log types
 
-The Druva App utilizes Sumo Logic's Druva Source to gather [Audit Events](https://developer.druva.com/docs/event-apis) from Druva. For more information on the fields of inSync events, refer to the [inSync events fields](https://developer.druva.com/docs/event-apis#obtain-events-api-response-in-syslog-format) documentation.
+The Druva app utilizes Sumo Logic's Druva Source to gather [Audit Events](https://developer.druva.com/docs/event-apis) from Druva. For more information on the fields of inSync events, refer to the [inSync events fields](https://developer.druva.com/docs/event-apis#obtain-events-api-response-in-syslog-format) documentation.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Audit Event log"
 {
@@ -52,7 +52,7 @@ The Druva App utilizes Sumo Logic's Druva Source to gather [Audit Events](https:
  }
 ```
 
-## Sample Query
+## Sample queries
 
 ```sql title="Number of Users"
 _sourceCategory="druva_app"
@@ -71,35 +71,62 @@ _sourceCategory="druva_app"
 | count_distinct(user_id)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud to Cloud Integration Druva Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) for the Druva App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva App is properly integrated and configured to collect and analyze your Druva data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Druva App​
+<CollectionConfiguration/>
 
-This section has instructions for installing the Druva App for Sumo Logic.
-Refer to the [Druva Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source) to create the source and use the same source category while installing the app.
+:::important
+Use the [Cloud-to-Cloud Integration for Druva](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Druva app is properly integrated and configured to collect and analyze your Druva data.
+:::
 
-{@import ../../reuse/apps/app-install.md}
+### Create a new collector and install the app
 
-## Viewing Druva dashboards
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+<AppCollectionOPtion1/>
 
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
+### Use an existing collector and install the app
 
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-### Druva Overview dashboard
+<AppCollectionOPtion2/>
 
-**Druva - Overview**. The Overview dashboard in the Druva App provides a comprehensive view of the devices and cloud apps used by your organization. It includes widgets for unique user activities, device and app distribution, top users and administrators' details by device and event counts, and the trend of devices and apps over time. This dashboard is a powerful tool for monitoring activity, with the ability to detect and address potential security threats through the "failed events over time" widget. The "recent events details" widget offers a quick snapshot of the latest events. By using this dashboard, you can identify potential issues or anomalies, track changes in device and app usage, and gain a better understanding of events occurring in your organization's devices and cloud apps.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-overview.png')} alt="druva-overview" width="750"/>
+### Use an existing source and install the app
 
-### Druva Alerts Overview dashboard
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
-**Druva - Alerts Overview**. The Alerts dashboard in the Druva App provides comprehensive widgets to analyze security threats and take proactive measures. It includes widgets for tracking alerts by location, severity, and frequency over time, as well as detailed information on unusual activity events and the top users generating alerts. The recent alerts widget provides a quick snapshot of the latest security activity. By using this dashboard, organizations can identify and respond to potential threats efficiently, safeguarding their data effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-alerts-overview.png')} alt="druva-alerts-overview" width="750"/>
+<AppCollectionOPtion3/>
 
-### Druva Backup and Restore dashboard
+## Viewing Druva dashboards​
 
-**Druva - Backup and Restore Overview**. The Backup and Restore dashboard offers a comprehensive view of backup, restore, and download events, providing valuable insights into your organization's data protection activities. The dashboard's widgets allow you to track and analyze these events, including the count and distribution of backup, restore, and download activities. You can closely monitor the most active users using the top users performing backup/restore activity widget.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Overview
+
+The **Druva - Overview** dashboard in the Druva app provides a comprehensive view of the devices and cloud apps used by your organization. It includes widgets for unique user activities, device and app distribution, top users and administrators' details by device and event counts, and the trend of devices and apps over time. This dashboard is a powerful tool for monitoring activity, with the ability to detect and address potential security threats through the "failed events over time" widget. The "recent events details" widget offers a quick snapshot of the latest events. By using this dashboard, you can identify potential issues or anomalies, track changes in device and app usage, and gain a better understanding of events occurring in your organization's devices and cloud apps.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-overview.png')} alt="druva-overview" width="750"/>
+
+### Alerts Overview
+
+The **Druva - Alerts Overview** dashboard in the Druva app provides comprehensive widgets to analyze security threats and take proactive measures. It includes widgets for tracking alerts by location, severity, and frequency over time, as well as detailed information on unusual activity events and the top users generating alerts. The recent alerts widget provides a quick snapshot of the latest security activity. By using this dashboard, organizations can identify and respond to potential threats efficiently, safeguarding their data effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-alerts-overview.png')} alt="druva-alerts-overview" width="750"/>
+
+### Backup and Restore
+
+The **Druva - Backup and Restore Overview** dashboard offers a comprehensive view of backup, restore, and download events, providing valuable insights into your organization's data protection activities. The dashboard's widgets allow you to track and analyze these events, including the count and distribution of backup, restore, and download activities. You can closely monitor the most active users using the top users performing backup/restore activity widget.
 
 The trend of failed backup/restore/download events over time offers an overview of any issues, enabling you to quickly identify and resolve them. The geo-location widget tracks activity locations, helping you identify potential threats or vulnerabilities. With this dashboard, you can monitor your data protection activities closely, ensuring the smooth running of backup and restore processes and securing your data.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-backup-and-restore.png')} alt="druva-backup-and-restore" width="750"/>
+
+## Upgrade/Downgrade the Druva app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Druva app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

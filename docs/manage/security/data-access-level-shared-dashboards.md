@@ -8,15 +8,15 @@ The **Data Access Level for Shared Dashboards** security policy allows you to 
 
 Setting this policy only affects dashboards that are created after the policy is enabled, not dashboards created before the policy is enabled.  
 
-For more information about data access levels for dashboards, see [Set the Data Access Level for a Dashboard](/docs/dashboards-classic/get-started/set-data-access-level-dashboard.md).
+For more information about data access levels for dashboards, see [Set the Data Access Level for a Dashboard](/docs/dashboards/set-data-access-level).
 
 :::note
 You must have a role that grants you the Manage Org Settings [capability](../users-roles/roles/role-capabilities.md) to enable the **Data Access Level for Shared Dashboards** security policy.
 :::
 
-To enable that **Data Access Level for Shared Dashboards security policy:
+To enable the Data Access Level for Shared Dashboards security policy:
 
-1. Go to **Administration > **Security** > **Policies**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
 1. Click the checkbox in the **Data Access Level for Shared Dashboards** section.
 
  

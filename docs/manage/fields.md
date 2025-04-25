@@ -40,9 +40,10 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
 ## Limitations
 
 * Fields created as log metadata and from Field Extraction Rules share the same quota of 200 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
-
-    ![fields capacity.png](/img/send-data/fields-capacity.png)
-
+    :::note
+    Enterprise and Enterprise Suite users can create a maximum of 400 fields.
+    :::
+  <img src={useBaseUrl('/img/fields/fields-capacity.png')} alt="fields-capacity" style={{border:'1px solid gray'}} height= "50" width="700"/>
 * It can take up to 10 minutes for fields to start being assigned to your data.
 * A Collector can have up to 10 fields.
 * A Source can have up to 10 fields.
@@ -55,7 +56,7 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
 
 Fields can be assigned to a Collector and Source using the **Fields** input table in the Sumo user interface when creating or editing a Collector or Source.
 
-1. Navigate to **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Create or find and select the Collector or Source you want to assign fields to.
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
@@ -166,7 +167,7 @@ See [how to upload logs to an HTTP Source](/docs/send-data/hosted-collectors/htt
 Your fields need to be in a comma separated list of key-value pairs. For example, a cURL command posting data with custom fields would look like:
 
 ```bash
-curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt\<HTTP endpoin\>
+curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt <HTTP endpoint>
 ```
 
 #### Extended HTTP Metadata Collection
@@ -178,7 +179,7 @@ When creating or editing your HTTP Source that will receive log data add the fie
 With this field set on your Source, headers are processed as metadata fields. For example, a cURL command posting data with custom fields would look like:
 
 ```bash
-curl -v -X POST -H 'environment: dev' -H 'cluster: k8s' -T /file.txt\<HTTP endpoin\>
+curl -v -X POST -H 'environment: dev' -H 'cluster: k8s' -T /file.txt <HTTP endpoint>
 ```
 
 #### Reserved headers
@@ -199,7 +200,7 @@ Fields can be used in the following ways:
 
 * Log [Search page](/docs/search). Use the key-value pair as a keyword search expression (before the first pipe, \| ).
 * [Role Based Access Control](/docs/manage/users-roles/roles) (RBAC). Fields can be used in role search filters to control access to data.
-* [Partitions](/docs/manage/partitions-data-tiers), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of Partitions, Scheduled Views, and Field Extraction Rules.
+* [Partitions](/docs/manage/partitions), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of Partitions, Scheduled Views, and Field Extraction Rules.
 
 :::note
 Fields cannot be used with [Live Tail](/docs/search/live-tail).
@@ -207,15 +208,26 @@ Fields cannot be used with [Live Tail](/docs/search/live-tail).
 
 ### Manage fields
 
-Fields in your account are manageable at **Manage Data** > **Logs** > **Fields**.
+Fields in your account are manageable in the Fields page.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Fields page, in the main Sumo Logic menu select **Manage Data > Logs > Fields**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Fields page, in the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+ 
+
+To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
+
+:::note 
+You can see the suggestions only if there are two or more responses for the same column or section. 
+:::
 
 :::important
 You need the **Manage Fields** [role capability](users-roles/roles/role-capabilities.md) to manage fields. 
 :::
 
-<img src={useBaseUrl('img/fields/manage-fields-page.png')} alt="Manage Fields" width="850"/>
+<img src={useBaseUrl('img/fields/manage-fields-page.png')} alt="Manage Fields" style={{border:'1px solid gray'}} width="850"/>
 
-The **Manage Data** > **Logs** > **Fields** page displays the following information: 
+The Fields page displays the following information: 
 
 * **Status** shows a checkmark in a green circle ![green check circle.png](/img/reuse/green-check-circle.png) to indicate if the field is actively being applied or an exclamation mark in a red circle ![red-exclamation-circle.png](/img/fields/red-exclamation-circle.png) to indicate if the field is disabled and being dropped.
 * **Field Name** is the name of the field, known as the key in the key-value pair.
@@ -227,7 +239,7 @@ The **Manage Data** > **Logs** > **Fields** page displays the following inform
 * **Sources** shows the number of Sources that reference the field. (Available when viewing custom fields.)
 * **Fields Capacity** (bottom of table) shows how many fields your account is using, out of the total available for use.
 
-On the **Manage Data > Logs > Fields** page you can:
+On the Fields page you can:
 
 * Click **+ Add** to add fields.
 * Search fields * The dropdown next to the add button lets you toggle between the following:
@@ -243,7 +255,7 @@ On the **Manage Data > Logs > Fields** page you can:
 When hovering over a row in the table there are icons that appear on the far right for disabling and deleting the field.
 :::
 
-For the fields listed, select a row to view its details. A details pane appears to the right of the table where you can disable and delete the field.
+For the fields listed, select a row to view its details. A details pane appears to the right of the table where you can disable and delete the field.<br/><img src={useBaseUrl('/img/fields/selected-field-details-pane.png')} alt="Manage Fields" style={{border:'1px solid gray'}} width="450"/>
 
 ![selected field details pane.png](/img/fields/selected-field-details-pane.png)
 
@@ -264,9 +276,7 @@ Disabling a field will stop it from being assigned to new log data. Any searches
 Built-in fields cannot be disabled.
 :::
 
-In the details pane of the field select the menu icon and select **Disable**.
-
-![disable field.png](/img/fields/disable-field.png)
+In the details pane of the field, click the **Disable** button.<br/><img src={useBaseUrl('/img/fields/disable-field.png')} alt="disable-field" style={{border:'1px solid gray'}} width="450"/>
 
 #### Delete field
 
@@ -274,13 +284,15 @@ In the details pane of the field select the menu icon and select **Disable**.
 Deleting a field does not delete historical data assigned with that field. If you delete a field by mistake and one or more of those dependencies break, you can re-add the field to get things working properly again. You should always disable a field and ensure things are behaving as expected before deleting a field.
 :::
 
-Select the delete icon ![delete icon.png](/img/fields/delete-icon.png) at the right of the row on the Fields table or in the details pane of the field. To delete a field you need to remove any references to it from some features. If the field is used by any of the following
+Select the **Delete** button in the details pane of the field. To delete a field you need to remove any references to it from some features. If the field is used by any of the following
 
 * Field Extraction Rule
 * Role
 * Partition
 * Collector
 * Source
+
+<br/><img src={useBaseUrl('/img/fields/delete-icon.png')} alt="delete-icon" style={{border:'1px solid gray'}} width="450"/>
 
 You will see the following prompt and you must remove the field reference before you can delete it.
 
@@ -298,16 +310,14 @@ If the field is not used by those features you will see the following prompt.
 
 #### View dropped fields
 
-Dropped fields are fields being sent to Sumo, but are being ignored since they are not defined in your Fields schema. Use the dropdown option to the left of the **+ Add** button to select and view dropped fields.
+Dropped fields are fields being sent to Sumo Logic, but are being ignored since they are not defined in your fields schema. Use the fields dropdown to view the dropped fields.<br/><img src={useBaseUrl('/img/fields/dropped-fields-table.png')} alt="dropped-fields-table" style={{border:'1px solid gray'}} width="800"/>
 
-![dropped fields table.png](/img/fields/dropped-fields-table.png)
-
-Select a dropped field from the table to open a details pane. There is a convenient button provided to create the field if needed.
+Click on any dropped field of your choice from the table to open a details pane. There is a convenient button provided to create the field if needed.
 
 :::note
 It can take a few minutes for a created field to be removed from the **Dropped Fields** table.
 :::
 
-![create field from dropped table.png](/img/fields/create-field-from-dropped-table.png)
+<img src={useBaseUrl('/img/fields/create-field-from-dropped-table.png')} alt="create-field-from-dropped-table" style={{border:'1px solid gray'}} width="800"/>
 
  

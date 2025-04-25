@@ -2,7 +2,7 @@
 id: zoom
 title: Zoom
 sidebar_label: Zoom
-description: The Sumo Logic App for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity.
+description: The Sumo Logic app for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,9 +11,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Zoom unifies cloud video and audio conferencing, simple online meetings, and group messaging into one easy-to-use platform. The cloud platform facilitates collaboration across mobile devices, desktops, telephones, and room systems for an online meeting space you can depend on. Zoom allows you to stay connected wherever you go with face-to-face video, high quality screen sharing, and instant messaging.
 
-The Sumo Logic App for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity. The app aggregates and reports on data so you can correlate and investigate trends and respond to incidents across all of your IT tools in a consistent and timely manner.
+The Sumo Logic app for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity. The app aggregates and reports on data so you can correlate and investigate trends and respond to incidents across all of your IT tools in a consistent and timely manner.
 
-## Log Types
+## Log types
 
 Zoom uses Webhook events, that are documented in full on this [Zoom web page](https://marketplace.zoom.us/docs/api-reference/webhook-reference).
 
@@ -26,7 +26,7 @@ The Webhook events are grouped into the following core event types:
 * User Events
 * Account Events
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -53,7 +53,7 @@ The Webhook events are grouped into the following core event types:
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql
 _sourceCategory=zoom
@@ -73,21 +73,19 @@ _sourceCategory=zoom
 
 Follow the instructions for setting up [HTTP Integration for Zoom source](/docs/send-data/hosted-collectors/webhook-sources/zoom) and use the same source category while installing the app.
 
-## Installing the Zoom App
+## Installing the Zoom app
 
-Now that you have set up collection for the Zoom events, install the Sumo Logic App for Zoom to use the pre-configured dashboards that provide visibility into your environment.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-{@import ../../reuse/apps/app-install.md}
+<AppInstall2/>
 
-## Viewing Zoom Dashboards
+## Viewing Zoom dashboards
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-	You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
+<ViewDashboards/>
 
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
-### Zoom - Overview
+### Overview
 
 The **Zoom - Overview** dashboard provides an at-a-glance view of the state of your Zoom environment in terms of reliability, performance, user activity, and security by reporting on meetings, hosts, webinars, alerts and guest activity.
 
@@ -98,7 +96,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Overview.png')} alt="Zoom dashboards" />
 
-### Zoom - Availability
+### Availability
 
 The **Zoom - Availability** dashboard provides insights into meeting, webinar, and Zoom room alerts in your environment. A meeting alert event is triggered when a service issue is encountered during a meeting and a Zoom Room alert event is triggered when there is an issue related to a Zoom Room.  
 
@@ -108,7 +106,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Availability.png')} alt="Zoom dashboards" />
 
-### Zoom - User Activity
+### User Activity
 
 The **Zoom - User Activity** dashboard provides visibility into Zoom user presence and their activities. Panels display user trends, setting preferences, recording and screen sharing comparisons, as well as chat message details.
 
@@ -119,7 +117,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Zoom_User_Activity.png')} alt="Zoom dashboards" />
 
-### Zoom - Guest Activity
+### Guest Activity
 
 The **Zoom - Guest Activity** dashboard provides visibility into the Zoom guest users, their activities, and trends. Panels also display detailed information on screen sharing with guest participants, meetings with regular guests, and those with the most guest participants.
 
@@ -141,7 +139,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Administrator_Activity.png')} alt="Zoom dashboards" />
 
-### Zoom - Meeting Usage
+### Meeting Usage
 
 The **Zoom - Meeting Usage** dashboard provides visibility into the number and types of Zoom meetings conducted, along with the hosts and participants of those meetings. Panels display meeting trends, as well as details on frequently used meeting numbers and hosts who have personal meeting rooms.
 
@@ -151,7 +149,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Meeting_Usage.png')} alt="Zoom dashboards" />
 
-### Zoom - Authentication
+### Authentication
 
 The **Zoom - Authentication** dashboard provides an insight into the number and type of logins, trends, and Zoom clients and devices used.
 
@@ -161,7 +159,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Authentication.png')} alt="Zoom dashboards" />
 
-### Zoom - Meeting Security
+### Meeting Security
 
 The **Zoom - Meeting Security** dashboard provides visibility into meeting security as it relates to frequently used meeting-id’s and personal meeting rooms, as well as monitor when meetings are updated in a way that don’t conform to security best practices.
 
@@ -171,7 +169,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Meeting_Security.png')} alt="Zoom dashboards" />
 
-### Zoom - Webinars
+### Webinars
 
 The **Zoom - Webinars** dashboard provides visibility into the number and types of webinars, the participants, and trends. Panels also provide details on webinar authentications and comparisons of registered participants and those who actually participate.
 
@@ -180,3 +178,15 @@ Use this dashboard to:
 * Identify interest level, participation and assess the success of the webinars.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Webinars.png')} alt="Zoom dashboards" />
+
+## Upgrade/Downgrade the Zoom app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Zoom app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

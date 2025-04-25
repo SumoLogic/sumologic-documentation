@@ -13,7 +13,7 @@ For example, you can create a scheduled search that triggers an Azure function w
 
 First, create an HTTP-triggered Azure function. For more information, see [Azure Functions HTTP triggers and bindings overview](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook?tabs=in-process%2Cfunctionsv2&pivots=programming-language-csharp).
 
-1. Create an Azure function using the template **HttpTrigger-Powershell**.
+1. Create an Azure function using the template **HttpTrigger-PowerShell**.
 1. Copy and paste code of the Azure function into the code field. The following example is an HTTP-triggered PowerShell function:
     ```
     $requestBody = Get-Content $req -Raw | ConvertFrom-Json
@@ -36,7 +36,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 
 Configure the Webhook connection to trigger the Azure function:
 
-1. Go to **Manage Data** > **Monitoring** > **Connections**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. On the **Connections** page click **Add**.
 1. Select **Azure Functions**.
 1. In the **Create Connection** dialog, configure:

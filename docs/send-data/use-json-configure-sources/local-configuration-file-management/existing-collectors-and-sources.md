@@ -5,7 +5,6 @@ sidebar_label: For Existing Collectors and Sources
 description: Managing existing deployments means making changes only to a JSON file.
 ---
 
-
 With [Local Configuration File](/docs/send-data/use-json-configure-sources/local-configuration-file-management) management, all configuration is done through a configuration file. This approach allows you to create scripts to configure multiple Collectors and Sources or to create configuration backups.
 
 If you're using local configuration file management, you cannot use the API or the Sumo web app to modify the configuration.
@@ -14,9 +13,9 @@ If you're using local configuration file management, you cannot use the API or
 
 The Sumo web application can generate ready-to-use JSON for the Sources that are already configured for the Collector. For additional details, see [View or Download Collector or Source JSON Configuration](view-download-source-json-configuration.md). 
 
-**To get the JSON configuration and create a configuration file**
+To get the JSON configuration and create a configuration file:
 
-1. In the Sumo web app select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Select the information icon to the right of the Collector.
 1. Copy and paste the displayed JSON into a new text file. Name the text file `sources.json`, or any other name that makes sense. The file must have a `.json` extension
 1. Save the file to a location accessible by the Collector and make a note of the file path.
@@ -37,15 +36,22 @@ Prior to version 19.137, the Collector used the `sumo.conf` file for Source c
 |:--|:--|:--|
 | syncSources   | String   | Sets the path to the JSON describing Sources to configure on registration, which will be continuously monitored and synchronized with the Collector configuration. |
 
-**To add the syncSources parameter**
+To add the syncSources parameter:
 
-1. Open or create the `user.properties` file located at \<CollectorInstallationFolde\>/config`.  
+1. Open or create the `user.properties` file located at `<CollectorInstallationFolder>/config`.
 1. Add the `syncSources` parameter and set the path to the JSON. Like these example  
-
-   * On \*nix, to point to a JSON **file** that defines Sources for a Collector: ` =/path/to/sources.json`  
-   * On \*nix, to point to a **folder** that contains JSON files that define Sources for a Collector: `syncSources=/path/to/sources-folder`
-   * On Windows (note the escaped backslashes), to point to a folder that contains JSON files that define Sources for a Collector: `syncSources=C:\\path\\to\\sources-folder\\`
-
+   * On `*nix`, to point to a JSON **file** that defines Sources for a Collector:
+     ```sh
+     =/path/to/sources.json
+     ```  
+   * On `*nix`, to point to a **folder** that contains JSON files that define Sources for a Collector:
+     ```sh
+     syncSources=/path/to/sources-folder
+     ```
+   * On Windows (note the escaped backslashes), to point to a folder that contains JSON files that define Sources for a Collector:
+     ```sh
+     syncSources=C:\\path\\to\\sources-folder\\
+     ```
 1. Save and close the file.
 
 ## Step 3. Make the switch
@@ -54,10 +60,8 @@ You can now move to the local configuration file management option, using the S
 
 Do one of the following:
 
- * In the Sumo web app, choose **Local Configuration File** in the **Edit Collector** dialog box.
- * In the Collector Management API, use the PUT method to update the Collector's `sourceSyncMode` to "`Json`". For more information, see Collector API Methods and Examples. The following example shows the `sourceSyncMode` of a Collector using UI mode: 
-
-    `"sourceSyncMode":"UI",`
+* In the Sumo web app, choose **Local Configuration File** in the **Edit Collector** dialog box.
+* In the Collector Management API, use the PUT method to update the Collector's `sourceSyncMode` to "`Json`". For more information, see Collector API Methods and Examples. The following example shows the `sourceSyncMode` of a Collector using UI mode: `"sourceSyncMode":"UI",`
 
 ## Step 4. Restart the Collector
 
@@ -65,8 +69,14 @@ Restart the Collector for the changes to take effect.
 
 To restart the Collector, use these commands:
 
-* Mac/Linux: `sudo ./collector restart`   
-* Windows: `net restart sumo-collector`
+```sh title="Mac/Linux"
+sudo ./collector restart
+```
+
+```sh title="Windows"
+net stop sumo-collector
+net start sumo-collector
+```
 
 ## Step 5. Verify the Sources are configured properly
 
@@ -74,6 +84,6 @@ Examine the Collector log file to verify that the Collector is ingesting data fr
 
 ## Editing the configuration file
 
-You can edit the JSON configuration file at any time to edit Source attributes or add new Sources. When you delete Sources from the file they are deleted from the Collector.
+You can edit the JSON configuration file at any time to edit Source attributes or add new Sources. When you delete Sources from the file, they are deleted from the Collector.
 
 After you finalize changes to the `sources.json` file, test the changes by deploying this configuration file to a Collector on a host that is NOT in production. After the file is validated, deploy the file to each host with Sources that need to be modified by overwriting the existing `sources.json` file. Collectors continually watch for updates to the `sources.json` file for changes. Any edits are immediately processed.

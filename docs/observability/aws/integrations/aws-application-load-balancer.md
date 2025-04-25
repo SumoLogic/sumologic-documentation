@@ -5,11 +5,11 @@ sidebar_label: AWS Application Load Balancer
 description: Gain visibility into the health of the Application Load Balancer and target groups in your AWS environment. Use the preconfigured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
 ---
 
-The [AWS Application Load Balancer](https://aws.amazon.com/elasticloadbalancing/) functions at the application layer receive requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group. 
+The [AWS application Load Balancer](https://aws.amazon.com/elasticloadbalancing/) functions at the application layer receive requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group. 
 
-The Sumo Logic App for AWS Observability Application Load Balancer is a unified logs and metrics (ULM) App that gives you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
+The Sumo Logic app for AWS Observability Application Load Balancer is a unified logs and metrics (ULM) app that gives you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
 
-## Log and Metric Types 
+## Log and metrics types 
 
 The AWS Application Load Balancer ULM App uses the following log and metric types:
 
@@ -18,9 +18,9 @@ The AWS Application Load Balancer ULM App uses the following log and metric type
   * **Type.** This is the type of request or connection (HTTP, HTTPS, H2, ws, wss)
   * **Target_group_arn**. This is the Amazon Resource Name (ARN) of the target group
 
-The logs are stored in a .gzip format in the specified S3 bucket and contain these fields in this order: timestamp, elb, client:port, target:port, request_processing_time, target_processing_time, response_processing_time, elb_status_code, target_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol, target_group_arn, trace_id. For more details on the ALB Access log, see the [AWS documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging).
+The logs are stored in a `.gzip` format in the specified S3 bucket and contain these fields in this order: timestamp, elb, client:port, target:port, request_processing_time, target_processing_time, response_processing_time, elb_status_code, target_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol, target_group_arn, trace_id. For more details on the ALB Access log, see the [AWS documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging).
 
-### Sample Log Message
+### Sample log messages
 
 ```
 https 2017-11-20T22:05:36 long-bill-lb 77.222.19.149:41148 10.168.203.134:23662 0.000201 0.401924
@@ -30,27 +30,24 @@ DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:10403021
 "Root=1-58337364-23a8c76965a2ef7629b185e134"
 ```
 
-### Sample Query 
+### Sample queries 
 
 The following query sample was taken from the **HTTP Target 5xx per Target Group** panel on the **AWS Application Load Balancer - HTTP Target Group Codes** dashboard.
 
-```
+```sql
 _sourceCategory=Labs/AWS/ALB/Metrics Namespace=aws/applicationelb metric=HTTPCode_Target_5XX_Count
-Statistic=Sum _sourcehost=* _collector=* region=* targetgroup=* AvailabilityZone=* entity=* account=*
+Statistic=Sum _sourceHost=* _collector=* region=* targetgroup=* AvailabilityZone=* entity=* account=*
 | parse field= TargetGroup */* as Unused, TargetGroup | sum by TargetGroup
 ```
 
-## AWS Application Load Balancer Dashboards
+## Viewing AWS Application Load Balancer dashboards
 
-This page provides examples and descriptions for each of the AWS Observability Application Load Balancer pre-configured dashboards.
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
-The AWS Application Load Balancer serves as the single point of contact for clients. The load balancer distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple Availability Zones. 
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
-The Sumo Logic AWS Observability Application Load Balancer Dashboards provides visibility into the health of Application Load Balancer and target groups in your AWS environment. Use the pre-configured dashboards to understand the load, errors, response codes, and latency by target groups, hosts as well as requests from malicious sources, and HTTP response codes.
+<FilterDashboards/>
 
-:::note
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
-:::
 
 ### AWS Application Load Balancer - Overview
 

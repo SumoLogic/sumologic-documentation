@@ -35,17 +35,10 @@ Create a domain user, who belongs to the local administrator group on the target
 ## Configure to allow RPC traffic
 
 1. Go to **Firewall > Advanced settings > Inbound Rules > New Rule**, on the popup window.  
-1. Choose **Custom**.  
-
-    ![img](/img/send-data/rule_custom.png)
-
+1. Choose **Custom**.  <br/>![img](/img/send-data/rule_custom.png)
 1. Click **Next**, then choose All Programs.  
-1. Then select **Protocol and Ports**:
-
-    ![img](/img/send-data/ports_rule.png)
-
+1. Then select **Protocol and Ports**: <br/>![img](/img/send-data/ports_rule.png)
 1. Select the Windows Protocol and ports. Use: 
-
    * **Protocol Type:** TCP
    * **Local Port:** RPC Dynamic Ports
 
@@ -56,24 +49,13 @@ Create a domain user, who belongs to the local administrator group on the target
    * TCP Port 445 (Windows shares)
    * UDP 137
    * UDP 138
-
-1. Click **Next**, then enter the IP restrictions (optional, but more secure). The local address should be the network address the Collector will connect to. The remote address should be the IP address the collect will use to talk to this Windows system. In the following screenshot, it's set to Any IP address.
-
-    ![img](/img/send-data/new_rule.png)
-
-1. Click **Next**, then Select **Allow the connection**.
-
-    ![img](/img/send-data/allow_connection.png)
-
-1. Click **Next**, then select the **Domain**.
-
-    ![img](/img/send-data/aws_firewall.png) 
-
-    :::note
-    For Amazon users, Windows AMIs not in a domain should tick "Public". AWS AMIs consider their LAN interfaces to be on a public network by default. 
-    :::
-
- 1. Give the rule a name, for example, "Allow Sumo Logic Collector IN".
+1. Click **Next**, then enter the IP restrictions (optional, but more secure). The local address should be the network address the Collector will connect to. The remote address should be the IP address the collect will use to talk to this Windows system. In the following screenshot, it's set to Any IP address. <br/> ![img](/img/send-data/new_rule.png)
+1. Click **Next**, then Select **Allow the connection**. <br/> ![img](/img/send-data/allow_connection.png)
+1. Click **Next**, then select the **Domain**. <br/>![img](/img/send-data/aws_firewall.png) 
+     :::note
+     For Amazon users, Windows AMIs not in a domain should tick "Public". AWS AMIs consider their LAN interfaces to be on a public network by default. 
+     :::
+1. Give the rule a name, for example, "Allow Sumo Logic Collector IN".
 
 ## Grant Admin full control to Registry Key
 

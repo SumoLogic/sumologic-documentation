@@ -43,7 +43,7 @@ AWS Lambda automatically monitors functions on your behalf, reporting [AWS Lambd
 
 The Sumo Logic App for AWS Lambda provide insights into the Lambda Functions invocations, IteratorAge for stream-based invocations, Errors, Dead Letter Errors, Concurrent Executions, Unreserved Concurrent Executions, Duration, Throttles by Function and Time based Comparison.
 
-### Sample Log Messages
+### Sample log messages
 This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Events log messages.
 
 ```json title="Amazon CloudWatch Log"
@@ -100,7 +100,7 @@ This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Ev
 ```
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Requests by Function Versions (Based on CloudWatch logs)"
 account={{account}} region={{region}} Namespace={{namespace}}
@@ -134,10 +134,10 @@ account={{account}} region={{region}} Namespace={{namespace}}
 ```
 
 ```sql title="Error (Count)(CloudWatch metric Based)"
-namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | su
+namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | sum
 ```
 
-## Collecting Logs for the AWS Lambda App
+## Collecting logs for the AWS Lambda App
 
 This section provides instructions for setting up log and metric collection.
 
@@ -148,7 +148,7 @@ Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
 - **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
 * While configuring the cloudwatch log source, following Fields can be added in the source:
-    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the **account** field.
+    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the **account** field.
     * Add a **region** field and assign it the value of the respective AWS region where the Lambda function exists.
     * Add an **accountId** field and assign it the value of the respective AWS account ID that is being used.
 
@@ -163,7 +163,7 @@ To configure a CloudTrail Source, perform these steps:
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
 5. While configuring the cloud trail log source, the following field can be added to the source:
-    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Fields.png')} alt="Fields" />
 
@@ -180,16 +180,16 @@ Sumo Logic supports collecting metrics using two source types:
 Namespace for **Amazon Lambda** Service is **AWS/Lambda**.
 :::
 
-* **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. The **account** field allows you to query metrics.
+* **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. The **account** field allows you to query metrics.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" />
 
-Continue with the process of [enabling Provisioned Concurrency configurations](#Enable_Provisioned_Concurrency_configurations_for_Lambda_functions) for Lambda functions, as necessary.
+Continue with the process of [enabling Provisioned Concurrency configurations](#enable-provisioned-concurrency-configurations-for-lambda-functions) for Lambda functions, as necessary.
 
 
 ### Enable Provisioned Concurrency configurations for Lambda functions
 
-AWS Lambda provides Provisoned Concurrency for greater control over the start up time for Lambda functions. When enabled, [Provisioned Concurrency](https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html) keeps functions initialized and hyper-ready to respond in double-digit milliseconds. AWS Lambda provides additional metrics for provisioned concurrency with CloudWatch.
+AWS Lambda provides Provisioned Concurrency for greater control over the start up time for Lambda functions. When enabled, [Provisioned Concurrency](https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html) keeps functions initialized and hyper-ready to respond in double-digit milliseconds. AWS Lambda provides additional metrics for provisioned concurrency with CloudWatch.
 
 To collect the metrics in Sumo Logic, follow the steps below:
 
@@ -200,39 +200,12 @@ To collect the metrics in Sumo Logic, follow the steps below:
 
 Once Provisioned Concurrency is enabled and you start collecting CloudWatch metrics, the following new metrics will be available:
 
-<table><small>
-  <tr>
-   <td>Metric
-   </td>
-   <td>Description
-   </td>
-  </tr>
-  <tr>
-   <td><strong>ProvisionedConcurrentExecutions</strong>
-   </td>
-   <td>Concurrent Executions using Provisioned Concurrency
-   </td>
-  </tr>
-  <tr>
-   <td><strong>ProvisionedConcurrencyUtilization</strong>
-   </td>
-   <td>Fraction of Provisioned Concurrency in use
-   </td>
-  </tr>
-  <tr>
-   <td><strong>ProvisionedConcurrencyInvocations</strong>
-   </td>
-   <td>Number of Invocations using Provisioned Concurrency
-   </td>
-  </tr>
-  <tr>
-   <td><strong>ProvisionedConcurrencySpilloverInvocations</strong>
-   </td>
-   <td>Number of Invocations that are above Provisioned Concurrency
-   </td>
-  </tr></small>
-</table>
-
+| Metric                               | Description                                     |
+|:-----------|:-------------------------|
+| **ProvisionedConcurrentExecutions**      | Concurrent Executions using Provisioned Concurrency |
+| **ProvisionedConcurrencyUtilization**    | Fraction of Provisioned Concurrency in use         |
+| **ProvisionedConcurrencyInvocations**    | Number of Invocations using Provisioned Concurrency |
+| **ProvisionedConcurrencySpilloverInvocations** | Number of Invocations that are above Provisioned Concurrency |
 
 These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metrics-queries), as shown in the following example:
 
@@ -240,7 +213,9 @@ These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metri
 
 ### Field in Field Schema
 
-Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**functionname**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
+1. Search for the “**functionname**” field.
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### Field Extraction Rule(s)
@@ -296,7 +271,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 ```yml
 Rule Name: AwsObservabilityLambdaCloudWatchLogsFER
 Applied at: Ingest Time
-Scope (Specific Data): _sourceHost=/aws/lambda/*
+Scope (Specific Data): account=* region* _sourceHost=/aws/lambda/*
 Parse Expression:
 | parse field=_sourceHost "/aws/lambda/*" as functionname
 | tolowercase(functionname) as functionname
@@ -304,26 +279,15 @@ Parse Expression:
 | fields functionname, namespace
 ```
 
-
-
 ## Installing the AWS Lambda App
 
-Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-aws-lambda-dashboards) that provide visibility into your environment for real-time analysis of overall usage. To install the app, follow the steps below:
+Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library** and complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    * Click **Add to Library**.
+<AppInstall/>
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## Viewing AWS Lambda Dashboards
+## Viewing AWS Lambda dashboards
 
 Here are some of the measurements and calculations underlying the information presented in dashboard panels.
 
@@ -331,7 +295,7 @@ Here are some of the measurements and calculations underlying the information pr
 * **Memory Size**. The amount of memory allocated for a function.
 * **Max Memory (MB) Used.** The amount of memory used by a function, in MBs. This is a measure of performance.
 * **Compute Usage (GBs).** This is a product of Memory Size and Billed Duration (Memory Size * Billed Duration).
-* **Billed Compute. **memory configured on the function (in GB) x duration of the request (in seconds). In the actual query, Sumo Logic converts MB to GB and milliseconds to seconds to get the real billing numbers used. The actual cost varies by customer. This measurement is used to measure cost.
+* **Billed Compute.** memory configured on the function (in GB) x duration of the request (in seconds). In the actual query, Sumo Logic converts MB to GB and milliseconds to seconds to get the real billing numbers used. The actual cost varies by customer. This measurement is used to measure cost.
 * **Unused Memory.** This is Memory Size - Max Memory Used = Unused Memory. Because you are billed based on Memory Size (which you allocate), this is an indicator of not allocating appropriately.
 * **IteratorAge.** This AWS Lambda CloudWatch metric is emitted for stream-based invocations (functions triggered by an Amazon DynamoDB stream or Kinesis stream). Measures, in milliseconds, the age of the last record for each batch of records processed. Age is the difference between the time Lambda received the batch, and the time the last record in the batch was written to the stream.
 
@@ -380,7 +344,7 @@ Use this dashboard to:
 
 ### Error Analysis
 
-The** AWS Lambda - Error Analysis** dashboard provides insights on errors and warnings in your AWS Lambda functions.
+The **AWS Lambda - Error Analysis** dashboard provides insights on errors and warnings in your AWS Lambda functions.
 
 Use this dashboard to:
 * Quickly identify the top errors and warnings across a Lambda function and its version.
@@ -394,7 +358,7 @@ Use this dashboard to:
 
 ### Resource Usage
 
-**AWS Lambda - Resource Usage **dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, and compute usage.
+**AWS Lambda - Resource Usage** dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, and compute usage.
 
 Use this dashboard to:
 * Monitor the memory usage pattern of a Lambda function during its execution.
@@ -406,7 +370,7 @@ Use this dashboard to:
 
 ### Performance Trends
 
-**AWS Lambda - Performance Trends **dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
+**AWS Lambda - Performance Trends** dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
 
 Use this dashboard to:
 * Monitor concurrent executions of an AWS Lambda function and understand trends over time.
@@ -419,7 +383,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via Sumo Logic [threat intelligence](/docs/security/threat-intelligence/). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
 * Identify known malicious IPs that are access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward

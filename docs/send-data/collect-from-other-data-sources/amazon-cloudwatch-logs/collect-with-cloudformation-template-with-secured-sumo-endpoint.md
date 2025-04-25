@@ -28,7 +28,7 @@ You can create the parameter via AWS CLI or via Console.
 
 If you're using the AWS CLI, run the below command:
 
-```json
+```
 aws ssm put-parameter --region us-east-1 --cli-input-json '{
   "Name": "SUMO_ENDPOINT",
   "Value": \<Paste the endpoint of the HTTP source created in step >",
@@ -61,20 +61,17 @@ Follow the steps in this [document](https://docs.aws.amazon.com/kms/latest/devel
 
 ## Step 3: Download the CloudFormation template
 
-Sumo Logic provides a CloudFormation template to make setup easier. Download the [DLQLambdaCloudFormationWithSecuredEndpoint.json](https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormationWithSecuredEndpoint.json) CloudFormation template and make modifications. Otherwise, proceed to [Step 5](#step-5-create-a-stack-on-the-aws-cloudformation-console​).
+Sumo Logic provides a CloudFormation template to make setup easier. Download the [DLQLambdaCloudFormationWithSecuredEndpoint.json](https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormationWithSecuredEndpoint.json) CloudFormation template and make modifications. Otherwise, proceed to [Step 5](#step-5-create-a-stack-on-the-aws-cloudformation-console).
 
 ## Step 4: Tailor the CloudFormation template
 
-For instructions, follow [Step 3](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-3-tailor-the-cloudformation-template) in the Collect CloudWatch Logs using a CloudFormation Template page. 
+For instructions, follow [Step 3](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-3-tailor-the-cloudformation-template) in the Collect CloudWatch Logs using a CloudFormation Template page.
 
 ## Step 5: Create a stack on the AWS CloudFormation console​
 
 1. Log in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
 1. Under **Management Tools**, select **CloudFormation**.
-1. Create a new stack by clicking **Create Stack**, then select **With new resources (standard).**
-
-  ![Create_Stack_on_AWS_1.gif](/img/send-data/Create_Stack_on_AWS_1.gif)
-
+1. Create a new stack by clicking **Create Stack**, then select **With new resources (standard).** <br/> ![Create_Stack_on_AWS_1.gif](/img/send-data/Create_Stack_on_AWS_1.gif)
 1. On the **Specify Template** window, do one of the following:
 
    * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `DLQLambdaCloudFormationWithSecuredEndpoint.json` file, and then click **Next**.
@@ -117,4 +114,4 @@ For instructions, follow [Step 5](/docs/send-data/collect-from-other-data-source
 
 ## Step 7: Subscribe SumoCWLogsLambda to CloudWatch Log Groups
 
-For instructions, follow [Step 6](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-6-subscribesumocwlogslambda-to-cloudwatch-log-groups) in the Collect CloudWatch Logs using a CloudFormation Template page. 
+For instructions, follow [Step 6](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-6-subscribesumocwlogslambda-to-cloudwatch-log-groups) in the Collect CloudWatch Logs using a CloudFormation Template page.

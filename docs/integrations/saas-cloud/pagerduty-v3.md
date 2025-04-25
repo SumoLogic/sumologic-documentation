@@ -16,26 +16,26 @@ The Sumo Logic App for PagerDuty V3 collects incident messages from your PagerDu
 
 This section provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V3, to collect PagerDuty events. Click a link to jump to a topic:
 
-* [Event types](#Event-Types)
-* [Log example](#Log-Examples)
-* [Sample Query](#Query-example)
-* [Configure a Sumo Logic Collector and Source](#Configure-a-Sumo-Logic-Collector-and-Source)
-* [Create a PagerDuty V3 Webhook](#Create-a-PagerDuty-V3-Webhook)
+* [Event types](#event-types)
+* [Log example](#sample-log-messages)
+* [Sample Queries](#sample-queries)
+* [Configure a Sumo Logic Collector and Source](#configure-a-sumo-logic-collector-and-source)
+* [Create a PagerDuty V3 Webhook](#create-a-pagerduty-v3-webhook)
 
 
-### Event Types
+### Event types
 
 The Sumo Logic App for PagerDuty V3 ingests PagerDuty incident Webhooks V3 messages, that are triggered by events that occur in your PagerDuty account and Services.
 
 For more information on the incident messages supported in Webhooks V3, see the [PagerDuty documentation](https://developer.pagerduty.com/docs/ZG9jOjQ1MTg4ODQ0-overview).
 
 
-### Log example
+### Sample log messages
 
 For examples of incident.triggered, incident.acknowledged and incident.resolved log messages, see the [PagerDuty Webhooks V3 Examples](https://developer.pagerduty.com/docs/ZG9jOjQ1MTg4ODQ0-overview#webhook-payload) page.
 
 
-### Sample Query
+### Sample queries
 
 The following Top Altering Services query is shown on the PagerDuty V3 - Overview dashboard.
 
@@ -53,7 +53,7 @@ _sourceCategory = Labs/pagerduty_v3 "incident.triggered"
 
 ### Configure a Sumo Logic Collector and Source
 
-A** Hosted Collector **is not installed on a local system in your deployment. Instead, Sumo Logic hosts the Collector and its Sources in AWS. With a Hosted Collector, you can create Sources to collect data from various services. A single Hosted Collector can be configured with any number of  Sources.
+A **Hosted Collector** is not installed on a local system in your deployment. Instead, Sumo Logic hosts the Collector and its Sources in AWS. With a Hosted Collector, you can create Sources to collect data from various services. A single Hosted Collector can be configured with any number of  Sources.
 
 An **HTTP Source** is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
@@ -79,7 +79,7 @@ To create a PagerDuty V3 Webhook, do the following:
 3. Click **New Webhook**.
 4. Configure your webhook:
     1. Enter the **HTTP Source Address URL** as the Webhook URL.
-    2. For** Scope Type**, select Service, Team or Account based on your preferences.
+    2. For **Scope Type**, select Service, Team or Account based on your preferences.
     3. For **Scope**, select the desired service or team.
     4. Enter a **Description**.
     5. For **Event Subscription**, select which events you want to send a webhook.
@@ -93,21 +93,19 @@ In the next section, install the Sumo Logic App for PagerDuty V3.
 
 ## Installing the PagerDuty V3 App
 
-This section provides instructions for installing the Sumo App for PagerDuty V3.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V3, and use its pre-configured searches and dashboards.
-
-{@import ../../reuse/apps/app-install.md}
+<AppInstall2/>
 
 ## Viewing PagerDuty V3 Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
-**PagerDuty V3 - Overview Dashboard **provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
+**PagerDuty V3 - Overview Dashboard** provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
 
 Use this dashboard to:
 

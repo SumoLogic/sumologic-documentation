@@ -11,7 +11,7 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
   * [Parsing JSON logs](#parsing-json-logs)
 * [Collecting logs from Windows Event Log](#collecting-logs-from-windows-event-log)
   * [Collecting Application, Security and System channels](#collecting-application-security-and-system-channels)
-  * [Collect from Custom channels (Powershell, Sysmon)](#collect-from-custom-channels-powershell-sysmon)
+  * [Collect from Custom channels (PowerShell, Sysmon)](#collect-from-custom-channels-powershell-sysmon)
 * [Collecting logs from Syslog](#collecting-logs-from-syslog)
   * [Parsing Syslog logs into structured logs](#parsing-syslog-logs-into-structured-logs)
   * [Collecting Syslog logs in format compatible with Sumo Logic Installed Collector](#collecting-syslog-logs-in-format-compatible-with-sumo-logic-installed-collector)
@@ -19,9 +19,11 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
   * [Collecting logs from a MySQL database](#collecting-logs-from-a-mysql-database)
   * [Collecting logs from an Oracle database](#collecting-logs-from-an-oracle-database)
   * [Collecting logs from a PostgreSQL database](#collecting-logs-from-a-postgresql-database)
+  * [Collecting logs from Microsoft SQL database](#collecting-logs-from-an-mssql-database)
   * [Troubleshooting the SQL Query receiver](#troubleshooting-the-sql-query-receiver)
+* [Collecting logs from other sources](#collecting-logs-from-other-sources)
 
-You can find the full list of receivers on our [Sumo Logic OpenTelemetry Collector page](https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components).
+You can find the full list of receivers on our [Sumo Logic OpenTelemetry Collector page][collector_components_docs].
 
 :::tip Additional information
 See [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about configuring the Sumo Logic OpenTelemetry Collector.
@@ -31,51 +33,52 @@ See [Additional Configurations Reference](/docs/send-data/opentelemetry-collecto
 
 Following configuration demonstrates:
 
-1. **Collect**: How to collect logs stored in `/var/log/syslog` and `/var/log/audit/audit.log`.
-2. **Transform**: Set `_sourceCategory` field to `application_logs_prod`
-3. **Export**: Send data to authenticated Sumo Logic organization.
+* **Collect**: How to collect logs stored in `/var/log/syslog` and `/var/log/audit/audit.log`.
+* **Transform**: Set `_sourceCategory` field to `application_logs_prod`
+* **Export**: Send data to authenticated Sumo Logic organization.
 
-```yaml
-receivers:
-  filelog/custom_files:
-    include:
-      - /var/log/syslog
-      - /var/log/audit/audit.log
-    include_file_name: false
-    include_file_path_resolved: true
-    storage: file_storage
+   ```yaml
+   receivers:
+     filelog/custom_files:
+       include:
+         - /var/log/syslog
+         - /var/log/audit/audit.log
+       include_file_name: false
+       include_file_path_resolved: true
+       storage: file_storage
 
-processors:
-  groupbyattrs/custom_files:
-    keys:
-      - log.file.path_resolved
-  resource/custom_files:
-    attributes:
-      - key: _sourceCategory
-        value: application_logs_prod
-        action: insert
-      - key: sumo.datasource
-        value: linux
-        action: insert
+   processors:
+     groupbyattrs/custom_files:
+       keys:
+         - log.file.path_resolved
+     resource/custom_files:
+       attributes:
+         - key: _sourceCategory
+           value: application_logs_prod
+           action: insert
+         - key: sumo.datasource
+           value: linux
+           action: insert
+     sumologic_schema/custom_files:
 
-service:
-  pipelines:
-    logs/custom_files:
-      receivers:
-        - filelog/custom_files
-      processors:
-        - memory_limiter
-        - groupbyattrs/custom_files
-        - resource/custom_files
-        - resourcedetection/system
-        - batch
-      exporters:
-        - sumologic
-```
-
+   service:
+     pipelines:
+       logs/custom_files:
+         receivers:
+           - filelog/custom_files
+         processors:
+           - memory_limiter
+           - groupbyattrs/custom_files
+           - resource/custom_files
+           - resourcedetection/system
+           - sumologic_schema/custom_files
+           - batch
+         exporters:
+           - sumologic
+   ```
 1. Create a file in folder `/etc/otelcol-sumo/conf.d` with name for your choice, perhaps matching the pipeline name, `custom_files.yaml`. Its name has to end with `.yaml`.
-2. Paste the above content.
-3. Restart collector with following command:
+1. Paste the above content.
+1. Restart collector with following command:
    ```bash title="Linux"
    systemctl restart otelcol-sumo
    ```
@@ -95,6 +98,7 @@ Configuration details:
 * **processors**:
   * `groupbyattrs/custom_files` Moves the `log.file.path_resolved` attribute from log record level to resource level to reduce data duplication.
   * `resource/custom_files` Adds the `_sourceCategory` resource attribute with value `application_logs_prod`.
+  * `sumologic_schema/custom_files` Translates attributes to names understood by Sumo Logic apps, for example renames the resource attribute `log.file.path_resolved` to `_sourceName`.
 
 * **exporters**:
   * `sumologic` Sends data to the registered Sumo Logic organization. This exporter is preconfigured in the `sumologic.yaml` file during installation.
@@ -139,10 +143,12 @@ processors:
   groupbyattrs/json_files:
     keys:
       - log.file.path_resolved
+  resource/json_files:
     attributes:
       - key: sumo.datasource
         value: linux
         action: insert
+  sumologic_schema/json_files:
 
 service:
   pipelines:
@@ -152,7 +158,9 @@ service:
       processors:
       - memory_limiter
       - groupbyattrs/json_files
+      - resource/json_files
       - resourcedetection/system
+      - sumologic_schema/json_files
       - batch
       exporters:
       - sumologic
@@ -166,47 +174,47 @@ Windows Log Event Receiver reads and parses logs from windows event log API to c
 
 Following configuration demonstrates:
 
-1. **Collect**: Collect Application, Security and System channels.
-2. **Transform**: Set `_sourceCategory` field to `windows_event_log_prod`.
-3. **Export**: Send data to authenticated Sumo Logic organization.
+* **Collect**: Collect Application, Security and System channels.
+* **Transform**: Set `_sourceCategory` field to `windows_event_log_prod`.
+* **Export**: Send data to authenticated Sumo Logic organization.
 
-```yaml
-receivers:
-  windowseventlog/application/localhost:
-    channel: Application
-  windowseventlog/security/localhost:
-    channel: Security
-  windowseventlog/system/localhost:
-    channel: System
+   ```yaml
+   receivers:
+     windowseventlog/application/localhost:
+       channel: Application
+     windowseventlog/security/localhost:
+       channel: Security
+     windowseventlog/system/localhost:
+       channel: System
 
-processors:
-  resource/windows_resource_attributes/localhost:
-    attributes:
-      - key: _sourceCategory
-        value: windows_event_log_prod
-        action: insert
-      - key: sumo.datasource
-        value: windows
-        action: insert
+   processors:
+     resource/windows_resource_attributes/localhost:
+       attributes:
+         - key: _sourceCategory
+           value: windows_event_log_prod
+           action: insert
+         - key: sumo.datasource
+           value: windows
+           action: insert
 
-service:
-  pipelines:
-    logs/windows/localhost:
-      receivers:
-        - windowseventlog/application/localhost
-        - windowseventlog/system/localhost
-        - windowseventlog/security/localhost
-      processors:
-        - memory_limiter
-        - resource/windows_resource_attributes/localhost
-        - batch
-      exporters:
-        - sumologic
-```
+   service:
+     pipelines:
+       logs/windows/localhost:
+         receivers:
+           - windowseventlog/application/localhost
+           - windowseventlog/system/localhost
+           - windowseventlog/security/localhost
+         processors:
+           - memory_limiter
+           - resource/windows_resource_attributes/localhost
+           - batch
+         exporters:
+           - sumologic
+   ```
 
-1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\` with name `sample_windows.yaml`.
-2. Paste the above content into the file.
-3. Restart collector with following command:
+1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` with name `sample_windows.yaml`.
+1. Paste the above content into the file.
+1. Restart collector with following command:
    ```bash title="Windows"
    Restart-Service -Name OtelcolSumo
    ```
@@ -228,7 +236,7 @@ Configuration details:
   * `logs/custom_files:` Pipeline glues together the receivers with the processors and the exporters.
 
 
-### Collect from Custom channels (Powershell, Sysmon)
+### Collect from Custom channels (PowerShell, Sysmon)
 
 Following configuration demonstrates:
 
@@ -239,7 +247,7 @@ Following configuration demonstrates:
 ```yaml
 receivers:
   windowseventlog/sysmon/localhost/1690233479:
-    channel: Microsoft-Windows-Sysmon/Operational 
+    channel: Microsoft-Windows-Sysmon/Operational
 
 processors:
   resource/windows_resource_attributes/localhost/1690233479:
@@ -264,7 +272,7 @@ service:
         - sumologic
 ```
 
-1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\` with name `sysmon_windows.yaml`.
+1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` with name `sysmon_windows.yaml`.
 2. Paste the above content into the file.
 3. Restart collector with following command:
    ```bash title="Windows"
@@ -302,9 +310,9 @@ The following table shows the comparison of these components.
 
 Following configuration demonstrates:
 
-1. **Collect**: Collect syslog sent using UDP protocol to `172.31.93.11` on port `5140`
-2. **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
-3. **Export**: Send data to authenticated Sumo Logic organization
+* **Collect**: Collect syslog sent using UDP protocol to `172.31.93.11` on port `5140`
+* **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
+* **Export**: Send data to authenticated Sumo Logic organization
 
 ```yaml
 receivers:
@@ -344,7 +352,7 @@ service:
    ```bash title="Linux"
    sudo lsof -i:<port>
    ```
-   Where `port` is the port specified in your config above. 
+   Where `port` is the port specified in your config above.
 
 For more details, see the [Syslog receiver][syslog_receiver_docs].
 
@@ -354,9 +362,9 @@ To collect Syslog logs in format compatible with the Sumo Logic Installed Collec
 
 Following configuration demonstrates:
 
-1. **Collect**: Collect syslog UDP on IP `172.31.93.11` port `5140` and TCP on IP `172.31.93.11` port `1514`.
-2. **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
-3. **Export**: Send data to authenticated Sumo Logic organization
+* **Collect**: Collect syslog UDP on IP `172.31.93.11` port `5140` and TCP on IP `172.31.93.11` port `1514`.
+* **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
+* **Export**: Send data to authenticated Sumo Logic organization
 
 
 ```yaml
@@ -460,11 +468,11 @@ receivers:
     datasource: oracle://user:password@host:port/servicename
     storage: file_storage
     queries:
-      - sql: select log_id, log_text from logs_table where log_id > :id order by log_id
+      - sql: SELECT log_id, log_text, (log_id || ';' || log_text) AS concatenated_fields FROM logs_table WHERE log_id > :id ORDER BY log_id
         tracking_column: LOG_ID
         tracking_start_value: 1
         logs:
-          - body_column: LOG_TEXT
+          - body_column: concatenated_fields
 service:
   pipelines:
     logs/oracle:
@@ -520,6 +528,46 @@ On the first query run, the parameter represented with the dollar one `$1` will 
 
 The last used tracking value will be stored persistently using the `file_storage` extension, allowing the collector to pick up where it left off between collector restarts.
 
+### Collecting logs from an MSSQL database
+
+Here's an example configuration for Microsoft SQL that you can place in the `conf.d` directory:
+
+```yaml
+receivers:
+  sqlquery:
+    collection_interval: 60s
+    driver: sqlserver
+    datasource: server=hostname;port=1433;user=user;password=pass
+    storage: file_storage
+    queries:
+      - sql: SELECT [UserID], [FirstName], [LastName], [Email], [DateOfBirth], CONCAT([FirstName], ' ', [LastName], ',', [Email], ',', [DateOfBirth]) AS [ConcatenatedColumn] FROM [master].[dbo].[Users]
+        tracking_column: "UserID"
+        tracking_start_value: 1
+        logs:
+          - body_column: ConcatenatedColumn
+
+processors:
+  resource/sqlquery:
+    attributes:
+      - key: _sourceCategory
+        value: POV/PROD/test
+        action: insert
+
+service:
+  pipelines:
+    logs/sqlserver:
+      receivers:
+        - sqlquery
+      processors:
+        - memory_limiter
+        - resourcedetection/system
+        - resource/sqlquery
+        - batch
+      exporters:
+        - sumologic
+```
+With this configuration, the SQL Query receiver will run the SQL query `SELECT [UserID], [FirstName], [LastName], [Email], [DateOfBirth], CONCAT([FirstName], ' ', [LastName], ',', [Email], ',', [DateOfBirth]) AS [ConcatenatedColumn] FROM [master].[dbo].[Users]` every 30 seconds and create a log record out of each result row, using the value from the `ConcatenatedColumn` column as the body of the log.
+
 ### Troubleshooting the SQL Query receiver
 
 If you can see the following logs from the collector after applying the configuration:
@@ -531,6 +579,43 @@ If you can see the following logs from the collector after applying the configur
 
 Make sure you are using collector version `v0.78.0-sumo-0` or higher.
 
+## Collecting logs from other sources
+
+You can find the full list of receivers available on the [Sumo Logic OpenTelemetry Collector][collector_components_docs] page. When the Sumo Logic OpenTelemetry Collector does not support collecting logs from a source, the [Monitoring Job Receiver (Beta)][monitoring_job_receiver_docs] can be used as a catch-all.
+
+The Monitoring Job Receiver can be configured to execute a script or command on the collector host. The standard output and error streams from that command will be collected as log record(s).
+
+:::important Prefer purpose-built receivers to Monitoring Jobs
+When available, prefer purpose-built receivers like `sqlquery` to monitoring jobs receiver. The below example is about monitoring job configuration that runs SQL queries using the `psql` tool for demonstration purposes as it is well understood.
+:::
+
+This configuration configures the controller to execute the `psql` command and collects the output text as logs. See the [Monitoring Job Receiver documentation][monitoring_job_receiver_docs] for configuration specifics including advanced output processing with features like multi-line log detection, timestamp, and field parsing.
+
+```yaml
+receivers:
+  monitoringjob/logs_table:
+    schedule:
+        interval: 10m
+    exec:
+        command: psql
+        arguments:
+            - '--csv'
+            - '-c'
+            - "select log_id, log_text from logs_table WHERE log_time > (NOW() - interval '10 minutes');"
+service:
+  pipelines:
+    logs/postgresql:
+      receivers:
+        - monitoringjob/logs_table
+      processors:
+        - memory_limiter
+        - resourcedetection/system
+        - batch
+      exporters:
+        - sumologic
+```
+
+[collector_components_docs]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components
 [filelog_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/filelogreceiver/README.md
 [json_parser_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/json_parser.md
 [windows_event_log_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/windowseventlogreceiver/README.md
@@ -538,3 +623,4 @@ Make sure you are using collector version `v0.78.0-sumo-0` or higher.
 [tcp_log_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/tcplogreceiver/README.md
 [udp_log_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/udplogreceiver/README.md
 [sqlquery_receiver_docs]: https://github.com/dmolenda-sumo/opentelemetry-collector-contrib/blob/sqlquery-receiver-add-logs-v0.78.0/receiver/sqlqueryreceiver/README.md
+[monitoring_job_receiver_docs]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/receiver/jobreceiver/README.md

@@ -37,7 +37,7 @@ Data from `stdout` and `stderror` streams are collected.
 To configure a Script Source:
 
 1. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource=true` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md)  and restart the Collector.
-1. In Sumo select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.
 1. Select **Script** for the source type.
 1. Enter a **Name** to display for the new Source. Description is optional. Source name metadata is stored in a searchable field called `_sourceCategory`.
@@ -54,7 +54,7 @@ To configure a Script Source:
 
     See details below on the behavior of unfinished script executions related to its frequency.
 
-1. If you'd like to [set a timeout for your script](#when-should-i-set-a-timeout-for-my-script), select **Specify a timeout for your command**. If you don't need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected. 
+1. If you'd like to [set a timeout for your script](#when-should-i-set-a-timeout-for-my-script), select **Specify a timeout for your command**. If you do not need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected. 
 1. For **Command**, select or type a custom command you're going to use.
 
    * To provide a custom command use the delete or backspace key to clear out the selection, then type your command. The command must be in the format: `/path/to/command;file extension` Provide a path and an extension separated by a semicolon (`;`). For example, a Python command:  `/bin/python;py`
@@ -82,7 +82,7 @@ To configure a Script Source:
 
 ## Configuring sourceCategory and sourceHost using variables
 
-Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
+Sumo Logic Collector versions 19.216-22 and later allow you to define Source Category and Source Host metadata values with system environment variables from the host machine.
 
 :::note
 Not all Sources can define a Source Host value.

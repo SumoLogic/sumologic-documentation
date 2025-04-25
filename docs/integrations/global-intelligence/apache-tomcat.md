@@ -1,6 +1,6 @@
 ---
 id: apache-tomcat
-title: Global Intelligence for Apache Tomcat App
+title: Global Intelligence for Apache Tomcat app
 sidebar_label: Global Intelligence for Tomcat
 description: The Global Intelligence for Apache Tomcat app helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache Tomcat servers.
 ---
@@ -9,13 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/web-servers/gi-apache.png')} alt="icon" width="75"/>
 
-Global Intelligence for Apache Tomcat App is a companion to the Apache Tomcat application and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache Tomcat servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput or error issues in Apache Tomcat clusters and avoid operational incidents arising from sub-optimal configurations of Tomcat servers.
+Global Intelligence for Apache Tomcat app is a companion to the Apache Tomcat application and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache Tomcat servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput or error issues in Apache Tomcat clusters and avoid operational incidents arising from sub-optimal configurations of Tomcat servers.
 
-## Data Sources 
+## Data sources 
 
-Global Intelligence for Apache Tomcat App uses logs data from Apache Tomcat clusters. Like the Sumo Logic App for Apache Tomcat, it assumes the NCSA extended/combined log file format for Access logs and the default Apache Tomcat error log file format for error logs. For more details on custom log formats, see [Apache Tomcat Module mod_log_config](https://httpd.apache.org/docs/current/mod/mod_log_config.html).
+Global Intelligence for Apache Tomcat app uses logs data from Apache Tomcat clusters. Like the Sumo Logic app for Apache Tomcat, it assumes the NCSA extended/combined log file format for Access logs and the default Apache Tomcat error log file format for error logs. For more details on custom log formats, see [Apache Tomcat Module mod_log_config](https://httpd.apache.org/docs/current/mod/mod_log_config.html).
 
-## Sample Query 
+## Sample queries 
 
 The following sample query is from the **Average Requests Per Second: My Server v Benchmark** panel of the **GI Tomcat - 02. Load Signals and Contributing Factors** dashboard.
 
@@ -41,18 +41,11 @@ The following sample query is from the **Average Requests Per Second: My Server 
 | sort by date asc
 ```
 
-## Collecting Logs for the Global Intelligence for Tomcat App
+## Collecting logs for the Global Intelligence for Tomcat app
 
 The Sumo Global Intelligence for Tomcat app provides insights into your key Tomcat infrastructure indicators. 
 
-Follow the steps in [Sumo Logic Tomcat Logs](/docs/integrations/web-servers/apache-tomcat#Collecting-Logs-and-Metrics-for-Apache-Tomcat) to configure the collection for Global Intelligence for Tomcat App.
-
-
-## Installing the Global Intelligence for Apache Tomcat App
-
-This section has instructions for installing the Sumo Logic App for Global Intelligence for Apache Tomcat.
-
-{@import ../../reuse/apps/app-install.md}
+Follow the steps in [Sumo Logic Tomcat Logs](/docs/integrations/web-servers/apache-tomcat#collecting-logs-and-metrics-for-apache-tomcat) to configure the collection for Global Intelligence for Tomcat app.
 
 ## Concepts
 
@@ -68,7 +61,18 @@ Distance, between 0 and 1, is a statistical measure of how similar a given entit
 
 For each Apache Tomcat server, hourly signals for the past 7 days are used to construct the benchmark distribution for a given signal such as requests per second. A given server’s hourly readings for each day are compared with the benchmark signals to determine the daily distance from the benchmark. If a server is consistently different from the benchmark, such a server is behaving differently from the population for a given signal. Changes, such as a sudden increase in distance between days are more significant than the absolute value of distance on any given day.   
 
-## Global Intelligence for Apache Tomcat Dashboards
+
+## Installing the Global Intelligence for Apache Tomcat app
+
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
+
+## Viewing Global Intelligence for Apache Tomcat dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Load Signals and Contributing Factors
 
@@ -110,12 +114,14 @@ To do this, first consult the Distance measurement and then the difference betwe
 
 ![screen](/img/global-intelligence/GI-Tomcat-04-Latency-Signals-and-Contributing-Factors.png)
 
-### Dashboard Filters  
+## Upgrade/Downgrade the Global Intelligence for Apache Tomcat app (Optional)
 
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard. 
+import AppUpdate from '../../reuse/apps/app-update.md';
 
-:::note
-You can use filters to drill down and examine the data on a granular level.  One server must be selected for benchmark comparisons to be meaningful.
-:::
+<AppUpdate/>
 
-![screen](/img/global-intelligence/apache-tomcat-filter.png)
+## Uninstalling the Global Intelligence for Apache Tomcat app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

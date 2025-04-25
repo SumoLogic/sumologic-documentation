@@ -2,195 +2,132 @@
 id: salesforce-source
 title: Salesforce Source
 sidebar_label: Salesforce
+tags:
+    - salesforce
+    - cloud-SIEM-enterprise
 ---
 
+import CodeBlock from '@theme/CodeBlock';
+import ExampleJSON from '/files/c2c/salesforce/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/salesforce/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/salesforce/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="75"/>
 
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
 
-:::note
-This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+## Data collected
 
-## Prerequisites: Generate the Salesforce API token
+| Polling Interval | Data |
+| :--- | :--- |
+| 1 hour |  [Event data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
+
+### Polling Interval and Salesforce API Rate Limits
+
+During each polling interval, the Salesforce Source will make a Rest API request to Salesforce. Your Salesforce instance will limit the number of calls that can be made based on an API [Requests limit](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm), which is based on your subscription plan. The Salesforce API uses paging and a [maximum of 2,000 rows](https://help.salesforce.com/articleView?id=000332074&type=1&mode=1) are returned at a time.
+
+## Setup
+
+### Vendor configuration
 
 The Consumer Key and Consumer Secret API tokens from Salesforce are required to configure this source. 
 
-1. The Salesforce Event Monitoring add-on is required to obtain all of the data presented in the app dashboards.  The add-on enables access to all event types in the Salesforce EventLogFile, the LoginEvent object, Transaction Security, and the Event Monitoring Analytics App. For more information, see [Get Started with Event Monitoring](https://trailhead.salesforce.com/en/modules/event_monitoring/units/event_monitoring_intro) and [Enable Event Monitoring](https://help.salesforce.com/articleView?id=Enabling-Event-Monitoring&language=en_US&type=1).
-1. Create a dedicated user and profile for the integration as referred to in [Salesforce documentation](https://help.salesforce.com/articleView?id=000331470&type=1&mode=1).
+1. The Salesforce Event Monitoring add-on is required to obtain all of the data presented in the app dashboards. The add-on enables access to all event types in the Salesforce EventLogFile, the LoginEvent object, Transaction Security, and the Event Monitoring Analytics App. For more information, see [Get Started with Event Monitoring](https://trailhead.salesforce.com/en/modules/event_monitoring/units/event_monitoring_intro) and [Enable Event Monitoring](https://help.salesforce.com/articleView?id=Enabling-Event-Monitoring&language=en_US&type=1).
+1. Create a dedicated user and profile for the integration as referred to in [Create User Profiles](https://help.salesforce.com/s/articleView?id=sf.emergency_response_admin_userprofiles.htm&type=5) and [Add a Single User](https://help.salesforce.com/s/articleView?id=sf.adding_new_users.htm&type=5) sections of the Salesforce Documentation.
 1. Go to the profile created in Step 1 and provide the following permissions required by the source:
-
-   * Under the **Administrative Permissions** page, select **API Enabled** and **Password Never Expires, View All Users, View Setup and Configuration**  
-   * Under **General User Permissions select**  **View Event Log Files** and **Run Reports**.  
-   * Under **Standard Object Permissions** select **Documents.**  
+   * Under the **Administrative Permissions** page, select **API Enabled** and **Password Never Expires, View All Users, View Setup and Configuration**
+   * Under **General User Permissions select**  **View Event Log Files** and **Run Reports**.
+   * Under **Standard Object Permissions** select **Documents.**
    * Also if your Salesforce portal requires a single sign on, you need to bypass this user by unchecking the **Is Single Sign-On Enabled** setting in the profile under the **System Permissions** group.
-
 1. Create a Connected App in Salesforce to generate the “Consumer Key” (client_id) and “Consumer Secret” (client_secret) API tokens if these are not already available. To do so:
-
-   * Login to Salesforce.  
+   * Login to Salesforce.
    * Go to **Setup > Platform Tools > Apps > App Manager**.
    * Select **New Connected App**. Enter the following [Basic Information](https://help.salesforce.com/articleView?id=connected_app_create_basics.htm&type=5).
-
      * **App Name**. Enter a name for your connected app name. For Example, Sumo Logic.
      * **API Name**. It defaults to a version of the app name without spaces. Keep the default value. 
-     * **Contact Email**. Enter your email id.   
+     * **Contact Email**. Enter your email id.
+   * API (Enable OAuth Settings)
+     * Make sure **Enable OAuth Settings** is checked.
+     * Provide the **Callback URL**.
+     * Select **OAuth Scope**. Access and manage your data (API).
+     * Under API (**Enable OAuth Settings**), select **Enable Client Credentials Flow**.
+     * When you understand the security risks, accept the warning (if prompted).
+     * Select **Save** and then **Continue**.
+     * After this step, you will get your Consumer Key ("client_id") and Consumer Secret ("client_secret"), which you will use to configure the Salesforce source.
+     * Find your connected app, click **Manage** ([learn more](https://help.salesforce.com/s/articleView?id=sf.connected_app_client_credentials_setup.htm&type=5)).
+     * Under **Client Credentials Flow**, for **Run As**, click **Search Button**, and find the user that you want to assign the client credentials flow. (For Enterprise Edition orgs, we recommend that you select an execution user who has the API Only User permission.)
+     * Save your changes.
 
-   * API (Enable OAuth Settings)   
-     *  Make sure **Enable OAuth Settings** is checked.
-     *  Provide the  **Callback URL**, For Example, https://login.salesforce.com/services/oauth2/callback
-     *  Select OAuth Scope. Access and manage your data (API)    
-     *  Select **Save** and then **Continue.**
-     *  After this step, you will get your Consumer Key ("client_id") and Consumer Secret ("client_secret") which you will use to configure the Salesforce source.
-
-1. Ensure that you have your Salesforce user token (aka security token) handy as it will be used while configuring the Source.
-
-   * In case, you don’t remember your user token, you can reset it. For more details see the [Reset Your Security     Token](https://help.salesforce.com/articleView?id=user_security_token.htm&type=5) document.
-   * When a user resets their password, a new security token is sent automatically to their email address.
-
-### Create a Salesforce Source
+### Source configuration
 
 When you create a Salesforce Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Salesforce Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Salesforce**.
-
-   ![Salesforce.png](/img/send-data/Salesforce.png)
-1. Enter a **Name **for the Source in the Sumo Logic console. The description is optional.**
-
-   ![IMG.png](/img/send-data/salesforce-source.png)
-
+1. Enter a **Name** for the Source in the Sumo Logic console. The description is optional.
 1. For **Source Category (Optional)**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM.** Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the Forward to SIEM option the following metadata fields are set automatically by the integration (Do not include below fields as custom log metadata Fields):
-
-   * `_siemVendor`: Salesforce
-   * `_siemProduct`: Salesforce
-   * `_siemFormat`: JSON       
-
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-1. **SignOn URL.** Enter your Sign on URL, e.g.  https://login.salesforce.com/services/oauth2/token.
-1. **User Name.** Enter the username that you used to login to Salesforce.
-1. **Password.** Enter the password associated with the above username.
+1. **SignOn URL.** Enter your Sign on URL. For example, `https://<MyDomainName>.my.salesforce.com/services/oauth2/token`.
 1. **Client ID.** Enter the Consumer Key of the ConnectedApp. 
 1. **Client Secret.** Enter the Consumer Secret of the ConnectedApp. 
-1. **User Token**: Enter the user token.  
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
- :::note
- {@import ../../../reuse/collection-should-begin-note.md}
- :::
+    :::note
+    <CollBegin/>
+    :::
 1. When you are finished configuring the Source, click **Submit**.
 
-### Polling Interval and Salesforce API Rate Limits
+## Metadata fields
 
-During each polling interval, the Salesforce Source will make a Rest API request to Salesforce. Your Salesforce instance will limit the number of calls that can be made based on an API [Requests limit*,*](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm) which is based on your subscription plan. The Salesforce API uses paging
-and a [maximum of 2,000 rows](https://help.salesforce.com/articleView?id=000332074&type=1&mode=1) are returned at a time.
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemVendor` | `Salesforce` | Set when **Forward To SIEM** is checked. |
+| `_siemProduct` | `Salesforce` | Set when **Forward To SIEM** is checked. |
+| `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
 
-### States
-
-The Salesforce Source reports errors, its health, and initialization status. Other than indicating that the source is healthy, you are also informed, in real-time, if the source is running into trouble communicating with Salesforce REST API, or if there's an error that requires user action indicated by Sumo Logic Health Events.
-
-A Salesforce Source goes through the following states when created:
-
-1. **Pending**. Once the Source is submitted, details are stored and the source is placed in a **Pending** state.
-1. **Started**. A collection task is created on the hosted collector.
-1. **Initialized**. Task configuration is complete in Sumo Logic.
-1. **Authenticated**. The Source has successfully authenticated with Salesforce
-1. **Collecting**. The Source is actively collecting data from Salesforce.
-
-If the Source has any issues during any one of these states, it is placed in an **Error** state.
-
-![Error_State.png](/img/send-data/Error_State.png)
-
-Hover your mouse over the status icon to view a tooltip with details on the detected issue.
-
-![Error_Status.png](/img/send-data/salesforce-error-status.png)
-
-When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
-
-On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.
-
-### Error Types
-
-When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
-
-| Type | Reason | Retries | Retry Behavior | Health Event Name |
-|:--|:--|:--|:--|:--|
-| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                                                      | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
-
-### Restarting your Source
-
-{@import ../../../reuse/restart-c2c-source.md}
-
-
-### JSON Configuration
+## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
-| Parameter | Type | Required | Description | Access |
+| Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| config            | JSON Object  | Yes | Contains the configuration parameters for the Source. |   |
-| schemaRef         | JSON Object  | Yes | Use `{"type":"Salesforce"}` for a Salesforce. | not modifiable |
-| sourceType        | String       | Yes | Use `Universal` for a Salesforce Source. | not modifiable |
+| schemaRef | JSON Object  | `{"type":"Salesforce"}` | Yes | Define the specific schema type. |
+| sourceType | String | `"Universal"` | Yes | Type of source. |
+| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
-The following table shows the **config** parameters for a Salesforce
-Source.
+### Configuration Object
 
-| Parameter | Type | Required? | Default | Description | Access |
+| Parameter | Type | Required | Default | Description | Example |
 |:--|:--|:--|:--|:--|:--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
-| `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
-| `password` | String | Yes |  | Type the Salesforce login password for the username. | modifiable |
-| `username` | String | Yes |  | Type the Salesforce login username. | modifiable |
-| `start_time` | String | No | Now | Type the collection start time. Available options are Now, 24 Hours ago, 2 Days ago, 3 Days ago, 4 Days ago, 5 Days ago. | modifiable |
-| `client_id` | String | True | | Type in Consumer Key of the ConnectedApp. | modifiable |
-| `client_secret` | String | True |  | Type in Consumer Secret of the ConnectedApp. | modifiable |
-| `user_token` | String | True |  | Type in the  Salesforce user token. | modifiable |
-| `inmemory_lookup` | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.| modifiable |
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| start_time | String | No | Now | Type the collection start time. Available options are Now, 24 Hours ago, 2 Days ago, 3 Days ago, 4 Days ago, 5 Days ago. |  |
+| client_id | String | True |`null` | Type in Consumer Key of the Connected App. |  |
+| client_secret | String | True | `null` | Type in Consumer Secret of the Connected App. |  |
+| inmemory_lookup | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.|  |
 
-### Salesforce Source JSON example:
+### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Salesforce"
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "config":{
-      "signon_url":"https://login.salesforce.com/services/oauth2/token",
-      "name":"TestSalesforceSrc",
-      "client_secret":"********",
-      "description":"Test Salesforce source",
-      "client_id":"3MVG9VeAQy5y3BQWhBnxmQyadGTCNr2zbO.TEep4g6Wik9ZEdlgREnNrGBs680cYVdTjw8SlWv2qVoNgYGddS",
-      "user_token":"********",
-      "inmemory_lookup":true,
-      "password":"********",
-      "fields":{      
-        "_siemForward":false
-      },
-      "category":"cnc/salesforce_logs",
-      "username":"testuser@sumologic.com",
-      "start_time":"24 Hours ago"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+<a href="/files/c2c/salesforce/example.json" target="_blank">Download example</a>
+
+### Terraform example
+
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+<a href="/files/c2c/salesforce/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 
@@ -200,87 +137,115 @@ After you configure your Source, you should check the status of the source in th
 
 The following section details how you can resolve various errors: 
 
-**Error:** Object type 'Document' is not supported
+### No client credentials user enabled
 
-To resolve this: 
+**Error**: `{\"error\":\"invalid_grant\",\"error_description\":\"no client credentials user enabled\"}`. This is due to incorrect policies and permissions for authorization.
+
+**Solution**: To resolve this, if you have migrated your source from v2.1.1 to v3.x.x, make sure to follow the steps mentioned in **Vendor Configuration** section related to client credentials with attention.
+
+### Object type 'Document' is not supported
+
+**Error**: Object type 'Document' is not supported
+
+**Solution**:
 
 1. In Salesforce, go to **Setup\>Administration\>Users\>Profile\>New Profile / Edit Profile**.
 1. Under **Standard Object Permissions** \> **Documents** select **Read** permission click on the **Save** button. 
 1. Now assign this profile to the user, whose credentials you have configured as part of the Salesforce Source.
 
-**Error** : Object type 'Report' is not supported
+### Object type 'Report' is not supported
 
-To resolve this:
+**Error**: Object type 'Report' is not supported
+
+**Solution**:
 
 1. Go to **Setup\>Administration\>Users\>Profile**.
 1. Edit specific Profile which is assigned to the user
 1. Go to: **General User Permissions** and enable / disable **Run Reports**. **Run Reports** should be enabled for access to REPORT
 
-**Error** : Object type 'EventLogFile' is not supported
+### Object type 'EventLogFile' is not supported
 
-To resolve this:
+**Error**: Object type 'EventLogFile' is not supported
+
+**Solution**:
 
 1. Go to **Setup\>Administration\>Users\>Permission Sets**.
-1. Create New Permission Set and assign to user or Edit specific Permission Set which is assigned to user
-1. At the bottom click **System Permissions**
-1. Check **API Enabled**
-1. Check **View Event Log Files**
-1. Save it
+1. Create New Permission Set and assign to user or Edit specific Permission Set which is assigned to user.
+1. At the bottom click **System Permissions**.
+1. Check **API Enabled**.
+1. Check **View Event Log Files**.
+1. Save it.
 
-:::note 
+:::note
 If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
 :::
+
+### Object type ‘SetupAuditTrail’ is not supported
 
 **Error**: Object type ‘SetupAuditTrail’ is not supported
 
-To resolve this:
+**Solution**:
 
 1. Go to **Setup\>Administration\>Users\>Profile**.
 1. Edit specific Profile which is assigned to the user
-1. Go to: **Administrative Permissions** and enable / disable **View Setup and Configuration**. **View Setup and Configuration** should be enabled for access to SetupAuditTrail
+1. Go to **Administrative Permissions** and enable / disable **View Setup and Configuration**. **View Setup and Configuration** should be enabled for access to SetupAuditTrail.
 
-:::note 
+:::note
 If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
 :::
 
-**Error** : Token Endpoint must match the format `"https://<hostname>/services/oauth2/token"`. This is due to incorrect source configuration.
+### Token endpoint mismatch
 
-To resolve this:
+**Error**: Token Endpoint must match the format `"https://<hostname>/services/oauth2/token"`. This is due to incorrect source configuration.
 
-1. Provide the correct "SignOn Url". 
+**Solution**: Provide the correct "SignOn Url". 
 
-**Error** : `{"error":"invalid_grant","error_description":"authentication failure"}`   This is due to incorrect source configuration.
+### Client identifier invalid
 
-To resolve this:
+**Error**: `{"error":"invalid_client_id","error_description":"client identifier invalid"}`. This is due to incorrect source configuration.
 
-1. Provide the correct “User Name”, Password, “User Token”.
+**Solution**: Provide the correct “Client ID”.
 
- 
+### Invalid client credentials
 
-**Error** : `{"error":"invalid_client_id","error_description":"client identifier invalid"}`   This is due to incorrect source configuration.
+**Error**: `{"error":"invalid_client","error_description":"invalid client credentials"}`. This is due to incorrect source configuration.
 
-To resolve this:
+**Solution**: Provide the correct “Client Secret”. 
 
-1. Provide the correct “Client ID”.
+### Unknown error: Retry your request
 
- 
-**Error** : `{"error":"invalid_client","error_description":"invalid client credentials"}`   This is due to incorrect source configuration.
+**Error**: `{"error":"unknown_error","error_description":"retry your request"}`. This is due to an invalid SignOn Url.
 
-To resolve this:
+**Solution**: Change it from login.salesforce.com to `<instanceURL>.salesforce.com`
 
-1. Provide the correct “Client Secret” 
+### More Memory Required
 
- 
-**Error** : `{"error":"unknown_error","error_description":"retry your request"}`   This is due to an invalid SignOn Url.
+**Error**: MoreMemoryRequired: Available: 100 FileSize: 200. Please create a support ticket.
 
-To resolve this:
+**Solution**: Create a support ticket with sumo logic to increase the memory for your container.
 
-1. Change it from login.salesforce.com to `<instanceURL>.salesforce.com`
+### Inconsistencies in Field Values
 
- 
+**Error**: Inconsistencies in `DASHBOARD_ID_DERIVED_LOOKUP` Field Values
 
-**Error** : MoreMemoryRequired: Available: 100 FileSize: 200.Please create a support ticket.
+You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has value, but in other logs, it's completely empty. This could be because of a problem with permissions.
 
-To resolve this:
+**Solution**:
 
-1. Please create a support ticket with sumo logic to increase the memory for your container.
+1. In Salesforce, go to **Setup\>Administration\>Users\>Profile**.
+1. Click the **Edit** button for the user's profile you set up for the Salesforce Source.
+1. In the **Administrative Permissions** section, check the box for **Manage Reports in Public Folders** permission.
+1. In the **General User Permissions** section, check the box for **View My Team's Dashboards** permission.
+1. Click the **Save** button
+
+### Request not supported on this domain
+
+**Error**: `invalid_grant`
+
+**Solution**: Check your sign-on URL. If your sign-on URL is set to `https://login.salesforce.com/services/oauth2/token` you likely need to change it to another value, such as `https://<MyDomainName>.my.salesforce.com/services/oauth2/token`.
+
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+:::

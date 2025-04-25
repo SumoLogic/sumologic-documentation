@@ -11,8 +11,9 @@ Pre-configured dashboards available for application components solve many common
 * Reviewing the overall health of specific components to quickly narrow down the scope of troubleshooting.
 * Minimizing the troubleshooting time by providing all relevant information in the right context.
 
-:::caution Limitations
+:::warning Limitations
 This solution is currently supported for the following apps only:
+* [Couchbase](/docs/integrations/databases/couchbase)
 * [Cassandra](/docs/integrations/databases/cassandra)
 * [Elasticsearch](/docs/integrations/databases/elasticsearch)
 * [MongoDB](/docs/integrations/databases/mongodb)
@@ -30,7 +31,7 @@ This solution is currently supported for the following apps only:
 To use the Application Components Solution, you'll need to install a Terraform automation script.
 
 The Terraform script performs the following actions:
-* Creates Application Components View hierarchy in Explore.
+* Creates Application Components View hierarchy in [monitoring dashboards](/docs/dashboards/explore-view/).
 * Sets up Sumo Logic Field Extraction Rules ([FERs](/docs/manage/field-extractions)) to enrich the data.
 * Installs Sumo Logic Apps(Database apps and App Components app) in the Admin recommended folder.
 * Creates [Fields](/docs/manage/fields).
@@ -38,7 +39,7 @@ The Terraform script performs the following actions:
 
 ## Ensure Account Access
 
-1. Before you begin, make sure you have access to the Sumo logic console. You'll need the following permissions:
+1. Before you begin, make sure you have access to the Sumo Logic console. You'll need the following permissions:
    * Manage field extraction rules
    * View Fields
    * View field extraction rules
@@ -46,44 +47,46 @@ The Terraform script performs the following actions:
    * View Collectors
    * Manage Fields
    * Manage connections
-   * Manage Content
-If you want to deploy in the Admin Recommended folder, you may need [Content Admin](/docs/manage/content-sharing/admin-mode) role.
-1. Using these [instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+   * Manage Content<br/>
+   If you want to deploy in the Admin Recommended folder, you may need the [Content Admin](/docs/manage/content-sharing/admin-mode) role.
+1. Using instructions in [Access Keys](/docs/manage/security/access-keys), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 
 ### Set up your Terraform environment
 
-1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later. To check the installed Terraform version, run the following command:
- ```bash
- terraform --version
- ```
+1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later. To check your installed Terraform version, run the following command:
+   ```bash
+   terraform --version
+   ```
 2. Install the latest version of [curl](https://curl.haxx.se/download.html).
 3. Install the latest version of the [jq command-line JSON parser](https://github.com/stedolan/jq/wiki/Installation). This is required for running the fields.sh batch file.
 
 ### Configure your Terraform script
 
 1. Clone the following Sumo Logic repository:
- ```bash
- git clone https://github.com/SumoLogic/sumologic-solution-templates
- ```
+   ```bash
+   git clone https://github.com/SumoLogic/sumologic-solution-templates
+   ```
 1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/app-components](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/application-components) and then running:
-  ```bash
-  terraform init
-  ```
-  This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/sumologic/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
-1. By default, all other parameters are set up to automatically collect logs, metrics, install apps and monitors. If you need to override parameters, you can configure or override additional parameters in the [ main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.tf).
+   ```bash
+   terraform init
+   ```
+
+This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/sumologic/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), and [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
+
+By default, all other parameters are set up to automatically collect logs and metrics, and install apps and monitors. If you need to configure or override additional parameters, you can do so in the [main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.tf).
 
 ### Configure Required Parameters
 
 **Parameter**: `sumologic_environment`<br/>
 **Required**: Yes <br/>
-**Description**: This is your Sumo Logic Deployment. Enter au, ca, de, eu, jp, us2, in, fed or us1. See <a href="/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security">Sumo Logic Endpoints</a> for more information.
+**Description**: This is your Sumo Logic Deployment. Enter au, ca, de, eu, jp, us2, fed, or us1. See <a href="/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security">Sumo Logic Endpoints</a> for more information.
 
 ---
 **Parameter**: `sumologic_access_id`<br/>
 **Required**: Yes <br/>
-**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/security/access-keys#Create_an_access_key">Create an access key</a> for more information.
+**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/security/access-keys#create-an-access-key">Create an access key</a> for more information.
 
 ---
 **Parameter**: `sumologic_access_key`<br/>
@@ -101,7 +104,7 @@ If you want to deploy in the Admin Recommended folder, you may need [Content Adm
 
 **Parameter**: `apps_folder_installation_location` <br/>
 **Required**: No <br/>
-**Description**: Specify the location where the sumo logic apps/dashboards will be installed. Allowed values are "Admin Recommended Folder" and "Personal Folder".
+**Description**: Specify the location where the Sumo Logic apps/dashboards will be installed. Allowed values are "Admin Recommended Folder" and "Personal Folder".
 
 ---
 **Parameter**: `share_apps_folder_with_org` <br/>
@@ -111,12 +114,12 @@ If you want to deploy in the Admin Recommended folder, you may need [Content Adm
 ---
 **Parameter**: `components_on_kubernetes_deployment` <br/>
 **Required**: No <br/>
-**Description**: Provide comma separated list of application components deployed on kubernetes environment for which sumologic resources needs to be created. Allowed values are "Memcached, Cassandra,elasticsearch,SQL server, MongoDB, MySQL, PostgreSQL, Redis, MariaDB, Couchbase, Oracle".
+**Description**: Provide comma separated list of application components deployed on kubernetes environment for which Sumo Logic resources needs to be created. Allowed values are "Memcached, Cassandra,elasticsearch,SQL server, MongoDB, MySQL, PostgreSQL, Redis, MariaDB, Couchbase, Oracle".
 
 ---
 **Parameter**: `components_on_non_kubernetes_deployment` <br/>
 **Required**: No <br/>
-**Description**: Provide comma separated list of application components deployed on non-kubernetes environment for which sumologic resources needs to be created. Allowed values are "Memcached, Cassandra, Elasticsearch, SQLserver, MongoDB, MySQL, PostgreSQL, Redis, MariaDB, Couchbase, Oracle".
+**Description**: Provide comma separated list of application components deployed on non-kubernetes environment for which Sumo Logic resources needs to be created. Allowed values are "Memcached, Cassandra, Elasticsearch, SQLserver, MongoDB, MySQL, PostgreSQL, Redis, MariaDB, Couchbase, Oracle".
 
 ### Configure Monitor parameters
 
@@ -180,7 +183,7 @@ As part of configuring the Application Components solution, we need to create fi
  export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
  export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
  ```
- Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+ Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: au, ca, de, eu, jp, us2, fed, or us1. For more information on Sumo Logic deployments, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 * Run fields.sh using this command:
  ```
  sh fields.sh
@@ -196,10 +199,10 @@ Deploy the Application Components Solution using the Sumo Logic Terraform Script
 Navigate to the directory [sumologic-solution-templates/application-components/](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components/) and execute the following commands:
 
 1. Run `terraform validate`. This will validate the configuration files in the directory.
-2. Run `terraform plan` to view the sumo resources like monitors,apps,fers,fields and hierarchy which will be created/modified by Terraform.
+2. Run `terraform plan` to view the Sumo Logic resources like monitors,apps,fers,fields and hierarchy which will be created/modified by Terraform.
 3. Run `terraform apply`.
 
-At the end of the console output, you should see two links, one for Apps Folder and the other for Monitors Folder. You can click on them to go to the sumo logic portal and view the dashboards and monitors. In case you missed noting down the links after deployment, you can run the `terraform show` command to see those output values again.
+At the end of the console output, you should see two links, one for Apps Folder and the other for Monitors Folder. You can click on them to go to the Sumo Logic portal and view the dashboards and monitors. In case you missed noting down the links after deployment, you can run the `terraform show` command to see those output values again.
 
 
 ## Post Installation
@@ -207,6 +210,7 @@ At the end of the console output, you should see two links, one for Apps Folder 
 ### Configure Metrics and Logs Collection
 
 Refer to the documentation for the app you're using. App Components Solution currently supports:
+* [Couchbase](/docs/integrations/databases/couchbase)
 * [Cassandra](/docs/integrations/databases/cassandra)
 * [Elasticsearch](/docs/integrations/databases/elasticsearch)
 * [MongoDB](/docs/integrations/databases/mongodb)
@@ -251,18 +255,15 @@ Sometimes if the fields are used in other resources like FERs, other collection 
 
 ## View Application Components Dashboards and Alerts
 
-This section shows how to use Explore and navigate Application Components hierarchy to view the pre configured dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+This section shows how to use the [monitoring dashboards](/docs/dashboards/explore-view/) to navigate Application Components hierarchy to view the pre configured dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
 
 ### Navigate Application Components View
 
-Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuitive visual representation of your environment.
-
-To open Explore and Application Components View:
-1. Log in to Sumo Logic and click **+ New** on the top menu bar.
-1. From the dropdown menu, choose **Explore**. The Explore navigation panel appears on the left.
-1. Click the **Explore By** arrow and select **Application Components View** from the dropdown menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
-1. With the Application Components view selected in Explore, select an environment to view a list of its components.
+To open the Application Components View:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  
+1. In the upper-left corner of the screen, select **Application Components View** from the dropdown menu. An expandable list of your AWS environment hierarchy appears in the panel.
+1. Select an environment to view a list of its components.
 **Application Components - Environments Overview** appears on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
 1. Similarly from the expanded environment select a component.
 The **Application Components - Database System Overview** dashboard appears in the window on the right. The dashboard provides an at-a-glance view of the different database engines present in the database component and insights on errors occurring across different engines.
@@ -288,6 +289,6 @@ See the [RESOURCES.md file](https://github.com/SumoLogic/sumologic-solution-temp
 #### If I already have data flowing into Sumo Logic, how do I migrate to this solution?
 Existing customers have to perform the below steps:
 1. Add `db_cluster_address` and `db_cluster` port in their telegraf configuration as mentioned in the respective component’s collection doc. This is for tagging metrics.
-2. Add `db_cluster_address` and `db_cluster_port` in the sumologic source for logs as mentioned in the respective component’s collection doc.
+2. Add `db_cluster_address` and `db_cluster_port` in the Sumo Logic source for logs as mentioned in the respective component’s collection doc.
 3. Import the existing fields using fields.sh script in Step 4 and follow Step 1, 2, 3, and 5 under [Installation](#installation) to deploy the solution.
 4. The above step will deploy new dashboards and new monitors, so after migrating your custom content to these new dashboards, you can delete old FERs and dashboards.

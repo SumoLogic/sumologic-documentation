@@ -1,0 +1,20 @@
+{
+    "api.version": "v1",
+    "source": {
+        "schemaRef": {
+            "type": "Tenable"
+        },
+        "config": {
+            "name": "Tenable",
+            "description": "East field",
+            "access_key": "********",
+            "secret_key": "********",
+            "supported_apis": ["Vulnerability Data","Audit Logs","Asset Data"],
+            "fields": {
+                "_siemForward": false
+            },
+            "category": "eastTeamF"
+        },
+        "sourceType": "Universal"
+    }
+}

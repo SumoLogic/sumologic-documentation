@@ -16,7 +16,7 @@ Amazon Connect is an open platform that you can integrate with other enterprise 
 
 For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/connect/latest/adminguide/monitoring-cloudwatch.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/connect/latest/adminguide/logging-using-cloudtrail.html)
 

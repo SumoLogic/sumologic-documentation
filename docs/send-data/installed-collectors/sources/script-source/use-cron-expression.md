@@ -16,7 +16,7 @@ Sumo Logic supports the Quartz CRON framework.
 
 To use a CRON Expression in a Script Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Add Source** for the Collector you choose.
 1. Select **Script** for the Source type.
 1. Enter the source name, description (optional), source host, and source category.
@@ -24,7 +24,7 @@ To use a CRON Expression in a Script Source:
 
     ![img](/img/send-data/other-cron-1.png)
 
-1. If you'd like to set a timeout for your script, select **Specify a timeout for your command**. If you don't need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected. Learn more in [Configuring a Script Source](/docs/send-data/installed-collectors/sources/script-source).
+1. If you'd like to set a timeout for your script, select **Specify a timeout for your command**. If you do not need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected. Learn more in [Configuring a Script Source](/docs/send-data/installed-collectors/sources/script-source).
 1. For Command, choose the type of command you're going to use. The options in this menu depend on the type of Collector you're using:
 
     * Mac/Linux Command options.

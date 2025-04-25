@@ -27,7 +27,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Check box**. Check box is two words. Don't use checkbox.
 
-**Classic UI**. Use this term to distinguish the old UI.
+**Classic UI**. Use this term to clarify that you're talking about the legacy UI.
 
 **Click**. You click a UI element. Do not use "click on".
 
@@ -37,10 +37,6 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Column**. When referring to a column in a Dashboard, the term is not capitalized unless it's the only word in a line of UI (for example, in the Add to Dashboard dialog box "Column" is capitalized). The word "column" doesn't appear in the main Dashboard UI.
 
-**Continuous intelligence**. Continuous intelligence is not a proper
-noun. Initial cap for “continuous” only applies when it starts a sentence.
-
-**Continuous Intelligence Platform&#8482;**. Continuous Intelligence Platform&#8482; is a designated company tagline and a proper noun. Always title case and include the trademark symbol on first mention in a doc.
 
 
 ## D
@@ -56,7 +52,7 @@ noun. Initial cap for “continuous” only applies when it starts a sentence.
 **Drill down**. Drill down, as in a menu, or other filtering feature is two words, not one.
 
 **Dropdown**.
-   * Use drop-down (Adjective). Example: Choose your favorite model from a *drop-down* menu. 
+   * Use drop-down (Adjective). Example: Choose your favorite model from a *drop-down* menu.
    * Use dropdown (Noun). Example: Select a source category from the *dropdown*. Do not use drop down (two words).
 
 :::info
@@ -69,7 +65,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
 
-**Em dash**. We don't use this often, but if you need to use it, insert the em dash symbol (—), don't use a double hyphen (–).
+**Em dash**. We do not use this often, but if you need to use it, insert the em dash symbol (—), do not use a double hyphen (–).
 
 **Exclamation points !**. Use exclamation points only in warnings and greetings. Let your text convey the enthusiasm or importance of the statement. Don't make the reader wait until the exclamation point to find out the text is significant.
 
@@ -91,7 +87,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Home Page**. Persistent tab, which services the Jiro and Hibachi projects by helping users get started and discover content more easily.
 
-**Hosted Collectors**. Hosted Collectors don't require installation or activation, nor do they have physical requirements, since they're hosted in HTTP Source, an endpoint for receiving a file (or a batch of files) uploaded via a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Sources as you'd like to a single Hosted Collector.
+**Hosted Collectors**. Hosted Collectors do not require installation or activation, nor do they have physical requirements, since they're hosted in HTTP Source, an endpoint for receiving a file (or a batch of files) uploaded via a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Sources as you'd like to a single Hosted Collector.
 
 
 ## I
@@ -117,7 +113,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Markdown**. Used in Text Panels. Capitalize Markdown.
 
-**MB and Mbit. **MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
+**MB and Mbit.** MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
 
 **Menu**. When referring to a menu in the UI, use the word menu alone. Don't use dropdown menu, list, or selector.
 
@@ -135,6 +131,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Operators**. When referring to a search operator, capitalize the operator's name only if it begins a sentence.
 
+**Org** / **Organization**. Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
 
 ## P
 
@@ -161,7 +158,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Saved search**. Saved search is not capitalized.
 
-**Scheduled search. **Scheduled search is not capitalized.
+**Scheduled search.** Scheduled search is not capitalized.
 
 **Search**. Search is not capitalized, unless you are referring to the Search page.
 
@@ -204,10 +201,10 @@ Hosted Collectors can use:
 
 **Time range**. Time range is two words, not one.
 
-**Time series. **Time series is two words, not one.
+**Time series.** Time series is two words, not one.
 
 **Time slice**. Time slice is two words, not one.
- 
+
 **Timestamp**. Timestamp is one word.
 
 **Time zone**. Time zone is two words, not one.

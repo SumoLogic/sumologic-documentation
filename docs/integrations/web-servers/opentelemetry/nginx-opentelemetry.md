@@ -2,7 +2,7 @@
 id: nginx-opentelemetry
 title: Nginx - OpenTelemetry Collector
 sidebar_label: Nginx - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Nginx.
+description: Learn about the Sumo Logic OpenTelemetry app for Nginx.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,9 +11,12 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="75"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-Nginx is a web server used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The Sumo Logic App for Nginx helps you monitor activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used, and information about server activity, including bots, observed, and error information.
+Nginx is a web server used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The Sumo Logic app for Nginx helps you monitor activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used, and information about server activity, including bots, observed, and error information.
 
-The app has been tested with Nginx version: 1.19.8, 1.21.4, 1.23.1.
+The app has been tested with Nginx version: 
+- `1.19.8` 
+- `1.21.4` 
+- `1.23.1`
 
 We use the OpenTelemetry collector for Nginx metric collection and for collecting Nginx logs.
 
@@ -23,36 +26,72 @@ The diagram below illustrates the components of the Nginx collection for each we
 
 OpenTelemetry collector runs on the same host as Nginx, and uses the [Nginx Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver) to obtain Nginx metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Nginx logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-## Log Types and Metrics
+:::info
+This app includes [built-in monitors](#nginx-alerts). For details on creating custom monitors, refer to [Create monitors for Nginx app](#create-monitors-for-nginx-app).
+:::
 
-The Sumo Logic App for Nginx assumes:
+## Log and metrics types
+
+The Sumo Logic app for Nginx assumes:
 
 - Nginx app supports the default access logs and error logs format.
 - For a list of metrics that are collected and used by the app, see [Nginx Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/nginxreceiver/documentation.md).
 
 ## Fields Creation in Sumo Logic for Nginx
 
-Following are the [Fields](/docs/manage/fields/) which will be created as part of Nginx App install if not already present.
+Following are the [Fields](/docs/manage/fields/) which will be created as part of Nginx app installation, if not already present.
 
 - `webengine.cluster.name`. User configured.Enter a name to uniquely identify your Nginx web server cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - `webengine.node.name`. Has value of host name.
-- `webengine.system`. Has fixed value of nginx.
-- `sumo.datasource`. Has fixed value of nginx.
+- `webengine.system`. Has fixed value of `nginx`.
+- `sumo.datasource`. Has fixed value of `nginx`.
 
 ## Prerequisites
+
+### For metrics collection 
+
+- This collection fetches stats from a Nginx Web Server instance using the `/status` endpoint. The app has been tested with Nginx versions 1.19.8, 1.21.4, and 1.23.1.
+
+- You must configure NGINX to expose status information by editing the NGINX configuration. Refer to [ngx_http_stub_status_module](http://nginx.org/en/docs/http/ngx_http_stub_status_module.html) guide to configure the NGINX stats module ngx_http_stub_status_module.
+
+### For logs collection 
 
 * Configure your Nginx server to expose status endpoint for collecting metrics: The receiver used gets stats from an Nginx Web Server instance using the status endpoint. In order to receive server statistics, you must configure the server's nginx.conf file to [enable status support](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver#configuration).
 * Configure and retrieve access and error log files: Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/).
 
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up OpenTelemetry Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Collector.png' alt="Access" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Collector.png' style={{border:'1px solid gray'}} alt="Access" />
 
 ### Step 2: Configure integration
 
@@ -67,11 +106,13 @@ Below are the inputs required:
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-YAML.png' alt="Nginx-YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-YAML.png' style={{border:'1px solid gray'}} alt="Nginx-YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -80,6 +121,9 @@ Click on the **Download YAML File** button to get the yaml file.
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -109,11 +153,40 @@ Click on the **Download YAML File** button to get the yaml file.
   ```
 
 </TabItem>
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Viewing Nginx Dashboards
+<LogsOutro/>
+
+## Viewing the Nginx dashboards
+
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Overview
 
@@ -165,11 +238,7 @@ You can use schedule searches to send alerts to yourself whenever there is an ou
 
 ### Threat Intel
 
-The **Nginx - Threat Intel** dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
-
-Use this dashboard to:
-
-- Gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
+The **Nginx - Threat Intel** dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats. Use this dashboard to gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Threat-Intel.png' alt="Access" />
 
@@ -197,11 +266,7 @@ Use this dashboard to:
 
 ### Visitor Locations
 
-The **Nginx - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
-
-Use this dashboard to:
-
-- Gain insights into geographic locations of your user base. This is useful for resource planning in different regions across the globe.
+The **Nginx - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time. Use this dashboard to gain insights into geographic locations of your user base. This is useful for resource planning in different regions across the globe.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Visitor-Locations.png' alt="Access" />
 
@@ -226,3 +291,19 @@ Use this dashboard to:
 - Gain information about the total requests handled by Nginx Server per second. This helps you understand read, write requests on Nginx Server.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Connections-and-Requests-Metrics.png' alt="Connections and Requests Metrics" />
+
+## Create monitors for Nginx app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Nginx alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Nginx - Access from Highly Malicious Sources Alert` | This alert gets triggered when an Nginx server is accessed from highly malicious IP addresses. | Count > = 1 | Count < 1 |
+| `Nginx - Critical Error Messages Alert` | This alert gets triggered when we detect critical error messages for a given Nginx server. | Count > = 1 | Count < 1 |
+| `Nginx - High Client (HTTP 4xx) Error Rate Alert` | This alert gets triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count > = 1 | Count < 1 |
+| `Nginx - High Number of Active Connections Alert` | This alert gets triggered when there are many number of active connections. | Count > = 100 | Count < 100 |
+| `Nginx - High Server (HTTP 5xx) Error Rate Alert` | This alert gets triggered when there are too many HTTP requests (>5%) with a response status of 5xx. | Count > = 1 | Count < 1 |

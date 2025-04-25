@@ -1,14 +1,16 @@
 ---
 id: onboarding-checklists
 title: Onboarding Checklists
+sidebar_label: Onboarding checklists
 description: Onboarding Checklists for Analysts and Administrators.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This document provides a high-level checklist of onboarding tasks for Administrators and Analysts (non-admins). To determine whether your role is Analyst or Administrator, go to the left nav, then click your name > **Preferences**.
+This document provides a high-level checklist of onboarding tasks for Administrators and Analysts (non-admins). To determine whether your role is Analyst or Administrator:
 
-<img src={useBaseUrl('img/get-started/check-role.png')} alt="icon" width="500"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. 
+1. In your profile, view the roles you are assigned. <br/><img src={useBaseUrl('img/get-started/check-role.png')} alt="Check role" width="500" style={{border: '1px solid gray'}} width="300" />
 
 
 ## Onboarding Checklist for Analysts
@@ -51,28 +53,28 @@ Once you have created search queries, you can visualize your data using charts, 
 * [Dashboards](/docs/dashboards). Dashboards contain a collection of Data Panels that provide a graphical representation in the form of a chart of your organization's data, along with Text and Title Panels that allow you to add context to the data in the Dashboard. The information you save in a Dashboard provides insight into the current state of the data you're uploading to Sumo Logic. Instead of having to run a number of queries, Sumo Logic runs these searches automatically, making sure that you're never looking at stale data.
 * [Using the Library](/docs/get-started/library). The Library provides a central location for shared and saved content in your Sumo Logic account, as well as content shared by others in your organization. All Sumo Logic Apps are available through the Library.
 * [Share a Dashboard from the Library](../dashboards/share-dashboard-new.md). Publishing a Dashboard from the Library is a great way to keep everyone on top of data that is important to your organization.
-* [Share a Dashboard](/docs/dashboards-classic/share-dashboard-inside-org.md). When you share or publish a Dashboard, the default is that users will see exactly the same view as the person who created the Dashboard. If the user viewing the Dashboard has different RBAC permissions than the owner, the user will temporarily assume the RBAC permissions of the owner when they're viewing the Dashboard.
+* [Share a Dashboard](/docs/dashboards/share-dashboard-new). When you share or publish a Dashboard, the default is that users will see exactly the same view as the person who created the Dashboard. If the user viewing the Dashboard has different RBAC permissions than the owner, the user will temporarily assume the RBAC permissions of the owner when they're viewing the Dashboard.
 
 ### Monitoring
 
 * [Save a Search](/docs/search/get-started-with-search/search-basics/save-search). Whether you are running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run later.
 * [Schedule a Search](/docs/alerts/scheduled-searches) When you save a search, you have the option to set up the saved search to run at a scheduled interval with an automated notification by email of the search results. You can edit a saved search at any time.
-* [Receive Email Alerts from Scheduled Searches](../alerts/scheduled-searches/receive-email-alerts.md). ​There are three ways to receive scheduled search results email notifications: scheduled email, alert email, and real-time alerts. 
+* [Create Email Alerts from Scheduled Searches](../alerts/scheduled-searches/create-email-alert.md). ​There are three ways to receive scheduled search results email notifications: scheduled email, alert email, and real-time alerts. 
 
 ### Working with metrics
 
 Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo, see [Overview of Metrics in Sumo](/docs/metrics/introduction). Metrics-related features for analysts include:
 
 * [Metric queries](/docs/metrics/metrics-queries). You can query your metrics from a metric query tab. For information about the operators you can use in metric queries, see [Metric Operators](/docs/metrics/metrics-operators). 
-* [Metric charts](/docs/metrics/metric-charts). You can create line charts, area charts, and single value charts.
+* Metric charts. You can create [map charts](/docs/metrics/metrics-queries/map-charts), [heat maps](/docs/metrics/metrics-queries/heat-map), and [funnel charts](/docs/metrics/metrics-queries/funnel-chart).
 
 ### Sumo Logic Apps
 
 Sumo Logic apps deliver out-of-the box Dashboards, reports, saved searches, and field extraction for popular data Sources. When you install a Sumo Logic App, these pre-set searches and Dashboards are customized with your Source configurations and populated in a folder in the Library selected by you.
 
 * [Run Searches from Sumo Logic Apps](/docs/get-started/apps-integrations#run-searches-from-sumo-logic-apps). Sumo Logic apps provide a host of pre-built saved searches for popular data Sources that you can run against your data without installing the App itself. This way, you can try the searches in an App against your data before you decide to install it. Or you can view the searches to see how good example queries are written.
-* [Install Sumo Logic Apps](/docs/get-started/apps-integrations#install-apps-from-the-library).  Sumo Logic Apps are available in the Library. Select from a long list of popular data Sources and install them right from the Library. Certain Apps have specific installation requirements. Be sure to check the Help topic for your App for specific instructions.
-* [Log Analysis QuickStart App](/docs/get-started/apps-integrations#log-analysis-quickstart-app). The Log Analysis QuickStart App, created especially for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated. Whether you are new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
+* [Install Sumo Logic Apps](/docs/get-started/apps-integrations). Sumo Logic Apps are available in the Library. Select from a long list of popular data Sources and install them right from the Library. Certain Apps have specific installation requirements. Be sure to check the Help topic for your App for specific instructions.
+* [Log Analysis QuickStart App](/docs/integrations/sumo-apps/log-analysis-quickstart). The Log Analysis QuickStart App, created especially for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated. Whether you are new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
 * [Data Volume App](/docs/integrations/sumo-apps/data-volume). The Sumo Logic App for Data Volume allows you to view at a glance your account's data usage volume by category, Collector, Source name, and hosts. The app uses predefined searches and a Dashboard that provide visibility into your environment for real-time analysis of overall usage.
 
  
@@ -83,7 +85,7 @@ Sumo Logic apps deliver out-of-the box Dashboards, reports, saved searches, and 
 These topics provide basic information about administrator Sumo Logic accounts, and how to customize your Sumo Logic implementation for your specific use case.
 
 * [Sumo Logic Account Types](/docs/manage/manage-subscription). The feature set of your Sumo Logic organization will depend on what type of Sumo Logic account you have. Review the list to make sure your account fits your use case. You can upgrade at any time.
-* [Sumo Logic Components](/docs/get-started#sumo-logic-components). Sumo Logic is comprised of just a few components: Collectors, Sources, the Sumo Logic Cloud, and Sumo Logic. Learn how these components work together here.
+* [Sumo Logic Components](/docs/get-started/overview/#sumo-logic-components). Sumo Logic is comprised of just a few components: Collectors, Sources, the Sumo Logic Cloud, and Sumo Logic. Learn how these components work together here.
 * [Choose a Collector Type](/docs/send-data/choose-collector-source). Depending on your use case, you may need to use Installed or Hosted Collectors. Use this topic to help you determine what your organization will need.
 * [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Which method is right for you? 
 * [System Requirements](system-requirements.md). These topics include information on basic hardware requirements for Sumo Logic Collectors, supported web browsers for best performance, and supported log encoding.
@@ -96,7 +98,7 @@ To send your data to Sumo Logic, you’ll need to learn how to configure Collect
 * [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md). Prior to configuring Collectors, it is a good idea to establish a naming convention for Sources, Collectors, and especially metadata tags.
 * [Compare Installed and Hosted Collectors](/docs/send-data/choose-collector-source#compare-installed-and-hosted-collectors). Before you can send data to Sumo Logic, you'll need to decide what type of Collectors make sense for your use case: Installed Collectors or Hosted Collectors.
 * [Installed Collectors](/docs/send-data/installed-collectors). Installed Collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
-* [Hosted Collectors](/docs/send-data/hosted-collectors) Hosted Collectors don't require installation or activation, nor do Hosted Collectors have physical requirements, since they're hosted in AWS or HTTP.
+* [Hosted Collectors](/docs/send-data/hosted-collectors) Hosted Collectors do not require installation or activation, nor do Hosted Collectors have physical requirements, since they're hosted in AWS or HTTP.
 * [Sources](/docs/send-data/choose-collector-source). Sources are the environments that Sumo Logic Collectors connect to collect data from a customer's site.
 * [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources). Sources for Installed Collectors include Local and Remote File Sources, Local and Remote Windows Event Sources, Local and Remote Windows Performance Sources, Script Sources, Syslog Sources, and Script Actions.
 * [Sources for Hosted Collectors](/docs/send-data/hosted-collectors/). Sources for Hosted Collectors include HTTP Sources and AWS Source Types such as AWS CloudTrail, AWS Config, AWS ELB, Amazon CloudFront, Amazon S3 Audit, and Amazon S3.
@@ -126,7 +128,7 @@ After configuring Sources to collect the logs you need, you can begin using sear
 Search optimization tools speed the search process, delivering query results in less time and improving productivity for forensic analysis and log management. Search speed generally depends on the amount of data and the type of query run against the data. Search optimization tools segment the data and queue it up for quick results.
 
 * [Optimize Search Performance](../search/optimize-search-performance.md). Describes index-based and field-based methods for search optimization, the search optimization process, and how to choose the right tool for the job.
-* [Partitions](/docs/manage/partitions-data-tiers). Partitions speed the search process by allowing you to filter a subset of the log messages in an index.
+* [Partitions](/docs/manage/partitions). Partitions speed the search process by allowing you to filter a subset of the log messages in an index.
 * [Scheduled Views](/docs/manage/scheduled-views). Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated index.
 * [Field Extraction](/docs/manage/field-extractions). Field Extraction speeds the search process by parsing fields as log messages are ingested. The parsing is done automatically, so you don’t need to run a query to parse the fields.
 * [Field Browser](/docs/search/get-started-with-search/search-page/field-browser). The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don’t want to see.
@@ -139,7 +141,7 @@ Sumo Logic provides a number of tools for managing users' access to Sumo Logic 
 * [Set password policies](/docs/manage/security/set-password-policy.md). Set rules for password expiration, reuse, and lock out.
 * [Create an Allowlist for IP or CIDR addresses](/docs/manage/security/create-allowlist-ip-cidr-addresses.md). Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 * [Manage access keys](/docs/manage/security/access-keys.md). Access keys are used in sumo to securely register new collectors and for accessing Sumo Logic APIs.
-* [Sumo audit index](/docs/manage/security/audit-index.md). If you enable the audit index, Sumo captures information on the internal events that occur in your account associated with account management, user activity, scheduled searches, and more.
+* [Sumo audit index](/docs/manage/security/audit-indexes/audit-index.md). If you enable the audit index, Sumo captures information on the internal events that occur in your account associated with account management, user activity, scheduled searches, and more.
 * [Support account access](/docs/manage/security/enable-support-account.md). You can enable a Sumo Logic support account, which grants very select Sumo Logic support agents access to your organization's account, better helping those agents to resolve issues that arise. Admins can choose to keep the support account enabled full-time, or the account can be disabled when no issues are being investigated.
 * [Set Up SAML for Single Sign-On](/docs/manage/security/saml). Enterprise accounts can provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic. In addition to basic SAML functionality, you can choose optional on-demand user creation (using SAML 2.0 assertions), and designate custom login and/or logout portals.
 * [Role-based access control (RBAC)](/docs/manage/users-roles). Sumo Logic supports RBAC. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments grant users specific capabilities, and govern what data users can view.   
@@ -167,22 +169,5 @@ Sumo Logic apps deliver deliver out-of-the-box Dashboards, reports, saved search
 
 * [Using the Library](/docs/get-started/library/). The Library provides a central location for shared and saved content in your Sumo Logic account, as well as content shared by others in your organization. All Sumo Logic Apps are available through the Library.
 * [Run Searches from Sumo Logic Apps](/docs/get-started/apps-integrations#run-searches-from-sumo-logic-apps). Sumo Logic Apps provide a host of pre-built saved searches for popular data Sources that you can run against your data without installing the App itself. This way, you can try the searches in an App against your data before you decide to install it. Or you can view the searches to see how good example queries are written.
-* [Install Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library). Sumo Logic Apps are available in the Library. Select from a long list of popular data Sources and install them right from the Library. Certain Apps have specific installation requirements. Be sure to check the Help topic for your App for specific instructions.
-* [Log Analysis QuickStart App](/docs/get-started/apps-integrations#log-analysis-quickstart-app). The Log Analysis QuickStart App, created especially for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated. Whether you are new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
-
-<!--
-<label class="label-container">Management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics cap
-  <input type="checkbox"/>
-  <span class="checkmark"></span>
-</label>
-
-<label class="label-container">Management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics cap
-  <input type="checkbox"/>
-  <span class="checkmark"></span>
-</label>
-
-<label class="label-container">Management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics cap
-  <input type="checkbox"/>
-  <span class="checkmark"></span>
-</label>
--->
+* [Install Apps from the Library](/docs/get-started/apps-integrations). Sumo Logic Apps are available in the Library. Select from a long list of popular data Sources and install them right from the Library. Certain Apps have specific installation requirements. Be sure to check the Help topic for your App for specific instructions.
+* [Log Analysis QuickStart App](/docs/integrations/sumo-apps/log-analysis-quickstart).The Log Analysis QuickStart App is designed specifically for new Sumo Logic users, featuring searches that extract key information from log files regardless of their source. Whether you're new to log management or planning to migrate from other products, the app will quickly familiarize you with Sumo Logic's search, visualization, and analytics capabilities.
