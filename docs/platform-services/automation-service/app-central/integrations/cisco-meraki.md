@@ -47,6 +47,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Cisco Meraki, see [Cisco Meraki documentation](https://developer.cisco.com/meraki/api-v1/authorization/#authorization).
+
 ## Change Log
 
 * February 28, 2019 - First upload

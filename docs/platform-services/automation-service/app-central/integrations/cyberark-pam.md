@@ -27,7 +27,7 @@ CyberArk Privileged Access Manager (PAM) secures privileged access, centralizes 
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
-<IntegrationsAuth/>
+<IntegrationsAuth/> For information about CyberArk, see [CyberArk documentation](https://docs.cyberark.com/portal/latest/en/docs.htm).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.
@@ -40,9 +40,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
     * **Client Certificate**. Client Certificate in Base64 encoded format. This certificate contains your public key and is used to authenticate your identity to the server. If you have a combined .pem file that includes both the Certificate and the Private Key, use this field. Field requirement conditional on CyberArk.
     * **Client Private Key**. Client Private Key in Base64 encoded format. Keep your private key confidential. It is used to securely authenticate and establish an encrypted connection. If your Private Key is included in the combined Client Certificate .pem file, leave this field empty. Field requirement conditional on CyberArk.
     * **Root CA Certificate**. The Root CA Certificate in Base64 encoded format. Required if your server uses a certificate not trusted by default by your system or browser. This root certificate establishes trust with the server's SSL/TLS certificate. <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-4.png')} style={{border:'1px solid gray'}} alt="cyberark-pam" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-5.png')} style={{border:'1px solid gray'}} alt="cyberark-pam" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-6.png')} style={{border:'1px solid gray'}} alt="cyberark-pam" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-7.png')} style={{border:'1px solid gray'}} alt="cyberark-pam" width="400"/>
+1. To make sure the resource is working, click **TEST**. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-7.png')} style={{border:'1px solid gray'}} alt="cyberark-pam" width="400"/>
+1. Click **SAVE**.
 
 ## Note
 
