@@ -10,7 +10,7 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::info
-This page specifically covers the timestamp formats recognized by the Sumo Logic OpenTelemetry (OTel) Collector. While Sumo Logic’s [general time reference documentation](/docs/send-data/reference-information/time-reference/) explains how timestamps are parsed and indexed across all data sources, this guide focuses on the formats automatically detected and parsed by the OTel collector for log data.
+This page lists the timestamp formats recognized by the Sumo Logic OpenTelemetry (OTel) Collector. For general information on how Sumo Logic parses and indexes timestamps across all data sources, see the [general time reference documentation](https://github.com/docs/send-data/reference-information/time-reference).
 :::
 
 We support several options for timestamps. When collecting log data, the timestamp attached to messages is vital, both for the integrity of the data in your account, and for accurate query results.
