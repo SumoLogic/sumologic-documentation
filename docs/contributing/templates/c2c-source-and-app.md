@@ -21,15 +21,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 \Introduction\
 
-The {{source name}} collects {{data/event types}} from {{source of origin}}. 
+The `{{source name}}` collects `{{data/event types}}` from `{{source of origin}}`. 
 
 Example: The Microsoft Graph Security API Source provides a secure endpoint to consume alerts from the Microsoft Graph Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.
 
-The Sumo Logic app for {{app name}} enables you to track {{What the app does}}.
+The Sumo Logic app for `{{app name}}` enables you to track `{{What the app does}}`.
 
 Example: The Sumo Logic app for Asana enables you to track user sign in activities, detect data access and export, and identify changes to security settings and user roles.
 
-{{Key features of the app}}
+`{{Key features of the app}}`
 
 \Depending on the availability in the Fed, add the below note.\
 
@@ -43,7 +43,7 @@ This source is **not** yet available in the [Fed deployment](/docs/api/getting-s
 
 | Polling Interval | Data |
 | :--- | :--- |
-| {{Polling time in minutes}} | {{Data sources}} |
+| `{{Polling time in minutes}}` | `{{Data sources}}` |
 
 Example:
 
@@ -91,7 +91,7 @@ Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cl
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| {{`field`}} | {{value}} | {{Description}} |
+| `{{field}}` | `{{value}}` | `{{Description}}` |
 
 #### JSON schema
 
@@ -113,7 +113,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| {{`Parameter`}} | {{Type}} | {{Yes/No}} | `null` | {{Description}} |  {{Example}} |
+| `{{Parameter}}` | `{{Type}}` | `{{Yes/No}}` | `null` | `{{Description}}` |  `{{Example}}` |
 
 #### JSON example
 
@@ -125,7 +125,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 \Create and add the Terraform config in the dropbox and import it here.\
 
-<CodeBlock language="json">component-name}</CodeBlock>
+<CodeBlock language="json">component-name</CodeBlock>
 
 ### Troubleshooting
 
