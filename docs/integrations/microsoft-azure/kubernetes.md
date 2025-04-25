@@ -260,7 +260,7 @@ Sumo Logic Metrics source is currently in Beta, to participate, contact your Sum
 
 In the Sumo Logic Azure Metrics source configuration,
 
-- Tag the location field in the source with correct Azure resource location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Container Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
+- To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
 - Configure the namespaces as `Microsoft.ContainerService/managedClusters`, `microsoft.kubernetes/connectedClusters`, `microsoft.kubernetesconfiguration/extensions`, and `microsoft.hybridcontainerservice/provisionedClusters`. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-kubernetes-service-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
 
 ### Collecting logs for the Azure Kubernetes Cluster  
