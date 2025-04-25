@@ -7,6 +7,7 @@ description: Get an overview of how the Automation Service allows you to automat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ActionsLimitQuery from '../../reuse/actions-limit-query.md';
+import StaticIpAddresses from '../../reuse/static-ips-automation-service.md';
 
 The Automation Service allows you to set up actions that run automatically when certain conditions are met in Sumo Logic. These automated actions help you to respond quickly to a wide arrange of events. 
 
@@ -87,12 +88,7 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 
 ### Configure the connection for an integration resource
 
-To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must configure the connection for their resources. 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
-1. Select the integration whose resource you want to configure the connection for. 
-1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="800"/> 
-1. Enter the connection configuration needed by the resource. (Find the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) for configuration instructions.)<br/>What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="400"/> 
-1. Click **Save** to save the configuration. 
+To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must first configure the connection for their resources. See [Configure Authentication for Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
 
 ## Actions limit
 
@@ -101,3 +97,9 @@ To prevent abuse of system resources or runaway processes, the Automation Servic
 <ActionsLimitQuery/>
 
 Each execution of Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions counts toward the actions limit. User Choice, IF, and Task actions do not count toward the actions limit.
+
+## Static IP addresses
+
+The following table provides the static IP addresses used for the Automation Service by deployment. These are provided in case you want to explicitly allow the IP addresses on the integrations you install.
+
+<StaticIpAddresses/>

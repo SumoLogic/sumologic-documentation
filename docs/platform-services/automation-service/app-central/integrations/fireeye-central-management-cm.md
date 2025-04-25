@@ -20,6 +20,12 @@ Centralized device and intelligence management to correlate data across attack v
 * **Add YARA Rule** (*Containment*) - Add a new YARA rule.
 * **Acknowledge Alert** (*Containment*) - Notate previously generated alert.
 
+## Configure FireEye Central Management (CM) in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 21, 2019 - First upload

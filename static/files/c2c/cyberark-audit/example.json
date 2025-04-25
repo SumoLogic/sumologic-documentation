@@ -1,0 +1,22 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+            "name": "CyberArkAudit",
+            "identityId": "ac212",
+            "appId": "sumologic",
+            "username": "user@cyberark.cloud.1234",
+            "password": "******",
+            "tenantURL": "https://sumologic.audit.cyberark.cloud",
+            "apiKey": "*******",
+            "serviceType": [],
+            "statusType": [],
+            "actionType": [],
+            "pollingIntervalMin": 5
+          },
+		"schemaRef": {
+			"type": "CyberArk Audit"
+		},
+		"sourceType": "Universal"
+	}
+}

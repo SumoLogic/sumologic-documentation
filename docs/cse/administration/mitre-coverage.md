@@ -211,3 +211,10 @@ You can use the following Cloud SIEM APIs to obtain information about your MITRE
 * [MitreAttackCoverageExportJson](https://api.sumologic.com/docs/sec/#operation/MitreAttackCoverageExportJson). Get a JSON representation of the Mitre ATT&CK coverage.
 
 To find the Cloud SIEM API documentation for your endpoint, see [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/).
+
+## Additional resources
+
+* Blog: [Enhance your cloud security with MITRE ATT&CK and Sumo Logic Cloud SIEM](https://www.sumologic.com/blog/cloud-siem-mitre-attack/)
+* Glossary: [MITRE ATT&CK - definition & overview](https://www.sumologic.com/glossary/mitre-attack/)
+* Demo: [MITRE ATT&CK Coverage Explorer](https://www.sumologic.com/demo/cloud-siem-mitre-attack-coverage-explorer/)
+* Cloud SIEM Content Catalog: [Vendors](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/README.md)

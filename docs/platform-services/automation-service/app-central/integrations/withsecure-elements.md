@@ -27,7 +27,11 @@ WithSecure Elements is a single, modular solution consisting of a complete range
 1. Add a description and click **Add**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-3.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="600" />
 1. Copy and Save the **Client ID** and **Secret**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-4.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="600" />
 
-## WithSecure Elements in Automation Service and Cloud SOAR
+## Configure WithSecure Elements in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

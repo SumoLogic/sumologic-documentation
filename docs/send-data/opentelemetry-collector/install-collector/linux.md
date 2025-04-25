@@ -249,7 +249,7 @@ We recommend keeping the install token in environmental variable for `Systemd` i
    ```bash
    sudo mkdir -p /etc/otelcol-sumo/env
    ```
-1. Create `/etc/otelcol-sumo/env/token.env` directory with your installation token. In this example, we use `SUMOLOGIC_INSTALLATION_TOKEN`, as it will be automatically used by the recommended configuration.
+1. Create the `/etc/otelcol-sumo/env/token.env` file with your installation token. In this example, we use `SUMOLOGIC_INSTALLATION_TOKEN`, as it will be automatically used by the recommended configuration.
    ```bash
    SUMOLOGIC_INSTALLATION_TOKEN=<your token>
    ```

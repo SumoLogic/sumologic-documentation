@@ -13,7 +13,7 @@ To use Sumo Logic for threat detection and investigation, you can use [pre-built
 
 [Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation.
 * [**Security Analytics**](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment.
-* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database.
+* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 * [**Cloud security monitoring and analytics**](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
 * [**Global Intelligence Service**](/docs/integrations/global-intelligence/). Apps that provide real-time security intelligence for detection, prioritization, investigation, and workflow.
 
@@ -63,7 +63,7 @@ After you build the dashboard to find and monitor security events, we'll show yo
 
 * Detect brute force attempts by monitoring AWS CloudTrail data for a high number of failed login attempts within a period of time. Brute force attacks are when a hacker tries many different passwords to attempt to gain access. These attacks are a common cause of security breaches on governments, businesses, organizations, and private individuals.
 * Detect land speed violations by using geo lookup location data and combining it with timestamps and the Haversine formula. Land speed violations, also known as impossible travel, are a type of suspicious activity where a user logs in to an account in two different locations within a short period of time. If there are two logins to the same account on opposite sides of the globe in the same hour, at least one of those logins was probably illegitimate.
-* Look up user information with CrowdStrike to see if any of the IP addresses you have logged are known threats or have been tied to malicious activity.   
+* Look up user information with Sumo Logic [threat intelligence](/docs/security/threat-intelligence/find-threats/) to see if any of the IP addresses you have logged are known threats or have been tied to malicious activity.   
 
 ### Step 1: Monitor user activity with a dashboard
 
@@ -278,29 +278,60 @@ A "landspeed violation" occurs when a user logs in from an IP address and then l
 1. Rename this panel **Landspeed Violation**.
 1. Click the **Add to Dashboard** button.
 
-### Step 7: Look up user information with CrowdStrike
+### Step 7: Look up user information with Sumo Logic threat intelligence
 
-We need a way to see if any of the IP addresses we have logged are known threats or have been tied to malicious activity. Sumo Logic has a partnership with [CrowdStrike](https://www.crowdstrike.com), which allows us to look up IP addresses, email addresses, URLs, and other entities to see if they are known by CrowdStrike.
+We need a way to see if any of the IP addresses we have logged are known threats or have been tied to malicious activity. Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) allows us to look up IP addresses, email addresses, URLs, and other entities to see if they are known as threat vectors.
 
 1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid gray'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
-     ```
-     _sourceCategory=Labs/AWS/CloudTrail
-     | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" multi
-     | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
-     | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
-     | where type="ip_address" and !isNull(malicious_confidence)
-     | if (isEmpty(actor), "Unassigned", actor) as Actor
-     | parse field=raw "\"ip_address_types\":[\"*\"]" as ip_address_types nodrop
-     | parse field=raw "\"kill_chains\":[\"*\"]" as kill_chains nodrop
-     | timeslice 1m
-     | count _timeslice, ip_address, malicious_confidence, actor, kill_chains, ip_address_types, _sourceCategory, _source
-     | fields - ip_address,malicious_confidence,actor,kill_chains,ip_address_types,_sourceCategory,_source | count by _timeslice
-     | outlier _count window=5,threshold=3,consecutive=1,direction=+-
-     ```
+   ```
+   _sourceCategory=Labs/AWS/CloudTrail
+   | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" multi
+   | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
+   | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
+   | where type="ip_address" and !isNull(malicious_confidence)
+   | if (isEmpty(actor), "Unassigned", actor) as Actor
+   | parse field=raw "\"ip_address_types\":[\"*\"]" as ip_address_types nodrop
+   | parse field=raw "\"kill_chains\":[\"*\"]" as kill_chains nodrop
+   | timeslice 1m
+   | count _timeslice, ip_address, malicious_confidence, actor, kill_chains, ip_address_types, _sourceCategory, _source
+   | fields - ip_address,malicious_confidence,actor,kill_chains,ip_address_types,_sourceCategory,_source | count by _timeslice
+   | outlier _count window=5,threshold=3,consecutive=1,direction=+-
+   ```
+<!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+   ```
+   _sourceCategory=Labs/AWS/CloudTrail 
+   | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
+   | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
+   | count as ip_count by ip_address
+
+   | threatlookup singleIndicator ip_address
+
+   // normalize confidence level to a string 
+   | if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "unknown")))) as threat_confidence
+
+   // filter for threat confidence
+   | where  threat_confidence matches "*"
+
+   //rename to match threat_<foo> convention
+   | %"_threatlookup.actors" as threat_actors
+   | %"_threatlookup.type" as type
+   | %"_threatlookup.threat_type" as threat_type
+
+   //convert threat valid from to human readable time
+   | toLong(%"_threatlookup.valid_from" * 1000) as %"_threatlookup.valid_from"
+   | formatDate(%"_threatlookup.valid_from", "MM-dd-yyyy") as threat_valid_from
+
+   | where type matches "ipv4-addr*" and !isNull(threat_confidence)
+
+   | if (isEmpty(threat_actors), "Unassigned", threat_actors) as threat_actors
+
+   |sum (ip_count) as threat_count
+   ```
+   -->
 1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. 
 1. Under **Chart Type**, select **Line Chart**.
-1. Rename this panel **CrowdStrike Data**.
+1. Rename this panel **IP Threat Count**.
 1. Click the **Add to Dashboard** button.
 
 :::tip

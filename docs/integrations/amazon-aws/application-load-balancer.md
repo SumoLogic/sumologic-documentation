@@ -155,9 +155,9 @@ json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name",
 
 Now that you have set up collection for AWS Application Load Balancer, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-<AppInstall/>
+<AppInstallNoDataSourceV2/>
 
 ## Viewing AWS Application Load Balancer dashboards
 
@@ -234,7 +234,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-The **AWS Application Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined through [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+The **AWS Application Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined through Sumo Logic [threat intelligence](/docs/security/threat-intelligence/). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
 * Identify known malicious IPs that access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward.

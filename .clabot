@@ -5,6 +5,8 @@
     "JV0812",
     "jpipkin1",
     "JainM6",
+    "@dependabot[bot]",
+    "dependabot[bot]",
     "docsSeema",
     "angadrandhawa1",
     "kkujawa-sumo",
@@ -176,7 +178,11 @@
     "chvik",
     "Apoorvkudesia-sumologic",
     "akesle",
-    "ankitgoelcmu"
+    "ankitgoelcmu",
+    "Deklin",
+    "justrelax19",
+    "dlindelof-sumologic",
+    "snyk-bot"
   ],
   "message": "Thank you for your contribution! As this is an open source project, we require contributors to sign our Contributor License Agreement and do not have yours on file. To proceed with your PR, please [sign your name here](https://forms.gle/YgLddrckeJaCdZYA6) and we will add you to our approved list of contributors.",
   "label": "cla-signed",

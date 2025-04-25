@@ -23,7 +23,7 @@ The Airtable API integration ingests audit logs periodically from the Airtable a
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 24 hours |  Audit Logs |
+| 5 minutes |  [Audit Logs](https://airtable.com/developers/web/api/audit-log-events) |
 
 ## Setup
 
@@ -100,9 +100,3 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
-
-## Limitations
-
-* We are using `Personal Access Token` authentication in the integration, which is currently in public beta version. For more information, refer to the [Airtable Notification](https://airtable.com/developers/web/api/authentication#types-of-token).
-* Size of the single audit log will be less than 64 KB.
-* Data URLs will expire after 7 days. If URLs are not processed within 7 days, the integration will create a new request which may cause data duplication.
