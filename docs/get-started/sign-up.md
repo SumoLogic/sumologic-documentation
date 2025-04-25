@@ -36,7 +36,7 @@ To start your free trial:
 
 ## Sign in to Sumo Logic
 
-Once you're registered for an account, you can sign in using your Google SSO, email address and password, or - if configured by your organization - an [identity provider](/docs/manage/security/saml).
+Once you're registered for an account, you can sign in using your Google SSO, email address and password, or-if configured by your organization-an [identity provider](/docs/manage/security/saml).
 
 ### Set up data collection
 
