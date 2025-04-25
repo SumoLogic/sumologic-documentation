@@ -15,6 +15,8 @@ For a more detailed description of the options you can configure for a scheduled
 
 ## Requirements for the search query
 
+When you [create a scheduled search](/docs/alerts/scheduled-searches/schedule-search/) to generate signals in Cloud SIEM, you start by creating a search query.
+
 This section describes the requirements for your scheduled search, which include a minimum set of fields to be returned, and renaming message fields as necessary to match attribute names in the selected Cloud SIEM record type schema.  
 
 ### Required fields
@@ -42,7 +44,6 @@ enable signal generation:
     If the `stage` field contains a Tactic that isn't in the MITRE ATT&CK framework, a signal will not be generated, but a record will be. 
     :::
 * At least one entity field:
-
   * `device_ip`
   * `device_mac`
   * `device_natIp`
@@ -56,16 +57,35 @@ enable signal generation:
   * `srcDevice_ip`
   * `srcDevice_mac`
   * `srcDevice_natIp`
-  * `user_username`        
+  * `user_username`
 
 ### Renaming message fields
 
 When you configure a Scheduled Search to create Cloud SIEM signals, you are prompted to select a [Cloud SIEM record type](/docs/cse/schema/cse-record-types/). The fields returned by your search must match an attribute in the record type you select. A field whose name does not match a Cloud SIEM attribute will not be populated in the record created from the Schedule Search results. For more about Cloud SIEM attribute names, see [Attributes You Can Map to Records](/docs/cse/schema/attributes-map-to-records/).
 
+### Example
+
+Let's suppose that `user_username` is the entity field we want to use, and its value needs to be mapped to `actor.email`. Then you need to add the following line to the query: `actor.email as user_username`.
+
+And because the final output of this query is an aggregate, and Cloud SIEM signals expect `normalizedfield`, `stage`, and `entity`, we need need to add those in the `count` expression. 
+
+This is how the final query might look:
+
+```txt
+((_index=sec_record_* objectType=*)
+AND _sourcename = "Google Apps Audit Event")
+AND _sourcecategory = "GoogleWorkspace/Groups"
+| 5 as normalizedseverity
+| "Initial Access" as stage
+| json auto 
+| actor.email as user_username
+| count by events.name, events.type, actor.email, event.parameters.user_email, event.parameters.group_email, user_username, stage, normalizedseverity
+```
+
 ## Scheduling the search
 
 1. After creating and saving your search, click the save icon.<br/><img src={useBaseUrl('img/alerts/save-as.png')} alt="Save the search" style={{border: '1px solid gray'}} width="800"/>
-1. The **Save Item** popup appears.<br/><img src={useBaseUrl('img/alerts/save-item.png')} alt="Save as scheduled search" width="500"/>
+1. The **Save Item** popup appears.<br/><img src={useBaseUrl('img/alerts/save-item.png')} alt="Save as scheduled search" style={{border: '1px solid gray'}} width="500"/>
    :::note
    The name of your scheduled search will appear as the signal name in Cloud SIEM.
    :::
