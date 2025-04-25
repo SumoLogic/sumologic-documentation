@@ -1,7 +1,7 @@
 resource "sumologic_cloud_to_cloud_source" "code42incydr_source" {
   collector_id = sumologic_collector.collector.id
   schema_ref = {
-    type = "Code42Incydr"
+    type = "Code42 Incydr"
   }
   config = jsonencode({
     "name": "Code42",
@@ -12,7 +12,7 @@ resource "sumologic_cloud_to_cloud_source" "code42incydr_source" {
     "secretKey": "XXXXV%DsznXXX!hxr479cXsxxnbkX@vxxrxkbfxc",
     "dataCollection": [
       "auditEvents",
-      "alerts",
+      "sessions",
       "fileEvents"
     ]
   })

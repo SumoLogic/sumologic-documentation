@@ -39,7 +39,7 @@ You can set up a Script Action using the Sumo web app, described in [Option A](#
 
 ### Option A. Set up Script Action using UI
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Find the name of the Installed Collector to which want to add the script action and select **Add > Add Script Action**.
 1. **Name.** Enter a name to display for the Script Action.
 1. **Description**. Optional.
@@ -118,7 +118,7 @@ This example shows how to set up a script and configure a Script Action.
     chmod +x countNumberOfWarnings.sh
     ```
 
-1. Select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. Find the name of the Installed Collector to which you want to add the script action and select **Add > Add Script Action**.  
 1. Configure the Script Action as described in [Step 3](#step-3-set-up-script-action) above.
 1. Define a search and click **Save As**. 

@@ -20,17 +20,17 @@ This section has instructions for configuring a pipeline for shipping logs avail
 ## Functional overview
 
 1. You configure the Azure service to export logs to a container in a storage account created for that purpose.
-1. The ARM template creates an Event Grid subscription with the storage container as publisher and the event hub (created by the Sumo Logic-provided ARM) as subscriber. Event Grid routes append blob creation events to event hub.
-1. Event Hub streams the events to the AppendBlobFileTracker Azure function, to create an entry in FileOffSetMap table.
-1. Periodically a Azure function named AppendBlobTaskProducer, fetches list of blobs from FileOffSetMap table and creates a task with metadata. (This is a JSON object that includes the start of the append blob, file path, container name and storage name). These tasks are then pushed to Azure Service Bus Queue.
-1. The TaskConsumer Azure function, which is triggered when the service bus receives a new task, reads the append blob, from start byte, and sends that data to Sumo Logic.
+1. The ARM template creates an Event Grid subscription with the storage container as publisher and the event hub (created by the Sumo Logic-provided ARM) as subscriber. Event Grid routes append blob creation events to the event hub.
+1. Event Hub streams the events to the AppendBlobFileTracker Azure function, to create an entry in the FileOffSetMap table.
+1. Periodically an Azure function named AppendBlobTaskProducer, fetches a list of blobs from the FileOffSetMap table and creates a task with metadata. (This is a JSON object that includes the start of the append blob, file path, container name, and storage name). These tasks are then pushed to the Azure Service Bus Queue.
+1. The TaskConsumer Azure function, which is triggered when the service bus receives a new task, reads the append blob, from the start byte, and sends that data to Sumo Logic.
 1. For more information about the solution strategy, see [Azure Blob Storage(append blob)](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob).
 
 ## Step 1. Configure Azure storage account
 
 In this step, you configure a storage account to which you will export monitoring data for your Azure service. The storage account must be a General-purpose v2 (GPv2) storage account.
 
-If you have a storage account with a container you want to use for this purpose, make a note of its resource group, storage account name and container name, and proceed to [Step 2](#step-2-configure-an-http-source).
+If you have a storage account with a container you want to use for this purpose, make a note of its resource group, storage account name, and container name, and proceed to [Step 2](#step-2-configure-an-http-source).
 
 To configure an Azure storage account, do the following:
 
@@ -52,11 +52,14 @@ Make a note of the container name, as you will need to supply it later.
 In this step, you configure an HTTP source to receive logs from the Azure function.
 
 1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+   :::note
+      Make sure the hosted collector is tagged with the tenant_name field for the out-of-the-box Azure apps to work. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+   :::
 1. Configure an HTTP source as described in [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the URL for the source because you will need it in the next step.
 
 ## Step 3. Configure Azure resources using ARM template
 
-In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) template to create an Event Hub, three Azure functions, Service Bus Queue, and a Storage Account.
+In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) template to create an Event Hub, three Azure functions, a Service Bus Queue, and a Storage Account.
 
 1. Download the [appendblobreaderdeploy.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/AppendBlobReader/src/appendblobreaderdeploy.json) ARM template.
 1. Click **Create a Resource**, search for **Template deployment** in the Azure Portal, and then click **Create.**
@@ -93,7 +96,7 @@ If you want to ingest data into Sumo Logic from multiple storage accounts, perfo
 The following steps assume you have noted down the resource group name, storage account name, and container name where the blobs will be ingested from.
 :::
 
-* [Step 1: Authorize App Service read from storage account](#step-1-authorize-app-service-to-list-storage-account-key) - Enables the Azure functions to read from the storage account.
+* [Step 1: Authorize App Service read from storage account](#step-1-authorize-app-service-to-read-from-storage-account) - Enables the Azure functions to read from the storage account.
 * [Step 2: Create an Event Grid Subscription](#step-2-create-an-event-grid-subscription) - Subscribes all blob creation events to the Event Hub created by ARM template in [Step 3](#step-3-enabling-vnet-integration-optional) above.
 * [Step 3. Enabling Vnet Integration(Optional)](#step-3-enabling-vnet-integration-optional)
 
@@ -124,7 +127,7 @@ To authorize the App Service to list the storage account key, do the following:
 
 ### Step 2: Create an event grid subscription
 
-This section provides instructions for creating an event grid subscription that subscribes all blob creation events to the Event Hub created by ARM template in [Step 3](#step-3-enabling-vnet-integration-optional) above.
+This section provides instructions for creating an event grid subscription that subscribes all blob creation events to the Event Hub created by the ARM template in [Step 3](#step-3-enabling-vnet-integration-optional) above.
 
 To create an event grid subscription, do the following:
 
@@ -153,7 +156,7 @@ To create an event grid subscription, do the following:
    * **Resource**. Select the Storage Account you configured, from where you want to ingest logs.
    * **System Topic Name**. Provide the topic name, if the system topic already exists then it will automatically select the existing topic.
     :::note
-    If you do not see your configured Storage Account in the dropdown menu, make sure you met the requirements in [Requirements](#requirements) section.
+    If you do not see your configured Storage Account in the dropdown menu, make sure you meet the requirements in [Requirements](#requirements) section.
     :::
 
 1. Specify the following details for Event Types:
@@ -179,7 +182,7 @@ To create an event grid subscription, do the following:
 1. Specify the following Filters tab options(Optional):
 
    * Check **Enable subject filtering**.
-   * To filter events by container name, enter the following in the **Subject Begins With** field, replacing `<container_name>` with the name of the container from where you want to export logs: `/blobServices/default/containers/<container_name>/`
+   * To filter events by a container name, enter the following in the **Subject Begins With** field, replacing `<container_name>` with the name of the container from where you want to export logs: `/blobServices/default/containers/<container_name>/`
 
    ![img](/img/send-data/AzureBlob_FiltersDialog.png)
 
@@ -191,29 +194,38 @@ To create an event grid subscription, do the following:
 
 This assumes that your storage account access is enabled for selected networks.
 
-1. Create a subnet in a virtual network using the instructions in the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet#add-a-subnet). If you have multiple accounts in the same region, you can skip step 2 below and use the same subnet and add it to the storage account as mentioned in step 3.
-1. Perform below steps for BlobTaskConsumer function app:
+1. Create a subnet in a virtual network using the instructions in the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet#add-a-subnet). If you have multiple accounts in the same region, you can skip step 2 given below and use the same subnet and add it to the storage account as mentioned in step 3.
+1. Perform the steps below for BlobTaskConsumer function app:
    1. Go to **Function App > Settings > Networking**.
    1. Under Outbound traffic, click on Vnet Integration. <br/>![azureblob-outbound](/img/send-data/appendblob/azureappendblob-outbound.png)
    1. Add the Vnet and subnet created in Step 1. <br/>![azureblob-vnet](/img/send-data/azureblob-vnet.png)
-   1. Also copy the outbound ip addresses you’ll need to add it in firewall configuration of your storage account. <br/> ![azureblob-outboundip](/img/send-data/azureblob-outboundip.png)
+   1. Also copy the outbound IP addresses you’ll need to add in the firewall configuration of your storage account. <br/> ![azureblob-outboundip](/img/send-data/azureblob-outboundip.png)
 1. Go to your storage account from where you want to collect logs from. Go to Networking and add the same Vnet and subnet. <br/>![azureblob-storageacct](/img/send-data/azureblob-storageacct.png)
-1. Add the outbound ip addresses (copied in step 2.iv) from both BlobTaskConsumer function under Firewall with each ip in a single row of Address range column.
+1. Add the outbound IP addresses (copied in step 2.iv) from both BlobTaskConsumer functions under Firewall with each IP in a single row of Address range column.
 1. Verify by going to the subnet. You should see Subnet delegation and service endpoints as shown in the screenshot below. <br/>![azureblob-subnet](/img/send-data/azureblob-subnet.png)
+
+## Upgrading Azure Functions
+
+1. Go to the resource group where the ARM template was deployed and go to each of the function apps.
+    ![azurefunctionapp-list](/img/send-data/azure_functionapp.png)
+1. Go to `Deployment -> Deployment Center` and click on `Sync`.
+    ![azurefunctionapp-sync](/img/send-data/azure_upgrade_sync.png)
+1. Go to `Logs` tab and check the `Status` column, it should show `Success`.
+    ![azurefunctionapp-status](/img/send-data/azure_upgrade_status.png)
 
 ## Azure Append Blob Limitations
 
-1. By default the boundary regex used for json and log files are defined below. You can override it by updating `getBoundaryRegex` method of `AzureBlobTaskConsumer` function.
+1. By default the boundary regex used for JSON and log files are defined below. You can override it by updating `getBoundaryRegex` method of `AzureBlobTaskConsumer` function.
    * **log**: `'\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}'`
    * **json**: `'\{\\s*\"'`
 1. By default, it's assumed that after 48 hours the log file won't be updated. You can override it by setting `MAX_LOG_FILE_ROLLOVER_HOURS` setting in `AppendBlobTaskProducer` function.
-1. By default batch size is automatically calculated based on number of files present in the storage account and maximum batch size can be 200MB.
-1. `AppendBlobTaskProducer` function sets the lock (for max 30min) and creates the task (in service bus) for the file , and then automatically releases it if `AppendBlobTaskConsumer` fails to process it, if you are seeing queueing delay of more than 30min you can increase `maxlockThresholdMin` in `getLockedEntitiesExceedingThreshold` method of `AppendBlobTaskProducer` function.
+1. By default batch size is automatically calculated based on the number of files present in the storage account and the maximum batch size can be 200MB.
+1. `AppendBlobTaskProducer` function sets the lock (for max 30min) and creates the task (in service bus) for the file, and then automatically releases it if `AppendBlobTaskConsumer` fails to process it if you are seeing queueing delay of more than 30min you can increase `maxlockThresholdMin` in `getLockedEntitiesExceedingThreshold` method of `AppendBlobTaskProducer` function.
 1. Log files have a file extension of .json (JSONLines), .blob(JSONLines), .csv, .txt or .log.
     * If the file is .json or .blob, the JSON objects are extracted and sent to Sumo Logic.
-    * If the file is .log, .txt or .csv, log lines are sent to Sumo Logic as-is.
-1. By default all the data is ingested to single HTTP source if you want to send data to multiple source (recommended in case of different log formats) you can override the `getSumoEndpoint` function in `AppendBlobTaskConsumer` function.
-1. Blob file name present in `_sourceName` metadata will be truncated if it exceeds 128 char.
+    * If the file is .log, .txt, or .csv, log lines are sent to Sumo Logic as-is.
+1. By default all the data is ingested to a single HTTP source if you want to send data to multiple sources (recommended in case of different log formats) you can override the `getSumoEndpoint` function in `AppendBlobTaskConsumer` function.
+1. Blob file name present in `_sourceName` metadata will be truncated if it exceeds 128 chars.
 
 ## Collection testing performance numbers
 

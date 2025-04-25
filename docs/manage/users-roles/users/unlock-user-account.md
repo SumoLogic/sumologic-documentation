@@ -4,6 +4,8 @@ title: Unlocking User Accounts
 description: When a user is locked out of their account, an admin may manually unlock the account before the configured lockout period has expired.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 If a user tries to log into their account several times and fails, their account will be locked out for security reasons. The default configured lockout period is 30 minutes, which occurs after six failed login attempts within a 10-minute period. After the designated lockout period expires, the user's account is automatically unlocked. These default settings may be configured by an administrator using the [Password Policy Settings](../../security/set-password-policy.md). 
 
 When a user is locked out of their account, Sumo Logic sends an email to the user notifying them of the lockout. 
@@ -15,11 +17,10 @@ At this time, an administrator can:
 
 **To unlock a user's account**
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. Kanso--> 
-    ![user-options-menu.png](/img/users-roles/user-options-menu.png)
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**.  <br/><img src={useBaseUrl('img/users-roles/user-options-menu.png')} alt="Kebab menu option highlighted on Users page" style={{border: '1px solid gray'}} width="700" />
 1. Select the row for the user you want to unlock and choose **Unlock** from the three-dot kebab options menu.
     :::note
-    If you have configured SAML for single sign-on, and you have locked down SAML so that users must login using SAML, the **Unlock** option will not appear on the **More Actions** menu. To unlock the user account, you must first toggle the **Require SAML Sign In** option, and then re-enable lockdown. For more information, see [SAML Lockdown Limitations](../../security/saml/set-up-saml.md).
+    If you have configured SAML for single sign-on, and you have locked down SAML so that users must login using SAML, the **Unlock** option will not appear on the **More Actions** menu. To unlock the user account, you must first toggle the **Require SAML Sign In** option, and then re-enable lockdown. For more information, see [SAML Lockdown Limitations](/docs/manage/security/saml/set-up-saml).
     :::
 1. The user's account is unlocked, and Sumo Logic automatically sends an email to alert the user. 
    :::note

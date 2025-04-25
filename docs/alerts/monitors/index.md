@@ -69,19 +69,13 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/ingestion-volume/monitor-ingestion-receive-alerts"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Monitor Log Ingestion and Alerts</h4></a>
-  <p>Add scheduled searches that monitor log ingestion and send alerts.</p>
+  <p>Add Scheduled Searches that monitor log ingestion and send alerts.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/alerts/monitors/use-playbooks-with-monitors"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Automated Playbooks in Monitors</h4></a>
   <p>Learn how to use Automation Service playbooks with monitors.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/alerts/monitors/automation-payload-variables"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Automation Payload Variables</h4></a>
-  <p>Learn details about variables passed from a monitor to a playbook in the Automation Service.</p>
   </div>
 </div>
 </div>

@@ -4,11 +4,15 @@ title: threatip Search Operator
 sidebar_label: threatip
 ---
 
-The `threatip` operator correlates [CrowdStrike's](https://www.crowdstrike.com/sumologic) threat intelligence data based on IP addresses from your log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks.
+The `threatip` operator correlates data in the [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) based on IP addresses from your log data. This provides security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. 
 
-The `threatip` operator uses the same lookup as the [Threat Intel Quick Analysis App](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#viewing-threat-intel-quick-analysis-dashboards) but is simplified for only IP threat lookups. For further details on how this lookup works and what to do with the results see [Threat Intel FAQs](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#Threat-Intel-FAQ).
+<!-- Add this per DOCS-815:
+You can also use the [`threatlookup`](/docs/search/search-query-language/search-operators/threatlookup/) search operator to search threat intelligence indicators.
+-->
 
-The only [Indicators of Compromise (IOC)](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#Threat-Intel-FAQ) supported is IP address.
+The `threatip` operator uses the same lookup as the [Threat Intel Quick Analysis app](/docs/integrations/security-threat-detection/threat-intel-quick-analysis) but is simplified for only IP threat lookups. 
+
+The only Indicators of Compromise (IOC)] supported is IP address.
 
 ## Syntax
 

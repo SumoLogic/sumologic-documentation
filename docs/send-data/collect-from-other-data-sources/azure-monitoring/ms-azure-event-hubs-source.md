@@ -7,9 +7,6 @@ description: The Azure Event Hubs Source for Logs provides a secure endpoint to 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
-:::note
-For higher data ingestion speed and scalability, this collection method is preferred over our similar [Azure Event Hubs cloud-to-cloud source collection method](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source).
-:::
 
 The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -43,12 +40,12 @@ Throughput units (TUs) and Processing units (PUs) are shared across an Event Hub
 
 The Event Hub doesn't have to be in the same subscription as the resource sending logs if the user who configures the setting has appropriate Azure role-based access control access to both subscriptions. By using Azure Lighthouse, it's also possible to have diagnostic settings sent to an event hub in another Azure Active Directory tenant. The event hub namespace needs to be in the same region as the resource being monitored if the resource is regional so you may have to configure multiple Azure Event Hubs Sources. More details about destination limitations and permissions are described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-1. [Create an Event Hub using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) by navigating to Event Hubs in the Azure Portal.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep1.png')} alt="azure event hub" />
-2. Create an Event Hubs namespace. In this example, Namespace is set to `cnctest`:<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep2.png')} alt="azure event hub" width="300"/> <br/><img src={useBaseUrl('img/send-data/AzureEventHubstep3.png')} alt="azure event hub" />
-3. Create an Event Hub Instance.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep4.png')} alt="azure event hub" />
-    * Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: `RootManageSharedAccessKey`. In this example, Event Hub Instance is set to `my-hub`.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep5.png')} alt="azure event hub" />
-4. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the Listen claim to the newly created Event Hub Instance. In this example, Event Hub Instance is set to `SumoCollectionPolicy`.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep6.png')} alt="azure event hub" /><br/><img src={useBaseUrl('img/send-data/AzureEventHubstep7.png')} alt="azure event hub" /><br/><img src={useBaseUrl('img/send-data/AzureEventHubstep8.png')} alt="azure event hub" />
-5. Copy the **Shared access policies** Key. Copy the **Primary key** associated with this policy.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep9.png')} alt="azure event hub" />
+1. [Create an Event Hub using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) by navigating to Event Hubs in the Azure Portal.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep1.png')} alt="Azure portal showing search results for 'Event Hubs' with the 'Event Hubs' option highlighted in the Services section." />
+2. Create an Event Hubs namespace. In this example, Namespace is set to `cnctest`:<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep2.png')} alt="Azure Event Hubs page with the 'Add' button highlighted." width="300"/> <br/><img src={useBaseUrl('img/send-data/AzureEventHubstep3.png')} alt="Create Namespace page in Azure Event Hubs with fields for Subscription, Resource Group, Namespace Name, and other options. The 'Review + create' button is highlighted." />
+3. Create an Event Hub Instance.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep4.png')} alt="Event Hubs Namespace page showing the 'Event Hub' button highlighted and the 'Shared access policies' option highlighted under Settings." />
+    * Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: `RootManageSharedAccessKey`. In this example, Event Hub Instance is set to `my-hub`.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep5.png')} alt="Create Event Hub page with the 'Name' field set to 'my-hub' and the 'Create' button highlighted." />
+4. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the Listen claim to the newly created Event Hub Instance. In this example, Event Hub Instance is set to `SumoCollectionPolicy`.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep6.png')} alt="Event Hubs Namespace overview page showing the 'Event Hubs' section under Entities with the newly created 'my-hub' Event Hub listed." /><br/><img src={useBaseUrl('img/send-data/AzureEventHubstep7.png')} alt="Shared access policies page for the 'my-hub' Event Hub with the 'Add' button highlighted." /><br/><img src={useBaseUrl('img/send-data/AzureEventHubstep8.png')} alt="Add SAS Policy page for the 'my-hub' Event Hub with the policy name set to 'SumoCollectionPolicy' and the 'Listen' permission checked. The 'Create' button is highlighted." />
+5. Copy the **Shared access policies** Key. Copy the **Primary key** associated with this policy.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep9.png')} alt="SAS Policy page for the 'my-hub' Event Hub showing the 'SumoCollectionPolicy' details, including primary and secondary keys, with the 'copy' icon highlighted." />
 6. When [configuring the Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#vendor-configuration) in Sumo Logic, our input fields might be:
 
   | Field | Value |
@@ -65,8 +62,11 @@ When you create an Azure Event Hubs Source, you add it to a Hosted Collector. Be
 
 To configure an Azure Event Hubs Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. On the Collectors page, click **Add Source** next to a HostedCollector.
+    :::note
+        Make sure the hosted collector is tagged with tenant_name field for the out of the box Azure apps to work. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+    :::
 3. Select the **Azure Event Hubs for Logs** app.
 4. Enter a Name for the Source. The description is optional.<br/><img src={useBaseUrl('img/send-data/azure-event-hub-name.png')} alt="azure event hub" width="100"/>
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
@@ -108,4 +108,3 @@ To create the diagnostic settings in Azure portal, refer to the [documentation](
 ## Troubleshooting
 
 For common error messages, refer [Event Hub export error messages](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq#event-hub-export-error-messages) section.
-

@@ -103,18 +103,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Cisco ASA app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Cisco ASA app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Cisco ASA dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -166,3 +154,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Parameterized Search.** Log Details with counts.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-ASA-Logs-Analytics.png')} alt="Cisco_ASA dashboards" />
+
+## Upgrade/Downgrade the Cisco ASA app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cisco ASA app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

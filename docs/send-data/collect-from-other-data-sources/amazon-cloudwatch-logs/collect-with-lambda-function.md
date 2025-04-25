@@ -70,7 +70,7 @@ If you have more than one CloudWatch Log Group to assign to your Lambda function
 :::
 
 1. Sign in to the [AWS Lambda Console](https://console.aws.amazon.com/lambda/home#/functions).
-1. On the **Functions** page, select the Lambda function created in [Step 2](#create-lambda-function).
+1. On the **Functions** page, select the Lambda function created in [Step 2](#step-2-create-lambda-function).
 1. In the **Function overview** section, click the **+ Add trigger** button.<br/><img src={useBaseUrl('img/send-data/add-trigger.png')} style={{border: '1px solid gray'}} alt="add-trigger" width="700"/>
 1. In the **Add Trigger** prompt, select **CloudWatch Logs** from the **Select a source** dropdown.<br/><img src={useBaseUrl('img/send-data/select-a-source.png')} style={{border: '1px solid gray'}} alt="select-a-source" width="700"/>
 1. Select a **CloudWatch Log Group** to add to your function. You need at least one CloudWatch Log Group to see this option.

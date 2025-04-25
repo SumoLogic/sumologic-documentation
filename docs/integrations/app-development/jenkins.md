@@ -413,18 +413,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Jenkins app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Jenkins app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Jenkins dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -555,3 +543,15 @@ Use this dashboard to:
 * Identify the failed pipeline stages and steps.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins_Pipeline_Stage_Monitoring.png')} alt="jenkins" />
+
+## Upgrade/Downgrade the Jenkins app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Jenkins app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -124,6 +124,16 @@ full\_access\_as\_app Use Exchange Web Services with full access to all mailboxe
 
 Once API permission are added then Admin must consent to a grant these permissions, [Learn more about permissions and consent](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent?WT.mc_id=Portal-Microsoft_AAD_RegisteredApps).
 
+:::info Important Note
+When using the Microsoft EWS Daemon action within an automation rule, note that it will only pull in emails that are marked "Unread" within the respective mailbox scope. To ensure all relevant alerts are processed correctly, keep this mailbox a dedicated entity and avoid any manual reviews by other stakeholders.
+:::
+
+## Configure Microsoft EWS Daemon in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Category
 
 Email Gateway

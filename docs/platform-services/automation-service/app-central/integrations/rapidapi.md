@@ -18,6 +18,12 @@ RapidAPI is an API Hub that enables developers and enterprises to find, connect 
 * **Neutrino API IP Blocklist** *(Enrichment)* - Detect potentially malicious or dangerous IP addresses.
 * **Email Checker Email Verifier** *(Enrichment)* - Validate email addresses in real-time. Make sure a mailbox really exist.
 
+## Configure RapidAPI in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * October 29, 2021 - First upload

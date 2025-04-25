@@ -16,7 +16,8 @@ resource "sumologic_cloud_to_cloud_source" "kaltura-source" {
         "_siemForward":false
       },
       "category":"sanbox/kaltura",
-      "polling_interval":24
+      "polling_interval":24,
+      "baseEntryInitLookback":1
   })
 }
 resource "sumologic_collector" "collector" {

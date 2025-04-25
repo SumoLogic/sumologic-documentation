@@ -11,19 +11,6 @@ As a Content Administrator, you can assume a super user role within Sumo. When y
 
 In this mode, you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. 
 
-<Iframe url="https://www.youtube.com/embed/yW0-5XCS27Y"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
-
 ## Switch to Admin Mode
 
 As a Content Administrator,  you can switch to Admin mode at any time in order to move content from one folder to another for anyone in your organization.  

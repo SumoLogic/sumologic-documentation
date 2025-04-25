@@ -128,18 +128,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Microsoft Office 365 app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Microsoft Office 365 app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Microsoft Office 365 dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -442,3 +430,15 @@ To use the following searches, you will need to edit the search query to add the
 **Demo - LogReduce on Suspicious IP**. Performs a LogReduce operation on a suspicious IP address that you specify.
 
 **Demo - Outlier**. Performs an outlier operation on an IP address that you specify.
+
+## Upgrading the Microsoft Office 365 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Office 365 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

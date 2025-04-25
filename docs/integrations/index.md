@@ -28,9 +28,23 @@ To check if an app is supported by your pricing plan, see [Apps and Sumo Logic A
 Learn the difference between our [Next-Gen Apps and Classic Apps](/docs/get-started/apps-integrations/#next-gen-apps).
 :::
 
-:::sumo
+:::sumo Micro Lesson
 Watch this tutorial to learn how to use our **App Catalog**.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/cz203tui1t?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: App Catalog in Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/5O16kI5UXpM?rel=0"
      width="854px"
      height="480px"
@@ -38,9 +52,11 @@ Watch this tutorial to learn how to use our **App Catalog**.
      className="video-container"
      display="initial"
      position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
+
 :::
 
 <br/>
@@ -140,12 +156,6 @@ Watch this tutorial to learn how to use our **App Catalog**.
     <div className="container">
     <a href="/docs/integrations/web-servers/"><img src={useBaseUrl('img/icons/operations/server.png')} alt="Thumbnail icon" width="50"/><h4>Web Servers</h4></a>
     <p>A guide to Sumo Logic apps for web servers, such as Apache, Nginx, and Squid Proxy.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/integrations/1password/"><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="70"/><h4>1Password</h4></a>
-  <p>1Password helps you monitor your 1Password account’s sign-in and item usage events.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -38,7 +38,7 @@ Before you install the Amazon CloudFront app, complete the following tasks:
 2. Confirm that access logs are being delivered to the Amazon S3 bucket.
 3. [Grant Sumo Logic Access to the Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account) at any time.
 
 ### Add an AWS Source
 
@@ -65,18 +65,6 @@ Now that you have set up collection for CloudFront, install the Sumo Logic app f
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
-
-## Upgrading the Amazon CloudFront app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Amazon CloudFront app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing Amazon CloudFront dashboards
 
@@ -128,6 +116,18 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 - **Cache Hit and Miss Over Time.** Displays the cache's hits and misses over time in timeslices of five minutes for the last three hours in a stacked column chart.
 - **HTTP Status Codes Over Time.** Shows HTTP status codes over time in timeslices of five minutes for the last three hours in a timeline.
 - **Traffic and Megabytes Served.** Provides information on site traffic hits and Megabytes served in timeslices of one hour over the last 24 hours in a combination column and line chart.
+
+## Upgrade/Downgrade the Amazon CloudFront app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon CloudFront app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Additional logs and metrics collection (Optional)
 

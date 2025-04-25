@@ -179,7 +179,7 @@ If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the de
     LogStreamPrefix field does not accept special characters (`[|\\{}()[\]^$+*?.-]`). For example, you can use the comma-separated list like test-name, test-logs as the LogStream name prefixes.
     :::
     * **NumOfWorkers.** (Optional) Increase this value to speed up dead letter queue (DLQ) processing.
-    * **SumoEndPointURL** (Required). Enter the HTTP Source Address URL from [Add a Hosted Collector and HTTP Source](#add-a-hosted-collector-and-http-source).<br/>  ![Specify_Stack_Details.png](/img/send-data/Specify_Stack_Details.png)
+    * **SumoEndPointURL** (Required). Enter the HTTP Source Address URL from [Add a Hosted Collector and HTTP Source](#step-1-add-a-hosted-collector-and-http-source).<br/>  ![Specify_Stack_Details.png](/img/send-data/Specify_Stack_Details.png)
 1. Click **Next**. The **Configure Stack Options** screen will appear. You can optionally add AWS tags to tag the resources created by this CloudFormation stack. Click **Next** to get to the final **Review** window.
 1. In the **Review** window, click the checkbox acknowledging that you understand the the template creates IAM resources, and click **Create**.
 
@@ -200,10 +200,10 @@ If you're using an existing log group or if you don’t want to send logs to the
 ## Step 5: Validate email address for alarms
 
 :::note
-If alarm resources in [Step 3](#remove-alarm-resources-optional) is not removed, you'll need to verify the **EmailID** provided in [Step 4](#step-4-create-a-stack-on-the-aws-cloudformation-console). Otherwise, skip to [Step 6](#step-6-subscribe-sumocwlogslambda-to-cloudwatch-log-groups).
+If alarm resources in [Step 3](#remove-alarm-resources-optional) is not removed, you'll need to verify the **EmailID** provided in [Step 4](#step-4-create-a-stack-on-the-aws-cloudformation-console). Otherwise, skip to [Step 6](#step-6-subscribesumocwlogslambda-to-cloudwatch-log-groups).
 :::
 
-Sign in to the email account whose address you provided when performing the configuration described in [Create a stack on the AWS CloudFormation console](#create-a-stack-on-the-aws-cloudformation-console) above. Look for an email with subject `AWS Notification - Subscription Confirmation`, like the example shown below.
+Sign in to the email account whose address you provided when performing the configuration described in [Create a stack on the AWS CloudFormation console](#step-4-create-a-stack-on-the-aws-cloudformation-console) above. Look for an email with subject `AWS Notification - Subscription Confirmation`, like the example shown below.
 
 ![aws-notification.png](/img/send-data/aws-notification.png)  
 

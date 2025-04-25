@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/http-tools.png')} alt="http-tools" width="80"/>
 
-***Version: 1.4  
-Updated: June 12, 2024***
+***Version: 1.5  
+Updated: January 09, 2024***
 
 Set of scripts to perform simple HTTP requests.
 
@@ -20,9 +20,11 @@ Set of scripts to perform simple HTTP requests.
 * **HTTP POST** (*Enrichment*) - Sends an HTTP POST request to create a resource.
 * **HTTP PUT** (*Enrichment*) - Sends an HTTP PUT request to to update a resource.
 
+## Configure HTTP Tools in Automation Service and Cloud SOAR
 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
-## HTTP Tools in Automation Service and Cloud SOAR
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
@@ -41,8 +43,10 @@ Set of scripts to perform simple HTTP requests.
 	+ HTTP POST: (Added new field for From-Data to be send in the body of the Request)
 * June 14, 2023 (v1.2) - Updated the integration with Environmental Variables
 * September 25, 2023 (v1.3) - Updated Action: HTTP POST Action
-* June 12, 2024 (v1.3) - New Actions:
+* June 12, 2024 (v1.4) - New Actions:
     + HTTP DELETE
     + HTTP HEAD
     + HTTP PATCH
     + HTTP PUT
+* January 09, 2024 (v1.5) - Updated Action: 
+  * HTTP POST Action - Fix the issue with the "output.raw JSON" field.

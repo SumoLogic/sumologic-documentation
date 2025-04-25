@@ -16,7 +16,11 @@ Cisco ESA provides a comprehensive view of security for improved threat intellig
 * **Get Spam Quarantine List** *(Enrichment)* - Retrieve Blocklist Entries.
 * **Edit Spam Quarantine List** *(Containment)* - Add, edit or append Recipient/Sender List/Addresses.
 
-## Cisco ESA in Automation Service and Cloud SOAR
+## Configure Cisco ESA in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

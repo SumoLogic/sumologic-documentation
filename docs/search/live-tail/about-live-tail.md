@@ -59,7 +59,7 @@ You can start a Live Tail session in several ways.
 
 ### New Live Tail page
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> Click the **+ New** button at the top of the screen and select **Live Tail**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Logs > Live Tail**. You can also click the **Go To...** menu at the top of the screen and select **Live Tail**. Kanso--> 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Live Tail**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Live Tail**. You can also click the **Go To...** menu at the top of the screen and select **Live Tail**. 
 1. The **Live Tail** page opens, and the Live Tail session starts. At the prompt, enter the name of the `_sourceCategory`, `_sourceHost`, `_sourceName`, `_source`, or `_collector` of the log you want to tail, along with any filters. Use the syntax `_sourceCategory=name`. For more information, see [Filter Live Tail](filter-live-tail.md).
 1. Click **Run** or press **Enter**.
 

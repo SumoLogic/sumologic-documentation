@@ -83,11 +83,13 @@ Not all Sumo parsing operators are supported. For more information, see [Create 
 
 You cannot use a scheduled view or an index in the scope of a Logs-to-Metrics rule. In other words, you shouldn't use a log search scope that includes `_view` or `_index`. 
 
-### Using Logs-to-Metrics in the frequent or infrequent tier
+### Using Logs-to-Metrics for partitions not included in default scope
 
-Since `_index` is not accepted in logs-to-metrics rules, you can just skip it and still get results for the data assigned to frequent and infrequent tier.
+In the data tier model, frequent and infrequent partitions are excluded from the default search scope. However, if your organization is configured for the flex pricing model, you can selectively choose which partitions to include or exclude from the [default search scope](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope).
 
-If you want to create a Logs-to-Metrics rule for the scope of frequent or infrequent tier partition, you can create the rule with the same log search scope as the partition where the data lives. For example, if you have a partition, `_index=foo`, whose routing expression is `_sourceCategory=foo`, then you should use the same routing expression, `_sourceCategory=foo`, to scope the Logs-to-Metrics rule.
+For cases involving partitions that fall outside the default scope, you can create a Logs-to-Metrics rule for the frequent tier partition, infrequent tier partition, or for the partitions excluded in the flex pricing model. To do this, set the rule using the same log search scope as the partition where the data resides. 
+
+For example, if you have a partition with the index `_index=foo`, and its routing expression is `_sourceCategory=foo`, you should use the same routing expression, `_sourceCategory=foo`, when scoping the Logs-to-Metrics rule.
 
 ### _dataTier search modifier is not supported
 
@@ -105,7 +107,7 @@ This section describes how to create a Logs-to-Metrics rule.
 You must be a Sumo admin to create a Logs-to-Metrics rule, or have a role with the **Manage Logs-to-Metrics** capability, as described in the previous section.
 :::
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Metrics > Logs-to-Metrics**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select **Configuration**, and then under **Metrics**, select **Logs to Metrics**. You can also click the **Go To...** menu at the top of the screen and select **Logs to Metrics**. Kanso--> <br/>The page displays a list of existing Logs-to-Metrics rules. <br/><img src={useBaseUrl('img/metrics/log-to-metrics-add.png')} alt="Add button" style={{border: '1px solid gray'}} width="800" />
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Metrics > Logs-to-Metrics**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select **Configuration**, and then under **Metrics**, select **Logs to Metrics**. You can also click the **Go To...** menu at the top of the screen and select **Logs to Metrics**.  <br/>The page displays a list of existing Logs-to-Metrics rules. <br/><img src={useBaseUrl('img/metrics/log-to-metrics-add.png')} alt="Add button" style={{border: '1px solid gray'}} width="800" />
 1. To create a new rule, click **Add Logs-to-Metrics Rule** in the upper right of the page. The **Add Logs-to-Metrics Rule** page appears. <br/><img src={useBaseUrl('img/metrics/add-logs-to-metrics-rules.png')} alt="Add Logs-to-Metrics Rule" style={{border: '1px solid gray'}} width="500" />
 1. In the **Parse Log Messages** section:
     1. **Name**. Specify a rule name.

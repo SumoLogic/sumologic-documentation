@@ -68,18 +68,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Global Intelligence for Apache Tomcat app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Global Intelligence for Apache Tomcat app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Global Intelligence for Apache Tomcat dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -125,3 +113,15 @@ Use this dashboard to assess unusual latency increases and the reasons for them 
 To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark. Sudden increases in distance coupled with sudden increases compared to benchmark values indicate entities that are either the cause of an incident or are affected by upstream issues.
 
 ![screen](/img/global-intelligence/GI-Tomcat-04-Latency-Signals-and-Contributing-Factors.png)
+
+## Upgrade/Downgrade the Global Intelligence for Apache Tomcat app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Global Intelligence for Apache Tomcat app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

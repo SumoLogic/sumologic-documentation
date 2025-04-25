@@ -33,7 +33,7 @@ To use data from the Infrequent Tier in your dashboard panels, you can use the f
 
 Sumo Logic provides a dashboard you can use to monitor the Infrequent Tier consumption by saved Dashboards.
 
-<img src={useBaseUrl('img/beta/infrequent-dashboard.png')} alt="dashboard" />
+<img src={useBaseUrl('img/integrations/manage/partitions-data-tiers/infrequent-dashboard.png')} alt="dashboard" />
 
 The dashboard presents the following information for the currently selected time range:
 * **Avg Credits Consumed/Day**. The daily average number of credits consumed over the last 30 days.

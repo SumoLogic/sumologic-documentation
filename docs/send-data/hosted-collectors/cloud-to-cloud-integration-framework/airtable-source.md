@@ -23,7 +23,7 @@ The Airtable API integration ingests audit logs periodically from the Airtable a
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 24 hours |  Audit Logs |
+| 5 minutes |  [Audit Logs](https://airtable.com/developers/web/api/audit-log-events) |
 
 ## Setup
 
@@ -48,7 +48,7 @@ Complete the following steps to create service account credentials:
 In this configuration, you will set up an Airtable source account with your Enterprise account and configure it to be authorized and authenticated to use audit logs from Airtable API.
 
 To configure an Airtable Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a **Hosted Collector**.
 1. Search for and select **Airtable**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -58,7 +58,7 @@ To configure an Airtable Source:
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.  
 1. In **Account ID**, enter an account ID that will be a unique identifier for your enterprise account.
-1. In **Personal Access Token**, enter the access token that you have generated in the [authentication](#authentication) section.
+1. In **Personal Access Token**, enter the access token that you have generated in the [Vendor configuration](#vendor-configuration) section.
 1. When you are finished configuring the Source, click **Save**.
 
 
@@ -100,9 +100,3 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
-
-## Limitations
-
-* We are using `Personal Access Token` authentication in the integration, which is currently in public beta version. For more information, refer to the [Airtable Notification](https://airtable.com/developers/web/api/authentication#types-of-token).
-* Size of the single audit log will be less than 64 KB.
-* Data URLs will expire after 7 days. If URLs are not processed within 7 days, the integration will create a new request which may cause data duplication.

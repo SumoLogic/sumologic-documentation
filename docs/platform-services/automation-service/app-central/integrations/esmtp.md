@@ -19,6 +19,12 @@ Allows you to connect your mailbox with Cloud SOAR and send emails via ESMTP.
 
 * **Send Email** (*Notification*) - Send an email.
 
+## Configure ESMTP in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 29, 2021 - First upload

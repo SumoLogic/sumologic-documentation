@@ -1,34 +1,34 @@
 ---
-id: close-cancel-sumo-account
-title: Close or Cancel a Sumo Logic Account
-description: The owner of a Sumo Logic Free or Trial account may delete their Organization from Sumo Logic, which will close the account permanently.
+id: close-cancel-sumo-account  
+title: Close or Cancel a Sumo Logic Account (Free, Trial, or Paid Plans)  
+sidebar_label: Close or Cancel Your Account  
+description: Learn how to permanently close a Sumo Logic Free or Trial account or cancel a paid account like Essentials or Enterprise.  
 ---
 
+This guide explains how to permanently close a Sumo Logic Free or Trial account by deleting your organization. It also outlines the steps to cancel a paid account, such as Essentials or Enterprise.  
 
-This topic covers how to delete your organization from a Sumo Logic Free or Trial account and permanently close the account. It also provides instructions for cancelling a Sumo Logic licensed account. 
-
-## Close a Sumo Logic Free or Trial account
-
-The owner of a Sumo Logic Free or Trial account can delete their organization from Sumo Logic, which will close the account permanently. When you delete your organization, you delete all users and data from Sumo Logic, close the account, and log yourself out as a user.
-
-:::important
-This task deletes your Sumo Logic Organization, all users and data. **This action cannot be undone.** 
+:::info  
+Any financial obligations outlined in your contract remain in effect even if your account is closed or canceled.  
 :::
 
-To delete a Sumo Logic organization and close the account:
+## Close a Sumo Logic Free or Trial account
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/> [**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. Kanso-->
-1. At the top of the page, select the details icon.
-1. Select **Delete this Organization from Sumo Logic?**, click **Delete Org**.
-1. In the dialog **Delete This Organization from Sumo Logic?**, enter **DELETE** to confirm.
-1. Click **Delete Org**.
+Owners of Sumo Logic Free or Trial accounts can permanently delete their organization, removing all users, data, and access to Sumo Logic. This process will also log you out as a user.
 
-The Sumo Logic Organization, all users and data are deleted. This cannot be undone.
+1. Navigate to your Account Overview.
+   * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
+   * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or use the **Go To...** menu to select **Account Overview**.  
+1. At the top of the page, click the **Details** icon.  
+1. Select **Delete this Organization from Sumo Logic?**, then click **Delete Org**.  
+1. In the confirmation dialog, type **DELETE** to confirm.  
+1. Click **Delete Org**.  
 
-:::note
-If you have a self service trial account, at the end of the trial, typically 30 days, if you do not upgrade to a paid subscription, your account converts to a free plan. 
+:::warning  
+Deleting your organization is permanent and removes all users, data, and the account itself. **This action cannot be undone.**  
 :::
+
+If you have a self-service trial account, it will automatically convert to a Free plan at the end of the trial period (typically 30 days) if you do not upgrade to a paid subscription.  
 
 ## Cancel a Sumo Logic licensed account
 
-To cancel your organization's paid Sumo Logic account, open a ticket with [Sumo Logic Support](https://support.sumologic.com/support/s), and we will process your request in a timely manner.
+To cancel a paid Sumo Logic account, such as Essentials or Enterprise, submit a request to [Sumo Logic Support](https://support.sumologic.com/support/s). Our team will process your request promptly.  

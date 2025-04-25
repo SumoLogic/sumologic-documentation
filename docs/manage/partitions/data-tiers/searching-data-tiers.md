@@ -10,8 +10,20 @@ This page has information about how to search different Data Tiers, and when yo
 import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
-Searching Data Tiers.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/5qgw3qizmv?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Searching Data Tiers Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/w0H8upLpCwU?rel=0"
         width="854px"
         height="480px"
@@ -19,9 +31,10 @@ Searching Data Tiers.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 
@@ -76,19 +89,13 @@ In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t a
 
 ### Estimated and actual scan data for Infrequent queries
 
-When you enter a query that will run against the Infrequent Tier (`_dataTier=Infrequent` or `_dataTier=All`), Sumo Logic estimates and displays the amount of data in the Infrequent tier that will be scanned in order to return the search results.
+When you enter a query that will run against the Infrequent Tier (`_dataTier=Infrequent` or `_dataTier=All`), Sumo Logic estimates and displays the amount of data in the Infrequent Tier that will be scanned in order to return the search results. You can view this detail by clicking the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" />. A popup appears that displays the estimated scan data for the chargeable tiers.
 
-:::note
-If there is no pay-per-search data scanned, a warning message will be displayed in the **Scan Estimates** popup.
-:::
+The example below shows the estimate of how much Infrequent data will be scanned for a query that uses `_dataTier=All` in the scope.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/CrossTier-Query-Start-Estimated-Scan.png')} alt="CrossTier-Query-Start-Estimated-Scan" style={{border:'1px solid gray'}} width="800" />
 
-The screenshot below shows the estimate of how much Infrequent data will be scanned for a query that uses  `_dataTier=All` in the scope.<br/><img src={useBaseUrl('/img/partitions-data-tiers/CrossTier-Query-Start-Estimated-Scan.png')} alt="CrossTier-Query-Start-Estimated-Scan" style={{border:'1px solid gray'}} width="800" />
+When you click on the session ID under the histogram, a popup with more detailed information appears. Here you can see the Infrequent data scanned for a query in the scope.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-details.png')} alt="scan-details" style={{border:'1px solid gray'}} width="500" />
 
-Here's an example of the estimated scan for a query that uses`(_dataTier=Continuous OR _dataTier=Infrequent)` in the scope.<br/><img src={useBaseUrl('/img/partitions-data-tiers/CrossTier-Query-Start-Estimated-Scan-2.png')} alt="CrossTier-Query-Start-Estimated-Scan-2" style={{border:'1px solid gray'}} width="800" />
-
-After you run a query, the actual amount of Infrequent data scanned to return the results is shown.<br/><img src={useBaseUrl('/img/partitions-data-tiers/CrossTier-Query-Complete.png')} alt="CrossTier-Query-Complete" style={{border:'1px solid gray'}} width="800" />
-
-If you click in the status area under the histogram, popup with more detailed information appears.<br/><img src={useBaseUrl('/img/partitions-data-tiers/CrossTier-Query-Complete-SearchDetails.png')} alt="CrossTier-Query-Complete-SearchDetails" style={{border:'1px solid gray'}} width="500" />
+If there is no pay-per-search data scanned, a warning message will be displayed in the **Scan Estimates** popup.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/no-scan-data.png')} alt="scan-details" style={{border:'1px solid gray'}} width="350" />
 
 ### Cross-tier searches and role search filters
 

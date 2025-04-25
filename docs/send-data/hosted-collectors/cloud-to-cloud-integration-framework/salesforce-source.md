@@ -67,7 +67,7 @@ When you create a Salesforce Source, you add it to a Hosted Collector. Before 
 
 To configure a Salesforce Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Salesforce**.
 1. Enter a **Name** for the Source in the Sumo Logic console. The description is optional.
@@ -76,7 +76,7 @@ To configure a Salesforce Source:
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-1. **SignOn URL.** Enter your Sign on URL, e.g.  https://login.salesforce.com/services/oauth2/token.
+1. **SignOn URL.** Enter your Sign on URL. For example, `https://<MyDomainName>.my.salesforce.com/services/oauth2/token`.
 1. **Client ID.** Enter the Consumer Key of the ConnectedApp. 
 1. **Client Secret.** Enter the Consumer Secret of the ConnectedApp. 
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
@@ -137,29 +137,37 @@ After you configure your Source, you should check the status of the source in th
 
 The following section details how you can resolve various errors: 
 
+### No client credentials user enabled
+
 **Error**: `{\"error\":\"invalid_grant\",\"error_description\":\"no client credentials user enabled\"}`. This is due to incorrect policies and permissions for authorization.
 
-To resolve this, if you have migrated your source from v2.1.1 to v3.x.x, make sure to follow the steps mentioned in **Vendor Configuration** section related to client credentials with attention.
+**Solution**: To resolve this, if you have migrated your source from v2.1.1 to v3.x.x, make sure to follow the steps mentioned in **Vendor Configuration** section related to client credentials with attention.
+
+### Object type 'Document' is not supported
 
 **Error**: Object type 'Document' is not supported
 
-To resolve this: 
+**Solution**:
 
 1. In Salesforce, go to **Setup\>Administration\>Users\>Profile\>New Profile / Edit Profile**.
 1. Under **Standard Object Permissions** \> **Documents** select **Read** permission click on the **Save** button. 
 1. Now assign this profile to the user, whose credentials you have configured as part of the Salesforce Source.
 
+### Object type 'Report' is not supported
+
 **Error**: Object type 'Report' is not supported
 
-To resolve this:
+**Solution**:
 
 1. Go to **Setup\>Administration\>Users\>Profile**.
 1. Edit specific Profile which is assigned to the user
 1. Go to: **General User Permissions** and enable / disable **Run Reports**. **Run Reports** should be enabled for access to REPORT
 
+### Object type 'EventLogFile' is not supported
+
 **Error**: Object type 'EventLogFile' is not supported
 
-To resolve this:
+**Solution**:
 
 1. Go to **Setup\>Administration\>Users\>Permission Sets**.
 1. Create New Permission Set and assign to user or Edit specific Permission Set which is assigned to user.
@@ -172,9 +180,11 @@ To resolve this:
 If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
 :::
 
+### Object type ‘SetupAuditTrail’ is not supported
+
 **Error**: Object type ‘SetupAuditTrail’ is not supported
 
-To resolve this:
+**Solution**:
 
 1. Go to **Setup\>Administration\>Users\>Profile**.
 1. Edit specific Profile which is assigned to the user
@@ -184,37 +194,55 @@ To resolve this:
 If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
 :::
 
+### Token endpoint mismatch
+
 **Error**: Token Endpoint must match the format `"https://<hostname>/services/oauth2/token"`. This is due to incorrect source configuration.
 
-To resolve this, provide the correct "SignOn Url". 
+**Solution**: Provide the correct "SignOn Url". 
+
+### Client identifier invalid
 
 **Error**: `{"error":"invalid_client_id","error_description":"client identifier invalid"}`. This is due to incorrect source configuration.
 
-To resolve this, provide the correct “Client ID”.
+**Solution**: Provide the correct “Client ID”.
+
+### Invalid client credentials
 
 **Error**: `{"error":"invalid_client","error_description":"invalid client credentials"}`. This is due to incorrect source configuration.
 
-To resolve this, provide the correct “Client Secret”. 
+**Solution**: Provide the correct “Client Secret”. 
+
+### Unknown error: Retry your request
 
 **Error**: `{"error":"unknown_error","error_description":"retry your request"}`. This is due to an invalid SignOn Url.
 
-To resolve this, change it from login.salesforce.com to `<instanceURL>.salesforce.com`
+**Solution**: Change it from login.salesforce.com to `<instanceURL>.salesforce.com`
+
+### More Memory Required
 
 **Error**: MoreMemoryRequired: Available: 100 FileSize: 200. Please create a support ticket.
 
-To resolve this, create a support ticket with sumo logic to increase the memory for your container.
+**Solution**: Create a support ticket with sumo logic to increase the memory for your container.
+
+### Inconsistencies in Field Values
 
 **Error**: Inconsistencies in `DASHBOARD_ID_DERIVED_LOOKUP` Field Values
 
 You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has value, but in other logs, it's completely empty. This could be because of a problem with permissions.
 
-To resolve this: 
+**Solution**:
 
 1. In Salesforce, go to **Setup\>Administration\>Users\>Profile**.
 1. Click the **Edit** button for the user's profile you set up for the Salesforce Source.
 1. In the **Administrative Permissions** section, check the box for **Manage Reports in Public Folders** permission.
 1. In the **General User Permissions** section, check the box for **View My Team's Dashboards** permission.
 1. Click the **Save** button
+
+### Request not supported on this domain
+
+**Error**: `invalid_grant`
+
+**Solution**: Check your sign-on URL. If your sign-on URL is set to `https://login.salesforce.com/services/oauth2/token` you likely need to change it to another value, such as `https://<MyDomainName>.my.salesforce.com/services/oauth2/token`.
 
 ## FAQ
 

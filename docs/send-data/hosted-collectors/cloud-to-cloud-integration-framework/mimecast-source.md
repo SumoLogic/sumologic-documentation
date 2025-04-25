@@ -32,9 +32,9 @@ The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List
 
 ### Vendor configuration
 
-The integration must be configured with the Client ID and Secret Key. Also, the user account associated with your Mimecast credentials needs to have `basic administrator` access.
+To configure the integration, you must use a Client ID and Secret Key. Additionally, the user account associated with your Mimecast credentials must have `basic administrator` access.
 
-Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID and Secret Key.
+Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID and Client Secret key.
 
 :::note
 Enhanced logging needs to be enabled on the Mimecast side in order for the expected logs to be created and sent to Sumo Logic via the above channels. See [Understanding SIEM Logs](https://integrations.mimecast.com/documentation/tutorials/understanding-siem-logs/) in the Mimecast documentation. 
@@ -46,7 +46,7 @@ When you create a Mimecast Source, you add it to a Hosted Collector. Before cre
 
 To configure a Mimecast Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Mimecast**.
 1. Enter a **Name** for the Source. The description is optional.

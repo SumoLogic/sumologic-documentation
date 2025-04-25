@@ -13,8 +13,9 @@ import {
   FontAwesomeIcon,
 } from '@fortawesome/react-fontawesome';
 import {
-  faTwitter,
+  faXTwitter,
   faYoutube,
+  faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import { Stack } from '@mui/system';
 import {
@@ -149,11 +150,25 @@ export const Footer = () => {
               }
             },
             {
-              alt: 'Sumo Logic Twitter',
+              alt: 'Sumo Logic X (formerly known as Twitter)',
               color: '#e3e3e3',
               href: 'https://x.com/SumoLogic',
-              'aria-label': 'Sumo Logic Twitter',
-              icon: faTwitter,
+              'aria-label': 'Sumo Logic X (formerly known as Twitter)',
+              icon: faXTwitter,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
+            {
+              alt: 'Sumo Logic LinkedIn',
+              color: '#e3e3e3',
+              href: 'https://www.linkedin.com/company/sumo-logic',
+              'aria-label': 'Sumo Logic LinkedIn',
+              icon: faLinkedinIn,
               size: 'lg',
               sx: {
                 cursor: 'pointer',

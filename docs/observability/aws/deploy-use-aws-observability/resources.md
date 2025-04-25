@@ -185,7 +185,7 @@ The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/de
   <tr>
    <td>Hosted Collector   </td>
    <td>aws-observability-&#60;AccountAlias&#62;-&#60;AccountID&#62;   </td>
-   <td>aws-observability-&#60;AccountAlias&#62;-&#60;AccountID&#62; </td>
+   <td>AWS Observability &#60;AccountAlias&#62; &#60;AccountID&#62; </td>
   </tr>
   <tr>
    <td>Field Extraction Rule   </td>
@@ -279,16 +279,6 @@ cloudwatch-metrics-&#60;AWS::Region&#62;-SNS </td>
    <td>Kinesis Firehose for Logs </td>
    <td>kinesis-firehose-cloudwatch-logs-&#60;AWS::Region&#62; </td>
    <td>CloudWatch Logs &#60;AWS::Region&#62; </td>
-  </tr>
-  <tr>
-   <td>Inventory Source </td>
-   <td>inventory-&#60;AWS::Region&#62; </td>
-   <td>AWS Inventory &#60;AWS::Region&#62;  </td>
-  </tr>
-  <tr>
-   <td>XRay Source   </td>
-   <td>xray-&#60;AWS::Region&#62;   </td>
-   <td>AWS Xray &#60;AWS::Region&#62;  </td>
   </tr>
   <tr>
    <td>S3 Bucket Name   </td>

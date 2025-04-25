@@ -20,6 +20,7 @@ The data volume index is populated with a set of log messages every five minutes
 | SourceCategory     | `sourcecategory_volume`          |
 | SourceHost         | `sourcehost_volume`              |
 | View               | `view_volume`                    |
+| SourceCategory     | `view_and_extractedAndCollectedFieldSize_volume`          |
 
 You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the `_index` metadata field with a value of `sumologic_volume`. For more information, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
 
@@ -96,7 +97,7 @@ _index=sumologic_volume _sourceCategory = "sourcecategory_and_tier_volume"
 
 would produce results such as:
 
-![clipboard_e08593bedbf920dea82726b15964e56f6.png](/img/ingestion-volume/volume-each-category.png)
+![clipboard_e08593bedbf920dea82726b15964e56f6.png](/img/manage/ingestion-volume/volume-each-category.png)
 
 **Volume for Each Collector by Tier**
 
@@ -222,7 +223,7 @@ _index=sumologic_volume _sourceCategory="sourcecategory_tracing_volume"
 
 This query produces results like these: 
 
-![tracing-volume-source-category](/img/ingestion-volume/tracing-volume-source-category.png)
+![tracing-volume-source-category](/img/manage/ingestion-volume/tracing-volume-source-category.png)
 
 #### Tracing volume by collector
 
@@ -237,7 +238,7 @@ _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 
 This query produces results like these:
 
-![image](/img/ingestion-volume/tracing-volume-source-category.png)
+![image](/img/manage/ingestion-volume/tracing-volume-source-category.png)
 
 #### Tracing volume for a specific collector
 

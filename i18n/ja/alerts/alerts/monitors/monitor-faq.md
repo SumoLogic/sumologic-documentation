@@ -17,7 +17,7 @@ For example, instead of creating one monitor to alert on CPU utilization, break 
 
 ## Why does my monitor get automatically disabled? 
 
-Sumo Logic will automatically disable a Monitor if it violates specific limitations. You can check the reason it was disabled with the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index.md). The following query will search the Audit Event Index for the reason:  
+Sumo Logic will automatically disable a Monitor if it violates specific limitations. You can check the reason it was disabled with the [System Event Index](/docs/manage/security/audit-indexes/system-event-index.md). The following query will search the System Event Index for the reason:  
 
 ```sql
 _index=sumologic_system_events MonitorSystemDisabled <monitorId>
@@ -67,11 +67,11 @@ The [**Test Connection** feature for webhooks](/docs/alerts/webhook-connection
 
 One of the reasons could be that the user who created the monitor was deleted. You can check the **Created By** value on the Monitors page. If it has \<User Unknown\> you will need to re-create the monitor.  
 
-![user unknown monitors.png](/img/monitors/user-unknown-monitors.png)
+![user unknown monitors.png](/img/alerts/monitors/user-unknown-monitors.png)
 
 You can quickly **Duplicate** the monitor by hovering over it on the Monitors page and clicking the three-dot kebab icon,  
 
-![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
+![more actions menu for monitors.png](/img/alerts/monitors/more-actions-menu-for-monitors.png)  
 
 then selecting **Duplicate**. If your monitor still doesn't work then it might be a different problem and we recommend that you contact [customer support](https://support.sumologic.com/). 
 
@@ -81,7 +81,7 @@ The Monitors page allows you to disable a Monitor so you're not alerted during 
 
 1. Find and select the Monitor in the Monitors table. A three-dot kebab icon appears on the right of the row.
 
-    ![menu-option.png](/img/monitors/menu-option.png)
+    ![menu-option.png](/img/alerts/monitors/menu-option.png)
 
 1. Click the three-dot kebab icon to view the menu options. You can select to Enable or Disable the monitor.
 

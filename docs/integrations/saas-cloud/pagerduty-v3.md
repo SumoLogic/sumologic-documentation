@@ -17,7 +17,7 @@ The Sumo Logic App for PagerDuty V3 collects incident messages from your PagerDu
 This section provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V3, to collect PagerDuty events. Click a link to jump to a topic:
 
 * [Event types](#event-types)
-* [Log example](#sample-logs)
+* [Log example](#sample-log-messages)
 * [Sample Queries](#sample-queries)
 * [Configure a Sumo Logic Collector and Source](#configure-a-sumo-logic-collector-and-source)
 * [Create a PagerDuty V3 Webhook](#create-a-pagerduty-v3-webhook)
@@ -93,19 +93,15 @@ In the next section, install the Sumo Logic App for PagerDuty V3.
 
 ## Installing the PagerDuty V3 App
 
-This section provides instructions for installing the Sumo App for PagerDuty V3.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V3, and use its pre-configured searches and dashboards.
-
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing PagerDuty V3 Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

@@ -36,7 +36,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 
 ### UI Installation
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. On the left panel, select **macOS** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/macOs.png')} alt="macOs-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
@@ -270,7 +270,7 @@ For general Sumo Logic OTel Collector troubleshooting, refer to [Troubleshooting
 
 Here are some troubleshooting steps specific to macOS.
 
-### Error `/Library/Application Support/otelcol-sumo/uninstall.sh: No such file or directory` when uninstalling collector
+### uninstall.sh: No such file or directory error when uninstalling collector
 
 If you're trying to uninstall the collector on macOS, and you see an error similar to the following:
 
@@ -302,14 +302,14 @@ Going to remove Otelcol binary, user, file storage and configurations.
 Uninstallation completed
 ```
 
-### Verify that the `launchd` daemon has been installed
+### Verify that the 'launchd' daemon has been installed
 
 ```console
 $ sudo launchctl list | grep otelcol-sumo
 54109	0	otelcol-sumo
 ```
 
-### Verify that the `launchd` daemon is running
+### Verify that the 'launchd' daemon is running
 
 ```console
 $ sudo launchctl print system/otelcol-sumo

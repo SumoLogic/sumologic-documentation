@@ -48,12 +48,14 @@ The AWS CloudWatch Metrics source uses AWS’s [GetMetricStatistics](https://doc
 
 In this step, you create the AWS Kinesis Firehose for Metrics source.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Add Source** next to a Hosted Collector. 
 1. Select **AWS Kinesis Firehose** for Metrics.
 1. Enter a **Name** for the source.
 1. (Optional) Enter a **Description**.
 1. For **Source Category**, enter any string to tag the output collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`.<br/><img src={useBaseUrl('img/send-data/kinesis-aws-source.png')} alt="kinesis-aws-source.png" style={{border: '1px solid gray'}} width="500"/>
+1. For **AWS Tag Filters** (Optional) , enter keys and values to add filters to your metrics. AWS Tag filters are supported for AWS namespaces but not for custom namespaces.
+**Example** <br/><img src={useBaseUrl('img/send-data/kinesis-aws-tag-filters.png')} alt="kinesis-aws-source.png" style={{border: '1px solid gray'}} width="500"/>
 1. For **AWS Access** of a Kinesis Metric source, the role requires `tag:GetResources` permission. The Kinesis Log source does not require permissions.
 1. Click **Save**.
 
@@ -79,7 +81,7 @@ In this step, you set up the AWS Metric Streams service to stream metrics to Kin
 
 ## Filter CloudWatch metrics during ingestion
 
-You can choose metrics to send or not send to Sumo Logic by setting filters on the Metric Stream that sends the metrics. You can filter by AWS namespace, either by specifying namespaces from which you want to collect metrics from, or namespaces from which you don’t. Once you configure namespaces to include or exclude, CloudWatch will only send metrics that match the rules. 
+You can choose metrics to send or not send to Sumo Logic by setting filters on the Metric Stream that sends the metrics or by using AWS Tag Filters above. While using filters on Metrics Streams in AWS, you can filter by AWS namespace, either by specifying namespaces from which you want to collect metrics from, or namespaces from which you don’t. Once you configure namespaces to include or exclude, CloudWatch will only send metrics that match the rules. 
 
 :::note
 Inclusive and exclusive filters can’t be combined. You can choose namespaces to exclude or namespaces to include, but not both.
@@ -104,3 +106,13 @@ Inclusive and exclusive filters can’t be combined. You can choose namespaces t
 1. Click **All metrics** and select the **Exclude metric namespaces** option.
 1. From the list of AWS namespaces, select the namespaces whose metrics you do not want to receive.
 1. Click **Save changes** at the bottom of the page.
+
+## Troubleshooting
+
+### Metric streams output format
+
+Currently, we support [OpenTelemetry 0.7.0](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html) output format for CloudWatch metric streams. If you see an error similar to the below:
+
+```HTTP ERROR 400 Could not parse firehose input json```
+
+Then it's likely that you have the incorrect output format selected in your CloudWatch metric stream.

@@ -74,7 +74,7 @@ Failures could be related to the Scheduled Search query. Check the following:
 * Test the Scheduled Search query to reproduce the failure.
 * Make sure your query is written correctly. See [Write Efficient Search Queries](/docs/search/get-started-with-search/build-search). 
 * Optimize your query performance using [Partitions](/docs/manage/partitions) or [Scheduled Views](/docs/manage/scheduled-views).  
-* Taking too long to complete. See [How to Prevent Your Scheduled Search from Timing Out](#how-to-prevent-your-scheduled-search-from-timing-out). 
+* Taking too long to complete. See [How do I prevent my Scheduled Search from timing out?](/docs/alerts/scheduled-searches/faq/#how-do-i-prevent-my-scheduled-search-from-timing-out)
 
 ### Sumo Logic back-end issues
 
@@ -88,7 +88,7 @@ Failures can be seen across many Scheduled Searches due to back-end infrastructu
 Scheduled Search failures could result from:
 
 * A spike in data being processed by the Scheduled Search.
-* If you have a query that normally runs, but is close to reaching the [timeout period limit](#how-to-prevent-your-scheduled-search-from-timing-out), it could finally fail due to changes in your account, such as the content and size of log messages, or the volume or number of messages sent during a specific time range. Choosing a narrower time range can help.
+* If you have a query that normally runs, but is close to reaching the [timeout period limit](#how-do-i-prevent-my-scheduled-search-from-timing-out), it could finally fail due to changes in your account, such as the content and size of log messages, or the volume or number of messages sent during a specific time range. Choosing a narrower time range can help.
 * Even if the query normally runs within the timeout period limit, there could be a data surge that causes more processing time to be needed.
 * There could be normal growth factors within an account, such as increased Collector deployment, that would cause some Source Categories to have a data surge. You should test your Scheduled Searches for performance periodically to address this possibility.
 
@@ -129,7 +129,7 @@ Additional consideration for performance tests:
 * If there are plans to add more data to your account in the near future, keep that in mind in your testing and include a buffer to make sure that your increased data volume won’t cause your scheduled search to time out.
 
 
-## How do I set a Real-Time Alert with more than 1,000 results?
+## How do I set a real-time alert with more than 1,000 results?
 
 Scheduled Search alert condition thresholds are based on the number of rows returned in your search results. It does not consider any values that may be present within a column of those rows.
 
@@ -163,17 +163,17 @@ If you have received an Alert Email stating that an issue has been detected with
 
 First, we recommend that you review the scheduled search. (Just click the link at the bottom of the email.) It could be that there's an easy-to-spot typo. Or perhaps an operator is being used improperly. See [how to prevent your scheduled search from failing](#why-would-a-scheduled-search-fail).
 
-### Why was my Scheduled Search suspended?
+### Why was my scheduled search suspended?
 
-Scheduled Searches must run within the limits of a [timeout period](#how-to-prevent-your-scheduled-search-from-timing-out), which can be 20 minutes to an hour, depending on the time range set for the query. If for some reason, a Scheduled Search cannot complete within the confines of the timeout period, such as connectivity problems or heavy load, the query will timeout and fail.
+Scheduled Searches must run within the limits of a [timeout period](#how-do-i-prevent-my-scheduled-search-from-timing-out), which can be 20 minutes to an hour, depending on the time range set for the query. If for some reason, a Scheduled Search cannot complete within the confines of the timeout period, such as connectivity problems or heavy load, the query will timeout and fail.
 
 When a Scheduled Search query fails Sumo Logic attempts to run the query again a few more times. If all attempts fail the scheduled search is temporarily or permanently suspended depending on the issue detected. The owner of the scheduled search will receive an email alert with details of the suspension including the reason.
 
 The [Audit Index](/docs/manage/security/audit-indexes/audit-index) stores events on your scheduled search events.
 
-### Is there a limit on number of scheduled searches?
+### Is there a limit on number of Scheduled Searches?
 
-A maximum of 6000 scheduled searches are allowed per account.
+A maximum of 6000 Scheduled Searches are allowed per account.
 
 ### Examples of Scheduled Search suspensions
 
@@ -201,7 +201,7 @@ The [Audit Index](/docs/manage/security/audit-indexes/audit-index) stores even
 
 The suspended state of the Scheduled Search lasts for four hours for non-daily searches (for example, searches recurring every 15 minutes, every 1 hour, etc.) and for up to an extra day for a daily search (two failed executions on two days and skips the third day).
 
-Once the suspension period is over, the Scheduled Search will resume normal operation after four hours (for non-daily scheduled searches) or on the fourth day for a daily Scheduled Search.
+Once the suspension period is over, the Scheduled Search will resume normal operation after four hours (for non-daily Scheduled Searches) or on the fourth day for a daily Scheduled Search.
 
 Permanent suspensions last forever. You need to create a new scheduled search. 
 

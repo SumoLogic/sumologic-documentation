@@ -245,7 +245,7 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule. To do so:
-   * <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
    * Click the + Add button on the top right of the table.
    * The **Add Field Extraction Rule** form will appear:
    * Enter the following options:
@@ -454,19 +454,19 @@ There are limits for how many alerts can be enabled - please see the [Alerts FAQ
    * For alerts applicable only to a specific cluster, your custom filter would be:  `db_cluster=redis-.prod.01`.
    * For alerts applicable to all clusters that start with `redis-prod`, your custom filter would be: `db_cluster=redis-prod*`.
    * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=redis-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-2. Go to Manage Data > Alerts > Monitors.
+2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
 3. Click **Add**.
-4. Click Import to import monitors from the JSON above.
+4. Click **Import** to import monitors from the JSON above.
 
 :::note
-Monitors are disabled by default. Once you have installed the alerts via this method, navigate to the Redis folder under **Monitors** to configure them. See [Monitor Settings](/docs/alerts/monitors/settings/#edit-disable-more-actions) to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of [Create a Monitor](/docs/alerts/monitors/create-monitor).
+Monitors are disabled by default. Once you have installed the alerts via this method, navigate to the Redis folder under **Monitors** to configure them. See [Monitor Settings](/docs/alerts/monitors/settings/#monitor-details) to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of [Create a Monitor](/docs/alerts/monitors/create-monitor).
 :::
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using[ these](/docs/manage/security/access-keys#from-the-preferences-page) instructions. Please identify which deployment your Sumo Logic account is in,[ using](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) this link.
+1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using [this link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Redis alerts. The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/redis). You can either download it via the “git clone” command or as a zip file.
+3. Download the Sumo Logic Terraform package for Redis alerts. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/redis). You can either download it via the “git clone” command or as a zip file.
 4. Monitor Configuration. After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**redis**/
 
 Edit the redis.auto.tfvars file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
@@ -539,8 +539,8 @@ This section demonstrates how to install the Redis ULM app.
 Version selection is not available for all apps.
 :::
 3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   2. **Data Source.**  Choose **Enter a Custom Data Filter** and enter a custom Redis cluster filter. Examples:
+   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
+   2. **Data Source.** Choose **Enter a Custom Data Filter** and enter a custom Redis cluster filter. Examples:
       * For all Redis clusters: `db_cluster=*`
       * For a specific cluster: `db_cluster=redis.dev.01`
       * Clusters within a specific environment: `db_cluster=redis-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection).

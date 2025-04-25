@@ -34,17 +34,16 @@ Each Source can have its own unique fields in addition to the generic fields lis
 
 ### Local file source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types),
-the following parameters are for local file source. 
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for local file source. 
 
-| Parameter | Type | Required? | Default | Description |  Access |
-|:--|:--|:--|:--|:--|:--|
-| `sourceType` | String | Yes |  | LocalFile	not | modifiable |
-| `pathExpression` | String | Yes |  | A valid path expression (full path) of the file to collect. For files on Windows systems (not including Windows Events), enter the absolute path including the drive letter. Escape special characters and spaces with a backslash (\). If you are collecting from Windows using CIFS/SMB, see Prerequisites for Windows Log Collection. Use a single asterisk wildcard [*] for file or folder names. Example:[var/foo/*.log]. Use two asterisks [**]to recurse within directories and subdirectories. Example:  [var/**/*.log]. | modifiable |
-| `denylist` | String Array | No | `[ ]` | Comma-separated list of valid path expressions from which logs will not be collected. <br/>Example: `"denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]` | modifiable |
-| `encoding` | String | No | UTF-8 | Defines the encoding form. Default is "UTF-8"; options include "UTF-16"; "UTF-16BE"; "UTF-16LE". | modifiable |
+| Parameter   | Type         | Required? | Default | Description     | Access   |
+|:------------|:-----------|:-----------|:--------|:--------------|:---------|
+| `sourceType`    | String    | Yes       |      | LocalFile   | not modifiable |
+| `pathExpression` | String        | Yes       |      | A valid path expression (full path) of the file to collect. For files on Windows systems (not including [Windows Events](/docs/send-data/installed-collectors/sources/local-windows-event-log-source), enter the absolute path including the drive letter. Escape special characters and spaces with a backslash [`\`]. If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Windows Log Collection](/docs/send-data/installed-collectors/sources/remote-file-source/prerequisites-windows-remote-file-collection). Use a single asterisk wildcard [`*`] for file or folder names. Example: `[var/foo/*.log]`. Use two asterisks [`**`] to recurse within directories and subdirectories. Example: `[var/**/*.log]`. | modifiable     |
+| `denylist`      | String Array  | No     | [ ]     | Comma-separated list of valid path expressions from which logs will not be collected. Example: `["/var/log/**/*.bak","/var/oldlog/*.log"]`    | modifiable     |
+| `encoding`    | String      | No        | UTF-8   | Defines the encoding form. Default is `"UTF-8"`; options include `"UTF-16"`; `"UTF-16BE"`; `"UTF-16LE"`.    | modifiable |
 
-Local File Source JSON example with `cutoffTimestamp`: 
+Local File Source JSON example with `cutoffTimestamp`:
 
 ```json
 {
@@ -312,7 +311,7 @@ This example shows how to use WMI queries to collect performance metrics from W
 }
 ```
 
-### Windows Active Directory Source 
+### Windows Active Directory Inventory Source 
 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for a Windows Active Directory Inventory Source.
 
@@ -538,7 +537,7 @@ Example source JSON to collect metrics:
 
 |  Field Type |  Type Value |
 |:--|:--|
-| [Host metrics Source](#host-metrics-source) | SystemStats |
+| [Host metrics Source](#host-metricssource) | SystemStats |
 | [Streaming Metrics Source](#streaming-metrics-source) | StreamingMetrics |
 
 ### Host metrics source 
@@ -551,7 +550,7 @@ The following parameters are for a host metrics source. 
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `sourceType` | String | Yes |  | SystemStats | not modifiable |
-| `metrics` | String Array | No | all metrics | Comma-separated list of metrics to collect. Example:  "metrics" : `["CPU_User", "CPU_Sys", "Mem_Used"]` For a full list of available metrics, see [Host Metrics Source for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources). When omitted, all available host metrics will be collected. | modifiable |
+| `metrics` | String Array | No | all metrics | Comma-separated list of metrics to collect. Example:  "metrics" : `["CPU_User", "CPU_Sys", "Mem_Used"]` For a full list of available metrics, see [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/). When omitted, all available host metrics will be collected. | modifiable |
 | `interval` (ms) | Integer | Yes |  | Time interval in milliseconds of the metrics collection. We recommend 60 second granularity (60000). The Sumo Logic UI offers some pre-defined values (10s, 15s, 30s, 1m, 5m). | modifiable |
 | `hostName` | String | No |  | Host from which the metrics are collected. | modifiable |
 
@@ -595,7 +594,7 @@ Graphite contentType JSON example: 
 }
 ```
 
-## Additional Information
+## Additional information
 
 See the following topics for additional information:
 * [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.

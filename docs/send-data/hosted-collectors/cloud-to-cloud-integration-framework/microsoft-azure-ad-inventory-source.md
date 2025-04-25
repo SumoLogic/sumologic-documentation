@@ -57,8 +57,8 @@ From there, select (or search for) the following permissions under type **Applic
 
 | API | Account Type| Permissions |
 |:---------|:---------------------------------------------------|:------------------------------------|
-| User    | Application (work or school account) | User.Read.All, Directory.ReadAll   |
-| Devices | Application (work or school account) | Device.Read.All, Directory.ReadAll |
+| User    | Application (work or school account) | User.Read.All, Directory.Read.All   |
+| Devices | Application (work or school account) | Device.Read.All, Directory.Read.All |
 
 You require additional permission to collect `signInActivityData` for User.
 
@@ -76,7 +76,7 @@ When you create a Microsoft Azure AD Inventory Source, you add it to a Hosted C
 
 To configure a Microsoft Azure AD Inventory Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Microsoft Azure AD Inventory**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
@@ -92,6 +92,10 @@ To configure a Microsoft Azure AD Inventory Source:
    :::note
    To collect the `signInActivity` information you should have `Azure AD Premium P1/P2` license.
    :::
+1. **Collect Users Group Details**. By enabling the checkbox, you can also include the user group information in your user response. [Learn more](https://learn.microsoft.com/en-us/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0&tabs=http#http-request).
+    :::note
+    To know about the permissions required to collect user group details, refer to the [Microsoft documentation](https://learn.microsoft.com/en-us/graph/api/group-get?view=graph-rest-1.0&tabs=http#permissions).
+    :::
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
@@ -126,6 +130,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | application_id | String | Yes | `null` | Provide the Application (client) ID you got after you registered (created) the Azure Application. |  |
 | supported_apis | Array of strings | Yes | `null` | Define one or more of the available APIs to collect: Devices, and Users.| ["Devices","Users"] |
 | userSignInActivity | Boolean | No | False | Select the checkbox to include the sign in activity information in your user response. |  |
+| userGroupDetails | Boolean | No | False | Select the checkbox to include the user’s group details in your user response. |  |
 
 ### JSON example
 

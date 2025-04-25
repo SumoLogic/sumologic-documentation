@@ -5,8 +5,9 @@ description: You can collect file tail data from a remote system using SSH.
 ---
 
 import CollBegin from '../../../../reuse/collection-should-begin-note.md';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Log files collected using a Remote File Source must be encoded in UTF-8 or ASCII. If you are editing a Source, metadata changes are reflected going forward. Metadata for previously collected log data will not be retroactively changed.
+If you are editing a Source, metadata changes are reflected going forward. Metadata for previously collected log data will not be retroactively changed.
 
 Sumo Logic scans remote directories every 30 seconds.
 
@@ -17,7 +18,7 @@ To collect remote Windows logs using CIFS/SMB, see CIFS/SMB, see [Prerequisite
 To configure a Remote File Source:
 
 1. First see [Prerequisites for Windows Remote File Collection](prerequisites-windows-remote-file-collection.md).
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Find the name of the installed Collector here you'd like to add a Source. Click **Add** and then choose **Add Source** from the pop-up menu.
 1. Select **Remote File** for the Source type.   
 
@@ -50,9 +51,7 @@ To configure a Remote File Source:
     ![remote file source credential input.png](/img/send-data/remote-file-source-credential-input.png)
 
 1. Set any of the following under **Advanced.**
-
-    ![Local File UI June 2021.png](/img/send-data/Local-File-UI.png)
-
+<img src={useBaseUrl('/img/send-data/advanced-options-remote-file-source.png')} alt="Advanced options for log" style={{border: '1px solid gray'}} width="600" />
     * **Denylist.** Optional. Add any files to be excluded by including one or more path expressions separated by commas. Note that this field takes a maximum of 10240 characters.
     * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
       * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.

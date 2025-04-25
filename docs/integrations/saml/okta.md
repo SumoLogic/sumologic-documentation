@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Okta provides secure connections between people and your applications on any device through identity management service built for the cloud. The Sumo Logic app for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta. The app consists of dashboards that give you visibility into the applications, accesses, user events, and Multi-Factor Authentication (MFA).
 
-## Log types and versions
+## Log types
 
 The Sumo Logic collector uses Okta System Log API to get the logs of Okta System. The log types include authentication, events, and actions. For more information on the Okta log API, see [here](https://developer.okta.com/docs/api/resources/system_log.html).
 
@@ -181,34 +181,35 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 | count by okta_user_id, actor, outcome_result, country, state
 ```
 
+## Collection configuration and app installation
 
-## Configuring Okta Log Collection
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-Use the [new Cloud-to-Cloud Integration for Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app.
+<CollectionConfiguration/>
 
-:::note
-The Okta Log Collection configuration via SumoJanus is no longer applicable and deprecated. We recommend switching to [Cloud-to-Cloud integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) to configure the Okta Log collection. The steps must be completed in the order they are presented.
+:::important
+Use the [Cloud-to-Cloud Integration for Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Okta app is properly integrated and configured to collect and analyze your Okta data.
 :::
 
-## Installing the Okta app
+### Create a new collector and install the app
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-<AppInstall2/>
+<AppCollectionOPtion1/>
 
-## Upgrading the Okta app (Optional)
+### Use an existing collector and install the app
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-<AppUpdate/>
+<AppCollectionOPtion2/>
 
-## Uninstalling the Okta app (Optional)
+### Use an existing source and install the app
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
-<AppUninstall/>
+<AppCollectionOPtion3/>
 
-## Viewing Okta dashboards​
+## Viewing the Okta dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -350,3 +351,15 @@ Shows the details of user authentication and Multi-Factor Authentication (MFA) a
 **User MFA Activity.** See the details of user MFA activities such as the event type, result, reason, user ID, username, and count, in the last 24 hours, displayed in a table.
 
 <img src={useBaseUrl('img/integrations/saml/Okta-UserAuthenticationAndMFA.png')} alt="Okta-AdministrativeActions" />
+
+## Upgrade/Downgrade the Okta app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Okta app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

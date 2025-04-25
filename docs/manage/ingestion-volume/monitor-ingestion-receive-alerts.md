@@ -6,7 +6,7 @@ description: Add scheduled searches that monitor log ingestion and send alerts.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/). To monitor ingestion for Sumo Logic Credits accounts, see [Monitoring account usage](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#monitoring-account-usage).
+This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/). To monitor ingestion for Sumo Logic Credits accounts, see [Sumo Logic Credits Account Overview](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview).
 
 With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs, not metrics. For metrics volume queries, use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
 
@@ -29,7 +29,7 @@ You must update all of the indicated fields for the search to save successfully
     X as billing_end
     X as daily_gb_limit
     ```
-    You can find the correct values on the Account page. Click on your name in the left nav and go to **Administration** > **Account** > **Account Overview**. <br/><img src={useBaseUrl('img/ingestion-volume/account-overview.png')} alt="account overview" />
+    You can find the correct values on the Account page. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Account Overview**. <br/><img src={useBaseUrl('img/manage/ingestion-volume/account-overview.png')} alt="account overview" />
 3. (Optional)  Modify the following line if you want to change the percentage threshold for generating the alert.
     ```sql
     | where pct_used > 85
@@ -80,8 +80,8 @@ _index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume"
 After completing the setup, schedule the search to run: 
 
 1. Schedule Query you created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
-1. Set the frequency to **Daily**.
-1. Enter **-32d** for the time range.<br/> ![time range monthly plan.png](/img/ingestion-volume/daily-32d.png)
+1. Set the **Run frequency** to **Daily**.
+1. Enter **-32d** for the time range.<br/> ![time range monthly plan.png](/img/manage/ingestion-volume/daily-32d.png)
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
 
 
@@ -100,9 +100,9 @@ You must update the indicated field for the search to be successfully saved.
    ```sql
    X as daily_plan_size
    ```
-   The correct value is on the Account page. 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
- Kanso--><br/>For example, the daily plan size in the following figure is 100.<br/> ![Account](/img/ingestion-volume/account-overview.png)
+   The correct value is on the Account page.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**.
+ <br/>For example, the daily plan size in the following figure is 100.<br/> ![Account](/img/manage/ingestion-volume/account-overview.png)
 
 #### Query
 
@@ -125,8 +125,8 @@ _index=sumologic_volume sizeInBytes
 After completing the setup steps above, schedule the search to run, as follows.  
 
 1. Schedule the query you created in the previous step (**Query**). For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
-1. Set the run frequency to **Daily**.
-1. Set time range value to **Last 24 Hours**.<br/> ![time range daily plan limit.png](/img/ingestion-volume/daily-last-24.png)
+1. Set the **Run frequency** to **Daily**.
+1. Set time range value to **Last 24 Hours**.<br/> ![time range daily plan limit.png](/img/manage/ingestion-volume/daily-last-24.png)
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
 
 ## Usage spike alert
@@ -155,12 +155,12 @@ This hourly alert is generated when both of the following occur:
 
 ```
 _index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume"
-| parse regex "\"(?<sourcecategory>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
+| parse regex "\"(?<_sourcecategory>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "sizeInBytes", "count" as bytes, count
 | timeslice 1h
 | bytes/1024/1024/1024 as gbytes
-| sum(gbytes) as gbytes by sourcecategory, _timeslice
-| where !(sourceCategory matches "*_volume")
+| sum(gbytes) as gbytes by _sourcecategory, _timeslice
+| where !(_sourceCategory matches "*_volume")
 | compare timeshift -1w 4 max
 | if(isNull(gbytes_4w_max), 0, gbytes_4w_max) as gbytes_4w_max
 | ((gbytes - gbytes_4w_max) / gbytes) * 100 as pct_increase
@@ -174,8 +174,8 @@ _index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume"
 After completing the setup steps above, schedule the search to run, as follows.  
 
 1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
-1. Set the run frequency to **Hourly**.
-1. Enter **-65m -5m** for the time range.<br/>  ![time range usage spike.png](/img/ingestion-volume/hourly-65.png)
+1. Set the **Run frequency** to **Hourly**.
+1. Enter **-65m -5m** for the time range.<br/>  ![time range usage spike.png](/img/manage/ingestion-volume/hourly-65.png)
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
 
 
@@ -229,7 +229,7 @@ After completing the setup steps, you'll need to create a monitor. 
 
 1. Create a monitor corresponding to the query you've created above ([learn more](/docs/alerts/monitors/create-monitor)).
 1. Set the **Run frequency** to **Hourly**.
-1. Set a time range. The default is **Last 24 hours**. If you need to allow for more time because some collectors do not typically ingest data that often, specify a longer time range. For example, seven days.<br/>  ![Alert](/img/ingestion-volume/AlertDataLoss.png)
+1. Set a time range. The default is **Last 24 hours**. If you need to allow for more time because some collectors do not typically ingest data that often, specify a longer time range. For example, seven days.<br/>  ![Alert](/img/manage/ingestion-volume/AlertDataLoss.png)
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.
 1. (Optional) You can test your new alert in one of the following ways.
     * Limit the results to monitor just two collectors by adding this extra line to the end of the query:
@@ -247,7 +247,7 @@ After completing the setup steps, you'll need to create a monitor. 
 This alert is automatically generated when your account has entered a throttled state (induced by metrics or logs) in the last 15 minutes. The alert runs every 15 minutes and covers a 15-minute period.
 
 :::note
-All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers/).
+All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers).
 :::
 
 #### Setup
@@ -265,6 +265,6 @@ _index=sumologic_audit _sourceCategory=account_management _sourceName=VOLUME_QUO
 After completing the setup steps above, schedule the search to run, as follows.  
 
 1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
-1. Set the run frequency to **Every 15 Minutes.**
-1. Set the time range to the **Last 15 Minutes**.<br/> ![time range throttling alert.png](/img/ingestion-volume/time-throttling.png)
-1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
+1. Set the **Run frequency** to **Every 15 Minutes**.
+1. Set the time range to the **Last 15 Minutes**.<br/> ![time range throttling alert.png](/img/manage/ingestion-volume/time-throttling.png)
+1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.

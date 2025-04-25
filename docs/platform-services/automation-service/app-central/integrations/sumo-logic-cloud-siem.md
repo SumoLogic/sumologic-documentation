@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem" width="100"/>
 
-***Version: 1.13  
-Updated: Apr 8, 2024***
+***Version: 1.15  
+Updated: Jan 6, 2025***
 
 Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic Cloud SIEM integration.
 
@@ -18,6 +18,7 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 * **Add Enrichment Entity** *(Notification)* - Add enrichments to Entity.
 * **Add Enrichment Insight** *(Notification)* - Add enrichments to Insights.
 * **Add Enrichment Signal** *(Notification)* - Add enrichments to Signal.
+* **Add Match List Item** (*Notification*) - Add item to Match List.
 * **Add Network Block** *(Containment)* - Add an address into the Network Blocks.
 * **Add Tag To Insight** *(Notification)* - Add tags to the Insight.
 * **Assign User To Insight** *(Notification)* - Add specific user to an Insight.
@@ -48,21 +49,25 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 
 ## Sumo Logic Cloud SIEM configuration
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**.  Kanso-->
-1. From the preferences screen, in the section **My Access Keys**, click on **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="600"/>
-1. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
-1. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
-1. Click **Done** after you copy the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
+[Create an access key](/docs/manage/security/access-keys/#create-an-access-key) and copy the resulting **Access ID** and **Access Key**. Store the ID and access key (temporally) into a text editor.
 
-## Sumo Logic Cloud SIEM in Automation Service and Cloud SOAR
+:::note
+The ID and key won't be available again once you close the confirmation screen.
+:::
+
+## Configure Sumo Logic Cloud SIEM in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="500"/>
 1. Populate the resource fields as indicated.
     * **Label**. The name of the resource.
-    * **Sumo Logic API URL**. URL to the API of the Cloud SIEM instance `https://api.sumologic.com`.
-    * **Sumo Logic Cloud SIEM URL**. URL to the Cloud SIEM instance `https://service.sumologic.com/sec`.
+    * **Sumo Logic API URL**. URL to the API of the Cloud SIEM instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
+    * **Sumo Logic Cloud SIEM URL**. URL to the Cloud SIEM instance (for example, `https://service.sumologic.com/sec`).
     * **Access ID**. The access ID that you copied earlier.
     * **Access Key**. The access key that you copied earlier.
 1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-8.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
@@ -119,4 +124,10 @@ SIEM
         - Custom Field Internal Name (This field is only used within the Close Insight Trigger as a custom Field for Insight ID in Cloud SOAR, for Example: opt_1)
         - Resolution Status (This field is only used within the Close Insight Trigger as a resolution reason for closing the Insight, for Example: Resolved)
         - Closure Comments (This field is only used within the Close Insight Trigger as a closure comment for Insight)
-* April 8, 2024 (v1.13) - Update the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL"
+* April 8, 2024 (v1.13)
+  * Update the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL"
+* July 3, 2024 (v1.14)
+  * Update `check_not_null_field` in Close Insight Trigger
+* January 6, 2025 (v1.15)
+  * New Action added:
+    - Add Match List Item

@@ -108,18 +108,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Stripe app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Stripe app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Stripe dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -143,3 +131,15 @@ The **Stripe - Products** provides valuable insights and statistics concerning e
 The **Stripe - Customers and Billing** offers valuable insights and statistical data about customer and billing-related events including subscriptions and invoices.
 
 <img src={useBaseUrl('img/integrations/webhooks/Stripe-Customers_and_Billing.png')} style={{border: '1px solid black'}} alt="Stripe-Customers_and_Billing"/>
+
+## Upgrade/Downgrade the Stripe app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Stripe app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

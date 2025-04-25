@@ -13,8 +13,21 @@ import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
 
-About Observability and how it's different from monitoring. The video also explains how Sumo Logic's Observability Solution helps in all the stages of the incident remediation process to ensure the production apps are functioning reliably.
+This video explains Observability and how it's different from monitoring. It also explains how Sumo Logic's Observability Solution helps in all the stages of the incident remediation process to ensure the production apps are functioning reliably.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/go7gwjrmkl?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Introduction to Observability Solution Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/FJG1zesNJs0?rel=0"
         width="854px"
         height="480px"
@@ -22,9 +35,10 @@ About Observability and how it's different from monitoring. The video also expla
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::
 

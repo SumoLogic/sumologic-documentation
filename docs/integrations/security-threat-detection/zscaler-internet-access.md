@@ -103,7 +103,7 @@ Zscaler uses Cloud Nanolog Streaming Service (NSS), which allows direct cloud-to
 To send logs to Sumo Logic using Cloud NSS, add a feed in ZIA using the following steps:
 
 1. Log into your ZIA system.
-1. Go to **Administration** > **Nanolog Streaming Service** > **Cloud NSS Feeds**.
+1. Go to **Administration > Nanolog Streaming Service > Cloud NSS Feeds**.
    :::note enable Cloud NSS
    Cloud NSS is disabled by default in ZIA. If you do not see Cloud NSS Feeds option in your ZIA environment, create a support request with Zscaler support.
    :::
@@ -186,18 +186,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Zscaler Internet Access app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Zscaler Internet Access app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Zscaler Internet Access dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -258,3 +246,15 @@ Use this dashboard to:
 * Identify locations and users being blocked as a sign of potential suspicious or malicious activity.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Threats.png')} alt="zscaler internet access Dashboard" />
+
+## Upgrade/Downgrade the Zscaler Internet Access app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Zscaler Internet Access app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

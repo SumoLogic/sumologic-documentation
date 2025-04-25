@@ -6,36 +6,37 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.3  
-Updated: Jan 16, 2024***
+***Version: 1.5  
+Updated: Feb 04, 2025***
 
 Using the integration with EC2, you can enrich incidents with specific EC2 data, create and delete snapshots, work with elastic addresses and instances, and manipulate security groups. 
 
 ## Actions
 
-* **Describe Regions** (*Enrichment*) - Describes the Regions that are enabled for an account, or all Regions.
-* **Describe Instances** (*Enrichment*) - Describes the specified instances or all of AWS account's instances.
+* **Authorize Security Group Ingress Rule** (*Containment*) - Adds the specified ingress rules to a security group.
+* **Create Snapshot** (*Containment*) - Creates a new snapshot.
+* **Delete Security Group** (*Containment*) - Delete a security group.
+* **Delete Snapshot** (*Containment*) - Deletes an existing snapshot.
 * **Describe Addresses** (*Enrichment*) - Describes the specified Elastic IP addresses or all Elastic IP addresses.
-* **Describe Volumes** (*Enrichment*) - Describes the specified EBS volumes or all EBS volumes.
+* **Describe Instances** (*Enrichment*) - Describes the specified instances or all of AWS account's instances.
+* **Describe Instances V2** (*Enrichment*) - Describes the specified instances or all of AWS account's instances with pagination.
 * **Describe Key Pairs** (*Enrichment*) - Describes the specified key pairs or all key pairs.
-* **Describe VPCs** (*Enrichment*) - Describes one or more VPCs.
+* **Describe Regions** (*Enrichment*) - Describes the Regions that are enabled for an account, or all Regions.
 * **Describe Subnets** (*Enrichment*) - Describes one or more subnets.
 * **Describe Security Groups** (*Enrichment*) - Describes the specified security groups or all security groups.
 * **Describe Snapshots** (*Enrichment*) - Describes a specified EBS snapshots or all of the EBS snapshots available.
-* **Get Password Data** (*Enrichment*) - Retrieves the encrypted administrator password for a running Windows instance.
-* **Create Snapshot** (*Containment*) - Creates a new snapshot.
-* **Delete Snapshot** (*Containment*) - Deletes an existing snapshot.
+* **Describe Volumes** (*Enrichment*) - Describes the specified EBS volumes or all EBS volumes.
+* **Describe VPCs** (*Enrichment*) - Describes one or more VPCs.
 * **Disassociate Address** (*Containment*) - Disassociates an Elastic IP address from an instance or network interface it's associated with.
+* **Get Password Data** (*Enrichment*) - Retrieves the encrypted administrator password for a running Windows instance.
+* **Monitor Instance** (*Containment*) - Monitor a specific instance.
 * **Release Address** (*Containment*) - Releases the specified Elastic IP address.
+* **Reboot Instances** (*Containment*) - Reboot instances.
+* **Revoke Security Group Ingress Rule** (*Containment*) - Removes the specified ingress rules from a security group.
 * **Start Instance** (*Containment*) - Start an instance.
 * **Stop Instance** (*Containment*) - Stop an instance.
 * **Terminate Instance** (*Containment*) - Terminate an instance.
-* **Delete Security Group** (*Containment*) - Delete a security group.
-* **Monitor Instance** (*Containment*) - Monitor a specific instance.
 * **Unmonitor Instances** (*Containment*) - Discontinue monitoring of a specified instances.
-* **Reboot Instances** (*Containment*) - Reboot instances.
-* **Authorize Security Group Ingress Rule** (*Containment*) - Adds the specified ingress rules to a security group.
-* **Revoke Security Group Ingress Rule** (*Containment*) - Removes the specified ingress rules from a security group.
 
 **Supported Versions**
 
@@ -45,6 +46,12 @@ Using the integration with EC2, you can enrich incidents with specific EC2 data,
 
 * [AWS EC2](https://github.com/boto/boto3/blob/develop/LICENSE)
 
+## Configure AWS EC2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * October 9, 2019 - First upload
@@ -52,3 +59,7 @@ Using the integration with EC2, you can enrich incidents with specific EC2 data,
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
 * January 16, 2024 (v1.3)
 	+ Updated action: Stop Instance (Resolved bug related to checkbox fields)
++ July 04, 2024 (v1.4)
+	+ Updated action: Describe Instances (Resolved bug related to Instance ID field)
++ February 04, 2025 (v1.5)
+    + Added action: Describe Instances V2

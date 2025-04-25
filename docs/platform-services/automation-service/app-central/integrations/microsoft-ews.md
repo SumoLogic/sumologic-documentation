@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews.png')} alt="microsoft-ews" width="100"/>
 
-***Version: 2.3  
-Updated: Mar 4, 2024***
+***Version: 2.4  
+Updated: Nov 12, 2024***
 
 Perform actions on Microsoft EWS mailboxes, accounts, and security settings.
 
@@ -31,7 +31,7 @@ Perform actions on Microsoft EWS mailboxes, accounts, and security settings.
 
 Each application you want the Microsoft identity platform to perform identity and access management (IAM) needs to be registered. Registering it establishes a trust relationship between your application and the identity provider, the Microsoft identity platform.
 
-**Register an application**
+### Register an application
 
 Registering your application establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
 
@@ -49,14 +49,15 @@ When registration completes, the Azure portal displays the app registration's Ov
 
 The client ID as one aspect in validating the security tokens it receives from the identity platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/microsoft-ews-3.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
-**Add credentials**
+### Add credentials
 
 Credentials are used by confidential client applications that access an API. Examples of confidential clients are web apps, or service- and daemon-type applications. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime.   
 You can add client secrets (a string) as credentials to your confidential client app registration.
 
 <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/microsoft-ews-4.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
-**Add a client secret**   
+### Add a client secret
+
 The client secret, known also as an application password, is a string value of your app.
 
 1. Select your application in App registrations in the Azure portal.
@@ -66,7 +67,7 @@ The client secret, known also as an application password, is a string value of y
 5. Select **Add**.
 6. Record the secret's value for use in your client application code - it's never displayed again after you leave this page.
 
-**Add permissions to API**
+### Add permissions to API
 
 1. Select your application in App registrations in the Azure portal.
 2. Select **API permissions > Add a permission**.
@@ -74,7 +75,7 @@ The client secret, known also as an application password, is a string value of y
 4. Application permissions are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
 5. Select Add a permission, and add the following permissions (as we can see from picutre). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/microsoft-ews-5.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
-**EWS API need to be configure these permissions**
+#### EWS API to be configured for these permissions
 
 Applications are authorized to call APIs when they are granted permissions by users/admins as part of the consent process. The list of configured permissions should include all the permissions the application needs.
 
@@ -130,6 +131,22 @@ full\_access\_as\_app Use Exchange Web Services with full access to all mailboxe
 
 Once API permission are added then Admin must consent to a grant these permissions, [Learn more about permissions and consent](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent?WT.mc_id=Portal-Microsoft_AAD_RegisteredApps).
 
+### Assign the required roles in the Exchange Admin Center
+
+1. Sign in to the [Exchange Admin Center (EAC)](https://admin.exchange.microsoft.com/#/).
+2. In the EAC, navigate to **Roles**.
+3. Click **Admin Roles**.
+4. Search for the role **Discovery Management** and click on it.
+5. Click on the **Assign** tab.
+6. Click **+** and search for the user you want to assign the role to.
+7. Click **Save**.
+
+## Configure Microsoft EWS in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Category
 
 Email Gateway
@@ -146,3 +163,6 @@ Email Gateway
 * November 29, 2022 - Added new actions (Send Email and Reply To Email)
 * October 6, 2023 (v2.2) - Integration Updated
 * March 4, 2024 (v2.3) - Updated code for compatibility with Python 3.12
+* November 12, 2024 (v2.4) 
+  * Updated the exchange_lib library to 5.4.2
+  * Updated the action Get Contacts to return the message "No contacts found" if the contacts are not found rather than returning an exception.

@@ -25,6 +25,12 @@ Libraesva Email Security V4 provides security, continuity, and compliance capabi
 
 Email Security
 
+## Configure Libraesva Email Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * May 11, 2021 - First upload

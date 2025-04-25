@@ -11,7 +11,7 @@ Traces will be enhanced with Kubernetes metadata, similarly to the logs and metr
 
 ## Prerequisites
 
-* Kubernetes 1.24+
+* Kubernetes 1.25+
 * Helm 3.5+
 
 | Account Type | Account Level         |
@@ -36,7 +36,7 @@ Tracing data from your services is sent through multiple local OpenTelemetry Col
 
 ### Installing or upgrading to the latest version
 
-Refer to [install/upgrade instructions](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/v3.0.0/docs/installation.md) for the current version. Tracing is enabled by default.
+Refer to [install/upgrade instructions](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/v4.9.0/docs/installation.md) for the current version. Tracing is enabled by default.
 
 If you plan to [auto-instrument your Java, Python, and JS applications in K8s environments](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes.md), use the Helm command in that article.
 
@@ -118,22 +118,28 @@ Using OTLP HTTP is recommended:
 
 Alternatively, if required, you can use other supported formats as well:
 
+* OTLP gRPC: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:4317`
+* OpenCensus: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:55678`
 * Jaeger GRPC: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:14250`
 * Jaeger Thrift HTTP: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:14268`
 * Jaeger Thrift Compact (UDP): `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:6831`
+* Jaeger Thrift Binary: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:6832`
 * Zipkin: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:9411/api/v2/spans`
-* OTLP gRPC: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:4317`
-* OTLP HTTP/**deprecated:** `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:55681`
 
 For example, when the default release name (`collection`) and namespace (`sumologic`) is used, the endpoints are following:
 
 * OTLP HTTP: `collection-sumologic-otelagent.sumologic:4318`
+* OTLP gRPC: `collection-sumologic-otelagent.sumologic:4317`
+* OpenCensus: `collection-sumologic-otelagent.sumologic:55678`
 * Jaeger GRPC: `collection-sumologic-otelagent.sumologic:14250`
 * Jaeger Thrift HTTP: `collection-sumologic-otelagent.sumologic:14268`
 * Jaeger Thrift Compact (UDP): `collection-sumologic-otelagent.sumologic:6831`
+* Jaeger Thrift Binary: `collection-sumologic-otelagent.sumologic:6832`
 * Zipkin: `collection-sumologic-otelagent.sumologic:9411/api/v2/spans`
-* OTLP gRPC: `collection-sumologic-otelagent.sumologic:4317`
-* OTLP HTTP/deprecated: `collection-sumologic-otelagent.sumologic:55681`
+
+:::note
+`<RELEASE_NAME>-sumologic-otelagent` could be truncated. We truncate at 63 characters because some Kubernetes name fields are limited to this (by the DNS naming spec). To avoid this, keep your `<RELEASE_NAME>` short. To check the final endpoint name, list all services from `<NAMESPACE>` and look for services with configured ports from the list above.
+:::
 
 ## Troubleshooting
 

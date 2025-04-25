@@ -61,18 +61,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Global Intelligence for Nginx app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Global Intelligence for Nginx app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Global Intelligence for Nginx dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -104,3 +92,15 @@ Use this dashboard to:
 * Diagnose deviations of your company compared to the benchmark by using the trend line panels for your company’s Nginx servers
 
 ![nginx-benchmarks](/img/global-intelligence/nginx-benchmarks.jpeg)
+
+## Upgrade/Downgrade the Global Intelligence for Nginx app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Global Intelligence for Nginx app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

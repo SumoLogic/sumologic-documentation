@@ -4,7 +4,7 @@ title: base64Decode Search Operator
 sidebar_label: base64Decode
 ---
 
-The `base64Decode` operator takes a base64 string and converts it to an ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.
+The `base64Decode` operator takes a base64 string and converts it to ASCII or non-ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.
 
 ## Syntax
 

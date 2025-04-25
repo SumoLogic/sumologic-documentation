@@ -15,6 +15,16 @@ Query data from MSSQL Database.
 
 * **Query MSSQL** (*Enrichment*) - Query data from MSSQL Database.
 
+:::note
+This Integration does not support client-side encryption.
+:::
+
+## Configure MSSQL in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 30, 2023- First upload

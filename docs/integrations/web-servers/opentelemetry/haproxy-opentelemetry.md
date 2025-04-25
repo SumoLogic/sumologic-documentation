@@ -11,29 +11,41 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-[HAProxy](https://docs.haproxy.org/2.6/intro.html) is open source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications that spreads requests across multiple servers.
+The [HAProxy](https://docs.haproxy.org/2.6/intro.html) app is a unified logs and metrics app designed to help you monitor the availability, performance, health, and resource utilization of HAProxy server farms. It provides preconfigured dashboards and searches that offer visibility into your environment for real-time and historical analysis: visitor locations, HTTP error codes percentage, backend and frontend server statistics, traffic patterns, errors, server operations, and access from known malicious sources.
 
-The Sumo Logic app for HAProxy helps you monitor activity in HAProxy. The preconfigured dashboards provide information about site visitors, including location of visitors, HTTP Error codes percentage, Backend and Frontend server statistics.
-
-HAProxy logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+The OpenTelemetry collector runs on the same host as HAProxy, where it uses the [HAProxy Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/haproxyreceiver) and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. HAProxy logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Schematics.png' alt="Schematics" />
 
 ## HAProxy log types
 
-The app supports Logs from the open source version of HAProxy. The App is tested on the 2.3.9 version of HAProxy.
+The app supports logs from the open source version of HAProxy. This app is tested on the `2.3.9` version of HAProxy.
 
 The HAProxy logs are generated in files as configured in the configuration file `/etc/haproxy/haproxy.cfg` ([learn more](https://www.haproxy.com/blog/introduction-to-haproxy-logging/)).
+
+:::info
+This app includes [built-in monitors](#haproxy-alerts). For details on creating custom monitors, refer to the [Create monitors for HAProxy app](#create-monitors-for-haproxy-app).
+:::
 
 ## Fields Create in Sumo Logic for HAProxy
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of HAProxy App install if not already present.
 
-- `webengine.cluster.name`. User configured. Enter a name to identify the Haproxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- `webengine.system`. Has fixed value of **haproxy**
-- `sumo.datasource`. Has fixed value of **haproxy**
+- **`sumo.datasource`**. Has fixed value of **haproxy**.
+- **`webengine.system`**. Has fixed value of **haproxy**.
+- **`webengine.cluster.name`**. User configured. Enter a name to identify the HAProxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **`webengine.node.name`**. Has the value of host name of the machine which is being monitored.
+- **`deployment.environment`**. User configured. This is the deployment environment where the Memcache cluster resides. For example: dev, prod, or qa.
 
 ## Prerequisites
+
+### For metrics collection
+
+The receiver used gets stats from an HAProxy instance using the `stats` endpoint. This receiver supports HAProxy version 2.3.9 and later.
+
+**Receive server statistics** by configuring the server's `haproxy.cfg` file to [enable stats support](https://www.haproxy.com/documentation/haproxy-configuration-manual/latest/#4-stats%20enable).
+
+### For logs collection
 
 This section provides instructions for configuring log collection for HAProxy running on a non-Kubernetes environment for the Sumo Logic app for HAProxy.
 
@@ -97,9 +109,12 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 In this step, you will configure the yaml required for HAProxy Collection.
 
-The path of the log file configured to capture haproxy logs is needed to be given here.
+Below are the inputs required:
 
-The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+- **Endpoint**. The URL of the httpd status endpoint (default: `http://localhost:8404/stats`).
+- **HAProxy logs Path**. Enter the path to the log file for your HAProxy instance.
+
+The path of the log file configured to capture haproxy logs is needed to be given here. The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the `haproxy.conf` file for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the yaml file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -174,7 +189,27 @@ May 13 08:24:43 localhost haproxy[21813]:
 27.2.81.92:64274 [13/May/2021:08:24:43.921] web-edupia.vn-4
 ```
 
+## Sample metrics
+
+```json
+{
+  "Query": "A",
+  "metric": "avg",
+  "haproxy.proxy_name": "stats",
+  "webengine.cluster.name": "haproxy_otel_cluster",
+  "webengine.node.name": "node1",
+  "min": 3385124.8,
+  "max": 3553632,
+  "latest": 3553632,
+  "avg": 3469494.86851211,
+  "sum": 1002684017.0,
+  "count": 289,
+}
+```
+
 ## Sample queries
+
+### Logs
 
 This query example is from the **HAProxy - Overview** dashboard > **Top 5 URLs with Errors** panel:
 
@@ -197,7 +232,17 @@ webengine.cluster.name=* %"sumo.datasource"=haproxy
 | limit 5
 ```
 
-## Viewing HAProxy dashboards
+### Metrics
+
+Here is a sample metrics query from the **Http Response Codes** dashboard > **HAProxy - Backend Metrics** panel:
+
+```
+sumo.datasource=haproxy metric=haproxy.requests.total status_code=* haproxy.service_name=backend deployment.environment=* webengine.cluster.name=* webengine.node.name=*  haproxy.proxy_name=* 
+| parse field=status_code *  as code 
+| avg by webengine.cluster.name,webengine.node.name,haproxy.proxy_name,code
+```
+
+## Viewing the HAProxy dashboards
 
 ### Overview
 
@@ -209,6 +254,24 @@ Use this dashboard to:
 - Gain insights into Client, Server Responses on HAProxy Server. This helps you identify errors in HAProxy Server.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Overview.png' alt="Overview" />
+
+### Backend
+
+The **HAProxy - Backend** dashboard provides an at-a-glance view for the number of backend active servers, backend weight, respond code from backend, and throughput http.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Backend.png' alt="Error Log Analysis" />
+
+### Frontend
+
+The **HAProxy - Frontend** dashboard provides details of HAProxy Frontend. It provides information such as number request to frontend, number of error requests, and current session.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Frontend.png' alt="Error Log Analysis" />
+
+### Server
+
+The **HAProxy - Server** dashboard provides details of HAProxy Server. This dashboard helps you monitor the uptime and error request by proxy.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Server.png' alt="Error Log Analysis" />
 
 ### Error Log Analysis
 
@@ -239,7 +302,7 @@ The **HAProxy - Threat Analysis** dashboard provides an at-a-glance view of thre
 
 Use this dashboard to:
 
-- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-faq) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Threat-Analysis.png' alt="Threat Analysis" />
 
@@ -290,3 +353,25 @@ Use this dashboard to:
 - To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Web-Server-Operations.png' alt="Web Server Operations" />
+
+
+## Create monitors for HAProxy app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### HAProxy alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `HAProxy - Access from Highly Malicious Sources` | This alert is triggered when an HAProxy is accessed from highly malicious IP addresses. | Count > 0 | Count < = 0 |
+| `HAProxy - Backend Error` | This alert is triggered when backend server error is detected. | Count > 0 | Count < = 0 |
+| `HAProxy - Backend Server Down` | This alert is triggered when a backend server for a given HAProxy server is down. | Count > 0 | Count < = 0 |
+| `HAProxy - High Client (HTTP 4xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count > 0 | Count < = 0 |
+| `HAProxy - High Server (HTTP 5xx) Error Rate` | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Count > 0 | Count < = 0 |
+
+## Additional resources
+
+* Blog: [Everything you need to know about HAProxy log format](https://www.sumologic.com/blog/haproxy-log-format/)
+* App description: [HAProxy App for Sumo Logic](https://www.sumologic.com/application/haproxy/)

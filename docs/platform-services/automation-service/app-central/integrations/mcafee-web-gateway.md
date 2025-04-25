@@ -18,6 +18,12 @@ Utilize McAfee Web Gateway to issue containment actions during an active inciden
 * **Block URL** (*Containment*) - Block traffic in McAfee Web Gateway to/from the specified URL.
 * **Unblock URL** (*Containment*) - Remove block in McAfee Web Gateway to/from the specified URL.
 
+## Configure McAfee Web Gateway in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * September 11, 2019 - First upload

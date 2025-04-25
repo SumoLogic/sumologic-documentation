@@ -40,18 +40,6 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
-## Upgrading the Enterprise Audit apps (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Enterprise Audit apps (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Enterprise Audit App Dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -372,3 +360,15 @@ Use this dashboard to:
 * Review admin activities and one-day time shift comparisons.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_SAML_Activities.png')} alt="test" />
+
+## Upgrade/Downgrade the Enterprise Audit apps (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Enterprise Audit apps (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

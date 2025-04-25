@@ -12,7 +12,6 @@ This feature is available in the following account plans.
 | Solution Component | CloudFlex | Credits |
 |:--|:--|:--|
 | AWS Observability Dashboards | Trial, Professional, and Enterprise | Trial, Essentials, Enterprise Operations, Enterprise Security,  Enterprise Suite, Enterprise Suite - Flex |
-| Root Cause Explorer | Trial, Enterprise | Trial, Enterprise Operations, Enterprise Suite, Enterprise Suite - Flex |
 
 This page shows you how to intuitively navigate through your AWS environment and [monitoring dashboards](/docs/dashboards/explore-view/) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
@@ -28,7 +27,7 @@ The AWS Observability Solution comprises an intuitive dashboard framework that m
 
 To to [AWS Observibility tab](/docs/observability/aws) in the home page or do the following:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. Then click the **Explore By** arrow and select **AWS Observability** from the dropdown menu. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **AWS Observability**.  Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then click the **Explore By** arrow and select **AWS Observability** from the dropdown menu. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **AWS Observability**.  
 1. In the navigation panel, make a selection for the hierarchy to view. The contents of your selection appear below.
 
 ## Navigate the AWS Observability Hierarchy
@@ -62,10 +61,6 @@ Select the graph data point you are interested in. In the following screenshot, 
 ![Drill_RCA.png](/img/observability/Drill_RCA.png)
 
 For details, see [Drill down to discover root causes](../../../dashboards/drill-down-to-discover-root-causes.md).
-
-## Troubleshooting with the AWS Observability Root Cause Explorer Dashboards
-
-To troubleshoot production incidents using Root Cause Explorer, follow the instructions in [the Root Cause Explorer documentation](/docs/observability/root-cause-explorer.md). 
 
 ## Viewing AWS Observability Solution Dashboards
 

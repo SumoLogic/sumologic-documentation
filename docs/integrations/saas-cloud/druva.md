@@ -71,17 +71,55 @@ _sourceCategory="druva_app"
 | count_distinct(user_id)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Druva Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) for the Druva App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva App is properly integrated and configured to collect and analyze your Druva data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Druva app​
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Druva](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Druva app is properly integrated and configured to collect and analyze your Druva data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Upgrading the Druva app (Optional)
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing Druva dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Overview
+
+The **Druva - Overview** dashboard in the Druva app provides a comprehensive view of the devices and cloud apps used by your organization. It includes widgets for unique user activities, device and app distribution, top users and administrators' details by device and event counts, and the trend of devices and apps over time. This dashboard is a powerful tool for monitoring activity, with the ability to detect and address potential security threats through the "failed events over time" widget. The "recent events details" widget offers a quick snapshot of the latest events. By using this dashboard, you can identify potential issues or anomalies, track changes in device and app usage, and gain a better understanding of events occurring in your organization's devices and cloud apps.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-overview.png')} alt="druva-overview" width="750"/>
+
+### Alerts Overview
+
+The **Druva - Alerts Overview** dashboard in the Druva app provides comprehensive widgets to analyze security threats and take proactive measures. It includes widgets for tracking alerts by location, severity, and frequency over time, as well as detailed information on unusual activity events and the top users generating alerts. The recent alerts widget provides a quick snapshot of the latest security activity. By using this dashboard, organizations can identify and respond to potential threats efficiently, safeguarding their data effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-alerts-overview.png')} alt="druva-alerts-overview" width="750"/>
+
+### Backup and Restore
+
+The **Druva - Backup and Restore Overview** dashboard offers a comprehensive view of backup, restore, and download events, providing valuable insights into your organization's data protection activities. The dashboard's widgets allow you to track and analyze these events, including the count and distribution of backup, restore, and download activities. You can closely monitor the most active users using the top users performing backup/restore activity widget.
+
+The trend of failed backup/restore/download events over time offers an overview of any issues, enabling you to quickly identify and resolve them. The geo-location widget tracks activity locations, helping you identify potential threats or vulnerabilities. With this dashboard, you can monitor your data protection activities closely, ensuring the smooth running of backup and restore processes and securing your data.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-backup-and-restore.png')} alt="druva-backup-and-restore" width="750"/>
+
+## Upgrade/Downgrade the Druva app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
@@ -92,23 +130,3 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
-
-## Viewing Druva dashboards​
-
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-
-<ViewDashboards/>
-
-### Druva Overview dashboard
-
-The **Druva - Overview** dashboard in the Druva app provides a comprehensive view of the devices and cloud apps used by your organization. It includes widgets for unique user activities, device and app distribution, top users and administrators' details by device and event counts, and the trend of devices and apps over time. This dashboard is a powerful tool for monitoring activity, with the ability to detect and address potential security threats through the "failed events over time" widget. The "recent events details" widget offers a quick snapshot of the latest events. By using this dashboard, you can identify potential issues or anomalies, track changes in device and app usage, and gain a better understanding of events occurring in your organization's devices and cloud apps.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-overview.png')} alt="druva-overview" width="750"/>
-
-### Druva Alerts Overview dashboard
-
-The **Druva - Alerts Overview** dashboard in the Druva app provides comprehensive widgets to analyze security threats and take proactive measures. It includes widgets for tracking alerts by location, severity, and frequency over time, as well as detailed information on unusual activity events and the top users generating alerts. The recent alerts widget provides a quick snapshot of the latest security activity. By using this dashboard, organizations can identify and respond to potential threats efficiently, safeguarding their data effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-alerts-overview.png')} alt="druva-alerts-overview" width="750"/>
-
-### Druva Backup and Restore dashboard
-
-The **Druva - Backup and Restore Overview** dashboard offers a comprehensive view of backup, restore, and download events, providing valuable insights into your organization's data protection activities. The dashboard's widgets allow you to track and analyze these events, including the count and distribution of backup, restore, and download activities. You can closely monitor the most active users using the top users performing backup/restore activity widget.
-
-The trend of failed backup/restore/download events over time offers an overview of any issues, enabling you to quickly identify and resolve them. The geo-location widget tracks activity locations, helping you identify potential threats or vulnerabilities. With this dashboard, you can monitor your data protection activities closely, ensuring the smooth running of backup and restore processes and securing your data.<br/><img src={useBaseUrl('img/integrations/saas-cloud/druva-backup-and-restore.png')} alt="druva-backup-and-restore" width="750"/>

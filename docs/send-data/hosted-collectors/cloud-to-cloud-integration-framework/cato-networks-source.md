@@ -13,7 +13,7 @@ import MyComponentSource from '!!raw-loader!/files/c2c/cato-networks/example.jso
 import TerraformExample from '!!raw-loader!/files/c2c/cato-networks/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cato-logo.png')} alt="img/send-data/cato-logo.png" width="50"/>
+<img src={useBaseUrl('img/send-data/cato-logo.png')} alt="cato logo" width="50"/>
 
 Cato Networks is a cloud-native, global SD-WAN provider that delivers a secure, optimized, and agile global network for businesses of all sizes. Cato's cloud-based platform converges multiple network and security functions into a unified solution that includes SD-WAN, network security, cloud security, and secure access service edge (SASE) capabilities.
 
@@ -40,7 +40,7 @@ In this configuration, you will set up the Cato Networks API Key and Account ID 
 All access to Cato networks require an API Key. Follow the below instructions to set up an API Key.
 
 1. In the navigation menu, click **Administration > API Management**. <br/><img src={useBaseUrl('img/send-data/cato-networks-administration.png')} alt="cato-networks-administration.png" width="700" />
-1. On the **API Keys** tab, click **New**. The **Create API Key** panel opens. 
+1. On the **API Keys** tab, click **New**. The **Create API Key** panel opens.
 1. Enter a **Key Name**. <br/><img src={useBaseUrl('img/send-data/cato-networks-new-api-key.png')} alt="cato-networks-new-api-key.png" width="250" />
 1. Select **View** in the **API Permission**.
 1. Select **Any IP** to allow this API key for any IP address under the **Allow Access from IPs** section.
@@ -61,7 +61,7 @@ All API calls require an account ID parameter. When logged into the Cato account
 When you create an Cato Networks Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Cato Networks Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Cato Networks**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -89,7 +89,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
-| `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | na |
+| `config` | JSON Object  | Yes | Contains the [configuration parameters](#configuration-object) of the Source. | na |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"Cato Networks"}` for Cato Networks Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for Cato Networks Source. | not modifiable |
 

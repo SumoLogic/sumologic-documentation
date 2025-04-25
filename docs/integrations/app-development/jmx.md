@@ -290,24 +290,11 @@ annotations:
   </tr>
 </table>
 
-
 ## Install the JMX app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
-
-## Upgrading the JMX app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the JMX app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
 
 ## Viewing JMX dashboards​
 
@@ -396,3 +383,15 @@ Use this dashboard to:
 * Gain insights into time spent by java virtual machines in the compilation.
 
 <img src={useBaseUrl('img/integrations/app-development/JMX_ClassLoadingCompilation.png')} alt="jmx dashboard" />
+
+## Upgrade/Downgrade the JMX app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the JMX app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

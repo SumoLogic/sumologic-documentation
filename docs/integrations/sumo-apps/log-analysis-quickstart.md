@@ -15,18 +15,6 @@ import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstallV2/>
 
-## Upgrading the Log Analysis QuickStart app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Log Analysis QuickStart app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Log Analysis QuickStart dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -54,3 +42,15 @@ The panels in the Collector and Source Monitoring dashboard help you keep an eye
 * **Issues by Collector.** This panel displays the number of log messages that contain error, exception, or failure terms by Collector.
 * **Issues by Source.** Shows the number of log messages that contain error, exception, or failure terms by each Collector's Source.
 * **Collector Issue Monitoring.** Displays warnings generated over time for each Collector in your deployment.
+
+## Upgrade/Downgrade the Log Analysis QuickStart app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Log Analysis QuickStart app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

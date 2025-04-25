@@ -132,7 +132,7 @@ _sourceCategory=aws/vpc
 
 The output looks like:
 
-![ParseRegexMulti.png](/img/search/searchquerylanguage/parse-operators/ParseRegexMulti.png)
+![Screenshot of Sumo Logic log search results. The table has columns for IP address, raw message data, and count. Each row contains detailed log information in JSON format, including fields like ingestion time, timestamp, message, event ID, and log group.](/img/search/searchquerylanguage/parse-operators/ParseRegexMulti.png)
 
 ### Case insensitive parse regex
 

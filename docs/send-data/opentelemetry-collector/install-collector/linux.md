@@ -36,7 +36,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 
 ### UI Installation
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. Kanso-->
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. On the left panel, select **Linux** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal.png')} alt="linux-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
@@ -246,7 +246,7 @@ We recommend keeping the install token in environmental variable for `Systemd` i
    ```bash
    sudo mkdir -p /etc/otelcol-sumo/env
    ```
-1. Create `/etc/otelcol-sumo/env/token.env` directory with your installation token. In this example, we use `SUMOLOGIC_INSTALLATION_TOKEN`, as it will be automatically used by the recommended configuration.
+1. Create the `/etc/otelcol-sumo/env/token.env` file with your installation token. In this example, we use `SUMOLOGIC_INSTALLATION_TOKEN`, as it will be automatically used by the recommended configuration.
    ```bash
    SUMOLOGIC_INSTALLATION_TOKEN=<your token>
    ```

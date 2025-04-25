@@ -19,40 +19,22 @@ Before installing the Sumo Logic app, Apache Tomcat must be set up and configure
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Apache Tomcat. Configuring log and metric collection for the Apache Tomcat app includes the following tasks.
 
-### Step 1: Configure Fields in Sumo Logic
+### Step 1: Configure fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using Apache Tomcat in a Kubernetes environment, create the fields:
-
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_webserver_system`
-* `pod_labels_webserver_farm`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using Apache Tomcat in a non-Kubernetes environment, create the fields:
-
+As part of the app installation process, the following fields will be created by default:
 * `component`
 * `environment`
 * `webserver_system`
 * `webserver_farm`
 * `pod`
 
-</TabItem>
-</Tabs>
+Additionally, if you are using Apache Tomcat in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_webserver_system`
+* `pod_labels_webserver_farm`
+
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Step 2: Configure Collection for Apache Tomcat
 
@@ -66,7 +48,7 @@ If you're using Apache Tomcat in a non-Kubernetes environment, create the fields
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Apache Tomcat in a Kubernetes environment. Four services in the architecture shown below make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Apache Tomcat in the Kubernetes environment. Four services in the architecture shown below make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
 <img src={useBaseUrl('img/integrations/web-servers/apachetomcat-k8s.png')} alt="apache-k8s" />
 
@@ -274,27 +256,8 @@ This section explains the steps to collect Apache Tomcat logs from a Kubernetes 
 1. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 1. Verify logs in Sumo Logic.
 
-**Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for WebServer Application Components. To do so:
-
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
-2. Click the + Add button on the top right of the table.
-3. The **Add Field Extraction Rule** form will appear:
-4. Enter the following options:
-  * **Rule Name**. Enter the name as **App Observability - Webserver**.
-  * **Applied At.** Choose **Ingest Time**
-  * **Scope**. Select **Specific Data**
-  * **Scope**: Enter the following keyword search expression:
-    ```sql
-    pod_labels_environment=* pod_labels_component=webserver pod_labels_webserver_farm=* pod_labels_webserver_system=*
-    ```
-  * **Parse Expression**.Enter the following parse expression:
-    ```sql
-    if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-    | pod_labels_component as component
-    | pod_labels_webserver_system as webserver_system
-        | pod_labels_webserver_farm as webserver_farm
-    ```
-5. Click **Save** to create the rule.
+<br/>**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Apache Tomcat Web Server Application Components named as **AppObservabilityApacheTomcatWebserverFER**
+<br/>
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -591,140 +554,6 @@ At this point, Tomcat logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-This section has instructions for installing Sumo Logic Monitors for Apache Tomcat, the app and descriptions of each of the app dashboards.
-
-## Installing Apache Tomcat Monitors
-
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Apache Tomcat Alerts](/docs/integrations/web-servers/apache-tomcat#apache-tomcat-alerts).
-
-To install these monitors, you must have the **Manage Monitors** role capability.
-
-You can install monitors by importing a JSON file or using a Terraform script.
-
-Use this dashboard to:mits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ApacheTomcat/ApacheTomcat.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ApacheTomcat/ApacheTomcat.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters, and therefore will be applicable to all Apache Tomcat webserver farms, the data for which has been collected via the instructions in the previous sections.  
-
-However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `webserver_farm=` with `<Your Custom Filter>`.
-
-Custom filter examples:
-1. For alerts applicable only to a specific webserver farm, your custom filter would be: `webserver_farm=dev-tomcat-01`
-2. For alerts applicable to all webserver farms that start with tomcat-prod, your custom filter would be: `webserver_farm=tomcat-prod*`
-3. For alerts applicable to a specific webserver farm, within a production environment, your custom filter would be: `webserver_farm=dev-tomcat-01 AND environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
-2. Click **Add**.
-3. Click **Import**.
-4. On the **Import Content popup**, enter **Apache Tomcat** in the Name field, paste in the JSON into the popup, and click **Import**.
-5. The monitors are created in a "Apache Tomcat" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
-
-### Method B: Using a Terraform script
-
-Step 1: Generate a Sumo Logic access key and ID
-
-Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#create-your-access-key_on_Preferences_page).
-
-Step 2: Download and install Terraform
-
-Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-
-Step 3: Download the Sumo Logic Terraform package for Apache Tomcat monitors
-
-The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/ApacheTomcat). You can either download it using the git clone command or as a zip file.
-
-Step 4: Alert Configuration  
-
-After extracting the package , navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/ApacheTomcat/` directory.
-
-Edit the ApacheTomcat.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-
-```sql
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
-
-The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the `apachetomcat_data_source` variable. For example:
-
-<table>
-  <tr>
-   <td>To configure alerts for:   </td>
-   <td>Set <code>apachetomcat_data_source</code> to something like:   </td>
-  </tr>
-  <tr>
-   <td>A specific webserver farm   </td>
-   <td><code>webserver_farm=tomcat.prod.01</code>   </td>
-  </tr>
-  <tr>
-   <td>All clusters in an environment   </td>
-   <td><code>environment=prod</code>   </td>
-  </tr>
-  <tr>
-   <td>Multiple webserver farms using a wildcard   </td>
-   <td><code>webserver_farm=tomcat-prod*</code>   </td>
-  </tr>
-  <tr>
-   <td>A specific webserver farms within a specific environment </td>
-   <td><code>webserver_farm=tomcat-1</code> and <code>environment=prod</code>
-<p>This assumes you have configured and applied Fields as described in <a href="#step-1-configure-fields-in-sumo-logic">Step 1: Configure Fields of the Sumo Logic of the Collect Logs and Metrics for Apache Tomcat</a> topic.</p> </td>
-  </tr>
-</table>
-
-All monitors are disabled by default on installation. To enable all of the monitors, set the monitors_disabled parameter to false.
-
-By default, the monitors will be located in a "Apache Tomcat" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the folder variable in the ApacheTomcat.auto.tfvars file.
-
-If you want the alerts to send email or connection notifications, follow the instructions in the next section.
-
-Step 5: Email and Connection Notification Configuration Examples
-
-Edit the ApacheTomcat_notifications.auto.tfvars file to populate the connection_notifications and email_notifications sections. Examples are provided below.
-
-In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Pagerduty connection example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-```bash title="Email notifications example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Step 6: Install Monitors
-
-1. Navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/ApacheTomcat/` directory and run terraform init. This will initialize Terraform and download the required components.
-2. Run terraform plan to view the monitors that Terraform will create or modify.
-3. Run terraform apply.
-
-This section demonstrates how to install the Apache Tomcat app.
-
 ## Installing the Apache Tomcat app
 
 The Sumo Logic app for Apache Tomcat provides pre-configured Dashboards for Access, Catalina.out, and Garbage Collection logs.
@@ -737,11 +566,11 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Version selection is not available for all apps.
 :::
 3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source.**
      * Choose **Enter a Custom Data Filter**, and enter a custom filter for Apache Tomcat  webserver farm. Examples:
      * For all Apache Tomcat webserver farms webserver_farm=*
-     * For a specific webserver farms: webserver_farm=tomcat.dev.01. 
+     * For a specific webserver farms: webserver_farm=tomcat.dev.01.
      * Clusters within a specific environment: `webserver_farm=tomcat-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection)  
 4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 5. Click **Add to Library**.
@@ -863,7 +692,7 @@ The **Apache Tomcat - Garbage Collector** dashboard provides information on the 
 The **Apache Tomcat  - Threat Intel** dashboard provides an at-a-glance view of threats to Apache Tomcat servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Threat-Intel.png')} alt="test" />
 
@@ -891,10 +720,18 @@ The **Apache Tomcat  - MemoryPool** dashboard provides a memory of your JMX Apac
 
 To help determine if the Apache Tomcat server is available and performing well, the [Sumo Logic monitors](/docs/alerts/monitors) are provided with out-of-box alerts.
 
+## Installing Apache Tomcat monitors
+
+Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [Apache Tomcat alerts](/docs/integrations/web-servers/apache-tomcat#apache-tomcat-alerts).
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+:::note
+- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache Tomcat alerts.
+- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
+:::
+
 ## Apache Tomcat Alerts
-
-The alerts are built based on metrics datasets and have preset thresholds.
-
 
 <table>
   <tr>
