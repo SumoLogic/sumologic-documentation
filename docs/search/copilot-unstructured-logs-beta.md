@@ -35,7 +35,7 @@ Unstructured Logs Support is powered by [Intelliparse mode (Beta)](/docs/search/
 ### Common use cases
 
 * **General log exploration**. Ask questions about unstructured logs that are already used in your dashboards, even if they lack predefined fields.
-* **Error triage**.  Investigate frequently visualized log data to surface patterns and recurring issues in unstructured formats.
+* **Error triage**. Investigate frequently visualized log data to surface patterns and recurring issues in unstructured formats.
 * **Security insights**. Detect anomalies or signs of failed logins by querying raw logs already powering security dashboards.
 * **Smarter prioritization**. Copilot focuses on unstructured logs that are visualized in dashboards, helping you get meaningful insights from high-value data sources.
 
