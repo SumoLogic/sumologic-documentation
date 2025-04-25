@@ -18,7 +18,9 @@ Unstructured Logs Support for [Sumo Logic Copilot](/docs/search/copilot), our AI
 
 ## What's new
 
-Currently, [Copilot works best on structured (JSON) logs](/docs/search/copilot/#compatible-log-formats). With this beta update, Copilot automatically applies parsing logic to unstructured logs, even if no FERs are configured. This allows Copilot to interpret logs from many popular data sources out-of-the-box and enables support for a broader range of log types.
+Currently, [Copilot works best on structured (JSON) logs](/docs/search/copilot/#compatible-log-formats). With this beta update, Copilot automatically applies parsing logic to unstructured logs, even if no FERs are configured.
+
+At this stage, Copilot prioritizes unstructured logs that are already used in dashboards, allowing it to surface insights from high-value log sources out-of-the-box. This means it won’t interpret all raw logs yet, but we’re actively working to broaden this support beyond dashboards.
 
 * **Broader coverage**. Copilot now parses and generates insights from unstructured log formats, even without FERs, making it useful for environments that include custom or inconsistent log types.
 * **Improved usability**. Ask questions in natural language. Copilot interprets your intent and suggests relevant searches, even for raw, non-JSON logs.
