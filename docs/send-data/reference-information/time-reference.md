@@ -17,6 +17,10 @@ We support several options for timestamps, time zones, time ranges, and dates. 
 
 Because of the importance of timestamps, Sumo Logic indexes the timestamp of each message, making sure that data relevant to a query’s time range is returned properly in search results, which allows you to reconstruct a correct event timeline.
 
+:::info
+For details on timestamp and date formatting specific to the OpenTelemetry Collector, see the [OTel Timestamp and Date Format Reference](/docs/send-data/opentelemetry-collector/time-reference).
+:::
+
 ## Timestamps
 
 The timestamp is the part of a log message that marks the time that an event occurred. During ingestion, we can detect the message timestamp, convert it to Unix epoch time (the number of milliseconds since midnight, January 1, 1970 UTC), and index it. The timestamp is parsed either using the default timestamp parsing settings, or a custom format that you specify, including the time zone.

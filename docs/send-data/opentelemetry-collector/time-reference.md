@@ -1,13 +1,17 @@
 ---
 id: time-reference
-title: OTel Timestamps Date Formats
-description: Learn how Sumo Logic manages OTel timestamps and the configuration options that are available.
+title: OTel Timestamp and Date Format Reference
+description: Learn about timestamp formats recognized by the Sumo Logic OpenTelemetry (OTel) Collector and available configuration options.
 keywords:
   - time-stamp
   - otel-collector
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+:::info
+This page specifically covers the timestamp formats recognized by the Sumo Logic OpenTelemetry (OTel) Collector. While Sumo Logic’s [general time reference documentation](/docs/send-data/reference-information/time-reference/) explains how timestamps are parsed and indexed across all data sources, this guide focuses on the formats automatically detected and parsed by the OTel collector for log data.
+:::
 
 We support several options for timestamps. When collecting log data, the timestamp attached to messages is vital, both for the integrity of the data in your account, and for accurate query results.
 
