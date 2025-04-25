@@ -25,9 +25,10 @@ Currently, [Copilot works best on structured (JSON) logs](/docs/search/copilot/#
 * **Performance and reliability**. Response times and suggestion accuracy are consistent with Copilot’s structured log experience.
 * **Security and compliance**. The same strict data handling and privacy standards apply. Unstructured Logs Support builds on Copilot’s secure foundation.
 
+<!---No need to call it out until GA
 ### Powered by Intelliparse mode
-
 Unstructured Logs Support is powered by [Intelliparse mode (Beta)](/docs/search/get-started-with-search/build-search/intelliparse-beta), a new parsing engine that automatically extracts fields from raw logs based on patterns already used in your dashboards. This eliminates the need for manual Field Extraction Rules (FERs) and allows Copilot to surface insights from unstructured logs out-of-the-box. Behind the scenes, Copilot injects a hidden `intelliparse` operator into relevant queries to make unstructured logs easier to work with.
+-->
 
 ### Common use cases
 
