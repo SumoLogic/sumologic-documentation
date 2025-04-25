@@ -15,6 +15,10 @@ RabbitMQ logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#rabbitmq-alerts). For details on creating custom monitors, refer to the [Create monitors for RabbitMQ app](#create-monitors-for-rabbitmq-app).
+:::
+
 ## Fields creation in Sumo Logic for RabbitMQ
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of RabbitMQ App install if not already present.
@@ -230,3 +234,20 @@ The **RabbitMQ - Logs** dashboard gives you an at-a-glance view of error message
 The **RabbitMQ - Metrics** dashboard gives you an at-a-glance view of your RabbitMQ deployment across brokers, queue, exchange, consumer, and messages.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Metrics.png' alt="RabbitMQ Metrics dashboards" />
+
+## Create monitors for RabbitMQ app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### RabbitMQ alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `RabbitMQ - High Consumer Count` | This alert is triggered when consumers are higher than given value (Default 10000) in a queue. | Count `>=` 10000 | Count `<` 10000 |
+| `RabbitMQ - High Message Queue Size` | This alert is triggered when the number of messages in a queue exceeds a given threshold (Default 10000), indicating potential consumer issues or message processing bottlenecks. | Count `>=` 10000 | Count `<` 10000 |
+| `RabbitMQ - High Messages Count` | This alert is triggered when messages are higher than given value (Default 10000) in a queue. | Count `>=` 10000 | Count `<` 10000 |
+| `RabbitMQ - High Unacknowledged Messages` | This alert is triggered when there are too many unacknowledged messages (Default 5000), suggesting consumer processing issues. | Count `>=` 5000 | Count `<` 5000 |
+| `RabbitMQ - Node Down` | This alert is triggered when a node in the RabbitMQ cluster is down. | Count `>=` 1 | Count `<` 1 |
+| `RabbitMQ - Zero Consumers Alert` | This alert is triggered when a queue has no consumers, indicating potential service issues. | Count `<=` 0 | Count `>` 0 |

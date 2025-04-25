@@ -8,19 +8,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-mysql.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Database for MySQL](https://learn.microsoft.com/en-us/azure/mysql/single-server/overview) is a relational database service in the Microsoft cloud based on the MySQL Community Edition database engine. This integration helps in identifying slow queries, tracking database-level activity, including connection, administration, data definition language (DDL), and data manipulation language (DML) events.
+[Azure Database for MySQL](https://learn.microsoft.com/en-us/azure/mysql/single-server/overview) is a relational database service in the Microsoft cloud based on the MySQL Community Edition database engine. This integration helps in identifying slow queries, and tracking database-level activity, including connection, administration, data definition language (DDL), and data manipulation language (DML) events.
 
-The below instructions applies to Azure Database for MySQL with Flexible Server only.
+The instructions below apply to Azure Database for MySQL with Flexible Server only.
 
 ## Log and metric types
 
 For Azure Database for MySQL, you can collect the following logs and metrics:
 
 * **MySQL Audit logs**. Azure Database for MySQL flexible server provides users with the ability to configure audit logs. Audit logs can be used to track database-level activity including connection, admin, DDL, and DML events. These types of logs are commonly used for compliance purposes. To learn more about the different log types and schemas collected for Azure Database for MySQL, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-audit-logs#access-audit-logs).
-* **MySQL Slow Query Logs**. In Azure Database for MySQL flexible server, the slow query log is available to users to configure and access. Slow query logs are disabled by default and can be enabled to assist with identifying performance bottlenecks during troubleshooting. To learn more about the different log types and schemas collected for Azure Database for MySQL, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/mysql/flexible-server/concepts-slow-query-logs#access-slow-query-logs).
-* **MySQL Error Logs**. In Azure Database for MySQL flexible server, the error log is available to users to configure and access. Error logs in MySQL gather diagnostic messages during server startup and shutdown and while the server is running, to provide information that can help proactive troubleshooting. For more information about the MySQL error log, see the [Error Log Documentation](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-error-logs).
+* **MySQL Slow Query Logs**. In the Azure Database for MySQL flexible server, the slow query log is available to users to configure and access. Slow query logs are disabled by default and can be enabled to assist with identifying performance bottlenecks during troubleshooting. To learn more about the different log types and schemas collected for Azure Database for MySQL, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/mysql/flexible-server/concepts-slow-query-logs#access-slow-query-logs).
+* **MySQL Error Logs**. In the Azure Database for MySQL flexible server, the error log is available to users to configure and access. Error logs in MySQL gather diagnostic messages during server startup and shutdown and while the server is running, to provide information that can help proactive troubleshooting. For more information about the MySQL error log, see the [Error Log Documentation](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-error-logs).
    :::note
-   MySQL Error Logs are currently in a preview phase and are only available under Server Logs. These logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them, and then [upload the logs](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) to a Sumo Logic HTTP source endpoint.
+   MySQL Error Logs are currently in a preview phase and are only available under Server Logs. These logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them, and then [upload the logs](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) to a Sumo Logic HTTP source endpoint.
    :::
 * **Platform Metrics for Azure Database for MySQL**. These metrics are available in the [Microsoft.DBforMySQL/flexibleServers](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-dbformysql-flexibleservers-metrics) namespace. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-monitoring#list-of-metrics).
 
@@ -118,16 +118,16 @@ resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/FLEXIBLESERVERS/* tenan
 
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, onto an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
-1. Create hosted collector and tag `tenant_name` field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+1. Create a hosted collector and tag the `tenant_name` field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Flexible Mysql Server resource that you want to monitor.
-   1. Choose `Stream to an event hub` as destination.
+1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each Flexible Mysql Server resource that you want to monitor.
+   1. Choose `Stream to an event hub` as the destination.
    1. Select `AllMetrics`.
-   1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureflexible-mysqlserver-metrics.png')} alt="Azure flexible mysql server metrics" style={{border: '1px solid gray'}} width="800" />
-4. Tag the location field in the source with right location value.
+   1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureflexible-mysqlserver-metrics.png')} alt="Azure flexible mysql server metrics" style={{border: '1px solid gray'}} width="800" />
+4. Tag the location field in the source with the right location value.
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure logs collection
@@ -137,25 +137,25 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-2. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure Redis cache account that you want to monitor.
+2. To create the diagnostic settings in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure Redis cache account that you want to monitor.
    1. Choose **Stream to an event hub** as the destination.
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
    <img src={useBaseUrl('img/send-data/azureflexible-mysqlserver-logs.png')} alt="Azure flexible mysql server logs" style={{border: '1px solid gray'}} width="800" />
-3. Set Audit log related parameters as below:
+3. Set Audit log related parameters as given below:
    - audit_log_enabled: set to *ON*
    - audit_log_events: Select the event types to be logged from the dropdown list.
 
-   Set error logs related server parameters as below:
+   Set error logs related server parameters as given below:
    - error_server_log_file: set to *ON*
    - log_output: set to *FILE*
    
-   Set Slow Query logs related parameters as below:
+   Set Slow Query logs related parameters as given below:
    - slow_query_log: set to *ON*
    - long_query_time: Set the number of seconds a query can run before it's considered "slow". The default is 10 seconds.
    - log_slow_admin_statements: set to *ON*
 4. Enable slow query and error logs.<br/><img src={useBaseUrl('img/send-data/azure-database-for-mysql-error-logs.png')} alt="Azure flexible mysql error logs" style={{border: '1px solid gray'}} width="800" />
-5. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="500" /> 
+5. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="500" /> 
 
 #### Activity Logs
 
@@ -237,7 +237,7 @@ The **Azure Database for Mysql - Slow Queries** dashboard provides details about
 
 ### Storage Overview
 
-The **Azure Database for Mysql - Storage Overview** dashboard provides details about Max Storage utilisation (MB), Max Data File Size (MB), Max System Tablespace Size (MB), Max System Tablespace Size (MB), Max Binlog Storage (MB), Max Other Storage (MB), Max Storage Limit (MB), Max Backup Storage Used (MB), and Max Storage (%).
+The **Azure Database for Mysql - Storage Overview** dashboard provides details about Max Storage utilization (MB), Max Data File Size (MB), Max System Tablespace Size (MB), Max System Tablespace Size (MB), Max Binlog Storage (MB), Max Other Storage (MB), Max Storage Limit (MB), Max Backup Storage Used (MB), and Max Storage (%).
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Storage-Overview.png')} alt="Azure Database for Mysql - Storage Overview" style={{border: '1px solid gray'}} width="800" />
 

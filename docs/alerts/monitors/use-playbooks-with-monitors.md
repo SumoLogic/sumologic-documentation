@@ -6,6 +6,7 @@ description: Learn how to use Automation Service playbooks with monitors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 This article describes how to configure automated playbooks in monitors. An *automated playbook* is a [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/), and is a predefined set of actions and conditional statements that run in an automated workflow to respond to an event. For example, suppose that a monitor detects suspicious behavior that could indicate a security problem. When the monitor sends the alert, it could also run an automated playbook to respond to the event.
 
@@ -31,7 +32,7 @@ For more information, see [Add an automated playbook to a monitor](/docs/alerts/
 
 ### When viewing an alert
 
-1. On the [alert page](/docs/alerts/monitors/alert-response/#alert-page), open an alert.
+1. Go to your **Alert List** and click on any alert to open its [details page](/docs/alerts/monitors/alert-response/#alert-details).
 1. Click the **Playbook** button. The attached playbooks, if assigned during Monitor configuration, are displayed along with their execution status.
 1. Click the name of an attached playbook. <br/>The playbook is opened in the Automation Service.
 
@@ -57,7 +58,7 @@ After you add playbooks to the monitor, when the monitor triggers an alert, the 
 
 Once a monitor triggers an alert with one or more attached playbooks, you can view the playbooks for the alert.
 
-1. On the [alert page](/docs/alerts/monitors/alert-response/#alert-page), open an alert that has attached playbooks.
+1. Go to your **Alert List** and click on any alert to open its [details page](/docs/alerts/monitors/alert-response/#alert-details).
 1. Click the **Playbook** button. The attached playbooks are displayed. <br/><img src={useBaseUrl('img/alerts/monitors/view-playbooks-on-alert.png')} alt="View playbooks for an alert" style={{border: '1px solid gray'}} width="800" />
 1. Hover your mouse over the icon to the right of the playbook name to view the status of the playbooks:
 
@@ -83,21 +84,34 @@ An anomaly monitor is triggered when unusual conditions are detected. Anomaly mo
 Weekly seasonality detection is turned off by default to optimize performance. [Contact Sumo Logic Customer Support](https://support.sumologic.com/support/s/contactsupport) to activate it for specific monitors. (*Weekly seasonality detection* is the optimization of baseline calculations to account for the variations of data flow that can occur in a work week.)
 :::
 
+:::sumo Micro Lesson
 Watch this micro lesson to learn about anomaly monitors.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/8z9b2zqtc3?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: AI-driven Alerting Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/nMRoYb1YCfg?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
-
-import Iframe from 'react-iframe';
-
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+-->
+:::
 
 To create an anomaly monitor that runs an automated playbook in response to an alert:
 

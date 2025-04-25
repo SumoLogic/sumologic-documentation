@@ -1,7 +1,7 @@
 ---
 id: mandiant-threat-intel-source
-title: Mandiant Threat Intel Source (Beta)
-sidebar_label: Mandiant Threat Intel (Beta)
+title: Mandiant Threat Intel Source
+sidebar_label: Mandiant Threat Intel
 tags:
   - cloud-to-cloud
   - mandiant-threat-intel
@@ -13,21 +13,17 @@ import MyComponentSource from '!!raw-loader!/files/c2c/mandiant-threat-intel/exa
 import TerraformExample from '!!raw-loader!/files/c2c/mandiant-threat-intel/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 <img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="icon" width="60" />
 
-Mandiant is a recognized leader in dynamic cyber defense, threat intelligence, and incident response services. By scaling decades of frontline experience, Mandiant helps organizations to be confident in their readiness to defend against and respond to cyber threats. Mandiant is part of Google Cloud. The Mandiant Threat Intel integration ingests the indicators data from Mandiant API and sends it to Sumo Logic as normalized threat indicators.
+The Mandiant Threat Intel source ingests threat intelligence indicators using the Mandiant API and sends them to Sumo Logic as normalized threat indicators. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
+
+Mandiant is a recognized leader in dynamic cyber defense, threat intelligence, and incident response services. By scaling decades of frontline experience, Mandiant helps organizations to be confident in their readiness to defend against and respond to cyber threats. Mandiant is part of Google Cloud. 
 
 ## Data collected
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  Indicators |
+| 1h default (customizable in number of hours) |  Indicators |
 
 ## Setup
 
@@ -54,7 +50,7 @@ To configure a Mandiant Threat Intel source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **API Key ID**. Enter the API key ID collected from the Mandiant Threat Intel platform.
 1. **API Secret**. Enter the API secret collected from the from the Mandiant Threat Intel platform.
-1. **Sumo Logic Threat Intel Source ID**. Enter your Sumo Logic namespace ID in which the indicators will be stored.
+1. **Sumo Logic Threat Intel Source ID**. Enter the name you want to use for the Mandiant source that will be created in the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab in Sumo Logic. The Mandiant threat intelligence indicators will be stored in this source. Do not use spaces in the name.
 1. **Polling Interval**. The polling interval is set for 5 minutes by default. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the source, click **Save**.

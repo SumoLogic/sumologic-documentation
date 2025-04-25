@@ -24,17 +24,14 @@ The Tokens Management API allows you to manage [Installation Tokens](/docs/manag
 | DE         | https://api.de.sumologic.com/docs/#tag/tokensLibraryManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/tokensLibraryManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/tokensLibraryManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/tokensLibraryManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/tokensLibraryManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/tokensLibraryManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/tokensLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/tokensLibraryManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Manage Tokens
-
--->

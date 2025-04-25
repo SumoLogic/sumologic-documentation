@@ -33,6 +33,12 @@ risky activity.
 * [Chronicle (Google Auth)](https://github.com/googleapis/google-auth-library-python/blob/master/LICENSE)
 * [Chronicle (Google API)](https://github.com/googleapis/google-api-python-client/blob/master/LICENSE)
 
+## Configure Chronicle in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * July 30, 2021 - First upload

@@ -24,16 +24,13 @@ The Monitor Management API allows you to manage Monitors from HTTP endpoints. Mo
 | DE         | https://api.de.sumologic.com/docs/#tag/monitorsLibraryManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/monitorsLibraryManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/monitorsLibraryManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/monitorsLibraryManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/monitorsLibraryManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/monitorsLibraryManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/monitorsLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/monitorsLibraryManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Alerting (all role capabilities)
-
--->

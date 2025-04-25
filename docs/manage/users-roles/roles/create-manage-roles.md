@@ -5,6 +5,7 @@ description: You can create custom roles for your users.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import RoleStacking from '../../../reuse/role-stacking-tip.md';
 
 This section has instructions for creating and managing Sumo Logic roles. The roles you assign to a user control what Sumo Logic capabilities are available to the user and what log data the user can access. This functionality is referred to as role-based access control.  
 
@@ -25,26 +26,34 @@ To create a role:
 1. The **Create New Role** pane appears on the right side of the page.<br/><img src={useBaseUrl('img/users-roles/create-new-role.png')} alt="Create a new role" style={{border: '1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the role. 
 1. **Description**. Enter a description of the role to help other Administrators understand the purpose or limitations of the role.
-1. **Search Filter**. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. Only one is allowed for each. For examples, see [Search Filter and Index Access examples](#search-filter-and-index-access-examples) below. (For general guidance on creating search filters, see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role/).)
+1. **Search Filter**. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. Only one is allowed for each. (For general guidance on creating search filters, see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role/).)
    * **Log Analytics data filter**. This filter applies to all the [partitions](/docs/manage/partitions/run-search-against-partition/) and [LiveTail](/docs/search/live-tail/). 
-   * **Audit data filter**. This filter applies to all the logs in [Audit Indexes](/docs/manage/security/audit-indexes/audit-index/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, to name a few.
+   * **Audit data filter**. This filter applies to all the logs in [Audit Indexes](/docs/manage/security/audit-indexes/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, `sumologic_volume`, to name a few.
    * **Security data filter**. This filter applies on all logs in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partition-for-cloud-siem-signals).
 1. **Index Access**. Allows or denies access to [search indexes](/docs/manage/partitions/data-tiers/). Select one of the following and choose the indexes in the **Select Indexes** box that appears:
    * **All indexes**. Allow access to all indexes.
    * **Allow few indexes**. Allow access to only the selected indexes. 
-   * **Deny few indexes**. Deny access to the selected indexes. 
+   * **Deny few indexes**. Deny access to the selected indexes.
+      :::warning
+      Use **Deny few indexes** with caution. We do not recommend filtering to deny access, as conflicting roles can create access inconsistencies—one role may deny access while another grants it. Whenever possible, apply filtering to allow access rather than deny it. This ensures roles work additively for more predictable access management.  For more information, see [Index Access behavior when a user has multiple roles](#index-access-behavior-when-a-user-has-multiple-roles) below.
+      :::
 1. **Capabilities**. In this section, click the checkbox beside each capability you want to grant to users with this role. For information about what each capability enables, see [Role Capabilities](/docs/manage/users-roles/roles/role-capabilities/).
 1. Click **Save**. 
 
-### Restrict access using Search Filter and Index Access 
+### Restrict access using Search Filter and Index Access
+
+:::note
+**Index Access** only appears if the feature has been deployed to your environment. For more information, see our [release note](/release-notes-service/2024/12/31/#october-14-2024-manage). 
+:::
 
 Follow this process to restrict access using the **Search Filter** and **Index Access** sections on the **Create New Role** pane:
 
 1. Identify the dataset you would like to control access to. Test it out using a [search query](/docs/search/get-started-with-search/).
 2. Create the role using the **Search Filter** and/or **Index Access** sections.   
-3. Verify the dataset access is correct using [emulation](#test-a-role-with-search-filter-and-index-access-defined).
+3. Verify the dataset access is correct using [emulation](#test-a-roles-log-access-rights).
 4. [Assign the role](#add-a-user-to-a-role) to the relevant users.
 
+<!-- Hiding the following for work on DOCS-680
 ### Search Filter and Index Access examples
 
 Following are examples for using the **Search Filter** and **Index Access** sections on the **Create New Role** pane:
@@ -53,13 +62,18 @@ Following are examples for using the **Search Filter** and **Index Access** sect
 * Let’s say you want to deny access to all error logs in log analytics, and deny access to all audit indexes. In this case, you will have to create two roles. For role 1, select **Log Analytics filter** and add `!error` to the filter. For role 2, select **Index Access > Deny few indexes** and select all audit indexes. Then assign both roles to users.
 
 Keep in mind that these are examples only, and you must adapt them for use in your environment. For general guidance on creating search filters, see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role/).
+-->
 
 ### Index Access behavior when a user has multiple roles
+
+This section describes what happens when a user is assigned multiple roles ("role stacking") and each role has different settings for Index Access.
+
+<RoleStacking/>
 
 A role can have one of the following Index Access settings:
    * **All indexes**. Allows access to all indexes.
    * **Allow few indexes**. Allows access to only the selected indexes. 
-   * **Deny few indexes**. Denies access to the selected indexes. 
+   * **Deny few indexes**. Denies access to the selected indexes.
 
 However, if a user is assigned multiple roles that each have different Index Access settings, following is how they are evaluated:
 * **All indexes** + **Allow few indexes**. Indexes in the "Allow few indexes" list are allowed, and all other indexes are allowed.
@@ -67,12 +81,14 @@ However, if a user is assigned multiple roles that each have different Index Acc
 * **Allow few indexes** + **Deny few indexes**. Indexes in the "Allow few indexes" list are allowed, indexes in the deny list are denied, and all other indexes are denied.
 * **All indexes** + **Deny few indexes** + **Allow few indexes**. Indexes in the "Allow few indexes" list are allowed, indexes in the deny list are denied, and the rest of the indexes are allowed.
 
-### Test a role with Search Filter and Index Access defined
+## Test a role's log access rights
+
+To test a role to see if it displays the expected log access behavior, select a role and click **Emulate log search**. (You can also test a user. See [Test a user's log access rights](/docs/manage/users-roles/users/create-edit-users/#test-a-users-log-access-rights).)
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
-1. Select a role with **Search Filter** and/or **Index Access** defined. 
-1. Click **Emulate log search**. The search will be emulated for the filtering defined in the role. (In the example below, an index access filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index filter" style={{border: '1px solid black'}} width="400"/>
-1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by filtering defined in the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid black'}} width="800"/>
+1. Select a role. 
+1. Click **Emulate log search**. The search will be emulated for the permissions of the role, including the filtering defined in the role. (In the example below, an index access filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index filter" style={{border: '1px solid black'}} width="400"/>
+1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid black'}} width="800"/>
 
 ## Add a user to a role
 

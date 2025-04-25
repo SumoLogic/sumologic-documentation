@@ -16,6 +16,12 @@ Retrieve and modify IP groups for incident investigation and remediation.
 * **Get IP Group** (*Enrichment*) - Gather IP groups from SecureSphere.
 * **Update IP Group** (*Containment*) - Modify IP groups in SecureSphere.
 
+## Configure Imperva SecureSphere in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * July 29, 2019 - First upload

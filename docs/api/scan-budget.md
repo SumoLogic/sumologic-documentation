@@ -29,10 +29,17 @@ The Scan Budget Management APIs allows you to manage scan budgets from HTTP endp
 | DE         | https://api.de.sumologic.com/docs/#tag/budgetManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/budgetManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/budgetManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/budgetManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/budgetManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/budgetManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/budgetManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/budgetManagement |
+
+## Required role capabilities
+
+<ApiRoles/>
+
+* Usage Management
+    * View Usage Management
+    * Manage Usage Management
 
 To manage scan budgets, you must have the **Manage Usage Management** role capability. Enabling this will also automatically enable the **View Usage Management** capability.

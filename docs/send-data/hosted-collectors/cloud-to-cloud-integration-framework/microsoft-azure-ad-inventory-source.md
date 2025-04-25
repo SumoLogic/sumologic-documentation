@@ -57,8 +57,8 @@ From there, select (or search for) the following permissions under type **Applic
 
 | API | Account Type| Permissions |
 |:---------|:---------------------------------------------------|:------------------------------------|
-| User    | Application (work or school account) | User.Read.All, Directory.ReadAll   |
-| Devices | Application (work or school account) | Device.Read.All, Directory.ReadAll |
+| User    | Application (work or school account) | User.Read.All, Directory.Read.All   |
+| Devices | Application (work or school account) | Device.Read.All, Directory.Read.All |
 
 You require additional permission to collect `signInActivityData` for User.
 

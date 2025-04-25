@@ -8,18 +8,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="60"/>
 
 Sumo Logic's security solutions support the entire spectrum of security use cases, from security analytics to SIEM and SOAR:
-
-| Cloud monitoring | Threat detection and investigation | Threat response |
-| :-- | :-- | :-- |
-| [Cloud Infrastructure Security](/docs/security/cloud-infrastructure-security/) | [Cloud SIEM](/docs/cse/) | [Cloud SOAR](/docs/cloud-soar/) |
-| Provides enhanced insight **for security analysts** into threat activity via a unified security and compliance audit view of your cloud infrastructure. Leveraging cloud-native tools and telemetry, it accelerates development, operations, security, and reliability management teams in maintaining security visibility into their environment, managing their risk and attack surface. | Gives **SOC (security operations center) analysts** prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions. | Fully automates triage, investigation, and remediation of threats **for any security professional**. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR). |
-
+* **[Logs for Security](/docs/security/additional-security-features/)**<br/>Provides enhanced insight for security analysts into threat activity via logs. Collect security log and event data from your infrastructure and applications, on-premises and in-cloud. Analyze your security data with pre-built and custom dashboards, out-of-the-box security apps, and robust queries.
+* **Threat detection, investigation, and response**<br/>After you have collected logs for security, you can use them with the following solutions for threat detection, investigation, and response:
+   * **[Cloud SIEM](/docs/cse/)**<br/>Gives SOC (security operations center) analysts prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions.
+   * **[Cloud SOAR](/docs/cloud-soar/)**<br/>Fully automates triage, investigation, and remediation of threats for any security professional. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR). |
 
 ## Security feature comparison
 
 Following are features available with our security solutions. If you have any questions on availability or a free trial, you can reach out to your Sumo Logic account team.
 
-| Feature | Cloud Infrastructure Security | Cloud SIEM | Cloud SOAR |
+| Feature | Logs for Security | Cloud SIEM | Cloud SOAR |
 | :-- | :-- | :-- | :-- |
 | Log collection | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | App catalog (out-of-the-box analytics) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -28,7 +26,7 @@ Following are features available with our security solutions. If you have any qu
 | Advanced analytics with machine learning (GIS for GuardDuty and CloudTrail) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Monitoring | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Alerts | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Threat Intelligence (CrowdStrike threat intel feed and threat analysis app) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Threat Intelligence (threat intel feed and threat analysis app) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Normalization with parsing of unstructured data and Field Extraction Rules | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Normalization with parsing, mapping, and enrichment | | ![check](/img/reuse/check.png) | |
 | Streaming processing | | ![check](/img/reuse/check.png) | |

@@ -30,7 +30,7 @@ To deploy the CloudFormation template:
 
 1. Sign on to the AWS Management console.
 
-1. Invoke the CloudFormation YAML template using [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/hostmetricsfields/host_metrics_add_fields.template.yaml).
+1. Invoke the CloudFormation YAML template using [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.12.0/hostmetricsfields/host_metrics_add_fields.template.yaml).
 
 1. Select the AWS Region where you want to deploy the CloudFormation Template.
 
@@ -49,12 +49,12 @@ This section provides a listing of configuration prompts for the CloudFormation 
 
 ### Sumo Logic Access Configuration (Required)
 
-| Prompt | Guideline |
-|:--|:--|
-| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed, kr, or us1. For more information on Sumo Logic deployments, see the [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) topic. |
-| Sumo Logic Access ID | Sumo Logic Access ID. For more information, see [Create an access key](/docs/manage/security/access-keys.md) in the Access Keys topic. |
-| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
-| Delete Fields when stack is deleted | True. Deletes the Account and Namespace fields from the Host Metric Sources when the stack is deleted.<br/>False. Keeps the fields in Host Metric Sources when the stack is deleted. |
+| Prompt | Guideline                                                                                                                                                                                                                                        |
+|:--|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, fed, kr, or us1. For more information on Sumo Logic deployments, see the [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) topic. |
+| Sumo Logic Access ID | Sumo Logic Access ID. For more information, see [Access Keys](/docs/manage/security/access-keys).                                                                                                                                                |
+| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls.                                                                                                                                                                                |
+| Delete Fields when stack is deleted | True. Deletes the Account and Namespace fields from the Host Metric Sources when the stack is deleted.<br/>False. Keeps the fields in Host Metric Sources when the stack is deleted.                                                             |
 
 ### AWS account alias (Required)
 
@@ -90,7 +90,7 @@ Below are the steps to use the CloudFormation template with Stack Sets :
 1. Go to [Stack Sets](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacksets) in your AWS account.
 1. Click **Create StackSet**.  
     ![Step8.png](/img/observability/add-fields8.png)
-1. Paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/hostmetricsfields/host_metrics_add_fields.template.yaml` in the Amazon S3 URL option and select **Next**. <br/>  ![Step9.png](/img/observability/add-fields9.png)
+1. Paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.12.0/hostmetricsfields/host_metrics_add_fields.template.yaml` in the Amazon S3 URL option and select **Next**. <br/>  ![Step9.png](/img/observability/add-fields9.png)
 1. Provide a Stack Set Name, provide the parameters as explained in the section above, and click **Next**.
 1. Add Tags if needed, select the Administrator role defined in the pre-requisites above, and click **Next**.<br/>  ![Step10.png](/img/observability/add-fields10.png)
 1. Provide the current account ID and select all the regions in the current account where you would like to deploy the template.<br/>  ![Step11.png](/img/observability/add-fields11.png)

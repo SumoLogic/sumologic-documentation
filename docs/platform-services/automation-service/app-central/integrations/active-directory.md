@@ -34,6 +34,12 @@ Utilize user, group, and system information from Microsoft Active Directory.
 
 * [LDAP3](https://github.com/cannatag/ldap3/blob/master/LICENSE.txt)
 
+## Configure Active Directory in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * December 19, 2019 - First upload

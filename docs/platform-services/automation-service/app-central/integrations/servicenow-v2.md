@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/servicenow-v2.png')} alt="servicenow" width="100"/>
 
-***Version: 2.5  
-Updated: May 31, 2024***
+***Version: 2.6  
+Updated: Jan 13, 2025***
 
 ServiceNow V2 SaaS is for technical management support - create, update, and gather ServiceNow ticket information.
 
@@ -20,9 +20,13 @@ ServiceNow V2 SaaS is for technical management support - create, update, and gat
 * **Search Tickets** *(Enrichment)* - Retrieve a record from a table.
 * **ServiceNow Incidents Daemon** *(Daemon)* - Automatically retrieves new tickets.
 
-## ServiceNow V2 in Automation Service and Cloud SOAR
+## Configure ServiceNow V2 in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).2.png')} 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation). 
 1. After the list of the integrations appears, search for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-3.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/> 
 1. Populate all the required fields (\*):
@@ -44,26 +48,26 @@ Query used to filter the result set.
 
 Building the query:
 
-Syntax: sysparm\_query=&lt;col\_name&gt;&lt;operator&gt;&lt;value&gt;.
+Syntax: `<col_name><operator><value>`
 
-* &lt;col\_name&gt;: Name of the table column to filter against.
-* &lt;operator&gt;: Supports the following values:  
-=: Exactly matches &lt;value&gt;.  
-!=: Does not match &lt;value&gt;.  
-^: Logically AND multiple query statements.  
-^OR: Logically OR multiple query statements.  
-LIKE: &lt;col\_name&gt; contains the specified string. Only works for &lt;col\_name&gt; fields whose data type is string.  
-STARTSWITH: &lt;col\_name&gt; starts with the specified string. Only works for &lt;col\_name&gt; fields whose data type is string.  
-ENDSWITH: &lt;col\_name&gt; ends with the specified string. Only works for &lt;col\_name&gt; fields whose data type is string.
-* &lt;value&gt;: Value to match against.
+* `<col_name>`: Name of the table column to filter against.
+* `<operator>`: Supports the following values:  
+   * `=:` Exactly matches `<value>`.  
+   * `!=`: Does not match `<value>`.  
+   * `^`: Logically AND multiple query statements.  
+   * `^OR`: Logically OR multiple query statements.  
+   * `LIKE`: `<col_name>` contains the specified string. Only works for `<col_name>` fields whose data type is string.  
+   * `STARTSWITH`: `<col_name>` starts with the specified string. Only works for `<col_name>` fields whose data type is string.  
+   * `ENDSWITH`: `<col_name>` ends with the specified string. Only works for `<col_name>` fields whose data type is string.
+* `<value>`: Value to match against.
 
 All parameters are case-sensitive. 
 
 Queries can contain more than one entry. 
 
-For example: sysparm\_query=&lt;col\_name&gt;&lt;operator&gt;&lt;value&gt;[&lt;operator&gt;&lt;col\_name&gt;&lt;operator&gt;&lt;value&gt;]
+For example: `<col_name><operator><value>[<operator><col_name><operator><value>]`
 
-For more info please check the official API doc: &lt;https://developer.servicenow.com/dev.do#!/reference/api/sandiego/rest/c_TableAPI#table-GET&gt;
+For more information check the [ServiceNow API documentation](https://developer.servicenow.com/dev.do#!/reference/api/xanadu/rest/c_TableAPI#table-GET). 
 
 **Create Ticket** 
 
@@ -92,3 +96,4 @@ Ticketing System
 * June 30, 2023 (v2.3) - Integration code improved.
 * April 5, 2024 (v2.4) - Fixed an issue that prevents the resource testing to work correctly.
 * May 31, 2024 (v2.5) - Fixed an issue in actions **Create Ticket** and **Update Ticket** in which the JSON Query field was not visible.
+* Jan 13, 2025 (v2.6) - Modified hint of the **query** field as it was misleading.

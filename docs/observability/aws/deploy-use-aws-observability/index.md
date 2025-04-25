@@ -21,6 +21,19 @@ import Iframe from 'react-iframe';
 
 Watch a micro lesson on deploying the AWS Observability Solution. 
 
+<Iframe url="https://fast.wistia.net/embed/iframe/drmpe9zh5d?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Setting Up AWS Observability Solution V2.4.0 Using CloudFormation Template Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!--
 <Iframe url="https://www.youtube.com/embed/_5JHkxG7ZMo?rel=0"
         width="854px"
         height="480px"
@@ -31,5 +44,6 @@ Watch a micro lesson on deploying the AWS Observability Solution. 
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
 :::

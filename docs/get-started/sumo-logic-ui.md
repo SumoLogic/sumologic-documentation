@@ -6,7 +6,7 @@ description: Get to know the Sumo Logic platform user interface.
 ---
 
 <!--
-When officially GA'd (est. Nov 2024):
+When officially GA'd (est. Apr-Aug 2025):
 retire the Classic UI version
 add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues.
 -->
@@ -16,24 +16,31 @@ import Iframe from 'react-iframe';
 
 This guide will help you get started with the new and improved Sumo Logic user interface, designed for faster speed and a more intuitive experience.
 
-<img src={useBaseUrl('img/get-started/overview-new-ui.png')} alt="Overview screenshot example Classic UI" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/get-started/overview-new-ui.png')} alt="Overview screenshot example New UI" style={{border: '1px solid gray'}} width="800" />
 
 With the new UI, you'll benefit from:
 
-* Unified experience across operational and security analytics products.
-* Faster load times with enhanced caching.
-* Stateful URLs that save your session and position when you log back in.
-* Use-case-driven navigation to help you quickly find the features you need.
-
-For a detailed list of updates, [view the release notes](/release-notes-service/2024/02/23/ui/).
-
-## Opt in
-
-To opt in the new UI, log in to Sumo Logic, go to the Classic UI left navigation panel and click **Switch to New UI**.<br/><img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
+* **Everything in one place**. Unified experience across operational and security analytics products, so you don’t have to switch between different interfaces.
+* **Accelerate your work**. Faster load times and improved caching mean less waiting and more doing.
+* **Pick up where you left off**. Stateful URLs automatically save your session, making it easy to resume work after logging in.
+* **Find what you need instantly**. Use-case-driven navigation helps you locate key features without digging through menus.
 
 :::sumo quickstart
-Check out this overview video to get familiar with the New UI.
+Watch this quick overview video to explore the key features of the New UI.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/ydmxwi7ndm?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Sumo Logic's Unified Experience UI Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
         width="854px"
         height="480px"
@@ -43,8 +50,14 @@ Check out this overview video to get familiar with the New UI.
         position="relative"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-        />     
-:::   
+        />
+-->  
+:::
+
+:::warning Classic UI retirement notice
+The Classic UI will be retired in 2025 and will no longer receive updates. The exact date will be communicated closer to the transition. For the best experience, we strongly recommend using the New UI. Need to reference the old interface? See the [Classic UI documentation](/docs/get-started/sumo-logic-ui-classic).
+:::
+
 
 ## Home
 
@@ -89,7 +102,7 @@ Use the **Go To...** menu for quick access to settings and features. <img src={u
 With the Sumo Logic Administrator role, you can manage your organization's data collection settings, ingest budget, partitions, and more. To access these settings, go to the top nav bar and click the **Configuration** icon.<br/><img src={useBaseUrl('img/get-started/config.png')} alt="config.png" width="300"/>
 
 * **Collection**. [Collection](/docs/send-data/collection/), [OpenTelemetry Collection](/docs/send-data/opentelemetry-collector/), [Source Template](/docs/send-data), [Status](/docs/manage/ingestion-volume/collection-status-page/), [Ingest Budget](/docs/manage/ingestion-volume/ingest-budgets/), [Health Events](/docs/manage/health-events/), [Archive](/docs/manage/data-archiving/archive), [Data Archiving](/docs/manage/data-archiving/).
-* **Logs**. [Fields](/docs/manage/fields/), [Field Extraction Rules](/docs/manage/field-extractions/), [Partitions](/docs/manage/partitions/), [Scheduled Views](/docs/manage/scheduled-views/), [Data Forwarding](/docs/manage/data-forwarding/), [Threat Intelligence](/docs/platform-services/threat-intelligence-indicators/).
+* **Logs**. [Fields](/docs/manage/fields/), [Field Extraction Rules](/docs/manage/field-extractions/), [Partitions](/docs/manage/partitions/), [Scheduled Views](/docs/manage/scheduled-views/), [Data Forwarding](/docs/manage/data-forwarding/), [Threat Intelligence](/docs/security/threat-intelligence/).
 * **Metrics**. [Metrics Rules](/docs/metrics/metric-rules-editor/), [Logs-to-Metrics](/docs/metrics/logs-to-metrics/), [Metrics Transformation Rules](/docs/metrics/metrics-transformation-rules/).
 * **Monitoring**. [Connections](/docs/alerts/webhook-connections).
 
@@ -114,7 +127,6 @@ To manage your personal Sumo account preferences:
 1. From the top nav bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
 1. In the Preferences page, you can modify the following settings:
     * **My Profile**. Username and password.
-    * **My Access Keys**. Add, edit, and remove access keys.
     * **My Preferences**. Your account session settings.
 
 For more information, see [Account Preferences and Credentials](account-settings-preferences.md).
@@ -241,7 +253,7 @@ The disparate user interface and varying navigation patterns among Log Analytics
 
 The current information architecture and navigation system have not effectively showcased useful functionalities to users. It's structured around tools like Traces, Log Search, and Metric Search rather than focusing on user-centric use cases. This places a burden on users to discover these functionalities.
 
-In-app tabs present performance and usability challenges since they all operate within a single browser tab. These tabs disrupt native browser navigation features like the back button and tab grouping. The **New UI** navigation lets you leverage native browser capabilities and customize tab organization according to your preferences.
+In-app tabs present performance and usability challenges since they all operate within a single browser tab. These tabs disrupt native browser navigation features like the back button and tab grouping. The New UI navigation lets you leverage native browser capabilities and customize tab organization according to your preferences.
 </details>
 
 <details>
@@ -270,7 +282,7 @@ We understand that the removal of in-app tabs in the New UI is a significant cha
 <details>
 <summary><strong>Q:</strong> Will the New UI retain the Classic UI feature of remembering previously opened tabs from my previous session?</summary>
 
-After analyzing tab usage data, we've found that a minimal portion of previously opened tabs are actively utilized by our users. Consequently, the Sumo Logic UI often remains cluttered with multiple unused tabs. With the introduction of the **New UI** experience, if you fail to close browser tabs from previous sessions, they will automatically reload upon login.
+After analyzing tab usage data, we've found that a minimal portion of previously opened tabs are actively utilized by our users. Consequently, the Sumo Logic UI often remains cluttered with multiple unused tabs. With the introduction of the New UI experience, if you fail to close browser tabs from previous sessions, they will automatically reload upon login.
 
 <img src={useBaseUrl('img/get-started/tab-reload.gif')} alt="tab-reload.gif" />
 
@@ -278,36 +290,26 @@ Moreover, we've made the **Recents** feature more prominent in the navigation ba
 </details>
 
 <details>
-<summary><strong>Q:</strong> If I opt in to the New UI, will I lose access to the Classic UI?</summary>
+<summary><strong>Q:</strong> How do I access the Classic UI?</summary>
 
-No, opting for the **New UI** won't lock you out of the old interface. You'll have the flexibility to switch between the two experiences directly within the UI.
+The New UI is the future of Sumo Logic, offering better performance, easier navigation, and exclusive new features. While we understand that transitions take time, we strongly recommend using the New UI for the best experience.
 
-Once the feature flag is enabled, all organization users will see a **Switch to New UI** option in the left navigation menu. Clicking on this button allows users to opt into the **New UI**. Once opted in, the system will remember the preference, redirecting old URLs to their corresponding new ones. Consequently, subsequent logins will automatically direct users to the **New UI**.
-</details>
+If you switch back to the Classic UI, you will not have access to:
+* Faster load times and improved performance.
+* New UI enhancements and upcoming feature releases.
+* Stateful URLs that save your session and make sharing easier.
+* More intuitive navigation for faster workflows.
 
-<details>
-<summary><strong>Q:</strong> How do I opt out of the New UI?</summary>
-
-You have the flexibility to opt out whenever you choose. Just go to left navigation menu of the **New UI** and click the **Return to Classic UI** option. Once you've switched back to the **Classic UI**, all subsequent sessions will default to the **Classic UI** experience.
+The Classic UI will be retired in 2025 and will no longer receive updates. The exact date will be communicated closer to the transition. If you still need to access it temporarily, select **Return to classic UI** from the left navigation menu.
 
 <img src={useBaseUrl('img/get-started/return-to-classic.png')} alt="return-to-classic.png" width="200"/>
 
-We highly encourage you to begin transitioning to the New UI for the latest features and updates.
+We encourage you to stay in the New UI and take advantage of its benefits!
 
-</details>
-
-<details>
-<summary><strong>Q:</strong> When will Sumo Logic remove access to the Classic UI?</summary>
-
-Our goal is to turn off access to the Classic UI in the first half of 2025. However, this timeline is subject to change and will be determined by new UI adoption rates.
 </details>
 
 ## Get support
 
-Contact [Support](https://support.sumologic.com/) or head to our [Sumo Logic Slack](https://sumodojo.slack.com/) channel.
+For questions or issues, contact [Support](https://support.sumologic.com/) or join our [Sumo Logic Slack](https://sumodojo.slack.com/) channel.
 
 Have feedback? Send it to [our UX Team](mailto:sumologic-ux-research@sumologic.com).
-
-## Legacy UI
-
-If you're looking for information on our legacy UI, which will be deprecated in early 2025, see [Tour the Sumo Logic Classic UI](/docs/get-started/sumo-logic-ui-classic).

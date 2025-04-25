@@ -41,18 +41,18 @@ variable:
 
 ## Limitations
 
-* The [Alert List](#alert-list) page shows up to 1,000 alerts.
-* On the [Alert page](#alert-page), the Alert visualization, labeled M, is only shown for an alert that is less than 30 days old. 
-* On the [Alert page](#alert-page), Related Alerts and Monitor History show the top 250 alerts. 
+* The Alert List page shows up to 1,000 alerts.
+* On the Alert page, the Alert visualization, labeled M, is only shown for an alert that is less than 30 days old. 
+* On the Alert page, Related Alerts and Monitor History show the top 250 alerts. 
 
 ## Alert List
 
 Alert List shows all the Alerts from triggered Monitors within the past seven days. By default, the list is sorted by status (active on top), and then chronologically by creation time.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Alerts list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/> 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Alerts list, click the bell icon in the top menu.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Alerts list, in the main Sumo Logic menu select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**. 
- 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Alerts list, in the main Sumo Logic menu select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**.
+
 
 * Use the search bar to filter by name, severity, or status.
 
@@ -131,7 +131,7 @@ Depending on the type of data the alert was based on, metrics or logs, and the d
 
 ### Log Fluctuations
 
-This card detects different signatures in your log messages using [LogReduce](/docs/search/logreduce) such as errors, exceptions, timeouts, and successes. It compares log signatures trends with a normal baseline period and surfaces noteworthy changes in signatures.
+This card detects different signatures in your log messages using [LogReduce](/docs/search/behavior-insights/logreduce) such as errors, exceptions, timeouts, and successes. It compares log signatures trends with a normal baseline period and surfaces noteworthy changes in signatures.
 
 * **New**: Log signatures that were only seen after the Alert was triggered but not one hour prior to the Alert start time.
 * **Gone**: Log signatures that are not present after the Alert was created but were present one hour prior to the Alert start time, such as, Transaction Succeeded or Success.

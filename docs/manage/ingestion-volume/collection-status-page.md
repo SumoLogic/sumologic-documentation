@@ -15,7 +15,9 @@ When you first install a Collector it is common to configure Sources to collect 
 * **B.** Select how many columns of Collectors are displayed.  
 * **C.** Select the time range of data volume to view.
 
-To view the Status page, go to **Manage Data** > **Collection** > **Status**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view the status page, in the main Sumo Logic menu select **Manage Data > Collection > Status**. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui). To view the status page, in the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Status**. You can also click the **Go To...** menu at the top of the screen and select **Status**.
 
 ## Change the scale or timeframe for a Collector
 

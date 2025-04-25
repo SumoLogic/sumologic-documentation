@@ -2,7 +2,7 @@
 id: normalized-threat-rules
 title: Normalized Threat Rules
 sidebar_label: Normalized Threat Rules
-description: Cloud SIEM's built-in threat rules pass alerts from a security product to the Signal generation process, and are normalized work across multiple security products.
+description: Cloud SIEM's built-in threat rules pass alerts from a security product to the signal generation process, and are normalized work across multiple security products.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,7 +16,7 @@ To get a CSV of normalized threat rules, see [Rules - Useful CSVs](https://githu
 The first key fact about normalized threat rules is this: they exist to process messages that describe a security event that has already
 occurred. 
 
-Some messages logged by a security product are the result of that product’s own detection functionality, for example, by using rule sets or signatures. Typically, such messages contain a severity, risk, or impact in the message, and can be accepted as a clear indication of nefarious activity. Essentially, a normalized threat rule simply passes an alert from a security product to the Signal generation process.  
+Some messages logged by a security product are the result of that product’s own detection functionality, for example, by using rule sets or signatures. Typically, such messages contain a severity, risk, or impact in the message, and can be accepted as a clear indication of nefarious activity. Essentially, a normalized threat rule simply passes an alert from a security product to the signal generation process.  
 
 ## Normalized threat rules support multiple log sources
 
@@ -60,7 +60,7 @@ Cloud SIEM provides the following normalized intrusion rules:
 
 **Requirements for Intrusion Signature rules:**
 
-The rules that detect intrusion signatures from internal IP addresses rely upon the [normalizedSeverity](/docs/cse/schema/schema-attributes) attribute in Records being mapped as follows:
+The rules that detect intrusion signatures from internal IP addresses rely upon the [normalizedSeverity](/docs/cse/schema/schema-attributes) attribute in records being mapped as follows:
 
 * critical = 10
 * high = 9

@@ -25,6 +25,12 @@ Cisco Cyber Vision can delete, set and retrieve allowing ICS with dynamic monito
 * **Save Flow Details** (*Containment*) - Save component Details as attachment.
 * **Last Active Time** *(Enrichment*) - Returns the number of days of the last activity.
 
+## Configure Cisco Cyber Vision in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * December 23, 2020 - First upload
