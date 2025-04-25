@@ -4,7 +4,6 @@ title: Sumo Logic Copilot - Unstructured Logs Support (Beta)
 description: Streamline your log analysis with Sumo Logic Copilot, our AI-based assistant that simplifies log analysis by letting you ask questions in plain English, even for logs without a well-defined structure.
 ---
 
-import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
