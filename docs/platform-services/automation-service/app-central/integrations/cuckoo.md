@@ -29,6 +29,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Cuckoo, see [Cuckoo documentation](https://cuckoo.readthedocs.io/en/latest/usage/api/).
+
 ## Change Log
 
 * September 19, 2019 - First upload

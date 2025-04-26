@@ -7,7 +7,7 @@ description: Perform searches to find matches to data in threat intelligence ind
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Use a Sumo Logic source in a log search
+## Use the lookup search operator
 
 The [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) in the threat intelligence datastore contain threat indicators supplied by third party intel vendors and maintained by Sumo Logic: <br/><img src={useBaseUrl('img/security/global-feed-threat-intelligence-tab-example.png')} alt="Global feed in the Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
@@ -37,7 +37,7 @@ To find threats using IP addresses, use the `threatip` search operator. This ope
 
 For more information, see [threatip Search Operator](/docs/search/search-query-language/search-operators/threatip/).
 
-<!--
+<!-- Add per DOCS-815:
 ## threatlookup operator
 
 You can use the `threatlookup` search operator to find matches to indicators in any source in the Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) datastore. 
