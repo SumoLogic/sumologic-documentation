@@ -8,17 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Use the Sumo Logic Application Programming Interfaces (APIs) to interact with our platform and access resources and data programmatically from third-party scripts and apps.
 
-:::sumo Get Help
-To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](http://slack.sumologic.com/).
-:::
-
-
-<div className="box boxwidebottom card">
+<div className="box-wrapper" markdown="1">
+<div className="box boxwidetop card">
   <div className="container">
   <a href="/docs/api/getting-started"><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="50"/><h4>Authentication and Endpoints</h4></a>
   <p>Get your API credentials and endpoint URL to start using the Sumo Logic APIs.</p>
   </div>
-</div>
+</div></div>
 
 <br/>
 
@@ -259,3 +255,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
   </div>
 </div>
 </div>
+
+:::sumo Get Help
+To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](http://slack.sumologic.com/).
+:::
