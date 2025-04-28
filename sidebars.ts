@@ -3095,6 +3095,7 @@ integrations: [
         'api/scan-budget',
         'api/scheduled-views',
         'api/search-job',
+        'api/service-accounts',
         'api/service-allowlist',
         'api/service-map',
         'api/slo-management',
