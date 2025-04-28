@@ -4,7 +4,7 @@ on: delete
 
 jobs:
   delete-branch-environment:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     environment:
       name: review/${{ github.ref_name }}
     env:
