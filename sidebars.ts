@@ -3031,9 +3031,9 @@ integrations: [
       link: {type: 'doc', id: 'security/threat-intelligence/index'},
       items: [
         'security/threat-intelligence/about-threat-intelligence',
-        'security/threat-intelligence/threat-intelligence-indicators',
-        'security/threat-intelligence/find-threats',
         'security/threat-intelligence/threat-indicators-in-cloud-siem',
+        'security/threat-intelligence/find-threats',
+        'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
       ],
     },  
