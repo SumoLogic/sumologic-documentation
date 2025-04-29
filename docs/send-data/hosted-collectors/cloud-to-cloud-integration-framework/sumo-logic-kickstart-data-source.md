@@ -44,9 +44,7 @@ note... In some cases, the Kickstart collector may remain active beyond the 7-da
 
 You can wait for Kickstart Data to expire automatically at the end of your trial, or remove it manually at any time by following the steps below:
 
-#### Step 1: Delete the Kickstart Collector (recommended)
-
-[Edit the Retention Period](/docs/manage/partitions/manage-indexes-variable-retention/#edit-the-retention-period)
+#### Step 1: Delete the Kickstart Collector (recommended/≥≤)
 
 1. In Sumo Logic, go to **Manage Data > Collection**.
 2. Locate the collector named `sample_otel_astronomy_shop`.
@@ -57,7 +55,7 @@ You can wait for Kickstart Data to expire automatically at the end of your trial
 1. Go to the **Partitions** page (see [Edit the Retention Period](/docs/manage/partitions/manage-indexes-variable-retention/#edit-the-retention-period) for guidance).
 2. Locate the partition named `sample_otel_astronomy_shop`.
 3. Set the retention period to **1 day**.
-4. When prompted, click **Apply change now**.<br/><img src={useBaseUrl('img/send-data/kickstart-data-retention-partion-confirmation.png')} alt="kickstart-data-retention-partion-confirmation.png" width="350"/>
+4. When prompted, click **Apply change now**.<br/><img src={useBaseUrl('img/send-data/kickstart-data-retention-partion-confirmation.png')} alt="kickstart-data-retention-partion-confirmation.png" style={{border: '1px solid gray'}} width="350"/>
 5. Wait at least 24 hours for the data to be aged out.
 
 #### Step 3 (Optional) Adjust the default partition
