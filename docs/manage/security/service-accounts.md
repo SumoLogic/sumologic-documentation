@@ -18,6 +18,10 @@ Benefits of using service accounts include:
 * Access keys on service accounts can be [scoped](#add-an-access-key-to-a-service-account) with reduced capabilities to reduce impact.
 * There is [audit trail](#audit-logging-for-service-account-activity) for changes to service keys.
 
+:::tip
+You can use the API to create and manage service accounts. See [Service Accounts API](/docs/api/service-accounts/).
+:::
+
 ## Prerequisites
 
 Only administrators can create service accounts. If you are unsure whether you are an administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)).
