@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-load-balancer.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Load Balancer](https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview) is an Azure service that allows you to evenly distribute incoming network traffic across a group of Azure VMs or instances in a Virtual Machine Scale Set. This integration helps in monitoring inbound and outbound data throughput, outbound flows, and application endpoint's health  of your Load Balancers.
+[Azure Load Balancer](https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview) is an Azure service that allows you to evenly distribute incoming network traffic across a group of Azure VMs or instances in a Virtual Machine Scale Set. This integration helps in monitoring inbound and outbound data throughput, outbound flows, and the application endpoint health  of your Load Balancers.
 
 ## Log and metric types
 
@@ -22,7 +22,7 @@ For more information on supported metrics, refer to [Azure documentation](https:
 ## Setup
 
 :::note
-This app only supports load balancers of **Standard** and **Gateway** SKU.
+This app only supports load balancers of **Standard** and **Gateway** SKUs.
 :::
 
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
@@ -38,13 +38,13 @@ When you configure the event hubs source or HTTP source, plan your source catego
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 1. Search for the following fields:
    - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions in the [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs to.
+   - `location`. The region to which the resource name belongs.
    - `subscription_id`. ID associated with a subscription where the resource is present.
    - `resource_group`. The resource group name where the Azure resource is present.
    - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
    - `resource_type`. Azure resource type (for example, storage accounts).
    - `resource_name`. The name of the resource (for example, storage account name).
-   - `service_type`. Type of the service that can be accessed with a Azure resource.
+   - `service_type`. Type of the service that can be accessed with an Azure resource.
    - `service_name`. Services that can be accessed with an Azure resource (for example, Azure SQL databases in Azure SQL Server).
 1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
 
@@ -78,7 +78,8 @@ Create the following Field Extraction Rules (FER) for Azure Storage by following
    ```
 
    ```sql title="Parse Expression"
-   json "resourceId"
+   json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
+   | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
    | toUpperCase(resourceId) as resourceId
    | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
    | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
@@ -113,18 +114,19 @@ resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/LOADBALANCERS/* tenant_
 
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, onto an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
 
-1. Create hosted collector and tag tenant_name field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+1. Create a hosted collector and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Load Balancer that you want to monitor.
-   * Choose `Stream to an event hub` as destination.
+3. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
+4. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each Load Balancer that you want to monitor.
+   * Choose `Stream to an event hub` as the destination.
    * Select `AllMetrics`.
-   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureloadbalancer-metrics.png')} alt="Azure load balancer metrics" style={{border: '1px solid gray'}} width="800" />
+   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureloadbalancer-metrics.png')} alt="Azure load balancer metrics" style={{border: '1px solid gray'}} width="800" />
+5. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Load Balancer Tag Location" style={{border: '1px solid gray'}} width="500" />
 
 :::note
-SNAT related metrics will appear only when a outbound rule is configured.
+SNAT related metrics will appear only when an outbound rule is configured.
 :::
 
 ### Configure logs collection
@@ -134,11 +136,12 @@ SNAT related metrics will appear only when a outbound rule is configured.
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-1. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure load balancer account that you want to monitor.
+2. To create the diagnostic settings in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure load balancer account that you want to monitor.
    1. Choose **Stream to an event hub** as the destination.
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Load Balancer Tag Location" style={{border: '1px solid gray'}} width="400" /> <br/><img src={useBaseUrl('img/send-data/azureloadbalancer-logs.png')} alt="Azure Load Balancer logs" style={{border: '1px solid gray'}} width="800" /> 
+   <img src={useBaseUrl('img/send-data/azureloadbalancer-logs.png')} alt="Azure Load Balancer logs" style={{border: '1px solid gray'}} width="800" />
+3. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Load Balancer Tag Location" style={{border: '1px solid gray'}} width="500" /> 
 
 #### Activity Logs
 
@@ -164,9 +167,9 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Azure Load Balancer - Overview** dashboard provides a collective information on Health Probe Status, Average Data Path Availability, Transmission Details, Connection Details, and SNAT Ports Utilization(%).
+The **Azure Load Balancer - Overview** dashboard provides collective information on Health Probe Status, Average Data Path Availability, Transmission Details, Connection Details, and SNAT Ports Utilization(%).
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Overview.png')} alt="Azure Load Balancer Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Overview.png')} alt="Azure Load Balancer Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
@@ -175,32 +178,32 @@ The **Azure Load Balancer - Administrative Operations** dashboard provides detai
 Use this dashboard to:
 
 - Identify top users performing administrative operations.
-- View top 10 operations that caused the most errors.
+- View the top 10 operations that caused the most errors.
 - View recent read, write, and delete operations.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Administrative-Operations.png')} alt="Azure Load Balancer Administrative Operations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Administrative-Operations.png')} alt="Azure Load Balancer Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Health
 
-The **Azure Load Balancer - Health** dashboard provides details like total failed requests, failures by operation, health probe status trend, and unhealthy backends.
+The **Azure Load Balancer - Health** dashboard provides details like total failed requests, failures by operation, health probe status trends, and unhealthy backends.
 
 Use this dashboard to:
 
 - Identify failed requests and operations.
 - Detect when all backend instances in a pool are not responding to the configured health probes.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Health.png')} alt="Azure Load Balancer Health" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Health.png')} alt="Azure Load Balancer Health" style={{border: '1px solid gray'}} width="800" />
 
 ### Network
 
-The **Azure Load Balancer - Network** dashboard provides details like Packets Transmitted by Load Balancer, TCP SYN packets by Load Balancer, Bytes Transmitted by Load Balancer, Average Data Path Availability Trend, SNAT Connection Count, SNAT Ports Utilizatio, Allocated SnatPorts, and Used SnatPorts.
+The **Azure Load Balancer - Network** dashboard provides details like Packets Transmitted by the Load Balancer, TCP SYN packets by the Load Balancer, Bytes Transmitted by the Load Balancer, Average Data Path Availability Trend, SNAT Connection Count, SNAT Ports Utilization, Allocated SnatPorts, and Used SnatPorts.
 
 Use this dashboard to:
 - Detect high utilization of allocated ports.
 - Detect when there is less data path availability than expected due to platform issues.
 - Monitor data transmission (packets and bytes) through your load balancers.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Network.png')} alt="Azure Load Balancer Network" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Network.png')} alt="Azure Load Balancer Network" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy
 
@@ -210,7 +213,7 @@ Use this dashboard to:
 - Monitor policy events with warnings and errors.
 - View recent failed policy events.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Policy.png')} alt="Azure Load Balancer Policy" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Policy.png')} alt="Azure Load Balancer Policy" style={{border: '1px solid gray'}} width="800" />
 
 ## Troubleshooting
 

@@ -163,7 +163,7 @@ See the details of BOT access control in your WAF service including the city, co
 
 **Source IP Top Values**. See the top 10 source IP addresses by count in the last 14 days on a bar chart.
 
-## Upgrading the Imperva-Incapsula WAF app (Optional)
+## Upgrade/Downgrade the Imperva-Incapsula WAF app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

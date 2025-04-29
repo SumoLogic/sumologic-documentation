@@ -190,7 +190,7 @@ The **Google Cloud SQL - Performance Overview** dashboard works with Google Clou
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-Performance-Overview.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - Performance Overview" width="800"/>
 
-## Upgrading the Google Cloud SQL app (Optional)
+## Upgrade/Downgrade the Google Cloud SQL app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -41,6 +41,14 @@ Updated: Jun 26, 2023***
 * **Update VPN Settings** (*Containment*) - Update the VPN settings.
 * **Wipe Devices** (*Containment*) - Wipe a device/devices.
 
+## Configure Cisco Meraki in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Cisco Meraki, see [Cisco Meraki documentation](https://developer.cisco.com/meraki/api-v1/authorization/#authorization).
+
 ## Change Log
 
 * February 28, 2019 - First upload

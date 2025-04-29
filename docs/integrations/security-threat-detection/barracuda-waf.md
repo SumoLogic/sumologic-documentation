@@ -265,7 +265,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_Client_Traffic.png')} alt="Barracuda WAF dashboards" />
 
-## Upgrading the Barracuda WAF app (Optional)
+## Upgrade/Downgrade the Barracuda WAF app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

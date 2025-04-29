@@ -5,16 +5,29 @@ description: Learn how to save a custom dashboard and then share it with others.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-After you have created a custom Dashboard you may also want to share it with coworkers within your organization. This page walks you through these tasks.
+After you have created a custom dashboard you may also want to share it with coworkers within your organization. This page walks you through these tasks.
 
-Currently, you can only share a Dashboard within your organization.
+Currently, you can only share a dashboard within your organization.
 
 import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
 
-Share a Dashboard Inside Your Organization.
+Share a dashboard inside your organization.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/n2s8bxaq6m?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Share a Dashboard (New) Inside Your Organization Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/nQOAYaMad4Q"
         width="854px"
         height="480px"
@@ -25,6 +38,8 @@ Share a Dashboard Inside Your Organization.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
+
 :::
 
 ## Sharing a dashboard within your organization
@@ -44,7 +59,7 @@ permissions:
 * **See who has access**. Lists the users and roles with whom the dashboard is already shared.
 * **Shareable URL**. Shows the URL for the shared dashboard, with options for sharing the dashboard with filters and time range and filter settings. 
 
-<br/><img src={useBaseUrl('/img/dashboards-new/share-dashboard-new/Share-Dashboard-New.png')} alt="Share Dashboard New" />
+<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/Share-Dashboard-New.png')} alt="Share Dashboard New" />
 
 ## How to share a dashboard
 
@@ -52,14 +67,14 @@ This section walks you through the process of sharing a dashboard with other peo
 
 To share a dashboard within your organization, do the following:
 
-1. Click the share icon on the dashboard or share it from the [Library](/docs/get-started/library).<br/><img src={useBaseUrl('/img/dashboards-new/share-dashboard-new/share-icon.png')} alt="share icon" />
+1. Click the share icon on the dashboard or share it from the [Library](/docs/get-started/library).<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/share-icon.png')} alt="share icon" />
 1. Click in the **Share with specific users and roles** field and select with whom to share the dashboard from the dropdown list. If you choose **Your Entire Organization**, all users in your organization will be granted the access permissions you specify in the next step. 
 1. In the **Access** area, select the user permissions you want to grant from the dropdown list: **Edit**, **View**, or **Manage.** 
-1. Optionally, select **Advanced Access** option to allow users to grant view access to others. For more information, see the [Available Permission Levels](/docs/manage/content-sharing#available-permission-levels) section of the [Share Content](/docs/manage/content-sharing) page.<br/><img src={useBaseUrl('/img/dashboards-new/share-dashboard-new/ShareDashboard_Advanced_Access.png')} alt="ShareDashboard_Advanced_Access" />
-1. To share the dashboard with another set of users, but with different access permissions, click **Add users with another access level** and repeat steps 2 and 3.<br/><img src={useBaseUrl('/img/dashboards-new/share-dashboard-new/ShareDashboard_User_Roles.png')} alt="ShareDashboard_User_Roles" />
-1. To send an email to the recipients of the shared dashboard, toggle **Notify recipients by email** to ON, and enter a note in the text field.<br/><img src={useBaseUrl('/img/dashboards-new/share-dashboard-new/ShareDashboard_Email_notification.png')} alt="ShareDashboard_Email_notification.png" />
+1. Optionally, select **Advanced Access** option to allow users to grant view access to others. For more information, see the [Available Permission Levels](/docs/manage/content-sharing#available-permission-levels) section of the [Share Content](/docs/manage/content-sharing) page.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/ShareDashboard_Advanced_Access.png')} alt="ShareDashboard_Advanced_Access" />
+1. To share the dashboard with another set of users, but with different access permissions, click **Add users with another access level** and repeat steps 2 and 3.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/ShareDashboard_User_Roles.png')} alt="ShareDashboard_User_Roles" />
+1. To send an email to the recipients of the shared dashboard, toggle **Notify recipients by email** to ON, and enter a note in the text field.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/ShareDashboard_Email_notification.png')} alt="ShareDashboard_Email_notification.png" />
 1. Click **Share**.
 
 ## Shareable URL
 
-A URL to your Dashboard is available from the **Shareable URL** section. You have the option to include the current time range or variable values in the URL.<br/><img src={useBaseUrl('/img/dashboards-new/share-dashboard-new/dashboard-new-shareable-url.png')} alt="dashboard new shareable url" />
+A URL to your Dashboard is available from the **Shareable URL** section. You have the option to include the current time range or variable values in the URL.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/dashboard-new-shareable-url.png')} alt="dashboard new shareable url" />

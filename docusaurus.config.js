@@ -248,7 +248,14 @@ module.exports = {
         },
       },
     // SEO Global Metadata
-    metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
+    metadata: [
+      {
+        name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts',
+      },
+      {
+        name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
+      },
+    ],
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -272,15 +279,15 @@ module.exports = {
       },
     },
     announcementBar: {
-      id: 'opt-in-ga',
-      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the Sumo Logic New UI!</a>',
-      backgroundColor: '#f2ecc9',
-      textColor: '#091E42',
+      id: 'rsa',
+      content: '📣 Meet us at <b><a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/rsa-conference">RSA Conference 2025 | Booth 6261 - North Hall</a></b> for live demos, expert insights, and AI-driven security solutions. Plus swag!',
+      backgroundColor: '#08046c',
+      textColor: '#FFF',
     },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json'],
     },
       navbar: {
         logo: {
@@ -317,6 +324,12 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
+                sidebarId: 'integrations',
+                label: 'Apps and Integrations',
+                icon: 'grid_view',
+              },
+              {
+                type: 'docSidebar',
                 sidebarId: 'security',
                 label: 'Security',
                 icon: 'security',
@@ -329,9 +342,9 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'integrations',
-                label: 'Apps and Integrations',
-                icon: 'grid_view',
+                sidebarId: 'dashboards',
+                label: 'Dashboards',
+                icon: 'dashboard',
               },
               {
                 type: 'docSidebar',
@@ -350,12 +363,6 @@ module.exports = {
                 sidebarId: 'observability',
                 label: 'Observability',
                 icon: 'speed',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'dashboards',
-                label: 'Dashboards',
-                icon: 'dashboard',
               },
               {
                 type: 'docSidebar',
@@ -394,34 +401,6 @@ module.exports = {
             label: 'Release Notes',
             position: 'left',
             to: '/docs/release-notes',
-            type: 'dropdown',
-            items:[
-              {
-                label: 'Service',
-                to: 'release-notes-service',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Cloud SIEM',
-                to: 'release-notes-cse',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Cloud SOAR',
-                to: 'release-notes-csoar',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Collector',
-                to: 'release-notes-collector',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Developer',
-                to: 'release-notes-developer',
-                icon: 'rss_feed',
-              },
-            ]
           },
           {
             type: 'search',
@@ -439,29 +418,38 @@ module.exports = {
             alt: 'Sign up for a Sumo Logic free trial',
           },
           {
-            to: 'https://support.sumologic.com/support/s',
             position: 'right',
-            className: 'header-support',
-            alt: 'Contact Sumo Logic support',
-          },
-          {
-            position: 'right',
-            className: 'header-github-link',
+            className: 'support-menu-trigger',
+            to: '#',
             type: 'dropdown',
-            'aria-label': 'GitHub repository',
-            to: 'https://github.com/SumoLogic/sumologic-documentation',
-            items:[
+            items: [
               {
-                label: 'Send Feedback',
+                label: 'Contact Support',
+                to: 'https://support.sumologic.com/support/s',
+                icon: 'support',
+              },
+              {
+                label: 'Request a Demo',
+                to: 'https://www.sumologic.com/demos',
+                icon: 'co_present',
+              },
+              {
+                label: 'Submit Feedback',
                 to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
-                icon: 'rate_review',
+                icon: 'thumbs_up_down',
               },
               {
                 label: 'Contribute to Docs',
-                href: '/docs/contributing',
+                to: 'docs/contributing',
                 icon: 'edit_note',
               },
-            ]
+            ],
+          },
+          {
+            className: 'header-github-link',
+            to: 'https://github.com/SumoLogic/sumologic-documentation',
+            position: 'right',
+            alt: 'Link to Sumo Logic Docs GitHub repository',
           },
         ],
       },

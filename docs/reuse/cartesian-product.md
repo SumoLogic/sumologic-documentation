@@ -1,0 +1,1 @@
+Use the **Cartesian product** checkbox with caution. In most cases, you should deselect this checkbox. For more information, see [Cartesian product](/docs/platform-services/automation-service/automation-service-playbooks/#cartesian-product).

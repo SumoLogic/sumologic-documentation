@@ -1,15 +1,13 @@
 ---
 id: kubernetes
-title: Azure Kubernetes Service Control Plane
-sidebar_label: Azure Kubernetes Service Control Plane
-description: The Sumo Logic app for Azure Kubernetes Service (AKS) - Control Plane provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes.
+title: Azure Kubernetes Service
+sidebar_label: Azure Kubernetes Service
+description: The Sumo Logic app for Azure Kubernetes Service (AKS) provides visibility into the AKS with operational insights into the Audit, API server, Scheduler, Cloud Control Manager, Kube Control Manager, Cluster Autoscalar, and worker nodes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/k8s.png')} alt="k8s logo" width="75"/>
-
-The Sumo Logic app for Azure Kubernetes Service (AKS) - Control Plane provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The app's preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 
 [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/en-us/azure/aks/) is a Kubernetes environment with clusters managed by Azure. AKS simplifies deploying and managing container-based applications, while automatically provisioning, upgrading, and scaling resources as needed.
 
@@ -24,11 +22,7 @@ The following are the minimum supported requirements for this application:
   </tr>
   <tr>
    <td>Kubernetes </td>
-   <td>1.10 and later </td>
-  </tr>
-  <tr>
-   <td>AKS   </td>
-   <td>1.12.8   </td>
+   <td>1.30.10 and later </td>
   </tr>
 </table>
 
@@ -36,11 +30,103 @@ The following are the minimum supported requirements for this application:
 
 The AKS - Control Plane app collects logs for the following [Azure Kubernetes Services](https://azure.microsoft.com/en-us/services/kubernetes-service/):
 
-* **kube-apiserver** - The API server exposes the underlying Kubernetes APIs. This component provides the interaction for management tools, such as kubectl or the Kubernetes dashboard.
-* **kube-scheduler** - The Scheduler determines what nodes can run the workload when you create or scale applications and then starts them.
-* **kube-controller-manager** - The Controller Manager oversees a number of smaller controllers that perform actions, such as replicating pods and handling node operations.
+* **kube-audit**. Contains all Kubernetes API Server audit logs including the events with get and list verbs. These events are useful for monitoring all of the interactions with the Kubernetes API.
+* **kube-audit-admin**. Contains Kubernetes API Server audit logs excluding events with the get and list verbs. These events are useful for monitoring the resource modification requests made to the Kubernetes API.
+* **kube-apiserver**. The API server exposes the underlying Kubernetes APIs. This component provides the interaction for management tools, such as kubectl or the Kubernetes dashboard.
+* **kube-scheduler**. The Scheduler determines what nodes can run the workload when you create or scale applications and then starts them.
+* **kube-controller-manager**. The Controller Manager oversees a number of smaller controllers that perform actions, such as replicating pods and handling node operations.
+* **cluster-autoscaler**. The cluster autoscaler component watches for pods in your cluster that can't be scheduled because of resource constraints. When the cluster autoscaler detects issues, it scales up the number of nodes in the node pool to meet the application demands. It also regularly checks nodes for a lack of running pods and scales down the number of nodes as needed.
+
+### Configure field in field schema
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. Search for the following fields:
+   - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+   - `location`. The region to which the resource name belongs to.
+   - `subscription_id`. ID associated with a subscription where the resource is present.
+   - `resource_group`. The resource group name where the Azure resource is present.
+   - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+   - `resource_type`. Azure resource type (for example, storage accounts).
+   - `resource_name`. The name of the resource (for example, storage account name).
+   - `service_type`. Type of the service that can be accessed with a Azure resource.
+   - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Kubernetes service is Subscriptions).
+1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
+
+### Configure field extraction rules
+
+Create the following Field Extraction Rule(s) (FER) for Azure Kubernetes Service by following the instructions in [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
+
+#### Azure location extraction FER
+
+   ```sql
+   Rule Name: AzureLocationExtractionFER
+   Applied at: Ingest Time
+   Scope (Specific Data): tenant_name=*
+   ```
+
+   ```sql title="Parse Expression"
+   json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
+   | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
+   | if (!isBlank(resourceLocation), resourceLocation, location) as location
+   | if (!isBlank(service_region), service_region, location) as location 
+   | if (isBlank(location), "global", location) as location
+   | fields location
+   ```
+
+#### Resource ID extraction FER
+
+   ```sql
+   Rule Name: AzureResourceIdExtractionFER
+   Applied at: Ingest Time
+   Scope (Specific Data): tenant_name=*
+   ```
+
+   ```sql title="Parse Expression"
+   json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
+   | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
+   | toUpperCase(resourceId) as resourceId
+   | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
+   | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
+   | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
+   | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
+   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
+   | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
+   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
+   ```
 
 ### Sample log messages
+
+```json title="kube-audit"
+{
+  "category": "kube-audit",
+  "operationName": "Microsoft.ContainerService/managedClusters/diagnosticLogs/Read",
+  "properties": {
+    "pod": "kube-apiserver-57b5944b45-94w49",
+    "log": "{\"kind\":\"Event\",\"apiVersion\":\"audit.k8s.io/v1\",\"level\":\"Metadata\",\"auditID\":\"10e60f03-0635-429b-b324-315166f249cc\",\"stage\":\"ResponseComplete\",\"requestURI\":\"/apis/coordination.k8s.io/v1/namespaces/kube-system/leases/external-resizer-file-csi-azure-com\",\"verb\":\"update\",\"user\":{\"username\":\"aksService\",\"groups\":[\"system:masters\",\"system:authenticated\"]},\"sourceIPs\":[\"172.31.35.83\"],\"userAgent\":\"csi-resizer/v0.0.0 (linux/amd64) kubernetes/$Format\",\"objectRef\":{\"resource\":\"leases\",\"namespace\":\"kube-system\",\"name\":\"external-resizer-file-csi-azure-com\",\"uid\":\"b382c78f-c5fa-462b-8f20-ab65ad94c153\",\"apiGroup\":\"coordination.k8s.io\",\"apiVersion\":\"v1\",\"resourceVersion\":\"6910081\"},\"responseStatus\":{\"metadata\":{},\"code\":200},\"requestReceivedTimestamp\":\"2025-04-20T16:29:59.988453Z\",\"stageTimestamp\":\"2025-04-20T16:29:59.994988Z\",\"annotations\":{\"authorization.k8s.io/decision\":\"allow\",\"authorization.k8s.io/reason\":\"\"}}\n",
+    "stream": "stdout",
+    "containerID": "5aeef33b3cfdafa517d8e1d8c4fe4e08901d99958bc6ad3ca5c74891120a0c44"
+  },
+  "resourceId": "/SUBSCRIPTIONS/C088DC46-D692-42AD-A4B6-9A542D28AD2A/RESOURCEGROUPS/HPALAKSCLUSTER/PROVIDERS/MICROSOFT.CONTAINERSERVICE/MANAGEDCLUSTERS/ARC-CLUSTER02",
+  "serviceBuild": "na",
+  "time": "2025-04-20T16:29:59.995191417Z"
+}
+```
+
+```json title="kube-audit-admin"
+{
+  "category": "kube-audit-admin",
+  "operationName": "Microsoft.ContainerService/managedClusters/diagnosticLogs/Read",
+  "properties": {
+    "pod": "kube-apiserver-6785696748-ck9d8",
+    "log": "{\"kind\":\"Event\",\"apiVersion\":\"audit.k8s.io/v1\",\"level\":\"RequestResponse\",\"auditID\":\"2fe81725-6f88-417a-ae6f-ddb634e3c0ee\",\"stage\":\"ResponseComplete\",\"requestURI\":\"/apis/authorization.k8s.io/v1/subjectaccessreviews\",\"verb\":\"create\",\"user\":{\"username\":\"system:node:aks-hpalakspool-35907486-vmss000006\",\"groups\":[\"system:nodes\",\"system:authenticated\"]},\"sourceIPs\":[\"135.237.48.19\"],\"userAgent\":\"kubelet/v1.30.10 (linux/amd64) kubernetes/ccc6907\",\"objectRef\":{\"resource\":\"subjectaccessreviews\",\"apiGroup\":\"authorization.k8s.io\",\"apiVersion\":\"v1\"},\"responseStatus\":{\"metadata\":{},\"code\":201},\"requestObject\":{\"kind\":\"SubjectAccessReview\",\"apiVersion\":\"authorization.k8s.io/v1\",\"metadata\":{\"creationTimestamp\":null},\"spec\":{\"resourceAttributes\":{\"verb\":\"get\",\"version\":\"v1\",\"resource\":\"nodes\",\"subresource\":\"proxy\",\"name\":\"aks-hpalakspool-35907486-vmss000006\"},\"user\":\"system:serviceaccount:kube-system:ama-logs\",\"groups\":[\"system:serviceaccounts\",\"system:serviceaccounts:kube-system\",\"system:authenticated\"],\"extra\":{\"authentication.kubernetes.io/credential-id\":[\"JTI=868e8737-7074-4e55-a0a1-f8b11c24737a\"],\"authentication.kubernetes.io/node-name\":[\"aks-hpalakspool-35907486-vmss000006\"],\"authentication.kubernetes.io/node-uid\":[\"50568ddf-904a-4aba-9d59-4289ebf66fb2\"],\"authentication.kubernetes.io/pod-name\":[\"ama-logs-xglbr\"],\"authentication.kubernetes.io/pod-uid\":[\"2d289f6f-3364-4e41-89b0-b1cef5484151\"]},\"uid\":\"c2f85d8b-5589-463d-9221-8396d3b3c8b3\"},\"status\":{\"allowed\":false}},\"responseObject\":{\"kind\":\"SubjectAccessReview\",\"apiVersion\":\"authorization.k8s.io/v1\",\"metadata\":{\"creationTimestamp\":null,\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"authorization.k8s.io/v1\",\"time\":\"2025-04-20T16:32:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:spec\":{\"f:extra\":{\".\":{},\"f:authentication.kubernetes.io/credential-id\":{},\"f:authentication.kubernetes.io/node-name\":{},\"f:authentication.kubernetes.io/node-uid\":{},\"f:authentication.kubernetes.io/pod-name\":{},\"f:authentication.kubernetes.io/pod-uid\":{}},\"f:groups\":{},\"f:resourceAttributes\":{\".\":{},\"f:name\":{},\"f:resource\":{},\"f:subresource\":{},\"f:verb\":{},\"f:version\":{}},\"f:uid\":{},\"f:user\":{}}}}]},\"spec\":{\"resourceAttributes\":{\"verb\":\"get\",\"version\":\"v1\",\"resource\":\"nodes\",\"subresource\":\"proxy\",\"name\":\"aks-hpalakspool-35907486-vmss000006\"},\"user\":\"system:serviceaccount:kube-system:ama-logs\",\"groups\":[\"system:serviceaccounts\",\"system:serviceaccounts:kube-system\",\"system:authenticated\"],\"extra\":{\"authentication.kubernetes.io/credential-id\":[\"JTI=868e8737-7074-4e55-a0a1-f8b11c24737a\"],\"authentication.kubernetes.io/node-name\":[\"aks-hpalakspool-35907486-vmss000006\"],\"authentication.kubernetes.io/node-uid\":[\"50568ddf-904a-4aba-9d59-4289ebf66fb2\"],\"authentication.kubernetes.io/pod-name\":[\"ama-logs-xglbr\"],\"authentication.kubernetes.io/pod-uid\":[\"2d289f6f-3364-4e41-89b0-b1cef5484151\"]},\"uid\":\"c2f85d8b-5589-463d-9221-8396d3b3c8b3\"},\"status\":{\"allowed\":true,\"reason\":\"RBAC: allowed by ClusterRoleBinding \\\"amalogsclusterrolebinding\\\" of ClusterRole \\\"ama-logs-reader\\\" to ServiceAccount \\\"ama-logs/kube-system\\\"\"}},\"requestReceivedTimestamp\":\"2025-04-20T16:32:59.930178Z\",\"stageTimestamp\":\"2025-04-20T16:32:59.965028Z\",\"annotations\":{\"authorization.k8s.io/decision\":\"allow\",\"authorization.k8s.io/reason\":\"\",\"mutation.webhook.admission.k8s.io/round_0_index_3\":\"{\\\"configuration\\\":\\\"gatekeeper-mutating-webhook-configuration\\\",\\\"webhook\\\":\\\"mutation.gatekeeper.sh\\\",\\\"mutated\\\":false}\"}}\n",
+    "containerID": "aade0efa67ae96e18ba9b9b1ccacb5a32a924713ac34947b2475fb8d494b14b7",
+    "stream": "stdout"
+  },
+  "resourceId": "/SUBSCRIPTIONS/C088DC46-D692-42AD-A4B6-9A542D28AD2A/RESOURCEGROUPS/HPALAKSCLUSTER/PROVIDERS/MICROSOFT.CONTAINERSERVICE/MANAGEDCLUSTERS/HPALDEVCLUSTER",
+  "serviceBuild": "na",
+  "time": "2025-04-20T16:32:59.965276841Z"
+}
+```
 
 ```json title="kube-apiserver"
 {
@@ -55,22 +141,6 @@ The AKS - Control Plane app collects logs for the following [Azure Kubernetes Se
     "containerID":"2d6cac1300da3226323fd1b936fe8278b87cba2b7a1bbd9c8401da6f8e786f5e"
   },
   "time":"2019-06-24T20:14:59.000Z"
-}
-```
-
-```json title="kube-controller-manager"
-{
-"operationName":"Microsoft.ContainerService/managedClusters/diagnosticLogs/Read",
-"category":"kube-controller-manager",
-"resourceId":"/SUBSCRIPTIONS/C111111-DXXX-4XXX-AXXX-900000000/RESOURCEGROUPS/AG-AKS-RG/PROVIDERS/MICROSOFT.CONTAINERSERVICE/MANAGEDCLUSTERS/AG-AKS-CLUSTER",
-"properties":
-{
-  "log":"I0624 07:27:25.9763861 event.go:221] Event(v1.ObjectReference{Kind:\"DaemonSet\",Namespace:\"kube-system\", Name:\"kube-proxy\", UID:\"2dfb3905-7dac-11e9-b60d-0a58ac1f01f6\",APIVersion:\"apps/v1\", ResourceVersion:\"4150266\", FieldPath:\"\"}): type: 'Normal'reason: 'SuccessfulCreate' Created pod: kube-proxy-xhmv7",
-  "stream":"stderr",
-  "pod":"kube-controller-manager-59fd65c5bd-694kh",
-  "containerID":"667b540db41b66e914ca2ed496e0bef6d4a0b73fc832f5d5eba958d8a56a5e93"
-},
-"time":"2019-06-24T07:27:25.000Z"
 }
 ```
 
@@ -90,55 +160,108 @@ The AKS - Control Plane app collects logs for the following [Azure Kubernetes Se
 }
 ```
 
+```json title="kube-controller-manager"
+{
+"operationName":"Microsoft.ContainerService/managedClusters/diagnosticLogs/Read",
+"category":"kube-controller-manager",
+"resourceId":"/SUBSCRIPTIONS/C111111-DXXX-4XXX-AXXX-900000000/RESOURCEGROUPS/AG-AKS-RG/PROVIDERS/MICROSOFT.CONTAINERSERVICE/MANAGEDCLUSTERS/AG-AKS-CLUSTER",
+"properties":
+{
+  "log":"I0624 07:27:25.9763861 event.go:221] Event(v1.ObjectReference{Kind:\"DaemonSet\",Namespace:\"kube-system\", Name:\"kube-proxy\", UID:\"2dfb3905-7dac-11e9-b60d-0a58ac1f01f6\",APIVersion:\"apps/v1\", ResourceVersion:\"4150266\", FieldPath:\"\"}): type: 'Normal'reason: 'SuccessfulCreate' Created pod: kube-proxy-xhmv7",
+  "stream":"stderr",
+  "pod":"kube-controller-manager-59fd65c5bd-694kh",
+  "containerID":"667b540db41b66e914ca2ed496e0bef6d4a0b73fc832f5d5eba958d8a56a5e93"
+},
+"time":"2019-06-24T07:27:25.000Z"
+}
+```
+
+```json title="cluster-autoscaler"
+{
+  "category": "cluster-autoscaler",
+  "operationName": "Microsoft.ContainerService/managedClusters/diagnosticLogs/Read",
+  "properties": {
+    "pod": "cluster-autoscaler-d8b5f9b95-cp67l",
+    "stream": "stderr",
+    "log": "I0420 16:36:52.392437       1 orchestrator.go:397] ScaleUpToNodeGroupMinSize: scale up not needed\n",
+    "containerID": "643aa914e880db7c1c12d3454f375c850ec0af8e9717414b01cbf5d165017672"
+  },
+  "resourceId": "/SUBSCRIPTIONS/C088DC46-D692-42AD-A4B6-9A542D28AD2A/RESOURCEGROUPS/HPALAKSCLUSTER/PROVIDERS/MICROSOFT.CONTAINERSERVICE/MANAGEDCLUSTERS/HPALDEVCLUSTER",
+  "serviceBuild": "na",
+  "time": "2025-04-20T16:36:52.392502188Z"
+}
+```
+
 ### Sample queries
 
+```sql title="kube-audit"
+tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("kube-audit")
+| json "category", "properties.log", "properties.pod" as category, log, pod
+| where category="kube-audit" and pod matches "{{pod}}"
+| json field=log "kind","stage", "verb","userAgent","responseStatus.code", "objectRef.resource", "objectRef.namespace", "user.username" as kind, stage, verb, userAgent, status_code, resource, namespace, username
+| where (status_code<200 or status_code>=300) and namespace matches "{{namespace}}" and resource matches "{{resource}}" and username matches "{{username}}"
+| count by verb 
+| order by _count, verb
+```
+
+```sql title="kube-audit-admin"
+tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("kube-audit-admin")
+| json "category", "properties.log", "properties.pod" as category, log, pod
+| where category="kube-audit-admin" and pod matches "{{pod}}"
+| json field=log "kind","stage", "verb","userAgent","responseStatus.code", "objectRef.resource", "objectRef.namespace" as kind, stage, verb, userAgent, status_code, resource, namespace
+| where (status_code<200 or status_code>=300) and namespace matches "{{namespace}}" and resource matches "{{resource}}"
+| count by verb 
+| order by _count, verb
+```
+
 ```sql title="kube-apiserver"
-_sourceCategory="azure/aks" "kube-apiserver"
-| json "properties.log", "category", "time", "properties.pod", "resourceId" as log, category, time, pod, resourceId
-| where category ="kube-apiserver"
-| parse regex field=log "(?<severity>W|I|F|E)(?<tt>[\S]+) (?<times>[\d:.]+)[\s]+(?<log_msg>.*)"
-| parse regex field=resourceId "RESOURCEGROUPS\/(?<resource_grp>[\S]+)\/PROVIDERS\/MICROSOFT\.CONTAINERSERVICE\/MANAGEDCLUSTERS\/(?<cluster>[\S]+)"
-| timeslice 1h
-| count by _timeslice, severity
-| transpose row _timeslice column severity
-| fillmissing timeslice(1h)
+tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} location={{location}} method (timeout or abort) ("kube-apiserver")
+| json "properties.log", "category", "time", "properties.pod" as log, category, time, pod
+| where category ="kube-apiserver" and pod matches "{{pod}}"
+| parse regex field=log ".*method=(?<method>\S+)\sURI=\"(?<uri>\S+)\".*"
+| count by uri
+| sort by uri desc
 ```
 
 ```sql title="kube-controller-manager"
-_sourceCategory="azure/aks" ("kube-controller-manager")
+tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("kube-controller-manager")
 | json "properties.log", "category", "time", "properties.pod", "resourceId" as log, category, time, pod, resourceId
-| where category ="kube-controller-manager"
+| where category ="kube-controller-manager" and pod matches "{{pod}}"
 | parse regex field=log "(?<severity>W|I|F|E)(?<tt>[\S]+) (?<times>[\d:.]+)[\s]+(?<log_msg>.*)"
-| parse regex field=resourceId "RESOURCEGROUPS\/(?<resource_grp>[\S]+)\/PROVIDERS\/MICROSOFT\.CONTAINERSERVICE\/MANAGEDCLUSTERS\/(?<cluster>[\S]+)"
-| timeslice 1h
-| count by _timeslice, severity
-| transpose row _timeslice column severity
-| fillmissing timeslice(1h)
+| count by severity
+| sort by _count
 ```
 
 ```sql title="kube-scheduler"
-_sourceCategory="azure/aks" "kube-scheduler"
-| json "properties.log", "category", "time", "properties.pod", "resourceId" as log, category, time, pod, resourceId
-| where category ="kube-scheduler"
+tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} "kube-scheduler"
+| json "properties.log", "category", "time", "properties.pod" as log, category, time, pod
+| where category ="kube-scheduler" and pod matches "{{pod}}"
 | parse regex field=log "(?<severity>W|I|F|E)(?<tt>[\S]+) (?<times>[\d:.]+)[\s]+(?<log_msg>.*)"
-| parse regex field=resourceId "RESOURCEGROUPS\/(?<resource_grp>[\S]+)\/PROVIDERS\/MICROSOFT\.CONTAINERSERVICE\/MANAGEDCLUSTERS\/(?<cluster>[\S]+)"
 | timeslice 1h
 | count by _timeslice, severity
 | transpose row _timeslice column severity
 | fillmissing timeslice(1h)
 ```
 
-## Collecting logs for the Kubernetes and AKS - Control Plane
+```sql title="cluster-autoscaler"
+tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("cluster-autoscaler")
+| json "properties.log", "category", "properties.pod", "resourceId" as log, category, pod, resourceId
+| where category ="cluster-autoscaler" and pod matches "{{pod}}"
+| parse regex field=log "(?<severity>W|I|F|E)(?<tt>[\S]+) (?<times>[\d:.]+)[\s]+(?<log_msg>.*)"
+| count by severity
+| sort by _count
+```
 
-The Sumo Logic [Kubernetes app](/docs/integrations/containers-orchestration/kubernetes) works in conjunction with the AKS - Control Plane app and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
+### Configure metrics collection
 
-### Collecting logs and installing the Kubernetes app  
+:::note
+Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
+:::
 
-The Sumo Logic Kubernetes app provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and install the Kubernetes app before configuring collection for the AKS - Control Plane app. You will configure log and metric collection during this process.
+- To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
+- Configure the namespaces as `Microsoft.ContainerService/managedClusters`, `microsoft.kubernetes/connectedClusters`, `microsoft.kubernetesconfiguration/extensions`, and `microsoft.hybridcontainerservice/provisionedClusters`. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-kubernetes-service-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
 
-To set up collection and install the Kubernetes app, follow the instructions in [this document](/docs/integrations/containers-orchestration/kubernetes).
-
-### Collecting logs for the AKS - Control Plane app  
+### Collecting logs for the Azure Kubernetes Cluster  
 
 This section walks you through the process of configuring a pipeline to send logs from Azure Monitor to Sumo Logic.
 
@@ -155,15 +278,15 @@ This section walks you through the process of configuring a pipeline to send log
 	4. Enter a name.
 	5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
 	6. Select an Azure subscription.
-	7. **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
+	7. **Event hub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
 	8. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
 	9. Select **RootManageSharedAccessKey** from **Select event hub policy name** dropdown.
-	10. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-kuberetes.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-kuberetes" width="800"/>
+	10. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-azure-kuberetes-service.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-kuberetes" width="800"/>
 	11. Click **Save**.
 
-## Installing the AKS Control Plane app
+## Installing the Azure Kubernetes Service app
 
-Now that you have set up collection for AKS, you can install the Sumo Logic app for AKS and access the pre-configured Kubernetes dashboards for visibility into your AKS environment from a single-pane-of-glass.
+Now that you have set up collection for Azure Kubernetes Cluster, you can install the Sumo Logic app for Azure Kubernetes Service and access the pre-configured Kubernetes dashboards for visibility into your Azure Kubernetes Service environment from a single-pane-of-glass.
 
 All the dashboards are linked to the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) so they can be easily accessed by clicking the Cluster in the navigation pane of the tab.
 
@@ -171,45 +294,104 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing the AKS Control Plane dashboards
+## Viewing the Azure Kubernetes Service dashboards
 
-### Filter with template variables    
+### Overview
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) page.
+The **Azure Kubernetes Service - Overview** dashboard provides insights like Audit Requests by Location, Active/Total Clusters, Clusters with API Server Errors, Clusters with Autoscaler Errors, Clusters with Kube Controller Manager Errors, Clusters with Scheduler Errors, Clusters with Cloud Control Manager Errors, Nodes Across Cluster, and Critical Nodes Across Cluster.
 
-You can use template variables to drill down and examine the data on a granular level.
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Overview.png')} alt="Azure Kubernetes Service - Overview" />
 
-### AKS Controller Manager
+### Administrative Operations
 
-The **AKS Controller Manager** dashboard provides a high-level view of severity types and trends, along with details on scale operations, pod creation and deletion, and recent error messages.
+The **Azure Kubernetes Service - Administrative Operations** dashboard provides details like Top 10 Operations That Caused The Most Errors, Distribution by Operation Type (Read, Write, and Delete), Distribution by Operations, Recent Write Operations, Recent Delete Operations, Users / Applications by Operation type, and Distribution by Status.
 
-Use this dashboard to:
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Administrative-Operations.png')} alt="Azure Kubernetes Service - Administrative Operations" />
 
-* Find pod and scale operations performed by controller manager.
-* Find the severity of various controller manager events and analyze fatal and erroneous controller manager operation events.
+### Audit
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure_Kubernetes_Service(AKS)/AKS_Controller_Manager.png')} alt="AKS Controller Manager Dashboard" />
+The **Azure Kubernetes Service - Audit** dashboard provides details about the Requests by Location, Failure by Operations, Failure by Stages, Failure by Reason, Distribution by Status Code, Top 10 Failed Resources, Successful Resource Details, Top 10 Users, Failure Trend by User, and Failure Details.
 
-### AKS API Server
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Audit.png')} alt="Azure Kubernetes Service - Audit" />
 
-The **AKS API Server** dashboard provides insights into API server severity events and trends, autoscaler and status code trends, top problem URLs, and a list of recent error messages.
+### Audit Admin
 
-Use this dashboard to:
+The **Azure Kubernetes Service - Audit Admin** dashboard details about the Requests by Location, Failure by Operations, Failure by Stages, Failure by Reason, Distribution by Status Code, Top 10 Failed Resources, Successful Resource Details, Top 10 Users, Failure Trend by User, and Failure Details.
 
-* Understand the status codes of requests made to Kube API Server.
-* Review the top 10 URLs with problem status codes.  
-* Review the severity of various Kube API Server events, and analyze any fatal or erroneous events of Kube API Server operations.
-* Find spikes or abnormal activity in the status codes of auto-scaler operations.
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Audit-Admin.png')} alt="Azure Kubernetes Service - Audit Admin" />
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure_Kubernetes_Service(AKS)/AKS_API_Server.png')} alt="AKS API Server Dashboard" />
+### API Server
 
-### AKS Scheduler
+The **Azure Kubernetes Service - API Server** dashboard provides insights about the Failed Urls, Total Requests by Url, Failed Methods, Total Requests by Method, Requests by Severity, Errors by Severity, and Error Log Events.
 
-The **AKS Scheduler** dashboard provides a high-level view of severity types and trends for the Kube scheduler, as well as a detailed list of error messages.
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-API-Server.png')} alt="Azure Kubernetes Service - API Server" />
 
-Use this dashboard to:
+### Cloud Control Manager
 
-* Find the severity of various Kube scheduler events.
-* Analyze fatal or erroneous events of Kube scheduler operations.
+The **Azure Kubernetes Service - Cloud Control Manager** dashboard provides insights about the Severity Breakdown, Severity Over Time, Error Message Count, and Error Log Stream.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure_Kubernetes_Service(AKS)/AKS_Scheduler.png')} alt="AKS Scheduler Dashboard" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Cloud-Control-Manager.png')} alt="Azure Kubernetes Service - Cloud Control Manager" />
+
+### Cluster Autoscaler
+
+The **Azure Kubernetes Service - Cluster Autoscaler** dashboard provides insights about the Severity Breakdown, Severity Over Time, Error Message Count, and Error Log Stream.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Cluster-Autoscaler.png')} alt="Azure Kubernetes Service - Cluster Autoscaler" />
+
+### Controller Manager
+
+The **Azure Kubernetes Service - Controller Manager** dashboard provides insights about the Severity Breakdown, Severity Over Time, Error Message Count, and Error Log Stream.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Controller-Manager.png')} alt="Azure Kubernetes Service - Controller Manager" />
+
+### Policy and Recommendations
+
+The **Azure Kubernetes Service - Policy and Recommendations** dashboard provides details like Total Recommendation Events, Total Success Policy Events, Total Failed Policy Events, Failed Policy Events, Recent Recommendation Events, Recommendation, and Policy.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Policy-and-Recommendations.png')} alt="Azure Kubernetes Service - Policy and Recommendations" />
+
+### Scheduler
+
+The **Azure Kubernetes Service - Scheduler** dashboard provides details about the Severity Over Time, Severity Breakdown, and Error Messages.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Scheduler.png')} alt="Azure Kubernetes Service - Scheduler" />
+
+### Apiserver
+
+The **Azure Kubernetes Service - Apiserver** dashboard provides insights about the Average API Server CPU Usage (%), Average API Server Memory Usage (%), Average Inflight Requests Count, API Server CPU Usage (%), API Server Memory Usage (%), and Average Inflight Requests.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Apiserver.png')} alt="Azure Kubernetes Service - Apiserver" />
+
+### Autocluster
+
+The **Azure Kubernetes Service - Autocluster** dashboard provides insights about Unschedulable Pods, Unneeded Nodes Count, Cluster Health Count, Scale Down Cooldown Count, Unschedulable Pods, Unneeded Nodes Count, Cluster Health Count and Scale Down Cooldown Count.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Autocluster.png')} alt="Azure Kubernetes Service - Autocluster" />
+
+### Etcd
+
+The **Azure Kubernetes Service - Etcd** dashboard provide insights Etcd Memory Usage(%), Etcd CPU Usage(%), Etcd Database Usage(%), Etcd Memory Usage(%), Etcd CPU Usage (%) and Etcd Database Usage (%).
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Etcd.png')} alt="Azure Kubernetes Service - Etcd" />
+
+### Node Overview
+
+The **Azure Kubernetes Service - Node Overview** dashboard provide insights about Disk Used (Bytes), CPU Usage (Millicores), CPU Usage (%), Disk Used (%), Nodes, Nodes Ready, Nodes Not Ready, Critical Nodes, Total Allocatable CPU Cores, Total Allocatable Memory Bytes, Total In Bytes, Total Out Bytes, Number of Pods by Phase, Number of Pods in Ready State, Disk Used (Bytes), Node Network In vs Out (Bytes), CPU Usage (Millicores), Disk Used (%) and CPU Usage (%).
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Node-Overview.png')} alt="Azure Kubernetes Service - Node Overview" />
+
+### Node Memory
+
+The **Azure Kubernetes Service - Node Memory** dashboard provides insights about Memory Working Set (Bytes), Memory RSS (Bytes), Memory RSS (%), Memory Working Set (%), Total Number of Available CPU Cores in a Managed Cluster, Total Amount of Available Memory in a Managed Aluster (Bytes), Memory RSS (Bytes), Memory RSS (%), Memory Working Set (Bytes), Memory Working Set (%), Total Amount of Available Memory in a Managed Aluster (Bytes) and Total Number of Available CPU Cores in a Managed Cluster.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Node-Memory.png')} alt="Azure Kubernetes Service - Node Memory" />
+
+### Azure Key Vaults alerts
+These alerts are metric based and will work for all Key Vaults.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Kubernetes Service - High CPU Usage`  | This alert is triggered  when CPU usage percentage is greater than 95%. Also, a warning type alert will be triggered when CPU usage percentage is greater than 85%. | percentage >= 95   | percentage < 95  |
+| `Azure Kubernetes Service - Unreachable Kube Node(s)` | This alert is triggered when kube node(s) unreachable count greater than 1. | Count >= 1 | Count < 1  |
+| `Azure Kubernetes Service - High Memory Working Set` | This alert is triggered when memory working set is greater than 100%. | percentage >= 100 | percentage < 100  |
+| `Azure Kubernetes Service - High Node Disk Usage` | This alert is triggered when node disk usage is greater than 80% . Also, a warning alert will be triggered when  node disk usage is greater than 70%. | percentage >= 80  | percentage < 80   |

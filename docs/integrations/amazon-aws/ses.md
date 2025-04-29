@@ -391,7 +391,7 @@ See information about complaints (a complaint occurs when a recipient reports th
 
 **Sending Identity.** See the identity of the users sending emails generating complaint notifications in the last 24 hours.
 
-## Upgrading the Amazon SES app (Optional)
+## Upgrade/Downgrade the Amazon SES app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

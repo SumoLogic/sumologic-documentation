@@ -18,8 +18,23 @@ This section has instructions for configuring a pipeline for shipping logs avail
 * This solution supports only log files from Blob storage that have file extensions of .csv, .json, .blob, or .log.
 * You also need to have Microsoft Authorization/role Assignments/write permissions, so they should be a "User Access Administrator" or "Owner".
 
+:::sumo Micro Lesson
+
 Watch this tutorial to learn how to collect logs from Azure Blob Storage.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/y3bus7l7yq?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Azure Block Blob Storage Collection (How-to) Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/186K2d-FFoc?rel=0"
         width="854px"
         height="480px"
@@ -30,6 +45,9 @@ Watch this tutorial to learn how to collect logs from Azure Blob Storage.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
+
+:::
 
 ## Functional overview
 
@@ -65,6 +83,9 @@ Make a note of the container name, as you will need to supply it later.
 In this step, you configure an HTTP source to receive logs from the Azure function.
 
 1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+    :::note
+      Make sure the hosted collector is tagged with tenant_name field for the out of the box Azure apps to work. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+    :::
 1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the URL for the source, you will need it in the next step.
 
 ## Step 3. Configure Azure resources using ARM template
@@ -247,6 +268,14 @@ Assuming you have used the modified template which uses standard/premium plan fo
 
     ![azureblob-subnet](/img/send-data/azureblob-subnet.png)
 
+## Upgrading Azure Functions
+
+1. Go to the resource group where ARM template was deployed and go to each of the function apps.
+    ![azurefunctionapp-list](/img/send-data/azure_functionapp.png)
+1. Go to `Deployment -> Deployment Center` and click on `Sync`.
+    ![azurefunctionapp-sync](/img/send-data/azure_upgrade_sync.png)
+1. Go to `Logs` tab and check the `Status` column, it should show `Success`.
+    ![azurefunctionapp-status](/img/send-data/azure_upgrade_status.png)
 
 ## Collection testing performance numbers
 

@@ -107,15 +107,33 @@ _sourceCategory=Labs/sailpoint
 | sort by _count
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions for setting up [Cloud-to-Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the SailPoint app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for SailPoint](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your SailPoint app is properly integrated and configured to collect and analyze your SailPoint data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing SailPoint dashboards
 
@@ -147,7 +165,7 @@ The **SailPoint - Security** dashboard provides a summary of source deletion eve
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Security.png')} alt="security"/>
 
-## Upgrading the SailPoint app (Optional)
+## Upgrade/Downgrade the SailPoint app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

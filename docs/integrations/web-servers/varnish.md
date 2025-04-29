@@ -352,7 +352,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 
 ### Method B: Using a Terraform script
 
-1. Generate an access key and access ID for a user with the **Manage Monitors** role capability; for instructions, see  [Access Keys](/docs/manage/security/access-keys#from-the-preferences-page).
+1. Generate an access key and access ID for a user with the **Manage Monitors** role capability; for instructions, see  [Access Keys](/docs/manage/security/access-keys).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later and install it.
 3. Download the Sumo Logic Terraform package for MySQL monitor. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/Varnish/` directory.
@@ -504,7 +504,7 @@ The **Varnish - Threat Intel** dashboard provides an at-a-glance view of threats
 
 Use this dashboard to:
 * To gain insights and understand threats in incoming traffic and discover potential IOCs.
-* Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) threat feed.
+* Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src={useBaseUrl('img/integrations/web-servers/Varnish-Threat-Intel.png')} alt="Varnish dashboard" />
 

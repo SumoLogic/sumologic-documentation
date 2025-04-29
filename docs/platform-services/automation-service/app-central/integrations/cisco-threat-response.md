@@ -22,6 +22,12 @@ Gather Cisco Threat Response threat intelligence data to enrich incident artifac
 * **List Vulnerabilities** (*Enrichment*) - Get a list of vulnerabilities.
 * **List Sightings** (*Enrichment*) - Search available sightings.
 
+## Configure Cisco Threat Response in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * February 21, 2020 - First upload

@@ -21,6 +21,12 @@ Interact with FireEye Endpoint Security (HX) during incident investigations.
 * **Quarantine** (*Containment*) - Quarantine the specified system ID, IP or hostname.
 * **Unquarantine** (*Containment*) - Unquarantine the specified system ID, IP or hostname.
 
+## Configure FireEye Endpoint Security (HX) in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * March 3, 2020 - First upload

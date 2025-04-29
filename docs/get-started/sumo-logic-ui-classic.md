@@ -1,21 +1,25 @@
 ---
 id: sumo-logic-ui-classic
 title: Tour the Sumo Logic Classic UI
-sidebar_label: Sumo Logic UI (Classic)
+sidebar_label: Tour the Sumo UI (Classic)
 description: Get to know the Sumo Logic platform user interface.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::danger Classic UI Deprecation
-The Classic UI will be deprecated in early 2025. We highly encourage you to begin transitioning to the [Sumo Logic New UI](/docs/get-started/sumo-logic-ui) for the latest features and updates.
-:::
+This page provides an overview of the Sumo Logic Classic UI, designed to help you navigate and utilize its features effectively.
 
-This page will help you get to know the Sumo Logic Classic UI.
+<img src={useBaseUrl('img/get-started/overview-classic-ui.png')} alt="Overview screenshot of the Classic UI" style={{border: '1px solid gray'}} width="800" />
+
+The Classic UI will be retired in 2025 and will no longer receive updates. The exact date will be communicated closer to the transition. For the latest features, performance improvements, and future innovations, switch to the [New UI](/docs/get-started/sumo-logic-ui) as soon as possible.
+
+## Switching between the Classic and New UI
+
+If you're using the New UI and need to navigate back to the Classic UI, click the **Return to classic UI** option in the left navigation menu. And to switch back to the New UI, follow the same steps, selecting **Switch to New UI** instead.
 
 ## Using the left navigation bar
 
-When you first log in, you'll land on the Sumo Logic Home page. The left navigation (nav) menu bar is a one-stop location where you can access the following:
+When you first log in, you'll land on the Sumo Logic Home page. The left nav menu bar is a one-stop location where you can access the following:
 
 ### Access dashboards and searches
 
@@ -28,8 +32,7 @@ The left nav bar provides easy access to libraries, personal collections of das
 
 ### Search and switch browsing modes
 
-The top of the left nav bar is where you can search for content and
-users and easily switch browsing modes. 
+The top of the left nav bar is where you can search for content and users and easily switch browsing modes. 
 
 * Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
 * Switching browsing modes—Click the three-dot kebab icon and make a selection from the dropdown menu.<br/> ![TUI_Search_Details.png](/img/get-started/ui/TUI_Search_Details.png)
@@ -48,7 +51,7 @@ In the lower section of the left nav bar, you can access the [App Catalog](apps-
 <img src={useBaseUrl('img/get-started/ui/TUI_App-Admin-Help.png')} alt="Lower left nav menu" style={{border: '1px solid gray'}} width="300" />
 
 :::note
-The **Automation** option does not appear in the navigation menu if your organization has **Cloud SOAR** installed, because automation is provided by Cloud SOAR. For more information, see [Cloud SOAR Automation](/docs/cloud-soar/automation/).
+The **Automation** option is not available in the navigation menu if your organization has Cloud SOAR installed, as automation features are handled through Cloud SOAR. For more information, see [Cloud SOAR Automation](/docs/cloud-soar/automation/).
 :::
 
 ## Working with tabs
@@ -123,16 +126,14 @@ This section shows you how to get started working with logs and metrics. The li
 To launch a search, metrics visualization, or live tail session, do the following:
 
 1. Go to the Sumo Logic **Home** page.
-1. Do one of the following:
-   * Click **+New** in the Tabs menu and choose an option from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/new-icons.png')} alt="new-icons.png" width="600"/>
-   * Click one of the following Home page icons:<br/><img src={useBaseUrl('img/get-started/ui/home-icons.png')} alt="home-icons.png" width="600"/>
-     * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
-     * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
-     * [Traces](/docs/apm/traces/). Monitor user activity, span analytics, service maps, and transaction traces between microservices.
-     * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
-     * [Explore](/docs/dashboards/explore-view). See an intuitive visual hierarchy of your environment.
-     * [Dashboard](/docs/dashboards/). Analyze metrics and log data on the same dashboard, in a streamlined user experience.
-     * [Root Cause](/docs/observability/root-cause-explorer). Accelerate troubleshooting and isolate root causes for incidents in your apps and microservices.
+1. Click one of the following Home page icons:<br/><img src={useBaseUrl('img/get-started/ui/home-icons.png')} alt="home-icons.png" width="600"/>
+   * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
+   * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
+   * [Traces](/docs/apm/traces/). Monitor user activity, span analytics, service maps, and transaction traces between microservices.
+   * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
+   * [Explore](/docs/dashboards/explore-view). See an intuitive visual hierarchy of your environment.
+   * [Dashboard](/docs/dashboards/). Analyze metrics and log data on the same dashboard, in a streamlined user experience.
+   * [Root Cause](/docs/observability/root-cause-explorer). Accelerate troubleshooting and isolate root causes for incidents in your apps and microservices.
 
 ### View recent dashboards and searches 
 
@@ -208,7 +209,6 @@ To manage your personal Sumo Logic account preferences, do the following:
 1. In the Preferences page that appears on the right, you can modify settings in the following areas:
     * **My Profile**: username and password
     * **My Security Settings**: enable and disable 2-step verification
-    * **My Access Keys**: add, edit, and remove access keys
     * **My Preferences**: your account session settings
 
 For more information, see the [Preferences Page](account-settings-preferences.md).

@@ -6,6 +6,8 @@ description: Get an overview of how the Automation Service allows you to automat
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ActionsLimitQuery from '../../reuse/actions-limit-query.md';
+import StaticIpAddresses from '../../reuse/static-ips-automation-service.md';
 
 The Automation Service allows you to set up actions that run automatically when certain conditions are met in Sumo Logic. These automated actions help you to respond quickly to a wide arrange of events. 
 
@@ -56,8 +58,8 @@ Before you can access the Automation Service, you must first [configure role cap
 
 ### From Cloud SIEM
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the Cloud SIEM top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**.  <br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} style={{border:'1px solid gray'}} alt="Automations list" width="800"/>
-1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} style={{border:'1px solid gray'}} alt="Manage Playbooks menu option" width="400"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the Cloud SIEM top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**.  <br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} style={{border:'1px solid gray'}} alt="Automations list" width="800"/>
+1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} style={{border:'1px solid gray'}} alt="Manage Playbooks menu option" width="300"/>
 1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" style={{border: '1px solid gray'}} width="800"/>
 
 ## Prerequisites
@@ -86,17 +88,18 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 
 ### Configure the connection for an integration resource
 
-To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must configure the connection for their resources. 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
-1. Select the integration whose resource you want to configure the connection for. 
-1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="800"/> 
-1. Enter the connection configuration needed by the resource. (Find the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) for configuration instructions.)<br/>What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="400"/> 
-1. Click **Save** to save the configuration. 
+To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must first configure the connection for their resources. See [Configure Authentication for Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
 
 ## Actions limit
 
-To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 200 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
-
-import ActionsLimitQuery from '../../reuse/actions-limit-query.md';
+To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 350 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
 
 <ActionsLimitQuery/>
+
+Each execution of Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions counts toward the actions limit. User Choice, IF, and Task actions do not count toward the actions limit.
+
+## Static IP addresses
+
+The following table provides the static IP addresses used for the Automation Service by deployment. These are provided in case you want to explicitly allow the IP addresses on the integrations you install.
+
+<StaticIpAddresses/>

@@ -25,7 +25,11 @@ Kela Darkbeast provides incident responders, threat hunters, investigators, and 
 2. The API Access can be generated in your profile.
 3. Make sure you copy and save the API token.
 
-## Kela Darkbeast in Automation Service and Cloud SOAR
+## Configure Kela Darkbeast in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

@@ -193,7 +193,7 @@ The Observable Networks Overview dashboard is intended to provide a high level a
 
 **Top Observation Hosts.** This is simple query shows the hosts (sources) with the most observation counts.
 
-## Upgrading the Observable Networks app (Optional)
+## Upgrade/Downgrade the Observable Networks app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

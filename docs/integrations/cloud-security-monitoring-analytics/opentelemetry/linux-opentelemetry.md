@@ -223,3 +223,19 @@ Use this dashboard to:
 - Monitor service usage and other system activity.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-User-Service-and-System-Monitoring.png' style={{border: '1px solid gray'}} alt="Linux-Security-Analytics-User-Service-and-System-Monitoring" />
+
+
+## Create monitors for Linux - Cloud Security Monitoring and Analytics app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Linux - Cloud Security Monitoring and Analytics alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Linux CSMA - Excessive Failed Authentication` | This alert is triggered when multiple failed login attempts from the same source are detected, indicating potential brute force attempts. | Count > 10 | Count \<= 10 |
+| `Linux CSMA - Root Login Detection` | This alert is triggered when direct login attempts using the root account are detected, indicating a potential security concern since root logins should typically be disabled. | Count \>= 1 | Count < 1 |
+| `Linux CSMA - System Shutdown Detection` | This alert is triggered when unexpected system shutdown events are detected through kernel stop messages, which may indicate unauthorized access, malicious activity, power issues, or system failures. | Count > 0 | Count \<= 0 |
+| `Linux CSMA - User Account Creation Spike` | This alert is triggered when multiple user accounts are created in a short time period, which may indicate automated account creation, compromised systems, or unauthorized bulk user provisioning. | Count > 3 | Count \<= 3 |

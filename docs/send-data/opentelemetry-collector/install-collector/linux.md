@@ -40,9 +40,12 @@ You can install our OpenTelemetry Collector using one of the following methods:
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. On the left panel, select **Linux** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal.png')} alt="linux-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
-1. (Optional) Select the **Auto Configure Host and Process metrics data collection** checkbox to collect host and process metrics.
+1. (Optional) In the **Collector Settings**, select the **Ephemeral** checkbox to auto-delete your collector after 12 hours, and select the **Locally Manage Collector** checkbox if you want to configure, maintain, and monitor your collector locally.
 1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" width="900"/>
 1. Wait for the installation process to complete, then click **Next** to proceed.
+1. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
+
+If you choose to close this Source template creation screen, you can navigate back. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Source Template**.  
 
 ### Install Script
 
@@ -246,7 +249,7 @@ We recommend keeping the install token in environmental variable for `Systemd` i
    ```bash
    sudo mkdir -p /etc/otelcol-sumo/env
    ```
-1. Create `/etc/otelcol-sumo/env/token.env` directory with your installation token. In this example, we use `SUMOLOGIC_INSTALLATION_TOKEN`, as it will be automatically used by the recommended configuration.
+1. Create the `/etc/otelcol-sumo/env/token.env` file with your installation token. In this example, we use `SUMOLOGIC_INSTALLATION_TOKEN`, as it will be automatically used by the recommended configuration.
    ```bash
    SUMOLOGIC_INSTALLATION_TOKEN=<your token>
    ```

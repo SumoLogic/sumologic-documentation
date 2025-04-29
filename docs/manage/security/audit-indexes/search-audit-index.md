@@ -1,12 +1,12 @@
 ---
 id: search-audit-index
 title: Search Audit Index
-description: The Search Audit Index provides event logs on search usage and activities for your account. 
+description: The Search Audit Index provides event logs on search usage and activities for your account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more. 
+The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more.
 
 To visualize your Search Audit Index data, download the [Enterprise Search Audit App](/docs/integrations/sumo-apps/enterprise-search-audit), which provides pre-built dashboards and reports to help you analyze your current search use and identify areas for improvement.
 
@@ -25,7 +25,7 @@ The Search Audit Index must be enabled by an administrator.
 
 To enable the Search Audit Index:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.
 1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index Record checkbox" style={{border: '1px solid gray'}} width="600" />
 
 :::note
@@ -59,7 +59,7 @@ The following table provides details on the fields returned by the index:
 | `content_identifier` | The ID of the content item that triggered the search query. |
 | `content_name` | The name of the content item that triggered the search query. |
 | `data_retreived_bytes` | Amount of data retrieved by the search query. This represents the approximate size of messages that match the source expression of the query and are retrieved from scanning. |
-| `data_scanned_bytes` | Amount of data scanned by the search query. This value is an approximation, as the scanned message bytes are captured at intermittent time intervals and then averaged over the query time range. It is important to note that this value may be less than the retrieved bytes in some cases due to the approximation. Additionally, if a query contains a `timecompare` or `subquery` operator, the `data_scanned_byte` attribute in the audit log will include the sum of both the parent and child queries. |
+| `data_scanned_bytes` | Displays the total sum of scanned bytes for charged (Flex and Infrequent bytes) and non-charged metering types (Continuous and Frequent bytes). This value can be different from what users see in scan estimates on UI. Additionally, if a query contains a `timecompare` or `subquery` operator, the `data_scanned_byte` attribute in the audit log will include the sum of both the parent and child queries. |
 | `execution_duration_ms` | Time taken to complete the search. |
 | `is_aggregate` | The boolean variable that indicates if the corresponding search query was an aggregate query. The aggregate operator’s list can be found in [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators). |
 | `query` | The query text string run by the user. |
@@ -74,6 +74,7 @@ The following table provides details on the fields returned by the index:
 | `session_id` | An identifier for every search run within the account. This is the same SESSION number displayed in the UI in the search tab. |
 | `status_message` | Gives the status of the search. The values include: **Finished successfully**, **Query failed**, and **Query canceled**. |
 | `user_name` | The email of the user that ran the search. |
+| `scanned_bytes_breakdown_by_metering_type` | Displays breakdown of the total amount of data scanned by a search query based on the metering type. It includes both charged metering types (Flex and Infrequent bytes) and non-charged metering types (Continuous and Frequent bytes). |
 
 ## Query type field values 
 
@@ -90,4 +91,4 @@ The table below shows the possible values for the `query_type` field.
 | Sumo Internal | The Internal searches Sumo Logic runs in the background that are critical in providing other services (for example, autocomplete, scheduled view optimization, etc.).                                    |
 | Auto Refresh Dashboard | Search queries used to power auto refresh dashboard panels. |
 | Monitor | Queries associated with [monitors](/docs/alerts/monitors). |
-| Span Analytics | Queries run for filtering and aggregating trace data based on [span attributes](/docs/apm/traces/spans) to understand application services performance. Queries can be built using input fields, with filters and visualized results available.  |
+| Span Analytics | Queries run for filtering and aggregating trace data based on [span attributes](/docs/apm/spans) to understand application services performance. Queries can be built using input fields, with filters and visualized results available.  |

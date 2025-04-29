@@ -32,7 +32,11 @@ The following steps show how to create new API credentials to work with Cloud SO
 1. Click **Show Client Secret**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-4.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="600"/>
 1. Now you can copy the key as shown.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-5.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="600"/>
 
-## Sophos Central V3 in Automation Service and Cloud SOAR
+## Configure Sophos Central V3 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

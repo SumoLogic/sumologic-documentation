@@ -55,7 +55,7 @@ This Citrix Cloud App uses [SystemLog](https://developer.cloud.com/citrix-cloud/
 ### Sample queries
 
 ```sql="Active Team Members"
-sourceCategory="citrixCloudSource"
+_sourceCategory="citrixCloudSource"
 | json "eventType","targetDisplayName","targetEmail","beforeChanges.AccessType","afterChanges.AccessType","actorType","message.en-US" as event_type,name, email, access_type_before, access_type_after, actor, message nodrop
 | where event_type matches("*platform/administrator/create*")
 | where actor matches"{{actor}}"
@@ -88,7 +88,7 @@ In addition to the above, the Dashboard provides a summary of all the Administra
 
 **Citrix Cloud - Client, Group Administrator Overview** dashboard provides detailed information about newly added and recently deleted clients and group administrators from your Citrix Cloud account. It also indicates whether any group administrators' roles/permissions have been updated. It also provides a summary of all Administrator events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/client-group-admin-overview.png')} alt="client-group-admin-overview" width="750"/>
 
-## Upgrading the Citrix Cloud app (Optional)
+## Upgrade/Downgrade the Citrix Cloud app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

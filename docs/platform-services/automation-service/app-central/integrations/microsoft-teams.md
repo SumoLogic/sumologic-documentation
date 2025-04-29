@@ -371,7 +371,11 @@ Once API permission are added then **Admin** must consent to a grant these permi
 
 For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/api/resources/teams-api-overview?view=graph-rest-1.0**](https://docs.microsoft.com/en-us/graph/api/resources/teams-api-overview?view=graph-rest-1.0)
 
-## Microsoft Teams in Automation Service and Cloud SOAR
+## Configure Microsoft Teams in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for Microsoft Teams integration and click on the row.

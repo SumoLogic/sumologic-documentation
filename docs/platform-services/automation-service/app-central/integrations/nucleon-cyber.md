@@ -17,6 +17,12 @@ Nucleon Cyber framework for threat intelligence - perform in-depth analysis, ver
 * **Search Hash** *(Enrichment)* - Returns hash information and details about files and threats.
 * **Search IP** *(Enrichment)* - Search by IP.
 
+## Configure Nucleon Cyber in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * October 7, 2021 - First upload

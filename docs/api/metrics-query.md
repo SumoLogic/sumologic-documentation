@@ -36,7 +36,7 @@ Here is example content for a `v1/metricQueries` API call:
 }
 ```
 
-A metric query consists of a metric, one or more filters, and optionally, one or more [metrics operators](/docs/metrics/metrics-operators/). Although both filters and operators are optional, in practice, your metric queries will almost always contain filters that narrow the scope of your query. 
+A metric query consists of a metric, one or more filters, and optionally, one or more [metrics operators](/docs/metrics/metrics-operators/). Although both filters and operators are optional, in practice, your metric queries will almost always contain filters that narrow the scope of your query.
 
 ## Documentation
 
@@ -49,16 +49,13 @@ A metric query consists of a metric, one or more filters, and optionally, one or
 | DE         | https://api.de.sumologic.com/docs/#tag/metricsQuery  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/metricsQuery  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/metricsQuery |
-| IN         | https://api.in.sumologic.com/docs/#tag/metricsQuery  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/metricsQuery  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/metricsQuery  |
 | US1        | https://api.sumologic.com/docs/#tag/metricsQuery     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/metricsQuery |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Metrics (all role capabilities)
-
--->

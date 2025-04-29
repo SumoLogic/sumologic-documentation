@@ -6,23 +6,18 @@ description: Learn how integrations are connectors to applications from industry
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import ActionsLimit from '../../reuse/actions-limit.md';
 
 Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
 
 Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service (see [View Integrations](#view-integrations)). Integrations that are available for installation appear in App Central (see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/)).
 
-:::info
-Before you can use actions from an integration resource, you must [configure the connection for the resource](/docs/platform-services/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) to work with the Automation Service.
-:::
-
-:::note
-<ActionsLimit/>
-:::
-
 ## Available integrations
 
 For a complete list of integrations that are available to install, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/).
+
+:::warning Important
+All integrations require authentication to communicate between the vendor and Sumo Logic. For directions, see [Configure Authentication for Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+:::
 
 ## View integrations
 
@@ -65,9 +60,36 @@ Note that in the following example a **(2)** follows the duplicated integration'
 
 ## Create a new integration
 
-You can build basic integrations without having to provide custom YAML files.
+### In the Automation Service
 
-1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
+To create a new integration in the Automation Service, you must supply an integration definition YAML file, as well as an action definition YAML file for each of the actions contained in the integration. For an example of creating a new integration by supplying YAML files, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration). For sample YAML files, see [Example files](/docs/platform-services/automation-service/automation-service-integration-framework/#example-files). To learn how to build your own YAML files, see [Integration framework file formats](/docs/platform-services/automation-service/automation-service-integration-framework/#integration-framework-file-formats).
+
+To create a new integration:
+1. Create an integration definition YAML file, as well as an action definition YAML file for each action in the integration. 
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). In the main Sumo Logic menu click **Automation**. Then click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
+1. Select the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-integration-button.png')} alt="Add Integration button" width="500"/>
+1. A **New Integration** dialog appears. Drag the integration definition YAML file into the **New Integration** dialog.<br/><img src={useBaseUrl('img/platform-services/automation-service/new-integration-dialog.png')} alt="Add Integration button" width="300"/>
+1. Click **Upload**. The new integration is listed on the **Integrations** page.
+1. Now that you have uploaded the integration file, you need to upload an action file for the integration.
+   1. Hover your mouse over the new integration and click the **Upload** button that appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-upload-icon.png')} alt="Upload button" width="700"/>
+   1. In the **Upload** dialog, notice how **Integration File** is highlighted. That's because it was uploaded already.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-upload-files.png')} alt="Upload dialog" width="300"/>
+   1. Click **Action** and **Next**.
+   1. Drag the action definition YAML file into the **Upload** dialog.
+   1. Click **Upload**. The action is added to the integration.
+   1. Repeat these steps for any other actions you need to add to the integration.
+1. Add the resource information:
+   1. Click the **+** button to the left of **Resources**.
+   1. Give the resource a **Label** and enter the connection configuration needed by the resource. What you enter is specific to the integration you're adding the resource for. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-resource.png')} alt="Add Resource dialog" width="400"/>
+   1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="VirusTotal example integration" width="600"/>
+1. To test an action, click on the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Test action dialog" width="400"/>
+
+To make your custom integration available for everyone in App Central, see [Publish an integration to App Central](/docs/platform-services/automation-service/automation-service-app-central/#publish-an-integration-to-app-central).
+
+### In Cloud SOAR
+
+If you have Cloud SOAR installed, you can build basic integrations without having to provide custom YAML files.
+
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). In the main Sumo Logic menu click **Cloud SOAR**. Then click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right of the screen, select **Automation**, and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
 1. Select the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-integration-button.png')} alt="Add Integration button" width="500"/>
 1. Fill out the **New Integration** dialog:
    1. Upload a **Logo** for your integration.
@@ -90,7 +112,7 @@ You can build basic integrations without having to provide custom YAML files.
    1. Click the **+** button to the left of **Resources**.
    1. Give the resource a **Label** and enter the connection configuration needed by the resource. What you enter is specific to the integration you're adding the resource for. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-resource.png')} alt="Add Resource dialog" width="400"/>
    1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="VirusTotal example integration" width="600"/>
-1. To test the new action, click on the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Test action dialog" width="400"/>
+1. To test an action, click on the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Test action dialog" width="400"/>
 
 To make your custom integration available for everyone in App Central, see [Publish an integration to App Central](/docs/platform-services/automation-service/automation-service-app-central/#publish-an-integration-to-app-central).
 
@@ -98,7 +120,7 @@ To make your custom integration available for everyone in App Central, see [Publ
 
 You can set integrations, and their related action execution, to be executed in the cloud or through the Bridge. Only certified integrations can be executed in the cloud, while custom integrations must be executed through the [Bridge](/docs/platform-services/automation-service/automation-service-bridge/).
 
-1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). In the main Sumo Logic menu click **Automation**. Then click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
 1. Select an integration.
 1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-resource-button.png')} alt="Resource edit button" width="600"/>
 1. In the **Edit resource** dialog, click the **Automation engine** field to select **Cloud execution** (for certified integrations only) or select a Bridge option (for custom integrations).<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-resource-cloud-execution.png')} alt="Automation engine field" width="400"/>
