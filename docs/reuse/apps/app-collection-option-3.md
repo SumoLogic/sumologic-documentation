@@ -1,6 +1,6 @@
 To skip collection and only install the app, do the following:
 :::note
-    Next-Gen App: To install or update the app, you must be an account administrator or a user with Manage Apps, Manage Monitors, Manage Fields, Manage Metric Rules, and Manage Collectors capabilities depending upon the different content types part of the app.
+Next-Gen App: To install or update the app, you must be an account administrator or a user with Manage Apps, Manage Monitors, Manage Fields, Manage Metric Rules, and Manage Collectors capabilities depending upon the different content types part of the app.
 :::
 1. Select **App Catalog**.
 1. In the 🔎 **Search Apps** field, run a search for your desired app, then select it.

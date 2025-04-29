@@ -396,6 +396,14 @@ Break Lines
 }
 ```
 
+## Configure Sumo Logic Automation Tools in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+Sumo Logic Automation Tools executes without additional authentication.
+
 ## Change log
 
 * Nov 11, 2024 - Beta version released.

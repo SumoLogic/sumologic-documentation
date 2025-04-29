@@ -626,7 +626,7 @@ The following expression returns "10.10.1.0":
 
 ### hasThreatMatch
 
-The `hasThreatMatch` Cloud SIEM rules function matches incoming records in Cloud SIEM to [threat intelligence indicators](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/).
+Use the `hasThreatMatch` Cloud SIEM rules function to match incoming records in Cloud SIEM to [threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/). The function uses all sources in the **Threat Intelligence** tab, unless you specify a specific source. `hasThreatMatch` can also match values in [custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/).
 
 When an entity is processed by a rule using the `hasThreatMatch` function and is a match, the entity is associated with a known indicator that has a threat type attribute. The entity can be associated with either `threatType` (in normalized JSON format and CSV format), or `indicator_types` (in STIX format).
 
@@ -635,49 +635,31 @@ When an entity is processed by a rule using the `hasThreatMatch` function and is
 `hasThreatMatch([<fields>], <filters>, <indicators>)`
 
 Parameters:
-* `<fields>` is a list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
-* `<filters>` is a logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`. <br/>You can filter on the following indicator attributes:
-   * `actors`
-   * `confidence`
-   * `id`
-   * `indicator`
-   * `killChain`
-   * `source`
-   * `threatType`
-   * `type`
-   * `validFrom`
-   * `validUntil`
-* `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
+* **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
+* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`. <br/>You can filter on the following indicator attributes:
+   * `actors`. An identified threat actor such as an individual, organization, or group. 
+   * `confidence` Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
+   * `id`. ID of the indicator.
+   * `indicator`. Value of the indicator, such as an IP address, file name, email address, etc. 
+   * `killChain`. The various phases an attacker may undertake to achieve their objectives (for example, `reconnaissance`, `weaponization`, `delivery`, `exploitation`, `installation`, `command-and-control`, `actions-on-objectives`).
+   * `source`. The source in the Sumo Logic datastore displayed in the **Threat Intelligence** tab.
+   * `threatType`. The threat type of the indicator (for example, `anomalous-activity`, `anonymization`, `benign`, `compromised`, `malicious-activity`, `attribution`, `unknown`).
+   * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, etc.)
+   * `validFrom`. Beginning time this indicator is valid.
+   * `validUntil`. Ending time this indicator is valid. 
+* **`<indicators>`**. An optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
    * `active_indicators`. Match active indicators only (default).
    * `expired_indicators`. Match expired indicators only.
    * `all_indicators`. Match all indicators.
-
-**Examples**
-
-* `hasThreatMatch([srcDevice_ip])`
-* `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
-* `hasThreatMatch([srcDevice_ip], type="ipv4-addr")`
-* `hasThreatMatch([srcDevice_ip], confidence > 50)`
-* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="TAXII2Source")`
-* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50))`
-* `hasThreatMatch([srcDevice_ip], expired_indicators)`
-* `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
 
 #### Best practice
 
 As a best practice, always include filtering to narrow your match to just the types desired (that is, `type=`). This will ensure that your match expressions are not overly broad.
 
-For example:
-* `hasThreatMatch([dstDevice_ip], confidence > 1 AND (type="ipv4-addr" OR type="ipv6-addr"))` 
-* `hasThreatMatch([file_hash_imphash, file_hash_md5, file_hash_pehash, file_hash_ssdeep, file_hash_sha1, file_hash_sha256], confidence > 1 AND type="file:hashes")` 
-* `hasThreatMatch([device_hostname, srcDevice_hostname, dstDevice_hostname, http_hostname, http_referrerHostname, bro_ssl_serverName, bro_ntlm_domainame, bro_ssl_serverName_rootDomain, dns_queryDomain, dns_replyDomain, fromUser_authDomain, http_referrerDomain, http_url_rootDomain, http_url_fqdn], confidence > 1 AND (type="domain-name" OR type="url"))` 
-* `hasThreatMatch([http_url], confidence > 1 AND type="url")` 
-* `hasThreatMatch([srcDevice_ip], confidence > 1 AND (type="ipv4-addr" OR type="ipv6-addr"))`
-
 Following are the standard indicator types you can filter on:
-* `domain-name`. Domain name. 
-* `email-addr`. Email address. 
-* `file:hashes`. File hash. (If you want to add the hash algorithm, enter `file:hashes.<HASH-TYPE>`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.)
+* `domain-name`. Domain.
+* `email-addr`. Email.
+* `file:hashes`. File hash.
 * `file`. File name. 
 * `ipv4-addr`. IPv4 IP address. 
 * `ipv6-addr`. IPv6 IP address. 
@@ -687,6 +669,28 @@ Following are the standard indicator types you can filter on:
 * `user-account`. User ID or login name. 
 
 For more information about indicator types, see [Upload Formats for Threat Intelligence Indicators](/docs/security/threat-intelligence/upload-formats).
+
+**Examples**
+
+:::tip
+For standard rules that use the `hasThreatMatch` function, refer to the [Rules page in the Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) and search for rules with "Threat Intel" in the name. To see examples of how these rules use `hasThreatMatch`, open and view the rules in Cloud SIEM.
+:::
+
+* `hasThreatMatch([srcDevice_ip], confidence > 1 AND (type='ipv4-addr' OR type='ipv6-addr'))`
+* `hasThreatMatch([device_ip], source="unit_42" AND confidence > 50) AND accountId="testing"`
+* `hasThreatMatch([device_hostname], confidence > 1 AND (type='domain-name' OR type='url'))`
+* `hasThreatMatch([dstDevice_hostname], confidence > 1 AND (type='domain-name' OR type='url'))`
+* `hasThreatMatch([file_hash_md5], confidence > 1 AND type='file:hashes.MD5')`
+* `hasThreatMatch([file_hash_sha1], confidence > 1 AND type="file:hashes.'SHA-1'")`
+* `hasThreatMatch([file_hash_sha256], confidence > 1 AND type="file:hashes.'SHA-256'")`
+* `hasThreatMatch([file_hash_ssdeep], confidence > 1 AND type='file:hashes.ssdeep')`
+* `hasThreatMatch([http_url_rootDomain], confidence > 1 AND (type='domain-name' OR type='url'))`
+* `hasThreatMatch([user_email,targetUser_email], confidence > 1 AND source = "s_global_feed_1")`
+
+You can exclude matches from allowlists such as [standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#standard-match-lists). For example:
+```text
+hasThreatMatch([dstDevice_ip], confidence > 74 AND (type='ipv4-addr' OR type='ipv6-addr')) AND NOT (array_contains(listMatches, 'business_asns') OR array_contains(listMatches, 'business_domains') OR array_contains(listMatches, 'business_hostnames') OR array_contains(listMatches, 'business_ips') OR array_contains(listMatches, 'sandbox_ips') OR array_contains(listMatches, 'verified_domains') OR array_contains(listMatches, 'verified_hostnames') OR array_contains(listMatches, 'verified_ips'))
+```
 
 ### haversine
 

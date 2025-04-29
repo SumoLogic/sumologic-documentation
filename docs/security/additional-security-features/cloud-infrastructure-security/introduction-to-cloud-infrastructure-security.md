@@ -75,3 +75,9 @@ Cybersecurity refers to the set of processes, policies and techniques that work 
 ### How does Sumo Logic encrypt its data for cloud security?
 
 All data at rest within the Sumo Logic system is encrypted using strong AES 256-bit encryption. All spinning disks are encrypted at the OS level and all long-term data storage is encrypted using per-customer keys that are rotated every twenty-four hours.
+
+## Additional resources
+
+* Blog: [Making the cloud the safest place to compute: Sumo Logic Cloud Infrastructure Security for AWS](https://www.sumologic.com/blog/cloud-infrastructure-security-aws/)
+* Brief: [Cloud Infrastructure Security for AWS solutions brief](https://www.sumologic.com/brief/security-analytics/)
+* Webinar: [Cloud Infrastructure Security for AWS](https://www.sumologic.com/webinar/cloud-infrastructure-security-for-aws/)

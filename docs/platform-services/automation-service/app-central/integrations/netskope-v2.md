@@ -36,7 +36,11 @@ Netskope REST APIs use an auth token to make authorized calls to the API. Netsko
 
 When finished, click **OK**. After being created, tokens can be managed by clicking the adjacent **...** icon for the token and selecting one of these options:  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-4.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="200"/> 
 
-## Netskope V2 in Automation Service and Cloud SOAR
+## Configure Netskope V2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

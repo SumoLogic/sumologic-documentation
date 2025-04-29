@@ -18,6 +18,12 @@ Perform threat intelligence evidence gathering with IP Quality Score.
 * **IP Reputation** *(Enrichment)* - Gather IP reputation information from IP Quality Score.
 * **URL Reputation** *(Enrichment)* - Gather URL reputation information from IP Quality Score.
 
+## Configure IP Quality Score in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * September 18, 2020 - First upload
