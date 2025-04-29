@@ -28,6 +28,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Hatching Triage, see [Triage documentation](https://tria.ge/docs/).
+
 ## Change Log
 
 * June 19, 2020 - First upload
