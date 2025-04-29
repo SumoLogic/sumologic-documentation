@@ -7,7 +7,7 @@ description: The Docker ULM app is a unified logs and metrics (ULM) app that uti
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="175"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="90"/>
 
 :::note
 The Docker app will be fully functional working with Docker setup using cgroup v1. For more details on cgroup click [here](https://docs.docker.com/config/containers/runmetrics/#control-groups).
@@ -50,7 +50,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 ### Add a Docker logs source
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Logs**. The Docker Logs page appears.
 4. Configure the source fields:
@@ -91,7 +91,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 ### Add a Docker Stats Source
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs. To collect metrics for the Docker ULM app, select **Metrics** as the Content Type.
 4. Configure the source fields:
@@ -126,7 +126,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 There will be no **Network** metrics if you use the `host` network mode for the container.
 :::
 
-<table><small>
+<table>
   <tr>
    <td><strong>Metrics Name</strong></td>
    <td><strong>Unit</strong></td>
@@ -451,7 +451,7 @@ There will be no **Network** metrics if you use the `host` network mode for the 
    <td>current </td>
    <td>Count </td>
    <td>Number of PIDs (Not available on Windows) </td>
-  </tr></small>
+  </tr>
 </table>
 
 
@@ -491,38 +491,11 @@ The table below defines the types of variables you can use.
 
 Docker engine event log data doesn't support the tagging with metadata.
 
-<table><small>
-  <tr>
-   <td><strong>Namespace/VAR_TYPE</strong> </td>
-   <td><strong>Description</strong> </td>
-   <td><strong>VAR_NAME</strong>   </td>
-  </tr>
-  <tr>
-   <td><code>container</code> </td>
-   <td>Container metadata fields provided by Docker for use in the <code>--log-opt</code> tag option.
-<br/>These are automatically added to data points.
-<br/>For more information, see <a href="https://docs.docker.com/engine/admin/logging/log_tags/">Log tags for logging driver</a> in Docker help.</td>
-   <td><code>ID</code> The first 12 characters of the container ID.
-<br/><code>FullID</code> The full container ID.
-<br/><code>Name</code> The container name.
-<br/><code>ImageID</code> The first 12 characters of the container’s image ID.
-<br/><code>ImageFullID</code> The container’s full image ID.
-<br/><code>ImageName</code> The name of the image used by the container. </td>
-  </tr>
-  <tr>
-   <td><code>label</code> </td>
-   <td>User-defined labels, supplied with the  <code>--label flag</code> when starting a Docker container.
-<br/>This is automatically added to data points. </td>
-   <td>The name of the variable.
-<br/>Dot characters (<code>.</code>) are not supported. </td>
-  </tr>
-  <tr>
-   <td><code>env</code>   </td>
-   <td>User-defined container environment variables that are set with <code>--env|-e</code> flags when starting a container. </td>
-   <td>The name of the variable.
-<br/>Dot characters (<code>.</code>) are not supported. </td>
-  </tr></small>
-</table>
+| Namespace/VAR_TYPE | Description                                       | VAR_NAME     |
+|:--------------------|:------------------------------|:------------|
+| `container`        | Container metadata fields provided by Docker for use in the `--log-opt` tag option.<br/>These are automatically added to data points.<br/>For more information, see [Log tags for logging driver](https://docs.docker.com/engine/admin/logging/log_tags/) in Docker help. | `ID`: The first 12 characters of the container ID.<br/>`FullID`: The full container ID.<br/>`Name`: The container name.<br/>`ImageID`: The first 12 characters of the container’s image ID.<br/>`ImageFullID`: The container’s full image ID.<br/>`ImageName`: The name of the image used by the container. |
+| `label`            | User-defined labels, supplied with the `--label` flag when starting a Docker container.<br/>This is automatically added to data points.       | The name of the variable.<br/>Dot characters (`.`) are not supported.                   |
+| `env`       | User-defined container environment variables that are set with `--env\|-e` flags when starting a container.       | The name of the variable.<br/>Dot characters (`.`) are not supported.        |
 
 
 For example:
@@ -658,7 +631,7 @@ See information about network usage over the last three hours.
 
 **Count of Tx Error Packets**. A line chart that shows the count of error packets transmitted per timeslice by each container over the last three hours.   
 
-## Upgrading the Docker ULM app (Optional)
+## Upgrade/Downgrade the Docker ULM app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

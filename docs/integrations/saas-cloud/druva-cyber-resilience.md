@@ -60,17 +60,33 @@ _source="Milan_Druva_Cyber_Resilience_v0.0.1"
 | count
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Druva Cyber Resilience Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source) for the Druva Cyber Resilience app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Cyber Resilience source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva Cyber Resilience app is properly integrated and configured to collect and analyze your Druva Cyber Resilience data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Druva Cyber Resilience app​
+<CollectionConfiguration/>
 
-This section has instructions for installing the Druva app for Sumo Logic.
+:::important
+Use the [Cloud-to-Cloud Integration for Druva Cyber Resilience](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Druva Cyber Resilience app is properly integrated and configured to collect and analyze your Druva Cyber Resilience data.
+:::
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+### Create a new collector and install the app
 
-<AppInstall2/>
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Druva Cyber Resilience dashboards​
 
@@ -98,7 +114,7 @@ The **Druva Cyber Resilience - Unusual Data Activities** dashboard provides a co
 
 The **Druva Cyber Resilience - Ransomware Recovery Events** dashboard offers a comprehensive overview of ransomware recoveries, encompassing their total count, distribution based on Syslog severity and type across time, top resource owners affected, quarantined event breakdown by resource type, geographic origins including high-risk countries, and concludes by furnishing detailed information and an overview of recent ransomware recoveries. The platform is under constant surveillance to swiftly identify and counter ransomware attacks in real time.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Ransomware-Recovery-Events.png')} style={{border: '1px solid gray'}} alt="Druva-Cyber-Resilience-Ransomware-Recovery-Events" width="800"/>
 
-## Upgrading the Druva Cyber Resilience app (Optional)
+## Upgrade/Downgrade the Druva Cyber Resilience app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

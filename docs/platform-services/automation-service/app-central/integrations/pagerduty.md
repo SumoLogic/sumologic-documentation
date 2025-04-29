@@ -28,6 +28,14 @@ Utilize PagerDuty to notify responders during the incident response process.
 * **Update Incident** (*Notification*) - Update an incident with the specified parameters.
 * **Delete User** (*Notification*) - Delete user.
 
+## Configure PagerDuty in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about PagerDuty, see [PagerDuty documentation](https://developer.pagerduty.com/api-reference/f1a95bb9397ba-changelog).
+
 ## Change Log
 
 * January 22, 2019 - First upload

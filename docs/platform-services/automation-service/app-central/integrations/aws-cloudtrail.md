@@ -26,6 +26,12 @@ Interact with AWS CloudTrail through Trails and Events.
 
 * [AWS CloudTrail](https://github.com/boto/boto3/blob/develop/LICENSE)
 
+## Configure AWS CloudTrail in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * October 1, 2019 - First upload

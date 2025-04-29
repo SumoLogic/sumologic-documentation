@@ -19,9 +19,15 @@ Atlassian Confluence is a collaborative workspace tool for teams to create, shar
 * **List Pages** *(Enrichment)* - Returns all pages.
 * **List Spaces** *(Enrichment)* - Returns all spaces.
 
-## Atlassian Confluence configuration
+## Configure Atlassian Confluence configuration
 
 To retrieve the API token, please refer to the following [guide](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+
+## Atlassian Confluenc in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 ## Change Log
 

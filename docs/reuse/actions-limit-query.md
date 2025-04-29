@@ -11,4 +11,4 @@ Run the following query to find the actions count per hour:
 | count by _timeslice | fillmissing timeslice
 ```
 
-You can use a query like this to [set up a scheduled search](/docs/alerts/scheduled-searches/) or a [create a monitor](/docs/alerts/monitors/) to send an alert when the actions count exceeds the limit of 200 per hour, or when node failure occurs. 
+You can use a query like this to [set up a scheduled search](/docs/alerts/scheduled-searches/) or a [create a monitor](/docs/alerts/monitors/) to send an alert when the actions count exceeds the limit per hour, or when node failure occurs. 

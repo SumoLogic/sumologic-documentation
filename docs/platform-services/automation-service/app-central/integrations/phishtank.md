@@ -15,6 +15,12 @@ Query the URL reputation via PhishTank.
 
 * **URL Reputation** (*Enrichment*) - Get URL Reputation.
 
+## Configure PhishTank in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * January 10, 2019 - First upload

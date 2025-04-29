@@ -67,9 +67,9 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
     aws cloudformation create-stack --stack-name sumologic-aws-otel-col-ecs-ec2 --template-body file://${TEMPLATE_PATH} --parameters ParameterKey=ClusterName,ParameterValue=${CLUSTER_NAME} --capabilities=CAPABILITY_NAMED_IAM --region=${AWS_REGION}
     ```
 
-1. To check if everything was deployed go to the [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if the **sumologic-aws-otel-col-ecs-ec2** stack status is **CREATE_COMPLETE**. <br/>  ![stack status.png](/img/traces/stack_status.png)
+1. To check if everything was deployed go to the [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if the **sumologic-aws-otel-col-ecs-ec2** stack status is **CREATE_COMPLETE**. <br/>  ![stack status.png](/img/apm/traces/stack_status.png)
 
-1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the Collector. Navigate to the **Tasks** tab and check if the task is running. <br/>  ![task status running.png](/img/traces/task-status-running.png)
+1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the Collector. Navigate to the **Tasks** tab and check if the task is running. <br/>  ![task status running.png](/img/apm/traces/task-status-running.png)
 
 1. Finally, select the **task** and click on the **Networking** tab. You'll find the information on where to send telemetry data.<br/>
   If you plan to send data to the ECS Collector service from a container running in the bridge network mode using the same host, you can use Docker Gateway IP - 172.17.0.1 on EC2 Linux in the application environment variables. For example:
@@ -111,9 +111,9 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
     ```bash
     aws cloudformation create-stack --stack-name sumologic-aws-otel-col-ecs-fargate --template-body file://${TEMPLATE_PATH} --parameters ParameterKey=ClusterName,ParameterValue=${CLUSTER_NAME} ParameterKey=SecurityGroups,ParameterValue=\"${SECURITY_GROUPS}\" ParameterKey=Subnets,ParameterValue=\"${SUBNETS}\" --capabilities=CAPABILITY_NAMED_IAM --region=${AWS_REGION}
     ```
-1. To check if everything was deployed, go to the [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if the **sumologic-aws-otel-col-ecs-fargate** stack status is **CREATE_COMPLETE**. <br/> ![ecs ec2 stack status.png](/img/traces/ecs-ec2-stack-status.png)
-1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the AWS OpenTelemetry Collector. Navigate to the **Tasks** tab and check if the task is running.<br/>  ![task status es2 ecs.png](/img/traces/task-status-es2-ecs.png)
-1. Finally, click on the task and expand the **Containers** list. In the **Network > Private IP** or **Public IP** sections, you will find the information on where to send telemetry data.<br/>  ![network ips.png](/img/traces/network-ips.png)
+1. To check if everything was deployed, go to the [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if the **sumologic-aws-otel-col-ecs-fargate** stack status is **CREATE_COMPLETE**. <br/> ![ecs ec2 stack status.png](/img/apm/traces/ecs-ec2-stack-status.png)
+1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the AWS OpenTelemetry Collector. Navigate to the **Tasks** tab and check if the task is running.<br/>  ![task status es2 ecs.png](/img/apm/traces/task-status-es2-ecs.png)
+1. Finally, click on the task and expand the **Containers** list. In the **Network > Private IP** or **Public IP** sections, you will find the information on where to send telemetry data.<br/>  ![network ips.png](/img/apm/traces/network-ips.png)
 
 ## Amazon Elastic Computing (EC2)
 
@@ -131,8 +131,8 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
     ```bash
     aws cloudformation create-stack --stack-name sumologic-otel-ec2 --template-body file://${TEMPLATE_PATH} --parameters ParameterKey=SumoOtlpHttpEndpointURL,ParameterValue=${SUMO_OTLP_HTTP_ENDPOINT_URL} ParameterKey=SSHKeyName,ParameterValue=${SSH_KEY_NAME} ParameterKey=InstanceAMI,ParameterValue=${AMI_ID} --capabilities=CAPABILITY_NAMED_IAM --region=${AWS_REGION}
     ```
-1. To check if everything was deployed, go to [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if **sumologic-otel-ec2** stack status is **CREATE_COMPLETE**. Deploying and configuring an EC2 instance can take even a few minutes. <br/>  ![stack check.png](/img/traces/stack-check.png)
-1. Go to [EC2 Instances](https://console.aws.amazon.com/ec2/v2/home#Instances:instanceState=running), select the proper region and check if the EC2 instance is running. Use public or private IP addresses as exporters endpoints.  <br/>  ![instance ips.png](/img/traces/instance-ips.png)
+1. To check if everything was deployed, go to [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if **sumologic-otel-ec2** stack status is **CREATE_COMPLETE**. Deploying and configuring an EC2 instance can take even a few minutes. <br/>  ![stack check.png](/img/apm/traces/stack-check.png)
+1. Go to [EC2 Instances](https://console.aws.amazon.com/ec2/v2/home#Instances:instanceState=running), select the proper region and check if the EC2 instance is running. Use public or private IP addresses as exporters endpoints.  <br/>  ![instance ips.png](/img/apm/traces/instance-ips.png)
 
 ## Sumo Logic Distribution for OpenTelemetry installation on EKS
 

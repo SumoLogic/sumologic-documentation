@@ -18,7 +18,7 @@ Dynatrace is a cutting-edge solution that offers full-stack monitoring, enabling
 * **Get Events** *(Enrichment)* - Lists events based on the parameters provided.
 * **Get Problems Daemon** *(Daemon)* - Automatically returns the latest problems.
 * **Get Problems** *(Enrichment)* - Lists the problems (and their details) observed by Dynatrace during a relative period of time.
-* **Get Security Advices** *(Enrichment)* - Lists recommendations related to security problems using AI.
+* **Get Security Advice** *(Enrichment)* - Lists recommendations related to security problems using AI.
 * **Mute Security Problem** *(Containment)* - Mutes the specified security problem. Muted problems are hidden from the list of problems in the UI.
 * **Search Logs** *(Enrichment)* - Lists all log records based on the parameters provided.
 * **Search Metrics** *(Enrichment)* - Lists all metrics based on the parameters provided.
@@ -140,7 +140,11 @@ To be authenticated to use the Dynatrace API, you need a valid access token. To 
    You can only access your token once upon creation. You cannot reveal it afterwards.
    :::
 
-## Dynatrace in Automation Service and Cloud SOAR
+## Configure Dynatrace in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

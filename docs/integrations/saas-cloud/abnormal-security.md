@@ -17,7 +17,10 @@ This app uses the Abnormal Security Source to collect [threat logs](https://app.
 
 ### Sample log messages
 
-```json title="Threat Logs"
+<details>
+<summary>Threat Logs</summary>
+
+```json 
 {
     "abxMessageId": -569518315069455395,
     "abxPortalUrl": "https://portal.abnormalsecurity.com/home/threat-center/remediation-history/-569518315069455395",
@@ -64,8 +67,12 @@ This app uses the Abnormal Security Source to collect [threat logs](https://app.
     ]
 }
 ```
+</details>
 
-```json title="Case Logs"
+<details>
+<summary>Case Logs</summary>
+
+```json
  {
     "cases": [
         {
@@ -79,6 +86,7 @@ This app uses the Abnormal Security Source to collect [threat logs](https://app.
     "total": 1
 }
 ```
+</details>
 
 ### Sample queries
 
@@ -112,17 +120,32 @@ _sourceCategory="Labs/AbnormalSecurity" sourcetype case_log
 
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up the Cloud-to-Cloud Integration Abnormal Security Source for the Abnormal Security app, follow the instructions provided [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/). These instructions will guide you through the process of creating a source using the Abnormal Security Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Abnormal Security app is properly integrated and configured to collect and analyze your Abnormal Security data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Abnormal Security app
+<CollectionConfiguration/>
+:::important
+Use the [Cloud-to-Cloud Integration for Abnormal Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Abnormal Security app is properly integrated and configured to collect and analyze your Abnormal Security data.
+:::
 
-This section has instructions for installing the Abnormal Security App for Sumo Logic and descriptions of each of the dashboards.
+### Create a new collector and install the app
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-<AppInstall2/>
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Abnormal Security dashboards​
 
@@ -142,7 +165,7 @@ The **Abnormal Security - Emails** dashboard provides insights into email threat
 
 The **Abnormal Security - Cases** dashboard provides an overview of security cases, showing their severity levels, trends over time, and detailed information on recent cases. It includes visualizations for case severity (High, Medium, and Low), a trend line of cases over time, and a table of the latest cases with descriptions. This dashboard aids in monitoring and prioritizing security incidents effectively.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Abnormal-Security/Abnormal-Security-Cases.png' alt="Abnormal-Security-Cases" />
 
-## Upgrading the Abnormal Security app (Optional)
+## Upgrade/Downgrade the Abnormal Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

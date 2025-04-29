@@ -14,7 +14,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access the SecOps and Dashboard screens, in the main Sumo Logic menu select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **SecOps & Dashboard**.
  
-
 The SecOps screen is where all your current tasks reside. Here you can approve, decline, and close tasks as well as customize this section to display all tasks assigned to a specific user or group.
 
 Select **Dashboard** in the upper left corner to see dashboards showing your tasks. For more information, see [Dashboards](#dashboards).
@@ -28,14 +27,23 @@ Incidents are events that require investigation and remediation. Incidents are a
 [**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access incidents, in the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.
 
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access incidents, in the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.
- 
 
-The **Incidents** screen lists all Cloud SOAR incidents. Clicking on any of the incident IDs will open the incident. You can configure what incidents are displayed by creating queries against available incident data and saving them as incident filters.
-
-<img src={useBaseUrl('img/cloud-soar/image140.png')} alt="Cloud SOAR incidents"/>
-
+:::sumo Micro Lesson
 Watch this micro lesson to learn more about incidents in Cloud SOAR.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/faxotvoq3j?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SOAR Incidents Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/GDWFGJ8JOqA?rel=0"
         width="854px"
         height="480px"
@@ -46,19 +54,21 @@ Watch this micro lesson to learn more about incidents in Cloud SOAR.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+--> 
 
-### Incident generation process
-
-Cloud SOAR generates incidents with an automated process:
- 1. An alert is received by Cloud SOAR via an integration.
- 1. [Automation rules](/docs/cloud-soar/automation/#automation-rules) process the alert. Behind the scenes, parsing rules break out the data into artifacts to be used as arguments in playbooks, such as IP addresses, usernames, host names, and so on.
- 1. The data is fed into an [incident template](/docs/cloud-soar/automation/#incident-templates).
- 1. [Playbooks](#playbooks) run against the data.
- 1. Cloud SOAR generates an incident.
-
-<img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-flow.png')} alt="Cloud SOAR automation flow" style={{border: '1px solid gray'}} width="800" />
-
+:::
 ### Filter incidents
+
+The **Incidents** screen lists all Cloud SOAR incidents. Clicking on any of the incident IDs will open the incident. You can configure what incidents are displayed by creating queries against available incident data and saving them as incident filters.
+
+The following criteria apply to the incidents list:
+* The last 500 incidents are displayed by default.
+* When no filters are applied, incidents that are marked as a favorite or not deleted will be displayed.
+* When a filter is applied, incidents marked as a favorite or that meet the filter criteria will be shown. Deleted incidents that satisfy either of these conditions will also be displayed.
+* If an incident is marked as a favorite, it will be displayed regardless of whether it has been deleted.
+* In **Show All**, all incidents meeting the above criteria will be displayed without the 500-item limit.
+
+<img src={useBaseUrl('img/cloud-soar/image140.png')} alt="Cloud SOAR incidents"/>
 
 You can configure what data is to be displayed on the **Incidents** screen by adjusting which columns are viewable. To adjust these columns, click the filter icon <img src={useBaseUrl('img/cloud-soar/filter-icon.png')} alt="Filter icon" width="25"/> in the top right corner of the screen. This displays a configuration screen that allows you to choose which data is displayed. To change where on the screen it should be displayed, click the **+** next to the selection and  drag and drop it in the order to be viewed. Once you have added and organized the columns, click **Apply**.
 
@@ -119,7 +129,20 @@ For example, an incident contains sensitive data in the notes section. If you wa
 To allow users to access incidents without being added as investigators, assign them the **Incident > Access all** role Cloud SOAR role capability. This privilege is useful for users who need to monitor all incidents.
 :::
 
-### Create a new incident manually
+### Incident generation 
+
+#### Automatically generate incidents
+
+Cloud SOAR generates incidents with an automated process:
+ 1. An alert is received by Cloud SOAR via an integration.
+ 1. [Automation rules](/docs/cloud-soar/automation/#automation-rules) process the alert. Behind the scenes, parsing rules break out the data into artifacts to be used as arguments in playbooks, such as IP addresses, usernames, host names, and so on.
+ 1. The data is fed into an [incident template](/docs/cloud-soar/automation/#incident-templates).
+ 1. [Playbooks](#playbooks) run against the data.
+ 1. Cloud SOAR generates an incident.
+
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-flow.png')} alt="Cloud SOAR automation flow" style={{border: '1px solid gray'}} width="800" />
+
+#### Create a new incident manually
 
 1. To create an incident manually, click the **+** button at the top of the **Incidents** screen. <br/><img src={useBaseUrl('img/cloud-soar/create-incident-button.png')} alt="Create incident button" style={{border: '1px solid gray'}} width="100"/>
 1. A new configuration box will be displayed that contains fields an investigator can utilize to develop their incident. Not all these fields are mandatory. The ones that are required will have an asterisk (`*`) marked next to them which indicates the field has a dependency within the Cloud SOAR platform. These required fields can have their dependencies and requirements adjusted with [custom fields](/docs/cloud-soar/overview/#custom-fields). <br/><img src={useBaseUrl('img/cloud-soar/incident-creation-screen.png')} alt="Incident Creation screen" style={{border: '1px solid gray'}} width="700"/>
@@ -310,8 +333,23 @@ To explore entities:
 
 Cloud SOAR's **Dashboards** section highlights the most important pieces of data to the user or investigator who is logged into the platform. This data is presented through the use of multiple widgets that you can add, remove, and customize to include all data relevant to your job functions and duties.
 
+:::sumo Micro Lesson
+
 Watch the following micro lesson to learn about dashboards.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/gqclutn3d1?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SOAR Dashboards &amp; KPI Reports Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/NRdtAvxhuOY?rel=0"
      width="854px"
      height="480px"
@@ -322,6 +360,9 @@ Watch the following micro lesson to learn about dashboards.
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
+
+:::
 
 ### Create a dashboard
 

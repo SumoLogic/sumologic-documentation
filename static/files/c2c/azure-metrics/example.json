@@ -1,0 +1,53 @@
+{
+    "api.version":"v1",
+    "source":
+    {
+       "sourceType": "Polling",
+       "name": "azure-metrics-example",
+       "contentType": "AzureMetrics",
+       "thirdPartyRef":{
+          "resources":[
+             {
+                "serviceType": "AzureMetrics",
+                "path": {
+                   "type": "AzureMetricsPath",
+                   "environment": "Azure",
+                   "limitToRegions": ["westus2", "westeurope", "southeastasia"],
+                   "limitToNamespaces": ["Microsoft.Storage/storageAccounts", "Microsoft.Compute/virtualMachines", "Microsoft.EventHub/Namespaces"],
+                   "tagFilters":[
+                      {
+                          "namespace":"Microsoft.Storage/storageAccounts",
+                          "tags":[
+                              {
+                                  "name":"Cluster",
+                                  "values":["cloudcollector", "cocoa"]
+                              },
+                              {
+                                  "name":"Deployment",
+                                  "values":["prod"]
+                              }
+                          ]
+                      },
+                      {
+                          "namespace":"Microsoft.Compute/virtualMachines",
+                          "tags":[
+                              {
+                                  "name":"owner",
+                                  "values":["infra"]
+                              }
+                          ]
+                      }
+                  ]
+                },
+                "authentication": {
+                   "type": "AzureClientSecretAuthentication",
+                   "tenantId": "11111111-2222-3333-4444-555555555555",
+                   "clientId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeeee",
+                   "clientSecret": "*****"
+                }
+             }
+          ]
+       },
+       "scanInterval": "300000"
+    }
+ }

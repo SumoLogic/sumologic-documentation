@@ -86,7 +86,7 @@ For more information, see [About Metrics Rules](/docs/metrics/metric-rules-edito
 
 ## Metrics queries
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access Metrics Explorer, click the **+ New** button at the top of the screen and select **Metrics**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access Metrics Explorer, go to the **Home** screen and select **Metrics**. 
 
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access Metrics Explorer, in the main Sumo Logic menu select **Observability**, and then under **Metrics** select **Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**. 

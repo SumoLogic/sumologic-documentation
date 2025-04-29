@@ -11,31 +11,43 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/oracle.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The [Oracle](https://docs.oracle.com/database/121/CNCPT/intro.htm#CNCPT001) app is a logs based app. Preconfigured dashboards and searches provide insight into the listeners, sys/xml audit logs, alerts, performance, and security.
+The [Oracle](https://docs.oracle.com/database/121/CNCPT/intro.htm#CNCPT001) app is a logs and metrics based app. Preconfigured dashboards and searches provide insight into the listeners, audit logs (traditional - sys/xml and unified), performance, and security. It also gives insight around count of rollback, commits, transaction, process, session, hard parse, and DML locks.
 
 This app is tested with the following Oracle versions:
 
-- Non-Kubernetes: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production - Version 19.3.0.0.0
+- Non-Kubernetes: Oracle Database 23 Release 23.4.0.24.05.
 
-Oracle logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+Oracle logs, such as listener, alert, and traditional audit logs (Oracle version 19c and below) are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) whereas, unified audit logs (Oracle version 21c and above) are collected through [syslog](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/syslogreceiver) for the Linux environment and [windowseventlog](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/windowseventlogreceiver/) receiver for windows environment.
+
+Metrics are collected through [Oracledb receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/oracledbreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Schematics.png' alt="Schematics" />
-
-## Log types
-
-- Alert Logs
-- Listener Logs
-- Audit Logs
 
 ## Fields creation in Sumo Logic for Oracle
 
 Following are the tags which that be created as part of Oracle App install if not already present. 
 
-- `db.cluster.name`. User configured. Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- `db.system`. Has a fixed value of **oracle**.
 - `sumo.datasource`. Has a fixed value of **oracle**.
+- `db.system`. Has a fixed value of **oracle**.
+- `db.cluster.name`. User configured. Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- `db.node.name`. Has the value of host name of the machine which is being monitored.
 
 ## Prerequisites
+
+### For metrics collection
+
+You will need to assign these permissions to the database user used to fetch metrics:
+
+```
+GRANT SELECT ON V_$SESSION TO <username>;
+GRANT SELECT ON V_$SYSSTAT TO <username>;
+GRANT SELECT ON V_$RESOURCE_LIMIT TO <username>;
+GRANT SELECT ON DBA_TABLESPACES TO <username>;
+GRANT SELECT ON DBA_DATA_FILES TO <username>;
+GRANT SELECT ON DBA_TABLESPACE_USAGE_METRICS TO <username>;
+```
+
+### For logs collection
 
 Here are the steps required to configure log collection for Oracle running on a non-Kubernetes environment.
 
@@ -44,7 +56,7 @@ Here are the steps required to configure log collection for Oracle running on a 
 * [Set up Oracle performance metrics script](#performance-metrics-script-setup)
 * [Configure three local log file Sources](#step-2-configure-integration)
 
-### Enable Oracle logging
+#### Enable Oracle logging
 
 If logging is not enabled, you can configure it by following the steps below.
 
@@ -54,11 +66,11 @@ If logging is not enabled, you can configure it by following the steps below.
    lsnrctl command  [listener_name]
    lsnrctl set log_status on
    ```
-- **Audit Log**. Follow [this](https://docs.oracle.com/cd/E11882_01/server.112/e10575/tdpsg_auditing.htm#TDPSG50000) guide to enable Audit Logs.
+- **Audit Log**. Traditional auditing is deprecated in Oracle Database 21c. If you are using version 19c or below follow [this](https://docs.oracle.com/cd/E11882_01/server.112/e10575/tdpsg_auditing.htm#TDPSG50000) guide to enable Audit Logs. For version 21c and above, follow [this](https://docs.oracle.com/en/database/oracle/oracle-database/19/dbseg/administering-the-audit-trail.html#GUID-662AA54B-D878-4B78-94D3-733256B3F37C) to enable exporting for unified audit logs through syslog for Oracle on Linux and windows event logs for Oracle on Windows.
 
-### Verify local logs file directories and path
+#### Verify local logs file directories and path
 
-- **Oracle Alert Logs**. For 11g and later releases (12c, 18c, 19c). By default, Oracle logs are stored in
+- **Oracle Alert Logs**. For 11g and later releases (12c, 18c, 19c, 21c, 23c). By default, Oracle logs are stored in
 `$ORACLE_BASE/diag/rdbms/$DB_UNIQUE_NAME/$ORACLE_SID/trace/`. The default directory for log files is stored in `BACKGROUND_DUMP_DEST` parameter. You can query the value of `BACKGROUND_DUMP_DEST`, an initialization parameter, where you can find Oracle alert log by executing the command below:
   ```sh
   SQL > show parameter background_dump_dest;
@@ -67,18 +79,23 @@ If logging is not enabled, you can configure it by following the steps below.
   ```
   [oracle@sumolab alert]$ lsnrctl status
   ```
-- **Oracle Audit Logs**. By default, Oracle logs are stored in
-  ```
-  $ORACLE_BASE/app/oracle/admin/orcl/adump
-  ```
+- **Oracle Audit Logs**. 
+  - **For Oracle version 19c and below**. By default, Oracle logs are stored in
+    ```
+    $ORACLE_BASE/app/oracle/admin/orcl/adump
+    ```
+    The default directory for log files is stored as the value of `audit_file_dest`. In order to display it, run the following command: `SQL> show parameter audit`.
 
-The default directory for log files is stored as the value of `audit_file_dest`. In order to display it, run the following command: `SQL> show parameter audit`.
+    Audit Logs should be in either `XML`, `EXTENDED`, or `{{OS }}` format for the app to work.
 
-Audit Logs should be in either `XML`, `EXTENDED`, or `{{OS }}` format for the app to work.
+    The location of these logs will be required when you set up the app through the app catalog.
 
-The location of these logs will be required when you set up the app through the app catalog.
+  - **For Oracle version 21c and above**. Based on the [Unified audit policy](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/AUDIT-Unified-Auditing.html) configured, audit logs exported will be directly ingested to Sumo Logic using syslog or windows event log. 
+For the Linux environment, instead of redirecting audit logs to a file, we need to redirect them to the local port. In the next step, the OTel collector can be configured to listen to this port and then send the log to Sumo Logic. This can be done using the below configuration in the `rsyslog.conf`. : 
+  ```local7.info @@127.0.0.1:10514```
+  This will redirect all the unified audit logs to localhost port 10514.
 
-### Performance Metrics Script Setup
+#### Performance metrics script setup
 
 To set up the performance metrics script on Linux and Windows for the Oracle app:
 
@@ -163,21 +180,28 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 ### Step 2: Configure integration
 
 In this step, you will configure the yaml required for Oracle Collection.
+Below are the inputs required:
 
-Path of the log file configured to capture oracle logs needs to be given here. Here is the list of logs which are required by the application. 
+- **`Alert Logs`**. Path of the log file configured to capture oracle alert logs.
+- **`Listener Logs`**. Path of the log file configured to capture oracle listener logs .
+- **`Audit Logs`**. 
+  - For **Traditional Audit Logs**, path of the log file is configured to capture oracle audit logs.
+  - For **Unified Audit Logs**, you need to select the OS where the Oracle is setup - Windows or Linux. For Oracle on Windows machine, no parameter is required. Only respective event IDs will be ingested. For the Linux environment, you need to provide the **port** (configured in pre-requisite steps for the Linux environment) which the syslog receiver should listen to for sending the logs to Sumo Logic.
+- **`Performance metric script-based logs`**. Path of the log file configured to capture log generated through script can be configured in other logs.
+- **`Endpoint (no default)`**. Endpoint used to connect to the OracleDB server. Must be in the format of `host:port`. 
+- **`username`**. Username for the OracleDB connection.
+- **`password`**. Password for the OracleDB connection. Special characters are allowed.
+- **`service`**. OracleDB Service that the receiver should connect to.
+- **`Collection Interval`**. You can specify at what interval should the metrics be collected.
 
-- Alert Logs
-- Listener Logs
-- Audit Logs
-- Performance metric script-based logs
-
-You can get the location of these logs by following the instructions in the prerequisite step.
+You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
 
 Once the details are filled, click on the **Download YAML File** button to get the yaml file.
+For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs to Sumo Logic
+### Step 3: Send logs and metrics to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
@@ -259,9 +283,9 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample log messages
+## Sample log message
 
-Sample Log Message in Non-Kubernetes environment:
+Sample log message in Non-Kubernetes environment:
 
 ```sh title="Time"
 20-Jan-2023 11:02:56 * (CONNECT_DATA=(CID=(PROGRAM=null)(HOST=__jdbc__)(USER=null))(SERVICE_NAME=sumo.cmdb01.com)) * (ADDRESS=(PROTOCOL=TCP)(HOST=124.243.25.82)(PORT=56486)) * establish * sumo.cmdb01.com * 12514
@@ -269,9 +293,9 @@ Sample Log Message in Non-Kubernetes environment:
 TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
 ```
 
-## Sample queries
+## Sample log query
 
-This sample Query is from the **Oracle - Overview** dashboard > **DB Connection** panel.
+This sample query is from the **Oracle - Overview** dashboard > **DB Connection** panel.
 
 ```sql title="Query String"
  %"db.cluster.name"=* %"deployment.environment"=* %"sumo.datasource"=oracle establish ("SID=" or "SERVICE_NAME=")  | json "log" as _rawlog nodrop 
@@ -283,7 +307,26 @@ This sample Query is from the **Oracle - Overview** dashboard > **DB Connection*
 | count as %"ConnectionCount"
 ```
 
+## Sample metrics
+
+```json
+{"queryId":"A","oracledb.instance.name":"localhost:1521/FREE","_source":"oracle/oracledb","cloud.platform":"aws_ec2","_metricId":"lZCclGCpxjgi0_E4r4v5ww","host.image.id":"ami-000314be38df8042e","_sourceName":"oracle","cloud.availability_zone":"us-east-1b","host.id":"i-05ce9f3824aa73d10","host.group":"anemaoracle","os.type":"linux","sumo.datasource":"oracle","db.system":"oracle","db.node.name":"ip-10-0-29-37","cloud.account.id":"956882708938","_sourceCategory":"OTC Metric Input","deployment.environment":"anemaoracle","_contentType":"OpenTelemetry","tablespace_name":"SYSTEM","host.type":"m5.large","host.name":"ip-10-0-29-37","metric":"oracledb.tablespace_size.usage","_collectorId":"00005AF310D08C7C","_sourceId":"0000000000000000","unit":"By","db.cluster.name":"test","cloud.region":"us-east-1","cloud.provider":"aws","_sourceHost":"ip-10-0-29-37","_collector":"ip-10-0-29-37","max":1104150528,"min":1104150528,"avg":1104150528,"sum":3312451584,"latest":1104150528,"count":3}
+```
+
+## Sample metrics query
+
+This sample query is from the **Oracle - Overview** dashboard > **Session Count** panel.
+
+```sql title="Session Count"
+sumo.datasource=oracle metric=oracledb.sessions.usage  deployment.environment=*  db.cluster.name=* db.node.name=* | sum 
+```
+
 ## Viewing Oracle dashboards
+
+:::note
+- **Oracle - Sys Audit Log**, **Oracle - Sys Audit Log - Logon Analysis**, **Oracle - XML Audit Log - Logon Analysis**, and **Oracle - XML Audit Log - SQL Statement Analysis** dashboards will be populated only when collecting logs for Oracle database version 19c and below.
+- **Oracle - Unified Audit Syslogs** dashboard will populate for unified audit log collected for Oracle database version 21c and above.
+:::
 
 ### Overview
 
@@ -504,3 +547,38 @@ Maximum Wait Time (sec) by User. A line chart that shows, for each user, the ses
 Top Session Wait Time Events. A table that shows the top 10 event types associated with session waits, and the count of each event type.
 
 Recent Jobs in the database. A table of information about recent database jobs, including when each job ran, low long it ran, and when it will next run.
+
+
+### Unified Audit Syslog
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Unified-Audit-Syslog.png' alt="Monitor Performance by DB Script" />
+See information derived from the syslog audit trail, including successful and failed activities, successful and failed logon attempts. Additionally, this dashboard also provides insight around logon status trend, top current, and database users. This dashboard work with unified audit logs exported from both Windows and Linux environment.
+
+### Performance Details
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Performance-Details.png' alt="Monitor Performance by DB Script" />
+The Oracle - Performance Details dashboard gives insight about - count of rollback, commits, transaction, process, session. 
+In addition to this it helps monitoring physical and logical reads, PGA allocated. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md). 
+
+## Create monitors for Oracle app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Oracle alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Oracle - Admin Restricted Command Execution` | This alert is triggered when the Listener cannot resolve a command. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Archival Log Creation` | This alert is triggered when an archive log creation error occurs. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Block Corruption` | This alert is triggered when corrupt data blocks are detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Database Crash` | This alert is triggered when the database crashes. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Deadlock` | This alert is triggered when deadlocks are detected. | Count `>` 5 | Count `<=` 5 |
+| `Oracle - Fatal NI Connect Error` | This alert is triggered when a "Fatal NI connect error" is detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Internal Errors` | This alert is triggered when internal errors are detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Login Fail` | This alert is triggered when a user login failure is detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Possible Inappropriate Activity` | This alert is triggered when possible inappropriate activity is detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - TNS Error` | This alert is triggered when TNS operation errors are detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Unable To Extend Tablespace` | This alert is triggered when tablespace extension failures are detected. | Count `>` 0 | Count `<=` 0 |
+| `Oracle - Unauthorized Command Execution` | This alert is triggered when a user is not authorized to execute a requested listener command in an Oracle instance. | Count `>` 0 | Count `<=` 0 |

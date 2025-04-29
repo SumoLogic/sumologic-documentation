@@ -376,7 +376,7 @@ _sourceCategory=search "error while retrying to deploy index"
 
 ### Check Malicious Activity with Subquery
 
-The following search allows a security analyst how to track logs related to a malicious IP address that was flagged by Amazon GuardDuty and also by a CrowdStrike Threat feed. The subquery is returning the field `src_ip` with the IP addresses deemed as threats to the parent query, note that the keywords option was not used so the parent query will expect a field src_ip to exist. The results will include logs from the weblogs sourceCategory that have a `src_ip` value that was deemed a threat from the subquery.
+The following search allows a security analyst to track logs related to a malicious IP address that was flagged by Amazon GuardDuty and also by a [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) feed. The subquery is returning the field `src_ip` with the IP addresses deemed as threats to the parent query, note that the keywords option was not used so the parent query will expect a field src_ip to exist. The results will include logs from the weblogs sourceCategory that have a `src_ip` value that was deemed a threat from the subquery.
 
 ```sql
 _sourceCategory=weblogs
@@ -389,6 +389,19 @@ _sourceCategory=weblogs
 | where threatlevel = "high"
 | compose src_ip]
 ```
+<!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+```sql
+_sourceCategory=weblogs
+[subquery:_sourceCategory="Labs/SecDemo/guardduty" "EC2 Instance" "communicating on an unusual server port 22"
+| json field=_raw "service.action.networkConnectionAction.remoteIpDetails" as remoteIpDetails
+| json field=_raw "service.action.networkConnectionAction.connectionDirection" as connectionDirection
+| where connectionDirection = "OUTBOUND"
+| json field=remoteipdetails "ipAddressV4" as src_ip
+| threatlookup singleIndicator threat| if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "Unknown")))) as malicious_confidence
+| where malicious_confidence = "high"
+| compose src_ip]
+```
+-->
 
 ### Reference data from child query using save and lookup
 

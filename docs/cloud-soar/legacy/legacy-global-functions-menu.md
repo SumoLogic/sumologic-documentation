@@ -41,20 +41,6 @@ CBR solves new problems by adapting previously successful solutions to similar p
 
 ARK assists operators during investigations in two main areas: Automatically suggesting/prompting next actions/tasks in Playbooks (until version 5) and Correlation/ Deduplication of similar threats into 1 unique incident.
 
-Watch this micro lesson to learn more about ARK.
-
-<Iframe url="https://www.youtube.com/embed/mUpaTFtKAMM?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-
 #### Enable ARK
 
 To enable ARK, click the cog icon, then **Settings** > **ARK** and make sure you have it set to **ON**.

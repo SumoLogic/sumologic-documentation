@@ -1,7 +1,6 @@
 ---
 id: help
 title: Help
-sidebar_label: Help
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -23,23 +22,6 @@ If you haven't found the answer to your question in our online help documentatio
 1. You'll be taken to Sumo Logic Support. Click **Submit a Request** to file a ticket.<br/>![Help - Support.png](/img/get-started/Help-Support.png)
 
 On this site, you can log in with your account to access resources like Sumo Logic announcements, release notes, Knowledge Base articles, and more. You can also access the Sumo Logic Community in order to ask questions of fellow users.
-
-:::sumo Contacting Support
-Depending on your account type, you can also log a ticket with our support engineers.
-
-<Iframe url="https://www.youtube.com/embed/9tpq1XFhcMU"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-:::
-
 
 ### Terms and conditions
 

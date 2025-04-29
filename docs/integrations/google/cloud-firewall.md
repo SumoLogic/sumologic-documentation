@@ -266,7 +266,7 @@ Presents information about egress traffic; including allowed and denied traffic 
 
 **Top Denied Destination IPs**. A table that lists the IP addresses to which the most requests were denied.
 
-## Upgrading the Google Cloud Firewall app (Optional)
+## Upgrade/Downgrade the Google Cloud Firewall app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

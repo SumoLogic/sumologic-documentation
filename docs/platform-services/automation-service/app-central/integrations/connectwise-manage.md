@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/connectwise-manage.png')} alt="connectwise-manage" width="100"/>
 
-***Version: 1.2  
-Updated: Sep 04, 2023***
+***Version: 1.3  
+Updated: Oct 29, 2024***
 
 Create, update, search, and gather ticket information from ConnectWise.
 
@@ -21,6 +21,12 @@ Create, update, search, and gather ticket information from ConnectWise.
 * **Add Notes To Ticket** (*Notification*) - Add a note to the ticket.
 * **List Ticket Notes** (*Notification*) - Gather all ticket notes.
 
+## Configure ConnectWise Manage in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * September 17, 2019 - First upload
@@ -30,3 +36,5 @@ Create, update, search, and gather ticket information from ConnectWise.
 	+ renamed Get Tickets action to List Tickets
 	+ added new actions: Add Notes To Ticket, List Ticket Notes
 	+ removed Get Tickets Daemon
+* October 29, 2024 (v1.3) Beta Release
+    + Added the "Priority" field to the Create Ticket and Update Ticket actions.

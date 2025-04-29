@@ -27,7 +27,10 @@ The Sumo Logic app for SentinelOne consumes Threats and Agents logs, refer to th
 
 ## Sample log messages
 
-```json title="Sample Threats Log Messages"
+<details>
+<summary>Sample Threats Log Messages</summary>
+
+```json
 {
     "agentDetectionInfo": {
         "accountId": "11384404",
@@ -203,8 +206,12 @@ The Sumo Logic app for SentinelOne consumes Threats and Agents logs, refer to th
     ]
 }
 ```
+</details>
 
-```json title="Sample Agents Log Messages"
+<details>
+<summary>Sample Agents Log Messages</summary>
+
+```json
 {
     "accountId": "113841926404",
     "accountName": "Health Lobby",
@@ -310,7 +317,7 @@ The Sumo Logic app for SentinelOne consumes Threats and Agents logs, refer to th
     "uuid": "be20d732fc87bd479e0a"
 }
 ```
-
+</details>
 
 ## Sample queries
 
@@ -336,11 +343,33 @@ _sourceCategory=sentinelone  uuid
 | count_distinct (id)
 ```
 
-## Installing the SentinelOne app
+## Collection configuration and app installation
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-<AppInstall2/>
+<CollectionConfiguration/>
+
+:::important
+Use the [Cloud-to-Cloud Integration for SentinelOne](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your SentinelOne app is properly integrated and configured to collect and analyze your SentinelOne data.
+:::
+
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing SentinelOne dashboards
 
@@ -372,7 +401,7 @@ With the information provided by this dashboard, security teams can effectively 
 
 <img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Analysis.png')} alt="SentinelOne-Threat-Analysis.png" width="600"/>
 
-## Upgrading the SentinelOne app (Optional)
+## Upgrade/Downgrade the SentinelOne app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

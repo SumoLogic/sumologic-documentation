@@ -176,7 +176,11 @@ Remarks:
 * If you do not specify a user using the &lt;username&gt;, &lt;sessionname&gt;, or sessionID parameters, a list of all users who are logged on to the server is returned. Alternatively, you can also use the query session command to display a list of all sessions on a server.
 * When query user returns information, a greater than (&gt;) symbol is displayed before the current session
 
-## PowerShell Tools in Automation Service and Cloud SOAR
+## Configure PowerShell Tools in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for PowerShell Tools integration and click on the row. The integration details will appear. Click on the **"+"** button to add new Resource.

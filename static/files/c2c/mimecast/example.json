@@ -1,25 +1,22 @@
 {
-  "api.version": "v1",
-  "source": {
-    "config": {
-      "name": "Mimecast",
-      "description": "Mimecast",
-      "category": "Mimecast",
-      "domain": "us-api.mimecast.com",
-      "application_key": "a32axxxx-xxxx-xxxx-xxxx-xxxxxxb189bd",
-      "application_id": "e399xxxx-xxxx-xxxx-xxxx-xxxxxx71eead",
-      "access_key": "uGAN9BAxxxxx-xxxxxxxl8Sp06XEdky6tY",
-      "secret_key": "zjRtw77K+7rtFYWxxxxxxxxxxxjB+DINTfzA",
-      "supported_apis": [
-        "SIEM",
-        "DLP",
-        "Audit Events",
-        "Hold Message List"
-      ]
-    },
-    "schemaRef": {
-      "type": "Mimecast"
-    },
-    "sourceType": "Universal"
-  }
+    "api.version": "v1",
+    "source": {
+        "config": {
+  "name": "Mimecast",
+  "description": "Mimecast",
+  "category": "Mimecast",
+  "clientID": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
+  "clientSecret": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
+  "dataCollection": [
+    "siem",
+    "dlp",
+    "auditEvent",
+    "holdMessageList"
+  ]
+},
+        "schemaRef": {
+            "type": "Mimecast"
+        },
+        "sourceType": "Universal"
+    }
 }

@@ -24,17 +24,14 @@ The Content Management API allows you to manage content in your organization’s
 | DE         | https://api.de.sumologic.com/docs/#tag/contentManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/contentManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/contentManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/contentManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/contentManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/contentManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/contentManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/contentManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Manage Content
-
--->

@@ -24,13 +24,12 @@ The Field Management API allows you to configure fields from HTTP endpoints. Fie
 | DE         | https://api.de.sumologic.com/docs/#tag/fieldManagementV1  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/fieldManagementV1  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/fieldManagementV1 |
-| IN         | https://api.in.sumologic.com/docs/#tag/fieldManagementV1  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/fieldManagementV1  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/fieldManagementV1  |
 | US1        | https://api.sumologic.com/docs/#tag/fieldManagementV1     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/fieldManagementV1 |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
@@ -39,5 +38,3 @@ The Field Management API allows you to configure fields from HTTP endpoints. Fie
     * Manage Fields
     * View Field Extraction Rules
     * View Fields
-
--->
