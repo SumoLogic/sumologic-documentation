@@ -35,6 +35,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about AbuseIPDB, see [AbuseIPDB documentation](https://www.abuseipdb.com/api.html).
+
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation). 
 2. After the list of the integrations appears, search for the integration and click on the row.
 3. The integration details will appear. Click on the **"+"** button to add new Resource.

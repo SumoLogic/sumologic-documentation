@@ -27,6 +27,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about AWS CloudFront, see [CloudFront documentation](https://docs.aws.amazon.com/cloudfront/).
+
 ## Change Log
 
 * November 10, 2022 - First upload
