@@ -35,7 +35,7 @@ In the Kubernetes environment, we use our Sumo Logic Kubernetes collection. You 
 
 Configuring log and metric collection for the Nginx Ingress app includes the following tasks:
 
-### Step 2: Configure Nginx Ingress Logs and Metrics Collection
+### Configure Nginx Ingress Logs and Metrics Collection
 
 Sumo Logic supports the collection of logs and metrics data from Nginx Ingress in Kubernetes environments.
 

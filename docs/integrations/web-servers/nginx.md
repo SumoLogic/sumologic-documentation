@@ -50,11 +50,9 @@ Learn to set up NGINX for non-Kubernetes Sources.
 :::
 
 
-## Collecting logs for the Nginx app
+## Configure Nginx Logs and Metrics Collection
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx. The following tasks are required:
-
-### Step 2: Configure Nginx Logs and Metrics Collection
 
 Sumo Logic supports the collection of logs and metrics data from Nginx in both Kubernetes and non-Kubernetes environments. Please click on the appropriate links below based on the environment where your Nginx farms are hosted.
 
@@ -135,7 +133,7 @@ Modifying these values will cause the Sumo Logic apps to not function correctly.
 4. Verify metrics in Sumo Logic.
 
 
-#### Configure Logs Collection
+### Configure Logs Collection
 
 This section explains the steps to collect Nginx logs from a Kubernetes environment.
 
@@ -196,7 +194,7 @@ Telegraf uses the[ Nginx input plugin](https://github.com/influxdata/telegraf/tr
 
 The process to set up collection for Nginx data is done through the following steps.
 
-#### Configure Logs Collection
+### Configure Logs Collection
 
 Nginx app supports the default access logs and error logs format.
 
