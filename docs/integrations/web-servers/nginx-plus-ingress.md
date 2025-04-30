@@ -185,7 +185,7 @@ The **Nginx Plus Ingress - Web Server Operations** dashboard provides a high-lev
 
 Use this dashboard to:
 * Gain insights into Client and Server Responses on the Nginx Server. This helps you identify errors in the Nginx Server.
-* To identify geo-locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
+* To identify geolocations of all Client errors. This helps you identify client locations causing errors and helps you to block client IPs.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Web-Server-Operations.png')} alt="Nginx Plus Ingress" />
 
