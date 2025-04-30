@@ -1,4 +1,4 @@
-To set up the source in the existing collector and install the app, do the following:
+To install the app, do the following:
 :::note
     Next-Gen App: To install or update the app, you must be an account administrator or a user with Manage Apps, Manage Monitors, Manage Fields, Manage Metric Rules, and Manage Collectors capabilities depending upon the different content types part of the app.
 :::
@@ -8,11 +8,9 @@ To set up the source in the existing collector and install the app, do the follo
     :::note
     Sometimes this button says **Add Integration**.
     :::
-1. In the **Set Up Collection** section of your respective app, select **Use an existing Collector**.
-1. From the **Select Collector** dropdown, select the collector that you want to set up your source with and click **Next**.
-1. Configure the source as specified in the `Info` box above, ensuring all required fields are included.
+1. Click **Next** in the **Setup Data** section.
 1. In the **Configure** section of your respective app, complete the following fields.
-    1. **Field Name**. If you already have collectors and sources set up, select the configured metadata field name (eg _sourcecategory) or specify other custom metadata (eg: _collector) along with its metadata **Field Value**.
+    1. **Is K8S deployment involved**. Specify if resources being monitored are partially or fully deployed on Kubernetes (K8s)
 1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 **Post-installation**
