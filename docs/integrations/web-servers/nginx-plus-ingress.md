@@ -116,9 +116,9 @@ Use the following Parse Expression:
 
 ## Installing the Nginx Plus Ingress app
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Nginx Plus Ingress Dashboards
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';

@@ -404,7 +404,7 @@ Additionally, if you're using Apache in the Kubernetes environment, the followin
 * `pod_labels_webserver_system`
 * `pod_labels_webserver_farm`
 
-## Viewing Apache dashboards​
+## Viewing Apache dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 

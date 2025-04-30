@@ -262,7 +262,7 @@ This section provides instructions for configuring metrics collection for the Su
 </TabItem>
 </Tabs>
 
-### Field extraction rules
+### Field Extraction rules
 
 Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, on creating them, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule).
 
@@ -294,9 +294,9 @@ For **FER for Error Logs**, use the following Parse Expression:
 
 This section has instructions for installing the Sumo app for Nginx Plus. The instructions assume you have already set up the collection as described above.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Nginx Plus dashboards
 

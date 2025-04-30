@@ -77,7 +77,7 @@ This section provides instructions for configuring logs and metrics collection f
 
 Configuring log and metric collection for the HAProxy app includes the following tasks:
 
-### Step 2: Configure collection for HAProxy
+### Configure collection for HAProxy
 
 Sumo Logic supports the collection of logs and metrics data from HAProxy in both Kubernetes and non-Kubernetes environments.
 
