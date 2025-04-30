@@ -208,7 +208,7 @@ The process to set up collection for Nginx data is done through the following st
 3. Select **Save**.
 4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 
-### Configure Logs Collection
+### Configure logs collection
 
 The Nginx app supports the default access logs and error logs format.
 
