@@ -194,6 +194,20 @@ Telegraf uses the[ Nginx input plugin](https://github.com/influxdata/telegraf/tr
 
 The process to set up collection for Nginx data is done through the following steps.
 
+### Configure metrics collection
+
+#### Set up a Sumo Logic HTTP source
+
+1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
+2. **Configure an HTTP Logs & Metrics source**:
+    1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
+    2. Select **HTTP Logs & Metrics.**
+        1. **Name.** (Required). Enter a name for the source.
+        2. **Description.** (Optional).
+    3. **Source Category** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/Webserver/Nginx/Metrics.
+3. Select **Save**.
+4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
+
 ### Configure Logs Collection
 
 The Nginx app supports the default access logs and error logs format.
@@ -258,21 +272,6 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 5. When the URL associated with the HTTP Source is displayed, copy the URL so you can add it to the service you are using, such as Fluentd.
 
 </details>
-
-### Configure metrics collection
-
-#### Set up a Sumo Logic HTTP source
-
-1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
-2. **Configure an HTTP Logs & Metrics source**:
-    1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
-    2. Select **HTTP Logs & Metrics.**
-        1. **Name.** (Required). Enter a name for the source.
-        2. **Description.** (Optional).
-    3. **Source Category** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/Webserver/Nginx/Metrics.
-3. Select **Save**.
-4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
-
 
 #### Set up Telegraf
 
