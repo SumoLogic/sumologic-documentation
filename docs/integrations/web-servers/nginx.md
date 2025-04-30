@@ -50,7 +50,7 @@ Learn to set up NGINX for non-Kubernetes Sources.
 :::
 
 
-## Configure Nginx Logs and Metrics Collection
+## Configure Nginx logs and metrics collection
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx. The following tasks are required:
 
