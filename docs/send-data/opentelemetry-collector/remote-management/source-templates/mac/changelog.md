@@ -5,13 +5,17 @@ sidebar_label: Changelog
 description: Changelog for Mac source template for OpenTelemetry.
 ---
 
+## [5.0.0] - 2025-04-30
+### Fixed
+- Validation for choosing at least one scraper when metric section is enabled.
+
 ## [4.0.2] - 2025-04-23
 ### Added
-- FAQ for source template
+- FAQ for source template.
 
 ## [4.0.1] - 2025-01-27
 ### Fixed
-- Schema validations
+- Schema validations.
 
 ## [4.0.0] - 2024-10-26
 
