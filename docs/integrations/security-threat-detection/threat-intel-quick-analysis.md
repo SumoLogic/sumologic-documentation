@@ -375,13 +375,13 @@ Once an indicator has been marked with a malicious confidence level, it continue
 **Data Type:** string<br/>
 **Description:** The point in the kill chain at which an indicator is associated. The kill chain list is also represented under the labels list in the JSON data structure.<br/>
 **Values:**  
-* reconnaissance—This indicator is associated with the research, identification, and selection of targets by a malicious actor.
-* weaponization—This indicator is associated with assisting a malicious actor create malicious content.
-* delivery—This indicator is associated with the delivery of an exploit or malicious payload.
-* exploitation—This indicator is associated with the exploitation of a target system or environment.
-* installation—This indicator is associated with the installation or infection of a target system with a remote access tool or other tool allowing for persistence in the target environment.
-* c2 (Command and Control)—This indicator is associated with malicious actor command and control.
-* actionOnObjectives—This indicator is associated with a malicious actor's desired effects and goals.
+   * reconnaissance—This indicator is associated with the research, identification, and selection of targets by a malicious actor.
+   * weaponization—This indicator is associated with assisting a malicious actor create malicious content.
+   * delivery—This indicator is associated with the delivery of an exploit or malicious payload.
+   * exploitation—This indicator is associated with the exploitation of a target system or environment.
+   * installation—This indicator is associated with the installation or infection of a target system with a remote access tool or other tool allowing for persistence in the target environment.
+   * c2 (Command and Control)—This indicator is associated with malicious actor command and control.
+   * actionOnObjectives—This indicator is associated with a malicious actor's desired effects and goals.
 
 ---
 #### `labels`
