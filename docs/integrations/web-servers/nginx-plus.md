@@ -19,7 +19,7 @@ The Nginx Plus app is a unified logs and metrics app that helps you monitor the 
 
 The Sumo Logic app for Nginx Plus assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
-All Dashboards (except the Error Logs Analysis dashboard) assume the Access log format. The Error Logs Analysis Dashboard assumes both access and error log formats, to correlate information between the two. For more details on Nginx/NginxPlus logs, see [Module ngx_http_log_module](https://nginx.org/en/docs/http/ngx_http_log_module.html).
+All Dashboards (except the Error Logs Analysis dashboard) assume the Access log format. The Error Logs Analysis Dashboard assumes both access and error log formats, to correlate information between the two. For more details on Nginx/Nginx Plus logs, see [Module ngx_http_log_module](https://nginx.org/en/docs/http/ngx_http_log_module.html).
 
 The Sumo Logic app for Nginx Plus assumes Prometheus format Metrics for Requests and Connections. For Nginx Plus Server metrics, the API Module from Nginx Configuration is used. For more details on Nginx Plus Metrics, see [Module ngx_http_api_module](https://nginx.org/en/docs/http/ngx_http_api_module.html).
 
