@@ -39,7 +39,7 @@ The Terraform script performs the following actions:
 
 ## Ensure Account Access
 
-1. Before you begin, make sure you have access to the Sumo logic console. You'll need the following permissions:
+1. Before you begin, make sure you have access to the Sumo Logic console. You'll need the following permissions:
    * Manage field extraction rules
    * View Fields
    * View field extraction rules
@@ -81,7 +81,7 @@ By default, all other parameters are set up to automatically collect logs and me
 
 **Parameter**: `sumologic_environment`<br/>
 **Required**: Yes <br/>
-**Description**: This is your Sumo Logic Deployment. Enter au, ca, de, eu, jp, us2, in, fed or us1. See <a href="/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security">Sumo Logic Endpoints</a> for more information.
+**Description**: This is your Sumo Logic Deployment. Enter au, ca, de, eu, jp, us2, fed, or us1. See <a href="/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security">Sumo Logic Endpoints</a> for more information.
 
 ---
 **Parameter**: `sumologic_access_id`<br/>
@@ -104,7 +104,7 @@ By default, all other parameters are set up to automatically collect logs and me
 
 **Parameter**: `apps_folder_installation_location` <br/>
 **Required**: No <br/>
-**Description**: Specify the location where the sumo logic apps/dashboards will be installed. Allowed values are "Admin Recommended Folder" and "Personal Folder".
+**Description**: Specify the location where the Sumo Logic apps/dashboards will be installed. Allowed values are "Admin Recommended Folder" and "Personal Folder".
 
 ---
 **Parameter**: `share_apps_folder_with_org` <br/>
@@ -114,12 +114,12 @@ By default, all other parameters are set up to automatically collect logs and me
 ---
 **Parameter**: `components_on_kubernetes_deployment` <br/>
 **Required**: No <br/>
-**Description**: Provide comma separated list of application components deployed on kubernetes environment for which sumologic resources needs to be created. Allowed values are "Memcached, Cassandra,elasticsearch,SQL server, MongoDB, MySQL, PostgreSQL, Redis, MariaDB, Couchbase, Oracle".
+**Description**: Provide comma separated list of application components deployed on kubernetes environment for which Sumo Logic resources needs to be created. Allowed values are "Memcached, Cassandra,elasticsearch,SQL server, MongoDB, MySQL, PostgreSQL, Redis, MariaDB, Couchbase, Oracle".
 
 ---
 **Parameter**: `components_on_non_kubernetes_deployment` <br/>
 **Required**: No <br/>
-**Description**: Provide comma separated list of application components deployed on non-kubernetes environment for which sumologic resources needs to be created. Allowed values are "Memcached, Cassandra, Elasticsearch, SQLserver, MongoDB, MySQL, PostgreSQL, Redis, MariaDB, Couchbase, Oracle".
+**Description**: Provide comma separated list of application components deployed on non-kubernetes environment for which Sumo Logic resources needs to be created. Allowed values are "Memcached, Cassandra, Elasticsearch, SQLserver, MongoDB, MySQL, PostgreSQL, Redis, MariaDB, Couchbase, Oracle".
 
 ### Configure Monitor parameters
 
@@ -183,7 +183,7 @@ As part of configuring the Application Components solution, we need to create fi
  export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
  export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
  ```
- Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+ Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: au, ca, de, eu, jp, us2, fed, or us1. For more information on Sumo Logic deployments, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 * Run fields.sh using this command:
  ```
  sh fields.sh
@@ -199,10 +199,10 @@ Deploy the Application Components Solution using the Sumo Logic Terraform Script
 Navigate to the directory [sumologic-solution-templates/application-components/](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components/) and execute the following commands:
 
 1. Run `terraform validate`. This will validate the configuration files in the directory.
-2. Run `terraform plan` to view the sumo resources like monitors,apps,fers,fields and hierarchy which will be created/modified by Terraform.
+2. Run `terraform plan` to view the Sumo Logic resources like monitors,apps,fers,fields and hierarchy which will be created/modified by Terraform.
 3. Run `terraform apply`.
 
-At the end of the console output, you should see two links, one for Apps Folder and the other for Monitors Folder. You can click on them to go to the sumo logic portal and view the dashboards and monitors. In case you missed noting down the links after deployment, you can run the `terraform show` command to see those output values again.
+At the end of the console output, you should see two links, one for Apps Folder and the other for Monitors Folder. You can click on them to go to the Sumo Logic portal and view the dashboards and monitors. In case you missed noting down the links after deployment, you can run the `terraform show` command to see those output values again.
 
 
 ## Post Installation
@@ -291,6 +291,6 @@ See the [RESOURCES.md file](https://github.com/SumoLogic/sumologic-solution-temp
 #### If I already have data flowing into Sumo Logic, how do I migrate to this solution?
 Existing customers have to perform the below steps:
 1. Add `db_cluster_address` and `db_cluster` port in their telegraf configuration as mentioned in the respective component’s collection doc. This is for tagging metrics.
-2. Add `db_cluster_address` and `db_cluster_port` in the sumologic source for logs as mentioned in the respective component’s collection doc.
+2. Add `db_cluster_address` and `db_cluster_port` in the Sumo Logic source for logs as mentioned in the respective component’s collection doc.
 3. Import the existing fields using fields.sh script in Step 4 and follow Step 1, 2, 3, and 5 under [Installation](#installation) to deploy the solution.
 4. The above step will deploy new dashboards and new monitors, so after migrating your custom content to these new dashboards, you can delete old FERs and dashboards.

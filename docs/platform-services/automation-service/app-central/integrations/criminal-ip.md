@@ -14,7 +14,6 @@ Criminal IP is a cybersecurity search engine that uses AI technology to scan glo
 
 ## Actions
 
-
 * **Scan Domain** *(Enrichment)* - Initiating a new scan of a specific domain.
 * **Get IP Malicious Info** *(Enrichment)* - Inquire whether a specific IP address is a malicious IP address.
 * **Get IP Suspicious Info** *(Enrichment)* - Retrieve data suspected to be malicious, which is associated with a specific IP address.
@@ -26,7 +25,11 @@ Criminal IP is a cybersecurity search engine that uses AI technology to scan glo
 * **Get Employee Identity Analysis** *(Enrichment)* - Retrieve search results of banners using filters.
 * **Get IP Report Summary** *(Enrichment)* - Retrieve summarized data, such as issues, risks, open ports, connections, and detection information for a specific IP address.
 
+## Configure Criminal IP in Automation Service and Cloud SOAR
 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 ## Change Log
 

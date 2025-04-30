@@ -14,6 +14,10 @@ import TerraformExample from '!!raw-loader!/files/c2c/azure-event-hubs/example.t
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::important
+From April 30, 2025, Sumo Logic will no longer support adding a source using this Azure Event Hubs source. Existing Azure Event Hubs source configurations will still work for some time, but we recommend you [migrate](/docs/send-data/collect-from-other-data-sources/azure-monitoring/azure-event-hubs-source-migration/) to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+:::
+
 :::note
 Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method supports a throughput limit of 1MB/s (86GB/day) per named Event Hub egress rate. If you require higher throughput, we recommend using [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source).
 :::
@@ -69,6 +73,9 @@ To configure an Azure Event Hubs Source:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collectors page, click **Add Source** next to a **HostedCollector**.
+:::
+    Make sure the hosted collector is tagged with tenant_name field for the out of the box Azure apps to work. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+:::
 1. Search for and select **Azure Event Hubs**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.

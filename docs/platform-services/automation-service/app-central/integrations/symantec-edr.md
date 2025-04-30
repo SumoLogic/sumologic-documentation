@@ -18,6 +18,12 @@ Symantec EDR detects and exposes suspicious network activity, alerts to potentia
 * **Get Events For Incidents** (*Enrichment*) - Get Incident Related Events.
 * **Process Lineage Events** (*Enrichment*) - Retrieve process lineage events for a specific incident.
 
+## Configure Symantec EDR in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * October 27, 2021 - First upload

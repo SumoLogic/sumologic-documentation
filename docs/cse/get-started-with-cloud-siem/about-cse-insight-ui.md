@@ -74,13 +74,17 @@ You can use the **Filters** area near the top of the page to narrow down the ins
 * Status
 * Tags
 
-### Multi-insights list page
+### View insights in child organizations
 
-If you are logged in to a parent organization with child organizations that also use Cloud SIEM, the insights list page shows all insights across all your child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
+If you manage a parent organization with child organizations that also use Cloud SIEM, you can see a list of all insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
 
 This multi-insights list page (also known as a "federated" page) shows insights just as in a normal [insights list page](#insights-list-page). However, when you click an insight on the page, it opens the insight's details in the child organization's UI. You can also use the [board view](#board-view) on the multi-insights page to move insights to different statuses.
 
-To be able to see insights in child organizations, [add child organizations](/docs/manage/manage-subscription/create-manage-orgs/) that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list. 
+To be able to see insights in child organizations, [add child organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list.
+
+<!--
+For more information, see [Multi-insights list page in Cloud SIEM](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps/#multi-insights-list-page-in-cloud-siem).
+-->
 
 ## Insight details page
 

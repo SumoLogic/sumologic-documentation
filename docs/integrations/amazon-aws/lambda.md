@@ -134,7 +134,7 @@ account={{account}} region={{region}} Namespace={{namespace}}
 ```
 
 ```sql title="Error (Count)(CloudWatch metric Based)"
-namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | su
+namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | sum
 ```
 
 ## Collecting logs for the AWS Lambda App
@@ -383,7 +383,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via Sumo Logic [threat intelligence](/docs/security/threat-intelligence/). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
 * Identify known malicious IPs that are access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward

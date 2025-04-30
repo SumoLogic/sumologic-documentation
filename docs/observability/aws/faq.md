@@ -21,7 +21,7 @@ See [About the Observability Solution](/docs/observability/about.md) to learn mo
 
 ## What is AWS Observability?
 
-Our AWS Observability solution enables you to view your entire AWS environment in a single pane of glass, while seamlessly surfacing anomalous events of interest correlated with application incidents. It includes the AWS Observability Solution and Root Cause Explorer:
+Our AWS Observability solution enables you to view your entire AWS environment in a single pane of glass, while seamlessly surfacing anomalous events of interest correlated with application incidents.
 
 * **AWS Observability Solution** - Sumo Logic’s AWS Observability solution pulls in data across key AWS services and accounts to give a unified view of AWS environments. Easily navigate from overview dashboards into account, region, availability zone, or service specific views. Intuitive navigation ensures teams can quickly resolve issues, minimize downtime, and improve system availability. See [About AWS Observability](/docs/observability/aws/about.md).
 
@@ -30,8 +30,6 @@ See [AWS Observability Apps](/docs/observability/aws/integrations) for detailed
 ### What AWS services are supported?
 
 Sumo Logic AWS Observability supports the following AWS services: EC2, ECS, RDS, ElastiCache, API Gateway, Lambda, DynamoDB, Application ELB, Classic ELB, Amazon SNS, Amazon SQS, and Network ELB.
-
-Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS.
 
 ### What is AWS Observability centralized/hub page?
 
@@ -162,11 +160,6 @@ Currently, we support [OpenTelemetry 0.7.0](https://docs.aws.amazon.com/AmazonCl
 
 EC2 dashboards are based on Host Metrics. 
 
-Root Cause Explorer supports both EC2 and Host Metrics:
-
-* Host Metrics: The namespace appears as "Host' in the namespace dropdown.
-* EC2: Through CloudWatch, it appears as "AWS/EC2".
-
 Host Metrics use a different format than CloudWatch. They can also refer
 to non-AWS in general, which is why Sumo Logic refers to them
 generically as Host Metrics.
@@ -189,41 +182,3 @@ see 
 ### Can load balancers be filtered as part of CloudFormation template setup?
 
 At this time, you cannot filter load balancers, such as sending specific ALBs to the AWS Observability solution.
-
-
-## Root Cause Explorer
-
-See [Root Cause Explorer](/docs/observability/root-cause-explorer.md) for more details.
-
-### What AWS services does it support?
-
-Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS. These services include the following:
-
-* AWS CloudWatch metrics for ALB, NLB, API Gateway, EC2, EBS, Lambda, ECS, RDS, DynamoDB, ElastiCache, Autoscaling groups
-* AWS Simple Notification Service (SNS)
-* AWS Simple Queueing Service (SQS)
-* AWS X-ray
-* Kubernetes metrics and hierarchy
-* OpenTelemetry metrics
-* Space Map
-
-### Who can use the new features?
-
-Root Cause Explorer is available for Cloud Flex Enterprise, Cloud Flex Credits Enterprise Operations, and Cloud Flex Credits Enterprise Suite account plans.
-
-### How does Root Cause Explorer work? 
-
-When issues occur in infrastructure and services, on-call staff
-typically triage an incident by attempting to correlate spikes at
-various levels in their application stack to analyze problem root cause
-and recovery options. At its core, Root Cause Explorer mimics this
-workflow with a combination of machine-learning and rules curated by
-AWS, Kubernetes, Tracing and troubleshooting experts. 
-
-It computes *Events of Interest (EOIs)* in AWS CloudWatch metrics, Open
-Telemetry trace metrics, host metrics, and Kubernetes metrics using the
-context associated with the incident.
-
-### How do I tune the Root Cause Explorer? 
-
-Anomalies are auto-generated and auto-correlated, meaning no manual work fine tuning thresholds. See [Root Cause Explorer](/docs/observability/root-cause-explorer.md) for troubleshooting information.

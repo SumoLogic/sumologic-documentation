@@ -24,7 +24,6 @@ The [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses
 | DE         | https://api.de.sumologic.com/docs/#tag/serviceAllowlistManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/serviceAllowlistManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/serviceAllowlistManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/serviceAllowlistManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/serviceAllowlistManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/serviceAllowlistManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/serviceAllowlistManagement     |
@@ -36,4 +35,3 @@ The [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses
 
 * Security
     * Allowlist IP Addresses
-
