@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Cisco Umbrella, see [Cisco Umbrella documentation](https://developer.cisco.com/docs/cloud-security/umbrella-api-authentication/).
+
 ## Change Log
 
 * September 25, 2019 - First upload
