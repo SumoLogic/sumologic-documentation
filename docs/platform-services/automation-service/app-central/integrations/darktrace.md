@@ -32,6 +32,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about DarkTrace, see the [DarkTrace website](https://www.darktrace.com/).
+
 ## Change Log
 
 * January 15, 2021 - First upload

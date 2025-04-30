@@ -28,6 +28,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about FortiSandbox, see [FortiSandbox documentation](https://docs.fortinet.com/product/fortisandbox/5.0).
+
 ## Change Log
 
 * April 28, 2021 - First upload
