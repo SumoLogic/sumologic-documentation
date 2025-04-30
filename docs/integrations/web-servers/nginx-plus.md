@@ -262,34 +262,6 @@ This section provides instructions for configuring metrics collection for the Su
 </TabItem>
 </Tabs>
 
-### Field Extraction rules
-
-Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, on creating them, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule).
-
-Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
-
-Both the parse expressions can be used for logs collected from the Nginx Plus Server running on Local or container-based systems.
-
-For **FER for Access Logs**, use the following Parse Expression:
-
-```
-| json field=_raw "log" as nginx_log_message nodrop
-| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
-| parse regex field=nginx_log_message "(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| parse regex field=nginx_log_message "(?<Method>[A-Z]+)\s(?<URL>\S+)\sHTTP/[\d\.]+\
-"\s(?<Status_Code>\d+)\s(?<Size>[\d-]+)\s\"(?<Referrer>.*?)\"\s\"(?<User_Agent>.+?)\".*"
-```
-
-For **FER for Error Logs**, use the following Parse Expression:
-
-```sql
-| json field=_raw "log" as nginx_log_message nodrop
-| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
-| parse regex field=nginx_log_message "\s\[(?<Log_Level>\S+)\]\s\d+#\d+:\s(?:\*\d+\s|)(?<Message>[A-Za-z][^,]+)(?:,|$)"
-| parse field=nginx_log_message "client: *, server: *, request: \"* * HTTP/1.1\", host:
-\"*\"" as Client_Ip, Server, Method, URL, Host nodrop
-```
-
 ## Installing the Nginx Plus app
 
 This section has instructions for installing the Sumo app for Nginx Plus. The instructions assume you have already set up the collection as described above.
