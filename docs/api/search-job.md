@@ -14,10 +14,6 @@ import ApiRoles from '../reuse/api-roles.md';
 
 The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
 
-:::warning
-Search Job APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs). Instead, refer to the below documentation.
-:::
-
 ## Prerequisites
 
 The Search Job API is available to Enterprise accounts.
