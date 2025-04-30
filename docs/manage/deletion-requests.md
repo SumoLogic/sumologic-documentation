@@ -30,7 +30,8 @@ After a data deletion request is approved, data will be deleted from the organiz
 :::
 
 :::note
-During the data deletion process, existing messages may temporarily appear duplicated for a few seconds. These duplicated messages will automatically disappear once the data deletion is complete.
+- During the data deletion process, existing messages may temporarily appear duplicated for a few seconds. These duplicated messages will automatically disappear once the data deletion is complete.
+- Pinned queries may continue to display data identified for deletion for up to 24 hours from the initial run, prior to the data deletion request approval.
 :::
 
 :::info

@@ -18,7 +18,7 @@ All integrations require authentication to communicate between the vendor and Su
 
 ## Integrations
 
-Count of available integrations: 337
+Count of available integrations: 336
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

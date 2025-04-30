@@ -28,7 +28,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     environment:
       name: ${{ inputs.environment }}
       url: ${{ inputs.hostname }}${{ inputs.base_url }}

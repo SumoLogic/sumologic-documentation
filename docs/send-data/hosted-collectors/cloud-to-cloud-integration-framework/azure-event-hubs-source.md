@@ -14,6 +14,10 @@ import TerraformExample from '!!raw-loader!/files/c2c/azure-event-hubs/example.t
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::important
+From April 30, 2025, Sumo Logic will no longer support adding a source using this Azure Event Hubs source. Existing Azure Event Hubs source configurations will still work for some time, but we recommend you [migrate](/docs/send-data/collect-from-other-data-sources/azure-monitoring/azure-event-hubs-source-migration/) to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+:::
+
 :::note
 Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method supports a throughput limit of 1MB/s (86GB/day) per named Event Hub egress rate. If you require higher throughput, we recommend using [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source).
 :::
