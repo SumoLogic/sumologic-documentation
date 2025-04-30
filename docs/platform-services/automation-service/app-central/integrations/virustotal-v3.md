@@ -33,6 +33,12 @@ Perform threat intelligence evidence gathering with [VirusTotal V3 API](https://
 
 Threat Intelligence-Reputation
 
+## Configure VirusTotal V3 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * July 03, 2024

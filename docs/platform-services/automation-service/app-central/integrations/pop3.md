@@ -19,6 +19,12 @@ Allows you to connect your mailbox with Cloud SOAR and receive emails via POP3 p
 
 * **Incoming Mail Daemon POP3** *(Daemon)* - Automatically get emails using POP3.
 
+## Configure POP3 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * August 19, 2021 - First upload

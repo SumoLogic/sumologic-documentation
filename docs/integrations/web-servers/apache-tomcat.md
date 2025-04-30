@@ -35,14 +35,14 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 <img src={useBaseUrl('img/integrations/web-servers/apachetomcat-k8s.png')} alt="apache-k8s" />
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Apache Tomcat. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Apache Tomcat and Jolokia2 input plugin to obtain metrics. For simplicity, the diagram doesn’t show the input plugins. The injection of the Telegraf sidecar container is done by the Telegraf Operator. Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which enriches metadata and sends metrics to Sumo Logic.
+The first service in the pipeline is Telegraf. Telegraf collects metrics from Apache Tomcat. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Apache Tomcat and Jolokia2 input plugins to obtain metrics. For simplicity, the diagram doesn’t show the input plugins. The injection of the Telegraf sidecar container is done by the Telegraf Operator. Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which enriches metadata and sends metrics to Sumo Logic.
 
 In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 Follow the below instructions to set up metrics collection:
 
 [Step 1: Configure Metrics Collection](#step-1-configure-metrics-collection)
-1. Setup Kubernetes Collection with the Telegraf operator.
+1. Set up Kubernetes Collection with the Telegraf operator.
 2. Add annotations on your Apache Tomcat pods.
 
 [Step 2: Configure Logs Collection](#step-2-configure-logs-collection)
@@ -55,18 +55,18 @@ Follow the below instructions to set up metrics collection:
 It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 
 
-### Step 1: Configure Metrics Collection
+### Step 1: Configure metrics collection
 
 This section explains the steps to collect Apache Tomcat metrics from a Kubernetes environment.
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf). Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
-2. Install jolokia on your Tomcat Pod to use the Jolokia Telegraf Input Plugin:
+2. Install Jolokia on your Tomcat Pod to use the Jolokia Telegraf Input Plugin:
    * Download the latest version of the Jolokia war file from: [https://jolokia.org/download.html](https://jolokia.org/download.html).
-   * Rename the file from jolokia-war-X.X.X.war to jolokia.war
-   * Create a configMap **jolokia** from the binary file `kubectl create configmap jolokia --from-file=jolokia.jar`
-   * Create volume mount the jolokia.war file to `${TOMCAT_HOME}/webapps`
+   * Rename the file from jolokia-war-X.X.X.war to jolokia.war.
+   * Create a configMap **jolokia** from the binary file `kubectl create configmap jolokia --from-file=jolokia.jar`.
+   * Create volume mount the jolokia.war file to `${TOMCAT_HOME}/webapps`.
    ```yml
    spec:
      volumes:
@@ -90,7 +90,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
      <user name="admin" password="admin" roles="admin-gui,admin-script,manager-gui,manager-status,manager-script,manager-jmx"/>
    </tomcat-users>
    ```
-   **Verification Step**: You can ssh to Tomcat pod and run following commands to make sure Telegraf (and Jolokia) is scraping metrics from your Tomcat Pod:
+   **Verification Step**: You can ssh to the Tomcat pod and run the following commands to make sure Telegraf (and Jolokia) is scraping metrics from your Tomcat Pod:
    ```bash
    curl localhost:9273/metrics
    ```
@@ -170,21 +170,21 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
        paths    = ["hitCount","lookupCount"]
        tag_keys = ["context","host"]
    ```
-   * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Tomcat Input plugin. Refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Tomcat input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
+   * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Tomcat Input plugin. Refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Tomcat input plugin for Telegraf. Note: As Telegraf will be run as a sidecar, the host should always be localhost.
    * In the input plugins section, which is `[[inputs.Tomcat]]`:
         * `servers` - The URL to the Tomcat server. This can be a comma-separated list to connect to multiple Tomcat servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/tomcat) for more information on additional parameters for configuring the Tomcat input plugin for Telegraf.
    * In the tags section, which is `[inputs.Tomcat.tags]`:
-        * `environment`. This is the deployment environment where the Tomcat farm identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment`. This is the deployment environment where the Tomcat farm identified by the value of `servers` resides. For example: dev, prod, or qa. While this value is optional we highly recommend setting it.
         * `webserver_farm` - Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
    * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
-        * `urls` - The URL to the tomcat server. This can be a comma-separated list to connect to multiple tomcat servers. See [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Tomcat input plugin for Telegraf.
+        * `urls` - The URL to the Tomcat server. This can be a comma-separated list to connect to multiple Tomcat servers. See [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Tomcat input plugin for Telegraf.
     * In the tags section, which is `[inputs.jolokia2_agent.tags]`
-        * `environment`. This is the deployment environment where the Tomcat farm identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment`. This is the deployment environment where the Tomcat farm identified by the value of servers resides. For example: dev, prod, or qa. While this value is optional we highly recommend setting it.
         * `webserver_farm`. Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
     * **Do not modify** additional values set by this configuration as they will cause the Sumo Logic apps to not function correctly.
         * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
       * `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
-      * `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
+      * `prometheus.io/port: "9273"`. This tells Prometheus what ports to scrape on. This should not be changed.
       * `telegraf.influxdata.com/inputs`
           * In the tags section, which is [inputs.Tomcat.tags]
               * `component: “webserver”` - This value is used by Sumo Logic apps to identify application components.
@@ -196,13 +196,13 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 1. Verify metrics in Sumo Logic.
 
-### Step 2: Configure Logs Collection
+### Step 2: Configure logs collection
 
 This section explains the steps to collect Apache Tomcat logs from a Kubernetes environment.
 
 **(Recommended Method) Add labels on your Apache Tomcat pods to capture logs from standard output.** Follow the instructions below to capture Apache Tomcat logs from stdout on Kubernetes.
 
-1. Apply following labels to the Apache Tomcat pods:
+1. Apply the following labels to the Apache Tomcat pods:
    ```sql
       environment: "prod_CHANGEME"
        component: "webserver"
@@ -210,7 +210,7 @@ This section explains the steps to collect Apache Tomcat logs from a Kubernetes 
            webserver_farm: "tomcat_prod__CHANGEME"
    ```
    * Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
-     * `environment`. This is the deployment environment where the Tomcat farm identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+     * `environment`. This is the deployment environment where the Tomcat farm identified by the value of servers resides. For example: dev, prod, or qa. While this value is optional we highly recommend setting it.
      * `Webserver_farm` - Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
    * **Do not modify** additional values set by this configuration as they will cause the Sumo Logic apps to not function correctly.
      * `component: “webserver”` - This value is used by Sumo Logic apps to identify application components.
@@ -239,7 +239,7 @@ This section explains the steps to collect Apache Tomcat logs from a Kubernetes 
 1. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 1. Verify logs in Sumo Logic.
 
-<br/>**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Apache Tomcat Web Server Application Components named as **AppObservabilityApacheTomcatWebserverFER**
+<br/>**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we will have a Field Extraction Rule automatically created for Apache Tomcat Web Server Application Components named **AppObservabilityApacheTomcatWebserverFER**.
 <br/>
 
 </TabItem>
@@ -255,7 +255,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 1. Configure Metrics Collection
     1. Configure a Hosted Collector
-    2. Configure an HTTP Logs and Metrics Source
+    2. Configure HTTP Logs and Metrics Source
     3. Install Telegraf
     4. Download and setup Jolokia on each Apache Tomcat node
     5. Configure and start Telegraf
@@ -263,20 +263,20 @@ This section provides instructions for configuring metrics collection for the Su
     1. Configure logging in Apache Tomcat
     2. Configure Sumo Logic Installed Collector
 
-### Step 1: Configure Metrics Collection
+### Step 1: Configure metrics collection
 
 1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
 1. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/http-source/logs-metrics)Make a note of the **HTTP Source URL**.
 1. **Install Telegraf**. Follow [these steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
 1. **Download and setup Jolokia on each Apache Tomcat node**. As part of collecting metrics data from Telegraf, we will use the [Jolokia input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
    * Download the latest version of the Jolokia JVM-Agent from [Jolokia](https://jolokia.org/download.html).
-   * Rename downloaded Jar file to jolokia.jar.
-   * Save the file jolokia.jar on your apache tomcat server in `${TOMCAT_HOME}/webapps`.
+   * Rename the downloaded Jar file to jolokia.jar.
+   * Save the file jolokia.jar on your Apache Tomcat server in `${TOMCAT_HOME}/webapps`.
    * Configure Apache Tomcat to use Jolokia.
-       * Add following to tomcat-users.xml
+       * Add the following to tomcat-users.xml:
       <role rolename="**role-CHANGEME**" />
       <user name="**username-CHANGEME**" password="**password-CHANGEME**" roles="**role-CHANGEME**" />
-       * Start or Restart Apache Tomcat Service
+       * Start or Restart the Apache Tomcat Service.
        * Verify the Jolokia agent installation by curl-ing this URL: `http://<tomcat_address>:<tomcat_port>/jolokia/version`.
       ```bash
       curl -v -u **username-CHANGEME**:**password-CHANGEME** "`http://APACHE_TOMCAT_SERVER_IP_ADDRESS:<TOMCAT_PORT>/jolokia/version`"
@@ -461,12 +461,12 @@ Enter values for the following parameters (marked `CHANGEME` above):
 * In the input plugins section, which is `[[inputs.tomcat]]`:
     * `servers` - The URL to the Tomcat server. This can be a comma-separated list to connect to multiple Tomcat servers. See [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/tomcat) for more information on additional parameters for configuring the Tomcat input plugin for Telegraf.
     * In the tags section, which is `[inputs.tomcat.tags]`
-        * `environment`. This is the deployment environment where the Tomcat farm identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment`. This is the deployment environment where the Tomcat farm identified by the value of **servers** resides. For example: dev, prod, or qa. While this value is optional we highly recommend setting it.
         * `Webserver_farm` - Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
 * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
     * `servers` - The URL to the Tomcat server. This can be a comma-separated list to connect to multiple Tomcat servers. See [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Tomcat input plugin for Telegraf.
     * In the tags section, which is `[inputs.jolokia2_agent.tags]`:
-        * `environment`. This is the deployment environment where the Tomcat farm identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment`. This is the deployment environment where the Tomcat farm identified by the value of `servers` resides. For example: dev, prod, or qa. While this value is optional we highly recommend setting it.
         * `webserver_farm`- Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * `url` - This is the HTTP source URL created in step 3. See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
@@ -475,16 +475,16 @@ Here’s an explanation for additional values set by this Telegraf configuration
 
 **Do not modify** the configuration, as it will cause the SumoLogic apps to not function correctly.
 
-* `data_format - “prometheus”` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic
+* `data_format - “prometheus”` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.
 * `Component: “webserver”` - In the input plugins section, which are `[[inputs.tomcat]]` and `[[inputs.jolokia2_agent]]` - This value is used by Sumo Logic apps to identify application components.
-* `webserver_system: “tomcat”` - In the input plugins sections.In other words, this value identifies the webserver system
+* `webserver_system: “tomcat”` - In the input plugins sections. In other words, this value identifies the web server system.
 *  For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Tomcat metrics should start flowing into Sumo Logic.
 
-### Step 2 Configure Logs Collection
+### Step 2 Configure logs collection
 
 This section provides instructions for configuring log collection for Apache Tomcat running on a non-kubernetes environment for the Sumo Logic App for Apache Tomcat.
 
@@ -515,21 +515,21 @@ Log format description: [https://stackoverflow.com/questions/4468546/explanation
    * **Name.** (Required)
    * **Description.** (Optional)
    * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in **/usr/share/tomcat/logs/***. If you're using a customized path, check the Tomcat.conf file for this information.
-   * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-   * **Source Category.** Enter any string to tag the output collected from this Source, such as **Tomcat/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
+   * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
+   * **Source Category.** Enter any string to tag the output collected from this Source, such as **Tomcat/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).
    * **Fields.** Set the following fields:
     ```sh
     * component = websystem
     * webserver_system = tomcat
     * webserver_farm = <Your_Tomcat_Farm_Name>
-    * environment = <Environment_Name> #such as Dev, QA or Prod.
+    * environment = <Environment_Name> #such as Dev, QA, or Prod.
     ```
 1. Configure the **Advanced** section:
     * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
     * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Tomcat Server’s time zone.
     * **Timestamp Format.** The timestamp format is automatically detected. **Encoding.** Select UTF-8 (Default).
-    * **Enable Multiline Processing.** Detect messages spanning multiple lines
-    * Infer Boundaries - Detect message boundaries automatically
+    * **Enable Multiline Processing.** Detect messages spanning multiple lines.
+    * Infer Boundaries - Detect message boundaries automatically.
 1. Click **Save**.
 
 At this point, Tomcat logs should start flowing into Sumo Logic.
@@ -566,14 +566,14 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Apache Tomcat - Overview** dashboard provides a high-level view of the activity and health of Tomcat servers on your network. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and  CPU, Memory.
+The **Apache Tomcat - Overview** dashboard provides a high-level view of the activity and health of Tomcat servers on your network. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and  CPU and memory.
 
 Use this dashboard to:
-* Analyze CPU, Memory and disk utilization.
-* Analyze http request about status code.
+* Analyze CPU, Memory, and disk utilization.
+* Analyze the HTTP request about the status code.
 * Gain insights into Network traffic for your Tomcat server.
 * Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
-* Gain insights into Client, Server Responses on Tomcat Server. This helps you identify errors in Tomcat Server.
+* Gain insights into Client and Server Responses on the Tomcat Server. This helps you identify errors in the Tomcat Server.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Overview.png')} alt="test" />
 
@@ -594,22 +594,22 @@ The **Apache Tomcat - Visitor Locations** dashboard provides a high-level view o
 The **Apache Tomcat - Visitor Traffic Insight** dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
 
 - **Bytes Served.** Displays bytes served in a single chart on a timeline for the last 60 minutes.
-- **HTTP Methods.** Shows the number of method over time in a pie chart on a timeline for the last 60 minutes.
-- **Top 5 url.** Provides a list of the top 5 URL being accessed by your visitors in a bar chart for the 60 minutes.
+- **HTTP Methods.** Shows the number of methods over time in a pie chart on a timeline for the last 60 minutes.
+- **Top 5 url.** Provides a list of the top 5 URLs being accessed by your visitors in a bar chart for the 60 minutes.
 - **Media Types Served.** Displays a list of file types being served in a pie chart for the 60 minutes.
-- **Top 5 Referrers.** Shows a list of the top 5 referring websites by URL in a bar chart for the 60 minutes.
+- **Top 5 Referrers.** Shows a list of the top 5 referring websites by URL in a bar chart for 60 minutes.
 - **Top 10 Search Terms from Popular Search Engines.** Displays a list of the top 10 search terms and their count from search engines such as Google, Bing, and Yahoo in an aggregation table for the past hour.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Visitor-Traffic-Insight.png')} alt="test" />
 
 ### Web Server Operations
 
-The **Apache Tomcat - Web Server Operations** Dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by server, and the top URIs responsible for 404 responses.
+The **Apache Tomcat - Web Server Operations** Dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations, and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by the server, and the top URIs responsible for 404 responses.
 
 - **Non 200 Response Status Codes.** Displays the number of non-200 response status codes in a bar chart for the past hour.
 - **Client Locations - 4xx Errors.** Uses a geo lookup operation to display the location of clients with 4xx errors by IP address on a map of the world, which allows you to see a count of hits per location for the last hour.
 - **Server Errors Over Time.** Provides information on the type and number of server errors in a column chart on a line chart for the past hour.
-- **Error Responses by Server.** Shows error responses and their distribution by server in a line chart for the past hour.
+- **Error Responses by Server.** Shows error responses and their distribution by the server in a line chart for the past hour.
 - **Top 5 Clients Cause 4xx Errors.** Displays a list of the top 5 clients that have 4xx errors in a bar chart for the past hour.
 - **Top 5 URIs Causing 404 Responses.** Provides a list of the top 5 URIs with 404 response types in a pie chart for the past hour.
 
@@ -631,7 +631,7 @@ The **Apache Tomcat - Outlier Analysis** dashboard provides a high-level view of
 
 Use this dashboard to:
 
-* Detect outliers in your infrastructure with Sumo Logic’s machine learning algorithm.
+* Detect outliers in your infrastructure with Sumo Logic’s machine-learning algorithm.
 * To identify outliers in incoming traffic and the number of errors encountered by your servers.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Outlier-Analysis.png')} alt="test" />
@@ -640,7 +640,7 @@ Use this dashboard to:
 
 The **Apache Tomcat - Catalina** dashboard provides information about events such as the startup and shutdown of the Apache Tomcat application server, the deployment of new applications, or the failure of one or more subsystems.
 
-- **Log Levels.** Displays log levels types (Info, Severe, and Warning) in a pie chart for the last 24 hours.
+- **Log Levels.** Displays log level types (Info, Severe, and Warning) in a pie chart for the last 24 hours.
 - **Non-INFO Errors.** Shows the number and type of errors (Severe or Warning) in a stacked column chart on a timeline for the last 24 hours.
 - **Component Errors.** Provides information on errors by component in a pie chart for the last 24 hours.
 - **Errors by Component.** Displays Info level errors by component in a stacked column chart on a timeline for the last 24 hours.
@@ -658,11 +658,11 @@ The **Apache Tomcat - Garbage Collector** dashboard provides information on the 
 - **Top 10 Host - High GC Time.** Displays the top 10 hosts with high garbage collection operation time as a bar chart for the last 12 hours.
 - **Top 10 Hosts - Low Average JVM Up-Time.** Shows the top 10 hosts by low average JVM up-time as a bar chart for the last 12 hours.
 - **Total GC Operation Time.** Provides the total garbage collection operation time by timeslices of 15 minutes in a column chart on a timeline for the last 12 hours.
-- **Total GC Operations.** Displays the total number of times Full-GC and Minor-GC collection processes are executed in timeslices of 15 minutes on in a stacked column chart on a timeline for the past 12 hours.
+- **Total GC Operations.** Displays the total number of times Full-GC and Minor-GC collection processes are executed in timeslices of 15 minutes on a stacked column chart on a timeline for the past 12 hours.
 - **Heap.** Shows the total heap memory utilization just before garbage collection was executed vs. total heap memory utilization after garbage collection was executed, in a line chart on a timeline for the last 12 hours.
-- **PS Young Gen**. PS Young Gen also refers to “New Space,” which is comprised of of Eden-Space and two Survivor-Spaces of identical size, usually called From and To. This panel shows Young Gen memory utilization just before garbage collection was executed vs. Young Gen memory utilization after garbage collection was executed. This part of the heap always gets garbage collected.
-- **Par Old Gen.** Par Old Gen is also referred as “Tenured Space”. This panel shows Old Gen memory utilization just before garbage collection was executed vs. Old Gen memory utilization after garbage collection was executed.
-- **PS Perm Gen.** PS Perm Gen is also referred as “Permanent Space”. This panel shows Perm Gen memory utilization just before garbage collection was executed vs. Perm Gen memory utilization after garbage collection was executed.
+- **PS Young Gen**. PS Young Gen also refers to “New Space,” which is comprised of Eden-Space and two Survivor-Spaces of identical size, usually called From and To. This panel shows Young Gen memory utilization just before garbage collection was executed vs. Young Gen memory utilization after garbage collection was executed. This part of the heap always gets garbage collected.
+- **Par Old Gen.** Par Old Gen is also referred to as “Tenured Space”. This panel shows Old Gen memory utilization just before garbage collection was executed vs. Old Gen memory utilization after garbage collection was executed.
+- **PS Perm Gen.** PS Perm Gen is also referred to as “Permanent Space”. This panel shows Perm Gen memory utilization just before garbage collection was executed vs. Perm Gen memory utilization after garbage collection was executed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Garbage-Collection.png')} alt="test" />
 
@@ -677,23 +677,23 @@ Use this dashboard to:
 
 ### Connectors
 
-The **Apache Tomcat  - Connector** dashboard provides analyze receive requests, pass them to the correct web application, and send back the results through the Connector as dynamically generated content.
+The **Apache Tomcat  - Connector** dashboard analyzes received requests, passes them to the correct web application, and sends back the results through the Connector as dynamically generated content.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Connectors.png')} alt="test" />
 
 ### Memory
 
-The **Apache Tomcat  - Memory** dashboard provides a memory of your Apache Tomcat instance. Use this dashboard to understand detail  Memory of your Apache Tomcat (s) deployed in your farm.  This dashboard also provides login activities
+The **Apache Tomcat  - Memory** dashboard provides a memory of your Apache Tomcat instance. Use this dashboard to understand the detailed  Memory of your Apache Tomcat (s) deployed on your farm.  This dashboard also provides login activities
 
 Use this dashboard to:
 * Analyze Heap memory.
-* Analyze percent memory used.
+* Analyze the percent memory used.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Memory.png')} alt="test" />
 
 ### MemoryPool
 
-The **Apache Tomcat  - MemoryPool** dashboard provides a memory of your JMX Apache Tomcat instance. Use this dashboard to understand detail  Heap Memory of your JMX Apache Tomcat (s) deployed in your farm.
+The **Apache Tomcat  - MemoryPool** dashboard provides a memory of your JMX Apache Tomcat instance. Use this dashboard to understand the detailed Heap Memory of your JMX Apache Tomcat (s) deployed in your farm.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Memory-Pool.png')} alt="test" />
 
@@ -741,7 +741,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
   </tr>
   <tr>
    <td>Apache Tomcat - Error   </td>
-   <td>This alert fires when error count is greater than 0.   </td>
+   <td>This alert fires when the error count is greater than 0.   </td>
    <td> &#62; 0   </td>
    <td> 0   </td>
   </tr>

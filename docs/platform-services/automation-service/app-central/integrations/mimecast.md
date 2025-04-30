@@ -25,6 +25,12 @@ Mimecast protects an enterprise's email infrastructure from viruses, malware, ph
 
 [https://integrations.mimecast.com/documentation/api-overview/global-base-urls/](https://integrations.mimecast.com/documentation/api-overview/global-base-urls/)
 
+## Configure Mimecast in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * November 3, 2021 - First upload
