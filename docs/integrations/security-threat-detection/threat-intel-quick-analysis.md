@@ -345,12 +345,11 @@ You can further investigate bad IP triggers by updating your query to check the 
 **Description:** Indicates a confidence level by which an indicator is considered to be malicious. For example, a malicious file hash may always have a value of high while domains and IP addresses will very likely change over time. The malicious confidence level is also represented under the labels list in the JSON data structure.<br/>
 Once an indicator has been marked with a malicious confidence level, it continues to have that confidence level value until updated by CrowdStrike. If you think there is a false positive, please file a Support ticket, and we'll work with CrowdStrike to investigate the IOC in question and update the threat details.<br/>
 **Values:**
-
-* high
-* medium
-* low
-* unverified—This indicator has not been verified by a CrowdStrike Intelligence analyst or an automated system.
-* null—Indicates that Sumo Logic has no information about the threat record.
+   * high
+   * medium
+   * low
+   * unverified—This indicator has not been verified by a CrowdStrike Intelligence analyst or an automated system.
+   * null—Indicates that Sumo Logic has no information about the threat record.
 
 ---
 #### `published_date`
