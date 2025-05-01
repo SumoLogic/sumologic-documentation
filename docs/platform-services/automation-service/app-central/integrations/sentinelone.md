@@ -35,6 +35,12 @@ SentinelOne Endpoint Protection Platform (EPP) unifies prevention, detection, an
 
 XDR
 
+## Configure SentinelOne in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * March 26, 2021 - First upload

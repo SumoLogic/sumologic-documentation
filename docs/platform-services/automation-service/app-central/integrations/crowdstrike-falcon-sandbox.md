@@ -25,6 +25,12 @@ Malware Analysis Tool providing threat intelligence.
 * **Get Hash Analysis Overview** (*Enrichment*) - Return overview for the hash  related information [report, parent, children, scanners].
 * **List Environments** (*Enrichment*) - List system environments.
 
+## Configure CrowdStrike Falcon Sandbox in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * October 26, 2020 - First upload

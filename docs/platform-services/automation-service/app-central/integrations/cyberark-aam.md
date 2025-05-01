@@ -16,6 +16,14 @@ CyberArk Application Access Manager interaction for widely used application type
 * **Update Certificate** (one required field: Upload file).
 * **Get Application Details** (4 required fields: APP ID, Safe, Folder, Object).
 
+## Configure CyberArk AAM in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about CyberArk, see [CyberArk documentation](https://docs.cyberark.com/portal/latest/en/docs.htm).
+
 ## Change Log
 
 * October 5, 2020 - First upload

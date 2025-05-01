@@ -113,3 +113,10 @@ Users will continue to have support for the `_dataTier` modifier while still mig
 After migrating to the Flex pricing, queries with the `_dataTier` modifier will continue to work as usual. The definition of `_dataTier=Continuous or Frequent or Infrequent` at the time of transition is a snapshot of the partitions that were part of the tier. This ensures a smooth transition to Flex pricing without encountering any issues.
 
 Once the move to Flex pricing is settled, based on the convenience of Administrators and Users, it is recommended to rewrite the queries to move away from the `_dataTier` modifier to improve the scope of queries. There is currently no set time to deprecate the support for the `_dataTier` modifier in Flex pricing.
+
+## Are audit index queries charged?
+
+Queries to the following [audit indexes](/docs/manage/security/audit-indexes/) are not charged:
+* `sumologic_audit_events`
+* `sumologic_system_events`
+* `sumologic_search_usage_per_query`

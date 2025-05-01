@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.13  
-Updated: Feb 21, 2025***
+***Version: 1.14  
+Updated: April 23, 2025***
 
 The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
@@ -38,6 +38,12 @@ The CrowdStrike Falcon integration allows you to pull and update Detections/Inci
 
 EDR
 
+## Configure CrowdStrike Falcon in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 3, 2021 - First upload
@@ -66,3 +72,5 @@ EDR
     + Alerts CrowdStrike Falcon Daemon
 * February 21, 2025 (v1.13) - Added new action
     + Get IDP Device Info
+* April 23, 2025 (v1.14) - Updated the Integration
+    + Refactored the code to improve performance and maintainability.

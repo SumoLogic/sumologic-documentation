@@ -21,6 +21,12 @@ Query event/alert data and user details from Securonix.
 * **Get User Risk Score** (*Enrichment*) - Query for user's current risk score.
 * **Get User Details** (*Enrichment*) - Gather user details.
 
+## Configure Securonix in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * June 19, 2019 - First upload

@@ -26,7 +26,13 @@ Query data and utilize action in ZeroFox Platform.
 
 ## Notes
 
-* For action *List Alerts, * by default no filters are applied and results are sorted by timestamp, and *Alert Tag Changeset* .
+* For action *List Alerts, * by default no filters are applied and results are sorted by timestamp, and *Alert Tag Changeset*.
+
+## Configure ZeroFox in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 ## Change Log
 

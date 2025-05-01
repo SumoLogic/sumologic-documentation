@@ -15,6 +15,12 @@ Gather host configuration data with HP Universal CMDB.
 
 * **Get Host Details** (*Enrichment*) - Gather host information.
 
+## Configure HP Universal CMDB in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * July 1, 2019 - First upload

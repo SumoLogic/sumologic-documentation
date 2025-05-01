@@ -21,6 +21,12 @@ This integration streamlines IT tasks with rapid job creation, data retrieval, a
 * **List Components** _(Enrichment)_ - Fetches the components records of the authenticated user's account.
 * **List Devices** _(Enrichment)_ - Fetches the devices of the authenticated user's account.
 
+## Configure Datto RMM in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * March 13, 2024 - First upload

@@ -1,7 +1,7 @@
 ---
 slug: /security/threat-intelligence/threat-indicators-in-cloud-siem
-title: Threat Intelligence Indicators in Cloud SIEM
-sidebar_label: Indicators in Cloud SIEM
+title: Find Threats with Cloud SIEM
+sidebar_label: Find Threats with Cloud SIEM
 description: Learn how to use threat intelligence indicators in Cloud SIEM.
 ---
 
@@ -27,7 +27,7 @@ For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#has
 
 ## View threat indicator labels in the Cloud SIEM UI
 
-Entities are automatically enriched with indicator data from [custom intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/) and [sources in the threat intelligence datastore](/docs/security/threat-intelligence/about-threat-intelligence/). (Entity enrichment doesn't make use of the `_sumo_global_feed_cs` global feed.)
+Entities are automatically enriched with indicator data from [custom intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/) and [sources in the threat intelligence datastore](/docs/security/threat-intelligence/about-threat-intelligence/). (Entity enrichment doesn't make use of the [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources).)
 
 When a match to a threat indicator in sources is found, labels showing the entity's "reputation" will be displayed throughout the Cloud SIEM UI:
 
