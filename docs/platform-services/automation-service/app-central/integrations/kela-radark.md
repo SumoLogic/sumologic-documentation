@@ -1,5 +1,5 @@
 ---
-title: Kela RaDark
+title: KELA RaDark
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,19 +16,21 @@ KELA's RADARK delivers automated threat intelligence, cultivating the targeted a
 * **List Incidents** *(Enrichment)* - Returns a list of incidents matching it.
 * **Scrolling Incidents** *(Enrichment)* - Get the next bulk of incidents from List Incidents action.
 * **Get Incident Details** *(Enrichment)* - Get a specific incident.
-* **Update Kela RaDark Incident** *(Containment)* - Updating an Incident.
+* **Update KELA RaDark Incident** *(Containment)* - Updating an Incident.
 
-## Kela RaDark configuration
+## KELA RaDark configuration
 
-1. Sign in **Kela RaDark** using your username and password.
+1. Sign in **KELA RaDark** using your username and password.
 2. The API token can be generated through the RADARK UI, under the user menu - Generate Api Key.
 3. Make sure you copy and save the api token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-1.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="600"/>
 
-## Configure Kela RaDark in Automation Service and Cloud SOAR
+## Configure KELA RaDark in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about KELA, see [KELA documentation](https://docs.ke-la.com/kela-docs).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

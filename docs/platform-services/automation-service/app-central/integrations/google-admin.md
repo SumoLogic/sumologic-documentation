@@ -17,7 +17,7 @@ Google Admin relies on the Admin SDK API, which empowers administrators to effic
 
 ## Google Admin Configuration
 
-To create a Service Account in Google Workspace and generate the JSON file needed to configure the Google Admin integration, follow these steps:
+To [create a Service Account](https://developers.google.com/workspace/guides/create-credentials) in Google Workspace and generate the JSON file needed to configure the Google Admin integration, follow these steps:
 
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
@@ -43,6 +43,8 @@ To create a Service Account in Google Workspace and generate the JSON file neede
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about Google Admin, see [Google Workspace Admin documentation](https://support.google.com/a/?hl=en#topic=4388346).
 
 * **Label**. The desired name for the resource.
 * **User Service Account JSON**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.

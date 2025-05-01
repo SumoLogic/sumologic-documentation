@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about MaxMind, see [MaxMind documentation](https://dev.maxmind.com/).
+
 ## Change Log
 
 * March 29, 2023 - First upload

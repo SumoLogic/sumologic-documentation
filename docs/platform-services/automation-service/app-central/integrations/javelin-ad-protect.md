@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Symantec Endpoint Threat Defense for Active Directory (formerly Javelin AD Protect), see [Endpoint Threat Defense for Active Directory documentation](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/threat-defense-for-active-directory/3-5/TDAD-archive.html).
+
 ## Change Log
 
 * November 26, 2018 - First upload

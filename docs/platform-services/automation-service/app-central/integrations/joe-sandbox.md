@@ -33,6 +33,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Joe Sandbox, see [Joe Sandbox documentation](https://www.joesecurity.org/guides/joeboxdetect/html/index.html#).
+
 ## Change Log
  
 * September 25, 2019 - First upload

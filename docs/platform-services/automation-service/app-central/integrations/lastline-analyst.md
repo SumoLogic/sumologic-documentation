@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Lastline Analyst, see [Lastline Analyst documentation](https://analysis.lastline.com/analysis/api-docs/html/index.html).
+
 ## Change Log
 
 * June 12, 2019 - First upload
