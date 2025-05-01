@@ -31,6 +31,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about OneTrust, see [OneTrust documentation](https://developer.onetrust.com/).
+
 ## Change Log
 
 * January 19, 2024 - First upload

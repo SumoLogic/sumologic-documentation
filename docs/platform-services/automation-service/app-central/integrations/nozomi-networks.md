@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Nozomi Networks, see [Nozomi Networks documentation](https://www.nozominetworks.com/guides).
+
 ## Change Log
 
 * May 15, 2020 - First upload

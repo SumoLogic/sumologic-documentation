@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Nucleon, see the [Nucleon website](https://nucleoncyber.com/).
+
 ## Change Log
 
 * October 7, 2021 - First upload
