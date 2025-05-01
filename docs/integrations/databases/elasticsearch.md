@@ -62,42 +62,8 @@ The Elasticsearch app is a unified logs and metrics app that helps you monitor t
 
 Configuring log and metric collection for the Elasticsearch app includes the following tasks.
 
-### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using Elasticsearch in a Kubernetes environment, create the fields:
-
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using Elasticsearch in a non-Kubernetes environment, create the fields:
-
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-* `pod`
-
-</TabItem>
-</Tabs>
-
-### Step 2: Configure Collection for Elasticsearch
+### Configure Collection for Elasticsearch
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -368,7 +334,7 @@ At this point, Elasticsearch logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-## Installing Elasticsearch Monitors
+<!-- ## Installing Elasticsearch Monitors
 
 Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Elasticsearch cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Elasticsearch Alerts](#elasticsearch-alerts).
 
@@ -441,19 +407,38 @@ email_notifications = [
 6. Installation.
    1. Navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/Elasticsearch/` directory and run terraform init. This will initialize Terraform and download the required components.
    2. Run `terraform plan` to view the monitors that Terraform will create or modify.
-   3. Run `terraform apply`.
+   3. Run `terraform apply`. -->
 
 ## Installing the Elasticsearch app
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-only-k8s.md';
 
-<AppInstall/>
+<AppInstall2 />
+
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `pod`
+* `db_cluster_address`
+* `db_cluster_port`
+
+Additionally, if you're using Elasticsearch in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ## Viewing Elasticsearch dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -533,9 +518,13 @@ The **ElasticSearch - Queries** dashboard shows Elasticsearch provides analytics
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-q.png')} alt="elasticsearch dashboards" />
 
-## Elasticsearch Alerts
+## Create monitors for Elasticsearch app
 
-Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Elasticsearch database cluster is available and performing as expected.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Elasticsearch Alerts
 
 | Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |---|---|---|---|---|---|

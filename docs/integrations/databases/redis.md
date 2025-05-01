@@ -71,31 +71,7 @@ This sample Query is from the the **Redis - Logs** dashboard > **Logs** panel.
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Redis. Configuring log and metric collection for the Redis ULM app includes the following tasks:
 
-
-### Step 1: Configure fields in Sumo Logic
-
-As part of the app installation process, the following fields will be created by default:
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-* `db_cluster_address`
-* `db_cluster_port`
-
-
-Additionally, if you are using Redis in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-* `pod_labels_db_cluster_address`
-* `pod_labels_db_cluster_port`
-
-
-
-For information on setting up fields, see [Fields](/docs/manage/fields).
-
-### Step 2: Configure Collection for Redis
+### Configure Collection for Redis
 
 Sumo Logic supports collection of logs and metrics data from Redis in both Kubernetes and non-Kubernetes environments. Click on the appropriate tab below based on the environment where your Redis clusters are hosted.
 
@@ -395,7 +371,7 @@ After determining the location of conf file, modify the **redis.conf** configura
 </TabItem>
 </Tabs>
 
-## Installing Redis Monitors/Alerts
+<!-- ## Installing Redis Monitors/Alerts
 
 :::note
 This step is not needed if you are using the application components solution terraform script.
@@ -492,36 +468,40 @@ email_notifications = [
    2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
    3. Run `terraform apply`.
 
-7. Post Installation. If you haven’t enabled alerts and/or configured notifications via the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Add a Monitor](/docs/alerts/monitors/create-monitor).
+7. Post Installation. If you haven’t enabled alerts and/or configured notifications via the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Add a Monitor](/docs/alerts/monitors/create-monitor). -->
 
 
 ## Installing the Redis app
 
-This section demonstrates how to install the Redis ULM app.
+import AppInstall2 from '../../reuse/apps/app-install-only-k8s.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-:::note
-Version selection is not available for all apps.
-:::
-3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   2. **Data Source.** Choose **Enter a Custom Data Filter** and enter a custom Redis cluster filter. Examples:
-      * For all Redis clusters: `db_cluster=*`
-      * For a specific cluster: `db_cluster=redis.dev.01`
-      * Clusters within a specific environment: `db_cluster=redis-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection).
-   3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+<AppInstall2 />
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `db_cluster_address`
+* `db_cluster_port`
+
+
+Additionally, if you are using Redis in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ## Viewing Redis dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -577,16 +557,10 @@ Use this dashboard to:
 
 ## Create monitors for Redis app
 
-Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Redis cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [Redis Alerts](/docs/integrations/databases/redis#redis-alerts).
-
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Redis Alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
 ### Redis alerts
 
 <table>

@@ -21,28 +21,7 @@ This App has been tested with following SQL Server versions:
 
 This section provides instructions for configuring a local file source to collect SQL Server ERRORLOG data, and a script source to collect SQL Server performance metrics. A sample log message is also provided.
 
-### Step 1: Configure fields in Sumo Logic
-
-As part of the app installation process, the following fields will be created by default:
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-* `db_cluster_address`
-* `db_cluster_port`
-
-Additionally, if you are using SQL Server in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
-
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-* `pod_labels_db_cluster_address`
-* `pod_labels_db_cluster_port`
-
-For information on setting up fields, see [Fields](/docs/manage/fields).
-
-### Step 2: Collect Logs and Metrics
+### Collect Logs and Metrics
 Sumo Logic supports collection of logs and metrics data from SQL Server in both Kubernetes and non-Kubernetes environments. Click on the appropriate tabs below based on the environment where your SQL Server clusters are hosted.
 
 <Tabs
@@ -397,7 +376,7 @@ At this point, Telegraf should start collecting the SQL Server metrics and forwa
 </Tabs>
 
 
-## Installing Microsoft SQL Server Monitors
+<!-- ## Installing Microsoft SQL Server Monitors
 
 This section provides instructions for installing the Microsoft SQL Server App, as well as examples of each of the App dashboards. These instructions assume you have already set up collection as described in [Collecting Logs and Metrics for the Microsoft SQL Server](#collecting-logs-and-metrics-for-the-microsoft-sql-server-app).
 
@@ -518,22 +497,39 @@ email_notifications = [
 
 If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
-There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
+There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md). -->
 
 
 ## Installing the Microsoft SQL Server app
 
-This section demonstrates how to install the SQL Server App.
+import AppInstall2 from '../../reuse/apps/app-install-only-k8s.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2 />
 
-<AppInstall/>
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `db_cluster_address`
+* `db_cluster_port`
+
+Additionally, if you are using SQL Server in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ## Viewing Microsoft SQL Server dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -625,16 +621,9 @@ The **SQL Server - Backup Restore Mirroring** provides information about:
 
 ## Create monitors for Microsoft SQL Server app
 
-Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an SQL Server cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [SQL Server Alerts](/docs/integrations/microsoft-azure/sql-server#microsoft-sql-server-alerts).
-
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
-
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the SQL Server Alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
 
 ### Microsoft SQL Server alerts
 

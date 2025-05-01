@@ -474,9 +474,7 @@ At this point, Cassandra metrics and logs should start flowing into Sumo Logic.
 This step is not needed if you are using the [Application Components Solution](/docs/observability/application-components) Terraform script.
 :::
 
-This section demonstrates how to install the Cassandra app.
-
-import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
+import AppInstall2 from '../../reuse/apps/app-install-only-k8s.md';
 
 <AppInstall2 />
 
@@ -624,17 +622,9 @@ Use this dashboard to:
 
 ## Create monitors for Cassandra app
 
-Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Cassandra cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [Cassandra Alerts](/docs/integrations/databases/cassandra#cassandra-alerts).
-
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
-
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Cassandra Alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
-
 
 ### Cassandra Alerts
 

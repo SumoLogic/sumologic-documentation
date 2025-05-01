@@ -52,24 +52,8 @@ Jun 23 07:35:01 node03 memcached: \
 
 Configuring log and metric collection for the Memcached app includes the following tasks.
 
-### Step 1: Configure fields in Sumo Logic
 
-As part of the app installation process, the following fields will be created by default:
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-* `pod`
-
-Additionally, if you are using Memcached in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-
-For information on setting up fields, see [Fields](/docs/manage/fields).
-
-### Step 2: Configure Logs and Metrics Collection for Memcached
+### Configure Logs and Metrics Collection for Memcached
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -320,15 +304,35 @@ At this point, Memcached logs should start flowing into Sumo Logic.
 
 This section demonstrates how to install the Memcached app.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-only-k8s.md';
 
-<AppInstall/>
+<AppInstall2 />
+
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `pod`
+* `db_cluster_address`
+* `db_cluster_port`
+
+Additionally, if you're using Memcached in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
+
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ## Viewing Memcached Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -362,16 +366,9 @@ The **Memcached - Logs** dashboard helps you quickly analyze your Memcached erro
 
 ## Create monitors for Memcached app
 
-Sumo Logic provides pre-configured alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Memcached cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, refer to the [Memcached Alerts](/docs/integrations/databases/memcached#memcached-alerts).
-
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
-
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Memcached Alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
 
 ### Memcached alerts
 <table>
