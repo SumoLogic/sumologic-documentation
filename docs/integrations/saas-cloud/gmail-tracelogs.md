@@ -21,7 +21,6 @@ For details, see the [Schema for Gmail logs in BigQuery](https://support.google.
 
 ### Sample log messages
 
-
 ```json
 {
   "event_info": {
@@ -162,18 +161,6 @@ import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
 import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
-## Upgrading the Microsoft Teams app (optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Microsoft Teams app (optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing the Gmail Trace Logs dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -189,3 +176,16 @@ The **Gmail Trace Logs - Security Overview** dashboard lets you monitor spam mes
 The **CrowdStrike Analysis**. To protect your organisation from threats, the app also scans the SHA256 hash of Gmail attachments with CrowdStrike's threat detection service.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/crowdstrike-analysis.png')} alt="Crowdstrike Analysis" width="900"/>
+
+## Upgrading the Microsoft Teams app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Teams app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
