@@ -212,6 +212,11 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/api/service-accounts"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="Thumbnail icon" width="50"/><h4>Service Accounts</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/api/service-allowlist"><img src={useBaseUrl('img/icons/security/unlock.png')} alt="Thumbnail icon" width="50"/><h4>Service Allowlist</h4></a>
   </div>
 </div>
