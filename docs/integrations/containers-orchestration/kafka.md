@@ -84,7 +84,7 @@ If you're using Kafka in a Kubernetes environment, the following additional fiel
 
 For information on setting up fields, see [Fields](/docs/manage/fields).
 
-### Configure Collection for Kafka
+### Configure collection for Kafka
 
 Sumo Logic supports collection of logs and metrics data from Kafka in both Kubernetes and non-Kubernetes environments.
 
@@ -352,7 +352,7 @@ At this point, Kafka metrics and logs should start flowing into Sumo Logic.
 </Tabs>
 
 
-## Installing the Kafka App
+## Installing the Kafka app
 
 This section demonstrates how to install the Kafka App.
 
@@ -598,7 +598,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Topic-Details.png')} alt="Kafka dashboards" />
 
 
-## Kafka Alerts
+## Kafka alerts
 
 #### Pre-packaged alerts
 

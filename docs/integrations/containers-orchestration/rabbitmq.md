@@ -67,7 +67,7 @@ If you're using RabbitMQ in a Kubernetes environment, the following additional f
 
 For information on setting up fields, see [Fields](/docs/manage/fields).
 
-### Step 2: Configure Collection for RabbitMQ
+### Step 2: Configure collection for RabbitMQ
 
 Sumo Logic supports collection of logs and metrics data from RabbitMQ in both Kubernetes and non-Kubernetes environments.
 
@@ -324,7 +324,7 @@ At this point, RabbitMQ logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-## RabbitMQ Monitors
+## RabbitMQ monitors
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 

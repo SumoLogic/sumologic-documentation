@@ -71,7 +71,7 @@ If you're using ActiveMQ in a Kubernetes environment, the following additional f
 For information on setting up fields, see [Fields](/docs/manage/fields).
 
 
-### Step 2: Configure ActiveMQ Logs and Metrics Collection
+### Step 2: Configure ActiveMQ logs and metrics collection
 
 Choose your environment:
 
@@ -420,7 +420,7 @@ At this point, ActiveMQ logs should start flowing into Sumo Logic.
 </Tabs>
 
 
-## ActiveMQ Monitors
+## ActiveMQ monitors
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
