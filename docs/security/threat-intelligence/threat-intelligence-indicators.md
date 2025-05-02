@@ -8,11 +8,7 @@ description: Learn how to add and manage indicators from threat intelligence sou
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CloudSIEMThreatIntelNote from '../../reuse/cloud-siem-threat-intelligence-note.md';
 
-The **Threat Intelligence** tab shows the indicators that have been added to your threat intelligence datastore. Use this tab to add and manage your threat intelligence indicators. You can add indicators from a number of sources. Threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR. 
-
-:::tip
-You can also add threat intelligence indicators using a collector or the API. See [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
-:::
+The **Threat Intelligence** tab shows the indicators that have been added to your threat intelligence datastore. Use this tab to add and manage your threat intelligence indicators. You can add indicators from a number of sources (see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators)). Threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR.
 
 ## Threat Intelligence tab
 
@@ -22,7 +18,7 @@ You can also add threat intelligence indicators using a collector or the API. Se
  
 <img src={useBaseUrl('img/security/threat-intelligence-tab.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
-1. **+ Add Indicators**. Click to upload files that [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab).
+1. [**+ Add Indicators**](#add-indicators-button). Click to upload files that add threat intelligence indicators.
 1. **Actions**. Select to perform additional actions:
     * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180. See [Change the retention period for expired indicators](#change-the-retention-period-for-expired-indicators).
 1. **Status**. The current status of the indicator source (**Enabled** or **Disabled**).
@@ -35,9 +31,9 @@ You can also add threat intelligence indicators using a collector or the API. Se
 * The default storage limit is 10 million total indicators (not including any indicators provided by Sumo Logic such as in the `SumoLogic_ThreatIntel` and `_sumo_global_feed_cs` sources).
 :::
 
-## Add indicators in the Threat Intelligence tab
+## Add Indicators button
 
-You can add threat intelligence indicators using a collector, API, or the **Threat Intelligence** tab. This section describes how to add indicators in the **Threat Intelligence** tab. For information on the other methods, see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
+You can add threat intelligence indicators with the **Add Indicators** button in the **Threat Intelligence** tab. For information on the other methods, see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
 
 <CloudSIEMThreatIntelNote/>
 

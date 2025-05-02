@@ -1058,6 +1058,7 @@ module.exports = {
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
+        'manage/security/service-accounts',
         {
           type: 'category',
           label: 'Audit Indexes',
@@ -3032,9 +3033,9 @@ integrations: [
       link: {type: 'doc', id: 'security/threat-intelligence/index'},
       items: [
         'security/threat-intelligence/about-threat-intelligence',
-        'security/threat-intelligence/threat-intelligence-indicators',
-        'security/threat-intelligence/find-threats',
         'security/threat-intelligence/threat-indicators-in-cloud-siem',
+        'security/threat-intelligence/find-threats',
+        'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
       ],
     },  
@@ -3097,6 +3098,7 @@ integrations: [
         'api/scan-budget',
         'api/scheduled-views',
         'api/search-job',
+        'api/service-accounts',
         'api/service-allowlist',
         'api/service-map',
         'api/slo-management',

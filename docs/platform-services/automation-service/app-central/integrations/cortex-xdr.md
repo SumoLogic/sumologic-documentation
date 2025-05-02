@@ -41,6 +41,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Cortex XDR, see [Cortex XDR documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-Started-with-Cortex-XDR-APIs).
+
 ## Change Log
 
 * July 20, 2021 - First upload
