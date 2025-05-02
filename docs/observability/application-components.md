@@ -223,9 +223,9 @@ Refer to the documentation for the app you're using. App Components Solution cur
 * [Oracle](/docs/integrations/databases/oracle)
 
 
-### Configure fields in Sumo Logic
+### Configure Fields in Sumo Logic
 
-As part of the app installation process, the following fields will be created by default:
+Create the following Fields in collection sources both for logs and metrics. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up Fields, see the [Fields](/docs/manage/fields) topic.
 
 * `component`
 * `environment`
@@ -233,8 +233,6 @@ As part of the app installation process, the following fields will be created by
 * `db_cluster`
 * `db_cluster_address`
 * `db_cluster_port`
-
-For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ### Configuring or updating email notifications
 
