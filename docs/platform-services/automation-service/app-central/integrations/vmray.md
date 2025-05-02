@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about VMRay, see [VMRay documentation](https://www.vmray.com/basic-automation-with-the-vmray-api/).
+
 ## Change Log
 
 * September 7, 2021 - First upload

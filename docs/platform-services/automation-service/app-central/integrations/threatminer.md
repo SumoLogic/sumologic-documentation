@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about ThreatMiner, see the [ThreatMiner website](https://www.threatminer.org/index.php).
+
 ## Change Log
 
 * June 19, 2020 - First upload

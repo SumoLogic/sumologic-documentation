@@ -20,11 +20,13 @@ Syslog-ng is a free and open-source implementation of the syslog protocol for Un
 * **List Logspaces** *(Enrichment)* - Retrieves the list of searchable (indexed) logspaces.
 * **Logspace Details** *(Enrichment)* - Retrieves the list of searchable (indexed) logspaces, including the details of the logspace.
 
-## Configure Syslog NG in Automation Service and Cloud SOAR
+## Configure Syslog-NG in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about Syslog-NG, see [Syslog-NG documentation](https://syslog-ng.github.io/).
 
 ## Change Log
 

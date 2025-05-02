@@ -37,6 +37,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Omnissa Workspace ONE (formerly VMware Workspace ONE), see [Omnissa Workspace ONE documentation](https://docs.omnissa.com/category/Workspace_ONE).
+
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-3.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />

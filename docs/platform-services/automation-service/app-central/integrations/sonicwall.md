@@ -35,6 +35,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about SonicWall, see [SonicWall documentation](https://www.sonicwall.com/support/technical-documentation).
+
 ## Change Log
 
 * April 21, 2021 - First upload

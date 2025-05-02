@@ -43,6 +43,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about VMware vSphere, see [VMware vSphere documentation](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere.html).
+
 ## Change Log
 
 * August 30, 2019 - First upload
