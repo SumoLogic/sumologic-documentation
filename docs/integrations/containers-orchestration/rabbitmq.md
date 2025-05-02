@@ -50,24 +50,7 @@ Host: broker-1 Name: /var/log/rabbitmq/rabbit.log Category: logfile
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for RabbitMQ.
 
-### Step 1: Configure fields in Sumo Logic
-
-The following [fields](/docs/manage/fields/) are created automatically as a part of the app installation process:
-* `component`
-* `environment`
-* `messaging_system`
-* `messaging_cluster`
-* `pod`
-
-If you're using RabbitMQ in a Kubernetes environment, the following additional fields will be automatically created as a part of the app installation process:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_messaging_system`
-* `pod_labels_messaging_cluster`
-
-For information on setting up fields, see [Fields](/docs/manage/fields).
-
-### Step 2: Configure collection for RabbitMQ
+### Configure collection for RabbitMQ
 
 Sumo Logic supports collection of logs and metrics data from RabbitMQ in both Kubernetes and non-Kubernetes environments.
 
@@ -324,44 +307,30 @@ At this point, RabbitMQ logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-## RabbitMQ monitors
-
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
-
-<CreateMonitors/>
-
-There are limits to how many alerts can be enabled.
-
-:::note permissions required
-To install these monitors, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
-:::
 ## Installing the RabbitMQ App
 
-This section demonstrates how to install the RabbitMQ App.
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-1. From the **App Catalog**, search for and select the RabbitMQ app.
-2. Select the version of the service you're using and click **Add to Library**.
-:::note
-Version selection is not available for all apps.
-:::
-3. To install the app, complete the following fields.
-   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom RabbitMQ cluster filter. Examples:
-      1. For all RabbitMQ clusters: `messaging_cluster=*`
-      2. For a specific cluster: `messaging_cluster=rabbitmq.dev.01`
-      3. Clusters within a specific environment: `messaging_cluster=rabbitmq-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-5. Click **Add to Library**.
+<AppInstall2/>
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `messaging_system`
+* `messaging_cluster`
+* `pod`
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+If you're using RabbitMQ in a Kubernetes environment, the following additional fields will be automatically created as a part of the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_messaging_system`
+* `pod_labels_messaging_cluster`
 
-## Viewing RabbitMQ Dashboards
+## Viewing the RabbitMQ Dashboards
 
-#### Dashboard Filters with Template Variables
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the Filter with template variables help page.
+<ViewDashboards/>
 
 
 ### Overview
@@ -433,8 +402,13 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/RabbitMQ-Logs.png')} alt="RabbitMQ dashboards" />
 
 
+## Create monitors for RabbitMQ app
 
-## RabbitMQ Alerts
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### RabbitMQ Alerts
 
 Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 

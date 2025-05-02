@@ -67,23 +67,6 @@ messaging_cluster=* messaging_system="kafka" \
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Kafka.
 
-### Step 1: Configure fields in Sumo Logic
-
-The following [fields](/docs/manage/fields/) will always be created automatically as a part of the app installation process:
-* `component`
-* `environment`
-* `messaging_system`
-* `messaging_cluster`
-* `pod`
-
-If you're using Kafka in a Kubernetes environment, the following additional fields will be automatically created as a part of the app installation process:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_messaging_system`
-* `pod_labels_messaging_cluster`
-
-For information on setting up fields, see [Fields](/docs/manage/fields).
-
 ### Configure collection for Kafka
 
 Sumo Logic supports collection of logs and metrics data from Kafka in both Kubernetes and non-Kubernetes environments.
@@ -354,33 +337,28 @@ At this point, Kafka metrics and logs should start flowing into Sumo Logic.
 
 ## Installing the Kafka app
 
-This section demonstrates how to install the Kafka App.
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall2/>
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. :::note
-Version selection is not available for all apps.
-:::
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Kafka cluster filter. Examples:
-     * For all Kafka clusters `messaging_cluster=*`
-     * For a specific cluster: `messaging_cluster=Kafka.dev.01`.
-     * Clusters within a specific environment: `messaging_cluster=Kafka-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-5. Click **Add to Library**.
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `messaging_system`
+* `messaging_cluster`
+* `pod`
 
-When an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+If you're using Kafka in a Kubernetes environment, the following additional fields will be automatically created as a part of the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_messaging_system`
+* `pod_labels_messaging_cluster`
 
 ## Viewing the Kafka Dashboards
 
-### Filters with Template Variables
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the Filter with template variables help page.
+<ViewDashboards/>
 
 
 ### Kafka - Cluster Overview
@@ -598,7 +576,13 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Topic-Details.png')} alt="Kafka dashboards" />
 
 
-## Kafka alerts
+## Create monitors for Kafka app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Kafka alerts
 
 #### Pre-packaged alerts
 
