@@ -68,41 +68,7 @@ On your PostgreSQL database cluster, create a user that has access to following 
 * `pg_class`
 
 
-### Step 2: Configure Fields in Sumo Logic
-
-Create the following Fields in Sumo Logic before configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using PostgreSQL in a Kubernetes environment, create the fields:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using PostgreSQL in a non-Kubernetes environment, create the fields:
-
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-* `pod`
-
-</TabItem>
-</Tabs>
-
-### Step 3: Configure PostgreSQL Logs and Metrics Collection
+### Step 2: Configure PostgreSQL Logs and Metrics Collection
 
 Sumo Logic supports collection of logs and metrics data from PostgreSQL in both Kubernetes and non-Kubernetes environments. Click on the appropriate tab below based on the environment where your PostgreSQL clusters are hosted.
 
@@ -403,126 +369,36 @@ At this point, PostgreSQL logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-## Installing PostgreSQL Alerts
-
-This section provides instructions for installing the Sumo app and Alerts for PostgreSQL. These instructions assume you have already set up collection as described in the Collect Logs and Metrics from PostgreSQL app section.
-
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your PostgreSQL cluster. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. For details on the individual alerts, please see the [alerts section](#postgresql-alerts).
-* To install these alerts, you need to have the Manage Monitors role capability.
-* Alerts can be installed by either importing them a JSON or a Terraform script.
-
-There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/postgresql/postgresql.json) describing all the monitors.
-    1. The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all PostgreSQL clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=postgresql` with `<Your Custom Filter> db_system=postgresql`. Custom filter examples:
-        * For alerts applicable only to a specific cluster, your custom filter would be: `db_cluster=postgresql-prod.01`.
-        * For alerts applicable to all clusters that start with postgresql-prod, your custom filter would be: `db_cluster=postgresql-prod*`.
-        * For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=postgresql-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-2. Go to Manage Data > Alerts > Monitors.
-3. Click **Add**:
-4. Click Import to import monitors from the JSON above.
-
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the PostgreSQL folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors, to configure each monitor, to send notification to teams or connections please see the instructions detailed in step 4 of this [document](/docs/alerts/monitors/create-monitor).
-
-### Method B: Using a Terraform script
-
-1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using this [ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for PostgreSQL alerts: The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/postgresql). You can either download it through the “git clone” command or as a zip file.
-4. Alert Configuration: After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**postgresql**/
-
-Edit the **postgresql.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1 .
-```bash
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
-
-The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `postgresql_data_source`. Custom filter examples:
-* A specific cluster `db_cluster=postgresql.prod.01`
-* All clusters in an environment `environment=prod`
-* For alerts applicable only to a specific cluster, your custom filter would be: `db_cluster=postgresql-.prod.01`
-* For alerts applicable to all clusters that start with postgresql-prod, your custom filter would be `db_cluster=postgresql-prod*`
-* For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=postgresql-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-
-All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **monitors_disabled** to false in this file.
-
-By default, the monitors are configured in a monitor folder called “PostgreSQL”, if you would like to change the name of the folder, update the monitor folder name in this file.
-
-If you would like the alerts to send email or connection notifications, configure these in the file **postgresql_notifications.auto.tfvars**. For configuration examples, refer to the next section.
-
-
-5. Email and Connection Notification Configuration Examples. To **configure notifications**, modify the file `postgresql_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
-
-```bash title="Pagerduty Connection Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-```bash title="Email Notifications Example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-6. Install the Alerts.
-   1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**postgresql**/ and run `terraform init`. This will initialize Terraform and will download the required components.
-   2. Run **`terraform plan`** to view the monitors which will be created/modified by Terraform.
-   3. Run **`terraform apply`**.
-7. Post Installation. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [this document](/docs/alerts/monitors/create-monitor).
-
 ## Installing the PostgreSQL app
 
-Now that you have set up log and metric collection for PostgreSQL, you can install the Sumo Logic app for PostgreSQL to use the pre-configured Searches and dashboards. To install the app, do the following:
+import AppInstall2 from '../../reuse/apps/app-install-only-k8s.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall2 />
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-:::note
-Version selection is not available for all apps.
-:::
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom PostgreSQL cluster filter. Examples:
-      * For all PostgreSQL clusters: `db_cluster=**`
-      * For a specific cluster: `db_cluster=postgresql.dev.01`.
-      * Clusters within a specific environment: `db_cluster=postgresql-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection)
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library.**
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `pod`
+* `db_cluster_address`
+* `db_cluster_port`
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+Additionally, if you're using Cassandra in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ## Viewing PostgreSQL dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -617,13 +493,13 @@ Use this dashboard to:
 
 
 
-## PostgreSQL Alerts
+## Create monitors for PostgreSQL app
 
-Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-**Sumo Logic provides the following out-of-the-box alerts for PostgreSQL:**
+<CreateMonitors/>
 
-The metrics queries are derived as per [Prometheus rules](https://awesome-prometheus-alerts.grep.to/rules.html).
+### PostgreSQL Alerts
 
 | Alert Name                                        | Alert Description and conditions                                                                                                                                                                                                | Alert Condition                                                                                            | Recover Condition                 |
 |:---------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------|:-----------------------------------|
