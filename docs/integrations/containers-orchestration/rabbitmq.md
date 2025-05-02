@@ -410,8 +410,6 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### RabbitMQ Alerts
 
-Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
-
 <table>
   <tr>
    <td>Alert Name</td>

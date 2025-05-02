@@ -584,17 +584,6 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Kafka alerts
 
-#### Pre-packaged alerts
-
-Sumo Logic has provided out-of-the-box alerts available through [monitors](/docs/alerts/monitors) to help you quickly determine if the Kafka cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
-
-:::note
-There are limits to how many alerts can be enabled. See [Monitors FAQ](/docs/alerts/monitors/monitor-faq) for details.
-::: 
-:::note permissions required
-To install these alerts, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
-:::
-
 | Alert Name                                  | Alert Description and conditions                                                                                                                        | Alert Condition | Recover Condition |
 |:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
 | Kafka - High Broker Disk Utilization        | This alert fires when we detect that a disk on a broker node is more than 85% full.                                                                     | `>=`85            | < 85              |
