@@ -20,6 +20,12 @@ Query event/alert data and user details from Securonix.
 
 * v6.3
 
+## Configure Securonix V2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 ## Change Log
 
 * May 15, 2020 - First upload

@@ -65,17 +65,15 @@ To monitor Nginx access logs from a group of web servers:
 For more details on source templates, see [Installed Collector Sources](/docs/send-data/installed-collectors/sources).
 :::
 
-
 ## Edit a source template
 
 To edit a source template:
 
-1. In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). Go to the Sumo Logic top menu and select **Configuration > Collection > Source Template**.
 1. Select the source template that you need to edit, and click **Edit**. Or, click the kebab menu against the selected source template and click **Edit** from the dropdown.
 1. Change the required configuration in the source template configuration page, and click **Next**.
 1. If required, update the collectors on the **Link Collectors** page.
 1. Click **Next** to complete editing the source template.
-
 
 ## Upgrade a source template
 
@@ -96,3 +94,51 @@ You cannot upgrade a source template if there are any incompatible collector ver
 1. From the **Source Template** page, select the source template that you need to delete.
 1. Click the **Delete** button (or use the kebab menu against the selected source template, click **Delete** from the dropdown).
 1. Confirm the deletion. The source template will be removed from the **Source Template** page and unlinked from all collectors.
+
+## Enable/disable a source template
+
+You can enable or disable a source template to optimize your data flow management. Below are some of the key benefits of enabling or disabling the source template:
+
+- **Cost efficiency.** Proactively manage and reduce costs associated with excessive or unnecessary data ingestion.
+- **Compliance protection.** Safeguard your organization from compliance violations by preventing potential exposure of sensitive information in logs.
+- **Agility in response.** Quickly address misconfigurations or anomalies in your data sources without disrupting other crucial workflows.
+
+Follow the below steps to enable or disable a source template:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). Go to the Sumo Logic top menu and select **Configuration > Collection > Source Template**.<br/><img src={useBaseUrl('img/send-data/st-landing-page.png')} alt="source-template-landing-page" style={{border:'1px solid gray'}} width="800"/>
+1. Select the source template that you need to enable or disable. Click **More Actions** > **Enable** or **Disable** the source template. Or, click the kebab menu against the selected source template and click **Enable** or **Disable** from the dropdown.<br/><img src={useBaseUrl('img/send-data/enable-st.png')} alt="enable-source-template" style={{border:'1px solid gray'}} width="800"/>
+1. Enter **CONFIRM** and click the **Confirm** button to complete the action.<br/><img src={useBaseUrl('img/send-data/enable-confirm-st.png')} alt="confirm-enable-source-template" style={{border:'1px solid gray'}} width="600"/>
+
+When you re-enable a disabled source template, the collection can either start from the very beginning of the file or from the moment when you re-enabled the source template. Collection starting from the beginning could lead to duplicate data while collecting data from the re-enabled moment can lead to data loss for the duration the source template was inactive.
+
+In the disabled state, only minor and patch versions will be auto-upgraded and you will be blocked from upgrading the source template with any major pending Source Schema version. It is recommended that you first enable the source template before manually upgrading it.
+
+## Collector tags
+
+With remote management, you can tag your [OpenTelemetry Collectors](/docs/send-data/opentelemetry-collector) to categorize and group them. These tags are also enriched in your data, enabling you to use them in your dashboards and searches.
+
+:::note
+- Collector tags will only be editable for collectors with version `0.114.0` and above.
+- For default collector tags, you can only edit the **Values**.
+- System collector tags like `sumo.disco.enabled` cannot be added, updated, or deleted.
+:::
+
+You can add collector tags during OTEL collector setup as described in the previous section. Follow the below steps to add, update, or delete the collector tags after creation:
+
+1. Navigate to the **OpenTelemetry Collection** page.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collection.png')} alt="opentelemetry-collection" style={{border:'1px solid gray'}} width="800"/>
+1. Click on the desired collector where you need to add collector tags.
+1. In the right pane, scroll to the **Collector Tags** section and click **Edit**.<br/><img src={useBaseUrl('img/send-data/collector-tags-edit.png')} alt="collector-tags-edit" style={{border:'1px solid gray'}} width="800"/>
+1. In the edit window, click **+ Add tags** to add a new tag. You can also update or delete the required tags. Then click **Proceed**.<br/><img src={useBaseUrl('img/send-data/add-delete-update-tags.png')} alt="add-delete-update-tags" style={{border:'1px solid gray'}} width="500"/>
+1. A new **Update Collector Tag(s)** window appears. Click the **click here** link to understand the impact of this update.<br/><img src={useBaseUrl('img/send-data/update-tags-click-here.png')} alt="update-tags-click-here" style={{border:'1px solid gray'}} width="500"/>
+1. You will be redirected to the **Mapped Source Template** section, which displays the mapped source templates for the collector tags added. This window also displays the **Compatible** and **Incompatible Version** details for the mapped source template for the collector.<br/><img src={useBaseUrl('img/send-data/mapped-source-templates.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500"/>
+1. If there are any incompatible source templates, [upgrade the source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#upgrade-a-source-template) to ensure compatibility.
+1. Once the source template is upgraded and is compatible, enter **PROCEED** and click **Confirm**.<br/><img src={useBaseUrl('img/send-data/confirm-the-tags.png')} alt="confirm-the-tags" style={{border:'1px solid gray'}} width="500"/>
+
+:::info
+If you try to add or update any collector tags using the API, the following validations will occur in the backend:
+1. Validates if the collector is remotely managed.
+1. Validates if the key/value is empty string.
+1. Validates the agent version.
+1. Validates if the disco tags are added, updated, or deleted.
+1. Validates if the default tags are added or deleted.
+:::
+

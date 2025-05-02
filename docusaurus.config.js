@@ -248,7 +248,14 @@ module.exports = {
         },
       },
     // SEO Global Metadata
-    metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
+    metadata: [
+      {
+        name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts',
+      },
+      {
+        name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
+      },
+    ],
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -272,10 +279,10 @@ module.exports = {
       },
     },
     announcementBar: {
-      id: 'copilot',
-      content: 'Check out 🤖 <b><a target="_blank" rel="noopener noreferrer" href="/docs/search/copilot">Sumo Logic Copilot</a></b>, our new AI-powered logs assistant!',
-      backgroundColor: '#D3BAF7',
-      textColor: '#000',
+      id: 'rsa',
+      content: '📣 Meet us at <b><a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/rsa-conference">RSA Conference 2025 | Booth 6261 - North Hall</a></b> for live demos, expert insights, and AI-driven security solutions. Plus swag!',
+      backgroundColor: '#08046c',
+      textColor: '#FFF',
     },
     prism: {
       theme: lightCodeTheme,
@@ -394,34 +401,6 @@ module.exports = {
             label: 'Release Notes',
             position: 'left',
             to: '/docs/release-notes',
-            type: 'dropdown',
-            items:[
-              {
-                label: 'Service',
-                to: 'release-notes-service',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Cloud SIEM',
-                to: 'release-notes-cse',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Cloud SOAR',
-                to: 'release-notes-csoar',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Collector',
-                to: 'release-notes-collector',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Developer',
-                to: 'release-notes-developer',
-                icon: 'rss_feed',
-              },
-            ]
           },
           {
             type: 'search',

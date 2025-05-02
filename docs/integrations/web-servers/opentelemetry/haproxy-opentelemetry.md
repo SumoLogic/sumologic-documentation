@@ -302,7 +302,7 @@ The **HAProxy - Threat Analysis** dashboard provides an at-a-glance view of thre
 
 Use this dashboard to:
 
-- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-faq) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Threat-Analysis.png' alt="Threat Analysis" />
 
@@ -370,3 +370,8 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `HAProxy - Backend Server Down` | This alert is triggered when a backend server for a given HAProxy server is down. | Count > 0 | Count < = 0 |
 | `HAProxy - High Client (HTTP 4xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count > 0 | Count < = 0 |
 | `HAProxy - High Server (HTTP 5xx) Error Rate` | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Count > 0 | Count < = 0 |
+
+## Additional resources
+
+* Blog: [Everything you need to know about HAProxy log format](https://www.sumologic.com/blog/haproxy-log-format/)
+* App description: [HAProxy App for Sumo Logic](https://www.sumologic.com/application/haproxy/)

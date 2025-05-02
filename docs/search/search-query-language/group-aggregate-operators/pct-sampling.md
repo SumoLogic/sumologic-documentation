@@ -45,7 +45,7 @@ Example based on sample log message:
 
 ```sql
 file*
-| parse "filesize=*" as filesize
+| parse "filesize=*:" as filesize
 | pct_sampling(filesize, 75, 95) by _sourceHost
 ```
 

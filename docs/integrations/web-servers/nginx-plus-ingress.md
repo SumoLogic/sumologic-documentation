@@ -13,13 +13,13 @@ The Nginx Plus Ingress Controller for Kubernetes provides enterprise‑grade del
 This app supports Logs for Nginx Plus and Metrics for Nginx Plus Ingress Controller.
 :::
 
-The Nginx Plus Ingress app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your Nginx Plus Ingress web servers. Preconfigured dashboards and searches provide insight into server status, location zones, server zones, upstreams, resolvers, visitor locations, visitor access types, traffic patterns, errors, web server operations and access from known malicious sources.
+The Nginx Plus Ingress app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Nginx Plus Ingress web servers. Preconfigured dashboards and searches provide insight into server status, location zones, server zones, upstreams, resolvers, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
 
-## Log and Metrics Types
+## Log and metrics types
 
 The Sumo Logic app for Nginx Plus Ingress assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
-All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two. For more details on Nginx logs, see [here](http://nginx.org/en/docs/http/ngx_http_log_module.html).
+All Dashboards (except the Error Logs Analysis dashboard) assume the Access log format. The Error Logs Analysis Dashboard assumes both Access and Error log formats, to correlate information between the two. For more details on Nginx logs, see [here](http://nginx.org/en/docs/http/ngx_http_log_module.html).
 
 The Sumo Logic app for Nginx Plus Ingress assumes Prometheus format Metrics for Requests, Connections, and Ingress controller. For more details on Nginx Plus Ingress Metrics, see [here](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
 
@@ -65,7 +65,7 @@ Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Plus Ingress. This includes the following tasks:
 
-In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](/docs/observability/kubernetes/collection-setup).
+In the Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](/docs/observability/kubernetes/collection-setup).
 
 1. **Enable Logging in Nginx Plus Ingress**: Logging is enabled by default to standard output “**stdout**” and standard error “**stderr**”. If you need additional logging, all nginx logs must be redirected to **stdout** and **stderr**.
 2. **Enable Metrics in Nginx Plus Ingress**: Before you configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx pods, so Prometheus can find the Nginx metrics.
@@ -78,7 +78,7 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
 
 Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx Plus error log file format for error logs.
 
-Both the parse expressions can be used for logs collected from Nginx Plus Server running on Local or container-based systems.
+Both the parse expressions can be used for logs collected from the Nginx Plus Server running on Local or container-based systems.
 
 **FER for Access Logs**
 
@@ -114,111 +114,32 @@ Use the following Parse Expression:
 \"*\"" as Client_Ip, Server, Method, URL, Host nodrop
 ```
 
-## Installing Nginx Plus Ingress Monitors
-
-To install these alerts, you need to have the[ Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability.
-
-Alerts can be installed by either importing them via a JSON or via a Terraform script.
-
-### Method A: Importing a JSON file
-
-1. Download [this JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus-ingress/nginxplusingress.json) describing all the monitors.
-2. Replace **$$logs_data_source** with logs data source.
-    * For example, `_sourceCategory=Labs/NginxIngress/Logs`
-3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-4. Click **Add**.
-1. Click **Import** to import monitors from the JSON above.
-
-The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx** **Ingress** folder under **Monitors** to configure them. See [Add a Monitor](/docs/alerts/monitors/create-monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
-
-### Method B: Using a Terraform script
-
-1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Nginx Ingress alerts: The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus-ingress). You can either download it via the `git clone` command or as a zip file.
-4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/**. Edit the **nginxplusingress.auto.tfvars** file as per below instructions:
-   1. Add the Sumo Logic Access Key, Access Id, Deployment from Step 1.
-   ```sh
-   access_id   = "<YOUR SUMO ACCESS ID>"
-   access_key  = "<YOUR SUMO ACCESS KEY>"
-   environment = "<DEPLOYMENT>"
-   ```
-   2. Add `Logs_data_source` as the Sumo Logic data source for logs.
-   3. All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **monitors_disabled** to **false**.
-   4. All monitors are configured in a monitor folder called “**Nginx Plus Ingress**”, if you would like to change the name of the folder, update the parameter **folder**.
-5. Email and Connection Notification Configuration Examples: Modify the file **nginxplusingress.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
-
-```bash title="Pagerduty Connection Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email Notifications Example:"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-}
-```
-
-6. Install the Alerts:
-   1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/** and run `terraform init`. This will initialize Terraform and will download the required components.
-   2. Run `terraform plan` to view the monitors resources which will be created/modified by Terraform.
-   3. Run `terraform apply`.
-7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors/create-monitor).
-
-There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
-
-
 ## Installing the Nginx Plus Ingress app
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Nginx Plus Ingress Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+<ViewDashboards/>
 
 ### Overview
 
-The **Nginx Plus Ingress - Overview** dashboard provides an at-a-glance view of the nginx plus server access locations, error logs along with connection metrics.
+The **Nginx Plus Ingress - Overview** dashboard provides an at-a-glance view of the Nginx plus server access locations, error logs, and connection metrics.
 
 Use this dashboard to:
 * Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
 * Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
-* Get insights into Active and dropped connection.
+* Get insights into Active and dropped connections.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Overview.png')} alt="Nginx Plus Ingress" />
 
 
 ### Error Logs Analysis
 
-The **Nginx Plus Ingress - Error Logs Analysis** dashboard provides a high-level view of log level breakdowns, comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections and outliers, client requests, request trends, and request outliers.
+The **Nginx Plus Ingress - Error Logs Analysis** dashboard provides a high-level view of log level breakdowns, comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections, outliers, client requests, request trends, and request outliers.
 
 Use this dashboard to:
 * Track requests from clients. A request is a message asking for a resource, such as a page or an image.
@@ -242,7 +163,7 @@ Use this dashboard to:
 The **Nginx Plus Ingress - Outlier Analysis** dashboard provides a high-level view of Nginx server outlier metrics for bytes served, number of visitors, and server errors. You can select the time interval over which outliers are aggregated, then hover the cursor over the graph to display detailed information for that point in time.
 
 Use this dashboard to:
-* Detect outliers in your infrastructure with Sumo Logic’s machine learning algorithm.
+* Detect outliers in your infrastructure with Sumo Logic’s machine-learning algorithm.
 * To identify outliers in incoming traffic and the number of errors encountered by your servers.
 
 You can use schedule searches to send alerts to yourself whenever there is an outlier detected by Sumo Logic.
@@ -254,7 +175,7 @@ You can use schedule searches to send alerts to yourself whenever there is an ou
 The **Nginx Plus Ingress - Threat Inte**l dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the[ Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Threat-Intel.png')} alt="Nginx Plus Ingress" />
 
@@ -263,8 +184,8 @@ Use this dashboard to:
 The **Nginx Plus Ingress - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations, and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by a server, and the top URIs responsible for 404 responses.
 
 Use this dashboard to:
-* Gain insights into Client, Server Responses on Nginx Server. This helps you identify errors in Nginx Server.
-* To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
+* Gain insights into Client and Server Responses on the Nginx Server. This helps you identify errors in the Nginx Server.
+* To identify geolocations of all Client errors. This helps you identify client locations causing errors and helps you to block client IPs.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Web-Server-Operations.png')} alt="Nginx Plus Ingress" />
 
@@ -284,7 +205,7 @@ These insights can be useful for planning in which browsers, platforms, and oper
 The **Nginx Plus Ingress - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
 
 Use this dashboard to:
-* Gain insights into geographic locations of your user base.  This is useful for resource planning in different regions across the globe.
+* Gain insights into the geographic locations of your user base.  This is useful for resource planning in different regions across the globe.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Visitor-Locations.png')} alt="Nginx Plus Ingress" />
 
@@ -301,7 +222,7 @@ Use this dashboard to:
 
 ### Ingress Controller Metrics
 
-The **Nginx Plus Ingress - Ingress Controller Metrics** dashboard provides you insight on the status, reloads, failure of kubernetes Nginx Plus ingress controller.
+The **Nginx Plus Ingress - Ingress Controller Metrics** dashboard provides you insight into the status, reloads, and failure of the Kubernetes Nginx Plus ingress controller.
 
 Use this dashboard to:
 * Gain information about Nginx ingress Controller status and reloads. This helps you understand the availability of Nginx Ingress controllers.
@@ -312,33 +233,33 @@ Use this dashboard to:
 
 ### HTTP Location Zones
 
-The **Nginx Plus Ingress - HTTP Location Zones** metrics dashboard provides detailed statistics on the frontend performance, showing traffic speed, responses/requests count and various error responses.
+The **Nginx Plus Ingress - HTTP Location Zones** metrics dashboard provides detailed statistics on the frontend performance, showing traffic speed, responses/requests count, and various error responses.
 
 Use this dashboard to:
-* Gain information about Location http zones traffic: received and sent; speed, requires/responses amount, discarded traffic.
-* Gain information about Location http zones error responses: percentage of responses by server, percentage of each type of error responses.
+* Gain information about Location HTTP zones traffic: received and sent; speed, requires/responses amount, discarded traffic.
+* Gain information about Location HTTP zones error responses: percentage of responses by the server, percentage of each type of error response.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-HTTP-Location-Zones.png')} alt="Nginx Plus Ingress" />
 
 ### HTTP Server Zones
 
-The **Nginx Plus Ingress - HTTP Server Zones** metrics dashboard provides detailed statistics on the frontend performance, showing traffic speed, responses/requests count and various error responses.
+The **Nginx Plus Ingress - HTTP Server Zones** metrics dashboard provides detailed statistics on the frontend performance, showing traffic speed, responses/requests count, and various error responses.
 
 Use this dashboard to:
-* Gain information about Server http zones traffic: received and sent; speed, requires/responses amount, discarded traffic.
-* Gain information about Server http zones error responses: percentage of responses by server, percentage of each type of error responses.
+* Gain information about Server HTTP zones traffic: received and sent; speed, requires/responses amount, discarded traffic.
+* Gain information about Server HTTP zones error responses: percentage of responses by the server, percentage of each type of error response.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-HTTP-Server-Zones.png')} alt="Nginx Plus Ingress" />
 
 ### HTTP Upstreams
 
-The **Nginx Plus Ingress - HTTP Upstreams** metrics dashboard provides information about each upstream group for HTTP and HTTPS traffic, showing number of HTTP upstreams, servers, back-up servers, error responses and health monitoring.
+The **Nginx Plus Ingress - HTTP Upstreams** metrics dashboard provides information about each upstream group for HTTP and HTTPS traffic, showing the number of HTTP upstreams, servers, backup servers, error responses, and health monitoring.
 
 Use this dashboard to:
-* Gain information about HTTP upstreams, servers and back-up servers.
-* Gain information about HTTP upstreams traffic: received and sent; speed, requires/responses amount, downtime and response time.
-* Gain information about HTTP upstreams error responses: percentage of responses by server, percentage of each type of error responses.
-* Gain information about HTTP upstreams health monitoring.
+* Gain information about HTTP upstreams, servers, and backup servers.
+* Gain information about HTTP upstream traffic: received and sent; speed, requires/responses amount, downtime, and response time.
+* Gain information about HTTP upstream error responses: percentage of responses by the server, percentage of each type of error response.
+* Gain information about HTTP upstream health monitoring.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-HTTP-Upstreams.png')} alt="Nginx Plus Ingress" />
 
@@ -347,7 +268,7 @@ Use this dashboard to:
 The **Nginx Plus Ingress - Resolvers** metrics dashboard provides DNS server statistics of requests and responses per each DNS status zone.
 
 Use this dashboard to:
-* Gain information about the total number of zones, responses and requests speed.
+* Gain information about the total number of zones, responses, and request speed.
 * Gain information about error responses by each type of error.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Resolvers.png')} alt="Nginx Plus Ingress" />
@@ -355,13 +276,13 @@ Use this dashboard to:
 
 ### Nginx Plus Ingress- TCP/UDP Upstreams
 
-The **Nginx Plus Ingress - TCP/UDP Upstreams** metrics dashboard provides information about each upstream group for TCP and UDP traffic, showing number of TCP and UDP upstreams, servers, back-up servers, error responses and health monitoring.
+The **Nginx Plus Ingress - TCP/UDP Upstreams** metrics dashboard provides information about each upstream group for TCP and UDP traffic, showing the number of TCP and UDP upstreams, servers, backup servers, error responses, and health monitoring.
 
 Use this dashboard to:
-* Gain information about TCP and UDP upstreams, servers and back-up servers.
-* Gain information about TCP and UDP upstreams traffic: received and sent; speed, requests/responses amount, downtime and response time.
-* Gain information about TCP and UDP upstreams error responses: percentage of responses by server, percentage of each type of error responses.
-* Gain information about TCP and UDP upstreams health monitoring.
+* Gain information about TCP and UDP upstream, servers, and backup servers.
+* Gain information about TCP and UDP upstream traffic: received and sent; speed, requests/responses amount, downtime, and response time.
+* Gain information about TCP and UDP upstream error responses: percentage of responses by the server, percentage of each type of error response.
+* Gain information about TCP and UDP upstream health monitoring.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-TCP-UDP-Upstreams.png')} alt="Nginx Plus Ingress" />
 
@@ -371,20 +292,25 @@ The **Nginx Plus Ingress - TCP/UDP Zones** metrics dashboard provides TCP and UD
 
 Use this dashboard to:
 * Gain information about TCP and UDP traffic: received and sent; speed, requires/responses amount, discarded traffic.
-* Gain information about TCP and UDP error responses: percentage of responses by server, percentage of each type of error responses.
+* Gain information about TCP and UDP error responses: percentage of responses by the server, percentage of each type of error response.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-TCP-UDP-Zones.png')} alt="Nginx Plus Ingress" />
 
-## Nginx Plus Ingress Alerts
+## Create monitors for Nginx Plus Ingress app
 
-Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-Sumo Logic provides the following out-of-the-box alerts:
+<CreateMonitors/>
 
+## Nginx Plus Ingress alerts
+
+<details>
+<summary>Here are the alerts available for Nginx Plus Ingress (click to expand).</summary>
 | Alert Name | Alert Description | Alert Condition | Recover Condition |
 |:---|:---|:---|:---|
 | Nginx Plus Ingress - Dropped Connections | This alert fires when we detect dropped connections for a given Nginx Plus server. | > 0 | `<=`0 |
 | Nginx Plus Ingress - Critical Error Messages | This alert fires when we detect critical error messages for a given Nginx Plus server. | > 0 | `<=`0 |
-| Nginx Plus Ingress - Access from Highly Malicious Sources | This alert fires when an Nginx is accessed from highly malicious IP addresses. | > 0 | `<=`0 |
+| Nginx Plus Ingress - Access from Highly Malicious Sources | This alert fires when a Nginx is accessed from highly malicious IP addresses. | > 0 | `<=`0 |
 | Nginx Plus Ingress - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | > 0 | `<=`0 |
 | Nginx Plus Ingress - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | > 0 | `<=`0 |
+</details>

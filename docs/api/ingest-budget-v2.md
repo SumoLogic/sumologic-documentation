@@ -35,7 +35,6 @@ Ingest Budget Management V1 APIs have been removed and are no longer supported.
 | DE         | https://api.de.sumologic.com/docs/#tag/ingestBudgetManagementV2  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/ingestBudgetManagementV2  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/ingestBudgetManagementV2 |
-| IN         | https://api.in.sumologic.com/docs/#tag/ingestBudgetManagementV2  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/ingestBudgetManagementV2  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/ingestBudgetManagementV2  |
 | US1        | https://api.sumologic.com/docs/#tag/ingestBudgetManagementV2     |

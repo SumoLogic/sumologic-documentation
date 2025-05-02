@@ -119,7 +119,7 @@ the entity appears.
 | p | **Related Entities**. Entities related to the current entity. |
 | q | **Automations**. [Automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) that have been run on the entity. |
 | r | **Create Insight**. You can use this option to create an insight on the entity, as described below in [Create an insight](#create-an-insight), below. |
-| s | The **Current State** section lists signals that were generated for the entity during the current [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an insight. (The detection window is the period over which Cloud SIEM evaluates signals, which is 14 days, by default. The detection window is configured on the **Content > Custom Insights** page in the Cloud SIEM UI.) |
+| s | The **Current State** section lists signals that were generated for the entity during the current [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an insight. (The detection window is the period over which Cloud SIEM evaluates signals, which is 14 days, by default. The detection window is configured on the **Custom Insights** page in the Cloud SIEM UI.) |
 
 Below the **Current State** section there may be a **Prior Activity** section. This section lists signals that were generated for the entity prior to the current detection window, and all insights for the entity. 
 

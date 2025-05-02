@@ -11,7 +11,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/manage.png')} alt="icon" width="50"/>
 
-With the Organizations Management API, you can get the credits usage details of the child organizations. For more information, see [Manage Organizational Settings](/docs/manage/manage-subscription/manage-org-settings).
+With the Organizations Management API, you can get the credits usage details of the child organizations. For more information, see [Manage Organization Settings](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings).
 
 ## Documentation
 
@@ -24,7 +24,6 @@ With the Organizations Management API, you can get the credits usage details of 
 | DE         | https://api.de.sumologic.com/docs/#tag/orgsManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/orgsManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/orgsManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/orgsManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/orgsManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/orgsManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/orgsManagement     |
@@ -37,4 +36,3 @@ With the Organizations Management API, you can get the credits usage details of 
 <ApiRoles/>
 
 * Organizations (all role capabilities)
-

@@ -12,7 +12,7 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-[Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse#insight-trainer) is a dashboard in the Enterprise Audit - Cloud SIEM app. Insight Trainer offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity signals, resulting in generation of more meaningful insights. 
+[Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse/#cloud-siem---insight-trainer) is a dashboard in the Enterprise Audit - Cloud SIEM app. Insight Trainer offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity signals, resulting in generation of more meaningful insights. 
 
 :::sumo Micro Lesson
 
@@ -66,7 +66,7 @@ The dashboard makes two kinds of suggestions, either a “tunability” score to
 
 ## Cloud SIEM - Insight Trainer page
 
-After installing the [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse), access the [Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse#insight-trainer) dashboard by clicking the [Library](/docs/get-started/library) icon in the left nav bar.
+After installing the [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse), access the [Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse/#cloud-siem---insight-trainer) dashboard by clicking the [Library](/docs/get-started/library) icon in the left nav bar.
 
 The dashboard has the following sections:
 * [Filters](#filters)

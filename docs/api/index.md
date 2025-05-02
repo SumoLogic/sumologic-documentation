@@ -212,12 +212,17 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/api/service-accounts"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="Thumbnail icon" width="50"/><h4>Service Accounts</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/api/service-allowlist"><img src={useBaseUrl('img/icons/security/unlock.png')} alt="Thumbnail icon" width="50"/><h4>Service Allowlist</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/service-map"><img src={useBaseUrl('img/apm/traces/servicemap.png')} alt="Thumbnail icon" width="50"/><h4>Service Map</h4></a>
+  <a href="/docs/api/service-map"><img src={useBaseUrl('img/apm/services-map-icon.png')} alt="Thumbnail icon" width="50"/><h4>Service Map</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -228,6 +233,11 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/api/span-analytics"><img src={useBaseUrl('img/icons/operations/distributed-operations.png')} alt="Thumbnail icon" width="50"/><h4>Span Analytics</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/api/threat-intel-ingest"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Thumbnail icon" width="50"/><h4>Threat Intel Ingest</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

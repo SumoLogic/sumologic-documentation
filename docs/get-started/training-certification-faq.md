@@ -188,9 +188,9 @@ Certified users become technical experts on setting up, managing and optimizing 
 In this course, you'll create starter SOC queries as dashboard panels. These advanced operator queries help you monitor user activity across the globe, failed logins, land speed violations, brute force attacks, and more. You will create parameterized lookup tables for easy panel or dashboard pivots. You will learn how to export the starter SOC dashboard you created for use in your own environment. Lastly, you will be able to detect and investigate IOCs with the use of our embedded CrowdStrike database, which monitors malicious IPs addresses, and apply scheduled views as a best practice.
 -->
 
-**Sumo Logic Certified - Cloud SIEM Fundamentals**. Learn how Cloud SIEM ingests your data and turns it into actionable security Insights. Get hands-on practice with threat investigation, take actions on Insights, and learn the basics of SOC content creation, like writing rules and custom Insights.
+**Sumo Logic Certified - Cloud SIEM Fundamentals**. Learn how Cloud SIEM ingests your data and turns it into actionable security Insights. Get hands-on practice with threat investigation, take actions on Insights, and learn the basics of SOC content creation, like writing rules and custom insights.
 
-**Sumo Logic Certified - Cloud SIEM Administration**. Learn how to set up data ingestion for Cloud SIEM, including writing custom log and ingest mappings. Customize your environment with a deep dive into custom rules and Insight Actions.
+**Sumo Logic Certified - Cloud SIEM Administration**. Learn how to set up data ingestion for Cloud SIEM, including writing custom log and ingest mappings. Customize your environment with a deep dive into custom rules and insight actions.
 
 **Sumo Logic Certified - Cloud SOAR Fundamentals**. Learn how to automate your security operations center with playbooks, dashboards, and reports. Watch a playbook run in real time and export a customized dashboard.
 
