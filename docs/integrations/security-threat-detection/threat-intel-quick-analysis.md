@@ -25,117 +25,9 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Upgrading the Threat Intel Quick Analysis app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Threat Intel Quick Analysis app (optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
-## Viewing Threat Intel Quick Analysis dashboards
-
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-
-<ViewDashboards/>
-
-### Overview
-
-The **Overview** dashboard shows you the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
-
-<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Overview_Dashboard.png')} alt="Threat Intel Dashboard" />
-
-* **Welcome to the Threat Intel Quick Analysis App.** Informational panel to help you work with the app.
-* **Number of Log Lines (Events) Scanned for Threats.** Count of log lines scanned across all selected sources for the last 15 minutes.  
-* **IP Threat Count.** Count of threats related to malicious IPs, for the last 15 minutes.
-* **File Name Threat Count.** Count of threats related to malicious file names, for the last 15 minutes.  
-* **URL Threat Count.** Count of threats related to malicious URLs, for the last 15 minutes.  
-* **Email Threat Count.** Count of threats related to malicious email addresses, for the last 15 minutes.  
-* **Domain Threat Count.** Count of threats related to malicious domains, for the last 15 minutes.  
-* **Threats by Malicious Confidence.**  Qualifies all threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.
-
-
-### Domain
-
-The **Domain** dashboard displays the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
-
-<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Domain_Dashboard.png')} alt="Threat Intel Dashboard" />
-
-* **Threat Count.** Count of threats related to malicious domains, for the last 15 minutes.  
-* **Threats by Malicious Confidence.** Qualifies domain threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.  
-* **Threats by Actor.** Count of threats related to malicious domains, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
-* **Threats by Sources.** Count of threats related to malicious domains, broken by Sources, for the last 15 minutes.  
-* **Threats Over Time.** Trends of domain threats over time for the last 60 minutes.  
-* **Threats Over Time by Sources.** Trends of domain threats over time, broken by Sources for the last 60 minutes.  
-* **Threats Table.** Listing of all domain threats, including Malicious Confidence, Actors and Sources.   
-
-### Email
-
-The **Email** dashboard displays the frequency of Email threats by Actor, Log Source, Malicious Confidence, and view trends over time.
-
-<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Email_Dashboard.png')} alt="Threat Intel Dashboard" />
-
-* **Threat Count.** Count of threats related to malicious emails addresses, for the last 15 minutes.  
-* **Threats by Malicious Confidence.** Qualifies email address threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.  
-* **Threat Breakdown by Sources.** Count of threats related to malicious email addresses, broken by Sources, for the last 15 minutes.  
-* **Threats Over Time.** Trends of email address threats over time for the last 60 minutes.  
-* **Threats Over Time by Sources.** Trends of email address threats over time, broken by Sources for the last 60 minutes.  
-* **Threats by Actor.** Count of threats related to malicious email addresses, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
-* **Threats Table.** Listing of all domain threats, including Malicious Confidence, Actors and Sources.
-
-
-### IP
-
-The **IP** dashboard displays the frequency of IP threats by Actor, Log Source, Malicious Confidence, and view trends over time.
-
-<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_IP_Dashboard.png')} alt="Threat Intel Dashboard" />
-
-* **Threat Count.** Count of threats related to malicious IPs, for the last 15 minutes.  
-* **Threats by Geo Location.** Count of threats related to malicious IPs, broken by geo location, for the last 15 minutes.
-* **Threat Breakdown by Sources.** Count of threats related to malicious IPs, broken by Sources, for the last 15 minutes.  
-* **Threats by Malicious Confidence.** Qualifies IP threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.  
-* **Threats by Actors.** Count of threats related to malicious IPs, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.  
-* **Threats Over Time.** Trends of IP threats over time for the last 60 minutes.  
-* **Threats Table.** Listing of all IP threats, including Malicious Confidence, Actors and Sources.  
-* **Threats Over Time by Sources.** Trends of IP threats over time, broken by Sources for the last 60 minutes.
-
-
-### URL
-
-The **URL** dashboard displays the frequency of URL threats by Actor, Log Source, Malicious Confidence, and view trends over time.
-
-<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_URL_Dashboard.png')} alt="Threat Intel Dashboard" />
-
-* **Threat Count.** Count of threats related to malicious URLs, for the last 15 minutes.  
-* **Threats by Sources.** Count of threats related to malicious URLs, broken by Sources, for the last 15 minutes.
-* **Threats by Actors.** Count of threats related to malicious URLs, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
-* **Threats by Malicious Confidence.** Qualifies URLP threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.
-* **Threats Over Time.** Trends of URL threats over time for the last 60 minutes.
-* **Threats Over Time by Sources.** Trends of URL threats over time, broken by Sources for the last 60 minutes.
-* **Threat Table.** Listing of threats identified by URL, including information on Malicious Confidence, Actors, Source, and count.
-
-
-### Hash 256
-
-The **Hash 256** dashboard displays the frequency of Hash 256 threats by Actor, Log Source, Malicious Confidence, and view trends over time.
-
-<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Hash256_Dashboard.png')} alt="Threat Intel Dashboard" />
-
-* **Threat Count.** Count of total Hash 256 threats over the last 15 minutes.
-* **Threats by Malicious Confidence.** Qualifies Hash 256 threats for the last 60 minutes  into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine and displayed as a pie chart.
-* **Threat Breakdown by Sources.** Pie chart of Hash 256 threats over the last 60 minutes broken down by source.
-* **Threats Over Time.** Line chart of the number of Hash 256 threats over the last 60 minutes.
-* **Threat Breakdown by Source.** Line chart of the number of Hash 256 threats over the last 60 minutes, broken down by source.
-* **Threats by Actor.** Identifies Actors, if any, that can be attributed to Hash 256 threats over the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
-* **Threat Table.** Aggregation Table of Hash 256 threats over the last 15 minutes.
-
 ## Threat Intel optimization
 
-The Threat Intel Quick Analysis App provides baseline queries. You can further optimize and enhance these queries for the log and events types being scanned for threats. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**.
+The Threat Intel Quick Analysis app provides baseline queries. You can further optimize and enhance these queries for the log and events types being scanned for threats. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**.
 
 Use the following guidelines to customize your Threat Intel queries:
 * Filter out unwanted logs before you use lookup operator
@@ -243,6 +135,37 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
    ```
 <!-- Per DOCS-643, replace the preceding code with the following after `sumo://threat/cs` is replaced by `threatlookup`:
+2. Now, you can run your Threat Intel query on top of this view:
+  ```sql
+  _view=cylance_threat
+  | count by src_ip
+  ```
+  
+## Threat Intel FAQ
+
+#### What is the CrowdStrike Integration for Sumo Logic?
+
+Sumo Logic has expanded its security offerings by allowing customers to analyze their logs for potential threats and indicators of compromise. In partnership with CrowdStrike, Sumo Logic maintains an updated Threat Intelligence database that can be correlated with log data through queries. The Sumo Logic / CrowdStrike integration has two parts:
+
+* Sumo Logic maintains an up-to-date copy of CrowdStrike’s threat database.
+* Sumo customers can now use the CrowdStrike database in threat analysis queries over their logs (through a new lookup operator).
+
+The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
+
+
+#### What does the Threat Intel Quick Analysis App do?
+
+This app scans all Sumo logs and parses (using regex) IP/Email/URL/Domain/File Name fields for comparison against the threat feed from CrowdStrike. Think of it as an Inner Join between parsed fields and the threat table.
+
+This application can be slow to load depending on the volume of data you scan based on time, source category, etc.  We **highly recommend** that you apply additional filter conditions as you screen your logs or run these types of searches on a schedule.
+
+
+#### How often do you refresh the threat feed from CrowdStrike?
+
+The database is updated once per day. We have implemented a multi-layer cache for performance enhancements rather than returning to the master database on each query.
+
+=======
+<!-- Replace the preceding code with the following after `sumo://threat/cs` is replaced by `threatlookup`:
    ```
     _sourceCategory=cylance
     | threatlookup singleIndicator src_ip
@@ -336,8 +259,7 @@ You can further investigate bad IP triggers by updating your query to check the 
 
 -->
 
-## Viewing Threat Intel Quick Analysis dashboards
-
+## JSON configuration object
 
 #### `malicious_confidence`
 
@@ -483,6 +405,8 @@ Once an indicator has been marked with a malicious confidence level, it continue
     </tbody>
 </table>
 
+## Viewing Threat Intel Quick Analysis dashboards
+
 All dashboards include filters that you can use in Interactive Mode for further analysis of your Threat Intel Quick Analysis data. Because the Threat Intel Quick Analysis has the most bearing on recent threats, most panels are set to the 15 minute time range. You can adjust time ranges as needed.
 
 Live mode and real-time queries are not supported for dashboards at this time.
@@ -573,3 +497,14 @@ See the frequency of SHA-256 threats by Actor, Log Source, Malicious Confidence,
 * **Threats by Actor.** Identifies Actors, if any, that can be attributed to SHA-256 threats over the last 15 minutes. Actors are identified individuals, groups or nation-states associated to threats.
 * **Threat Table.** Aggregation Table of SHA-256 threats over the last 15 minutes.
 
+## Upgrading the Threat Intel Quick Analysis app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Threat Intel Quick Analysis app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
