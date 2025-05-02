@@ -17,7 +17,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic is evolving our popular [certification program](/docs/get-started/training-certification-faq) to drive the highest possible value and experience for learners. These changes include wider enhancements to our learning program: renaming to **Sumo Logic Academy**, expanding and refining our course catalog, and introducing live remote exam proctoring and digital credentialing. These enhancements will up-level the Sumo Logic learning journey to align with industry training practices.
 
-## FAQ
+## Getting started
+
+### How do I access the Training Portal?
+
+1. Log in to Sumo Logic.
+1. From your **Home** page, click the **Learn** tab > **Learning Hub**.<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Get Certified" style={{border: '1px solid gray'}} width="700" />
+
+You'll be redirected to the **Training** portal, where you can access all courses and certifications.
+
+## Cost and course availability
 
 ### Why are you moving from a free to a paid model?
 
@@ -46,6 +55,21 @@ The cost of the exams are $100 for Fundamentals, and $150 for others. They can b
 
 Sumo Logic training, including hands-on public virtual instructions, workshops and self-paced learning, will remain free to all our users. Alongside new certifications, private and custom training will continue to be available for purchase.
 
+### Is a voucher included in my training class?
+
+All our training course offerings, including self-paced and public Instructor-led training (ILT), continue to be free of charge. The fee applies for the certification exam and credential only.
+
+### How long do I have to use my voucher?
+
+You will have one year to use the voucher from the date of issue.
+
+
+## Certification value and renewal
+
+### Why should I get Sumo Logic certified?
+
+Our goal is to provide you with the highest level of value to maximize your Sumo Logic investment. The new, role-based Sumo Logic Certified program will help learners gain new skills to help drive your careers forward while supplying a legitimized credential you can be proud to share with peers and your professional community. Additionally, you will have a proven, differentiated level of Sumo Logic knowledge to showcase the ability to effectively and proficiently use Sumo Logic products within your organization.
+
 ### If I already have Sumo Logic certifications, will I lose those?
 
 The new Sumo Logic Certified credentials replace our previous set of certifications. While the previous program is being sunset, the credential will remain valid for one year (Fundamentals courses will be valid for two years). Current exam holders are welcome to renew their credential anytime.
@@ -58,28 +82,23 @@ Current exam holders are welcome to renew their credentials anytime.
 
 Certifications are valid for two years before they need to be renewed. This extends validity by one year compared to the previous certification model.
 
-### Why should I get Sumo Logic certified?
+### Are continuing education credits included with the certification?
 
-Our goal is to provide you with the highest level of value to maximize your Sumo Logic investment. The new, role-based Sumo Logic Certified program will help learners gain new skills to help drive your careers forward while supplying a legitimized credential you can be proud to share with peers and your professional community. Additionally, you will have a proven, differentiated level of Sumo Logic knowledge to showcase the ability to effectively and proficiently use Sumo Logic products within your organization.
+Not at this time.
+
+
+## Exam logistics
 
 ### How do I get certified and schedule my exam?
 
 Per policy, we recommend a minimum of six months hands-on experience with Sumo Logic prior to taking a certification exam. The process for scheduling the exam is simple and easy:
-* You can purchase exam credits directly online by logging in to your Sumo Logic portal and selecting **Exam registration**.
+* You can purchase exam credits directly online by logging into Sumo Logic, clicking the **Learn** tab > **Exam Registration**.<br/><img src={useBaseUrl('img/get-started/exam-registration.png')} alt="exam registration" style={{border: '1px solid gray'}} width="700" />
 * You will then register with our exam proctoring partner, Kryterion, after which you will be able to select and pay for the exam of your choice.
 * After taking the exam, results will be shown immediately. If passing, further instructions will follow by email for accepting the digital badge.
 
 <!--
 Please see the following short video that walks through the workflow to register, pay, schedule and prepare for a proctored exam.
 -->
-
-### Is a voucher included in my training class?
-
-All our training course offerings, including self-paced and public Instructor-led training (ILT), continue to be free of charge. The fee applies for the certification exam and credential only.
-
-### How long do I have to use my voucher?
-
-You will have one year to use the voucher from the date of issue.
 
 ### What are the requirements for taking an exam?
 
@@ -99,17 +118,15 @@ Yes, a Pass/Fail result will show on the screen after results have been submitte
 
 You can retake your exam 48 hours after the previous exam attempt. A new voucher will be required for each attempt. For security and to maintain trust, we do not show which specific questions were incorrectly answered, but an overall score is displayed.
 
-### Are continuing education credits included with the certification?
-
-Not at this time.
+## Badge and community
 
 ### Where can I find my new Sumo Logic Certification digital badges?
 
 Certifications badges can be viewed from the [Credly](https://info.credly.com/) portal using the Credly account created after receiving your first certification granted. We also encourage you to join the [Sumo Logic Certification community on LinkedIn](https://www.linkedin.com/groups/13542036/) and add your badges to your profile!
 
-## Have more questions?
+## Need help?
 
-Reach out to our training and education team at [training@sumologic.com](mailto:training@sumologic.com) and we’ll be happy to help answer any additional questions.
+Have more questions? Reach out to our training and education team at [training@sumologic.com](mailto:training@sumologic.com) and we’ll be happy to help answer any additional questions.
 
 <!--
 See also the following resources:
