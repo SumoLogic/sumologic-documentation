@@ -23,7 +23,6 @@ The Teams app provides visibility into the logging that Microsoft exposes in the
 
 For more information, see Microsoft’s [list of Teams Activities](https://docs.microsoft.com/en-us/microsoftteams/audit-log-events#teams-activities).
 
-
 ### Sample log messages
 
 ```json
@@ -65,18 +64,6 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Upgrading the Microsoft Teams app (optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Microsoft Teams app (optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Viewing Microsoft Teams dashboards  
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -117,7 +104,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+Team+Statistics.png')} alt="Team Statistics" />
 
-
 ### Channel Statistics
 
 The **Teams - Channel Statistics** dashboard offers complete visibility into the Channel activity occurring in your Teams.
@@ -130,7 +116,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+Channel+Statistics.png')} alt="Channel Statistics" />
 
-
 ### User and Role Changes
 
 The **Teams - User and Role Changes** dashboard provides insight on the user and role changes being applied in your environment.
@@ -140,3 +125,15 @@ Use this dashboard to:
 * Understand how members are being added, removed, and changed by object name.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+User+and+Role+Changes.png')} alt="User and Role Changes" />
+
+## Upgrading the Microsoft Teams app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Teams app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
