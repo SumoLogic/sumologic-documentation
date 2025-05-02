@@ -51,27 +51,7 @@ Host: broker-3-activemq Name: /opt/activemq/data/activemq.log Category:logfile
 This App has been tested with following ActiveMQ versions:
 * 5.16.2.
 
-### Step 1: Configure fields in Sumo Logic
-
-Configuring log and metric collection for the ActiveMQ app includes the following tasks:
-
-The following [fields](/docs/manage/fields/) will always be created automatically as a part of the app installation process:
-* `component`
-* `environment`
-* `messaging_system`
-* `messaging_cluster`
-* `pod`
-
-If you're using ActiveMQ in a Kubernetes environment, the following additional fields will be automatically created as a part of the app installation process:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_messaging_system`
-* `pod_labels_messaging_cluster`
-
-For information on setting up fields, see [Fields](/docs/manage/fields).
-
-
-### Step 2: Configure ActiveMQ logs and metrics collection
+### Configure ActiveMQ logs and metrics collection
 
 Choose your environment:
 
@@ -419,35 +399,31 @@ At this point, ActiveMQ logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
+## Installing the ActiveMQ app
 
-## ActiveMQ monitors
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
+<AppInstall2/>
 
-<CreateMonitors/>
-There are limits to how many alerts can be enabled.
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `messaging_system`
+* `messaging_cluster`
+* `pod`
 
-:::note permissions required
-To install these monitors, you need to have the [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting).
-:::
+If you're using ActiveMQ in a Kubernetes environment, the following additional fields will be automatically created as a part of the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_messaging_system`
+* `pod_labels_messaging_cluster`
 
-### ActiveMQ alerts
-
-| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
-|:--|:--|:--|:--|
-| `ActiveMQ - High CPU Usage Alert` | This alert gets triggered when CPU usage on a node in a ActiveMQ cluster is high. | Count >= 80 | Count < 80 |
-| `ActiveMQ - High Memory Usage Alert` | This alert gets triggered when memory usage on a node in a ActiveMQ cluster is high. | Count >= 80 | Count < 80 |
-| `ActiveMQ - High Storage  Used Alert` | This alert gets triggered when there is high store usage on a node in a ActiveMQ cluster. | Count >= 80 | Count < 80 |
-| `ActiveMQ - Maximum Connection Alert` | This alert gets triggered when one node in ActiveMQ cluster exceeds the maximum allowed client connection limit. | Count >= 1 | Count < 1 |
-| `ActiveMQ - No Consumers on Queues Alert` | This alert gets triggered when a ActiveMQ queue has no consumers. | Count < 1 | Count >= 1 |
-| `ActiveMQ - Node Down Alert` | This alert gets triggered when a node in the ActiveMQ cluster is down. | Count >= 1 | Count < 1 |
-| `ActiveMQ - Too Many Connections Alert` | This alert gets triggered when there are too many connections to a node in a ActiveMQ cluster. | Count >= 1000 | Count < 1000 |
 
 ## Viewing the ActiveMQ Dashboards
 
-### Dashboard Filters with Template Variables
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
+<ViewDashboards/>
 
 ### Overview
 
@@ -530,3 +506,21 @@ Use this dashboard to:
 * Quickly determine patterns across all logs in a given ActiveMQ cluster.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/activemq-images.png')} alt="ActiveMQ dashboards" />
+
+## Create monitors for ActiveMQ app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### ActiveMQ alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `ActiveMQ - High CPU Usage Alert` | This alert gets triggered when CPU usage on a node in a ActiveMQ cluster is high. | Count >= 80 | Count < 80 |
+| `ActiveMQ - High Memory Usage Alert` | This alert gets triggered when memory usage on a node in a ActiveMQ cluster is high. | Count >= 80 | Count < 80 |
+| `ActiveMQ - High Storage  Used Alert` | This alert gets triggered when there is high store usage on a node in a ActiveMQ cluster. | Count >= 80 | Count < 80 |
+| `ActiveMQ - Maximum Connection Alert` | This alert gets triggered when one node in ActiveMQ cluster exceeds the maximum allowed client connection limit. | Count >= 1 | Count < 1 |
+| `ActiveMQ - No Consumers on Queues Alert` | This alert gets triggered when a ActiveMQ queue has no consumers. | Count < 1 | Count >= 1 |
+| `ActiveMQ - Node Down Alert` | This alert gets triggered when a node in the ActiveMQ cluster is down. | Count >= 1 | Count < 1 |
+| `ActiveMQ - Too Many Connections Alert` | This alert gets triggered when there are too many connections to a node in a ActiveMQ cluster. | Count >= 1000 | Count < 1000 |
