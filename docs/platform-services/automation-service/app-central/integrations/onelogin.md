@@ -32,6 +32,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about OneLogin, see [OneLogin documentation](https://developers.onelogin.com/quickstart).
+
 ## Change Log
 
 * March 1, 2021 - First upload

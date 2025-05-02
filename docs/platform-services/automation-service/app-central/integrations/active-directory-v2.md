@@ -82,6 +82,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Active Directory V2, see [Active Directory V2 documentation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2).
+
 ### Required resources from an existing Active Directory installation
 
 To configure the Automation Service or Cloud SOAR to connect to an existing Active Directory installation, enter details about the Active Directory instance in the new resource configuration dialog:

@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Securonix, see [Securonix documentation](https://documentation.securonix.com/).
+
 ## Change Log
 
 * May 15, 2020 - First upload

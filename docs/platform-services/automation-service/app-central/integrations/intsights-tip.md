@@ -29,6 +29,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Rapid7 Threat Command ([formerly Intsights TIP](https://www.msspalert.com/news/rapid7-acquires-intsights-cyber)), see [Rapid7 Threat Command documentation](https://docs.rapid7.com/).
+
 ## Change Log
 
 * January 15, 2020 - First upload

@@ -28,6 +28,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about GreyNoise, see [GreyNoise documentation](https://docs.greynoise.io/).
+
 ## Change Log
 
 * March 31, 2021 - First upload

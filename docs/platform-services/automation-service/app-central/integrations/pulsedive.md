@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Pulsedive, see [Pulsedive documentation](https://pulsedive.com/api/).
+
 ## Change Log
 
 * March 9, 2021 - First upload

@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about FortiAnalyzer, see [FortiAnalyzer documentation](https://docs.fortinet.com/product/fortianalyzer/7.6).
+
 ## Change Log
 
 * June 19, 2019 - First upload

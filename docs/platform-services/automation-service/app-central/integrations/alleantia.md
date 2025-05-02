@@ -31,6 +31,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Alleantia, see [Alleantia documentation](https://kb.alleantia.com/).
+
 ## Change Log
 
 * December 17, 2020 - First upload

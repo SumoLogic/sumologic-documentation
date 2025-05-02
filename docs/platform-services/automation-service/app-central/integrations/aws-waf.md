@@ -51,6 +51,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about AWS WAF, see [AWS WAF documentation](https://docs.aws.amazon.com/waf/).
+
 ### Installation
 
 [Install](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central) the AWS WAF application from App Central.
