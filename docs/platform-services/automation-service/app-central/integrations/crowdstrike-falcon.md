@@ -44,6 +44,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about CrowdStrike Falcon, see [CrowdStrike documentation](https://www.crowdstrike.com/en-us/resources/guides/?lang=1).
+
 ## Change Log
 
 * June 3, 2021 - First upload

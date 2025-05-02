@@ -24,6 +24,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about RapidAPI, see [RapidAPI documentation](https://docs.rapidapi.com/).
+
 ## Change Log
 
 * October 29, 2021 - First upload

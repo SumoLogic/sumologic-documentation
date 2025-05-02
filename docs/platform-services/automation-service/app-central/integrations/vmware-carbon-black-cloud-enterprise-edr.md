@@ -25,7 +25,7 @@ VMware Carbon Black Cloud Enterprise EDR Integration Interact with watchlists, f
 ## VMware Carbon Black Cloud Enterprise EDR configuration
 
 1. Log in to the [CBC Console](https://defense.conferdeploy.net).
-1. Navigate to the **Settings**  menu, and then click on  **API Access**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-enterprise-edr/vmware-carbon-black-cloud-enterprise-edr-1.png')} style={{border:'1px solid gray'}} alt="vvmware-carbon-black-cloud-enterprise-edr" width="300"/>
+1. Navigate to the **Settings**  menu, and then click on  [**API Access**](https://techdocs.broadcom.com/us/en/carbon-black/cloud/carbon-black-cloud/index/cbc-user-guide-tile/GUID-9620FAB7-FE70-45DE-9CAB-590FA358721F-en/GUID-7AA95653-EF83-4F49-B11F-F984F7D62CB8-en/GUID-F3816FB5-969F-4113-80FC-03981C65F969-en.html).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-enterprise-edr/vmware-carbon-black-cloud-enterprise-edr-1.png')} style={{border:'1px solid gray'}} alt="vvmware-carbon-black-cloud-enterprise-edr" width="300"/>
 1. From the **API ACCESS** page, click on Add API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-enterprise-edr/vmware-carbon-black-cloud-enterprise-edr-2.png')} style={{border:'1px solid gray'}} alt="vvmware-carbon-black-cloud-enterprise-edr" width="700"/>
 1. Populate the name, Access Level type, and click the Save button.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-enterprise-edr/vmware-carbon-black-cloud-enterprise-edr-3.png')} style={{border:'1px solid gray'}} alt="vvmware-carbon-black-cloud-enterprise-edr" width="600"/>
 1. Copy the API Credentials (API ID and API Secret Key). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-enterprise-edr/vmware-carbon-black-cloud-enterprise-edr-4.png')} style={{border:'1px solid gray'}} alt="vvmware-carbon-black-cloud-enterprise-edr" width="400"/>
@@ -36,6 +36,8 @@ VMware Carbon Black Cloud Enterprise EDR Integration Interact with watchlists, f
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about Carbon Black Cloud, see [Carbon Black Cloud documentation](https://techdocs.broadcom.com/us/en/carbon-black/cloud.html).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the VMware Carbon Black Cloud Enterprise EDR integration and click on it. The integration details will appear. Click on the "+" button to add a new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-enterprise-edr/vmware-carbon-black-cloud-enterprise-edr-8.png')} style={{border:'1px solid gray'}} alt="vvmware-carbon-black-cloud-enterprise-edr" width="700"/>

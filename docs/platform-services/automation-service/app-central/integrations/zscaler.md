@@ -40,6 +40,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Zscaler, see [Zscaler documentation](https://help.zscaler.com/zia).
+
 ## Change Log
 
 * October 16, 2019 - First upload

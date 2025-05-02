@@ -29,13 +29,15 @@ Updated: Jul 18, 2023***
 ## FireHydrant configuration
 
 1. Login to **FireHydrant** with your email and password and refer to the Bot users page.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-1.png')} style={{border:'1px solid gray'}} alt="firehydrant" width="400"/> 
-1. Create your token and use as API Key. Make sure you click to copy the token, it will not be shown again.
+1. Create your token and use as [API Key](https://docs.firehydrant.com/docs/api-keys). Make sure you click to copy the token, it will not be shown again.
 
 ## Configure FireHydrant in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about FireHydrant, see [FireHydrant documentation](https://docs.firehydrant.com/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

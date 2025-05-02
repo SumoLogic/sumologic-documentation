@@ -29,6 +29,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Salesforce, see [Salesforce documentation](https://help.salesforce.com/s/products).
+
 ## Change Log
 
 * August 17, 2021 - First upload

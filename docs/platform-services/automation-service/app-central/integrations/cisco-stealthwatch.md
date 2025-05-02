@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Cisco Secure Network Analytics (formerly Stealthwatch), see [Cisco Secure Network Analytics documentation](https://www.cisco.com/c/en/us/support/security/stealthwatch/series.html).
+
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-stealthwatch/cisco-stealthwatch-3.png')} style={{border:'1px solid gray'}} alt="cisco-stealthwatch" width="600"/>

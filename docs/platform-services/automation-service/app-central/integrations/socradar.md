@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about SOCRadar, see the [SOCRadar website](https://socradar.io/).
+
 ## Change Log
 
 * October 27, 2021 - First upload

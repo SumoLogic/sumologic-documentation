@@ -33,6 +33,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about EclecticIQ, see the [EclecticIQ website](https://www.eclecticiq.com/library).
+
 ## Change Log
 
 * November 15, 2021 - First upload

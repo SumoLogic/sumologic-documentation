@@ -25,7 +25,7 @@ Automox is a cloud-native patching platform that automates patch management acro
 
 ## Automox configuration
 
-Follow these steps to get your API key from Automox:
+Follow these steps to [get your API key from Automox](https://docs.automox.com/product/Product_Documentation/Settings/Managing_Keys.htm):
 
 1. Select **Keys** from the menu. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-1.png')} style={{border:'1px solid gray'}} alt="automox-1" width="400"/>
 1. Click the **ADD** button to add a new API key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-2.png')} style={{border:'1px solid gray'}} alt="automox-2" width="600"/>
@@ -37,6 +37,8 @@ Follow these steps to get your API key from Automox:
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about Automox, see [Automox documentation](https://docs.automox.com/product/Home.htm).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

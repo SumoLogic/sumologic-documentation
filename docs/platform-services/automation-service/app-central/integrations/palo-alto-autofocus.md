@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Palo Alto AutoFocus, see [Palo Alto AutoFocus documentation](https://docs.paloaltonetworks.com/autofocus/autofocus-admin).
+
 ## Change Log
 
 * July 10, 2019 - First upload

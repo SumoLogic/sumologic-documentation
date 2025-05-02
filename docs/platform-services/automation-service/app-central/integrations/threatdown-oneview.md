@@ -42,7 +42,7 @@ Threat Intelligence Reputation
 
 ### Generate API credentials
 
-Create API credentials from your Malwarebytes account:
+[Create API credentials](https://support.threatdown.com/hc/en-us/articles/4413799441683-Create-OAuth2-credentials-for-OneView) from your Malwarebytes account:
 1. Sign in to [Malwarebytes](https://oneview.threatdown.com/dashboard) with your Malwarebytes account. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview5.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview5" width="300"/>
 2. Click **Integrate**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview6.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview6" width="200"/>
 3. Click **"+"** to create credentials. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview7.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview7" width="800"/>
@@ -62,6 +62,8 @@ Create API credentials from your Malwarebytes account:
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about ThreatDown OneView, see [ThreatDown OneView documentation](https://support.threatdown.com/hc/en-us/sections/4413802067603-Administration).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

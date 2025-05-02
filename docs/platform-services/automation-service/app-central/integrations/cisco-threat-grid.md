@@ -27,6 +27,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Cisco Secure Malware Analytics (formerly Threat Grid), see [Cisco Secure Malware Analytics (Threat Grid) documentation](https://www.cisco.com/c/en/us/support/security/amp-threat-grid-appliances/series.html).
+
 ## Change Log
 
 * February 5, 2020 - First upload

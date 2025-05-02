@@ -40,6 +40,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about AlienVault, see [AlienVault documentation](https://cybersecurity.att.com/documentation/).
+
 ## Change Log
 
 * October 3, 2019 - First upload

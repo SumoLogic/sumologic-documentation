@@ -24,6 +24,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about IBM MSS, see the [IBM Managed Security Service website](https://www.ibm.com/services/managed-security).
+
 ## Change Log
 
 * May 5, 2019 - First upload
