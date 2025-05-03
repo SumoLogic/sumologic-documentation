@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Kaspersky TIP, see [Kaspersky TIP documentation](https://kaspersky-tip.readthedocs.io/en/stable/).
+
 ## Change Log
 
 * July 10, 2019 - First upload

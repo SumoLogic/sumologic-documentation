@@ -25,6 +25,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about WhoisXML, see [WhoisXML documentation](https://whois.whoisxmlapi.com/documentation/making-requests).
+
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row. The integration details will appear. Click on the **"+"** button to add new Resource.br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-3.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
 1. Populate all the required fields (\*) and then click **SAVE**. 

@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Censys, see [Censys documentation](https://docs.censys.com/docs).
+
 ## Change Log
 
 * January 31, 2020 - First upload

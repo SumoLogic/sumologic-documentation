@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Domain Dossier, see the [Domain Dossier website](https://centralops.net/co/domaindossier).
+
 ## Change Log
 
 * May 7, 2019 - First upload

@@ -42,6 +42,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Recorded Future, see [Recorded Future documentation](https://support.recordedfuture.com/hc/en-us).
+
 ## Change Log
 
 * September 16, 2019 - First upload

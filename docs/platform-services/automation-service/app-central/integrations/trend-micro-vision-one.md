@@ -29,6 +29,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Trend Micro Vision One, see [Trend Micro Vision One documentation](https://docs.trendmicro.com/en-us/documentation/trend-vision-one/).
+
 ## Change Log
 
 * October 28, 2021 - First upload

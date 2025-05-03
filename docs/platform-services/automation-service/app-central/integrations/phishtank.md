@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about PhishTank, see [PhishTank documentation](https://phishtank.org/developer_info.php).
+
 ## Change Log
 
 * January 10, 2019 - First upload

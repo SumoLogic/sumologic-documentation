@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Armorblox, see [Armorblox documentation](https://armorblox.stoplight.io/docs/public-apis/6e3583e334a34-armorblox-api).
+
 ## Change Log
 
 * September 4, 2023 (v1.0) - First upload

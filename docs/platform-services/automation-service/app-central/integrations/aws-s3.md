@@ -34,6 +34,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about AWS S3, see [S3 documentation](https://docs.aws.amazon.com/s3/).
+
 ## Change Log
 
 * October 3, 2019 - First upload

@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Neustar, see [Neustar documentation](https://www.home.neustar/).
+
 ## Change Log
 
 * April 19, 2022 - First upload

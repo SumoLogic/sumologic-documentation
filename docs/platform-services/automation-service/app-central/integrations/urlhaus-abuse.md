@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about URLhause, see [URLhause documentation](https://urlhaus.abuse.ch/).
+
 ## Change Log
 
 * April 1, 2019 - First upload

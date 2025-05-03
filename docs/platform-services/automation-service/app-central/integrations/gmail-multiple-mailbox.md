@@ -34,7 +34,7 @@ Interact with multiple Gmail mailboxes.
 
 1) Create/view a Project at [Developers console](https://console.developers.google.com/).
 2) Access your [Google Service Account](https://console.cloud.google.com/projectselector2/iam-admin/serviceaccounts%C2%A0).
-3) In the IAM & admin section select Service accounts.
+3) In the IAM & admin section select [Service accounts](https://cloud.google.com/iam/docs/service-account-overview).
 4) In the Service accounts section, click Create Service Account
 5) During the service account creations, you will see the Create key, In the Create key section, click CREATE KEY.
 6) Select Key type JSON and click CREATE.
@@ -59,6 +59,8 @@ If the API has been recently enabled, wait a few minutes for the action to propa
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about the Gmail API, see [Gmail API documentation](https://developers.google.com/workspace/gmail/api/guides).
 
 ## Change Log
 
