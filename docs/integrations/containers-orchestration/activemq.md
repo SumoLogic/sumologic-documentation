@@ -517,7 +517,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Alert Name  | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `ActiveMQ - High CPU Usage Alert` | This alert gets triggered when CPU usage on a node in a ActiveMQ cluster is high. | Count >= 80 | Count < 80 |
+| `ActiveMQ - High CPU Usage Alert` | This alert gets triggered when there is high CPU usage on a node in a ActiveMQ cluster. | Count >= 80 | Count < 80 |
 | `ActiveMQ - High Memory Usage Alert` | This alert gets triggered when memory usage on a node in a ActiveMQ cluster is high. | Count >= 80 | Count < 80 |
 | `ActiveMQ - High Storage  Used Alert` | This alert gets triggered when there is high store usage on a node in a ActiveMQ cluster. | Count >= 80 | Count < 80 |
 | `ActiveMQ - Maximum Connection Alert` | This alert gets triggered when one node in ActiveMQ cluster exceeds the maximum allowed client connection limit. | Count >= 1 | Count < 1 |
