@@ -32,9 +32,9 @@ To [get access key and secret access key](https://docs.aws.amazon.com/athena/lat
 
 ## Configure Amazon Athena in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
-<IntegrationsAuth/>
+<IntegrationsAuthAWS/>
 
 For information about Amazon Athena, see [Athena documentation](https://docs.aws.amazon.com/athena/).
 

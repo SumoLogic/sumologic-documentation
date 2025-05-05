@@ -30,9 +30,9 @@ Interact with AWS S3 buckets, objects, and policies.
 
 ## Configure AWS S3 in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
-<IntegrationsAuth/>
+<IntegrationsAuthAWS/>
 
 For information about AWS S3, see [S3 documentation](https://docs.aws.amazon.com/s3/).
 
