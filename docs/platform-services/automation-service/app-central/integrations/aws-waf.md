@@ -47,6 +47,10 @@ It is compatible with all standard environments where WAFv2 actions are supporte
 
 ## Configure AWS WAF in Automation Service and Cloud SOAR
 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
 <IntegrationsAuthAWS/>
