@@ -29,6 +29,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about APIVoid, see [APIVoid documentation](https://docs.apivoid.com/).
+
 ## Change Log
 
 * August 14, 2020 - First upload

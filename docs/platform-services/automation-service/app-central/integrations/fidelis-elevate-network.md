@@ -27,6 +27,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Fidelis Elevate Network, see [Fidelis documentation](https://fidelissecurity.com/resources/how-tos/).
+
 ## Change Log
 
 * June 3, 2019 - First upload

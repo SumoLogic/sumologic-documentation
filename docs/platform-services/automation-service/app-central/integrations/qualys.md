@@ -50,6 +50,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Qualys, see [Qualys documentation](https://www.qualys.com/documentation/).
+
 ## Change Log
 
 * February 21, 2020 - First upload

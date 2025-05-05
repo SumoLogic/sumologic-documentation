@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about OpenText EnCase Endpoint Security, see the [OpenText EnCase Endpoint Security website](https://www.opentext.com/products/encase-endpoint-security).
+
 ## Change Log
 
 * October 3, 2019 - First upload

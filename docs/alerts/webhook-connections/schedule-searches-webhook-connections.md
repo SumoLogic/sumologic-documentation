@@ -31,8 +31,7 @@ To set up a scheduled search for a Webhook Connection:
 1. Select a **Webhook** from the **Connection** list.
    * (Optional) Select the checkbox if you want a **separate alert sent for each search result**. You can set up to a maximum of 100 alerts. Any results that exceed the configured maximum do not generate an alert. For example, if your scheduled search is configured to send a maximum of 50 alerts and generates 60 results only the first 50 results will generate an alert, all subsequent results will not generate an alert.
       :::note
-      - This may generate duplicate alerts for non-real-time schedules. If your search time range is longer than the search frequency (like a window of 60 minutes, but the frequency of 15 minutes) duplicate alerts are sent since there is an overlap of 45 minutes between each search and all results are sent, not just the difference.
-      - If the alert condition is: Number of results equal to 0 and "Send a separate alert for each search result" checkbox is selected, it would not trigger any alerts when the alert threshold matches since there are no results to itemize.
+      If the alert condition is: Number of results equal to 0 and "Send a separate alert for each search result" checkbox is selected, it would not trigger any alerts when the alert threshold matches since there are no results to itemize.
       :::
    * [Webhook payload variables](set-up-webhook-connections.md) will have values generated for each result. For example, a payload defined as:
         ```

@@ -32,6 +32,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Rapid7 Nexpose, see [Rapid7 Nexpose documentation](https://docs.rapid7.com/nexpose/).
+
 ## Change Log
 
 * January 24, 2020 - First upload

@@ -26,9 +26,11 @@ AWS Network Firewall is a stateful, managed, network firewall and intrusion dete
 
 ## Configure AWS Network Firewall in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
-<IntegrationsAuth/>
+<IntegrationsAuthAWS/>
+
+For information about AWS Network Firewall, see [AWS Network Firewall documentation](https://docs.aws.amazon.com/network-firewall/).
 
 ## Change Log
  

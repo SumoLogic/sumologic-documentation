@@ -56,6 +56,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Security Scorecard, see [Security Scorecard documentation](https://securityscorecard.readme.io/reference/introduction).
+
 ## Change Log
 
 * January 31, 2020 - First upload

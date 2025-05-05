@@ -32,6 +32,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Microsoft Defender for Cloud ([formerly Azure Security Center](https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/a-new-name-for-multi-cloud-security-microsoft-defender-for-cloud/2943020)), see [Microsoft Defender for Clolud documentation](https://learn.microsoft.com/en-us/azure/defender-for-cloud/).
+
 ## Change Log
 
 * March 22, 2019 - First upload

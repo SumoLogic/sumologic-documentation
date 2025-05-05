@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Kaspersky CyberTrace, see [Kaspersky CyberTrace documentation](https://support.kaspersky.com/cybertrace/4.4/en-US/226871.htm).
+
 ## Change Log
 
 * August 17, 2021 - First upload

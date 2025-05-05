@@ -115,6 +115,8 @@ Use [Check-Host](https://check-host.net/) to monitor website and host availabili
 
 This section applies to all AWS integrations, (for example, [AWS EC2](/docs/platform-services/automation-service/app-central/integrations/aws-ec2/), [AWS S3](/docs/platform-services/automation-service/app-central/integrations/aws-s3/), etc.)
 
+For AWS service endpoints information, see [AWS documentation](https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html).
+
 #### Authentication method
 
 AWS recommends using IAM roles with temporary security credentials over long-term access keys for enhanced security. However, our AWS integrations currently support only access keys due to the need for dynamically managed credentials. 

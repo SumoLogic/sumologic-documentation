@@ -18,7 +18,7 @@ Coralogix is rebuilding the path to observability using a real-time streaming an
 
 ## Coralogix - Send Logs configuration
 
-Generate and then copy the API Key for sending data.
+Generate and then copy the [API Key](https://coralogix.com/docs/user-guides/account-management/api-keys/api-keys/) for sending data.
 
 `https://<teamname>.coralogix.com/#/integration/apikey`
 
@@ -29,6 +29,8 @@ Generate and then copy the API Key for sending data.
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about Coralogix - Send Logs, see [Coralogix documentation](https://coralogix.com/docs/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

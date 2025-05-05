@@ -21,15 +21,17 @@ Ivanti Neurons ITSMis IT service management solution that transforms help desks 
 
 ## Neurons ITSM configuration
 
-To access Neurons for ITSM specify the URL for your tenant that has been sent to you by email. 
+To [access Neurons for ITSM](https://help.ivanti.com/ht/help/en_US/ISM/2025/admin-user/Content/Common/How%20to%20Log%20In.htm), specify the URL for your tenant that has been sent to you by email. 
 
-To view your API Key from the Configuration Console, click **Configure > Security Controls > API Keys** to open the API Keys workspace. The application displays the API keys. Copy your key.
+To [view your API Key](https://help.ivanti.com/ht/help/en_US/ISM/2025/admin-user/Content/Configure/API/Using-REST-API-Key.htm) from the Configuration Console, click **Configure > Security Controls > API Keys** to open the API Keys workspace. The application displays the API keys. Copy your key.
 
 ## Configure Neurons ITSM in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about Neurons for ITSM, see [Neurons or ITSM documentation](https://help.ivanti.com/ht/help/en_US/ISM/2025/admin-user/Content/Common/Getting%20Started.htm).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

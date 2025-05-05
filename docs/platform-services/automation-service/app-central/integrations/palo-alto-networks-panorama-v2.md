@@ -83,6 +83,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Palo Alto Networks Panorama, see [Palo Alto Networks Panorama documentation](https://docs.paloaltonetworks.com/panorama).
+
 ## Change Log
 
 * January 14, 2020 - First upload

@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Symantec Secure Web Gateway, see [Symantec Secure Web Gateway documentation](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help.html).
+
 ## Change Log
 
 * June 3, 2019 - First upload

@@ -22,7 +22,7 @@ Google Alert Center relies on the Google Workspace Alert Center API which empowe
 
 ## Google Alert Center Configuration
 
-To create a Service Account in Google Workspace and generate the JSON file needed to configure the Google Alert Center integration, follow these steps:
+To [create a Service Account](https://developers.google.com/workspace/guides/create-credentials) in Google Workspace and generate the JSON file needed to configure the Google Alert Center integration, follow these steps:
 
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
@@ -48,6 +48,8 @@ To create a Service Account in Google Workspace and generate the JSON file neede
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about Google Alert Center, see [Google Alert Center documentation](https://support.google.com/a/answer/9105393?hl=en).
 
 * **Label**. The desired name for the resource.
 * **User Service Account JSON**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
