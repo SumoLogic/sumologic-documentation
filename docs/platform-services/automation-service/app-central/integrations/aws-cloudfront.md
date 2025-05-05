@@ -23,9 +23,9 @@ Amazon CloudFront integrates with AWS Identity and Access Management (IAM), a se
 
 ## Configure AWS CloudFront in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
-<IntegrationsAuth/>
+<IntegrationsAuthAWS/>
 
 For information about AWS CloudFront, see [CloudFront documentation](https://docs.aws.amazon.com/cloudfront/).
 
