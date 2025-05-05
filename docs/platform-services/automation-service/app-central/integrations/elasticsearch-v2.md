@@ -38,6 +38,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Elasticsearch, see [Elasticsearch documentation](https://www.elastic.co/docs/solutions/search).
+
 ## Change Log
 
 * November 17, 2020 - First upload

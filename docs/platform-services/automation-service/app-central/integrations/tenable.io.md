@@ -37,6 +37,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Tenable Vulnerability Management (formerly Tenable.io), see [Tenable Vulnerability Management documentation](https://docs.tenable.com/vulnerability-management.htm).
+
 ## Change Log
 
 * November 21, 2018 - First upload

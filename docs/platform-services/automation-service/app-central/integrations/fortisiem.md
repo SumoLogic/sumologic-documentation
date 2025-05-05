@@ -27,6 +27,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about FortiSIEM, see [FortiSIEM documentation](https://docs.fortinet.com/product/fortisiem/7.4).
+
 ## Change Log
 
 * June 3, 2019 - First upload

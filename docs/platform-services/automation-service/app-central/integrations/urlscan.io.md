@@ -28,6 +28,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about URLScan.io, see [URLScan.io documentation](https://urlscan.io/docs/).
+
 ## Change Log
 
 * June 12, 2019 - First upload

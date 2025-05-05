@@ -25,6 +25,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Claroty, see the [Claroty website](https://claroty.com/).
+
 ## Change Log
 
 * March 24, 2021 - First upload

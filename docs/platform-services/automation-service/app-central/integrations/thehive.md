@@ -29,6 +29,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about TheHive, see [TheHive documentation](https://docs.strangebee.com/).
+
 ## Change Log
 
 * January 29, 2019 - First upload

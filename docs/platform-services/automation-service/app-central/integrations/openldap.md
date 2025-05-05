@@ -25,6 +25,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about OpenLDAP, see [OpenLDAP documentation](https://www.openldap.org/doc/).
+
 ## Change Log
 
 * October 05, 2022 - First upload

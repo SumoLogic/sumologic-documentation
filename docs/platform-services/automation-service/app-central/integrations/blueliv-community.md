@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Blueliv Community, see [Outpost](https://outpost24.com/blog/outpost24-acquires-threat-intelligence-solution-blueliv/).
+
 ## Change Log
 
 * June 19, 2020 - First upload

@@ -36,6 +36,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about IBM QRadar, see [IBM QRadar documentation](https://www.ibm.com/support/pages/accessing-ibm-qradar-product-documentation).
+
 ## Change Log
 
 * May 5, 2019 - First upload

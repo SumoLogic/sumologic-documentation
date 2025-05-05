@@ -46,6 +46,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Cisco Secure Endpoint (formerly AMP for Endpoints), see [Secure Endpoint documentation](https://console.amp.cisco.com/docs).
+
 ## Change Log
 
 * January 29, 2019 - First upload

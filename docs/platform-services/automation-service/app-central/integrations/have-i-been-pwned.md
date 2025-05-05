@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Have I Been Pwned, see [Have I Been Pwned documentation](https://haveibeenpwned.com/api/v3).
+
 ## Change Log
 
 * August 26, 2021 (v1.0) - First upload

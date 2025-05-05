@@ -278,12 +278,6 @@ module.exports = {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
     },
-    announcementBar: {
-      id: 'rsa',
-      content: '📣 Meet us at <b><a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/rsa-conference">RSA Conference 2025 | Booth 6261 - North Hall</a></b> for live demos, expert insights, and AI-driven security solutions. Plus swag!',
-      backgroundColor: '#08046c',
-      textColor: '#FFF',
-    },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,

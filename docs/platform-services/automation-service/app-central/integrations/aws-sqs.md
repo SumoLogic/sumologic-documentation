@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about AWS SQS, see [SQS documentation](https://docs.aws.amazon.com/sqs/).
+
 ## Change Log
 
 * January 16, 2020 - First upload

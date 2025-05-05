@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about ArcSight Logger, see [ArcSight Logger documentation](https://www.microfocus.com/documentation/arcsight/logger-7.3/).
+
 ## Change Log
 
 * January 31, 2019 - First upload

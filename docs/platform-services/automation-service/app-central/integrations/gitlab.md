@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about GitLab, see [GitLab documentation](https://docs.gitlab.com/).
+
 ## Change Log
 
 * August 19, 2021 - First upload
