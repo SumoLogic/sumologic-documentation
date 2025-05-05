@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Cofense, see the [Cofense website](https://cofense.com/).
+
 ## Change Log
 
 * January 10, 2019 - First upload

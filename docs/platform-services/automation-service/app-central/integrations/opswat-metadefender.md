@@ -27,6 +27,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Opswat Metadefender, see [Opswat Metadefender documentation](https://www.opswat.com/docs/mdcore).
+
 ## Change Log
 
 * May 11, 2021 - First upload

@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Cisco IOS XE, see [Cisco IOS XE documentation](https://www.cisco.com/c/en/us/td/docs/ios/ios_xe/preface/aboutios_xe.html).
+
 ## Change Log
 
 * September 17, 2019 - First upload

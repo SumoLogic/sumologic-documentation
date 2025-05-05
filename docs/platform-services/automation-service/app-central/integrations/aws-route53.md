@@ -26,9 +26,11 @@ Interact with DNS records through AWS Route53.
 
 ## Configure AWS Route53 in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
-<IntegrationsAuth/>
+<IntegrationsAuthAWS/>
+
+For information about AWS Route53, see [Route53 documentation](https://docs.aws.amazon.com/route53/).
 
 ## Change Log
 

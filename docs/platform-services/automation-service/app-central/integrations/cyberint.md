@@ -25,6 +25,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Cyberint, see the [Cyberint website](https://cyberint.com/).
+
 1. To configure the integration, log in to the application, click on the **Integrations** menu item in the left sidebar and click on the installed **Cyberint** app. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-1.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
 2. The app details will appear. Click on the **+** button to add a new **Resource** (connection configuration). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-2.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
 3. Populate all the required fields (*):

@@ -26,9 +26,11 @@ Using the integration with SQS, you can gather current queues, add a new queue, 
 
 ## Configure AWS SQS in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
-<IntegrationsAuth/>
+<IntegrationsAuthAWS/>
+
+For information about AWS SQS, see [SQS documentation](https://docs.aws.amazon.com/sqs/).
 
 ## Change Log
 

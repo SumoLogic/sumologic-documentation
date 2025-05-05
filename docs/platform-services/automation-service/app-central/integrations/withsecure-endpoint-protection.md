@@ -31,11 +31,13 @@ To generate an API key:
 1. If MFA has been enabled, disable MFA from settings.
 1. Logout.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-endpoint-protection/withsecure-endpoint-protection-2.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="600" />
 
-## Configure WithSecure Elements in Automation Service and Cloud SOAR
+## Configure WithSecure Endpoint Protection in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about WithSecure Endpoint Protection, see [WithSecure Endpoint Protection documentation](https://www.withsecure.com/userguides/product.html?business/psb-portal/latest/en).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

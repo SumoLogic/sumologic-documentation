@@ -27,6 +27,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Netskope, see [Netskope documentation](https://docs.netskope.com/).
+
 ## Change Log
 
 * July 20, 2021 - First upload

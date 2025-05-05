@@ -22,16 +22,17 @@ AWS Private CA enables creation of private certificate authority (CA) hierarchie
 * **Issue Certificate** *(Containment)* - Uses your private certificate authority (CA), or one that has been shared with you, to issue a client certificate.
 * **Get Certificate** *(Enrichment)* - Retrieves a certificate from your private CA or one that has been shared with you.
 
-
 ## External Libraries
 
 * [AWS Private Certificate Authority](https://github.com/boto/boto3/blob/develop/LICENSE)
 
 ## Configure AWS Private Certificate Authority in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
-<IntegrationsAuth/>
+<IntegrationsAuthAWS/>
+
+For information about AWS Private Certificate Authority, see [AWS Private Certificate Authority documentation](https://docs.aws.amazon.com/privateca/).
 
 ## Change Log
  

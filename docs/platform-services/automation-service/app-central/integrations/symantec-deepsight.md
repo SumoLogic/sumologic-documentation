@@ -25,6 +25,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Symantec, see [Symantec documentation](https://techdocs.broadcom.com/us/en/symantec-security-software.html).
+
 ## Change Log
 
 * July 29, 2019 - First upload

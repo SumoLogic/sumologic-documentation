@@ -45,9 +45,11 @@ This integration provides comprehensive Kubernetes cluster insights, node and po
 
 ## Configure AWS EKS in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
-<IntegrationsAuth/>
+<IntegrationsAuthAWS/>
+
+For information about AWS EKS, see [EKS documentation](https://docs.aws.amazon.com/eks/).
 
 ## Change Log
 

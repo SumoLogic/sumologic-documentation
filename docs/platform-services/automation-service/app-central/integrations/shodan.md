@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Shodan, see [Shodan documentation](https://developer.shodan.io/).
+
 ## Change Log
 
 * February 8, 2019 - First upload
