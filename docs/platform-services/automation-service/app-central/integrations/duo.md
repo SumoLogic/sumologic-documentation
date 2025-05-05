@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Duo, see [Duo documentation](https://duo.com/docs).
+
 ## Change Log
 
 * February 16, 2021 - First upload

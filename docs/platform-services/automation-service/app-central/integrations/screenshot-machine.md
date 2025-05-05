@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Screenshot Machine, see [Screenshot Machine documentation](https://www.screenshotmachine.com/).
+
 ## Change Log
 
 * October 16, 2019 - First upload

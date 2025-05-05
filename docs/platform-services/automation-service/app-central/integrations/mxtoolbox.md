@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about MxToolbox, see [MxToolbox documentation](https://mxtoolbox.com/support/knowledgebase/).
+
 ## Change Log
 
 * February 14, 2020 - First upload

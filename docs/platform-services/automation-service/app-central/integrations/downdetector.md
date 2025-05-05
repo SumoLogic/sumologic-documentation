@@ -24,15 +24,17 @@ Updated: Jul 06, 2023***
 
 ## Downdetector configuration
 
-1. Log in to Downdetector with your username and password. On the left menu click on API.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-1.png')} style={{border:'1px solid gray'}} alt="downdetector" width="200"/>
+1. [Log in to Downdetector](https://enterprise.downdetector.com/login/) with your username and password. On the left menu click on API.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-1.png')} style={{border:'1px solid gray'}} alt="downdetector" width="200"/>
 1. Under + sign create your token (Client Secret). 
-1. Make sure to cope the Client ID and the Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-2.png')} style={{border:'1px solid gray'}} alt="downdetector" width="600"/>
+1. Make sure to [copy the Client ID and the Client Secret](https://cookbooks.downdetectorapi.com/cookbooks/Generating-tokens-and-credentials.html).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-2.png')} style={{border:'1px solid gray'}} alt="downdetector" width="600"/>
 
 ## Configure Downdetector in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about Downdetector, see [Downdetector documentation](https://downdetectorapi.com/v2/docs/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

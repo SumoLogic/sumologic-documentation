@@ -27,6 +27,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about ConnectWise Manage, see the [ConnectWise website](https://www.connectwise.com/).
+
 ## Change Log
 
 * September 17, 2019 - First upload

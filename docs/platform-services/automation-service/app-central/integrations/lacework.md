@@ -29,6 +29,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Lacework, see [Lacework documentation](https://docs.lacework.net/).
+
 ## Change Log
 
 * July 13, 2021 - First upload
