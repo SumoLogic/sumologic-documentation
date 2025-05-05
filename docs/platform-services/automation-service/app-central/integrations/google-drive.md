@@ -48,11 +48,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about  Google Drive, see [Google Drive API documentation](https://developers.google.com/workspace/drive/api/guides/about-sdk).
-
 * **Label**. The desired name for the resource.
 * **User Service Account JSON**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
 * **Admin User Email**. The e-mail address of an admin user.
+
+For information about  Google Drive, see [Google Drive API documentation](https://developers.google.com/workspace/drive/api/guides/about-sdk).
 
 ## Change Log
 
