@@ -74,4 +74,4 @@ The solution also offers features and capabilities that support each step of the
 
 * **Monitor** your systems effectively with new and improved alerting and dashboarding capabilities. The Observability Solution includes rich pre-built content that you can leverage to quickly start monitoring specific services. 
 * **Diagnose** issues quickly using features like the Entity Explorer, trace analytics, and the  Metrics Explorer.  
-* **Troubleshoot** issues and find root causes through Behavior insights, Root Cause Explorer, and log search.
+* **Troubleshoot** issues and find root causes through behavior insights and log search.

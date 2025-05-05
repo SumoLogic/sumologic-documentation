@@ -13,12 +13,6 @@ Now that you have identified the issue and isolated the cause to a specific serv
 
 ![root-cause-wheel](/img/observability/root-cause-wheel.png)
 
-## Find Anomalous behavior in Metrics
-
-Having trouble isolating the real issues when there’s an incident? You can use the [Root Cause Explorer](/docs/observability/root-cause-explorer) to quickly isolate issues by identifying services and metrics that have been behaving abnormally over the incident timespan. This will help you pinpoint the root cause of the issue.
-
-![rce-example.png](/img/observability/rce-example.png)
-
 ## Find Interesting Patterns in your Log Data 
 
 You can also leverage [Behavior Insights](/docs/search/behavior-insights) to understand interesting log signature patterns in your data, like connection timeouts, errors, or exceptions. This will help you uncover the needle in a haystack, so you can get to the root cause quickly, without having to go through tons of data manually.  
