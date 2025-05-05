@@ -80,17 +80,6 @@ Do either of the following:
 If you're a new user and someone has forwarded you an alert email, the links to the search will not work until you've completed your setup process.
 :::
 
-
-### Real-time alerts
-
-:::warning Solution Deprecated
-Effective May 15, 2024, Real-Time Scheduled Searches have been deprecated and you will no longer be able to create them. Real-Time Scheduled Searches created before that date will continue to function until May 15, 2025. We encourage you instead to [create a monitor](/docs/alerts/monitors/create-monitor) for use cases that require real-time alerting. [Learn more](/docs/alerts/scheduled-searches/deprecation).
-:::
-
-[Real-time alerts](create-real-time-alert.md) continuously monitor your Sumo Logic deployment, and return alert emails whenever conditions are met.
-
-Scheduled Searches run according to the time zone of an individual's computer and browser, not according to the time zone of logs.
-
 ## Customize your email alert subject and content
 
 You can use variables to customize the subject of your email. You can also select the features you want to include in your email. For details, see [Create a Scheduled Search Email Alert](create-email-alert.md).
