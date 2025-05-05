@@ -84,9 +84,9 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 
 ```sql
 | parse "\"sourceIPAddress\":\"*\"" as source_ipaddress nodrop
-| parse "\"eventName\":\"*\"" as event_name 
+| parse "\"eventName\":\"*\"" as event_name nodrop
 | parse "\"eventSource\":\"*\"" as event_source nodrop
-| parse "\"awsRegion\":\"*\"" as aws_Region 
+| parse "\"awsRegion\":\"*\"" as aws_Region nodrop
 | parse "\"userName\":\"*\"" as user nodrop
 ```
 
