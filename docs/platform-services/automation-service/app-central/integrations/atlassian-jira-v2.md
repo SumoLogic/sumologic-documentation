@@ -44,7 +44,7 @@ Sign in to [Jira](https://id.atlassian.com) with your Atlassian account.
 
 ### Create an API token
 
-Create an API token from your Atlassian account:
+[Create an API token](https://developer.atlassian.com/cloud/commerce-it-frontoffice/overview/papi/onboarding/api-token/create/#create-a-token) from your Atlassian account:
 1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
 1. Click **Create API token**.
 1. From the dialog that appears, enter a memorable and concise **Label** for your token and click **Create**.
@@ -52,7 +52,7 @@ Create an API token from your Atlassian account:
 
 ### Revoke an API token
 
-A revoked token no longer works and is permanently removed from your account. If you revoke an API token currently being used, you can replace it with a new token. To revoke an API token:
+[A revoked token](https://developer.atlassian.com/cloud/commerce-it-frontoffice/overview/papi/onboarding/api-token/delete/) no longer works and is permanently removed from your account. If you revoke an API token currently being used, you can replace it with a new token. To revoke an API token:
 1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
 1. Select **Revoke** next to the API token that you want to revoke.
 1. To revoke all API tokens for your account, select **Revoke all API tokens**.
