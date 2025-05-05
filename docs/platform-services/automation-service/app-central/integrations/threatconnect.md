@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about ThreatConnect, see [ThreatConnect documentation](https://docs.threatconnect.com/en/latest/).
+
 ## Change Log
 
 * December 19, 2019 - First upload

@@ -31,6 +31,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Splunk, see [Splunk documentation](https://docs.splunk.com/Documentation).
+
 ## Change Log
 
 * May 5, 2019 - First upload

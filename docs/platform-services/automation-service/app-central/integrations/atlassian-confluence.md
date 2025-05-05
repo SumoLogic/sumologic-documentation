@@ -21,13 +21,15 @@ Atlassian Confluence is a collaborative workspace tool for teams to create, shar
 
 ## Configure Atlassian Confluence configuration
 
-To retrieve the API token, please refer to the following [guide](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+To retrieve the API token, see the [Atlassian documentation](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
 
-## Atlassian Confluenc in Automation Service and Cloud SOAR
+## Configure Atlassian Confluence in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about Atlassian Confluence, see [Confluence documentation](https://confluence.atlassian.com/alldoc/confluence-documentation-directory-12877996.html).
 
 ## Change Log
 

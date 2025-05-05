@@ -27,6 +27,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Datto RMM, see [Datto RMM documentation](https://rmm.datto.com/help/en/Content/0HOME/Home.htm).
+
 ## Change Log
 
 * March 13, 2024 - First upload

@@ -33,6 +33,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about ArcSight ESM, see [ArcSight ESM documentation](https://www.microfocus.com/documentation/arcsight/arcsight-esm-7.8/).
+
 ## Change Log
 
 * February 7, 2019 - First upload

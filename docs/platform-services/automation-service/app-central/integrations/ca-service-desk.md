@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about CA Service Desk, see [CA Service Management documentation](https://techdocs.broadcom.com/us/en/ca-enterprise-software/business-management/ca-service-management/17-4.html).
+
 ## Change Log
 
 * February 14, 2019 - First upload

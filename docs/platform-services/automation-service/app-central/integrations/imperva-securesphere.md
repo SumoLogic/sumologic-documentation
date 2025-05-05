@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Imperva SecureSphere, see [Imperva documentation](https://docs.imperva.com/).
+
 ## Change Log
 
 * July 29, 2019 - First upload

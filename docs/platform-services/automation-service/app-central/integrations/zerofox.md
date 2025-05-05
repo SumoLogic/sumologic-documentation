@@ -34,6 +34,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about ZeroFox, see [ZeroFox documentation](https://www.zerofox.com/resources/#).
+
 ## Change Log
 
 * July 5, 2021 - First upload

@@ -24,7 +24,7 @@ Netskope provides unrivaled visibility and real-time data and threat protection 
 
 ## Neskope V2 configuration
 
-Netskope REST APIs use an auth token to make authorized calls to the API. Netskope REST APIs provide access to resources via URI paths. The token must be used in every REST API call for the tenant. The token can be created for use with specified APIs in the Netskope UI by going to **Settings &gt; Tools &gt; Rest API v2**.
+[Netskope REST APIs](https://docs.netskope.com/en/rest-api-v2-overview-312207/) use an auth token to make authorized calls to the API. Netskope REST APIs provide access to resources via URI paths. The token must be used in every REST API call for the tenant. The token can be created for use with specified APIs in the Netskope UI by going to **Settings &gt; Tools &gt; Rest API v2**.
 
 1. On the REST API v2 page, click **New Token**.
 1. Enter a token name, the token expiration time, and then click **Add Endpoint** to select the API endpoints to use with the token.   
@@ -41,6 +41,8 @@ When finished, click **OK**. After being created, tokens can be managed by click
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about Netskope V2, see [Netskope V2 documentation](https://docs.netskope.com/en/rest-api-v2-overview-312207/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.
