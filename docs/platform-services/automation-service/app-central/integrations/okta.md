@@ -44,6 +44,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Okta, see [Okta documentation](https://help.okta.com/en-us/content/index.htm).
+
 ## Change Log
 
 * March 20, 2020 - First upload

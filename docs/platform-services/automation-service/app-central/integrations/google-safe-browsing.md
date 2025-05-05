@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Google Safe Browsing, see [Google Safe Browsing documentation](https://developers.google.com/safe-browsing/reference).
+
 ## Change Log
 
 * May 31, 2021 - First upload

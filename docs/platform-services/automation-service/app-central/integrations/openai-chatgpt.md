@@ -40,6 +40,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about OpenAI, see [OpenAI documentation](https://platform.openai.com/docs/api-reference/introduction).
+
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.   
 1. The integration details will appear. Click on the **"+"** button to add a new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-4.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="800"/>

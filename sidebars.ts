@@ -1058,6 +1058,7 @@ module.exports = {
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
+        'manage/security/service-accounts',
         {
           type: 'category',
           label: 'Audit Indexes',
@@ -3096,6 +3097,7 @@ integrations: [
         'api/scan-budget',
         'api/scheduled-views',
         'api/search-job',
+        'api/service-accounts',
         'api/service-allowlist',
         'api/service-map',
         'api/slo-management',

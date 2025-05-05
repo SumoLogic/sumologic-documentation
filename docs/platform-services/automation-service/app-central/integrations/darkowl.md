@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about DarkOwl, see [DarkOwl documentation](https://www.darkowl.com/api-resources/).
+
 ## Change Log
 
 * July 1, 2019 - First upload

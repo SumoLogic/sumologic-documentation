@@ -28,6 +28,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about KnowBe4 PhishER, see [KnowBe4 PhishER documentation](https://support.knowbe4.com/hc/en-us/articles/360010802673-PhishER-Product-Manual).
+
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-phisher/knowbe4-phisher-3.png')} style={{border:'1px solid gray'}} alt="knowbe4-phisher" width="600"/>

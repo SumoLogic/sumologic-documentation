@@ -26,7 +26,7 @@ Runs commands on a Local or Remote Window Host and returns all output from the c
 
 ### PowerShell Tools Configuration on Window Server (Domain Controller)
 
-**Note**: PowerShell Tools was tested on **Windows Server 2016 and 2008**, PowerShell Remoting is using **WinRM**, So it's strongly suggested to test this integration on test environments before testing it on production environments. In this configuration guide, you will be directed on how to prepare a environment for testing on a window host but this guide is only related to the environment we tested on it, so it may differ in case you are using a different window server/host version
+**Note**: [PowerShell Tools](https://learn.microsoft.com/en-us/powershell/) was tested on **Windows Server 2016 and 2008**, PowerShell Remoting is using **WinRM**, So it's strongly suggested to test this integration on test environments before testing it on production environments. In this configuration guide, you will be directed on how to prepare a environment for testing on a window host but this guide is only related to the environment we tested on it, so it may differ in case you are using a different window server/host version
 
 You must have **Windows Server/Host** to do the following setup on that Window Server/Host, So that Cloud SOAR can connect to the window Server/host and run PowerShell commands, also a user who will run the PowerShell command must have admin access for the local or remote window host.
 
@@ -39,7 +39,7 @@ PowerShell remoting must be enabled on the remote/local computer. The remoting f
 To configure PowerShell to receive remote commands:
 
 1. Start PowerShell with the Run as administrator option.
-2. At the command prompt, type: `Enable-PSRemoting`.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-1.png')} style={{border:'1px solid gray'}} alt="powershell-tools" width="600"/>
+2. At the command prompt, type: [`Enable-PSRemoting`](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7.5).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-1.png')} style={{border:'1px solid gray'}} alt="powershell-tools" width="600"/>
 
    The *Enable-PSRemoting* cmdlet performs the following operations:
 
@@ -181,6 +181,8 @@ Remarks:
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about PowerShell, see [PowerShell documentation](https://learn.microsoft.com/en-us/powershell/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for PowerShell Tools integration and click on the row. The integration details will appear. Click on the **"+"** button to add new Resource.
