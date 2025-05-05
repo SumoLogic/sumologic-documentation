@@ -82,7 +82,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Active Directory V2, see [Active Directory V2 documentation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2).
+For information about Microsoft Entra Connect V2 (formerly Active Directory V2), see [Microsoft Entra Connect V2 documentation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2).
 
 ### Required resources from an existing Active Directory installation
 

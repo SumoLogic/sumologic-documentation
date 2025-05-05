@@ -48,9 +48,9 @@ Using the integration with EC2, you can enrich incidents with specific EC2 data,
 
 ## Configure AWS EC2 in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
-<IntegrationsAuth/>
+<IntegrationsAuthAWS/>
 
 For information about AWS EC2, see [EC2 documentation](https://docs.aws.amazon.com/ec2/).
 
