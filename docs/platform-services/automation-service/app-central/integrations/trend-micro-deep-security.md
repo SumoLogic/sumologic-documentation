@@ -31,6 +31,14 @@ Utilize Trend Micro Deep Security to interact with IP lists, firewall and intrus
 * **Search Systems By Hostname** (*Enrichment*) - Search systems by hostname.
 * **Search Systems By IP** (*Enrichment*) - Search systems by IP Address.
 
+## Configure Trend Micro Deep Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Trend Micro Deep Security, see [Trend Micro Deep Security documentation](https://docs.trendmicro.com/en-us/documentation/deep-security/).
+
 ## Change Log
 
 * March 6, 2020 - First upload

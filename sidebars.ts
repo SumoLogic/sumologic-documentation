@@ -1058,6 +1058,7 @@ module.exports = {
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
+        'manage/security/service-accounts',
         {
           type: 'category',
           label: 'Audit Indexes',
@@ -2205,6 +2206,7 @@ integrations: [
          'integrations/microsoft-azure/azure-storage',
          'integrations/microsoft-azure/azure-stream-analytics',
          'integrations/microsoft-azure/azure-synapse-analytics',
+         'integrations/microsoft-azure/azure-virtual-machine',
          'integrations/microsoft-azure/azure-virtual-network',
          'integrations/microsoft-azure/kubernetes',
          'integrations/microsoft-azure/azure-security-advisor',
@@ -2560,6 +2562,7 @@ integrations: [
           'integrations/saas-cloud/sentinelone',
           'integrations/saas-cloud/slack',
           'integrations/saas-cloud/sophos',
+          'integrations/saas-cloud/sumo-collection',
           'integrations/saas-cloud/symantec-endpoint-security-service',
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/tenable',
@@ -3030,9 +3033,9 @@ integrations: [
       link: {type: 'doc', id: 'security/threat-intelligence/index'},
       items: [
         'security/threat-intelligence/about-threat-intelligence',
-        'security/threat-intelligence/threat-intelligence-indicators',
-        'security/threat-intelligence/find-threats',
         'security/threat-intelligence/threat-indicators-in-cloud-siem',
+        'security/threat-intelligence/find-threats',
+        'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
       ],
     },  
@@ -3095,6 +3098,7 @@ integrations: [
         'api/scan-budget',
         'api/scheduled-views',
         'api/search-job',
+        'api/service-accounts',
         'api/service-allowlist',
         'api/service-map',
         'api/slo-management',
@@ -3145,6 +3149,7 @@ integrations: [
               link: {type: 'doc', id: 'platform-services/automation-service/app-central/index'},
               items: [
                 'platform-services/automation-service/automation-service-app-central',
+                'platform-services/automation-service/configure-authentication-for-integrations',
                 {
                   type: 'category',
                   label: 'Integrations in App Central',

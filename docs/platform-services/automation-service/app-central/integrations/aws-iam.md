@@ -39,6 +39,14 @@ AWS IAM (Identity and Access Management) is a web service that helps securely co
 
 * [AWS IAM](https://github.com/boto/boto3/blob/develop/LICENSE)
 
+## Configure AWS IAM in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about AWS IAM, see [IAM documentation](https://docs.aws.amazon.com/iam/).
+
 ## Change Log
 
 * October 1, 2019 - First upload

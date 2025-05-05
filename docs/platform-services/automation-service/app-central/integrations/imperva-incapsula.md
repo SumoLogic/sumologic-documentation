@@ -15,6 +15,14 @@ Gather statistical information from Incapsula for incident investigation.
 
 * **Get Infrastructure Protection Statistics** (*Enrichment*) - Gather Infrastructure Protection statistics for an account or IP range from Incapsula.
 
+## Configure Imperva Incapsula in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Imperva Cloud Application Security ([formerly Incapsula](https://docs.imperva.com/bundle/articles/page/73354.htm)), see [Imperva Cloud Application Security documentation](https://docs.imperva.com/bundle/cloud-application-security/page/introducing/overview.htm).
+
 ## Change Log
 
 * July 29, 2019 - First upload

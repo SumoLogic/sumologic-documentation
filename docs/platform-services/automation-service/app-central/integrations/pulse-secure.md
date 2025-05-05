@@ -29,6 +29,14 @@ Block users and their associated IP addresses with Pulse Secure.
 
 Authentication, Identity, and Access Management.
 
+## Configure Pulse Secure in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Secure Access Client (formerly Pulse Secure), see [Secure Access Client documentation](https://help.ivanti.com/ps/help/en_US/ISAC/22.X/spg-22.X/landingpage.htm).
+
 ## Change Log
 
 * September 2, 2020 - First upload

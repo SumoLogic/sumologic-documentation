@@ -17,6 +17,14 @@ Perform threat intelligence evidence gathering with DarkOwl.
 * **Domain Reputation** (*Enrichment*) - Check reputation of a domain.
 * **Search Intelligence** (*Enrichment*) - Search threat intelligence feeds.
 
+## Configure DarkOwl in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about DarkOwl, see [DarkOwl documentation](https://www.darkowl.com/api-resources/).
+
 ## Change Log
 
 * July 1, 2019 - First upload

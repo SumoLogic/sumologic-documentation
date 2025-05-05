@@ -20,6 +20,14 @@ Search DNS records for enrichment data with Cloud SOAR integration with ThreatMi
 
 * Results of DNS Record search can be saved in .csv file format.
 
+## Configure ThreatMiner in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about ThreatMiner, see the [ThreatMiner website](https://www.threatminer.org/index.php).
+
 ## Change Log
 
 * June 19, 2020 - First upload

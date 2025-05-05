@@ -16,6 +16,14 @@ Utilize Corelight during incident investigation.
 * **Get Metrics** (*Enrichment*) - Gather metrics from Corelight.
 * **Update Threat Intel** (*Containment*) - Update Corelight threat intel.
 
+## Configure Corelight in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Corelight, see [Corelight documentation](https://corelight.com/resources/resource-center).
+
 ## Change Log
 
 * August 23, 2019 - First upload

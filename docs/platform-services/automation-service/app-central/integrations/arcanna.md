@@ -23,7 +23,13 @@ Arcanna enables experts to train context-aware AI models which encompass their k
 
 Log in to Arcanna platform using your credentials login on Arcanna AI using [this](https://elements.withsecure.com/) url.
 
-## Arcanna in Automation Service and Cloud SOAR
+## Configure Arcanna in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Arcanna, see [Arcanna documentation](https://docs.arcanna.ai/docs/user-guide/create-api-key).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

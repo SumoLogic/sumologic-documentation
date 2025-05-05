@@ -15,6 +15,14 @@ Perform queries in Kaspersky CyberTrace.
 
 * **Indicator Search** (*Enrichment*) - Performs an indicator search.
 
+## Configure Kaspersky CyberTrace in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Kaspersky CyberTrace, see [Kaspersky CyberTrace documentation](https://support.kaspersky.com/cybertrace/4.4/en-US/226871.htm).
+
 ## Change Log
 
 * August 17, 2021 - First upload

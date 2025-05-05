@@ -76,7 +76,13 @@ If an existing Windows Server is not available, follow these steps to set up a n
    1. After rebooting, log back in and open **Active Directory Users and Computers**.
    1. Verify that the domain is properly configured.
 
-## Active Directory V2 in Automation Service and Cloud SOAR
+## Configure Active Directory V2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Active Directory V2, see [Active Directory V2 documentation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2).
 
 ### Required resources from an existing Active Directory installation
 

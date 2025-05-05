@@ -25,6 +25,14 @@ VMware Carbon Black Cloud Endpoint Standard Integration allows security operator
 * **Search Process** (*Enrichment* ) - Queries all events using input search criteria and returns a list of processes.
 * **Terminate Process** (*Containment*) - Terminate process on a device.
 
+## Configure VMware Carbon Black Cloud Endpoint Standard V2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Carbon Black Cloud, see [Carbon Black Cloud documentation](https://techdocs.broadcom.com/us/en/carbon-black/cloud.html).
+
 ## Change Log
 
 * February 3, 2022 - First upload

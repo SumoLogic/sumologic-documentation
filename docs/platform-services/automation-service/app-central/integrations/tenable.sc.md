@@ -40,6 +40,14 @@ Connect with Tenable SecurityCenter to execute scans, get scan results and perfo
 * **List Scan Results** (*Enrichment*) - List the executed Scan Results.
 * **List Scans** (*Enrichment*) - Get a list of scans.
 
+## Configure Tenable.sc in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Tenable Security Center (formerly Tenable.sc), see [Tenable Security Center  documentation](https://docs.tenable.com/security-center.htm).
+
 ## Change Log
 
 * January 31, 2019 - First upload

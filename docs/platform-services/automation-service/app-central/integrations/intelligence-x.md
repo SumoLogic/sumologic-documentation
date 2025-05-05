@@ -28,7 +28,13 @@ Follow these steps to get your API Key and URL from Intelligence X:
 1. Click on the Developer tab.
 1. Copy the API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-2.png')} style={{border:'1px solid gray'}} alt="intelligence-x" width="400"/>
 
-## Intelligence X in Automation Service and Cloud SOAR
+## Configure Intelligence X in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Intelligence X, see the [Intelligence X website](https://intelx.io/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

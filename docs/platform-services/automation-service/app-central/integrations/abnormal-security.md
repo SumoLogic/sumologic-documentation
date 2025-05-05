@@ -25,7 +25,13 @@ Abnormal Security provides advanced email security to prevent credential phishin
 * **Get Employee Identity Analysis** *(Enrichment)* - Get employee identity analysis (Genome) data.
 * **Get Employee Information** *(Enrichment)* - Get employee information.
 
-## Abnormal Security in Automation Service and Cloud SOAR
+## Configure Abnormal Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Abnormal Security, see [Abnormal Security documentation](https://abnormalsecurity.my.site.com/knowledgebase/s/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation/).
 1. After the list of the integrations appears, search for the integration and click on the row.

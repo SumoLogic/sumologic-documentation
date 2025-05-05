@@ -24,5 +24,5 @@ If you have any questions, please don't hesitate to reach out to your Sumo Logic
 | :-- | :-- | :-- |
 | End-of-life announcement | The date this feature is announced as end-of-life. | November 8, 2024 |
 | End of software release | The last date that Sumo Logic may release any final software maintenance releases or bug fixes. After this date, Sumo Logic will no longer develop, repair, maintain, or test product software. | November 8, 2024 |
-| Last date of support | The last date to receive applicable support for the feature as entitled by active support contracts or by applicable warrant terms and conditIons. After this date, all support services for this feature are unavailable and the feature becomes obsolete. | April 30, 2025 |
+| Last date of support | The last date to receive applicable support for the feature as entitled by active support contracts or by applicable warrant terms and conditIons. After this date, all support services for this feature are unavailable and the feature becomes obsolete. | TBD |
 

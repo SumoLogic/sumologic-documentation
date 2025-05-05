@@ -36,6 +36,14 @@ Utilize Recorded Future threat intelligence feeds during incident investigation.
 * **Credentials Lookup By Email** (*Enrichment*) - Lookup Credential data by Email.
 * **Credentials Lookup By Login** (*Enrichment*) - Lookup Credential data by Login.
 
+## Configure Recorded Future in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Recorded Future, see [Recorded Future documentation](https://support.recordedfuture.com/hc/en-us).
+
 ## Change Log
 
 * September 16, 2019 - First upload

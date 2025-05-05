@@ -17,7 +17,13 @@ Intezer is a platform that provides automated, algorithm-driven Tier 1 services 
 * **Analyze Hash** (*Enrichment*) - Submit a hash to be analyzed.
 * **Get Analysis** (*Enrichment*) - Retrieve summary of the analysis of an uploaded file, memory module, or hash.
 
-## Intezer in Automation Service and Cloud SOAR
+## Configure Intezer in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Intezer, see the [Intezer website](https://intezer.com/resource-center/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

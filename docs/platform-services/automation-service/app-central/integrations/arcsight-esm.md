@@ -27,6 +27,14 @@ Work with cases and active lists in Micro Focus ArcSight ESM.
 * **Get Cases Arcsight ESM Daemon** (*Daemon*) - Automatically pull ArcSight ESM Cases.
 * **Get Security Event** (*Enrichment*) - Get Security Event related to Case.
 
+## Configure ArcSight ESM in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about ArcSight ESM, see [ArcSight ESM documentation](https://www.microfocus.com/documentation/arcsight/arcsight-esm-7.8/).
+
 ## Change Log
 
 * February 7, 2019 - First upload

@@ -15,6 +15,14 @@ Query Digital Shadows threat intelligence.
 
 * **Search Intelligence** (*Enrichment*) - Search Digital Shadows threat intelligence.
 
+## Configure Digital Shadows in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about ReliaQuest GreyMatter Digital Risk Protection (DRP) ([formerly Digital Shadows](https://reliaquest.com/ds-demo/)), see the [ReliaQuest website](https://reliaquest.com/resources/solution-briefs/digital-risk-protection/).
+
 ## Change Log
 
 * February 21, 2019 - First upload

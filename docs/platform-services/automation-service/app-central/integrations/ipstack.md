@@ -1,5 +1,5 @@
 ---
-title: Ipstack
+title: IPstack
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,19 +9,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: Jul 05, 2023***
 
-Ipstack API services enable you to locate and identify website visitors at a stage before any data is entered into your system. The data received from the API can be used to enhance user experiences based on location data and assess risks and potential threats to your web application in time.
+IPstack API services enable you to locate and identify website visitors at a stage before any data is entered into your system. The data received from the API can be used to enhance user experiences based on location data and assess risks and potential threats to your web application in time.
 
 ## Actions
 
 * **Geolocate IP Address** *(Enrichment)* - Look up the data behind an IP address.
 
-## Ipstack configuration
+## IPstack configuration
 
-Visit [Ipstack](https://ipstack.com/product) and Sign Up to get an API key.
+Visit [IPstack](https://ipstack.com/product) and Sign Up to get an API key.
 
 Once you're logged in you can also copy the API Key from here: [https://ipstack.com/dashboard](https://ipstack.com/dashboard) 
 
-## Ipstack in Automation Service and Cloud SOAR
+## Configure IPstack in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about IPstack, see [IPstack documentation](https://ipstack.com/documentation).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

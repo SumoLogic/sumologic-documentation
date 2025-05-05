@@ -32,6 +32,14 @@ Perform threat intelligence evidence gathering with VirusTotal.
 
 Threat Intelligence-Reputation
 
+## Configure VirusTotal in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about VirusTotal, see [VirusTotal documentation](https://docs.virustotal.com/).
+
 ## Change Log
 
 * July 17, 2019 - First upload

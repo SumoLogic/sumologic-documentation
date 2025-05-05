@@ -20,6 +20,14 @@ Gather detail-rich data from Netscout Arbor alerts.
 * **Mitigation Ongoing Polling** (*Enrichment*) - Presents data on whether the alert is still actively being mitigated.
 * **Arbor Alerts Daemon** (*Daemon*) - Automatically pass alerts to Cloud SOAR.
 
+## Configure Arbor in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Arbor, see [Netscout](https://www.netscout.com/arbor).
+
 ## Change Log
 
 * May 22, 2020 - First upload

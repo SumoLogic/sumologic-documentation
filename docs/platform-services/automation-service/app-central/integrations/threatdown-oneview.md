@@ -1,5 +1,5 @@
 ---
-title: ThreatDown Oneview
+title: ThreatDown OneView
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -38,14 +38,39 @@ Malwarebytes ThreatDown OneView (MBOV) provides your business with a powerful an
 
 Threat Intelligence Reputation
 
-## ThreatDown Oneview in Automation Service and Cloud SOAR
+## ThreatDown OneView configuration
+
+### Generate API credentials
+
+[Create API credentials](https://support.threatdown.com/hc/en-us/articles/4413799441683-Create-OAuth2-credentials-for-OneView) from your Malwarebytes account:
+1. Sign in to [Malwarebytes](https://oneview.threatdown.com/dashboard) with your Malwarebytes account. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview5.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview5" width="300"/>
+2. Click **Integrate**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview6.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview6" width="200"/>
+3. Click **"+"** to create credentials. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview7.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview7" width="800"/>
+4. Give a name to the application.
+1. Select the required access. <br/>When configuring credentials for the integration, permissions can be set to Read, Write, and Execute. While it's possible to grant only the required permissions based on your use case, we recommend assigning all three permissions during credential creation. This ensures full compatibility with all available actions in the integration and avoids permission-related failures in the future.
+<br/>The minimum required permissions vary based on the type of actions being performed:
+   * Enrichment actions 
+      * These actions only retrieve data.
+      * Required Permission: Read
+   * Containment actions
+      * These actions perform changes or take action on endpoints.
+      * Required Permissions: Write and Execute
+5. After this you will get an Client ID and Client Secret. Copy the Client ID and Client Secret.
+
+## Configure ThreatDown OneView in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about ThreatDown OneView, see [ThreatDown OneView documentation](https://support.threatdown.com/hc/en-us/sections/4413802067603-Administration).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add a new resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview1.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview1" width="100"/>
 1. Label and populate all the required fields (\*).
     1. **Label**. Add a name for the resource.
-    1. **URL**. Enter your ThreatDown Oneview site URL.
+    1. **URL**. Enter your ThreatDown OneView site URL.
     1. **Client ID**. Enter your Client ID.
     1. **Client Secret**. Enter your Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview2.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview2" width="400"/>
 1. Click **SAVE**.

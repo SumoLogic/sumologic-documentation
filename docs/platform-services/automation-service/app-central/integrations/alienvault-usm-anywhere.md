@@ -24,6 +24,14 @@ Search events, alarms, and update labels in AlienVault USM Anywhere.
 * **Get Events AlienVault Daemon** (*Daemon*) - Automatically gather all available events.
 * **Get Alarms AlienVault Daemon** (*Daemon*) - Automatically gather all available alarms.
 
+## Configure AlienVault USM Anywhere in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about AlienVault USM Anywhere, see [AlienVault USM Anywhere documentation](https://cybersecurity.att.com/documentation/usm-anywhere.htm).
+
 ## Change Log
 
 * September 17, 2019 - First upload

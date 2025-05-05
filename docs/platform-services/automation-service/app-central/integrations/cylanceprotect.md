@@ -51,6 +51,14 @@ All Other Regions: *https://protectapi-{region-code}.cylance.com/*
 
 * [Cylance Protect](https://github.com/jpadilla/pyjwt/blob/master/LICENSE)
 
+## Configure CylanceProtect in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Aurora Endpoint Security (formerly CylanceProtect), see [Aurora Endpoint Security documentation](https://docs.arcticwolf.com/category/aurora_endpoint_security).
+
 ## Change Log
 
 * February 6, 2019 - First upload

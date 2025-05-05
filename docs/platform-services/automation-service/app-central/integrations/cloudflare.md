@@ -37,6 +37,7 @@ Cloudflare makes everything you connect to the Internet secure, private, fast, a
 
 ## Cloudflare configuration for Global API Key
 
+For a [Global API Key](https://developers.cloudflare.com/workers/wrangler/migration/v1-to-v2/wrangler-legacy/authentication/#global-api-key):
 1. Sign in in Cloudflare using your email and password.
 1. Go to your profile in the left menu and select My Profile.
 1. From the left menu select API Tokens.
@@ -45,6 +46,7 @@ Cloudflare makes everything you connect to the Internet secure, private, fast, a
 
 ## Cloudflare configuration for Custom API Token
 
+To [create a token](https://developers.cloudflare.com/workers/wrangler/migration/v1-to-v2/wrangler-legacy/authentication/#generate-tokens):
 1. Sign in in Cloudflare using your email and password.
 1. Go to your profile in the left menu and select My Profile.
 1. From the left menu select API Tokens.
@@ -53,8 +55,13 @@ Cloudflare makes everything you connect to the Internet secure, private, fast, a
 1. Confirm your settings, then click Continue to summary and Create Token.
 1. Copy the token securely as it will only be displayed once.
 
+## Configure Cloudflare in Automation Service and Cloud SOAR
 
-## Cloudflare in Automation Service and Cloud SOAR
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Cloudflare, see [Cloudflare documentation](https://developers.cloudflare.com/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

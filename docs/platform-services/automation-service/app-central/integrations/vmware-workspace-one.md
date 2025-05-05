@@ -31,7 +31,13 @@ Enable API access in the Workspace ONE UEM console using these steps:
 1. Select **Enable API Access**.
 1. This selection automatically generates the API Key for the organization group.
 
-## VMware Workspace ONE in Automation Service and Cloud SOAR
+## Configure VMware Workspace ONE in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Omnissa Workspace ONE (formerly VMware Workspace ONE), see [Omnissa Workspace ONE documentation](https://docs.omnissa.com/category/Workspace_ONE).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

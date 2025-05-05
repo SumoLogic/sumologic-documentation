@@ -26,6 +26,14 @@ This integration enables user management and secure app access with MFA and even
 * **Remove a Factor** _(Containment)_ - Remove an enrolled factor from a user.
 * **Update User** _(Containment)_ - Update the attributes of a user in OneLogin.
 
+## Configure OneLogin in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about OneLogin, see [OneLogin documentation](https://developers.onelogin.com/quickstart).
+
 ## Change Log
 
 * March 1, 2021 - First upload

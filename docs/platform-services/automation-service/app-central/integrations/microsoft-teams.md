@@ -39,9 +39,9 @@ Microsoft Teams is the ultimate hub for teamwork and intelligent communications.
 
 Each application you want the Microsoft identity platform to perform identity and access management (IAM) needs to be registered. Registering it establishes a trust relationship between your application and the identity provider, the Microsoft identity platform.
 
-**Register an Application**
+**Register an application**
 
-Registering your application establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
+[Registering your application](https://learn.microsoft.com/en-us/graph/auth-register-app-v2#register-an-application) establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
 
 Follow these steps to create the app registration:
 
@@ -371,7 +371,13 @@ Once API permission are added then **Admin** must consent to a grant these permi
 
 For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/api/resources/teams-api-overview?view=graph-rest-1.0**](https://docs.microsoft.com/en-us/graph/api/resources/teams-api-overview?view=graph-rest-1.0)
 
-## Microsoft Teams in Automation Service and Cloud SOAR
+## Configure Microsoft Teams in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Microsoft Teams, see [Microsoft Teams documentation](https://learn.microsoft.com/en-us/microsoftteams/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for Microsoft Teams integration and click on the row.

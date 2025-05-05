@@ -24,6 +24,14 @@ Duo puts your organization on the fast-track to zero trust by securing the moder
 
 Follow this [link](https://duo.com/docs/adminapi) for configuration purposes:<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/duo/duo-1.png')} style={{border:'1px solid gray'}} alt="downdetector" width="700"/>
 
+## Configure Duo in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Duo, see [Duo documentation](https://duo.com/docs).
+
 ## Change Log
 
 * February 16, 2021 - First upload

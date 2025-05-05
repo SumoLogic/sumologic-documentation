@@ -24,6 +24,14 @@ Collect evidence, create events and investigations, and issue containment action
 * **Ban Hash** (*Containment*) - Ban a file.
 * **Quarantine** (*Containment*) - Quarantine a host.
 
+## Configure OpenText EnCase Endpoint Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about OpenText EnCase Endpoint Security, see the [OpenText EnCase Endpoint Security website](https://www.opentext.com/products/encase-endpoint-security).
+
 ## Change Log
 
 * October 3, 2019 - First upload

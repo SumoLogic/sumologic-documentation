@@ -23,6 +23,14 @@ Query, update, and work with cases in TheHive from Cloud SOAR.
 * **Update Case** (*Notification*) - Update an existing case.
 * **Update Observable** (*Enrichment*) - Update an existing observable.
 
+## Configure TheHive in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about TheHive, see [TheHive documentation](https://docs.strangebee.com/).
+
 ## Change Log
 
 * January 29, 2019 - First upload

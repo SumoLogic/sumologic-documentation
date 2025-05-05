@@ -19,7 +19,13 @@ KnowBe4 KMSAT is a security platform for security awareness training and simulat
 * **List Phishing Campaigns** *(Enrichment)* - Retrieve data from all phishing campaigns.
 * **List Users** *(Enrichment)* - Retrieve data about all users.
 
-## KnowBe4 KMSAT - Reporting in Automation Service and Cloud SOAR
+## Configure KnowBe4 KMSAT - Reporting in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about KnowBe4 reporting, see [KnowBe4 reporting documentation](https://support.knowbe4.com/hc/en-us/articles/360007952894-Reporting-Guide).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

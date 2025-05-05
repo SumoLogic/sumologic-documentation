@@ -1,5 +1,5 @@
 ---
-title: Kela Darkbeast
+title: KELA Darkbeast
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: Jul 05, 2023***
 
-Kela Darkbeast provides incident responders, threat hunters, investigators, and intelligence analysts with a robust technology to dive into the cybercrime underground and investigate. 
+KELA Darkbeast provides incident responders, threat hunters, investigators, and intelligence analysts with a robust technology to dive into the cybercrime underground and investigate. 
 
 ## Actions
 
@@ -19,13 +19,19 @@ Kela Darkbeast provides incident responders, threat hunters, investigators, and 
 * **Get Data Details** *(Enrichment)* - This action is used to retrieve the full details of a Hacking Discussion or Instant Messaging data point.
 * **User License** *(Enrichment)* - Returns the number of remaining search tokens your API license has.
 
-## Kela Darkbeast configuration
+## KELA Darkbeast configuration
 
-1. Sign in to the Kela Darkbeast platform.
+1. Sign in to the KELA Darkbeast platform.
 2. The API Access can be generated in your profile.
 3. Make sure you copy and save the API token.
 
-## Kela Darkbeast in Automation Service and Cloud SOAR
+## Configure KELA Darkbeast in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about KELA Cyber Threat Intelligence (formerly KELA Darkbeast), see [KELA documentation](https://docs.ke-la.com/kela-docs).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

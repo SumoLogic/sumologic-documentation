@@ -30,6 +30,14 @@ Remotely monitor and manage devices that run these Panda Aether platform endpoin
 
 EDR
 
+## Configure Panda EDR in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Panda EDR, see [Panda EDR documentation](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Fireware/services/edr_core/edr_core_about_c.html).
+
 ## Change Log
 
 * March 1, 2022 - First upload

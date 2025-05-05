@@ -26,7 +26,7 @@ Each application you want the Microsoft identity platform to perform identity an
 
 ### Register an application
 
-Registering your application establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
+[Registering your application](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-authenticate-an-ews-application-by-using-oauth) establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
 
 Follow these steps to create the app registration:
 
@@ -127,6 +127,14 @@ Once API permission are added then Admin must consent to a grant these permissio
 :::info Important Note
 When using the Microsoft EWS Daemon action within an automation rule, note that it will only pull in emails that are marked "Unread" within the respective mailbox scope. To ensure all relevant alerts are processed correctly, keep this mailbox a dedicated entity and avoid any manual reviews by other stakeholders.
 :::
+
+## Configure Microsoft EWS Daemon in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Microsoft EWS, see [Microsoft Exchange Web Services documentation](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-authenticate-an-ews-application-by-using-oauth).
 
 ## Category
 

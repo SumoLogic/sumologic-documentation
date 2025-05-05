@@ -30,6 +30,14 @@ IBM QRadar SIEM helps security teams detect, prioritize and respond to threats a
 * **Get Offenses Daemon V2** *(Daemon)* - Automatically get new QRadar offenses.
 * **Search Into Events QRadar V2** *(Enrichment)* - Search QRadar events.
 
+## Configure IBM QRadar in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about IBM QRadar, see [IBM QRadar documentation](https://www.ibm.com/support/pages/accessing-ibm-qradar-product-documentation).
+
 ## Change Log
 
 * May 5, 2019 - First upload

@@ -25,7 +25,13 @@ Updated: Jul 18, 2023***
 * **Mark Message as Suspicious** *(Containment)* - Indicates that the specified message is suspicious.
 * **Mark Message Sensitive and Insensitive** *(Containment)* - Indicates that the specified message is sensitive or insensitive.
 
-## Material Security in Automation Service and Cloud SOAR
+## Configure Material Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Material Security, see the [Material Security website](https://material.security/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

@@ -33,9 +33,15 @@ The ThreatQ threat intelligence platform, automates the aggregation, operational
 1. Log in to the ThreatQ.
 1. In the main page, click on the up-right corner in My Account. It opens a page where you can find your **API Credentials - Client ID**.
 
-## ThreatQ in Sumo Logic SOAR
+## Configure ThreatQ in Automation Service and Cloud SOAR
 
-1. Access integrations in [Cloud SOAR](/docs/cloud-soar/automation).
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about ThreatQ, see [ThreatQ documentation](https://docs.threatq.com/rest_api).
+
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears search/look for the ThreatQ integration and click on the row. The integration details will appear. Click on the **"+"** button to add new Resource.
 1. Populate all the required fields: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatq/threatq-3.png')} style={{border:'1px solid gray'}} alt="threatq" width="400"/>
 1. To make sure the resource is working, hover over the resource and then click edit (pencil icon) on the right of the row. Then click test saved settings. You should receive a successful notification in the bottom right corner.

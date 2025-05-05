@@ -15,6 +15,14 @@ MaxMind provides IP intelligence through the GeoIP brand. Over 5,000 companies u
 
 * **Geolocate IP** (*Enrichment*) - Geolocate an IP address using GeoIP2 or GeoLite2 web services using a server-side API call.
 
+## Configure MaxMind V2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about MaxMind, see [MaxMind documentation](https://dev.maxmind.com/).
+
 ## Change Log
 
 * March 29, 2023 - First upload
