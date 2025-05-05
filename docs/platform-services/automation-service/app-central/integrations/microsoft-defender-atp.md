@@ -35,7 +35,7 @@ Microsoft Defender Advanced Threat Protection (ATP) is a product that enables pr
 
 ## Microsoft Defender ATP configuration
 
-1. Log in to Azure with a user that has the Global Administrator role. Navigate to **Azure Active Directory > App registrations > New registration**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-1.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="800"/>
+1. Log in to Azure with a user that has the Global Administrator role. Navigate to **Azure Active Directory > App registrations > [New registration](https://learn.microsoft.com/en-us/defender-endpoint/api/exposed-apis-create-app-nativeapp#create-an-app)**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-1.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="800"/>
 1. Choose a name for your application, and then select Register. To enable your app to access Defender for Endpoint and assign it 'Read all alerts' permission, on your application page, select **API Permissions > Add permission > APIs my organization uses**, type *WindowsDefenderATP*, and then select WindowsDefenderATP. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-2.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="800"/>
 1. Select the relevant permissions. For example, 'Read All Alerts'. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-3.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="600"/>
 1. All the permissions would be something like this. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-14.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="600"/>
@@ -43,7 +43,13 @@ Microsoft Defender Advanced Threat Protection (ATP) is a product that enables pr
 1. Next, add a secret to the application. Select **Certificates & secrets**, add a description to the secret, and then select **Add**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-5.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="600"/>
 1. Navigate to **Overview**, copy and save your application ID and your tenant ID.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-6.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="600"/>
 
-## Microsoft Defender ATP in Automation Service and Cloud SOAR
+## Configure Microsoft Defender ATP in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Microsoft Defender for Endpoint (formerly Defender ATP), see [Microsoft Defender for Endpooint documentation](https://learn.microsoft.com/en-us/defender-endpoint/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

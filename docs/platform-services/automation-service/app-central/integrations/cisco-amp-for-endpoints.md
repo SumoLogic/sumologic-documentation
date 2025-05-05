@@ -40,6 +40,14 @@ Perform a wide variety of Enrichment and Containment actions for endpoint invest
 * **Isolate Computer** (*Containment*) - Isolate a specific computer.
 * **Remove Isolation** (*Containment*) - Remove a specific computer from isolation.
 
+## Configure Cisco AMP for Endpoints in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Cisco Secure Endpoint (formerly AMP for Endpoints), see [Secure Endpoint documentation](https://console.amp.cisco.com/docs).
+
 ## Change Log
 
 * January 29, 2019 - First upload

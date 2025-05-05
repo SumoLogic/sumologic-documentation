@@ -27,6 +27,14 @@ Enrich incident evidence with threat intelligence data from Blueliv.
 * **List Modules** (*Enrichment*) - List Modules of your profile.
 * **List Organizations** (*Enrichment*) - Get all Organizations(which are available on your Instance).
 
+## Configure Blueliv in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Blueliv, see [Outpost](https://outpost24.com/blog/outpost24-acquires-threat-intelligence-solution-blueliv/).
+
 ## Change Log
 
 * November 13, 2020 - First upload

@@ -20,7 +20,13 @@ Updated: Jul 06, 2023
 * **Get Commit** (*Enrichment*) - Returns the contents of a single commit reference.
 * **Get Commit By URL** (Enrichment) - Returns details of a commit by providing url.
 
-## GitHub in Automation Service and Cloud SOAR
+## Configure GitHub in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about GitHub, see [GitHub documentation](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

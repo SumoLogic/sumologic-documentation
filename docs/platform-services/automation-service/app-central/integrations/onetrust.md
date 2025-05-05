@@ -25,6 +25,14 @@ OneTrust is a technology platform that helps organizations comply with privacy a
 * **Remove Group Member** *(Containment)* - Remove a specific member from the given group
 * **Search Incidents** *(Enrichment)* - Search incidents based on criteria.
 
+## Configure OneTrust in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about OneTrust, see [OneTrust documentation](https://developer.onetrust.com/).
+
 ## Change Log
 
 * January 19, 2024 - First upload

@@ -34,7 +34,13 @@ Because *gpt-3.5-turbo* performs at a similar capability to *text-davinci-003* b
 
 **Grab your API keys**. Log into your OpenAI [dashboard](https://platform.openai.com/account/api-keys) and click your profile icon at the top right. Go to **View API Keys** and click **Create new secret key** to generate your API secret key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-1.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="800"/>
 
-## OpenAI ChatGPT in Automation Service and Cloud SOAR
+## Configure OpenAI ChatGPT in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about OpenAI, see [OpenAI documentation](https://platform.openai.com/docs/api-reference/introduction).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.   

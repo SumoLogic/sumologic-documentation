@@ -38,6 +38,14 @@ Interact with Okta users, groups, and system logging information.
 * **Update Network Zone** _(Containment)_ - Updates a network zone.
 * **Update User** _(Containment)_ - Updates a user’s account.
 
+## Configure Okta in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Okta, see [Okta documentation](https://help.okta.com/en-us/content/index.htm).
+
 ## Change Log
 
 * March 20, 2020 - First upload

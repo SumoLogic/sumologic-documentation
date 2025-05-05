@@ -17,7 +17,13 @@ The ProtectOnce provides SaaS companies with a radically simplified agentless so
 * **Get Incidents** *(Enrichment)* - Returns all Incidents.
 * **Netskope Get Incidents Daemon ProtectOnce** *(Daemon)* - Automatically gather Incidents from ProtectOnce.
 
-## ProtectOnce in Automation Service and Cloud SOAR
+## Configure ProtectOnce in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about ProtectOnce, see the [ProtectOnce website](https://app.protectonce.com/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

@@ -24,7 +24,13 @@ Log in to **Lansweeper** with your email ID and password to start the [configura
 
 <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-1.png')} style={{border:'1px solid gray'}} alt="lansweeper-1" width="300"/>
 
-## Lansweeper in Automation Service and Cloud SOAR
+## Configure Lansweeper in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Lansweeper, see [Lansweeper documentation](https://developer.lansweeper.com/docs/data-api/get-started/welcome/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

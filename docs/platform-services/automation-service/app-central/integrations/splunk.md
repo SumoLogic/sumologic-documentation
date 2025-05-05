@@ -25,6 +25,14 @@ Search and send events with Splunk.
 * Only default fields, such as `[].\_raw`, `[].host`, and `[].source` are included in the Search Into Splunk Events and Splunk Events Daemon actions.   
 To use any custom fields from Splunk within Cloud SOAR, make sure they are added to these action files.
 
+## Configure Splunk in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Splunk, see [Splunk documentation](https://docs.splunk.com/Documentation).
+
 ## Change Log
 
 * May 5, 2019 - First upload

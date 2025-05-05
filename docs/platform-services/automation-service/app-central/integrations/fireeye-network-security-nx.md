@@ -19,6 +19,14 @@ Advanced network security solution for network traffic analysis.
 * **Add Snort Rule** (*Containment*) - Add a new Snort rule.
 * **Add YARA Rule** (*Containment*) - Add a new YARA rule.
 
+## Configure FireEye Network Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Trellix Network Security (formerly FireEye Network Security), see [Trellix Network Security (NX) documentation](https://docs.trellix.com/bundle/fe-network-security-landing/page/UUID-58265fe8-a08e-3442-855b-72d3a36262b5.html).
+
 ## Change Log
 
 * June 19, 2019 - First upload

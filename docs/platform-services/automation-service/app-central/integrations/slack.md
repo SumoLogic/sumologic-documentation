@@ -92,7 +92,13 @@ Create a public or private channel, Send messages or Files to channels or Users 
 1. Now you need to Install the APP in the workspace. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-9.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
 1. After installing the App now, you have two Tokens; these tokens are automatically generated when you installed the app. You will need these two tokens later. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-10.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
 
-## Slack in Automation Service and Cloud SOAR
+## Configure Slack in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Slack, see [Slack documentation](https://slack.com/help).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

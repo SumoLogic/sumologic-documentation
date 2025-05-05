@@ -31,6 +31,14 @@ Query FireEye Helix to gather enrichment data during an incident investigation.
 * **Close Alert Helix** (*Notification*) - Close an existing Helix alert.
 * **FireEye Helix Alerts Daemon** (*Daemon*) - Automatically gather Helix alerts.
 
+## Configure FireEye Helix in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Trellix Helix (formerly FireEye Helix), see [Trellix Helix documentation](https://docs.trellix.com/bundle/fe-helix-enterprise-landing/page/UUID-004fd1b5-25d2-27d6-7578-ad0197c248aa.html).
+
 ## Change Log
 
 * January 23, 2020 - First upload

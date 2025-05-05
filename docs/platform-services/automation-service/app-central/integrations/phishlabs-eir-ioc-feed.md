@@ -16,7 +16,13 @@ PhishLabs by Fortra is a cyber threat intelligence company that delivers Digital
 * **List Incident Indicators** *(Enrichment)* - Retrieve list of incidents and indicators within the feed.
 * **List Global Indicators** *(Enrichment)* - Retrieve global list of indicators.
 
-## PhishLabs EIR - IOC Feed in Automation Service and Cloud SOAR
+## Configure PhishLabs EIR - IOC Feed in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about PhishLabs, see the [PhishLabs website](https://www.phishlabs.com/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

@@ -17,6 +17,14 @@ Network performance monitoring and network security products, Flowmon is utilizi
 * **List Of Alerts** *(Enrichment)* - Get a list of alerts.
 * **Get Alert** *(Enrichment)* - Gets specific alert object.
 
+## Configure Flowmon in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Flowmon, see [Flowmon documentation](https://docs.progress.com/category/flowmon-os).
+
 ## Change Log
 
 * November 8, 2021 - First upload

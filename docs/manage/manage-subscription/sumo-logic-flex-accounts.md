@@ -8,9 +8,11 @@ description: View information on Sumo Logic Flex Accounts and intuitively monito
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import AccountCredit from '../../reuse/account-credit.md';
 
-Sumo Logic provides flexible account types within its Flex packaging for any size organization with a credit-based capacity measurement.
+Sumo Logic provides flexible account types within its Flex packaging for any size organization with a credit-based capacity measurement. A credit is a unit of measure that tracks use, whether data ingested (GB) and scanned, storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to carefully manage your account.
 
-<AccountCredit/>
+:::note
+For Flex accounts, credits will be consumed on the basis of log data volume scanned.
+:::
 
 This page provides information on our available Flex Credits account types and how to monitor and manage your account.
 
@@ -39,6 +41,16 @@ To access your [Data Management](/docs/manage/users-roles/roles/role-capabilitie
 * [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**.
 
 Trials are limited to 30 days. If you need to extend your trial period, contact our sales team to inquire about a Proof of Concept (PoC).
+
+### Essentials
+
+Essentials accounts scale to meet your growing needs for user licenses, data retention, and volume options. The Essentials plan includes options tailored to various needs:
+
+* **Troubleshoot**. Foundational log analysis and troubleshooting.
+* **Collaborate**. Advanced team collaboration features.
+* **Orchestrate**. Designed for organizations requiring robust workflows and automation.
+
+For details on upgrading to an Essentials plan or higher, see [Upgrade a Sumo Logic Flex Account](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account). Essentials accounts can be upgraded to Enterprise Suite Flex accounts anytime.
 
 ### Enterprise Suite Flex
 
@@ -72,17 +84,17 @@ The following table provides a summary list of key features by Flex package acco
 | Cloud SIEM |  |  | | Activation required* |
 | Cloud Security Posture Monitoring |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
 | Cloud SOAR |  |  | | Activation required* |
-| Collector Management API | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
+| Collector Management API | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Compliance and Audit Logging |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Threat Intelligence |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Customizable Dashboards | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Data Forwarding | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
-| Data Volume Index | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
+| Data Forwarding | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Data Volume Index | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Enterprise Audit and Logging Dashboards |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Entity Normalization |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
 | Entity Relationship Graph |  | | | ![check](/img/reuse/check.png) |
 | Entity Timeline |  |  | | ![check](/img/reuse/check.png) |
-| Field Extraction | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
+| Field Extraction | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Geo IP Lookups | | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Global Intelligence Service apps |  |  | | ![check](/img/reuse/check.png) |
 | Historical and Live Streaming Dashboards | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
@@ -95,22 +107,22 @@ The following table provides a summary list of key features by Flex package acco
 | LogReduce©, LogCompare, and LogExplain | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Log Data Continuous Volume | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
 | Log Data Frequent Tier Volume | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
-| Log Data storage  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
+| Log Data storage  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Log Search and Visualizations | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Log Search API |  |  | | ![check](/img/reuse/check.png) |
 | Lookup Tables |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Management APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Metrics | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
+| Metrics | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Metrics based SLOs |  | | |![check](/img/reuse/check.png) |
-| Metrics data retention | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
+| Metrics data retention | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Metrics Predict Operators |  |  | |![check](/img/reuse/check.png) |
-| Metrics volume | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
+| Metrics volume | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | MITRE ATT&CK Coverage Explorer |  | | | ![check](/img/reuse/check.png) |
-| Monitors | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
+| Monitors | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Multi-Cloud Observability (AWS, Azure GCP) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
 | OTel Data Onboarding | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
 | OTel for K8s Logs and Events |  |  | |![check](/img/reuse/check.png) |
-| Partitions | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
+| Partitions | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | PCI Compliance Apps and Dashboards for Audit Readiness | | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Playbooks (including complete Sumo Logic playbook catalog) |  |  | | ![check](/img/reuse/check.png) |
 | Predictive Analytics and Outlier Detection | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
@@ -121,17 +133,17 @@ The following table provides a summary list of key features by Flex package acco
 | Risk Assessment |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
 | Root Cause Explorer |  |  | | ![check](/img/reuse/check.png) |
 | Scheduled Alert Muting | |  | |![check](/img/reuse/check.png) |
-| Scheduled Views | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
+| Scheduled Views | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Service Maps |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
 | Single sign-on (SSO) with SAML | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Software Development Optimization | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Sumo Logic Apps | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Supervised Active Intelligence |  |  | | ![check](/img/reuse/check.png) |
-| Support | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
-| Traces | ![check](/img/reuse/check.png)<br/>Up to 1.5GB per day* | ![check](/img/reuse/check.png)<br/>Up to 5GB per day | ![check](/img/reuse/check.png)<br/>5GB per day| |
+| Support | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Traces | ![check](/img/reuse/check.png)<br/>Up to 1.5GB per day* | ![check](/img/reuse/check.png)<br/>Up to 5GB per day | ![check](/img/reuse/check.png)<br/>5GB per day| ![check](/img/reuse/check.png)<br/>Up to 5GB per day |
 | Usage Management - Advanced |  |  | | ![check](/img/reuse/check.png) |
 | Usage Management - Basic | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
+| User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | <br/>Up to 5GB per day |
 | War Room | |  | | ![check](/img/reuse/check.png) |
 
 \* Contact your account manager to customize your account to meet your organization's needs.

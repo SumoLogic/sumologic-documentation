@@ -16,6 +16,14 @@ Google Safe Browsing helps protect over four billion devices every day by showin
 * **Lookup URL** *(Enrichment)* - Query data in Google Safe Browsing.
 * **Threat Lists** *(Enrichment)* - Retrieve list of threats.
 
+## Configure Google Safe Browsing in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Google Safe Browsing, see [Google Safe Browsing documentation](https://developers.google.com/safe-browsing/reference).
+
 ## Change Log
 
 * May 31, 2021 - First upload

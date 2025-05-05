@@ -1,5 +1,5 @@
 ---
-title: LogPoint
+title: Logpoint
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,13 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: Jun 30, 2023***
 
-Interact with LogPoint events during incident investigations.
+Interact with Logpoint events during incident investigations.
 
 ## Actions
 
-* **Search Into Events** (*Enrichment*) - Query LogPoint for event data.
+* **Search Into Events** (*Enrichment*) - Query Logpoint for event data.
 * **Resolve Incident** (*Notification*) - Resolved an incident.
-* **Get LogPoint Incidents** (*Daemon*) - Poll incidents from LogPoint.
+* **Get Logpoint Incidents** (*Daemon*) - Poll incidents from Logpoint.
 * **Get Logs** (*Daemon*) - Retrieve specific logs from Logpoint.
 * **Get Incidents Data** (*Enrichment*) - Retrieve data from specific incident
 
@@ -23,9 +23,17 @@ Interact with LogPoint events during incident investigations.
 
 This integration has been developed using a non-standard API that involves web scraping.
 
+## Configure Logpoint in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Logpoint, see [Logpoint documentation](https://docs.logpoint.com/).
+
 ## Change Log
 
 * September 3, 2020 - First upload
 * June 30, 2023 (v1.1)
 	+ Updated the integration with Environmental Variables
-	+ Integration renamed from LogPoint OIF to LogPoint
+	+ Integration renamed from Logpoint OIF to Logpoint

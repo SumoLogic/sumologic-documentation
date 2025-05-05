@@ -101,6 +101,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/cisco-vulnerability-management"><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="80"/><h4>Cisco Vulnerability Management</h4></a>
+  <p>Monitor and manage your organizations software vulnerabilities.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/citrix-cloud"><img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="80"/><h4>Citrix</h4></a>
   <p>Track configuration modifications impacting your environment and admins.</p>
   </div>
@@ -133,6 +139,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/crowdstrike-spotlight"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Spotlight</h4></a>
   <p>Gather real-time visibility into the vulnerabilities.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/cyberark-audit"><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk Audit</h4></a>
+  <p>Gather information about your organization's cybersecurity practices to strengthen security.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -331,6 +343,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/sophos"><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="60"/><h4>Sophos</h4></a>
   <p>Identify security threats by analyzing alerts and events logs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/sumo-collection"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="80"/><h4>Sumo Collection</h4></a>
+  <p>Identify, manage, and monitor collectors and sources within Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">

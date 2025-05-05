@@ -134,7 +134,7 @@ account={{account}} region={{region}} Namespace={{namespace}}
 ```
 
 ```sql title="Error (Count)(CloudWatch metric Based)"
-namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | su
+namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | sum
 ```
 
 ## Collecting logs for the AWS Lambda App

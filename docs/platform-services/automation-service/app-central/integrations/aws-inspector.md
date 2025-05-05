@@ -22,6 +22,12 @@ Amazon Inspector enables you to analyze the behavior of your AWS resources and t
 
 ## Configure AWS Inspector in Automation Service and Cloud SOAR
 
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS Inspector, see [Inspector documentation](https://docs.aws.amazon.com/inspector/).
+
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-inspector/aws-inspector-3.png')} style={{border:'1px solid gray'}} alt="aws-inspector-3" width="600"/>

@@ -15,9 +15,13 @@ Imperva WAF offers web application security firewall, providing protection again
 
 * **List Sites** *(Enrichment)* - Retrieves a list of all sites.
 
+## Configure Imperva WAF in Automation Service and Cloud SOAR
 
-## Imperva WAF in Automation Service and Cloud SOAR
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
+<IntegrationsAuth/>
+
+For information about Imperva WAF, see [Imperva documentation](https://docs.imperva.com/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

@@ -1,5 +1,5 @@
 ---
-title: Manage Engine Desktop Central
+title: ManageEngine Desktop Central
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -24,6 +24,14 @@ Query data an utilize actions in Desktop Central unified endpoint management (UE
 * **Deployment Policies** *(Enrichment)* - Retrieve the patch deployment policy list.
 * **Initiation Request** *(Containment)* - Get the device code as input for Polling Request action.
 * **Polling Request** *(Containment)* - Get the Access Token.
+
+## Configure ManageEngine Desktop Central in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about ManageEngine Endpoint Central (formerly Desktop Central), see [ManageEngine Endpoint Central documentation](https://www.manageengine.com/products/desktop-central/api/).
 
 ## Change Log
 

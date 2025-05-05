@@ -17,6 +17,14 @@ Updated: Jul 03, 2023***
 * **Create Destination List** (*Containment*) - Create a Destination List.
 * **List Users** (*Enrichment*) - List the users in the organization.
 
+## Configure Cisco Umbrella V2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Cisco Umbrella, see [Cisco Umbrella documentation](https://developer.cisco.com/docs/cloud-security/umbrella-api-authentication/).
+
 ## Change Log
 
 * September 25, 2019 - First upload

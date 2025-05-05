@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.2  
 Updated: Jan 29, 2024***
 
-Perform threat intelligence evidence gathering with IP Quality Score.
+Perform threat intelligence evidence gathering with IPQualityScore.
 
 ## Actions
 
@@ -17,6 +17,14 @@ Perform threat intelligence evidence gathering with IP Quality Score.
 * **Get Credit Usage** *(Enrichment)* - Gather Credit usage information from IP Quality Score.
 * **IP Reputation** *(Enrichment)* - Gather IP reputation information from IP Quality Score.
 * **URL Reputation** *(Enrichment)* - Gather URL reputation information from IP Quality Score.
+
+## Configure IPQualityScore in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about IPQualityScore, see [IPQualityScore documentation](https://www.ipqualityscore.com/documentation/overview).
 
 ## Change Log
 

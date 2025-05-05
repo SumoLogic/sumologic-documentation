@@ -24,7 +24,13 @@ Intel 471provides comprehensive coverage of the criminal underground, SaaS platf
 3. On the left menu, search for your profile and in API, under API KEY click to display your API Key.
 4. Make sure you copy the API Key.
 
-## Intel 471 in Automation Service and Cloud SOAR
+## Configure Intel 471 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Intel 471, see the [Intel 471 website](https://intel471.com/resources).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.

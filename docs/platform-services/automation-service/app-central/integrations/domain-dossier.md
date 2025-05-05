@@ -15,6 +15,14 @@ Perform WHOIS queries with Domain Dossier.
 
 * **Whois** (*Enrichment*) - Get WHOIS information for an IP or domain.
 
+## Configure Domain Dossier in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Domain Dossier, see the [Domain Dossier website](https://centralops.net/co/domaindossier).
+
 ## Change Log
 
 * May 7, 2019 - First upload

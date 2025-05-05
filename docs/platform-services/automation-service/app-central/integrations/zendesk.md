@@ -32,6 +32,13 @@ This integration supports two primary authentication methods:
 
 Please ensure that you consult the corresponding guide to activate the API and generate the necessary credentials for your chosen method of authentication.
 
+## Configure Zendesk in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Zendesk, see [Zendesk documentation](https://www.zendesk.com/service/ticketing-system/documentation/).
 
 ## Change Log
 

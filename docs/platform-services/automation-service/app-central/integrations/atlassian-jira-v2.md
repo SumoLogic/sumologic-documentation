@@ -5,12 +5,16 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="atlassian-jira-v2" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="Atlassian logo" width="80"/>
 
 ***Version: 2.10  
 Updated: September 2 , 2024***
 
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
+
+:::note
+This integration uses the [Jira REST API v2](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/#about).
+:::
 
 ## Actions
 
@@ -38,37 +42,42 @@ Sign in to [Jira](https://id.atlassian.com) with your Atlassian account.
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-2" width="300"/>
 
-## Create an API token
+### Create an API token
 
-Create an API token from your Atlassian account:
+[Create an API token](https://developer.atlassian.com/cloud/commerce-it-frontoffice/overview/papi/onboarding/api-token/create/#create-a-token) from your Atlassian account:
 1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
 1. Click **Create API token**.
 1. From the dialog that appears, enter a memorable and concise **Label** for your token and click **Create**.
 1. Click **Copy to clipboard**, then paste the token to your script, or elsewhere to save.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-3" width="300"/>
 
-## Revoke an API token
+### Revoke an API token
 
-A revoked token no longer works and is permanently removed from your account. If you revoke an API token currently being used, you can replace it with a new token. To revoke an API token:
+[A revoked token](https://developer.atlassian.com/cloud/commerce-it-frontoffice/overview/papi/onboarding/api-token/delete/) no longer works and is permanently removed from your account. If you revoke an API token currently being used, you can replace it with a new token. To revoke an API token:
 1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
 1. Select **Revoke** next to the API token that you want to revoke.
 1. To revoke all API tokens for your account, select **Revoke all API tokens**.
 
-## Atlassian Jira V2 in Automation Service and Cloud SOAR
+## Configure Atlassian Jira V2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Atlassian Jira, see [Jira documentation]( https://confluence.atlassian.com/jira). For the REST API v2, see the [REST API v2 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add a new resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-4.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-4" width="100"/>
 1. Label and populate all the required fields (\*).
     1. **Label**. Add a name for the resource.
-    1. **URL API**. Enter your Atlassian site URL. For example, `https://your-atlassian-site.atlassian.net/`.
+    1. **URL API**. Enter your Atlassian site URL. For example, `https://your-atlassian-site.atlassian.net/`. For information about Atlassian, see [Atlassian documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/#about).
     1. **Username**. Enter your email address.
     1. **API Token**. Insert the previously copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-5" width="400"/>
 1. Optional fields in the resource are used for actions.
     * Populate **Jira Project Name** when using the Issues **Jira Daemon** action.
     * Populate **Cloud SOAR API URL** and **Cloud SOAR JWT (token)** when using the **Add Issue Attachment To Incident** action.
+1. To make sure the resource is working, click **TEST**. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-6.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-6" width="250"/>
 1. Click **SAVE**.
-1. To make sure the resource is working, hover over the resource and then click the **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-7.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-7" width="150"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-6.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-6" width="250"/>
 
 ## Category
 

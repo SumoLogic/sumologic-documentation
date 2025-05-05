@@ -23,6 +23,14 @@ The Trend Micro Vision One platform includes advanced XDR capabilities that coll
 * **List Alerts** *(Enrichment)* - List all alerts.
 * **Get Suspicious Object List** *(Enrichment)* - Retrieve list of suspicious objects.
 
+## Configure Trend Micro Vision One in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Trend Micro Vision One, see [Trend Micro Vision One documentation](https://docs.trendmicro.com/en-us/documentation/trend-vision-one/).
+
 ## Change Log
 
 * October 28, 2021 - First upload

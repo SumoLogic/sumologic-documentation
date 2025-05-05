@@ -17,6 +17,14 @@ Query domains, URLs, and hash values with URLhaus.
 * **Get Hash Info** (*Enrichment*) - To retrieve information about a payload (*malware sample*) that URLhaus has retrieved.
 * **Get URL Info** (*Enrichment*) - To retrieve information about an URL.
 
+## Configure URLhause Abuse in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about URLhause, see [URLhause documentation](https://urlhaus.abuse.ch/).
+
 ## Change Log
 
 * April 1, 2019 - First upload

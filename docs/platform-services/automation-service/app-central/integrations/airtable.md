@@ -24,7 +24,13 @@ Updated: Jul 18, 2023**
 1. Sign in to the Airtable platform with your email ID and password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-1.png')} style={{border:'1px solid gray'}} alt="airtable-1" width="800"/>
 1. Create your token, refer to the [Developer hub page](https://airtable.com/developers/web/guides/personal-access-tokens).
 
-## Airtable in Automation Service and Cloud SOAR
+## Configure Airtable in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Airtable, see [Airtable documentation](https://support.airtable.com/docs).
 
 1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.

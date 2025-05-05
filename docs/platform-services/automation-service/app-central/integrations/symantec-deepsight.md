@@ -19,6 +19,14 @@ Gather threat intelligence data from Symantec DeepSight for incident investigati
 * **Domain Reputation** (*Enrichment*) - Gather domain reputation information from DeepSight.
 * **IP Reputation** (*Enrichment*) - Gather IP reputation information from DeepSight.
 
+## Configure Symantec DeepSight in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Symantec, see [Symantec documentation](https://techdocs.broadcom.com/us/en/symantec-security-software.html).
+
 ## Change Log
 
 * July 29, 2019 - First upload
