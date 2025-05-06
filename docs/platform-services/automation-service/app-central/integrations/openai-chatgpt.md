@@ -40,19 +40,14 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.   
-1. The integration details will appear. Click on the **"+"** button to add a new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-4.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="800"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
    * **Label**. The name of the resource.
    * **API URL**. `https://api.openai.com/`.
    * **API Key**. Your OpenAI API Key.
    * Disclaimer: Kindly review and acknowledge the disclaimer provided in the integration resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-5.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-6.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-7.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-8.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
 
- **Create Chat Completion Action:**
+For information about OpenAI, see [OpenAI documentation](https://platform.openai.com/docs/api-reference/introduction).
+
+## Test Create Chat Completion action
 
 <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-9.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
 

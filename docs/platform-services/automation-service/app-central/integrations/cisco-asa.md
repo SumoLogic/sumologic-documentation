@@ -28,6 +28,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Cisco ASA, see [Cisco ASA documentation](https://www.cisco.com/c/en/us/td/docs/security/asa/roadmap/asaroadmap.html).
+
 ## Change Log
 
 * February 26, 2019 - First upload

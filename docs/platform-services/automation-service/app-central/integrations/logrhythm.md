@@ -28,6 +28,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about LogRhythm, see [LogRhythm documentation](https://docs.logrhythm.com/?l=en).
+
 ## Change Log
 
 * May 31, 2021 - First upload

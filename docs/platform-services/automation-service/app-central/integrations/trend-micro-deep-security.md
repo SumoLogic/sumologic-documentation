@@ -37,6 +37,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Trend Micro Deep Security, see [Trend Micro Deep Security documentation](https://docs.trendmicro.com/en-us/documentation/deep-security/).
+
 ## Change Log
 
 * March 6, 2020 - First upload

@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Silent Push, see [Silent Push documentation](https://help.silentpush.com/).
+
 ## Change Log
 
 * July 15, 2024 - First upload

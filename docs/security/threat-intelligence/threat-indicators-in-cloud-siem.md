@@ -1,7 +1,7 @@
 ---
 slug: /security/threat-intelligence/threat-indicators-in-cloud-siem
-title: Threat Intelligence Indicators in Cloud SIEM
-sidebar_label: Indicators in Cloud SIEM
+title: Find Threats with Cloud SIEM
+sidebar_label: Find Threats with Cloud SIEM
 description: Learn how to use threat intelligence indicators in Cloud SIEM.
 ---
 

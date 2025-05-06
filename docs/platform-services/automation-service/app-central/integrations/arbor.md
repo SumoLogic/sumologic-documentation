@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Arbor, see [Netscout](https://www.netscout.com/arbor).
+
 ## Change Log
 
 * May 22, 2020 - First upload

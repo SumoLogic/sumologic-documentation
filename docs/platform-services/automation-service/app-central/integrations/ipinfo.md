@@ -36,6 +36,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about IPinfo, see [IPinfo documentation](https://ipinfo.io/developers).
+
 ## Change Log
 
 * July 12, 2022 - First upload

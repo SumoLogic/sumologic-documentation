@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Anomali ThreatStream, see [Anomali documentation](https://www.anomali.com/resources).
+
 ## Change Log
 
 * November 10, 2022 - First upload

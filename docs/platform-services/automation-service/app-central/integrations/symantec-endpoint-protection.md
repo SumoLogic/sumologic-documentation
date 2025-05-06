@@ -31,6 +31,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Symantec Endpoint Protection, see [Symantec Endpoint Protection documentation](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all.html).
+
 ## Change Log
 
 * September 26, 2019 - First upload

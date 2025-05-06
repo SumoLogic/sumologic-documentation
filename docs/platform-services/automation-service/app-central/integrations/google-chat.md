@@ -29,6 +29,8 @@ To send rich text messages, use the Create Message action with `Disable HTML` in
 
 ## Google Chat configuration
 
+To [create service account credentials](https://developers.google.com/workspace/guides/create-credentials) in Google Workspace needed to configure the Google Chat app integration, follow these steps:
+
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
 3. Go to the **API&Services** > **Credentials** page.
@@ -51,8 +53,9 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
 * **Label**. The desired name for the resource.
-* **Private Key Json**. Provide the content of the JSON file generated in the previous steps. Open the file and
-  copy-paste the whole content in the field.
+* **Private Key Json**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
+
+For information about Google Chat, see [Google Chat documentation](https://developers.google.com/workspace/chat/overview).
 
 ## Use cases for sending messages
 

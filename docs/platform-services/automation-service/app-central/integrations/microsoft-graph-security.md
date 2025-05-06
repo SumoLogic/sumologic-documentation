@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Microsoft Graph Security, see [Microsoft Graph Security documentation](https://learn.microsoft.com/en-us/graph/security-authorization).
+
 ## Change Log
 
 * February 21, 2019 - First upload

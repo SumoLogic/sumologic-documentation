@@ -45,6 +45,12 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS IAM, see [IAM documentation](https://docs.aws.amazon.com/iam/).
+
 ## Change Log
 
 * October 1, 2019 - First upload
