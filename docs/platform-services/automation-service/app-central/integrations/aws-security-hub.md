@@ -26,6 +26,10 @@ Interact with AWS Security Hub through Insights and Findings.
 
 ## Configure AWS Security Hub in Automation Service and Cloud SOAR
 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
 <IntegrationsAuthAWS/>

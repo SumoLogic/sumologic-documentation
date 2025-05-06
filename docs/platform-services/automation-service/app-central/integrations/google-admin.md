@@ -44,11 +44,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Google Admin, see [Google Workspace Admin documentation](https://support.google.com/a/?hl=en#topic=4388346).
-
 * **Label**. The desired name for the resource.
 * **User Service Account JSON**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
 * **Admin User Email**. The e-mail address of an admin user.
+
+For information about Google Admin, see [Google Workspace Admin documentation](https://support.google.com/a/?hl=en#topic=4388346).
 
 ## Change Log
 

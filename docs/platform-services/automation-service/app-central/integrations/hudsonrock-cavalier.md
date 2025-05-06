@@ -25,17 +25,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about HudsonRock, see [HudsonRock documentation](https://docs.hudsonrock.com/).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hudsonrock-cavalier/hudsonrock-cavalier-3.png')} style={{border:'1px solid gray'}} alt="hudsonrock-cavalier" width="600"/>
-1. Populate all the required fields (\*) and then click **Save**.
    * **Label**. The desired name for the resource.
    * **URL**. Your HudsonRock URL.
-   * **API Key**. Your HudsonRock API Key you copied earlier from HudsonRock.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hudsonrock-cavalier/hudsonrock-cavalier-4.png')} style={{border:'1px solid gray'}} alt="hudsonrock-cavalier" width="400"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hudsonrock-cavalier/hudsonrock-cavalier-5.png')} style={{border:'1px solid gray'}} alt="hudsonrock-cavalier" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hudsonrock-cavalier/hudsonrock-cavalier-6.png')} style={{border:'1px solid gray'}} alt="hudsonrock-cavalier" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hudsonrock-cavalier/hudsonrock-cavalier-7.png')} style={{border:'1px solid gray'}} alt="hudsonrock-cavalier" width="400"/>
+   * **API Key**. Your HudsonRock API Key you copied earlier from HudsonRock.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hudsonrock-cavalier/hudsonrock-cavalier-4.png')} style={{border:'1px solid gray'}} alt="hudsonrock-cavalier" width="400"/>
+
+For information about HudsonRock, see [HudsonRock documentation](https://docs.hudsonrock.com/).
 
 ## Change Log
 
