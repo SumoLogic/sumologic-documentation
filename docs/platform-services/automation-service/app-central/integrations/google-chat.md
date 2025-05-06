@@ -52,11 +52,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Google Chat, see [Google Chat documentation](https://developers.google.com/workspace/chat/overview).
-
 * **Label**. The desired name for the resource.
-* **Private Key Json**. Provide the content of the JSON file generated in the previous steps. Open the file and
-  copy-paste the whole content in the field.
+* **Private Key Json**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
+
+For information about Google Chat, see [Google Chat documentation](https://developers.google.com/workspace/chat/overview).
 
 ## Use cases for sending messages
 
