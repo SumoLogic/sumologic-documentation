@@ -55,6 +55,6 @@ The injection allows you to click a link from the Trace View tab and launch a se
         </appender>
   ```
 
-## Additional information
+## Additional resources
 
 *  [NLog.DiagnosticSource | GitHub](https://github.com/NLog/NLog.DiagnosticSource)

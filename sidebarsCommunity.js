@@ -79,7 +79,7 @@ module.exports = {
     },
     {
       type: 'link',
-      label: 'Log in to Sumo',
+      label: 'Sign in to Sumo',
       href: 'https://service.sumologic.com',
     },
   ],

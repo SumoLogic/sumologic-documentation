@@ -15,7 +15,7 @@ You can manage Sumo Logic user permissions using ADFS and SAML. To do this, you 
 Before you begin, here are a few key points, limitations, and tips:
 
 * User permissions are updated upon every SSO login. This allows you to manage permissions for Sumo Logic users within Active Directory.
-* SAML does not provide a deprovisioning mechanism. This means that if a user is deleted or disabled in Active Directory, it will not be reflected in Sumo Logic. However, these users would no longer be able to login to Sumo Logic via SSO. The exception is Access Keys, and if SAML lockdown is not enabled, users would still be able to login via native accounts.
+* SAML does not provide a deprovisioning mechanism. This means that if a user is deleted or disabled in Active Directory, it will not be reflected in Sumo Logic. However, these users would no longer be able to sign in to Sumo Logic via SSO. The exception is Access Keys, and if SAML lockdown is not enabled, users would still be able to login via native accounts.
 * Access Keys are NOT controlled by SAML. This means that if a user has been turned off on the SSO side, their Access Keys would still be valid. For this reason, administrators should audit users regularly and disable Access Keys when necessary.
 * By default, administrators can create new Sumo Logic native logins in addition to SAML provisioned users. This creates the need to either audit your accounts or ask Sumo Logic Support to enable SAML Lock Down.
 * SAML Lock Down disables the ability for users to login directly to Sumo Logic using username and password. There are also a few minor changes to user management behavior, such as not sending an email when a user’s email account is modified. 
@@ -81,7 +81,7 @@ Now that you have setup SAML successfully, update the Roles Attribute (Optional)
 
 To update the roles attribute:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.
 1. Click **Configure**. <br/><img src={useBaseUrl('img/security/roles-attribute2.png')} alt="Roles attribute" style={{border: '1px solid gray'}} width="300" />
 1. Activate the **Roles Attribute (Optional)** check box.
 1. Enter the URL, for example, `https://sumologic.com/SAML/Attributes/Role`.

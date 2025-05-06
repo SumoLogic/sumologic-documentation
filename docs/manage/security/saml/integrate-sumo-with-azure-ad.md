@@ -49,7 +49,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
 
 ### Configure SAML in Sumo Logic
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.
 1. Select an existing configuration, or click **Add Configuration** to create a new configuration. <br/><img src={useBaseUrl('img/security/add-configuration.png')} alt="Add Configuration button on the Configuration List page" style={{border: '1px solid gray'}} width="800" />
 1. The **Add Configuration** page appears. <br/><img src={useBaseUrl('img/security/add-configuration-filled.png')} alt="Add Configuration page" style={{border: '1px solid gray'}} width="600" />
 1. **Configuration Name.** Enter a name to identify the SSO policy (or another name used internally to describe the policy).
@@ -93,7 +93,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
    1. Click **Save**. <br/><img src={useBaseUrl('img/security/properties.png')} alt="Properties tab" style={{border: '1px solid gray'}} width="800" />
 1. In the left navigation pane, click **Users and Groups** in the **Manage** section.
 1. Select **Add user/group**.
-1. Add the Users or Groups that should have access to login to Sumo Logic and then click **Assign**. 
+1. Add the Users or Groups that should have access to sign in to Sumo Logic and then click **Assign**. 
 
 ### Configure Azure AD to send Group assignments to Sumo (Optional)
 

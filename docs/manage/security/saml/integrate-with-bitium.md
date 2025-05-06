@@ -1,7 +1,7 @@
 ---
 id: integrate-with-bitium
 title: Integrate Sumo Logic with Bitium
-description: You can integrate Bitium with Sumo Logic’s SAML 2.0 API to allow users to log in to Sumo Logic using their Single Sign-On (SSO) credentials.
+description: You can integrate Bitium with Sumo Logic’s SAML 2.0 API to allow users to sign in to Sumo Logic using their Single Sign-On (SSO) credentials.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-Bitium is a cloud-based identity management provider that can be integrated with Sumo Logic’s SAML 2.0 API to allow users to log in to Sumo Logic using their Single Sign-On (SSO) credentials.SAML 2.0 API to allow users to log in to Sumo Logic using their Single Sign-On (SSO) credentials.
+Bitium is a cloud-based identity management provider that can be integrated with Sumo Logic’s SAML 2.0 API to allow users to sign in to Sumo Logic using their Single Sign-On (SSO) credentials.SAML 2.0 API to allow users to Sign in to Sumo Logic using their Single Sign-On (SSO) credentials.
 
 You can sign up for a free Bitium Trial account on the [Bitum site](https://www.bitium.com). 
 
@@ -37,7 +37,7 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 ## Configure SAML in Sumo Logic
 
 1. Log into Sumo Logic as an administrator.
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.
 1. Click **Configure**, and configure the SAML settings.
 1. **Configuration Name.** Type the name of the SSO policy (or another name used internally to describe the policy).
 1. **Debug Mode.** Select this option if you'd like to view additional details when an error occurs.
@@ -68,7 +68,7 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 1. Within the **SAML URL** text box, enter the Authentication Request URL displayed in step 6 of the previous section. <br/><img src={useBaseUrl('img/security/bitium_saml_url.png')} alt="SAML URL field" style={{border: '1px solid gray'}} width="700" />
 1. Click **Save Changes** to complete the application install.
 1. Assign users as needed to the Sumo Logic App.
-1. You are now configured to login to Sumo Logic through Bitium.
+1. You are now configured to sign in to Sumo Logic through Bitium.
 
 ## Create multiple SAML configurations
 
