@@ -139,7 +139,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
   _view=cylance_threat
   | count by src_ip
   ```
-
+  
 ## Threat Intel FAQ
 
 #### What is the CrowdStrike Integration for Sumo Logic?
