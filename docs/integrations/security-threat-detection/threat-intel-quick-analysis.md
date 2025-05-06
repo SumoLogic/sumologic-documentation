@@ -58,8 +58,8 @@ You can further optimize and enhance these queries for the log and events types 
 For example, here is the query used for the **Threat Count** panel in the [Threat Intel Quick Analysis - IP](#ip) dashboard:
 
 ```
-_sourceCategory=<source-category-name>
-| parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+_sourceCategory=<source-category-name> 
+| parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | count as ip_count by ip_address
 
