@@ -32,6 +32,10 @@ Interact with AWS CloudWatch through Groups, Streams, Metric Filters, and Retent
 
 ## Configure AWS CloudWatch Logs in Automation Service and Cloud SOAR
 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
 <IntegrationsAuthAWS/>
