@@ -106,7 +106,6 @@ Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-e
    | if (isEmpty(actor), "Unassigned", actor) as Actor
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name
    | sort by threat_count
-   ```
 <!-- Per DOCS-643, replace the preceding step with the following after `sumo://threat/cs` is replaced by `threatlookup`:   
 1. Customize your query so you can use parsed fields from the Field Extraction Rule with the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/), where `src_ip` is the parsed field from the FER. For example:
    ```
