@@ -65,7 +65,7 @@ _sourceCategory=<source-category-name>
 
 | threatlookup singleIndicator ip_address
 
-// normalize confidence level to a string
+// normalize confidence level to a string 
 | if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "unknown")))) as threat_confidence
 
 // filter for threat confidence
