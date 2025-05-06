@@ -5,6 +5,8 @@ sidebar_label: Service Providers
 description: For Sumo Logic Service Providers, Sumo Orgs eases the process of provisioning and managing POV Trial orgs in multiple Sumo Logic deployments.
 ---
 
+<!-- awaiting SME direction about this page -->
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 

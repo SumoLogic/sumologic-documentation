@@ -24,7 +24,7 @@ To add a Sumo Logic integration in Opsgenie, do the following:
     * Add the team who will be notified of Sumo Logic Alerts.
     * Copy the **Integration Url**, it is used in Sumo Logic while setting up the Webhook Connection.
     :::note
-    For **Free** and **Essentials** plans, you can only add the integration from the Team Dashboard. Use the alternative instructions. To add an integration directly to a team, navigate to the Team Dashboard and open the Integrations tab. Click **Add Integration** and search for Sumo Logic and click **add**.
+    For **Essentials** plans, you can only add the integration from the Team Dashboard. Use the alternative instructions. To add an integration directly to a team, navigate to the Team Dashboard and open the Integrations tab. Click **Add Integration** and search for Sumo Logic and click **add**.
     :::
 1. Click **Save Integration**.
 
@@ -45,7 +45,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Opsgenie.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**.
 1. Click **+ Add** and choose **Opsgenie** as the connection type.<br/> ![Opsgenie webhook button.png](/img/connection-and-integration/opsgenie-webhook-button.png)
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. Paste the **Integration Url** from Opsgenie into the **URL** field.

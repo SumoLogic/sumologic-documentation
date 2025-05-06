@@ -46,7 +46,7 @@ _sourceCategory=cylance "IP Address"
 
 <!-- Per DOCS-643, replace section content with this after `sumo://threat/cs` is replaced by `threatlookup`:
 
-The app provides baseline queries that utilize the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/) to look for threat intelligence data. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. 
+The app provides baseline queries that utilize the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/) to look for threat intelligence data. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**.
 
 You can further optimize and enhance these queries for the log and events types being scanned for threats. Use the following guidelines to customize your threat intel queries:
 
@@ -58,14 +58,14 @@ You can further optimize and enhance these queries for the log and events types 
 For example, here is the query used for the **Threat Count** panel in the [Threat Intel Quick Analysis - IP](#ip) dashboard:
 
 ```
-_sourceCategory=<source-category-name> 
-| parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
+_sourceCategory=<source-category-name>
+| parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | count as ip_count by ip_address
 
 | threatlookup singleIndicator ip_address
 
-// normalize confidence level to a string 
+// normalize confidence level to a string
 | if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "unknown")))) as threat_confidence
 
 // filter for threat confidence
@@ -106,7 +106,7 @@ Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-e
    | if (isEmpty(actor), "Unassigned", actor) as Actor
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name
    | sort by threat_count
-   ``` 
+   ```
 <!-- Per DOCS-643, replace the preceding step with the following after `sumo://threat/cs` is replaced by `threatlookup`:   
 1. Customize your query so you can use parsed fields from the Field Extraction Rule with the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/), where `src_ip` is the parsed field from the FER. For example:
    ```
@@ -140,7 +140,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
   _view=cylance_threat
   | count by src_ip
   ```
-  
+
 ## Threat Intel FAQ
 
 #### What is the CrowdStrike Integration for Sumo Logic?
@@ -150,7 +150,7 @@ Sumo Logic has expanded its security offerings by allowing customers to analyze 
 * Sumo Logic maintains an up-to-date copy of CrowdStrike’s threat database.
 * Sumo customers can now use the CrowdStrike database in threat analysis queries over their logs (through a new lookup operator).
 
-The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
+The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period.
 
 
 #### What does the Threat Intel Quick Analysis App do?

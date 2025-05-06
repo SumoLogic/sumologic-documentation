@@ -5,7 +5,7 @@ description: Manage billing for Sumo Logic accounts.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The **Billing** page allows admin users to add or update the credit card information for self-service accounts. These are the accounts that have upgraded from a trial or free account with a credit card (self-service), using the in-product Upgrade feature.  
+The **Billing** page allows admin users to add or update the credit card information for self-service accounts. These are the accounts that have upgraded from a trial account with a credit card (self-service), using the in-product Upgrade feature.  
 
 All users who have Admin role privileges can manage the billing information for Sumo Logic. This includes the credit card number on file (monthly or annual payment), as well as the billing address and contact information.  
 

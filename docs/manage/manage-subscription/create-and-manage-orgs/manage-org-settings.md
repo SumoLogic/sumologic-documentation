@@ -59,7 +59,7 @@ If the account owner leaves your organization and you cannot transfer the accoun
 ### Delete an organization
 
 :::note
-You can only delete an organization for Free and Trial accounts.
+You can only delete an organization for Trial accounts.
 :::
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**.

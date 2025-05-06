@@ -12,11 +12,7 @@ Sumo Logic provides flexible account types within its Cloud Flex Legacy packagi
 
 ## Cloud Flex Legacy - Account Types
 
-* **Free** accounts give you access to core Sumo Logic features, with a daily 500 MB data volume limit. Free accounts allow three users, with 4 GB of retention. For information about Free account features, see the "Free Accounts" column in the following table and the Important notes section on [Sumo Logic Free accounts](#important-notes-on-sumo-logic-free-accounts).
-   :::tip
-   Free account holders can [upgrade](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account) to a Professional account from within Sumo Logic.
-   :::
-* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. For information about Trial account features, see the "Trial Accounts" column in the table below and [Important notes on Sumo Logic Trial accounts](#important-notes-on-sumo-logic-free-accounts).  
+* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. For information about Trial account features, see the "Trial Accounts" column in the table below and [Important notes on Sumo Logic Trial accounts](#important-notes-on-sumo-logic-trial-accounts).  
    :::note
    Trials are limited to 30 days. If you need to extend your trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
    :::
@@ -28,32 +24,31 @@ Sumo Logic provides flexible account types within its Cloud Flex Legacy packagi
 
 The following table provides a summary list of key features by package accounts. 
 
-| Feature | Free | Trial | Professional | Enterprise |
-|:-- | :-- | :-- | :-- | :-- |
-| Audit Index |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Audit Event Index |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
-| [Collector Management API](/docs/api/collector-management) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Dashboards - Live Mode  | 7 days | 30 days | 30 days | 30 days |
-| [Data Forwarding](/docs/manage/data-forwarding) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [Field Extraction](/docs/manage/field-extractions) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) |  |  |  | ![check](/img/reuse/check.png) |
-| Log Data retention (Classic Accounts) | 7 days | 30 days | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data storage (Cloud Flex Accounts) | 4GB	 | 30GB | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data volume | 500MB per day | 1GB per day* | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [LogReduce](/docs/search/behavior-insights/logreduce)  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [Lookup Tables](/docs/search/lookup-tables) | none | Varies by the  account type being trialed | 10 tables per org | 100 tables per org |
-| Metrics |   | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics data retention |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics data retention |   | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [Partitions](/docs/manage/partitions) | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| SAML |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Scheduled Views |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Search Job API |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Support |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Sumo Logic Apps | QuickStart only | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Users (Classic Accounts) | Three users | 20 users* | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Feature | Trial | Professional | Enterprise |
+|:-- | :-- | :-- | :-- |
+| Audit Index | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Audit Event Index | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
+| [Collector Management API](/docs/api/collector-management) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Dashboards - Live Mode | 30 days | 30 days | 30 days |
+| [Data Forwarding](/docs/manage/data-forwarding) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [Field Extraction](/docs/manage/field-extractions) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) |  |  | ![check](/img/reuse/check.png) |
+| Log Data retention (Classic Accounts) | 30 days | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Log Data storage (Cloud Flex Accounts) | 30GB | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Log Data volume | 1GB per day* | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [LogReduce](/docs/search/behavior-insights/logreduce) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [Lookup Tables](/docs/search/lookup-tables) | Varies by the account type being trialed | 10 tables per org | 100 tables per org |
+| Metrics | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Metrics data retention | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [Partitions](/docs/manage/partitions) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| SAML | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Scheduled Views | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Search Job API | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Support | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Sumo Logic Apps | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Users (Classic Accounts) | 20 users* | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 
 \* Contact [Sumo Logic Sales](mailto:sales@sumologic.com) to customize your account to meet your organization's needs.
 
@@ -77,25 +72,11 @@ An account that is within its limits is defined as using **Reserved Capacity.**
 
 ### Continuous Query Limitations
 
-For all Sumo Logic account types (except for Sumo Logic Free) there is an overall limit of 200 continuous queries per Sumo Logic organization that can be run at one time. This includes Dashboard Panels, Alerts, and all other types of queries. 
+For all Sumo Logic account types, there is an overall limit of 200 continuous queries per Sumo Logic organization that can be run at one time. This includes Dashboard Panels, Alerts, and all other types of queries. 
 
 ### Data Limits for Metrics
 
 For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. The calculation of DPM varies according to the type of metric Source. For details, see [Data Limits for Metrics](../../metrics/manage-metric-volume/data-limits-for-metrics.md). 
-
-## Important notes on Sumo Logic Free accounts
-
-Using a Free account is a great way to get to know Sumo Logic. While you're trying the Sumo Logic service, here are important points to be aware of:
-
-* Free accounts run on seven-day intervals. This means that over the course of seven days, you cannot ingest more than a total of 3.5 GB of log data.
-* If you begin to reach the 500 MB daily limit, Sumo Logic sends an email to let you know. You can take action to [reduce the amount of data](../partitions/manage-indexes-variable-retention.md) you're uploading in order to stay below the limit.
-* If the 500 MB limit is surpassed, you'll receive an email letting you know that data in the Sumo Logic Cloud can no longer be searched (but additional data is still collected). However, if the data limit is fully exceeded, data collection stops (in addition to search being disabled). Disabled features will be available after your usage falls below 4 GB when averaged over seven days (this could take one day, or up to seven days, depending on the amount of data you've uploaded and where you've uploaded it).
-* In extreme situations, Free accounts may be disabled if the data volume continues to exceed the limits.
-* Free accounts are limited to 20 continuous queries, including [Dashboard Panels](/docs/dashboards/about).
-* Because Free accounts run on seven-day intervals, [Dashboard Panel](/docs/dashboards/about) queries may not use a time range longer than seven days.
-* For Sumo Logic Apps, Free accounts are limited to install the [Log Analysis QuickStart app](/docs/integrations/sumo-apps/log-analysis-quickstart).
-* The limitations of a Free account cannot be changed, but you can upgrade to a Professional account at any time.
-* For information on throttling and account caps, see [Manage Ingestion](../ingestion-volume/log-ingestion.md).
 
 ### Important notes on Sumo Logic Trial accounts
 

@@ -18,7 +18,7 @@ Sumo Logic provides two modes with which you can set the query limits:
 
 | Account Type | Account Level |
 |:--------------|:--------------------------------------|
-| Credits | Free, Trial, Essentials (Flex), Enterprise Operations (Flex), Enterprise Security (Flex), Enterprise Suite |
+| Credits | Trial, Essentials (Flex), Enterprise Operations (Flex), Enterprise Security (Flex), Enterprise Suite |
 
 ### Set query size limit
 
