@@ -85,7 +85,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Host**. The hostname or IP address of the AD server.
    * **Login Port**. The port used for LDAP authentication (the default is `389` for LDAP and `636` for LDAPS).
    * **Login DN (Distinguished Name)**. Enter the distinguished name format (for example, `CN=Administrator,CN=Users,DC=csoar,DC=com`). See the following sections for information about how to get the login DN.
-   * **Password**. The corresponding password for the provided username.
+   * **Password**. The corresponding password for the provided username.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-configuration.png')} style={{border:'1px solid gray'}} alt="Active Directory V2 configuration" width="400"/>
 
 For information about Microsoft Entra Connect V2 (formerly Active Directory V2), see [Microsoft Entra Connect V2 documentation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2).
 
