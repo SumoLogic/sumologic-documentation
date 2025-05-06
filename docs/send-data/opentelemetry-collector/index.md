@@ -56,6 +56,15 @@ In this section, we'll introduce the following concepts:
     <p>Perform string hashing and masking operations using the Transform Processor and OTTL in OpenTelemetry.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+    <a href="/docs/send-data/opentelemetry-collector/time-reference">
+      <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25" />
+      <h4>OTel Timestamps Date Formats</h4>
+    </a>
+    <p>Learn how Sumo Logic manages OTel timestamps and the configuration options that are available.</p>
+  </div>
+</div>
   <div className="box smallbox card">
     <div className="container">
     <a href="/docs/send-data/opentelemetry-collector/troubleshooting"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Troubleshooting</h4></a>
