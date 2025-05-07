@@ -49,21 +49,15 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Microsoft Defender for Endpoint (formerly Defender ATP), see [Microsoft Defender for Endpooint documentation](https://learn.microsoft.com/en-us/defender-endpoint/).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the "+" button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-9.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="600"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
    * **Label**. The desired name for the resource.
    * **API URL**. Server that is closer to your geo location.
 	  * api-us.securitycenter.microsoft.com
 	  * api-eu.securitycenter.microsoft.com
 	  * api-uk.securitycenter.microsoft.com
    * **Directory (Tenant ID)**. Your Tenant ID you copied earlier.
-   * **Application (Client ID)**. Your Client ID you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-10.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="400"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-11.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-12.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="400"/>
-1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-13.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="400"/>
+   * **Application (Client ID)**. Your Client ID you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-10.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="400"/>
+
+For information about Microsoft Defender for Endpoint (formerly Defender ATP), see [Microsoft Defender for Endpooint documentation](https://learn.microsoft.com/en-us/defender-endpoint/).
 
 ## Change Log
 

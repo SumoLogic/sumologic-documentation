@@ -30,6 +30,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
 For information about AWS Route53, see [Route53 documentation](https://docs.aws.amazon.com/route53/).
 
 ## Change Log

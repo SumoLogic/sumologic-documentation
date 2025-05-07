@@ -3874,6 +3874,7 @@
   "/Dashboards-and-Alerts/Alerts/04-Create-an-Email-Alert": "/docs/alerts/scheduled-searches/create-email-alert",
   "/Dashboards-and-Alerts/Alerts/08-Save-to-Index": "/docs/alerts/scheduled-searches/save-to-index",
   "/Dashboards-and-Alerts/Alerts/03-Create-a-Real-Time-Alert": "/docs/alerts/scheduled-searches/create-real-time-alert",
+  "/docs/alerts/scheduled-searches/deprecation": "/docs/alerts/scheduled-searches/create-real-time-alert",
   "/Data_Enrichment": "/docs/send-data/data-enrichment",
   "/Manage/Connections_and_Integrations/Webhook_Connections": "/docs/alerts/webhook-connections",
   "/Manage/Connections_and_Integrations/Webhook_Connections/About_Webhook_Connections": "/docs/alerts/webhook-connections/set-up-webhook-connections",

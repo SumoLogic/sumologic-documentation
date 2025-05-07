@@ -82,20 +82,12 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Active Directory V2, see [Active Directory V2 documentation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2).
-
-### Required resources from an existing Active Directory installation
-
-To configure the Automation Service or Cloud SOAR to connect to an existing Active Directory installation, enter details about the Active Directory instance in the new resource configuration dialog:
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the **Active Directory V2** integration and click on the row.
-1. The integration details will appear. Click on the **+** button to add a new resource.
-1. Populate all the required fields (\*), including:
    * **Host**. The hostname or IP address of the AD server.
    * **Login Port**. The port used for LDAP authentication (the default is `389` for LDAP and `636` for LDAPS).
    * **Login DN (Distinguished Name)**. Enter the distinguished name format (for example, `CN=Administrator,CN=Users,DC=csoar,DC=com`). See the following sections for information about how to get the login DN.
    * **Password**. The corresponding password for the provided username.
-1. Click **SAVE**.
+
+For information about Microsoft Entra Connect V2 (formerly Active Directory V2), see [Microsoft Entra Connect V2 documentation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2).
 
 ### How to get login DN with a local account
 

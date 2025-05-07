@@ -30,6 +30,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
 For information about AWS Security Hub, see [AWS Security Hub documentation](https://docs.aws.amazon.com/securityhub/).
 
 ## Change Log

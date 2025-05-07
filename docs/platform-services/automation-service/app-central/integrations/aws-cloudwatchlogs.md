@@ -36,6 +36,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
 For information about AWS CloudWatch Logs, see [CloudWatch Logs documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html).
 
 ## Change Log

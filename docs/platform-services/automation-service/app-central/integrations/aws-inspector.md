@@ -26,19 +26,16 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about AWS Inspector, see [Inspector documentation](https://docs.aws.amazon.com/inspector/).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-inspector/aws-inspector-3.png')} style={{border:'1px solid gray'}} alt="aws-inspector-3" width="600"/>
-1. Populate all the required fields(\*) and click **SAVE**.
    * **Label**. Name of the resource.
    * **Access Key**. Access Key of AWS EC2.
    * **Secret Key**. Secret Key of AWS EC2.
    * **Region**. EC2 Region. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-inspector/aws-inspector-4.png')} style={{border:'1px solid gray'}} alt="aws-inspector-4" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-inspector/aws-inspector-5.png')} style={{border:'1px solid gray'}} alt="aws-inspector-5" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-inspector/aws-inspector-6.png')} style={{border:'1px solid gray'}} alt="aws-inspector-6" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-inspector/aws-inspector-7.png')} style={{border:'1px solid gray'}} alt="aws-inspector-7" width="400"/>
+
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS Inspector, see [Inspector documentation](https://docs.aws.amazon.com/inspector/).
 
 ## Change Log
 

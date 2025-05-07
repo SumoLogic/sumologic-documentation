@@ -30,17 +30,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Lansweeper, see [Lansweeper documentation](https://developer.lansweeper.com/docs/data-api/get-started/welcome/).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-4.png')} style={{border:'1px solid gray'}} alt="lansweeper-4" width="800"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
    * **URL**. Default value for API URL is 'https://api.lansweeper.com'.
    * **Token**. The Token you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-5.png')} style={{border:'1px solid gray'}} alt="lansweeper-5" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-6.png')} style={{border:'1px solid gray'}} alt="lansweeper-6" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-7.png')} style={{border:'1px solid gray'}} alt="lansweeper-7" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-8.png')} style={{border:'1px solid gray'}} alt="lansweeper-8" width="400"/>
+
+For information about Lansweeper, see [Lansweeper documentation](https://developer.lansweeper.com/docs/data-api/get-started/welcome/).
 
 ## Change Log
 

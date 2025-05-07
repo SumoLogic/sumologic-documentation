@@ -32,6 +32,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
 For information about AWS Private Certificate Authority, see [AWS Private Certificate Authority documentation](https://docs.aws.amazon.com/privateca/).
 
 ## Change Log

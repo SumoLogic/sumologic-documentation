@@ -45,6 +45,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
 For information about AWS GuardDuty, see [GuardDuty documentation](https://docs.aws.amazon.com/guardduty/).
 
 ## Change Log
