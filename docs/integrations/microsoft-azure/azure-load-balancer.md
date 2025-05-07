@@ -135,6 +135,16 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Policy.png')} alt="Azure Load Balancer Policy" style={{border: '1px solid gray'}} width="800" />
 
+### Azure Load Balancer alerts
+These alerts are metric based and will work for all Azure Load Balancers.
+
+| Alert Name                                      | Alert Description and Conditions                                                                                                                                     | Alert Condition  | Recover Condition |
+|:------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:------------------|
+| `Azure Load Balancer - Data Path Availability`  | This alert is triggered  when Data Path Availability is less than 100%.                                                                                              | percentage < 100 | percentage >= 100 |
+| `Azure Load Balancer - Health Probe Status`     | This alert is triggered  when Health Probe Status is less than 100%.                                                                                                 | percentage < 100 | percentage >= 100 |
+| `Azure Load Balancer - SNAT Connection Count`   | This alert is triggered when SNAT Connection count less than 1000. Also Working alert is triggered when SNAT Connection count less than 800                          | Count < 1000     | Count >= 1000     |
+| `Azure Load Balancer - Used SNAT Ports`         | This alert is triggered when Used SNAT Ports count less than 900. Also Working alert is triggered when Used SNAT Ports count less than 800                           | Count < 900      | Count >= 900      |
+
 ## Troubleshooting
 
 ### HTTP Logs and Metrics Source used by Azure Functions

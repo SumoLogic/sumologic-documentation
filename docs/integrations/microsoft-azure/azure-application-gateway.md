@@ -168,6 +168,17 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
+### Azure Application Gateway alerts
+These alerts are metric based and will work for all Azure Application Gateways.
+
+| Alert Name                                           | Alert Description and Conditions                                                                                                                                                           | Alert Condition  | Recover Condition |
+|:-----------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:------------------|
+| `Azure Application Gateway - Current Capacity Units` | This alert is triggered  when Average Capacity Units count is greater than 75. Also, a warning type alert will be triggered when Average Capacity Units count is greater than 65.          | percentage >= 75 | percentage < 75   |
+| `Azure Application Gateway - Current Compute Units`  | This alert is triggered  when Average Compute Units count is greater than 75. Also, a warning type alert will be triggered when Average Compute Units count is greater than 65.            | percentage >= 75 | percentage < 75   |
+| `Azure Application Gateway - Failed Requests`        | This alert is triggered when Failed Requests count greater than 1.                                                                                                                         | Count >= 1       | Count < 1         |
+| `Azure Application Gateway - Healthy Host Count`     | This alert is triggered when Healthy Host Count is less than 1.                                                                                                                            | Count < 1        | Count >= 1        |
+| `Azure Application Gateway - UnHealthy Host Count`   | This alert is triggered when UnHealthy Host Count is greater than 1                                                                                                                        | Count >= 1       | Count < 1         |
+
 ## Troubleshooting
 
 ### HTTP Logs and Metrics Source used by Azure Functions
