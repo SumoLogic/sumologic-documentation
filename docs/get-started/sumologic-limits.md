@@ -39,11 +39,11 @@ This documents list all the maximum permissible limits for different Sumo Lpgic 
 
 ### Unsupported features in monitors
 
-- [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
+- [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) is not supported.
 - [LogReduce](/docs/search/behavior-insights/logreduce/logreduce-operator) and [LogCompare](/docs/search/behavior-insights/logcompare) operators are not supported.
 - Monitors only support the Continuous data tier.
-- [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
-- [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
+- [Save to Index](/docs/alerts/scheduled-searches/save-to-index) and [Save to Lookup](/docs/alerts/scheduled-searches/save-to-lookup) are not supported.
+- [Search templates](/docs/search/get-started-with-search/build-search/search-templates.md) are not supported.
 - [`Timeshift metrics`](/docs/metrics/metrics-operators/timeshift) operator is not supported in Metric Monitors.
 
 ### Alert response
