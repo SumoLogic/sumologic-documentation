@@ -31,6 +31,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike/crowdstrike-falcon-sandbox-configuration.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon Sandbox configuration" width="400"/>
+
 For information about CrowdStrike Falcon Sandbox, see [CrowdStrike documentation](https://www.crowdstrike.com/en-us/resources/guides/?lang=1).
 
 ## Change Log

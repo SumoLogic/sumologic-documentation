@@ -7,4 +7,4 @@ Before you can use the integration, you must configure it so that the vendor can
 1. Select the integration.
 1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/platform-services/automation-service/automations-edit-resource-detail.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="400"/> 
 
-In the **Add Resource** dialog, enter the authentication needed by the resource. When done, click **TEST** to test the configuration, and click **SAVE** to save the configuration.
+In the dialog, enter the information needed by the resource. When done, click **TEST** to test the configuration, and click **SAVE** to save the configuration.
