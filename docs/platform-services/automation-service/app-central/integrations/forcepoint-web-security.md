@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Forcepoint Web Security, see [Forcepoint documentation](https://support.forcepoint.com/s/article/Web-Security-Documentation).
+
 ## Change Log
 
 * April 22, 2021 - First upload

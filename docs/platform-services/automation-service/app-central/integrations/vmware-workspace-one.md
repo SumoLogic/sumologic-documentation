@@ -37,19 +37,12 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-3.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
-1. Populate all the required fields (\*)
    * **URL**. `https://techp-as.awmdm.com/API`.
    * **Username**. Workspace ONE Login Username.
    * **Password**. Workspace ONE Login Password.
    * **API Key**. The previous generated API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-4.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
-1. Click **SAVED**.
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-5.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-6.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-7.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
 
+For information about Omnissa Workspace ONE (formerly VMware Workspace ONE), see [Omnissa Workspace ONE documentation](https://docs.omnissa.com/category/Workspace_ONE).
 
 ## Change Log
 

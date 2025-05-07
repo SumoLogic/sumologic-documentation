@@ -49,6 +49,12 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS EKS, see [EKS documentation](https://docs.aws.amazon.com/eks/).
+
 ## Change Log
 
 * April 18, 2024 (v1.0) - First upload

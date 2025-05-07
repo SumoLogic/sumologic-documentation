@@ -21,11 +21,13 @@ Query Cybereason, set item reputations and work with isolation rules.
 * **Set Item Reputation** (*Containment*) - Set the reputation for an item.
 * **Update Isolation Rules** (*Containment*) - Update an existing isolation rule.
 
-## Configure CyberArk Reason in Automation Service and Cloud SOAR
+## Configure Cybereason in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+For information about Cybereason, see the [Cybereason website](https://www.cybereason.com/).
 
 ## Change Log
 

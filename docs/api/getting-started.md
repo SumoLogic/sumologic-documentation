@@ -2,7 +2,7 @@
 id: getting-started
 title: API Authentication, Endpoints, and Security
 sidebar_label: Authentication and Endpoints
-description: This guide contains information about API authentication and the Sumo Logic endpoints to use for your API client.
+description: Authenticate and connect to Sumo Logic APIs. Learn how to set up access keys and find the right endpoint for your deployment region.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -21,7 +21,7 @@ Google Drive is Google's cloud-based storage and file-sharing service, enabling 
 
 ## Google Drive configuration
 
-To create a Service Account in Google Workspace and generate the JSON file needed to configure the Google Drive integration, follow these steps:
+To [create service account credentials](https://developers.google.com/workspace/guides/create-credentials) in Google Workspace and generate the JSON file needed to configure the Google Drive integration, follow these steps:
 
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
@@ -51,6 +51,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 * **Label**. The desired name for the resource.
 * **User Service Account JSON**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
 * **Admin User Email**. The e-mail address of an admin user.
+
+For information about  Google Drive, see [Google Drive API documentation](https://developers.google.com/workspace/drive/api/guides/about-sdk).
 
 ## Change Log
 
