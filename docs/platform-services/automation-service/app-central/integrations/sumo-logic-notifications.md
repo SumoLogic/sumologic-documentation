@@ -30,10 +30,6 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
-1. Populate all the required fields (\*) and then click Save.
     * **Label**. The name of the resource.
     * **Sumo Logic API URL**. URL to the API of the instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
     * **Access ID**. The access ID that you copied earlier.

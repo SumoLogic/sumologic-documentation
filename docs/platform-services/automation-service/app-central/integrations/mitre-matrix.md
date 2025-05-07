@@ -29,6 +29,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Mitre Matrix, see [Mitre Matrix documentation](https://attack.mitre.org/).
+
 ## Change Log
 
 * February 3, 2021 - First upload

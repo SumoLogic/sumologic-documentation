@@ -31,6 +31,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Criminal IP, see the [Criminal IP website](https://www.criminalip.io/).
+
 ## Change Log
 
 * March 1, 2024 - First upload

@@ -80,6 +80,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Atlassian OpsGenie, see [OpsGenie documentation](https://support.atlassian.com/opsgenie/resources/).
+
 ## Change Log
 
 * March 22, 2024 - First upload

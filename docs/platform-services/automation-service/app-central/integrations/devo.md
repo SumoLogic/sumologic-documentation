@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Devo, see [Devo documentation](https://docs.devo.com/).
+
 ## Change Log
 
 * February 12, 2021 - First upload

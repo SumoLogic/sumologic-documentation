@@ -39,6 +39,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Atlassian Jira, see [Jira documentation]( https://confluence.atlassian.com/jira). 
+
 ## Change Log
 
 * June 3, 2019 - First upload

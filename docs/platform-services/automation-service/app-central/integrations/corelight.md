@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Corelight, see [Corelight documentation](https://corelight.com/resources/resource-center).
+
 ## Change Log
 
 * August 23, 2019 - First upload

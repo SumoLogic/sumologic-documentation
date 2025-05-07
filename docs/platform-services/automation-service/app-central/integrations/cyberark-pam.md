@@ -23,30 +23,25 @@ CyberArk Privileged Access Manager (PAM) secures privileged access, centralizes 
 * **List Accounts** *(Enrichment)* - Returns a list of all the accounts in the Vault. The user who runs this web service requires List Accounts permissions in the Safe.
 * **List Safes** *(Enrichment)* - Returns a list of all Safes in the Vault that the user has permissions for. Must be a member of the Safes in the Vault that are returned in the list.
 
-## Configure Cyberark PAM in Automation Service and Cloud SOAR
+## Configure CyberArk PAM in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
-<IntegrationsAuth/> For information about CyberArk, see [CyberArk documentation](https://docs.cyberark.com/portal/latest/en/docs.htm).
+<IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-3.png')} style={{border:'1px solid gray'}} alt="cyberark-pam" width="600"/>
-1. Populate all the required fields (\*) and then click **Save**.
     * **Label**. The desired name for the resource. Default: CyberArk PAM resource
     * **API URL**. The API URL is in the form `https://<IIS_Server_Ip>` where `<IIS_Server_Ip>` is the IP address or domain name of your CyberArk PAM server.
     * **Username**. The name of the user who is logging in to the Vault.
     * **Password**. The password used by the user to log in to the Vault.
     * **Client Certificate**. Client Certificate in Base64 encoded format. This certificate contains your public key and is used to authenticate your identity to the server. If you have a combined .pem file that includes both the Certificate and the Private Key, use this field. Field requirement conditional on CyberArk.
     * **Client Private Key**. Client Private Key in Base64 encoded format. Keep your private key confidential. It is used to securely authenticate and establish an encrypted connection. If your Private Key is included in the combined Client Certificate .pem file, leave this field empty. Field requirement conditional on CyberArk.
-    * **Root CA Certificate**. The Root CA Certificate in Base64 encoded format. Required if your server uses a certificate not trusted by default by your system or browser. This root certificate establishes trust with the server's SSL/TLS certificate. <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-4.png')} style={{border:'1px solid gray'}} alt="cyberark-pam" width="400"/>
-1. To make sure the resource is working, click **TEST**. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-7.png')} style={{border:'1px solid gray'}} alt="cyberark-pam" width="400"/>
-1. Click **SAVE**.
+    * **Root CA Certificate**. The Root CA Certificate in Base64 encoded format. Required if your server uses a certificate not trusted by default by your system or browser. This root certificate establishes trust with the server's SSL/TLS certificate.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-4.png')} style={{border:'1px solid gray'}} alt="cyberark-pam" width="400"/>
 
-## Note
+For information about CyberArk, see [CyberArk documentation](https://docs.cyberark.com/portal/latest/en/docs.htm). For information about CyberArk APIs, see their [REST APIs documentation](https://docs.cyberark.com/pam-self-hosted/latest/en/content/webservices/implementing%20privileged%20account%20security%20web%20services%20.htm).
 
-It is necessary to encode the certificates in Base64 format.  
-To encode a certificate in Base64 format using OpenSSL, perform the following steps:
+### Encode the certificates
+
+It is necessary to encode the certificates in Base64 format. To encode a certificate in Base64 format using OpenSSL, perform the following steps:
 
 1. **Open a Command Prompt or Terminal**: Access your command line interface. On Windows, you can search for "cmd" or "Command Prompt" in the start menu. On macOS or Linux, you can open the "Terminal" application.
 2. **Navigate to the Certificate Directory**: Change the directory to where your certificate file is located using the `cd` command. For example, `cd /path/to/your/certificate`. Replace `/path/to/your/certificate` with the actual path to your certificate file.

@@ -30,6 +30,12 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS Network Firewall, see [AWS Network Firewall documentation](https://docs.aws.amazon.com/network-firewall/).
+
 ## Change Log
  
 * January 24, 2024 - First upload

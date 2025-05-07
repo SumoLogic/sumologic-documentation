@@ -24,6 +24,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Qualys WAS, see[ Qualys Web Application Scanning documentation](https://docs.qualys.com/en/was/latest/#t=get_started%2Fget_started.htm).
+
 ## Change Log
 
 * September 7, 2021 - First upload

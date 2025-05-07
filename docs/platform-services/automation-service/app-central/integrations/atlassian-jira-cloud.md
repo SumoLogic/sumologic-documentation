@@ -59,18 +59,12 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Atlassian, see [Atlassian documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#about).
+    * **Label**. Add a name for the resource.
+    * **URL API**. Enter your Atlassian site URL. For example, `https://your-atlassian-site.atlassian.net/`. For information about Atlassian, see [Atlassian documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#about).
+    * **Username**. Enter your email address.
+    * **API Token**. Insert the previously copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-8" width="400"/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add a new resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-4.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-4" width="100"/>
-1. Label and populate all the required fields (\*).
-    1. **Label**. Add a name for the resource.
-    1. **URL API**. Enter your Atlassian site URL. For example, `https://your-atlassian-site.atlassian.net/`. For information about Atlassian, see [Atlassian documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#about).
-    1. **Username**. Enter your email address.
-    1. **API Token**. Insert the previously copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-8" width="400"/>
-1. To make sure the resource is working, click **TEST**. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-6.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-6" width="250"/>
-1. Click **SAVE**.
+For information about Atlassian Jira Cloud, see [Jira Cloud documentation](https://support.atlassian.com/jira-software-cloud/resources/). For the REST API v3, see the [REST API v3 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/).
 
 ## Category
 

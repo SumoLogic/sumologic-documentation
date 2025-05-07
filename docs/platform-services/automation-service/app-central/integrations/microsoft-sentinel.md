@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Microsoft Sentinel, see [Microsoft Sentinel documentation](https://learn.microsoft.com/en-us/azure/sentinel/).
+
 ## Change Log
 
 * September 2, 2020 - First upload

@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about F5 AS3, see [F5 AS3 documentation](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/).
+
 ## Change Log
 
 * September 4, 2019 - First upload

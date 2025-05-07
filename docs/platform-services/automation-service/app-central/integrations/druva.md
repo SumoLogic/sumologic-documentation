@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Druva, see [Druva documentation](https://help.druva.com/en/).
+
 ## Change Log
 
 * April 4, 2024 - First upload

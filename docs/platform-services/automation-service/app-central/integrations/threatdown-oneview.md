@@ -42,7 +42,7 @@ Threat Intelligence Reputation
 
 ### Generate API credentials
 
-Create API credentials from your Malwarebytes account:
+[Create API credentials](https://support.threatdown.com/hc/en-us/articles/4413799441683-Create-OAuth2-credentials-for-OneView) from your Malwarebytes account:
 1. Sign in to [Malwarebytes](https://oneview.threatdown.com/dashboard) with your Malwarebytes account. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview5.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview5" width="300"/>
 2. Click **Integrate**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview6.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview6" width="200"/>
 3. Click **"+"** to create credentials. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview7.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview7" width="800"/>
@@ -63,18 +63,12 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add a new resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview1.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview1" width="100"/>
-1. Label and populate all the required fields (\*).
-    1. **Label**. Add a name for the resource.
-    1. **URL**. Enter your ThreatDown OneView site URL.
-    1. **Client ID**. Enter your Client ID.
-    1. **Client Secret**. Enter your Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview2.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview2" width="400"/>
-1. Click **SAVE**.
-1. To make sure the resource is working, hover over the resource and then click the **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview3.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview3" width="150"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview4.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview4" width="250"/>
+    * **Label**. Add a name for the resource.
+    * **URL**. Enter your ThreatDown OneView site URL.
+    * **Client ID**. Enter your Client ID.
+    * **Client Secret**. Enter your Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview2.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview2" width="400"/>
 
+For information about ThreatDown OneView, see [ThreatDown OneView documentation](https://support.threatdown.com/hc/en-us/sections/4413802067603-Administration).
 
 ## Change Log
 

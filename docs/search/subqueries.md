@@ -15,7 +15,7 @@ In a subquery, the parent query contains the main body of the query while the c
 * **Parent query**. Depends on the input from a child query or queries to finish its execution.
 
 :::note Limitations
-Subqueries are not supported in auto refresh dashboards, real-time Scheduled Searches, Field Extraction Rules, and Scheduled Views.
+Subqueries are not supported in auto refresh dashboards, Field Extraction Rules, and Scheduled Views.
 :::
 
 ## Syntax
@@ -148,7 +148,6 @@ The results only contain the values from the key-value pairs, the keys (field n
     * In Scheduled Views
     * Inside FERs
     * Auto Refresh Dashboards
-    * Real Time Scheduled Searches
 
 ## Example subquery 
 
