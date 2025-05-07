@@ -106,7 +106,7 @@ Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-e
    | if (isEmpty(actor), "Unassigned", actor) as Actor
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name
    | sort by threat_count
-   ``` 
+   ```
 <!-- Per DOCS-643, replace the preceding step with the following after `sumo://threat/cs` is replaced by `threatlookup`:   
 1. Customize your query so you can use parsed fields from the Field Extraction Rule with the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/), where `src_ip` is the parsed field from the FER. For example:
    ```
@@ -150,7 +150,7 @@ Sumo Logic has expanded its security offerings by allowing customers to analyze 
 * Sumo Logic maintains an up-to-date copy of CrowdStrike’s threat database.
 * Sumo customers can now use the CrowdStrike database in threat analysis queries over their logs (through a new lookup operator).
 
-The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
+The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period.
 
 
 #### What does the Threat Intel Quick Analysis App do?

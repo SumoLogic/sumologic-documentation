@@ -22,7 +22,7 @@ To add a Sumo Logic integration in Opsgenie, do the following:
    * Add the team who will be notified of Sumo Logic Alerts.
    * Copy the Integration URL, to be used in Sumo Logic while setting up the Webhook Connection.
    :::note
-   For **Free** and **Essentials** plans, you can only add the integration from the Team Dashboard. Use the alternative instructions. To add an integration directly to a team, navigate to the Team Dashboard and open the Integrations tab. Click **Add Integration** and search for Sumo Logic and click **add**.
+   For **Essentials** plans, you can only add the integration from the Team Dashboard. Use the alternative instructions. To add an integration directly to a team, navigate to the Team Dashboard and open the Integrations tab. Click **Add Integration** and search for Sumo Logic and click **add**.
    :::
 1. Click **Save Integration**.
 

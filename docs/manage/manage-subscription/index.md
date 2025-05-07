@@ -68,7 +68,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/manage-subscription/close-cancel-sumo-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Close or Cancel a Sumo Logic Account</h4></a>
-  <p>Learn how to delete your org from Sumo Logic when on a Free or Trial account.</p>
+  <p>Learn how to delete your org from a Trial account.</p>
   </div>
 </div>
 </div>

@@ -132,7 +132,7 @@ Text can clarify what you are showing on dashboards or act as a note to your v
 
 Titles are displayed in the same size and font. Text is styled using Markdown syntax, meaning that you can control the size and weight of the text. Not all Markdown syntax options are supported; see [Markdown Syntax](markdown-syntax.md).
 
-There is no limit to the number of Text Panels you can add to Dashboards. These types of Panels do not count against the quota in Sumo Logic Free accounts.
+There is no limit to the number of Text Panels you can add to Dashboards.
 
 To add a Text Panel:
 
