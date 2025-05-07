@@ -13,6 +13,8 @@ Any financial obligations outlined in your contract remain in effect even if you
 
 ## Close a Sumo Logic Trial account
 
+At the end of your trial period, your account will be deactivated and scheduled for deletion unless you upgrade to a paid subscription.
+
 Owners of Sumo Logic Trial accounts can permanently delete their organization, removing all users, data, and access to Sumo Logic. This process will also log you out as a user.
 
 1. Navigate to your Account Overview.
@@ -24,8 +26,8 @@ Owners of Sumo Logic Trial accounts can permanently delete their organization, r
 1. Click **Delete Org**.  
 
 :::warning  
-Deleting your organization is permanent and removes all users, data, and the account itself. **This action cannot be undone.**  
-::: 
+Deleting your organization is permanent and removes all users, data, and the account itself. **This action cannot be undone**.
+:::
 
 ## Cancel a Sumo Logic licensed account
 
