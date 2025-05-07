@@ -24,6 +24,14 @@ Microsoft Sentinel is a cloud-native security information and event manager (SIE
 * **Update Incident** (*Containment*) - Update an incident.
 * **Microsoft Sentinel Incidents Daemon** (*Daemon*) - Automatically pull all Sentinel incidents.
 
+## Configure Microsoft Sentinel in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Microsoft Sentinel, see [Microsoft Sentinel documentation](https://learn.microsoft.com/en-us/azure/sentinel/).
+
 ## Change Log
 
 * September 2, 2020 - First upload

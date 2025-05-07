@@ -20,6 +20,14 @@ Gather system information and event details from Symantec Endpoint Protection Cl
 * **System Group Info** (*Enrichment*) - Get detailed information about the specified group.
 * **System User Info** (*Enrichment*) - Get detailed information about the specified user.
 
+## Configure Symantec Endpoint Protection Cloud in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Symantec Endpoint Protection, see [Symantec Endpoint Protection documentation](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all.html).
+
 ## Change Log
 
 * April 18, 2019 - First upload

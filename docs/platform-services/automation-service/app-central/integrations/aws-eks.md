@@ -43,6 +43,18 @@ This integration provides comprehensive Kubernetes cluster insights, node and po
 * [kubernetes](https://github.com/kubernetes/kubernetes/blob/master/LICENSE)
 * [aws-cli](https://github.com/aws/aws-cli/blob/develop/LICENSE.txt)
 
+## Configure AWS EKS in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS EKS, see [EKS documentation](https://docs.aws.amazon.com/eks/).
+
 ## Change Log
 
 * April 18, 2024 (v1.0) - First upload

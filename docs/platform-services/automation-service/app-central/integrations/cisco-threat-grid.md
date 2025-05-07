@@ -21,6 +21,14 @@ Utilize the Cisco AMP Threat Grid to retrieve information about incident element
 * **Detonate Report** (*Enrichment*) - Get the report generated during the detonation of the file, specified by File Hash.
 * **Detonate URL** (*Enrichment*) - Detonate remote file from a specified URL.
 
+## Configure Cisco Threat Grid in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Cisco Secure Malware Analytics (formerly Threat Grid), see [Cisco Secure Malware Analytics (Threat Grid) documentation](https://www.cisco.com/c/en/us/support/security/amp-threat-grid-appliances/series.html).
+
 ## Change Log
 
 * February 5, 2020 - First upload

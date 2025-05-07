@@ -50,6 +50,14 @@ Create, update, and delete portfolios as well as gather enrichment data on all c
 * **Send Feedback** (*Containment*) - Send new feedback on findings from a specific issue type.
 * **Get Notifications** (*Daemon*) - Get all notifications.
 
+## Configure Security Scorecard in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Security Scorecard, see [Security Scorecard documentation](https://securityscorecard.readme.io/reference/introduction).
+
 ## Change Log
 
 * January 31, 2020 - First upload

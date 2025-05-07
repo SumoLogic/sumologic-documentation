@@ -17,6 +17,14 @@ SOCRadar provides an early warning system with an extended threat intelligence p
 * **Account Leaks** (*Enrichment*) - Obtain the account leaks related with your company.
 * **Threat Feed** (*Enrichment*) - Provides Threat Feed for selected feed sources. Feed can be ip address, hostname, hash, url.
 
+## Configure SOCRadar in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about SOCRadar, see the [SOCRadar website](https://socradar.io/).
+
 ## Change Log
 
 * October 27, 2021 - First upload

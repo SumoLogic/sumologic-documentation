@@ -29,6 +29,8 @@ To send rich text messages, use the Create Message action with `Disable HTML` in
 
 ## Google Chat configuration
 
+To [create service account credentials](https://developers.google.com/workspace/guides/create-credentials) in Google Workspace needed to configure the Google Chat app integration, follow these steps:
+
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
 3. Go to the **API&Services** > **Credentials** page.
@@ -44,11 +46,16 @@ To send rich text messages, use the Create Message action with `Disable HTML` in
 13. To configure the app in Google Chat API, go to **APIs & Services**, select **Google Chat API**, and in **CONFIGURATION** provide the details and click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-10.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
 14. Go to the **Google Chat App** and add the above app in that. Also, to add above app in space, go to **space** and in **Apps & integration** add the app.
 
-## Google Chat in Automation Service and Cloud SOAR
+## Configure Google Chat in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
 
 * **Label**. The desired name for the resource.
-* **Private Key Json**. Provide the content of the JSON file generated in the previous steps. Open the file and
-  copy-paste the whole content in the field.
+* **Private Key Json**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
+
+For information about Google Chat, see [Google Chat documentation](https://developers.google.com/workspace/chat/overview).
 
 ## Use cases for sending messages
 

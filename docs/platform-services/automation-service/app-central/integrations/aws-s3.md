@@ -28,6 +28,18 @@ Interact with AWS S3 buckets, objects, and policies.
 
 * [AWS S3](https://github.com/boto/boto3/blob/develop/LICENSE)
 
+## Configure AWS S3 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS S3, see [S3 documentation](https://docs.aws.amazon.com/s3/).
+
 ## Change Log
 
 * October 3, 2019 - First upload

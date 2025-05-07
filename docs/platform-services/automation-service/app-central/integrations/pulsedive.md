@@ -20,6 +20,14 @@ Pulsedive is a free analyst-centric threat intelligence platform that offers com
 * **Add to Queue** (*Containment*) - Adding the indicator to the queue for processing (scanning).
 * **Retrieve Result from Queue** (*Enrichment*) - Gather information on a specific indicator (value).
 
+## Configure Pulsedive in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Pulsedive, see [Pulsedive documentation](https://pulsedive.com/api/).
+
 ## Change Log
 
 * March 9, 2021 - First upload

@@ -22,6 +22,14 @@ Get, Add and Update ACLs, Policies, and Routes with Cisco ASA.
 * **Update ACLs** (*Containment*) - Update an Access Control List.
 * **Update Custom Policies** (*Containment*) - Update a Custom Policy.
 
+## Configure Cisco ASA in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Cisco ASA, see [Cisco ASA documentation](https://www.cisco.com/c/en/us/td/docs/security/asa/roadmap/asaroadmap.html).
+
 ## Change Log
 
 * February 26, 2019 - First upload

@@ -32,6 +32,14 @@ Utilize and interact with Rapid7 Vulnerability management tool.
 
 Vulnerability Management
 
+## Configure Rapid7 InsightVM in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Rapid7 InsightVM, see [Rapid7 InsightVM documentation](https://docs.rapid7.com/insightvm/).
+
 ## Change Log
 
 * October 27, 2021 - First upload

@@ -26,6 +26,14 @@ Utilize Microsoft Sharepoint lists, files, and folders during incident investiga
 * **Add List Item** (*Notification*) - Add a new list item.
 * **Add List Item File** (*Notification*) - Add a new file to an existing list item.
 
+## Configure Microsoft Sharepoint in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Microsoft SharePoint, see [SharePoint documentation](https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/sharepoint-admin-apis-authentication-and-authorization).
+
 ## Change Log
 
 * August 14, 2019 - First upload

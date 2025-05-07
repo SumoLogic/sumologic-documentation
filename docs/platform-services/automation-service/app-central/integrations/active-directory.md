@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 **Version: 1.3  
 Updated: Dec 19, 2023**
 
-Utilize user, group, and system information from Microsoft Active Directory.
+Utilize user, group, and system information from Active Directory.
 
 ## Actions
 
@@ -33,6 +33,14 @@ Utilize user, group, and system information from Microsoft Active Directory.
 ## External Libraries
 
 * [LDAP3](https://github.com/cannatag/ldap3/blob/master/LICENSE.txt)
+
+## Configure Active Directory in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Active Directory, see [Active Directory documentation](https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/active-directory-overview).
 
 ## Change Log
 

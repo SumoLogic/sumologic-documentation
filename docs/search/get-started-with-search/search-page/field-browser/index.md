@@ -62,6 +62,7 @@ The Field Browser is limited for aggregate queries in the following ways:
 * [Drill-down searches](search-from-field-browser.md) are not available for aggregate queries.
 * Field counts (item G above) are not displayed for aggregate queries. 
 * Field counts—If messages returned are less than or equal to 2500 messages, then an exact calculation is shown. If more than 2500 messages are returned, an approximation is shown.
+* The **Approximate Count** displays the count of the field values for the field. This does not display complete field values count for that field but it's just to calculate average, minimum, maximum, and standard deviation values from the first 100,000 raw messages. The field values will be skipped if the 100,000 raw messages limit is exceeded.
 
 ## Guide contents
 

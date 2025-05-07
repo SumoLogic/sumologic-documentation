@@ -68,6 +68,12 @@ Once a request has been submitted, a support ticket is automatically opened. A r
       </div>
     </div>
     <div className="box smallbox card">
+    <div className="container">
+    <a href="/docs/integrations/sumo-apps/kickstart-data"><img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="Thumbnail icon" width="100"/><h4>Kickstart Data</h4></a>
+    <p>A guide to the Sumo Logic Kickstart Data app.</p>
+    </div>
+  </div>
+    <div className="box smallbox card">
       <div className="container">
       <a href={useBaseUrl('docs/integrations/sumo-apps/log-analysis-quickstart')}><img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="40"/><h4>Log Analysis QuickStart</h4></a>
       <p>A guide to the Sumo Logic Log Analysis QuickStart app.</p>

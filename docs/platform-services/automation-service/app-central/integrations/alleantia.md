@@ -25,6 +25,14 @@ Alleantia software is a reference vendor for factory automation, energy and util
 * **Get History Alarms** (*Enrichment*) - Returns the historical list of the alarms in the IoT Server sorted by ascending time.
 * **Get Alarm Configuration** (*Enrichment*) - Returns the information on an alarm configured on the IoT Server.
 
+## Configure Alleantia in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Alleantia, see [Alleantia documentation](https://kb.alleantia.com/).
+
 ## Change Log
 
 * December 17, 2020 - First upload

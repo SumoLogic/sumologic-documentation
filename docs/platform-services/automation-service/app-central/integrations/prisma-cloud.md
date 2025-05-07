@@ -22,6 +22,14 @@ Receive alerts from Prisma Cloud CSPM and perform configuration searches to retr
 
 Prisma Cloud requires an API access key to enable programmatic access to the REST API. By default, only the System Admin has API access and can enable API access for other administrators. To generate an access key, see [Create and Manage Access Keys](https://docs.prismacloud.io/en/enterprise-edition/content-collections/administration/create-access-keys).
 
+## Configure Prisma Cloud in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Prisma Cloud, see [Prisma Cloud documentation](https://docs.prismacloud.io/en).
+
 ## Category
 
 Cloud Security Posture Management

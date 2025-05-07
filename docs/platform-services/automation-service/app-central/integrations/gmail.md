@@ -34,8 +34,8 @@ Interact with filters, mail messages, and attachments in Google Mail.
 
 ## Gmail configuration
 
-1) Create a new Project in the D[eveloper Console](https://console.developers.google.com/).
-2) In the APIs & Services section, navigate to Credentials and select Create Credentials: [https://console.cloud.google.com/apis/api](https://console.cloud.google.com/apis/api).
+1) Create a new Project in the [Developer Console](https://console.developers.google.com/).
+2) In the APIs & Services section, navigate to Credentials and select [Create Credentials](https://developers.google.com/workspace/guides/create-credentials): [https://console.cloud.google.com/apis/api](https://console.cloud.google.com/apis/api).
 3) Select OAuth Client ID as the credential type and set the following inputs:
 	* **Application Type**. Web Application.
 	* **Authorized redirect URIs > Add URI**. 'http://localhost/'.
@@ -79,6 +79,14 @@ Interact with filters, mail messages, and attachments in Google Mail.
 
 * [Gmail (python)](https://github.com/googleapis/google-auth-library-python/blob/master/LICENSE)
 * [Gmail (Google API)](https://github.com/googleapis/google-api-python-client/blob/master/LICENSE)
+
+## Configure Gmail in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about the Gmail API, see [Gmail API documentation](https://developers.google.com/workspace/gmail/api/guides).
 
 ## Change Log
 

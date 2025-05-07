@@ -18,6 +18,14 @@ Search events, alarms, and update labels in AlienVault USM Central.
 * **List Deployments** (*Enrichment*) - List all available deployments.
 * **AlienVault USM Central Alarms** (*Daemon*) - Automatically pull USM Central Alarms.
 
+## Configure AlienVault USM Central in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about AlienVault USM Central, see [AlienVault USM Central documentation](https://cybersecurity.att.com/documentation/usm-central.htm).
+
 ## Change Log
 
 * October 26, 2020 - First upload

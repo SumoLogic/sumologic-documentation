@@ -23,6 +23,14 @@ Utilize APIVOID to gather enrichment data during incident investigations.
 * **Site Trustworthiness** (*Enrichment*) - Gather a site's trustworthiness score.
 * **URL Reputation** (*Enrichment*) - Gather URL reputation information.
 
+## Configure APIVoid in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about APIVoid, see [APIVoid documentation](https://docs.apivoid.com/).
+
 ## Change Log
 
 * August 14, 2020 - First upload

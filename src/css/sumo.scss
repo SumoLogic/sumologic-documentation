@@ -1102,15 +1102,13 @@ html[data-theme='dark'] .node polygon {
 }
 
 .boxwidetop {
-  margin-bottom: 30px;
-  padding: 8px;
-  font-size: .9rem;
-}
-
-.boxwidebottom {
+  flex-basis: 100%;
+  max-width: calc(3 * 225px + 2 * 50px);
+  width: 100%;
   margin-top: 30px;
   padding: 8px;
-  font-size: .9rem;
+  font-size: 0.9rem;
+  align-self: flex-start;
 }
 
 .smallbox h4 {

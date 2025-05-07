@@ -20,6 +20,14 @@ Utilize Nozomi Networks to gain visibility across OT, IoT, and IT environments.
 * **Create Node JSON** (*Containment*) - Create a new node (JSON).
 * **Execute CLI Command** (*Containment*) - Execute a CLI command.
 
+## Configure Nozomi Networks in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Nozomi Networks, see [Nozomi Networks documentation](https://www.nozominetworks.com/guides).
+
 ## Change Log
 
 * May 15, 2020 - First upload

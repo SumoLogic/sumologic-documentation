@@ -24,6 +24,14 @@ Forcepoint Web Security is a flexible web protection solution that provides fine
 * **List Block URL** *(Enrichment)* - List URLs in an API-managed category.
 * **List Managed Categories***(Enrichment)* - Lists all API-managed categories.
 
+## Configure Forcepoint Web Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Forcepoint Web Security, see [Forcepoint documentation](https://support.forcepoint.com/s/article/Web-Security-Documentation).
+
 ## Change Log
 
 * April 22, 2021 - First upload

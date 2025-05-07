@@ -15,6 +15,14 @@ IP GeoPoint to gain independent, real-time insights into each website or network
 
 * **Geolocate IP Address** *(Enrichment)* - Get the location of the provided IP Address.
 
+## Configure Neustar IP GeoPoint in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Neustar, see [Neustar documentation](https://www.home.neustar/).
+
 ## Change Log
 
 * April 19, 2022 - First upload

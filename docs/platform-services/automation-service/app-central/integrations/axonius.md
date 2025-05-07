@@ -40,19 +40,18 @@ To set this permission:
 
 More info related to creating queries is [here](https://docs.axonius.com/docs/query-wizard-and-query-filter).
 
-## Axonius in Automation Service and Cloud SOAR
+## Configure Axonius in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-7.png')} style={{border:'1px solid gray'}} alt="axonius-7" width="600"/>
-1. Populate the resource fields as indicated.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
    * **Label**. The name of the resource.
    * **URL**. URL to Axonius instance, for example, 'https://your-axonius-instance.axonius.com'.
    * **API Key**. The API Key that you copied earlier.
    * **API Secret**. The API Secret that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-8.png')} style={{border:'1px solid gray'}} alt="axonius-8" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-9.png')} style={{border:'1px solid gray'}} alt="axonius-9" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-10.png')} style={{border:'1px solid gray'}} alt="axonius-10" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-11.png')} style={{border:'1px solid gray'}} alt="axonius-11" width="400"/>
+
+For information about Axonius, see [Axonius documentation](https://docs.axonius.com/).
 
 ## External Libraries
 

@@ -17,6 +17,14 @@ Search SWG events and test URL access.
 * **Show Active Sessions** (*Enrichment*) - Search active sessions based on the specified query.
 * **Test URL Access** (*Enrichment*) - Test access to the specified URL.
 
+## Configure Symantec Secure Web Gateway (Bluecoat) in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Symantec Secure Web Gateway, see [Symantec Secure Web Gateway documentation](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help.html).
+
 ## Change Log
 
 * June 3, 2019 - First upload

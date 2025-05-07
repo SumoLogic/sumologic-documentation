@@ -15,6 +15,14 @@ IP and Domain Information.
 
 * **Whois** (*Enrichment*) - Gather IP or Domain information.
 
+## Configure Passive Total in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Passive Total, see [Passive Total documentation](https://passivetotal.readthedocs.io/en/latest/#).
+
 ## Change Log
 
 * June 12, 2019 - First upload

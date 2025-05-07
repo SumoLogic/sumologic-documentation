@@ -26,6 +26,14 @@ Work with McAfee ESM Events, Alarms, and Watchlists.
 * **Search McAfee ESM Alarm Daemon** (*Daemon*) - Daemon for searching alarms.
 * **Get Select Fields** (*Enrichment*) - Get a list of select fields.
 
+## Configure McAfee ESM in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about McAfee ESM, see [McAfee Enterprise Security Manager documentation](https://docs.trellix.com/bundle/enterprise-security-manager-11.5.x-product-guide/page/GUID-7E4DE7F5-C6BB-4C1B-8EDB-E92F53D144EF.html).
+
 ## Change Log
 
 * July 4, 2019 - First upload

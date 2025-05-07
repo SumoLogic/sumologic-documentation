@@ -19,11 +19,12 @@ Cyberint offers to proactively monitor and positively impact external risk expos
 * **Search Alerts** *(Enrichment)* - Returns a list of alerts based on the search criteria.
 * **Update Alerts** *(Containment)* - Updates the status of an alert by Alert ID.
 
-## Cyberint in Automation Service and Cloud SOAR
+## Configure Cyberint in Automation Service and Cloud SOAR
 
-1. To configure the integration, log in to the application, click on the **Integrations** menu item in the left sidebar and click on the installed **Cyberint** app. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-1.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
-2. The app details will appear. Click on the **+** button to add a new **Resource** (connection configuration). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-2.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
-3. Populate all the required fields (*):
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
     - **Label**. Unique name of the connection configuration.
     - **Instance Name Url**. Domain name associated with your Cyberint instance (typically in the format `https://{instance_domain}.cyberint.io/...`).
     - **API key**. API key associated with your Cyberint account.
@@ -32,8 +33,10 @@ Cyberint offers to proactively monitor and positively impact external risk expos
     - (Optional) **Connection Timeout (s)**. Sets the maximum amount of time an integration will wait for a server's response before terminating the connection.
     - (Optional) **Automation engine**. Select **Cloud execution** (for this certified integration) or select a Bridge option (for custom integrations).
     - (Optional) **Proxy Options**. Specifies the settings for routing network requests through a proxy server to manage and control internet traffic.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-3.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/>
-4. Before saving the configuration you can **TEST** the connection to validate the configuration. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-4.png')} style={{border:'1px solid gray'}} alt="cyberint" width="350"/>
-5. Click **SAVE**.
+
+For information about Cyberint, see the [Cyberint website](https://cyberint.com/).
+
+## Test actions
 
 Before you start exploring the features of the Cyberint app, try test runs of each of the actions to learn specifics of usage.
 

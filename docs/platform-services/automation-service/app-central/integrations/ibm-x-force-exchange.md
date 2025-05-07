@@ -21,6 +21,14 @@ IBM X-Force Exchange is a cloud-based threat intelligence platform that allows y
 * **Passive DNS** (*Enrichment*) - Search passive DNS records for a specific IP or Domain.
 * **URL Reputation V2** (*Enrichment*) - Accepted multiple URLs separated by comma as Input and do URL reputation.
 
+## Configure IBM X-Force Exchange in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about IBM X-Force Exchange, see [IBM X-Force Exchange documentation](https://sdk.xforce.ibmcloud.com/).
+
 ## Category
 
 Threat Intelligence-Reputation

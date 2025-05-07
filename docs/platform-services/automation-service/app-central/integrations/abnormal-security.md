@@ -25,18 +25,17 @@ Abnormal Security provides advanced email security to prevent credential phishin
 * **Get Employee Identity Analysis** *(Enrichment)* - Get employee identity analysis (Genome) data.
 * **Get Employee Information** *(Enrichment)* - Get employee information.
 
-## Abnormal Security in Automation Service and Cloud SOAR
+## Configure Abnormal Security in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation/).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-3.png')} style={{border:'1px solid gray'}} alt="abnormal-security-3" width="400"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
-   * **Label**.The name for the resource
-   * **URL API**. Abnormal Security URL API. Default: 'https://api.abnormalplatform.com'
-   * **Token**. retrieved from Abnormal Security <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-4.png')} style={{border:'1px solid gray'}} alt="abnormal-security-4" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-5.png')} style={{border:'1px solid gray'}} alt="abnormal-security-5" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-6.png')} style={{border:'1px solid gray'}} alt="abnormal-security-6" width="400"/>
-1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-7.png')} style={{border:'1px solid gray'}} alt="abnormal-security-7" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+     * **Label**. The name for the resource.
+     * **URL API**. Abnormal Security URL API. Default: 'https://api.abnormalplatform.com'
+     * **Token**. Retrieved from Abnormal Security. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-4.png')} style={{border:'1px solid gray'}} alt="abnormal-security-4" width="400"/>
+
+For information about Abnormal Security, see [Abnormal Security documentation](https://abnormalsecurity.my.site.com/knowledgebase/s/).
 
 ## Category
 

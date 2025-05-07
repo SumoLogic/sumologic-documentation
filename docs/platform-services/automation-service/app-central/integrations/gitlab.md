@@ -17,6 +17,14 @@ Query data from GitLab.
 * **Get File From Repository** *(Enrichment)* - Receive information about file in repository like name, size, content.
 * **Project Search** *(Enrichment)* - Search within the specified project.
 
+## Configure GitLab in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about GitLab, see [GitLab documentation](https://docs.gitlab.com/).
+
 ## Change Log
 
 * August 19, 2021 - First upload

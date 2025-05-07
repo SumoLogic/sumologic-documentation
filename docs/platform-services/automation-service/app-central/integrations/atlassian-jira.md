@@ -33,6 +33,14 @@ This integration is built specifically for Jira OnPrem (Server and Data Center) 
 
 Ticketing System
 
+## Configure Atlassian Jira in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Atlassian Jira, see [Jira documentation]( https://confluence.atlassian.com/jira). 
+
 ## Change Log
 
 * June 3, 2019 - First upload

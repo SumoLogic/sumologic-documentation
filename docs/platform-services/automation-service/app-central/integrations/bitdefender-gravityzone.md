@@ -27,6 +27,14 @@ Layered Next-Gen Security for physical, virtual, and cloud environments provided
 * **Policy Details** (*Enrichment*) - Get details of specific policy.
 * **Remove From Blocklist** (*Containment*) - Remove file hashes from Blocklist.
 
+## Configure Bitdefender GravityZone in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Bitdefender GravityZone, see [GravityZone documentation](https://www.bitdefender.com/business/support/en/77209-79436-welcome-to-gravityzone.html).
+
 ## Change Log
 
 * January 22, 2021 - First upload

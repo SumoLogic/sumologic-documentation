@@ -15,6 +15,14 @@ Anomali ThreatStream (previously known as ThreatStream Optic) is Threat Intellig
 * **Add Observable** (*Containment*) - To import structured threat data (observables) into ThreatStream, without requiring approval of the imported data through the ThreatStream UI.
 * **Update Observable Tags** (*Containment*) - Enables you to add observable tags in bulk.
 
+## Configure Anomali ThreatStream in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Anomali ThreatStream, see [Anomali documentation](https://www.anomali.com/resources).
+
 ## Change Log
 
 * November 10, 2022 - First upload

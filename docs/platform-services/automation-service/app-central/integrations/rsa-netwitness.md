@@ -19,6 +19,14 @@ Query RSA NetWitness Incidents, Events.
 * **Retrieve Incident Details** (*Enrichment*) - Retrieve NetWitness incident details.
 * **Search Incidents** (*Enrichment*) - Search NetWitness incidents.
 
+## Configure RSA Netwitness in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+For information about Netwitness, see the [Netwitness website](https://www.netwitness.com/).
+
 ## Change Log
 
 * November 21, 2018 - First upload
