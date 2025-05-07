@@ -28,6 +28,10 @@ Interact with AWS CloudTrail through Trails and Events.
 
 ## Configure AWS CloudTrail in Automation Service and Cloud SOAR
 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
 <IntegrationsAuthAWS/>

@@ -21,21 +21,13 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Micro Focus Service Management, see [Micro Focus Service Manager documentation](https://docs.microfocus.com/SM/9.61/Hybrid/Content/service_manager_doc_set_pD.htm).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.
-1. Populate all the required fields (\*) in the resource.
    * **Label**. The name for the resource
    * **API URL**. The API URL 'https://us1-smax.saas.microfocus.com'.
    * **Username**. The Micro Focus account username.
    * **Password**. The Micro Focus account password.
    * **Tenant ID**. the Micro Focus tenant ID.
-1. Click **SAVE**. 
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/micro-focus-service-management/micro-focus-service-management-4.png')} style={{border:'1px solid gray'}} alt="micro-focus-service-management" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/micro-focus-service-management/micro-focus-service-management-5.png')} style={{border:'1px solid gray'}} alt="micro-focus-service-management" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/micro-focus-service-management/micro-focus-service-management-6.png')} style={{border:'1px solid gray'}} alt="micro-focus-service-management" width="400"/>
+
+For information about Micro Focus Service Management, see [Micro Focus Service Manager documentation](https://docs.microfocus.com/SM/9.61/Hybrid/Content/service_manager_doc_set_pD.htm).
 
 ## Change Log
 

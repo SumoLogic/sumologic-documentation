@@ -41,14 +41,6 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 For information about FortiProxy, see [FortiProxy documentation](https://docs.fortinet.com/product/fortiproxy/7.4).
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. 
-1. Populate all the required fields (\*) and then click **Save**.
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fortiproxy/fortiproxy-4.png')} style={{border:'1px solid gray'}} alt="fortiproxy" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fortiproxy/fortiproxy-5.png')} style={{border:'1px solid gray'}} alt="fortiproxy" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fortiproxy/fortiproxy-6.png')} style={{border:'1px solid gray'}} alt="fortiproxy" width="400"/>
-
 ## Change Log
 
 * February 14, 2022 - First upload

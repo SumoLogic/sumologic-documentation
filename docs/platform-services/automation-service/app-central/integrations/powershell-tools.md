@@ -182,19 +182,13 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about PowerShell, see [PowerShell documentation](https://learn.microsoft.com/en-us/powershell/).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for PowerShell Tools integration and click on the row. The integration details will appear. Click on the **"+"** button to add new Resource.
-1. Populate all the required fields (\*) and then click **Save**.
     * **Label**. The desired name for the resource.
     * **Domain Name** (PowerShell Window Host). Specify Domain Name (Hostname) for Window Server e.g 192.168.1.10 or my-computer.csoar.local.
     * **Username**. Username of your window host.
     * **Password**. Password of your window host.
     * **Hostname** (To Resolve in Docker). Hostname (To Resolve in Docker) e.g 10.0.0.24 test.local.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-52.png')} style={{border:'1px solid gray'}} alt="powershell-tools" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-53.png')} style={{border:'1px solid gray'}} alt="powershell-tools" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-54.png')} style={{border:'1px solid gray'}} alt="powershell-tools" width="300"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-55.png')} style={{border:'1px solid gray'}} alt="powershell-tools" width="400"/>
+
+For information about PowerShell, see [PowerShell documentation](https://learn.microsoft.com/en-us/powershell/).
 
 ## Change Log
 
