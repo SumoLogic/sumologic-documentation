@@ -57,6 +57,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Aurora Endpoint Security (formerly CylanceProtect), see [Aurora Endpoint Security documentation](https://docs.arcticwolf.com/category/aurora_endpoint_security).
+
 ## Change Log
 
 * February 6, 2019 - First upload

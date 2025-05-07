@@ -32,6 +32,12 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS CloudTrail, see [CloudTrail documentation](https://docs.aws.amazon.com/cloudtrail/).
+
 ## Change Log
 
 * October 1, 2019 - First upload

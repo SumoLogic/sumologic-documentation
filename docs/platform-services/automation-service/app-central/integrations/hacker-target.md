@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Hacker Target, see the [Hacker Target website](https://hackertarget.com/).
+
 ## Change Log
 
 * December 19, 2019 - First upload

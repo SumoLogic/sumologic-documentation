@@ -25,6 +25,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about ipdata, see [ipdata documentation](https://docs.ipdata.co/docs/getting-started).
+
 ## Change Log
 
 * November 21, 2023 - First upload

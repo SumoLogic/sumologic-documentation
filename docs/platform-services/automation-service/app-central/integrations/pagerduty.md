@@ -34,7 +34,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about PagerDuty, see [PagerDuty documentation](https://developer.pagerduty.com/api-reference/f1a95bb9397ba-changelog).
+For information about PagerDuty, see [PagerDuty documentation](https://developer.pagerduty.com/docs/introduction).
 
 ## Change Log
 

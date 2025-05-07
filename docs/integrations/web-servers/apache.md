@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="100"/>
 
-The Apache app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of Apache web server farms. Preconfigured dashboards and searches provide visibility into your environment for real-time or historical analysis: visitor locations, visitor access types, traffic patterns, errors, web server operations, resource utilization and access from known malicious sources.
+The Apache app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of Apache web server farms. Preconfigured dashboards and searches provide visibility into your environment for real-time or historical analysis: visitor locations, visitor access types, traffic patterns, errors, web server operations, resource utilization, and access from known malicious sources.
 
-## Log types and Metrics
+## Log types and metrics
 The Sumo Logic app for Apache assumes:
 * The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html) has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](#apache-metrics).
 
@@ -112,27 +112,7 @@ The predefined searches in the Apache app are based on the Apache Access logs an
 
 ## Collecting logs and metrics for Apache
 
-This section provides instructions for configuring log and metrics collection for the Sumo Logic app for Apache.
-
-### Step 1: Configure fields in Sumo Logic
-
-As part of the app installation process, the following fields will be created by default:
-* `component`
-* `environment`
-* `webserver_system`
-* `webserver_farm`
-
-Additionally, if you're using Apache in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_webserver_system`
-* `pod_labels_webserver_farm`
-
-For information on setting up fields, see [Fields](/docs/manage/fields).
-
-### Step 2: Configure Your Environment for Apache Logs and Metrics Collection
-
-Sumo Logic supports collection of logs and metrics data from Apache in both Kubernetes and non-Kubernetes environments. Please click on the appropriate link below based on the environment where your Apache farms are hosted.
+Sumo Logic supports the collection of logs and metrics data from Apache in both Kubernetes and non-Kubernetes environments. Please click on the appropriate link below based on the environment where your Apache farms are hosted.
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -160,7 +140,7 @@ In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collec
 Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator. If you're not, see [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
 :::
 
-#### Configure Metrics Collection
+### Configure metrics collection
 
 Follow the steps below to collect metrics from a Kubernetes environment:
 
@@ -202,9 +182,9 @@ annotations:
 
    :::warning **Do not modify the following values**
    Modifying these values will cause the Sumo Logic apps to function incorrectly.
-   * `telegraf.influxdata.com/class: sumologic-prometheus`: Instructs the Telegraf operator what output to use.
+   * `telegraf.influxdata.com/class: sumologic-prometheus`: Instructs the Telegraf operator on what output to use.
    * `prometheus.io/scrape: "true"`: Ensures our Prometheus will scrape the metrics.
-   * `prometheus.io/port: "9273"`: Tells prometheus what ports to scrape on.
+   * `prometheus.io/port: "9273"`: Tells Prometheus what ports to scrape on.
    * `telegraf.influxdata.com/inputs`
       * In the tags section `[inputs.apache.tags]`
       * `component: “webserver”`: Used by Sumo Logic apps to identify application components.
@@ -219,12 +199,12 @@ annotations:
   component="webserver" and webserver_system="apache"
   ```
 
-#### Configure Logs Collection
+### Configure logs collection
 
 This section explains the steps to collect Apache logs from a Kubernetes environment.
 
 1. **Collect Apache logs written to standard output and standard error**. If your Apache helm chart/pod is writing the logs to standard output or standard error then follow the steps listed below to collect the logs:
-   1. On your Apache Pods, add the following pod labels:
+   1. On your Apache pods, add the following pod labels:
    ```xml
    environment: "<prod_CHANGE_ME>"
    component: "webserver"
@@ -259,11 +239,11 @@ We use the Telegraf Operator for Apache metrics collection and the Sumo Logic In
 
 This section provides instructions for configuring metrics collection for the Sumo Logic app for Apache. Follow the instructions to set up metrics collection for each server belonging to a Apache server farm:
 
-#### Configure Metrics Collection from a Apache Server
+### Configure metrics collection from an Apache server
 
 1. **Configure Metrics in Apache**. Before you can configure Sumo Logic to ingest metrics, you must turn on [server-status](https://httpd.apache.org/docs/2.4/mod/mod_status.html) for Apache. For this, edit the Apache conf file (httpd.conf).
    * Uncomment this line if not already done in the httpd.conf: `LoadModule status_module libexec/apache2/mod_status.so`
-   * Add following lines in the httpd.conf after that
+   * Add the following lines in the httpd.conf after that
     ```xml
     <IfModule status_module>
       ExtendedStatus On
@@ -336,8 +316,8 @@ This section provides instructions for configuring metrics collection for the Su
 
 At this point, Apache metrics should start flowing into Sumo Logic.
 
-#### Configure Logs Collection from an Apache server
-This section provides instructions for configuring collection of logs from Apache running on a non-Kubernetes environment.
+### Configure logs collection from an Apache server
+This section provides instructions for configuring a collection of logs from Apache running on a non-Kubernetes environment.
 
 Apache logs (access logs and error logs) are stored in log files.
 
@@ -350,38 +330,38 @@ To configure the Apache log file(s), locate your local **httpd.conf** configurat
 For access logs, the following directive is to be noted:
 * CustomLog: access log file path and format (standard common and combined)
 
-For error logs, following directives are to be noted:
+For error logs, the following directives are to be noted:
 * ErrorLog: error log file path
 * LogLevel: to control the number of messages logged to the error_log
 2. **Configure an Installed Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/installed-collectors)
-3. **Configure a Local File Source for Apache access logs**. To add a Local File Source for Apache access log do the following
+3. **Configure a Local File Source for Apache access logs**. To add a Local File Source for the Apache access log do the following
    1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
    * **Name.** (Required)
    * **Description.** (Optional)
-   * **File Path (Required).** Enter the path to your apache access logs. The files are typically located in `/var/log/apache2/access_log`. If you're using a customized path, check the httpd.conf file for this information.
-   * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
+   * **File Path (Required).** Enter the path to your Apache access logs. The files are typically located in `/var/log/apache2/access_log`. If you're using a customized path, check the httpd.conf file for this information.
+   * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Access**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
    * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
     * `component = webserver`
     * `webserver_system = apache`
     * `webserver_farm = <your_apache_webserver_farmname>`
-    * `environment = <Environment_Name>`, such as dev, qa or prod.
+    * `environment = <Environment_Name>`, such as dev, qa, or prod.
    * The values of `webserver_farm` and `environment` should be the same as they were configured in the Configure and start telegraf section.
    * **Configure the Advanced Options for Logs section:**
    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
-   * **Time Zone.** Select Use time zone form log file, if none is detected use “Use Collector Default”
+   * **Time Zone.** Select Use time zone from the log file, if none is detected use “Use Collector Default”
    * **Timestamp Format.** Select Automatically detect the format.
    * **Encoding.** Select UTF-8 (Default).
-   * Apache Access logs are single-line logs, uncheck **Detect messages spanning multiple lines.**
+   * Apache Access logs are single-line logs, uncheck **Detect messages spanning multiple lines**.
    3. Click **Save**. At this point, Apache access logs should start flowing into Sumo Logic.
-4. **Configure a Local File Source for Apache error logs**. To add a Local File Source for Apache error log do the following
+4. **Configure a Local File Source for Apache error logs**. To add a Local File Source for the Apache error log do the following:
    1. Add a[ Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
     * **Name.** (Required)
     * **Description.** (Optional)
     * **File Path (Required).** Enter the path to your error_log. The files are typically located in `/var/log/apache2/error_log`. If you're using a customized path, check the httpd.conf file for this information.
-    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
+    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
     * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
     ```sql
@@ -393,7 +373,7 @@ For error logs, following directives are to be noted:
    * The values of `webserver_farm` and `environment` should be the same as they were configured in the Configure and start telegraf section.
    * **Configure the Advanced Options for Logs section:**
    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
-   * **Time Zone.** Select Use time zone form log file, if none is detected use “Use Collector Default”
+   * **Time Zone.** Select Use time zone from the log file, if none is detected use “Use Collector Default”
    * **Timestamp Format.** Select Automatically detect the format.
    * **Encoding.** Select UTF-8 (Default).
    * Apache Error logs are multiline-line logs, Select **Detect messages spanning multiple lines** and **Boundary Regex: Expression to match message boundary**.
@@ -408,34 +388,27 @@ For error logs, following directives are to be noted:
 
 ## Installing the Apache app
 
-Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic app for Apache to use the pre-configured Searches and dashboards.
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-To install the app, do the following:
-1. Locate and select the app you need from the **App Catalog**.
-2. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click images in **Dashboard Preview** section.
-3. Click **Add Integration**.
-4. In **Setup Data** step you would see **Open Setup Doc** button with link to this document. Click **Next** to proceed.
-5. In the **Configure Apache** step, complete the following fields.
-   * **Apache Log Source**. Choose **Enter a Custom Data Filter** and enter a custom filter. Examples:
-     * For all Apache web server farms: `webserver_system=apache webserver_farm=*`
-     * For a specific web server farm: `webserver_system=apache webserver_farm=apache.dev.01`
-   * Select location in the library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-   * **Folder Name** You can retain the existing name, or enter a name of your choice for the app.
-5. Click **Next**.
+<AppInstall2/>
 
-For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations).
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `webserver_system`
+* `webserver_farm`
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+Additionally, if you're using Apache in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_webserver_system`
+* `pod_labels_webserver_farm`
 
 ## Viewing Apache dashboards
 
-This section provides descriptions of each of the app dashboards.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+<ViewDashboards/>
 
 ### Overview
 
@@ -450,7 +423,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/web-servers/Apache_Overview.png')} alt="test" />
 
 
-### Error Log Analysis
+### Error log analysis
 
 The **Apache - Error Log Analysis** dashboard provides a high-level view of error log levels, clients causing errors, critical error messages and trends.
 
@@ -465,7 +438,7 @@ Use this dashboard to:
 
 ### Trends
 
-The **Apache - Trends** dashboard provides trends around HTTP responses, server hits, visitor locations, traffic volume and distribution.
+The **Apache - Trends** dashboard provides trends around HTTP responses, server hits, visitor locations, traffic volume, and distribution.
 
 Use this dashboard to:
 * Monitor trends and identify outliers.
@@ -474,7 +447,7 @@ Use this dashboard to:
 
 ### Outlier Analysis
 
-The **Apache -  Outlier Analysis** dashboard helps you quickly identify outliers for key Apache metrics such bytes served, number of visitors, server errors, and client errors.
+The **Apache -  Outlier Analysis** dashboard helps you quickly identify outliers for key Apache metrics such as bytes served, number of visitors, server errors, and client errors.
 
 Use this dashboard to:
 * Automatically detect outliers in the operations of your Apache web servers and take corrective actions if needed.
@@ -485,7 +458,7 @@ Use this dashboard to:
 
 The **Apache - Threat Intel** dashboard provides an at-a-glance view of incoming threats to your Apache servers based on known malicious IP addresses.
 
-Dashboard panels show threat counts, geographic locations, actors, threat severity, URLS accessed.
+Dashboard panels show threat counts, geographic locations, actors, threat severity, and URLS accessed.
 
 Use this dashboard to:
 * Identify threats from incoming traffic based on incoming client IP addresses and discover potential IOCs.
@@ -497,7 +470,7 @@ Use this dashboard to:
 The **Apache - Visitor Locations** dashboard provides a high-level view of Apache visitor geographic locations both worldwide and in the United States.
 
 Use this dashboard to:
-* Get insights into geographic locations of your user base.
+* Get insights into the geographic locations of your user base.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache_Panel_filter.png')} alt="test" />
 
@@ -524,7 +497,7 @@ Use this dashboard to:
 The **Apache - Web Server Operations** Dashboard provides an at-a-glance  view of the operations of your Apache web servers. Dashboard panels show information on bots, geographic locations, errors and URLs.
 
 Use this dashboard to:
-* Get insights into client locations, bots and response codes.
+* Get insights into client locations, bots, and response codes.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache_Web_Server_Operations.png')} alt="test" />
 
@@ -544,7 +517,7 @@ The **Apache - Server Resource Utilization** dashboard shows the CPU resource ut
 
 Use this dashboard to:
 * Monitor CPU utilization and load on your Apache web servers.
-* Monitor the number of worker and idle threads.
+* Monitor the number of workers and idle threads.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Resource-Utilization.png')} alt="test" />
 
@@ -559,24 +532,13 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Status.png')} alt="test" />
 
-## Installing Apache monitors
-
-This section provides instructions for installing the Sumo Logic Monitors for Apache. These instructions assume you have already set up collection as described in the [Collecting Logs and Metrics for Apache](#collecting-logs-and-metrics-for-apache) page.
-
-Sumo Logic has provided a predefined set of alerts, which can be imported and available through [Sumo Logic monitors](/docs/alerts/monitors), to help you proactively monitor your Apache Web servers and farms. These monitors are built based on metrics and logs datasets and include pre-set thresholds based on industry best practices and recommendations.
-
-For details about individual alerts, see [Apache alerts](#apache-alerts).
+## Create monitors for Apache app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-:::note
-- Ensure that you have [Manage Monitors role capability](/docs/manage/users-roles/roles/role-capabilities/#alerting) permissions to install the Apache alerts.
-- You can only enable the set number of alerts. For more information, refer to [Monitors](/docs/alerts/monitors/create-monitor).
-:::
+<CreateMonitors/>
 
-## Apache Alerts
-
-Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+## Apache alerts
 
 <details>
 <summary>Here are the alerts available for Apache (click to expand).</summary>

@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Trellix Central Management (formerly FireEye Central Management), see [Trellix documentation](https://docs.trellix.com/bundle/fx_10.0.x_sag/page/UUID-feae882c-4d05-175b-652f-f7c504e95bb4.html).
+
 ## Change Log
 
 * June 21, 2019 - First upload

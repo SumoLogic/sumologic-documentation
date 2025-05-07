@@ -28,6 +28,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Prisma Cloud, see [Prisma Cloud documentation](https://docs.prismacloud.io/en).
+
 ## Category
 
 Cloud Security Posture Management

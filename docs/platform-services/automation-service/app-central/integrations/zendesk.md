@@ -38,6 +38,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Zendesk, see [Zendesk documentation](https://www.zendesk.com/service/ticketing-system/documentation/).
+
 ## Change Log
 
 * June 17, 2021 - First upload

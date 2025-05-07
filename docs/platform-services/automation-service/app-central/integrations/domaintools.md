@@ -31,6 +31,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about DomainTools, see [DomainTools documentation](https://docs.domaintools.com/).
+
 ## Change Log
 
 * December 19, 2018 - First upload

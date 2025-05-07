@@ -44,6 +44,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Check Point, see [Check Point documentation](https://sc1.checkpoint.com/documents/latest/api_reference/index.html).
+
 ## Change Log
 
 * February 10, 2020 - First upload

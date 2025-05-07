@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about Stellar Cyber, see [Stellar Cyber documentation](https://docs.stellarcyber.ai/5.3.x/Home.htm).
+
 ## Change Log
 
 * September 3, 2020 - First upload

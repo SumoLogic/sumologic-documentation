@@ -24,6 +24,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+For information about AlienVault USM Central, see [AlienVault USM Central documentation](https://cybersecurity.att.com/documentation/usm-central.htm).
+
 ## Change Log
 
 * October 26, 2020 - First upload
