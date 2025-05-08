@@ -24,7 +24,6 @@ Akamai Client-Side Protection and Compliance (CPC) is a security solution design
 | :--- | :--- |
 | 12 hours |  CPC-Configs |
 | 5 minutes |  CPC-Alerts |
-| 5 minutes |  CPC-Alerts Details |
 
 ## Setup
 
@@ -52,12 +51,12 @@ To configure an Akamai CPC Source:
 1. **Client Secret**. Enter the Client secret value collected from the Akamai platform.
 1. **Access Token**. Enter the Access token value collected from the Akamai platform.
 1. **API Host Name**. Enter the API Host Name value collected from the Akamai platform.
-1. **Collect Alert Logs**. Select this checkbox to collect the alert logs from the Akamai platform.
+1. (Optional) **Collect Alert Logs**. Select this checkbox to collect the alert logs from the Akamai platform.
     1. (Optional) **Supported Severity Level**. Select the severity of the alert logs from the dropdown.
     1. (Optional) **Supported Alert Type**. Select the type of alerts from the dropdown.
     1. (Optional) **Supported Alert Status**. Select the status of the alerts from the dropdown.
-1. **Collect Alert Details**. Select this checkbox to collect the alert details from the Akamai platform. 
-1. The **Polling Interval** is set to12 hours by default, you can adjust it based on your needs.
+1. (Optional) **Collect Alert Details**. Select this checkbox to collect the alert details from the Akamai platform. 
+1. The **CPC Configs Polling Interval** is set to 12 hours by default, you can adjust it based on your needs.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
@@ -82,7 +81,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | clientToken | String | Yes | `null` | A unique identifier used to authenticate API requests. |  |
 | clientSecret | String | Yes | `null` | User account secret which will be used in authentication. |  |
 | accessToken | String | Yes | `null` | Token granting access to the Akamai CPC API on behalf of a client. |  |
-| hostName | String | Yes | `null` | The base URL of the Akamai API endpoint used to interact with CPC services. |  |
+| akamaiHostName | String | Yes | `null` | The base URL of the Akamai API endpoint used to interact with CPC services. |  |
 | collectAlertsLogs | Boolean | No | `null` | Specify if we need to collect the alert logs. |  |
 | severityLevel | String Array | No | `null` | Specify the alert logs severity |  |
 | alertType | String Array | No | `null` | Specify the type of alerts. |  |
