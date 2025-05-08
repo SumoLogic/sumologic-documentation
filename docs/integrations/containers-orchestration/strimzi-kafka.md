@@ -35,7 +35,7 @@ This App has been tested with following Kafka versions:
 
 ## Sample queries
 
-This sample query string is from the Logs panel of the **Kafka - Logs** dashboard.
+This sample query string is from the Logs panel of the **Strimzi Kafka - Logs** dashboard.
 
 ```sql
 messaging_cluster=* messaging_system="kafka" \
@@ -171,37 +171,9 @@ If your Kafka helm chart/pod is writing the logs to standard output then the [Su
       tailing-sidecar: sidecarconfig;data:/opt/Kafka/kafka_<VERSION>/logs/server.log
     ```
 
-3. **Configure Fields in Sumo Logic**
-
-    Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-    * `pod_labels_component`
-    * `pod_labels_environment`
-    * `pod_labels_messaging_system`
-    * `pod_labels_messaging_cluster`
-
-4. **Adding FER for normalizing fields**
-
-  Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Messaging Application Components. To do so:
-    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-    2. Click the **+ Add** button on the top right of the table.
-    3. The **Add Field Extraction Rule** form will appear. Enter the following options:
-        * **Rule Name**. Enter the name as **App Component Observability - Messaging.**
-        * **Applied At**. Choose Ingest Time
-        * **Scope**. Select Specific Data
-        * Scope: Enter the following keyword search expression:
-          ```sql
-          pod_labels_environment=* pod_labels_component=messaging
-          pod_labels_messaging_system=kafka pod_labels_messaging_cluster=*
-          ```
-        * **Parse Expression**. Enter the following parse expression:
-          ```sql
-          if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-          | pod_labels_component as component
-          | pod_labels_messaging_system as messaging_system
-          | pod_labels_messaging_cluster as messaging_cluster
-          ```
-    4. Click **Save** to create the rule.
+<br/>
+**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityMessagingStrimziKafkaFER** is automatically created for Strimzi Kafka Application Components.
+<br/>
 
   <img src={useBaseUrl('img/integrations/containers-orchestration/appobservability-messaging-fer.png')} alt="Sumo Logic FER"/>
 
@@ -262,36 +234,264 @@ If your Kafka helm chart/pod is writing the logs to standard output then the [Su
       ```
 
 
-## Installing Kafka Alerts
-
-Follow the [instructions](/docs/integrations/containers-orchestration/kafka/#kafka-alerts) to install the monitors. The list of alert can be found [here](/docs/integrations/containers-orchestration/kafka/#kafka-alerts).
-
-
 ## Installing the Kafka App
 
-This section demonstrates how to install the Strimzi Kafka App.
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall2/>
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-   :::note
-   Version selection is not available for all apps.
-   :::
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Kafka cluster filter. Examples:
-     * For all Kafka clusters `messaging_cluster=*`
-     * For a specific cluster: `messaging_cluster=Kafka.dev.01`. This should be the same as `<<Cluster Name>>` value provided while defining annotations and labels.
-     * Clusters within a specific environment: `messaging_cluster=Kafka-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection. This should be same as `<<Cluster Name>>` and `<<ENVIRONMENT>>` values provided while defining annotations and labels.
-4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-5. Click **Add to Library**.
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `messaging_system`
+* `messaging_cluster`
+* `pod`
 
-When an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+Additionally, if you're using Squid Proxy in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_messaging_system`
+* `pod_labels_messaging_cluster`
 
 ## Viewing the Kafka Dashboards
 
-The dashboards are identical to Kafka and their use cases can be found [here](/docs/integrations/containers-orchestration/kafka/#viewing-the-kafka-dashboards).
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Strimzi Kafka - Cluster Overview
+
+The **Strimzi Kafka - Cluster Overview** dashboard gives you an at-a-glance view of your Kafka deployment across brokers, controllers, topics, partitions and zookeepers.
+
+Use this dashboard to:
+* Identify when brokers don’t have active controllers
+* Analyze trends across Request Handler Idle percentage metrics. Kafka’s request handler threads are responsible for servicing client requests ( read/write disk). If the request handler threads get overloaded, the time taken for requests to complete will be longer. If the request handler idle percent is constantly below 0.2 (20%), it may indicate that your cluster is overloaded and requires more resources.
+* Determine the number of leaders, partitions and zookeepers across each cluster and ensure they match with expectations
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/kafka-cluster-overview.png')} alt="Kafka dashboards" />
+
+
+### Strimzi Kafka - Outlier Analysis
+
+The **Strimzi Kafka - Outlier Analysis** dashboard helps you identify outliers for key metrics across your Kafka clusters.
+
+Use this dashboard to:
+* To analyze trends, and quickly discover outliers across key metrics of your Kafka clusters
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Outlier-Analysis.png')} alt="Kafka dashboards" />
+
+
+### Strimzi Kafka - Replication
+
+The Strimzi Kafka - Replication dashboard helps you understand the state of replicas in your Kafka clusters.
+
+Use this dashboard to monitor the following key metrics:
+* In-Sync Replicas (ISR) Expand Rate - The ISR Expand Rate metric displays the one-minute rate of increases in the number of In-Sync Replicas (ISR). ISR expansions occur when a broker comes online, such as when recovering from a failure or adding a new node. This increases the number of in-sync replicas available for each partition on that broker.The expected value for this rate is normally zero.
+* In-Sync Replicas (ISR) Shrink Rate - The ISR Shrink Rate metric displays the one-minute rate of decreases in the number of In-Sync Replicas (ISR). ISR shrinks occur when an in-sync broker goes down, as it decreases the number of in-sync replicas available for each partition replica on that broker.The expected value for this rate is normally zero.
+    * ISR Shrink Vs Expand Rate - If you see a Spike in ISR Shrink followed by ISR Expand Rate - this may be because of nodes that have fallen behind replication and they may have either recovered or are in the process of recovering now.
+    * Failed ISR Updates
+    * Under Replicated Partitions Count
+    * Under Min ISR Partitions Count -The Under Min ISR Partitions metric displays the number of partitions, where the number of In-Sync Replicas (ISR) is less than the minimum number of in-sync replicas specified. The two most common causes of under-min ISR partitions are that one or more brokers are unresponsive, or the cluster is experiencing performance issues and one or more brokers are falling behind.
+* The expected value for this rate is normally zero.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Replication.png')} alt="Kafka dashboards" />
+
+
+### Strimzi Kafka - Zookeeper
+
+The **Strimzi Kafka -Zookeeper** dashboard provides an at-a-glance view of the state of your partitions, active controllers, leaders, throughput and network across Kafka brokers and clusters.
+
+Use this dashboard to monitor key Zookeeper metrics such as:
+* **Zookeeper disconnect rate** - This metric indicates if a Zookeeper node has lostits connection to a Kafka broker.
+* **Authentication Failures** - This metric indicates a Kafka Broker is unable to connect to its Zookeeper node.
+* **Session Expiration** - When a Kafka broker - Zookeeper node session expires, leader changes can occur and the broker can be assigned a new controller. If this metric is increasing we recommend you:
+    1. Check the health of your network.
+    2. Check for garbage collection issues and tune your JVMs accordingly.
+* Connection Rate.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Zookeeper.png')} alt="Kafka dashboards" />
+
+### Strimzi Kafka - Broker
+
+The Strimzi Kafka - Broker dashboard provides an at-a-glance view of the state of your partitions, active controllers, leaders, throughput, and network across Kafka brokers and clusters.
+
+Use this dashboard to:
+* Monitor Under Replicaed and offline partitions to quickly identify if a Kafka broker is down or over utilized.
+* Monitor Unclean Leader Election count metrics - this metric shows the number of failures to elect a suitable leader per second. Unclean leader elections are caused when there are no available in-sync replicas for a partition (either due to network issues, lag causing the broker to fall behind, or brokers going down completely), so an out of sync replica is the only option for the leader. When an out of sync replica is elected leader, all data not replicated from the previous leader is lost forever.
+* Monitor producer and fetch request rates.
+* Monitor Log flush rate to determine the rate at which log data is written to disk
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker.png')} alt="Kafka dashboards" />
+
+
+### Strimzi Kafka - Failures and Delayed Operations
+
+The **Strimzi Kafka - Failures and Delayed Operations** dashboard gives you insight into all failures and delayed operations associated with your Kafka clusters.
+
+Use this dashboard to:
+* Analyze failed produce requests -  A failed produce request occurs when a problem is encountered when processing a produce request. This could be for a variety of reasons, however some common reasons are:
+    * The destination topic doesn’t exist (if auto-create is enabled then subsequent messages should be sent successfully).
+    * The message is too large.
+    * The producer is using _request.required.acks=all_ or –_1_, and fewer than the required number of acknowledgements are received.
+* Analyze failed Fetch Request -  A failed fetch request occurs when a problem is encountered when processing a fetch request. This could be for a variety of reasons, but the most common cause is consumer requests timing out.
+* Monitor delayed Operations metrics -  This contains metrics regarding the number of requests that are delayed and waiting in purgatory. The purgatory size metric can be used to determine the root cause of latency. For example, increased consumer fetch times could be explained by an increased number of fetch requests waiting in purgatory. Available metrics are:
+    * Fetch Purgatory Size - The Fetch Purgatory Size metric shows the number of fetch requests currently waiting in purgatory. Fetch requests are added to purgatory if there is not enough data to fulfil the request (determined by fetch.min.bytes in the consumer configuration) and the requests wait in purgatory until the time specified by fetch.wait.max.ms is reached, or enough data becomes available.
+    * Produce Purgatory Size - The Produce Purgatory Size metric shows the number of produce requests currently waiting in purgatory. Produce requests are added to purgatory if request.required.acks is set to -1 or all, and the requests wait in purgatory until the partition leader receives an acknowledgement from all its followers. If the purgatory size metric keeps growing, some partition replicas may be overloaded. If this is the case, you can choose to increase the capacity of your cluster, or decrease the amount of produce requests being generated.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Failures-Delayed-Operations.png')} alt="Kafka dashboards" />
+
+
+### Strimzi Kafka - Request-Response Times
+
+The **Strimzi Kafka - Request-Response** **Times** dashboard helps you get insight into key request and response latencies of your Kafka cluster.
+
+Use this dashboard to:
+* Monitor request time metrics - The Request Metrics metric group contains information regarding different types of request to and from the cluster. Important request metrics to monitor:
+    1. **Fetch Consumer Request Total Time** - The Fetch Consumer Request Total Time metric shows the maximum and mean amount of time taken for processing, and the number of requests from consumers to get new data. Reasons for increased time taken could be: increased load on the node (creating processing delays), or perhaps requests are being held in purgatory for a long time (determined by fetch.min.bytes and fetch.wait.max.ms metrics).
+    2. **Fetch Follower Request Total Time** - The Fetch Follower Request Total Time metric displays the maximum and mean amount of time taken while processing, and the number of requests to get new data from Kafka brokers that are followers of a partition. Common causes of increased time taken are increased load on the node causing delays in processing requests, or that some partition replicas may be overloaded or temporarily unavailable.
+    3. **Produce Request Total Time**- The Produce Request Total Time metric displays the maximum and mean amount of time taken for processing, and the number of requests from producers to send data. Some reasons for increased time taken could be: increased load on the node causing delays in processing the requests, or perhaps requests are being held in purgatory for a long time (if the `requests.required.acks` metrics is equal to '1' or all).
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Request-Response-Times.png')} alt="Kafka dashboards" />
+
+### Strimzi Kafka - Logs
+
+This dashboard helps you quickly analyze your Kafka error logs across all clusters.
+
+Use this dashboard to:
+* Identify critical events in your Kafka broker and controller logs;
+* Examine trends to detect spikes in Error or Fatal events
+* Monitor Broker added/started and shutdown events in your cluster.
+* Quickly determine patterns across all logs in a given Kafka cluster.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Logs.png')} alt="Kafka dashboards" />
+
+### Kafka Broker - Performance Overview
+
+The **Kafka Broker - Performance Overview** dashboards helps you Get an at-a-glance view of the performance and resource utilization of your Kafka brokers and their JVMs.
+
+Use this dashboard to:
+* Monitor the number of open file descriptors. If the number of open file descriptors reaches the maximum file descriptor, it can cause an IOException error
+* Get insight into Garbage collection and its impact on CPU usage and memory
+* Examine how threads are distributed
+* Understand the behavior of class count. If class count keeps on increasing, you may have a problem with the same classes loaded by multiple classloaders.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Performance-Overview.png')} alt="Kafka dashboards" />
+
+### Kafka Broker - CPU
+
+The **Kafka Broker - CPU** dashboard shows information about the CPU utilization of individual Broker machines.
+
+Use this dashboard to:
+* Get insights into the process and user CPU load of Kafka brokers. High CPU utilization can make Kafka flaky and can cause read/write timeouts.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-CPU.png')} alt="Kafka dashboards" />
+
+### Kafka Broker - Memory
+
+The **Kafka Broker - Memory** dashboard shows the percentage of the heap and non-heap memory used, physical and swap memory usage of your Kafka broker’s JVM.
+
+Use this dashboard to:
+* Understand how memory is used across Heap and Non-Heap memory.
+* Examine physical and swap memory usage and make resource adjustments as needed.
+* Examine the pending object finalization count which when high can lead to excessive memory usage.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Memory.png')} alt="Kafka dashboards" />
+
+
+### Kafka Broker - Disk Usage
+
+The **Kafka Broker - Disk Usage** dashboard helps monitor disk usage across your Kafka Brokers.
+
+Use this dashboard to:
+* Monitor Disk Usage percentage on Kafka Brokers. This is critical as Kafka brokers use disk space to store messages for each topic. Other factors that affect disk utilization are:
+    1. Topic replication factor of Kafka topics.
+    2. Log retention settings.
+* Analyze trends in disk throughput and find any spikes. This is especially important as disk throughput can be a performance bottleneck.
+* Monitor iNodes bytes used, and disk read vs writes. These metrics are important to monitor as Kafka may not necessarily distribute data from a heavily occupied disk, which itself can bring the Kafka down.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Disk-Usage.png')} alt="Kafka dashboards" />
+
+### Kafka Broker - Garbage Collection
+
+The **Kafka Broker - Garbage Collection** dashboard shows key Garbage Collector statistics like the duration of the last GC run, objects collected, threads used, and memory cleared in the last GC run of your java virtual machine.
+
+Use this dashboard to:
+* Understand the amount of time spent in garbage collection. If this time keeps increasing, your Kafka brokers may have more CPU usage.
+* Understand the amount of memory cleared by garbage collectors across memory pools and their impact on the Heap memory.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Garbage-Collection.png')} alt="Kafka dashboards" />
+
+
+### Kafka Broker - Threads
+
+The **Kafka Broker - Threads** dashboard shows the key insights into the usage and type of threads created in your Kafka broker JVM
+
+Use this dashboard to:
+* Understand the dynamic behavior of the system using peak, daemon, and current threads.
+* Gain insights into the memory and CPU time of the last executed thread.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Threads.png')} alt="Kafka dashboards" />
+
+### Kafka Broker - Class Loading and Compilation
+
+The **Kafka Broker - Class Loading and Compilation** dashboard helps you get insights into the behavior of class count trends.
+
+Use this dashboard to:
+
+* Determine If the class count keeps increasing, this indicates that the same classes are loaded by multiple classloaders.
+* Get insights into time spent by Java Virtual machines during compilation.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Class-Loading-Compilation.png')} alt="Kafka dashboards" />
+
+
+### Strimzi Kafka - Topic Overview
+
+The Strimzi Kafka - Topic Overview dashboard helps you quickly identify under-replicated partitions, and incoming bytes by Kafka topic, server and cluster.
+
+Use this dashboard to:
+
+* Monitor under replicated partitions - The Under Replicated Partitions metric displays the number of partitions that do not have enough replicas to meet the desired replication factor. A partition will also be considered under-replicated if the correct number of replicas exist, but one or more of the replicas have fallen significantly behind the partition leader. The two most common causes of under-replicated partitions are that one or more brokers are unresponsive, or the cluster is experiencing performance issues and one or more brokers have fallen behind.
+
+    This metric is tagged with cluster, server, and topic info for easy troubleshooting.  The colors in the Honeycomb chart are coded as follows:
+
+1. Green indicates there are no under Replicated Partitions.
+2. Red indicates a given partition is under replicated.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Topic-Overview.png')} alt="Kafka dashboards" />
+
+
+
+### Strimzi Kafka - Topic Details
+
+The Strimzi Kafka - Topic Details dashboard gives you insight into throughput, partition sizes and offsets  across Kafka brokers, topics and clusters.
+
+Use this dashboard to:
+* Monitor metrics like Log partition size, log start offset, and log segment count metrics.
+* Identify offline/under replicated partitions count. Partitions can be in this state on account of resource shortages or broker unavailability.
+* Monitor the In Sync replica (ISR) Shrink rate. ISR shrinks occur when an in-sync broker goes down, as it decreases the number of in-sync replicas available for each partition replica on that broker.
+* Monitor In Sync replica (ISR) Expand rate. ISR expansions occur when a broker comes online, such as when recovering from a failure or adding a new node. This increases the number of in-sync replicas available for each partition on that broker.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Topic-Details.png')} alt="Kafka dashboards" />
+
+## Create monitors for Strimzi Kafka app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Strimzi Kafka alerts
+
+| Alert Name                                  | Alert Description and conditions                                                                                                                        | Alert Condition | Recover Condition |
+|:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
+| Strimzi Kafka - High Broker Disk Utilization        | This alert fires when we detect that a disk on a broker node is more than 85% full.                                                                     | `>=`85            | < 85              |
+| Strimzi Kafka - Failed Zookeeper connections        | This alert fires when we detect Broker to Zookeeper connection failures.                                                                                 |                 |                   |
+| Strimzi Kafka - High Leader election rate           | This alert fires when we detect high leader election rate.                                                                                              |                 |                   |
+| Strimzi Kafka - Garbage collection                  | This alert fires when we detect that the average Garbage Collection time on a given Kafka broker node over a 5 minute interval is more than one second. | > = 1           | < 1               |
+| Strimzi Kafka - Offline Partitions                  | This alert fires when we detect offline partitions on a given Kafka broker.                                                                             |                 |                   |
+| Strimzi Kafka - Fatal Event on Broker               | This alert fires when we detect a fatal operation on a Kafka broker node      | `>=`1             | `<`1      |
+| Strimzi Kafka - Underreplicated Partitions          | This alert fires when we detect underreplicated partitions on a given Kafka broker.                                                                     |                 |                   |
+| Strimzi Kafka - Large number of broker errors       | This alert fires when we detect that there are 5 or more errors on a Broker node within a time interval of 5 minutes.                                   |                 |                   |
+| Strimzi Kafka - High CPU on Broker node             | This alert fires when we detect that the average CPU utilization for a broker node is high (`>=`85%) for an interval of 5 minutes.                        |                 |                   |
+| Strimzi Kafka - Out of Sync Followers               | This alert fires when we detect that there are Out of Sync Followers within a time interval of 5 minutes.                                                                                                                                                        |                 |                   |
+| Strimzi Kafka - High Broker Memory Utilization      | This alert fires when the average memory utilization within a 5 minute interval for a given Kafka node is high (`>=`85%).                                 | `>=` 85           | < 85              |
+

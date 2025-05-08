@@ -22,40 +22,8 @@ This app is tested with the following Squid Proxy versions:
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for Squid Proxy.
 
-### Step 1: Configure Fields in Sumo Logic
 
-Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using Squid Proxy in a Kubernetes environment, create the fields:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_proxy_system`
-* `pod_labels_proxy_cluster`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using Squid Proxy in a non-Kubernetes environment, create the fields:
-* `component`
-* `environment`
-* `proxy_system`
-* `proxy_cluster`
-* `pod`
-
-</TabItem>
-</Tabs>
-
-### Step 2: Configure Logs and Metrics Collection for Squid Proxy
+### Configure Logs and Metrics Collection for Squid Proxy
 
 Sumo Logic supports the collection of logs and metrics data from Squid Proxy in both Kubernetes and non-Kubernetes environments.
 
@@ -85,7 +53,7 @@ In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collec
 It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
-#### Configure Metrics Collection
+### Configure Metrics Collection
 
 This section explains the steps to collect Squid Proxy metrics from a Kubernetes environment.
 
@@ -297,7 +265,7 @@ Enter in values for the following parameters (marked `CHANGEME` in the snippet a
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
 
-#### Configure Logs Collection
+### Configure Logs Collection
 
 This section explains the steps to collect Squid Proxy logs from a Kubernetes environment.
 
@@ -341,10 +309,11 @@ For all other parameters, see [this doc](/docs/send-data/collect-from-other-data
    ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
-3. **Add an FER to normalize the fields in Kubernetes environments** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-   2. Click the + Add button on the top right of the table.
-   3. The **Add Field Extraction Rule** form will appear.
+
+<br/>
+**FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilitySquidProxyFER** is automatically created for Squid Proxy Application Components.
+<br/>
+
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -355,7 +324,7 @@ Sumo Logic uses the Telegraf operator for Squid Proxy metric collection and the 
 
 The process to set up collection for Squid Proxy data is done through the following steps.
 
-#### Configure Logs Collection
+### Configure Logs Collection
 
 Squid Proxy app supports the default access logs and cache logs format.
 
@@ -421,7 +390,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 </details>
 
 
-#### Configure Metrics Collection
+### Configure Metrics Collection
 
 1. **Set up a Sumo Logic HTTP Source**.
    1. Configure a Hosted Collector for Metrics. To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md) documentation.
@@ -653,133 +622,36 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 </TabItem>
 </Tabs>
 
-## Installing Squid Proxy Monitors
-
-This section and below provide instructions for installing the Squid Proxy app, as well as examples of each of the app dashboards. These instructions assume you have already set up the collection as described above.
-
-* To install these alerts, you need to have the Manage Monitors role capability.
-* Alerts can be installed by either importing a JSON file or a Terraform script.
-
-#### Pre-Packaged Alerts
-
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your Squid Proxy farms. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
-
-For details on alerts, see [Alerts](#squid-proxy-alerts).
-
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/SquidProxy/squidproxy.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/SquidProxy/squidproxy.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Squid Proxy clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `proxy_system=squidproxy` with `<Your Custom Filter>`.  
-
-Custom filter examples:
-
-1. For alerts applicable only to a specific farm, your custom filter would be ‘`proxy_cluster=squidproxy-standalone.01`‘.
-2. For alerts applicable to all cluster that start with squidproxy-standalone, your custom filter would be '`proxy_cluster=squidproxy-standalone*`'.
-3. For alerts applicable to a specific farm within a production environment, your custom filter would be `proxy_cluster=squidproxy-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
-4. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-5. Click **Add**.
-6. Click Import and then copy-paste the above JSON to import monitors.
-
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Squid Proxy folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
-
-
-### Method 2: Install the alerts using a Terraform script
-
-1. Generate a Sumo Logic access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Squid Proxy alerts: The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SquidProxy). You can either download it through the “git clone” command or as a zip file.
-4. Alert Configuration: After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/SquidProxy/.
-   1. Edit the **squidproxy.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
-    ```sql
-    access_id   = "<SUMOLOGIC ACCESS ID>"
-    access_key  = "<SUMOLOGIC ACCESS KEY>"
-    environment = "<SUMOLOGIC DEPLOYMENT>"
-    ```
-   2. The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific farms or environments, update the variable `squidproxy_data_source`. Custom filter examples:
-     * A specific cluster `squidproxy_cluster=squidproxy.standalone.01`.
-     * All clusters in an environment `environment=standalone`.
-     * For alerts applicable to all cluster that start with squidproxy-standalone, your custom filter would be `proxy_cluster=squidproxy-standalone*`.
-     * For alerts applicable to a specific farm within a production environment, your custom filter would be `proxy_system=squidproxy` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
-   3. All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
-   4. By default, the monitors are configured in a monitor **folder** called “**SquidProxy**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `squidproxy.auto.tfvars` file.
-5. If you would like the alerts to send email or connection notifications, modify the file `squidproxy_notifications.auto.tfvars` and populate `connection_notifications` and `email_notifications` as per below examples.
-
-```bash title="Pagerduty Connection Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email Notifications Example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-6. Install the Alerts:
-    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SquidProxy**/ and run `terraform init`. This will initialize Terraform and will download the required components.
-    2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
-    3. Run **`terraform apply`**.
-7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in [this document](/docs/alerts/monitors/create-monitor).
-
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
 ## Installing the Squid Proxy app
 
-This section demonstrates how to install the Squid Proxy app.
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall2/>
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-:::note
-Version selection is not available for all apps.
-:::
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Squid Proxy cluster filter. Examples:
-      * For all Squid Proxy clusters: `proxy_cluster=*`
-      * For a specific farm; `proxy_cluster=squidproxy.dev.01`.
-      * Clusters within a specific environment: `proxy_cluster=squidproxy.dev.01` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `proxy_system`
+* `proxy_cluster`
+* `pod`
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+Additionally, if you're using Squid Proxy in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_proxy_system`
+* `pod_labels_proxy_cluster`
 
 ## Viewing the Squid Proxy Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
-The **Squid Proxy - Overview** dashboard provides an at-a-glance view of the activity and health of the SquidProxy clusters and servers by monitoring uptime, number of current clients, latency, bandwidth, destination locations, error and denied requests, URLs accessed.
+The **Squid Proxy (Classic) - Overview** dashboard provides an at-a-glance view of the activity and health of the SquidProxy clusters and servers by monitoring uptime, number of current clients, latency, bandwidth, destination locations, error and denied requests, URLs accessed.
 
 Use this dashboard to:
 * Gain insights into information about the destination location your intranet frequently visits by region.
@@ -792,7 +664,7 @@ Use this dashboard to:
 
 ### Protocol
 
-The **Squid Proxy -  Protocol** dashboard provides an insight into the protocols of clusters: the number of HTTP requests, HTTP errors, total bytes transferred, the number of HTTP requests per second, the number of HTTP's bytes per second.
+The **Squid Proxy (Classic) -  Protocol** dashboard provides an insight into the protocols of clusters: the number of HTTP requests, HTTP errors, total bytes transferred, the number of HTTP requests per second, the number of HTTP's bytes per second.
 
 Use this dashboard to:
 * Get detailed information about the total number of requests from clients, the total number of HTTP errors sent to clients, the total number of bytes transferred on servers, total number of bytes sent to clients
@@ -803,7 +675,7 @@ Use this dashboard to:
 
 ### Performance
 
-The **Squid Proxy -  Performance** dashboard provides an insight into the workload of clusters, the number of page faults IO,  percent of file descriptor used, number of memory used, the time for all HTTP requests, the number of objects in the cache, the CPU time.
+The **Squid Proxy (Classic) -  Performance** dashboard provides an insight into the workload of clusters, the number of page faults IO,  percent of file descriptor used, number of memory used, the time for all HTTP requests, the number of objects in the cache, the CPU time.
 
 Use this dashboard to:
 * Gain insights into the workload of squid proxy servers such as percent of file descriptors used, memory usage, CPU time consumed.
@@ -814,7 +686,7 @@ Use this dashboard to:
 
 ### IP Domain DNS Statistics
 
-The **Squid Proxy - IP Domain DNS Statistics** dashboard provides a high-level view of the number of IPs,  the number of FQDN, rate requests cache according to FQDN, rate requests cache according to IPs, the number of DNS queries, time for DNS query.
+The **Squid Proxy (Classic) - IP Domain DNS Statistics** dashboard provides a high-level view of the number of IPs,  the number of FQDN, rate requests cache according to FQDN, rate requests cache according to IPs, the number of DNS queries, time for DNS query.
 
 Use this dashboard to:
 * Gain insights into IPs accessed statistics: IP Cache Entries, Number and rate of IP Cache requests, Number and rate of IP Cache hits.
@@ -825,7 +697,7 @@ Use this dashboard to:
 
 ### Activity Trend
 
-The **Squid Proxy - Activity Trend** dashboard provides trends around denied request trend, action trend, time spent to serve, success and non-success response, remote hosts.
+The **Squid Proxy (Classic) - Activity Trend** dashboard provides trends around denied request trend, action trend, time spent to serve, success and non-success response, remote hosts.
 
 Use this dashboard to:
 * Gain insights into the average amount of time it takes to serve a request and the kind of method the request was.
@@ -837,7 +709,7 @@ Use this dashboard to:
 
 ### HTTP Response Analysis
 
-The **Squid Proxy -  HTTP Response Analysis** dashboard provides insights into HTTP response, HTTP code, the number of client errors, server errors, redirections outlier, URLs experiencing server errors.
+The **Squid Proxy (Classic) -  HTTP Response Analysis** dashboard provides insights into HTTP response, HTTP code, the number of client errors, server errors, redirections outlier, URLs experiencing server errors.
 
 Use this dashboard to:
 * Gain insights into the count of HTTP responses, such as redirections, successes, client errors, or server errors, on an area chart.
@@ -849,7 +721,7 @@ Use this dashboard to:
 
 ### Quality of Service
 
-The **Squid Proxy - Quality of Service** dashboard provides insights into latency, the response time of requests according to HTTP action, and the response time according to location.
+The **Squid Proxy (Classic) - Quality of Service** dashboard provides insights into latency, the response time of requests according to HTTP action, and the response time according to location.
 
 Use this dashboard to:
 * To identify locations with slow average request response times.
@@ -858,11 +730,13 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/web-servers/Squid-Proxy-Quality-of-Service.png')} alt="Squid Proxy" />
 
 
-## Squid Proxy Alerts
+## Create monitors for Squid Proxy app
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Squid Proxy servers are available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-**Sumo Logic provides the following out-of-the-box alerts**:
+<CreateMonitors/>
+
+### Squid Proxy Alerts
 
 | Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:---|:---|:---|:---|:---|:---|

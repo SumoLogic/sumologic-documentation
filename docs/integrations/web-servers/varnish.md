@@ -56,42 +56,7 @@ This section provides instructions for configuring log and metric collection for
 
 Configuring log and metric collection for the Varnish app includes the following tasks:
 
-### Step 1: Configure Fields in Sumo Logic
-
-Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using Varnish in a Kubernetes environment, create the fields:
-
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_cache_system`
-* `pod_labels_cache_cluster`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using Varnish in a non-Kubernetes environment, create the fields:
-* `component`
-* `environment`
-* `cache_system`
-* `cache_cluster`
-* `pod`
-
-</TabItem>
-</Tabs>
-
-
-### Step 2: Configure Logs and Metrics Collection
+### Configure Logs and Metrics Collection
 
 Instructions below show how to configure Kubernetes and Non-Kubernetes environments.
 
@@ -121,7 +86,7 @@ In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collec
 It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
-#### Configure Metrics Collection
+### Configure Metrics Collection
 
 This section explains the steps to collect Varnish metrics from a Kubernetes environment.
 
@@ -170,7 +135,7 @@ For all other parameters, see [this doc](/docs/send-data/collect-from-other-data
 4. Verify metrics in Sumo Logic.
 
 
-#### Configure Logs Collection
+### Configure Logs Collection
 
 This section explains the steps to collect Varnish logs from a Kubernetes environment.
 
@@ -210,26 +175,9 @@ For all other parameters, see [this doc](/docs/send-data/collect-from-other-data
    ```
    4. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    5. Verify logs in Sumo Logic.
-3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for WebServer Application Components. To do so:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-   2. Click the + Add button on the top right of the table.
-   3. The **Add Field Extraction Rule** form will appear:
-   4. Enter the following options:
-     * **Rule Name**. Enter the name as **App Observability - Cache**.
-     * **Applied At.** Choose **Ingest Time**
-     * **Scope**. Select **Specific Data**
-     * **Scope**: Enter the following keyword search expression:
-     ```sql
-     pod_labels_environment=* pod_labels_component=cache pod_labels_cache_cluster=* pod_labels_cache_cluster=
-     ```
-     * **Parse Expression**.Enter the following parse expression:
-     ```sql
-     if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-     | pod_labels_component as component
-     | pod_labels_cache_system as cache_system
-     | pod_labels_cache_cluster as cache_cluste
-     ```
-   5. Click **Save** to create the rule.
+
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityVarnishFER** is automatically created for Varnish Application Components.
+<br/>
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -240,7 +188,7 @@ We use the Telegraf operator for Varnish metric collection and Sumo Logic Instal
 
 Telegraf runs on the same system as Varnish, and uses the [Varnish input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) to obtain Varnish metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Varnish on the other hand are sent to a Sumo Logic Local File source.
 
-#### Configure Metrics Collection
+### Configure Metrics Collection
 
 This section provides instructions for configuring metrics collection for the Sumo Logic app for Varnish.
 
@@ -287,7 +235,7 @@ Once you have finalized your `telegraf.conf` file, you can start or reload the t
 At this point, Varnish metrics should start flowing into Sumo Logic.
 
 
-#### Configure Logs Collection
+### Configure Logs Collection
 
 This section provides instructions for configuring log collection for Varnish running on a non-Kubernetes environment for the Sumo Logic app for Varnish.
 
@@ -327,124 +275,36 @@ At this point, Varnish logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-## Installing Varnish Monitors
-
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a Varnish cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Varnish Alerts](#varnish-alerts).
-
-To install these monitors, you must have the **Manage Monitors** role capability.
-
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
-
-You can install monitors by importing a JSON file or using a Terraform script.
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/RabbitMQ/rabbitmq.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/RabbitMQ/rabbitmq.json) contains the alerts based on Sumo Logic searches that do not have any scope filters. Therefore, it will apply to all Varnish clusters, the data for which has been collected via the instructions in the previous sections.   However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `cache_cluster=*` with `<Your Custom Filter>`. Custom filter examples:
-   * For alerts applicable only to a specific cluster, your custom filter would be `cache_cluster=dev-varnish01`
-   * For alerts applicable to all clusters that start with `varnish`-prod, your custom filter would be `cache_cluster=varnish-prod*`
-   * For alerts applicable to a specific cluster within a production environment, your custom filter would be `cache_cluster=dev-varnish01` AND `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-4. Click **Add**.
-5. Click **Import.**
-6. On the **Import Content** popup, enter **Varnish** in the **Name** field, paste the JSON into the popup, and click **Import**.
-7. The monitors are created in a "Varnish" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
-
-### Method B: Using a Terraform script
-
-1. Generate an access key and access ID for a user with the **Manage Monitors** role capability; for instructions, see  [Access Keys](/docs/manage/security/access-keys).
-2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later and install it.
-3. Download the Sumo Logic Terraform package for MySQL monitor. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages). You can either download it using the git clone command or as a zip file.
-4. Alert Configuration. After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/Varnish/` directory.
-
-Edit the `varnish.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-
-```sql
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
-
-The Terraform script installs the alerts without any scope filters; if you would like to restrict the alerts to specific clusters or environments, update the `varnish_data_source variable`. For example:
-   * To configure alerts for a specific cluster, set `varnish_data_source` to something like: `cache_cluster=varnish.prod.01`
-   * To configure alerts for All clusters in an environment, set `varnish_data_source` to something like: `environment=prod`
-   * To configure alerts for multiple clusters using a wildcard, set `varnish_data_source` to something like: `cache_cluster=varnish-prod*`
-   * To configure alerts for a specific cluster within a specific environment, set `varnish_data_source` to something like: `cache_cluster=varnish-1 and environment=prod`. This assumes you have configured and applied Fields as described in [Step 1: Configure Fields for Sumo Logic](#step-1-configure-fields-in-sumo-logic).
-
-All monitors are disabled by default on installation. To enable all of the monitors, set the `monitors_disabled` parameter to false.
-
-By default, the monitors will be located in a "Varnish" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the folder variable in the `varnish.auto.tfvars` file.
-
-5. If you want the alerts to send email or connection notifications, edit the `varnish_notifications.auto.tfvars` file to populate the `connection_notifications` and `email_notifications` sections. Examples are provided below.
-
-```bash title="Pagerduty connection example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email notifications example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-6. Install Monitors:
-   1. Navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/varnish/` directory and run terraform init. This will initialize Terraform and download the required components.
-   2. Run `terraform plan` to view the monitors that Terraform will create or modify.
-   3. Run `terraform apply`.
-7. This section demonstrates how to install the Varnish app.
 
 ## Installing the Varnish app
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations).
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name or enter a name of your choice for the app.
-   * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Varnish cluster filter. Examples:
-     * For all Varnish clusters `cache_cluster=*`
-     * For a specific cluster: `cache_cluster=varnish.dev.01.`
-     * Clusters within a specific environment: `cache_cluster=varnish-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-4. **Advanced**. Select the **Location in the Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-5. Click **Add to Library**.
+<AppInstall2/>
 
-Once an app is installed, it will appear in your **Personal** folder or another folder that you specified. From here, you can share it with your organization.
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `cache_system`
+* `cache_cluster`
+* `pod`
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but you'll see full graphs and maps in a bit of time.
+Additionally, if you're using Varnish in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_cache_system`
+* `pod_labels_cache_cluster`
+
 
 ## Viewing Varnish dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
-The **Varnish - Overview** dashboard provides a high-level view of the activity and health of Varnish servers on your network. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, and time comparisons for visitor locations and uptime, cache hit, requests, VLC.
+The **Varnish (Classic) - Overview** dashboard provides a high-level view of the activity and health of Varnish servers on your network. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, and time comparisons for visitor locations and uptime, cache hit, requests, VLC.
 
 Use this dashboard to:
 * Analyze Request backend, frontend, VLCs, Pool, Thread, VMODs, and cache hit rate.
@@ -457,7 +317,7 @@ Use this dashboard to:
 
 ### Visitor Traffic Insight
 
-The **Varnish - Visitor Traffic Insight** dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
+The **Varnish (Classic) - Visitor Traffic Insight** dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
 
 Use this dashboard to:
 * Gain insights into visitor traffic.
@@ -469,7 +329,7 @@ Use this dashboard to:
 
 ### Web Server Operations
 
-The **Varnish - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations, and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show server error logs, error log levels, error responses by the server, and the top URLs responsible for 404 responses.
+The **Varnish (Classic) - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations, and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show server error logs, error log levels, error responses by the server, and the top URLs responsible for 404 responses.
 
 Use this dashboard to:
 * Determine failures in responding.
@@ -480,7 +340,7 @@ Use this dashboard to:
 
 ### Traffic Timeline Analysis
 
-The **Varnish - Traffic Timeline Analysis** dashboard provides a high-level view of the activity and health of Varnish servers on your network. Dashboard panels display visual graphs and detailed information on traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and server hits.
+The **Varnish (Classic) - Traffic Timeline Analysis** dashboard provides a high-level view of the activity and health of Varnish servers on your network. Dashboard panels display visual graphs and detailed information on traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and server hits.
 
 Use this dashboard to:
 * To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
@@ -490,7 +350,7 @@ Use this dashboard to:
 
 ### Outlier Analysis
 
-The **Varnish - Outlier Analysis** dashboard provides a high-level view of Varnish server outlier metrics for bytes served, the number of visitors, and server errors. You can select the time interval over which outliers are aggregated, then hover the cursor over the graph to display detailed information for that point in time.
+The **Varnish (Classic) - Outlier Analysis** dashboard provides a high-level view of Varnish server outlier metrics for bytes served, the number of visitors, and server errors. You can select the time interval over which outliers are aggregated, then hover the cursor over the graph to display detailed information for that point in time.
 
 Use this dashboard to:
 * Detect outliers in your infrastructure with Sumo Logic’s machine learning algorithm.
@@ -500,7 +360,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-The **Varnish - Threat Intel** dashboard provides an at-a-glance view of threats to Varnish servers on your network. Dashboard panels display threats count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
+The **Varnish (Classic) - Threat Intel** dashboard provides an at-a-glance view of threats to Varnish servers on your network. Dashboard panels display threats count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
 * To gain insights and understand threats in incoming traffic and discover potential IOCs.
@@ -510,7 +370,7 @@ Use this dashboard to:
 
 ### Backend Servers
 
-The **Varnish - Backend Servers** dashboard provides several metrics that describe the communication between Varnish and its backend servers.
+The **Varnish (Classic) - Backend Servers** dashboard provides several metrics that describe the communication between Varnish and its backend servers.
 
 Use this dashboard to:
 * Review and manage the health of backend and frontend communication.
@@ -519,7 +379,7 @@ Use this dashboard to:
 
 ### Bans and Bans Lurker
 
-The **Varnish - Bans and Bans Lurker** dashboard provides you the list of Bans filters applied to keep Varnish from serving stale content.
+The **Varnish (Classic) - Bans and Bans Lurker** dashboard provides you the list of Bans filters applied to keep Varnish from serving stale content.
 
 Use this dashboard to:
 * Gain insights into bans and make sure that Varnish is serving the latest content.
@@ -529,7 +389,7 @@ Use this dashboard to:
 
 ### Cache Performance
 
-The **Varnish - Cache Performance** dashboard provides worker thread related metrics to tell you if your thread pools are healthy and functioning well.
+The **Varnish (Classic) - Cache Performance** dashboard provides worker thread related metrics to tell you if your thread pools are healthy and functioning well.
 
 Use this dashboard to:
 * Gain insights into the performance and health of Varnish Cache.
@@ -539,7 +399,7 @@ Use this dashboard to:
 
 ### Clients
 
-The **Varnish - Clients** dashboard check collects Varnish metrics regarding connections and requests.
+The **Varnish (Classic) - Clients** dashboard check collects Varnish metrics regarding connections and requests.
 
 Use this dashboard to:
 * Review the current sessions and load on Varnish.
@@ -549,16 +409,21 @@ Use this dashboard to:
 
 ### Threads  
 
-The **Varnish - Threads** Dashboard helps you to keep track of threads metrics to watch your Varnish Cache.
+The **Varnish (Classic) - Threads** Dashboard helps you to keep track of threads metrics to watch your Varnish Cache.
 
 Use this dashboard to:
 * Manage and understand threads in the Varnish system.
 
 <img src={useBaseUrl('img/integrations/web-servers/Varnish-Threads.png')} alt="Varnish dashboard" />
 
-## Varnish Alerts
 
-Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Varnish cache is available and performing as expected.
+## Create monitors for Varnish app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Varnish Alerts
 
 | Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:---|:---|:---|:---|:---|:---|
