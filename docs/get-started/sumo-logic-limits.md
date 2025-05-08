@@ -5,41 +5,41 @@ sidebar_label: Limits and Quotas
 description: A comprehensive reference of quotas, limitations, and maximum values across Sumo Logic services.
 ---
 
-This documents list all the maximum permissible limits for different Sumo Lpgic objects.
+This page lists the baseline limits and quotas for various features, services, and components within Sumo Logic.
 
 ## Alerts and monitors
 
-- **Maximum number of monitors (active and inactive)**. Up to 5,000 (can be increased by contacting support).
-- **Email notifications**. Up to 100 recipients.
+- **[Maximum number of monitors (active and inactive)](/docs/alerts/monitors/monitor-faq/#is-there-a-limit-to-the-number-of-monitors-i-can-have)**. Up to 5,000 (can be increased by contacting support).
+- **[Email notifications](/docs/alerts/monitors/overview/#general)**. Up to 100 recipients.
 
 ### Log monitors
 
-| Plan                     | Max Log Monitors |
+| [Plan](/docs/alerts/monitors/overview/#log-monitors) | Max Log Monitors |
 |:-------------------------|:-----------------|
 | Enterprise, Trial        | 1,000            |
 | Essentials, Professional | 300              |
 | Free Trial               | 50               |
 
-- **Query length**. Up to 15,000 characters.
-- **Execution delay**. 2 minutes (to allow for ingestion lag).
+- **[Query length](/docs/alerts/monitors/overview/#general)**. Up to 15,000 characters.
+- **[Execution delay](/docs/alerts/monitors/overview/#general)**. 2 minutes (to allow for ingestion lag).
 
 ### Metric monitors
 
-| Plan                     | Max Metric Monitors |
+| [Plan]((/docs/alerts/monitors/overview/#metrics-monitors)) | Max Metric Monitors |
 |:-------------------------|:--------------------|
 | Enterprise, Trial        | 1,500               |
 | Essentials, Professional | 500                 |
 | Free Trial               | 50                  |
 
-- **Aggregate monitor**. Can evaluate up to 15,000 time series.
-- **Non-aggregate monitor**. Can evaluate up to 3,000 time series.
-- **Execution delay**. 1 minute.
-- **Query limit**. Up to 6 queries.
+- **[Aggregate monitor](/docs/alerts/monitors/overview/#general)***. Can evaluate up to 15,000 time series.
+- **[Non-aggregate monitor](/docs/alerts/monitors/overview/#general)**. Can evaluate up to 3,000 time series.
+- **[Execution delay](/docs/alerts/monitors/overview/#metrics-monitors)**. 1 minute.
+- **[Query limit](/docs/alerts/monitors/overview/#general)**. Up to 6 queries.
 
 ### Notification grouping
 
-- **Log monitors**. Always group notifications.
-- **Metric monitors**. Can group notifications, resolving when all time series return to normal.
+- **[Log monitors](/docs/alerts/monitors/overview/#alerts)**. Always group notifications.
+- **[Metric monitors](/docs/alerts/monitors/overview/#alerts)**. Can group notifications, resolving when all time series return to normal.
 
 ### Unsupported features in monitors
 
@@ -67,8 +67,6 @@ This documents list all the maximum permissible limits for different Sumo Lpgic 
 
 ## Collectors and Sources
 
-<!-- to do-->
-
 - Maximum number of collector per organization is 10,000.
 - A single installed collector can handle up to 15,000 events per second.
 - Log messages greater than 64KB are truncated.
@@ -77,7 +75,7 @@ This documents list all the maximum permissible limits for different Sumo Lpgic 
 - Multiline logs are limited to 2000 lines or 512KB.
 - Maximum of 100 processing rules per source.
 - The number of Cloud-to-Cloud Sources is limited to 20 for free accounts, and 50 for all other accounts.
-- You are warned when you reach 80% of the limit (16 Sources for free accounts, and 40 Sources for other accounts).
+- You are warned when you reach 80% of the Cloud-to-Cloud Sources limit (16 Sources for free accounts, and 40 Sources for other accounts).
 
 ## Log Search
 
