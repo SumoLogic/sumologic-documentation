@@ -32,7 +32,7 @@ module.exports = {
         'get-started/apps-integrations',
         'get-started/library',
         'get-started/system-requirements',
-        'get-started/sumologic-limits',
+        'get-started/sumo-logic-limits',
         'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
         'get-started/training-certification-faq',
@@ -3039,7 +3039,7 @@ integrations: [
         'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
       ],
-    },  
+    },
   ],
   api: [
     {
