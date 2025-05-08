@@ -25,7 +25,7 @@ This page lists the baseline limits and quotas for various features, services, a
 
 ### Metric monitors
 
-| [Plan]((/docs/alerts/monitors/overview/#metrics-monitors)) | Max Metric Monitors |
+| [Plan](/docs/alerts/monitors/overview/#metrics-monitors) | Max Metric Monitors |
 |:-------------------------|:--------------------|
 | Enterprise, Trial        | 1,500               |
 | Essentials, Professional | 500                 |
