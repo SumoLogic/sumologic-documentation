@@ -15,14 +15,14 @@ Microsoft Sentinel is a cloud-native security information and event manager (SIE
 
 ### Purpose
 
-This documentation outlines the Microsoft Sentinel integration, providing details on its capabilities, usage, and support for managing security incidents and automating responses within Microsoft Sentinel.
+This documentation outlines the Microsoft Sentinel integration, providing details on its capabilities, usage, and support for managing security incidents.
 
 ### Use cases
 
 * Automatically fetch and process security incidents from Sentinel.
-* Enrich incidents with contextual data from third-party sources.
-* Trigger automated containment actions such as disabling users or isolating machines.
-* Provide a unified security operations view through integration with external systems.
+* Review incident details, comments, and related entities to streamline triage.
+* Trigger automated incident management workflows, such as updating incident status, severity, or ownership using Update Incident, or adding context through Add Incident Comment.
+* Remove false positives or resolved alerts by leveraging the Delete Incident action.
 
 ### Supported Versions
 
@@ -94,13 +94,14 @@ For information about Microsoft Sentinel, see [Microsoft Sentinel documentation]
 ## API Reference
 ### Configuration
 Environment variables or parameters:
-* tenant_id
-* client_id
-* client_secret
-* subscription_id
-* resource_group
-* workspace_name
-* Optional: api_root, login_endpoint, proxy, verify_ssl
+* tenant
+* client id
+* client secret
+* subscription id
+* resource group
+* workspace name
+* automation bridge
+* Optional: api root, login endpoint, proxy, verify_ssl, CSOAR API URL, Access ID, Access Key
 
 ### Containment APIs
 #### Update Incident
