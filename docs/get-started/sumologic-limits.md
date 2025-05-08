@@ -5,7 +5,7 @@ sidebar_label: Sumo Logic Limits
 description: Learn about the limitation of Sumo Logic objects.
 ---
 
-This documents list all the maximum permissible limits for different Sumo Lpgic objects.
+This page lists the maximum limits and quotas for various features, services, and components within Sumo Logic.
 
 ## Alerts and Monitors
 
