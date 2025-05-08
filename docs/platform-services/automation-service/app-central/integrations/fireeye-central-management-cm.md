@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fireeye-central-management-configuration.png')} style={{border:'1px solid gray'}} alt="FireEye Central Management configuration" width="400"/>
+
 For information about Trellix Central Management (formerly FireEye Central Management), see [Trellix documentation](https://docs.trellix.com/bundle/fx_10.0.x_sag/page/UUID-feae882c-4d05-175b-652f-f7c504e95bb4.html).
 
 ## Change Log
