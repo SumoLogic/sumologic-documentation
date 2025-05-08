@@ -23,8 +23,8 @@ Akamai Client-Side Protection and Compliance (CPC) is a security solution design
 | Polling Interval | Data |
 | :--- | :--- |
 | 12 hours |  CPC-Configs |
-| 5 min |  CPC-Alerts |
-| 12 hours |  CPC-Alerts Details |
+| 5 minutes |  CPC-Alerts |
+| 5 minutes |  CPC-Alerts Details |
 
 ## Setup
 
