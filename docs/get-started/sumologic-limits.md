@@ -86,7 +86,6 @@ This documents list all the maximum permissible limits for different Sumo Lpgic 
 - Limited to 100MB of memory to return those results.
 - Subqueries are not supported in:
     - Auto-refresh dashboards.
-    - Real-time Scheduled Searches.
     - Field Extraction Rules.
     - Scheduled Views.
 
