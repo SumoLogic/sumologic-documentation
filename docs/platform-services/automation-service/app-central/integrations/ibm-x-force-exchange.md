@@ -27,6 +27,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ibm-xforce-configuration.png')} style={{border:'1px solid gray'}} alt="IBM X-Force Exchange configuration" width="400"/>
+
 For information about IBM X-Force Exchange, see [IBM X-Force Exchange documentation](https://sdk.xforce.ibmcloud.com/).
 
 ## Category

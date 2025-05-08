@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/imperva-incapsula-configuration.png')} style={{border:'1px solid gray'}} alt="Imperva Incapsula configuration" width="400"/>
+
 For information about Imperva Cloud Application Security ([formerly Incapsula](https://docs.imperva.com/bundle/articles/page/73354.htm)), see [Imperva Cloud Application Security documentation](https://docs.imperva.com/bundle/cloud-application-security/page/introducing/overview.htm).
 
 ## Change Log

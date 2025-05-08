@@ -32,7 +32,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **URL**. 'https://darkbeast.ke-la.com/api/v1/'.
-   * **API Token**. Insert the previously copied token.
+   * **API Token**. Insert the previously copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/kela-darkbeast-configuration.png')} style={{border:'1px solid gray'}} alt="Kela Darkbeast configuration" width="400"/>
 
 For information about KELA Cyber Threat Intelligence (formerly KELA Darkbeast), see [KELA documentation](https://docs.ke-la.com/kela-docs).
 

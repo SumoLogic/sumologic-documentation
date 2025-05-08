@@ -1,6 +1,6 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Before you can use the integration, you must configure its authentication settings so that the vendor can communicate with Sumo Logic. For general guidance, see [Configure Authentication for Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+Before you can use the integration, you must configure its authentication settings so that the product you're integrating with can communicate with Sumo Logic. For general guidance, see [Configure Authentication for Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
 
 <details>
 <summary>How to open the integration's configuration dialog</summary>
@@ -10,4 +10,4 @@ Before you can use the integration, you must configure its authentication settin
 1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/platform-services/automation-service/automations-edit-resource-detail.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="500"/> 
 </details>
 
-In the configuration dialog, enter the information from the vendor. When done, click **TEST** to test the configuration, and click **SAVE** to save the configuration.
+In the configuration dialog, enter information from the product you're integrating with. When done, click **TEST** to test the configuration, and click **SAVE** to save the configuration.

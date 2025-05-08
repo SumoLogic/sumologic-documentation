@@ -25,6 +25,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ipdata-configuration.png')} style={{border:'1px solid gray'}} alt="ipdata configuration" width="400"/>
+
 For information about ipdata, see [ipdata documentation](https://docs.ipdata.co/docs/getting-started).
 
 ## Change Log

@@ -28,7 +28,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Host**. Host for API.
    * **Username**. Username you use to log in into the system.
    * **Password**. The password of your email.
-   * Additionally, if need you to, you can populate the query daemons.
+   * Additionally, if need you to, you can populate the query daemons.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ibm-maximo-configuration.png')} style={{border:'1px solid gray'}} alt="IBM Maximo configuration" width="400"/>
 
 For information about IBM Maximo, see [IBM Maximo documentation](https://www.ibm.com/docs/en/mam/7.6.1).
 
