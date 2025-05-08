@@ -3039,7 +3039,7 @@ integrations: [
         'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
       ],
-    },
+    },  
   ],
   api: [
     {
