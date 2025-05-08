@@ -24,7 +24,7 @@ This documentation outlines the Microsoft Sentinel integration, providing detail
 * Trigger automated incident management workflows, such as updating incident status, severity, or ownership using Update Incident, or adding context through Add Incident Comment.
 * Remove false positives or resolved alerts by leveraging the Delete Incident action.
 
-### Supported Versions
+### Supported versions
 
 * Microsoft Sentinel API (2023-02-01 and compatible preview versions)
 * Azure Resource Manager endpoints
@@ -72,26 +72,27 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 * Subscription ID
 * Workspace Name
 * Resource Group
-* Automation Engine<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft/ms-sentinel.png')} style={{border:'1px solid gray'}} alt="Edit Resource for AWS WAF" width="400"/>
+* Automation Engine<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-sentinel/ms-sentinel.png')} style={{border:'1px solid gray'}} alt="Edit Resource for AWS WAF" width="400"/>
 
 
 For information about Microsoft Sentinel, see [Microsoft Sentinel documentation](https://learn.microsoft.com/en-us/azure/sentinel/).
 
 ## Usage
 
-### Basic Usage
+### Basic usage
 * Configure credentials (Tenant ID, Client ID, Client Secret).
 * Use the List Incidents action to pull incidents.
 * Apply filtering with createdTimeUtc or severity.
-* Use containment actions (e.g., Update Incident) to manage active incidents.
+* Use containment actions (for example, Update Incident) to manage active incidents.
 
-### Advanced Usage
+### Advanced usage
 * Automate continuous incident ingestion using Microsoft Sentinel Incidents Daemon.
 * Use enrichment actions like List Incident Entities V2 to map Sentinel entities to your SOAR platform.
 * Use Search Into Sentinel Events for deep telemetry analysis.
 * Chain incident updates and comment logging for full case management automation.
 
-## API Reference
+## API reference
+
 ### Configuration
 Environment variables or parameters:
 * tenant
@@ -104,6 +105,7 @@ Environment variables or parameters:
 * Optional: api root, login endpoint, proxy, verify_ssl, CSOAR API URL, Access ID, Access Key
 
 ### Containment APIs
+
 #### Update Incident
 * Method: PATCH
 * Action: Update Incident
@@ -190,6 +192,7 @@ response = requests.post(
 ```
 
 ### Enrichment APIs
+
 #### List Incidents
 * Method: Get
 * Action: List Incidents
