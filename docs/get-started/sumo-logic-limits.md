@@ -45,7 +45,7 @@ This page lists the baseline limits and quotas for various features, services, a
 
 - **[Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time)**. Not supported.
 - **[LogReduce](/docs/search/behavior-insights/logreduce/logreduce-operator) and [LogCompare](/docs/search/behavior-insights/logcompare) operators**. Not supported.
-- **[Frequent](/docs/manage/partitions/data-tiers) and [Infrequent](/docs/manage/partitions/data-tiers) data tiers**. Not supported. <!-- what about Flex? -->
+- **[Frequent](/docs/manage/partitions/data-tiers) and [Infrequent](/docs/manage/partitions/data-tiers) data tiers**. Not supported.
 - **[Save to Index](/docs/alerts/scheduled-searches/save-to-index) and [Save to Lookup](/docs/alerts/scheduled-searches/save-to-lookup)**. Not supported.
 - **[Search templates](/docs/search/get-started-with-search/build-search/search-templates.md)**. Not supported.
 - **[`timeshift` metrics operator](/docs/metrics/metrics-operators/timeshift)**. Not supported in Metric Monitors.
