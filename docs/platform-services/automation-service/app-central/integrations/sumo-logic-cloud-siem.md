@@ -65,7 +65,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
     * **Sumo Logic API URL**. URL to the API of the Cloud SIEM instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
     * **Sumo Logic Cloud SIEM URL**. URL to the Cloud SIEM instance (for example, `https://service.sumologic.com/sec`).
     * **Access ID**. The access ID that you copied earlier.
-    * **Access Key**. The access key that you copied earlier.
+    * **Access Key**. The access key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-cloud-siem-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Cloud SIEM configuration" width="400"/>
 
 For detailed API documentation, see [Sumo Logic APIs](/docs/api/).
 
