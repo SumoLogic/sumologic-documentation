@@ -30,6 +30,14 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-network-firewall-configuration.png')} style={{border:'1px solid gray'}} alt="AWS NetWork Firewall configuration" width="400"/>
+
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS Network Firewall, see [AWS Network Firewall documentation](https://docs.aws.amazon.com/network-firewall/).
+
 ## Change Log
  
 * January 24, 2024 - First upload

@@ -27,6 +27,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/netskope-configuration.png')} style={{border:'1px solid gray'}} alt="Netskope configuration" width="400"/>
+
+For information about Netskope, see [Netskope documentation](https://docs.netskope.com/).
+
 ## Change Log
 
 * July 20, 2021 - First upload

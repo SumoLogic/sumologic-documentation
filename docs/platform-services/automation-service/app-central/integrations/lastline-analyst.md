@@ -23,6 +23,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/lastline-analyst-configuration.png')} style={{border:'1px solid gray'}} alt="Lastline Analyst configuration" width="400"/>
+
+For information about Lastline Analyst, see [Lastline Analyst documentation](https://analysis.lastline.com/analysis/api-docs/html/index.html).
+
 ## Change Log
 
 * June 12, 2019 - First upload
@@ -38,7 +42,3 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 	+ Renamed actions:
 		- Detonation Report renamed *to* **Get Analysis Results**
 		- Detonate File renamed *to* **Submit File**
-
-  
-
-

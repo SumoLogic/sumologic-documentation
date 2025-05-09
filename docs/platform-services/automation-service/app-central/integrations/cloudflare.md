@@ -37,6 +37,7 @@ Cloudflare makes everything you connect to the Internet secure, private, fast, a
 
 ## Cloudflare configuration for Global API Key
 
+For a [Global API Key](https://developers.cloudflare.com/workers/wrangler/migration/v1-to-v2/wrangler-legacy/authentication/#global-api-key):
 1. Sign in in Cloudflare using your email and password.
 1. Go to your profile in the left menu and select My Profile.
 1. From the left menu select API Tokens.
@@ -45,6 +46,7 @@ Cloudflare makes everything you connect to the Internet secure, private, fast, a
 
 ## Cloudflare configuration for Custom API Token
 
+To [create a token](https://developers.cloudflare.com/workers/wrangler/migration/v1-to-v2/wrangler-legacy/authentication/#generate-tokens):
 1. Sign in in Cloudflare using your email and password.
 1. Go to your profile in the left menu and select My Profile.
 1. From the left menu select API Tokens.
@@ -53,27 +55,17 @@ Cloudflare makes everything you connect to the Internet secure, private, fast, a
 1. Confirm your settings, then click Continue to summary and Create Token.
 1. Copy the token securely as it will only be displayed once.
 
-
 ## Configure Cloudflare in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cloudflare/cloudflare-3.png')} style={{border:'1px solid gray'}} alt="cloudflare" width="100"/>
-1. Populate all the required fields (\*).
-1. Select the **Token Type** (the default is set as **global**).
-1. In the **API Key** field, insert the previously copied key.
-1. Click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cloudflare/cloudflare-4.png')} style={{border:'1px solid gray'}} alt="cloudflare" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click **TEST** that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cloudflare/cloudflare-5.png')} style={{border:'1px solid gray'}} alt="cloudflare" width="200"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cloudflare/cloudflare-7.png')} style={{border:'1px solid gray'}} alt="cloudflare" width="400"/>
+* **Email** is needed only when using global API token. Any valid email will work with custom token.
+* Select the **Token Type** (the default is set as **global**).
+* In the **API Key** field, insert the previously copied key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cloudflare/cloudflare-4.png')} style={{border:'1px solid gray'}} alt="cloudflare" width="400"/>
 
-
-## Notes
-
-* Email is needed only when using global API token. Any valid email will work with custom token.
+For information about Cloudflare, see [Cloudflare documentation](https://developers.cloudflare.com/).
 
 ## Change Log
 

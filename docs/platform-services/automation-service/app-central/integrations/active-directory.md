@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 **Version: 1.3  
 Updated: Dec 19, 2023**
 
-Utilize user, group, and system information from Microsoft Active Directory.
+Utilize user, group, and system information from Active Directory.
 
 ## Actions
 
@@ -39,6 +39,10 @@ Utilize user, group, and system information from Microsoft Active Directory.
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-configuration.png')} style={{border:'1px solid gray'}} alt="Active Directory configuration" width="400"/>
+
+For information about Active Directory, see [Active Directory documentation](https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/active-directory-overview).
 
 ## Change Log
 

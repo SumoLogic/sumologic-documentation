@@ -37,6 +37,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/trend-micro-deep-security-configuration.png')} style={{border:'1px solid gray'}} alt="Trend Micro Deep Security configuration" width="400"/>
+
+For information about Trend Micro Deep Security, see [Trend Micro Deep Security documentation](https://docs.trendmicro.com/en-us/documentation/deep-security/).
+
 ## Change Log
 
 * March 6, 2020 - First upload

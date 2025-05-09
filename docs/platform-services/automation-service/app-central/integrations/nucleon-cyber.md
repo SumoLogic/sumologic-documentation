@@ -23,6 +23,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/nucleon-configuration.png')} style={{border:'1px solid gray'}} alt="Nucleon Cyber configuration" width="400"/>
+
+For information about Nucleon, see the [Nucleon website](https://nucleoncyber.com/).
+
 ## Change Log
 
 * October 7, 2021 - First upload

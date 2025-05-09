@@ -37,7 +37,7 @@ Threat intelligence indicators allow you to enrich incoming records with threat 
 
 Because the threat intel information is persisted within records, you can reference it downstream in both rules and search. The built-in rules that come with Cloud SIEM will also automatically create a signal for any record with a match from your threat feed. 
 
-For more information, see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
+For more information, see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
 
 --> 
 
