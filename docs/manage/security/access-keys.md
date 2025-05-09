@@ -100,7 +100,7 @@ an Access-Control-Allow-Origin header.
      :::note
      After an access key is deactivated, there can be a brief period of time during which a previous successful authentication remains cached and a subsequent API request using the deactivated key will succeed. This could occur if the access key was used to authenticate within 15 minutes prior to the key being deactivated.
      :::
-   * **Rotate**. Refresh an access key with a new Access ID and Access Key. Copy the new ID and key and use them in all the places where the previous access key was used. Rotate access keys in accordance with your company's rules. By default, access keys expire in 180 days after creation or rotation, though the [access keys expiration policy](#access-keys-expiration-policy) can be updated by a Sumo Logic administrator. An access key's expiration date appears in the **Expires At** column.
+   * **Rotate**. Refresh an access key with a new Access ID and Access Key. Copy the new ID and key and use them in all the places where the previous access key was used. (The old key is still usable for 5 minutes after rotation.) Rotate access keys in accordance with your company's rules. By default, access keys expire in 180 days after creation or rotation, though the [access keys expiration policy](#access-keys-expiration-policy) can be updated by a Sumo Logic administrator. An access key's expiration date appears in the **Expires At** column.
    * **Delete**. Permanently removes the access key. The key will no longer be usable for API calls. However, deleting a key used to register a collector does not affect the collector, since the only time a collector uses the access key is at installation.
 
 ### Organization access keys
@@ -129,19 +129,20 @@ To configure the access keys deactivation policy:
 
 Sumo Logic will expire and deactivate access keys by default 180 days after the keys are created or rotated. Automatically expiring keys ensures they don't remain in use past your company's access key rotation rules. 
 
-An access key's expiration date appears in the **Expires At** column on the **Access Keys** tab. You can sort by this column to see when you must rotate keys. To rotate a key, hover your mouse over an access key, click the three-dot kebab icon, and select **Rotate**. Rotating an access key resets its expiration date according to the number of days in the policy. 
+An access key's expiration date appears in the **Expires At** column on the **Access Keys** tab. You can sort by this column to see when you must rotate keys. To rotate a key, hover your mouse over an access key, click the three-dot kebab icon, and select **Rotate**. (The old key is still usable for 5 minutes after rotation.) Rotating an access key resets its expiration date according to the number of days in the policy. 
 
 An administrator can adjust the time period before access keys expire. To configure this option, you must be a Sumo Logic Administrator or have the **Manage organization settings** role capability.
 
 To configure the access keys expiration policy:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
 1. Under the **Access Keys Expiration** section, select a value in the **Expiration** field. <br/><img src={useBaseUrl('img/security/access-key-expiration-policy.png')} alt="Access keys expiration settings in Sumo Logic, allowing automatic expiration of API access keys after a specified number of days." style={{border: '1px solid gray'}} width="600"/>
-    :::warning
-    When you change the policy, all access keys inherit the new policy, and the expiration date for all access keys is reset. For example, if you change the policy to 90 days, then the expiration date is reset on all access keys to 90 days from the date the policy was changed.
-    :::
 
     :::note
     This section is visible to Administrators only.
+    :::
+
+    :::warning
+    When you change the policy, all access keys inherit the new policy, and the expiration date for all access keys is reset. For example, if you change the policy to 90 days, then the expiration date is reset on all access keys to 90 days from the date the policy was changed.
     :::
 
 ## Audit logging for access key activity
