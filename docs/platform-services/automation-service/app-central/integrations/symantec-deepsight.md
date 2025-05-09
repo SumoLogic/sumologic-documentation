@@ -25,6 +25,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/symantec-deepsight-configuration.png')} style={{border:'1px solid gray'}} alt="Symantec DeepSight configuration" width="400"/>
+
+For information about Symantec, see [Symantec documentation](https://techdocs.broadcom.com/us/en/symantec-security-software.html).
+
 ## Change Log
 
 * July 29, 2019 - First upload

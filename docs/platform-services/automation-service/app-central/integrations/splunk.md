@@ -31,6 +31,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/splunk-configuration.png')} style={{border:'1px solid gray'}} alt="Splunk configuration" width="400"/>
+
+For information about Splunk, see [Splunk documentation](https://docs.splunk.com/Documentation).
+
 ## Change Log
 
 * May 5, 2019 - First upload

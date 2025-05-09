@@ -35,17 +35,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation). 
-2. After the list of the integrations appears, search for the integration and click on the row.
-3. The integration details will appear. Click on the **"+"** button to add new Resource.
-4. Populate all the required fields (\*):
    * **Label**. Enter a name for the resource.
    * **API URL**. Enter `https://api.abuseipdb.com`
-   * **API Key**. Enter the API key you copied earlier.
-5. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-1.png')} style={{border:'1px solid gray'}} alt="any.run-3" width="400"/>
-6. To make sure the resource is working, hover over the resource and then click the *pencil icon* that appears on the right. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-3.png')} style={{border:'1px solid gray'}} alt="any.run-3" width="800"/>
-7. Click **TEST**
-8. You should receive a successful notification in the bottom right corner of the screen.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-2.png')} style={{border:'1px solid gray'}} alt="any.run-7" width="800"/>
+   * **API Key**. Enter the API key you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-1.png')} style={{border:'1px solid gray'}} alt="any.run-3" width="400"/>
+
+For information about AbuseIPDB, see [AbuseIPDB documentation](https://www.abuseipdb.com/api.html).
 
 ## Change Log
 

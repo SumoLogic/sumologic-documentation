@@ -1058,6 +1058,7 @@ module.exports = {
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
+        'manage/security/service-accounts',
         {
           type: 'category',
           label: 'Audit Indexes',
@@ -1093,6 +1094,19 @@ module.exports = {
             'manage/security/saml/manage-permissions-with-adfs',
             'manage/security/saml/set-up-adfs-authenticate-users',
             'manage/security/saml/view-saml-debug-information',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'SCIM Provisioning',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/security/scim/index'},
+          items: [
+            'manage/security/scim/about-scim-provisioning',
+            'manage/security/scim/provision-with-microsoft-entra-id',
+            'manage/security/scim/provision-with-okta',
+            'manage/security/scim/provision-with-onelogin',
           ]
         },
         'manage/security/set-password-policy',
@@ -1164,7 +1178,6 @@ module.exports = {
           items: [
             'alerts/scheduled-searches/schedule-search',
             'alerts/scheduled-searches/create-email-alert',
-            'alerts/scheduled-searches/create-real-time-alert',
             'alerts/scheduled-searches/edit-cancel',
             'alerts/scheduled-searches/save-to-index',
             'alerts/scheduled-searches/save-to-lookup',
@@ -2205,6 +2218,7 @@ integrations: [
          'integrations/microsoft-azure/azure-storage',
          'integrations/microsoft-azure/azure-stream-analytics',
          'integrations/microsoft-azure/azure-synapse-analytics',
+         'integrations/microsoft-azure/azure-virtual-machine',
          'integrations/microsoft-azure/azure-virtual-network',
          'integrations/microsoft-azure/kubernetes',
          'integrations/microsoft-azure/azure-security-advisor',
@@ -2560,6 +2574,7 @@ integrations: [
           'integrations/saas-cloud/sentinelone',
           'integrations/saas-cloud/slack',
           'integrations/saas-cloud/sophos',
+          'integrations/saas-cloud/sumo-collection',
           'integrations/saas-cloud/symantec-endpoint-security-service',
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/tenable',
@@ -3030,9 +3045,9 @@ integrations: [
       link: {type: 'doc', id: 'security/threat-intelligence/index'},
       items: [
         'security/threat-intelligence/about-threat-intelligence',
-        'security/threat-intelligence/threat-intelligence-indicators',
-        'security/threat-intelligence/find-threats',
         'security/threat-intelligence/threat-indicators-in-cloud-siem',
+        'security/threat-intelligence/find-threats',
+        'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
       ],
     },  
@@ -3094,7 +3109,9 @@ integrations: [
         'api/saml-configuration',
         'api/scan-budget',
         'api/scheduled-views',
+        'api/scim-user',
         'api/search-job',
+        'api/service-accounts',
         'api/service-allowlist',
         'api/service-map',
         'api/slo-management',

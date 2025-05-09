@@ -30,11 +30,19 @@ Interact with AWS CloudWatch through Groups, Streams, Metric Filters, and Retent
 
 * [AWS CloudWatch](https://github.com/boto/boto3/blob/develop/LICENSE)
 
-## Configure AWS CloudWatchLogs in Automation Service and Cloud SOAR
+## Configure AWS CloudWatch Logs in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-cloudwatchlogs-configuration.png')} style={{border:'1px solid gray'}} alt="AWS CloudWatch Logs configuration" width="400"/>
+
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS CloudWatch Logs, see [CloudWatch Logs documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html).
 
 ## Change Log
 

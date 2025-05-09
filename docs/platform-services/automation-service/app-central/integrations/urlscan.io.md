@@ -28,6 +28,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/urlscan-io-configuration.png')} style={{border:'1px solid gray'}} alt="URLScan.io configuration" width="400"/>
+
+For information about URLScan.io, see [URLScan.io documentation](https://urlscan.io/docs/).
+
 ## Change Log
 
 * June 12, 2019 - First upload

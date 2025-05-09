@@ -25,6 +25,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fireeye-network-security-configuration.png')} style={{border:'1px solid gray'}} alt="FireEye Network Security configuration" width="400"/>
+
+For information about Trellix Network Security (formerly FireEye Network Security), see [Trellix Network Security (NX) documentation](https://docs.trellix.com/bundle/fe-network-security-landing/page/UUID-58265fe8-a08e-3442-855b-72d3a36262b5.html).
+
 ## Change Log
 
 * June 19, 2019 - First upload
