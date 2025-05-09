@@ -21,7 +21,6 @@ This App has been tested with the following Kafka Operator versions:
 This App has been tested with the following Kafka versions:
 * 3.4.0
 
-
 ## Sample log messages
 
 ```json
@@ -48,14 +47,13 @@ messaging_cluster=* messaging_system="kafka" \
 
 The list of metrics collected can be found [here](/docs/integrations/containers-orchestration/kafka/#kafka-metrics).
 
-
-## Collecting logs and metrics for Strimzi Kafka Pods
+## Collecting logs and metrics for Strimzi Kafka pods
 
 Collection architecture is similar to Kafka and described [here](/docs/integrations/containers-orchestration/strimzi-kafka/#collecting-logs-and-metrics-for-strimzi-kafka-pods).
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Strimzi Kafka.
 
-### Prerequisites for Kafka Cluster Deployment
+### Prerequisites for Kafka cluster deployment
 
 Before configuring the collection, you will require the following items:
 
@@ -65,7 +63,7 @@ Before configuring the collection, you will require the following items:
 
 3. Download the [kafka-metrics-sumologic-telegraf.yaml](https://drive.google.com/file/d/1pvMqYiJu7_nEv2F2RsPKIn_WWs8BKcxQ/view?usp=sharing). If you already have an existing yaml, you will have to merge the contents of both files. This file contains the Kafka resource.
 
-### Deploying Sumo Logic Kubernetes Collection
+### Deploying Sumo Logic Kubernetes collection
 
 1. Create a new namespace to deploy resources. The below command creates a **sumologiccollection** namespace.
 
@@ -92,7 +90,7 @@ Before configuring the collection, you will require the following items:
 
   A collector will be created in your Sumo Logic org with the cluster name provided in the above command. You can verify it by referring to the [collection page](/docs/send-data/collection/).
 
-### Configure Metrics Collection
+### Configure metrics collection
 
 Follow these steps to collect metrics from a Kubernetes environment:
 
@@ -143,8 +141,7 @@ Follow these steps to collect metrics from a Kubernetes environment:
 
         For more information on configuring the Joloka input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2).
 
-
-### Configure Logs Collection
+### Configure logs collection
 If your Kafka helm chart/pod is writing the logs to standard output, then the [Sumologic Kubernetes Collection](/docs/integrations/containers-orchestration/kubernetes/#collecting-metrics-and-logs-for-the-kubernetes-app) will automatically capture the logs from stdout and will send the logs to Sumologic. If no, then you have to use [tailing-sidecar](https://github.com/SumoLogic/tailing-sidecar/blob/main/README.md) approach.
 
 1. **Add labels on your Kafka pods**
@@ -177,7 +174,7 @@ If your Kafka helm chart/pod is writing the logs to standard output, then the [S
 
   <img src={useBaseUrl('img/integrations/containers-orchestration/appobservability-messaging-fer.png')} alt="Sumo Logic FER"/>
 
-### Deploying Kafka Pods
+### Deploying Kafka pods
 
   After updating **kafka-metrics-sumologic-telegraf.yaml**, you can use the below command to deploy the Kafka pods
 
@@ -185,8 +182,7 @@ If your Kafka helm chart/pod is writing the logs to standard output, then the [S
     kubectl apply -f kafka-metrics-sumologic-telegraf.yaml -n <<NAMESPACE>>
   ```
 
-
-### Deployment Verification
+### Deployment verification
 
 1. Make sure that the Kafka pods are running and correct annotations/labels are applied by using the command:
     ```bash
@@ -233,8 +229,7 @@ If your Kafka helm chart/pod is writing the logs to standard output, then the [S
                   values: ["sumologiccollection"]
       ```
 
-
-## Installing the Kafka App
+## Installing the Kafka app
 
 import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
@@ -253,7 +248,7 @@ Additionally, if you're using Squid Proxy in the Kubernetes environment, the fol
 * `pod_labels_messaging_system`
 * `pod_labels_messaging_cluster`
 
-## Viewing the Kafka Dashboards
+## Viewing the Kafka dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -270,7 +265,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/kafka-cluster-overview.png')} alt="Kafka dashboards" />
 
-
 ### Strimzi Kafka - Outlier Analysis
 
 The **Strimzi Kafka - Outlier Analysis** dashboard helps you identify outliers for key metrics across your Kafka clusters.
@@ -279,7 +273,6 @@ Use this dashboard to:
 * To analyze trends and quickly discover outliers across key metrics of your Kafka clusters
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Outlier-Analysis.png')} alt="Kafka dashboards" />
-
 
 ### Strimzi Kafka - Replication
 
@@ -295,7 +288,6 @@ Use this dashboard to monitor the following key metrics:
 * The expected value for this rate is normally zero.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Replication.png')} alt="Kafka dashboards" />
-
 
 ### Strimzi Kafka - Zookeeper
 
@@ -323,7 +315,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker.png')} alt="Kafka dashboards" />
 
-
 ### Strimzi Kafka - Failures and Delayed Operations
 
 The **Strimzi Kafka - Failures and Delayed Operations** dashboard gives you insight into all failures and delayed operations associated with your Kafka clusters.
@@ -339,7 +330,6 @@ Use this dashboard to:
     * Produce Purgatory Size - The Produce Purgatory Size metric shows the number of produce requests currently waiting in purgatory. Produce requests are added to purgatory if request.required.acks is set to -1 or all, and the requests wait in purgatory until the partition leader receives an acknowledgement from all its followers. If the purgatory size metric keeps growing, some partition replicas may be overloaded. If this is the case, you can choose to increase the capacity of your cluster or decrease the amount of produce requests being generated.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Failures-Delayed-Operations.png')} alt="Kafka dashboards" />
-
 
 ### Strimzi Kafka - Request-Response Times
 
@@ -397,7 +387,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Memory.png')} alt="Kafka dashboards" />
 
-
 ### Kafka Broker - Disk Usage
 
 The **Kafka Broker - Disk Usage** dashboard helps monitor disk usage across your Kafka Brokers.
@@ -421,7 +410,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Garbage-Collection.png')} alt="Kafka dashboards" />
 
-
 ### Kafka Broker - Threads
 
 The **Kafka Broker - Threads** dashboard shows the key insights into the usage and type of threads created in your Kafka broker JVM
@@ -443,7 +431,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Class-Loading-Compilation.png')} alt="Kafka dashboards" />
 
-
 ### Strimzi Kafka - Topic Overview
 
 The Strimzi Kafka - Topic Overview dashboard helps you quickly identify under-replicated partitions and incoming bytes by Kafka topic, server, and cluster.
@@ -458,8 +445,6 @@ Use this dashboard to:
 2. Red indicates that a given partition is under-replicated.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Topic-Overview.png')} alt="Kafka dashboards" />
-
-
 
 ### Strimzi Kafka - Topic Details
 
