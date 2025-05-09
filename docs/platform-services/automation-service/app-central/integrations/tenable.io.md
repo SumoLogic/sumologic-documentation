@@ -37,6 +37,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/tenable-io-configuration.png')} style={{border:'1px solid gray'}} alt="Tenable.io configuration" width="400"/>
+
 For information about Tenable Vulnerability Management (formerly Tenable.io), see [Tenable Vulnerability Management documentation](https://docs.tenable.com/vulnerability-management.htm).
 
 ## Change Log

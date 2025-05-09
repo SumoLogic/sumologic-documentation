@@ -30,7 +30,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. Name of the resource.
    * **URL**. URL of Tufin SecureTrack.
    * **Username**
-   * **Password**
+   * **Password**<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/tufin-securetrack-configuration.png')} style={{border:'1px solid gray'}} alt="Tufin SecureTrack V2 configuration" width="400"/>
 
 For information about Tufin SecureTrack, see [Tufin SecureTrack documentation](https://forum.tufin.com/support/kc/latest/Content/Suite/RESTAPI/4420.htm).
 

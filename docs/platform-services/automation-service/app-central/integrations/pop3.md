@@ -25,6 +25,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/pop3-configuration.png')} style={{border:'1px solid gray'}} alt="POP3 configuration" width="400"/>
+
 ## Change Log
 
 * August 19, 2021 - First upload

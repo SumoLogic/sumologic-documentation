@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/hp-universal-cmdb-configuration.png')} style={{border:'1px solid gray'}} alt="HP Universal CMDB configuration" width="400"/>
+
 For information about OpenText CMDB (formerly HP Universal CMDB), see [OpenText CMDB documentation](https://www.opentext.com/what-is/cmdb).
 
 ## Change Log

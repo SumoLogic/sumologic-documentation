@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/digital-shadows-configuration.png')} style={{border:'1px solid gray'}} alt="Digital Shadows configuration" width="400"/>
+
 For information about ReliaQuest GreyMatter Digital Risk Protection (DRP) ([formerly Digital Shadows](https://reliaquest.com/ds-demo/)), see the [ReliaQuest website](https://reliaquest.com/resources/solution-briefs/digital-risk-protection/).
 
 ## Change Log

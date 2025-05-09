@@ -24,7 +24,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * URL API
    * Username
-   * Password
+   * Password<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-esa-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco ESA configuration" width="400"/>
 
 For information about Cisco Secure Email Gateway (formerly Email Security Appliance), see [Cisco Secure Email Gateway documentation](https://www.cisco.com/c/en/us/support/security/email-security-appliance/series.html).
 
