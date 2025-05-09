@@ -56,9 +56,9 @@ This section provides instructions for configuring log and metric collection for
 
 Configuring log and metric collection for the Varnish app includes the following tasks:
 
-### Configure Logs and Metrics Collection
+### Configure logs and metrics collection
 
-Instructions below show how to configure Kubernetes and Non-Kubernetes environments.
+Instructions below show how to configure Kubernetes and non-Kubernetes environments.
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -76,17 +76,16 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 <img src={useBaseUrl('img/integrations/web-servers/varnish-k8s.png')} alt="Varnish" />
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Varnish. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Varnish input plugin to obtain metrics. For simplicity, the diagram doesn’t show the input plugins.The injection of the Telegraf sidecar container is done by the Telegraf Operator.
-P
-rometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which enriches metadata and sends metrics to Sumo Logic.
+The first service in the pipeline is Telegraf. Telegraf collects metrics from Varnish. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Varnish input plugin to obtain metrics. For simplicity, the diagram doesn’t show the input plugins. The injection of the Telegraf sidecar container is done by the Telegraf Operator.
+Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which enriches metadata and sends metrics to Sumo Logic.
 
 In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 :::note Prerequisites
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
+It’s assumed that you are using the latest Helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
-### Configure Metrics Collection
+### Configure metrics collection
 
 This section explains the steps to collect Varnish metrics from a Kubernetes environment.
 
@@ -111,19 +110,19 @@ This section explains the steps to collect Varnish metrics from a Kubernetes env
 
 Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
 
-* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf varnish Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Varnish input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Varnish input plugin. Please refer to this [doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Varnish input plugin for Telegraf. Note: As Telegraf will be run as a sidecar, the host should always be localhost.
     * In the input plugins section, which is `[[inputs.varnish]]`
-        * `binary`. The default location of the varnish stat binary. Please override as per your configuration.
+        * `binary`. The default location of the Varnish stat binary. Please override as per your configuration.
         * `use_sudo`. If running as a restricted user, prepend sudo for additional access.
         * `stats`. Stats may also be set to `["*"]`, which will collect all stats. See [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) for more information on additional parameters for configuring the Varnish input plugin for Telegraf.
     * In the tags section, which is `[inputs.varnish.tags]`
-        * `environment`. This is the deployment environment where the Varnish cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment`. This is the deployment environment where the Varnish cluster identified by the value of servers resides. For example: dev, prod, or qa. While this value is optional, we highly recommend setting it.
         * `cache_cluster`. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-**Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
+**Do not modify** the following values set by this configuration, as it will cause the Sumo Logic app to not function correctly.
 * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
+* `prometheus.io/port: "9273"`. This tells Prometheus what ports to scrape on. This should not be changed.
 * `telegraf.influxdata.com/inputs`
     * In the tags section, `[inputs.varnish.tags]`
         * `component: “cache”`. This value is used by Sumo Logic apps to identify application components.
@@ -134,24 +133,23 @@ For all other parameters, see [this doc](/docs/send-data/collect-from-other-data
 3. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 4. Verify metrics in Sumo Logic.
 
-
-### Configure Logs Collection
+### Configure logs collection
 
 This section explains the steps to collect Varnish logs from a Kubernetes environment.
 
 1. **(Recommended Method) Add labels on your Varnish pods to capture logs from standard output**. Follow the instructions below to capture Varnish logs from stdout on Kubernetes.
-   1. Apply following labels to the Varnish pods:
+   1. Apply the following labels to the Varnish pods:
    ```bash
    environment: "prod_CHANGEME"
    component: "cache"
    cache_system: "varnish"
    cache_cluster: "varnish_on_k8s_CHANGEME"
    ```
-   2. Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
-   * `environment`. This is the deployment environment where the Varnish cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+   2. Enter the values for the following parameters (marked `CHANGEME` in the snippet above):
+   * `environment`. This is the deployment environment where the Varnish cluster identified by the value of `servers` resides. For example: dev, prod, or qa. While this value is optional,l we highly recommend setting it.
    * `cache_cluster`. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-**Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
+**Do not modify** the following values set by this configuration, as it will cause the Sumo Logic app to not function correctly.
 * `component: “cache”`. This value is used by Sumo Logic apps to identify application components.
 * `cache_system: “varnish”`. This value identifies the cache system.
 
@@ -182,18 +180,18 @@ For all other parameters, see [this doc](/docs/send-data/collect-from-other-data
 </TabItem>
 <TabItem value="non-k8s">
 
-We use the Telegraf operator for Varnish metric collection and Sumo Logic Installed Collector for collecting Varnish logs. The diagram below illustrates the components of the Varnish collection in a non-Kubernetes environment.
+We use the Telegraf operator for Varnish metric collection and the Sumo Logic Installed Collector for collecting Varnish logs. The diagram below illustrates the components of the Varnish collection in a non-Kubernetes environment.
 
 <img src={useBaseUrl('img/integrations/web-servers/varnish-nonk8s.png')} alt="Varnish" />
 
-Telegraf runs on the same system as Varnish, and uses the [Varnish input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) to obtain Varnish metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Varnish on the other hand are sent to a Sumo Logic Local File source.
+Telegraf runs on the same system as Varnish and uses the [Varnish input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) to obtain Varnish metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Varnish, on the other hand, are sent to a Sumo Logic Local File source.
 
-### Configure Metrics Collection
+### Configure metrics collection
 
 This section provides instructions for configuring metrics collection for the Sumo Logic app for Varnish.
 
 1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/http-source/logs-metrics)Make a note of the **HTTP Source URL**.
+2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following the instructions given in this [document](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the **HTTP Source URL**.
 3. **Install Telegraf**. Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [Varnish input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.  
 
@@ -215,18 +213,18 @@ Create or modify telegraf.conf and copy and paste the text below:
 Please enter values for the following parameters (marked `CHANGEME` above):
 
 * In the input plugins section, which is `[[inputs.varnish]]`
-    * **`binary`** -  The default location of the varnish stat binary. Please override as per your configuration.
+    * **`binary`** -  The default location of the Varnish stat binary. Please override as per your configuration.
     * `use_sudo` - If running as a restricted user, prepend sudo for additional access.
     * **`stats`** - Stats may also be set to ["*"], which will collect all stats. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) for more information on additional parameters for configuring the Varnish input plugin for Telegraf.
     * In the tags section, which is `[inputs.varnish.tags]`
-        * `environment`. This is the deployment environment where the Varnish cluster identified by the value of **servers** resides. For example; dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment`. This is the deployment environment where the Varnish cluster identified by the value of **servers** resides. For example, dev, prod, or qa. While this value is optional, we highly recommend setting it.
         * `cache_cluster`. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`
     * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
-**Do not modify** the following values set by this Telegraf configuration as it will cause the Sumo Logic app to not function correctly.
+**Do not modify** the following values set by this Telegraf configuration, as it will cause the Sumo Logic app to not function correctly.
 * `data_format=“prometheus”`. In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic
-* `Component=“cache”`. In the input plugins section, which is, `[[inputs.varnish]]` - This value is used by Sumo Logic apps to identify application components.
+* `Component=“cache”`. In the input plugins section, which is `[[inputs.varnish]]` - This value is used by Sumo Logic apps to identify application components.
 * `cache_system: “varnish”`. In the input plugins sections. In other words, this value identifies the cache system
 * For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
@@ -234,33 +232,31 @@ Once you have finalized your `telegraf.conf` file, you can start or reload the t
 
 At this point, Varnish metrics should start flowing into Sumo Logic.
 
-
-### Configure Logs Collection
+### Configure logs collection
 
 This section provides instructions for configuring log collection for Varnish running on a non-Kubernetes environment for the Sumo Logic app for Varnish.
 
-By default, Varnish logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#installed-collector-requirements).
+By default, Varnish logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for installed collectors, see this [page](/docs/get-started/system-requirements#installed-collector-requirements).
 
-
-1. **Configure logging in Varnish**. Varnish supports logging via the following methods: local text log files. For details please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/). For the dashboards to work properly, please set the below specified log format as explained [here](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1):
+1. **Configure logging in Varnish**. Varnish supports logging via the following methods: local text log files. For details, please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/). For the dashboards to work properly, please set the below-specified log format as explained [here](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1):
 ```bash
 %h %l %u %t \"%r\" %s %b \"%{Referer}i\" \"%{User-agent}i\"
 ```
-2. **Configure Varnish to log to a Local file**. By default, any installation of varnishd will not write any request logs to disk. Instead, Varnish has an in-memory log, and supplies tools to tap into this log and write to disk. To configure logging to a local file, follow the steps on [this](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#enable-varnishncsa-logging) page. By default, Varnish logs are stored in **/var/log/varnish/varnishncsa.log**. For customized options please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1). Logs from the Varnish log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/installed-collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
-3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/installed-collectors)
-4. **Configuring a Source**: To add a Local File Source source for Varnish do the following. To collect logs directly from your Varnish machine, use an Installed Collector and a Local File Source.  
+2. **Configure Varnish to log to a Local file**. By default, any installation of varnishd will not write any request logs to disk. Instead, Varnish has an in-memory log and supplies tools to tap into this log and write to disk. To configure logging to a local file, follow the steps on [this](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#enable-varnishncsa-logging) page. By default, Varnish logs are stored in **/var/log/varnish/varnishncsa.log**. For customized options, please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1). Logs from the Varnish log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/installed-collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
+3. **Configuring a Collector**. To add an installed collector, perform the steps given in the [Configure an Installed Collector](/docs/send-data/installed-collectors) document.
+4. **Configuring a Source**: To add a Local File Source for Varnish, do the following. To collect logs directly from your Varnish machine, use an Installed Collector and a Local File Source.  
    1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
    2. Configure the Local File Source fields as follows:
      * **Name.** (Required)
      * **Description.** (Optional)
      * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in **/var/log/varnish/varnishncsa.log**.
-     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Varnish/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices.md).)
+     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
+     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Varnish/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices.md).)
      * **Fields.** Set the following fields:
        * `component = cache`
        * `cache_system = varnish`
        * `cache_cluster = <Your_Varnish_Cluster_Name>`
-       * `environment = <Environment_Name>`, such as Dev, QA or Prod.
+       * `environment = <Environment_Name>`, such as Dev, QA, or Prod.
    3. Configure the **Advanced** section:
      * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
      * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Varnish Server’s time zone.
@@ -274,7 +270,6 @@ At this point, Varnish logs should start flowing into Sumo Logic.
 
 </TabItem>
 </Tabs>
-
 
 ## Installing the Varnish app
 
@@ -295,7 +290,6 @@ Additionally, if you're using Varnish in the Kubernetes environment, the followi
 * `pod_labels_cache_system`
 * `pod_labels_cache_cluster`
 
-
 ## Viewing Varnish dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
@@ -304,14 +298,14 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Varnish (Classic) - Overview** dashboard provides a high-level view of the activity and health of Varnish servers on your network. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, and time comparisons for visitor locations and uptime, cache hit, requests, VLC.
+The **Varnish (Classic) - Overview** dashboard provides a high-level view of the activity and health of Varnish servers on your network. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, and time comparisons for visitor locations and uptime, cache hit, requests, and VLC.
 
 Use this dashboard to:
 * Analyze Request backend, frontend, VLCs, Pool, Thread, VMODs, and cache hit rate.
-* Analyze HTTP request about status code
+* Analyze the HTTP request for the status code.
 * Gain insights into Network traffic for your Varnish server.
-* Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
-* Gain insights into Client, Server Responses on Varnish Server. This helps you identify errors in Varnish Server.
+* Gain insights into the origin of traffic location by region. This can help you allocate computer resources to different regions according to their needs.
+* Gain insights into Client, Server Responses on Varnish Server. This helps you identify errors in the Varnish Server.
 
 <img src={useBaseUrl('img/integrations/web-servers/Varnish-Overview.png')} alt="Varnish dashboard" />
 
@@ -329,7 +323,7 @@ Use this dashboard to:
 
 ### Web Server Operations
 
-The **Varnish (Classic) - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations, and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show server error logs, error log levels, error responses by the server, and the top URLs responsible for 404 responses.
+The **Varnish (Classic) - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations, and data for clients with high error rates, server errors over time, and non-200 response code status codes. Dashboard panels also show server error logs, error log levels, error responses by the server, and the top URLs responsible for 404 responses.
 
 Use this dashboard to:
 * Determine failures in responding.
@@ -344,7 +338,7 @@ The **Varnish (Classic) - Traffic Timeline Analysis** dashboard provides a high-
 
 Use this dashboard to:
 * To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
-* Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
+* Gain insights into the origin of traffic location by region. This can help you allocate compute resources to different regions according to their needs.
 
 <img src={useBaseUrl('img/integrations/web-servers/Varnish-Traffic-Timeline-Analysis.png')} alt="Varnish dashboard" />
 
@@ -360,7 +354,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-The **Varnish (Classic) - Threat Intel** dashboard provides an at-a-glance view of threats to Varnish servers on your network. Dashboard panels display threats count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
+The **Varnish (Classic) - Threat Intel** dashboard provides an at-a-glance view of threats to Varnish servers on your network. Dashboard panels display threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
 * To gain insights and understand threats in incoming traffic and discover potential IOCs.
@@ -379,17 +373,16 @@ Use this dashboard to:
 
 ### Bans and Bans Lurker
 
-The **Varnish (Classic) - Bans and Bans Lurker** dashboard provides you the list of Bans filters applied to keep Varnish from serving stale content.
+The **Varnish (Classic) - Bans and Bans Lurker** dashboard provides you with the list of Bans filters applied to keep Varnish from serving stale content.
 
 Use this dashboard to:
 * Gain insights into bans and make sure that Varnish is serving the latest content.
 
 <img src={useBaseUrl('img/integrations/web-servers/Varnish-Bans-and-Bans-Lurker.png')} alt="Varnish dashboard" />
 
-
 ### Cache Performance
 
-The **Varnish (Classic) - Cache Performance** dashboard provides worker thread related metrics to tell you if your thread pools are healthy and functioning well.
+The **Varnish (Classic) - Cache Performance** dashboard provides worker thread-related metrics to tell you if your thread pools are healthy and functioning well.
 
 Use this dashboard to:
 * Gain insights into the performance and health of Varnish Cache.
@@ -409,13 +402,12 @@ Use this dashboard to:
 
 ### Threads  
 
-The **Varnish (Classic) - Threads** Dashboard helps you to keep track of threads metrics to watch your Varnish Cache.
+The **Varnish (Classic) - Threads** Dashboard helps you to keep track of thread metrics to watch your Varnish Cache.
 
 Use this dashboard to:
 * Manage and understand threads in the Varnish system.
 
 <img src={useBaseUrl('img/integrations/web-servers/Varnish-Threads.png')} alt="Varnish dashboard" />
-
 
 ## Create monitors for Varnish app
 
@@ -423,7 +415,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Varnish Alerts
+### Varnish alerts
 
 | Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:---|:---|:---|:---|:---|:---|
