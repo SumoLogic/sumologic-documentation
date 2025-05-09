@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="thumbnail icon" width="120"/>
 
-The IIS 7 App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. Additionally, you can monitor customer paths and interactions to learn how customers are using your product. The app consists of predefined searches and Dashboards, which provide visibility into your environment for real time or historical analysis.
+The IIS 7 App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. Additionally, you can monitor customer paths and interactions to learn how customers are using your product. The app consists of predefined searches and Dashboards, which provide visibility into your environment for real-time or historical analysis.
 
 
 ## Log types
@@ -54,7 +54,7 @@ For more information about the IIS 7 log (IIS 7.5 logs are used) format, see [ht
 
 The following query samples are taken from the IIS 7 App.
 
-The following query is taken from the the **Requests by App Over Time** panel on the **IIS 7 Traffic Insights - App Requests Dashboard**.
+The following query is taken from the **Requests by App Over Time** panel on the **IIS 7 Traffic Insights - App Requests Dashboard**.
 
 ```sql title="Requests by App Over Time"
 _sourceCategory=IIS*
@@ -104,7 +104,7 @@ This procedure explains how to enable logging from Microsoft Internet Informatio
 To prepare for logging IIS 7 events, perform the following two tasks.
 
 To enable logging on your IIS Server, do the following:
-1. Open the Sever Manager Console
+1. Open the Server Manager Console
 2. Select **Roles**
 3. Select **Web Server (IIS)**
 4. Select the host from which to collect IIS logs
@@ -152,8 +152,8 @@ To collect logs from IIS 7, use an Installed Collector and a Local File Source. 
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
     3. **File Path** (Required).`C:\inetpub\Logs\LogFiles\W3SVC1\*.log`
-    4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
-    5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
+    4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to begin collecting logs with a last modified date within the last seven days.
+    5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different hostname.
     6. **Source Category** (Required). For example, "IIS_prod". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced** section:
     7. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
@@ -161,7 +161,7 @@ To collect logs from IIS 7, use an Installed Collector and a Local File Source. 
     9. **Time Zone**: Select the option to **Use time zone from log file. If none is present use:** and set the timezone to **UTC**.
     10. **Timestamp Format**: Select the option to **Automatically detect the format**.
     11. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
-    12. **Enable Multiline Processing**. Disable the option to Detect messages spanning multiple lines. Because IIS logs are single line log files, disabling this option will improve performance of the collection and ensure that your messages are submitted correctly to Sumo Logic.
+    12. **Enable Multiline Processing**. Disable the option to detect messages spanning multiple lines. Because IIS logs are single-line log files, disabling this option will improve the performance of the collection and ensure that your messages are submitted correctly to Sumo Logic.
 4. Click **Save**.
 
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS log files to the Sumo Logic service.
@@ -230,6 +230,6 @@ The IIS 7 - Traffic Insights - Content and Client Platform Dashboard provides in
 
 ### Visitor Insights
 
-The **IIS 7 - Visitor Insights Dashboard** provides information on the geographic locations and number of users by client IP address, the number of visitors per country, locations and number of users by client IP address by US state, and the number of visitors per US state.
+The **IIS 7 - Visitor Insights Dashboard** provides information on the geographic locations and number of users by client IP address, the number of visitors per country, locations, and number of users by client IP address by US state, and the number of visitors per US state.
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-7-Visitor-Insights.png')} alt="Visitor Insights" />
