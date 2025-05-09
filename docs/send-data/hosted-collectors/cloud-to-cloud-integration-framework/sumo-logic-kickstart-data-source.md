@@ -24,7 +24,7 @@ Kickstart Data comes preloaded for new trial users and expires automatically aft
 | :--- | :--- |
 | Initial Data             | The source ingests data from 6 hours in the past and 6 hours into the future. |
 | Regular Ingestion        | Every 6 hours, the source ingests an additional 6 hours of future-dated data to ensure dashboards are always populated. |
-| Latency Spike Simulation | The data demonstrate a scenario showcasing latency spikes, aiding in performance analysis and debugging. |
+| Latency Spike Simulation | The data demonstrates a scenario showcasing latency spikes, aiding in performance analysis and debugging. |
 
 ## Setup
 
@@ -34,50 +34,51 @@ The Kickstart Data source is automatically included when you create a new organi
 
 ## Kickstart Data availability and cleanup
 
-Kickstart Data is preloaded in all new Sumo Logic trial accounts to help you explore the platform without needing to ingest your own data. This sample data powers dashboards, log searches, and alerts using simulated application logs.
+Kickstart Data is preloaded in all new Sumo Logic Trial accounts to help you explore the platform without needing to ingest your own data. This sample data powers dashboards, log searches, and alerts using simulated application logs.
 
 Kickstart Data is streamed continuously throughout your trial. As a result, the total volume of sample data will grow daily unless you manually stop the collector.
 
-note... In some cases, the Kickstart collector may remain active beyond the 7-day period originally expected. Be sure to manually delete the collector to fully stop data ingestion.
-
-### How to remove Kickstart Data
-
-You can wait for Kickstart Data to expire automatically at the end of your trial, or remove it manually at any time by following the steps below:
-
-#### Step 1: Delete the Kickstart Collector (recommended/≥≤)
-
-1. In Sumo Logic, go to **Manage Data > Collection**.
-2. Locate the collector named `sample_otel_astronomy_shop`.
-3. Delete the collector to stop Kickstart Data ingestion.
-
-#### Step 2: Reduce retention on Kickstart partition
-
-1. Go to the **Partitions** page (see [Edit the Retention Period](/docs/manage/partitions/manage-indexes-variable-retention/#edit-the-retention-period) for guidance).
-2. Locate the partition named `sample_otel_astronomy_shop`.
-3. Set the retention period to **1 day**.
-4. When prompted, click **Apply change now**.<br/><img src={useBaseUrl('img/send-data/kickstart-data-retention-partion-confirmation.png')} alt="kickstart-data-retention-partion-confirmation.png" style={{border: '1px solid gray'}} width="350"/>
-5. Wait at least 24 hours for the data to be aged out.
-
-#### Step 3 (Optional) Adjust the default partition
-
-In some cases, a small amount of Kickstart Data may end up in the default partition `sumologic_default`.
-
-:::caution
-Only proceed if you're certain you haven’t started ingesting your own logs, as this will remove **all** data in the default partition.
+:::note
+In some cases, the Kickstart collector may remain active beyond the 7-day period originally expected. To stop ingestion entirely, you must delete the collector manually.
 :::
 
-1. While still on the **Partitions** page, locate the partition named `sumologic_default`.
-2. Edit the retention period and set it to **1 day**.
-3. Click **Apply change now**.
-4. After 24 hours, restore your preferred retention setting by returning to the partition settings and increase the retention back to your preferred duration (e.g., 30 days) to preserve ongoing ingested data.
+### How to manage or remove Kickstart Data
 
-### Known issue: Retention change may not fully remove old data
+If you want to prevent Kickstart Data from continuing to ingest or appearing in your searches, you can choose from the following options.
 
-Some users have reported that Kickstart Data remains in their account even after retention is reduced and 24+ hours have passed. Engineering is actively investigating this behavior. If you're still seeing older data:
+#### Delete the Kickstart collector (recommended)
 
-- Double-check that the partition retention was applied and saved correctly.
-- Confirm that the collector has been deleted to stop new data from arriving.
-- Reach out to [Support](https://support.sumologic.com/support/s) if the issue persists.
+To stop new Kickstart Data from being ingested every 6 hours:
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu, select **Configuration**, and then under **Data Collection**, select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. Locate the collector named `sample_otel_astronomy_shop`.
+1. Delete the collector.
+
+This action prevents further sample data from entering your account.
+
+#### Filter Kickstart Data out of search results (optional)
+
+To focus only on your own data in search, use a filter to exclude Kickstart logs by metadata.
+
+Add a line like the following to your query:
+
+```sql
+_sourceCategory != "kickstart"
+```
+
+You can also filter by other metadata such as `_sourceName` or `application`, depending on your environment. Kickstart logs often include tags like `application="astronomy-shop"`.
+
+Use this method if you prefer not to delete the collector or change any partition settings.
+
+#### Adjusting retention settings (not recommended)
+
+While it is technically possible to remove Kickstart Data by [reducing the retention period](/docs/manage/partitions/manage-indexes-variable-retention/#edit-the-retention-period), we do not recommend this method for most users:
+
+* Lowering retention to 1 day may still take up to 3 days to fully remove data.
+* Changing retention on the `sumologic_default` partition can result in permanent loss of your own logs.
+* Creating new partitions and routing rules requires advanced knowledge of metadata and configuration.
+
+Instead, we recommend deleting the collector and using search filters to isolate your data.
 
 ## FAQ
 
