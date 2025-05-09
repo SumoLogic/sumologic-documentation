@@ -11,7 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The IIS 7 App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. Additionally, you can monitor customer paths and interactions to learn how customers are using your product. The app consists of predefined searches and Dashboards, which provide visibility into your environment for real-time or historical analysis.
 
-
 ## Log types
 
 IIS 7 Logs (IIS 7.5 logs are used) are generated as local files and written to this directory by default: `C:\inetpub\Logs\LogFiles\W3SVC1`. The App assumes the following format:
@@ -66,7 +65,6 @@ _sourceCategory=IIS*
 | transpose row _timeslice column app
 ```
 
-
 The following query is taken from the **OSes and Browsers** panel of the **IIS 7 Traffic Insights - Content and Client Platform Dashboard**.
 
 ```sql title="Operating Systems (OSes) and Browsers"
@@ -93,11 +91,9 @@ if (agent matches "Dolphin*","Dolphin", Browser) as Browser
 | transpose row os column browser as *
 ```
 
-
 ## Collecting logs for IIS 7
 
 This procedure explains how to enable logging from Microsoft Internet Information Services (IIS) on your Windows server and ingest the logs into Sumo Logic.
-
 
 ### Prerequisites
 
@@ -137,11 +133,9 @@ To confirm that the log files are being created, do the following:
 1. Open a command-line window and change directories to `C:\inetpub\Logs\LogFiles`. This is the same path you will enter when you configure the Source to collect these files.
 2. Under the `\W3SVC1` directory, you should see one or more files with a `.log` extension. If the file is present, you can collect it.
 
-
 ### Step 1: Configure a Collector
 
 Configure an [Installed Collector (Windows)](/docs/send-data/installed-collectors/windows). Sumo Logic recommends that you install the collector on the same system that hosts the logs.
-
 
 ### Step 2: Configure a Source
 
@@ -166,14 +160,13 @@ To collect logs from IIS 7, use an Installed Collector and a Local File Source. 
 
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS log files to the Sumo Logic service.
 
-
 ## Field Extraction Rules
 
 <br/>
 **FER to normalize the fields**. Field Extraction Rule named **AppObservabilityIIS7FER** is automatically created for IIS 7/8 Application Components.
 <br/>
 
-## Installing the IIS 7 App
+## Installing the IIS 7 app
 
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
@@ -193,7 +186,7 @@ As part of the app installation process, the following fields will be created by
 * `cs_uri_stem`
 * `cs_username`
 
-## Viewing IIS 7 Dashboards
+## Viewing IIS 7 dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
