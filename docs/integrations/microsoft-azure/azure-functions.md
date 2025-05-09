@@ -220,7 +220,7 @@ Use this dashboard to:
 
 ### Administrative Operations
 
-The **Azure SQL - Administrative Operations** dashboard provides details on read/write/delete specific changes, different operations used, the top 10 operations that caused the most errors, and users performing admin operations.
+The **Azure Functions - Administrative Operations** dashboard provides details on read/write/delete specific changes, different operations used, the top 10 operations that caused the most errors, and users performing admin operations.
 
 Use this dashboard to:
 * Identify top users performing administrative operations.
@@ -228,6 +228,35 @@ Use this dashboard to:
 * View recent read, write, and delete operations.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Administrative-Operations.png')} alt="Azure Functions Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Instances
+
+The **Azure Functions - Instances** dashboard provides information of all effect action details performed based on Azure Functions Instances.
+
+Use this dashboard to:
+* View recent resource usage and performance based on Instances.
+* View distribution and service usage of resources by Instance.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Functions/Azure-Functions-Instance.png')} alt="Azure Functions Instances dashboard" style={{border: '1px solid gray'}} width="800" />
+
+
+## Create monitors for Azure Functions app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Functions alerts
+These alerts are metric based and will work for all Functions.
+
+| Alert Name                                | Description                                                                                | Alert Condition | Recover Condition |
+|:------------------------------------------|:-------------------------------------------------------------------------------------------|:----------------|:------------------|
+| `Azure Functions - Average Response Time` | This alert gets triggered when there is high response time detected in any Azure Function. | Count < 1       | Count >= 1        |
+| `Azure Functions - Delete function app`   | This alert gets triggered when a function app is deleted.                                  | Count >= 1      | Count < 1         |
+| `Azure Functions - Health Check Status`   | This alert gets triggered when there is Health Check Status average drops less than 100.   | Count < 100     | Count >= 100      |
+| `Azure Functions - Http 4xx Error`        | This alert gets triggered when HTTP 4xx errors are high in the Azure Functions.            | Count > 25      | Count =< 25       |
+| `Azure Functions - Https Server Error`    | This alert gets triggered when HTTP 5xx errors are high in the Azure Functions.            | Count > 25      | Count =< 25       |
+
 
 ## Upgrade/Downgrade the Azure Functions app (Optional)
 
