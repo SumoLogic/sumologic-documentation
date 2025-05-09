@@ -12,7 +12,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-The insight **Summary** pane provides concise, actionable summaries of threat incidents based on triggered signals using AI. It consolidates key details to facilitate quick understanding and response by security teams.
+The insight **Summary** pane provides a concise, actionable summary of threat incidents based on triggered signals using AI. It consolidates key details to facilitate quick understanding and response by security teams.
+
+The summary is generated only when the insight is created. The summary is not regenerated if signals are added or removed on the insight.
 
 <img src={useBaseUrl('img/cse/insight-summary-pane.png')} alt="Insight summary" style={{border: '1px solid gray'}} width="300"/>
 
