@@ -24,7 +24,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **Label**. Your Resource Label.
-   * **API Key**. Your API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/intezer/intezer-4.png')} style={{border:'1px solid gray'}} alt="intezer" width="400"/>
+   * **API Key**. Your API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/intezer-configuration.png')} style={{border:'1px solid gray'}} alt="Intezer configuration" width="400"/>
 
 For information about Intezer, see the [Intezer website](https://intezer.com/resource-center/).
 

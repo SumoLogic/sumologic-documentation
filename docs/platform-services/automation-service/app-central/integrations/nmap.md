@@ -26,7 +26,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **URL**. Your URL default ('https://api.nmap.online'/).
-   * **Api Key**. Insert the API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-4.png')} style={{border:'1px solid gray'}} alt="nmap" width="400"/>
+   * **Api Key**. Insert the API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/nmap-configuration.png')} style={{border:'1px solid gray'}} alt="Nmap configuration" width="400"/>
 
 For information about Nmap, see [Nmap documentation](https://nmap.org/book/man.html).
 
