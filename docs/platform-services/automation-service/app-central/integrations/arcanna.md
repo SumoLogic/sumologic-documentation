@@ -31,7 +31,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The name for the resource.
    * **URL**. The base API URL for Arcanna.
-   * **Api Key**. Previously created Api Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/arcanna/arcanna-4.png')} style={{border:'1px solid gray'}} alt="arcanna-4" width="400"/>
+   * **Api Key**. Previously created Api Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/arcanna-configuration.png')} style={{border:'1px solid gray'}} alt="Arcanna configuration" width="400"/>
 
 For information about Arcanna, see [Arcanna documentation](https://docs.arcanna.ai/docs/user-guide/create-api-key).
 

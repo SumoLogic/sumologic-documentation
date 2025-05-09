@@ -1,6 +1,6 @@
 ---
 slug: /platform-services/automation-service/app-central/integrations
-title: Integrations in App Central
+title: Automation Integrations in App Central
 sidebar_position: 1
 description: ''
 ---

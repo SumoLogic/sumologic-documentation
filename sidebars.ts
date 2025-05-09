@@ -3165,7 +3165,7 @@ integrations: [
                 'platform-services/automation-service/configure-authentication-for-integrations',
                 {
                   type: 'category',
-                  label: 'Integrations in App Central',
+                  label: 'Automation Integrations in App Central',
                   collapsible: true,
                   collapsed: true,
                   link: {type: 'doc', id: 'platform-services/automation-service/app-central/integrations/index'},
