@@ -5,22 +5,29 @@ description: Learn how to customize a chart's type and visual display characteri
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can customize a chart on a dashboard panel in a variety of ways. You can even change the chart type to analyze the data in another format. This section shows you how to customize a chart or change the chart type entirely. 
+You can customize a chart on a dashboard panel in a variety of ways by modifying the available settings. You can even change the chart type to analyze the data in another format. This page shows you how to edit a panel and customize General, Display, Display Overrides, Axes, Legend, and JSON chart settings.
 
-## Customize a chart
+:::info
+Settings can change vary according to the chart type. 
+:::
 
-You can customize each chart by modifying the available settings. The settings you can change vary according to the chart type. This page shows you how to edit a panel and customize General, Display, Display Overrides, Axes, Legend, and JSON chart settings.
-
-## Select a chart to edit
-
-You begin the customization process by selecting the dashboard panel with the chart you wish to modify.
+Begin the customization process by selecting the dashboard panel with the chart you wish to modify.
 
 To edit a panel, do the following:
 
-1. On the chart panel, click the **Details** icon. 
+1. On the chart panel, click the kebab icon. 
 1. Select **Edit** from the dropdown list.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/edit-new-panel.png')} style={{border: '1px solid gray'}} alt="edit new panel" width="400"/>
+    <br/>The **Chart** page appears with the panel settings menu bar on the far right. The **Display** options are shown by default.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/edit-panel-options.png')} style={{border: '1px solid gray'}} alt="edit panel options" width="700"/>
 
-The **Chart** page appears with the chart settings menu bar on the far right. The **Display** options are shown by default.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/edit-panel-options.png')} style={{border: '1px solid gray'}} alt="edit panel options" width="700"/>
+## Modify the panel query
+
+You can modify the panel query based on the requirement to customize the chart. While editing the panel you can view the applied dashboard variables and also edit the values to see how they affect the panel query.
+
+Once you have adjusted the values as needed, make sure to re-run the panel query to apply the modified variables.
+
+:::info
+Any changes made to the variable values within the panel will only affect the current editing session and will not be saved to the dashboard once you finish editing the panel.
+:::
 
 ## Modify general settings
 
