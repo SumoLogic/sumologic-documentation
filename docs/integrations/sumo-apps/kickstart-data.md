@@ -11,13 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic Kickstart Data app offers real-time insights for monitoring telemetry data from our OpenTelemetry Demo Astronomy application. Featuring predefined searches and dashboards, this app enhances visibility into application performance and operational metrics.
 
-:::tip
-Learn more about [Kickstart Data](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
+:::info
+Kickstart Data comes preloaded for new trial users and expires automatically after 20 days or when you begin ingesting your own data—whichever comes first. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
 :::
 
 ## Application Data
 
-This app uses [Sumo Logic Kickstart Data source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source) to collect the data from OpenTelemetry Demo Astronomy Application.
+This app uses the [Sumo Logic Kickstart Data source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source) to collect the data from OpenTelemetry Demo Astronomy Application.
 
 ## Installing the Sumo Logic Kickstart Data app
 
@@ -94,3 +94,9 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+:::note For admins
+import KickstartRemove from '../../reuse/kickstart.md';
+
+<KickstartRemove/>
+:::
