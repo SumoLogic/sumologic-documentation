@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/silent-push-configuration.png')} style={{border:'1px solid gray'}} alt="Silent Push configuration" width="400"/>
+
 For information about Silent Push, see [Silent Push documentation](https://help.silentpush.com/).
 
 ## Change Log

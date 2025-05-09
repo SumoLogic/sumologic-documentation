@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/kaspersky-tip-configuration.png')} style={{border:'1px solid gray'}} alt="Kaspersky TIP configuration" width="400"/>
+
 For information about Kaspersky TIP, see [Kaspersky TIP documentation](https://kaspersky-tip.readthedocs.io/en/stable/).
 
 ## Change Log

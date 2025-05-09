@@ -61,22 +61,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+* **Email** is needed only when using global API token. Any valid email will work with custom token.
+* Select the **Token Type** (the default is set as **global**).
+* In the **API Key** field, insert the previously copied key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cloudflare/cloudflare-4.png')} style={{border:'1px solid gray'}} alt="cloudflare" width="400"/>
+
 For information about Cloudflare, see [Cloudflare documentation](https://developers.cloudflare.com/).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cloudflare/cloudflare-3.png')} style={{border:'1px solid gray'}} alt="cloudflare" width="100"/>
-1. Populate all the required fields (\*).
-1. Select the **Token Type** (the default is set as **global**).
-1. In the **API Key** field, insert the previously copied key.
-1. Click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cloudflare/cloudflare-4.png')} style={{border:'1px solid gray'}} alt="cloudflare" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click **TEST** that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cloudflare/cloudflare-5.png')} style={{border:'1px solid gray'}} alt="cloudflare" width="200"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cloudflare/cloudflare-7.png')} style={{border:'1px solid gray'}} alt="cloudflare" width="400"/>
-
-
-## Notes
-
-* Email is needed only when using global API token. Any valid email will work with custom token.
 
 ## Change Log
 

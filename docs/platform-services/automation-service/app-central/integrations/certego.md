@@ -24,19 +24,12 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Certego, see the [Certego website](https://www.certego.net/).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('img/platform-services/automation-service/app-central/integrations/certego/certego-3.png')} style={{border:'1px solid gray'}} alt="certego" width="600"/>
-1. Populate all the required fields (\*) and then click **Save**.
    * **Label**. The name for the resource.
    * **URL API**. Certego URL API. Default: `https://panoptikon.certego.net/`.
    * **Username**. Your Certego username.
    * **Password**. Your Certego password. <br/><img src={useBaseUrl('img/platform-services/automation-service/app-central/integrations/certego/certego-4.png')} style={{border:'1px solid gray'}} alt="certego" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('img/platform-services/automation-service/app-central/integrations/certego/certego-5.png')} style={{border:'1px solid gray'}} alt="certego" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('img/platform-services/automation-service/app-central/integrations/certego/certego-6.png')} style={{border:'1px solid gray'}} alt="certego" width="400"/> 
-1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('img/platform-services/automation-service/app-central/integrations/certego/certego-7.png')} style={{border:'1px solid gray'}} alt="certego" width="400"/>
+
+For information about Certego, see the [Certego website](https://www.certego.net/).
 
 ## Change Log
 

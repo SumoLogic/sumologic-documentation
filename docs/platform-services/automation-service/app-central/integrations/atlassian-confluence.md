@@ -29,6 +29,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian/atlassian-confluence-configuration.png')} style={{border:'1px solid gray'}} alt="Atlassian Confluence Logger configuration" width="400"/>
+
 For information about Atlassian Confluence, see [Confluence documentation](https://confluence.atlassian.com/alldoc/confluence-documentation-directory-12877996.html).
 
 ## Change Log

@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/maxmind-configuration.png')} style={{border:'1px solid gray'}} alt="MaxMind V2 configuration" width="400"/>
+
 For information about MaxMind, see [MaxMind documentation](https://dev.maxmind.com/).
 
 ## Change Log

@@ -32,6 +32,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mcafee-esm-configuration.png')} style={{border:'1px solid gray'}} alt="McAfee ESM configuration" width="400"/>
+
 For information about McAfee ESM, see [McAfee Enterprise Security Manager documentation](https://docs.trellix.com/bundle/enterprise-security-manager-11.5.x-product-guide/page/GUID-7E4DE7F5-C6BB-4C1B-8EDB-E92F53D144EF.html).
 
 ## Change Log

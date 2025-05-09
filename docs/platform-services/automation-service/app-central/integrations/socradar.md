@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/socradar-configuration.png')} style={{border:'1px solid gray'}} alt="SOCRadar configuration" width="400"/>
+
 For information about SOCRadar, see the [SOCRadar website](https://socradar.io/).
 
 ## Change Log

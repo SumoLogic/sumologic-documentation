@@ -39,6 +39,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/virustotal-v3-configuration.png')} style={{border:'1px solid gray'}} alt="VirusTotal v3 configuration" width="400"/>
+
 For information about VirusTotal v3, see [VirusTotal v3 documentation](https://docs.virustotal.com/reference/overview).
 
 ## Change Log

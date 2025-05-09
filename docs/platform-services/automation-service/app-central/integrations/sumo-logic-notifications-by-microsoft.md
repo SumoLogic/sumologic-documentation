@@ -116,7 +116,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * Specify the **Authentication Grant Type** and **Directory (Tenant) ID**.
    * For **Client ID** and **Client Secret**, provide the Microsoft Graph client ID and secret obtained as described in [Add a client secret](#add-a-client-secret).
    * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
-   * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
+   * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-notifications-by-microsoft-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Notifications by Microsoft configuration" width="400"/>
 
 ## Change Log
 * December 04, 2024 - First upload

@@ -34,18 +34,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Downdetector, see [Downdetector documentation](https://downdetectorapi.com/v2/docs/).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-5.png')} style={{border:'1px solid gray'}} alt="downdetector" width="700"/>
-1. Populate all the required fields (\*) and then click **Save**.
    * **URL**. Default value for API URL is 'https://downdetectorapi.com'.
    * **Username**. The client ID that you copied as username.
    * **Password**. The Client Secret that you copied as password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-6.png')} style={{border:'1px solid gray'}} alt="downdetector" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-7.png')} style={{border:'1px solid gray'}} alt="downdetector" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-8.png')} style={{border:'1px solid gray'}} alt="downdetector" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-9.png')} style={{border:'1px solid gray'}} alt="downdetector" width="400"/>
+
+For information about Downdetector, see [Downdetector documentation](https://downdetectorapi.com/v2/docs/).
   
 ## Change Log
 
