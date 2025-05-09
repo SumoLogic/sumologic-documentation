@@ -27,7 +27,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. Name of the resource.
    * **URL**. URL of Censys V2 (example URL: [https://search.censys.io](https://search.censys.io/api)).
    * **User ID**
-   * **User Secret** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/censys-v2/censys-v2-4.png')} style={{border:'1px solid gray'}} alt="censys" width="400"/>
+   * **User Secret** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/censys-v2-configuration.png')} style={{border:'1px solid gray'}} alt="Censys V2 configuration" width="400"/>
 
 For information about Censys V2, see [Censys documentation](https://docs.censys.com/docs).
 

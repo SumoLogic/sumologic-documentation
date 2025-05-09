@@ -38,7 +38,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **URL**. Default value for API URL is 'https://api.firehydrant.io'.
-   * **API Key**. The API Key you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-5.png')} style={{border:'1px solid gray'}} alt="firehydrant" width="400"/> 
+   * **API Key**. The API Key you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/firehydrant-configuration.png')} style={{border:'1px solid gray'}} alt="Firehydrant configuration" width="400"/>
 
 For information about FireHydrant, see [FireHydrant documentation](https://docs.firehydrant.com/).
   

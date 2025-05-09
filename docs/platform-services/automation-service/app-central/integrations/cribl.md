@@ -30,7 +30,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **URL API**
-   * **Token**. The obtain token from the API Reference.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cribl/cribl-4.png')} style={{border:'1px solid gray'}} alt="cribl" width="400"/>
+   * **Token**. The obtain token from the API Reference.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/cribl-configuration.png')} style={{border:'1px solid gray'}} alt="Cribl configuration" width="400"/>
 
 For information about Cribl, see [Cribl documentation](https://docs.cribl.io/).
 

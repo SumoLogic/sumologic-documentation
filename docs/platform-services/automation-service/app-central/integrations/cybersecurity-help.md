@@ -39,7 +39,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The desired name for the resource.
    * **URL**. The default Cybersecurity Help url is [https://www.cybersecurity-help.cz](https://www.cybersecurity-help.cz/).
-   * **Token**. Your Cybersecurity Help token you copied earlier from Cybersecurity Help.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cybersecurity-help/cybersecurity-help-5.png')} style={{border:'1px solid gray'}} alt="cybersecurity" width="400"/>
+   * **Token**. Your Cybersecurity Help token you copied earlier from Cybersecurity Help.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/cybersecurity-help-configuration.png')} style={{border:'1px solid gray'}} alt="Cybersecurity Help configuration" width="400"/>
 
 For information about Cybersecurity Help, see the [Cybersecurity Help website](https://www.cybersecurity-help.cz/).
 

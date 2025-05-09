@@ -26,7 +26,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **URL**. The Telegram URL `https://api.telegram.org/`.
-   * **API Token**. the API Token you copied earlier when creating your bot.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-4.png')} style={{border:'1px solid gray'}} alt="telegram" width="400"/>
+   * **API Token**. the API Token you copied earlier when creating your bot.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/telegram-v2-configuration.png')} style={{border:'1px solid gray'}} alt="Telegram V2 configuration" width="400"/>
 
 For information about Telegram, see the [Telegram website](https://telegram.org/).
 

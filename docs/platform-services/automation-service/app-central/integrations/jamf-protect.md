@@ -36,7 +36,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **API URL**. 'https://your-tenant.protect.jamfcloud.com'.
    * **Client ID**. Insert copied Client ID.
-   * **Password**. Insert copied Password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-5.png')} style={{border:'1px solid gray'}} alt="jamf-protect" width="400"/>
+   * **Password**. Insert copied Password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/jamf-protect-configuration.png')} style={{border:'1px solid gray'}} alt="Jamf Protect configuration" width="400"/>
 
 For information about Jamf Protect, see [Jamf Protect documentation](https://www.jamf.com/resources/product-documentation/jamf-protect-administrators-guide/).
 

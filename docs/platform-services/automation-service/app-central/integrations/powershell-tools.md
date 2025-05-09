@@ -186,7 +186,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
     * **Domain Name** (PowerShell Window Host). Specify Domain Name (Hostname) for Window Server e.g 192.168.1.10 or my-computer.csoar.local.
     * **Username**. Username of your window host.
     * **Password**. Password of your window host.
-    * **Hostname** (To Resolve in Docker). Hostname (To Resolve in Docker) e.g 10.0.0.24 test.local.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-52.png')} style={{border:'1px solid gray'}} alt="powershell-tools" width="400"/>
+    * **Hostname** (To Resolve in Docker). Hostname (To Resolve in Docker) e.g 10.0.0.24 test.local.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/powershell-tools-configuration.png')} style={{border:'1px solid gray'}} alt="Powershell Tools configuration" width="400"/>
 
 For information about PowerShell, see [PowerShell documentation](https://learn.microsoft.com/en-us/powershell/).
 

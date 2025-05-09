@@ -33,7 +33,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
      * **Label**. The name for the resource.
      * **URL API**. Abnormal Security URL API. Default: 'https://api.abnormalplatform.com'
-     * **Token**. Retrieved from Abnormal Security. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-4.png')} style={{border:'1px solid gray'}} alt="abnormal-security-4" width="400"/>
+     * **Token**. Retrieved from Abnormal Security. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/abnormal-security-configuration.png')} style={{border:'1px solid gray'}} alt="Abnormal Security configuration" width="400"/>
 
 For information about Abnormal Security, see [Abnormal Security documentation](https://abnormalsecurity.my.site.com/knowledgebase/s/).
 

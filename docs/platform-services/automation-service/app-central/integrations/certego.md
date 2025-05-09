@@ -27,7 +27,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The name for the resource.
    * **URL API**. Certego URL API. Default: `https://panoptikon.certego.net/`.
    * **Username**. Your Certego username.
-   * **Password**. Your Certego password. <br/><img src={useBaseUrl('img/platform-services/automation-service/app-central/integrations/certego/certego-4.png')} style={{border:'1px solid gray'}} alt="certego" width="400"/>
+   * **Password**. Your Certego password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/certego-configuration.png')} style={{border:'1px solid gray'}} alt="Certego configuration" width="400"/>
 
 For information about Certego, see the [Certego website](https://www.certego.net/).
 

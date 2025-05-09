@@ -33,7 +33,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The desired name for the resource.
    * **URL**. Your Acronis Data Center URL you copied earlier from Acronis. Default: 'https://cloud.acronis.com'/ .
    * **Client ID**. Your Acronis Client ID you copied earlier from Acronis.
-   * **Client Secret**. Your Acronis Secret you copied earlier from Acronis. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-9.png')} style={{border:'1px solid gray'}} alt="acronis-9" width="400"/>
+   * **Client Secret**. Your Acronis Secret you copied earlier from Acronis. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/acronis-configuration.png')} style={{border:'1px solid gray'}} alt="Acronis configuration" width="400"/>
 
 For information about Acronis, see [Acronis documentation](https://developer.acronis.com/doc/).
 

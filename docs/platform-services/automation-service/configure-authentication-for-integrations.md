@@ -1,15 +1,15 @@
 ---
 id: configure-authentication-for-integrations
-title: Configure Authentication for Integrations
-sidebar_label: Configure Authentication for Integrations
-description: Learn how to configure authentication for integrations.
+title: Configure Authentication for Automation Integrations
+sidebar_label: Configure Authentication for Automation Integrations
+description: Learn how to configure authentication for automation integrations.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides a quick reference to configure authentication for [integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) for the Automation Service and Cloud SOAR. Refer to the individual integrations articles for detailed information on setup, usage, and features. 
+This article provides a quick reference to configure authentication for [automation integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) for the Automation Service and Cloud SOAR. Refer to the individual integrations articles for detailed information on setup, usage, and features. 
 
-## How to configure authentication
+## How to configure authentication for automation integrations
 
 1. [Access App Central](/docs/platform-services/automation-service/automation-service-app-central/#view-app-central) and [install the integration](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central) from App Central.
 1. Select the installed integration in the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) page. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.
@@ -24,7 +24,7 @@ This article provides a quick reference to configure authentication for [integra
 1. When done, click **TEST** to test the configuration. 
 1. Click **SAVE** to save the configuration.
 
-## Authentication needed for integrations
+## Authentication needed for automation integrations
 
 ### Authentication for common integrations
 

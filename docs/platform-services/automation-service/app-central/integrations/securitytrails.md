@@ -23,7 +23,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
  
    * **Label**. The desired name for the resource.
    * **URL**. The SecurityTrails API URL. Default: `https://api.securitytrails.com`.
-   * **API Key**. Your SecurityTrails API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-3.png')} style={{border:'1px solid gray'}} alt="securitytrails" width="400"/>
+   * **API Key**. Your SecurityTrails API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/securitytrails-configuration.png')} style={{border:'1px solid gray'}} alt="SecurityTrails configuration" width="400"/>
 
 For information about SecurityTrails, see [SecurityTrails documentation](https://docs.securitytrails.com/docs/overview).
 

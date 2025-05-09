@@ -21,7 +21,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-   * **URL**. 'https://www.snort.org'. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/snort/snort-4.png')} style={{border:'1px solid gray'}} alt="snort" width="400"/>
+   * **URL**. 'https://www.snort.org'. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/snort-configuration.png')} style={{border:'1px solid gray'}} alt="Snort configuration" width="400"/>
 
 For information about Snort, see [Snort documentation](https://www.snort.org/documents).
 

@@ -30,7 +30,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Enterprise Manager IP**. Forescout eyeSight IP
    * **User**
-   * **Password** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/forescout-eyesight/forescout-eyesight-4.png')} style={{border:'1px solid gray'}} alt="forescout-eyesight" width="400"/>
+   * **Password** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/forescout-eyesight-configuration.png')} style={{border:'1px solid gray'}} alt="Forescout eyeSight configuration" width="400"/>
 
 For information about Forescout eyeSight, see [Forescout documentation](https://docs.forescout.com/).
 

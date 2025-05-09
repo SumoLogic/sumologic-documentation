@@ -36,7 +36,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 	   + for .eu2. use https://es-api.eu2.coralogix.com
 	   + for sg.com use https://es-api.coralogixsg.com
    * **Private Key**. Your Coralogix account private key.
-   * **Port**. Port usually 9443. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-query-logs/coralogix-query-logs-5.png')} style={{border:'1px solid gray'}} alt="coralogix-query-logs" width="400"/>
+   * **Port**. Port usually 9443. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/coralogix-query-logs-configuration.png')} style={{border:'1px solid gray'}} alt="Coralogix Query Logs configuration" width="400"/>
 
 For information about Coralogix - Query Logs, see [Coralogix documentation](https://coralogix.com/docs/).
 

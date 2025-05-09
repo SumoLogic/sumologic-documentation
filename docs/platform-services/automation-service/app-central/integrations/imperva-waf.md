@@ -24,7 +24,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The name for the resource.
    * **URL API**. 'https://my.imperva.com/'.
    * **API ID**
-   * **API Key** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imperva-waf/imperva-waf-4.png')} style={{border:'1px solid gray'}} alt="imperva-waf" width="400"/>
+   * **API Key** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/imperva-waf-configuration.png')} style={{border:'1px solid gray'}} alt="Imperva WAF configuration" width="400"/>
 
 For information about Imperva WAF, see [Imperva documentation](https://docs.imperva.com/).
 

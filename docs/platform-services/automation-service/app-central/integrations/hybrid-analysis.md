@@ -34,7 +34,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The name of the resource.
    * **Server URL**. 'https://www.hybrid-analysis.com'.
-   * **API Key**. Insert the previously copied key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-5.png')} style={{border:'1px solid gray'}} alt="hybrid-analysis" width="400"/>
+   * **API Key**. Insert the previously copied key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/hybrid-analysis-configuration.png')} style={{border:'1px solid gray'}} alt="Hybrid Analysis configuration" width="400"/>
 
 For information about Hybrid Analysis, see [Hybrid Analysis documentation](https://www.hybrid-analysis.com/docs/api/v2).
 

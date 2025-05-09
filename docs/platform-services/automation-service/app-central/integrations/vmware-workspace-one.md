@@ -40,7 +40,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **URL**. `https://techp-as.awmdm.com/API`.
    * **Username**. Workspace ONE Login Username.
    * **Password**. Workspace ONE Login Password.
-   * **API Key**. The previous generated API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-4.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+   * **API Key**. The previous generated API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmware-workspace-one-configuration.png')} style={{border:'1px solid gray'}} alt="VMware Workspace ONE configuration" width="400"/>
 
 For information about Omnissa Workspace ONE (formerly VMware Workspace ONE), see [Omnissa Workspace ONE documentation](https://docs.omnissa.com/category/Workspace_ONE).
 

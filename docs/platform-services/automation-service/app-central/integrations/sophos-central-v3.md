@@ -40,7 +40,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
     * **Label**. The name of the resource.
     * **URL**. `https://api.central.sophos.com`.
-    * Client ID and Client Secret taken earlier from Sophos.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-9.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="400"/>
+    * Client ID and Client Secret taken earlier from Sophos.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sophos-center-v3-configuration.png')} style={{border:'1px solid gray'}} alt="Sophos Central V3 configuration" width="400"/>
 
 For information about Sophos Central, see [Sophos Central documentation](https://docs.sophos.com/central/customer/help/en-us/index.html).
 

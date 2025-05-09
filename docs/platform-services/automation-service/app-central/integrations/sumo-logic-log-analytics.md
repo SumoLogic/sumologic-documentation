@@ -38,7 +38,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
     * **Label**. The name of the resource.
     * **Sumo Logic API URL**. URL to the API of the instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
     * **Access ID**. The access ID that you copied earlier.
-    * **Access Key**. The access key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-8.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="400"/>
+    * **Access Key**. The access key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-analytics-configuration.png')} style={{border:'1px solid gray'}} alt="Sailpoint configuration" width="400"/>
 
 ## Change Log
 

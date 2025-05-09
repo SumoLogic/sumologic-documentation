@@ -29,7 +29,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **URL**: jamf url.
    * **Username**
-   * **Password**<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf/jamf-4.png')} style={{border:'1px solid gray'}} alt="jamf" width="400"/>
+   * **Password**<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/jamf-configuration.png')} style={{border:'1px solid gray'}} alt="Jamf configuration" width="400"/>
 
 For information about Jamf, see [Jamf documentation](https://www.jamf.com/resources/product-documentation/jamf-pro-administrators-guide/).
 

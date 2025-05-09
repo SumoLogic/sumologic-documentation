@@ -29,7 +29,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The desired name for the resource.
    * **URL**. Your Wittra URL.
    * **API Key**. Your Wittra API Key you copied earlier from Wittra.
-   * **Organization ID**. Your Organization ID you copied earlier from Wittra.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-4.png')} style={{border:'1px solid gray'}} alt="wittra" width="400" />
+   * **Organization ID**. Your Organization ID you copied earlier from Wittra.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/wittra-configuration.png')} style={{border:'1px solid gray'}} alt="Wittra configuration" width="400"/>
 
 For information about Wittra, see [Wittra documentation](https://docs.wittra.io/#/).
 

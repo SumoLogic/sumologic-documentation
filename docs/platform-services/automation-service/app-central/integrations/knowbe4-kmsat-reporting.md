@@ -27,7 +27,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The desired name for the resource.
    * **URL**. Server that is closer to your geo location.
-   * **API Key**. Your KnowBe4 KMSAT API Key you copied earlier from KnowBe4 KMSAT.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-reporting/knowbe4-kmsat-reporting-4.png')} style={{border:'1px solid gray'}} alt="knowbe4-kmsat-reporting" width="400"/>
+   * **API Key**. Your KnowBe4 KMSAT API Key you copied earlier from KnowBe4 KMSAT.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/knowbe4-kmsat-reporting-configuration.png')} style={{border:'1px solid gray'}} alt="KnowBe4 KMSAT Reporting configuration" width="400"/>
 
 For information about KnowBe4 reporting, see [KnowBe4 reporting documentation](https://support.knowbe4.com/hc/en-us/articles/360007952894-Reporting-Guide).
 

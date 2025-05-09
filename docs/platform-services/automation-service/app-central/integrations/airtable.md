@@ -31,7 +31,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * URL: default value for API URL is 'https://api.airtable.com'
-   * Token : the Token you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-5.png')} style={{border:'1px solid gray'}} alt="airtable-5" width="400"/>
+   * Token : the Token you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/airtable-configuration.png')} style={{border:'1px solid gray'}} alt="Airtable configuration" width="400"/>
 
 For information about Airtable, see [Airtable documentation](https://support.airtable.com/docs).
 

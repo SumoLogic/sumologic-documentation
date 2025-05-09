@@ -32,7 +32,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The name for the resource.
    * **URL**. Phantombuster host URL.
-   * **API Key**. Your Phantombuster api key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-4.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
+   * **API Key**. Your Phantombuster api key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phantom-buster-configuration.png')} style={{border:'1px solid gray'}} alt="Phantombuster configuration" width="400"/>
 
 For information about Phantombuster, see [Phantombuster documentation](https://hub.phantombuster.com/docs/developer-quick-start).
 

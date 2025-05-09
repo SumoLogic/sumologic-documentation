@@ -63,7 +63,7 @@ For information about Zoom, see [Zoom documentation](https://developers.zoom.us/
    * **API URL**. The default API url is 'https://api.zoom.us/'.
    * **Client ID**. Your Client ID for your application listed on 'https://marketplace.zoom.us/user/build'.
    * **Client Secret**. Your Client Secret for your application listed on 'https://marketplace.zoom.us/user/build'.
-   * **Account ID**. Your Account ID for your application listed on 'https://marketplace.zoom.us/user/build'.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/zoom/zoom-10.png')} style={{border:'1px solid gray'}} alt="zoom" width="400" />
+   * **Account ID**. Your Account ID for your application listed on 'https://marketplace.zoom.us/user/build'.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/zoom-configuration.png')} style={{border:'1px solid gray'}} alt="Zoom configuration" width="400"/>
 
 
 ## Category

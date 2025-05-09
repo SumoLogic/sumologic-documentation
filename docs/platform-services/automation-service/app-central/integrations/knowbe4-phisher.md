@@ -30,7 +30,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
     * **Label**. The name for the resource.
     * **URL**. KnowBe4 PhishER host URL.
-    * **API Token**. Your KnowBe4 PhishER API key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-phisher/knowbe4-phisher-4.png')} style={{border:'1px solid gray'}} alt="knowbe4-phisher" width="400"/>
+    * **API Token**. Your KnowBe4 PhishER API key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/knowbe4-phisher-configuration.png')} style={{border:'1px solid gray'}} alt="KnowBe4 PhishER configuration" width="400"/>
 
 For information about KnowBe4 PhishER, see [KnowBe4 PhishER documentation](https://support.knowbe4.com/hc/en-us/articles/360010802673-PhishER-Product-Manual).
 

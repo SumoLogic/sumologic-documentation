@@ -30,7 +30,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **HTTP API URL**. The URL to send the requests.
    * **Username**. The username to use to access the URL.
    * **Password**. The password to use to access the URL.
-   * **Extra Headers**. Additional HTTP headers to send with the requests e.g. (key1:value1, key2:value2) Or JSON.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/http-tools/http-tools-4.png')} style={{border:'1px solid gray'}} alt="http-tools" width="400"/>
+   * **Extra Headers**. Additional HTTP headers to send with the requests e.g. (key1:value1, key2:value2) Or JSON.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/http-tools-configuration.png')} style={{border:'1px solid gray'}} alt="HTTP Tools configuration" width="400"/>
    
 ## Change Log
 

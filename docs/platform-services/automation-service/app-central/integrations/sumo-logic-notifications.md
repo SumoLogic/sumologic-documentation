@@ -34,8 +34,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
     * **Sumo Logic API URL**. URL to the API of the instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
     * **Access ID**. The access ID that you copied earlier.
     * **Access Key**. The access key that you copied earlier.
-    * **Slack Bot/User OAuth Token**. To set up the Slack app, refer to [Slack configuration](/docs/platform-services/automation-service/app-central/integrations/slack/) within App Central. You'll require a Slack Bot/User OAuth Token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-8.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
-
+    * **Slack Bot/User OAuth Token**. To set up the Slack app, refer to [Slack configuration](/docs/platform-services/automation-service/app-central/integrations/slack/) within App Central. You'll require a Slack Bot/User OAuth Token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-notifications-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Notifications configuration" width="400"/>
 ## Change Log
 
 * September 22, 2023 - First upload

@@ -39,7 +39,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * Libraesva Token. The generated token obtained from Generate Token action. (Follow the instructions below in [Generate Libraesva token](#generate-libraesva-token)).
    * Impersonate User. For some actions admin privileges are required.
    * Cloud SOAR URL. i.e : https://your-cloud-soar-host/incmansuite\_ng
-   * Cloud SOAR User JWT Token <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-4.png')} style={{border:'1px solid gray'}} alt="libraesva-email-security-v5-1" width="400"/>
+   * Cloud SOAR User JWT Token <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/libraesva-email-security-v5-configuration.png')} style={{border:'1px solid gray'}} alt="ipdata configuration" width="400"/>
 
 For information about Libraesva Email Security V5, see [Libraesva Email Security V5 documentation](https://docs.libraesva.com/doc/libraesva-esg-5/).
 

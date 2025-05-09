@@ -28,7 +28,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **URL API**. `https://api.dnsdb.info/`.
-   * **API Key**. Your API Key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/farsight-security-dnsdb/farsight-security-dnsdb-4.png')} style={{border:'1px solid gray'}} alt="farsight-security-dnsdb" width="400"/>
+   * **API Key**. Your API Key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/farsight-security-configuration.png')} style={{border:'1px solid gray'}} alt="Farsight Security configuration" width="400"/>
 
 For information about Farsight Security DNSDB, see [Farsight Security DNSDB documentation](https://www.domaintools.com/resources/user-guides/farsight-dnsdb-api-version-2-documentation/).
 

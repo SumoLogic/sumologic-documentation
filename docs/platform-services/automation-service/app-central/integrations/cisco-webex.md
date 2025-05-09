@@ -34,7 +34,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The resource name.
    * **URL**. The default url is 'https://webexapis.com/'.
-   * **Token**. Your Cisco Webex token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-webex/cisco-webex-4.png')} style={{border:'1px solid gray'}} alt="cisco-webex" width="400"/>
+   * **Token**. Your Cisco Webex token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/cisco-webex-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Webex configuration" width="400"/>
 
 For information about Cisco Webex, see [Webex documentation](https://developer.webex.com/docs).
 

@@ -61,7 +61,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
     * **API URL**. URL to the API of the VMware Carbon Black Cloud Platform instance `https://defense.conferdeploy.net`.
     * **Organization Key**. The Organization Key you copied earlier.
     * **API ID / Connector ID**. The API ID that you copied earlier.
-    * **API Secret Key**. The API Secret Key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-9.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="400"/>
+    * **API Secret Key**. The API Secret Key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmware-carbon-black-cloud-platform-configuration.png')} style={{border:'1px solid gray'}} alt="VMware Carbon Black Cloud Platform configuration" width="400"/>
 
 For information about Carbon Black Cloud, see [Carbon Black Cloud documentation](https://techdocs.broadcom.com/us/en/carbon-black/cloud.html).
 

@@ -32,7 +32,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The name of the resource.
    * **URL**. URL of BitSight API (default URL [https://api.bitsighttech.com](<https://www.alphamountain.ai/contact/>) is already provided).
-   * **API Token**. API token copied from BitSight platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-5.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-5" width="400"/>
+   * **API Token**. API token copied from BitSight platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/bitsight-configuration.png')} style={{border:'1px solid gray'}} alt="BitSight Security Performance Management configuration" width="400"/>
 
 For information about BitSight Security Performance Management, see [Security Performance Management documentation](https://help.bitsighttech.com/hc/en-us/categories/4410024719255-Security-Performance-Management#).
 

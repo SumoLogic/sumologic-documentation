@@ -389,7 +389,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
     * **Password**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
     * **Cloud SOAR URL**. Provide the SOAR URL in format 'https://your-cloud-soar-host/incmansuite\_ng' (this field is only required and use in Triggers).
     * **Cloud SOAR JWT Token**. Provide your SOAR JWT which you can copy from your profile section (this field is only required and use in Triggers).
-    * **Team Incident Internal Field Name**. To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-8.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
+    * **Team Incident Internal Field Name**. To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-teams-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Teams configuration" width="400"/>
 
 For information about Microsoft Teams, see [Microsoft Teams documentation](https://learn.microsoft.com/en-us/microsoftteams/).
 

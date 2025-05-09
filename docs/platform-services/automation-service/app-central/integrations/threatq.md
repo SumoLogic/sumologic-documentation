@@ -39,7 +39,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
- <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatq/threatq-3.png')} style={{border:'1px solid gray'}} alt="threatq" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/threatq-configuration.png')} style={{border:'1px solid gray'}} alt="ThreatQ configuration" width="400"/>
 
 For information about ThreatQ, see [ThreatQ documentation](https://docs.threatq.com/rest_api).
 

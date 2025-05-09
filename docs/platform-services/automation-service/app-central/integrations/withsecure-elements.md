@@ -36,7 +36,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
     * **Label**. The name for the resource.
     * **URL**. The base API URL for WithSecure Elements. Default: `https://api.connect.withsecure.com/`.
     * **Client ID**. Your previously retrieved Client ID.
-    * **Client Secret**. Your previously retrieved Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-8.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="400" />
+    * **Client Secret**. Your previously retrieved Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/withsecure-elements-configuration.png')} style={{border:'1px solid gray'}} alt="WithSecure Elements configuration" width="400"/>
 
 For information about WithSecure Elements, see [WithSecure Elements documentation](https://www.withsecure.com/userguides/).
 

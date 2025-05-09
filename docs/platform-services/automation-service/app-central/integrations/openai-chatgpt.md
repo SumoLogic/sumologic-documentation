@@ -43,13 +43,13 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The name of the resource.
    * **API URL**. `https://api.openai.com/`.
    * **API Key**. Your OpenAI API Key.
-   * Disclaimer: Kindly review and acknowledge the disclaimer provided in the integration resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-5.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
+   * Disclaimer: Kindly review and acknowledge the disclaimer provided in the integration resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/openai-chatgpt-configuration.png')} style={{border:'1px solid gray'}} alt="OpenAI ChatGPT configuration" width="400"/>
 
 For information about OpenAI, see [OpenAI documentation](https://platform.openai.com/docs/api-reference/introduction).
 
 ## Test Create Chat Completion action
 
-<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-9.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-9.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
 
 **Action Fields:**
 

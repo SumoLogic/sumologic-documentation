@@ -27,7 +27,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. Name of the resource.
    * **URL**. URL of Mattermost, for example `https://xxx.yyy.mattermost.com` is already provided.
    * **User Email**
-   * **Password**<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mattermost/mattermost-4.png')} style={{border:'1px solid gray'}} alt="mattermost" width="400"/>
+   * **Password**<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mattermost-configuration.png')} style={{border:'1px solid gray'}} alt="Mattermost configuration" width="400"/>
 
 For information about Mattermost, see [Mattermost documentation](https://docs.mattermost.com/index.html).
 

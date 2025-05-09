@@ -25,7 +25,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The desired name for the resource.
    * **URL**. Your PhishLabs EIR - IOC Feed API URL.
    * **Username**. Your PhishLabs EIR - IOC Feed Username.
-   * **Password**. Your PhishLabs EIR - IOC Feed API Password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-eir-ioc-feed/phishlabs-eir-ioc-feed-4.png')} style={{border:'1px solid gray'}} alt="phishlabs-eir-ioc-feed" width="400"/>
+   * **Password**. Your PhishLabs EIR - IOC Feed API Password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phishlabs-eir-ioc-configuration.png')} style={{border:'1px solid gray'}} alt="PhishLabs EIR IOC Feed configuration" width="400"/>
 
 For information about PhishLabs, see the [PhishLabs website](https://www.phishlabs.com/).
 

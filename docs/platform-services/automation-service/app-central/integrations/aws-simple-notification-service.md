@@ -30,7 +30,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. Name of the resource for AWS SNS.
    * **Access key ID**. Enter your AWS Access Key.
    * **Secret Access key**. Enter your AWS Secret Access Key. For information about access key ID and secret access key, see [AWS documentation](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).
-   * **AWS Region**. Enter the AWS region for the SNS topic.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-4.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-4" width="400"/>
+   * **AWS Region**. Enter the AWS region for the SNS topic.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-simple-notification-service-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Simple Notification Service configuration" width="400"/>
 
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 

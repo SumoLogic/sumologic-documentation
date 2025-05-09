@@ -63,7 +63,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The desired name for the resource.
    * **URL**. Your SpiderFoot URL.
-   * **API Key**. Your SpiderFoot API Key you copied earlier from SpiderFoot.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/spiderfoot-hx/spiderfoot-hx-5.png')} style={{border:'1px solid gray'}} alt="spiderfoot" width="400"/>
+   * **API Key**. Your SpiderFoot API Key you copied earlier from SpiderFoot.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/spiderfoot-configuration.png')} style={{border:'1px solid gray'}} alt="Spiderfoot configuration" width="400"/>
 
 For information about SpiderFoot, see [SpiderFoot documentation](https://github.com/smicallef/spiderfoot/blob/master/README.md).
 

@@ -49,7 +49,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The name of the resource.
    * **URL**. URL to Axonius instance, for example, 'https://your-axonius-instance.axonius.com'.
    * **API Key**. The API Key that you copied earlier.
-   * **API Secret**. The API Secret that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-8.png')} style={{border:'1px solid gray'}} alt="axonius-8" width="400"/>
+   * **API Secret**. The API Secret that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/axonius-configuration.png')} style={{border:'1px solid gray'}} alt="Axonius configuration" width="400"/>
 
 For information about Axonius, see [Axonius documentation](https://docs.axonius.com/).
 

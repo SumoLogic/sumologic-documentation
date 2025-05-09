@@ -1,6 +1,6 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Before you can use the integration, you must configure its authentication settings so that the product you're integrating with can communicate with Sumo Logic. For general guidance, see [Configure Authentication for Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+Before you can use this automation integration, you must configure its authentication settings so that the product you're integrating with can communicate with Sumo Logic. For general guidance, see [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
 
 <details>
 <summary>How to open the integration's configuration dialog</summary>

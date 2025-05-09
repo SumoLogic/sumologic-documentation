@@ -27,7 +27,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The desired name for the resource.
    * **URL**. WhoisXML API URL.
-   * **API Key**. Your WhoisXML API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-4.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+   * **API Key**. Your WhoisXML API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/whoisxml-configuration.png')} style={{border:'1px solid gray'}} alt="WhoisXML configuration" width="400"/>
 
 For information about WhoisXML, see [WhoisXML documentation](https://whois.whoisxmlapi.com/documentation/making-requests).
 

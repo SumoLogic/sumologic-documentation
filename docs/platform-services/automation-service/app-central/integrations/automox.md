@@ -39,7 +39,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **URL**. The Automox URL. Default: 'https://console.automox.com'
-   * **API Key**. The API Key you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-8.png')} style={{border:'1px solid gray'}} alt="automox-8" width="400"/>
+   * **API Key**. The API Key you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/automox-configuration.png')} style={{border:'1px solid gray'}} alt="Automox configuration" width="400"/>
 
 For information about Automox, see [Automox documentation](https://docs.automox.com/product/Home.htm).
 

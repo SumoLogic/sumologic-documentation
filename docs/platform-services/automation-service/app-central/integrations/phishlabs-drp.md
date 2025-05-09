@@ -30,7 +30,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The desired name for the resource.
    * **URL**. Your PhishLabs DRP URL.
    * **Username**. Your PhishLabs DRP username you copied earlier from PhishLabs DRP.
-   * **Password**. Your PhishLabs DRP password you copied earlier from PhishLabs DRP.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-drp/phishlabs-drp-4.png')} style={{border:'1px solid gray'}} alt="phishlabs-drp" width="400"/>
+   * **Password**. Your PhishLabs DRP password you copied earlier from PhishLabs DRP.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phishlabs-drp-configuration.png')} style={{border:'1px solid gray'}} alt="PhishLabs DRP configuration" width="400"/>
 
 For information about PhishLabs, see the [PhishLabs website](https://www.phishlabs.com/).
 
