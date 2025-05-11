@@ -96,7 +96,5 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 <AppUninstall/>
 
 :::note For admins
-import KickstartRemove from '../../reuse/kickstart.md';
-
-<KickstartRemove/>
+If you're done exploring Kickstart Data and want to purge it from your environment and Sumo Logic account, follow the steps under [How to manage or remove Kickstart Data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source#how-to-manage-or-remove-kickstart-data).
 :::

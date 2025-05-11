@@ -63,22 +63,17 @@ To focus only on your own data in search, use a filter to exclude Kickstart logs
 Add a line like the following to your query:
 
 ```sql
-_sourceCategory != "kickstart"
+_sourceCategory=custom_data/logs
+| where !(_sourceCategory=datagen_otel)
 ```
 
 You can also filter by other metadata such as `_sourceName` or `application`, depending on your environment. Kickstart logs often include tags like `application="astronomy-shop"`.
 
 Use this method if you prefer not to delete the collector or change any partition settings.
 
-#### Adjusting retention settings (not recommended)
+#### Need Kickstart Data fully removed?
 
-While it is technically possible to remove Kickstart Data by [reducing the retention period](/docs/manage/partitions/manage-indexes-variable-retention/#edit-the-retention-period), we do not recommend this method for most users:
-
-* Lowering retention to 1 day may still take up to 3 days to fully remove data.
-* Changing retention on the `sumologic_default` partition can result in permanent loss of your own logs.
-* Creating new partitions and routing rules requires advanced knowledge of metadata and configuration.
-
-Instead, we recommend deleting the collector and using search filters to isolate your data.
+If you need Kickstart Data to be fully removed from your account for compliance or other reasons, contact [Support](https://support.sumologic.com) or your Sumo Logic representative for assistance. Our team can guide you through the process to ensure data is handled correctly.
 
 ## FAQ
 
