@@ -22,7 +22,7 @@ To learn more about configuring monitoring for Azure functions, refer to the [Az
 
 * **Activity logs**. Provides insight into any subscription-level or management group level events that have occurred in Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 
-* **Azure Functions specific metrics**. These are metrics specific to Functions like execution count and execution units.
+* **Azure Functions specific metrics**. These are metrics specific to Functions like execution count and execution units. For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions-reference#azure-functions-specific-metrics).
 * **General App Service metrics**. Metrics which App Service platform implements. These metrics are available in the `Microsoft.Web/sites` namespace. For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/web-sites-monitor#understand-metrics).
 
 ### Sample queries
