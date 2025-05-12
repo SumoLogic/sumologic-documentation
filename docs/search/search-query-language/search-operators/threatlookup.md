@@ -136,7 +136,7 @@ _sourceCategory=weblogs
 | compose src_ip]
 ```
 
-<!-- Add this after sumo://threat/cs is replaced by threatlookup":
+<!-- Per DOCS-643, add this after sumo://threat/cs is replaced by threatlookup":
 ### Threatlookup queries in dashboards
 The `threatlookup` search operator is used for queries in some dashboards, including dashboards in the [Threat Intel Quick Analysis app](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/). These queries provide great examples of how to use the operator.
 To see `threatlookup` used in a query:
@@ -185,7 +185,7 @@ _index=sec_record*
 | formatDate(_threatlookup.valid_until, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'") as valid_until
 ```
 
-<!-- For threat intel. Add this back once we have support for the cat search operator:
+<!-- Per DOCS-35, add this back once we have support for the cat search operator:
 ## Run threatlookup with the cat search operator
 You can run the `threatlookup` search operator with the [`cat` search operator](/docs/search/search-query-language/search-operators/cat/) by using the `sumo://threat-intel` path. This lets you search the entire store of threat intelligence indicators, or just a portion. For example:
 ```
