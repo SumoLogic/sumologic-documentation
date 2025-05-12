@@ -133,7 +133,6 @@ To launch a search, metrics visualization, or live tail session, do the followin
    * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
    * [Explore](/docs/dashboards/explore-view). See an intuitive visual hierarchy of your environment.
    * [Dashboard](/docs/dashboards/). Analyze metrics and log data on the same dashboard, in a streamlined user experience.
-   * [Root Cause](/docs/observability/root-cause-explorer). Accelerate troubleshooting and isolate root causes for incidents in your apps and microservices.
 
 ### View recent dashboards and searches 
 

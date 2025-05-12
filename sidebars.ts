@@ -2005,7 +2005,6 @@ module.exports = {
         'observability/application-components',
         'observability/diagnose-issues',
         'observability/troubleshoot',
-        'observability/root-cause-explorer',
         {
           type: 'category',
           label: 'Reliability Management (SLO)',
