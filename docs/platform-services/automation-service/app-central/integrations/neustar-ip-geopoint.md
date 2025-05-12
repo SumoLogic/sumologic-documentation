@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/neustar-configuration.png')} style={{border:'1px solid gray'}} alt="Neustar configuration" width="400"/>
+
 For information about Neustar, see [Neustar documentation](https://www.home.neustar/).
 
 ## Change Log

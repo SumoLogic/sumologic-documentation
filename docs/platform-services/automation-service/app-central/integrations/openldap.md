@@ -25,6 +25,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/openldap-configuration.png')} style={{border:'1px solid gray'}} alt="OpenLDAP configuration" width="400"/>
+
 For information about OpenLDAP, see [OpenLDAP documentation](https://www.openldap.org/doc/).
 
 ## Change Log

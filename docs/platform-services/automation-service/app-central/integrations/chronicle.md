@@ -36,6 +36,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/chronicle/chronicle-configuration.png')} style={{border:'1px solid gray'}} alt="Chronicle configuration" width="400"/>
+
 For information about Google Security Operations (formerly Chronicle), see [Google Security Operations documentation](https://cloud.google.com/chronicle/docs).
 
 ## Change Log

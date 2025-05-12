@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/opentext-configuration.png')} style={{border:'1px solid gray'}} alt="OpenText EnCase Endpoint Security configuration" width="400"/>
+
 For information about OpenText EnCase Endpoint Security, see the [OpenText EnCase Endpoint Security website](https://www.opentext.com/products/encase-endpoint-security).
 
 ## Change Log

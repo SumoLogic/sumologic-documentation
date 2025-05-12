@@ -146,6 +146,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/dynatrace-configuration.png')} style={{border:'1px solid gray'}} alt="Dynatrace configuration" width="400"/>
+
 For information about Dynatrace, see [Dynatrace documentation](https://docs.dynatrace.com/docs).
 
 ## Change Log

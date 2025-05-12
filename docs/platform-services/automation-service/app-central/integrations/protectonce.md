@@ -27,7 +27,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
     * **Email**. Email you use to log in into the system.
     * **Password**. The password of your email.
     * **Application ID**. The id of the application.
-    * Additionally, if you need you can populate the query daemons.
+    * Additionally, if you need you can populate the query daemons.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/protectonce-configuration.png')} style={{border:'1px solid gray'}} alt="ProtectOnce configuration" width="400"/>
 
 For information about ProtectOnce, see the [ProtectOnce website](https://app.protectonce.com/).
 

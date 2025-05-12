@@ -25,6 +25,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/rsa-netwitness-configuration.png')} style={{border:'1px solid gray'}} alt="RSA Netwitness configuration" width="400"/>
+
 For information about Netwitness, see the [Netwitness website](https://www.netwitness.com/).
 
 ## Change Log

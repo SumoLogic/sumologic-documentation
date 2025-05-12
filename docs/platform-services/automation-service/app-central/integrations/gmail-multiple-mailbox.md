@@ -60,6 +60,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/gmail-multiple-mailbox-configuration.png')} style={{border:'1px solid gray'}} alt="Gmail Multiple Mailbox configuration" width="400"/>
+
 For information about the Gmail API, see [Gmail API documentation](https://developers.google.com/workspace/gmail/api/guides).
 
 ## Change Log
