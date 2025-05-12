@@ -18,7 +18,7 @@ This section describes the data sources for the AWS Lambda app and how these the
 
 The AWS Lambda app uses the following logs and metrics:
 * [AWS CloudWatch Logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-logs.html)
-* [CloudTrail Lambda Data Events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
+* [CloudTrail Lambda Data Events](https://docs.aws.amazon.com/lambda/latest/dg/logging-using-cloudtrail.html#cloudtrail-data-events)
 * [AWS Lambda metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html)
 
 ### AWS CloudWatch Logs
@@ -317,27 +317,33 @@ Use this dashboard to:
 
 ### Request Analysis
 
-**The AWS Lambda - Request Analysis** dashboard provides deeper insights into the invocations and performance of your AWS Lambda functions.
+**The AWS Lambda - Request Analysis** dashboard provides deeper insights into the invocations, operations, and performance of your AWS Lambda functions.
 
 Use this dashboard to:
 * Monitor the invocation of an AWS Lambda function against all other functions.
-* Identify and top callers, top caller types, and top source IPs.
+* Identify the top source IPs.
 * Monitor failed and successful requests by function name to quickly identify when failed requests are occurring.
 * Troubleshoot and investigate individual function requests.
-* Monitor cold start duration for lambda functions.
+* Monitor cold start duration and key operations for lambda functions.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Request-Analysis.png')} alt="AWS Lambda" />
 
 
 ### Usage Analysis
 
-**AWS Lambda - Usage Analysis** dashboard provides insights into function usage by AWS services, user agents, and IAM users.
+**AWS Lambda - Usage Analysis** dashboard offers insights into function usage, including invocations, calling AWS services, user agents, IAM users, and detailed information about function callers.
+
+:::note
+This dashboard provides analysis of AWS CloudTrail Data Events. By default, AWS CloudTrail does not log data events. To enable AWS CloudTrail data events, Refer [AWS Lambda Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#logging-data-events-console)
+:::
 
 Use this dashboard to:
 * Audit, monitor, and compare the functions used in your serverless infrastructure.
-* Monitor which AWS services and IAM users are calling individual  AWS Lambda functions.
-* Monitor which user agents are being used in  Lambda function calls.
+* Monitor which AWS services and IAM users are calling individual AWS Lambda functions.
+* Monitor which user agents are being used in Lambda function calls.
 * Compare data across time to identify any unusual trends.
+* Identify top callers, top caller types.
+* Monitor the invocation of an AWS Lambda function.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Usage-Analysis.png')} alt="AWS Lambda" />
 
@@ -351,19 +357,23 @@ Use this dashboard to:
 * Prioritize the resolution of errors and warnings across all Lambda functions.
 * Monitor the trend for the number of dead letter errors; when a Lambda is unable to write the failed event payload to your function's dead-letter queue.
 * Monitor the trend for the number of Lambda function throttling events; the number of Lambda function invocation attempts throttled due to invocation rates exceeding the configured concurrent limits.
-* Monitor the trend for Iterator Age applicable for your stream-based invocations only. This measures the age of the last record for each batch of records processed. Age is the difference between the time Lambda received the batch and the time the last record in the batch was written to the stream.
+* Monitor the trend for Iterator Age applicable for your stream-based invocations only. This measures the age of the last record for each batch of records processed. Age is the difference between the time Lambda received the batch, and the time the last record in the batch was written to the stream.
+* Monitor the trend for the number of async event drops, This indicates the number of asynchronous invocation requests that were dropped due to internal service errors or exceeding service limits.
+* Monitor the trend for recursive invocation drops, This measures the number of recursive invocation attempts that were dropped to prevent potential infinite loops and unbounded recursion within Lambda functions.
+* Monitor the trend for destination delivery failures, This tracks the number of times Lambda failed to deliver an asynchronous invocation result to a configured destination, such as an SNS topic, SQS queue, or EventBridge.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Error-Analysis.png')} alt="AWS Lambda" />
 
 
 ### Resource Usage
 
-**AWS Lambda - Resource Usage** dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, and compute usage.
+**AWS Lambda - Resource Usage** dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, claimed concurrency, and compute usage.
 
 Use this dashboard to:
 * Monitor the memory usage pattern of a Lambda function during its execution.
-* Monitor time taken by function for execution particularly to understand the unbilled duration.
+* Monitor time taken by function for execution, particularly to understand the unbilled duration.
 * Monitor the compute usage by function.
+* Monitor claimed account concurrency at the account level, segmented by region.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Resource-Usage.png')} alt="AWS Lambda" />
 
