@@ -22,7 +22,7 @@ Updated: Jul 18, 2023***
 
 Log in to **Lansweeper** with your email ID and password to start the [configuration process](https://docs.lansweeper.com/docs/api/authenticate#personal-application).
 
-<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-1.png')} style={{border:'1px solid gray'}} alt="lansweeper-1" width="300"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-1.png')} style={{border:'1px solid gray'}} alt="lansweeper-1" width="300"/>
 
 ## Configure Lansweeper in Automation Service and Cloud SOAR
 

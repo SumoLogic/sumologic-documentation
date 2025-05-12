@@ -31,6 +31,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/criminal-ip/criminal-ip-configuration.png')} style={{border:'1px solid gray'}} alt="Criminal IP configuration" width="400"/>
+
 For information about Criminal IP, see the [Criminal IP website](https://www.criminalip.io/).
 
 ## Change Log

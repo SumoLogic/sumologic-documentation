@@ -31,6 +31,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/libraesva-v4-configuration.png')} style={{border:'1px solid gray'}} alt="Libraesa V4 configuration" width="400"/>
+
 For information about Libraesva Email Security V4, see [Libraesva Email Security V4 documentation](https://docs.libraesva.com/doc/libraesva-esg-4/).
 
 ## Change Log

@@ -24,6 +24,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mcafee-atd-configuration.png')} style={{border:'1px solid gray'}} alt="McAfee ATD configuration" width="400"/>
+
 For information about McAfee ATD, see [McAfee Advanced Threat Defense documentation](https://docs.trellix.com/bundle/advanced-threat-defense-4.14.x-product-guide/page/GUID-21B474DF-8D65-4785-B99E-0B6B0EC82D36.html).
 
 ## Change Log

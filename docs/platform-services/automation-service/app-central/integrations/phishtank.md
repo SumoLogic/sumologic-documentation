@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phishtank-configuration.png')} style={{border:'1px solid gray'}} alt="PhishTank configuration" width="400"/>
+
 For information about PhishTank, see [PhishTank documentation](https://phishtank.org/developer_info.php).
 
 ## Change Log

@@ -24,6 +24,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ibm-mss-configuration.png')} style={{border:'1px solid gray'}} alt="GreyNoise configuration" width="400"/>
+
 For information about IBM MSS, see the [IBM Managed Security Service website](https://www.ibm.com/services/managed-security).
 
 ## Change Log

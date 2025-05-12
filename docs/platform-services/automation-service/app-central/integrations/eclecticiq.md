@@ -33,6 +33,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/eclecticiq-configuration.png')} style={{border:'1px solid gray'}} alt="EclecticIQ configuration" width="400"/>
+
 For information about EclecticIQ, see the [EclecticIQ website](https://www.eclecticiq.com/library).
 
 ## Change Log

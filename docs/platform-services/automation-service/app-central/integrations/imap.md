@@ -40,7 +40,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
     * **Access Key**. The access key that you copied earlier.
     * **Email Fetch Type (Daemon)**.
         * **Unseen/Unread**. Only fetch the mails which are currently UNSEEN or UNREAD.
-        * **Fetch From Latest CSOAR Mail**. Fetch all mails from the mail server which are not yet stored on Cloud SOAR. For the first time it will fetch UNSEEN mails for the second run/execution. Pre-Filtering options can be used to pre-filter emails in the mail server. Only pre-filtered emails are imported and analyzed by Cloud SOAR.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-5.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
+        * **Fetch From Latest CSOAR Mail**. Fetch all mails from the mail server which are not yet stored on Cloud SOAR. For the first time it will fetch UNSEEN mails for the second run/execution. Pre-Filtering options can be used to pre-filter emails in the mail server. Only pre-filtered emails are imported and analyzed by Cloud SOAR.
 
 **Email Fetch Type** and other filters below will be combined with the **AND** operator. Pre-filtered options:
             * **From**. You can filter email using From or you can use the full domain name. For example, `sumologic.com, sales@sumologic.com`. Based on this example, only the mails coming from Sumo Logic domain or `sales@sumologic.com` will be fetched. This field accepts multiple values separated by a comma. Multiple values will be combined with the OR operator.
@@ -60,8 +60,9 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
           Behaves similarly to the other pre-filter, but the email elements matching the provided conditions will not be fetched. 
 
-          As specified, all filters will be combined with **AND** operator.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-6.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
+          As specified, all filters will be combined with **AND** operator.
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/imap-configuration.png')} style={{border:'1px solid gray'}} alt="IMAP configuration" width="400"/>
 
 ## Additional configuration
 
