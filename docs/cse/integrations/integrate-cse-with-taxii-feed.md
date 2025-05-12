@@ -7,7 +7,7 @@ description: Learn how to integrate Cloud SIEM with a TAXII feed.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<!-- For threat intel. Once we support cat with the threatlookup search operator, REPLACE THE CONTENTS OF THIS ARTICLE WITH THE FOLLOWING:
+<!-- Per DOCS-35, once we support cat with the threatlookup search operator, REPLACE THE CONTENTS OF THIS ARTICLE WITH THE FOLLOWING:
 
 This topic has instructions for integrating Cloud SIEM with a TAXII threat intelligence feed. 
 
