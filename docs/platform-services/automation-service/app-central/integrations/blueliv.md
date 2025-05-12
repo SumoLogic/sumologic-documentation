@@ -33,7 +33,9 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Blueliv, see [Outpost](https://outpost24.com/blog/outpost24-acquires-threat-intelligence-solution-blueliv/).
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/blueliv/blueliv-configuration.png')} style={{border:'1px solid gray'}} alt="Blueliv configuration" width="400"/>
+
+For information about Blueliv, see [Outpost24](https://outpost24.com/blog/outpost24-acquires-threat-intelligence-solution-blueliv/).
 
 ## Change Log
 

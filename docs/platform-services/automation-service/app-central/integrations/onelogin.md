@@ -32,6 +32,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/onelogin-configuration.png')} style={{border:'1px solid gray'}} alt="OneLogin configuration" width="400"/>
+
 For information about OneLogin, see [OneLogin documentation](https://developers.onelogin.com/quickstart).
 
 ## Change Log

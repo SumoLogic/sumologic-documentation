@@ -27,6 +27,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fortisiem-configuration.png')} style={{border:'1px solid gray'}} alt="FortiSIEM configuration" width="400"/>
+
 For information about FortiSIEM, see [FortiSIEM documentation](https://docs.fortinet.com/product/fortisiem/7.4).
 
 ## Change Log
