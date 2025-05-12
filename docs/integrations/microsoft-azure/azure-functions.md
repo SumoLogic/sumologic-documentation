@@ -247,7 +247,8 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 <CreateMonitors/>
 
 ### Azure Functions alerts
-These alerts are metric based and will work for all Functions.
+
+These alerts are metrics-based and will work for all Functions.
 
 | Alert Name                                | Description                                                                                | Alert Condition | Recover Condition |
 |:------------------------------------------|:-------------------------------------------------------------------------------------------|:----------------|:------------------|
