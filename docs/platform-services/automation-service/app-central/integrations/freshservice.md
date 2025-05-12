@@ -41,7 +41,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-6.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/freshservice-configuration.png')} style={{border:'1px solid gray'}} alt="Freshservice configuration" width="400"/> 
 
 For information about Freshservice, see [Freshservice documentation](https://support.freshservice.com/support/solutions#agentguidepage).
 

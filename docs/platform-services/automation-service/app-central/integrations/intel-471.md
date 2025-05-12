@@ -32,7 +32,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **URL**. 'https://api.intel471.com/'.
    * **Email Address**. your email address.
-   * **API Key**. Insert the previously copied key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/intel-471/intel-471-4.png')} style={{border:'1px solid gray'}} alt="intel" width="400"/>
+   * **API Key**. Insert the previously copied key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/intel-471-configuration.png')} style={{border:'1px solid gray'}} alt="Intel 471 configuration" width="400"/>
 
 For information about Intel 471, see the [Intel 471 website](https://intel471.com/resources).
 
