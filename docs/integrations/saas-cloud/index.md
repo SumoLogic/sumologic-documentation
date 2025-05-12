@@ -347,6 +347,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/sumo-collection"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="80"/><h4>Sumo Collection</h4></a>
+  <p>Identify, manage, and monitor collectors and sources within Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/symantec-endpoint-security-service"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="140"/><h4>Symantec Endpoint Security Service</h4></a>
   <p>Gain insights into the log data and identify potential security threats.</p>
   </div>
@@ -355,6 +361,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/symantec-web-security-service"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="140"/><h4>Symantec Web Security Service</h4></a>
   <p>Gain insights into the web traffic and identify potential security threats.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/sysdig-secure"><img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="icon" width="120"/><h4>Sysdig Secure</h4></a>
+  <p>Gain insights into container security to protect Kubernetes and containerized environments.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -34,6 +34,16 @@ Zscaler Internet Access is a cloud native [security service edge (SSE)](https://
 
 Security gateway
 
+## Configure Zscaler in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/zscaler-configuration.png')} style={{border:'1px solid gray'}} alt="Zscaler configuration" width="400"/>
+
+For information about Zscaler, see [Zscaler documentation](https://help.zscaler.com/zia).
+
 ## Change Log
 
 * October 16, 2019 - First upload

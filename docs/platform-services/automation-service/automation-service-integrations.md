@@ -6,23 +6,18 @@ description: Learn how integrations are connectors to applications from industry
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import ActionsLimit from '../../reuse/actions-limit.md';
 
 Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
 
 Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service (see [View Integrations](#view-integrations)). Integrations that are available for installation appear in App Central (see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/)).
 
-:::info
-Before you can use actions from an integration resource, you must [configure the connection for the resource](/docs/platform-services/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) to work with the Automation Service.
-:::
-
-:::note
-<ActionsLimit/>
-:::
-
 ## Available integrations
 
 For a complete list of integrations that are available to install, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/).
+
+:::warning Important
+All integrations require authentication to communicate between the vendor and Sumo Logic. For directions, see [Configure Authentication for Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+:::
 
 ## View integrations
 

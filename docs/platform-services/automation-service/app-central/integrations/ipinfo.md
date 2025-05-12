@@ -30,6 +30,16 @@ Visit [IPinfo](https://ipinfo.io/developers/hosted-domains) for more info.
 
 This integration requires an IPinfo Access Token. You can [retrieve](https://ipinfo.io/account/token) the Access Token from your IPinfo account.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ipinfo/ipinfo-1.png')} style={{border:'1px solid gray'}} alt="ipinfo" width="800"/>
 
+## Configure IPinfo in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ipinfo-configuration.png')} style={{border:'1px solid gray'}} alt="IPinfo configuration" width="400"/>
+
+For information about IPinfo, see [IPinfo documentation](https://ipinfo.io/developers).
+
 ## Change Log
 
 * July 12, 2022 - First upload

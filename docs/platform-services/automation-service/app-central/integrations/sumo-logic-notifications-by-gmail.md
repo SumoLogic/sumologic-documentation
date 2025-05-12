@@ -69,19 +69,20 @@ Integration with Sumo Logic platform for monitors and Gmail notification.
 * [Gmail (python)](https://github.com/googleapis/google-auth-library-python/blob/master/LICENSE)
 * [Gmail (Google API)](https://github.com/googleapis/google-api-python-client/blob/master/LICENSE)
 
-## Sumo Logic Notifications By Gmail in Automation Service and Cloud SOAR
+## Configure Sumo Logic Notifications By Gmail in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation). 
-2. After the list of the integrations appears, search for the integration and click on the row. 
-3. The integration details will appear. Click the **+** button to add a new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-6.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="600"/>
-4. Populate all the required fields (\*) and then click **Save**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
     * **Label**. The name of the resource.
-    * **Sumo Logic API URL**. URL to the API of the instance ([learn more](/docs/api)).
+    * **Sumo Logic API URL**. URL to the API of the instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
     * **Access ID (Sumologic)**. The access ID that you copied earlier.
     * **Access Key (Sumologic)**. The access key that you copied earlier.
     * **Client ID (Gmail)**. To set up the Client ID, please refer to  step 6 .
     * **Client Secret Key (Gmail)**. To set up the Client Secret Key, please refer to step 6.
-    * **Credentials(Gmail)**. Retrieve Credentials from the "Confirm DO NOT USE IN PLAYBOOK" Action
+    * **Credentials(Gmail)**. Retrieve Credentials from the "Confirm DO NOT USE IN PLAYBOOK" Action<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+
 ## Change Log
 
 * Aug 13, 2024 - First upload

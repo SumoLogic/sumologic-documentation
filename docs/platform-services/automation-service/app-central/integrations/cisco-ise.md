@@ -30,7 +30,7 @@ Cisco ISE is configured in a way that you'll need to specify the resource togeth
    * URL:port The default port used is port 9060 that will need to be enabled.
    * ERS uses HTTPS port 9060 which is by default closed. Clients trying to access this port without enabling ERS first, will face a timeout from the server. 
 
-Therefore, the first requirement is to enable ERS from the ISE admin UI. 
+Therefore, the first requirement is to [enable ERS](https://www.cisco.com/c/en/us/support/docs/security/identity-services-engine/215476-configure-ise-guest-accounts-with-rest-a.html#anc6) from the ISE admin UI. 
 
 1. Go to **Administration > Settings > ERS Settings**. 
 1. Check the **Enable ERS for Read/Write** radio button as shown in the screenshot below.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-1.png')} style={{border:'1px solid gray'}} alt="cisco-ise" width="800"/>
@@ -43,6 +43,16 @@ Therefore, the first requirement is to enable ERS from the ISE admin UI.
       * System Admin
       * MnT Admin
    So you have to use both Admins Groups together to use all the actions inside CSOAR.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-3.png')} style={{border:'1px solid gray'}} alt="cisco-ise" width="800"/>
+
+## Configure Cisco ISE in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-ise-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco ISE configuration" width="400"/>
+
+For information about Cisco ISE, see [Cisco ISE documentation](https://www.cisco.com/c/en/us/td/docs/security/ise/end-user-documentation/Cisco_ISE_End_User_Documentation.html).
    
 ## Change Log
 

@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-key-vault.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/overview) is a managed service hosted in the cloud that acts as a central message hub for communication between an IoT application and its attached devices. This integration helps in comprehensive monitoring of your key vaults requests, performance, failures, and latency.
+[Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/) is a cloud service that helps you securely store and manage secrets, keys, and certificates. You can use it to protect data for cloud apps and services. This integration helps in comprehensive monitoring of your Key Vault operations, requests, failures, and latency.
 
 ## Log and metric types
 
@@ -25,7 +25,6 @@ For more information on supported metrics and their units, refer to the [Azure d
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-* Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
 
 You must explicitly enable diagnostic settings for each Key Vault you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 

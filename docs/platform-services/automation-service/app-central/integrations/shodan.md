@@ -16,6 +16,16 @@ Shodan is a search engine for Internet-connected devices. Web search engines, su
 * **Search** (*Enrichment*) - Search Shodan using the same query syntax as the website and use facets to get summary information for different properties.
 * **Search IP** (*Enrichment*) - Returns all services that have been found on the given host IP.
 
+## Configure Shodan in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/shodan-configuration.png')} style={{border:'1px solid gray'}} alt="Shodan configuration" width="400"/>
+
+For information about Shodan, see [Shodan documentation](https://developer.shodan.io/).
+
 ## Change Log
 
 * February 8, 2019 - First upload

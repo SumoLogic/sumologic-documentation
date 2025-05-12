@@ -23,17 +23,16 @@ Updated: Jul 06, 2023***
 
 To obtain your Token follow the steps described in the [Cribl Documentation](https://docs.cribl.io/stream/api-tutorials/#criblcloud-free-tier). 
 
-## Cribl in Automation Service and Cloud SOAR
+## Configure Cribl in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cribl/cribl-3.png')} style={{border:'1px solid gray'}} alt="cribl" width="700"/>
-1. Populate all the required fields (\*) and then click **Save**.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
    * **URL API**
    * **Token**. The obtain token from the API Reference.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cribl/cribl-4.png')} style={{border:'1px solid gray'}} alt="cribl" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cribl/cribl-5.png')} style={{border:'1px solid gray'}} alt="cribl" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cribl/cribl-6.png')} style={{border:'1px solid gray'}} alt="cribl" width="400"/>
-1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cribl/cribl-7.png')} style={{border:'1px solid gray'}} alt="cribl" width="400"/>
+
+For information about Cribl, see [Cribl documentation](https://docs.cribl.io/).
 
 ## Change Log
 

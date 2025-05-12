@@ -26,18 +26,17 @@ Cisco Webex is a solution for video conferencing, online meetings, screen share,
 * **Send Message** (*Notification*) - Send a message.
 * **Update Room** (*Containment*) - Update a room.
 
-## Cisco Webex in Automation Service and Cloud SOAR
+## Configure Cisco Webex in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-webex/cisco-webex-3.png')} style={{border:'1px solid gray'}} alt="cisco-webex" width="600"/>
-1. Populate all the required fields (\*).
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
    * **Label**. The resource name.
    * **URL**. The default url is 'https://webexapis.com/'.
-   * **Token**. Your Cisco Webex token.
-1. Click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-webex/cisco-webex-4.png')} style={{border:'1px solid gray'}} alt="cisco-webex" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-webex/cisco-webex-5.png')} style={{border:'1px solid gray'}} alt="cisco-webex" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-webex/cisco-webex-6.png')} style={{border:'1px solid gray'}} alt="cisco-webex" width="400"/>
+   * **Token**. Your Cisco Webex token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-webex/cisco-webex-4.png')} style={{border:'1px solid gray'}} alt="cisco-webex" width="400"/>
+
+For information about Cisco Webex, see [Webex documentation](https://developer.webex.com/docs).
 
 ## Category
 

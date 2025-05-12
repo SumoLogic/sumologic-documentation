@@ -8,18 +8,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Use the Sumo Logic Application Programming Interfaces (APIs) to interact with our platform and access resources and data programmatically from third-party scripts and apps.
 
-:::sumo Get Help
-To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](http://slack.sumologic.com/).
-:::
-
 <div className="box-wrapper" markdown="1">
-
-<div className="box smallbox card">
+<div className="box boxwidetop card">
   <div className="container">
   <a href="/docs/api/getting-started"><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="50"/><h4>Authentication and Endpoints</h4></a>
-  <p>API authentication and the Sumo Logic endpoints to use for your API client.</p>
+  <p>Get your API credentials and endpoint URL to start using the Sumo Logic APIs.</p>
   </div>
-</div>
+</div></div>
+
+<br/>
+
+<div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/api/access-keys"><img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/><h4>Access Keys</h4></a>
@@ -187,7 +186,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/role-management-v2"><img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="Thumbnail icon" width="50"/><h4>Roles v2 (Beta)</h4></a>  
+  <a href="/docs/api/role-management-v2"><img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="Thumbnail icon" width="50"/><h4>Roles v2</h4></a>  
   </div>
 </div>
 <div className="box smallbox card">
@@ -197,7 +196,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/scan-budget"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/><h4>Scan Budget</h4></a>
+  <a href="/docs/api/scan-budget"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Thumbnail icon" width="50"/><h4>Scan Budget</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -206,8 +205,18 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
   </div>
 </div>
 <div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/api/scim-user"><img src={useBaseUrl('img/icons/general/session.png')} alt="Thumbnail icon" width="50"/><h4>SCIM User</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
   <div className="container">  
   <a href="/docs/api/search-job"><img src={useBaseUrl('img/icons/search.png')} alt="Thumbnail icon" width="50"/><h4>Search Job</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/api/service-accounts"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="Thumbnail icon" width="50"/><h4>Service Accounts</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -256,3 +265,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
   </div>
 </div>
 </div>
+
+:::sumo Get Help
+To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](http://slack.sumologic.com/).
+:::

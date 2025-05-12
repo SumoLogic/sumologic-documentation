@@ -32,16 +32,16 @@ F5 AWAF protects apps with behavioural analytics, proactive bot defence, and app
 1. In the main page, click on the section System, License.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-2.png')} style={{border:'1px solid gray'}} alt="f5-awaf" width="250"/>
 1. In Summary check your Licence and in the tab Module Allocation locate the Advanced Firewall (AFM) and change Provisioning to Nominal. Then click Submit. After submission in Security Tab Network Firewall will appear.
 
-## F5 AWAF in Automation Service and Cloud SOAR
+## Configure F5 AWAF in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears search/look for the F5 AWAF integration and click on the row. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-5.png')} style={{border:'1px solid gray'}} alt="f5-awaf" width="700"/>
-1. The integration details will appear. Click on the **"+"** button to add new Resource.   
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+  
    * **Host**. IP where F5 AWAF is installed. 
    * **Username and Password** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-6.png')} style={{border:'1px solid gray'}} alt="f5-awaf" width="400"/>
-1. Click **Save**. Now you can use the resource.
-1. To make sure the resource is working, hover over the resource and then click edit (pencil icon) on the right of the row.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-7.png')} style={{border:'1px solid gray'}} alt="f5-awaf" width="400"/>
-1. Then click test saved settings. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-8.png')} style={{border:'1px solid gray'}} alt="f5-awaf" width="400"/>
+
+For information about F5 AWAF, see [F5 AWAF documentation](https://docs.cloud.f5.com/docs-v2/web-app-and-api-protection/how-to/app-security/application-firewall).
 
 ## Change Log
 

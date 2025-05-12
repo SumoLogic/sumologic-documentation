@@ -22,7 +22,7 @@ Amazon Athena is a cloud-based service that enables you to run SQL queries on da
 
 ## Amazon Athena configuration
 
-To get access key and secret access key, you will need to follow these steps:
+To [get access key and secret access key](https://docs.aws.amazon.com/athena/latest/ug/key-management.html), you will need to follow these steps:
 
 1. Sign in to your [AWS Management Console](https://console.aws.amazon.com/).
 1. Click on your account name in the top-right corner of the screen and select **My Security Credentials** from the drop-down menu.
@@ -30,19 +30,22 @@ To get access key and secret access key, you will need to follow these steps:
 1. Click on the **Create New Access Key** button.
 1. Your new access key and secret access key will be displayed on the screen. Make sure to copy and save them in a secure location as you will not be able to access them again.
 
-## Amazon Athena in Automation Service and Cloud SOAR
+## Configure Amazon Athena in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-3.png')} style={{border:'1px solid gray'}} alt="aws-athena-3" width="600"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
    * **Label**. The desired name for the resource.
    * **AWS Region**. Your AWS region. (Default: us-east-2).
    * **Access Key ID**. Your Access Key ID.
    * **Secret Access Key**. Your Secret Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-4.png')} style={{border:'1px solid gray'}} alt="aws-athena-4" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-5.png')} style={{border:'1px solid gray'}} alt="aws-athena-5" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-6.png')} style={{border:'1px solid gray'}} alt="aws-athena-6" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-7.png')} style={{border:'1px solid gray'}} alt="aws-athena-7" width="400"/>
+
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about Amazon Athena, see [Athena documentation](https://docs.aws.amazon.com/athena/).
 
 ## External Libraries
 

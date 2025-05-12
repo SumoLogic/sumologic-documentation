@@ -24,6 +24,16 @@ Utilize and manipulate ACLs and Interfaces with Cisco IOS XE.
 * **Enable Interface** (*Containment*) - Enable an interface.
 * **Disable Interface** (*Containment*) - Disable an interface.
 
+## Configure Cisco IOS XE in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-ios-xe-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco IOS XE configuration" width="400"/>
+
+For information about Cisco IOS XE, see [Cisco IOS XE documentation](https://www.cisco.com/c/en/us/td/docs/ios/ios_xe/preface/aboutios_xe.html).
+
 ## Change Log
 
 * September 17, 2019 - First upload

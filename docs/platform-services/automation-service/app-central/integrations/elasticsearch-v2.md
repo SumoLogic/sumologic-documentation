@@ -32,6 +32,16 @@ On the deployment overview page, copy down the **Cloud ID**.<br/><img src={useBa
 * [Elasticsearch-py](https://github.com/elastic/elasticsearch-py/blob/master/LICENSE)
 * [Elasticsearch-dsl-pu](https://github.com/elastic/elasticsearch-dsl-py/blob/master/LICENSE)
 
+## Configure Elasticsearch V2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/elasticsearch-v2-configuration.png')} style={{border:'1px solid gray'}} alt="Elasticsearch V2 configuration" width="400"/>
+
+For information about Elasticsearch, see [Elasticsearch documentation](https://www.elastic.co/docs/solutions/search).
+
 ## Change Log
 
 * November 17, 2020 - First upload

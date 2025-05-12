@@ -23,6 +23,16 @@ MITRE is a globally-accessible knowledge base of adversary tactics and technique
 
 * [pyattck](https://github.com/swimlane/pyattck/blob/master/LICENSE.md)
 
+## Configure Mitre Matrix in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mitre-matrix-configuration.png')} style={{border:'1px solid gray'}} alt="Mitre Matrix configuration" width="400"/>
+
+For information about Mitre Matrix, see [Mitre Matrix documentation](https://attack.mitre.org/).
+
 ## Change Log
 
 * February 3, 2021 - First upload

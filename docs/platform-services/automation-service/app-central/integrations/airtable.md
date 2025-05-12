@@ -24,17 +24,16 @@ Updated: Jul 18, 2023**
 1. Sign in to the Airtable platform with your email ID and password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-1.png')} style={{border:'1px solid gray'}} alt="airtable-1" width="800"/>
 1. Create your token, refer to the [Developer hub page](https://airtable.com/developers/web/guides/personal-access-tokens).
 
-## Airtable in Automation Service and Cloud SOAR
+## Configure Airtable in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-4.png')} style={{border:'1px solid gray'}} alt="airtable-4" width="800"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
    * URL: default value for API URL is 'https://api.airtable.com'
    * Token : the Token you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-5.png')} style={{border:'1px solid gray'}} alt="airtable-5" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-6.png')} style={{border:'1px solid gray'}} alt="airtable-6" width="400"/>
-1. Click **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-7.png')} style={{border:'1px solid gray'}} alt="airtable-7" width="400"/> 
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-8.png')} style={{border:'1px solid gray'}} alt="airtable-8" width="400"/>
+
+For information about Airtable, see [Airtable documentation](https://support.airtable.com/docs).
 
 ## Change Log
 

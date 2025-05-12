@@ -20,18 +20,18 @@ Wittra is hardware and software provider with patented solutions for business in
 * **Get Device** *(Enrichment)* - Retrieve data about a specific device.
 * **List Devices Telemetry** *(Enrichment)* - Retrieve telemetry for all devices in a project.
 
-## Wittra in Automation Service and Cloud SOAR
+## Configure Wittra in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-3.png')} style={{border:'1px solid gray'}} alt="wittra" width="600" />
-1. Populate all the required fields (\*) and then click **SAVE**.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
    * **Label**. The desired name for the resource.
    * **URL**. Your Wittra URL.
    * **API Key**. Your Wittra API Key you copied earlier from Wittra.
-   * **Organization ID**. Your Organization ID you copied earlier from Wittra.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-4.png')} style={{border:'1px solid gray'}} alt="wittra" width="400" /><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-5.png')} style={{border:'1px solid gray'}} alt="wittra" width="400" />
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-6.png')} style={{border:'1px solid gray'}} alt="wittra" width="400" />
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-7.png')} style={{border:'1px solid gray'}} alt="wittra" width="400" />
+   * **Organization ID**. Your Organization ID you copied earlier from Wittra.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-4.png')} style={{border:'1px solid gray'}} alt="wittra" width="400" />
+
+For information about Wittra, see [Wittra documentation](https://docs.wittra.io/#/).
 
 ## Change Log
 
