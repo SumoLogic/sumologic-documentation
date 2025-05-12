@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/javelin-configuration.png')} style={{border:'1px solid gray'}} alt="Javelin AD configuration" width="400"/>
+
 For information about Symantec Endpoint Threat Defense for Active Directory (formerly Javelin AD Protect), see [Endpoint Threat Defense for Active Directory documentation](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/threat-defense-for-active-directory/3-5/TDAD-archive.html).
 
 ## Change Log

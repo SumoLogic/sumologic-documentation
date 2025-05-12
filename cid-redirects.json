@@ -1632,6 +1632,7 @@
   "/cid/6024": "/docs/integrations/saas-cloud/vmware-workspace-one",
   "/cid/6025": "/docs/integrations/saas-cloud/cisco-vulnerability-management",
   "/cid/6026": "/docs/integrations/saas-cloud/sumo-collection",
+  "/cid/6027": "/docs/integrations/saas-cloud/sysdig-secure",
   "/cid/10112": "/docs/integrations/app-development/jfrog-xray",
   "/cid/10113": "/docs/observability/root-cause-explorer",
   "/cid/10116": "/docs/manage/fields",

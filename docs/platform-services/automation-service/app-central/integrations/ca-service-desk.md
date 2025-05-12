@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ca-service-desk/ca-service-desk-configuration.png')} style={{border:'1px solid gray'}} alt="CA Service Desk configuration" width="400"/>
+
 For information about CA Service Desk, see [CA Service Management documentation](https://techdocs.broadcom.com/us/en/ca-enterprise-software/business-management/ca-service-management/17-4.html).
 
 ## Change Log

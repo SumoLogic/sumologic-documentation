@@ -23,6 +23,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/symantec-secure-web-gateway-configuration.png')} style={{border:'1px solid gray'}} alt="Symantec Secure Web Gateway configuration" width="400"/>
+
 For information about Symantec Secure Web Gateway, see [Symantec Secure Web Gateway documentation](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help.html).
 
 ## Change Log

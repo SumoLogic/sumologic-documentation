@@ -34,6 +34,8 @@ import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-a
 
 <IntegrationsAuthAWS/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-security-hub-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Security Hub configuration" width="400"/>
+
 For information about AWS Security Hub, see [AWS Security Hub documentation](https://docs.aws.amazon.com/securityhub/).
 
 ## Change Log
