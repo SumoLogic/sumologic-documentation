@@ -28,7 +28,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **API URL**. 'https://api.dropboxapi.com'.
-   * **Token**. Insert copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dropbox/dropbox-4.png')} style={{border:'1px solid gray'}} alt="dropbox" width="400"/>
+   * **Token**. Insert copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/dropbox-configuration.png')} style={{border:'1px solid gray'}} alt="Dropbox configuration" width="400"/>
 
 For information about Dropbox, see [Dropbox documentation](https://www.dropbox.com/developers/documentation).
 

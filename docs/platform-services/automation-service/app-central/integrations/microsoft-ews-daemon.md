@@ -134,6 +134,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-ews-daemon-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft EWS Daemon configuration" width="400"/>
+
 For information about Microsoft EWS, see [Microsoft Exchange Web Services documentation](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-authenticate-an-ews-application-by-using-oauth).
 
 ## Category

@@ -2577,6 +2577,7 @@ integrations: [
           'integrations/saas-cloud/sumo-collection',
           'integrations/saas-cloud/symantec-endpoint-security-service',
           'integrations/saas-cloud/symantec-web-security-service',
+          'integrations/saas-cloud/sysdig-secure',
           'integrations/saas-cloud/tenable',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
@@ -3165,7 +3166,7 @@ integrations: [
                 'platform-services/automation-service/configure-authentication-for-integrations',
                 {
                   type: 'category',
-                  label: 'Integrations in App Central',
+                  label: 'Automation Integrations in App Central',
                   collapsible: true,
                   collapsed: true,
                   link: {type: 'doc', id: 'platform-services/automation-service/app-central/integrations/index'},

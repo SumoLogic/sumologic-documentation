@@ -386,8 +386,8 @@ The **Azure Kubernetes Service - Node Memory** dashboard provides insights about
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Node-Memory.png')} alt="Azure Kubernetes Service - Node Memory" />
 
-### Azure Key Vaults alerts
-These alerts are metric based and will work for all Key Vaults.
+### Azure Kubernetes Service alerts
+These alerts are metric based and will work for all Azure Kubernetes Managed Clusters.
 
 | Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|

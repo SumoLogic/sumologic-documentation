@@ -28,6 +28,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-asa-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco ASA configuration" width="400"/>
+
 For information about Cisco ASA, see [Cisco ASA documentation](https://www.cisco.com/c/en/us/td/docs/security/asa/roadmap/asaroadmap.html).
 
 ## Change Log

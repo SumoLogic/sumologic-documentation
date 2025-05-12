@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/imperva-securesphere-configuration.png')} style={{border:'1px solid gray'}} alt="Imperva SecureSphere configuration" width="400"/>
+
 For information about Imperva SecureSphere, see [Imperva documentation](https://docs.imperva.com/).
 
 ## Change Log

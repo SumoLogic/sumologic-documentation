@@ -29,7 +29,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The desired name for the resource.
    * **API URL**. By default, the url is: 'http://api.ipstack.com'.
-   * **API Key**. The API Access Key you copied earlier.
+   * **API Key**. The API Access Key you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ipstack-configuration.png')} style={{border:'1px solid gray'}} alt="IPstack configuration" width="400"/>
 
 For information about IPstack, see [IPstack documentation](https://ipstack.com/documentation).
 

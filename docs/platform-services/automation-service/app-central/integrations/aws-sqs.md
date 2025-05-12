@@ -34,6 +34,8 @@ import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-a
 
 <IntegrationsAuthAWS/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-sqs-configuration.png')} style={{border:'1px solid gray'}} alt="AWS SQS configuration" width="400"/>
+
 For information about AWS SQS, see [SQS documentation](https://docs.aws.amazon.com/sqs/).
 
 ## Change Log

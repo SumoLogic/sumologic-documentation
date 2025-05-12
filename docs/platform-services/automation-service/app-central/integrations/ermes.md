@@ -22,7 +22,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **Client ID**. Your client\_id.
-   * **Client Secret**. Your client\_secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ermes/ermes-4.png')} style={{border:'1px solid gray'}} alt="ermes" width="400"/>
+   * **Client Secret**. Your client\_secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ermes-configuration.png')} style={{border:'1px solid gray'}} alt="Ermes configuration" width="400"/>
 
 For information about Ermes, see the [Ermes website](https://www.ermes.company/).
 

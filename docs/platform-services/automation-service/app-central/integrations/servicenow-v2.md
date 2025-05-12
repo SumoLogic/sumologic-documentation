@@ -28,7 +28,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **URL**. ServiceNow URL in the format `https://company.service-now.com/`.
    * **Username**. Your ServiceNow username.
-   * **Password**. Your ServiceNow password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-4.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/>
+   * **Password**. Your ServiceNow password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/servicenow-v2-configuration.png')} style={{border:'1px solid gray'}} alt="ServiceNow V2 configuration" width="400"/>
 
 For information about ServiceNow, see [ServiceNow documentation](https://www.servicenow.com/docs/).
 

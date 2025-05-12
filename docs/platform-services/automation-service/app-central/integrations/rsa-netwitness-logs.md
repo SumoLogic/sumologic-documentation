@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/rsa-netwitness-logs-configuration.png')} style={{border:'1px solid gray'}} alt="RSA NetWitness Logs configuration" width="400"/>
+
 For information about NetWitness Logs, see the [NetWitness Logs website](https://www.netwitness.com/products/log-management-monitoring/).
 
 ## Change Log

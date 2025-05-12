@@ -28,6 +28,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/logrhythm-configuration.png')} style={{border:'1px solid gray'}} alt="LogRhythm configuration" width="400"/>
+
 For information about LogRhythm, see [LogRhythm documentation](https://docs.logrhythm.com/?l=en).
 
 ## Change Log
