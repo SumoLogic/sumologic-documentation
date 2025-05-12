@@ -42,7 +42,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-In the Client ID and Client Secret fields, insert the previously copied client ID and secret respectively. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sailpoint/sailpoint-4.png')} style={{border:'1px solid gray'}} alt="sailpoint" width="400"/>
+In the Client ID and Client Secret fields, insert the previously copied client ID and secret respectively. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sailpoint-configuration.png')} style={{border:'1px solid gray'}} alt="Sailpoint configuration" width="400"/>
 
 For information about SailPoint, see [SailPoint documentation](https://documentation.sailpoint.com/).
 

@@ -55,7 +55,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 	  * api-eu.securitycenter.microsoft.com
 	  * api-uk.securitycenter.microsoft.com
    * **Directory (Tenant ID)**. Your Tenant ID you copied earlier.
-   * **Application (Client ID)**. Your Client ID you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-10.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="400"/>
+   * **Application (Client ID)**. Your Client ID you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-defender-atp-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Defender ATP configuration" width="400"/>
 
 For information about Microsoft Defender for Endpoint (formerly Defender ATP), see [Microsoft Defender for Endpooint documentation](https://learn.microsoft.com/en-us/defender-endpoint/).
 
