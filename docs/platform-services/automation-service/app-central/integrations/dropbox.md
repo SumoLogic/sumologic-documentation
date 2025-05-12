@@ -27,18 +27,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Dropbox, see [Dropbox documentation](https://www.dropbox.com/developers/documentation).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dropbox/dropbox-3.png')} style={{border:'1px solid gray'}} alt="dropbox" width="400"/>
-1. Populate all the required fields (\*).
    * **API URL**. 'https://api.dropboxapi.com'.
-   * **Token**. Insert copied token.
-1. Click **Save**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dropbox/dropbox-4.png')} style={{border:'1px solid gray'}} alt="dropbox" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dropbox/dropbox-5.png')} style={{border:'1px solid gray'}} alt="dropbox" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dropbox/dropbox-6.png')} style={{border:'1px solid gray'}} alt="dropbox" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dropbox/dropbox-7.png')} style={{border:'1px solid gray'}} alt="dropbox" width="400"/>
+   * **Token**. Insert copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/dropbox-configuration.png')} style={{border:'1px solid gray'}} alt="Dropbox configuration" width="400"/>
+
+For information about Dropbox, see [Dropbox documentation](https://www.dropbox.com/developers/documentation).
 
 ## Change Log
 

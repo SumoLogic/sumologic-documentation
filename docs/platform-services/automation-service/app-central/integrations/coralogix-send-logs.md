@@ -30,12 +30,6 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Coralogix - Send Logs, see [Coralogix documentation](https://coralogix.com/docs/).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-send-logs/coralogix-send-logs-4.png')} style={{border:'1px solid gray'}} alt="coralogix-send-logs" width="600"/>
-1. Populate all the required fields (\*) and click Save.
     * **Server URL**. Choose between the following URLs depending on the top level domain of your Coralogix account (.com, .in, etc.):
         + for .com use https://api.coralogix.com
         + for .us use https://api.coralogix.us
@@ -44,10 +38,9 @@ For information about Coralogix - Send Logs, see [Coralogix documentation](https
         + for sg.com use https://api.app.coralogixsg.com
     * **Private Key**. Your Coralogix account private key.
     * **Application Name**. The Coralogix application name.
-    * **Subsystem Name**. The Coralogix subsystem name. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-send-logs/coralogix-send-logs-5.png')} style={{border:'1px solid gray'}} alt="coralogix-send-logs" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-send-logs/coralogix-send-logs-6.png')} style={{border:'1px solid gray'}} alt="coralogix-send-logs" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-send-logs/coralogix-send-logs-7.png')} style={{border:'1px solid gray'}} alt="coralogix-send-logs" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-send-logs/coralogix-send-logs-8.png')} style={{border:'1px solid gray'}} alt="coralogix-send-logs" width="400"/>
+    * **Subsystem Name**. The Coralogix subsystem name.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/coralogix-send-logs-configuration.png')} style={{border:'1px solid gray'}} alt="Coralogix Send Logs configuration" width="400"/>
+
+For information about Coralogix - Send Logs, see [Coralogix documentation](https://coralogix.com/docs/).
 
 ## Change Log
 

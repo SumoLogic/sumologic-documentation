@@ -36,17 +36,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Akenza, see [Akenza documentation](https://docs.akenza.io/akenza.io/get-started/reference/api-documentation).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/akenza/akenza-4.png')} style={{border:'1px solid gray'}} alt="akenza-4" width="800"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
    * **URL**. Default value for API URL is 'https://api.akenza.io'
-   * **Api Key**. The API Key you created earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/akenza/akenza-5.png')} style={{border:'1px solid gray'}} alt="akenza-5" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/akenza/akenza-6.png')} style={{border:'1px solid gray'}} alt="akenza-6" width="400"/>
-1. Click **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/akenza/akenza-7.png')} style={{border:'1px solid gray'}} alt="akenza-7" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/akenza/akenza-8.png')} style={{border:'1px solid gray'}} alt="akenza-8" width="400"/>
+   * **Api Key**. The API Key you created earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/Akenza-configuration.png')} style={{border:'1px solid gray'}} alt="Akenza configuration" width="400"/>
+
+For information about Akenza, see [Akenza documentation](https://docs.akenza.io/akenza.io/get-started/reference/api-documentation).
 
 ## Change Log
 

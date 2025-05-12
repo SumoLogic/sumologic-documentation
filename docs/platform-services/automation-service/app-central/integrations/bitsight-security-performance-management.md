@@ -30,19 +30,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about BitSight Security Performance Management, see [Security Performance Management documentation](https://help.bitsighttech.com/hc/en-us/categories/4410024719255-Security-Performance-Management#).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-4.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-4" width="600"/>
-1. Populate all the required fields (\*):
    * **Label**. The name of the resource.
    * **URL**. URL of BitSight API (default URL [https://api.bitsighttech.com](<https://www.alphamountain.ai/contact/>) is already provided).
-   * **API Token**. API token copied from BitSight platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-5.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-5" width="400"/>
-1. Then click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-6.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-6" width="300"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-7.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-7" width="800"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-8.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-8" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-10.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-10" width="400"/>
+   * **API Token**. API token copied from BitSight platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/bitsight-configuration.png')} style={{border:'1px solid gray'}} alt="BitSight Security Performance Management configuration" width="400"/>
+
+For information about BitSight Security Performance Management, see [Security Performance Management documentation](https://help.bitsighttech.com/hc/en-us/categories/4410024719255-Security-Performance-Management#).
 
 ## Change Log
 

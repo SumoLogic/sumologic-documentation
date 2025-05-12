@@ -365,6 +365,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/sysdig-secure"><img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="icon" width="120"/><h4>Sysdig Secure</h4></a>
+  <p>Gain insights into container security to protect Kubernetes and containerized environments.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/tenable"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="140"/><h4>Tenable</h4></a>
   <p>Gain comprehensive visibility and actionable insights into your organization's security posture.</p>
   </div>

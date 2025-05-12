@@ -31,17 +31,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Neurons for ITSM, see [Neurons or ITSM documentation](https://help.ivanti.com/ht/help/en_US/ISM/2025/admin-user/Content/Common/Getting%20Started.htm).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-3.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="500"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
    * **Tenant URL**. Enter your tenant url.
-   * **API Key**. The API Key you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-4.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-5.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="400"/>
-1. Click **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-6.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="400"/>
-1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-7.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="400"/>
+   * **API Key**. The API Key you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/neurons-itsm-configuration.png')} style={{border:'1px solid gray'}} alt="Neurons ITSM configuration" width="400"/>
+
+For information about Neurons for ITSM, see [Neurons or ITSM documentation](https://help.ivanti.com/ht/help/en_US/ISM/2025/admin-user/Content/Common/Getting%20Started.htm).
 
 ## Change Log
 

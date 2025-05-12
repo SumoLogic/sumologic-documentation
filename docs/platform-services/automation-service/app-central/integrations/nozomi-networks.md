@@ -26,6 +26,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/nozomi-configuration.png')} style={{border:'1px solid gray'}} alt="Nozomi Networks configuration" width="400"/>
+
 For information about Nozomi Networks, see [Nozomi Networks documentation](https://www.nozominetworks.com/guides).
 
 ## Change Log

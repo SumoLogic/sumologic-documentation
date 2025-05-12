@@ -41,6 +41,12 @@ AWS IAM (Identity and Access Management) is a web service that helps securely co
 
 ## Configure AWS IAM in Automation Service and Cloud SOAR
 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-iam-configuration.png')} style={{border:'1px solid gray'}} alt="AWS IAM configuration" width="400"/>
+
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
 <IntegrationsAuthAWS/>

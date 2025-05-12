@@ -41,6 +41,12 @@ Interact with AWS GuardDuty during incident investigation.
 
 ## Configure AWS GuardDuty in Automation Service and Cloud SOAR
 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-guardduty-configuration.png')} style={{border:'1px solid gray'}} alt="AWS GuardDuty configuration" width="400"/>
+
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
 <IntegrationsAuthAWS/>

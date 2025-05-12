@@ -25,17 +25,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Telegram, see the [Telegram website](https://telegram.org/).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-3.png')} style={{border:'1px solid gray'}} alt="telegram" width="700"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
    * **URL**. The Telegram URL `https://api.telegram.org/`.
-   * **API Token**. the API Token you copied earlier when creating your bot.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-4.png')} style={{border:'1px solid gray'}} alt="telegram" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-5.png')} style={{border:'1px solid gray'}} alt="telegram" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-6.png')} style={{border:'1px solid gray'}} alt="telegram" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-7.png')} style={{border:'1px solid gray'}} alt="telegram" width="400"/>
+   * **API Token**. the API Token you copied earlier when creating your bot.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/telegram-v2-configuration.png')} style={{border:'1px solid gray'}} alt="Telegram V2 configuration" width="400"/>
+
+For information about Telegram, see the [Telegram website](https://telegram.org/).
 
 :::note
 * The bot must be Administrator of the chat to send your message.
