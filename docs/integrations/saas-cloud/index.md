@@ -71,6 +71,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/bitwarden"><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="bitwarden-icon.png" width="100" /><h4>Bitwarden</h4></a>
+  <p>Gain insights into user activity, security events, and administrative changes within your Bitwarden environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/box"><img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="icon" width="80"/><h4>Box</h4></a>
   <p>Gain insight into user behavior patterns and resources.</p>
   </div>
