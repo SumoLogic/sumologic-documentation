@@ -24,6 +24,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mcafee-web-gateway-configuration.png')} style={{border:'1px solid gray'}} alt="McAfee Web Gateway configuration" width="400"/>
+
+For information about McAfee Web Gateway, see [McAfee Web Gateway documentation](https://docs.trellix.com/search?q=mcafee%20web%20gateway).
+
 ## Change Log
 
 * September 11, 2019 - First upload

@@ -80,6 +80,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian/atlassian-opsgenie-configuration.png')} style={{border:'1px solid gray'}} alt="Atlassian Opsgenie Logger configuration" width="400"/>
+
+For information about Atlassian OpsGenie, see [OpsGenie documentation](https://support.atlassian.com/opsgenie/resources/).
+
 ## Change Log
 
 * March 22, 2024 - First upload

@@ -32,7 +32,7 @@ SailPoint is an identity management solution that helps organizations manage emp
 
 1. Sign in in SailPoint using your username and password.
 2. Go to your account in the right up corner and select Preferences.
-3. In Preferences, select Personal Access Tokens.
+3. In Preferences, select [Personal Access Tokens](https://documentation.sailpoint.com/saas/help/common/api_keys.html#managing-personal-access-tokens).
 4. Answer the Question What's this token for? And click Create Token.
 5. Your secret and client ID will appear. Make sure you copy and save them.
 
@@ -42,15 +42,9 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sailpoint/sailpoint-3.png')} style={{border:'1px solid gray'}} alt="sailpoint" width="400"/>
-1. Populate all the required fields (\*).
-1. In the Client ID and Client Secret fields, insert the previously copied client ID and secret respectively.
-1. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sailpoint/sailpoint-4.png')} style={{border:'1px solid gray'}} alt="sailpoint" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sailpoint/sailpoint-5.png')} style={{border:'1px solid gray'}} alt="sailpoint" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sailpoint/sailpoint-6.png')} style={{border:'1px solid gray'}} alt="sailpoint" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sailpoint/sailpoint-7.png')} style={{border:'1px solid gray'}} alt="sailpoint" width="400"/>
+In the Client ID and Client Secret fields, insert the previously copied client ID and secret respectively. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sailpoint/sailpoint-4.png')} style={{border:'1px solid gray'}} alt="sailpoint" width="400"/>
+
+For information about SailPoint, see [SailPoint documentation](https://documentation.sailpoint.com/).
 
 ## Change Log
 

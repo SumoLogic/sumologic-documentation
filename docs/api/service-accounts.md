@@ -19,16 +19,16 @@ The Service Accounts API allows you to manage service accounts. [Service account
 
 | Deployment | Documentation URL                                                  |
 |:------------|:--------------------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag//serviceAccountManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag//serviceAccountManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag//serviceAccountManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag//serviceAccountManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag//serviceAccountManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag//serviceAccountManagement  |
-| JP         | https://api.jp.sumologic.com/docs/#tag//serviceAccountManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag//serviceAccountManagement  |
-| US1        | https://api.sumologic.com/docs/#tag//serviceAccountManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag//serviceAccountManagement |
+| AU         | https://api.au.sumologic.com/docs/#tag/serviceAccountManagement  |
+| CA         | https://api.ca.sumologic.com/docs/#tag/serviceAccountManagement  |
+| DE         | https://api.de.sumologic.com/docs/#tag/serviceAccountManagement  |
+| EU         | https://api.eu.sumologic.com/docs/#tag/serviceAccountManagement  |
+| FED        | https://api.fed.sumologic.com/docs/#tag/serviceAccountManagement |
+| IN         | https://api.in.sumologic.com/docs/#tag/serviceAccountManagement  |
+| JP         | https://api.jp.sumologic.com/docs/#tag/serviceAccountManagement  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/serviceAccountManagement  |
+| US1        | https://api.sumologic.com/docs/#tag/serviceAccountManagement     |
+| US2        | https://api.us2.sumologic.com/docs/#tag/serviceAccountManagement |
 
 ## Required role capabilities
 

@@ -26,6 +26,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/armorblox/armorblox-configuration.png')} style={{border:'1px solid gray'}} alt="Armorblox configuration" width="400"/>
+
+For information about Armorblox, see [Armorblox documentation](https://armorblox.stoplight.io/docs/public-apis/6e3583e334a34-armorblox-api).
+
 ## Change Log
 
 * September 4, 2023 (v1.0) - First upload

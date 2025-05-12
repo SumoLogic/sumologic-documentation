@@ -27,6 +27,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fidelis-configuration.png')} style={{border:'1px solid gray'}} alt="Fidelis Elevate configuration" width="400"/>
+
+For information about Fidelis Elevate Network, see [Fidelis documentation](https://fidelissecurity.com/resources/how-tos/).
+
 ## Change Log
 
 * June 3, 2019 - First upload

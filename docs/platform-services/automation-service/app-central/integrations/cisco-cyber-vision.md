@@ -31,6 +31,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-cyber-vision-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Cyber Vision configuration" width="400"/>
+
+For information about Cisco Cyber Vision, see [Cisco Cyber Vision documentation](https://www.cisco.com/c/en/us/support/security/cyber-vision/products-user-guide-list.html).
+
 ## Change Log
 
 * December 23, 2020 - First upload

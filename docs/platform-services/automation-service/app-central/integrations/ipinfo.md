@@ -36,6 +36,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ipinfo-configuration.png')} style={{border:'1px solid gray'}} alt="IPinfo configuration" width="400"/>
+
+For information about IPinfo, see [IPinfo documentation](https://ipinfo.io/developers).
+
 ## Change Log
 
 * July 12, 2022 - First upload

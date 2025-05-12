@@ -1096,6 +1096,19 @@ module.exports = {
             'manage/security/saml/view-saml-debug-information',
           ]
         },
+        {
+          type: 'category',
+          label: 'SCIM Provisioning',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/security/scim/index'},
+          items: [
+            'manage/security/scim/about-scim-provisioning',
+            'manage/security/scim/provision-with-microsoft-entra-id',
+            'manage/security/scim/provision-with-okta',
+            'manage/security/scim/provision-with-onelogin',
+          ]
+        },
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
@@ -1165,7 +1178,6 @@ module.exports = {
           items: [
             'alerts/scheduled-searches/schedule-search',
             'alerts/scheduled-searches/create-email-alert',
-            'alerts/scheduled-searches/create-real-time-alert',
             'alerts/scheduled-searches/edit-cancel',
             'alerts/scheduled-searches/save-to-index',
             'alerts/scheduled-searches/save-to-lookup',
@@ -2565,6 +2577,7 @@ integrations: [
           'integrations/saas-cloud/sumo-collection',
           'integrations/saas-cloud/symantec-endpoint-security-service',
           'integrations/saas-cloud/symantec-web-security-service',
+          'integrations/saas-cloud/sysdig-secure',
           'integrations/saas-cloud/tenable',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
@@ -3097,6 +3110,7 @@ integrations: [
         'api/saml-configuration',
         'api/scan-budget',
         'api/scheduled-views',
+        'api/scim-user',
         'api/search-job',
         'api/service-accounts',
         'api/service-allowlist',

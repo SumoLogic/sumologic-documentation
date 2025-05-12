@@ -37,6 +37,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fireeye-helix-configuration.png')} style={{border:'1px solid gray'}} alt="FireEye Helix configuration" width="400"/>
+
+For information about Trellix Helix (formerly FireEye Helix), see [Trellix Helix documentation](https://docs.trellix.com/bundle/fe-helix-enterprise-landing/page/UUID-004fd1b5-25d2-27d6-7578-ad0197c248aa.html).
+
 ## Change Log
 
 * January 23, 2020 - First upload

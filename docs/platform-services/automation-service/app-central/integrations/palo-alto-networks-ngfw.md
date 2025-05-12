@@ -27,11 +27,15 @@ Issue containment actions during incident investigation through Palo Alto NGFW.
 
 * [xmltodict](https://github.com/martinblech/xmltodict)
 
-## Configure Palo Alto Networks in Automation Service and Cloud SOAR
+## Configure Palo Alto Networks NGFW in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/palo-alto-networks-ngfw-configuration.png')} style={{border:'1px solid gray'}} alt="Palo Alto Networks NGFW configuration" width="400"/>
+
+For information about Palo Alto Networks NGFW, see [Palo Alto Networks Next-Generation Firewall documentation](https://docs.paloaltonetworks.com/ngfw).
 
 ## Change Log
 
