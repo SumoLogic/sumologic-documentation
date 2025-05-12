@@ -1569,6 +1569,7 @@
   "/cid/0100": "/docs/manage/security/installation-tokens",
   "/cid/0020": "/docs/manage/health-events",
   "/cid/0020001": "/docs/security/threat-intelligence/upload-formats",
+  "/cid/20002": "/docs/search/search-query-language/search-operators/threatlookup",
   "/cid/0020003": "/docs/security/threat-intelligence",
   "/cid/0523": "/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account",
   "/cid/0524": "/docs/manage/manage-subscription/cloud-flex-legacy-accounts",
