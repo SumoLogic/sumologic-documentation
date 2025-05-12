@@ -237,7 +237,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Runtime Scan
 
-The **Sysdig Secure - Runtime Scan** dashboard provides real-time insights into the security posture of assets and Kubernetes environments during runtime. It aggregates data from Sysdig Secure’s runtime scanning API, allowing users to monitor active threats and vulnerabilities in running assets. Key features highlight vulnerabilities, track security events such as privilege escalations, and identify compliance violations. By presenting detailed information on runtime risks and potential attack vectors, the dashboard helps security professionals effectively mitigate threats and maintain secure, compliant environments.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sysdig+Secure/Sysdig+Secure+-+Runtime+Scan.png' alt="Runtime-Scan" />
+The **Sysdig Secure - Runtime Scan** dashboard provides real-time insights into the security posture of assets and Kubernetes environments during runtime. It aggregates data from Sysdig Secure’s runtime scanning API, allowing you to monitor active threats and vulnerabilities in running assets. Key features highlight vulnerabilities, track security events such as privilege escalations, and identify compliance violations. By presenting detailed information on runtime risks and potential attack vectors, the dashboard helps security professionals effectively mitigate threats and maintain secure, compliant environments.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sysdig+Secure/Sysdig+Secure+-+Runtime+Scan.png' alt="Runtime-Scan" />
 
 ### Full Scan
 
