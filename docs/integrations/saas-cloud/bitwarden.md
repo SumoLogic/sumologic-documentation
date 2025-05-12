@@ -2,7 +2,7 @@
 id: bitwarden
 title: Bitwarden
 sidebar_label: Bitwarden
-description: The Bitwarden app for Sumo Logic provides insights into container security and and manage runtime protection.
+description: The Bitwarden app for Sumo Logic helps monitor and accelerate incident response in credential and secret management workflows.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for Bitwarden provides comprehensive visibility into user activity, security events, and administrative changes within your Bitwarden environment. It enables security analysts to track key actions such as user logins, failed two-step verifications, master password resets, and decryption key migrations. The app includes contextual data—like IP addresses, device types, and geolocation—to help detect suspicious behavior and potential threats. Visualizations such as event trends and geo heatmaps reveal usage patterns and regional access anomalies.
 A major strength of the app is its ability to highlight high-risk activities through event summaries and filtered views of critical actions, such as vault exports or SSO deactivation. It also includes preconfigured alerts to proactively detect security threats like data exfiltration, account compromise, or policy violations.
-Overall, the app supports continuous monitoring and accelerates incident response in credential and secret management workflows.
 
 :::info
 This app includes [built-in monitors](#bitwarden-monitors). For details on creating custom monitors, refer to [Create monitors for Bitwarden app](#create-monitors-for-bitwarden-app).
