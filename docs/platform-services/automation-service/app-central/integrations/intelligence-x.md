@@ -35,7 +35,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **Label**. The desired name for the resource.
-   * **API key**. Your Intelligence X API Key you copied earlier from Intelligence X.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-6.png')} style={{border:'1px solid gray'}} alt="intelligence-x" width="400"/>
+   * **API key**. Your Intelligence X API Key you copied earlier from Intelligence X.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/intelligence-x-configuration.png')} style={{border:'1px solid gray'}} alt="Intelligence X configuration" width="400"/>
 
 For information about Intelligence X, see the [Intelligence X website](https://intelx.io/).
 
