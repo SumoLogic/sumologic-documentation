@@ -334,7 +334,7 @@ Use this dashboard to:
 **AWS Lambda - Usage Analysis** dashboard offers insights into function usage, including invocations, calling AWS services, user agents, IAM users, and detailed information about function callers.
 
 :::note
-This dashboard provides analysis of AWS CloudTrail Data Events. By default, AWS CloudTrail does not log data events. To enable AWS CloudTrail data events, Refer [AWS Lambda Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#logging-data-events-console)
+This dashboard provides analysis of AWS CloudTrail Data Events. By default, AWS CloudTrail does not log data events. To enable AWS CloudTrail data events, Refer to [AWS Lambda Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#logging-data-events-console)
 :::
 
 Use this dashboard to:
