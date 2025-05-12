@@ -40,4 +40,4 @@ The following general rules apply to time ranges:
 
 For more information about entering time ranges, see [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions).
 
-Time range options can vary depending on the type of account your organization has. Sumo Logic Free accounts allow time ranges up to seven days.
+Time range options can vary depending on the type of account your organization has.

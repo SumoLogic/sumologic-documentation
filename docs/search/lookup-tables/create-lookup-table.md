@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This section has instructions for creating Lookup Tables using the Sumo Logic UI.
 
 For additional articles about lookup tables, see the following:
-* To update, export, and share Lookup Tables, see [Manage and Update Lookup Tables](manage-update-lookup-tables.md). 
+* To update, export, and share Lookup Tables, see [Manage and Update Lookup Tables](manage-update-lookup-tables.md).
 * To configure a Lookup Table for use in Cloud SIEM, see [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/).
 * To populate a Lookup Table with Cloud SIEM inventory data, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table/).
 
@@ -66,8 +66,7 @@ The number of Lookup Tables you can have depends on what type of Sumo Logic acco
 | Enterprise Ops (Cloud Flex Credits) | 100 |
 | Enterprise Security (Cloud Flex Credits) | 100 |
 | Enterprise Suite (Cloud Flex Credits) | 100 |
-| Trials | Depends on the account type being trialed |
-| Free | None | 
+| Trial | Depends on the account type being trialed |
 
 ## Create a Lookup Table
 
