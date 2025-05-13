@@ -2526,6 +2526,7 @@ integrations: [
           'integrations/saas-cloud/asana',
           'integrations/saas-cloud/atlassian',
           'integrations/saas-cloud/automox',
+          'integrations/saas-cloud/bitwarden',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
           'integrations/saas-cloud/cisco-amp',
