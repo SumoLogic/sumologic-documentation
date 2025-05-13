@@ -39,7 +39,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The desired name for the resource.
    * **AWS Region**. Your AWS region. (Default: us-east-2).
    * **Access Key ID**. Your Access Key ID.
-   * **Secret Access Key**. Your Secret Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-4.png')} style={{border:'1px solid gray'}} alt="aws-athena-4" width="400"/>
+   * **Secret Access Key**. Your Secret Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-athena-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Athena configuration" width="400"/>
 
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
