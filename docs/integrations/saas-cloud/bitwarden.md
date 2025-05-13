@@ -10,10 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="thumbnail icon" width="125"/>
 
 The Sumo Logic app for Bitwarden provides comprehensive visibility into user activity, security events, and administrative changes within your Bitwarden environment. It enables security analysts to track key actions such as user logins, failed two-step verifications, master password resets, and decryption key migrations. The app includes contextual data—like IP addresses, device types, and geolocation—to help detect suspicious behavior and potential threats. Visualizations such as event trends and geo heatmaps reveal usage patterns and regional access anomalies.
+
 A major strength of the app is its ability to highlight high-risk activities through event summaries and filtered views of critical actions, such as vault exports or SSO deactivation. It also includes preconfigured alerts to proactively detect security threats like data exfiltration, account compromise, or policy violations.
 
 :::info
-This app includes [built-in monitors](#bitwarden-monitors). For details on creating custom monitors, refer to [Create monitors for Bitwarden app](#create-monitors-for-bitwarden-app).
+This app includes [built-in monitors](#bitwarden-monitors). For details on creating custom monitors, refer to the [Create monitors for Bitwarden app](#create-monitors-for-bitwarden-app).
 :::
 
 ## Log types
@@ -95,7 +96,8 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 ### Security
 
 The **Bitwarden - Security** dashboard offers security analysts a centralized view of critical user and system activity. It highlights high-risk events such as SSO disablement, master password resets, failed two-step verifications, and decryption key migrations. Visual tools like event timelines and geographic heatmaps help quickly identify anomalies. The dashboard also enforces security policies by flagging access from embargoed regions and tracking users who disable two-step login.
-Detailed login and invitation data supports monitoring of access patterns and potential insider threats. Each panel is optimized for real-time investigation and auditing, enhancing the ability to detect and respond to suspicious behavior. The dashboard improves visibility, accountability, and response time for security incidents in Bitwarden.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Bitwarden/Bitwarden+-+Security.png' alt="Bitwarden-Security" />
+
+Detailed login and invitation data supports monitoring of access patterns and potential insider threats. Each panel is optimized for real-time investigation and auditing, enhancing the ability to detect and respond to suspicious behavior. The dashboard improves visibility, accountability, and response time for security incidents in the Bitwarden.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Bitwarden/Bitwarden+-+Security.png' alt="Bitwarden-Security" />
 
 ## Create monitors for Bitwarden app
 
