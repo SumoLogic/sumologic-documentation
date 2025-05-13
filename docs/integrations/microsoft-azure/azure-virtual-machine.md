@@ -24,53 +24,15 @@ For Azure Virtual Machine, you can collect the following logs and metrics:
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+* Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
 You must explicitly enable diagnostic settings for each Virtual Machine you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/VM/ActivityLogs`, `Azure/VM/Metrics`.
 
-### Configure field in field schema
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
-1. Search for the following fields:
-    - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-    - `location`. The region to which the resource name belongs to.
-    - `subscription_id`. ID associated with a subscription where the resource is present.
-    - `resource_group`. The resource group name where the Azure resource is present.
-    - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
-    - `resource_type`. Azure resource type (for example, storage accounts).
-    - `resource_name`. The name of the resource (for example, storage account name).
-    - `service_type`. Type of the service that can be accessed with a Azure resource.
-    - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances service is Subscriptions).
-1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
-
-### Configure metric rules
-
-* **Azure Observability Metadata Extraction VMName**
-
-  In case this rule already exists, then no need to create it again.
-
-```sql
-Rule Name: AzureObservabilityMetadataExtractionVMName
-```
-
-```sql title="Metric match expression"
-tenant_name=* namespace=Microsoft.Compute/virtualMachines resource_name=*
-```
-
-| Fields extracted | Metric rule    |
-|:--|:--|
-| `vmname`  | `$resource_name._1` |
-
 ### Configure metrics collection
 
-:::note
-The Sumo Logic metrics source for Azure is currently in Beta. To participate, contact your Sumo Logic account executive.
-:::
-
-1. To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
-1. In the Sumo Logic Azure Metrics source configuration, configure namespaces as `Microsoft.Compute/virtualMachines` and `Microsoft.Compute/virtualMachineScaleSets`.
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-machine-namespaces.png')} alt="Azure Virtual Machine Namespaces" style={{border: '1px solid gray'}} width="500" />
+To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
 ### Configure logs collection
 
@@ -98,6 +60,18 @@ Since this source contains logs from multiple regions, make sure that you do not
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region to which the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with a Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure Virtual Machine dashboards
 
