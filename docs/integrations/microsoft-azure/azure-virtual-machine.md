@@ -30,6 +30,23 @@ You must explicitly enable diagnostic settings for each Virtual Machine you want
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/VM/ActivityLogs`, `Azure/VM/Metrics`.
 
+### Configure metric rules
+
+* **Azure Observability Metadata Extraction VMName**
+
+  In case this rule already exists, then no need to create it again.
+
+```sql
+Rule Name: AzureObservabilityMetadataExtractionVMName
+```
+
+```sql title="Metric match expression"
+tenant_name=* namespace=Microsoft.Compute/virtualMachines resource_name=*
+```
+
+| Fields extracted | Metric rule    |
+|:--|:--|
+| `vmname`  | `$resource_name._1` |
 ### Configure metrics collection
 
 To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
