@@ -6,14 +6,16 @@ description: Learn the sources available for ingesting data to Cloud SIEM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide lists examples of sources you can use to ingest data into Cloud SIEM. For all available methods to ingest data into Cloud SIEM, see [Cloud SIEM ingestion best practices](/docs/cse/ingestion/cse-ingestion-best-practices).
+This section shows examples of sources you can use to ingest data into Cloud SIEM. There are many sources you can use to ingest data into Cloud SIEM. The ones described in this section are just a few.
 
-In this section, we'll introduce the following concepts:
+The most common method to ingest data into Cloud SIEM is to install a [Cloud-to-Cloud Integration Framework source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) and select the [**Forward to SIEM** option](/docs/c2c/info/#metadata-fields) in the configuration UI. For all available methods to ingest data into Cloud SIEM, see [Recommended methods to ingest data into Cloud SIEM](/docs/cse/ingestion/cse-ingestion-best-practices/#recommended-methods-to-ingest-data-into-cloud-siem).
+
+Articles in this section:
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/ingestion/ingestion-sources-for-cloud-siem/auth0"><img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="Auth0 thumbnail icon" width="50"/><h4>Auth0 system parser</h4></a>
+  <a href="/docs/cse/ingestion/ingestion-sources-for-cloud-siem/auth0"><img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="Auth0 thumbnail icon" width="50"/><h4>Auth0</h4></a>
   <p>Configure an HTTP source to ingest Auth0 log messages and send them to Cloud SIEM’s Auth0 system parser.</p>
   </div>
 </div>

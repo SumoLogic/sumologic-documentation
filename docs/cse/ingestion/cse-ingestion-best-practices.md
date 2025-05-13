@@ -7,7 +7,7 @@ description: Learn how to send log messages collected by a Sumo Logic Source or 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article has information about sending log messages collected by a Sumo Logic Source or Cloud-to-Cloud Connector on to Cloud SIEM to be transformed into records. 
+This article has information about sending log messages collected by a Sumo Logic Source or Cloud-to-Cloud Connector on to Cloud SIEM to be transformed into records.
 
 :::note
 [Cloud SIEM must be enabled in your Sumo Logic account](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/) in order to send data from Sumo Logic to Cloud SIEM. If it isn’t, contact your Sumo Logic Technical Account Engineer or Sales Engineer.
@@ -55,4 +55,5 @@ We recommend the following ingestion methods, starting with the most preferred:
 1. **Use a Sumo Logic Source and Cloud SIEM Ingest mapping**. This is the least recommended method, as you have to manually configure the mapping hints in an ingestion mapping. For more information, see [Configure a Sumo Logic Ingest Mapping](/docs/cse/ingestion/sumo-logic-ingest-mapping/).
 
 :::tip
-See the [Example Ingestion Sources for Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/) for specific collection and ingestion recommendations for many common products and services.
+See [Example Ingestion Sources for Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/) for specific collection and ingestion recommendations for many common products and services.
+:::

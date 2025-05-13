@@ -2828,7 +2828,6 @@ integrations: [
             'cse/ingestion/products-with-log-mappings',
             'cse/ingestion/view-mappers-for-product',
             'cse/ingestion/sumo-logic-ingest-mapping',
-            'cse/ingestion/example-ingestion-sources-for-cloud-siem',
             {
               type: 'category',
               label: 'Ingestion Sources for Cloud SIEM',
