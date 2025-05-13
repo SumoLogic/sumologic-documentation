@@ -471,7 +471,7 @@ See the following examples of trigger definition files:
 
 ##### Trigger hooks
 
-Specify `hook` values in a `Trigger` type [action definition file](/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/#action-definition-file-format) to run the trigger action in specific situations. For example, to automatically run a trigger action when a task is closed, specify the `closeTask` hook.
+Specify `hook` values in a `Trigger` type [action definition file](#action-definition-file-format) to run the trigger action in specific situations. For example, to automatically run a trigger action when a task is closed, specify the `closeTask` hook.
 
 The following sections describe the valid hook values to use in a trigger definition file.
 
