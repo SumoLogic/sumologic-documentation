@@ -141,6 +141,14 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Azure-Container-Instances-Policy-and-Recommendations.png')} alt="Azure Container Instances - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
+### Azure Container Instances alerts
+These alerts are metric based and will work for all Azure Container Instances.
+
+| Alert Name                                    | Alert Description and Conditions                                                                                                                  | Alert Condition    | Recover Condition    |
+|:----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------|:---------------------|
+| `Azure Container Instances - Memory Usage`    | This alert is triggered  when Memory Usage is greater than 20MB. Also warning alert is triggered  when Memory Usage is greater than 15MB          | data volume > 20MB | data volume <= 20MB  |
+| `Azure Container Instances - Cpu Usage`       | This alert is triggered  when Cpu Usage is greater than 100milicore. Also warning alert is triggered  when Cpu Usage is greater than 90milicore   | milicores > 100    | milicores <= 100     |
+
 ## Troubleshooting
 
 ### HTTP Logs and Metrics Source used by Azure Functions
