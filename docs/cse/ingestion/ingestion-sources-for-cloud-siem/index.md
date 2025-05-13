@@ -1,12 +1,12 @@
 ---
 slug: /cse/ingestion/ingestion-sources-for-cloud-siem
-title: Ingestion Sources for Cloud SIEM
+title: Example Ingestion Sources for Cloud SIEM
 description: Learn the sources available for ingesting data to Cloud SIEM.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide lists the sources available for ingesting data into Cloud SIEM. You can configure a variety of sources on [Installed Collectors](/docs/send-data/installed-collectors).
+This guide lists examples of sources you can use to ingest data into Cloud SIEM. For all available methods to ingest data into Cloud SIEM, see [Cloud SIEM ingestion best practices](/docs/cse/ingestion/cse-ingestion-best-practices).
 
 In this section, we'll introduce the following concepts:
 

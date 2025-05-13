@@ -11,8 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Auth0 is a cloud-based, extensible identity provider for applications. The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
 
-For more information, see [Export Logs to Sumo Logic](https://auth0.com/docs/extensions/sumologic).
-
+For more information, see [Use Auth0 App for Sumo Logic](https://auth0.com/docs/customize/log-streams/sumo-logic-dashboard) in Auth0 documentation.
 
 ## Collecting logs for Auth0
 This procedure explains how to collect error logs from Auth0.
@@ -30,35 +29,34 @@ Sumo Logic collects the following log types:
 * Rate limiting events
 * Other operational events and errors
 
-For more information about Auth0 logs, see [https://auth0.com/docs/api/managemen.../Logs/get_logs](https://auth0.com/docs/api/management/v2#!/Logs/get_logs)
+For more information about Auth0 logs, see [Search Log Events](https://auth0.com/docs/api/management/v2#!/Logs/get_logs) in Auth0 documentation.
 
 
 ### Prerequisites
 
-Use the Auth0 Management Portal to configure the extension. For more information, see [https://auth0.com/docs/extensions/sumologic](https://auth0.com/docs/extensions/sumologic).
+Use the Auth0 Management Portal to configure the extension. For more information, see [Sumo Logic](https://marketplace.auth0.com/integrations/sumo-logic-log-streaming) in Auth0 documentation.
 
+### Configure a collector
 
-### Configure a Collector
-
-Use the in-product [setup wizard](/docs/send-data/setup-wizard) in the Sumo Logic UI to configure a **Custom App**.
-
+Configure a hosted collector. Follow the directions in [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector/).
 
 ### Configure a Source
 
-Source type is [HTTP](/docs/send-data/hosted-collectors/http-source/logs-metrics).
+Configure a source on the collector. Follow the directions in [Configure an HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 
-* **Name**: Required
-* **Category**:
-* **Timestamp Parsing Settings**:
-  * **Enable Timestamp Parsing**: True
-  * **Timezone**: Logs are sent in UTC by default and can be automatically detected
-  * **Timestamp Format**: Select **Specify a format** and use the following, \
-Format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z' \
-`Timestamp locator: `"date":"(.*?)\","`
-* **Multi-line Parsing Settings**:
-  * **Detect Messages Spanning Multiple Lines**: True
-  * **Multi Line Boundary**: Infer Boundaries
-
+Fill out the following:
+* **Name**
+* **Source Category**
+* Select **Forward to SIEM** if you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM. If you select **Forward to SIEM**, also click the **+Add Field** link and add a field whose name is `_parser` with value */Parsers/System/Auth0/Auth0*.
+* **Timestamp Parsing**
+  * Select **Extract timestamp information from log file entries**.
+  * **Default Timezone**. Select the default time zone to use. Logs are sent in UTC by default and can be automatically detected.
+  * **Timestamp Format**. Select **Specify a format**. Click **Add Timestamp Format** and enter the following:
+     * **Format**: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'` 
+     * **Timestamp locator**: `"date":"(.*?)\","`
+* **Message Processing**
+   * Select **Multiline Processing**.
+   * For **Infer Message Boundaries**  select **Detect Automatically**.
 
 ### Use Field Extraction Rules
 
