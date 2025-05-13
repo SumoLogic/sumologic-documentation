@@ -177,12 +177,14 @@ These alerts are metric based and will work for all Virtual Machine.
 | `Azure Virtual Machine - Data Disk IOPs Consumed Monitor` | This alert is triggered when Data Disk IOPs consumption percentage spikes above 95% are detected for any VM. | Count > 95 | Count =< 95 |
 | `Azure Virtual Machine - OS Disk IOPs Consumed Monitor`| This alert is triggered when OS Disk IOPs consumption percentage spikes above 95% are detected for any VM. | Count > 95 | Count =< 95 |
 
-## Upgrade/Downgrade the Azure Virtual Network app (optional)
+## Upgrade/Downgrade the Azure Virtual Machine app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Azure Virtual Network app (optional)
+## Uninstalling the Azure Virtual Machine app (optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
