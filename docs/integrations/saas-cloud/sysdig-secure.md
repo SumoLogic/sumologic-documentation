@@ -3,6 +3,7 @@ id: sysdig-secure
 title: Sysdig Secure
 sidebar_label: Sysdig Secure
 description: The Sysdig Secure app for Sumo Logic provides insights into container security and manage runtime protection.
+---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
