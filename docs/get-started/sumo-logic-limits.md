@@ -70,7 +70,7 @@ This page lists the baseline limits and quotas for various features, services, a
 - Maximum number of collector per organization is 10,000.
 - A single installed collector can handle up to 15,000 events per second.
 - Log messages greater than 64KB are truncated.
-- A collector or sources can have up to 10 fields.
+- A collector or source can have up to 10 fields.
 - A collector can have up to 1,000 sources.
 - Multiline logs are limited to 2000 lines or 512KB.
 - Maximum of 100 processing rules per source.
