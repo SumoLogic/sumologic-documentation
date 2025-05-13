@@ -126,7 +126,7 @@ This page lists the baseline limits and quotas for various features, services, a
 ## Partitions
 
 - **Maximum partitions**. Up to 50 per account.
-- **Optimal size**. Between 1%–30% of daily ingest. Ideally, with less than 5 TB data per day flowing into them.
+- **Optimal size**. Between 1%–30% of daily ingest. Ideally, with less than 5 TB data per day flowing into each.
   - Below 1% can cause index fragmentation and degraded search performance.
   - Above 30% may reduce performance gains.
 - **Name restrictions**. Cannot start with `sumologic_` or an underscore (`_`).
