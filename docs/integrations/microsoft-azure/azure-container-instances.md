@@ -107,7 +107,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Azure Container Instance - Error Logs** dashboard provides detailed information on the container activity. This dashboard also provides comprehensive overview of Total Errors, Top 10 Errors bar chart, Log Level Error distribution, Error Trend by Container, and Recent Container Logs.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Azure-Container-Instance-Error-Logs.png')} alt="Azure Container Instance - Error Logs" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Azure-Container-Instances-Error-Logs.png')} alt="Azure Container Instance - Error Logs" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
