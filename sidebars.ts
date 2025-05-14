@@ -2830,7 +2830,7 @@ integrations: [
             'cse/ingestion/sumo-logic-ingest-mapping',
             {
               type: 'category',
-              label: 'Ingestion Sources for Cloud SIEM',
+              label: 'Example Ingestion Sources for Cloud SIEM',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'cse/ingestion/ingestion-sources-for-cloud-siem/index'},

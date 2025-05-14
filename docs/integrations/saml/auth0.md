@@ -47,7 +47,7 @@ Configure a source on the collector. Follow the directions in [Configure an HTTP
 Fill out the following:
 * **Name**
 * **Source Category**
-* Select **Forward to SIEM** if you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM. If you select **Forward to SIEM**, also click the **+Add Field** link and add a field whose name is `_parser` with value */Parsers/System/Auth0/Auth0*.
+* Select **Forward to SIEM** if you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM. If you select **Forward to SIEM**, also click the **+Add** link and add a field whose name is `_parser` with value */Parsers/System/Auth0/Auth0*.
 * **Timestamp Parsing**
   * Select **Extract timestamp information from log file entries**.
   * **Default Timezone**. Select the default time zone to use. Logs are sent in UTC by default and can be automatically detected.
