@@ -148,7 +148,7 @@ These alerts are metric based and will work for all Azure Container Instances.
 | Alert Name | Description  | Alert Condition  | Recover Condition    |
 |:-- |:-- |:--|:---------------------|
 | `Azure Container Instances - Memory Usage` | This alert is triggered when memory usage is greater than 20 MB. Also warning alert is triggered when the memory usage exceeds 15 MB. | Data volume > 20MB | Data volume < = 20MB |
-| `Azure Container Instances - CPU Usage` | This alert is triggered when CPU usage is greater than 100 milicore. Also warning alert is triggered when the CPU usage exceeds 90 milicore. | milicores > 100  | milicores < = 100    |
+| `Azure Container Instances - CPU Usage` | This alert is triggered when CPU usage is greater than 100 milicore. Also warning alert is triggered when the CPU usage exceeds 90 millicore. | millicores > 100  | millicores < = 100    |
 
 ## Troubleshooting
 
