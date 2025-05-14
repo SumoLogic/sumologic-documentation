@@ -28,7 +28,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The desired name for the resource.
    * **API URL**. `https://api.crowdstrike.com`.
    * **Client ID**. The unique identifier of the API client.
-   * **Client Secret**. A secret code for an API client.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-discover/crowdstrike-falcon-discover-4.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-discover" width="400"/>
+   * **Client Secret**. A secret code for an API client.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/crowdstrike-falcon-discover-configuration.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon Discover configuration" width="400"/>
 
 For information about CrowdStrike Falcon Discover, see [CrowdStrike documentation](https://www.crowdstrike.com/en-us/resources/guides/?lang=1).
 

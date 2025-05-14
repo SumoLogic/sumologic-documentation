@@ -31,7 +31,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **URL**. Default value for API URL is 'https://api.lansweeper.com'.
-   * **Token**. The Token you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-5.png')} style={{border:'1px solid gray'}} alt="lansweeper-5" width="400"/>
+   * **Token**. The Token you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/lansweeper-configuration.png')} style={{border:'1px solid gray'}} alt="Lansweeper configuration" width="400"/>
 
 For information about Lansweeper, see [Lansweeper documentation](https://developer.lansweeper.com/docs/data-api/get-started/welcome/).
 

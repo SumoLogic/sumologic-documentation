@@ -2526,6 +2526,7 @@ integrations: [
           'integrations/saas-cloud/asana',
           'integrations/saas-cloud/atlassian',
           'integrations/saas-cloud/automox',
+          'integrations/saas-cloud/bitwarden',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
           'integrations/saas-cloud/cisco-amp',
@@ -3166,7 +3167,7 @@ integrations: [
                 'platform-services/automation-service/configure-authentication-for-integrations',
                 {
                   type: 'category',
-                  label: 'Integrations in App Central',
+                  label: 'Automation Integrations in App Central',
                   collapsible: true,
                   collapsed: true,
                   link: {type: 'doc', id: 'platform-services/automation-service/app-central/integrations/index'},

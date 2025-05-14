@@ -27,7 +27,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **API URL**. Default is 'https://api.github.com'.
-   * **Token**. Insert the Token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/github/github-4.png')} style={{border:'1px solid gray'}} alt="github" width="400"/>
+   * **Token**. Insert the Token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/github-configuration.png')} style={{border:'1px solid gray'}} alt="GitHub configuration" width="400"/>
 
 For information about GitHub, see [GitHub documentation](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app).
 

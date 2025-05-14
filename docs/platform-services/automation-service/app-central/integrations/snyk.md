@@ -25,7 +25,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **API URL**. Default is `https://api.snyk.io/`.
-   * **Token**. Insert the Token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/snyk/snyk-4.png')} style={{border:'1px solid gray'}} alt="snyk" width="400"/>
+   * **Token**. Insert the Token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/snyk-configuration.png')} style={{border:'1px solid gray'}} alt="Snyk configuration" width="400"/>
 
 For information about Snyk, see [Snyk documentation](https://docs.snyk.io/).
 

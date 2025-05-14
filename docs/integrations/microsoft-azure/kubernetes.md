@@ -37,63 +37,6 @@ The AKS - Control Plane app collects logs for the following [Azure Kubernetes Se
 * **kube-controller-manager**. The Controller Manager oversees a number of smaller controllers that perform actions, such as replicating pods and handling node operations.
 * **cluster-autoscaler**. The cluster autoscaler component watches for pods in your cluster that can't be scheduled because of resource constraints. When the cluster autoscaler detects issues, it scales up the number of nodes in the node pool to meet the application demands. It also regularly checks nodes for a lack of running pods and scales down the number of nodes as needed.
 
-### Configure field in field schema
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
-1. Search for the following fields:
-   - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs to.
-   - `subscription_id`. ID associated with a subscription where the resource is present.
-   - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
-   - `resource_type`. Azure resource type (for example, storage accounts).
-   - `resource_name`. The name of the resource (for example, storage account name).
-   - `service_type`. Type of the service that can be accessed with a Azure resource.
-   - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Kubernetes service is Subscriptions).
-1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
-
-### Configure field extraction rules
-
-Create the following Field Extraction Rule(s) (FER) for Azure Kubernetes Service by following the instructions in [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
-
-#### Azure location extraction FER
-
-   ```sql
-   Rule Name: AzureLocationExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
-   | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
-   | if (!isBlank(resourceLocation), resourceLocation, location) as location
-   | if (!isBlank(service_region), service_region, location) as location 
-   | if (isBlank(location), "global", location) as location
-   | fields location
-   ```
-
-#### Resource ID extraction FER
-
-   ```sql
-   Rule Name: AzureResourceIdExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
-   | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
-   | toUpperCase(resourceId) as resourceId
-   | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
-   | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
-   | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
-   | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
-   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
-   | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
-   ```
-
 ### Sample log messages
 
 ```json title="kube-audit"
@@ -254,12 +197,7 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={
 
 ### Configure metrics collection
 
-:::note
-Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
-:::
-
-- To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
-- Configure the namespaces as `Microsoft.ContainerService/managedClusters`, `microsoft.kubernetes/connectedClusters`, `microsoft.kubernetesconfiguration/extensions`, and `microsoft.hybridcontainerservice/provisionedClusters`. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-kubernetes-service-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
+To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
 ### Collecting logs for the Azure Kubernetes Cluster  
 
@@ -293,6 +231,18 @@ All the dashboards are linked to the [Kubernetes views](/docs/dashboards/explore
 import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region to which the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with a Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure Kubernetes Service dashboards
 
