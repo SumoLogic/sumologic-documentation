@@ -409,7 +409,7 @@ Within Automation, you’ll see subsections for:
 * [App Central](/docs/platform-services/automation-service/app-central/). A large out-of-the-box library of playbooks, integrations, and use cases for different threats to get you started with orchestrating and automating your SOC.
 * [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). Allows you to create new playbooks and edit, delete, and manage existing ones.
 * [Template](/docs/cloud-soar/automation/#incident-templates). Allows you to create new incident templates and edit, delete, and manage existing ones.
-* [Integrations](/docs/platform-services/automation-service/automation-service-integration-framework/). Lets you connect third party tools through APIs.
+* [Integrations](/docs/platform-services/automation-service/automation-service-integrations/). Lets you connect third party tools through APIs.
 * [Rules](/docs/cloud-soar/automation/#automation-rules). Lets you create new automation rules.
 * [Bridge](/docs/platform-services/automation-service/automation-service-bridge/). Contains configuration details on any installed bridges.
 

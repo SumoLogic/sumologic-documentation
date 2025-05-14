@@ -153,7 +153,7 @@ The following example shows how to configure a notification that sends an email 
 
 ## Advanced example: Configure a custom integration
 
-The following example shows how to create a custom integration with an action that runs a script you provide. The custom integration and action are defined by YAML files. To learn how to build your own YAML files, see [Integration framework file formats](/docs/platform-services/automation-service/automation-service-integration-framework/#integration-framework-file-formats).
+The following example shows how to create a custom integration with an action that runs a script you provide. The custom integration and action are defined by YAML files. To learn how to build your own YAML files, see [Integration framework file formats](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#integration-framework-file-formats).
 
 The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP reputation information for enrichment. (This example shows how to add enrichment to an insight. To use the same action to add enrichment to entities, see [Add entity enrichment](#add-entity-enrichment) below.)
 
