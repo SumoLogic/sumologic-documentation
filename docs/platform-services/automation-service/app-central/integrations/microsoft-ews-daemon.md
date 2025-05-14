@@ -16,6 +16,40 @@ This integration is only for Cloud SOAR.
 
 Process emails with EWS Daemon.
 
+## Overview
+
+### Purpose
+
+The Microsoft EWS Incoming Mail Daemon automatically retrieves emails. It enables seamless integration with security automation platforms by pulling in messages for further analysis and action.
+### Use cases
+
+* Automatically ingest emails from monitored mailboxes for phishing analysis or ticketing systems.
+* Feed email content into security orchestration workflows.
+* Process and analyze attachments (e.g., .eml, .msg, documents) in near real-time.
+* Extract and enrich sender/recipient metadata for further investigation.
+
+### Supported versions
+
+* Microsoft Exchange Online (Office 365)
+
+### Prerequisites
+* Active Azure subscription
+* Application registration with:
+  * Client ID
+  * Client Secret
+  * Tenant ID
+* EWS API permissions
+* Basic authentication (legacy) or OAuth 2.0 with modern authentication
+* Correctly configured EWS endpoint 
+* Valid credentials or token
+
+### Limitations
+* Certain Outlook-specific attachments may appear as ItemAttachment instead of FileAttachment 
+* Attachments of type ItemAttachment may lack file extensions or MIME types (e.g., content_type=None)
+* Mailbox rate limits may apply depending on Microsoft tenant configuration
+
+
+
 ## Actions
 
 * **Microsoft EWS Incoming Mail Daemon** *(Daemon)* - Automatically retrieve emails from EWS.
