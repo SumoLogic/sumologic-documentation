@@ -117,7 +117,9 @@ You can adjust the configuration of when and how AWS handles communication attem
      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
      :::note
-     If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM, click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM. Also add another field named `_parser` with value */Parsers/System/AWS/AWS ALB*.
+     If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM: 
+     * Click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM. 
+     * Also add another field named `_parser` with value for the AWS parser you want to use for the forwarded data. For example, if you want to use the data for AWS Application Load Balancer enter `/Parsers/System/AWS/AWS ALB`, for AWS Network Firewall enter `/Parsers/System/AWS/AWS Network Firewall`, or for AWS VPC Flow enter `/Parsers/System/AWS/AWS VPC Flow`.
      :::
 
 1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md). If you're collecting from a Cisco Umbrella bucket you must use **Key access**.
