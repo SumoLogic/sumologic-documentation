@@ -29,14 +29,24 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/release-notes-collector"><img src={useBaseUrl('img/icons/data-collection.png')} alt="icon" width="40"/><h4>Collector <br/><a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS Feed" width="45"/></a></h4></a>
-  <p>Latest features and bug fixes for Installed Collectors. To access new features, upgrade using <a href="/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url">Static URLs</a>, <a href="/docs/send-data/collection/upgrade-collectors">Sumo Logic</a>, <a href="/docs/send-data/collection/upgrade-collectors">Command Line</a>, or <a href="/docs/api/collector-management/upgrade-downgrade-collectors">Collector Management API</a>.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/release-notes-developer"><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="40"/><h4>Developer<br/><a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS Feed" width="45"/></a></h4></a>
   <p>New features and changes to our APIs, Collector management, and Live Tail CLI.</p>
   </div>
 </div>
 </div>
+<br/>
+
+<div className="box-wrapper" markdown="1">
+<div className="box boxwidetop card">
+  <div className="container">
+  <a href="/release-notes-collector"><img src={useBaseUrl('img/icons/data-collection.png')} alt="icon" width="40"/><h4>Collector<br/><a href="https://help.sumologic.com/release-notes-service/rss.xml"><img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS Feed" width="45"/></a></h4></a>
+  <p>Latest features and bug fixes for our Installed Collector and OpenTelemetry Collector.</p>
+</div>
+</div>
+</div>
+
+<br/>
+
+:::tip
+To access new Installed Collector features, upgrade using <a href="/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url">Static URLs</a>, <a href="/docs/send-data/collection/upgrade-collectors">Sumo Logic</a>, <a href="/docs/send-data/collection/upgrade-collectors">Command Line</a>, or <a href="/docs/api/collector-management/upgrade-downgrade-collectors">Collector Management API</a>.
+:::
