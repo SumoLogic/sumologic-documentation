@@ -43,12 +43,24 @@ The Microsoft EWS Incoming Mail Daemon automatically retrieves emails. It enable
 * Correctly configured EWS endpoint 
 * Valid credentials or token
 
-### Limitations
-* Certain Outlook-specific attachments may appear as ItemAttachment instead of FileAttachment 
-* Attachments of type ItemAttachment may lack file extensions or MIME types (e.g., content_type=None)
+### Limitations 
+* Certain attachments may be represented differently, which can result in missing or inconsistent file metadata (e.g., name or type).
 * Mailbox rate limits may apply depending on Microsoft tenant configuration
 
+## Usage
 
+### Basic usage
+* Configure credentials (Tenant ID, Client ID, Client Secret).
+* Set retrieval parameters like polling frequency, folders to include/exclude.
+* Enable the Daemon action in a rule or playbook.
+* Emails are pulled automatically.
+
+### Advanced usage
+* Use filtering parameters to narrow email scope:
+  * Subject keywords 
+  * Sender domain 
+  * Date ranges
+* Enable the Daemon action in a rule or playbook.
 
 ## Actions
 
@@ -171,6 +183,45 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-ews-daemon-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft EWS Daemon configuration" width="400"/>
 
 For information about Microsoft EWS, see [Microsoft Exchange Web Services documentation](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-authenticate-an-ews-application-by-using-oauth).
+
+## API reference
+
+### Configuration
+Environment variables or parameters:
+* tenant
+* client id
+* client secret 
+* email: The service account email address 
+* password or OAuth token: Authentication credentials
+* automation bridge
+* and other fields info based on the requirement
+
+### Containment APIs
+
+### Rate Limits and Quotas
+* Microsoft may enforce throttling based on:
+  * Number of concurrent EWS requests 
+  * Number of items retrieved per call 
+  * Number of mailbox accesses per day/hour
+
+#### Troubleshooting
+| Issue | Resolution | Resolution |
+| :-- |:-- |:-- |
+| No emails retrieved | Incorrect folder, filters too strict | Check filters, verify folder ID    |
+| Authentication failed | Invalid credentials or token | Update credentials and reauthorize |
+
+### FAQ
+
+#### Can I filter which emails are fetched?
+Yes. Filtering can be applied based on folders, received time. Custom filters may be implemented depending on integration configuration.
+
+#### How frequently does the Daemon poll for new messages?
+The polling interval is determined by the configuration within the integration setup or automation rule.
+
+### Support
+* For issues, questions, or improvements:
+* Microsoft [Q&A](https://learn.microsoft.com/answers)
+* Review logs on the portal using log search.
 
 ## Category
 
