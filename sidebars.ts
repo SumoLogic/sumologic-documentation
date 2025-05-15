@@ -1054,7 +1054,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/security/index'},
       items: [
-        'manage/security/about-two-step-verification',
+        'manage/security/about-2-step-verification',
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
@@ -3051,7 +3051,7 @@ integrations: [
         'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
       ],
-    },  
+    },
   ],
   api: [
     {
