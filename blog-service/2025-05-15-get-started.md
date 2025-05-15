@@ -1,5 +1,5 @@
 ---
-title: Get Started - New Onboarding Experience (Manage)
+title: New Sumo Logic Onboarding Experience (Get Started)
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - onboarding
@@ -7,7 +7,7 @@ keywords:
 hide_table_of_contents: true    
 ---
 
-We’ve launched a new Get Started onboarding page to help you hit the ground running in Sumo Logic. This personalized hub replaces the previous checklist and guides you through key actions such as:
+We’ve launched a new **Get Started** onboarding page to help you hit the ground running in Sumo Logic. This personalized hub replaces the previous checklist and guides you through key actions such as:
 
 * Ingesting cloud, SaaS, or on-prem log data with just a few clicks.
 * Exploring Kickstart Data dashboards with simulated real-world insights—no setup needed.
