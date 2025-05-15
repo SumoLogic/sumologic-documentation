@@ -100,7 +100,7 @@ an Access-Control-Allow-Origin header.
      :::note
      After an access key is deactivated, there can be a brief period of time during which a previous successful authentication remains cached and a subsequent API request using the deactivated key will succeed. This could occur if the access key was used to authenticate within 15 minutes prior to the key being deactivated.
      :::
-   * **Rotate**. Refresh an access key with a new Access ID and Access Key. Copy the new ID and key and use them in all the places where the previous access key was used. (The old key is still usable for 5 minutes after rotation.) Rotate access keys in accordance with your company's rules. By default, access keys expire in 180 days after creation or rotation, though the [access keys expiration policy](#access-keys-expiration-policy) can be updated by a Sumo Logic administrator. An access key's expiration date appears in the **Expires At** column.
+   * **Rotate**. Refresh an access key with a new Access ID and Access Key. Copy the new ID and key and use them in all the places where the previous access key was used. (The old key is still usable for 5 minutes after rotation.) Rotate access keys in accordance with your company's rules. By default, access keys are set to never expire after creation or rotation, though the [access keys expiration policy](#access-keys-expiration-policy) can be updated by a Sumo Logic administrator. An access key's expiration date appears in the **Expires At** column.
    * **Delete**. Permanently removes the access key. The key will no longer be usable for API calls. However, deleting a key used to register a collector does not affect the collector, since the only time a collector uses the access key is at installation.
 
 ### Organization access keys
@@ -127,7 +127,7 @@ To configure the access keys deactivation policy:
 
 ### Access keys expiration policy
 
-Sumo Logic will expire and deactivate access keys by default 180 days after the keys are created or rotated. Automatically expiring keys ensures they don't remain in use past your company's access key rotation rules. 
+By default, access keys are set to never expire. However, an administrator can use the **Access Keys Expiration** policy to set access keys to expire after a set period. Automatically expiring keys ensures they don't remain in use past your company's access key rotation rules. 
 
 An access key's expiration date appears in the **Expires At** column on the **Access Keys** tab. You can sort by this column to see when you must rotate keys. To rotate a key, hover your mouse over an access key, click the three-dot kebab icon, and select **Rotate**. (The old key is still usable for 5 minutes after rotation.) Rotating an access key resets its expiration date according to the number of days in the policy. 
 
