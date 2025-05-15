@@ -38,7 +38,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
         + for sg.com use https://api.app.coralogixsg.com
     * **Private Key**. Your Coralogix account private key.
     * **Application Name**. The Coralogix application name.
-    * **Subsystem Name**. The Coralogix subsystem name. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-send-logs/coralogix-send-logs-5.png')} style={{border:'1px solid gray'}} alt="coralogix-send-logs" width="400"/>
+    * **Subsystem Name**. The Coralogix subsystem name.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/coralogix-send-logs-configuration.png')} style={{border:'1px solid gray'}} alt="Coralogix Send Logs configuration" width="400"/>
 
 For information about Coralogix - Send Logs, see [Coralogix documentation](https://coralogix.com/docs/).
 

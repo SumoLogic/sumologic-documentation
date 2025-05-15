@@ -16,7 +16,7 @@ Integrations that are already installed to your environment appear in the **Inte
 For a complete list of integrations that are available to install, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/).
 
 :::warning Important
-All integrations require authentication to communicate between the vendor and Sumo Logic. For directions, see [Configure Authentication for Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+All automation integrations require authentication to communicate between the vendor and Sumo Logic. For directions, see [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
 :::
 
 ## View integrations
