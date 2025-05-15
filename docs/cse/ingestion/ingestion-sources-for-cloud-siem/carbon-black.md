@@ -8,7 +8,7 @@ description: Configure collection of Carbon Black Cloud logs messages from an S3
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To ingest Carbon Black Cloud data into Cloud SIEM:
-1. [Configure an AWS S3 source](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/carbon-black/#configure-an-aws-s3-source) on a collector. When you configure the source, do the following:
+1. [Configure an AWS S3 source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/#create-an-amazons3-source) on a collector. When you configure the source, do the following:
     1. Click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
     1. Click the **+Add** link to add a field whose name is `_parser` with value */Parsers/System/VMware/Carbon Black Cloud*. This ensures that the Carbon Black Cloud logs are parsed and normalized into structured records in Cloud SIEM.
 1. Configure Carbon Black Cloud to send log messages to the S3 bucket. For instructions, see [Data Forwarders](https://techdocs.broadcom.com/us/en/carbon-black/cloud/carbon-black-cloud/index/cbc-user-guide-tile/GUID-9620FAB7-FE70-45DE-9CAB-590FA358721F-en/GUID-E8D33F72-BABB-4157-A908-D8BBDB5AF349-en.html) in the Carbon Black Cloud documentation.
