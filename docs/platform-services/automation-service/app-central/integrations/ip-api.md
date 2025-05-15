@@ -29,7 +29,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The name of the resource.
    * **Host**. 'https://pro.ip-api.com'/.
-   * **API Key**. The API Key copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ip-api/ip-api-6.png')} style={{border:'1px solid gray'}} alt="ip-api" width="400"/>
+   * **API Key**. The API Key copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ip-api-configuration.png')} style={{border:'1px solid gray'}} alt="IP-API configuration" width="400"/>
 
 For information about IP-API, see [IP-API documentation](https://ip-api.com/docs/).
 

@@ -38,7 +38,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The name of the resource.
    * **Host**. 'https://apitest.vectracloudlab.com/api/v2.2/'   
-   * **Token**. API Token copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vectra/vectra-5.png')} style={{border:'1px solid gray'}} alt="vectra" width="400"/>
+   * **Token**. API Token copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vectra-configuration.png')} style={{border:'1px solid gray'}} alt="Vectra configuration" width="400"/>
 
 For information about Vectra, see [Vectra documentation.](https://support.vectra.ai/vectra/knowledge)
 

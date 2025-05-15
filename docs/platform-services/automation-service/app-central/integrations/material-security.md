@@ -32,7 +32,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **API URL**. Enter your URL.
-   * **API Token**. Insert your token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/material-security/material-security-4.png')} style={{border:'1px solid gray'}} alt="material-security-4" width="400"/>
+   * **API Token**. Insert your token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/material-security-configuration.png')} style={{border:'1px solid gray'}} alt="Material Security configuration" width="400"/>
 
 For information about Material Security, see the [Material Security website](https://material.security/).
 

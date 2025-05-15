@@ -59,7 +59,7 @@ The table below shows the `_sourceCategory` that is assigned to Audit Event Inde
 | [Automation action](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
 | [Automation action configuration](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActionConfigurations` |
 | [Integration](/docs/platform-services/automation-service/automation-service-integrations/)   | `oarIntegrations`  |
-| [Integration resource](/docs/platform-services/automation-service/automation-service-integration-framework/)   | `oarIntegrationResources` |
+| [Integration resource](/docs/platform-services/automation-service/integration-framework/)   | `oarIntegrationResources` |
 | [Playbook execution](/docs/platform-services/automation-service/automation-service-playbooks/)  | `oarPlaybookExecutions`   |
 | [Playbook revision](/docs/platform-services/automation-service/automation-service-playbooks/)  | `oarPlaybookRevisions`    |
 
@@ -70,7 +70,7 @@ The table below shows the `_sourceCategory` that is assigned to Audit Event Inde
 | Product Feature | _sourceCategory Value |
 |:--|:--|
 | [Custom Field](/docs/cloud-soar/overview/#custom-fields) | `oarCustomFields`  |
-| [Daemon](/docs/platform-services/automation-service/automation-service-integration-framework/#daemon-action-definitions)  | `oarDaemons`  |
+| [Daemon](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#daemon-action-definitions)  | `oarDaemons`  |
 | [Dashboard](/docs/cloud-soar/incidents-triage/#dashboards)  | `oarDashboards` |
 | Email | `oarEmails`  |
 | [Entity](/docs/cloud-soar/incidents-triage/#entities)  | `oarEntities` |
