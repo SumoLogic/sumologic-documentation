@@ -1,5 +1,5 @@
 ---
-id: about-two-step-verification
+id: about-2-step-verification
 title: About 2-Step Verification
 description: Sumo Logic offers 2-Step Verification, also known as two-factor authentication, as an optional feature for customers to enhance security and secure sensitive data stored in Sumo Logic.
 ---
