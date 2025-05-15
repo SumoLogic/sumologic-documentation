@@ -115,7 +115,7 @@ export const Home = () => {
                     {
                       children: '1. Set up collector and source',
                       description: 'Set up a Sumo Logic collector and source',
-                      to: '/docs/get-started/quickstart#step-1-get-your-data-into-sumo-logic',
+                      to: '/docs/get-started/quickstart#step-1-get-your-data-into-sumo',
                     },
                     {
                       children: '2. Explore your data insights',

@@ -55,7 +55,7 @@ The Kickstart sample data you see in the [sample app/dashboards](/docs/integrati
 
 Once you're ready to work with your own data, follow the in-product prompts to begin ingesting logs via OpenTelemetry, Hosted Collectors, or Installed Collectors. The Kickstart experience will phase out automatically once you start ingesting real data or after 20 days—whichever comes first.
 
-## Step 1: Get your data into Sumo Logic
+## Step 1: Get your data into Sumo
 
 The journey of 10,000 logs begins with a single collector. Your data analytics journey starts by sending your data to Sumo Logic.
 
