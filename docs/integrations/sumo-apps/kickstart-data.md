@@ -17,7 +17,7 @@ Kickstart Data comes preloaded for new trial users and expires automatically aft
 
 ## Application Data
 
-This app uses the [Sumo Logic Kickstart Data source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source) to collect the data from OpenTelemetry Demo Astronomy Application.
+This app uses the [Sumo Logic Kickstart Data source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source) to collect the data from OpenTelemetry Demo Astronomy app.
 
 ## Installing the Sumo Logic Kickstart Data app
 
@@ -94,3 +94,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+:::note For admins
+If you're done exploring Kickstart Data and want to purge it from your environment and Sumo Logic account, follow the steps under [How to manage or remove Kickstart Data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source#how-to-manage-or-remove-kickstart-data).
+:::
