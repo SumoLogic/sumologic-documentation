@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To ingest AWS GuardDuty data into Cloud SIEM:
 1. [Configure an HTTP source for GuardDuty](/docs/integrations/amazon-aws/guardduty/#step-1-configure-an-http-source) on a collector. When you configure the source, do the following:
-    1. Select the [**Forward to SIEM** option](/docs/c2c/info/#metadata-fields) in the source configuration UI. This will ensure all logs for this source are forwarded to Cloud SIEM.
+    1. Select the **Forward to SIEM** option in the source configuration UI. This will ensure all logs for this source are forwarded to Cloud SIEM.
     1. Click the **+Add** link to add a field whose name is `_parser` with value */Parsers/System/AWS/GuardDuty*. This ensures that the GuardDuty logs are parsed and normalized into structured records in Cloud SIEM.
 1. [Deploy the Sumo Logic GuardDuty events processor](/docs/integrations/amazon-aws/guardduty/#step-2-deploy-sumo-guardduty-events-processor).
 1. To verify that your logs are successfully making it into Cloud SIEM:
