@@ -78,8 +78,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 2. To create the **Diagnostic setting** in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the below steps for each Azure WebApps that you want to monitor.
     1. Choose `Stream to an event hub` as the destination.
     1. Select `HTTP logs`, `App Service Console Logs`, `App Service Application Logs`, `Access Audit Logs`, `IPSecurity Audit logs`, `App Service Platform logs`, `Report Antivirus Audit Logs`, `Site Content Change Audit Logs`.
-    1. Use the Event Hub namespace and Event Hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-       <img src={useBaseUrl('img/send-data/azure-webapps-logs.png')} alt="Azure WebApps logs" style={{border: '1px solid gray'}} width="800" />
+    1. Use the Event Hub namespace and Event Hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-webapps-logs.png')} alt="Azure WebApps logs" style={{border: '1px solid gray'}} width="800" />
 3. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure WebApps Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity logs (optional)
