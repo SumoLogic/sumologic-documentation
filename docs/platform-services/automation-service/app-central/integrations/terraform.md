@@ -44,7 +44,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-6.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/terraform-configuration.png')} style={{border:'1px solid gray'}} alt="Terraform configuration" width="400"/>
 
 For information about Terraform, see [Terraform documentation](https://developer.hashicorp.com/terraform/docs).
 

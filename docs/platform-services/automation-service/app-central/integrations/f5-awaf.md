@@ -39,7 +39,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
   
    * **Host**. IP where F5 AWAF is installed. 
-   * **Username and Password** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-6.png')} style={{border:'1px solid gray'}} alt="f5-awaf" width="400"/>
+   * **Username and Password** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/f5-awaf-configuration.png')} style={{border:'1px solid gray'}} alt="F5 AWAF configuration" width="400"/>
 
 For information about F5 AWAF, see [F5 AWAF documentation](https://docs.cloud.f5.com/docs-v2/web-app-and-api-protection/how-to/app-security/application-firewall).
 

@@ -35,7 +35,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 	  * CA server - https://api-ca.events.knowbe4.com
 	  * UK server - https://api-uk.events.knowbe4.com
 	  * DE server - https://api-de.events.knowbe4.com
-   * **API Key**. Your KnowBe4 KMSAT API Key you copied earlier from KnowBe4 KMSAT.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-4.png')} style={{border:'1px solid gray'}} alt="knowbe4-kmsat-user-events" width="400"/>
+   * **API Key**. Your KnowBe4 KMSAT API Key you copied earlier from KnowBe4 KMSAT.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/knowbe4-kmsat-user-configuration.png')} style={{border:'1px solid gray'}} alt="KnowBe4 KMSAT User Events configuration" width="400"/>
 
 For information about KnowBe4 user events, see [KnowBe4 user event documentation](https://support.knowbe4.com/hc/en-us/articles/360024863474-User-Event-API-Overview).
 

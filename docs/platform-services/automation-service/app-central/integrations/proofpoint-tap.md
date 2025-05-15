@@ -32,7 +32,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. Name of the resource
    * **URL**. URL of Proofpoint TAP (default URL’ [https://tap-api-v2.proofpoint.com](https://tap-api-v2.proofpoint.com/)’ is already provided).
    * Service Principal
-   * Secret Key<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/proofpoint-tap/proofpoint-tap-4.png')} style={{border:'1px solid gray'}} alt="proofpoint-tap" width="400"/>
+   * Secret Key<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/proofpoint-tap-configuration.png')} style={{border:'1px solid gray'}} alt="Proofpoint TAP configuration" width="400"/>
 
 For information about Proofpoint, see the [Proofpoint website](https://www.proofpoint.com/us/resources/data-sheets/targeted-attack-protection).
 

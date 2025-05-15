@@ -36,7 +36,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **URL**. Default value for API URL is 'https://downdetectorapi.com'.
    * **Username**. The client ID that you copied as username.
-   * **Password**. The Client Secret that you copied as password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-6.png')} style={{border:'1px solid gray'}} alt="downdetector" width="400"/>
+   * **Password**. The Client Secret that you copied as password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/downdetector-configuration.png')} style={{border:'1px solid gray'}} alt="Downdetector configuration" width="400"/> gray'}} alt="downdetector" width="400"/>
 
 For information about Downdetector, see [Downdetector documentation](https://downdetectorapi.com/v2/docs/).
   

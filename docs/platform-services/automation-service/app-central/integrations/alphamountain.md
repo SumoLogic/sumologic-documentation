@@ -30,7 +30,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 <IntegrationsAuth/>
 
    * **URL**. alphaMountain API URL. Default: 'https://api.alphamountain.ai'
-   * **License Key**. Your License Key for alphaMountain.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alphamountain/alphamountain-4.png')} style={{border:'1px solid gray'}} alt="alphamountain-4" width="400"/>
+   * **License Key**. Your License Key for alphaMountain.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/alphamountain-configuration.png')} style={{border:'1px solid gray'}} alt="alphaMountain configuration" width="400"/>
 
 For information about alphaMountain, see [alphaMountain documentation](https://www.alphamountain.ai/api/).
 
