@@ -25,7 +25,7 @@ The Microsoft EWS Incoming Mail Daemon automatically retrieves emails. It enable
 
 * Automatically ingest emails from monitored mailboxes for phishing analysis or ticketing systems.
 * Feed email content into security orchestration workflows.
-* Process and analyze attachments (e.g., .eml, .msg, documents) in near real-time.
+* Process and analyze attachments (for example, .eml, .msg, documents) in near real-time.
 * Extract and enrich sender/recipient metadata for further investigation.
 
 ### Supported versions
@@ -44,7 +44,7 @@ The Microsoft EWS Incoming Mail Daemon automatically retrieves emails. It enable
 * Valid credentials or token
 
 ### Limitations 
-* Certain attachments may be represented differently, which can result in missing or inconsistent file metadata (e.g., name or type).
+* Certain attachments may be represented differently, which can result in missing or inconsistent file metadata (for example, name or type).
 * Mailbox rate limits may apply depending on Microsoft tenant configuration
 
 ## Usage
@@ -201,13 +201,13 @@ For information about Microsoft EWS, see [Microsoft Exchange Web Services docume
 
 ### Configuration
 Environment variables or parameters:
-* tenant
-* client id
-* client secret 
-* email: The service account email address 
-* password or OAuth token: Authentication credentials
-* automation bridge
-* and other fields info based on the requirement
+* Tenant
+* Client ID
+* Client secret 
+* Email: The service account email address 
+* Password or OAuth token: Authentication credentials
+* Automation bridge
+* And other fields info based on the requirement
 
 ### Containment APIs
 
