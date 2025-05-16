@@ -464,6 +464,8 @@ The syntax for this function requires a timestamp format as a single argument. R
 | `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}`            | `2024-03-07T20:15:56.905571Z`       |
 | `{{ .WindowEndUTC "epoch" }}`                                  | `1709842556`                        |
 | `{{ .WindowEndUTC "epochMilli" }}`                             | `1709842556000`                     |
+| `{{ .WindowEndUTC "epochNanoInt" }}`                           | `173584347745451512`                |
+| `{{ .WindowEndUTC "epochNanoFloat" }}`                         | `1735843477.45451512`               |
 | `lessThan:{{ .WindowEndUTC "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T20:15:56.905Z` |
 | `lessThan:{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}`      | `lessThan:2024-03-07T20:15:56.905Z` |
 
@@ -537,6 +539,8 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 | RFC 3339 Nano Seconds | `2024-02-01T16:07:57.541468757Z` | `yyyy-MM-ddTHH:mm:ss.SSSSSSSSSZ`      |
 | Epoch                 | `1706803677`                     | `epoch`                               |
 | Epoch in Milliseconds | `1706803677000`                  | `epochMilli`                          |
+| Epoch NanoInt         | `173584347745451512`             | `epochNanoInt`                        |
+| Epoch NanoFloat       | `1735843477.454515`              | `epochNanoFloat`                      |
 
 ## FAQ
 
