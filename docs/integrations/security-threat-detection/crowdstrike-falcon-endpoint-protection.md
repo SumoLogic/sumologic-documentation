@@ -178,7 +178,7 @@ _sourceCategory=*Crowdstrike*  DetectionSummaryEvent
 _sourceCategory=*Crowdstrike*  AuthActivityAuditEvent (userAuthenticate or twoFactorAuthenticate)
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime" as event_type, customer_id, event_time
 | formatDate(fromMillis(event_time), "MM/dd/yyyy HH:mm:ss:SSS") as event_time
-| json "event.UserId", "event.UserIp", "event.OperationName", "event.ServiceName", "event.Success", "event.UTCTimestamp" as src_user, user_ip, operation_name, service_name, success, operation_tim
+| json "event.UserId", "event.UserIp", "event.OperationName", "event.ServiceName", "event.Success", "event.UTCTimestamp" as src_user, user_ip, operation_name, service_name, success, operation_time
 | formatDate(fromMillis(operation_time), "MM/dd/yyyy HH:mm:ss:SSS") as operation_time
 | where success="true"
 | count by operation_time, operation_name, src_user, user_ip

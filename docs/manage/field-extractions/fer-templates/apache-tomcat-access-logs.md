@@ -17,7 +17,7 @@ description: Parse the common fields in your Apache Tomcat Access Logs using the
 **Parsing Rule**:
 
 ```sql
-parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}? )"
+| parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}? )"
 | parse regex "\"(?<method>\D{1,7}? )"
 | parse regex "\"\D{1,7} (?<url>\S{1,2048}? )"
 | parse regex "\" (?<status>\d{3}? )"
