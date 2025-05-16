@@ -30,4 +30,4 @@ To ingest Signal Sciences data into Cloud SIEM:
 1. To verify that your logs are successfully making it into Cloud SIEM:
    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
    1. On the **Log Mappings** page search for "Signal Sciences" and check the **Records** columns. <br/><img src={useBaseUrl('img/cse/signal-sciences-record-volume.png')} alt="Signal Sciences record volume" style={{border: '1px solid gray'}} width="800"/>
-   1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Signal Sciences WAF security records.
+   1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Signal Sciences WAF security records:<br/>`_index=sec_record* and metadata_product = "Signal Sciences"`

@@ -60,4 +60,4 @@ To ingest Palo Alto Firewall data into Cloud SIEM:
 1. To verify that your logs are successfully making it into Cloud SIEM:
     1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
     1. On the **Log Mappings** tab search for "Palo Alto" and check the **Records**.
-    1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Palo Alto Firewall security records.<br/><img src={useBaseUrl('img/cse/palo-alto-firewall-search.png')} alt="Palo Alto Firewall search" style={{border: '1px solid gray'}} width="500"/>
+    1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Palo Alto Firewall security records: <br/>`_index=sec_record* and metadata_vendor = "Palo Alto" and metadata_product = "Firewall"`

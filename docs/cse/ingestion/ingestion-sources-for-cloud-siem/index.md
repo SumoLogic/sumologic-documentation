@@ -6,9 +6,14 @@ description: Learn the sources available for ingesting data to Cloud SIEM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The most common method to ingest data into Cloud SIEM is to install a Cloud-to-Cloud Integration Framework source and select the **Forward to SIEM** option in the configuration UI, or to click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. For all available methods to ingest data into Cloud SIEM, see [Recommended methods to ingest data into Cloud SIEM](/docs/cse/ingestion/cse-ingestion-best-practices/#recommended-methods-to-ingest-data-into-cloud-siem).
+This section shows examples of sources you can use to ingest data into Cloud SIEM. There are many sources you can use to ingest data into Cloud SIEM. The sources described in this section are just a few.
 
-This section shows examples of sources you can use to ingest data into Cloud SIEM. There are many sources you can use to ingest data into Cloud SIEM. The ones described in this section are just a few.
+:::tip
+The most common method to ingest data into Cloud SIEM is to install a Cloud-to-Cloud Integration Framework source and select the **Forward to SIEM** option in the configuration UI, or to click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. Once you do that, add another field named `_parser` with value that points to the parser associated with that source type, for example, */Parsers/System/Cisco/Cisco ASA*. This ensures that the logs from that type of source are properly parsed and normalized into structured records in Cloud SIEM.
+
+For all available methods to ingest data into Cloud SIEM, see [Recommended methods to ingest data into Cloud SIEM](/docs/cse/ingestion/cse-ingestion-best-practices/#recommended-methods-to-ingest-data-into-cloud-siem).
+::: 
+
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
