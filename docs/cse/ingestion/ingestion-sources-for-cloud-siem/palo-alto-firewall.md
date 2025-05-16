@@ -13,8 +13,7 @@ To ingest Palo Alto Firewall data into Cloud SIEM:
 1. [Configure a Syslog source](/docs/send-data/installed-collectors/sources/syslog-source/#configure-a-syslog-source) on a collector. When you configure the source, do the following:
     1. Click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
     1. Add another field named `_parser` with value */Parsers/System/Palo Alto/PAN Firewall CSV*. This ensures that the Palo Alto Firewall logs are parsed and normalized into structured records in Cloud SIEM.
-1. Define destination for the logs. <br/>In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
-<br/>To create a server profile specifying the log destination, do the following:
+1. Create a server profile to define the log destination. The profile will contain the host name, port and protocol (TLS) of the Sumo Logic Cloud syslog source:
     1. Login to the Palo Alto Networks Web interface as an administrative user.
     1. Select **Device** tab > **Server Profiles** > **Syslog**.
     1. Click **Add** at the bottom of the screen and provide endpoint details and a profile name, such as `Sumo_Logs_Profile01`.
