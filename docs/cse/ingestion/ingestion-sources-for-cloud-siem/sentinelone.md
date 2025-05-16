@@ -15,7 +15,7 @@ To ingest SentinelOne data into Cloud SIEM:
     1. To ensure that the SentinelOne logs are parsed and normalized into structured records in Cloud SIEM, add another field whose name is `_parser` and set the value to:
         * */Parsers/System/SentinelOne/SentinelOne CEF* if your logs  are in CEF format.
         * */Parsers/System/SentinelOne/SentinelOne Syslog* if your logs are in Syslog format.
-    1. Make a note of the **Source Category**, **Token**, and **Host** that are displayed in the configuration UI. You’ll supply them in the next step.
+    1. Make a note of the **Source Category**, **Token**, and **Host** for the syslog source. You’ll supply them in the next step.
 1. Configure SentinelOne to send log messages to the Sumo Logic platform. If you have a SentinelOne account, you can follow directions on the SentinelOne Support [knowledge base](https://support.sentinelone.com/hc/en-us/articles/360007044894-Syslog-Integration-with-Sumo-Logic), or the instructions in [Step 2 of the *Collecting Logs for SentinelOne* article](/docs/send-data/collect-from-other-data-sources/collect-logs-sentinelone/#step-2-configure-syslog-messages).
 1. To verify that your logs are successfully making it into Cloud SIEM:
     1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  

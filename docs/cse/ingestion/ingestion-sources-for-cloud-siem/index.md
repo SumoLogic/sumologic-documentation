@@ -169,12 +169,6 @@ This section shows examples of sources you can use to ingest data into Cloud SIE
  </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="Symantec Proxy Secure Gateway icon" width="110"/><h4>Symantec Proxy Secure Gateway</h4></a>
-  <p>Configure a syslog source to ingest Symantec Proxy Secure Gateway log messages to be parsed by Cloud SIEM.</p>
-  </div>
- </div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/cse/ingestion/ingestion-sources-for-cloud-siem/zscaler-nss"><img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="ZScaler NSS icon" width="160"/><h4>ZScaler NSS</h4></a>
   <p>Configure collection of ZScaler NSS log messages to be parsed by Cloud SIEM's system parser for ZScaler NSS.</p>
   </div>

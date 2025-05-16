@@ -2861,7 +2861,6 @@ integrations: [
                 'cse/ingestion/ingestion-sources-for-cloud-siem/palo-alto-firewall',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/sentinelone',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/signal-sciences-waf',
-                'cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway-blue-coat-proxy',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/zscaler-nss',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/zscaler-private-access',
