@@ -21,6 +21,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/kaspersky-cybertrace-configuration.png')} style={{border:'1px solid gray'}} alt="Kaspersky Cybertrace configuration" width="400"/>
+
 For information about Kaspersky CyberTrace, see [Kaspersky CyberTrace documentation](https://support.kaspersky.com/cybertrace/4.4/en-US/226871.htm).
 
 ## Change Log

@@ -36,6 +36,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/panda-edr-configuration.png')} style={{border:'1px solid gray'}} alt="Panda EDR configuration" width="400"/>
+
 For information about Panda EDR, see [Panda EDR documentation](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Fireware/services/edr_core/edr_core_about_c.html).
 
 ## Change Log

@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/palo-alto-autofocus-configuration.png')} style={{border:'1px solid gray'}} alt="Palo Alto AutoFocus configuration" width="400"/>
+
 For information about Palo Alto AutoFocus, see [Palo Alto AutoFocus documentation](https://docs.paloaltonetworks.com/autofocus/autofocus-admin).
 
 ## Change Log

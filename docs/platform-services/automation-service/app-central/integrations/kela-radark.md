@@ -30,7 +30,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-5.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/kela-radark-configuration.png')} style={{border:'1px solid gray'}} alt="KELA RaDark configuration" width="400"/>
 
 For information about KELA, see [KELA documentation](https://docs.ke-la.com/kela-docs).
 

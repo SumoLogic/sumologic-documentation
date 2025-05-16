@@ -1055,7 +1055,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/security/index'},
       items: [
-        'manage/security/about-two-step-verification',
+        'manage/security/about-2-step-verification',
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
@@ -1095,6 +1095,19 @@ module.exports = {
             'manage/security/saml/manage-permissions-with-adfs',
             'manage/security/saml/set-up-adfs-authenticate-users',
             'manage/security/saml/view-saml-debug-information',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'SCIM Provisioning',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/security/scim/index'},
+          items: [
+            'manage/security/scim/about-scim-provisioning',
+            'manage/security/scim/provision-with-microsoft-entra-id',
+            'manage/security/scim/provision-with-okta',
+            'manage/security/scim/provision-with-onelogin',
           ]
         },
         'manage/security/set-password-policy',
@@ -2514,6 +2527,7 @@ integrations: [
           'integrations/saas-cloud/asana',
           'integrations/saas-cloud/atlassian',
           'integrations/saas-cloud/automox',
+          'integrations/saas-cloud/bitwarden',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
           'integrations/saas-cloud/cisco-amp',
@@ -2565,6 +2579,7 @@ integrations: [
           'integrations/saas-cloud/sumo-collection',
           'integrations/saas-cloud/symantec-endpoint-security-service',
           'integrations/saas-cloud/symantec-web-security-service',
+          'integrations/saas-cloud/sysdig-secure',
           'integrations/saas-cloud/tenable',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
@@ -3038,7 +3053,7 @@ integrations: [
         'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
       ],
-    },  
+    },
   ],
   api: [
     {
@@ -3097,6 +3112,7 @@ integrations: [
         'api/saml-configuration',
         'api/scan-budget',
         'api/scheduled-views',
+        'api/scim-user',
         'api/search-job',
         'api/service-accounts',
         'api/service-allowlist',
@@ -3152,7 +3168,7 @@ integrations: [
                 'platform-services/automation-service/configure-authentication-for-integrations',
                 {
                   type: 'category',
-                  label: 'Integrations in App Central',
+                  label: 'Automation Integrations in App Central',
                   collapsible: true,
                   collapsed: true,
                   link: {type: 'doc', id: 'platform-services/automation-service/app-central/integrations/index'},
@@ -3169,7 +3185,19 @@ integrations: [
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',
             'platform-services/automation-service/automation-service-bridge',
-            'platform-services/automation-service/automation-service-integration-framework',
+                       {
+              type: 'category',
+              label: 'Integration Framework',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platform-services/automation-service/integration-framework/index'},
+              items: [
+                'platform-services/automation-service/integration-framework/about-integration-framework',
+                'platform-services/automation-service/integration-framework/example-files-integration-framework',
+                'platform-services/automation-service/integration-framework/integration-framework-output',
+                'platform-services/automation-service/integration-framework/docker-integration-framework',
+              ],
+            },
           ],
         },
       ],

@@ -31,7 +31,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The name for the resource
    * **URL**. The base API URL for WithSecure Elements. Default: 'https://api.intelligence.mandiant.com'.
    * **Public Key**. The public key previously obtained.
-   * **Private Key**. The private key previously obtained.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mandiant-advantage-threat-intelligence/mandiant-advantage-threat-intelligence-6.png')} style={{border:'1px solid gray'}} alt="mandiant-advantage-threat-intelligence-6" width="400"/>  
+   * **Private Key**. The private key previously obtained.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mandiant-configuration.png')} style={{border:'1px solid gray'}} alt="Mandiant configuration" width="400"/>
 
 For information about Mandiant, see the [Mandiant website](https://www.mandiant.com/).
 

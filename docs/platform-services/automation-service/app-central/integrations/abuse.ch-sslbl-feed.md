@@ -28,7 +28,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuse.ch-sslbl-feed/abuse.ch-sslbl-feed-4.png')} style={{border:'1px solid gray'}} alt="abuse.ch-sslbl-feed-4" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/abuse-ch-sslbl-configuration.png')} style={{border:'1px solid gray'}} alt="Abuse.ch SSLBL configuration" width="400"/>
 
 For information about Abuse.ch SSLBL, see [Abuse.ch SSLBL documentation](https://sslbl.abuse.ch/).
 
