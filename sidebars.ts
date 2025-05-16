@@ -429,6 +429,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-cpc-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source',
@@ -1054,7 +1055,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/security/index'},
       items: [
-        'manage/security/about-two-step-verification',
+        'manage/security/about-2-step-verification',
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
@@ -3052,7 +3053,7 @@ integrations: [
         'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
       ],
-    },  
+    },
   ],
   api: [
     {
