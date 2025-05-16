@@ -180,19 +180,23 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-* Host
-* Authentication Method
-* Username
-* Password
-* Primary SMTP Address
-* Tenant
-* Client ID
-* Client Secret 
-* Cloud SOAR API URL
-* Cloud SOAR Access ID
-* Cloud SOAR Access Key
-* etc. other details for filtering the mails
-* Automation Engine
+Use the information you set up in [Microsoft EWS configuration](#microsoft-ews-configuration) above:
+* **Host**. Enter the host name of the EWS instance, for example, `outlook.office365.com`.
+* **Authentication Method**. Select the [EWS authentication](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/authentication-and-ews-in-exchange) method:
+    * **Basic**
+    * **NTLM**
+    * **OAuth 2.0**
+* **Username**. Enter the Microsoft EWS username.
+* **Password**. Enter the Microsoft EWS password.
+* **Primary SMTP Address**. Enter the [primary SMTP address](https://learn.microsoft.com/en-us/exchange/client-developer/web-service-reference/primarysmtpaddress) for the user.
+* **Tenant ID**. Enter the  [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) for authentication.
+* **Client ID**. Enter the client ID for authentication.
+* **Client Secret**. Enter the client secret for authentication.
+* **Cloud SOAR API URL**. Enter the URL for your Cloud SOAR API, for example, `https://api.sumologic.com`. Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
+* **Access ID**. Enter the access ID from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
+* **Access Key**. Enter the access key associated with the Sumo Logic access ID entered above.
+* **Automation Engine**. Select whether to use [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
+
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-ews-daemon-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft EWS Daemon configuration" width="400"/>
 
 For information about Microsoft EWS, see [Microsoft Exchange Web Services documentation](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-authenticate-an-ews-application-by-using-oauth).
