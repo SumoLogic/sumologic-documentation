@@ -429,6 +429,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-cpc-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source',
@@ -1054,7 +1055,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/security/index'},
       items: [
-        'manage/security/about-two-step-verification',
+        'manage/security/about-2-step-verification',
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
@@ -3051,7 +3052,7 @@ integrations: [
         'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
       ],
-    },  
+    },
   ],
   api: [
     {
@@ -3183,7 +3184,19 @@ integrations: [
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',
             'platform-services/automation-service/automation-service-bridge',
-            'platform-services/automation-service/automation-service-integration-framework',
+                       {
+              type: 'category',
+              label: 'Integration Framework',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platform-services/automation-service/integration-framework/index'},
+              items: [
+                'platform-services/automation-service/integration-framework/about-integration-framework',
+                'platform-services/automation-service/integration-framework/example-files-integration-framework',
+                'platform-services/automation-service/integration-framework/integration-framework-output',
+                'platform-services/automation-service/integration-framework/docker-integration-framework',
+              ],
+            },
           ],
         },
       ],
