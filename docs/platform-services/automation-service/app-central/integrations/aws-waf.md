@@ -75,9 +75,13 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 * **Label**. Enter the name you want to use for the resource.
 * **Access Key ID**. Enter an [access key ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) to provide authentication. (Although AWS recommends using IAM roles with temporary security credentials instead of access keys, our AWS integrations currently support only access keys due to the need for dynamically managed credentials.)
 * **Secret Access Key**. Enter the secret access key associated with the access key ID.
+* **Session Token**. Enter the session token if you are using [temporary credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html).
 * **AWS Region**. Select the [AWS region](https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html) to use for the integration. 
-* **Scope**. Select the scope for WAF ([**Regional** or **CloudFront**]((https://docs.aws.amazon.com/waf/latest/developerguide/how-aws-waf-works-resources.html))).
+* **Scope**. Select the scope for WAF ([**Regional** or **CloudFront**](https://docs.aws.amazon.com/waf/latest/developerguide/how-aws-waf-works-resources.html)).
+* **Connection Timeout (s)**. Enter the connection timeout time in seconds (for example, `180`). If connection is not made in the alloted time, then the connection is terminated.
+* **Verify Server Certificate**. Select to verify that the [server certificate](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html) is valid.
 * **Automation Engine**. Select whether to use [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
+* **Proxy Options**. Select whether to use an [AWS proxy](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-proxy.html).
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-waf/aws-waf-1.png')} style={{border:'1px solid gray'}} alt="Edit Resource for AWS WAF" width="400"/>
 
