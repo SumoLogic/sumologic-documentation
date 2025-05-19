@@ -2,7 +2,7 @@
 id: aws-cloudtrail
 title: Ingest AWS CloudTrail Data into Cloud SIEM
 sidebar_label: AWS CloudTrail
-description: Configure a CloudTrail source on a source to ingest CloudTrail log messages to be parsed by Cloud SIEM's CloudTrail system parser.
+description: Configure a CloudTrail source to ingest log messages to be parsed by Cloud SIEM’s CloudTrail system parser.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
