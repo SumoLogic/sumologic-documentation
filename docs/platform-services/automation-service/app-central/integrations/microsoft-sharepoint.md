@@ -32,6 +32,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-sharepoint-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Sharepoint configuration" width="400"/>
+
 For information about Microsoft SharePoint, see [SharePoint documentation](https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/sharepoint-admin-apis-authentication-and-authorization).
 
 ## Change Log

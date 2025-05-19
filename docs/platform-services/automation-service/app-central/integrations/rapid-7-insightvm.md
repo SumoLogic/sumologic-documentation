@@ -38,6 +38,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/rapid7-insightvm-configuration.png')} style={{border:'1px solid gray'}} alt="Rapid7 InsightVM configuration" width="400"/>
+
+For information about Rapid7 InsightVM, see [Rapid7 InsightVM documentation](https://docs.rapid7.com/insightvm/).
+
 ## Change Log
 
 * October 27, 2021 - First upload

@@ -46,6 +46,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/tenable-sc-configuration.png')} style={{border:'1px solid gray'}} alt="Tenable.sc configuration" width="400"/>
+
+For information about Tenable Security Center (formerly Tenable.sc), see [Tenable Security Center  documentation](https://docs.tenable.com/security-center.htm).
+
 ## Change Log
 
 * January 31, 2019 - First upload

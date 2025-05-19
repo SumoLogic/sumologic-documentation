@@ -30,6 +30,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/duo-configuration.png')} style={{border:'1px solid gray'}} alt="Duo configuration" width="400"/>
+
+For information about Duo, see [Duo documentation](https://duo.com/docs).
+
 ## Change Log
 
 * February 16, 2021 - First upload

@@ -17,7 +17,7 @@ Coralogix is rebuilding the path to observability using a real-time streaming an
 
 ## Coralogix - Send Logs configuration
 
-Generate and then copy the API Key for sending data.
+Generate and then copy the [API Key](https://coralogix.com/docs/user-guides/account-management/api-keys/api-keys/) for sending data.
 
     `https://<teamname>.coralogix.com/#/integration/apikey` 
 
@@ -29,10 +29,6 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-query-logs/coralogix-query-logs-4.png')} style={{border:'1px solid gray'}} alt="coralogix-query-logs" width="600"/>
-1. Populate all the required fields (\*) and click **Save**.
    * **Server URL**. Choose between the following URLs depending on the top level domain of your Coralogix account (.com, .in, etc.):
 	   + for .eu use https://coralogix-esapi.coralogix.com
 	   + for .us use https://esapi.coralogix.us
@@ -40,10 +36,9 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 	   + for .eu2. use https://es-api.eu2.coralogix.com
 	   + for sg.com use https://es-api.coralogixsg.com
    * **Private Key**. Your Coralogix account private key.
-   * **Port**. Port usually 9443. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-query-logs/coralogix-query-logs-5.png')} style={{border:'1px solid gray'}} alt="coralogix-query-logs" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-query-logs/coralogix-query-logs-6.png')} style={{border:'1px solid gray'}} alt="coralogix-query-logs" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-query-logs/coralogix-query-logs-7.png')} style={{border:'1px solid gray'}} alt="coralogix-query-logs" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-query-logs/coralogix-query-logs-8.png')} style={{border:'1px solid gray'}} alt="coralogix-query-logs" width="400"/>
+   * **Port**. Port usually 9443. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/coralogix-query-logs-configuration.png')} style={{border:'1px solid gray'}} alt="Coralogix Query Logs configuration" width="400"/>
+
+For information about Coralogix - Query Logs, see [Coralogix documentation](https://coralogix.com/docs/).
 
 ## Change Log
 

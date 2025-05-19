@@ -21,6 +21,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/anomali/anomali-threatstream-configuration.png')} style={{border:'1px solid gray'}} alt="Anomali configuration" width="400"/>
+
+For information about Anomali ThreatStream, see [Anomali documentation](https://www.anomali.com/resources).
+
 ## Change Log
 
 * November 10, 2022 - First upload

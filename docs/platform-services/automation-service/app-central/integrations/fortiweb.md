@@ -41,6 +41,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fortiweb-configuration.png')} style={{border:'1px solid gray'}} alt="FortiWeb configuration" width="400"/>
+
+For information about FortiWeb, see [FortiWeb documentation](https://docs.fortinet.com/product/fortiweb/7.6).
+
 ## Change Log
 
 * June 3, 2019 - First upload

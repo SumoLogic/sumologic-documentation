@@ -227,6 +227,34 @@ Every time you publish a playbook, a new version of the playbook is retained. In
 
 <img src={useBaseUrl('img/platform-services/automation-service/playbook-versions.png')} alt="Playbook versions" style={{border:'1px solid gray'}} width="800"/>
 
+## Enable or disable playbooks
+
+You can enable playbooks for use in automations, or disable them to prevent them from being used. This gives you greater control over when a playbook can be run. If for example a playbook is causing a problem, such as exceeding your actions limit or sending too many emails, you could temporarily disable the playbook until you remedy the issue. 
+
+When enabling or disabling playbooks, keep in mind:
+* By default, draft playbooks are disabled.
+* Playbooks without any published versions are initially disabled and will be automatically enabled upon publishing their first version.
+* Disabled playbooks cannot be triggered automatically.
+* Deleted playbooks are set to disabled and remain so after restoration.
+* Cloned or imported playbooks are enabled by default, irrespective of the original playbook's status.
+* [Audit logs](/docs/platform-services/automation-service/automation-service-audit-logging/) are generated whenever playbooks are enabled or disabled manually. 
+
+### How to enable or disable a playbook
+
+To enable or disable a playbook, open the playbook and click the toggle.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-toggle.png')} alt="Playbook enabled toggle" style={{border:'1px solid gray'}} width="400"/><br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-disabled-toggle.png')} alt="Playbook disabled toggle" style={{border:'1px solid gray'}} width="400"/>
+
+The **Status** column shows whether a playbook is enabled <img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-symbol.png')} alt="Playbook enabled symbol" style={{border:'1px solid gray'}} width="30"/> or disabled <img src={useBaseUrl('img/platform-services/automation-service/playbook-disabled-symbol.png')} alt="Playbook disabled symbol" style={{border:'1px solid gray'}} width="30"/>.  
+
+<img src={useBaseUrl('img/platform-services/automation-service/playbook-status-enabled-disabled.png')} alt="Playbook status column" style={{border:'1px solid gray'}} width="800"/>
+
+### Enable on publish
+
+To publish a playbook, click the **Publish** button at the bottom of the playbook window:<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} style={{border:'1px solid gray'}} alt="Publish the playbook" width="300"/>
+
+When you publish a playbook:
+* Playbooks without any published versions are automatically enabled. 
+* Playbooks that have previously published versions will display an **Enable playbook on publish** option if they are in a disabled state:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enable-on-publish-toggle.png')} style={{border:'1px solid gray'}} alt="Publish enable on publish" width="400"/>
+
 ## Playbook preferences
 
 1. Click the preferences button in the upper-right corner of the screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-preferences.png')} alt="Playbook preferences button" style={{border:'1px solid gray'}} width="200"/>

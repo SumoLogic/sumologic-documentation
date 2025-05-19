@@ -24,6 +24,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/qualys-edr-configuration.png')} style={{border:'1px solid gray'}} alt="Qualys EDR configuration" width="400"/>
+
+For information about Qualys EDR, see [Qualys EDR documentation](https://docs.qualys.com/en/edr/latest/get_started/get_started.htm).
+
 ## Change Log
 
 * August 17, 2021 - First upload

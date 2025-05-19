@@ -28,7 +28,9 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Hatching Triage, see [Triage documentation](https://tria.ge/docs/).
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/hatching-triage-configuration.png')} style={{border:'1px solid gray'}} alt="Hatching Triage configuration" width="400"/>
+
+For information about Recorded Future Triage ([formerly Hatching Triage](https://www.recordedfuture.com/press-releases/20220708?__hstc=127779026.d176b7b968ca49adca8682556d5d7654.1746109202335.1746109202335.1746109202335.1&__hssc=127779026.1.1746109202335&__hsfp=3347877758)), see [Recorded Future Triage documentation](https://tria.ge/docs/).
 
 ## Change Log
 

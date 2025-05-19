@@ -83,6 +83,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/palo-alto-networks-panorama-configuration.png')} style={{border:'1px solid gray'}} alt="Palo Alto Networks Panorama V2 configuration" width="400"/>
+
+For information about Palo Alto Networks Panorama, see [Palo Alto Networks Panorama documentation](https://docs.paloaltonetworks.com/panorama).
+
 ## Change Log
 
 * January 14, 2020 - First upload

@@ -22,6 +22,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/shodan-configuration.png')} style={{border:'1px solid gray'}} alt="Shodan configuration" width="400"/>
+
+For information about Shodan, see [Shodan documentation](https://developer.shodan.io/).
+
 ## Change Log
 
 * February 8, 2019 - First upload

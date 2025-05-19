@@ -21,6 +21,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-azure-log-analytics-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Azure Log Analytics configuration" width="400"/>
+
+For information about Microsoft Azure Log Analytics, see [Microsoft Azure Log Analytics documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview?tabs=simple).
+
 ## Change Log
 
 * September 4, 2023 (v1.0) - First upload
