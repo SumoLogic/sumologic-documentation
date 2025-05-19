@@ -11,7 +11,6 @@ To ingest Fortigate Firewall data into Cloud SIEM:
 1. [Configure a Syslog source](/docs/send-data/installed-collectors/sources/syslog-source/#configure-a-syslog-source) on a collector. When you configure the source, do the following:
     1. Click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
     1. Add another field named `_parser` with value */Parsers/System/Fortinet/Fortigate/Fortigate-Syslog*. This ensures that the Fortigate Firewall logs are parsed and normalized into structured records in Cloud SIEM.
-Configure FortiGate
 1. Configure forwarding to the the syslog source:
     * If your FortiGate logs are aggregated by FortiAnalyzer, you can forward them to Sumo Logic  as described in [Configuring log forwarding](https://help.fortinet.com/fa/faz50hlp/56/5-6-1/FMG-FAZ/2400_System_Settings/1600_Log%20Forwarding/0400_Configuring.htm?Highlight=syslog) in FortiAnalyzer help.
     * If your FortiGate logs are not aggregated by FortiAnalyzer, you can forward them to Sumo Logic directly from FortiGate as described in [FortiOS documentation for syslog forwarding](https://docs.fortinet.com/document/fortigate/6.4.0/administration-guide/610676/configuring-multiple-fortianalyzers-or-syslog-servers-per-vdom).
