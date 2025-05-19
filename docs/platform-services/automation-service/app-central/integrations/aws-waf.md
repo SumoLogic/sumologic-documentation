@@ -72,11 +72,14 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-* Access Key
-* Secret Key
-* AWS Region
-* Scope
-* Automation Engine<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-waf/aws-waf-1.png')} style={{border:'1px solid gray'}} alt="Edit Resource for AWS WAF" width="400"/>
+* **Label**. Enter the name you want to use for the resource.
+* **Access Key ID**. Enter an [access key ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) to provide authentication. (Although AWS recommends using IAM roles with temporary security credentials instead of access keys, our AWS integrations currently support only access keys due to the need for dynamically managed credentials.)
+* **Secret Access Key**. Enter the secret access key associated with the access key ID.
+* **AWS Region**. Select the [AWS region](https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html) to use for the integration. 
+* **Scope**. Select the scope for WAF ([**Regional** or **CloudFront**]((https://docs.aws.amazon.com/waf/latest/developerguide/how-aws-waf-works-resources.html))).
+* **Automation Engine**. Select whether to use [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-waf/aws-waf-1.png')} style={{border:'1px solid gray'}} alt="Edit Resource for AWS WAF" width="400"/>
 
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 
