@@ -40,7 +40,7 @@ import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-a
 * **Service Name**. Enter `AWS Security Hub`.
 * **Access Key**. Enter an [access key ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) to provide authentication. (Although AWS recommends using IAM roles with temporary security credentials instead of access keys, our AWS integrations currently support only access keys due to the need for dynamically managed credentials.)
 * **Secret Key**. Enter the secret access key associated with the access key ID.
-* **Timeout connection (sec)**. Enter the connection timeout time in seconds (for example, `180`). If connection is not made in the alloted time, then the connection is terminated.
+* **Timeout connection (sec)**. Enter the connection timeout time in seconds (for example, `180`). If connection is not made in the allotted time, then the connection is terminated.
 * **Automation engine**. Select whether to use [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
 * **Proxy Options**. Select whether to use an [AWS proxy](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-proxy.html).
 
