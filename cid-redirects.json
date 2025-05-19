@@ -4216,6 +4216,7 @@
   "/docs/cse/ingestion/signal-sciences-waf": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/signal-sciences-waf",
   "/docs/cse/ingestion/symantec-proxy-secure-gateway-blue-coat-proxy": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway-blue-coat-proxy",
   "/docs/cse/ingestion/symantec-proxy-secure-gateway": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway-blue-coat-proxy",
+  "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway-blue-coat-proxy",
   "/docs/cse/ingestion/zscaler-nss": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/zscaler-nss",
   "/docs/cse/ingestion/zscaler-private-access": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/zscaler-private-access",
   "/docs/cse/administration/onboarding-checklist-cse": "/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse",
