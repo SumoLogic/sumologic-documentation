@@ -114,23 +114,55 @@ The **Azure Cache for Redis - Policy and Recommendations** dashboard provides de
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Policy-and-Recommendations.png')} alt="Azure Cache for Redis - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
-### Resource Operations
+### Resource Operations (Enterprise)
 
-The **Azure Cache for Redis - Resource Operations** dashboard provides details like total operations, ops per second (max), gets, sets, evicted key count, and expired key count.
+The **Azure Cache for Redis - Resource Operations(Enterprise)** dashboard provides details like total operations, ops per second (max), gets, sets, evicted key count, and expired key count.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Operations.png')} alt="Azure Cache for Redis - Resource Operations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Operations-Enterprise.png')} alt="Azure Cache for Redis - Resource Operations(Enterprise)" style={{border: '1px solid gray'}} width="800" />
 
-### Resource Overview
+### Resource Operations (Non-Enterprise)
 
-The **Azure Cache for Redis - Resource Overview** dashboard provides details like max server load %, max CPU %, max bytes used, max number of connected clients, and errors.
+The **Azure Cache for Redis - Resource Operations(Non-Enterprise)** dashboard provides details like total operations, ops per second (max), gets, sets, evicted key count, and expired key count.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Overview.png')} alt="Azure Cache for Redis - Resource Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Operations-Non-Enterprise.png')} alt="Azure Cache for Redis - Resource Operations(Non-Enterprise)" style={{border: '1px solid gray'}} width="800" />
 
-### Resource Performance
 
-The **Azure Cache for Redis - Resource Performance** dashboard provides details like cache hits, cache misses, cache write (max), cache read (max), cache latency microseconds, and 99th percentile latency (max).
+### Resource Overview (Enterprise)
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Performance.png')} alt="Azure Cache for Redis - Resource Performance" style={{border: '1px solid gray'}} width="800" />
+The **Azure Cache for Redis - Resource Overview(Enterprise)** dashboard provides details like max server load %, max CPU %, max bytes used, max number of connected clients, and errors.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Overview-Enterprise.png')} alt="Azure Cache for Redis - Resource Overview(Enterprise)" style={{border: '1px solid gray'}} width="800" />
+
+### Resource Overview (Non-Enterprise)
+
+The **Azure Cache for Redis - Resource Overview(Non-Enterprise)** dashboard provides details like max server load %, max CPU %, max bytes used, max number of connected clients, and errors.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Overview-Non-Enterprise.png')} alt="Azure Cache for Redis - Resource Overview(Non-Enterprise)" style={{border: '1px solid gray'}} width="800" />
+
+
+### Resource Performance (Enterprise)
+
+The **Azure Cache for Redis - Resource Performance(Enterprise)** dashboard provides details like cache hits, cache misses, cache write (max), cache read (max), cache latency microseconds, and 99th percentile latency (max).
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Performance-Enterprise.png')} alt="Azure Cache for Redis - Resource Performance(Enterprise)" style={{border: '1px solid gray'}} width="800" />
+
+### Resource Performance (Non-Enterprise)
+
+The **Azure Cache for Redis - Resource Performance(Non-Enterprise)** dashboard provides details like cache hits, cache misses, cache write (max), cache read (max), cache latency microseconds, and 99th percentile latency (max).
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Performance-Non-Enterprise.png')} alt="Azure Cache for Redis - Resource Performance(Non-Enterprise)" style={{border: '1px solid gray'}} width="800" />
+
+
+### Azure Application Gateway alerts
+These alerts are metric based and will work for all Azure Application Gateways.
+
+| Alert Name                                       | Alert Description and Conditions                                                                                                                                                        | Alert Condition    | Recover Condition |
+|:-------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------|:------------------|
+| `Azure Cache For Redis - Cache Read`             | This alert is triggered  when Average Cache Read bytes are greater than 140625000. Also, a warning type alert will be triggered when Cache Read Units bytes are greater than 130625000. | bytes >= 140625000 | bytes < 140625000 |
+| `Azure Cache For Redis - Connected Clients`      | This alert is triggered  when Connected Clients count is greater than 5625. Also, a warning type alert will be triggered when Connected Clients count is greater than 4625.             | count >= 5625      | count < 5625      |
+| `Azure Cache For Redis - CPU Utilization`        | This alert is triggered when CPU Utilization percentage greater than 80. Also a warning type alert will be triggered when CPU Utilization percentage greater than 70.                   | percentage >= 80   | percentage < 80   |
+| `Azure Cache For Redis - Server Load`            | This alert is triggered when Server Load percentage greater than 80. Also a warning type alert will be triggered when Server Load percentage greater than 70.                           | percentage >= 80   | percentage < 80   |
+| `Azure Cache For Redis - Used Memory Percentage` | This alert is triggered when Used Memory percentage greater than 80. Also a warning type alert will be triggered when Used Memory percentage greater than 70.                           | percentage >= 80   | percentage < 80   |
 
 ## Troubleshooting
 
