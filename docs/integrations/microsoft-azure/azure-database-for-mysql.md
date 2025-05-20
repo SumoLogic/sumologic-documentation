@@ -164,6 +164,17 @@ The **Azure Database for Mysql - Storage Overview** dashboard provides details a
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Storage-Overview.png')} alt="Azure Database for Mysql - Storage Overview" style={{border: '1px solid gray'}} width="800" />
 
 
+## Azure Database for MySQL alerts
+These alerts are metric based and will work for all Azure Database for MySQL.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Database for MySQL - Active Connections`  | This alert fires when number of active connections in Azure MySQL instance is greater than a threshold value (default value 50). | connections >= 50   | connections < 50  |
+| `Azure Database for MySQL - High CPU Utilization` | This alert fires when CPU usage % on a host in a Azure MySQL instance is greater than a threshold value (default value 90) | percentage >= 90 | percentage < 90  |
+| `Azure Database for MySQL - High Memory Utilization` | This alert fires when memory % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90 | percentage < 90  |
+| `Azure Database for MySQL - High Storage IO %` | This alert fires when storage IO % on a resource in a Azure MySQL instance is greater than a threshold value (default value 80%) | percentage >= 80  | percentage < 80   |
+| `Azure Database for MySQL - High Storage Utilization` | This alert fires when storage % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90  | percentage < 90   |
+
 ## Troubleshooting
 
 ### HTTP Logs and Metrics Source used by Azure Functions
