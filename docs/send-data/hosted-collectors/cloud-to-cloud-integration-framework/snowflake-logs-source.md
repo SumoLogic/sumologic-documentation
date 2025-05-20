@@ -5,7 +5,7 @@ sidebar_label: Snowflake Logs
 tags:
   - cloud-to-cloud
   - snowflake-logs
-description: Learn how to collect the row data from the supported global tables (`QUERY_HISTORY`, LOGIN_HISTORY, SESSIONS, GRANTS_TO_USERS, DATA_TRANSFER_HISTORY, STAGES, and Custom Events) and send it to Sumo Logic.
+description: Learn how to collect the row data from the supported global tables (QUERY_HISTORY, LOGIN_HISTORY, SESSIONS, GRANTS_TO_USERS, DATA_TRANSFER_HISTORY, STAGES, and Custom Events) and send it to Sumo Logic.
 ---
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/snowflake-logs/example.json';
