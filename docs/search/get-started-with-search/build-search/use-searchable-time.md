@@ -33,3 +33,4 @@ Follow the below steps to run a search by Searchable Time:
 ## Limitations
 
 - Subqueries are not supported for Searchable Time.
+- `time_source` field in the terraform supports **Searchable** value for dashboards.
