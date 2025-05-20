@@ -154,6 +154,11 @@ This section has instructions for collecting Amazon VPC Flow Logs using an Amazo
 4. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) for the S3 Source to Sumo Logic. When you configure the S3 source:
     1. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.
     2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`.
+    :::note
+     If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM: 
+     * Click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM. 
+     * Also add another field named `_parser` and enter the value `/Parsers/System/AWS/AWS VPC Flow`.
+     :::
 
 
 ## Field Extraction Rule(s) for VPC Flow logs
