@@ -31,24 +31,27 @@ Interact with AWS S3 buckets, objects, and policies.
 ## Configure AWS S3 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import AWSRegion from '../../../../reuse/automation-service/aws/region.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key-and-secret.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-* **Label**. Enter the name you want to use for the resource.
-* **Access Key**. Enter an [access key ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) to provide authentication. (Although AWS recommends using IAM roles with temporary security credentials instead of access keys, our AWS integrations currently support only access keys due to the need for dynamically managed credentials.)
-* **Secret Key**. Enter the secret access key associated with the access key ID.
-* **Region**. Enter your [AWS region](https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html).
+<IntegrationLabel/>
+<AWSAccesskey/>
+<AWSRegion/>
 * **URL**. Enter your [Amazon S3 URL](https://docs.aws.amazon.com/general/latest/gr/s3.html), for example, `s3.us-east-1.amazonaws.com`.
-* **Automation engine**. Select **Cloud execution** for this certified integration. Select a bridge option only for a custom integration. See [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
-* **Proxy Options**. Select whether to use a proxy to route network requests through a proxy server to manage and control internet traffic.
+<IntegrationEngine/>
+<IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-s3-configuration.png')} style={{border:'1px solid gray'}} alt="AWS S3 configuration" width="400"/>
 
-import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
-
 <IntegrationsAuthAWS/>
-
-For information about AWS S3, see [S3 documentation](https://docs.aws.amazon.com/s3/).
 
 ## Change Log
 
