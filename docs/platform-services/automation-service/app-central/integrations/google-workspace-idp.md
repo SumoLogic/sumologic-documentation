@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
-***Version: 1.0  
+***Version: 1.1  
 Updated: May 21, 2025***
 
 Google Workspace Identity Platform (IDP) is a cloud-based identity management system that enables secure authentication, single sign-on (SSO), and user access control across Google services and third-party applications.
@@ -60,3 +60,4 @@ For information about Google Workspace IDP, see [Google Workspace IDP API docume
 ## Change Log
 
 * May 21, 2025 (v1.0) - First upload
+* May 21, 2025 (v1.1) - Updated google logo in integration
