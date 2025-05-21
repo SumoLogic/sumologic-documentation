@@ -125,7 +125,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Azure App Service Plan alerts
 
-These alerts are metrics-based and will work for all App service plans.
+These alerts are metrics-based and will work for all app service plans.
 
 | Alert Name | Description                                                                                                                                                                      | Alert Condition  | Recover Condition |
 |:-|:-|:-|:-|
