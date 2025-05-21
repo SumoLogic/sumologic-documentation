@@ -1641,6 +1641,7 @@
   "/cid/6027": "/docs/integrations/saas-cloud/sysdig-secure",
   "/cid/6028": "/docs/integrations/saas-cloud/bitwarden",
   "/cid/6029": "/docs/integrations/saas-cloud/kaltura",
+  "/cid/6030": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-logs-source",
   "/cid/10112": "/docs/integrations/app-development/jfrog-xray",
   "/cid/10113": "/docs/observability/root-cause-explorer",
   "/cid/10116": "/docs/manage/fields",
