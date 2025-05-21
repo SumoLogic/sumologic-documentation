@@ -117,6 +117,22 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-AppService/Azure-App-Service-Plan-Administrative-Operations.png')} alt="Azure AppService Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure App Service Plan
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure App Service Plan alerts
+
+These alerts are metrics-based and will work for all App service plans.
+
+| Alert Name                                     | Description                                                                               | Alert Condition  | Recover Condition |
+|:-----------------------------------------------|:------------------------------------------------------------------------------------------|:-----------------|:------------------|
+| `Azure App Service Plan - CPU Usage`           | This alert gets triggered when high CPU usage is detected in Azure App Service Plans.     | Count > 90       | Count =< 90       |
+| `Azure App Service Plan - Disk Queue Length`   | This alert gets triggered when Disk Queue Length becomes high and crosses the thresholds. | Count >= 4       | Count < 4         |
+| `Azure App Service Plan - HTTP Queue Length`   | This alert gets triggered when the HTTP Queue Length is high and crosses the threshold.   | Count 	>= 100    | Count < 100       |
+| `Azure App Service Plan - Memory Usage`      | This alert gets triggered when high Memory usage is detected in Azure App Service Plans.    | Count > 80       | Count =< 80       |
 ## Upgrading the Azure App Service Plan app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
