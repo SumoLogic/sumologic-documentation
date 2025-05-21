@@ -1,3 +1,0 @@
-* **Access Key ID**. Enter an AWS [access key ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) to provide authentication. (Although AWS recommends using IAM roles with temporary security credentials instead of access keys, our AWS integrations currently support only access keys due to the need for dynamically managed credentials.)
-
-* **Secret Access Key**. Enter the secret access key associated with the access key ID.

@@ -29,7 +29,8 @@ Using the integration with SQS, you can gather current queues, add a new queue, 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 import AWSRegion from '../../../../reuse/automation-service/aws/region.md';
-import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key-and-secret.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
@@ -38,11 +39,12 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 
-<IntegrationLabel/>
-<AWSAccesskey/>
-<AWSRegion/>
-<IntegrationEngine/>
-<IntegrationProxy/>
+* <IntegrationLabel/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSRegion/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-sqs-configuration.png')} style={{border:'1px solid gray'}} alt="AWS SQS configuration" width="400"/>
 

@@ -29,7 +29,8 @@ Interact with AWS Security Hub through Insights and Findings.
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 import AWSRegion from '../../../../reuse/automation-service/aws/region.md';
-import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key-and-secret.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
@@ -38,14 +39,15 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 
-<IntegrationLabel/>
+* <IntegrationLabel/>
 * **Host**. Enter your [Security Hub URL](https://docs.aws.amazon.com/general/latest/gr/sechub.html), for example, `securityhub.us-east-1.amazonaws.com`.
-<AWSRegion/>
+* <AWSRegion/>
 * **Service Name**. Enter `AWS Security Hub`.
-<AWSAccesskey/>
-<IntegrationTimeout/>
-<IntegrationEngine/>
-<IntegrationProxy/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-security-hub-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Security Hub configuration" width="400"/>
 

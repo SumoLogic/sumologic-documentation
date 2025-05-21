@@ -29,7 +29,8 @@ AWS Network Firewall is a stateful, managed, network firewall and intrusion dete
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 import AWSRegion from '../../../../reuse/automation-service/aws/region.md';
-import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key-and-secret.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
@@ -38,13 +39,14 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 
-<IntegrationLabel/>
-<AWSAccesskey/>
-<AWSRegion/>
-<IntegrationTimeout/>
-<IntegrationCertificate/>
-<IntegrationEngine/>
-<IntegrationProxy/>
+* <IntegrationLabel/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSRegion/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-network-firewall-configuration.png')} style={{border:'1px solid gray'}} alt="AWS NetWork Firewall configuration" width="400"/>
 

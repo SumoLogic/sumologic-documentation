@@ -217,7 +217,7 @@ Sumo Logic's FedRAMP deployment is similar to our other deployments, such as US2
 
 import AwsRegion from '../reuse/aws-region-by-sumo-deployment.md';
 
-<AwsRegion/>
+* <AWSRegion/>
 
 ## Status codes
 

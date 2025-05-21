@@ -7,4 +7,4 @@ description: This guide contains information about API authentication and the Su
 
 import AwsRegion from '../reuse/aws-region-by-sumo-deployment.md';
 
-<AwsRegion/>
+* <AWSRegion/>

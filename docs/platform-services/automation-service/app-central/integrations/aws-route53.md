@@ -29,7 +29,8 @@ Interact with DNS records through AWS Route 53.
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 import AWSRegion from '../../../../reuse/automation-service/aws/region.md';
-import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key-and-secret.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
@@ -38,12 +39,13 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 
-<IntegrationLabel/>
+* <IntegrationLabel/>
 * **URL**. Enter your [AWS Route 53 URL](https://docs.aws.amazon.com/general/latest/gr/r53.html), for example, `route53.amazonaws.com`.
-<AWSAccesskey/>
-<AWSRegion/>
-<IntegrationEngine/>
-<IntegrationProxy/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSRegion/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-route53-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Route 53 configuration" width="400"/>
 

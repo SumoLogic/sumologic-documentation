@@ -1,1 +1,1 @@
-* **Verify Server Certificate**. Select to validate the server’s SSL certificate.
+**Verify Server Certificate**. Select to validate the server’s SSL certificate.

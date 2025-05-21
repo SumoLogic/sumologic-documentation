@@ -44,7 +44,8 @@ AWS IAM (Identity and Access Management) is a web service that helps securely co
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 import AWSRegion from '../../../../reuse/automation-service/aws/region.md';
-import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key-and-secret.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
@@ -53,11 +54,12 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 
-<IntegrationLabel/>
-<AWSAccesskey/>
-<AWSRegion/>
-<IntegrationEngine/>
-<IntegrationProxy/>
+* <IntegrationLabel/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSRegion/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-iam-configuration.png')} style={{border:'1px solid gray'}} alt="AWS IAM configuration" width="400"/>
 

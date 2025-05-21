@@ -44,7 +44,8 @@ Interact with AWS GuardDuty during incident investigation.
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 import AWSRegion from '../../../../reuse/automation-service/aws/region.md';
-import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key-and-secret.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
@@ -53,15 +54,16 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 
-<IntegrationLabel/>
-<AWSRegion/>
+* <IntegrationLabel/>
+* <AWSRegion/>
 * **Service Name**. Enter `Amazon GuardDuty`.
-<AWSAccesskey/>
+* <AWSAccesskey/>
+* <AWSSecret/>
 * **Server URL**. Enter your [AWS GuardDuty URL](https://docs.aws.amazon.com/general/latest/gr/guardduty.html), for example, `guardduty.us-east-1.amazonaws.com`.
-<IntegrationTimeout/>
-<IntegrationCertificate/>
-<IntegrationEngine/>
-<IntegrationProxy/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-guardduty-configuration.png')} style={{border:'1px solid gray'}} alt="AWS GuardDuty configuration" width="400"/>
 
