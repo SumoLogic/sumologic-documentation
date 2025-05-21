@@ -1,0 +1,1 @@
+* **Proxy Options**. Select whether to use a proxy to route network requests through a proxy server to manage and control internet traffic.

@@ -54,10 +54,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 * **Secret Key**. Enter the secret access key associated with the access key ID.
 * **AWS Region**. Enter your [AWS region](https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html).
 * **Session Token**. Enter the session token if you are using [temporary credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html).
-* **Connection Timeout (s)**. Enter the connection timeout time in seconds (for example, `180`). If connection is not made in the allotted time, then the connection is terminated.
-* **Verify Server Certificate**. Select to verify that the [server certificate](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html) is valid.
-* **Automation Engine**. Select whether to use [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
-* **Proxy Options**. Select whether to use an [AWS proxy](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-proxy.html). 
+* **Connection Timeout (s)**. Set the maximum amount of time the integration will wait for a server's response before terminating the connection. Enter the connection timeout time in seconds (for example, `180`). 
+* **Verify Server Certificate**. Select to validate the server’s SSL certificate.
+* **Automation Engine**. Select **Cloud execution** for this certified integration. Select a bridge option only for a custom integration. See [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
+* **Proxy Options**. Select whether to use a proxy to route network requests through a proxy server to manage and control internet traffic.
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-eks-configuration.png')} style={{border:'1px solid gray'}} alt="AWS EKS configuration" width="400"/>
 
