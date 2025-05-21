@@ -32,7 +32,7 @@ Interact with AWS S3 buckets, objects, and policies.
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
-import AWSRegion from '../../../../reuse/automation-service/aws/region.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
@@ -46,7 +46,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * <AWSAccesskey/>
 * <AWSSecret/>
-* <AWSRegion/>
+* <AWSRegions/>
 * **URL**. Enter your [Amazon S3 URL](https://docs.aws.amazon.com/general/latest/gr/s3.html), for example, `s3.us-east-1.amazonaws.com`.
 * <IntegrationEngine/>
 * <IntegrationProxy/>

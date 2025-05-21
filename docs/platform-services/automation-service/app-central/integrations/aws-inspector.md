@@ -24,7 +24,7 @@ Amazon Inspector enables you to analyze the behavior of your AWS resources and t
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
-import AWSRegion from '../../../../reuse/automation-service/aws/region.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
@@ -38,7 +38,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * <AWSAccesskey/>
 * <AWSSecret/>
-* <AWSRegion/>
+* <AWSRegions/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>
    

@@ -30,7 +30,7 @@ AWS Private CA enables creation of private certificate authority (CA) hierarchie
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
-import AWSRegion from '../../../../reuse/automation-service/aws/region.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
@@ -45,7 +45,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <AWSAccesskey/>
 * <AWSSecret/>
 * **Session Token**. Enter the session token if you are using [temporary credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html).
-* <AWSRegion/>
+* <AWSRegions/>
 * <IntegrationCertificate/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>

@@ -43,7 +43,7 @@ Interact with AWS GuardDuty during incident investigation.
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
-import AWSRegion from '../../../../reuse/automation-service/aws/region.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
@@ -55,7 +55,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 <IntegrationsAuth/>
 
 * <IntegrationLabel/>
-* <AWSRegion/>
+* <AWSRegions/>
 * **Service Name**. Enter `Amazon GuardDuty`.
 * <AWSAccesskey/>
 * <AWSSecret/>
