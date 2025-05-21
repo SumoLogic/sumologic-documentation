@@ -8,7 +8,7 @@ description: Changelog for Windows source template for OpenTelemetry.
 ## [7.0.0] - 2025-04-30
 ### Fixed
 - Validation for choosing at least one scraper when metric section is enabled.
-- Validation for choosing at lease one event source when log section is enabled.
+- Validation for choosing at least one event source when log section is enabled.
 
 ## [6.1.2] - 2025-04-23
 ### Added
