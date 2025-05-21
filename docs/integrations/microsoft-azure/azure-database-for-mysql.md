@@ -20,7 +20,7 @@ For Azure Database for MySQL, you can collect the following logs and metrics:
 * **MySQL Slow Query Logs**. In the Azure Database for MySQL flexible server, the slow query log is available to users to configure and access. Slow query logs are disabled by default and can be enabled to assist with identifying performance bottlenecks during troubleshooting. To learn more about the different log types and schemas collected for Azure Database for MySQL, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/mysql/flexible-server/concepts-slow-query-logs#access-slow-query-logs).
 * **MySQL Error Logs**. In the Azure Database for MySQL flexible server, the error log is available to users to configure and access. Error logs in MySQL gather diagnostic messages during server startup and shutdown and while the server is running, to provide information that can help proactive troubleshooting. For more information about the MySQL error log, see the [Error Log Documentation](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-error-logs).
    :::note
-   MySQL Error Logs are currently in a preview phase and are only available under Server Logs. These logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them, and then [upload the logs](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) to a Sumo Logic HTTP source endpoint.
+   MySQL Error Logs are currently in a preview phase and are only available under Server Logs. These logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them.
    :::
 * **Platform Metrics for Azure Database for MySQL**. These metrics are available in the [Microsoft.DBforMySQL/flexibleServers](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-dbformysql-flexibleservers-metrics) namespace. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-monitoring#list-of-metrics).
 
@@ -74,6 +74,19 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 :::note
 Since this source contains logs from multiple regions, ensure that you do not tag this source with the location tag.
 :::
+
+### Collecting Error Logs
+Since error logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them, then [upload the logs](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) to a Sumo Logic HTTP source endpoint. Please note that in the HTTP source created to receive the error logs, need to be tagged with the following [fields](#manage-fields) with appropriate values. These values can be copied from appropriate resource for which logs are ingested through Azure Eventhub for log source. : 
+
+- resource_name
+- location
+- resource_type
+- provider_name
+- resource_group
+- tenant_name
+- subscription_id
+
+Error logs dashboard will get populated only if the error logs are collected following the above instructions.
 
 ## Installing the Azure Flexible Database for Mysql app
 
