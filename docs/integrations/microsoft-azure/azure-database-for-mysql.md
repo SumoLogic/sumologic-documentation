@@ -20,7 +20,7 @@ For Azure Database for MySQL, you can collect the following logs and metrics:
 * **MySQL Slow Query Logs**. In the Azure Database for MySQL flexible server, the slow query log is available to users to configure and access. Slow query logs are disabled by default and can be enabled to assist with identifying performance bottlenecks during troubleshooting. To learn more about the different log types and schemas collected for Azure Database for MySQL, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/mysql/flexible-server/concepts-slow-query-logs#access-slow-query-logs).
 * **MySQL Error Logs**. In the Azure Database for MySQL flexible server, the error log is available to users to configure and access. Error logs in MySQL gather diagnostic messages during server startup and shutdown and while the server is running, to provide information that can help proactive troubleshooting. For more information about the MySQL error log, see the [Error Log Documentation](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-error-logs).
    :::note
-   MySQL Error Logs are currently in a preview phase and are only available under Server Logs. These logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them, and then [upload the logs](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) to a Sumo Logic HTTP source endpoint.
+   MySQL Error Logs are currently in a preview phase and are only available under Server Logs. These logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them.
    :::
 * **Platform Metrics for Azure Database for MySQL**. These metrics are available in the [Microsoft.DBforMySQL/flexibleServers](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-dbformysql-flexibleservers-metrics) namespace. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-monitoring#list-of-metrics).
 
@@ -30,105 +30,15 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 * Activity Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/). It is recommended to create a separate source for activity logs. If you are already collecting these logs, you can skip this step.
-* Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
+* Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
 You must explicitly enable diagnostic settings for each Azure Database for MySQL server you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DatabaseForMySQL/Logs`, `Azure/DatabaseForMySQL/Metrics`.
 
-### Configure field in field schema
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
-2. Search for the following fields:
-   - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions in the [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs to.
-   - `subscription_id`. ID associated with a subscription where the resource is present.
-   - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
-   - `resource_type`. Azure resource type (for example, storage accounts).
-   - `resource_name`. The name of the resource (for example, storage account name).
-   - `service_type`. Type of the service that can be accessed with a Azure resource.
-   - `service_name`. Services that can be accessed with an Azure resource (for example, Azure SQL databases in Azure SQL Server).
-3. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
-
-### Configure Field Extraction Rules
-
-Create the following Field Extraction Rules (FER) for Azure Storage by following the instructions in the [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
-
-#### Azure location extraction FER
-
-   ```sql
-   Rule Name: AzureLocationExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
-   | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
-   | if (!isBlank(resourceLocation), resourceLocation, location) as location
-   | if (!isBlank(service_region), service_region, location) as location 
-   | if (isBlank(location), "global", location) as location
-   | fields location
-   ```
-
-#### Resource ID extraction FER
-
-   ```sql
-   Rule Name: AzureResourceIdExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
-   | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
-   | toUpperCase(resourceId) as resourceId
-   | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
-   | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
-   | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
-   | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
-   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
-   | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
-   ```
-
-### Configure metric rules
-
-Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule).
-
-#### Azure observability metadata extraction flexible mysql server level
-
-```sql
-Rule Name: AzureObservabilityMetadataExtractionFlexibleMySQLServerLevel
-```
-
-```sql title="Metric match expression"
-resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/FLEXIBLESERVERS/* tenant_name=*
-```
-
-| Fields extracted  | Metric rule          |
-|:------------------|:---------------------|
-| subscription_id   | $resourceId._1       |
-| resource_group    | $resourceId._2       |
-| provider_name     | MICROSOFT.DBFORMYSQL |
-| resource_type     | FLEXIBLESERVERS      |
-| resource_name     | $resourceId._3       |
-
-
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, onto an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
-
-1. Create a hosted collector and tag the `tenant_name` field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
-2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each Flexible Mysql Server resource that you want to monitor.
-   1. Choose `Stream to an event hub` as the destination.
-   1. Select `AllMetrics`.
-   1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureflexible-mysqlserver-metrics.png')} alt="Azure flexible mysql server metrics" style={{border: '1px solid gray'}} width="800" />
-4. Tag the location field in the source with the right location value.
-   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="500" />
+To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
 ### Configure logs collection
 
@@ -165,6 +75,19 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 Since this source contains logs from multiple regions, ensure that you do not tag this source with the location tag.
 :::
 
+### Collecting Error Logs
+Error logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them, then [upload the logs](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) to a Sumo Logic HTTP source endpoint. Note that the HTTP source created to receive the error logs needs to be tagged with the following [fields](/docs/manage/fields/#manage-fields) with appropriate values. These values can be copied from the appropriate resource for which logs are ingested through the Azure Event Hub Source for Logs: 
+
+- resource_name
+- location
+- resource_type
+- provider_name
+- resource_group
+- tenant_name
+- subscription_id
+
+Error logs dashboard will get populated only if the error logs are collected following the above instructions.
+
 ## Installing the Azure Flexible Database for Mysql app
 
 Now that you have set up data collection, install the Azure Load Balancer Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
@@ -172,6 +95,18 @@ Now that you have set up data collection, install the Azure Load Balancer Sumo L
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with an Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the  Flexible Database for Mysql dashboards
 
@@ -241,6 +176,17 @@ The **Azure Database for Mysql - Storage Overview** dashboard provides details a
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Storage-Overview.png')} alt="Azure Database for Mysql - Storage Overview" style={{border: '1px solid gray'}} width="800" />
 
+
+## Azure Database for MySQL alerts
+These alerts are metric based and will work for all Azure Database for MySQL.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Database for MySQL - Active Connections`  | This alert fires when number of active connections in Azure MySQL instance is greater than a threshold value (default value 50). | connections >= 50   | connections < 50  |
+| `Azure Database for MySQL - High CPU Utilization` | This alert fires when CPU usage % on a host in a Azure MySQL instance is greater than a threshold value (default value 90) | percentage >= 90 | percentage < 90  |
+| `Azure Database for MySQL - High Memory Utilization` | This alert fires when memory % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90 | percentage < 90  |
+| `Azure Database for MySQL - High Storage IO %` | This alert fires when storage IO % on a resource in a Azure MySQL instance is greater than a threshold value (default value 80%) | percentage >= 80  | percentage < 80   |
+| `Azure Database for MySQL - High Storage Utilization` | This alert fires when storage % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90  | percentage < 90   |
 
 ## Troubleshooting
 
