@@ -228,9 +228,9 @@ Now that you have set up collection for Azure Kubernetes Cluster, you can instal
 
 All the dashboards are linked to the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) so they can be easily accessed by clicking the Cluster in the navigation pane of the tab.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstall/>
+<AppInstallIndexV2/>
 
 As part of the app installation process, the following fields will be created by default:
 
@@ -245,6 +245,10 @@ As part of the app installation process, the following fields will be created by
 - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure Kubernetes Service dashboards
+
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
+
+<ViewDashboardsIndex/>
 
 ### Overview
 
