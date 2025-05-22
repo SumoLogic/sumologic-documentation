@@ -149,11 +149,11 @@ These alerts are metrics-based and will work for all Azure API Management.
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Azure API Management - High Capacity Utilization` | This alert is triggered when average capacity utilization percentage greater than 80. Also, a warning type alert will be triggered when average capacity utilization percentage greater than 70. | Count > 80 | Count <= 80 |
-| `Azure API Management - High Duration of Backend Requests` | This alert is triggered when average duration of backend requests greater than 2000ms. Also, a warning type alert will be triggered when average duration of backend requests greater than 1000ms. | Count > 2000 | Count <= 2000 |
-| `Azure API Management - High Gateway Client Errors (4xx)` | This alert is triggered when count of gateway requests resulting in a 4xx client error greater than 10. | Count > 10 | Count <= 10 |
-| `Azure API Management - High Gateway Server Errors (5xx)` | This alert is triggered when count of gateway requests resulting in a 5xx server error greater than 5. | Count > 5 | Count <= 5 |
-| `Azure API Management - High Overall  Duration of Gateway Requests` | This alert is triggered when average overall duration of gateway requests greater than 3000ms. Also, a warning type alert will be triggered when average overall duration of gateway requests greater than 1500ms. | Count > 3000 | Count <= 3000 |
+| `Azure API Management - High Capacity Utilization` | This alert is triggered when average capacity utilization percentage greater than 80. Also, a warning type alert will be triggered when average capacity utilization percentage greater than 70. | Count > 80 | Count < = 80 |
+| `Azure API Management - High Duration of Backend Requests` | This alert is triggered when average duration of backend requests greater than 2000ms. Also, a warning type alert will be triggered when average duration of backend requests greater than 1000ms. | Count > 2000 | Count < = 2000 |
+| `Azure API Management - High Gateway Client Errors (4xx)` | This alert is triggered when count of gateway requests resulting in a 4xx client error greater than 10. | Count > 10 | Count < = 10 |
+| `Azure API Management - High Gateway Server Errors (5xx)` | This alert is triggered when count of gateway requests resulting in a 5xx server error greater than 5. | Count > 5 | Count < = 5 |
+| `Azure API Management - High Overall  Duration of Gateway Requests` | This alert is triggered when average overall duration of gateway requests greater than 3000ms. Also, a warning type alert will be triggered when average overall duration of gateway requests greater than 1500ms. | Count > 3000 | Count < = 3000 |
 
 
 ## Upgrade/Downgrade the Azure API Management app (optional)
