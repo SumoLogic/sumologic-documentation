@@ -92,9 +92,9 @@ Error logs dashboard will get populated only if the error logs are collected fol
 
 Now that you have set up data collection, install the Azure Load Balancer Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstallNoDataSourceV2/>
+<AppInstallIndexV2/>
 
 As part of the app installation process, the following fields will be created by default:
 
@@ -110,9 +110,9 @@ As part of the app installation process, the following fields will be created by
 
 ## Viewing the  Flexible Database for Mysql dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/> 
 
 ### Error Logs
 
