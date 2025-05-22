@@ -15,12 +15,11 @@ Query, update, and work with cases in TheHive from Cloud SOAR.
 
 ### Purpose
 
-This integration enables seamless interaction with TheHive platform, allowing case and observable management. It supports creating, updating, searching, and enriching cases and observables to streamline incident response workflows.
+This integration enables seamless interaction with TheHive platform, allowing case and observable management. It supports creating, updating, and searching cases and observables.
 
 ### Use cases
 
 * Create and update incident cases/observables.
-* Enrich observables (e.g., IP addresses, domains, file hashes).
 * Search for existing cases or observables matching specific criteria.
 * Find similar observables.
 * Retrieve detailed information about a case or observable for investigation.
@@ -76,7 +75,7 @@ For information about TheHive, see [TheHive documentation](https://docs.strangeb
 
 ### Configuration
 To configure the integration:
-* API Key
+* API Key: A unique token used to authenticate API requests to TheHive.
 * Server URL and Port: Define the host and port of TheHive instance (port is optional).
 * Organization Name (optional): Organization name.
 
