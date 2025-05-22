@@ -37,8 +37,26 @@ Utilize user, group, and system information from Active Directory.
 ## Configure Active Directory in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* **Host**. The hostname or IP address of the AD server.
+
+* **Login Port**. The port used for LDAP authentication. The default is `389` for LDAP and `636` for LDAPS.
+
+* **Login DN (Username)**. Enter the distinguished name format (for example, `CN=Administrator,CN=Users,DC=csoar,DC=com`). See the [following sections](#how-to-get-login-dn-with-a-local-account) for information about how to get the login DN.
+
+* **Password**. The corresponding password for the provided username.
+
+* **Base DN**. Enter the Base Distinguished Name. 
+
+* **Global Catalog or DN Port**. Select the catalog or port. For global catalog, select port 3268 for LDAP or 3269 for secure LDAP.
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-configuration.png')} style={{border:'1px solid gray'}} alt="Active Directory configuration" width="400"/>
 
