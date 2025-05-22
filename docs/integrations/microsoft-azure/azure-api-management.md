@@ -72,9 +72,9 @@ For Security events, make sure you enable [Microsoft Defender for Cloud](https:/
 
 Now that you have set up data collection, install the Azure API Management Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstallNoDataSourceV2/>
+<AppInstallIndexV2/>
 
 As part of the app installation process, the following fields will be created by default:
 
@@ -85,14 +85,14 @@ As part of the app installation process, the following fields will be created by
 - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
 - `resource_type`. Azure resource type (for example, storage accounts).
 - `resource_name`. The name of the resource (for example, storage account name).
-- `service_type`. Type of the service that can be accessed with an Azure resource.
-- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
+- `service_type`. The type of service that can be accessed with an Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances, the service is Subscriptions).
 
 ## Viewing the Azure API Management dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/>
 
 ### Administrative Operations
 
