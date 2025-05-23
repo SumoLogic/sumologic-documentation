@@ -60,16 +60,37 @@ Sign in to [Jira](https://id.atlassian.com) with your Atlassian account.
 ## Configure Atlassian Jira V2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL API**. Enter your Atlassian site URL. For example, `https://your-atlassian-site.atlassian.net/`. For information, see [Atlassian documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/#about).
 
-    * **Label**. Add a name for the resource.
-    * **URL API**. Enter your Atlassian site URL. For example, `https://your-atlassian-site.atlassian.net/`. For information, see [Atlassian documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/#about).
-    * **Username**. Enter your email address.
-    * **API Token**. Insert the previously copied token.
-    * Optional fields in the resource are used for actions.
-        * Populate **Jira Project Name** when using the Issues **Jira Daemon** action.
-        * Populate **Cloud SOAR API URL** and **Cloud SOAR JWT (token)** when using the **Add Issue Attachment To Incident** action.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-5" width="400"/>
+* **Username**. Enter the username (email address) of the admin user authorized to authenticate the integration.
+
+* **API Token**. Enter the token you [created earlier](#create-an-api-token).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* **Jira Project Name (Daemon)**. Enter the Jira [project name](https://confluence.atlassian.com/adminjiraserver/defining-a-project-938847066.html).
+
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationEngine/>
+
+:::note
+* Populate **Jira Project Name** when using the Issues **Jira Daemon** action.
+* Populate **Cloud SOAR API URL** and **Cloud SOAR JWT (token)** when using the **Add Issue Attachment To Incident** action.
+:::
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-5" width="400"/>
 
 For information about Atlassian Jira, see [Jira documentation]( https://confluence.atlassian.com/jira). For the REST API v2, see the [REST API v2 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/).
 
