@@ -1,0 +1,1 @@
+**Automation Engine**. Select **Cloud execution** for this certified integration. Select a bridge option only for a custom integration. See [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).

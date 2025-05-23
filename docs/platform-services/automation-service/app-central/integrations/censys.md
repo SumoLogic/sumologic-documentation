@@ -23,8 +23,23 @@ Search Censys for enrichment data during active investigation.
 ## Configure Censys in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the URL of Censys V2, for example `https://search.censys.io`
+
+* **API ID**. Enter the [API ID](https://docs.censys.com/docs/ls-api).
+
+* **Secret**. Enter the secret for the API ID.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/censys-v2/censys-configuration.png')} style={{border:'1px solid gray'}} alt="Censys configuration" width="400"/>
 
