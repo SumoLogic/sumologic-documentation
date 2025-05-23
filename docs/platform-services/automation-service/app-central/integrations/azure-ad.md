@@ -70,7 +70,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
  * **API URL**. Enter the Azure AD API URL, for example, `https://graph.microsoft.com`
 
-* **Directory (Tenant) ID**. Enter the [tenant ID]((https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant)) located when you configured Azure AD [above](#azure-active-directory-configuration).  
+* **Directory (Tenant) ID**. Enter the [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) located when you configured Azure AD [above](#azure-active-directory-configuration).  
 
 * **Application (Client) ID**. Enter the client ID from your Azure Application. 
 
