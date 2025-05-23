@@ -7,10 +7,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 When you see a spike of interest on a dashboard that requires further investigation, you can easily drill into the related content to discover the root cause. This page shows you how you can easily discover related dashboards and corresponding logs searches that pertain to an issue in your environment.
 
-:::note
-If you're looking for our Root Cause Explorer observability tool, [click here](/docs/observability/root-cause-explorer).
-:::
-
 ## Drilling into related content
 
 Sumo Logic provides relevant log searches and dashboards to consider investigating, as well as other locations with relevant content. This facilitates quickly discovering the root cause and devising a plan of action.

@@ -202,14 +202,14 @@ The **Log Fluctuations** context card, available for logs monitors, detects diff
 
 ### Anomalies
 
-This card detects time series anomalies for entities related to the alert. These insights are powered by the [Root Cause Explorer](../../observability/root-cause-explorer.md).
+This card detects time series anomalies for entities related to the alert.
 
 Anomalies are grouped into [golden signals](https://sre.google/sre-book/monitoring-distributed-systems/). Anomalies are also presented on a timeline; the length of the anomaly represents its duration. <br/> ![anomalies .png](/img/alerts/monitors/anomalies.png)
 
 * **A**. Name and description of the context card.
 * **B**. Count of anomalies belonging to each golden signal type.
 * **C**. A timeline view of anomalies with their start time and duration, the domain (e.g. AWS, Kubernetes), and the entity on which it was detected. Anomalies may be grouped based on connections between entities and similarity of metrics. For example, anomalies on EC2 instances that are members of an AutoScaling group may be grouped together. The count shown in each anomaly refers to the number of grouped anomalies.
-* **D**. A link to view the anomalies in the **Root Cause Explorer**.
+* **D**. A link to view the anomalies.
 
 :::note
 Only anomalies with a start time around 30 minutes before or after the alert was created show up in the card.
