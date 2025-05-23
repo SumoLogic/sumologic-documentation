@@ -22,6 +22,16 @@ GreyNoise tells security analysts what not to worry about. They do this by curat
 * **Quick IP Lookup** *(Enrichment)* - Check whether a given IP address is “Internet background noise”, or has been observed scanning or attacking devices across the Internet.
 * **RIOT IP Lookup** *(Enrichment)* - RIOT identifies IPs from known benign services and organizations that commonly cause false positives in network security and threat intelligence products.
 
+## Configure GreyNoise in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/greynoise-configuration.png')} style={{border:'1px solid gray'}} alt="GreyNoise configuration" width="400"/>
+
+For information about GreyNoise, see [GreyNoise documentation](https://docs.greynoise.io/).
+
 ## Change Log
 
 * March 31, 2021 - First upload

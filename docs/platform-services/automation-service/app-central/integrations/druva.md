@@ -24,6 +24,16 @@ Updated: April 4, 2024***
 * **Quarantine Snapshots Resource** *(Containment)* - Quarantine all snapshots, or snapshots within a date range on a resource.
  Users and administrators cannot restore or download data from the quarantined snapshots.
 
+ ## Configure Druva in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/druva-configuration.png')} style={{border:'1px solid gray'}} alt="Druva configuration" width="400"/>
+
+For information about Druva, see [Druva documentation](https://help.druva.com/en/).
+
 ## Change Log
 
 * April 4, 2024 - First upload

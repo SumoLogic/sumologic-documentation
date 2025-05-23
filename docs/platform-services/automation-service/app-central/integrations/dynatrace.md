@@ -121,13 +121,13 @@ The log search query.
 The query must use the [Dynatrace search query language](https://www.dynatrace.com/support/help/how-to-use-dynatrace/log-monitoring/analyze-log-data/log-viewer#sql).   
 The query has a limit of 20 relations (logical operators between simple expressions (AND, OR) or comparison operators (=, !=, &lt;, &lt;=, &gt;, &gt;=) in simple expressions).
 
-**Dynatrace Documentation**
+**Dynatrace documentation**
 
 More information can be found [here](https://www.dynatrace.com/support/help).
 
 ## Dynatrace configuration
 
-To be authenticated to use the Dynatrace API, you need a valid access token. To generate an access token follow these steps:
+To be authenticated to use the Dynatrace API, you need a valid access token. To [generate an access token](https://docs.dynatrace.com/docs/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication#create-token) follow these steps:
 
 1. In the "Dynatrace menu", select **Access tokens**.
 2. Select **Generate new token**.
@@ -135,21 +135,20 @@ To be authenticated to use the Dynatrace API, you need a valid access token. To 
    Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.
 4. Select the required scopes for the token.
 5. Select **Generate**.
-6. Copy the generated token to the clipboard. Store the token in a password manager for future use  . 
+6. Copy the generated token to the clipboard. Store the token in a password manager for future use. 
    :::note
    You can only access your token once upon creation. You cannot reveal it afterwards.
    :::
 
-## Dynatrace in Automation Service and Cloud SOAR
+## Configure Dynatrace in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-3.png')} style={{border:'1px solid gray'}} alt="dynatrace" width="400"/>
-1. Populate all the required fields (\*).
-1. Click **Save**.
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-4.png')} style={{border:'1px solid gray'}} alt="dynatrace" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-5.png')} style={{border:'1px solid gray'}} alt="dynatrace" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-6.png')} style={{border:'1px solid gray'}} alt="dynatrace" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/dynatrace-configuration.png')} style={{border:'1px solid gray'}} alt="Dynatrace configuration" width="400"/>
+
+For information about Dynatrace, see [Dynatrace documentation](https://docs.dynatrace.com/docs).
 
 ## Change Log
 

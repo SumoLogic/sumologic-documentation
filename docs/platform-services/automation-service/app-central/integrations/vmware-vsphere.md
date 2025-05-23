@@ -37,6 +37,16 @@ The following permissions are required for the integration:
 * For the **HOST**, use the _IP_ or _Domain_ of the vSphere node.
 * The port should be set to 443.
 
+## Configure VMware vSphere in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmware-vsphere-configuration.png')} style={{border:'1px solid gray'}} alt="VMware vSphere configuration" width="400"/>
+
+For information about VMware vSphere, see [VMware vSphere documentation](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere.html).
+
 ## Change Log
 
 * August 30, 2019 - First upload

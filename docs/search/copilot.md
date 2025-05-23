@@ -315,6 +315,24 @@ To summarize, you conclude there is malicious activity originating from certain 
 
 Role Based Access Control is not supported for contextual suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search.
 
+## Search behavior and data tier access
+
+Copilot follows the same search behavior as standard log search and respects your account’s data configuration, whether you're on classic tiered pricing or Flex pricing.
+
+### Flex pricing
+
+For customers on [Flex pricing](/docs/manage/partitions/flex), all data is stored in a single intelligent layer and pricing is based on the volume of data scanned.
+
+### Tiered pricing (legacy)
+
+If you're on [classic tiered pricing](/docs/manage/partitions/data-tiers/searching-data-tiers/), Copilot by default searches across continuous data tiers only, unless otherwise specified.
+
+To direct Copilot to search the Infrequent tier, for example, use:
+
+```sql
+_dataTier=Infrequent
+```
+
 ## FAQ
 
 <details>
@@ -413,3 +431,12 @@ We want your feedback! Let us know what you think by clicking the thumbs up or t
 You can also leave feedback on specific errors.
 
 <img src={useBaseUrl('img/search/copilot/feedback-error.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
+
+## Additional resources
+
+* Blogs:
+   * [Sumo Logic Mo Copilot: AI assistant for faster incident response and simplified troubleshooting](https://www.sumologic.com/blog/mo-copilot-ai-assistant/)
+   * [Designing Sumo Logic Mo Copilot for success](https://www.sumologic.com/blog/designing-mo-copilot-success/)
+   * [Differentiating Sumo Logic Mo Copilot using Amazon Bedrock](https://www.sumologic.com/blog/copilot-amazon-bedrock/)
+* Brief: [Sumo Logic's Mo Copilot speeds up response](https://www.sumologic.com/brief/sumo-logics-mo-copilot-speeds-up-response/)
+* Webinar: [Revolutionizing Incident Management with AI: Meet Mo Copilot](https://www.sumologic.com/webinar/revolutionizing-incident-management-with-ai-meet-mo-copilot/)

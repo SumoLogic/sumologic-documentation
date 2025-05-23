@@ -23,6 +23,16 @@ Query data and utilize actions in Salesforce.
 * **String Search** *(Enrichment)* - Search for a specific string.
 * **Update Account Record** *(Containment)* - Update a record for an account.
 
+## Configure Salesforce in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/salesforce-configuration.png')} style={{border:'1px solid gray'}} alt="Salesforce configuration" width="400"/>
+
+For information about Salesforce, see [Salesforce documentation](https://help.salesforce.com/s/products).
+
 ## Change Log
 
 * August 17, 2021 - First upload

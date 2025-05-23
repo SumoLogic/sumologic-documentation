@@ -19,19 +19,18 @@ The IBM Maximo is a single, integrated cloud-based platform that uses AI, IoT an
 * **Close Ticket** (*Containment*) - Close ticket by ticket unique ID (uid).
 * **List Tickets** (*Enrichment*) - Retrieve a list of tickets, filtering is possible by providing filter key/value pair.
 
-## IBM Maximo in Automation Service and Cloud SOAR
+## Configure IBM Maximo in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ibm-maximo/ibm-maximo-3.png')} style={{border:'1px solid gray'}} alt="ibm-maximo" width="600"/>
-1. Populate all the required fields (\*) and then click **Save**.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
    * **Host**. Host for API.
    * **Username**. Username you use to log in into the system.
    * **Password**. The password of your email.
-1. Additionally, if need you to, you can populate the query daemons.
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ibm-maximo/ibm-maximo-4.png')} style={{border:'1px solid gray'}} alt="ibm-maximo" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ibm-maximo/ibm-maximo-5.png')} style={{border:'1px solid gray'}} alt="ibm-maximo" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ibm-maximo/ibm-maximo-6.png')} style={{border:'1px solid gray'}} alt="ibm-maximo" width="400"/>
+   * Additionally, if need you to, you can populate the query daemons.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ibm-maximo-configuration.png')} style={{border:'1px solid gray'}} alt="IBM Maximo configuration" width="400"/>
+
+For information about IBM Maximo, see [IBM Maximo documentation](https://www.ibm.com/docs/en/mam/7.6.1).
 
 ## Change Log
 

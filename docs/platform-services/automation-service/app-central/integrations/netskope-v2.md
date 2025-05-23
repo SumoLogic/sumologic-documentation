@@ -24,7 +24,7 @@ Netskope provides unrivaled visibility and real-time data and threat protection 
 
 ## Neskope V2 configuration
 
-Netskope REST APIs use an auth token to make authorized calls to the API. Netskope REST APIs provide access to resources via URI paths. The token must be used in every REST API call for the tenant. The token can be created for use with specified APIs in the Netskope UI by going to **Settings &gt; Tools &gt; Rest API v2**.
+[Netskope REST APIs](https://docs.netskope.com/en/rest-api-v2-overview-312207/) use an auth token to make authorized calls to the API. Netskope REST APIs provide access to resources via URI paths. The token must be used in every REST API call for the tenant. The token can be created for use with specified APIs in the Netskope UI by going to **Settings &gt; Tools &gt; Rest API v2**.
 
 1. On the REST API v2 page, click **New Token**.
 1. Enter a token name, the token expiration time, and then click **Add Endpoint** to select the API endpoints to use with the token.   
@@ -36,18 +36,17 @@ Netskope REST APIs use an auth token to make authorized calls to the API. Netsko
 
 When finished, click **OK**. After being created, tokens can be managed by clicking the adjacent **...** icon for the token and selecting one of these options:  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-4.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="200"/> 
 
-## Netskope V2 in Automation Service and Cloud SOAR
+## Configure Netskope V2 in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-7.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="150"/> 
-1. Populate all the required fields (\*) and then click **SAVE**.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
    * **Server URL**. URL for API V2 REST API (https://&lt;tenant-name&gt;.goskope.com).
-   * **Token**. The Token you copied earlier. 
-   * <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-11.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/>
-1. Additionally, if need you can populate the query daemons.
-1. To make sure the resource is working, hover over the resource and then click the **TEST** that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-8.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="200"/> 
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-10.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/> 
+   * **Token**. The Token you copied earlier.
+   * Additionally, if need you can populate the query daemons.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-11.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/>
+   
+For information about Netskope V2, see [Netskope V2 documentation](https://docs.netskope.com/en/rest-api-v2-overview-312207/).
 
 ## Change Log
 

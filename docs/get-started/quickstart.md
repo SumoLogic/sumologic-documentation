@@ -25,40 +25,51 @@ What you'll learn:
 
 You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-started/sign-up).
 
-## Getting started with Kickstart Data in your trial
+## Get Started page
 
-With your [Sumo Logic trial](/docs/get-started/sign-up), you can access preloaded placeholder Kickstart Data to explore Sumo Logic instantly prior to setting up your own data. This feature helps trial users see immediate value and bypass setup barriers like firewall and security configurations.
+Welcome to Sumo! After signing up, be sure to head to **Get Started** page, your personalized onboarding hub that guides you through key actions like sending data, exploring apps, and inviting teammates.
 
-:::warning limitations
-* Your trial workflow—Kickstart Data or custom data—is automatically determined by marketing-based user profiling. Manual selection of a workflow is not currently supported.
-* This feature is only available to select trial users during the initial rollout phase.
-* Kickstart Data is available for a maximum of 7 days. After this period, you must begin ingesting your own data to continue using Sumo Logic.
-:::
+<img src={useBaseUrl('img/get-started/kickstart-welcome-landing.png')} alt="Kickstart Data and onboarding welcome page" style={{border: '1px solid gray'}} width="600" />
 
-### Key benefits
+This dashboard will give you an instant view of key performance metrics using Kickstart sample data. You can explore how Sumo Logic monitors application health—no setup needed.
 
-* **Immediate insights**. Explore Sumo Logic right away, without initial data setup, to quickly see its value and decide if it’s a fit for you.
-* **Quick setup**. Kickstart Data removes technical hurdles, making onboarding faster and easier.
-* **Guided experience**. Access pre-built dashboards and reports that demonstrate real-world scenarios, helping you make the most of your trial.
-* **Safe exploration**. Evaluate our platform in a secure environment with no exposure of sensitive data.
-
-### How it works
-
-1. **User assignment**. When you start your trial, you will be automatically assigned to either the Kickstart Data workflow or a custom data workflow, based on your user profile.
-2. **Sample dashboards**. If you are assigned the Kickstart Data option, sample data will be preloaded into the platform, along with dashboards and log searches tailored to your monitoring and troubleshooting use cases.
+1. **Sample dashboards**. When you first log in, you'll see sample data preloaded into Sumo Logic, tailored to your monitoring and troubleshooting use cases, along with log searches and the following dashboards:
    * **Application reliability**. Metrics like Homepage Load Time, Checkout Errors, and Internal Server Orders.
    * **Business KPIs**. Revenue Trends, Promo Performance, and Customer Feedback Metrics.
-3. **Onboarding checklist**. You will follow a guided checklist that helps you:
-    * Analyze sample data.
+   * **Security**. Security events and failed sign-in attempts across multiple geographical locations.
+1. **Onboarding checklist**. You will follow a guided checklist that helps you:
+    * Analyze the sample data.
     * Perform log searches.
     * Invite team members to join and explore the platform with you.
-4. **Seamless transition to real data**. Kickstart Data is available for only 7 days. After that, you must set up your own data ingestion while continuing to use the platform’s core features. When your trial ends, Kickstart Data is deactivated automatically.
+1. **Transition to real data**. Kickstart Data is available for 20 days or until you start ingesting real data—whichever comes first. It deactivates automatically at the end of the trial, but can be skipped at any time.
 
-You can skip Kickstart Data anytime and begin ingesting your own data.
+:::note For Admins
+For configuration information, refer to [Kickstart Data app](/docs/integrations/sumo-apps/kickstart-data) and [Kickstart Data source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source).
+:::
+
+### Getting started with Kickstart Data in your trial
+
+As part of your trial, Kickstart Data gives you instant access to preloaded sample log data and dashboards—no setup, data ingestion, or firewall configuration required—so you can immediately explore the value of Sumo Logic in a safe sandbox environment. No sensitive or real data is used, and the prebuilt dashboards offer a hands-on way to learn how to monitor applications, analyze trends, and respond to incidents.
+
+The Kickstart sample data you see in the [sample app/dashboards](/docs/integrations/sumo-apps/kickstart-data) are [sourced from cloud-to-cloud data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source).
+
+Once you're ready to work with your own data, follow the in-product prompts to begin ingesting logs via OpenTelemetry, Hosted Collectors, or Installed Collectors. The Kickstart experience will phase out automatically once you start ingesting real data or after 20 days—whichever comes first.
 
 ## Step 1: Get your data into Sumo
 
-The journey of 10,000 logs begins with a single collector. Your data analytics journey starts by sending your data to Sumo.
+The journey of 10,000 logs begins with a single collector. Your data analytics journey starts by sending your data to Sumo Logic.
+
+### Set up data collection
+
+To set up data collection, select the platform (AWS, Kubernetes, Linux, Windows, macOS) from which you want to collect data. This will install the OpenTelemetry collector and relevant dashboards.
+* For AWS, you'll deploy a single account with a CloudFormation Template, CLI, or Terraform.
+* For Kubernetes, Linux, Windows, or macOS, you'll need to run the provided command in your Terminal or PowerShell.
+
+You'll also see an option to bypass setup and explore our [App Catalog](/docs/integrations), where you'll find a wide range of apps and easy-to-follow setup guides for installation.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
+
+When the installation is complete, click **Start using Sumo**.
+
+Your data will start flowing in a couple of minutes. Next, you'll be taken to a step-by-step onboarding guide, where you can visualize your data via dashboards, run your first log search, set up alerts, install apps, and more.
 
 ### Set up Collector
 
@@ -147,7 +158,7 @@ From the Sumo Logic Home page, click the **Learn** tab to access:
 Don't just learn it - master it! Get recognized as a Sumo Logic expert by completing the courses in the [Sumo Logic Certification Program](/docs/get-started/training-certification-faq/#what-certifications-does-sumo-logic-offer). We’re happy to help you get certified right from the product.
 
 
-## More Resources
+## Additional information
 
 :::sumo Need help?
 Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).

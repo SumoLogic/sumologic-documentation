@@ -25,6 +25,16 @@ DomainTools is the global leader for internet intelligence and the first place s
 
 Threat Intelligence-Reputation
 
+## Configure DomainTools in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/domaintools-configuration.png')} style={{border:'1px solid gray'}} alt="DomainTools configuration" width="400"/>
+
+For information about DomainTools, see [DomainTools documentation](https://docs.domaintools.com/).
+
 ## Change Log
 
 * December 19, 2018 - First upload

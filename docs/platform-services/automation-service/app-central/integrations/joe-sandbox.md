@@ -27,6 +27,16 @@ Execute suspicious files and URLs for analysis during incident investigation usi
 
 * [Joe Sandbox](https://github.com/joesecurity/jbxapi/blob/master/LICENSE)
 
+## Configure Joe Sandbox in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/joe-sandbox-configuration.png')} style={{border:'1px solid gray'}} alt="Joe Sandbox configuration" width="400"/>
+
+For information about Joe Sandbox, see [Joe Sandbox documentation](https://www.joesecurity.org/guides/joeboxdetect/html/index.html#).
+
 ## Change Log
  
 * September 25, 2019 - First upload

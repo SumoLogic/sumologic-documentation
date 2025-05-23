@@ -92,21 +92,20 @@ Create a public or private channel, Send messages or Files to channels or Users 
 1. Now you need to Install the APP in the workspace. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-9.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
 1. After installing the App now, you have two Tokens; these tokens are automatically generated when you installed the app. You will need these two tokens later. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-10.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
 
-## Slack in Automation Service and Cloud SOAR
+## Configure Slack in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-13.png')} style={{border:'1px solid gray'}} alt="slack" width="200"/>
-1. Create a new resource for the User.
-1. Copy the User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
-1. If using an Org-level Token, select the Token Type as Org-level Token and provide the Team ID. By default, it is set to Workspace-Level Token, which does not require a Team ID.
-1. Once you have filled in all the required fields, click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-14.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
-1. Create another resource for the Bot User.
-1. Copy the Bot User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
-1. If using an Org-level Token, select the Token Type as Org-level Token and provide the Team ID. By default, it is set to Workspace-Level Token, which does not require a Team ID.
-1. Once you have filled in all the required fields, click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-15.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-16.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-17.png')} style={{border:'1px solid gray'}} alt="slack" width="200"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-19.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+* Copy the User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
+* If using an Org-level Token, select the Token Type as Org-level Token and provide the Team ID. By default, it is set to Workspace-Level Token, which does not require a Team ID.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-14.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+
+Create another resource for the Bot User. Then:
+* Copy the Bot User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
+* If using an Org-level Token, select the Token Type as Org-level Token and provide the Team ID. By default, it is set to Workspace-Level Token, which does not require a Team ID.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-15.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+
+For information about Slack, see [Slack documentation](https://slack.com/help).
 
 ## Change Log
 

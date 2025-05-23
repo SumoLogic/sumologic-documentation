@@ -23,7 +23,7 @@ mVision ePO is a key component of the Trellix security management platform, whic
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Event ogs](https://developer.manage.trellix.com/mvision/apis/v2-events) |
+| 5 min |  [Event Logs](https://developer.manage.trellix.com/mvision/apis/v2-events) |
 
 ## Setup
 

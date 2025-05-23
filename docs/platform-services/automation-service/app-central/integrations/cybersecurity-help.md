@@ -31,19 +31,17 @@ Cybersecurity Help is a global vulnerability intelligence provider.
 1. Log in to Cybersecurity Help to get your API Key.
 1. Select Subscription from the menu, choose Settings and copy your Token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cybersecurity-help/cybersecurity-help-1.png')} style={{border:'1px solid gray'}} alt="cybersecurity" width="600"/>
 
-## Cybersecurity Help in Automation Service and Cloud SOAR
+## Configure Cybersecurity Help in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cybersecurity-help/cybersecurity-help-4.png')} style={{border:'1px solid gray'}} alt="cybersecurity" width="400"/>
-1. Populate all the required fields (\*)
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
    * **Label**. The desired name for the resource.
    * **URL**. The default Cybersecurity Help url is [https://www.cybersecurity-help.cz](https://www.cybersecurity-help.cz/).
-   * **Token**. Your Cybersecurity Help token you copied earlier from Cybersecurity Help.
-1. Click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cybersecurity-help/cybersecurity-help-5.png')} style={{border:'1px solid gray'}} alt="cybersecurity" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cybersecurity-help/cybersecurity-help-6.png')} style={{border:'1px solid gray'}} alt="cybersecurity" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cybersecurity-help/cybersecurity-help-7.png')} style={{border:'1px solid gray'}} alt="cybersecurity" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cybersecurity-help/cybersecurity-help-8.png')} style={{border:'1px solid gray'}} alt="cybersecurity" width="400"/>
+   * **Token**. Your Cybersecurity Help token you copied earlier from Cybersecurity Help.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/cybersecurity-help-configuration.png')} style={{border:'1px solid gray'}} alt="Cybersecurity Help configuration" width="400"/>
+
+For information about Cybersecurity Help, see the [Cybersecurity Help website](https://www.cybersecurity-help.cz/).
 
 ## Change Log
 

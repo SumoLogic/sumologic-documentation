@@ -17,6 +17,16 @@ Utilize Lastline AI-powered sandboxing to triage incidents.
 * **Get Analysis Results** (*Enrichment*) - Get results of file analysis
 * **File Reputation** (*Enrichment*) - Get reputation score of a file/hash
 
+## Configure Lastline Analyst in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/lastline-analyst-configuration.png')} style={{border:'1px solid gray'}} alt="Lastline Analyst configuration" width="400"/>
+
+For information about Lastline Analyst, see [Lastline Analyst documentation](https://analysis.lastline.com/analysis/api-docs/html/index.html).
+
 ## Change Log
 
 * June 12, 2019 - First upload
@@ -32,7 +42,3 @@ Utilize Lastline AI-powered sandboxing to triage incidents.
 	+ Renamed actions:
 		- Detonation Report renamed *to* **Get Analysis Results**
 		- Detonate File renamed *to* **Submit File**
-
-  
-
-

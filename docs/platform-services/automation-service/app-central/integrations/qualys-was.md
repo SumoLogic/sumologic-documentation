@@ -18,6 +18,16 @@ Qualys WAS is a cloud-based service that provides automated crawling and testing
 * **Create Web Application** *(Containment)* - Creates a web application.
 * **Delete Web Application** *(Containment)* - Delete a web application configuration in your account.
 
+## Configure Qualys WAS in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/qualys-was-configuration.png')} style={{border:'1px solid gray'}} alt="Qualys WAS configuration" width="400"/>
+
+For information about Qualys WAS, see[ Qualys Web Application Scanning documentation](https://docs.qualys.com/en/was/latest/#t=get_started%2Fget_started.htm).
+
 ## Change Log
 
 * September 7, 2021 - First upload

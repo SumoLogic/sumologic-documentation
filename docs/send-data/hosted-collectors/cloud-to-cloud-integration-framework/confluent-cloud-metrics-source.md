@@ -18,8 +18,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/send-data/confluent-cloud-metrics.png')} alt="icon" width="160"/>
 
 Confluent is a software company that helps organizations manage, deploy, and scale real-time data infrastructure, enabling businesses to build real-time applications and derive insights from data efficiently.
-Confluent Cloud is a scalable, fully managed streaming data service based on Apache Kafka®. It offers a web interface called the Cloud Console for managing resources, settings, and billing, along with a local Command Line Interface (CLI) and REST APIs to create and manage Kafka topics.
-This integration aims to collect metric data from the Confluent Cloud Metrics platform API and send them to Sumo Logic.
+Confluent Cloud is a scalable, fully managed streaming data service based on Apache Kafka®. It offers a web interface called the Cloud Console for managing resources, settings, and billing, along with a local Command Line Interface (CLI) and REST APIs to create and manage Kafka topics. This integration aims to collect metric data in the Prometheus format from the Confluent Cloud Metrics platform and send them to Sumo Logic.
+
+:::note
+This source collects Confluent metrics data that has the single most recent data point for each metric and for each distinct combination of labels. [Learn more](https://api.telemetry.confluent.cloud/docs?&_ga=2.117120000.763533315.1738005875-728715252.1738005875&_gl=1*fkaiwi*_gcl_au*MTkyNzY5NzMuMTczODAwNTg3NA..*_ga*NzI4NzE1MjUyLjE3MzgwMDU4NzU.*_ga_D2D3EGKSGD*MTczODAwNTg3NC4xLjEuMTczODAwNTk2NS42MC4wLjA.#tag/Version-2/paths/~1v2~1metrics~1%7Bdataset%7D~1export/get). 
+:::
 
 ## Data collected
 

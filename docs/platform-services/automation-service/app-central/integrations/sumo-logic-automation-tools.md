@@ -396,6 +396,10 @@ Break Lines
 }
 ```
 
+## Configure Sumo Logic Automation Tools in Automation Service and Cloud SOAR
+
+No configuration is needed. Sumo Logic Automation Tools executes without additional authentication.
+
 ## Change log
 
 * Nov 11, 2024 - Beta version released.
