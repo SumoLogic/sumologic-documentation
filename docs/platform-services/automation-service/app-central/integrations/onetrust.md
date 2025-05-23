@@ -31,6 +31,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/onetrust-configuration.png')} style={{border:'1px solid gray'}} alt="OneTrust configuration" width="400"/>
+
+For information about OneTrust, see [OneTrust documentation](https://developer.onetrust.com/).
+
 ## Change Log
 
 * January 19, 2024 - First upload

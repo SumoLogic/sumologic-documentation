@@ -22,6 +22,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/corelight/corelight-configuration.png')} style={{border:'1px solid gray'}} alt="Corelight configuration" width="400"/>
+
+For information about Corelight, see [Corelight documentation](https://corelight.com/resources/resource-center).
+
 ## Change Log
 
 * August 23, 2019 - First upload

@@ -27,6 +27,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/datto-rmm-configuration.png')} style={{border:'1px solid gray'}} alt="Datto RMM configuration" width="400"/>
+
+For information about Datto RMM, see [Datto RMM documentation](https://rmm.datto.com/help/en/Content/0HOME/Home.htm).
+
 ## Change Log
 
 * March 13, 2024 - First upload

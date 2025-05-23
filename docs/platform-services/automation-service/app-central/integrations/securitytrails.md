@@ -20,16 +20,12 @@ SecurityTrails is a total inventory that curates comprehensive domain and IP add
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row. The integration details will appear.Click on the **"+"** button to add new Resource.
-1. Populate all the required fields (\*) and then click **SAVE**.  
+ 
    * **Label**. The desired name for the resource.
    * **URL**. The SecurityTrails API URL. Default: `https://api.securitytrails.com`.
-   * **API Key**. Your SecurityTrails API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-3.png')} style={{border:'1px solid gray'}} alt="securitytrails" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-4.png')} style={{border:'1px solid gray'}} alt="securitytrails" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-5.png')} style={{border:'1px solid gray'}} alt="securitytrails" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-6.png')} style={{border:'1px solid gray'}} alt="securitytrails" width="400"/>
+   * **API Key**. Your SecurityTrails API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/securitytrails-configuration.png')} style={{border:'1px solid gray'}} alt="SecurityTrails configuration" width="400"/>
+
+For information about SecurityTrails, see [SecurityTrails documentation](https://docs.securitytrails.com/docs/overview).
 
 ## Change Log
 

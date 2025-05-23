@@ -20,8 +20,8 @@ See the following articles to learn about Sumo Logic's threat intelligence capab
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/security/threat-intelligence/threat-intelligence-indicators"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Manage Threat Intelligence Indicators</h4></a>
-  <p>Learn how to add and manage indicators from threat intelligence sources.</p>
+  <a href="/docs/security/threat-intelligence/threat-indicators-in-cloud-siem"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Find Threats with Cloud SIEM</h4></a>
+  <p>Learn how to use threat indicators in Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -32,8 +32,8 @@ See the following articles to learn about Sumo Logic's threat intelligence capab
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/security/threat-intelligence/threat-indicators-in-cloud-siem"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Threat Indicators in Cloud SIEM</h4></a>
-  <p>Learn how to use threat indicators in Cloud SIEM.</p>
+  <a href="/docs/security/threat-intelligence/threat-intelligence-indicators"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Manage Threat Intelligence Indicators</h4></a>
+  <p>Learn how to add and manage indicators from threat intelligence sources.</p>
   </div>
 </div>
 <div className="box smallbox card">

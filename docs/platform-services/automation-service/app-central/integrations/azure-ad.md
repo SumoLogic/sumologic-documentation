@@ -63,6 +63,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-configuration.png')} style={{border:'1px solid gray'}} alt="Azure AD configuration" width="400"/>
+
+For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID documentation](https://learn.microsoft.com/en-us/entra/identity/).
+
 ## Change Log
 
 * October 7, 2021 - First upload

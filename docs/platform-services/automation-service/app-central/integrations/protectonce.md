@@ -23,18 +23,13 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/protectonce/protectonce-3.png')} style={{border:'1px solid gray'}} alt="protectonce" width="800"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
     * **Server URL**. URL for API.
     * **Email**. Email you use to log in into the system.
     * **Password**. The password of your email.
     * **Application ID**. The id of the application.
-1. Additionally, if need you can populate the query daemons.
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/protectonce/protectonce-4.png')} style={{border:'1px solid gray'}} alt="protectonce" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/protectonce/protectonce-5.png')} style={{border:'1px solid gray'}} alt="protectonce" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/protectonce/protectonce-6.png')} style={{border:'1px solid gray'}} alt="protectonce" width="400"/>
+    * Additionally, if you need you can populate the query daemons.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/protectonce-configuration.png')} style={{border:'1px solid gray'}} alt="ProtectOnce configuration" width="400"/>
+
+For information about ProtectOnce, see the [ProtectOnce website](https://app.protectonce.com/).
 
 ## Change Log
 

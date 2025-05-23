@@ -21,43 +21,7 @@ This App has been tested with following SQL Server versions:
 
 This section provides instructions for configuring a local file source to collect SQL Server ERRORLOG data, and a script source to collect SQL Server performance metrics. A sample log message is also provided.
 
-### Step 1: Configure Fields in Sumo Logic
-
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using SQL Server in a Kubernetes environment, create the fields:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-* `pod_labels_db_cluster_address`
-* `pod_labels_db_cluster_port`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using SQL Server in a non-Kubernetes environment, create the fields:
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-* `db_cluster_address`
-* `db_cluster_port`
-
-</TabItem>
-</Tabs>
-
-### Step 2: Collect Logs and Metrics
+### Collect Logs and Metrics
 Sumo Logic supports collection of logs and metrics data from SQL Server in both Kubernetes and non-Kubernetes environments. Click on the appropriate tabs below based on the environment where your SQL Server clusters are hosted.
 
 <Tabs
@@ -412,143 +376,36 @@ At this point, Telegraf should start collecting the SQL Server metrics and forwa
 </Tabs>
 
 
-## Installing Microsoft SQL Server Monitors
-
-This section provides instructions for installing the Microsoft SQL Server App, as well as examples of each of the App dashboards. These instructions assume you have already set up collection as described in [Collecting Logs and Metrics for the Microsoft SQL Server](#collecting-logs-and-metrics-for-the-microsoft-sql-server-app).
-
-
-### Pre-Packaged Alerts
-
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your SQL Server clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
-
-For details on the individual alerts, see [Alerts](#microsoft-sql-server-alerts).
-
-* To install these alerts, you need to have the Manage Monitors role capability.
-* Alerts can be installed by either importing a JSON file or a Terraform script.
-* Note: There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
-
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/SQLServer/SQLServer.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/SQLServer/SQLServer.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all SQL Server clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=sqlserver` with `<Your Custom Filter>`.
-
-Custom filter examples:
-
-1. For alerts applicable only to a specific cluster, your custom filter would be: ‘`db_cluster=sqlserver-prod.01`‘.
-2. For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be: `db_cluster=sql-prod*`.
-3. For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=sql-1 `AND `environment=prod `(This assumes you have set the optional environment tag while configuring collection).
-4. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-5. Click **Add**.
-6. Click **Import**, then copy paste the above JSON to import monitors.
-
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MySQL folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
-
-### Method B: Using a Terraform script
-
-**Step 1: Generate a Sumo Logic access key and ID**
-
-Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-
-**Step 2: [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
-
-**Step 3: Download the Sumo Logic Terraform package for SQL Server alerts**
-
-The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SQLServer). You can either download it through the “git clone” command or as a zip file.
-
-**Step 4: Alert Configuration**
-
-After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/SQLServer/**
-
-Edit the **SQLServer.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1 .
-
-```bash
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
-
-The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `sqlserver_data_source`. Custom filter examples:
-
-1. A specific cluster `db_cluster=sqlserver.prod.01`.
-2. All clusters in an environment `environment=prod`.
-1. For alerts applicable to all clusters that start with sqlserver-prod, your custom filter would be: `db_cluster=sqlserver-prod*`.
-2. For alerts applicable to a specific cluster within a production environment, your custom filter would be:
-
-`db_cluster=sqlserver-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
-
-All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **monitors_disabled** to **false** in this file.
-
-By default, the monitors are configured in a monitor **folder** called “**SQLServer**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `SQLServer.auto.tfvars` file.
-
-If you would like the alerts to send email or connection notifications, configure these in the file `SQLServer_notifications.auto.tfvars`. For configuration examples, refer to the next section.
-
-**Step 5: Email and Connection Notification Configuration Examples**
-
-Modify the file **SQLServer_notifications.auto.tfvars** and populate connection_notifications and email_notifications as per below examples.
-
-```sql title="Pagerduty Connection Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```sql title="Email Notifications Example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-
-**Step 6: Install the Alerts**
-
-1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SQLServer**/ and run **terraform init.** This will initialize Terraform and will download the required components.
-2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
-3. Run `terraform apply`.
-
-**Step 7: Post Installation**
-
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
-
-There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
-
-
 ## Installing the Microsoft SQL Server app
 
-This section demonstrates how to install the SQL Server App.
+import AppInstall2 from '../../reuse/apps/app-install-only-k8s.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2 />
 
-<AppInstall/>
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `db_cluster_address`
+* `db_cluster_port`
+
+Additionally, if you are using SQL Server in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ## Viewing Microsoft SQL Server dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -638,10 +495,13 @@ The **SQL Server - Backup Restore Mirroring** provides information about:
 <img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Backup-Restore-Mirroring.png')} alt="Backup Restore Mirroring" />
 
 
-## Microsoft SQL Server Alerts
+## Create monitors for Microsoft SQL Server app
 
-Sumo Logic provideds out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
+<CreateMonitors/>
+
+### Microsoft SQL Server alerts
 
 <table>
   <tr>

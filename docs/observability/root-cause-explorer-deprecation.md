@@ -10,7 +10,7 @@ description: Root Cause Explorer is deprecated and will no longer be supported i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-As part of our ongoing evaluation of the Sumo Logic service, our product team is deprecating Root Cause Explorer, and it will no longer be available as of 30 April 2025. After observing low customer usage trends for Root Cause Explorer over time since its release and unfavorable overall user feedback, we believe this to be the best course of action and refocus our development efforts towards more critical features in the product.
+As part of our ongoing evaluation of the Sumo Logic service, our product team is deprecating Root Cause Explorer, and it will no longer be available as of 30 April 2025. After observing low customer usage trends for Root Cause Explorer over time since its release, we believe this to be the best course of action and refocus our development efforts towards more critical features in the product.
 
 ## Why is this happening?
 

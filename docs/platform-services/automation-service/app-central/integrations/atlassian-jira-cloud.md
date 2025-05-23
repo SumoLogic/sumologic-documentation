@@ -5,12 +5,16 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="atlassian-jira-v2" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="Atlassian logo" width="80"/>
 
-***Version: 1.0  
+***Version: 1.0
 Updated: March 20 , 2025***
 
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
+
+:::note
+This integration uses the [Jira REST API v3](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#about).
+:::
 
 ## Actions
 
@@ -34,7 +38,7 @@ Sign in to [Jira](https://id.atlassian.com) with your Atlassian account.
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-2" width="300"/>
 
-## Create an API token
+### Create an API token
 
 Create an API token from your Atlassian account:
 1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
@@ -42,7 +46,7 @@ Create an API token from your Atlassian account:
 1. From the dialog that appears, enter a memorable and concise **Label** for your token and click **Create**.
 1. Click **Copy to clipboard**, then paste the token to your script, or elsewhere to save.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-3" width="300"/>
 
-## Revoke an API token
+### Revoke an API token
 
 A revoked token no longer works and is permanently removed from your account. If you revoke an API token currently being used, you can replace it with a new token. To revoke an API token:
 1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
@@ -55,17 +59,12 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add a new resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-4.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-4" width="100"/>
-1. Label and populate all the required fields (\*).
-    1. **Label**. Add a name for the resource.
-    1. **URL API**. Enter your Atlassian site URL. For example, `https://your-atlassian-site.atlassian.net/`.
-    1. **Username**. Enter your email address.
-    1. **API Token**. Insert the previously copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-8.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-8" width="400"/>
-1. Click **SAVE**.
-1. To make sure the resource is working, hover over the resource and then click the **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-7.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-7" width="150"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-6.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-6" width="250"/>
+    * **Label**. Add a name for the resource.
+    * **URL API**. Enter your Atlassian site URL. For example, `https://your-atlassian-site.atlassian.net/`. For information about Atlassian, see [Atlassian documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#about).
+    * **Username**. Enter your email address.
+    * **API Token**. Insert the previously copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-8" width="400"/>
+
+For information about Atlassian Jira Cloud, see [Jira Cloud documentation](https://support.atlassian.com/jira-software-cloud/resources/). For the REST API v3, see the [REST API v3 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/).
 
 ## Category
 

@@ -27,6 +27,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-threat-grid-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Threat Grid configuration" width="400"/>
+
+For information about Cisco Secure Malware Analytics (formerly Threat Grid), see [Cisco Secure Malware Analytics (Threat Grid) documentation](https://www.cisco.com/c/en/us/support/security/amp-threat-grid-appliances/series.html).
+
 ## Change Log
 
 * February 5, 2020 - First upload

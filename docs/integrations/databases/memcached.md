@@ -53,41 +53,7 @@ Jun 23 07:35:01 node03 memcached: \
 Configuring log and metric collection for the Memcached app includes the following tasks.
 
 
-### Step 1: Configure Fields in Sumo Logic
-
-Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using Memcached in a Kubernetes environment, create the fields:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using Memcached in a non-Kubernetes environment, create the fields:
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-* `pod`
-
-</TabItem>
-</Tabs>
-
-
-### Step 2: Configure Logs and Metrics Collection for Memcached
+### Configure Logs and Metrics Collection for Memcached
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -217,28 +183,9 @@ This section explains the steps to collect Memcached logs from a Kubernetes envi
     kubectl describe pod <Memcached_pod_name>
     ```
    4. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-3. **Add a FER to normalize the fields in Kubernetes environments**. This step is not needed if one is using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-   2. Click the + Add button on the top right of the table.
-   3. The **Add Field Extraction Rule** form will appear:
-   4. Enter the following options:
-     * **Rule Name**. Enter the name as **App Observability - Database**.
-     * **Applied At**. Choose **Ingest Time**
-     * **Scope**. Select **Specific Data**
-     * **Scope**: Enter the following keyword search expression:
-     ```sql
-     pod_labels_environment=* pod_labels_component=database \
-     pod_labels_db_system=* pod_labels_db_cluster=*
-     ```
-     * **Parse Expression**. Enter the following parse expression:
-     ```sql
-     if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-     | pod_labels_component as component
-     | pod_labels_db_system as db_system
-     | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
-     ```
-   5. Click **Save** to create the rule.
 
+<br/> **FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityMemcachedDatabaseFER** is automatically created for Database Application Components.
+<br/>
 </TabItem>
 <TabItem value="non-k8s">
 
@@ -353,107 +300,39 @@ At this point, Memcached logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-
-## Installing Memcached Monitors
-
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a Memcached cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Memcached Alerts](#memcached-alerts).
-
-To install these monitors, you must have the **Manage Monitors** role capability.
-
-You can install monitors by importing a JSON file or using a Terraform script.
-
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
-
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Memcached/Memcached.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Memcached/Memcached.json) contains alerts from Sumo Logic searches that do not have any scope filters and, therefore, will apply to all Memcached clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the `text db_cluster=* `with `<Your Custom Filter>`. Custom filter examples:
-   * For alerts applicable only to a specific cluster, your custom filter would be:  `db_cluster=dev-memcached-01`
-   * For alerts applicable to all clusters that start with `memcached-prod`, your custom filter would be: `db_cluster=memcachedt-prod*`
-   * For alerts applicable to specific clusters within a production environment, your custom filter would be: `db_cluster=dev-memcached-01` AND `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-4. Click **Add**.
-4. Click **Import**.
-6. On the **Import Content popup**, enter **Memcached** in the Name field, paste the JSON into the popup, and click **Import**.
-7. The monitors are created in "Memcached" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
-
-
-### Method B: Using a Terraform script
-
-1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions, see  [Access Keys](/docs/manage/security/access-keys).
-2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install.
-3. Download the Sumo Logic Terraform package for Memcached monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Memcached). You can either download it using the git clone command or as a zip file.
-4. Alert Configuration. After extracting the package, navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/Memcached/` directory.
-5. Edit the `Memcached.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-  ```bash
-  access_id   = "<SUMOLOGIC ACCESS ID>"
-  access_key  = "<SUMOLOGIC ACCESS KEY>"
-  environment = "<SUMOLOGIC DEPLOYMENT>"
-  ```
-6. The Terraform script installs the alerts without any scope filters. If you would like to restrict the alerts to specific clusters or environments, update the `memcached_data_source` variable. For example:
-   * To configure alerts for a specific clusters, set `memcached_data_source` to something like: `db_cluster=memcached.prod.01`
-   * To configure alerts for All clusters in an environment, set `memcached_data_source` to something like: `environment=prod`
-   * To configure alerts for Multiple clusters using a wildcard, set `memcached_data_source` to something like: `db_cluster=memcached-prod*`
-   * To configure alerts for specific clusters within a specific environment, set `memcached_data_source` to something like: `db_cluster=memcached-1 and environment=prod`. This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the Sumo Logic of the Collect Logs and Metrics for Memcached topic.
-
-  All monitors are disabled by default on installation. To enable all of the monitors, set the `monitors_disabled` parameter to `false`.
-
-  By default, the monitors will be located in a "Memcached" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the folder variable in the `Memcached.auto.tfvars` file.
-
-7. If you want the alerts to send email or connection notifications, edit the `Memcached_notifications.auto.tfvars` file to populate the `connection_notifications` and `email_notifications` sections. Examples are provided below.
-   * In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-```bash title="Pagerduty connection example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email notifications example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-7. Install Monitors.
-   1. Navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/Memcached/ directory and run `terraform init`. This will initialize Terraform and download the required components.
-   2. Run `terraform plan` to view the monitors that Terraform will create or modify.
-   3. Run `terraform apply`.
-
-
 ## Installing the Memcached app
 
 This section demonstrates how to install the Memcached app.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-only-k8s.md';
 
-<AppInstall/>
+<AppInstall2 />
+
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `pod`
+* `db_cluster_address`
+* `db_cluster_port`
+
+Additionally, if you're using Memcached in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
+
+For information on setting up fields, see [Fields](/docs/manage/fields).
 
 ## Viewing Memcached Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -485,10 +364,13 @@ The **Memcached - Logs** dashboard helps you quickly analyze your Memcached erro
 
 <img src={useBaseUrl('img/integrations/databases/Memcached-Logs.png')} alt="Memcached dashboards" />
 
-## Memcached Alerts
+## Create monitors for Memcached app
 
-Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Memcached database cluster is available and performing as expected.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
+<CreateMonitors/>
+
+### Memcached alerts
 <table>
   <tr>
    <td>Alert Name </td>

@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.13  
-Updated: Feb 21, 2025***
+***Version: 1.14  
+Updated: April 23, 2025***
 
 The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
@@ -44,6 +44,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike/crowdstrike-falcon-configuration.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon configuration" width="400"/>
+
+For information about CrowdStrike Falcon, see [CrowdStrike documentation](https://www.crowdstrike.com/en-us/resources/guides/?lang=1).
+
 ## Change Log
 
 * June 3, 2021 - First upload
@@ -72,3 +76,5 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
     + Alerts CrowdStrike Falcon Daemon
 * February 21, 2025 (v1.13) - Added new action
     + Get IDP Device Info
+* April 23, 2025 (v1.14) - Updated the Integration
+    + Refactored the code to improve performance and maintainability.

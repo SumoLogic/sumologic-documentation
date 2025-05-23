@@ -1,5 +1,5 @@
 ---
-title: Kela Darkbeast
+title: KELA Darkbeast
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: Jul 05, 2023***
 
-Kela Darkbeast provides incident responders, threat hunters, investigators, and intelligence analysts with a robust technology to dive into the cybercrime underground and investigate. 
+KELA Darkbeast provides incident responders, threat hunters, investigators, and intelligence analysts with a robust technology to dive into the cybercrime underground and investigate. 
 
 ## Actions
 
@@ -19,28 +19,22 @@ Kela Darkbeast provides incident responders, threat hunters, investigators, and 
 * **Get Data Details** *(Enrichment)* - This action is used to retrieve the full details of a Hacking Discussion or Instant Messaging data point.
 * **User License** *(Enrichment)* - Returns the number of remaining search tokens your API license has.
 
-## Kela Darkbeast configuration
+## KELA Darkbeast configuration
 
-1. Sign in to the Kela Darkbeast platform.
+1. Sign in to the KELA Darkbeast platform.
 2. The API Access can be generated in your profile.
 3. Make sure you copy and save the API token.
 
-## Configure Kela Darkbeast in Automation Service and Cloud SOAR
+## Configure KELA Darkbeast in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-darkbeast/kela-darkbeast-3.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="400"/>
-1. Populate all the required fields (\*).
    * **URL**. 'https://darkbeast.ke-la.com/api/v1/'.
-   * **API Token**. Insert the previously copied token.
-1. Click **Save**.
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-darkbeast/kela-darkbeast-4.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-darkbeast/kela-darkbeast-5.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-darkbeast/kela-darkbeast-6.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="400"/>
+   * **API Token**. Insert the previously copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/kela-darkbeast-configuration.png')} style={{border:'1px solid gray'}} alt="Kela Darkbeast configuration" width="400"/>
+
+For information about KELA Cyber Threat Intelligence (formerly KELA Darkbeast), see [KELA documentation](https://docs.ke-la.com/kela-docs).
 
 ## Change Log
 
