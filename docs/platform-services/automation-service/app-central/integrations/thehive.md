@@ -49,11 +49,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-* API Key: A unique token used to authenticate API requests to TheHive.
-* Server URL: The base URL (hostname or IP address) of your TheHive server.
-* Port (Optional): The port number on which TheHive is accessible.
-* Organization Name (Optional): The name of the organization context in multi-tenant deployments of TheHive.
-* Automation Engine
+* **API Key**. A unique token used to authenticate API requests to TheHive.
+* **Server URL**. The base URL (hostname or IP address) of your TheHive server.
+* **Port**. (Optional) The port number on which TheHive is accessible.
+* **Organization Name**. (Optional) The name of the organization context in multi-tenant deployments of TheHive.
+* **Automation Engine**. Select **Cloud execution** for this certified integration. Select a bridge option only for a custom integration. See [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/thehive-configuration.png')} style={{border:'1px solid gray'}} alt="TheHive configuration" width="400"/>
 
@@ -99,8 +99,8 @@ To configure the integration:
 The input will be cleaned (e.g., 5 - 10 to 5-10) and validated. If the format is incorrect or the range is invalid (start > end), an error is raised.
 
 ### Support
-* For issues, questions, or improvements:
-* Use the sumo logs and API error messages for initial debugging.
+For issues, questions, or improvements:
+* Use the Sumo Logic logs and API error messages for initial debugging.
 * Refer to TheHive [official documentation](https://docs.thehive-project.org/)
 
 ## Change Log
