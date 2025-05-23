@@ -74,9 +74,9 @@ Since this source contains logs from multiple regions, make sure that you do not
 
 ## Installing the Azure Virtual Machine app
 
-import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstallNoDataSourceV2/>
+<AppInstallIndexV2/>
 
 As part of the app installation process, the following fields will be created by default:
 
@@ -92,9 +92,9 @@ As part of the app installation process, the following fields will be created by
 
 ## Viewing the Azure Virtual Machine dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/>
 
 ### Overview
 
