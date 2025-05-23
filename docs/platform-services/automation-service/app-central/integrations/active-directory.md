@@ -50,7 +50,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 * **Login Port**. The port used for LDAP authentication. The default is `389` for LDAP and `636` for LDAPS.
 
-* **Login DN (Username)**. Enter the distinguished name format (for example, `CN=Administrator,CN=Users,DC=csoar,DC=com`). See the [following sections](#how-to-get-login-dn-with-a-local-account) for information about how to get the login DN.
+* **Login DN (Username)**. Enter the distinguished name format (for example, `CN=Administrator,CN=Users,DC=csoar,DC=com`). See the following sections for information about how to get the login DN.
 
 * **Password**. The corresponding password for the provided username.
 
