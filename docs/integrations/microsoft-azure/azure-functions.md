@@ -85,9 +85,9 @@ For getting the health check metric, make sure you enable **Health check** under
 
 This section provides instructions on how to install the Azure Functions app and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstall2/>
+<AppInstallIndexV2/>
 
 As part of the app installation process, the following fields will be created by default:
 
@@ -103,9 +103,9 @@ As part of the app installation process, the following fields will be created by
 
 ## Viewing the Azure Functions dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/>
 
 ### Overview
 
