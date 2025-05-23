@@ -70,7 +70,7 @@ Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to cr
   ```
 * **Parse Expression:** Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “securityprod” alias for an AWS account with ID "123456789" and the “infraprod” alias for an AWS account with ID "987654321", your parse expression would look like:
   ```sql
-  json "LinkedAccount"
+  | json "LinkedAccount"
   | if (LinkedAccount = "123456789",  "securityprod", LinkedAccount ) as LinkedAccount
   | if (LinkedAccount = "987654321",  "infraprod", LinkedAccount ) as LinkedAccount
   ```
