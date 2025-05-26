@@ -21,6 +21,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/stellar-cyber-starlight-configuration.png')} style={{border:'1px solid gray'}} alt="Stellar Cyber Starlight configuration" width="400"/>
+
+For information about Stellar Cyber, see [Stellar Cyber documentation](https://docs.stellarcyber.ai/5.3.x/Home.htm).
+
 ## Change Log
 
 * September 3, 2020 - First upload

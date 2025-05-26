@@ -34,6 +34,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/freshdesk-configuration.png')} style={{border:'1px solid gray'}} alt="FreshDesk configuration" width="400"/>
+
+For information about FreshDesk, see [FreshDesk documentation](https://developers.freshdesk.com/).
+
 ## Change Log
 
 * March 20, 2020 - First upload

@@ -27,6 +27,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fireeye-endpoint-security-configuration.png')} style={{border:'1px solid gray'}} alt="FireEye Endpoint Security configuration" width="400"/>
+
+For information about Trellix Endpoint Security (HX), (formerly FireEye Endpoint Security), see [Trellix Endpoint Security (HX) documentation](https://docs.trellix.com/bundle/fe-endpoint-security-landing/page/UUID-2f6e6cdb-cab4-3e3f-1122-ca5d34fc36bb.html).
+
 ## Change Log
 
 * March 3, 2020 - First upload

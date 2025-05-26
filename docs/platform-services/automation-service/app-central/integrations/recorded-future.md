@@ -42,6 +42,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/recorded-future-configuration.png')} style={{border:'1px solid gray'}} alt="Recorded Future configuration" width="400"/>
+
+For information about Recorded Future, see [Recorded Future documentation](https://support.recordedfuture.com/hc/en-us).
+
 ## Change Log
 
 * September 16, 2019 - First upload

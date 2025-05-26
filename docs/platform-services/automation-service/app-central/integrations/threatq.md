@@ -39,10 +39,9 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears search/look for the ThreatQ integration and click on the row. The integration details will appear. Click on the **"+"** button to add new Resource.
-1. Populate all the required fields: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatq/threatq-3.png')} style={{border:'1px solid gray'}} alt="threatq" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click edit (pencil icon) on the right of the row. Then click test saved settings. You should receive a successful notification in the bottom right corner.
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/threatq-configuration.png')} style={{border:'1px solid gray'}} alt="ThreatQ configuration" width="400"/>
+
+For information about ThreatQ, see [ThreatQ documentation](https://docs.threatq.com/rest_api).
 
 ## Change Log
 

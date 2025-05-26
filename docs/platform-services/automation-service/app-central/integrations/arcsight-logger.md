@@ -21,6 +21,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/arcsight/arcsight-logger-configuration.png')} style={{border:'1px solid gray'}} alt="ArcSight Logger configuration" width="400"/>
+
+For information about ArcSight Logger, see [ArcSight Logger documentation](https://www.microfocus.com/documentation/arcsight/logger-7.3/).
+
 ## Change Log
 
 * January 31, 2019 - First upload

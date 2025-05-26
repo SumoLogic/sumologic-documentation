@@ -44,6 +44,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/check-point/check-point-configuration.png')} style={{border:'1px solid gray'}} alt="Check-Point configuration" width="400"/>
+
+For information about Check Point, see [Check Point documentation](https://sc1.checkpoint.com/documents/latest/api_reference/index.html).
+
 ## Change Log
 
 * February 10, 2020 - First upload

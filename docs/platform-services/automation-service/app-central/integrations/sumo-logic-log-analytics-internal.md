@@ -20,11 +20,7 @@ Integration with Sumo Logic platform for Sumo Logic system calls
 
 ## Configure Sumo Logic Log Analytics Internal in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
-
-<IntegrationsAuth/>
-
-Sumo Logic Log Analytics Internal executes without additional authentication.
+No configuration is needed. Sumo Logic Log Analytics Internal executes without additional authentication.
 
 ## Change Log
 

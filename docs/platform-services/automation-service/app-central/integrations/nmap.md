@@ -25,16 +25,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-3.png')} style={{border:'1px solid gray'}} alt="nmap" width="400"/>
-1. Populate all the required fields (\*).
    * **URL**. Your URL default ('https://api.nmap.online'/).
-   * **Api Key**. Insert the API Key.
-1. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-4.png')} style={{border:'1px solid gray'}} alt="nmap" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-5.png')} style={{border:'1px solid gray'}} alt="nmap" width="300"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-6.png')} style={{border:'1px solid gray'}} alt="nmap" width="300"/>
-1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-7.png')} style={{border:'1px solid gray'}} alt="nmap" width="300"/>
+   * **Api Key**. Insert the API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/nmap-configuration.png')} style={{border:'1px solid gray'}} alt="Nmap configuration" width="400"/>
+
+For information about Nmap, see [Nmap documentation](https://nmap.org/book/man.html).
 
 ## Change Log
 
