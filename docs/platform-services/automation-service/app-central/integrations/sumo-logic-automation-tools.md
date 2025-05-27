@@ -18,7 +18,7 @@ Sumo Logic Automation Tools simplifies Cloud SOAR playbooks with data processing
 * **Data Transform** (*Custom*) -  Provides various functions to more easily transform data in a playbook. See [Data Transfer example](#data-transform).
 * **Build JSON Object** (*Custom*) - Provide the action with JSON key placeholder or string to build a new JSON object with the specified key/values. See [Build JSON Object example](#build-json-object).
 * **Build Signal Output** (*Custom*) - Converts the Sumo Logic SIEM Signal JSON object to HTML or plain text with line breaks. See [Build Signal Output example](#build-signal-output).
-* **Scaled Decimal to Percentage** (*Custom*) - Converts a scaled decimal values between 0 and 1 into a percentage. [Scaled Decimal to Percentage](#scaled-decimal-to-percentage).
+* **Scaled Decimal to Percentage** (*Custom*) - Converts a scaled decimal values between 0 and 1 into a percentage. See [Scaled Decimal to Percentage](#scaled-decimal-to-percentage).
 
 ## Actions usage
 
