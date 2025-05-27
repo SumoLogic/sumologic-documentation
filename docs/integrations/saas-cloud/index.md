@@ -71,6 +71,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/bitwarden"><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="bitwarden-icon.png" width="100" /><h4>Bitwarden</h4></a>
+  <p>Gain insights into user activity, security events, and administrative changes within your Bitwarden environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/box"><img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="icon" width="80"/><h4>Box</h4></a>
   <p>Gain insight into user behavior patterns and resources.</p>
   </div>
@@ -205,6 +211,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/jumpcloud-directory-insights"><img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="icon" width="100"/><h4>JumpCloud Directory Insights</h4></a>
   <p>Get critical insights into your organization's JumpCloud Directory Insights environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/kaltura"><img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="icon" width="100"/><h4>Kaltura</h4></a>
+  <p>Get critical insights into your content management ecosystem, including total entries, user activity trends, and event distributions.</p>
   </div>
 </div>
 <div className="box smallbox card">
