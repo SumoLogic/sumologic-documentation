@@ -10,7 +10,7 @@ description: Root Cause Explorer has reached its end of life and is no longer su
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-As part of our ongoing evaluation of the Sumo Logic service, our product team has deprecated Root Cause Explorer, and it is no longer available as of 23 May 2025. After observing low customer usage trends for Root Cause Explorer over time since its release, we believe this to be the best course of action and refocus our development efforts towards more critical features in the product.
+As part of our ongoing evaluation of the Sumo Logic service, our product team has deprecated Root Cause Explorer, and it is no longer available as of 27 May 2025. After observing low customer usage trends for Root Cause Explorer over time since its release, we believe this to be the best course of action and refocus our development efforts towards more critical features in the product.
 
 ## Why is this happening?
 
@@ -19,7 +19,7 @@ As part of our ongoing evaluation of the Sumo Logic service, our product team ha
 
 ## What is happening?
 
-After the end-of-life date of Root Cause Explorer on 23 May 2025, the feature is no longer available both as an independent operation from the main Sumo page and from within the Entity Inspector pages.
+After the end-of-life date of Root Cause Explorer on 27 May 2025, the feature is no longer available both as an independent operation from the main Sumo Logic page and from within the Entity Inspector pages.
 
 ## What do I need to do?
 
