@@ -205,6 +205,19 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-Cosmos-DB-Administrative-Operations.png')} alt="Azure Cosmos DB - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
+### Partitions
+
+
+The **Azure Cosmos DB - Partitions** dashboard provides details about partitions count, throughput and physical partition size by database.
+
+Use this dashboard to:
+* Monitor partition size and their throughput throughout the database.
+* View partitions allocated to different DB's and collections
+* Track partition count and usage.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-Cosmos-DB-Partitions.png')} alt="Azure Cosmos DB - Partitions dashboard" style={{border: '1px solid gray'}} width="800" />
+
+
 ## Upgrade/Downgrade the Azure Cosmos DB app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
@@ -216,6 +229,21 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Create monitors for Azure Cosmos DB
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Cosmos DB alerts
+
+These alerts are metrics-based and will work for all Cosmos DB's.
+
+| Alert Name                                     | Description                                                                              | Alert Condition | Recover Condition |
+|:-----------------------------------------------|:-----------------------------------------------------------------------------------------|:----------------|:------------------|
+| `Azure Cosmos DB - Availability`               | This alert gets triggered when Availability drops below 100% in Azure Cosmos DB.         | Count < 100     | Count >= 100      |
+| `Azure Cosmos DB - Normalized RU Consumption`  | This alert gets triggered when high RU consumption usage is detected in Azure Cosmos DB. | Count >= 90     | Count < 90        |
 
 ## Troubleshooting
 
