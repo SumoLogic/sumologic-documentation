@@ -19,8 +19,23 @@ DEVO integration to query data from Devo.
 ## Configure Devo in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Devo Domain**. Enter your [Devo domian](https://docs.devo.com/space/latest/94762877/Domain+administration).
+
+* **API Key**. Enter a Devo [access key](https://docs.devo.com/space/latest/94763781/Access+keys).
+
+* **Secret Key**. Enter the secret for the access key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/devo-configuration.png')} style={{border:'1px solid gray'}} alt="Devo configuration" width="400"/>
 
