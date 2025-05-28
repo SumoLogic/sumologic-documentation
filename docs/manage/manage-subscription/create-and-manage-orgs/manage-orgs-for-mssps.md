@@ -46,10 +46,10 @@ To update content:
     :::note
     Content appears in **Library** only after it has been [shared with Administrator view access](/docs/manage/content-sharing/):<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-admin-view-access.png')} alt="Administrator view access" style={{border: '1px solid gray'}} width="600"/>
     :::
-1. On the **Update Selected Items** box, click **Destinations** to select the organizations to update the selected items to. You can update to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2.png')} alt="Update Selected Items dialog" style={{border: '1px solid gray'}} width="400"/><br/>Tips: 
+1. On the **Update Selected Items** box, click **Destinations** to select the organizations to update the selected items to. You can update to all organizations, a single organization, or multiple organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2.png')} alt="Update Selected Items dialog" style={{border: '1px solid gray'}} width="400"/><br/>Tips: 
    * If you select **All Child Organizations**, you can then select organizations to exclude, allowing you to update to all organizations except those you select:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-selected-organizations.png')} alt="Selected organizations" style={{border: '1px solid gray'}} width="300"/>
    * When you update rule tuning expressions, select **Include Associated Cloud SIEM Rules** to also update all the Cloud SIEM rules that the expressions are used on:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-associated-rules.png')} alt="Include Associated Cloud SIEM Rules checkbox" style={{border: '1px solid gray'}} width="200"/>
-   * When you update scheduled searches, select **Include and Update Connect** to create the scheduled searches in the child organizations if they don't already exist there. Select **Ignore Connection** only if you want to turn the added scheduled searches into saved searches.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-update-scheduled-searches.png')} alt="Include and Update Connect checkbox" style={{border: '1px solid gray'}} width="400"/>
+   * When you update scheduled searches, select **Include and Update Connect** to create the scheduled searches in the target organizations if they don't already exist there. Select **Ignore Connection** only if you want to turn the added scheduled searches into saved searches.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-update-scheduled-searches.png')} alt="Include and Update Connect checkbox" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Update**. An **Updating in progress** dialog is displayed. 
 
 ## View history
@@ -60,20 +60,35 @@ To update content:
 
 ## FAQs
 
-### What to expect when updating Cloud SIEM rules
+### General FAQs
 
-* **Are rule tuning expressions included?**<br/>No, they are not included, but can be updated separately.
-* **What happens when a rule with the same name already exists?**<br/>It will be replaced in the child organization.
+* **What happens if an item with the same name already exists in the target organization?**<br/>The item in the target organization will be replaced.
+* **What happens if an item selected for update doesn't already exist in the target organization?**<br/>The item will be created in the target organization.
 * **What if errors occur during updating?**<br/>Affected items will be skipped. Once the rest of the content is updated, you can review errors in log search and retry.
+* **Can I roll back changes after an update operation?**<br/>No, rollback is not supported. After an updater operation is initiated, changes cannot be reversed.
+* **How can I monitor update progress?**<br/>The system displays real-time update status, including progress tracking, success or failure messages, and error logs.
+* **How can I view update history?**<br/>Click [**View history**](#view-history) in the upper-right corner of the page. A query for update history will display, showing the email of the individual who performed the update and the updated items. 
+* **Who can I contact for additional questions or support?**<br/>Reach out to your  Sumo Logic representative with any questions, issues, or feedback.
 
-### What to expect when updating Cloud SIEM rule tuning expressions
+### Cloud SIEM FAQs
 
-* **What happens if a tuning expression with the same name already exists?**<br/>It will be replaced in the child organization.
-* **What if errors occur during updating?**<br/>Affected items will be skipped. Once the rest of the content is updated, you can review errors in log search and retry.
+#### Rules updates
+
+**Are rule tuning expressions included?**<br/>No, they are not included, but can be updated separately.
+
+#### Rule tuning expressions updates
+
 * **What happens if the source tuning expression contains Cloud SIEM rules?**<br/>If the **Include Linked Cloud SIEM Rules** option is selected, existing rules with the same name in the destination organization will be linked to match the source tuning expression.
 * **What if no matching Cloud SIEM rules are found in the destination organization?**<br/>The update will complete with a warning, and missing rules will be logged in the audit log. You can update those rules separately and re-run the tuning expression update.
-   
 
+## Limitations
+
+* Once an update is initiated, it cannot be reversed. Administrators should carefully review their selections before updating. 
+* If errors occur during update, administrators must manually re-attempt failed updates.
+* Update operations may take longer based on the volume of content being updated.
+* If an item with the same name exists in the target organization, it will be replaced.
+* Rule tuning expressions must be updated separately from rules.
+   
 ## Multi-insights list page in Cloud SIEM
 
 If you are logged in to a parent organization with child organizations that also use Cloud SIEM, the insights list page in Cloud SIEM allows you to [view insights in child organizations](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#view-insights-in-child-organizations). 
