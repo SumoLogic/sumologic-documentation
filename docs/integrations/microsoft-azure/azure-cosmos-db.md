@@ -208,7 +208,7 @@ Use this dashboard to:
 ### Partitions
 
 
-The **Azure Cosmos DB - Partitions** dashboard provides details about partitions count, throughput and physical partition size by database.
+The **Azure Cosmos DB - Partitions** dashboard provides details about partitions count, throughput, and physical partition size by database.
 
 Use this dashboard to:
 * Monitor partition size and their throughput throughout the database.
