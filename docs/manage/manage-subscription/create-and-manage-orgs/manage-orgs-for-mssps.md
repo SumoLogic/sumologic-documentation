@@ -43,9 +43,13 @@ To update content:
    * **Rule Tuning Expressions**
 1. Select individual items to be updated, or all items.
 1. Click **Update Selected Items**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items.png')} alt="Update Selected Items button" style={{border: '1px solid gray'}} width="800"/>
+    :::note
+    Content appears in **Library** only after it has been [shared with Administrator view access](/docs/manage/content-sharing/):<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-admin-view-access.png')} alt="Administrator view access" style={{border: '1px solid gray'}} width="600"/>
+    :::
 1. On the **Update Selected Items** box, click **Destinations** to select the organizations to update the selected items to. You can update to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2.png')} alt="Update Selected Items dialog" style={{border: '1px solid gray'}} width="400"/><br/>Tips: 
    * If you select **All Child Organizations**, you can then select organizations to exclude, allowing you to update to all organizations except those you select:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-selected-organizations.png')} alt="Selected organizations" style={{border: '1px solid gray'}} width="300"/>
    * When you update rule tuning expressions, select **Include Associated Cloud SIEM Rules** to also update all the Cloud SIEM rules that the expressions are used on:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-associated-rules.png')} alt="Include Associated Cloud SIEM Rules checkbox" style={{border: '1px solid gray'}} width="200"/>
+   * When you update scheduled searches, select **Include and Update Connect** to create the scheduled searches in the child organizations if they don't already exist there. Select **Ignore Connection** only if you want to turn the added scheduled searches into saved searches.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-update-scheduled-searches.png')} alt="Include and Update Connect checkbox" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Update**. An **Updating in progress** dialog is displayed. 
 
 ## View history
