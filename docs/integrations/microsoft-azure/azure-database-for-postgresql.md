@@ -172,6 +172,17 @@ The **Azure Database for PostgreSQL - Transactions** dashboard provides insights
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Transactions.png')} alt="Azure Database for PostgreSql - Transactions" style={{border: '1px solid gray'}} width="800" />
 
+### Azure Database for PostgreSQL alerts
+These alerts are metric based and will work for all Azure Database for PostgreSQL.
+
+| Alert Name                                           | Alert Description and Conditions                                                                                                                         | Alert Condition  | Recover Condition |
+|:-----------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:------------------|
+| `Azure Database for PostgreSQL - Active Connections` | This alert is triggered  when Average Active Connections Count is greater than 1000.                                                                     | Count >= 1000    | Count < 1000      |
+| `Azure Database for PostgreSQL - CPU Percent`        | This alert is triggered  when CPU Percentage is greater than 90. Also a warning type alert will be triggered  when CPU Percentage is greater than 80.    | Percentage >= 90 | Percentage < 90   |
+| `Azure Database for PostgreSQL - Failed Connections` | This alert is triggered when Failed Connections Count is greater than 10.                                                                                | Count >= 10      | Count < 10        |
+| `Azure Database for PostgreSQL - Memory Percent`     | This alert is triggered when Memory Percentage is greater than 80. Also a warning type alert will be triggered when Memory Percentage greater than 70.   | percentage >= 80 | percentage < 80   |
+| `Azure Database for PostgreSQL - Storage Percent`    | This alert is triggered when Storage Percent greater than 95. Also a warning type alert will be triggered when Storage Percent greater than 90.          | percentage >= 95 | percentage < 95   |
+
 ## Troubleshooting
 
 ### HTTP Logs and Metrics Source used by Azure Functions
