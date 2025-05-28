@@ -212,7 +212,7 @@ The **Azure Cosmos DB - Partitions** dashboard provides details about partitions
 
 Use this dashboard to:
 * Monitor partition size and their throughput throughout the database.
-* View partitions allocated to different DB's and collections
+* View partitions allocated to different DB's and collections.
 * Track partition count and usage.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-CosmosDB/Azure-Cosmos-DB-Partitions.png')} alt="Azure Cosmos DB - Partitions dashboard" style={{border: '1px solid gray'}} width="800" />
