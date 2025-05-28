@@ -27,7 +27,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **Devo Domain**. Enter your [Devo domian](https://docs.devo.com/space/latest/94762877/Domain+administration).
+* **Devo Domain**. Enter your [Devo domain](https://docs.devo.com/space/latest/94762877/Domain+administration).
 
 * **API Key**. Enter a Devo [access key](https://docs.devo.com/space/latest/94763781/Access+keys).
 
