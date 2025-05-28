@@ -47,7 +47,7 @@ MSSP administrators must ensure that the content of their child organizations is
    * **Cloud SIEM Rules**. For more information about Cloud SIEM rules, see [Cloud SIEM Rules](/docs/cse/rules/).
    * **Cloud SIEM Rule Tuning**. For more information about Cloud SIEM rule tuning expressions, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
    * **Library**. For more information about Library items, see [Managing Your Sumo Logic Library](/docs/get-started/library/).
-       Items appear in **Library** only after it has been [shared with Administrator view access](/docs/manage/content-sharing/):<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-admin-view-access.png')} alt="Administrator view access" style={{border: '1px solid gray'}} width="600"/>
+       Items appear in **Library** only after they have been [shared with Administrator view access](/docs/manage/content-sharing/):<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-admin-view-access.png')} alt="Administrator view access" style={{border: '1px solid gray'}} width="600"/>
 1. Select individual items to be updated, or all items.
 1. Click **Update Selected Items**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items.png')} alt="Update Selected Items button" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Update Selected Items** box, click **Destinations** to select the organizations to update the selected items to. You can update to all organizations, a single organization, or multiple organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2.png')} alt="Update Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
