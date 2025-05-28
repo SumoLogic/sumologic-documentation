@@ -19,9 +19,9 @@ To configure Collection for AWS WAF App, follow the instructions from [Collectin
 
 Now that you have set up collection for AWS WAF, install the Sumo Logic App for AWS WAF to use the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
 ## Viewing AWS WAF Security Monitoring Dashboards
 

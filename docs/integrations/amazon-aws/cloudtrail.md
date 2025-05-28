@@ -138,22 +138,22 @@ Your search results should look similar to:
 
 Now that you have set up collection for AWS CloudTrail, install the Sumo Logic App for CloudTrail to use the pre-configured searches and dashboards that provide visibility into your environment.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
 :::info
 
 <details>
 <summary><strong>What if my data isn't displaying in all Panels?</strong></summary>
 
-### Scan interval issues
+#### Scan interval issues
 
 Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS CloudTrail logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](#viewing-aws-cloudtrail-dashboards)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
 
 Additionally, you can change the time range of a Panel. Even though these  have been preconfigured, they can be edited just like any other Panel. You'll find instructions in [Changing the Time Range of a Panel](/docs/dashboards/set-custom-time-ranges).
 
-### AWS Admin activity not tracked
+#### AWS Admin activity not tracked
 
 To track Admin activity in your AWS account, and to provide data for all Administrator Activity Panels in the User Monitoring Dashboard, you need to supply a list of admin users to Sumo. For instructions see [Enable Sumo to Track AWS Admin Activity](#enable-sumo-logic-to-track-aws-admin-activity)
 
@@ -161,8 +161,7 @@ To track Admin activity in your AWS account, and to provide data for all Adminis
 
 :::
 
-
-## Configuring the AWS CloudTrail App in Multiple Environments
+## Configuring the AWS CloudTrail app in Multiple Environments
 
 If you have more than one environment that generates CloudTrail data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment.
 
@@ -170,17 +169,19 @@ This way, you’ll have the three app dashboards for each environment.
 
 To avoid confusion, and in order to identify which environment is generating data, you should name each S3 Source with the environment's name. For example, you might name your Sources as something like: `CloudTrail-prod`, `CloudTrail-dev`, `CloudTrail-test`, etc.
 
-Finally, make copies of each Panel in the CloudTrail Dashboards, and modify the search logic in each Panel so that you select the appropriate source for each environment.
+Finally, make copies of each panel in the CloudTrail dashboards, and modify the search logic in each Panel so that you select the appropriate source for each environment.
 
-For example, for a production environment, you will add the string: `_source=CloudTrail-production` to the beginning of each search. Edit the names of the Panels as needed. This means if you have three environments then you will have three copies of the application for each of them (nine dashboards in total).
-
-
+For example, for a production environment, you will add the string: `_source=CloudTrail-production` to the beginning of each search. Edit the names of the panels as needed. This means if you have three environments then you will have three copies of the application for each of them (nine dashboards in total).
 
 ## Viewing AWS CloudTrail Dashboards
 
-### AWS CloudTrail - Overview
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-See an overview of your AWS users, resources, network and security events. The panels present information about top 10 users, failed logins, user locations, and resource creation and deletion.
+<ViewDashboards/>
+
+### Overview
+
+See an overview of your AWS users, resources, network, and security events. The panels present information about top 10 users, failed logins, user locations, and resource creation and deletion.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-overview.png')} alt="AWS CloudTrail" width="900"/>
 
@@ -197,7 +198,7 @@ See an overview of your AWS users, resources, network and security events. The p
 **Created and Deleted Network and Security Events**. Displays a pie chart of created or deleted events for the past 24 hours.
 
 
-### AWS CloudTrail - User Monitoring
+### User Monitoring
 
 See information about your AWS users, including user locations, administrative activities, and instance launch and termination by users.
 
@@ -216,7 +217,7 @@ See information about your AWS users, including user locations, administrative a
 **Recent Activity by Administrative Users**. Activity over the last three hours are displayed by the name of the event (CreateUser, PutUserPolicy, and so on) and by the user’s name and location.
 
 
-### AWS CloudTrail - Network and Security
+### Network and Security
 
 See information about network and security events, authorization failures, security group and network ACL changes, and short lived critical operations.
 
@@ -239,7 +240,7 @@ See information about network and security events, authorization failures, secur
 **Short Lived Critical Operations**. The search behind this Panel watches for users, groups, or policies that are created and then deleted within a span of 10 minutes.
 
 
-### AWS CloudTrail - Operations
+### Operations
 
 See information about operations activity in your AWS account, including action events, requested AWS services, events by AWS region, created and deleted resources, and elastic IP address operations.
 
@@ -258,7 +259,7 @@ See information about operations activity in your AWS account, including action 
 **Deleted Resources Over Time**. Displays the resources deleted every hour over the past 24 hours.
 
 
-### AWS CloudTrail - Console Logins
+### Console Logins
 
 See information about CloudTrail console logins, including location of users, login events by user, logins from multiple IP address, logins from outside the US, and logins without multi-factor authentication.
 
@@ -283,7 +284,7 @@ See information about CloudTrail console logins, including location of users, lo
 **Logins without MFA**. Shows users who have logged in without using multi-factor authentication (MFA) in an aggregation table, including the user name, login result status, and count for the last 24 hours.
 
 
-### AWS CloudTrail - S3 Public Objects and Buckets
+### S3 Public Objects and Buckets
 
 See information about S3 public objects and buckets, including counts of new public objects, public buckets, and modified public objects.
 
