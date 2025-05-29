@@ -171,7 +171,7 @@ import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstallV2/>
 
-## Viewing AWS VPC Security Dashboards
+## Viewing AWS VPC Security dashboards
 
 Analytics and Monitoring dashboards to provide operational security for AWS VPC flow data sources.
 
