@@ -128,7 +128,7 @@ import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstallV2/>
 
-## Viewing AWS Network Firewall Dashboards
+## Viewing AWS Network Firewall dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
