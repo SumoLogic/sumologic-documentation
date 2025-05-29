@@ -429,6 +429,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-cpc-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source',
@@ -498,6 +499,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-logs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-sql-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source',
@@ -1054,7 +1056,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/security/index'},
       items: [
-        'manage/security/about-two-step-verification',
+        'manage/security/about-2-step-verification',
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
@@ -2552,6 +2554,7 @@ integrations: [
           'integrations/saas-cloud/istio',
           'integrations/saas-cloud/jamf',
           'integrations/saas-cloud/jumpcloud-directory-insights',
+          'integrations/saas-cloud/kaltura',
           'integrations/saas-cloud/kandji',
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/lastpass',
@@ -2830,7 +2833,7 @@ integrations: [
             'cse/ingestion/sumo-logic-ingest-mapping',
             {
               type: 'category',
-              label: 'Ingestion Sources for Cloud SIEM',
+              label: 'Example Ingestion Sources for Cloud SIEM',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'cse/ingestion/ingestion-sources-for-cloud-siem/index'},
@@ -2861,7 +2864,6 @@ integrations: [
                 'cse/ingestion/ingestion-sources-for-cloud-siem/palo-alto-firewall',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/sentinelone',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/signal-sciences-waf',
-                'cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway-blue-coat-proxy',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/zscaler-nss',
                 'cse/ingestion/ingestion-sources-for-cloud-siem/zscaler-private-access',
@@ -3052,7 +3054,7 @@ integrations: [
         'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
       ],
-    },  
+    },
   ],
   api: [
     {
