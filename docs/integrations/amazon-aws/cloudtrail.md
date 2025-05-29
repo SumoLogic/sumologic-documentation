@@ -173,7 +173,7 @@ Finally, make copies of each panel in the CloudTrail dashboards, and modify the 
 
 For example, for a production environment, you will add the string: `_source=CloudTrail-production` to the beginning of each search. Edit the names of the panels as needed. This means if you have three environments then you will have three copies of the application for each of them (nine dashboards in total).
 
-## Viewing AWS CloudTrail Dashboards
+## Viewing AWS CloudTrail dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
