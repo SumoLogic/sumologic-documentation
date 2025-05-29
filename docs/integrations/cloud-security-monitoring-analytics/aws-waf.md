@@ -23,7 +23,7 @@ import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstallV2/>
 
-## Viewing AWS WAF Security Monitoring Dashboards
+## Viewing AWS WAF Security Monitoring dashboards
 
 ### AWS WAF - Security Monitoring - Overview
 
