@@ -229,7 +229,7 @@ import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstallV2/>
 
-## Viewing Amazon GuardDuty Dashboards
+## Viewing Amazon GuardDuty dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
