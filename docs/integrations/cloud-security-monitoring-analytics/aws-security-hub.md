@@ -23,7 +23,7 @@ import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstallV2/>
 
-## Viewing AWS Security Hub Dashboards
+## Viewing AWS Security Hub dashboards
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
 
