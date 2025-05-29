@@ -161,7 +161,7 @@ To track Admin activity in your AWS account, and to provide data for all Adminis
 
 :::
 
-## Configuring the AWS CloudTrail app in Multiple Environments
+## Configuring the AWS CloudTrail app in multiple environments
 
 If you have more than one environment that generates CloudTrail data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment.
 
