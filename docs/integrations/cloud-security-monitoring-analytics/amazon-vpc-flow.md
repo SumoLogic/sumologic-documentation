@@ -167,11 +167,11 @@ This section has instructions for collecting Amazon VPC Flow Logs using an Amazo
 
 Now that you have set up collection, install the Sumo Logic App for Amazon VPC Flow to use the preconfigured searches and dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
-## Viewing AWS VPC Security Dashboards
+## Viewing AWS VPC Security dashboards
 
 Analytics and Monitoring dashboards to provide operational security for AWS VPC flow data sources.
 
