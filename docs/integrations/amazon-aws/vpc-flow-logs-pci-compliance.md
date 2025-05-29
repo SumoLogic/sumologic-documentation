@@ -37,9 +37,9 @@ json "logStream", "logGroup", "message", "direction" as logStream, logGroup, msg
 | parse field=msg "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status nodrop
 ```
 
-## Installing the PCI Compliance for Amazon VPC Flow Logs App
+## Installing the PCI Compliance for Amazon VPC Flow Logs app
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and dashboards that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic app for PCI Compliance For Amazon VPC Flow to use the preconfigured searches and dashboards that provide insight into your data.
 
 import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
