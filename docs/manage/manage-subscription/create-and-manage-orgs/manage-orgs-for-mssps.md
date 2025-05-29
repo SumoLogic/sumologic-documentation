@@ -25,10 +25,10 @@ You must have the following [organization role capabilities](/docs/manage/users-
    * View Organizations
    * Create Organizations
    * Manage Organizations
-   
+
 ### Multi-insights list page in Cloud SIEM
 
-If you are logged in to a parent organization with child organizations that also use Cloud SIEM, the insights list page in Cloud SIEM allows you to [view insights in child organizations](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#view-insights-in-child-organizations). 
+If you are logged in to a parent organization with child organizations that also use Cloud SIEM, the insights list page in Cloud SIEM allows you to [view insights in child organizations](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#view-insights-in-child-organizations).
 
 <!-- After this article is no longer beta, show the following text:
 This multi-insights list page (also known as a "federated" page) shows insights just as in a normal insights list page. When you click an insight on the page, you are automatically signed in to the child organization (if SSO is enabled for the child organization), and the insight's details open in the child organization's UI. You can also use the board view on the multi-insights page to move insights to different statuses.
@@ -38,20 +38,20 @@ To be able to see insights in child organizations, add child organizations that 
 
 ## Manage content in organizations
 
-MSSP administrators must ensure that the content of their child organizations is properly configured. To ensure that content is consistent across your organizations, use the **Manage Content** tab to update content in target organizations with content from a source organization. 
+MSSP administrators must ensure that the content of their child organizations is properly configured. To ensure that content is consistent across your organizations, use the **Manage Content** tab to update content in target organizations with content from a source organization.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
-1. Select the **Manage Content** tab.
-1. In the **Source** field, select the organization that will provide the source data to be updated in target organizations.
+1. Select the **Manage Content** tab.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-manage-content.png')} alt="Manage Content tab" style={{border: '1px solid gray'}} width="500"/>
+1. In the **Source** field, select the organization that will provide the source data to be updated in target organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-source-org.png')} alt="Manage Content tab" style={{border: '1px solid gray'}} width="500"/>
 1. In the **Content** bar, select the type of content to update:
-   * **Cloud SIEM Rules**. For more information about Cloud SIEM rules, see [Cloud SIEM Rules](/docs/cse/rules/).
-   * **Cloud SIEM Rule Tuning**. For more information about Cloud SIEM rule tuning expressions, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
-   * **Library**. For more information about Library items, see [Managing Your Sumo Logic Library](/docs/get-started/library/).
+   * **Cloud SIEM Rules**. For more information about Cloud SIEM rules, see [Cloud SIEM Rules](/docs/cse/rules/).<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-cse-rules.png')} alt="Cloud SIEM rules" style={{border: '1px solid gray'}} width="600"/>
+   * **Cloud SIEM Rule Tuning**. For more information about Cloud SIEM rule tuning expressions, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-cse-rule-tuning.png')} alt="Cloud SIEM rule tuning expressions" style={{border: '1px solid gray'}} width="600"/>
+   * **Library**. For more information about Library items, see [Managing Your Sumo Logic Library](/docs/get-started/library/).<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-library.png')} alt="Library items" style={{border: '1px solid gray'}} width="600"/><br/>
        Items appear in **Library** only after they have been [shared with Administrator view access](/docs/manage/content-sharing/):<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-admin-view-access.png')} alt="Administrator view access" style={{border: '1px solid gray'}} width="600"/>
 1. Select individual items to be updated, or all items.
 1. Click **Update Selected Items**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items.png')} alt="Update Selected Items button" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Update Selected Items** box, click **Destinations** to select the organizations to update the selected items to. You can update to all organizations, a single organization, or multiple organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2.png')} alt="Update Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
-1. Click **Update**. An **Updating in progress** dialog is displayed. 
+1. Click **Update**. An **Updating in progress** dialog is displayed.
 
 ### Tips
 
@@ -63,7 +63,7 @@ MSSP administrators must ensure that the content of their child organizations is
 ### Limitations
 
 * If an item with the same name exists in the target organization, it will be replaced.
-* Once an update is initiated, it cannot be reversed. Administrators should carefully review their selections before updating. 
+* Once an update is initiated, it cannot be reversed. Administrators should carefully review their selections before updating.
 * If errors occur during update, administrators must manually re-attempt failed updates. To see failed updates, use [View History](#view-history).
 * Update operations may take longer based on the volume of content being updated.
 * Rule tuning expressions must be updated separately from rules.
@@ -71,7 +71,7 @@ MSSP administrators must ensure that the content of their child organizations is
 ### View history
 
 1. Click **View History** in the upper-right corner of the page. <br/>A query for update history displays:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-history-query.png')} alt="View History query" style={{border: '1px solid gray'}} width="800"/>
-1. Click the search button. <img src={useBaseUrl('img/manage/subscriptions/search-button.png')} alt="Search button" width="75"/> <br/>The update history displays. The success or failure of the update appears in the **status** column. The email of the individual who performed the update appears in the **user_email** column. The updated items appear in the **content** column. 
+1. Click the search button. <img src={useBaseUrl('img/manage/subscriptions/search-button.png')} alt="Search button" width="75"/> <br/>The update history displays. The success or failure of the update appears in the **status** column. The email of the individual who performed the update appears in the **user_email** column. The updated items appear in the **content** column.
 1. Investigate any updates that failed and re-run the update if needed.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-history-query-results.png')} alt="View History query results" style={{border: '1px solid gray'}} width="800"/>
 
 ### View updates in the audit log
@@ -106,7 +106,7 @@ _index=sumologic_audit_events
 * **What if errors occur during updating?**<br/>Affected items will be skipped. Once the rest of the content is updated, you can review errors in [View History](#view-history) and retry.
 * **Can I roll back changes after an update operation?**<br/>No, rollback is not supported. After an update operation is initiated, changes cannot be reversed.
 * **How can I monitor update progress?**<br/>During an update, the system displays real-time status, including progress tracking, success or failure messages, and error logs.
-* **How can I view update history?**<br/>Click [**View History**](#view-history) in the upper-right corner of the page. A query for update history will display, showing the email of the individual who performed the update and the updated items. 
+* **How can I view update history?**<br/>Click [**View History**](#view-history) in the upper-right corner of the page. A query for update history will display, showing the email of the individual who performed the update and the updated items.
 * **Who can I contact for additional questions or support?**<br/>Reach out to your  Sumo Logic representative with any questions, issues, or feedback.
 
 #### Rules updates
