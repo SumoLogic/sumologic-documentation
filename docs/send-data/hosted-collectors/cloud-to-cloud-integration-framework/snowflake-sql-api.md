@@ -5,7 +5,8 @@ sidebar_label: Snowflake SQL API
 tags:
   - cloud-to-cloud
   - snowflake
-description: Learn how to collect data from the Snowflake SQL API.
+  - snowflake-sql-api
+description: Learn how to collect metrics from Snowflake SQL aggregation queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
