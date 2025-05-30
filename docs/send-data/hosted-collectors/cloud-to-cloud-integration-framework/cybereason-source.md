@@ -89,7 +89,6 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cybereason/example.tf
 ```
 
-
 ## FAQ
 
 :::info
