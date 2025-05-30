@@ -25,10 +25,10 @@ Customers can provide custom SQL queries for the source to execute and a configu
 
 To collect metric data from the Snowflake SQL API, you must have an authorized Snowflake account. We suggest setting up a dedicated user account with the correct permissions for accessing the SQL tables with the data you are interested in collecting.
 
-- Create a user account with the correct permissions for accessing the SQL tables you plan to query.
-- Take note of your admin account identifier following the instructions [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier). The identifier should look something like this: `wp00000.us-east-2.aws`.
-- Take note of the database name you plan to query.
-- Optional additional information such as a role, warehouse, or schema name can also be configured with the source.
+1. Create a user account with the correct permissions for accessing the SQL tables you plan to query.
+1. Take note of your admin account identifier following the instructions [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier). The identifier should look something like this: `wp00000.us-east-2.aws`.
+1. Take note of the database name you plan to query.
+1. Optional additional information such as a role, warehouse, or schema name can also be configured with the source.
 
 ### Source configuration
 
