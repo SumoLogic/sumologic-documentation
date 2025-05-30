@@ -7,10 +7,7 @@ tags:
   - bitwarden
 description: Learn how to collect event logs from the Bitwarden API.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/bitwarden/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/bitwarden/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/bitwarden/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="thumbnail icon" width="100"/>
@@ -32,7 +29,7 @@ The Bitwarden source collects event logs from their API. Many fields in the even
 
 **Prerequisites**
 
-To collect event logs from the Bitwarden API, you must have a Bitwarden Enterprise account. The integration uses OAuth 2.0 Client Credentials. Follow the authentication [instructions in the authentication section of the public API page](https://bitwarden.com/help/public-api/). 
+To collect event logs from the Bitwarden API, you must have a Bitwarden Enterprise account. The integration uses OAuth 2.0 Client Credentials. Follow the authentication [instructions in the authentication section of the public API page](https://bitwarden.com/help/public-api/).
 
 :::important
 If you are using a Self-Hosted installation, you must also provide your OAuth Token URL. For more details, see [Bitwarden's documentation](https://bitwarden.com/help/public-api/).
@@ -43,7 +40,7 @@ If you are using a Self-Hosted installation, you must also provide your OAuth To
 When you create a Bitwarden Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the Bitwarden Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Bitwarden** icon.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
@@ -87,12 +84,12 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/bitwarden/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/bitwarden/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/bitwarden/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/bitwarden/example.tf
+```

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-network.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Virtual Network](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview) is a service that provides the fundamental building block for your private network in Azure enabling many types of Azure resources to securely communicate with each other, using the internet, and on-premises networks. This integration helps in monitoring the outgoing and incoming traffic flows, dropped packets, bandwidth consumption, verifying network isolation and compliance.
+[Azure Virtual Network](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview) is a service that provides the fundamental building block for your private network in Azure enabling many types of Azure resources to securely communicate with each other, using the internet, and on-premises networks. This integration helps in monitoring the outgoing and incoming traffic flows, dropped packets, bandwidth consumption, and verifying network isolation and compliance.
 
 ## Logs and metric types
 
@@ -97,14 +97,14 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure field in field schema
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
-1. Search for following fields:
+1. Search for the following fields:
    - `tenant_name`. This field is tagged at the collector level and users can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs to.
-   - `subscription_id`. Id associated with a subscription where resource is present.
+   - `location`. The region to which the resource name belongs.
+   - `subscription_id`. Id associated with a subscription where the resource is present.
    - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for  ex Microsoft.Storage).
-   - `resource_type`. Azure resource type (for ex storageaccounts).
-   - `resource_name`. The name of the resource (for ex storage account name).
+   - `provider_name`. Azure resource provider name (for example, Microsoft.Storage).
+   - `resource_type`. Azure resource type (for example, storageaccounts).
+   - `resource_name`. The name of the resource (for example, storage account name).
 
 3. Create the fields if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
 
@@ -136,7 +136,7 @@ Create a Field Extraction Rule (FER) for Azure Virtual Network by following the 
 
   * **Azure Observability Metadata Extraction Azure Virtual Network**
 
-      In case this rule is already exists then no need to create again.
+      In case this rule already exists, then no need to create it again.
 ```sql
 Rule Name: AzureObservabilityMetadataExtractionAzureVirtualNetwork
 ```
@@ -154,33 +154,33 @@ resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/MICROSOFT.NETWORK/VIRTUAL
 
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. This step is required only for DDOS related metrics which comes after enabling DDOS protection in your virtual network.
+In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, onto an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. This step is required only for DDOS related metrics which comes after enabling DDOS protection in your virtual network.
 
-1. Create hosted collector and tag `tenant_name` field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
+1. Create a hosted collector and tag `tenant_name` field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
 2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each storage service (blob,queue,table and file) and each storage account that you want to monitor.
-   * Choose `Stream to an event hub` as destination.
+1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
+1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each storage service (blob, queue, table, and file) and each storage account that you want to monitor.
+   * Choose `Stream to an event hub` as the destination.
    * Select `AllMetrics`.
-   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-4. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
+   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+4. Tag the location field in the source with the right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
 5. Enable the `DDOS protection` by following the instructions in Azure [documentation](https://learn.microsoft.com/en-us/azure/ddos-protection/manage-ddos-protection#enable-for-an-existing-virtual-network)
 
 ### Configure logs collection
 
 #### Configuration requirements
 
-Before you begin configuring Virtual Network Flow Log collection, make sure the following environment prerequisites are met:
+Before you begin configuring the Virtual Network Flow Log collection, make sure the following environment prerequisites are met:
 
 * Your Storage Account must be of type General-purpose v2 or Blob storage.
-* Your Network Security Group and Storage Account should be in same resource location.
+* Your Network Security Group and Storage Account should be in the same resource location.
 * You also need to have Microsoft Authorization/role Assignments/write permissions, so they should be a "User Access Administrator" or "Owner".
 * Location: The storage account must be in the same region as the virtual network.
 * Subscription: The storage account must be in the same subscription of the virtual network or in a subscription associated with the same Microsoft Entra tenant of the virtual network's subscription.
 * Performance tier: The storage account must be standard. Premium storage accounts aren't supported.
 * Self-managed key rotation: If you change or rotate the access keys to your storage account, virtual network flow logs stop working. To fix this problem, you must disable and then re-enable virtual network flow logs.
 
-Resource group names should not contains underscores (`_`).
+Resource group names should not contain underscores (`_`).
 
 #### Step 1: Configure Azure Storage Account
 
@@ -190,7 +190,7 @@ The storage account must be a General-purpose v2 (GPv2) storage account. If you 
 To configure an Azure storage account, do the following:
 
 1. Create a new storage account General-purpose v2 (GPv2) storage account. For instructions, see [Create a storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?tabs=portal) in Azure help.
-2. Create a container(Optional) all services in azure create containers automatically. This step is needed only when you are exporting custom logs in some container.
+2. Create a container(Optional) all services in Azure create containers automatically. This step is needed only when you are exporting custom logs in some container.
    * In the Azure portal, navigate to the storage account you just created (in the previous step).
    * Select **Blobs** under **Blob Service**.
       * Select **+ Container**,
@@ -199,7 +199,7 @@ To configure an Azure storage account, do the following:
       * Click **OK**.
 
    Make a note of the container name. You will need to supply it later. By default, the flow logs are in `insights-logs-flowlogflowevent` container.
-   If you have a storage account that you want to use for this purpose, make a note of its resource group, storage account name, then proceed to [step 2](#step-2-configure-an-http-source).
+   If you have a storage account that you want to use for this purpose, make a note of its resource group, and storage account name, then proceed to [step 2](#step-2-configure-an-http-source).
 
 #### Step 2: Configure an HTTP Source
 
@@ -266,7 +266,7 @@ Use this dashboard to:
 
 ### Accepted Traffic Flow
 
-**Azure Virtual Network - Accepted Traffic Flow** dashboard provides details on incoming and outgoing network traffic, packet flows, and security group rules applied on traffic flows.
+**Azure Virtual Network - Accepted Traffic Flow** dashboard provides details on incoming and outgoing network traffic, packet flows, and security group rules applied to traffic flows.
 
 Use this dashboard to:
 * Visualize and compare incoming and outgoing traffic patterns across various geographical locations to identify potential network bottlenecks or unusual activity.

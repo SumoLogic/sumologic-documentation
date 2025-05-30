@@ -2,7 +2,7 @@
 id: getting-started
 title: API Authentication, Endpoints, and Security
 sidebar_label: Authentication and Endpoints
-description: This guide contains information about API authentication and the Sumo Logic endpoints to use for your API client.
+description: Authenticate and connect to Sumo Logic APIs. Learn how to set up access keys and find the right endpoint for your deployment region.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -24,7 +24,6 @@ To view our main docs, click the link below corresponding to your deployment. If
 | DE         | https://api.de.sumologic.com/docs/  |
 | EU         | https://api.eu.sumologic.com/docs/  |
 | FED        | https://api.fed.sumologic.com/docs/ |
-| IN         | https://api.in.sumologic.com/docs/  |
 | JP         | https://api.jp.sumologic.com/docs/  |
 | KR         | https://api.kr.sumologic.com/docs/  |
 | US1        | https://api.sumologic.com/docs/     |
@@ -39,7 +38,7 @@ Sumo Logic supports the following options for API authentication:
 See [Access Keys](/docs/manage/security/access-keys) to learn how to generate an access key. Make sure to copy the key you create, because it is displayed only once.
 
 :::info
-Because access keys use the permissions of the user running the key, ensure that the user utilizing a key has the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the key is needed for. 
+Because access keys use the permissions of the user running the key, ensure that the user utilizing a key has the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the key is needed for.
 :::
 
 ### Access ID and access key
@@ -88,7 +87,7 @@ Sumo Logic has several deployments that are assigned depending on the geographic
 
 Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct your API client to the correct Sumo Logic API URL.
 
-<table><small>
+<table>
   <tr>
    <td>Deployment</td>
    <td>Service Endpoint (login URL)</td>
@@ -139,14 +138,6 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    <td>https://open-collectors.fed.sumologic.com/</td>
   </tr>
   <tr>
-   <td>IN</td>
-   <td>https://service.in.sumologic.com</td>
-   <td>https://api.in.sumologic.com/api/</td>
-   <td>https://collectors.in.sumologic.com</td>
-   <td>syslog.collection.in.sumologic.com</td>
-   <td>https://open-collectors.in.sumologic.com</td>
-  </tr>
-  <tr>
    <td>JP</td>
    <td>https://service.jp.sumologic.com</td>
    <td>https://api.jp.sumologic.com/api/</td>
@@ -192,12 +183,11 @@ https://endpoint9.collection.us2.sumologic.com/</td>
    <td>syslog.collection.us2.sumologic.com</td>
    <td>https://open-collectors.us2.sumologic.com</td>
   </tr>
-  </small>
   </table>
 
 ### Which endpoint should I should use?
 
-To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `in`, `ca`,`kr`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
+To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `ca`, `kr`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
 
 The specific collection endpoint will vary per account. The general format is: `endpoint[N].collection.[deploymentID].sumologic.com`.
 

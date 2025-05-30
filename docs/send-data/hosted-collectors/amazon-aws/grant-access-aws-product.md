@@ -87,7 +87,7 @@ Before generating the template, the source’s configuration must have the AWS-s
    1. **Account ID**. Enter the following Sumo Logic ID: `926226587429`.
    1. In the **Options** section, checkmark the **Require external ID for better security**. 
    1. **External ID**. The External ID is formed from your Sumo Logic region identifier and your Sumo Logic account identifier in this format: *SumoDeployment:SumoAccountId* where:
-      * *SumoDeployment* is your Sumo Logic deployment entered in lowercase such as au, ca, de, eu, fed, in, jp, kr, us1, or us2. To find your deployment, see Sumo Logic Endpoints by Deployment and Firewall Security.
+      * *SumoDeployment* is your Sumo Logic deployment entered in lowercase such as au, ca, de, eu, fed, jp, kr, us1, or us2. To find your deployment, see Sumo Logic Endpoints by Deployment and Firewall Security.
       * *SumoAccountId* is the Organization ID shown on your **Account Overview** in the Sumo Logic UI. You can access it by going to the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) page.
    1. **Require MFA**. Don’t select this option; it is not supported.
    1. Click **Next: Permissions**.<br/> ![AWS IAM 'Create role' interface specifying trusted entities and accounts, highlighting fields for Account ID and External ID.](/img/send-data/create-role.png)

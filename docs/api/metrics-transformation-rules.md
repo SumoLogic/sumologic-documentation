@@ -22,7 +22,6 @@ Metrics Transformation Rules APIs allow you control how long raw metrics are ret
 | DE         | https://api.de.sumologic.com/docs/#tag/transformationRuleManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/transformationRuleManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/transformationRuleManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/transformationRuleManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/transformationRuleManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/transformationRuleManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/transformationRuleManagement     |
@@ -33,4 +32,3 @@ Metrics Transformation Rules APIs allow you control how long raw metrics are ret
 <ApiRoles/>
 
 * Metrics (all role capabilities)
-

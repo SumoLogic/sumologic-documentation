@@ -21,6 +21,20 @@ Amazon CloudFront integrates with AWS Identity and Access Management (IAM), a se
 * **List Origin Access Identities** (*Enrichment*) - Lists origin access identities.
 * **Get Origin Access Identity** (*Enrichment*) - Get the information about an origin access identity.
 
+## Configure AWS CloudFront in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-cloudfront-configuration.png')} style={{border:'1px solid gray'}} alt="AWS CloudFront configuration" width="400"/>
+
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS CloudFront, see [CloudFront documentation](https://docs.aws.amazon.com/cloudfront/).
+
 ## Change Log
 
 * November 10, 2022 - First upload

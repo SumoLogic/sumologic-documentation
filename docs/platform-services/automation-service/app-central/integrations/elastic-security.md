@@ -39,6 +39,16 @@ Elastic Security equips analysts to prevent, detect, and respond to threats. The
 * **Fetch Detections Elastic Security** *(Daemon)* - Daemon to pull Elastic Security Detections.
 * **Get Signals Alerts Detections Elastic Security** *(Daemon)* - Daemon to pull Signal Alerts.
 
+## Configure Elastic Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/elastic-security-configuration.png')} style={{border:'1px solid gray'}} alt="Elastic Security configuration" width="400"/>
+
+For information about Elastic Security, see [Elastic Security documentation](https://www.elastic.co/docs/solutions/security).
+
 ## Change Log
 
 * April 9, 2021 - First upload
