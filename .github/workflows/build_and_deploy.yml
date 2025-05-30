@@ -35,7 +35,6 @@ jobs:
     env:
       CI: true
       NODE_ENV: production
-      NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
       AWS_PAGER: ""
       HOSTNAME: ${{ inputs.hostname }}
       BASE_URL: ${{ inputs.base_url }}
@@ -54,7 +53,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: node_modules/.cache
-          key: ${{ runner.os }}-webpack-cache-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-webpack-cache
       - name: Install awscli
         uses: unfor19/install-aws-cli-action@v1
       - name: Install jq
@@ -62,6 +61,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build the Docusaurus site
+        env:
+          NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
         run: yarn build
       - name: Deploy the Docusaurus site
         env:

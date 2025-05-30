@@ -9,7 +9,6 @@ jobs:
       name: review/${{ github.ref_name }}
     env:
       CI: true
-      NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
       AWS_PAGER: ""
       BASE_URL: /${{ github.ref_name }}/
       AWS_DEFAULT_REGION: us-east-1
