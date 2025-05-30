@@ -7,10 +7,9 @@ tags:
 sidebar_label: Azure Event Hubs
 ---
 
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/azure-event-hubs/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/azure-event-hubs/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/azure-event-hubs/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -71,7 +70,7 @@ When you create an Azure Event Hubs Source, you add it to a Hosted Collector. Be
 
 To configure an Azure Event Hubs Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a **HostedCollector**.
 :::
     Make sure the hosted collector is tagged with tenant_name field for the out of the box Azure apps to work. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
@@ -138,17 +137,35 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | autoParseTimeFormat | Boolean | No | true | Sets if the timestamp format is automatically detected by Sumo Logic. If `autoParseTimeFormat` is set to false, then `defaultDateFormats` must be specified. |  |
 | defaultDateFormats | array | No | `null` | Define formats for the dates present in your log messages. You can specify a locator regex to identify where timestamps appear in log lines.<br/>The `defaultDateFormats` object has two elements:<br/>`format` (required)—Specify the date format.<br/>`locator` (optional)—A regular expression that specifies the location of the timestamp in your log lines. | For example, `INFO(.*)`<br/> For an example, see [Timestamp example](/docs/send-data/use-json-configure-sources/#timestamp-example).<br/>For more information about timestamp options, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference). |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/azure-event-hubs/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/azure-event-hubs/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/azure-event-hubs/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/azure-event-hubs/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/azure-event-hubs/example.tf" target="_blank">Download example</a>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/azure-event-hubs/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
 ## FAQ
 

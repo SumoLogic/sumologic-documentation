@@ -9,17 +9,16 @@ keywords:
 description: Learn how to set up a STIX/TAXII 2.x client to collect threat intelligence indicators into the Sumo Logic environment.
 ---
 
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/taxii-2/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/taxii-2/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/taxii-2/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The STIX/TAXII 2 Client source supports collecting threat intelligence indicators from STIX/TAXII 2.0 and 2.1 versions. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/). 
+The STIX/TAXII 2 Client source supports collecting threat intelligence indicators from STIX/TAXII 2.0 and 2.1 versions. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
 
 The legacy STIX/TAXII 1.x versions are not supported with this source. Use [STIX/TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source/) for version 1.x versions.
 
-[STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. 
+[STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients.
 
 ## Data collected
 
@@ -45,7 +44,7 @@ The threat intel vendor must follow the STIX/TAXII 2.0 or 2.1 standard.
 When you create an TAXII 2 Client Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a TAXII 2 Client Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **TAXII 2 Client**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -98,17 +97,35 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | http_user | String | No | `null` | HTTP basic authentication username |  |
 | http_password | String | No | `null` | HTTP basic authentication password |  |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/taxii-2/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/stix-taxii-2-client/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/stix-taxii-2-client/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/stix-taxii-2-client/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/taxii-2/example.tf" target="_blank">Download example</a>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/stix-taxii-2-client/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
 ### Recommended configurations
 

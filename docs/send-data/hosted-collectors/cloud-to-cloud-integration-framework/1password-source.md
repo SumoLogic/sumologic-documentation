@@ -8,10 +8,9 @@ tags:
   - 1password
 description: The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.
 ---
+
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/1password/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/1password/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/1password/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
@@ -45,7 +44,7 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 
 ### Source configuration
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **1Password**.
 1. Enter a **Name** for the Source. The **description** is optional.
@@ -92,18 +91,35 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | api_token | String | Yes | `null` | Provide the [1Password API token](#vendor-configuration) you want to use to authenticate collection requests. |  `"acsac25$"` |
 | supported_apis | []String | Yes | `null` | Define one or more of the available APIs to collect |  `["sign-in","itemUsage"]` |
 
+## Examples
 
-### JSON example
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/1password/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/1password/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-<a href="/files/c2c/1password/example.json" target="_blank">Download example</a>
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/1password/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-### Terraform example
-
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/1password/example.tf" target="_blank">Download example</a>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/1password/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
 ## Troubleshooting
 

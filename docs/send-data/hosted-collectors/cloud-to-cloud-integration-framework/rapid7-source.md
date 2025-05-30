@@ -6,10 +6,10 @@ tags:
     - rapid7
 description: Learn how to collect assets and vulnerabilities from Rapid7 InsightVM.
 ---
+
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/rapid7/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/rapid7/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/rapid7/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="rapid7-logo" width="80" />
@@ -34,7 +34,7 @@ The Rapid7 InsightVM source requires you to provide a region and organizational 
 When you create an Rapid7 Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Rapid7 Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Rapid7**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -65,22 +65,39 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | region | String | Yes | |Region of the Insight platform. Know more about [Supported regions](https://docs.rapid7.com/insight/product-apis/#supported-regions).  |  |
 | apikey | String | Yes | `null` |API Key for the account authorization. |  |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/rapid7/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/rapid7/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/rapid7/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/rapid7/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/rapid7/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
-<a href="/files/c2c/rapid7/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
-
-

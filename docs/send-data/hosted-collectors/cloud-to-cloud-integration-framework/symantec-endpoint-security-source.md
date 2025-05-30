@@ -8,9 +8,8 @@ tags:
 description: Learn how to collect incident and incident events using the Symantec Endpoint Security source.
 ---
 
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
-import MyComponentSource from '!!raw-loader!/files/c2c/symantec-endpoint-security/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/symantec-endpoint-security/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="125"/>
@@ -41,7 +40,7 @@ The Symantec Endpoint Security source requires you to provide credentials. To ob
 When you create a Symantec Endpoint Security Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Symantec Endpoint Security Source, follow the steps below:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Symantec Endpoint Security**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -81,17 +80,35 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | incidentsInitialLookback | Integer | No | 1 day | First collection start time. |  |
 | pollingInterval | String | No | 5 minutes | This sets how often the Source checks for data. | `5 minutes` |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/symantec-endpoint-security/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/symantec-endpoint-security/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/symantec-endpoint-security/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/symantec-endpoint-security/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/symantec-endpoint-security/example.tf" target="_blank">Download example</a>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/symantec-endpoint-security/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
 ## FAQ
 

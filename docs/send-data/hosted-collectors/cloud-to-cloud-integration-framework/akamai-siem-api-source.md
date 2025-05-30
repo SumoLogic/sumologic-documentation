@@ -8,10 +8,9 @@ tags:
 description: The Akamai SIEM API Source provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the V1 SIEM API.
 ---
 
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/akamai-siem-api/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/akamai-siem-api/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/akamai-siem-api/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -41,7 +40,7 @@ When you create an Akamai SIEM API Source, you add it to a Hosted Collector. Be
 
 To configure an Akamai SIEM API Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a HostedCollector.
 1. Search for and select **Akamai SIEM API**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
@@ -299,17 +298,36 @@ The following table shows the **config** parameters for a Akamai SIEM API Sour
 | limit | Integer | No | 10000 | The number of logs to pull per request. Can be a maximum of 200000 and a minimum of 1000. | modifiable |
 | pollInterval | Integer | No | 30 | The poll interval in seconds. Can be a maximum of 600 and a minimum of 15. | modifiable |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/akamai-siem-api/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/akamai-siem-api/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/akamai-siem-api/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/akamai-siem-api/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/akamai-siem-api/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
-<a href="/files/c2c/akamai-siem-api/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

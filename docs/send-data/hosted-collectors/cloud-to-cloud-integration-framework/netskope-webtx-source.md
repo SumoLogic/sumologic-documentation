@@ -8,10 +8,9 @@ tags:
 description: Our Netskope WebTx API integration ingests Web Transaction logs from Netskope Event Stream.
 ---
 
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/netskope-webtx/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/netskope-webtx/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/netskope-webtx/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -46,7 +45,7 @@ Netskope Web Transactions integration needs to be configured using Netskope Stre
 
 When you create a Netskope WebTx API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Netskope WebTx API**.
 1. Enter a **Name** to display the Source in the Sumo web application. The description is optional.
@@ -69,7 +68,7 @@ When you create a Netskope WebTx API Source, you add it to a Hosted Collector. B
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details.
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
@@ -88,17 +87,36 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | credentialsJson | String | Yes | `null` | Its the authentication credentials to access Netskope webtx Event Streaming service. |  |
 | subscriptionPath | String | Yes | `null` | A subscription path is needed for the event streaming to start. |  |
 
-## JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/netskope-webtx/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/netskope-webtx/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/netskope-webtx/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/netskope-webtx/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/netskope-webtx/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
-<a href="/files/c2c/netskope-webtx/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

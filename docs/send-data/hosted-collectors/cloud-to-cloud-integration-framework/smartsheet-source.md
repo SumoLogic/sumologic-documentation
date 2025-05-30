@@ -7,10 +7,10 @@ keywords:
   - cloud-to-cloud
 description: Learn how to collect events from Smartsheet platform.
 ---
+
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/smartsheet/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/smartsheet/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/smartsheet/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/smartsheet.png')} alt="thumbnail icon" width="55"/>
@@ -71,17 +71,35 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | authorization_code | String | Yes | `null` | The Smartsheet app client OAuth2 authorization code to collect from Smartsheet platform. |  |
 | polling_interval | Integer | Yes | 10 | How frequently the integration should poll to Smartsheet. |  |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/smartsheet/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/smartsheet/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/smartsheet/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/smartsheet/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/smartsheet/example.tf" target="_blank">Download example</a>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/smartsheet/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
 ## FAQ
 

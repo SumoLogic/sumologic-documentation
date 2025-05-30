@@ -7,10 +7,10 @@ tags:
   - zerofox-threat-intel
 description: This integration collects threat indicators using the ZeroFox API and sends them to Sumo Logic for analysis.
 ---
+
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/zerofox/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/zerofox/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/zerofox/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/misc/zerofox-logo.png')} alt="ZeroFox threat intel logo" width="50" />
@@ -80,17 +80,33 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | userSourceId | String | Yes | `null` | The Sumo Logic namespace in which the indicators will be stored. |  |
 | pollingIntervalHour | integer | Yes | `1 hour` | Time interval (in hours) after which the source will check for new data. |  |
 
-### JSON example
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/zerofox-intel/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/zerofox-intel/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-<a href="/files/c2c/zerofox/example.json" target="_blank">Download example</a>
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/zerofox-intel/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-### Terraform example
-
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/zerofox/example.tf" target="_blank">Download example</a>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/zerofox-intel/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
 ## FAQ
 

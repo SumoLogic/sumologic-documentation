@@ -7,10 +7,10 @@ tags:
   - crowdstrike-fdr-host-inventory
 description: Learn how to collect device information from the CrowdStrike FDR and send it to Sumo Logic.
 ---
+
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/crowdstrike-fdr-host-inventory/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/crowdstrike-fdr-host-inventory/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/crowdstrike-fdr-host-inventory/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -67,7 +67,7 @@ Identify your **Region** based on your **Base URL**. The region can be selected 
 When you create a CrowdStrike FDR Host Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the CrowdStrike FDR Host Inventory API:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **CrowdStrike FDR Host Inventory** icon.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
@@ -113,17 +113,36 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | clientSecret | String | Yes | `null` | The CrowdStrike Client Secret you want to use to authenticate collection requests. |  |
 | pollingInterval | Integer | No | 24 | This sets how often the Source checks for data. |  |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/crowdstrike-fdr-host-inventory/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/crowdstrike-fdr-host-inventory.md/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/crowdstrike-fdr-host-inventory.md/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/crowdstrike-fdr-host-inventory.md/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/crowdstrike-fdr-host-inventory.md/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
-<a href="/files/c2c/crowdstrike-fdr-host-inventory/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

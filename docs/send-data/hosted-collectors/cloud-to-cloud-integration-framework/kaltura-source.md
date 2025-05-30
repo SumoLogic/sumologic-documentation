@@ -8,10 +8,9 @@ tags:
 description: Learn how to configure the Kaltura Cloud-to-Cloud source setup using the Sumo logic environment.
 ---
 
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/kaltura/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/kaltura/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/kaltura/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="icon" width="70"/>
@@ -29,7 +28,7 @@ Kaltura is a video platform for modular systems that exposes different web servi
 
 ### Vendor configuration
 
-In this configuration, you will create a new [Kaltura App Token](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html) in the [Kaltura Developer Portal](https://developer.kaltura.com/api-docs/service/appToken/action/add) or via your own hosted API portal to generate an App Token and App ID. 
+In this configuration, you will create a new [Kaltura App Token](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html) in the [Kaltura Developer Portal](https://developer.kaltura.com/api-docs/service/appToken/action/add) or via your own hosted API portal to generate an App Token and App ID.
 
 #### Create a New App Token
 
@@ -46,7 +45,7 @@ A Kaltura App Token with specific permissions is required for Sumo Logic to acce
 1. Click on the **Send Request**.
 1. Copy and save the Kaltura Session.
 1. Add a new [App Token](https://developer.kaltura.com/api-docs/service/appToken/action/add).
-1. Enter the following global parameters: 
+1. Enter the following global parameters:
     - **ks**. Paste the KS (Kaltura Session) copied from the previous step.
     - **format**. JSON[1] - format of the response.
 1. Enter the following body appToken parameters:
@@ -61,7 +60,7 @@ A Kaltura App Token with specific permissions is required for Sumo Logic to acce
 When you create an Kaltura source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Kaltura source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Kaltura**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -90,7 +89,7 @@ Base entry event logs are not supported with the SIEM forward option.
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
@@ -116,17 +115,36 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | polling_interval | Integer | No | 24 | How frequently the integration should poll to Kaltura for Base Entry Events in hours. |  |
 | baseEntryInitLookback | Integer | No | 1 | From when the integration should collect Kaltura Base Entry Events. |  |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/kaltura/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/kaltura/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/kaltura/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/kaltura/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/kaltura/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
-<a href="/files/c2c/kaltura/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

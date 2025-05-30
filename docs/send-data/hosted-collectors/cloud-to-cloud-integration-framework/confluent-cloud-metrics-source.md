@@ -8,10 +8,9 @@ tags:
 description: The Confluent Cloud Metrics source aims to collect metric data from the Confluent Cloud Metrics platform API and send them to Sumo Logic.
 ---
 
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/confluent-cloud-metrics/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/confluent-cloud-metrics/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/confluent-cloud-metrics/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -21,14 +20,14 @@ Confluent is a software company that helps organizations manage, deploy, and sca
 Confluent Cloud is a scalable, fully managed streaming data service based on Apache Kafka®. It offers a web interface called the Cloud Console for managing resources, settings, and billing, along with a local Command Line Interface (CLI) and REST APIs to create and manage Kafka topics. This integration aims to collect metric data in the Prometheus format from the Confluent Cloud Metrics platform and send them to Sumo Logic.
 
 :::note
-This source collects Confluent metrics data that has the single most recent data point for each metric and for each distinct combination of labels. [Learn more](https://api.telemetry.confluent.cloud/docs?&_ga=2.117120000.763533315.1738005875-728715252.1738005875&_gl=1*fkaiwi*_gcl_au*MTkyNzY5NzMuMTczODAwNTg3NA..*_ga*NzI4NzE1MjUyLjE3MzgwMDU4NzU.*_ga_D2D3EGKSGD*MTczODAwNTg3NC4xLjEuMTczODAwNTk2NS42MC4wLjA.#tag/Version-2/paths/~1v2~1metrics~1%7Bdataset%7D~1export/get). 
+This source collects Confluent metrics data that has the single most recent data point for each metric and for each distinct combination of labels. [Learn more](https://api.telemetry.confluent.cloud/docs?&_ga=2.117120000.763533315.1738005875-728715252.1738005875&_gl=1*fkaiwi*_gcl_au*MTkyNzY5NzMuMTczODAwNTg3NA..*_ga*NzI4NzE1MjUyLjE3MzgwMDU4NzU.*_ga_D2D3EGKSGD*MTczODAwNTg3NC4xLjEuMTczODAwNTk2NS42MC4wLjA.#tag/Version-2/paths/~1v2~1metrics~1%7Bdataset%7D~1export/get).
 :::
 
 ## Data collected
 
 | Polling Interval | Data |
-| :-- | :-- | 
-| 5 minutes | [Export metric values API](https://api.telemetry.confluent.cloud/docs?&_ga=2.117120000.763533315.1738005875-728715252.1738005875&_gl=1*fkaiwi*_gcl_au*MTkyNzY5NzMuMTczODAwNTg3NA..*_ga*NzI4NzE1MjUyLjE3MzgwMDU4NzU.*_ga_D2D3EGKSGD*MTczODAwNTg3NC4xLjEuMTczODAwNTk2NS42MC4wLjA.#tag/Version-2/paths/~1v2~1metrics~1%7Bdataset%7D~1export/get) | 
+| :-- | :-- |
+| 5 minutes | [Export metric values API](https://api.telemetry.confluent.cloud/docs?&_ga=2.117120000.763533315.1738005875-728715252.1738005875&_gl=1*fkaiwi*_gcl_au*MTkyNzY5NzMuMTczODAwNTg3NA..*_ga*NzI4NzE1MjUyLjE3MzgwMDU4NzU.*_ga_D2D3EGKSGD*MTczODAwNTg3NC4xLjEuMTczODAwNTk2NS42MC4wLjA.#tag/Version-2/paths/~1v2~1metrics~1%7Bdataset%7D~1export/get) |
 
 ## Setup
 
@@ -42,7 +41,7 @@ To generate the Client ID and Client Secret, refer to the [cloud API key generat
 When you create a Confluent Cloud Metrics source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Confluent Cloud Metrics source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Confluent Metrics**.
 1. Enter a **Name** for the source. The description is optional.
@@ -91,17 +90,36 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | ignoreFailedMetrics | Boolean | No | `False` | Ignore failed metrics and export only successful metrics if the allowed failure threshold is not breached. If this parameter is set to true, a StateSet metric (export_status) will be included in the response to report which metrics were successful and which failed. | |
 | pollingIntervalMin | Integer | Yes | `5` | Time interval (in minutes) after which the source will check for new data from the source API | |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/confluent-cloud-metrics/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/confluent-cloud-metrics/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/confluent-cloud-metrics/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/confluent-cloud-metrics/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/confluent-cloud-metrics/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
-<a href="/files/c2c/confluent-cloud-metrics/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

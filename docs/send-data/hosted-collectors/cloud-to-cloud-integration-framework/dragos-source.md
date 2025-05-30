@@ -6,10 +6,10 @@ tags:
     - Dragos
 description: Collect address, asset, vulnerability, notification, and zone details from the Dragos API and send them to Sumo Logic.
 ---
+
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/dragos/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/dragos/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/dragos/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="dragos-logo" width="50" />
@@ -54,7 +54,7 @@ Follow the instructions below to generate the API ID and API Secret:
 When you create a Dragos Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Dragos Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Dragos**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -100,22 +100,40 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | collectDeviceDetails | Boolean | No | `False` | Specify if you need to collect the assets details. |  |
 | collectVulnerabilityDetails | Boolean | No | `False` | Specify if you need to collect the vulnerability details. |  |
 | collectNotificationDetails | Boolean | No | `False` | Specify if you need to collect the notification details. |  |
-### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+## Examples
 
-<a href="/files/c2c/dragos/example.json" target="_blank">Download example</a>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-### Terraform example
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/dragos/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/dragos/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/dragos/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<a href="/files/c2c/dragos/example.tf" target="_blank">Download example</a>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/dragos/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
+
 
 ## FAQ
 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
-
-

@@ -7,16 +7,16 @@ tags:
   - cyberark-audit
 description: This integration accesses CyberArk SIEM integration API to retrieve audit events.
 ---
+
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/cyberark-audit/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/cyberark-audit/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/cyberark-audit/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/>
 
-The CyberArk Identity Security platform is a comprehensive identity management solution that enhances enterprise security through features such as single sign-on, multi-factor authentication, and privileged access control. It streamlines identity operations while providing extensive protection against both external and internal cyber threats. 
+The CyberArk Identity Security platform is a comprehensive identity management solution that enhances enterprise security through features such as single sign-on, multi-factor authentication, and privileged access control. It streamlines identity operations while providing extensive protection against both external and internal cyber threats.
 
 The Audit service offers detailed audit trails for activities, events, and sessions conducted by any integrated service on the Shared Services platform. An audit trail is a recorded history of activities that have taken place within the system. This information can be utilized for various purposes, including security, regulatory compliance, incident response investigations, and troubleshooting.
 
@@ -30,7 +30,7 @@ The Audit service offers detailed audit trails for activities, events, and sessi
 
 ### Vendor configuration
 
-In this configuration, you will set up a CyberArk audit source and configure it to be authorized and authenticated to use CyberArk Audit SIEM API. CyberArk audit supports OAuth authentication. 
+In this configuration, you will set up a CyberArk audit source and configure it to be authorized and authenticated to use CyberArk Audit SIEM API. CyberArk audit supports OAuth authentication.
 
 Follow the instructions mentioned in the [CyberArk Documentation](https://docs.cyberark.com/audit/latest/en/content/audit/isp_siem-integration.htm?tocpath=SIEM%20integrations%7C_____1) to retrieve the following parameters to configure the CyberArk audit source.
 
@@ -46,7 +46,7 @@ Follow the instructions mentioned in the [CyberArk Documentation](https://docs.c
 When you create a CyberArk Audit Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
 To configure a CyberArk Audit source, follow the steps below:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CyberArk Audit**.
 1. **Name**. Enter a name to display for the source. The description is optional.
@@ -96,17 +96,35 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | actionType | Array | No | `null` | Type of audit actions to filter data from. |  |
 | pollingIntervalMin | integer | Yes | 5 minutes | Frequency of C2C updates from CyberArk Audit. |  |  
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/cyberark-audit/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/cyberark-audit/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/cyberark-audit/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/cyberark-audit/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/cyberark-audit/example.tf" target="_blank">Download example</a>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/cyberark-audit/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
 ## FAQ
 

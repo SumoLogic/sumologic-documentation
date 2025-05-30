@@ -7,10 +7,9 @@ tags:
     - cloud-SIEM-enterprise
 ---
 
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/salesforce/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/salesforce/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/salesforce/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
@@ -67,7 +66,7 @@ When you create a Salesforce Source, you add it to a Hosted Collector. Before 
 
 To configure a Salesforce Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Salesforce**.
 1. Enter a **Name** for the Source in the Sumo Logic console. The description is optional.
@@ -117,17 +116,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | client_secret | String | True | `null` | Type in Consumer Secret of the Connected App. |  |
 | inmemory_lookup | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.|  |
 
-### JSON example
-
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/salesforce/example.json" target="_blank">Download example</a>
-
-### Terraform example
-
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/salesforce/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 
@@ -249,3 +237,33 @@ You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Examples 
+
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
+
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/salesforce/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/salesforce/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
+
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/salesforce/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
+
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/salesforce/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>

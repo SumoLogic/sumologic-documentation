@@ -8,10 +8,9 @@ tags:
 description: Learn how to fetch CPC-Configs, CPC-Alerts, and CPC-Alert Details from the Akamai platform and send it to Sumo Logic.
 ---
 
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/akamai-cpc/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/akamai-cpc/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/akamai-cpc/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="90"/>
@@ -39,7 +38,7 @@ You'll need a **Host Name**, **Client Token**, **Client Secret**, and **Access T
 When you create an Akamai CPC Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Akamai CPC Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Akamai CPC**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -55,7 +54,7 @@ To configure an Akamai CPC Source:
     1. (Optional) **Supported Severity Level**. Select the severity of the alert logs from the dropdown.
     1. (Optional) **Supported Alert Type**. Select the type of alerts from the dropdown.
     1. (Optional) **Supported Alert Status**. Select the status of the alerts from the dropdown.
-1. (Optional) **Collect Alert Details**. Select this checkbox to collect the alert details from the Akamai platform. 
+1. (Optional) **Collect Alert Details**. Select this checkbox to collect the alert details from the Akamai platform.
 1. The **CPC Configs Polling Interval** is set to 12 hours by default, you can adjust it based on your needs.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
@@ -90,18 +89,36 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | collectAlertDetails | Boolean | No | `false` | Specify if we need to collect the alert details. |  |
 | pollingIntervalCPCConfigsHrs | Integer | Yes | `12 hours` | Time interval (in minutes) after which the source will check for new data.<br/>**Minimum**: 1 hour<br/>**Maximum**: 24 hours |  |
 
+## Examples
 
-### JSON example
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/akamai-cpc/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/akamai-cpc/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-<a href="/files/c2c/akamai-cpc/example.json" target="_blank">Download example</a>
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/akamai-cpc/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-### Terraform example
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/akamai-cpc/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/akamai-cpc/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

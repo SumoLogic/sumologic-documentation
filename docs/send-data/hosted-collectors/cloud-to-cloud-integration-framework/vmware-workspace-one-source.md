@@ -6,10 +6,10 @@ tags:
     - vmware-workspace-one
 description: Collect the device details and corresponding list of applications for the devices from the VMware Workspace One platform.
 ---
+
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/vmware-workspace-one/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/vmware-workspace-one/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/vmware-workspace-one/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="vmware-workspace-one-logo" width="60" />
@@ -64,7 +64,7 @@ To generate the Client ID and Client Secret, refer to the [Create an OAuth Clien
 When you create a VMware Workspace One Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a VMware Workspace One Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **VMware Workspace One**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -105,18 +105,36 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | deviceType | String | No | `null` | Platform type of the device. | `Apple, Android, and/or WindowsPC` |
 | pollingIntervalVulnerabilityMin | String | Yes | `24 hours` | Time interval (in minutes) after which the source will check for new data.<br/>**Default**: 24 hours<br/>**Minimum**: 12 hours<br/>**Maximum**: 24 hours |  |
 | collectAppsDetails | Boolean | No | `False` | Specify if you need to collect the app details. |  |
+## Examples
 
-### JSON example
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/vmware-workspace-one/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/vmware-workspace-one/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-<a href="/files/c2c/vmware-workspace-one/example.json" target="_blank">Download example</a>
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/vmware-workspace-one/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-### Terraform example
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/vmware-workspace-one/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/vmware-workspace-one/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

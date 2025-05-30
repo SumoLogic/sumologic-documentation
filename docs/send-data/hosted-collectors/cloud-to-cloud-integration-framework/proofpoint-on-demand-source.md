@@ -7,10 +7,9 @@ tags:
 description: The Proofpoint On Demand (PoD) Source collects data from the Proofpoint On Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol to stream logs.
 ---
 
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/proofpoint-on-demand/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/proofpoint-on-demand/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/proofpoint-on-demand/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -46,7 +45,7 @@ When you create a Proofpoint On Demand Source, you add it to a Hosted Collecto
 
 To configure a Proofpoint On Demand Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **Proofpoint On Demand**.
 4. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
@@ -92,17 +91,35 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `api_secret` | String | Yes | `null` | Provide your API Token from Proofpoint that you want to use to authenticate collection requests.	||
 | `supported_events` | Array of strings | Yes | |There are two types of events you can collect. Specify one or both of the following:<br/>`message`: The main fields in message logs are guid, connection, envelope, msg, msgParts, filter, pps.<br/>`maillog`: Then main fields in maillog logs are data, id, pps, sm, ts.<br/>For example, for both you'd use: `["maillog","message"]`	|  |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/proofpoint-on-demand/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/proofpoint-on-demand/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/proofpoint-on-demand/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/proofpoint-on-demand/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/proofpoint-on-demand/example.tf" target="_blank">Download example</a>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/proofpoint-on-demand/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
 ## FAQ
 

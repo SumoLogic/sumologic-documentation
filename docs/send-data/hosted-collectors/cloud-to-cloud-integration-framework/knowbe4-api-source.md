@@ -8,10 +8,9 @@ tags:
 description: Learn how to configure the KnowBe4 Cloud-to-Cloud source setup using the Sumo logic environment.
 ---
 
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/knowbe4-api/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/knowbe4-api/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/knowbe4-api/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="100"/>
@@ -66,7 +65,7 @@ The **API security token** is used to authenticate with KnowBe4 API. To get the 
 When you create a KnowBe4 API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the KnowBe4 API Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **KnowBe4** icon.  
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
@@ -111,17 +110,36 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | dataTypes | Array | Yes | `null` | Data sources to fetch from KnowBe4. |  |
 | phishingPollInterval | Integer | Yes | 1 hour| The Polling interval for phishing data requests. The minimum interval is 1 hour, and the maximum is 24 hours. |  |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/knowbe4-api/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/knowbe4-api/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/knowbe4-api/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/knowbe4-api/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/knowbe4-api/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
-<a href="/files/c2c/knowbe4-api/example.tf" target="_blank">Download example</a>
 
 ## Limitations
 

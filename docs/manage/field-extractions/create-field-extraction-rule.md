@@ -5,6 +5,7 @@ description: Field Extraction Rules (FER) tell Sumo Logic which fields to parse 
 ---
 
 import Iframe from 'react-iframe';
+import FerLimit from '../../reuse/fer-limitations.md';
 
 You can create a field extraction rule of your own from scratch by following the instructions below. We also provide [data-source-specific templates](/docs/manage/field-extractions/fer-templates/index.md) for AWS, Apache, and more.
 
@@ -48,7 +49,7 @@ Learn how to create a FER through our video, "Creating a Field Extraction Rule".
 
 To create a Field Extraction Rule:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access the Field Extraction Rules page, in the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access the Field Extraction Rules page, in the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.
 1. Click the **+ Add** button on the top right of the table.
 1. The **Add Field Extraction Rule** form will appear:<br/> ![Create Field extraction rule with dynamic parsing.png](/img/field-extraction-rules/create-fer.png)
 1. Enter the following options:
@@ -71,9 +72,7 @@ To create a Field Extraction Rule:
     :::
 
     :::sumo Best Practices
-    If you are not using Partitions we recommend using [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.
-
-    We recommend creating a separate Partition for your JSON dataset and use that Partition as the scope for run time field extraction. For example, let's say you have AWS CloudTrail logs, and they are stored in `_view=cloudtrail` Partition in Sumo. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate Partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary Partitions.
+    If you are not using Partitions we recommend using [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.<br/><br/>We recommend creating a separate Partition for your JSON dataset and use that Partition as the scope for run time field extraction. For example, let's say you have AWS CloudTrail logs, and they are stored in `_view=cloudtrail` Partition in Sumo. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate Partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary Partitions.
     :::
 
    * **Parsed template** (Optional for Ingest Time rules).
@@ -153,6 +152,4 @@ The **multi** and **auto** options are not supported in FERs.
 
 The `parse multi` operator is not supported in FERs.
 
-import FerLimit from '../../reuse/fer-limitations.md';
-
-<FerLimit/> 
+<FerLimit/>

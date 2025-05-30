@@ -7,10 +7,10 @@ keywords:
   - cloud-to-cloud
 description: Learn how to collect audit reporting events from LastPass platform.
 ---
+
+import React, { useEffect, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/lastpass/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/lastpass/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/lastpass/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/lastpass.png')} alt="thumbnail icon" width="55"/>
@@ -71,17 +71,36 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | timeZone | String | No | `null` | Timezone of admin LastPass account. |
 | pollingIntervalMinutes | Integer | No | 5 | How frequently the integration should poll to LastPass. <br /> **Options**: 5m, 10m, 15m, 30m, 1h, or 24h. |  |
 
-### JSON example
+## Examples
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<>
+  {(() => {
+    const [json, setJson] = React.useState('');
+    const [tf, setTf] = React.useState('');
 
-<a href="/files/c2c/lastpass/example.json" target="_blank">Download example</a>
+    React.useEffect(() => {
+      fetch(useBaseUrl('/files/c2c/lastpass/example.json'))
+        .then(res => res.text())
+        .then(setJson);
+      fetch(useBaseUrl('/files/c2c/lastpass/example.tf'))
+        .then(res => res.text())
+        .then(setTf);
+    }, []);
 
-### Terraform example
+    return (
+      <>
+        <h3>JSON example</h3>
+        <CodeBlock language="json">{json}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/lastpass/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+        <h3>Terraform example</h3>
+        <CodeBlock language="hcl">{tf}</CodeBlock>
+        <a href={useBaseUrl('/files/c2c/lastpass/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
+      </>
+    );
+  })()}
+</>
 
-<a href="/files/c2c/lastpass/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 
