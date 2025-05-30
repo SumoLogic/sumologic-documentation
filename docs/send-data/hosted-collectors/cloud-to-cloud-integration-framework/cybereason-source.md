@@ -66,16 +66,16 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 | Parameter | Type | Required | Default | Description | Example |
 |:--|:--|:--|:--|:--|:--|
-| name | String | Yes | `null` | Unique name of the source. | `"mySource"` |
-| description | String | No | `null` | Description of the source. | `"Testing source"` |
-| category | String | No | `null` | Metadata `_sourceCategory`. | `"mySource/test"` |
-| fields | JSON Object | No | `null` | Key-value fields metadata. | `{"_siemForward": false}` |
-| client_user | String | Yes | `null` | Email address for authentication. |  |
-| client_password | String | Yes | `null` | Password for authentication. |  |
-| polling_interval | Integer | No | 300 | Polling frequency in seconds. |  |
-| back_collection_hours | Integer | No | 0 | Prior data collection in hours. |  |
-| dup_machines | Boolean | No | false | Duplicate logs by machine values. |  |
-| dup_users | Boolean | No | false | Duplicate logs by user values. |  |
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| client_user | String | Yes | `null` | Provide the email address you want to use to authenticate collection requests. |  |
+| client_password | String | Yes | `null` | Provide the password for the user that you want to use to authenticate collection requests. |  |
+| polling_interval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
+| back_collection_hours | Integer | No | 0 | Sets the number of hours of prior MalOps to collect. Supports 0 to 720. |  |
+| dup_machines | Boolean | No | False | Set to true to duplicate logs for each element in the machine array. |  |
+| dup_users | Boolean | No | False | Set to true to duplicate logs for each element in the users array. |  |
 
 ### JSON example
 
