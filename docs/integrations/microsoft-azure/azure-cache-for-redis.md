@@ -159,8 +159,8 @@ The **Azure Cache for Redis - Resource Performance(Non-Enterprise)** dashboard p
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Performance-Non-Enterprise.png')} alt="Azure Cache for Redis - Resource Performance(Non-Enterprise)" style={{border: '1px solid gray'}} width="800" />
 
 
-### Azure Application Gateway alerts
-These alerts are metric based and will work for all Azure Application Gateways.
+### Azure Cache for Redis alerts
+These alerts are metric based and will work for all Azure Cache for Redis.
 
 | Alert Name                                       | Alert Description and Conditions                                                                                                                                                        | Alert Condition    | Recover Condition |
 |:-------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------|:------------------|
