@@ -23,6 +23,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/flowmon-configuration.png')} style={{border:'1px solid gray'}} alt="Flowmon configuration" width="400"/>
+
+For information about Flowmon, see [Flowmon documentation](https://docs.progress.com/category/flowmon-os).
+
 ## Change Log
 
 * November 8, 2021 - First upload

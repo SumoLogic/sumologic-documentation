@@ -36,11 +36,7 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 
 ## Configure Sumo Logic Cloud SIEM Internal in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
-
-<IntegrationsAuth/>
-
-Sumo Logic Cloud SIEM Internal executes without additional authentication.
+No configuration is needed. Sumo Logic Cloud SIEM Internal executes without additional authentication.
 
 ## Change Log
 

@@ -30,6 +30,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/hacker-target-configuration.png')} style={{border:'1px solid gray'}} alt="Hacker Target configuration" width="400"/>
+
+For information about Hacker Target, see the [Hacker Target website](https://hackertarget.com/).
+
 ## Change Log
 
 * December 19, 2019 - First upload

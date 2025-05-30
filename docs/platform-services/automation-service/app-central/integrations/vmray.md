@@ -26,6 +26,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmray-configuration.png')} style={{border:'1px solid gray'}} alt="VMRay configuration" width="400"/>
+
+For information about VMRay, see [VMRay documentation](https://www.vmray.com/basic-automation-with-the-vmray-api/).
+
 ## Change Log
 
 * September 7, 2021 - First upload

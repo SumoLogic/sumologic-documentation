@@ -20,7 +20,7 @@ Because Cloud SOAR provides automation functionality to the [Automation Service]
 * [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/)
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/)
 * [Automation bridge](/docs/platform-services/automation-service/automation-service-bridge)
-* [Integration framework](/docs/platform-services/automation-service/automation-service-integration-framework/)
+* [Integration framework](/docs/platform-services/automation-service/integration-framework/)
 * [Audit logging](/docs/platform-services/automation-service/automation-service-audit-logging)
 
 The following sections describe automation features only used in Cloud SOAR.

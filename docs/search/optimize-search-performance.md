@@ -70,3 +70,191 @@ Here's a quick look at how to choose the right indexed search optimization tool.
 As data enters Sumo Logic, it is first routed to any Partitions for indexing. It is then checked against Scheduled Views, and any data that matches the Scheduled Views is indexed.
 
 Data can be in both a Partition and a Scheduled View because the two tools are used differently (and are indexed separately). Although Partitions are indexed first, the process does not slow the indexing of Scheduled Views.
+
+## Additional methods to optimize Search performance
+
+### Use the smallest time range
+
+Always set the search time range to the minimum duration required for your use case. This reduces the data volume and improves the query efficiency. When working with long time ranges, start by building and testing your search on a shorter time range. Once the search is finalized and validated, extend it to cover the entire period needed for your analysis. 
+
+### Use fields extracted by FERs
+
+Instead of relying on the `where` operator, filter the data using fields that are already extracted through the Field Extraction Rules (FERs) in the source expression. This approach is more efficient and improves query performance.
+
+**Not recommended approach:**
+
+```
+_sourceCategory=foo
+| where field_a="value_a"
+```
+
+**Recommended approach:**
+
+```
+sourceCategory=foo and field_a=value_a
+```
+
+### Move terms from parse statement to source expression
+
+Adding the parsing terms in the source expression will help you enhance the search performance. A parse statement without `nodrop` drops the logs that could not parse the desired field. For example, `parse "completed * action" as actionName` will remove logs that do not have **completed** and **action** terms. 
+
+**Not recommended approach:**
+
+```
+_sourceCategory=Prod/User/Eventlog
+| parse "completed * action" as actionName
+| count by actionName
+```
+
+**Recommended approach:**
+
+```
+_sourceCategory=Prod/User/Eventlog completed action
+| parse "completed * action" as actionName
+| count by actionName
+```
+
+### Filter data before aggregation
+
+While filtering the date, reduce the result set to the smallest possible size before performing aggregate operations such as sum, min, max, and average. Also, use subquery in source expression instead of using `if` or `where` search operators. 
+
+**Not recommended approach:**
+
+```
+_sourceCategory=Prod/User/Eventlog
+| parse "userName: *, " as user
+| count by user
+| where user="john"
+```
+
+**Recommended approach:**
+
+```
+_sourceCategory=Prod/User/Eventlog userName
+| parse "userName: *, " as user
+| where user="john"
+| count by user
+```
+
+### Remove redundant operators
+
+Remove the search operators in the query that are not required for the desired results. 
+
+For example, let’s say you have a `sort` operator before an aggregation, but this sorting does not make any difference to the aggregated results. 
+
+**Not recommended approach:**
+
+```
+_sourceCategory=Prod/User/Eventlog
+| parse "userName: *, " as user
+| parse "evenName: *, " as event
+| count by user
+```
+
+**Recommended approach:**
+
+```
+_sourceCategory=Prod/User/Eventlog
+| parse "userName: *, " as user
+| count by user
+```
+
+### Merge operators
+
+If the same operators are used multiple times in different levels of query, if possible, try to merge these similar operators. Also, do not use the same operator multiple times to get the same value. This helps in reducing the number of passes performed on the data thereby improving the search performance.
+
+**Example 1:**
+
+    **Not recommended approach:**
+
+    ```
+    _sourceCategory=Prod/User/Eventlog
+    | parse "completed * action" as actionName
+    | parse "action in * ms" as duration
+    | pct(duration, 95) by actionName
+    ```
+
+    **Recommended approach:**
+
+    ```
+    _sourceCategory=Prod/User/Eventlog
+    | parse "completed * action in * ms" as actionName, duration
+    | pct(duration, 95) by actionName
+    ```
+
+**Example 2:**
+
+    **Not recommended approach:**
+
+    ```
+    _sourceCategory=Prod/User/Eventlog
+    | parse "completed * action" as actionName
+    | where toLowerCase(actionName) = "logIn” or toLowerCase(actionName) matches "abc*” or toLowerCase(actionName) contains "xyz"
+    ```
+
+    **Recommended approach:**
+
+    ```
+    _sourceCategory=Prod/User/Eventlog
+    | parse "completed * action" as actionName
+    | toLowerCase(actionName) as actionNameLowered
+    | where actionNameLowered = "logIn” or actionNameLowered matches "abc*” or actionNameLowered contains "xyz”
+    ```
+
+### Use lookup on the lowest possible dataset
+
+Minimize the data processed by the `lookup` operator in the query, as lookup is an expensive operation. It can be done in two ways:
+
+- Use the lookup as late as possible in the query assuming that clauses before lookup are doing additional data filtering.
+- Move the lookup after an aggregation to drastically reduce the data processed by lookup, as aggregated data is generally far less than non-aggregated data.
+
+**Not recommended approach:**
+
+```
+_sourceCategory=Prod/User/Eventlog
+| parse "completed * action in * ms" as actionName, duration
+| lookup actionType from path://"/Library/Users/myusername@sumologic.com/actionTypes" on actionName
+| where actionName in ("login”, "logout”)
+| count by actionName, actionType
+```
+
+**Recommended approach (Option 1):**
+
+```
+_sourceCategory=Prod/User/Eventlog
+| parse "completed * action in * ms" as actionName, duration
+| where actionName in ("login”, "logout”)
+| count by actionName
+| lookup actionType from path://"/Library/Users/myusername@sumologic.com/actionTypes" on actionName
+```
+
+**Recommended approach (Option 2):**
+
+```
+_sourceCategory=Prod/User/Eventlog
+| parse "completed * action in * ms" as actionName, duration
+| where actionName in ("login”, "logout”)
+| lookup actionType from path://"/Library/Users/myusername@sumologic.com/actionTypes" on actionName
+| count by actionName, actionType 
+```
+
+### Avoid multiple parse multi statements
+
+A parse `multi` statement causes a single log to produce multiple logs in the results. But if a parse `multi` statement is followed by more parse `multi` statements, it can lead to data explosion and the query may never finish. Even if the query works the results may not be as expected.
+
+For example, consider the below query where the assumption is that a single log line contains multiple users and multiple event names.
+
+```
+_sourceCategory=Prod/User/Eventlog
+| parse regex "userName: (?<user>[a-z-A-Z]+), " multi
+| parse regex "eventName: (?<event>[a-z-A-Z]+), " multi
+```
+
+But if you write the query like that, it will generate a result for every combination of `userName` and `eventName` values. Now suppose you want to count by `eventName`, it will not give you the desired result, since a single `eventName` has been duplicated for every `userName` in the same log. So, the better query would be:
+
+```
+_sourceCategory=Prod/User/Eventlog
+| parse regex "userName: (?<user>[a-z-A-Z]+), eventName: (?<event>[a-z-A-Z]+), " multi
+```
+
+

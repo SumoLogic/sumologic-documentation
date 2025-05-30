@@ -1,5 +1,5 @@
 ---
-title: Manage Engine Desktop Central
+title: ManageEngine Desktop Central
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -25,11 +25,15 @@ Query data an utilize actions in Desktop Central unified endpoint management (UE
 * **Initiation Request** *(Containment)* - Get the device code as input for Polling Request action.
 * **Polling Request** *(Containment)* - Get the Access Token.
 
-## Configure Manage Engine Desktop Central in Automation Service and Cloud SOAR
+## Configure ManageEngine Desktop Central in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/manage-engine-desktop-central-configuration.png')} style={{border:'1px solid gray'}} alt="ManageEngine Desktop Central configuration" width="400"/>
+
+For information about ManageEngine Endpoint Central (formerly Desktop Central), see [ManageEngine Endpoint Central documentation](https://www.manageengine.com/products/desktop-central/api/).
 
 ## Change Log
 

@@ -2,7 +2,7 @@
 id: getting-started
 title: API Authentication, Endpoints, and Security
 sidebar_label: Authentication and Endpoints
-description: This guide contains information about API authentication and the Sumo Logic endpoints to use for your API client.
+description: Authenticate and connect to Sumo Logic APIs. Learn how to set up access keys and find the right endpoint for your deployment region.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -87,7 +87,7 @@ Sumo Logic has several deployments that are assigned depending on the geographic
 
 Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct your API client to the correct Sumo Logic API URL.
 
-<table><small>
+<table>
   <tr>
    <td>Deployment</td>
    <td>Service Endpoint (login URL)</td>
@@ -183,7 +183,6 @@ https://endpoint9.collection.us2.sumologic.com/</td>
    <td>syslog.collection.us2.sumologic.com</td>
    <td>https://open-collectors.us2.sumologic.com</td>
   </tr>
-  </small>
   </table>
 
 ### Which endpoint should I should use?

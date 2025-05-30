@@ -28,6 +28,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/prisma-cloud-configuration.png')} style={{border:'1px solid gray'}} alt="Prisma Cloud configuration" width="400"/>
+
+For information about Prisma Cloud, see [Prisma Cloud documentation](https://docs.prismacloud.io/en).
+
 ## Category
 
 Cloud Security Posture Management

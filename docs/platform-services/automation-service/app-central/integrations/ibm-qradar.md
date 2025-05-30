@@ -36,6 +36,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ibm-qradar-configuration.png')} style={{border:'1px solid gray'}} alt="IBM QRadar configuration" width="400"/>
+
+For information about IBM QRadar, see [IBM QRadar documentation](https://www.ibm.com/support/pages/accessing-ibm-qradar-product-documentation).
+
 ## Change Log
 
 * May 5, 2019 - First upload

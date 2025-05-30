@@ -29,6 +29,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cuckoo/cuckoo-configuration.png')} style={{border:'1px solid gray'}} alt="Cuckoo configuration" width="400"/>
+
+For information about Cuckoo, see [Cuckoo documentation](https://cuckoo.readthedocs.io/en/latest/usage/api/).
+
 ## Change Log
 
 * September 19, 2019 - First upload

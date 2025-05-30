@@ -31,6 +31,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/misp-configuration.png')} style={{border:'1px solid gray'}} alt="MISP configuration" width="400"/>
+
+For information about MISP, see [MISP documentation](https://www.circl.lu/doc/misp/).
+
 ## Change Log
 
 * December 19, 2019 - First upload

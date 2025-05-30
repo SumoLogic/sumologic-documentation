@@ -26,6 +26,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/pulsedive-configuration.png')} style={{border:'1px solid gray'}} alt="Pulsedive configuration" width="400"/>
+
+For information about Pulsedive, see [Pulsedive documentation](https://pulsedive.com/api/).
+
 ## Change Log
 
 * March 9, 2021 - First upload

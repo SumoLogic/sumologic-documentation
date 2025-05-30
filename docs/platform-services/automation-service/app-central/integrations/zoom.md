@@ -29,7 +29,7 @@ The Zoom API uses OAuth 2.0 to authenticate and authorize users to make requests
 
 **Create a Server-to-Server OAuth app**
 
-Follow these steps to create a Server-to-Server OAuth app:
+Follow these steps to [create a Server-to-Server OAuth app](https://developers.zoom.us/docs/internal-apps/create/):
 
 1. Sign in to [Zoom Marketplace](https://marketplace.zoom.us/). From the Develop menu, choose Build App.
 1. Choose the Server-to-Server OAuth app type.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/zoom/zoom-2.png')} style={{border:'1px solid gray'}} alt="zoom" width="600" />
@@ -56,19 +56,15 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/zoom/zoom-9.png')} style={{border:'1px solid gray'}} alt="zoom" width="400" />
-1. Populate all the required fields (\*)
+For information about Zoom, see [Zoom documentation](https://developers.zoom.us/docs/).
+
    * **Label**. The resource name.
    * **OAuth Token URL**. The default OAuth Token url is 'https://zoom.us/'.
    * **API URL**. The default API url is 'https://api.zoom.us/'.
    * **Client ID**. Your Client ID for your application listed on 'https://marketplace.zoom.us/user/build'.
    * **Client Secret**. Your Client Secret for your application listed on 'https://marketplace.zoom.us/user/build'.
-   * **Account ID**. Your Account ID for your application listed on 'https://marketplace.zoom.us/user/build'.
-1. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/zoom/zoom-10.png')} style={{border:'1px solid gray'}} alt="zoom" width="400" />
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/zoom/zoom-11.png')} style={{border:'1px solid gray'}} alt="zoom" width="250" />
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/zoom/zoom-12.png')} style={{border:'1px solid gray'}} alt="zoom" width="400" />
+   * **Account ID**. Your Account ID for your application listed on 'https://marketplace.zoom.us/user/build'.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/zoom-configuration.png')} style={{border:'1px solid gray'}} alt="Zoom configuration" width="400"/>
+
 
 ## Category
 
