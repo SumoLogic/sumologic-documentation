@@ -1,5 +1,8 @@
 name: delete-review
 
+permissions:
+  contents: read
+
 on: delete
 
 jobs:
