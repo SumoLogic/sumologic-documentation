@@ -8,9 +8,6 @@ tags:
 description: Learn how to configure the Druva Cyber Resilience Cloud-to-Cloud source setup in your Sumo Logic environment.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/druva-cyber-resilience/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="thumbnail icon" width="85"/>
@@ -83,35 +80,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | clientID | String | Yes | `null` | Client ID an API client. |  |
 | secretKey | String | Yes | `null` | Secret key of an API client. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/druva-cyber-resilience/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/druva-cyber-resilience/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/druva-cyber-resilience/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/druva-cyber-resilience/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/druva-cyber-resilience/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/druva-cyber-resilience/example.tf
+```
 
 ## Troubleshooting
 

@@ -7,9 +7,6 @@ tags:
     - cloud-SIEM-enterprise
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/sentinelone-mgmt-api/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -104,35 +101,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | api_secret | String | Yes |  `null`| Provide your API Token from SentinelOne that you want to use to authenticate collection requests. |  |
 | supported_apis | Array of strings | Yes | `null` | Define one or more of the available APIs to collect: activities, agents, and threats.<br/>For example, for all three you'd use: `["activities","agents","threats"]` |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/sentinelone-mgmt-api/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/sentinelone-mgmt-api/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/sentinelone-mgmt-api/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/sentinelone-mgmt-api/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/sentinelone-mgmt-api/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/sentinelone-mgmt-api/example.tf
+```
 
 ## FAQ
 

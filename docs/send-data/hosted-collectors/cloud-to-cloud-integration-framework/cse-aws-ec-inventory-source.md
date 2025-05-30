@@ -9,7 +9,7 @@ description: The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint 
 ---
 
 import React from 'react';
-import CodeBlock from '@theme/CodeBlock';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 

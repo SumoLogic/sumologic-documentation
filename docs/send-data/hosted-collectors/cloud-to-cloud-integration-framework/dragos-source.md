@@ -7,9 +7,6 @@ tags:
 description: Collect address, asset, vulnerability, notification, and zone details from the Dragos API and send them to Sumo Logic.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/dragos/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="dragos-logo" width="50" />
@@ -101,36 +98,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | collectVulnerabilityDetails | Boolean | No | `False` | Specify if you need to collect the vulnerability details. |  |
 | collectNotificationDetails | Boolean | No | `False` | Specify if you need to collect the notification details. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/dragos/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/dragos/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/dragos/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/dragos/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/dragos/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
-
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/dragos/example.tf
+```
 
 ## FAQ
 

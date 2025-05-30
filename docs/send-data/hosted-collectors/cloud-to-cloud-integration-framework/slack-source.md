@@ -5,9 +5,6 @@ sidebar_label: Slack
 description: Install the Slack Source for Sumo Logic.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/slack/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="60"/>
@@ -131,35 +128,17 @@ To configure a Slack Source:
 1. **Slack API Collection**. Select the Slack collection API you want to collect logs from (Web or Audit).
 1. **Polling Interval in Minutes**. Enter the frequency in minutes for collecting the data. Default is 5 mins.
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/slack/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/slack/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/slack/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/slack/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/slack/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/slack/example.tf
+```
 
 ## Limitation
 

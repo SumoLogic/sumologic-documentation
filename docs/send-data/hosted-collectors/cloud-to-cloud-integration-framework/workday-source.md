@@ -8,9 +8,6 @@ tags:
 description: The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/workday/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
@@ -193,35 +190,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | backfillDays | Integer | No | 24 Hours ago(1) | How far back the integration should collect the data from the Workday. <br /> Options: Now(0) or 24 hours ago(1). |  |
 | pollingIntervalMinutes | Integer | No | 10 | How frequently the integration should poll to Workday. <br /> Options: 10m, 15m, 30m, 1h, 24h. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/workday/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/workday/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/workday/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/workday/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/workday/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/workday/example.tf
+```
 
 ## Troubleshooting
 

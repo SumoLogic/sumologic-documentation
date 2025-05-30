@@ -8,9 +8,6 @@ tags:
 description: The Sumo Logic Gmail Trace Logs source pulls the Gmail log from the BigQuery using BigQuery Library APIs and ingests them into the Sumo Logic to store, analyze, and alert.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/gmail-tracelogs/example.json';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -102,36 +99,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | startTime | String | Yes | `null` | This sets how many hours the Source checks for new data. The default is 24 hours. |  |
 | dataLocation | String | Yes | `null` | Dataset ID is the project-wise unique identifier for your dataset. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/gmail-tracelogs/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/gmail-tracelogs/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/gmail-tracelogs/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/gmail-tracelogs/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/gmail-tracelogs/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
-
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/gmail-tracelogs/example.tf
+```
 
 ## FAQ
 

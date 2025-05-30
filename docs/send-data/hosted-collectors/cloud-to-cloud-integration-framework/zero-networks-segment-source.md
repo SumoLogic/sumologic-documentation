@@ -8,9 +8,6 @@ tags:
 description: Learn how to collect audit logs and network activity data from Zero Networks Segment.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/zero-networks-segment/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="zero-networks-icon" width="40" />
@@ -84,35 +81,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `collectNetworkActivities` | Boolean | No | |Check if you want to collect network activity data. |  |
 | `networkActivityFilters` | String | No | `null` | Optional filters that can be applied for network activity data. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/zero-networks-segment/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/zero-networks-segment/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/zero-networks-segment/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/zero-networks-segment/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/zero-networks-segment/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/zero-networks-segment/example.tf
+```
 
 ## FAQ
 

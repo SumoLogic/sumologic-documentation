@@ -8,9 +8,6 @@ tags:
 description: Learn how to configure the Kaltura Cloud-to-Cloud source setup using the Sumo logic environment.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/kaltura/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="icon" width="70"/>
@@ -115,35 +112,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | polling_interval | Integer | No | 24 | How frequently the integration should poll to Kaltura for Base Entry Events in hours. |  |
 | baseEntryInitLookback | Integer | No | 1 | From when the integration should collect Kaltura Base Entry Events. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/kaltura/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/kaltura/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/kaltura/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/kaltura/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/kaltura/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/kaltura/example.tf
+```
 
 
 ## FAQ

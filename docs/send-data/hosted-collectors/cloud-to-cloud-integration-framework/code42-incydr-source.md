@@ -8,11 +8,6 @@ tags:
 description: Learn how to collect sessions, file events, and audit logs from the Code42 Incydr.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/code42-incydr/example.json';
-
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="code42-incydr-icon" width="100" />
@@ -92,35 +87,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | secretKey | String | No | `null` | Secret Key generated secured from the Code42 Incydr platform. |  |
 | dataCollection | String | No | `null` | Type of source from which you want to collect the data from. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/code42-incydr/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/code42-incydr/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/code42-incydr/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/code42-incydr/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/code42-incydr/example.tf
+```
 
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/code42-incydr/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
 
 ## Troubleshooting
 

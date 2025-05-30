@@ -8,8 +8,6 @@ tags:
 description: Learn how to retrieve Airtable audit logs into the Sumo Logic environment.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
@@ -22,7 +20,7 @@ The Airtable API integration ingests audit logs periodically from the Airtable a
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 minutes | [Audit Logs](https://airtable.com/developers/web/api/audit-log-events) |
+| 5 minutes |  [Audit Logs](https://airtable.com/developers/web/api/audit-log-events) |
 
 ## Setup
 
@@ -81,36 +79,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | accountId | String | Yes | `null` | Account ID is a unique identifier for your Enterprise Account. |  |
 | personalAccessTokens | String | Yes | `null` | Used to authenticate API requests. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/airtable/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/airtable/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/airtable/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/airtable/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/airtable/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
-
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/airtable/example.tf
+```
 
 ## FAQ
 

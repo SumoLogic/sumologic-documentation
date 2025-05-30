@@ -8,9 +8,6 @@ tags:
 description: Learn how to collect device information from the CrowdStrike FDR and send it to Sumo Logic.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/crowdstrike-fdr-host-inventory/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -113,35 +110,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | clientSecret | String | Yes | `null` | The CrowdStrike Client Secret you want to use to authenticate collection requests. |  |
 | pollingInterval | Integer | No | 24 | This sets how often the Source checks for data. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-fdr-host-inventory/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/crowdstrike-fdr-host-inventory.md/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/crowdstrike-fdr-host-inventory.md/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/crowdstrike-fdr-host-inventory.md/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/crowdstrike-fdr-host-inventory.md/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-fdr-host-inventory/example.tf
+```
 
 
 ## FAQ

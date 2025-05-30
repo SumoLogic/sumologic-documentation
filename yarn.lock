@@ -2910,6 +2910,11 @@
   resolved "https://registry.yarnpkg.com/@rspack/lite-tapable/-/lite-tapable-1.0.1.tgz#d4540a5d28bd6177164bc0ba0bee4bdec0458591"
   integrity sha512-VynGOEsVw2s8TAlLf/uESfrgfrq2+rcXB1muPJYBWbsm1Oa6r5qVQhjA5ggM6z/coYPrsVMgovl3Ff7Q7OCp1w==
 
+"@saucelabs/theme-github-codeblock@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@saucelabs/theme-github-codeblock/-/theme-github-codeblock-0.3.0.tgz#7936bc6aa97a15f2483ac143df4918c8d2baf5f0"
+  integrity sha512-+8xWxBfN+I8StJ0QXERMbGf+BHwRXHWV3mFl9uDayXERiZ/rR93d0nAS3s9s/rKjqh/YSm/4dThEkBNBLnGs4Q==
+
 "@sideway/address@^4.1.5":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.5.tgz#4bc149a0076623ced99ca8208ba780d65a99b9d5"

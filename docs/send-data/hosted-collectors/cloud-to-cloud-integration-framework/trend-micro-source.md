@@ -8,9 +8,6 @@ tags:
 description: Learn how to collect alert details from Trend Micro platform.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/trend-micro/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/trend-micro-logo.png')} alt="logo" width="120" />
@@ -87,35 +84,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | authToken | String | Yes | `null` | Client Authentication Token to be used in the API header. |  |
 | pollingInterval | integer | Yes | `15 minutes` | Time interval (in minutes) after which the source will check for new data. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/trend-micro/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/trend-micro/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/trend-micro/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/trend-micro/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/trend-micro/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/trend-micro/example.tf
+```
 
 ## FAQ
 

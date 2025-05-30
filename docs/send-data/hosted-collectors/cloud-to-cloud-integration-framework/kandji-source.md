@@ -8,9 +8,6 @@ tags:
 description: The Kandji Source provides a secure endpoint to receive threat details, devices list, device activities, device details, and device app information from the Kandji platform.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/kandji/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -96,35 +93,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | collectDeviceDetails | Boolean | No | `null` | Specify if we need to collect the Device details of the tenant. |  |
 | collectDeviceApps | Boolean | No | `null` | Specify if we need to collect the Device apps of the tenant. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/kandji/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/kandji/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/kandji/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/kandji/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/kandji/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/kandji/example.tf
+```
 
 ## FAQ
 

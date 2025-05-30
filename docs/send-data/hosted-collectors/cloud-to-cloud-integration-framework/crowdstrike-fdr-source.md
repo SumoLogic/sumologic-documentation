@@ -8,9 +8,6 @@ tags:
 description: The CrowdStrike Falcon Data Replicator (FDR) Source provides a secure endpoint to ingest Falcon Data Replicator events using the S3 ingestion capability by consumed SQS notifications of new S3 objects.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/crowdstrike-fdr/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
@@ -90,35 +87,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | s3Region | String | Yes | other | The S3 Region your data is in. |  |
 | startTime | Integer | No | other | Time range to ingest the desired data. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-fdr/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/crowdstrike-fdr/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/crowdstrike-fdr/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/crowdstrike-fdr/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/crowdstrike-fdr/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-fdr/example.tf
+```
 
 
 ## FAQ

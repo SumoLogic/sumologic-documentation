@@ -8,9 +8,6 @@ tags:
 description: The Tenable Source provides a secure endpoint to ingest audit-log events, vulnerability, and asset data from the Tenable.io APIs.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/tenable/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -103,35 +100,17 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 | include_unlicensed_assets | Boolean | No | False | Set to true if you want to collect unlicensed objects. |  |
 | supported_apis | Array of strings | No | Vulnerability Data | Define one or more of the available APIs to collect:<br/>Vulnerability Data, Audit Logs, and Asset Data.<br/>For example, for both you'd use:["Vulnerability Data","Audit Logs","Asset Data"] |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/tenable/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/tenable/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/tenable/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/tenable/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/tenable/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/tenable/example.tf
+```
 
 ## FAQ
 

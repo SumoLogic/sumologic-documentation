@@ -8,8 +8,6 @@ tags:
 description: Learn how to fetch CPC-Configs, CPC-Alerts, and CPC-Alert Details from the Akamai platform and send it to Sumo Logic.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/akamai-cpc/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -89,36 +87,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | collectAlertDetails | Boolean | No | `false` | Specify if we need to collect the alert details. |  |
 | pollingIntervalCPCConfigsHrs | Integer | Yes | `12 hours` | Time interval (in minutes) after which the source will check for new data.<br/>**Minimum**: 1 hour<br/>**Maximum**: 24 hours |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/akamai-cpc/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/akamai-cpc/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/akamai-cpc/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/akamai-cpc/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/akamai-cpc/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
-
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/akamai-cpc/example.tf
+```
 
 ## FAQ
 

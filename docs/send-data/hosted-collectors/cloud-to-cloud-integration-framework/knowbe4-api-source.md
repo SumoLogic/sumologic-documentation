@@ -8,9 +8,6 @@ tags:
 description: Learn how to configure the KnowBe4 Cloud-to-Cloud source setup using the Sumo logic environment.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/knowbe4-api/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="100"/>
@@ -110,36 +107,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | dataTypes | Array | Yes | `null` | Data sources to fetch from KnowBe4. |  |
 | phishingPollInterval | Integer | Yes | 1 hour| The Polling interval for phishing data requests. The minimum interval is 1 hour, and the maximum is 24 hours. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/knowbe4-api/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/knowbe4-api/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/knowbe4-api/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/knowbe4-api/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/knowbe4-api/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
-
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/knowbe4-api/example.tf
+```
 
 ## Limitations
 

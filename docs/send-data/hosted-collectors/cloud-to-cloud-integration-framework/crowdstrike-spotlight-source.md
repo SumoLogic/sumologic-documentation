@@ -8,9 +8,6 @@ tags:
 description: Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/crowdstrike-spotlight/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
@@ -106,35 +103,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | facet | Checkbox | No | All selected | Type of data to be returned for each vulnerability entity which allows to limit the response to just the information you want. |  |
 | pollingInterval | Integer | No | 1 hour | This sets how often the Source checks for data. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-spotlight/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/crowdstrike-spotlight/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/crowdstrike-spotlight/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/crowdstrike-spotlight/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/crowdstrike-spotlight/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-spotlight/example.tf
+```
 
 ## Troubleshooting
 

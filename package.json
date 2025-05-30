@@ -60,6 +60,7 @@
     "@mui/material": "^5.16.7",
     "@mui/system": "^5.16.7",
     "@popperjs/core": "^2.11.6",
+    "@saucelabs/theme-github-codeblock": "^0.3.0",
     "@svgr/core": "8.1.0",
     "@svgr/hast-util-to-babel-ast": "8.0.0",
     "@svgr/plugin-jsx": "8.1.0",

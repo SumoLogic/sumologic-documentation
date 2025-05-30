@@ -8,9 +8,6 @@ tags:
 description: The Microsoft Graph Azure AD Reporting Source collects Directory Audit, Sign-in, and Provisioning data from the Microsoft Graph API Security endpoint.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/microsoft-graph-azure-ad-reporting/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -120,35 +117,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | application_id | String | Yes | `null` | Provide the Application (client) ID you got after you registered (created) the Azure Application. |  |
 | supported_apis | Array of strings | Yes |`null`  | Define one or more of the available APIs to collect: `Directory Audit`, `Sign-in`, and `Provisioning`. For example, for both you'd use: `["Directory Audit","Signin"]` |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/microsoft-graph-azure-ad-reporting/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/microsoft-graph-azure-ad-reporting/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/microsoft-graph-azure-ad-reporting/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/microsoft-graph-azure-ad-reporting/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/microsoft-graph-azure-ad-reporting/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/microsoft-graph-azure-ad-reporting/example.tf
+```
 
 ## FAQ
 

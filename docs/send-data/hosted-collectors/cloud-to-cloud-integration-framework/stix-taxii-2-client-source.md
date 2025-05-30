@@ -9,9 +9,6 @@ keywords:
 description: Learn how to set up a STIX/TAXII 2.x client to collect threat intelligence indicators into the Sumo Logic environment.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/taxii-2/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The STIX/TAXII 2 Client source supports collecting threat intelligence indicators from STIX/TAXII 2.0 and 2.1 versions. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
@@ -97,35 +94,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | http_user | String | No | `null` | HTTP basic authentication username |  |
 | http_password | String | No | `null` | HTTP basic authentication password |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/taxii-2/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/stix-taxii-2-client/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/stix-taxii-2-client/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/stix-taxii-2-client/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/stix-taxii-2-client/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/taxii-2/example.tf
+```
 
 ### Recommended configurations
 

@@ -8,9 +8,6 @@ tags:
 description: Learn how to collect admin audit events using Webex API.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/webex/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/webex-logo.png')} alt="webex-logo" width="120" />
@@ -112,35 +109,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | code | String | Yes | `null` | Code of the Webex Integration created for Sumo Logic. |  |
 | orgId | String | Yes | `null` | Organization Id of the customers Webex account from where you want to collect the audit event from. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/webex/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/webex/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/webex/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/webex/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/webex/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/webex/example.tf
+```
 
 ## FAQ
 

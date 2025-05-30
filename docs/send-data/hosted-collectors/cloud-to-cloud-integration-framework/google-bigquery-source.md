@@ -8,9 +8,6 @@ tags:
 description: Learn how to collect data using the BigQuery API.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/google-bigquery/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/google-bigquery-icon.png')} alt="google-bigquery-icon" width="70" />
@@ -157,35 +154,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | timeField | String | No | `null` | The name of the column to be used to extract timestamp. If not specified, the C2C will use the current time for each row or record we collect. The TIMESTAMP data type is recommended, but any number type will be converted into a epoch milliseconds or epoch microseconds. |  |
 | checkpointField | String | Yes | `null` | The column whose largest value will be used as the **%CHECKPOINT%** in the next search. The checkpoint field has to be of type number of timestamp. |  |
 | checkpointStart | String | Yes | `null` | The very first value of the checkpoint to be used in the query. | |
-## Examples
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+### JSON example
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/google-bigquery/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/google-bigquery/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-bigquery/example.json
+```
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/google-bigquery/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
+### Terraform example
 
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/google-bigquery/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-bigquery/example.tf
+```
 
 ## FAQ
 

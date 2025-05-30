@@ -8,9 +8,6 @@ tags:
 description: Learn how to collect indicators list from Mandiant Threat Intel platform.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/mandiant-threat-intel/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="icon" width="60" />
@@ -78,35 +75,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | userSourceId | String | Yes | `null` | The Sumo Logic namespace in which the indicators will be stored. |  |
 | pollingInterval | integer | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/mandiant-threat-intel/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/mandiant-threat-intel/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/mandiant-threat-intel/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/mandiant-threat-intel/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/mandiant-threat-intel/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/mandiant-threat-intel/example.tf
+```
 
 ## FAQ
 

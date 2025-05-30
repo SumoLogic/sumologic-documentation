@@ -7,9 +7,6 @@ tags:
 description: Learn how to configure the Cato Networks Source Cloud-to-Cloud connector for Sumo Logic.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/cato-networks/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/cato-logo.png')} alt="cato logo" width="50"/>
@@ -104,35 +101,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | apikey | String | Yes | `null` | API key of the account. |  |
 | dataTypes | String Array | Yes | `null` | Select the datatype for which you want to ingest data. Possible values are All, Security Events or Audit Events.|  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cato-networks/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/cato-networks/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/cato-networks/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/cato-networks/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cato-networks/example.tf
+```
 
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/cato-networks/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
 
 ## FAQ
 

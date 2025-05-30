@@ -7,9 +7,6 @@ tags:
 description: Learn how to collect assets and vulnerabilities from Rapid7 InsightVM.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/rapid7/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="rapid7-logo" width="80" />
@@ -65,36 +62,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | region | String | Yes | |Region of the Insight platform. Know more about [Supported regions](https://docs.rapid7.com/insight/product-apis/#supported-regions).  |  |
 | apikey | String | Yes | `null` |API Key for the account authorization. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/rapid7/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/rapid7/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/rapid7/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/rapid7/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/rapid7/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
-
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/rapid7/example.tf
+```
 
 ## FAQ
 

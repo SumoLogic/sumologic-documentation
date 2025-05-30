@@ -8,9 +8,6 @@ tags:
 description: The Carbon Black Inventory Source provides a secure endpoint to receive data from the CB Devices API.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/carbon-black-inventory/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -89,35 +86,18 @@ The following table shows the **config** parameters for a Carbon Black Invent
 | org_key | String | Yes |  `null` | Your Carbon Black Cloud Org key, found in your Carbon Black product console under Settings > API Access > API Keys. |  |
 | pollingInterval | Integer | No |  300 | This sets how many seconds the Source checks for new data. The default is 60 seconds. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/carbon-black-inventory/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/carbon-black-inventory/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/carbon-black-inventory/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/carbon-black-inventory/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/carbon-black-inventory/example.tf
+```
 
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/carbon-black-inventory/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
 
 ## FAQ
 

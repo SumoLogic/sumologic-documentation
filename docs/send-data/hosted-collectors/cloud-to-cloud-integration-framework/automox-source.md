@@ -8,9 +8,6 @@ tags:
 description: The Automox Source provides a secure endpoint to receive all events objects, audit trail events, and device inventory details from the Automox platform.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/automox/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -88,35 +85,17 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 | pollingIntervalEventMin | Integer | Yes | 5 minutes | Time interval (in minutes) after which the source will check for new data for API: Event API. | |
 | pollingIntervalDeviceHour | Integer | Yes | 12 hours | Time interval (in hours) after which the source will check for new data for API: List All Devices.| |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/automox/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/automox/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/automox/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/automox/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/automox/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/automox/example.tf
+```
 
 ## FAQ
 

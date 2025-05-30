@@ -5,9 +5,6 @@ sidebar_label: Trust Login
 description: This integration aims to collect the report logs from the Trust Login platform.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/trust-login/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -74,35 +71,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | bearerToken | String | Yes | `null` | The bearer API token created for the account in the Trust Login portal. | |
 | pollingIntervalMin | Integer | Yes | 5 mins | This sets how often the source checks for new data. | |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/trust-login/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/trust-login/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/trust-login/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/trust-login/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/trust-login/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/trust-login/example.tf
+```
 
 ## FAQ
 

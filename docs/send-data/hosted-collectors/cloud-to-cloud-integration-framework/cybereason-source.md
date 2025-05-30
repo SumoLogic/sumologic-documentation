@@ -8,8 +8,6 @@ tags:
 description: Learn how to collect authentication logs from the Cybereason Malops API.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/cybereason-logo.png')} alt="cybereason-logo" width="70" />
@@ -79,35 +77,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | dup_machines | Boolean | No | false | Duplicate logs by machine values. |  |
 | dup_users | Boolean | No | false | Duplicate logs by user values. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = useState('');
-    const [tf, setTf] = useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cybereason/example.json
+```
 
-    useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/cybereason/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/cybereason/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/cybereason/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cybereason/example.tf
+```
 
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/cybereason/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
 
 ## FAQ
 

@@ -8,9 +8,6 @@ tags:
 description: Learn how to collect event logs from the Bitwarden API.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/bitwarden/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="thumbnail icon" width="100"/>
@@ -85,33 +82,14 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | polling_interval         | String      | No          | `15m`                                            | This sets how often the Source checks for data. The polling interval value should be at 5 minutes.                                                                                                                                       |                                               |
 
 
+### JSON example
 
-## Examples
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/bitwarden/example.json
+```
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+### Terraform example
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/bitwarden.md/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/bitwarden.md/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
-
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/bitwarden.md/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/bitwarden.md/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/bitwarden/example.tf
+```

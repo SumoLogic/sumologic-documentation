@@ -8,9 +8,6 @@ tags:
 description: The Sysdig Secure Source aims to collect the scan results from the scanner using Sysdig API and send them to Sumo Logic.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/sysdig-secure/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -103,35 +100,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | filters | Array | No | `null` | An array of key-value pairs to filter the data. For key-value pairs, the length is set to 256 characters and the API accepts a maximum length of 1024 characters for the filter. |  |
 | pollingIntervalRuntimeResultHrs | String | Yes | `24 Hours` | This sets how often the source checks for data. <br/>**Default**: 24 hours<br/>**Minimum**: 24 hours<br/>**Maximum**: 168 hours |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/sysdig-secure/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/sysdig-secure/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/sysdig-secure/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/sysdig-secure/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/sysdig-secure/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/sysdig-secure/example.tf
+```
 
 ## Limitation
 

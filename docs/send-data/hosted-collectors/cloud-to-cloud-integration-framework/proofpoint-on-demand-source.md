@@ -7,9 +7,6 @@ tags:
 description: The Proofpoint On Demand (PoD) Source collects data from the Proofpoint On Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol to stream logs.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/proofpoint-on-demand/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -91,35 +88,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `api_secret` | String | Yes | `null` | Provide your API Token from Proofpoint that you want to use to authenticate collection requests.	||
 | `supported_events` | Array of strings | Yes | |There are two types of events you can collect. Specify one or both of the following:<br/>`message`: The main fields in message logs are guid, connection, envelope, msg, msgParts, filter, pps.<br/>`maillog`: Then main fields in maillog logs are data, id, pps, sm, ts.<br/>For example, for both you'd use: `["maillog","message"]`	|  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/proofpoint-on-demand/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/proofpoint-on-demand/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/proofpoint-on-demand/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/proofpoint-on-demand/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/proofpoint-on-demand/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/proofpoint-on-demand/example.tf
+```
 
 ## FAQ
 

@@ -8,8 +8,6 @@ tags:
 description: Learn how to collect abnormal threat and case logs from the Abnormal Security source.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="abnormal-security-logo" width="90" />
@@ -76,32 +74,20 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | accessToken | String | Yes | `null`| Access token used to retrieve abnormal threats. |  |
 | datacollection | array | Yes | `threats`| List of APIs to fetch the data from. | `threats, cases` |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/abnormal-security/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/abnormal-security/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/abnormal-security/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/abnormal-security/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/abnormal-security/example.tf
+```
 
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/abnormal-security/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+:::

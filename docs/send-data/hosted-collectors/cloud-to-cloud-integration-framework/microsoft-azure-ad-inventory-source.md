@@ -8,9 +8,6 @@ keywords:
 description: The Microsoft Azure AD Inventory Source collects user and device data from the Microsoft Graph API Security endpoint.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/microsoft-azure-ad-inventory/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -131,35 +128,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | userSignInActivity | Boolean | No | False | Select the checkbox to include the sign in activity information in your user response. |  |
 | userGroupDetails | Boolean | No | False | Select the checkbox to include the user’s group details in your user response. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/microsoft-azure-ad-inventory/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/microsoft-azure-ad-inventory/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/microsoft-azure-ad-inventory/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/microsoft-azure-ad-inventory/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/microsoft-azure-ad-inventory/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/microsoft-azure-ad-inventory/example.tf
+```
 
 ## FAQ
 

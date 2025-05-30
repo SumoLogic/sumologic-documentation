@@ -8,9 +8,6 @@ tags:
 description: Learn how to retrieve cost and usage reports from AWS Cost Explorer into the Sumo Logic environment.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/aws-cost-explorer/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src='https://s3.amazonaws.com/app_icons/AWS_Cost_Explorer.png' alt="icon" width="50"/>
@@ -100,35 +97,17 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 | costMetrics | String array | Yes |  | Provide a list, such as `["AmortizedCost","BlendedCost","NetAmortizedCost", "NetUnblendedCost","UnblendedCost"]` |  |
 | AWS Region | String array | No | | Provide a list, such as `["US East (Ohio)","US West (Oregon)"]` |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/aws-cost-explorer/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/aws-cost-explorer/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/aws-cost-explorer/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/aws-cost-explorer/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/aws-cost-explorer/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/aws-cost-explorer/example.tf
+```
 
 ## FAQ
 

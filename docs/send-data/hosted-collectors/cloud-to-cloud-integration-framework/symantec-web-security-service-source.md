@@ -8,9 +8,6 @@ tags:
 description: The Symantec Web Security Service Source provides a secure endpoint to receive WSS Access logs from the Symantec WSS API.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/symantec-web-security-service/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -98,35 +95,17 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 | apiUsername | String | Yes | `null` | Provide the username you want to use to authenticate collection requests. |  |
 | apiPassword | String | Yes | `null` | Provide the password for the username that you want to use to authenticate collection requests. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/symantec-web-security-service/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/symantec-web-security-service/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/symantec-web-security-service/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/symantec-web-security-service/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/symantec-web-security-service/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/symantec-web-security-service/example.tf
+```
 
 ## FAQ
 

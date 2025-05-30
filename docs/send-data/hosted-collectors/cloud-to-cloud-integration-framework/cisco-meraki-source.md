@@ -8,8 +8,6 @@ tags:
 description: The Cisco Meraki Source for Sumo Logic provides a secure endpoint to receive data from the Cisco Meraki Organization.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cisco Meraki Source provides a secure endpoint to receive data from the Meraki organization and networks and ingests event logs pertaining to them. It securely stores the required authentication, scheduling, and state tracking information.
@@ -109,35 +107,6 @@ You may receive the follow error below if you enter an invalid Cisco Meraki orga
 * The Cisco Meraki API has a [rate limit](https://developer.cisco.com/meraki/api-latest/#!rate-limit) of 10 API calls every second. The source can have a collection delay if your Meraki organization has thousands of networks with many product types. The Cisco Meraki API for collecting network events requires one API call per network, per product type. There are a total of 6 product types. The API also requires one API call per network for collecting wireless Air Marshal events. This means 2,000 networks can be around 14,000 API calls (2000*6+2000) to retrieve network events, assuming no pagination is needed. At the rate limit of 10 API calls per second, the quickest we could make API calls is around 24 mins. Occasionally, the Cisco Meraki API can take 1 to 2 seconds to respond, which adds to the time. To solve this issue, Cisco would need to raise the API rate limit or provide an API endpoint for collecting [network events](https://developer.cisco.com/meraki/api-v1/#!get-network-events) and [wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal) events, without the requirement to iterate over each network and product type individually.
 * Cisco Meraki network events API can return a maximum of 1000 events per request. So, integration will be able to process a maximum of 1000 events with the same timestamp. If there are more events than 1000 events with the same timestamp, they will be skipped.
 
-## Examples
-
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
-
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/cisco-meraki/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/cisco-meraki/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
-
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/cisco-meraki/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/cisco-meraki/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
 
 ## FAQ
 

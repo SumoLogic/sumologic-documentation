@@ -8,9 +8,6 @@ tags:
 description: The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike Streams API.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/crowdstrike/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -101,36 +98,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | clientID | String | Yes | `null` | The CrowdStrike Client ID you want to use to authenticate collection requests. |  |
 | secretKey | String | Yes | `null` | The CrowdStrike API key you want to use to authenticate collection requests. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/crowdstrike/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/crowdstrike/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/crowdstrike/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/crowdstrike/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
-
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike/example.tf
+```
 
 ## FAQ
 

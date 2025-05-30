@@ -8,9 +8,6 @@ tags:
 description: Learn how to collect export data from the Digital Guardian and send it to Sumo Logic.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/digital-guardian/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -84,35 +81,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | exportProfile | String | Yes | `null` | Profile to be exported. |  |
 | pollingIntervalMin | Integer | Yes | 5 mins | Set to true to duplicate logs for each element in the users array. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/digital-guardian/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/digital-guardian/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/digital-guardian/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/digital-guardian/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/digital-guardian/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/digital-guardian/example.tf
+```
 
 
 ## FAQ

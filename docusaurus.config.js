@@ -105,6 +105,7 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    '@saucelabs/theme-github-codeblock',
     ['@docusaurus/plugin-google-tag-manager',
       {
         containerId: 'GTM-58ZK7D',

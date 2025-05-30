@@ -8,9 +8,6 @@ tags:
 description: The Confluent Cloud Metrics source aims to collect metric data from the Confluent Cloud Metrics platform API and send them to Sumo Logic.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/confluent-cloud-metrics/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -90,35 +87,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | ignoreFailedMetrics | Boolean | No | `False` | Ignore failed metrics and export only successful metrics if the allowed failure threshold is not breached. If this parameter is set to true, a StateSet metric (export_status) will be included in the response to report which metrics were successful and which failed. | |
 | pollingIntervalMin | Integer | Yes | `5` | Time interval (in minutes) after which the source will check for new data from the source API | |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/confluent-cloud-metrics/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/confluent-cloud-metrics/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/confluent-cloud-metrics/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/confluent-cloud-metrics/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/confluent-cloud-metrics/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/confluent-cloud-metrics/example.tf
+```
 
 
 ## FAQ

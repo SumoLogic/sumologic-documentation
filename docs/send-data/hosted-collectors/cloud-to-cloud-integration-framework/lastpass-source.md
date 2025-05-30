@@ -8,9 +8,6 @@ keywords:
 description: Learn how to collect audit reporting events from LastPass platform.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/lastpass/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/lastpass.png')} alt="thumbnail icon" width="55"/>
@@ -71,36 +68,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | timeZone | String | No | `null` | Timezone of admin LastPass account. |
 | pollingIntervalMinutes | Integer | No | 5 | How frequently the integration should poll to LastPass. <br /> **Options**: 5m, 10m, 15m, 30m, 1h, or 24h. |  |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/lastpass/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/lastpass/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/lastpass/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/lastpass/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/lastpass/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
-
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/lastpass/example.tf
+```
 
 ## FAQ
 

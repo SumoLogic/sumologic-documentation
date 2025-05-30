@@ -8,9 +8,6 @@ tags:
 description: Learn how to fetch device and alerts logs from Armis platform and send it to Sumo Logic.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/armis-api/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="80" />
@@ -93,36 +90,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | apiSecretKey | String | Yes | `null`| Armis API secret key |  |
 | apiType | Array | Yes | | You may use either or both sources of data, that is, Alerts and devices. |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/armis-api/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/armis-api/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/armis-api/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/armis-api/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/armis-api/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
-
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/armis-api/example.tf
+```
 
 ## FAQ
 

@@ -7,9 +7,6 @@ tags:
     - cloud-SIEM-enterprise
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/salesforce/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
@@ -116,6 +113,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | client_secret | String | True | `null` | Type in Consumer Secret of the Connected App. |  |
 | inmemory_lookup | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.|  |
 
+### JSON example
+
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/salesforce/example.json
+```
+
+### Terraform example
+
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/salesforce/example.tf
+```
 
 ## Troubleshooting
 
@@ -237,33 +245,3 @@ You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
-
-## Examples 
-
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
-
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/salesforce/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/salesforce/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
-
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/salesforce/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/salesforce/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>

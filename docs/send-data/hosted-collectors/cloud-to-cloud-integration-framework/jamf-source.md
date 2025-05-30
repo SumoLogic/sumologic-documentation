@@ -8,9 +8,6 @@ tags:
 description: Learn how to collect data from the Jamf platform.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/jamf/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/jamf.png')} alt="thumbnail icon" width="85"/>
@@ -78,36 +75,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | progressWindowInitialLookback | Integer | No | 1 day | First collection start time. |  |
 | pollingInterval | String | No | 24 hours | This sets how often the Source checks for data. | `24 Hours` |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/jamf/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/jamf/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/jamf/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/jamf/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/jamf/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
-
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/jamf/example.tf
+```
 
 ## FAQ
 

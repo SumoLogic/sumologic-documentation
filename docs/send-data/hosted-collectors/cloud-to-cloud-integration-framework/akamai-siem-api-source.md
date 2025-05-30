@@ -8,9 +8,6 @@ tags:
 description: The Akamai SIEM API Source provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the V1 SIEM API.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/akamai-siem-api/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -298,36 +295,17 @@ The following table shows the **config** parameters for a Akamai SIEM API Sour
 | limit | Integer | No | 10000 | The number of logs to pull per request. Can be a maximum of 200000 and a minimum of 1000. | modifiable |
 | pollInterval | Integer | No | 30 | The poll interval in seconds. Can be a maximum of 600 and a minimum of 15. | modifiable |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/akamai-siem-api/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/akamai-siem-api/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/akamai-siem-api/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/akamai-siem-api/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/akamai-siem-api/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
-
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/akamai-siem-api/example.tf
+```
 
 ## Troubleshooting
 

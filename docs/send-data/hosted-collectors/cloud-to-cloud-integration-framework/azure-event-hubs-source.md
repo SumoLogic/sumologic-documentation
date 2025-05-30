@@ -7,9 +7,6 @@ tags:
 sidebar_label: Azure Event Hubs
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/azure-event-hubs/example.json';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -137,35 +134,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | autoParseTimeFormat | Boolean | No | true | Sets if the timestamp format is automatically detected by Sumo Logic. If `autoParseTimeFormat` is set to false, then `defaultDateFormats` must be specified. |  |
 | defaultDateFormats | array | No | `null` | Define formats for the dates present in your log messages. You can specify a locator regex to identify where timestamps appear in log lines.<br/>The `defaultDateFormats` object has two elements:<br/>`format` (required)—Specify the date format.<br/>`locator` (optional)—A regular expression that specifies the location of the timestamp in your log lines. | For example, `INFO(.*)`<br/> For an example, see [Timestamp example](/docs/send-data/use-json-configure-sources/#timestamp-example).<br/>For more information about timestamp options, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference). |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/azure-event-hubs/example.json
+```
 
-    React.useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/azure-event-hubs/example.json'))
-        .then(res => res.text())
-        .then(setJson);
-      fetch(useBaseUrl('/files/c2c/azure-event-hubs/example.tf'))
-        .then(res => res.text())
-        .then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>JSON example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/azure-event-hubs/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/azure-event-hubs/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/azure-event-hubs/example.tf
+```
 
 ## FAQ
 

@@ -8,8 +8,6 @@ tags:
 description: Learn how to collect data from the Snowflake SQL API.
 ---
 
-import React, { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="thumbnail icon" width="150"/>
@@ -76,41 +74,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | database | String | Yes | `null` | Your Snowflake database name. | `SNOWFLAKE` |
 | MetricConfigSection | String | Yes | `null` | A stringified JSON of the metrics configuration. | See above documentation for examples. |
 
-## Examples
+### JSON example
 
-<>
-  {(() => {
-    const [json, setJson] = React.useState('');
-    const [metricsSchema, setMetricsSchema] = React.useState('');
-    const [metricsExample, setMetricsExample] = React.useState('');
-    const [tf, setTf] = React.useState('');
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/snowflake-sql-api/example.json
+```
 
-    useEffect(() => {
-      fetch(useBaseUrl('/files/c2c/snowflake-sql-api/example.json')).then(res => res.text()).then(setJson);
-      fetch(useBaseUrl('/files/c2c/snowflake-sql-api/metrics_schema.json')).then(res => res.text()).then(setMetricsSchema);
-      fetch(useBaseUrl('/files/c2c/snowflake-sql-api/metrics_example.json')).then(res => res.text()).then(setMetricsExample);
-      fetch(useBaseUrl('/files/c2c/snowflake-sql-api/example.tf')).then(res => res.text()).then(setTf);
-    }, []);
+### Terraform example
 
-    return (
-      <>
-        <h3>Metrics JSON Schema</h3>
-        <CodeBlock language="json">{metricsSchema}</CodeBlock>
-
-        <h3>Metrics JSON Example</h3>
-        <CodeBlock language="json">{metricsExample}</CodeBlock>
-
-        <h3>JSON Example</h3>
-        <CodeBlock language="json">{json}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/snowflake-sql-api/example.json')} target="_blank" rel="noopener noreferrer">Download example</a>
-
-        <h3>Terraform Example</h3>
-        <CodeBlock language="hcl">{tf}</CodeBlock>
-        <a href={useBaseUrl('/files/c2c/snowflake-sql-api/example.tf')} target="_blank" rel="noopener noreferrer">Download example</a>
-      </>
-    );
-  })()}
-</>
+```hcl reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/snowflake-sql-api/example.tf
+```
 
 ## FAQ
 
