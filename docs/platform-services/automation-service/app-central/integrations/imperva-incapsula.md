@@ -18,8 +18,27 @@ Gather statistical information from Incapsula for incident investigation.
 ## Configure Imperva Incapsula in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter the Imperva Incapsula hostname, for exmaple `my.incapsula.com`
+
+* **Port**. Enter your Imperva Incapsula port.
+
+* **API ID** Enter an Imperva Incapsula [API ID](https://docs.imperva.com/bundle/cloud-application-security/page/settings/api-keys.htm).
+
+* **API Key**. Enter the key for the API ID.
+
+* **Account ID**. Enter the numeric identifier of the [account](https://docs.imperva.com/bundle/z-kb-articles-knowledgebase-support/page/290234822.html) to fetch data for.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/imperva-incapsula-configuration.png')} style={{border:'1px solid gray'}} alt="Imperva Incapsula configuration" width="400"/>
 
