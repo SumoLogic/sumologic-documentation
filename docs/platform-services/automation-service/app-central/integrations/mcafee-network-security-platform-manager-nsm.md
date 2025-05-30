@@ -27,7 +27,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. The name for the resource.
    * **URL API**
    * **Username**
-   * **Password** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mcafee-network-security-platform-manager-nsm/mcafee-network-security-platform-manager-nsm-4.png')} style={{border:'1px solid gray'}} alt="mcafee-network-security-platform-manager-nsm" width="400"/>
+   * **Password** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mcafee-network-security-platform-manager-configuration.png')} style={{border:'1px solid gray'}} alt="McAfee Network Security Platform Manager configuration" width="400"/>
 
 For information about McAfee Network Security Platform Manager, see [McAfee Network Security Platform documentation](https://docs.trellix.com/bundle/network-security-platform-9.2.x-product-guide/page/GUID-E5A1DDBD-A231-498A-A90B-39D584B6CC45.html).
 

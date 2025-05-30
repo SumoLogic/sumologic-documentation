@@ -57,6 +57,14 @@ The double ampersand (&&) operator is equivalent to a logical AND operator.
 
 A logical OR. 
 
+**Example**
+
+The following expression returns true if `A` matches `B` or `A` matches `C`:
+
+`where "A" matches "B" || where "A" matches "C"`
+
+In Cloud SIEM, both sides of the `||` must be boolean. Other values such as string are not supported when using a logical OR operator. 
+
 ### !
 
 The exclamation point (!) function is equivalent to a logical NOT operator.
