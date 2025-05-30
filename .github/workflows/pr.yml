@@ -1,6 +1,4 @@
 name: Pull Request Checks
-permissions:
-  contents: read
 
 permissions:
   contents: read
