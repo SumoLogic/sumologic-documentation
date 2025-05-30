@@ -27,8 +27,21 @@ Database
 ## Configure Have I Been Pwned in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Have I Been Pwned API URL, for example, `https://haveibeenpwned.com/API/v3`
+
+* **API Key**. Enter a Have I Been Pwned [API key](https://haveibeenpwned.com/api/v3#Authorisation).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/have-i-been-pwned-configuration.png')} style={{border:'1px solid gray'}} alt="Have I Been Pwned configuration" width="400"/>
 

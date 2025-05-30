@@ -21,19 +21,30 @@ Arcanna enables experts to train context-aware AI models which encompass their k
 
 ## Arcanna Elements configuration
 
-Log in to Arcanna platform using your credentials login on Arcanna AI using [this](https://elements.withsecure.com/) url.
+Log in to Arcanna platform using your credentials login on Arcanna AI using [this](https://elements.withsecure.com/) URL.
 
 ## Configure Arcanna in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the base API URL for Arcanna.
 
-   * **Label**. The name for the resource.
-   * **URL**. The base API URL for Arcanna.
-   * **Api Key**. Previously created Api Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/arcanna-configuration.png')} style={{border:'1px solid gray'}} alt="Arcanna configuration" width="400"/>
+* **API Key**. Enter your [Arcanna API key](https://docs.arcanna.ai/docs/user-guide/create-api-key/).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
-For information about Arcanna, see [Arcanna documentation](https://docs.arcanna.ai/docs/user-guide/create-api-key).
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/arcanna-configuration.png')} style={{border:'1px solid gray'}} alt="Arcanna configuration" width="400"/>
+
+For information about Arcanna, see [Arcanna documentation](https://docs.arcanna.ai/docs/introduction/introduction-to-arcanna).
 
 ## Category
 

@@ -20,8 +20,23 @@ Updated: Jul 03, 2023***
 ## Configure Cisco Umbrella V2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the the API URL for your Cisco Umbrella V2 instance, for example, `https://api.umbrella.com`
+
+* **API Key**. Enter an [API key](https://developer.cisco.com/docs/cloud-security/umbrella-api-authentication/) for Cisco Umbrella V2.
+
+* **API Secret**. Enter the secret for the API key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-umbrella-v2-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Umbrella V2 configuration" width="400"/>
 

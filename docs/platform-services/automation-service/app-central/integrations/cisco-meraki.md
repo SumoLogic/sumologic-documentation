@@ -44,8 +44,18 @@ Updated: Jun 26, 2023***
 ## Configure Cisco Meraki in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API Key**. Enter a [Cisco Meraki API key](https://developer.cisco.com/meraki/api-v1/authorization/#obtaining-your-meraki-api-key).
+
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-meraki-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Meraki configuration" width="400"/>
 

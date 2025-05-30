@@ -23,14 +23,27 @@ Set of scripts to perform simple HTTP requests.
 ## Configure HTTP Tools in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **HTTP API URL**. Enter the URL to send the requests.
 
-   * **Label**. Name of the resource for HTTP Tools.
-   * **HTTP API URL**. The URL to send the requests.
-   * **Username**. The username to use to access the URL.
-   * **Password**. The password to use to access the URL.
-   * **Extra Headers**. Additional HTTP headers to send with the requests e.g. (key1:value1, key2:value2) Or JSON.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/http-tools-configuration.png')} style={{border:'1px solid gray'}} alt="HTTP Tools configuration" width="400"/>
+* **Username**. Enter the username to use to access the URL.
+
+* **Password**. Enter the password for the user.
+
+* **Extra Headers**. Enter additional HTTP headers to send with the requests for example, `key1:value1, key2:value2` or JSON.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/http-tools-configuration.png')} style={{border:'1px solid gray'}} alt="HTTP Tools configuration" width="400"/>
    
 ## Change Log
 
