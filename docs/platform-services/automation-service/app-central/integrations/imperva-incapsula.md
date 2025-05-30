@@ -26,7 +26,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **Host**. Enter the Imperva Incapsula hostname, for exmaple `my.incapsula.com`
+* **Host**. Enter the Imperva Incapsula hostname, for example `my.incapsula.com`
 
 * **Port**. Enter your Imperva Incapsula port.
 
