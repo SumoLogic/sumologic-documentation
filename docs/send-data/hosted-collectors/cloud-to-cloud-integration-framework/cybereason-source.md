@@ -9,6 +9,7 @@ description: The Cybereason Source provides a secure endpoint to receive authent
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 <img src={useBaseUrl('img/send-data/cybereason-logo.png')} alt="cybereason-logo" width="70" />
 
@@ -51,7 +52,6 @@ To configure a Cybereason Source:
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
 1. (Optional) The **Back Collection Interval** allows you to set, in hours, ingestion for up to 30 days of prior MalOps.
 1. (Optional) **Duplicate On Fields**, when enabled, each value in the array of machines or users is put into its own log. The entire log is duplicated for each value in the array, where each log gets one value. For example,
-
     ```
     {
         "data": 1,
@@ -74,7 +74,9 @@ To configure a Cybereason Source:
     }
     ```
 1. When you are finished configuring the Source, click **Submit**.
+
 ## Metadata fields
+
 | Field | Value | Description |
 | :--- | :--- | :--- |
 | `_siemVendor` | `Cybereason` | Set when **Forward To SIEM** is checked. |
@@ -99,7 +101,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
-| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
 | client_user | String | Yes | `null` | Provide the email address you want to use to authenticate collection requests. |  |
 | client_password | String | Yes | `null` | Provide the password for the user that you want to use to authenticate collection requests. |  |
 | polling_interval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
