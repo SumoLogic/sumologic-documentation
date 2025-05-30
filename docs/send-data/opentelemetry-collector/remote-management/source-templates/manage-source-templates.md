@@ -138,7 +138,7 @@ If you try to add or update any collector tags using the API, the following vali
 1. Validates if the collector is remotely managed.
 1. Validates if the key/value is empty string.
 1. Validates the agent version.
-1. Validates if the disco tags are added, updated, or deleted.
+1. Validates that *no* disco tags are added, updated, or deleted.
 1. Validates if the default tags are added or deleted.
 :::
 

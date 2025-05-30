@@ -5,10 +5,6 @@ sidebar_label: Trust Login
 description: This integration aims to collect the report logs from the Trust Login platform.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/trust-login/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/trust-login/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/trust-login/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -77,15 +73,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/trust-login/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/trust-login/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/trust-login/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/trust-login/example.tf
+```
 
 ## FAQ
 

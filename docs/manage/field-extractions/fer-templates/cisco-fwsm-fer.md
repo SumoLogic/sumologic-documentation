@@ -147,5 +147,12 @@ _sourceCategory=networking/cisco/fwsm src dst ("Deny inbound" OR "Deny protocol"
 **Extraction Rule:**
 
 ```sql
-parse "Deny protocol * " as protocol nodrop | parse ") * " as protocol nodrop | parse regex "%[A-Z]{4}-(?<severity>\d)-(?<msg_code>\d{6}):\s" nodrop | parse regex "src\s(?<src_dom>\S+):(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop | parse regex "/(?<src_port>\d+)\s" nodrop | parse regex "dst\s(?<dest_dom>\S+):(?<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop | parse regex "/(?<dest_port>\d+)\s" nodrop | "firewall-deny" as eventtype | "cisco-firewall" as event
+| parse "Deny protocol * " as protocol nodrop | parse ") * " as protocol nodrop 
+| parse regex "%[A-Z]{4}-(?<severity>\d)-(?<msg_code>\d{6}):\s" nodrop 
+| parse regex "src\s(?<src_dom>\S+):(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop 
+| parse regex "/(?<src_port>\d+)\s" nodrop 
+| parse regex "dst\s(?<dest_dom>\S+):(?<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop 
+| parse regex "/(?<dest_port>\d+)\s" nodrop 
+| "firewall-deny" as eventtype 
+| "cisco-firewall" as event
 ```
