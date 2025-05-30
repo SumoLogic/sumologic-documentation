@@ -72,9 +72,9 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"1Password"}` | Yes | Defines the source schema type. |
-| sourceType | String | `"Universal"` | Yes | Always set to `Universal`. |
-| config | JSON Object | [Configuration object](#configuration-object) | Yes | Holds all source-specific config. |
+| schemaRef | JSON Object  | `{"type":"1Password"}` | Yes | Define the specific schema type. |
+| sourceType | String | `"Universal"` | Yes | Type of source. |
+| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
 ### Configuration object
 
