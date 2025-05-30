@@ -38,7 +38,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * **API Key**. Enter your GreyNoise [API key](https://docs.greynoise.io/docs/getting-started).
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
-* **CIDR IP (Daemon)**. Enter the [CIDR IP](CIDR) used to create the alert.
+* **CIDR IP (Daemon)**. Enter the [CIDR IP](https://docs.greynoise.io/docs/using-the-greynoise-visualizer#searching-for-an-ip) used to create the alert.
 
 * <IntegrationEngine/>
 * <IntegrationProxy/>
