@@ -46,13 +46,18 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 1. Go to **Manage Data > Collection > Collection** or **Configuration > Data Collection**.
 1. Click **Add Source** next to a Hosted Collector.
 1. Search for and select **1Password**.
-1. Enter a **Name**, and optionally a **Description** and **Source Category**.
-1. Check **Forward to SIEM** to send data to [Cloud SIEM](/docs/cse).<br/><ForwardToSiem/>
-1. (Optional) Add **Fields** as metadata.
-1. Enter **Base URL** and **API Token**.
-1. Select **Supported APIs to collect**.
-1. Configure any **Processing Rules** if needed.
-1. Click **Submit**.
+1. Enter a **Name** for the Source. The **description** is optional.
+1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse).  <br/><ForwardToSiem/>
+1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
+   * Define the fields you want to associate, each field needs a name (key) and value.
+      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+1. **Base URL**. Provide your 1Password customer-specific domain, for example `events.1password.com`.
+1. **API Token**. Enter the [1Password API token](#vendor-configuration).
+1. **Supported APIs to collect**. Select one or more of the available APIs, **Item Usage** and **Sign-in Attempts**.
+1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
+1. When you are finished configuring the Source, click **Submit**.
 
 ## Metadata fields
 
