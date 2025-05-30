@@ -40,17 +40,47 @@ To configure a Cybereason Source:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu, select **Configuration**, and then under **Data Collection**, select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Cybereason**.
-1. Enter a **Name** for the Source. The description is optional.
+1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. (Optional) **Fields.** Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
+1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema.
-1. Enter your **Cybereason Host**, such as `mydomain.cybereason.net`. If using a custom port, append it like `mydomain.cybereason.net:8443`.
-1. Enter your **User Email** and **Password** to authenticate.
-1. (Optional) Adjust the **Polling Interval** (default is 300 seconds).
-1. (Optional) Set a **Back Collection Interval** in hours (up to 720).
-1. (Optional) Enable **Duplicate On Fields** for `dup_machines` and `dup_users` as needed.
-1. When finished, click **Submit**.
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+1. **Cybereason Host**. Provide your customer-specific host, such as `mydomain.cybereason.net`. If you have a customer-specific port this should be included, such as `mydomain.cybereason.net:8443`.
+1. **User email** and **password**. Provide the Cybereason user credentials you want to use to authenticate collection requests.
+1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
+1. (Optional) The **Back Collection Interval** allows you to set, in hours, ingestion for up to 30 days of prior MalOps.
+1. (Optional) **Duplicate On Fields**, when enabled, each value in the array of machines or users is put into its own log. The entire log is duplicated for each value in the array, where each log gets one value. For example,
+
+    ```
+    {
+        "data": 1,
+        "machine": [1, 2, 3]
+    }
+    ```
+    Would be processed into three logs, each with a single value from the machine array, like this:
+    ```
+    {
+        "data": 1,
+        "machine": 1
+    }
+    {
+        "data": 1,
+        "machine": 2
+    }
+    {
+        "data": 1,
+        "machine": 3
+    }
+    ```
+1. When you are finished configuring the Source, click **Submit**.
+## Metadata fields
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemVendor` | `Cybereason` | Set when **Forward To SIEM** is checked. |
+| `_siemProduct` | `Endpoint Security` | Set when **Forward To SIEM** is checked. |
+| `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
+| `_siemEventID` | `<eventType>` | Where `event_type` is the value of the field malopDetectionType from the JSON event. |
 
 ## JSON schema
 
