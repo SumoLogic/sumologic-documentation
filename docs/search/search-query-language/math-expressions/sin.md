@@ -16,5 +16,5 @@ sin(<x>) as <field>
 ## Example
 
 ```sql
-sin(1) as v // v = 0.8414709848078965
+* | sin(1) as v
 ```

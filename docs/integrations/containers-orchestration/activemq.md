@@ -51,43 +51,7 @@ Host: broker-3-activemq Name: /opt/activemq/data/activemq.log Category:logfile
 This App has been tested with following ActiveMQ versions:
 * 5.16.2.
 
-Configuring log and metric collection for the ActiveMQ App includes the following tasks:
-
-### Step 1: Configure Fields in Sumo Logic
-
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using ActiveMQ in a Kubernetes environment, create the fields:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_messaging_system`
-* `pod_labels_messaging_cluster`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using ActiveMQ in a non-Kubernetes environment, create the fields:
-* `component`
-* `environment`
-* `messaging_system`
-* `messaging_cluster`
-* `pod`
-
-</TabItem>
-</Tabs>
-
-
-### Step 2: Configure ActiveMQ Logs and Metrics Collection
+### Configure ActiveMQ logs and metrics collection
 
 Choose your environment:
 
@@ -236,7 +200,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
       messaging_system: "activemq"
           messaging_cluster: "activemq_on_k8s_CHANGE_ME"
     ```
-   2. Enter in values for the following parameters (marked in `CHANGE_ME` above):
+   1. Enter in values for the following parameters (marked in `CHANGE_ME` above):
      * `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
      * `messaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
@@ -251,7 +215,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
 
    * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
    3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, please see [this page](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
-2. **(Optional) Collecting ActiveMQ Logs from a Log File**. If your ActiveMQ chart/pod is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to standard out. To do this:
+1. **(Optional) Collecting ActiveMQ Logs from a Log File**. If your ActiveMQ chart/pod is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to standard out. To do this:
    1. Determine the location of the ActiveMQ log file on Kubernetes. This can be determined from the log4j.properties for your ActiveMQ cluster along with the mounts on the ActiveMQ pods.
    2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
    3. Add the following annotation in addition to the existing annotations.
@@ -264,32 +228,13 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
     annotations:
           tailing-sidecar: sidecarconfig;data:/opt/activemq/data/activemq.log
     ```
-   4. Make sure that the ActiveMQ pods are running and annotations are applied by using the command:
+   1. Ensure that the ActiveMQ pods are running and annotations are applied by using the command:
     ```bash
     kubectl describe pod <ActiveMQ_pod_name>
     ```
-   5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
+   1. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 
-3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Messaging Application Components. To do so:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-   2. Click the + Add button on the top right of the table.
-   3. The **Add Field Extraction Rule** form will appear. Enter the following options:
-    * **Rule Name**. Enter the name as **App Observability - Messaging**.
-    * **Applied At.** Choose **Ingest Time**
-    * **Scope**. Select **Specific Data**
-        * **Scope**: Enter the following keyword search expression:
-     ```sql
-     pod_labels_environment=* pod_labels_component=messaging
-     pod_labels_messaging_system=* pod_labels_messaging_cluster=*
-     ```
-   * **Parse Expression**. Enter the following parse expression:
-     ```sql
-     if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-     | pod_labels_component as component
-     | pod_labels_messaging_system as messaging_system
-     | pod_labels_messaging_cluster as messaging_cluster
-     ```
-
+1. **FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, a Field Extraction Rule is automatically created named **AppObservabilityMessagingActiveMQFER**
 </TabItem>
 <TabItem value="non-k8s">
 
@@ -454,254 +399,31 @@ At this point, ActiveMQ logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
+## Installing the ActiveMQ app
 
-## Installing ActiveMQ Monitors
+import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
-This section and below contain instructions for installing Sumo Logic Monitors for ActiveMQ, the app, and descriptions of each of the app dashboards. These instructions assume you have already set up the collection as described in [Collect Logs and Metrics for the ActiveMQ](#collecting-logs-and-metrics-for-activemq).
+<AppInstall2/>
 
-* To install these alerts, you need to have the Manage Monitors role capability.
-* Alerts can be installed by either importing a JSON file or a Terraform script.
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `messaging_system`
+* `messaging_cluster`
+* `pod`
 
-Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your ActiveMQ clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. For details, see [ActiveMQ Alerts](#activemq-alerts).
-
-:::note
-There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
-:::
-
-### Method 1: Install the monitors by importing a JSON file:
-
-1. Download the[ JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ActiveMQ/activemq.json) that describes the monitors.
-2. The[ JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ActiveMQ/activemq.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all ActiveMQ clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `messaging_system=activemq` with `<Your Custom Filter>`. Custom filter examples:
-   * For alerts applicable only to a specific cluster, your custom filter would be:  `messaging_cluster=activemq-prod.01`
-   * For alerts applicable to all clusters that start with `activemq-prod`: `messaging_cluster=activemq-prod*`
-   * For alerts applicable to a specific cluster within a production environment: `messaging_cluster=activemq-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-3. Go to Manage Data > Alerts > Monitors.
-4. Click **Add**.
-5. Click Import and then copy-paste the above JSON to import monitors.
-
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the ActiveMQ folder under **Monitors** to configure them. See[ this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).    
-
-
-### Method 2: Install the alerts using a Terraform script
-
-1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#from-the-preferences-page). To find out which deployment your Sumo Logic account is in, see [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for ActiveMQ alerts: The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/ActiveMQ). You can either download it through the “git clone” command or as a zip file.
-4. Alert Configuration: After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/ActiveMQ/`.
-   1. Edit the `activemq.auto.tfvars` file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
-     ```bash
-     access_id   = "<SUMOLOGIC ACCESS ID>"
-     access_key  = "<SUMOLOGIC ACCESS KEY>"
-     environment = "<SUMOLOGIC DEPLOYMENT>"
-     ```
-    The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `'activemq_data_source'`. Custom filter examples:
-      * A specific cluster `'messaging_cluster=activemq.prod.01'`
-      * All clusters in an environment `'environment=prod'`
-      * For alerts applicable to all clusters that start with activemq-prod, your custom filter would be: `'messaging_cluster=activemq-prod*'`
-      * For alerts applicable to a specific cluster within a production environment, your custom filter would be:`activemq_cluster=activemq-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
-
-  All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter monitors_disabled to false in this file.
-
-  By default, the monitors are configured in a monitor **folder** called “**ActiveMQ**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at **activemq.auto.tfvars** file.
-
-5. If you would like the alerts to send email or connection notifications, modify the file **activemq_notifications.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
-```bash title="Pagerduty Connection Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the[ Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email Notifications Example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-6. Install the Alerts:
-   1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/ActiveMQ/` and run `terraform init`. This will initialize Terraform and will download the required components.
-   2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
-   3. Run `terraform apply`.
-7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
-
-There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
-
-
-## Installing the ActiveMQ App
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Choose **Enter a Custom Data Filter** and enter a custom ActiveMQ cluster filter. Examples:
-      * For all ActiveMQ clusters: `messaging_cluster=*`
-      * For a specific cluster: `messaging_cluster=activemq.dev.01`. 
-      * Clusters within a specific environment: `messaging_cluster=activemq-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
-4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-5. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## ActiveMQ Alerts
-
-Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the ActiveMQ database cluster is available and performing as expected.
-
-<table>
-  <tr>
-   <td>Alert Type (Metrics/Logs)   </td>
-   <td>Alert Name   </td>
-   <td>Alert Description   </td>
-   <td>Trigger Type (Critical / Warning)   </td>
-   <td>Alert Condition   </td>
-   <td>Recover Condition   </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - High CPU Usage   </td>
-   <td>This alert fires when CPU usage on a node in a ActiveMQ cluster is high.   </td>
-   <td>Critical   </td>
-   <td> &#62; &#61; 80   </td>
-   <td> &#60; 80   </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - High Host Disk Usage   </td>
-   <td>This alert fires when there is high disk usage on a node in an ActiveMQ cluster.   </td>
-   <td>Critical   </td>
-   <td>&#62; &#61; 80   </td>
-   <td>&#60; 80   </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - High Memory Usage   </td>
-   <td>This alert fires when memory usage on a node in an ActiveMQ cluster is high.   </td>
-   <td>Critical   </td>
-   <td>&#62; &#61; 80   </td>
-   <td>&#60; 80   </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - High Number of File Descriptors in use.   </td>
-   <td>This alert fires when the percentage of file descriptors used by a node in an ActiveMQ cluster is high.   </td>
-   <td>Critical   </td>
-   <td>&#62; &#61; 80   </td>
-   <td>&#60; 80   </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - High Storage Used   </td>
-   <td>This alert fires when there is storage usage on a node that is high in an ActiveMQ cluster.   </td>
-   <td>Critical   </td>
-   <td>&#62; &#61; 80   </td>
-   <td>&#60; 80   </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - High Temp Usage   </td>
-   <td>This alert fires when there is high temp usage on a node in an ActiveMQ cluster.   </td>
-   <td>Critical   </td>
-   <td>&#62; &#61; 80   </td>
-   <td>&#60; 80   </td>
-  </tr>
-  <tr>
-   <td>Logs   </td>
-   <td>ActiveMQ - Maximum Connection   </td>
-   <td>This alert fires when one node in ActiveMQ cluster exceeds the maximum allowed client connection limit. </td>
-   <td>Critical   </td>
-   <td>&#62; &#61; 1   </td>
-   <td>&#60; 1   </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - No Consumers on Queues   </td>
-   <td>This alert fires when an ActiveMQ queue has no consumers.   </td>
-   <td>Critical   </td>
-   <td>&#60; 1   </td>
-   <td>&#62; &#61; 1   </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - No Consumers on Topics   </td>
-   <td>This alert fires when an ActiveMQ topic has no consumers.   </td>
-   <td>Critical   </td>
-   <td>&#60; 1   </td>
-   <td>&#62; &#61; 1   </td>
-  </tr>
-  <tr>
-   <td>Logs   </td>
-   <td>ActiveMQ - Node Down   </td>
-   <td>This alert fires when a node in the ActiveMQ cluster is down.   </td>
-   <td>Critical   </td>
-   <td>&#62; &#61; 1 </td>
-   <td>&#60; 1   </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - Too Many Connections   </td>
-   <td>This alert fires when there are too many connections to a node in an ActiveMQ cluster.   </td>
-   <td>Critical   </td>
-   <td>&#62; &#61; 1000 </td>
-   <td>&#60; 1000 </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - Too Many Expired Messages on Queues   </td>
-   <td>This alert fires when there are too many expired messages on a queue in an ActiveMQ cluster.   </td>
-   <td>Critical   </td>
-   <td>&#62; &#61; 1000   </td>
-   <td>&#60; 1000   </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - Too Many Expired Messages on Topics   </td>
-   <td>This alert fires when there are too many expired messages on a topic in an ActiveMQ cluster.   </td>
-   <td>Critical   </td>
-   <td>&#62; &#61; 1000   </td>
-   <td>&#60; 1000   </td>
-  </tr>
-  <tr>
-   <td>Metrics   </td>
-   <td>ActiveMQ - Too Many Unacknowledged Messages   </td>
-   <td>This alert fires when there are too many unacknowledged messages on a node in an ActiveMQ cluster.   </td>
-   <td>Critical   </td>
-   <td>&#62; &#61; 1000 </td>
-   <td>&#60; 1000   </td>
-  </tr>
-</table>
-
+If you're using ActiveMQ in a Kubernetes environment, the following additional fields will be automatically created as a part of the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_messaging_system`
+* `pod_labels_messaging_cluster`
 
 
 ## Viewing the ActiveMQ Dashboards
 
-### Dashboard Filters with Template Variables
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
+<ViewDashboards/>
 
 ### Overview
 
@@ -784,3 +506,21 @@ Use this dashboard to:
 * Quickly determine patterns across all logs in a given ActiveMQ cluster.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/activemq-images.png')} alt="ActiveMQ dashboards" />
+
+## Create monitors for ActiveMQ app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### ActiveMQ alerts
+
+| Alert Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `ActiveMQ - High CPU Usage Alert` | This alert gets triggered when there is high CPU usage on a node in a ActiveMQ cluster. | Count >= 80 | Count < 80 |
+| `ActiveMQ - High Memory Usage Alert` | This alert gets triggered when there is high memory usage on a node in a ActiveMQ cluster. | Count >= 80 | Count < 80 |
+| `ActiveMQ - High Storage  Used Alert` | This alert gets triggered when there is high store usage on a node in a ActiveMQ cluster. | Count >= 80 | Count < 80 |
+| `ActiveMQ - Maximum Connection Alert` | This alert gets triggered when one node in ActiveMQ cluster exceeds the maximum allowed client connection limit. | Count >= 1 | Count < 1 |
+| `ActiveMQ - No Consumers on Queues Alert` | This alert gets triggered when a ActiveMQ queue has no consumers. | Count < 1 | Count >= 1 |
+| `ActiveMQ - Node Down Alert` | This alert gets triggered when a node in the ActiveMQ cluster is down. | Count >= 1 | Count < 1 |
+| `ActiveMQ - Too Many Connections Alert` | This alert gets triggered when there are too many connections to a node in a ActiveMQ cluster. | Count >= 1000 | Count < 1000 |

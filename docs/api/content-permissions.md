@@ -24,13 +24,12 @@ The Content Permissions API allows you to share your folders, searches, and dash
 | DE  | https://api.de.sumologic.com/docs/#tag/contentPermissions  |
 | EU  | https://api.eu.sumologic.com/docs/#tag/contentPermissions  |
 | FED | https://api.fed.sumologic.com/docs/#tag/contentPermissions |
-| IN  | https://api.in.sumologic.com/docs/#tag/contentPermissions  |
 | JP  | https://api.jp.sumologic.com/docs/#tag/contentPermissions  |
 | KR  | https://api.kr.sumologic.com/docs/#tag/contentPermissions  |
 | US1 | https://api.sumologic.com/docs/#tag/contentPermissions     |
 | US2 | https://api.us2.sumologic.com/docs/#tag/contentPermissions |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
@@ -40,6 +39,3 @@ The Content Permissions API allows you to share your folders, searches, and dash
 * Security
     * Change Data Access Level
     * Manage Share Dashboards Outside of Organization
-
--->
-

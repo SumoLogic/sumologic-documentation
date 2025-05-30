@@ -1,0 +1,20 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+            "name": "Snowflake Logs",
+            "username": "SUMO",
+            "password": "bhwgdy4u28c",
+            "accountIdentifier": "gsy64-cnkc8",
+            "collectQueryHistory": true,
+            "collectSecurity": true,
+            "collectEvents": true,
+            "pollingIntervalMin": 5,
+            "customEventTables": [
+                    "SNOW_DB.SCHEMA.TABLE1",
+                    "SNOW_INFO.SCHEMA_VAL.TABLE2"
+                                 ]
+                  },
+        "sourceType": "Universal"
+    }
+}

@@ -80,6 +80,10 @@ Infrequent Data Tiers enable you to ingest log or machine data for a minimal cos
 
 [Infrequent Data Tiers](/docs/manage/partitions/data-tiers) allow you to effectively analyze high volumes of log data that is accessed on a minimal basis. In this data tier, you pay for the amount of data scanned in each search. This on-demand payment model allows you to minimize costs by only paying the data accessed.
 
+The Search Audit Index must be enabled by an administrator. To enable the Search Audit Index:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
+1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index Record checkbox" style={{border: '1px solid gray'}} width="600" />
+
 You can verify if you already have the Search Audit Index enabled by querying:
 ```sql
 _index=sumologic_search_usage_per_query

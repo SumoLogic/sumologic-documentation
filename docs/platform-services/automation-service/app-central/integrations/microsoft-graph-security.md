@@ -17,6 +17,16 @@ Query the Microsoft Graph Security API and update alerts.
 * **Get Alert** (*Enrichment*) - Get details for a Graph Security alert.
 * **Update Security Alert** (*Containment*) - Update a Graph Security alert.
 
+## Configure Microsoft Graph Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-graph-security-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Graph Security configuration" width="400"/>
+
+For information about Microsoft Graph Security, see [Microsoft Graph Security documentation](https://learn.microsoft.com/en-us/graph/security-authorization).
+
 ## Change Log
 
 * February 21, 2019 - First upload

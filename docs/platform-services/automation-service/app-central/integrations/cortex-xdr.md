@@ -35,6 +35,16 @@ Query data and utilize actions in Palo Alto Networks Cortex XDR.
 
 XDR
 
+## Configure Cortex XDR in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cortex/cortex-configuration.png')} style={{border:'1px solid gray'}} alt="Cortex XDR configuration" width="400"/>
+
+For information about Cortex XDR, see [Cortex XDR documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-Started-with-Cortex-XDR-APIs).
+
 ## Change Log
 
 * July 20, 2021 - First upload

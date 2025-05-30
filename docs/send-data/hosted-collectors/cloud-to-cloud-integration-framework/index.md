@@ -25,7 +25,6 @@ The following table provides the static IP addresses used for Cloud-to-Cloud Int
 | CA         | 3.96.85.212, 3.97.51.58, 3.96.95.249        |
 | DE         | 52.28.151.126, 18.193.176.46, 18.192.147.254        |
 | EU         | 54.74.133.34, 18.200.219.230, 54.216.109.182         |
-| IN         | 65.0.114.18, 3.7.177.71, 3.6.131.26      |
 | JP         | 52.69.8.121, 54.248.157.127, 18.182.95.102        |
 | KR    | 13.209.100.246, 3.37.181.174, 3.38.126.107  |
 | US1        | 54.209.19.175, 23.22.90.93, 23.22.11.54, 34.228.131.3, 34.237.107.105, 3.88.82.220 |
@@ -81,6 +80,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-cpc-source"><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="120"/><h4>Akamai CPC Source</h4></a>
+  <p>Learn to fetch CPC-Configs, CPC-Alerts, and CPC-Alert Details from the Akamai platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source"><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="120"/><h4>Akamai SIEM API</h4></a>
   <p>Provides a secure endpoint to receive security events generated on the Akamai platform.</p>
   </div>
@@ -123,8 +128,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration"><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/><h4>Azure Event Hubs C2C Source Migration</h4></a>
-  <p>This source is available in all deployments, including FedRAMP.</p>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source"><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="icon" width="80" /><h4>Bitwarden</h4></a>
+  <p>Learn how to collect event logs from the Bitwarden API.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -195,6 +200,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source"><img src={useBaseUrl('img/send-data/confluent-cloud-metrics.png')} alt="icon" width="120"/><h4>Confluent Cloud Metrics</h4></a>
+  <p>Learn how to collect metrics from the Confluent Cloud Metrics platform and send them to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>Crowdstrike</h4></a>
   <p>Provides a secure endpoint to receive event data from the CrowdStrike Streams API.</p>
   </div>
@@ -225,8 +236,20 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike Threat Intel</h4></a>
+  <p>Learn how to collect combined endpoint indicators data from the CrowdStrike Threat Intel platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source"><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk EPM</h4></a>
   <p>Before configuring an AWS Source give Sumo Logic access to your AWS product</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-audit-source"><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk Audit</h4></a>
+  <p>Learn to collect audits using the CyberArk SIEM integrations API.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -245,6 +268,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source"><img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="45"/><h4>DocuSign</h4></a>
   <p>Learn how to collect customer event data from the DocuSign and send it to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source"><img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Thumbnail icon" width="50"/><h4>Dragos</h4></a>
+  <p>Learn how to collect address, asset, vulnerability, notification, and zone details from the Dragos API and send them to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -297,6 +326,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source"><img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="thumbnail icon" width="100"/><h4>Intel471 Threat Intel</h4></a>
+  <p>Learn to collect threat indicators from the Intel471 platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source"><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="120"/><h4>Jamf</h4></a>
   <p>Collect inventory data from the Jamf platform.</p>
   </div>
@@ -341,6 +376,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source"><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="25"/><h4>Microsoft Azure AD Inventory (Tag)</h4></a>
   <p>Collects user and device data from the Microsoft Graph API Security endpoint.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source/"><img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="thumbnail icon" width="60"/><h4>Mandiant Threat Intel</h4></a>
+  <p>Learn to collect threat indicators from the Mandiant platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -453,8 +494,44 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source"><img src={useBaseUrl('img/send-data/smartsheet.png')} alt="Thumbnail icon" width="50"/><h4>Smartsheet</h4></a>
+        <p>Learn how to collect events from Smartsheet platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-logs-source"><img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Thumbnail icon" width="150"/><h4>Snowflake Logs</h4></a>
+        <p>Learn how to collect logs from Snowflake platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source"><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="50"/><h4>Sophos Central</h4></a>
         <p>Learn to receive authentication logs from the Sophos Central APIs.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source"><img src={useBaseUrl('img/send-data/stix-logo.png')} alt="icon" width="75"/><h4>STIX/TAXII 1 Client</h4></a>
+        <p>Learn how to set up a STIX/TAXII 1.x client to collect threat intelligence indicators into the Sumo Logic environment.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source"><img src={useBaseUrl('img/send-data/stix-logo.png')} alt="icon" width="75"/><h4>STIX/TAXII 2 Client</h4></a>
+        <p>Learn how to set up a STIX/TAXII 2.x client to collect threat intelligence indicators into the Sumo Logic environment.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="55"/><h4>Sumo Collection</h4></a>
+        <p>Learn how to collect the list of collectors and their sources using the Sumo Logic Collector API and Sources API.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source"><img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="icon" width="120"/><h4>Sumo Logic Kickstart Data</h4></a>
+        <p>Learn how to collect audit reporting events using Sumo Logic sample data.</p>
         </div>
       </div>
       <div className="box smallbox card">
@@ -471,6 +548,12 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-secure-source"><img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="icon" width="100"/><h4>Sysdig Secure</h4></a>
+        <p>Collect the scan results from the scanner using the Sysdig API.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="120"/><h4>Tenable</h4></a>
         <p>Learn to ingest audit-log events, vulnerability, and asset data from the Tenable.io APIs.</p>
         </div>
@@ -479,6 +562,30 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source"><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="icon" width="80"/><h4>Trellix mVision ePO</h4></a>
         <p>Learn how to collect event logs using the Trellix mVision ePO.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source"><img src={useBaseUrl('img/send-data/trend-micro-logo.png')} alt="Thumbnail icon" width="150"/><h4>Trend Micro</h4></a>
+        <p>Learn how to collect alert details from Trend Micro platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source"><img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="trust-login-icon" width="80"/><h4>Trust Login</h4></a>
+        <p>Learn how to collect report logs from Trust Login platform.</p>
+        </div>
+      </div>
+            <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source"><img src={useBaseUrl('img/sumo-square.png')} alt="Thumbnail icon" width="50"/><h4>Universal Connector Source</h4></a>
+        <p> Learn how to set up a Universal Connector to collect data into the Sumo Logic environment.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source"><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="Thumbnail icon" width="60"/><h4>VMware Workspace One</h4></a>
+        <p> Learn how to collect the device details and corresponding list of applications for the devices from the VMware Workspace One platform.</p>
         </div>
       </div>
       <div className="box smallbox card">
@@ -497,6 +604,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source"><img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="Thumbnail icon" width="80"/><h4>Zendesk</h4></a>
         <p>Learn to collect audit logs from the Zendesk platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source"><img src={useBaseUrl('img/integrations/misc/zerofox-logo.png')} alt="Thumbnail icon" width="50"/><h4>ZeroFox</h4></a>
+        <p>Learn to collect threat indicators using the ZeroFox API and send them to Sumo Logic for analysis.</p>
         </div>
       </div>
       <div className="box smallbox card">

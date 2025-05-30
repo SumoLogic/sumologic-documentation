@@ -27,24 +27,13 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  staticDirectories: ['static'],
-  webpack: {
-    jsLoader: (isServer) => ({
-      loader: require.resolve('swc-loader'),
-      options: {
-        jsc: {
-          "parser": {
-            "syntax": "typescript",
-            "tsx": true
-          },
-          target: 'es2017',
-        },
-        module: {
-          type: isServer ? 'commonjs' : 'es6',
-        }
-      },
-    }),
+  future: {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true, // required
+    },
+    experimental_faster: true,
   },
+  staticDirectories: ['static'],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -116,6 +105,7 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    '@saucelabs/theme-github-codeblock',
     ['@docusaurus/plugin-google-tag-manager',
       {
         containerId: 'GTM-58ZK7D',
@@ -248,7 +238,14 @@ module.exports = {
         },
       },
     // SEO Global Metadata
-    metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
+    metadata: [
+      {
+        name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts',
+      },
+      {
+        name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
+      },
+    ],
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -271,16 +268,10 @@ module.exports = {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
     },
-    announcementBar: {
-      id: 'opt-in-ga',
-      content: '🚀 <a target="_blank" rel="noopener noreferrer" href="/docs/get-started/sumo-logic-ui">Check out the new Sumo Logic UI!</a> 🚀',
-      backgroundColor: '#D3BAF7',
-      textColor: '#000',
-    },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json'],
     },
       navbar: {
         logo: {
@@ -317,6 +308,12 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
+                sidebarId: 'integrations',
+                label: 'Apps and Integrations',
+                icon: 'grid_view',
+              },
+              {
+                type: 'docSidebar',
                 sidebarId: 'security',
                 label: 'Security',
                 icon: 'security',
@@ -329,9 +326,9 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'integrations',
-                label: 'Apps and Integrations',
-                icon: 'grid_view',
+                sidebarId: 'dashboards',
+                label: 'Dashboards',
+                icon: 'dashboard',
               },
               {
                 type: 'docSidebar',
@@ -350,12 +347,6 @@ module.exports = {
                 sidebarId: 'observability',
                 label: 'Observability',
                 icon: 'speed',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'dashboards',
-                label: 'Dashboards',
-                icon: 'dashboard',
               },
               {
                 type: 'docSidebar',
@@ -394,34 +385,6 @@ module.exports = {
             label: 'Release Notes',
             position: 'left',
             to: '/docs/release-notes',
-            type: 'dropdown',
-            items:[
-              {
-                label: 'Service',
-                to: 'release-notes-service',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Cloud SIEM',
-                to: 'release-notes-cse',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Cloud SOAR',
-                to: 'release-notes-csoar',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Collector',
-                to: 'release-notes-collector',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Developer',
-                to: 'release-notes-developer',
-                icon: 'rss_feed',
-              },
-            ]
           },
           {
             type: 'search',

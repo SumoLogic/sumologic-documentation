@@ -8,10 +8,6 @@ tags:
 description: The Automox Source provides a secure endpoint to receive all events objects, audit trail events, and device inventory details from the Automox platform.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/automox/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/automox/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/automox/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -33,15 +29,15 @@ Automox is a cloud-based platform for automated IT operations, offering patching
 
 The Automox source requires you to provide the Bearer Token and Organization ID. Follow the below steps to generate the required values:
 
-- To generate the **Bearer Token**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-2-find-your-api-key-in-the-console). 
-- To generate the **Organization ID**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-3-create-your-first-api-call). 
+- To generate the **Bearer Token**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-2-find-your-api-key-in-the-console).
+- To generate the **Organization ID**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-3-create-your-first-api-call).
 
 ### Source configuration
 
 When you create a Automox Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Automox Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Automox**.
 1. Enter a **Name** for the Source. The **description** is optional.
@@ -52,11 +48,11 @@ To configure a Automox Source:
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 1. In **Bearer Token**, enter the bearer token collected from the Automox platform.
 1. In **Organization ID**, enter the Organization ID collected from the Automox platform.
-1. Select the **Colleect Audit Trail Logs** checkbox to collect the audit details.
+1. Select the **Collect Audit Trail Logs** checkbox to collect the audit details.
 1. The **Audit Trail Logs Interval** is set for 5 minutes by default. You can adjust it based on your needs.
-1. Select the **Colleect Events Logs** checkbox to collect the event details. Enter the supported events that you want to collect. Leaving this empty will collect all events.
+1. Select the **Collect Events Logs** checkbox to collect the event details. Enter the supported events that you want to collect. Leaving this empty will collect all events.
 1. The **Event Logs Interval** is set for 5 minutes by default. You can adjust it based on your needs.
-1. Select the **Colleect Devices** checkbox to collect the devices list details.
+1. Select the **Collect Devices** checkbox to collect the devices list details.
 1. The **Devices Logs Interval** is set for 12 hours by default. You can adjust it based on your needs.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
@@ -91,15 +87,15 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/automox/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/automox/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/automox/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/automox/example.tf
+```
 
 ## FAQ
 

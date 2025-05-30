@@ -15,7 +15,7 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 ## Rules
 
 * Metrics and Traces data is not supported.
-* Fields assigned with Field Extraction Rules are not supported in the scope of an ingest budget.
+* Fields assigned with Field Extraction Rules are not supported in the scope of an ingest budget. 
 * `_budget` is a reserved keyword used by legacy ingest budgets. Do not use this reserved field when creating a new ingest budget.
 * Data is not automatically recovered or ingested later once the capacity tracking is reset.
 * Avoid creating multiple ingest budgets with the same scope. In such a scenario, Ingest budgets whose capacity is reached first is executed.
@@ -61,14 +61,14 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 
 ## Edit ingest budget​
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**.
 1. In the table, find the ingest budget you want to edit and click the edit icon on the right of the row, or click the row and then click the edit icon in the details panel.
 1. Make your changes and click **Update**.
 
 
 ## Delete ingest budget​
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**.
 1. In the table find the ingest budget you want to delete. Click on the ingest budget, and then under **More Actions**, click the delete icon.
 1. You will get a confirmation prompt. Ensure that you are deleting the desired ingest budget, and then click **Delete**.
 
@@ -91,7 +91,7 @@ _index=sumologic_audit_events minuteVolume stopCollecting
 
 1. Identify sources which are not critical data sources where stricter data controls can be added to prevent your organization from being throttled.
 1. Identify `_sourceCategory` or any other identifier for the sources.
-1. Run the following query. The goal of this query is to understand previous data ingestion trends and suggest to you the peak volume seen per minute.
+1. Run the following query. The goal of this query is to understand previous data ingestion trends and suggest to you the peak volume seen per minute. To obtain the most accurate ingest rates, run the query using the [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time/).
    ```sql    
     _sourceCategory=<source category> AND _index=<partition name>
     | timeslice 1m

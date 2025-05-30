@@ -33,16 +33,17 @@ Freshservice is a cloud-based IT Help Desk and service management solution that 
 ## Freshservice configuration
 
 1. Login to your Freshservice Support Portal.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-1.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
-1. Go to Profile settings Page. Your API key will be available below the change password section to your right. Copy the API KEY.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-2.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
+1. Go to Profile settings Page. [Your API key](https://support.freshservice.com/support/solutions/articles/50000000306-where-do-i-find-my-api-key-) will be available below the change password section to your right. Copy the API KEY.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-2.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
 
-## Freshservice in Automation Service and Cloud SOAR
+## Configure Freshservice in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-5.png')} style={{border:'1px solid gray'}} alt="freshservice" width="200"/> 
-1. Populate all the required fields (\*) then click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-6.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
-1. To make sure the resource is working, hover over the resource and then click the **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-7.png')} style={{border:'1px solid gray'}} alt="freshservice" width="200"/> 
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-9.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/freshservice-configuration.png')} style={{border:'1px solid gray'}} alt="Freshservice configuration" width="400"/> 
+
+For information about Freshservice, see [Freshservice documentation](https://support.freshservice.com/support/solutions#agentguidepage).
 
 ## Category
 

@@ -36,6 +36,14 @@ However, for optimal results with HTML templates, we recommend clicking on the t
 
 Email Gateway
 
+## Configure SMTP V3 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/smtp-v3-configuration.png')} style={{border:'1px solid gray'}} alt="SMTP V3 configuration" width="400"/>
+
 ## Change Log
 
 * June 20, 2022 - First upload

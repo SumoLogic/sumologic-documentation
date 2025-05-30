@@ -13,7 +13,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
 
-Use Metrics Search Management APIs to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization. 
+Use Metrics Search Management APIs to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.
 
 ## Documentation
 
@@ -26,16 +26,13 @@ Use Metrics Search Management APIs to save metrics searches in your content libr
 | DE         | https://api.de.sumologic.com/docs/#tag/metricsSearchesManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/metricsSearchesManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/metricsSearchesManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/metricsSearchesManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/metricsSearchesManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/metricsSearchesManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/metricsSearchesManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/metricsSearchesManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Metrics (all role capabilities)
-
--->

@@ -26,6 +26,16 @@ Work with Alerts, Policies, Tasks, and other resources with Microsoft Azure Secu
 * **Update Security Policy** (*Containment*) - Update security policy information.
 * **Update Task Status** (*Containment*) - Update the status of a security task.
 
+## Configure Microsoft Azure Security Center in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-azure-security-center-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Azure Security Center configuration" width="400"/>
+
+For information about Microsoft Defender for Cloud ([formerly Azure Security Center](https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/a-new-name-for-multi-cloud-security-microsoft-defender-for-cloud/2943020)), see [Microsoft Defender for Clolud documentation](https://learn.microsoft.com/en-us/azure/defender-for-cloud/).
+
 ## Change Log
 
 * March 22, 2019 - First upload

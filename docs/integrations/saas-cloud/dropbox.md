@@ -112,15 +112,33 @@ _sourceCategory="dropboxSource"
 | sort by _timeslice
 ```
 
-## Collecting logs for Dropbox app
+## Collection configuration and app installation
 
-This section provides instructions for setting up [Cloud-to-Cloud-Integration for Dropbox Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source) to create the source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Dropbox app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Dropbox](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Dropbox app is properly integrated and configured to collect and analyze your Dropbox data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Dropbox dashboards
 

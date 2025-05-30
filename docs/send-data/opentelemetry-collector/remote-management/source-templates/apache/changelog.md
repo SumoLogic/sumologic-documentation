@@ -5,10 +5,26 @@ sidebar_label: Changelog
 description: Changelog for Apache source template for OpenTelemetry.
 ---
 
+## [3.1.2] - 2025-04-23
+### Added
+- FAQ for source template
+
+## [3.1.1] - 2025-01-27
+
+### Fixed
+- Security issue
+- Schema validations
+
+## [3.1.0] - 2024-10-26
+
+### Added
+- Separate section for logs and metrics with enable or disable functionality.
+- Minor UI changes.
+
 ## [3.0.0] - 2024-10-01
 
 ### Added
-- Changelog link and compatibility declaration for OpenTelemetry collector
+- Changelog link and compatibility declaration for OpenTelemetry collector.
 
 ## [2.0.0] - 2024-08-08
 

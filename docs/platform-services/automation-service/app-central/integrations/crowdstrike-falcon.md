@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.10  
-Updated: Oct 16, 2024***
+***Version: 1.14  
+Updated: April 23, 2025***
 
 The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
@@ -23,16 +23,30 @@ The CrowdStrike Falcon integration allows you to pull and update Detections/Inci
 * **Get Incident Info** *(Enrichment)* - Get details for a specific Crowdstrike Incident.
 * **Get Indicators** *(Containment)* - Get Indicators By IDs.
 * **Get User ID By Mail** *(Enrichment)* - Search for a specific User ID with a given email address.
+* **Get IDP Device Info** *(Enrichment)* - Retrieve detailed information about a devices from IDP. Requires IDP rights and relevant IDP-related API scopes.
 * **Incidents CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Incidents.
 * **List Endpoints** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP.
 * **Search into Detections** *(Enrichment)* - Search for Detections that match a given query.
 * **Search into Incidents** *(Enrichment)* - Search for incidents by providing an FQL filter, sorting, and paging
   details.
 * **Update Detections** *(Containment)* - Modify the state or assignee of Detections.
+* **Update Alerts** *(Containment)* - Perform actions on Alerts identified by composite ID(s) in request.
+* **Search into Alerts** *(Enrichment)* - Retrieves all Alerts IDs that match a given query.
+* **Alerts CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Alerts.
 
 ## Category
 
 EDR
+
+## Configure CrowdStrike Falcon in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike/crowdstrike-falcon-configuration.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon configuration" width="400"/>
+
+For information about CrowdStrike Falcon, see [CrowdStrike documentation](https://www.crowdstrike.com/en-us/resources/guides/?lang=1).
 
 ## Change Log
 
@@ -56,3 +70,11 @@ EDR
 * October 16, 2024 (v1.10) - Added new actions
     + Create Indicators
     + Get Indicators
+* November 28, 2024 (v1.12) - Added new actions
+    + Update Alerts
+    + Search into Alerts
+    + Alerts CrowdStrike Falcon Daemon
+* February 21, 2025 (v1.13) - Added new action
+    + Get IDP Device Info
+* April 23, 2025 (v1.14) - Updated the Integration
+    + Refactored the code to improve performance and maintainability.

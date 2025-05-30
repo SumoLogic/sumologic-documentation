@@ -16,6 +16,16 @@ Inspect malicious files using FireEye AX.
 * **Submit Malware File Test** (*Enrichment*) - Submit a malicious file to FireEye AX.
 * **Get Malware Analysis Report** (*Enrichment*) - Gather malware analysis report for a submitted file.
 
+## Configure FireEye AX in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fireeye-ax-configuration.png')} style={{border:'1px solid gray'}} alt="FireEye AX configuration" width="400"/>
+
+For information about Trellix Malware Analysis (formerly FireEye AX), see [Trellix Malware Analysis (AX) documentation](https://docs.trellix.com/bundle/fe-malware-analysis-landing/page/UUID-ffb70bcb-95b9-7af9-04f8-62ae4bc7cd14.html).
+
 ## Change Log
 
 * March 30, 2020 - First upload

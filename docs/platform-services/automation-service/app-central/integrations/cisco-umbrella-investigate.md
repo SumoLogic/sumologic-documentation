@@ -23,6 +23,16 @@ Gather enrichment data on incident observables using Cisco Umbrella Investigate.
 
 Threat Intelligence-Reputation
 
+## Configure Cisco Umbrella Investigate in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-umbrella-investigate-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Umbrella Investigate configuration" width="400"/>
+
+For information about Cisco Umbrella Investigate, see [Cisco Umbrella Investigate documentation](https://docs.umbrella.com/deployment-umbrella/docs/manage-umbrella-investigate).
+
 ## Change Log
 
 * September 25, 2019 - First upload

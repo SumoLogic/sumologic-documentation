@@ -1,5 +1,5 @@
 ---
-title: ZeroFOX
+title: ZeroFox
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: Jul 11, 2023***
 
-Query data and utilize action in ZeroFOX Platform.
+Query data and utilize action in ZeroFox Platform.
 
 ## Actions
 
@@ -26,7 +26,17 @@ Query data and utilize action in ZeroFOX Platform.
 
 ## Notes
 
-* For action *List Alerts, * by default no filters are applied and results are sorted by timestamp, and *Alert Tag Changeset* .
+* For action *List Alerts, * by default no filters are applied and results are sorted by timestamp, and *Alert Tag Changeset*.
+
+## Configure ZeroFox in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/zerofox-configuration.png')} style={{border:'1px solid gray'}} alt="ZeroFox configuration" width="400"/>
+
+For information about ZeroFox, see [ZeroFox documentation](https://www.zerofox.com/resources/#).
 
 ## Change Log
 

@@ -7,14 +7,60 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-daemon.png')} alt="microsoft-defender-atp" width="100"/>
 
-***Version: 2.5  
-Updated: May 9, 2024***
+***Version: 2.6  
+Updated: May 16, 2025***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
 :::
 
 Process emails with EWS Daemon.
+
+## Overview
+
+### Purpose
+
+The Microsoft EWS Incoming Mail Daemon automatically retrieves emails. It enables seamless integration with security automation platforms by pulling in messages for further analysis and action.
+### Use cases
+
+* Automatically ingest emails from monitored mailboxes for phishing analysis or ticketing systems.
+* Feed email content into security orchestration workflows.
+* Process and analyze attachments (for example, .eml, .msg, documents) in near real-time.
+* Extract and enrich sender/recipient metadata for further investigation.
+
+### Supported versions
+
+* Microsoft Exchange Online (Office 365)
+
+### Prerequisites
+* Active Azure subscription
+* Application registration with:
+  * Client ID
+  * Client Secret
+  * Tenant ID
+* EWS API permissions
+* Basic authentication (legacy) or OAuth 2.0 with modern authentication
+* Correctly configured EWS endpoint 
+* Valid credentials or token
+
+### Limitations 
+* Certain attachments may be represented differently, which can result in missing or inconsistent file metadata (for example, name or type).
+* Mailbox rate limits may apply depending on Microsoft tenant configuration
+
+## Usage
+
+### Basic usage
+* Configure credentials (Tenant ID, Client ID, Client Secret).
+* Set retrieval parameters like polling frequency, folders to include/exclude.
+* Enable the Daemon action in a rule or playbook.
+* Emails are pulled automatically.
+
+### Advanced usage
+* Use filtering parameters to narrow email scope:
+  * Subject keywords 
+  * Sender domain 
+  * Date ranges
+* Enable the Daemon action in a rule or playbook.
 
 ## Actions
 
@@ -26,7 +72,7 @@ Each application you want the Microsoft identity platform to perform identity an
 
 ### Register an application
 
-Registering your application establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
+[Registering your application](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-authenticate-an-ews-application-by-using-oauth) establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
 
 Follow these steps to create the app registration:
 
@@ -128,6 +174,72 @@ Once API permission are added then Admin must consent to a grant these permissio
 When using the Microsoft EWS Daemon action within an automation rule, note that it will only pull in emails that are marked "Unread" within the respective mailbox scope. To ensure all relevant alerts are processed correctly, keep this mailbox a dedicated entity and avoid any manual reviews by other stakeholders.
 :::
 
+## Configure Microsoft EWS Daemon in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+Use the information you set up in [Microsoft EWS configuration](#microsoft-ews-configuration) above:
+* **Host**. Enter the host name of the EWS instance, for example, `outlook.office365.com`.
+* **Authentication Method**. Select the [EWS authentication](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/authentication-and-ews-in-exchange) method:
+    * **Basic**
+    * **NTLM**
+    * **OAuth 2.0**
+* **Username**. Enter the Microsoft EWS username.
+* **Password**. Enter the Microsoft EWS password.
+* **Primary SMTP Address**. Enter the [primary SMTP address](https://learn.microsoft.com/en-us/exchange/client-developer/web-service-reference/primarysmtpaddress) for the user.
+* **Tenant ID**. Enter the  [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) for authentication.
+* **Client ID**. Enter the client ID for authentication.
+* **Client Secret**. Enter the client secret for authentication.
+* **Cloud SOAR API URL**. Enter the URL for your Cloud SOAR API, for example, `https://api.sumologic.com`. Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
+* **Access ID**. Enter the access ID from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
+* **Access Key**. Enter the access key associated with the Sumo Logic access ID entered above.
+* **Automation Engine**. Select whether to use [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-ews-daemon-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft EWS Daemon configuration" width="400"/>
+
+For information about Microsoft EWS, see [Microsoft Exchange Web Services documentation](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-authenticate-an-ews-application-by-using-oauth).
+
+## API reference
+
+### Configuration
+Environment variables or parameters:
+* Tenant
+* Client ID
+* Client secret 
+* Email: The service account email address 
+* Password or OAuth token: Authentication credentials
+* Automation bridge
+* And other fields info based on the requirement
+
+### Containment APIs
+
+### Rate Limits and Quotas
+* Microsoft may enforce throttling based on:
+  * Number of concurrent EWS requests 
+  * Number of items retrieved per call 
+  * Number of mailbox accesses per day/hour
+
+#### Troubleshooting
+| Issue | Resolution | Resolution |
+| :-- |:-- |:-- |
+| No emails retrieved | Incorrect folder, filters too strict | Check filters, verify folder ID    |
+| Authentication failed | Invalid credentials or token | Update credentials and reauthorize |
+
+### FAQ
+
+#### Can I filter which emails are fetched?
+Yes. Filtering can be applied based on folders, received time. Custom filters may be implemented depending on integration configuration.
+
+#### How frequently does the Daemon poll for new messages?
+The polling interval is determined by the configuration within the integration setup or automation rule.
+
+### Support
+* For issues, questions, or improvements:
+* Microsoft [Q&A](https://learn.microsoft.com/answers)
+* Review logs on the portal using log search.
+
 ## Category
 
 Email Gateway
@@ -140,3 +252,4 @@ Email Gateway
 * March 4, 2024 (v2.3) - Updated code for compatibility with Python 3.12
 * March 21, 2024 (v2.4) - Resolved an issue related to the Email Body
 * May 9, 2024 (v2.5) - A new field has been added to the integration resource for specifying the folder or path to search within 
+* May 16, 2025 (v2.6) - Enhanced attachment handling to ensure accurate detection and processing.
