@@ -5,7 +5,7 @@ sidebar_label: Cybereason
 tags:
   - cloud-to-cloud
   - cybereason
-description: Learn how to collect authentication logs from the Cybereason Malops API.
+description: The Cybereason Source provides a secure endpoint to receive authentication logs from the Cybereason Malops API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
