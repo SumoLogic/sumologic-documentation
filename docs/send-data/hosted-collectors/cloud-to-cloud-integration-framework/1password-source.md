@@ -102,7 +102,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ## Troubleshooting
 
-Check the **Status** column on the **Collectors** page. If errors occur:
+After configuring your Source, you should check the status of the source in the **Collectors** page >  **Status** column. If the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
 
 - Verify the Base URL and token.
 - Regenerate the token and reconfigure the source.
