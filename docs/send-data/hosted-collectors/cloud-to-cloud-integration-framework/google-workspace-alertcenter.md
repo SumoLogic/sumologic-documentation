@@ -8,10 +8,6 @@ keywords:
 description: Configure Google Workspace AlertCenter Cloud-to-Cloud connector.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/google-workspace-alertcenter/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/google-workspace-alertcenter/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/google-workspace-alertcenter/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -56,7 +52,7 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 
 ### Source configuration
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the **Collectors page**, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Google Workspace AlertCenter**.
 1. **Name.** Enter a name for the Source.
@@ -103,15 +99,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/google-workspace-alertcenter/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-workspace-alertcenter/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/google-workspace-alertcenter/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-workspace-alertcenter/example.tf
+```
 
 ## FAQ
 
