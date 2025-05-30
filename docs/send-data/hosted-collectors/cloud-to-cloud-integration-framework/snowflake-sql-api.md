@@ -40,8 +40,10 @@ To configure the Snowflake SQL API Source:
 1. Search for and select **Snowflake SQL API** icon.
 1. Enter a **Name** to display for the source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate.
-1. In **Snowflake Username**, enter your Snowflake account username.
+1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+1. In **Snowflake Username**, enter your Snowflake account username
 1. In **Snowflake Password**, enter the Snowflake account password associated with your user.
 1. In **Snowflake Account Identifier**, enter your Snowflake account identifier obtained from the vendor configuration above. The identifier should look something like this: `wp00000.us-east-2.aws`.
 1. In **Snowflake Database**, enter your Snowflake database. Separate sources are required to query separate databases.
