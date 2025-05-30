@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alienvault/alienvault-usm-configuration.png')} style={{border:'1px solid gray'}} alt="Alienvault USM Anywhere configuration" width="400"/>
+
 For information about AlienVault USM Anywhere, see [AlienVault USM Anywhere documentation](https://cybersecurity.att.com/documentation/usm-anywhere.htm).
 
 ## Change Log

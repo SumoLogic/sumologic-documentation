@@ -88,7 +88,7 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 
 ### Configure the connection for an integration resource
 
-To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must first configure the connection for their resources. See [Configure Authentication for Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must first configure the connection for their resources. See [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
 
 ## Actions limit
 

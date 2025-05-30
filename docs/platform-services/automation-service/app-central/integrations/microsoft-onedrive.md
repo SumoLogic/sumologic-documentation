@@ -25,6 +25,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-onedrive-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft OneDrive configuration" width="400"/>
+
 For information about Microsoft OneDrive, see [OneDrive documentation](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/authentication?view=odsp-graph-online).
 
 ## Change Log

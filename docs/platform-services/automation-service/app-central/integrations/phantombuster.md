@@ -30,18 +30,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Phantombuster, see [Phantombuster documentation](https://hub.phantombuster.com/docs/developer-quick-start).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-3.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
    * **Label**. The name for the resource.
    * **URL**. Phantombuster host URL.
-   * **API Key**. Your Phantombuster api key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-4.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-5.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-6.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-7.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
+   * **API Key**. Your Phantombuster api key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phantom-buster-configuration.png')} style={{border:'1px solid gray'}} alt="Phantombuster configuration" width="400"/>
+
+For information about Phantombuster, see [Phantombuster documentation](https://hub.phantombuster.com/docs/developer-quick-start).
 
 ## Change Log
 

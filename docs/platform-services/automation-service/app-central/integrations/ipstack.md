@@ -27,18 +27,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about IPstack, see [IPstack documentation](https://ipstack.com/documentation).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ipstack/ipstack-3.png')} style={{border:'1px solid gray'}} alt="ipstack" width="400"/>
-1. Populate all the required fields (\*) and then click **Save**.
    * **Label**. The desired name for the resource.
    * **API URL**. By default, the url is: 'http://api.ipstack.com'.
-   * **API Key**. The API Access Key you copied earlier.
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ipstack/ipstack-4.png')} style={{border:'1px solid gray'}} alt="ipstack" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ipstack/ipstack-5.png')} style={{border:'1px solid gray'}} alt="ipstack" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ipstack/ipstack-6.png')} style={{border:'1px solid gray'}} alt="ipstack" width="400"/>
+   * **API Key**. The API Access Key you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ipstack-configuration.png')} style={{border:'1px solid gray'}} alt="IPstack configuration" width="400"/>
+
+For information about IPstack, see [IPstack documentation](https://ipstack.com/documentation).
 
 ## Change Log
 

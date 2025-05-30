@@ -315,6 +315,24 @@ To summarize, you conclude there is malicious activity originating from certain 
 
 Role Based Access Control is not supported for contextual suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search.
 
+## Search behavior and data tier access
+
+Copilot follows the same search behavior as standard log search and respects your account’s data configuration, whether you're on classic tiered pricing or Flex pricing.
+
+### Flex pricing
+
+For customers on [Flex pricing](/docs/manage/partitions/flex), all data is stored in a single intelligent layer and pricing is based on the volume of data scanned.
+
+### Tiered pricing (legacy)
+
+If you're on [classic tiered pricing](/docs/manage/partitions/data-tiers/searching-data-tiers/), Copilot by default searches across continuous data tiers only, unless otherwise specified.
+
+To direct Copilot to search the Infrequent tier, for example, use:
+
+```sql
+_dataTier=Infrequent
+```
+
 ## FAQ
 
 <details>

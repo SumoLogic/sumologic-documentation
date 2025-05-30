@@ -26,25 +26,19 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about ServiceNow, see [ServiceNow documentation](https://www.servicenow.com/docs/).
-
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation). 
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-3.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/> 
-1. Populate all the required fields (\*):
    * **URL**. ServiceNow URL in the format `https://company.service-now.com/`.
    * **Username**. Your ServiceNow username.
-   * **Password**. Your ServiceNow password.
-1. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-4.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-5.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-6.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-7.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/> 
+   * **Password**. Your ServiceNow password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/servicenow-v2-configuration.png')} style={{border:'1px solid gray'}} alt="ServiceNow V2 configuration" width="400"/>
 
-**ServiceNow Incidents Daemon**
+For information about ServiceNow, see [ServiceNow documentation](https://www.servicenow.com/docs/).
+
+## Action details
+
+### ServiceNow Incidents daemon
 
 When the daemon is run for first time it will return incidents in state 'new ' from last month.
 
-**Search Tickets** 
+### Search tickets
 
 Query used to filter the result set. 
 
@@ -71,7 +65,7 @@ For example: `<col_name><operator><value>[<operator><col_name><operator><value>]
 
 For more information check the [ServiceNow API documentation](https://developer.servicenow.com/dev.do#!/reference/api/xanadu/rest/c_TableAPI#table-GET). 
 
-**Create Ticket** 
+### Create ticket
 
 JSON Query filed needs to be populated with JSON, field names and values of all parameters within the newly created record. 
 
@@ -79,7 +73,7 @@ For more info on building JSON Query check REST API Explorer.
 
 For example: `JSON Query = {"active":"true","assigned\_to":"966e021","number":"INC002135","state":""}`
 
-**Update Ticket** 
+### Update ticket
 
 JSON Query filed needs to be populated with JSON, field names and new value for each parameter to update in the specified record. 
 

@@ -80,6 +80,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-cpc-source"><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="120"/><h4>Akamai CPC Source</h4></a>
+  <p>Learn to fetch CPC-Configs, CPC-Alerts, and CPC-Alert Details from the Akamai platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source"><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="120"/><h4>Akamai SIEM API</h4></a>
   <p>Provides a secure endpoint to receive security events generated on the Akamai platform.</p>
   </div>
@@ -490,6 +496,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source"><img src={useBaseUrl('img/send-data/smartsheet.png')} alt="Thumbnail icon" width="50"/><h4>Smartsheet</h4></a>
         <p>Learn how to collect events from Smartsheet platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-logs-source"><img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Thumbnail icon" width="150"/><h4>Snowflake Logs</h4></a>
+        <p>Learn how to collect logs from Snowflake platform.</p>
         </div>
       </div>
       <div className="box smallbox card">

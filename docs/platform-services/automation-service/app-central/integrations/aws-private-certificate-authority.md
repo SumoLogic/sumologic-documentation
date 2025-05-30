@@ -32,6 +32,12 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-private-certificate-authority-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Private Certificate Authority configuration" width="400"/>
+
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
 For information about AWS Private Certificate Authority, see [AWS Private Certificate Authority documentation](https://docs.aws.amazon.com/privateca/).
 
 ## Change Log

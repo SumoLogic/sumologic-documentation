@@ -8,10 +8,6 @@ tags:
 description: The Automox Source provides a secure endpoint to receive all events objects, audit trail events, and device inventory details from the Automox platform.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/automox/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/automox/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/automox/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -33,15 +29,15 @@ Automox is a cloud-based platform for automated IT operations, offering patching
 
 The Automox source requires you to provide the Bearer Token and Organization ID. Follow the below steps to generate the required values:
 
-- To generate the **Bearer Token**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-2-find-your-api-key-in-the-console). 
-- To generate the **Organization ID**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-3-create-your-first-api-call). 
+- To generate the **Bearer Token**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-2-find-your-api-key-in-the-console).
+- To generate the **Organization ID**, follow the instructions mentioned in the [Automox documentation](https://developer.automox.com/developer-portal/newbie-api-guide/#step-3-create-your-first-api-call).
 
 ### Source configuration
 
 When you create a Automox Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Automox Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Automox**.
 1. Enter a **Name** for the Source. The **description** is optional.
@@ -91,15 +87,15 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/automox/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/automox/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/automox/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/automox/example.tf
+```
 
 ## FAQ
 

@@ -45,39 +45,6 @@ It is compatible with all standard environments where WAFv2 actions are supporte
 * Regex complexity may be limited by the WAF regex engine's constraints.
 * All changes require propagation time before taking effect (~1-2 minutes).
 
-## Configure AWS WAF in Automation Service and Cloud SOAR
-
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
-
-<IntegrationsAuth/>
-
-For information about AWS WAF, see [AWS WAF documentation](https://docs.aws.amazon.com/waf/).
-
-### Installation
-
-[Install](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central) the AWS WAF application from App Central.
-
-### Configuration
-
-After installing the AWS WAF application, create an AWS WAF resource to begin executing actions.
-
-Refer to the image below for guidance on creating an AWS WAF resource.
-
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-waf/aws-waf-1.png')} style={{border:'1px solid gray'}} alt="Edit Resource for AWS WAF" width="400"/>
-
-Provide the following details:
-* Access Key
-* Secret Key
-* AWS Region
-* Scope
-* Automation Engine
-
-Once the information is filled in, click on Test to quickly verify that the provided details are correct.
-
-### Verification
-
-To verify the integration is working, execute any Enrichment action, or once the resource is created, test the resource.
-
 ## Actions
 
 * **Create IP Set** (*Containment*) -  Creates an IPSet, used to identify web requests that originate from specific IP addresses or ranges of IP addresses.
@@ -98,6 +65,24 @@ To verify the integration is working, execute any Enrichment action, or once the
 * **List Rule Groups** (*Enrichment*) - Retrieves a list of RuleGroupSummary objects for the rule groups that you manage.
 * **List Web ACLs** (*Enrichment*) - Retrieves a list of WebACLSummary objects for the web ACLs that you manage.
 * **Update IP Set** (*Containment*) - Updates the specified IPSet.
+
+## Configure AWS WAF in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+* Access Key
+* Secret Key
+* AWS Region
+* Scope
+* Automation Engine<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-waf/aws-waf-1.png')} style={{border:'1px solid gray'}} alt="Edit Resource for AWS WAF" width="400"/>
+
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+
+<IntegrationsAuthAWS/>
+
+For information about AWS WAF, see [AWS WAF documentation](https://docs.aws.amazon.com/waf/).
 
 ## Usage
 

@@ -49,11 +49,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-For information about Google Alert Center, see [Google Alert Center documentation](https://support.google.com/a/answer/9105393?hl=en).
-
 * **Label**. The desired name for the resource.
 * **User Service Account JSON**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
-* **Admin User Email**. The e-mail address of an admin user.
+* **Admin User Email**. The e-mail address of an admin user.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/google-alert-center-configuration.png')} style={{border:'1px solid gray'}} alt="Google Alert Center configuration" width="400"/>
+
+For information about Google Alert Center, see [Google Alert Center documentation](https://support.google.com/a/answer/9105393?hl=en).
 
 ## Change Log
 

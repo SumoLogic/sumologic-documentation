@@ -9,8 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="thumbnail icon" width="120"/>
 
-The IIS 7 App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. Additionally, you can monitor customer paths and interactions to learn how customers are using your product. The app consists of predefined searches and Dashboards, which provide visibility into your environment for real time or historical analysis.
-
+The IIS 7 App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. Additionally, you can monitor customer paths and interactions to learn how customers are using your product. The app consists of predefined searches and Dashboards, which provide visibility into your environment for real-time or historical analysis.
 
 ## Log types
 
@@ -54,7 +53,7 @@ For more information about the IIS 7 log (IIS 7.5 logs are used) format, see [ht
 
 The following query samples are taken from the IIS 7 App.
 
-The following query is taken from the the **Requests by App Over Time** panel on the **IIS 7 Traffic Insights - App Requests Dashboard**.
+The following query is taken from the **Requests by App Over Time** panel on the **IIS 7 Traffic Insights - App Requests Dashboard**.
 
 ```sql title="Requests by App Over Time"
 _sourceCategory=IIS*
@@ -65,7 +64,6 @@ _sourceCategory=IIS*
 | count by app,_timeslice  
 | transpose row _timeslice column app
 ```
-
 
 The following query is taken from the **OSes and Browsers** panel of the **IIS 7 Traffic Insights - Content and Client Platform Dashboard**.
 
@@ -93,18 +91,16 @@ if (agent matches "Dolphin*","Dolphin", Browser) as Browser
 | transpose row os column browser as *
 ```
 
-
 ## Collecting logs for IIS 7
 
 This procedure explains how to enable logging from Microsoft Internet Information Services (IIS) on your Windows server and ingest the logs into Sumo Logic.
-
 
 ### Prerequisites
 
 To prepare for logging IIS 7 events, perform the following two tasks.
 
 To enable logging on your IIS Server, do the following:
-1. Open the Sever Manager Console
+1. Open the Server Manager Console
 2. Select **Roles**
 3. Select **Web Server (IIS)**
 4. Select the host from which to collect IIS logs
@@ -137,11 +133,9 @@ To confirm that the log files are being created, do the following:
 1. Open a command-line window and change directories to `C:\inetpub\Logs\LogFiles`. This is the same path you will enter when you configure the Source to collect these files.
 2. Under the `\W3SVC1` directory, you should see one or more files with a `.log` extension. If the file is present, you can collect it.
 
-
 ### Step 1: Configure a Collector
 
 Configure an [Installed Collector (Windows)](/docs/send-data/installed-collectors/windows). Sumo Logic recommends that you install the collector on the same system that hosts the logs.
-
 
 ### Step 2: Configure a Source
 
@@ -152,8 +146,8 @@ To collect logs from IIS 7, use an Installed Collector and a Local File Source. 
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
     3. **File Path** (Required).`C:\inetpub\Logs\LogFiles\W3SVC1\*.log`
-    4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
-    5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
+    4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to begin collecting logs with a last modified date within the last seven days.
+    5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different hostname.
     6. **Source Category** (Required). For example, "IIS_prod". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced** section:
     7. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
@@ -161,39 +155,42 @@ To collect logs from IIS 7, use an Installed Collector and a Local File Source. 
     9. **Time Zone**: Select the option to **Use time zone from log file. If none is present use:** and set the timezone to **UTC**.
     10. **Timestamp Format**: Select the option to **Automatically detect the format**.
     11. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
-    12. **Enable Multiline Processing**. Disable the option to Detect messages spanning multiple lines. Because IIS logs are single line log files, disabling this option will improve performance of the collection and ensure that your messages are submitted correctly to Sumo Logic.
+    12. **Enable Multiline Processing**. Disable the option to detect messages spanning multiple lines. Because IIS logs are single-line log files, disabling this option will improve the performance of the collection and ensure that your messages are submitted correctly to Sumo Logic.
 4. Click **Save**.
 
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS log files to the Sumo Logic service.
 
-
 ## Field Extraction Rules
 
-* **Name**: Microsoft IIS Logs
-* **Scope**: Use the source category set above, such as "IIS_prod"
-* **Parse Expression:**
-```
-parse regex "^[^#].*?(?<s_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<cs_method>\S+?)
-(?<cs_uri_stem>\S+?) (?<cs_uri_query>\S+?) (?<s_port>\d+?) (?<cs_username>\S+?)
-(?<c_ip>.+?) (?<cs_User_Agent>\S+?) (?<cs_Referer>\S+?) (?<sc_status>\d+?)
-(?<sc_substatus>\d+?) (?<sc_win32_status>\d+?) (?<time_taken>\d+?)$"
-```
+<br/>
+**FER to normalize the fields**. Field Extraction Rule named **AppObservabilityIIS7FER** is automatically created for IIS 7/8 Application Components.
+<br/>
 
-## Installing the IIS 7 App
+## Installing the IIS 7 app
 
-Now that you have set up collection for IIS 7, install the Sumo Logic App for IIS 7 to use the preconfigured searches and dashboards that monitor log events generated by IIS 7.
-
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Viewing IIS 7 Dashboards
+As part of the app installation process, the following fields will be created by default:
+* `method`
+* `cs_user_agent`
+* `c_ip`
+* `time_taken`
+* `server_ip`
+* `s_port`
+* `sc_win32_status`
+* `sc_status`
+* `cs_uri_query`
+* `sc_substatus`
+* `cs_uri_stem`
+* `cs_username`
 
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+## Viewing IIS 7 dashboards
 
-You can use filters to drill down and examine the data on a granular level.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<ViewDashboards/>
 
 ### Overview Dashboard
 
@@ -226,6 +223,6 @@ The IIS 7 - Traffic Insights - Content and Client Platform Dashboard provides in
 
 ### Visitor Insights
 
-The **IIS 7 - Visitor Insights Dashboard** provides information on the geographic locations and number of users by client IP address, the number of visitors per country, locations and number of users by client IP address by US state, and the number of visitors per US state.
+The **IIS 7 - Visitor Insights Dashboard** provides information on the geographic locations and number of users by client IP address, the number of visitors per country, locations, and number of users by client IP address by US state, and the number of visitors per US state.
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-7-Visitor-Insights.png')} alt="Visitor Insights" />

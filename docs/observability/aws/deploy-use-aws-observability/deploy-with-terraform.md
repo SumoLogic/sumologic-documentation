@@ -1580,7 +1580,7 @@ Invalid IAM role OR AccessDenied
 ```
 #### Solution
 
-- Refer to [Edit, deactivate, or delete access keys](/docs/manage/security/access-keys/#edit-deactivate-or-delete-access-keys) for access keys activation. 
+- Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. 
 - Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues.
 
 ### Argument named *managed_apps* is not expected
