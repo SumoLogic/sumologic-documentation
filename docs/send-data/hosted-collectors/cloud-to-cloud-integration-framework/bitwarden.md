@@ -90,6 +90,6 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ### Terraform example
 
-```hcl reference
+```sh reference
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/bitwarden/example.tf
 ```

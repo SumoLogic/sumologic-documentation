@@ -62,13 +62,15 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 
 ## JSON schema
 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details.
+
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"1Password"}` | Yes | Defines the source schema type. |
-| sourceType | String | `"Universal"` | Yes | Always set to `Universal`. |
-| config | JSON Object | [Configuration object](#configuration-object) | Yes | Holds all source-specific config. |
+| schemaRef | JSON Object  | `{"type":"1Password"}` | Yes | Define the specific schema type. |
+| sourceType | String | `"Universal"` | Yes | Type of source. |
+| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
-### Configuration object
+### Configuration Object
 
 | Parameter | Type | Required | Default | Description | Example |
 |:--|:--|:--|:--|:--|:--|
@@ -88,19 +90,20 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ### Terraform example
 
-```hcl reference
+```sh reference
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.tf
 ```
 
 ## Troubleshooting
 
-Check the **Status** column on the **Collectors** page. If errors occur:
-
-- Verify the Base URL and token.
-- Regenerate the token and reconfigure the source.
-- Refer to the screenshot below for troubleshooting UI.
+After configuring your Source, you should check the status of the source in the **Collectors** page >  **Status** column. If the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
 
 ![troubleshooting.jpg](/img/send-data/1password-troubleshooting.jpg)
+
+To resolve these errors:
+- Make sure the Base URL matches your domain.
+- Make sure correct API Token is used to configure the source.
+- If you're still seeing the `401 Unauthorized error` in the **Status** column, regenerate the API Token by following [these configuration steps](#vendor-configuration) and then updating the API Token for the source.
 
 ## FAQ
 
