@@ -49,6 +49,20 @@ Copilot accelerates incident response by combining prebuilt contextual insights 
 * **Auto-visualize**. Copilot automatically generates charts from search results, which you can add directly to dashboards, reducing time and effort in data interpretation.
 * **Log compatibility**. Copilot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
 * **Enhanced query experience**. Auto-complete to streamline natural language queries.
+* **Multi-turn conversations**. Ask follow-up questions without repeating yourself.
+
+## Support for unstructured logs
+
+Copilot now supports unstructured logs, including raw text logs with no predefined fields or Field Extraction Rules (FERs). If these logs are already visualized in dashboards, Copilot automatically parses them and surfaces insights using natural language queries.
+
+This capability is powered by [Intelliparse mode (Beta)](/docs/search/get-started-with-search/build-search/intelliparse-beta), which infers structure from patterns already used in your dashboards. Behind the scenes, Copilot injects the `intelliparse` operator into queries to extract fields on the fly—no FER setup required.
+
+Here are some use cases:
+* Explore raw logs without defined fields
+* Triage errors and detect patterns
+* Investigate anomalies in security dashboards
+
+Copilot does not currently interpret all unstructured logs. It prioritizes those already visualized in dashboards to ensure the most relevant and accurate insights. Unlike structured logs, which contain clearly defined fields, unstructured logs require Copilot to infer structure at query time using AI and pattern recognition.
 
 ## Security and compliance
 
@@ -211,7 +225,8 @@ To save space, you can use the **Hide Log Query** icon to collapse the log query
 
 #### Compatible Log Formats
 
-Copilot querying is compatible with JSON logs, partial JSON logs, and unstructured logs with Field Extraction Rules. It cannot be used to query metrics or trace telemetry.
+* **Supported**. JSON, partial JSON, unstructured logs (with or without FERs).
+* **Not supported**. Metrics or trace telemetry.
 
 To retrieve a list of `_sourceCategories` with JSON data, use the following query:
 
@@ -257,8 +272,6 @@ There are two ways to do this:
 ## Example queries
 
 ### Logs for security
-
-<!-- add micro lesson when published-->
 
 In the video, Copilot is used to investigate a security issue involving the potential leak of AWS CloudTrail access keys outside the organization.
 
@@ -344,7 +357,7 @@ Sumo Logic Copilot (also referred to as Sumo Logic Mo Copilot) is an AI assistan
 <details>
 <summary>Can I use Copilot to analyze unstructured logs?</summary>
 
-Yes, Copilot can extract relevant insights from unstructured logs, provided Field Extraction Rules (FERs) are applied. It also supports semi-structured logs (JSON + unstructured payloads).
+Yes. Copilot can parse raw logs without FERs. It also supports semi-structured logs (JSON + unstructured payloads).
 </details>
 
 <details>
