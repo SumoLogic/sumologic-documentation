@@ -434,7 +434,6 @@ Each major capability added to Copilot undergoes legal, compliance, and applicat
 If you prefer not to use Sumo Logic Copilot, please contact our [support team](https://support.sumologic.com/support/s/). Your account will be updated accordingly.
 </details>
 
-
 ## Feedback
 
 We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon and entering the context of your query.
