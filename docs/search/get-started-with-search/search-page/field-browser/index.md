@@ -22,7 +22,11 @@ In addition to the fields found in your logs, the Field Browser shows **Time**, 
   :::info
   The **Receipt Time** field will only be displayed in the field browser when it is included as field in the query or when the **Use the Receipt Time** option for time interval type is toggled on.
   :::
-
+- **Searchable Time** refers to the additional processing time required to make logs available for searching after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall Searchable Time.
+  :::note
+  The **Searchable Time** field will only be displayed in the field browser.
+  :::
+  
 <img src={useBaseUrl('/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png')} style={{border:'1px solid gray'}} alt="FB_Field-Browser_Display-Fields" width="300"/>
 
 - A. Search for fields by entering text in this field.
@@ -62,6 +66,7 @@ The Field Browser is limited for aggregate queries in the following ways:
 * [Drill-down searches](search-from-field-browser.md) are not available for aggregate queries.
 * Field counts (item G above) are not displayed for aggregate queries. 
 * Field counts—If messages returned are less than or equal to 2500 messages, then an exact calculation is shown. If more than 2500 messages are returned, an approximation is shown.
+* The **Approximate Count** displays the count of the field values for the field. This does not display complete field values count for that field but it's just to calculate average, minimum, maximum, and standard deviation values from the first 100,000 raw messages. The field values will be skipped if the 100,000 raw messages limit is exceeded.
 
 ## Guide contents
 

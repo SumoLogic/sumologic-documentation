@@ -13,8 +13,9 @@ You can review and update your personal account settings and login credentials a
 
 ## Accessing preferences
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.
-1. Update your preferences as needed.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**.
+
+<img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
 
 ## My Profile
 
@@ -27,7 +28,9 @@ Under **My Profile**, the following information is displayed:
 * **Organization ID**. Your Sumo Logic org ID.
 * **Roles**. The Sumo Logic [roles](/docs/manage/users-roles/roles/add-remove-users-role/) assigned to your user account.
 
-If you're an Administrator, you can [manage users/roles, change user passwords](/docs/manage/users-roles), and more.
+<img src={useBaseUrl('img/get-started/my-profile.png')} alt="preference settings" style={{border: '1px solid gray'}} width="500" />
+
+If you're an Administrator, you can [manage users](/docs/manage/users-roles/users/), [assign roles](/docs/manage/users-roles/roles), and more.
 
 ### Change email address
 
@@ -42,16 +45,16 @@ If you're an Administrator, you can [manage users/roles, change user passwords](
 1. Enter your current password, and then enter the new password twice to verify it.
 1. Click **OK** to finalize the change.
 
-Admins can [reset passwords](/docs/manage/users-roles/users/reset-user-password) on behalf of users in their org.
-
 You can also reset your from your login screen by clicking **Forgot your password?**.
+
+If you're an Administrator, you can [reset passwords](/docs/manage/users-roles/users/reset-user-password) for users in your org.
 
 ## My Security Settings
 
 This section allows you to enable 2-step verification and view backup codes.
 
 :::note
-This section appears only if an administrator has made 2-step verification mandatory for your organization. For more information, see [2-Step Verification for Administrators](/docs/manage/security/2-step-verification-admins/).
+The **My Security Settings** section is visible only if an administrator has made 2-step verification mandatory for your organization. For more details, see [2-Step Verification for Administrators](/docs/manage/security/2-step-verification-admins).
 :::
 
 To set up 2-Step Verification, you will need to install a Time-Based One-Time Password (TOTP) app, which will automatically generate an authentication code that changes after a certain period of time.
@@ -67,13 +70,15 @@ To set up 2-Step Verification, you will need to install a Time-Based One-Time Pa
 
 These settings apply only to your personal account and do not affect other users in your organization. Changes take effect the next time you sign in.
 
+<img src={useBaseUrl('img/get-started/my-preferences.png')} alt="preference settings" style={{border: '1px solid gray'}} width="600" />
+
 ### Timezone and Date Format
 
 #### Default Timezone
 
 If you want the Sumo Logic user interface to use your local time zone, or a time zone different from the time zone used in the timestamp of your log messages, change the setting here. This is a personal setting, and does not change the time zone for anyone else in your organization.
 
-This option overrides the timezone set in your web browser, and affects all hours and minutes displayed in the user interface, including time ranges on the Search page, the Time column in the Messages pane, and in Dashboards. It does not affect the configurations of previously created Scheduled Searches or Real Time Alerts. For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
+This option overrides the timezone set in your web browser, and affects all hours and minutes displayed in the user interface, including time ranges on the Search page, the Time column in the Messages pane, and in Dashboards. It does not affect the configurations of previously created Scheduled Searches. For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
 
 #### Always show the timezone offset in displayed timestamps
 
@@ -110,7 +115,18 @@ Keyboard shortcuts are disabled when typing in the [search text box](/docs/searc
 
 Choose how long your Sumo Logic session remains active before timing out. Options range from 5 minutes to 7 days.
 
-For details on web session timeouts and Multi-Account Access, see [Multi-Account Access](/docs/manage/users-roles/users/multi-account-access).
+For details on web session timeouts and multi-account access, see [Multi-Account Access](/docs/manage/users-roles/users/multi-account-access).
+
+
+### Navigation
+
+#### Open all navigation menu items in new browser tabs by default
+
+By default, selecting a menu link in the left navigation pane opens it in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="125" />
+
+Enabling this preference hides the **Open in New Tab** button on navigation menu links.
+
+However, even when this preference is enabled, the **Open in New Tab** button remains visible for menu items with subfolders, allowing you to click the menu item to view its subfolders and open them in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button-on-folder.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="250" />
 
 ### Theme
 

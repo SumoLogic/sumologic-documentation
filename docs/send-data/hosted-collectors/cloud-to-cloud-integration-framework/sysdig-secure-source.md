@@ -8,10 +8,6 @@ tags:
 description: The Sysdig Secure Source aims to collect the scan results from the scanner using Sysdig API and send them to Sumo Logic.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/sysdig-secure/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/sysdig-secure/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/sysdig-secure/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -60,7 +56,7 @@ When a token is reset, the previously issued token will immediately become inval
 When you create a Sysdig Secure Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Sysdig Secure Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Sysdig Secure**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -106,15 +102,19 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/sysdig-secure/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/sysdig-secure/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/sysdig-secure/example.tf
+```
 
-<a href="/files/c2c/sysdig-secure/example.tf" target="_blank">Download example</a>
+## Limitation
+
+While ingesting runtime `resultId`, this source supports a maximum of 9,000 active instances of `resultId`. Exceeding this limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.
 
 ## FAQ
 

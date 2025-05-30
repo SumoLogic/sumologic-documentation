@@ -57,6 +57,15 @@ The following steps show how to create an Azure AD Application in order to work 
 1. Assign the app the role of User Administrator. This is required to perform action "Reset User Password".
     * **Azure Active Directory** > **Roles and administrators** > **User Administrator** > **Add assignments** > **Your app** > **Add**.
 
+## Configure Azure AD in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-configuration.png')} style={{border:'1px solid gray'}} alt="Azure AD configuration" width="400"/>
+
+For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID documentation](https://learn.microsoft.com/en-us/entra/identity/).
 
 ## Change Log
 

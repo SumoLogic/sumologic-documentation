@@ -21,6 +21,16 @@ Search events and retrieve device details from Fortinet FortiSIEM.
 
 * [FortiSIEM](https://github.com/martinblech/xmltodict/blob/master/LICENSE)
 
+## Configure FortiSIEM in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fortisiem-configuration.png')} style={{border:'1px solid gray'}} alt="FortiSIEM configuration" width="400"/>
+
+For information about FortiSIEM, see [FortiSIEM documentation](https://docs.fortinet.com/product/fortisiem/7.4).
+
 ## Change Log
 
 * June 3, 2019 - First upload

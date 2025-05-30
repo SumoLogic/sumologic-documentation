@@ -7,10 +7,7 @@ tags:
   - zerofox-threat-intel
 description: This integration collects threat indicators using the ZeroFox API and sends them to Sumo Logic for analysis.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/zerofox/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/zerofox/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/zerofox/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/misc/zerofox-logo.png')} alt="ZeroFox threat intel logo" width="50" />
@@ -52,7 +49,7 @@ To configure an ZeroFox Threat Intel source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
 1. **Username**. Enter your ZeroFox username.
 1. **Password**. Enter your Zerofox password.
-1. **Sumo Logic Threat Intel Source ID**. Enter the Sumo Logic namespace where the indicators will be stored.
+1. **Sumo Logic Threat Intel Source ID**. Enter the name you want to use for the ZeroFox source that will be created in the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab in Sumo Logic. The ZeroFox threat intelligence indicators will be stored in this source. Do not use spaces in the name.
 1. **Polling Interval**. The polling interval is set for one hour by default. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the source, click **Save**.
@@ -82,15 +79,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/zerofox/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/zerofox/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/zerofox/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/zerofox/example.tf
+```
 
 ## FAQ
 

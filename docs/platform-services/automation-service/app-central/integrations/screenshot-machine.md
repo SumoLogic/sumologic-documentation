@@ -16,6 +16,16 @@ Utilize Screenshot Machine to create screenshots of suspicious webpages as evide
 * **Screenshot Webpage** (*Enrichment*) - Take a screenshot of a specific webpage for investigation.
 * **Screenshot Webpage V2** (*Enrichment*) - Take a screenshot of a specific webpage for investigation.
 
+## Configure Screenshot Machine in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/screenshot-machine-configuration.png')} style={{border:'1px solid gray'}} alt="Screenshot Machine configuration" width="400"/>
+
+For information about Screenshot Machine, see [Screenshot Machine documentation](https://www.screenshotmachine.com/).
+
 ## Change Log
 
 * October 16, 2019 - First upload

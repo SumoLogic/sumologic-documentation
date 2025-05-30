@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-onedrive.png')} alt="microsoft-onedrive" width="100"/>
 
-***Version: 1.5  
-Updated: July 02, 2024***
+***Version: 1.6  
+Updated: April 25, 2025***
 
 Utilize and manipulate files for incident investigation using OneDrive.
 
@@ -18,6 +18,16 @@ Utilize and manipulate files for incident investigation using OneDrive.
 * **Download File** (*Enrichment*) - Download a file from OneDrive.
 * **Delete File** (*Containment*) - Delete a file from OneDrive.
 * **Upload File** (*Containment*) - Upload a file to OneDrive.
+
+## Configure Microsoft OneDrive in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-onedrive-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft OneDrive configuration" width="400"/>
+
+For information about Microsoft OneDrive, see [OneDrive documentation](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/authentication?view=odsp-graph-online).
 
 ## Change Log
 
@@ -31,3 +41,4 @@ Utilize and manipulate files for incident investigation using OneDrive.
     - Added a new field to the Integration resource named ***Authentication Grant Type***. You can select a value based on the permissions added to your app:
       - Password (Delegated Context) 
       - Client Credentials (Application Context)
+* April 25, 2025 (v1.6) - Changed required=False for username and password parsers in Integration file.

@@ -52,7 +52,7 @@ See an overview of threats detected and traffic passing through AWS WAF.
 
 See details of threats allowed and blocked by AWS WAF.
 
-img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-WAF-Security-Analytics-Traffic.png')} alt="AWS WAF dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-WAF-Security-Analytics-Traffic.png')} alt="AWS WAF dashboards" />
 
 **Traffic by Geographic Location.** Each section contains the same panels with the only difference being traffic allowed or blocked.
 
@@ -71,7 +71,7 @@ img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-WA
 
 See details of allowed and blocked AWS WAF traffic that matches the built-in Sumo Logic threat IP list.
 
-img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-WAF-Security-Analytics-Threat-Intelligence.png')} alt="AWS WAF dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-WAF-Security-Analytics-Threat-Intelligence.png')} alt="AWS WAF dashboards" />
 
 **Unique Threats Map.** Geolocation heatmap of connection locations.
 

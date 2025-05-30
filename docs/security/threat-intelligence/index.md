@@ -15,13 +15,13 @@ See the following articles to learn about Sumo Logic's threat intelligence capab
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/security/threat-intelligence/about-threat-intelligence"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>About Threat Intelligence</h4></a>
-  <p>Get an osverview of Sumo Logic's threat intelligence capabilities.</p>
+  <p>Get an overview of Sumo Logic's threat intelligence capabilities.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/security/threat-intelligence/threat-intelligence-indicators"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Manage Threat Intelligence Indicators</h4></a>
-  <p>Learn how to add and manage indicators from threat intelligence sources.</p>
+  <a href="/docs/security/threat-intelligence/threat-indicators-in-cloud-siem"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Find Threats with Cloud SIEM</h4></a>
+  <p>Learn how to use threat indicators in Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -32,20 +32,14 @@ See the following articles to learn about Sumo Logic's threat intelligence capab
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/security/threat-intelligence/threat-indicators-in-cloud-siem"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Threat Indicators in Cloud SIEM</h4></a>
-  <p>Learn how to use threat indicators in Cloud SIEM.</p>
+  <a href="/docs/security/threat-intelligence/threat-intelligence-indicators"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Manage Threat Intelligence Indicators</h4></a>
+  <p>Learn how to add and manage indicators from threat intelligence sources.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/security/threat-intelligence/upload-formats"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Upload Formats for Threat Intelligence Indicators</h4></a>
   <p>Learn how to format upload files containing threat intelligence indicators.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/security/threat-intelligence/threat-intelligence-mapping"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Threat Intelligence Mapping</h4></a>
-  <p>Learn about mapping of threat intelligence indicators to Sumo Logic.</p>
   </div>
 </div>
 </div>

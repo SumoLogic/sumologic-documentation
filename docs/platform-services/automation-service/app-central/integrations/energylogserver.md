@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.2  
 Updated: Nov 03, 2023***
 
-Query EnergyLogserver by using Elasticsearch API.
+Query Energy Logserver by using Elasticsearch API.
 
 ## Actions
 
@@ -22,6 +22,16 @@ Query EnergyLogserver by using Elasticsearch API.
 
 * [Elasticsearch-py](https://github.com/elastic/elasticsearch-py/blob/master/LICENSE)
 * [Elasticsearch-dsl-pu](https://github.com/elastic/elasticsearch-dsl-py/blob/master/LICENSE)
+
+## Configure Energy Logserver in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/energylogserver-configuration.png')} style={{border:'1px solid gray'}} alt="Energy Logserver configuration" width="400"/>
+
+For information about Energy Logserver, see [Energy Logserver documentation](https://kb.energylogserver.com/en/latest/).
 
 ## Change Log
 

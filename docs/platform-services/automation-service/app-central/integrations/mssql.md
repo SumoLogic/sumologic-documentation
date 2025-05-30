@@ -19,6 +19,16 @@ Query data from MSSQL Database.
 This Integration does not support client-side encryption.
 :::
 
+## Configure MSSQL in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mssql-configuration.png')} style={{border:'1px solid gray'}} alt="MSSQL configuration" width="400"/>
+
+For information about MSSQL, see [MSSQL documentation](https://learn.microsoft.com/en-us/sql/?view=sql-server-ver16).
+
 ## Change Log
 
 * January 30, 2023- First upload

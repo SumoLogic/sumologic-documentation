@@ -52,6 +52,15 @@ Set of scripts to perform actions within Cloud SOAR.
 
 Supervised Active Intelligence Automation
 
+## Configure Incident Tools in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+   * Set the **Cloud SOAR API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
+   * Provide the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/incident-tools-configuration.png')} style={{border:'1px solid gray'}} alt="Incident Tools configuration" width="400"/>
+
 ## Change Log
 
 * June 1, 2023 - First upload

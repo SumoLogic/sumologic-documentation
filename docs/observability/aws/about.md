@@ -11,7 +11,7 @@ AWS provides over 150 discrete services including compute, network, storage, dat
 
 Despite all of these services being a part of AWS, troubleshooting across different services can be problematic when you use separate AWS accounts to manage costs and give teams independent administrative control. Different AWS accounts often have different settings across Availability Zones or Regions, which makes it difficult to get a clear picture of overall application health.
 
-The Sumo Logic AWS Observability solution and Root Cause Explorer pull and analyze data across key AWS services and accounts, establish activity baselines, and determine causes for application incidents and high deviation events.
+The Sumo Logic AWS Observability solution analyze data across key AWS services and accounts, establish activity baselines, and determine causes for application incidents and high deviation events.
 
 :::sumo Micro Lesson
 Watch the following micro lesson to learn about our AWS Observability solution.
@@ -50,7 +50,6 @@ The **AWS Observability Solution** can be deployed across multiple accounts and 
 * Minimize the time it takes to get operational insights across your AWS infrastructure.
 * Identify elements that are subject to specific operational issues across your AWS infrastructure.
 * Minimize the time it takes to assign operational to the correct business units and functional teams in your AWS infrastructure.
-* Expedite troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS infrastructure using the Root Cause Explorer.
 
 The unified platform collects and provides logs, metrics, traces, and metadata for the Application, Microservices, Cloud, Orchestrator, and Container layers. The solution understands how the different datasets and services are connected, and stitches those relationships into an entity workflow that makes it more intuitive for users to get a holistic view of their service.
 
@@ -107,3 +106,9 @@ The following Sumo Logic [AWS Observability Solution apps](/docs/observability/a
 * [AWS Observability Classic Load Balancer](/docs/observability/aws/integrations/aws-classic-load-balancer). The [AWS Observability Classic Load Balancer](/docs/observability/aws/integrations/aws-classic-load-balancer) is a unified logs and metrics app that provides visibility into the health of your [AWS Classic Load Balancer](https://aws.amazon.com/elasticloadbalancing/classic-load-balancer/). The preconfigured dashboards provide insights into latency, request and host status, threat intel, and HTTP backend codes by Availability Zones.
 * [Amazon SNS](/docs/observability/aws/integrations/amazon-sns). The [Amazon SNS](/docs/observability/aws/integrations/amazon-sns) app provides insight into the operations and utilization of your [Amazon SNS](https://aws.amazon.com/sns) service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
 * [Amazon SQS](/docs/observability/aws/integrations/amazon-sqs). The [Amazon SQS](/docs/observability/aws/integrations/amazon-sqs) app provides insight into the operations and utilization of your [Amazon SQS](https://aws.amazon.com/sqs) service. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
+
+## Additional resources
+
+* Blog: [Lightning-fast troubleshooting for AWS: How to find the root cause fast with Sumo Logic](https://www.sumologic.com/blog/aws-observability-fast-troubleshooting/)
+* White paper: [Advancing Observability on AWS with Sumo Logic](https://www.sumologic.com/brief/advancing-observability-on-aws-with-sumo-logic/)
+* Demo: [AWS Logs for Monitoring and Troubleshooting](https://www.sumologic.com/demo/aws-logs-for-monitoring-and-troubleshooting/)

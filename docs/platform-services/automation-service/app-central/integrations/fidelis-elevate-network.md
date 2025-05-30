@@ -21,6 +21,16 @@ Search alerts and retrieve analysis details from Fidelis Network Elevate.
 * **Retrieve Session Info** (*Enrichment*) - Retrieve the session details for the specified alert ID.
 * **Search Into Alerts** (*Enrichment*) - Search alerts based on the specified search filter.
 
+## Configure Fidelis Elevate Network in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fidelis-configuration.png')} style={{border:'1px solid gray'}} alt="Fidelis Elevate configuration" width="400"/>
+
+For information about Fidelis Elevate Network, see [Fidelis documentation](https://fidelissecurity.com/resources/how-tos/).
+
 ## Change Log
 
 * June 3, 2019 - First upload

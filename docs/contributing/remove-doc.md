@@ -1,12 +1,12 @@
 ---
 id: remove-doc
-title: Remove a Doc
-description: Learn how to properly remove a Sumo Logic doc.
+title: Move or Remove a Doc
+description: Learn how to properly move or remove a Sumo Logic doc.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you delete a doc, its URL is also deleted. Visiting the old URL will return a `404 - Page Not Found` error, which negatively impacts customer experience and can damage our SEO.
+When you move a doc or remove it altogether, that deletes its URL. Visiting the old URL will return a `404 - Page Not Found` error, which negatively impacts customer experience and can damage our SEO.
 
 To prevent this, create a 301 redirect. Follow these steps to ensure a smooth transition and maintain the health of our docs site.
 
@@ -31,11 +31,12 @@ As an example, let's say there are two docs called **Nginx App** and **Nginx (Le
 Ensure any internal links pointing to the deleted doc are updated to the new URL.
 
 1. In your GitHub authoring tool, run a search for the URL you're removing. For example, if the legacy URL appears in other documents, replace all instances with the new URL.<br/><img src={useBaseUrl('img/contributing/old-url.png')} alt="Screenshot of a 'Find All' search for the URL to be removed" />
-1. Check with a Sumo Logic subject matter expert to confirm that you can replace all with the new URL.
-
-:::warning
-Never do a "Find All > Replace All", as this can break unrelated items like image paths. Replace each URL on a one-by-one basis.
-:::
+   :::warning
+   Never do a Find All > Replace All, as this can break unrelated items like image paths. Replace each URL on a one-by-one basis.
+   :::
+1. If applicable:
+   * Remove from its parent index.md hub page.
+   * Remove from [Product List](/docs/integrations/product-list/).
 
 ## Step 3: Delete the doc file
 

@@ -29,6 +29,16 @@ Query data and utilize actions on SonicWall Next-Gen Firewall.
 
 For configuration purposes, refer [here](https://www.sonicwall.com/support/technical-documentation/docs/sonicos-7-0-0-0-api/Content/SonicOS_API_Guide/API_Authentication/authentication-methods.htm/).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sonicwall/sonicwall-1.png')} style={{border:'1px solid gray'}} alt="snyk" width="800"/>
 
+## Configure SonicWall in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sonicwall-configuration.png')} style={{border:'1px solid gray'}} alt="SonicWall configuration" width="400"/>
+
+For information about SonicWall, see [SonicWall documentation](https://www.sonicwall.com/support/technical-documentation).
+
 ## Change Log
 
 * April 21, 2021 - First upload

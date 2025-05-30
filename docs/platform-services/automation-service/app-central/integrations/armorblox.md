@@ -20,6 +20,16 @@ Armorblox secures enterprise communications over email and other cloud office ap
 * **List Incidents** *(Enrichment)* - Get a list of all the Incidents detected by Armorblox.
 * **Update Incident Action** *(Containment)* - Update the action to be taken for an incident's objects.
 
+## Configure Armorblox in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/armorblox/armorblox-configuration.png')} style={{border:'1px solid gray'}} alt="Armorblox configuration" width="400"/>
+
+For information about Armorblox, see [Armorblox documentation](https://armorblox.stoplight.io/docs/public-apis/6e3583e334a34-armorblox-api).
+
 ## Change Log
 
 * September 4, 2023 (v1.0) - First upload

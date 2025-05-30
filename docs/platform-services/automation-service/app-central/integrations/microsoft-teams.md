@@ -39,9 +39,9 @@ Microsoft Teams is the ultimate hub for teamwork and intelligent communications.
 
 Each application you want the Microsoft identity platform to perform identity and access management (IAM) needs to be registered. Registering it establishes a trust relationship between your application and the identity provider, the Microsoft identity platform.
 
-**Register an Application**
+**Register an application**
 
-Registering your application establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
+[Registering your application](https://learn.microsoft.com/en-us/graph/auth-register-app-v2#register-an-application) establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
 
 Follow these steps to create the app registration:
 
@@ -371,13 +371,12 @@ Once API permission are added then **Admin** must consent to a grant these permi
 
 For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/api/resources/teams-api-overview?view=graph-rest-1.0**](https://docs.microsoft.com/en-us/graph/api/resources/teams-api-overview?view=graph-rest-1.0)
 
-## Microsoft Teams in Automation Service and Cloud SOAR
+## Configure Microsoft Teams in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for Microsoft Teams integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.
-1. Add two different resources for Application and Delegated context.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-7.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
-1. Populate the resource fields as indicated.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+
+<IntegrationsAuth/>
+
     * **Label**. The resource name.
     * **API URL**. The default Microsoft Graph API URL is 'https://graph.microsoft.com/v1.0'.
     * **Tenant ID**. Directory (Tenant) ID (You can check from you app registration page).
@@ -390,11 +389,9 @@ For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/a
     * **Password**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
     * **Cloud SOAR URL**. Provide the SOAR URL in format 'https://your-cloud-soar-host/incmansuite\_ng' (this field is only required and use in Triggers).
     * **Cloud SOAR JWT Token**. Provide your SOAR JWT which you can copy from your profile section (this field is only required and use in Triggers).
-    * **Team Incident Internal Field Name**. To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1.
-1. Click **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-8.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-9.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
-1. Click **TEST** to test the integration connector. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-10.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="300"/>
-1. You should receive a successful notification in the bottom right corner if resource was tested successfully.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-11.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
+    * **Team Incident Internal Field Name**. To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-teams-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Teams configuration" width="400"/>
+
+For information about Microsoft Teams, see [Microsoft Teams documentation](https://learn.microsoft.com/en-us/microsoftteams/).
 
 ## Change Log
 
