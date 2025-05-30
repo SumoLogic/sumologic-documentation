@@ -7,10 +7,7 @@ tags:
   - kandji-edr
 description: The Kandji Source provides a secure endpoint to receive threat details, devices list, device activities, device details, and device app information from the Kandji platform.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/kandji/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/kandji/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/kandji/example.tf';
+
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -34,8 +31,8 @@ Kandji is the Apple device management and security platform that empowers secure
 
 The Kandji source requires you to provide the Endpoint URL and Bearer Token. Follow the below steps to generate the required values:
 
-- To generate the **Endpoint URL**, follow the instructions mentioned in the [Kandji documentation](https://api-docs.kandji.io/#intro). 
-- To generate the **Bearer Token**, follow the instructions mentioned in the [Kandji documentation](https://support.kandji.io/support/solutions/articles/72000560412-kandji-api). 
+- To generate the **Endpoint URL**, follow the instructions mentioned in the [Kandji documentation](https://api-docs.kandji.io/#intro).
+- To generate the **Bearer Token**, follow the instructions mentioned in the [Kandji documentation](https://support.kandji.io/support/solutions/articles/72000560412-kandji-api).
 
 ### Source configuration
 
@@ -51,11 +48,11 @@ While retrieving threats, the source can face data loss due to API limitations a
 When you create a Kandji Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure Kandji Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select the **Kandji** icon.
 1. Enter a **Name** to display for the Source in Sumo Logic. The description is optional.
-1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`. 
+1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
@@ -70,7 +67,7 @@ To configure Kandji Source:
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
@@ -98,15 +95,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/kandji/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/kandji/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/kandji/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/kandji/example.tf
+```
 
 ## FAQ
 
