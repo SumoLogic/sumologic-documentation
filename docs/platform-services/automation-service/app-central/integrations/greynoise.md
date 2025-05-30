@@ -25,8 +25,23 @@ GreyNoise tells security analysts what not to worry about. They do this by curat
 ## Configure GreyNoise in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your GreyNoise API URL, for example, `https://api.greynoise.io`
+
+* **API Key**. Enter your GreyNoise [API key](https://docs.greynoise.io/docs/getting-started).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* **CIDR IP (Daemon)**. Enter the [CIDR IP](CIDR) used to create the alert.
+
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/greynoise-configuration.png')} style={{border:'1px solid gray'}} alt="GreyNoise configuration" width="400"/>
 
