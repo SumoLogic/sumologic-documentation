@@ -33,10 +33,13 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 1. [Sign in](https://start.1password.com/signin) to your 1Password account and click [Integrations](https://my.1password.com/integrations/active) in the sidebar.
 1. Switch to the **Directory** tab (or use [this direct link to the Directory tab](https://sumologictestingapi.1password.com/integrations/directory)).
 1. Go to the **Events Reporting** section and click the **Sumo Logic** integration.
-1. In the **System Name** field, enter the name of your choice, then click **Add Integration**.
-1. In the **Set up token** section, create and issue the token.
-1. Copy or save the token securely.
-1. Click **View Integration Details** to confirm.
+1. In the **System Name** field, enter the name of your choice (default value `Sumo Logic` should be fine in most cases), then click **Add Integration**.
+1. In the **Set up token** section:
+   1. Enter a **Token Name**. This can be any string that will help you recognize tokens generated for different environments like production, staging, and dev.
+   1. Under **Events to Report**, leave enabled event sources which you want to share using the token.
+   1. When you're done, click **Issue Token**.
+1. In the **Save token** section, click the copy icon (next to the token string) to copy it to your clipboard. You can also click **Save in 1Password** to store it for your future reference.
+1. Lastly, click **View Integration Details** to see the summary, then click **Learn More** pointing to 1Password App installation manual.
 
 ### Source configuration
 
