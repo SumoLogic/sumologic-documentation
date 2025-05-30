@@ -2554,6 +2554,7 @@ integrations: [
           'integrations/saas-cloud/istio',
           'integrations/saas-cloud/jamf',
           'integrations/saas-cloud/jumpcloud-directory-insights',
+          'integrations/saas-cloud/kaltura',
           'integrations/saas-cloud/kandji',
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/lastpass',
