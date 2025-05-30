@@ -33,23 +33,31 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 1. [Sign in](https://start.1password.com/signin) to your 1Password account and click [Integrations](https://my.1password.com/integrations/active) in the sidebar.
 1. Switch to the **Directory** tab (or use [this direct link to the Directory tab](https://sumologictestingapi.1password.com/integrations/directory)).
 1. Go to the **Events Reporting** section and click the **Sumo Logic** integration.
-1. In the **System Name** field, enter the name of your choice, then click **Add Integration**.
-1. In the **Set up token** section, create and issue the token.
-1. Copy or save the token securely.
-1. Click **View Integration Details** to confirm.
+1. In the **System Name** field, enter the name of your choice (default value `Sumo Logic` should be fine in most cases), then click **Add Integration**.
+1. In the **Set up token** section:
+   1. Enter a **Token Name**. This can be any string that will help you recognize tokens generated for different environments like production, staging, and dev.
+   1. Under **Events to Report**, leave enabled event sources which you want to share using the token.
+   1. When you're done, click **Issue Token**.
+1. In the **Save token** section, click the copy icon (next to the token string) to copy it to your clipboard. You can also click **Save in 1Password** to store it for your future reference.
+1. Lastly, click **View Integration Details** to see the summary, then click **Learn More** pointing to 1Password App installation manual.
 
 ### Source configuration
 
-1. Go to **Manage Data > Collection > Collection** or **Configuration > Data Collection**.
-1. Click **Add Source** next to a Hosted Collector.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **1Password**.
-1. Enter a **Name**, and optionally a **Description** and **Source Category**.
-1. Check **Forward to SIEM** to send data to [Cloud SIEM](/docs/cse).<br/><ForwardToSiem/>
-1. (Optional) Add **Fields** as metadata.
-1. Enter **Base URL** and **API Token**.
-1. Select **Supported APIs to collect**.
-1. Configure any **Processing Rules** if needed.
-1. Click **Submit**.
+1. Enter a **Name** for the Source. The **description** is optional.
+1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse).  <br/><ForwardToSiem/>
+1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
+   * Define the fields you want to associate, each field needs a name (key) and value.
+      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+1. **Base URL**. Provide your 1Password customer-specific domain, for example `events.1password.com`.
+1. **API Token**. Enter the [1Password API token](#vendor-configuration).
+1. **Supported APIs to collect**. Select one or more of the available APIs, **Item Usage** and **Sign-in Attempts**.
+1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
+1. When you are finished configuring the Source, click **Submit**.
 
 ## Metadata fields
 
@@ -74,13 +82,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 | Parameter | Type | Required | Default | Description | Example |
 |:--|:--|:--|:--|:--|:--|
-| name | String | Yes | `null` | Name of the source. | `"mySource"` |
-| description | String | No | `null` | Source description. | `"Testing source"` |
-| category | String | No | `null` | Source category. | `"mySource/test"` |
-| fields | JSON Object | No | `null` | Metadata fields. | `{"_siemForward": false}` |
-| base_url | String | Yes | `null` | Customer-specific domain. | `"events.1password.com"` |
-| api_token | String | Yes | `null` | Token for authentication. | `"abc123xyz"` |
-| supported_apis | Array[String] | Yes | `null` | List of APIs to collect. | `["sign-in","itemUsage"]` |
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| base_url | String | Yes | `null` | Provide your 1Password customer-specific domain, such as: <code>events.1password.com</code> |  `"events.1password.com"` |
+| api_token | String | Yes | `null` | Provide the [1Password API token](#vendor-configuration) you want to use to authenticate collection requests. |  `"acsac25$"` |
+| supported_apis | String | Yes | `null` | Define one or more of the available APIs to collect |  `["sign-in","itemUsage"]` |
 
 ### JSON example
 
