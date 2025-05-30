@@ -14,7 +14,7 @@ At Sumo Logic, we pride ourselves on being a leading SaaS log analytics company 
 
 We’re always looking at ways to innovate, drive more value, and provide a seamless experience for our customers. In this vein we are discontinuing our on-premise network sensor feature for Sumo Logic Cloud SIEM. This end-of-life notification for Sumo Logic's network sensor means the feature will no longer receive support or updates based on the timelines listed below. We believe this to be the best course of action to keep our development focus on delivering world class detection and response capabilities.
 
-We fully recognize that this decision may have implications for your business operations, and we are committed to planning with you and your security team to minimize disruptions. We fully support a customer or partner managed [Zeek network sensor](/docs/cse/sensors/ingest-zeek-logs/) as a data source for our Cloud SIEM product that will provide equivalent monitoring of your network.
+We fully recognize that this decision may have implications for your business operations, and we are committed to planning with you and your security team to minimize disruptions. We fully support a customer or partner managed [Zeek network sensor](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/corelight-zeek/) as a data source for our Cloud SIEM product that will provide equivalent monitoring of your network.
 
 We're confident that our highly scalable, cloud-native security solutions can continue to support your security operations. Let's discuss how we can help you achieve your security goals.
 
