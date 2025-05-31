@@ -37,7 +37,7 @@ Using the RUM HTTP Traces App for Manual Testing.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
--->
+--> 
 :::
 
 ## Prerequisites
