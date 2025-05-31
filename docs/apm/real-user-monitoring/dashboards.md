@@ -43,7 +43,7 @@ Once the RUM app has been installed, use the Real User Monitoring view to gain v
    * **deployment.environment**. corresponds to your development environment. To enable this, add the `deployment.environment` tag and desired value (like `us-west-1`, `prod`, `dev`) to your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). Supports up to 10 **deployment.environment** values.
    * **Action Type**: can be one of:
      * **document loads**. Representing loading of actual documents and their resources into the browser
-     * **XHR actions**. Representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or
+     * **XHR actions**. Previously used to represent AJAX-style interactions (XHR metrics are currently unsupported), or
      * **route changes**. Single-page-app specific way to navigate to a new page/view without having to load a new document.
    * **Action Name**. Automatically generated from URLs. No configuration is required. The specifics of it will depend on action type. Action names can contain asterisks (`*`) to replace automatically-detected dynamic parts of the URL. If you have action names that overlap, the action name with an asterisk contains data for page loads NOT contained in more specific action names. For example, `http://www.site.com/path/page.htm` does not contain actions from `http://www.site.com/path/*`.
 
@@ -58,7 +58,7 @@ The **RUM Overview** dashboards (**Application**, **Service**, **Service with En
 
 Use these dashboards to:
 * Analyze load and paint timings for page document loads by application, service, or action.
-* View information about core web vitals, XHR processing times/errors, and log errors.
+* View information about core web vitals and log errors (XHR processing metrics are currently unsupported).
 * Understand what top browsers, operating systems, and geolocations are active with your website.
 
 You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts.
@@ -78,7 +78,7 @@ The **RUM - TopN - Application** and **RUM - TopN - Application Service** dashbo
 Use these dashboards to:
 * Find out top N browsers, operating systems, and geolocations by load or requests.
 * Understand the slowest and fastest browsers from a rendering perspective or geographical locations from a network perspective.
-* Understand XHR and log errors your users are experiencing.
+* Understand log errors your users are experiencing (XHR metrics are currently unsupported).
 * Find out which browsers and operating systems are in use by your users and where are they are geographically located.
 
 You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts. You can also define the top N number for all charts.
@@ -91,7 +91,7 @@ The **RUM Performance Analytics** dashboards for **Application**, **Service**, a
 
 Use these dashboards to:
 * Filter data for specific combinations of browser, operating system, and/or geolocation.
-* Understand XHR, load, timing metrics for the selected user cohort.
+* Understand load and timing metrics for the selected user cohort (XHR metrics are currently unsupported).
 * Compare your selected timings against data for a different time period by selecting the appropriate option in the compare_with dropdown.
 
 You can click on any data point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point. For cross-dimensional metrics, only the average statistic type is available.
@@ -131,8 +131,6 @@ Because errors do not always have to be connected with user actions, it is ok to
 In addition to that, we also aggregate that information in form of log-query based panels and display on various dashboards:
 
 <img src={useBaseUrl('img/rum/logerrors2.png')} alt="Real User Monitoring log errors per second graphic" />
-
-<img src={useBaseUrl('img/rum/logerrors-xhr.png')} alt="Real User Monitoring log errors XHR per second graphic" />
 
 <img src={useBaseUrl('img/rum/logerrors-by-browser.png')} alt="Real User Monitoring log errors by browser, operating system, and geolocations graphic" />
 
