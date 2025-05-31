@@ -1,5 +1,5 @@
 export const features = [
-  // Tab 0: SIEM (SLG)
+  // Tab 0: Security Operations: TDIR, UEBA, Automation, Playbooks
   [
     {
       title: 'Cloud SIEM',
@@ -12,16 +12,28 @@ export const features = [
       imageUrl: 'img/icons/alerts.png',
       description: 'User behavior analytics and unified threat insights.',
       link: 'docs/cse/ueba',
+   },
+   {
+     title: 'Logs for Security Overview',
+     imageUrl: 'img/icons/logs.png',
+     description: 'Collect and analyze security data using pre-built dashboards, apps, and queries across on-prem and cloud environments.',
+     link: 'docs/security/additional-security-features',
+   },
+   {
+       title: 'Cloud SOAR',
+       imageUrl: 'img/icons/security/soar-2-color-icon.png',
+       description: 'Automate incident response and case management across tools.',
+       link: 'docs/cloud-soar',
     },
-    {
+   {
       title: 'Security Playbooks',
-      imageUrl: 'img/icons/security/soar-2-color-icon.png',
-      description: 'Automate threat responses and incident workflows.',
-      link: 'docs/cloud-soar',
-    },
+      imageUrl: 'img/icons/security/playbook.png',
+      description: 'Prebuilt response workflows to streamline investigations.',
+      link: 'docs/platform-services/automation-service/automation-service-playbooks',
+   },
   ],
 
-  // Tab 1: Logs for Security (SLG)
+  // Tab 1: Log Management: Audit, Threat Intel, Compliance Dashboards
   [
     {
       title: 'Audit Logging',
@@ -41,9 +53,21 @@ export const features = [
       description: 'Stay compliant with prebuilt security content.',
       link: 'docs/compliance/dashboards',
     },
+    {
+      title: 'FLEX Logs + CIS Dashboard',
+      imageUrl: 'img/icons/logs.png',
+      description: 'Prebuilt monitors and dashboards for GCP and Azure.',
+      link: 'docs/observability/cis-dashboard',
+    },
+    {
+      title: 'Cloud Security Monitoring',
+      imageUrl: 'img/icons/observe.png',
+      description: 'Detect misconfigurations and threats in cloud environments.',
+      link: 'docs/integrations/cloud-security-monitoring-analytics',
+    },
   ],
 
-  // Tab 2: Logs for Security (PLG)
+  // Tab 2: Cloud Infrastructure: CloudTrail, K8s Audit, Cloud Security
   [
     {
       title: 'CloudTrail Analytics',
@@ -63,9 +87,21 @@ export const features = [
       description: 'Visualize and alert on cloud security anomalies.',
       link: 'docs/security',
     },
+    {
+      title: 'Kickstart Data',
+      imageUrl: 'img/icons/data.png',
+      description: 'Start your PLG experience with preloaded log data.',
+      link: 'docs/send-data/kickstart-data',
+    },
+    {
+      title: 'Log Analytics Platform',
+      imageUrl: 'img/icons/manage.png',
+      description: 'Explore logs with dashboards and search insights.',
+      link: 'docs/log-analytics',
+    },
   ],
 
-  // Tab 3: Monitoring & Troubleshooting (SLG)
+  // Tab 3: Application Performance: Infra Monitoring, APM, Metrics, AI Alerts
   [
     {
       title: 'Infrastructure Monitoring',
@@ -85,9 +121,21 @@ export const features = [
       description: 'Detect bottlenecks and throughput issues.',
       link: 'docs/network',
     },
+    {
+      title: 'FLEX Logs + Metrics',
+      imageUrl: 'img/icons/metrics.png',
+      description: 'Infrastructure reliability using logs and performance data.',
+      link: 'docs/metrics',
+    },
+    {
+      title: 'Otel Remote Mgmt + AI-Driven Alerts',
+      imageUrl: 'img/icons/observe.png',
+      description: 'Manage telemetry pipelines and respond faster.',
+      link: 'docs/manage/otel-pipeline',
+    },
   ],
 
-  // Tab 4: Monitoring & Troubleshooting (PLG)
+  // Tab 4: Dashboards & Alerts: Dashboards, Real-time Views, Alerts
   [
     {
       title: 'OpenTelemetry Observability',
@@ -107,9 +155,33 @@ export const features = [
       description: 'Track pod and container health across clusters.',
       link: 'docs/kubernetes',
     },
+    {
+      title: 'Start Free Trial',
+      imageUrl: 'img/icons/cloud/start.png',
+      description: 'Explore Sumo Logic with no commitment.',
+      link: 'docs/get-started/quickstart',
+    },
+    {
+      title: 'LiveTail and Real-time Views',
+      imageUrl: 'img/icons/live.png',
+      description: 'Stream logs in real time for immediate feedback.',
+      link: 'docs/live-tail',
+    },
+    {
+      title: 'Distributed Tracing',
+      imageUrl: 'img/icons/apm.png',
+      description: 'Trace requests end-to-end to uncover latency or errors.',
+      link: 'docs/apm/traces',
+    },
+    {
+      title: 'CoPilot',
+      imageUrl: 'img/icons/sumo-ai.png',
+      description: 'Let Sumo Logic’s AI assistant guide your analysis.',
+      link: 'docs/capabilities/copilot',
+    },
   ],
 
-  // Tab 5: Developer & PLG Onboarding
+  // Tab 5: Advanced Analytics: APIs, Developer Apps, Copilot
   [
     {
       title: 'Get Started with Sumo Logic',
@@ -128,6 +200,18 @@ export const features = [
       imageUrl: 'img/integrations/integrations.png',
       description: 'Extend platform functionality with custom apps.',
       link: 'docs/developer',
+    },
+    {
+      title: 'Start Free Trial',
+      imageUrl: 'img/icons/cloud/start.png',
+      description: 'Explore Sumo Logic with no commitment.',
+      link: 'docs/get-started/quickstart',
+    },
+    {
+      title: 'LiveTail and Real-time Views',
+      imageUrl: 'img/icons/live.png',
+      description: 'Stream logs in real time for immediate feedback.',
+      link: 'docs/live-tail',
     },
   ],
 ];
