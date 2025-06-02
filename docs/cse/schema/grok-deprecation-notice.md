@@ -22,7 +22,7 @@ Documentation on setting up C2C integrations are available publicly at [Cloud-to
 
 ## Setting up Sumo Logic parsers
 
-To set up Sumo Logic parsers, we recommend following [Cloud SIEM ingestion best practices](/docs/cse/ingestion/cse-ingestion-best-practices/#cloud-siem-ingestion-best-practices) as described below.
+To set up Sumo Logic parsers, we recommend following [Cloud SIEM ingestion best practices](/docs/cse/ingestion/cse-ingestion-best-practices/) as described below.
 
 If there isn’t a C2C connector for your data source, your next best option is to use a Sumo Logic Source (running on an Installed Collector or a Hosted Collector, depending on the data source)—and a Sumo Logic parser, if we have one for the data source.   
 
