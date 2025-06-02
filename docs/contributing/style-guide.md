@@ -757,7 +757,7 @@ Use screenshots only when they clarify complex instructions. Our UI changes ofte
 
 Make sure screenshots are large enough to be legible, but never wider than 800px. Avoid oversized images.
 
-By default, images that you insert into a page are set to be responsive - resized for the type of device the reader is using.
+By default, images that you insert into a page are set to be responsive-resized for the type of device the reader is using.
 
 Use the following syntax to add screenshots:
 
