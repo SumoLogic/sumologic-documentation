@@ -36,15 +36,12 @@ We recommend the following ingestion methods, starting with the most preferred:
 
     When you forward logs to Cloud SIEM for parser processing, there are two bits of important configuration: 
     1. Configure the source to forward logs. To configure an HTTP source to send log messages to Cloud SIEM, click the [**SIEM Processing** checkbox](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source). You can configure other source types to send data to Cloud SIEM by assigning a field named `_siemforward`, set to *true*, to the source. For example:  
-
         ```
         _siemforward=true
         ```
-
-        :::note
-        A field can also be assigned at the collector level, in which case sources on the collector inherit the field setting, unless the same field is defined with a different value at the source level.
-        :::
-
+         :::note
+         A field can also be assigned at the collector level, in which case sources on the collector inherit the field setting, unless the same field is defined with a different value at the source level.
+         :::
     2. Configure the source with the path to the appropriate parser, by assigning a field named `_parser`, whose value is the path to parser, for example:  
         ```
         _parser=/Parsers/System/AWS/AWS Network Firewall
