@@ -91,15 +91,15 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
 
 | Region | Service<br/>(login URL) | API endpoint | Collection | Syslog | OTel |
 |:--|:--|:--|:--|:--|:--|
-| AU | [service.au.sumologic.com](service.au.sumologic.com) | `api.au.sumologic.com/api/` | `collectors.au.sumologic.com` | `syslog.collection.au.sumologic.com` | `open-collectors.au.sumologic.com` |
-| CA | [service.ca.sumologic.com](service.ca.sumologic.com) | `api.ca.sumologic.com/api/` | `collectors.ca.sumologic.com` | `syslog.collection.ca.sumologic.com` | `open-collectors.ca.sumologic.com` |
-| DE | [service.de.sumologic.com](service.de.sumologic.com) | `api.de.sumologic.com/api/` | `collectors.de.sumologic.com` | `syslog.collection.de.sumologic.com` | `open-collectors.de.sumologic.com` |
-| EU | [service.eu.sumologic.com](service.eu.sumologic.com) | `api.eu.sumologic.com/api/` | `collectors.eu.sumologic.com`<br/>`endpoint1.collection.eu.sumologic.com` | `syslog.collection.eu.sumologic.com` | `open-collectors.eu.sumologic.com` |
-| FED | [service.fed.sumologic.com](service.fed.sumologic.com) | `api.fed.sumologic.com/api/` | `collectors.fed.sumologic.com` | `syslog.collection.fed.sumologic.com` | `open-collectors.fed.sumologic.com` |
-| JP | [service.jp.sumologic.com](service.jp.sumologic.com) | `api.jp.sumologic.com/api/` | `collectors.jp.sumologic.com` | `syslog.collection.jp.sumologic.com` | `open-collectors.jp.sumologic.com` |
-| KR | [service.kr.sumologic.com](service.kr.sumologic.com) | `api.kr.sumologic.com/api/` | `collectors.kr.sumologic.com` | `syslog.collection.kr.sumologic.com` | `open-collectors.kr.sumologic.com` |
-| US1 | [service.sumologic.com](service.sumologic.com) | `api.sumologic.com/api/` | `collectors.sumologic.com`<br/>`endpoint1-5.collection.sumologic.com` | `syslog.collection.us1.sumologic.com` | `open-collectors.sumologic.com` |
-| US2 | [service.us2.sumologic.com](service.us2.sumologic.com) | `api.us2.sumologic.com/api/` | `collectors.us2.sumologic.com`<br/>`endpoint1-9.collection.us2.sumologic.com` | `syslog.collection.us2.sumologic.com` | `open-collectors.us2.sumologic.com` |
+| AU | [service.au.sumologic.com](https://service.au.sumologic.com) | `api.au.sumologic.com/api/` | `collectors.au.sumologic.com` | `syslog.collection.au.sumologic.com` | `open-collectors.au.sumologic.com` |
+| CA | [service.ca.sumologic.com](https://service.ca.sumologic.com) | `api.ca.sumologic.com/api/` | `collectors.ca.sumologic.com` | `syslog.collection.ca.sumologic.com` | `open-collectors.ca.sumologic.com` |
+| DE | [service.de.sumologic.com](https://service.de.sumologic.com) | `api.de.sumologic.com/api/` | `collectors.de.sumologic.com` | `syslog.collection.de.sumologic.com` | `open-collectors.de.sumologic.com` |
+| EU | [service.eu.sumologic.com](https://service.eu.sumologic.com) | `api.eu.sumologic.com/api/` | `collectors.eu.sumologic.com`<br/>`endpoint1.collection.eu.sumologic.com` | `syslog.collection.eu.sumologic.com` | `open-collectors.eu.sumologic.com` |
+| FED | [service.fed.sumologic.com](https://service.fed.sumologic.com) | `api.fed.sumologic.com/api/` | `collectors.fed.sumologic.com` | `syslog.collection.fed.sumologic.com` | `open-collectors.fed.sumologic.com` |
+| JP | [service.jp.sumologic.com](https://service.jp.sumologic.com) | `api.jp.sumologic.com/api/` | `collectors.jp.sumologic.com` | `syslog.collection.jp.sumologic.com` | `open-collectors.jp.sumologic.com` |
+| KR | [service.kr.sumologic.com](https://service.kr.sumologic.com) | `api.kr.sumologic.com/api/` | `collectors.kr.sumologic.com` | `syslog.collection.kr.sumologic.com` | `open-collectors.kr.sumologic.com` |
+| US1 | [service.sumologic.com](https://service.sumologic.com) | `api.sumologic.com/api/` | `collectors.sumologic.com`<br/>`endpoint1-5.collection.sumologic.com` | `syslog.collection.us1.sumologic.com` | `open-collectors.sumologic.com` |
+| US2 | [service.us2.sumologic.com](https://service.us2.sumologic.com) | `api.us2.sumologic.com/api/` | `collectors.us2.sumologic.com`<br/>`endpoint1-9.collection.us2.sumologic.com` | `syslog.collection.us2.sumologic.com` | `open-collectors.us2.sumologic.com` |
 
 </div>
 
