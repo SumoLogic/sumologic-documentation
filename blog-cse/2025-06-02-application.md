@@ -1,5 +1,5 @@
 ---
-title: May 13, 2025 - Application Update
+title: June 2, 2025 - Application Update
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - outlier rules
