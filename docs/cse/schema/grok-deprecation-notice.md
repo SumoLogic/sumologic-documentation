@@ -49,4 +49,4 @@ To check if there’s a parser for your data source, go to the **Manage Data > L
 * [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/)
 * [Ingestion Sources for Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/)
 * [Cloud-to-Cloud Integration Framework Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) 
-* [Parser Troubleshooting Tips](/docs/cse/schema/parser-troubleshooting-tips/)
+* [Troubleshoot Parsers](/docs/cse/troubleshoot/troubleshoot-parsers//)
