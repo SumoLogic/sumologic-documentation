@@ -7,10 +7,7 @@ tags:
   - webex
 description: Learn how to collect admin audit events using Webex API.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/webex/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/webex/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/webex/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/webex-logo.png')} alt="webex-logo" width="120" />
@@ -55,7 +52,7 @@ Follow the below instructions to generate OAuth 2.0 Authorization Code.
 1. It prompted, sign in to your admin Webex account.
 1. Click **Accept**. <br/><img src={useBaseUrl('img/send-data/accept-page.png')} alt="accept-page" style={{border: '1px solid gray'}} width="400" />
 1. Ignore the error message in the webpage.<br/><img src={useBaseUrl('img/send-data/code-url.png')} alt="code-url" style={{border: '1px solid gray'}} width="700" /><br/>
-   Copy and save the code in the URL, as shown in the following example. 
+   Copy and save the code in the URL, as shown in the following example.
    ```bash
    https://localhost/?code={{REDACTED_AUTHORIZATION_CODE}}&state=set_state_here
    ```
@@ -74,7 +71,7 @@ Follow the below instructions to colllect your Organization ID.
 When you create an Webex source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Webex source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Webex**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -110,19 +107,19 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | clientId | String | Yes | `null` | Client ID of the Webex Integration created for Sumo Logic from the new Webex Integration app. |  |
 | clientSecret | String | Yes | `null` | Client Secret of the Webex Integration created for Sumo Logic from the new Webex Integration app. |  |
 | code | String | Yes | `null` | Code of the Webex Integration created for Sumo Logic. |  |
-| orgId | String | Yes | `null` | Orgaization Id of the customers Webex account from where you want to collect the audit event from. |  |
+| orgId | String | Yes | `null` | Organization Id of the customers Webex account from where you want to collect the audit event from. |  |
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/webex/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/webex/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/webex/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/webex/example.tf
+```
 
 ## FAQ
 
