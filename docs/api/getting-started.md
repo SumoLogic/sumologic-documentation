@@ -87,103 +87,21 @@ Sumo Logic has several deployments that are assigned depending on the geographic
 
 Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct your API client to the correct Sumo Logic API URL.
 
-<table>
-  <tr>
-   <td>Deployment</td>
-   <td>Service Endpoint (login URL)</td>
-   <td>API Endpoint</td>
-   <td>Collection Endpoint</td>
-   <td>Cloud Syslog Endpoint</td>
-   <td>OpenTelemetry Collector Endpoint</td>
-  </tr>
-  <tr>
-   <td>AU</td>
-   <td>https://service.au.sumologic.com</td>
-   <td>https://api.au.sumologic.com/api/</td>
-   <td>https://collectors.au.sumologic.com</td>
-   <td>syslog.collection.au.sumologic.com</td>
-   <td>https://open-collectors.au.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>CA</td>
-   <td>https://service.ca.sumologic.com</td>
-   <td>https://api.ca.sumologic.com/api/</td>
-   <td>https://collectors.ca.sumologic.com</td>
-   <td>syslog.collection.ca.sumologic.com</td>
-   <td>https://open-collectors.ca.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>DE</td>
-   <td>https://service.de.sumologic.com</td>
-   <td>https://api.de.sumologic.com/api/</td>
-   <td>https://collectors.de.sumologic.com</td>
-   <td>syslog.collection.de.sumologic.com</td>
-   <td>https://open-collectors.de.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>EU</td>
-   <td>https://service.eu.sumologic.com</td>
-   <td>https://api.eu.sumologic.com/api/</td>
-   <td>https://collectors.eu.sumologic.com<br/>
-   https://endpoint1.collection.eu.sumologic.com</td>
-   <td>syslog.collection.eu.sumologic.com</td>
-   <td>https://open-collectors.eu.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>FED</td>
-   <td>https://service.fed.sumologic.com</td>
-   <td>https://api.fed.sumologic.com/api/</td>
-   <td>https://collectors.fed.sumologic.com</td>
-   <td>syslog.collection.fed.sumologic.com</td>
-   <td>https://open-collectors.fed.sumologic.com/</td>
-  </tr>
-  <tr>
-   <td>JP</td>
-   <td>https://service.jp.sumologic.com</td>
-   <td>https://api.jp.sumologic.com/api/</td>
-   <td>https://collectors.jp.sumologic.com</td>
-   <td>syslog.collection.jp.sumologic.com</td>
-   <td>https://open-collectors.jp.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>KR</td>
-   <td>https://service.kr.sumologic.com</td>
-   <td>https://api.kr.sumologic.com/api/</td>
-   <td>https://collectors.kr.sumologic.com</td>
-   <td>syslog.collection.kr.sumologic.com</td>
-   <td>https://open-collectors.kr.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>US1</td>
-   <td>https://service.sumologic.com/</td>
-   <td>https://api.sumologic.com/api/</td>
-   <td>https://collectors.sumologic.com<br/>
-   https://endpoint1.collection.sumologic.com<br/>
-   https://endpoint2.collection.sumologic.com<br/>
-   https://endpoint3.collection.sumologic.com<br/>
-   https://endpoint4.collection.sumologic.com<br/>
-   https://endpoint5.collection.sumologic.com</td>
-   <td>syslog.collection.us1.sumologic.com</td>
-   <td>https://open-collectors.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>US2</td>
-   <td>https://service.us2.sumologic.com</td>
-   <td>https://api.us2.sumologic.com/api/</td>
-   <td>https://collectors.us2.sumologic.com<br/>
-https://endpoint1.collection.us2.sumologic.com<br/>
-https://endpoint2.collection.us2.sumologic.com<br/>
-https://endpoint3.collection.us2.sumologic.com<br/>
-https://endpoint4.collection.us2.sumologic.com<br/>
-https://endpoint5.collection.us2.sumologic.com<br/>
-https://endpoint6.collection.us2.sumologic.com<br/>
-https://endpoint7.collection.us2.sumologic.com<br/>
-https://endpoint8.collection.us2.sumologic.com<br/>
-https://endpoint9.collection.us2.sumologic.com/</td>
-   <td>syslog.collection.us2.sumologic.com</td>
-   <td>https://open-collectors.us2.sumologic.com</td>
-  </tr>
-  </table>
+<div class="responsive-table">
+
+| Region | Service<br/>(login URL) | API endpoint | Collection | Syslog | OTel |
+|:--|:--|:--|:--|:--|:--|
+| AU | [service.au.sumologic.com](https://service.au.sumologic.com) | `api.au.sumologic.com/api/` | `collectors.au.sumologic.com` | `syslog.collection.au.sumologic.com` | `open-collectors.au.sumologic.com` |
+| CA | [service.ca.sumologic.com](https://service.ca.sumologic.com) | `api.ca.sumologic.com/api/` | `collectors.ca.sumologic.com` | `syslog.collection.ca.sumologic.com` | `open-collectors.ca.sumologic.com` |
+| DE | [service.de.sumologic.com](https://service.de.sumologic.com) | `api.de.sumologic.com/api/` | `collectors.de.sumologic.com` | `syslog.collection.de.sumologic.com` | `open-collectors.de.sumologic.com` |
+| EU | [service.eu.sumologic.com](https://service.eu.sumologic.com) | `api.eu.sumologic.com/api/` | `collectors.eu.sumologic.com`<br/>`endpoint1.collection.eu.sumologic.com` | `syslog.collection.eu.sumologic.com` | `open-collectors.eu.sumologic.com` |
+| FED | [service.fed.sumologic.com](https://service.fed.sumologic.com) | `api.fed.sumologic.com/api/` | `collectors.fed.sumologic.com` | `syslog.collection.fed.sumologic.com` | `open-collectors.fed.sumologic.com` |
+| JP | [service.jp.sumologic.com](https://service.jp.sumologic.com) | `api.jp.sumologic.com/api/` | `collectors.jp.sumologic.com` | `syslog.collection.jp.sumologic.com` | `open-collectors.jp.sumologic.com` |
+| KR | [service.kr.sumologic.com](https://service.kr.sumologic.com) | `api.kr.sumologic.com/api/` | `collectors.kr.sumologic.com` | `syslog.collection.kr.sumologic.com` | `open-collectors.kr.sumologic.com` |
+| US1 | [service.sumologic.com](https://service.sumologic.com) | `api.sumologic.com/api/` | `collectors.sumologic.com`<br/>`endpoint1-5.collection.sumologic.com` | `syslog.collection.us1.sumologic.com` | `open-collectors.sumologic.com` |
+| US2 | [service.us2.sumologic.com](https://service.us2.sumologic.com) | `api.us2.sumologic.com/api/` | `collectors.us2.sumologic.com`<br/>`endpoint1-9.collection.us2.sumologic.com` | `syslog.collection.us2.sumologic.com` | `open-collectors.us2.sumologic.com` |
+
+</div>
 
 ### Which endpoint should I should use?
 
