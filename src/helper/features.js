@@ -1,217 +1,111 @@
 export const features = [
-  // Tab 0: Security Operations: TDIR, UEBA, Automation, Playbooks
+  // Tab 0: Observability
   [
     {
-      title: 'Cloud SIEM',
-      imageUrl: 'img/icons/security/cloud-siem.png',
-      description: 'Threat detection, investigation, and automated response.',
-      link: 'docs/cse',
-    },
-    {
-      title: 'UEBA and Threat Intelligence',
-      imageUrl: 'img/icons/alerts.png',
-      description: 'User behavior analytics and unified threat insights.',
-      link: 'docs/cse/ueba',
-   },
-   {
-     title: 'Logs for Security Overview',
-     imageUrl: 'img/icons/logs.png',
-     description: 'Collect and analyze security data using pre-built dashboards, apps, and queries across on-prem and cloud environments.',
-     link: 'docs/security/additional-security-features',
-   },
-   {
-       title: 'Cloud SOAR',
-       imageUrl: 'img/icons/security/soar-2-color-icon.png',
-       description: 'Automate incident response and case management across tools.',
-       link: 'docs/cloud-soar',
-    },
-   {
-      title: 'Security Playbooks',
-      imageUrl: 'img/icons/security/playbook.png',
-      description: 'Prebuilt response workflows to streamline investigations.',
-      link: 'docs/platform-services/automation-service/automation-service-playbooks',
-   },
-  ],
-
-  // Tab 1: Log Management: Audit, Threat Intel, Compliance Dashboards
-  [
-    {
-      title: 'Audit Logging',
+      title: 'Log management',
       imageUrl: 'img/icons/logs.png',
-      description: 'Track user and system activity across your environment.',
-      link: 'docs/audit-logs',
+      description: 'Search, visualize, and monitor logs in real time for faster troubleshooting.',
+      link: 'docs/search',
     },
     {
-      title: 'Threat Intelligence Integration',
-      imageUrl: 'img/icons/security/detect-insider-threats.png',
-      description: 'Enrich logs with threat intel for deeper insights.',
-      link: 'docs/integrations/threat-intel',
+      title: 'Infrastructure monitoring',
+      imageUrl: 'img/icons/operations/monitor-release-candidates.png',
+      description: 'Gain deep visibility into your infrastructure with powerful dashboards and alerts.',
+      link: 'https://www.sumologic.com/solutions/infrastructure-monitoring',
     },
     {
-      title: 'Compliance Dashboards',
-      imageUrl: 'img/icons/dashboards.png',
-      description: 'Stay compliant with prebuilt security content.',
-      link: 'docs/compliance/dashboards',
-    },
-    {
-      title: 'FLEX Logs + CIS Dashboard',
-      imageUrl: 'img/icons/logs.png',
-      description: 'Prebuilt monitors and dashboards for GCP and Azure.',
-      link: 'docs/observability/cis-dashboard',
-    },
-    {
-      title: 'Cloud Security Monitoring',
-      imageUrl: 'img/icons/observe.png',
-      description: 'Detect misconfigurations and threats in cloud environments.',
-      link: 'docs/integrations/cloud-security-monitoring-analytics',
-    },
-  ],
-
-  // Tab 2: Cloud Infrastructure: CloudTrail, K8s Audit, Cloud Security
-  [
-    {
-      title: 'CloudTrail Analytics',
-      imageUrl: 'img/integrations/amazon-aws/cis-for-aws-logo.png',
-      description: 'Monitor AWS activity and security posture.',
-      link: 'docs/security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws',
-    },
-    {
-      title: 'Kubernetes Audit Logs',
-      imageUrl: 'img/icons/operations/kubernetes.png',
-      description: 'Analyze access and change events in K8s clusters.',
-      link: 'docs/kubernetes/audit-logs',
-    },
-    {
-      title: 'Cloud Security Monitoring',
-      imageUrl: 'img/icons/security/security.png',
-      description: 'Visualize and alert on cloud security anomalies.',
-      link: 'docs/security',
-    },
-    {
-      title: 'Kickstart Data',
-      imageUrl: 'img/icons/data.png',
-      description: 'Start your PLG experience with preloaded log data.',
-      link: 'docs/send-data/kickstart-data',
-    },
-    {
-      title: 'Log Analytics Platform',
-      imageUrl: 'img/icons/manage.png',
-      description: 'Explore logs with dashboards and search insights.',
-      link: 'docs/log-analytics',
-    },
-  ],
-
-  // Tab 3: Application Performance: Infra Monitoring, APM, Metrics, AI Alerts
-  [
-    {
-      title: 'Infrastructure Monitoring',
-      imageUrl: 'img/icons/observe.png',
-      description: 'Track server health and resource usage.',
-      link: 'docs/observability',
-    },
-    {
-      title: 'Application Performance Monitoring',
-      imageUrl: 'img/icons/apm.png',
-      description: 'Trace transactions and analyze latency.',
+      title: 'Application monitoring',
+      imageUrl: 'img/icons/traces.png',
+      description: 'Monitor application health, performance, and user experience across services.',
       link: 'docs/apm',
     },
     {
-      title: 'Network Insights',
-      imageUrl: 'img/icons/network.png',
-      description: 'Detect bottlenecks and throughput issues.',
-      link: 'docs/network',
+      title: 'AWS monitoring',
+      imageUrl: 'img/icons/cloud/cloud-systems.png',
+      description: 'Track cloud workloads, costs, and security in your AWS environment.',
+      link: 'docs/observability/aws',
     },
     {
-      title: 'FLEX Logs + Metrics',
-      imageUrl: 'img/icons/metrics.png',
-      description: 'Infrastructure reliability using logs and performance data.',
-      link: 'docs/metrics',
+      title: 'Azure monitoring',
+      imageUrl: 'img/icons/business/cloud-ecosytem.png',
+      description: 'Observe containerized environments at scale with native Kubernetes integrations.',
+      link: 'docs/search/copilot',
     },
     {
-      title: 'Otel Remote Mgmt + AI-Driven Alerts',
-      imageUrl: 'img/icons/observe.png',
-      description: 'Manage telemetry pipelines and respond faster.',
-      link: 'docs/manage/otel-pipeline',
-    },
-  ],
-
-  // Tab 4: Dashboards & Alerts: Dashboards, Real-time Views, Alerts
-  [
-    {
-      title: 'OpenTelemetry Observability',
-      imageUrl: 'img/icons/observe.png',
-      description: 'Ingest logs, metrics, and traces in one pipeline.',
-      link: 'docs/opentelemetry',
+      title: 'Google Cloud Platform monitoring',
+      imageUrl: 'img/icons/operations/public-hybrid-cloud.png',
+      description: 'Observe containerized environments at scale with native Kubernetes integrations.',
+      link: 'docs/search/copilot',
     },
     {
-      title: 'Real-Time Dashboards',
-      imageUrl: 'img/icons/dashboards.png',
-      description: 'Visualize log and metric data instantly.',
+      title: 'Kubernetes monitoring',
+      imageUrl: 'img/icons/operations/kubernetes.png',
+      description: 'Observe containerized environments at scale with native Kubernetes integrations.',
+      link: 'docs/observability/kubernetes',
+    },
+    {
+      title: 'Copilot',
+      imageUrl: 'img/icons/general/speakers.png',
+      description: 'Observe containerized environments at scale with native Kubernetes integrations.',
+      link: 'docs/search/copilot',
+    },
+    {
+      title: 'Database monitoring',
+      imageUrl: 'img/icons/operations/data-volume.png',
+      description: 'Observe containerized environments at scale with native Kubernetes integrations.',
       link: 'docs/dashboards',
     },
-    {
-      title: 'Kubernetes Monitoring',
-      imageUrl: 'img/icons/operations/kubernetes-explorer.png',
-      description: 'Track pod and container health across clusters.',
-      link: 'docs/kubernetes',
-    },
-    {
-      title: 'Start Free Trial',
-      imageUrl: 'img/icons/cloud/start.png',
-      description: 'Explore Sumo Logic with no commitment.',
-      link: 'docs/get-started/quickstart',
-    },
-    {
-      title: 'LiveTail and Real-time Views',
-      imageUrl: 'img/icons/live.png',
-      description: 'Stream logs in real time for immediate feedback.',
-      link: 'docs/live-tail',
-    },
-    {
-      title: 'Distributed Tracing',
-      imageUrl: 'img/icons/apm.png',
-      description: 'Trace requests end-to-end to uncover latency or errors.',
-      link: 'docs/apm/traces',
-    },
-    {
-      title: 'CoPilot',
-      imageUrl: 'img/icons/sumo-ai.png',
-      description: 'Let Sumo Logic’s AI assistant guide your analysis.',
-      link: 'docs/capabilities/copilot',
-    },
   ],
 
-  // Tab 5: Advanced Analytics: APIs, Developer Apps, Copilot
+  // Tab 1: Security
   [
     {
-      title: 'Get Started with Sumo Logic',
-      imageUrl: 'img/icons/business/mission.png',
-      description: 'Install collectors, send data, and explore insights.',
-      link: 'docs/get-started/quickstart',
+      title: 'Security analyst tools',
+      imageUrl: 'img/icons/operations/too-many-tools.png',
+      description: 'Empower analysts with dashboards, queries, and context for rapid investigations.',
+      link: 'https://www.sumologic.com/solutions/security-analyst-tools',
     },
     {
-      title: 'API Documentation',
-      imageUrl: 'img/icons/cloud/api2.png',
-      description: 'Automate Sumo Logic workflows via API.',
-      link: 'docs/api',
+      title: 'Threat detection',
+      imageUrl: 'img/icons/security/detect-insider-threats.png',
+      description: 'Detect and respond to threats using SIEM, UEBA, and threat intelligence.',
+      link: 'docs/integrations/security-threat-detection',
     },
     {
-      title: 'Build Apps with Sumo Logic',
-      imageUrl: 'img/integrations/integrations.png',
-      description: 'Extend platform functionality with custom apps.',
-      link: 'docs/developer',
+      title: 'PCI compliance',
+      imageUrl: 'img/icons/security/PCI-compliance.png',
+      description: 'Automate data collection and reporting for PCI DSS compliance.',
+      link: 'docs/integrations/pci-compliance',
     },
     {
-      title: 'Start Free Trial',
-      imageUrl: 'img/icons/cloud/start.png',
-      description: 'Explore Sumo Logic with no commitment.',
-      link: 'docs/get-started/quickstart',
+      title: 'Security data lake',
+      imageUrl: 'img/icons/operations/data-overage.png',
+      description: 'Ingest and store security data at scale to power threat detection and retention.',
+      link: 'docs/security/additional-security-features/data-lake',
     },
     {
-      title: 'LiveTail and Real-time Views',
-      imageUrl: 'img/icons/live.png',
-      description: 'Stream logs in real time for immediate feedback.',
-      link: 'docs/live-tail',
+      title: 'Cloud Infrastructure Security for AWS',
+      imageUrl: 'img/integrations/amazon-aws/cis-for-aws-logo.png',
+      description: 'Track cloud workloads, costs, and security in your AWS environment.',
+      link: 'docs/security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws',
+    },
+    {
+      title: 'Cloud SOAR',
+      imageUrl: 'img/icons/security/soar-2-color-icon.png',
+      description: 'Automate workflows and orchestrate response across your security stack.',
+      link: 'docs/cloud-soar',
+    },
+    {
+      title: 'Logs for Security',
+      imageUrl: 'img/icons/security/unlock.png',
+      description: 'Unlock cloud security with powerful log visibility',
+      link: 'docs/security/additional-security-features/introduction-to-additional-security-features',
+    },
+    {
+      title: 'Audit and Compliance',
+      imageUrl: 'img/icons/operations/matching-list.png',
+      description: 'Unlock cloud security with powerful log visibility',
+      link: 'docs/security/additional-security-features/audit-and-compliance',
     },
   ],
 ];
