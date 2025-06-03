@@ -1,12 +1,12 @@
 ---
 id: view-opentelemetry-collection-page
-title: View Details About a OpenTelemetry Collector
-description: Learn how to view details about a OpenTelemetry Collector.
+title: View Details About an OpenTelemetry Collector
+description: Learn how to view details about an OpenTelemetry Collector.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-To view details about a OpenTelemetry Collector:
+To view details about an OpenTelemetry Collector:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Collection > OpenTelemetry Collector**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Collection** select **OpenTelemetry Collector**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collector**. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collection-page.png')} alt="opentelemetry-collection-page" style={{border:'1px solid gray'}} width="1000"/>
     - **Name**. Name of the OpenTelemetry Collector.
