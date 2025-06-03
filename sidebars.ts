@@ -2225,6 +2225,7 @@ integrations: [
          'integrations/microsoft-azure/kubernetes',
          'integrations/microsoft-azure/azure-security-advisor',
          'integrations/microsoft-azure/azure-security-defender-for-cloud',
+         'integrations/microsoft-azure/microsoft-defender-for-cloud-apps',
          'integrations/microsoft-azure/microsoft-dynamics365-customer-insights',
          'integrations/microsoft-azure/network-watcher',
          'integrations/microsoft-azure/sql',
