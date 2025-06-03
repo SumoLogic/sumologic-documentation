@@ -3,18 +3,28 @@ slug: /manage/partitions/flex
 title: Flex Pricing
 description: Learn about Sumo Logic Flex Pricing.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
-Flex Pricing delivers a new financial model for log management in which your businesses can centralize, store, and analyze all application, infrastructure, and security data in one place. This drives collaboration and velocity while delivering a reliable and secure digital experience.
+Flex Pricing delivers a new financial model for log management in which you can centralize, store, and analyze all application, infrastructure, and security data in one place. This drives collaboration and velocity while delivering a reliable and secure digital experience. Here's how it works:
 
-:::sumo important
-The search modifier `dataTier` is not supported for Flex queries.
-:::
+<Iframe url="https://fast.wistia.net/embed/iframe/0sudpuhk83?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Value of Sumo Logic Flex Pricing video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
-## Feature support 
+## Feature support
 
 | Feature support | Flex Pricing |
-| :-- | :-- | 
+| :-- | :-- |
 | Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |
 | Data replication across availability zones, data encryption | ![check](/img/reuse/check.png) |
 | Interactive queries (UI) |![check](/img/reuse/check.png) |

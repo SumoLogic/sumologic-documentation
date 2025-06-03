@@ -5,10 +5,6 @@ sidebar_label: Slack
 description: Install the Slack Source for Sumo Logic.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/slack/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/slack/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/slack/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="60"/>
@@ -120,7 +116,7 @@ When you create a Slack Source, you add it to a Hosted Collector. Before creati
 
 To configure a Slack Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Slack**.
 1. Enter a **Name** for the Source. The **Description** is optional.
@@ -130,31 +126,31 @@ To configure a Slack Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. **API Auth Bearer Token**. Enter the Slack App access token from the previous steps.
 1. **Slack API Collection**. Select the Slack collection API you want to collect logs from (Web or Audit).
-1. **Polling Interval in Minutes**. Enter the frequency in minutes for collecting the data. Default is 5 mins. 
+1. **Polling Interval in Minutes**. Enter the frequency in minutes for collecting the data. Default is 5 mins.
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/slack/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/slack/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/slack/example.tf
+```
 
-<a href="/files/c2c/slack/example.tf" target="_blank">Download example</a>
-
-## Limitation 
+## Limitation
 
 While ingesting web events, this source supports a maximum of 16,000 active Slack channels, exceeding this limit may cause the source to return a `FIRST-PARTY-GENERIC` error type. Archived Slack channels are not supported while ingesting the web events.
 
 ## Troubleshoot
 
-Collecting real-time Slack messages from Slack channels and understanding the C2C polling interval is a common question. 
+Collecting real-time Slack messages from Slack channels and understanding the C2C polling interval is a common question.
 
-The C2C is limited in the number of API calls it can make to the Slack API documented in the [Slack API rate limits page](https://api.slack.com/docs/rate-limits). The C2C will gather a list of your non-archived Slack channels and collect new messages from each channel for the polling interval. The default polling interval is 5 minutes. The rate limits on the Slack API for these endpoints use their "Web API Tier 3" limit, which is 50 requests per minute. 
+The C2C is limited in the number of API calls it can make to the Slack API documented in the [Slack API rate limits page](https://api.slack.com/docs/rate-limits). The C2C will gather a list of your non-archived Slack channels and collect new messages from each channel for the polling interval. The default polling interval is 5 minutes. The rate limits on the Slack API for these endpoints use their "Web API Tier 3" limit, which is 50 requests per minute.
 
-This means if you have 1000 active Slack channels, it will take the C2C a minimum of 20 minutes to iterate through all the channels checking for new messages. The poll cycle will not start again until last one finishes. Let's say the poll cycle starts at 10:00 and does not complete until 10:20, then the next poll cycle will start immediately at 10:20. Additionally more time may be added if the C2C has to paginate to gather more than 1000 Slack messages from a single channel. 
+This means if you have 1000 active Slack channels, it will take the C2C a minimum of 20 minutes to iterate through all the channels checking for new messages. The poll cycle will not start again until last one finishes. Let's say the poll cycle starts at 10:00 and does not complete until 10:20, then the next poll cycle will start immediately at 10:20. Additionally more time may be added if the C2C has to paginate to gather more than 1000 Slack messages from a single channel.
 
 Each page adds to the overall number of API calls needed and adds time due to the Slack API rate limits. Sumo Logic recommends you archive any Slack channels no longer used. This will prevent the C2C from checking for new messages in channels without activity.
 

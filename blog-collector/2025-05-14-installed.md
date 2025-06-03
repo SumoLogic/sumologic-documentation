@@ -1,5 +1,5 @@
 ---
-title: Version 19.525-42
+title: Version 19.525-42 (Installed Collector)
 hide_table_of_contents: true
 image: https://help.sumologic.com/img/sumo-square.png
 ---
