@@ -85,17 +85,6 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
    Now that we’ve sorted out the usernames formats and values we want to exclude, we’ve removed `| count by user_username` from the query.
 
-1. Let’s say there is a field of interest in our raw messages—`EventData.ProcessName`—that isn’t mapped to a Cloud SIEM schema attribute. We want to parse that field out of the message so we can use it in our logic as well. We only want our rule to fire if a user with an anomalous logon ran an .exe process after successfully logging in. You can see all of the fields in the raw message in the **Messages** tab of your search results.
-
-   <img src={useBaseUrl('img/cse/messages-tab.png')} alt="Messages tab" width="800"/>
-
-   We update the query to parse out `EventData.ProcessName`, naming it `process_name`, and filtering to only fire on `.exe` files: 
-
-   ```sql
-   _index=sec_record_*
-   | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$") and user_username != "anonymous logon" and fields["EventData.ProcessName"] matches "*.exe"
-   ```
-
 1. Now we have a query we can use as the basis of an expression for our rule. Note that when you paste it into the rules editor, you should remove the first portion of the query (`_index=sec_record_*` and `| where`), which is only necessary when you are querying records in Sumo Logic. The expression is then as follows:
 
    ```sql
@@ -104,7 +93,6 @@ In this step, we’ll create the query that will serve as the rule expression wh
    and metadata_deviceEventId = "Security-4624" 
    and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$") 
    and user_username != "anonymous logon" 
-   and fields["EventData.ProcessName"] matches "*.exe"
    ```
 
    Also ensure that the syntax of the expression matches what is needed by the [Cloud SIEM rules syntax](/docs/cse/rules/cse-rules-syntax/). Once you are satisfied that the expression is ready, click **Test Rule Expression** to verify that the expression returns expected results.
