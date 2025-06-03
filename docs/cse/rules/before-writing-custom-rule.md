@@ -51,7 +51,7 @@ Now that we understand the mapping in Cloud SIEM, we can see we will want to be 
 
 In this step, we’ll create the query that will serve as the rule expression when we create the rule.
 
-1. Using the attributes we discovered from looking at the log mapping, we’ll run the following query, which returns the usernames that have successfully logged on over the last week, counted by `user_username`.
+1. Using the attributes we discovered from looking at the log mapping, we’ll run the following query, which returns the usernames that have successfully logged on over the last week, counted by `user_username`:
 
    ```sql
    _index=sec_record_*
@@ -63,10 +63,10 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
    The results show two of our standard username patterns: 
 
-      * The username for regular user accounts are a plain string, with no special characters, like specops and jask.
+      * The username for regular user accounts are a plain string, with no special characters, like `specops` and `jask`.
       * Machine usernames are a string, followed by a dash character, followed by a string, followed by a dollar sign, like `win10-admin$` and `win10-client$`.
 
-1. Now, we can refine our search to return usernames that do not comply with either of our standard patterns.
+1. Now, we can refine our search to return usernames that do not comply with either of our standard patterns:
 
    ```sql
    _index=sec_record_*
@@ -76,7 +76,7 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
    <img src={useBaseUrl('img/cse/non-matching-patterns.png')} alt="Non-matching patterns" width="800"/>
 
-1. Usernames returned include “anonymous logon”. A little [research](https://social.technet.microsoft.com/Forums/ie/en-US/dbcbb9f1-c6a7-43ea-94b8-ba72a89e2221/nt-authorityanonymous-logon?forum=winservergen) indicates that this is typically no cause for alarm, so we’ll refine our search again to exclude “anonymous logon”.
+1. Usernames returned include “anonymous logon”. A little [research](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-special-identities-groups) indicates that this is typically no cause for alarm, so we’ll refine our search again to exclude “anonymous logon”:
 
    ```sql
    _index=sec_record_*
@@ -89,17 +89,25 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
    <img src={useBaseUrl('img/cse/messages-tab.png')} alt="Messages tab" width="800"/>
 
-   We update the query to parse out `EventData.ProcessName`, naming it `process_name`, and filtering to only fire on `.exe` files. 
+   We update the query to parse out `EventData.ProcessName`, naming it `process_name`, and filtering to only fire on `.exe` files: 
 
    ```sql
    _index=sec_record_*
-   | json field=_raw "$['EventData.ProcessName']" as process_name
-   | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$") and user_username != "anonymous logon" and process_name matches "*.exe"
+   | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$") and user_username != "anonymous logon" and fields["EventData.ProcessName"] matches "*.exe"
    ```
 
-1. Now we have a query we can use as the basis of an expression for our rule. Note that when you paste it into the rules editor you should remove the first portion of the query, which is only necessary when you are querying records in Sumo Logic: `_index=sec_record_*`  
+1. Now we have a query we can use as the basis of an expression for our rule. Note that when you paste it into the rules editor, you should remove the first portion of the query (`_index=sec_record_*` and `| where`), which is only necessary when you are querying records in Sumo Logic. The expression is then as follows:
 
-   You should also ensure that the syntax of the expression matches what is needed by the [Cloud SIEM rules syntax](/docs/cse/rules/cse-rules-syntax/). 
+   ```sql
+   metadata_vendor = "Microsoft" 
+   and metadata_product = "Windows" 
+   and metadata_deviceEventId = "Security-4624" 
+   and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$") 
+   and user_username != "anonymous logon" 
+   and fields["EventData.ProcessName"] matches "*.exe"
+   ```
+
+   Also ensure that the syntax of the expression matches what is needed by the [Cloud SIEM rules syntax](/docs/cse/rules/cse-rules-syntax/). Once you are satisfied that the expression is ready, click **Test Rule Expression** to verify that the expression returns expected results.
 
    You can use an expression like this example in any rule type. Here is an example Match rule with the expression, shown in the rules editor.
 
