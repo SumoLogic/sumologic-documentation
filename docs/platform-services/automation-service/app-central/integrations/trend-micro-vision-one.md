@@ -1,5 +1,5 @@
 ---
-title: Trend Micro Vision ONE
+title: Trend Micro Vision One
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
