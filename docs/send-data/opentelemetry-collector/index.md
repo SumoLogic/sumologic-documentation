@@ -32,6 +32,15 @@ In this section, we'll introduce the following concepts:
       <p>Collect logs, metrics, and tracing data, as well as how to add configurations for the OpenTelemetry collector.</p>
     </div>
   </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/">
+        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
+        <h4>Remote Management</h4>
+      </a>
+      <p>Learn about remote management of OpenTelemetry collectors.</p>
+    </div>
+  </div>
   <div className="box smallbox card">
     <div className="container">
       <a href="/docs/send-data/opentelemetry-collector/view-opentelemetry-collection-page">
@@ -71,16 +80,16 @@ In this section, we'll introduce the following concepts:
     <p>Find solutions to common issues with the OpenTelemetry collector.</p>
     </div>
   </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Sumo Logic OTel</h4></a>
+      <p>Understand the relationship between the Sumo Logic OpenTelemetry Collector and the OpenTelemetry upstream project.</p>
+    </div>
+  </div>
   <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/opentelemetry-collector/faq"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>FAQ</h4></a>
     <p>Find answers to frequently asked questions about the OpenTelemetry collector.</p>
-    </div>
-  </div>
-  <div className="box smallbox card">
-    <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Sumo Logic OTel</h4></a>
-      <p>Understand the relationship between the Sumo Logic OpenTelemetry Collector and the OpenTelemetry upstream project.</p>
     </div>
   </div>
 </div>
