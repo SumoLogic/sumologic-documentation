@@ -3922,6 +3922,7 @@
   "/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/11Configure_Alerts": "/docs/observability/aws/deploy-use-aws-observability",
   "/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/12Root_Cause_Explorer": "/docs/observability/root-cause-explorer-deprecation",
   "/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/Root_Cause_Explorer": "/docs/observability/root-cause-explorer-deprecation",
+  "/docs/observability/root-cause-explorer": "/docs/observability/root-cause-explorer-deprecation",
   "/Observability_Solution/Kubernetes_Solution/01Set_up_collection_for_Kubernetes": "/docs/observability/kubernetes/collection-setup",
   "/Observability_Solution/Kubernetes_Solution/Global_Intelligence_for_Kubernetes_DevOps_App": "/docs/integrations/global-intelligence/kubernetes-devops",
   "/Observability_Solution/Kubernetes_Solution/Navigate_your_Kubernetes_environment": "/docs/observability/kubernetes",
