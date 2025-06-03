@@ -60,9 +60,9 @@ Since this source contains logs from multiple regions, ensure that you do not ta
 
 Now that you have set up data collection, install the Azure Load Balancer Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstallNoDataSourceV2/>
+<AppInstallIndexV2/>
 
 As part of the app installation process, the following fields will be created by default:
 
@@ -75,6 +75,12 @@ As part of the app installation process, the following fields will be created by
 - `resource_name`. The name of the resource (for example, storage account name).
 - `service_type`. Type of the service that can be accessed with an Azure resource.
 - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
+
+## Viewing the Azure Cache for Redis dashboards
+
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
+
+<ViewDashboardsIndex/> 
 
 ### Administrative Operations
 
@@ -153,8 +159,8 @@ The **Azure Cache for Redis - Resource Performance(Non-Enterprise)** dashboard p
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureCacheForRedis/Azure-Cache-for-Redis-Resource-Performance-Non-Enterprise.png')} alt="Azure Cache for Redis - Resource Performance(Non-Enterprise)" style={{border: '1px solid gray'}} width="800" />
 
 
-### Azure Application Gateway alerts
-These alerts are metric based and will work for all Azure Application Gateways.
+### Azure Cache for Redis alerts
+These alerts are metric based and will work for all Azure Cache for Redis.
 
 | Alert Name                                       | Alert Description and Conditions                                                                                                                                                        | Alert Condition    | Recover Condition |
 |:-------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------|:------------------|

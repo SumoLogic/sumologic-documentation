@@ -32,7 +32,7 @@ Sumo provides a number of ways to [parse](/docs/search/search-query-language/pa
   <tr>
    <td><a href="/docs/search/search-query-language/parse-operators/parse-keyvalue-formatted-logs">keyvalue</a></td>
    <td>Typically, log files contain information that follow a key-value pair structure. The keyvalue operator allows you to get values from a log message by specifying the key paired with each value.</td>
-   <td><code>| keyvalue infer "module", "thread"</code></td>
+   <td><code>| keyvalue "module", "thread"</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/parse-operators/parse-csv-formatted-logs">csv</a></td>
