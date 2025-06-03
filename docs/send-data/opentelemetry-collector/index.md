@@ -32,6 +32,15 @@ In this section, we'll introduce the following concepts:
       <p>Collect logs, metrics, and tracing data, as well as how to add configurations for the OpenTelemetry collector.</p>
     </div>
   </div>
+  <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/view-opentelemetry-collection-page">
+        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
+        <h4>View Details About an OpenTelemetry Collector</h4>
+      </a>
+      <p>Learn how to view details about an OpenTelemetry Collector.</p>
+    </div>
+  </div>
       <div className="box smallbox card">
     <div className="container">
       <a href="/docs/send-data/opentelemetry-collector/auto-discovery">
