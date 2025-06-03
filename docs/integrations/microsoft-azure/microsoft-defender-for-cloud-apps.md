@@ -15,7 +15,7 @@ Microsoft Defender for Cloud Apps delivers full protection for SaaS applications
 * Advanced threat protection
 * App-to-app protection
 
-This document outlines the steps required to collect and analyse the Microsoft Defender for Cloud Apps alerts in the Sumo Logic platform.
+This document outlines the steps required to collect and analyse the [Microsoft Defender for Cloud Apps](https://learn.microsoft.com/en-us/defender-cloud-apps/what-is-defender-for-cloud-apps) alerts in the Sumo Logic platform.
 
 ## Set up collection
 
