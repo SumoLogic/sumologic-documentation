@@ -32,11 +32,11 @@
     "@braintree/sanitize-url": "^6.0.1",
     "@docsearch/css": "3.8.2",
     "@docusaurus/bundler": "3.8.0",
-    "@docusaurus/core": "3.8.0",
+    "@docusaurus/core": "^3.8.0",
     "@docusaurus/cssnano-preset": "3.8.0",
-    "@docusaurus/faster": "3.8.0",
+    "@docusaurus/faster": "^3.8.0",
     "@docusaurus/plugin-client-redirects": "3.8.0",
-    "@docusaurus/plugin-content-blog": "3.8.0",
+    "@docusaurus/plugin-content-blog": "^3.8.0",
     "@docusaurus/plugin-css-cascade-layers": "3.8.0",
     "@docusaurus/plugin-debug": "3.8.0",
     "@docusaurus/plugin-google-analytics": "3.8.0",
@@ -171,7 +171,7 @@
     "yaml": "^2.3.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.8.0",
+    "@docusaurus/module-type-aliases": "^3.8.0",
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/react": "^17.0.0",
     "@types/webpack-env": "^1.16.3",
