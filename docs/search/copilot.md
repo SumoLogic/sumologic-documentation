@@ -2,7 +2,7 @@
 id: copilot
 title: Sumo Logic Copilot
 sidebar_label: Copilot 🤖
-description: Streamline your log analysis with Sumo Logic Copilot, our AI-based assistant designed to simplify log analysis by allowing you to ask questions in plain English and providing search suggestions without the need to write log queries.
+description: Streamline your log analysis with Sumo Logic Copilot, our AI-based assistant that allows you to ask questions in plain English and provides search suggestions without manually typing log queries.
 keywords:
   - copilot
   - artificial intelligence
