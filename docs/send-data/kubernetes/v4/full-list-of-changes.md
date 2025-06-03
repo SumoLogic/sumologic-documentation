@@ -78,3 +78,67 @@ description: This page describes full list of changes in Kubernetes Collection v
 - Enabling autoscaling for logs metadata, metrics metadata, metrics collector, otelcol instrumentation,and traces gateway by default. It is done by adding the `sumologic.autoscaling.enabled` parameter.
 
   [attribute_translation]: https://github.com/SumoLogic/sumologic-otel-collector/tree/v0.90.1-sumo-0/pkg/processor/sumologicschemaprocessor#attribute-translation
+
+- OpenTelemetry Collector Internal telemetry metric names
+
+  OpenTelemetry Internal telemetry metric names have changed, as a result the following metrics are no longer collected
+
+  - otelcol_process_cpu_seconds
+  - otelcol_process_memory_rss
+  - otelcol_process_runtime_total_alloc_bytes
+  - otelcol_process_uptime
+  - otelcol_exporter_requests_bytes
+  - otelcol_exporter_requests_duration
+  - otelcol_exporter_requests_records
+  - otelcol_exporter_requests_sent
+  - otelcol_exporter_sent_metric_points
+  - otelcol_processor_accepted_metric_points
+  - otelcol_processor_batch_timeout_trigger_send
+  - otelcol_processor_groupbyattrs_metric_groups_count
+  - otelcol_processor_groupbyattrs_metric_groups_sum
+  - otelcol_processor_groupbyattrs_num_non_grouped_metrics
+  - otelcol_processor_outgoing_items
+  - otelcol_processor_incoming_items
+  - otelcol_exporter_send_failed_metric_points
+  - otelcol_exporter_sent_log_records
+  - otelcol_exporter_send_failed_log_records
+  - otelcol_processor_filter_logs_filtered
+  - otelcol_receiver_accepted_log_records
+  - otelcol_processor_accepted_log_records
+  - otelcol_receiver_refused_log_records
+  - otelcol_processor_groupbyattrs_num_grouped_logs
+  - otelcol_processor_groupbyattrs_log_groups_count
+  - otelcol_processor_groupbyattrs_log_groups_sum
+  - otelcol_fileconsumer_reading_files
+  - otelcol_fileconsumer_open_files
+
+  Instead, the following new metrics are now collected
+
+  - otelcol_process_cpu_seconds_total
+  - otelcol_process_memory_rss_bytes
+  - otelcol_process_runtime_total_alloc_bytes_total
+  - otelcol_process_uptime_seconds_total
+  - otelcol_exporter_requests_bytes_total
+  - otelcol_exporter_requests_duration_milliseconds_total
+  - otelcol_exporter_requests_records_total
+  - otelcol_exporter_requests_sent_ratio_total
+  - otelcol_exporter_sent_metric_points_total
+  - otelcol_processor_accepted_metric_points_total
+  - otelcol_processor_batch_timeout_trigger_send_total
+  - otelcol_processor_groupbyattrs_metric_groups_ratio_count
+  - otelcol_processor_groupbyattrs_metric_groups_ratio_sum
+  - otelcol_processor_groupbyattrs_num_non_grouped_metrics_ratio_total
+  - otelcol_processor_outgoing_items_total
+  - otelcol_processor_incoming_items_total
+  - otelcol_exporter_send_failed_metric_points_total
+  - otelcol_exporter_sent_log_records_total
+  - otelcol_exporter_send_failed_log_records_total
+  - otelcol_processor_filter_datapoints_filtered_ratio_total
+  - otelcol_receiver_accepted_log_records_total
+  - otelcol_processor_accepted_log_records_total
+  - otelcol_receiver_refused_log_records_total
+  - otelcol_processor_groupbyattrs_num_grouped_logs_ratio_total
+  - otelcol_processor_groupbyattrs_log_groups_ratio_count
+  - otelcol_processor_groupbyattrs_log_groups_ratio_sum
+  - otelcol_fileconsumer_reading_files_ratio
+  - otelcol_fileconsumer_open_files_ratio
