@@ -75,5 +75,5 @@ Copilot uses Intelliparse mode in the background to:
 This integration allows Copilot to work with raw, unstructured log data; no setup required on your part.
 
 :::tip
-Want to learn more about Intelliparse mode? [See how it works in Log Search](/docs/search/copilot/#support-for-unstructured-logs).
+Want to learn more about Intelliparse mode? [See how it works in Log Search](/docs/search/copilot-unstructured-logs-beta).
 :::
