@@ -94,12 +94,9 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Click on the **Download YAML File** button to get the YAML file.
 
-::: note
-For OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
-`${environment_variable}`
-:::
+import ConfigLinux from '../../../reuse/apps/opentelemetry/config-linux.md';
 
-For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
+<ConfigLinux/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-YAML.png' style={{border:'1px solid gray'}} alt="Configuration" />
 
@@ -200,10 +197,10 @@ db.cluster.name=* sumo.datasource="redis"
 
 This sample query is from the **Redis - Cluster Operations** dashboard Metrics panel.
 
-```sql sumo.datasource=redis metric=redis.cmd.calls 
-(cmd=set* or cmd=get* or cmd=incr* or cmd=decr* or cmd=mget or cmd=mset* or cmd=strlen or cmd=psetex or cmd=append) 
+```sql sumo.datasource=redis metric=redis.cmd.calls
+(cmd=set* or cmd=get* or cmd=incr* or cmd=decr* or cmd=mget or cmd=mset* or cmd=strlen or cmd=psetex or cmd=append)
 deployment.environment=*  db.cluster.name=* db.node.name=*  
-| delta 
+| delta
 | sum
 ```
 

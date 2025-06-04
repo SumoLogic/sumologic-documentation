@@ -102,12 +102,9 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the yaml file.
 
-::: note
-If using username and password with OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
-`${environment_variable}`
-:::
+import ConfigLinux from '../../../reuse/apps/opentelemetry/config-linux.md';
 
-For Linux platform if using username and password, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
+<ConfigLinux/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-OTEL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 

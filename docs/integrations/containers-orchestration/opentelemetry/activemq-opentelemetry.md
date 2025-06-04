@@ -136,12 +136,9 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the YAML file.
 
-::: note
-If using username and password with OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
-`${environment_variable}`
-:::
+import ConfigLinux from '../../../reuse/apps/opentelemetry/config-linux.md';
 
-For Linux platform if using username and password, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
+<ConfigLinux/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-OTEL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -362,4 +359,3 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `ActiveMQ - No Consumers on Queues Alert` | This alert gets triggered when a ActiveMQ queue has no consumers. | Count < 1 | Count >= 1 |
 | `ActiveMQ - Node Down Alert` | This alert gets triggered when a node in the ActiveMQ cluster is down. | Count >= 1 | Count < 1 |
 | `ActiveMQ - Too Many Connections Alert` | This alert gets triggered when there are too many connections to a node in a ActiveMQ cluster. | Count >= 1000 | Count < 1000 |
-

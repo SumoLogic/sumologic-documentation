@@ -79,7 +79,7 @@ If logging is not enabled, you can configure it by following the steps below.
   ```
   [oracle@sumolab alert]$ lsnrctl status
   ```
-- **Oracle Audit Logs**. 
+- **Oracle Audit Logs**.
   - **For Oracle version 19c and below**. By default, Oracle logs are stored in
     ```
     $ORACLE_BASE/app/oracle/admin/orcl/adump
@@ -90,8 +90,8 @@ If logging is not enabled, you can configure it by following the steps below.
 
     The location of these logs will be required when you set up the app through the app catalog.
 
-  - **For Oracle version 21c and above**. Based on the [Unified audit policy](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/AUDIT-Unified-Auditing.html) configured, audit logs exported will be directly ingested to Sumo Logic using syslog or windows event log. 
-For the Linux environment, instead of redirecting audit logs to a file, we need to redirect them to the local port. In the next step, the OTel collector can be configured to listen to this port and then send the log to Sumo Logic. This can be done using the below configuration in the `rsyslog.conf`. : 
+  - **For Oracle version 21c and above**. Based on the [Unified audit policy](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/AUDIT-Unified-Auditing.html) configured, audit logs exported will be directly ingested to Sumo Logic using syslog or windows event log.
+For the Linux environment, instead of redirecting audit logs to a file, we need to redirect them to the local port. In the next step, the OTel collector can be configured to listen to this port and then send the log to Sumo Logic. This can be done using the below configuration in the `rsyslog.conf`. :
   ```local7.info @@127.0.0.1:10514```
   This will redirect all the unified audit logs to localhost port 10514.
 
@@ -107,7 +107,7 @@ To set up the performance metrics script on Linux and Windows for the Oracle app
   defaultValue="Linux"
   values={[
     {label: 'Linux', value: 'Linux'},
-    {label: 'Windows', value: 'Windows'} 
+    {label: 'Windows', value: 'Windows'}
     ]}>
 
 <TabItem value="Linux">
@@ -184,11 +184,11 @@ Below are the inputs required:
 
 - **`Alert Logs`**. Path of the log file configured to capture oracle alert logs.
 - **`Listener Logs`**. Path of the log file configured to capture oracle listener logs .
-- **`Audit Logs`**. 
+- **`Audit Logs`**.
   - For **Traditional Audit Logs**, path of the log file is configured to capture oracle audit logs.
   - For **Unified Audit Logs**, you need to select the OS where the Oracle is setup - Windows or Linux. For Oracle on Windows machine, no parameter is required. Only respective event IDs will be ingested. For the Linux environment, you need to provide the **port** (configured in pre-requisite steps for the Linux environment) which the syslog receiver should listen to for sending the logs to Sumo Logic.
 - **`Performance metric script-based logs`**. Path of the log file configured to capture log generated through script can be configured in other logs.
-- **`Endpoint (no default)`**. Endpoint used to connect to the OracleDB server. Must be in the format of `host:port`. 
+- **`Endpoint (no default)`**. Endpoint used to connect to the OracleDB server. Must be in the format of `host:port`.
 - **`username`**. Username for the OracleDB connection.
 - **`password`**. Password for the OracleDB connection. Special characters are allowed.
 - **`service`**. OracleDB Service that the receiver should connect to.
@@ -198,12 +198,9 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Once the details are filled, click on the **Download YAML File** button to get the yaml file.
 
-::: note
-For OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
-`${environment_variable}`
-:::
+import ConfigLinux from '../../../reuse/apps/opentelemetry/config-linux.md';
 
-For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
+<ConfigLinux/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -324,7 +321,7 @@ This sample query is from the **Oracle - Overview** dashboard > **DB Connection*
 This sample query is from the **Oracle - Overview** dashboard > **Session Count** panel.
 
 ```sql title="Session Count"
-sumo.datasource=oracle metric=oracledb.sessions.usage  deployment.environment=*  db.cluster.name=* db.node.name=* | sum 
+sumo.datasource=oracle metric=oracledb.sessions.usage  deployment.environment=*  db.cluster.name=* db.node.name=* | sum
 ```
 
 ## Viewing Oracle dashboards
@@ -563,8 +560,8 @@ See information derived from the syslog audit trail, including successful and fa
 ### Performance Details
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Performance-Details.png' alt="Monitor Performance by DB Script" />
-The Oracle - Performance Details dashboard gives insight about - count of rollback, commits, transaction, process, session. 
-In addition to this it helps monitoring physical and logical reads, PGA allocated. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md). 
+The Oracle - Performance Details dashboard gives insight about - count of rollback, commits, transaction, process, session.
+In addition to this it helps monitoring physical and logical reads, PGA allocated. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
 
 ## Create monitors for Oracle app
 

@@ -108,12 +108,9 @@ The log file path configured to capture RabbitMQ logs must be given here. The fi
 
 You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
 
-::: note
-For OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
-`${environment_variable}`
-:::
+import ConfigLinux from '../../../reuse/apps/opentelemetry/config-linux.md';
 
-For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
+<ConfigLinux/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -221,7 +218,7 @@ This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Seve
 This sample query is from the **Average Number of Consumers** panel in **RabbitMQ - Metrics** dashboard.
 
 ```sql sumo.datasource=rabbitmq metric=rabbitmq.consumer.count deployment.environment=*  messaging.cluster.name=* messaging.node.name=*  rabbitmq.queue.name=* rabbitmq.vhost.name=*
-| avg by messaging.cluster.name 
+| avg by messaging.cluster.name
 | sum
 ```
 
