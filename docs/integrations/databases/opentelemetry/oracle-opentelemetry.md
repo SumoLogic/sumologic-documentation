@@ -107,7 +107,7 @@ To set up the performance metrics script on Linux and Windows for the Oracle app
   defaultValue="Linux"
   values={[
     {label: 'Linux', value: 'Linux'},
-    {label: 'Windows', value: 'Windows'}
+    {label: 'Windows', value: 'Windows'} 
     ]}>
 
 <TabItem value="Linux">
