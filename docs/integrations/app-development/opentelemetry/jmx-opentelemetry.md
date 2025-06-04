@@ -104,7 +104,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ::: note
 If using username and password with OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
-${environment_variable}
+`${environment_variable}`
 :::
 
 For Linux platform if using username and password, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
