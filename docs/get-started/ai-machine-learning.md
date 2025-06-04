@@ -77,12 +77,6 @@ Sumo Logic offers seamless integrations with various AI-driven platforms to enab
 * [Criminal IP](/docs/platform-services/automation-service/app-central/integrations/criminal-ip)
 * [Arcanna](/docs/platform-services/automation-service/app-central/integrations/arcanna)
 
-<!-- Removed - not in Kanso
-### Root Cause Explorer
-
-Accelerates troubleshooting by surfacing events of interest correlated with application incidents. [Learn more](/docs/observability/root-cause-explorer)
--->
-
 ## Security
 
 Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hunters to effectively safeguard their technology stack against evolving threats. By integrating advanced tools for discovery, detection, investigation, response, and protection, we minimize dwell time, reduce false positives, accelerate incident resolution, and proactively prevent future incidents, ensuring robust security and resilience for your cloud, container, and on-prem resources.
