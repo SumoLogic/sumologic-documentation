@@ -9,13 +9,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/integrations/amazon-aws/rds.png')} alt="Thumbnail icon" width="50"/>
 
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is a managed database service, optimized to run in the cloud. The RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure.
+To further enhance performance and availability, Amazon RDS Proxy is a fully managed, highly available proxy that improves scalability and resilience by pooling and sharing DB connections. It reduces failover time by up to 66% and supports IAM and Secrets Manager for secure access. It works with most RDS engines and requires no code changes.
 
-The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings. MSSQL Logs dashboards helps you monitor error logs and basic infrastructure details. Oracle CloudTrail and CloudWatch Logs dashboards provide monitoring for error logs and essential infrastructure details.
+The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings. MSSQL Logs dashboards help you monitor error logs and basic infrastructure details. Oracle CloudTrail and CloudWatch Logs dashboards provide monitoring for error logs and essential infrastructure details. RDS Proxy dashboards provide visibility into the performance of Amazon RDS Proxy, helping improve application scalability, availability, and security. They track key metrics like connection pooling, client connections, authentication outcomes, TLS usage, and query patterns to optimize connection management and reduce a database load.
+
 
 ## Log and metrics types  
 
 The Amazon RDS app uses the following logs and metrics:
-* [RDS CloudWatch Instance Level Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html#rds-cw-metrics-instance), [RDS CloudWatch Aurora Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraMySQL.Monitoring.Metrics.html), and [Amazon CloudWatch metrics for Performance Insights](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Cloudwatch.html).
+* [RDS CloudWatch Instance Level Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html#rds-cw-metrics-instance), [RDS CloudWatch Aurora Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraMySQL.Monitoring.Metrics.html), [Amazon CloudWatch metrics for Performance Insights](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Cloudwatch.html) and [Amazon RDS Proxy metrics](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.monitoring.html).
 * [Amazon RDS operations using AWS CloudTrail](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/logging-using-cloudtrail.html).
 * [Publishing RDS CloudWatch Logs, RDS Database logs for Aurora MySQL, RDS MySQL, MariaDB](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQLDB.PublishtoCloudWatchLogs.html).
 * [Publishing RDS CloudWatch logs, RDS Database logs for Aurora PostgreSQL, RDS PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.PostgreSQL.html#USER_LogAccess.Concepts.PostgreSQL.PublishtoCloudWatchLogs)
@@ -169,6 +171,12 @@ The Amazon RDS app uses the following logs and metrics:
   "logGroup":"/aws/rds/instance/mssql-database-1/error"}
 ```
 
+```json title="Available for read/write access (Proxy logs)"
+{"timestamp":1748608138203,
+  "message":"2025-05-30T12:28:53.383Z [INFO] Database \"database-4\" at 172.31.1.99:3306 is now available for read/write access from 172.31.46.36. Version: MySQL: 8.0.41.",
+  "logStream":"proxy-1747819191933-database-4",
+  "logGroup":"/aws/rds/proxy/proxy-1747819191933-database-4"}
+```
 </details>
 
 ### Sample queries
@@ -301,6 +309,20 @@ account=* region=* namespace=aws/rds dbidentifier=*  _sourceHost=/aws/rds/*alert
 | transpose row _timeslice column oraerr
 ```
 
+
+```sql title="Database Availability (Proxy CloudWatch log based)"
+account=* region=* namespace=aws/rds proxyname=* _sourceHost=/aws/rds/proxy/* "Database" and "is now available for read/write access"
+| json "message" nodrop | if (_raw matches "{*", message, _raw) as message
+| parse regex field=message "\"(?<dbidentifier>[^\"]+)\" at (?<db_host>\d{1,3}(?:\.\d{1,3}){3}):(?<db_port>\d+) is now available for read/write access from (?<client_ip>\d{1,3}(?:\.\d{1,3}){3})(?:\. Version: (?<db_version>.+))?" nodrop
+| sort by _messageTime desc
+| dedup proxyname, dbidentifier, db_host, db_port, db_version
+| count as count by _messageTime, proxyname, dbidentifier, db_host, db_port, db_version
+| formatDate(_messageTime, "yyyy/MM/dd HH:mm:ss Z") as time
+| fields -_messagetime
+| fields time, proxyname, dbidentifier, db_host, db_port, db_version
+```
+
+
 ## Collecting logs and metrics for the Amazon RDS app
 
 Sumo Logic supports collecting metrics using two source types:
@@ -375,6 +397,13 @@ We recommend not to set `log_statement` to any value other than none (default va
    - Audit files
    - Listener logs
 
+#### Proxy
+- Amazon RDS [Proxy](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy-setup.html) supports [publishing the following Proxy logs to CloudWatch](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy-creating.html):
+   - Enhanced logs
+    :::note
+    The log group for an AWS RDS Proxy is created automatically. You do not need to create it manually. When you create an RDS Proxy, AWS automatically creates a CloudWatch Log Group to store logs related to the proxy’s activity.
+    :::
+
 Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:
 
 - **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended); or
@@ -404,17 +433,19 @@ Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
 ```
 
 ```sql title="Parse Expression"
-| json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop
-| where eventSource = "rds.amazonaws.com"
-| "aws/rds" as namespace
-| json field=requestParameters "dBInstanceIdentifier", "resourceName", "dBClusterIdentifier" as dBInstanceIdentifier1, resourceName, dBClusterIdentifier1 nodrop
-| json field=responseElements "dBInstanceIdentifier" as dBInstanceIdentifier3 nodrop | json field=responseElements "dBClusterIdentifier" as dBClusterIdentifier3 nodrop
-| parse field=resourceName "arn:aws:rds:*:db:*" as f1, dBInstanceIdentifier2 nodrop | parse field=resourceName "arn:aws:rds:*:cluster:*" as f1, dBClusterIdentifier2 nodrop
-| if (resourceName matches "arn:aws:rds:*:db:*", dBInstanceIdentifier2, if (!isEmpty(dBInstanceIdentifier1), dBInstanceIdentifier1, dBInstanceIdentifier3) ) as dBInstanceIdentifier
-| if (resourceName matches "arn:aws:rds:*:cluster:*", dBClusterIdentifier2, if (!isEmpty(dBClusterIdentifier1), dBClusterIdentifier1, dBClusterIdentifier3) ) as dBClusterIdentifier
-| if (isEmpty(dBInstanceIdentifier), dBClusterIdentifier, dBInstanceIdentifier) as dbidentifier
+| json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop 
+| where eventSource = "rds.amazonaws.com" | "aws/rds" as namespace  
+| json field=requestParameters "dBInstanceIdentifier", "resourceName", "dBClusterIdentifier", "dBProxyName" as dBInstanceIdentifier1, resourceName, dBClusterIdentifier1, dBProxyName1 nodrop 
+| json field=responseElements "dBInstanceIdentifier", "dBClusterIdentifier", "dBProxy.dBProxyName", "dBProxyTargetGroup.dBProxyName" as dBInstanceIdentifier3, dBClusterIdentifier3, dBProxyName2, dBProxyName3 nodrop
+| parse field=resourceName "arn:aws:rds:*:db:*" as f1, dBInstanceIdentifier2 nodrop 
+| parse field=resourceName "arn:aws:rds:*:cluster:*" as f1, dBClusterIdentifier2 nodrop
+| if (resourceName matches "arn:aws:rds:*:db:*", dBInstanceIdentifier2, if (!isEmpty(dBInstanceIdentifier1), dBInstanceIdentifier1, dBInstanceIdentifier3) ) as dBInstanceIdentifier 
+| if (resourceName matches "arn:aws:rds:*:cluster:*", dBClusterIdentifier2, if (!isEmpty(dBClusterIdentifier1), dBClusterIdentifier1, dBClusterIdentifier3) ) as dBClusterIdentifier 
+| if (isEmpty(dBInstanceIdentifier), dBClusterIdentifier, dBInstanceIdentifier) as dbidentifier 
 | tolowercase(dbidentifier) as dbidentifier
-| fields region, namespace, dBInstanceIdentifier, dBClusterIdentifier, dbidentifier, accountid
+| if (!isEmpty(dBProxyName1), dBProxyName1, if (!isEmpty(dBProxyName2), dBProxyName2, dBProxyName3)) as proxyname
+| tolowercase(proxyname) as proxyname
+| fields region, namespace, dBInstanceIdentifier, dBClusterIdentifier, dbidentifier, proxyname, accountid
 ```
 
 ### Centralized AWS CloudTrail log collection
@@ -450,19 +481,20 @@ Scope (Specific Data):
 account=* region=* (_sourceHost=/aws/* or _sourceHost=API*Gateway*Execution*Logs*)
 Parse Expression:
 if (isEmpty(namespace),"unknown",namespace) as namespace
-| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace
-| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace
-| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace
-| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace
-| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace
-| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace
-| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname
-| parse field=_sourceHost "/aws/rds/*/*/" as f1, dbidentifier nodrop
-| parse field=_sourceHost "/aws/apigateway/*/*" as apiid, stage nodrop
-| parse field=_sourceHost "API-Gateway-Execution-Logs_*/*" as apiid, stage nodrop
-| apiid as apiName
-| tolowercase(dbidentifier) as dbidentifier
-| fields namespace, functionname, dbidentifier, apiid, apiName
+| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace 
+| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace 
+| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace 
+| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace 
+| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace 
+| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace 
+| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname 
+| parse field=_sourceHost "/aws/rds/proxy/*" as proxyname nodrop
+| parse field=_sourceHost "/aws/rds/instance/*/" as dbidentifier nodrop
+| parse field=_sourceHost "/aws/rds/cluster/*/" as dbidentifier nodrop
+| parse field=_sourceHost "/aws/apigateway/*/*" as apiid, stage nodrop 
+| parse field=_sourceHost "API-Gateway-Execution-Logs_*/*" as apiid, stage nodrop | apiid as apiName 
+| tolowercase(dbidentifier) as dbidentifier 
+| fields namespace, functionname, proxyname, dbidentifier, apiid, apiName
 ```
 
 ### Metric Rules
@@ -522,7 +554,7 @@ Use this dashboard to:
 
 ### Non-Describe CloudTrail Audit Events
 
-The **Amazon RDS-  Non-Describe CloudTrail Audit Events** dashboard provides statistical and detailed insights into Non-Describe DB Instance, SnapShot, Cluster, and Security group events.
+The **Amazon RDS - Non-Describe CloudTrail Audit Events** dashboard provides statistical and detailed insights into Non-Describe DB Instance, SnapShot, Cluster, and Security group events.
 
 Use this dashboard to:
 * Monitor Amazon RDS-related non-describe audit logs using CloudTrail Events.
@@ -792,3 +824,84 @@ Use this dashboard to:
 * Monitor database connections by host and application, track connection failures, analyze command execution statuses and trends, and gather insights from the Oracle Listener log.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-Logs-Listener-Troubleshooting.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+
+### Proxy - Overview
+
+The **Amazon RDS Proxy Overview** dashboard provides insights into proxy availability, client and database connections, and connection pool limits to help optimize database connectivity and performance.
+
+Use this dashboard to:
+* Monitor RDS Proxy availability and connection pool usage.
+* Track client and database connection metrics, including connection limits, Latency and usage trends, to optimize performance and troubleshoot connectivity issues.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Overview.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+
+### Proxy - Client Connection Endpoint Performance
+
+The **Amazon RDS - Proxy Client Connection Endpoint Performance** dashboard provides insights into client connections, TLS usage, authentication success/failure, and connection latencies, helping you monitor and optimize proxy-managed database interactions.
+
+Use this dashboard to:
+* Monitor client connection patterns to the RDS Proxy.
+* Track TLS encryption usage and authentication success or failure events.
+* Analyze connection setup latency and performance trends.
+* Gain insights into how applications interact with the database via the proxy to identify potential bottlenecks or security issues.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Client-Connection-Endpoint-Performance.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+
+### Proxy - Query Endpoint Performance
+
+The **Amazon RDS Proxy Query Endpoint Performance** dashboard tracks query TLS usage, and response latency to help monitor and optimise the performance.
+
+Use this dashboard to:
+* Monitor query traffic routed through the RDS Proxy query endpoint.
+* Track TLS usage to ensure secure database interactions.
+* Analyze query response latency to identify performance issues.
+* Optimize database performance by evaluating proxy-handled query behavior.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Query-Endpoint-Performance.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+
+### Proxy - Target Performance
+
+The **Amazon RDS - Proxy Target Performance** dashboard offers insights into target-level metrics such as backend database connection utilization, response latency, TLS usage, and connection setup success rates. It enables monitoring of connection health and transaction patterns at the target level, helping to optimize the performance and reliability of interactions between the RDS Proxy and its database targets.
+
+Use this dashboard to:
+* Monitor backend database connections through the RDS Proxy.
+* Track response latency, TLS usage, and connection setup success/failure rates.
+* Analyze transaction behavior and connection health.
+* Optimize performance and ensure reliable proxy-to-database interactions.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Target-Performance.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+
+### Proxy - TargetRole Performance
+
+The **Amazon RDS - Proxy TargetRole Performance** dashboard provides detailed visibility into backend database connection usage, response latency, TLS adoption, and connection setup success rates, segmented by targetRole such as "READ_ONLY" and "READWRITE". It helps monitor the health, availability, and transaction behavior of each target role, enabling performance optimization based on role-specific traffic patterns.
+Use this dashboard to:
+* Monitor backend database connections through the RDS Proxy.
+* Track response latency, TLS usage, and connection setup success/failure rates.
+* Analyze transaction behavior and connection health.
+* Optimize performance and ensure reliable proxy-to-database interactions.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Target-Role-Performance.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+
+### Proxy - Audit
+
+The **Amazon RDS - Proxy Audit** dashboard tracks CUD operations, read-only events, and the most active proxies, helping you monitor changes, user activity.
+
+Use this dashboard to:
+* Track Create, Update, and Delete (CUD) operations on RDS Proxy/Proxy Endpoint.
+* Monitor read-only events and user activity.
+* Identify the most active proxies.
+* Gain visibility into changes and audit trail for proxy-managed database interactions.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Audit.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+
+### Proxy - Log Analysis
+
+The **Amazon RDS - Proxy Log Analysis** dashboard provides insights into connection activity trends, including top database connection events, client connection pool usage, and event distribution by proxy. It also highlights failed or error events, database availability, and authentication events to help you monitor and troubleshoot proxy operations effectively.
+
+Use this dashboard to:
+* Analyze trends in connection activity and client pool usage.
+* Monitor top database connection events and event distribution by proxy.
+* Identify authentication issues, failures, and database availability problems.
+* Troubleshoot proxy operations effectively using log insights.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Log-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
