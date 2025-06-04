@@ -79,7 +79,7 @@ If logging is not enabled, you can configure it by following the steps below.
   ```
   [oracle@sumolab alert]$ lsnrctl status
   ```
-- **Oracle Audit Logs**.
+- **Oracle Audit Logs**. 
   - **For Oracle version 19c and below**. By default, Oracle logs are stored in
     ```
     $ORACLE_BASE/app/oracle/admin/orcl/adump
