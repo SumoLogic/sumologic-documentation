@@ -776,7 +776,7 @@ Use this dashboard to:
 The **Amazon RDS - MSSQL Logs - Error Logs - Logon Analysis** dashboard provides information about the error logs, including failed authentications and logon errors. This dashboard relies on MSSQL error logs, which need to be [enabled](#collect-amazon-rds-cloudwatch-logs) for the Amazon MSSQL. You need to first ingest MSSQL logs into Sumo Logic to view data on the dashboard panels.
 
 Use this dashboard to:
-* Identify the authentication failures along with reason for user and client location that are used to connect.
+* Identify the authentication failures along with the reason for the user and client location that are used to connect.
 * Detect logon errors, including error codes, severity levels, and states.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Logon Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
@@ -786,7 +786,7 @@ Use this dashboard to:
 The **Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview** dashboard provides information about the hardware, authentication mode, collation, process, recent termination of SQL server, and recent creation of databases. This dashboard relies on MSSQL error logs, which need to be [enabled](#collect-amazon-rds-cloudwatch-logs) and ingested into Sumo Logic.
 
 Use this dashboard to:
-* Get a high-level overview of your MSSQL infrastructure like instance type and version.
+* Get a high-level overview of your MSSQL infrastructure, like instance type and version.
 * Get configuration details such as authentication mode, collation settings, and process details.
 * Monitors `DBCC CHECKDB` checks.
 * Track recent terminations of SQL Server instances and monitor the creation of new databases.
@@ -810,7 +810,7 @@ The **Amazon RDS - Oracle Logs - Audit Logs Analysis** dashboard provides detail
 
 Use this dashboard to:
 * Monitor successful and failed Amazon Oracle RDS events.
-* Monitor top usage by client, database user, and privileges on Oracle RDS instance.
+* Monitor top usage by client, database user, and privileges on the Oracle RDS instance.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-Logs-Audit-Logs-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
 
@@ -820,10 +820,12 @@ Use this dashboard to:
 The **Amazon RDS - Oracle Logs - Listener Troubleshooting** dashboard provides insights into Oracle listener process activity, including database connections by host and application, connection failures, command execution statuses and trends, and additional data from the Oracle Listener log.
 
 Use this dashboard to:
-* Monitor listener process activity on Oracle RDS instance.
+* Monitor listener process activity on the Oracle RDS instance.
 * Monitor database connections by host and application, track connection failures, analyze command execution statuses and trends, and gather insights from the Oracle Listener log.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-Logs-Listener-Troubleshooting.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+
+## Viewing the RDS Proxy dashboards
 
 ### Proxy - Overview
 
@@ -831,7 +833,7 @@ The **Amazon RDS Proxy Overview** dashboard provides insights into proxy availab
 
 Use this dashboard to:
 * Monitor RDS Proxy availability and connection pool usage.
-* Track client and database connection metrics, including connection limits, Latency and usage trends, to optimize performance and troubleshoot connectivity issues.
+* Track client and database connection metrics, including connection limits, Latency, and usage trends, to optimize performance and troubleshoot connectivity issues.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Overview.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
 
@@ -849,7 +851,7 @@ Use this dashboard to:
 
 ### Proxy - Query Endpoint Performance
 
-The **Amazon RDS Proxy Query Endpoint Performance** dashboard tracks query TLS usage, and response latency to help monitor and optimise the performance.
+The **Amazon RDS Proxy Query Endpoint Performance** dashboard tracks query TLS usage and response latency to help monitor and optimise the performance.
 
 Use this dashboard to:
 * Monitor query traffic routed through the RDS Proxy query endpoint.
@@ -884,7 +886,7 @@ Use this dashboard to:
 
 ### Proxy - Audit
 
-The **Amazon RDS - Proxy Audit** dashboard tracks CUD operations, read-only events, and the most active proxies, helping you monitor changes, user activity.
+The **Amazon RDS - Proxy Audit** dashboard tracks CUD operations, read-only events, and the most active proxies, helping you monitor changes and user activity.
 
 Use this dashboard to:
 * Track Create, Update, and Delete (CUD) operations on RDS Proxy/Proxy Endpoint.
