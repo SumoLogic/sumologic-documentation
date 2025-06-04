@@ -200,7 +200,7 @@ This sample query is from the **Redis - Cluster Operations** dashboard Metrics p
 ```sql sumo.datasource=redis metric=redis.cmd.calls
 (cmd=set* or cmd=get* or cmd=incr* or cmd=decr* or cmd=mget or cmd=mset* or cmd=strlen or cmd=psetex or cmd=append)
 deployment.environment=*  db.cluster.name=* db.node.name=*  
-| delta
+| delta 
 | sum
 ```
 
