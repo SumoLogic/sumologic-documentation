@@ -218,7 +218,7 @@ This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Seve
 This sample query is from the **Average Number of Consumers** panel in **RabbitMQ - Metrics** dashboard.
 
 ```sql sumo.datasource=rabbitmq metric=rabbitmq.consumer.count deployment.environment=*  messaging.cluster.name=* messaging.node.name=*  rabbitmq.queue.name=* rabbitmq.vhost.name=*
-| avg by messaging.cluster.name
+| avg by messaging.cluster.name 
 | sum
 ```
 
