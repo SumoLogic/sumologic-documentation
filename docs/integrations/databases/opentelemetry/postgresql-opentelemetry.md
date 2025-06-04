@@ -121,7 +121,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 ::: note
 For OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
-${environment_variable}
+`${environment_variable}`
 :::
 
 For linux platform - Click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
