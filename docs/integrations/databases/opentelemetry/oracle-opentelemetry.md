@@ -197,6 +197,12 @@ Below are the inputs required:
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
 
 Once the details are filled, click on the **Download YAML File** button to get the yaml file.
+
+::: note
+For OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
+${environment_variable}
+:::
+
 For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />

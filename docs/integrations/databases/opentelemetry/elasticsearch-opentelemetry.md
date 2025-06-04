@@ -100,6 +100,11 @@ You can add any custom fields which you want to tag along with the data ingested
 
 For Linux platform, click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
 
+::: note
+For OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
+${environment_variable}
+:::
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/ElasticSearch-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo Logic

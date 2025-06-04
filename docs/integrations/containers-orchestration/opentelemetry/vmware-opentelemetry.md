@@ -61,6 +61,11 @@ In this step, we will configure the YAML file required for VMWare Collection. He
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the YAML file.
 
+::: note
+For OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
+${environment_variable}
+:::
+
 For the Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMWare-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />

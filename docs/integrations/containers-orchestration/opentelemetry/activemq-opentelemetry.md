@@ -136,6 +136,11 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the YAML file.
 
+::: note
+For OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
+${environment_variable}
+:::
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-OTEL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo Logic
