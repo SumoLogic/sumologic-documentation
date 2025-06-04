@@ -105,6 +105,7 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    //Embed code file from GitHub repo
     '@saucelabs/theme-github-codeblock',
     ['@docusaurus/plugin-google-tag-manager',
       {
