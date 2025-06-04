@@ -81,9 +81,11 @@ Below are the inputs required:
 You can add any custom fields which you want to be tagged with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 ::: note
-For OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
+If using username and password with OpenTelemetry collector version >= 0.104 we recommend to use the downloaded config with environment variable as : 
 ${environment_variable}
 :::
+
+For Linux platform if using username and password, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
