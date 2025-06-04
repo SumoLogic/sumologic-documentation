@@ -11,12 +11,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 **Amazon RDS**
 
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is a managed database service, optimized to run in the cloud. The RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure.
-The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s), including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards help you monitor database errors, slow queries, audit SQL queries, and generic activities. PostgreSQL logs dashboard helps you to monitor database errors, slow queries, database security, and query execution timings. MSSQL Logs dashboards help you monitor error logs and basic infrastructure details. Oracle CloudTrail and CloudWatch Logs dashboards provide monitoring for error logs and essential infrastructure details.
+
+* The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS).
+* Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s), including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more.
+* CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure.
+* MySQL Logs dashboards help you monitor database errors, slow queries, audit SQL queries, and generic activities.
+* PostgreSQL logs dashboard helps you to monitor database errors, slow queries, database security, and query execution timings.
+* MSSQL Logs dashboards help you monitor error logs and basic infrastructure details.
+* Oracle CloudTrail and CloudWatch Logs dashboards provide monitoring for error logs and essential infrastructure details.
 
 **Amazon RDS Proxy**
 
 To further enhance performance and availability, Amazon RDS Proxy is a fully managed, highly available proxy that improves scalability and resilience by pooling and sharing DB connections. It reduces failover time by up to 66% and supports IAM and Secrets Manager for secure access. It works with most RDS engines and requires no code changes.
-RDS Proxy dashboards provide visibility into the performance of Amazon RDS Proxy, helping improve application scalability, availability, and security. They track key metrics, including connection pooling, client connections, authentication outcomes, TLS usage, and query patterns, to optimize connection management and reduce database load.
+
+The RDS Proxy dashboards provide visibility into the performance of Amazon RDS Proxy, helping improve application scalability, availability, and security. They track key metrics, including connection pooling, client connections, authentication outcomes, TLS usage, and query patterns, to optimize connection management and reduce database load.
 
 ## Log and metrics types  
 
@@ -734,7 +742,7 @@ Use this dashboard to:
 * Identify the number of slow queries by user, host, and command type, along with slow queries over time by user and database.
 * Monitor average execution time by SQL command.
 * Obtain unique slow queries along with execution time, analysing minimum, maximum, average, and many more.
-* Obtain time comparison between the number of slow queries and their execution time over 1 day or 1 week.
+* Obtain the time comparison between the number of slow queries and their execution time over 1 day or 1 week.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Overview.png')} alt="Amazon RDS dashboard" />
 
