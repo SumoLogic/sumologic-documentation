@@ -439,6 +439,39 @@ _sourceCategory=reinvent/travel/checkout
 
 For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-features/code-blocks).
 
+### Import GitHub repo file
+
+To embed a code sample from a file in a GitHub repository, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
+
+This code references a json script file:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+<img src={useBaseUrl('img/contributing/json-ref-codeblock.png')} alt="JSON code snippet from GitHub" style={{border: '1px solid gray'}} width="700"/>
+
+</TabItem>
+<TabItem value="Result">
+
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.json
+```
+
+</TabItem>
+</Tabs>
+
+Optionally, you can:
+* Reference a specific range of code lines by appending `#L` with the line number or numbers at the end of the URL. For example, `https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.json#L4-L5`.
+* Add a title to the code block, such as `json reference title="Hello"`.
+
+You'll see this used in our [C2C source docs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
 ## Collapsible text blocks
 
