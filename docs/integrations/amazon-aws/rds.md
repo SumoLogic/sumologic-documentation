@@ -24,7 +24,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To further enhance performance and availability, Amazon RDS Proxy is a fully managed, highly available proxy that improves scalability and resilience by pooling and sharing DB connections. It reduces failover time by up to 66% and supports IAM and Secrets Manager for secure access. It works with most RDS engines and requires no code changes.
 
-The RDS Proxy dashboards provide visibility into the performance of Amazon RDS Proxy, helping improve application scalability, availability, and security. They track key metrics, including connection pooling, client connections, authentication outcomes, TLS usage, and query patterns, to optimize connection management and reduce database load.
+The Sumo Logic Amazon RDS Proxy dashboards provide visibility into the performance of Amazon RDS Proxy, helping improve application scalability, availability, and security. They track key metrics, including connection pooling, client connections, authentication outcomes, TLS usage, and query patterns, to optimize connection management and reduce database load.
 
 ## Log and metrics types  
 
