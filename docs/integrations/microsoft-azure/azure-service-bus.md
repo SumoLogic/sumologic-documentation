@@ -158,10 +158,10 @@ These alerts are metrics-based and will work for all Azure Service Bus.
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Azure Service Bus - High Count of Active Messages` | This alert is triggered when active message count greater than 5000. Also, a warning type alert will be triggered when active message count greater than 1000. | Count > 5000 | Count < = 5000 |
-| `Azure Service Bus - High Count of Dead-lettered Messages` | This alert is triggered when dead- lettered message count greater than 50. Also, a warning type alert will be triggered when dead- lettered message count greater than 10. | Count > 50 | Count < = 50 |
-| `Azure Service Bus - High Count of Messages (Overall)` | This alert is triggered when messages count (active, dead-lettered, scheduled, etc.)  greater than 6000. Also, a warning type alert will be triggered when messages count greater than 1500. | Count > 6000 | Count < = 6000 |
-| `Azure Service Bus - High Size Consumption` | This alert is triggered when average size is greater than 3000000000 bytes. Also, a warning type alert will be triggered when average size is greater than 1073741824 bytes. | Count > 3000000000 | Count < = 3000000000 |
+| `Azure Service Bus - High Count of Active Messages` | This alert is triggered when the active message count is greater than 5000. Also, a warning type alert will be triggered when the active message count is greater than 1000. | Count > 5000 | Count < = 5000 |
+| `Azure Service Bus - High Count of Dead-lettered Messages` | This alert is triggered when the dead- lettered message count greater than 50. Also, a warning type alert will be triggered when the dead-lettered message count is greater than 10. | Count > 50 | Count < = 50 |
+| `Azure Service Bus - High Count of Messages (Overall)` | This alert is triggered when the messages count (active, dead-lettered, scheduled, etc.) is greater than 6000. Also, a warning type alert will be triggered when the messages count is greater than 1500. | Count > 6000 | Count < = 6000 |
+| `Azure Service Bus - High Size Consumption` | This alert is triggered when the average size is greater than 3000000000 bytes. Also, a warning type alert will be triggered when the average size is greater than 1073741824 bytes. | Count > 3000000000 | Count < = 3000000000 |
 
 ## Upgrade/Downgrade the Azure Service Bus app (optional)
 
