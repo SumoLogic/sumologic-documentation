@@ -184,7 +184,7 @@ Below are the inputs required:
 
 - **`Alert Logs`**. Path of the log file configured to capture oracle alert logs.
 - **`Listener Logs`**. Path of the log file configured to capture oracle listener logs .
-- **`Audit Logs`**.
+- **`Audit Logs`**. 
   - For **Traditional Audit Logs**, path of the log file is configured to capture oracle audit logs.
   - For **Unified Audit Logs**, you need to select the OS where the Oracle is setup - Windows or Linux. For Oracle on Windows machine, no parameter is required. Only respective event IDs will be ingested. For the Linux environment, you need to provide the **port** (configured in pre-requisite steps for the Linux environment) which the syslog receiver should listen to for sending the logs to Sumo Logic.
 - **`Performance metric script-based logs`**. Path of the log file configured to capture log generated through script can be configured in other logs.
