@@ -31,8 +31,21 @@ Utilize PagerDuty to notify responders during the incident response process.
 ## Configure PagerDuty in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your PagerDuty [API](https://developer.pagerduty.com/docs/rest-api-overview) URL, for example, `api.pagerduty.com`
+
+* **Token**. Enter a PagerDuty [token](https://developer.pagerduty.com/docs/authentication).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/pagerduty-configuration.png')} style={{border:'1px solid gray'}} alt="PagerDuty configuration" width="400"/>
 
