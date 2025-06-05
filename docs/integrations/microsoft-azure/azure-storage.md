@@ -110,13 +110,13 @@ import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 As part of the app installation process, the following fields will be created by default:
 
 - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-- `location`. The region to which the resource name belongs to.
+- `location`. The region the resource name belongs to.
 - `subscription_id`. ID associated with a subscription where the resource is present.
 - `resource_group`. The resource group name where the Azure resource is present.
 - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
 - `resource_type`. Azure resource type (for example, storage accounts).
 - `resource_name`. The name of the resource (for example, storage account name).
-- `service_type`. Type of the service that can be accessed with a Azure resource.
+- `service_type`. Type of the service that can be accessed with an Azure resource.
 - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure Storage app dashboards
