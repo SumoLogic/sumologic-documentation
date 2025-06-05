@@ -7,13 +7,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.15  
-Updated: June 3, 2025***
+***Version: 1.16  
+Updated: June 5, 2025***
 
 The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
 ## Actions
 
+* **Alerts CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Alerts.
 * **Close CrowdStrike Incident** *(Containment)* - Close the state of the CrowdStrike Incident.
 * **Create Indicators** *(Containment)* - Create the Indicators.
 * **Detections CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Detections.
@@ -26,13 +27,13 @@ The CrowdStrike Falcon integration allows you to pull and update Detections/Inci
 * **Get IDP Device Info** *(Enrichment)* - Retrieve detailed information about a devices from IDP. Requires IDP rights and relevant IDP-related API scopes.
 * **Incidents CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Incidents.
 * **List Endpoints** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP.
+* **Retrieve Alert Details** *(Enrichment)* - Get details for a specific CrowdStrike Alert.
+* **Search into Alerts** *(Enrichment)* - Retrieves all Alerts IDs that match a given query.
 * **Search into Detections** *(Enrichment)* - Search for Detections that match a given query.
 * **Search into Incidents** *(Enrichment)* - Search for incidents by providing an FQL filter, sorting, and paging
   details.
 * **Update Detections** *(Containment)* - Modify the state or assignee of Detections.
 * **Update Alerts** *(Containment)* - Perform actions on Alerts identified by composite ID(s) in request.
-* **Search into Alerts** *(Enrichment)* - Retrieves all Alerts IDs that match a given query.
-* **Alerts CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Alerts.
 
 ## Category
 
@@ -80,3 +81,5 @@ For information about CrowdStrike Falcon, see [CrowdStrike documentation](https:
     + Refactored the code to improve performance and maintainability.
 * June 3, 2025 (v1.15) - Updated the Integration
   * Resolved timeout issues across all actions, including daemons and enrichment queries, for improved stability and performance.
+* June 5, 2025 (v1.16) - Added new actions
+  * Retrieve Alert Details
