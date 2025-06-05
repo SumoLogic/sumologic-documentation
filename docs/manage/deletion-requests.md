@@ -88,7 +88,8 @@ To cancel a data deletion request:
 
 ## Limitations
 
-- Deletion request will process one by one. You can create upto 100 deletion requests at a time but they will be processed one after the other.   
+- Deletion requests will be processed one by one. 
+- You can create upto 100 deletion requests at a time.
 - Each deletion request can include up to 1 petabyte (PB) of scanned data.   
 - You can delete up to 1,000,000 messages per request.   
 - The maximum time range for each deletion request is one year.   
