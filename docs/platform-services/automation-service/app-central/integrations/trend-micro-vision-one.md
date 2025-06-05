@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/trend-micro-vision-one.png')} alt="trend-micro-vision-one" width="80"/>
 
-***Version: 1.1  
-Updated: Jun 30, 2023***
+***Version: 1.2  
+Updated: Jun 3, 2025***
 
 The Trend Micro Vision One platform includes advanced XDR capabilities that collect and correlate deep activity data across multiple vectors – email, endpoints, servers, cloud workloads, and networks.
 
@@ -29,6 +29,14 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+* URL : Use the region-specific endpoint that matches your tenant's region. For India, it’s: `https://api.in.xdr.trendmicro.com`
+* Token:
+  * Log in to your Trend Vision One console.
+  * Navigate to Administration > API Keys.
+  * Click Add API Key.
+  * Configure the API key settings.
+  * Click Add to generate the API key.
+
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/trend-micro-vision-one-configuration.png')} style={{border:'1px solid gray'}} alt="Trend Micro Vision One configuration" width="400"/>
 
 For information about Trend Micro Vision One, see [Trend Micro Vision One documentation](https://docs.trendmicro.com/en-us/documentation/trend-vision-one/).
@@ -37,3 +45,6 @@ For information about Trend Micro Vision One, see [Trend Micro Vision One docume
 
 * October 28, 2021 - First upload
 * June 30, 2023 (v1.1) - Updated the integration with Environmental Variables
+* June 3, 2025 (v1.2)
+    + Fixed type SHA1 issue in action `Add Object To Suspicious Object List` and `Delete Object From Suspicious Object List`
+    + Added SHA256 support in action `Add Object To Suspicious Object List` and `Delete Object From Suspicious Object List`
