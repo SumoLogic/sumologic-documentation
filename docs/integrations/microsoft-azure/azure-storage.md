@@ -116,7 +116,7 @@ As part of the app installation process, the following fields will be created by
 - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
 - `resource_type`. Azure resource type (for example, storage accounts).
 - `resource_name`. The name of the resource (for example, storage account name).
-- `service_type`. Type of the service that can be accessed with a Azure resource.
+- `service_type`. Type of the service that can be accessed with an Azure resource.
 - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure Storage app dashboards
