@@ -12,6 +12,40 @@ In Sumo Logic, you'll need an access key to:
 * **Use Sumo Logic APIs**. You must supply an access key to use the Sumo Logic APIs. See [API Authentication](/docs/api/getting-started#authentication) for details.
 * **Run scripts or automation**. Create access keys to provide authentication for scripts or automation.
 
+:::sumo Micro Lesson
+Watch this micro lesson to learn about access keys.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/5334f8q4os?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Managing Access Keys (Conceptual)"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+:::
+
+:::sumo Micro Lesson
+Watch this micro lesson to learn how to create access keys.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/01escgcbfa?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Managing Access Keys (How To)"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+:::
+
+
+
 ## Prerequisites
 
 * You'll need the [**Create Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security) to create an access key.
