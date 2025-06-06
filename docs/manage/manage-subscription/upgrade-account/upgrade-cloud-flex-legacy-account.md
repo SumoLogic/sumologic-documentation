@@ -8,7 +8,7 @@ description: Learn how to upgrade Cloud Flex (Legacy) account.
 We recommend transitioning to a our newer [Flex Plan](/docs/manage/manage-subscription/sumo-logic-flex-accounts/) for the newest features and enhanced functionality.
 :::
 
-This page has information about upgrading a Cloud Flex Legacy plan, which has the following [account types](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account): Trial, Professional, and Enterprise.
+This page has information about upgrading a Cloud Flex Legacy plan, which has the following [account types](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account): Free, Trial, Professional, and Enterprise.
 
 ## Upgrade options for legacy accounts
 
@@ -16,7 +16,7 @@ This table summarizes upgrade options for different account types.
 
 | Account Type | Upgrade Options |
 | :-- | :-- |
-| Trial  | - Professional <br/>- Enterprise—Log ingest is capped at 20GB/day. |
+| Free or Trial  | - Professional <br/>- Enterprise—Log ingest is capped at 20GB/day. |
 | Professional | - You can increase or decrease the supported product variables while staying a Professional account.<br/>- Enterprise—Log ingest is capped at 20GB/day. |
 | Enterprise | - You can increase or decrease the supported product variables; log ingest is capped at 20GB/day. |
 
@@ -24,7 +24,7 @@ This table summarizes upgrade options for different account types.
 
 It depends on your current account type:
 
-* If your organization currently has a Sumo Logic Trial account, any admin can perform the upgrade. That admin is then known as the Account Owner, meaning that he or she is the only person in the account that can view and change the credit card information. 
+* If your organization currently has a Sumo Logic Free account, any admin can perform the upgrade. That admin is then known as the Account Owner, meaning that he or she is the only person in the account that can view and change the credit card information. 
 * If your organization already has a Sumo Logic Professional account, only the existing Account Owner can perform upgrades.
 * Sumo Logic Enterprise accounts do not have account owners, as all upgrades are handled by a Sumo Logic salesperson.
 

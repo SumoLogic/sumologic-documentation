@@ -94,10 +94,6 @@ To upgrade:
 1. The **Upgrade** button is visible if you have an active AWS account for which upgrades are permitted.
 1. On the upgrade request form, enter the Log Ingest level you want to upgrade to. Within 24 to 48 hours, your account will be updated to reflect the change. Once the account is upgraded, the AWS Marketplace will be notified of the change.
 
-#### Cancelling
-
-To cancel an auto-renewal subscription, you can do this through the AWS Marketplace under **Manage subscriptions**.
-
 ### Billing
 
 An account that is within its limits is defined as using Reserved Capacity. After your trial, if you've signed up for auto-renewal, you will be billed for your plan’s daily ingest data volume.
@@ -111,6 +107,9 @@ For example, for 10GB/Day:
 - If the billing cycle is 30 days, the Reserved Capacity is 300GB.
 - If the billing cycle is 31 days, the Reserved Capacity is 310GB.
 
+#### Cancelling
+
+To cancel an auto-renewal subscription, you can do this through the AWS Marketplace under **Manage subscriptions**.
 
 ## What to expect after activation
 
@@ -130,16 +129,6 @@ Once your account is activated, check out the [Quickstart guide](/docs/get-start
 
 ### Sign in to Sumo Logic
 
-Once you're registered for an account, you can sign in using Google SSO, your email address and password, or—if configured by your organization—[identity provider](/docs/manage/security/saml).
-
-### Set up data collection
-
-Here’s a consolidated and streamlined version of your content that avoids repetition, preserves all important details, and improves flow:
-
----
-
-### Sign in to Sumo Logic
-
 Once you're registered for an account, you can sign in using Google SSO, your email address and password, or—if configured by your organization—an [identity provider](/docs/manage/security/saml).
 
 ### Set up data collection
@@ -153,7 +142,7 @@ Once installation is complete, click **Start using Sumo**. Your data will begin 
 
 Alternatively, you can skip setup and browse our [App Catalog](/docs/integrations) to explore prebuilt apps with guided installation.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
 
-## Additional information
+## Additional resources
 
 * [Sumo Logic Quickstart Guide](/docs/get-started/quickstart)
 * [Sumo Logic Onboarding Checklists](/docs/get-started/onboarding-checklists)

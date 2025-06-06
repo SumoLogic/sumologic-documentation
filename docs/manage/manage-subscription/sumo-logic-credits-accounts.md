@@ -20,7 +20,20 @@ This plan was formerly called *Cloud Flex Credits*.
 
 ## Credits - Account types
 
-Sumo Logic offers the following account types: Trial, Essentials, Enterprise Operations, Enterprise Security, and Enterprise Suite.
+Sumo Logic offers the following account types: Free, Trial, Essentials, Enterprise Operations, Enterprise Security, and Enterprise Suite.
+
+### Free
+
+Free accounts offer access to most Sumo Logic features with the following limitations:
+- **Daily Credit Allocation**. 20 credits for logs, metrics, and traces.
+- **Retention**. 7-day log retention.
+- **Users**. Limited to three users.
+
+Free accounts can be upgraded to a paid subscription in the Sumo Logic UI. For details, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account).
+
+:::note
+Free accounts do not support [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management).
+:::
 
 ### Trial
 

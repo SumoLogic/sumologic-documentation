@@ -5,8 +5,6 @@ sidebar_label: Upgrade a Flex Account
 description: Learn how to upgrade a Free or Trial account to an Essentials subscription.
 ---
 
-<!-- per PLG: AFTER DEPRECATION, remove all references to Free account type -->
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page explains how to upgrade a Free or Trial Sumo Logic account to Essentials and adjust existing Essentials plans.
