@@ -41,7 +41,7 @@ These apps have gone through code and functional review with the Sumo Logic app 
 Certain apps have specific installation requirements. Be sure to check the instructions for your application for specific instructions.
 
 :::important
-Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
+Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
 :::
 
 ## Next-Gen apps
