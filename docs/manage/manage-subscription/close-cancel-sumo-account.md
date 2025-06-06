@@ -29,4 +29,4 @@ Deleting your organization is permanent and removes all users, data, and the acc
 
 ## Cancel a Sumo Logic licensed account
 
-To cancel a paid Sumo Logic account, such as Essentials or Enterprise, submit a request to [Sumo Logic Support](https://support.sumologic.com/support/s). Our team will process your request promptly.
+To cancel a paid Sumo Logic account, such as Essentials or Enterprise, submit a request to [Sumo Logic Support](https://support.sumologic.com/support/s). Our team will process your request promptly.  
