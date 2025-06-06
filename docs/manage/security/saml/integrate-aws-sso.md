@@ -56,7 +56,7 @@ This section has instructions for configuring basic SAML in Sumo Logic.
 ## Step 3: Complete SAML configuration in AWS Single Sign-on.
 
 1. Return to the **Configure Sumo Logic** page in AWS Single Sign-on.
-1. Paste the **Assertion Consumer** value from Sumo Logic into the **Application ACS URL** field in the **Application Metadata** section of the page.    <br/><img src={useBaseUrl('img/security/application-metadata.png')} alt="Application ACS URL in the Application Metadata section" style={{border: '1px solid gray'}} width="800" />
+1. Paste the **Assertion Consumer** value from Sumo Logic into the **Application ACS URL** field in the **Application Metadata** section of the page.    <br/><img src={useBaseUrl('img/security/application-metadata.png')} alt="Application ACS URL in the Application Metadata section" style={{border: '1px solid gray'}} width="800" /> 
 1. Paste the **Entity Id** value from Sumo Logic into the **Application SAML audience** field in the **Application Metadata** section of the page. 
 1. Click **Save Changes**. 
 1. On the **Assigned Users** tab of your new AWS SSO configuration, click **Assign users**.    <br/><img src={useBaseUrl('img/security/assign-users.png')} alt="Assign Users tab" style={{border: '1px solid gray'}} width="800" /> 
