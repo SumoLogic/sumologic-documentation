@@ -32,6 +32,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/darktrace-configuration.png')} style={{border:'1px solid gray'}} alt="DarkTrace configuration" width="400"/>
+
+For information about DarkTrace, see the [DarkTrace website](https://www.darktrace.com/).
+
 ## Change Log
 
 * January 15, 2021 - First upload

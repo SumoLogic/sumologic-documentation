@@ -27,7 +27,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ## Threat Intel optimization
 
-The Threat Intel Quick Analysis App provides baseline queries. You can further optimize and enhance these queries for the log and events types being scanned for threats. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**.
+The Threat Intel Quick Analysis app provides baseline queries. You can further optimize and enhance these queries for the log and events types being scanned for threats. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**.
 
 Use the following guidelines to customize your Threat Intel queries:
 * Filter out unwanted logs before you use lookup operator
@@ -44,9 +44,9 @@ _sourceCategory=cylance "IP Address"
 | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
 ```
 
-<!-- Replace section content with this after `sumo://threat/i471` is replaced by `threatlookup`:
+<!-- Per DOCS-643, replace section content with this after `sumo://threat/cs` is replaced by `threatlookup`:
 
-The app provides baseline queries that utilize the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/) to look for threat intelligence data. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. 
+The app provides baseline queries that utilize the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/) to look for threat intelligence data. To see the queries, open a [dashboard in the app](#viewing-threat-intel-quick-analysis-dashboards), click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**.
 
 You can further optimize and enhance these queries for the log and events types being scanned for threats. Use the following guidelines to customize your threat intel queries:
 
@@ -58,14 +58,14 @@ You can further optimize and enhance these queries for the log and events types 
 For example, here is the query used for the **Threat Count** panel in the [Threat Intel Quick Analysis - IP](#ip) dashboard:
 
 ```
-_sourceCategory=<source-category-name> 
-| parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
+_sourceCategory=<source-category-name>
+| parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | count as ip_count by ip_address
 
 | threatlookup singleIndicator ip_address
 
-// normalize confidence level to a string 
+// normalize confidence level to a string
 | if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "unknown")))) as threat_confidence
 
 // filter for threat confidence
@@ -106,8 +106,8 @@ Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-e
    | if (isEmpty(actor), "Unassigned", actor) as Actor
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name
    | sort by threat_count
-   ``` 
-<!-- Replace the preceding step with the following after `sumo://threat/i471` is replaced by `threatlookup`:   
+   ```
+<!-- Per DOCS-643, replace the preceding step with the following after `sumo://threat/cs` is replaced by `threatlookup`:   
 1. Customize your query so you can use parsed fields from the Field Extraction Rule with the [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/), where `src_ip` is the parsed field from the FER. For example:
    ```
    | threatlookup singleIndicator src_ip
@@ -134,7 +134,38 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
    | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
    | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
    ```
-<!-- Replace the preceding code with the following after `sumo://threat/i471` is replaced by `threatlookup`:
+<!-- Per DOCS-643, replace the preceding code with the following after `sumo://threat/cs` is replaced by `threatlookup`:
+2. Now, you can run your Threat Intel query on top of this view:
+  ```sql
+  _view=cylance_threat
+  | count by src_ip
+  ```
+
+## Threat Intel FAQ
+
+#### What is the CrowdStrike Integration for Sumo Logic?
+
+Sumo Logic has expanded its security offerings by allowing customers to analyze their logs for potential threats and indicators of compromise. In partnership with CrowdStrike, Sumo Logic maintains an updated Threat Intelligence database that can be correlated with log data through queries. The Sumo Logic / CrowdStrike integration has two parts:
+
+* Sumo Logic maintains an up-to-date copy of CrowdStrike’s threat database.
+* Sumo customers can now use the CrowdStrike database in threat analysis queries over their logs (through a new lookup operator).
+
+The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
+
+
+#### What does the Threat Intel Quick Analysis App do?
+
+This app scans all Sumo logs and parses (using regex) IP/Email/URL/Domain/File Name fields for comparison against the threat feed from CrowdStrike. Think of it as an Inner Join between parsed fields and the threat table.
+
+This application can be slow to load depending on the volume of data you scan based on time, source category, etc.  We **highly recommend** that you apply additional filter conditions as you screen your logs or run these types of searches on a schedule.
+
+
+#### How often do you refresh the threat feed from CrowdStrike?
+
+The database is updated once per day. We have implemented a multi-layer cache for performance enhancements rather than returning to the master database on each query.
+
+=======
+<!-- Replace the preceding code with the following after `sumo://threat/cs` is replaced by `threatlookup`:
    ```
     _sourceCategory=cylance
     | threatlookup singleIndicator src_ip
@@ -145,13 +176,13 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
     | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
    ```
    -->
-1. Now, you can run your Threat Intel query on top of this view:
+2. Now, you can run your Threat Intel query on top of this view:
      ```sql
      _view=cylance_threat
      | count by src_ip
      ```
 
-<!-- Hide this FAQ section until after `sumo://threat/i471` is replaced by `threatlookup`:
+<!-- Per DOCS-643, hide this FAQ section until after `sumo://threat/cs` is replaced by `threatlookup`:
 
 ## Threat Intel FAQ
 
@@ -227,6 +258,151 @@ Yes, you can run scheduled searches that can be set up with a run frequency of R
 You can further investigate bad IP triggers by updating your query to check the port as well and see if it is also identified as a malicious port.
 
 -->
+
+## JSON configuration object
+
+#### `malicious_confidence`
+
+**Data Type:** string<br/>
+**Description:** Indicates a confidence level by which an indicator is considered to be malicious. For example, a malicious file hash may always have a value of high while domains and IP addresses will very likely change over time. The malicious confidence level is also represented under the labels list in the JSON data structure.<br/>
+Once an indicator has been marked with a malicious confidence level, it continues to have that confidence level value until updated by CrowdStrike. If you think there is a false positive, please file a Support ticket, and we'll work with CrowdStrike to investigate the IOC in question and update the threat details.<br/>
+**Values:**
+   * high
+   * medium
+   * low
+   * unverified—This indicator has not been verified by a CrowdStrike Intelligence analyst or an automated system.
+   * null—Indicates that Sumo Logic has no information about the threat record.
+
+---
+#### `published_date`
+
+**Data Type:** Timestamp in standard Unix time, UTC.<br/>
+**Description:** This is the date the indicator was first published.
+
+---
+#### `last_updated`
+
+**Data Type**: Timestamp in standard Unix time, UTC.<br/>
+**Description**: This is the date the indicator was last updated in CrowdStrike internal database.
+
+---
+#### `malware_family`
+
+**Data Type**: string<br/>
+**Description**: Indicates the malware family an indicator has been associated with. An indicator may be associated with more than one malware family. The malware family list is also represented under the labels list in the JSON data structure.
+
+---
+#### `kill_chain`
+
+**Data Type:** string<br/>
+**Description:** The point in the kill chain at which an indicator is associated. The kill chain list is also represented under the labels list in the JSON data structure.<br/>
+**Values:**  
+   * reconnaissance—This indicator is associated with the research, identification, and selection of targets by a malicious actor.
+   * weaponization—This indicator is associated with assisting a malicious actor create malicious content.
+   * delivery—This indicator is associated with the delivery of an exploit or malicious payload.
+   * exploitation—This indicator is associated with the exploitation of a target system or environment.
+   * installation—This indicator is associated with the installation or infection of a target system with a remote access tool or other tool allowing for persistence in the target environment.
+   * c2 (Command and Control)—This indicator is associated with malicious actor command and control.
+   * actionOnObjectives—This indicator is associated with a malicious actor's desired effects and goals.
+
+---
+#### `labels`
+
+**Data Type:** string<br/>
+**Description:** The Intel Indicators API provides additional context around an indicator via the labels list. Some of these labels, such as `malicious_confidence` are accessible via the top-level data structure. All labels, including their associated timestamps, will be accessible via the labels list. The url string will look like: `https://intelapi.crowdstrike.com/indicator/v1/search/labels?equal=DomainType/DynamicDNS`.
+
+
+<table class="mt-responsive-table">
+    <thead>
+        <tr>
+            <th class="mt-column-width-20" scope="col"><strong>IOC Type</strong></th>
+            <th class="mt-column-width-80" scope="col"><strong>Values</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>DomainType</strong></td><td class="mt-column-width-80" data-th="Values">
+            <ul><li>DomainType/ActorControlled&mdash;It is believed the malicious actor is still in control of this domain.</li>
+                <li>DomainType/DGA&mdash;Domain is the result of malware utilizing a domain generation algorithm.</li>
+                <li>DomainType/DynamicDNS&mdash;Domain is owned or used by a dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/Afraid&mdash;Domain is owned or used by the Afraid.org dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/DYN&mdash;Domain is owned or used by the DYN dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/Hostinger&mdash;Domain is owned or used by the Hostinger dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/noIP&mdash;Domain is owned or used by the NoIP dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/Oray&mdash;Domain is owned or used by the Oray dynamic DNS service.</li>
+                <li>DomainType/KnownGood&mdash;Domain itself (or the domain portion of a URL) is known to be legitimate, despite having been associated with malware or malicious activity.</li>
+                <li>DomainType/LegitimateCompromised&mdash;Domain does not typically pose a threat but has been compromised by a malicious actor and may be serving malicious content.</li>
+                <li>DomainType/PhishingDomain&mdash;Domain has been observed to be part of a phishing campaign.</li>
+                <li>DomainType/Sinkholed&mdash;Domain is being sinkholed, likely by a security research team. This indicates that, while traffic to the domain likely has a malicious source, the IP address to which it is resolving is controlled by a legitimate 3rd party. It is no longer believed to be under the control of the actor.</li>
+                <li>DomainType/StrategicWebCompromise&mdash;While similar to the DomainType/LegitimateCompromised label, this label indicates that the activity is of a more targeted nature. Often, targeted attackers will compromise a legitimate domain that they know to be a watering hole frequently visited by the users at the organizations they are looking to attack.</li>
+                <li>DomainType/Unregistered&mdash;Domain is not currently registered with any registrars.</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>EmailAddressType</strong></td><td class="mt-column-width-80" data-th="Values">
+            <p>EmailAddressType/DomainRegistrant&mdash;Email address has been supplied in the registration information for known malicious domains.</p>
+            <p>EmailAddressType/SpearphishSender&mdash;Email address has been used to send spearphishing emails.</p></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type">&nbsp;</td>
+            <td class="mt-column-width-80" data-th="Values"><strong>IntelNews</strong>: The Intel Flash Report ID an indicator is associated with (For example, IntelNews/NEWS-060520151900).</td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type">            <p><strong>IPAddressType</strong></p></td>
+            <td class="mt-column-width-80" data-th="Values"><ul><li>IPAddressType/HtranDestinationNode&mdash;An IP address with this label is being used as a destination address with the HTran Proxy Tool.</li>
+                <li>IPAddressType/HtranProxy&mdash;An IP address with this label is being used as a relay or proxy node with the HTran Proxy Tool.</li>
+                <li>IPAddressType/LegitimateCompromised&mdash;It is suspected an IP address with this label is compromised by malicious actors.</li>
+                <li>IPAddressType/Parking&mdash;IP address is likely being used as parking IP address.</li>
+                <li>IPAddressType/PopularSite&mdash;IP address could be utilized for a variety of purposes and may appear more frequently than other IPs.</li>
+                <li>IPAddressType/SharedWebHost&mdash;IP address may be hosting more than one website.</li>
+                <li>IPAddressType/Sinkhole&mdash;IP address is likely a sinkhole being operated by a security researcher or vendor.</li>
+                <li>IPAddressType/TorProxy&mdash;IP address is acting as a TOR (The Onion Router) Proxy Malware/PoisonIvy Malware/Zeus Malware/DarkComet</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>Status</strong></td>
+            <td class="mt-column-width-80" data-th="Values"><ul><li>Status/ConfirmedActive&mdash;Indicator is likely to be currently supporting malicious activity</li><li>Status/ConfirmedInactive&mdash;Indicator is no longer used for malicious purposes.</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>Target</strong></td>
+            <td class="mt-column-width-80" data-th="Values"><p>The activity associated with this indicator is known to target the indicated vertical sector, which could be any of the following:</p>
+            <ul><li>Target/Aerospace Target/Agricultural Target/Chemical</li>
+                <li>Target/Defense</li>
+                <li>Target/Dissident</li>
+                <li>Target/Energy</li>
+                <li>Target/Extractive</li>
+                <li>Target/Financial</li>
+                <li>Target/Government</li>
+                <li>Target/Healthcare</li>
+                <li>Target/Insurance</li>
+                <li>Target/InternationalOrganizations</li>
+                <li>Target/Legal</li>
+                <li>Target/Manufacturing</li>
+                <li>Target/Media</li>
+                <li>Target/NGO</li>
+                <li>Target/Pharmaceutical</li>
+                <li>Target/Research</li>
+                <li>Target/Retail</li>
+                <li>Target/Shipping</li>
+                <li>Target/Technology</li>
+                <li>Target/Telecom</li>
+                <li>Target/Transportation</li>
+                <li>Target/Universities</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>ThreatType</strong></td><td class="mt-column-width-80" data-th="Values">
+            <ul><li>ThreatType/ClickFraud&mdash;Indicator is used by actors engaging in click or ad fraud.</li>
+                <li>ThreatType/Commodity&mdash;Indicator is used with commodity type malware such as Zeus or Pony Downloader.</li>
+                <li>ThreatType/PointOfSale&mdash;Indicator is associated with activity known to target point-of-sale machines such as AlinaPoS or BlackPoS.</li>
+                <li>ThreatType/Ransomware&mdash;Indicator is associated with ransomware malware such as Crytolocker or Cryptowall.</li>
+                <li>ThreatType/Suspicious&mdash;Indicator is not currently associated with a known threat type but should be considered suspicious.</li>
+                <li>ThreatType/Targeted&mdash;Indicator is associated with a known actor suspected to associated with a nation-state such as DEEP PANDA or ENERGETIC BEAR.</li>
+                <li>ThreatType/TargetedCrimeware&mdash;Indicator is associated with a known actor suspected to be engaging in criminal activity such as WICKED SPIDER.</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><br/><strong>Vulnerability</strong></td>
+            <td class="mt-column-width-80" data-th="Values"><br/>The CVE-XXXX-XXX vulnerability the indicator is associated with (e.g., https://intelapi.crowdstrike.com/indicator/v1/search/labels?equal=vulnerability/CVE-2012-0158).</td>
+        </tr>
+    </tbody>
+</table>
 
 ## Viewing Threat Intel Quick Analysis dashboards
 
@@ -319,3 +495,15 @@ See the frequency of SHA-256 threats by Actor, Log Source, Malicious Confidence,
 * **Threat Breakdown by Source.** Line chart of the number of SHA-256 threats over the last 60 minutes, broken down by source.
 * **Threats by Actor.** Identifies Actors, if any, that can be attributed to SHA-256 threats over the last 15 minutes. Actors are identified individuals, groups or nation-states associated to threats.
 * **Threat Table.** Aggregation Table of SHA-256 threats over the last 15 minutes.
+
+## Upgrading the Threat Intel Quick Analysis app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Threat Intel Quick Analysis app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

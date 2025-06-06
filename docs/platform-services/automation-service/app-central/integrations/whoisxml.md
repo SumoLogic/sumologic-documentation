@@ -25,15 +25,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row. The integration details will appear. Click on the **"+"** button to add new Resource.br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-3.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
-1. Populate all the required fields (\*) and then click **SAVE**. 
    * **Label**. The desired name for the resource.
    * **URL**. WhoisXML API URL.
-   * **API Key**. Your WhoisXML API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-4.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-5.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-6.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-7.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+   * **API Key**. Your WhoisXML API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/whoisxml-configuration.png')} style={{border:'1px solid gray'}} alt="WhoisXML configuration" width="400"/>
+
+For information about WhoisXML, see [WhoisXML documentation](https://whois.whoisxmlapi.com/documentation/making-requests).
 
 ## Change Log
 

@@ -38,6 +38,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/elasticsearch-v2-configuration.png')} style={{border:'1px solid gray'}} alt="Elasticsearch V2 configuration" width="400"/>
+
+For information about Elasticsearch, see [Elasticsearch documentation](https://www.elastic.co/docs/solutions/search).
+
 ## Change Log
 
 * November 17, 2020 - First upload

@@ -27,6 +27,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/opswat-metadefender-configuration.png')} style={{border:'1px solid gray'}} alt="Opswat Metadefender configuration" width="400"/>
+
+For information about Opswat Metadefender, see [Opswat Metadefender documentation](https://www.opswat.com/docs/mdcore).
+
 ## Change Log
 
 * May 11, 2021 - First upload

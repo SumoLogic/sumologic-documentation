@@ -61,17 +61,11 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/spiderfoot-hx/spiderfoot-hx-4.png')} style={{border:'1px solid gray'}} alt="spiderfoot" width="400"/>
-1. Populate all the required fields (\*)
    * **Label**. The desired name for the resource.
    * **URL**. Your SpiderFoot URL.
-   * **API Key**. Your SpiderFoot API Key you copied earlier from SpiderFoot.
-1. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/spiderfoot-hx/spiderfoot-hx-5.png')} style={{border:'1px solid gray'}} alt="spiderfoot" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/spiderfoot-hx/spiderfoot-hx-6.png')} style={{border:'1px solid gray'}} alt="spiderfoot" width="400"/>
-1. Click **TEST**.
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/spiderfoot-hx/spiderfoot-hx-8.png')} style={{border:'1px solid gray'}} alt="spiderfoot" width="400"/>
+   * **API Key**. Your SpiderFoot API Key you copied earlier from SpiderFoot.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/spiderfoot-configuration.png')} style={{border:'1px solid gray'}} alt="Spiderfoot configuration" width="400"/>
+
+For information about SpiderFoot, see [SpiderFoot documentation](https://github.com/smicallef/spiderfoot/blob/master/README.md).
 
 ## Category
 

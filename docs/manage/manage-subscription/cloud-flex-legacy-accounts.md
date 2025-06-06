@@ -47,7 +47,6 @@ The following table provides a summary list of key features by package accounts.
 | Metrics data retention |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Metrics data retention |   | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | [Partitions](/docs/manage/partitions) | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Real Time Alerts | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | SAML |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Scheduled Views |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Search Job API |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -125,7 +124,7 @@ The top panel of the Account Overview page provides an at-a-glance view of your
 * **Frequent Ingest**. Shows your daily capacity for log ingest to the Frequent Data Tier, and your average daily usage. If the daily ingest average over the billing cycle is above your capacity, you will be charged the on-demand rate for the difference.
 * **Metrics Ingest**. Shows your daily capacity for metrics ingest, and your average daily usage, both in DPM. If the daily ingest average over the billing cycle is above your capacity, you will be charged the on-demand rate for the difference. If your daily usage average is higher than your capacity, you will be charged the on-demand rate for the difference.
 * **Storage.** Shows your daily storage capacity and average daily storage usage. You can adjust capacity use by modifying your [retention periods](../partitions/manage-indexes-variable-retention.md).
-* **Auto Refresh Dashboard Panels and Real Time Alerts.** Show the number of auto refresh dashboard panels and real time alerts you have set up. Compares the number allowed to the number already in use. For example, out of 200, 174 have been used.
+* **Auto Refresh Dashboard Panels.** Show the number of auto refresh dashboard panels you have set up. Compares the number allowed to the number already in use. For example, out of 200, 174 have been used.
 
 To view the Account page, do the following:
 

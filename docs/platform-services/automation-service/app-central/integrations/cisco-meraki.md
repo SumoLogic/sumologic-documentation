@@ -47,6 +47,10 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-meraki-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Meraki configuration" width="400"/>
+
+For information about Cisco Meraki, see [Cisco Meraki documentation](https://developer.cisco.com/meraki/api-v1/authorization/#authorization).
+
 ## Change Log
 
 * February 28, 2019 - First upload

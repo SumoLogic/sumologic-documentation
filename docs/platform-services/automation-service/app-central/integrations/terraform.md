@@ -34,7 +34,7 @@ Terraform is an open-source infrastructure as code software tool that provides a
 
 1. Log in to Terraform. Click on your profile picture on the top right corner.
 1. Click **User settings**.
-1. In the left menu, under Tokens, click Create an API token button. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-1.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
+1. In the left menu, under Tokens, click [Create an API token](https://developer.hashicorp.com/terraform/enterprise/users-teams-organizations/users#creating-a-token) button. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-1.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
 1. Then add a description and create your API token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-2.png')} style={{border:'1px solid gray'}} alt="terraform" width="600"/>
 1. Use the copy button to save your token. This token **will not be displayed again**, so make sure to save it to a safe place.
 
@@ -44,13 +44,9 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-5.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
-1. Populate all the required fields (\*) then click **SAVE SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-6.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-7.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-8.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-9.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/terraform-configuration.png')} style={{border:'1px solid gray'}} alt="Terraform configuration" width="400"/>
+
+For information about Terraform, see [Terraform documentation](https://developer.hashicorp.com/terraform/docs).
 
 ## Change Log
 

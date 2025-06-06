@@ -21,15 +21,19 @@ Mimecast protects an enterprise's email infrastructure from viruses, malware, ph
 * **Permit Block Emails** *(Containment)* - Permit and block sending email.
 * **Send Email** *(Notification)* - Sent email to another email.
 
-## Mimecast Configuration
+## Mimecast configuration
 
-[https://integrations.mimecast.com/documentation/api-overview/global-base-urls/](https://integrations.mimecast.com/documentation/api-overview/global-base-urls/)
+To configure Mimecast, see [Mimecast documentation](https://integrations.mimecast.com/documentation/api-overview/).
 
 ## Configure Mimecast in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mimecast-configuration.png')} style={{border:'1px solid gray'}} alt="Mimecast configuration" width="400"/>
+
+For information about Mimecast, see [Mimecast documentation](https://integrations.mimecast.com/documentation/).
 
 ## Change Log
 
