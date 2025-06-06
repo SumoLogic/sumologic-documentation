@@ -80,9 +80,9 @@ Below are the inputs required:
 
 You can add any custom fields which you want to be tagged with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-import ConfigLinux from '../../../reuse/apps/opentelemetry/config-linux.md';
+import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
 
-<ConfigLinux/>
+<EnvVarOpt/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -189,7 +189,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 Following is a query from the Cassandra app's **Cassandra - Overview** dashboard Nodes Up panel:
 
 ```sql
-%"sumo.datasource"=cassandra %"deployment.environment"=* %"db.cluster.name"=*   "INFO" | json "log" as _rawlog nodrop 
+%"sumo.datasource"=cassandra %"deployment.environment"=* %"db.cluster.name"=*   "INFO" | json "log" as _rawlog nodrop
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | parse regex field=_raw "(?<level>[A-Z]*) *\[(?<thread_name>[^\]]*?)[:_-]?(?<thread_id>[0-9]*)\] (?<Date>.{10} .{12}) *(?<source_file>[^:]*):(?<source_line>[0-9]*) - (?<message>.*)"
 | if (message matches "InetAddress * is now UP",1,0) as UP
@@ -203,7 +203,7 @@ Following is a query from the Cassandra app's **Cassandra - Overview** dashboard
 Following is the query from Cassandra App's overview Dashboard's Number of Requests Panel:
 
 ```sql
-sumo.datasource=cassandra deployment.environment=* db.cluster.name=* db.node.name=* metric=cassandra.client.request.count | sum 
+sumo.datasource=cassandra deployment.environment=* db.cluster.name=* db.node.name=* metric=cassandra.client.request.count | sum
 ```
 
 ## Viewing Cassandra dashboards

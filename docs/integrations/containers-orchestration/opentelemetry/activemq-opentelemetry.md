@@ -136,9 +136,9 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the YAML file.
 
-import ConfigLinux from '../../../reuse/apps/opentelemetry/config-linux.md';
+import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
 
-<ConfigLinux/>
+<EnvVarOpt/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-OTEL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
