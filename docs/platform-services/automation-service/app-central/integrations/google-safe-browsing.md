@@ -22,6 +22,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/google-safe-browsing-configuration.png')} style={{border:'1px solid gray'}} alt="Google Safe Browsing configuration" width="400"/>
+
 For information about Google Safe Browsing, see [Google Safe Browsing documentation](https://developers.google.com/safe-browsing/reference).
 
 ## Change Log

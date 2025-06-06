@@ -27,7 +27,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
    * **Label**. The name of the resource.
    * **Host**. `https://ep.api.getfastah.com/whereis/v1/json`.
-   * **Token**. The primary key you have copied from Fastah API Developers Console. 
+   * **Token**. The primary key you have copied from Fastah API Developers Console. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fastah-configuration.png')} style={{border:'1px solid gray'}} alt="Fastah IP Geolocation configuration" width="400"/>
 
 For information about Fastah IP Geolocation, see [Fastah IP Geolocation documentation](https://docs.getfastah.com/docs/quick-start).
 

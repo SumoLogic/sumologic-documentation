@@ -30,6 +30,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/have-i-been-pwned-configuration.png')} style={{border:'1px solid gray'}} alt="Have I Been Pwned configuration" width="400"/>
+
 For information about Have I Been Pwned, see [Have I Been Pwned documentation](https://haveibeenpwned.com/api/v3).
 
 ## Change Log

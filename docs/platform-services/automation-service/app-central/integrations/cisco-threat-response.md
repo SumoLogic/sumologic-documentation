@@ -28,6 +28,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-threat-response-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Threat Response configuration" width="400"/>
+
 For information about Cisco Threat Response, see [Cisco Threat Response documentation](https://ciscosecurity-sx-00-integration-workflows.readthedocs-hosted.com/en/latest/threatresponse/api_intro/api_client.html).
 
 ## Change Log

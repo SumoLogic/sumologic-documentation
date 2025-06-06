@@ -57,6 +57,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cylanceprotect/cylance-protect-configuration.png')} style={{border:'1px solid gray'}} alt="Cylance Protect configuration" width="400"/>
+
 For information about Aurora Endpoint Security (formerly CylanceProtect), see [Aurora Endpoint Security documentation](https://docs.arcticwolf.com/category/aurora_endpoint_security).
 
 ## Change Log

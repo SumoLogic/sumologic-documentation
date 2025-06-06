@@ -27,24 +27,13 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  staticDirectories: ['static'],
-  webpack: {
-    jsLoader: (isServer) => ({
-      loader: require.resolve('swc-loader'),
-      options: {
-        jsc: {
-          "parser": {
-            "syntax": "typescript",
-            "tsx": true
-          },
-          target: 'es2017',
-        },
-        module: {
-          type: isServer ? 'commonjs' : 'es6',
-        }
-      },
-    }),
+  future: {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true, // required
+    },
+    experimental_faster: true,
   },
+  staticDirectories: ['static'],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -116,6 +105,8 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    //Embed code file from GitHub repo
+    '@saucelabs/theme-github-codeblock',
     ['@docusaurus/plugin-google-tag-manager',
       {
         containerId: 'GTM-58ZK7D',

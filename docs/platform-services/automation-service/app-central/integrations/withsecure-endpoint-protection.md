@@ -41,7 +41,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **URL**: The base API URL for WithSecure Endpoint Protection. i.e. [http[s]://eu1.psb.fsapi.com](https://eu1.psb.fsapi.com)
    * **API Key**: Your API Key.
    * **Username**: Your username.
-   * **Password**: Your password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-endpoint-protection/withsecure-endpoint-protection-6.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="400" />
+   * **Password**: Your password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/withsecure-endpoint-protection-configuration.png')} style={{border:'1px solid gray'}} alt="WithSecure Endpoint Protection configuration" width="400"/>
 
 For information about WithSecure Endpoint Protection, see [WithSecure Endpoint Protection documentation](https://www.withsecure.com/userguides/product.html?business/psb-portal/latest/en).
 

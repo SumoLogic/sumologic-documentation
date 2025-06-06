@@ -24,6 +24,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/symantec-edr-configuration.png')} style={{border:'1px solid gray'}} alt="Symantec EDR configuration" width="400"/>
+
 For information about Symantec EDR, see [Symantec EDR documentation](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-detection-and-response/4-11.html).
 
 ## Change Log

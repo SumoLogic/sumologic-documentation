@@ -50,6 +50,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-ise-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco ISE configuration" width="400"/>
+
 For information about Cisco ISE, see [Cisco ISE documentation](https://www.cisco.com/c/en/us/td/docs/security/ise/end-user-documentation/Cisco_ISE_End_User_Documentation.html).
    
 ## Change Log

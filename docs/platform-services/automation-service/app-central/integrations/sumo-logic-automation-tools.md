@@ -18,6 +18,7 @@ Sumo Logic Automation Tools simplifies Cloud SOAR playbooks with data processing
 * **Data Transform** (*Custom*) -  Provides various functions to more easily transform data in a playbook. See [Data Transfer example](#data-transform).
 * **Build JSON Object** (*Custom*) - Provide the action with JSON key placeholder or string to build a new JSON object with the specified key/values. See [Build JSON Object example](#build-json-object).
 * **Build Signal Output** (*Custom*) - Converts the Sumo Logic SIEM Signal JSON object to HTML or plain text with line breaks. See [Build Signal Output example](#build-signal-output).
+* **Scaled Decimal to Percentage** (*Custom*) - Converts a scaled decimal values between 0 and 1 into a percentage. See [Scaled Decimal to Percentage](#scaled-decimal-to-percentage).
 
 ## Actions usage
 
@@ -396,14 +397,50 @@ Break Lines
 }
 ```
 
+### Scaled Decimal to Percentage
+
+```css
+INPUT = "1"
+```
+```css
+OUTPUT = {
+  "cs_val": "100%"
+}
+```
+
+```css
+INPUT = "0.1"
+```
+```css
+OUTPUT = {
+  "cs_val": "10%"
+}
+```
+
+```css
+INPUT = "0.01"
+```
+```css
+OUTPUT = {
+  "cs_val": "1%"
+}
+```
+
+```css
+INPUT = ".5"
+```
+```css
+OUTPUT = {
+  "cs_val": "50%"
+}
+```
+
+
 ## Configure Sumo Logic Automation Tools in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
-
-<IntegrationsAuth/>
-
-Sumo Logic Automation Tools executes without additional authentication.
+No configuration is needed. Sumo Logic Automation Tools executes without additional authentication.
 
 ## Change log
 
 * Nov 11, 2024 - Beta version released.
+* May 23, 2024 - Introduced the new "Scaled Decimal to Percentage" action, which converts a scaled decimal value into a percentage.

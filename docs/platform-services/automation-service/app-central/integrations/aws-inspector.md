@@ -29,7 +29,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **Label**. Name of the resource.
    * **Access Key**. Access Key of AWS EC2.
    * **Secret Key**. Secret Key of AWS EC2.
-   * **Region**. EC2 Region. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-inspector/aws-inspector-4.png')} style={{border:'1px solid gray'}} alt="aws-inspector-4" width="400"/>
+   * **Region**. EC2 Region. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-inspector-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Inspector configuration" width="400"/>
 
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
 

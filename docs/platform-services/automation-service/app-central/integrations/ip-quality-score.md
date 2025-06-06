@@ -24,6 +24,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ip-quality-score-configuration.png')} style={{border:'1px solid gray'}} alt="IPQualityScore configuration" width="400"/>
+
 For information about IPQualityScore, see [IPQualityScore documentation](https://www.ipqualityscore.com/documentation/overview).
 
 ## Change Log

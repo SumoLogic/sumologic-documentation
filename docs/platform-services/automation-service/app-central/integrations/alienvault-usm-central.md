@@ -24,6 +24,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alienvault/alienvault-usm-central-configuration.png')} style={{border:'1px solid gray'}} alt="Alienvault USM Central configuration" width="400"/>
+
 For information about AlienVault USM Central, see [AlienVault USM Central documentation](https://cybersecurity.att.com/documentation/usm-central.htm).
 
 ## Change Log

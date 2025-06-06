@@ -39,6 +39,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fortiproxy-configuration.png')} style={{border:'1px solid gray'}} alt="FortiProxy configuration" width="400"/>
+
 For information about FortiProxy, see [FortiProxy documentation](https://docs.fortinet.com/product/fortiproxy/7.4).
 
 ## Change Log

@@ -33,6 +33,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitdefender/bitdefender-configuration.png')} style={{border:'1px solid gray'}} alt="Bitdefender Gravity Zone configuration" width="400"/>
+
 For information about Bitdefender GravityZone, see [GravityZone documentation](https://www.bitdefender.com/business/support/en/77209-79436-welcome-to-gravityzone.html).
 
 ## Change Log

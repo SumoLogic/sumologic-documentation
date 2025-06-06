@@ -46,7 +46,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 * **Label**. The desired name for the resource.
 * **User Service Account JSON**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
-* **Admin User Email**. The e-mail address of an admin user.
+* **Admin User Email**. The e-mail address of an admin user.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/google-admin-configuration.png')} style={{border:'1px solid gray'}} alt="Google Admin configuration" width="400"/>
 
 For information about Google Admin, see [Google Workspace Admin documentation](https://support.google.com/a/?hl=en#topic=4388346).
 

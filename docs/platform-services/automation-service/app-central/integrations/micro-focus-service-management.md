@@ -25,7 +25,7 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
    * **API URL**. The API URL 'https://us1-smax.saas.microfocus.com'.
    * **Username**. The Micro Focus account username.
    * **Password**. The Micro Focus account password.
-   * **Tenant ID**. the Micro Focus tenant ID.
+   * **Tenant ID**. the Micro Focus tenant ID.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/micro-focus-configuration.png')} style={{border:'1px solid gray'}} alt="Micro Focus Service Management configuration" width="400"/>
 
 For information about Micro Focus Service Management, see [Micro Focus Service Manager documentation](https://docs.microfocus.com/SM/9.61/Hybrid/Content/service_manager_doc_set_pD.htm).
 

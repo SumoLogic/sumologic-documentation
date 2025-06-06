@@ -7,11 +7,17 @@ description: Learn how to format upload files containing threat intelligence ind
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Use the following formats for threat intelligence indicator files when you [add indicators in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-button) or when you use the upload APIs with the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource:
+This article describes the format to use for upload files when you add threat intelligence sources by [manually uploading them in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-button) or when you use the upload APIs in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource.
+
+Following are the formats for file upload:
 
 * [Normalized JSON format](#normalized-json-format)
 * [CSV format](#csv-format)
 * [STIX 2.x JSON format](#stix-2x-json-format) (API use only)
+
+:::note
+Rather than manually uploading files, you can also add threat intelligence sources using collectors, including for [CrowdStrike](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source), [Intel471](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source), [Mandiant](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source), [STIX/TAXII 1](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source), [STIX/TAXII 2](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and [ZeroFox](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source). For more information, see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
+:::
 
 ## Normalized JSON format
 

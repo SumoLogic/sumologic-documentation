@@ -27,6 +27,8 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 
 <IntegrationsAuth/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/check-host/check-host-configuration.png')} style={{border:'1px solid gray'}} alt="Check-Host configuration" width="400"/>
+
 For information about Check-Host, see [Check-Host documentation](https://check-host.net/about/api?lang=en).
 
 ## Category
