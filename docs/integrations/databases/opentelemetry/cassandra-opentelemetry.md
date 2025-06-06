@@ -189,7 +189,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 Following is a query from the Cassandra app's **Cassandra - Overview** dashboard Nodes Up panel:
 
 ```sql
-%"sumo.datasource"=cassandra %"deployment.environment"=* %"db.cluster.name"=*   "INFO" | json "log" as _rawlog nodrop
+%"sumo.datasource"=cassandra %"deployment.environment"=* %"db.cluster.name"=*   "INFO" | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | parse regex field=_raw "(?<level>[A-Z]*) *\[(?<thread_name>[^\]]*?)[:_-]?(?<thread_id>[0-9]*)\] (?<Date>.{10} .{12}) *(?<source_file>[^:]*):(?<source_line>[0-9]*) - (?<message>.*)"
 | if (message matches "InetAddress * is now UP",1,0) as UP
