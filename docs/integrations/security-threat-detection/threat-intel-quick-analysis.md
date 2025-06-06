@@ -150,7 +150,7 @@ Sumo Logic has expanded its security offerings by allowing customers to analyze 
 * Sumo Logic maintains an up-to-date copy of CrowdStrike’s threat database.
 * Sumo customers can now use the CrowdStrike database in threat analysis queries over their logs (through a new lookup operator).
 
-The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period.
+The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
 
 
 #### What does the Threat Intel Quick Analysis App do?

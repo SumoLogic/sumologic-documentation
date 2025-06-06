@@ -86,7 +86,7 @@ When running an API query for the Sumo Logic [Search Job API](/docs/api/search-j
 
 #### Answer
 
-The API- 403 error occurs when you do not have access to the Search Job API, which is only available for Enterprise-level accounts. If you're currently on a Sumo Logic Professional account, you'll receive this error message if you try to access these APIs.
+The API- 403 error occurs when you do not have access to the Search Job API, which is only available for Enterprise-level accounts. If you're currently on a Sumo Logic Free or Professional account, you'll receive this error message if you try to access these APIs.
 
 If you need access to these APIs, reach out to your Sumo Logic sales representative or [contact us](https://www.sumologic.com/contact-us/) for more information on upgrading your existing account.
 

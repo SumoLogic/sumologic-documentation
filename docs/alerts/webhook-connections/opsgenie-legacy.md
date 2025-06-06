@@ -22,7 +22,7 @@ To add a Sumo Logic integration in Opsgenie, do the following:
    * Add the team who will be notified of Sumo Logic Alerts.
    * Copy the Integration URL, to be used in Sumo Logic while setting up the Webhook Connection.
    :::note
-   For **Essentials** plans, you can only add the integration from the Team Dashboard. Use the alternative instructions. To add an integration directly to a team, navigate to the Team Dashboard and open the Integrations tab. Click **Add Integration** and search for Sumo Logic and click **add**.
+   For **Free** and **Essentials** plans, you can only add the integration from the Team Dashboard. Use the alternative instructions. To add an integration directly to a team, navigate to the Team Dashboard and open the Integrations tab. Click **Add Integration** and search for Sumo Logic and click **add**.
    :::
 1. Click **Save Integration**.
 
@@ -47,7 +47,7 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 
 To create a webhook:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**.
 1. Click **+ Add** and choose **Webhook** as connection type.
 1. For the name, enter **Sumo Logic Opsgenie** and give an optional description to the connection.
 1. Paste the URL (used in [step 2](#configure-a-scheduled-search)) into the **URL** field.

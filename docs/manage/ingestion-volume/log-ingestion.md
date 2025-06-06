@@ -1,7 +1,7 @@
 ---
 id: log-ingestion
 title: Log Ingestion
-description: When designing your deployment, consider how logs will be ingested across Collectors in your account. 
+description: When designing your deployment, consider how logs will be ingested across Collectors in your account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -25,6 +25,7 @@ Sumo Logic imposes account caps on uploads to better protect your account from e
 Log data may not be kept when sent via HTTP Sources or Cloud Syslog Sources, as they may not have the caching and retry mechanisms that are built into Sumo Logic Collectors.
 
 * Ingestion rate is calculated by taking the average of your daily ingestion rate in the current billing cycle. For example, if your contracted daily ingestion rate is 100GB, you will be charged for on-demand usage only if average daily ingestion is more than 100GB at the end of your billing cycle.
+* Sumo Logic free accounts can expect slightly different behavior. If a Sumo Logic Free account regularly exceeds the cap, the account is temporarily disabled until quota becomes available (or until the account is upgraded).
 * Sumo Logic accounts can be upgraded at any time to allow for additional quota. Contact [Sumo Logic Sales](mailto:sales@sumologic.com) to customize your account to meet your organization's needs.
 
 :::important

@@ -33,6 +33,7 @@ See [Trigger Type (Logs)](/docs/alerts/monitors/create-monitor/#trigger-type-log
 * Log monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago. This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
 * Enterprise and Trial plan customers can have up to 1,000 log monitors.
 * Essentials and Professional plan customers can have up to 300 log monitors.
+* Free Trial customers can have up to 50 log monitors.
 
 #### Auto-resolving notifications
 
@@ -48,6 +49,7 @@ Log monitors in a triggered state can auto-resolve.
 * Metrics monitors delay execution by one minute.
 * Enterprise and Trial plan customers can have up to 1,500 Metrics monitors.
 * Essentials and Professional plan customers can have up to 500 Metrics monitors.
+* Free Trial customers can have up to 50 log monitors.
 
 ## Notifications
 
