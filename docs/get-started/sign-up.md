@@ -57,7 +57,7 @@ With our self-service checkout, you can upgrade to an Essentials plan in just mi
 - [Upgrade a Flex account](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account)
 - [Upgrade a Credits account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account)
 
-<img src={useBaseUrl('img/manage/subscriptions/essentials-landing-page.png')} alt="Essentials landing page checkout" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/manage/subscriptions/essentials-landing-page.jpg')} alt="Essentials landing page checkout" style={{border: '1px solid gray'}} width="600" />
 
 #### Enterprise plans
 
