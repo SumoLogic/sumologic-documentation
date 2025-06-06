@@ -15,7 +15,7 @@ Not all error states will provide related content links.
 
 To discover and view related content, do the following:
 
-1. Log in to Sumo Logic and open the Dashboard.
+1. Sign in to Sumo Logic and open the Dashboard.
 1. Select the graph data point you are interested in. In the following screenshot, we selected a bar in a bar chart. A panel appears on the right of the window with details and a list of related content links.<br/><img src={useBaseUrl('/img/dashboards/drill-root-causes/details-pane.png')} alt="details pane" style={{border: '1px solid gray'}} width="800" />
 
 ## Summary tab

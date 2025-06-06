@@ -7,37 +7,28 @@ description: Learn how to sign up with Sumo Logic and create your account.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data without the hassle of managing or scaling hardware or storage. Start your 30-day trial and explore the full capabilities of our Continuous Intelligence Platform™, including elastic scalability and powerful analytics. Sign up through the [Sumo Logic website](#sign-up-through-sumo-logic) or the [AWS Marketplace](#sign-up-through-aws-marketplace) and start using Sumo Logic in minutes.
+Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data without the hassle of managing or scaling hardware or storage. Start your 30-day trial and explore the full capabilities of our Sumo Logic Log Analytics Platform, including elastic scalability and powerful analytics. Sign up through the [Sumo Logic website](#sign-up-through-sumo-logic) or the [AWS Marketplace](#sign-up-through-aws-marketplace) and start using Sumo Logic in minutes.
 
 ## Sign up through Sumo Logic
 
-To start your free trial:
+To start your free trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up). You can register for an account using either Google single sign-on (SSO) or your email address.
 
-1. Go to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up).
-1. Register with a business email address to create your account.
-1. Check your inbox for the activation email.
+### Register using Google SSO
+
+1. Click **Continue with Google** and select a Google account to use.
+1. Fill out the **Complete Your Account** form, then click **Activate**.
+1. Follow the setup guide to install a data collector, apps, and start ingesting data. [Learn more](#what-to-expect-after-activation).
+
+### Register using your email address
+
+1. Click **Continue with email** and enter your business email address.
+1. Check your inbox for an activation email and click **Activate Now**.
    :::note
    The activation link expires after 3 days. If it expires, you’ll need to complete the sign-up process again.
    :::
 1. Open the activation email and click **Activate Now**. (If you do not see it, check your spam and trash folders.)
 1. Fill out the **Activate Your Account** form, then click **Activate**.
-1. After activating your account, follow the setup guide to install a data collector, apps, and start ingesting data. [Learn more](#what-to-expect-after-activation).
-
-### Set up data collection
-
-:::tip
-Get started with Sumo Logic effortlessly using **Kickstart Data**, preloaded sample data and dashboards designed to help you explore and understand the platform’s capabilities. You can immediately dive into our features like log search and alerts prior to setting up your own data collection. Whether you're new to Sumo Logic or evaluating its features, Kickstart Data offers a hands-on way to experience the platform's power. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
-:::
-
-Upon first logging in, you'll be asked to select the platform (AWS, Kubernetes, Linux, Windows, macOS) from which you want to collect data. This will install the OpenTelemetry collector and relevant dashboards.
-* For AWS, you'll deploy a single account with a CloudFormation Template, CLI, or Terraform.
-* For Kubernetes, Linux, Windows, or macOS, you'll need to run the provided command in your Terminal or PowerShell.
-
-You'll also see an option to bypass setup and explore our [App Catalog](/docs/integrations), where you'll find a wide range of apps and easy-to-follow setup guides for installation.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
-
-When the installation is complete, click **Start using Sumo**.
-
-Your data will start flowing in a couple of minutes. Next, you'll be taken to a step-by-step onboarding guide, where you can visualize your data via dashboards, run your first log search, set up alerts, install apps, and more.
+1. Follow the setup guide to install a data collector, apps, and start ingesting data. [Learn more](#what-to-expect-after-activation).
 
 ### Upgrade your account
 
@@ -58,7 +49,6 @@ During your trial, you’ll have full access to our Enterprise plan, giving you 
 <sup>4</sup> Notifies you in real-time when errors occur on your systems.
 
 Once your trial ends, you'll need to upgrade to a paid plan to continue using premium features. Below is an overview of the available options. For detailed pricing and plan information, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Manage Subscription](/docs/manage/manage-subscription).
-
 
 #### Essentials plans
 
@@ -124,7 +114,7 @@ For example, for 10GB/Day:
 
 ## What to expect after activation
 
-Once your account is activated—whether you signed up via the Sumo Logic website or AWS Marketplace—you’ll be guided through a personalized onboarding experience. Head to the [Quickstart guide](/docs/get-started/quickstart) to begin your Sumo Logic journey.
+Once your account is activated—whether you signed up via the Sumo Logic website or AWS Marketplace—you’ll be guided through our personalized onboarding experience. Head to the [Quickstart guide](/docs/get-started/quickstart) to begin your Sumo Logic journey.
 
 You’ll walk through step-by-step instructions to:
 
@@ -138,45 +128,30 @@ Whether you’re evaluating the platform or just getting started, this hands-on 
 
 Once your account is activated, check out the [Quickstart guide](/docs/get-started/quickstart) to begin your Sumo Logic journey. You'll walk through a step-by-step onboarding experience where you can explore preloaded Kickstart Data, try out log search and alerts, visualize data through sample dashboards, install apps, and prepare to ingest your own data—all without any setup required. Whether you're new to Sumo Logic or evaluating its features, this hands-on guide will help you quickly understand the platform's value.
 
-### Upgrade or continue with Free account
+### Sign in to Sumo Logic
 
-After your trial ends, if you've not purchased a plan, your account will automatically convert to a Free account. This account lets you continue using Sumo Logic monitoring and log analytics services with limited features. To unlock premium features and scale as your needs grow, you can upgrade to a paid plan at any time.
+Once you're registered for an account, you can sign in using Google SSO, your email address and password, or—if configured by your organization—[identity provider](/docs/manage/security/saml).
 
-<details>
-<summary>What's the difference between a Trial and a Free account?</summary>
+### Set up data collection
 
-With your trial, you’ll have full access to our Enterprise plan to explore all the powerful features Sumo Logic has to offer.
+Here’s a consolidated and streamlined version of your content that avoids repetition, preserves all important details, and improves flow:
 
-|             | Trial account | Free account
-|:------------|:---------------|:------------
-| Data volume daily | 1GB | 500MB
-| Users | Up to 20 | Up to 3
-| Data Retention <sup>1</sup>| 30 days | 7 days
-| Metrics <sup>2</sup> | &#9989; | &#10060;
-| Data Forwarding <sup>3</sup> | &#9989; | &#10060;
-| Real-time Alerts <sup>4</sup> | &#9989; | &#10060;
+---
 
-<sup>1</sup> Data uploaded to the Sumo Logic Cloud.<br/>
-<sup>2</sup> Search through and visualize your data in near real-time, with up to 1000 data points per minute.<br/>
-<sup>3</sup> Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic.<br/>
-<sup>4</sup> Notifies you in real-time when errors occur on your systems.
+### Sign in to Sumo Logic
 
-</details>
+Once you're registered for an account, you can sign in using Google SSO, your email address and password, or—if configured by your organization—an [identity provider](/docs/manage/security/saml).
 
-For information on plan types and pricing, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Manage Plan](/docs/manage/manage-subscription).
+### Set up data collection
 
-#### Essentials plans
+When you're ready to collect your own data:
 
-Using our self-service checkout, you can sign up for a Sumo Logic Essentials plan in just minutes using a credit card—no need to interact with the sales team.
+1. Choose your platform: AWS, Kubernetes, Linux, Windows, or macOS. This installs the OpenTelemetry collector and relevant dashboards.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
+2. For AWS, deploy a single account using a CloudFormation Template, CLI, or Terraform. For Kubernetes, Linux, Windows, or macOS, run the provided install command in your Terminal or PowerShell.
 
-- [Learn how to upgrade your plan with Credits account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account).
-- [Learn how to upgrade your plan with Flex account](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account).
+Once installation is complete, click **Start using Sumo**. Your data will begin flowing within a few minutes, and you’ll be guided through a step-by-step onboarding to visualize data in dashboards, run log searches, set up alerts, and more.
 
-<img src={useBaseUrl('img/manage/subscriptions/essentials-landing-page.png')} alt="Essentials landing page checkout" style={{border: '1px solid gray'}} width="600" />
-
-#### Enterprise plans
-
-If the Essentials plan doesn’t fully meet your needs and you’re interested in exploring further options like Cloud SIEM, contact [Sales](https://www.sumologic.com/contact-us/) to upgrade to an Enterprise plan. Our team is here to help you find the best fit for your organization.
+Alternatively, you can skip setup and browse our [App Catalog](/docs/integrations) to explore prebuilt apps with guided installation.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
 
 ## Additional information
 

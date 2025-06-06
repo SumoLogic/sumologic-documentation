@@ -22,7 +22,7 @@ Overall, yes. Alert response is available in all the Sumo Logic packages. Howeve
 
 | Package  | Log Fluctuations | Dimensional Explanation | Anomaly | Benchmark |
 |:--|:--|:--|:--|:--|
-| Free | Yes | Yes | Yes |
+| Free | Yes | Yes | No | No |
 | Essentials | Yes | Yes | No | No |
 | Enterprise Security | Yes | Yes | No | Yes |
 | Enterprise Operations | Yes | Yes | Yes | Yes |

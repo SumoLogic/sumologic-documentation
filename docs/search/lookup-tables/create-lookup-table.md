@@ -66,7 +66,8 @@ The number of Lookup Tables you can have depends on what type of Sumo Logic acco
 | Enterprise Ops (Cloud Flex Credits) | 100 |
 | Enterprise Security (Cloud Flex Credits) | 100 |
 | Enterprise Suite (Cloud Flex Credits) | 100 |
-| Trial | Depends on the account type being trialed |
+| Trials | Depends on the account type being trialed |
+| Free | None |
 
 ## Create a Lookup Table
 
