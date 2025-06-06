@@ -50,8 +50,8 @@ This section has instructions for configuring basic SAML in Sumo Logic.
     * **Last Name**. Enter: `LastName `
     * **On Demand Provisioning Roles**. Specify the Sumo RBAC roles you want to assign when user accounts are first provisioned. (The roles must already exist in Sumo.) If you enter multiple roles, separate them with commas. For example: `Analyst, CollectorManager`
 1. Click **Save**. 
-1. To view the details of your configuration, select it the **Configuration List.**   <br/><img src={useBaseUrl('img/security/sumo-config-list.png')} alt="A configuration selected on the Configuration List page" style={{border: '1px solid gray'}} width="800" />
-1. Keep the panel open. When you complete the AWS Single Sign-on configuration below, you will copy the **Assertion Consumer** and **Entity ID** values into AWS Single Sign-on. <br/><img src={useBaseUrl('img/security/assertion-consumer.png')} alt="AWS Single Sign-On dialog" style={{border: '1px solid gray'}} width="400" />
+1. To view the details of your configuration, select it the **Configuration List.**   <br/><img src={useBaseUrl('img/security/sumo-config-list.png')} alt="A configuration selected on the Configuration List page" style={{border: '1px solid gray'}} width="800" /> 
+1. Keep the panel open. When you complete the AWS Single Sign-on configuration below, you will copy the **Assertion Consumer** and **Entity ID** values into AWS Single Sign-on. <br/><img src={useBaseUrl('img/security/assertion-consumer.png')} alt="AWS Single Sign-On dialog" style={{border: '1px solid gray'}} width="400" /> 
 
 ## Step 3: Complete SAML configuration in AWS Single Sign-on.
 
