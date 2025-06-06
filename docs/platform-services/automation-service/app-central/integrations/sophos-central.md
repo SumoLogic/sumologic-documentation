@@ -34,7 +34,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * **URL**. Enter your[ Sophos API URL](https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/APICredentials/ThirdPartyAccess/index.html), for example, `https://api.central.sophos.com`.
 
-* **API Key**. Enter your [legacy Sophos Central API key]((https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/ApiTokenManagement/index.html)).
+* **API Key**. Enter your [legacy Sophos Central API key](https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/ApiTokenManagement/index.html).
 
 * **Token**. Enter your [Sophos Central token](https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/ApiTokenManagement/index.html).
 * <IntegrationCertificate/>
