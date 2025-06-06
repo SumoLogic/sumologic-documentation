@@ -1,7 +1,7 @@
 ---
 id: log-ingestion
 title: Log Ingestion
-description: When designing your deployment, consider how logs will be ingested across Collectors in your account.
+description: When designing your deployment, consider how logs will be ingested across Collectors in your account. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

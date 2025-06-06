@@ -32,7 +32,7 @@ For Cloud Flex:
 
 ### Change organization name
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
 1. Access the appropriate menu for your [account type](#availability):
      * Cloud Flex Credits: From the gear icon menu at the top, select **Change Organization Name**.
      * Cloud Flex: At the top, select **Manage Organization > Change Organization Name**.
@@ -113,7 +113,7 @@ You must be the account owner of the Sumo Logic account to change the account su
 
 ## SSO for child organizations
 
-When you create a new child organization, a subdomain is automatically created and single sign-on (SSO) is enabled, allowing you to sign in to the child organization without having to provide separate credentials. To use this feature you do not have to set up SAML for single sign-on for the child organization.
+When you create a new child organization, a subdomain is automatically created and single sign-on (SSO) is enabled, allowing you to sign in to the child organization without having to provide separate credentials. To use this feature you do not have to set up SAML for single sign-on for the child organization. 
 
 If you choose not to use this SSO feature, click [Disable SSO](#disable-sso) on the child organizations. Then users log in with username and password, or you can manually [set up SAML for single sign-on](/docs/manage/security/saml/set-up-saml/) on the child organizations.
 
