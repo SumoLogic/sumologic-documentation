@@ -59,7 +59,7 @@ This section has instructions for configuring basic SAML in Sumo Logic.
 1. Paste the **Assertion Consumer** value from Sumo Logic into the **Application ACS URL** field in the **Application Metadata** section of the page.    <br/><img src={useBaseUrl('img/security/application-metadata.png')} alt="Application ACS URL in the Application Metadata section" style={{border: '1px solid gray'}} width="800" />
 1. Paste the **Entity Id** value from Sumo Logic into the **Application SAML audience** field in the **Application Metadata** section of the page. 
 1. Click **Save Changes**. 
-1. On the **Assigned Users** tab of your new AWS SSO configuration, click **Assign users**.    <br/><img src={useBaseUrl('img/security/assign-users.png')} alt="Assign Users tab" style={{border: '1px solid gray'}} width="800" />
+1. On the **Assigned Users** tab of your new AWS SSO configuration, click **Assign users**.    <br/><img src={useBaseUrl('img/security/assign-users.png')} alt="Assign Users tab" style={{border: '1px solid gray'}} width="800" /> 
 1. Select the individual users or groups that you want to allow to sign into Sumo Logic using AWS SSO. If you have not previously configured AWS Single Sign on you may need to first add your users and groups, as described in AWS help:
     * [Add Users](https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html)
     * [Add Groups](https://docs.aws.amazon.com/singlesignon/latest/userguide/addgroups.html)
