@@ -18,7 +18,17 @@ This page provides information on our available Flex Credits account types and h
 
 ## Flex Account types​
 
-You can select from Trial or Enterprise Suite Flex accounts.
+You can select from Free, Trial, or Enterprise Suite Flex accounts.
+
+### Free
+
+<!-- are these numbers still accurate? -->
+
+Free accounts give you access to most Sumo Logic features, with a credit allocation of 1.25 credits a day. Credits can be used for logs, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow up to 3 users.
+
+:::note
+[Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) is not available for Free accounts.
+:::
 
 ### Trial
 

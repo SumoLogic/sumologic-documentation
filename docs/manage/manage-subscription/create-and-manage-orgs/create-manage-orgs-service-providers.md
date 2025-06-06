@@ -35,7 +35,7 @@ Users that have the required role capabilities can create child orgs under a par
 
 ## About POV Trial orgs
 
-POV Trial orgs you create will have a 45-day trial period and are provisioned with the following ingestion limits:
+POV Trial orgs you create will have a 45 day trial period. POV Trial orgs will be provisioned with the following ingestion limits.
 
 * 5 GB Continuous Tier ingest
 * 5 GB Frequent Tier ingest
@@ -44,12 +44,22 @@ POV Trial orgs you create will have a 45-day trial period and are provisioned wi
 * 5 GB traces ingestion
 * 5 GB Cloud SIEM ingest
 
-Once the 45-day POV Trial ends, the org automatically transitions to a standard trial account. If no upgrade action is taken during that standard trial period, the account will be deactivated.
+:::note
+The credits associated with the trial org allocations don’t impact the parent org’s credits allocation.
+:::
 
-To avoid service interruption or data loss, we recommend [upgrading your POV Trial org](#upgrade-a-pov-trial-org) before the trial period ends. Sumo Logic highlights approaching expiration in two places:
+You can upgrade a trial org by editing the org and changing the Plan Type. When you upgrade a POV Trial org, if the org is in a different Sumo Logic deployment from the parent org, the Credits calculator may add a deployment factor, which is a percentage upcharge that varies by deployment.
 
-* **View Details** side panel shows the Plan Expiry date and a message about the upcoming transition.
-* **Child org table** displays a warning icon and expiration notice when fewer than 14 days remain.
+The plan gets downgraded to [**Free** plan with limitations](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#credits---account-types) once the 45-day POV trial period is over. To prevent this from happening, Sumo Logic provides indicators about the expiration date in two different places on the platform.
+
+* **View details for the selected organizations**. You can see the **Plan Expiry** date with information about the downgrading of your plan in the view details side panel for the selected organizations. This tooltip is different for CSV and Non-CSV provisioned child org.
+* **Child org table**. If the number of days left for expiry is less than 14, a warning icon with the expiry date will be shown against the respective organizations, and the information about downgrading your plan will turn into a warning with the same message.
+
+:::info
+If your CSE POV trial plan is downgraded to the free plan, your CSE access will be disabled and your data will be erased after seven days.
+:::
+
+For more information, see [Upgrade a POV Trial org](#upgrade-a-pov-trial-org) below.
 
 ## Create a POV Trial org
 
