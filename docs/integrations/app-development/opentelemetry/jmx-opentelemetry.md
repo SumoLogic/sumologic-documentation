@@ -102,6 +102,10 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the yaml file.
 
+import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
+
+<EnvVarOpt/>
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-OTEL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo Logic
