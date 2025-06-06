@@ -60,7 +60,7 @@ Before provisioning SAML, make sure you have the following:
 
 Follow these steps to configure IdP-initiated login. After this procedure, you can enable optional SAML functionality, including SP-initiated login and on-demand provisioning, as described in [Optional Configurations](set-up-saml.md).
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
 1. Select an existing configuration, or click the plus (**+**) icon to create a new configuration. <br/><img src={useBaseUrl('img/security/saml-config-list.png')} alt="Plus button on the Configuration List page" style={{border: '1px solid gray'}} width="600" />
 1. The **Add Configuration** page appears.<br/><img src={useBaseUrl('img/security/saml-add-configuration.png')} alt="Add Configuration page" style={{border: '1px solid gray'}} width="600" />
 1. **Configuration Name**. Enter a name to identify the SSO policy (or another name used internally to describe the policy).
