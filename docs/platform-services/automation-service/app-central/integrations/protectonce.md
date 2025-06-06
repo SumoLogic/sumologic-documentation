@@ -40,7 +40,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 * **Start Date**. Enter the start date of the query. (Required for daemon action format `%Y-%m-%dT%H:%M:%S.%f`.)
 
-* **End Date**. Enter the end date of the query. (Required for deamon action format `%Y-%m-%dT%H:%M:%S.%f`.)
+* **End Date**. Enter the end date of the query. (Required for daemon action format `%Y-%m-%dT%H:%M:%S.%f`.)
 * <IntegrationCertificate/>
 * <IntegrationTimeout/>
 * <IntegrationEngine/>
