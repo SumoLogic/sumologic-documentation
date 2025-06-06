@@ -113,7 +113,7 @@ You must be the account owner of the Sumo Logic account to change the account su
 
 ## SSO for child organizations
 
-When you create a new child organization, a subdomain is automatically created and single sign-on (SSO) is enabled, allowing you to sign in to the child organization without having to provide separate credentials. To use this feature you do not have to set up SAML for single sign-on for the child organization.
+When you create a new child organization, a subdomain is automatically created and single sign-on (SSO) is enabled, allowing you to sign in to the child organization without having to provide separate credentials. To use this feature you do not have to set up SAML for single sign-on for the child organization. 
 
 If you choose not to use this SSO feature, click [Disable SSO](#disable-sso) on the child organizations. Then users log in with username and password, or you can manually [set up SAML for single sign-on](/docs/manage/security/saml/set-up-saml/) on the child organizations.
 
