@@ -25,9 +25,28 @@ Scan and analyze websites. When a URL is submitted to urlscan.io, an automated p
 ## Configure URLScan.io in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import SumoLogicAPIURL from '../../../../reuse/automation-service/sumo-logic-api-url.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your URLScan [API](https://urlscan.io/docs/api/) URL.
 
+* **API Key**. Enter your URLScan API key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/urlscan-io-configuration.png')} style={{border:'1px solid gray'}} alt="URLScan.io configuration" width="400"/>
 
 For information about URLScan.io, see [URLScan.io documentation](https://urlscan.io/docs/).

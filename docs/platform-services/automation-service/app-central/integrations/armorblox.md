@@ -23,8 +23,23 @@ Armorblox secures enterprise communications over email and other cloud office ap
 ## Configure Armorblox in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Tenant Name**. Enter your [Armorblox tenant name](https://armorblox.stoplight.io/docs/public-apis/6e3583e334a34-armorblox-api#tenant-name).
+
+* **API Key**. Enter the [Armorblox API key](https://armorblox.stoplight.io/docs/public-apis/6e3583e334a34-armorblox-api#api-key).
+
+* **Mock API**. Select to run the integration on a [mock server](https://armorblox.stoplight.io/docs/public-apis/6e3583e334a34-armorblox-api#api-key).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/armorblox/armorblox-configuration.png')} style={{border:'1px solid gray'}} alt="Armorblox configuration" width="400"/>
 

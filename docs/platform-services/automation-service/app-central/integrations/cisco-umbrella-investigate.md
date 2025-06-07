@@ -26,8 +26,21 @@ Threat Intelligence-Reputation
 ## Configure Cisco Umbrella Investigate in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the URL for your Cisco Umbrella Investigate instance.
+
+* **API Token**. Enter an [API key](https://docs.umbrella.com/deployment-umbrella/docs/add-umbrella-api-keys) for Cisco Umbrella Investigate.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-umbrella-investigate-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Umbrella Investigate configuration" width="400"/>
 

@@ -28,8 +28,37 @@ To use any custom fields from Splunk within Cloud SOAR, make sure they are added
 ## Configure Splunk in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Protocol**. Enter your protocol:
+   * **HTTP**
+   * **HTTPS**
+
+* **Splunk Host**. Enter the [hostname of your Splunk instance](https://help.splunk.com/en/splunk-enterprise/get-started/get-data-in/9.3/configure-host-values/set-a-default-host-for-a-splunk-platform-instance).
+
+* **Splunk API Port**. Enter your [Splunk API port](https://docs.splunk.com/Documentation/SplunkCloud/latest/RESTTUT/RESTandCloud), for example,`8089`. 
+
+* **Authentication Type**. Select the authentication type:
+   * **Username and Password (Basic Authentication)**
+   * **Bearer Token (Authentication Token)**
+
+* **Token**. Enter your [Splunk token](https://dev.splunk.com/observability/docs/apibasics/authentication_basics#Obtain-tokens). Required only if you selected **Bearer Token (Authentication Token)**.
+
+* **Splunk Username**. Enter the username of a Splunk admin user authorized to authenticate the integration. Required only if you selected **Username and Password (Basic Authentication)**
+
+* **Splunk Password**. Enter the password for the Splunk user. Required only if you selected **Username and Password (Basic Authentication)**
+
+* **Splunk Timezone (Daemon)**. Select your timezone.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/splunk-configuration.png')} style={{border:'1px solid gray'}} alt="Splunk configuration" width="400"/>
 

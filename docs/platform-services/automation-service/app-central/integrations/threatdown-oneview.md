@@ -60,13 +60,25 @@ Threat Intelligence Reputation
 ## Configure ThreatDown OneView in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your ThreatDown OneView site URL, for example, `https://api.malwarebytes.com`.
 
-    * **Label**. Add a name for the resource.
-    * **URL**. Enter your ThreatDown OneView site URL.
-    * **Client ID**. Enter your Client ID.
-    * **Client Secret**. Enter your Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview2.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview2" width="400"/>
+* **Client ID**. Enter your ThreatDown OneView [client ID](https://support.threatdown.com/hc/en-us/articles/4413799441683-Create-OAuth2-credentials-for-OneView).
+
+* **Client Secret**. Enter the secret for your client ID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview2.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview2" width="400"/>
 
 For information about ThreatDown OneView, see [ThreatDown OneView documentation](https://support.threatdown.com/hc/en-us/sections/4413802067603-Administration).
 

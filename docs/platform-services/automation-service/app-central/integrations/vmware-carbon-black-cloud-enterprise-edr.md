@@ -34,14 +34,34 @@ VMware Carbon Black Cloud Enterprise EDR Integration Interact with watchlists, f
 ## Configure VMware Carbon Black Cloud Enterprise EDR in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import SumoLogicAPIURL from '../../../../reuse/automation-service/sumo-logic-api-url.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the URL to the API of the VMware Carbon Black Cloud Enterprise EDR instance, for example, `https://defense.conferdeploy.net`.
 
-   * **Label**. The name of the resource.
-   * **API URL**. URL to the API of the VMware Carbon Black Cloud Enterprise EDR instance `https://defense.conferdeploy.net`.
-   * **Organization Key**. The Organization Key you copied earlier.
-   * **API ID**. The API ID that you copied earlier.
-   * **API Secret Key**. The API Secret Key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmware-carbon-black-cloud-enterprise-edr-configuration.png')} style={{border:'1px solid gray'}} alt="VMware Carbon Black Cloud Enterprise EDR configuration" width="400"/>
+* **Organization Key**. Enter the [organization key](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/#org-key) you [copied earlier](#vmware-carbon-black-cloud-enterprise-edr-configuration).
+
+* **API ID**. Enter the [API ID](https://techdocs.broadcom.com/us/en/carbon-black/cloud/carbon-black-cloud/index/cbc-user-guide-tile/GUID-9620FAB7-FE70-45DE-9CAB-590FA358721F-en/GUID-7AA95653-EF83-4F49-B11F-F984F7D62CB8-en/GUID-F3816FB5-969F-4113-80FC-03981C65F969-en.html) that you [copied earlier](#vmware-carbon-black-cloud-enterprise-edr-configuration).
+
+* **API Secret Key**. Enter the API secret to the API I that you [copied earlier](#vmware-carbon-black-cloud-enterprise-edr-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* **Cloud SOAR URL**. Enter your [Cloud SOAR URL (for legacy installations)](/docs/cloud-soar/legacy/legacy-cloud-soar-apis/#base-path-for-api-requests).
+
+* **Cloud SOAR JWT Token**. Enter a [Cloud SOAR JWT token (for legacy installations)](/docs/cloud-soar/legacy/legacy-cloud-soar-apis/#generate-an-api-token).
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmware-carbon-black-cloud-enterprise-edr-configuration.png')} style={{border:'1px solid gray'}} alt="VMware Carbon Black Cloud Enterprise EDR configuration" width="400"/>
 
 For information about Carbon Black Cloud, see [Carbon Black Cloud documentation](https://techdocs.broadcom.com/us/en/carbon-black/cloud.html).
 

@@ -24,8 +24,25 @@ MVISION EPO: SaaS-based centralized security management platform.
 ## Configure McAfee MVISION in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your McAfee MVISION server URL.
+
+* **Client ID**. Enter your [client ID](https://docs.trellix.com/bundle/mvision-endpoint-detection-and-response-product-guide/page/UUID-d4602e2b-5adc-bdb4-c8cf-163997d5cd6e.html).
+
+* **Client secret**. Enter your client secret.
+
+* **API key**. Enter your API key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mcafee-mvision-configuration.png')} style={{border:'1px solid gray'}} alt="McAfee MVISION configuration" width="400"/>
 

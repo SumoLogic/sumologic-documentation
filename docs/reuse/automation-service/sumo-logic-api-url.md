@@ -1,0 +1,1 @@
+**Sumo Logic API URL**. Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region (for example, `https://api.sumologic.com`).

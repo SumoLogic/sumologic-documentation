@@ -438,7 +438,24 @@ OUTPUT = {
 
 ## Configure Sumo Logic Automation Tools in Automation Service and Cloud SOAR
 
-No configuration is needed. Sumo Logic Automation Tools executes without additional authentication.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+:::note
+No authentication configuration is needed. Sumo Logic Automation Tools executes without additional authentication.
+:::
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumologic-automation-tools.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Automation Tools configuration" width="400"/>
 
 ## Change log
 

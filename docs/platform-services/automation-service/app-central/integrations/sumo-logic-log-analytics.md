@@ -32,13 +32,31 @@ The ID and key won't be available again once you close the confirmation screen.
 ## Configure Sumo Logic Log Analytics in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import SumoLogicAPIURL from '../../../../reuse/automation-service/sumo-logic-api-url.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* <SumoLogicAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* **Timezone**. Select your timezone.
 
-    * **Label**. The name of the resource.
-    * **Sumo Logic API URL**. URL to the API of the instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
-    * **Access ID**. The access ID that you copied earlier.
-    * **Access Key**. The access key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-analytics-configuration.png')} style={{border:'1px solid gray'}} alt="Sailpoint configuration" width="400"/>
+* **Daemon Query**. Enter the query to be executed in daemons.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* **API Rate Limit Sleep (s)**. Enter the API rate limit in seconds. If the API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10. more info at https://help.sumologic.com/docs/api/metrics/#rate-limiting.
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-analytics-configuration.png')} style={{border:'1px solid gray'}} alt="Sailpoint configuration" width="400"/>
 
 ## Change Log
 

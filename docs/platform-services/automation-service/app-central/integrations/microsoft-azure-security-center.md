@@ -29,8 +29,30 @@ Work with Alerts, Policies, Tasks, and other resources with Microsoft Azure Secu
 ## Configure Microsoft Azure Security Center in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Username**. Enter the username of a Microsoft Azure Security Center admin user authorized to authenticate the integration.
+
+* **Password**. Enter the admin user password.
+
+* **Directory (Tenant) ID**. Enter the [tenant ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id) of the AAD directory in which you created the application.
+
+* **Application (Client) ID**. Enter your Microsoft 365 Defender [application ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id).
+
+* **Application (Client) Secret**. Enter your application (client) secret.
+
+* **Subscription ID**. Enter your [subscription ID](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id). The subscription ID is a GUID that uniquely identifies your subscription to use Azure services.
+
+* **Scope**. Enter the [scope](https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview) to use.
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-azure-security-center-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Azure Security Center configuration" width="400"/>
 

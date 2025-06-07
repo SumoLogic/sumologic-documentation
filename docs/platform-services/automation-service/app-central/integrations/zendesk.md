@@ -35,8 +35,25 @@ Please ensure that you consult the corresponding guide to activate the API and g
 ## Configure Zendesk in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Zendesk URL, for example, `https://your-domain.zendesk.com`.
+
+* **Username**. Enter the username of a Zendesk admin user authorized to authenticate the integration.
+
+* **API Token**. Enter your [Zendesk API token](https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_bsw_lfg_mmb).
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/zendesk-configuration.png')} style={{border:'1px solid gray'}} alt="Zendesk configuration" width="400"/>
 

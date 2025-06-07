@@ -18,12 +18,28 @@ Quickly determine whether an investigated object is dangerous or clean by reques
 ## Configure Kaspersky TIP in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your Kaspersky TIP server URL.
+
+* **Username**. Enter the username of a Kaspersky TIP admin user authorized to provide authentication for the integration. 
+
+* **Password**. Enter the password for the admin user.
+
+* **Kaspersky Certificate**. Enter the Kaspersky [certificate](https://support.kaspersky.com/KTIPS/en-EN/153080.htm). The certificate must be in PEM (base64encode) format.
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/kaspersky-tip-configuration.png')} style={{border:'1px solid gray'}} alt="Kaspersky TIP configuration" width="400"/>
 
-For information about Kaspersky TIP, see [Kaspersky TIP documentation](https://kaspersky-tip.readthedocs.io/en/stable/).
+For information about Kaspersky TIP, see [Kaspersky TIP documentation](https://opentip.kaspersky.com/Help/Doc_data/About.htm).
 
 ## Change Log
 

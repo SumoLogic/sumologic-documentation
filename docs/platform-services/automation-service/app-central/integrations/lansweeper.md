@@ -27,11 +27,23 @@ Log in to **Lansweeper** with your email ID and password to start the [configura
 ## Configure Lansweeper in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your [Lansweeper API URL](https://developer.lansweeper.com/docs/data-api/get-started/endpoint). The default value is `https://api.lansweeper.com`
 
-   * **URL**. Default value for API URL is 'https://api.lansweeper.com'.
-   * **Token**. The Token you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/lansweeper-configuration.png')} style={{border:'1px solid gray'}} alt="Lansweeper configuration" width="400"/>
+* **Token**. Enter the [token](https://developer.lansweeper.com/docs/data-api/get-started/quickstart/#personal-access-token-pat) you [copied earlier](#lansweeper-configuration). 
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/lansweeper-configuration.png')} style={{border:'1px solid gray'}} alt="Lansweeper configuration" width="400"/>
 
 For information about Lansweeper, see [Lansweeper documentation](https://developer.lansweeper.com/docs/data-api/get-started/welcome/).
 

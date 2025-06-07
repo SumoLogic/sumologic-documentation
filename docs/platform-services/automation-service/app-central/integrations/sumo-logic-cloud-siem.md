@@ -58,14 +58,37 @@ The ID and key won't be available again once you close the confirmation screen.
 ## Configure Sumo Logic Cloud SIEM in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import SumoLogicAPIURL from '../../../../reuse/automation-service/sumo-logic-api-url.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* <SumoLogicAPIURL/>
+* **Sumo Logic Cloud SIEM URL**. URL to the Cloud SIEM instance (for example, `https://service.sumologic.com/sec`).
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* **Signals Daemon Query**. Enter the query to be executed in daemons.
 
-    * **Label**. The name of the resource.
-    * **Sumo Logic API URL**. URL to the API of the Cloud SIEM instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
-    * **Sumo Logic Cloud SIEM URL**. URL to the Cloud SIEM instance (for example, `https://service.sumologic.com/sec`).
-    * **Access ID**. The access ID that you copied earlier.
-    * **Access Key**. The access key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-cloud-siem-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Cloud SIEM configuration" width="400"/>
+* **API Rate Limit Sleep (s)**. Enter the API rate limit in seconds. If the API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10. more info at https://help.sumologic.com/docs/api/metrics/#rate-limiting.
+
+* **Custom Field Interval Name (Close Insight Trigger)**. This field is only used within the Close Insight Trigger as a custom field for insight ID in Cloud SOAR, for example, `opt_1`.
+
+* **Resolution Status**. This field is only used within the Close Insight Trigger as a resolution reason for closing the insight, for example, `Resolved`.
+
+* **Closure Comments (Close Insight Trigger)**. This field is only used within the Close Insight Trigger as a closure comment for insight.
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-cloud-siem-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Cloud SIEM configuration" width="400"/>
 
 For detailed API documentation, see [Sumo Logic APIs](/docs/api/).
 

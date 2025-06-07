@@ -23,12 +23,25 @@ ServiceNow V2 SaaS is for technical management support - create, update, and gat
 ## Configure ServiceNow V2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your ServiceNow URL in the format `https://company.service-now.com/`.
 
-   * **URL**. ServiceNow URL in the format `https://company.service-now.com/`.
-   * **Username**. Your ServiceNow username.
-   * **Password**. Your ServiceNow password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/servicenow-v2-configuration.png')} style={{border:'1px solid gray'}} alt="ServiceNow V2 configuration" width="400"/>
+* **Username**. Enter the username of a ServiceNow admin user authorized to provide authentication for the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/servicenow-v2-configuration.png')} style={{border:'1px solid gray'}} alt="ServiceNow V2 configuration" width="400"/>
 
 For information about ServiceNow, see [ServiceNow documentation](https://www.servicenow.com/docs/).
 
