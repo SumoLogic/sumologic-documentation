@@ -26,7 +26,7 @@ Using the RUM HTTP Traces App for Manual Testing.
   allowfullscreen
 />
 
-<!-- old 
+<!-- old
 <Iframe url="https://www.youtube.com/embed/CduT1sqSPmE?rel=0"
         width="854px"
         height="480px"
@@ -37,12 +37,11 @@ Using the RUM HTTP Traces App for Manual Testing.
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
---> 
+-->
 :::
 
 ## Prerequisites
-
-To utilize navigation/route changes and errors collection, you must use RUM script version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). XHR metrics are currently unsupported. For automatic updates, use the script `https://rum.sumologic.com/sumologic-rum.js`. You can find more details about versioning control [later in this document](#step-2-add-rum-script-to-your-page-header).
+To utilize XHR and navigation/route changes, and errors collection, you must use RUM script version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). Make sure you're using the correct version in your pages. For automatic updates, use the script `https://rum.sumologic.com/sumologic-rum.js`. You can find more details about versioning control [later in this document](#step-2-add-rum-script-to-your-page-header).
 
 For full end-to-end visibility, we recommended supplementing your RUM browser auto-instrumentation with the appropriate [back-end tracing instrumentation](/docs/apm/traces/get-started-transaction-tracing).
 
