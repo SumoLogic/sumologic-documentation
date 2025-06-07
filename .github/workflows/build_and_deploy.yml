@@ -63,7 +63,7 @@ jobs:
       - name: Install jq
         run: sudo apt-get install -y jq
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile --ignore-platform --ignore-optional
       - name: Build the Docusaurus site
         run: yarn build
       - name: Deploy the Docusaurus site

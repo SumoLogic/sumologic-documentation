@@ -33,7 +33,7 @@ jobs:
           path: node_modules/.cache
           key: ${{ runner.os }}-webpack-cache-${{ hashFiles('yarn.lock') }}
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile --ignore-platform --ignore-optional
       - name: Build the Docusaurus site
         run: yarn build
   spellcheck:
