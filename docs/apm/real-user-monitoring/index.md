@@ -64,7 +64,7 @@ Access Traces to confirm that your Sumo Logic service package has been upgraded 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**.
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access Traces, in the main Sumo Logic menu select **Observability**, and then under **Application Monitoring** select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
-
+ 
 
 ## Guides
 
