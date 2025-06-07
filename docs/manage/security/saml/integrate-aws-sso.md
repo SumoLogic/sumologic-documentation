@@ -66,4 +66,4 @@ This section has instructions for configuring basic SAML in Sumo Logic.
     * [Add Users to Groups](https://docs.aws.amazon.com/singlesignon/latest/userguide/adduserstogroups.html)
 1. Click **Assign Users** to complete the addition of your users to the configuration.
 
-This completes the setup for AWS Single Sign-On to Sumo Logic. Your users should now be able to login to Sumo Logic from your AWS SAML Application page by clicking the SumoLogic tile. 
+This completes the setup for AWS Single Sign-On to Sumo Logic. Your users should now be able to sign in to Sumo Logic from your AWS SAML Application page by clicking the SumoLogic tile. 
