@@ -42,11 +42,11 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **API URL**. Enter your [Trend Micro API URL](https://automation.deepsecurity.trendmicro.com/article/12_0/use-the-previous-rest-api/#basic-api-access).
+* **API URL**. Enter your [Trend Micro  Deep Security API URL](https://automation.deepsecurity.trendmicro.com/article/12_0/use-the-previous-rest-api/#basic-api-access).
 
-* **API Key**. Enter your Trend Micro [API key](https://docs.trendmicro.com/en-us/documentation/article/deep-security-20-lts-api-key).
+* **API Key**. Enter your Trend Micro Deep Security [API key](https://docs.trendmicro.com/en-us/documentation/article/deep-security-20-lts-api-key).
 
-* **API Version**. Enter your Trend Micro [API version](https://automation.deepsecurity.trendmicro.com/article/20_0/first-steps-for-deep-security-developers/#api-versions).
+* **API Version**. Enter your Trend Micro Deep Security [API version](https://automation.deepsecurity.trendmicro.com/article/20_0/first-steps-for-deep-security-developers/#api-versions).
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
 * <IntegrationEngine/>
