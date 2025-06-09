@@ -119,7 +119,9 @@ Below is the required input:
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-For linux platform - Click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
+import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
+
+<EnvVar/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 

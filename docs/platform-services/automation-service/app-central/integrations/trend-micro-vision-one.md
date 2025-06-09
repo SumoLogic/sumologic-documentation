@@ -1,5 +1,5 @@
 ---
-title: Trend Micro Vision ONE
+title: Trend Micro Vision One
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -26,8 +26,21 @@ The Trend Micro Vision One platform includes advanced XDR capabilities that coll
 ## Configure Trend Micro Vision One in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your [Trend Micro Vision One API URL](https://automation.trendmicro.com/xdr/Guides/Regional-domains/), for example, `https://api.xdr.trendmicro.com`.
+
+* **Token**. Enter your [Trend Micro Vision One token](https://docs.trendmicro.com/en-us/documentation/article/trend-vision-one-api-keys-third-party-apps).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/trend-micro-vision-one-configuration.png')} style={{border:'1px solid gray'}} alt="Trend Micro Vision One configuration" width="400"/>
 

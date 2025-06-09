@@ -24,11 +24,23 @@ Follow the [link](https://www.dropbox.com/developers/reference/getting-started#a
 ## Configure Dropbox in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Dropbox API URL, for example, `https://api.dropboxapi.com`
 
-   * **API URL**. 'https://api.dropboxapi.com'.
-   * **Token**. Insert copied token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/dropbox-configuration.png')} style={{border:'1px solid gray'}} alt="Dropbox configuration" width="400"/>
+* **Token**. Enter a [Dropbox token](https://www.dropbox.com/developers/documentation/http/documentation#authorization).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/dropbox-configuration.png')} style={{border:'1px solid gray'}} alt="Dropbox configuration" width="400"/>
 
 For information about Dropbox, see [Dropbox documentation](https://www.dropbox.com/developers/documentation).
 
