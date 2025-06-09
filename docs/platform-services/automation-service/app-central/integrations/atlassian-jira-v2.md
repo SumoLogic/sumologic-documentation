@@ -75,7 +75,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 * **Username**. Enter the username (email address) of the admin user authorized to authenticate the integration.
 
-* **API Token**. Enter the token you [created earlier](#create-an-api-token).
+* **API Token**. Enter the [token](https://developer.atlassian.com/cloud/commerce-it-frontoffice/overview/papi/onboarding/api-token/create/#create-a-token) you [created earlier](#create-an-api-token).
 * <IntegrationCertificate/>
 * <IntegrationTimeout/>
 * **Jira Project Name (Daemon)**. Enter the Jira [project name](https://confluence.atlassian.com/adminjiraserver/defining-a-project-938847066.html).

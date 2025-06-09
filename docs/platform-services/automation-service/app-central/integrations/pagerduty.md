@@ -41,7 +41,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * **API URL**. Enter your PagerDuty [API](https://developer.pagerduty.com/docs/rest-api-overview) URL, for example, `api.pagerduty.com`
 
-* **Token**. Enter a PagerDuty [token](https://developer.pagerduty.com/docs/authentication).
+* **Token**. Enter https://developer.pagerduty.com/docs/user-oauth-token-via-code-granthttps://developer.pagerduty.com/docs/oauth-functionality).
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
 * <IntegrationEngine/>
