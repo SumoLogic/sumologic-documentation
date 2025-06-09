@@ -63,7 +63,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 * **Tenant ID**. Enter the CylanceProtect tenant ID you [copied earlier](#cylanceprotect-configuration).
 
-* **Application ID**. Enter your CylanceProtect application ID that you [copied earlier](#cylanceprotect-configuration)..
+* **Application ID**. Enter your CylanceProtect application ID that you [copied earlier](#cylanceprotect-configuration).
 
 * **Application Secret**. Enter the secret for the application ID.
 * <IntegrationTimeout/>

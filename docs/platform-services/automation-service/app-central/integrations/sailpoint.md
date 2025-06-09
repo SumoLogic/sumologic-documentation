@@ -47,7 +47,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **Host**. Enter your [SalPoint hostname](https://documentation.sailpoint.com/identityiq/help/systemadmin/monenvhosttab.html).
+* **Host**. Enter your [SailPoint hostname](https://documentation.sailpoint.com/identityiq/help/systemadmin/monenvhosttab.html).
 
 * **Client ID**. Enter the [client ID](https://documentation.sailpoint.com/saas/help/common/api_keys.html) you [copied previously](#sailpoint-configuration).
 

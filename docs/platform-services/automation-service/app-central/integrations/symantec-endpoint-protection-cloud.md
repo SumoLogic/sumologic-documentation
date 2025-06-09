@@ -31,19 +31,19 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **API Client ID**. Enter your Symantec Endpoint Protection [client ID](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-security/sescloud/Settings/creating-a-client-application-v132702110-d4152e4057.html).
+* **API Client ID**. Enter your Symantec Endpoint Protection Cloud [client ID](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-security/sescloud/Settings/creating-a-client-application-v132702110-d4152e4057.html).
 
 * **API Client Secret**. Enter the secret for the client ID.
 
-* **Customer ID**. Enter your Symantec Endpoint Protection [customer ID](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all/getting-up-and-running-on-for-the-first-time-v45150512-d43e1033/symantec-endpoint-protection-quick-start-guide-v116381733-d25e6.html).
+* **Customer ID**. Enter your Symantec Endpoint Protection Cloud [customer ID](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all/getting-up-and-running-on-for-the-first-time-v45150512-d43e1033/symantec-endpoint-protection-quick-start-guide-v116381733-d25e6.html).
 
-* **Domain ID**. Enter your Symantec Endpoint Protection [domain](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all/managing-groups-clients-and-administrators/about-domains-v15506400-d1e150.html) ID.
+* **Domain ID**. Enter your Symantec Endpoint Protection Cloud [domain](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all/managing-groups-clients-and-administrators/about-domains-v15506400-d1e150.html) ID.
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/symantec-endpoint-protection-cloud-configuration.png')} style={{border:'1px solid gray'}} alt="Symantec Endpoint Protection Cloud configuration" width="400"/>
 
-For information about Symantec Endpoint Protection, see [Symantec Endpoint Protection documentation](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all.html).
+For information about Symantec Endpoint Protection Cloud, see [Symantec Endpoint Protection documentation](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all.html).
 
 ## Change Log
 

@@ -36,11 +36,11 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **Server URL**. Enter your VMWare Carbon Black Cloud server URL.
+* **Server URL**. Enter your VMWare Carbon Black Cloud Endpoint Standard V2 server URL.
 
-* **Organization Key**. Enter your [VMWare Carbon Black Cloud organization key](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/#org-key).
+* **Organization Key**. Enter your [VMWare Carbon Black Cloud Endpoint Standard V2 organization key](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/#org-key).
 
-* **API ID/Connector ID**. [VMWare Carbon Black Cloud API ID](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/#authenticate-your-request).
+* **API ID/Connector ID**. [VMWare Carbon Black Cloud Endpoint Standard V2 API ID](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/#authenticate-your-request).
 
 * **API Secret Key**. Enter the secret for the API ID.
 * <IntegrationTimeout/>
@@ -50,7 +50,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmware-carbon-black-endpoint-standard-v2-configuration.png')} style={{border:'1px solid gray'}} alt="VMware Carbon Black Cloud Endpoint Standard V2 configuration" width="400"/>
 
-For information about Carbon Black Cloud, see [Carbon Black Cloud documentation](https://techdocs.broadcom.com/us/en/carbon-black/cloud.html).
+For information about Carbon Black Cloud Endpoint Standard V2, see [Carbon Black Cloud documentation](https://techdocs.broadcom.com/us/en/carbon-black/cloud.html).
 
 ## Change Log
 

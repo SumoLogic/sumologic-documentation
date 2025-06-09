@@ -27,7 +27,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **IP or Hostname**. Enter the IP or the hostname of your Corelight instance. Do not include the preceding `https://`, for example, ``
+* **IP or Hostname**. Enter the IP or the hostname of your Corelight instance. Do not include the preceding `https://`.
 
 * **Username**. Enter the username of a Corelight admin user authorized to provide authentication for the integration.
 

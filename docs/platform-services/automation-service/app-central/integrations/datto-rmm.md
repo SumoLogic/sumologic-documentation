@@ -32,7 +32,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **Datto RMM Platform**. Enter your[ Datto RMM platform](https://rmm.datto.com/help/en/Content/1INTRODUCTION/Infrastructure/Platforms.htm). The API URL will be generated automatically based on the selected Datto RMM platform.
+* **Datto RMM Platform**. Enter your [Datto RMM platform](https://rmm.datto.com/help/en/Content/1INTRODUCTION/Infrastructure/Platforms.htm). The API URL will be generated automatically based on the selected Datto RMM platform.
 
 * **Access Key**. Enter a [Datto RMM access key](https://rmm.datto.com/help/en/Content/2SETUP/APIv2.htm).
 
