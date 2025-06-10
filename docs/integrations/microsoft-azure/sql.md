@@ -506,15 +506,15 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 These alerts are metrics-based and will work for Azure SQL.
 
-| Alert Name                                         | Description                                                                                                     | Alert Condition | Recover Condition |
-|:---------------------------------------------------|:----------------------------------------------------------------------------------------------------------------|:----------------|:------------------|
-| `Azure SQL - Availability`                         | This monitor triggers alerts when Availability drops below 100% in Azure SQL.                                   | Count < 100     | Count >= 100      |
-| `Azure SQL - Data space used percent`              | This monitor triggers alerts when High Data space used percent is detected in Azure SQL.                        | Count > 80      | Count =< 80       |
-| `Azure SQL - Deadlocks`                            | This monitor triggers alerts when deadlock is detected in Azure SQL.                                            | Count > 1       | Count =< 1        |
-| `Azure SQL - Failed Connections`                   | This monitor triggers alerts when Failed Connections are detected in Azure SQL.                                 | Count > 1       | Count =< 1        |
-| `Azure SQL - High Cpu Usage`                       | This monitor triggers alerts when high CPU usage is detected in Azure SQL.                                      | Count >= 90     | Count < 90        |
-| `Azure SQL - High SQL instance CPU Usage`          | This monitor triggers alerts when High Instance CPU usage is detected in Azure SQL.                             | Count >= 90     | Count < 90        |
-| `Azure SQL - Data IO percentage`                   | This monitor triggers alerts when High Data IO percentage is detected in Azure SQL.                             | Count > 90      | Count =< 90       |
-| `Azure SQL - DTU Percentage`                       | This monitor triggers alerts when High average DTU consumption percentage is detected in Azure SQL.             | Count > 80      | Count =< 80       |
-| `Azure SQL - Tempdb Percent Log Used`              | This monitor triggers alerts when High Tempdb Percent Log Usage is detected in Azure SQL.                       | Count > 60      | Count =< 60       |
-| `Azure SQL - High Worker Usage`                    | This monitor triggers alerts when High Worker Usage is detected in Azure SQL.                                   | Count > 60      | Count =< 60       |
+| Alert Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure SQL - Availability` | This monitor triggers alerts when Availability drops below 100% in Azure SQL. | Count < 100 | Count >= 100 |
+| `Azure SQL - Data space used percent` | This monitor triggers alerts when High Data space used percent is detected in Azure SQL. | Count > 80 | Count =< 80 |
+| `Azure SQL - Deadlocks` | This monitor triggers alerts when deadlock is detected in Azure SQL. | Count > 1 | Count =< 1 |
+| `Azure SQL - Failed Connections` | This monitor triggers alerts when Failed Connections are detected in Azure SQL. | Count > 1 | Count =< 1 |
+| `Azure SQL - High Cpu Usage` | This monitor triggers alerts when high CPU usage is detected in Azure SQL. | Count >= 90 | Count < 90 |
+| `Azure SQL - High SQL instance CPU Usage` | This monitor triggers alerts when High Instance CPU usage is detected in Azure SQL. | Count >= 90 | Count < 90 |
+| `Azure SQL - Data IO percentage` | This monitor triggers alerts when High Data IO percentage is detected in Azure SQL. | Count > 90 | Count =< 90 |
+| `Azure SQL - DTU Percentage` | This monitor triggers alerts when High average DTU consumption percentage is detected in Azure SQL. | Count > 80 | Count =< 80 |
+| `Azure SQL - Tempdb Percent Log Used` | This monitor triggers alerts when High Tempdb Percent Log Usage is detected in Azure SQL. | Count > 60 | Count =< 60 |
+| `Azure SQL - High Worker Usage` | This monitor triggers alerts when High Worker Usage is detected in Azure SQL. | Count > 60 | Count =< 60 |
