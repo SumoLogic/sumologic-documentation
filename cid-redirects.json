@@ -3233,6 +3233,7 @@
   "/docs/manage/data-archiving/installed-collectors": "/docs/manage/data-forwarding/installed-collectors",
   "/Manage/Data-Forwarding/Configure-Data-Forwarding-from-Sumo-Logic-to-S3/02File-Format-for-Data-Forwarding-to-an-Amazon-S3-Bucket": "/docs/manage/data-forwarding/amazon-s3-bucket",
   "/Manage/Data-Forwarding/Configure-Data-Forwarding-from-Sumo-Logic-to-S3": "/docs/manage/data-forwarding/amazon-s3-bucket",
+  "/docs/manage/partitions/data-tiers/infrequent-tier-data-forwarding": "/docs/manage/data-forwarding/amazon-s3-bucket",
   "/Manage/Data-Forwarding/Manage_Data_Forwarding": "/docs/manage/data-forwarding/manage",
   "/Manage/Field-Extractions": "/docs/manage/field-extractions",
   "/Manage/Field-Extractions/01-Field-Naming-Convention": "/docs/manage/field-extractions/field-naming-convention",
