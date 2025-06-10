@@ -11,7 +11,7 @@ Sumo Logic provides everything you need to conduct real-time forensics and log m
 
 ## Sign up through Sumo Logic
 
-To start your free trial, head to the [Sumo Logic free trial page](https://www.sumologic.com/sign-up). You can register for an account using either Google single sign-on (SSO) or your email address.
+To start your free trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up). You can register for an account using either Google single sign-on (SSO) or your email address.
 
 ### Register using Google SSO
 
