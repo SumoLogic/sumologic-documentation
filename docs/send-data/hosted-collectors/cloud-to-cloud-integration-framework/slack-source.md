@@ -142,7 +142,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ## Limitation
 
-While ingesting web events, note that if a Slack channel remains inactive for more than 15 days, and the integration is halted for an extended period, there is a potential risk of data loss for the source. Additionally, archived Slack channels are not supported for web event ingestion.
+While ingesting web events, if a Slack channel was inactive for more than 15 days and the integration is halted for an extended period, there is a potential risk of data loss for the source. Additionally, archived Slack channels are not supported for web event ingestion.
 
 ## Troubleshoot
 
