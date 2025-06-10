@@ -27,8 +27,6 @@ Owners of Sumo Logic Free or Trial accounts can permanently delete their organiz
 Deleting your organization is permanent and removes all users, data, and the account itself. **This action cannot be undone.**  
 :::
 
-If you have a self-service trial account, it will automatically convert to a Free plan at the end of the trial period (typically 30 days) if you do not upgrade to a paid subscription.  
-
 ## Cancel a Sumo Logic licensed account
 
 To cancel a paid Sumo Logic account, such as Essentials or Enterprise, submit a request to [Sumo Logic Support](https://support.sumologic.com/support/s). Our team will process your request promptly.  
