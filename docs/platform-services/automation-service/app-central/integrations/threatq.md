@@ -33,12 +33,32 @@ The ThreatQ threat intelligence platform, automates the aggregation, operational
 1. Log in to the ThreatQ.
 1. In the main page, click on the up-right corner in My Account. It opens a page where you can find your **API Credentials - Client ID**.
 
-## ThreatQ in Sumo Logic SOAR
+## Configure ThreatQ in Automation Service and Cloud SOAR
 
-1. Access integrations in [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears search/look for the ThreatQ integration and click on the row. The integration details will appear. Click on the **"+"** button to add new Resource.
-1. Populate all the required fields: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatq/threatq-3.png')} style={{border:'1px solid gray'}} alt="threatq" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click edit (pencil icon) on the right of the row. Then click test saved settings. You should receive a successful notification in the bottom right corner.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your [ThreatQ host address](https://docs.threatq.com/rest_api#section/Introduction).
+
+* **Username**. Enter the username of a ThreatQ admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+
+* **Client ID**. Enter a [ThreatQ client ID](https://docs.threatq.com/rest_api#tag/Authentication/operation/6dfefacb2109527235856b8df26618d5).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/threatq-configuration.png')} style={{border:'1px solid gray'}} alt="ThreatQ configuration" width="400"/>
+
+For information about ThreatQ, see [ThreatQ documentation](https://docs.threatq.com/rest_api).
 
 ## Change Log
 

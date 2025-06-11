@@ -544,7 +544,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins_Pipeline_Stage_Monitoring.png')} alt="jenkins" />
 
-## Upgrading the Jenkins app (Optional)
+## Upgrade/Downgrade the Jenkins app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

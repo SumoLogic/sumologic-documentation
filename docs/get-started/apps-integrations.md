@@ -1,7 +1,7 @@
 ---
 id: apps-integrations
 title: Installing Apps and Integrations
-sidebar_label: Installing Apps
+sidebar_label: Installing apps
 description: Learn how to install apps to your Library and to multiple environments.
 ---
 
@@ -65,6 +65,10 @@ import AppInstall from '../reuse/apps/app-install-v2.md';
 <AppInstall/>
 
 ### How to upgrade Next-Gen apps
+
+:::info
+See our [Releases Notes](/docs/release-notes) to learn about app version updates.
+:::
 
 import AppUpdate from '../reuse/apps/app-update.md';
 

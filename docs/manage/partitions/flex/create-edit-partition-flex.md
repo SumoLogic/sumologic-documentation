@@ -21,9 +21,13 @@ To create or edit a Partition, you must be an account Administrator or have th
  
 ## Create a Partition
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+:::important
+The search modifier `dataTier` is not supported for Flex queries.
+:::
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**.
 1. Click **+ Add Partition**.
-1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/partitions-data-tiers/create-new-partition-flex.png')} alt="create-new-partition-flex.png"  style={{border:'1px solid gray'}} width="300"/>
+1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/create-new-partition-flex.png')} alt="create-new-partition-flex.png"  style={{border:'1px solid gray'}} width="300"/>
 1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
 1. (Optional) **Include this partition in default scope**. By default, this checkbox is selected. Deselect this checkbox if you need to exclude this partition from the [default scope in your search](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope).
     :::note
@@ -44,7 +48,7 @@ To create or edit a Partition, you must be an account Administrator or have th
 When designing partitions, keep the following in mind:
 * **Avoid using queries that are subject to change**. In order to benefit from using Partitions, they should be used for long-term message organization.
 * **Make the query as specific as possible**. Making the query specific will reduce the amount of data in the Partition, which increases search performance.
-* **Keep the query flexible**. Use a flexible query, such as `sourceCategory=*Apache*`, so that metadata can be adjusted without breaking the query.
+* **Keep the query flexible**. Use a flexible query, such as `_sourceCategory=*Apache*`, so that metadata can be adjusted without breaking the query.
 * **Group data together that is most often used together**. For example, create Partitions for categories such as web data, security data, or errors.
 * **Group data together that is used by teams**. Partitions are an excellent way to organize messages by role and teams within your organization.
 * **Avoid including too much data in your partition**. Send between 2% and 20% of your data to a Partition. Including 90% of the data in your index in a Partition won’t improve search performance.
@@ -70,19 +74,19 @@ You can make some changes to an existing partition:  
   :::
 * You can change the data forwarding configuration.
 * You cannot change the name of a partition, the routing expression, or reuse a partition name.
-* You cannot edit the audit index partition to include it in the default scope. 
+* You cannot edit the audit index partition to include it in the default scope.
 * Security partitions can’t be edited. Sumo Logic stores Cloud SIEM Records in seven partitions, one for each [Cloud SIEM Record type](/docs/cse/schema/cse-record-types). The names of the Sumo Logic partitions that contain Cloud SIEM Records begin with the string `sec_record_`. If you have a role that grants you the **View Partitions** capability, you can view the security partitions in the Sumo Logic UI. Note, however, that no user can edit or remove a security partition.
 
 ### How to edit a partition
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**.
 1. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
-  :::note 
-  You can see the suggestions only if there are two or more responses for the same column or section. 
+  :::note
+  You can see the suggestions only if there are two or more responses for the same column or section.
   :::
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
-1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane-flex.png')} alt="edit-partition-pane-flex.png"  style={{border:'1px solid gray'}} width="300"/>
+1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/edit-partition-pane-flex.png')} alt="edit-partition-pane-flex.png"  style={{border:'1px solid gray'}} width="300"/>
 1. **Include this partition in default scope**. Select/deselect the checkbox to include/exclude this partition as the default scope in your search.
     :::note
     After changing the default scope of a partition, expect a delay of 2 to 3 minutes to reflect the change in the query scope.

@@ -13,9 +13,13 @@ import TabItem from '@theme/TabItem';
 
 The [Apache Tomcat](https://tomcat.apache.org/tomcat-8.5-doc/index.html) app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Apache Tomcat servers. Preconfigured dashboards provide insight into visitor locations, traffic patterns, errors, resource utilization, garbage collection, web server operations, and access from known malicious sources.
 
-Tomcat logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and metrics are sent through the [JMX](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) receiver with the `target_system` set as [`tomcat`](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/tomcat.md). 
+Tomcat logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and metrics are sent through the [JMX](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) receiver with the `target_system` set as [`tomcat`](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/tomcat.md).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Schematics.png' alt="Schematics" />
+
+:::info
+This app includes [built-in monitors](#apache-tomcat-alerts). For details on creating custom monitors, refer to [Create monitors for Apache Tomcat app](#create-monitors-for-apache-tomcat-app).
+:::
 
 ## Fields Created in Sumo Logic for Tomcat
 
@@ -96,6 +100,10 @@ The files are typically located in `/usr/share/tomcat/logs/*`. If you're using a
 For metrics, you're required to provide the JMX endpoint (default is `localhost:11099`) along with the `collection_interval` (default is 1 minute).
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click the **Download YAML File** button to get the YAML file.
+
+import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
+
+<EnvVarOpt/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -369,7 +377,7 @@ The **Apache Tomcat - Threat Intel** dashboard provides an at-a-glance view of t
 
 Use this dashboard to:
 
-- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo Logic - CrowdStrike](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-faq) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Threat-Intel.png' alt="Threat intel" />
 
@@ -379,3 +387,18 @@ Use this dashboard to:
 The **Apache Tomcat - Connectors** dashboard provides an at-a-glance view of error count, request count, request processing time, total bytes sent/received, total connections, and thread (bust and ideal) information.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Connectors.png' alt="Threat intel" />
+
+## Create monitors for Apache Tomcat app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Apache Tomcat alerts
+
+| Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Apache Tomcat - Access from Highly Malicious Sources` | This alert is triggered when a Tomcat server is accessed from highly malicious IP addresses. | Count > 0 | Count < = 0 |
+| `Apache Tomcat - Error` | This alert is triggered when error count is greater than 0. | Count > 0 | Count < = 0 |
+| `Apache Tomcat - High Client (HTTP 4xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count > 0 | Count < = 0 |
+| `Apache Tomcat - High Server (HTTP 5xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 5xx. | Count > 0 | Count < = 0 |

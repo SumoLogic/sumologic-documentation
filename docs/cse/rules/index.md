@@ -19,6 +19,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/cse/rules/rules-status"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>Rules Status</h4></a>
+  <p>Learn about Cloud SIEM rules statuses and how to address rules in a degraded or failed state.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/cse/rules/before-writing-custom-rule"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>Before You Write a Custom Rule</h4></a>
   <p>Learn how to plan a custom rule and prototype rule expressions.</p>
   </div>
@@ -26,7 +32,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/rules/cse-rules-syntax"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>Rules Syntax</h4></a>
-  <p>Learn about the functions you can use when writing Cloud SIEM Rules.</p>
+  <p>Learn about the functions you can use when writing Cloud SIEM rules.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -104,7 +110,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/rules/insight-trainer"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>Insight Trainer</h4></a>
-  <p>Learn how to adjust rules to improve Insight generation.</p>
+  <p>Learn how to adjust rules to improve insight generation.</p>
   </div>
 </div>
 </div>

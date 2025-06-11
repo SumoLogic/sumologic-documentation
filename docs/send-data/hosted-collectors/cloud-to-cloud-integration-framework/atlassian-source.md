@@ -8,10 +8,6 @@ tags:
 description: Learn how to retrieve Atlassian audit logs into the Sumo Logic environment.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/atlassian/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/atlassian/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/atlassian/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="atlassian-icon" width="40" />
@@ -25,6 +21,10 @@ The Atlassian Organizations API provides resources for managing an Atlassian org
 | 1 hour |  [Events](https://developer.atlassian.com/cloud/admin/organization/rest/api-group-events/#api-group-events)|
 
 ## Setup
+
+:::
+You need to have **Atlassian Guard Premium** or **Cloud Enterprise** plan to access user-created activities.
+:::
 
 ### Vendor configuration
 
@@ -45,7 +45,7 @@ Follow the below steps to generate a Bearer access for user configuration:
 When you create an Atlassian Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Atlassian Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Atlassian**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -54,6 +54,9 @@ To configure an Atlassian Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Organizations**. Click the **+Add** button to enter the Organizations you want to associate. Each Organizations needs a API Key value. This is the value that you generated from the [Atlassian platform](#vendor-configuration).
+  :::info
+  The authorization will fail if the API key value used is expired. To re-generate the API key, follow the steps mentioned in [vendor configuration](#vendor-configuration).
+  :::
 1. (Optional) The **Polling Interval** is set for 1 hour by default. You can adjust it based on your needs.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
@@ -80,18 +83,17 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | orgID | String | Yes | `null` | ID of the organisation. |  |
 | token | String | Yes | `null` | Client authentication Bearer token per organization. |  |
 
-
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/atlassian/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/atlassian/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/atlassian/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/atlassian/example.tf
+```
 
 ## FAQ
 

@@ -59,7 +59,7 @@ An **HTTP Source** is an endpoint for receiving log and metric data uploaded to 
 
 To configure Hosted Collector and HTTP Source, do the following:
 
-1. Log in to Sumo Logic.
+1. Sign in to Sumo Logic.
 2. Follow the instructions for configuring a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. Follow the instructions for configuring an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
@@ -93,19 +93,15 @@ In the next section, install the Sumo Logic App for PagerDuty V3.
 
 ## Installing the PagerDuty V3 App
 
-This section provides instructions for installing the Sumo App for PagerDuty V3.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V3, and use its pre-configured searches and dashboards.
-
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing PagerDuty V3 Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

@@ -303,7 +303,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Risks by Account.** Displays the total number of risks by account name over the last 24 hours in a column chart.
 
-## Upgrading the Evident.io ESP app (Optional)
+## Upgrade/Downgrade the Evident.io ESP app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

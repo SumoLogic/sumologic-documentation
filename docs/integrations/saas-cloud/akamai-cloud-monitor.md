@@ -289,7 +289,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Attacks (Individual Warn/Deny Events).** Uses a geo lookup operator to provide information on individual warn and deny events by IP address for the last hour and displays them on a map of the world.
 
-## Upgrading the Akamai Cloud Monitor app (Optional)
+## Upgrade/Downgrade the Akamai Cloud Monitor app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

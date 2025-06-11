@@ -16,5 +16,5 @@ log10(<x>) as <field>
 ## Example
 
 ```sql
-log10(2) as v // v = 0.3010299956639812
+* | log10(2) as v
 ```

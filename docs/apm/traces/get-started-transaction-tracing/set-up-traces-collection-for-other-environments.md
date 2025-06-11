@@ -18,7 +18,7 @@ Depending on the architecture of the environment, OpenTelemetry Collector can be
 
 Due to the fact that vital metadata (information about the host and its OS) is available only for collectors inside individual node/host, we recommend that instances of OpenTelemetry Collector should be run at least on each of the nodes/hosts as **agents**. Doing so allows you to collect metadata tags locally and also in case of high volume environments, to buffer the messages, reducing the number of requests for each individual collector instance.
 
-![OpenTelemetry Deployment](/img/traces/OpenTelemetry-Deployment.png)
+![OpenTelemetry Deployment](/img/apm/traces/OpenTelemetry-Deployment.png)
 
 ## Prerequisites
 

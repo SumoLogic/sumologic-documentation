@@ -61,7 +61,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
     1. **Issuer**. Enter the **Azure AD Identifier** that you noted in the substep 14 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad).
     2. **X.509 Certificate**. Use a text editor to open the certificate file you downloaded in substep 12 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad). Copy and paste the contents of the file into the field.   
 1. **Attribute Mapping.** Select **Use SAML subject.**
-1. **Configure SP-initiated Login.** (Optional) This step has instructions for setting up SP-initiated login. When SP-initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/manage-org-settings#change-account-subdomain) section of the **Manage Organization** topic.
+1. **Configure SP-initiated Login.** (Optional) This step has instructions for setting up SP-initiated login. When SP-initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings#change-account-subdomain) section of the **Manage Organization** topic.
    1. Under the SAML configuration page > **Optional Settings** section, select **SP Initiated Login Configuration**. When you click this option, the following configurations will appear. <br/><img src={useBaseUrl('/img/security/sp-init-settings.png')} alt="SP-initiated login" style={{border: '1px solid gray'}} width="300" />
    1. **Authn Request URL.** Enter the **Login URL** that you noted in the substep 13 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad).
    1. **Disable Requested Authn Context**. Checkmark this option.
@@ -93,7 +93,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
    1. Click **Save**. <br/><img src={useBaseUrl('img/security/properties.png')} alt="Properties tab" style={{border: '1px solid gray'}} width="800" />
 1. In the left navigation pane, click **Users and Groups** in the **Manage** section.
 1. Select **Add user/group**.
-1. Add the Users or Groups that should have access to login to Sumo Logic and then click **Assign**. 
+1. Add the Users or Groups that should have access to sign in to Sumo Logic and then click **Assign**. 
 
 ### Configure Azure AD to send Group assignments to Sumo (Optional)
 

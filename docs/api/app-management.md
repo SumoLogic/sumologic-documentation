@@ -24,17 +24,14 @@ View and install Sumo Logic applications that deliver out-of-the-box dashboards,
 | DE         | https://api.de.sumologic.com/docs/#tag/appManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/appManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/appManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/appManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/appManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/appManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/appManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/appManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Manage Apps
-
--->

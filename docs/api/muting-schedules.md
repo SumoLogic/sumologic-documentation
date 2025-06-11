@@ -24,16 +24,13 @@ The Muting Schedules Management API allows you to pause alert notifications from
 | DE         | https://api.de.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Alerting (all role capabilities)
-
--->

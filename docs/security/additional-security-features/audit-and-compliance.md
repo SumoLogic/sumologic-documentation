@@ -160,7 +160,7 @@ The root account generally has unrestricted access to resources in an account. A
 
 To use Sumo Logic to start an audit of AWS root for compliance, perform these steps:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  Click the **+ New** button at the top of the screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**. 
 1. Make sure you’re in Advanced Mode. If you’re in Basic Mode, click the three-dot icon on the right side of the query builder, then select **Advanced Mode**.
 1. Copy and paste this query into the query builder. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
  ```
@@ -177,3 +177,7 @@ To use Sumo Logic to start an audit of AWS root for compliance, perform these st
 1. Click the magnifying glass icon or press Enter to start the search.
 1. Click the **Aggregates** tab in the results. In the results, see API calls using the root account type. You can work with your AWS administrators to find out if this use of root is necessary and legitimate or not.
 
+## Additional resources
+
+* Blog: [What to expect when you’re expecting a cybersecurity audit for compliance](https://www.sumologic.com/blog/what-to-expect-when-youre-expecting-a-cybersecurity-audit-for-compliance/)
+* Guide: [NIS2 compliance guide](https://www.sumologic.com/brief/nis2-compliance-guide/)

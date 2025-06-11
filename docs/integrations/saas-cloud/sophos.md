@@ -94,15 +94,33 @@ _sourceCategory=sophos managedAgent raisedAt // mandatory fields for alerts
 
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions provided to set up [Cloud-to-Cloud Integration for Sophos Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source/) for the Sophos app. These instructions will guide you through the process of creating a source using the Sophos Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Sophos app is properly integrated and configured to collect and analyze your Sophos Source.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Sophos app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Sophos](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Sophos app is properly integrated and configured to collect and analyze your Sophos data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Sophos dashboards
 
@@ -142,7 +160,7 @@ The Sumo Logic app for Sophos includes a comprehensive set of monitors designed 
 | `Sophos - Real Time Protection Disabled` | This alert is fired when real-time protection is disabled for more than 2.5 hours, leaving systems vulnerable to threats. | Critical | Count > 0 | 
 | `Sophos - Running Manual Not Cleaned Up` | This alert is fired when a program running on a computer exhibits malicious or suspicious behavior that cannot be cleaned up. | Critical | Count > 0 | 
 
-## Upgrading the Sophos app (Optional)
+## Upgrade/Downgrade the Sophos app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

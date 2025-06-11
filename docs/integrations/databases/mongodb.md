@@ -71,42 +71,7 @@ environment=* db_cluster=* db_system=mongodb  | json "log" as _rawlog nodrop
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for MongoDB.
 
-### Step 1: Configure Fields in Sumo Logic
-
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-If you're using MongoDB in a Kubernetes environment, create the fields:
-
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-
-</TabItem>
-<TabItem value="non-k8s">
-
-If you're using MongoDB in a non-Kubernetes environment, create the fields:
-
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-
-</TabItem>
-</Tabs>
-
-
-### Step 2: Configure Collection for MongoDB
+### Configure Collection for MongoDB
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -234,27 +199,9 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB a
      kubectl describe pod <MongoDB_pod_name>
      ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-3. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if one is using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-   2. Click the + Add button on the top right of the table.
-   3. The **Add Field Extraction Rule** form will appear:
-   4. Enter the following options:
-     * **Rule Name**. Enter the name as **App Observability - Database**.
-     * **Applied At**. Choose **Ingest Time**
-     * **Scope**. Select **Specific Data**
-     * **Scope**: Enter the following keyword search expression:
-      ```sql
-      pod_labels_environment=* pod_labels_component=database \
-      pod_labels_db_system=* pod_labels_db_cluster=*
-      ```
-     * **Parse Expression**.Enter the following parse expression:
-      ```sql
-      | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-      | pod_labels_component as component
-      | pod_labels_db_system as db_system
-      | pod_labels_db_cluster as db_cluster
-      ```
-4. Click **Save** to create the rule.
+   
+<br/>**FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, a Field Extraction Rule named **AppObservabilityMongoDBDatabaseFER** is automatically created for Database Application Components.
+<br/>
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -410,99 +357,35 @@ At this point, MongoDB logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-
-## Installing MongoDB Monitors
-
-The next few sections have instructions for installing Sumo Logic Monitors for MongoDB, the app, and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collecting Logs and Metrics for MongoDB](#collecting-logs-and-metrics-for-mongodb).
-
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a MongoDB cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [MongoDB Alerts](#mongodb-alerts).
-
-To install these monitors, you must have the **Manage Monitors** role capability.
-
-You can install monitors by importing a JSON file or using a Terraform script.
-
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/overview/#rules) for details.
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/MongoDB/MongoDB.json) that describes the monitors.
-2. Replace `$$mongodb_data_source` with a custom source filter. To configure alerts for a specific database cluster, use a filter like `db_system=mongodb` or `db_cluster=dev-mongodb`. To configure the alerts for all of your clusters, set `$$mongodb_data_source` to blank (`""`).
-3. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
-4. Click **Add**.
-5. Click **Import**.
-6. On the **Import Content popup**, enter `MongoDB` in the Name field, paste in the JSON into the the popup, and click **Import**.  
-7. The monitors are created in a "MongoDB" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
-
-### Method B: Using a Terraform script
-
-1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#from-the-preferences-page).
-2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-3. Download the Sumo Logic Terraform package for MongoDB monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MongoDB). You can either download it using the `git clone` command or as a zip file.
-4. Alert Configuration. After extracting the package , navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/MongoDB/` directory. Edit the `MongoDB.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-  ```bash
-  access_id   = "<SUMOLOGIC ACCESS ID>"
-  access_key  = "<SUMOLOGIC ACCESS KEY>"
-  environment = "<SUMOLOGIC DEPLOYMENT>"
-  ```
-
-  The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the `mongodb_data_source` variable. For example:
-	 * To configure alerts for A specific cluster set `mongodb_data_source` to something like `db_cluster = mongodb.prod.01`
-	 * To configure alerts for All clusters in an environment set `mongodb_data_source` to something like `environment = prod`
-	 * To configure alerts for Multiple clusters using a wildcard set `mongodb_data_source` to something like `db_cluster = mongodb-prod*`
-	 * To configure alerts for A specific cluster within a specific environment, set `mongodb_data_source` to something like `db_cluster = mongodb-1` and `environment = prod`. This assumes you have configured and applied Fields as described in [Step 1: Configure Sumo Logic Fields](#step-1-configure-fields-in-sumo-logic).
-
-  All monitors are disabled by default on installation. To enable all of the monitors, set the `monitors_disabled` parameter to `false`. By default, the monitors will be located in a "MongoDB" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the `folder` variable in the `MongoDB.auto.tfvars` file.
-
-5. If you want the alerts to send email or connection notifications, edit the `MongoDB_notifications.auto.tfvars` file to populate the `connection_notifications` and `email_notifications` sections. Examples are provided below. In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-```bash title="Pagerduty connection example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email notifications example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-6. Install Monitors
-   1. Navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/MongoDB/` directory and run `terraform init`. This will initialize Terraform and download the required components.
-   2. Run `terraform plan` to view the monitors that Terraform will create or modify.
-   3. Run `terraform apply`.
-
-
 ## Installing the MongoDB app
-
-Now that you have set up collection for MongoDB, install the Sumo Logic app for MongoDB to use the preconfigured searches and dashboards to analyze your data.
 
 import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
+As part of the app installation process, the following fields will be created by default:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `db_cluster_address`
+* `db_cluster_port`
+
+Additionally, if you're using MongoDB in the Kubernetes environment, the following additional fields will be created by default during the app installation process:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
+For information on setting up fields, see [Fields](/docs/manage/fields).
+
 ## Viewing MongoDB Dashboards
 
-If no events have occurred within the time range of the Panel, the Panel will be empty.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -576,9 +459,13 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/MongoDB-Sharding.png')} alt="MongoDB dashboards" />
 
-## MongoDB Alerts
+## Create monitors for MongoDB app
 
-Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### MongoDB alerts
 
 | Name                                         | Description                                                                                                                                               | Trigger Type | Alert Conditions | Recover Conditions |
 |:----------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:------------------|:--------------------|

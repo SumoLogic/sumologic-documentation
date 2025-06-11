@@ -1,16 +1,16 @@
 ---
 id: threat-intel
 title: AWS Threat Intel
-description: The Threat Intel for AWS App correlates CrowdStrike threat intelligence data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks.
+description: The Threat Intel for AWS App correlates Sumo Logic threat intelligence data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/threat-intel-aws.png')} alt="Thumbnail icon" width="75"/>
 
-The Threat Intel for AWS App correlates CrowdStrike threat intelligence data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks. The Threat Intel for AWS App scans your AWS CloudTrail, AWS ELB and AWS VPC Flow logs for threats based on IP address.
+The Threat Intel for AWS App correlates Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks. The Threat Intel for AWS App scans your AWS CloudTrail, AWS ELB and AWS VPC Flow logs for threats based on IP address.
 
-The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professions accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
+The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
 
 
 ## Collect Logs for the Threat Intel for AWS App
@@ -33,7 +33,7 @@ VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each met
 
 ## Installing the Threat Intel for AWS App
 
-The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professions accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
+The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
 
 Now that you have set up collection, install the Sumo Logic App for Threat Intel for AWS to use the preconfigured searches and [Dashboards](/docs/integrations/amazon-aws/threat-intel#viewing-threat-intel-dashboards) that provide insight into your data.
 
@@ -71,7 +71,7 @@ Use this dashboard for details on potential threats and IOCs for AWS CloudTrail.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-AWS-CloudTrail.png')} alt="AWS Threat Intel" />
 
-* **Threats by Geo Location.** View the geo location of threats by IP address that have been identified by Crowdstrike with a malicious confidence of High over the last 24 hours.
+* **Threats by Geo Location.** View the geo location of threats by IP address that have been identified by Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) with a malicious confidence of High over the last 24 hours.
 * **Threats Associated with CloudTrail Events.** Track events in CloudTrail by event time where the malicious confidence is High by source user, source IP address, event name, AWS region, result, malicious confidence, label name, threat malware families, threat last updated, and count for the last 24 hours.
 * **Threats by Events and I.P.** Compare events where the malicious confidence is High by source IP address over the last 24 hours.
 * **Threats Over Time by Result.** Compare successful versus access denied threats with a High malicious confidence for the last 24 hours, timesliced by hour.

@@ -34,6 +34,10 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 * **Update Match List Item** (*Notification*) - Update Item in Match List.
 * **Verify Entity Type** (*Enrichment*) - Check the Entity Type.
 
+## Configure Sumo Logic Cloud SIEM Internal in Automation Service and Cloud SOAR
+
+No configuration is needed. Sumo Logic Cloud SIEM Internal executes without additional authentication.
+
 ## Change Log
 
 * September 20, 2023 - First Upload

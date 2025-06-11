@@ -2,32 +2,32 @@
 id: create-custom-entity-type
 title: Create a Custom Entity Type
 sidebar_label: Custom Entity Types
-description: Learn how to create a custom Entity type.
+description: Learn how to create a custom entity type.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has instructions for how to create custom Entity types in Cloud SIEM.
+This topic has instructions for how to create custom entity types in Cloud SIEM.
 
-In Cloud SIEM, *Entities* are fundamental to the Insight generation process. When a Cloud SIEM Rule fires, it generates a Signal for each “on-Entity” attribute configured for the rule. Cloud SIEM correlates Signals by Entity to create Insights. This process is described in the [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic.
+In Cloud SIEM, *entities* are fundamental to the insight generation process. When a Cloud SIEM rule fires, it generates a signal for each “on-entity” attribute configured for the rule. Cloud SIEM correlates signals by entity to create insights. This process is described in the [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic.
 
-Cloud SIEM has a number of built-in [Entity types](/docs/cse/records-signals-entities-insights/view-manage-entities#about-entities), for example, IP Address, Hostname, and Username.
+Cloud SIEM has a number of built-in [entity types](/docs/cse/records-signals-entities-insights/view-manage-entities#about-entities), for example, IP Address, Hostname, and Username.
 
-When you create a Rule, in the Signal configuration section, the Rules Editor prompts you to select an “On-Entity” attribute from a list of all of the Cloud SIEM schema attributes that hold Entities. What if you want to correlate Signals by something other than an item that is one of Cloud SIEM standard Entity types? That’s what custom Entity types are for.
+When you create a rule, in the signal configuration section, the rules editor prompts you to select an “on-entity” attribute from a list of all of the Cloud SIEM schema attributes that hold entities. What if you want to correlate signals by something other than an item that is one of Cloud SIEM standard entity types? That’s what custom entity types are for.
 
-If you’d like to be able to correlate Signals by a different type of Entity, you can create a custom Entity type. For example, you might want to correlate Signals by file hash. When you create a custom Entity type, you identify the Cloud SIEM schema attributes that hold data of the custom type. Given the example of a file hash Entity type, you would select attributes that contain file hashes, like `file_hash_md5`, `file_hash_sha1`, and so on. The attributes you configure for your custom Entity type will be available in the **On-Entity** selector list in the **Then Create a Signal** section of the rule configuration UI. 
+If you’d like to be able to correlate signals by a different type of entity, you can create a custom entity type. For example, you might want to correlate signals by file hash. When you create a custom entity type, you identify the Cloud SIEM schema attributes that hold data of the custom type. Given the example of a file hash entity type, you would select attributes that contain file hashes, like `file_hash_md5`, `file_hash_sha1`, and so on. The attributes you configure for your custom entity type will be available in the **On-Entity** selector list in the **Then Create a Signal** section of the rule configuration UI. 
 
-Just as for Entities of built-in types listed above—IP addresses, MAC addresses, hostnames, and so on—when a rule fires on a custom Entity, if the Entity doesn’t already exist in Cloud SIEM, it is added, and can be viewed on the Entity list page.
+Just as for entities of built-in types listed above—IP addresses, MAC addresses, hostnames, and so on—when a rule fires on a custom entity, if the entity doesn’t already exist in Cloud SIEM, it is added, and can be viewed on the entity list page.
 
-To create a custom Entity type:
+To create a custom entity type:
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Entities** select **Custom Types**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Custom Types**. You can also click the **Go To...** menu at the top of the screen and select **Custom Types**.  
-1. Click **Create** on the **Custom Entity Types** page. <br/><img src={useBaseUrl('img/cse/custom-types-page.png')} alt="Custom Entity types page" style={{border: '1px solid gray'}} width="800"/>
-2. The **Create Custom Entity Type** popup appears. <br/><img src={useBaseUrl('img/cse/create-custom-entity-type.png')} alt="Create custom Entity type" style={{border: '1px solid gray'}} width="500"/>
-3. **Name**. Enter a meaningful name for the custom Entity type. The name can include alphanumeric characters and spaces. The name you enter will appear as the **Name** of the custom Entity type on the **Custom Entity Type** page. 
-4. **Identifier**. Enter a unique identifier for the custom Entity type. The Identifier can include lowercase alphanumeric characters. The Identifier of the Entity type doesn’t appear in the Cloud SIEM UI, but is used by the Cloud SIEM backend.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Entities** select **Custom Types**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Custom Types**. You can also click the **Go To...** menu at the top of the screen and select **Custom Types**.  
+1. On the **Custom Entity Types** tab click **+ Add Custom Type**. 
+2. The **Add Custom Entity Type** popup appears. <br/><img src={useBaseUrl('img/cse/create-custom-entity-type.png')} alt="Create custom entity type" style={{border: '1px solid gray'}} width="400"/>
+3. **Name**. Enter a meaningful name for the custom entity type. The name can include alphanumeric characters and spaces. The name you enter will appear as the **Name** of the custom entity type on the **Custom Entity Type** page. 
+4. **Identifier**. Enter a unique identifier for the custom entity type. The Identifier can include lowercase alphanumeric characters. The Identifier of the entity type doesn’t appear in the Cloud SIEM UI, but is used by the Cloud SIEM backend.
     :::note
-    The Entity type Identifier cannot be changed once you’ve saved it.
+    The entity type Identifier cannot be changed once you’ve saved it.
     :::
-5. **Fields**. Use the dropdown list to select the schema attribute or attributes you want to associate with the custom Entity type.
-6. Click **Create**.
+5. **Fields**. Use the dropdown list to select the schema attribute or attributes you want to associate with the custom entity type.
+6. Click **Save**.

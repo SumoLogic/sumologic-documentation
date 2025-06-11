@@ -91,7 +91,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 | where type = "project" and log_name matches "projects/*/logs/cloudaudit.googleapis.com%2Factivity"
 | timeslice 1h
 | json "message.data.resource.labels", "message.data.resource.labels.project_id", "message.data.protoPayload.serviceData.policyDelta.bindingDeltas[*]" as labels, project, changes
-| parse regex field=changes "\"role\":\"roles\\\/(?<role>[a-zA-Z.]+)\",\"member\":\".*\",\"action\":\"(?<action>[A-Z]+)\"" multi
+| parse regex field=changes "\"role\":\"roles\/(?<role>[a-zA-Z.]+)\",\"member\":\".*\",\"action\":\"(?<action>[A-Z]+)\"" multi
 | where action="ADD"
 | count by _timeslice, role
 | transpose row _timeslice column role
@@ -248,7 +248,7 @@ See the details of IAM policy changes, user operations, role assignments, and ro
 
 **Removed Roles Over Time**. See the count and trend of the different roles removed in the last 24 hours on a stacked column chart.
 
-## Upgrading the Google Cloud IAM app (Optional)
+## Upgrade/Downgrade the Google Cloud IAM app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

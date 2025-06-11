@@ -1,0 +1,16 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+			"name": "Intel471",
+			"username": "pal@sumologic.com",
+			"apiKey": "xxxx94429cexxxxxxc2e4ecc2e19xx190594935xxxxxx2316xxx",
+			"userSourceId": "user_source_id",
+			"pollingIntervalHour": "1h"
+		},
+		"schemaRef": {
+			"type": "intel471 Threat Intel"
+		},
+		"sourceType": "Universal"
+	}
+}

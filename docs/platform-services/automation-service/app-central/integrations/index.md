@@ -1,19 +1,24 @@
 ---
 slug: /platform-services/automation-service/app-central/integrations
-title: Integrations in App Central
+title: Automation Integrations in App Central
 sidebar_position: 1
 description: ''
 ---
 
-Our Automation Service and Cloud SOAR offer a comprehensive suite of integrations designed to enhance your automation and orchestration capabilities. This section includes the complete catalog of currently supported integrations available in [App Central](/docs/platform-services/automation-service/app-central).
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Please refer to the individual integration documentation for detailed information on setup, usage, and features.
+This section includes the complete catalog of currently supported automation integrations available in App Central. Our Automation Service and Cloud SOAR offer a comprehensive suite of integrations designed to enhance your automation and orchestration capabilities. 
 
-:::note
-Some integrations are tailor-made for Cloud SOAR and are indicated as such within their respective documentation entries. These integrations only appear in the [App Central](/docs/cloud-soar/automation) in Cloud SOAR.
+Some of these automation integrations only appear in the [App Central](/docs/cloud-soar/automation) in Cloud SOAR because they are tailor-made for Cloud SOAR. They are indicated as such within their respective articles.
+
+:::warning Important
+All automation integrations require authentication to communicate between the vendor and Sumo Logic. For directions, see [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
 :::
 
-## Integrations (333)
+
+## Integrations
+
+Count of available integrations: 337
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

@@ -40,10 +40,12 @@ You can install our OpenTelemetry Collector using one of the following methods:
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. On the left panel, select **macOS** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/macOs.png')} alt="macOs-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
-1. (Optional) Select the **Auto Configure Host and Process metrics data collection** checkbox to collect host and process metrics.
+1. (Optional) In the **Collector Settings**, select the **Ephemeral** checkbox to auto-delete your collector after 12 hours, and select the **Locally Manage Collector** checkbox if you want to configure, maintain, and monitor your collector locally.
 1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
 1. Wait for the installation process to complete, then click **Next** to proceed.
+1. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
 
+If you choose to close this Source template creation screen, you can navigate back. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Source Template**.  
 ### Install Script
 
 #### Get the Installation token
@@ -270,7 +272,7 @@ For general Sumo Logic OTel Collector troubleshooting, refer to [Troubleshooting
 
 Here are some troubleshooting steps specific to macOS.
 
-### Error `/Library/Application Support/otelcol-sumo/uninstall.sh: No such file or directory` when uninstalling collector
+### uninstall.sh: No such file or directory error when uninstalling collector
 
 If you're trying to uninstall the collector on macOS, and you see an error similar to the following:
 
@@ -302,14 +304,14 @@ Going to remove Otelcol binary, user, file storage and configurations.
 Uninstallation completed
 ```
 
-### Verify that the `launchd` daemon has been installed
+### Verify that the 'launchd' daemon has been installed
 
 ```console
 $ sudo launchctl list | grep otelcol-sumo
 54109	0	otelcol-sumo
 ```
 
-### Verify that the `launchd` daemon is running
+### Verify that the 'launchd' daemon is running
 
 ```console
 $ sudo launchctl print system/otelcol-sumo

@@ -41,7 +41,7 @@ For example, in Slack, you can add the following section to the **Alert Payload*
 },
 ```
 
-![alertResponseURLExample.png](/img/monitors/alertResponseURLExample.png)
+![alertResponseURLExample.png](/img/alerts/monitors/alertResponseURLExample.png)
 
 Learn more about [Alert Variables](/docs/alerts/monitors/alert-variables).
 
@@ -67,7 +67,7 @@ Sumo Logic detects and maintains a signature library. It does that by analyzing 
 
 There could be cases where the process has still not cataloged a new log message to a signature. As a result, it would get bundled into the "Others" category. This problem should be fixed automatically after some time (when the background process runs).
 
-You can also force run the signature cataloging process manually, by calling the [LogCompare](../../search/logcompare.md) or [LogReduce](/docs/search/logreduce) operators from the Log Search page. 
+You can also force run the signature cataloging process manually, by calling the [LogCompare](/docs/search/behavior-insights/logcompare) or [LogReduce](/docs/search/behavior-insights/logreduce) operators from the Log Search page. 
 
 ## I don’t see the Dimensional Explanation card for logs-based alert
 
@@ -107,7 +107,7 @@ Anomaly cards only work if we are able to infer an entity from the alerting quer
 
 ## Where are Anomaly cards for metrics-based alerts?
 
-Alert response anomaly detection only detects anomalies for metrics data coming from Kubernetes or specific sources within AWS ([learn more](../../observability/root-cause-explorer.md)). If you are setting up alerts on metrics that don’t belong to either one of these categories, anomalies will not be detected.
+Alert response anomaly detection only detects anomalies for metrics data coming from Kubernetes or specific sources within AWS. If you are setting up alerts on metrics that don’t belong to either one of these categories, anomalies will not be detected.
 
 Use the [Sumo Logic Kubernetes collection](https://github.com/SumoLogic/sumologic-kubernetes-collection#sumologic-kubernetes-collection) or the [Sumo Logic AWS observability collection](/docs/observability/aws) for this to work properly. 
 

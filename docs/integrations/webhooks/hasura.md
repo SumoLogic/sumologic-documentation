@@ -120,7 +120,7 @@ The **Hasura - Overview** dashboard offers a comprehensive snapshot of data even
 
 <img src={useBaseUrl('img/integrations/webhooks/hasura_overview.png')} style={{border: '1px solid black'}} alt="Hasura - Overview"/>
 
-## Upgrading the Hasura app (Optional)
+## Upgrade/Downgrade the Hasura app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

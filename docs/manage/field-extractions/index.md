@@ -5,6 +5,7 @@ description: Field Extraction speeds the search process by parsing fields as log
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 Field extractions allow you to parse [fields](/docs/manage/fields) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With Field Extraction Rules (FERs) in place, users can use the pre-parsed fields for ad hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, field extraction rules help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. 
 
@@ -57,8 +58,23 @@ import FerLimit from '../../reuse/fer-limitations.md';
 
 <FerLimit/>
 
-## Micro Lesson: Field Extraction Rules Basics
+## Micro lesson: Field extraction rules basics
 
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/1uxjrbva9m?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Field Extraction Rules Basics Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/Xv3pSwhVCN4"
         width="854px"
         height="480px"
@@ -69,8 +85,9 @@ import FerLimit from '../../reuse/fer-limitations.md';
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+-->
 
-import Iframe from 'react-iframe';
+:::
 
 ## Edit a Field Extraction Rule
 

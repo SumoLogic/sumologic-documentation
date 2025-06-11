@@ -1,5 +1,8 @@
 name: Build and Deploy
 
+permissions:
+  contents: read
+
 on:
   workflow_call:
     inputs:
@@ -13,7 +16,7 @@ on:
         default: "/"
         type: string
       environment:
-        description: GHA environment name
+        description: GitHub Actions environment name (used for scoping secrets and deployment)
         required: true
         type: string
     secrets:
@@ -28,41 +31,40 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     environment:
       name: ${{ inputs.environment }}
       url: ${{ inputs.hostname }}${{ inputs.base_url }}
     env:
       CI: true
       NODE_ENV: production
+      NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
       AWS_PAGER: ""
       HOSTNAME: ${{ inputs.hostname }}
       BASE_URL: ${{ inputs.base_url }}
       AWS_DEFAULT_REGION: us-east-1
       AWS_EC2_METADATA_DISABLED: "true"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '20.x'
           cache: 'yarn'
       - name: Docusaurus Webpack cache
         uses: actions/cache@v3
         with:
           path: node_modules/.cache
-          key: ${{ runner.os }}-webpack-cache
+          key: ${{ runner.os }}-webpack-cache-${{ hashFiles('yarn.lock') }}
       - name: Install awscli
         uses: unfor19/install-aws-cli-action@v1
       - name: Install jq
-        run: sudo apt-get install jq
+        run: sudo apt-get install -y jq
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build the Docusaurus site
-        env:
-          NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
         run: yarn build
       - name: Deploy the Docusaurus site
         env:

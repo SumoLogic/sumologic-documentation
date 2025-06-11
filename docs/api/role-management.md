@@ -26,16 +26,13 @@ To manage roles, you must have an administrator role or your role must have been
 | DE         | https://api.de.sumologic.com/docs/#tag/roleManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/roleManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/roleManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/roleManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/roleManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/roleManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/roleManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/roleManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * User Management (all role capabilities)
-
--->

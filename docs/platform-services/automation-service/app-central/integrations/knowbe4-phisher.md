@@ -22,18 +22,28 @@ KnowBe4 PhishER Identifies and responds to email threats faster with automatic p
 
 Follow the steps from the KnowBe4 PhishER [guide](https://developer.knowbe4.com/graphql/phisher/page/Introduction) to create your authentication credentials.
 
-**KnowBe4 PhishER in Cloud SOAR**
+## Configure KnowBe4 PhishER in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-phisher/knowbe4-phisher-3.png')} style={{border:'1px solid gray'}} alt="knowbe4-phisher" width="600"/>
-1. Populate all the required fields (\*) and then click **Save**.
-    * **Label**. The name for the resource.
-    * **URL**. KnowBe4 PhishER host URL.
-    * **API Token**. Your KnowBe4 PhishER API key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-phisher/knowbe4-phisher-4.png')} style={{border:'1px solid gray'}} alt="knowbe4-phisher" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-phisher/knowbe4-phisher-5.png')} style={{border:'1px solid gray'}} alt="knowbe4-phisher" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-phisher/knowbe4-phisher-6.png')} style={{border:'1px solid gray'}} alt="knowbe4-phisher" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-phisher/knowbe4-phisher-7.png')} style={{border:'1px solid gray'}} alt="knowbe4-phisher" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the [PhishER base URL](https://developer.knowbe4.com/graphql/phisher/page/Base-URL) for the KnowBe4 server that is closest to your geographic location.
+
+* **API Token**. Enter your KnowBe4 PhishER [API key](https://developer.knowbe4.com/graphql/phisher/page/Authentication).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/knowbe4-phisher-configuration.png')} style={{border:'1px solid gray'}} alt="KnowBe4 PhishER configuration" width="400"/>
+
+For information about KnowBe4 PhishER, see [KnowBe4 PhishER documentation](https://support.knowbe4.com/hc/en-us/articles/360010802673-PhishER-Product-Manual).
 
 ## Change Log
 

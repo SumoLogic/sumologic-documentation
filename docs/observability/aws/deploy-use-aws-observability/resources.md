@@ -281,16 +281,6 @@ cloudwatch-metrics-&#60;AWS::Region&#62;-SNS </td>
    <td>CloudWatch Logs &#60;AWS::Region&#62; </td>
   </tr>
   <tr>
-   <td>Inventory Source </td>
-   <td>inventory-&#60;AWS::Region&#62; </td>
-   <td>AWS Inventory &#60;AWS::Region&#62;  </td>
-  </tr>
-  <tr>
-   <td>XRay Source   </td>
-   <td>xray-&#60;AWS::Region&#62;   </td>
-   <td>AWS Xray &#60;AWS::Region&#62;  </td>
-  </tr>
-  <tr>
    <td>S3 Bucket Name   </td>
    <td>aws-observability-logs-&#60;UniqueKey&#62;   </td>
    <td>aws-observability-logs-&#60;UniqueKey&#62;   </td>

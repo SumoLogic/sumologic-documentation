@@ -47,7 +47,7 @@ To set up a webhook connection:
 1. (Optional) Enter a **Description** for the connection.
 1. Enter the **URL** for the endpoint. This is generated from the remote system’s API.
     :::important
-    Only HTTPS (`port 443`) and HTTP (`port 80`) URLs are supported. 
+    HTTPS URLs can use any port without restriction, while HTTP URLs are limited to only port 80.
     :::
 1. (Optional) If the third-party system requires an **Authorization Header**, enter it here. For more information, see [Example Authorization Header](#example-authorization-header) below.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.

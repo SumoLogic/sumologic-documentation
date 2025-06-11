@@ -14,7 +14,7 @@ Whether you’re fixing bugs, adding features, writing documentation, or sharing
 
 Our open-source [documentation](https://github.com/SumoLogic/sumologic-documentation) project is hosted on GitHub, where you can find all the resources to get started—guidelines on creating files, writing in Markdown, using templates, and submitting pull requests.
 
-Whether you’re a seasoned developer or just starting, join us in building tools that help everyone better understand and optimize their systems. Ready to contribute? Explore our [contributing guide](https://help.sumologic.com/docs/contributing/) and get involved today!
+Whether you’re a seasoned developer or just starting, join us in building tools that help everyone better understand and optimize their systems. Ready to contribute? Explore the articles below and get involved today!
 
 You can also explore more Sumo Logic open-source projects on our [GitHub site](https://github.com/SumoLogic).
 

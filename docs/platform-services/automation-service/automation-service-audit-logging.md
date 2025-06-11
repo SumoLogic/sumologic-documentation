@@ -26,7 +26,7 @@ Searching the Audit Event Index and System Event Index is the same as running a 
 
 To search for events:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click the **+ New** button at the top of the screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
 1. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:
     ```sql
     (_index=sumologic_audit_events or _index=sumologic_system_events) _sourceCategory=oar*
@@ -59,7 +59,7 @@ The table below shows the `_sourceCategory` that is assigned to Audit Event Inde
 | [Automation action](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
 | [Automation action configuration](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActionConfigurations` |
 | [Integration](/docs/platform-services/automation-service/automation-service-integrations/)   | `oarIntegrations`  |
-| [Integration resource](/docs/platform-services/automation-service/automation-service-integration-framework/)   | `oarIntegrationResources` |
+| [Integration resource](/docs/platform-services/automation-service/integration-framework/)   | `oarIntegrationResources` |
 | [Playbook execution](/docs/platform-services/automation-service/automation-service-playbooks/)  | `oarPlaybookExecutions`   |
 | [Playbook revision](/docs/platform-services/automation-service/automation-service-playbooks/)  | `oarPlaybookRevisions`    |
 
@@ -70,7 +70,7 @@ The table below shows the `_sourceCategory` that is assigned to Audit Event Inde
 | Product Feature | _sourceCategory Value |
 |:--|:--|
 | [Custom Field](/docs/cloud-soar/overview/#custom-fields) | `oarCustomFields`  |
-| [Daemon](/docs/platform-services/automation-service/automation-service-integration-framework/#daemon-action-definitions)  | `oarDaemons`  |
+| [Daemon](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#daemon-action-definitions)  | `oarDaemons`  |
 | [Dashboard](/docs/cloud-soar/incidents-triage/#dashboards)  | `oarDashboards` |
 | Email | `oarEmails`  |
 | [Entity](/docs/cloud-soar/incidents-triage/#entities)  | `oarEntities` |

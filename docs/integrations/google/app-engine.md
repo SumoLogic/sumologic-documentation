@@ -384,7 +384,7 @@ See the details of App Engine requests including the location, request methods, 
 
 **Average Response Time**. See the average and trend of response time in the last hour on a line chart.
 
-## Upgrading the Google App Engine app (Optional)
+## Upgrade/Downgrade the Google App Engine app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

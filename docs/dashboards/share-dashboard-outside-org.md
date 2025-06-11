@@ -22,7 +22,7 @@ Before you share a dashboard with users external to your organization, you must 
 
 In this step, you'll enable the ability to share dashboards outside your organization. You must have admin privileges to enable the policy.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Administration** > **Security** > **Policies** <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.   
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Administration > Security > Policies** <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.   
 1. Select the **Enable** checkbox for **Share Dashboards Outside of the Organization**.
 1. The policy is changed. It can take up to 5 minutes for the policy to go into effect.
 
@@ -47,9 +47,9 @@ Administrator privileges are required to enable the service allowlist.
 
 1. Go to your **Library** and search for the dashboard you want to share.
 1. Right-click the dashboard name in the resulting list.
-1. Click **Share** in the context menu. <br/><img src={useBaseUrl('/img/dashboards-new/share-option.png')} alt="share-option" style={{border: '1px solid gray'}} width="200"/> <br/>Or, click on the share icon next to the dashboard title.  <br/><img src={useBaseUrl('/img/dashboards-new/share-option_2.png')} alt="share-option_2" style={{border: '1px solid gray'}} width="400"/>
+1. Click **Share** in the context menu. <br/><img src={useBaseUrl('/img/dashboards/share-option.png')} alt="share-option" style={{border: '1px solid gray'}} width="200"/> <br/>Or, click on the share icon next to the dashboard title.  <br/><img src={useBaseUrl('/img/dashboards/share-option_2.png')} alt="share-option_2" style={{border: '1px solid gray'}} width="400"/>
 1.  The Share Dashboard dialog appears.
-1.  Click **Get shareable URL** to expand that section of the page. <br/><img src={useBaseUrl('/img/dashboards-new/share-outside.png')} alt="share-outside" width="800"/>
+1.  Click **Get shareable URL** to expand that section of the page. <br/><img src={useBaseUrl('/img/dashboards/share-outside.png')} alt="share-outside" width="800"/>
 1.  If you want viewers to see the current time range in the URL, toggle the **Include current time range in the URL** option.
 1.  If you want viewers to see the current variable values in the URL, toggle the **Include current variable values in the URL** option.
 1.  Toggle the **Public Dashboard** on.
@@ -88,13 +88,6 @@ When someone views a dashboard without signing in, Sumo Logic logs the following
 ## Alerts and reports for externally-shared dashboards
 
 You can use [Scheduled Searches](/docs/alerts/scheduled-searches) to create alerts and reports on sharing dashboards outside your organization.
-
-```sql title="Real-time alert when a user shares a dashboard"
-_index=sumologic_audit and _sourceName=REPORT "Published REPORT"
-| parse "Published REPORT Name=*, UserName=* UserEmail=*} PublisherName=* PublisherEmail=*} Visibility=* URL=*" as dashboardName,userName,userEmail,publisherName,publisherEmail,visibility, URL
-| count by dashboardName, userName, userEmail, visibility, URL
-| fields -_count
-```
 
 ```sql title="Scheduled search report of dashboard views"
 _index=sumologic_audit and _sourceName=REPORT "Viewed Report"

@@ -6,39 +6,41 @@ description: Learn about how to forward data from Sumo Logic to S3.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has instructions for forwarding data from Sumo Logic to an S3 bucket.
+You can forward log data from a [partition](/docs/manage/partitions) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a partition or Scheduled View once it is set to forward data. 
+
+To forward data to an S3 bucket:
+1. [Configure an S3 forwarding destination](#configure-an-s3-data-forwarding-destination).
+1. [Forward data to the S3 forwarding destination](#forward-datato-an-s3-forwarding-destination) from a partition or Schedule View.
+
+After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your Scheduled View conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
 
 :::note
 Data forwarding is not currently supported for data assigned to the Infrequent Tier. 
 :::
 
-You can forward log data from a [Partition](/docs/manage/partitions) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a Partition once it is set to forward data. 
-
-After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your Scheduled View conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
-
 ## Prerequisites
 
-* An administrator role on the Partition where you want to set up forwarding.
-* Follow the instructions on [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to grant Sumo permission to send data to the destination S3 bucket.
-* A Partition or Scheduled View to push to Amazon S3.
+* An administrator role on the partition where you want to set up forwarding.
+* Follow the instructions on [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to grant Sumo Logic permission to send data to the destination S3 bucket.
+* A partition or Scheduled View to push to Amazon S3.
 
 ## Forwarding interval 
 
 Messages are buffered during data ingest for either **approximately** five minutes or until 100MB of data is received, whichever is first. Then the buffered data is written to a new CSV file and forwarded after compression. 
 
-The limits mentioned here are upper limits, actual file size may vary depending on the ingestion volume in Scheduled Views or Partitions of an account. 
+The limits mentioned here are upper limits. Actual file size may vary depending on the ingestion volume in Scheduled Views or partitions of an account. 
 
 :::note
-It takes approximately five minutes to propagate a new or changed S3 data forwarding rule or bucket across the Sumo service. So, it is possible after you create or modify a rule, the first five minutes of data forwarded might not be written to S3.
+It takes approximately five minutes to propagate a new or changed S3 data forwarding rule or bucket across the Sumo Logic service. So, it is possible after you create or modify a rule, the first five minutes of data forwarded might not be written to S3.
 :::
 
-## File Format of forwarded data
+## File format of forwarded data
 
-After you start forwarding data to S3, you should start to see file objects posted in your configured bucket. The log messages are accumulated and returned after being ingested by Sumo Logic.
+After you start forwarding data to S3, you should start to see file objects posted in your configured bucket. The log messages are accumulated and returned after being ingested by Sumo Logic. You can choose to forward only log data, log data and metadata, or log data with metadata and enriched fields, in either CSV or JSON format.
 
-The log messages are saved in CSV files in compressed gzip files and named according to the convention you specified when you configured Sumo to start data forwarding, as described in step 5 of [Start data forwarding to S3](amazon-s3-bucket.md). The file naming convention for legacy data forwarding is described below in [Legacy File Naming Format](#legacy-file-naming-format). 
+The log messages are saved in CSV or JSON files in compressed gzip files and named according to the convention you specified when you configured Sumo Logic to start data forwarding, as described in [Forward data to an an S3 forwarding destination](#forward-datato-an-s3-forwarding-destination). The file naming convention for legacy data forwarding is described below in [Legacy file naming format](#legacy-file-naming-format). 
 
-Messages are buffered during data ingest for either approximately five minutes or until 100MB of data is received, whichever is first. Then the buffered data is written to a new CSV file and forwarded. 
+Messages are buffered during data ingest for either approximately five minutes or until 100MB of data is received, whichever is first. Then the buffered data is written to a new CSV or JSON file and forwarded. 
 
 These file objects will contain the messages received as well as the system metadata for the messages, including:
 
@@ -59,7 +61,7 @@ These file objects will contain the messages received as well as the system met
  
 ### Ordering of fields in forwarded file
 
-* The order of the system fields is fixed, and the order is `messageId, sourceName, sourceHost, sourceCategory, messageTime, receiptTime, sourceId, collectorId, count, format, view, encoding, message`.
+* The order of the system fields is fixed, and the order is: `messageId, sourceName, sourceHost, sourceCategory, messageTime, receiptTime, sourceId, collectorId, count, format, view, encoding, message`.
 * Aggregate fields are represented in lowercase only.
 * Aggregate fields are ordered based on ascending ASCII value.
 * Aggregate fields are always present after the system or built-in fields.
@@ -85,67 +87,95 @@ The file naming convention for legacy data forwarding (prior to January 2017) is
 
 Where:
 
-* `start_epoch` is the epoch time representing the parsed message time of the first message contained within the file
+* `start_epoch` is the epoch time representing the parsed message time of the first message contained within the file.
 * `end_epoch` is the epoch time representing the parsed message time of the last message contained within the file.
-* `objectid` is a unique ID for the file object, which is generated by Sumo at creation time.
+* `objectid` is a unique ID for the file object, which is generated by Sumo Logic at creation time.
 
 
 ## Configure an S3 data forwarding destination
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. 
+Before you can [forward data](#forward-datato-an-s3-forwarding-destination) from a partition or Scheduled View, you must create a destination that indicates the S3 bucket where you want to send the forwarded data.
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**.
 1. Click **+ Destination** to add a new destination.
-1. The **Create New Destination** popup appears. <br/><img src={useBaseUrl('img/data-forwarding/create-S3-destination.png')} alt="create-S3-destination.png" width="450"/>
+1. The **Create New Destination** popup appears. <br/><img src={useBaseUrl('img/manage/data-forwarding/create-S3-destination.png')} alt="Create S3 Destination popup" style={{border: '1px solid gray'}} width="450"/>
 1. **Destination Name**. Enter a name to identify the destination.
-1. **Bucket Name**. Enter the exact name of the S3 bucket.
+1. **Bucket Name**. Enter the [exact name of the S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/view-bucket-properties.html).
     :::note
     You can create only one destination with a particular bucket name.  If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
     :::
 1. **Description**. You can provide a meaningful description of the connection.
-1. **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
+1. **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in the prerequisite step [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
      * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
-      * For **Key access** enter the **Access Key ID** and **Secret Access Key**. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+      * For **Key access** enter the **Access Key ID** and **Secret Access Key**. See [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.
 1. **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
-1. **Enable S3 server-side encryption**. Select the check box if you want the forwarded data to be encrypted. For more information, see [Protecting Data Using Server-Side Encryption with Amazon S3-Managed Encryption Keys (SSE-S3)](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html) in AWS help.
-1. **Active**. Select this check box to enable Data Forwarding for the entire S3 bucket. To start Data Forwarding you will also need to enable forwarding for the desired indexes, as described below in this topic.
-1. Click **Save**.
+1. **Enable S3 server-side encryption**. Select the check box if you want the forwarded data to be encrypted. For more information, see [Using server-side encryption with Amazon S3 managed keys (SSE-S3)](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html) in AWS help.
+1. **Active**. Select this check box to enable data forwarding for the entire S3 bucket. To start forwarding data, you will also need to enable forwarding for the desired indexes, as described below.
+1. Click **Save**. <br/>If Sumo Logic is able to verify the S3 credentials, the destination will be added to the list of destinations. If the destination is not added successfully, see [Error and alert conditions](#error-and-alert-conditions) for examples of errors that can occur. 
 
-If Sumo Logic is able to verify the S3 credentials, the destination will be added to the list of destinations, and you can start Data Forwarding for specific Partitions or Scheduled Views, as described in the following section in this topic. See [Error and alert conditions](amazon-s3-bucket.md) in this topic for examples of errors that can occur.
+Once the destination is created, you can start data forwarding for specific partitions or Scheduled Views as described in [Forward data to an S3 forwarding destination](#forward-datato-an-s3-forwarding-destination) below. 
 
-## Forward data to S3 
+## Forward data to an S3 forwarding destination
 
-This section has instructions for enabling data forwarding for an existing Partition or Scheduled View.
+Once you [configure an S3 forwarding destination](#configure-an-s3-data-forwarding-destination) that indicates the S3 bucket to receive the data, you can forward data to the destination from partitions and Scheduled Views.
 
-:::tip
-You can also enable Data Forwarding when you first create a Partition or Scheduled View by selecting the **Enable Data Forwarding** check box.
-:::
+1. Depending on whether you want to forward data from a partition or a Scheduled View:
+    * **Partition**: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+    * **Scheduled View**: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. 
+1. Select the partition or Scheduled View for which you want to enable data forwarding and click the **Edit** button. The edit dialog for the partition or Scheduled View displays. Following is the edit dialog for a partition. <br/><img src={useBaseUrl('img/manage/data-forwarding/enable-option.png')} alt="Enable Data Forwarding checkbox" style={{border: '1px solid gray'}} width="450"/>
+    :::tip
+    In addition to forwarding data from existing partitions and Scheduled Views, you can also enable data forwarding by selecting the **Enable Data Forwarding** check box when you first [create a partition](/docs/manage/partitions/flex/create-edit-partition-flex/) or [create a Scheduled View](/docs/manage/scheduled-views/add-scheduled-view/).
+    :::
+1. Click the **Enable Data Forwarding** checkbox. More options appear. <br/><img src={useBaseUrl('img/manage/data-forwarding/specify-destination.png')} alt="Forwarding destination options" style={{border: '1px solid gray'}} width="450"/>
+1. **Forwarding Destination**. Choose one of the following:  
+   * **Existing Amazon S3 Destination**. If you select this option, select the destination in the **Amazon S3 Destination** field below.
+   * **New Amazon S3 Destination**. Follow the instructions in [Configure an S3 data forwarding destination](#configure-an-s3-data-forwarding-destination) above to create a new S3 destination.
+1. **Amazon S3 Destination**. If you chose **Existing Amazon S3 Destination** for the forwarding destination, select the destination here.
+1. Click **Data Forwarding Configuration**. Options appear for forwarding the data. <br/><img src={useBaseUrl('img/manage/data-forwarding/forward-raw-data.png')} alt="Options to forward raw data" style={{border: '1px solid gray'}} width="450"/>
+   1. **Included Data**. Select the kind of data to forward:
+       * **Raw**. Raw logs only.
+       * **Raw + Metadata**. Raw logs and the metadata fields assigned to log entries. We recommend this option because the forwarded data has the optimal balance of raw data and metadata that Sumo Logic adds (for example, to indicate source, source category, and so on). 
+       * **All (Raw + Metadata + Enriched Fields)**. Raw logs, the metadata fields assigned to log entries, and enriched fields from field extraction rules.
+   1. **Forwarded data type**. Select the format for the forwarded data:
+       * **Text**. Plain text. (Available only if you choose **Raw** above.)
+       * **CSV**. Comma-separated values. (Available if you choose **Raw + Metadata** or **All** above.)
+       * **JSON**. Java Script Object Notation. (Available if you choose **Raw + Metadata** or **All** above.) Select **JSON** if you want to ensure that forwarded data can be re-ingested easily.
+   1. **File Prefix**. Enter the path prefix to a directory in the S3 bucket. You can include any of the following variables:
+      * `{index}` will be replaced by the name of the partition or scheduled view.
+      * `{day}` will be replaced by the day of the year in the yyyy-MM-dd format.
+      * `{hour}` will be replaced by the hour of the day (0-23).
+      * `{minute}` will be replaced by the minute of the hour.
+      * `{second}` will be replaced by the second of the minute.
+      * `{uuid}` will be replaced by a randomly generated universal unique identifier.<br/><br/>
+      :::note
+      For example, to place data in a directory named `SumoDataForwarding` you could specify the **File Prefix** as: `SumoDataForwarding/{day}/{index}_{day}_{hour}_{minute}_{second}` <br/>If you leave this field blank, the default format is used: `{index}_{day}_{hour}_{minute}_{second}`
+      :::
+1. Click **Save** at the top of the panel to save your changes and start forwarding data. 
 
-1. Depending on whether you want to forward data from a Partition or a Scheduled View:
-    * Partition: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
-    * Scheduled View: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. 
-1. Click on the Partition or View for which you want to enable data forwarding and click the **Edit** button. When editing, you'll see an option to **Enable Data Forwarding**. <br/><img src={useBaseUrl('img/data-forwarding/enable-option.png')} alt="enable-option.png" width="450"/>
-1. Click the **Enable Data Forwarding** checkbox.
-1. More options appear. <br/><img src={useBaseUrl('img/data-forwarding/specifiy-destination.png')} alt="specify-destination.png'" width="450"/>
-1. **Forwarding Destination**. You can either choose an existing data forwarding destination or create a new one.  
-   * If you want to create a new destination, choose new *Amazon S3 Destination*, and follow the instructions in [Configure an S3 data forwarding destination](#configure-an-s3-data-forwarding-destination) above.
-   * If you want to use an existing destination, leave *Forwarding Destination* set to *Existing Amazon S3 Destination*, and click the pull-down to the right of **Amazon S3 Destination**, and pick a destination
-1. For **File Format**, you can enter the path prefix to a directory in the S3 bucket. You can include any of the following variables:
-   * `{index}` will be replaced by the name of the partition or scheduled view.
-   * `{day}` will be replaced by the day of the year in the yyyy-MM-dd format.
-   * `{hour}` will be replaced by the hour of the day (0-23).
-   * `{minute}` will be replaced by the minute of the hour.
-   * `{second}` will be replaced by the second of the minute.
-   * `{uuid}` will be replaced by a randomly generated universal unique identifier.<br/><br/>
-      If you leave this field blank, the default format `{index}_{day}_{hour}_{minute}_{second}` is used. For example, to place data in a directory named `SumoDataForwarding` you could specify the **File Format** as: `SumoDataForwarding/{day}/{index}_{day}_{hour}_{minute}_{second}`
-1. Click **Save** to save your changes and start forwarding data. 
+For information about how the data is forwarded, see [Forwarding interval](#forwarding-interval) and [File format of forwarded data](#file-format-of-forwarded-data).
+
+## Data forwarding example
+
+Let's say you want to take data from Sumo Logic and run additional analysis on it in tools separate from Sumo Logic. You can forward the data from Sumo Logic to an S3 bucket where it is available for download and analysis by your tools. 
+
+Let's suppose you have an S3 bucket named `amzn-s3-demo-bucket1` where you want to forward your Sumo Logic data. Do the following:
+
+1. [Create a destination](/docs/manage/data-forwarding/amazon-s3-bucket/#configure-an-s3-data-forwarding-destination) that points to the `amzn-s3-demo-bucket1` bucket. For example, name it **Test destination**. 
+1. Open the partition or Scheduled View whose data you want to [forward data to the new destination](/docs/manage/data-forwarding/amazon-s3-bucket/#configure-an-s3-data-forwarding-destination).
+1. In the partition or Scheduled View, select **Enable Data Forwarding**, and fill out the fields that appear:
+    1. In **Forwarding Destination** select **Existing Amazon S3 Destination**.
+    1. In **Amazon S3 Destination** select the name of the destination you created earlier, for example, **Test destination**. 
+1. Use the **Data Forwarding Configuration** section to specify whether to forward only log data, log data with metadata, or log data with metadata and enriched fields.
+1. Click **Save** on the partition or Scheduled View. The data will start forwarding to the S3 bucket specified in the destination.
 
 ## Error and alert conditions
 
 An error or alert condition can occur with an S3 data forwarding destination for the following reasons:
 
-* If Sumo Logic is not able to verify the S3 credentials when the destination is saved, an error message indicates that the credentials were rejected by Amazon. If this occurs, verify **Access Key ID**, **Secret Access Key**, and the bucket configuration, re-select the **Active** check box, and save again. <br/><img src={useBaseUrl('img/data-forwarding/bad-cred.png')} alt="bad-cred.png" width="450"/>
+* If Sumo Logic is not able to verify the S3 credentials when the destination is saved, an error message indicates that the credentials were rejected by Amazon. If this occurs, verify **Access Key ID**, **Secret Access Key**, and the bucket configuration, re-select the **Active** check box, and save again. <br/><img src={useBaseUrl('img/manage/data-forwarding/bad-cred.png')} alt="Bad credentials message" style={{border: '1px solid gray'}} width="450" />
 
-* Errors and alerts that are generated after the destination has been successfully saved and started are shown on the **Partitions** page. <br/><img src={useBaseUrl('img/data-forwarding/data-forwarding-status-icons.png')} alt="status-icons.png" style={{border:'1px solid gray'}} width="800"/>
+* Errors and alerts that are generated after the destination has been successfully saved and started are shown on the **Partitions** page. <br/><img src={useBaseUrl('img/manage/data-forwarding/data-forwarding-status-icons.png')} alt="Errors and alerts on the partitions page" style={{border: '1px solid gray'}} width="800" />
 
-* Hover over the icon to display the message.<br/><img src={useBaseUrl('img/data-forwarding/data-forwarding-icon-message.png')} alt="icon-message.png" width="300"/>
+* Hover over the icon to display the message.<br/><img src={useBaseUrl('img/manage/data-forwarding/data-forwarding-icon-message.png')} alt="Hover message" style={{border: '1px solid gray'}} width="300"/>
 
 In this example, Sumo Logic has disabled data forwarding due to errors in connecting to the S3 bucket. This occurs if the Amazon account or credentials change so that Sumo Logic is no longer able to authenticate to the bucket.  

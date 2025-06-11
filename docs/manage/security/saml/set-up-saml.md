@@ -36,15 +36,15 @@ The provisioning process works as follows:
 
 This section has key information about SAML in Sumo.
 
-## Access keys are not controlled by SAML
+### Access keys are not controlled by SAML
 
 This means that if a user has been turned off on the SSO side, their access keys would still be valid. For this reason, administrators should audit users regularly and disable access keys when necessary.
 
-## SAML does not provide a deprovisioning mechanism 
+### SAML does not provide a deprovisioning mechanism 
 
-This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to login to Sumo Logic via SSO. Administrators can delete these users from the **Administration > Users and Roles > Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User](../../users-roles/users/delete-user.md).
+This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to sign in to Sumo Logic via SSO. Administrators can delete these users from the **Administration > Users and Roles > Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User](../../users-roles/users/delete-user.md).
 
-## Only one certificate for each SAML configuration is currently supported
+### Only one certificate for each SAML configuration is currently supported
 
 Only one token-signing ADFS X.509 for each SAML configuration is currently supported. When you need to do a certificate refresh on the ADFS server, you must update the Sumo certificate afterwards.
 
@@ -91,7 +91,7 @@ This section has instructions for configuring several optional SAML features.
 ### Configure SP initiated Login 
 
 :::tip
-SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
+SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings) section of the *Manage Organization* topic.
 :::
 
 This section has instructions for setting up SP initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page.

@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-log-analytics" width="100"/>
 
-***Version: 1.23  
-Updated: Apr 5, 2024***
+***Version: 1.24  
+Updated: Dec 12, 2024***
 
 Integration with Sumo Logic platform for logs, metrics, and monitors.
 
@@ -23,28 +23,40 @@ Integration with Sumo Logic platform for logs, metrics, and monitors.
 
 ## Sumo Logic Log Analytics configuration
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**.  
-1. From the preferences screen, in the section **My Access Keys**, click on **Add Access Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="600"/>
-1. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="500"/>
-1. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
-   :::note
-   They won't be available again once you close this screen.
-   :::
-1. Click **Done** after you copy the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="500"/>
+[Create an access key](/docs/manage/security/access-keys/#create-an-access-key) and copy the resulting **Access ID** and **Access Key**. Store the ID and access key (temporally) into a text editor.
 
-## Sumo Logic Log Analytics in Automation Service and Cloud SOAR
+:::note
+The ID and key won't be available again once you close the confirmation screen.
+:::
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="400"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
-    * **Label**. The name of the resource.
-    * **Sumo Logic API URL**. URL to the API of the instance ([learn more](/docs/api)).
-    * **Access ID**. The access ID that you copied earlier.
-    * **Access Key**. The access key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-8.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-9.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-10.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-11.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="400"/>
+## Configure Sumo Logic Log Analytics in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import SumoLogicAPIURL from '../../../../reuse/automation-service/sumo-logic-api-url.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* <SumoLogicAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* **Timezone**. Select your timezone.
+
+* **Daemon Query**. Enter the query to be executed in daemons.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* **API Rate Limit Sleep (s)**. Enter the API rate limit in seconds. If the API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10. more info at https://help.sumologic.com/docs/api/metrics/#rate-limiting.
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-analytics-configuration.png')} style={{border:'1px solid gray'}} alt="Sailpoint configuration" width="400"/>
 
 ## Change Log
 
@@ -100,3 +112,8 @@ Integration with Sumo Logic platform for logs, metrics, and monitors.
     + Search Sumo Logic Action updated:
         - If the Aggregates field is selected, the action will fetch only aggregates. If the Aggregates field is not selected, it will fetch only messages.
         - Added a new field *Escape Backslashes* if selected it will Escape all Backslashes in Query
+* December 12, 2024 (v1.24)
+    + Updated Actions: (Fixed Authentication Issue)
+      + **Search Sumo Logic** Action
+      + **Search Sumo Logic Daemon** Action
+      + **Aggregates Sumo Logic Daemon** Action

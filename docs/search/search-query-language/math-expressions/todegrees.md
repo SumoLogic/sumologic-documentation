@@ -16,5 +16,5 @@ toDegrees(<x>) as <field>
 ## Example
 
 ```sql
-toDegrees(asin(1)) as v // v = 90
+* | toDegrees(asin(1)) as v
 ```
