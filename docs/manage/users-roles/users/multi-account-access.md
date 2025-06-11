@@ -7,34 +7,35 @@ description: Multi-account Access allows you to log into multiple Sumo Logic acc
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
-Sumo Logic now supports custom subdomains and recommends that as the best approach to providing access to multiple accounts: you can configure a custom subdomain for each of your Sumo Logic accounts. For more information, see [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings.md).
+Sumo Logic recommends subdomains as the best approach to providing access to multiple accounts. You can configure a custom subdomain for each of your Sumo Logic accounts. For more information, see [Set up a custom subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#set-up-a-customsubdomain).
 :::
 
-Multi-account access allows you to log into multiple Sumo Logic accounts (also called organizations) using one username (email address) and password. If the same username already exists in more than one Sumo Logic organization, the accounts are linked automatically. No action is required, though initially, you will be asked to change your password. When you do, this will become your multi-account password.
+Multi-account access allows you to log into multiple Sumo Logic accounts (also called [organizations](/docs/manage/manage-subscription/create-and-manage-orgs/)) using one username (email address) and password. If the same username already exists in more than one Sumo Logic organization, the accounts are linked automatically. No action is required, though initially, you will be asked to change your password. When you do, this will become your multi-account password.
 
-After you log into Sumo Logic, in the menu under your name, you will see the list of organizations that you can access under **Switch Org**. To change organizations, select a new organization from the list. 
+After you log into Sumo Logic, in the menu next to your name, you will see the list of organizations that you can access. To change organizations, select a new organization from the list.
 
-When you log out of Sumo Logic, then log back in again, you will be redirected to the last organization you were logged into. 
+<img src={useBaseUrl('img/users-roles/multi-account-access-dropdown.png')} alt="Multi-account access menu" style={{border: '1px solid gray'}} width="400" />
 
-If a user belongs to two different Sumo Logic organizations, they will each count as one allocated user for each organization.
 
-For multi-account to work, your username (email address) must be the same in the different organizations. If multi-account isn’t working for you, make sure your usernames match in the organizations.
+## Log in using multi-account access
 
-If you would still like to have an account that is separate from your Sumo Logic Multi-account, simply use a different email address. This way, you can keep this account separate from your Multi-account username and password.
+1. An administrator will add to an organization. When you receive the email welcoming you to the new Sumo Logic organization, log in with your email and password. You will be asked to change your password. This new password will be your multi-account password.
+1. In the UI, select a different organization from the list next to your username.
+1. You are logged into the second organization.
+1. After you log out, when you return, you will be redirected into the organization you were most recently logged into. You can now change between organizations at any time using the same username and password.
+
+### Limitations
+
+* When you log out of Sumo Logic, then log back in again, you will be redirected to the last organization you were logged into. 
+* Ensure you save your work before switching to another organization. When you switch to a new organization, you are logged out of your current organization, and any unsaved work is lost. 
+* If you belong to two different Sumo Logic organizations, you will count as one allocated user for each organization.
+* For multi-account to work, your username (email address) must be the same in the different organizations. If multi-account isn’t working for you, make sure your usernames match in the organizations.
+* If you would still like to have an account that is separate from your Sumo Logic multi-account, simply use a different email address. This way, you can keep this account separate from your multi-account username and password.
+* Single account users are unaffected by multi-account access, and will not see this option in the UI.
 
 :::note
 Your account owner can change the organizations' display name on the Account page. For more information, see [Cloud Flex Legacy Accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts) or [Sumo Logic Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts), depending on your Sumo Logic packaging.
 :::
-
-Single account users are unaffected by multi-account Access, and will not see this option in the UI.
-
-## Log in using multi-account access
-
-1. Log in with your email and password.
-1. You will be asked to change your password. This new password will be your multi-account password.
-1. In the UI, hover over your name to display the menu. Under **Switch Org**, select a different organization from the list.
-1. You are logged into the second organization.
-1. After you log out, when you return, you will be redirected into the organization you were most recently logged into. You can now change between organizations at any time using the same username and password.
 
 ## Inviting a new user to an organization
 

@@ -2,7 +2,7 @@
 id: getting-started
 title: API Authentication, Endpoints, and Security
 sidebar_label: Authentication and Endpoints
-description: This guide contains information about API authentication and the Sumo Logic endpoints to use for your API client.
+description: Authenticate and connect to Sumo Logic APIs. Learn how to set up access keys and find the right endpoint for your deployment region.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -24,7 +24,6 @@ To view our main docs, click the link below corresponding to your deployment. If
 | DE         | https://api.de.sumologic.com/docs/  |
 | EU         | https://api.eu.sumologic.com/docs/  |
 | FED        | https://api.fed.sumologic.com/docs/ |
-| IN         | https://api.in.sumologic.com/docs/  |
 | JP         | https://api.jp.sumologic.com/docs/  |
 | KR         | https://api.kr.sumologic.com/docs/  |
 | US1        | https://api.sumologic.com/docs/     |
@@ -39,10 +38,10 @@ Sumo Logic supports the following options for API authentication:
 See [Access Keys](/docs/manage/security/access-keys) to learn how to generate an access key. Make sure to copy the key you create, because it is displayed only once.
 
 :::info
-Because access keys use the permissions of the user running the key, ensure that the user utilizing a key has the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the key is needed for. 
+Because access keys use the permissions of the user running the key, ensure that the user utilizing a key has the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the key is needed for.
 :::
 
-### Access ID and Access Key
+### Access ID and access key
 
 When you have an `accessId` and `accessKey`, you can execute requests like the following:
 
@@ -80,7 +79,7 @@ This would yield a Base64 encoded string `QWxhZGRpbjpPcGVuU2VzYW1l` that is used
 ```
 
 
-## Sumo Logic Endpoints by Deployment and Firewall Security
+## Sumo Logic endpoints by deployment and firewall security
 
 <img src={useBaseUrl('img/icons/operations/firewall.png')} alt="icon" width="50"/>
 
@@ -88,116 +87,25 @@ Sumo Logic has several deployments that are assigned depending on the geographic
 
 Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct your API client to the correct Sumo Logic API URL.
 
-<table><small>
-  <tr>
-   <td>Deployment</td>
-   <td>Service Endpoint (login URL)</td>
-   <td>API Endpoint</td>
-   <td>Collection Endpoint</td>
-   <td>Cloud Syslog Endpoint</td>
-   <td>OpenTelemetry Collector Endpoint</td>
-  </tr>
-  <tr>
-   <td>AU</td>
-   <td>https://service.au.sumologic.com</td>
-   <td>https://api.au.sumologic.com/api/</td>
-   <td>https://collectors.au.sumologic.com</td>
-   <td>syslog.collection.au.sumologic.com</td>
-   <td>https://open-collectors.au.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>CA</td>
-   <td>https://service.ca.sumologic.com</td>
-   <td>https://api.ca.sumologic.com/api/</td>
-   <td>https://collectors.ca.sumologic.com</td>
-   <td>syslog.collection.ca.sumologic.com</td>
-   <td>https://open-collectors.ca.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>DE</td>
-   <td>https://service.de.sumologic.com</td>
-   <td>https://api.de.sumologic.com/api/</td>
-   <td>https://collectors.de.sumologic.com</td>
-   <td>syslog.collection.de.sumologic.com</td>
-   <td>https://open-collectors.de.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>EU</td>
-   <td>https://service.eu.sumologic.com</td>
-   <td>https://api.eu.sumologic.com/api/</td>
-   <td>https://collectors.eu.sumologic.com<br/>
-   https://endpoint1.collection.eu.sumologic.com</td>
-   <td>syslog.collection.eu.sumologic.com</td>
-   <td>https://open-collectors.eu.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>FED</td>
-   <td>https://service.fed.sumologic.com</td>
-   <td>https://api.fed.sumologic.com/api/</td>
-   <td>https://collectors.fed.sumologic.com</td>
-   <td>syslog.collection.fed.sumologic.com</td>
-   <td>https://open-collectors.fed.sumologic.com/</td>
-  </tr>
-  <tr>
-   <td>IN</td>
-   <td>https://service.in.sumologic.com</td>
-   <td>https://api.in.sumologic.com/api/</td>
-   <td>https://collectors.in.sumologic.com</td>
-   <td>syslog.collection.in.sumologic.com</td>
-   <td>https://open-collectors.in.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>JP</td>
-   <td>https://service.jp.sumologic.com</td>
-   <td>https://api.jp.sumologic.com/api/</td>
-   <td>https://collectors.jp.sumologic.com</td>
-   <td>syslog.collection.jp.sumologic.com</td>
-   <td>https://open-collectors.jp.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>KR</td>
-   <td>https://service.kr.sumologic.com</td>
-   <td>https://api.kr.sumologic.com/api/</td>
-   <td>https://collectors.kr.sumologic.com</td>
-   <td>syslog.collection.kr.sumologic.com</td>
-   <td>https://open-collectors.kr.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>US1</td>
-   <td>https://service.sumologic.com/</td>
-   <td>https://api.sumologic.com/api/</td>
-   <td>https://collectors.sumologic.com<br/>
-   https://endpoint1.collection.sumologic.com<br/>
-   https://endpoint2.collection.sumologic.com<br/>
-   https://endpoint3.collection.sumologic.com<br/>
-   https://endpoint4.collection.sumologic.com<br/>
-   https://endpoint5.collection.sumologic.com</td>
-   <td>syslog.collection.us1.sumologic.com</td>
-   <td>https://open-collectors.sumologic.com</td>
-  </tr>
-  <tr>
-   <td>US2</td>
-   <td>https://service.us2.sumologic.com</td>
-   <td>https://api.us2.sumologic.com/api/</td>
-   <td>https://collectors.us2.sumologic.com<br/>
-https://endpoint1.collection.us2.sumologic.com<br/>
-https://endpoint2.collection.us2.sumologic.com<br/>
-https://endpoint3.collection.us2.sumologic.com<br/>
-https://endpoint4.collection.us2.sumologic.com<br/>
-https://endpoint5.collection.us2.sumologic.com<br/>
-https://endpoint6.collection.us2.sumologic.com<br/>
-https://endpoint7.collection.us2.sumologic.com<br/>
-https://endpoint8.collection.us2.sumologic.com<br/>
-https://endpoint9.collection.us2.sumologic.com/</td>
-   <td>syslog.collection.us2.sumologic.com</td>
-   <td>https://open-collectors.us2.sumologic.com</td>
-  </tr>
-  </small>
-  </table>
+<div class="responsive-table">
+
+| Region | Service<br/>(login URL) | API endpoint | Collection | Syslog | OTel |
+|:--|:--|:--|:--|:--|:--|
+| AU | [service.au.sumologic.com](https://service.au.sumologic.com) | `api.au.sumologic.com/api/` | `collectors.au.sumologic.com` | `syslog.collection.au.sumologic.com` | `open-collectors.au.sumologic.com` |
+| CA | [service.ca.sumologic.com](https://service.ca.sumologic.com) | `api.ca.sumologic.com/api/` | `collectors.ca.sumologic.com` | `syslog.collection.ca.sumologic.com` | `open-collectors.ca.sumologic.com` |
+| DE | [service.de.sumologic.com](https://service.de.sumologic.com) | `api.de.sumologic.com/api/` | `collectors.de.sumologic.com` | `syslog.collection.de.sumologic.com` | `open-collectors.de.sumologic.com` |
+| EU | [service.eu.sumologic.com](https://service.eu.sumologic.com) | `api.eu.sumologic.com/api/` | `collectors.eu.sumologic.com`<br/>`endpoint1.collection.eu.sumologic.com` | `syslog.collection.eu.sumologic.com` | `open-collectors.eu.sumologic.com` |
+| FED | [service.fed.sumologic.com](https://service.fed.sumologic.com) | `api.fed.sumologic.com/api/` | `collectors.fed.sumologic.com` | `syslog.collection.fed.sumologic.com` | `open-collectors.fed.sumologic.com` |
+| JP | [service.jp.sumologic.com](https://service.jp.sumologic.com) | `api.jp.sumologic.com/api/` | `collectors.jp.sumologic.com` | `syslog.collection.jp.sumologic.com` | `open-collectors.jp.sumologic.com` |
+| KR | [service.kr.sumologic.com](https://service.kr.sumologic.com) | `api.kr.sumologic.com/api/` | `collectors.kr.sumologic.com` | `syslog.collection.kr.sumologic.com` | `open-collectors.kr.sumologic.com` |
+| US1 | [service.sumologic.com](https://service.sumologic.com) | `api.sumologic.com/api/` | `collectors.sumologic.com`<br/>`endpoint1-5.collection.sumologic.com` | `syslog.collection.us1.sumologic.com` | `open-collectors.sumologic.com` |
+| US2 | [service.us2.sumologic.com](https://service.us2.sumologic.com) | `api.us2.sumologic.com/api/` | `collectors.us2.sumologic.com`<br/>`endpoint1-9.collection.us2.sumologic.com` | `syslog.collection.us2.sumologic.com` | `open-collectors.us2.sumologic.com` |
+
+</div>
 
 ### Which endpoint should I should use?
 
-To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `in`, `ca`,`kr`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
+To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `ca`, `kr`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
 
 The specific collection endpoint will vary per account. The general format is: `endpoint[N].collection.[deploymentID].sumologic.com`.
 
@@ -218,17 +126,17 @@ For collection to work, your firewall must allow outbound traffic to Sumo Logic.
 * If your firewall doesn’t allow DNS entries, you must allowlist all of the IP addresses for your deployment region. The addresses to allowlist depend on your Sumo Logic deployment.
    * To determine the IP addresses that require allowlisting, download the JSON object provided by Amazon Web Services (AWS). Amazon advises that this file will change several times a week. For details on how the file is updated, its usage, its syntax, and how to download the JSON file, see [AWS IP Address Ranges](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
 
-### FedRAMP Deployment
+### FedRAMP deployment
 
 Sumo Logic's FedRAMP deployment is similar to our other deployments, such as US2, except that FedRAMP is certified to comply with the United States Standards for Security Categorization of Federal Information and Information Systems ([FIPS-199](https://en.wikipedia.org/wiki/FIPS_199)). In this deployment, we adhere to specific security requirements that are required for handling, storing, and transmitting data classified in the "Moderate" impact level.
 
-### AWS Region by Sumo Deployment
+### AWS region by Sumo Logic deployment
 
-import AwsRegion from '../reuse/aws-region-by-sumo-deployment.md';
+import AWSDeploymentRegion from '../reuse/aws-region-by-sumo-deployment.md';
 
-<AwsRegion/>
+* <AWSDeploymentRegion/>
 
-## Status Codes
+## Status codes
 
 Generic status codes that apply to all our APIs. See the [HTTP status code registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) for reference.
 
@@ -251,7 +159,7 @@ Generic status codes that apply to all our APIs. See the [HTTP status code regis
 
 If a rate is exceeded, a `rate limit exceeded 429` status code is returned.
 
-## Versioning and Conflict Detection  
+## Versioning and conflict detection  
 
 The [Collector Management API](/docs/api/collector-management) uses optimistic locking to deal with versioning and conflict detection. Any response that returns a single entity will have an ETag header which identifies the version of that entity.
 

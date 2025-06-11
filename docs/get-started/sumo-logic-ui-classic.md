@@ -7,13 +7,15 @@ description: Get to know the Sumo Logic platform user interface.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::warning Transition to the New UI
-The Classic UI will be retired in early 2025. To ensure you have access to the latest features and updates, we recommend transitioning to the [Sumo Logic New UI](/docs/get-started/sumo-logic-ui) at your earliest convenience.
-:::
-
 This page provides an overview of the Sumo Logic Classic UI, designed to help you navigate and utilize its features effectively.
 
 <img src={useBaseUrl('img/get-started/overview-classic-ui.png')} alt="Overview screenshot of the Classic UI" style={{border: '1px solid gray'}} width="800" />
+
+The Classic UI will be retired in 2025 and will no longer receive updates. The exact date will be communicated closer to the transition. For the latest features, performance improvements, and future innovations, switch to the [New UI](/docs/get-started/sumo-logic-ui) as soon as possible.
+
+## Switching between the Classic and New UI
+
+If you're using the New UI and need to navigate back to the Classic UI, click the **Return to classic UI** option in the left navigation menu. And to switch back to the New UI, follow the same steps, selecting **Switch to New UI** instead.
 
 ## Using the left navigation bar
 
@@ -30,8 +32,7 @@ The left nav bar provides easy access to libraries, personal collections of das
 
 ### Search and switch browsing modes
 
-The top of the left nav bar is where you can search for content and
-users and easily switch browsing modes. 
+The top of the left nav bar is where you can search for content and users and easily switch browsing modes. 
 
 * Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
 * Switching browsing modes—Click the three-dot kebab icon and make a selection from the dropdown menu.<br/> ![TUI_Search_Details.png](/img/get-started/ui/TUI_Search_Details.png)
@@ -132,11 +133,10 @@ To launch a search, metrics visualization, or live tail session, do the followin
    * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
    * [Explore](/docs/dashboards/explore-view). See an intuitive visual hierarchy of your environment.
    * [Dashboard](/docs/dashboards/). Analyze metrics and log data on the same dashboard, in a streamlined user experience.
-   * [Root Cause](/docs/observability/root-cause-explorer). Accelerate troubleshooting and isolate root causes for incidents in your apps and microservices.
 
 ### View recent dashboards and searches 
 
-You see the Home landing page when you first log in to Sumo Logic. The Home page provides an at-a-glance view of the following:
+You see the Home landing page when you first sign in to Sumo Logic. The Home page provides an at-a-glance view of the following:
 
 * Recently opened dashboards
 * Recently run searches
@@ -208,7 +208,6 @@ To manage your personal Sumo Logic account preferences, do the following:
 1. In the Preferences page that appears on the right, you can modify settings in the following areas:
     * **My Profile**: username and password
     * **My Security Settings**: enable and disable 2-step verification
-    * **My Access Keys**: add, edit, and remove access keys
     * **My Preferences**: your account session settings
 
 For more information, see the [Preferences Page](account-settings-preferences.md).

@@ -22,7 +22,7 @@ Tracing data retention in `_trace_spans` index is the same as default log index
 
 ## Search span data
 
-Searching span data is the same as running a log search. You just need to specify the `_index` metadata field with the value `_trace_spans` in the [keyword search expression](/build-search/Keyword-Search-Expression (also called the scope) of your query.
+Searching span data is the same as running a log search. You just need to specify the `_index` metadata field with the value `_trace_spans` in the [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions) (also called the scope) of your query.
 
 To search your tracing data do the following:
 
@@ -39,7 +39,7 @@ A Keyword Search Expression defines the scope of data for the query. You need to
 
 In scenarios where users are not familiar with the schema and would like to search across all the fields, `_any` modifier provides a means to search for a specified value from all of the Ingest Time Fields in your data. For example, to search for data with any field that has a value of success you would put `_any=success` in the scope of your query.
 
-Syntax: `_any<value>`
+Syntax: `_any=<value>`
 
 The `_any` option is not supported outside of the scope of a query. This is supported for the Security and Tracing tiers.
 
@@ -49,7 +49,7 @@ You can parse your spans in the same way you parse log data. This includes any v
 
 ### View Your Search Results
 
-When viewing your search results you can add any parsed fields to display by selecting them from the Field Browser on the left, or by using the fields operator in your query. The following image shows a query using the `fields` operator to display `operation`, `service`, `spanid`, `statuscode`, and `traceid`. The Field Browser can also set the fields to display.<br/> ![spans search with fields highlighted.png](/img/apm/traces/spans-search-with-fields-highlighted.png)
+When viewing your search results you can add any parsed fields to display by selecting them from the Field Browser on the left, or by using the fields operator in your query. The following image shows a query using the `fields` operator to display `operation`, `service`, `spanid`, `statuscode`, and `traceid`. The Field Browser can also set the fields to display.<br/> ![spans search with fields highlighted.png](/img/apm/spans-search-with-fields-highlighted.png)
 
 ### Monitors and Scheduled Searches
 You can also set Monitors and Scheduled Searches for Traces.
@@ -103,7 +103,7 @@ _index=_trace_spans
 | fields operation, service, spanid, statuscode, traceid
 ```
 
-![spans basic example with where operations.png](/img/apm/traces/spans-basic-example-with-where-operations.png)
+![spans basic example with where operations.png](/img/apm/spans-basic-example-with-where-operations.png)
 
 #### Break them down by HTTP code status
 
@@ -122,7 +122,7 @@ _index=_trace_spans
 | where code < 500
 ```
 
-![spans with where operation example.png](/img/apm/traces/spans-with-where-operation-example.png)
+![spans with where operation example.png](/img/apm/spans-with-where-operation-example.png)
 
 ### View errors by status over time
 

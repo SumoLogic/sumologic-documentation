@@ -5,6 +5,21 @@ sidebar_label: Changelog
 description: Changelog for Windows source template for OpenTelemetry.
 ---
 
+## [7.0.0] - 2025-04-30
+### Fixed
+- Validation for choosing at least one scraper when metric section is enabled.
+- Validation for choosing at least one event source when log section is enabled.
+
+## [6.1.2] - 2025-04-23
+### Added
+- FAQ for source template.
+### Fixed
+- Warning for channel name addition in custom channel list.
+
+## [6.1.1] - 2025-01-27
+### Fixed
+- Schema validations.
+
 ## [6.1.0] - 2024-10-26
 ### Added
 - Separate section for logs and metrics with enable or disable functionality.

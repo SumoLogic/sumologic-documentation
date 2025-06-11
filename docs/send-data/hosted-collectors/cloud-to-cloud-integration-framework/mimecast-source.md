@@ -8,10 +8,6 @@ tags:
 description: The Mimecast source collects SIEM, DLP, Audit, and Hold Message List data from the Mimecast API.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/mimecast/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/mimecast/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/mimecast/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -32,14 +28,12 @@ The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List
 
 ### Vendor configuration
 
-The user account associated with your Mimecast credentials needs to have `basic administrator` access. The integration must be configured with the Base URL, Application key, Secret key, and Access key.
+To configure the integration, you must use a Client ID and Secret Key. Additionally, the user account associated with your Mimecast credentials must have `basic administrator` access.
 
-- The base URL parameter changes depending on the your global region. Refer to the [Mimecast documentation](https://integrations.mimecast.com/documentation/api-overview/global-base-urls/) for guidance as to which base URL should be used.
-
-- To create the Application key, Secret key, and Access key, refer to the [Mimecast documentation](https://community.mimecast.com/s/article/api-integrations-managing-api-1-0-for-cloud-gateway).
+Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID and Client Secret key.
 
 :::note
-Enhanced logging needs to be enabled on the Mimecast side in order for the expected logs to be created and sent to Sumo Logic via the above channels. See [Understanding SIEM Logs](https://integrations.mimecast.com/documentation/tutorials/understanding-siem-logs/) in the Mimecast documentation. 
+Enhanced logging needs to be enabled on the Mimecast side in order for the expected logs to be created and sent to Sumo Logic via the above channels. See [Understanding SIEM Logs](https://integrations.mimecast.com/documentation/tutorials/understanding-siem-logs/) in the Mimecast documentation.
 :::
 
 ### Source configuration
@@ -48,7 +42,7 @@ When you create a Mimecast Source, you add it to a Hosted Collector. Before cre
 
 To configure a Mimecast Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Mimecast**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -56,12 +50,9 @@ To configure a Mimecast Source:
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Base URL**. Enter the [Base URL](#vendor-configuration).
-1. **Application Key**. Enter the [Application Key](#vendor-configuration).
-1. **Application ID**. Enter the [Application ID](#vendor-configuration).
-1. **Access Key**. Enter the [Access Key](#vendor-configuration).
-1. **Secret Key**. Enter the [Secret Key](#vendor-configuration).
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
+1. **Client ID**. Enter the Client ID of the app. Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID.
+1. **Client Secret**. Enter the Client Secret key of the app. Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client Secret.
 1. **Supported API to collect**. Select the type of Mimecast data source that you want to collect.
 1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
@@ -93,24 +84,21 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| domain | String | Yes | `null` | Enter your customer specific Base URL. |  |
-| application_key | String | Yes | `null` | Application Key for your Mimecast app. |  |
-| application_id | String | Yes | `null`| Application ID for your Mimecast app. |  |
-| access_key | String | Yes | `null`| Access Key for your Mimecast app. |  |
-| secret_key | String | Yes | `null`| Secret Key for your Mimecast app. |  |
+| clientID | String | Yes | `null` | Client Id for your Mimecast app. |  |
+| clientSecret | String | Yes | `null`| Secret Key for your Mimecast app. |  |
 | dataCollection | String | Yes |  | Supported API. |  |
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/mimecast/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/mimecast/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/mimecast/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/mimecast/example.tf
+```
 
 ## Troubleshooting
 

@@ -35,6 +35,29 @@ SentinelOne Endpoint Protection Platform (EPP) unifies prevention, detection, an
 
 XDR
 
+## Configure SentinelOne in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your SentinelOne API URL, for example, `https://<URL>.sentinelone.net`.
+
+* **Token**. Enter your SentinelOne token.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sentinelone-configuration.png')} style={{border:'1px solid gray'}} alt="SentinelOne configuration" width="400"/>
+
+For information about SentinelOne, see [SentinelOne documentation](https://www.sentinelone.com/resources/).
+
 ## Change Log
 
 * March 26, 2021 - First upload

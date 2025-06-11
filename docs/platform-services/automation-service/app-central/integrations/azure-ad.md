@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/azure-ad.png')} alt="axonius" width="80"/>
 
-***Version: 1.9  
-Updated: Nov 12, 2024***
+***Version: 1.10  
+Updated: Jan 3, 2025***
 
 Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access management service, which helps your employees sign in and access resources.
 
@@ -24,13 +24,15 @@ Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access
 * **Get User** (Enrichment) - Get details for a specific user.
 * **List Devices** *(Enrichment)* - Retrieve a list of device objects registered in the organization.
 * **List Groups** (*Enrichment*) - List all the groups available in an organization.
+* **List Of Group Members** *(Enrichment)* - Retrieve a list of members in a specific group.
 * **List Users** *(Enrichment)* - List all users.
+* **Remove Member From Group** *(Containment)* - Remove a user from a specific group.
 * **Reset User Password** *(Containment)* - Reset user password.
 * **Revoke Sign In Sessions** (*Containment*) - Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user's browser).
 
 ## Azure Active Directory configuration
 
-The following steps show how to create an Azure AD Application in order to work with Cloud SOAR.
+The following steps show how to create an Azure AD Application in order to work with Sumo Logic automation.
 
 1. Log in to Azure portal with the user that has administrator privileges.
 1. Navigate to **Azure Active Directory** > **App registrations** > **New registration**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-1.png')} style={{border:'1px solid gray'}} alt="azure-ad-1" width="600"/>
@@ -55,6 +57,32 @@ The following steps show how to create an Azure AD Application in order to work 
 1. Assign the app the role of User Administrator. This is required to perform action "Reset User Password".
     * **Azure Active Directory** > **Roles and administrators** > **User Administrator** > **Add assignments** > **Your app** > **Add**.
 
+## Configure Azure AD in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+ * **API URL**. Enter the Azure AD API URL, for example, `https://graph.microsoft.com`
+
+* **Directory (Tenant) ID**. Enter the [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) located when you configured Azure AD [above](#azure-active-directory-configuration).  
+
+* **Application (Client) ID**. Enter the client ID from your Azure Application. 
+
+* **Application (Client) Secret**. Enter your client secret. 
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-configuration.png')} style={{border:'1px solid gray'}} alt="Azure AD configuration" width="400"/>
+
+For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID documentation](https://learn.microsoft.com/en-us/entra/identity/).
 
 ## Change Log
 
@@ -75,3 +103,7 @@ The following steps show how to create an Azure AD Application in order to work 
 	+ Added New Action: Get Member Groups
 * November 12, 2024 (v1.9)
     + Added New Action: Reset User Password
++ January 3, 2025 (v1.10)
+    + Added New Action:
+      + List Of Group Members
+      + Remove Member From Group

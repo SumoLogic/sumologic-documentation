@@ -26,18 +26,15 @@ Whether you're running ad hoc searches during a forensic investigation or runnin
 | DE         | https://api.de.sumologic.com/docs/#tag/logSearchesManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/logSearchesManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/logSearchesManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/logSearchesManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/logSearchesManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/logSearchesManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/logSearchesManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/logSearchesManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
 * Data Management
     * Download Search Results
     * View Collectors
-
--->

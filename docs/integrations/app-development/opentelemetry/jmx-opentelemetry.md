@@ -102,6 +102,10 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the yaml file.
 
+import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
+
+<EnvVarOpt/>
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-OTEL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo Logic
@@ -251,4 +255,4 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `JMX - High Heap Memory Usage Alert` | This alert gets triggered when heap memory usage exceeds threshold. | Count < 20 | Count >= 20 |
 | `JMX - High Memory Pool Usage Alert` | This alert gets triggered when memory pool usage exceeds threshold. | Count < 20 | Count >= 20 |
 | `JMX - High Non Heap Memory Usage Alert` | This alert gets triggered when non heap memory usage exceeds threshold. | Count < 20 | Count >= 20 |
-| `JMX - High Number Of Classes Loaded Alert` | This alert gets triggered when high number of classes are loaded. | Count > 1000 | Count < = 1000 |
+| `JMX - High Number Of Classes Loaded Alert` | This alert gets triggered when high number of classes are loaded. | Count > 1000 | Count \<= 1000 |

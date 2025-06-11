@@ -20,7 +20,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Abilities - Platform | [Training: Learn and certification](/docs/get-started/training-certification-faq/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Abilities - Solutions | [Application observability](/docs/observability/application-components/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)|
 | Abilities - Solutions | [AWS observability](/docs/observability/aws/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)|
-| Abilities - Solutions | [Cloud Infrastructure Security](/docs/security/cloud-infrastructure-security) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
+| Abilities - Solutions | [Logs for Security](/docs/security/additional-security-features/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Abilities - Solutions | [Cloud SIEM](/docs/cse/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Abilities - Solutions | [Cloud SOAR](/docs/cloud-soar/) / [Automation Service](/docs/platform-services/automation-service/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)
 | Abilities - Solutions | [Software Development Optimization](/docs/observability/sdo/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)|
@@ -49,7 +49,6 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection - Amazon Web Services | [AWS Kinesis Firehose for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Collection - Amazon Web Services | [AWS Inventory](/docs/observability/aws/deploy-use-aws-observability/resources/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png) |
 | Collection - Amazon Web Services | [AWS Metadata](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
-| Collection - Amazon Web Services | [AWS XRay](/docs/observability/root-cause-explorer/#aws-x-ray-source) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Collection - Amazon Web Services | [CSE AWS EC2 Inventory](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png) |
 | Collection - Archive | [AWS S3 archive](/docs/manage/data-archiving/archive) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Collection - Cloud APIs | [Akamai SIEM API](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.* |

@@ -9,19 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="90"/> 
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="90"/>
 
 The Nginx source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (otelcol). By creating this source template and pushing the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Nginx logs and metrics in Sumo Logic.
 
-## Fields creation in Sumo Logic for Nginx
+## Fields created by the source template
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of Source template creation.
+When you create a source template, the following [fields](/docs/manage/fields/) are automatically added (if they don’t already exist):
 
 - **`sumo.datasource`**. Fixed value of **nginx**.
 - **`webengine.system`**. Fixed value of **nginx**.
@@ -61,9 +55,9 @@ import OtelWindowsLogPrereq from '../../../../../reuse/apps/opentelemetry/log-co
 
 <OtelWindowsLogPrereq/>
 
-## Source template configuration
+## Configuring the Nginx source template
 
-You can follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
+Follow these steps to set up and deploy the source template to a remotely managed OpenTelemetry collector.
 
 ### Step 1: Set up remotely managed OpenTelemetry collector
 

@@ -35,6 +35,27 @@ Set of scripts for Emails to perform actions within Cloud SOAR. You can add emai
 
 * [MSG Parser](https://github.com/vikramarsid/msg_parser/blob/master/LICENSE)
 
+## Configure Mail Tools in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mail-tools-configuration.png')} style={{border:'1px solid gray'}} alt="Mail Tools configuration" width="400"/>
 
 ## Change Log
 

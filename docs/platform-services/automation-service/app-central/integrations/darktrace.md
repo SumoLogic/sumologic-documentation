@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/darktrace.png')} alt="darktrace" width="100"/>
 
-***Version: 1.6  
-Updated: Mar 4, 2024***
+***Version: 1.7  
+Updated: Jan 10, 2025***
 
 Perform threat intelligence evidence gathering with Darktrace.
 
@@ -25,6 +25,33 @@ Perform threat intelligence evidence gathering with Darktrace.
 * **Remove From Watch List** *(Containment)* - Removes an external domain, hostname, or IP address from Darktrace's internal watch list.
 * **Search Breach** *(Enrichment)* - Query breaches from Darktrace.
 * **Search Devices** *(Enrichment)* - Search capacity to interrogate the list of devices has seen on the network.
+
+## Configure Darktrace in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Darktrace server URL.
+
+* **Public Key**. Enter a Darktrace public key.
+
+* **Private Key**. Enter the private key corresponding to the public key.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* **Darktrace Minutes**. Enter your Darktrace minutes setting, for example, `10`.
+
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/darktrace-configuration.png')} style={{border:'1px solid gray'}} alt="Darktrace configuration" width="400"/>
+
+For information about Darktrace, see the [Darktrace website](https://www.darktrace.com/).
 
 ## Change Log
 
@@ -45,3 +72,4 @@ Perform threat intelligence evidence gathering with Darktrace.
     + Updated resource: Resolved bug related to integration resource
 * February 28, 2024 (v1.5) - Updated code for compatibility with Python 3.12
 * March 4, 2024 (v1.5) - Updated code for compatibility with Python 3.12
+* January 10, 2025 (v1.7) - Fixed timedelta related error in all actions

@@ -19,17 +19,28 @@ KnowBe4 KMSAT is a security platform for security awareness training and simulat
 * **List Phishing Campaigns** *(Enrichment)* - Retrieve data from all phishing campaigns.
 * **List Users** *(Enrichment)* - Retrieve data about all users.
 
-## KnowBe4 KMSAT - Reporting in Automation Service and Cloud SOAR
+## Configure KnowBe4 KMSAT - Reporting in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-reporting/knowbe4-kmsat-reporting-3.png')} style={{border:'1px solid gray'}} alt="knowbe4-kmsat-reporting" width="600"/>
-1. Populate all the required fields (\*) and then click **Save**.
-   * **Label**. The desired name for the resource.
-   * **URL**. Server that is closer to your geo location.
-   * **API Key**. Your KnowBe4 KMSAT API Key you copied earlier from KnowBe4 KMSAT.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-reporting/knowbe4-kmsat-reporting-4.png')} style={{border:'1px solid gray'}} alt="knowbe4-kmsat-reporting" width="400"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-reporting/knowbe4-kmsat-reporting-5.png')} style={{border:'1px solid gray'}} alt="knowbe4-kmsat-reporting" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-reporting/knowbe4-kmsat-reporting-6.png')} style={{border:'1px solid gray'}} alt="knowbe4-kmsat-reporting" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-reporting/knowbe4-kmsat-reporting-7.png')} style={{border:'1px solid gray'}} alt="knowbe4-kmsat-reporting" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the [reporting base URL](https://developer.knowbe4.com/rest/reporting#tag/Base-URL) for the KnowBe4 server that is closest to your geographic location.
+
+* **API Key**. Enter your KnowBe4 KMSAT [API key](https://developer.knowbe4.com/rest/reporting#tag/Authentication).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/knowbe4-kmsat-reporting-configuration.png')} style={{border:'1px solid gray'}} alt="KnowBe4 KMSAT Reporting configuration" width="400"/>
+
+For information about KnowBe4 reporting, see [KnowBe4 reporting documentation](https://support.knowbe4.com/hc/en-us/articles/360007952894-Reporting-Guide).
 
 ## Change Log
 

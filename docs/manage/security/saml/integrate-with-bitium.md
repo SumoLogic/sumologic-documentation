@@ -1,7 +1,7 @@
 ---
 id: integrate-with-bitium
 title: Integrate Sumo Logic with Bitium
-description: You can integrate Bitium with Sumo Logic’s SAML 2.0 API to allow users to log in to Sumo Logic using their Single Sign-On (SSO) credentials.
+description: You can integrate Bitium with Sumo Logic’s SAML 2.0 API to allow users to sign in to Sumo Logic using their Single Sign-On (SSO) credentials.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-Bitium is a cloud-based identity management provider that can be integrated with Sumo Logic’s SAML 2.0 API to allow users to log in to Sumo Logic using their Single Sign-On (SSO) credentials.SAML 2.0 API to allow users to log in to Sumo Logic using their Single Sign-On (SSO) credentials.
+Bitium is a cloud-based identity management provider that can be integrated with Sumo Logic’s SAML 2.0 API to allow users to sign in to Sumo Logic using their Single Sign-On (SSO) credentials.SAML 2.0 API to allow users to Sign in to Sumo Logic using their Single Sign-On (SSO) credentials.
 
 You can sign up for a free Bitium Trial account on the [Bitum site](https://www.bitium.com). 
 
@@ -48,7 +48,7 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
     * **Use SAML Attribute** and then type the email attribute name in the text box.
 1. **SP Initiated Login Configuration.** (Optional) This section has instructions for setting up SP-initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page.
     :::note
-    SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
+    SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings) section of the *Manage Organization* topic.
     :::
     * **Authn Request URL.** Enter the URL that the IdP has assigned for Sumo Logic to submit SAML authentication requests to the IdP.  This field is required if you checked the **SP Initiated Login Configuration** checkbox.
     * **Disable Requested Authn Context**. (Optional.) If you check this option, Sumo will not include the RequestedAuthnContext element of the SAML AuthnRequests it sends to your Idp. This option is useful if your IdP does not support the RequestedAuthnContext element.
@@ -68,7 +68,7 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 1. Within the **SAML URL** text box, enter the Authentication Request URL displayed in step 6 of the previous section. <br/><img src={useBaseUrl('img/security/bitium_saml_url.png')} alt="SAML URL field" style={{border: '1px solid gray'}} width="700" />
 1. Click **Save Changes** to complete the application install.
 1. Assign users as needed to the Sumo Logic App.
-1. You are now configured to login to Sumo Logic through Bitium.
+1. You are now configured to sign in to Sumo Logic through Bitium.
 
 ## Create multiple SAML configurations
 

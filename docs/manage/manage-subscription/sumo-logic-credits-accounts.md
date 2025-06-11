@@ -20,33 +20,43 @@ This plan was formerly called *Cloud Flex Credits*.
 
 ## Credits - Account types
 
-You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise Security, or Enterprise Suite Credits accounts.
+Sumo Logic offers the following account types: Free, Trial, Essentials, Enterprise Operations, Enterprise Security, and Enterprise Suite.
 
 ### Free
 
-Free accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for logs, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account) to Sumo Logic paid service agreements in the Sumo Logic UI.
+Free accounts offer access to most Sumo Logic features with the following limitations:
+- **Daily Credit Allocation**. 20 credits for logs, metrics, and traces.
+- **Retention**. 7-day log retention.
+- **Users**. Limited to three users.
+
+Free accounts can be upgraded to a paid subscription in the Sumo Logic UI. For details, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account).
 
 :::note
-[Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) is not available for Free accounts.
+Free accounts do not support [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management).
 :::
 
 ### Trial
 
-Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest.
+Trial accounts allow full access all Sumo Logic features to test how Sumo Logic will fit within your organization before you buy. It includes:
+- **Daily Credit Allocation**: Supports a daily data volume limit of 1 GB per day.
+- **Retention**: 30 days for all data.
+- **Users**: Up to 20 users.
 
-To access your [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) page:
+Trial accounts enable you to leverage our full suite of [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) tools:
 * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Account > Data Management**.
 * [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**.
 
-Trials are limited to 30 days. If you need to extend your trial period, contact our [sales team](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
+Trials are limited to 30 days. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest. If you need to extend your trial period or request a Proof of Concept (PoC), contact our [sales team](mailto:sales@sumologic.com).
 
 ### Essentials
 
-Essentials accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription.
+Essentials accounts scale to meet your growing needs for user licenses, data retention, and volume options. The Essentials plan includes options tailored to various needs:
 
-<!-- add Collaborating, Troubleshooting, Orchestrating at launch -->
+* **Troubleshoot**. Foundational log analysis and troubleshooting.
+* **Collaborate**. Advanced team collaboration features.
+* **Orchestrate**. Designed for organizations requiring robust workflows and automation.
 
-You can [upgrade](upgrade-sumo-logic-credits-account.md) from a Essential plan to an Enterprise plan at any time.
+For details on upgrading to an Essentials plan or higher, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account). Essentials accounts can be upgraded to Enterprise accounts anytime.
 
 ### Enterprise Operations
 
@@ -76,7 +86,7 @@ The following table provides a summary list of key features by Credits package a
 | Audit Event Index |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Cloud SIEM | | | | | Activation required* | Activation required* |
 | Cloud SOAR | | | | | | Activation required* |
-| CrowdStrike Threat Intel |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Threat Intel |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Collector Management API | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Data Forwarding |   | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Data Tiers |  |  |  |  |  | ![check](/img/reuse/check.png) |
@@ -95,9 +105,7 @@ The following table provides a summary list of key features by Credits package a
 | Monitors | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Partitions | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | PCI Compliance App |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Real Time Alerts | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Real User Monitoring (RUM) | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Root Cause Explorer | | | | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | SAML | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Scheduled Views | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Search Job API |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -175,7 +183,7 @@ To analyze usage trends:
 * Use the pan feature (magnifying glass icon) to scroll through data.  
 * Hover over chart sections for detailed insights.  
 
-#### Promotional Credits  
+### Promotional Credits  
 
 There are times when Sumo Logic promotes services and consumables through the provision of Promotional Credits. Promotional Credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the Promotional Credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional Credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional Credit consumption is calculated separately from the credits you paid for in your contract period. Promotional Credits are utilized as the priority credit for the specified credit variable.
 

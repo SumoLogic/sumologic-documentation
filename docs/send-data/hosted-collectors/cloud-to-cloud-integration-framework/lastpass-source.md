@@ -7,10 +7,7 @@ keywords:
   - cloud-to-cloud
 description: Learn how to collect audit reporting events from LastPass platform.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/lastpass/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/lastpass/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/lastpass/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/lastpass.png')} alt="thumbnail icon" width="55"/>
@@ -44,6 +41,7 @@ To configure the LastPass Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **CID (Account Number)**, enter your CID account number collected from the LastPass platfrorm.
 1. In **API Secret**, enter your API Secret ID collected from the LastPass platfrorm.
+1. In **TimeZone**, enter the timezone of admin LastPass account.
 1. **Polling Interval**. You have the option to select how often to poll for base entry events. Default is 5 minutes.
 1. When you are finished configuring the source, click **Save**.
 
@@ -67,19 +65,20 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | cid | Integer | Yes | `null` | The CID account number collected from the LastPass platform. |  |
 | apiSecret | String | Yes | `null` | The API Secret ID collected from the LastPass platform. |  |
+| timeZone | String | No | `null` | Timezone of admin LastPass account. |
 | pollingIntervalMinutes | Integer | No | 5 | How frequently the integration should poll to LastPass. <br /> **Options**: 5m, 10m, 15m, 30m, 1h, or 24h. |  |
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/lastpass/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/lastpass/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/lastpass/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/lastpass/example.tf
+```
 
 ## FAQ
 

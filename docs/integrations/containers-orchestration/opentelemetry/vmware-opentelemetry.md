@@ -21,7 +21,12 @@ See the [vSphere product page](https://www.vmware.com/products/vsphere.html) for
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMWare-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#vmware-alerts). For details on creating custom monitors, refer to the [Create monitors for JFrog Artifactory app](#create-monitors-for-vmware-app).
+:::
+
 ## Prerequisites
+
 VMWare metrics are collected through the [vCenter Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/vcenterreceiver) of OpenTelemetry.
 
 This receiver has been built to support ESXi and vCenter versions:
@@ -56,7 +61,9 @@ In this step, we will configure the YAML file required for VMWare Collection. He
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the YAML file.
 
-For the Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
+import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
+
+<EnvVar/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMWare-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -276,3 +283,21 @@ The **VMWare - VM Details** dashboard provides a detailed analysis of VM metrics
 - **Top 25 VMs Network Packet Rate**. Top 25 VMs Network transmitted/received packet rate.
 - **Top 25 VMs Network Packet Drop Rate**. Top 25 VMs Network transmitted/received packet drop rate.
 - **Top 25 VMs Memory Swapped**. Top 25 VMs Memory swapped.
+
+## Create monitors for VMWare app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### VMWare alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `VMware - Datastore High Utilization` | This alert is triggered when datastore usage is approaching capacity. | Count `>=` 90 | Count `<` 90 |
+| `VMware - High Virtual Disk Read Latency` | This alert gets triggered on high virtual datastore read latency indicating storage performance issues. | Count `>=` 20 | Count `<` 20 |
+| `VMware - High Virtual Disk Write Latency` | This alert gets triggered on high virtual datastore write latency indicating storage performance issues. | Count `>=` 20 | Count `<` 20 |
+| `VMware - Host CPU High Utilization` | This alert is triggered when host CPU utilization is consistently high, which may impact VM performance. | Count `>=` 90 | Count `<` 90 |
+| `VMware - Host Memory Utilization` | This alert is triggered when host memory utilization is consistently high. | Count `>=` 95 | Count `<` 95 |
+| `VMware - VM CPU Ready Time High` | This alert gets triggered when VMs are waiting too long for CPU resources, indicating CPU contention. | Count `>=` 10 | Count `<` 10 |
+| `VMware - VM Memory Balloon Pressure` | This alert gets triggered when VMs are experiencing significant memory ballooning. | Count `>=` 1024 | Count `<` 1024 |

@@ -7,10 +7,7 @@ tags:
   - cyberark
 description: This integration accesses CyberArk EPMs API to retrieve administrative audit events from every Set in the environment.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/cyberark/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/cyberark/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/cyberark/example.tf';
+
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -18,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The CyberArk Endpoint Privilege Manager (EPM) is a security solution that helps organizations reduce the risk of information theft or ransomware attacks by enforcing the principle of least privilege and preventing unauthorized access to critical systems and data. The solution employs a combination of privilege security, application control, and credential theft prevention to reduce the likelihood of malware infections.
 
-The integration with CyberArk EPM's API allows for retrieving administrative, detailed raw, policy audit, and policy audit raw events from every set in the environment. The [API documentation](https://docs.cyberark.com/Product-Doc/OnlineHelp/EPM/Latest/en/Content/LandingPages/LPDeveloper.htm) provides guidance on accessing and utilizing this information. This integration facilitates retrieving various audit events, including administrative actions, policy violations, and application usage, to generate alerts, reports, and remediation actions that enhance the organization's security posture.
+The integration with CyberArk EPM's API allows for retrieving administrative, detailed raw, policy audit, policy audit raw events, and aggregated events from every set in the environment. The [API documentation](https://docs.cyberark.com/Product-Doc/OnlineHelp/EPM/Latest/en/Content/LandingPages/LPDeveloper.htm) provides guidance on accessing and utilizing this information. This integration facilitates retrieving various audit events, including administrative actions, policy violations, and application usage, to generate alerts, reports, and remediation actions that enhance the organization's security posture.
 
 ## Data collected
 
@@ -29,6 +26,7 @@ The integration with CyberArk EPM's API allows for retrieving administrative, de
 | 10 minutes | Detailed Raw Events |
 | 10 minutes | Aggregated Policy Audit Events |
 | 10 minutes | Policy Audit Raw Events |
+| 10 minutes | Aggregated Events |
 
 ## Setup
 
@@ -44,9 +42,9 @@ To set up a CyberArk account, follow the steps below:
 When you create a CyberArk EPM Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
 To configure a CyberArk EPM Source, follow the steps below:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **CyberArk EPM**. 
+1. Search for and select **CyberArk EPM**.
 1. **Name**. Enter a name to display for the Source in the Sumo Logic web application.
 1. **Description**. (Optional)
 1. **Source Category**. Enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
@@ -60,9 +58,10 @@ To configure a CyberArk EPM Source, follow the steps below:
     * For the US datacenter, the dispatch server URL is `https://login.epm.cyberark.com`.
     * For the EU datacenter, the dispatch server URL is `https://eu.epm.cyberark.com`.
 1. **Application ID**. An application ID is a unique identifier that helps an API recognize which application or program is accessing it. It's like a name tag that allows the API to keep track of different applications using it. For example, *sumologic*.
-1. **Collect Detailed Raw Events**. This option enables the CyberArk C2C Source to collect detailed raw events from the CyberArk EPM. By default, the source can make 1000 requests every 5 minutes to [Detailed Raw Events](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/GetDetailedRawEvents.htm) endpoint, as stated in the [CyberArk API documentation](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm). Use below options to adjust this settings.
-1. **Collect Aggregated Policy Audit Events**. This option enables the C2C Source to collect aggregated policy audit events from the CyberArk EPM. By default, the source can make 1000 requests every 5 minutes to [Aggregated Policy Audit Events](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/GetAggregatedPolicyAudits.htm) endpoint, as stated in the [CyberArk API documentation](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm). Use below options to adjust this settings.
-1. **Collect Policy Audit Raw Events**. This option enables the C2C Source to collect policy audit raw events from the CyberArk EPM. By default, the source can make 1000 requests every 5 minutes to [Policy Audit Raw Events](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/GetPolicyAuditRawEventDetails.htm) endpoint, as stated in the [CyberArk API documentation](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm). Use below options to adjust this settings.
+1. **Collect Detailed Raw Events**. Select this checkbox to enable the CyberArk C2C Source to collect detailed raw events from the CyberArk EPM. By default, the source can make 1000 requests every 5 minutes to [Detailed Raw Events](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/GetDetailedRawEvents.htm) endpoint, as stated in the [CyberArk API documentation](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm).
+1. **Collect Aggregated Policy Audit Events**. Select this checkbox to enable the C2C Source to collect aggregated policy audit events from the CyberArk EPM. By default, the source can make 1000 requests every 5 minutes to [Aggregated Policy Audit Events](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/GetAggregatedPolicyAudits.htm) endpoint, as stated in the [CyberArk API documentation](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm).
+1. **Collect Policy Audit Raw Events**. Select this checkbox to enable  the C2C Source to collect policy audit raw events from the CyberArk EPM. By default, the source can make 1000 requests every 5 minutes to [Policy Audit Raw Events](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/GetPolicyAuditRawEventDetails.htm) endpoint, as stated in the [CyberArk API documentation](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm).
+1. **Collect Aggregated Events**. Select this checkbox to enable  the C2C Source to collect aggregated events from the CyberArk EPM. By default, the source can make 1000 requests every 5 minutes to [Aggregated Events](https://docs.cyberark.com/epm/latest/en/content/webservices/getaggregatedevents.htm) endpoint, as stated in the [CyberArk API documentation](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm).
 1. **Polling Interval**. The polling interval is the frequency at which the CyberArk C2C Source will check for updates from the CyberArk EPM (Endpoint Privilege Manager). This field is pre-filled with 600.
 1. When you are finished configuring the Source, click **Save**.
 
@@ -100,19 +99,20 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | detailed_raw_events | boolean | No  | False | Collects detailed raw events. |  |
 | aggregated_policy_audits | boolean | No | False | Collects aggregated policy audits events. |  |
 | policy_audit_raw_events | boolean | No | False | Collects policy audit raw events. |  |
+| aggregated_events | boolean | No | False | Collects policy aggregated events. |  |
 | polling_interval | integer | Yes | 600 | Frequency of C2C updates from EPM. |  |  
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/cyberark/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cyberark/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/cyberark/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cyberark/example.tf
+```
 
 ## API Limitations
 

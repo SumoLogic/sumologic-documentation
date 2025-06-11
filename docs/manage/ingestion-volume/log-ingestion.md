@@ -5,6 +5,7 @@ description: When designing your deployment, consider how logs will be ingested 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 The rate of data creation is rarely constant. Whether your organization sees seasonal spikes, or if a new feature or product line produces huge increases in activity, Sumo Logic meets the needs of your organization, known or unknown, while maintaining the search performance you rely on.
 
@@ -28,7 +29,7 @@ Log data may not be kept when sent via HTTP Sources or Cloud Syslog Sources, as 
 * Sumo Logic accounts can be upgraded at any time to allow for additional quota. Contact [Sumo Logic Sales](mailto:sales@sumologic.com) to customize your account to meet your organization's needs.
 
 :::important
-Compressed files are decompressed before they are ingested, so they are ingested at the decompressed file size rate.
+[Compressed files](/docs/send-data/hosted-collectors/http-source/logs-metrics/#compressed-data) are decompressed before they are ingested, so they are ingested at the decompressed file size rate.
 :::
 
 ## Log Throttling
@@ -39,8 +40,23 @@ Part of managing spikes in activity is properly slowing the rate of ingestion wh
 All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers).
 :::
 
+:::sumo Micro Lesson
+
 Watch this micro lesson to learn more about throttling.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/gkx3mn2ux6?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Throttling Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+<!-- old
 <Iframe url="https://www.youtube.com/embed/dlKy9DyS0W8?rel=0"
      width="854px"
      height="480px"
@@ -51,8 +67,9 @@ Watch this micro lesson to learn more about throttling.
      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+-->
 
-import Iframe from 'react-iframe';
+:::
 
 Throttling is enabled across all Collectors in an account. Sumo Logic measures the amount of data already committed to uploading against the number of previous requests and available resources (quota) in an account. In other words, Sumo Logic compares the current ingestion with the rate of ingest using a per minute rate that can be derived from the contracted Daily GB/day rate.
 

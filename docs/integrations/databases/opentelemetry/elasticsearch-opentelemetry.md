@@ -17,7 +17,7 @@ We use the OpenTelemetry collector to collect Elasticsearch metrics and logs.
 
 The diagram below illustrates the components of the Elasticsearch collection for each database server. OpenTelemetry collector runs on the same host as Elasticsearch, and uses the [Elasticsearch Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/elasticsearchreceiver/) to obtain Elasticsearch metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Elasticsearch logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Schematics.png' alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Schematics-diagram.png' alt="Elasticsearch-Schematics" />
 
 :::info
 This app includes [built-in monitors](#elasticsearch-alerts). For details on creating custom monitors, refer to [Create monitors for Elasticsearch app](#create-monitors-for-elasticsearch-app).
@@ -92,13 +92,16 @@ In this step, you will configure the yaml required for Elasticsearch Collection.
 Below are the inputs required:
 
 - **Endpoint**. Enter the url of the server you need to monitor. Example: `http://localhost:9200`.
-- **User Name**. Enter the Elasticsearch Username.
+- **User Name**. Specifies the username used to authenticate with Elasticsearch using basic auth. Must be specified if password is specified.
+- **Password**. Specifies the password used to authenticate with Elasticsearch using basic auth. Must be specified if username is specified.
 - **Elasticsearch cluster log path**. By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`.
 - **Tags**. `db.cluster.name`.
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-For Linux platform, click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
+import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
+
+<EnvVar/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/ElasticSearch-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 

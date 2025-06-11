@@ -42,7 +42,7 @@ You can instrument your AWS Java Lambda function using the [Sumo Logic Distribut
      * `/opt/otel-proxy-handler`. If implementing RequestHandler but proxied through API Gateway.
      * `/opt/otel-stream-handler`. If implementing RequestStreamHandler.
    * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME`. Ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
-   * `OTEL_RESOURCE_ATTRIBUTES`. Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
+   * `OTEL_RESOURCE_ATTRIBUTES`. Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Add Services Panel to Dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
      * `application=YOUR_APPLICATION_NAME`. The string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID`. Set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data. All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as: `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
    * `SUMO_OTLP_HTTP_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing Source or create a new one, if needed.
@@ -87,7 +87,6 @@ The following are the Sumo Logic OTel Lambda layers for AWS Region amd64 (x86_64
 |   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
 |   ap-northeast-2   |   arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
 |   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
-|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2       |
 |   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
 |   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
 |   ca-central-1     |   arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2     |
@@ -112,7 +111,6 @@ The following are the Sumo Logic OTel Lambda layers for AWS Region arm64 archit
 |:--|:--|
 |   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
 |   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
-|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2       |
 |   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
 |   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
 |   eu-central-1     |   arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2     |
@@ -168,7 +166,7 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
      * `/opt/otel-stream-handler`. If implementing `RequestStreamHandler`
    * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME`. Ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
    * `OTEL_TRACES_SAMPLER = always_on`. Enables traces sampling.
-   * `OTEL_RESOURCE_ATTRIBUTES`. Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
+   * `OTEL_RESOURCE_ATTRIBUTES`. Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Add Services Panel to Dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
      * `application=YOUR_APPLICATION_NAME`. The string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID`. Set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data. All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as: `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
    * `SUMO_OTLP_HTTP_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing Source or create a new one, if needed.
