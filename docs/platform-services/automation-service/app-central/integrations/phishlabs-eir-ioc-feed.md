@@ -19,13 +19,25 @@ PhishLabs by Fortra is a cyber threat intelligence company that delivers Digital
 ## Configure PhishLabs EIR - IOC Feed in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your PhishLabs EIR - IOC API URL.
 
-   * **Label**. The desired name for the resource.
-   * **URL**. Your PhishLabs EIR - IOC Feed API URL.
-   * **Username**. Your PhishLabs EIR - IOC Feed Username.
-   * **Password**. Your PhishLabs EIR - IOC Feed API Password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phishlabs-eir-ioc-configuration.png')} style={{border:'1px solid gray'}} alt="PhishLabs EIR IOC Feed configuration" width="400"/>
+* **Username**. Enter the username of a PhishLabs EIR - IOC admin user authorized to authenticate the integration. 
+
+* **Password**. Enter the password of the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phishlabs-eir-ioc-configuration.png')} style={{border:'1px solid gray'}} alt="PhishLabs EIR IOC Feed configuration" width="400"/>
 
 For information about PhishLabs, see the [PhishLabs website](https://www.phishlabs.com/).
 

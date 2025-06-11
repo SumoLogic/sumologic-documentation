@@ -62,7 +62,7 @@ In this step, you configure a hosted collector with a Cloud Syslog source that w
 
 To configure a hosted collector with a Cloud Syslog source, do the following:
 
-1. Log in to Sumo Logic and [create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. Sign in to Sumo Logic and [create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Create a [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source) on the hosted collector, specifying the following:
    * Enter a Source Name.
    * Provide a Source Category: **NW/PAN/V9**
@@ -121,7 +121,7 @@ In this step, you view logs using the Palo Alto Network Web interface to confirm
 To verify the logs in Palo Alto Networks, do the following:
 
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
-2. Once the setup is done, log in to Sumo Logic.
+2. Once the setup is done, sign in to Sumo Logic.
 3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source), such as: `_sourceCategory = NW/PAN/V9`.
 
 

@@ -34,15 +34,29 @@ Enable API access in the Workspace ONE UEM console using these steps:
 ## Configure VMware Workspace ONE in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your VMware Workspace ONE URL, for example, `https://techp-as.awmdm.com/API`.
 
-   * **URL**. `https://techp-as.awmdm.com/API`.
-   * **Username**. Workspace ONE Login Username.
-   * **Password**. Workspace ONE Login Password.
-   * **API Key**. The previous generated API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmware-workspace-one-configuration.png')} style={{border:'1px solid gray'}} alt="VMware Workspace ONE configuration" width="400"/>
+* **Username**. Enter the username of a Workspace ONE admin user.
 
-For information about Omnissa Workspace ONE (formerly VMware Workspace ONE), see [Omnissa Workspace ONE documentation](https://docs.omnissa.com/category/Workspace_ONE).
+* **Password**. Enter the password for the amin user.
+
+* **API Key**. Enter the API key you [copied earlier](#vmware-workspace-one-configuration).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmware-workspace-one-configuration.png')} style={{border:'1px solid gray'}} alt="VMware Workspace ONE configuration" width="400"/>
+
+For information about VMware Workspace ONE, see [Workspace ONE documentation](https://techdocs.broadcom.com/us/en/vmware-cis/other/vmware-identity-manager/3-1/integrating-airwatch-and-vmware-identity-manager-3-1/introduction-to-workspace-one.html).
 
 ## Change Log
 

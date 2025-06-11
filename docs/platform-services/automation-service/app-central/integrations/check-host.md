@@ -17,15 +17,24 @@ Check-Host is a modern online tool for website monitoring and checking performan
 * **Check Host Status Daemon** *(Daemon)* - Daemon to check the URL availability.
 * **Get Nodes** *(Enrichment)* - Get the supported nodes list.
 
-## Check-Host configuration
-
-No configuration is needed since the it does not require any authentication.
-
 ## Check-Host in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the URL for Check-Host, `https://check-host.net`
+
+* **Node**. Enter the Check-Host [node](https://check-host.net/about/api?lang=en#nodes-list-section). 
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/check-host/check-host-configuration.png')} style={{border:'1px solid gray'}} alt="Check-Host configuration" width="400"/>
 
