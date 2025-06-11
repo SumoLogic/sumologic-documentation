@@ -10,4 +10,4 @@ Before you can use this automation integration, you must configure its authentic
 1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/platform-services/automation-service/automations-edit-resource-detail.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="500"/> 
 </details>
 
-In the configuration dialog, enter information from the product you're integrating with. When done, click **TEST** to test the configuration, and click **SAVE** to save the configuration.
+In the configuration dialog, enter information from the product you're integrating with. When done, click **TEST** to test the configuration, and click **SAVE** to save the configuration:
