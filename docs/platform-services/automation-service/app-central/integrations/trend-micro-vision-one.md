@@ -34,21 +34,18 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **URL**. Enter your [Trend Micro Vision One API URL](https://automation.trendmicro.com/xdr/Guides/Regional-domains/), for example, `https://api.xdr.trendmicro.com`.
+* **URL**. Enter your [Trend Micro Vision One API URL](https://automation.trendmicro.com/xdr/Guides/Regional-domains/), for example, `https://api.xdr.trendmicro.com`. Use the region-specific endpoint that matches your tenant's region. For example, for India the URL is `https://api.in.xdr.trendmicro.com`.
 
-* **Token**. Enter your [Trend Micro Vision One token](https://docs.trendmicro.com/en-us/documentation/article/trend-vision-one-api-keys-third-party-apps).
+* **Token**. Enter your [Trend Micro Vision One API key](https://docs.trendmicro.com/en-us/documentation/article/trend-vision-one-platform-api-keys). To get the API key:
+  1. Log in to your Trend Vision One console.
+  1. Navigate to **Administration > API Keys**.
+  1. Click **Add API Key**.
+  1. Configure the API key settings.
+  1. Click **Add** to generate the API key.
 * <IntegrationCertificate/>
 * <IntegrationTimeout/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>
-
-* URL : Use the region-specific endpoint that matches your tenant's region. For India, it’s: `https://api.in.xdr.trendmicro.com`
-* Token:
-  * Log in to your Trend Vision One console.
-  * Navigate to Administration > API Keys.
-  * Click Add API Key.
-  * Configure the API key settings.
-  * Click Add to generate the API key.
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/trend-micro-vision-one-configuration.png')} style={{border:'1px solid gray'}} alt="Trend Micro Vision One configuration" width="400"/>
 
