@@ -29,12 +29,23 @@ Cisco Webex is a solution for video conferencing, online meetings, screen share,
 ## Configure Cisco Webex in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the API URL for your Cisco Webex instance. The default URL is `https://webexapis.com/`
 
-   * **Label**. The resource name.
-   * **URL**. The default url is 'https://webexapis.com/'.
-   * **Token**. Your Cisco Webex token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/cisco-webex-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Webex configuration" width="400"/>
+* **Token**. Enter a Cisco Webex [token](https://developer.webex.com/docs/getting-your-personal-access-token).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/cisco-webex-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Webex configuration" width="400"/>
 
 For information about Cisco Webex, see [Webex documentation](https://developer.webex.com/docs).
 

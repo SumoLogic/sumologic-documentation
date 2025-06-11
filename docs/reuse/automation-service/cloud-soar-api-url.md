@@ -1,0 +1,1 @@
+**Cloud SOAR API URL**. Enter your Sumo Logic API URL (for example, `https://api.us2.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
