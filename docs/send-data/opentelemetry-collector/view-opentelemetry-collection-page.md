@@ -15,7 +15,7 @@ To view details about an OpenTelemetry Collector:
     - **Collector Tags**. Displays the tags linked with the selected collector, which helps in searching and managing the collector.
     - **Source Templates**. Shows the number of source templates linked with the selected collector.
     - **IP Address**. Displays the IP address where the collector is running.
-    - **Log Messages (-1h)**. Dsiplays the histogram which shows the data ingested in last one hour. Dashed line indicates there was no data ingestion in last hour.
+    - **Log Messages (-1h)**. Displays the histogram which shows the data ingested in last one hour. Dashed line indicates there was no data ingestion in last hour.
     - **Last Modified**. Timestamp when the collector was last modified.
 1. Click on the desired collector.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collection-details-page.png')} alt="opentelemetry-collection-details-page" style={{border:'1px solid gray'}} width="400"/>
     - **Basic Info**
