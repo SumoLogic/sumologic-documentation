@@ -28,12 +28,29 @@ VMware Carbon Black Cloud Endpoint Standard Integration allows security operator
 ## Configure VMware Carbon Black Cloud Endpoint Standard V2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your VMWare Carbon Black Cloud Endpoint Standard V2 server URL.
+
+* **Organization Key**. Enter your [VMWare Carbon Black Cloud Endpoint Standard V2 organization key](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/#org-key).
+
+* **API ID/Connector ID**. [VMWare Carbon Black Cloud Endpoint Standard V2 API ID](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/#authenticate-your-request).
+
+* **API Secret Key**. Enter the secret for the API ID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmware-carbon-black-endpoint-standard-v2-configuration.png')} style={{border:'1px solid gray'}} alt="VMware Carbon Black Cloud Endpoint Standard V2 configuration" width="400"/>
 
-For information about Carbon Black Cloud, see [Carbon Black Cloud documentation](https://techdocs.broadcom.com/us/en/carbon-black/cloud.html).
+For information about Carbon Black Cloud Endpoint Standard V2, see [Carbon Black Cloud documentation](https://techdocs.broadcom.com/us/en/carbon-black/cloud.html).
 
 ## Change Log
 
