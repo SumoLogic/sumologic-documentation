@@ -4406,5 +4406,5 @@
   "/docs/manage/manage-subscription/manage-org-settings": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings",
   "/docs/integrations/amazon-aws/elastic-load-balancing": "/docs/integrations/amazon-aws/classic-load-balancer",
   "/docs/integrations/microsoft-azure/microsoft-defender-for-cloud": "/docs/integrations/microsoft-azure/azure-security-defender-for-cloud",
-  "/docs/integrations/azure": "/docs/integrations/microsoft-azure",
+  "/docs/integrations/azure": "/docs/integrations/microsoft-azure"
 }
