@@ -301,15 +301,12 @@ Follow the below steps for setting up the webhook integration between Snyk and S
 1. Create a new Hosted Collector. For instructions, refer to [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **HTTP Logs & Metrics**.
-1. Configure the HTTP Logs and Metrics source, refer to the [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
-    :::note
-    Set the **Source Category** to `webhook/snyk` for the Snyk webhook.
-    :::
+1. Configure the HTTP Logs and Metrics source, refer to the [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source). For example, set the **Source Category** to `webhook/snyk` for the Snyk webhook.
 1. Once configured, save the endpoint URL for future reference.
 
 ### Step 2: Register the Webhook with Snyk
 
-1. Create the Snyk Webhook using the [Create a webhook API](https://docs.snyk.io/snyk-api/reference/webhooks-v1#org-orgid-webhooks). The API requires that you provide the Snyk Organization ID, the Snyk authentication token, the public URL for your Lambda function, and the value of your Lambda secret environment variable.
+1. [Create the Snyk Webhook](https://docs.snyk.io/snyk-api/using-specific-snyk-apis/webhooks-apis/guides-to-webhooks/how-to-use-snyk-webhooks-to-connect-snyk-to-slack-with-aws-lambda/set-up-the-snyk-webhook) using the [Create a webhook API](https://docs.snyk.io/snyk-api/reference/webhooks-v1#org-orgid-webhooks). The API requires that you provide the Snyk Organization ID, the Snyk authentication token, the public URL for your Lambda function, and the value of your Lambda secret environment variable.
     - **SNYK-ORG-ID**. The Snyk organization ID is required to list projects. Ensure that the `API_KEY` has access to this organization.
     - **SNYK-TOKEN**. Locate your personal API token in your SNYK account settings. Click on **Show** in the key field, then copy the API key.
     - **TARGET-WEBHOOK-URL (URL)**. Use the endpoint URL of the Sumo Logic configured HTTP Source.
@@ -332,6 +329,10 @@ After completing the registration process, verify that Snyk events are being ing
     ```
     _sourceCategory=webhook/snyk
     ```
+
+:::note
+Ensure you add the same source category as configured in Sumo Logic platform.
+:::
 
 ## Viewing the Snyk dashboard
 
