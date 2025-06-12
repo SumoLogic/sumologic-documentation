@@ -24,8 +24,26 @@ Manage and steer traffic, give visibility of network activities, and analytics t
 ## Configure Netskope in Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter the Netskope URL in the format `https://<tenant-name>.goskope.com`
+
+* **Tenant API Token**. Enter a Netskope [API token](https://docs.netskope.com/en/api-tokens-2/).
+
+* **Event Type**. Select the [event type](https://docs.netskope.com/en/skope-it-query-language/#event-types) (additionally, if you need to, you can populate the query daemons):
+   * **Application**
+   * **Page**
+   * **Audit**
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/netskope-configuration.png')} style={{border:'1px solid gray'}} alt="Netskope configuration" width="400"/>
 
