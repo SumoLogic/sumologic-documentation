@@ -353,6 +353,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/synk"><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/snyk.png')} alt="icon" width="120"/><h4>Synk</h4></a>
+  <p>Gain real-time visibility into security vulnerabilities across your software projects and dependencies.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/sophos"><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="60"/><h4>Sophos</h4></a>
   <p>Identify security threats by analyzing alerts and events logs.</p>
   </div>
