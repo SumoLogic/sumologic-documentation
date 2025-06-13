@@ -93,7 +93,7 @@ You can deactivate the child org when it is no longer needed. Before deactivatin
 - Verified the credit balances. If there are any unused credits, these credits will automatically return to the parent once the org is marked **Inactive**.
 - Notify the child org users.
 
-Follow the below steps to deactive a child org:
+Follow the below steps to deactivate a child org:
 
 1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Click the three-dot kebab icon to the right of the child org you'd like to deactivate, then click **Deactivate** from the dropdown. Or, click the row for the org you want to deactivate and click the **Deactivate** button in the right-side panel.
