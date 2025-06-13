@@ -84,3 +84,44 @@ Your estimates of ingest capacity required for each product variable are called 
 1. Click the row for the org you want to check the baselines.
 1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/manage/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
 1. To view the baseline, click **View Baseline**.<br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_3.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/>
+
+## Deactivate a child org
+
+You can deactivate the child org when it is no longer needed. Before deactivating the child org, make sure you:
+
+- Exported the saved searches, dashboards, and/or lookup tables.
+- Verified the credit balances. If there are any unused credits, these credits will automatically return to the parent once the org is marked **Inactive**.
+- Notify the child org users.
+
+Follow the below steps to deactive a child org:
+
+1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
+1. Click the three-dot kebab icon to the right of the child org you'd like to deactivate, then click **Deactivate** from the dropdown. Or, click the row for the org you want to deactivate and click the **Deactivate** button in the right-side panel.
+1. 
+
+
+By deactivating the child org, you can see the below responses:
+
+- All the UI logins and active sessions will be terminated.
+- API keys, collector tokens, and ingest pipelines will be revoked.
+- The child’s **Zuora** subscription will be cancelled and the respective bill-account is disabled.
+- Any Flex credits still assigned to the child org are automatically returned to the parent org and will be visible in the parent’s allocation widget.
+- The org’s status changes to **Deactivated** in **Manage Accounts**. You can still run usage reports against it.
+
+## Delink a child org (Optional)
+
+Delinking will remove the inactive org from the parent’s child orgs list, and will only be available after the cooling-off window ends. By default, cooling window ends in 48 hours.
+
+:::note
+A warning message will be displayed if you try to delink before the cooling-off window ends.
+:::
+
+### Limitations
+
+- Only **parent-org** users with Manage Child Orgs capability can initiate a deletion workflow.
+- Compatible with Enterprise, Trial/PoV, and Free-Forever child orgs.
+
+
+
+
+
