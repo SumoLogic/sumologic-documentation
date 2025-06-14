@@ -31,9 +31,7 @@ module.exports = {
     v4: {
       removeLegacyPostBuildHeadAttribute: true, // required
     },
-    experimental_faster: {
-      rspackBundler: true,
-    },
+    experimental_faster: true,
   },
   staticDirectories: ['static'],
   presets: [
