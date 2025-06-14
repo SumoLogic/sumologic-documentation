@@ -28,9 +28,7 @@ module.exports = {
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
   future: {
-    v4: {
-      removeLegacyPostBuildHeadAttribute: true, // required
-    },
+    v4: true,
     experimental_faster: true,
   },
   staticDirectories: ['static'],
