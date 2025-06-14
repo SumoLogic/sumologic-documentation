@@ -53,17 +53,17 @@ jobs:
         with:
           node-version: '20.x'
           cache: 'yarn'
-      - name: Docusaurus Webpack cache
+      - name: Cache Rspack persistent cache
         uses: actions/cache@v3
         with:
           path: node_modules/.cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ runner.arch }}
+          key: ${{ runner.os }}-rspack-cache-${{ hashFiles('**/yarn.lock') }}-${{ runner.arch }}
       - name: Install awscli
         uses: unfor19/install-aws-cli-action@v1
       - name: Install jq
         run: sudo apt-get install -y jq
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --ignore-platform --ignore-optional
+        run: yarn install --frozen-lockfile
       - name: Build the Docusaurus site
         run: yarn build
       - name: Deploy the Docusaurus site

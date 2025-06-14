@@ -29,9 +29,12 @@ module.exports = {
   ],
   future: {
     v4: {
-      removeLegacyPostBuildHeadAttribute: true, // required
+      removeLegacyPostBuildHeadAttribute: true,
     },
-    experimental_faster: true,
+    experimental_faster: {
+      rspackBundler: true,           // enables Rspack
+      rspackPersistentCache: true,   // enables persistent cache
+    },
   },
   staticDirectories: ['static'],
   presets: [
