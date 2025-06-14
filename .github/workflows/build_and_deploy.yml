@@ -48,24 +48,33 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
           cache: 'yarn'
-      - name: Docusaurus Webpack cache
+
+      - name: Restore bundler cache
         uses: actions/cache@v3
         with:
           path: node_modules/.cache
-          key: ${{ runner.os }}-webpack-cache-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-bundler-cache-${{ hashFiles('**/yarn.lock') }}-${{ runner.arch }}
+          restore-keys: |
+            ${{ runner.os }}-bundler-cache-${{ runner.arch }}-
+
       - name: Install awscli
         uses: unfor19/install-aws-cli-action@v1
+
       - name: Install jq
         run: sudo apt-get install -y jq
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
       - name: Build the Docusaurus site
         run: yarn build
+
       - name: Deploy the Docusaurus site
         env:
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
