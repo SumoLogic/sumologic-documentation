@@ -298,7 +298,7 @@ Follow the below steps for setting up the webhook integration between Snyk and S
 ### Step 1: Setting up the collection in Sumo Logic platform
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
-1. Create a new Hosted Collector. For instructions, refer to [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. Create a new Hosted Collector. For instructions, refer to [Create a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **HTTP Logs & Metrics**.
 1. Configure the HTTP Logs and Metrics source, refer to [Configure an HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source). For example, set the **Source Category** to `webhook/snyk` for the Snyk webhook.
