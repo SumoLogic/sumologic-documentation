@@ -301,7 +301,7 @@ Follow the below steps for setting up the webhook integration between Snyk and S
 1. Create a new Hosted Collector. For instructions, refer to [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **HTTP Logs & Metrics**.
-1. Configure the HTTP Logs and Metrics source, refer to the [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source). For example, set the **Source Category** to `webhook/snyk` for the Snyk webhook.
+1. Configure the HTTP Logs and Metrics source, refer to [Configure an HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source). For example, set the **Source Category** to `webhook/snyk` for the Snyk webhook.
 1. Once configured, save the endpoint URL for future reference.
 
 ### Step 2: Register the Webhook with Snyk
