@@ -95,15 +95,33 @@ Create a public or private channel, Send messages or Files to channels or Users 
 ## Configure Slack in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Bot/User OAuth Token**. Copy the User OAuth Token from the Slack web page (see [above](#slack-configuration)) and paste it here. For information about tokens, see [Slack documentation](https://api.slack.com/concepts/token-types).
 
-* Copy the User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
-* If using an Org-level Token, select the Token Type as Org-level Token and provide the Team ID. By default, it is set to Workspace-Level Token, which does not require a Team ID.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-14.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+* **Token Type**. Select the token type:
+   * **Org-level Token**. If using an org-level token, select the token type as **Org-level Token** and provide the team ID below. 
+   * **Workspace-level Token**. By default, token type is set to **Workspace-level Token**, which does not require a team ID.
+
+* **Team ID**. If using an org-level token, provide the [team ID](https://slack.com/help/articles/221769328-Locate-your-Slack-URL-or-ID).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-14.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
 
 Create another resource for the Bot User. Then:
-* Copy the Bot User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
-* If using an Org-level Token, select the Token Type as Org-level Token and provide the Team ID. By default, it is set to Workspace-Level Token, which does not require a Team ID.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-15.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+1. Copy the [Bot OAuth Token](https://api.slack.com/concepts/token-types#bot) from Slack webpage (see [above](#slack-configuration)) and paste it In the **Bot/User OAuth Token** field.
+1. If using an org-level token, select the **Token Type** as **Org-level Token** and provide the team ID. By default, it is set to **Workspace-Level Token**, which does not require a team ID.
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-15.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
 
 For information about Slack, see [Slack documentation](https://slack.com/help).
 

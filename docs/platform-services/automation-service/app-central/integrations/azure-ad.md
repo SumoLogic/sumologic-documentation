@@ -32,7 +32,7 @@ Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access
 
 ## Azure Active Directory configuration
 
-The following steps show how to create an Azure AD Application in order to work with Cloud SOAR.
+The following steps show how to create an Azure AD Application in order to work with Sumo Logic automation.
 
 1. Log in to Azure portal with the user that has administrator privileges.
 1. Navigate to **Azure Active Directory** > **App registrations** > **New registration**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-1.png')} style={{border:'1px solid gray'}} alt="azure-ad-1" width="600"/>
@@ -60,8 +60,25 @@ The following steps show how to create an Azure AD Application in order to work 
 ## Configure Azure AD in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+ * **API URL**. Enter the Azure AD API URL, for example, `https://graph.microsoft.com`
+
+* **Directory (Tenant) ID**. Enter the [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) located when you configured Azure AD [above](#azure-active-directory-configuration).  
+
+* **Application (Client) ID**. Enter the client ID from your Azure Application. 
+
+* **Application (Client) Secret**. Enter your client secret. 
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-configuration.png')} style={{border:'1px solid gray'}} alt="Azure AD configuration" width="400"/>
 
