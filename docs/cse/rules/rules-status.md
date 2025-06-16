@@ -33,20 +33,43 @@ Following are the different kinds of rule status. A rule's status can change dep
 | Status | Description | Action required |
 | :-- | :-- | :-- |
 | **Active** | The rule is executing normally. | No action required. |
-| **Degraded** | The rule is approaching a rule limit and it is removed from execution for one hour to allow processing to catch up. At the end of the hour, the rule is allowed to execute again and its status changes back to Active. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may want to edit the rule to reduce the chance it will become degraded again later. See [Degraded rules](#degraded-rules) below for more information. |
+| **Degraded** | The rule encountered a problem during processing and is removed from execution until the problem is resolved. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may need to edit the rule to reduce the chance it will become degraded again later. See [Degraded rules](#degraded-rules) below for more information. |
 | **Disabled** | The rule was manually disabled using the toggle in the UI, or was disabled with the API. | Enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). | 
-| **Failed** | The rule exceeded a rule limit and was automatically disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Failed** label for details about the failure.  Depending on the reasons provided in the details, you may need to edit the rule to prevent it from failing again in the future. <br/><br/>After addressing the reasons for the failure, enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
-| **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled. |
+| **Failed** | The rule encountered a problem that resulted in its being automatically disabled. For example, processing the rule caused the system to exceed a rule limit. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Failed** label for details about the failure. Depending on the reason provided in the details, you may need to edit the rule to prevent it from failing again in the future. <br/><br/>After addressing the reason for the failure, enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
+| **Pending Baseline** | The baseline for the [first seen rule](/docs/cse/rules/write-first-seen-rule/#baselines-for-first-seen-rules) or [outlier rule](/docs/cse/rules/write-outlier-rule/#baselines-for-outlier-rules) is being generated. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Pending Baseline** label for details.  If data exists in the system to build the baseline, baseline generation typically takes only minutes to complete, and then the rule's status changes to "Active". However, if there is not enough data in the system, the pending status can last longer. See [Troubleshoot baseline problems](#troubleshoot-baseline-problems) below. |
+
+<!-- For DOCS-72 - Rule limits
+| **Warning** | The rule is approaching a rule limit and risks being disabled. | Click the information button <img src={useBaseUrl('img/cse/rule-warning-info-button.png')} alt="Rule warning information button" width="20"/> on the **Warning** label for details about the warning. Depending on the reasons provided in the details, you may need to edit the rule to prevent it from being disabled. |
+-->
 
 ### Degraded rules
 
-A degraded rule is one that has been temporarily shut off to prevent it from exceeding a processing limit. If you write a [custom rule](/docs/cse/rules/before-writing-custom-rule/) that becomes degraded, you must tune the rule to correct the problem.
+A degraded rule is one that has been temporarily removed from execution because a problem was encountered during rule processing. After the problem is resolved, the rule returns to execution.
 
-For example, rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, Cloud SIEM might display a message like this:
+Rules can be degraded for many reasons, such as a failure to parse the rule. If the rule is degraded because it is approaching a rule limit, it is removed for one hour to allow processing to catch up, and at the end of the hour, the rule is allowed to execute again and its status changes back to Active.
 
-`The aggregation on the group key 'admin@company.com' has a record volume exceeding the supported limit, and has been disabled. Consider tuning the rule to exclude records producing this group key.`
+If you write a [custom rule](/docs/cse/rules/before-writing-custom-rule/) that becomes degraded, you must tune the rule to correct the problem. Create a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions/) to address the portion of the rule causing the rule degradation.
 
-To resolve a degraded rule issue, create a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions/) to address the portion of the rule causing the rule degradation.
+Following are some situations when a rule can be become degraded:
+* When a rule cannot be parsed, a message like this can appear when you click the information button on the "Degraded" rule status:
+   <br/>`Failure to parse rule: Line 1:2 mismatched input 'Unknown' expecting {<EOF>, '[', '.', AND, BETWEEN, IN, IS, LIKE, MATCHES, NOT, OR, RLIKE, EQ, '<=>', '<>', '!=', '<', LTE, '>', GTE, '+', '-', '*', '/', '%', WS}` 
+* Rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, Cloud SIEM might display a message like this when you click the information button on the "Degraded" rule status:
+   <br/>`The aggregation on the group key 'admin@company.com' has a record volume exceeding the supported limit, and has been disabled. Consider tuning the rule to exclude records producing this group key.`
+
+### Troubleshoot baseline problems
+
+Sometimes there may be a problem creating a baseline for a [first seen rule](/docs/cse/rules/write-first-seen-rule/#baselines-for-first-seen-rules) or [outlier rule](/docs/cse/rules/write-outlier-rule/#baselines-for-outlier-rules). In these cases, the rule might enter a Degraded, Failed, or Pending Baseline state. Clicking the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the status label in most cases will provide enough information to resolve the problem. But if not, you can do additional troubleshooting:
+*  Check the [Sumo Logic status](https://status.sumologic.com/) page to see if there’s an outage in your deployment. If the system is down, it cannot generate the baseline.
+* If the rule has a Degraded status because it failed to parse, fix the rule so that it parses correctly. A baseline cannot be built if the rule does not successfully parse. One thing you can do is ensure that a matching expression for the rule parses correctly is to use the compatible [core platform literals](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-cloud-siem).
+* If the rule has a Failed status, clicking the information button might show that the amount of data requested is too large to return (see [Rule limits](#rule-limits)). In this case, create a more filtered baseline focusing on the exact activity you want to capture.
+* If the rule has a persistent Pending Baseline status, there might not be enough data in the system to build the baseline:
+   *  Check the ingest configuration of your Cloud SIEM data sources and confirm the appropriate records are being added to the system.
+   * The matching expression may not be using the right fields. Cloud SIEM records are normalized to a defined [schema](/docs/cse/schema/schema-attributes/). The matching expression and all other fields should use that schema and not the raw log field names.
+   * There may not be enough activity to build a baseline. Expand the baseline retention period to gather more activity.
+   * Make sure that the Sumo Logic system has been active and ingesting data for the full baseline retention period. For example, if the rule has a default baseline retention period of 90 days, but your company only started using Sumo Logic a few days ago, then the rule will remain in the Pending Baseline state until 90 days have passed. To resolve the issue, change the baseline retention period window.
+  
+
+
 
 ## Rule limits
 

@@ -42,7 +42,7 @@ This means that if a user has been turned off on the SSO side, their access keys
 
 ### SAML does not provide a deprovisioning mechanism 
 
-This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to login to Sumo Logic via SSO. Administrators can delete these users from the **Administration > Users and Roles > Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User](../../users-roles/users/delete-user.md).
+This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to sign in to Sumo Logic via SSO. Administrators can delete these users from the **Administration > Users and Roles > Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User](../../users-roles/users/delete-user.md).
 
 ### Only one certificate for each SAML configuration is currently supported
 
