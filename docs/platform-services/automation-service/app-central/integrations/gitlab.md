@@ -20,8 +20,21 @@ Query data from GitLab.
 ## Configure GitLab in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your GitLab [URL](https://docs.gitlab.com/user/project/pages/getting_started_part_one/).
+
+* **Token**. Enter a GitLab [personal access token](https://docs.gitlab.com/user/profile/personal_access_tokens/).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/gitlab-configuration.png')} style={{border:'1px solid gray'}} alt="GitLab configuration" width="400"/>
 
