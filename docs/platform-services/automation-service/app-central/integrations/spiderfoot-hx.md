@@ -58,12 +58,23 @@ Log in to SpiderFoot, select your username from the menu, choose API Key and cop
 ## Configure SpiderFoot HX in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your SpiderFoot URL.
 
-   * **Label**. The desired name for the resource.
-   * **URL**. Your SpiderFoot URL.
-   * **API Key**. Your SpiderFoot API Key you copied earlier from SpiderFoot.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/spiderfoot-configuration.png')} style={{border:'1px solid gray'}} alt="Spiderfoot configuration" width="400"/>
+* **API Key**. Enter the SpiderFoot API key you [copied earlier](#spiderfoot-hx-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/spiderfoot-configuration.png')} style={{border:'1px solid gray'}} alt="Spiderfoot configuration" width="400"/>
 
 For information about SpiderFoot, see [SpiderFoot documentation](https://github.com/smicallef/spiderfoot/blob/master/README.md).
 

@@ -439,6 +439,39 @@ _sourceCategory=reinvent/travel/checkout
 
 For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-features/code-blocks).
 
+### Import GitHub repo file
+
+To embed a code sample from a file in a GitHub repository, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
+
+This code references a json script file:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+<img src={useBaseUrl('img/contributing/json-ref-codeblock.png')} alt="JSON code snippet from GitHub" style={{border: '1px solid gray'}} width="700"/>
+
+</TabItem>
+<TabItem value="Result">
+
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.json
+```
+
+</TabItem>
+</Tabs>
+
+Optionally, you can:
+* Reference a specific range of code lines by appending `#L` with the line number or numbers at the end of the URL. For example, `https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.json#L4-L5`.
+* Add a title to the code block, such as `json reference title="Hello"`.
+
+You'll see this used in our [C2C source docs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
 ## Collapsible text blocks
 
@@ -735,13 +768,9 @@ You can use a link to a file embedding the entire file, or embed a range of code
   </TabItem>
   </Tabs>
 
-### Image sizes
+### Logos
 
-When sizing images, use your discretion.
-
-#### Logos
-
-For square logos, set the width to about 45-55px.
+When sizing images, use your discretion. For square logos, set the width to about 45-55px.
 
 | &#9989; **Do** | &#10060; **Don't** |
 |:---------------|:-------------------|
@@ -749,15 +778,31 @@ For square logos, set the width to about 45-55px.
 
 For wide logos (like [in this doc](/docs/integrations/microsoft-azure/iis-7/)), set the width to about 90-120px.
 
-#### Screenshots
+### Screenshots
 
-Ensure that screenshots are large enough so that the content is legible, but not comically oversized. Use your discretion.
+Use screenshots only when they clarify complex instructions. Our UI changes often, so minimizing screenshots reduces maintenance overhead.
+
+* Prefer clear, concise text instructions over images when possible.
+* Only include screenshots if they significantly aid user understanding.
+* Avoid screenshots for simple UI interactions.
+* When updating docs, evaluate whether screenshots are outdated or redundant.
+* If you come across unnecessary screenshots, use your judgment to delete or replace them.
+
+Make sure screenshots are large enough to be legible, but never wider than 800px. Avoid oversized images.
+
+By default, images that you insert into a page are set to be responsive-resized for the type of device the reader is using.
+
+Use the following syntax to add screenshots:
+
+```md
+<img src={useBaseUrl('img/<your-image-file>.png')} alt="Descriptive alt text" style={{border: '1px solid gray'}} width="500" />
+```
+
+Add appropriate `alt` text for accessibility. See [Add an image](#add-an-image) for more.
 
 | &#9989; **Do** | &#10060; **Don't** |
 |:---------------|:-------------------|
 | <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="alt-text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="alt-text" width="400"/> |
-
-Screenshots should never be wider than 600px.
 
 ### Images in lists
 
@@ -784,13 +829,6 @@ When adding an image to a bulleted or sequential list, include the image snippet
 
 </TabItem>
 </Tabs>
-
-### Screenshots
-
-Capture screenshots using SnagIt in .png format. Use SnagIt's border effect to apply a gray (RGB 212, 212, 212) four-point border.
-
-By default, images that you insert into a page are set to be responsive - resized for the type of device the reader is using.
-
 
 ### Masking sensitive information
 

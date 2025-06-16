@@ -29,8 +29,24 @@ Utilize and interact with Rapid7 Nexpose scan data during incident investigation
 ## Configure Rapid7 Nexpose in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Rapid7 Nexpose URL, for example, `your-domain.rapid7.com`.
+
+* **Port**. Enter your Rapid7 Nexpose [port](https://docs.rapid7.com/nexpose/nexpose-quick-start-guide/#ports).
+
+* **Username**. Enter the username of a Rapid7 Nexpose admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/rapid7-nexpose-configuration.png')} style={{border:'1px solid gray'}} alt="Rapid7 Nexpose configuration" width="400"/>
 

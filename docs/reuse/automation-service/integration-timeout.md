@@ -1,0 +1,1 @@
+**Connection Timeout (s)**. Set the maximum amount of time the integration will wait for a server's response before terminating the connection. Enter the connection timeout time in seconds (for example, `180`).

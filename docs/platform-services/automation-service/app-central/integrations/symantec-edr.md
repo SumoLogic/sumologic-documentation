@@ -21,8 +21,23 @@ Symantec EDR detects and exposes suspicious network activity, alerts to potentia
 ## Configure Symantec EDR in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your [Symantec EDR host address](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all/Dialog-Overview/cs-help-console-lu-settings-policy-v25075140-d79e5424/ip-address-or-host-name-v23251765-d79e6255.html).
+
+* **API Client ID**. Enter your [Symantec EDR client ID](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-detection-and-response/4-11/Settings/generating-an-oauth-client-v118551314-d38e48694.html).
+
+* **API Client Secret**. Enter the secret for the client ID.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/symantec-edr-configuration.png')} style={{border:'1px solid gray'}} alt="Symantec EDR configuration" width="400"/>
 

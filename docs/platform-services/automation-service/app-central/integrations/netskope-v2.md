@@ -39,12 +39,28 @@ When finished, click **OK**. After being created, tokens can be managed by click
 ## Configure Netskope V2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter the URL for API V2 REST API in the format `https://<tenant-name>.goskope.com`
 
-   * **Server URL**. URL for API V2 REST API (https://&lt;tenant-name&gt;.goskope.com).
-   * **Token**. The Token you copied earlier.
-   * Additionally, if need you can populate the query daemons.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-11.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/>
+* **Tenant API Token**. Enter the [API token](https://docs.netskope.com/en/api-tokens-2/) you [copied earlier](#neskope-v2-configuration).
+
+* **Event Type**. Select the [event type](https://docs.netskope.com/en/skope-it-query-language/#event-types) (additionally, if you need to, you can populate the query daemons):
+   * **Application**
+   * **Page**
+   * **Audit**
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-11.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/>
    
 For information about Netskope V2, see [Netskope V2 documentation](https://docs.netskope.com/en/rest-api-v2-overview-312207/).
 
