@@ -25,7 +25,7 @@ The data will be collected from Snowflake's database using the connection string
 | 5 minutes | Custom Event Logs |
 
 :::info
-Ensure you have the `ACCOUNTADMIN` role set as default to collect the Snowflake logs from it's database.
+Ensure you have the `ACCOUNTADMIN` role set as default to collect the Snowflake logs from its database.
 :::
 
 ## Setup
