@@ -134,11 +134,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Communication via Critical Ports
 
-The **Palo Alto Networks 9 - Overview** dashboard provides analytics, including trends for outbound communications via well-known ports. Also provides additional analysis of application communications attempts across the firewall. Use this dashboard to analyze daily traffic patterns in outbound volumes of traffic for the following ports: 21, 22, 23, 53, 123, 137, 138, 389, 445, and 3389. 
+The **Palo Alto Networks 9 - Communication via Critical Ports** dashboard provides analytics, including trends for outbound communications via well-known ports. Also provides additional analysis of application communications attempts across the firewall. Use this dashboard to analyze daily traffic patterns in outbound volumes of traffic for the following ports: 21, 22, 23, 53, 123, 137, 138, 389, 445, and 3389. 
 
 The graph on the left compares the current day’s traffic volumes with the volumes of the same time one, two, and three days ago. The table on the right provides a sortable list of those connections. The top of the dashboard has two tables containing analytics on known and unknown application connections using the ports listed above.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Overview.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Palo-Alto-Networks-11/Palo-Alto-Networks-11-Communication-via-Critical-Ports.png' alt="Communication via Critical Ports   Dashboard" />
 
 ### Outbound Traffic and Potential Exfiltration Activity
 
@@ -146,45 +146,44 @@ The **Palo Alto Networks 11 - Outbound Traffic and Potential Exfiltration Activi
 
 Increased and unaccounted-for increase in traffic may be the result of unauthorized exfiltration of information. Additional analysis is provided for DNS traffic alone, as large amounts of DNS traffic are not part of normal operations.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Threat-Overview.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Palo-Alto-Networks-11/Palo-Alto-Networks-11-Outbound-Traffic-and-Potential-Exfiltration-Activity.png' alt="Outbound Traffic and Potential Exfiltration Activity Dashboard" />
 
 ### Potentially Malicious Activity
 
 The **Palo Alto Networks 11 - Potentially Malicious Activity** dashboard provides information about inbound and outbound traffic IP addresses called out as potentially malicious by threat intelligence, countries on the OFAC (embargoed) list, and potential port scans. Use this dashboard to analyze attempted and successful connections to IP addresses on threat intelligence lists, both inbound and outbound. Additionally, you can view connections to geolocation IP addresses associated with countries on the OFAC list (USA embargo list). Furthermore, the bottom panel provides analysis on vertical port scans (one target scanned on multiple network ports) and horizontal port scans (same port scanned across multiple destinations).
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Threat-Analysis.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Palo-Alto-Networks-11/Palo-Alto-Networks-11-Potentially-Malicious-Activity.png' alt="Potentially Malicious Activity Dashboard" />
 
 ### THREAT Log by Category
 
 The **Palo Alto Networks 11 - THREAT Log by Category** dashboard provides analytics about the THREAT type logs provided by the firewall. These are the indications of security events detected by the firewall’s defensive measures, such as anti-malware, network intrusion detection, and the like. Use this dashboard to review THREAT events in summary or in a brkken down by category: Command-and-control, Phishing, Malware, Proxy Anonymizers, Newly Registered Domains, Cryptocurrency, Questionable, and High-Risk.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-High-Severity-Threats.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Palo-Alto-Networks-11/Palo-Alto-Networks-11-THREAT-Log-by-Category.png' alt="THREAT Log by Category Dashboard" />
 
 ### THREAT Logs by Severity
 
 The **Palo Alto Networks 11 - THREAT Logs by Severity** dashboard provides analytics about the THREAT type logs provided by the firewall. These are the indications of security events detected by the firewall’s defensive measures, such as anti-malware, network intrusion detection, and the like.
 Use this dashboard to review THREAT events broken down by severity, allowing you to focus on the critical events first, but also providing events of lesser severity for additional triage and investigation if necessary.
 
-
-<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Insight-File-Activity.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Palo-Alto-Networks-11/Palo-Alto-Networks-11-THREAT-Log-by-Severity.png' alt="THREAT Logs by Severity Dashboard" />
 
 ### TRAFFIC Log Overview
 
 The **Palo Alto Networks 11 - TRAFFIC Log Overview** dashboard helps you to monitor allowed and denied traffic over time by volume and host through the firewall.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Insight-Web-Activity.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Palo-Alto-Networks-11/Palo-Alto-Networks-11-TRAFFIC-Log-Overview.png' alt="TRAFFIC Log Overview Dashboard" />
 
 ### TRAFFIC Log Security
 
 The **Palo Alto Networks 11 - TRAFFIC Log Security** dashboard delivers comprehensive insights into network traffic, application usage, and security alerts. It monitors traffic alert volumes, identifies top applications by usage and risk, and breaks down data by technology and SaaS status. The dashboard analyzes proxy flows, offload states, and high-risk applications while detecting tunneled apps and evasion techniques. Geo-location features track traffic to embargoed locations for compliance monitoring. This dashboard empowers IT and security teams to enhance network performance, enforce policies, mitigate risks, and improve visibility into network activity.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Palo-Alto-Networks-11/Palo-Alto-Networks-11-Traffic-Log-Security.png' alt="TRAFFIC Log Security Dashboard" />
 
 ### Threat Log Security
 
 The **Palo Alto Networks 11 - Threat Log Security** dashboard provides comprehensive insights into network security by tracking threats across various application subcategories, categories, and technologies. It helps security teams prioritize risks by evaluating applications based on risk levels and compliance status. The dashboard also identifies unauthorized IT usage, tracks the flow of threats to embargoed locations, and uses geo-location data to visualize threat patterns. Real-time alerts and monitoring of high-risk applications facilitate proactive threat detection and response in both traditional and cloud-native environments.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Configuration-Analysis.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Palo-Alto-Networks-11/Palo-Alto-Networks-11-Threat-Log-Security.png' alt="Threat Log Security Dashboard" />
 
 ## Create monitors for Palo Alto Networks 11 app
 
