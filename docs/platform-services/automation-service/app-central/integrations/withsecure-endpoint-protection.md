@@ -34,14 +34,27 @@ To generate an API key:
 ## Configure WithSecure Endpoint Protection in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**: Enter the base API URL for WithSecure Endpoint Protection, for example, `https://eu1.psb.fsapi.com`.
 
-   * **Label**: The name for the resource.
-   * **URL**: The base API URL for WithSecure Endpoint Protection. i.e. [http[s]://eu1.psb.fsapi.com](https://eu1.psb.fsapi.com)
-   * **API Key**: Your API Key.
-   * **Username**: Your username.
-   * **Password**: Your password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/withsecure-endpoint-protection-configuration.png')} style={{border:'1px solid gray'}} alt="WithSecure Endpoint Protection configuration" width="400"/>
+* **API Key**: Enter your WithSecure Endpoint Protection API key you [copied earlier](#withsecure-endpoint-protection-configuration).
+
+* **Username**: Enter the username for an WithSecure Endpoint Protection admin user authorized to authenticate the integration
+
+* **Password**: Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/withsecure-endpoint-protection-configuration.png')} style={{border:'1px solid gray'}} alt="WithSecure Endpoint Protection configuration" width="400"/>
 
 For information about WithSecure Endpoint Protection, see [WithSecure Endpoint Protection documentation](https://www.withsecure.com/userguides/product.html?business/psb-portal/latest/en).
 

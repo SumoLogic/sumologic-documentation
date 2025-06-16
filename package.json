@@ -34,7 +34,7 @@
     "@docusaurus/bundler": "3.8.0",
     "@docusaurus/core": "^3.8.0",
     "@docusaurus/cssnano-preset": "3.8.0",
-    "@docusaurus/faster": "^3.8.0",
+    "@docusaurus/faster": "^3.8.1",
     "@docusaurus/plugin-client-redirects": "3.8.0",
     "@docusaurus/plugin-content-blog": "^3.8.0",
     "@docusaurus/plugin-css-cascade-layers": "3.8.0",

@@ -18,13 +18,25 @@ Imperva WAF offers web application security firewall, providing protection again
 ## Configure Imperva WAF in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the Imperva WAF URL, for example, `https://my.imperva.com/`
 
-   * **Label**. The name for the resource.
-   * **URL API**. 'https://my.imperva.com/'.
-   * **API ID**
-   * **API Key** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/imperva-waf-configuration.png')} style={{border:'1px solid gray'}} alt="Imperva WAF configuration" width="400"/>
+* **API ID**. Enter an Imperva WAF [API ID](https://docs.imperva.com/bundle/cloud-application-security/page/settings/api-keys.htm).
+
+* **API Key**. Enter the key associated with the API ID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/imperva-waf-configuration.png')} style={{border:'1px solid gray'}} alt="Imperva WAF configuration" width="400"/>
 
 For information about Imperva WAF, see [Imperva documentation](https://docs.imperva.com/).
 

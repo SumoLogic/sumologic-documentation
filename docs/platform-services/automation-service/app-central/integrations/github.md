@@ -23,11 +23,23 @@ Updated: Jul 06, 2023
 ## Configure GitHub in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your GitHub [API URL](https://docs.github.com/en/codespaces/developing-in-a-codespace/default-environment-variables-for-your-codespace). The default value is `https://api.github.com`
 
-   * **API URL**. Default is 'https://api.github.com'.
-   * **Token**. Insert the Token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/github-configuration.png')} style={{border:'1px solid gray'}} alt="GitHub configuration" width="400"/>
+* **Token**. Enter your GitHub [token](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/github-configuration.png')} style={{border:'1px solid gray'}} alt="GitHub configuration" width="400"/>
 
 For information about GitHub, see [GitHub documentation](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app).
 

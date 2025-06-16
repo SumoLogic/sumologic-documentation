@@ -18,8 +18,21 @@ Query events in Micro Focus ArcSight Logger.
 ## Configure ArcSight Logger in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server url**. Enter the ArcSight Logger server URL.
+
+* **Username**. Enter the username of the ArcSight Logger admin user authorized to provide authentication for the integration.
+
+* **Password**. Enter the password for the ArcSight Logger admin user.
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/arcsight/arcsight-logger-configuration.png')} style={{border:'1px solid gray'}} alt="ArcSight Logger configuration" width="400"/>
 

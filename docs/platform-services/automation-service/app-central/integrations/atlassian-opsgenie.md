@@ -77,8 +77,21 @@ Please keep in mind that the API keys of the team integrations can only be used 
 ## Configure Atlassian OpsGenie in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the OpsGenie API URL. The default value is `https://api.opsgenie.com`
+
+* **API Key**. Enter the [OpsGenie API key](https://support.atlassian.com/opsgenie/docs/api-key-management/) that you [created earlier](#atlassian-opsgenie-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian/atlassian-opsgenie-configuration.png')} style={{border:'1px solid gray'}} alt="Atlassian Opsgenie Logger configuration" width="400"/>
 
