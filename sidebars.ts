@@ -2686,6 +2686,7 @@ integrations: [
           'integrations/webhooks/sendgrid',
           'integrations/webhooks/sentry',
           'integrations/webhooks/signl4',
+          'integrations/webhooks/snyk',
           'integrations/webhooks/split',
           'integrations/webhooks/squadcast',
           'integrations/webhooks/stripe',
