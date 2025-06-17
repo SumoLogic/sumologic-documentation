@@ -8,8 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/security-qs.png')} alt="Thumbnail icon" width="50"/>
 
-::: Coming Soom : New Integration with AWS Security Hub public preview 
-In order to give our shared clients even more context-rich and prioritized security discoveries, SumoLogic is expanding its integration as a launch partner for the new AWS Security Hub. This new feature will  enables security teams to concentrate on the most important threats to their cloud environments by enabling Sumologic to immediately ingest prioritized security results from AWS Security Hub.
+:::sumo Coming soon: New integration with AWS Security Hub public preview
+In order to give our shared clients even more context-rich and prioritized security discoveries, Sumo Logic is expanding its integration as a launch partner for the new AWS Security Hub. This new feature will enable security teams to concentrate on the most important threats to their cloud environments by enabling Sumo Logic to immediately ingest prioritized security results from AWS Security Hub.
 :::
 
 AWS Security Hub is an AWS security service that provides a comprehensive view of your security state within AWS and your compliance with the security industry standards and best practices.
