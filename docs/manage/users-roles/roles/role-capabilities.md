@@ -4,6 +4,7 @@ title: Role Capabilities
 description: Assign any of these capabilities when you create user roles.
 ---
 
+
 Following are the capabilities you can assign when you [create roles](create-manage-roles.md).
 
 ## Data Management
