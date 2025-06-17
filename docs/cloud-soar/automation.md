@@ -17,13 +17,29 @@ The **Automation** section contains configuration tools for Cloud SOAR's automat
 
 Because Cloud SOAR provides automation functionality to the [Automation Service](/docs/platform-services/automation-service/), many features are identical between Cloud SOAR and the Automation Service. Therefore, for information about the following Cloud SOAR features, see the Automation Service articles:
 * [App Central](/docs/platform-services/automation-service/app-central/)
-* [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/)
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/)
 * [Automation bridge](/docs/platform-services/automation-service/automation-service-bridge)
 * [Integration framework](/docs/platform-services/automation-service/integration-framework/)
 * [Audit logging](/docs/platform-services/automation-service/automation-service-audit-logging)
+* [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). (For information specific to running playbooks in Cloud SOAR, see [Run playbooks in Cloud SOAR](#run-playbooks-in-cloud-soar) below.)
 
 The following sections describe automation features only used in Cloud SOAR.
+
+## Run playbooks in Cloud SOAR
+
+In Cloud SOAR, playbooks are run from [incidents](/docs/cloud-soar/incidents-triage/#incidents). To run playbooks in Cloud SOAR, perform the following steps:
+1. [Create a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook) to use in incident response. When you create the playbook, do the following:
+   1. Click the **Edit** icon on the **Start** node:<br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/>
+   1. Ensure that the **Add one or more params as a playbook input** field is left blank: <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node-input.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/><br/>Do *not* click the field to show the dropdown menu: <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/><br/>You do not want to use these values because:
+      * **Insight** and **Entity** are for launching a playbook from a Cloud SIEM automation.
+      * **Alert** is for launching a playbook from a monitor. 
+      * **Parse from JSON** is for launching a playbook from another playbook.
+   1. Proceed to create the playbook as needed.
+1. [Create an incident template](#create-a-new-incident-template) to be assigned to incidents. When you create the template, add the playbook to the template and select **Autorun** to run the playbook when the incident is created, or deselect if you want to manually run the playbook from the incident.<br/><img src={useBaseUrl('img/cloud-soar/new-incident-template-add-playbook.png')} alt="New template" style={{border: '1px solid gray'}} width="700"/>
+1. Monitor and run playbooks on [incidents](/docs/cloud-soar/incidents-triage/#incidents):
+   * Within an incident, select **Operations > Playbooks** to see the playbooks assigned to the incident. 
+   * If playbooks haven't been assigned by an incident template, you can add playbooks by clicking the **+** button.
+   * To manually run a playbook for the incident, click the **Run** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cloud-soar/playbook-on-incident.png')} alt="Playbook on an incident" style={{border: '1px solid gray'}} width="700"/>
 
 ## Incident templates
 
