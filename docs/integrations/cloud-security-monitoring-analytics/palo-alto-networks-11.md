@@ -214,3 +214,8 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Troubleshooting
+
+- If you have any issue with Cloud Syslog collection, refer to the [Cloud Source Troubleshooting](/docs/send-data/hosted-collectors/cloud-syslog-source/#troubleshooting).
+- If you are successfully ingesting the logs and if you are unable to see any data in the app dashboards, then ensure [Traffic](https://docs.paloaltonetworks.com/pan-os/11-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields) and [Threat](https://docs.paloaltonetworks.com/pan-os/11-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields) fields are in accordance with Palo Alto Networks 11 log format as configured in the [Step 2 of Collection Logs for Palo Alto](#step-2-define-the-destination-for-the-logs).
