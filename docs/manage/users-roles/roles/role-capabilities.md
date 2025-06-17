@@ -87,7 +87,7 @@ Following are the capabilities you can assign when you [create roles](create-man
 [Cloud SOAR](/docs/cloud-soar/) capabilities appear in the Roles UI only if Cloud SOAR has been enabled for your account.
 
 :::info
-This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, see [Legacy Cloud SOAR role capabilities](#legacy-cloud-soar-role-capabilities) below.
+This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, see [Legacy Cloud SOAR role capabilities](#legacy-cloud-soar) below.
 :::
 
 ### SaaS Cloud SOAR
