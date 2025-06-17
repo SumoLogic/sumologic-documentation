@@ -81,64 +81,13 @@ Following are the capabilities you can assign when you [create roles](create-man
 | Access Search Audit Events | View and download audit logs of search queries executed in the UI. | `accessSearchAuditEvents` |
 | Access Audit Events | View and download audit logs of admin and config events. | `accessAuditEvents` |
 
-## Automation Service
-
-| Capability | Description | API |
-| :-- | :-- | :-- |
-|Task View|See tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). | `taskView` |
-|Task Access | Access your tasks in playbooks. | `taskAccess` |
-|Task Access All| Access all user tasks in playbooks. | `taskAccessAll` |
-|Task Edit| Configure tasks in playbooks. | `taskEdit` |
-|Task Reassign|Assign tasks in playbooks to users. | `taskReassign` |
-|App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `appCentralAccess` |
-|App Central Export|Export integrations and playbooks from App Central. | `appCentralExport` |
-|Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `integrationsAccess` |
-|Integrations Configure| Create and edit integrations. | `integrationsConfigure` |
-|Playbooks Access | View playbooks. | `playbooksAccess` |
-|Playbooks Configure| Create and edit playbooks. | `playbooksConfigure` |
-|Bridge Monitoring Access |Monitor Bridge operations. | `bridgeMonitoringAccess` |
-|Observability Access | Access automation in the SaaS Log UI. | `observabilityAccess` |
-|Observability Configure| Create and edit automation in the SaaS Log UI. | `observabilityConfigure` |
-
-## Alerting
-
-| Capability | Description | API |
-| :-- | :-- | :-- |
-| View Monitors |If folder perms are enabled, view folders & monitors you have access to. | `viewMonitors` |
-| Manage Monitors | Create folders & monitors, grant perms, and (with folder perms) full CRUD on folders you control. | `manageMonitors` |
-|Admin Monitors |With folder perms, full CRUD & grant on all folders & monitors. | `adminMonitors` |
-| View Alerts | View alerts on the [Alert page](/docs/alerts/monitors/alert-response). | `viewAlerts` |
-| View Muting Schedules | View [Muting Schedules](/docs/alerts/monitors/muting-schedules). | `viewMutingSchedules` |
-| Manage Muting Schedules | Create, edit, and delete Muting Schedules. | `manageMutingSchedules` |
-
-## Reliability Management
-
-| Capability | Description | API |
-| :-- | :-- | :-- |
-| View SLOs | View [Service Level Objectives (SLOs)](/docs/observability/reliability-management-slo/create-slo/). | `viewSLOs` |
-| Manage SLOs | Create, edit, and delete SLOs. | `manageSLOs` |
-
-## Organizations
-
-| Capability | Description | API |
-| :-- | :-- | :-- |
-| View Organizations | View the [Organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) UI. | `viewOrganizations` |
-| Create Organizations | Create and provision child organizations. | `createOrganizations` |
-|Change Credits Allocation|Change the credits allocation for a child organization. | `changeCreditsAllocation` |
-| Create Trial Organizations | Create trial organizations (Service Providers only). | `createTrialOrganizations` |
-|Upgrade Trial Organizations |Upgrade trial organizations (Service Providers only). | `upgradeTrialOrganizations` |
-|Deactivate Organizations |Deactivate trial organizations (Service Providers only). | `deactivateOrganizations` |
-
-## Threat Intel
-
-| Capability | Description | API |
-| :-- | :-- | :-- |
-| View Threat Intel Data Store| View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | `viewThreatIntelDataStore` |
-| Manage Threat Intel Data Store| Create, edit, and delete threat intel sources. | `manageThreatIntelDataStore` |
-
 ## Cloud SOAR
 
-[Cloud SOAR](/docs/cloud-soar/) features only show if enabled.
+[Cloud SOAR](/docs/cloud-soar/) capabilities appear in the Roles UI only if Cloud SOAR has been enabled for your account.
+
+:::info
+This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, see [Legacy Cloud SOAR role capabilities](#legacy-cloud-soar-role-capabilities) below.
+:::
 
 ### SaaS Cloud SOAR
 
@@ -201,6 +150,77 @@ Following are the capabilities you can assign when you [create roles](create-man
 | View Cloud SOAR|Show “Cloud SOAR” link in nav (legacy URL). | `viewCloudSoarLegacy` |
 | Settings General| Configure legacy settings. | `settingsGeneralLegacy` |
 | Configure|Update legacy configuration. | `configureLegacy` |
+
+## Automation Service
+
+| Capability | Description | API |
+| :-- | :-- | :-- |
+|Task View|See tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). | `taskView` |
+|Task Access | Access your tasks in playbooks. | `taskAccess` |
+|Task Access All| Access all user tasks in playbooks. | `taskAccessAll` |
+|Task Edit| Configure tasks in playbooks. | `taskEdit` |
+|Task Reassign|Assign tasks in playbooks to users. | `taskReassign` |
+|App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `appCentralAccess` |
+|App Central Export|Export integrations and playbooks from App Central. | `appCentralExport` |
+|Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `integrationsAccess` |
+|Integrations Configure| Create and edit integrations. | `integrationsConfigure` |
+|Playbooks Access | View playbooks. | `playbooksAccess` |
+|Playbooks Configure| Create and edit playbooks. | `playbooksConfigure` |
+|Bridge Monitoring Access |Monitor Bridge operations. | `bridgeMonitoringAccess` |
+|Observability Access | Access automation in the SaaS Log UI. | `observabilityAccess` |
+|Observability Configure| Create and edit automation in the SaaS Log UI. | `observabilityConfigure` |
+
+## Settings General
+
+## Content
+
+## Configuration
+
+
+## Alerting
+
+| Capability | Description | API |
+| :-- | :-- | :-- |
+| View Monitors |If folder perms are enabled, view folders & monitors you have access to. | `viewMonitors` |
+| Manage Monitors | Create folders & monitors, grant perms, and (with folder perms) full CRUD on folders you control. | `manageMonitors` |
+|Admin Monitors |With folder perms, full CRUD & grant on all folders & monitors. | `adminMonitors` |
+| View Alerts | View alerts on the [Alert page](/docs/alerts/monitors/alert-response). | `viewAlerts` |
+| View Muting Schedules | View [Muting Schedules](/docs/alerts/monitors/muting-schedules). | `viewMutingSchedules` |
+| Manage Muting Schedules | Create, edit, and delete Muting Schedules. | `manageMutingSchedules` |
+
+## Open Analytics
+
+
+## Usage Management
+
+
+## Reliability Management
+
+| Capability | Description | API |
+| :-- | :-- | :-- |
+| View SLOs | View [Service Level Objectives (SLOs)](/docs/observability/reliability-management-slo/create-slo/). | `viewSLOs` |
+| Manage SLOs | Create, edit, and delete SLOs. | `manageSLOs` |
+
+## Threat Intel
+
+| Capability | Description | API |
+| :-- | :-- | :-- |
+| View Threat Intel Data Store| View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | `viewThreatIntelDataStore` |
+| Manage Threat Intel Data Store| Create, edit, and delete threat intel sources. | `manageThreatIntelDataStore` |
+
+## Macros
+
+
+## Organizations
+
+| Capability | Description | API |
+| :-- | :-- | :-- |
+| View Organizations | View the [Organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) UI. | `viewOrganizations` |
+| Create Organizations | Create and provision child organizations. | `createOrganizations` |
+|Change Credits Allocation|Change the credits allocation for a child organization. | `changeCreditsAllocation` |
+| Create Trial Organizations | Create trial organizations (Service Providers only). | `createTrialOrganizations` |
+|Upgrade Trial Organizations |Upgrade trial organizations (Service Providers only). | `upgradeTrialOrganizations` |
+|Deactivate Organizations |Deactivate trial organizations (Service Providers only). | `deactivateOrganizations` |
 
 ## Cloud SIEM
 
