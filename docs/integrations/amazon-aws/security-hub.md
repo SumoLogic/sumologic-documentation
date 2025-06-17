@@ -8,6 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/security-qs.png')} alt="Thumbnail icon" width="50"/>
 
+::: Coming Soom : New Integration with AWS Security Hub public preview 
+In order to give our shared clients even more context-rich and prioritized security discoveries, SumoLogic is expanding its integration as a launch partner for the new AWS Security Hub. This new feature will  enables security teams to concentrate on the most important threats to their cloud environments by enabling Sumologic to immediately ingest prioritized security results from AWS Security Hub.
+:::
+
 AWS Security Hub is an AWS security service that provides a comprehensive view of your security state within AWS and your compliance with the security industry standards and best practices.
 
 The Sumo Logic App for AWS Security Hub leverages findings data from Security Hub and visually displays security state data in Dashboards. The dashboards provide a high-level view of findings, showing the type, when they occurred, the resources that were affected, their severity, and their distribution, showing the current security and compliance status of an AWS account from all sources.
