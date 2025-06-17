@@ -93,7 +93,7 @@ import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
 ### Overview
 
-**Azure Event Grid - Overview** dashboard provides details on the performance, authentication, and delivery status of your Azure Event Grid service.
+The **Azure Event Grid - Overview** dashboard provides details on the performance, authentication, and delivery status of your Azure Event Grid service.
 
 Use this dashboard to:
 * Monitor request patterns by location and network access type to optimize resource allocation and improve latency.
@@ -105,7 +105,7 @@ Use this dashboard to:
 
 ### Administrative Operations
 
-**Azure Event Grid - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Event Grid resources.
+The **Azure Event Grid - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Event Grid resources.
 
 Use this dashboard to:
 * Monitor the distribution of operation types and their success rates to ensure the proper functioning of your Event Grid system.
@@ -114,9 +114,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Administrative-Operations.png')} alt="Azure Event Grid - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
-### Errors
+### Topic Errors
 
-**Azure Event Grid - Topic Errors** dashboard provides details on various error types, failed deliveries, and dropped events in your Azure Event Grid service for system topics and topics.
+The **Azure Event Grid - Topic Errors** dashboard provides details on various error types, failed deliveries, and dropped events in your Azure Event Grid service for system topics and topics.
 
 Use this dashboard to:
 * Identify the most common error types affecting event publishing and delivery, such as "NotFound" and "Cancelled" errors.
@@ -126,7 +126,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Topic-Errors.png')} alt="Azure Event Grid - Topic Errors" style={{border: '1px solid gray'}} width="800" />
 
-**Azure Event Grid - Domain Errors** dashboard provides details on various error types, failed deliveries, and dropped events in your Azure Event Grid service for domains. You can filter the dashboard results for particular topic using the topic filter
+### Domain Errors
+
+The **Azure Event Grid - Domain Errors** dashboard provides details on various error types, failed deliveries, and dropped events in your Azure Event Grid service for domains. You can filter the dashboard results for particular topic using the topic filter
 
 Use this dashboard to:
 * Identify the most common error types affecting event publishing and delivery, such as "NotFound" and "Cancelled" errors.
@@ -136,9 +138,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Topic-Domain.png')} alt="Azure Event Grid - Domain Errors" style={{border: '1px solid gray'}} width="800" />
 
-### Operations
+### Topic Operations
 
-**Azure Event Grid - Topic Operations** dashboard provides details on the performance and reliability of your Event Grid service, including processing times, success rates, and failure percentages for system topics and topics.
+The **Azure Event Grid - Topic Operations** dashboard provides details on the performance and reliability of your Event Grid service, including processing times, success rates, and failure percentages for system topics and topics.
 
 Use this dashboard to:
 * Monitor the average destination processing duration to identify potential bottlenecks or performance issues in event delivery.
@@ -148,7 +150,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Topic-Operations.png')} alt="Azure Event Grid - Topic Operations" style={{border: '1px solid gray'}} width="800" />
 
-**Azure Event Grid - Domain Operations** dashboard provides details on the performance and reliability of your Event Grid service, including processing times, success rates, and failure percentages for domains. You can filter the dashboard results for particular topic using the topic filter
+### Domain Operations
+
+The **Azure Event Grid - Domain Operations** dashboard provides details on the performance and reliability of your Event Grid service, including processing times, success rates, and failure percentages for domains. You can filter the dashboard results for particular topic using the topic filter.
 
 Use this dashboard to:
 * Monitor the average destination processing duration to identify potential bottlenecks or performance issues in event delivery.
@@ -160,7 +164,7 @@ Use this dashboard to:
 
 ### Policy and Recommendations
 
-**Azure Event Grid - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Event Grid resources.
+The **Azure Event Grid - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Event Grid resources.
 
 Use this dashboard to:
 * Monitor the success and failure rates of policy events to ensure proper configuration and compliance.
