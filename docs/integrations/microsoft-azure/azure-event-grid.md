@@ -19,9 +19,6 @@ For Azure Event Grid, you can collect the following logs and metrics:
   * [Microsoft.EventGrid/domains](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-domains-metrics)
   * [Microsoft.EventGrid/systemTopics](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-systemtopics-metrics)
   * [Microsoft.EventGrid/topics](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-topics-metrics)
-  * [Microsoft.EventGrid/namespaces](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-namespaces-metrics)
-  * [Microsoft.EventGrid/extensionTopics](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-extensiontopics-metrics)
-  * [Microsoft.EventGrid/eventSubscriptions](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-eventsubscriptions-metrics)
 
 For more information on supported dimensions, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/event-grid/monitor-push-reference#metrics).
 
@@ -39,6 +36,14 @@ When you configure the event hubs source or HTTP source, plan your source catego
 ### Configure metrics collection
 
 To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+
+:::note
+Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
+:::
+
+1. To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
+1. In the Sumo Logic Azure Metrics source configuration, configure namespaces as `Microsoft.EventGrid/domains`, `Microsoft.EventGrid/systemTopics` and `Microsoft.EventGrid/topics`.
+
 
 ### Configure logs collection
 
@@ -111,7 +116,7 @@ Use this dashboard to:
 
 ### Errors
 
-**Azure Event Grid - Errors** dashboard provides details on various error types, failed deliveries, and dropped events in your Azure Event Grid service.
+**Azure Event Grid - Topic Errors** dashboard provides details on various error types, failed deliveries, and dropped events in your Azure Event Grid service for system topics and topics.
 
 Use this dashboard to:
 * Identify the most common error types affecting event publishing and delivery, such as "NotFound" and "Cancelled" errors.
@@ -119,11 +124,21 @@ Use this dashboard to:
 * Monitor dropped event counts over time and investigate the reasons behind event drops to improve system reliability.
 * Track the top failed topics and delivery destinations to prioritize troubleshooting efforts and optimize event routing.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Errors.png')} alt="Azure Event Grid - Errors" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Topic-Errors.png')} alt="Azure Event Grid - Topic Errors" style={{border: '1px solid gray'}} width="800" />
+
+**Azure Event Grid - Domain Errors** dashboard provides details on various error types, failed deliveries, and dropped events in your Azure Event Grid service for domains. You can filter the dashboard results for particular topic using the topic filter
+
+Use this dashboard to:
+* Identify the most common error types affecting event publishing and delivery, such as "NotFound" and "Cancelled" errors.
+* Analyze trends in delivery attempt failures and correlate them with specific resource groups or topics to pinpoint problematic areas.
+* Monitor dropped event counts over time and investigate the reasons behind event drops to improve system reliability.
+* Track the top failed topics and delivery destinations to prioritize troubleshooting efforts and optimize event routing.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Topic-Domain.png')} alt="Azure Event Grid - Domain Errors" style={{border: '1px solid gray'}} width="800" />
 
 ### Operations
 
-**Azure Event Grid - Operations** dashboard provides details on the performance and reliability of your Event Grid service, including processing times, success rates, and failure percentages.
+**Azure Event Grid - Topic Operations** dashboard provides details on the performance and reliability of your Event Grid service, including processing times, success rates, and failure percentages for system topics and topics.
 
 Use this dashboard to:
 * Monitor the average destination processing duration to identify potential bottlenecks or performance issues in event delivery.
@@ -131,7 +146,17 @@ Use this dashboard to:
 * Analyze the correlation between unmatched event percentages and advanced filter evaluation counts to optimize event routing and filtering.
 * Identify trends in publish success latency and failure rates to ensure efficient event publishing and processing.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Operations.png')} alt="Azure Event Grid - Operations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Topic-Operations.png')} alt="Azure Event Grid - Topic Operations" style={{border: '1px solid gray'}} width="800" />
+
+**Azure Event Grid - Domain Operations** dashboard provides details on the performance and reliability of your Event Grid service, including processing times, success rates, and failure percentages for domains. You can filter the dashboard results for particular topic using the topic filter
+
+Use this dashboard to:
+* Monitor the average destination processing duration to identify potential bottlenecks or performance issues in event delivery.
+* Track delivery failure percentages over time to quickly spot and address any spikes in unsuccessful event transmissions.
+* Analyze the correlation between unmatched event percentages and advanced filter evaluation counts to optimize event routing and filtering.
+* Identify trends in publish success latency and failure rates to ensure efficient event publishing and processing.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Domain-Operations.png')} alt="Azure Event Grid - Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 
