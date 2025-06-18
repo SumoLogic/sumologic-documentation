@@ -97,7 +97,7 @@ Follow the below steps to deactivate a child org:
 
 1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Click the three-dot kebab icon to the right of the child org you'd like to deactivate, then click **Deactivate** from the dropdown. Or, click the row for the org you want to deactivate and click the **Deactivate** button in the right-side panel. <br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate.png')} style={{border:'1px solid gray'}} alt="deactivate" width="800" />Or,<br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate-right-panel.png')} style={{border:'1px solid gray'}} alt="deactivate-right-panel" width="450" />
-1. Click **Deactivate** on the confirmation pop-up. Confirming this action will permanently deactive the selected child org.<br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate-confirmation.png')} style={{border:'1px solid gray'}} alt="deactivate-confirmation" width="450" />
+1. Click **Deactivate** on the confirmation pop-up. Confirming this action will permanently deactivate the selected child org.<br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate-confirmation.png')} style={{border:'1px solid gray'}} alt="deactivate-confirmation" width="450" />
 
 By deactivating the child org, you can see the below responses:
 
