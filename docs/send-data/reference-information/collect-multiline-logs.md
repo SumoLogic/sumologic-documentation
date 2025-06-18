@@ -8,6 +8,10 @@ Sumo Logic Sources by default have multiline processing enabled. Multiline proc
 
 Multiline processing requires your logs to have line breaks or carriage returns between messages. If the logs are part of a larger individual message (for example, JSON array or XML) Sumo Logic will in most cases not be able to break these into individual logs.
 
+:::warning
+Line breaks or carriage returns are control characters (`\r`, `\r\n`) that create new lines but are often invisible in text editors.
+:::
+
 ## Multiline Processing Caveats
 
 Multiline messages that are more than 2,000 lines or 512KB in size will get flushed and collected as single log lines due to the default log message size limitations. Depending on the Collector's available memory, you may be able to increase this limit. Contact Support for assistance by navigating to **Help** > **Support** in the Sumo Logic
