@@ -1,5 +1,5 @@
 ---
-title: Scope Based Variable (Dashboard)
+title: Scope-Based Variable (Dashboard)
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - dashboard
@@ -9,4 +9,4 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We are excited to introduce our new template variable creation method - Scope Based Variables. This method helps you to define a variable that automatically applies to all log queries within the scope of the dashboard or panels. [Learn more](/docs/dashboards/filter-template-variables). 
+We’re excited to introduce a new dashboard variable type: Scope-Based Variables. Scope-Based Variables act as log filters that can be automatically applied to all or selected panels within a dashboard. This helps you to easily filter data across multiple panels without needing to manually edit each panel’s query to accept the variable. [Learn more](/docs/dashboards/filter-template-variables). 
