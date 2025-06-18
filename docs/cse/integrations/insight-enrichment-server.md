@@ -10,8 +10,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud SIEM Insight Enrichment Server is a component that automatically enriches Cloud SIEM insights.  
 
-:::warning
-The Insight Enrichment Server is deprecated. Use the Automation Service instead for enrichments. See [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
+:::tip
+The Automation Service is a newer way to perform enrichment. For more information about how to use the Automation Service instead of the Cloud SIEM Insight Enrichment Server, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
 :::
 
 :::note
