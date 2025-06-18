@@ -78,10 +78,15 @@ To install and configure the Sumo Logic scripts, do the following:
 1. On the server, host, or VM create a directory in which to put the Sumo Logic scripts from [Sumo Logic Scripts](https://github.com/SumoLogic/sumologic-vmware/tree/master/vsphere) for VMware. We recommend that you name the directory **/var/log/vmware* or something similar.
 2. Download the Sumo Logic VMware scripts from [here](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip), into the directory you just created.
 3. Install [python](https://www.python.org/) version 3.9, or later.
-4. Install [pyvmomi](https://pypi.org/project/pyvmomi/) version based on the compatible vSphere version from [here](https://github.com/vmware/pyvmomi?tab=readme-ov-file#compatibility-policy):
-   ```bash
-   pip install pyvmomi==<compatible_version>
-   ```
+4. Install libraries required by the python script by running the below command : 
+```bash
+pip install -r requirements.txt
+``` 
+
+:::note
+ You can change the [pyvmomi](https://pypi.org/project/pyvmomi/) version in requirement.txt based on the compatible vSphere version from [here](https://github.com/vmware/pyvmomi?tab=readme-ov-file#compatibility-policy):
+:::
+
 5. Verify that the user account which will run the Sumo Logic VMware scripts has full read/write/execute permissions for the directories where the scripts will be placed. Without adequate permissions (read/write/execute) for the directories in which the scripts files reside, unexpected script errors will occur.
 6. Edit the **cron_vcenter_events.sh** script, changing the `SCRIPT_PATH` variable to reflect the **absolute path** where the script resides. If you have multiple vCenter servers, create a new line for each one.
 
@@ -174,6 +179,9 @@ For a file source, configure a local or remote file source in one of the followi
 
 * **If the script and the Sumo Logic collector are on the same server**: configure a local file source by following [these](/docs/send-data/installed-collectors/sources/local-file-source) steps. Configure the **File Path** for local file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using `-f` flag (for example: `/var/log/vmware/output/`).
 * **If the script and the Sumo Logic collector are on different servers**: configure a remote file source by following [these](/docs/send-data/installed-collectors/sources/remote-file-source) steps. Configure the **Path Expression** for Remote file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using `-f` flag (for example: `/var/log/vmware/output/`).
+:::note
+You can also add wildcard to the path like /var/log/vmware/output/*evt.out for sending only the script generated files.
+:::
 * **For a syslog source**, configure the syslog source as follows:
   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
   1. Click **Add Source**.
