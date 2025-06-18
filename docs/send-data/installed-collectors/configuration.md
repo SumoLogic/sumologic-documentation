@@ -33,19 +33,6 @@ The maximum number of Collectors allowed per organization is 10,000.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/QxGCrxbJ1Vs"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## CPU usage guidelines
