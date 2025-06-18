@@ -99,7 +99,7 @@ Follow the below steps to deactivate a child org:
 1. Click the three-dot kebab icon to the right of the child org you'd like to deactivate, then click **Deactivate** from the dropdown. Or, click the row for the org you want to deactivate and click the **Deactivate** button in the right-side panel. <br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate.png')} style={{border:'1px solid gray'}} alt="deactivate" width="800" />Or,<br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate-right-panel.png')} style={{border:'1px solid gray'}} alt="deactivate-right-panel" width="450" />
 1. Click **Deactivate** on the confirmation pop-up. Confirming this action will permanently deactivate the selected child org.<br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate-confirmation.png')} style={{border:'1px solid gray'}} alt="deactivate-confirmation" width="450" />
 
-By deactivating the child org, you can see the below responses:
+When you deactivate a child org:
 
 - All the UI logins and active sessions will be terminated.
 - API keys, collector tokens, and ingest pipelines will be revoked.
