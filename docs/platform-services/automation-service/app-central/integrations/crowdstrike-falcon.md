@@ -7,13 +7,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.13  
-Updated: Feb 21, 2025***
+***Version: 1.16  
+Updated: June 5, 2025***
 
 The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
 ## Actions
 
+* **Alerts CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Alerts.
 * **Close CrowdStrike Incident** *(Containment)* - Close the state of the CrowdStrike Incident.
 * **Create Indicators** *(Containment)* - Create the Indicators.
 * **Detections CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Detections.
@@ -26,17 +27,44 @@ The CrowdStrike Falcon integration allows you to pull and update Detections/Inci
 * **Get IDP Device Info** *(Enrichment)* - Retrieve detailed information about a devices from IDP. Requires IDP rights and relevant IDP-related API scopes.
 * **Incidents CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Incidents.
 * **List Endpoints** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP.
+* **Retrieve Alert Details** *(Enrichment)* - Get details for a specific CrowdStrike Alert.
+* **Search into Alerts** *(Enrichment)* - Retrieves all Alerts IDs that match a given query.
 * **Search into Detections** *(Enrichment)* - Search for Detections that match a given query.
 * **Search into Incidents** *(Enrichment)* - Search for incidents by providing an FQL filter, sorting, and paging
   details.
 * **Update Detections** *(Containment)* - Modify the state or assignee of Detections.
 * **Update Alerts** *(Containment)* - Perform actions on Alerts identified by composite ID(s) in request.
-* **Search into Alerts** *(Enrichment)* - Retrieves all Alerts IDs that match a given query.
-* **Alerts CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Alerts.
 
 ## Category
 
 EDR
+
+## Configure CrowdStrike Falcon in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your CrowdStrike Falcon API URL.
+
+* **User (Client) ID**. Enter the unique identifier of the API client. The client ID is visible from the API clients table in the Falcon console.
+
+* **User (Client) Secret**. Enter the secret code for the API client, equivalent to a password. The secret is only visible to you at the time the API client is created. After that, it is not retrievable. If your client secret is ever lost, you can reset it to generate a new one.
+
+* **Filter Query (Detections Daemon)**. Enter the FQL-based filter to apply to the search for the detections daemon, for example, `max_severity:>10`
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike/crowdstrike-falcon-configuration.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon configuration" width="400"/>
+
+For information about CrowdStrike Falcon, see [CrowdStrike documentation](https://www.crowdstrike.com/en-us/resources/guides/?lang=1).
 
 ## Change Log
 
@@ -66,3 +94,9 @@ EDR
     + Alerts CrowdStrike Falcon Daemon
 * February 21, 2025 (v1.13) - Added new action
     + Get IDP Device Info
+* April 23, 2025 (v1.14) - Updated the Integration
+    + Refactored the code to improve performance and maintainability.
+* June 3, 2025 (v1.15) - Updated the Integration
+  * Resolved timeout issues across all actions, including daemons and enrichment queries, for improved stability and performance.
+* June 5, 2025 (v1.16) - Added new actions
+  * Retrieve Alert Details

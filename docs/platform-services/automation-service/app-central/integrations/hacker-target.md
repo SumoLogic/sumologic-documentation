@@ -24,6 +24,29 @@ Utilize Hacker Target's investigational tools during an incident.
 * **Whois Lookup** (*Enrichment*) - Retrieve Whois information for the specified IP address.
 * **Page Links** (*Enrichment*) - Parse the html of a website and extract links from the page.
 
+## Configure Hacker Target in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your Hacker Target server URL, for example, `https://api.hackertarget.com`
+
+* **API Key**. Enter a Hacker Target [API key](https://hackertarget.com/ip-tools/).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/hacker-target-configuration.png')} style={{border:'1px solid gray'}} alt="Hacker Target configuration" width="400"/>
+
+For information about Hacker Target, see the [Hacker Target website](https://hackertarget.com/).
+
 ## Change Log
 
 * December 19, 2019 - First upload

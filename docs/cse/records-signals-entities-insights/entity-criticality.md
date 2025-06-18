@@ -19,7 +19,7 @@ If the formula you specify results in a number that isn’t whole, the value is 
 
 ## About criticality and insight generation
 
-The maximum severity that can be assigned to a Cloud SIEM rule is 10, so normally, signal severity is also limited to 1. Note however that Cloud SIEM doesn’t impose a maximum value on the severity that results from a criticality, although the minimum value will always be 0. 
+The maximum severity that can be assigned to a Cloud SIEM rule is 10, so normally, signal severity is also limited to 10. Note however that Cloud SIEM doesn’t impose a maximum value on the severity that results from a criticality, although the minimum value will always be 0. 
 
 As described in the [insight generation](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic, an insight is generated on an entity based on the cumulative severity of the unique signals that have fired on it over the previous two weeks, unless a different period is configured. The cumulative
 severity is referred to as the entity’s activity score. Keep in mind that higher signal severities will increase an entity’s activity score and result in insight’s being generated sooner. 

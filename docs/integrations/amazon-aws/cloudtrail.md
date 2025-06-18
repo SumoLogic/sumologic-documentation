@@ -83,13 +83,12 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 ### Field Extraction Template
 
 ```sql
-| parse "\"sourceIPAddress\":\"*\"" as source_ipaddress
-| parse "\"eventName\":\"*\"" as event_name
-| parse "\"eventSource\":\"*\"" as event_source
-| parse "\"awsRegion\":\"*\"" as aws_Region
-| parse "\"userName\":\"*\"" as user
+| parse "\"sourceIPAddress\":\"*\"" as source_ipaddress nodrop
+| parse "\"eventName\":\"*\"" as event_name nodrop
+| parse "\"eventSource\":\"*\"" as event_source nodrop
+| parse "\"awsRegion\":\"*\"" as aws_Region nodrop
+| parse "\"userName\":\"*\"" as user nodrop
 ```
-
 
 ### Enable Sumo Logic to track AWS Admin Activity
 
@@ -305,3 +304,8 @@ See information about S3 public objects and buckets, including counts of new pub
 **Modified Public Objects-Bucket**. Displays modified public objects per object on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
 
 **Modified Public Objects Table**. Displays a table with modified public objects in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
+
+## Additional resources
+
+* Blog: [What is AWS CloudTrail?](https://www.sumologic.com/blog/what-is-aws-cloudtrail/)
+* App description: [Logs for Security app for AWS CloudTrail](https://www.sumologic.com/application/aws-cloudtrail/)

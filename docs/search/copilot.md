@@ -22,8 +22,8 @@ Sumo Logic Copilot is our AI-powered assistant that accelerates investigations a
 
 With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
 
-:::sumo Micro Lesson
-Watch this micro lesson to learn about Copilot.
+:::sumo Micro Lesson: Introduction to Copilot
+This short video introduces Copilot and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/o9uftxw012?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -77,6 +77,22 @@ Copilot is ideal for users of all skill levels:
 
 In this section, you'll learn the recommended workflow for using Copilot effectively, along with best practices to maximize its benefits.
 
+:::sumo Micro Lesson: Using Copilot
+See Copilot in action with a hands-on walkthrough of the UI and prompt-based search.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/t67ovt9hqj?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
+
 ### Step 1: Open Copilot
 
 To start using Copilot:
@@ -103,28 +119,15 @@ In this example, we'll click `Count the number of log entries by the collector I
 
 <img src={useBaseUrl('img/search/copilot/suggestions.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
+You can pin a suggestion for easy access later. Just hover over a suggestion and click **Pin suggestion** (pin icon). The pinned suggestion will stay at the top of your **Suggestions** list within that conversation.
+
 #### Ask a question
 
-In the **Ask Something...** field, you can manually enter a natural language prompt, similar to the prebuilt options under **Suggestions**. You can also use autocompletion—start typing a keyword to see relevant suggestions.
+In the **Ask Something...** field, you can manually enter a natural language prompt, similar to the prebuilt options under **Suggestions**. You can also use autocompletion—start typing a keyword to see relevant suggestions.<br/><img src={useBaseUrl('img/search/copilot/manual-entry.png')} alt="Entering a prompt in the Copilot Ask field" style={{border: '1px solid gray'}} width="600" />
 
-<img src={useBaseUrl('img/search/copilot/manual-entry.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
+To get the best results, focus your queries on a specific, well-defined problem. Broad or vague questions may lead to inaccurate or incomplete results. If Copilot cannot translate your prompt into a valid query, you'll see a "Failed translation" message.
 
-#### Video: Autocomplete in action
-
-<Iframe url="https://player.vimeo.com/video/1034043268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
-
-Broad questions may not yield accurate results. For best outcomes, frame your queries around a small, well-defined problem. If Copilot is unable to translate your prompt into a query, it will display "Failed translation".
-
-Break your questions into smaller, specific requirements to help Copilot provide more accurate answers.<br/><img src={useBaseUrl('img/search/copilot/periods-query-syntax.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
+Whenever possible, break down complex questions into smaller, clear requirements. This helps Copilot generate more accurate and actionable responses.<br/><img src={useBaseUrl('img/search/copilot/periods-query-syntax.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
 
 #### Tips and tricks
 
@@ -222,6 +225,10 @@ _sourceCategory=* "{" "}"
 
 If your log query contains a mix of JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding a left curly brace (`{`) to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
 
+#### Edit Title
+
+Copilot automatically updates conversation titles based on your query. You can also set a custom title by clicking the "Edit Title" (pencil) icon. This helps keep investigations organized and easier to revisit.
+
 #### History
 
 The conversation history feature saves all previous queries and suggestions, allowing you to backtrack and refine your investigation. For example, if a status code analysis yields inconclusive results, you can revisit earlier queries to explore other possibilities.
@@ -307,6 +314,24 @@ To summarize, you conclude there is malicious activity originating from certain 
 ## Role Based Access Control
 
 Role Based Access Control is not supported for contextual suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search.
+
+## Search behavior and data tier access
+
+Copilot follows the same search behavior as standard log search and respects your account’s data configuration, whether you're on classic tiered pricing or Flex pricing.
+
+### Flex pricing
+
+For customers on [Flex pricing](/docs/manage/partitions/flex), all data is stored in a single intelligent layer and pricing is based on the volume of data scanned.
+
+### Tiered pricing (legacy)
+
+If you're on [classic tiered pricing](/docs/manage/partitions/data-tiers/searching-data-tiers/), Copilot by default searches across continuous data tiers only, unless otherwise specified.
+
+To direct Copilot to search the Infrequent tier, for example, use:
+
+```sql
+_dataTier=Infrequent
+```
 
 ## FAQ
 
@@ -406,3 +431,12 @@ We want your feedback! Let us know what you think by clicking the thumbs up or t
 You can also leave feedback on specific errors.
 
 <img src={useBaseUrl('img/search/copilot/feedback-error.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="800" />
+
+## Additional resources
+
+* Blogs:
+   * [Sumo Logic Mo Copilot: AI assistant for faster incident response and simplified troubleshooting](https://www.sumologic.com/blog/mo-copilot-ai-assistant/)
+   * [Designing Sumo Logic Mo Copilot for success](https://www.sumologic.com/blog/designing-mo-copilot-success/)
+   * [Differentiating Sumo Logic Mo Copilot using Amazon Bedrock](https://www.sumologic.com/blog/copilot-amazon-bedrock/)
+* Brief: [Sumo Logic's Mo Copilot speeds up response](https://www.sumologic.com/brief/sumo-logics-mo-copilot-speeds-up-response/)
+* Webinar: [Revolutionizing Incident Management with AI: Meet Mo Copilot](https://www.sumologic.com/webinar/revolutionizing-incident-management-with-ai-meet-mo-copilot/)

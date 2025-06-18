@@ -117,21 +117,6 @@ Choose one of the following:
 * Windows 32: https://collectors.fed.sumologic.com/rest/download/windows
 * Windows 64: https://collectors.fed.sumologic.com/rest/download/win64
 
-### IN Collector
-
-Choose one of the following:
-
-* Linux 64: https://collectors.in.sumologic.com/rest/download/linux/64
-* Linux Aarch 64: https://collectors.in.sumologic.com/rest/download/linux/aarch/64
-* Linux Debian: https://collectors.in.sumologic.com/rest/download/deb/64
-* Linux Aarch Debian: https://collectors.in.sumologic.com/rest/download/deb/aarch/64
-* Linux RPM: https://collectors.in.sumologic.com/rest/download/rpm/64
-* Linux Aarch RPM: https://collectors.in.sumologic.com/rest/download/rpm/aarch/64
-* macOS: https://collectors.in.sumologic.com/rest/download/macos
-* Tarball: https://collectors.in.sumologic.com/rest/download/tar
-* Windows 32: https://collectors.in.sumologic.com/rest/download/windows
-* Windows 64: https://collectors.in.sumologic.com/rest/download/win64
-
 ### JP Collector
 
 Choose one of the following:

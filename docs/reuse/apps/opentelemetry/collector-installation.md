@@ -5,7 +5,7 @@ In this step, we'll install the collector and add a uniquely identifiable tag to
 1. In the **Set up Collector** step:
    1. Choose your platform (for example, Linux).
    1. Enter your **Installation Token**.
-   1. Under **Tag data on Collector level**, add a new tag to identify these collectors as having Apache running on them (for example, `application = Apache`).
+   1. Under **Tag data on Collector level**, add a new tag to identify these collectors for their corresponding use case (for example, if you are running Apache, set `application = Apache`).
    1. Leave the **Collector Settings** at their default values to configure collectors as remotely managed.
    1. Under **Generate and run the command to install the collector**, copy and run the installation command in your system terminal where the collector needs to be installed.
 1. After installation is complete, click **Next** to proceed.

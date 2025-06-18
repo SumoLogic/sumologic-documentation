@@ -27,6 +27,29 @@ Work with cases and active lists in Micro Focus ArcSight ESM.
 * **Get Cases Arcsight ESM Daemon** (*Daemon*) - Automatically pull ArcSight ESM Cases.
 * **Get Security Event** (*Enrichment*) - Get Security Event related to Case.
 
+## Configure ArcSight ESM in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server url**. Enter the ArcSight ESM server URL.
+
+* **Username**. Enter the username of the ArcSight ESM admin user authorized to provide authentication for the integration.
+
+* **Password**. Enter the password for the ArcSight ESM admin user.
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/arcsight/arcsight-esm-configuration.png')} style={{border:'1px solid gray'}} alt="Arcsight ESM configuration" width="400"/>
+
+For information about ArcSight ESM, see [ArcSight ESM documentation](https://www.microfocus.com/documentation/arcsight/arcsight-esm-7.8/).
+
 ## Change Log
 
 * February 7, 2019 - First upload

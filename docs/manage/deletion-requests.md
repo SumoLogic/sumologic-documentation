@@ -30,7 +30,8 @@ After a data deletion request is approved, data will be deleted from the organiz
 :::
 
 :::note
-During the data deletion process, existing messages may temporarily appear duplicated for a few seconds. These duplicated messages will automatically disappear once the data deletion is complete.
+- During the data deletion process, existing messages may temporarily appear duplicated for a few seconds. These duplicated messages will automatically disappear once the data deletion is complete.
+- Pinned queries may continue to display data identified for deletion for up to 24 hours from the initial run, prior to the data deletion request approval.
 :::
 
 :::info
@@ -87,12 +88,14 @@ To cancel a data deletion request:
 
 ## Limitations
 
-- You can have up to 2 active deletion requests at a time.   
+- Deletion requests will be processed one by one. 
+- You can create upto 100 deletion requests at a time.
 - Each deletion request can include up to 1 petabyte (PB) of scanned data.   
-- You can delete up to 100,000 messages per request.   
+- You can delete up to 1,000,000 messages per request.   
 - The maximum time range for each deletion request is one year.   
-- Your system can support up to 10 active concurrent deletion tasks across different customers. 
-
+- Your system can support up to 10 active concurrent deletion tasks across different customers.
+- Ensure that the requests initiated are not deleting the data prior to `1st February 2024`. Any request before this timestamp will fail in creation.
+  
 ## FAQ
 
 ### Handling future ingestion of sensitive data

@@ -55,22 +55,42 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 The ID and key won't be available again once you close the confirmation screen.
 :::
 
-## Sumo Logic Cloud SIEM in Automation Service and Cloud SOAR
+## Configure Sumo Logic Cloud SIEM in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="500"/>
-1. Populate the resource fields as indicated.
-    * **Label**. The name of the resource.
-    * **Sumo Logic API URL**. URL to the API of the Cloud SIEM instance `https://api.sumologic.com`.
-    * **Sumo Logic Cloud SIEM URL**. URL to the Cloud SIEM instance `https://service.sumologic.com/sec`.
-    * **Access ID**. The access ID that you copied earlier.
-    * **Access Key**. The access key that you copied earlier.
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-8.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-9.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-10.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import SumoLogicAPIURL from '../../../../reuse/automation-service/sumo-logic-api-url.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
-For detailed API documentation visit [Sumo Logic APIs](/docs/api/).
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* <SumoLogicAPIURL/>
+* **Sumo Logic Cloud SIEM URL**. URL to the Cloud SIEM instance (for example, `https://service.sumologic.com/sec`).
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* **Signals Daemon Query**. Enter the query to be executed in daemons.
+
+* **API Rate Limit Sleep (s)**. Enter the API rate limit in seconds. If the API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10. more info at https://help.sumologic.com/docs/api/metrics/#rate-limiting.
+
+* **Custom Field Interval Name (Close Insight Trigger)**. This field is only used within the Close Insight Trigger as a custom field for insight ID in Cloud SOAR, for example, `opt_1`.
+
+* **Resolution Status**. This field is only used within the Close Insight Trigger as a resolution reason for closing the insight, for example, `Resolved`.
+
+* **Closure Comments (Close Insight Trigger)**. This field is only used within the Close Insight Trigger as a closure comment for insight.
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-cloud-siem-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Cloud SIEM configuration" width="400"/>
+
+For detailed API documentation, see [Sumo Logic APIs](/docs/api/).
 
 ## Category
 

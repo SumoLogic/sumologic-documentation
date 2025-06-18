@@ -15,21 +15,30 @@ Imperva WAF offers web application security firewall, providing protection again
 
 * **List Sites** *(Enrichment)* - Retrieves a list of all sites.
 
+## Configure Imperva WAF in Automation Service and Cloud SOAR
 
-## Imperva WAF in Automation Service and Cloud SOAR
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the Imperva WAF URL, for example, `https://my.imperva.com/`
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imperva-waf/imperva-waf-3.png')} style={{border:'1px solid gray'}} alt="imperva-waf" width="400"/>
-1. Populate all the required fields (\*) and then click **Save**.
-   * **Label**. The name for the resource.
-   * **URL API**. 'https://my.imperva.com/'.
-   * **API ID**
-   * **API Key** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imperva-waf/imperva-waf-4.png')} style={{border:'1px solid gray'}} alt="imperva-waf" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imperva-waf/imperva-waf-5.png')} style={{border:'1px solid gray'}} alt="imperva-waf" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imperva-waf/imperva-waf-6.png')} style={{border:'1px solid gray'}} alt="imperva-waf" width="400"/> 
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imperva-waf/imperva-waf-7.png')} style={{border:'1px solid gray'}} alt="imperva-waf" width="400"/>
+* **API ID**. Enter an Imperva WAF [API ID](https://docs.imperva.com/bundle/cloud-application-security/page/settings/api-keys.htm).
+
+* **API Key**. Enter the key associated with the API ID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/imperva-waf-configuration.png')} style={{border:'1px solid gray'}} alt="Imperva WAF configuration" width="400"/>
+
+For information about Imperva WAF, see [Imperva documentation](https://docs.imperva.com/).
 
 ## Change Log
 

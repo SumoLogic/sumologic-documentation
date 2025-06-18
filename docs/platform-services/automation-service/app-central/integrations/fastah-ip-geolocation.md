@@ -17,20 +17,30 @@ Fastah's IP Geolocation provides information in geo-targeting, displaying countr
 
 ## Fastah IP Geolocation configuration
 
-Sign in to Fastah API Developers Console with your email and password. Then go to Dashboard and under Subscriptions copy your primary key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fastah-ip-geolocation/fastah-ip-geolocation-1.png')} style={{border:'1px solid gray'}} alt="fastah-ip-geolocation" width="800"/>
+Sign in to [Fastah API Developer Console](https://docs.getfastah.com/docs/using-the-developer-portal) with your email and password. Then go to Dashboard and under Subscriptions copy your primary key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fastah-ip-geolocation/fastah-ip-geolocation-1.png')} style={{border:'1px solid gray'}} alt="fastah-ip-geolocation" width="800"/>
 
 ## Configure Fastah IP Geolocation in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fastah-ip-geolocation/fastah-ip-geolocation-5.png')} style={{border:'1px solid gray'}} alt="fastah-ip-geolocation" width="400"/>
-1. Populate all the required fields (\*) and then click **Save**:
-   * **Label**. The name of the resource.
-   * **Host**. `https://ep.api.getfastah.com/whereis/v1/json`.
-   * **Token**. The primary key you have copied from Fastah API Developers Console. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fastah-ip-geolocation/fastah-ip-geolocation-6.png')} style={{border:'1px solid gray'}} alt="fastah-ip-geolocation" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fastah-ip-geolocation/fastah-ip-geolocation-7.png')} style={{border:'1px solid gray'}} alt="fastah-ip-geolocation" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fastah-ip-geolocation/fastah-ip-geolocation-8.png')} style={{border:'1px solid gray'}} alt="fastah-ip-geolocation" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fastah-ip-geolocation/fastah-ip-geolocation-9.png')} style={{border:'1px solid gray'}} alt="fastah-ip-geolocation" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your Fastah API URL, for example, `https://ep.api.getfastah.com/whereis/v1/json`
+
+* **Token**. Enter the primary key you copied from the Fastah API Developers Console [above](#fastah-ip-geolocation-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fastah-configuration.png')} style={{border:'1px solid gray'}} alt="Fastah IP Geolocation configuration" width="400"/>
+
+For information about Fastah IP Geolocation, see [Fastah IP Geolocation documentation](https://docs.getfastah.com/docs/quick-start).
 
 ## Change Log
 

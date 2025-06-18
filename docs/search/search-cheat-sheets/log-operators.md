@@ -32,7 +32,7 @@ Sumo provides a number of ways to [parse](/docs/search/search-query-language/pa
   <tr>
    <td><a href="/docs/search/search-query-language/parse-operators/parse-keyvalue-formatted-logs">keyvalue</a></td>
    <td>Typically, log files contain information that follow a key-value pair structure. The keyvalue operator allows you to get values from a log message by specifying the key paired with each value.</td>
-   <td><code>| keyvalue infer "module", "thread"</code></td>
+   <td><code>| keyvalue "module", "thread"</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/parse-operators/parse-csv-formatted-logs">csv</a></td>
@@ -182,7 +182,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td>The backshift operator compares values as they change over time. Backshift can be used with rollingstd, smooth, or any other operators whose results could be affected by spikes of data (where a spike could possibly throw off future results).</td>
    <td>_backshift</td>
    <td>Can be used in Dashboard Panels, but in the search they must be included after the first <code>group-by</code> phrase.</td>
-   <td><code>_sourcecategory=katta <br/>| timeslice by 1m <br/>| count by _timeslice,_sourcehost <br/>| sort + _timeslice <br/>| backshift _count,1 by _sourcehost</code></td>
+   <td><code>_sourceCategory=katta <br/>| timeslice by 1m <br/>| count by _timeslice,_sourcehost <br/>| sort + _timeslice <br/>| backshift _count,1 by _sourcehost</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/base64decode">base64Decode</a></td>
@@ -392,7 +392,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/behavior-insights/logexplain">logexplain</a></td>
    <td>The logexplain operator allows you to compare sets of structured logs based on events you're interested in. Structured logs can be in JSON, CSV, key-value, or any structured format.</td>
    <td>_explanation<br/>_relevance<br/>_test_coverage<br/>_control_coverage</td>
-   <td>Not supported with <a href="/docs/alerts/scheduled-searches/create-real-time-alert">Real Time alerts</a>.<br/><a href="/docs/search/time-compare">Time Compare</a> and the <a href="/docs/search/search-query-language/search-operators/compare">compare operator</a> are not supported against LogExplain results.</td>
+   <td><a href="/docs/search/time-compare">Time Compare</a> and the <a href="/docs/search/search-query-language/search-operators/compare">compare operator</a> are not supported against LogExplain results.</td>
    <td><code>_sourceCategory=stream <br/>| if(_raw matches "error", 1, 0) as hasError<br/>| logexplain hasError == 1 on _sourceHost</code></td>
   </tr>
   <tr>
@@ -413,7 +413,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/behavior-insights/logreduce/logreduce-values">logreduce values</a></td>
    <td>The logreduce values operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format.</td>
    <td>_cluster_id<br/>_signature<br/>_count</td>
-   <td>Not supported with <a href="/docs/alerts/scheduled-searches/create-real-time-alert">Real Time alerts</a>.</td>
+   <td></td>
    <td><code>_sourceCategory= *cloudtrail* errorCode<br/>| json field=_raw "eventSource" as eventSource<br/>| json field=_raw "eventName" as eventName<br/>| json field=_raw "errorCode" as errorCode<br/>| logreduce values on eventSource, eventName, errorCode</code></td>
   </tr>
   <tr>

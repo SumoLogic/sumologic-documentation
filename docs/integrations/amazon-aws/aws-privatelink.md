@@ -37,84 +37,20 @@ With the NLB-created and ALB-registered as a target, requests over AWS PrivateL
 
 Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend on your Sumo Logic deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). If you're using the VPC in a different region where the Sumo Logic PrivateLink endpoint service is set up, you need to set up VPC peering. Either way, you need to create an endpoint.
 
-<table><small>
-  <tr>
-    <td><strong>Deployment</strong></td>
-    <td><strong>Collection Endpoint</strong></td>
-    <td><strong>OpenTelemetry Collector Endpoint</strong></td>
-    <td><strong>AWS Region of Sumo PrivateLink Endpoint Service</strong></td>
-  </tr>
-  <tr>
-    <td>AU</td>
-    <td>https://collectors.au.sumologic.com</td>
-    <td>https://open-collectors.au.sumologic.com</td>
-    <td>ap-southeast-2</td>
-  </tr>
-  <tr>
-    <td>CA</td>
-    <td>https://collectors.ca.sumologic.com</td>
-    <td>https://open-collectors.ca.sumologic.com</td>
-    <td>ca-central-1</td>
-  </tr>
-  <tr>
-    <td>DE</td>
-    <td>https://collectors.de.sumologic.com</td>
-    <td>https://open-collectors.de.sumologic.com</td>
-    <td>eu-central-1</td>
-  </tr>
-  <tr>
-    <td>EU</td>
-    <td>https://collectors.eu.sumologic.com<br/>
-    https://endpoint1.collection.eu.sumologic.com</td>
-    <td>https://open-collectors.eu.sumologic.com</td>
-    <td>eu-west-1</td>
-  </tr>
-  <tr>
-    <td>IN</td>
-    <td>https://collectors.in.sumologic.com</td>
-    <td>https://open-collectors.in.sumologic.com</td>
-    <td>ap-south-1</td>
-  </tr>
-  <tr>
-    <td>JP</td>
-    <td>https://collectors.jp.sumologic.com</td>
-    <td>https://open-collectors.jp.sumologic.com</td>
-    <td>ap-northeast-1</td>
-  </tr>
-    <tr>
-    <td>KR</td>
-    <td>https://collectors.kr.sumologic.com<br/></td>
-    <td>https://open-collectors.kr.sumologic.com</td>
-   <td>ap-northeast-2</td>
-  </tr>
-  <tr>
-    <td>US1</td>
-    <td>https://collectors.sumologic.com<br/>
-    https://endpoint1.collection.sumologic.com<br/>
-    https://endpoint2.collection.sumologic.com<br/>
-    https://endpoint3.collection.sumologic.com<br/>
-    https://endpoint4.collection.sumologic.com<br/>
-    https://endpoint5.collection.sumologic.com</td>
-    <td>https://open-collectors.sumologic.com</td>
-   <td>us-east-1</td>
-  </tr>
-  <tr>
-    <td>US2</td>
-    <td>https://collectors.us2.sumologic.com<br/>
-https://endpoint1.collection.us2.sumologic.com<br/>
-https://endpoint2.collection.us2.sumologic.com<br/>
-https://endpoint3.collection.us2.sumologic.com<br/>
-https://endpoint4.collection.us2.sumologic.com<br/>
-https://endpoint5.collection.us2.sumologic.com<br/>
-https://endpoint6.collection.us2.sumologic.com<br/>
-https://endpoint7.collection.us2.sumologic.com<br/>
-https://endpoint8.collection.us2.sumologic.com<br/>
-https://endpoint9.collection.us2.sumologic.com</td>
-    <td>https://open-collectors.us2.sumologic.com</td>
-    <td>us-west-2</td>
-  </tr>
-</small></table>
+<div class="responsive-table">
 
+| Deployment | Collection endpoint | OpenTelemetry collector endpoint | AWS Region of Sumo PrivateLink endpoint service |
+|:-----------|:---------------------|:----------------------------------|:------------------------------------------------|
+| AU         | `collectors.au.sumologic.com` | `open-collectors.au.sumologic.com` | `ap-southeast-2` |
+| CA         | `collectors.ca.sumologic.com` | `open-collectors.ca.sumologic.com` | `ca-central-1` |
+| DE         | `collectors.de.sumologic.com` | `open-collectors.de.sumologic.com` | `eu-central-1` |
+| EU         | `collectors.eu.sumologic.com`<br/>`endpoint1.collection.eu.sumologic.com` | `open-collectors.eu.sumologic.com` | `eu-west-1` |
+| JP         | `collectors.jp.sumologic.com` | `open-collectors.jp.sumologic.com` | `ap-northeast-1` |
+| KR         | `collectors.kr.sumologic.com` | `open-collectors.kr.sumologic.com` | `ap-northeast-2` |
+| US1        | `collectors.sumologic.com`<br/>`endpoint1.collection.sumologic.com`<br/>`endpoint2.collection.sumologic.com`<br/>`endpoint3.collection.sumologic.com`<br/>`endpoint4.collection.sumologic.com`<br/>`endpoint5.collection.sumologic.com` | `open-collectors.sumologic.com` | `us-east-1` |
+| US2        | `collectors.us2.sumologic.com`<br/>`endpoint1.collection.us2.sumologic.com`<br/>`endpoint2.collection.us2.sumologic.com`<br/>`endpoint3.collection.us2.sumologic.com`<br/>`endpoint4.collection.us2.sumologic.com`<br/>`endpoint5.collection.us2.sumologic.com`<br/>`endpoint6.collection.us2.sumologic.com`<br/>`endpoint7.collection.us2.sumologic.com`<br/>`endpoint8.collection.us2.sumologic.com`<br/>`endpoint9.collection.us2.sumologic.com` | `open-collectors.us2.sumologic.com` | `us-west-2` |
+
+</div>
 
 ### Create an endpoint to connect with the Sumo Logic endpoint service
 

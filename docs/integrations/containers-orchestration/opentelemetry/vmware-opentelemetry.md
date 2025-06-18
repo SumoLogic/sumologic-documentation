@@ -61,7 +61,9 @@ In this step, we will configure the YAML file required for VMWare Collection. He
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the YAML file.
 
-For the Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
+import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
+
+<EnvVar/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMWare-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -299,4 +301,3 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `VMware - Host Memory Utilization` | This alert is triggered when host memory utilization is consistently high. | Count `>=` 95 | Count `<` 95 |
 | `VMware - VM CPU Ready Time High` | This alert gets triggered when VMs are waiting too long for CPU resources, indicating CPU contention. | Count `>=` 10 | Count `<` 10 |
 | `VMware - VM Memory Balloon Pressure` | This alert gets triggered when VMs are experiencing significant memory ballooning. | Count `>=` 1024 | Count `<` 1024 |
-

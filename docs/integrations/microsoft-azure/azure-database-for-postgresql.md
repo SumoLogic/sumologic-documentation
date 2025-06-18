@@ -10,14 +10,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/overview) is a fully managed relational database service in the Microsoft cloud based on the PostgreSQL community edition. This integration helps in monitoring resource utilization and identifying slow queries to optimize your workloads and configure your server for the best performance.
 
-The below instructions applies to Azure Database for PostgreSQL with Flexible Server only.
+The instructions below apply to Azure Database for PostgreSQL with Flexible Server only.
 
 ## Log and metric types
 
 For Azure Database for PostgreSQL, you can collect the following logs and metrics:
 
 * **PostgreSQL Logs**. These logs can be used to identify, troubleshoot, and repair configuration errors and suboptimal performance. To learn more about the log format, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-logging#log-format).
-* **Activity logs**. Provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
+* **Activity logs**. Provides insight into any subscription-level or management group-level events that have occurred in Azure. To learn more, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 * **Metrics**. These metrics are available for a flexible server instance of Azure Database for PostgreSQL. For more information on supported metrics and instructions for enabling them, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-monitoring#metrics).
 
 ## Setup
@@ -26,105 +26,15 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 
 * **PostgreSQL Audit logs**. Azure Database for PostgreSQL flexible server provides users with the ability to configure audit logs. Audit logs can be used to track database-level activity including connection, admin, DDL, and DML events. These types of logs are commonly used for compliance purposes. To learn more about the different log types and schemas collected for Azure Database for PostgreSQL, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-audit).
 * Logs collection from [Azure Monitor](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-monitoring#logs) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-* Metrics collection using our [HTTP Logs and Metrics source](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-monitoring#metrics) via Azure Functions deployed using the ARM template.
+* Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
-You must explicitly enable diagnostic settings for each Azure Database for PostgreSQL server you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
+You must explicitly enable diagnostic settings for each Azure Database for the PostgreSQL server you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DatabaseForPostgreSQL/Logs`, `Azure/DatabaseForPostgreSQL/Metrics`.
 
-
-### Configure field in field schema
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
-2. Search for the following fields:
-   - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions in the [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs to.
-   - `subscription_id`. ID associated with a subscription where the resource is present.
-   - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
-   - `resource_type`. Azure resource type (for example, storage accounts).
-   - `resource_name`. The name of the resource (for example, storage account name).
-   - `service_type`. Type of the service that can be accessed with a Azure resource.
-   - `service_name`. Services that can be accessed with an Azure resource (for example, Azure SQL databases in Azure SQL Server).
-3. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
-
-### Configure Field Extraction Rules
-
-Create the following Field Extraction Rules (FER) for Azure Storage by following the instructions in the [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
-
-#### Azure location extraction FER
-
-   ```sql
-   Rule Name: AzureLocationExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
-   | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
-   | if (!isBlank(resourceLocation), resourceLocation, location) as location
-   | if (!isBlank(service_region), service_region, location) as location 
-   | if (isBlank(location), "global", location) as location
-   | fields location
-   ```
-
-#### Resource ID extraction FER
-
-   ```sql
-   Rule Name: AzureResourceIdExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
-   | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
-   | toUpperCase(resourceId) as resourceId
-   | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
-   | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
-   | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
-   | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
-   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
-   | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
-   ```
-
-### Configure metric rules
-
-Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule).
-
-#### Azure observability metadata extraction flexible postgresql server level
-
-```sql
-Rule Name: AzureObservabilityMetadataExtractionAzureDatabaseForPostgreSQLLevel
-```
-
-```sql title="Metric match expression"
-resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/MICROSOFT.DBFORPOSTGRESQL/FLEXIBLESERVERS/* tenant_name=*
-```
-
-| Fields extracted  | Metric rule              |
-|:------------------|:-------------------------|
-| subscription_id   | $resourceId._1           |
-| resource_group    | $resourceId._2           |
-| provider_name     | MICROSOFT.DBFORPOSTGRESQL|
-| resource_type     | FLEXIBLESERVERS          |
-| resource_name     | $resourceId._3           |
-
-
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
-
-1. Create hosted collector and tag `tenant_name` field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
-2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Flexible PostgreSQL Server resource that you want to monitor.
-   1. Choose `Stream to an event hub` as destination.
-   1. Select `AllMetrics`.
-   1. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureflexible-postgresqlserver-metrics.png')} alt="Azure flexible postgresql server metrics" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for PostgreSql Tag Location" style={{border: '1px solid gray'}} width="400" />
+To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
 ### Configure logs collection
 
@@ -133,11 +43,11 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-2. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure Redis cache account that you want to monitor.
+2. To create the diagnostic settings in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure Redis cache account that you want to monitor.
    1. Choose **Stream to an event hub** as the destination.
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azureflexible-postgresqlserver-logs.png')} alt="Azure flexible postgresql server logs" style={{border: '1px solid gray'}} width="800" />
-3. Set server parameters as below:
+3. Set server parameters as given below:
    - `wal_level`. Set to **logical**.
    - `log_statement_stats`. Set to **ON**.
    - `log_statement`. Select **ALL**.
@@ -145,7 +55,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    - `log_recovery_conflict_waits`. Set to **ON**.
 
 
-4. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="400" />
+4. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity logs
 
@@ -155,19 +65,31 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 Since this source contains logs from multiple regions, ensure that you do not tag this source with the location tag.
 :::
 
-## Installing the Azure Flexible Database for PostgreSql app
+## Installing the Azure Flexible Database for PostgreSQL app
 
 Now that you have set up data collection, install the Azure Database for PostgreSQL Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstallNoDataSourceV2/>
+<AppInstallIndexV2/>
 
-## Viewing the Flexible Database for PostgreSql dashboards
+As part of the app installation process, the following fields will be created by default:
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with an Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
-<ViewDashboards/>
+## Viewing the Flexible Database for PostgreSQL dashboards
+
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
+
+<ViewDashboardsIndex/>
 
 ### Disk
 
@@ -177,7 +99,7 @@ The **Azure Database for PostgreSQL - Disk** dashboard provides insights on Numb
 
 ### Administrative Operations
 
-The **Azure Database for PostgreSQL - Administrative Operations** dashboard provides insights on Top 10 operations that caused the most errors, Distribution by Operation Type (Read, Write, and Delete), Distribution by Operations, Recent Write Operations, Recent Delete Operations, Users/Applications by Operation type, and Distribution by Status.
+The **Azure Database for PostgreSQL - Administrative Operations** dashboard provides insights on the top 10 operations that caused the most errors, Distribution by Operation Type (Read, Write, and Delete), Distribution by Operations, Recent Write Operations, Recent Delete Operations, Users/Applications by Operation type, and Distribution by Status.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Administrative-Operations.png')} alt="Azure Database for PostgreSql - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
@@ -250,19 +172,30 @@ The **Azure Database for PostgreSQL - Transactions** dashboard provides insights
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Transactions.png')} alt="Azure Database for PostgreSql - Transactions" style={{border: '1px solid gray'}} width="800" />
 
+### Azure Database for PostgreSQL alerts
+These alerts are metric based and will work for all Azure Database for PostgreSQL.
+
+| Alert Name                                           | Alert Description and Conditions                                                                                                                         | Alert Condition  | Recover Condition |
+|:-----------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:------------------|
+| `Azure Database for PostgreSQL - Active Connections` | This alert is triggered  when Average Active Connections Count is greater than 1000.                                                                     | Count >= 1000    | Count < 1000      |
+| `Azure Database for PostgreSQL - CPU Percent`        | This alert is triggered  when CPU Percentage is greater than 90. Also a warning type alert will be triggered  when CPU Percentage is greater than 80.    | Percentage >= 90 | Percentage < 90   |
+| `Azure Database for PostgreSQL - Failed Connections` | This alert is triggered when Failed Connections Count is greater than 10.                                                                                | Count >= 10      | Count < 10        |
+| `Azure Database for PostgreSQL - Memory Percent`     | This alert is triggered when Memory Percentage is greater than 80. Also a warning type alert will be triggered when Memory Percentage greater than 70.   | percentage >= 80 | percentage < 80   |
+| `Azure Database for PostgreSQL - Storage Percent`    | This alert is triggered when Storage Percent greater than 95. Also a warning type alert will be triggered when Storage Percent greater than 90.          | percentage >= 95 | percentage < 95   |
+
 ## Troubleshooting
 
 ### HTTP Logs and Metrics Source used by Azure Functions
 
 To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
 
-## Upgrade/Downgrade the Azure Flexible Database for PostgreSql app (Optional)
+## Upgrade/Downgrade the Azure Flexible Database for PostgreSQL app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Azure Flexible Database for PostgreSql app (Optional)
+## Uninstalling the Azure Flexible Database for PostgreSQL app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 

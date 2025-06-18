@@ -128,12 +128,13 @@ For examples of adding conditions to playbooks, see the [Cloud SIEM automation e
 1. Draw a line from a previous action node to the new condition node. This is required to allow the condition to evaluate the output values from the previous action.
 1. Now that you've linked the condition to an action, hover the mouse over the condition node and click the edit button on the node to configure the condition settings.<br/><img src={useBaseUrl('img/cse/automations-edit-condition-node.png')} style={{border:'1px solid gray'}} alt="Edit a condition node" width="150"/>
 1. The condition node configuration dialog displays again. Under **Condition1**, click **Select a value**.<br/><img src={useBaseUrl('img/cse/automations-add-a-condition-3.png')} style={{border:'1px solid gray'}} alt="Select values for the condition" width="500"/>
-1. Click **Get Value** and select from the drop-down menu whether the value will evaluate to **true (bool)**, **false (bool)**, or **empty**.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node-2.png')} style={{border:'1px solid gray'}} alt="Get values for the condition" width="500"/>
+1. Click **Get Value** and select from the drop-down menu whether the value will evaluate to **true (bool)**, **false (bool)**, or **empty**. You can also manually enter a value, such as a string or numeric literal.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node-2.png')} style={{border:'1px solid gray'}} alt="Get values for the condition" width="500"/>
 1. Under **Get value from a previous action**, select the value to feed into the condition. The example shows **Get Devices** and **Playbook inputs** that came from the previous action. (The condition must be linked by a line to the previous action node to receive outputs from the action.) Click the options from the previous action and select which output type (for example, hashes, IP addresses, domains) to evaluate and add it to the condition.
 1. The selected output type will be displayed under **Condition 1**. Select which condition you would like for the output results to meet from the inequality operators below and click **Select a value** to define the condition.
-1. Now that **Condition 1** is defined, you can choose to filter your
-results further by selecting an **AND/OR** operator to define another
-condition.
+1. Now that **Condition 1** is defined, you can choose to filter your results further by selecting an **AND/OR** operator to define another condition.
+    :::warning
+    If you define multiple conditions, all the conditions must be filtered with either **AND** or **OR**. If some are filtered with **AND** and some with **OR**, then the condition evaluation will fail. 
+    :::
 1. Click **Update**.
 1. When you create a new condition, you need to define what happens when the results meet one of your criteria. Draw lines to nodes to define the flow for success, failure, or other condition options.
 
@@ -225,6 +226,34 @@ To publish a playbook so that others may use it, click the publish button at the
 Every time you publish a playbook, a new version of the playbook is retained. In the screen image below, notice how all the versions of the playbook are listed (#4 being the published version as indicated by the publish icon). Click on a version to edit it, and if you want, publish it. In this way, you maintain version control of your playbooks, and ensure that all versions are retained.
 
 <img src={useBaseUrl('img/platform-services/automation-service/playbook-versions.png')} alt="Playbook versions" style={{border:'1px solid gray'}} width="800"/>
+
+## Enable or disable playbooks
+
+You can enable playbooks for use in automations, or disable them to prevent them from being used. This gives you greater control over when a playbook can be run. If for example a playbook is causing a problem, such as exceeding your actions limit or sending too many emails, you could temporarily disable the playbook until you remedy the issue. 
+
+When enabling or disabling playbooks, keep in mind:
+* By default, draft playbooks are disabled.
+* Playbooks without any published versions are initially disabled and will be automatically enabled upon publishing their first version.
+* Disabled playbooks cannot be triggered automatically.
+* Deleted playbooks are set to disabled and remain so after restoration.
+* Cloned or imported playbooks are enabled by default, irrespective of the original playbook's status.
+* [Audit logs](/docs/platform-services/automation-service/automation-service-audit-logging/) are generated whenever playbooks are enabled or disabled manually. 
+
+### How to enable or disable a playbook
+
+To enable or disable a playbook, open the playbook and click the toggle.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-toggle.png')} alt="Playbook enabled toggle" style={{border:'1px solid gray'}} width="400"/><br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-disabled-toggle.png')} alt="Playbook disabled toggle" style={{border:'1px solid gray'}} width="400"/>
+
+The **Status** column shows whether a playbook is enabled <img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-symbol.png')} alt="Playbook enabled symbol" style={{border:'1px solid gray'}} width="30"/> or disabled <img src={useBaseUrl('img/platform-services/automation-service/playbook-disabled-symbol.png')} alt="Playbook disabled symbol" style={{border:'1px solid gray'}} width="30"/>.  
+
+<img src={useBaseUrl('img/platform-services/automation-service/playbook-status-enabled-disabled.png')} alt="Playbook status column" style={{border:'1px solid gray'}} width="800"/>
+
+### Enable on publish
+
+To publish a playbook, click the **Publish** button at the bottom of the playbook window:<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} style={{border:'1px solid gray'}} alt="Publish the playbook" width="300"/>
+
+When you publish a playbook:
+* Playbooks without any published versions are automatically enabled. 
+* Playbooks that have previously published versions will display an **Enable playbook on publish** option if they are in a disabled state:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enable-on-publish-toggle.png')} style={{border:'1px solid gray'}} alt="Publish enable on publish" width="400"/>
 
 ## Playbook preferences
 

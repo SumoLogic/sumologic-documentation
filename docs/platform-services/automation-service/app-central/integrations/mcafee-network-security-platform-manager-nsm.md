@@ -18,19 +18,30 @@ McAfee Network Security Platform is a purpose-built and intelligent next-generat
 * **Get Firewall Policy** *(Enrichment)* - Get the policy details.
 * **List Firewall Policies In A Domain** *(Enrichment)* - Get the list of firewall policies defined in a particular domain.
 
-## McAfee Network Security Platform Manager (NSM) in Automation Service and Cloud SOAR
+## Configure McAfee Network Security Platform Manager (NSM) in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mcafee-network-security-platform-manager-nsm/mcafee-network-security-platform-manager-nsm-3.png')} style={{border:'1px solid gray'}} alt="mcafee-network-security-platform-manager-nsm" width="800"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
-   * **Label**. The name for the resource.
-   * **URL API**
-   * **Username**
-   * **Password** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mcafee-network-security-platform-manager-nsm/mcafee-network-security-platform-manager-nsm-4.png')} style={{border:'1px solid gray'}} alt="mcafee-network-security-platform-manager-nsm" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mcafee-network-security-platform-manager-nsm/mcafee-network-security-platform-manager-nsm-5.png')} style={{border:'1px solid gray'}} alt="mcafee-network-security-platform-manager-nsm" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mcafee-network-security-platform-manager-nsm/mcafee-network-security-platform-manager-nsm-6.png')} style={{border:'1px solid gray'}} alt="mcafee-network-security-platform-manager-nsm" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mcafee-network-security-platform-manager-nsm/mcafee-network-security-platform-manager-nsm-7.png')} style={{border:'1px solid gray'}} alt="mcafee-network-security-platform-manager-nsm" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your McAfee Network Security Platform Manager URL.
+
+* **Username**. Enter the username of a McAfee Network Security Platform Manager admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>   
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mcafee-network-security-platform-manager-configuration.png')} style={{border:'1px solid gray'}} alt="McAfee Network Security Platform Manager configuration" width="400"/>
+
+For information about McAfee Network Security Platform Manager, see [McAfee Network Security Platform documentation](https://docs.trellix.com/bundle/network-security-platform-9.2.x-product-guide/page/GUID-E5A1DDBD-A231-498A-A90B-39D584B6CC45.html).
 
 ## Change Log
 
