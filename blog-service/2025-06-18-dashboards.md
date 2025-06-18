@@ -1,5 +1,5 @@
 ---
-title: Scope-Based Variable (Dashboard)
+title: Scope-Based Variable (Dashboards)
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - dashboard
