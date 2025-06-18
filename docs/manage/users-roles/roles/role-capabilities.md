@@ -4,7 +4,6 @@ title: Role Capabilities
 description: Assign any of these capabilities when you create user roles.
 ---
 
-
 Following are the capabilities you can assign when you [create roles](create-manage-roles.md).
 
 ## Data Management
@@ -37,7 +36,7 @@ Following are the capabilities you can assign when you [create roles](create-man
 
 | Capability | Description | API |
 | :-- | :-- | :-- |
-| Manage Entity Type Configs |Reserved for internal use. | `manageEntityTypeConfigs` |
+| Manage Entity Type Configs | Reserved for internal use. | `manageEntityTypeConfigs` |
 
 ## Metrics
 
@@ -64,10 +63,13 @@ Following are the capabilities you can assign when you [create roles](create-man
 
 ## Dashboards
 
+<!-- UI capabilities don't match API spec capabilities -->
+
 | Capability | Description | API |
 | :-- | :-- | :-- |
-|Share Dashboards with the World | [Share dashboards](/docs/dashboards/share-dashboard-outside-org) in view-only mode with no login required. | `shareDashboardsWithTheWorld` |
-|Share Dashboards with Your Allowlist | [Share dashboards](/docs/dashboards/share-dashboard-new/) in view-only mode; viewers must be on your service allowlist. | `shareDashboardsWithYourAllowlist` |
+| Share Dashboards with the World | [Share dashboards](/docs/dashboards/share-dashboard-outside-org) in view-only mode with no login required. | `shareDashboardsWithTheWorld` |
+| Share Dashboards with Your Allowlist | [Share dashboards](/docs/dashboards/share-dashboard-new/) in view-only mode; viewers must be on your service allowlist. | `shareDashboardsWithYourAllowlist` |
+| Share Dashboards with Your Whitelist | ? | `shareDashboardWhitelist` |
 
 ## User Management
 
@@ -76,6 +78,8 @@ Following are the capabilities you can assign when you [create roles](create-man
 | Manage Users And Roles | Access the UI pages to manage [users](/docs/manage/users-roles/users) and [roles](/docs/manage/users-roles/roles). | `manageUsersAndRoles` |
 
 ## Audit Event Management
+
+<!-- UI capabilities don't match API spec capabilities -->
 
 | Capability | Description | API |
 | :-- | :-- | :-- |
@@ -87,62 +91,62 @@ Following are the capabilities you can assign when you [create roles](create-man
 [Cloud SOAR](/docs/cloud-soar/) capabilities appear in the Roles UI only if Cloud SOAR has been enabled for your account.
 
 :::info
-This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, see [Legacy Cloud SOAR role capabilities](#legacy-cloud-soar) below.
+This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, see [Legacy Cloud SOAR role capabilities](#legacy-cloud-soar).
 :::
 
 ### SaaS Cloud SOAR
 
-| Capability category | Capability | Description | API |
-| :-- | :-- | :-- | :-- |
-| View Cloud SOAR||Show “Cloud SOAR” link in nav. | `viewCloudSoar` |
-|Incident| View| View all [incidents](/docs/cloud-soar/incidents-triage/). | `incidentView` |
-|Incident| Access | Access your incidents. | `incidentAccess` |
-|Incident| Access All| Access all incidents. | `incidentAccessAll` |
-|Incident|Edit| Create, edit, delete incidents. | `incidentEdit` |
-|Incident|Bulk Operations | Manage incident bulk operations. | `incidentBulkOperations` |
-|Incident| Manage Investigators |Assign/remove investigators. | `incidentManageInvestigators` |
-|Incident|Change Ownership|Change incident ownership. | `incidentChangeOwnership` |
-| Triage | View| View all [triage](/docs/cloud-soar/incidents-triage/). | `triageView` |
-| Triage | Access | Access your triage events. | `triageAccess` |
-| Triage | Access All| Access all triage events. | `triageAccessAll` |
-| Triage |Change Ownership|Change triage ownership. | `triageChangeOwnership` |
-| Triage |Edit| Create, edit, delete triage events. | `triageEdit` |
-| Triage |Bulk Physical Delete|Bulk-delete triage events. | `triageBulkPhysicalDelete` |
-|Folders |Edit| Create, edit, delete playbook folders. | `foldersEdit` |
-|Attachments | Access | View attachments. | `attachmentsAccess` |
-|Attachments |Edit| Create, edit, delete attachments. | `attachmentsEdit` |
-|Incident Playbook| Access | View playbooks. | `incidentPlaybookAccess` |
-|Incident Playbook|Edit| Create, edit, delete playbooks. | `incidentPlaybookEdit` |
-|Incident Playbook| Manage| Manage playbook lifecycle. | `incidentPlaybookManage` |
-|Note| Access | View notes. | `noteAccess` |
-|Note|Edit| Create, edit, delete notes. | `noteEdit` |
-|War Room|Use|Participate in War Room. | `warRoomUse` |
-|Settings General| Configure| Configure global settings. | `settingsGeneralConfigure` |
-|User Management|Groups | Manage groups. | `userManagementGroups` |
-|Notification| Configure| Configure notifications. | `notificationConfigure` |
-|Customization|Logo|Customize logo. | `customizationLogo` |
-|Customization|Fields |Customize fields. | `customizationFields` |
-|Customization|Incident Labels |Customize incident labels. | `customizationIncidentLabels` |
-|Customization| Triage |Customize triage. | `customizationTriage` |
-|Audit & Info|License Information| View license audit info. | `auditInfoLicenseInformation` |
-|Audit & Info|Audit Trail| View audit trail. | `auditInfoAuditTrail` |
-|Audit & Info| Configure Audit Trail| Configure audit trail. | `auditInfoConfigureAuditTrail` |
-| API |Use|Use the Cloud SOAR API. | `apiUse` |
-| API |API Admin|Administer Cloud SOAR API. | `apiAdmin` |
-| API |Email Read|Read email artifacts. | `emailRead` |
-| API |Email Edit| Create, edit, delete email artifacts. | `emailEdit` |
-|Incident Templates | Access | View incident templates. | `incidentTemplatesAccess` |
-|Incident Templates | Configure| Configure incident templates. | `incidentTemplatesConfigure` |
-|Automation Rules | Access | View automation rules. | `automationRulesAccess` |
-|Automation Rules | Configure| Configure automation rules. | `automationRulesConfigure` |
-|Entities | Access | View entities. | `entitiesAccess` |
-|Entities | Manage| Create, edit, delete entities. | `entitiesManage` |
-|Entities |Bulk Physical Delete|Bulk-delete entities. | `entitiesBulkPhysicalDelete` |
-|Report| Access | View reports. | `reportAccess` |
-|Report| Access All| Access all reports. | `reportAccessAll` |
-|Dashboard| Access | View dashboards. | `dashboardAccess` |
-|Dashboard| Access All| Access all dashboards. | `dashboardAccessAll` |
-|Widgets |Use All|Use all widgets. | `widgetsUseAll` |
+| Capability category | Capability | Description| API |
+| :-- | :-- | :-- |:--|
+|View Cloud SOAR||Show “Cloud SOAR” link in nav.|`viewCloudSoar`|
+|Incident|View|View all [incidents](/docs/cloud-soar/incidents-triage/).|`cloudSoarIncidentView`|
+|Incident|Access|Access your incidents.|`cloudSoarIncidentAccess`|
+|Incident|Access All|Access all incidents.|`cloudSoarIncidentAccessAll`|
+|Incident|Edit|Create, edit, delete incidents.|`cloudSoarIncidentEdit`|
+|Incident|Bulk Operations|Manage incident bulk operations.|`cloudSoarIncidentBulkOperations`|
+|Incident|Manage Investigators|Assign/remove investigators.|`cloudSoarIncidentManageInvestigators`|
+|Incident|Change Ownership|Change incident ownership.|`cloudSoarIncidentChangeOwnership`|
+|Triage|View|View all [triage](/docs/cloud-soar/incidents-triage/).|`cloudSoarIncidentTriageView`|
+|Triage|Access|Access your triage events.|`cloudSoarIncidentTriageAccess`|
+|Triage|Access All|Access all triage events.|`cloudSoarIncidentTriageAccessAll`|
+|Triage|Change Ownership|Change triage ownership.|`cloudSoarIncidentTriageChangeOwnership`|
+|Triage|Edit|Create, edit, delete triage events.|`cloudSoarIncidentTriageEdit`|
+|Triage|Bulk Physical Delete|Bulk-delete triage events.|`cloudSoarIncidentTriageBulkPhysicalDelete`|
+|Folders|Edit|Create, edit, delete playbook folders.|`cloudSoarIncidentFoldersEdit`|
+|Attachments|Access|View attachments.|`cloudSoarIncidentAttachmentsAccess`|
+|Attachments|Edit|Create, edit, delete attachments.|`cloudSoarIncidentAttachmentsEdit`|
+|Incident Playbook|Access|View playbooks.|`cloudSoarIncidentPlaybooksAccess`|
+|Incident Playbook|Edit|Create, edit, delete playbooks.|`cloudSoarIncidentPlaybooksEdit`|
+|Incident Playbook|Manage|Manage playbook lifecycle.|`cloudSoarIncidentPlaybooksManage`|
+|Note|Access|View notes.|`cloudSoarIncidentNotesAccess`|
+|Note|Edit|Create, edit, delete notes.|`cloudSoarIncidentNotesEdit`|
+|War Room|Use|Participate in War Room.|`cloudSoarIncidentWarRoomUse`|
+|Settings General|Configure|Configure global settings.|`cloudSoarGeneralConfigure`|
+|User Management|Groups|Manage groups.|`cloudSoarUserManagementGroups`|
+|Notification|Configure|Configure notifications.|`cloudSoarNotificationConfigure`|
+|Customization|Logo|Customize logo.|`cloudSoarCustomizationLogo`|
+|Customization|Fields|Customize fields.|`cloudSoarCustomizationFields`|
+|Customization|Incident Labels|Customize incident labels.|`cloudSoarCustomizationIncidentLabels`|
+|Customization|Triage|Customize triage UI.|`cloudSoarCustomizationTriage`|
+|Audit & Info|License Information|View license audit info.|`cloudSoarAuditAndInformationLicenseInformation`|
+|Audit & Info|Audit Trail|View audit trail.|`cloudSoarAuditAndInformationAuditTrail`|
+|Audit & Info|Configure Audit Trail|Configure audit trail.|`cloudSoarAuditAndInformationConfigureAuditTrail`|
+|API|Use|Use the Cloud SOAR API.|`cloudSoarAPIUse`|
+|API|API Admin|Administer Cloud SOAR API.|`cloudSoarAPIAdmin`|
+|API|Email Read|Read email artifacts.|`cloudSoarAPIEmailRead`|
+|API|Email Edit|Create, edit, delete email artifacts.|`cloudSoarAPIEmailEdit`|
+|Incident Templates|Access|View incident templates.|`cloudSoarIncidentTemplatesAccess`|
+|Incident Templates|Configure|Configure incident templates.|`cloudSoarIncidentTemplatesConfigure`|
+|Automation Rules|Access|View automation rules.|`cloudSoarAutomationRulesAccess`|
+|Automation Rules|Configure|Configure automation rules.|`cloudSoarAutomationRulesConfigure`|
+|Entities|Access|View entities.|`cloudSoarEntitiesAccess`|
+|Entities|Manage|Create, edit, delete entities.|`cloudSoarEntitiesManage`|
+|Entities|Bulk Physical Delete|Bulk-delete entities.|`cloudSoarEntitiesBulkPhysicalDelete`|
+|Report|Access|View reports.|`cloudSoarReportAccess`|
+|Report|Access All|Access all reports.|`cloudSoarReportAll`|
+|Dashboard|Access|View dashboards.|`cloudSoarDashboardAccess`|
+|Dashboard|Access All|Access all dashboards.|`cloudSoarDashboardAll`|
+|Widgets|Use All|Use all widgets.|`cloudSoarWidgetsAll`|
 
 ### Legacy Cloud SOAR
 
@@ -156,27 +160,20 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 
 | Capability | Description | API |
 | :-- | :-- | :-- |
-|Task View|See tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). | `taskView` |
-|Task Access | Access your tasks in playbooks. | `taskAccess` |
-|Task Access All| Access all user tasks in playbooks. | `taskAccessAll` |
-|Task Edit| Configure tasks in playbooks. | `taskEdit` |
-|Task Reassign|Assign tasks in playbooks to users. | `taskReassign` |
-|App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `appCentralAccess` |
-|App Central Export|Export integrations and playbooks from App Central. | `appCentralExport` |
-|Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `integrationsAccess` |
-|Integrations Configure| Create and edit integrations. | `integrationsConfigure` |
-|Playbooks Access | View playbooks. | `playbooksAccess` |
-|Playbooks Configure| Create and edit playbooks. | `playbooksConfigure` |
-|Bridge Monitoring Access |Monitor Bridge operations. | `bridgeMonitoringAccess` |
-|Observability Access | Access automation in the SaaS Log UI. | `observabilityAccess` |
-|Observability Configure| Create and edit automation in the SaaS Log UI. | `observabilityConfigure` |
-
-## Settings General
-
-## Content
-
-## Configuration
-
+| Task View|See tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). | `taskView` |
+| Task Access | Access your tasks in playbooks. | `taskAccess` |
+| Task Access All| Access all user tasks in playbooks. | `taskAccessAll` |
+| Task Edit| Configure tasks in playbooks. | `taskEdit` |
+| Task Reassign|Assign tasks in playbooks to users. | `taskReassign` |
+| App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `appCentralAccess` |
+| App Central Export|Export integrations and playbooks from App Central. | `appCentralExport` |
+| Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `integrationsAccess` |
+| Integrations Configure| Create and edit integrations. | `integrationsConfigure` |
+| Playbooks Access | View playbooks. | `playbooksAccess` |
+| Playbooks Configure| Create and edit playbooks. | `playbooksConfigure` |
+| Bridge Monitoring Access |Monitor Bridge operations. | `bridgeMonitoringAccess` |
+| Observability Access | Access automation in the SaaS Log UI. | `observabilityAccess` |
+| Observability Configure | Create and edit automation in the SaaS Log UI. | `observabilityConfigure` |
 
 ## Alerting
 
@@ -191,9 +188,28 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 
 ## Open Analytics
 
+<!-- UI capabilities don't match API spec capabilities -->
+
+| Capability | Description | API |
+| :-- | :-- | :-- |
+| Manage Open Analytics Endpoint | ? | ? |
 
 ## Usage Management
 
+<!-- UI capabilities don't match API spec capabilities -->
+
+| Capability | Description | API |
+| :-- | :-- | :-- |
+| Manage Users And Roles | ? | ? |
+
+## Usage Management
+
+<!-- UI capabilities don't match API spec capabilities -->
+
+| Capability | Description | API |
+| :-- | :-- | :-- |
+| View Usage Management | ? | ? |
+| Manage Usage Management | ? | ? |
 
 ## Reliability Management
 
@@ -204,15 +220,25 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 
 ## Threat Intel
 
+<!-- UI capabilities don't match API spec capabilities -->
+
 | Capability | Description | API |
 | :-- | :-- | :-- |
-| View Threat Intel Data Store| View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | `viewThreatIntelDataStore` |
-| Manage Threat Intel Data Store| Create, edit, and delete threat intel sources. | `manageThreatIntelDataStore` |
+| View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | `viewThreatIntelDataStore` |
+| Manage Threat Intel Data Store | Create, edit, and delete threat intel sources. | `manageThreatIntelDataStore` |
 
 ## Macros
 
+<!-- UI capabilities don't match API spec capabilities -->
+
+| Capability | Description | API |
+| :-- | :-- | :-- |
+| Manage Macros | ? | ? |
+
 
 ## Organizations
+
+<!-- UI capabilities don't match API spec capabilities -->
 
 | Capability | Description | API |
 | :-- | :-- | :-- |
@@ -227,54 +253,77 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 
 [Cloud SIEM](/docs/cse/) features only show if enabled.
 
-| Capability category | Capability | Description | API |
-| :-- | :-- | :-- | :-- |
-| View Cloud SIEM||Show “Cloud SIEM” link in nav. | `viewCloudSiem` |
-|Insights |Comment on Insights |Add comments to [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui). | `insightsCommentOnInsights` |
-|Insights | Create Insights | Create new Insights. | `insightsCreateInsights` |
-|Insights |Delete Insights |Delete existing Insights. | `insightsDeleteInsights` |
-|Insights |Invoke Insights Actions |Run an [Action](/docs/cse/administration/create-cse-actions) on an Insight. | `insightsInvokeInsightsActions` |
-|Insights | Manage Insight Assignee|Change who’s assigned to an Insight. | `insightsManageInsightAssignee` |
-|Insights | Manage Insight Signals |Add/remove Signals on an Insight. | `insightsManageInsightSignals` |
-|Insights | Manage Insight Status |Change an Insight’s status. | `insightsManageInsightStatus` |
-|Insights | Manage Insight Tags |Add/delete [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules). | `insightsManageInsightTags` |
-|Content| View Rules | View [rules](/docs/cse/rules/about-cse-rules). | `contentViewRules` |
-|Content| Manage Rules | Create, edit, delete rules. | `contentManageRules` |
-|Content| View Threat Intelligence| View [threat intel sources](/docs/cse/administration/create-custom-threat-intel-source). | `contentViewThreatIntelligence` |
-|Content| Manage Threat Intelligence| Create, edit, delete threat intel sources. | `contentManageThreatIntelligence` |
-|Content| View Match Lists | View [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list). | `contentViewMatchLists` |
-|Content| Manage Match Lists | Create, edit, delete Match Lists. | `contentManageMatchLists` |
-|Content| View File Analysis | View [YARA rules](/docs/cse/rules/import-yara-rules). | `contentViewFileAnalysis` |
-|Content| Manage File Analysis | Create, edit, delete YARA rules. | `contentManageFileAnalysis` |
-|Content| View Custom Insights | View [custom Insights](/docs/cse/records-signals-entities-insights/configure-custom-insight). | `contentViewCustomInsights` |
-|Content| Manage Custom Insights | Create, edit, delete custom insights. | `contentManageCustomInsights` |
-|Content| View Network Blocks | View [network blocks](/docs/cse/administration/create-use-network-blocks). | `contentViewNetworkBlocks` |
-|Content| Manage Network Blocks | Create, edit, delete network blocks. | `contentManageNetworkBlocks` |
-|Content| View Suppressed Entities | View [suppressed entities](/docs/cse/records-signals-entities-insights/about-signal-suppression). | `contentViewSuppressedEntities` |
-|Content| Manage Suppressed Entities |Suppress/unsuppress entities. | `contentManageSuppressedEntities` |
-| Configuration | View Mappings | View [mappings](/docs/cse/schema/create-structured-log-mapping). | `configurationViewMappings` |
-| Configuration | Manage Mappings | Create, edit, delete mappings. | `configurationManageMappings` |
-| Configuration | View Workflow| View detection settings, statuses, resolutions, tag schemas. | `configurationViewWorkflow` |
-| Configuration | Manage Workflow| Create, edit, delete detection settings, statuses, resolutions, tag schemas. | `configurationManageWorkflow` |
-| Configuration | View Context Actions | View [Context Actions](/docs/cse/administration/create-cse-context-actions). | `configurationViewContextActions` |
-| Configuration | Manage Context Actions | Create, edit, delete Context Actions. | `configurationManageContextActions` |
-| Configuration | View Actions | View [Actions](/docs/cse/administration/create-cse-actions). | `configurationViewActions` |
-| Configuration | Manage Actions | Create, edit, delete Actions. | `configurationManageActions` |
-| Configuration | View Enrichments | View [enrichments](/docs/cse/integrations/enrichments-and-indicators). | `configurationViewEnrichments` |
-| Configuration | Manage Enrichments |Upload enrichment data via API. | `configurationManageEnrichments` |
-| Configuration | View Custom Entity Types | View [custom entity types](/docs/cse/records-signals-entities-insights/create-custom-entity-type). | `configurationViewCustomEntityTypes` |
-| Configuration | Manage Custom Entity Types | Create, edit, delete custom entity types. | `configurationManageCustomEntityTypes` |
-| Configuration | View Entity| View [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities). | `configurationViewEntity` |
-| Configuration | Manage Entity| Create, edit, delete entities. | `configurationManageEntity` |
-| Configuration | View Entity Normalization| View Domain Normalization settings. | `configurationViewEntityNormalization` |
-| Configuration | Manage Entity Normalization|Update Domain Normalization settings. | `configurationManageEntityNormalization` |
-| Configuration | View Entity Criticality| View [Entity Criticalities](/docs/cse/records-signals-entities-insights/entity-criticality). | `configurationViewEntityCriticality` |
-| Configuration | Manage Entity Criticality| Create, edit, delete entity criticalities. | `configurationManageEntityCriticality` |
-| Configuration | View Tag Schemas | View [tag schemas](/docs/cse/administration/create-a-custom-tag-schema). | `configurationViewTagSchemas` |
-| Configuration | Manage Tag Schemas | Create, edit, delete tag schemas. | `configurationManageTagSchemas` |
-| Configuration | Manage Favorite Fields |Add/remove favorite fields in Records UI. | `configurationManageFavoriteFields` |
-| Configuration | View Entity Groups | View [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group). | `configurationViewEntityGroups` |
-| Configuration | Manage Entity Groups | Create, edit, delete entity groups. | `configurationManageEntityGroups` |
-| Configuration | View Automations | View [automations](/docs/cse/automation/automations-in-cloud-siem/). | `configurationViewAutomations` |
-| Configuration | Manage Automations | Create, edit, delete automations. | `configurationManageAutomations` |
-| Configuration | Execute Automations |Run automations. | `configurationExecuteAutomations` |
+| Capability      | Description                            | API       |
+| :--             | :--                                    | :--       |
+| View Cloud SIEM | Show “Cloud SIEM” link in nav.         | `viewCse` |
+
+## Cloud SIEM
+
+[Cloud SIEM](/docs/cse/) features only show if enabled.
+
+| Capability| Description | API |
+| :-- | :-- | :-- |
+|View Cloud SIEM|Show “Cloud SIEM” link in nav.|`viewCse`|
+
+### Insights
+
+| Capability| Description | API |
+| :-- | :-- | :-- |
+|Comment on Insights|Add comments to [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui).|`cseCommentOnInsights`|
+|Create Insights|Create new Insights.|`cseCreateInsights`|
+|Delete Insights|Delete existing Insights.|`cseDeleteInsights`|
+|Invoke Insights Actions|Run an [Action](/docs/cse/administration/create-cse-actions) on an Insight.|`cseInvokeInsights`|
+|Manage Insight Assignee|Change who’s assigned to an Insight.|`cseManageInsightAssignee`|
+|Manage Insight Signals|Add/remove Signals on an Insight.|`cseManageInsightSignals`|
+|Manage Insight Status|Change an Insight’s status.|`cseManageInsightStatus`|
+|Manage Insight Tags|Add/delete [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules).|`cseManageInsightTags`|
+
+### Content
+
+| Capability| Description | API |
+| :-- | :-- | :-- |
+|View Rules|View [rules](/docs/cse/rules/about-cse-rules).|`cseViewRules`|
+|Manage Rules|Create, edit, delete rules.|`cseManageRules`|
+|View Threat Intelligence|View [threat intel sources](/docs/cse/administration/create-custom-threat-intel-source).|`cseViewThreatIntelligence`|
+|Manage Threat Intelligence|Create, edit, delete threat intel sources.|`cseManageThreatIntelligence`|
+|View Match Lists|View [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list).|`cseViewMatchLists`|
+|Manage Match Lists|Create, edit, delete Match Lists.|`cseManageMatchLists`|
+|View File Analysis|View [YARA rules](/docs/cse/rules/import-yara-rules).|`cseViewFileAnalysis`|
+|Manage File Analysis|Create, edit, delete YARA rules.|`cseManageFileAnalysis`|
+|View Custom Insights|View [custom Insights](/docs/cse/records-signals-entities-insights/configure-custom-insight).|`cseViewCustomInsights`|
+|Manage Custom Insights|Create, edit, delete custom insights.|`cseManageCustomInsights`|
+|View Network Blocks|View [network blocks](/docs/cse/administration/create-use-network-blocks).|`cseViewNetworkBlocks`|
+|Manage Network Blocks|Create, edit, delete network blocks.|`cseManageNetworkBlocks`|
+|View Suppressed Entities|View [suppressed entities](/docs/cse/records-signals-entities-insights/about-signal-suppression).|`cseViewSuppressedEntities`|
+|Manage Suppressed Entities|Suppress/unsuppress entities.|`cseManageSuppressedEntities`|
+
+### Configuration
+
+| Capability| Description | API |
+| :-- | :-- | :-- |
+|View Mappings|View [mappings](/docs/cse/schema/create-structured-log-mapping).|`cseViewMappings`|
+|Manage Mappings|Create, edit, delete mappings.|`cseManageMappings`|
+|View Workflow|View detection settings, statuses, resolutions, tag schemas.|`cseViewTagSchemas`|
+|Manage Workflow|Create, edit, delete detection settings, statuses, resolutions, tag schemas.|`cseManageTagSchemas`|
+|View Context Actions|View [Context Actions](/docs/cse/administration/create-cse-context-actions).|`cseViewContextActions`|
+|Manage Context Actions|Create, edit, delete Context Actions.|`cseManageContextActions`|
+|View Actions|View [Actions](/docs/cse/administration/create-cse-actions).|`cseViewActions`|
+|Manage Actions|Create, edit, delete Actions.|`cseManageActions`|
+|View Enrichments|View [enrichments](/docs/cse/integrations/enrichments-and-indicators).|`cseViewEnrichments`|
+|Manage Enrichments|Upload enrichment data via API.|`cseManageEnrichments`|
+|View Custom Entity Types|View [custom entity types](/docs/cse/records-signals-entities-insights/create-custom-entity-type).|`cseViewCustomEntityType`|
+|Manage Custom Entity Types|Create, edit, delete custom entity types.|`cseManageCustomEntityType`|
+|View Entity|View [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities).|`cseViewEntity`|
+|Manage Entity|Create, edit, delete entities.|`cseManageEntity`|
+|View Entity Normalization|View Domain Normalization settings.|`cseViewEntityConfiguration`|
+|Manage Entity Normalization|Update Domain Normalization settings.|`cseManageEntityConfiguration`|
+|View Entity Criticality|View [Entity Criticalities](/docs/cse/records-signals-entities-insights/entity-criticality).|`cseViewEntityCriticality`|
+|Manage Entity Criticality|Create, edit, delete entity criticalities.|`cseManageEntityCriticality`|
+|View Tag Schemas|View [tag schemas](/docs/cse/administration/create-a-custom-tag-schema).|`cseViewTagSchemas`|
+|Manage Tag Schemas|Create, edit, delete tag schemas.|`cseManageTagSchemas`|
+|Manage Favorite Fields|Add/remove favorite fields in Records UI.|`cseManageFavoriteFields`|
+|View Entity Groups|View [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group).|`cseViewEntityGroups`|
+|Manage Entity Groups|Create, edit, delete entity groups.|`cseManageEntityGroups`|
+|View Automations|View [automations](/docs/cse/automation/automations-in-cloud-siem/).|`cseViewAutomations`|
+|Manage Automations|Create, edit, delete automations.|`cseManageAutomations`|
+|Execute Automations|Run automations.|`cseExecuteAutomations`|
