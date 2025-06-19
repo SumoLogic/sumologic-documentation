@@ -185,7 +185,9 @@ You can switch to the graphical view by clicking **Graph View** in the upper-rig
 
 ## Migrate from legacy actions and enrichments to the Automation Service
 
-In the future, [Cloud SIEM Actions](/docs/cse/administration/create-cse-actions/) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/) will be deprecated because comparable behavior is available in the Automation Service. To continue using the same functionality found in the legacy actions and enrichments, [use installed playbooks](#use-installed-playbooks) in the Automation Service, or [replace the legacy actions and enrichments](#replace-legacy-actions-and-enrichments) by adding the corresponding actions to playbooks you create in the Automation Service.
+Instead of using [Cloud SIEM Actions](/docs/cse/administration/create-cse-actions/) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/), we recommend you use the Automation Service. The Automation Service is a newer way to perform actions and enrichments. 
+
+To continue using the same functionality found in the legacy actions and enrichments, [use installed playbooks](#use-installed-playbooks) in the Automation Service, or [replace the legacy actions and enrichments](#replace-legacy-actions-and-enrichments) by adding the corresponding actions to playbooks you create in the Automation Service.
 
 Migrating to the Automation Service has many benefits over using legacy actions and enrichments. With the Automation Service, you can:
 * Run actions in playbooks rather than singly.
