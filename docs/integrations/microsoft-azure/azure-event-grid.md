@@ -136,7 +136,7 @@ Use this dashboard to:
 * Monitor dropped event counts over time and investigate the reasons behind event drops to improve system reliability.
 * Track the top failed topics and delivery destinations to prioritize troubleshooting efforts and optimize event routing.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Topic-Domain.png')} alt="Azure Event Grid - Domain Errors" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Domain-Errors.png')} alt="Azure Event Grid - Domain Errors" style={{border: '1px solid gray'}} width="800" />
 
 ### Topic Operations
 
