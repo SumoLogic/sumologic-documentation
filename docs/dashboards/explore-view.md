@@ -175,19 +175,6 @@ Navigation capabilities allow you to quickly locate the object that needs debugg
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ### Step 1: Analyzing the cluster

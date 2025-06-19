@@ -33,17 +33,4 @@ Watch a micro lesson on deploying the AWS Observability Solution. 
   allowfullscreen
 />
 
-<!--
-<Iframe url="https://www.youtube.com/embed/_5JHkxG7ZMo?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
