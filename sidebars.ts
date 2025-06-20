@@ -2583,6 +2583,7 @@ integrations: [
           'integrations/saas-cloud/salesforce',
           'integrations/saas-cloud/sentinelone',
           'integrations/saas-cloud/slack',
+          'integrations/saas-cloud/snowflake-logs',
           'integrations/saas-cloud/sophos',
           'integrations/saas-cloud/sumo-collection',
           'integrations/saas-cloud/symantec-endpoint-security-service',
