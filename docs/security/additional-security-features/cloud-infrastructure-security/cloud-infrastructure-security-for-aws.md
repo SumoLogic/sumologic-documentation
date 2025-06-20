@@ -41,19 +41,6 @@ Watch the following micro lesson to learn about Cloud Infrastructure Security fo
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/JD9tNfCW7uo?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
-
 :::
 
 ## Log types

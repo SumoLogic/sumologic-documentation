@@ -48,18 +48,6 @@ While the components at the beginning of the value do not add any obvious value,
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/vkKeJOBVVjk"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"      allowfullscreen
-     />
--->
-
 :::
 
 ### Define the Scope of Searches

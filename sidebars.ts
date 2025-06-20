@@ -2529,6 +2529,7 @@ integrations: [
           'integrations/saas-cloud/acquia',
           'integrations/saas-cloud/airtable',
           'integrations/saas-cloud/akamai-cloud-monitor',
+          'integrations/saas-cloud/akamai-cpc',
           'integrations/saas-cloud/akamai-datastream',
           'integrations/saas-cloud/armis',
           'integrations/saas-cloud/asana',

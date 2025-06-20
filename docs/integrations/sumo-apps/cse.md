@@ -26,18 +26,6 @@ Watch this micro lesson to learn more about the Enterprise Audit - Cloud SIEM ap
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/nYX0prIzDGk?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 :::
 
 ## Log types
