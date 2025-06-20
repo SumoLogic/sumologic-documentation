@@ -153,7 +153,7 @@ Use the **Go To...** menu to access these Cloud SOAR features:
 * [**Entities**](/docs/cloud-soar/incidents-triage/#entities). Manage entities identified across incidents.
 * [**Fields**](/docs/cloud-soar/overview/#custom-fields). Customize fields to better suit your environment.
 * [**General**](#settings). Configure general Cloud SOAR settings.
-* [**Groups**](#groups). Create a group of users and assign a role to all the users in the group.
+* [**Groups**](#groups). Create a group of users that can be added as incident investigators.
 * [**Incidents**](/docs/cloud-soar/incidents-triage/#incidents). Manage security incidents that require investigation and action.
 * [**Incident Labels**](#incident-labels). Define labels for the different types of incidents that will be investigated.
 * [**Notifications**](#notifications). Configure notifications to Cloud SOAR users as well as other external users.
@@ -177,7 +177,7 @@ The **Administration** menu allows you to administer Sumo Logic features, such a
 Use the **Administration** menu to access:
 * [**General**](#general). Configure general Cloud SOAR settings.
 * [**Notifications**](#notifications). Configure notifications to Cloud SOAR users as well as other external users.
-* [**Groups**](#groups). Create a group of users and assign a role to all the users in the group.
+* [**Groups**](#groups). Create a group of users that can be added as incident investigators.
 
 
 ## Settings
@@ -229,26 +229,33 @@ For additional setup needed for Slack, see [Configure Slack for Cloud SOAR](/doc
 
 ### Groups
 
-[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access groups settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.
+A *group* in Cloud SOAR is a collection of users that can be added as incident investigators. When you have a number of users to add as investigators, adding a group of users is faster and easier than adding each user individually. In addition, you can assign everyone in the group the same profile (role), limiting them as incident investigators to only the rights that the profile gives them.
 
-[**New UI**](/docs/cloud-soar/overview#new-ui). To access groups settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
-
-
-<img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/>
+For example, let's say that you have a team of SOC analysts that share responsibility for investigating incidents. You can add all the members of the team to a group and give its members the "Analyst" profile. Then when you need to add the SOC analysts as investigators to incidents, you can simply select the group as the investigator.
 
 #### Create a group
 
-You can create a group of users and assign a role to all the users in the group. This makes it easy to assign a specialized role to multiple users at once rather than adding the users individually to the role.
-
-For example, say there is a group of users with different roles responsible for customer support. Access to a specific incident with restricted privileges needs to be granted to all investigators of the incident. You can create a role with just the needed [Cloud SOAR role capabilities](/docs/manage/users-roles/roles/role-capabilities/#cloud-soar) and select it as the role (also known as a profile) for members of the group. Then when you [add investigators](/docs/cloud-soar/incidents-triage/#add-investigators) for the incident, you can select the group rather than individual users.
-
-1. Click the **+** icon next to **Groups**. The **Add Groups** dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-add-group.png')} alt="Add Group dialog" style={{border: '1px solid gray'}} width="600"/>
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.<br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
+1. The **Groups** dialog displays. Click the **+** icon next to **Groups**. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/><br/>The **Add Groups** dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-add-group.png')} alt="Add Group dialog" style={{border: '1px solid gray'}} width="600"/>
 1. In **Name** enter a name for the group.
-1. In **Profile** select the role to use for members of the group. These are [roles](/docs/manage/users-roles/roles/) already created in the system.
+1. In **Profile** select the role to assign to members of the group. These are [roles](/docs/manage/users-roles/roles/) already created in the system.
 1. Click **Create**. The empty group is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-example-group.png')} alt="Example group" style={{border: '1px solid gray'}} width="600"/>
 1. Click the **+** icon next to **Members**.
 1. Select the users to add to the group.
-1. Click **Apply**.
+1. Click **Apply**. 
+
+#### Assign a group as an incident investigator
+
+To add a group as an incident investigator, follow the same steps as described in [Add investigators](/docs/cloud-soar/incidents-triage/#add-investigators):
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). At the top of the screen, click **Incidents**. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.  
+1. Check the incidents you want to add investigators to.
+1. Click the three-dot kebab menu in the upper left-hand corner of the screen.
+1. Select **Add Investigator**.<br/>The **Add Investigator** screen is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-add-investigator.png')} alt="Add Investigator dialog" style={{border: '1px solid gray'}} width="700"/>
+1. Select the group to add as investigator of the selected incidents. For example, in the sample screen above, select **SOC Team**.
+   :::note
+   The **Role** column displays the profile assigned to the members of the group. You cannot change the group's assigned profile (role) here like you can for individual users. You can only change the group's assigned profile on the group itself.
+   :::
+1. Click **Apply**. The group is added an an investigator of the selected incidents. While investigating the incidents, members of the group have the rights given by the the role (profile) assigned to members of the group.
 
 #### Group role assignments
 
