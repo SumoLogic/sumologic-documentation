@@ -150,7 +150,7 @@ UTC dates are expressed in the format `YYYY-MM-DD`. As for time, it's expressed 
 
 The logical disjunction operator `OR` can also be typed as a plus sign `+`. Sumo Logic Cloud SOAR will automatically convert it into `OR` and highlight it in light blue in order to differentiate it from the rest of the search query. The `OR` operator is used to express whether a given collection of items we are looking for satisfies one condition or the other. In the example, above, our collection of items have to satisfy the condition of having `"Test Incident" OR 'Real Incident'` as their incident ID.
 
-#### Logical conjuction
+#### Logical conjunction
 
 `incident id: Test Incident AND status: Open`
 
