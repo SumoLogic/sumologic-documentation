@@ -359,6 +359,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/snowflake-logs"><img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="icon" width="50"/><h4>Snowflake Logs</h4></a>
+  <p>Monitor the key metrics, query performance, and overall health of Snowflake environments to optimize Snowflake's potential.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/sophos"><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="60"/><h4>Sophos</h4></a>
   <p>Identify security threats by analyzing alerts and events logs.</p>
   </div>
