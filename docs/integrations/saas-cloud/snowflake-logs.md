@@ -9,9 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Thumbnail icon" width="150"/>
 
-The Sumo Logic app for Snowflake Logs offers a powerful analytics solution designed to help you fully leverage the Snowflake cloud data platform. Known for its scalability and advanced data warehousing capabilities and analytics, Snowflake supports data-driven decision-making at scale.
-
-The app provides real-time visibility into key metrics, query performance, and the overall health of Snowflake environments. By analyzing Snowflake logs, you can monitor system performance, track login activity, optimize data management, and maintain better control over your data warehouse.
+The Sumo Logic app for Snowflake Logs offers a powerful analytics solution designed to help you fully leverage the Snowflake cloud data platform. Known for its scalability and advanced data warehousing capabilities and analytics, Snowflake supports data-driven decision-making at scale. This app provides real-time visibility into key metrics, query performance, and the overall health of Snowflake environments. By analyzing Snowflake logs, you can monitor system performance, track login activity, optimize data management, and maintain better control over your data warehouse.
 
 With centralized monitoring and actionable insights, the app enables you to streamline operations, make informed decisions, and maximize the value of their Snowflake data assets.
 
@@ -26,7 +24,7 @@ This app uses Sumo Logic’s [Snowflake Logs Source](/docs/send-data/hosted-coll
 ### Sample log messages
 
 <details>
-<summary>LOGIN_HISTORY</summary>
+<summary>Login History</summary>
 
 ```json
 {
@@ -50,7 +48,7 @@ This app uses Sumo Logic’s [Snowflake Logs Source](/docs/send-data/hosted-coll
 </details>
 
 <details>
-<summary>SESSIONS</summary>
+<summary>Sessions</summary>
 
 ```json
 {
@@ -70,7 +68,7 @@ This app uses Sumo Logic’s [Snowflake Logs Source](/docs/send-data/hosted-coll
 </details>
 
 <details>
-<summary>STAGES</summary>
+<summary>Stages</summary>
 
 ```json
 {
@@ -98,7 +96,7 @@ This app uses Sumo Logic’s [Snowflake Logs Source](/docs/send-data/hosted-coll
 </details>
 
 <details>
-<summary>DATA_TRANSFER_HISTORY</summary>
+<summary>Data Transfer History</summary>
 
 ```json
 {
@@ -115,7 +113,7 @@ This app uses Sumo Logic’s [Snowflake Logs Source](/docs/send-data/hosted-coll
 </details>
 
 <details>
-<summary>GRANTS_TO_USERS</summary>
+<summary>Grants to User</summary>
 
 ```json
 {
@@ -210,7 +208,7 @@ Key panels include Total Users, 2FA Enabled Users, Total Sessions, User Geolocat
 
 ### Snowflake Logs - Security
 
-The **Snowflake Logs - Security** dashboard offers in-depth visibility into security-related activities and potential threats within your Snowflake environment. It highlights key events such as failed login attempts, data transfers, and geolocation-based login patterns. With metrics like Failed Login Summary, Data Transfer by Source Cloud Platform, and Transfers Over 1GB, the dashboard helps security teams identify anomalies, investigate incidents, and take proactive steps to mitigate risks effectively.
+The **Snowflake Logs - Security** dashboard offers in-depth visibility into security-related activities and potential threats within your Snowflake environment. It highlights key events such as failed login attempts, data transfers, and geolocation-based login patterns. With metrics like Failed Login Summary, Data Transfer by Source Cloud Platform, and Transfers Over 1GB, helping security teams identify anomalies, investigate incidents, and take proactive steps to mitigate risks effectively.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Snowflake-Logs/Snowflake+Logs+-+Security.png')} alt="Audits Overview dashboard" />
 
@@ -224,8 +222,8 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Snowflake Logs - Data Transfer Limitation` | This alert is triggered when more than 1GB data transfer in single session occurs. | Critical | Count > 0 | 
-| `Snowflake Logs - Logins from Embargoed Geo Locations` | This alert is triggered when logins are detected from sanctioned or embargoed regions. This helps you maintain adherence to legal and regulatory standards. | Critical | Count > 0|
+| `Snowflake Logs - Data Transfer Limitation` | This alert is triggered when more than 1GB data transfer occurs in single session. | Critical | Count > 0 | 
+| `Snowflake Logs - Logins from Embargoed Geo Locations` | This alert is triggered when logins are detected from sanctioned or embargoed regions, helping you to maintain adherence to legal and regulatory standards. | Critical | Count > 0|
 
 ## Upgrade/Downgrade the Snowflake Logs app (Optional)
 
