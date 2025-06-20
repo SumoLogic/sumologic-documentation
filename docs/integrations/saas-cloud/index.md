@@ -348,13 +348,13 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/slack"><img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="icon" width="50"/><h4>Slack</h4></a>
-  <p>Monitor the key metrics, query performance, and overall health of Snowflake environments to optimize Snowflake's potential.</p>
+  <p>Monitor analytics for your Slack users, channels, and access logs for workspaces.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/snowflake-logs"><img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="icon" width="50"/><h4>Snowflake Logs</h4></a>
-  <p>Monitor analytics for your Slack users, channels, and access logs for workspaces.</p>
+  <p>Monitor the key metrics, query performance, and overall health of Snowflake environments to optimize Snowflake's potential.</p>
   </div>
 </div>
 <div className="box smallbox card">
