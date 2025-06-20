@@ -37,19 +37,6 @@ Watch the following micro lesson to learn how to apply parsers to Cloud SIEM dat
   allowfullscreen
 />
 
-<!-- 
-<Iframe url="https://www.youtube.com/embed/CVaoD96Mhok?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
-
 :::
 
 ## Check parser code for mapping hints

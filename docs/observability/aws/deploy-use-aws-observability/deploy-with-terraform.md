@@ -1388,8 +1388,7 @@ wait_for_seconds = 180
 
 ### Override App Content Parameters
 
-As needed, override the app content parameters to configure how the AWS Observability app dashboards and alerts are installed in your Sumo Logic account. Enter the overrides in the **sumologic-solution-templates/aws-observability-terraform/main.tf**
-file. 
+As needed, override the app content parameters to configure how the AWS Observability app dashboards and alerts are installed in your Sumo Logic account. Enter the overrides in the `sumologic-solution-templates/aws-observability-terraform/main.tf` file. 
 
 The following is an example of the default value and override for app parameters:
 
@@ -1506,7 +1505,7 @@ python source-module/attach_fields_to_source.py
 Python: command not found
 ```
 #### Solution
-Identify and replace `python` with `python3` in [source-module/update_sources.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/AWSO_FY23Q4_Release/aws-observability-terraform/source-module/update_sources.tf#L12).
+Identify and replace `python` with `python3` in [source-module/update_sources.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/source-module/update_sources.tf#L12).
 
 ### Module not found
 #### Error Message

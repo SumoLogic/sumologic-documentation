@@ -27,19 +27,6 @@ Watch this micro lesson to learn how insights are created.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/MjzJlozR6mE?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Entities in messages are mapped to entity-type schema attributes
