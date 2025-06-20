@@ -204,6 +204,23 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
+## Create monitors for Azure Cosmos DB for PostgreSQL
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Cosmos DB for PostgreSQL alerts
+
+These alerts are metrics-based and will work for all Cosmos DB PostgreSQL instances.
+
+| Alert Name                                                         | Description                                                                                                                            | Alert Condition | Recover Condition |
+|:-------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------|:----------------|:------------------|
+| `Azure Cosmos DB for PostgreSQL - CPU Percent`                     | This alert is triggered when CPU usage spikes above 80% are detected for any Azure Cosmos DB for PostgreSQL instance.                  | Count > 80      | Count =< 70       |
+| `Azure Cosmos DB for PostgreSQL - Memory Percentage`               | This alert is triggered when average Memory utilization spikes above 80% are detected for any Azure Cosmos DB for PostgreSQL instance. | Count > 80      | Count =< 70       |
+| `Azure Cosmos DB for PostgreSQL - Storage Percentage`              | This alert is triggered when storage percentage goes above 70% for any Azure Cosmos DB for PostgreSQL instance.                        | Count > 80      | Count =< 70       |
+
+
 ## Troubleshooting
 
 ### HTTP Logs and Metrics Source used by Azure Functions
