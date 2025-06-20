@@ -118,8 +118,10 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Diagnostic-Logs.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="800" />
 
 3. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="400" />
-4. Some Auto tuning logs will be collected when Auto tuning feature is enabled in Azure SQL. You can learn more how to enable this feature [here](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?view=azuresql)
 
+:::note
+Auto Tuning logs will be collected when Auto Tuning feature is enabled in Azure SQL. Click [here](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?view=azuresql) to learn more on how to enable this feature.
+:::
 #### Enable SQL Security Audit logs
 In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
