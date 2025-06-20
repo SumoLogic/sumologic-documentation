@@ -1649,6 +1649,7 @@
   "/cid/6028": "/docs/integrations/saas-cloud/bitwarden",
   "/cid/6029": "/docs/integrations/saas-cloud/kaltura",
   "/cid/6030": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-logs-source",
+  "/cid/6031": "/docs/integrations/saas-cloud/snowflake-logs",
   "/cid/10112": "/docs/integrations/app-development/jfrog-xray",
   "/cid/10113": "/docs/observability/root-cause-explorer-deprecation",
   "/cid/10116": "/docs/manage/fields",
