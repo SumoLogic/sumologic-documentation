@@ -277,17 +277,15 @@ To deploy an AWS Security Hub App collector:
 
 Now that you have set up ingestion and collected findings for AWS Security Hub, you can install the Sumo Logic App for AWS Security Hub and use the preconfigured searches and dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
-## Viewing AWS Security Hub Dashboards
+## Viewing AWS Security Hub dashboards
 
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+<ViewDashboards/>
 
 ### Overview
 
