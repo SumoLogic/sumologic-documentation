@@ -30,20 +30,6 @@ Watch this micro lesson to learn more about ingest mapping for Cloud SIEM:
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/luPl_IB9b8A?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
-
 Watch this micro lesson to learn about forwarding ingested data to Cloud SIEM:
 
 <Iframe url="https://fast.wistia.net/embed/iframe/krg64dumyv?web_component=true&seo=true&videoFoam=false"
@@ -57,19 +43,6 @@ Watch this micro lesson to learn about forwarding ingested data to Cloud SIEM:
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/XCcu-YU9B5U?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 
 :::
 
