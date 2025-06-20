@@ -291,6 +291,7 @@ module.exports = {
                 'send-data/opentelemetry-collector/remote-management/troubleshooting',
               ],
             },
+            'send-data/opentelemetry-collector/view-opentelemetry-collection-page',
             'send-data/opentelemetry-collector/auto-discovery',
             'send-data/opentelemetry-collector/performance-benchmarks',
             'send-data/opentelemetry-collector/data-transformations',
