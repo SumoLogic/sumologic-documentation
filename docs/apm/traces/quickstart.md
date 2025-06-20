@@ -40,18 +40,6 @@ This micro lesson can help you get started with Tracing.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/BTqufvTJ4vE"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 :::
 
 Trace data is visualized through filtered trace lists and icicle charts allowing you to find and troubleshoot faulty transactions easily. See how easy it is to [view and investigate traces](view-and-investigate-traces.md).

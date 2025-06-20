@@ -43,19 +43,6 @@ Watch this micro lesson to learn more about incidents in Cloud SOAR.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/GDWFGJ8JOqA?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
---> 
-
 :::
 ### Filter incidents
 
@@ -348,19 +335,6 @@ Watch the following micro lesson to learn about dashboards.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/NRdtAvxhuOY?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
 
 :::
 
