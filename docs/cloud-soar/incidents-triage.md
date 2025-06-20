@@ -28,6 +28,22 @@ Incidents are events that require investigation and remediation. Incidents are a
 
 [**New UI**](/docs/cloud-soar/overview#new-ui). To access incidents, in the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.
 
+The **Incidents** screen lists all Cloud SOAR incidents. Clicking on any of the incident IDs will open the incident. You can configure what incidents are displayed by creating queries against available incident data and saving them as incident filters.
+
+The following criteria apply to the incidents list:
+* The last 500 incidents are displayed by default.
+* When no filters are applied, incidents that are marked as a favorite or not deleted will be displayed.
+* When a filter is applied, incidents marked as a favorite or that meet the filter criteria will be shown. Deleted incidents that satisfy either of these conditions will also be displayed.
+* If an incident is marked as a favorite, it will be displayed regardless of whether it has been deleted.
+* In **Show All**, all incidents meeting the above criteria will be displayed without the 500-item limit.
+
+<img src={useBaseUrl('img/cloud-soar/image140.png')} alt="Cloud SOAR incidents"/>
+
+You can configure what data is to be displayed on the **Incidents** screen by adjusting which columns are viewable. To adjust these columns, click the filter icon <img src={useBaseUrl('img/cloud-soar/filter-icon.png')} alt="Filter icon" width="25"/> in the top right corner of the screen. This displays a configuration screen that allows you to choose which data is displayed. To change where on the screen it should be displayed, click the **+** next to the selection and  drag and drop it in the order to be viewed. Once you have added and organized the columns, click **Apply**.
+
+<img src={useBaseUrl('img/cloud-soar/filter-incidents.png')} alt="Filter incidents" width="800"/>
+
+
 :::sumo Micro Lesson
 Watch this micro lesson to learn more about incidents in Cloud SOAR.
 
@@ -44,42 +60,121 @@ Watch this micro lesson to learn more about incidents in Cloud SOAR.
 />
 
 :::
-### Filter incidents
 
-The **Incidents** screen lists all Cloud SOAR incidents. Clicking on any of the incident IDs will open the incident. You can configure what incidents are displayed by creating queries against available incident data and saving them as incident filters.
-
-The following criteria apply to the incidents list:
-* The last 500 incidents are displayed by default.
-* When no filters are applied, incidents that are marked as a favorite or not deleted will be displayed.
-* When a filter is applied, incidents marked as a favorite or that meet the filter criteria will be shown. Deleted incidents that satisfy either of these conditions will also be displayed.
-* If an incident is marked as a favorite, it will be displayed regardless of whether it has been deleted.
-* In **Show All**, all incidents meeting the above criteria will be displayed without the 500-item limit.
-
-<img src={useBaseUrl('img/cloud-soar/image140.png')} alt="Cloud SOAR incidents"/>
-
-You can configure what data is to be displayed on the **Incidents** screen by adjusting which columns are viewable. To adjust these columns, click the filter icon <img src={useBaseUrl('img/cloud-soar/filter-icon.png')} alt="Filter icon" width="25"/> in the top right corner of the screen. This displays a configuration screen that allows you to choose which data is displayed. To change where on the screen it should be displayed, click the **+** next to the selection and  drag and drop it in the order to be viewed. Once you have added and organized the columns, click **Apply**.
-
-<img src={useBaseUrl('img/cloud-soar/filter-incidents.png')} alt="Filter incidents" width="800"/>
-
-#### Search incidents
-
-From the **Incidents** screen you can search, build, and issue queries against existing incidents by typing in the search bar at the top of the screen.
-
-Cloud SOAR also provides you with a command cheat sheet to help build incident filtering queries. To access the cheat sheet, click on the information icon <img src={useBaseUrl('img/cloud-soar/commands-cheat-sheet.png')} alt="Commands cheat sheet icon" width="25"/> in the search bar to display the query options.
-
-<img src={useBaseUrl('img/cloud-soar/image142.png')} alt="Search issues" width="800"/>
-
-#### Favorite incident searches
-
-Once a query or a search is committed, they can be saved for future use by clicking the star icon to the right of the search bar. These saved searches will be stored as bookmarks to the right of the search bar.
-
-<img src={useBaseUrl('img/cloud-soar/image145.png')} alt="save query" width="800"/>
-
-#### Bulk actions
+### Bulk actions
 
 Bulk actions may be performed on any incidents in the incidents list. To perform bulk actions on incidents, check the incidents you wish to perform the bulk actions on, then click the three-dot kebab menu in the upper left-hand corner of the screen and select the appropriate bulk action from the dropdown menu.
 
-<img src={useBaseUrl('img/cloud-soar/bulk-actions.png')} alt="Bulk actions" width="200"/>
+<img src={useBaseUrl('img/cloud-soar/bulk-actions.png')} alt="Bulk actions" width="800"/>
+
+### Query incidents
+
+From the **Incidents** screen you can build queries against existing incidents by typing in the search bar at the top of the screen.
+
+<img src={useBaseUrl('img/cloud-soar/image142.png')} alt="Search issues" width="800"/>
+
+Once a query is committed, it can be saved for future use by clicking the star icon to the right of the search bar. These saved searches will be stored as bookmarks to the right of the search bar.
+
+<img src={useBaseUrl('img/cloud-soar/image145.png')} alt="save query" width="800"/>
+
+Cloud SOAR also provides you with a command cheat sheet to help build incident filtering queries. To access the cheat sheet, click on the information icon in the search bar to display the query options.<br/><img src={useBaseUrl('img/cloud-soar/incident-query-cheatsheet.png')} alt="Cheat sheet icon" width="800"/>
+
+Following is the content of the cheat sheet.
+
+#### Operators
+
+* `+` OR operator
+* `,` AND operator
+* `>` Greater than
+* `<` Less than
+* `>=` Greater or equal to
+* `<=` Less or equal to
+* `!=` Not equal to
+* `=` Equal to
+
+#### Cross-matching
+
+`incident`
+
+To perform a simple cross-match search, simply write the keyword you want to search for into the query box. Matches will be found among all the items in the current database.
+
+#### Exact-matching
+
+`"incident"` or `'incident'`
+
+By wrapping a single or multiple keywords in double or single quotation marks, the given keywords will be searched as an exact matching. Longer or partial hits won't be included in the search results.
+
+#### Column specification
+
+`incident id: keyword`
+
+In order to specify a column where the search will be performed, write the name of the column (its name can be found in the headers of the table) followed by the colon symbol `:` and the keywords you wish to search for.
+
+#### Time intervals
+
+Time intervals in Sumo Logic Cloud SOAR are preceded by the pound/hashtag sign '#'. Time intervals are meant to be used to express precise time durations, such as '1 day and 15 hours' Time intervals can be expressed in two different forms: shorthanded and explicit.
+
+##### Shorthanded time intervals
+
+`#12 #1 #7 #0`
+
+The shorthanded form can only be used to express a time interval in hours. Following the pound/hashtag sign, include the amount of hours you wish to consider in your search. The time intervals written above mean the following: `#12` indicates the last twelve hours, `#1` the last hour, `#7` the last seven hours. `#0` is a special case as it stands for "now" or "in this moment".
+
+##### Explicit time intervals
+
+`#[1H 3D] #[4D 3W] #[1H 1Y] #[0D]`
+
+`#[1H 3D]` indicates a time period of three days and one hour, `#[4D 3W]` indicates three weeks and four days, `#[1H 1Y]` indicates one year and one hour. The last case `#[0D]` is identical to the shorthand form `#0`, indicating the present time when you are writing our search query. Note that `#[0D]`, `#[0H]`, `#0` or `#[0Y]` all express the same thing.
+
+`#|1H| #|3D 2M| #|1H 2D| ...`
+
+Time intervals can also be wrapped between pipes `|` instead of square brackets in order to indicate their absolute value.
+
+#### Date and time
+
+`incident id: Test Incident OR incident id: Real Incident`
+
+`incident id: Test Incident + incident id: Real Incident`
+
+Date and time, expressed in human-friendly formats can be input by using the date and time modal next to the filter bar. Their format will be automatically inherited from the general settings of Sumo Logic Cloud SOAR, so any kind of date-time format will be accepted. 
+
+As for date-time formats featuring letters such as the one in this example: `Thursday 30 April 2020` they will generally be converted into UTC date: `2020-04-30`
+
+UTC dates are expressed in the format `YYYY-MM-DD`. As for time, it's expressed into the following formula, when in UTC:` HH-MM`. Hours will be expressed in a 24h format. Note that when manually writing dates and time in queries, remember to follow the format that has been set in the general options, as it will be parsed accordingly to it.
+
+#### Logical disjunction
+
+`incident id: Test Incident OR incident id: Real Incident`
+
+`incident id: Test Incident + incident id: Real Incident`
+
+The logical disjunction operator `OR` can also be typed as a plus sign `+`. Sumo Logic Cloud SOAR will automatically convert it into `OR` and highlight it in light blue in order to differentiate it from the rest of the search query. The `OR` operator is used to express whether a given collection of items we are looking for satisfies one condition or the other. In the example, above, our collection of items have to satisfy the condition of having `"Test Incident" OR 'Real Incident'` as their incident ID.
+
+#### Logical conjuction
+
+`incident id: Test Incident AND status: Open`
+
+`incident id: Test Incident , status: Open`
+
+The logical disjunction operator `AND` can also be typed as a comma sign `,`. Sumo Logic Cloud SOAR will automatically convert it into `AND` and highlight it in light blue in order to differentiate it from the rest of the search query. The `AND` operator is used to express whether a given collection of items we are looking for satisfies both the described conditions. In the example above, our collection of items have to satisfy the condition of having `"Test Incident" AND` being open, as shown by the query status: `Open`.
+
+#### Comparison operators
+
+`>` greater than, `<` less than, and `!=` different than
+
+These operators are used most typically with dates and time intervals, but their usage with alphabetic characters is also allowed. They are inequality symbols that express some kind of difference between two values. Some examples of their use can be:
+
+`Incident id > m`
+
+`numeric_value > 30`
+
+The inequality operator `!=` can also be expressed with the alternative form: `'<>'`
+
+#### = Equality operator
+
+The equality operator is used to express equality between two values, and can be chained to other comparison operators to create more complex operators, namely: `>=` greater or equal and `<=` less than or equal`.
+
+In addition to that, it can also be used to express exact matching with the following value, becoming an alternate version for the quotes, as follows: `Incident Id = test` is equal to `Incident Id: "test"` and `Incident Id: 'test'`.
 
 ### Add investigators
 
@@ -354,7 +449,7 @@ You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo L
 
 ### Create widgets
 
-You can create widgets as needed to help analysts and administrators quickly get the information they need. Widgets are reusable pieces that display information in different forms, such as text, pie chart, bar chart, graph, or table.  
+You can create widgets as needed to help analysts and administrators quickly get the information they need. Widgets are reusable pieces that display information in different forms, such as text, pie chart, bar chart, graph, or table.
 
 1. Open the widgets panel:
       1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Go to the home screen. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **ecOps & Dashboard**.  
@@ -369,15 +464,34 @@ You can create widgets as needed to help analysts and administrators quickly get
 1. In **Name**, provide a name that clearly explains the widget's purpose.
 1. In **Group by**, select whether you want incidents listed in the widget to be grouped by **Status**, **Incident ID**, or **Start time**.
 1. On the left, select the type of widget to create (pie chart, bar chart, graph, table, or text).
-1. At the top, query for elements to view in the widget, such as incidents, notes, tasks, and attachments.
+1. At the top, query for incident data to view in the widget. 
+    :::tip
+    Experiment with creating incident queries to learn how to get exactly the results you want in widgets. See [Query incidents](/docs/cloud-soar/incidents-triage/#query-incidents).
+    :::
 1. Click **Public** if you want to make the widget available for others to use.
 1. Click **Save** when done.
+
+#### Example widgets
+
+Let's suppose we want to create a dashboard that shows the current open and frozen incidents. To do that, we need to create a widget for each type of incident, then add those widgets to the dashboard.
+
+1. [Create a widget](#create-widgets) to list open incidents in a table:
+   1. In the query bar at the top of the widget creation screen, enter `status:open` to query for all open incidents. (For information about creating incident queries, see [Query incidents](/docs/cloud-soar/incidents-triage/#query-incidents).)
+   1. From **Available**, select the columns to display in the widget: **Incident ID**, **Opening time**, **Status**, **Owner**.
+   1. In the left-hand side, select the table icon to display the data as a table.
+   1. Click **Save**. <br/><img src={useBaseUrl('img/cloud-soar/example-widget-for-open-incidents.png')} alt="Example widget for open incidents" style={{border: '1px solid gray'}} width="700"/>
+1. Create a widget to list frozen incidents in a table. Make the widget just like you did for the open incidents, but in the query bar at the top of the widget creation screen enter `status:frozen` to query for all frozen incidents.
+1. Create a widget to show the number of open versus frozen incidents in a pie chart:
+   1. In the query bar at the top of the widget creation screen, enter `status:Open OR status:Frozen` to query for all open or frozen incidents.
+   1. In the left-hand side, select the pie chart icon to display the data as a pie chart.
+   1. In **Group by** select **Status**. 
+   1. Click **Save**. <br/><img src={useBaseUrl('img/cloud-soar/example-pie-chart-widget.png')} alt="Example widget for open incidents" style={{border: '1px solid gray'}} width="700"/> 
+1. [Create a dashboard](#create-a-dashboard) and add the widgets to it:<br/><img src={useBaseUrl('img/cloud-soar/open-and-frozen-incidents.png')} alt="Open and frozen incidents" style={{border: '1px solid gray'}} width="800"/>
 
 ## Report
 
 With the **Report** option, you can create incident reports to share with others as well as [widgets](#create-widgets) to use in the report that display text, graphs, tables, and charts containing details about incidents and other aspects of Cloud SOAR.
 
- 
 1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Report**. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Cloud SOAR > Report**. You can also click the **Go To...** menu at the top of the screen and select **Report**. <br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" style={{border: '1px solid gray'}} width="700"/>
 1. Click the **+** icon in the upper left corner.
 1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets.  
