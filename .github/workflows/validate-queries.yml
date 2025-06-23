@@ -13,14 +13,6 @@ jobs:
         with:
           fetch-depth: 0  # Required for git diff detection
 
-      - name: Debug filesystem
-        if: ${{ always() }}
-        run: |
-          echo "Workspace contents:"
-          ls -R
-          echo "Scripts directory:"
-          ls -la scripts/
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
