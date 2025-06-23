@@ -12,6 +12,10 @@ For example, using `where` with the boolean operator [`isValidIP`](/docs/searc
     ```sql
     | where isValidIP("192.168.0.10")
     ```
+* Checking my PR:
+    ```sql
+    _collector="CustomLogLinesCollector" | where type="web"
+    ```
 * Filters as false and will not return results:
     ```sql
     | where !isValidIP("192.168.0.10")
