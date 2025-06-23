@@ -34,19 +34,6 @@ Watch this micro lesson to learn more about rules.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/RVGk2dDeHmk?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## About rule expressions

@@ -124,18 +124,15 @@ _sourceCategory=aws/vanta/*
 
 This section provides instructions for installing the Sumo Logic App for AWS Network Firewall.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
-## Viewing AWS Network Firewall Dashboards
+## Viewing AWS Network Firewall dashboards
 
-This section offers descriptions and examples for each of the pre-configured app dashboards.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
-
+<ViewDashboards/>
 
 ### Netflow Overview
 
