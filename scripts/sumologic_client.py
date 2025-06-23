@@ -44,4 +44,3 @@ class SumoLogicClient:
         response = self.session.get(f"{self.base_url}/search/jobs/{job_id}/messages")
         response.raise_for_status()
         return len(response.json()["messages"]) > 0
-        

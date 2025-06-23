@@ -1,13 +1,20 @@
 name: Validate SumoLogic Queries
 on: [pull_request, push]
-permissions:
-  contents: read
 
 jobs:
   validate-queries:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Required for git diff
+
+      - name: Debug filesystem
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -R
+          echo "Checking scripts directory:"
+          ls -la scripts/ || echo "No scripts directory found"
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -15,12 +22,16 @@ jobs:
           python-version: "3.10"
 
       - name: Install dependencies
-        run: |
-          pip install requests pyyaml
+        run: pip install requests pyyaml
 
       - name: Run validation
         env:
           SUMO_LOGIC_ACCESS_ID: ${{ secrets.SUMO_LOGIC_ACCESS_ID }}
           SUMO_LOGIC_ACCESS_KEY: ${{ secrets.SUMO_LOGIC_ACCESS_KEY }}
         run: |
-          python ./scripts/validate_queries.py
+          if [ -f "scripts/validate_queries.py" ]; then
+            python scripts/validate_queries.py
+          else
+            echo "::error::Script not found at scripts/validate_queries.py"
+            exit 1
+          fi
