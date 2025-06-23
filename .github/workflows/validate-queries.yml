@@ -1,5 +1,9 @@
-name: Validate SumoLogic Queries
-on: [pull_request, push]
+name: Validate SQL Queries
+on:
+  pull_request:
+    paths:
+      - 'docs/**/*.md'          # Only trigger when documentation changes
+      - 'scripts/validate_*.py' # Or when validation scripts change
 
 jobs:
   validate-queries:
@@ -7,14 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Required for git diff
+          fetch-depth: 0  # Required for git diff detection
 
       - name: Debug filesystem
+        if: ${{ always() }}
         run: |
-          echo "Current directory: $(pwd)"
+          echo "Workspace contents:"
           ls -R
-          echo "Checking scripts directory:"
-          ls -la scripts/ || echo "No scripts directory found"
+          echo "Scripts directory:"
+          ls -la scripts/
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -24,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests pyyaml
 
-      - name: Run validation
+      - name: Validate queries
         env:
           SUMO_LOGIC_ACCESS_ID: ${{ secrets.SUMO_LOGIC_ACCESS_ID }}
           SUMO_LOGIC_ACCESS_KEY: ${{ secrets.SUMO_LOGIC_ACCESS_KEY }}
@@ -32,6 +37,6 @@ jobs:
           if [ -f "scripts/validate_queries.py" ]; then
             python scripts/validate_queries.py
           else
-            echo "::error::Script not found at scripts/validate_queries.py"
+            echo "::error file=.github/workflows/validate_queries.yml::Validation script not found at scripts/validate_queries.py"
             exit 1
           fi
