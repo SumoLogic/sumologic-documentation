@@ -1,5 +1,7 @@
 name: Validate SumoLogic Queries
 on: [pull_request, push]
+permissions:
+  contents: read
 
 jobs:
   validate-sql:
