@@ -47,13 +47,12 @@ tenant_name=* namespace=Microsoft.Compute/virtualMachines resource_name=*
 | Fields extracted | Metric rule    |
 |:--|:--|
 | `vmname`  | `$resource_name._1` |
+
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
-:::note
-Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
-:::
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -126,7 +125,7 @@ The **Azure VM - Disk** dashboard provides details on the operational activities
 
 ### Administrative Operations
 
-The **Azure VM - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Virtual Machine resources. 
+The **Azure VM - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Virtual Machine resources.
 
 Use this dashboard to:
 * Monitor the distribution of operation types and their success rates to ensure proper functioning of your Virtual Machine.
@@ -137,13 +136,13 @@ Use this dashboard to:
 
 ### Policy and Recommendations
 
-The **Azure Virtual Machine - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Virtual Machine resources. 
+The **Azure Virtual Machine - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Virtual Machine resources.
 
 Use this dashboard to:
 * Monitor the success and failure rates of policy events to ensure proper configuration and compliance.
 * Track and analyse recent recommendations to improve the performance and security of your Vaults setup.
 * Identify trends in policy events and recommendations over time to proactively address potential issues.
-  
+
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Policy+and+Recommendations.png')} alt="Azure Key Vault - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### CPU

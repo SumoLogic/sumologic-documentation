@@ -38,11 +38,9 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
-:::note
-Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
-:::
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -63,13 +61,13 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    Set error logs related server parameters as given below:
    - error_server_log_file: set to *ON*
    - log_output: set to *FILE*
-   
+
    Set Slow Query logs related parameters as given below:
    - slow_query_log: set to *ON*
    - long_query_time: Set the number of seconds a query can run before it's considered "slow". The default is 10 seconds.
    - log_slow_admin_statements: set to *ON*
 4. Enable slow query and error logs.<br/><img src={useBaseUrl('img/send-data/azure-database-for-mysql-error-logs.png')} alt="Azure flexible mysql error logs" style={{border: '1px solid gray'}} width="800" />
-5. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="500" /> 
+5. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="500" />
 
 #### Activity Logs
 
@@ -80,7 +78,7 @@ Since this source contains logs from multiple regions, ensure that you do not ta
 :::
 
 ### Collecting Error Logs
-Error logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them, then [upload the logs](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) to a Sumo Logic HTTP source endpoint. Note that the HTTP source created to receive the error logs needs to be tagged with the following [fields](/docs/manage/fields/#manage-fields) with appropriate values. These values can be copied from the appropriate resource for which logs are ingested through the Azure Event Hub Source for Logs: 
+Error logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them, then [upload the logs](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) to a Sumo Logic HTTP source endpoint. Note that the HTTP source created to receive the error logs needs to be tagged with the following [fields](/docs/manage/fields/#manage-fields) with appropriate values. These values can be copied from the appropriate resource for which logs are ingested through the Azure Event Hub Source for Logs:
 
 - resource_name
 - location
@@ -116,7 +114,7 @@ As part of the app installation process, the following fields will be created by
 
 import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboardsIndex/> 
+<ViewDashboardsIndex/>
 
 ### Error Logs
 

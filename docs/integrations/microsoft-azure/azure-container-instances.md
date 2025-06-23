@@ -25,14 +25,12 @@ For more information on supported dimensions, refer to the [Azure documentation]
 
 * Set up application logs collection using fluent-bit sidecar container using the [http output plugin](https://docs.fluentbit.io/manual/1.5/pipeline/outputs/http) and the [tail input plugin](https://docs.fluentbit.io/manual/1.5/pipeline/inputs/tail). You must explicitly enable fluent-bit collection for each container group which you want to monitor.
 * Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
-  
-  :::note
-  Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
-  :::
 
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -44,7 +42,7 @@ Use existing resource group or create a new one for deploying Azure container in
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. Download and update the [output_conf.yaml](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/output_conf.yaml) file with the following configurations:
-   * Inputs pipeline uses the [tail input plugin](https://docs.fluentbit.io/manual/pipeline/inputs/tail). Update the path parameter value with the pattern specifying a specific log file or multiple ones through the use of common wildcards. 
+   * Inputs pipeline uses the [tail input plugin](https://docs.fluentbit.io/manual/pipeline/inputs/tail). Update the path parameter value with the pattern specifying a specific log file or multiple ones through the use of common wildcards.
       :::info
       Multiple patterns separated by commas are also allowed.
       :::

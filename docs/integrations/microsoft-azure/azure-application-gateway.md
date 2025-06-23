@@ -42,11 +42,9 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
-:::note
-Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
-:::
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -59,7 +57,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    1. Choose **Stream to an event hub** as the destination.
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azureapplicationgateway-logs.png')} alt="Azure Application Gateway logs" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Application Gateway Tag Location" style={{border: '1px solid gray'}} width="400" /> 
+1. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Application Gateway Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 :::note
 WAF logs and metrics will be available for WAF V2 tier and only after a WAF Policy has been associated with application gateway. Refer to the azure docs for more information.
