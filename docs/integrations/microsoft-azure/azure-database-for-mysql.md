@@ -78,7 +78,7 @@ Since this source contains logs from multiple regions, ensure that you do not ta
 :::
 
 ### Collecting Error Logs
-Error logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them, then [upload the logs](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) to a Sumo Logic HTTP source endpoint. Note that the HTTP source created to receive the error logs needs to be tagged with the following [fields](/docs/manage/fields/#manage-fields) with appropriate values. These values can be copied from the appropriate resource for which logs are ingested through the Azure Event Hub Source for Logs:
+Error logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them, then [upload the logs](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) to a Sumo Logic HTTP source endpoint. Note that the HTTP source created to receive the error logs needs to be tagged with the following [fields](/docs/manage/fields/#manage-fields) with appropriate values. These values can be copied from the appropriate resource for which logs are ingested through the Azure Event Hub Source for Logs: 
 
 - resource_name
 - location
