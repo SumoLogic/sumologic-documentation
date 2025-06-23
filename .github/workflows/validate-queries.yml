@@ -30,13 +30,9 @@ jobs:
         run: pip install requests pyyaml
 
       - name: Validate queries
+        working-directory: ./scripts
         env:
           SUMO_LOGIC_ACCESS_ID: ${{ secrets.SUMO_LOGIC_ACCESS_ID }}
           SUMO_LOGIC_ACCESS_KEY: ${{ secrets.SUMO_LOGIC_ACCESS_KEY }}
         run: |
-          if [ -f "scripts/validate_queries.py" ]; then
-            python scripts/validate_queries.py
-          else
-            echo "::error file=.github/workflows/validate_queries.yml::Validation script not found at scripts/validate_queries.py"
-            exit 1
-          fi
+          python validate_queries.py
