@@ -50,6 +50,10 @@ When you configure the Event Hubs source or HTTP source, plan your source catego
 
 To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
+:::note
+Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
+:::
+
 ### Configure logs collection
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
