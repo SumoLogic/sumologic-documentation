@@ -2,6 +2,7 @@
 import re
 import sys
 import os
+import json
 from pathlib import Path
 from sumologic_client import SumoLogicClient
 
