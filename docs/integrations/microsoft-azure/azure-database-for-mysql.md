@@ -114,7 +114,7 @@ As part of the app installation process, the following fields will be created by
 
 import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboardsIndex/>
+<ViewDashboardsIndex/> 
 
 ### Error Logs
 
