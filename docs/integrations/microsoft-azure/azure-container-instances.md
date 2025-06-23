@@ -42,7 +42,7 @@ Use existing resource group or create a new one for deploying Azure container in
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. Download and update the [output_conf.yaml](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/output_conf.yaml) file with the following configurations:
-   * Inputs pipeline uses the [tail input plugin](https://docs.fluentbit.io/manual/pipeline/inputs/tail). Update the path parameter value with the pattern specifying a specific log file or multiple ones through the use of common wildcards.
+   * Inputs pipeline uses the [tail input plugin](https://docs.fluentbit.io/manual/pipeline/inputs/tail). Update the path parameter value with the pattern specifying a specific log file or multiple ones through the use of common wildcards. 
       :::info
       Multiple patterns separated by commas are also allowed.
       :::
