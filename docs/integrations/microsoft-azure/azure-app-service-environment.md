@@ -12,7 +12,7 @@ An [Azure App Service Environment](https://learn.microsoft.com/en-us/azure/app-s
 
 The below instructions applies to App Service Environment v3.
 
-## Log and metric types
+## Log types
 
 For Azure App Service Environment, you can collect the following logs:
 
@@ -26,62 +26,7 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 
 You must explicitly enable diagnostic settings for each Azure App Service Environment you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AppServiceEnvironment/Logs`, `Azure/AppServiceEnvironment/Metrics`.
-
-### Configure field in field schema
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
-1. Search for following fields:
-   - `tenant_name`. This field is tagged at the collector level and you can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs to.
-   - `subscription_id`. ID associated with a subscription where resource is present.
-   - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for example, Microsoft.WEB).
-   - `resource_type`. Azure resource type (for example, SITES).
-   - `resource_name`. The name of the resource (for example, Azure Function App name).
-1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
-
-### Configure Field Extraction Rules
-
-Create a Field Extraction Rule (FER) by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/). If the FER already exists with same name, then skip this step.
-
-#### Azure location extraction FER
-
-```sql
-Rule Name: AzureLocationExtractionFER
-Applied at: Ingest Time
-Scope (Specific Data): tenant_name=*
-```
-
-```sql title="Parse Expression"
-json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
-| replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
-| if (!isBlank(resourceLocation), resourceLocation, location) as location
-| if (!isBlank(service_region), service_region, location) as location
-| if (isBlank(location), "global", location) as location
-| fields location
-```
-
-#### Resource ID extraction FER
-
-```sql
-Rule Name: AzureResourceIdExtractionFER
-Applied at: Ingest Time
-Scope (Specific Data): tenant_name=*
-```
-
-```sql title="Parse Expression"
-json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
-| if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
-| toUpperCase(resourceId) as resourceId
-| parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
-| parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
-| parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
-| parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
-| parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
-| if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-| fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
-```
+When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AppServiceEnvironment/Logs`.
 
 ### Configure logs collection
 
@@ -105,15 +50,27 @@ To collect activity logs, follow the instructions [here](/docs/integrations/micr
 
 This section provides instructions on how to install the Azure App Service Environment app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstall2/>
+<AppInstallIndexV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with an Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing Azure App Service Environment dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/>
 
 ### Overview
 

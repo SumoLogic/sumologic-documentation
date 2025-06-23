@@ -225,18 +225,21 @@ In this step, you deploy the events processor. This will create the AWS resource
 
 Now that you have set up collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
-## Viewing Amazon GuardDuty Dashboards
+## Viewing Amazon GuardDuty dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
 See the overview of GuardDuty threats including the severity, threat purpose, resource type, threat name, account ID, and region.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS_GuardDuty-Overview2.png')} alt="Amazon GuardDuty dashboards" />
-
 
 **GuardDuty Threat Map**. See the count of threats on a world map in the last 24 hours.
 
@@ -254,14 +257,11 @@ See the overview of GuardDuty threats including the severity, threat purpose, re
 
 **Severity and ResourceType**. See the count of severity levels in the last 24 hours by resource type on a bar chart.
 
-
 ### CloudTrail Details
-
 
 See the details of GuardDuty CloudTrail threats including the count, title, the trend, and action type.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/CloudTrailDetails.png')} alt="Amazon GuardDuty dashboards" />
-
 
 **CloudTrail Threats.** See the count of CloudTrail threats in the last 24 hours.
 
@@ -273,9 +273,7 @@ See the details of GuardDuty CloudTrail threats including the count, title, the 
 
 **CloudTrail Threats by Title, ActionType**. See the details of CloudTrail threats in the last 24 hours including the account ID, region, title, accesskey ID, principal ID,  action type, severity, and count, displayed in a table.
 
-
 ### Details
-
 
 See the GuardDuty threat details including the count, account-region trend, threat purpose, severity, resource type, and security group.
 
@@ -294,7 +292,6 @@ See the GuardDuty threat details including the count, account-region trend, thre
 **Severity by LocalPort**. See the count of severity by local port in the last 24 hours on a bar chart.
 
 **Threats by SecurityGroup**. See the count and percentage of threats in the last 24 hours by security group on a pie chart.
-
 
 ### VPCs, Subnets, Security Group Details
 
