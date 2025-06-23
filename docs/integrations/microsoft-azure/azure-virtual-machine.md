@@ -125,7 +125,7 @@ The **Azure VM - Disk** dashboard provides details on the operational activities
 
 ### Administrative Operations
 
-The **Azure VM - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Virtual Machine resources.
+The **Azure VM - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Virtual Machine resources. 
 
 Use this dashboard to:
 * Monitor the distribution of operation types and their success rates to ensure proper functioning of your Virtual Machine.
