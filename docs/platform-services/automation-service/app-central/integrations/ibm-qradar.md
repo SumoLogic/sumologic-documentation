@@ -33,8 +33,28 @@ IBM QRadar SIEM helps security teams detect, prioritize and respond to threats a
 ## Configure IBM QRadar in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your IBM QRadar server URL.
+
+* **Authentication method**. Select either **Username and password** or **Authentication token**.
+
+* **Username**. If you selected **Username and password** above, enter the username of an admin user authorized to authenticate the integration.
+
+* **Password**. If you selected **Username and password** above, enter the password for the admin user.
+
+* **Token**. If you selected **Authentication token** above, enter the [token](https://www.ibm.com/docs/en/qsip/7.5?topic=visibility-creating-authorized-service-token).
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ibm-qradar-configuration.png')} style={{border:'1px solid gray'}} alt="IBM QRadar configuration" width="400"/>
 
 For information about IBM QRadar, see [IBM QRadar documentation](https://www.ibm.com/support/pages/accessing-ibm-qradar-product-documentation).
 

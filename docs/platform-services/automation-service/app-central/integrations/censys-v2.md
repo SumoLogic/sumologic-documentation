@@ -21,13 +21,25 @@ Censys reduces your Internet attack surface by continually discovering unknown a
 ## Configure Censys V2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the URL of Censys V2, for example `https://search.censys.io`
 
-   * **Label**. Name of the resource.
-   * **URL**. URL of Censys V2 (example URL: [https://search.censys.io](https://search.censys.io/api)).
-   * **User ID**
-   * **User Secret** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/censys-v2/censys-v2-4.png')} style={{border:'1px solid gray'}} alt="censys" width="400"/>
+* **User ID**. Enter the [API ID](https://docs.censys.com/docs/ls-api).
+
+* **User Secret**. Enter the secret for the API ID.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/censys-v2-configuration.png')} style={{border:'1px solid gray'}} alt="Censys V2 configuration" width="400"/>
 
 For information about Censys V2, see [Censys documentation](https://docs.censys.com/docs).
 

@@ -79,13 +79,43 @@ If an existing Windows Server is not available, follow these steps to set up a n
 ## Configure Active Directory V2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-   * **Host**. The hostname or IP address of the AD server.
-   * **Login Port**. The port used for LDAP authentication (the default is `389` for LDAP and `636` for LDAPS).
-   * **Login DN (Distinguished Name)**. Enter the distinguished name format (for example, `CN=Administrator,CN=Users,DC=csoar,DC=com`). See the following sections for information about how to get the login DN.
-   * **Password**. The corresponding password for the provided username.
+* <IntegrationLabel/>
+* **Host**. The hostname or IP address of the AD server.
+
+* **Login Port**. The port used for LDAP authentication. The default is `389` for LDAP and `636` for LDAPS.
+
+* **Login DN (Distinguished Name)**. Enter the distinguished name format (for example, `CN=Administrator,CN=Users,DC=csoar,DC=com`). See the [following sections](#how-to-get-login-dn-with-a-local-account) for information about how to get the login DN.
+
+* **Password**. The corresponding password for the provided username.
+
+* **Connection Security**. Select the type of security to use for communication (**SSL**, **NonSSL**, **StartTLS**, or **LDAP over TLS**).
+
+* **CA Certificate Format**. Select the format (**PFX, P12** or **PEM**).
+
+* **CA Certificate**. Enter the certificate. Only required if you selected **LDAP over TLS**. The certificate must be in Base64 encoded format.
+
+* **Certificate Passphrase**. Enter the passphrase. Only required if you selected the **PFX, P12** certificate format.
+
+* **Base DN**. Enter the Base Distinguished Name. 
+
+* **Global Catalog or DN Port**. Select the catalog or port. For global catalog, select port 3268 for LDAP or 3269 for secure LDAP.
+
+* <IntegrationTimeout/>
+* **Docker Hostnames**. Enter the container's hostname.
+
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-configuration.png')} style={{border:'1px solid gray'}} alt="Active Directory V2 configuration" width="400"/>
 
 For information about Microsoft Entra Connect V2 (formerly Active Directory V2), see [Microsoft Entra Connect V2 documentation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2).
 

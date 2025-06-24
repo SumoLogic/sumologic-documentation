@@ -34,12 +34,23 @@ Cybersecurity Help is a global vulnerability intelligence provider.
 ## Configure Cybersecurity Help in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter you Cybersecurity Help URL. The default value is `https://www.cybersecurity-help.cz`
 
-   * **Label**. The desired name for the resource.
-   * **URL**. The default Cybersecurity Help url is [https://www.cybersecurity-help.cz](https://www.cybersecurity-help.cz/).
-   * **Token**. Your Cybersecurity Help token you copied earlier from Cybersecurity Help.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cybersecurity-help/cybersecurity-help-5.png')} style={{border:'1px solid gray'}} alt="cybersecurity" width="400"/>
+* **Token**. Enter the Cybersecurity Help token you [copied earlier](#cybersecurity-help-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/cybersecurity-help-configuration.png')} style={{border:'1px solid gray'}} alt="Cybersecurity Help configuration" width="400"/>
 
 For information about Cybersecurity Help, see the [Cybersecurity Help website](https://www.cybersecurity-help.cz/).
 

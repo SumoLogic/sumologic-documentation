@@ -18,10 +18,27 @@ MaxMind provides IP intelligence through the GeoIP brand. Over 5,000 companies u
 ## Configure MaxMind V2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your MaxMind API URL, for example, `https://geoip.maxmind.com` or `https://geolite.info`
 
-For information about MaxMind, see [MaxMind documentation](https://dev.maxmind.com/).
+* **Account ID**. Enter a MaxMind [account ID](https://support.maxmind.com/hc/en-us/articles/4412951066779-Find-my-Account-ID).
+
+* **License key**. Enter a MaxMind [license key](https://support.maxmind.com/hc/en-us/articles/4407111582235-Generate-a-License-Key).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/maxmind-configuration.png')} style={{border:'1px solid gray'}} alt="MaxMind V2 configuration" width="400"/>
+
+For information about MaxMind, see [MaxMind documentation](https://support.maxmind.com/hc/en-us).
 
 ## Change Log
 

@@ -20,13 +20,25 @@ The Tufin SecureChange platform helps you to automates the process of changing s
 ## Configure Tufin SecureChange in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your [Tufin SecureChange API URL](https://forum.tufin.com/support/kc/latest/Content/Suite/RESTAPI/4423.htm).
 
-   * **Label**. Name of the resource.
-   * **URL**. URL of Tufin SecureChange.
-   * **Username**
-   * **Password**
+* **Username**. Enter the username of a Tufin SecureChange admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/tufin-securechange-configuration.png')} style={{border:'1px solid gray'}} alt="Tufin SecureChange configuration" width="400"/>
 
 For information about Tufin SecureChange, see [Tufin SecureChange documentation](https://forum.tufin.com/support/kc/latest/Content/Suite/856.htm).
 

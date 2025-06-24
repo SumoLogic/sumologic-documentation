@@ -27,12 +27,23 @@ Follow the steps from the Phantombuster [guide](https://hub.phantombuster.com/do
 ## Configure Phantombuster in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Phantombuster [host URL](https://hub.phantombuster.com/docs/api#versioning), for example, `https://phantombuster.com`.
 
-   * **Label**. The name for the resource.
-   * **URL**. Phantombuster host URL.
-   * **API Key**. Your Phantombuster api key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-4.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
+* **API Key**. Enter your Phantombuster [API key](https://hub.phantombuster.com/docs/api#how-to-find-my-api-key). 
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phantom-buster-configuration.png')} style={{border:'1px solid gray'}} alt="Phantombuster configuration" width="400"/>
 
 For information about Phantombuster, see [Phantombuster documentation](https://hub.phantombuster.com/docs/developer-quick-start).
 

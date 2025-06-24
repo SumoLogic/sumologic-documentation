@@ -24,13 +24,26 @@ Sign in to ANY.RUN. Click on your profile on the left menu. In the API and Limit
 ## Configure ANY.RUN in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-   * **URL**. 'https://api.any.run'
-   * **API Key**. The API Key you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/any.run/any.run-4.png')} style={{border:'1px solid gray'}} alt="any.run-4" width="400"/>
+* <IntegrationLabel/>
+* **URL**. Enter the ANY.RUN URL. The default value is `https://api.any.run`
 
-   For information about ANY.RUN, see [ANY.RUN documentation](https://any.run/cybersecurity-blog/ti-feeds-integration/).
+* **API Key**. Enter the API key you copied [above](#anyrun-configuration).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/anyrun-configuration.png')} style={{border:'1px solid gray'}} alt="ANY.RUN configuration" width="400"/>
+
+For information about ANY.RUN, see [ANY.RUN documentation](https://any.run/cybersecurity-blog/ti-feeds-integration/).
  
 ## Change Log
 

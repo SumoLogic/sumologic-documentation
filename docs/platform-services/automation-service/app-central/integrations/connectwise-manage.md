@@ -24,8 +24,29 @@ Create, update, search, and gather ticket information from ConnectWise.
 ## Configure ConnectWise Manage in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the API URL for your ConnectWise Manage instance, for example, `api-au.myconnectwise.net`, `api-eu.myconnectwise.net`, `api-na.myconnectwise.net`, or `api-staging.connectwisedev.com`.
+
+* **Company Name**. Enter your ConnectWise Manage company name.
+
+* **Public Key**. Enter a ConnectWise Manage public key.
+
+* **Private Key**. Enter a ConnectWise Manage private key.
+
+* **Client ID**. Enter a ConnectWise Manage client ID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/connectwise/connectwise-configuration.png')} style={{border:'1px solid gray'}} alt="Connectwise Manage configuration" width="400"/>
 
 For information about ConnectWise Manage, see the [ConnectWise website](https://www.connectwise.com/).
 

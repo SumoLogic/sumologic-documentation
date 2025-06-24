@@ -28,8 +28,22 @@ Email Security
 ## Configure Libraesva Email Security in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Libraesva URL.
+
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/libraesva-v4-configuration.png')} style={{border:'1px solid gray'}} alt="Libraesa V4 configuration" width="400"/>
 
 For information about Libraesva Email Security V4, see [Libraesva Email Security V4 documentation](https://docs.libraesva.com/doc/libraesva-esg-4/).
 

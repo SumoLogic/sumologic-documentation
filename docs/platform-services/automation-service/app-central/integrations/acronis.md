@@ -17,7 +17,7 @@ Acronis develops on-premises and cloud software with integration of backup, disa
 
 ## Acronis configuration
 
-Follow these steps to get your API key from Arconis.
+Follow these steps to get your [API key](https://developer.acronis.com/doc/connector/authentication/index.html) from Arconis.
 
 1. Select **Manage account** from the dashboard. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-1.png')} style={{border:'1px solid gray'}} alt="acronis-1" width="400"/>
 1. From the **SETTINGS** select **API clients**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-2.png')} style={{border:'1px solid gray'}} alt="acronis-2" width="400"/>
@@ -27,13 +27,26 @@ Follow these steps to get your API key from Arconis.
 ## Configure Acronis in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-   * **Label**. The desired name for the resource.
-   * **URL**. Your Acronis Data Center URL you copied earlier from Acronis. Default: 'https://cloud.acronis.com'/ .
-   * **Client ID**. Your Acronis Client ID you copied earlier from Acronis.
-   * **Client Secret**. Your Acronis Secret you copied earlier from Acronis. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-9.png')} style={{border:'1px solid gray'}} alt="acronis-9" width="400"/>
+* <IntegrationLabel/>
+* **URL**. Enter the Acronis Data Center URL you copied [above](#acronis-configuration). The default is `https://cloud.acronis.com`.
+
+* **Client ID**. Enter the Acronis Client ID you copied above.
+
+* **Client Secret**. The the Acronis Secret you copied above. 
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/acronis-configuration.png')} style={{border:'1px solid gray'}} alt="Acronis configuration" width="400"/>
 
 For information about Acronis, see [Acronis documentation](https://developer.acronis.com/doc/).
 

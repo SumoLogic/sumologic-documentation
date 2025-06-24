@@ -49,11 +49,19 @@ To [create service account credentials](https://developers.google.com/workspace/
 ## Configure Google Chat in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Private Key Json**. Provide the content of the JSON file generated [above](#google-chat-configuration). Open the file and copy-paste the whole content in the field.
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
-* **Label**. The desired name for the resource.
-* **Private Key Json**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/google-chat-configuration.png')} style={{border:'1px solid gray'}} alt="Google Chat configuration" width="400"/>
 
 For information about Google Chat, see [Google Chat documentation](https://developers.google.com/workspace/chat/overview).
 

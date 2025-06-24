@@ -30,13 +30,25 @@ WithSecure Elements is a single, modular solution consisting of a complete range
 ## Configure WithSecure Elements in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the base API URL for WithSecure Elements. The default is `https://api.connect.withsecure.com/`.
 
-    * **Label**. The name for the resource.
-    * **URL**. The base API URL for WithSecure Elements. Default: `https://api.connect.withsecure.com/`.
-    * **Client ID**. Your previously retrieved Client ID.
-    * **Client Secret**. Your previously retrieved Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-8.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="400" />
+* **Client ID**. Enter the client ID you [copied previously](#withsecure-elements-configuration).
+
+* **Client Secret**. Enter the client secret you [copied previously](#withsecure-elements-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/withsecure-elements-configuration.png')} style={{border:'1px solid gray'}} alt="WithSecure Elements configuration" width="400"/>
 
 For information about WithSecure Elements, see [WithSecure Elements documentation](https://www.withsecure.com/userguides/).
 

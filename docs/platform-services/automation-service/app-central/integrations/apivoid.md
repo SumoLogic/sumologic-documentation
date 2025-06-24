@@ -26,8 +26,29 @@ Utilize APIVOID to gather enrichment data during incident investigations.
 ## Configure APIVoid in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the APIVoid API URL. The default value is `https://endpoint.apivoid.com/`
+
+* **API Key**. Enter your APIVoid API key. 
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/apivoid/apivoid-configuration.png')} style={{border:'1px solid gray'}} alt="APIVoid configuration" width="400"/>
 
 For information about APIVoid, see [APIVoid documentation](https://docs.apivoid.com/).
 

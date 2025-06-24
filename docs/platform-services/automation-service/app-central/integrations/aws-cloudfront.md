@@ -24,10 +24,29 @@ Amazon CloudFront integrates with AWS Identity and Access Management (IAM), a se
 ## Configure AWS CloudFront in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+* <IntegrationLabel/>
+* <AWSRegions/>
+* **Service Name**. Enter `AWS CloudFront`.
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-cloudfront-configuration.png')} style={{border:'1px solid gray'}} alt="AWS CloudFront configuration" width="400"/>
 
 <IntegrationsAuthAWS/>
 

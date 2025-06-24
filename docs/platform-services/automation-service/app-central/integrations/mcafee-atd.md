@@ -21,8 +21,26 @@ Utilize McAfee Advanced Threat Defenseto gather file reputation and enrichment d
 ## Configure McAfee ATD in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the URL of your McAfee ATD instance.
+
+* **Username**. Enter the username of a McAfee ATD admin user authorized to authenticate the integration.
+
+* **Password**. Enter the admin user password.
+
+* **Detonate timeout in minutes**. Set the maximum amount of time the integration will wait for a server's response before terminating the connection. Enter the connection timeout time in minutes (for example, `3`).
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mcafee-atd-configuration.png')} style={{border:'1px solid gray'}} alt="McAfee ATD configuration" width="400"/>
 
 For information about McAfee ATD, see [McAfee Advanced Threat Defense documentation](https://docs.trellix.com/bundle/advanced-threat-defense-4.14.x-product-guide/page/GUID-21B474DF-8D65-4785-B99E-0B6B0EC82D36.html).
 

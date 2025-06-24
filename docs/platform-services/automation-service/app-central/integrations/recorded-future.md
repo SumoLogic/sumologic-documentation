@@ -39,8 +39,23 @@ Utilize Recorded Future threat intelligence feeds during incident investigation.
 ## Configure Recorded Future in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your [Recorded Future API](https://support.recordedfuture.com/hc/en-us/articles/9907011719699-Recorded-Future-Sandbox-API-Overview) URL, for example, `https://api.recordedfuture.com/`
+
+* **API Key**. Enter your [Recorded Future API key](https://support.recordedfuture.com/hc/en-us/articles/11305261649555-Recorded-Future-Sandbox-Obtaining-an-API-Access-key).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/recorded-future-configuration.png')} style={{border:'1px solid gray'}} alt="Recorded Future configuration" width="400"/>
 
 For information about Recorded Future, see [Recorded Future documentation](https://support.recordedfuture.com/hc/en-us).
 

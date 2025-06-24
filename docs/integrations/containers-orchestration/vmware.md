@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware dashboards" width="50" />
 
-The VMware app uses unified logs and metrics from the VMware cloud computing virtualization platform to enable monitoring of vCenter, ESXi hosts and individual virtual machines metrics with real-time date displayed in predefined dashboards.
+The VMware app uses unified logs and metrics from the VMware cloud computing virtualization platform to enable monitoring of vCenter, ESXi hosts, and individual virtual machines' metrics with real-time data displayed in predefined dashboards.
 
 The dashboards provide insight into key events and metrics such as VM CPU, memory, disk utilization, under-provisioned physical hosts, and idle VMs. This enables you to determine capacity constraints and troubleshoot operational issues related to over-provisioning, changes to configuration, and VM movement.
 
@@ -24,10 +24,10 @@ See the [vSphere product page](https://www.vmware.com/products/vsphere.html) for
 
 ## Log and metric types  
 
-The Sumo Logic vCenter logs source and vCenter metrics source use the installed collector to gather the following data from VMWare:
+The Sumo Logic vCenter logs source and vCenter metrics source use the installed collector to gather the following data from VMware:
 
-* VMWare Events using the Events API. See [Events API](https://code.vmware.com/apis/196/vsphere/doc/vim.event.EventManager.html) for more details.
-* VMWare Metrics using the Performance API. For more information, see [Performance API](https://code.vmware.com/apis/196/vsphere/doc/vim.PerformanceManager.html).
+* VMware Events using the Events API. See [Events API](https://code.vmware.com/apis/196/vsphere/doc/vim.event.EventManager.html) for more details.
+* VMware Metrics using the Performance API. For more information, see [Performance API](https://code.vmware.com/apis/196/vsphere/doc/vim.PerformanceManager.html).
 
 The dashboards provide real-time monitoring with visual data displays, allowing you to analyze events and performance metrics for efficient detection and troubleshooting.
 
@@ -67,26 +67,31 @@ This section provides instructions for collecting logs and metrics for VMware.
 
 You can use the following method for setting up a server to collect data for the VMware app:
 
-If you have an existing VM, go directly to [Installing the Sumo Logic scripts on a VM](#installing-sumo-logic-scripts-on-a-vcenter-server-another-host-or-vm) and proceed with following the instructions. Install the Sumo Logic scripts for events and metrics on a vCenter server, or another host with access to vCenter APIs.
+If you have an existing VM, go directly to [Installing the Sumo Logic scripts on a VM](#installing-sumo-logic-scripts-on-a-vcenter-server-another-host-or-vm) and proceed with following the instructions. Install the Sumo Logic scripts for events and metrics on a vCenter server or another host with access to vCenter APIs.
 
 #### Installing Sumo Logic scripts on a vCenter server, another host, or VM
 
-This section walks you through the process of installing Sumo Logic scripts for events and metrics on a vCenter server, or another host with access to vCenter API. Lastly, it provides instructions for configuring the path to run the scripts, whether on a vCenter server, host, or VM.
+This section walks you through the process of installing Sumo Logic scripts for events and metrics on a vCenter server or another host with access to the vCenter API. Lastly, it provides instructions for configuring the path to run the scripts, whether on a vCenter server, host, or VM.
 
 To install and configure the Sumo Logic scripts, do the following:
 
-1. On the server, host, or VM create a directory in which to put the Sumo Logic scripts from [Sumo Logic Scripts](https://github.com/SumoLogic/sumologic-vmware/tree/master/vsphere) for VMware. We recommend that you name the directory **/var/log/vmware* or something similar.
+1. On the server, host, or VM, create a directory in which to put the Sumo Logic scripts from [Sumo Logic Scripts](https://github.com/SumoLogic/sumologic-vmware/tree/master/vsphere) for VMware. We recommend that you name the directory **/var/log/vmware* or something similar.
 2. Download the Sumo Logic VMware scripts from [here](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip), into the directory you just created.
 3. Install [python](https://www.python.org/) version 3.9, or later.
-4. Install [pyvmomi](https://pypi.org/project/pyvmomi/) version based on the compatible vSphere version from [here](https://github.com/vmware/pyvmomi?tab=readme-ov-file#compatibility-policy):
-   ```bash
-   pip install pyvmomi==<compatible_version>
-   ```
-5. Verify that the user account which will run the Sumo Logic VMware scripts has full read/write/execute permissions for the directories where the scripts will be placed. Without adequate permissions (read/write/execute) for the directories in which the scripts files reside, unexpected script errors will occur.
+4. Install libraries required by the Python script by running the following command : 
+```bash
+pip install -r requirements.txt
+``` 
+
+:::note
+ You can change the [pyvmomi](https://pypi.org/project/pyvmomi/) version in **requirement.txt** based on the compatible vSphere version from [here](https://github.com/vmware/pyvmomi?tab=readme-ov-file#compatibility-policy).
+:::
+
+5. Verify that the user account that will run the Sumo Logic VMware scripts has full read/write/execute permissions for the directories where the scripts will be placed. Without adequate permissions (read/write/execute) for the directories in which the script files reside, unexpected script errors will occur.
 6. Edit the **cron_vcenter_events.sh** script, changing the `SCRIPT_PATH` variable to reflect the **absolute path** where the script resides. If you have multiple vCenter servers, create a new line for each one.
 
 
-### Step 2: Set up Sumo Logic Installed Collector
+### Step 2: Set up the Sumo Logic Installed Collector
 
 Our Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. The Collector runs as a service and starts automatically after installing or rebooting.
 
@@ -95,22 +100,22 @@ See [Installed Collectors](/docs/send-data/installed-collectors) for installatio
 
 ### Step 3: Collect logs and metrics for the VMware app
 
-This section explains how to set up a vCenter server, host, or VM to collect logs and metric for the Sumo Logic app for VMware.
+This section explains how to set up a vCenter server, host, or VM to collect logs and metrics for the Sumo Logic app for VMware.
 
 #### Collecting event messages
 
-An event is an action that triggers an event message on a vCenter Server. Event messages are not logged, but are instead stored in the vCenter Server database. The Sumo Logic Collector for VMware retrieves these messages using the vSphere python SDK.
+An event is an action that triggers an event message on a vCenter Server. Event messages are not logged, but are instead stored in the vCenter Server database. The Sumo Logic Collector for VMware retrieves these messages using the vSphere Python SDK.
 
 ##### Step 1: Configure logs to be collected
 
-Test running a python script from the directory containing the Sumo Logic scripts.
+Test running a Python script from the directory containing the Sumo Logic scripts.
 
 1. To test the **events.py** script that queries the vCenter Server for events and sends the events to Sumo Logic, go to the directory for the Sumo Logic scripts and run the **events.py** script with one of the following commands.
 
    <details>
    <summary>View examples here for the different source types (click to expand)</summary>
 
-   Sample username format is **username@vsphere.local** or **domain/username**.
+   The sample username format is **username@vsphere.local** or **domain/username**.
    ```bash
    python3 events.py -s [vcenterserver] \
    -u [username] -p [password] -f output.txt
@@ -121,17 +126,17 @@ Test running a python script from the directory containing the Sumo Logic script
    python3 $SCRIPT_PATH/events.py -s 192.168.124.29 -t sumologic_host -to sumologic_host_port -u sumoadmin -p sumoadmin -f /var/log/vmware/output/vsphere_events
    ```
 
-   **Example 2: Using syslog and specific log directory with a specific log file prefix. Use a syslog source to ingest the logs.**
+   **Example 2: Using syslog and a specific log directory with a specific log file prefix. You can use a syslog source to ingest the logs.**
    ```bash
    python3 $SCRIPT_PATH/events.py -s 192.168.124.29 -t sumologic_host -to sumologic_host_port -u sumoadmin -p sumoadmin -l /var/log/vmware/log/vsphere_events
    ```
 
-   **Example 3: Using syslog and specific log directory with a specific log file prefix and encrypted Password. Use a syslog source to ingest the logs.**
+   **Example 3: Using syslog and a specific log directory with a specific log file prefix and an encrypted Password. You can use a syslog source to ingest the logs.**
    ```bash
    python3 $SCRIPT_PATH/events.py -s 192.168.124.29 -t sumologic_host -to sumologic_host_port -u sumoadmin -pK 'xgb8NJ3ZYPJbzX6vWHySZbLd73bKWPsGMKoSnry7hL4=' -p 'gAAAAABb6asvlRfxEj_ZQTKOyrqnGNMbfo_kpxrqv4DCO6TorS4FmKFzrepe0_xtiMT67ZT6OOf5bfrVZXNnUDFNlwPWrpFSfg==' -pE True -l /var/log/vmware/log/vsphere_events
    ```
 
-   By default, the script starts collecting data for the past 24 hours. To retrieve data for a smaller time range, for testing purposes set the parameter `-bT` to the time from when to start data collection, for example, one hour earlier:
+   By default, the script starts collecting data for the past 24 hours. To retrieve data for a smaller time range, for testing purposes, set the parameter `-bT` to the time from which to start data collection, for example, one hour earlier:
 
    ```bash
    python3 events.py -s <vcenter server> -t <syslog host> -to <syslog host port> -bT <time>
@@ -146,36 +151,39 @@ Test running a python script from the directory containing the Sumo Logic script
    The script supports the following parameters:
    * `-s`. Remote vCenter Server to connect to. Required Parameter.
    * `-o`. Remote vCenter Server port to use, default 443. Optional.
-   * `-u`. User name to use when connecting to vCenter server. Required.
-   * `-p`. Password to use when connecting to vCenter server. Required.
+   * `-u`. User name to use when connecting to the vCenter server. Required.
+   * `-p`. Password to use when connecting to the vCenter server. Required.
    * `-f`. Output File Prefix. Target syslog server or file is required. Optional.
    * `-ts`. Timestamp File. Default ‘.timelog_events’. Optional.
-   * `-t`. Host name of Sumo Logic installed collector. This is required in case of syslog server. If you are using local file source, this parameter is not required.
+   * `-t`. The hostname of the Sumo Logic installed collector. This is required in case of a syslog server. If you are using a local file source, this parameter is not required.
    * `-to`. Target Sumologic port to use, default 514. Optional.
    * `-bT`. Begin Time to query for the events. Default Current Time.
-   * `-eT`. End Time to query for the events. Default Current Time minus 24 hours.
+   * `-eT`. End Time to query for the events. The Default Current Time minus 24 hours.
    * `-sC`. SSL cert for connection. Optional.
-   * `-l`. Log File Prefix. Default: `vsphere_events_`. By default, the log file is created in the execution directory. Full log path and prefix can also be specified for example: `-l C:\Users\user6\vsphere_events`, where `vsphere_events` is the log prefix. The log file is created with prefix + current timestamp.
+   * `-l`. Log File Prefix. Default: `vsphere_events_`. By default, the log file is created in the execution directory. Full log path and prefix can also be specified, for example: `-l C:\Users\user6\vsphere_events`, where `vsphere_events` is the log prefix. The log file is created with a prefix + current timestamp.
    * `-pE`. Is the password encrypted? Default False. Optional.
    * `-pK`. Encryption Key for Password. Required if -pE is True.
 
    </details>
 
 2. Once you are satisfied with the output, modify the **cron_vcenter_events.sh** with the required parameters and create a cron job to periodically run the **cron_vcenter_events.sh** script at the desired time interval.
-   * If utilizing a syslog source, provide the target and target port parameters where the Sumo Collector is installed. If utilizing a local or remote source, use the file parameter to generate the file and configure the **File Path** for local file source or **Path Expression** for Remote file source.
-   * The cron job needs to run as root, or as a user who has read and write access to the script directories.
+   * If utilizing a syslog source, provide the target and target port parameters where the Sumo Collector is installed. If utilizing a local or remote source, use the file parameter to generate the file and configure the **File Path** for a local file source or **Path Expression** for a Remote file source.
+   * The cron job needs to run as root or as a user who has read and write access to the script directories.
    * For more detailed information, see the shell script for configuration options.
 
 ##### Step 2: Configure a syslog or a file source
 
-A [Sumo Logic Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](/docs/send-data/installed-collectors/sources/local-file-source) or [Remote](/docs/send-data/installed-collectors/sources/remote-file-source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
+A [Sumo Logic Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](/docs/send-data/installed-collectors/sources/local-file-source) or [Remote](/docs/send-data/installed-collectors/sources/remote-file-source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, a local, or a remote file source.
 
 For a file source, configure a local or remote file source in one of the following ways:
 
-* **If the script and the Sumo Logic collector are on the same server**: configure a local file source by following [these](/docs/send-data/installed-collectors/sources/local-file-source) steps. Configure the **File Path** for local file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using `-f` flag (for example: `/var/log/vmware/output/`).
-* **If the script and the Sumo Logic collector are on different servers**: configure a remote file source by following [these](/docs/send-data/installed-collectors/sources/remote-file-source) steps. Configure the **Path Expression** for Remote file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using `-f` flag (for example: `/var/log/vmware/output/`).
+* **If the script and the Sumo Logic collector are on the same server**: configure a local file source by following [these](/docs/send-data/installed-collectors/sources/local-file-source) steps. Configure the **File Path** for the local file source. Set **Path Expression** equivalent to the output directory mentioned in the previous section using `-f` flag (for example: `/var/log/vmware/output/`).
+* **If the script and the Sumo Logic collector are on different servers**: configure a remote file source by following [these](/docs/send-data/installed-collectors/sources/remote-file-source) steps. Configure the **Path Expression** for the Remote file source. Set **Path Expression** equivalent to the output directory mentioned in the previous section using `-f` flag (for example: `/var/log/vmware/output/`).
+:::note
+You can also add a wildcard to the path like /var/log/vmware/output/*evt.out for sending only the script-generated files.
+:::
 * **For a syslog source**, configure the syslog source as follows:
-  1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+  1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu, select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
   1. Click **Add Source**.
   2. Select **Syslog** for the Source type.
   3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called `_sourceName`.
@@ -194,7 +202,7 @@ Collecting performance metrics involves using scripts to call the vCenter perfor
 
 Performance data collection for ESXi servers associated with a vCenter server works by getting data from each ESXi server in parallel, using multiple threads. The number of threads depends on the amount of data you are collecting and the frequency of the collection.
 
-The number of threads can be controlled using a property `THREADSIZE_POOL` in the sumo.json config file. You can also control the number of objects processed by a single thread using the property `BATCH_MORLIST_SIZE`. The following is a description of all the configuration properties.
+The number of threads can be controlled using the property `THREADSIZE_POOL` in the sumo.json config file. You can also control the number of objects processed by a single thread using the property `BATCH_MORLIST_SIZE`. The following is a description of all the configuration properties.
 
 ```txt
 BATCH_MORLIST_SIZE: Default 50, Simultaneous objects processed by a single thread for retrieving the performance data.
@@ -205,7 +213,7 @@ SSL_CAPATH: Certificate absolute path if SSL_VERIFY is True
 
 To collect performance metrics, do the following:
 
-1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source). While configuring set the **Protocol** to **TCP** and **ContentType** to **Carbon2**.
+1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source). While configuring, set the **Protocol** to **TCP** and **ContentType** to **Carbon2**.
 2. Edit the properties in the bundled sumo.json properties file, as necessary.
 3. Go to the directory for the Sumo Logic scripts and run the **esx_perf_metrics_6_5.py** script, which queries the vCenter Server for metrics from that location (this script queries the vCenter Server for events) with the following command:
    ```py
@@ -218,7 +226,7 @@ To collect performance metrics, do the following:
 <details>
 <summary>View examples (click to expand)</summary>
 
-**Example 1: Using metrics streaming source and specific log directory with a specific log file prefix.**
+**Example 1: Using a metrics streaming source and a specific log directory with a specific log file prefix.**
 
 ```py
 python3 $SCRIPT_PATH/esx_perf_metrics_6_5.py -s 192.168.124.29 -t sumologic_host -to sumologic_host_port -u sumoadmin -p sumoadmin -cf $SCRIPT_PATH/sumo.json -l /var/log/vmware/log/metrics
@@ -232,13 +240,13 @@ python3 $SCRIPT_PATH/esx_perf_metrics.py -s 192.168.124.29 -t sumologic_host -to
 **The script supports the following parameters:**
   * `-s`. Remote vCenter Server to connect to. Required Parameter.
   * `-o`. Remote vCenter Server port to use, default 443. Optional.
-  * `-u`. User name to use when connecting to vCenter server. Required.
-  * `-p`. Password to use when connecting to vCenter server. Required.
+  * `-u`. User name to use when connecting to the vCenter server. Required.
+  * `-p`. Password to use when connecting to the vCenter server. Required.
   * `-ts`. Timestamp File. Default ‘.timelog_metrics’.
-  * `-t`. Host name where Sumo Logic installed collector is installed. Required.
+  * `-t`. The hostname where the Sumo Logic installed collector is installed. Required.
   * `-to`. Target Sumologic port to use, default 514. Optional.
   * `-cf`. Configuration File. Required.
-  * `-l`. Log File Prefix. Default: `vsphere_metrics_`. By Default the log file is created in the execution directory. Full log path and log prefix can also be specified for example: `-l C:\Users\user6\vsphere_metrics`, where `vsphere_metrics` is the log prefix and is required. The log file is created with prefix + current timestamp.
+  * `-l`. Log File Prefix. Default: `vsphere_metrics_`. By default, the log file is created in the execution directory. Full log path and log prefix can also be specified, for example: `-l C:\Users\user6\vsphere_metrics`, where `vsphere_metrics` is the log prefix and is required. The log file is created with a prefix + current timestamp.
   * `-pE`. Is the password encrypted? Default: False. Optional.
   * `-pK`. Encryption Key for Password. Required if `-pE` is True.
 
@@ -277,9 +285,9 @@ Once this command completes successfully, you can pick up ongoing events by sett
 
 ### Step 4: Encrypt passwords
 
-The scripts support symmetric authenticated cryptography—also known as secret key authentication—using the python Fernet implementation.
+The scripts support symmetric authenticated cryptography—also known as secret key authentication—using the Python Fernet implementation.
 
-**To utilize encryption**, generate a key from the python command line:
+**To utilize encryption**, generate a key from the Python command line:
 
 ```py
 >>> from cryptography.fernet import Fernet
@@ -287,7 +295,7 @@ The scripts support symmetric authenticated cryptography—also known as secret 
 b'xgb8NJ3ZYPJbzX6vWHySZbLd73bKWPsGMKoSnry7hL4='
 ```
 
-**Encrypt the password** from your python command line:
+**Encrypt the password** from your Python command line:
 
 ```py
 >>> from cryptography.fernet import Fernet
@@ -315,21 +323,21 @@ python3 events.py -s 192.168.20.121 -u [username] -f outfile \
 -pE True
 ```
 
-The `-pE` flag is used to specify whether the password is encrypted or not. Default is false.
+The `-pE` flag is used to specify whether the password is encrypted or not. The Default is false.
 
 
 ### Troubleshooting
 
 * The scripts need read and write access to the directory to generate logs and maintain timestamps.
-* Python must be installed, as the scripts use python.
-* Scripts generate logs which can be reviewed if problems arise.
+* Python must be installed, as the scripts use Python.
+* Scripts generate logs that can be reviewed if problems arise.
 * The logs are generated for each run under the configured working directory.
 * The scripts must connect to a vCenter server and _not_ an ESXi server, as many of the APIs are not supported on ESXi servers.
-* If the collector is not running but the script is, the metrics and events will be lost. In such a case, once the collector is running again, update the timestamp in the files .timelog_events and .timelog_metrics to the required start time. This will allow you to retrieve the old data. After the script retrieves the old data, it continues with normal processing.
+* If the collector is not running but the script is, the metrics and events will be lost. In such a case, once the collector is running again, update the timestamps in the files `.timelog_events` and `.timelog_metrics` to the required start time. This will allow you to retrieve the old data. After the script retrieves the old data, it continues with normal processing.
 * vSphere pyvmomi sdk throws Parse Exception for some [events](https://github.com/vmware/pyvmomi/issues/746).
     * If you face any issues like these, remove the corresponding event from the events list in the file vmware_constants.py.
     * If an event is missing from the event list, it can be added as well.
-    * If the issues are fixed in the sdk, the below list can be blanked as `event_type_list = []` to retrieve all the events.
+    * If the issues are fixed in the SDK, the below list can be blanked as `event_type_list = []` to retrieve all the events.
     * If you encounter the following error: `pyVmomi.VmomiSupport.UnknownWsdlTypeError: 'ContentLibrary'`, remove TaskEvent and EventEx from the vmware_constants.py and try again.
 
 
@@ -347,7 +355,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### vCenter Operations - Overview
 
-The **VMware - vCenter Operations - Overview** dashboard provides an at-a-glance view of unique clusters, ESXi hosts, unique VMs, and VM failures by ESXi host, as well as vCenter task trends, vSphere errors across clusters, VM operations over time, ESXi per-host metrics for CPU usage and idle time, memory usage and capacity, disk usage and datastore read rate, network usage and system uptime. It also displays data for vCenter alarms, user activity, and VM operations by user.
+The **VMware - vCenter Operations - Overview** dashboard provides an at-a-glance view of unique clusters, ESXi hosts, unique VMs, and VM failures by ESXi host, as well as vCenter task trends, vSphere errors across clusters, VM operations over time, ESXi per-host metrics for CPU usage and idle time, memory usage and capacity, disk usage and datastore read rate, network usage, and system uptime. It also displays data for vCenter alarms, user activity, and VM operations by user.
 
 Use this dashboard to:
 * Get an at-a-glance overview of your entire VMware infrastructure.
@@ -361,10 +369,10 @@ Use this dashboard to:
 
 ### vCenter Errors - Analysis
 
-The **VMware - vCenter Errors - Analysis** dashboard provides detailed information about the errors across cluster and hosts. You can easily review error trends, top error events, and most recent error events.
+The **VMware - vCenter Errors - Analysis** dashboard provides detailed information about the errors across clusters and hosts. You can easily review error trends, top error events, and most recent error events.
 
 Use this dashboard to:
-* Review 7 day error trends.
+* Review 7-day error trends.
 * Quickly assess the most frequent and recurring error conditions.
 * Review error messages, host, cluster, and other details to help with debugging.
 
@@ -377,7 +385,7 @@ The **VMware - Virtual Machine Errors - Analysis** dashboard provides an at-a-gl
 
 Use this dashboard to:
 * Monitor faulty VMs with performance or other issues.
-* Determine VMs with power on and off failures.
+* Determine VMs with power-on and off failures.
 * Assess VMs with fault tolerance issues.
 * Determine MAC address and  UUID conflicts, as well as primary VM failures.
 * Monitor overall VM health.
@@ -386,7 +394,7 @@ Use this dashboard to:
 
 ### Datastore
 
-The **VMware - Datastore** dashboard provides performance metrics on datastore read rates per ESXi host and VM, and datastore write rates per ESXi host and VM. A datastore is a manageable storage entity, usually used as a repository for virtual machine files including log files, scripts, configuration files, virtual disks, and so on.
+The **VMware - Datastore** dashboard provides performance metrics on datastore read rates per ESXi host and VM, and datastore write rates per ESXi host and VM. A datastore is a manageable storage entity, usually used as a repository for virtual machine files, including log files, scripts, configuration files, virtual disks, and so on.
 
 Use this dashboard to:
 * Review of the datastore reads and writes by the virtual machines and ESXi hosts.
@@ -397,10 +405,10 @@ Use this dashboard to:
 
 ### Network
 
-The **VMware - Network** dashboard keeps track of the data in and data out of the ESXi hosts and virtual machines. This dashboard provides an at-a-glance analysis of network usage per ESXi host and VM, network InPacket rate per ESXi host and VM, network OutPacket rate per ESXi host and VM, and network 1 day comparison by host.
+The **VMware - Network** dashboard keeps track of the data in and data out of the ESXi hosts and virtual machines. This dashboard provides an at-a-glance analysis of network usage per ESXi host and VM, network InPacket rate per ESXi host and VM, network OutPacket rate per ESXi host and VM, and network 1-day comparison by host.
 
 Use this dashboard to:
-* Identify excessing packet traffic in or out.
+* Identify excessive packet traffic in or out.
 * Identify network inactivity for a VM or host.
 * Track network usage.
 
@@ -408,11 +416,11 @@ Use this dashboard to:
 
 ### Disk
 
-The **VMware - Disk** dashboard keeps track of the disk usage, disk writes and reads by the ESXi hosts and virtual machines. You can easily review metrics for disk usage per ESXi host and VM, disk read rate per ESXi host and VM, disk write rate per ESXi host and VM, disk total read latency per host, and disk total write latency per host.
+The **VMware - Disk** dashboard keeps track of the disk usage, disk writes, and reads by the ESXi hosts and virtual machines. You can easily review metrics for disk usage per ESXi host and VM, disk read rate per ESXi host and VM, disk write rate per ESXi host and VM, disk total read latency per host, and disk total write latency per host.
 
 Use this dashboard to:
 
-* Identify excessive writes or reads by a VM or a ESXi host.
+* Identify excessive writes or reads by a VM or an ESXi host.
 * Track disk read and write latency.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Disk.png')} alt="VMware dashboards" />
@@ -425,7 +433,7 @@ The **VMware - Memory** dashboard provides an at-a-glance analysis of memory usa
 Use this dashboard to:
 * Review of the memory usage per virtual machine and ESXi host.
 * Identify excessive memory usage by VM or ESXi host.
-* Track granted memory and memory capacity to determine memory needs and over provisioning.
+* Track granted memory and memory capacity to determine memory needs and over-provisioning.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Memory.png')} alt="VMware dashboards" />
 
@@ -437,7 +445,7 @@ The **VMware - CPU** dashboard tracks the CPU consumed by the virtual machines a
 Use this dashboard to:
 * Monitor spikes in CPU activity. Frequent spikes in CPU activity for a VM without any load may signify issues with the VM configurations.
 * Track CPU idle time.
-* Monitor VM wait time, the time a VM was ready to perform some action but wasn't able to because of CPU unavailability. This can help determine CPU needs of the infrastructure.
+* Monitor VM wait time, the time a VM was ready to perform some action but wasn't able to because of CPU unavailability. This can help determine the CPU needs of the infrastructure.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/VMware-CPU.png')} alt="VMware dashboards" />
 

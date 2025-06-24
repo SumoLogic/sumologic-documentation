@@ -24,8 +24,31 @@ IBM X-Force Exchange is a cloud-based threat intelligence platform that allows y
 ## Configure IBM X-Force Exchange in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your IBM X-Force [API URL](https://api.xforce.ibmcloud.com/doc/), for example, `https://api.xforce.ibmcloud.com`
+
+* **API Key**. Enter an IBM X-Force [API key](https://www.ibm.com/docs/en/qradar-common?topic=dashboard-configuring-advanced-threat-protection-feed-licensing#taskt_Qapps_XForceapp_configure_atpf__steps__1).
+
+* **Secret Key**. Enter the secret for the IBM X-Force API key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ibm-xforce-configuration.png')} style={{border:'1px solid gray'}} alt="IBM X-Force Exchange configuration" width="400"/>
 
 For information about IBM X-Force Exchange, see [IBM X-Force Exchange documentation](https://sdk.xforce.ibmcloud.com/).
 

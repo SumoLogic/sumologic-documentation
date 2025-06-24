@@ -24,15 +24,28 @@ Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notif
 ## Configure Amazon Simple Notification Service in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-   * **Label**. Name of the resource for AWS SNS.
-   * **Access key ID**. Enter your AWS Access Key.
-   * **Secret Access key**. Enter your AWS Secret Access Key. For information about access key ID and secret access key, see [AWS documentation](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).
-   * **AWS Region**. Enter the AWS region for the SNS topic.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-4.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-4" width="400"/>
-
-import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+* <IntegrationLabel/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSRegions/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-simple-notification-service-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Simple Notification Service configuration" width="400"/>
 
 <IntegrationsAuthAWS/>
 

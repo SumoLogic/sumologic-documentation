@@ -34,8 +34,25 @@ Query FireEye Helix to gather enrichment data during an incident investigation.
 ## Configure FireEye Helix in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Endpoint**. Enter the FireEye Helix endpoint URL.
+
+* **API Key**. Enter a FireEye Helix [API key](https://docs.trellix.com/bundle/helix_pg/page/UUID-76e07a89-b6c5-6fb0-3201-34fe0b1eb717.html).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* **FireEye Helix Timezone (Daemon)**. Select your timezone.
+
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fireeye-helix-configuration.png')} style={{border:'1px solid gray'}} alt="FireEye Helix configuration" width="400"/>
 
 For information about Trellix Helix (formerly FireEye Helix), see [Trellix Helix documentation](https://docs.trellix.com/bundle/fe-helix-enterprise-landing/page/UUID-004fd1b5-25d2-27d6-7578-ad0197c248aa.html).
 

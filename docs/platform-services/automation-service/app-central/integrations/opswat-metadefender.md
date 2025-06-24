@@ -24,8 +24,23 @@ MetaDefender is a cybersecurity platform for preventing and detecting cybersecur
 ## Configure Opswat Metadefender in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your [Opswat Metadefender URL](https://www.opswat.com/docs/mdkiosk/configuration/configuring-with-metadefender-core#detecting-the-metadefender-core-server-url).
+
+* **API Key**. Enter an Opswat Metadefender [API key](https://www.opswat.com/docs/mdcore/sandbox/integrating-deep-cdr-analysis-mode-version).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/opswat-metadefender-configuration.png')} style={{border:'1px solid gray'}} alt="Opswat Metadefender configuration" width="400"/>
 
 For information about Opswat Metadefender, see [Opswat Metadefender documentation](https://www.opswat.com/docs/mdcore).
 

@@ -30,8 +30,25 @@ EDR
 ## Configure Microsoft 365 Defender in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Microsoft 365 Defender API URL, for example, `https://api.security.microsoft.com`
+
+* **Directory (Tenant) ID**. Enter the [tenant ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id) of the AAD directory in which you created the application.
+
+* **Application (Client) ID**. Enter your Microsoft 365 Defender [application ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-365-defender-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft 365 Defender configuration" width="400"/>
 
 For information about Microsoft 365 Defender, see [Microsoft 365 Defender documentation](https://learn.microsoft.com/en-us/defender-office-365/).
 

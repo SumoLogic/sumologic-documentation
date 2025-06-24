@@ -27,12 +27,27 @@ KELA's RADARK delivers automated threat intelligence, cultivating the targeted a
 ## Configure KELA RaDark in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your KELA RaDark API URL.
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-5.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="400"/>
+* **API Token**. Insert the [previously copied token](#kela-radark-configuration).
 
-For information about KELA, see [KELA documentation](https://docs.ke-la.com/kela-docs).
+* **Monitor ID**. Enter the KELA RaDark monitor ID.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/kela-radark-configuration.png')} style={{border:'1px solid gray'}} alt="KELA RaDark configuration" width="400"/>
+
+For information about KELA RaDark, see [KELA documentation](https://docs.ke-la.com/kela-docs).
 
 ## Change Log
 

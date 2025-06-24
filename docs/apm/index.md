@@ -50,6 +50,3 @@ Monitor user activity, span analytics, service maps, and transaction traces betw
 
 <br/>
 
-:::tip
-Use our [Root Cause Explorer](/docs/observability/root-cause-explorer) to investigate usage and issues.
-:::

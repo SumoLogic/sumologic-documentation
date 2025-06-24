@@ -18,10 +18,21 @@ The Snort is a free open source network intrusion detection system and intrusion
 ## Configure Snort in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Snort URL, for example, `https://www.snort.org`.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
-   * **URL**. 'https://www.snort.org'. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/snort/snort-4.png')} style={{border:'1px solid gray'}} alt="snort" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/snort-configuration.png')} style={{border:'1px solid gray'}} alt="Snort configuration" width="400"/>
 
 For information about Snort, see [Snort documentation](https://www.snort.org/documents).
 

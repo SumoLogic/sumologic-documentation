@@ -21,13 +21,25 @@ Certego Managed services for breach detection, cyber security, and response to t
 ## Configure Certego in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL API**. Enter the Certego URL API. The default value is `https://panoptikon.certego.net/`
 
-   * **Label**. The name for the resource.
-   * **URL API**. Certego URL API. Default: `https://panoptikon.certego.net/`.
-   * **Username**. Your Certego username.
-   * **Password**. Your Certego password. <br/><img src={useBaseUrl('img/platform-services/automation-service/app-central/integrations/certego/certego-4.png')} style={{border:'1px solid gray'}} alt="certego" width="400"/>
+* **Username**. Enter the username of a Certego admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the Certego admin user.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/certego-configuration.png')} style={{border:'1px solid gray'}} alt="Certego configuration" width="400"/>
 
 For information about Certego, see the [Certego website](https://www.certego.net/).
 

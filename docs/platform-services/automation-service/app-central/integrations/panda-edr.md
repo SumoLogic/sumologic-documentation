@@ -33,8 +33,29 @@ EDR
 ## Configure Panda EDR in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the [API URL](https://www.watchguard.com/help/docs/api/Content/en-US/api_get_started/make_requests.html) for WatchGuard, for example, `https://api.usa.cloud.watchguard.com`
+
+* **Access ID**. Enter a WatchGuard [access ID](https://www.watchguard.com/help/docs/api/Content/en-US/api_get_started/authentication.html).
+
+* **Password**. Enter the password for the access ID.
+
+* **WatchGuard API Key**. Enter the [API key associated with your WatchGuard Cloud account](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/WG-Cloud/mngd-access_enable-API-access.html) (shown on the [Managed Access](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/WG-Cloud/mngd-access.html) page in WatchGuard Cloud).
+
+* **Account ID**. Enter your WatchGuard Cloud account ID, as shown on the [My Account page](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/WG-Cloud/sub_acct-mgmt-page.html) in WatchGuard Cloud. For example, `WGC-1-123abc456` or `ACC-1234567`.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/panda-edr-configuration.png')} style={{border:'1px solid gray'}} alt="Panda EDR configuration" width="400"/>
 
 For information about Panda EDR, see [Panda EDR documentation](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Fireware/services/edr_core/edr_core_about_c.html).
 

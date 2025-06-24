@@ -24,11 +24,23 @@ Request your API Key from [https://www.farsightsecurity.com/solutions/dnsdb](htt
 ## Configure Farsight Security DNSDB in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL API**. Enter the Farsight Security API URL, for example, `https://api.dnsdb.info/`
 
-   * **URL API**. `https://api.dnsdb.info/`.
-   * **API Key**. Your API Key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/farsight-security-dnsdb/farsight-security-dnsdb-4.png')} style={{border:'1px solid gray'}} alt="farsight-security-dnsdb" width="400"/>
+* **API Key**. Enter the Farsight Security API key you [requested earlier](#farsight-security-dnsdb-configuration). 
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/farsight-security-configuration.png')} style={{border:'1px solid gray'}} alt="Farsight Security configuration" width="400"/>
 
 For information about Farsight Security DNSDB, see [Farsight Security DNSDB documentation](https://www.domaintools.com/resources/user-guides/farsight-dnsdb-api-version-2-documentation/).
 

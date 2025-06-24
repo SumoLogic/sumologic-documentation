@@ -28,11 +28,23 @@ To [view your API Key](https://help.ivanti.com/ht/help/en_US/ISM/2025/admin-user
 ## Configure Neurons ITSM in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Tenant URL**. Enter your Neurons ITSM [tenant URL](https://help.ivanti.com/ht/help/en_US/ISM/2025/admin-user/Content/Configure/LogIn/Log_In_Using_URLs.htm).
 
-   * **Tenant URL**. Enter your tenant url.
-   * **API Key**. The API Key you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-4.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="400"/>
+* **API Key**. The [API key](https://help.ivanti.com/ht/help/en_US/ISM/2025/admin-user/Content/Configure/API/Using-REST-API-Key.htm) you [copied earlier](#neurons-itsm-configuration).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/neurons-itsm-configuration.png')} style={{border:'1px solid gray'}} alt="Neurons ITSM configuration" width="400"/>
 
 For information about Neurons for ITSM, see [Neurons or ITSM documentation](https://help.ivanti.com/ht/help/en_US/ISM/2025/admin-user/Content/Common/Getting%20Started.htm).
 

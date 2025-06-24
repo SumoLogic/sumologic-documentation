@@ -24,13 +24,25 @@ Digital Risk Protection from PhishLabs protects your organization's critical dig
 ## Configure PhishLabs DRP in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your PhishLabs DRP URL.
 
-   * **Label**. The desired name for the resource.
-   * **URL**. Your PhishLabs DRP URL.
-   * **Username**. Your PhishLabs DRP username you copied earlier from PhishLabs DRP.
-   * **Password**. Your PhishLabs DRP password you copied earlier from PhishLabs DRP.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-drp/phishlabs-drp-4.png')} style={{border:'1px solid gray'}} alt="phishlabs-drp" width="400"/>
+* **Username**. Enter the username of a PhishLabs DRP admin user authorized to authenticate the integration. 
+
+* **Password**. Enter the password of the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phishlabs-drp-configuration.png')} style={{border:'1px solid gray'}} alt="PhishLabs DRP configuration" width="400"/>
 
 For information about PhishLabs, see the [PhishLabs website](https://www.phishlabs.com/).
 

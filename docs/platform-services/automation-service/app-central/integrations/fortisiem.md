@@ -24,8 +24,25 @@ Search events and retrieve device details from Fortinet FortiSIEM.
 ## Configure FortiSIEM in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your FortiSIEM server URL.
+
+* **Username**. Enter the username of a FortiSIEM admin user authorized to authenticate the integration. Use the format organization name / username (for example, `super/admin`).
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fortisiem-configuration.png')} style={{border:'1px solid gray'}} alt="FortiSIEM configuration" width="400"/>
 
 For information about FortiSIEM, see [FortiSIEM documentation](https://docs.fortinet.com/product/fortisiem/7.4).
 

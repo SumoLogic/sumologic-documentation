@@ -27,7 +27,9 @@ Dynatrace is a cutting-edge solution that offers full-stack monitoring, enabling
 * **Search Security Problems Daemon** *(Daemon)* - Automatically returns latest security problems.
 * **Unmute Security Problem** *(Containment)* - Unmutes the specified security problem.
 
-**Timeframe**
+## Data format
+
+### Timeframe
 
 You can use one of the following formats for timeframe:
 
@@ -41,7 +43,7 @@ You can use one of the following formats for timeframe:
     + M: months
     + y: years
 
-**Event Selector**
+### Event Selector
 
 Defines the scope of the query. Only events matching the specified criteria are included in the response.
 
@@ -59,7 +61,7 @@ Defines the scope of the query. Only events matching the specified criteria are 
 
 To set several criteria, separate them with commas (,). Only results matching all criteria are included in the response.
 
-**Entity Selector**
+### Entity Selector
 
 The entity scope of the query. You must set one of these criteria:
 
@@ -93,7 +95,7 @@ The length of the string is limited to 10,000 characters.
 
 The number of entities that can be selected is limited to 10000.
 
-**Metric Selector**
+### Metric Selector
 
 You can specify multiple metric keys separated by commas (for example, metrickey1,metrickey2). To select multiple metrics belonging to the same parent, list the last part of the required metric keys in parentheses, separated by commas, while keeping the common part untouched. For example, to list the builtin:host.cpu.idle and builtin:host.cpu.user metric, write: builtin:host.cpu.(idle,user).
 
@@ -114,14 +116,14 @@ For example, to query the metric with the key of ext:selfmonitoring.jmx.Agents: 
 
 To find metrics based on a search term, rather than metricId, use the text query parameter instead of this one.
 
-**Log Search**
+### Log Search
 
 The log search query.
 
 The query must use the [Dynatrace search query language](https://www.dynatrace.com/support/help/how-to-use-dynatrace/log-monitoring/analyze-log-data/log-viewer#sql).   
 The query has a limit of 20 relations (logical operators between simple expressions (AND, OR) or comparison operators (=, !=, &lt;, &lt;=, &gt;, &gt;=) in simple expressions).
 
-**Dynatrace documentation**
+### Dynatrace documentation
 
 More information can be found [here](https://www.dynatrace.com/support/help).
 
@@ -143,8 +145,23 @@ To be authenticated to use the Dynatrace API, you need a valid access token. To 
 ## Configure Dynatrace in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Dynatrace server URL.
+
+* **API Token**. Enter the Dynatrace API token you [created earlier](#dynatrace-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/dynatrace-configuration.png')} style={{border:'1px solid gray'}} alt="Dynatrace configuration" width="400"/>
 
 For information about Dynatrace, see [Dynatrace documentation](https://docs.dynatrace.com/docs).
 

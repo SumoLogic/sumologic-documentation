@@ -24,25 +24,11 @@ For Azure Virtual Machine, you can collect the following logs and metrics:
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+* Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
 You must explicitly enable diagnostic settings for each Virtual Machine you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/VM/ActivityLogs`, `Azure/VM/Metrics`.
-
-### Configure field in field schema
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
-1. Search for the following fields:
-    - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-    - `location`. The region to which the resource name belongs to.
-    - `subscription_id`. ID associated with a subscription where the resource is present.
-    - `resource_group`. The resource group name where the Azure resource is present.
-    - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
-    - `resource_type`. Azure resource type (for example, storage accounts).
-    - `resource_name`. The name of the resource (for example, storage account name).
-    - `service_type`. Type of the service that can be accessed with a Azure resource.
-    - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances service is Subscriptions).
-1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
 
 ### Configure metric rules
 
@@ -64,13 +50,9 @@ tenant_name=* namespace=Microsoft.Compute/virtualMachines resource_name=*
 
 ### Configure metrics collection
 
-:::note
-The Sumo Logic metrics source for Azure is currently in Beta. To participate, contact your Sumo Logic account executive.
-:::
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
-1. To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
-1. In the Sumo Logic Azure Metrics source configuration, configure namespaces as `Microsoft.Compute/virtualMachines` and `Microsoft.Compute/virtualMachineScaleSets`.
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-machine-namespaces.png')} alt="Azure Virtual Machine Namespaces" style={{border: '1px solid gray'}} width="500" />
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -95,15 +77,27 @@ Since this source contains logs from multiple regions, make sure that you do not
 
 ## Installing the Azure Virtual Machine app
 
-import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstallNoDataSourceV2/>
+<AppInstallIndexV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region to which the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with a Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure Virtual Machine dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/>
 
 ### Overview
 
@@ -148,7 +142,7 @@ Use this dashboard to:
 * Monitor the success and failure rates of policy events to ensure proper configuration and compliance.
 * Track and analyse recent recommendations to improve the performance and security of your Vaults setup.
 * Identify trends in policy events and recommendations over time to proactively address potential issues.
-  
+
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Policy+and+Recommendations.png')} alt="Azure Key Vault - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### CPU
@@ -186,12 +180,14 @@ These alerts are metric based and will work for all Virtual Machine.
 | `Azure Virtual Machine - Data Disk IOPs Consumed Monitor` | This alert is triggered when Data Disk IOPs consumption percentage spikes above 95% are detected for any VM. | Count > 95 | Count =< 95 |
 | `Azure Virtual Machine - OS Disk IOPs Consumed Monitor`| This alert is triggered when OS Disk IOPs consumption percentage spikes above 95% are detected for any VM. | Count > 95 | Count =< 95 |
 
-## Upgrade/Downgrade the Azure Virtual Network app (optional)
+## Upgrade/Downgrade the Azure Virtual Machine app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Azure Virtual Network app (optional)
+## Uninstalling the Azure Virtual Machine app (optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -22,13 +22,32 @@ The IBM Maximo is a single, integrated cloud-based platform that uses AI, IoT an
 ## Configure IBM Maximo in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter the [hostname](https://www.ibm.com/docs/en/masv-and-l/cd?topic=installing-setting-up-maximo-application-suite) for the API.
 
-   * **Host**. Host for API.
-   * **Username**. Username you use to log in into the system.
-   * **Password**. The password of your email.
-   * Additionally, if need you to, you can populate the query daemons.
+* **Port**. Enter the port for your IBM Maximo instance.
+
+* **Username**. Enter the username of an IBM Maximo admin user who logs into the system.
+
+* **Password**. Enter the password of the admin user.
+   
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+:::note
+Additionally, if need you to, you can populate the [query](https://www.ibm.com/docs/en/maximo-anywhere/7.6.2?topic=queries-creating-in-maximo-asset-management) daemons.
+:::
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ibm-maximo-configuration.png')} style={{border:'1px solid gray'}} alt="IBM Maximo configuration" width="400"/>
 
 For information about IBM Maximo, see [IBM Maximo documentation](https://www.ibm.com/docs/en/mam/7.6.1).
 

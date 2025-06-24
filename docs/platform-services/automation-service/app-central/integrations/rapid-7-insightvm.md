@@ -35,8 +35,27 @@ Vulnerability Management
 ## Configure Rapid7 InsightVM in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Rapid7 InsightVM URL, for example, `your-domain.rapid7.com`.
+
+* **Port**. Enter your Rapid7 InsightVM [port](https://docs.rapid7.com/insightvm/insightvm-quick-start-guide/#ports).
+
+* **Username**. Enter the username of a Rapid7 InsightVM admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/rapid7-insightvm-configuration.png')} style={{border:'1px solid gray'}} alt="Rapid7 InsightVM configuration" width="400"/>
 
 For information about Rapid7 InsightVM, see [Rapid7 InsightVM documentation](https://docs.rapid7.com/insightvm/).
 

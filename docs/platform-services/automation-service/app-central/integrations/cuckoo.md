@@ -26,8 +26,29 @@ Utilize Cuckoo sandbox to detonate potentially malicious files and URLs during a
 ## Configure Cuckoo in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API Port**. Enter the [Cuckoo API](https://cuckoo.readthedocs.io/en/latest/usage/api/) port.
+
+* **URL**. Enter the Cuckoo API URL.
+
+* **API Key (Token)**. Enter the Cuckoo API key.
+
+* **Username**. Enter the username of the Cuckoo admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cuckoo/cuckoo-configuration.png')} style={{border:'1px solid gray'}} alt="Cuckoo configuration" width="400"/>
 
 For information about Cuckoo, see [Cuckoo documentation](https://cuckoo.readthedocs.io/en/latest/usage/api/).
 

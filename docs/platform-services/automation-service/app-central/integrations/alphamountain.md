@@ -26,11 +26,24 @@ In order to get a free trial please visit [https://www.alphamountain.ai/contact/
 ## Configure alphaMountain in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-   * **URL**. alphaMountain API URL. Default: 'https://api.alphamountain.ai'
-   * **License Key**. Your License Key for alphaMountain.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alphamountain/alphamountain-4.png')} style={{border:'1px solid gray'}} alt="alphamountain-4" width="400"/>
+* <IntegrationLabel/>
+* **URL**. Enter the alphaMountain API URL. The default value is `https://api.alphamountain.ai`
+
+* **License Key**. Enter your License Key for alphaMountain.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/alphamountain-configuration.png')} style={{border:'1px solid gray'}} alt="alphaMountain configuration" width="400"/>
 
 For information about alphaMountain, see [alphaMountain documentation](https://www.alphamountain.ai/api/).
 

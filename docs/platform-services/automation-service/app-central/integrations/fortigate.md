@@ -35,8 +35,23 @@ Work with Addresses, Policies and Services in Fortinet FortiGate.
 ## Configure FortiGate in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter the server URL for your FortiGate instance.
+
+* **Token**. Enter a FortiGate [token](https://docs.fortinet.com/document/fortigate/7.6.2/cli-reference/214143909/execute-gen-token).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fortigate-configuration.png')} style={{border:'1px solid gray'}} alt="FortiGate configuration" width="400"/>
 
 For information about FortiGate, see [FortiGate documentation](https://docs.fortinet.com/product/fortigate/7.6).
 

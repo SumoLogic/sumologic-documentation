@@ -10,9 +10,9 @@ The Cloud-to-Cloud Integration Framework is a fully-managed collection system th
 
 ## Limitations
 
-* The number of Cloud-to-Cloud Sources is limited to 20 for free accounts, and 50 for all other accounts.
-* You are warned when you reach 80% of the limit (16 Sources for free accounts, and 40 Sources for other accounts).
-* You are notified when you have reached the Source limit.
+* Each account is limited to 50 Cloud-to-Cloud Sources.
+* A warning is issued when you reach 80% of the limit (40 Sources).
+* You are notified when the maximum limit is reached.
 * In the [Fed deployment](/docs/api/troubleshooting#deployments-and-sumo-logic-endpoints), supported Cloud-to-Cloud Sources are limited.
 
 ## Static IP addresses
@@ -76,6 +76,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source"><img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="icon" width="50"/><h4>Airtable Source</h4></a>
   <p>Airtable Source helps to retrieve Airtable audit logs into the Sumo Logic environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-cpc-source"><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="120"/><h4>Akamai CPC Source</h4></a>
+  <p>Learn to fetch CPC-Configs, CPC-Alerts, and CPC-Alert Details from the Akamai platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -490,6 +496,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source"><img src={useBaseUrl('img/send-data/smartsheet.png')} alt="Thumbnail icon" width="50"/><h4>Smartsheet</h4></a>
         <p>Learn how to collect events from Smartsheet platform.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-logs-source"><img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Thumbnail icon" width="150"/><h4>Snowflake Logs</h4></a>
+        <p>Learn how to collect logs from Snowflake platform.</p>
         </div>
       </div>
       <div className="box smallbox card">

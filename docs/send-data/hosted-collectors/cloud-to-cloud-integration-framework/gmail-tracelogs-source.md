@@ -8,10 +8,6 @@ tags:
 description: The Sumo Logic Gmail Trace Logs source pulls the Gmail log from the BigQuery using BigQuery Library APIs and ingests them into the Sumo Logic to store, analyze, and alert.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/gmail-tracelogs/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/gmail-tracelogs/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/gmail-tracelogs/example.tf';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -20,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 :::note
 This source was originally developed for [Gmail logs in BigQuery](https://support.google.com/a/topic/7233311?fl=1&sjid=293657922002214011-NA), which has been replaced by [Google Workspace logs and reports in BigQuery](https://support.google.com/a/topic/9079469?fl=1&sjid=293657922002214011-NA).
 
-You'll need to use our [Google BigQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source) instead (see [Example 3: Query Gmail Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source/#example-3-query-gmail-logs)). 
+You'll need to use our [Google BigQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source) instead (see [Example 3: Query Gmail Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source/#example-3-query-gmail-logs)).
 :::
 
 The Gmail Trace Logs integration pulls the Gmail log from the BigQuery using BigQuery Library APIs and ingests them into the Sumo Logic to store, analyze, and alert.
@@ -52,7 +48,7 @@ Follow the below steps to get the Service Account's Credential JSON file to to c
 When you create an Gmail Trace Logs Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure Gmail Trace Logs Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Gmail Trace Logs**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -61,7 +57,7 @@ To configure Gmail Trace Logs Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Project ID**. Enter the unique identifier number. You can find this from the Google Cloud Console.
-1. **Dataset ID**. Enter the ID. The Dataset ID is the project-wise unique identifier for your dataset. 
+1. **Dataset ID**. Enter the ID. The Dataset ID is the project-wise unique identifier for your dataset.
 1. **Data Location**. Enter the location of DataSet which is set while creating Dataset in BigQuery.
 1. **Private Key**. Enter the private key of Service Account JSON. This is a security key which is required for authentication. You can find this from the Google Cloud Console.
 1. **Client Email**. Enter the user email collected from the Google Cloud Console.
@@ -105,15 +101,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/gmail-tracelogs/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/gmail-tracelogs/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/gmail-tracelogs/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/gmail-tracelogs/example.tf
+```
 
 ## FAQ
 

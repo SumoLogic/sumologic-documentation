@@ -27,8 +27,27 @@ Cisco Stealthwatch provides easy to use and comprehensive APIs for reporting, ma
 ## Configure Cisco Stealthwatch in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter the name of your Cisco Stealthwatch host.
+
+* **Username**. Enter the username of a Cisco Stealthwatch admin authorized to provide authentication for the integration.
+
+* **Password**. Enter the password for the Cisco Stealthwatch admin user.
+
+* **Tenant ID**. Enter a Cisco Stealthwatch tenant ID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-stealthwatch-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Stealthwatch configuration" width="400"/>
 
 For information about Cisco Secure Network Analytics (formerly Stealthwatch), see [Cisco Secure Network Analytics documentation](https://www.cisco.com/c/en/us/support/security/stealthwatch/series.html).
 

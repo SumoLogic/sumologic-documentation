@@ -26,8 +26,25 @@ Intsight Threat Intelligence Platform.
 ## Configure Intsights TIP in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Intsights URL.
+
+* **Account ID**. Enter your Intsights [account ID](https://docs.rapid7.com/threat-command/subscription-settings/).
+
+* **API Key**. Enter your Intsights [API key](https://docs.rapid7.com/insight/managing-platform-api-keys/).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/intsights-configuration.png')} style={{border:'1px solid gray'}} alt="Intsights TIP configuration" width="400"/>
 
 For information about Rapid7 Threat Command ([formerly Intsights TIP](https://www.msspalert.com/news/rapid7-acquires-intsights-cyber)), see [Rapid7 Threat Command documentation](https://docs.rapid7.com/).
 

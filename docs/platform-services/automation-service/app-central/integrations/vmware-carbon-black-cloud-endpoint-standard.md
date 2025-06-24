@@ -31,14 +31,27 @@ VMware Carbon Black Cloud Endpoint Standard Integration allows security operator
 ## Configure VMware Carbon Black Cloud Enterprise EDR in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the URL to the API of the VMware Carbon Black Cloud Endpoint Standard instance, for example, `https://defense.conferdeploy.net`.
 
-   * **Label**. The name of the resource.
-   * **API URL**. URL to the API of the VMware Carbon Black Cloud Endpoint Standard instance `https://defense.conferdeploy.net`.
-   * **Organization Key**. The Organization Key you copied earlier.
-   * **API ID**. The API ID that you copied earlier.
-   * **API Secret Key**. The API Secret Key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-endpoint-standard/vmware-carbon-black-cloud-endpoint-standard-9.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-endpoint-standard" width="400"/>
+* **Organization Key**. Enter the [organization key](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/#org-key) you [copied earlier](#vmware-carbon-black-cloud-endpoint-standard-configuration).
+
+* **API ID**. Enter the [API ID](https://techdocs.broadcom.com/us/en/carbon-black/cloud/carbon-black-cloud/index/cbc-user-guide-tile/GUID-9620FAB7-FE70-45DE-9CAB-590FA358721F-en/GUID-7AA95653-EF83-4F49-B11F-F984F7D62CB8-en/GUID-F3816FB5-969F-4113-80FC-03981C65F969-en.html) that you [copied earlier](#vmware-carbon-black-cloud-endpoint-standard-configuration).
+
+* **API Secret Key**. Enter the secret for the API ID that you [copied earlier](#vmware-carbon-black-cloud-endpoint-standard-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmware-carbon-black-cloud-enterprise-standard-configuration.png')} style={{border:'1px solid gray'}} alt="VMware Carbon Black Cloud Endpoint Standard configuration" width="400"/>
 
 For information about Carbon Black Cloud, see [Carbon Black Cloud documentation](https://techdocs.broadcom.com/us/en/carbon-black/cloud.html).
 

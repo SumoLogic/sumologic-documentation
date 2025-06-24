@@ -51,14 +51,27 @@ Record your API client secret somewhere safe. After the credential window is clo
 ## Configure CrowdStrike Falcon Intelligence in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your CrowdStrike API URL. The default value is `https://api.crowdstrike.com`
 
-    * **Label**. The resource name.
-    * **API URL**. The default Crowdstrike API URL is [https://api.crowdstrike.com](https://api.crowdstrike.com/).
-    * **Client ID**. The unique identifier of the API client. The client ID is visible from the API clients table in the Falcon console.
-    * **Client Secret**. A secret code for an API client, equivalent to a password. The secret is only visible to you at the time the API client is created. After that, it is not retrievable. If your client secret is ever lost, you can reset it to generate a new one.
-    * **Member CID**. For MSSP Master CIDs, optionally lock the token to act on behalf of this member CID.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-6.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-intelligence" width="400"/>
+* **Client ID**. Enter the unique identifier of the API client. The client ID is visible from the API clients table in the Falcon console.
+
+* **Client Secret**. Enter the secret code for the API client, equivalent to a password. The secret is only visible to you at the time the API client is created. After that, it is not retrievable. If your client secret is ever lost, you can reset it to generate a new one.
+
+* **Member CID**. Enter the member CIS. For MSSP Master CIDs, optionally lock the token to act on behalf of this member CID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/crowdstrike-falcon-intelligence-configuration.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon Intelligence configuration" width="400"/>
 
 For information about CrowdStrike Falcon Intelligence, see [CrowdStrike documentation](https://www.crowdstrike.com/en-us/resources/guides/?lang=1).
 

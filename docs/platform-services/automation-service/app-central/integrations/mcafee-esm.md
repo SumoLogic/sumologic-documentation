@@ -29,8 +29,27 @@ Work with McAfee ESM Events, Alarms, and Watchlists.
 ## Configure McAfee ESM in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your McAfee ESM server URL.
+
+* **Username**. Enter the username for a McAfee ESM admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+
+* **McAfee Timezone (Daemon)**. Select your timezone.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mcafee-esm-configuration.png')} style={{border:'1px solid gray'}} alt="McAfee ESM configuration" width="400"/>
 
 For information about McAfee ESM, see [McAfee Enterprise Security Manager documentation](https://docs.trellix.com/bundle/enterprise-security-manager-11.5.x-product-guide/page/GUID-7E4DE7F5-C6BB-4C1B-8EDB-E92F53D144EF.html).
 

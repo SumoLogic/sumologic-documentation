@@ -31,11 +31,24 @@ Follow these steps to get your API Key and URL from Intelligence X:
 ## Configure Intelligence X in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Intelligence X URL.
 
-   * **Label**. The desired name for the resource.
-   * **API key**. Your Intelligence X API Key you copied earlier from Intelligence X.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-6.png')} style={{border:'1px solid gray'}} alt="intelligence-x" width="400"/>
+* **API key**. Enter the Intelligence X [API key](https://www.ginseg.com/wp-content/uploads/sites/2/2019/07/Manual-Intelligence-X-API.pdf) you [copied earlier](#intelligence-x-configuration) from Intelligence X.
+
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/intelligence-x-configuration.png')} style={{border:'1px solid gray'}} alt="Intelligence X configuration" width="400"/>
 
 For information about Intelligence X, see the [Intelligence X website](https://intelx.io/).
 

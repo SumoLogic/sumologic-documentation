@@ -25,8 +25,25 @@ Prisma Cloud requires an API access key to enable programmatic access to the RES
 ## Configure Prisma Cloud in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Prisma Cloud [API URL](https://pan.dev/prisma-cloud/api/cspm/api-urls/). 
+
+* **Username/Access Key ID**. Enter a Prisma Cloud admin username, or an [access key](https://docs.prismacloud.io/en/enterprise-edition/content-collections/administration/create-access-keys).
+
+* **Password/Access Key Secret**. Enter the password for the admin user (if you previously entered a username), or the secret for access key (f you previously entered an access key)
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/prisma-cloud-configuration.png')} style={{border:'1px solid gray'}} alt="Prisma Cloud configuration" width="400"/>
 
 For information about Prisma Cloud, see [Prisma Cloud documentation](https://docs.prismacloud.io/en).
 

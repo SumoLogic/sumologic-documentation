@@ -24,12 +24,25 @@ The Jamf platform creates IT software that manages Apple devices.
 ## Configure Jamf in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your [Jamf URL](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Jamf_Pro_URL.html).
 
-   * **URL**: jamf url.
-   * **Username**
-   * **Password**<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf/jamf-4.png')} style={{border:'1px solid gray'}} alt="jamf" width="400"/>
+* **Username**. Enter the username of a Jamf admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/jamf-configuration.png')} style={{border:'1px solid gray'}} alt="Jamf configuration" width="400"/>
 
 For information about Jamf, see [Jamf documentation](https://www.jamf.com/resources/product-documentation/jamf-pro-administrators-guide/).
 

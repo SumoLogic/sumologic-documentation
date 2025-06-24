@@ -27,8 +27,23 @@ Work with Access Rules, Domains, IP Policies and Recipient Policies in Fortinet 
 ## Configure FortiMail in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your FortiMail server URL.
+
+* **Username**. Enter the username of a FortiMail admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fortimail-configuration.png')} style={{border:'1px solid gray'}} alt="FortiMail configuration" width="400"/>
 
 For information about FortiMail, see [FortiMail documentation](https://docs.fortinet.com/product/fortimail/7.6).
 

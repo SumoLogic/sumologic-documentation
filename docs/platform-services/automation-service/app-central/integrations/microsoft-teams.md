@@ -374,22 +374,40 @@ For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/a
 ## Configure Microsoft Teams in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-    * **Label**. The resource name.
-    * **API URL**. The default Microsoft Graph API URL is 'https://graph.microsoft.com/v1.0'.
-    * **Tenant ID**. Directory (Tenant) ID (You can check from you app registration page).
-    * **Authentication Grant Type**. You can choose any value from the following according to the permissions you add to your App:
-        * Password (Delegated Context)
-        * Client Credentials (Application Context)
-    * **Client ID**. Application (Client) ID, Required for both Authentication Grant Type (You can check from you app registration page).
-    * **Client Secret**. Application (Client) Secret, Required for both Authentication Grant Type (Client Secret that you copied earlier).
-    * **Username**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
-    * **Password**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
-    * **Cloud SOAR URL**. Provide the SOAR URL in format 'https://your-cloud-soar-host/incmansuite\_ng' (this field is only required and use in Triggers).
-    * **Cloud SOAR JWT Token**. Provide your SOAR JWT which you can copy from your profile section (this field is only required and use in Triggers).
-    * **Team Incident Internal Field Name**. To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-8.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
+:::note
+Use the information you set up [above](#microsoft-teams-configuration).
+:::
+
+* <IntegrationLabel/>
+* **API URL**. Enter your Microsoft Teams API URL. The default URL is `https://graph.microsoft.com/v1.0`
+
+* **Tenant ID**. Enter the [tenant ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id) of the AAD directory in which you created the application. (You can check from your [app registration page](https://learn.microsoft.com/en-us/graph/auth-register-app-v2)).
+  
+* **Authentication Grant Type**. Choose one of the following according to the permissions you add to your app:
+   * **Password (Delegated Context)**
+   * **Client Credentials (Application Context)**
+
+* **Client ID**. Enter your application ID. (You can check from your [app registration page](https://learn.microsoft.com/en-us/graph/auth-register-app-v2)). This is required for both authentication grant types.
+
+* **Client Secret**. Enter your client secret. This is required for both authentication grant types.
+
+* **Username**. Enter the username of an admin user authorized to authenticate the integration. This is required only if you set the authentication grant type as **Password (Delegated Context)**. Leave this field empty if you set the authentication grant type as **Client Credentials (Application Context)**.
+
+* **Password**. Enter the password for the admin user. This is required only if you set the authentication grant type as **Password (Delegated Context)**. Leave this field empty if you set the authentication grant type as **Client Credentials (Application Context)**.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+    
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-teams-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Teams configuration" width="400"/>
 
 For information about Microsoft Teams, see [Microsoft Teams documentation](https://learn.microsoft.com/en-us/microsoftteams/).
 

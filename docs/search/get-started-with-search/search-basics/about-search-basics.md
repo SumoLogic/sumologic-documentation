@@ -24,19 +24,6 @@ How to search data using the Basic Search Mode in Sumo Logic.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/Ps2YperJyZo?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 In the **Search** tab, a search query is typically formatted something like this:

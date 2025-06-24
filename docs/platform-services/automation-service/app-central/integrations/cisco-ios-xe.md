@@ -27,8 +27,25 @@ Utilize and manipulate ACLs and Interfaces with Cisco IOS XE.
 ## Configure Cisco IOS XE in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your Cisco IOS XE server URL.
+
+* **Username**. Enter the username of a Cisco IOS XE admin authorized to provide authentication for the integration.
+
+* **Password**. Enter the password for the Cisco IOS XE admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-ios-xe-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco IOS XE configuration" width="400"/>
 
 For information about Cisco IOS XE, see [Cisco IOS XE documentation](https://www.cisco.com/c/en/us/td/docs/ios/ios_xe/preface/aboutios_xe.html).
 

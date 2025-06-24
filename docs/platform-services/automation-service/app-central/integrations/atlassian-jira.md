@@ -36,8 +36,35 @@ Ticketing System
 ## Configure Atlassian Jira in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Atlassian site URL. For example, `https://your-atlassian-site.atlassian.net/`. For information, see [Atlassian documentation](https://support.atlassian.com/jira/kb/find-your-site-url-to-set-up-the-jira-data-center-and-server-mobile-app/).
+
+* **Personal Access Token (PAT)**. Enter your Jira [personal access token](https://confluence.atlassian.com/enterprise/using-personal-access-tokens-1026032365.html).
+
+* **Username**. If you don't provide a personal access token, enter the username (email address) of the Jira admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for your Jira admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* **Jira Project Name (Daemon)**. Enter the Jira [project name](https://confluence.atlassian.com/adminjiraserver/defining-a-project-938847066.html).
+
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian/atlassian-jira-configuration.png')} style={{border:'1px solid gray'}} alt="Atlassian Jira Logger configuration" width="400"/>
 
 For information about Atlassian Jira, see [Jira documentation]( https://confluence.atlassian.com/jira). 
 

@@ -25,13 +25,25 @@ Mandiant Threat Intelligence is a comprehensive and powerful SaaS platform that 
 ## Configure Mandiant Advantage Threat intelligence in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the Mandiant Advantage base API URL. The default value is `https://api.intelligence.mandiant.com`
 
-   * **Label**. The name for the resource
-   * **URL**. The base API URL for WithSecure Elements. Default: 'https://api.intelligence.mandiant.com'.
-   * **Public Key**. The public key previously obtained.
-   * **Private Key**. The private key previously obtained.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mandiant-advantage-threat-intelligence/mandiant-advantage-threat-intelligence-6.png')} style={{border:'1px solid gray'}} alt="mandiant-advantage-threat-intelligence-6" width="400"/>  
+* **Public Key**. Enter the public key you [previously obtained](#mandiant-threat-intelligence-configuration).
+
+* **Private Key**. Enter the private key you previously obtained.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mandiant-configuration.png')} style={{border:'1px solid gray'}} alt="Mandiant configuration" width="400"/>
 
 For information about Mandiant, see the [Mandiant website](https://www.mandiant.com/).
 

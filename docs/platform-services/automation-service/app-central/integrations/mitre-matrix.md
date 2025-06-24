@@ -1,5 +1,5 @@
 ---
-title: Mitre Matrix
+title: MITRE Matrix
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -23,13 +23,26 @@ MITRE is a globally-accessible knowledge base of adversary tactics and technique
 
 * [pyattck](https://github.com/swimlane/pyattck/blob/master/LICENSE.md)
 
-## Configure Mitre Matrix in Automation Service and Cloud SOAR
+## Configure MITRE Matrix in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Update MITRE ATT&CK**. Select to get the latest MITRE techniques, tactics, etc.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
-For information about Mitre Matrix, see [Mitre Matrix documentation](https://attack.mitre.org/).
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mitre-matrix-configuration.png')} style={{border:'1px solid gray'}} alt="MITRE Matrix configuration" width="400"/>
+
+For information about MITRE Matrix, see [MITRE Matrix documentation](https://attack.mitre.org/).
 
 ## Change Log
 

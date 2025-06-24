@@ -22,12 +22,23 @@ HudsonRock Cavalier is a cybercrime intelligence data source composed of million
 ## Configure HudsonRock Cavalier in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your HudsonRock API URL, for example, `https://api.hudsonrock.com/json/v3`
 
-   * **Label**. The desired name for the resource.
-   * **URL**. Your HudsonRock URL.
-   * **API Key**. Your HudsonRock API Key you copied earlier from HudsonRock.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hudsonrock-cavalier/hudsonrock-cavalier-4.png')} style={{border:'1px solid gray'}} alt="hudsonrock-cavalier" width="400"/>
+* **API Key**. Enter a HudsonRock [API key](https://docs.hudsonrock.com/reference/authentication) you copied earlier from HudsonRock.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/hudson-rock-cavalier-configuration.png')} style={{border:'1px solid gray'}} alt="Airtable configuration" width="400"/>
 
 For information about HudsonRock, see [HudsonRock documentation](https://docs.hudsonrock.com/).
 

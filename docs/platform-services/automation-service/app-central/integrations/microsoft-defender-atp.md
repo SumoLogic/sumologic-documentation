@@ -46,16 +46,30 @@ Microsoft Defender Advanced Threat Protection (ATP) is a product that enables pr
 ## Configure Microsoft Defender ATP in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the [Microsoft Defender API URL](https://learn.microsoft.com/en-us/defender-endpoint/api/exposed-apis-list) for the server that is closer to your geo location:
+	  * `api-us.securitycenter.microsoft.com`
+	  *` api-eu.securitycenter.microsoft.com`
+	  * `api-uk.securitycenter.microsoft.com`
 
-   * **Label**. The desired name for the resource.
-   * **API URL**. Server that is closer to your geo location.
-	  * api-us.securitycenter.microsoft.com
-	  * api-eu.securitycenter.microsoft.com
-	  * api-uk.securitycenter.microsoft.com
-   * **Directory (Tenant ID)**. Your Tenant ID you copied earlier.
-   * **Application (Client ID)**. Your Client ID you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-10.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="400"/>
+* **Directory (Tenant ID)**. Enter the tenant ID you [copied earlier](#microsoft-defender-atp-configuration).
+
+* **Application (Client) ID**. Enter the client ID you [copied earlier](#microsoft-defender-atp-configuration).
+
+* **Application (Client) Secret**. Enter the client secret you [copied earlier](#microsoft-defender-atp-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-defender-atp-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Defender ATP configuration" width="400"/>
 
 For information about Microsoft Defender for Endpoint (formerly Defender ATP), see [Microsoft Defender for Endpooint documentation](https://learn.microsoft.com/en-us/defender-endpoint/).
 

@@ -35,11 +35,23 @@ Follow these steps to [get your API key from Automox](https://docs.automox.com/p
 ## Configure Automox in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Automox site URL. The default value is `https://console.automox.com`
 
-   * **URL**. The Automox URL. Default: 'https://console.automox.com'
-   * **API Key**. The API Key you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-8.png')} style={{border:'1px solid gray'}} alt="automox-8" width="400"/>
+* **API Key**. Enter the API key you [copied earlier](#automox-configuration). 
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/automox-configuration.png')} style={{border:'1px solid gray'}} alt="Automox configuration" width="400"/>
 
 For information about Automox, see [Automox documentation](https://docs.automox.com/product/Home.htm).
 

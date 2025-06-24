@@ -25,7 +25,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/security/about-two-step-verification')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>About 2-Step Verification</h4></a>
+  <a href={useBaseUrl('docs/manage/security/about-2-step-verification')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>About 2-Step Verification</h4></a>
   <p>Learn how to enhance security and secure sensitive data stored in Sumo Logic.</p>
   </div>
 </div>

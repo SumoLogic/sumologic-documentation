@@ -17,19 +17,30 @@ IPstack API services enable you to locate and identify website visitors at a sta
 
 ## IPstack configuration
 
-Visit [IPstack](https://ipstack.com/product) and Sign Up to get an API key.
+Visit [IPstack](https://ipstack.com/product) and sign up to get an API key.
 
-Once you're logged in you can also copy the API Key from here: [https://ipstack.com/dashboard](https://ipstack.com/dashboard) 
+Once you're logged in you can also copy the API key from here: [https://ipstack.com/dashboard](https://ipstack.com/dashboard) 
 
 ## Configure IPstack in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your IPstack API URL. By default, the URL is `http://api.ipstack.com`
 
-   * **Label**. The desired name for the resource.
-   * **API URL**. By default, the url is: 'http://api.ipstack.com'.
-   * **API Key**. The API Access Key you copied earlier.
+* **API Key**. Enter the [API Access Key](https://ipstack.com/documentation#apiaccesskey) you [copied earlier](#ipstack-configuration).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ipstack-configuration.png')} style={{border:'1px solid gray'}} alt="IPstack configuration" width="400"/>
 
 For information about IPstack, see [IPstack documentation](https://ipstack.com/documentation).
 

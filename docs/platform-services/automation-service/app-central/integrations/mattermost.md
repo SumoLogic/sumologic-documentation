@@ -21,13 +21,25 @@ search, and integrations.
 ## Configure Mattermost in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your Mattermost [URL](https://docs.mattermost.com/configure/authentication-configuration-settings.html), for example, `https://XXX.cloud.mattermost.com/`
 
-   * **Label**. Name of the resource.
-   * **URL**. URL of Mattermost, for example `https://xxx.yyy.mattermost.com` is already provided.
-   * **User Email**
-   * **Password**<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mattermost/mattermost-4.png')} style={{border:'1px solid gray'}} alt="mattermost" width="400"/>
+* **User Email**. Enter the Mattermost email for an admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mattermost-configuration.png')} style={{border:'1px solid gray'}} alt="Mattermost configuration" width="400"/>
 
 For information about Mattermost, see [Mattermost documentation](https://docs.mattermost.com/index.html).
 

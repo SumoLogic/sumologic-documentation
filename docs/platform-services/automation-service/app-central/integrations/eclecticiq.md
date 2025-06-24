@@ -30,10 +30,27 @@ State-of-the-art CTI technology for large enterprises, governments, and MSSPs.
 ## Configure EclecticIQ in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the URL for your EclecticIQ instance.
 
-For information about EclecticIQ, see the [EclecticIQ website](https://www.eclecticiq.com/library).
+* **API Token**. Enter an EclecticIQ [API token](https://docs.eclecticiq.com/ic/2.13.0/Create_an_API_token.html).
+
+* **API Version**. Enter the EclecticIQ API version number.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/eclecticiq-configuration.png')} style={{border:'1px solid gray'}} alt="EclecticIQ configuration" width="400"/>
+
+For information about EclecticIQ, see the [EclecticIQ documentation](https://docs.eclecticiq.com/).
 
 ## Change Log
 

@@ -22,7 +22,7 @@ Utilize Sophos Central enrichment data during incident investigations.
 
 ## Sophos Central V3 configuration
 
-The following steps show how to create new API credentials to work with Cloud SOAR.
+The following steps show how to create new [API credentials](https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/APICredentials/index.html) to work with Cloud SOAR.
 
 1. Log in to the [Sophos Central Partner](https://central.sophos.com/manage/partner) platform.
 1. On the left click on **Settings & Policies** and then click the **API credentials**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-1.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="600"/>
@@ -35,12 +35,25 @@ The following steps show how to create new API credentials to work with Cloud SO
 ## Configure Sophos Central V3 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your[ Sophos API URL](https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/APICredentials/ThirdPartyAccess/index.html), for example, `https://api.central.sophos.com`.
 
-    * **Label**. The name of the resource.
-    * **URL**. `https://api.central.sophos.com`.
-    * Client ID and Client Secret taken earlier from Sophos.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-9.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="400"/>
+* **Client ID**. Enter the [client ID](https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/APICredentials/index.html) you [obtained earlier](#sophos-central-v3-configuration).
+
+* **Client Secret**. Enter the secret for the client ID.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sophos-center-v3-configuration.png')} style={{border:'1px solid gray'}} alt="Sophos Central V3 configuration" width="400"/>
 
 For information about Sophos Central, see [Sophos Central documentation](https://docs.sophos.com/central/customer/help/en-us/index.html).
 

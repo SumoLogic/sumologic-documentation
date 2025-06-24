@@ -6,10 +6,30 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/thehive.png')} alt="thehive" width="80"/>
 
-***Version: 1.0.1  
-Updated: Jul 03, 2023***
+***Version: 1.2  
+Updated: May 22, 2025***
 
 Query, update, and work with cases in TheHive from Cloud SOAR.
+
+## Overview
+
+### Purpose
+
+This integration enables seamless interaction with TheHive platform, allowing case and observable management. It supports creating, updating, and searching cases and observables.
+
+### Use cases
+
+* Create and update incident cases/observables.
+* Search for existing cases or observables matching specific criteria.
+* Find similar observables.
+* Retrieve detailed information about a case or observable for investigation.
+
+### Supported versions
+* TheHive 5.x
+
+### Prerequisites
+* A working instance of TheHive with API access enabled.
+* API key with appropriate permissions.
 
 ## Actions
 
@@ -26,12 +46,80 @@ Query, update, and work with cases in TheHive from Cloud SOAR.
 ## Configure TheHive in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API Key**. Enter an [API key](https://docs.strangebee.com/cortex/api/api-guide/#authentication) used to authenticate API requests to TheHive.
+
+* **Server URL**. Enter the [base URL](https://docs.strangebee.com/thehive/configuration/service/#listen-address-port) (hostname or IP address) of your TheHive server.
+
+* **Port**. (Optional) Enter the [port number](https://docs.strangebee.com/thehive/configuration/service/#listen-address-port) on which TheHive is accessible.
+
+* **Organization Name**. (Optional) Enter the name of the [organization](https://docs.strangebee.com/thehive/administration/organizations/about-organizations/) context in multi-tenant deployments of TheHive.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/thehive-configuration.png')} style={{border:'1px solid gray'}} alt="TheHive configuration" width="400"/>
 
 For information about TheHive, see [TheHive documentation](https://docs.strangebee.com/).
+
+## Usage
+
+### Basic usage
+* Create Case: Provide case title, severity, TLP, tags, and other metadata to create a new case in TheHive.
+* Create Observable: Supply caseId, data, dataType, and other metadata to attach observables to a case.
+* Get Case/Observable: Retrieve full metadata for any case or observable using its unique ID.
+
+### Advanced usage
+* Search Case/Observable: Use complex queries to find matching cases or observables using filters.
+* Find Similar Observables: compare observables with similar traits across multiple cases.
+* Update Case/Observable: Modify fields like TLP, tags, status, or timestamps.
+
+## API reference
+
+### Configuration
+To configure the integration:
+* API Key: A unique token used to authenticate API requests to TheHive.
+* Server URL and Port: Define the host and port of TheHive instance (port is optional).
+* Organization Name (optional): Organization name.
+
+### Enrichment API
+* Create Observable
+* Update Observable
+* Search Observable/Case
+  * Use filtering parameters (dataType, tags, date, etc.) to retrieve specific artifacts or cases.
+
+### Rate Limits and Quotas
+* There are no specific limits enforced by TheHive unless configured externally.
+
+#### Troubleshooting
+* Forbidden (403): Check API key.
+* Not Found (404): Ensure IDs like caseId or artifactId are correct.
+* Validation Errors: Ensure correct formatting of fields like range (start-end), timestamps, or tags.
+
+### FAQ
+
+#### What happens if an invalid range is passed?
+The input will be cleaned (e.g., 5 - 10 to 5-10) and validated. If the format is incorrect or the range is invalid (start > end), an error is raised.
+
+### Support
+For issues, questions, or improvements:
+* Use the Sumo Logic logs and API error messages for initial debugging.
+* Refer to TheHive [official documentation](https://docs.thehive-project.org/)
 
 ## Change Log
 
 * January 29, 2019 - First upload
 * July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
+* May 22, 2025 (v1.2) – Modified TheHive integration with case and observable enhancements:
+  * Fixed parsing issues for date related inputs with inconsistent formatting.
+  * Fixed ssl related warning issues.
+  * Added organization name field in resource which will included in the headers.
+  * Enhanced error handling and made the integration more resilient to malformed inputs.

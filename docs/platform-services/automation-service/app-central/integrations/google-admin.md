@@ -41,12 +41,23 @@ To [create a Service Account](https://developers.google.com/workspace/guides/cre
 ## Configure Google Admin in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **User Service Account JSON**. Provide the content of the JSON file generated in [above](#google-admin-configuration). Open the file and copy-paste the whole content in the field.
 
-* **Label**. The desired name for the resource.
-* **User Service Account JSON**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
-* **Admin User Email**. The e-mail address of an admin user.
+* **Admin User Email**. Enter the email address of an admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/google-admin-configuration.png')} style={{border:'1px solid gray'}} alt="Google Admin configuration" width="400"/>
 
 For information about Google Admin, see [Google Workspace Admin documentation](https://support.google.com/a/?hl=en#topic=4388346).
 

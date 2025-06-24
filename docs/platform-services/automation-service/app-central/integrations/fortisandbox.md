@@ -25,8 +25,25 @@ Fortinet FortiSandbox is a detection tool with threat prevention capabilities, w
 ## Configure FortiSandbox in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your FortiSandbox server URL.
+
+* **Username**. Enter the username of a FortiSandbox admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fortisandbox-configuration.png')} style={{border:'1px solid gray'}} alt="FortiSandbox configuration" width="400"/>
 
 For information about FortiSandbox, see [FortiSandbox documentation](https://docs.fortinet.com/product/fortisandbox/5.0).
 

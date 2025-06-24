@@ -30,8 +30,23 @@ Layered Next-Gen Security for physical, virtual, and cloud environments provided
 ## Configure Bitdefender GravityZone in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the URL for your GravityZone site.
+
+* **API Key**. Enter your GravityZone [API key](https://www.bitdefender.com/business/support/en/77209-125277-public-api.html).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitdefender/bitdefender-configuration.png')} style={{border:'1px solid gray'}} alt="Bitdefender Gravity Zone configuration" width="400"/>
 
 For information about Bitdefender GravityZone, see [GravityZone documentation](https://www.bitdefender.com/business/support/en/77209-79436-welcome-to-gravityzone.html).
 

@@ -22,7 +22,7 @@ Axonius is a cybersecurity asset management platform that provides comprehensive
 
 ## Axonius configuration
 
-The API Key and Secret for an Axonius user is available from the My Account page.
+The API Key and Secret for an Axonius user is available from the [My Account page](https://docs.axonius.com/docs/account-settings).
 
 1. Log in to Axonius with a user account or Service Account whose role has the **API access enabled** permission.
 1. At the bottom of the Navigation toolbar, click on your account avatar. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-1.png')} style={{border:'1px solid gray'}} alt="axonius-1" width="200"/>
@@ -43,15 +43,27 @@ More info related to creating queries is [here](https://docs.axonius.com/docs/qu
 ## Configure Axonius in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Axonius URL**. Enter the [URL to your Axonius instance](https://docs.axonius.com/docs/configuring-system-external-url), for example, `https://your-axonius-instance.axonius.com`
 
-   * **Label**. The name of the resource.
-   * **URL**. URL to Axonius instance, for example, 'https://your-axonius-instance.axonius.com'.
-   * **API Key**. The API Key that you copied earlier.
-   * **API Secret**. The API Secret that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-8.png')} style={{border:'1px solid gray'}} alt="axonius-8" width="400"/>
+* **API Key**. Enter the [API key](https://docs.axonius.com/docs/managing-api-settings) that you [copied earlier](#axonius-configuration).
 
-For information about Axonius, see [Axonius documentation](https://docs.axonius.com/).
+* **API Secret**. Enter the API secret that you copied earlier.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/axonius-configuration.png')} style={{border:'1px solid gray'}} alt="Axonius configuration" width="400"/>
+
+For information about Axonius, see [Axonius documentation](https://docs.axonius.com/docs/the-axonius-platform).
 
 ## External Libraries
 

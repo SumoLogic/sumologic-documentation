@@ -1,19 +1,24 @@
 ---
 slug: /cse/ingestion/ingestion-sources-for-cloud-siem
-title: Ingestion Sources for Cloud SIEM
+title: Example Ingestion Sources for Cloud SIEM
 description: Learn the sources available for ingesting data to Cloud SIEM.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide lists the sources available for ingesting data into Cloud SIEM. You can configure a variety of sources on [Installed Collectors](/docs/send-data/installed-collectors).
+This section shows examples of sources you can use to ingest data into Cloud SIEM. There are many sources you can use to ingest data into Cloud SIEM. The sources described in this section are just a few.
 
-In this section, we'll introduce the following concepts:
+:::tip
+The most common method to ingest data into Cloud SIEM is to install a Cloud-to-Cloud Integration Framework source and select the **Forward to SIEM** option in the configuration UI, or to click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. Once you do that, add another field named `_parser` with value that points to the parser associated with that source type, for example, */Parsers/System/Cisco/Cisco ASA*. This ensures that the logs from that type of source are properly parsed and normalized into structured records in Cloud SIEM.
+
+For all available methods to ingest data into Cloud SIEM, see [Recommended methods to ingest data into Cloud SIEM](/docs/cse/ingestion/cse-ingestion-best-practices/#recommended-methods-to-ingest-data-into-cloud-siem).
+:::
+
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/ingestion/ingestion-sources-for-cloud-siem/auth0')}><img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="Auth0 thumbnail icon" width="50"/><h4>Auth0 system parser</h4></a>
+  <a href={useBaseUrl('docs/cse/ingestion/ingestion-sources-for-cloud-siem/auth0')}><img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="Auth0 thumbnail icon" width="50"/><h4>Auth0</h4></a>
   <p>Configure an HTTP source to ingest Auth0 log messages and send them to Cloud SIEM’s Auth0 system parser.</p>
   </div>
 </div>
@@ -169,12 +174,6 @@ In this section, we'll introduce the following concepts:
  </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/ingestion/ingestion-sources-for-cloud-siem/symantec-proxy-secure-gateway')}><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="Symantec Proxy Secure Gateway icon" width="110"/><h4>Symantec Proxy Secure Gateway</h4></a>
-  <p>Configure a syslog source to ingest Symantec Proxy Secure Gateway log messages to be parsed by Cloud SIEM.</p>
-  </div>
- </div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/cse/ingestion/ingestion-sources-for-cloud-siem/zscaler-nss')}><img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="ZScaler NSS icon" width="160"/><h4>ZScaler NSS</h4></a>
   <p>Configure collection of ZScaler NSS log messages to be parsed by Cloud SIEM's system parser for ZScaler NSS.</p>
   </div>
@@ -186,4 +185,3 @@ In this section, we'll introduce the following concepts:
   </div>
  </div>
 </div>
-

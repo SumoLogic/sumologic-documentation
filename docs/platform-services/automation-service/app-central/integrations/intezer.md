@@ -20,11 +20,23 @@ Intezer is a platform that provides automated, algorithm-driven Tier 1 services 
 ## Configure Intezer in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter you Intezer URL.
 
-   * **Label**. Your Resource Label.
-   * **API Key**. Your API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/intezer/intezer-4.png')} style={{border:'1px solid gray'}} alt="intezer" width="400"/>
+* **API Key**. Enter your Intezer [API key](https://intezer.com/blog/api-intezer-analyze-community/).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/intezer-configuration.png')} style={{border:'1px solid gray'}} alt="Intezer configuration" width="400"/>
 
 For information about Intezer, see the [Intezer website](https://intezer.com/resource-center/).
 

@@ -22,11 +22,23 @@ Nmap is a free and open-source network scanner. Nmap is used to discover hosts a
 ## Configure Nmap in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Nmap API URL. The default value is `https://api.nmap.online`
 
-   * **URL**. Your URL default ('https://api.nmap.online'/).
-   * **Api Key**. Insert the API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-4.png')} style={{border:'1px solid gray'}} alt="nmap" width="400"/>
+* **Api Key**. Enter your Nmap API Key.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/nmap-configuration.png')} style={{border:'1px solid gray'}} alt="Nmap configuration" width="400"/>
 
 For information about Nmap, see [Nmap documentation](https://nmap.org/book/man.html).
 

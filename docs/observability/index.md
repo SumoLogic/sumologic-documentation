@@ -33,12 +33,6 @@ In this section, we'll introduce the following concepts:
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/observability/root-cause-explorer')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Root Cause Explorer</h4></a>
-      <p>Troubleshoot app and microservice incidents and isolate root causes.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
       <a href={useBaseUrl('docs/observability/aws')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>AWS Observability</h4></a>
       <p>Simplify monitoring and troubleshooting of your AWS Cloud infrastructure.</p>
       </div>
@@ -67,6 +61,6 @@ In this section, we'll introduce the following concepts:
 
 #### Other solutions and apps for infrastructure monitoring
 
-These ready-to-run apps are a good starting point for monitoring critical parts of your infrastructure that support a work-from-home workforce:  
-* [Work from Home Solution](/docs/observability/work-from-home-vpn). This solution allows you to monitor all aspects of the infrastructure you use to enable employees to work from home, safely and securely—including your productivity apps, and the services you use for SSO, remote access, endpoint security.   
+These ready-to-run apps are a good starting point for monitoring critical parts of your infrastructure that support a work-from-home workforce:
+* [Work from Home Solution](/docs/observability/work-from-home-vpn). This solution allows you to monitor all aspects of the infrastructure you use to enable employees to work from home, safely and securely—including your productivity apps, and the services you use for SSO, remote access, endpoint security.
 * [Sumo Logic App for Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki). You can use this app to monitor and troubleshoot network security, end-to-end performance, switch port management, and device management of your Cisco Meraki wireless infrastructure management platform.  

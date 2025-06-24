@@ -196,12 +196,17 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/scan-budget')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/><h4>Scan Budget</h4></a>
+  <a href={useBaseUrl('docs/api/scan-budget')}><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Thumbnail icon" width="50"/><h4>Scan Budget</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/api/scheduled-views')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/><h4>Scheduled Views</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/api/scim-user"><img src={useBaseUrl('img/icons/general/session.png')} alt="Thumbnail icon" width="50"/><h4>SCIM User</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

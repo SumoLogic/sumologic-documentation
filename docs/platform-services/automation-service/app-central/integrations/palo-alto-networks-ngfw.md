@@ -30,8 +30,22 @@ Issue containment actions during incident investigation through Palo Alto NGFW.
 ## Configure Palo Alto Networks NGFW in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Palo Alto Networks NGFW URL.
+
+* **API Key**. Enter a Palo Alto Networks NGFW [API key](https://docs.paloaltonetworks.com/pan-os/10-2/pan-os-admin/firewall-administration/manage-firewall-administrators/configure-administrative-accounts-and-authentication/configure-api-key-lifetime#:~:text=After%20you%20specify%20the%20key,the%20API%20Keys%20Last%20Expired.).
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/palo-alto-networks-ngfw-configuration.png')} style={{border:'1px solid gray'}} alt="Palo Alto Networks NGFW configuration" width="400"/>
 
 For information about Palo Alto Networks NGFW, see [Palo Alto Networks Next-Generation Firewall documentation](https://docs.paloaltonetworks.com/ngfw).
 
