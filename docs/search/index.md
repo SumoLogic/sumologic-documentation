@@ -19,73 +19,73 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Getting started with Log Search</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Getting started with Log Search</h4></a>
   <p>Start here to begin exploring your data in Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/copilot"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Copilot</h4></a>
+  <a href={useBaseUrl('docs/search/copilot')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Copilot</h4></a>
   <p>Accelerate log investigations and troubleshooting with Sumo Logic Copilot, our AI-powered assistant that enables you to ask natural language questions and get contextual suggestions, helping first responders get to answers faster.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/search-query-language"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Search Query Language</h4></a>
+  <a href={useBaseUrl('docs/search/search-query-language')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Search Query Language</h4></a>
   <p>The extensive Sumo Logic query options help you gain valuable insight into your log messages.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/search-cheat-sheets"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Search Cheat Sheets</h4></a>
+  <a href={useBaseUrl('docs/search/search-cheat-sheets')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Search Cheat Sheets</h4></a>
   <p>Cheat sheets provide examples of useful search queries for different use cases.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/behavior-insights"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Behavior Insights</h4></a>
+  <a href={useBaseUrl('docs/search/behavior-insights')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Behavior Insights</h4></a>
   <p>Gain behavioral insight of your environment using LogReduce operators.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/live-tail"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Live Tail</h4></a>
+  <a href={useBaseUrl('docs/search/live-tail')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Live Tail</h4></a>
   <p>Real-time live feed of log events associated with a Source or Collector.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/time-compare"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Time Compare</h4></a>
+  <a href={useBaseUrl('docs/search/time-compare')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Time Compare</h4></a>
   <p>Run a compare operation automatically from your search results.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/lookup-tables"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Lookup Tables</h4></a>
+  <a href={useBaseUrl('docs/search/lookup-tables')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Lookup Tables</h4></a>
   <p>Learn about Lookup tables and the search operators you can use with them.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/optimize-search-performance"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Optimize Search Performance</h4></a>
+  <a href={useBaseUrl('docs/search/optimize-search-performance')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Optimize Search Performance</h4></a>
   <p>Learn how to accelerate the search process to get query results in less time and improve productivity for forensic analysis and log management.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/optimize-search-partitions"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Optimize Your Search with Partitions</h4></a>
+  <a href={useBaseUrl('docs/search/optimize-search-partitions')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Optimize Your Search with Partitions</h4></a>
   <p>Optimize your search with partitions, which store your data in an index separate from the rest of your account's data.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/subqueries"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Subqueries</h4></a>
+  <a href={useBaseUrl('docs/search/subqueries')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Subqueries</h4></a>
   <p>Filter and evaluate conditions for a query when you may not be sure of the exact filter.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/faq"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>FAQ</h4></a>
+  <a href={useBaseUrl('docs/search/faq')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>FAQ</h4></a>
   <p>Get answers to frequently asked questions about Log Search.</p>
   </div>
 </div>
