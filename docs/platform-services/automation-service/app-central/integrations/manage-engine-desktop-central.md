@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/manage-engine-desktop-central.png')} alt="manage-engine-desktop-central" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 05, 2023***
+***Version: 1.2  
+Updated: June 24, 2025***
 
 Query data an utilize actions in Desktop Central unified endpoint management (UEM) solution for managing servers, laptops, desktops, smartphones.
 
@@ -38,6 +38,8 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * **Server Host**. Enter your ManageEngine Desktop Central [hostname](https://www.manageengine.com/products/desktop-central/help/getting_started/working_with_desktop_central.html).
 
+* **Account Type**. Select your Account type (Default is cloud).
+
 * **Access Token**. Enter your ManageEngine Desktop Central [authentication key](https://www.manageengine.com/products/desktop-central/api/).
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
@@ -52,3 +54,4 @@ For information about ManageEngine Endpoint Central (formerly Desktop Central), 
 
 * July 8, 2021 - First upload
 * July 5, 2023 (v1.1) - Updated the integration with Environmental Variables
+* June 24, 2025 (v1.2) - Updated authentication headers to support both cloud and on-prem account type.
