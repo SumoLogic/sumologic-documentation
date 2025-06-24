@@ -39,19 +39,7 @@ Watch this quick overview video to explore the key features of the New UI.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/86IJB6JrG_k?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->  
+  
 :::
 
 :::warning Classic UI retirement notice
