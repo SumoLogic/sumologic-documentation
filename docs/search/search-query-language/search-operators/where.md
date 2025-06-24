@@ -16,6 +16,9 @@ For example, using `where` with the boolean operator [`isValidIP`](/docs/searc
     ```sql
     _collector="ABC1" | where type="web"
     ```
+    ```sql
+    _collector="ABC2" | where type="web"
+    ```   
 * Filters as false and will not return results:
     ```sql
     | where !isValidIP("192.168.0.10")
