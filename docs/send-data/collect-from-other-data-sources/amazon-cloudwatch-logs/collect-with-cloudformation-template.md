@@ -43,7 +43,7 @@ Download the `DLQLambdaCloudFormation.json` CloudFormation template [here](https
 
 Before you upload the CloudFormation template, there are some optional configuration steps.
 
-If you want to use the CloudFormation Template as is, proceed to [Create a stack on the AWS CloudFormation console](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs).
+If you want to use the CloudFormation Template as is, proceed to [Create a stack on the AWS CloudFormation console](docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-4-create-a-stack-on-the-aws-cloudformation-console).
 
 ### Configure environment variables for Lambda functions (Optional)
 
