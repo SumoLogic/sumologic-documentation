@@ -1,9 +1,8 @@
-name: Validate SQL Queries
+name: Validate SumoLogic Queries
 on:
   pull_request:
     paths:
-      - 'docs/**/*.md'          # Only trigger when documentation changes
-      - 'scripts/validate_*.py' # Or when validation scripts change
+      - '**/*.md'  # Trigger only when Markdown files change
 
 jobs:
   validate-queries:
@@ -19,7 +18,7 @@ jobs:
           python-version: "3.10"
 
       - name: Install dependencies
-        run: pip install requests pyyaml
+        run: pip install requests python-dotenv
 
       - name: Validate queries
         working-directory: ./scripts

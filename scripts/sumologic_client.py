@@ -4,12 +4,14 @@ from datetime import datetime, timedelta
 
 class SumoLogicClient:
     def __init__(self):
-        self.base_url = "https://api.sumologic.com/api/v1"
+        self.base_url = "https://long-api.sumologic.net/api/v1"
         self.session = requests.Session()
         self.session.auth = (
             os.getenv("SUMO_LOGIC_ACCESS_ID"),
             os.getenv("SUMO_LOGIC_ACCESS_KEY")
         )
+       self.session.headers.update({'Content-Type': 'application/json'})
+
 
     def test_query(self, query):
         """Execute a query in Sumo Logic and check for results"""
