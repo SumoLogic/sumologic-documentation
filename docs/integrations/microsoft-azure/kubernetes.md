@@ -197,7 +197,9 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={
 
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+
+<MetricsSourceBeta/>
 
 ### Collecting logs for the Azure Kubernetes Cluster  
 
