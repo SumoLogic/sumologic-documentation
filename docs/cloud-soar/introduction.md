@@ -64,7 +64,6 @@ Finally, you can take the Insights from Cloud SIEM and automatically respond to 
 Sumo Logic’s Cloud SOAR is a cloud-based web application available as an add-on to existing Sumo Logic deployments. Some of Cloud SOAR’s key features include:
 
 * **War Room**. A central location for all the information, analysis, and actions related to an incident. This includes notes, documentation, and knowledge transfer as well as tools for collecting data and assessing, investigating, and correlating different incidents.
-* **ARK**. The Automated Responder Knowledge (ARK) learns from past incidents and threat intel to recommend relevant playbooks for future incidents.
 * **App Central**. A large out-of-the-box library of playbooks, integrations, and use cases for different threats to get you started. 
 * **Cybersecurity best practices**. Cloud SOAR’s design and architecture meets many cybersecurity industry standards, regulatory frameworks, and best practices from organizations like ISO, GDPR, OASIS, NIST, and many others.
 
@@ -209,12 +208,6 @@ Here are some other workflows you could automate with a playbook:
 * **Data exfiltration**. If network activity spikes, a playbook automatically investigates to determine whether data is being exfiltrated legitimately. It can prevent the flow of data by applying endpoint patches and increasing firewall security, and chang
 
 Cloud SOAR has hundreds of prebuilt playbooks and templates, so you can quickly and easily automate any of these tasks, or create new custom playbooks to suit your specific business needs. Normally, playbooks are automatically attached to incidents based on information like entities and severity scores. 
-
-##### ARK suggestions
-
-Playbooks automate the individual tasks of incident response. But Cloud SOAR's Automated Responder Knowledge (ARK) suggestions take things one step further. ARK uses machine learning to suggest the most appropriate playbook for your incidents based on what you've done on similar incidents in the past. This frees up even more resources for analysts, as they don't have to spend time choosing a playbook before responding.
-
-When ARK suggests a playbook to you, you have the option to add the playbook to the incident, run it, or dismiss the suggestion. 
 
 #### App Central, custom integrations, and other automations
 

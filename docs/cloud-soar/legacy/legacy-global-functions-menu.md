@@ -32,49 +32,6 @@ When a search result is located within an incident, the incident number will be 
 
 <img src={useBaseUrl('img/cloud-soar/image12.png')} alt="Global Search Results" style={{border: '1px solid gray'}} width="800"/>
 
-## Automation
-
-### ARK
-
-ARK or Automated Responder Knowledge is the Machine Learning component of Cloud SOAR which implements the Supervised learning in Case-Based Reasoning (CBR) algorithm.
-CBR solves new problems by adapting previously successful solutions to similar problems. In Cloud SOAR, this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.<br/> <img src={useBaseUrl('img/cloud-soar/image15e.png')} alt="Automation menu" style={{border: '1px solid gray'}} width="250"/>
-
-ARK assists operators during investigations in two main areas: Automatically suggesting/prompting next actions/tasks in Playbooks (until version 5) and Correlation/ Deduplication of similar threats into 1 unique incident.
-
-#### Enable ARK
-
-To enable ARK, click the cog icon, then **Settings** > **ARK** and make sure you have it set to **ON**.
-
-From this page, it’s possible to configure also other ARK Settings such as the Neighbor incidents considered for each recommendation and an age relevance threshold. Those two parameters will allow you to tune the incidents that the Machine Learning algorithm will consider.
-
-<img src={useBaseUrl('img/cloud-soar/image16b.png')} alt="ARK Settings" style={{border: '1px solid gray'}} width="800"/>
-
-When an incident is created in Cloud SOAR, the Incident Type field will be the one defining which Playbooks you can attach to that incident.
-
-#### ARK Usage
-
-ARK has a correlation and deduplication or merging mechanism you can use with the ARK OIF.
-
-ARK 2.0 OIF is a custom Sumo Logic integration which allows investigators to implement a mechanism for deduplication and correlation of ingested alerts and Cloud SOAR incidents.
-
-<img src={useBaseUrl('img/cloud-soar/image16d.png')} alt="ARK OIF" style={{border: '1px solid gray'}} width="800"/>
-
-<img src={useBaseUrl('img/cloud-soar/image16e.png')} alt="Test Action" style={{border: '1px solid gray'}} width="800"/>
-
-OIF ARK enrichment action “Get parents for incident” allows you to retrieve every incident (as proposed parents) that is similar to the analyzed one.
-
-Each optional field allows you to fine tune the weight of the fields, acceptance thresholds and of the algorithm which needs to be trained and fine-tuned in order to get correct and reliable results.
-
-<img src={useBaseUrl('img/cloud-soar/image16f.png')} alt="Field Weight" style={{border: '1px solid gray'}} width="800"/>
-
-Alert deduplication or merging can be achieved by utilizing ARK OIF enrichment actions and Cloud SOAR’s unique Triage capability.
-
-Triage is a customizable section which can be used for enriching and preprocessing multiple different scenarios.
-
-By dispatching the ingested alerts into Triage events, Cloud SOAR can automatically enrich each event, deduplicate them based on the logic configured in our associated Playbooks (which can invoke Ark OIF enrichment) and decide if Cloud SOAR should aggregate multiple entries in one unique incident, create multiple incidents for each event or if a similar incident has already been created, to update the existing incident with updated information.
-
-Cloud SOAR can also correlate existing incidents to check if specific data is already present in the Cloud SOAR Database. It is crucial that all merging or deduplication must be done prior to conversion of an alert into incident. For example, a Triage event that allows you to invoke one or multiple playbooks for each Triage event created.
-
 ## Settings
 
 ### General Settings
