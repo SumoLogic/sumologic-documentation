@@ -1,0 +1,29 @@
+name: Validate SumoLogic Queries
+on:
+  pull_request:
+    paths:
+      - '**/*.md'  # Trigger only when Markdown files change
+
+jobs:
+  validate-queries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Required for git diff detection
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Validate queries
+        working-directory: ./scripts
+        env:
+          SUMO_LOGIC_ACCESS_ID: ${{ secrets.SUMO_LOGIC_ACCESS_ID }}
+          SUMO_LOGIC_ACCESS_KEY: ${{ secrets.SUMO_LOGIC_ACCESS_KEY }}
+        run: |
+          python validate_queries.py
