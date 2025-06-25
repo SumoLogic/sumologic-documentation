@@ -4,7 +4,9 @@
 # import os
 # import json
 # from pathlib import Path
-# from sumologic_client import SumoLogicClient
+
+
+
 #
 # def debug_environment():
 #     """Print critical debugging info"""
@@ -123,7 +125,7 @@ import re
 import sys
 import os
 from pathlib import Path
-from sumologic import SumoLogicClient
+from sumologic_client import SumoLogicClient
 
 def find_changed_markdown_files():
     """Find all changed Markdown files in PR"""
