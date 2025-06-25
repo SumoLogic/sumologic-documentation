@@ -136,7 +136,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for KnowBe4](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your KnowBe4 app is properly integrated and configured to collect and analyze your KnowBe4 data.
+Use the [Cloud-to-Cloud Integration for KnowBe4](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your KnowBe4 app is properly integrated and configured to collect and analyze your KnowBe4 data.
 :::
 
 ### Create a new collector and install the app
