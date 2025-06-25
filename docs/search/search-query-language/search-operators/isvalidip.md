@@ -54,7 +54,7 @@ The following returns `true`:
 | isValidIP("10.255.255.255") as isIP
 ```
 ```sql
-| isValidIP("20.255.255.255") as isIP
+| isValidIP("30.255.255.255") as isIP
 ```
 
 The following returns `true`:
