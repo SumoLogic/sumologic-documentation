@@ -245,6 +245,12 @@ module.exports = {
         name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
       },
     ],
+    announcementBar: {
+      id: 'maintenance',
+      content: 'Help Docs will undergo scheduled maintenance on Fri, 6/27 from 5-6 PM PT. Service may be briefly disrupted. We apologize for any inconvenience.',
+      backgroundColor: '#fafbfc',
+      textColor: '#091E42',
+    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -266,6 +272,7 @@ module.exports = {
       getMissingResultsUrl({ query }) {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
+      insights: true,
     },
     prism: {
       theme: lightCodeTheme,
