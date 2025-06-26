@@ -27,6 +27,12 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  scripts: [
+    {
+      src: '/algolia-conversion.js',
+      async: true,
+    },
+  ],
   future: {
     v4: true,
     experimental_faster: true,
