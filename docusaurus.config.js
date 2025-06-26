@@ -279,6 +279,9 @@ module.exports = {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
       insights: true,
+      searchParameters: {
+        clickAnalytics: true,
+      },
     },
     prism: {
       theme: lightCodeTheme,
