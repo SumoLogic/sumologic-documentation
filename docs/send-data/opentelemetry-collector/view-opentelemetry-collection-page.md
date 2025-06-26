@@ -28,7 +28,7 @@ To view details about an OpenTelemetry Collector:
         - **Health**. Displays the health status of the collector.
         - **Time Zone**. By default, time zone is set to UTC.
         - **Collector Tags**. Displays the tags linked with the selected collector, which helps in searching and managing the collector. To add or edit the tags, refer to the [Collector Tags](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#collector-tags).
-        - **Data Ingested**. Displays the histogram which shows data ingested in last hour. The histogram timeline reflects the ingestion time as closely as possible, but minor variations may occur.
+        - **Data Ingested**. Displays the histogram which shows data ingested in last hour. This histogram timeline reflects the data ingestion timestamp as closely as possible, but minor variations may occur.
         - **System Information**. Displays the operating system, OS version, IP Address, and Host name of the user who created the collector.
         - **Audit Logs**. Records the collector changes. Click on **View Details** to view the changes.
         - **Collector ID**. Unique ID for the selected collector.
