@@ -28,6 +28,7 @@ module.exports = {
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
   scripts: [
+    'https://cdn.jsdelivr.net/npm/search-insights@2.0.4',
     {
       src: '/algolia-conversion.js',
       async: true,

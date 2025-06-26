@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
       aa('convertedObjectIDs', {
         index: 'crawler_sumodocs',
         eventName: 'free_trial_click',
-        objectIDs: ['start-free-trial'],
+        objectIDs: ['header-trial'],
       });
     });
   }
