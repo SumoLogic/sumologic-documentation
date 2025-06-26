@@ -18,8 +18,8 @@ The Sumo Logic App for AWS Security Hub CSPM leverages findings data from Securi
 
 Sumo Logic provides a seamless bi-directional integration with AWS Security Hub CSPM with the following:
 
-* **[AWS Security Hub CSPM forwarder](#sending-findings-to-the-aws-security-hub-forwarder)** - This solution forwards (sends) scheduled search results and alerts (as findings) to AWS Security Hub CSPM.
-* **[AWS Security Hub CSPM collector](#collecting-findings-for-the-aws-security-hub-app)** - This solution collects findings from AWS Security Hub CSPM to Sumo Logic where they are displayed in visual pre-defined dashboards.
+* **[AWS Security Hub CSPM forwarder](#sending-findings-to-the-aws-security-hub-cspm-forwarder)** - This solution forwards (sends) scheduled search results and alerts (as findings) to AWS Security Hub CSPM.
+* **[AWS Security Hub CSPM collector](#collecting-findings-for-the-aws-security-hub-cspm-app)** - This solution collects findings from AWS Security Hub CSPM to Sumo Logic where they are displayed in visual pre-defined dashboards.
 
 The Sumo Logic integration with AWS Security Hub CSPM extends compliance checks to other key regulatory frameworks such as PCI, GDPR, HIPAA, and others.
 
@@ -74,7 +74,7 @@ This section demonstrates how to create a Webhook connection to trigger an AWS L
 
 To create a Webhook connection, do the following:
 
-1. Follow the instructions for [creating a Webhook connection](/docs/alerts/webhook-connections/aws-lambda), and use the API Gateway endpoint value you created in [Step 2, point 4](#step-2-deploy-the-aws-security-hub-forwarder) as the URL. AWS Security Hub CSPM Connector (SAM application) secures the endpoint with the AWS_IAM authorization type.
+1. Follow the instructions for [creating a Webhook connection](/docs/alerts/webhook-connections/aws-lambda), and use the API Gateway endpoint value you created in [Step 2, point 4](#step-2-deploy-the-aws-security-hub-cspm-forwarder) as the URL. AWS Security Hub CSPM Connector (SAM application) secures the endpoint with the AWS_IAM authorization type.
 2. Verify that it has the following payload:
    ```json
    {
@@ -184,7 +184,7 @@ Sumo Logic provides a serverless solution for creating a CloudWatch events rule 
 
 Findings from AWS services (AWS Security Hub CSPM) are delivered to CloudWatch Events as events in near real time. The Lambda function parses those events and sends them to an S3 bucket. Sumo Logic then collects the findings data using an S3 bucket source on a Sumo Logic hosted collector. The Lambda function setup is defined using Serverless Application Model (SAM) specifications and is published in AWS Serverless Application Repository.
 
-You do not have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub CSPM App collector](#step-2-deploy-an-aws-security-hub-app-collector).
+You do not have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub CSPM App collector](#step-2-deploy-an-aws-security-hub-cspm-app-collector).
 
 
 #### Step 1: Add a hosted collector and Amazon S3 source
@@ -289,40 +289,40 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-**The AWS Security Hub CSPM - Overview Dashboard** provides a high-level view of findings results. Panels display data aggregated by the number of providers, findings by provider, total findings, findings in AWS accounts by severity, top recent findings, findings by resource type and severity, most severe findings, and critical findings comparison. Each panel provides the ability to drill down for a more granular view of the data.
+The **AWS Security Hub CSPM - Overview** dashboard provides a high-level view of findings results. Panels display data aggregated by the number of providers, findings by provider, total findings, findings in AWS accounts by severity, top recent findings, findings by resource type and severity, most severe findings, and critical findings comparison. Each panel provides the ability to drill down for a more granular view of the data.
 
 Use this dashboard to:
 
 * Track findings from different finding providers.
 * Get a high-level overview of actionable items from a security perspective.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS_SecurityHub_Overview.png')} alt="AWS Security Hub CSPM dashboard" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWS+Security+Hub+CSPM/AWS+Security+Hub+CSPM+-+Overview+1.png')} alt="AWS Security Hub CSPM dashboard" />
 
 
 ### Types
 
-**The AWS Security Hub CSPM - Types Dashboard** provides a visual analysis of findings by AWS accounts and types namespace for: category, classifier, timeline, severity distribution, and severity Box Plot. Each panel provides the ability to drill down for a more granular view of the data.
+The **AWS Security Hub CSPM - Types** dashboard provides a visual analysis of findings by AWS accounts and types namespace for: category, classifier, timeline, severity distribution, and severity Box Plot. Each panel provides the ability to drill down for a more granular view of the data.
 
 Use this dashboard to:
 * Isolate important security findings based on finding types.
 * Analyze the findings distribution across AWS accounts and their severity.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS_SecurityHub_Types.png')} alt="AWS Security Hub CSPM dashboard" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWS+Security+Hub+CSPM/AWS+Security+Hub+CSPM+-+Types+1.png')} alt="AWS Security Hub CSPM dashboard" />
 
 
 ### Compliance
 
-**The AWS Security Hub CSPM - Compliance Dashboard** provides a high-level visual analysis of compliance status, resource failures, AWS account failures, failed events, status timelines, status and severity distribution and finding types. Each panel provides the ability to drill down for a more granular view of the data.
+The **AWS Security Hub CSPM - Compliance** dashboard provides a high-level visual analysis of compliance status, resource failures, AWS account failures, failed events, status timelines, status and severity distribution and finding types. Each panel provides the ability to drill down for a more granular view of the data.
 
 Use this dashboard to:
 * Monitor failing compliance checks.
 * Analyze the distribution of failed compliance checks across AWS accounts, their severity and finding types.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS_SecurityHub_Compliance.png')} alt="AWS Security Hub CSPM dashboard" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWS+Security+Hub+CSPM/AWS+Security+Hub+CSPM+-+Compliance+1.png')} alt="AWS Security Hub CSPM dashboard" />
 
 ### Resources Affected
 
-**The AWS Security Hub CSPM - Resources Affected Dashboard** provides a high-level visual analysis of findings by resource type by time interval, top critical resource IDs, AWS account, and the findings details. Each panel provides the ability to drill down for a more granular view of the data.
+The **AWS Security Hub CSPM - Resources Affected** dashboard provides a high-level visual analysis of findings by resource type by time interval, top critical resource IDs, AWS account, and the findings details. Each panel provides the ability to drill down for a more granular view of the data.
 
 Use this dashboard to:
 
@@ -330,4 +330,4 @@ Use this dashboard to:
 * Analyze how they are distributed across AWS accounts.
 * Filter on Finding Type, Resource Type, Provider, AWS Account, Title, Category, Resource Type with the Finding details panel.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS_SecurityHub_ResourcesAffected.png')} alt="AWS Security Hub CSPM dashboard" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWS+Security+Hub+CSPM/AWS+Security+Hub+CSPM+-+Resources+Affected+1.png')} alt="AWS Security Hub CSPM dashboard" />
