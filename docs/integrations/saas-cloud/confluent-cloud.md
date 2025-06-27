@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Confluent Cloud is a fully managed, cloud-native data streaming platform based on Apache Kafka. It enables real-time data processing, integration, and movement across applications and systems without managing infrastructure. With built-in support for connectors, ksqlDB, and stream governance, it simplifies building scalable, event-driven architectures.
 
-The Sumo Logic App for Confluent Cloud provides deep visibility into your Confluent Cloud environment. The app’s dashboards include preconfigured searches and filters to help you monitor Kafka cluster performance, topic-level throughput, consumer lag, producer latency, connector health, Flink compute pool utilization, KSQL activity, and schema registry operations—enabling proactive troubleshooting and streamlined data streaming operations.
+The Sumo Logic App for Confluent Cloud provides deep visibility into your Confluent Cloud environment based on key platform metrics. The app’s dashboards use preconfigured searches and filters to help you monitor Kafka cluster performance, topic-level throughput, consumer lag, producer latency, connector health, Flink compute pool utilization, KSQL activity, and schema registry operations—enabling proactive troubleshooting and streamlined data streaming operations.
 
 ## Metrics type  
 
@@ -68,6 +68,18 @@ Use this dashboard to:
 * Analyze request count trends over time to understand usage patterns and plan for capacity needs.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ConfluentCloud/Confluent-Cloud-Kafka-Cluster.png')} alt="Confluent Cloud - Kafka Cluster" style={{border: '1px solid gray'}} width="800" />
+
+### Confluent Cloud - Kafka Cluster Links
+
+Confluent Cloud – Kafka Cluster Link dashboard provides key insights into cluster link performance and health. It tracks link task counts, mirror topic states, offset lags, data volume, and response metrics—helping monitor cross-cluster replication efficiency, detect mirror errors, and ensure seamless data delivery across environments.
+
+Use this dashboard to:
+* Monitor link counts and task activity to ensure proper setup and functioning of cluster replication.
+* Track mirror topic count, bytes, and offset lag to assess replication volume and delays.
+* Analyze destination response bytes for throughput visibility across clusters.
+* Detect mirror transition errors to troubleshoot sync failures efficiently.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ConfluentCloud/Confluent-Cloud-Kafka-Cluster-Links.png')} alt="Confluent Cloud - Kafka Cluster Topic" style={{border: '1px solid gray'}} width="800" />
 
 ### Confluent Cloud - Kafka Cluster Topic
 
