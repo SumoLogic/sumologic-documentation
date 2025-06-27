@@ -38,8 +38,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * **Server Host**. Enter your ManageEngine Desktop Central [hostname](https://www.manageengine.com/products/desktop-central/help/getting_started/working_with_desktop_central.html).
 
-* **Account Type**. Select your Account type (Default is cloud).
-
+* **Account Type**. Select your Account type (default is cloud).
 * **Access Token**. Enter your ManageEngine Desktop Central [authentication key](https://www.manageengine.com/products/desktop-central/api/).
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
