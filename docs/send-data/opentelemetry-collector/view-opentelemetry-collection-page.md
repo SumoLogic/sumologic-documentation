@@ -29,10 +29,9 @@ To view details about an OpenTelemetry Collector:
         - **Time Zone**. By default, time zone is set to UTC.
         - **Collector Tags**. Displays the tags linked with the selected collector, which helps in searching and managing the collector. To add or edit the tags, refer to the [Collector Tags](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#collector-tags).
         - **Data Ingested**. Displays the histogram which shows data ingested in last hour. This histogram timeline reflects the data ingestion timestamp as closely as possible, but minor variations may occur.
-        :::note
-         To ensure accurate results, switch the log search timestamp to *receiptTime* if there is a mismatch between the log count in the histogram and the log search.
-        :::
-        
+            :::note
+            If there is a mismatch between the log count in the histogram and the log search, switch the log search timestamp to *receiptTime* for accurate results. 
+            :::
         - **System Information**. Displays the operating system, OS version, IP Address, and Host name of the user who created the collector.
         - **Audit Logs**. Records the collector changes. Click on **View Details** to view the changes.
         - **Collector ID**. Unique ID for the selected collector.
