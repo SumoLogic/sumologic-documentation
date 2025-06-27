@@ -11,7 +11,7 @@ description: The Confluent Cloud Metrics source aims to collect metric data from
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/confluent-cloud-metrics.png')} alt="icon" width="160"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="icon" width="160"/>
 
 Confluent is a software company that helps organizations manage, deploy, and scale real-time data infrastructure, enabling businesses to build real-time applications and derive insights from data efficiently.
 Confluent Cloud is a scalable, fully managed streaming data service based on Apache Kafka®. It offers a web interface called the Cloud Console for managing resources, settings, and billing, along with a local Command Line Interface (CLI) and REST APIs to create and manage Kafka topics. This integration aims to collect metric data in the Prometheus format from the Confluent Cloud Metrics platform and send them to Sumo Logic.
