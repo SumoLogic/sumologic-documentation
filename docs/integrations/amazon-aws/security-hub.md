@@ -273,7 +273,7 @@ To deploy an AWS Security Hub CSPM App collector:
   max(severity_normalized) by resource_type
 ```
 
-## Installing the AWS Security Hub CSPM App
+## Installing the AWS Security Hub CSPM app
 
 Now that you have set up ingestion and collected findings for AWS Security Hub CSPM, you can install the Sumo Logic App for AWS Security Hub CSPM and use the preconfigured searches and dashboards that provide insight into your data.
 
