@@ -14,7 +14,7 @@ In order to give our shared clients even more context-rich and prioritized secur
 
 AWS Security Hub CSPM is an AWS security service that provides a comprehensive view of your security state within AWS and your compliance with the security industry standards and best practices.
 
-The Sumo Logic App for AWS Security Hub CSPM leverages findings data from Security Hub and visually displays security state data in Dashboards. The dashboards provide a high-level view of findings, showing the type, when they occurred, the resources that were affected, their severity, and their distribution, showing the current security and compliance status of an AWS account from all sources.
+The Sumo Logic app for AWS Security Hub CSPM leverages findings data from Security Hub and visually displays security state data in Dashboards. The dashboards provide a high-level view of findings, showing the type, when they occurred, the resources that were affected, their severity, and their distribution, showing the current security and compliance status of an AWS account from all sources.
 
 Sumo Logic provides a seamless bi-directional integration with AWS Security Hub CSPM with the following:
 
