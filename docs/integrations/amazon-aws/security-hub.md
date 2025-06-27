@@ -1,7 +1,7 @@
 ---
 id: security-hub
 title: AWS Security Hub CSPM
-description: The Sumo Logic App for AWS Security Hub CSPM leverages findings data from Security Hub and visually displays the data in Dashboards.
+description: The Sumo Logic app for AWS Security Hub CSPM leverages findings data from Security Hub and visually displays the data in Dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
