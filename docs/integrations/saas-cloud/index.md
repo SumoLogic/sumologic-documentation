@@ -131,7 +131,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/confluent-cloud"><img src={useBaseUrl('img/send-data/confluent-cloud-logo.png')} alt="icon" width="100"/><h4>Confluent Cloud</h4></a>
+  <a href="/docs/integrations/saas-cloud/confluent-cloud"><img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="icon" width="100"/><h4>Confluent Cloud</h4></a>
   <p>Monitor and analyze streaming activity in Confluent Cloud to ensure secure, reliable, and high-performance data pipelines.</p>
   </div>
 </div>
