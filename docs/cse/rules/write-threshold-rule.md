@@ -33,19 +33,6 @@ Watch this micro lesson to learn how to create a threshold rule.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/uei_TDOy5QM?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Create a threshold rule

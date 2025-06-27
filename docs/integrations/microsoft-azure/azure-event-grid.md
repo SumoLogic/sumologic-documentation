@@ -35,11 +35,9 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
-:::note
-Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
-:::
+<MetricsSourceBeta/>
 
 1. To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
 1. In the Sumo Logic Azure Metrics source configuration, configure namespaces as `Microsoft.EventGrid/domains`, `Microsoft.EventGrid/systemTopics` and `Microsoft.EventGrid/topics`.
