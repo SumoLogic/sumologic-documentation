@@ -95,76 +95,11 @@ You must explicitly enable diagnostic settings and network flow logs for each Vi
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/VirtualNetwork/Metrics` and `Azure/VirtualNetwork/Logs`.
 
-### Configure field in field schema
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
-1. Search for the following fields:
-   - `tenant_name`. This field is tagged at the collector level and users can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs.
-   - `subscription_id`. Id associated with a subscription where the resource is present.
-   - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for example, Microsoft.Storage).
-   - `resource_type`. Azure resource type (for example, storageaccounts).
-   - `resource_name`. The name of the resource (for example, storage account name).
-
-3. Create the fields if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
-
-### Configure Field Extraction Rules
-
-Create a Field Extraction Rule (FER) for Azure Virtual Network by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/).
-
-* **Target Resource Extraction FER**
-
-   ```sql
-   Rule Name: AzureVirtualNetworkTargetResourceIdExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=* FlowLogFlowEvent
-   ```
-
-   ```sql title="Parse Expression"
-   json field=_raw "target_resource_id", "category", "flow_log_resource_id"
-   | where category="FlowLogFlowEvent"
-   | toUpperCase(target_resource_id) as target_resource_id
-   | parse field=target_resource_id "/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*" as subscription_id, resource_group, provider_name, resource_type, resource_name
-   | parse field=resource_name "*/SUBNETS/*" as vnet_name, subnet_name nodrop
-   | parse field=flow_log_resource_id "NETWORKWATCHERS/NETWORKWATCHER_*/" as region_name nodrop
-   | if (!isBlank(region_name), toLowerCase(region_name), "global") as location
-   | if (resource_name matches /SUBNETS/, "SUBNETS", resource_type) as resource_type
-   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name
-   ```
-
-### Configure metric rules
-
-  * **Azure Observability Metadata Extraction Azure Virtual Network**
-
-      In case this rule already exists, then no need to create it again.
-```sql
-Rule Name: AzureObservabilityMetadataExtractionAzureVirtualNetwork
-```
-
-```sql title="Metric match expression"
-resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/MICROSOFT.NETWORK/VIRTUALNETWORKS/* tenant_name=*
-```
-| Fields extracted | Metric rule    |
-|------------------|----------------|
-| subscription_id  | $resourceId._1 |
-| resource_group   | $resourceId._2 |
-| provider_name    | MICROSOFT.NETWORK |
-| resource_type    | VIRTUALNETWORKS |
-| resource_name    | $resourceId._3 |
-
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, onto an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. This step is required only for DDOS related metrics which comes after enabling DDOS protection in your virtual network.
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
-1. Create a hosted collector and tag `tenant_name` field. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
-2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each storage service (blob, queue, table, and file) and each storage account that you want to monitor.
-   * Choose `Stream to an event hub` as the destination.
-   * Select `AllMetrics`.
-   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-4. Tag the location field in the source with the right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
-5. Enable the `DDOS protection` by following the instructions in Azure [documentation](https://learn.microsoft.com/en-us/azure/ddos-protection/manage-ddos-protection#enable-for-an-existing-virtual-network)
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -241,15 +176,29 @@ In order to find virtual networks without any flow log resource, you can audit f
 
 Now that you have set up data collection, install the Azure Virtual Network Sumo Logic app to use the pre-configured [dashboards](#viewing-the-azure-virtual-network-app-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstallNoDataSourceV2/>
+<AppInstallIndexV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with an Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
+
+Also FER `AzureVirtualNetworkTargetResourceIdExtractionFER` will be created as part of the app installation process itself.
 
 ## Viewing the Azure Virtual Network app dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/>
 
 ### Overview
 
@@ -320,6 +269,13 @@ Use this dashboard to:
 * Correlate spikes in denied traffic flow with specific source and destination IP addresses to investigate potential security incidents.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Denied-Traffic-Flow.png')} alt="Azure Virtual Network - Denied Traffic Flow" style={{border: '1px solid gray'}} width="800" />
+
+### Azure Virtual Network alerts
+These alerts are metric based and will work for all Virtual Networks.
+
+| Alert Name | Description                                                                     | Alert Condition | Recover Condition |
+|:--|:--------------------------------------------------------------------------------|:----------------|:------------------|
+| `Azure Virtual Network - Under DDoS attack` | This alert is triggered when maximum DDoS attack count is greater than 1.0785.  | Count > 1.0785  | Count < = 1.0785  |
 
 ## Upgrade/Downgrade the Azure Virtual Network app (optional)
 
