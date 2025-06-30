@@ -16,11 +16,12 @@ The Sumo Logic app for Confluent Cloud provides deep visibility into your Conflu
 ## Metrics type  
 
 The Confluent Cloud app uses metrics:
+
 * [Confluent Cloud runtime metrics](https://api.telemetry.confluent.cloud/docs/descriptors/datasets/cloud).
 
 ### Collecting metrics for the Confluent Cloud app
 
-Sumo Logic supports collecting metrics by C2C source:
+Sumo Logic supports collecting metrics using the Cloud-to-Cloud integration framework:
 
 * Configure a [Confluent Cloud Metrics Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source/)
 
@@ -34,7 +35,7 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 ## Viewing the Confluent Cloud dashboards  
 
-### Confluent Cloud - Compute Pool
+### Compute Pool
 
 The **Confluent Cloud - Compute Pool** dashboard provides details on the status and utilization of compute resources in your Confluent Cloud environment.
 
@@ -46,7 +47,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ConfluentCloud/Confluent-Cloud-Compute-Pool.png')} alt="Confluent Cloud - Compute Pool" style={{border: '1px solid gray'}} width="800" />
 
-### Confluent Cloud - Connectors
+### Connectors
 
 The **Confluent Cloud - Connectors** dashboard provides details on the status, performance, and health of Confluent Cloud connectors.
 
@@ -59,7 +60,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ConfluentCloud/Confluent-Cloud-Connectors.png')} alt="Confluent Cloud - Connectors" style={{border: '1px solid gray'}} width="800" />
 
-### Confluent Cloud - Kafka Cluster
+### Kafka Cluster
 
 The **Confluent Cloud - Kafka Cluster** dashboard provides details on key performance metrics and operational statistics for your Kafka cluster in Confluent Cloud.
 
@@ -70,7 +71,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ConfluentCloud/Confluent-Cloud-Kafka-Cluster.png')} alt="Confluent Cloud - Kafka Cluster" style={{border: '1px solid gray'}} width="800" />
 
-### Confluent Cloud - Kafka Cluster Links
+### Kafka Cluster Links
 
 The **Confluent Cloud – Kafka Cluster Link** dashboard provides key insights into cluster link performance and health. It tracks link task counts, mirror topic states, offset lags, data volume, and response metrics—helping monitor cross-cluster replication efficiency, detect mirror errors, and ensure seamless data delivery across environments.
 
@@ -82,7 +83,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ConfluentCloud/Confluent-Cloud-Kafka-Cluster-Links.png')} alt="Confluent Cloud - Kafka Cluster Topic" style={{border: '1px solid gray'}} width="800" />
 
-### Confluent Cloud - Kafka Cluster Topic
+### Kafka Cluster Topic
 
 The **Confluent Cloud - Kafka Cluster Topic** dashboard provides details on topic-level metrics for Kafka clusters in Confluent Cloud, including consumer lag, data throughput, and partition information.
 
@@ -94,7 +95,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ConfluentCloud/Confluent-Cloud-Kafka-Cluster-Topic.png')} alt="Confluent Cloud - Kafka Cluster Topic" style={{border: '1px solid gray'}} width="800" />
 
-### Confluent Cloud - KSQL
+### KSQL
 
 The **Confluent Cloud - KSQL** dashboard provides details on query performance, data processing, and resource utilization for KSQL operations in Confluent Cloud.
 
@@ -107,7 +108,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ConfluentCloud/Confluent-Cloud-KSQL.png')} alt="Confluent Cloud - KSQL" style={{border: '1px solid gray'}} width="800" />
 
-### Confluent Cloud - Schema Registry
+### Schema Registry
 
 The **Confluent Cloud - Schema Registry** dashboard provides details on schema operations, request counts, and traffic types for your Confluent Cloud Schema Registry.
 
