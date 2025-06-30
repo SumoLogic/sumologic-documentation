@@ -95,30 +95,6 @@ You must explicitly enable diagnostic settings and network flow logs for each Vi
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/VirtualNetwork/Metrics` and `Azure/VirtualNetwork/Logs`.
 
-### Configure Field Extraction Rules
-
-Create a Field Extraction Rule (FER) for Azure Virtual Network by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/).
-
-* **Target Resource Extraction FER**
-
-   ```sql
-   Rule Name: AzureVirtualNetworkTargetResourceIdExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=* FlowLogFlowEvent
-   ```
-
-   ```sql title="Parse Expression"
-   json field=_raw "target_resource_id", "category", "flow_log_resource_id"
-   | where category="FlowLogFlowEvent"
-   | toUpperCase(target_resource_id) as target_resource_id
-   | parse field=target_resource_id "/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*" as subscription_id, resource_group, provider_name, resource_type, resource_name
-   | parse field=resource_name "*/SUBNETS/*" as vnet_name, subnet_name nodrop
-   | parse field=flow_log_resource_id "NETWORKWATCHERS/NETWORKWATCHER_*/" as region_name nodrop
-   | if (!isBlank(region_name), toLowerCase(region_name), "global") as location
-   | if (resource_name matches /SUBNETS/, "SUBNETS", resource_type) as resource_type
-   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name
-   ```
-
 ### Configure metrics collection
 
 import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
@@ -215,6 +191,8 @@ As part of the app installation process, the following fields will be created by
 - `resource_name`. The name of the resource (for example, storage account name).
 - `service_type`. Type of the service that can be accessed with a Azure resource.
 - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
+
+Also FER `AzureVirtualNetworkTargetResourceIdExtractionFER` will be created as part of the app installation process itself.
 
 ## Viewing the Azure Virtual Network app dashboards
 
