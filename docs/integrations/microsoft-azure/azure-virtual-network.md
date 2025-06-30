@@ -123,7 +123,7 @@ Create a Field Extraction Rule (FER) for Azure Virtual Network by following the 
 
 import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
-<MetricsSourceBeta/>cxxx
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -200,15 +200,27 @@ In order to find virtual networks without any flow log resource, you can audit f
 
 Now that you have set up data collection, install the Azure Virtual Network Sumo Logic app to use the pre-configured [dashboards](#viewing-the-azure-virtual-network-app-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstallNoDataSourceV2/>
+<AppInstallIndexV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region to which the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with a Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure Virtual Network app dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/>
 
 ### Overview
 
