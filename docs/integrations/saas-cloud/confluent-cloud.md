@@ -36,8 +36,9 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 ### Confluent Cloud - Compute Pool
 
-The **Confluent Cloud - Compute Pool** dashboard provides details on the status and utilization of compute resources in your Confluent Cloud environment. Use this dashboard to:
+The **Confluent Cloud - Compute Pool** dashboard provides details on the status and utilization of compute resources in your Confluent Cloud environment.
 
+Use this dashboard to:
 * Monitor the average Flink statement status to identify potential issues with stream processing jobs.
 * Track CPU utilization against the set limit to ensure optimal resource allocation and prevent performance bottlenecks.
 * Analyze trends in CPU minutes consumed over time to optimize cost and capacity planning for your Confluent Cloud deployment.
@@ -47,7 +48,7 @@ The **Confluent Cloud - Compute Pool** dashboard provides details on the status 
 
 ### Confluent Cloud - Connectors
 
-Confluent Cloud - Connectors dashboard provides details on the status, performance, and health of Confluent Cloud connectors.
+The **Confluent Cloud - Connectors** dashboard provides details on the status, performance, and health of Confluent Cloud connectors.
 
 Use this dashboard to:
 * Monitor the status of connectors and their tasks to quickly identify any that are failed, paused, or provisioning.
@@ -60,7 +61,7 @@ Use this dashboard to:
 
 ### Confluent Cloud - Kafka Cluster
 
-Confluent Cloud - Kafka Cluster dashboard provides details on key performance metrics and operational statistics for your Kafka cluster in Confluent Cloud.
+The **Confluent Cloud - Kafka Cluster** dashboard provides details on key performance metrics and operational statistics for your Kafka cluster in Confluent Cloud.
 
 Use this dashboard to:
 * Monitor producer latency and cluster load to ensure optimal performance of your Kafka cluster.
@@ -71,7 +72,7 @@ Use this dashboard to:
 
 ### Confluent Cloud - Kafka Cluster Links
 
-Confluent Cloud – Kafka Cluster Link dashboard provides key insights into cluster link performance and health. It tracks link task counts, mirror topic states, offset lags, data volume, and response metrics—helping monitor cross-cluster replication efficiency, detect mirror errors, and ensure seamless data delivery across environments.
+The **Confluent Cloud – Kafka Cluster Link** dashboard provides key insights into cluster link performance and health. It tracks link task counts, mirror topic states, offset lags, data volume, and response metrics—helping monitor cross-cluster replication efficiency, detect mirror errors, and ensure seamless data delivery across environments.
 
 Use this dashboard to:
 * Monitor link counts and task activity to ensure proper setup and functioning of cluster replication.
@@ -83,7 +84,7 @@ Use this dashboard to:
 
 ### Confluent Cloud - Kafka Cluster Topic
 
-Confluent Cloud - Kafka Cluster Topic dashboard provides details on topic-level metrics for Kafka clusters in Confluent Cloud, including consumer lag, data throughput, and partition information.
+The **Confluent Cloud - Kafka Cluster Topic** dashboard provides details on topic-level metrics for Kafka clusters in Confluent Cloud, including consumer lag, data throughput, and partition information.
 
 Use this dashboard to:
 * Monitor consumer lag offsets to identify potential bottlenecks in data processing and ensure timely consumption of messages.
@@ -95,7 +96,7 @@ Use this dashboard to:
 
 ### Confluent Cloud - KSQL
 
-Confluent Cloud - KSQL dashboard provides details on query performance, data processing, and resource utilization for KSQL operations in Confluent Cloud.
+The **Confluent Cloud - KSQL** dashboard provides details on query performance, data processing, and resource utilization for KSQL operations in Confluent Cloud.
 
 Use this dashboard to:
 * Monitor query saturation and identify potential bottlenecks in KSQL operations.
@@ -108,7 +109,7 @@ Use this dashboard to:
 
 ### Confluent Cloud - Schema Registry
 
-Confluent Cloud - Schema Registry dashboard provides details on schema operations, request counts, and traffic types for your Confluent Cloud Schema Registry.
+The **Confluent Cloud - Schema Registry** dashboard provides details on schema operations, request counts, and traffic types for your Confluent Cloud Schema Registry.
 
 Use this dashboard to:
 * Monitor the distribution of schema operations (CREATE, READ, DELETE) to ensure proper usage and identify potential issues with schema management.
