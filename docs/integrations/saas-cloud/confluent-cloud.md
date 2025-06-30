@@ -18,7 +18,7 @@ The Sumo Logic App for Confluent Cloud provides deep visibility into your Conflu
 The Confluent Cloud app uses metrics:
 * [Confluent Cloud runtime metrics](https://api.telemetry.confluent.cloud/docs/descriptors/datasets/cloud).
 
-### Collect Metrics
+### Collecting metrics for the Confluent Cloud app
 
 Sumo Logic supports collecting metrics by C2C source:
 
