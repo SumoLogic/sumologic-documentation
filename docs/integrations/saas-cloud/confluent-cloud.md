@@ -2,7 +2,7 @@
 id: confluent-cloud
 title: Confluent Cloud
 sidebar_label: Confluent Cloud
-description: The Sumo Logic App for Confluent Cloud provides deep visibility into your Confluent Cloud environment. The app’s dashboards include preconfigured searches and filters to help you monitor Kafka cluster performance, topic-level throughput, consumer lag, producer latency, connector health, Flink compute pool utilization, KSQL activity, and schema registry operations—enabling proactive troubleshooting and streamlined data streaming operations.
+description: The Sumo Logic app for Confluent Cloud offers deep visibility into your environment with dashboards that monitor Kafka performance, consumer lag, producer latency, connector health, Flink compute pools, KSQL activity, and schema registry operations, enabling proactive troubleshooting and efficient data streaming.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,20 +11,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Confluent Cloud is a fully managed, cloud-native data streaming platform based on Apache Kafka. It enables real-time data processing, integration, and movement across applications and systems without managing infrastructure. With built-in support for connectors, ksqlDB, and stream governance, it simplifies building scalable, event-driven architectures.
 
-The Sumo Logic App for Confluent Cloud provides deep visibility into your Confluent Cloud environment based on key platform metrics. The app’s dashboards use preconfigured searches and filters to help you monitor Kafka cluster performance, topic-level throughput, consumer lag, producer latency, connector health, Flink compute pool utilization, KSQL activity, and schema registry operations—enabling proactive troubleshooting and streamlined data streaming operations.
+The Sumo Logic app for Confluent Cloud provides deep visibility into your Confluent Cloud environment based on key platform metrics. The app’s dashboards use preconfigured searches and filters to help you monitor Kafka cluster performance, topic-level throughput, consumer lag, producer latency, connector health, Flink compute pool utilization, KSQL activity, and schema registry operations—enabling proactive troubleshooting and streamlined data streaming operations.
 
 ## Metrics type  
 
 The Confluent Cloud app uses metrics:
 * [Confluent Cloud runtime metrics](https://api.telemetry.confluent.cloud/docs/descriptors/datasets/cloud).
 
-### Collect Metrics
+### Collecting metrics for the Confluent Cloud app
 
 Sumo Logic supports collecting metrics by C2C source:
 
 * Configure a [Confluent Cloud Metrics Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source/)
 
-## Installing the Confluent Cloud  
+## Installing the Confluent Cloud app
 
 Now that you have set up a collection for **Confluent Cloud**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-confluent-cloud-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -36,8 +36,9 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 ### Confluent Cloud - Compute Pool
 
-Confluent Cloud - Compute Pool dashboard provides details on the status and utilization of compute resources in your Confluent Cloud environment. Use this dashboard to:
+The **Confluent Cloud - Compute Pool** dashboard provides details on the status and utilization of compute resources in your Confluent Cloud environment.
 
+Use this dashboard to:
 * Monitor the average Flink statement status to identify potential issues with stream processing jobs.
 * Track CPU utilization against the set limit to ensure optimal resource allocation and prevent performance bottlenecks.
 * Analyze trends in CPU minutes consumed over time to optimize cost and capacity planning for your Confluent Cloud deployment.
@@ -47,7 +48,7 @@ Confluent Cloud - Compute Pool dashboard provides details on the status and util
 
 ### Confluent Cloud - Connectors
 
-Confluent Cloud - Connectors dashboard provides details on the status, performance, and health of Confluent Cloud connectors.
+The **Confluent Cloud - Connectors** dashboard provides details on the status, performance, and health of Confluent Cloud connectors.
 
 Use this dashboard to:
 * Monitor the status of connectors and their tasks to quickly identify any that are failed, paused, or provisioning.
@@ -60,7 +61,7 @@ Use this dashboard to:
 
 ### Confluent Cloud - Kafka Cluster
 
-Confluent Cloud - Kafka Cluster dashboard provides details on key performance metrics and operational statistics for your Kafka cluster in Confluent Cloud.
+The **Confluent Cloud - Kafka Cluster** dashboard provides details on key performance metrics and operational statistics for your Kafka cluster in Confluent Cloud.
 
 Use this dashboard to:
 * Monitor producer latency and cluster load to ensure optimal performance of your Kafka cluster.
@@ -71,7 +72,7 @@ Use this dashboard to:
 
 ### Confluent Cloud - Kafka Cluster Links
 
-Confluent Cloud – Kafka Cluster Link dashboard provides key insights into cluster link performance and health. It tracks link task counts, mirror topic states, offset lags, data volume, and response metrics—helping monitor cross-cluster replication efficiency, detect mirror errors, and ensure seamless data delivery across environments.
+The **Confluent Cloud – Kafka Cluster Link** dashboard provides key insights into cluster link performance and health. It tracks link task counts, mirror topic states, offset lags, data volume, and response metrics—helping monitor cross-cluster replication efficiency, detect mirror errors, and ensure seamless data delivery across environments.
 
 Use this dashboard to:
 * Monitor link counts and task activity to ensure proper setup and functioning of cluster replication.
@@ -83,7 +84,7 @@ Use this dashboard to:
 
 ### Confluent Cloud - Kafka Cluster Topic
 
-Confluent Cloud - Kafka Cluster Topic dashboard provides details on topic-level metrics for Kafka clusters in Confluent Cloud, including consumer lag, data throughput, and partition information.
+The **Confluent Cloud - Kafka Cluster Topic** dashboard provides details on topic-level metrics for Kafka clusters in Confluent Cloud, including consumer lag, data throughput, and partition information.
 
 Use this dashboard to:
 * Monitor consumer lag offsets to identify potential bottlenecks in data processing and ensure timely consumption of messages.
@@ -95,7 +96,7 @@ Use this dashboard to:
 
 ### Confluent Cloud - KSQL
 
-Confluent Cloud - KSQL dashboard provides details on query performance, data processing, and resource utilization for KSQL operations in Confluent Cloud.
+The **Confluent Cloud - KSQL** dashboard provides details on query performance, data processing, and resource utilization for KSQL operations in Confluent Cloud.
 
 Use this dashboard to:
 * Monitor query saturation and identify potential bottlenecks in KSQL operations.
@@ -108,7 +109,7 @@ Use this dashboard to:
 
 ### Confluent Cloud - Schema Registry
 
-Confluent Cloud - Schema Registry dashboard provides details on schema operations, request counts, and traffic types for your Confluent Cloud Schema Registry.
+The **Confluent Cloud - Schema Registry** dashboard provides details on schema operations, request counts, and traffic types for your Confluent Cloud Schema Registry.
 
 Use this dashboard to:
 * Monitor the distribution of schema operations (CREATE, READ, DELETE) to ensure proper usage and identify potential issues with schema management.
