@@ -2,7 +2,7 @@
 id: confluent-cloud
 title: Confluent Cloud
 sidebar_label: Confluent Cloud
-description: The Sumo Logic App for Confluent Cloud provides deep visibility into your Confluent Cloud environment. The app’s dashboards include preconfigured searches and filters to help you monitor Kafka cluster performance, topic-level throughput, consumer lag, producer latency, connector health, Flink compute pool utilization, KSQL activity, and schema registry operations—enabling proactive troubleshooting and streamlined data streaming operations.
+description: The Sumo Logic app for Confluent Cloud offers deep visibility into your environment with dashboards that monitor Kafka performance, consumer lag, producer latency, connector health, Flink compute pools, KSQL activity, and schema registry operations, enabling proactive troubleshooting and efficient data streaming.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
