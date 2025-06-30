@@ -321,6 +321,13 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Denied-Traffic-Flow.png')} alt="Azure Virtual Network - Denied Traffic Flow" style={{border: '1px solid gray'}} width="800" />
 
+### Azure Virtual Network alerts
+These alerts are metric based and will work for all Virtual Networks.
+
+| Alert Name | Description                                                                     | Alert Condition | Recover Condition |
+|:--|:--------------------------------------------------------------------------------|:----------------|:------------------|
+| `Azure Virtual Network - Under DDoS attack` | This alert is triggered when maximum DDoS attack count is greater than 1.0785.  | Count > 1.0785  | Count < = 1.0785  |
+
 ## Upgrade/Downgrade the Azure Virtual Network app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
