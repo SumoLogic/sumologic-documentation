@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Confluent Cloud is a fully managed, cloud-native data streaming platform based on Apache Kafka. It enables real-time data processing, integration, and movement across applications and systems without managing infrastructure. With built-in support for connectors, ksqlDB, and stream governance, it simplifies building scalable, event-driven architectures.
 
-The Sumo Logic App for Confluent Cloud provides deep visibility into your Confluent Cloud environment based on key platform metrics. The app’s dashboards use preconfigured searches and filters to help you monitor Kafka cluster performance, topic-level throughput, consumer lag, producer latency, connector health, Flink compute pool utilization, KSQL activity, and schema registry operations—enabling proactive troubleshooting and streamlined data streaming operations.
+The Sumo Logic app for Confluent Cloud provides deep visibility into your Confluent Cloud environment based on key platform metrics. The app’s dashboards use preconfigured searches and filters to help you monitor Kafka cluster performance, topic-level throughput, consumer lag, producer latency, connector health, Flink compute pool utilization, KSQL activity, and schema registry operations—enabling proactive troubleshooting and streamlined data streaming operations.
 
 ## Metrics type  
 
