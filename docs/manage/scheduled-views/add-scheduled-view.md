@@ -20,7 +20,7 @@ For Scheduled View query requirements, see [Scheduled Views Best Practices and E
     :::note limitation
     You cannot select a start date older than 365 days.
     :::
-1. **Timezone**. Select the timezone for the scheduled view of your choice from the drop-down. If you do not make a selection, the Scheduled View will default to the timezone from your browser.
+1. **Timezone**. Select the timezone for the scheduled view of your choice from the drop-down. If you do not make a selection, the Scheduled View will default to the timezone preference in Sumo Logic. But if the timezone is not set in Sumo Logic *User Preferences* page, then this will default to the timezone from your browser.
 1. **Retention Period.** Either enter a retention period for the data in the index, in days, or click **Apply the retention period of Default Partition**. For more information, see [Manage Indexes with Variable Retention](../partitions/manage-indexes-variable-retention.md).
 1. **Data Forwarding.** (Optional). Choose **Enable Data Forwarding** to [forward data from Sumo to Amazon S3](../data-forwarding/amazon-s3-bucket.md). The results from the Scheduled View are forwarded to S3. Raw logs are sent if the view query does not use an aggregate operator. If the view query performs an aggregation, aggregate results are sent. See [File Format](../data-forwarding/amazon-s3-bucket.md) for details on how the file objects are structured.
 1. Click **Save**.
