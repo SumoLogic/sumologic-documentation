@@ -36,7 +36,7 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 ### Confluent Cloud - Compute Pool
 
-Confluent Cloud - Compute Pool dashboard provides details on the status and utilization of compute resources in your Confluent Cloud environment. Use this dashboard to:
+The **Confluent Cloud - Compute Pool** dashboard provides details on the status and utilization of compute resources in your Confluent Cloud environment. Use this dashboard to:
 
 * Monitor the average Flink statement status to identify potential issues with stream processing jobs.
 * Track CPU utilization against the set limit to ensure optimal resource allocation and prevent performance bottlenecks.
