@@ -24,7 +24,7 @@ Sumo Logic supports collecting metrics by C2C source:
 
 * Configure a [Confluent Cloud Metrics Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source/)
 
-## Installing the Confluent Cloud  
+## Installing the Confluent Cloud app
 
 Now that you have set up a collection for **Confluent Cloud**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-confluent-cloud-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
