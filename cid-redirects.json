@@ -3421,7 +3421,6 @@
   "/Metrics/Metric-Queries-and-Alerts/11Metrics-Queries": "/docs/metrics/metrics-queries",
   "/Metrics/Metrics_Transformation_Rules": "/docs/metrics/metrics-transformation-rules",
   "/docs/metrics/metrics-visualization/aggregation-operators": "/docs/metrics/metrics-operators",
-  "/docs/observability/ai-driven-investigations": "/docs/get-started/ai-machine-learning",
   "/Metrics/Understand_and_Manage_Metric_Volume/Blacklisted_Metrics_Sources": "/docs/metrics/manage-metric-volume/disabled-metrics-sources",
   "/Metrics/Understand_and_Manage_Metric_Volume/Disabled_Metrics_Sources": "/docs/metrics/manage-metric-volume/disabled-metrics-sources",
   "/Metrics/Understand_and_Manage_Metric_Volume": "/docs/metrics/manage-metric-volume",
