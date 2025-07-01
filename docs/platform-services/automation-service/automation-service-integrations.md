@@ -116,6 +116,20 @@ If you have Cloud SOAR installed, you can build basic integrations without havin
 
 To make your custom integration available for everyone in App Central, see [Publish an integration to App Central](/docs/platform-services/automation-service/automation-service-app-central/#publish-an-integration-to-app-central).
 
+## Test actions
+
+You can test actions on an integration to ensure that they are working correctly.
+
+1. [Open an integration](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations). 
+1. [Ensure that authentication is configured for the integration](/docs/platform-services/automation-service/configure-authentication-for-integrations/). Testing actions on the integration will fail unless the integration's authentication settings are correctly configured so that the product you're integrating with can communicate with Sumo Logic. 
+1. Select an action on the integration. For our example shown below, we'll select the **List Users** action on the Atlassian Jira V2 integration. <br/><img src={useBaseUrl('img/platform-services/automation-service/example-action-for-test-action.png')} alt="Example action" style={{border: '1px solid gray'}} width="700" />
+1. Enter any values needed for the action to run and click **TEST ACTION**.<br/><img src={useBaseUrl('img/platform-services/automation-service/example-test-action.png')} alt="Example test action" style={{border: '1px solid gray'}} width="400" />
+   :::tip
+   In some cases, you'll need to provide data for required fields before **TEST ACTION** is enabled. This is data that normally would be provided by the output of other actions running earlier in a playbook sequence, and so must be provided here to test if the action runs correctly. In the example below, note that you need to provide information for the **Issue (ID or Key)** field in order to test the action. Also note that under the **Issue Type** field there is helpful text telling you that you can get the issue type ID and key from the **List Issue Types** action.<br/><img src={useBaseUrl('img/platform-services/automation-service/test-action-required-fields.png')} alt="Required fields for test action" style={{border: '1px solid gray'}} width="400" />
+   :::
+1. After you click **TEST ACTION**, results of the action are displayed:<br/><img src={useBaseUrl('img/platform-services/automation-service/test-action-results.png')} alt="Test action results" style={{border: '1px solid gray'}} width="600" />
+
+
 ## Cloud or Bridge execution
 
 You can set integrations, and their related action execution, to be executed in the cloud or through the Bridge. Only certified integrations can be executed in the cloud, while custom integrations must be executed through the [Bridge](/docs/platform-services/automation-service/automation-service-bridge/).
