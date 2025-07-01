@@ -51,6 +51,7 @@ AI-Driven Investigations provides an AI-generated summary of all detected servic
 When you select a service in the list or a node in the map that has signals, a summary panel displays to the right. The panel contains findings about the service with log examples and steps you can take to remediate problems with the service.
 
 1. To find services to investigate, at the top of the screen use the following controls:<br/><img src={useBaseUrl('img/observability/filter-results.png')} alt="Filter results" style={{border: '1px solid gray'}} width="800" />
+   * **Environment**. Select the environment to investigate.
    * **Search Services**. Enter keywords to search services names.
    * **Signal Type**. Select the signal types to search for:
       * **Latency**. An increase or decrease in latency of the requests to the system.
@@ -67,7 +68,7 @@ Perform the following steps to explore the UI:
 1. The legend at the bottom of the screen shows that gold nodes in the map represent services with signals, while blue nodes indicate normal, expected activity. Use the zoom buttons to resize the map.<br/><img src={useBaseUrl('img/observability/service-intelligence-size-buttons.png')} alt="Resize buttons" style={{border: '1px solid gray'}} width="200" />
 1. Click **Generate Latest** to refresh the services list and map with the most current version.<br/><img src={useBaseUrl('img/observability/service-intelligence-refresh.png')} alt="Refresh button" style={{border: '1px solid gray'}} width="150" />
 1. Click **History** to browse previously-generated versions.<br/><img src={useBaseUrl('img/observability/service-intelligence-history.png')} alt="Refresh button" style={{border: '1px solid gray'}} width="150" /><br/><img src={useBaseUrl('img/observability/service-intelligence-history-dialog.png')} alt="Services history" style={{border: '1px solid gray'}} width="250" />
-   1. To open a version, select a previous version directly from the list. When you select a version, the time and date of the version appears at the top of the page:<br/><img src={useBaseUrl('img/observability/service-intelligence-historical-view-time.png')} alt="Timestamp" style={{border: '1px solid gray'}} width="250" />
+   1. To open a version, select a previous version directly from the list. When you select a version, the time and date of the version appears at the top of the page. Click **Revert to Recent** if you want to switch back to the most recent version.<br/><img src={useBaseUrl('img/observability/service-intelligence-historical-view-time.png')} alt="Timestamp" style={{border: '1px solid gray'}} width="400" />
    1. Click **Select Date** and **Select Time** to find a specific version. You can search for a time in the past 14 days for a desired investigation. 
    1. If an investigation does not exist for a specific date and time, you can generate it.<br/><img src={useBaseUrl('img/observability/service-intelligence-generate-button.png')} alt="Generate an investigation" style={{border: '1px solid gray'}} width="250" /> 
 1. Click the buttons on the right to regenerate the services list and map or provide feedback:<br/><img src={useBaseUrl('img/observability/service-intelligence-regenerate-and-feedback-buttons.png')} alt="Regenerate and feedback buttons" width="50" />
