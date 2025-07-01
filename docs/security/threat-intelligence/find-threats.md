@@ -33,7 +33,7 @@ All the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/secur
 
 ## Use the threatip search operator
 
-To find threats using IP addresses, use the `threatip` search operator. This operator uses `sumo://threat/cs` in log search queries to correlate data in the `_sumo_global_feed_cs` [threat intelligence source](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources).
+To find threats using IP addresses, use the `threatip` search operator. This operator [uses `sumo://threat/cs` in log search queries](#use-the-lookup-search-operator) to correlate data in the `_sumo_global_feed_cs` threat intelligence source.
 
 For more information, see [threatip Search Operator](/docs/search/search-query-language/search-operators/threatip/).
 
