@@ -28,19 +28,6 @@ Watch the following micro lesson to learn about our AWS Observability solution.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/p_LaUPAer6I?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
-
 :::
 
 #### AWS Observability Solution  

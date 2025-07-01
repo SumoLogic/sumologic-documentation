@@ -30,19 +30,6 @@ You need to know where your CloudTrail log files are stored so you can provide 
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/SQMzez_9PiU?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 

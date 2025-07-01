@@ -200,7 +200,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source"><img src={useBaseUrl('img/send-data/confluent-cloud-metrics.png')} alt="icon" width="120"/><h4>Confluent Cloud Metrics</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source"><img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="icon" width="120"/><h4>Confluent Cloud Metrics</h4></a>
   <p>Learn how to collect metrics from the Confluent Cloud Metrics platform and send them to Sumo Logic.</p>
   </div>
 </div>
