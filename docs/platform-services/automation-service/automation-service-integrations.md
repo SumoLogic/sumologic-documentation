@@ -134,7 +134,9 @@ To change the data that is output from an action, see [Edit output of an action]
 
 ## Edit output of an action
 
-When actions run, they typically generate output that is passed on to the next step in a playbook. You can edit the output from actions in certified integrations to add, remove, or modify the output of the action. 
+When an integration's action runs, it typically generates output that is passed on to the next step in a playbook. For information about the format of this output, see [Integration Framework Output](/docs/platform-services/automation-service/integration-framework/integration-framework-output/).
+
+You may want to change the output of an action to allow playbooks to execute different activities downstream from the action. Perform the following steps to edit the output of an action:
 
 1. [Open an integration](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) and do the following:
    1. [Ensure that it is a certified integration](/docs/platform-services/automation-service/automation-service-integrations/#certified-integrations). Only certified integrations allow you to edit the output of their actions. 
@@ -150,7 +152,6 @@ When actions run, they typically generate output that is passed on to the next s
    :::
 1. To ensure that the edited output works, [test the action](#test-action) like we did earlier.<br/>For our example, after we test the action notice how the account type is now displayed in the **Show Details** dialog box: <br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-edited-results.png')} alt="New output displayed in test action results" style={{border: '1px solid gray'}} width="500" />
 1. But there is more output than what was configured to display. To see the complete output, click the **JSON details** button:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-test-action-json-details.png')} alt="Output JSON details button" style={{border: '1px solid gray'}} width="500" /><br/>Here you can click expand arrows to examine the output in JSON format. Click buttons at the top of the dialog to return to the display view, download the JSON, or copy the output:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-json-details.png')} alt="Output in JSON view" style={{border: '1px solid gray'}} width="500" />
-
 
 ## Cloud or Bridge execution
 
