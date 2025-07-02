@@ -116,9 +116,9 @@ If you have Cloud SOAR installed, you can build basic integrations without havin
 
 To make your custom integration available for everyone in App Central, see [Publish an integration to App Central](/docs/platform-services/automation-service/automation-service-app-central/#publish-an-integration-to-app-central).
 
-## Test actions
+## Test action
 
-You can test actions on an integration to ensure that they are working correctly.
+You can test an action on an integration to ensure that it is working correctly.
 
 1. [Open an integration](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations). 
 1. [Ensure that authentication is configured for the integration](/docs/platform-services/automation-service/configure-authentication-for-integrations/). Testing actions on the integration will fail unless the integration's authentication settings are correctly configured so that the product you're integrating with can communicate with Sumo Logic. 

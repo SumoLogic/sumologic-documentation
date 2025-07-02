@@ -46,7 +46,7 @@ For information about Cyberint, see the [Cyberint website](https://cyberint.com/
 
 ## Test actions
 
-Before you start exploring the features of the Cyberint app, try test runs of each of the actions to learn specifics of usage. For general information about testing actions, see [Test actions](/docs/platform-services/automation-service/automation-service-integrations/#test-actions).
+Before you start exploring the features of the Cyberint app, try test runs of each of the actions to learn specifics of usage. For general information about testing actions, see [Test action](/docs/platform-services/automation-service/automation-service-integrations/#test-action).
 
 ### Search Alerts
 The **Search Alerts** action is designed to search for alerts using criteria (filters) such as **Severity**, **Statuses**, datetime range. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-5.png')} style={{border:'1px solid gray'}} alt="cyberint" width="400"/>
