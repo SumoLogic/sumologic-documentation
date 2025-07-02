@@ -129,6 +129,18 @@ You can test an action on an integration to ensure that it is working correctly.
    :::
 1. After you click **TEST ACTION**, results of the action are displayed:<br/><img src={useBaseUrl('img/platform-services/automation-service/test-action-results.png')} alt="Test action results" style={{border: '1px solid gray'}} width="600" />
 
+## Edit action output
+
+When actions run, they typically generate output that is passed on to the next step in a playbook. You can edit the output from actions in [certified integrations](/docs/platform-services/automation-service/automation-service-integrations/#certified-integrations) to add, remove, or modify the output of the action. Note that if you add new output values, they must match the values of the data provided by the vendor product that the integration connects to.
+
+1. <br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-example-action.png')} alt="Example action" style={{border: '1px solid gray'}} width="700" />
+1. <br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-test-action.png')} alt="Test action" style={{border: '1px solid gray'}} width="400" />
+1. <br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-test-action-results.png')} alt="Test action results" style={{border: '1px solid gray'}} width="500" />
+1. <br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-edit-button.png')} alt="Action edit button" style={{border: '1px solid gray'}} width="700" />
+1. <br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-edit-action.png')} alt="Edit toggle" style={{border: '1px solid gray'}} width="700" />
+1. <br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-edited.png')} alt="Edit output" style={{border: '1px solid gray'}} width="700" />
+1. <br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-edited-results.png')} alt="New output displayed in test action results" style={{border: '1px solid gray'}} width="500" />
+
 
 ## Cloud or Bridge execution
 
