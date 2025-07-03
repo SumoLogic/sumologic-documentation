@@ -3177,6 +3177,7 @@ integrations: [
               link: {type: 'doc', id: 'platform-services/automation-service/app-central/index'},
               items: [
                 'platform-services/automation-service/automation-service-app-central',
+                'platform-services/automation-service/playbooks-in-app-central',
                 'platform-services/automation-service/configure-authentication-for-integrations',
                 {
                   type: 'category',

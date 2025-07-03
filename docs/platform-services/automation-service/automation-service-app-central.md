@@ -23,7 +23,7 @@ Before you can access App Central, you must have the App Central Access role cap
 
 <img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" style={{border:'1px solid gray'}} width="800"/>
 
-1. **Playbooks**. Click to view [playbooks in App Central](#playbooks-in-app-central) that are available to install.
+1. **Playbooks**. Click to view [playbooks in App Central](/docs/platform-services/automation-service/playbooks-in-app-central/) that are available to install.
 1. **Integrations**. Click to view [integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) that are available to install.
 1. **Search**. Search for integrations or playbooks to install.
 1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization.
@@ -90,29 +90,4 @@ Sumo Logic will validate the integration, and work with you to make any updates 
 
 ## Playbooks in App Central
 
-A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type.
-
-While [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/) in the Automation Service UI show the playbooks installed to your environment, the **Playbooks** tab in App Central shows you additional playbooks you can install.
-
-### Install a playbook from App Central
-
-1. Use the **Search** bar in the upper right of the **Playbooks** tab to find playbooks.
-1. Click **Install** in the corner of the playbook box.
-1. Click **Next**.
-1. Click **Install** to install the playbook.
-1. Click **Close**. After installation is complete, **Installed** replaces the **Install** link in the corner of the playbook box.
-1. **IMPORTANT**: Click **Show More** in the playbook box to see if there are additional steps you need to follow to configure the installed playbook. Failure to perform these additional steps may result in the playbook not working properly.
-
-<!-- There used to be an export button, but now it's gone. Saving this text below in case it comes back.
-
-## Export from App Central
-
-You can export the contents of integrations and playbooks from App Central.
-
-1. Click the **Go to export page** button in the top right corner of the **Integrations** tab.<br/><img src={useBaseUrl('img/cse/automation-service-app-central-export-button.png')} alt="Go to the export page" style={{border: '1px solid gray'}} width="300"/>
-1. Select the items you want to export. Provide a description in the box provided. If you select more than one item, you are prompted to provide a title as well.
-1. Scroll down and click **Export** at the bottom right corner of the screen. The selections are exported in a .tar file to your downloads folder.
-1. Extract the .tar file. An archive file is extracted from the .tar file (for example, a .tar.gz file).
-1. Extract the archive file. The exported items are extracted, including any YAML files they contain.
-
--->
+To work with playbooks in App Central, see [Playbooks in App Central](/docs/platform-services/automation-service/playbooks-in-app-central/).
