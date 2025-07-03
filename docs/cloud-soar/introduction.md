@@ -351,7 +351,7 @@ Cloud SOAR administrators have privileged access to the Settings and Automation 
 
 ##### General settings
 
-The **General** settings page includes sections for **System**, **Incidents**, and **Instant Messaging**.  Administrators can set proxy settings and date/time formats in the **System** section.  The **Incidents** section can control incident processing settings and file extension whitelisting. You can also configure integrations like Slack under **Instant Messaging**. For more information, see [General](/docs/cloud-soar/cloud-soar-settings/#general).
+The **General** settings page includes sections for **System**, **Incidents**, and **Instant Messaging**.  Administrators can set proxy settings and date/time formats in the **System** section.  The **Incidents** section can control incident processing settings and file extension whitelisting. You can also configure integrations like Slack under **Instant Messaging**. For more information, see [General](/docs/cloud-soar/settings/#general).
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access general settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
 
@@ -361,7 +361,7 @@ The **General** settings page includes sections for **System**, **Incidents**, a
 
 ##### Groups
 
-Basic user management and role-based access control (RBAC) is done through the main Sumo Logic interface; however, you can create user groups specific to Cloud SOAR through the **Groups** page. For more information, see [Groups](/docs/cloud-soar/cloud-soar-settings/#groups).
+Basic user management and role-based access control (RBAC) is done through the main Sumo Logic interface; however, you can create user groups specific to Cloud SOAR through the **Groups** page. For more information, see [Groups](/docs/cloud-soar/settings/#groups).
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access groups settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.
 
@@ -371,7 +371,7 @@ Basic user management and role-based access control (RBAC) is done through the m
 
 ##### Event Triggers
 
-The **Event Triggers** page contains a list of triggers where you can configure default email notifications whenever key events happen. For more information, see [Notifications](/docs/cloud-soar/cloud-soar-settings/#notifications).
+The **Event Triggers** page contains a list of triggers where you can configure default email notifications whenever key events happen. For more information, see [Notifications](/docs/cloud-soar/settings/#notifications).
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access event triggers settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Notifications > Event Triggers**.
 
@@ -384,9 +384,9 @@ The **Event Triggers** page contains a list of triggers where you can configure 
 You can use additional settings to customize fields, incident labels, and triage information. Use these settings to customize many of the templates, field names, and incident names used in the views and reports your analysts generate. You can also set the defaults for incident triage.
 
 See:
-* [Custom fields](/docs/cloud-soar/cloud-soar-settings/#custom-fields)
-* [Incident labels](/docs/cloud-soar/cloud-soar-settings/#incident-labels)
-* [Triage](/docs/cloud-soar/cloud-soar-settings/#triage)
+* [Custom fields](/docs/cloud-soar/settings/#custom-fields)
+* [Incident labels](/docs/cloud-soar/settings/#incident-labels)
+* [Triage](/docs/cloud-soar/settings/#triage)
 
 #### Exploring Cloud SOAR Automations
 
@@ -422,7 +422,7 @@ Fields can be used to apply advanced filters or add them as a new column in the 
 
 #### Define and test a custom field
 
-In this section, we’ll create a custom field to map data that’s ingested into Cloud SOAR. We'll create a standardized naming convention for source IP addresses to help organize our Cloud SOAR instance. For more information, see [Custom fields](/docs/cloud-soar/cloud-soar-settings/#custom-fields).
+In this section, we’ll create a custom field to map data that’s ingested into Cloud SOAR. We'll create a standardized naming convention for source IP addresses to help organize our Cloud SOAR instance. For more information, see [Custom fields](/docs/cloud-soar/settings/#custom-fields).
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. 
 1. In the **Custom Fields** menu, select **Incidents**. 
@@ -451,9 +451,9 @@ You will not be able to create the incident until there is a green **No Issue Fo
 
 Incidents are the main place where SOC analysts conduct their threat investigations and orchestrate their responses. There are several areas of the admin UI where you can customize the way incidents behave in Cloud SOAR:
 * **[Incident templates](/docs/cloud-soar/automation/#incident-templates)**. Incident templates control how incidents appear in the War Room and include fields like type, severity, and status. Incident Templates are also essential when creating [automation rules](/docs/cloud-soar/automation/#automation-rules) that trigger incidents. When you first set up and automate your SOC, it will primarily be using incident templates.
-* **[General](/docs/cloud-soar/cloud-soar-settings/#general)** settings **Incidents** section. Use this settings section for some configuration of the incidents in Cloud SOAR. You can allow or prohibit duplicate names, set whether closing notes are mandatory or not, and select which objects are extracted from incidents here.
+* **[General](/docs/cloud-soar/settings/#general)** settings **Incidents** section. Use this settings section for some configuration of the incidents in Cloud SOAR. You can allow or prohibit duplicate names, set whether closing notes are mandatory or not, and select which objects are extracted from incidents here.
 * **[Reports](/docs/cloud-soar/incidents-triage/#report)**. Use this feature to create and edit report templates. These templates are used when analysts export a report after closing an incident as part of the lessons learned stage of the incident response cycle. 
-* **[Incident Labels](/docs/cloud-soar/cloud-soar-settings/#incident-labels)**. Incident labels are used to organize the way incidents are displayed inside Cloud SOAR.
+* **[Incident Labels](/docs/cloud-soar/settings/#incident-labels)**. Incident labels are used to organize the way incidents are displayed inside Cloud SOAR.
 
 Work with the analysts on your team to customize reports, labels, and templates to suit their needs. As a best practice, create labels and templates that use standardized and unique naming conventions.
 
@@ -483,7 +483,7 @@ Any recorded events that have not been converted to an incident will be displaye
 
 <img src={useBaseUrl('img/cloud-soar/triage.png')} alt="Triage screen" style={{border: '1px solid gray'}} width="800"/>
 
-The **Type** field is directly linked to the incident type field (and can be added through the **Triage** section of the **[Custom Fields](/docs/cloud-soar/cloud-soar-settings/#custom-fields)** page).
+The **Type** field is directly linked to the incident type field (and can be added through the **Triage** section of the **[Custom Fields](/docs/cloud-soar/settings/#custom-fields)** page).
 
 To add additional custom fields (up to 100), select **Triage** from the **Custom Fields** list.  To add a custom field, click the **+** button in the upper left of the display and set the field properties as desired. Make sure to check **Use as filter** if you want your new custom field to be filterable in the triage module.
 

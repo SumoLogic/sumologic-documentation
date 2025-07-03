@@ -33,13 +33,13 @@ This section contains the following topics:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cloud-soar/cloud-soar-settings"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Cloud SOAR Settings</h4></a>
+  <a href="/docs/cloud-soar/settings"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Cloud SOAR Settings</h4></a>
   <p>Setup and configuration options for the Cloud SOAR platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cloud-soar/cloud-soar-menus"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Cloud SOAR Menus</h4></a>
+  <a href="/docs/cloud-soar/menus"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Cloud SOAR Menus</h4></a>
   <p>Navigate menus in Cloud SOAR.</p>
   </div>
 </div>

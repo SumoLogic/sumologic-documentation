@@ -99,4 +99,4 @@ When you mouse over the icons, you’ll see **Synchronized** and **Push Field**.
 
 <img src={useBaseUrl('img/cloud-soar/synchronized.png')} alt="Synchronized label" style={{border: '1px solid gray'}} />
 
-For more information about Custom Fields, see [Customization](/docs/cloud-soar/cloud-soar-settings/#custom-fields).
+For more information about Custom Fields, see [Customization](/docs/cloud-soar/settings/#custom-fields).

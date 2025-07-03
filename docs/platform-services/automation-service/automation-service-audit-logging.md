@@ -69,26 +69,26 @@ The table below shows the `_sourceCategory` that is assigned to Audit Event Inde
 
 | Product Feature | _sourceCategory Value |
 |:--|:--|
-| [Custom Field](/docs/cloud-soar/cloud-soar-settings/#custom-fields) | `oarCustomFields`  |
+| [Custom Field](/docs/cloud-soar/settings/#custom-fields) | `oarCustomFields`  |
 | [Daemon](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#daemon-action-definitions)  | `oarDaemons`  |
 | [Dashboard](/docs/cloud-soar/incidents-triage/#dashboards)  | `oarDashboards` |
 | Email | `oarEmails`  |
 | [Entity](/docs/cloud-soar/incidents-triage/#entities)  | `oarEntities` |
 | Folder  | `oarFolders`  |
-| [Group](/docs/cloud-soar/cloud-soar-settings/#groups)  | `oarGroups` |
+| [Group](/docs/cloud-soar/settings/#groups)  | `oarGroups` |
 | [Incident](/docs/cloud-soar/incidents-triage/#incidents)  | `oarIncidents`   |
 | [Incident Artifact](/docs/cloud-soar/incidents-triage/#create-a-new-incident-manually) | `oarIncidentArtifacts`    |
 | [Incident Attachment](/docs/cloud-soar/incidents-triage/#documentation-tab)  | `oarIncidentAttachments`  |
 | [Incident Investigator](/docs/cloud-soar/incidents-triage/#add-investigators) | `oarIncidentInvestigators`  |
 | [Incident Note](/docs/cloud-soar/incidents-triage/#notes)  | `oarIncidentNotes`  |
 | [Incident Template](/docs/cloud-soar/automation/#incident-templates)  | `oarIncidentTemplates`    |
-| [Notification](/docs/cloud-soar/cloud-soar-settings/#notifications)  | `oarNotifications`|
+| [Notification](/docs/cloud-soar/settings/#notifications)  | `oarNotifications`|
 | [Report](/docs/cloud-soar/incidents-triage/#report) | `oarReports` |
-| [Setting](/docs/cloud-soar/cloud-soar-settings/) | `oarSettings`  |
+| [Setting](/docs/cloud-soar/settings/) | `oarSettings`  |
 | [Task](/docs/cloud-soar/incidents-triage/#tasks)  | `oarTasks`  |
 | [Triage](/docs/cloud-soar/incidents-triage/#triage)  | `oarTriage` |
 | [Triage Attachment](/docs/cloud-soar/incidents-triage/#triage)  | `oarTriageAttachments`  |
-| [Triggers](/docs/cloud-soar/cloud-soar-settings/#notifications) | `oarTriggers` |
+| [Triggers](/docs/cloud-soar/settings/#notifications) | `oarTriggers` |
 | [Widget](/docs/cloud-soar/incidents-triage/#create-widgets)  | `oarWidgets`  |
 
 ## System Event Index events

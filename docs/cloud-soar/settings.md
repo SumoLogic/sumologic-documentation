@@ -1,5 +1,5 @@
 ---
-id: cloud-soar-settings
+id: settings
 title: Cloud SOAR Settings
 sidebar_label: Settings
 ---
@@ -80,7 +80,7 @@ To add a group as an incident investigator, follow the same steps as described i
    :::note
    The **Role** column displays the profile assigned to the members of the group. You cannot change the group's assigned profile (role) here like you can for individual users. You can only change the group's assigned profile on the group itself.
    :::
-1. Click **Apply**. The group is added an an investigator of the selected incidents. While investigating the incidents, members of the group have the rights given by the the role (profile) assigned to members of the group.
+1. Click **Apply**. The group is added an investigator of the selected incidents. While investigating the incidents, members of the group have the rights given by the the role (profile) assigned to members of the group.
 
 ### Group role assignments
 

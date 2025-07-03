@@ -1,10 +1,12 @@
 ---
-id: cloud-soar-menus
+id: menus
 title: Cloud SOAR Menus
 sidebar_label: Menus
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+This article describes the menus and navigation options for Cloud SOAR.
 
 ## Classic UI
 
@@ -18,7 +20,7 @@ Use the top menu to access:
 * [**Incidents**](/docs/cloud-soar/incidents-triage/#incidents). Manage security incidents that require investigation and action.
 * [**Entities**](/docs/cloud-soar/incidents-triage/#entities). Manage entities identified across incidents.
 * <img src={useBaseUrl('img/cloud-soar/cloud-soar-support-icon.png')} alt="Support menu icon" style={{border: '1px solid gray'}} width="25"/> **Support**. Access help, including documentation and support contact information.
-* <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> [**Settings**](/docs/cloud-soar/cloud-soar-settings/). Configure Cloud SOAR settings.
+* <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> [**Settings**](/docs/cloud-soar/settings/). Configure Cloud SOAR settings.
 
 ### Settings menu
 
@@ -26,7 +28,7 @@ The **Settings** menu allows you to configure Cloud SOAR settings. To access the
 
 Use the **Settings** menu to access:
 * [**Automation**](/docs/cloud-soar/automation/). Configure Cloud SOAR's automation and orchestration features.
-* [**Settings**](/docs/cloud-soar/cloud-soar-settings/). Configure Cloud SOAR settings.
+* [**Settings**](/docs/cloud-soar/settings/). Configure Cloud SOAR settings.
 * [**Report**](/docs/cloud-soar/incidents-triage/#report). Configure reports.
 
 ## New UI
@@ -75,12 +77,12 @@ The **Go To...** menu allows you to launch Sumo Logic features, including for Cl
 Use the **Go To...** menu to access these Cloud SOAR features:
 * [**Bridge**](/docs/platform-services/automation-service/automation-service-bridge). Configure a bridge to run custom actions or integrations.
 * [**Entities**](/docs/cloud-soar/incidents-triage/#entities). Manage entities identified across incidents.
-* [**Fields**](/docs/cloud-soar/cloud-soar-settings/#custom-fields). Customize fields to better suit your environment.
-* [**General**](/docs/cloud-soar/cloud-soar-settings/). Configure general Cloud SOAR settings.
-* [**Groups**](/docs/cloud-soar/cloud-soar-settings/#groups). Create a group of users that can be added as incident investigators.
+* [**Fields**](/docs/cloud-soar/settings/#custom-fields). Customize fields to better suit your environment.
+* [**General**](/docs/cloud-soar/settings/). Configure general Cloud SOAR settings.
+* [**Groups**](/docs/cloud-soar/settings/#groups). Create a group of users that can be added as incident investigators.
 * [**Incidents**](/docs/cloud-soar/incidents-triage/#incidents). Manage security incidents that require investigation and action.
-* [**Incident Labels**](/docs/cloud-soar/cloud-soar-settings/#incident-labels). Define labels for the different types of incidents that will be investigated.
-* [**Notifications**](/docs/cloud-soar/cloud-soar-settings/#notifications). Configure notifications to Cloud SOAR users as well as other external users.
+* [**Incident Labels**](/docs/cloud-soar/settings/#incident-labels). Define labels for the different types of incidents that will be investigated.
+* [**Notifications**](/docs/cloud-soar/settings/#notifications). Configure notifications to Cloud SOAR users as well as other external users.
 * [**Report**](/docs/cloud-soar/incidents-triage/#report). Configure reports.
 * [**SecOps & Dashboard**](/docs/cloud-soar/incidents-triage/#secops-and-dashboard). Open the home screen of Cloud SOAR.
 * [**Triage**](/docs/cloud-soar/incidents-triage/#triage). Triage events which may be unverified or have a low confidence level before they are converted to incidents.
@@ -91,14 +93,14 @@ The **Configuration** menu allows you to configure Sumo Logic features, includin
 
 Use the **Configuration** menu to access:
 * [**Incidents**](/docs/cloud-soar/incidents-triage/#incidents). Manage security incidents that require investigation and action.
-* [**Fields**](/docs/cloud-soar/cloud-soar-settings/#custom-fields). Customize fields to better suit your environment.
-* [**Incident Labels**](/docs/cloud-soar/cloud-soar-settings/#incident-labels). Define labels for the different types of incidents that will be investigated.
+* [**Fields**](/docs/cloud-soar/settings/#custom-fields). Customize fields to better suit your environment.
+* [**Incident Labels**](/docs/cloud-soar/settings/#incident-labels). Define labels for the different types of incidents that will be investigated.
 
 ### Administration menu
 
-The **Administration** menu allows you to administer Sumo Logic features, such as for for [account](/docs/manage/), [users and roles](/docs/manage/users-roles/), and [account security](/docs/manage/security/). You can also administer Cloud SOAR features. To access this menu, click <img src={useBaseUrl('img/get-started/administration-icon.png')} alt="Administration icon" style={{border: '1px solid gray'}} width="30"/> on the [top menu](#top-menu-1). Scroll down the menu to see Cloud SOAR administration options. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-administration-menu.png')} alt="Cloud SOAR options on the administration menu" style={{border: '1px solid gray'}} width="175"/>
+The **Administration** menu allows you to administer Sumo Logic features, such as for [account](/docs/manage/), [users and roles](/docs/manage/users-roles/), and [account security](/docs/manage/security/). You can also administer Cloud SOAR features. To access this menu, click <img src={useBaseUrl('img/get-started/administration-icon.png')} alt="Administration icon" style={{border: '1px solid gray'}} width="30"/> on the [top menu](#top-menu-1). Scroll down the menu to see Cloud SOAR administration options. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-administration-menu.png')} alt="Cloud SOAR options on the administration menu" style={{border: '1px solid gray'}} width="175"/>
 
 Use the **Administration** menu to access:
-* [**General**](/docs/cloud-soar/cloud-soar-settings/#general). Configure general Cloud SOAR settings.
-* [**Notifications**](/docs/cloud-soar/cloud-soar-settings/#notifications). Configure notifications to Cloud SOAR users as well as other external users.
-* [**Groups**](/docs/cloud-soar/cloud-soar-settings/#groups). Create a group of users that can be added as incident investigators.
+* [**General**](/docs/cloud-soar/settings/#general). Configure general Cloud SOAR settings.
+* [**Notifications**](/docs/cloud-soar/settings/#notifications). Configure notifications to Cloud SOAR users as well as other external users.
+* [**Groups**](/docs/cloud-soar/settings/#groups). Create a group of users that can be added as incident investigators.
