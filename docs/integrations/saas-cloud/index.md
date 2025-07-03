@@ -137,6 +137,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/confluent-cloud"><img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="icon" width="100"/><h4>Confluent Cloud</h4></a>
+  <p>Monitor and analyze streaming activity in Confluent Cloud to ensure secure, reliable, and high-performance data pipelines.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Falcon FileVantage</h4></a>
   <p>Monitor and analyze file integrity.</p>
   </div>
