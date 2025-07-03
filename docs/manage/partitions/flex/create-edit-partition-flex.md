@@ -68,12 +68,13 @@ When you create a partition, you specify the routing expression that determines 
 
 You can make some changes to an existing partition:  
 
+* You can change the routing expression, as long as the partition is active (not decommissioned). It takes about five minutes for the change to take effect. The routing expression takes effect going forward—it doesn’t affect data previously added to the partition. 
 * You can change the retention period of the partition.
   :::note
   By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period of `sumologic_default`. You can change the retention period for any of these internal partitions as desired.
   :::
 * You can change the data forwarding configuration.
-* You cannot change the name of a partition, the routing expression, or reuse a partition name.
+* You cannot change the name of a partition or reuse a partition name.
 * You cannot edit the audit index partition to include it in the default scope.
 * Security partitions can’t be edited. Sumo Logic stores Cloud SIEM Records in seven partitions, one for each [Cloud SIEM Record type](/docs/cse/schema/cse-record-types). The names of the Sumo Logic partitions that contain Cloud SIEM Records begin with the string `sec_record_`. If you have a role that grants you the **View Partitions** capability, you can view the security partitions in the Sumo Logic UI. Note, however, that no user can edit or remove a security partition.
 
