@@ -41,6 +41,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/akamai-cpc"><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="85"/><h4>Akamai CPC</h4></a>
+  <p>Monitor threats and enforce compliance for client-side web applications using rich dashboards and Akamai CPC data.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/akamai-datastream"><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="85"/><h4>Akamai DataStream</h4></a>
   <p>Monitor and analyze the performance of Akamai Edge server</p>
   </div>
@@ -127,6 +133,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/code42-incydr"><img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="icon" width="100"/><h4>Code42 Incydr</h4></a>
   <p>Monitor, detect, and respond to potential data threats on your Code42 Incydr platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/confluent-cloud"><img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="icon" width="100"/><h4>Confluent Cloud</h4></a>
+  <p>Monitor and analyze streaming activity in Confluent Cloud to ensure secure, reliable, and high-performance data pipelines.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -349,6 +361,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/slack"><img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="icon" width="50"/><h4>Slack</h4></a>
   <p>Monitor analytics for your Slack users, channels, and access logs for workspaces.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/snowflake-logs"><img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="icon" width="120"/><h4>Snowflake Logs</h4></a>
+  <p>Monitor the key metrics, query performance, and overall health of Snowflake environments to optimize Snowflake's potential.</p>
   </div>
 </div>
 <div className="box smallbox card">

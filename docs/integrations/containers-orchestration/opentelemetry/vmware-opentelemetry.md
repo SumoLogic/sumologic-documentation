@@ -243,6 +243,7 @@ The **VMWare - Host Overview** dashboard provides at-a-glance analysis of ESXi H
 - **Top 25 ESXi Hosts Memory Utilization**. Top 25 ESXi Hosts Memory Utilization.
 - **Top 25 ESXi Hosts Network Usage**. Top 25 ESXi Hosts Network Usage.
 - **Top 25 ESXi Hosts Disk Read/ Write Latency**. Top 25 ESXi Hosts Disk read/ write latency.
+- **Host Memory Capacity**. Total memory capacity of the host systems being monitored.
 
 ### VMWare - Host Details
 
@@ -268,6 +269,7 @@ The **VMWare - VM Overview** dashboard provides an at-a-glance analysis of VM me
 - **Top 25 VMs Network Usage**. Top 25 VMs Network usage.
 - **Top 25 VMs Disk Usage**. Top 25 VMs Disk usage.
 - **Top 25 VMs Memory Ballooning**. Top 25 VMs Memory Ballooning.
+- **VM CPU Time**. CPU time spent in idle, ready or wait state in %.
 
 ### VMWare - VM Details
 
@@ -283,6 +285,7 @@ The **VMWare - VM Details** dashboard provides a detailed analysis of VM metrics
 - **Top 25 VMs Network Packet Rate**. Top 25 VMs Network transmitted/received packet rate.
 - **Top 25 VMs Network Packet Drop Rate**. Top 25 VMs Network transmitted/received packet drop rate.
 - **Top 25 VMs Memory Swapped**. Top 25 VMs Memory swapped.
+- **VM Memory Granted**. The amount of memory that is granted to a VM.
 
 ## Create monitors for VMWare app
 

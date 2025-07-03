@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian.png')} alt="criminal-ip" width="90"/>
 
-***Version: 1.2
-Updated: Sep 16, 2024***
+***Version: 1.3
+Updated: July 1, 2025***
 
 OpsGenie, a service powered by Atlassian in the cloud, provides operational teams with robust alert management capabilities. It ensures efficient tracking of notifications triggered by various monitoring systems. The primary goal is to guarantee that alerts reach the appropriate team members and that issues are resolved swiftly. This service has been successfully incorporated and rigorously vetted in combination with OpsGenie's platform.
 
@@ -77,8 +77,21 @@ Please keep in mind that the API keys of the team integrations can only be used 
 ## Configure Atlassian OpsGenie in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the OpsGenie API URL. The default value is `https://api.opsgenie.com`
+
+* **API Key**. Enter the [OpsGenie API key](https://support.atlassian.com/opsgenie/docs/api-key-management/) that you [created earlier](#atlassian-opsgenie-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian/atlassian-opsgenie-configuration.png')} style={{border:'1px solid gray'}} alt="Atlassian Opsgenie Logger configuration" width="400"/>
 
@@ -92,4 +105,4 @@ For information about Atlassian OpsGenie, see [OpsGenie documentation](https://s
     + List Schedules
 * Sep 16, 2024 - Update the Action:
     + Create Incident - Fixed the bug that caused the action not to add responders to the incident.
-
+* July 1, 2025 - Fixed an issue related to timeout.

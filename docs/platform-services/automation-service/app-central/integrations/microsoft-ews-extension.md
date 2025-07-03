@@ -41,12 +41,27 @@ Perform actions on Microsoft EWS mailboxes, accounts, and security settings.
 ## Configure Microsoft EWS Extension in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **PowerShell Host**. Enter your [PowerShell](https://learn.microsoft.com/en-us/powershell/exchange/exchange-management-shell?view=exchange-ps) hostname.
+
+* **Username**. Enter the username of a Microsoft EWS Extension admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+
+* **Authentication Method**. Select [**Basic**](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/authentication-and-ews-in-exchange#basic-authentication) or [**NTML**](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/authentication-and-ews-in-exchange#ntlm-authentication).
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-ews-extension-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft EWS Extension configuration" width="400"/>
 
-For information about Microsoft EWS, see [Microsoft Exchange Web Services documentation](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-authenticate-an-ews-application-by-using-oauth).
+For information about Microsoft EWS, see [Microsoft Exchange Web Services documentation](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange).
 
 ## Change Log
 

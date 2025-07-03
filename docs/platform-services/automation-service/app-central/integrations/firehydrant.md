@@ -28,17 +28,29 @@ Updated: Jul 18, 2023***
 
 ## FireHydrant configuration
 
-1. Login to **FireHydrant** with your email and password and refer to the Bot users page.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-1.png')} style={{border:'1px solid gray'}} alt="firehydrant" width="400"/> 
-1. Create your token and use as [API Key](https://docs.firehydrant.com/docs/api-keys). Make sure you click to copy the token, it will not be shown again.
+1. Login to **FireHydrant** with your email and password and refer to the Bot users page.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-1.png')} style={{border:'1px solid gray'}} alt="firehydrant" width="800"/> 
+1. Create your token and use as an [API Key](https://docs.firehydrant.com/docs/api-keys). Make sure you click to copy the token; it will not be shown again.
 
 ## Configure FireHydrant in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your FireHydrant API URL. The default value is `https://api.firehydrant.io`
 
-   * **URL**. Default value for API URL is 'https://api.firehydrant.io'.
-   * **API Key**. The API Key you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/firehydrant-configuration.png')} style={{border:'1px solid gray'}} alt="Firehydrant configuration" width="400"/>
+* **API Key**. Enter the [API key](https://docs.firehydrant.com/docs/api-keys) you [copied earlier](#firehydrant-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/firehydrant-configuration.png')} style={{border:'1px solid gray'}} alt="Firehydrant configuration" width="400"/>
 
 For information about FireHydrant, see [FireHydrant documentation](https://docs.firehydrant.com/).
   

@@ -23,19 +23,6 @@ import Iframe from 'react-iframe';
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/P_74rhI1M30?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Installation

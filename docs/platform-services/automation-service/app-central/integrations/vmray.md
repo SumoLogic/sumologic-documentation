@@ -23,8 +23,21 @@ VMRay Platform products provide set of tools for malware detection and analysis.
 ## Configure VMRay in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your [VMRay host address](https://www.vmray.com/how-to-create-easy-and-open-integrations-with-vmrays-rest-api/#elementor-toc__heading-anchor-1).
+
+* **API Key**. Enter your [VMRay API key](https://www.vmray.com/basic-automation-with-the-vmray-api/#elementor-toc__heading-anchor-3).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmray-configuration.png')} style={{border:'1px solid gray'}} alt="VMRay configuration" width="400"/>
 

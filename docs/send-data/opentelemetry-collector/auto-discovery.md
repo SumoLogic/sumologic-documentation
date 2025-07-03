@@ -16,15 +16,22 @@ With the Sumo Logic OpenTelemetry collector Auto Discovery feature, you can dete
 ## View discovered services
 
 Auto Discovery is enabled by default on all the OpenTelemetry collectors for the supported version. Below are the **Auto Discoverable Services** provided by Sumo Logic.
+
+- ActiveMQ
 - Apache
+- Cassandra
+- Docker
+- ElasticSearch
+- HAProxy
+- JMX
+- Kafka
+- Memcached
+- Microsoft SQL Server
 - MySQL
 - Nginx
-- ElasticSearch
 - PostgreSQL
-- Redis
-- Kafka
-- Docker
 - RabbitMQ
+- Redis
 
 For the discovered services, you can set up data collection with guided onboarding steps. Below are the two different ways by which you can install and setup the OTEL Auto discovery apps.
 

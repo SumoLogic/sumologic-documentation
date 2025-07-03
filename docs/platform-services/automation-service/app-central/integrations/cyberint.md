@@ -22,23 +22,31 @@ Cyberint offers to proactively monitor and positively impact external risk expos
 ## Configure Cyberint in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+*  **Instance Name Url**. Enter the domain name associated with your Cyberint instance (typically in the format `https://{instance_domain}.cyberint.io/`).
 
-    - **Label**. Unique name of the connection configuration.
-    - **Instance Name Url**. Domain name associated with your Cyberint instance (typically in the format `https://{instance_domain}.cyberint.io/...`).
-    - **API key**. API key associated with your Cyberint account.
-    - **Company Name**. Company (client) name associated with your Cyberint instance.
-    - (Optional) **Verify Server Certificate**. Validates a server’s SSL certificate.
-    - (Optional) **Connection Timeout (s)**. Sets the maximum amount of time an integration will wait for a server's response before terminating the connection.
-    - (Optional) **Automation engine**. Select **Cloud execution** (for this certified integration) or select a Bridge option (for custom integrations).
-    - (Optional) **Proxy Options**. Specifies the settings for routing network requests through a proxy server to manage and control internet traffic.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-3.png')} style={{border:'1px solid gray'}} alt="cyberint" width="400"/>
+* **API key**. Enter the API key associated with your Cyberint account.
+
+* **Company Name**. Enter the company (client) name associated with your Cyberint instance.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-3.png')} style={{border:'1px solid gray'}} alt="cyberint" width="400"/>
 
 For information about Cyberint, see the [Cyberint website](https://cyberint.com/).
 
 ## Test actions
 
-Before you start exploring the features of the Cyberint app, try test runs of each of the actions to learn specifics of usage.
+Before you start exploring the features of the Cyberint app, try test runs of each of the actions to learn specifics of usage. For general information about testing actions, see [Test action](/docs/platform-services/automation-service/automation-service-integrations/#test-action).
 
 ### Search Alerts
 The **Search Alerts** action is designed to search for alerts using criteria (filters) such as **Severity**, **Statuses**, datetime range. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-5.png')} style={{border:'1px solid gray'}} alt="cyberint" width="400"/>
