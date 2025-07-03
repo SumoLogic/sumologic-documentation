@@ -43,8 +43,29 @@ Connect with Tenable SecurityCenter to execute scans, get scan results and perfo
 ## Configure Tenable.sc in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your [Tenable SC host address](https://docs.tenable.com/integrations/Atlassian/Jira/Content/introduction.htm#Data-Collection), for example, `tenablesc.eastus.cloudapp.azure.com`.
+
+* **Port**. Enter your Tenable SC [port](https://docs.tenable.com/tenable-core/security-center/Content/TenableCore/AccessRequirements.htm#Port-Requirements).
+
+* **Protocol**. Select the protocol:
+   * **HTTPS**
+   * **HTTP**
+
+* **Username**. Enter the username of a Tenable SC admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/tenable-sc-configuration.png')} style={{border:'1px solid gray'}} alt="Tenable.sc configuration" width="400"/>
 

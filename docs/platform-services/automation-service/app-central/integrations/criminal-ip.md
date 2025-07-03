@@ -28,8 +28,21 @@ Criminal IP is a cybersecurity search engine that uses AI technology to scan glo
 ## Configure Criminal IP in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Criminal IP API URL, for example, `https://api.criminalip.io`
+
+* **API Key**. Enter your Criminal IP API key.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/criminal-ip/criminal-ip-configuration.png')} style={{border:'1px solid gray'}} alt="Criminal IP configuration" width="400"/>
 

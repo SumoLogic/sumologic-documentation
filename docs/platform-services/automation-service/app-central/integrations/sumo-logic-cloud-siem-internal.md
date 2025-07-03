@@ -9,7 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.15  
 Updated: Apr 5, 2024***
 
-Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic system calls
+This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Cloud SIEM entities to correlate signals and insights through Sumo Logic system calls. Because this integration operates internally with Sumo Logic, no additional authentication is needed. (The [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/) automation integration requires additional authentication.) 
+
+For information about Cloud SIEM, see [Get Started with Cloud SIEM](/docs/cse/get-started-with-cloud-siem/).
 
 ## Actions
 

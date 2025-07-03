@@ -28,9 +28,7 @@ module.exports = {
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
   future: {
-    v4: {
-      removeLegacyPostBuildHeadAttribute: true, // required
-    },
+    v4: true,
     experimental_faster: true,
   },
   staticDirectories: ['static'],
@@ -105,6 +103,7 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    //Embed code file from GitHub repo
     '@saucelabs/theme-github-codeblock',
     ['@docusaurus/plugin-google-tag-manager',
       {
@@ -267,6 +266,7 @@ module.exports = {
       getMissingResultsUrl({ query }) {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
+      insights: true,
     },
     prism: {
       theme: lightCodeTheme,
