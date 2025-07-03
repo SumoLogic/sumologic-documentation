@@ -125,7 +125,7 @@ Invalid examples:
 
 #### Request Headers
 
-Include any HTTP request headers required by the vendor API. The key names are static text, but the values can access our [variables feature](#dynamic-values) to make them dynamic.
+Include any HTTP request headers required by the vendor API. The key names are static text, but the values can access our [variables feature](#dynamic-values-variables) to make them dynamic.
 
 | Example Header Key | Example Header Value         |
 | :----------------- | :--------------------------- |
@@ -135,7 +135,7 @@ Include any HTTP request headers required by the vendor API. The key names are s
 
 #### Request Parameters
 
-Include any URL query parameters required by the vendor API. The key names are static text, but the values can access our [variables feature](#dynamic-values) to make them dynamic.
+Include any URL query parameters required by the vendor API. The key names are static text, but the values can access our [variables feature](#dynamic-values-variables) to make them dynamic.
 
 | Example Header Key | Example Header Value                           |
 | :----------------- | :--------------------------------------------- |
@@ -148,7 +148,7 @@ Examples URL encoded:
 
 #### Request Body
 
-This is optional and only used if the HTTP `POST` method is configured above. You can use this field to include any information in the HTTP request body. The data included in this field can access our [dynamic values](#dynamic-values).
+This is optional and only used if the HTTP `POST` method is configured above. You can use this field to include any information in the HTTP request body. The data included in this field can access our [dynamic values](#dynamic-values-variables).
 
   </div>
 </details>
@@ -159,9 +159,9 @@ This is optional and only used if the HTTP `POST` method is configured above. Yo
 
 #### Time Window
 
-The source will provide both a start and end timestamp for you to [dynamically](#dynamic-values) use in your HTTP request. The window will only move forward if no errors are raised when collecting logs from the vendor API for the current window.
+The source will provide both a start and end timestamp for you to [dynamically](#dynamic-values-variables) use in your HTTP request. The window will only move forward if no errors are raised when collecting logs from the vendor API for the current window.
 
-Use the [dynamic values](#dynamic-values) to include the window start and end timestamps within your HTTP request.
+Use the [dynamic values](#dynamic-values-variables) to include the window start and end timestamps within your HTTP request.
 
 The start time is inclusive and the end time is exclusive as that is the behavior of most APIs.
 
