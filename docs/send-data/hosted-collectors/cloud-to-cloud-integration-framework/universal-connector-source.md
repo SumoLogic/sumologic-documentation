@@ -176,7 +176,7 @@ The start time is inclusive and the end time is exclusive as that is the behavio
 <details>
   <summary>HTTP Response Log Ingest Configuration</summary>
   <div>
-  Select the format of the data returned by the vendor and configure how the source should break down the response into into individual logs with the correct timestamp.
+  Select the format of the data returned by the vendor and configure how the source should break down the response into individual logs with the correct timestamp.
 
 #### JSON with JPath
 
@@ -330,7 +330,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | sourceType | String      | `"Universal Connector"`                              | Yes      | Type of source.                  |
 | config     | JSON Object | [Configuration object](#configuration-object) | Yes      | Source type specific values.     |
 
-### Configuration Object
+### Configuration object
 
 | Parameter                  | Type        | Required | Default           | Description                                                                                                                                                                                                                              | Example                                                                                                                                                                                                                                                   |
 | :------------------------- | :---------- | :------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -377,9 +377,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | clientRateLimitBurst       | Integer     | Yes      | `1000`            | The number of requests the source is allowed to burst.                                                                                                                                                                                   | `1000`                                                                                                                                                                                                                                                    |
 | pollingInterval            | String      | Yes      | `"5m"`            | Set how frequently to poll for new data. It must be between 5 minutes and 48 hours.                                                                                                                                                      | `"5m"`                                                                                                                                                                                                                                                    |
 
-## Dynamic Values Variables
+## Dynamic values variables
 
-The source has the ability to use dynamic values, like the window start time, into the values of certain fields providing flexibility in crafting the HTTP requests sent to the vendor API.
+The source has the ability to use dynamic values, like the window start time, in the values of certain fields providing flexibility in crafting the HTTP requests sent to the vendor API.
 
 The following fields values are allowed to access dynamic text from the template functions described in this section:
 
@@ -397,7 +397,7 @@ Here are some syntax examples calling functions with and without arguments:
 {{ .FunctionName "string argument 1" "string argument 2" }}
 ```
 
-**Available Variables**
+**Available variables**
 
 - [WindowStartUTC](#windowstartutc)
 - [WindowStartLocation](#windowstartlocation)
@@ -406,9 +406,9 @@ Here are some syntax examples calling functions with and without arguments:
 
 ### WindowStartUTC
 
-This variable will get the value in the `start timestamp` of the source window when source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
+This variable will get the value in the `start timestamp` of the source window when the source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
 
-The syntax for this function requires a timestamp format as a single argument. See the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+The syntax for this function requires a timestamp format as a single argument. See the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
 ```sh
 {{ .WindowStartUTC "<timestamp format>" }}
@@ -431,7 +431,7 @@ This variable is the same as [WindowStartUTC](#windowstartutc) except it has an 
 We strongly recommend you always use `WindowStartUTC` instead of `WindowStartLocation`. Most vendors support and expect UTC timestamps when using their APIs.
 :::
 
-Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
 ```sh
 {{ .WindowStartLocation "<time zone location>" "<timestamp format>" }}
@@ -448,9 +448,9 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 
 ### WindowEndUTC
 
-This variable will get the value in the `end timestamp` of the source window when source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
+This variable will get the value in the `end timestamp` of the source window when the source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
 
-The syntax for this variable requires a timestamp format as a single argument. Refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+The syntax for this variable requires a timestamp format as a single argument. Refer to the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
 ```sh
 {{ .WindowEndUTC "<timestamp format>" }}
@@ -475,7 +475,7 @@ This variable is the same as [WindowEndUTC](#windowendutc) except it has an addi
 We strongly recommend you always use `WindowEndUTC` instead of `WindowEndLocation`. Most vendors support and expect UTC timestamps when using their APIs.
 :::
 
-Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
 ```sh
 {{ .WindowEndLocation "<time zone location>" "<timestamp format>" }}
@@ -490,7 +490,7 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 | `lessThan:{{ .WindowEndLocation "Europe/Berlin" "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T21:15:56.905+01:00` |
 | `lessThan:{{ .WindowEndLocation "Europe/Berlin" "yyyy-MM-ddTHH:mm:ss.SSSZ" }}`      | `lessThan:2024-03-07T21:15:56.905+01:00` |
 
-## Timestamp Formatting
+## Timestamp formatting
 
 The source uses the [Go programming language timestamp formatting](https://go.dev/src/time/format.go) and the Human-readable timestamp formatting. See the table below for references and examples.
 
@@ -498,7 +498,7 @@ The source uses the [Go programming language timestamp formatting](https://go.de
 We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO) as a quick way to locally test timestamp parsing with a format before configuring the source.
 :::
 
-### Format Reference
+### Format reference
 
 | Date Format                                 | Reference Value                                                       | Human Readable Referencce Value                                        |
 | :------------------------------------------ | :-------------------------------------------------------------------- | :--------------------------------------------------------------------- |
@@ -527,7 +527,7 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 | Timezone Offset with Colon                  | `-07:00`                                                              | `-HH:mm`                                                               |
 | Timezone Abbreviated Name                   | `MST`                                                                 | `zzz`                                                                  |
 
-### Format Examples
+### Format examples
 
 | Standard              | Timestamp in Log                 | Timestamp Format                      |
 | :-------------------- | :------------------------------- | :------------------------------------ |
