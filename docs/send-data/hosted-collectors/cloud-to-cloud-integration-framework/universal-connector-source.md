@@ -377,9 +377,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | clientRateLimitBurst       | Integer     | Yes      | `1000`            | The number of requests the source is allowed to burst.                                                                                                                                                                                   | `1000`                                                                                                                                                                                                                                                    |
 | pollingInterval            | String      | Yes      | `"5m"`            | Set how frequently to poll for new data. It must be between 5 minutes and 48 hours.                                                                                                                                                      | `"5m"`                                                                                                                                                                                                                                                    |
 
-## Template Dynamic Values
+## Dynamic Values Variables
 
-The source has the ability to template in dynamic text into the values of certain fields providing flexibility in crafting the HTTP requests sent to the vendor API.
+The source has the ability to use dynamic values, like the window start time, into the values of certain fields providing flexibility in crafting the HTTP requests sent to the vendor API.
 
 The following fields values are allowed to access dynamic text from the template functions described in this section:
 
@@ -387,7 +387,7 @@ The following fields values are allowed to access dynamic text from the template
 - HTTP Request Parameter Values
 - HTTP Request Body
 
-To start using the template with one of the supported config values listed above, you will need to enclose the template logic inside double curly braces `{{}}`. Any text outside these double curly braces will be treated as normal unmodified text.
+To start using the variables with one of the supported config values listed above, you will need to enclose the template logic inside double curly braces `{{}}`. Any text outside these double curly braces will be treated as normal unmodified text.
 
 Here are some syntax examples calling functions with and without arguments:
 
@@ -397,7 +397,7 @@ Here are some syntax examples calling functions with and without arguments:
 {{ .FunctionName "string argument 1" "string argument 2" }}
 ```
 
-**Available Template Functions**
+**Available Variables**
 
 - [WindowStartUTC](#windowstartutc)
 - [WindowStartLocation](#windowstartlocation)
@@ -406,7 +406,7 @@ Here are some syntax examples calling functions with and without arguments:
 
 ### WindowStartUTC
 
-This function will template in the `start timestamp` of the source window when source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
+This variable will get the value in the `start timestamp` of the source window when source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
 
 The syntax for this function requires a timestamp format as a single argument. See the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
@@ -425,7 +425,7 @@ The syntax for this function requires a timestamp format as a single argument. S
 
 ### WindowStartLocation
 
-This function is the same as [WindowStartUTC](#windowstartutc) except it has an additional argument to specify the timezone location.
+This variable is the same as [WindowStartUTC](#windowstartutc) except it has an additional argument to specify the timezone location.
 
 :::sumo[Best Practice]
 We strongly recommend you always use `WindowStartUTC` instead of `WindowStartLocation`. Most vendors support and expect UTC timestamps when using their APIs.
@@ -448,9 +448,9 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 
 ### WindowEndUTC
 
-This function will template in the `end timestamp` of the source window when source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
+This variable will get the value in the `end timestamp` of the source window when source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
 
-The syntax for this function requires a timestamp format as a single argument. Refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+The syntax for this variable requires a timestamp format as a single argument. Refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
 ```sh
 {{ .WindowEndUTC "<timestamp format>" }}
@@ -465,11 +465,11 @@ The syntax for this function requires a timestamp format as a single argument. R
 | `{{ .WindowEndUTC "epoch" }}`                                  | `1709842556`                        |
 | `{{ .WindowEndUTC "epochMilli" }}`                             | `1709842556000`                     |
 | `lessThan:{{ .WindowEndUTC "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T20:15:56.905Z` |
-| `lessThan:{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}`      | `lessThan:2024-03-07T20:15:56.905Z` |
+| `{"startTime":"{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}"}`   | `{"startTime":"{{ .WindowEndUTC "2024-03-07T20:15:56.905Z" }}"` |
 
 ### WindowEndLocation
 
-This function is the same as [WindowEndUTC](#windowendutc) except it has an additional argument to specify the timezone location.
+This variable is the same as [WindowEndUTC](#windowendutc) except it has an additional argument to specify the timezone location.
 
 :::sumo[Best Practice]
 We strongly recommend you always use `WindowEndUTC` instead of `WindowEndLocation`. Most vendors support and expect UTC timestamps when using their APIs.
