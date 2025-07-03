@@ -114,8 +114,594 @@ Attackers can derive the pattern to define user accounts or corporate email addr
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
+### 11 - Bruteforce on Account
 
+*Brute Force Attack*
 
+Playbook which can be used in a brute-force on account attack use case. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 12 - Bruteforce on Service
+
+*Brute Force Attack*
+
+Identification and blocking brute force attack on the IBLight service as an example. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 13 - Business Department Assignment and Notification
+
+*Critical*
+
+Playbook which handles multiple scanning/lateral movements for the business department or any other department in order to assign network investigation, forensic analysis, or system operation investigation. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 14 - Change ownership
+
+*General*
+
+This playbook implements user segregation by using the possibility of changing ownership in a phishing attack case. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 15 - Connection to malicious IP with McAfee
+
+*Malicious Activity*
+
+Playbook process with an alarm received from McAfee in order to enrich and automate the investigation.
+
+### 16 - Critical Vulnerability
+
+*Vulnerability*
+
+Playbook created to be followed in case a critical vulnerability/flaw is discovered.Upon receiving a new critical vulnerability, the playbook provides a list of all target vulnerabilities through Qualys.
+
+If the vulnerability has already been identified, the playbook involves searching for events in the SIEM related to that vulnerability to check all possible correlations between the vulnerability and possible exploit attempts, creating a risk scoring activity.
+
+If the critical vulnerability identified has not been previously identified, the playbook gives us the opportunity to conduct a VA business through Qualys, authenticated or uncertified, to see if it really exists for our purposes. If the vulnerability is present, the playbook notifies the service engineers by email, otherwise it sends another email informing that the vulnerability has already been patched.
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 17 - Data Breach Security Incident
+
+*Data Breach*
+
+Playbook created to be followed in the event of a data breach security incident. If the playbook detects events in the firewall or SIEM related to the data breach, it expects to automatically perform CTI activities to track and identify the source of the violation, giving the user a choice  to block the source IP and restore the user password.
+
+If the playbook does not find correlations regarding the possible data breach and firewall / SIEM events, it will inform the SOC and the original user. If the source user does not recognize the activities, a task will be created automatically to decide how to proceed, otherwise the incident will be closed as a false positive.
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 18 - DDoS
+
+*Denial of Service*
+
+DDoS attack playbook which can be executed based on distributed denial of service use case. The playbook performs the first check in order to verify the traffic and the source IPs, if these should exceed a certain threshold the execution continues by carrying out a second search and, via ssh, checking the use of the resources of the server under attack.
+
+If the condition is true, the playbook performs CTI activities to detect if the source IPs are malicious or not, including in the user choice all the data collected and giving the analyst the possibility of being able to block the sources. In the event of a ceased attack and false positive, the SOC will receive an email containing the report relating to the events.
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 19 - DDoS Spoof
+
+*DDOS*
+
+Distributed denial of service is a serious type of DDoS attack where attackers try to prevent the legitimate use of a service. These types of attacks come in two forms: the attacks that crash services, and the attacks that flood services to the extreme that they are not available.
+
+Spoofed Address Floods - Some DoS attacks use spoofed or illegal IP addresses, which will never be properly routed back to the source. To mitigate these spoofed attacks, one should implement reverse path validation on ingress routers in combination with dropping non-local subnets at egress routers. This combination of ingress and egress filtering will drop these illegal packets before they reach the firewall.
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 20 - Decision tree for DOS
+
+*Denial of Service*
+
+Verify threshold, impact, and node type for ticket creation or not by using the decision tree based on previous alerts. By parsing an email and extracting different information to evaluate the impact of the attack, the decision tree will do a check on some of the values parsed in order to understand which path to take, escalation and creation of ticket or not.
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 21 - DLP Alert
+
+*Data Breach*
+
+Receive a DLP alert, including source and destination addresses, and hash value(s). Performs the following steps:
+1. Gathers enrichment information on the source user name and source address.
+1. Queries threat intelligence for the destination address and upgrades incident priority for known threats. Prompts with a user choice decision to block the destination address.
+1. Queries EDR for processes accessing the file (by hash), then checks any processes against threat intelligence. Prompts with a user choice decision to block the process by hash if the process is a known threat.
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 22 - DNA Evidence Analysis
+
+*DNA Analysis*
+
+Playbook which can be executed in case a Forensic DNA analysis is needed. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 23 - Domain Blocking
+
+*Incident Response*
+
+Playbook defined can be used in domain blocking use case. Basing CTI activities on your technologies, if a malicious URL is intercepted, the playbook automatically blocks the URL on your environment. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 24 - DoS with Decision Tree
+
+*Denial of Service*
+
+This playbook is built to prevent DoS/DDoS attacks. Once the Cloud SOAR receives an alert, it collects the first information regarding the impact of the attack, the interfaces involved, and the list of the history commands. We inform our SOC by sending an email. Next, the playbook collects all the information from all the actions from the previous nodes and proceeds with additional activities (execution of custom scripts, running SELECT query into the DB, and so on).
+
+Once we have all the information that we need, we conduct extra CTI activities to verify if the IoC's are malicious or not. Then we can proceed taking a decision by running an additional playbook ([20 - Decision tree for DOS](#20---decision-tree-for-dos) in our case). Once the decision is tacked, we can inform the technician or execute additional commands, depending on the result of the previous playbook execution. Lastly, the playbook sends a summary and creates a user choice.
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 25 - XSS Prevention
+
+*Denial of Service*
+
+XSS Attacks are a type of injection, in which malicious Javascript code is injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, to a server, or computer. This playbook can help enrich, contain, and notify as needed.
+
+### 26 - Easy Triage (IP Location)
+
+*Network Activity*
+
+Triage playbook for location and IP reputation status during a potential incident. In case of suspected IP, the user can decide to convert the triage event into an incident. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 27 - Email Submission Block IP
+
+*Incident Response*
+
+This will take an email with a subject line of Block IP and pass the IP in the body to the firewall (for exammple, Fortigate) and block it. A success/failure email will be sent to the stakeholder(s) with the IP block at the firewall results. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 28 - Email Submission Return Receipt
+
+*Incident Response*
+
+This playbook can be inserted into any other playbook to generate a submission acknowledgment/return receipt for user-submitted incident emails. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 29 - Employee Fraud Report
+
+*Fraud*
+
+The playbook collects the user's properties and geolocates the source VPN IP. If the user's attributes contain some custom properties (such as AD group), and the IP is from unknown locations, an email is automatically sent to inform technicians of possible fraud.
+
+### 30 - Endpoint Malware Infection
+
+*Malware*
+
+This playbook detects malware on an endpoint. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 31 - Enrichment for Events Deduplication
+
+*General*
+
+This playbook performs a credibility test child use case performing enrichment for the [32 - Events Deduplication](#32---events-deduplication) playbook. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 32 - Events Deduplication
+
+*General*
+
+This playbook performs a credibility test in which emails come from SIEM reporting different security events and event deduplication is performed.
+
+### 33 - Forensic Checklist
+
+*Digital Forensics*
+
+This playbook is a digital forensic workflow to be applied in case of forensic investigation.This is a useful playbook to use in case the SOC team receives a suspicious IoC and needs to investigate using different technologies to find a possible intrusion / PDL compromised. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 34 - FortiWeb Directory Traversal
+
+*Malicious Communication*
+
+Playbook created for FortiWeb Directory Traversal workflow. In case there are some activities into the web server logs regarding unauthorized file access from the outside, or the IP is malicious, the playbook provides the possibility to block on the customer technologies. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 35 - Fraud
+
+*Fraud*
+
+Playbook to be associated with incidents in case of fraudulent activity from different locations. By conducting CTI activities and informing the source user, the SOC Analyst can decide to block the source IP because is malicious or is not recognized by the source user. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 36 - GDPR Data Breach
+
+The [GDPR](https://gdpr.eu/) emphasizes transparency, security, and accountability by data controllers, while at the same time standardizing and strengthening the right of European citizens to data privacy. It also extends to non-EU businesses that process the personal data of EU residents. It introduces the role of Data Protection Officer (DPO), which is required for "government bodies" and organizations conducting mass surveillance or mass processing of special categories of data. Additionally, it generally requires that organizations need a personal information inventory.
+
+GDPR imposes mandatorily to report privacy breaches to the supervisory authority within 72 hours and potentially to the data subject. GDPR requests organizations should perform Privacy Impact Assessments (PIAs) if the activity is considered "high-risk". A PIA is a process of systematically considering the potential impact of a new event (for example, deploying a new technology) on the privacy data exposure of individuals. It allows organizations to identify potential privacy issues before they arise and come up with a plan to mitigate them.
+
+Failing to report a breach to the supervisory authority can imply a penalty that can be up to 20,000,000 EUR or 4 percent of the previous year's global revenue. Typical cases that might imply data breach:
+- Intrusion
+- Theft/loss of mobile or PC
+- Accidental distribution of data (wrong recipient or wrong attachment)
+- Loss of digital supports or paper documents
+- System failure with loss of data (for example, database crash)
+
+This playbook is purely for guidance and is intended as general information. It does not constitute legal advice or legal analysis. All organizations that process data need to be aware that the General Data Protection Regulation will apply directly to them.
+
+### 37 - High Priority Vulnerability Detected
+
+*Vulnerability*
+
+Playbook to assist when a high-priority vulnerability is detected. Its parent playbook is [90 - Vulnerability Management - Master](#90---vulnerability-management---master).
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 38 - Indicator of Compromise Update
+
+*General*
+
+Extracting the useful values to process it into the playbook (IP, hash, URL) with regex rules, this playbook can be used to update and check if already present any new indicators of compromise to the incident, such as hash values, IP addresses or URL values, once the SOAR receives an external alert (syslog or email). This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 39 - IP Enrichment
+
+*Malicious Communication*
+
+Playbook to be used when enrichment for the IP is needed.
+
+### 40 - Lateral Movement
+
+*General*
+
+Playbook created for lateral movement workflow. Starting from a suspicious alert (syslog / mail) the playbook checks if the URL/IP called is not malicious (C&C). If the score is not positive, the playbook identifies the contacted host and quarantines it.
+
+### 41 - Leveraging Threat Intelligence
+
+*Threat Intel*
+
+Playbook defined can be used in leveraging threat intelligence from various sources, for example, FireEye, Securonix, VirusTotal, etc. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 42 - Low Priority Vulnerability Detected
+
+*Vulnerability*
+
+Playbook to assist when a low priority vulnerability is found. Its parent playbook is [90 - Vulnerability Management - Master](#90---vulnerability-management---master).
+
+Based on the results of the priority of the identified vulnerabilities, the playbook sends the email to the Duty's Engineers according to the appropriate level of severity.
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 43 - Mail Account Compromise
+
+*Unauthorized Access*
+
+Playbook to be used in case of potential mail account and/or mail attachment compromise. Once the playbook conducts CTI activities to verify the reputation of the source iOC's, it asks the SOC Analyst if they need to block the iOC's detected if these are suspected/malicious. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 44 - Mail Scan
+
+*Malware*
+
+Potential search for malware performing automated CTI activities. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 45 - Malicious Communication with Cisco AMP
+
+*Malicious Communication*
+
+Malicious communication analysis using the Cisco AMP Integration. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 46 - Malicious IP
+
+*System Compromised*
+
+Good practices on how to handle malicious IP in the triage process or when an investigation is already started.
+
+### 47 - Malicious Outbound Traffic
+
+*Malicious Communication*
+
+Playbook associated with a child playbook [39 - IP Enrichment](#39---ip-enrichment), to follow a use case in case of malicious outbound traffic. Notify the user and the SOC in case of malicious iOCs detected. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 48 - Malware Analysis
+
+*Malware*
+
+Playbook composed in case of malware analysis of a possible infection with manual check.
+
+### 49 - Malware Analysis Dual Check
+
+*Malware*
+
+Playbook composed in case of malware analysis of possible infection with an additional automated check. This playbook includes some containment actions in case the source IP is malicious.
+
+### 50 - Malware Sandbox
+
+*Malware*
+
+Playbook for malware use case using sandbox analysis. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 51 - McAfee ESM Enrichment
+
+*General*
+
+Playbook to enrich and contain incident using McAfee ESM integration actions. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 52 - Medium priority Vulnerability Detected
+
+*Vulnerability*
+
+Playbook to assist when medium priority vulnerability is detected. Its parent playbook is [90 - Vulnerability Management - Master](#90---vulnerability-management---master). This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 53 - Meltdown and Spectre
+
+*Vulnerability*
+
+Playbook for Meltdown and Spectre checks with a ticket creation. The playbook notifies the duty's engineers and updates the ticket created, blocking the IP on McAfee WG, closing the ticket as a final step.
+
+### 54 - Misuse of Access
+
+*Unauthorized Access*
+
+The purpose of this playbook is to detect the transfer of confidential files through the use of the Windows auditing system accessed by an endpoint. Also, the playbook conducts a VirusTotal scan to be sure any intrusion is ongoing.
+
+### 55 - Notification - NO Analysis
+
+*Alerts*
+
+This playbook runs a SOAR credibility use case where no operator analysis is required. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 56 - Notification - YES Analysis
+
+*Alerts*
+
+This playbook runs a SOAR credibility use case where operator analysis is required. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 57 - Notification playbook
+
+*Denial of Service*
+
+This playbook provides an email notification to be approved/edited before sending by analysts. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 58 - Offense scan and User Reset
+
+*General*
+
+This playbook runs an offense scan via QRadar and a user reset password via AD.
+
+### 59 - Outbound Network Investigation
+
+*Network Activity*
+
+A playbook to perform outbound network activity alert investigation. Once the playbook has conducted some preliminary actions, like IP Geolocation and reputation, alert the SOC manager and create the possibility to block the source IP via user choice. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 60 - Password Spray from External IP
+
+*Intrusion*
+
+Playbook which can be used in case of password spray attack, where a common password is usually checked against a matrix of users, from external IP. The SOC analysts have the possibility to block the source user if the source IP is malicious or the user did too many attempts to log in. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+###  61 - Petya Ransomware
+
+*Ransomware*
+
+Playbook to block a user that is navigating on a suspicious domain. If the playbook detects a trace of the Petya ransomware, automatically block the Command and Control Server and inform the Duty's Engineers and the SOC manager. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 62 - Phishing Attack
+
+*Phishing*
+
+Playbook which can be used in case of phishing attack scenario. Define the severity of the potential phishing mail. If the iOC are confirmed by all the CTI platform these are blocked to all my technologies (double check). If the iOC are confirmed only by VirusTotal, these are blocked only to my internal technologies (single check). This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+###  63 - Phishing Detection - EWS
+
+*Phishing*
+
+Playbook created to detect phishing using Exchange EWS. In case the email analyzed is malicious, the playbook gives you the possibility to do some containment actions, like Block IP on Exchange EWS, Block senders on Exchange EWS, and Junk mail on Exchange EWS to prevent the attack.
+
+### 64 - Phishing Email Handling
+
+*Phishing*
+
+Playbook to be executed when a phishing email handling workflow needs to be performed. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 65 - Phishing Usecase - Malicious File or URL
+
+*Phishing*
+
+This playbook can be implemented in a phishing workflow where a malicious file attachment or URL/domain can be processed and analyzed. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 66 - Phishing with AD check
+
+*Phishing*
+
+Analysis of the phishing email with the detonation of the attachment in Cuckoo and analysis of the suspect URL. If the victim is an administrative account, it is disabled in AD. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 67 - Port Scanning from External IP
+
+*General*
+
+Playbook defined can be used in case of port scanning from an external IP is needed. For example, the workflow can start after receiving an email with a list of IPs attached as an XLS file. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 68 - Port Scanning from External IP v2
+
+*Suspicious Activity*
+
+Port Scanning from external IP. This use case starts after receiving an email with a list of IPs attached as an XLS file. It analyzes each IP and checks its activity in local applications. Based on the result of enrichment, appropriate mitigation is applied. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 69 - Port Scanning from External IP v3
+
+*Suspicious Activity*
+
+Port Scanning from external IP. This use case starts after receiving an email with a list of IPs attached as an XLS file. Analyzes each IP and checks its activity in local applications. Based on the result of enrichment, appropriate mitigation is applied. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 70 - Powershell Exploitation v2
+
+*General*
+
+The increased availability of PowerShell has paralleled the development of research on ways attackers can take advantage of it. This playbook presents a workflow to detect and terminate processes and/or block hash/IPs. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 71 - Processing Attachment
+
+*Phishing*
+
+This playbook can be useful for any kind of incident where an attachment needs to be processed to detect if malicious or not. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 72 - Qradar Malicious IP connection
+
+*Malicious Activity*
+
+Intrusion attempt identified by QRadar on IP. Basic enrichment: activity related to that IP on Qradar stored as CSV attached to incident. Advanced enrichment: info gathering from AbuseIPDB, X-Force, and ThreatMiner. Remediation and external notification are done automatically if need be. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 73 - Ransomware
+
+*Ransomware*
+
+Information gathering playbook which can be used during a ransomware event. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 74 - Recon and Remediation with Malicious Attachment
+
+*Phishing*
+
+Exchange recon and malicious attachment remediation playbook.
+
+### 75 - Scheduled Upload Alert or Exfiltration
+
+*Exfiltration*
+
+Scheduled transfer or data exfiltration may be performed only at certain times of the day or at certain intervals. This could be done to blend traffic patterns with normal activity or availability. When scheduled exfiltration is used, other exfiltration techniques likely apply as well to transfer the information out of the network, such as Exfiltration Over Command and Control Channel and Exfiltration Over Alternative Protocol. This playbook can be used in case exfiltration tactic is applied, on different platforms such as Linux, macOS, Windows OS with network access. Particular data sources can be net-flow/enclave net-flow, process use of the network, process monitoring, etc.
+
+### 76 - Security Incident
+
+*System Compromised*
+
+Presentation of a working model in case of security incident situation. This playbook replicates all the tasks are done on a security incident, and is useful to have a baseline and coordinate the SOC processes. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 77 - SitePhishing
+
+*Phishing*
+
+The purpose of this playbook is to detect anomalies in websites to conclude whether they are phishing sites or of reputable origin. This can be detected in a number of ways, such as:
+- Authentication token check
+- Site reputation lookup
+- Login form information destination domain lookup, etc.
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 78 - Spear Phishing
+
+*Phishing*
+
+Email spear phishing playbook, including additional containment action. Due to multiple triggers, the playbook workflow can automatically set the correct priority and advertise the duty's engineers including all the results found and done. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 79 - SQL Injection Attack
+
+*SQL Injection*
+
+Playbook to be associated with incidents in case of SQL injection activity. If there are presents multiple events in the SIEM or the source IP is malicious, the playbook sends a notification and gives the possibility to block the source IP. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 80 - SSH Intrusion
+
+*Intrusion*
+
+The purpose of this playbook is to detect and alert a suspicious entry into the SSH terminal, and send an authorization command to supervisors, and then store it in the database. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 81 - Suspicious Command-Line Activity
+
+*Suspicious Activity*
+
+This playbook responds and assigns tasks to analyst in the case of suspicious command line activity, such as clearing history.
+
+### 82 - Suspicious User Activity
+
+*Misconduct*
+
+A playbook that prevents possible infections generated by incorrect online browsing by a user. Once the alarm is received, the playbook looks for the user's activities and makes sure that there are no malicious events. In case there is, it blocks the malicious URLs. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 83 - Symantec SWS Alert Knowledge and Enrichment
+
+*Malware*
+
+Playbook which can be used to process Symantec SWS alerts automatically. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 84 - Sysmon Notification of Unauthorized Binary Execution
+
+*Malicious Activity*
+
+This playbook uses the information contained in a Sysmon unauthorized binary execution alert. This playbook will determine the Active Directory group the affected user belongs to, offer the incident handler the option to reset the user's password in Active Directory, search the unauthorized binary in threat intelligence platforms such as MISP, STIX, Recorded Future, and others, and block the unauthorized binary at the endpoint via containment actions if desired. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 85 - Threat detection
+
+*System Compromised*
+
+Playbook for threat detection which can be used in case of any kind of threat being detected.
+
+### 86 - Triage for Network Activity
+
+*Network Activity*
+
+Playbook to triage a network activity.
+
+### 87 - Unauthorized Access w/ Privilege Escalation
+
+*Privilege Escalation*
+
+This playbook enriches suspicious events of possible unauthorized accesses detected from an external IP with the addition of a user to a privileged group (domain admins, etc.). After an initial enrichment phase, the playbook will define if the user belongs to an administrative group and prompt a user choice, allowing the user to decide which flow to execute (automatic or manual containment).
+
+### 88 - User Account Investigation Active Directory
+
+*Incident Response*
+
+Playbook that can be used for AD account investigation. When a new user is created on the AD, the Cloud SOAR receives an alarm to investigate and obtain all the information regarding that user. If the user is legitimate, with a user choice we can ignore the incident. Otherwise, if the SOC analyst does not recognize the user, the playbook changes the user password and disables the user. This is very useful to prevent attacks via lateral movement technique or post-exploitation and alarm the SOC in case a non-legitimate user has the possibility to conduct dangerous activity on the Active Directory. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 89 - User Compromised
+
+*Intrusion*
+
+Triage of a possible compromised user. To ingest alerts from Splunk, perform some enrichment, distribute notifications, and disable users if required. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 90 - Vulnerability Management - Master
+
+*Vulnerability*
+
+This playbook runs child playbooks to detect vulnerabilities.
+
+### 91 - Forensics Analysis preparation
+
+*Forensic*
+
+Forensics preparation of analysis environment for analysts by taking a memory dump of an impacted AWS instance, enriching results with volatility. The impacted host is isolated with a new security group, and a new AWS instance is then launched via Terraform to which the snapshot of the impacted instance is attached.
+
+### 92 - Phishing with poll
+
+*Phishing*
+
+Phishing use case analyzing original emails (in eml/msg) format, with enrichment of email extracted attachments and IOCs via Hybrid Analysis and VirusTotal. Searches in GSuite and notifies (poll) via Slack direct message to each user involved. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 93 - Investigative Workflow
+
+*General*
+
+This playbook checks the source and destination IP addresses and determines which address is internal to the organization, gathers asset information, searches both internal and external threat intelligence sources, before sending out a notification email / open a ticket in the organization’s ticketing system, or can be easily modified to add additional processes based on the organization’s procedures. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 94 - COVID-19
+
+*General*
+
+The COVID-19 playbook takes incident indicators and utilizes COVID-19 threat indicator feeds to determine whether an incoming event has COVID related indicators. If indicators are found, the playbook gives the analyst the option to take one or more containment actions based on the indicators observed. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 95 - Zoom Conferencing Security Check - Master
+
+*General*
+
+This master playbook checks all live, scheduled, and upcoming meetings for a meeting password. If the password is not present, a nested playbook is invoked which will generate a random password, assign it to the meeting, and send out an email notification of the updated password to all invited users. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 96 - Zoom Scheduled Meeting Update
+
+*General*
+
+This playbook is nested to the master playbook [95 - Zoom Conferencing Security Check - Master](#95---zoom-conferencing-security-check---master). The playbooks use a script to generate a random password, pass the random password to the update meeting password action, pull the meeting’s original invite, and email all recipients with the new meeting password.
+
+### 97 - Zoom Live Meeting Update
+
+*General*
+
+This playbook is nested in the [95 - Zoom Conferencing Security Check - Master](#95---zoom-conferencing-security-check---master) playbook. The playbooks use a script to generate a random password, pass the random password to the update meeting password action, pull the meeting’s original invite, and email all recipients with the new meeting password. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 98 - Zoom Upcoming Meeting Update
+
+*General*
+
+This playbook is nested in the [95 - Zoom Conferencing Security Check - Master](#95---zoom-conferencing-security-check---master) playbook. These playbooks use a script to generate a random password, pass the random password to the update meeting password action, pull the meeting’s original invite, and email all recipients with the new meeting password.
+
+### 99 - Threat Intelligence from External Source
+
+*Threat Intel*
+
+A playbook to run various queries on different sources and check intel regarding IoCs. Actions then store results in a csv file under attachments. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 100 - Incident Enrichment and Ownership management
+
+*Malware*
+
+Enrichment escalation and reassignment of ownership based on department. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 ### 501 - Send Insight AWS SNS Notification
 
@@ -652,7 +1238,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 General
 This playbook allows you to prevent breaches through the Cloud SOAR automation technology. The advanced version improves the basic (essential) workflow and boosts efficiency.
 
-When the playbook receives an alert, it performs various CTI actions to identify possible suspicious activities (i.e., IP reputation, SIEM logs analysis, and so on).
+When the playbook receives an alert, it performs various CTI actions to identify possible suspicious activities (that is, IP reputation, SIEM logs analysis, and so on).
 
 After it collects the relevant data, the playbook prompts the analysts with a User Choice, enabling them to take the necessary actions and contain detected suspicious activities.
 
@@ -958,7 +1544,7 @@ This playbook analyzes the logs presented on Alleantia and Cyber Vision for an e
 
 It includes an additional condition for event information and enrichment validation.
 
-If the logs present sufficient suspicious information (e.g., unknown host, a higher number of activities, and so on), the playbook gives the possibility to take two possible ways:
+If the logs present sufficient suspicious information (for example, unknown host, a higher number of activities, and so on), the playbook gives the possibility to take two possible ways:
 
 Perform an additional query using a nested playbook and execute all the containment actions
 Mark the host as trusted and update Cisco Cyber Vision with the new trusted host information
@@ -1135,7 +1721,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 
 421 - Wittra Brute Force
-Bruteforce Attack
+Brute Force Attack
 This playbook ingests alerts from a brute-force source (in this case Microsoft Defender) and checks if any users are in the Wittra user database.
 
 If it finds one, a User Choice prompts the analyst to decide whether they want to remove user permissions. If the analyst chooses to remove permissions, the playbook emails the user to update their password.
@@ -1280,7 +1866,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 General
 This playbook checks the source and destination IP addresses and determines which address is internal to the organization. It gathers asset information and searches internal and external threat intelligence sources before sending out a notification email/opening a ticket in the organization's ticketing system.
 
-The playbook includes an additional check, i.e., a manual validation if the automatic investigation can't identify IP details.
+The playbook includes an additional check, that is, a manual validation if the automatic investigation can't identify IP details.
 
 Users can easily modify this playbook to add more processes based on their organization's procedures.
 
@@ -1297,7 +1883,7 @@ This playbook works best for phishing scenarios.
 
 The playbook analyzes the original emails in an EML/MSG format, enriches the extracted attachments and IOCs via Hybrid Analysis and VirusTotal, performs a search in GSuite, sends direct messages to each involved user via Slack (conducts a poll), and contains the threat based on the users' answers.
 
-If the results of the automated enrichment are inconclusive, the playbook suggests an additional check, i.e., a manual review of the EML/MSG files.
+If the results of the automated enrichment are inconclusive, the playbook suggests an additional check, that is, a manual review of the EML/MSG files.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -1453,7 +2039,7 @@ Advanced playbooks like this one improve the overall efficiency of a more basic 
 
 397 - Medium priority Vulnerability Detected Advanced
 Vulnerability
-This playbook can assist when a medium-priority vulnerability is detected. Its parent playbook is "Vulnerability Management-Master."
+This playbook can assist when a medium-priority vulnerability is detected. Its parent playbook is [90 - Vulnerability Management - Master](#90---vulnerability-management---master).
 
 Advanced playbooks like this one improve the overall efficiency of a more basic playbook's flow.
 
@@ -1532,7 +2118,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 390 - Low Priority Vulnerability Detected Advanced
 Vulnerability
-This playbook can assist when a low-priority vulnerability is found. Its parent playbook is "Vulnerability Management Master."
+This playbook can assist when a low-priority vulnerability is found. Its parent playbook is [90 - Vulnerability Management - Master](#90---vulnerability-management---master).
 
 The engineers on duty receive an email corresponding to the severity level and priority of the identified vulnerabilities.
 
@@ -1582,7 +2168,7 @@ This playbook contains additional validation of events connected to data breache
 
 The GDPR emphasizes transparency, security, and accountability by data controllers while simultaneously standardizing and strengthening the right of European citizens to data privacy. It also extends to Non-EU businesses that process the personal data of EU residents. It introduces the role of a Data Protection Officer (DPO), required for "government bodies" and organizations conducting mass surveillance or mass processing of special categories of data. Additionally, it generally requires that organizations need a personal information inventory.
 
-GDPR imposes mandatorily to report privacy breaches to the supervisory authority within 72 hours and potentially to the data subject. GDPR requests organizations to perform Privacy Impact Assessments (PIAs) if the activity is considered "high-risk." A PIA is a process of systematically considering the potential impact of a new event (e.g., deploying a new technology) on the private data exposure of individuals. It allows organizations to identify potential privacy issues before they arise and devise a plan to mitigate these threats.
+GDPR imposes mandatorily to report privacy breaches to the supervisory authority within 72 hours and potentially to the data subject. GDPR requests organizations to perform Privacy Impact Assessments (PIAs) if the activity is considered "high-risk." A PIA is a process of systematically considering the potential impact of a new event (for example, deploying a new technology) on the private data exposure of individuals. It allows organizations to identify potential privacy issues before they arise and devise a plan to mitigate these threats.
 
 Failing to report a breach to the supervisory authority can imply a penalty of up to 20,000,000 EUR or four percent of the previous year's global revenue. Typical cases that might end in a data breach are the following:
 
@@ -1590,7 +2176,7 @@ Intrusion
 Theft/loss of mobile or PC
 Accidental distribution of data (wrong recipient or wrong attachment)
 Loss of digital supports or paper documents
-System failure with loss of data (e.g., database crash)
+System failure with loss of data (for example, database crash)
 This playbook contains general information and is purely for guidance. It does not constitute legal advice or legal analysis. All organizations that process data must be aware that the GDPR applies directly to them.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
@@ -1700,7 +2286,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 378 - Email Submission Block IP Advanced
 Incident Response
-This playbook takes an email with the subject line of "Block IP," passes the IP in the body to a firewall (e.g., FortiGate), and tries to block it.
+This playbook takes an email with the subject line of "Block IP," passes the IP in the body to a firewall (for example, FortiGate), and tries to block it.
 
 Then, the playbook sends a success or failure email to the stakeholders, informing them about the results of the actions it took.
 
@@ -1908,9 +2494,6 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 
 
-** WARNING **
-
-Please note that playbooks are not to be intended as Legal advice, nor they replace a legal opinion
 360 - Basic IP Reputation Advanced
 Denial of Service
 This playbook's purpose is to automatically detect malformed packets when a higher number of them are coming from different IPs. The playbook allows you to block the IP addresses (using the appropriate technology) through User Choice.
@@ -1963,7 +2546,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 346 - High-Priority Vulnerability Detected Advanced
 Vulnerability Assesment
-This playbook assists when an advanced high-priority vulnerability is detected. Its parent playbook is "Vulnerability Management — Master."
+This playbook assists when an advanced high-priority vulnerability is detected. Its parent playbook is [90 - Vulnerability Management - Master](#90---vulnerability-management---master).
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -1989,7 +2572,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 
 343 - Brute-Force Attack on Account Advanced
-Bruteforce Attack
+Brute Force Attack
 This playbook is suitable for a brute-force attack on an account use case.
 
 
@@ -2072,7 +2655,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 Installed
 334 - Suspicious User and Brute Force Activity Advanced
-Bruteforce Attack
+Brute Force Attack
 This playbook ingests alerts pointing to a possible brute-force attack, intrusion, or password guessing. It performs preventive activities in Active Directory or other user management technologies, depending on the severity of the affected account. It also performs additional enrichment in SIEM to check past user activity. The playbook applies mitigation and containment under the supervision of users.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
@@ -2117,7 +2700,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 General
 Playbook built to breach Prevention Through Cloud SOAR Automation Technology.
 
-Once the playbook receives the alert, it carries out various CTI activities in order to identify possible suspicious activities (i.e. IP reputation, SIEM logs analysis, and so on).
+Once the playbook receives the alert, it carries out various CTI activities in order to identify possible suspicious activities (that is IP reputation, SIEM logs analysis, and so on).
 
 Once the data has been collected, a task and a user choice are generated in order to offer the analyst the opportunity to take the necessary actions to contain the suspicious activities detected.
 
@@ -2205,7 +2788,7 @@ The purpose of this playbook is to prevent DoS/DDoS attacks.
 
 When Cloud SOAR receives an alert, it tries to collect initial information regarding the impact of the DoS/DDoS attack and notifies the SOC team if some information is missing. It then gathers data about the involved interfaces and command history and sends the information to the SOC team through email.
 
-Next, the playbook collects all the information from all the previous actions, after which it proceeds with additional activities (i.e., execution of custom scripts, running SELECT query into the DB, and so on).
+Next, the playbook collects all the information from all the previous actions, after which it proceeds with additional activities (that is, execution of custom scripts, running SELECT query into the DB, and so on).
 
 After the playbook provides all the necessary information, it allows the analysts to conduct extra CTI activities to verify whether the IoCs are malicious, enabling them to decide on the following action by running an additional playbook (20 - Decision tree for DOS in our case).
 
@@ -2214,13 +2797,6 @@ Once they decide, the playbook can inform the technician or execute additional c
 Lastly, the playbook sends an incident summary and creates a User Choice.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-** REFERENCE**
-Sumo Logic Best Practices and internal IR guidelines
-
-** DISCLAIMER**
-All Rights Reserved © 2022, Sumo Logic
-Duplication of this publication is strictly prohibited without the expressed written consent of Sumo Logic
 
 
 332 - Threat Intelligence Incoming Alert - Format 1 Advanced
@@ -2231,23 +2807,12 @@ If the playbook finds enrichment information, it will continue its running proce
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
-** REFERENCE**
-Sumo Logic Best Practices and internal IR guidelines
-
-** DISCLAIMER**
-All Rights Reserved © 2022, Sumo Logic
-Duplication of this publication is strictly prohibited without the expressed written consent of Sumo Logic
-
 
 330 - Phishing Usecase Advanced
 Phishing
 This playbook analyses automatically an incoming suspect email for Phishing, extracts all relevant IOC's, enriches all of them, ask the user if a manual escalation is required and notifies all relevant parties.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
-
-** REFERENCE**
-Sumo Logic Best Practices and internal IR guidelines**
-
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 329 - CSE Insights Enrichment Advanced
 CTI
@@ -2441,7 +3006,7 @@ This playbook was built to automatically extract all the IOCs contained in an em
 
 If one or more IOCs are malicious, a User Choice will prompt the user to automatically or manually do the containment actions. Otherwise, the Incident will be reported as a false positive.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2468,7 +3033,7 @@ The playbook starts by performing various enrichment actions on a particular URL
 
 All these details can be saved in an incident field and as a note inside an incident.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2483,7 +3048,7 @@ Where the web service is present on the host (TCP ports 80 and 443), the playboo
 
 Lastly, the playbook collects the data and saves it in special notes.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2494,7 +3059,7 @@ This playbook contacts the on-call staff member if there is a need for intervent
 
 Thanks to Twilio, the playbook makes the first call. If the on-call answers, they will have to answer the User Choice prompt too and confirm that they are present at their station. Otherwise, the playbook makes two more call attempts, after which an email will notify the on-call staff member's manager about the incident.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2503,7 +3068,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 IOT
 This playbook allows you to monitor a set of docks and cranes for unloading ships and trains for alarms. If a malfunction is reported, the crane is diagnosed, the emergency squad alerted and the dock put in OFF mode. The ship traffic is diverted to a different dock, and the playbook distributes appropriate notification to Traffic Control.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2545,7 +3110,7 @@ In the final stage, the playbook gets the scan results and adds them as a note i
 Incident Management
 This playbook allows creating reports with specific technologies chosen by the customer at particular periods. In the end, it sends all the information to the right team.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2554,7 +3119,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 Incident Management
 The purpose of this playbook is to collect the counter of incidents from various technologies (adaptable based on customers' needs), excluding counters that touched zero, store them all in notes and then send them to the person in charge.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2654,7 +3219,7 @@ This is an essential playbook used to enrich incidents with URLscan.io.
 
 The playbook will collect the desired URL and launch three different enrichment actions using URLscan.io. It will store the results in the notes of the incident.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2732,7 +3297,7 @@ This playbook uses the Cisco AMP Threat Grid technology to retrieve information 
 Incident Response
 This playbook helps you remediate an incident ingested by CrowdStrike. It allows prompt communication among everyone involved and quick remediation based on the retrieved information.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2777,7 +3342,7 @@ This playbook was built to enrich incidents and contain suspicious events coming
 Incident Response
 This playbook handles suspicious machine behavior with the help of the Cisco Secure Endpoint (formerly AMP for Endpoints) technology.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2786,7 +3351,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 Incident Response
 This playbook handles suspicious machine behavior with the help of some essential CrowdStrike mitigation activities.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2803,7 +3368,7 @@ Subsequently, the playbook assesses the actual state and evaluates whether the a
 
 In the event of a ceased attack and false positive, the SOC will receive an email containing the report relating to the events.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2864,7 +3429,7 @@ This playbook was built to search for events in Securonix, perform basic queries
 Incident Management
 This playbook was built to search for events in McAfee ESM, perform basic enrichment and follow up on the incident response process.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2873,7 +3438,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 Incident Management
 This playbook was built to search for events in IBM QRadar, perform basic enrichment and follow up on the incident response process.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2882,7 +3447,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 Incident Management
 This playbook was built to search for events in FortiSIEM, perform basic enrichment and follow up on the incident response process.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2919,7 +3484,7 @@ This playbook was built to perform queries with the Digital Shadows threat intel
 Threat Intelligence
 This playbook was built to search with Cofense for Threats and download Threat Reports.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2928,7 +3493,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 Threat Intelligence
 This playbook leverages GreyNoise to evaluate possible malicious IPs and notify the SOC team. GreyNoise tells security analysts what alerts and activities they should ignore by allowing them to curate data on IPs that saturate security tools with noise.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2937,7 +3502,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 Threat Intelligence
 This playbook allows you to query Exana Open DNS for DNS records and add the queried information to an incident.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2946,7 +3511,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 Threat Intelligence
 This playbook leverages a PassiveTotal WHOIS action to increase or decrease incident severity.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -2997,7 +3562,7 @@ This playbook was built to gather enrichment data on incident observables using 
 Threat Intelligence
 This playbook was build to enrich incident evidence with threat intelligence data from Blueliv.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3135,7 +3700,7 @@ This playbook is designed to block a domain with Check Point Firewall.
 
 225 - Block IP - Firewall Tools
 Network Anomaly
-This playbook is design to block an ip on Firewall Tools
+This playbook is design to block an IP on Firewall Tools
 
 
 
@@ -3178,7 +3743,7 @@ This playbook is designed to block an IP with Pulse Secure.
 
 219 - Block IP - Palo Alto NGFW OIF
 Network Anomaly
-This playbook is design to block an ip on Palo Alto NGFW.
+This playbook is design to block an IP on Palo Alto NGFW.
 
 
 
@@ -3207,7 +3772,7 @@ This playbook is designed to enrich a user found in Active Directory.
 
 215 - Passive Reconnaissance - Account User
 CTI
-This playbook was built to conduct passive reconnaissance activities automatically using a domain or an IP. It's useful for carrying out quick investigations if you suspect that a user's account was exposed via the internet (e.g., a customer website).
+This playbook was built to conduct passive reconnaissance activities automatically using a domain or an IP. It's useful for carrying out quick investigations if you suspect that a user's account was exposed via the internet (for example, a customer website).
 
 
 
@@ -3275,7 +3840,7 @@ This playbook is used to check an email header using mxtoolbox spf dmark and dki
 
 Once the results are extracted they are saved in notes and and added to an incident field.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3340,7 +3905,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 General
 This playbook is used for disabling user access to AD and reassigning incidents in the SOAR.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3349,7 +3914,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 General
 This playbook is triggered by fetch from Remedy and will help you manage and automate your change management process.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3358,7 +3923,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 General
 This playbook is triggered by fetch from ServiceNow and will help you manage and automate your change management process.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3367,7 +3932,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 General
 This playbook is triggered by fetch from Zendesk and will help you manage and automate your change management process.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3394,7 +3959,7 @@ The results of the search will save the date in notes
 Threat Intel
 Gets all of the corresponding hashes for a file even if there is only one hash type available. For example, if we have only the SHA256 hash, the playbook will get the SHA1 hash and MD5 hash as long as the original searched hash is recognized by any our the threat intelligence integrations.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3403,7 +3968,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 Network Anomaly
 This playbook will append a network group object with new elements (IPs or network objects).
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3412,7 +3977,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 General
 This playbook is triggered by fetch from Jira and will help you manage and automate your change management process.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3479,7 +4044,7 @@ The playbook is Ideal for nesting it in a more complex playbook but can also be 
 General
 Retrieves the original email and its headers and attachments (if any). Stores the information in incident fields or notes.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3489,7 +4054,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 General
 Retrieves the original email and its headers and attachments (if any). Stores the information in incident fields or notes.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3506,7 +4071,7 @@ User Choice will ask the analyst to determine whether the account was compromise
 
 If the account is compromised, an email will be sent to the user and the manager.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3519,7 +4084,7 @@ The playbook will run and enrich the data about the TCP/UDP Port, IPs, Protocol 
 
 You can choose to extract all the data and send it through email.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3545,7 +4110,7 @@ When choosing the right Tactic the related playbook will run, we can also play a
 
 At the end in both cases Notes will be added with results and an email will be sent to a specific email address.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3554,11 +4119,11 @@ This playbook uses some actions available with the Full CSOAR version only but c
 CTI
 The playbook performs host enrichment for the source host with Palo Alto Networks technologies and automatically performs file detonation for the extracted file.
 
-The playbook will run and enrich the incident with some basic information. Next evaluation of Severity will run and the analyst will be asked to decide if it's a true positive or not. Next he can choose to apply some remediation policies based on host isolation, block of url/ip/ports or application.
+The playbook will run and enrich the incident with some basic information. Next evaluation of Severity will run and the analyst will be asked to decide if it's a true positive or not. Next he can choose to apply some remediation policies based on host isolation, block of URL/IP/ports or application.
 
 Finally notes and a final task to review the incident will be added.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3574,7 +4139,7 @@ Once the severity is set, the SOC analyst can update the locked ports contained 
 
 As a final, the incident will be manually reassigned / to a higher level and closed.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3605,7 +4170,7 @@ XLSX
 
 XML
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3614,7 +4179,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 Threat Intel
 Manages vulnerability remediation using Nexpose data, and optionally enriches data with 3rd-party tools.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3643,7 +4208,7 @@ Medium+Wide=High
 
 High+Wide=High
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3652,7 +4217,7 @@ This playbook uses some actions available with the Full CSOAR version only but c
 Red Team Tools
 Performs CVE enrichment using the following integrations: VulnDB, CVE Search and IBM X-Force Exchange.
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
@@ -3737,13 +4302,8 @@ quarantine (sends the email to spam)
 
 reject (block the email)
 
-This playbook uses some actions available with the Full CSOAR version only but can be downloaded and reconfigured for Automation Service purposes
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
-** DISCLAIMER**
-
-All Rights Reserved © 2022, Sumo Logic
-
-Duplication of this publication is strictly prohibited without the expressed written consent of Sumo Logic
 
 
 163 - Active Directory Set New Password -Lateral Movement (essential)
@@ -3838,80 +4398,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 
 
-95 - Zoom Conferencing Security Check - Master
-General
-This master playbook checks all live, scheduled, and upcoming meetings for a meeting password. If the password is not present, a nested playbook is invoked which will generate a random password, assign it to the meeting, and send out an email notification of the updated password to all invited users.
 
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-32 - Events Deduplication
-General
-A credibility test in which emails come from SIEM reporting different security events and event deduplication is performed.
-
-
-
-
-90 - Vulnerability Management - Master
-Vulnerability
-Test
-98 - Zoom Upcoming Meeting Update
-General
-These playbooks are nested to the '95 - Zoom Security Check Runbook'.
-
-They use a script to generate a random password, pass the random password to the update meeting password action, pull the meeting’s original invite, and email all recipients with the new meeting password.
-
-
-
-
-96 - Zoom Scheduled Meeting Update
-General
-These playbooks are nested to the master playbook '95 - Zoom Security Check Playbook'.
-
-They use a script to generate a random password, pass the random password to the update meeting password action, pull the meeting’s original invite, and email all recipients with the new meeting password.
-
-
-
-
-47 - Malicious Outbound Traffic
-Malicious Communication
-Playbook associated with a child playbook - IP enrichment, to follow a use case in case of malicious outbound traffic.
-
-Notify the user and the SOC in case of malicious iOCs detected
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-24 - DoS with Decision Tree
-Denial of Service
-This playbook is built to prevent DoS/DDoS attacks.
-
-Once the Cloud SOAR receives an alert, collecting the first information regarding the impact of the attack, the interfaces coinvolted, and the list of the history commands and we inform our SOC by sending an email.
-
-Next, the playbook collect all the information from all the actions that he did into the previous nodes and proceed with additional activities (i.e. execution of custom scripts, run SELECT query into the DB, and so on)
-
-Once we have all the information that we need we conduct extra CTI activities to verify if the IoC's are malicious or not, and then we can proceed taking a decision by running an additional playbook (20 - Decision tree for DOS in our case)
-
-Once the decision is tacked, we can inform the technician or execute additional cmd, depends of the result of the previous playbook execution.
-
-Lastly, the playbook sends a summary and creates a user choice.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-** DISCLAIMER**
-All Rights Reserved © 2022, Sumo Logic S.p.A.
-Cloud SOAR is a registered trademark of Sumo Logic S.p.A
-Duplication of this publication is strictly prohibited without the expressed written consent of Sumo Logic S.p.A.
-
-** WARNING **
-
-Please note that playbooks are not to be intended as Legal advise, nor do they replace a legal opinion.
 162 - SolarWinds Orion - Exploit Mitigation (Supervised Active Intelligence)
 Intrusion
 This playbook allows you to check for, prevent and contain potential SolarWinds SUNBURST and SUPERNOVA exploitations.
@@ -3984,7 +4471,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 
 
-155 - Block ip - essential
+155 - Block IP - essential
 Intrusion
 This playbook blocks malicious IPs using all integrations that are enabled. The direction of the traffic that will be blocked is determined by the XSOAR user (and set by default to outgoing).
 
@@ -4050,22 +4537,12 @@ Finally, as a last task, the playbook creates a ticket for the NOC (in their JIR
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
-** REFERENCE**
 
-
-Sumo Logic Best Practices and internal IR guidelines
-
-** DISCLAIMER**
-All Rights Reserved © 2022, Sumo Logic
-Duplication of this publication is strictly prohibited without the expressed written consent of Sumo Logic
-
-** WARNING **
-Please note that playbooks are not to be intended as Legal advise, nor they replace a legal opinion
 147 - Threat hunting on various IOC
 CTI
 This playbook is useful to conduct multiple threat hunting activities on various kinds of iOCs.
 
-Starting from a txt file, the playbook provides extraction of multiple informations (i.e. hash, ip, url, domain and so on) and performs multiple queries on the VirusTotal platform.
+Starting from a txt file, the playbook provides extraction of multiple informations (that is hash, IP, URL, domain and so on) and performs multiple queries on the VirusTotal platform.
 
 At the same time, it prepares a specific query for Securonix in order to do additional threat hunting activities and generate multiple results for the same iOC.
 
@@ -4105,7 +4582,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 
 143 - Slack - General Failed Logins v2.1
-Bruteforce Attack
+Brute Force Attack
 This playbook was created to prevent brute force attempts for a specific account.
 
 First the playbook ensures that the Slack account is enabled, based on this result it tries to send a message to make sure that the account is really active.
@@ -4170,7 +4647,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 126 - CSE Bruteforce
 Malware
-Use-case for investigation of a Bruteforce attack with Sumo Logic Cloud SIEM.
+Use-case for investigation of a brute force attack with Sumo Logic Cloud SIEM.
 
 Collecting multiple pieces of information like the username under attack, the attempts, and the source IP, using multiple conditions can determine the severity and create a final task for the SOC Analyst including all the information collected.
 
@@ -4322,800 +4799,9 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 
 
-100 - Incident Enrichment and Ownership management
-Malware
-Enrichment escalation and reassignment of ownership based on department.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-97 - Zoom Live Meeting Update
-General
-These playbooks are nested to the '95 - Zoom Security Check Runbook'.
-
-They use a script to generate a random password, pass the random password to the update meeting password action, pull the meeting’s original invite, and email all recipients with the new meeting password.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-94 - COVID-19
-General
-The COVID-19 playbook takes incident indicators and utilizes COVID-19 threat indicator feeds to determine whether an incoming event has COVID related indicators. If indicators are found, the playbook gives the analyst the option to take one or more containment actions based on the indicators observed.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-93 - Investigative Workflow
-General
-This playbook checks the source and destination IP addresses and determines which address is internal to the organization, gathers asset information, searches both internal and external threat intelligence sources, before sending out a notification email / open a ticket in the organization’s ticketing system, or can be easily modified to add additional processes based on the organization’s procedures.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-92 - Phishing with poll
-Phishing
-Phishing use-case analyzing original emails (in eml/msg) format, with enrichment of email extracted attachments and IOCs via Hybrid Analysis and VirusTotal, search in GSuite and notification (poll) via Slack direct message to each user involved.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-Installed
-91 - Forensics Analysis preparation
-Forensic
-Forensics preparation of analysis environment for Analysts by taking a memory dump of an impacted AWS instance, enriching results with volatility.
-
-The impacted host is isolated with a new Security Group, and a new AWS instance is then launched via Terraform to which the snapshot of the impacted instance is attached.
-
-
-
-
-89 - User Compromised
-Intrusion
-Triage of a possible compromised user. To ingest alerts from Splunk, perform some enrichment, distribute notifications and disable users if required.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-87 - Unauthorized Access w/ Privilege Escalation
-Privilige Escalation
-This playbook enriches suspicious events of possible unauthorized accesses detected from an external IP with the addition of a user to a privileged group (Domain Admins etc...)
-
-After an initial enrichment phase, the playbook will define if the user belongs to an Administrative group and prompt a user choice, allowing the user to decide which flow to execute (automatic or manual containment).
-
-
-
-
-86 - Triage for Network Activity
-Network Activity
-Playbook prepared with regards to triaging a network activity.
-
-
-
-
-85 - Threat detection
-System Compromised
-Playbook for threat detection which can be used in case of any kind of threat being detected.
-
-
-
-
-84 - Sysmon Notification of Unauthorized Binary Execution
-Malicious Activity
-This playbook uses the information contained in a Sysmon unauthorized binary execution alert. This playbook will determine the Active Directory group the affected user belongs to, offer the incident handler the option to reset the user's password in Active Directory, search the unauthorized binary in threat intelligence platforms such as MISP, STIX, Recorded Future, and others, and block the unauthorized binary at the endpoint via containment actions if desired.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-83 - Symantec SWS Alert Knowledge and Enrichment
-Malware
-Playbook which can be used to process Symantec SWS alerts automatically.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-82 - Suspicious User Activity
-Misconduct
-A playbook that prevents possible infections generated by incorrect online browsing by a user.
-
-Once the alarm is received, the playbook looks for the user's activities and makes sure that there are no malicious events. In case there is, it blocks the malicious URLs.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-81 - Suspicious Command-Line Activity
-Suspicious Activity
-This playbook responds and assigns tasks to analyst in the case of suspicious command line activity, such as clearing history.
-
-
-
-
-80 - SSH Intrusion
-Intrusion
-The purpose of this playbook is to detect and alert a suspicious entry into the SSH terminal, and send an authorization command to supervisors, and then store it in the database.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-79 - SQL Injection Attack
-SQL Injection
-Playbook to be associated with incidents in case of SQL injection activity.
-
-If there are presents multiple events in the SIEM or the source IP is malicious the playbook provides to send a notification and give the possibility to block the source IP.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-78 - Spear Phishing
-Phishing
-Email Spearphishing playbook, including additional containment action.
-
-Due to multiple triggers, the playbook workflow can automatically set the correct priority and advertise the duty's engineers including all the results found and done.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-77 - SitePhishing
-Phishing
-The purpose of this playbook is to detect anomalies in websites to conclude whether they are phishing sites or of reputable origin.
-
-This can be detected in a number of ways, such as:
-
-- Authentication token check,
-
-- Site reputation lookup,
-
-- login form information destination domain lookup, etc.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-76 - Security Incident
-System Compromised
-Presentation of a working model in case of Security incident situation.
-
-This playbook replicates all the tasks are done on a Security Incident, useful to have a baseline and coordinate the SOC processes.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-75 - Scheduled Upload Alert or Exfiltration
-Exfiltration
-Scheduled transfer or data exfiltration may be performed only at certain times of the day or at certain intervals. This could be done to blend traffic patterns with normal activity or availability.
-
-When scheduled exfiltration is used, other exfiltration techniques likely apply as well to transfer the information out of the network, such as Exfiltration Over Command and Control Channel and Exfiltration Over Alternative Protocol.
-
-This playbook can be used in case exfiltration tactic is applied, on different platforms such as Linux, macOS, Windows OS with network access. Particular data sources can be net-flow/enclave net-flow, process use of the network, process monitoring, etc.
-
-
-
-
-74 - Recon and Remediation with Malicious Attachment
-Phishing
-Exchange Recon and Malicious Attachment Remediation playbook.
-
-
-
-
-72 - Qradar Malicious IP connection
-Malicious Activity
-Intrusion attempt identified by QRadar on IP. Basic enrichment: activity related to that IP on Qradar stored as CSV attached to Incident.
-
-Advanced enrichment: info gathering from AbuseIPDB, X-Force, and Threat miner. Remediation and external notification are done automatically if need be.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-71 - Processing Attachment
-Phishing
-This playbook can be useful for any kind of incident where an attachment needs to be processed to detect if malicious or not.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-70 - Powershell Exploitation v2
-General
-The increased availability of PowerShell has paralleled the development of research on ways attackers can take advantage of it. This playbook presents a workflow to detect and terminate processes and or block hash/IPs.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-69 - Port Scanning from External IP v3
-Suspicious Activity
-Port Scanning from External IP. This Use-case starts after receiving an email with a list of IPs attached as an xls file. Analysis of each IP and checking of its activity in local applications. Based on the result of enrichment, appropriate mitigation is applied.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-68 - Port Scanning from External IP v2
-Suspicious Activity
-Port Scanning from External IP. This Use-case starts after receiving an email with a list of IPs attached as an xls file. Analysis of each IP and checking of its activity in local applications. Based on the result of enrichment, appropriate mitigation is applied.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-67 - Port Scanning from External IP
-General
-Playbook defined can be used in case of port scanning from an external IP is needed. E.g. the workflow can start after receiving an email with a list of IPs attached as an xls file.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-66 - Phishing with AD check
-Phishing
-Analysis of the phishing email with the detonation of the attachment in Cuckoo and analysis of the suspect URL.
-
-If the victim is an administrative account, it is disabled in AD.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-63 - Phishing Detection - EWS
-Phishing
-Playbook created to detect phishing using Exchange EWS.
-
-In case the email analyzed is malicious the playbook gives you the possibility to do some containment actions, like Block IP on Exchange EWS, Block senders on Exchange EWS, and Junk mail on Exchange EWS to prevent the attack.
-
-
-
-
-61 - Petya Ransomware
-Ransomware
-Playbook to block a user that is navigating on a suspicious domain.
-
-If the playbook detects a trace of the Petya ransomware, automatically block the Command and Control Server and provide to advertise the Duty's Engineers and the SOC Manager.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-
-60 - Password Spray from External IP
-Intrusion
-Playbook which can be used in case of password spray attack, where a common password is usually checked against a matrix of users, from external IP.
-
-The SOC Analysts have the possibility to block the source user if the source IP is malicious or the user did too many tentatives to log in.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-59 - Outbound Network Investigation
-Network Activity
-A playbook to perform outbound network activity alert investigation.
-
-Once the playbook has conducted some preliminary actions, like IP Geolocation and reputation, alert the SOC manager and create the possibility to block the source IP via user choice.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-58 - Offense scan and User Reset
-General
-Offense scan via QRadar and User Reset password via AD.
-
-
-
-
-57 - Notification playbook
-Denial of Service
-Playbook providing email notification to be approved/edited before sending by Analysts.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-56 - Notification - YES Analysis
-Alerts
-SOAR Credibility use-case: Operator analysis required.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-55 - Notification - NO Analysis
-Alerts
-SOAR Credibility use-case: No operator analysis required.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-54 - Misuse of Access
-Unauthorized Access
-The purpose of this playbook is to detect the transfer of confidential files through the use of the windows auditing system accessed by an endpoint.
-
-Also, the playbook conducts a Virus Total scan to be sure any intrusion is ongoing.
-
-
-
-
-53 - Meltdown and Spectre
-Vulnerability
-Playbook for Meltdown and Spectre checks with a ticket creation.
-
-The playbook notify the duty's engineers and update the ticket created, blocking the IP on McAfee WG, closing the ticket as a final step.
-
-
-
-
-52 - Medium priority Vulnerability Detected
-Vulnerability
-Playbook to assist when medium priority vulnerability is detected. Parent playbook "Vulnerability Management-Master".
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-51 - McAfee ESM Enrichment
-General
-Playbook to enrich and contain Incident using McAfee ESM integration actions.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-49 - Malware Analysis Dual Check
-Malware
-Playbook composed in case of malware analysis of possible infection with an additional automated check.
-
-This playbook includes some containment actions in case the source IP is malicious.
-
-
-
-
-46 - Malicious IP
-System Compromised
-Good practices on how to handle malicious IP in the triage process or when an investigation is already started.
-
-
-
-
-Installed
-45 - Malicious Communication with Cisco AMP
-Malicious Communication
-Malicious communication analysis using the Cisco AMP Integration.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-44 - Mail Scan
-Malware
-Potential search for malware performing automated CTI activities.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-43 - Mail Account Compromise
-Unauthorized Access
-Playbook to be used in case of potential mail account and/or mail attachment compromise.
-
-Once the playbook conducts CTI activities to verify the reputation of the source iOC's, he provides to asks the SOC Analyst if they need to block the iOC's detected if these are suspected / malicious.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-42 - Low Priority Vulnerability Detected
-Vulnerability
-Playbook to assist when a low priority vulnerability is found. Parental playbook "Vulnerability Management Master".
-
-Based on the results of the priority of the identified vulnerabilities, the playbook sends the email to the Duty's Engineers according to the appropriate level of severity.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-41 - Leveraging Threat Intelligence
-Threat Intel
-Playbook defined can be used in leveraging Threat Intelligence from various sources, for example, FireEye, Securonix and VirusTotal, etc.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-40 - Lateral Movement
-General
-Playbook created for lateral movement workflow.
-
-Starting from a suspicious alert (syslog / mail) the playbook check if the URL/IP called is not malicious (C&C), if the score is not positive the playbook provide to identify the contacted host and quarantine it.
-
-
-
-
-38 - Indicator of Compromise Update
-General
-Extracting the useful values to process it into the playbook (IP, hash, URL) with regex rules, this playbook can be used to update and check if already present any new indicators of compromise to the incident, such as hash values, ip addresses or url values, once the SOAR receives an external alert (syslog or email).
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-36 - GDPR Data Breach
-Legal
-The EU General Data Protection Regulation (GDPR 5853/12) entered into force on May 25th, 2016, and is due to be enforced from May 25th, 2018. It is aimed to replace the current EU Directive 95/46/EC.
-
-The GDPR emphasizes transparency, security and accountability by data controllers, while at the same time standardizing and strengthening the right of European citizens to data privacy. It also extends to Non-EU businesses that process the personal data of EU residents. It introduces the role of Data Protection Officer (DPO), which is required for “government bodies” and organizations conducting mass surveillance or mass processing of Special Categories of data. Additionally, it generally requires that organizations need a personal information inventory.
-
-GDPR imposes mandatorily to report Privacy breaches to the Supervisory Authority within 72 hours and potentially to the Data Subject. GDPR requests Organisations should perform Privacy Impact Assessments (PIAs) if the activity is considered "high-risk". A PIA is a process of systematically considering the potential impact of a new event (eg. deploying a new technology) on the privacy data exposure of individuals. It allows organizations to identify potential privacy issues before they arise and come up with a plan to mitigate them.
-
-Failing to report a breach to the Supervisory Authority can imply a penalty that can be up to 20,000,000 EUR or 4 percent of the previous year's global revenue. Typical cases that might imply data breach:
-
-- intrusion,
-
-- theft/loss of mobile or PC,
-
-- accidental distribution of data (wrong recipient or wrong attachment),
-
-- loss of digital supports or paper documents,
-
-- system failure with loss of data (eg. database crash);
-
-This playbook is purely for guidance and is intended as general information. It does not constitute legal advice or legal analysis. All organizations that process data need to be aware that the General Data Protection Regulation will apply directly to them.
-
-
-
-
-35 - Fraud
-Fraud
-Playbook to be associated with incidents in case of fraudulent activity from different locations.
-
-By conducting CTI activities and informing the source user, the SOC Analyst can decide to block the source IP because is malicious or is not recognized by the source user.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-34 - FortiWeb Directory Traversal
-Malicious Communication
-Playbook created for FortiWeb Directory Traversal workflow.
-
-In case there are some activities into the web server logs regarding unauthorized file access from the outside or the IP is malicious, the playbook provides the possibility to block on the customer technologies.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-33 - Forensic Checklist
-Digital Forensics
-Digital forensic workflow to be applied in case of forensic investigation.
-
-Useful playbook to use in case the SOC team receives a suspicious IoC and needs to investigate using different technologies to find a possible intrusion / PDL compromised.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-31 - Enrichment for Events Deduplication
-General
-Credibility test child use case performing Enrichment for the Events Deduplication playbook.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-29 - Employee Fraud Report
-Fraud
-Best practices on how to handle Employee Fraud reports.
-
-The playbook collects the user's properties and geolocates the source VPN IP if the user's attributes contain some custom properties (such as AD group) and the IP is from unknown locations and is automatically sent mail to inform duty's technicians of possible fraud.
-
-
-
-
-28 - Email Submission Return Receipt
-Incident Response
-This playbook can be inserted into any other playbook to generate a submission acknowledgment/return receipt for user-submitted incident emails.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-27 - Email Submission Block IP
-Incident Response
-This will take an email with a subject line of Block IP and pass the IP in the body to the firewall (e.g. Fortigate) and block it.
-
-A Success/Failure email will be sent to the stakeholder(s) with the IP block at the firewall results.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-26 - Easy Triage (IP Location)
-Network Activity
-Triage playbook for location and IP reputation status during a potential incident.
-
-In case of suspected IP the user can decide to convert the triage event into an incident
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-25 - XSS Prevention
-Denial of Service
-XSS Attacks are a type of injection, in which malicious Javascript code is injected into otherwise benign and trusted websites.
-
-XSS attacks occur when an attacker uses a web application to send malicious code, to a Server, or computer.
-
-This playbook can help Enrich, Contain, and Notify as needed.
-
-
-
-
-23 - Domain Blocking
-Incident Response
-Playbook defined can be used in domain blocking use case.
-
-Basing CTI activities on your technologies, if a malicious URL is intercepted the playbook automatically blocks the URL on your environment.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-22 - DNA Evidence Analysis
-DNA Analysis
-Playbook which can be executed in case a Forensic DNA analysis is needed.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-21 - DLP Alert
-Data Breach
-Receive a DLP alert, including source and destination addresses, and hash value(s). Performs the following steps:
-
-Gather enrichment information on the source user name and source address
-Queries threat intelligence for the destination address - upgrades incident priority for known threats and prompts with a user choice decision to block the destination address
-Queries EDR for processes accessing the file (by hash), then checks any processes against threat intelligence - prompts with a user choice decision to block the process by hash if the process is a known threat.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-19 - DDoS Spoof
-DDOS
-Distributed Denial of Service is a serious type of DDoS attack where attackers try to prevent the legitimate use of a service. These types of attacks come in two forms: the attacks that crash services and the attacks that flood services to the extreme that they are not available.
-
-Spoofed Address Floods - Some DoS attacks use spoofed or illegal IP addresses, which will never be properly routed back to the source. To mitigate these spoofed attacks, one should implement reverse path validation on ingress routers in combination with dropping non-local subnets at egress routers. This combination of ingress and egress filtering will drop these illegal packets before they reach the firewall.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-18 - DDoS
-Denial of Service
-DDoS attack playbook which can be executed based on distributed denial of service use-case.
-
-The playbook performs the first check in order to verify the traffic and the source IPs, if these should exceed a certain threshold the execution continues by carrying out a second search and, via ssh, checking the use of the resources of the server under attack.
-
-If the condition is true, the playbook performs CTI activities to detect if the source IPs are malicious or not, including in the user choice all the data collected and giving the analyst the possibility of being able to block the sources.
-
-In the event of a ceased attack and false positive, the SOC will receive an email containing the report relating to the events.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-Installed
-17 - Data Breach Security Incident
-Data Breach
-Playbook created to be followed in the event of a Data Breach Security Incident.
-
-If the playbook detects events in the firewall or SIEM related to the Data Breach, it expects to automatically perform CTI activities to track and identify the source of the violation, giving the user a choice the ability to block the source IP and restore the user password.
-
-If the playbook does not find correlations regarding the possible data breach and firewall / SIEM events, it will inform the SOC and the original user.
-
-If the source user does not recognize the activities, a task will be created automatically to decide how to proceed, otherwise the incident will be closed as a false positive.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-16 - Critical Vulnerability
-Vulnerability
-Playbook created to be followed in case a critical vulnerability/flaw is discovered.
-
-Upon receiving a new critical vulnerability, the playbook provides a list of all target vulnerabilities through Qualys.
-
-If the vulnerability has already been identified, the playbook involves searching for events in the SIEM related to that vulnerability to check all possible correlations between the vulnerability and possible exploit attempts, creating a risk scoring activity.
-
-If the critical vulnerability identified has not been previously identified the playbook gives us the opportunity to conduct a VA business through Qualys, authenticated or uncertified, to see if it really exists for our purposes.
-
-If the vulnerability is present, the playbook notifies the service engineers by email, otherwise it sends another email informing that the vulnerability has already been patched.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-15 - Connection to malicious IP with McAfee
-Malicious Activity
-Playbook process with an alarm received from McAfee in order to enrich and automate the investigation.
-
-
-
-
-14 - Change ownership
-General
-This playbook is implementing user segregation by using the possibility of changing ownership in a phishing attack case.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-13 - Business Department Assignment and Notification
-Critical
-Playbook which handles multiple scanning/lateral movements for the Business department any other department in order to assign network investigation, forensic analysis, or system operation investigation.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-50 - Malware Sandbox
-Malware
-Playbook for Malware use case using sandbox analysis.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
 101 - Check VPN account activity - time interval
 VPN_Events
 Check activity done by user via VPN in a specific time interval.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-12 - Bruteforce on Service
-Bruteforce Attack
-Identification and blocking bruteforce attack on the IBLight service as an example.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-
-
-
-
-
-73 - Ransomware
-Ransomware
-Information gathering playbook which can be used during a Ransomware event.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-65 - Phishing Usecase - Malicious File or URL
-Phishing
-This playbook can be implemented in a Phishing workflow where a malicious file attachment or url/domain can be processed and analyzed.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-48 - Malware Analysis
-Malware
-Playbook composed in case of malware analysis of a possible infection with manual check.
-
-
-
-
-39 - IP Enrichment
-Malicious Communication
-Playbook to be used when enrichment for the IP is needed.
-
-
-
-
-37 - High Priority Vulnerability Detected
-Vulnerability
-Playbook to assist when a high-priority vulnerability is detected. Parent playbook "Vulnerability Management-Master".
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-** DISCLAIMER**
-All Rights Reserved © 2022 Sumo Logic
-Cloud SOAR is a registered trademark of Sumo Logic
-Duplication of this publication is strictly prohibited without the expressed written consent of Sumo Logic.
-30 - Endpoint Malware Infection
-Malware
-Malware detected on Endpoint.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-11 - Bruteforce on Account
-Bruteforce Attack
-Playbook which can be used in a brute-force on account attack use case.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-64 - Phishing Email Handling
-Phishing
-Playbook to be executed when a Phishing Email Handling workflow needs to be performed.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -5160,7 +4846,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 
 109 - Suspicious user and brute force activity
-Bruteforce Attack
+Brute Force Attack
 Ingestion of alerts referring to possible brute force or intrusion, or password guessing. Notification to the relevant departments (active directory/domain management), Enrichment into the SIEM to check for past user activity. Mitigation and containment to be applied under the supervision of users.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
@@ -5173,42 +4859,7 @@ Detection of breached user credentials, notification to NOC, SOC and personal da
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
-99 - Threat Intelligence from External Source
-Threat Intel
-A playbook to run various queries on different sources and check intel regarding IoCs. Actions then store results in a csv file under attachments.
 
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-62 - Phishing Attack
-Phishing
-Playbook which can be used in case of phishing attack scenario.
-
-Define the severity of the potential phishing mail, if the iOC are confirmed by all the CTI platform these are blocked to all my technologies (double check), if the iOC are confirmed only by Virus Total these are blocked only to my internal technologies (single check).
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-20 - Decision tree for DOS
-Denial of Service
-Verify threshold, impact and node type for ticket creation or not by using the decision tree based on previous alerts.
-
-By parsing an email and extracting different information to evaluate the impact of the attack, the decision tree will do a check on some of the values parsed in order to understand which path to take, escalation and creation of ticket or not.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-88 - User Account Investigation Active Directory
-Incident Response
-Playbook that can be used for AD account investigation.
-
-When a new user is created on the AD, the Cloud SOAR receives an alarm to investigate and obtain all the information regarding that user.
-
-If the user is legitimate, with a user choice we can ignore the Incident, otherwise, if the SOC Analyst does not recognize the user the playbook changes the user password and disable it.
-
-This is very useful to prevent attacks via lateral movement technique or post-exploitation and alarm the SOC in case a non-legitimate user has the possibility to conduct dangerous activity on the Active Directory.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 128 - O365 Successful travel activity
