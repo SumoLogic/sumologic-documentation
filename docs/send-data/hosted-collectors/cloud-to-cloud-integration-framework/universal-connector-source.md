@@ -135,7 +135,7 @@ Include any HTTP request headers required by the vendor API. The key names are s
 
 #### Request Parameters
 
-Include any URL query parameters required by the vendor API. The key names are static text, but the values can access our [varables feature](#dynamic-values) to make them dynamic.
+Include any URL query parameters required by the vendor API. The key names are static text, but the values can access our [variables feature](#dynamic-values) to make them dynamic.
 
 | Example Header Key | Example Header Value                           |
 | :----------------- | :--------------------------------------------- |
