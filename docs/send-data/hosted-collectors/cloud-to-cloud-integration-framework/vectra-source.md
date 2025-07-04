@@ -63,7 +63,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| accountURL | String | Yes | `null` | Vectra account URL of your portal. For example,`https://308714519558.cc1.portal.vectra.ai`.  |  |
+| accountURL | String | Yes | `null` | Vectra account URL of your portal. For example, `https://308714519558.cc1.portal.vectra.ai`.  |  |
 | clientId | String | Yes | `null` | Client ID of the account. |  |
 | clientSecret | String | Yes | `null` | Client Secret of the account. |  |
 | pollingInterval | Integer | No | `5 minutes` | Choose how often the Source checks for new data (In minutes).<br/>Default: 5 minutes <br/>Minimum: 5 minutes <br/>Maximum: 60 minutes |  |
