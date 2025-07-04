@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this release, we've enhanced the security and stability of the Collector with added support for security patches and a bug fix.
 
-## Security Fix
+### Security Fix
 
 - Upgraded collector JRE to **Amazon Corretto Version 8.452.09.1**.
 
