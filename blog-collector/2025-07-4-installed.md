@@ -12,6 +12,6 @@ In this release, we've enhanced the security and stability of the Collector with
 
 - Upgraded collector JRE to **Amazon Corretto Version 8.452.09.1**.
 
-## Bug Fix
+### Bug Fix
 
 - Fixed the collector crash issue due to *sigar-amd64-winnt.dll* after Windows Server 2022 update.
