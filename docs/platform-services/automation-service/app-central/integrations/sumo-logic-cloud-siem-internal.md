@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem-internal" width="100"/>
 
-***Version: 1.16  
-Updated: July 3, 2025***
+***Version: 1.17  
+Updated: July 4, 2025***
 
 This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Cloud SIEM entities to correlate signals and insights through Sumo Logic system calls. Because this integration operates internally with Sumo Logic, no additional authentication is needed. (The [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/) automation integration requires additional authentication.) 
 
@@ -50,4 +50,7 @@ No configuration is needed. Sumo Logic Cloud SIEM Internal executes without addi
 * April 5, 2024 (v1.15)
     + The integration formerly known as "CSE Tools" has been renamed to "Sumo Logic Cloud SIEM Internal"
 + July 3, 2025 (v1.16)
-    + Updated the Insight Output Mapping action to properly handle multiple values.
+    + Tested out the Insight Output Mapping action for Beta change
++ July 4, 2025 (v1.17)
+    + Modified the hint of Insight Output Mapping action
+
