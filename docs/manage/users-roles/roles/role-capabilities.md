@@ -165,11 +165,11 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Note | Access | Access all [notes](/docs/cloud-soar/incidents-triage/#notes). |
 | Note | Edit | Create, edit, and delete notes. |
 | War Room | Use | Be able to use the [War Room](/docs/cloud-soar/incidents-triage/#war-room).  |
-| Settings General | Configure | Configure [settings](/docs/cloud-soar/overview/#settings). |
-| User Management | Groups | Manage [groups](/docs/cloud-soar/overview/#groups). |
-| Notification | Configure | Configure [notifications](/docs/cloud-soar/overview/#notifications). |
+| Settings General | Configure | Configure [settings](/docs/cloud-soar/settings/). |
+| User Management | Groups | Manage [groups](/docs/cloud-soar/settings/#groups). |
+| Notification | Configure | Configure [notifications](/docs/cloud-soar/settings/#notifications). |
 | Customization | Logo | Customize the logo. |
-| Customization | Fields | Customize [fields](/docs/cloud-soar/overview/#custom-fields). |
+| Customization | Fields | Customize [fields](/docs/cloud-soar/settings/#custom-fields). |
 | Customization | Incident Labels | Customize incident labels. |
 | Customization | Triage | Customize triage. |
 | Audit and Information | License Information | View license [audit and information](/docs/cloud-soar/legacy/legacy-cloud-soar-global-functions-menu/#audit-and-information). |
