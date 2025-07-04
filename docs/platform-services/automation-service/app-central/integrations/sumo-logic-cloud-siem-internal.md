@@ -50,7 +50,7 @@ No configuration is needed. Sumo Logic Cloud SIEM Internal executes without addi
 * April 5, 2024 (v1.15)
     + The integration formerly known as "CSE Tools" has been renamed to "Sumo Logic Cloud SIEM Internal"
 + July 3, 2025 (v1.16)
-    + Tested out the Insight Output Mapping action for Beta change
+    + Tested out the Insight Output Mapping action for beta change
 + July 4, 2025 (v1.17)
     + Fixed the beta change behavior and modified the hint for Insight Output Mapping action for clarity
 
