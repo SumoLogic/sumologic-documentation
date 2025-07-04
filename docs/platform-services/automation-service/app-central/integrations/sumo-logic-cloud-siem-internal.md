@@ -52,5 +52,5 @@ No configuration is needed. Sumo Logic Cloud SIEM Internal executes without addi
 + July 3, 2025 (v1.16)
     + Tested out the Insight Output Mapping action for Beta change
 + July 4, 2025 (v1.17)
-    + Modified the hint of Insight Output Mapping action
+    + Fixed the beta change behavior and modified the hint for Insight Output Mapping action for clarity
 
