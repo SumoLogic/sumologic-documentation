@@ -3033,6 +3033,8 @@ integrations: [
         'cloud-soar/overview',
         'cloud-soar/introduction',
         'cloud-soar/compared-to-automation-service',
+        'cloud-soar/settings',
+        'cloud-soar/menus',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
         {
