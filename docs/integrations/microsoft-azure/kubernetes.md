@@ -41,12 +41,6 @@ The AKS - Control Plane app collects logs for the following [Azure Kubernetes Se
 
 For more details on Azure Kubernetes Service logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference).
 
-
-[//]: # (https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference#supported-metrics-for-microsoftcontainerservicemanagedclusters)
-[//]: # (https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference#supported-metrics-for-microsoftkubernetesconnectedclusters)
-[//]: # (https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference#supported-metrics-for-microsoftkubernetesconfigurationextensions)
-[//]: # (https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-hybridcontainerservice-provisionedclusters-metrics)
-
 ### Sample log messages
 
 ```json title="kube-audit"
