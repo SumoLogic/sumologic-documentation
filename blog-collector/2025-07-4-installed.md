@@ -14,4 +14,4 @@ In this release, we've enhanced the security and stability of the Collector with
 
 ### Bug Fix
 
-- Fixed the collector crash issue due to *sigar-amd64-winnt.dll* after Windows Server 2022 update.
+- Fixed the collector crash issue due to *sigar-amd64-winnt.dll* after Windows update.
