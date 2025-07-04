@@ -66,7 +66,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | accountURL | String | Yes | `null` | Vectra account URL of your portal. For example, `https://308714519558.cc1.portal.vectra.ai`.  |  |
 | clientId | String | Yes | `null` | Client ID of the account. |  |
 | clientSecret | String | Yes | `null` | Client Secret of the account. |  |
-| pollingInterval | Integer | No | `5 minutes` | Choose how often the Source checks for new data (In minutes).<br/>Default: 5 minutes <br/>Minimum: 5 minutes <br/>Maximum: 60 minutes |  |
+| pollingInterval | Integer | No | `5 minutes` | Choose how often the Source checks for new data (in minutes).<br/>Default: 5 minutes <br/>Minimum: 5 minutes <br/>Maximum: 60 minutes |  |
 
 ### JSON example
 
