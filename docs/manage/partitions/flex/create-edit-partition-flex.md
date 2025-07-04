@@ -68,7 +68,7 @@ When you create a partition, you specify the routing expression that determines 
 
 You can make some changes to an existing partition:  
 
-* You can change the routing expression, as long as the partition is active (not decommissioned). It takes about five minutes for the change to take effect. The routing expression takes effect going forward—it doesn’t affect data previously added to the partition. 
+* You can change the routing expression as long as the partition is active (not decommissioned). It takes about five minutes for the change to take effect. The new routing expression applies only to future data—it does not affect data previously added to the partition.
 * You can change the retention period of the partition.
   :::note
   By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period of `sumologic_default`. You can change the retention period for any of these internal partitions as desired.
