@@ -27,6 +27,12 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  scripts: [
+    {
+    src: 'https://cdn.jsdelivr.net/npm/search-insights@2.17.3',
+    async: true,
+    },
+  ],
   future: {
     v4: true,
     experimental_faster: true,
