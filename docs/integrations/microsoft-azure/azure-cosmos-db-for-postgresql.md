@@ -18,6 +18,8 @@ For Azure Cosmos DB for PostgreSQL, you can collect the following logs and metri
 * **Activity logs**. Provides insight into any subscription-level or management group level events that have occurred in Azure. To learn more, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 * **Metrics**. These metrics are available for every node of a cluster, and in aggregate across the nodes. For more information on supported metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/concepts-monitoring#list-of-metrics).
 
+The above-mentioned metrics for **Azure Cosmos DB for PostgreSQL** are available in [Microsoft.DBforPostgreSQL/serverGroupsv2](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-dbforpostgresql-servergroupsv2-metrics) namespace.
+
 ## Setup
 
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:

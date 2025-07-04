@@ -27,7 +27,9 @@ The Sumo Logic app for Azure SQL app uses the following log types:
 * SQL Security Audit
 * Activity Logs
 
-For details on Azure SQL logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?view=azuresql&tabs=azure-portal#metrics-and-logs-available).
+**Azure SQL Metrics** are available in [Microsoft.Sql/servers/databases](https://learn.microsoft.com/en-us/azure/azure-sql/database/monitoring-sql-database-azure-monitor-reference?view=azuresql#supported-metrics-for-microsoftsqlserversdatabases), [Microsoft.Sql/servers/elasticpools](https://learn.microsoft.com/en-us/azure/azure-sql/database/monitoring-sql-database-azure-monitor-reference?view=azuresql#supported-metrics-for-microsoftsqlserverselasticpools), [Microsoft.Sql/managedInstances](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/monitoring-sql-managed-instance-azure-monitor-reference?view=azuresql#supported-metrics-for-microsoftsqlmanagedinstances) namespaces.
+
+For more details on Azure SQL logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?view=azuresql&tabs=azure-portal#metrics-and-logs-available).
 
 
 ### Sample log messages

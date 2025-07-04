@@ -26,7 +26,7 @@ The following are the minimum supported requirements for this application:
   </tr>
 </table>
 
-## Log types  
+## Logs and Metric types  
 
 The AKS - Control Plane app collects logs for the following [Azure Kubernetes Services](https://azure.microsoft.com/en-us/services/kubernetes-service/):
 
@@ -36,6 +36,16 @@ The AKS - Control Plane app collects logs for the following [Azure Kubernetes Se
 * **kube-scheduler**. The Scheduler determines what nodes can run the workload when you create or scale applications and then starts them.
 * **kube-controller-manager**. The Controller Manager oversees a number of smaller controllers that perform actions, such as replicating pods and handling node operations.
 * **cluster-autoscaler**. The cluster autoscaler component watches for pods in your cluster that can't be scheduled because of resource constraints. When the cluster autoscaler detects issues, it scales up the number of nodes in the node pool to meet the application demands. It also regularly checks nodes for a lack of running pods and scales down the number of nodes as needed.
+
+**Azure Kubernetes Service Metrics** are available in [Microsoft.ContainerService/managedClusters](https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference#supported-metrics-for-microsoftcontainerservicemanagedclusters), [Microsoft.kubernetes/connectedClusters](https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference#supported-metrics-for-microsoftkubernetesconnectedclusters), [Microsoft.kubernetesconfiguration/extensions](https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference#supported-metrics-for-microsoftkubernetesconfigurationextensions), [microsoft.kubernetesconfiguration/extensions](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-hybridcontainerservice-provisionedclusters-metrics) namespaces.
+
+For more details on Azure Kubernetes Service logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference).
+
+
+[//]: # (https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference#supported-metrics-for-microsoftcontainerservicemanagedclusters)
+[//]: # (https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference#supported-metrics-for-microsoftkubernetesconnectedclusters)
+[//]: # (https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference#supported-metrics-for-microsoftkubernetesconfigurationextensions)
+[//]: # (https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-hybridcontainerservice-provisionedclusters-metrics)
 
 ### Sample log messages
 
