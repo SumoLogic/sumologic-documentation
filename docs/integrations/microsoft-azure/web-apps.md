@@ -29,8 +29,7 @@ For Azure Web Apps, you can collect the following logs and metrics:
 
 - **Activity logs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 
-* **Azure WebApps platform metrics**. These are metrics specific to Functions like execution count and execution units.
-  These metrics are available for [Microsoft.Web/sites](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-sites-metrics) namespace. For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service-reference).
+* **Metrics** are available in [Microsoft.Web/sites](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-sites-metrics) namespace. For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service-reference).
 
 ### Sample log messages
 
