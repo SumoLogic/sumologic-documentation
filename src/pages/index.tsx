@@ -9,6 +9,7 @@ import SumoLogicDocsLogo from '../../static/img/sumo-logic-docs.svg';
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import ErrorBoundary from '../components/ErrorBoundary';
+import SearchConversionTracker from '../components/SearchConversionTracker';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -19,6 +20,7 @@ export const Home = () => {
         description='Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.'
         title='Home'
       >
+       <SearchConversionTracker />
         {/* Header */}
         <Typography
           bgcolor='#0045BE'
