@@ -78,9 +78,8 @@ In this step, you will configure the yaml required for Elasticsearch collection.
 - **Password Environment Variable Name**. Enter the Elasticsearch password environment variable name.
 - **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value otel/elasticsearch user needs to provide the value for `db.cluster.name`.
 
-import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
+**Timestamp Parsing**. You can do timestamp parsing for log ingested using this source template. For more details, refer to [Timestamps, Time Zones and Date Formats](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrmTimestampParsing.md) for OpenTelemetry collector.
 
-<OtelLogAdvanceOption/>
 
 **Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 

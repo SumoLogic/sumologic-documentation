@@ -77,9 +77,7 @@ In this step, you will configure the yaml required for Docker Collection. Below 
 - **Excluded Image List**. A list of strings, [regexes](https://golang.org/pkg/regexp/), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers for scrapping metrics. Learn more about [*excluded_images*](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md#configuration).
 - **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value otel/docker.
 
-import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
-
-<OtelLogAdvanceOption/>
+**Timestamp Parsing**. You can do timestamp parsing for log ingested using this source template. For more details, refer to [Timestamps, Time Zones and Date Formats](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrmTimestampParsing.md) for OpenTelemetry collector.
 
 **Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 
