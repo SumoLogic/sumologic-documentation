@@ -1,11 +1,11 @@
 ---
 id: otrm-time-reference
-title: Timestamps, Time Zones and Date Formats
+title: Timestamps, Time Zones, and Date Formats
 description: Learn how Sumo Logic manages timestamps, time zones, and dates, and the configuration options that are available with OTRM source templates.
 keywords:
   - time
   - time reference
-  - timezone
+  - time zone
   - time zone
 ---
 
@@ -36,7 +36,7 @@ If your log messages from a source contain multiple timestamps, timestamps in un
 * Configure a Source template for each log format.
 * Configure a custom timestamp format for your Source template.
 
-## Specifying a custom timestamp format and Timezone
+## Specifying a custom timestamp format and time zone
 
 OpenTelemetry Collectors can automatically parse most timestamps without any issues. However, if you see timestamp parsing issues, you can manually specify the timestamp format in the Sumo Logic UI when configuring a new Source template or editing the timestamp information for an existing Source template.
 
