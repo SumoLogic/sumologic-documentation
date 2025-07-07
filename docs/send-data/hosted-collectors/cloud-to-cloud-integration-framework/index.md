@@ -618,4 +618,10 @@ In this section, we'll introduce the following concepts:
         <p>Learn to collect audit logs and network activity data from Zero Networks Segment.</p>
         </div>
       </div>
+    <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zimperium-mtd-source"><img src={useBaseUrl('img/send-data/zimperium-mtd.png')} alt="Thumbnail icon" width="45"/><h4>Zimperium MTD Source</h4></a>
+        <p>Learn to collect the device logs from the Zimperium API and send it to Sumo Logic.</p>
+        </div>
+      </div>
     </div>
