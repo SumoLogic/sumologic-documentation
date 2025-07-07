@@ -26,11 +26,9 @@ A fix has been developed and is scheduled for deployment on July 9, 2025. There 
 
 ## Important to note
 
-Sumo Logic-provided threat feeds, including CrowdStrike and Intel 471, are not affected.
-
-Customer-configured feeds using other protocols, such as TAXII 1.0, are also unaffected.
-
-Historical signals will not be retroactively generated. Customers can expect to receive an influx of signals related to the previously missing IOCs from the moment the fix is applied.
+* Sumo Logic-provided threat feeds, including CrowdStrike and Intel 471, are not affected.
+* Customer-configured feeds using other protocols, such as TAXII 1.0, are also unaffected.
+* Historical signals will not be retroactively generated. Customers can expect to receive an influx of signals related to the previously missing IOCs from the moment the fix is applied.
 
 ## Resolution plan
 
