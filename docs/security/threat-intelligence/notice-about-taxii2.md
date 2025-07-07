@@ -8,6 +8,8 @@ description: This article is a product defect notification for missing indicator
  <meta name="robots" content="noindex" />
 </head>
 
+<!-- Article added by DOCS-981. -->
+
 ## Summary of the issue
 
 We are notifying you of a recently identified issue that affects Sumo Logic’s Threat Intelligence feeds using the TAXII 2.0 protocol. Specifically, URL, domain, and email Indicators of Compromise (IOCs) were not processed and displayed as expected. A customer first reported the issue on June 11, 2025.
