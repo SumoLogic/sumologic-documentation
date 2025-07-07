@@ -26,7 +26,7 @@ The data will be collected from Zimperium MTD's database using the following log
 
 ### Vendor configuration
 
-The Zimperium MTD source requires you to provide the **Account URL**, **Client ID**, and **Client Secret** to setup the integration.
+The Zimperium MTD source requires you to provide the **Account URL**, **Client ID**, and **Client Secret** to set up the integration.
 
 #### Account URL
 
