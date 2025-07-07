@@ -19,63 +19,65 @@ Because of the importance of timestamps, Sumo Logic indexes the timestamp of e
 
 ## Timestamps
 
-The timestamp is the part of a log message that marks the time that an event occurred. During ingestion, we can detect the message timestamp, convert it to Unix epoch time (the number of milliseconds since midnight, January 1, 1970 UTC), and index it. The timestamp is parsed either using the default timestamp parsing settings, or a custom format that you specify, including the time zone.
+Timestamp is the part of a log message that marks the time that an event occurred. During ingestion, we can detect the message timestamp, convert it to Unix epoch time (the number of milliseconds since midnight, January 1, 1970 UTC), and index it. The timestamp is parsed either using the default timestamp parsing settings, or a custom format that you specify, including the time zone.
 
-When configuring a source template you can specify a custom format for us to parse timestamps in your log messages. 
+When configuring a source template, specify a custom format to parse timestamps in your log messages. 
 
 :::note
-Currently only strptime timestamp are supported in source templates
+Currently, only `strptime` timestamp are supported in the source templates.
 :::
 
 ### Timestamp considerations
 
 By default, we can automatically detect timestamps in your log messages. Automatic detection identifies timestamps in common formats and prefers timestamps that appear early in the message.
 
-If your log messages from a Source contain multiple timestamps, timestamps in unusual formats, or a mix of distinct timestamp formats, you have two options:
-* Configure a Source template for each log format
-* Configure a custom timestamp format for your Source template
+If your log messages from a source contain multiple timestamps, timestamps in unusual formats, or a mix of distinct timestamp formats, you have two options:
+
+* Configure a Source template for each log format.
+* Configure a custom timestamp format for your Source template.
 
 ## Specifying a custom timestamp format and Timezone
 
 OpenTelemetry Collectors can automatically parse most timestamps without any issues. However, if you see timestamp parsing issues, you can manually specify the timestamp format in the Sumo Logic UI when configuring a new Source template or editing the timestamp information for an existing Source template.
 
-1. Do one of the following:
-   * If you're configuring a new Source template, proceed to step 2.
-   * To edit the timestamp settings for an existing Source template, navigate to the source template. Then click **Edit** to the right of the Source name and go to step 2.<br/><img src={useBaseUrl('img/send-data/source-template-edit.png')} alt="Screenshot showing the editing interface for a source template in Sumo Logic, highlighting the section for editing advanced options including timestamp settings" style={{border: '1px solid gray'}} width="600"/>
+1. Perform one of the following steps:
+   * If you're configuring a new Source template, proceed to step 2. Or,
+   * To edit the timestamp settings for an existing Source template, navigate to the source template. Then click on **Edit**, to the right of the Source name and go to step 2.<br/><img src={useBaseUrl('img/send-data/source-template-edit.png')} alt="Screenshot showing the editing interface for a source template in Sumo Logic, highlighting the section for editing advanced options including timestamp settings" style={{border: '1px solid gray'}} width="600"/>
 1. Navigate to the **Timestamp Parsing** section.<br/><img src={useBaseUrl('img/send-data/st-timestamp-parsing.png')} alt="Screenshot of the Timestamp parsing section for logs in Sumo Logic, focusing on the timestamp format settings" style={{border: '1px solid gray'}} />
-1. Select **Specify the format** options
+1. Select **Specify the format** options,
 1. **Timestamp locator**. Use a [Go regular expression](https://github.com/google/re2/wiki/Syntax) to match the timestamp in your logs. Ensure the regular expression includes a named capture group called `timestamp_field`.
 1. **Format**. Specify the exact layout of the timestamp to be parsed. For example, `- %Y-%m-%dT%H:%M:%S.%LZ`. To learn more about the formatting rules, refer to [this guide](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/internal/coreinternal/timeutils/internal/ctimefmt/ctimefmt.go#L68).
-1. **Select Timezone**. Define the geographic location (timezone) to use when parsing a timestamp that does not include a timezone. The available locations depend on the local IANA Time Zone database. For example, `America/New_York`. See more examples [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+1. **Select Timezone**. Define the geographic location (timezone) to use while parsing a timestamp that does not include a timezone. The available locations depend on the local IANA Time Zone database. For example, `America/New_York`. For more examples, refer to the [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 <br/><img src={useBaseUrl('img/send-data/specify-timestamp-format.png')} alt="Screenshot illustrating the process of specifying a custom timestamp format in the Sumo Logic UI" style={{border: '1px solid gray'}} width="300"/>
-
 
 ### Using _format for troubleshooting
 
-You can use `_format` to see how the timestamp is parsed from the log file. Assign _format an alias to return it in your search results, for example: 
+You can use `_format` to see how the timestamp is parsed from the log file. Assign `_format` an alias to return it in your search results, for example: 
+
 ```sql
 | _format as timestampFormat
 ```
 
 The fields returned in the search results of `_format` are:
+
 ```sql
 t:<parse type>,o:<offset>,l:<length>,p:<date_format>
 ```
 
-where `<parse type>` can take the values:
+where `<parse type>` can take the below mentioned values:
+
 * `fail`. Failed to locate timestamp.
 * `cache`. Success, cached format.
 * `def`. Success, default (user-specified) format.
 * `full`. Success, from "full" parsing against library of patterns.
 * `none`. Local/receipt time because timestamp parsing is not enabled for this source.
-* `ac1`. Auto-corrected by the "window-based" heuristic (what we call "auto-correction" today). Sumo Logic assumes that all log messages coming from a particular Source will have timestamps that are close together. If a message comes through that appears to be more than one day earlier or later than recent messages from that source, it will be auto-corrected to match the current time. You can stop this auto-correction by explicitly configuring a custom timestamp format on your Source.
-    For example, assume the Collector parses the timestamp "Dec **2**, 2021 2:39:58 AM". If the previously received message from that Source has a timestamp prior to "Dec **1**, 2021 2:39:58 AM" or after "Dec **3**, 2021 2:39:58 AM", the Collector will auto-correct the timestamp to the current time.
-* `ac2`. Auto-corrected by the -1y, +2d heuristic. Sumo Logic assumes that all log messages coming from a particular Source will have timestamps that are within a window of -1 year through +2 days compared to the current time. Any log message with a parsed timestamp outside of that window is automatically re-stamped with the current time.
-    For example, assume the Collector parses the timestamp "Dec 2, **2021** 2:39:58 AM". If the previously received message from that Source is prior to "Dec 1, **2020** 2:39:58 AM" or after "Dec 4, **2021** 2:39:58 AM", the Collector will auto-correct the timestamp to the current time.
+* `ac1`. Auto-corrected by the "window-based" heuristic (what we call "auto-correction" today). Sumo Logic assumes that all log messages coming from a particular Source will have timestamps that are close together. If a message comes through that appears to be more than one day earlier or later than recent messages from that source, it will be auto-corrected to match the current time. You can stop this auto-correction by explicitly configuring a custom timestamp format on your Source. For example, assume the Collector parses the timestamp "Dec **2**, 2021 2:39:58 AM". If the previously received message from that Source has a timestamp prior to "Dec **1**, 2021 2:39:58 AM" or after "Dec **3**, 2021 2:39:58 AM", the Collector will auto-correct the timestamp to the current time.
+* `ac2`. Auto-corrected by the -1y, +2d heuristic. Sumo Logic assumes that all log messages coming from a particular Source will have timestamps that are within a window of -1 year through +2 days compared to the current time. Any log message with a parsed timestamp outside of that window is automatically re-stamped with the current time. For example, assume the Collector parses the timestamp "Dec 2, **2021** 2:39:58 AM". If the previously received message from that Source is prior to "Dec 1, **2020** 2:39:58 AM" or after "Dec 4, **2021** 2:39:58 AM", the Collector will auto-correct the timestamp to the current time.
 
 #### Example
 
 When you’re troubleshooting issues related to timestamp, you can run a query similar to this to see how the timestamp is parsed:
+
 ```sql
 _sourceCategory=PaloAltoNetworks
 | _format as timestampformat
@@ -85,7 +87,8 @@ The result would look like this: <br/><img src={useBaseUrl('img/send-data/format
 
 ### Timestamp format examples
 
-The following conventions are some example of the supported formats for strptime in OpenTelemetry collector
+The following conventions are some example of the supported formats for `strptime` in OpenTelemetry collector:
+
 | `strptime` Format | Example |
 |-------------------|---------|
 | `%Y-%m-%d'T'%H:%M:%S*%f%z` | 2023-08-20'T'13:20:10*633+0000 |
@@ -136,30 +139,35 @@ The following conventions are some example of the supported formats for strptime
 | `%q/%g/%Y %l:%M:%S %p:%f` | 8/5/2023 3:31:18 AM:234 |
 | `%q/%d/%Y %I:%M:%S %p` | 9/28/2023 2:23:15 PM |
 
-### Time zone considerations
+### Timezone considerations
 
-The following considerations apply to time zones:
+The following considerations apply to timezones:
 
-* We highly recommend that the time zone be set explicitly on any source template where the logs does not have a time zone available. Sumo Logic always attempts to determine the time zone for the Source. However, if that isn’t possible, the time zone will revert to UTC. In these cases, the time zone will be incorrect, and that could significantly affect forensic analysis and reporting.
+* We highly recommend that the timezone be set explicitly on any source template where the logs does not have a timezone available. Sumo Logic always attempts to determine the timezone for the Source. However, if that is not possible, the timezone will revert to UTC. In these cases, the timezone will be incorrect, and that could significantly affect forensic analysis and reporting.
 
-### Default time zone
+### Default timezone
 
-By default, we use the time zone from your web browser set by the operating system to display hours and minutes everywhere in our user interface. You can change the default time zone that the user interface displays by adjusting the **Default Timezone** setting on the **Preferences** page. This option overrides the time zone from your web browser, and changes how hours and minutes are displayed in the UI. But this is a personal setting, and does not change the time zone for anyone else in your organization.
+By default, we use the timezone from your web browser set by the operating system to display hours and minutes everywhere in our user interface. You can change the default timezone that the user interface displays by adjusting the **Default Timezone** setting on the **Preferences** page. This option overrides the timezone from your web browser, and changes how hours and minutes are displayed in the UI. But this is a personal setting, and does not change the timezone for anyone else in your organization.
 
-UI elements that are affected by this setting include the **Search** page **Time Range** field, the **Time** column of the **Messages** pane, Dashboards, and Anomaly Detection. 
+UI elements that are affected by this setting include:
+
+- **Time Range** field in the **Search** page
+- **Time** column of the **Messages** pane
+- Dashboards
+- Anomaly Detection
 
 Changing the **Default Timezone** setting affects how the UI displays messages, but not the actual timestamp in the log message.
 
-For example, the following screenshot shows the time zone set to **PST** in the UI, in the **Time** column. The logs were collected from a system that was also configured to use the **PST** time zone, which is displayed in the timestamp of the **Message** column. The timestamps in both columns match as they are set to the same time zone.
+For example, the following screenshot shows the timezone set to **PST** in the UI, in the **Time** column. The logs were collected from a system that was also configured to use the **PST** timezone, which is displayed in the timestamp of the **Message** column. The timestamps in both columns match as they are set to the same timezone.
 
 <img src={useBaseUrl('img/send-data/timezone_PST.png')} alt="Screenshot demonstrating log timestamps displayed in Pacific Standard Time (PST) in the Sumo Logic UI" width="500" />
 
 The next screenshot shows the same search result after changing the Default Timezone setting to UTC. Now the Time column is displayed in UTC, while the Message column retains the original timestamp, in PST.
 
-<img src={useBaseUrl('img/send-data/timezone_UTC.png')} alt="Screenshot showing the same log timestamps now displayed in Coordinated Universal Time (UTC) after changing the default time zone setting" width="500"/>
+<img src={useBaseUrl('img/send-data/timezone_UTC.png')} alt="Screenshot showing the same log timestamps now displayed in Coordinated Universal Time (UTC) after changing the default timezone setting" width="500"/>
 
-In another example, if your time zone is set to **UTC**, and you share a Dashboard with another user who has their time zone set to **PST**, what will they see?
+In another example, if your timezone is set to **UTC**, and you share a Dashboard with another user who has their tim zone set to **PST**, what will they see?
 
-They will see the same data, just displayed using their custom set time zone. For example, if you have a Panel that uses a time series, the timeline on the X axis of your chart is displayed in your time zone, **UTC**. The other user will see the timeline on the X axis displayed in their time zone, **PST**. But the data displayed in the chart is exactly the same.
+They will see the same data, just displayed using their custom set timezone. For example, if you have a Panel that uses a time series, the timeline on the X axis of your chart is displayed in your timezone, **UTC**. The other user will see the timeline on the X axis displayed in their timezone, **PST**. But the data displayed in the chart is exactly the same.
 
-<img src={useBaseUrl('img/send-data/timezone_dashboards_compare.png')} alt="Screenshot comparing how dashboards display time zones differently for users with custom time zone settings, highlighting the same data shown in different time zones." width="600"/>
+<img src={useBaseUrl('img/send-data/timezone_dashboards_compare.png')} alt="Screenshot comparing how dashboards display timezones differently for users with custom timezone settings, highlighting the same data shown in different timezones." width="600"/>
