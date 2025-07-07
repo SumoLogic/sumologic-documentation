@@ -35,11 +35,11 @@ Follow the below steps to run a search by Searchable Time:
 Follow the below steps to run a scheduled search by Searchable Time:
 
 1. Enter your query in the search text box and click **Save As..**.
-1. In the **Save Item** pop-up, select **Searchable Time** from the timestamp dropdown.
+1. In the **Save Item** pop-up, select **Searchable Time** from the timestamp dropdown.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-scheduled-search.png')} alt="searchable-time-scheduled-search" style={{border:'1px solid gray'}} width="500" />
 
 ## Run a search using Searchable Time in dashboard
 
-::note
+:::note
 **Searchbale Time** will not be available for *Metrics* or *Spans* query.
 :::
 
@@ -49,13 +49,14 @@ Follow the below steps to run a search using the Searchable Time in the dashboar
 1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
 1. You are prompted to provide a log query.
 1. Navigate to **General** configuration.
-1. Go to **Logs Settings** section and select **Searchbale Time** as the timestamp.
+1. Go to **Logs Settings** section and select **Searchbale Time** as the timestamp.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-dashboard.png')} alt="searchable-time-dashboard" style={{border:'1px solid gray'}} width="500" />
 
 ## Run/save a search by Searchable Time using API
 
 To create a search, refer to the [Search Job API Documentation](/docs/api/search-job/#create-a-search-job). Below mentioned parameter has been updated due to addition of Searchable time feature:
  
 | Parameter | Type | Requried | Description |
+| :-- | :-- | :-- | :-- | 
 | `intervalTimeType` | String | Yes | This parameter defines whether you want to run the search by messageTime, receiptTime, or searchableTime. By default, the search will run by messageTime. |
 
 :::note
@@ -67,7 +68,8 @@ If both `runByReceiptTime` and `intervalTimeType` parameters are present then th
 To create a dashboard, refer to the [Search Job API Documentation](/docs/api/dashboard/). Below mentioned parameter has been updated due to addition of Searchable time feature:
 
 | Parameter | Type | Requried | Description |
-| `timeSource` | String | Yes | This parameter defines the time source of the query. Possible values are `Message`, `Receipt`, or `Searchable`. By default, `Message` will be used as the time source. </br>**Message**. Uses the timestamp on the message.</br>**Receipt**. Timestamp when the logs were received by Sumo Logic.</br>**Searchable**. Timestamp when the logs are available for search.  |
+| :-- | :-- | :-- | :-- | 
+| `timeSource` | String | Yes | This parameter defines the time source of the query. Possible values are `Message`, `Receipt`, or `Searchable`. By default, `Message` will be used as the time source. <br/>**Message**. Uses the timestamp on the message.<br/>**Receipt**. Timestamp when the logs were received by Sumo Logic.<br/>**Searchable**. Timestamp when the logs are available for search.  |
 
 :::info
 `time_source` field in the *terraform* supports **Searchable** value for dashboards.
