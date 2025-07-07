@@ -77,12 +77,6 @@ Sumo Logic offers seamless integrations with various AI-driven platforms to enab
 * [Criminal IP](/docs/platform-services/automation-service/app-central/integrations/criminal-ip)
 * [Arcanna](/docs/platform-services/automation-service/app-central/integrations/arcanna)
 
-<!-- Removed - not in Kanso
-### Root Cause Explorer
-
-Accelerates troubleshooting by surfacing events of interest correlated with application incidents. [Learn more](/docs/observability/root-cause-explorer)
--->
-
 ## Security
 
 Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hunters to effectively safeguard their technology stack against evolving threats. By integrating advanced tools for discovery, detection, investigation, response, and protection, we minimize dwell time, reduce false positives, accelerate incident resolution, and proactively prevent future incidents, ensuring robust security and resilience for your cloud, container, and on-prem resources.
@@ -100,12 +94,16 @@ Sumo Logic's Cloud SIEM leverages AI-driven rules for security management, inclu
 Our Global Intelligence Service apps provide security teams with valuable real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach. [Learn more](/docs/integrations/global-intelligence).
 
 
-## More information
+## Additional resources
 
-* [What are the differences between artificial intelligence, machine learning, deep learning and generative AI?](https://www.sumologic.com/blog/machine-learning-deep-learning)
-* [Understanding artificial intelligence for log analytics](https://www.sumologic.com/guides/machine-data-analytics)
-* [DevSecOps in an AI world requires disruptive log economics](https://www.sumologic.com/blog/devsecops-ai-disruptive-log-economics)
-* [Generative AI: The latest example of systems of insight](https://www.sumologic.com/blog/generative-ai-latest-example-systems-of-insight)
+* Guide: [Understanding artificial intelligence for log analytics](https://www.sumologic.com/guides/machine-data-analytics)
+* Blogs: 
+   * [What are the differences between artificial intelligence, machine learning, deep learning and generative AI?](https://www.sumologic.com/blog/machine-learning-deep-learning)
+   * [DevSecOps in an AI world requires disruptive log economics](https://www.sumologic.com/blog/devsecops-ai-disruptive-log-economics)
+   * [Generative AI: The latest example of systems of insight](https://www.sumologic.com/blog/generative-ai-latest-example-systems-of-insight)
+   * [Harnessing the power of artificial intelligence in log analytics](https://www.sumologic.com/blog/power-ai-log-analytics/)
+   * [Reduce alert noise, automate incident response and keep coding with AI-driven alerting](https://www.sumologic.com/blog/ai-driven-low-noise-alerts/)
+
 <!--
 -Bashyam's blog about how we trained our AI
 -Flex Pricing? The more log data ingested, the sharper your analytics and ML/AI insights become. By eliminating ingest limitations and empowering an ML/AI-driven single source of truth for analytics, Flex enables DevOps and DevSecOps teams to troubleshoot faster, accelerate release velocity, and ensure reliable, secure digital experiences.

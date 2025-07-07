@@ -32,6 +32,24 @@ In this section, we'll introduce the following concepts:
       <p>Collect logs, metrics, and tracing data, as well as how to add configurations for the OpenTelemetry collector.</p>
     </div>
   </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/">
+        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
+        <h4>Remote Management</h4>
+      </a>
+      <p>Learn about remote management of OpenTelemetry collectors.</p>
+    </div>
+  </div>
+  <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/view-opentelemetry-collection-page">
+        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
+        <h4>View Details About an OpenTelemetry Collector</h4>
+      </a>
+      <p>Learn how to view details about an OpenTelemetry Collector.</p>
+    </div>
+  </div>
       <div className="box smallbox card">
     <div className="container">
       <a href="/docs/send-data/opentelemetry-collector/auto-discovery">
@@ -62,21 +80,23 @@ In this section, we'll introduce the following concepts:
     <p>Find solutions to common issues with the OpenTelemetry collector.</p>
     </div>
   </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Sumo Logic OTel</h4></a>
+      <p>Understand the relationship between the Sumo Logic OpenTelemetry Collector and the OpenTelemetry upstream project.</p>
+    </div>
+  </div>
   <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/opentelemetry-collector/faq"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>FAQ</h4></a>
     <p>Find answers to frequently asked questions about the OpenTelemetry collector.</p>
     </div>
   </div>
-  <div className="box smallbox card">
-    <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Sumo Logic OTel</h4></a>
-      <p>Understand the relationship between the Sumo Logic OpenTelemetry Collector and the OpenTelemetry upstream project.</p>
-    </div>
-  </div>
 </div>
 
-## More information
+## Additional resources
 
-* [Sumo Logic Guide to OpenTelemetry](https://www.sumologic.com/guides/opentelemetry). Learn about the powerful observability tool OpenTelemetry and what it can provide for your business.
-* [OpenTelemetry Tutorials](https://www.sumologic.com/blog/common-opentelemetry-demo-application/). Learn how to use the common OpenTelemetry demo application with Sumo Logic.
+* Guide: [The Sumo Logic Guide to OpenTelemetry](https://www.sumologic.com/guides/opentelemetry)
+* Blogs: 
+   * [Learn how to use the common OpenTelemetry demo application with Sumo Logic](https://www.sumologic.com/blog/common-opentelemetry-demo-application/)
+   * [Take control of your OpenTelemetry Collectors with Otel Remote Management](https://www.sumologic.com/blog/otel-remote-management/)

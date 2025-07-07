@@ -127,11 +127,9 @@ The following table provides a summary list of key features by Flex package acco
 | Playbooks (including complete Sumo Logic playbook catalog) |  |  | | ![check](/img/reuse/check.png) |
 | Predictive Analytics and Outlier Detection | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Progressive Automation |  |  | | ![check](/img/reuse/check.png) |
-| Real Time Alerts | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
 | Real User Monitoring (RUM) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
 | Reliability Management (SLIs/SLOs) |  | | |![check](/img/reuse/check.png) |
 | Risk Assessment |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Root Cause Explorer |  |  | | ![check](/img/reuse/check.png) |
 | Scheduled Alert Muting | |  | |![check](/img/reuse/check.png) |
 | Scheduled Views | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Service Maps |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |

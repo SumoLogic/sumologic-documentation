@@ -18,15 +18,6 @@ Integration with Sumo Logic platform for monitors and Microsoft (Outlook) notifi
 
 ## Sumo Logic Notifications By Microsoft configuration
 
-1. In the main Sumo Logic menu, select your username and then **Preferences**. 
-2. From the preferences screen, in the section **My Access Keys**, click **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="600"/>
-3. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
-4. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
-   :::note
-   They won't be available again once you close this screen.
-   :::
-5. Click **Done** after you copied the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
-
 ### Register an application
 
 Registering your application establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
@@ -71,7 +62,6 @@ The client secret, known also as an application password, is a string value of y
 4. Application permissions are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
 5. Select **Add a permission**, and add the following permissions (as shown in the screenshot). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-microsoft/sumo-logic-notifications-by-microsoft-1.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
-
 #### EWS API to be configured for these permissions
 
 Applications are authorized to call APIs when they are granted permissions by users/admins as part of the consent process. The list of configured permissions should include all the permissions the application needs.
@@ -104,6 +94,57 @@ Microsoft Graph (7)
     + Type: Application
     + Description: Read basic profiles of all users
     + Admin: Yes
+
+## Create an access key in Sumo Logic
+
+1. In the main Sumo Logic menu, select your username and then **Preferences**. 
+2. From the preferences screen, in the section **My Access Keys**, click **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="600"/>
+3. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+4. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
+   :::note
+   They won't be available again once you close this screen.
+   :::
+5. Click **Done** after you copied the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+
+## Configure Sumo Logic Notifications by Microsoft in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import SumoLogicAPIURL from '../../../../reuse/automation-service/sumo-logic-api-url.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your API URL for Microsoft, for example, `https://graph.microsoft.com/v1.0`.
+
+* **Authentication Grant Type**. Choose one of the following according to the permissions you add to your app:
+   * **Password (Delegated Context)**
+   * **Client Credentials (Application Context)**
+
+* **Directory (Tenant) ID**. Enter the [tenant ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id) of the AAD directory in which you created the application. (You can check from your [app registration page](https://learn.microsoft.com/en-us/graph/auth-register-app-v2)).
+
+* **Client ID**. Enter your application ID. (You can check from your [app registration page](https://learn.microsoft.com/en-us/graph/auth-register-app-v2)). This is required for both authentication grant types.
+
+* **Client Secret**. Enter your client secret. This is required for both authentication grant types.
+
+* **Username**. Enter the username of an admin user authorized to authenticate the integration. This is required only if you set the authentication grant type as **Password (Delegated Context)**. Leave this field empty if you set the authentication grant type as **Client Credentials (Application Context)**.
+
+* **Password**. Enter the password for the admin user. This is required only if you set the authentication grant type as **Password (Delegated Context)**. Leave this field empty if you set the authentication grant type as **Client Credentials (Application Context)**.
+* <SumoLogicAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-notifications-by-microsoft-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Notifications by Microsoft configuration" width="400"/>
 
 ## Change Log
 * December 04, 2024 - First upload

@@ -27,24 +27,11 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  staticDirectories: ['static'],
-  webpack: {
-    jsLoader: (isServer) => ({
-      loader: require.resolve('swc-loader'),
-      options: {
-        jsc: {
-          "parser": {
-            "syntax": "typescript",
-            "tsx": true
-          },
-          target: 'es2017',
-        },
-        module: {
-          type: isServer ? 'commonjs' : 'es6',
-        }
-      },
-    }),
+  future: {
+    v4: true,
+    experimental_faster: true,
   },
+  staticDirectories: ['static'],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -116,6 +103,8 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    //Embed code file from GitHub repo
+    '@saucelabs/theme-github-codeblock',
     ['@docusaurus/plugin-google-tag-manager',
       {
         containerId: 'GTM-58ZK7D',
@@ -277,12 +266,7 @@ module.exports = {
       getMissingResultsUrl({ query }) {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
-    },
-    announcementBar: {
-      id: 'rsa',
-      content: '📣 Meet us at <b><a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/rsa-conference">RSA Conference 2025 | Booth 6261 - North Hall</a></b> for live demos, expert insights, and AI-driven security solutions. Plus swag!',
-      backgroundColor: '#08046c',
-      textColor: '#FFF',
+      insights: true,
     },
     prism: {
       theme: lightCodeTheme,

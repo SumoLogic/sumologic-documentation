@@ -27,29 +27,42 @@ Libraesva Email Security V5 is active defense against phishing, 0-day malware, i
 * **Download Attachment Content** *(Enrichment)* - Fetch message attachment content or download attachment to incident attachments.
 * **Fetch Message HTML** *(Enrichment)* - Fetch message HTML.
 
-## Libraesva Email Security V5 in Automation Service and Cloud SOAR
+## Generate Libraesva token
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row. <br/>The integration details will appear. Click on the "+" button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-3.png')} style={{border:'1px solid gray'}} alt="libraesva-email-security-v5-3" width="400"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
-   * URL API
-   * User
-   * Password
-   * Libraesva Token. The generated token obtained from Generate Token action (follow the instructions below).
-   * Impersonate User. For some actions admin privileges are required.
-   * Cloud SOAR URL. i.e : https://your-cloud-soar-host/incmansuite\_ng
-   * Cloud SOAR User JWT Token <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-4.png')} style={{border:'1px solid gray'}} alt="libraesva-email-security-v5-1" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-5.png')} style={{border:'1px solid gray'}} alt="libraesva-email-security-v5-5" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-6.png')} style={{border:'1px solid gray'}} alt="libraesva-email-security-v5-6" width="400"/>
-1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-7.png')} style={{border:'1px solid gray'}} alt="libraesva-email-security-v5-7" width="400"/>
-
-**Token**
-
-1. To generate the token make sure you provided the URL API, user, and password.
+1. To generate the [token](https://docs.libraesva.com/knowledgebase/esg-api/) make sure you provided the URL API, user, and password.
 1. Test the resource to check that the credentials are correct.
 1. Execute the Generate Token action with the Test Action.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-8.png')} style={{border:'1px solid gray'}} alt="libraesva-email-security-v5-8" width="400"/>
 1. Copy the token (without quotation marks).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-9.png')} style={{border:'1px solid gray'}} alt="libraesva-email-security-v5-9" width="700"/>
-1. Now you can populate the Token field in the resource.
+1. Now you can populate the Token field in the resource below.
+
+## Configure Libraesva Email Security V5 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL API**. Enter your Libraesva API URL.
+
+* **User**. Enter the username of a Libraesva admin user authorized to authenticate the integration.
+
+* **Password**. Enter the admin user password.
+
+* **Libraesva Token**. Enter the generated token [obtained earlier](#generate-libraesva-token)).
+
+* **Impersonate User**. Enter an [impersonation user](https://docs.libraesva.com/document/archive-emails-from-exchange/how-to-setup-an-impersonation-account-in-exchange/). For some actions, admin privileges from an impersonation account are required.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/libraesva-email-security-v5-configuration.png')} style={{border:'1px solid gray'}} alt="ipdata configuration" width="400"/>
+
+For information about Libraesva Email Security V5, see [Libraesva Email Security V5 documentation](https://docs.libraesva.com/doc/libraesva-esg-5/).
 
 ## Category
 

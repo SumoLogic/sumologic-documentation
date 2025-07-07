@@ -27,19 +27,6 @@ This video explains Observability and how it's different from monitoring. It als
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/FJG1zesNJs0?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Why Observability?
@@ -74,4 +61,4 @@ The solution also offers features and capabilities that support each step of the
 
 * **Monitor** your systems effectively with new and improved alerting and dashboarding capabilities. The Observability Solution includes rich pre-built content that you can leverage to quickly start monitoring specific services. 
 * **Diagnose** issues quickly using features like the Entity Explorer, trace analytics, and the  Metrics Explorer.  
-* **Troubleshoot** issues and find root causes through Behavior insights, Root Cause Explorer, and log search.
+* **Troubleshoot** issues and find root causes through behavior insights and log search.

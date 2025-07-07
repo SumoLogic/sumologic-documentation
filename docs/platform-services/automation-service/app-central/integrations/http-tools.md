@@ -20,19 +20,30 @@ Set of scripts to perform simple HTTP requests.
 * **HTTP POST** (*Enrichment*) - Sends an HTTP POST request to create a resource.
 * **HTTP PUT** (*Enrichment*) - Sends an HTTP PUT request to to update a resource.
 
+## Configure HTTP Tools in Automation Service and Cloud SOAR
 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
-## HTTP Tools in Automation Service and Cloud SOAR
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **HTTP API URL**. Enter the URL to send the requests.
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/http-tools/http-tools-3.png')} style={{border:'1px solid gray'}} alt="http-tools" width="600"/>
-1. Populate all the required fields(\*) and click **Save**.
-   * **Label**. Name of the resource for HTTP Tools.
-   * **HTTP API URL**. The URL to send the requests.
-   * **Username**. The username to use to access the URL.
-   * **Password**. The password to use to access the URL.
-   * **Extra Headers**. Additional HTTP headers to send with the requests e.g. (key1:value1, key2:value2) Or JSON.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/http-tools/http-tools-4.png')} style={{border:'1px solid gray'}} alt="http-tools" width="400"/>
+* **Username**. Enter the username to use to access the URL.
+
+* **Password**. Enter the password for the user.
+
+* **Extra Headers**. Enter additional HTTP headers to send with the requests for example, `key1:value1, key2:value2` or JSON.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/http-tools-configuration.png')} style={{border:'1px solid gray'}} alt="HTTP Tools configuration" width="400"/>
    
 ## Change Log
 

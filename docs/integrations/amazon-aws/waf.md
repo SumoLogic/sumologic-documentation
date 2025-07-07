@@ -60,7 +60,7 @@ _sourceCategory=AWS/WAF {{client_ip}}
 | parse "\"httpMethod\":\"*\"," as httpMethod,"\"httpVersion\":\"*\"," as httpVersion,"\"uri\":\"*\"," as uri, "{\"clientIp\":\"*\",\"country\":\"*\"" as clientIp,country, "\"action\":\"*\"" as action, "\"matchingNonTerminatingRules\":[*]" as matchingNonTerminatingRules, "\"rateBasedRuleList\":[*]" as rateBasedRuleList, "\"ruleGroupList\":[*]" as ruleGroupList, "\"httpSourceId\":\"*\"" as httpSourceId, "\"httpSourceName\":\"*\"" as httpSourceName, "\"terminatingRuleType\":\"*\"" as terminatingRuleType, "\"terminatingRuleId\":\"*\"" as terminatingRuleId, "\"webaclId\":\"*\"" as webaclId nodrop
 | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=clientip
 ```
-<!-- Replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+<!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
 ```sql title="Client IP Threat Info"
 _sourceCategory=AWS/WAF {{client_ip}}
 | parse "\"httpMethod\":\"*\"," as httpMethod,"\"httpVersion\":\"*\"," as httpVersion,"\"uri\":\"*\"," as uri, "{\"clientIp\":\"*\",\"country\":\"*\"" as clientIp,country, "\"action\":\"*\"" as action, "\"matchingNonTerminatingRules\":[*]" as matchingNonTerminatingRules, "\"rateBasedRuleList\":[*]" as rateBasedRuleList, "\"ruleGroupList\":[*]" as ruleGroupList, "\"httpSourceId\":\"*\"" as httpSourceId, "\"httpSourceName\":\"*\"" as httpSourceName, "\"terminatingRuleType\":\"*\"" as terminatingRuleType, "\"terminatingRuleId\":\"*\"" as terminatingRuleId, "\"webaclId\":\"*\"" as webaclId nodrop
@@ -105,11 +105,15 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
 
 Now that you have set up collection for AWS WAF, install the Sumo Logic app for AWS AWS to use the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
 ## Viewing AWS WAF dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### AWS WAF Overview
 

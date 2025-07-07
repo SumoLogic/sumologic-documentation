@@ -9,6 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can only run custom actions or integrations outside of the Sumo Logic cloud in an "on-premise" environment. For on-premise environments, you need to install a bridge as described below.
 
+## Version
+
+The current version of the Automation Bridge is 3.10.
+
+Versions 2.1.1 and earlier are no longer supported.
+
 ## Requirements
 
 ### Hardware requirements
@@ -80,7 +86,7 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 
 ## Get installation token
 
-Login to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
+Sign in to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
 
 :::info
 You must prefix your installation token with `csoar-bridge-token` in order for the Automation Bridge to connect to your CloudSOAR instance.
@@ -250,7 +256,7 @@ The automation bridge needs to be able to communicate with the Docker API to wor
 |Environment Variable |Description |Default   |
 |:------------------------------------|:---------------|:----------|
 |`API_URL_HERE` | To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: `https://api.eu.sumologic.com/api/` | |
-|`SOAR_TOKEN_HERE` | Log in to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with the name prefix `csoar-bridge-token`. | |
+|`SOAR_TOKEN_HERE` | Sign in to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with the name prefix `csoar-bridge-token`. | |
 |`SIEM_URL_HERE` | The HTTPS Source endpoint URL from a Hosted Sumo Logic Collector. | NONE |
 |`BRIDGE_ALIAS_HERE` | Provide the alias name. With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited, it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the bridge that has the same ALIAS. | NONE |
 

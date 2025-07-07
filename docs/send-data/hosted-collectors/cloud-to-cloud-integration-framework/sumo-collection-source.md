@@ -8,22 +8,24 @@ tags:
 description: The Sumo Collection Source aims to collect the list of the collectors and their sources and send them to Sumo Logic.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/sumo-collection/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/sumo-collection/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/sumo-collection/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="60"/>
 
-Sumo Logic enables you to seamlessly gather and analyze valuable insights from diverse sources. By leveraging its robust API capabilities, you can efficiently extract, transform, and load data into your analytics pipeline. This streamlined process allows you to harness the power of real-time data analysis, improving decision-making, troubleshooting, and overall operational efficiency within your organization.
+Sumo Logic's Cloud-to-Cloud (C2C) framework enables seamless data integration by leveraging API-based connections to collect insights from external systems and services. The Sumo Collection Source is part of this framework and is designed to gather a list of collectors and their associated sources directly from the Sumo Logic platform.
+
+This source supports both Installed and Hosted Collectors configured within a C2C environment. By using Sumo Logic’s API, it provides centralized, real-time visibility into collector and source health, operational status, and configuration metrics—helping teams proactively monitor deployments, troubleshoot issues, and maintain a reliable data collection pipeline.
+
+:::tip
+For related info on collector health events, see [this doc](/docs/manage/health-events).
+:::
 
 ## Data collected
 
 | Polling Interval | Data |
-| :-- | :-- | 
-| 12 hours | [Collector API](/docs/api/collector-management/collector-api-methods-examples/#get-a-list-of-collectors) | 
+| :-- | :-- |
+| 12 hours | [Collector API](/docs/api/collector-management/collector-api-methods-examples/#get-a-list-of-collectors) |
 | 5 minutes | [Source API](/docs/api/collector-management/source-api/#list-sources) |
 
 ## Setup
@@ -43,7 +45,6 @@ Identify your **Deployment** region based on your Base URL. The deployment regio
 | DE  |	`https://api.de.sumologic.com/`  |
 | EU  | `https://api.eu.sumologic.com/`  |
 | FED |	`https://api.fed.sumologic.com/` |
-| IN  |	`https://api.in.sumologic.com/`  |
 | JP  |	`https://api.jp.sumologic.com/`  |
 | KR  |	`https://api.kr.sumologic.com/`  |
 | US1 |	`https://api.sumologic.com/`     |
@@ -58,7 +59,7 @@ To generate the Access ID and Access Key, refer to [Create an access key](/docs/
 When you create a Sumo Collection Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Sumo Collection Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Sumo Collection**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -105,15 +106,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/sumo-collection/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/sumo-collection/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/sumo-collection/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/sumo-collection/example.tf
+```
 
 ## FAQ
 

@@ -27,107 +27,17 @@ This app only supports load balancers of **Standard** and **Gateway** SKUs.
 
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
-* Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
+* Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
 You must explicitly enable diagnostic settings for each Load Balancer you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example:  `Azure/LoadBalancer/Logs` and `Azure/LoadBalancer/Metrics`.
 
-### Configure field in field schema
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
-1. Search for the following fields:
-   - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions in the [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs.
-   - `subscription_id`. ID associated with a subscription where the resource is present.
-   - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
-   - `resource_type`. Azure resource type (for example, storage accounts).
-   - `resource_name`. The name of the resource (for example, storage account name).
-   - `service_type`. Type of the service that can be accessed with an Azure resource.
-   - `service_name`. Services that can be accessed with an Azure resource (for example, Azure SQL databases in Azure SQL Server).
-1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
-
-### Configure Field Extraction Rules
-
-Create the following Field Extraction Rules (FER) for Azure Storage by following the instructions in the [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
-
-#### Azure location extraction FER
-
-   ```sql
-   Rule Name: AzureLocationExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
-   | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
-   | if (!isBlank(resourceLocation), resourceLocation, location) as location
-   | if (!isBlank(service_region), service_region, location) as location 
-   | if (isBlank(location), "global", location) as location
-   | fields location
-   ```
-
-#### Resource ID extraction FER
-
-   ```sql
-   Rule Name: AzureResourceIdExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
-   | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
-   | toUpperCase(resourceId) as resourceId
-   | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
-   | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
-   | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
-   | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
-   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
-   | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
-   ```
-
-### Configure metric rules
-
-Create the following metrics rules by following the instructions in [Create a metrics rule](/docs/metrics/metric-rules-editor/#create-a-metrics-rule).
-
-#### Azure observability metadata extraction load balancer level
-
-```sql
-Rule Name: AzureObservabilityMetadataExtractionLoadBalancerLevel
-```
-
-```sql title="Metric match expression"
-resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/LOADBALANCERS/* tenant_name=*
-```
-
-| Fields extracted  | Metric rule    |
-|:------------------|:---------------|
-| subscription_id   | $resourceId._1 |
-| resource_group    | $resourceId._2 |
-| provider_name     | $resourceId._3 |
-| resource_type     | LOADBALANCERS  |
-| resource_name     | $resourceId._4 |
-
 ### Configure metrics collection
 
-In this section, you will configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, onto an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
-1. Create a hosted collector and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
-2. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-3. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-4. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform the steps below for each Load Balancer that you want to monitor.
-   * Choose `Stream to an event hub` as the destination.
-   * Select `AllMetrics`.
-   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by the ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. <br/><img src={useBaseUrl('img/send-data/azureloadbalancer-metrics.png')} alt="Azure load balancer metrics" style={{border: '1px solid gray'}} width="800" />
-5. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Load Balancer Tag Location" style={{border: '1px solid gray'}} width="500" />
-
-:::note
-SNAT related metrics will appear only when an outbound rule is configured.
-:::
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -155,15 +65,27 @@ Since this source contains logs from multiple regions, ensure that you do not ta
 
 Now that you have set up data collection, install the Azure Load Balancer Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstallNoDataSourceV2/>
+<AppInstallIndexV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region to which the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with a Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure Load Balancer dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/> 
 
 ### Overview
 
@@ -214,6 +136,16 @@ Use this dashboard to:
 - View recent failed policy events.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Policy.png')} alt="Azure Load Balancer Policy" style={{border: '1px solid gray'}} width="800" />
+
+### Azure Load Balancer alerts
+These alerts are metric based and will work for all Azure Load Balancers.
+
+| Alert Name                                      | Alert Description and Conditions                                                                                                                                     | Alert Condition  | Recover Condition |
+|:------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:------------------|
+| `Azure Load Balancer - Data Path Availability`  | This alert is triggered  when Data Path Availability is less than 100%.                                                                                              | percentage < 100 | percentage >= 100 |
+| `Azure Load Balancer - Health Probe Status`     | This alert is triggered  when Health Probe Status is less than 100%.                                                                                                 | percentage < 100 | percentage >= 100 |
+| `Azure Load Balancer - SNAT Connection Count`   | This alert is triggered when SNAT Connection count less than 1000. Also Working alert is triggered when SNAT Connection count less than 800                          | Count < 1000     | Count >= 1000     |
+| `Azure Load Balancer - Used SNAT Ports`         | This alert is triggered when Used SNAT Ports count less than 900. Also Working alert is triggered when Used SNAT Ports count less than 800                           | Count < 900      | Count >= 900      |
 
 ## Troubleshooting
 

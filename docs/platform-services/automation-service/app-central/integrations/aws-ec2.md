@@ -46,6 +46,34 @@ Using the integration with EC2, you can enrich incidents with specific EC2 data,
 
 * [AWS EC2](https://github.com/boto/boto3/blob/develop/LICENSE)
 
+## Configure AWS EC2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSRegions/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-ec2-configuration.png')} style={{border:'1px solid gray'}} alt="AWS EC2 configuration" width="400"/>
+
+<IntegrationsAuthAWS/>
+
+For information about AWS EC2, see [EC2 documentation](https://docs.aws.amazon.com/ec2/).
+
 ## Change Log
 
 * October 9, 2019 - First upload
