@@ -118,7 +118,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 *Brute Force Attack*
 
-Playbook which can be used in a brute-force on account attack use case. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+Playbook which can be used in a brute force on account attack use case. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 ### 12 - Bruteforce on Service
 
@@ -878,7 +878,7 @@ Use case for phishing analysis with VirusTotal. This playbook uses some actions 
 
 Use case for investigation of a Malicious file with Sumo Logic Cloud SIEM. The playbook collects multiple pieces of information regarding the original file, in case this is malicious, and creates a task if the score is higher than a specific value to review the incident or escalate to L2. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
-## 126 - CSE Bruteforce
+### 126 - CSE Bruteforce
 
 *Malware*
 
@@ -1172,7 +1172,7 @@ This playbook was created to enrich an incident with details about a downloaded 
 
 *Lateral Movement*
 
-This playbook was created to enrich an incident with details from Active Directory and investigate potentially suspicious activity. The playbook will run and enrich the data about the user/access list/groups/trees/schemas/object accesses and save all the information in notes. Next, an email will be sent to the analyst, prompting them to perform an investigation using the retrieved data. User Choice will ask the analyst to determine whether the account was compromised. In addition, they will be asked whether they want to block the user. If the account is compromised, an email will be sent to the user and the manager. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+This playbook was created to enrich an incident with details from Active Directory and investigate potentially suspicious activity. The playbook will run and enrich the data about the user/access list/groups/trees/schemas/object accesses and save all the information in notes. Next, an email will be sent to the analyst, prompting them to perform an investigation using the retrieved data. User choice will ask the analyst to determine whether the account was compromised. In addition, they will be asked whether they want to block the user. If the account is compromised, an email will be sent to the user and the manager. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 ### 174 - Calculate Severity - Standard
 
@@ -1340,6 +1340,608 @@ This playbook is used to perform email gathering from the Mimecast integration.
 *Phishing*
 
 This playbook is used to perform email gathering from Proofpoint TAP integration.
+
+### 201 - Detonate File - ANYRUN
+
+*Malware*
+
+This playbook is used to perform file ingestion and analysis using the ANY.RUN sandbox technology. The results will be saved in notes. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 202 - Detonate File - Hybrid Analysis
+
+*Malware*
+
+This playbook is used to perform file ingestion and analysis using Hybrid Analysis technology. The results wil be saved in notes. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 203 - Detonate File - Cuckoo
+
+*Malware*
+
+This playbook is used to perform file ingestion and analysis using Cuckoo Sandbox integration. The results wil be saved in notes. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 204 - Detonate File - FireEye AX
+
+*Malware*
+
+This playbook is used to perform file ingestion and analysis using FireEye AX integration. The results will be saved in notes. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 205 - Detonate File - Joe Sandbox
+
+*Malware*
+
+This playbook is used to perform file ingestion and analysis using Joe Sandbox integration. The results wil be saved in notes. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 206 - Email Address Enrichment - Generic v2.1
+
+*Phishing*
+
+This playbook is used to parse email into internal and external. Internal emails will be enriched with information about the users. External emails will be enriched with threat intelligence feed about the domains found.
+
+### 207 - Email Headers Check - Generic
+
+*Phishing*
+
+This playbook is used to check an email header using MxToolbox SPF DMARC and DKIM functionalities and microsoft antispam headers. Once the results are extracted they are saved in notes and and added to an incident field. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 208 - Create User In Active Directory
+
+*Incident Management*
+
+This playbook will check for the new user we want to create. If it's not found, the playbook will create and initialize the new user in Active Directory.
+
+### 209 - Deactivate User In Active Directory
+
+*Incident Management*
+
+This playbook will check for the user we want to deactivate. When found, the playbook will disable the user and send a mail to it department.
+
+### 210 - Group Membership Update
+
+*Incident Management*
+
+This playbook will update user group permissions based on Okta group.
+
+### 211 - Passive Reconnaissance - Essential
+
+*CTI*
+
+This playbook was built to automatically conduct passive reconnaissance activities using a domain or IP. Useful for quickly investigating a domain in case you suspect it has been damaged / hacked.
+
+### 212 - Passive Reconnaissance - General
+
+*CTI*
+
+This playbook was built to conduct passive reconnaissance activities automatically using a domain or an IP. The playbook is useful for carrying out quick investigations after suffering an attack. It allows you to investigate the source IP that caused the attack and, through quick enrichment actions, find out whether the involved IP/domain was compromised.
+
+### 213 - Passive Reconnaissance - Email
+
+*CTI*
+
+This playbook was built to conduct passive reconnaissance activities automatically using a domain or an IP. It's useful for quick investigations if you suspect that your email account has been compromised.
+
+### 214 - Passive Reconnaissance - Domain User
+
+*CTI*
+
+This playbook was built to conduct passive reconnaissance activities automatically using a domain or an IP. It's useful for quick investigations if you suspect that your domain account has been compromised.
+
+### 215 - Passive Reconnaissance - Account User
+
+*CTI*
+
+This playbook was built to conduct passive reconnaissance activities automatically using a domain or an IP. It's useful for carrying out quick investigations if you suspect that a user's account was exposed via the internet (for example, a customer website).
+
+### 216 - Account Enrichment - Generic
+
+*Incident Response*
+
+This playbook is designed to enrich a user found in Active Directory.
+
+### 217 - Block Account - Generic
+
+*Incident Response*
+
+This playbook is designed to block a specific user found in Active Directory.
+
+### 218 - Block IP - McAfee Web Gateway OIF
+
+*Network Anomaly*
+
+This playbook is designed to block an IP with McAfee Web Gateway.
+
+### 219 - Block IP - Palo Alto NGFW OIF
+
+*Network Anomaly*
+
+This playbook is designed to block an IP on Palo Alto NGFW.
+
+### 220 - Block IP - Pulse Secure
+
+*Network Anomaly*
+
+This playbook is designed to block an IP with Pulse Secure.
+
+### 221 - Block IP - Forcepoint Web Security
+
+*Network Anomaly*
+
+This playbook is designed to block an IP with Forcepoint Web Security.
+
+### 222 - Block IP - Check Point OIF Security
+
+*Network Anomaly*
+
+This playbook is designed to block an IP with Check Point OIF Security.
+
+### 223 - Block IP - NG Firewall Security
+
+*Network Anomaly*
+
+This playbook is designed to block an IP with NG Firewall Security.
+
+### 224 - Block IP - Palo Alto Panorama OIF
+
+*Network Anomaly*
+
+This playbook is designed to block an IP with Palo Alto Panorama.
+
+### 225 - Block IP - Firewall Tools
+
+*Network Anomaly*
+
+This playbook is designed to block an IP on Firewall Tools
+
+### 226 - Block Domain - Check Point OIF
+
+*Network Anomaly*
+
+This playbook is designed to block a domain with Check Point Firewall.
+
+### 227 - Block Domain - NG Firewall
+
+*Network Anomaly*
+
+This playbook is designed to block a domain on NG Firewall
+
+### 228 - Block Domain - Mimecast
+
+*Network Anomaly*
+
+This playbook is designed to block a domain on Mimecast
+
+### 229 - Block Domain - Firewall Tools
+
+*Network Anomaly*
+
+This playbook is designed to block a domain with firewall tools.
+
+### 230 - Block Domain - Cisco Umbrella OIF
+
+*Network Anomaly*
+
+This playbook is designed to block a domain on Cisco Umbrella.
+
+### 231 - Block Domain - Stormshield
+
+*Network Anomaly*
+
+This playbook is designed to block a domain on Stormshield.
+
+### 232 - Block Domain - Cisco Threat Grid OIF
+
+*Network Anomaly*
+
+This playbook is designed to block a domain on Cisco Threat Grid.
+
+### 233 - CrowdStrike Falcon Sandbox & AlienVault analysis - File Submission
+
+*CTI*
+
+Submit a file for analysis and download appropriate reports or get a summary of submission using CrowdStrike Falcon SandBox integration, with additional information coming from AlienVault.
+
+### 234 - VirusTotal OIF Essential
+
+*CTI*
+
+Playbook designed to conduct threat intelligence activities with VirusTotal.
+
+### 235 - AbuseIPDB Essential
+
+*CTI*
+
+This playbook enriches IP addresses with reputation information gathered from AbuseIPD.
+
+### 236 - CSE - Suspicious Linux Command
+
+*Intrusion*
+
+This playbook was built to prevent intrusion attempts. Getting the insight details from Cloud SIEM, the playbook performs multiple checks filtering the results by IP, user activity, and geolocation. Once the initial enrichment is done, the event can be processed with a logical condition for further investigation and user choice for containment activities or marked as a false positive alert.
+
+### 237 - Suspicious User Connection
+
+*Intrusion*
+
+This playbook was built to prevent lateral movement in your network.
+
+Getting the insight details from Cloud SIEM, the playbook performs multiple checks for the source IP, from where the connection was established, and the system attributes of the host. After the initial phase, the playbook sets a logical condition that splits the process depending on whether user data is available or not. If user data is available for investigation, the user details will be collected for additional processing and confirmation of the established connection. If there is no data on the user, the playbook creates a ticket to forward the incident to the security operations team.
+
+It is worth noting that the playbook executes an extended query for the IP and sets user choice to determine the final stage of the incident response, update the ticket as a valid connection established by the user, and do an extensive manual investigation of the event. If user data is available in AWS IAM, the playbook performs additional enrichment and processes the containment through user choice if needed.
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 238 - Recorded Future Essential
+
+*CTI*
+
+This playbook was built to utilize Recorded Future threat intelligence feeds during incident investigation.
+
+### 239 - IBM X-Force Exchange Essential
+
+*CTI*
+
+This playbook was built to enrich incident artifacts with intelligence data from IBM X-Force.
+
+### 240 - AlienVault OTX Essential
+
+*CTI*
+
+This playbook was built to enrich incident evidence with threat intelligence data from AlienVault OTX.
+
+### 241 - IP Quality Score Essential
+
+*Threat Intelligence*
+
+This playbook was built to perform threat intelligence evidence gathering with IP Quality Score.
+
+### 242 - APIVoid Essential
+
+*Threat Intelligence*
+
+This playbook was built to use APIVoid to gather enrichment data during incident investigations.
+
+### 243 - VirusTotal Essential
+
+*Threat Intelligence*
+
+This playbook was built to perform threat intelligence evidence gathering with VirusTotal.
+
+### 244 - Cisco Threat Grid Essential
+
+*Threat Intelligence*
+
+This playbook was built to utilize Cisco AMP Threat Grid to retrieve information about incident elements such as IP, domain, and file hash.
+
+### 245 - Blueliv Essential
+
+*Threat Intelligence*
+
+This playbook was built to enrich incident evidence with threat intelligence data from Blueliv. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 246 - Cisco Umbrella Investigate Essential
+
+*Threat Intelligence*
+
+This playbook was built to gather enrichment data on incident observables using Cisco Umbrella Investigate.
+
+### 247 - DomainTools Essential
+
+*Threat Intelligence*
+
+This playbook is designed to perform enrichment activities with DomainTools.
+
+### 248 - Hybrid Analysis Essential
+
+*Threat Intelligence*
+
+This playbook is designed to perform enrichment and threat intelligence activities with Hybrid Analysis.
+
+### 249 - Pulsedive Essential
+
+*Threat Intelligence*
+
+This playbook is designed to perform enrichment and threat intelligence activities with Pulsedive.
+
+### 251 - Knowbe4 Essential
+
+*Threat Intelligence*
+
+This playbook allows you to utilize findings from KnowBe4 security awareness training events during an incident investigation.
+
+### 252 - EclecticIQ Essential
+
+*Threat Intelligence*
+
+This playbook allows you to use EclecticIQ, which offers state-of-the-art CTI technology for large enterprises, governments, and MSSPs.
+
+### 253 - PassiveTotal Essential
+
+*Threat Intelligence*
+
+This playbook leverages a PassiveTotal WHOIS action to increase or decrease incident severity. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 254 - Exana Open DNS Essential
+
+*Threat Intelligence*
+
+This playbook allows you to query Exana Open DNS for DNS records and add the queried information to an incident. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 255 - GreyNoise Essential
+
+*Threat Intelligence*
+
+This playbook leverages GreyNoise to evaluate possible malicious IPs and notify the SOC team. GreyNoise tells security analysts what alerts and activities they should ignore by allowing them to curate data on IPs that saturate security tools with noise. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 256 - Cofense Essential
+
+*Threat Intelligence*
+
+This playbook was built to search with Cofense for Threats and download threat reports. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 257 - Digital Shadows Essential
+
+*Threat Intelligence*
+
+This playbook was built to perform queries with the Digital Shadows threat intelligence technology.
+
+### 258 - URLHaus Essential
+
+*Threat Intelligence*
+
+This playbook was built to query domains, URLs, and hash values with the URLhaus technology.
+
+### 259 - Gmail Essential
+
+*Incident Response*
+
+This playbook was built to manage your incidents using the Gmail technology interacting with users, roles, filters, mail messages, and attachments.
+
+### 260 - Microsoft Exchange Web Services Essential
+
+*Incident Response*
+
+This playbook was built to manage your incidents performing actions on Microsoft EWS mailboxes, accounts, and security settings.
+
+### 261 - CrowdStrike Falcon Essential
+
+*Incident Response*
+
+This playbook handles suspicious machine behavior with the help of some essential CrowdStrike mitigation activities. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 262 - Cisco AMP for Endpoint Essentials
+
+*Incident Response*
+
+This playbook handles suspicious machine behavior with the help of the Cisco Secure Endpoint (formerly AMP for Endpoints) technology. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 263 - Panda EDR Essential
+
+*Incident Response*
+
+This playbook is used to integrate Cloud SOAR with Panda EDR, which allows the platform to get information about the device's security and, based on that, take some specific containment actions that can mitigate the threat and avoid propagation.
+
+### 264 - Suspicious EDR Events
+
+*Incident Response*
+
+This playbook was built to enrich incidents and contain suspicious events coming from EDRs. Here we're using Qualys, but customers can replace it according to their needs.
+
+### 265 - Trend Micro APEX ONE Essential
+
+*Incident Response*
+
+This playbook was built to enrich incidents and contain suspicious events and alerts coming from Trend Micro APEX ONE EDR.
+
+### 266 - FortiSIEM Essential
+
+*Incident Management*
+
+This playbook was built to search for events in FortiSIEM, perform basic enrichment and follow up on the incident response process. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 267 - IBM QRadar Essential
+
+*Incident Management*
+
+This playbook was built to search for events in IBM QRadar, perform basic enrichment and follow up on the incident response process. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 268 - McAfee ESM Essential
+
+*Incident Management*
+
+This playbook was built to search for events in McAfee ESM, perform basic enrichment, and follow up on the incident response process. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 269 - Securonix Essential
+
+*Incident Management*
+
+This playbook was built to search for events in Securonix, perform basic queries of relevant alerts, and follow up on the incident response process.
+
+### 270 - Splunk OIF Essential
+
+*Incident Management*
+
+This playbook was built to search for events in Splunk and update or modify an event.
+
+### 271 - ANY.RUN Essential
+
+*Threat Intelligence*
+
+This playbook was built to gather detonation data for files and URLs using ANY.RUN.
+
+### 272 - CrowdStrike Falcon SandBox
+
+*Threat Intelligence*
+
+This playbook was built to perform CTI activities using CrowdStrike Falcon Sandbox, a malware analysis tool providing threat intelligence.
+
+### 273 - Cuckoo Essential
+
+*Threat Intelligence*
+
+This playbook was built to utilize Cuckoo sandbox to detonate potentially malicious files and URLs during an active investigation.
+
+### 274 - FortiSandbox Essential
+
+*Threat Intelligence*
+
+This playbook was created to integrate and use the fundamental actions of FortiSandbox via Cloud SOAR. FortiSandbox is a detection tool with threat prevention capabilities. It's AI-based, and it helps security professionals tackle some of the most dangerous types of malware threats currently, such as ransomware and crypto-malware.
+
+### 275 - Joe Sandbox Essential
+
+*Threat Intelligence*
+
+This playbook was created for conducting CTI activities using the Joe Sandbox technology. It allows you to analyze suspicious files and URLs during incident investigation.
+
+### 276 - DDoS - additional blocking with Forcepoint
+
+*DDOS*
+
+This playbook can be executed in case of a suspected distributed denial of service attack. It starts by performing a check to verify traffic and source IPs. If these exceed a certain threshold, the playbook execution continues with a second search. After that, it checks the use of the server resources under attack via SSH.
+
+Next, if the Forcepoint technology is available in the instance, the playbook can mark a policy on FP that blocks and prevents the suspected IPs from doing additional damage. Subsequently, the playbook assesses the actual state and evaluates whether the attack is still active. If it is, the playbook performs CTI activities to detect whether the source IPs are malicious. It includes all the collected data in user choice, and it gives the analyst the possibility to block the sources. In the event of a ceased attack and false positive, the SOC will receive an email containing the report relating to the events.
+
+This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 277 - Suspicious User Login Outside Working Hours
+
+*Intrusion*
+
+This playbook handles logins outside working hours.
+
+### 278 - FortiMail Essential
+
+*Incident Response*
+
+This playbook is designed to perform enrichment activities with FortiMail and allows the analyst to decide which containment action to take.
+
+### 280 - Proofpoint TAP Essential
+
+*Incident Response*
+
+This playbook allows you to get information about phishing campaigns with Proofpoint TAP.
+
+### 281 - CrowdStrike Incident Remediation
+
+*Incident Response*
+
+This playbook helps you remediate an incident ingested by CrowdStrike. It allows prompt communication among everyone involved and quick remediation based on the retrieved information. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 282 - Cisco Threat Grid OIF Essential
+
+*Threat Intelligence*
+
+This playbook uses the Cisco AMP Threat Grid technology to retrieve information on incident items such as IP, domain, and file hash by workflow automation with Cloud SOAR.
+
+### 283 - FireEye AX Essential
+
+*Threat Intelligence*
+
+This playbook uses FireEye AX technology to inspect malicious files through workflow automation with Cloud SOAR.
+
+### 284 - Lastline Analyst Essential
+
+*Threat Intelligence*
+
+This playbook uses the Lastline AI-powered sandboxing technology to inspect malicious files through workflow automation with Cloud SOAR.
+
+### 285 - Palo Alto WildFire OIF Essential
+
+*Threat Intelligence*
+
+This playbook utilizes the Palo Alto WildFire technology to gather file intelligence data during an incident investigation.
+
+### 286 - VMRay Essential
+
+*Threat Intelligence*
+
+This playbook allows you to use the VMRay technology with Cloud SOAR for malware detection and analysis purposes.
+
+### 287 - Brute-Force Attempt on AWS
+
+*Brute Force*
+
+Once it receives a brute force alert from GuardDuty, this playbook will create an issue on Jira and populate it with the relevant information. After that, it will notify the resource owner, asking for justification or termination of its instance. Lastly, it performs a scan in the auth logs of the owner to complete the investigation. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 288 - ZScaler - Web Navigation Filtering
+
+*Threat Intelligence*
+
+This playbook allows you to integrate the ZScaler technology and automate containment processes using Cloud SOAR.
+
+When a user tries to view a particular website and Cloud SOAR receives input that generates an incident, the playbook proceeds to collect categories present on ZScaler. Once the playbook obtains the necessary information, if a category is allowed, it checks the whitelist from ZScaler and creates a user choice. The user choice invites the SOC analyst to perform the action they consider to be the most appropriate.
+
+If the category is not allowed, the playbook gets the ZScaler blacklist. As in the previous case, it creates a user choice that presents the SOC analyst with four different options depending on the incident. Once the analyst makes a choice, the playbook sends an email to the SOC Manager notifying him of what happened. In the end, it creates a task to review the created incident.
+
+### 289 - ZeroFOX Essential
+
+*Threat Intelligence*
+
+This is an essential playbook that you can use to manage ZeroFOX alerts in Cloud SOAR. Typically, we suggest setting filters when configuring the daemon and further enriching the data with other threat intel technologies. The playbook will get an alert from ZeroFOX and assign it to a user. Then, it will ask the user to review and update the alert.
+
+### 290 - URLscan.io Essential
+
+*Threat Intelligence*
+
+This is an essential playbook used to enrich incidents with URLscan.io. The playbook will collect the desired URL and launch three different enrichment actions using URLscan.io. It will store the results in the notes of the incident. This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+### 291 - ThreatQ Essential
+
+*Threat Intelligence*
+
+This is an essential playbook that you can use to enrich incidents using the ThreatQ platform. The playbook starts by searching for an object. When it finds it, it uses a condition to check whether it's already in the ThreatQ platform. If the object is there, the playbook allows us to add attributes and update the status of that object. Otherwise, it creates the new object as one of the three entities (indicator, event, adversary) and adds related attributes and statuses.
+
+### 292 - IBM MSS Tickets Essential
+
+*Incident Management*
+
+This is an essential playbook used to create tickets and preview and update information in IBM MSS Tickets.
+
+### 293 - Jira Essential
+
+*Incident Management*
+
+This essential playbook allows you to create an issue and preview and update information in Jira.
+
+### 294 - Malwarebytes Nebula
+
+*Incident Response*
+
+This playbook allows you to verify exclusions and preview information about specific endpoints. It follows up with remediation activities and updates exclusions accordingly in Malwarebytes Nebula.
+
+### 295 - IBM Maximo Essential
+
+*Incident Management*
+
+This is an essential playbook used to create tickets, preview details, and update information in IBM Maximo.
+
+### 296 - ServiceNow Essential
+
+*Incident Management*
+
+This is an essential playbook used to create tickets, preview them, and update information in ServiceNow.
+
+### 297 - Zendesk Essential
+
+*Incident Management*
+
+This is an essential playbook used to create tickets, get ticket details, and update information in Zendesk.
+
+### 298 - Freshservice Essential
+
+*Incident Management*
+
+This is an essential playbook used to create tickets and preview and update information in Freshservice.
+
+### 299 - ArcSight ESM Essential
+
+*Incident Management*
+
+This is an essential playbook used to create cases, get case details, and update case information in ArcSight ESM.
+
+### 300 - ThreatConnect Essential
+
+*Threat Intelligence*
+
+This is an essential playbook used to enrich incidents using the ThreatConnect platform. The found IOC can be searched in ThreatConnect to gather information. Based on the context of the alert and analysis done by the analysts, they can decide to update the object and set the appropriate parameters.
 
 
 ### 501 - Send Insight AWS SNS Notification
@@ -1563,7 +2165,7 @@ Periodically monitor status of a Sumo Logic alert and notify a Slack user about 
 
 *Brute Force*
 
-Upon receiving a brute-force alert from Sumo Logic, this playbook will create an issue on Jira and populate it with the relevant information. After that, it will notify the resource owner, asking for justification or termination or stop its instance. Lastly, with manual review it complete the investigation.
+Upon receiving a brute force alert from Sumo Logic, this playbook will create an issue on Jira and populate it with the relevant information. After that, it will notify the resource owner, asking for justification or termination or stop its instance. Lastly, with manual review it complete the investigation.
 
 ### 538 - Admin Privileges Granted
 
@@ -1579,7 +2181,7 @@ Alternatively, you can decide to apply manual containment, If the IP was conside
 
 *Unauthorized Access*
 
-EC2 instance has been accessed from IP address found in a threat intelligence feed. This playbook is essential for AWS EC2 Integration. This playbook will perform initial enrichment related to Snapshots, Instances, and Security Groups in the AWS environment. Subsequently, the gathered data will be dispatched via email. Finally, a User Choice will be prompted to the analyst to decide what kind of action to perform, and upon completion, the Alert will be closed.
+EC2 instance has been accessed from IP address found in a threat intelligence feed. This playbook is essential for AWS EC2 Integration. This playbook will perform initial enrichment related to Snapshots, Instances, and Security Groups in the AWS environment. Subsequently, the gathered data will be dispatched via email. Finally, a user choice will be prompted to the analyst to decide what kind of action to perform, and upon completion, the Alert will be closed.
 
 ### 541 - Management of AWS EKS Insights
 
@@ -1679,7 +2281,7 @@ Examine compromised SolarWinds hosts
 Power down network interfaces, ending with a network block containment action
 Alternatively, if there are no traces of the C&C server mentioned above, the playbook verifies the Orion updates and traffic. In addition, it incorporates a helpful note that explains how the SUNBURST and SUPERNOVA vulnerabilities work.
 
-Subsequently, the playbook presents the analyst with two User Choices: the first checks the SolarWinds Orion version and the second looks to verify the presence of the malicious web-shell DLL “app_web_logoimagehandler.ashx.b6031896.dll” on the servers. If the SOC analyst confirms the SolarWinds versions are vulnerable, and the malicious file is present, the playbook executes an automatic scan to check for specific CVEs.
+Subsequently, the playbook presents the analyst with two user choices: the first checks the SolarWinds Orion version and the second looks to verify the presence of the malicious web-shell DLL “app_web_logoimagehandler.ashx.b6031896.dll” on the servers. If the SOC analyst confirms the SolarWinds versions are vulnerable, and the malicious file is present, the playbook executes an automatic scan to check for specific CVEs.
 
 Lastly, since FireEye researchers have discovered that SolarWinds attackers can move laterally from local networks to the Microsoft 365 cloud, the playbook asks the analyst to monitor Microsoft 365 cloud.
 
@@ -1728,7 +2330,7 @@ This playbook prevents leaks on the Pastebin website.
 
 The playbook includes input data validation and can collect multiple pieces of information using a specific scraping script to filter during the following actions.
 
-A User Choice allows you to reset users' passwords if these are involved in the incident.
+A user choice allows you to reset users' passwords if these are involved in the incident.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -1782,11 +2384,11 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 470 - Slack - General Failed Logins v2.1 Advanced
 Brute Force
-This playbook helps you stop advanced brute-force attack attempts.
+This playbook helps you stop advanced brute force attack attempts.
 
 First, the playbook tries to ensure that the targeted Slack account is enabled by attempting to send a message to confirm it is active.
 
-By relying on User Choices, the SOC analyst determines whether a user really attempted to log in with an incorrect password (false positive) or whether a brute force attack is in progress.
+By relying on user choices, the SOC analyst determines whether a user really attempted to log in with an incorrect password (false positive) or whether a brute force attack is in progress.
 
 Finally, the playbook alerts the user under attack and allows the SOC analyst to reset the user's password or deactivate the account if they haven't changed it.
 
@@ -1879,7 +2481,7 @@ This playbook allows you to prevent breaches through the Cloud SOAR automation t
 
 When the playbook receives an alert, it performs various CTI actions to identify possible suspicious activities (that is, IP reputation, SIEM logs analysis, and so on).
 
-After it collects the relevant data, the playbook prompts the analysts with a User Choice, enabling them to take the necessary actions and contain detected suspicious activities.
+After it collects the relevant data, the playbook prompts the analysts with a user choice, enabling them to take the necessary actions and contain detected suspicious activities.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -1892,7 +2494,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 Network Anomaly
 This playbook allows you to investigate and block connections to the Onion Routing system (TOR network). The advanced version improves the basic (essential) workflow and boosts efficiency.
 
-The playbook executes multiple queries and generates a task that helps you check a connected IP against a list of known Tor exit nodes. If the list contains the IP, the playbook prompts analysts with a User Choice, allowing them to block the Tor exit node if the user is not authorized to use Onion Routing.
+The playbook executes multiple queries and generates a task that helps you check a connected IP against a list of known Tor exit nodes. If the list contains the IP, the playbook prompts analysts with a user choice, allowing them to block the Tor exit node if the user is not authorized to use Onion Routing.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -2019,7 +2621,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 454 - CSE Brute-Force Advanced
 Malware
-This playbook works best for advanced investigation of a brute-force attack with Sumo Logic Cloud SIEM.
+This playbook works best for advanced investigation of a brute force attack with Sumo Logic Cloud SIEM.
 
 The playbook starts by validating Cloud SIEM insight details and notifying L1 analysts if manual intervention is needed. It then collects multiple pieces of information — such as the username under attack, the number of attempts, and the source IP — after which it determines the severity level using multiple conditions.
 
@@ -2200,7 +2802,7 @@ This playbook works for scenarios when users receive SIEM alerts for possible ma
 
 It performs additional Event/User validation and further enrichment with AD and EDR queries.
 
-Both automated and manual remediation are available through User Choice.
+Both automated and manual remediation are available through user choice.
 
 
 
@@ -2301,7 +2903,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 IOT
 This playbook involves enrichment, detection of the network flow impacting a machine, and remediation under the control room supervision.
 
-After the first enrichment actions, a condition verifies the presence of suspicious commands, such as "Modbus," "address 254," and "register 2800." If it finds such commands/values, the playbook executes a dedicated User Choice to check and verify through the SIEM whether the alert is a false positive or a cyberattack is taking place.
+After the first enrichment actions, a condition verifies the presence of suspicious commands, such as "Modbus," "address 254," and "register 2800." If it finds such commands/values, the playbook executes a dedicated user choice to check and verify through the SIEM whether the alert is a false positive or a cyberattack is taking place.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -2361,36 +2963,17 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 421 - Wittra Brute Force
 Brute Force Attack
-This playbook ingests alerts from a brute-force source (in this case Microsoft Defender) and checks if any users are in the Wittra user database.
+This playbook ingests alerts from a brute force source (in this case Microsoft Defender) and checks if any users are in the Wittra user database.
 
-If it finds one, a User Choice prompts the analyst to decide whether they want to remove user permissions. If the analyst chooses to remove permissions, the playbook emails the user to update their password.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-
-
-237 - Suspicious User Connection
-Intrusion
-This playbook was built to prevent lateral movement in your network.
-
-Getting the insight details from Cloud SIEM, the playbook will be doing multiple checks for the source IP, from where the connection was established, and the system attributes of the host. After the initial phase, the playbook sets a logical condition that splits the process depending on whether user data is available or not. If user data is available for investigation, the user details will be collected for additional processing and confirmation of the established connection. If there is no data on the user, the playbook creates a ticket to forward the incident to the security operations team.
-
-It is worth noting that the playbook executes an extended query for the IP and sets User Choice to determine the final stage of the incident response, update the ticket as a valid connection established by the user and do an extensive manual investigation of the event.
-
-If user data is available in AWS IAM, the playbook performs additional enrichment and processes the containment through User Choice if needed.
-
-"This playbook was built to prevent lateral movement in your network.
-
-Getting the insight details from Cloud SIEM, the playbook will be doing multiple checks for the source IP, from where the connection was established, and the system attributes of the host. After the initial phase, the playbook sets a logical condition that splits the process depending on whether user data is available or not. If user data is available for investigation, the user details will be collected for additional processing and confirmation of the established connection. If there is no data on the user, the playbook creates a ticket to forward the incident to the security operations team.
-
-It is worth noting that the playbook executes an extended query for the IP and sets User Choice to determine the final stage of the incident response.
-
-User Choice can lead to updating the ticket as a valid connection established by the user or to an extensive manual investigation of the event. On the other hand, if user data is available in AWS IAM, the playbook performs additional enrichment and processes the containment through another User Choice."
+If it finds one, a user choice prompts the analyst to decide whether they want to remove user permissions. If the analyst chooses to remove permissions, the playbook emails the user to update their password.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
+
+
+
+
+
+
 
 
 
@@ -2630,7 +3213,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 Alerts
 This playbook is for an advanced SOAR credibility use case.
 
-This advanced workflow version includes User Choice, which allows analysts to set an incident as a false positive.
+This advanced workflow version includes user choice, which allows analysts to set an incident as a false positive.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -2983,8 +3566,8 @@ This playbook receives a DLP alert that includes the source and destination addr
 The playbook performs the following steps:
 
 Gathers enrichment information on the source user name and address
-Queries a threat intelligence service for the destination address - upgrades incident priority for known threats and prompts analysts with User Choice to block the destination address
-Queries EDR for processes accessing the file (by hash), then checks them against threat intelligence - prompts analysts with User Choice to block the process by hash if it is a known threat
+Queries a threat intelligence service for the destination address - upgrades incident priority for known threats and prompts analysts with user choice to block the destination address
+Queries EDR for processes accessing the file (by hash), then checks them against threat intelligence - prompts analysts with user choice to block the process by hash if it is a known threat
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -2997,7 +3580,7 @@ This advanced playbook is suitable for distributed denial-of-service use cases.
 
 The playbook performs an initial check to verify the traffic and the source IPs. If they exceed a certain threshold, the execution continues by carrying out a second search and checking the use of the server (under attack) resources via SSH.
 
-The playbook also performs CTI activities to determine whether the source IPs are malicious. It presents all the collected data in User Choice, allowing the analysts to block the sources.
+The playbook also performs CTI activities to determine whether the source IPs are malicious. It presents all the collected data in user choice, allowing the analysts to block the sources.
 
 In case of a stopped attack or false positive, the SOC will receive an email containing the report related to the events.
 
@@ -3135,7 +3718,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 360 - Basic IP Reputation Advanced
 Denial of Service
-This playbook's purpose is to automatically detect malformed packets when a higher number of them are coming from different IPs. The playbook allows you to block the IP addresses (using the appropriate technology) through User Choice.
+This playbook's purpose is to automatically detect malformed packets when a higher number of them are coming from different IPs. The playbook allows you to block the IP addresses (using the appropriate technology) through user choice.
 
 
 
@@ -3212,7 +3795,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 343 - Brute-Force Attack on Account Advanced
 Brute Force Attack
-This playbook is suitable for a brute-force attack on an account use case.
+This playbook is suitable for a brute force attack on an account use case.
 
 
 
@@ -3247,7 +3830,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 Incident Response
 You can use this playbook for AD account investigation.
 
-When a new user is created in AD, Cloud SOAR receives an alarm to investigate and obtain all the information related to that user. If the user is legitimate, you can ignore the incident through User Choice. However, if the SOC analyst does not recognize it, the playbook changes the password and disables the user.
+When a new user is created in AD, Cloud SOAR receives an alarm to investigate and obtain all the information related to that user. If the user is legitimate, you can ignore the incident through user choice. However, if the SOC analyst does not recognize it, the playbook changes the password and disables the user.
 
 This playbook can be extremely helpful for preventing attacks via lateral movement or post-exploitation. It alerts the SOC in case a non-legitimate user has the possibility to conduct a dangerous activity in Active Directory.
 
@@ -3295,7 +3878,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 334 - Suspicious User and Brute Force Activity Advanced
 Brute Force Attack
-This playbook ingests alerts pointing to a possible brute-force attack, intrusion, or password guessing. It performs preventive activities in Active Directory or other user management technologies, depending on the severity of the affected account. It also performs additional enrichment in SIEM to check past user activity. The playbook applies mitigation and containment under the supervision of users.
+This playbook ingests alerts pointing to a possible brute force attack, intrusion, or password guessing. It performs preventive activities in Active Directory or other user management technologies, depending on the severity of the affected account. It also performs additional enrichment in SIEM to check past user activity. The playbook applies mitigation and containment under the supervision of users.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -3339,9 +3922,9 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 355 - CSE Brute-Force on EC2
 Brute Force
-This playbook investigates a suspected brute-force attack with Sumo Logic Cloud SIEM.
+This playbook investigates a suspected brute force attack with Sumo Logic Cloud SIEM.
 
-By obtaining an insight from Cloud SIEM, if the number of attempts surpasses the pre-selected threshold, the playbook prompts you with User Choice that allows you to stop the EC2 instance and manually review the incident or send an email notification.
+By obtaining an insight from Cloud SIEM, if the number of attempts surpasses the pre-selected threshold, the playbook prompts you with user choice that allows you to stop the EC2 instance and manually review the incident or send an email notification.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -3360,7 +3943,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 
 353 - Bruteforce on Service Advanced
 Brute Force
-This playbook identifies and blocks brute-force attacks. It's an advanced version that offers a more efficient flow and process.
+This playbook identifies and blocks brute force attacks. It's an advanced version that offers a more efficient flow and process.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -3411,7 +3994,7 @@ After the playbook provides all the necessary information, it allows the analyst
 
 Once they decide, the playbook can inform the technician or execute additional cmd, depending on the result of the previous playbook execution.
 
-Lastly, the playbook sends an incident summary and creates a User Choice.
+Lastly, the playbook sends an incident summary and creates a user choice.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -3493,7 +4076,7 @@ This playbook will perform some initial Enrichment in regards to Detections/IP S
 
 Next, all the data collected will be saved into a note into the SOAR incident.
 
-Finally a User Choice will be prompted to the analyst in order to decide what kind of action to perform.
+Finally a user choice will be prompted to the analyst in order to decide what kind of action to perform.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -3509,7 +4092,7 @@ This playbook will perform some initial Enrichment in regards to Snapshots/Insta
 
 Next, all the data collected will be saved into a note into the SOAR incident.
 
-Finally a User Choice will be prompted to the analyst in order to decide what kind of action to perform.
+Finally a user choice will be prompted to the analyst in order to decide what kind of action to perform.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -3621,7 +4204,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 CTI
 This playbook was built to automatically extract all the IOCs contained in an email using the Mail Tools integration and perform enrichment actions.
 
-If one or more IOCs are malicious, a User Choice will prompt the user to automatically or manually do the containment actions. Otherwise, the incident will be reported as a false positive.
+If one or more IOCs are malicious, a user choice will prompt the user to automatically or manually do the containment actions. Otherwise, the incident will be reported as a false positive.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -3635,9 +4218,7 @@ This playbook performs enrichment activities with FireEye Email Security.
 
 
 
-263 - Panda EDR Essential
-Incident Response
-This playbook is used to integrate Cloud SOAR with Panda EDR, which allows the platform to get information about the device's security and, based on that, take some specific containment actions that can mitigate the threat and avoid propagation.
+
 
 
 
@@ -3659,7 +4240,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 Red Team Tools
 This playbook allows you to automate the first activities of active reconnaissance and collect the initial information necessary to start a penetration test activity.
 
-Once it sends the email with the host you want to scan, if the SOC analyst authorizes the scan through User Choice, the playbook, interfacing with Kali Linux, will collect specific information about the machine using specific Nmap commands.
+Once it sends the email with the host you want to scan, if the SOC analyst authorizes the scan through user choice, the playbook, interfacing with Kali Linux, will collect specific information about the machine using specific Nmap commands.
 
 Where the web service is present on the host (TCP ports 80 and 443), the playbook will use other open source tools to deepen the scan, such as Nikto and Gobuster.
 
@@ -3674,7 +4255,7 @@ This playbook uses some actions available with Cloud SOAR only, but can be downl
 Incident Management
 This playbook contacts the on-call staff member if there is a need for intervention on their part during non-working hours.
 
-Thanks to Twilio, the playbook makes the first call. If the on-call answers, they will have to answer the User Choice prompt too and confirm that they are present at their station. Otherwise, the playbook makes two more call attempts, after which an email will notify the on-call staff member's manager about the incident.
+Thanks to Twilio, the playbook makes the first call. If the on-call answers, they will have to answer the user choice prompt too and confirm that they are present at their station. Otherwise, the playbook makes two more call attempts, after which an email will notify the on-call staff member's manager about the incident.
 
 This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
@@ -3750,770 +4331,6 @@ The playbook runs various enrichment actions to get threat intelligence details,
 
 
 
-300 - ThreatConnect Essential
-Threat Intelligence
-This is an essential playbook used to enrich incidents using the ThreatConnect platform.
-
-The found IOC can be searched in ThreatConnect to gather information.
-
-Based on the context of the alert and analysis done by the analysts, they can decide to update the object and set the appropriate parameters.
-
-
-
-
-299 - ArcSight ESM Essential
-Incident Management
-This is an essential playbook used to create cases, get case details and update case information in ArcSight ESM.
-
-
-
-
-298 - Freshservice Essential
-Incident Management
-This is an essential playbook used to create tickets and preview and update information in Freshservice.
-
-
-
-
-297 - Zendesk Essential
-Incident Management
-This is an essential playbook used to create tickets, get ticket details and update information in Zendesk.
-
-
-
-
-296 - ServiceNow Essential
-Incident Management
-This is an essential playbook used to create tickets, preview them and update information in ServiceNow.
-
-
-
-
-295 - IBM Maximo Essential
-Incident Management
-This is an essential playbook used to create tickets, preview details and update information in IBM Maximo.
-
-
-
-
-294 - Malwarebytes Nebula
-Incident Response
-This playbook allows you to verify Exclusions and preview information about specific Endpoints. It follows up with Remediation Activities and updates Exclusions accordingly in Malwarebytes Nebula.
-
-
-
-
-293 - Jira Essential
-Incident Management
-This essential playbook allows you to create an issue and preview and update information in Jira.
-
-
-
-
-292 - IBM MSS Tickets Essential
-Incident Management
-This is an essential playbook used to create tickets and preview and update information in IBM MSS Tickets.
-
-
-
-
-291 - ThreatQ Essential
-Threat Intelligence
-This is an essential playbook that you can use to enrich incidents using the ThreatQ platform.
-
-The playbook starts by searching for an object. When it finds it, it uses a condition to check whether it's already in the ThreatQ platform.
-
-If the object is there, the playbook allows us to add attributes and update the status of that object.
-
-Otherwise, it creates the new object as one of the three entities (indicator, event, adversary) and adds related attributes and statuses.
-
-
-
-
-290 - URLscan.io Essential
-Threat Intelligence
-This is an essential playbook used to enrich incidents with URLscan.io.
-
-The playbook will collect the desired URL and launch three different enrichment actions using URLscan.io. It will store the results in the notes of the incident.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-289 - ZeroFOX Essential
-Threat Intelligence
-This is an essential playbook that you can use to manage ZeroFOX alerts in Cloud SOAR. Typically, we suggest setting filters when configuring the daemon and further enriching the data with other threat intel technologies.
-
-The playbook will get an alert from ZeroFOX and assign it to a user. Then, it will ask the user to review and update the alert.
-
-
-
-
-288 - ZScaler - Web Navigation Filtering
-Threat Intelligence
-This playbook allows you to integrate the ZScaler technology and automate containment processes using Cloud SOAR.
-
-When a user tries to view a particular website and Cloud SOAR receives input that generates an incident, the playbook proceeds to collect categories present on ZScaler.
-
-Once the playbook obtains the necessary information, if a category is allowed, it checks the whitelist from ZScaler and creates a User Choice. The User Choice invites the SOC analyst to perform the action they consider to be the most appropriate.
-
-If the category is not allowed, the playbook gets the ZScaler blacklist. As in the previous case, it creates a User Choice that presents the SOC analyst with four different options depending on the incident.
-
-Once the analyst makes a choice, the playbook sends an email to the SOC Manager notifying him of what happened. In the end, it creates a task to review the created incident.
-
-
-
-
-
-287 - Brute-Force Attempt on AWS
-Brute Force
-Once it receives a brute-force alert from GuardDuty, this playbook will create an issue on Jira and populate it with the relevant information. After that, it will notify the resource owner, asking for justification or termination of its instance. Lastly, it performs a scan in the auth logs of the owner to complete the investigation.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-286 - VMRay Essential
-Threat Intelligence
-This playbook allows you to use the VMRay technology with Cloud SOAR for malware detection and analysis purposes.
-
-
-
-
-285 - Palo Alto WildFire OIF Essential
-Threat Intelligence
-This playbook utilizes the Palo Alto WildFire technology to gather file intelligence data during an incident investigation.
-
-
-
-
-284 - Lastline Analyst Essential
-Threat Intelligence
-This playbook uses the Lastline AI-powered sandboxing technology to inspect malicious files through workflow automation with Cloud SOAR.
-
-
-
-
-283 - FireEye AX Essential
-Threat Intelligence
-This playbook uses FireEye AX technology to inspect malicious files through workflow automation with Cloud SOAR.
-
-
-
-
-282 - Cisco Threat Grid OIF Essential
-Threat Intelligence
-This playbook uses the Cisco AMP Threat Grid technology to retrieve information on incident items such as IP, domain, and file hash by workflow automation with Cloud SOAR.
-
-
-
-
-281 - CrowdStrike Incident Remediation
-Incident Response
-This playbook helps you remediate an incident ingested by CrowdStrike. It allows prompt communication among everyone involved and quick remediation based on the retrieved information.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-
-280 - Proofpoint TAP Essential
-Incident Response
-This playbook allows you to get information about phishing campaigns with Proofpoint TAP.
-
-
-
-
-278 - FortiMail Essential
-Incident Response
-This playbook is designed to perform enrichment activities with FortiMail and allowing the analyst to decide which containment action to take.
-
-
-
-
-277 - Suspicious User Login Outside Working Hours
-Intrusion
-This playbook handles logins outside working hours.
-
-
-
-
-265 - Trend Micro APEX ONE Essential
-Incident Response
-This playbook was built to enrich incidents and contain suspicious events and alerts coming from Trend Micro APEX ONE EDR.
-
-
-
-
-264 - Suspicious EDR Events
-Incident Response
-This playbook was built to enrich incidents and contain suspicious events coming from EDRs. Here we're using Qualys, but customers can replace it according to their needs.
-
-
-
-
-262 - Cisco AMP for Endpoint Essentials
-Incident Response
-This playbook handles suspicious machine behavior with the help of the Cisco Secure Endpoint (formerly AMP for Endpoints) technology.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-261 - CrowdStrike Falcon Essential
-Incident Response
-This playbook handles suspicious machine behavior with the help of some essential CrowdStrike mitigation activities.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-276 - DDoS - additional blocking with Forcepoint
-DDOS
-This playbook can be executed in case of a suspected distributed denial of service attack.
-
-It starts by performing a check to verify traffic and source IPs. If these exceed a certain threshold, the playbook execution continues with a second search. After that, it checks the use of the server resources under attack via SSH.
-
-Next, if the Forcepoint technology is available in the instance, the playbook can mark a policy on FP that blocks and prevents the suspected IPs from doing additional damage.
-
-Subsequently, the playbook assesses the actual state and evaluates whether the attack is still active. If it is, the playbook performs CTI activities to detect whether the source IPs are malicious. It includes all the collected data in User Choice, and it gives the analyst the possibility to block the sources.
-
-In the event of a ceased attack and false positive, the SOC will receive an email containing the report relating to the events.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-275 - Joe Sandbox Essential
-Threat Intelligence
-This playbook was created for conducting CTI activities using the Joe Sandbox technology. It allows you to analyze suspicious files and URLs during incident investigation.
-
-
-
-
-
-
-274 - FortiSandbox Essential
-Threat Intelligence
-This playbook was created to integrate and use the fundamental actions of FortiSandbox via Cloud SOAR.
-
-FortiSandbox is a detection tool with threat prevention capabilities. It's AI-based, and it helps security professionals tackle some of the most dangerous types of malware threats currently, such as ransomware and crypto-malware.
-
-
-
-
-273 - Cuckoo Essential
-Threat Intelligence
-This playbook was built to utilize Cuckoo sandbox to detonate potentially malicious files and URLs during an active investigation.
-
-
-
-
-272 - CrowdStrike Falcon SandBox
-Threat Intelligence
-This playbook was built to perform CTI activities using CrowdStrike Falcon Sandbox—a malware analysis tool providing threat intelligence.
-
-​
-
-271 - ANY.RUN Essential
-Threat Intelligence
-This playbook was built to gather detonation data for files and URLs using ANY.RUN.
-
-
-
-
-270 - Splunk OIF Essential
-Incident Management
-This playbook was built to search for events in Splunk and update or modify an event.
-
-
-
-
-269 - Securonix Essential
-Incident Management
-This playbook was built to search for events in Securonix, perform basic queries of relevant alerts and follow up on the incident response process.
-
-
-
-
-268 - McAfee ESM Essential
-Incident Management
-This playbook was built to search for events in McAfee ESM, perform basic enrichment and follow up on the incident response process.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-267 - IBM QRadar Essential
-Incident Management
-This playbook was built to search for events in IBM QRadar, perform basic enrichment and follow up on the incident response process.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-266 - FortiSIEM Essential
-Incident Management
-This playbook was built to search for events in FortiSIEM, perform basic enrichment and follow up on the incident response process.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-260 - Microsoft Exchange Web Services Essential
-Incident Response
-This playbook was built to manage your incidents performing actions on Microsoft EWS mailboxes, accounts and security settings.
-
-
-
-
-259 - Gmail Essential
-Incident Response
-This playbook was built to manage your incidents using the Gmail technology interacting with users, roles, filters, mail messages and attachments.
-
-
-
-
-258 - URLHaus Essential
-Threat Intelligence
-This playbook was built to query domains, URLs and hash values with the URLhaus technology.
-
-
-
-
-257 - Digital Shadows Essential
-Threat Intelligence
-This playbook was built to perform queries with the Digital Shadows threat intelligence technology.
-
-
-
-
-256 - Cofense Essential
-Threat Intelligence
-This playbook was built to search with Cofense for Threats and download Threat Reports.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-255 - GreyNoise Essential
-Threat Intelligence
-This playbook leverages GreyNoise to evaluate possible malicious IPs and notify the SOC team. GreyNoise tells security analysts what alerts and activities they should ignore by allowing them to curate data on IPs that saturate security tools with noise.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-254 - Exana Open DNS Essential
-Threat Intelligence
-This playbook allows you to query Exana Open DNS for DNS records and add the queried information to an incident.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-253 - PassiveTotal Essential
-Threat Intelligence
-This playbook leverages a PassiveTotal WHOIS action to increase or decrease incident severity.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-252 - EclecticIQ Essential
-Threat Intelligence
-This playbook allows you to use EclecticIQ, which offers state-of-the-art CTI technology for large enterprises, governments and MSSPs.
-
-
-
-
-251 - Knowbe4 Essential
-Threat Intelligence
-This playbook allows you to utilize findings from KnowBe4 security awareness training events during an incident investigation.
-
-
-
-
-249 - Pulsedive Essential
-Threat Intelligence
-This playbook is designed to perform enrichment and threat intelligence activities with Pulsedive.
-
-
-
-
-248 - Hybrid Analysis Essential
-Threat Intelligence
-This playbook is designed to perform enrichment and threat intelligence activities with Hybrid Analysis.
-
-
-
-
-247 - DomainTools Essential
-Threat Intelligence
-This playbook is designed to perform enrichment activities with DomainTools.
-
-
-
-
-246 - Cisco Umbrella Investigate Essential
-Threat Intelligence
-This playbook was built to gather enrichment data on incident observables using Cisco Umbrella Investigate.
-
-
-
-
-245 - Blueliv Essential
-Threat Intelligence
-This playbook was built to enrich incident evidence with threat intelligence data from Blueliv.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-244 - Cisco Threat Grid Essential
-Threat Intelligence
-This playbook was built to utilize Cisco AMP Threat Grid to retrieve information about incident elements such as IP, domain and file hash.
-
-
-
-
-243 - VirusTotal Essential
-Threat Intelligence
-This playbook was built to perform threat intelligence evidence gathering with VirusTotal.
-
-
-
-
-242 - APIVoid Essential
-Threat Intelligence
-This playbook was built to use APIVoid to gather enrichment data during incident investigations.
-
-
-
-
-241 - IP Quality Score Essential
-Threat Intelligence
-This playbook was built to perform threat intelligence evidence gathering with IP Quality Score.
-
-
-
-
-
-240 - AlienVault OTX Essential
-CTI
-This playbook was built to enrich incident evidence with threat intelligence data from AlienVault OTX.
-
-
-
-
-239 - IBM X-Force Exchange Essential
-CTI
-This playbook was built to enrich incident artifacts with intelligence data from IBM X-Force.
-
-
-
-
-238 - Recorded Future Essential
-CTI
-This playbook was built to utilize Recorded Future threat intelligence feeds during incident investigation.
-
-
-
-
-236 - CSE - Suspicious Linux Command
-Intrusion
-This playbook was built to prevent intrusion attempts.
-
-Getting the insight details from Cloud SIEM, the playbook will be doing multiple checks filtering the results by IP, user activity, and geolocation.
-
-Once the initial enrichment is done, the event can be processed with a logical condition for further investigation and User Choice for containment activities or marked as a false positive alert.
-
-
-
-
-235 - AbuseIPDB Essential
-CTI
-This playbook enriches IP addresses with reputation information gathered from AbuseIPD.
-
-
-
-
-234 - VirusTotal OIF Essential
-CTI
-Playbook designed to conduct threat intelligence activities with VirusTotal
-
-
-
-
-233 - CrowdStrike Falcon Sandbox & AlienVault analysis - File Submission
-CTI
-Submit a file for analysis and Download appropriate reports or Get a Summary of Submission using CrowdStrike Falcon SandBox integration, with additional information coming from AlienVault.
-
-
-
-
-232 - Block Domain - Cisco Threat Grid OIF
-Network Anomaly
-This playbook is design to block a domain on Cisco Threat Grid
-
-
-
-
-231 - Block Domain - Stormshield
-Network Anomaly
-This playbook is design to block a domain on Stormshield
-
-
-
-
-230 - Block Domain - Cisco Umbrella OIF
-Network Anomaly
-This playbook is design to block a domain on Cisco Umbrella
-
-
-
-
-229 - Block Domain - Firewall Tools
-Network Anomaly
-This playbook is designed to block a domain with firewall tools.
-
-
-
-
-228 - Block Domain - Mimecast
-Network Anomaly
-This playbook is design to block a domain on Mimecast
-
-
-
-
-227 - Block Domain - NG Firewall
-Network Anomaly
-This playbook is design to block a domain on NG Firewall
-
-
-
-
-226 - Block Domain - Check Point OIF
-Network Anomaly
-This playbook is designed to block a domain with Check Point Firewall.
-
-
-
-
-225 - Block IP - Firewall Tools
-Network Anomaly
-This playbook is design to block an IP on Firewall Tools
-
-
-
-
-224 - Block IP - Palo Alto Panorama OIF
-Network Anomaly
-This playbook is designed to block an IP with Palo Alto Panorama.
-
-
-
-
-223 - Block IP - NG Firewall Security
-Network Anomaly
-This playbook is designed to block an IP with NG Firewall Security.
-
-
-
-
-222 - Block IP - Check Point OIF Security
-Network Anomaly
-This playbook is designed to block an IP with Check Point OIF Security.
-
-
-
-
-
-221 - Block IP - Forcepoint Web Security
-Network Anomaly
-This playbook is designed to block an IP with Forcepoint Web Security.
-
-
-
-
-220 - Block IP - Pulse Secure
-Network Anomaly
-This playbook is designed to block an IP with Pulse Secure.
-
-
-
-
-219 - Block IP - Palo Alto NGFW OIF
-Network Anomaly
-This playbook is design to block an IP on Palo Alto NGFW.
-
-
-
-
-
-218 - Block IP - McAfee Web Gateway OIF
-Network Anomaly
-This playbook is designed to block an IP with McAfee Web Gateway.
-
-
-
-
-217 - Block Account - Generic
-Incident Response
-This playbook is designed to block a specific user found in Active Directory.
-
-
-
-
-216 - Account Enrichment - Generic
-Incident Response
-This playbook is designed to enrich a user found in Active Directory.
-
-
-
-
-215 - Passive Reconnaissance - Account User
-CTI
-This playbook was built to conduct passive reconnaissance activities automatically using a domain or an IP. It's useful for carrying out quick investigations if you suspect that a user's account was exposed via the internet (for example, a customer website).
-
-
-
-
-214 - Passive Reconnaissance - Domain User
-CTI
-This playbook was built to conduct passive reconnaissance activities automatically using a domain or an IP. It's useful for quick investigations if you suspect that your domain account has been compromised.
-
-
-
-
-213 - Passive Reconnaissance - Email
-CTI
-This playbook was built to conduct passive reconnaissance activities automatically using a domain or an IP. It's useful for quick investigations if you suspect that your email account has been compromised.
-
-
-
-
-212 - Passive Reconnaissance - General
-CTI
-This playbook was built to conduct passive reconnaissance activities automatically using a domain or an IP.
-
-The playbook is useful for carrying out quick investigations after suffering an attack. It allows you to investigate the source IP that caused the attack and, through quick enrichment actions, find out whether the involved IP/domain was compromised.
-
-
-
-
-211 - Passive Reconnaissance - Essential
-CTI
-This playbook was built to automatically conduct Passive Reconnaissance activities using a domain or IP.
-
-Useful for quickly investigating a domain in case you suspect it has been damaged / hacked.
-
-
-
-
-210 - Group Membership Update
-Incident Management
-This playbook will update user group permissions based on Okta group.
-
-
-
-
-209 - Deactivate User In Active Directory
-Incident Management
-This playbook will check for the user we want to deactivate.
-
-When found the playbook will disable the user and send a mail to it department.
-
-
-
-
-208 - Create User In Active Directory
-Incident Management
-This playbook will check for the new user we want to create.
-
-If it's not found the playbook will create and initialize the new user in Active Directory.
-
-
-
-
-207 - Email Headers Check - Generic
-Phishing
-This playbook is used to check an email header using mxtoolbox spf dmark and dkim functionalities and microsoft antispam headers.
-
-Once the results are extracted they are saved in notes and and added to an incident field.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-206 - Email Address Enrichment - Generic v2.1
-Phishing
-This playbook is used to parse email into internal and external.
-
-Internal emails will be enriched with information about the users.
-
-External emails will be enriched with threat intelligence feed about the domains found.
-
-
-
-
-205 - Detonate File - Joe Sandbox
-Malware
-This playbook is used to perform file ingestion and analysis using Joe Sandbox integration. The results wil be saved in notes.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-204 - Detonate File - FireEye AX
-Malware
-This playbook is used to perform file ingestion and analysis using FireEye AX integration. The results will be saved in notes.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-203 - Detonate File - Cuckoo
-Malware
-This playbook is used to perform file ingestion and analysis using Cuckoo Sandbox integration. The results wil be saved in notes.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-202 - Detonate File - Hybrid Analysis
-Malware
-This playbook is used to perform file ingestion and analysis using Hybrid Analysis technology. The results wil be saved in notes.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
-
-
-
-
-201 - Detonate File - ANYRUN
-Malware
-This playbook is used to perform file ingestion and analysis using the ANY.RUN sandbox technology. The results will be saved in notes.
-
-This playbook uses some actions available with Cloud SOAR only, but can be downloaded and reconfigured for Automation Service purposes.
 
 
 
