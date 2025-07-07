@@ -16,7 +16,7 @@ Amazon EBS is recommended for data that must be quickly accessible and requires 
 * [CloudWatch Metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html)
 
 :::note
-For [CloudTrail log](https://docs.aws.amazon.com/ebs/latest/userguide/logging-ebs-apis-using-cloudtrail.html), Amazon EBS and Amazon EC2 are tightly integrated services. Most EBS-related events are captured and reflected as part of EC2 events, since EBS volumes are typically attached to EC2 instances for storage and compute operations. See the [Amazon EC2 app](https://help.sumologic.com/docs/integrations/amazon-aws/ec2-cloudwatch-metrics/#events) for EBS related captured events.
+For [CloudTrail log](https://docs.aws.amazon.com/ebs/latest/userguide/logging-ebs-apis-using-cloudtrail.html), Amazon EBS and Amazon EC2 are tightly integrated services. Most EBS-related events are captured and reflected as part of EC2 events, since EBS volumes are typically attached to EC2 instances for storage and compute operations. See the [Amazon EC2 app](/docs/integrations/amazon-aws/ec2-cloudwatch-metrics/#events) for EBS related captured events.
 :::
 
 ## Setup

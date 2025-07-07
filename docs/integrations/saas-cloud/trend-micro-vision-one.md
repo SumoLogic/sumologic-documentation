@@ -17,13 +17,13 @@ This app includes [built-in monitors](#trend-micro-vision-one-monitors). For det
 
 ## Log types
 
-This app uses Sumo Logic’s Trend Micro Vision One Source to collect [alert logs](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source/) from the Trend Micro platform.
+This app uses Sumo Logic’s Trend Micro Vision One Source to collect [alert logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source/) from the Trend Micro platform.
 
 ## Sample log message
 
 <details>
 <summary>Alert Log</summary>
-    
+
 ```json
 {
     "schemaVersion": "1.15",
@@ -193,7 +193,7 @@ This app uses Sumo Logic’s Trend Micro Vision One Source to collect [alert log
 }
 ```
 </details>
-    
+
 ## Sample queries
 
 ```sql title="Total Alerts"
@@ -258,7 +258,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Trend Micro Vision One - Overview** dashboard provides details on security alerts, their severity, status, and distribution across different categories and time periods. 
+The **Trend Micro Vision One - Overview** dashboard provides details on security alerts, their severity, status, and distribution across different categories and time periods.
 
 Use this dashboard to:
 
@@ -278,7 +278,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 The Trend Micro Vision One monitors serve as a security tool, concentrating on observing essential operations and unusual occurrences within the Trend Micro Platform. These notifications offer instantaneous insight into significant events, allowing security personnel to swiftly react to deviations or breaches.
 
-| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
 |:--|:--|:--|:--|
 | `Trend Micro Vision One - Credential Dumping Detection` | This alert is triggered if techniques aligned with MITRE ATT&CK `T1003` (Credential Dumping) is detected. Helps for early detection of compromised credentials. | Critical | Count > 0 |
 | `Trend Micro Vision One - Critical Severity Alerts` | This alert is triggered if critical and high-severity alerts are detected that need urgent attention. | Critical | Count > 0|
