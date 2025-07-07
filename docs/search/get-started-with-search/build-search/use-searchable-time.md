@@ -55,7 +55,7 @@ Follow the below steps to run a search using the Searchable Time in the dashboar
 
 To create a search, refer to the [Search Job API Documentation](/docs/api/search-job/#create-a-search-job). Below mentioned parameter has been updated due to addition of Searchable time feature:
  
-| Parameter | Type | Requried | Description |
+| Parameter | Type | Required | Description |
 | :-- | :-- | :-- | :-- | 
 | `intervalTimeType` | String | Yes | This parameter defines whether you want to run the search by messageTime, receiptTime, or searchableTime. By default, the search will run by messageTime. |
 
@@ -67,7 +67,7 @@ If both `runByReceiptTime` and `intervalTimeType` parameters are present then th
 
 To create a dashboard, refer to the [Search Job API Documentation](/docs/api/dashboard/). Below mentioned parameter has been updated due to addition of Searchable time feature:
 
-| Parameter | Type | Requried | Description |
+| Parameter | Type | Required | Description |
 | :-- | :-- | :-- | :-- | 
 | `timeSource` | String | Yes | This parameter defines the time source of the query. Possible values are `Message`, `Receipt`, or `Searchable`. By default, `Message` will be used as the time source. <br/>**Message**. Uses the timestamp on the message.<br/>**Receipt**. Timestamp when the logs were received by Sumo Logic.<br/>**Searchable**. Timestamp when the logs are available for search.  |
 
