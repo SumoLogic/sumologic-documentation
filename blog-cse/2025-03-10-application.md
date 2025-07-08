@@ -1,6 +1,6 @@
 ---
 title: March 10, 2025 - Application Update
-image: https://help.sumologic.com/img/reuse/sumo-square.png
+image: https://www.sumologic.com/help/img/reuse/sumo-square.png
 keywords:
   - custom insights
   - insights

@@ -16,9 +16,9 @@ const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString()
 module.exports = {
   title: 'Sumo Logic Docs',
   tagline: '',
-  url: process.env.HOSTNAME || "http://localhost:3000",
+  url: process.env.HOSTNAME || "http://localhost:3000", // if this fails, change to "https://www.sumologic.com"
   trailingSlash: true,
-  baseUrl: process.env.BASE_URL || "/",
+  baseUrl: process.env.BASE_URL || "/help/",
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
   favicon: 'https://www.sumologic.com/favicon.ico',

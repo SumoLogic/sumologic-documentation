@@ -1,7 +1,7 @@
 ---
 title: Version 19.525-42 (Installed Collector)
 hide_table_of_contents: true
-image: https://help.sumologic.com/img/reuse/sumo-square.png
+image: https://www.sumologic.com/help/img/reuse/sumo-square.png
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

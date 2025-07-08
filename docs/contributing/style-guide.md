@@ -1273,7 +1273,7 @@ To add a text-only release note:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://help.sumologic.com/img/reuse/sumo-square.png    
+    image: https://www.sumologic.com/help/img/reuse/sumo-square.png    
     ---
     ```
     * `title`. Title for release note that includes product or feature name.
@@ -1301,7 +1301,7 @@ To add release notes with images:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://help.sumologic.com/img/reuse/sumo-square.png
+    image: https://www.sumologic.com/help/img/reuse/sumo-square.png
     ---
     ```
 1. Save the image to this folder and add them to the markdown file: `![alt text](image-name.png)`.
