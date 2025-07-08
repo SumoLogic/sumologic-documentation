@@ -277,7 +277,7 @@ module.exports = {
         logo: {
           alt: 'Sumo Logic logo',
           srcDark: 'img/reuse/sumo-logo.svg',
-          src: 'img/sumo-logo-dark.svg',
+          src: 'img/reuse/sumo-logo-dark.svg',
         },
         items: [
         // activeregex controls the top nav content
