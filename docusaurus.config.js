@@ -245,6 +245,12 @@ module.exports = {
         name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
       },
     ],
+    announcementBar: {
+      id: 'domain',
+      content: 'We’ve moved! Our docs are now at [www.sumologic.com/help](https://www.sumologic.com/help). Redirects are in place, but don’t forget to update your bookmarks.',
+      backgroundColor: '#EDF2F7',
+      textColor: '#1A202C',
+    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
