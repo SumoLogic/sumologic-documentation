@@ -62,12 +62,14 @@ In this step, you will configure the yaml required for Local File Collection. Be
 - **DenyList**. Provide path expression describing the files to be excluded.
 - **Endpoint**. (Default: `http://localhost:15672`.) The URL of the node to be monitored.
 :::note
-  The **Endpoint** value should have `http` at the beginning. For example, `http://localhost:port`. 
+  The **Endpoint** value should have `http` at the beginning. For example, `http://localhost:port`.
 :::
 - **Username**. Required. Enter the RabbitMQ username.
 - **Password Environment Variable Name**. Required. Enter the RabbitMQ password environment variable name.
 
-**Timestamp Parsing**. You can do timestamp parsing for log ingested using this source template. For more details, refer to [Timestamps, Time Zones, and Date Formats](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference) for OpenTelemetry collector.
+import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
+
+<TimestampParsing/>
 
 **Processing Rules**. You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 

@@ -27,7 +27,7 @@ When you create a source template, the following [fields](/docs/manage/fields/) 
 ### For metrics collection
 - Metrics for Redis are collected through OpenTelemetry [Redis receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/redisreceiver).
 - Receiver uses the [INFO command](https://redis.io/docs/latest/commands/info/) to get Redis statistics.
-- Make sure to set the Redis user's password as an environment variable for the OpenTelemetry agent. Refer to [Setting Environment Variables with Secret Values for Source Templates](../st-with-secrets.md). 
+- Make sure to set the Redis user's password as an environment variable for the OpenTelemetry agent. Refer to [Setting Environment Variables with Secret Values for Source Templates](../st-with-secrets.md).
 
 ### For logs collection
 import LogsCollectionPrereqisites from '../../../../../reuse/apps/logs-collection-prereqisites.md';
@@ -58,7 +58,9 @@ separated by a colon.
 - **Username** (Optional). Enter the Redis username in case you are using a specific user for monitoring.
 - **Password Environment Variable Name** (Required). Enter the Redis password environment variable name.
 
-**Timestamp Parsing**. You can do timestamp parsing for log ingested using this source template. For more details, refer to [Timestamps, Time Zones, and Date Formats](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference) for OpenTelemetry collector.
+import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
+
+<TimestampParsing/>
 
 **Processing Rules**. You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 

@@ -80,7 +80,7 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 In this step, you will configure the yaml required for MySQL collection. Below are the inputs required for configuration:
 
 - **Name**. Name of the source template.
-- **Description**. Description for the source template.	
+- **Description**. Description for the source template.
 - **Error log path**. Location where the SQL Errors are logged. Please refer to your my.cnf file.
 - **Slow Transaction log file path (optional)**. Location where the Slow SQL transactions are logged. Please refer to your my.cnf file.
 - **Endpoint**. The URL of the MySQL endpoint (default: `localhost:3306`).
@@ -88,8 +88,9 @@ In this step, you will configure the yaml required for MySQL collection. Below a
 - **Password Environment Variable Name**. Enter the MySQL password environment variable name.
 - **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value otel/mysql user needs to provide the value for `db.cluster.name`.
 
-**Timestamp Parsing**. You can do timestamp parsing for log ingested using this source template. For more details, refer to [Timestamps, Time Zones, and Date Formats](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference) for OpenTelemetry collector.
+import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
+<TimestampParsing/>
 
 **Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 
