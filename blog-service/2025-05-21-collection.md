@@ -1,6 +1,6 @@
 ---
 title: Snowflake Logs Source (Collection)
-image: https://www.sumologic.com/img/sumo-square.png
+image: https://www.sumologic.com/help/img/sumo-square.png
 keywords:
   - c2c
   - snowflake-logs-source

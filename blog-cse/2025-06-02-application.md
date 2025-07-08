@@ -1,6 +1,6 @@
 ---
 title: June 2, 2025 - Application Update
-image: https://www.sumologic.com/img/sumo-square.png
+image: https://www.sumologic.com/help/img/sumo-square.png
 keywords:
   - outlier rules
   - first seen rules
