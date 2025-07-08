@@ -377,7 +377,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/sumo-collection"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="80"/><h4>Sumo Collection</h4></a>
+  <a href="/docs/integrations/saas-cloud/sumo-collection"><img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="icon" width="80"/><h4>Sumo Collection</h4></a>
   <p>Identify, manage, and monitor collectors and sources within Sumo Logic.</p>
   </div>
 </div>
