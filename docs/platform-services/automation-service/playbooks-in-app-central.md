@@ -1574,7 +1574,7 @@ This playbook is used to perform file ingestion and analysis using the ANY.RUN s
 
 *Malware*
 
-This playbook is used to perform file ingestion and analysis using Hybrid Analysis technology. The results wil be saved in notes. 
+This playbook is used to perform file ingestion and analysis using Hybrid Analysis technology. The results will be saved in notes. 
 
 <SamplePlaybooks/>
 
@@ -1582,7 +1582,7 @@ This playbook is used to perform file ingestion and analysis using Hybrid Analys
 
 *Malware*
 
-This playbook is used to perform file ingestion and analysis using Cuckoo Sandbox integration. The results wil be saved in notes. 
+This playbook is used to perform file ingestion and analysis using Cuckoo Sandbox integration. The results will be saved in notes. 
 
 <SamplePlaybooks/>
 
@@ -1598,7 +1598,7 @@ This playbook is used to perform file ingestion and analysis using FireEye AX in
 
 *Malware*
 
-This playbook is used to perform file ingestion and analysis using Joe Sandbox integration. The results wil be saved in notes. 
+This playbook is used to perform file ingestion and analysis using Joe Sandbox integration. The results will be saved in notes. 
 
 <SamplePlaybooks/>
 

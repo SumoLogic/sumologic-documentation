@@ -30,7 +30,7 @@ Before you can access App Central, you must have the App Central Access role cap
    :::note
    <ActionsLimit/>
    :::
-1. **Install**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central).
+1. **Install**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](/docs/platform-services/automation-service/playbooks-in-app-central/#install-a-playbook-from-app-central).
 
 ## Work with integrations in App Central
 
