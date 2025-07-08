@@ -28,10 +28,7 @@ module.exports = {
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
   scripts: [
-    {
-    src: 'https://cdn.jsdelivr.net/npm/search-insights@2.17.3',
-    async: true,
-    },
+    { src: '/track-trial-click.js', async: true },
   ],
   future: {
     v4: true,
