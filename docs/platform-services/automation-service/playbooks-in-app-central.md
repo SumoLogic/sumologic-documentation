@@ -37,6 +37,8 @@ You can export the contents of integrations and playbooks from App Central.
 
 ## Playbooks in App Central
 
+This section lists all the out-of-the-box playbooks you can install.
+
 ### 1 - Basic IP Reputation
 
 *Denial of Service*
