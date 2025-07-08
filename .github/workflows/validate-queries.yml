@@ -1,8 +1,10 @@
 name: Validate SumoLogic Queries
 on:
-  pull_request:
+  pull_request_target:
     paths:
-      - '**/*.md'  # Trigger only when Markdown files change
+      - '**/*.md'
+    types:
+      - review_requested
 
 jobs:
   validate-queries:
@@ -11,6 +13,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Required for git diff detection
+
+      - name: Fetch pull request branch
+        run: git fetch origin ${{ github.event.pull_request.head.ref }}:${{ github.event.pull_request.head.ref }}
+
+      - name: Checkout PR branch
+        run: git checkout ${{ github.event.pull_request.head.ref }}
+
+      - name: Debug Git Log
+        run: git log --oneline -n 10
+          git diff --name-only --diff-filter=AM origin/main...HEAD -- 'docs/**/*.md' > changed_files.txt
+          echo "Files to validate:"
+          cat changed_files.txt
 
       - name: Set up Python
         uses: actions/setup-python@v4
