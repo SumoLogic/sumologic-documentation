@@ -13,7 +13,7 @@ Query Assist enhances the query-building experience in Sumo Logic by providing r
 ## Key enhancements
 
 * **Simplified learning curve**. Receive syntax suggestions and schema prompts to write queries without extensive knowledge of query syntax.
-* **Enhanced autocomplete**. Benefit from context-aware suggestions improve accuracy and efficiency, adapting to your queries and organizational patterns.
+* **Enhanced autocomplete**. Benefit from context-aware suggestions to improve accuracy and efficiency, adapting to your queries and organizational patterns.
 * **Streamlined field discovery**. Automatically receive suggestions for relevant fields, especially in structured data like JSON, reducing the need for manual searches.
 
 ## How to get started
