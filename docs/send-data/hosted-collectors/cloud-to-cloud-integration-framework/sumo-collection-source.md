@@ -11,7 +11,7 @@ description: The Sumo Collection Source aims to collect the list of the collecto
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="60"/>
+<img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="icon" width="60"/>
 
 Sumo Logic's Cloud-to-Cloud (C2C) framework enables seamless data integration by leveraging API-based connections to collect insights from external systems and services. The Sumo Collection Source is part of this framework and is designed to gather a list of collectors and their associated sources directly from the Sumo Logic platform.
 

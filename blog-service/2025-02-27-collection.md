@@ -1,6 +1,6 @@
 ---
 title: CyberArk Audit Source (Collection)
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://help.sumologic.com/img/reuse/sumo-square.png
 keywords:
   - collection
   - cyberark-audit-source
