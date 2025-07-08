@@ -30,7 +30,7 @@ Query Assist enhances the query-building experience in Sumo Logic by providing r
 
 Get real-time suggestions for query completion as you type, with token-by-token predictions that help you quickly finish your queries.
 
-<img src={useBaseUrl('img/search/get-started-search/token-by-token-prediction-and-autocomplete.png')} alt="token-by-token-prediction-and-autocomplete" width="400"/>
+<img src={useBaseUrl('img/search/get-started-search/token-by-token-prediction-and-autocomplete.png')} style={{border: '1px solid gray'}} alt="token-by-token-prediction-and-autocomplete" width="400"/>
 
 * **Operator suggestions**. When typing the first letters of an operator, the system displays all matching operators related to those letters, helping you quickly find and select the appropriate one. For example, typing `co` might suggest `count`, `count_distinct`, `count_frequent`, `compare`, `compose`, or other related operators.
 * **Value suggestions**. When you start typing a source expression (e.g. `_sourceCategory=`), you will be provided with relevant built-in metadata field options to help autocomplete your query.
@@ -43,7 +43,7 @@ For example, as you start typing, the system provides relevant metadata options 
 
 Automatically receive suggestions for relevant [fields](/docs/manage/fields) in structured data like JSON logs, making field discovery much easier.
 
-<img src={useBaseUrl('img/search/get-started-search/schema-discovery-and-field-suggestion.png')} alt="schema-discovery-and-field-suggestion" width="400"/>
+<img src={useBaseUrl('img/search/get-started-search/schema-discovery-and-field-suggestion.png')} style={{border: '1px solid gray'}} alt="schema-discovery-and-field-suggestion" width="400"/>
 
 * **Field suggestions**. For structured logs, the system automatically suggests relevant fields such as `userID`, `eventType`, or `timestamp` as you type. This eliminates the need for manual inspection of logs, making it easier to filter and aggregate data.
 * **Inline suggestions**. An inline suggestion is a real-time, context-aware recommendation within the search editor. By default, the first item in the dropdown is treated as an inline suggestion, but you can use the keyboard navigations to explore other suggestions, which will be shown inline. To apply an inline suggestion, press the Tab key.
@@ -71,9 +71,9 @@ Copilot with Query Assist video: https://docs.google.com/presentation/d/1HCaXROM
 
 ## Turn off autocomplete
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**. <br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**. <br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences"style={{border: '1px solid gray'}}  width="300"/>
 1. Access your [Preferences](/docs/get-started/account-settings-preferences/#my-preferences).
-1. Navigate to **My Preferences** and uncheck the **Show search autocomplete suggestions while typing** checkbox.<br/><img src={useBaseUrl('img/get-started/turn-off_autocomplete.png')} alt="turn-off_autocomplete" width="500"/>
+1. Navigate to **My Preferences** and uncheck the **Show search autocomplete suggestions while typing** checkbox.<br/><img src={useBaseUrl('img/get-started/turn-off_autocomplete.png')} alt="turn-off_autocomplete"style={{border: '1px solid gray'}}  width="500"/>
 
 ## Feedback
 
@@ -82,10 +82,10 @@ We value your input on Query Assist! Share your thoughts on its usability, relev
 Follow the below steps to provide your feedback:
 
 1. Enter the query typehead to view the suggestions dropdown.
-1. Press the thumbs up or down button to share your feedback.<br/><img src={useBaseUrl('img/search/get-started-search/query-suggestion-feedback.png')} alt="query-suggestion-feedback" width="400"/>
+1. Press the thumbs up or down button to share your feedback.<br/><img src={useBaseUrl('img/search/get-started-search/query-suggestion-feedback.png')} alt="query-suggestion-feedback" style={{border: '1px solid gray'}} width="400"/>
 1. When you press thumbs down, provide additional feedback in the dialog box.
 1. Select the **Include query string and provided suggestions in the feedback automatically** checkbox.
-1. Click **Submit**.<br/><img src={useBaseUrl('img/search/get-started-search/query-suggestion-thumbs-down-feedback.png')} alt="query-suggestion-thumbs-down-feedback" width="400"/>
+1. Click **Submit**.<br/><img src={useBaseUrl('img/search/get-started-search/query-suggestion-thumbs-down-feedback.png')} alt="query-suggestion-thumbs-down-feedback" style={{border: '1px solid gray'}} width="400"/>
 
 <!--
 Phased Availability:
