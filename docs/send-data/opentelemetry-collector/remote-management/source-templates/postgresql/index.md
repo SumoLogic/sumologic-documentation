@@ -93,7 +93,7 @@ In this step, you will configure the yaml required for PostgreSQL collection. Be
 - **Error Log Path**. Enter the path of the error log file for your PostgreSQL instance.
 - **Endpoint**. The endpoint of the PostgreSQL server. This value should be host:port. Default endpoint is `localhost:5432`.
   :::note
-  There should not be any http prefixed to this value. For example, `http://localhost:port`.
+  There should not be any http prefixed to this value. For example, `http://localhost:port`. 
   :::
 - **UserName**. Enter the PostgreSQL username.
 - **Password Environment Variable Name**. Enter the PostgreSQL password environment variable name.
