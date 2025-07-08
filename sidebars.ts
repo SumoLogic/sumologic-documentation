@@ -274,6 +274,7 @@ module.exports = {
                       ]
                     },
                     'send-data/opentelemetry-collector/remote-management/source-templates/st-with-secrets',
+                    'send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference',
                   ],
                 },
                 {
