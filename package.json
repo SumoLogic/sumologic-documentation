@@ -20,6 +20,7 @@
     "@algolia/autocomplete-preset-algolia": "1.17.9",
     "@algolia/client-abtesting": "5.18.0",
     "@algolia/client-analytics": "5.18.0",
+    "@algolia/client-insights": "5.18.0",
     "@algolia/client-personalization": "5.18.0",
     "@algolia/client-insights": "5.18.0",
     "@algolia/client-query-suggestions": "5.18.0",
