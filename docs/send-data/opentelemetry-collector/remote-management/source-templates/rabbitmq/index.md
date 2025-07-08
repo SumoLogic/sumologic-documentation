@@ -62,7 +62,7 @@ In this step, you will configure the yaml required for Local File Collection. Be
 - **DenyList**. Provide path expression describing the files to be excluded.
 - **Endpoint**. (Default: `http://localhost:15672`.) The URL of the node to be monitored.
 :::note
-  The **Endpoint** value should have `http` at the beginning. For example, `http://localhost:port`.
+  The **Endpoint** value should have `http` at the beginning. For example, `http://localhost:port`. 
 :::
 - **Username**. Required. Enter the RabbitMQ username.
 - **Password Environment Variable Name**. Required. Enter the RabbitMQ password environment variable name.
