@@ -247,7 +247,7 @@ module.exports = {
     ],
     announcementBar: {
       id: 'domain',
-      content: 'Coming soon: Sumo Logic Docs is moving to www.sumologic.com/help. Redirects will be in place, but don’t forget to update your bookmarks!',
+      content: 'We’ve moved! Our docs are now at [www.sumologic.com/help](https://www.sumologic.com/help). Redirects are in place, but don’t forget to update your bookmarks.',
       backgroundColor: '#EDF2F7',
       textColor: '#1A202C',
     },
