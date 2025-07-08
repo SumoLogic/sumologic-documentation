@@ -81,7 +81,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * <IntegrationCertificate/>
 * **Signals Daemon Query**. Enter the query to be executed in daemons.
 
-* **API Rate Limit Sleep (s)**. Enter the API rate limit in seconds. If the API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10. more info at https://www.sumologic.com/docs/api/metrics/#rate-limiting.
+* **API Rate Limit Sleep (s)**. Enter the API rate limit in seconds. If the API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10. more info at https://www.sumologic.com/help/docs/api/metrics/#rate-limiting.
 
 * **Custom Field Interval Name (Close Insight Trigger)**. This field is only used within the Close Insight Trigger as a custom field for insight ID in Cloud SOAR, for example, `opt_1`.
 

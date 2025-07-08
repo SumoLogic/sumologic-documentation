@@ -10,7 +10,7 @@ To install the app, do the following:
     :::
 1. Click **Next** in the **Setup Data** section.
 1. In the **Configure App** section of your respective app, complete the following field.
-    1. **Index**. Specify value for _index if the collection is configured with custom partition. [Learn more](https://www.sumologic.com/docs/search/optimize-search-partitions). Default value is set to `sumologic_default` (default partition)
+    1. **Index**. Specify value for _index if the collection is configured with custom partition. [Learn more](https://www.sumologic.com/help/docs/search/optimize-search-partitions). Default value is set to `sumologic_default` (default partition)
 1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 **Post-installation**

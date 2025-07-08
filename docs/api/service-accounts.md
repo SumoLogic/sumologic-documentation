@@ -36,4 +36,4 @@ The Service Accounts API allows you to manage service accounts. [Service account
 
 * User Management (all role capabilities)
 
-Only administrators can create service accounts. If you are unsure whether you are an administrator, you can view your role in **Preferences** (see [Onboarding Checklists](https://www.sumologic.com/docs/get-started/onboarding-checklists/)).
+Only administrators can create service accounts. If you are unsure whether you are an administrator, you can view your role in **Preferences** (see [Onboarding Checklists](https://www.sumologic.com/help/docs/get-started/onboarding-checklists/)).

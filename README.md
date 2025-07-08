@@ -2,7 +2,7 @@
 
 <p>
   <a href="https://github.com/SumoLogic/sumologic-documentation/blob/main/.github/workflows/production.yml"><img src="https://github.com/SumoLogic/sumologic-documentation/actions/workflows/production.yml/badge.svg" alt="GitHub Actions status"></a>
-  <a href="https://www.sumologic.com/docs/contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+  <a href="https://www.sumologic.com/help/docs/contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>
   <a href="https://x.com/SumoLogic"><img src="https://img.shields.io/twitter/follow/sumologic.svg?style=social" alt="Twitter Follow" /></a>
   <a href="https://www.sumologic.com/release-notes-service"><img src="https://img.shields.io/badge/RSS-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Follow" width="50"/></a>
@@ -55,14 +55,14 @@ To contribute to Sumo Docs, ensure you have the following tools installed:
 
 ## Apply your changes
 
-Make edits using [Markdown syntax](https://www.sumologic.com/docs/contributing/style-guide/#markdown). Keep contributions concise, informative, and aligned with our guidelines.
+Make edits using [Markdown syntax](https://www.sumologic.com/help/docs/contributing/style-guide/#markdown). Keep contributions concise, informative, and aligned with our guidelines.
 
-Refer to our [Contributor Guidelines](https://www.sumologic.com/docs/contributing/create-edit-doc/#edit-a-doc) for more information on:
+Refer to our [Contributor Guidelines](https://www.sumologic.com/help/docs/contributing/create-edit-doc/#edit-a-doc) for more information on:
 - Markdown editing
 - Proposing bug fixes
 - Testing your changes
 
-All contributions must follow our [Style Guide](https://www.sumologic.com/docs/contributing/style-guide/).
+All contributions must follow our [Style Guide](https://www.sumologic.com/help/docs/contributing/style-guide/).
 
 ## Building locally
 
