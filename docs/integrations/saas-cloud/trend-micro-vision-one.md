@@ -278,7 +278,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 The Trend Micro Vision One monitors serve as a security tool, concentrating on observing essential operations and unusual occurrences within the Trend Micro Platform. These notifications offer instantaneous insight into significant events, allowing security personnel to swiftly react to deviations or breaches.
 
-| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
 | `Trend Micro Vision One - Credential Dumping Detection` | This alert is triggered if techniques aligned with MITRE ATT&CK `T1003` (Credential Dumping) is detected. Helps for early detection of compromised credentials. | Critical | Count > 0 |
 | `Trend Micro Vision One - Critical Severity Alerts` | This alert is triggered if critical and high-severity alerts are detected that need urgent attention. | Critical | Count > 0|
