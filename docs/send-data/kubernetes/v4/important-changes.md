@@ -16,7 +16,7 @@ This page describes the major changes and the necessary migration steps.
 The [Kubernetes Attributes Processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/k8sattributesprocessor/README.md) is now supported for logs and metrics metadata enrichment. This processor is disabled by default. To enable this processor for logs, set `metadata.logs.useSumoK8sProcessor` to `false`. To enable this processor for metrics, set `metadata.metrics.useSumoK8sProcessor` to `false`.
 
 :::note
-The Service name isn't part of the metadata enrichment with this new processor.
+The Service name is part of the metadata enrichment with this processor in v4.15.0. Please refer to the following [OpenTelemetry service name calculation documentation](https://opentelemetry.io/docs/specs/semconv/non-normative/k8s-attributes/#how-servicename-should-be-calculated) to understand how the service name is calculated.
 :::
 
 ### Remove Fluent Bit and Fluentd
