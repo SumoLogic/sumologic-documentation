@@ -1,6 +1,6 @@
 ---
 id: notice-about-taxii-2
-title: Customer Communication – Product Defect Notification for Missing Indicators of Compromise (IOCs) for Threat Intelligence Feeds with the TAXII 2.0 Protocol
+title: Update on Missing IOC Fields in TAXII 2.0-Based Threat Intelligence Feeds
 description: This article is a product defect notification for missing indicators of compromise (IOCs) for Threat Intelligence feeds with the TAXII 2.0 protocol.
 ---
 
