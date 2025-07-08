@@ -17,7 +17,7 @@ For example, using `where` with the boolean operator [`isValidIP`](/docs/searc
     _collector="ABC1" | where type="web"
     ```
     ```sql
-    _collector="ABC6" | where type="web"
+    _collector="ABC7" | where type="web"
     ```   
 * Filters as false and will not return results:
     ```sql
