@@ -1,6 +1,6 @@
 ---
 title: Confluent Cloud Metrics Source (Collection)
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://www.sumologic.com/img/sumo-square.png
 keywords:
   - c2c
   - confluent-cloud-metrics-source

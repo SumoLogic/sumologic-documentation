@@ -1,6 +1,6 @@
 ---
 title: Sysdig Secure Source (Collection)
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://www.sumologic.com/img/sumo-square.png
 keywords:
   - apps
   - sysdig-secure-source

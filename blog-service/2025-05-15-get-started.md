@@ -1,6 +1,6 @@
 ---
 title: New Sumo Logic Onboarding Experience (Get Started)
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://www.sumologic.com/img/sumo-square.png
 keywords:
   - onboarding
   - trial
