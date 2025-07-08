@@ -52,7 +52,7 @@ The purpose of this playbook is the automated detection of a large number of mal
 *Malware*
 
 This playbook's main purpose is to analyze a malware by automating the discovery of anti-debug tricks in files, using Python scripts such as:
-- Flag Checking's & System calls (IsDebuggerPresent, PEB debugger flag, etc.)
+- Flag Checkings & System calls (IsDebuggerPresent, PEB debugger flag, etc.)
 - Structured/Vectored Exception Handling anti-debug tricks.
 - Threat Control.
 
