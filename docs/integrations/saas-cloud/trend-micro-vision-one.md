@@ -258,7 +258,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Trend Micro Vision One - Overview** dashboard provides details on security alerts, their severity, status, and distribution across different categories and time periods.
+The **Trend Micro Vision One - Overview** dashboard provides details on security alerts, their severity, status, and distribution across different categories and time periods. 
 
 Use this dashboard to:
 
