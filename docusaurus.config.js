@@ -276,7 +276,7 @@ module.exports = {
       navbar: {
         logo: {
           alt: 'Sumo Logic logo',
-          srcDark: 'img/sumo-logo.svg',
+          srcDark: 'img/reuse/sumo-logo.svg',
           src: 'img/sumo-logo-dark.svg',
         },
         items: [
