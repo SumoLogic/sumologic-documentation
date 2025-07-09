@@ -4,7 +4,7 @@
  *   – loaded once per page load
  */
 function addListener(btn) {
-  if (btn.__trialHooked) return;          // already wired
+  if (btn.__trialHooked) return;
   btn.__trialHooked = true;
 
   btn.addEventListener('click', () => {
@@ -21,8 +21,8 @@ function addListener(btn) {
           eventName: 'Start Trial Button Clicked',
           eventType: 'conversion',
           index:     'crawler_sumodocs',
-          objectIDs: ['free-trial-click'],   // dummy objectID
-          userToken: 'anonymous-user',
+          objectIDs: ['free-trial-click'],   // placeholder
+          userToken: 'anonymous-user',   // placeholder until we set up userToken/cookies auth
         }],
       }),
     })
@@ -50,7 +50,7 @@ export function onClientEntry() {
   waitForButton();
 }
 
-/* run after every client-side navigation (e.g. clicking a doc link) */
+/* run after every client-side navigation (e.g., clicking a doc link) */
 export function onRouteDidUpdate() {
   waitForButton();
 }

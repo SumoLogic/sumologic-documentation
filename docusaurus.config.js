@@ -270,11 +270,6 @@ module.exports = {
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
-      // Optional: path for search page that enabled by default (`false` to disable it)
-      //searchPagePath: false,
-      getMissingResultsUrl({ query }) {
-        return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
-      },
       insights: true,
     },
     prism: {
