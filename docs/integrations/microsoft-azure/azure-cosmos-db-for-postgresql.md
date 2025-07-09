@@ -19,8 +19,6 @@ For Azure Cosmos DB for PostgreSQL, you can collect the following logs and metri
 * **Metrics**. These metrics are available in [Microsoft.DBforPostgreSQL/serverGroupsv2](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-dbforpostgresql-servergroupsv2-metrics) namespace. 
 For more information on supported metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/concepts-monitoring#list-of-metrics).
 
-The above-mentioned metrics for **Azure Cosmos DB for PostgreSQL** are available in [Microsoft.DBforPostgreSQL/serverGroupsv2](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-dbforpostgresql-servergroupsv2-metrics) namespace.
-
 ## Setup
 
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
@@ -231,4 +229,3 @@ These alerts are metrics-based and will work for all Cosmos DB PostgreSQL instan
 ### HTTP Logs and Metrics Source used by Azure Functions
 
 To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
-
