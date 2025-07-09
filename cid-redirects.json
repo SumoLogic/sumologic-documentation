@@ -3910,6 +3910,7 @@
   "/Beta/SLO_Reliability_Management/Access_and_Create_SLOs": "/docs/observability/reliability-management-slo",
   "/Beta/Workday/Collect_Logs_for_the_Workday_App": "/docs/integrations/saas-cloud/workday",
   "/docs/beta/search-log-level": "/docs/search/get-started-with-search/search-page/log-level",
+  "/docs/search/get-started-with-search/search-page/event-analytics/": "/docs/search/get-started-with-search/search-page",
   "/Cloud_SIEM_Enterprise/Entities_and_Insights": "/docs/cse/records-signals-entities-insights",
   "/Cloud_SIEM_Enterprise/Entities_and_Insights/Insight_Generation_Process": "/docs/cse/records-signals-entities-insights",
   "/Cloud_SIEM_Enterprise/Entities_and_Insights/Global_Intelligence_for_Security_Insights": "/docs/cse/records-signals-entities-insights/global-intelligence-security-insights",
