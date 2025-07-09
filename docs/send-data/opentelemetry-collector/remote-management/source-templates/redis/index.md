@@ -58,7 +58,9 @@ separated by a colon.
 - **Username** (Optional). Enter the Redis username in case you are using a specific user for monitoring.
 - **Password Environment Variable Name** (Required). Enter the Redis password environment variable name.
 
-**Timestamp Parsing**. You can do timestamp parsing for log ingested using this source template. For more details, refer to [Timestamps, Time Zones, and Date Formats](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference) for OpenTelemetry collector.
+import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
+
+<TimestampParsing/>
 
 **Processing Rules**. You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 
