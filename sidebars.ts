@@ -521,6 +521,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zimperium-mtd-source',
               ],
             },
             {
