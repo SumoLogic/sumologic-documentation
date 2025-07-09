@@ -9,7 +9,7 @@ import Iframe from 'react-iframe';
 
 This guide will walk you through the steps of creating a monitor in Sumo Logic, from setting up trigger conditions to configuring advanced settings, notifications, and playbooks.
 
-Our AI-driven alerts use machine learning to analyze historical data, establish baselines, detect significant deviations, and filter out irrelevant alerts to reduce alert fatigue and help teams focus on critical issues. These capabilities apply to both logs and metrics, providing a comprehensive monitoring solution. With seasonality detection and customizable anomaly clustering, false positives are minimized, enabling faster issue resolution.
+Our alerts use machine learning to analyze historical data, establish baselines, detect significant deviations, and filter out irrelevant alerts to reduce alert fatigue and help teams focus on critical issues. These capabilities apply to both logs and metrics, providing a comprehensive monitoring solution. With seasonality detection and customizable anomaly clustering, false positives are minimized, enabling faster issue resolution.
 
 Integrated playbooks automate incident response by gathering diagnostics, notifying teams, triggering recovery actions, and streamlining workflows to improve response times. You can link playbooks to monitors to automate tasks such as restarting services or scaling infrastructure, ensuring swift and efficient anomaly resolution.
 
@@ -88,7 +88,7 @@ Set specific threshold conditions for well-defined KPIs with constant thresholds
 
 #### Anomaly
 
-Leverage machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This *AI-driven alerting* system uses historical data to minimize false positives and alerts you to deviations.
+Leverage machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This alerting system uses historical data to minimize false positives and alerts you to deviations.
 
 * **Model-driven detection**. Machine learning models create accurate baselines, eliminating guesswork and noise.
 * **AutoML**. The system self-tunes with seasonality detection, minimizing user intervention and adjusting for recurring patterns to reduce false positives.
@@ -98,7 +98,7 @@ Leverage machine learning to identify unusual behavior and suspicious patterns b
 * **Customizable detection**. Use advanced rules like "Cluster anomalies" to detect multiple data points exceeding thresholds within a set timeframe.
 
 :::sumo Micro Lesson
-Learn about AI-driven alerting.
+Watch this micro lesson to learn about anomaly monitors.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/8z9b2zqtc3?web_component=true&seo=true&videoFoam=false"
   width="854px"
