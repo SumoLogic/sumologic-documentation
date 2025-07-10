@@ -6,7 +6,6 @@ keywords:
   - time
   - time reference
   - timezone
-  - timezone
   - time zone
 ---
 
@@ -19,13 +18,12 @@ We support several options for handling timestamps, time zones, and date formats
 This guide covers timestamp parsing behavior, configuration, and troubleshooting specific to OTRM. If you're using traditional Sumo Logic sources (not OTRM), refer to the general [Time Reference documentation](/docs/send-data/reference-information/time-reference/).
 
 When collecting log data, the timestamp attached to messages is critical for data integrity and accurate search results. Sumo Logic indexes the timestamp of each message to ensure results fall within the query’s time range, allowing you to reconstruct event timelines reliably.
-When collecting log data, the timestamp attached to messages is critical for data integrity and accurate search results. Sumo Logic indexes the timestamp of each message to ensure results fall within the query’s time range, allowing you to reconstruct event timelines reliably.
 
 ## Timestamps
 
 Timestamp is the part of a log message that marks the time that an event occurred. During ingestion, we can detect the message timestamp, convert it to Unix epoch time (the number of milliseconds since midnight, January 1, 1970 UTC), and index it. The timestamp is parsed either using the default timestamp parsing settings, or a custom format that you specify, including the time zone.
 
-When configuring a source template, specify a custom format to parse timestamps in your log messages. 
+When configuring a source template, you can specify a custom format to parse timestamps in your log messages. 
 
 :::note
 Currently, only `strptime` timestamps are supported in the source templates.
@@ -46,7 +44,7 @@ OpenTelemetry Collectors can automatically parse most timestamps without any is
 
 1. Perform one of the following steps:
    * If you're configuring a new Source template, proceed to Step 2. Or,
-   * To edit the timestamp settings for an existing Source template, navigate to the source template. Then click on **Edit**, to the right of the Source name and go to Step 2.<br/><img src={useBaseUrl('img/send-data/source-template-edit.png')} alt="Screenshot showing the editing interface for a source template in Sumo Logic, highlighting the section for editing advanced options including timestamp settings" style={{border: '1px solid gray'}} width="400"/>
+   * To edit the timestamp settings for an existing Source template, navigate to the source template. Then click **Edit** to the right of the Source name and go to Step 2.<br/><img src={useBaseUrl('img/send-data/source-template-edit.png')} alt="Screenshot showing the editing interface for a source template in Sumo Logic, highlighting the section for editing advanced options including timestamp settings" style={{border: '1px solid gray'}} width="400"/>
 1. Navigate to the **Timestamp Parsing** section and select **Specify the format** and enter the below details:
     1. **Select Timezone**. Define the geographic location (time zone) to use while parsing a timestamp that does not include a time zone. The available locations depend on the local IANA Time Zone database. For example, `America/New_York`. For more examples, refer to the [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
     1. **Format**. Specify the exact layout of the timestamp to be parsed. For example, `- %Y-%m-%dT%H:%M:%S.%LZ`. To learn more about the formatting rules, refer to [this guide](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/internal/coreinternal/timeutils/internal/ctimefmt/ctimefmt.go#L68).
