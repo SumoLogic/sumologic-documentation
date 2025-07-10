@@ -10,6 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
+<!-- Originally added as a beta article with SUMO-215965. -->
+
 Previously, SLOs were only supported in Sumo Logic's Continuous data tier. This support enabled you to configure SLOs on Infrequent Tier logs to increase the monitoring coverage for reliability management.
 
 ## Sample queries

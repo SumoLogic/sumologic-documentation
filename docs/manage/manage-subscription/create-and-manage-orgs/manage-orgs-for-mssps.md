@@ -13,6 +13,8 @@ description: Learn how to manage organizations for Managed Security Service Prov
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<!-- Originally added as a beta article with DOCS-637. -->
+
 This article describes how to manage organizations for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
 
 ## Considerations

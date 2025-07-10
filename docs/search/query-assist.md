@@ -10,6 +10,8 @@ description: Logs Query Assist improvements reduce the complexity of Sumo Logicâ
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<!-- Originally added as a beta article with DOCS-409. -->
+
 :::sumo Preview release
 This is a Preview release. [Register here](https://docs.google.com/forms/d/e/1FAIpQLSdtmzRn1NyAdk1rXGZrJrpQQwR2i9FKOYd3uKLwEzrkZGVrwQ/viewform). To learn more, contact your Sumo Logic account executive.
 :::
