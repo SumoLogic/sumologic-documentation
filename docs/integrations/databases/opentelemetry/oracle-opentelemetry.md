@@ -557,20 +557,20 @@ Recent Jobs in the database. A table of information about recent database jobs, 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Unified-Audit-Syslog.png' alt="Monitor Performance by DB Script" />
 See information derived from the syslog audit trail, including successful and failed activities, successful and failed logon attempts. Additionally, this dashboard also provides insight around logon status trend, top current, and database users. This dashboard work with unified audit logs exported from both Windows and Linux environment.
 
-### Performance & I/O
+### Performance and I/O
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Performance-I-O.png' alt="Monitor Performance by DB Script" />
-The Oracle - Performance & I/O dashboard gives insight about - session and process utilization against their limits, PGA memory allocation, and overall SQL execution versus parse rates. In addition to this, it monitors detailed I/O metrics around physical reads, write requests, and cache-bypassed direct I/O. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
+The Oracle - Performance and I/O dashboard gives insight about - session and process utilization against their limits, PGA memory allocation, and overall SQL execution versus parse rates. In addition to this, it monitors detailed I/O metrics around physical reads, write requests, and cache-bypassed direct I/O. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
 
-### Locking & Concurrency
+### Locking and Concurrency
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Locking-Concurrency.png' alt="Monitor Performance by DB Script" />
-The Oracle - Locking & Concurrency dashboard gives insight about - the rate and total count of critical database deadlocks. In addition to this, it monitors resource contention by tracking DML locks, enqueue locks, and enqueue resources against their configured limits. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
+The Oracle - Locking and Concurrency dashboard gives insight about - the rate and total count of critical database deadlocks. In addition to this, it monitors resource contention by tracking DML locks, enqueue locks, and enqueue resources against their configured limits. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
 
-### Application & Session Analysis
+### Application and Session Analysis
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Application-Session-Analysis.png' alt="Monitor Performance by DB Script" />
-The Oracle - Application & Session Analysis dashboard gives insight about - active sessions broken down by user and background types, transaction commit rates, and logical reads. In addition to this, it monitors application health through rollback rates and SQL parsing efficiency. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
+The Oracle - Application and Session Analysis dashboard gives insight about - active sessions broken down by user and background types, transaction commit rates, and logical reads. In addition to this, it monitors application health through rollback rates and SQL parsing efficiency. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
 
 ### Parallel Execution
 
