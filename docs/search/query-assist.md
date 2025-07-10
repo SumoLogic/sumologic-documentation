@@ -61,7 +61,7 @@ Suggestions are ranked based on your organization’s common queries, making que
 
 ## Limitations
 
-- Suggestions are predictive in nature and may not be comprehensive or completely accurate in every circumstance.
+Suggestions are predictive in nature and may not be comprehensive or completely accurate in every circumstance.
 
 <!-- hold off
 ### Need more help?
