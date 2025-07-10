@@ -396,6 +396,7 @@ module.exports = {
             type: 'search',
             position: 'left',
           },
+          { to: '/advanced-search', label: 'Advanced search', position: 'left' },
           {
             type: 'html',
             position: 'right',

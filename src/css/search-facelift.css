@@ -1,0 +1,73 @@
+/*──────────────── FACET COLUMN ────────────────*/
+.facet-scroll {
+  max-height: 34rem;
+  overflow: auto;
+  padding-right: 0.5rem;
+  margin: 0;
+}
+
+.facet-scroll .ais-HierarchicalMenu-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.facet-scroll .ais-HierarchicalMenu-item { margin: 0.3rem 0; }
+
+.facet-scroll a                      { text-decoration: none; color: #0454b8; }
+.facet-scroll .ais-HierarchicalMenu-item--selected > a { font-weight: 600; }
+
+/* hide Algolia’s default count bubble */
+.ais-HierarchicalMenu-count { display: none; }
+
+/*──────────────── HITS LIST & CARDS ───────────*/
+/* let Algolia’s UL itself act as the grid */
+ul.ais-Hits-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0;
+  display: grid;
+  grid-gap: 1.5rem;
+}
+
+@media (min-width: 640px)  { ul.ais-Hits-list { grid-template-columns: repeat(2,1fr);} }
+@media (min-width: 1024px) { ul.ais-Hits-list { grid-template-columns: repeat(3,1fr);} }
+
+.ais-Hits-item { margin: 0; }
+
+.hit-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: none;
+  transition: box-shadow .15s ease;
+}
+.hit-card:hover { box-shadow: 0 4px 12px rgb(0 0 0 / 8%); }
+
+.hit-breadcrumb {
+  margin: 0 0 .25rem;
+  font-size: .75rem;
+  color: #626f86;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hit-title   { margin: 0;   font-size: 1.125rem; font-weight: 600; color: #0454b8; }
+.hit-snippet { margin-top: .5rem; font-size: .875rem; color: #404040;
+               display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+               overflow: hidden; }
+
+.ais-Pagination-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;                 /* rows instead of column */
+  gap: 0.75rem;                  /* space between numbers */
+  justify-content: center;       /* center on the page */
+  align-items: center;
+}
+
+.ais-Pagination-item {           /* remove default li indent */
+  margin: 0;
+}
