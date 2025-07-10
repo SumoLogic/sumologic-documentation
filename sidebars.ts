@@ -2282,6 +2282,7 @@ integrations: [
           'integrations/google/cloud-pub-sub',
           'integrations/google/cloud-router',
           'integrations/google/cloud-run',
+          'integrations/google/cloud-security-command-center',
           'integrations/google/cloud-spanner',
           'integrations/google/cloud-tasks',
           'integrations/google/cloud-tpu',
