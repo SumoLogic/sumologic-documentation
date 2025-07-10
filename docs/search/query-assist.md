@@ -6,7 +6,7 @@ description: Logs Query Assist improvements reduce the complexity of Sumo Logicâ
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Query Assist enhances the query-building experience in Sumo Logic by providing real-time syntax suggestions, schema prompts, and partial query predictions. These enhancements simplify the process for users at all skill levels, making it easier to write accurate and efficient queries, enabling easier discovery of relevant fields, minimizing errors, and providing intelligent assistance for query creation. These suggestions that appear complies with the user's role-based access restrictions.
+Query Assist enhances the query-building experience in Sumo Logic by providing real-time syntax suggestions, schema prompts, and partial query predictions. These enhancements simplify the process for users at all skill levels, making it easier to write accurate and efficient queries, enabling easier discovery of relevant fields, minimizing errors, and providing intelligent assistance for query creation. The suggestions that appear comply with the user's role-based access restrictions.
 
 <img src={useBaseUrl('img/search/get-started-search/query-assist-preview1.gif')} alt="query assist demo gif" style={{border: '1px solid gray'}} width="700"/>
 
