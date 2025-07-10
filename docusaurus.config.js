@@ -245,6 +245,12 @@ module.exports = {
         name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
       },
     ],
+    announcementBar: {
+      id: 'blackhat',
+      content: 'Visit Sumo Logic at Black Hat USA in Las Vegas: August 6-7, 2025 | Mandalay Bay | Booth #5812 | <a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/events/black-hat-book-meeting">Click here</a> to book a meeting with us!',
+      backgroundColor: '#b0eefe',
+      textColor: '#091E42',
+    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -276,8 +282,8 @@ module.exports = {
       navbar: {
         logo: {
           alt: 'Sumo Logic logo',
-          srcDark: 'img/sumo-logo.svg',
-          src: 'img/sumo-logo-dark.svg',
+          srcDark: 'img/reuse/sumo-logo.svg',
+          src: 'img/reuse/sumo-logo-dark.svg',
         },
         items: [
         // activeregex controls the top nav content

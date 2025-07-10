@@ -80,7 +80,7 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 In this step, you will configure the yaml required for MySQL collection. Below are the inputs required for configuration:
 
 - **Name**. Name of the source template.
-- **Description**. Description for the source template.	
+- **Description**. Description for the source template.
 - **Error log path**. Location where the SQL Errors are logged. Please refer to your my.cnf file.
 - **Slow Transaction log file path (optional)**. Location where the Slow SQL transactions are logged. Please refer to your my.cnf file.
 - **Endpoint**. The URL of the MySQL endpoint (default: `localhost:3306`).

@@ -757,13 +757,13 @@ You can use a link to a file embedding the entire file, or embed a range of code
   <TabItem value="Markdown">
 
   ```md
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
+  <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
   ```
 
   </TabItem>
   <TabItem value="Result">
 
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
+  <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
 
   </TabItem>
   </Tabs>
@@ -819,13 +819,13 @@ When adding an image to a bulleted or sequential list, include the image snippet
 <TabItem value="Markdown">
 
 ```md
-1. Here is a dinosaur.<br/><img src={useBaseUrl('img/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-1. Here is a dinosaur. <br/><img src={useBaseUrl('img/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
 
 </TabItem>
 </Tabs>
@@ -1273,7 +1273,7 @@ To add a text-only release note:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://help.sumologic.com/img/sumo-square.png    
+    image: https://help.sumologic.com/img/reuse/sumo-square.png    
     ---
     ```
     * `title`. Title for release note that includes product or feature name.
@@ -1301,7 +1301,7 @@ To add release notes with images:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://help.sumologic.com/img/sumo-square.png
+    image: https://help.sumologic.com/img/reuse/sumo-square.png
     ---
     ```
 1. Save the image to this folder and add them to the markdown file: `![alt text](image-name.png)`.
