@@ -8,6 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Explore the individual release notes pages to see what's new, and consider subscribing to the RSS feeds for automatic updates.
 
+<!-- When can we change the /rss.xml links? -->
+
 <div className="box-wrapper">
 
 <div className="box smallbox card">

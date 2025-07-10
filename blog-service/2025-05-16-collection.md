@@ -1,6 +1,6 @@
 ---
 title: Akamai CPC Source (Collection)
-image: https://help.sumologic.com/img/reuse/sumo-square.png
+image: https://www.sumologic.com/help/img/reuse/sumo-square.png
 keywords:
   - c2c
   - akamai-cpc-source
