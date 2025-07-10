@@ -560,27 +560,27 @@ See information derived from the syslog audit trail, including successful and fa
 ### Performance and I/O
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Performance-I-O.png' alt="Monitor Performance by DB Script" />
-The Oracle - Performance and I/O dashboard gives insight about - session and process utilization against their limits, PGA memory allocation, and overall SQL execution versus parse rates. In addition to this, it monitors detailed I/O metrics around physical reads, write requests, and cache-bypassed direct I/O. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
+The Oracle - Performance and I/O dashboard gives insight into session and process utilization against their limits, PGA memory allocation, and overall SQL execution versus parse rates. In addition to this, it monitors detailed I/O metrics around physical reads, write requests, and cache-bypassed direct I/O. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
 
 ### Locking and Concurrency
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Locking-Concurrency.png' alt="Monitor Performance by DB Script" />
-The Oracle - Locking and Concurrency dashboard gives insight about - the rate and total count of critical database deadlocks. In addition to this, it monitors resource contention by tracking DML locks, enqueue locks, and enqueue resources against their configured limits. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
+The Oracle - Locking and Concurrency dashboard gives insight into the rate and total count of critical database deadlocks. In addition to this, it monitors resource contention by tracking DML locks, enqueue locks, and enqueue resources against their configured limits. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
 
 ### Application and Session Analysis
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Application-Session-Analysis.png' alt="Monitor Performance by DB Script" />
-The Oracle - Application and Session Analysis dashboard gives insight about - active sessions broken down by user and background types, transaction commit rates, and logical reads. In addition to this, it monitors application health through rollback rates and SQL parsing efficiency. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
+The Oracle - Application and Session Analysis dashboard gives insight into active sessions broken down by user and background types, transaction commit rates, and logical reads. In addition to this, it monitors application health through rollback rates and SQL parsing efficiency. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
 
 ### Parallel Execution
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Parallel-Execution.png' alt="Monitor Performance by DB Script" />
-The Oracle - Parallel Execution dashboard gives insight about - the rate of parallelized queries, DML, and DDL statements. In addition to this, it provides a detailed downgrade analysis, tracking when parallel operations are reduced or forced to run serially due to resource constraints. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
+The Oracle - Parallel Execution dashboard gives insight into the rate of parallelized queries, DML, and DDL statements. In addition to this, it provides a detailed downgrade analysis, tracking when parallel operations are reduced or forced to run serially due to resource constraints. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
 
 ### Storage Management
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Storage-Management.png' alt="Monitor Performance by DB Script" />
-The Oracle - Storage Management dashboard gives insight about - total used space across all tablespaces and a breakdown of usage by individual tablespace name. In addition to this, it monitors the configured size limits for each tablespace to proactively manage storage. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
+The Oracle - Storage Management dashboard gives insight into the total used space across all tablespaces and a breakdown of usage by individual tablespace name. In addition to this, it monitors the configured size limits for each tablespace to proactively manage storage. This dashboard is based on the [metrics collected by Oracle DB opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/oracledbreceiver/documentation.md).
 
 ## Create monitors for Oracle app
 
@@ -592,18 +592,18 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Oracle - Admin Restricted Command Execution` | This alert is triggered when the Listener could not resolve a command. | Count > 0 | Count < = 0 |
+| `Oracle - Admin Restricted Command Execution` | This alert is triggered when the Listener is not able to resolve a command. | Count > 0 | Count < = 0 |
 | `Oracle - Archival Log Creation` | This alert is triggered when there is an archive log creation error. | Count > 0 | Count < = 0 |
-| `Oracle - Block Corruption` | This alert is triggered when we detect corrupted data blocks. | Count > 0 | Count < = 0 |
+| `Oracle - Block Corruption` | This alert is triggered when corrupted data blocks are detected. | Count > 0 | Count < = 0 |
 | `Oracle - Database Crash` | This alert is triggered when the database crashes. | Count > 0 | Count < = 0 |
 | `Oracle - Deadlock` | This alert is triggered when deadlocks are detected. | Count > 5 | Count < = 5 |
-| `Oracle - Fatal NI Connect Error` | This alert is triggered when we detect a "Fatal NI connect error". | Count > 0 | Count < = 0 |
+| `Oracle - Fatal NI Connect Error` | This alert is triggered when a "Fatal NI connect error" occurs. | Count > 0 | Count < = 0 |
 | `Oracle - High Process Usage` | This alert is triggered when process usage approaches the configured limit. | Count > = 90 | Count < 90 |
-| `Oracle - High Session Usage` | This alert is triggered when the Oracle database session usage exceeds configured limit. | Count > = 97 | Count < 97 |
-| `Oracle - High Tablespace Usage` | This alert is triggered when tablespace usage percentage exceeds configured limit to prevent disk space issues. | Count > = 90 | Count < 90 |
+| `Oracle - High Session Usage` | This alert is triggered when the Oracle database session usage exceeds the configured limit. | Count > = 97 | Count < 97 |
+| `Oracle - High Tablespace Usage` | This alert is triggered when tablespace usage percentage exceeds the configured limit to prevent disk space issues. | Count > = 90 | Count < 90 |
 | `Oracle - Internal Errors` | This alert is triggered when internal errors are detected. | Count > 0 | Count < = 0 |
-| `Oracle - Login Fail` | This alert is triggered when we detect that a user cannot login. | Count > 0 | Count < = 0 |
-| `Oracle - Possible Inappropriate Activity` | This alert is triggered when we detect possible inappropriate activity. | Count > 0 | Count < = 0 |
-| `Oracle - TNS Error` | This alert is triggered when we detect TNS operations errors. | Count > 0 | Count < = 0 |
-| `Oracle - Unable To Extend Tablespace` | This alert is triggered when we detect that we are unable to extend tablespaces. | Count > 0 | Count < = 0 |
-| `Oracle - Unauthorized Command Execution` | This alert is triggered when we detect that a user is not authorized to execute a requested listener command in a Oracle instance. | Count > 0 | Count < = 0 |
+| `Oracle - Login Fail` | This alert is triggered when a user login fails. | Count > 0 | Count < = 0 |
+| `Oracle - Possible Inappropriate Activity` | This alert is triggered when possible inappropriate activities are detected. | Count > 0 | Count < = 0 |
+| `Oracle - TNS Error` | This alert is triggered when the TNS operations encounter errors. | Count > 0 | Count < = 0 |
+| `Oracle - Unable To Extend Tablespace` | This alert is triggered when the user is unable to extend the tablespaces. | Count > 0 | Count < = 0 |
+| `Oracle - Unauthorized Command Execution` | This alert is triggered when an unauthorized user attempts to execute a requested listener command in an Oracle instance. | Count > 0 | Count < = 0 |
