@@ -58,9 +58,9 @@ separated by a colon.
 - **Username** (Optional). Enter the Redis username in case you are using a specific user for monitoring.
 - **Password Environment Variable Name** (Required). Enter the Redis password environment variable name.
 
-import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
+import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-<OtelLogAdvanceOption/>
+<TimestampParsing/>
 
 **Processing Rules**. You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 
