@@ -173,9 +173,9 @@ The minimum sample period for GCP metrics is 60 seconds, in which only 1 data po
 | BOOL | N/A | N/A | Count |
 
 
-## Health Events
+## Account Events
 
-Health events are provided for the following:
+Account events are provided for the following:
 
 * Connection to the GCP server fails: This connection error may be due to incorrect or invalid credentials or the project has been deleted, including incorrect project id, private key, client email, and access.  
 * No metric is found to ingest due to source configuration: The source may include a custom service that does not exist or match data (due to typos or incorrect name). Verify your source configuration against available GCP metrics.

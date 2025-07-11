@@ -257,11 +257,11 @@ Search for only capacity usage logs:
 _index=sumologic_audit _sourceName=VOLUME_QUOTA _sourceCategory=account_management "Budget" "last reset"
 ```
 
-### Health events
+### Account events
 
-Health events allow you to keep track of the health of your Collectors, Sources, and Ingest Budgets. You can use them to find and investigate common errors and warnings that are known to cause collection issues. See [Health events](/docs/manage/health-events.md) for details.
+Account events allow you to keep track of the health of your Collectors, Sources, and Ingest Budgets. You can use them to find and investigate common errors and warnings that are known to cause collection issues. See [Account events](/docs/manage/account-events.md) for details.
 
-Ingest budgets that have exceeded their capacity are placed in an **Error** health state. The following are two common queries used to investigate the health of ingest budgets.
+Ingest budgets that have exceeded their capacity are placed in an **Error** account state. The following are two common queries used to investigate the health of ingest budgets.
 
 A query to search for all ingest budgets that are over capacity.
 

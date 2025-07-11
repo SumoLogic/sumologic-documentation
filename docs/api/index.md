@@ -96,7 +96,7 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/health-events"><img src={useBaseUrl('img/icons/company-value/heart-wellness.png')} alt="Thumbnail icon" width="50"/><h4>Health Events</h4></a>      
+  <a href="/docs/api/account-events"><img src={useBaseUrl('img/icons/company-value/heart-wellness.png')} alt="Thumbnail icon" width="50"/><h4>Account Events</h4></a>      
   </div>
 </div>
 <div className="box smallbox card">

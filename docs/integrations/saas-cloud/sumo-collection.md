@@ -18,7 +18,7 @@ This app includes [built-in monitors](#sumo-collection-monitors). For details on
 :::
 
 :::tip
-For related info on collector health events, see [this doc](/docs/manage/health-events).
+For related info on collector account events, see [this doc](/docs/manage/account-events).
 :::
 
 ## Log types

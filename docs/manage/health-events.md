@@ -1,6 +1,6 @@
 ---
-id: health-events
-title: Health Events
+id: account-events
+title: Account Events
 description: Monitor the health of your Collectors and Sources.
 ---
 
@@ -11,50 +11,49 @@ description: Monitor the health of your Collectors and Sources.
 | CloudFlex | Professional, Enterprise |
 | Credits | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-Health events allow you to keep track of the health of your Collectors, Sources, and Ingest Budgets. You can use them to find and investigate common errors and warnings that are known to cause collection issues. 
+System events allow you to keep track of the health of your Collectors, Sources, and Ingest Budgets. You can use them to find and investigate common errors and warnings that are known to cause collection issues. 
 
 This framework includes the following:
 
-* Health event logs indexed in the [System Event Index](/docs/manage/security/audit-indexes/system-event-index).
-* A [health events table](#health-events-table) on the Alerts page.
-* A health status column on the [Collection page](#collection-page).
+* Account event logs indexed in the [Account Event Index](/docs/manage/security/audit-indexes/account-event-index).
+* A [account events table](#account-events-table) on the Alerts page.
+* A account status column on the [Collection page](#collection-page).
 
-Health events are sent from Installed Collectors on version 19.308-2 and
-later.
+Account events are sent from Installed Collectors on version 19.308-2 and later.
 
 ## Alerts
 
-Alerts for specific health events are easy to create in the Health Events Table. The details pane of an event provides a **Create Scheduled Search** button to automatically generate the required query.
+Alerts for specific account events are easy to create in the Account Events Table. The details pane of an event provides a **Create Scheduled Search** button to automatically generate the required query.
 
-## Health events
+## Account events
 
-Health events are created when an issue is detected with a Collector or Source. Events are indexed and searchable in a separate partition named **sumologic_system_events** in the [System Event Index](/docs/manage/security/audit-indexes/system-event-index). For details on what information is available in a health event, see the [common parameters](#common-parameters) table.
+Account events are created when an issue is detected with a Collector or Source. Events are indexed and searchable in a separate partition named **sumologic_system_events** in the [Account Event Index](/docs/manage/security/audit-indexes/account-event-index). For details on what information is available in a health event, see the [common parameters](#common-parameters) table.
 
-### Health events table
+### Account events table
 
-The health events table allows you to easily view and investigate problems getting your data to Sumo.
+The account events table allows you to easily view and investigate problems getting your data to Sumo.
 
-On the health events table, you can search, filter, and sort incidents by key aspects like severity, resource name, event name, resource type, and opened since date.
+On the account events table, you can search, filter, and sort incidents by key aspects like severity, resource name, event name, resource type, and opened since date.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the health events table, in the main Sumo Logic menu select **Manage Data > Monitoring > Health Events**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the account events table, in the main Sumo Logic menu select **Manage Data > Monitoring > Health Events**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the health events table, in the top menu select **Configuration**, and then under **Data Collection** select **Health Events**. You can also click the **Go To...** menu at the top of the screen and select **Health Events**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the account events table, in the top menu select **Configuration**, and then under **Data Collection** select **Account Events**. You can also click the **Go To...** menu at the top of the screen and select **Account Events**. 
  
 
-![health events table.png](/img/health-events/health-events-table.png)
+![account events table.png](/img/health-events/health-events-table.png)
 
 Click on a row to view the details of a health event.
 
 ![health event detail.png](/img/health-events/health-event-detail.png)
 
-Click the **Create Scheduled Search** button on the details pane to get alerts for specific health events. The unique identifier of the resource, such as the Source or Collector, is used in the query. See [Schedule a Search](../alerts/scheduled-searches/schedule-search.md) for details.
+Click the **Create Scheduled Search** button on the details pane to get alerts for specific account events. The unique identifier of the resource, such as the Source or Collector, is used in the query. See [Schedule a Search](../alerts/scheduled-searches/schedule-search.md) for details.
 
 Under the **More Actions** menu you can select:
 
 * **Event History** to run a search against the **sumologic_system_events** partition to view all of the related event logs.
 * **View Object** to view the Collector or Source in the Collection page related to the event.
 
-### Health events severity
+### Account events severity
 
 Events are categorized by two severity levels, warning and error. The severity column has color-coded error and warning events so you can quickly determine the severity of a given issue.
 
@@ -71,7 +70,7 @@ common parameters in the order that they are found in health event logs.
 |:--|:--|:--|
 | status | Either `Healthy` or `Unhealthy` based on the event. | String |
 | details | The details of the event include the type as `trackerId`, the `name` of the event, and a `description`. | JSON object of Strings |
-| eventType | Health events have a value of `Health-Change`. | String |
+| eventType | Account events have a value of `Health-Change`. | String |
 | severityLevel | Either `Error` or `Warning` based on the event. | String |
 | accountId | The unique identifier of the organization. | String |
 | eventId | The unique identifier of the event. | String |
@@ -110,9 +109,9 @@ common parameters in the order that they are found in health event logs.
 }
 ```
 
-## Search health events
+## Search Account events
 
-To search all health events run a query against the internal partition
+To search all account events run a query against the internal partition
 named **sumologic_system_events**. For example,  
 
 ```sql
@@ -120,12 +119,12 @@ _index=sumologic_system_events "Health-Change"
 ```
 
 :::tip
-Create a scheduled search to get alerts for specific health events.
+Create a scheduled search to get alerts for specific account events.
 :::
 
 ### Metadata assignment
 
-Creating a query that defines built-in metadata field values in the scope can help improve search performance and limit results to what you're investigating. [Metadata](../search/get-started-with-search/search-basics/built-in-metadata.md) fields are assigned to health event logs as follows:
+Creating a query that defines built-in metadata field values in the scope can help improve search performance and limit results to what you're investigating. [Metadata](../search/get-started-with-search/search-basics/built-in-metadata.md) fields are assigned to account event logs as follows:
 
 | **Metadata Field** | **Assignment Description** |
 |:--|:--|
@@ -139,9 +138,9 @@ A **Health** column on the Collection page shows color-coded healthy, error, a
 
 The **status** column now shows the status of Sources manually paused by users.
 
-![Collection health column.png](/img/health-events/Collection-health-column.png)
+![Collection account column.png](/img/health-events/Collection-health-column.png)
 
-* Hover your mouse over a Collector or Source to view a tooltip that provides the number of health events detected on the Collector or Source.
+* Hover your mouse over a Collector or Source to view a tooltip that provides the number of account events detected on the Collector or Source.
 
     ![health tooltip.png](/img/health-events/health_tooltip.png)
 

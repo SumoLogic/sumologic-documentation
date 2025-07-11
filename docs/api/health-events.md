@@ -1,8 +1,8 @@
 ---
-id: health-events
-title: Health Events Management APIs
-sidebar_label: Health Events
-description: Use HTTP endpoints to view your account's health events.
+id: account-events
+title: Account Events Management APIs
+sidebar_label: Account Events
+description: Use HTTP endpoints to view your account's account events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/company-value/heart-wellness.png')} alt="Thumbnail icon" width="50"/>
 
-The [Health Events](/docs/manage/health-events) Management API allows you to view the health of your Collectors and Sources from HTTP endpoints.
+The [Account Events](/docs/manage/account-events) Management API allows you to view the health of your Collectors and Sources from HTTP endpoints.
 
 ## Documentation
 
@@ -19,15 +19,15 @@ The [Health Events](/docs/manage/health-events) Management API allows you to vie
 
 | Deployment | Documentation URL                                    |
 |:------------|:------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/healthEvents  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/healthEvents  |
-| DE         | https://api.de.sumologic.com/docs/#tag/healthEvents  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/healthEvents  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/healthEvents |
-| JP         | https://api.jp.sumologic.com/docs/#tag/healthEvents  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/healthEvents  |
-| US1        | https://api.sumologic.com/docs/#tag/healthEvents     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/healthEvents |
+| AU         | https://api.au.sumologic.com/docs/#tag/accountEvents  |
+| CA         | https://api.ca.sumologic.com/docs/#tag/accountEvents  |
+| DE         | https://api.de.sumologic.com/docs/#tag/accountEvents  |
+| EU         | https://api.eu.sumologic.com/docs/#tag/accountEvents  |
+| FED        | https://api.fed.sumologic.com/docs/#tag/accountEvents |
+| JP         | https://api.jp.sumologic.com/docs/#tag/accountEvents  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/accountEvents  |
+| US1        | https://api.sumologic.com/docs/#tag/accountEvents     |
+| US2        | https://api.us2.sumologic.com/docs/#tag/accountEvents |
 
 
 ## Required role capabilities
