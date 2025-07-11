@@ -11,7 +11,7 @@ Amazon Web Services (AWS) is a secure [cloud](https://aws.amazon.com/what-is-cl
 Sumo Logic offers hosted Sources to collect from many AWS products.
 
 :::note
-Package installers require Transport-level security (TLS) 1.2 or higher.
+Package installers require Transport Layer Security (TLS) 1.2 or higher.
 :::
 
 In this section, we'll introduce the following concepts:
