@@ -63,7 +63,7 @@ In the threat intelligence datastore, the CrowdStrike schema is mapped to normal
 | `id` | `id` | Array joined with a ", " |
 | `indicator` | `indicator` | |
 | `[]kill_chains` | `killChain` | |
-| `labels` | `threatType` | Value used can also be `malicious-activity`, `anomalous-activity`, or `unkown`.* |
+| `labels` | `threatType` | Value used can also be `malicious-activity`, `anomalous-activity`, or `unknown`.* |
 
 *Value `malicious-activity` used if regex matches: `name=threattype\/(clickfraud|commodity|pointofsale|randomware|targeted|targetedcrimeware)` <br/>Value `anomalous-activity` used if regex matches: `name=threattype\/` <br/>Value `unknown` used if nothing matches.
 
