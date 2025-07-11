@@ -1658,6 +1658,7 @@ module.exports = {
         'search/lookup-tables/manage-update-lookup-tables',
       ],
     },
+    'search/query-assist',
     'search/optimize-search-performance',
     'search/optimize-search-partitions',
     'search/subqueries',
