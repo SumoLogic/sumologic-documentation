@@ -274,6 +274,7 @@ module.exports = {
                       ]
                     },
                     'send-data/opentelemetry-collector/remote-management/source-templates/st-with-secrets',
+                    'send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference',
                   ],
                 },
                 {
@@ -291,6 +292,7 @@ module.exports = {
                 'send-data/opentelemetry-collector/remote-management/troubleshooting',
               ],
             },
+            'send-data/opentelemetry-collector/view-opentelemetry-collection-page',
             'send-data/opentelemetry-collector/auto-discovery',
             'send-data/opentelemetry-collector/performance-benchmarks',
             'send-data/opentelemetry-collector/data-transformations',
@@ -514,12 +516,14 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/vectra-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zimperium-mtd-source',
               ],
             },
             {
@@ -3031,6 +3035,8 @@ integrations: [
         'cloud-soar/overview',
         'cloud-soar/introduction',
         'cloud-soar/compared-to-automation-service',
+        'cloud-soar/settings',
+        'cloud-soar/menus',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
         {
@@ -3176,6 +3182,7 @@ integrations: [
               link: {type: 'doc', id: 'platform-services/automation-service/app-central/index'},
               items: [
                 'platform-services/automation-service/automation-service-app-central',
+                'platform-services/automation-service/playbooks-in-app-central',
                 'platform-services/automation-service/configure-authentication-for-integrations',
                 {
                   type: 'category',

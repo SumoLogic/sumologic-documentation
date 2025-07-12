@@ -1,6 +1,6 @@
 ---
 title: April 8, 2025 - Application Update
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://help.sumologic.com/img/reuse/sumo-square.png
 keywords:
   - threat intel
   - security
