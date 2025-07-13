@@ -20,7 +20,7 @@ If you prefer not to use Copilot, you can opt out by contacting [Support](https:
 
 Sumo Logic Copilot is our AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
 
-With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-driven suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
+With its intuitive interface, Copilot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-derived suggestions to refine your results for faster, more accurate resolutions. Overall, Copilot enhances incident resolution with expert level insights.
 
 :::sumo Micro Lesson: Introduction to Copilot
 This short video introduces Copilot and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
@@ -262,7 +262,7 @@ There are two ways to do this:
 
 In the video, Copilot is used to investigate a security issue involving the potential leak of AWS CloudTrail access keys outside the organization.
 
-The video demonstrates how to use Copilot to analyze AWS CloudTrail data, review AI-curated suggestions, refine searches using natural language prompts, and generate an AI-driven dashboard for root cause analysis and sharing.
+The video demonstrates how to use Copilot to analyze AWS CloudTrail data, review AI-curated suggestions, refine searches using natural language prompts, and generate a dashboard for root cause analysis and sharing.
 
 <Iframe url="https://www.youtube.com/embed/QrRvN2Bg4NY?si=FTbUeCI-xaJrglmm?rel=0"
         width="854px"
@@ -376,7 +376,7 @@ No, customer data or PII is not used for training AI models. Copilot operates us
 
 Certain features may rely on query history stored on a rolling basis for performance optimization. Data is systematically expired to maintain privacy.
 
-For example, our AI-driven alerts feature log anomaly detection and build ML models from 60 days of logs. To accomplish this, we retrain the model once a week. In this example, each week, we add one week of new data while expiring the oldest week of data. Rolling data windows are done to avoid fetching 60 days of data for every training run.
+For example, our alerts feature log anomaly detection and build ML models from 60 days of logs. To accomplish this, we retrain the model once a week. In this example, each week, we add one week of new data while expiring the oldest week of data. Rolling data windows are done to avoid fetching 60 days of data for every training run.
 </details>
 
 <details>
@@ -388,7 +388,7 @@ For Generative AI, Copilot uses a foundation model served by Amazon Bedrock. Cla
 <details>
 <summary>What is the type of AI being used?</summary>
 
-Sumo Logic Copilot is an ensemble of Generative AI (GenAI) and classical machine learning (ML) techniques. For example, classical ML is used for anomaly detection in AI-driven alerts.
+Sumo Logic Copilot is an ensemble of Generative AI (GenAI) and classical machine learning (ML) techniques. For example, classical ML is used for anomaly detection in alerts.
 </details>
 
 <details>

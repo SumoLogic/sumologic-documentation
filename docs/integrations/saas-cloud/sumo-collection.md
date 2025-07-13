@@ -7,7 +7,7 @@ description: The Sumo Collection app for Sumo Logic provides insights into healt
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/sumo-logic-logo.png')} alt="thumbnail icon" width="80"/>
+<img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="thumbnail icon" width="80"/>
 
 The Sumo Collection app is a comprehensive tool that offers detailed insights into the health and status of Sumo Logic collectors and sources. It enables efficient management and monitoring by tracking key parameters such as collector types, versions, operational status, and source metrics through intuitive analytics and visualizations. By providing organizations with the data they need to make informed decisions and optimize their data management strategies, the app enhances operational efficiency and facilitates proactive issue identification within the Sumo Logic ecosystem.
 

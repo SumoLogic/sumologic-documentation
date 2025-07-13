@@ -137,6 +137,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/confluent-cloud"><img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="icon" width="100"/><h4>Confluent Cloud</h4></a>
+  <p>Monitor and analyze streaming activity in Confluent Cloud to ensure secure, reliable, and high-performance data pipelines.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Falcon FileVantage</h4></a>
   <p>Monitor and analyze file integrity.</p>
   </div>
@@ -371,7 +377,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/sumo-collection"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="80"/><h4>Sumo Collection</h4></a>
+  <a href="/docs/integrations/saas-cloud/sumo-collection"><img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="icon" width="80"/><h4>Sumo Collection</h4></a>
   <p>Identify, manage, and monitor collectors and sources within Sumo Logic.</p>
   </div>
 </div>

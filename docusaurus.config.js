@@ -27,6 +27,9 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  clientModules: [
+    require.resolve('./src/client-modules/trackTrialClick.js'),
+  ],
   future: {
     v4: true,
     experimental_faster: true,
@@ -246,9 +249,9 @@ module.exports = {
       },
     ],
     announcementBar: {
-      id: 'maintenance',
-      content: 'Help Docs will undergo scheduled maintenance on Fri, 6/27 from 5-6 PM PT. Service may be briefly disrupted. We apologize for any inconvenience.',
-      backgroundColor: '#fafbfc',
+      id: 'blackhat',
+      content: 'Visit Sumo Logic at Black Hat USA in Las Vegas: August 6-7, 2025 | Mandalay Bay | Booth #5812 | <a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/events/black-hat-book-meeting">Click here</a> to book a meeting with us!',
+      backgroundColor: '#b0eefe',
       textColor: '#091E42',
     },
     imageZoom: {
@@ -267,11 +270,7 @@ module.exports = {
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
-      // Optional: path for search page that enabled by default (`false` to disable it)
-      //searchPagePath: false,
-      getMissingResultsUrl({ query }) {
-        return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
-      },
+      insights: true,
     },
     prism: {
       theme: lightCodeTheme,
@@ -281,8 +280,8 @@ module.exports = {
       navbar: {
         logo: {
           alt: 'Sumo Logic logo',
-          srcDark: 'img/sumo-logo.svg',
-          src: 'img/sumo-logo-dark.svg',
+          srcDark: 'img/reuse/sumo-logo.svg',
+          src: 'img/reuse/sumo-logo-dark.svg',
         },
         items: [
         // activeregex controls the top nav content

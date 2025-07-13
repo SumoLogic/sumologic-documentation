@@ -12,6 +12,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+<!-- Originally added as a beta article with DOCS-236. -->
+
 The insight **Summary** pane provides a concise, actionable summary of threat incidents based on triggered signals using AI. It consolidates key details to facilitate quick understanding and response by security teams.
 
 The summary is generated only when the insight is created. The summary is not regenerated if signals are added or removed on the insight.

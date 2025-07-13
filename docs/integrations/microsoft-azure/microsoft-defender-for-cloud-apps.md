@@ -1,8 +1,8 @@
 ---
 id: microsoft-defender-for-cloud-apps
-title: Microsoft Defender for Clouds Apps
-sidebar_label: Microsoft Defender for Clouds Apps
-description: The Sumo Logic App for Microsoft Defender for Clouds Apps outlines the steps required to collect and analyze the alert data from the Azure security platform to the Sumo Logic platform.
+title: Microsoft Defender for Cloud Apps
+sidebar_label: Microsoft Defender for Cloud Apps
+description: The Sumo Logic App for Microsoft Defender for Cloud Apps outlines the steps required to collect and analyze the alert data from the Azure security platform to the Sumo Logic platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

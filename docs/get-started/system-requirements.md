@@ -76,6 +76,7 @@ Package installers require TLS 1.2 or higher.
 * Windows Server 2016
 * Windows Server 2019
 * Windows Server 2022
+* Windows Server 2025
 * Red Hat Enterprise Linux 6+
 * CentOS 6+
 * Ubuntu Linux 14+
