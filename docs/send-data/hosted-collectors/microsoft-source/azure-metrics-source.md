@@ -15,6 +15,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
 
+<!-- Originally added as a beta article with DOCS-460. -->
+
 Azure Metrics Source is used to collect all available metrics from Azure Monitor into Sumo Logic. To obtain a complete list of metrics that are collected using this source, refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/metrics-index#supported-metrics-and-log-categories-by-resource-type).
 
 ## Setup

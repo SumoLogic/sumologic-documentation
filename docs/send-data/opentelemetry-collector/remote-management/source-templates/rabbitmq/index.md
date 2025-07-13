@@ -67,9 +67,9 @@ In this step, you will configure the yaml required for Local File Collection. Be
 - **Username**. Required. Enter the RabbitMQ username.
 - **Password Environment Variable Name**. Required. Enter the RabbitMQ password environment variable name.
 
-import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
+import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-<OtelLogAdvanceOption/>
+<TimestampParsing/>
 
 **Processing Rules**. You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 

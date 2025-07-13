@@ -12,6 +12,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+<!-- Originally added as a beta article with SUMO-175343. -->
+
 This feature is in Beta. To participate, contact your Sumo Logic account executive.
 
 This document explains how to initiate a request to restart an Installed
