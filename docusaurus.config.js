@@ -249,10 +249,10 @@ module.exports = {
       },
     ],
     announcementBar: {
-      id: 'blackhat',
-      content: 'Visit Sumo Logic at Black Hat USA in Las Vegas: August 6-7, 2025 | Mandalay Bay | Booth #5812 | <a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/events/black-hat-book-meeting">Click here</a> to book a meeting with us!',
+      id: 'berry',
+      content: '<b>Heads-up</b>: You’re on our Berry AI demo site, a staging environment that will stop receiving updates after 8/1/25. Content may be outdated or contain errors.',
       backgroundColor: '#b0eefe',
-      textColor: '#091E42',
+      textColor: '#000',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
