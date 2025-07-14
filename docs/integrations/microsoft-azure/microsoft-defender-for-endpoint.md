@@ -159,6 +159,10 @@ _sourceCategory="Labs/MicrosoftGraphSecurity"
 
 ## Collection configuration and app installation
 
+:::note
+Skip this step if you have already configured the [Microsoft Graph Security API](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) Source. **[Use an existing source and install the app](#use-an-existing-source-and-install-the-app)** option to install the app using the `_sourceCategory` of Microsoft Graph Security API Source.
+:::
+
 import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
 <CollectionConfiguration/>
