@@ -1,5 +1,5 @@
 ---
-slug: /security/threat-intelligence/threat-intelligence-mapping
+id: threat-intelligence-mapping
 title: Threat Intelligence Mapping
 sidebar_label: Mapping
 description: Learn about the mapping of threat intelligence schema from vendor sources to Sumo Logic schema.
