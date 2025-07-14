@@ -5,8 +5,6 @@ sidebar_label: Apps
 description: Use HTTP endpoints to view and install Sumo Logic applications that deliver out-of-the-box dashboards, saved searches, and field extraction for popular data sources.
 ---
 
-<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
