@@ -495,19 +495,19 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Google Cloud - Security Command Center - Misconfigurations** dashboard provides you with a comprehensive view of misconfigurations across Google Cloud. It shows the total number of misconfigurations by severity, category, project, and resource type, helping identify high-risk issues like over-privileged accounts or insecure Kubernetes settings. You can quickly identify high-risk issues like over-privileged accounts or insecure Kubernetes settings and pinpoint the most affected resources. The dashboard supports rapid investigation and proactive remediation, enhancing overall cloud security posture.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Google+Cloud+-+Security+Command+Center/Google+Cloud+-+Security+Command+Center+-+Misconfigurations.png')} alt="Google Cloud Storage dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Google+Cloud+-+Security+Command+Center/misconfigurations.png')} alt="Google Cloud Storage dashboards" />
 
 ### Threats
 
 The **Google Cloud - Security Command Center - Threats** dashboard provides you with real-time visibility into threats in the Google Cloud environments. It displays threat counts by severity and type, identifies affected projects and resources, and offers detailed findings for incident investigation. The dashboard aids in prioritizing responses, detecting suspicious activity early, and improving overall cloud threat detection and response.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Google+Cloud+-+Security+Command+Center/Google+Cloud+-+Security+Command+Center+-+Threats.png')} alt="Google Cloud Storage dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Google+Cloud+-+Security+Command+Center/threats.png')} alt="Google Cloud Storage dashboards" />
 
 ### Vulnerabilities
 
 The **Google Cloud - Security Command Center - Vulnerabilities** dashboard provides you with insights into known vulnerabilities across cloud resources for effective risk assessment and remediation. The dashboard displays the total count of vulnerabilities detected, categorized by severity and type (e.g., GKE Security Bulletin, Software, OS), helping prioritize critical and high-severity issues. Analysts can drill into project-specific data and detailed findings like CVEs or SQL injection risks, making this dashboard key to reducing exposure and maintaining a secure cloud environment.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Google+Cloud+-+Security+Command+Center/Google+Cloud+-+Security+Command+Center+-+Vulnerabilities.png')} alt="Google Cloud Storage dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Google+Cloud+-+Security+Command+Center/vulnerabilities.png')} alt="Google Cloud Storage dashboards" />
 
 ## Create monitors for Google Cloud Security Command Center app
 
