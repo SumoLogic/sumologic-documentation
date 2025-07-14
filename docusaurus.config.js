@@ -249,10 +249,10 @@ module.exports = {
       },
     ],
     announcementBar: {
-      id: 'blackhat',
-      content: 'Visit Sumo Logic at Black Hat USA in Las Vegas: August 6-7, 2025 | Mandalay Bay | Booth #5812 | <a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/events/black-hat-book-meeting">Click here</a> to book a meeting with us!',
-      backgroundColor: '#b0eefe',
-      textColor: '#091E42',
+      id: 'domain',
+      content: 'We’ve moved! Our docs are now at [www.sumologic.com/help](https://www.sumologic.com/help). Redirects are in place, but don’t forget to update your bookmarks.',
+      backgroundColor: '#EDF2F7',
+      textColor: '#1A202C',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
