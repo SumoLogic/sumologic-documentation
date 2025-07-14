@@ -644,7 +644,7 @@ When an entity is processed by a rule using the `hasThreatMatch` function and is
 
 Parameters:
 * **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
-* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`. <br/>You can filter on the following indicator attributes:
+* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`. <br/>You can filter on the following indicator attributes:
    * `actors`. An identified threat actor such as an individual, organization, or group. 
    * `confidence` Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
    * `id`. ID of the indicator.

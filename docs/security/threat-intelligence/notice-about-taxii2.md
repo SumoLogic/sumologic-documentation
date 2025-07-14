@@ -1,6 +1,6 @@
 ---
 id: notice-about-taxii-2
-title: Customer Communication – Product Defect Notification for Missing Indicators of Compromise (IOCs) for Threat Intelligence Feeds with the TAXII 2.0 Protocol
+title: Update on Missing IOC Fields in TAXII 2.0-Based Threat Intelligence Feeds
 description: This article is a product defect notification for missing indicators of compromise (IOCs) for Threat Intelligence feeds with the TAXII 2.0 protocol.
 ---
 
@@ -12,9 +12,7 @@ description: This article is a product defect notification for missing indicator
 
 ## Summary of the issue
 
-We are notifying you of a recently identified issue that affects Sumo Logic’s Threat Intelligence feeds using the TAXII 2.0 protocol. Specifically, URL, domain, and email Indicators of Compromise (IOCs) were not processed and displayed as expected. A customer first reported the issue on June 11, 2025.
-
-Our investigation determined that a processing error in certain non-hash IOCs led to a breakdown in the normalization process, preventing these critical data types from appearing correctly in customer environments.
+We are notifying you of a recently identified issue that affects Sumo Logic’s Threat Intelligence feeds using the TAXII 2.0 protocol. Specifically, URL, domain, and email Indicators of Compromise (IOCs) were not processed and displayed as expected. Our investigation determined that a processing error in certain non-hash IOCs led to a breakdown in the normalization process, preventing these critical data types from appearing correctly in customer environments.
 
 If your environment relies on TAXII 2.0-based Threat Intelligence feeds, you may have experienced the following:
 * Missing URL, domain, and email IOCs in your threat feeds
@@ -22,7 +20,7 @@ If your environment relies on TAXII 2.0-based Threat Intelligence feeds, you may
 
 Our engineering team has traced the issue to a normalization defect in the data processing pipeline, occurring after collection but prior to feed availability.
 
-A fix has been developed and is scheduled for deployment on July 9, 2025. There is no action you or your team needs to take in order to correct this.
+A fix has been developed and is scheduled for a rolling deployment starting on July 9, 2025. There is no action you or your team needs to take in order to correct this.
 
 ## Important to note
 
@@ -35,7 +33,7 @@ A fix has been developed and is scheduled for deployment on July 9, 2025. There 
 To mitigate the risk of future issues, we are implementing the following changes:
 * Expanded automated and manual test coverage across all supported threat feed protocols.
 * Strengthened validation and normalization processes across the pipeline.
-* Continuous monitoring and alerting enhancements to detect processing anomalies earlier
+* Continuous monitoring and alerting enhancements to detect processing anomalies earlier.
 
 ## Need help or have questions?
 

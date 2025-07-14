@@ -524,7 +524,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="55"/><h4>Sumo Collection</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source"><img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="icon" width="55"/><h4>Sumo Collection</h4></a>
         <p>Learn how to collect the list of collectors and their sources using the Sumo Logic Collector API and Sources API.</p>
         </div>
       </div>
@@ -578,8 +578,14 @@ In this section, we'll introduce the following concepts:
       </div>
             <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source"><img src={useBaseUrl('img/sumo-square.png')} alt="Thumbnail icon" width="50"/><h4>Universal Connector Source</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source"><img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Thumbnail icon" width="50"/><h4>Universal Connector Source</h4></a>
         <p> Learn how to set up a Universal Connector to collect data into the Sumo Logic environment.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vectra-source"><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/vectra.png')} alt="Thumbnail icon" width="100"/><h4>Vectra</h4></a>
+        <p>Learn to collect the list of threats detected in the Vectra platform.</p>
         </div>
       </div>
       <div className="box smallbox card">
@@ -616,6 +622,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source"><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="45"/><h4>Zero Networks Segment</h4></a>
         <p>Learn to collect audit logs and network activity data from Zero Networks Segment.</p>
+        </div>
+      </div>
+    <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zimperium-mtd-source"><img src={useBaseUrl('img/send-data/zimperium-mtd.png')} alt="Thumbnail icon" width="45"/><h4>Zimperium MTD Source</h4></a>
+        <p>Learn to collect the device logs from the Zimperium API and send it to Sumo Logic.</p>
         </div>
       </div>
     </div>
