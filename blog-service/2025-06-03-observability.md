@@ -1,6 +1,6 @@
 ---
 title: End-of-Life Notice - Root Cause Explorer (Observability)
-image: https://help.sumologic.com/img/reuse/sumo-square.png
+image: https://help.sumologic.com/img/reuse/rss-image.jpg
 keywords:
   - apps
   - sumo-collection
