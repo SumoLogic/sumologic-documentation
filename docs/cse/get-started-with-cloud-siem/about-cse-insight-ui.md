@@ -28,25 +28,15 @@ This screenshot shows the **Insights** page in list view. 
 
 <img src={useBaseUrl('img/cse/insights-page.png')} alt="Insights page" style={{border: '1px solid gray'}} width="800"/>
 
-Here’s one row from the List view. The numbered definitions below correspond to the labels in the screenshot.
-
-<img src={useBaseUrl('img/cse/insight-summary.png')} alt="Insight summary" style={{border: '1px solid gray'}} width="800"/>
-
-1. **Creation date and time**. When the insight was created.
-1. **Detection time**. The time between when the first event happened (when the first record in the insight occurred) and when the insight was generated. (This differs from "dwell time", which is the time between when the first record and the last record occurred in an insight.)
-1. **Age**. The elapsed time since the insight was created.
-1. **Insight name**. The insight name, made up of the insight ID, and the MITRE stage or stages associated with the signals in the insight. 
-1. **Related incidents**. Incidents that share common entities and other characteristics.
-1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight is shown. 
-1. **Assignee**. The analyst assigned to the Incident.
-1. The [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques exhibited by the insight.
-1. **Severity**. The severity of the insight. The value is a function of the configured entity activity score threshold for insight generation. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process#about-insight-severity).
-1. **Entity**. The entity associated with the insight.
-1. **Signal Data**. This area has three bits of information:
-   * The count of signals that caused the insight to be created.
-   * The total count of signals on the insight entity during the detection window.
-   * How long it's been since the last signal fired associated with the insight fired.
-1. The visualization plots the insight's signals over time (x-axis) by severity (y-axis).
+* **Status**. The [status](/docs/cse/administration/manage-custom-insight-statuses/) of the insight.
+* **ID**. The insight name, made up of the insight ID, and the MITRE stage or stages associated with the signals in the insight.
+* **Created**. When the insight was created.
+* **Assignee**. The analyst assigned to the Incident.
+* **Age**. The elapsed time since the insight was created.
+* **Entity**. The [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) associated with the insight.
+* **Severity**. The severity of the insight. The value is a function of the configured entity activity score threshold for insight generation. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process#about-insight-severity).
+* **Global Confidence**. If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight is shown.
+* **Signals**. The total count of signals on the insight entity during the detection window.
 
 ### Board view
 
