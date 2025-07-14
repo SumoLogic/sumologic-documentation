@@ -8,6 +8,8 @@ sidebar_label: Rotating Access Credentials Playbooks
   <meta name="robots" content="noindex" />
 </head>
 
+<!-- Article added by docs PR #3305. Related to ticket BUSAPPS-11825. -->
+
 :::note
 If you are rotating your access credentials due to the potential security incident announced on November 7, 2023 in our Security Response Center, and require additional information, please refer to the details listed in the [Security Response Center](https://www.sumologic.com/security-response-center/) site, or contact our Support team via opening a ticket using our [Support Console](https://support.sumologic.com/support/s/). 
 :::
