@@ -6,8 +6,9 @@
   <a href="LICENSE"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>
   <a href="https://x.com/SumoLogic"><img src="https://img.shields.io/twitter/follow/sumologic.svg?style=social" alt="Twitter Follow" /></a>
   <a href="https://help.sumologic.com/release-notes-service"><img src="https://img.shields.io/badge/RSS-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Follow" width="50"/></a>
-  
-<!-- When can we change the /rss.xml links? -->
+
+<!-- Don't change RSS links until we confirm they're activated and sitemap has changed -->
+
 </p>
 
 Sumo Docs is the open-source documentation site for Sumo Logic, an all-in-one cloud data analytics platform built to support security, operations, and business intelligence use cases. Sumo Logic empowers users to monitor, analyze, troubleshoot, and visualize data from their applications and network environments in real time. Its elastic processing capabilities enable seamless log data collection and management from various sources, regardless of type, volume, or location. Learn more at [sumologic.com](https://www.sumologic.com).
