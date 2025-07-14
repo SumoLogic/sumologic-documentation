@@ -12,6 +12,8 @@ description: Learn how to independently and efficiently control or remove your s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<!-- Originally added as a beta article with DOCS-149. -->
+
 Deletion requests allow you to quickly and easily request the removal of ingested data from Sumo Logic. This is particularly useful for removing inadvertently ingested sensitive data.
 
 You can independently and swiftly remove sensitive data, mitigating compliance issues and potential data exposure without needing to contact Sumo Logic support.
