@@ -13,6 +13,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+<!-- Originally added as a beta article with SUMO-187085. -->
+
 Sumo Logic provides the ability to configure private connectivity between your AWS Infrastructure and Sumologic via [AWS PrivateLink](https://aws.amazon.com/privatelink). This prevents any traffic from being accessible to the public internet.
 
 Following sources are supported for AWS PrivateLink:

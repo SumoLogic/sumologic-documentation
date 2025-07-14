@@ -92,7 +92,7 @@ To use [integrations](/docs/platform-services/automation-service/automation-serv
 
 ## Actions limit
 
-To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 350 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
+To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 500 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
 
 <ActionsLimitQuery/>
 

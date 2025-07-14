@@ -77,9 +77,9 @@ In this step, you will configure the yaml required for Apache Collection. Below 
 - **Error file log path**. Enter the path to the error log file for your Apache instance.
 - **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/apache user needs to provide the value for `webengine.cluster.name`.
 
-import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
+import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-<OtelLogAdvanceOption/>
+<TimestampParsing/>
 
 **Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 
