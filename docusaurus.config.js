@@ -27,6 +27,9 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  clientModules: [
+    require.resolve('./src/client-modules/trackTrialClick.js'),
+  ],
   future: {
     v4: true,
     experimental_faster: true,
@@ -112,7 +115,7 @@ module.exports = {
     ],
     ['@docusaurus/plugin-google-gtag',
       {
-        trackingID: 'G-CVH19TBVSL',
+        trackingID: ['G-CVH19TBVSL', 'G-9FTQ9KJJBY'],
       },
     ],
     ['@docusaurus/plugin-content-docs',
@@ -267,11 +270,6 @@ module.exports = {
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
-      // Optional: path for search page that enabled by default (`false` to disable it)
-      //searchPagePath: false,
-      getMissingResultsUrl({ query }) {
-        return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
-      },
       insights: true,
     },
     prism: {
