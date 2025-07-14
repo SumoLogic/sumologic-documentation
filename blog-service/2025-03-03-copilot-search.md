@@ -1,6 +1,6 @@
 ---
 title: New in Copilot - Dynamic Titles, Alert Troubleshooting, and Pinned Suggestions (Copilot)
-image: https://www.sumologic.com/help/img/reuse/sumo-square.png
+image: https://www.sumologic.com/help/img/reuse/rss-image.jpg
 keywords:
   - copilot
   - log-search
