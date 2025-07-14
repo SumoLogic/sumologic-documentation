@@ -7,7 +7,7 @@ description: Learn about the mapping of threat intelligence schema from vendor s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Schema from vendor-supplied threat intelligence indicators are mapped to normalized values in the Sumo Logic threat intelligence datastore to provide ease of interoperability. The mapping is described in this article. 
+Schema from vendor-supplied threat intelligence indicators are mapped to [normalized values](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) in the Sumo Logic threat intelligence datastore to provide ease of interoperability. The mapping is described in this article. 
 
 ## CrowdStrike
 
@@ -21,11 +21,11 @@ Following are the normalized values for CrowdStrike:
 | `id` | `id` | Array joined with a comma: ", " |
 | `indicator` | `indicator` | |
 | `kill_chain_phases` | `killChain` | |
-| `labels.ThreatType` | `threatType`* | |
+| `labels.ThreatType` | `threatType`* | The `threatType` value can vary based on matches*. |
 | `last_updated` | `updated` | |
 | `malicious_confidence` | `confidence` | Normalized to a 0-100 scale. |
 | `published_date` | `validFrom` and `imported` | |
-| `type` | `type` | |
+| `type` | `type` | See [Type mapping for CrowdStrike](/docs/security/threat-intelligence/threat-intelligence-mapping/#type-mapping-for-crowdstrike) below. |
 
 All other fields will be kept in the `fields{}` object.
 
@@ -66,7 +66,7 @@ Following are the normalized values for Intel 471:
 | `data.expiration` | `validUntil` | Converted from epoch timestamp. |
 | `data.mitre_tactics` | `killChain` | |
 | `data.threat.uid` | `id` | |
-| | `threatType` | Statically set to `unknown`. |
+| *Not applicable* | `threatType` | All indicators have `threatType` set to `unknown`. |
 
 ## Mandiant
 
@@ -115,11 +115,11 @@ Following are the normalized values for ZeroFox:
 | `sha1` | `indicator` | |
 | `sha256` | `indicator` | |
 | `sha512` | `indicator` | |
-| `tags` | `confidence` | Default statically set to `75`, but set to `25` if `c2_domain_top_1m` found as a tag. |
+| `tags` | `confidence` | Set by default to `75`, but set to `25` if `c2_domain_top_1m` found as a tag. |
 | `updated_at` | `validFrom` | If `created_at` and `updated_at` appear on the same item, use the latest for the `validFrom` value. |
 | `url` | `indicator` | |
 | `url--{{url}}` | `id` | |
-| | `threatType` | Set to `compromised`. |
+| *Not applicable*  | `threatType` | All indicators are set to `compromised`. |
 
 ### Type mapping for ZeroFox
 
