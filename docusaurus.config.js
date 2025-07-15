@@ -271,6 +271,10 @@ module.exports = {
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
       insights: true,
+      insightsConfig: {
+        useCookie: true, // writes the _ALGOLIA cookie // cookieDuration: 15552000000, // 6 months – optional
+      },
+      // or is the config just useCookie: true,  ?
     },
     prism: {
       theme: lightCodeTheme,
