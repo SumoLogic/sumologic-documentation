@@ -3082,7 +3082,17 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'api/index'},
       items: [
-        'api/getting-started',
+        {
+          type: 'category',
+          label: 'About Sumo Logic APIs',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'api/about-apis/index'},
+          items: [
+            'api/about-apis/getting-started',
+            'api/about-apis/troubleshooting',
+          ],
+        }, 
         'api/access-keys',
         'api/account-management',
         'api/app-management',
@@ -3142,7 +3152,6 @@ integrations: [
         'api/token-management',
         'api/tracing',
         'api/user-management',
-        'api/troubleshooting',
       ],
     },
   ],
