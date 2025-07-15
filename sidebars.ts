@@ -3091,6 +3091,7 @@ integrations: [
           items: [
             'api/about-apis/getting-started',
             'api/about-apis/intro-to-apis',
+            'api/about-apis/terraform-with-sumo-logic',
             'api/about-apis/troubleshooting',
           ],
         }, 

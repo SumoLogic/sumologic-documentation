@@ -20,7 +20,13 @@ This section contains articles about how to use the Sumo Logic APIs.
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/api/about-apis/intro-to-apis"><img src={useBaseUrl('img/icons/operations/advanced-certificates.png')} alt="Thumbnail icon" width="50"/><h4>Introduction to Sumo Logic APIs</h4></a>
-  <p>Learn how to get started with the Sumo Logic APIs</p>
+  <p>Learn how to get started with the Sumo Logic APIs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/api/about-apis/terraform-with-sumo-logic"><img src={useBaseUrl('img/api/terraform-icon.png')} alt="Thumbnail icon" width="50"/><h4>Use Terraform with Sumo Logic</h4></a>
+  <p>Learn how to use Terraform with Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">

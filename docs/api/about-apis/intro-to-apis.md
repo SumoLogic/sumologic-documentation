@@ -24,9 +24,9 @@ How to use Terraform with a Sumo Logic AWS Installation
 
 ## What are APIs?
 
-API stands for Application Programming Interface. Broadly speaking, they provide ways for two computers or systems to communicate with each other without needing a traditional "human-oriented" interface such as a web browser or mobile app. APIs typically consist of functions and protocols that provide access to data and system functionality from outside connections who know from the "interface specification" how to request data or info and what form the reply will take.
+API stands for *Application Programming Interface*. Broadly speaking, they provide ways for two computers or systems to communicate with each other without needing a traditional "human-oriented" interface such as a web browser or mobile app. APIs typically consist of functions and protocols that provide access to data and system functionality from outside connections who know from the "interface specification" how to request data or info and what form the reply will take.
 
-The interfaces provided by the API are often called "contracts" -- the API designers will create individual functions that have defined calling mechanisms to either accept data or provide data (or both). Outside callers can learn from the specification and associated documentation where and how to make API requests: what web address to target, what data parameters to provide, and what "answer" they will get in return.
+The interfaces provided by the API are often called "contracts" -- the API designers will create individual functions that have defined calling mechanisms to either accept data or provide data (or both). Outside callers can learn from the specification and associated [documentation](https://api.sumologic.com/docs/) where and how to make API requests: what web address to target, what data parameters to provide, and what "answer" they will get in return.
 
 Web APIs typically use HTTP calls, the same protocol that provides web pages when accessing URLs through a web browser. HTTP requests can be classified by various "verbs" in the protocol -- such as GET and POST -- depending on whether you are requesting data, or providing data to the system. Making an HTTP GET request that is formulated according to the API specification will return an HTTP response that contains the requested data. Many APIs also support POST, PUT, or DELETE commands where the requester can create, modify, or delete system data objects without needing to go through a web page.
 
@@ -71,7 +71,7 @@ As with the personal access key popup, any displayed ID/Key will NOT be availabl
 
 Once you have an access ID and Key, we can start making API connections and see the type of data we can access.  First you will need to determine the proper API endpoint for your area of the world.
 
-Check the official Sumo Logic help docs here to find the proper endpoint URL to use.  For instance, US users would use either https://api.sumologic.com/api/ or https://api.us2.sumologic.com/api/
+Check [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started) to find the proper endpoint URL to use.  For instance, US users would use either `https://api.sumologic.com/api/` or `https://api.us2.sumologic.com/api/`.
 
 This training course will use the standard US base URL for expediency, although if you are following along from a different area of the world, substitute your local base URL for "api.sumologic.com" in the example API calls throughout the following labs.
 
@@ -81,7 +81,7 @@ Sumo Logic API calls will take the following form:
 
 The `<version>` parameter will look like "v1" or "v2".  Some command functions can only be run using a specific version number.  Other commands can be run under multiple versions, although using the most recent version listed in the documentation is recommended, to provide the most up-to-date data fields and optimizations.
 
-Check the listings in the official docs for a command in order to see the required (or recommended) version number to use.
+Check [the listings in the official API docs](https://api.sumologic.com/docs/) for a command in order to see the required (or recommended) version number to use.
 
 For instance, the complete command to retrieve a list of collectors in your system (in the US) would look like:
 
@@ -93,11 +93,11 @@ It is possible to make API calls from a standard web browser, just like visiting
 
 <img src={useBaseUrl('img/api/json-output.png')} alt="JSON output" style={{border: '1px solid gray'}} width="600" />   
 
-Each collector will be listed in detail within the API return data, which is in name/value JSON format.  All the collector info such as ID, name, type, version (etc) is listed for collectors in your system.  This info can be parsed and saved elsewhere, or used as a reference for future queries or reports.
+Each collector will be listed in detail within the API return data, which is in [name/value JSON](https://www.json.org/) format.  All the collector info such as ID, name, type, version (etc) is listed for collectors in your system.  This info can be parsed and saved elsewhere, or used as a reference for future queries or reports.
 
 However, most API users do not use a traditional web browser for API calls, other than perhaps one-off queries for quick informational purposes.   It would be tedious to have to manually enter the URL along with the user name and password each time if successive calls are to be made.   More commonly, users will make API calls through a command line interface (CLI), through an application designed for API testing, or through programming code or scripts.
 
-An open source application such as Postman can be a convenient tool for testing and developing with API calls.  To use Postman, download and install the app, then enter the URL for the API call (1). Click on the Authorization tab (2) and fill in the Username and Password fields with your Sumo Access ID and Access Key respectively (3). Click Send (4) when finished and you will see the JSON output (or error messages if there is a problem) in the bottom panel (5).
+An open source application such as [Postman](https://www.postman.com/) can be a convenient tool for testing and developing with API calls.  To use Postman, download and install the app, then enter the URL for the API call (1). Click on the Authorization tab (2) and fill in the Username and Password fields with your Sumo Access ID and Access Key respectively (3). Click Send (4) when finished and you will see the JSON output (or error messages if there is a problem) in the bottom panel (5).
 
 <img src={useBaseUrl('img/api/postman-ui.png')} alt="Postman UI" style={{border: '1px solid gray'}} width="600" />  
 
@@ -151,7 +151,7 @@ Retrieving system data and configuration is one of the most common use cases for
 
 Let's examine the GET example shown in the previous lab, where we requested the list of all collectors in the organization through the URL: https://api.sumologic.com/api/v1/collectors
 
-(Reminder: These training labs will use the standard US API URL for the examples -- if you are in other areas of the world and want to perform these calls yourself, remember to substitute api.sumologic.com for the URL appropriate for your region.)
+(Reminder: These training labs will use the standard US API URL for the examples -- if you are in other areas of the world and want to perform these calls yourself, remember to substitute `api.sumologic.com` with [the URL appropriate for your region](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).)
 
 <img src={useBaseUrl('img/api/collectors-api.png')} alt="Collectors API" style={{border: '1px solid gray'}} width="600" />  
 
@@ -169,12 +169,13 @@ Note that the collector data itself also contains a helpful follow-up link to an
 
 This set of API calls allows for configuration collection through code or scripting. For instance, you might:
 
-Get the list of collectors with an API call
-Save the list for backup purposes and/or note the collector IDs listed in the JSON feed
-Use the individual IDs to query some/all of the collectors for source information
-Generate custom reports or answer configuration questions:
-Do I have any collectors or sources that aren't working (alive = "false")?
-Which collectors or sources are using a particular auth type or account credentials?
+1. Get the list of collectors with an API call.
+1. Save the list for backup purposes and/or note the collector IDs listed in the JSON feed.
+1. Use the individual IDs to query some/all of the collectors for source information.
+1. Generate custom reports or answer configuration questions:
+     * Do I have any collectors or sources that aren't working (alive = "false")?
+     * Which collectors or sources are using a particular auth type or account credentials?
+
 Using API calls for custom reports can save time (and thus money) by automating data queries without requiring operators to manually look up collector data or status through the web interface.
 
 ## Lab 4: Sorting and Filtering
@@ -225,7 +226,7 @@ You can search for entries that match specific values by including the field nam
 
 NOTE: not all fields in a data object are eligible to search for directly -- see the documentation for a command to list the fields that can be used for searching.
 
-NOTE: Search parameters need to use proper HTML encoding for special characters including spaces.  For instance, use %20 to represent a space and %2B to represent a "+". 
+NOTE: Search parameters need to use [proper HTML encoding for special characters](https://www.w3schools.com/tags/ref_urlencode.asp) including spaces.  For instance, use %20 to represent a space and %2B to represent a "+". 
 
 <img src={useBaseUrl('img/api/email.png')} alt="Email in API" style={{border: '1px solid gray'}} width="600" />
 
@@ -306,7 +307,7 @@ When we edited an existing data object, it was easiest to do a GET query and cop
 
 When creating a new object we don't need to worry about object integrity, so ETags aren't necessary.   Also, many fields in the user object (such as the ID, "createdAt", "lastLoginTimestamp", etc) are created and managed by the system, and are not required (nor available) to be set by the operator.  Thus when creating a new object, there are usually only a limited number of fields that need to be provided, with the system generating and updating the rest.
 
-We can check the documentation for the "Create a new user" command for the exact details we need:
+We can check [the documentation for the "Create a new user" command](https://api.sumologic.com/docs/#operation/createUser) for the exact details we need:
 
 <img src={useBaseUrl('img/api/users-documentation.png')} alt="Users documentation" style={{border: '1px solid gray'}} width="600" />
 
@@ -346,7 +347,7 @@ Password resets for users can be done through another separate API command:
 
 `[POST] https://api.sumologic.com/api/v1/users/{userID}/password/reset`
 
-Check the documentation for the proper body format for each of the above POST and PUT commands, to ensure that the right fields are included and in the right JSON format.
+[Check the documentation](https://api.sumologic.com/docs/#tag/userManagement) for the proper body format for each of the above POST and PUT commands, to ensure that the right fields are included and in the right JSON format.
 
 ## Lab 7: Deleting objects
 
@@ -384,7 +385,7 @@ Alternately, you can specify a different user to inherit the created content aft
 
 Sumo Logic's Cloud SIEM has a supported API that works similarly to the regular Sumo Logic service APIs.  Users with an active Access ID and Key can send commands to Cloud SIEM with the same GET/PUT/POST/DELETE functionality.
 
-The Cloud SIEM API documentation can be found here.   The biggest difference to remember is that the base API URL has an "sec" included before the version for all Cloud SIEM API commands:
+[The Cloud SIEM API documentation can be found here](https://api.sumologic.com/docs/sec).   The biggest difference to remember is that the base API URL has an "sec" included before the version for all Cloud SIEM API commands:
 
 `https://api.sumologic.com/api/sec/[version]/[commandName]`
 
