@@ -3090,6 +3090,7 @@ integrations: [
           link: {type: 'doc', id: 'api/about-apis/index'},
           items: [
             'api/about-apis/getting-started',
+            'api/about-apis/intro-to-apis',
             'api/about-apis/troubleshooting',
           ],
         }, 

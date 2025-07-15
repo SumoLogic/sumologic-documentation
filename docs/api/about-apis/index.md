@@ -19,6 +19,12 @@ This section contains articles about how to use the Sumo Logic APIs.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/api/about-apis/intro-to-apis"><img src={useBaseUrl('img/icons/operations/advanced-certificates.png')} alt="Thumbnail icon" width="50"/><h4>Introduction to Sumo Logic APIs</h4></a>
+  <p>Learn how to get started with the Sumo Logic APIs</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/api/about-apis/troubleshooting"><img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="50"/><h4>Troubleshooting</h4></a>
   <p>Troubleshoot errors you may find when using the Sumo APIs.</p>
   </div>
