@@ -247,6 +247,10 @@ module.exports = {
       {
         name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
       },
+      {
+        name: 'robots',
+        content: 'noindex, nofollow',
+      },
     ],
     announcementBar: {
       id: 'berry',
