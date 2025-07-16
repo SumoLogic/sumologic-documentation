@@ -14,7 +14,7 @@ To obtain tracing data from AWS Lambda functions developed in Java, you can use 
 
 **Sumo Logic OTel Java Lambda layer supports:**
 
-* Java8, Java11, Java17 and Java21 runtimes
+* Java 8, Java 11, Java 17 and Java 21 runtimes
 * x86_64 and arm64 architectures
 
 ## Sumo Logic Distribution for OpenTelemetry Lambda layer
@@ -23,7 +23,7 @@ To obtain tracing data from AWS Lambda functions developed in Java, you can use 
 
 You'll need the following:
 
-* Java8, Java11, Java17 or Java21 runtimes
+* Java 8, Java 11, Java 17 or Java 21 runtimes
 * Lambda layers add permissions
 * Sumo Logic OTLP/HTTP Source endpoint URL. To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new OTLP/HTTP source.
 
