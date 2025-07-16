@@ -63,7 +63,7 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
 Go back to Step 3 (_In the Choose a layer menu_...).
 
 | Region         | ARN                                                                                            |
-|----------------|------------------------------------------------------------------------------------------------|
+|:----------------|:------------------------------------------------------------------------------------------------|
 | af-south-1     | arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1     |
 | ap-east-1      | arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1      |
 | ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1 |
@@ -91,7 +91,7 @@ Go back to Step 3 (_In the Choose a layer menu_...).
 Go back to Step 3 (_In the Choose a layer menu_...).
 
 | Region         | ARN                                                                                           |
-|----------------|-----------------------------------------------------------------------------------------------|
+|:----------------|:-----------------------------------------------------------------------------------------------|
 | ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1 |
 | ap-northeast-3 | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1 |
 | ap-south-1     | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1     |
