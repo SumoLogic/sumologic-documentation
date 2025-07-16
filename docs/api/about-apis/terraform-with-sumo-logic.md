@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## What is Terraform?
 
-Terraform is an "Infrastructure-as-code" tool, developed by [Hashicorp](https://developer.hashicorp.com/terraform/intro).  Terraform scripts are used to define both cloud and on-prem resources in human-readable configuration files.  Using Terraform scripts makes it easier for system administrators to provision and manage infrastructure and system resources consistently and reliably.   The Terraform community, including Sumo Logic, supports Terraform through providers and APIs allowing applications to install and manage different types of resources and services from different vendors in one workflow.
+Terraform is an "Infrastructure-as-code" tool, developed by [Hashicorp](https://developer.hashicorp.com/terraform/intro). Terraform scripts are used to define both cloud and on-prem resources in human-readable configuration files. Using Terraform scripts makes it easier for system administrators to provision and manage infrastructure and system resources consistently and reliably. The Terraform community, including Sumo Logic, supports Terraform through providers and APIs allowing applications to install and manage different types of resources and services from different vendors in one workflow.
 
 The core Terraform workflow consists of three stages:
 
@@ -21,7 +21,7 @@ Plan: creating an execution plan describing the infrastructure it will create, u
 
 Apply: Once the plan is approved, Terraform performs the proposed operations in the correct order, respecting any resource dependencies.
 
-<img src={useBaseUrl('img/api/terraform-diagram.png')} alt="Terraform diagram" style={{border: '1px solid gray'}} width="600" /> 
+<img src={useBaseUrl('img/api/terraform-diagram.png')} alt="Terraform diagram" style={{border: '1px solid gray'}} width="700" /> 
 
 ## Understanding the Terraform format
 
@@ -34,11 +34,8 @@ A provider is a Terraform module or plugin developed by a vendor which defines w
 
 ```
 provider "aws" {
-
  profile = "default"
-
  region = "us-west-2"
-
 }
 ```
 
@@ -48,19 +45,12 @@ Terraform scripts can define a block at the beginning of a script that outlines 
 
 ```
 terraform {
-
  required_providers {
-
  sumologic = {
-
  source = "sumologic/sumologic"
-
  version = ">= 0.13"
-
  }
-
  }
-
 }
 ```
 
@@ -70,30 +60,21 @@ A resource is an infrastructure element that can be defined and created from the
 
 ```
 resource "aws_s3_bucket" "training" {
-
  bucket = "sumo-training-2025"
-
  acl = "private"
-
 }
 ```
 
 Resources will have a resource type (defined by the provider, "aws_s3_bucket" in this case), our name for the resource in Terraform ("training"), then a block of name/value pairs or sub-blocks, with available property values defined by the provider for that resource. You will need to check the documentation for each individual provider to see the resource types and configuration values available to reference in Terraform scripts.
 
-
 Resource definitions can refer to other resources using a variable "dot" syntax. For instance, here's an associated website configuration resource that is tied to our AWS S3 bucket from the previous example:
 
 ```
 resource "aws_s3_bucket_website_configuration" "training" {
-
  bucket = aws_s3_bucket.training.bucket
-
  index_document {
-
  suffix = "index.html"
-
  }
-
 }
 ```
 
@@ -105,35 +86,22 @@ Here's another sample script that defines an example of the "sumologic_role" res
 
 ```
 terraform {
-
  required_providers {
-
  sumologic = {
-
  source = "sumologic/sumologic"
-
  }
-
  }
-
  required_version = ">= 0.13"
-
 }
 ```
 
 ```
 resource "sumologic_role" "cseAnalyst" {
-
  name = "CSE Analyst"
-
  description = "This role is used for Analysts in Cloud SIEM Enterprise"
-
  capabilities = [
-
  "cseManageRules", "cseViewCustomInsightStatuses", "cseCommentOnInsights", "cseManageInsightAssignee", "viewCse", "cseViewEntityCriticality", "cseViewEnrichments", "cseViewTagSchemas", "cseViewMatchLists", "cseManageCustomInsightStatuses", "cseManageEntityCriticality", "cseManageInsightTags","cseCreateInsights", "cseViewEntityConfiguration", "cseViewEntityGroups", "cseViewCustomEntityType", "cseManageInsightStatus", "cseManageMatchLists", "cseViewThreatIntelligence", "cseViewCustomInsights", "cseViewFileAnalysis", "cseViewMappings", "cseViewSuppressedEntities", "cseManageFavoriteFields","viewCollectors","cseViewNetworkBlocks", "cseInvokeInsights","cseViewRules","cseViewAutomations","cseViewEntity"
-
  ]
-
 }
 ```
 
@@ -141,126 +109,68 @@ A data resource is a special kind of resource, defined by a "data" block. A data
 
 ```
 terraform {
-
  required_providers {
-
  sumologic = {
-
  source = "sumologic/sumologic"
-
  version = ">= 0.13"
-
  }
-
  http-client = {
-
  source = "dmachard/http-client"
-
  version = "0.0.3"
-
  }
-
  }
-
 }
-
-
 
 variable "sumologic_access_id" {
-
  type = string
-
 }
-
-
 
 variable "sumologic_access_key" {
-
  type = string
-
 }
-
-
 
 variable "sumologic_deployment" {
-
  type = string
-
 }
-
-
 
 provider "sumologic" {
-
  access_id = var.sumologic_access_id
-
  access_key = var.sumologic_access_key
-
  environment = var.sumologic_deployment
-
 }
-
-
 
 data "httpclient_request" "enable_audit_policy" {
-
  provider = http-client
-
  username = "${var.sumologic_access_id}"
-
  password = "${var.sumologic_access_key}"
-
  url = "${var.sumologic_deployment}v1/policies/audit" 
-
  request_method = "PUT"
-
  request_headers = {
-
  Content-Type: "application/json",
-
  }
-
  request_body = jsonencode({
-
  "enabled": true
-
  })
-
 }
 
-
-
 data "httpclient_request" "enable_searchaudit_policy" {
-
  provider = http-client
-
  username = "${var.sumologic_access_id}"
-
  password = "${var.sumologic_access_key}"
-
  url = "${var.sumologic_deployment}v1/policies/searchAudit" 
-
  request_method = "PUT"
-
  request_headers = {
-
  Content-Type: "application/json",
-
  }
-
  request_body = jsonencode({
-
  "enabled": true
-
  })
-
 }
 ```
 
-
 ### Terraform state files
 
-After running Terraform, there is another file type you should be aware of. A state file is a configuration file generated by a Terraform installation that stores the current state of your managed infrastructure and configuration. This state is typically stored in a local file in your terraform working directory named "terraform.tfstate".
+After running Terraform, there is another file type you should be aware of. A state file is a configuration file generated by a Terraform installation that stores the current state of your managed infrastructure and configuration. This state is typically stored in a local file in your terraform working directory named `terraform.tfstate`.
 
 The state file is used by Terraform to track the current infrastructure state in order to properly process updates or deletes. The state file should be kept safe and secure (since it may contain sensitive data such as access keys and secrets) and is not meant to be edited directly, even though it is a simple human-readable JSON text file. An example state file might look like the screenshot below:
 
@@ -275,30 +185,26 @@ The solution template files [can be found here](https://github.com/SumoLogic/sum
 `git clone https://github.com/SumoLogic/sumologic-solution-templates`
 
 In order to use this solution template, you should already have:
-
-* A Sumo Logic account
-* An AWS account
-* A Sumo Logic Access ID and Access Key
+* A Sumo Logic account.
+* An AWS account.
+* A Sumo Logic Access ID and Access Key.
 
 In preparation, you will want to complete the following steps on your server or local machine:
-
 1. [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) (version 1.6 or later)
 1. [Install Python](https://www.python.org/downloads/) (version 3.11 or later)
 1. [Install the latest version](https://github.com/jqlang/jq/wiki/Installation) of the "jq" JSON parser, necessary to run the .sh batch files in the template.
 1. [Install the Sumo Logic Python SDK](https://pypi.org/project/sumologic-sdk/).
 1. [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-Next, navigate to the "sumologic-solution-templates" folder where you cloned the repository, and go to the "aws-observability-terraform" subdirectory.  Set this directory to be the Terraform working directory by executing the following command:
+Next, navigate to the `sumologic-solution-templates` folder where you cloned the repository, and go to the `aws-observability-terraform` subdirectory. Set this directory to be the Terraform working directory by executing the following command: `terraform init`
 
-`terraform init`
+Using the solution template starts with [the main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.auto.tfvars) which contain variable settings for your Sumo Logic organization, access ID and key, and other configuration information that will be referenced by the other template files. Open this file and fill in each field with the requested information.
 
-Using the solution template starts with [the main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.auto.tfvars) which contain variable settings for your Sumo Logic organization, access ID/Key, and other configuration information that will be referenced by the other template files. Open this file and fill in each field with the requested information.
-
-<img src={useBaseUrl('img/api/tfvars-file.png')} alt="tfvars file" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/api/tfvars-file.png')} alt="tfvars file" style={{border: '1px solid gray'}} width="800" />
 
 Check the [Sumo Logic deployment guide](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if you need help finding the proper deployment value to use.
 
-As part of the AWS Observability solution, we'll want to create and use the proper fields and FERs in Sumo Logic (see [here](/docs/observability/aws/deploy-use-aws-observability/resources/) for more details).  Make sure you are in the "aws-observability-terraform" sub-directory, and run the following CLI commands (with the appropriate information included):
+As part of the AWS Observability solution, we'll want to create and use the proper fields and FERs in Sumo Logic (see [here](/docs/observability/aws/deploy-use-aws-observability/resources/) for more details). Make sure you are in the `aws-observability-terraform` sub-directory, and run the following CLI commands (with the appropriate information included):
 
 ```
 export SUMOLOGIC_ENV="YOUR_SUMOLOGIC_DEPLOYMENT"
@@ -306,25 +212,25 @@ export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
 export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
 ```
 
-Then run the "fields.sh" script with the following command:
-
-`sh fields.sh`
+Then run the `fields.sh` script with the following command: `sh fields.sh`
 
 Next, let's look at the [providers.tf file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf), which connects Terraform to the Sumo Logic and AWS provider plugins.
 
-<img src={useBaseUrl('img/api/providers-tf-file.png')} alt="providers.tf file" style={{border: '1px solid gray'}} width="600" /> 
+<img src={useBaseUrl('img/api/providers-tf-file.png')} alt="providers.tf file" style={{border: '1px solid gray'}} width="800" /> 
 
-The Sumo Logic provider is already configured, as we can simply reference the environment and access key settings from the tfvars file configured earlier. For the AWS provider, change the region setting (if needed).  Then, uncomment the "profile" and "alias" fields (lines 16 and 20, by deleting the "#") and fill in the values using your AWS profile name (from the AWS CLI) and a custom alias to identify this provider.
+The Sumo Logic provider is already configured, as we can simply reference the environment and access key settings from the `tfvars` file configured earlier. For the AWS provider, change the region setting (if needed). Then, uncomment the `profile` and `alias` fields (lines 16 and 20, by deleting the `#`) and fill in the values using your AWS profile name (from the AWS CLI) and a custom alias to identify this provider.
 
-NOTE: this installation is assuming you are using a single AWS account in a single region.  If you need to configure multiple AWS accounts and/or multiple regions, see [Option 2: Deploy to Multiple Regions within an AWS account](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#option-2-deploy-to-multiple-regions-within-an-aws-account) for additional information on configuring the providers.tf file.
+:::note
+This installation is assuming you are using a single AWS account in a single region. If you need to configure multiple AWS accounts and/or multiple regions, see [Option 2: Deploy to Multiple Regions within an AWS account](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#option-2-deploy-to-multiple-regions-within-an-aws-account) for additional information on configuring the `providers.tf` file.
+:::
 
 Lastly, let's look at the [main.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.tf) file.
 
-<img src={useBaseUrl('img/api/main-tf-file.png')} alt="main.tf file" style={{border: '1px solid gray'}} width="600" /> 
+<img src={useBaseUrl('img/api/main-tf-file.png')} alt="main.tf file" style={{border: '1px solid gray'}} width="800" /> 
 
-The top "sumo-module" section can usually be left alone unless there are [settings that need to be overridden](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#appendix) for your install.
+The top `sumo-module` section can usually be left alone unless there are [settings that need to be overridden](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#appendix) for your install.
 
-The bottom "collection-module" section is given as a template, but you will usually want to comment out this section (add "#" in front of every line) and create your own module definition using the AWS alias(es) defined in the provider.tf file earlier.
+The bottom `collection-module` section is given as a template, but you will usually want to comment out this section (add `#` in front of every line) and create your own module definition using the AWS alias(es) defined in the `provider.tf` file earlier.
 
 An example:
 
@@ -342,21 +248,16 @@ environment  = var.sumologic_environment
 }
 ```
 
-Substitute in the appropriate aliases for the ALIAS fields above.  Note that if you are deploying for multiple regions and/or multiple AWS accounts, you'll need one new module section for each region defined in provider.tf.  (See [more examples](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#step-4-configure-providers-in-the-maintf-file) for multi-region/multi-account circumstances)
+Substitute in the appropriate aliases for the ALIAS fields above. Note that if you are deploying for multiple regions and/or multiple AWS accounts, you'll need one new module section for each region defined in provider.tf. (See [more examples](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#step-4-configure-providers-in-the-maintf-file) for multi-region/multi-account circumstances)
 
-We're finished! Let's deploy!
+We're finished. Let's deploy.
+
 Once the above files are configured, you can run Terraform against your scripts by executing the following CLI commands in sequence:
 
 ```
 terraform validate
-
 terraform plan
-
 terraform apply
 ```
 
 Terraform will report back during these processes if there are any issues with the text of the terraform files that needs troubleshooting.
-
-
-
-
