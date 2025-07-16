@@ -210,6 +210,12 @@ This guide has documentation for all of the apps that Sumo Logic provides for Go
   </div>
   <div className="box smallbox card">
     <div className="container">
+    <a href={useBaseUrl('docs/integrations/google/cloud-security-command-center')}><img src={useBaseUrl('img/integrations/google/google-cloud-security-command-center.png')} alt="Thumbnail icon" width="55"/><h4>Google Cloud Security Command Center</h4></a>
+    <p>A guide to the Sumo Logic app for Google Cloud Security Command Center.</p>
+    </div>
+  </div>
+  <div className="box smallbox card">
+    <div className="container">
     <a href={useBaseUrl('docs/integrations/google/cloud-spanner')}><img src={useBaseUrl('img/integrations/google/GoogleCloudSpanner.png')} alt="Thumbnail icon" width="55"/><h4>Google Cloud Spanner</h4></a>
     <p>A guide to the Sumo Logic app for Google Cloud Spanner.</p>
     </div>

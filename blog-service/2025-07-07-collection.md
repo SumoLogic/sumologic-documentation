@@ -1,6 +1,6 @@
 ---
 title: Zimperium MTD Source (Collection)
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://help.sumologic.com/img/reuse/rss-image.jpg
 keywords:
   - c2c
   - zimperium-mtd-source

@@ -115,7 +115,7 @@ module.exports = {
     ],
     ['@docusaurus/plugin-google-gtag',
       {
-        trackingID: 'G-CVH19TBVSL',
+        trackingID: ['G-CVH19TBVSL', 'G-9FTQ9KJJBY'],
       },
     ],
     ['@docusaurus/plugin-content-docs',

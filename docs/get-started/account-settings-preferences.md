@@ -128,6 +128,10 @@ Enabling this preference hides the **Open in New Tab** button on navigation menu
 
 However, even when this preference is enabled, the **Open in New Tab** button remains visible for menu items with subfolders, allowing you to click the menu item to view its subfolders and open them in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button-on-folder.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="250" />
 
+### Default Starting Page
+
+Select the default page to appear when you log in to Sumo Logic. This preference applies only to users of the [**New UI**](/docs/get-started/sumo-logic-ui).
+
 ### Theme
 
 Select to show the user interface in a **Dark theme** or **Light theme**.

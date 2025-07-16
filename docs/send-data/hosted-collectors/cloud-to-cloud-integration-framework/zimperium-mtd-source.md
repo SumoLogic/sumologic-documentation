@@ -10,7 +10,7 @@ description: Learn how to collect the device logs from the Zimperium API and sen
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/zimperium-mtd.png')} alt="logo" width="60" />
+<img src={useBaseUrl('img/send-data/zimperium-mtd.png')} alt="logo" width="150" />
 
 Zimperium is a cybersecurity company specializing in mobile threat defense. It uses machine learning and on-device detection to deliver real-time protection against mobile device, network, phishing, and app threats. Designed for enterprises, its solutions safeguard sensitive data and ensure mobile security and integrity without compromising user experience or privacy in an increasingly mobile-first world.
 
