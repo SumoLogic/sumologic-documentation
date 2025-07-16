@@ -78,12 +78,12 @@ The following attributes are required:
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
          * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
-            * `file:hashes.'MD-5'`
+            * `file:hashes.MD5`
             * `file:hashes.'SHA-1'`
             * `file:hashes.'SHA-2'`
             * `file:hashes.'SHA-3'`
             * `file:hashes.'SHA-256'`
-            * `file:hashes.'SHA-512'`. <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.'MD5' = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
+            <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
@@ -144,12 +144,12 @@ Columns for the following attributes are required in the upload file:
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
          * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
-            * `file:hashes.'MD-5'`
+            * `file:hashes.MD5`
             * `file:hashes.'SHA-1'`
             * `file:hashes.'SHA-2'`
             * `file:hashes.'SHA-3'`
             * `file:hashes.'SHA-256'`
-            * `file:hashes.'SHA-512'`. <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.'MD5' = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
+            <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
@@ -282,12 +282,12 @@ The following attributes are required:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
-            * `file:hashes.'MD-5'`
+            * `file:hashes.MD5`
             * `file:hashes.'SHA-1'`
             * `file:hashes.'SHA-2'`
             * `file:hashes.'SHA-3'`
             * `file:hashes.'SHA-256'`
-            * `file:hashes.'SHA-512'`. <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.'MD5' = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
+            <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
