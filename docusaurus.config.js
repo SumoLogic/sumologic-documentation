@@ -250,7 +250,7 @@ module.exports = {
     ],
     announcementBar: {
       id: 'berry',
-      content: '<b>Heads-up</b>: Heads-up: You’re on our Berry AI demo site. Berry is up to date, but the docs here may be outdated or incomplete.',
+      content: '<b>Heads-up</b>: You’re on our Berry AI demo site. While Berry is up to date, the docs here may be outdated or incomplete.',
       backgroundColor: '#b0eefe',
       textColor: '#000',
     },
