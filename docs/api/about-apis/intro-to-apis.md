@@ -19,13 +19,6 @@ In this article, you'll learn about:
 * How to use APIs with Sumo Logic's Cloud SIEM.
 * How to use Terraform with a Sumo Logic AWS Installation.
 
-## What are APIs?
-
-API stands for *Application Programming Interface*. Broadly speaking, they provide ways for two computers or systems to communicate with each other without needing a traditional "human-oriented" interface such as a web browser or mobile app. APIs typically consist of functions and protocols that provide access to data and system functionality from outside connections who know from the "interface specification" how to request data or info and what form the reply will take.
-
-The interfaces provided by the API are often called "contracts". The API designers will create individual functions that have defined calling mechanisms to either accept data or provide data (or both). Outside callers can learn from the specification and associated [Sumo Logic API documentation](https://api.sumologic.com/docs/) where and how to make API requests: what web address to target, what data parameters to provide, and what "answer" they will get in return.
-
-Web APIs typically use HTTP calls, the same protocol that provides web pages when accessing URLs through a web browser. HTTP requests can be classified by various "verbs" in the protocol, such as GET and POST, depending on whether you are requesting data or providing data to the system. Making an HTTP GET request that is formulated according to the API specification will return an HTTP response that contains the requested data. Many APIs also support POST, PUT, or DELETE commands where the requester can create, modify, or delete system data objects without needing to go through a web page.
 
 ## Create an access key
 
