@@ -29,7 +29,7 @@ Following are the normalized values for CrowdStrike:
 
 All other fields will be kept in the `fields{}` object.
 
-*The value `malicious-activity` is used for the `threatType` if the regex matches: `name=threattype\/(clickfraud|commodity|pointofsale|randomware|targeted|targetedcrimeware)`. The value `anomalous-activity` is used if the regex matches `name=threattype\/`, and the value `unknown` is used if nothing matches.
+*The value `malicious-activity` is used for the `threatType` if the regex matches: `name=threattype\/(clickfraud|commodity|pointofsale|ransomware|targeted|targetedcrimeware)`. The value `anomalous-activity` is used if the regex matches `name=threattype\/`, and the value `unknown` is used if nothing matches.
 
 ### Type mapping for CrowdStrike 
 
