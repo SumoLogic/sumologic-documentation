@@ -5,7 +5,7 @@ sidebar_label: Terraform Configuration
 description: Learn how to set up the Software Development Optimization (SDO) Solution using a Terraform script.
 ---
 
-These instructions help you prepare and set up the Software Development Optimization (SDO) Solution using a Terraform script. 
+These instructions help you prepare and set up the Software Development Optimization (SDO) Solution using a Terraform script. For more information about how to use Terraform in your Sumo Logic environment, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic).
 
 The Terraform script performs the following actions:
 

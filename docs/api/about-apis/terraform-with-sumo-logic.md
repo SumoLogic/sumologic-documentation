@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## What is Terraform?
 
-[Terraform](https://developer.hashicorp.com/terraform) is an "infrastructure as code" tool developed by [Hashicorp](https://developer.hashicorp.com/terraform/intro). Terraform scripts are used to define both cloud and on-prem resources in human-readable configuration files. Using Terraform scripts makes it easier for system administrators to provision and manage infrastructure and system resources consistently and reliably. The Terraform community, including Sumo Logic, supports Terraform through providers and APIs allowing applications to install and manage different types of resources and services from different vendors in one workflow.
+[Terraform](https://developer.hashicorp.com/terraform) is an "infrastructure as code" tool developed by Hashicorp. Terraform scripts are used to define both cloud and on-prem resources in human-readable configuration files. Using Terraform scripts makes it easier for system administrators to provision and manage infrastructure and system resources consistently and reliably. The Terraform community, including Sumo Logic, supports Terraform through providers and APIs allowing applications to install and manage different types of resources and services from different vendors in one workflow. See the [Terraform Sumo Logic provider](https://registry.terraform.io/namespaces/SumoLogic).
 
 [How does Terraform work?](https://developer.hashicorp.com/terraform/intro#how-does-terraform-work) The core Terraform workflow consists of three stages:
 * **Write**. Define resources, which may be across multiple cloud providers and services. For example, you might create a configuration to deploy an AWS instance to support AWS Observability for a customer.
@@ -22,9 +22,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Understanding the Terraform format
 
-Terraform scripts are text files, typically with a `.tf` extension, that use names and values in a hierarchal format, defined by curly braces `{ }`. Terraform scripts can be edited with any text editor, and although they are intended to be run automatically by a computer system, the script elements are generally human readable and not difficult to parse and understand. 
+Terraform scripts are text files, typically with a `.tf` extension, that use names and values in a hierarchal format, defined by curly braces `{ }`. Terraform scripts can be edited with any text editor, and although they are intended to be run automatically by a computer system, the script elements are generally human-readable and not difficult to parse and understand. 
 
 Let's look at some examples:
+* [Terraform providers](#terraform-providers)
+* [Terraform resources](#terraform-resources)
+* [Terraform state files](#terraform-state-files)
 
 ### Terraform providers
 
@@ -174,12 +177,12 @@ The state file is used by Terraform to track the current infrastructure state in
 
 ## Using Sumo Logic's AWS Terraform template
 
-Since setting up AWS Observability is a common use case, Sumo Logic has already established a Terraform template containing the basic script items needed to setup an AWS installation with the proper AWS and Sumo Logic resources and components.
+Since [setting up AWS Observability](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/) is a common use case, Sumo Logic has already established a Terraform template containing the basic script items needed to setup an AWS installation with the proper AWS and Sumo Logic resources and components.
 
 To use this solution template, you should already have:
 * A Sumo Logic account.
 * An AWS account.
-* A Sumo Logic access ID and access key.
+* A [Sumo Logic access ID and access key](/docs/manage/security/access-keys/).
 
 Perform the following steps to use the template:
 
@@ -187,7 +190,7 @@ Perform the following steps to use the template:
 1. In preparation, you will want to complete the following steps on your server or local machine:
      1. [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) (version 1.6 or later).
      1. [Install Python](https://www.python.org/downloads/) (version 3.11 or later).
-     1. [Install the latest version](https://github.com/jqlang/jq/wiki/Installation) of the "jq" JSON parser, necessary to run the `.sh` batch files in the template.
+     1. [Install the latest version of the "jq" JSON parser](https://github.com/jqlang/jq/wiki/Installation), necessary to run the `.sh` batch files in the template.
      1. [Install the Sumo Logic Python SDK](https://pypi.org/project/sumologic-sdk/).
      1. [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 1. Next, navigate to the `sumologic-solution-templates` folder where you cloned the repository, and go to the `aws-observability-terraform` subdirectory. Set this directory to be the Terraform working directory by executing the following command: `terraform init`

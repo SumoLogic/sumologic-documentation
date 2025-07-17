@@ -29,7 +29,7 @@ Web APIs typically use HTTP calls, the same protocol that provides web pages whe
 
 ## Create an access key
 
-To use the Sumo Logic APIs you need a Sumo Logic access ID and access key. To do this, you need to log in to the main Sumo Logic web interface with a Sumo Logic user account that has the [Create Access Keys role capability](/docs/manage/users-roles/roles/role-capabilities/#security).
+To use the Sumo Logic APIs you need a [Sumo Logic access ID and access key](/docs/manage/security/access-keys/). To do this, you need to log in to the main Sumo Logic web interface with a Sumo Logic user account that has the [Create Access Keys role capability](/docs/manage/users-roles/roles/role-capabilities/#security).
 
 In this section, we'll walk you through creating a personal access key that you can use to access the API in the subsequent sections.
 
