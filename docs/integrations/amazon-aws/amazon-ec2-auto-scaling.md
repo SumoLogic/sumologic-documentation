@@ -217,3 +217,15 @@ Use this dashboard for:
 * Optimizing warm pool size and capacity to improve application responsiveness during sudden load increases
 
 <img src={useBaseUrl('img/integrations/05.-Amazon-EC2-Auto-Scaling-Warm-Pool.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+
+## Upgrade/Downgrade the Amazon EC2 Auto Scaling app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon EC2 Auto Scaling app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

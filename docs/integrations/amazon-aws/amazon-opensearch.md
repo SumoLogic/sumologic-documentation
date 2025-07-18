@@ -438,3 +438,15 @@ Use this dashboard to:
 * Ability to correlate cache metrics with overall system performance.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/10.-Amazon-OpenSearch-Cache-Performance.png')} alt="Fields" />
+
+## Upgrade/Downgrade the Amazon OpenSearch app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon OpenSearch app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
