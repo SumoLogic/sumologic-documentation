@@ -4129,10 +4129,10 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Sentry Alerts
 
-| Name             | Description                                                                                                                 | Alert Condition | Recover Condition |
-|:-----------------|:----------------------------------------------------------------------------------------------------------------------------|:----------------|:------------------|
-| `Sentry Errors`  | This fires upon detection of a new error or exception in the project within a 5-minute timeframe.                           | Count `>` 0     | Count `<=` 0      |
-| `Sentry - Issue` | This alert fires when a new issue is captured by indicating an error or exception in the project within the last 5 minutes. | Count `>` 0     | Count `<=` 0      |
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Sentry Errors` | This fires upon detection of a new error or exception in the project within a 5-minute timeframe. | Count `>` 0 | Count `<=` 0 |
+| `Sentry - Issue` | This alert fires when a new issue is captured by indicating an error or exception in the project within the last 5 minutes. | Count `>` 0 | Count `<=` 0 |
 
 ## Upgrade/Downgrade the Sentry app (Optional)
 
