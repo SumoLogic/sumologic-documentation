@@ -4121,6 +4121,19 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Sentry/Sentry-Alert-Tracker.png')} alt="Sentry - Alert Tracker" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Sentry app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Sentry Alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Sentry Errors` | This fires upon detection of a new error or exception in the project within a 5-minute timeframe. | Count `>` 0 | Count `<=` 0 |
+| `Sentry - Issue` | This alert fires when a new issue is captured by indicating an error or exception in the project within the last 5 minutes. | Count `>` 0 | Count `<=` 0 |
+
 ## Upgrade/Downgrade the Sentry app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
