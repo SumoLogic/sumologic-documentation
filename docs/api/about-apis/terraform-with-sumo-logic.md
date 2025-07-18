@@ -20,7 +20,7 @@ You can use Terraform to manage all sorts of Sumo Logic resources. Here are some
 * [Manage collectors, users, and roles](https://www.sumologic.com/blog/terraform-provider-hosted)
 * [Deploy solutions (like AWS Observability)](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/)
 
-## Prequisites
+## Prerequisites
 
 To use Terraform with Sumo Logic, you need the following:
 * A Sumo Logic [account](/docs/get-started/sign-up/)
