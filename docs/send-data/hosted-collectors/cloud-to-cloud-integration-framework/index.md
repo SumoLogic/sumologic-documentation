@@ -13,7 +13,7 @@ The Cloud-to-Cloud Integration Framework is a fully-managed collection system th
 * Each account is limited to 50 Cloud-to-Cloud Sources.
 * A warning is issued when you reach 80% of the limit (40 Sources).
 * You are notified when the maximum limit is reached.
-* In the [Fed deployment](/docs/api/troubleshooting#deployments-and-sumo-logic-endpoints), supported Cloud-to-Cloud Sources are limited.
+* In the [Fed deployment](/docs/api/about-apis/troubleshooting#deployments-and-sumo-logic-endpoints), supported Cloud-to-Cloud Sources are limited.
 
 ## Static IP addresses
 

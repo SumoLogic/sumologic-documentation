@@ -37,7 +37,7 @@ To send data to Sumo Logic through AWS PrivateLink, you'll need to configure an
 
 With the NLB-created and ALB-registered as a target, requests over AWS PrivateLink to the NLB are forwarded to the ALB.
 
-Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend on your Sumo Logic deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). If you're using the VPC in a different region where the Sumo Logic PrivateLink endpoint service is set up, you need to set up VPC peering. Either way, you need to create an endpoint.
+Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend on your Sumo Logic deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). If you're using the VPC in a different region where the Sumo Logic PrivateLink endpoint service is set up, you need to set up VPC peering. Either way, you need to create an endpoint.
 
 <div class="responsive-table">
 
@@ -63,7 +63,7 @@ Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend 
 
 ### No VPC Peering
 
-If the VPC is in the same [AWS region as your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security), you do not need to set up VPC peering. Navigate to **Actions**, then select **Modify private DNS name**.
+If the VPC is in the same [AWS region as your deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security), you do not need to set up VPC peering. Navigate to **Actions**, then select **Modify private DNS name**.
 
 ![Endpoint](/img/integrations/amazon-aws/privatelink-endpoints.png)
 
@@ -73,7 +73,7 @@ Check the box to enable private DNS names.
 
 ### VPC Peering
 
-If the VPC is not in the same [AWS region as your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security), you'll need to [set up VPC peering](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-peering.html).
+If the VPC is not in the same [AWS region as your deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security), you'll need to [set up VPC peering](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-peering.html).
 
 1. Create the VPC peering connection between the region for the client-side VPC and the region where the Sumo Logic PrivateLink service is configured.
 2. Create a Route53 private hosted zone. Select the VPC peered in the region where our server-side region is located.

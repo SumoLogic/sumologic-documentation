@@ -5,7 +5,7 @@ sidebar_label: Terraform Configuration
 description: Learn how to set up the Software Development Optimization (SDO) Solution using a Terraform script.
 ---
 
-These instructions help you prepare and set up the Software Development Optimization (SDO) Solution using a Terraform script. 
+These instructions help you prepare and set up the Software Development Optimization (SDO) Solution using a Terraform script. For more information about how to use Terraform in your Sumo Logic environment, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic).
 
 The Terraform script performs the following actions:
 
@@ -295,8 +295,8 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | :-- | :-- | :-- |
 | sumo_access_id | [Sumo Logic Access ID](/docs/manage/security/access-keys.md) | |
 | sumo_access_key | [Sumo Logic Access Key](/docs/manage/security/access-keys.md) |  |
-| deployment | [Sumo Logic Deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) | us1 |
-| sumo_api_endpoint | [Sumo Logic API Endpoint.](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) Make sure the trailing "/" is present. | https://api.sumologic.com/api/v1/ |
+| deployment | [Sumo Logic Deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) | us1 |
+| sumo_api_endpoint | [Sumo Logic API Endpoint.](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) Make sure the trailing "/" is present. | https://api.sumologic.com/api/v1/ |
 | app_installation_folder | The Sumo Logic apps will be installed in a folder under your personal folder in Sumo Logic. | Software Development Optimization |
 | install_jira_cloud | Install [Sumo Logic Application and webhooks for Jira Cloud](/docs/integrations/app-development/jira-cloud). Options: app, collection, fer, all, and none. | all |
 | install_jira_server | Install [Sumo Logic Application and webhooks for Jira Server](/docs/integrations/app-development/jira). Options: app, collection, fer, all, and none. | all |

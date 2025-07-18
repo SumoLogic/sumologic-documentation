@@ -9,7 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: Jun 22, 2023***
 
-Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage cloud services.
+This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Terraform. [Terraform](https://developer.hashicorp.com/terraform) is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage cloud services.
+
+For more information about how to use Terraform in your Sumo Logic environment, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic).
 
 ## Actions
 
