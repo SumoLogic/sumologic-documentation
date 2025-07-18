@@ -272,9 +272,9 @@ module.exports = {
       contextualSearch: false,
       insights: true,
       insightsConfig: {
-        useCookie: true, // writes the _ALGOLIA cookie // cookieDuration: 15552000000, // 6 months – optional
+        useCookie: true, // alt to useCookie: true,
       },
-      // or is the config just useCookie: true,  ?
+      useCookie: true,  // alt to insightsConfig: {useCookie: true,},
     },
     prism: {
       theme: lightCodeTheme,
