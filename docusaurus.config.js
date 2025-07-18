@@ -271,6 +271,10 @@ module.exports = {
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
       insights: true,
+      insightsConfig: {
+        useCookie: true, // alt to useCookie: true,
+      },
+      useCookie: true,  // alt to insightsConfig: {useCookie: true,},
     },
     prism: {
       theme: lightCodeTheme,
