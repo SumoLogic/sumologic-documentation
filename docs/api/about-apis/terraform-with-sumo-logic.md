@@ -13,12 +13,73 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Terraform](https://developer.hashicorp.com/terraform) is an "infrastructure as code" tool developed by Hashicorp. Terraform scripts are used to define both cloud and on-prem resources in human-readable configuration files. Using Terraform scripts makes it easier for system administrators to provision and manage infrastructure and system resources consistently and reliably. The Terraform community, including Sumo Logic, supports Terraform through providers and APIs allowing applications to install and manage different types of resources and services from different vendors in one workflow. See the [Terraform Sumo Logic provider](https://registry.terraform.io/namespaces/SumoLogic).
 
-[How does Terraform work?](https://developer.hashicorp.com/terraform/intro#how-does-terraform-work) The core Terraform workflow consists of three stages:
-* **Write**. Define resources, which may be across multiple cloud providers and services. For example, you might create a configuration to deploy an AWS instance to support AWS Observability for a customer.
-* **Plan**. Create an execution plan describing the infrastructure it will create, update, or destroy based on the existing infrastructure and your configuration.
-* **Apply**. Once the plan is approved, Terraform performs the proposed operations in the correct order, respecting any resource dependencies.
+## Sumo Logic use cases
 
-<img src={useBaseUrl('img/api/terraform-diagram.png')} alt="Terraform diagram" style={{border: '1px solid gray'}} width="700" /> 
+You can use Terraform to manage all sorts of Sumo Logic resources. Here are some use cases:
+* [Manage monitors](https://www.sumologic.com/blog/terraform-sumo-logic)
+* [Manage collectors, users, and roles](https://www.sumologic.com/blog/terraform-provider-hosted)
+* [Deploy solutions (like AWS Observability)](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/)
+
+## Prequisites
+
+To use Terraform with Sumo Logic, you need the following:
+* A Sumo Logic [account](/docs/get-started/sign-up/)
+* A Sumo Logic [access key](/docs/manage/security/access-keys/)
+* [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) 
+
+## Using Sumo Logic's AWS Terraform template
+
+To illustrate how to use Terraform with Sumo Logic, we'll walk you through [how to deploy the Sumo Logic AWS Observability Solution with a Terraform template](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/). Sumo Logic has already established a Terraform template containing the basic script items needed to setup an AWS installation with the proper AWS and Sumo Logic resources and components.
+
+To use this solution template, you should already have:
+* A Sumo Logic account.
+* An AWS account.
+* A [Sumo Logic access ID and access key](/docs/manage/security/access-keys/).
+
+Perform the following steps to use the template:
+
+1. The solution template files can be found [here](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform), in the Sumo Logic solution templates Github repository. To implement this solution, copy or clone the files in the repository to your server or local machine. For instance, from the command line, you can use the following command to clone the repository:<br/>`git clone https://github.com/SumoLogic/sumologic-solution-templates`
+1. In preparation, you will want to complete the following steps on your server or local machine:
+     1. [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) (version 1.6 or later).
+     1. [Install Python](https://www.python.org/downloads/) (version 3.11 or later).
+     1. [Install the latest version of the "jq" JSON parser](https://github.com/jqlang/jq/wiki/Installation), necessary to run the `.sh` batch files in the template.
+     1. [Install the Sumo Logic Python SDK](https://pypi.org/project/sumologic-sdk/).
+     1. [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+1. Next, navigate to the `sumologic-solution-templates` folder where you cloned the repository, and go to the `aws-observability-terraform` subdirectory. Set this directory to be the Terraform working directory by executing the following command: `terraform init`
+1. Using the solution template starts with [the main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.auto.tfvars) which contains variable settings for your Sumo Logic organization, access ID and key, and other configuration information that will be referenced by the other template files. Open this file and fill in each field with the requested information.<br/><img src={useBaseUrl('img/api/tfvars-file.png')} alt="tfvars file" style={{border: '1px solid gray'}} width="800" /><br/>Check the [Sumo Logic API endpoints](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if you need help finding the proper deployment value to use.
+1. As part of the AWS Observability solution, we'll want to create and use the proper fields and FERs in Sumo Logic (see [here](/docs/observability/aws/deploy-use-aws-observability/resources/) for more details). Make sure you are in the `aws-observability-terraform` sub-directory, and run the following CLI commands (with the appropriate information included):
+     ```
+     export SUMOLOGIC_ENV="YOUR_SUMOLOGIC_DEPLOYMENT"
+     export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
+     export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
+     ```
+1. Then run the `fields.sh` script with the following command: `sh fields.sh`
+1. Next, let's look at the [providers.tf file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf), which connects Terraform to the Sumo Logic and AWS provider plugins.<br/><img src={useBaseUrl('img/api/providers-tf-file.png')} alt="providers.tf file" style={{border: '1px solid gray'}} width="800" /> <br/>The Sumo Logic provider is already configured, as we can simply reference the environment and access key settings from the `tfvars` file configured earlier. For the AWS provider, change the region setting (if needed). Then, uncomment the `profile` and `alias` fields (lines 16 and 20, by deleting the `#`) and fill in the values using your AWS profile name (from the AWS CLI) and a custom alias to identify this provider.
+     :::note
+     This installation is assuming you are using a single AWS account in a single region. If you need to configure multiple AWS accounts and/or multiple regions, see [Option 2: Deploy to Multiple Regions within an AWS account](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#option-2-deploy-to-multiple-regions-within-an-aws-account) for additional information on configuring the `providers.tf` file.
+     :::
+1. Lastly, let's look at the [main.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.tf) file.<br/><img src={useBaseUrl('img/api/main-tf-file.png')} alt="main.tf file" style={{border: '1px solid gray'}} width="800" /> <br/>The top `sumo-module` section can usually be left alone unless there are [settings that need to be overridden](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#appendix) for your install.<br/><br/>The bottom `collection-module` section is given as a template, but you will usually want to comment out this section (add `#` in front of every line) and create your own module definition using the AWS alias(es) defined in the `provider.tf` file earlier.<br/><br/>An example:
+     ```
+     module "<ALIAS>" {
+     source = "./source-module"
+     providers = { aws = aws.<ALIAS> }
+     
+     aws_account_alias = <var.aws_account_alias OR "account alias">
+     sumologic_organization_id = var.sumologic_organization_id
+     access_id    = var.sumologic_access_id
+     access_key   = var.sumologic_access_key
+     environment  = var.sumologic_environment
+     }
+     ```
+     Substitute in the appropriate aliases for the ALIAS fields above. Note that if you are deploying for multiple regions and/or multiple AWS accounts, you'll need one new module section for each region defined in `provider.tf`. (See [more examples](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#step-4-configure-providers-in-the-maintf-file) for multi-region and multi-account circumstances)
+1. We're finished. Let's deploy.
+     <br/>Once the above files are configured, you can run Terraform against your scripts by executing the following CLI commands in sequence:
+     ```
+     terraform validate
+     terraform plan
+     terraform apply
+     ```
+     Terraform will report back during these processes if there are any issues with the text of the terraform files that needs troubleshooting.
 
 ## Understanding the Terraform format
 
@@ -175,56 +236,10 @@ The state file is used by Terraform to track the current infrastructure state in
 
 <img src={useBaseUrl('img/api/terraform-state-file.png')} alt="Terraform state file" style={{border: '1px solid gray'}} width="600" /> 
 
-## Using Sumo Logic's AWS Terraform template
+## Additional resources
 
-Since [setting up AWS Observability](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/) is a common use case, Sumo Logic has already established a Terraform template containing the basic script items needed to setup an AWS installation with the proper AWS and Sumo Logic resources and components.
-
-To use this solution template, you should already have:
-* A Sumo Logic account.
-* An AWS account.
-* A [Sumo Logic access ID and access key](/docs/manage/security/access-keys/).
-
-Perform the following steps to use the template:
-
-1. The solution template files can be found [here](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform), in the Sumo Logic solution templates Github repository. To implement this solution, copy or clone the files in the repository to your server or local machine. For instance, from the command line, you can use the following command to clone the repository:<br/>`git clone https://github.com/SumoLogic/sumologic-solution-templates`
-1. In preparation, you will want to complete the following steps on your server or local machine:
-     1. [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) (version 1.6 or later).
-     1. [Install Python](https://www.python.org/downloads/) (version 3.11 or later).
-     1. [Install the latest version of the "jq" JSON parser](https://github.com/jqlang/jq/wiki/Installation), necessary to run the `.sh` batch files in the template.
-     1. [Install the Sumo Logic Python SDK](https://pypi.org/project/sumologic-sdk/).
-     1. [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
-1. Next, navigate to the `sumologic-solution-templates` folder where you cloned the repository, and go to the `aws-observability-terraform` subdirectory. Set this directory to be the Terraform working directory by executing the following command: `terraform init`
-1. Using the solution template starts with [the main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.auto.tfvars) which contains variable settings for your Sumo Logic organization, access ID and key, and other configuration information that will be referenced by the other template files. Open this file and fill in each field with the requested information.<br/><img src={useBaseUrl('img/api/tfvars-file.png')} alt="tfvars file" style={{border: '1px solid gray'}} width="800" /><br/>Check the [Sumo Logic API endpoints](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if you need help finding the proper deployment value to use.
-1. As part of the AWS Observability solution, we'll want to create and use the proper fields and FERs in Sumo Logic (see [here](/docs/observability/aws/deploy-use-aws-observability/resources/) for more details). Make sure you are in the `aws-observability-terraform` sub-directory, and run the following CLI commands (with the appropriate information included):
-     ```
-     export SUMOLOGIC_ENV="YOUR_SUMOLOGIC_DEPLOYMENT"
-     export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
-     export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
-     ```
-1. Then run the `fields.sh` script with the following command: `sh fields.sh`
-1. Next, let's look at the [providers.tf file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf), which connects Terraform to the Sumo Logic and AWS provider plugins.<br/><img src={useBaseUrl('img/api/providers-tf-file.png')} alt="providers.tf file" style={{border: '1px solid gray'}} width="800" /> <br/>The Sumo Logic provider is already configured, as we can simply reference the environment and access key settings from the `tfvars` file configured earlier. For the AWS provider, change the region setting (if needed). Then, uncomment the `profile` and `alias` fields (lines 16 and 20, by deleting the `#`) and fill in the values using your AWS profile name (from the AWS CLI) and a custom alias to identify this provider.
-     :::note
-     This installation is assuming you are using a single AWS account in a single region. If you need to configure multiple AWS accounts and/or multiple regions, see [Option 2: Deploy to Multiple Regions within an AWS account](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#option-2-deploy-to-multiple-regions-within-an-aws-account) for additional information on configuring the `providers.tf` file.
-     :::
-1. Lastly, let's look at the [main.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.tf) file.<br/><img src={useBaseUrl('img/api/main-tf-file.png')} alt="main.tf file" style={{border: '1px solid gray'}} width="800" /> <br/>The top `sumo-module` section can usually be left alone unless there are [settings that need to be overridden](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#appendix) for your install.<br/><br/>The bottom `collection-module` section is given as a template, but you will usually want to comment out this section (add `#` in front of every line) and create your own module definition using the AWS alias(es) defined in the `provider.tf` file earlier.<br/><br/>An example:
-     ```
-     module "<ALIAS>" {
-     source = "./source-module"
-     providers = { aws = aws.<ALIAS> }
-     
-     aws_account_alias = <var.aws_account_alias OR "account alias">
-     sumologic_organization_id = var.sumologic_organization_id
-     access_id    = var.sumologic_access_id
-     access_key   = var.sumologic_access_key
-     environment  = var.sumologic_environment
-     }
-     ```
-     Substitute in the appropriate aliases for the ALIAS fields above. Note that if you are deploying for multiple regions and/or multiple AWS accounts, you'll need one new module section for each region defined in `provider.tf`. (See [more examples](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#step-4-configure-providers-in-the-maintf-file) for multi-region and multi-account circumstances)
-1. We're finished. Let's deploy.
-     <br/>Once the above files are configured, you can run Terraform against your scripts by executing the following CLI commands in sequence:
-     ```
-     terraform validate
-     terraform plan
-     terraform apply
-     ```
-     Terraform will report back during these processes if there are any issues with the text of the terraform files that needs troubleshooting.
+* Blogs:
+      * [How to Use the New Sumo Logic Terraform Provider for Hosted Collectors](https://www.sumologic.com/blog/terraform-provider-hosted)
+      * [Terraform and Sumo Logic – Build Monitoring into your Cloud Infrastructure](https://www.sumologic.com/blog/terraform-sumo-logic)
+* Terraform resource: [Sumo Logic Provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs)
+* GitHub: [terraform-provider-sumologic](https://github.com/SumoLogic/terraform-provider-sumologic)

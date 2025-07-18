@@ -11,14 +11,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic has a host of useful APIs across all products that can add valuable functionality to any organization by providing access to data and activities without going through the website. API calls can be used for data gathering, automation of processes, and custom reports.
 
-This article presumes that you have a solid understanding of Sumo Logic functionality: collectors, queries, security offerings, etc. While the use of APIs are typically for "power users" looking for additional customization and access to web service resources, you also don't need a computer science degree to understand and make use of API calls. This article helps walk you through the basics and get you going with important data queries through the API.
+This article presumes that you have a solid understanding of Sumo Logic functionality: collectors, queries, security offerings, etc. While APIs are typically for "power users" looking for additional customization and access to web service resources, you also don't need a computer science degree to understand and make use of API calls. This article helps walk you through the basics and get you going with important data queries through the API.
 
 In this article, you'll learn about:
 * How to create a Sumo Logic access ID/key.
 * How to access Sumo Logic APIs.
 * How to use APIs with Sumo Logic's Cloud SIEM.
-* How to use Terraform with a Sumo Logic AWS Installation.
-
 
 ## Create an access key
 
