@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Beta. For more information, contact your Sumo Logic account executive.
 :::
 
-Search across child org helps you to run a log search query in the selected child org under a parent org. All the results obtained from this search will have the data identified from the selected child org.
+You can run a log search query in the selected child org under a parent org. All the results obtained from this search will have the data identified from the selected child org.
 		
 Follow the steps below to perform a child org-level search:
 		
