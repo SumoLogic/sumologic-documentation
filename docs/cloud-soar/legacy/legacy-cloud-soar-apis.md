@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../../reuse/api-intro.md';
 
 :::info
-This article only applies to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`. If it doesn't, refer to [Cloud SOAR APIs](/docs/api/cloud-soar) for documentation of the APIs used in our latest Cloud SOAR SaaS version. See [API Authentication](/docs/api/getting-started#authentication) for details about API best practices.
+This article only applies to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`. If it doesn't, refer to [Cloud SOAR APIs](/docs/api/cloud-soar) for documentation of the APIs used in our latest Cloud SOAR SaaS version. See [API Authentication](/docs/api/about-apis/getting-started#authentication) for details about API best practices.
 :::
 
 The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.

@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="sumo-logic-notifications" width="100"/>
 
-***Version: 0.1  
-Updated: Nov 11, 2024***
+***Version: 1.2  
+Updated: June 20, 2025***
 
 Sumo Logic Automation Tools simplifies Cloud SOAR playbooks with data processing and automation.
 
@@ -404,7 +404,7 @@ INPUT = "1"
 ```
 ```css
 OUTPUT = {
-  "cs_val": "100%"
+  "cs_val": "100"
 }
 ```
 
@@ -413,7 +413,7 @@ INPUT = "0.1"
 ```
 ```css
 OUTPUT = {
-  "cs_val": "10%"
+  "cs_val": "10"
 }
 ```
 
@@ -422,7 +422,7 @@ INPUT = "0.01"
 ```
 ```css
 OUTPUT = {
-  "cs_val": "1%"
+  "cs_val": "1"
 }
 ```
 
@@ -431,7 +431,7 @@ INPUT = ".5"
 ```
 ```css
 OUTPUT = {
-  "cs_val": "50%"
+  "cs_val": "50"
 }
 ```
 
@@ -460,4 +460,5 @@ No authentication configuration is needed. Sumo Logic Automation Tools executes 
 ## Change log
 
 * Nov 11, 2024 - Beta version released.
-* May 23, 2024 - Introduced the new "Scaled Decimal to Percentage" action, which converts a scaled decimal value into a percentage.
+* May 23, 2025 - Introduced the new "Scaled Decimal to Percentage" action, which converts a scaled decimal value into a percentage.
+* June 20, 2025 - Removed `%` sign from the output.

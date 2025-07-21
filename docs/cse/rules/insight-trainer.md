@@ -30,19 +30,6 @@ Watch this micro lesson to learn how to use the Insight Trainer dashboard.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/I90Wsjp5XPA?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## About Insight Trainer

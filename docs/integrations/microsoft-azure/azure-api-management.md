@@ -32,9 +32,10 @@ When you configure the Event Hubs source or HTTP source, plan your source catego
 
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
-   
+<MetricsSourceBeta/>
+
 :::note
 In the v2 service tiers, API Management has replaced the capacity metric with separate CPU and memory utilization metrics
 :::

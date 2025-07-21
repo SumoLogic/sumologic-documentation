@@ -65,7 +65,7 @@ The following table provides a summary list of key features by Flex package acco
 | Feature | Free | Trial | Essentials | Enterprise Suite Flex |
 |:------- | :--- | :---- | :------------- | :------------- |
 | Advanced Span Analytics |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| AI-driven Alerting |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
+| Anomaly Alerting |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Alert Response | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Anomaly Detection |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |

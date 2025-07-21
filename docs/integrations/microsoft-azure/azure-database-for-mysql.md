@@ -38,7 +38,9 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -59,7 +61,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    Set error logs related server parameters as given below:
    - error_server_log_file: set to *ON*
    - log_output: set to *FILE*
-   
+
    Set Slow Query logs related parameters as given below:
    - slow_query_log: set to *ON*
    - long_query_time: Set the number of seconds a query can run before it's considered "slow". The default is 10 seconds.

@@ -27,7 +27,7 @@ Example: The Microsoft Graph Security API Source provides a secure endpoint to c
 \Depending on the availability in the Fed, add the below note.\
 
 :::note
-This source is **not** yet available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+This source is **not** yet available in the [Fed deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected

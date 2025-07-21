@@ -1,6 +1,6 @@
 ---
 title: Sumo Collection Source (Collection)
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://help.sumologic.com/img/reuse/rss-image.jpg
 keywords:
   - apps
   - sumo-collection-source
