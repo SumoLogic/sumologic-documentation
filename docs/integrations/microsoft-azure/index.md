@@ -339,6 +339,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
     </div>
     <div className="box smallbox card">
       <div className="container">
+      <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-identity.png')} alt="Thumbnail icon" width="40"/>
+      <h4><a href="/docs/integrations/microsoft-azure/microsoft-defender-for-endpoint">Microsoft Defender for Endpoint</a></h4>
+      <p>A guide to the Sumo Logic app for Microsoft Defender for Endpoint.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/network-watcher.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/microsoft-azure/network-watcher">Azure Network Watcher</a></h4>
       <p>A guide to the Sumo Logic app for Azure Network Watcher.</p>
