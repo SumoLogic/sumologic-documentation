@@ -3188,6 +3188,7 @@ integrations: [
           link: {type: 'doc', id: 'platform-services/automation-service/index'},
           items: [
             'platform-services/automation-service/about-automation-service',
+            'platform-services/automation-service/intro-to-automation-service',
             {
               type: 'category',
               label: 'App Central',
