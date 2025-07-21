@@ -23,7 +23,7 @@ This topic describes features and options that give you administration over acco
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/health-events"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Health Events</h4></a>
+  <a href="/docs/manage/account-events"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Account Events</h4></a>
   <p>Monitor the health of your Collectors and Sources.</p>
   </div>
 </div>

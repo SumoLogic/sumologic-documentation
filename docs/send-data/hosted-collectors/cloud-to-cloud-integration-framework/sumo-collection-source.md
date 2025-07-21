@@ -18,7 +18,7 @@ Sumo Logic's Cloud-to-Cloud (C2C) framework enables seamless data integration by
 This source supports both Installed and Hosted Collectors configured within a C2C environment. By using Sumo Logic’s API, it provides centralized, real-time visibility into collector and source health, operational status, and configuration metrics—helping teams proactively monitor deployments, troubleshoot issues, and maintain a reliable data collection pipeline.
 
 :::tip
-For related info on collector health events, see [this doc](/docs/manage/health-events).
+For related info on collector account events, see [this doc](/docs/manage/account-events).
 :::
 
 ## Data collected
