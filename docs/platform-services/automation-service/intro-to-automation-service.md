@@ -48,7 +48,7 @@ Strictly speaking, the Automation Service is a subset of functionality provided 
 
 ## App Central integrations and playbooks
 
-[App Central](/docs/platform-services/automation-service/app-central/) is a central repository of out-of-the-box solutions that can help any organization get going with automations quickly without needing customization or development. The Automation Service comes with hundreds of pre-built playbooks and integrations as part of App Central. 
+[App Central](/docs/platform-services/automation-service/app-central/) is a central repository of out-of-the-box solutions that can help any organization get going with automations quickly without needing customization or development. The Automation Service comes with hundreds of pre-built [playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) and [integrations](/docs/platform-services/automation-service/app-central/integrations/) as part of App Central. 
 
 <img src={useBaseUrl('img/platform-services/automation-service/intro-app-central.png')} alt="App Central screen" style={{border: '1px solid gray'}} width="800" />
 
@@ -65,7 +65,7 @@ Let's check out the Automation Service UI and learn about installing and configu
 1. Choose a sample integration from the list and click on it. A popup window will appear showing the details of the integration, including version, description, and a list of "actions" that are supported in automations.
 1. Navigate to the [Integrations](/docs/platform-services/automation-service/automation-service-integrations/) page to show installed integrations. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. 
 1. In this view, you can see the integrations that have already been installed and configured in the system. Locate an integration called [Sumo Logic Log Analytics](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics/) in the list and click on it. The panel on the right will show the integration details, including available actions. Many integrations after install will require appropriate configuration using "resources".<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-explore-ui-installed-integrations.png')} alt="Installed integrations" style={{border: '1px solid gray'}} width="600" />
-1. Move the mouse cursor over the existing resource called "Sumo Logic Log Analytics resource", then click the "Edit" (pencil) icon. You will see a dialog showing the configuration fields for this resource.
+1. Move the mouse cursor over the existing resource called **Sumo Logic Log Analytics resource**, then click the "Edit" (pencil) icon. You will see a dialog showing the configuration fields for this resource.
      :::note
      When you create a resource or configure an existing one, you need to enter the appropriate connection information such as the API web URL (for either Sumo Logic or a third-party service) and associated API keys (see [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/)). Many Sumo Logic integrations require you to create an access ID and access key through the Sumo Logic UI to use in configuring integrations. Some third party integrations may require you to visit their website and sign up for an account in order to obtain the appropriate URL and/or credentials for their API.
      :::
@@ -108,69 +108,60 @@ The Sumo Logic Automation Service contains [hundreds of pre-created playbooks](/
 
 ## Create a playbook for Cloud SIEM insights
 
-The Automation Service allows us to create automations that will run whenever Cloud SIEM insights are created or closed. These automations are powered through "playbooks" as discussed in the previous section, predefined actions run in an automated workflow to respond to an incident. 
+The Automation Service allows us to create automations that will run whenever [Cloud SIEM insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) are created or closed. These automations are powered through "playbooks" as discussed in the previous section, predefined actions run in an automated workflow to respond to an incident. 
 
 Let’s use the Automation Service to create a playbook for use in Cloud SIEM.
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top right corner, click the cog icon, then **Automation**. Then, in the upper-right corner, click **Manage Playbooks**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the left menu, click **Automation > Playbooks**.
-1. You can click on any of the existing playbooks which will open the playbook diagram in the sidebar on the right. You can view here the individual nodes and sequences in the selected playbook(s), to give you an idea of the type of actions and structures that you can create with custom playbooks. Playbooks can have any number of actions, as well as branching conditions to manage different sequences of actions, depending on selected criteria. You can click on any component of a playbook to see more detailed information about each node. 
-1. Let's create a playbook of our own. Click the plus icon near the top to create a new playbook.  
-   1. Enter a sample name "Training Playbook XXX" with XXX replaced by your initials or 3-digit ID. You can optionally enter a description. Select "Cloud SIEM" as the Type for the playbook.
-   1. Click Create when finished.
-   1. On the following screen you will see the starting template for your new (empty) playbook, with "Start" and "End" nodes. Switch to edit mode by clicking on the Edit (pencil) icon in the bottom toolbar.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-edit-button.png')} alt="Edit button" style={{border: '1px solid gray'}} width="300" />
-   1. Before we start adding actions to our playbook, we’ll want to set up the initial configuration of the playbook so we get the proper inputs from the Cloud SIEM insight. Mouse over the Start node, and click on the Edit (pencil) icon.
-   1. In the Edit Node popup, select "Insight" from the playbook input parameters dropdown. Choosing "Insight" will automatically populate the popup view with a number of input parameters that will be added to the playbook from the corresponding insight.
-   1. Click Update to save and close the input parameters. <br/><img src={useBaseUrl('img/platform-services/automation-service/intro-start-node.png')} alt="Start node" style={{border: '1px solid gray'}} width="100" />
-   1. When creating an action node, fill out the node configuration using the "Add Node" dialog box (pictured below). Use the following parameters to configure the node (if a field is not listed, keep the default value. Make sure you fill out the listed configuration fields in order, as some fields will only appear in the dialog box after you’ve selected fields above it.)  Action Node Parameters:
-     * **Name**. "Get Insight Details"
-     * **Integration**. Sumo Logic Cloud SIEM
-     * **Type**. Enrichment
-     * **Action**. Get Insight
-     * **Insight ID**. CSE Insight ID
-   1. Click Create when finished.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-add-node.png')} alt="Add node" style={{border: '1px solid gray'}} width="500" />
-1. Add another action to the playbook by clicking the ‘plus’ icon on the "Get Insight Details" node you just created. Use the parameters outlined below:
-    * **Name**. "Get VirusTotal Info"
-    * **Integration**. "VirusTotal V3"
-    * **Type**. "Enrichment"
-    * **Action**. "IP Reputation"
-For the IPs field, click the "cog" icon on the right, and select the "Get Insight Details" action. Then find the "output.entity.ip.address" field and select it.
-13. Click Create to save the new action.
-
-14. Add another action to the playbook by clicking the ‘plus’ icon on the "Get VirusTotal Info" node you just created. Use the parameters outlined below:
-
-Name: "Add Entity Enrichment"
-Integration: "Sumo Logic Cloud SIEM"
-Type: "Notification"
-Action: "Add Entity Enrichment"
-Entity ID: "cog" icon > Get Insight Details > output.entity.id
-Enrichment Name: "VirusTotal IP Reputation"
-Raw JSON: "cog" icon > Get VirusTotal Info > output.raw
-15. Click Create to save the action.
-
-Playbooks also allow "condition" nodes that can switch execution branches depending on the true/false results of a given expression. Let’s add a condition node to our playbook that will differentiate the execution branch depending on the severity of the insight.
-
-16. Click the ‘plus’ icon under our last action (the blue "Add Entity Enrichment" action). Choose a Condition node.
-
-17. Click the pencil icon to edit the new Condition node.
-
-18. For the top "select a value", select the "output.severity" option from the "Get Insight Details" action. Make sure "==" is selected in the middle row.
-
-19. For the bottom "select a value" field, add a manual value: "High".
-
-20. Click Update to save the Condition node.
-
-21. Click the ‘plus’ icon under the Condition node to create a new node. Select "Action" for this new node.
-
-22. Set the Name for this action to "Send Notification Email".
-
-23. For the Integration, select "Basic Tools". Set Type to be "Notification" and Action to be "Send Email".
-
-24. For Recipients, enter an email address (real or fake). Make sure you hit Enter after typing the email address to signal the Recipients field to parse and accept the email address.
-
-25. Type in a subject into the Subject field "High Severity Insight detected".
-
-When composing content for an email notification, you have the option of using input parameters from earlier nodes in the playbook in addition to any desired custom text.
-
-26. Click on the "{ }" icon to add a parameter field to your HTML Content (Body) text.
+1. Go to the [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/) page. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.<br/>The list of playbooks displays. You can click on any of the existing playbooks which will open the playbook diagram in the sidebar on the right. You can view here the individual nodes and sequences in the selected playbook, to give you an idea of the type of actions and structures that you can create. Playbooks can have any number of actions, as well as branching conditions to manage different sequences of actions, depending on selected criteria. You can click on any component of a playbook to see more detailed information about each node. 
+1. Let's [create a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook) of our own. 
+   1. Click the plus icon near the top to create a new playbook. <br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} style={{border:'1px solid gray'}} alt="New playbook button" width="500"/>
+   1. Enter a name for the playbook. You can optionally enter a description. Select **Cloud SIEM** as the **Type** for the playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" width="400"/>
+   1. Click **Create** when finished.
+   1. On the following screen you will see the starting template for your new empty playbook, with **Start** and **End** nodes. Switch to edit mode by clicking on the **Edit** (pencil) icon in the bottom toolbar.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-edit-button.png')} alt="Edit button" style={{border: '1px solid gray'}} width="300" />
+   1. Before we start adding actions to our playbook, we’ll want to set up the initial configuration of the playbook so we get the proper inputs from the Cloud SIEM insight. Mouse over the **Start** node, and click the **Edit** (pencil) icon.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-start-node.png')} alt="Start node" style={{border: '1px solid gray'}} width="100" />
+   1. In the **Edit Node** popup, select **Insight** from the playbook input parameters dropdown. Choosing **Insight** automatically populates the popup view with a number of input parameters that will be added to the playbook from the corresponding insight.
+   1. Click **Update** to save and close the input parameters.
+1. Now let's add an action node to the playbook.
+   1. Click the **+** symbol on the **Start** node. 
+   1. Choose the **Action** node tpe. 
+   1. Use the following parameters to configure the node. If a field is not listed, keep the default value. Make sure you fill out the listed configuration fields in order, as some fields will only appear in the dialog box after you’ve selected fields above it.
+       * **Name**. Type "Get Insight Details".
+       * **Integration**. Sumo Logic Cloud SIEM
+       * **Type**. Enrichment
+       * **Action**. Get Insight
+       * **Insight ID**. Insight ID<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-add-node.png')} alt="Add node" style={{border: '1px solid gray'}} width="500" />
+   1. Click **Create** when finished.
+1. Add another action to the playbook by hovering your mouse over the **Get Insight Details** node you just created and clicking the **+** icon. <br/><img src={useBaseUrl('img/platform-services/automation-service/intro-add-new-node.png')} alt="Add another node" style={{border: '1px solid gray'}} width="500" />
+   1. Choose the **Action** node tpe.
+   1. In the **Add Node** dialog box, use the parameters outlined below:
+      * **Name**. Type "Get VirusTotal Info".
+      * **Integration**. VirusTotal V3
+      * **Type**. Enrichment
+      * **Action**. IP Reputation
+      * **IPs**. Click the cog icon on the right, and select the "Get Insight Details" action. Then find the "output.entity.ip.address" field and select it.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-get-virus-total-node.png')} alt="Add Virus Total node" style={{border: '1px solid gray'}} width="600" /> 
+   1. Click **Create** to save the new action.
+1. Add another action to the playbook by clicking the **+** icon on the **Get Virus Total Info** node you just created. Use the parameters outlined below:
+   * **Name**. Type "Add Entity Enrichment".
+   * **Integration**. Sumo Logic Cloud SIEM
+   * **Type**. Notification
+   * **Action**. Add Entity Enrichment
+   * **Entity ID**. Click the cog icon and select "Get Insight Details" and "output.entity.id".
+   * **Enrichment Title**. Type "VirusTotal IP Reputation".
+   * **Enrichment**. Click the cog icon and select "Get VirusTotal Info" and "output.raw".<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-add-entity-enrichment-node.png')} alt="Add entity enrichment node" style={{border: '1px solid gray'}} width="600" />
+   1. Click **Create** to save the action.
+1. Playbooks also allow "condition" nodes that can switch execution branches depending on the true/false results of a given expression. Let’s add a condition node to our playbook that will differentiate the execution branch depending on the severity of the insight.
+   1. Hover your mouse over your last action (the blue **Add Entity Enrichment** action) and click the **+** icon. 
+   1. Choose a **Condition** node.
+   1. Click **Create**.
+   1. Hover your mouse over the new condition node and click the pencil icon to edit it.
+   1. For the top **Select a value**, select **Get Insight Details** and the **output.severity** option. Make sure **==** is selected in the middle row.
+   1. For the bottom **Select a value** field, add a manual value: **High**.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-condition.png')} alt="Add condition node" style={{border: '1px solid gray'}} width="400" />
+   1. . Click **Update** to save the condition node.
+1. Click the ‘plus’ icon under the condition node to create a new node. Select "Action" for this new node.
+   1. Set the Name for this action to "Send Notification Email".
+   1. . For the Integration, select "Basic Tools". Set Type to be "Notification" and Action to be "Send Email".
+   1. . For Recipients, enter an email address (real or fake). Make sure you hit Enter after typing the email address to signal the Recipients field to parse and accept the email address.
+   1. Type in a subject into the Subject field "High Severity Insight detected".
+   1. When composing content for an email notification, you have the option of using input parameters from earlier nodes in the playbook in addition to any desired custom text. Click on the "{ }" icon to add a parameter field to your HTML Content (Body) text.
 
 27. Click on the red parameter box that appears and select a source for the desired input parameter (for instance: "Insight.Severity" or "Get Insight Details.output.name"). The parameter box will turn green once you have selected a valid source parameter. You can add custom text before or after the source parameter.
 
