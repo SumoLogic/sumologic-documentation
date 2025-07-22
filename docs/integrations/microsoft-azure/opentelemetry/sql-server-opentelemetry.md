@@ -2,7 +2,7 @@
 id: sql-server-opentelemetry
 title: Microsoft SQL Server - OpenTelemetry Collector
 sidebar_label: Microsoft SQL Server - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Windows.
+description: Learn about the Sumo Logic OpenTelemetry app for Microsoft SQL Server.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
@@ -11,15 +11,15 @@ import TabItem from '@theme/TabItem';
 <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
 :::note
-The information provided in this page will only support the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Windows.
+The information provided in this page will only support the Sumo Logic OpenTelemetry app for Microsoft SQL Server.
 :::
 The SQL Server app is a unifies logs and metrics app to help you monitor the availability, performance, health, and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations along with Performance metrics and metrics for transaction and transaction logs.
 
 This app has been tested with following SQL Server versions:
 
-- `Microsoft SQL Server 2016`
+- `Microsoft SQL Server 2022`
 
-The diagram below illustrates the components of the SQL Server collection for each database server. OpenTelemetry collector runs on the same host as SQL Server, and uses the [SQL Server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/sqlserverreceiver) to obtain SQL Server metrics. This receiver grabs metrics about a Microsoft SQL Server instance using the Windows Performance Counters. Because of this, it is a Windows only receiver. Thus metrics for SQL Server can be collected only if its in a windows machine.
+The diagram below illustrates the components of the SQL Server collection for each database server. OpenTelemetry collector runs on the same host as SQL Server, and uses the [SQL Server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/sqlserverreceiver) to obtain SQL Server metrics. This receiver grabs metrics about a Microsoft SQL Server instance using the Windows Performance Counters (Windows only) and by connecting to SQL Server using the credentials (Windows and Linux both)
 SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Schematics.png' alt="Redis Logs dashboards"/>
@@ -256,16 +256,29 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Transaction-And-Transaction-Logs.png' alt="Operations" />
 
-### Performance Counters
+### Performance
 
-The **SQL Server - Performance Counters** dashboard shows performance counters related to database activities, SQL statistics, and buffer cache.
+The **SQL Server - Performance** dashboard provides a deep dive into the internal workings of the SQL Server query engine. It helps DBAs and developers identify inefficient queries, contention issues, and opportunities for optimization.
 
-Use this dashboard to:
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Performance.png' alt="Performance" />
 
-- Get info for page buffer hit % and page split rate.
-- Insight into lock waits rate, page read and write rate along with patch request rate and SQL compilation, and recompilation per sec.
+### I/O
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Performance-Counters.png' alt="Performance-Counters" />
+The **SQL Server - I/O** dashboard shows the performance of the underlying disk subsystem as it relates to SQL Server database files. It helps answer questions like, "Is slow disk performance the cause of my application slowdown?" and "Which specific files are the hottest or slowest?"
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-I-O.png' alt="Performance" />
+
+### Replication
+
+The **SQL Server - Replication** dashboard provide dedicated visibility into the health, throughput, and latency of SQL Server's high-availability and disaster recovery (HA/DR) features, such as Availability Groups.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Replication.png' alt="Performance" />
+
+### Windows Host Performance
+
+The **SQL Server - Windows Host Performance** dashboard isolates metrics that are only available via Windows Performance Counters. It provides deeper insights into Windows-specific memory management and transaction log behavior. The key use case is to provide continuity for Windows DBAs familiar with these classic counters.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Windows-Host-Performance.png' alt="Performance" />
 
 ## Create monitors for Microsoft SQL Server app
 
@@ -275,12 +288,15 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 ### Microsoft SQL Server alerts
 
-| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+| Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `SQL Server - AppDomain Alert` | This alert gets triggered when we detect AppDomain related issues in your SQL Server instance. | Count > = 1 | Count < 1 |
-| `SQL Server - Backup Fail Alert` | This alert gets triggered when we detect that the SQL Server backup failed. | Count > = 1 | Count < 1 |
-| `SQL Server - Instance Down Alert` | This alert gets triggered when we detect that the SQL Server instance is down for 5 minutes. | Count > 0 | Count < = 0 |
-| `SQL Server - Insufficient Space Alert` | This alert gets triggered when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup. | Count > = 1 | Count < 1 |
-| `SQL Server - Login Fail Alert` | This alert gets triggered when we detect that the user cannot login to SQL Server. | Count > = 1 | Count < 1 |
-| `SQL Server - Mirroring Error Alert` | This alert gets triggered when we detect that the SQL Server mirroring has error. | Count > = 1 | Count < 1 |
-| `SQL Server - Processes Blocked Alert` | This alert gets triggered when we detect that SQL Server has blocked processes. | Count > 1 | Count < = 1 |
+| `SQL Server - AppDomain` | This alert is triggered when we detect AppDomain related issues in your SQL Server instance. | Count > = 1 | Count < 1 |
+| `SQL Server - Backup Fail` | This alert is triggered when we detect that the SQL Server backup failed. | Count > = 1 | Count < 1 |
+| `SQL Server - Buffer Cache Hit Ratio` | This alert is triggered when the Buffer Cache Hit Ratio drops below 95%, indicating significant memory pressure and a potential for slow performance due to increased disk reads. | Count < 95 | Count > = 95 |
+| `SQL Server - Deadlock` | This alert is triggered when we detect deadlocks in a SQL Server instance. | Count > 5 | Count < = 5 |
+| `SQL Server - Instance Down` | This alert is triggered when we detect that the SQL Server instance is down for 5 minutes. | Count > 0 | Count < = 0 |
+| `SQL Server - Insufficient Space` | This alert is triggered when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup. | Count > 0 | Count < = 0 |
+| `SQL Server - Login Fail` | This alert is triggered when we detect that the user cannot login to SQL Server. | Count > = 1 | Count < 1 |
+| `SQL Server - Mirroring Error` | This alert is triggered when we detect that the SQL Server mirroring has error. | Count > = 1 | Count < 1 |
+| `SQL Server - Non Operational Database` | This alert is triggered if any database enters a 'suspect' or 'offline' state, indicating it is unavailable. | Count > 0 | Count < = 0 |
+| `SQL Server - Processes Blocked` | This alert is triggered when blocked processes are detected in SQL Server. | Count > 0 | Count < = 0 |
