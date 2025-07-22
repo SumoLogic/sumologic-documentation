@@ -10,9 +10,6 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-:::note
-The information provided in this page will only support the Sumo Logic OpenTelemetry app for Microsoft SQL Server.
-:::
 The SQL Server app is a unifies logs and metrics app to help you monitor the availability, performance, health, and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations along with Performance metrics and metrics for transaction and transaction logs.
 
 This app has been tested with following SQL Server versions:
@@ -40,15 +37,27 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ### For metrics collection
 
-The [SQL server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/sqlserverreceiver/README.md) for OpenTelemetry grabs metrics about a Microsoft SQL Server instance using the Windows Performance Counters.
+The [SQL server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/sqlserverreceiver/README.md) for OpenTelemetry grabs metrics about a Microsoft SQL Server instance using different methods:
+
+**Windows:**
+- Uses Windows Performance Counters for collecting system-level metrics
+- Connects directly to SQL Server using credentials for database-specific metrics
+
+**Linux:**  
+- Connects to SQL Server using credentials (Windows Authentication is not available on Linux)
+- Requires SQL Server authentication
 
 ### For logs collection
 
 Make sure logging is turned on in SQL Server. Follow [this documentation](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/scm-services-configure-sql-server-error-logs?view=sql-server-ver15) to enable it.
 
-The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in: `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`.
+The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in:
 
-The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the file encoding used in your SQL Server configuration.
+**Windows:** `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
+
+**Linux:** `/var/opt/mssql/log/errorlog*` (default path for SQL Server on Linux)
+
+The ERRORLOG is typically in UTF-16LE encoding on Windows and Linux both. Be sure to verify the file encoding used in your SQL Server configuration.
 
 **ACL Support**
 
@@ -66,6 +75,12 @@ $fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileS
 # Apply new rule
 $NewAcl.SetAccessRule($fileSystemAccessRule)
 Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
+For Linux systems, ensure the OpenTelemetry collector process has read access to the log files:
+```bash
+# Grant read access to the collector user (adjust paths as needed)
+sudo chmod +r /var/opt/mssql/log/errorlog*
 ```
 
 ## Collection configuration and app installation
@@ -86,13 +101,23 @@ This will generate a command you can execute on the machine that you need to mon
 
 ### Step 2: Configure integration
 
-1. The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in:
-`C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
-2. To collect from a SQL Server with a named instance, both **Computer Name** and **Instance Name** are required. Toggle the `Enable metric collection for SQL Server with a named instance.` button. For a default SQL Server setup, these settings are optional.
-    * **Computer Name**. The computer name identifies the SQL Server name or IP address of the computer being monitored.
-    * **Instance Name**. The instance name identifies the specific SQL Server instance being monitored.
-3. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
-4. Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
+1. **Log File Path Configuration**: 
+   - **Windows**: The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in: `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
+   - **Linux**: For SQL Server on Linux, logs are typically located at: `/var/opt/mssql/log/errorlog*`
+
+2. **SQL Server Connection Configuration**: To collect metrics, you'll need to provide connection details:
+   - **Server Address**: The hostname or IP address of your SQL Server instance (default: localhost)
+   - **Port**: The port number for SQL Server connection (default: 1433)  
+   - **Username**: SQL Server authentication username (required for Linux, optional for Windows if using Windows Authentication)
+   - **Password**: SQL Server authentication password (required for Linux, optional for Windows if using Windows Authentication)
+
+3. **Named Instance Configuration**: To collect from a SQL Server with a named instance, both **Computer Name** and **Instance Name** are required for Windows and only **Instance Name** for Linux. Toggle the `Enable metric collection for SQL Server with a named instance.` button. For a default SQL Server setup, these settings are optional.
+    - **Computer Name**: The computer name identifies the SQL Server name or IP address of the computer being monitored. This is the network name of the machine hosting SQL Server. (Only required for Windows)
+    - **Instance Name**: The instance name identifies the specific SQL Server instance being monitored. This is required when SQL Server is installed as a named instance (e.g., SQLEXPRESS, INSTANCE01) rather than the default instance.
+
+4. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
+
+5. Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
@@ -105,6 +130,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
   defaultValue="Windows"
   values={[
     {label: 'Windows', value: 'Windows'},
+    {label: 'Linux', value: 'Linux'},
     {label: 'Chef', value: 'Chef'},
     {label: 'Ansible', value: 'Ansible'},
     {label: 'Puppet', value: 'Puppet'},
@@ -116,6 +142,16 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 2. Restart the collector using:
     ```sh
     Restart-Service -Name OtelcolSumo
+    ```
+
+</TabItem>
+
+<TabItem value="Linux">
+
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the machine which needs to be monitored.
+2. Restart the collector using:
+    ```sh
+    sudo systemctl restart otelcol-sumo
     ```
 
 </TabItem>
