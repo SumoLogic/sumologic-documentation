@@ -129,7 +129,7 @@ reboot
 
 ### Outbound firewall rules
 
-See [Securing access to Sumo Logic infrastructure via DNS name or IP address](/docs/api/getting-started#securing-access-to-sumo-logic-infrastructure-via-dns-name-or-ip-address) for information on how to configure your firewall for outbound access to Sumo Logic.
+See [Securing access to Sumo Logic infrastructure via DNS name or IP address](/docs/api/about-apis/getting-started#securing-access-to-sumo-logic-infrastructure-via-dns-name-or-ip-address) for information on how to configure your firewall for outbound access to Sumo Logic.
 
 ### Interface considerations
 

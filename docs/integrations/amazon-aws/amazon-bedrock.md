@@ -437,3 +437,14 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-Runtime-Performance-Monitoring.png')} alt="Amazon Bedrock dashboard" style={{border: '1px solid gray'}} />
 
+## Upgrade/Downgrade the Amazon Bedrock app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Bedrock app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

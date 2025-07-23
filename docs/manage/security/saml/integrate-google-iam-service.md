@@ -66,7 +66,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 1. Go back to the **Google Auth Configuration – Provider Details** dialog, and enter the following information: <br/><img src={useBaseUrl('img/security/ga_saml_service_provider.png')} alt="Service Provider Details page" style={{border: '1px solid gray'}} width="600" />
     * **ACS URL.** This is the **Assertion Consumer** from Sumo Logic
-    * **Entity ID.** Enter your Sumo Logic [Service Endpoint URL](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security): <br/>`https://service.<deployment>.sumologic.com`
+    * **Entity ID.** Enter your Sumo Logic [Service Endpoint URL](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security): <br/>`https://service.<deployment>.sumologic.com`
     * **Name ID.** Basic Information – Primary Email
     * **Name ID Format.** EMAIL
 1. Click **Next**.
