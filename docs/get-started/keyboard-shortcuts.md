@@ -37,7 +37,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 <details>
 <summary>Using the Classic UI? <b>Click here</b> to view the list of keyboard shortcuts.</summary>
 
-Go to the Sumo Logic top menu and select <b>Help > Shortcuts</b>.
+Go to the Sumo Logic menu and select <b>Help > Shortcuts</b>.
 
 | Shortcut | Description |
 |:-- |:-- |
