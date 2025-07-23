@@ -4,10 +4,11 @@ title: parseDate
 ---
 
 
-The parseDate operator extracts a date or time from a string and provides a timestamp in milliseconds. 
+The parseDate operator extracts a date or time from a string and provides a timestamp till milliseconds. 
 
 :::note
-To convert an epoch timestamp to a human-readable format, use the [`formatDate`](/docs/search/search-query-language/search-operators/formatdate) operator.
+- To convert an epoch timestamp to a human-readable format, use the [`formatDate`](/docs/search/search-query-language/search-operators/formatdate) operator.
+- `parseDate` operator supports timestamp only till milliseconds.
 :::
 
 ## Syntax
