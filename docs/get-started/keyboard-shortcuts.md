@@ -11,7 +11,7 @@ Sumo Logic keyboard shortcuts are enabled by default. To view them, select **He
 You can also press the question‑mark key (**?**) anywhere outside a text field to open the shortcuts panel.
 :::
 
-To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name in the left nav, select **Preferences**, then deselect **Enable keyboard shortcuts**.
+To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name, select **Preferences**, then deselect **Enable keyboard shortcuts**.
 
 ## Limitations
 
