@@ -2,33 +2,42 @@
 id: keyboard-shortcuts
 title: Keyboard Shortcuts
 sidebar_label: Keyboard shortcuts
-description: Sumo Logic keyboard shortcuts.
+description: Complete reference to Windows and macOS keyboard shortcuts for the Sumo Logic UI. Navigate Search, Metrics, Dashboards, and more without lifting your hands from the keyboard.
 ---
 
-Sumo Logic keyboard shortcuts are enabled by default. 
-
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access keyboard shortcuts, in the main Sumo Logic menu select **Help > Shortcuts**.
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access keyboard shortcuts, in the Sumo Logic top menu select **Help > Keyboard Shortcuts**.
- 
+Sumo Logic keyboard shortcuts are enabled by default. To view them, select **Help > Keyboard shortcuts**.
 
 :::tip
-You can also press the **?** key to display the list of keyboard shortcuts.
+You can also press the question‑mark key (**?**) anywhere outside a text field to open the shortcuts panel.
 :::
 
-For security, shortcuts for some pages are visible only for users with an Admin account.
-
-To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name in the left nav, select **Preferences**, then deselect **Enable keyboard shortcuts**.
+To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name, select **Preferences**, then deselect **Enable keyboard shortcuts**.
 
 ## Limitations
 
-Keyboard shortcuts are disabled when typing in the [search text box](/docs/search/get-started-with-search/search-page/). 
+* **Admin‑only pages**. For security, shortcuts for some pages are visible only to Admin users.
+* **Search field**. Keyboard shortcuts are disabled while you're typing in the [search text box](/docs/search/get-started-with-search/search-page/).
 
 ## Keyboard shortcuts on Windows
 
+| Shortcut | Action |
+|:--|:--|
+| ? | Show keyboard shortcuts |
+| Alt + S | Open Search page |
+| Alt + M | Open Metrics page |
+| Alt + D | Open Dashboard page |
+| Alt + B | Open Library page |
+| Alt + Shift + S | Open Search in a new tab |
+| Alt + Shift + M | Open Metrics in a new tab |
+| Alt + Shift + D | Open Dashboard in a new tab |
+| Alt + Shift + B | Open Library in a new tab |
+| Alt + Shift + Q | Duplicate a query in a new tab (Search/Metrics) |
+| Ctrl + K | Toggle **Go to...** |
 
-### Classic UI
+<details>
+<summary>Using the Classic UI? <b>Click here</b> to view the list of keyboard shortcuts.</summary>
 
+Go to the Sumo Logic menu and select <b>Help > Shortcuts</b>.
 
 | Shortcut | Description |
 |:-- |:-- |
@@ -59,27 +68,31 @@ Keyboard shortcuts are disabled when typing in the [search text box](/docs/searc
 | Alt + Z | Open the Setup Wizard |
 | ? | Show this screen |
 
+[Learn more about the Classic UI](/docs/get-started/sumo-logic-ui-classic).
 
-### New UI
-
-| Shortcut | Description |
-|:-- |:-- |
-| ? | Show keyboard shortcuts |
-| Alt + S | Open Search page |
-| Alt + M | Open Metrics page |
-| Alt + D | Open Dashboard page |
-| Alt + Shift + S | Open Search page in a new tab |
-| Alt + Shift + M | Open Metrics page in a new tab |
-| Alt + Shift + D | Open Dashboard page in a new tab |
-| Alt + Shift + Q | Duplicate a query in a new tab (Search/Metrics only) |
-| Ctrl + K | Toggle Go To... |
-
+</details>
 
 
 ## Keyboard shortcuts on macOS
 
+| Shortcut | Action |
+|:--|:--|
+| ? | Show keyboard shortcuts |
+| Option + S | Open Search page |
+| Option + M | Open Metrics page |
+| Option + D | Open Dashboard page |
+| Option + B | Open Library page |
+| Option + Shift + S | Open Search in a new tab |
+| Option + Shift + M | Open Metrics in a new tab |
+| Option + Shift + D | Open Dashboard in a new tab |
+| Option + Shift + B | Open Library in a new tab |
+| Option + Shift + Q | Duplicate a query in a new tab (Search/Metrics) |
+| Command + K | Toggle **Go to...** |
 
-### Classic UI
+<details>
+<summary>Using the Classic UI? <b>Click here</b> to view the list of keyboard shortcuts.</summary>
+
+Go to the Sumo Logic menu and select <b>Help > Shortcuts</b>.
 
 | Shortcut | Description |
 |:-- |:-- |
@@ -115,17 +128,6 @@ Keyboard shortcuts are disabled when typing in the [search text box](/docs/searc
 | Command + J | Share search |
 | ? | Show this screen |
 
+[Learn more about the Classic UI](/docs/get-started/sumo-logic-ui-classic).
 
-### New UI
-
-| Shortcut | Description |
-|:-- |:-- |
-| ? | Show keyboard shortcuts |
-| Option + S | Open Search page |
-| Option + M | Open Metrics page |
-| Option + D | Open Dashboard page |
-| Option + Shift + S | Open Search page in a new tab |
-| Option + Shift + M | Open Metrics page in a new tab |
-| Option + Shift + D | Open Dashboard page in a new tab |
-| Option + Shift + Q | Duplicate a query in a new tab (Search/Metrics only) |
-| Command + K | Toggle Go To... |
+</details>
