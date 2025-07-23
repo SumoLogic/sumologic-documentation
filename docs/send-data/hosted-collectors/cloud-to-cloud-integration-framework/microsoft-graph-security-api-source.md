@@ -138,7 +138,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ### 403 Error with "Account is not provisioned"
 
 
-The "**Unauthorized request - Account is not provisioned.**" error occurs when Microsoft Defender For Cloud hasn't started collecting alerts. This issue is explained here https://stackoverflow.com/questions/79380921/microsoft-graph-api-security-alerts-v2-gives-error-unauthorized-request-acco. Please make sure to go to your Microsoft Defender for Cloud account, click on Incidents and then Alerts. If it's the first time, you will see a screen loading the information. Once you see the list of alerts screen, restart your source and you should no longer see the error.
+The "**Unauthorized request - Account is not provisioned**" error occurs when Microsoft Defender For Cloud hasn't started collecting alerts. This issue is explained [here](https://stackoverflow.com/questions/79380921/microsoft-graph-api-security-alerts-v2-gives-error-unauthorized-request-acco). Make sure to go to your Microsoft Defender for Cloud account, click on **Incidents** and then **Alerts**. If it's the first time, you will see a screen loading the information. Once you see the list of alerts screen, restart your source and you should no longer see the error.
 
 ## FAQ
 
