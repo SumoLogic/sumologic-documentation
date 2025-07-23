@@ -5,7 +5,7 @@ sidebar_label: Keyboard shortcuts
 description: Complete reference to Windows and macOS keyboard shortcuts for the Sumo Logic UI. Navigate Search, Metrics, Dashboards, and more without lifting your hands from the keyboard.
 ---
 
-Sumo Logic keyboard shortcuts are enabled by default. To view them, open the top menu and select **Help > Keyboard shortcuts**. [Learn more](/docs/get-started/sumo-logic-ui/).
+Sumo Logic keyboard shortcuts are enabled by default. To view them, select **Help > Keyboard shortcuts**.
 
 :::tip
 You can also press the question‑mark key (**?**) anywhere outside a text field to open the shortcuts panel.
