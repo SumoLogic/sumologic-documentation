@@ -184,13 +184,13 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 These alerts are metric based and will work for all Azure Database for PostgreSQL.
 
-| Alert Name                                           | Alert Description and Conditions                                                                                                                         | Alert Condition  | Recover Condition |
-|:-----------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:------------------|
-| `Azure Database for PostgreSQL - Active Connections` | This alert is triggered  when Average Active Connections Count is greater than 1000.                                                                     | Count >= 1000    | Count < 1000      |
-| `Azure Database for PostgreSQL - CPU Percent`        | This alert is triggered  when CPU Percentage is greater than 90. Also a warning type alert will be triggered  when CPU Percentage is greater than 80.    | Percentage >= 90 | Percentage < 90   |
-| `Azure Database for PostgreSQL - Failed Connections` | This alert is triggered when Failed Connections Count is greater than 10.                                                                                | Count >= 10      | Count < 10        |
-| `Azure Database for PostgreSQL - Memory Percent`     | This alert is triggered when Memory Percentage is greater than 80. Also a warning type alert will be triggered when Memory Percentage greater than 70.   | percentage >= 80 | percentage < 80   |
-| `Azure Database for PostgreSQL - Storage Percent`    | This alert is triggered when Storage Percent greater than 95. Also a warning type alert will be triggered when Storage Percent greater than 90.          | percentage >= 95 | percentage < 95   |
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Database for PostgreSQL - Active Connections` | This alert is triggered  when Average Active Connections Count is greater than 1000. | Count >= 1000 | Count < 1000 |
+| `Azure Database for PostgreSQL - CPU Percent` | This alert is triggered  when CPU Percentage is greater than 90. Also a warning type alert will be triggered  when CPU Percentage is greater than 80. | Percentage >= 90 | Percentage < 90 |
+| `Azure Database for PostgreSQL - Failed Connections` | This alert is triggered when Failed Connections Count is greater than 10. | Count >= 10 | Count < 10 |
+| `Azure Database for PostgreSQL - Memory Percent` | This alert is triggered when Memory Percentage is greater than 80. Also a warning type alert will be triggered when Memory Percentage greater than 70. | percentage >= 80 | percentage < 80 |
+| `Azure Database for PostgreSQL - Storage Percent` | This alert is triggered when Storage Percent greater than 95. Also a warning type alert will be triggered when Storage Percent greater than 90. | percentage >= 95 | percentage < 95 |
 
 ## Upgrade/Downgrade the Azure Flexible Database for PostgreSQL app (Optional)
 

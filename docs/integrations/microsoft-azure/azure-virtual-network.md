@@ -280,9 +280,9 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 These alerts are metric based and will work for all Virtual Networks.
 
-| Alert Name | Description                                                                     | Alert Condition | Recover Condition |
-|:--|:--------------------------------------------------------------------------------|:----------------|:------------------|
-| `Azure Virtual Network - Under DDoS attack` | This alert is triggered when maximum DDoS attack count is greater than 1.0785.  | Count > 1.0785  | Count < = 1.0785  |
+| Alert Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Virtual Network - Under DDoS attack` | This alert is triggered when maximum DDoS attack count is greater than 1.0785. | Count > 1.0785 | Count < = 1.0785 |
 
 ## Upgrade/Downgrade the Azure Virtual Network app (optional)
 

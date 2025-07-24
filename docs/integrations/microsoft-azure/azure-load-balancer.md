@@ -147,12 +147,12 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 These alerts are metric based and will work for all Azure Load Balancers.
 
-| Alert Name                                      | Alert Description and Conditions                                                                                                                                     | Alert Condition  | Recover Condition |
-|:------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:------------------|
-| `Azure Load Balancer - Data Path Availability`  | This alert is triggered  when Data Path Availability is less than 100%.                                                                                              | percentage < 100 | percentage >= 100 |
-| `Azure Load Balancer - Health Probe Status`     | This alert is triggered  when Health Probe Status is less than 100%.                                                                                                 | percentage < 100 | percentage >= 100 |
-| `Azure Load Balancer - SNAT Connection Count`   | This alert is triggered when SNAT Connection count less than 1000. Also Working alert is triggered when SNAT Connection count less than 800                          | Count < 1000     | Count >= 1000     |
-| `Azure Load Balancer - Used SNAT Ports`         | This alert is triggered when Used SNAT Ports count less than 900. Also Working alert is triggered when Used SNAT Ports count less than 800                           | Count < 900      | Count >= 900      |
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Load Balancer - Data Path Availability` | This alert is triggered  when Data Path Availability is less than 100%. | percentage < 100 | percentage >= 100 |
+| `Azure Load Balancer - Health Probe Status` | This alert is triggered  when Health Probe Status is less than 100%. | percentage < 100 | percentage >= 100 |
+| `Azure Load Balancer - SNAT Connection Count` | This alert is triggered when SNAT Connection count less than 1000. Also Working alert is triggered when SNAT Connection count less than 800 | Count < 1000 | Count >= 1000 |
+| `Azure Load Balancer - Used SNAT Ports` | This alert is triggered when Used SNAT Ports count less than 900. Also Working alert is triggered when Used SNAT Ports count less than 800 | Count < 900 | Count >= 900 |
 
 ## Upgrade/Downgrade the Azure Load Balancer app (Optional)
 
