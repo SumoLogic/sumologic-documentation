@@ -8,10 +8,6 @@ tags:
 description: The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/carbon-black-cloud/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/carbon-black-cloud/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/carbon-black-cloud/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -105,15 +101,16 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/carbon-black-cloud/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/carbon-black-cloud/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/carbon-black-cloud/example.tf
+```
 
-<a href="/files/c2c/carbon-black-cloud/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

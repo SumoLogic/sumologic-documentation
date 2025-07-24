@@ -43,8 +43,22 @@ Perform a wide variety of Enrichment and Containment actions for endpoint invest
 ## Configure Cisco AMP for Endpoints in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Select your Cisco AMP API URL, for example, `https://api.amp.cisco.com`.
+
+* **Client ID**. Enter your Cisco AMP [client ID](https://developer.cisco.com/docs/secure-endpoint/overview/).
+
+* **API Key**. Enter the API key associated with the client ID.
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-amp-for-endpoints-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco AMP for Endpoints configuration" width="400"/>
 

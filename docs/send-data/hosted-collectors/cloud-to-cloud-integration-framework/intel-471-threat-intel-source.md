@@ -7,10 +7,7 @@ tags:
   - intel471-threat-intel
 description: This integration collects threat indicators using the Intel471 API and sends them to Sumo Logic for analysis.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/intel471-threat-intel/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/intel471-threat-intel/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/intel471-threat-intel/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="intel471-threat-intel.png" width="100" />
@@ -58,7 +55,7 @@ To configure an Intel471 Threat Intel source:
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
@@ -81,15 +78,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/intel471-threat-intel/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/intel471-threat-intel/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/intel471-threat-intel/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/intel471-threat-intel/example.tf
+```
 
 ## FAQ
 

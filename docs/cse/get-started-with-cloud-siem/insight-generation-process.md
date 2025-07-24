@@ -27,19 +27,6 @@ Watch this micro lesson to learn how insights are created.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/MjzJlozR6mE?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Entities in messages are mapped to entity-type schema attributes
@@ -64,7 +51,7 @@ During the next step of the [record processing flow](/docs/cse/schema/record-pro
 Which particular attribute an entity gets mapped to depends on the [field mappings](/docs/cse/schema/create-structured-log-mapping) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
 to `srcDevice_ip`. 
 
-## Rules have one or more On entity attributes
+## Rules have one or more On Entity attributes
 
 When you write a rule, you select one or more *On Entity* attributes in the **Then Create a Signal** area of the **Rules Editor**. Here is an example of an existing rule that has two On Entity attributes: `srcDevice_ip` and `dstDevice_ip`.
 

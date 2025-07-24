@@ -55,7 +55,7 @@ LogReduce&reg; utilizes AI-driven algorithms to cluster log messages based on st
 
 LogCompare simplifies log analysis by enabling easy comparison of log data from different time periods to detect changes or anomalies, facilitating troubleshooting and root cause discovery. By automatically running delta analysis, LogCompare streamlines the process, allowing users to identify significant alterations in log patterns efficiently. Utilizing baseline and target queries, LogCompare clusters logs into patterns and compares them based on the significance of change, providing insights into deviations over time. With intuitive actions like promoting, demoting, and splitting signatures, users can refine their analysis and focus on relevant patterns, ultimately enhancing decision-making and threat detection capabilities. Additionally, LogCompare supports alerts and scheduled searches to notify users of new signatures or significant changes, ensuring proactive monitoring and response to evolving log data. [Learn more](/docs/search/behavior-insights/logcompare).
 
-### AI-driven Alerts
+### AI in alerting
 
 #### Anomaly Detection
 
@@ -76,12 +76,6 @@ Sumo Logic offers seamless integrations with various AI-driven platforms to enab
 * [Darktrace](/docs/platform-services/automation-service/app-central/integrations/darktrace)
 * [Criminal IP](/docs/platform-services/automation-service/app-central/integrations/criminal-ip)
 * [Arcanna](/docs/platform-services/automation-service/app-central/integrations/arcanna)
-
-<!-- Removed - not in Kanso
-### Root Cause Explorer
-
-Accelerates troubleshooting by surfacing events of interest correlated with application incidents. [Learn more](/docs/observability/root-cause-explorer)
--->
 
 ## Security
 

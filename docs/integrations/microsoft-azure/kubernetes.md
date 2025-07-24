@@ -26,7 +26,7 @@ The following are the minimum supported requirements for this application:
   </tr>
 </table>
 
-## Log types  
+## Logs and Metric types  
 
 The AKS - Control Plane app collects logs for the following [Azure Kubernetes Services](https://azure.microsoft.com/en-us/services/kubernetes-service/):
 
@@ -36,6 +36,10 @@ The AKS - Control Plane app collects logs for the following [Azure Kubernetes Se
 * **kube-scheduler**. The Scheduler determines what nodes can run the workload when you create or scale applications and then starts them.
 * **kube-controller-manager**. The Controller Manager oversees a number of smaller controllers that perform actions, such as replicating pods and handling node operations.
 * **cluster-autoscaler**. The cluster autoscaler component watches for pods in your cluster that can't be scheduled because of resource constraints. When the cluster autoscaler detects issues, it scales up the number of nodes in the node pool to meet the application demands. It also regularly checks nodes for a lack of running pods and scales down the number of nodes as needed.
+
+**Azure Kubernetes Service Metrics** are available in [Microsoft.ContainerService/managedClusters](https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference#supported-metrics-for-microsoftcontainerservicemanagedclusters) namespaces. 
+
+For more details on Azure Kubernetes Service logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference).
 
 ### Sample log messages
 
@@ -197,7 +201,9 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={
 
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+
+<MetricsSourceBeta/>
 
 ### Collecting logs for the Azure Kubernetes Cluster  
 
@@ -228,9 +234,9 @@ Now that you have set up collection for Azure Kubernetes Cluster, you can instal
 
 All the dashboards are linked to the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) so they can be easily accessed by clicking the Cluster in the navigation pane of the tab.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstall/>
+<AppInstallIndexV2/>
 
 As part of the app installation process, the following fields will be created by default:
 
@@ -245,6 +251,10 @@ As part of the app installation process, the following fields will be created by
 - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure Kubernetes Service dashboards
+
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
+
+<ViewDashboardsIndex/>
 
 ### Overview
 

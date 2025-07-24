@@ -8,10 +8,6 @@ tags:
 description: The Cisco AMP Source for Sumo Logic provides a secure endpoint to receive data from the Cisco Amp System Log API.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/cisco-amp/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/cisco-amp/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/cisco-amp/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -37,7 +33,7 @@ When you create a Cisco AMP Source, you add it to a Hosted Collector. Before cr
 
 To configure a Cisco AMP Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Search for and select **Cisco AMP**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.  
@@ -86,15 +82,16 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/cisco-amp/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cisco-amp/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cisco-amp/example.tf
+```
 
-<a href="/files/c2c/cisco-amp/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

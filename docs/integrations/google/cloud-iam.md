@@ -91,7 +91,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 | where type = "project" and log_name matches "projects/*/logs/cloudaudit.googleapis.com%2Factivity"
 | timeslice 1h
 | json "message.data.resource.labels", "message.data.resource.labels.project_id", "message.data.protoPayload.serviceData.policyDelta.bindingDeltas[*]" as labels, project, changes
-| parse regex field=changes "\"role\":\"roles\\\/(?<role>[a-zA-Z.]+)\",\"member\":\".*\",\"action\":\"(?<action>[A-Z]+)\"" multi
+| parse regex field=changes "\"role\":\"roles\/(?<role>[a-zA-Z.]+)\",\"member\":\".*\",\"action\":\"(?<action>[A-Z]+)\"" multi
 | where action="ADD"
 | count by _timeslice, role
 | transpose row _timeslice column role

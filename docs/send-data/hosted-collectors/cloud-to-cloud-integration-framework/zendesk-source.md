@@ -7,10 +7,7 @@ tags:
   - zendesk
 description: Learn how to collect audit logs using the Zendesk API.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/zendesk/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/zendesk/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/zendesk/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="Zendesk-icon" width="70" />
@@ -27,14 +24,14 @@ Zendesk is widely used across various industries, including technology, retail, 
 
 ### Vendor configuration
 
-The Zendesk source requires you to provide the API Token. To generate the API token, refer to the [Zendesk documentation](https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_tcb_fk1_2yb). 
+The Zendesk source requires you to provide the API Token. To generate the API token, refer to the [Zendesk documentation](https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_tcb_fk1_2yb).
 
 ### Source configuration
 
 When you create a Zendesk Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Zendesk Source, follow the steps below:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Zendesk**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -43,14 +40,14 @@ To configure a Zendesk Source, follow the steps below:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Base URL**. Enter the Base URL value `https://{subdomain}.zendesk.com`. Replace `subdomain` with your subdomain value. For example, `https://unityd.zendesk.com`.
-1. **Email Address**. Enter your Zendesk account email address. 
+1. **Email Address**. Enter your Zendesk account email address.
 1. **API Token**. Enter the **API Token** for authorization collected from the [Zendesk platform](#vendor-configuration).
 1. The **Polling Interval** is set for 5 minutes by default. You can adjust it based on your needs. This sets how often the Source checks for new data.
 1. When you are finished configuring the Source, click **Save**.
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [How to Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for more details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [How to Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for more details.
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
@@ -73,15 +70,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/zendesk/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/zendesk/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/zendesk/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/zendesk/example.tf
+```
 
 ## FAQ
 

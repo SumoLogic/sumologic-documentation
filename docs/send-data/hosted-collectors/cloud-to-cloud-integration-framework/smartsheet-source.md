@@ -7,10 +7,7 @@ keywords:
   - cloud-to-cloud
 description: Learn how to collect events from Smartsheet platform.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/smartsheet/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/smartsheet/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/smartsheet/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/smartsheet.png')} alt="thumbnail icon" width="55"/>
@@ -73,15 +70,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/smartsheet/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/smartsheet/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/smartsheet/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/smartsheet/example.tf
+```
 
 ## FAQ
 

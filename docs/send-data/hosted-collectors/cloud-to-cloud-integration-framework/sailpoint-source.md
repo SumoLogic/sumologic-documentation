@@ -7,10 +7,6 @@ tags:
     - cloud-SIEM-enterprise
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/sailpoint/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/sailpoint/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/sailpoint/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -102,15 +98,15 @@ See [Create processing rules using JSON](/docs/send-data/use-json-configure-sou
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/sailpoint/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/sailpoint/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/sailpoint/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/sailpoint/example.tf
+```
 
 ## FAQ
 

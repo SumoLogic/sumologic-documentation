@@ -8,10 +8,6 @@ keywords:
 description: The Okta Source provides a secure endpoint to receive event data from the Okta System Log API.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/okta/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/okta/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/okta/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -38,7 +34,7 @@ The Okta source requires you to provide the API token to access the data. To cre
 When you create an Okta Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Okta Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Okta**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
@@ -80,24 +76,25 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| apiKey | String | Yes | `null` | The Okta API key you want to use to authenticate collection requests.| 
+| apiKey | String | Yes | `null` | The Okta API key you want to use to authenticate collection requests.|
 | domain | String | Yes | `null` | Provide your specific Okta domain, such as mydomain.okta.com.	| |
 | users | Boolean | No | False | Set to true to collect user inventory data once every 24 hours.|  |
 | collectAll | Boolean | No | True | By default, the Source will ingest all Okta events. If false, eventTypes is required. | |
 eventTypes | String | No | `null` | Comma separated list of events to collect. Required if collectAll is false. | |
 | pollingInterval | Integer | No | 300 | This sets how often the Source checks for new data. | |
 
-### JSON example
+### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/okta/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/okta/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/okta/example.tf
+```
 
-<a href="/files/c2c/okta/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

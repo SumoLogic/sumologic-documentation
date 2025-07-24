@@ -114,33 +114,16 @@ In this step, you configure four local file sources, one for each log source lis
 
 The following suffixes are required. For example, you could use `_sourceCategory=<Foo>/artifactory/console`, but the suffix **artifactory/console** must be used.
 
-<table><small>
-  <tr>
-   <td><strong>Log source</strong></td>
-   <td><strong>File Path</strong></td>
-   <td><strong>Source Category</strong></td>
-  </tr>
-  <tr>
-   <td>Artifactory Server and other microservices</td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-service.log</td>
-   <td>artifactory/console</td>
-  </tr>
-  <tr>
-   <td>Access</td>
-   <td>$JFROG_HOME/artifactory/var/artifactory/log/artifactory-access.log.</td>
-   <td>artifactory/access</td>
-  </tr>
-  <tr>
-   <td>Request</td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-request.log</td>
-   <td>artifactory/request</td>
-  </tr>
-  <tr>
-   <td>Traffic</td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-traffic.*.log</td>
-   <td>artifactory/traffic</td>
-  </tr></small>
-</table>
+<div class="responsive-table">
+
+| Log source                         | File Path                                                          | Source Category       |
+|:----------------------------------|:--------------------------------------------------------------------|:-----------------------|
+| Artifactory Server and other microservices | `$JFROG_HOME/<product>/var/log/artifactory-service.log`             | `artifactory/console` |
+| Access                            | `$JFROG_HOME/artifactory/var/artifactory/log/artifactory-access.log.` | `artifactory/access`  |
+| Request                           | `$JFROG_HOME/<product>/var/log/artifactory-request.log`            | `artifactory/request` |
+| Traffic                           | `$JFROG_HOME/<product>/var/log/artifactory-traffic.*.log`          | `artifactory/traffic` |
+
+</div>
 
 :::note
 Remember that `_sourceCategory` names are case sensitive. When you run a search using `_sourceCategory`, make sure you use the same case as you did when configuring the source.
@@ -203,7 +186,7 @@ If you do not have an existing Sumo Logic account and it is your first time here
 If you already have an existing Sumo Logic account created outside of Artifactory Online:
 
 1. Select **Connection URL** and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) in the **Connection URL** text box. <br/>![jfrog 7](/img/connection-and-integration/jfrog7.png)
-1. Log in to Sumo Logic and verify that your logs are flowing in as expected.
+1. Sign in to Sumo Logic and verify that your logs are flowing in as expected.
 1. Go to our **Apps Catalog**, search for **Artifactory**, then install the [Sumo Logic app for Artifactory 7](/docs/integrations/app-development/jfrog-artifactory) to get instant insight into your Artifactory logs. 
 
 ### If you have an existing connection

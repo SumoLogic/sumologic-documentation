@@ -10,8 +10,8 @@ import Iframe from 'react-iframe'; 
 
 This topic has instructions for configuring Cloud SIEM actions.
 
-:::warning
-In the future, Cloud SIEM actions will be deprecated because comparable behavior is available in the Automation Service. Although Cloud SIEM actions are still supported, we recommend you use the Automation Service to perform actions. For more information, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
+:::tip
+The Automation Service is a newer way to perform actions. For more information about how to use the Automation Service instead of Cloud SIEM actions, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
 :::
 
 ## About Cloud SIEM actions
@@ -45,19 +45,6 @@ Watch this micro lesson to learn how to configure an action.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/uHY-r04edn0?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 
 :::
 

@@ -49,7 +49,6 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection - Amazon Web Services | [AWS Kinesis Firehose for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Collection - Amazon Web Services | [AWS Inventory](/docs/observability/aws/deploy-use-aws-observability/resources/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png) |
 | Collection - Amazon Web Services | [AWS Metadata](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
-| Collection - Amazon Web Services | [AWS XRay](/docs/observability/root-cause-explorer/#aws-x-ray-source) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Collection - Amazon Web Services | [CSE AWS EC2 Inventory](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png) |
 | Collection - Archive | [AWS S3 archive](/docs/manage/data-archiving/archive) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Collection - Cloud APIs | [Akamai SIEM API](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.* |
@@ -69,7 +68,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection - Cloud APIs | [Google Cloud Platform](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Collection - Cloud APIs | [Google Workspace](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [HTTP Logs & Metrics](/docs/send-data/hosted-collectors/http-source/logs-metrics/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
-| Collection - Cloud APIs | [HTTP Traces](/docs/send-data/hosted-collectors/http-source/traces/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.* |
+| Collection - Cloud APIs | [HTTP Traces](/docs/send-data/hosted-collectors/http-source/traces/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)|
 | Collection - Cloud APIs | [Microsoft Azure AD Inventory](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [Microsoft Graph Security API](/docs/integrations/saas-cloud/microsoft-graph-security-v2/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.*
 | Collection - Cloud APIs | [Mimecast](/docs/integrations/saas-cloud/mimecast/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
@@ -82,7 +81,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection - Cloud APIs | [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [Proofpoint On Demand](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [Proofpoint TAP](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
-| Collection - Cloud APIs | [RUM HTTP Traces](/docs/send-data/hosted-collectors/http-source/traces/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.* |
+| Collection - Cloud APIs | [RUM HTTP Traces](/docs/send-data/hosted-collectors/http-source/traces/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png)|
 | Collection - Cloud APIs | [Salesforce](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [SailPoint](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [SentinelOne Mgmt API](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|

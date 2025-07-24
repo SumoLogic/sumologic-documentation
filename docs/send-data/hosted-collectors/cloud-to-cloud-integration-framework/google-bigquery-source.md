@@ -8,10 +8,6 @@ tags:
 description: Learn how to collect data using the BigQuery API.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/google-bigquery/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/google-bigquery/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/google-bigquery/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/google-bigquery-icon.png')} alt="google-bigquery-icon" width="70" />
@@ -50,7 +46,7 @@ When you create an Google BigQuery Source, you add it to a Hosted Collector. Bef
    Before setting up the integration, test out the query with the checkpointing logic and a specific checkpoint value in the Google BigQuery console.
 :::
 To configure an Google BigQuery Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Google BigQuery**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -116,7 +112,7 @@ SELECT trip_id,subscriber_type,start_time,duration_minutes FROM bigquery-public-
 | `Checkpoint Start`| `0` |
 | `Time Field` | `start_time` |
 
-##### Example 3: Query Gmail Logs 
+##### Example 3: Query Gmail Logs
 
 In the example below, you'll need to replace `MyProject` and `MyDataSet` with values matching your environment.
 
@@ -130,7 +126,7 @@ SELECT gmail.message_info,gmail.event_info,gmail.event_info.timestamp_usec AS TI
 | `Checkpoint Start`| `1683053865563258` |
 | `Time Field` | `TIMESTAMP` |
 
-Note that the value of `Checkpoint Start` above is an epoch MICRO seconds timestamp (16 digits) for `May 2, 2023 06:57:45.563258 PM GMT` and the query also sorts by the checkpoint field (`TIMESTAMP`). 
+Note that the value of `Checkpoint Start` above is an epoch MICRO seconds timestamp (16 digits) for `May 2, 2023 06:57:45.563258 PM GMT` and the query also sorts by the checkpoint field (`TIMESTAMP`).
 
 When setting up this source for Gmail logs for the first time and collecting historical Gmail logs, it is important to set the `Checkpoint Start` in epoch microseconds (16 digits), and sort the checkpoint field explicitly in your query. Also note that it might take a long time for the source (and many BigQuery queries to execute) to backfill if the starting point is set far in the past - depending on your Gmail logs volume.
 
@@ -161,15 +157,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/google-bigquery/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-bigquery/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/google-bigquery/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-bigquery/example.tf
+```
 
 ## FAQ
 

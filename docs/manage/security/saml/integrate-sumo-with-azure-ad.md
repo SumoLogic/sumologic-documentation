@@ -93,7 +93,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
    1. Click **Save**. <br/><img src={useBaseUrl('img/security/properties.png')} alt="Properties tab" style={{border: '1px solid gray'}} width="800" />
 1. In the left navigation pane, click **Users and Groups** in the **Manage** section.
 1. Select **Add user/group**.
-1. Add the Users or Groups that should have access to login to Sumo Logic and then click **Assign**. 
+1. Add the Users or Groups that should have access to sign in to Sumo Logic and then click **Assign**. 
 
 ### Configure Azure AD to send Group assignments to Sumo (Optional)
 

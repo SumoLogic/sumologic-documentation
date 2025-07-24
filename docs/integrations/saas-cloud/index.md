@@ -41,6 +41,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/akamai-cpc"><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="85"/><h4>Akamai CPC</h4></a>
+  <p>Monitor threats and enforce compliance for client-side web applications using rich dashboards and Akamai CPC data.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/akamai-datastream"><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="85"/><h4>Akamai DataStream</h4></a>
   <p>Monitor and analyze the performance of Akamai Edge server</p>
   </div>
@@ -131,6 +137,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/confluent-cloud"><img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="icon" width="100"/><h4>Confluent Cloud</h4></a>
+  <p>Monitor and analyze streaming activity in Confluent Cloud to ensure secure, reliable, and high-performance data pipelines.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="icon" width="90"/><h4>CrowdStrike Falcon FileVantage</h4></a>
   <p>Monitor and analyze file integrity.</p>
   </div>
@@ -211,6 +223,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/jumpcloud-directory-insights"><img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="icon" width="100"/><h4>JumpCloud Directory Insights</h4></a>
   <p>Get critical insights into your organization's JumpCloud Directory Insights environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/kaltura"><img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="icon" width="100"/><h4>Kaltura</h4></a>
+  <p>Get critical insights into your content management ecosystem, including total entries, user activity trends, and event distributions.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -347,13 +365,19 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/snowflake-logs"><img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="icon" width="120"/><h4>Snowflake Logs</h4></a>
+  <p>Monitor the key metrics, query performance, and overall health of Snowflake environments to optimize Snowflake's potential.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/sophos"><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="60"/><h4>Sophos</h4></a>
   <p>Identify security threats by analyzing alerts and events logs.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/sumo-collection"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="80"/><h4>Sumo Collection</h4></a>
+  <a href="/docs/integrations/saas-cloud/sumo-collection"><img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="icon" width="80"/><h4>Sumo Collection</h4></a>
   <p>Identify, manage, and monitor collectors and sources within Sumo Logic.</p>
   </div>
 </div>

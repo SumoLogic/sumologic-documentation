@@ -28,17 +28,28 @@ Vectra AI detects and prioritises high-fidelity alerts in real time and responds
 
 1. Sign in to [Vectra](https://apitest.vectracloudlab.com). 
 1. In the main page, click on the section **My Profile**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vectra/vectra-1.png')} style={{border:'1px solid gray'}} alt="vectra" width="200"/>
-1. Click on the copy button in API Token (or click generate a new token and then copy button).   
+1. Click on the copy button in [API Token](https://support.vectra.ai/vectra/article/KB-VS-1711) (or click generate a new token and then copy button).   
 
 ## Configure Vectra in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your Vectra host address, for example `https://apitest.vectracloudlab.com/api/v2.2/`.
 
-   * **Label**. The name of the resource.
-   * **Host**. 'https://apitest.vectracloudlab.com/api/v2.2/'   
-   * **Token**. API Token copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vectra-configuration.png')} style={{border:'1px solid gray'}} alt="Vectra configuration" width="400"/>
+* **Token**. Enter the [Vectra API token](https://support.vectra.ai/vectra/article/KB-VS-1711) you [copied earlier](#vectra-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vectra-configuration.png')} style={{border:'1px solid gray'}} alt="Vectra configuration" width="400"/>
 
 For information about Vectra, see [Vectra documentation.](https://support.vectra.ai/vectra/knowledge)
 

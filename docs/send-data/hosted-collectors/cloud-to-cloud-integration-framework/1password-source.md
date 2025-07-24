@@ -8,10 +8,7 @@ tags:
   - 1password
 description: The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/1password/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/1password/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/1password/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
@@ -23,15 +20,16 @@ The 1Password Source provides a secure endpoint to receive sign-in attempts, ite
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Sign-in attempts](https://developer.1password.com/docs/events-api/reference/#post-apiv1signinattempts) |
-| 5 min |  [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages) |
-| 5 min |  [Audit events](https://developer.1password.com/docs/events-api/reference/#post-apiv1auditevents) |
+| 5 min | [Sign-in attempts](https://developer.1password.com/docs/events-api/reference/#post-apiv1signinattempts) |
+| 5 min | [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages) |
+| 5 min | [Audit events](https://developer.1password.com/docs/events-api/reference/#post-apiv1auditevents) |
 
 ## Setup
 
 ### Vendor configuration
 
 You'll need a <a id="APIToken"></a> 1Password API token and your customer-specific 1Password domain (for example, `events.1password.com`). To generate a 1Password API token, follow these steps:
+
 1. [Sign in](https://start.1password.com/signin) to your 1Password account and click [Integrations](https://my.1password.com/integrations/active) in the sidebar.
 1. Switch to the **Directory** tab (or use [this direct link to the Directory tab](https://sumologictestingapi.1password.com/integrations/directory)).
 1. Go to the **Events Reporting** section and click the **Sumo Logic** integration.
@@ -45,7 +43,7 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 
 ### Source configuration
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **1Password**.
 1. Enter a **Name** for the Source. The **description** is optional.
@@ -90,20 +88,19 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | base_url | String | Yes | `null` | Provide your 1Password customer-specific domain, such as: <code>events.1password.com</code> |  `"events.1password.com"` |
 | api_token | String | Yes | `null` | Provide the [1Password API token](#vendor-configuration) you want to use to authenticate collection requests. |  `"acsac25$"` |
-| supported_apis | []String | Yes | `null` | Define one or more of the available APIs to collect |  `["sign-in","itemUsage"]` |
-
+| supported_apis | String | Yes | `null` | Define one or more of the available APIs to collect |  `["sign-in","itemUsage"]` |
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/1password/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/1password/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.tf
+```
 
 ## Troubleshooting
 

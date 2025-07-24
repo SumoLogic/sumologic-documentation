@@ -9,17 +9,13 @@ keywords:
 description: Learn how to set up a STIX/TAXII 1.x client to collect threat intelligence indicators into the Sumo Logic environment.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/taxii-1/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/taxii-1/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/taxii-1/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The STIX/TAXII 1 Client source supports collecting threat intelligence indicators from STIX/TAXII 1.x and sending them to Sumo Logic as normalized threat indicators. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
 
-[STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. 
+[STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients.
 
-:::sumo[Best Practice]
+:::sumo Best Practice
 This source only supports STIX/TAXII 1.x. Sumo Logic recommends using our [STIX/TAXII 2.x source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/) instead as it is the current version of STIX/TAXII.
 :::
 
@@ -93,15 +89,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/taxii-1/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/taxii-1/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/taxii-1/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/taxii-1/example.tf
+```
 
 ### Recommended configurations
 

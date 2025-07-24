@@ -38,8 +38,23 @@ XDR
 ## Configure Cortex XDR in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Cortex XDR API URL**. Enter your Cortex XDR API URL, for example, `https://api-test-dev.xdr.us.paloaltonetworks.com/public_api/v1/`
+
+* **API Key**. Enter your [Cortex API key](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-Started-with-Cortex-XDR-APIs).
+
+* **API Key ID**. Enter key ID associated with the API key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cortex/cortex-configuration.png')} style={{border:'1px solid gray'}} alt="Cortex XDR configuration" width="400"/>
 

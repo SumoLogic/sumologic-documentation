@@ -29,8 +29,7 @@ For Azure Web Apps, you can collect the following logs and metrics:
 
 - **Activity logs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 
-* **Azure WebApps platform metrics**. These are metrics specific to Functions like execution count and execution units.
-  For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-sites-metrics).
+* **Metrics** are available in [Microsoft.Web/sites](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-sites-metrics) namespace. For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service-reference).
 
 ### Sample log messages
 
@@ -66,7 +65,9 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -107,9 +108,9 @@ For getting health check metric, make sure you enable **Health check** under the
 
 This section provides instructions on how to install the Azure Web Apps app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstall2/>
+<AppInstallIndexV2/>
 
 As part of the app installation process, the following fields will be created by default:
 
@@ -125,9 +126,9 @@ As part of the app installation process, the following fields will be created by
 
 ## Viewing Azure Web Apps dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/>
 
 ### Overview
 

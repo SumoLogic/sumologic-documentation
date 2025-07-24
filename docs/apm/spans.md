@@ -48,19 +48,6 @@ This micro lesson provides an overview of Span Analytics, and describes the term
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/2cp_0pmzD-A"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 

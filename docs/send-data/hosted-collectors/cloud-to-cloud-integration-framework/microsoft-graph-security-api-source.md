@@ -8,10 +8,6 @@ tags:
 description: The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the Microsoft Graph Security API endpoint.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/microsoft-graph-security-api/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/microsoft-graph-security-api/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/microsoft-graph-security-api/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -128,17 +124,24 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/microsoft-graph-security-api/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/microsoft-graph-security-api/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/microsoft-graph-security-api/example.tf
+```
+## Troubleshooting
 
-<a href="/files/c2c/microsoft-graph-security-api/example.tf" target="_blank">Download example</a>
+### 403 Error with "Account is not provisioned"
+
+
+The "**Unauthorized request - Account is not provisioned**" error occurs when Microsoft Defender For Cloud hasn't started collecting alerts. This issue is explained [here](https://stackoverflow.com/questions/79380921/microsoft-graph-api-security-alerts-v2-gives-error-unauthorized-request-acco). Make sure to go to your Microsoft Defender for Cloud account, click on **Incidents** and then **Alerts**. If it's the first time, you will see a screen loading the information. Once you see the list of alerts screen, restart your source and you should no longer see the error.
 
 ## FAQ
+
 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.

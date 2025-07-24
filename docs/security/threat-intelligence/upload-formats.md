@@ -7,11 +7,17 @@ description: Learn how to format upload files containing threat intelligence ind
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Use the following formats for threat intelligence indicator files when you [add indicators in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-button) or when you use the upload APIs with the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource:
+This article describes the format to use for upload files when you add threat intelligence sources by [manually uploading them in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-button) or when you use the upload APIs in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource.
+
+Following are the formats for file upload:
 
 * [Normalized JSON format](#normalized-json-format)
 * [CSV format](#csv-format)
 * [STIX 2.x JSON format](#stix-2x-json-format) (API use only)
+
+:::note
+Rather than manually uploading files, you can also add threat intelligence sources using collectors, including for [CrowdStrike](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source), [Intel471](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source), [Mandiant](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source), [STIX/TAXII 1](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source), [STIX/TAXII 2](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and [ZeroFox](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source). For more information, see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
+:::
 
 ## Normalized JSON format
 
@@ -71,7 +77,13 @@ The following attributes are required:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
-         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.<HASH-TYPE>`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
+         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
+            * `file:hashes.MD5`
+            * `file:hashes.'SHA-1'`
+            * `file:hashes.'SHA-2'`
+            * `file:hashes.'SHA-3'`
+            * `file:hashes.'SHA-256'`
+            <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
@@ -131,7 +143,13 @@ Columns for the following attributes are required in the upload file:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
-         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.<HASH-TYPE>`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
+         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
+            * `file:hashes.MD5`
+            * `file:hashes.'SHA-1'`
+            * `file:hashes.'SHA-2'`
+            * `file:hashes.'SHA-3'`
+            * `file:hashes.'SHA-256'`
+            <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
@@ -263,7 +281,13 @@ The following attributes are required:
        * **pattern** (string). The pattern of this indicator (as defined by [pattern in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_me3pzm77qfnf)). Following are valid values:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
-         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.<HASH-TYPE>`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
+         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
+            * `file:hashes.MD5`
+            * `file:hashes.'SHA-1'`
+            * `file:hashes.'SHA-2'`
+            * `file:hashes.'SHA-3'`
+            * `file:hashes.'SHA-256'`
+            <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)

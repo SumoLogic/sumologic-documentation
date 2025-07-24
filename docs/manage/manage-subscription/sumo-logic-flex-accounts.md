@@ -65,7 +65,7 @@ The following table provides a summary list of key features by Flex package acco
 | Feature | Free | Trial | Essentials | Enterprise Suite Flex |
 |:------- | :--- | :---- | :------------- | :------------- |
 | Advanced Span Analytics |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| AI-driven Alerting |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
+| Anomaly Alerting |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Alert Response | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Anomaly Detection |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
@@ -130,7 +130,6 @@ The following table provides a summary list of key features by Flex package acco
 | Real User Monitoring (RUM) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
 | Reliability Management (SLIs/SLOs) |  | | |![check](/img/reuse/check.png) |
 | Risk Assessment |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Root Cause Explorer |  |  | | ![check](/img/reuse/check.png) |
 | Scheduled Alert Muting | |  | |![check](/img/reuse/check.png) |
 | Scheduled Views | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Service Maps |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |

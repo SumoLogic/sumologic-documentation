@@ -155,7 +155,7 @@ Use the **Open** button to view the Log Search that provided the Log Fluctuation
 
 #### Anomalies
 
-This card detects time series anomalies for entities related to the alert. These insights are powered by the [Root Cause Explorer](../../observability/root-cause-explorer.md).
+This card detects time series anomalies for entities related to the alert.
 
 Anomalies are grouped into [golden signals](https://sre.google/sre-book/monitoring-distributed-systems/). Anomalies are also presented on a timeline; the length of the anomaly represents its duration.
 
@@ -164,7 +164,7 @@ Anomalies are grouped into [golden signals](https://sre.google/sre-book/monitor
 * **A** - the name of the card (Anomalies) and a short description of what it does.
 * **B** - count of anomalies belonging to each golden signal type.
 * **C** - a timeline view of anomalies with their start time and duration, the domain (e.g. AWS, Kubernetes), and the entity on which it was detected. Anomalies may be grouped based on connections between entities and similarity of metrics. For example, anomalies on EC2 instances that are members of an AutoScaling group may be grouped together. The count shown in each anomaly refers to the number of grouped anomalies.
-* **D** - a link to view the anomalies in the Root Cause Explorer.
+* **D** - a link to view the anomalies.
 
 :::note
 Only Anomalies with a start time around 30 minutes before or after the Alert was created show up in the card.

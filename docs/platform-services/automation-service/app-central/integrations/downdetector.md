@@ -31,12 +31,25 @@ Updated: Jul 06, 2023***
 ## Configure Downdetector in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Downdetector API URL. The default value is `https://downdetectorapi.com`
 
-   * **URL**. Default value for API URL is 'https://downdetectorapi.com'.
-   * **Username**. The client ID that you copied as username.
-   * **Password**. The Client Secret that you copied as password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/downdetector-configuration.png')} style={{border:'1px solid gray'}} alt="Downdetector configuration" width="400"/> gray'}} alt="downdetector" width="400"/>
+* **Username**. Enter the client ID that you [copied earlier](#downdetector-configuration).
+
+* **Password**. Enter the client secret that you copied earlier. 
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/downdetector-configuration.png')} style={{border:'1px solid gray'}} alt="Downdetector configuration" width="400"/> gray'}} alt="downdetector" width="400"/>
 
 For information about Downdetector, see [Downdetector documentation](https://downdetectorapi.com/v2/docs/).
   

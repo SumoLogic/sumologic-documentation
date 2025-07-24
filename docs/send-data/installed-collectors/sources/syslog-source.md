@@ -27,6 +27,9 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate; each field needs a name (key) and value. <br/>
      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+     :::note
+     If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM, click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
+     :::
 1. Set any of the following under **Advanced**:
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.

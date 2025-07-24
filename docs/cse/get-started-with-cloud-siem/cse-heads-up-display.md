@@ -37,11 +37,10 @@ The default time range is 24 hours. You can change the time range using the drop
 
 ## 2. Insight Metrics 
 
-The **Insight Metrics** section displays the following metrics for the currently selected time range:
-
-* **Detection**. The average period of time between when the first event happened (when the first record in the insight occurred) and when the insight was generated, in days. (This differs from "dwell time", which is the time between when the first record and the last record occurred in an insight.)
-* **Response**. The average response time, which is the average time between when an insight was generated and when its status was set to **In Progress**, in seconds. 
-* **Remediation**. The average remediation time, which is the average time between when the insight was created and when its status was set to **Closed**, in seconds. 
+The **Insight Metrics** section displays the following metrics for all the insights in the Heads Up Display for the currently selected time range:
+* **Detection**. The average period of time for all insights between when the first record is observed and the insight is created. (This differs from "dwell time", which is the time between when the first record and the last record occurred.)
+* **Response**. The average time for all insights since the insight was last updated. Any update of the insights, including from automation processes, changes the average response time. 
+* **Remediation**. The average time between when the insights are created and the insights are closed. A value of "0" means that no insights were closed during the selected timeframe.
 
 If you use an [HTTP POST V2 Action](/docs/cse/administration/create-cse-actions/) to send insights to the Sumo Logic platform or another system, the insight metrics are included in the insight JSON object. The fields are `timeToDetection`, `timeToResponse` , and `timeToRemediation`. 
 

@@ -52,19 +52,6 @@ Watch this micro lesson to learn more about how to use context actions.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/PrMr3sjaJxA?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Configure a context action

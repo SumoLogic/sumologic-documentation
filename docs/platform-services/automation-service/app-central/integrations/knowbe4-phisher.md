@@ -25,12 +25,23 @@ Follow the steps from the KnowBe4 PhishER [guide](https://developer.knowbe4.com/
 ## Configure KnowBe4 PhishER in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the [PhishER base URL](https://developer.knowbe4.com/graphql/phisher/page/Base-URL) for the KnowBe4 server that is closest to your geographic location.
 
-    * **Label**. The name for the resource.
-    * **URL**. KnowBe4 PhishER host URL.
-    * **API Token**. Your KnowBe4 PhishER API key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/knowbe4-phisher-configuration.png')} style={{border:'1px solid gray'}} alt="KnowBe4 PhishER configuration" width="400"/>
+* **API Token**. Enter your KnowBe4 PhishER [API key](https://developer.knowbe4.com/graphql/phisher/page/Authentication).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/knowbe4-phisher-configuration.png')} style={{border:'1px solid gray'}} alt="KnowBe4 PhishER configuration" width="400"/>
 
 For information about KnowBe4 PhishER, see [KnowBe4 PhishER documentation](https://support.knowbe4.com/hc/en-us/articles/360010802673-PhishER-Product-Manual).
 

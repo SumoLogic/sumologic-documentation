@@ -7,10 +7,6 @@ tags:
 description: The Cortex Cloud-to-Cloud Source Integration allows you to ingest alerts and incidents from your Cortex XDR application.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/palo-alto-cortex-xdr/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/palo-alto-cortex-xdr/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/palo-alto-cortex-xdr/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -71,7 +67,7 @@ When you create a Palo Alto Cortex XDR Source, you add it to a Hosted Collector
 
 To configure a Palo Alto Cortex XDR Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Palo Alto Cortex XDR**.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
@@ -132,15 +128,15 @@ The following table shows the **config** parameters for a Palo Alto Cortex XDR�
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/palo-alto-cortex-xdr/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/palo-alto-cortex-xdr/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/palo-alto-cortex-xdr/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/palo-alto-cortex-xdr/example.tf
+```
 
 ## FAQ
 

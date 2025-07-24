@@ -27,14 +27,27 @@ Intel 471provides comprehensive coverage of the criminal underground, SaaS platf
 ## Configure Intel 471 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Intel 471 URL, for example, `https://api.intel471.com/`
 
-   * **URL**. 'https://api.intel471.com/'.
-   * **Email Address**. your email address.
-   * **API Key**. Insert the previously copied key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/intel-471-configuration.png')} style={{border:'1px solid gray'}} alt="Intel 471 configuration" width="400"/>
+* **Email Address**. Enter your email address.
 
-For information about Intel 471, see the [Intel 471 website](https://intel471.com/resources).
+* **API Key**. Insert the [previously copied key](#intel-471-configuration).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/intel-471-configuration.png')} style={{border:'1px solid gray'}} alt="Intel 471 configuration" width="400"/>
+
+For information about Intel 471, see the [Intel 471 website](https://intel471.com/resources). The Intel471 documentation is not public and can only be accessed by partners or customers.
 
 ## Category
 
