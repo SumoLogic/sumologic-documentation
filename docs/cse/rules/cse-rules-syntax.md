@@ -648,7 +648,7 @@ Parameters:
    * `confidence` Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
    * `indicator`. Value of the indicator, such as an IP address, file name, email address, etc. 
    * `source`. The source in the Sumo Logic datastore displayed in the **Threat Intelligence** tab.
-   * `threatType`. The threat type of the indicator (for example, `anomalous-activity`, `anonymization`, `benign`, `compromised`, `malicious-activity`, `attribution`, `unknown`).
+   * `threat_type`. The threat type of the indicator (for example, `anomalous-activity`, `anonymization`, `benign`, `compromised`, `malicious-activity`, `attribution`, `unknown`).
    * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, etc.)
 * **`<indicators>`**. An optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
    * `active_indicators`. Match active indicators only (default).
