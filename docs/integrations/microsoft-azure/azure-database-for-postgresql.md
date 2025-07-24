@@ -174,7 +174,14 @@ The **Azure Database for PostgreSQL - Transactions** dashboard provides insights
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForPostgresql/Azure-Database-for-PostgreSQL-Transactions.png')} alt="Azure Database for PostgreSql - Transactions" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Database for PostgreSQL
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
 ### Azure Database for PostgreSQL alerts
+
 These alerts are metric based and will work for all Azure Database for PostgreSQL.
 
 | Alert Name                                           | Alert Description and Conditions                                                                                                                         | Alert Condition  | Recover Condition |
@@ -184,12 +191,6 @@ These alerts are metric based and will work for all Azure Database for PostgreSQ
 | `Azure Database for PostgreSQL - Failed Connections` | This alert is triggered when Failed Connections Count is greater than 10.                                                                                | Count >= 10      | Count < 10        |
 | `Azure Database for PostgreSQL - Memory Percent`     | This alert is triggered when Memory Percentage is greater than 80. Also a warning type alert will be triggered when Memory Percentage greater than 70.   | percentage >= 80 | percentage < 80   |
 | `Azure Database for PostgreSQL - Storage Percent`    | This alert is triggered when Storage Percent greater than 95. Also a warning type alert will be triggered when Storage Percent greater than 90.          | percentage >= 95 | percentage < 95   |
-
-## Troubleshooting
-
-### HTTP Logs and Metrics Source used by Azure Functions
-
-To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
 
 ## Upgrade/Downgrade the Azure Flexible Database for PostgreSQL app (Optional)
 
@@ -202,3 +203,9 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Troubleshooting
+
+### HTTP Logs and Metrics Source used by Azure Functions
+
+To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).

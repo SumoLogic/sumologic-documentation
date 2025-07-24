@@ -139,6 +139,12 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Azure-Container-Instances-Policy-and-Recommendations.png')} alt="Azure Container Instances - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Container Instances
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
 ### Azure Container Instances alerts
 
 These alerts are metric based and will work for all Azure Container Instances.
@@ -147,6 +153,18 @@ These alerts are metric based and will work for all Azure Container Instances.
 |:-- |:-- |:--|:---------------------|
 | `Azure Container Instances - Memory Usage` | This alert is triggered when memory usage is greater than 20 MB. Also warning alert is triggered when the memory usage exceeds 15 MB. | Data volume > 20MB | Data volume < = 20MB |
 | `Azure Container Instances - CPU Usage` | This alert is triggered when CPU usage is greater than 100 milicore. Also warning alert is triggered when the CPU usage exceeds 90 millicore. | millicores > 100  | millicores < = 100    |
+
+## Upgrade/Downgrade the Azure Container Instances app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Container Instances app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Troubleshooting
 

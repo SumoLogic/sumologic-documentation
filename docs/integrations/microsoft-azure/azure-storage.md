@@ -339,18 +339,11 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureStorage/Azure-Storage-Performance.png')} alt="Azure Storage Performance dashboard" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Storage
 
-## Upgrade/Downgrade the Azure Storage app (optional)
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Azure Storage app (optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
+<CreateMonitors/>
 
 ### Azure Storage alerts
 These alerts are metric based and will work for all Azure Storage.
@@ -363,6 +356,17 @@ These alerts are metric based and will work for all Azure Storage.
 | `Azure Storage - Transactions`                  | This alert is triggered when Transactions count greater than 500.                                                                                            | Count > = 500         | Count < 500         |
 | `Azure Storage - Used Capacity(GB)`             | This alert is triggered when Used Capacity(GB) greater than 100.                                                                                             | Byted(GB) > = 100     | Byted(GB) < 100     |
 
+## Upgrade/Downgrade the Azure Storage app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Storage app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Troubleshooting
 

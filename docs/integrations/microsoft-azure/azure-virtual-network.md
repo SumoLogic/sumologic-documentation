@@ -270,7 +270,14 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Denied-Traffic-Flow.png')} alt="Azure Virtual Network - Denied Traffic Flow" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Virtual Network
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
 ### Azure Virtual Network alerts
+
 These alerts are metric based and will work for all Virtual Networks.
 
 | Alert Name | Description                                                                     | Alert Condition | Recover Condition |

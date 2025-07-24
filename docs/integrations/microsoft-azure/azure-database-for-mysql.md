@@ -178,8 +178,14 @@ The **Azure Database for Mysql - Storage Overview** dashboard provides details a
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Storage-Overview.png')} alt="Azure Database for Mysql - Storage Overview" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Database for MySQL
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
 
 ## Azure Database for MySQL alerts
+
 These alerts are metric based and will work for all Azure Database for MySQL.
 
 | Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
@@ -189,6 +195,18 @@ These alerts are metric based and will work for all Azure Database for MySQL.
 | `Azure Database for MySQL - High Memory Utilization` | This alert fires when memory % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90 | percentage < 90  |
 | `Azure Database for MySQL - High Storage IO %` | This alert fires when storage IO % on a resource in a Azure MySQL instance is greater than a threshold value (default value 80%) | percentage >= 80  | percentage < 80   |
 | `Azure Database for MySQL - High Storage Utilization` | This alert fires when storage % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90  | percentage < 90   |
+
+## Upgrade/Downgrade the Azure Database for MySQL app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Database for MySQL app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Troubleshooting
 
