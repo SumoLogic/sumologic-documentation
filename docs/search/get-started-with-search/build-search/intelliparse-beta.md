@@ -12,6 +12,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+<!-- Originally added as a beta article with DOCS-832. -->
+
 This feature is currently available to select customers. Contact your Sumo Logic account representative to request access.
 
 We've introduced a new Log Search parsing mode called Intelliparse. It extends automatic parsing to unstructured logs, allowing you to search and filter logs even when they don’t follow a consistent format like JSON.

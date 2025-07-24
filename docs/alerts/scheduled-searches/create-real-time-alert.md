@@ -7,6 +7,8 @@ title: Deprecation of Real-Time Scheduled Searches
  <meta name="robots" content="noindex" />
 </head>
 
+<!-- Article added by DOCS-780. -->
+
 :::warning Deprecated Feature
 As of May 29, 2024, creating new Real-Time Scheduled Searches has been disabled. Existing Real-Time Scheduled Searches will continue to function as-is. For new alerting needs, we recommend using [Monitors](/docs/alerts/monitors/overview).
 :::
