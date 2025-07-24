@@ -172,8 +172,8 @@ These alerts are metric based and will work for all Azure Cache for Redis.
 
 | Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Azure Cache For Redis - Cache Read` | This alert is triggered  when Average Cache Read bytes are greater than 140625000. Also, a warning type alert will be triggered when Cache Read Units bytes are greater than 130625000. | bytes >= 140625000 | bytes < 140625000 |
-| `Azure Cache For Redis - Connected Clients` | This alert is triggered  when Connected Clients count is greater than 5625. Also, a warning type alert will be triggered when Connected Clients count is greater than 4625. | count >= 5625 | count < 5625 |
+| `Azure Cache For Redis - Cache Read` | This alert is triggered when Average Cache Read bytes are greater than 140625000. Also, a warning type alert will be triggered when Cache Read Units bytes are greater than 130625000. | bytes >= 140625000 | bytes < 140625000 |
+| `Azure Cache For Redis - Connected Clients` | This alert is triggered when Connected Clients count is greater than 5625. Also, a warning type alert will be triggered when Connected Clients count is greater than 4625. | count >= 5625 | count < 5625 |
 | `Azure Cache For Redis - CPU Utilization` | This alert is triggered when CPU Utilization percentage greater than 80. Also a warning type alert will be triggered when CPU Utilization percentage greater than 70. | percentage >= 80 | percentage < 80 |
 | `Azure Cache For Redis - Server Load` | This alert is triggered when Server Load percentage greater than 80. Also a warning type alert will be triggered when Server Load percentage greater than 70. | percentage >= 80 | percentage < 80 |
 | `Azure Cache For Redis - Used Memory Percentage` | This alert is triggered when Used Memory percentage greater than 80. Also a warning type alert will be triggered when Used Memory percentage greater than 70. | percentage >= 80 | percentage < 80 |
