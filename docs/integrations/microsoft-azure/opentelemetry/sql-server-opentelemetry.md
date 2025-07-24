@@ -106,14 +106,25 @@ This will generate a command you can execute on the machine that you need to mon
    - **Linux**: For SQL Server on Linux, logs are typically located at: `/var/opt/mssql/log/errorlog*`
 
 2. **SQL Server Connection Configuration**: To collect metrics, you'll need to provide connection details:
-   - **Server Address**: The hostname or IP address of your SQL Server instance (default: localhost)
+   - **Server Address**: The hostname or IP address of your SQL Server instance (default: 0.0.0.0)
    - **Port**: The port number for SQL Server connection (default: 1433)  
    - **Username**: SQL Server authentication username (required for Linux, optional for Windows if using Windows Authentication)
    - **Password**: SQL Server authentication password (required for Linux, optional for Windows if using Windows Authentication)
 
-3. **Named Instance Configuration**: To collect from a SQL Server with a named instance, both **Computer Name** and **Instance Name** are required for Windows and only **Instance Name** for Linux. Toggle the `Enable metric collection for SQL Server with a named instance.` button. For a default SQL Server setup, these settings are optional.
-    - **Computer Name**: The computer name identifies the SQL Server name or IP address of the computer being monitored. This is the network name of the machine hosting SQL Server. (Only required for Windows)
-    - **Instance Name**: The instance name identifies the specific SQL Server instance being monitored. This is required when SQL Server is installed as a named instance (e.g., SQLEXPRESS, INSTANCE01) rather than the default instance.
+3. **Monitoring a Named SQL Server Instance (Windows Only)**
+
+    To collect metrics from a specific named instance of SQL Server on a **Windows** host, enable the `Enable metric collection for SQL Server with a named instance` option. For a default SQL Server setup, these settings are optional.
+
+    * **Computer Name**: The computer name identifies the SQL Server name or IP address of the computer being monitored. This is the network name of the machine hosting SQL Server.
+    * **Instance Name**: The instance name identifies the specific SQL Server instance being monitored. This is required when SQL Server is installed as a named instance (e.g., SQLEXPRESS, INSTANCE01) rather than the default instance.
+
+    ---
+    :::note
+    **For Linux Users**
+    These settings are not used for SQL Server on Linux because its instance architecture is different.
+
+    On Linux, SQL Server does not use named instances in the same way Windows does. Instead, each SQL Server instance on a Linux host is configured to listen on a unique TCP port. To connect to a specific instance, you specify its port number directly in the connection string (e.g., `your_server_hostname,1401`), rather than resolving an instance name.
+    :::
 
 4. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
 
