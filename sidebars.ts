@@ -3023,6 +3023,7 @@ integrations: [
           items: [
             'cse/troubleshoot/troubleshoot-parsers',
             'cse/troubleshoot/troubleshoot-mappers',
+            'cse/troubleshoot/troubleshoot-rules',
           ],
         },
       ],
