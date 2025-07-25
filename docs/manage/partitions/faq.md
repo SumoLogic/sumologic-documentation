@@ -34,7 +34,7 @@ The system tries to match the source expression of the query with the routing ex
 - If the partition matches the source expression, then all other partitions are filtered out and only the matching partition is considered for scan (for example, source expression: `_collector=service1_all_logs AND _sourceCategory=another_category` and routing expression of a partition:  `_collector=service1_all_logs`).
 - If the routing expression of a partition and the source expression of the query are not overlapping, that partition will be excluded from the scan (for example, source expression: `_sourceCategory=prod_logs` and routing expression of a partition: `_sourceCategory=staging_logs`).
 - The matching logic is filtered with the complex boolean expressions in either the routing expressions or the source expression of the query.
-- The system will stumble on the side of caution in case there is ambiguity to guarantee functional correctness of the query results.
+- The system will err on the side of caution in case there is ambiguity to guarantee functional correctness of the query results.
 - The system does not have any information about the data other than routing expressions for this selection process.
 - The number of partitions scanned is directly related to how well a query source expression matches the routing expressions. Therefore, it is recommended to use simpler expressions and preferably, use the same dimensions for partition routing as you would generally use in your queries.
 
