@@ -205,7 +205,7 @@ Follow the below steps to configure the EventBridge API destination:
   1. Add any value of your choice for **Username** and **Password**.
 
 #### Step 3: Create the EventBridge rule
-
+Follow the below steps to create the EventBridge rule:
 1. Click **Rules** and then click **Create rule**.
 1. Set the event source to **AWS services** and then select **Security Hub** as the AWS service.
 1. Select **All Events** in Event Type.
