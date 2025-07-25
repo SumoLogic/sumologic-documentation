@@ -219,7 +219,7 @@ Follow the below steps to create the EventBridge rule:
 This method uses an AWS Lambda function to process, store, and forward logs to Sumo Logic. While it offers a robust solution, it introduces additional AWS resources, such as Lambda, which can increase both cost and complexity.
 
 - Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
-- A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
+- A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo `CloudWatchEventFunction` Lambda function.
 - The Lambda function sends the events to an HTTP source on a Sumo hosted collector.
 
 This configuration is defined in a [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html) published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). You do not need to manually create the necessary AWS resources. You simply deploy the configuration, as described in Step 2 below.
