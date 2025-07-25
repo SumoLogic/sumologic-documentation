@@ -11,8 +11,8 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-:::note
-This is a **logs-only** app. For collecting **metrics** and enabling comprehensive **monitoring** on both **Linux** and **Windows**, use the [Microsoft SQL Server - OpenTelemetry App](https://help.sumologic.com/docs/integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry).
+:::note logs only
+This is a logs-only app. For collecting metrics and enabling comprehensive monitoring on both Linux and Windows, use the [Microsoft SQL Server - OpenTelemetry App](/docs/integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry).
 :::
 
 The Sumo Logic app for Microsoft SQL Server is a logs-based app that provides insight into your SQL Server for Linux. The app consists of predefined dashboards, providing visibility into your environment for real-time or historical analysis on backup, restore mirroring, general health and operations of your system.
