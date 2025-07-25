@@ -184,7 +184,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-## Azure Database for MySQL alerts
+### Azure Database for MySQL alerts
 
 These alerts are metric based and will work for all Azure Database for MySQL.
 
