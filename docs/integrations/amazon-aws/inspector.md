@@ -32,7 +32,8 @@ To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs
 
 #### Step 2: Configure EventBridge API destination
 
-1. Open your Amazon EventBridge Console.
+Follow the steps below to configure the EventBridge API destination:
+1. Open your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
 1. In the navigation bar, click **API destinations**.
 1. Click **Create destination**.
 1. Enter a name for the API Destination.
@@ -41,12 +42,13 @@ To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs
   1. Provide a connection name.
   1. Keep the API Type as **Public**.
   1. Select **Basic (Username/Password)** in the **Authorization type**.
-  1. Add any random values for **Username** and **Password**.
-1. Create the connection.
+  1. Add any value of your choice for **Username** and **Password**.
 
 #### Step 3: Create the EventBridge rule
 
-1. Click **Rules** and then click **Create rule**.
+Follow the steps below to create the EventBridge rule:
+1. Open your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
+1. In the navigation bar, click **Rules**.
 1. Set the event source to **AWS services** and then select **Security Hub** as the AWS service.
 1. Select **All Events** in Event Type.
 1. Under **Select targets**, choose **EventBridge API destination**.
