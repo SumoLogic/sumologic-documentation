@@ -12,13 +12,13 @@ This article provides guidance for administrators to diagnose, troubleshoot, and
 Rules in Cloud SIEM serve to provide security detection signals from log data that has previously been ingested, parsed, normalized, and enriched into Cloud SIEM records. Signals produced by rules form the core alerting capability in Cloud SIEM and are themselves correlated into insights by the entities elevated from the records that generate them.
 
 Rule issues can manifest in several ways:
-* No signals
-<br/>A rule that should be generating signals is not, or a "Test Rule Expression" returns results but no signals are generated.
-* Too many signals
+* [No signals](#no-signals-being-generated)
+<br/>A rule that should be generating signals is not, or clicking the **Test Rule Expression** button on a rule returns results but no signals are generated. This can also result when the rule status is either in failed or degraded and is either permanently or temporarily disabled due to rule logic or throughput issues.
+* [Too many signals](#too-many-signals-are-generated)
 <br/>False positive signals or signals that aren’t useful are being triggered or are unsuppressed.
-* Rule degradations or failures
-<br/>The rule status is either in failed or degraded and is either permanently or temporarily disabled due to rule logic or throughput issues.
-* Signal time out of sync
+* [Unexpected signal suppression](#signal-suppression-problems)
+<br/>Signals are not suppressed that you want to suppress, or signals are suppressed that you don't want to be suppressed.
+* [Signal time out of sync](#signal-time-offset)
 <br/>Signals being generated out of sync with the actual event time either in the past or future.
 
 ## Common rule components
@@ -31,7 +31,7 @@ The [expression on a rule](/docs/cse/rules/about-cse-rules/#about-rule-expressio
 
 <img src={useBaseUrl('img/cse/troubleshoot-tuning-expression.png')} alt="Example match expression on a rule" style={{border: '1px solid gray'}} width="500" />
 
-Rules with a [tuning expression](/docs/cse/rules/rule-tuning-expressions/) added will require whatever additional criteria is present in the tuning expression as well as the base expression to match as they are evaluated as a single expression at processing time.
+Rules with a [tuning expression](/docs/cse/rules/rule-tuning-expressions/) added will require whatever additional criteria is present in the tuning expression as well as the base expression to match because they are evaluated as a single expression at processing time.
 
 ### Entity selector
 
@@ -48,12 +48,12 @@ The signal name on a rule controls what the name of any generated signal will be
 ### Suppression
 
 [Signals can be suppressed](/docs/cse/records-signals-entities-insights/about-signal-suppression) a number of ways, most commonly:
-* [Redundant signal suppression](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#redundant-signal-suppression)
+* Redundant signal suppression
 <br/>A signal with the same name and entity was previously triggered. The default window for redundant signal suppression is 72 hours, but can be overridden per-rule or globally.
-* [Entity suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#suppress-by-entity)
+* Entity suppression
 <br/>The entity for which a signal was triggered has been suppressed.
-* [Network block suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#suppress-by-network-block)
-<br/>For IP address entities contained in a defined network block that has been suppressed.
+* Network block suppression
+<br/>IP address entities contained in a defined network block are suppressed.
 
 Suppressed signals are collapsed within the first signal generated that was unsuppressed and are not considered in insights.
 
@@ -63,49 +63,55 @@ Following is an example of a per-rule entity suppression override:
 
 ## Rule type dependent components
 
-Each rule type other than the match rule will perform some form of aggregation as they consider multiple records in order to trigger a signal.
+Each rule type other than the match rule will perform some form of aggregation as they consider multiple records in order to trigger a signal. (For rules triggered by multiple records, each of the defined criteria for each record must match in addition to the common rule components.)
 
 ### Aggregation components
 
-* **Grouped by**
-<br/>Groups together values from one or more parsed fields from a record. Any entity field selected will be included implicitly in rules using a "grouped by". It appears on these rule types: threshold, aggregation, chain, outlier, and first seen.
-<br/><br/>"Grouped by" fields appear differently for different rule types:
+#### Grouped by
+
+This component groups together values from one or more parsed fields from a record. Any entity field selected will be included implicitly in rules. "Grouped by" appears on these rule types: threshold, aggregation, chain, outlier, and first seen.
+
+"Grouped by" fields appear differently for different rule types:
    * In first seen rules, it appears as "**has a new value for the field(s)**", and for per-entity baselines as "**for the following (entities)**".
    * In outlier rules, it appears within the **Outlier Model Configuration** section within "**of the record field**".
    * In threshold rules, the **Group by one or more fields** option appears after clicking **Show advanced**.
    * In chain and aggregation rules, it appears as "**grouped by**" after the rule expressions.
-* **Count**
-<br/>A basic count threshold of logs that meet the other rule criteria. It appears on these rule types: threshold, aggregation (as a math function), chain, and outlier.
-* **Count Distinct**
-<br/>A count of unique values found in the field or fields (distinct groups of values). It appears on rule types: threshold, aggregation, and outlier.
-* **Other math functions**
-<br/>These math functions are available:
-`avg`, `first`, `last`, `max`, `min`, and `sum`. (`first` and `last` are available in the aggregation rule type.)
-* **Math expression**
-<br/>Used in conjunction with the built-in math functions to do additional calculations on values from the evaluated records. Available in outlier and aggregation rule types
 
-For rules triggered by multiple records, each of the defined criteria for each record must match in addition to the common rule components.
+#### Count
+
+This component is a basic count threshold of logs that meet the other rule criteria. It appears on these rule types: threshold, aggregation (as a math function), chain, and outlier.
+
+#### Count distinct
+
+This component is a count of unique values found in the field or fields (distinct groups of values). It appears on rule types: threshold, aggregation, and outlier.
+
+#### Other math functions
+
+These math functions are available:
+`avg`, `first`, `last`, `max`, `min`, and `sum`. (`first` and `last` are available in the aggregation rule type.)
+
+#### Math expression
+
+Math expressions are used in conjunction with the built-in math functions to do additional calculations on values from the evaluated records. Available in outlier and aggregation rule types.
 
 ### Anomaly detection rule components
 
 #### First seen rules
 
-Uses a baseline of activity particular to an organization or specific entity and signals on the occurrence of a new activity. Baseline settings:
-* Baseline types
+[First seen rules](/docs/cse/rules/write-first-seen-rule/) use a baseline of activity particular to an organization or specific entity, and generate signals on the occurrence of a new activity. Following are the baseline settings:
+* Baseline types:
    * Global
-   <br/>Tracks activity across an organization. Signals on the first observance of a given activity after the baseline is built.
+   <br/>Tracks activity across an organization. It generates signals on the first observance of a given activity after the baseline is built.
    * Per-entity 
-   <br/>Tracks activity per-entity in an environment. Signals on the first observance of a given activity for an entity after the baseline is built.
+   <br/>Tracks activity per-entity in an environment. It generates signals on the first observance of a given activity for an entity after the baseline is built.
 * Retention period
 <br/>Rolling window for retaining records that pertain to the activities tracked in the baseline.
 * Baseline period
 <br/>Amount of time to look-back for activity before allowing a signal to be triggered.
 
-For more on first seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule/).
-
 #### Outlier rules
 
-Uses a baseline of activity and signals on an outlier in the tracked activity. Baseline settings:
+[Outlier rules](/docs/cse/rules/write-outlier-rule/) use a baseline of activity, and generates signals on an outlier in the tracked activity. Following are the baseline settings:
    * Bucketing of behavior either on an hourly or daily granularity.
    * Retention period
    <br/>Rolling window for retaining records that pertain to the activities tracked in the baseline.
@@ -116,19 +122,17 @@ Uses a baseline of activity and signals on an outlier in the tracked activity. B
 
 Rules that require a baseline are dependent on the baseline criteria being met before triggering a signal. For first seen rules, this means that an activity has not been observed in the baseline period and subsequently is observed. For outlier rules, this means that the tracked activity has exceeded both the floor value and model sensitivity threshold.
 
-For more on outlier rules, see [Write an Outlier Rule](/docs/cse/rules/write-outlier-rule/).	
-
-## Test Rule Expression
+## Test rule expression
 
 ### Limitations
 
-Each rule expression text box (chain rules have two or more expressions) has a corresponding **Test Rule Expression** button that allows the user constructing a rule to validate that the expression logic matches records. While this is a helpful component in rule validation, it only tests the criteria contained in the expression using a Sumo Logic log search against Cloud SIEM records, other rule criteria required for signal generation are not validated when running the test expression, such as the entity, groupings, or baselines. As such, records returned when running an expression test, even for simple match rules, are not a reliable indicator that the rule will trigger signals when active.
+Each rule expression text box (chain rules have two or more expressions) has a corresponding **Test Rule Expression** button that allows the user constructing a rule to validate that the expression logic matches records. While this is a helpful component in rule validation, it only tests the criteria contained in the expression using a Sumo Logic log search against Cloud SIEM records. Other rule criteria required for signal generation are not validated when running the test expression, such as the entity, groupings, or baselines. As such, records returned when running an expression test, even for simple match rules, are not a reliable indicator that the rule will trigger signals when active.
 
 :::note
-There are limited circumstances where test rule expression can return misleading results due to minor differences in Cloud SIEM expression syntax and log search syntax. See [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/) for more information.
+There are limited circumstances where testing the rule expression can return misleading results due to minor differences in Cloud SIEM expression syntax and log search syntax. See [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/) for more information.
 :::
 
-### Using Test Rule Expression in rule troubleshooting
+### Using the Test Rule Expression feature in rule troubleshooting
 
 Despite limitations, the Test Rule Expression feature is still a crucial component in rule troubleshooting. Records returned validate that the tested expression logic is valid (see above note on syntax differences). While records returned won’t necessarily meet other rule criteria, they can be inspected for other rule signal criteria:
    * Entity field is present.
@@ -162,11 +166,11 @@ Despite limitations, the Test Rule Expression feature is still a crucial compone
     1. If yes, check other criteria outside of entity, match expression, and grouping criteria.
     1. If no:
        * Validate that matching records contain the grouping criteria.
-       * Review contributing mappers are mapping the fields, or if using "fields" for parsed but not mapped attributes, that the parser is creating parsing the desired field for the record. For specific steps on mapping and parsing issues, see [Troubleshoot Mappers](/docs/cse/troubleshoot/troubleshoot-mappers/) and [Troubleshoot Parsers](/docs/cse/troubleshoot/troubleshoot-parsers/).
+       * Review contributing mappers are mapping the fields, or if using "fields" for parsed but not mapped attributes, that the parser is parsing the desired field for the record. For specific steps on mapping and parsing issues, see [Troubleshoot Mappers](/docs/cse/troubleshoot/troubleshoot-mappers/) and [Troubleshoot Parsers](/docs/cse/troubleshoot/troubleshoot-parsers/).
 1. Are other aggregation criteria being met (counts, math functions, distinct values, etc.)?
     1. If yes, see [Escalate rule issues](#escalate-rule-issues).
     1. If no, interrogate math functions, count, or count distinct criteria are met. [Searches against `sec_record` indexes](#records-index) are best suited for evaluating these criteria.
-1. If all rule criteria are met and signals are not being generated see [Escalating rule issues](#escalating-rule-issues).
+1. If all rule criteria are met and signals are not being generated see [Escalate rule issues](#escalate-rule-issues).
 
 ### Too many signals are generated
 
@@ -181,7 +185,7 @@ Despite limitations, the Test Rule Expression feature is still a crucial compone
     1. Insufficient filtering criteria.
        <br/>Expression matches targeting specific patterns, such as in a command line, have potential to come from myriad data sources that aren’t pertinent to the desired detection. Add additional filtering criteria that may not be critical to the detection, but reduces the volume of records considered for a detection without compromising the fidelity of the rule. Command lines only relevant to Windows could include additional criteria to narrow the detection to Windows sources. The inverse would be true for detections that would not be relevant to Windows, such as commands only pertinent to Unix based systems.
     1. Erroneous entity selection. 
-    <br/>There is no limit on the number of entities that can be selected for a rule, but selecting too many entities may result in undesired signal volume if the entity for which a signal is created is not pertinent to the intent of the detection. For example, RDP logon from localhost will only contain localhost (`127.0.0.1`) IP addresses which will not be useful in the detection
+    <br/>There is no limit on the number of entities that can be selected for a rule, but selecting too many entities may result in undesired signal volume if the entity for which a signal is created is not pertinent to the intent of the detection. For example, RDP logon from localhost will only contain localhost (`127.0.0.1`) IP addresses which will not be useful in the detection.
 
 ### Signal suppression problems
 
@@ -200,7 +204,7 @@ If signals are suppressed that you don't want to be suppressed:
 
 ### Signal time offset
 
-When signal or signals timestamps differ from their constituent records, record timestamps typically account for time differences in signals. Records will default to UTC for timestamp if there is missing, misconfigured, or unparsed timezone information.
+When signal timestamps differ from their constituent records, record timestamps typically account for time differences in signals. Records will default to UTC for timestamp if there is missing, misconfigured, or unparsed timezone information.
 
 Time issues can be introduced at several places in the processing pipeline:
 * Collection
@@ -271,6 +275,6 @@ Use this search query to return the top entities creating signals to identify pa
 
 ### Records index
 
-Using the records index `_index=sec_record*` is much more flexible than using **Test Rule Expression** within the rules editor, as you can quickly enter search terms and get records that can match the desired rule criteria to preemptively identify patterns in records that could be useful in a rule or tuning expression.
+Using the records index `_index=sec_record*` is much more flexible than using **Test Rule Expression** button within the rules editor, as you can quickly enter search terms and get records that can match the desired rule criteria to preemptively identify patterns in records that could be useful in a rule or tuning expression.
 
 For more information about searching using the records index, see [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/).
