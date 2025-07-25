@@ -5,7 +5,7 @@ sidebar_label: Partitions FAQ
 description: Answers to frequently asked questions about Sumo Logic Partitions.
 ---
 
-### What is Default Scope?
+### What is the default scope?
 
 For the tier-based pricing model:
 
