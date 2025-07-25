@@ -1,6 +1,6 @@
 ---
 title: CyberArk Audit Source (Collection)
-image: https://help.sumologic.com/img/reuse/rss-image.jpg
+image: https://www.sumologic.com/help/img/reuse/rss-image.jpg
 keywords:
   - collection
   - cyberark-audit-source
