@@ -203,7 +203,6 @@ Follow the below steps to configure the EventBridge API destination:
   1. Keep the API Type as **Public**.
   1. Select **Basic (Username/Password)** in the **Authorization type**.
   1. Add any random values for **Username** and **Password**.
-1. Create the connection.
 
 #### Step 3: Create the EventBridge rule
 
