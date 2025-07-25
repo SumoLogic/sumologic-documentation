@@ -13,7 +13,7 @@ For the tier-based pricing model:
 - Decommissioned partitions are also included.
 - Partitions in the Infrequent and Frequent tier are not part of the default scope.
 
-For Flex Customers:
+For Flex customers:
 
 - The customer can configure at the partition level to include or exclude it in the default scope.
 - All partitions which are not excluded explicitly will then be included in the default scope.
