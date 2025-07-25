@@ -108,8 +108,8 @@ This will generate a command you can execute on the machine that you need to mon
 2. **SQL Server Connection Configuration**: To collect metrics, you'll need to provide connection details:
    - **Server Address**: The hostname or IP address of your SQL Server instance (default: 0.0.0.0)
    - **Port**: The port number for SQL Server connection (default: 1433)  
-   - **Username**: SQL Server authentication username (required for Linux, optional for Windows if using Windows Authentication)
-   - **Password**: SQL Server authentication password (required for Linux, optional for Windows if using Windows Authentication)
+   - **Username**: SQL Server authentication username
+   - **Password**: SQL Server authentication password
 
 3. **Monitoring a Named SQL Server Instance (Windows Only)**
 
@@ -120,10 +120,7 @@ This will generate a command you can execute on the machine that you need to mon
 
     ---
     :::note
-    **For Linux Users**
-    These settings are not used for SQL Server on Linux because its instance architecture is different.
-
-    On Linux, SQL Server does not use named instances in the same way Windows does. Instead, each SQL Server instance on a Linux host is configured to listen on a unique TCP port. To connect to a specific instance, you specify its port number directly in the connection string (e.g., `your_server_hostname,1401`), rather than resolving an instance name.
+    Monitoring metrics for named instance is not supported in linux.
     :::
 
 4. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
