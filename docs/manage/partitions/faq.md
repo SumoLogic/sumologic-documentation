@@ -36,7 +36,7 @@ The system tries to match the source expression of the query with the routing ex
 - The matching logic is filtered with the complex boolean expressions in either the routing expressions or the source expression of the query.
 - The system will err on the side of caution in case there is ambiguity to guarantee functional correctness of the query results.
 - The system does not have any information about the data other than routing expressions for this selection process.
-- The number of partitions scanned is directly related to how well a query source expression matches the routing expressions. Therefore, it is recommended to use simpler expressions and preferably, use the same dimensions for partition routing as you would generally use in your queries.
+- The number of partitions scanned is directly related to how well a query source expression matches the routing expressions. Therefore, it is recommended to use simpler expressions, and preferably, use the same dimensions for partition routing as you would generally use in your queries.
 
 ### What happens when you change the routing expression of partition?
 
