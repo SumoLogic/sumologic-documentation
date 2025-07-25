@@ -249,7 +249,7 @@ The Edit Node dialog box will auto-populate with a number of parameters related 
 
 8. Type the following as the parameter name:  customPlaceholderMap[]."cloud.instance.id"
 
-<img src={useBaseUrl('img/platform-services/automation-service/intro-params.png')} alt="Playbook paramaters" style={{border: '1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/platform-services/automation-service/intro-params.png')} alt="Playbook parameters" style={{border: '1px solid gray'}} width="500" />
 
 9. Click Update when finished.
 
