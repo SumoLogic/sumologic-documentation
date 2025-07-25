@@ -25,7 +25,7 @@ For Flex customers:
 
 ## What happens in the partition selection process?
 
-Sumo Logic applies the partition selection process purely based on the routing expressions of the partitions and matches with the search expression of the query. Sumo Logic excludes any partitions that can; the rest are scanned.
+Sumo Logic applies the partition selection process purely based on the routing expressions of the partitions and matches with the search expression of the query. Sumo Logic excludes any partitions that it can; the rest are scanned.
 
 ### How does the partition selection process work?
 
