@@ -35,7 +35,7 @@ When a match to a threat indicator in sources is found, labels showing the entit
 |:--|:--|:--|
 | **Malicious** | <img src={useBaseUrl('img/cse/indicator-malicious-label.png')} alt="Malicious label" width="100"/> | <img src={useBaseUrl('img/cse/indicator-malicious-icon.png')} alt="Malicious icon" width="30"/> |
 | **Suspicious** | <img src={useBaseUrl('img/cse/indicator-suspicious-label.png')} alt="Suspicious label" width="110"/> | <img src={useBaseUrl('img/cse/indicator-suspicious-icon.png')} alt="Suspicious icon" width="30"/> |
-| **Not Flagged** | <img src={useBaseUrl('img/cse/indicator-notflagged-label.png')} alt="Suspicious label" width="125"/> | None |
+| **Not Flagged** | <img src={useBaseUrl('img/cse/indicator-notflagged-label.png')} alt="Not flagged label" width="125"/> | <img src={useBaseUrl('img/cse/indicator-notflagged-icon.png')} alt="Not flagged icon" width="30"/> |
 
 **Not Flagged** is not the default value (which is no indicator at all). Cloud SIEM does not automatically assign an indicator value; enrichments must explicitly define it.
 
@@ -67,7 +67,7 @@ Following is the mapping of threat type fields in indicators to reputation label
 | `compromised` |  **Malicious** |
 | `malicious-activity` | **Malicious** |
 | `attribution` |  (None) |
-| `unknown` (or not set) |  **Suspicious** |
+| Unknown (or not set) |  **Suspicious** |
 
 :::note
 If the mapping produces a threat indicator level of **Malicious**, but the confidence is less than 60, the entity's reputation will be set to **Suspicious** instead. If there are multiple reputation values for a given entity (potentially from threat intel and enrichment), Cloud SIEM will show the most severe indicator.
