@@ -52,7 +52,7 @@ Disabling a partition does not remove the existing data in it. Disabling simply 
 
 ### What happens when you set `_dataTier=All`?
 
-When you specify `_dataTier=All`, the query will include partitions from both the *infrequent* and *frequent* tiers. The partition selection process will still be applied to minimize the number of partitions that need to be scanned.
+When you specify `_dataTier=All`, the query will include partitions from both the *Infrequent* and *Frequent* tiers. The partition selection process will still be applied to minimize the number of partitions that need to be scanned.
 
 ### What happens when you do not include `_dataTier=Continuous`?
 
