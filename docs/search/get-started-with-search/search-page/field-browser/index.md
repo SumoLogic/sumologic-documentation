@@ -67,7 +67,15 @@ The Field Browser is limited for aggregate queries in the following ways:
 * Field counts (item G above) are not displayed for aggregate queries. 
 * Field counts—If messages returned are less than or equal to 2500 messages, then an exact calculation is shown. If more than 2500 messages are returned, an approximation is shown.
 * The **Approximate Count** displays the count of the field values for the field. This does not display complete field values count for that field but it's just to calculate average, minimum, maximum, and standard deviation values from the first 100,000 raw messages. The field values will be skipped if the 100,000 raw messages limit is exceeded.
-
+* You can limit the number of fields you extract. Use the below query to restrict the number of fields for field browser:
+    ```sql
+  _sourceCategory="cnapp/palo_alto/cortex_cloud" and _collector="Cribl - Palo Alto Cortex Cloud (Prisma)" _dataTier=infrequent
+  | json field=_raw "command" as Command
+  | json field=_raw "image" as Image 
+  | json field=_raw "container" as container
+  | fields container, Image, Command
+  ```
+  
 ## Guide contents
 
 In this section, we'll introduce the following concepts:
