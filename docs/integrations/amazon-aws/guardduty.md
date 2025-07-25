@@ -192,7 +192,7 @@ This method leverages AWS EventBridge to streamline the logging process by sendi
 To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 
 #### Step 2: Configure EventBridge API destination
-
+Follow the below steps to configure the EventBridge API destination:
 1. Open your Amazon EventBridge Console.
 1. In the navigation bar, click **API destinations**.
 1. Click **Create destination**.
