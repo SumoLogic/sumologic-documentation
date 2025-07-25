@@ -125,7 +125,7 @@ For more on outlier rules, see [Write an Outlier Rule](/docs/cse/rules/write-out
 Each rule expression text box (chain rules have two or more expressions) has a corresponding **Test Rule Expression** button that allows the user constructing a rule to validate that the expression logic matches records. While this is a helpful component in rule validation, it only tests the criteria contained in the expression using a Sumo Logic log search against Cloud SIEM records, other rule criteria required for signal generation are not validated when running the test expression, such as the entity, groupings, or baselines. As such, records returned when running an expression test, even for simple match rules, are not a reliable indicator that the rule will trigger signals when active.
 
 :::note
-There are limited circumstances where test rule expression can return misleading results due to minor differences in Cloud SIEM expression syntax and log search syntax. See [Cloud SIEM Rules Syntax](docs/cse/rules/cse-rules-syntax/) for more information.
+There are limited circumstances where test rule expression can return misleading results due to minor differences in Cloud SIEM expression syntax and log search syntax. See [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/) for more information.
 :::
 
 ### Using Test Rule Expression in rule troubleshooting
