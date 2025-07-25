@@ -38,9 +38,9 @@ The system tries to match the source expression of the query with the routing ex
 - The system does not have any information about the data other than routing expressions for this selection process.
 - The number of partitions scanned is directly related to how well a query source expression matches the routing expressions. Therefore, it is recommended to use simpler expressions, and preferably, use the same dimensions for partition routing as you would generally use in your queries.
 
-### What happens when you change the routing expression of partition?
+### What happens when you change the routing expression of a partition?
 
-Sumo Logic maintains a historical record of the routing expressions of the partitions. It also considers the historical routing expressions with the timerange to filter in or out the partitions.
+Sumo Logic maintains a historical record of the routing expressions of the partitions. It also considers the historical routing expressions with the timerange to filter the partitions.
 
 ### Is there a way to find out which partitions are being scanned?
 
