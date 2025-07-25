@@ -136,7 +136,7 @@ To write a query and create a scheduled search, do the following:
      | ComplianceStatus | Results of a compliance check. This is an optional field and its value should be one of the following: PASSED/WARNING/FAILED/NOT_AVAILABLE.      |
 1. The `aws_account_id` field in the search results.
 1. `AWS_ACCOUNT_ID` set as a Lambda environment variable.
-1. The `account_id` where the lambda function is running.
+1. The `account_id` where the Lambda function is running.
 
 The `aws_account_id` defaults to the account in which Lambda is running.
 
@@ -157,11 +157,11 @@ In the case of a problem, perform the following tasks to discover the cause.
   }
   ```
 2. Check for `status code 200` in the response body to verify whether the API Gateway and Lambda integration is working correctly. For more information on how to test API Gateway with console refer these [docs](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html).
-3. Monitor scheduled search logs using following query in Sumo Logic. This verifies whether the scheduled search was triggered or not.
+3. Monitor scheduled search logs using the following query in Sumo Logic. This verifies whether the scheduled search was triggered or not.
   ```json
   _view=sumologic_audit "Scheduled search alert triggered" <webhook_name>
   ```
-4. Check the CloudWatch logs for the Lambda function. Sumo saves Lambda function logs to CloudWatch in a log group: `/aws/lambda/<function_name>`. Check this log for any errors during lambda execution.
+4. Check the CloudWatch logs for the Lambda function. Sumo Logic saves Lambda function logs to CloudWatch in a log group: `/aws/lambda/<function_name>`. Check this log for any errors during lambda execution.
 
 ## Collecting findings for the AWS Security Hub CSPM app
 
@@ -182,7 +182,8 @@ To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs
 
 #### Step 2: Configure EventBridge API destination
 
-1. Open your Amazon EventBridge Console.
+Follow the steps below to configure the EventBridge API destination:
+1. Open your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
 1. In the navigation bar, click **API destinations**.
 1. Click **Create destination**.
 1. Enter a name for the API Destination.
@@ -191,12 +192,13 @@ To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs
   1. Provide a connection name.
   1. Keep the API Type as **Public**.
   1. Select **Basic (Username/Password)** in the **Authorization type**.
-  1. Add any random values for **Username** and **Password**.
-1. Create the connection.
+  1. Add any value of your choice for **Username** and **Password**.
 
 #### Step 3: Create the EventBridge rule
 
-1. Click **Rules** and then click **Create rule**.
+Follow the steps below to configure the EventBridge rule:
+1. Open your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
+1. In the navigation bar, click **Rules**.
 1. Set the event source to **AWS services** and then select **Security Hub** as the AWS service.
 1. Select **All Events** in Event Type.
 1. Under **Select targets**, choose **EventBridge API destination**.
