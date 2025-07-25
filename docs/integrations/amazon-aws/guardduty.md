@@ -235,7 +235,7 @@ This configuration is defined in a [AWS Serverless Application Model (SAM) speci
 
 When you configure the HTTP Source, make a note of the HTTP Source Address URL. You will need it in the next step.  
 
-#### Step 2: Deploy Sumo GuardDuty events processor
+#### Step 2: Deploy Sumo Logic GuardDuty events processor
 
 In this step, you deploy the events processor. This will create the AWS resources described in [Collection overview](#collecting-logs-for-the-amazon-guardduty-app).
 
