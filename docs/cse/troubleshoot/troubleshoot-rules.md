@@ -216,7 +216,7 @@ Time issues can be introduced at several places in the processing pipeline:
 
 ## Escalate rule issues
 
-If all steps outlined in this article have been exhausted, it may be necessary to escalate the issue to the Cloud SIEM engineering team.
+If all steps outlined in this article have been exhausted, it may be necessary to [escalate the issue to the Cloud SIEM engineering team](https://support.sumologic.com/support/s/).
 
 ### Escalation requirements
 
@@ -233,14 +233,14 @@ Provide the following:
 
 The [Enterprise Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/) app includes useful dashboards for monitoring Cloud SIEM components including rules:
 * Signal analysis:
-    * [Cloud SIEM - Signal Analysis](/docs/integrations/sumo-apps/cse/#cloud-siem---signal-analysis)
-    * [Cloud SIEM - Signal Analysis - Rules](/docs/integrations/sumo-apps/cse/#cloud-siem---signal-analysis---rules)
-    * [Cloud SIEM - Signal Monitoring](/docs/integrations/sumo-apps/cse/#cloud-siem---signal-monitoring)
-    * [Cloud SIEM - Signals by Product](/docs/integrations/sumo-apps/cse/#cloud-siem---signals-by-product)
-    * [Cloud SIEM - Signals Overview](/docs/integrations/sumo-apps/cse/#cloud-siem---signals-by-product)
-    * [Signal Analysis - Suppression](/docs/integrations/sumo-apps/cse/#signal-analysis---suppression)
-* Health monitoring: [Cloud SIEM - Rule Overview](/docs/integrations/sumo-apps/cse/#cloud-siem---rule-overview)
-* Other: [Cloud SIEM - Rules and Mapping Changes](/docs/integrations/sumo-apps/cse/#cloud-siem---rules-and-mapping-changes)
+    * Cloud SIEM - Signal Analysis
+    * Cloud SIEM - Signal Analysis - Rules
+    * Cloud SIEM - Signal Monitoring
+    * Cloud SIEM - Signals by Product
+    * Cloud SIEM - Signals Overview
+    * Signal Analysis - Suppression
+* Health monitoring: Cloud SIEM - Rule Overview
+* Other: Cloud SIEM - Rules and Mapping Changes
 
 ## Useful queries and strategies
 
