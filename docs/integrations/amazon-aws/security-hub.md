@@ -168,7 +168,7 @@ In the case of a problem, perform the following tasks to discover the cause.
 You can collect the AWS Security Hub CSPM logs using two methods:
 
 - [Method 1: Collecting AWS Security Hub CSPM Logs using EventBridge](#method-1-collecting-aws-security-hub-cspm-logs-using-eventbridge)
-- (Optional) [Method 2: Collecting Security Hub CSPM Logs using Sumo Logic HTTP endpoint](#method-2-collecting-security-hub-cspm-logs-using-sumo-logic-http-endpoint)
+- [Method 2: Collecting Security Hub CSPM Logs using Sumo Logic HTTP endpoint](#method-2-collecting-security-hub-cspm-logs-using-sumo-logic-http-endpoint)
 
 Before collecting logs, ensure that Security Hub is enabled on your AWS account. For more information, see the AWS Security Hub CSPM documentation for [Setting Up AWS Security Hub CSPM](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html).
 
