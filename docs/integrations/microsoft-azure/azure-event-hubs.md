@@ -89,42 +89,42 @@ import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 ### Overview
 
 The **Azure Event Hubs - Overview** dashboard provides comprehensive details on Eventhubs and details such as overall number of requests, namespaces and instances, size by eventhubs, operation types, ingress and egress of data
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Overview.png')} alt="Azure Event Hubs - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Overview.png')} alt="Azure Event Hubs - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Operations
 
 The **Azure Event Hubs - Operations** dashboard provides details over the recent create, read, delete or update operations done by the event hubs.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Event Hubs - Operations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Operations.png')} alt="Azure Event Hubs - Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Performance
 
 The **Azure Event Hubs - Performance** dashboard provides insights into the performance of your Azure Event Hubs. This includes metrics on Replication lag and count, cluster CPU usage and memory usage.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Event Hubs - Performance" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Performance.png')} alt="Azure Event Hubs - Performance" style={{border: '1px solid gray'}} width="800" />
 
 ### Network
 
 The **Azure Event Hubs - Network** dashboard provides details on network traffic and connectivity related to your Azure Event Hubs. This includes data on inbound and outbound traffic in bytes and message, connections and requests.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Event Hubs - Network" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Network.png')} alt="Azure Event Hubs - Network" style={{border: '1px solid gray'}} width="800" />
 
 ### Kafka Overview
 
-The **Azure Event Hubs - Kafka Overview** dashboard provides details on Kafka coordinator events based on different operations count, Kafka coordinator operations based on namespaces and clients, last 10 log messages and heartbeat events.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Event Hubs - Kafka Overview" style={{border: '1px solid gray'}} width="800" />
+The **Azure Event Hubs - Kafka Overview** dashboard provides details on Kafka Coordinator events based on different operations count, kakfa coordinator operations based on namespaces and clients, last 10 log messages and heartbeat events.
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Kafka-Overview.png')} alt="Azure Event Hubs - Kafka Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Kafka Errors
 
 The **Azure Event Hubs - Kafka Errors** dashboard provides information about Kafka related errors in Event Hubs including error count, errors by object and error messages, error by namespaces and last 10 kafka error messages
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Event Hubs - Kafka Errors" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Kafka-Errors.png')} alt="Azure Event Hubs - Kafka Errors" style={{border: '1px solid gray'}} width="800" />
 
 ### Errors
 
 The **Azure Event Hubs - Errors** dashboard provides information about errors in Event Hubs including user errors, Diagnostic errors, Operation Errors, top 10 error numbers and error messages, error trend and comparison analyses by types of Activity, operation result and entity.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Event Hubs - Errors" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Errors.png')} alt="Azure Event Hubs - Errors" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit
 
 The **Azure Event Hubs  - Audit** dashboard provides audit information on namespace level events, and cluster level events such as Audit failures, auth failures, auth protocols, status and connections.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Event Hubs - Operations" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Audit.png')} alt="Azure Event Hubs - Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
@@ -135,7 +135,7 @@ Use this dashboard to:
 * Identify potential issues by analyzing the top operations causing errors and correlating them with specific users or applications.
 * Track recent write and delete operations to maintain an audit trail of changes made to your Event Hubs.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Administrative+Operations.png')} alt="Azure Event Hubs - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Administrative-Operations.png')} alt="Azure Event Hubs - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 
@@ -146,7 +146,7 @@ Use this dashboard to:
 * Track and analyse recent recommendations to improve the performance and security of your Event Hubs setup.
 * Identify trends in policy events and recommendations over time to proactively address potential issues.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Policy+and+Recommendations.png')} alt="Azure Event Hubs - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Policy-and-Recommendations.png')} alt="Azure Event Hubs - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Azure Event Hubs
 
