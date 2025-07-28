@@ -64,4 +64,4 @@ For information about AWS CloudTrail, see [CloudTrail documentation](https://doc
 * March 10, 2022 - Logo
 * May 12, 2023 (v1.1) - Integration refactored
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
-* July 29. 2025 (v1.3) - Added support for IAM role authentication
+* July 29. 2025 (v1.3) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.

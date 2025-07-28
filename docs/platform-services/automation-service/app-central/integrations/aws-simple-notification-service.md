@@ -63,4 +63,4 @@ For information about Amazon Simple Notification Service, see [Amazon Simple Not
 * March 3, 2023 (v1.1)
 	+ Updated integration Fields Label
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
-* July 29. 2025 (v1.3) - Added support for IAM role authentication
+* July 29. 2025 (v1.3) - Added IAM Role Support - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
