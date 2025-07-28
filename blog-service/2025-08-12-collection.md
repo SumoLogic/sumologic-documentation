@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 We're excited to announce that we are transitioning to AWS Certificate Manager (ACM) certificates for Transport Layer Security (TLS) communication between your cloud syslog sources and Sumo Logic.
 
 Currently, Sumo Logic uses a DigiCert ALB certificate to secure communication with your cloud syslog sources. This certificate is set to expire in October 2025, at which point Sumo Logic will transition to the ACM root certificates. This change provides the following benefits:
-* **Automated certificate renewal and deployment**. This change will eliminate the need for future manual renewals, reducing your administrative burden.
+* **Automated certificate renewal and deployment**. ACM eliminates the need for future manual renewals, reducing administrative overhead.
 * **Simplified infrastructure management for AWS customers**. ACM is deeply integrated into the AWS ecosystem, streamlining your overall infrastructure management. 
 
 If you use cloud syslog sources to send data to Sumo Logic, in preparation for the certificate transition we ask that you download and configure ACM certificates on your system. For more information, see:
