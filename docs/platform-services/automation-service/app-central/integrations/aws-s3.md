@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.2  
+***Version: 1.3  
 Updated: Jun 28, 2023***
 
 Interact with AWS S3 buckets, objects, and policies.
@@ -46,6 +46,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * <AWSAccesskey/>
 * <AWSSecret/>
+* <AWSIAMRole/>
 * <AWSRegions/>
 * **URL**. Enter your [Amazon S3 URL](https://docs.aws.amazon.com/general/latest/gr/s3.html), for example, `s3.us-east-1.amazonaws.com`.
 * <IntegrationEngine/>
@@ -60,3 +61,4 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * October 3, 2019 - First upload
 * June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
 * June 28, 2023 (v1.2) - Visibility of the Resource fields changed
+* July 29. 2025 (v1.3) - Added support for IAM role authentication
