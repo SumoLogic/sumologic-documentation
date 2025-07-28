@@ -19,8 +19,8 @@ For information about integrating Amazon Inspector with Security Hub, see [Integ
 You can collect Security Hub logs using three methods:
 
 - [Method 1: Collecting Security Hub logs using EventBridge](#method-1-collecting-security-hub-logs-using-eventbridge)
-- (Optional) [Method 2: Collect Security Hub logs using Sumo Logic HTTP endpoint](#method-2-collect-security-hub-logs-using-sumo-logic-http-endpoint)
-- (Optional) [Method 3: Collect Security Hub logs using Amazon S3 source](#method-3-collect-security-hub-logs-using-amazon-s3-source)
+- [Method 2: Collect Security Hub logs using Sumo Logic HTTP endpoint](#method-2-collect-security-hub-logs-using-sumo-logic-http-endpoint)
+-[Method 3: Collect Security Hub logs using Amazon S3 source](#method-3-collect-security-hub-logs-using-amazon-s3-source)
 
 ### Method 1: Collecting Security Hub logs using EventBridge
 
