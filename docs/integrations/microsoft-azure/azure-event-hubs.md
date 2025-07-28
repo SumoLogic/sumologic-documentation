@@ -113,7 +113,7 @@ The **Azure Event Hubs - Kafka Overview** dashboard provides details on Kafka Co
 
 ### Kafka Errors
 
-The **Azure Event Hubs - Kafka Errors** dashboard provides information about Kafka related errors in Event Hubs including error count, errors by object and error messages, error by namespaces and last 10 kafka error messages
+The **Azure Event Hubs - Kafka Errors** dashboard provides information about Kafka related errors in Event Hubs including error count, errors by object and error messages, error by namespaces and last 10 Kafka error messages
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Kafka-Errors.png')} alt="Azure Event Hubs - Kafka Errors" style={{border: '1px solid gray'}} width="800" />
 
 ### Errors
