@@ -126,10 +126,14 @@ Rules that require a baseline are dependent on the baseline criteria being met b
 
 ### Limitations
 
-Each rule expression text box (chain rules have two or more expressions) has a corresponding **Test Rule Expression** button that allows the user constructing a rule to validate that the expression logic matches records. While this is a helpful component in rule validation, it only tests the criteria contained in the expression using a Sumo Logic log search against Cloud SIEM records. Other rule criteria required for signal generation are not validated when running the test expression, such as the entity, groupings, or baselines. As such, records returned when running an expression test, even for simple match rules, are not a reliable indicator that the rule will trigger signals when active.
+Each rule expression text box (chain rules have two or more expressions) has a corresponding **Test Rule Expression** button that lets you verify whether the expression logic matches records. While helpful during rule validation, this feature has limitations:
+* It only tests the criteria contained in the expression using a Sumo Logic log search against Cloud SIEM records.
+* It does not validate other rule criteria required for signal generation, such as entity, groupings, or baselines.
+
+As a result, records returned when running an expression test, even for simple match rules, are not a reliable indicator that the rule will trigger signals when active.
 
 :::note
-There are limited circumstances where testing the rule expression can return misleading results due to minor differences in Cloud SIEM expression syntax and log search syntax. See [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/) for more information.
+In limited cases, testing a rule expression can return misleading results due to minor differences in Cloud SIEM expression syntax and log search syntax. See [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/) for more information.
 :::
 
 ### Using the Test Rule Expression feature in rule troubleshooting
