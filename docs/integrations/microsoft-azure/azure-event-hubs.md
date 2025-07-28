@@ -123,7 +123,7 @@ The **Azure Event Hubs - Errors** dashboard provides information about errors in
 
 ### Audit
 
-The **Azure Event Hubs  - Audit** dashboard provides audit information on namespace level events, and cluster level events such as Audit failures, auth failures, auth protocols, status and connections.
+The **Azure Event Hubs  - Audit** dashboard provides audit information on namespace level events, and cluster level events such as audit failures, auth failures, auth protocols, status and connections.
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Audit.png')} alt="Azure Event Hubs - Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
