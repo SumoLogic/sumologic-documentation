@@ -10,37 +10,33 @@ Sumo Logic supports syslog clients such as syslog-ng. This document has instruc
 
 ## Set up TLS
 
-Set up Transport Layer Security (TLS).
+Set up Transport Layer Security (TLS). 
 
 Download the DigiCert and AWS Certificate Manager (ACM) certificates from https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt and 
-https://www.amazontrust.com/repository/AmazonRootCA1.cer.
+https://www.amazontrust.com/repository/AmazonRootCA1.cer. 
 
 ### syslog-ng
 
-For syslog-ng place the certificates in the configuration directory and the syslog-ng client will pick up the certificates working from that directory. 
+For syslog-ng, place both certificates in the configuration directory, allowing the syslog-ng client to automatically select the appropriate certificate.
 
 To set up your DigiCert and AWS Certificate Manager (AWS) certificates, follow these steps:
 
-Check if you have the directory `/etc/syslog-ng/ca.d`.
-
-If you don’t, create it with this command:
-
-```bash
-$ $ sudo mkdir -pv /etc/syslog-ng/ca.d
-```
-
-Then run:
-
-```bash
-$ cd /etc/syslog-ng/ca.d
-$ sudo wget -O digicert_ca.der https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt
-$ sudo openssl x509 -inform der -in digicert_ca.der -out digicert_ca.crt
-$ sudo ln -s digicert_ca.crt `openssl x509 -noout -hash -in digicert_ca.crt`.0
-$ wget -O acm_ca.der https://www.amazontrust.com/repository/AmazonRootCA1.cer
-$ openssl x509 -inform der -in acm_ca.der -out acm_ca.crt
-$ ln -s acm_ca.crt `openssl x509 -noout -hash -in acm_ca.crt`.0
-$ sudo /etc/init.d/syslog-ng restart
-```
+1. Check if you have the directory `/etc/syslog-ng/ca.d`.
+1. If you don’t, create it with this command:
+    ```bash
+    $ sudo mkdir -pv /etc/syslog-ng/ca.d
+    ```
+1. Then run:
+    ```bash
+    $ cd /etc/syslog-ng/ca.d
+    $ sudo wget -O digicert_ca.der https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt
+    $ sudo openssl x509 -inform der -in digicert_ca.der -out digicert_ca.crt
+    $ sudo ln -s digicert_ca.crt `openssl x509 -noout -hash -in digicert_ca.crt`.0
+    $ wget -O acm_ca.der https://www.amazontrust.com/repository/AmazonRootCA1.cer
+    $ openssl x509 -inform der -in acm_ca.der -out acm_ca.crt
+    $ ln -s acm_ca.crt `openssl x509 -noout -hash -in acm_ca.crt`.0
+    $ sudo /etc/init.d/syslog-ng restart
+    ```
 
 ### Send data to a Cloud Syslog Source with syslog-ng
 

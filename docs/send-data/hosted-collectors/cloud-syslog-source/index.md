@@ -25,7 +25,9 @@ where `YOUR_DEPLOYMENT` is `au`, `ca`, `de`, `eu`, `fed`, `jp`, `kr`, `us1`,
 FIPS 140-2 compliance is not available for Cloud Syslog in the FedRAMP deployment. It is with great emphasis that you must recognize and understand that the responsibility to mitigate information spillage is solely yours. We have no insight into your data or how it is classified.
 :::
 
-In the procedure below, you configure a Cloud Syslog Source. This will generate a Sumo Logic token and the endpoint hostname. Then you set up TLS by downloading a cert to your server. Download the DigiCert and AWS Certificate Manager (ACM) certificates from the following locations:
+In the procedure below, you configure a Cloud Syslog Source. This will generate a Sumo Logic token and the endpoint hostname. 
+
+Then you set up TLS by downloading a cert to your server (see procedures for [rsyslog](/docs/send-data/hosted-collectors/cloud-syslog-source/rsyslog/#setup-tls) and [syslog-ng](/docs/send-data/hosted-collectors/cloud-syslog-source/syslog-ng/#setup-tls)). Download the DigiCert and AWS Certificate Manager (ACM) certificates from the following locations:
 * https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt
 * https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.pem
 * https://www.amazontrust.com/repository/AmazonRootCA1.cer

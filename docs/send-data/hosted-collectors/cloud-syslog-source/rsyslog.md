@@ -12,10 +12,12 @@ Sumo Logic supports syslog clients such as rsyslog. This document has instructi
 
 Set up Transport Layer Security (TLS).
 
-Download the DigiCert and ACM certificates from https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt and
+Download DigiCert and AWS Certificate Manager (ACM) certificates from https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt and
 https://www.amazontrust.com/repository/AmazonRootCA1.cer.
 
 ### rsyslog
+
+For rsyslog, concatenate the ACM root CA with the DigiCert certificate.
 
 To set up your DigiCert and AWS Certificate Manager (ACM) certificate, follow these steps:
 
