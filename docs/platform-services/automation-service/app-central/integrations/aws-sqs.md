@@ -31,6 +31,7 @@ import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-a
 import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../../../reuse/automation-service/aws/iam-role.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
