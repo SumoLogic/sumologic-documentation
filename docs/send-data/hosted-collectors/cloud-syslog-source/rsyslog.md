@@ -58,7 +58,7 @@ template(name="SumoFormat" type="string" string="<%pri%>%protocol-version% %time
 *.* action(type="omfwd" protocol="tcp" target="syslog.collection.YOUR_DEPLOYMENT.sumologic.com" port="6514" template="SumoFormat")
 ```
 
-In the template statement, be sure to replace `YOUR_TOKEN` with your actual token, and `YOUR_DEPLOYMENT` with your deployment. Properties in the string begin and end with '%'. All other texts and white space are treated literally. For more information about rsyslog configuration, see the [rsyslog template documentation](https://www.rsyslog.com/doc/configuration/templates.html) or the [rsyslog omfwd documentation](https://www.rsyslog.com/doc/configuration/modules/omfwd.html).
+In the template statement, be sure to replace `YOUR_TOKEN` with your actual token, and `YOUR_DEPLOYMENT` with your deployment. Properties in the string begin and end with `%`. All other texts and white space are treated literally. For more information about rsyslog configuration, see the [rsyslog template documentation](https://www.rsyslog.com/doc/configuration/templates.html) or the [rsyslog omfwd documentation](https://www.rsyslog.com/doc/configuration/modules/omfwd.html).
 
 In the template statement, be sure to replace YOUR_TOKEN with your actual token, and YOUR_DEPLOYMENT with your deployment. Properties in the string begin and end with '%'. All other texts and white space are treated literally. For more information about rsyslog configuration, see the rsyslog template documentation or the rsyslog omfwd documentation.
 
