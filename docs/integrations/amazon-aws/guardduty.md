@@ -181,7 +181,7 @@ _sourceCategory=aws/guardduty
 You can collect the Amazon GuardDuty logs using two methods: 
 
 - [Method 1: Collecting Amazon GuardDuty logs using EventBridge](#method-1-collecting-amazon-guardduty-logs-using-eventbridge)
-- (Optional) [Method 2: Collecting Amazon GuardDuty logs using Sumo Logic HTTP endpoint](#method-2-collecting-amazon-guardduty-logs-using-sumo-logic-http-endpoint)
+- [Method 2: Collecting Amazon GuardDuty logs using Sumo Logic HTTP endpoint](#method-2-collecting-amazon-guardduty-logs-using-sumo-logic-http-endpoint)
 
 ### Method 1: Collecting Amazon GuardDuty logs using EventBridge
 
