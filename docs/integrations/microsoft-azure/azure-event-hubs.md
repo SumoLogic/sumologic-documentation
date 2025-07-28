@@ -108,7 +108,7 @@ The **Azure Event Hubs - Network** dashboard provides details on network traffic
 
 ### Kafka Overview
 
-The **Azure Event Hubs - Kafka Overview** dashboard provides details on Kafka Coordinator events based on different operations count, kafka coordinator operations based on namespaces and clients, last 10 log messages and heartbeat events.
+The **Azure Event Hubs - Kafka Overview** dashboard provides details on Kafka Coordinator events based on different operations count, Kafka Coordinator operations based on namespaces and clients, last 10 log messages and heartbeat events.
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Kafka-Overview.png')} alt="Azure Event Hubs - Kafka Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Kafka Errors
