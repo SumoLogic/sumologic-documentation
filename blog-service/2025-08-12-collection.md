@@ -15,7 +15,7 @@ Currently, Sumo Logic uses a DigiCert ALB certificate to secure communication wi
 * **Automated certificate renewal and deployment**. ACM eliminates the need for future manual renewals, reducing administrative overhead.
 * **Simplified infrastructure management for AWS customers**. ACM is deeply integrated into the AWS ecosystem, streamlining your overall infrastructure management. 
 
-If you use cloud syslog sources to send data to Sumo Logic, in preparation for the certificate transition we ask that you download and configure ACM certificates on your system. For more information, see:
+If you use cloud syslog sources to send data to Sumo Logic, please prepare for this transition by downloading and configuring the ACM certificate on your system. For more information and setup instructions, see:
 * [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source/)
 * [rsyslog](/docs/send-data/hosted-collectors/cloud-syslog-source/rsyslog)
 * [syslog-ng](/docs/send-data/hosted-collectors/cloud-syslog-source/syslog-ng/)
