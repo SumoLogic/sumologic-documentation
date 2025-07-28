@@ -60,7 +60,7 @@ template(name="SumoFormat" type="string" string="<%pri%>%protocol-version% %time
 
 In the template statement, be sure to replace `YOUR_TOKEN` with your actual token, and `YOUR_DEPLOYMENT` with your deployment. Properties in the string begin and end with `%`. All other texts and white space are treated literally. For more information about rsyslog configuration, see the [rsyslog template documentation](https://www.rsyslog.com/doc/configuration/templates.html) or the [rsyslog omfwd documentation](https://www.rsyslog.com/doc/configuration/modules/omfwd.html).
 
-In the template statement, be sure to replace YOUR_TOKEN with your actual token, and YOUR_DEPLOYMENT with your deployment. Properties in the string begin and end with '%'. All other texts and white space are treated literally. For more information about rsyslog configuration, see the rsyslog template documentation or the rsyslog omfwd documentation.
+In the template statement, be sure to replace YOUR_TOKEN with your actual token, and YOUR_DEPLOYMENT with your deployment. Properties in the string begin and end with `%`. All other texts and white space are treated literally. For more information about rsyslog configuration, see the rsyslog template documentation or the rsyslog omfwd documentation.
 
 **For rsyslog v8 and later**
 
@@ -89,4 +89,4 @@ action(type="omfwd"
    StreamDriverPermittedPeers="syslog.collection.*.sumologic.com")
 ```
 
-In the template statement, be sure to replace `YOUR_TOKEN` with your actual token, and `YOUR_DEPLOYMENT` with your deployment. Properties in the string begin and end with '%'. All other texts and white space are treated literally. For more information about rsyslog configuration, see the [rsyslog template documentation](https://www.rsyslog.com/doc/configuration/templates.html) or the [rsyslog omfwd documentation](https://www.rsyslog.com/doc/configuration/modules/omfwd.html).
+In the template statement, be sure to replace `YOUR_TOKEN` with your actual token, and `YOUR_DEPLOYMENT` with your deployment. Properties in the string begin and end with `%`. All other texts and white space are treated literally. For more information about rsyslog configuration, see the [rsyslog template documentation](https://www.rsyslog.com/doc/configuration/templates.html) or the [rsyslog omfwd documentation](https://www.rsyslog.com/doc/configuration/modules/omfwd.html).
