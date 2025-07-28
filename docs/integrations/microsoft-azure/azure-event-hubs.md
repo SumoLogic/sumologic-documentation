@@ -118,7 +118,7 @@ The **Azure Event Hubs - Kafka Errors** dashboard provides information about Kaf
 
 ### Errors
 
-The **Azure Event Hubs - Errors** dashboard provides information about errors in Event Hubs including user errors, Diagnostic errors, Operation Errors, top 10 error numbers and error messages, error trend and comparison analyses by types of Activity, operation result and entity.
+The **Azure Event Hubs - Errors** dashboard provides information about errors in Event Hubs including user errors, diagnostic errors, operation errors, top 10 error numbers and error messages, error trend and comparison analyses by types of activity, operation result and entity.
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureEventHubs/Azure-Event-Hubs-Errors.png')} alt="Azure Event Hubs - Errors" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit
