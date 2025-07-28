@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
 ***Version: 1.3  
-Updated: Jun 28, 2023***
+Updated: Jun 29, 2025***
 
 Interact with AWS S3 buckets, objects, and policies.
 

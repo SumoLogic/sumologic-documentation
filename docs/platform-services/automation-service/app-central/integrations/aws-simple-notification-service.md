@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.2  
-Updated: Jun 15, 2023***
+***Version: 1.3  
+Updated: July 29, 2025***
 
 Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 
@@ -39,6 +39,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * <AWSAccesskey/>
 * <AWSSecret/>
+* <AWSIAMRole/>
 * <AWSRegions/>
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
@@ -61,3 +62,4 @@ For information about Amazon Simple Notification Service, see [Amazon Simple Not
 * March 3, 2023 (v1.1)
 	+ Updated integration Fields Label
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
+* July 29. 2025 (v1.3) - Added support for IAM role authentication

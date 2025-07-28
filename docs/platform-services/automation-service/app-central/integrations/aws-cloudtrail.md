@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.2  
-Updated: Jun 15, 2023***
+***Version: 1.3  
+Updated: July 29, 2025***
 
 Interact with AWS CloudTrail through Trails and Events.
 
@@ -44,6 +44,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * <AWSAccesskey/>
 * <AWSSecret/>
+* <AWSIAMRole/>
 * <AWSRegions/>
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
@@ -62,3 +63,4 @@ For information about AWS CloudTrail, see [CloudTrail documentation](https://doc
 * March 10, 2022 - Logo
 * May 12, 2023 (v1.1) - Integration refactored
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
+* July 29. 2025 (v1.3) - Added support for IAM role authentication

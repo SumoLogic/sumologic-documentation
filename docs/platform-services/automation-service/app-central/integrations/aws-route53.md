@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.1  
-Updated: Jun 21, 2023***
+***Version: 1.2  
+Updated: July 29, 2025***
 
 Interact with DNS records through AWS Route 53.
 
@@ -43,6 +43,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * **URL**. Enter your [AWS Route 53 URL](https://docs.aws.amazon.com/general/latest/gr/r53.html), for example, `route53.amazonaws.com`.
 * <AWSAccesskey/>
 * <AWSSecret/>
+* <AWSIAMRole/>
 * <AWSRegions/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>
@@ -57,3 +58,4 @@ For information about AWS Route 53, see [Route 53 documentation](https://docs.aw
 
 * December 24, 2019 - First upload
 * June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
+* July 29. 2025 (v1.2) - Added support for IAM role authentication

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.2  
-Updated: Jun 15, 2023***
+***Version: 1.3  
+Updated: July 29, 2025***
 
 Using the integration with SQS, you can gather current queues, add a new queue, delete and purge existing queues during an active investigation.
 
@@ -42,6 +42,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * <AWSAccesskey/>
 * <AWSSecret/>
+* <AWSIAMRole/>
 * <AWSRegions/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>
@@ -57,3 +58,4 @@ For information about AWS SQS, see [SQS documentation](https://docs.aws.amazon.c
 * January 16, 2020 - First upload
 * March 10, 2022 - Logo
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
+* July 29. 2025 (v1.3) - Added support for IAM role authentication
