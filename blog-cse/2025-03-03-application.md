@@ -1,6 +1,6 @@
 ---
 title: March 3, 2025 - Application Update
-image: https://help.sumologic.com/img/reuse/rss-image.jpg
+image: https://www.sumologic.com/help/img/reuse/rss-image.jpg
 keywords:
   - threat intel
   - security
