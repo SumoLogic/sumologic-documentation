@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.3  
-Updated: Jun 15, 2023***
+***Version: 1.4  
+Updated: July 29, 2025***
 
 Amazon CloudFront integrates with AWS Identity and Access Management (IAM), a service that lets your organization do the following:
 
@@ -28,6 +28,7 @@ import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-a
 import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../../../reuse/automation-service/aws/iam-role.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
@@ -41,6 +42,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * **Service Name**. Enter `AWS CloudFront`.
 * <AWSAccesskey/>
 * <AWSSecret/>
+* <AWSIAMRole/>
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
 * <IntegrationEngine/>
@@ -58,3 +60,4 @@ For information about AWS CloudFront, see [CloudFront documentation](https://doc
 * April 14, 2023 (v1.1)
 	+ Updated integration: (Updated the integration Fields with Environmental Variables)
 * June 15, 2023 (v1.3) - Updated the integration with Environmental Variables
+* July 29, 2025 (v1.4) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
