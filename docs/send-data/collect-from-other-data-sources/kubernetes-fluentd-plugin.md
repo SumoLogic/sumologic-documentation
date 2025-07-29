@@ -127,15 +127,15 @@ Fluentd sources.
 
 | **Environment Variable** | **Containers** | **Docker** | **Kubernetes** | **Systemd** |
 |:--------------------------|:----------------|:----------------|:----------------|:-------------|
-| `EXCLUDE_CONTAINER_REGEX`  | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) |
-| `EXCLUDE_FACILITY_REGEX`   | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![check](/img/reuse/check.png) |
-| `EXCLUDE_HOST_REGEX` | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![check](/img/reuse/check.png) |
-| `EXCLUDE_NAMESPACE_REGEX`  | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) |
-| `EXCLUDE_PATH` | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) |
-| `EXCLUDE_PRIORITY_REGEX`   | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![check](/img/reuse/check.png) |
-| `EXCLUDE_POD_REGEX` | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) |
-| `EXCLUDE_UNIT_REGEX` | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![check](/img/reuse/check.png) |
-| `TIME_KEY` | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) |
+| `EXCLUDE_CONTAINER_REGEX`  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |  |  |
+| `EXCLUDE_FACILITY_REGEX`   |  |  |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| `EXCLUDE_HOST_REGEX` | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| `EXCLUDE_NAMESPACE_REGEX`  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |
+| `EXCLUDE_PATH` | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |
+| `EXCLUDE_PRIORITY_REGEX`   |  |  |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| `EXCLUDE_POD_REGEX` | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |  |  |
+| `EXCLUDE_UNIT_REGEX` |  |  |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| `TIME_KEY` | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |  |  |
 
 
 ### Override environment variables using annotations

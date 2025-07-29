@@ -25,21 +25,21 @@ Flex Pricing delivers a new financial model for log management in which you can 
 
 | Feature support | Flex Pricing |
 | :-- | :-- |
-| Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |
-| Data replication across availability zones, data encryption | ![check](/img/reuse/check.png) |
-| Interactive queries (UI) |![check](/img/reuse/check.png) |
-| Support for Installed and Hosted Collectors | ![check](/img/reuse/check.png) |
-| RBAC support | ![check](/img/reuse/check.png) |
-| Support for search operators | ![check](/img/reuse/check.png) |
-| Field Extraction Rules | ![check](/img/reuse/check.png) |
-| Logs to Metrics | ![check](/img/reuse/check.png) |
-| Data Forwarding | ![check](/img/reuse/check.png) |
-| Live Tail | ![check](/img/reuse/check.png) |
-| Dashboards | ![check](/img/reuse/check.png) |
-| Monitors | ![check](/img/reuse/check.png) |
-| Scheduled Searches | ![check](/img/reuse/check.png) |
-| Scheduled Views | ![check](/img/reuse/check.png) |
-| API Queries |  ![check](/img/reuse/check.png) |
+| Centralized, secure, multi-tenant cloud-native platform | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Data replication across availability zones, data encryption | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Interactive queries (UI) |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Support for Installed and Hosted Collectors | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| RBAC support | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Support for search operators | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Field Extraction Rules | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Logs to Metrics | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Data Forwarding | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Live Tail | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Dashboards | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Monitors | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Scheduled Searches | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Scheduled Views | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| API Queries |  <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
 
 ## Guides
 

@@ -56,21 +56,21 @@ How you can search and use your ingested data varies by the Data Tier it resides
 
 | Feature support | Continuous Tier | Frequent Tier | Infrequent Tier | 
 | :-- | :-- | :-- | :-- | 
-| Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) | 
-| Data replication across availability zones, data encryption | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Interactive queries (UI) | ![check](/img/reuse/check.png)<br/>Partitions can be specified, but are optional. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |
-| Support for Installed and Hosted Collectors | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| RBAC support | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Support for search operators | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Field Extraction Rules | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Logs to Metrics | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Data Forwarding | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |
-| Live Tail | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Dashboards | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
-| Monitors | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
-| Scheduled Searches | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
-| Scheduled Views | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![check](/img/reuse/x.png) |
-| API Queries |  ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
+| Centralized, secure, multi-tenant cloud-native platform | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | 
+| Data replication across availability zones, data encryption | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Interactive queries (UI) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/><br/>Partitions can be specified, but are optional. |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/><br/>Partition or `_dataTier` must be specified. |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/><br/>Partition or `_dataTier` must be specified. |
+| Support for Installed and Hosted Collectors | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| RBAC support | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Support for search operators | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Field Extraction Rules | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Logs to Metrics | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Data Forwarding | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
+| Live Tail | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Dashboards | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | |
+| Monitors | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | |
+| Scheduled Searches | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | |
+| Scheduled Views | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | |
+| API Queries |  <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
 
 ## Assigning data to a Data Tier
 

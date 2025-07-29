@@ -18,9 +18,9 @@ The following table summarizes what you can collect with each collection method.
 
 | Collection Methods | Logs | Metrics |
 |:--|:--|:--|
-| Docker Logging Driver	 | ![check](/img/reuse/check.png) |  |
-| Installed Collector on Docker Host<br/>(with Docker Log source and Docker Stats source)| ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Collector as a Container<br/>(with Docker Log source and Docker Stats source)	 | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Docker Logging Driver	 | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |
+| Installed Collector on Docker Host<br/>(with Docker Log source and Docker Stats source)| <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Collector as a Container<br/>(with Docker Log source and Docker Stats source)	 | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
 
 ## Docker collection options
 
@@ -85,10 +85,10 @@ The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher 
 
 | Platform | Installed Collector On Docker Host  | Collector As Container | Docker Logging Driver |
 |:--|:--|:--|:--|
-| Docker<br/>(not managed service) | ![check](/img/reuse/check.png) |   ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
-| ECS | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
-| Docker Swarm | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
-| Rancher<br/>(non-Kubernetes) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
+| Docker<br/>(not managed service) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |   <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/>| <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| ECS | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/>| <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Docker Swarm | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/>| <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Rancher<br/>(non-Kubernetes) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/>| <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
 
 ### Sumo Logic apps for Docker
 
