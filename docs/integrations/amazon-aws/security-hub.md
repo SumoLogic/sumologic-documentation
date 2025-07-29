@@ -37,14 +37,11 @@ The **AWS Security Hub CSPM forwarder** sends scheduled search results and alert
 
 To complete the following tasks, Security Hub must be enabled on your AWS account. For more information, see the AWS Security Hub CSPM documentation for [Setting Up AWS Security Hub CSPM](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html).
 
-
 #### Overview
 
 AWS Security Hub CSPM forwarder creates a Lambda function along with an [Identity Access and Management (IAM)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) authentication secured API Gateway endpoint. A Sumo Logic scheduled search then sends the results to the endpoint using [Webhook for Lambda](/docs/alerts/webhook-connections/aws-lambda.md) The triggered Lambda function parses the search results, transforming them into [Amazon Finding Format](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html) (AFF). Each of the rows of the AFF data is sent as a finding to AWS Security Hub CSPM.
 
 The configuration is defined using [SAM specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html) and published in [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/).
-
-
 
 #### Step 1: Enable Sumo Logic as a Finding Provider
 
@@ -54,7 +51,6 @@ To enable Sumo Logic for AWS Security Hub CSPM, do the following:
 
 1. Open the Security Hub console at [https://console.aws.amazon.com/securityhub](https://console.aws.amazon.com/securityhub), and choose **Settings > Providers**.
 2. Search for “Sumo Logic” and click **Subscribe** for Sumo Logic Machine Data Analytics.
-
 
 #### Step 2: Deploy the AWS Security Hub CSPM forwarder
 
@@ -66,7 +62,6 @@ To deploy the AWS Security Hub CSPM forwarder, do the following:
 2. In the Serverless Application Repository, search for sumologic.
 3. Select the **Show apps that create custom IAM roles or resource policies** checkbox, click the **sumo-logic-securityhub-forwarder** app link, and then click **Deploy**.
 4. After the stack is deployed, go to **CloudFormation > Stacks > Stack details > Outputs** and copy the value of **SecurityHubForwarderApiUrl**. This is the API Gateway endpoint.
-
 
 #### Step 3: Create a Webhook connection
 
@@ -90,7 +85,6 @@ To create a Webhook connection, do the following:
    * For the `"Severity"` value, enter a number from `0` to `100`.
    * For `"Types"`, `"Description"`, `"SourceUrl"`, `"GeneratorID"`, `"Severity"`, and `"ComplianceStatus"`, status are mapped to corresponding fields specified in Amazon Finding Format.
 3. Ensure that the IAM role or IAM user (whose credentials are used) has permissions to invoke the API in API Gateway, as described in [Control Access for Invoking an API](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-control-access-using-iam-policies-to-invoke-api.html) Amazon documentation. You can use the payload in troubleshooting tips section to test the connection.
-
 
 #### Step 4: Create scheduled searches
 
@@ -142,10 +136,9 @@ To write a query and create a scheduled search, do the following:
      | ComplianceStatus | Results of a compliance check. This is an optional field and its value should be one of the following: PASSED/WARNING/FAILED/NOT_AVAILABLE.      |
 1. The `aws_account_id` field in the search results.
 1. `AWS_ACCOUNT_ID` set as a Lambda environment variable.
-1. The `account_id` where the lambda function is running.
+1. The `account_id` where the Lambda function is running.
 
 The `aws_account_id` defaults to the account in which Lambda is running.
-
 
 #### Troubleshooting tips
 
@@ -164,28 +157,64 @@ In the case of a problem, perform the following tasks to discover the cause.
   }
   ```
 2. Check for `status code 200` in the response body to verify whether the API Gateway and Lambda integration is working correctly. For more information on how to test API Gateway with console refer these [docs](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html).
-3. Monitor scheduled search logs using following query in Sumo Logic. This verifies whether the scheduled search was triggered or not.
+3. Monitor scheduled search logs using the following query in Sumo Logic. This verifies whether the scheduled search was triggered or not.
   ```json
   _view=sumologic_audit "Scheduled search alert triggered" <webhook_name>
   ```
-4. Check the CloudWatch logs for the Lambda function. Sumo saves Lambda function logs to CloudWatch in a log group: `/aws/lambda/<function_name>`. Check this log for any errors during lambda execution.
-
+4. Check the CloudWatch logs for the Lambda function. Sumo Logic saves Lambda function logs to CloudWatch in a log group: `/aws/lambda/<function_name>`. Check this log for any errors during lambda execution.
 
 ## Collecting findings for the AWS Security Hub CSPM app
 
-This section shows you how to add a hosted collector and Amazon S3 Source and deploy an AWS Security Hub CSPM collector.
+You can collect the AWS Security Hub CSPM logs using two methods:
 
-To complete the following tasks, Security Hub must be enabled on your AWS account. For more information, see the AWS Security Hub CSPM documentation for [Setting Up AWS Security Hub CSPM](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html).
+- [Method 1: Collecting AWS Security Hub CSPM Logs using EventBridge](#method-1-collecting-aws-security-hub-cspm-logs-using-eventbridge)
+- [Method 2: Collecting Security Hub CSPM Logs using Sumo Logic HTTP endpoint](#method-2-collecting-security-hub-cspm-logs-using-sumo-logic-http-endpoint)
 
+Before collecting logs, ensure that Security Hub is enabled on your AWS account. For more information, see the AWS Security Hub CSPM documentation for [Setting Up AWS Security Hub CSPM](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html).
 
-#### Overview  
+### Method 1: Collecting AWS Security Hub CSPM logs using EventBridge
+
+This method leverages AWS EventBridge to streamline the logging process by sending data directly to Sumo Logic via an HTTP endpoint. By eliminating intermediary services such as Lambda, it offers a more straightforward and cost-effective solution.
+
+#### Step 1: Create an HTTP source in Sumo Logic
+
+To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+
+#### Step 2: Configure EventBridge API destination
+
+Follow the steps below to configure the EventBridge API destination:
+1. Sign in to your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
+1. In the navigation bar, click **API destinations**.
+1. Click **Create destination**.
+1. Enter a name for the API Destination.
+1. Provide the HTTP Source URL from Sumo Logic.
+1. Click **Create a new connection** to create a connection for the API destination.
+  1. Provide a connection name.
+  1. Keep the API Type as **Public**.
+  1. Select **Basic (Username/Password)** in the **Authorization type**.
+  1. Add any value of your choice for **Username** and **Password**.
+
+#### Step 3: Create the EventBridge rule
+
+Follow the steps below to configure the EventBridge rule:
+1. Sign in to your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
+1. In the navigation bar, click **Rules**.
+1. Set the event source to **AWS services** and then select **Security Hub** as the AWS service.
+1. Select **All Events** in Event Type.
+1. Under **Select targets**, choose **EventBridge API destination**.
+1. Select the API Destination created in Step 2.
+1. Select **Create a new role for this specific resource** in the **Execution role**.
+1. Click **Create** to activate the rule.
+
+### Method 2: Collecting Security Hub CSPM Logs using Sumo Logic HTTP endpoint
+
+This method uses an AWS Lambda function to process, store, and forward logs to Sumo Logic. While it offers a robust solution, it introduces additional AWS resources, such as Lambda, which can increase both cost and complexity.
 
 Sumo Logic provides a serverless solution for creating a CloudWatch events rule and a Lambda function (SecurityHubCollector) to extract findings from AWS Security Hub CSPM.
 
 Findings from AWS services (AWS Security Hub CSPM) are delivered to CloudWatch Events as events in near real time. The Lambda function parses those events and sends them to an S3 bucket. Sumo Logic then collects the findings data using an S3 bucket source on a Sumo Logic hosted collector. The Lambda function setup is defined using Serverless Application Model (SAM) specifications and is published in AWS Serverless Application Repository.
 
 You do not have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub CSPM App collector](#step-2-deploy-an-aws-security-hub-cspm-app-collector).
-
 
 #### Step 1: Add a hosted collector and Amazon S3 source
 

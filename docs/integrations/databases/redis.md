@@ -268,7 +268,7 @@ At this point, Redis metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Redis running on a non-Kubernetes environment for the Sumo Logic app for Redis. By default, Redis logs are stored in a log file. Redis also supports forwarding of logs via Syslog.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Sumo Logic Installed collectors](/docs/send-data/installed-collectors) which  requires you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Sumo Logic Installed collectors](/docs/send-data/installed-collectors) which  requires you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
 
 Follow the instructions to set up log collection:
 

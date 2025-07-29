@@ -132,7 +132,7 @@ Sumo Logic's FedRAMP deployment is similar to our other deployments, such as US2
 
 ### AWS region by Sumo Logic deployment
 
-import AWSDeploymentRegion from '../reuse/aws-region-by-sumo-deployment.md';
+import AWSDeploymentRegion from '../../reuse/aws-region-by-sumo-deployment.md';
 
 * <AWSDeploymentRegion/>
 
@@ -142,9 +142,9 @@ Generic status codes that apply to all our APIs. See the [HTTP status code regis
 
 | HTTP Status Code | Error Code          | Description                 
 |:------------------|:---------------------|:-------------------------------------|
-| 301              | moved               | The requested resource SHOULD be accessed through returned URI in Location Header. See [troubleshooting](/docs/api/troubleshooting) for details.                                       |
+| 301              | moved               | The requested resource SHOULD be accessed through returned URI in Location Header. See [troubleshooting](/docs/api/about-apis/troubleshooting) for details.                                       |
 | 401              | unauthorized        | Credential could not be verified.                                                                                                                                                      |
-| 403              | forbidden           | This operation is not allowed for your account type or the user doesn't have the role capability to perform this action. See [troubleshooting](/docs/api/troubleshooting) for details. |
+| 403              | forbidden           | This operation is not allowed for your account type or the user doesn't have the role capability to perform this action. See [troubleshooting](/docs/api/about-apis/troubleshooting) for details. |
 | 404              | notfound            | Requested resource could not be found.                                                                                                                                                 |
 | 405              | method.unsupported  | Unsupported method for URL.                                                                                                                                                            |
 | 415              | contenttype.invalid | Invalid content type.                                                                                                                                                                  |

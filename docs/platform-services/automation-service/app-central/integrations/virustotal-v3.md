@@ -8,8 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal"
 width="100"/>
 
-***Version: 1.0
-Updated: July 03, 2024***
+***Version: 1.1
+Updated: July 22, 2025***
 
 Perform threat intelligence evidence gathering with [VirusTotal V3 API](https://docs.virustotal.com/reference/overview).
 
@@ -68,3 +68,5 @@ For information about VirusTotal v3, see [VirusTotal v3 documentation](https://d
 * July 03, 2024
     + First upload
     + It is an updated version of VirusTotal which works with V3 API.
+* July 22, 2025
+    + Fixed url parsing issue in **URL Reputation** action.
