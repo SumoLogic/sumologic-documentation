@@ -2,7 +2,7 @@
 id: system-requirements
 title: System Requirements
 sidebar_label: System requirements
-description: Supported Browsers and other requirements for running Sumo Logic.
+description: Review the system requirements to ensure your environment is compatible with Sumo Logic for optimized performance and reliability.
 ---
 
 Sumo Logic has a few system requirements, which are documented in the following topics.

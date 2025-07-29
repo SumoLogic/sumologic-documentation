@@ -2,7 +2,7 @@
 id: windows
 title: Install a Collector on Windows
 sidebar_label: For Windows
-description: Install or uninstall a Collector on a Windows system.
+description: Install and configure the Sumo Logic Installed Collector for Windows to reliably collect logs and metrics from your on-premises infrastructure.
 ---
 
 

@@ -2,6 +2,7 @@
 id: where
 title: where Search Operator
 sidebar_label: where
+description: Use the 'where' operator in Sumo Logic to filter search results based on custom conditions and focus on relevant log data with precision.
 ---
 
 The `where` operator allows you to filter results based on a boolean expression.

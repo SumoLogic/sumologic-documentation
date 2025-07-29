@@ -2,7 +2,7 @@
 id: fields
 title: Fields
 sidebar_label: Fields
-description: Learn how to define and manage the assignment of metadata to your logs.
+description: Manage fields in Sumo Logic to control how log data is parsed and organized, improving search efficiency and enabling advanced data filtering.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

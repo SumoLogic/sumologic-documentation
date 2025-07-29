@@ -1,7 +1,7 @@
 ---
 slug: /search/search-query-language
 title: Search Query Language
-description: The extensive Sumo Logic query options help you gain valuable insight into your log messages.
+description: Master Sumo Logic’s Search Query Language to run advanced log searches, create visualizations, and unlock powerful insights from your data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
