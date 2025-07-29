@@ -4,6 +4,7 @@ title: Remote Windows Performance Monitor Log Source
 description: Set up a Remote Windows Performance Monitor Log Source to collect remote performance data from Windows Performance Monitor.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::important
 This Source is no longer supported or available with Collector version 19.361-8.

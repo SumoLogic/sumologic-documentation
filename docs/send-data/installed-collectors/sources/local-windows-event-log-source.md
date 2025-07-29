@@ -4,6 +4,7 @@ title: Local Windows Event Log Source
 description: You can collect local events from the Windows Events Viewer.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 Set up a Local Windows Event Log Source to collect local events you would normally see in the Windows Event Viewer. Setting up a Local Windows Event Source is a quick process. There are no prerequisites for setting up the Source, and you'll begin collecting logs within a minute or so.

@@ -4,6 +4,7 @@ title: Syslog Source
 description: The Syslog Source obtains syslog messages by listening on a designated port.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Syslog Source operates like a syslog server listening on the designated port to receive syslog messages. You set your hosts or syslog-enabled devices to send syslog data to the same port you specify when you configure the Syslog Source.   
 

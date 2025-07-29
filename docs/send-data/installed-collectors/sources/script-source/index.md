@@ -4,7 +4,7 @@ title: Script Source
 description: Uses a script to fetch from custom sources of data, such a database or a third-party monitoring app.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 If you need to collect data that isn't stored in log files, like system performance metrics, database records, or perhaps data output from third-party monitoring solutions you can use a Script Source that runs a script to fetch those custom sources of data from your machine's standard output and error streams. The script executes at defined intervals and then sends the data to Sumo for analysis. This allows you to collect all sorts of data from any supported OS, including data from command-line tools such as iostat, transient, or unstable data sources.
 

@@ -4,7 +4,7 @@ title: Docker Sources
 description: Configure a Docker Logs or Docker Stats Source.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Docker is a lightweight open platform that provides a way to package applications in containers for a software development environment.
 

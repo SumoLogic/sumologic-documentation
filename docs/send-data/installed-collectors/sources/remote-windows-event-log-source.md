@@ -4,6 +4,7 @@ title: Remote Windows Event Log Source
 description: Collect Windows event logs from a remote machine.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 Set up a Remote Windows Event Log Source to use a single Sumo Logic Collector to collect Windows event log entries from multiple remote systems.

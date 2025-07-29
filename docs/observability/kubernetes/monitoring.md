@@ -4,6 +4,8 @@ title: Monitoring Your K8s Environment
 description: Learn how to effectively monitor your Kubernetes environment according to the individual areas of the Kubernetes architecture.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page provides insights for effectively monitoring your Kubernetes environment with Sumo Logic, and is organized according to the individual areas of the Kubernetes architecture.
 
 ## Navigating your Kubernetes environment

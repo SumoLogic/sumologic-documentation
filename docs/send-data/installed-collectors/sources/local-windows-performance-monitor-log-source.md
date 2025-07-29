@@ -4,7 +4,7 @@ title: Local Windows Performance Monitor Log Source
 description: Collect local performance data from the Windows Performance Monitor.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Set up a Local Windows Performance Monitor Log Source to collect performance data that you would normally see in the Windows Performance Monitor. Setting up a Local Windows Performance Monitor Log Source is a quick process. There are no prerequisites for setting up the Source, and you'll begin collecting logs within a minute or so.
 

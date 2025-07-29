@@ -4,6 +4,7 @@ title: Edit a Collector
 description: Edit some characteristics of a Collector, including its name, version, description, Host Name, and Category.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 From the **Manage Collection** page, you can edit some characteristics of a Collector, including its name, description, Host Name, and Category.
 
