@@ -49,7 +49,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-    * **Sumo Logic API URL**. URL to the API of the instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
+    * **Sumo Logic API URL**. URL to the API of the instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
     * **Access ID**. The access ID that you copied earlier.
     * **Access Key**. The access key that you copied earlier.
     * **Slack Bot/User OAuth Token**. To set up the Slack app, refer to [Slack configuration](/docs/platform-services/automation-service/app-central/integrations/slack/) within App Central. You'll require a Slack Bot/User OAuth Token.

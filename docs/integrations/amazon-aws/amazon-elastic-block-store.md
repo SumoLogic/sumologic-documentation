@@ -79,3 +79,27 @@ Use this dashboard to:
 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-EBS-Throughput-and-IOPS.png')} alt="Elastic Block Store" style={{border: '1px solid gray'}} />
+
+## Create monitors for Amazon Elastic Block Store app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon Elastic Block Store Alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon EBS - Volume Stalled IO Detected` | This alert triggers when the stalled I/O value on a volume is greater than or equal to 1 over a 5-minute interval. A stalled I/O indicates that the volume is unable to complete read or write operations, which could impact the performance or availability of applications relying on the volume. | Count >= 1 | Count < 1 |
+
+## Upgrade/Downgrade the Amazon Elastic Block Store app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Elastic Block Store app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

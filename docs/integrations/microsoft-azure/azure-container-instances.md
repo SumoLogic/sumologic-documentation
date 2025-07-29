@@ -49,7 +49,7 @@ Use existing resource group or create a new one for deploying Azure container in
    * Outputs pipeline uses the [http output plugin](https://docs.fluentbit.io/manual/pipeline/outputs/http). Follow the below steps to update other outputs pipeline parameters:
       * **format**. Data format by which you can send logs to Sumo Logic. By default, the format key will be assigned with *json_lines*.
       * **compress**. Payload compression mechanism. By default, the compression is enabled and uses `gzip`.
-      * **host**. Update the host depending on your [Sumo Logic Orgs deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+      * **host**. Update the host depending on your [Sumo Logic Orgs deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
       * **tls**. This field will be in *on* condition to enable the TLS support. By default, Sumo Logic only supports **tls** in *on* condition.
       * **tls.verify**. This field will be in *off* condition to disable the certificate validation. By default, Sumo Logic only supports **tls.verify** in *off* condition.
       * **URI**. Update the `[PrivateKey]` with the path present in the HTTP source endpoint as configured in the Step 1.
@@ -139,14 +139,32 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Azure-Container-Instances-Policy-and-Recommendations.png')} alt="Azure Container Instances - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Container Instances
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
 ### Azure Container Instances alerts
 
 These alerts are metric based and will work for all Azure Container Instances.
 
-| Alert Name | Description  | Alert Condition  | Recover Condition    |
-|:-- |:-- |:--|:---------------------|
+| Alert Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
 | `Azure Container Instances - Memory Usage` | This alert is triggered when memory usage is greater than 20 MB. Also warning alert is triggered when the memory usage exceeds 15 MB. | Data volume > 20MB | Data volume < = 20MB |
-| `Azure Container Instances - CPU Usage` | This alert is triggered when CPU usage is greater than 100 milicore. Also warning alert is triggered when the CPU usage exceeds 90 millicore. | millicores > 100  | millicores < = 100    |
+| `Azure Container Instances - CPU Usage` | This alert is triggered when CPU usage is greater than 100 milicore. Also warning alert is triggered when the CPU usage exceeds 90 millicore. | millicores > 100 | millicores < = 100 |
+
+## Upgrade/Downgrade the Azure Container Instances app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Container Instances app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Troubleshooting
 
