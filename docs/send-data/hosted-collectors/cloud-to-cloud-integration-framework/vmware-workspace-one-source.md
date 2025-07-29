@@ -67,8 +67,8 @@ To configure a VMware Workspace One Source:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Endpoint URL**. Enter the [VMware Workspace One platform](#vendor-configuration) endpoint URL.
 1. **Auth URL**. Enter the API region URL to fetch the auth token collected from the [VMware Workspace One platform](#auth-url). For example, `https://uat.uemauth.vmwservices.com`.
 1. **Client ID**. Enter the Client ID of your account collected from the [VMware Workspace One platform](#client-id-and-client-secret). For example, `cfea26d59bd542488ea706b025564d42`.

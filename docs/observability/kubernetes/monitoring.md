@@ -153,8 +153,8 @@ To add a custom field to a collector, do the following:
     The Edit Collector dialog appears.
 1. Click **Add Field**.<br/>  ![MM_Add-Field.png](/img/kubernetes/MM_Add-Field.png)
 1. Enter a Field Name and Value in the respective text fields. In this example, we created a field for a **cluster** with the label **k8s.dev** and a pod with the name **pod_test** and label **k8s.test**. This allows you to easily search for log data for that cluster or pod.
-    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark appears when the field exists and is enabled in the Fields table schema.
-    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point appears when the field doesn't exist yet, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.<br/>  ![MM_Fields_Key-Value-Pairs.png](/img/kubernetes/MM_Fields_Key-Value-Pairs.png)
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark appears when the field exists and is enabled in the Fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point appears when the field doesn't exist yet, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.<br/>  ![MM_Fields_Key-Value-Pairs.png](/img/kubernetes/MM_Fields_Key-Value-Pairs.png)
 1. Click **Save**.
 
 Now, any logs sent to this Collector will have these key-value pairs associated with it. With this association, you can search for `cluster=k8s.dev` or `pod_test=k8s.test` to return your logs.

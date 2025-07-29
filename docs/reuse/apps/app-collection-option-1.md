@@ -12,8 +12,8 @@ To set up collection and install the app, do the following:
     1. **Collector Name**. Enter a Name to display the Source in the Sumo Logic web application. The description is optional.
     1. **Timezone**. Set the default time zone when it is not extracted from the log timestamp. Time zone settings on Sources override a Collector time zone setting.
     1. (Optional) **Metadata**.  Click the **+Add Metadata** link to add a custom log [Metadata Fields](/docs/manage/fields). Define the fields you want to associate, each metadata field needs a name (key) and value.
-        * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
-        * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+        * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
+        * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
     1. Click **Next**.
 1. Configure the source as specified in the `Info` box above, ensuring all required fields are included.
 1. In the **Configure** section of your respective app, complete the following fields.
