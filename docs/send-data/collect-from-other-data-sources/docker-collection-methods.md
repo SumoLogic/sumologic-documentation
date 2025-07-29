@@ -5,6 +5,7 @@ sidebar_label: Docker
 description: Learn about methods for collecting logs and metrics from Docker.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes and compares alternative methods for collecting Docker logs and metrics. You can employ these methods in self-managed Docker environments or with managed Docker services like ECS and Swarm.
 

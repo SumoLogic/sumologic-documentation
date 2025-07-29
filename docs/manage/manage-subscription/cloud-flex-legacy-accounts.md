@@ -4,6 +4,8 @@ title: Cloud Flex Legacy Accounts
 description: Learn how to view information on Cloud Flex legacy accounts and intuitively monitor usage and manage account costs.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::note legacy account type
 We recommend transitioning to a our newer [Flex Plan](/docs/manage/manage-subscription/sumo-logic-flex-accounts/) for the newest features and enhanced functionality.
 :::
