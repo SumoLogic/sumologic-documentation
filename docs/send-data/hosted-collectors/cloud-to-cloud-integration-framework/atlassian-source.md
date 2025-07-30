@@ -22,7 +22,7 @@ The Atlassian Organizations API provides resources for managing an Atlassian org
 
 ## Setup
 
-:::
+:::note
 You need to have **Atlassian Guard Premium** or **Cloud Enterprise** plan to access user-created activities.
 :::
 

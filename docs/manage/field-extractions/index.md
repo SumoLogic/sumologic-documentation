@@ -74,19 +74,6 @@ import FerLimit from '../../reuse/fer-limitations.md';
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/Xv3pSwhVCN4"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Edit a Field Extraction Rule

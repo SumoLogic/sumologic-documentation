@@ -25,19 +25,6 @@ Watch this micro lesson to learn more about Global Intelligence for insights.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/toAvKsfVbHc?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
-
 :::
 
 ## What is a Global Confidence score?

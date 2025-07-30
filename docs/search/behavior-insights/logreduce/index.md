@@ -29,19 +29,6 @@ Watch our video on LogReduce. 
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/NlnIZvfYO2w"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 In this section, we'll introduce the following concepts:

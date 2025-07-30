@@ -38,7 +38,9 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -59,7 +61,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    Set error logs related server parameters as given below:
    - error_server_log_file: set to *ON*
    - log_output: set to *FILE*
-   
+
    Set Slow Query logs related parameters as given below:
    - slow_query_log: set to *ON*
    - long_query_time: Set the number of seconds a query can run before it's considered "slow". The default is 10 seconds.
@@ -176,17 +178,35 @@ The **Azure Database for Mysql - Storage Overview** dashboard provides details a
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Storage-Overview.png')} alt="Azure Database for Mysql - Storage Overview" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Database for MySQL
 
-## Azure Database for MySQL alerts
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Database for MySQL alerts
+
 These alerts are metric based and will work for all Azure Database for MySQL.
 
 | Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Azure Database for MySQL - Active Connections`  | This alert fires when number of active connections in Azure MySQL instance is greater than a threshold value (default value 50). | connections >= 50   | connections < 50  |
-| `Azure Database for MySQL - High CPU Utilization` | This alert fires when CPU usage % on a host in a Azure MySQL instance is greater than a threshold value (default value 90) | percentage >= 90 | percentage < 90  |
-| `Azure Database for MySQL - High Memory Utilization` | This alert fires when memory % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90 | percentage < 90  |
-| `Azure Database for MySQL - High Storage IO %` | This alert fires when storage IO % on a resource in a Azure MySQL instance is greater than a threshold value (default value 80%) | percentage >= 80  | percentage < 80   |
-| `Azure Database for MySQL - High Storage Utilization` | This alert fires when storage % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90  | percentage < 90   |
+| `Azure Database for MySQL - Active Connections` | This alert fires when number of active connections in Azure MySQL instance is greater than a threshold value (default value 50). | connections >= 50 | connections < 50 |
+| `Azure Database for MySQL - High CPU Utilization` | This alert fires when CPU usage % on a host in a Azure MySQL instance is greater than a threshold value (default value 90) | percentage >= 90 | percentage < 90 |
+| `Azure Database for MySQL - High Memory Utilization` | This alert fires when memory % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90 | percentage < 90 |
+| `Azure Database for MySQL - High Storage IO %` | This alert fires when storage IO % on a resource in a Azure MySQL instance is greater than a threshold value (default value 80%) | percentage >= 80 | percentage < 80 |
+| `Azure Database for MySQL - High Storage Utilization` | This alert fires when storage % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90  | percentage < 90 |
+
+## Upgrade/Downgrade the Azure Database for MySQL app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Database for MySQL app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Troubleshooting
 

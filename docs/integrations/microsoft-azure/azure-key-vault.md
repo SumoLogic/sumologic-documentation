@@ -33,7 +33,9 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -130,13 +132,25 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 ### Azure Key Vaults alerts
 These alerts are metric based and will work for all Key Vaults.
 
-| Alert Name                                                                                                                                             | Alert Description and Conditions                                                               | Alert Condition | Recover Condition |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------|:----------------|:------------------|
-| `Azure Key Vaults - Availability drops below 100%`                                                                                                     | This alert is triggered when availability drops under 100% are detected for any Key Vaults.    | Count < 100     | Count = 100       |
-| `Azure Key Vaults - Keys, Secrets, Certificates Expired Alert`                                                                                         | This alert triggers when any Keys, Secrets, or Certificates have expired for any Key Vaults.     | Count >= 1      | Count < 1         |
-| `Azure Key Vaults - Keys, Secrets, Certificates Near Expiry Alert`                                                                                     | This alert triggers when any Keys, Secrets, or Certificates are near expiry for any Key Vaults. | Count >= 1      | Count < 1         |
-| `Azure Key Vaults - Latency is greater than 1000 ms`                                                                                                   | This alert is triggered when latency of Vaults goes above 1000ms.                        | Count >= 1000   | Count < 1000      |
-| `Azure Key Vaults - Overall Vault Saturation is greater than 75%`                                                                                      | This alert is triggered when Overall vault saturation of any vaults is greater than 75%.       | Count >= 75     | Count < 75        |
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Key Vaults - Availability drops below 100%` | This alert is triggered when availability drops under 100% are detected for any Key Vaults. | Count < 100 | Count = 100 |
+| `Azure Key Vaults - Keys, Secrets, Certificates Expired Alert` | This alert triggers when any Keys, Secrets, or Certificates have expired for any Key Vaults. | Count >= 1 | Count < 1 |
+| `Azure Key Vaults - Keys, Secrets, Certificates Near Expiry Alert` | This alert triggers when any Keys, Secrets, or Certificates are near expiry for any Key Vaults. | Count >= 1 | Count < 1 |
+| `Azure Key Vaults - Latency is greater than 1000 ms` | This alert is triggered when latency of Vaults goes above 1000ms. | Count >= 1000 | Count < 1000 |
+| `Azure Key Vaults - Overall Vault Saturation is greater than 75%` | This alert is triggered when Overall vault saturation of any vaults is greater than 75%. | Count >= 75 | Count < 75 |
+
+## Upgrade/Downgrade the Azure Key Vaults app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Key Vaults app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Troubleshooting
 

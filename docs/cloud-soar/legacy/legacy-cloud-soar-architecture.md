@@ -25,11 +25,3 @@ All multi-tenant installations offer:
 - Isolation of external actions (e.g., enrichment of indicators of compromise, containment actions prescribed to a host)
 
 <img src={useBaseUrl('img/cloud-soar/image5.png')} alt="Multiple database symbols" width="600"/>
-
-## Automated Responder Knowledge (DF-ARK)
-
-Cloud SOAR's Automated Responder Knowledge (DF-ARK) module utilizes machine
-learning through historical responses to past incidents and threat
-intelligence feeds to enrich new incidents. This enrichment allows
-Cloud SOAR to recommend relevant Playbooks and plans of action to expedite
-detection and response times.

@@ -1,6 +1,6 @@
 ---
 title: June 2, 2025 - Application Update
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://help.sumologic.com/img/reuse/rss-image.jpg
 keywords:
   - outlier rules
   - first seen rules
@@ -17,6 +17,5 @@ We're happy to announce that now when you create or update a first seen or outli
 To learn more, see our information about baselines for [first seen rules](/docs/cse/rules/write-first-seen-rule/) and [outlier rules](/docs/cse/rules/write-outlier-rule/#baselines-for-outlier-rules).
 
 :::note
-* This feature update applies only to new and changed first seen and outlier rules. Unchanged existing rules will continue to use their existing baselines.
-* This feature update is rolling out across deployments incrementally and will be available on all deployments by June 12, 2025.
+This feature update applies only to new and changed first seen and outlier rules. Unchanged existing rules will continue to use their existing baselines.
 :::

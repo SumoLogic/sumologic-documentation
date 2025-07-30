@@ -32,19 +32,6 @@ Get to know Sumo Logic through our video, "Introduction to Sumo Logic".
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/T4WAZz8-r54?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Benefits of using Sumo Logic
@@ -67,19 +54,6 @@ Get to know more about the benefits of using Sumo Logic.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/D4WO5DlqD6o?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 
 :::
 
@@ -142,18 +116,6 @@ Get to know the collection process through our video, "Data Collection Strategy"
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/Y1UVF4ASm_c?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 :::
 
 ## Account configuration

@@ -27,19 +27,6 @@ Rather watch a short micro lesson video?
   allowfullscreen
 />
 
-<!--
-<Iframe url="https://www.youtube.com/embed/A-O_E-NbxN8"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Dashboard AutoSave

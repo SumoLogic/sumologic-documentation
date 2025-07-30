@@ -73,7 +73,7 @@ To configure a Google Workspace Apps Audit Source:
 
 To confirm events are being logged, you can compare the data in Sumo Logic to the data shown in **Reports** in the Google Admin console.
 
-# Google App Audit Known Issues
+## Google App Audit Known Issues
 
 A few known issues are due to limitations of the Google API and cannot be changed by Sumo Logic. 
 

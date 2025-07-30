@@ -10,7 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.15  
 Updated: Jan 6, 2025***
 
-Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic Cloud SIEM integration.
+
+This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Cloud SIEM entities to correlate signals and insights. This integration requires authentication. (Because the [Sumo Logic Cloud SIEM Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem-internal/) integration operates internally with Sumo Logic, no additional authentication is needed.)
+
+For information about Cloud SIEM, see [Get Started with Cloud SIEM](/docs/cse/get-started-with-cloud-siem/).
 
 ## Actions
 
@@ -78,7 +81,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * <IntegrationCertificate/>
 * **Signals Daemon Query**. Enter the query to be executed in daemons.
 
-* **API Rate Limit Sleep (s)**. Enter the API rate limit in seconds. If the API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10. more info at https://help.sumologic.com/docs/api/metrics/#rate-limiting.
+* **API Rate Limit Sleep (s)**. Enter the API rate limit in seconds. If the API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10. More info at [Rate limiting](/docs/api/metrics/#rate-limiting).
 
 * **Custom Field Interval Name (Close Insight Trigger)**. This field is only used within the Close Insight Trigger as a custom field for insight ID in Cloud SOAR, for example, `opt_1`.
 
