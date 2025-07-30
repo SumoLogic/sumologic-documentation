@@ -68,7 +68,7 @@ def get_changed_files(repo_root):
     return []
 
 def extract_changed_sql_queries(file_path, base_commit, current_commit):
-    """Extract only the SQL code blocks that were added/modified in the git diff"""
+    """Extract SQL code blocks that were added or modified in the git diff"""
     try:
         # Get the git diff for this specific file
         diff_cmd = ["git", "diff", f"{base_commit}...{current_commit}", "--", file_path]
@@ -76,54 +76,27 @@ def extract_changed_sql_queries(file_path, base_commit, current_commit):
         
         if result.returncode != 0:
             print(f"::warning::Could not get git diff for {file_path}")
-            return []
+            return extract_sql_queries(file_path)  # Fallback to all queries
         
         diff_content = result.stdout
         
-        # Extract added SQL blocks from the diff
-        added_sql_queries = []
+        # Simple approach: if there are any changes in the file and it contains SQL blocks,
+        # validate all SQL blocks in the current version of the file
+        # This is more reliable than trying to parse complex diff output
         
-        # Look for lines that start with + and contain SQL code blocks
-        lines = diff_content.split('\n')
-        i = 0
-        while i < len(lines):
-            line = lines[i]
-            
-            # Check if this is an added line with SQL code block start
-            if line.startswith('+') and ('```sql' in line.lower() or '```sumo' in line.lower()):
-                # Found start of an added SQL block
-                sql_lines = []
-                i += 1
-                
-                # Collect all lines until we find the closing ```
-                while i < len(lines):
-                    current_line = lines[i]
-                    
-                    # If it's a closing ``` on an added line, we're done
-                    if current_line.startswith('+') and '```' in current_line and current_line.strip() == '+```':
-                        break
-                    
-                    # If it's an added line with SQL content, add it
-                    if current_line.startswith('+'):
-                        # Remove the + prefix and add to SQL content
-                        sql_content = current_line[1:]  # Remove the '+' prefix
-                        sql_lines.append(sql_content)
-                    
-                    i += 1
-                
-                # Join the SQL lines and clean up
-                if sql_lines:
-                    sql_query = '\n'.join(sql_lines).strip()
-                    if sql_query and not sql_query.startswith('#') and not sql_query.startswith('//'):
-                        added_sql_queries.append(sql_query)
-            
-            i += 1
+        has_changes = any(line.startswith(('+', '-')) for line in diff_content.split('\n') 
+                         if line.strip() and not line.startswith(('+++', '---')))
         
-        return added_sql_queries
+        if has_changes:
+            # File has changes, extract all current SQL queries for validation
+            return extract_sql_queries(file_path)
+        
+        return []
         
     except Exception as e:
         print(f"::error::Error extracting changed SQL queries from {file_path}: {e}")
-        return []
+        # Fallback to extracting all SQL queries from the file
+        return extract_sql_queries(file_path)
 
 def extract_sql_queries(file_path):
     """Extract SQL code blocks from markdown files (fallback method)"""

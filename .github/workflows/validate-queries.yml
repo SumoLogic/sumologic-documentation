@@ -49,6 +49,9 @@ jobs:
               if git diff $BASE_COMMIT...${{ github.sha }} -- "$file" | grep -E "^[+-].*\`\`\`(sql|sumo)" > /dev/null; then
                 echo "SQL code block changes detected in: $file"
                 SQL_CHANGED=true
+              elif git diff $BASE_COMMIT...${{ github.sha }} -- "$file" | grep -E "^[+-].*[^`]" | grep -A 20 -B 5 "\`\`\`sql\|\`\`\`sumo" > /dev/null; then
+                echo "SQL code content changes detected in: $file"  
+                SQL_CHANGED=true
               fi
             fi
           done < changed_files.txt
