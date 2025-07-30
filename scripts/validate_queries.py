@@ -68,10 +68,47 @@ def get_changed_files(repo_root):
     return []
 
 def extract_changed_sql_queries(file_path, base_commit, current_commit):
-    """Extract SQL code blocks that were added or modified in the git diff"""
-    # For now, simplify by validating all SQL in changed files
-    # This is more reliable than complex diff parsing
-    return extract_sql_queries(file_path)
+    """Extract only the SQL queries that were actually changed in this commit"""
+    try:
+        # Get the git diff for this specific file
+        diff_cmd = ["git", "diff", f"{base_commit}...{current_commit}", "--", file_path]
+        result = subprocess.run(diff_cmd, capture_output=True, text=True, cwd=get_repo_root())
+        
+        if result.returncode != 0:
+            print(f"::warning::Could not get git diff for {file_path}, validating all SQL queries")
+            return extract_sql_queries(file_path)
+        
+        diff_content = result.stdout
+        if not diff_content.strip():
+            print(f"::info::No changes found in {file_path}")
+            return []
+        
+        # Extract only the SQL content that was added/modified
+        changed_queries = []
+        lines = diff_content.split('\n')
+        
+        for line in lines:
+            # Look for added lines that contain SQL-like content
+            if line.startswith('+') and not line.startswith('+++'):
+                content = line[1:].strip()  # Remove the '+' prefix
+                
+                # Check if this line looks like a SQL query
+                if content and any(keyword in content.lower() for keyword in [
+                    '_collector=', 'metric=', '| where', '| parse', '| count', 
+                    '| sum', '| avg', '| json', '| timeslice'
+                ]):
+                    changed_queries.append(content)
+        
+        if changed_queries:
+            print(f"📊 Found {len(changed_queries)} changed SQL queries in diff")
+            return changed_queries
+        else:
+            print(f"ℹ️  No SQL query changes detected in {file_path}")
+            return []
+        
+    except Exception as e:
+        print(f"::error::Error parsing git diff for {file_path}: {e}")
+        return extract_sql_queries(file_path)  # Fallback
 
 def extract_sql_queries(file_path):
     """Extract SQL code blocks from markdown files (fallback method)"""

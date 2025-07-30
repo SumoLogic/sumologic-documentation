@@ -1,9 +1,5 @@
 name: SQL Query Validation
 on:
-  push:
-    paths:
-      - 'docs/**/*.md'
-      - 'blog-*/**/*.md'
   pull_request:
     paths:
       - 'docs/**/*.md'
