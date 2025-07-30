@@ -1,11 +1,13 @@
-name: Validate SumoLogic Queries
+name: SQL Query Validation
 on:
   push:
     paths:
-      - '**/*.md'
+      - 'docs/**/*.md'
+      - 'blog-*/**/*.md'
   pull_request:
     paths:
-      - '**/*.md'
+      - 'docs/**/*.md'
+      - 'blog-*/**/*.md'
 
 jobs:
   validate-queries:
