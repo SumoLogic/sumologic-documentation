@@ -203,7 +203,7 @@ In the procedure below, you'll configure a Cloud Syslog Source. This will genera
    * `openssl x509 -inform der -in acm_ca.der -out acm_ca.crt`
    * `cat acm_ca.crt digicert_ca.crt > digicert_acm_cas.crt`
    * `perl -p -i -e "s/\r//g" digicert_acm_cas.crt`
-1. Upload the merged cert to the Acquia app.
+1. You'll upload the merged cert to the Acquia app when you configure Acquia log forwarding. See [Step 3: Configure logging for Acquia](#step-3-configure-logging-for-acquia).
 
 ### Configuring a cloud syslog source
 
