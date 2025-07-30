@@ -69,34 +69,9 @@ def get_changed_files(repo_root):
 
 def extract_changed_sql_queries(file_path, base_commit, current_commit):
     """Extract SQL code blocks that were added or modified in the git diff"""
-    try:
-        # Get the git diff for this specific file
-        diff_cmd = ["git", "diff", f"{base_commit}...{current_commit}", "--", file_path]
-        result = subprocess.run(diff_cmd, capture_output=True, text=True, cwd=get_repo_root())
-        
-        if result.returncode != 0:
-            print(f"::warning::Could not get git diff for {file_path}")
-            return extract_sql_queries(file_path)  # Fallback to all queries
-        
-        diff_content = result.stdout
-        
-        # Simple approach: if there are any changes in the file and it contains SQL blocks,
-        # validate all SQL blocks in the current version of the file
-        # This is more reliable than trying to parse complex diff output
-        
-        has_changes = any(line.startswith(('+', '-')) for line in diff_content.split('\n') 
-                         if line.strip() and not line.startswith(('+++', '---')))
-        
-        if has_changes:
-            # File has changes, extract all current SQL queries for validation
-            return extract_sql_queries(file_path)
-        
-        return []
-        
-    except Exception as e:
-        print(f"::error::Error extracting changed SQL queries from {file_path}: {e}")
-        # Fallback to extracting all SQL queries from the file
-        return extract_sql_queries(file_path)
+    # For now, simplify by validating all SQL in changed files
+    # This is more reliable than complex diff parsing
+    return extract_sql_queries(file_path)
 
 def extract_sql_queries(file_path):
     """Extract SQL code blocks from markdown files (fallback method)"""

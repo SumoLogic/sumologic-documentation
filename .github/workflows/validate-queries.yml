@@ -45,12 +45,9 @@ jobs:
           SQL_CHANGED=false
           while IFS= read -r file; do
             if [ -f "$file" ]; then
-              # Check if the diff contains changes to SQL code blocks
-              if git diff $BASE_COMMIT...${{ github.sha }} -- "$file" | grep -E "^[+-].*\`\`\`(sql|sumo)" > /dev/null; then
-                echo "SQL code block changes detected in: $file"
-                SQL_CHANGED=true
-              elif git diff $BASE_COMMIT...${{ github.sha }} -- "$file" | grep -E "^[+-].*[^`]" | grep -A 20 -B 5 "\`\`\`sql\|\`\`\`sumo" > /dev/null; then
-                echo "SQL code content changes detected in: $file"  
+              # Check if the file contains SQL code blocks AND has changes
+              if grep -q "\`\`\`sql\|\`\`\`sumo" "$file"; then
+                echo "File contains SQL blocks, validating: $file"
                 SQL_CHANGED=true
               fi
             fi
