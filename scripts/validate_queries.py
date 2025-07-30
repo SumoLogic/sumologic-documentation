@@ -3,6 +3,7 @@ import re
 import sys
 import os
 import json
+import subprocess
 import requests
 from pathlib import Path
 from datetime import datetime, timedelta
@@ -66,8 +67,66 @@ def get_changed_files(repo_root):
     print("::error::No Markdown files found in docs/ directory")
     return []
 
+def extract_changed_sql_queries(file_path, base_commit, current_commit):
+    """Extract only the SQL code blocks that were added/modified in the git diff"""
+    try:
+        # Get the git diff for this specific file
+        diff_cmd = ["git", "diff", f"{base_commit}...{current_commit}", "--", file_path]
+        result = subprocess.run(diff_cmd, capture_output=True, text=True, cwd=get_repo_root())
+        
+        if result.returncode != 0:
+            print(f"::warning::Could not get git diff for {file_path}")
+            return []
+        
+        diff_content = result.stdout
+        
+        # Extract added SQL blocks from the diff
+        added_sql_queries = []
+        
+        # Look for lines that start with + and contain SQL code blocks
+        lines = diff_content.split('\n')
+        i = 0
+        while i < len(lines):
+            line = lines[i]
+            
+            # Check if this is an added line with SQL code block start
+            if line.startswith('+') and ('```sql' in line.lower() or '```sumo' in line.lower()):
+                # Found start of an added SQL block
+                sql_lines = []
+                i += 1
+                
+                # Collect all lines until we find the closing ```
+                while i < len(lines):
+                    current_line = lines[i]
+                    
+                    # If it's a closing ``` on an added line, we're done
+                    if current_line.startswith('+') and '```' in current_line and current_line.strip() == '+```':
+                        break
+                    
+                    # If it's an added line with SQL content, add it
+                    if current_line.startswith('+'):
+                        # Remove the + prefix and add to SQL content
+                        sql_content = current_line[1:]  # Remove the '+' prefix
+                        sql_lines.append(sql_content)
+                    
+                    i += 1
+                
+                # Join the SQL lines and clean up
+                if sql_lines:
+                    sql_query = '\n'.join(sql_lines).strip()
+                    if sql_query and not sql_query.startswith('#') and not sql_query.startswith('//'):
+                        added_sql_queries.append(sql_query)
+            
+            i += 1
+        
+        return added_sql_queries
+        
+    except Exception as e:
+        print(f"::error::Error extracting changed SQL queries from {file_path}: {e}")
+        return []
+
 def extract_sql_queries(file_path):
-    """Extract SQL code blocks from markdown files"""
+    """Extract SQL code blocks from markdown files (fallback method)"""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -131,16 +190,35 @@ def validate_query_syntax(query):
     
     return errors
 
-def validate_file(file_path):
-    """Validate all SQL queries in a markdown file"""
+def get_git_commits():
+    """Get base and current commit from environment variables"""
+    base_commit = os.getenv('BASE_COMMIT', '')
+    current_commit = os.getenv('CURRENT_COMMIT', '')
+    
+    if not base_commit or not current_commit:
+        print("::warning::Git commit information not available, falling back to all queries validation")
+        return None, None
+    
+    return base_commit, current_commit
+
+def validate_file(file_path, base_commit=None, current_commit=None):
+    """Validate SQL queries in a markdown file"""
     print(f"🔍 Validating: {file_path}")
     
-    queries = extract_sql_queries(file_path)
+    # Try to get only changed queries if git info is available
+    if base_commit and current_commit:
+        queries = extract_changed_sql_queries(file_path, base_commit, current_commit)
+        query_type = "changed SQL queries"
+    else:
+        # Fallback to all queries in the file
+        queries = extract_sql_queries(file_path)
+        query_type = "SQL queries"
+    
     if not queries:
-        print(f"   ℹ️  No SQL queries found")
+        print(f"   ℹ️  No {query_type} found")
         return True
     
-    print(f"   📊 Found {len(queries)} SQL queries")
+    print(f"   📊 Found {len(queries)} {query_type}")
     
     all_valid = True
     for i, query in enumerate(queries, 1):
@@ -164,18 +242,28 @@ def main():
         print("::warning::No Markdown files to validate")
         sys.exit(0)
 
-    print(f"📋 Validating {len(changed_files)} files...")
+    # Get git commit information for diff-based validation
+    base_commit, current_commit = get_git_commits()
+    
+    if base_commit and current_commit:
+        print(f"� Using git diff mode: {base_commit}...{current_commit}")
+        print("�📋 Validating only added/modified SQL queries...")
+    else:
+        print("📋 Validating all SQL queries in changed files...")
     
     validation_results = []
     total_queries = 0
     
     for file_path in changed_files:
         if os.path.exists(file_path):
-            result = validate_file(file_path)
+            result = validate_file(file_path, base_commit, current_commit)
             validation_results.append((file_path, result))
             
             # Count queries for summary
-            queries = extract_sql_queries(file_path)
+            if base_commit and current_commit:
+                queries = extract_changed_sql_queries(file_path, base_commit, current_commit)
+            else:
+                queries = extract_sql_queries(file_path)
             total_queries += len(queries)
         else:
             print(f"::warning::File not found: {file_path}")
@@ -189,7 +277,10 @@ def main():
     failed_files = len(validation_results) - passed_files
     
     print(f"📁 Files processed: {len(validation_results)}")
-    print(f"📊 Total SQL queries: {total_queries}")
+    if base_commit and current_commit:
+        print(f"📊 Changed SQL queries: {total_queries}")
+    else:
+        print(f"📊 Total SQL queries: {total_queries}")
     print(f"✅ Files passed: {passed_files}")
     print(f"❌ Files failed: {failed_files}")
     
@@ -202,7 +293,10 @@ def main():
         print("\n::error::SQL query validation failed!")
         sys.exit(1)
     else:
-        print("\n🎉 All SQL queries passed validation!")
+        if base_commit and current_commit:
+            print("\n🎉 All changed SQL queries passed validation!")
+        else:
+            print("\n🎉 All SQL queries passed validation!")
         sys.exit(0)
 
 if __name__ == "__main__":

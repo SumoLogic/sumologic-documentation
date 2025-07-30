@@ -14,7 +14,7 @@ where [VALUE BOOLEAN EXPRESSION | REDUCER BOOLEAN EXPRESSION]
 ```
 ## Checking my PR:
 ```sql
-_collector="ABC2" | where type="web"
+_collector="ABC3" | where type="web"
 ```
 Where:
 
