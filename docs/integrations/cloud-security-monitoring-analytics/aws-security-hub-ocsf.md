@@ -248,7 +248,7 @@ Additionally, these dashboard highlights recently discovered findings and affect
 
 ### Compliance Summary
 
-The **AWS Security Hub - OCSF - Compliance Summary** dashboard provides a focused analysis of your AWS compliance posture, aggregating finding data across key compliance standards. The dashboard highlights the failures that occurrs across accounts, resources, and time, providing teams the visibility needed to assess audit readiness and take corrective action.
+The **AWS Security Hub - OCSF - Compliance Summary** dashboard provides a focused analysis of your AWS compliance posture, aggregating finding data across key compliance standards. The dashboard highlights the failures that occurs across accounts, resources, and time, providing teams the visibility needed to assess audit readiness and take corrective action.
 
 It surfaces trends in compliance violations, enabling you to monitor status changes, detect regressions, and evaluate severity distribution. You can also identify the top misconfigured resources and non-compliant AWS accounts, helping prioritize efforts to improve adherence to security frameworks.
 
