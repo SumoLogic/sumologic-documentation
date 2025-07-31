@@ -52,8 +52,8 @@ To configure a OneLogin source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Sub Domain**. Enter your [subdomain URL](#vendor-configuration).
-1. **Client ID**. Enter your [Client ID](#vendor-configuration).
-1. **Client Secret**. Enter your [Client Secret](#vendor-configuration).
+1. **Client ID**. Enter your [client ID](#vendor-configuration).
+1. **Client Secret**. Enter your [client secret](#vendor-configuration).
 1. **Polling Interval**. The polling interval is set for 24 hours by default and can be configured from a minimum of 1 hour to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the source, click **Save**.
