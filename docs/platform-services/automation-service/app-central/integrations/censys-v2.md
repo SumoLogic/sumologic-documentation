@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/censys.png')} alt="censys" width="100"/>
 
 ***Version: 2.3  
-Updated: Jul 31, 2024***
+Updated: Jul 31, 2025***
 
 Censys reduces your Internet attack surface by continually discovering unknown assets and helping remediate Internet facing risks.   
 
