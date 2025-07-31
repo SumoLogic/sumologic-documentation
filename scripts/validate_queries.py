@@ -100,17 +100,24 @@ def extract_changed_sql_queries(file_path, base_commit, current_commit):
         changed_queries = []
         lines = diff_content.split('\n')
         
+        # Look for SQL code blocks in the diff instead of individual lines
+        in_sql_block = False
+        current_block = []
+        
         for line in lines:
-            # Look for added lines that contain SQL-like content
-            if line.startswith('+') and not line.startswith('+++'):
-                content = line[1:].strip()  # Remove the '+' prefix
-                
-                # Check if this line looks like a SQL query
-                if content and any(keyword in content.lower() for keyword in [
-                    '_collector=', 'metric=', '| where', '| parse', '| count', 
-                    '| sum', '| avg', '| json', '| timeslice'
-                ]):
-                    changed_queries.append(content)
+            if line.startswith('+```sql') or line.startswith('+```sumo'):
+                in_sql_block = True
+                current_block = []
+            elif line.startswith('+```') and in_sql_block:
+                in_sql_block = False
+                if current_block:
+                    query_content = '\n'.join(current_block).strip()
+                    if query_content:
+                        changed_queries.append(query_content)
+                current_block = []
+            elif in_sql_block and line.startswith('+'):
+                content = line[1:]  # Remove the '+' prefix but keep whitespace
+                current_block.append(content)
         
         if changed_queries:
             print(f"📊 Found {len(changed_queries)} changed SQL queries in diff")
@@ -129,8 +136,8 @@ def extract_sql_queries(file_path):
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # Find SQL code blocks using regex
-        sql_pattern = r'```(?:sql|sumo)\s*(?:title="[^"]*")?\s*\n(.*?)```'
+        # Find SQL code blocks using regex - more precise pattern
+        sql_pattern = r'```(?:sql|sumo)(?:[^\n]*)\n(.*?)```'
         sql_blocks = re.findall(sql_pattern, content, re.DOTALL | re.IGNORECASE)
         
         queries = []
@@ -138,7 +145,10 @@ def extract_sql_queries(file_path):
             # Clean up the query
             query = block.strip()
             if query and not query.startswith('#') and not query.startswith('//'):
-                queries.append(query)
+                # Skip table content (lines that start and end with |)
+                lines = query.split('\n')
+                if not all(line.strip().startswith('|') and line.strip().endswith('|') for line in lines if line.strip()):
+                    queries.append(query)
         
         return queries
     except Exception as e:
