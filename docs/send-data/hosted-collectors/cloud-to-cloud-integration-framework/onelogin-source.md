@@ -16,7 +16,7 @@ OneLogin is a leading identity and access management (IAM) provider that offers 
 
 ## Data collected
 
-The data will be collected from OneLogin database using the following log:
+The data will be collected from the OneLogin database using the following log:
 
 | Polling Interval | Data |
 | :--- | :--- |
