@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/censys.png')} alt="censys" width="100"/>
 
 ***Version: 1.2  
-Updated: Jul 31, 2024***
+Updated: Jul 31, 2025***
 
 Search Censys for enrichment data during active investigation.
 
