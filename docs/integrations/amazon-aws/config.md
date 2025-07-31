@@ -154,16 +154,19 @@ To create a partition, follow the instructions to [Create a Partition](/docs/man
 
 Now that you have configured AWS Config, install the Sumo Logic App for AWS Config to take advantage of the pre-configured searches and dashboards to analyze your AWS Config data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
 ## Viewing AWS Config Dashboards
 
-This section describes the dashboards provided by the AWS Config app. For general information about dashboards, see [About Dashboards](/docs/dashboards/about).
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-The AWS Config app is an older application, implemented when Sumo dashboards could not be toggled back and forth between Live and Interactive mode. For this reason, the app provides two versions of the AWS Config Overview dashboard, one that runs in Live mode, and one that runs in Interactive mode.
+<ViewDashboards/>
 
+:::info
+The AWS Config app is an older application, implemented when Sumo Logic dashboards could not be toggled back and forth between Live and Interactive mode. For this reason, the app provides two versions of the AWS Config Overview dashboard, one that runs in Live mode, and one that runs in Interactive mode.
+:::
 
 ### AWS Config Overview
 

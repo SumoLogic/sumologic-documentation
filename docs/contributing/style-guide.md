@@ -439,6 +439,39 @@ _sourceCategory=reinvent/travel/checkout
 
 For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-features/code-blocks).
 
+### Import GitHub repo file
+
+To embed a code sample from a file in a GitHub repository, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
+
+This code references a json script file:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+<img src={useBaseUrl('img/contributing/json-ref-codeblock.png')} alt="JSON code snippet from GitHub" style={{border: '1px solid gray'}} width="700"/>
+
+</TabItem>
+<TabItem value="Result">
+
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.json
+```
+
+</TabItem>
+</Tabs>
+
+Optionally, you can:
+* Reference a specific range of code lines by appending `#L` with the line number or numbers at the end of the URL. For example, `https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.json#L4-L5`.
+* Add a title to the code block, such as `json reference title="Hello"`.
+
+You'll see this used in our [C2C source docs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
 ## Collapsible text blocks
 
@@ -724,13 +757,13 @@ You can use a link to a file embedding the entire file, or embed a range of code
   <TabItem value="Markdown">
 
   ```md
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
+  <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
   ```
 
   </TabItem>
   <TabItem value="Result">
 
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
+  <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
 
   </TabItem>
   </Tabs>
@@ -786,13 +819,13 @@ When adding an image to a bulleted or sequential list, include the image snippet
 <TabItem value="Markdown">
 
 ```md
-1. Here is a dinosaur.<br/><img src={useBaseUrl('img/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-1. Here is a dinosaur. <br/><img src={useBaseUrl('img/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
 
 </TabItem>
 </Tabs>
@@ -1240,7 +1273,7 @@ To add a text-only release note:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://help.sumologic.com/img/sumo-square.png    
+    image: https://help.sumologic.com/img/reuse/rss-image.jpg    
     ---
     ```
     * `title`. Title for release note that includes product or feature name.
@@ -1268,7 +1301,7 @@ To add release notes with images:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://help.sumologic.com/img/sumo-square.png
+    image: https://help.sumologic.com/img/reuse/rss-image.jpg
     ---
     ```
 1. Save the image to this folder and add them to the markdown file: `![alt text](image-name.png)`.

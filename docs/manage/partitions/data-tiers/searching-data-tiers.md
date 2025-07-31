@@ -23,19 +23,6 @@ import Iframe from 'react-iframe';
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/w0H8upLpCwU?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## About the _dataTier search modifier

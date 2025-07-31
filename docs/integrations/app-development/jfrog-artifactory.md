@@ -186,7 +186,7 @@ If you do not have an existing Sumo Logic account and it is your first time here
 If you already have an existing Sumo Logic account created outside of Artifactory Online:
 
 1. Select **Connection URL** and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) in the **Connection URL** text box. <br/>![jfrog 7](/img/connection-and-integration/jfrog7.png)
-1. Log in to Sumo Logic and verify that your logs are flowing in as expected.
+1. Sign in to Sumo Logic and verify that your logs are flowing in as expected.
 1. Go to our **Apps Catalog**, search for **Artifactory**, then install the [Sumo Logic app for Artifactory 7](/docs/integrations/app-development/jfrog-artifactory) to get instant insight into your Artifactory logs. 
 
 ### If you have an existing connection

@@ -33,7 +33,7 @@ We'll show a simple example of running a single collector, on a single machine, 
 
 In this section, you'll install Sumo Logic’s OpenTelemetry collector on your machine, add a configuration file to describe the metric you want to collect, then start running the collector. The data will appear in the Sumo Logic UI instantly. As a use case, we'll collect memory usage information from a host and send that to Sumo Logic for storage and analysis.
 
-### Step 1: Log in to Sumo
+### Step 1: Sign in to Sumo
 
 [Sign in](https://service.sumologic.com/ui/) to your Sumo Logic as you normally would.
 

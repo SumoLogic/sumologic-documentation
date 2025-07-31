@@ -49,12 +49,26 @@ Using the integration with EC2, you can enrich incidents with specific EC2 data,
 ## Configure AWS EC2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-ec2-configuration.png')} style={{border:'1px solid gray'}} alt="AWS EC2 configuration" width="400"/>
+* <IntegrationLabel/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSRegions/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
-import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-ec2-configuration.png')} style={{border:'1px solid gray'}} alt="AWS EC2 configuration" width="400"/>
 
 <IntegrationsAuthAWS/>
 

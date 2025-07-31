@@ -31,18 +31,6 @@ Learn how to create a FER through our video, "Creating a Field Extraction Rule".
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/QWm8hR7SmxE"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 :::
 
 ## Creating a new Field Extraction Rule

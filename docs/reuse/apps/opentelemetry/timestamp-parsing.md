@@ -1,0 +1,1 @@
+**Timestamp Parsing**. You can configure timestamp parsing for logs ingested using this source template. For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats for the OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference).

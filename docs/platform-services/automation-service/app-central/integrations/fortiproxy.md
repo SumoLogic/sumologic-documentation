@@ -36,8 +36,21 @@ Fortinet FortiProxy is a secure web proxy that protects employees against intern
 ## Configure FortiProxy in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your FortiProxy hostname.
+
+* **API Token**. Enter a FortiProxy API [token](https://docs.fortinet.com/document/fortiproxy/7.4.4/administration-guide/532254/registering-and-activating-a-hard-token).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fortiproxy-configuration.png')} style={{border:'1px solid gray'}} alt="FortiProxy configuration" width="400"/>
 

@@ -123,11 +123,15 @@ These CWV KPIs are captured and displayed on Overview dashboards for Document Lo
 
 ## XHR monitoring metrics
 
-An XML HTTP Request (XHR) is a form of communication between the browser and the application backend without reloading the page. A typical example is when a page needs to update a price ticker automatically or after pressing the “update price” button next to it.
+:::note
+Currently, XHR metrics extraction in RUM is only supported for applications that use the [`fetch` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to perform XHR calls. If your application uses [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), metrics may not be collected at this time. A fix to support `XMLHttpRequest`-based calls is in progress and expected to roll out in mid 2025. We will update this page when that support becomes available.
+:::
 
-The XHR technique is frequently used in _single-page apps_ &#8212; apps that load the page once and then provide all interaction and navigation without loading additional documents. These pages can generate one or more XHR requests, typically in the form of HTTP POSTs/GETs, related to various user actions on a page. Sumo Logic provides the following monitoring coverage for XHR interactions:
+An XMLHttpRequest (XHR) is a way for browsers to communicate with a backend server without reloading the page. For example, a page may use XHR to update a price ticker automatically or after clicking an "Update Price" button.
 
-Pages can generate one or more XHR requests, typically in the form of HTTP POSTs, related to various user actions on a page. The following performance timings are measured:
+XHR is commonly used in *single-page applications* (SPAs), which load once and then handle all interactions without refreshing the page. These apps often generate multiple XHR requests—typically HTTP `POST` or `GET` calls—based on user actions.
+
+Sumo Logic provides monitoring coverage for XHR interactions, including the following performance timings:
 
 ### `browser_time_to_first_xhr`
 

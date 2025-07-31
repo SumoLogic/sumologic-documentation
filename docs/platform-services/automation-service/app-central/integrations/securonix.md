@@ -24,8 +24,27 @@ Query event/alert data and user details from Securonix.
 ## Configure Securonix in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your Securonix [server URL](https://documentation.securonix.com/bundle/securonix-cloud-user-guide/page/content/settings-application-settings.htm), for example, `https://10.0.0.21:8443`.
+
+* **Username**. Enter the username of a Securonix admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+
+* **Tenant**. Enter your Securonix [tenant name](https://documentation.securonix.com/bundle/securonix-cloud-user-guide/page/content/settings-hadoop-tenant-details.htm).
+
+* **Timezone**. Select your timezone.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/securonix-configuration.png')} style={{border:'1px solid gray'}} alt="Securonix configuration" width="400"/>
 

@@ -11,7 +11,7 @@ description: The Confluent Cloud Metrics source aims to collect metric data from
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/confluent-cloud-metrics.png')} alt="icon" width="160"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="icon" width="160"/>
 
 Confluent is a software company that helps organizations manage, deploy, and scale real-time data infrastructure, enabling businesses to build real-time applications and derive insights from data efficiently.
 Confluent Cloud is a scalable, fully managed streaming data service based on Apache Kafka®. It offers a web interface called the Cloud Console for managing resources, settings, and billing, along with a local Command Line Interface (CLI) and REST APIs to create and manage Kafka topics. This integration aims to collect metric data in the Prometheus format from the Confluent Cloud Metrics platform and send them to Sumo Logic.
@@ -44,8 +44,8 @@ To configure a Confluent Cloud Metrics source:
 1. Enter a **Name** for the source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **API Key ID**. Enter the Client ID collected from the [vendor configuration](#vendor-configuration). For example, `U5XXXYZYGAXXXFRZ`.
 1. **API Secret**. Enter the Client Secret collected from the [vendor configuration](#vendor-configuration). For example, `psYDINXXXG9eYi9hF/X20SZAI4YEn5IZ0cXXXuZ556WIbKYvHPHSCTXXXyF`.
 1. **Resource Filters**. Select the checkbox to collect metrics for the required resources, and then enter the ID of the relevant resource to export metrics.

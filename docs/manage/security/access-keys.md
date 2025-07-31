@@ -9,8 +9,42 @@ import Iframe from 'react-iframe';
 In Sumo Logic, you'll need an access key to:
 
 * **Register new Collectors**. When you install a collector, in addition to having a role that grants you the **Manage Collectors** capability, you must supply an access key. You can use a different access key for each collector, or use the same access key for multiple collectors. The only time a collector uses the access key is at installation, so if a key is deleted after a collector has been set up, the collector isn't affected.
-* **Use Sumo Logic APIs**. You must supply an access key to use the Sumo Logic APIs. See [API Authentication](/docs/api/getting-started#authentication) for details.
+* **Use Sumo Logic APIs**. You must supply an access key to use the Sumo Logic APIs. See [API Authentication](/docs/api/about-apis/getting-started#authentication) for details.
 * **Run scripts or automation**. Create access keys to provide authentication for scripts or automation.
+
+:::sumo Micro Lesson
+Watch this micro lesson to learn about access keys.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/5334f8q4os?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Managing Access Keys (Conceptual)"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+:::
+
+:::sumo Micro Lesson
+Watch this micro lesson to learn how to create access keys.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/01escgcbfa?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Managing Access Keys (How To)"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+:::
+
+
 
 ## Prerequisites
 

@@ -20,7 +20,7 @@ To add an image, save the .png file with a simple name to the `/static/img` fold
 
 Example:
 
-![Sumo Logic logo](/img/sumo-square.png)
+![Sumo Logic logo](/img/reuse/sumo-square.png)
 -->
 
 ### Instructions
@@ -31,7 +31,7 @@ Always use `1.` to start your instructions. You do not need to actually number t
 1. Click **Collections**, then **Sources** tab.
 1. Next step, just write it out.
     * Bullet list just tab and use `*` or `1.`.
-    * Next bullet.<br/>![Sumo Logic logo](/img/sumo-square.png)
+    * Next bullet.<br/>![Sumo Logic logo](/img/reuse/sumo-square.png)
 1. The numbers continue with content indented above!
 
 Here is an example table:

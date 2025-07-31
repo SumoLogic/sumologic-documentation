@@ -28,16 +28,29 @@ Updated: Jul 18, 2023***
 ## Akenza configuration
 
 1. Log in to the Akenza platform with your email and password and follow the link for configuration.
-1. Create API key from GUI of Akenza by locating to API key and by clicking on the button Generate API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/akenza/akenza-1.png')} style={{border:'1px solid gray'}} alt="akenza-1" width="800"/>
+1. Create an [API key](https://docs.akenza.io/akenza.io/get-started/reference/api-documentation#api-keys) in the Akenza UI by locating an API key and clicking on the button **Generate API Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/akenza/akenza-1.png')} style={{border:'1px solid gray'}} alt="akenza-1" width="800"/>
 
 ## Configure Akenza in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-   * **URL**. Default value for API URL is 'https://api.akenza.io'
-   * **Api Key**. The API Key you created earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/Akenza-configuration.png')} style={{border:'1px solid gray'}} alt="Akenza configuration" width="400"/>
+* <IntegrationLabel/>
+* **URL**. Enter the Akenza API URL. The default value is `https://api.akenza.io`
+
+* **API Key**. Enter the API key you created [above](#akenza-configuration).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/Akenza-configuration.png')} style={{border:'1px solid gray'}} alt="Akenza configuration" width="400"/>
 
 For information about Akenza, see [Akenza documentation](https://docs.akenza.io/akenza.io/get-started/reference/api-documentation).
 

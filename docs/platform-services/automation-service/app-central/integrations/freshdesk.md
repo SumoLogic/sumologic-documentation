@@ -1,5 +1,5 @@
 ---
-title: FreshDesk
+title: Freshdesk
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: Jun 30, 2023***
 
-Interact with FreshDesk contacts and tickets.
+Interact with Freshdesk contacts and tickets.
 
 ## Actions
 
@@ -23,20 +23,35 @@ Interact with FreshDesk contacts and tickets.
 * **Get All Tickets** (*Enrichment*) - Get all tickets.
 * **Add Reply** (*Containment*) - Add a replay to an existing conversation.
 * **Create Note** (*Containment*) - Create a new note.
-* **Create Ticket On FreshDesk** (*Containment*) - Create a new ticket in FreshDesk.
+* **Create Ticket On Freshdesk** (*Containment*) - Create a new ticket in Freshdesk.
 * **Create Ticket With Attachment** (*Containment*) - Create a new ticket with an attachment.
 * **Delete Ticket** (*Containment*) - Delete an existing ticket.
-* **Update Ticket On FreshDesk** (*Containment*) - Update a specific ticket in FreshDesk.
+* **Update Ticket On Freshdesk** (*Containment*) - Update a specific ticket in Freshdesk.
 
-## Configure FreshDesk in Automation Service and Cloud SOAR
+## Configure Freshdesk in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Domain**. Enter your Freshdesk [domain](https://crmsupport.freshworks.com/support/solutions/articles/50000004766-how-to-find-the-freshchat-domain-id).
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/freshdesk-configuration.png')} style={{border:'1px solid gray'}} alt="FreshDesk configuration" width="400"/>
+* **Username**. Enter the username of a Freshdesk admin user authorized to authenticate the integration. 
 
-For information about FreshDesk, see [FreshDesk documentation](https://developers.freshdesk.com/).
+* **Password**. Enter the password for the admin user.
+
+* **API Key**. Enter a Freshdesk [API key](https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key).
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/freshdesk-configuration.png')} style={{border:'1px solid gray'}} alt="Freshdesk configuration" width="400"/>
+
+For information about Freshdesk, see [Freshdesk documentation](https://developers.freshdesk.com/).
 
 ## Change Log
 
