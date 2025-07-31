@@ -57,14 +57,27 @@ def get_changed_files(repo_root):
         except Exception as e:
             print(f"::warning::Couldn't read PR data: {e}")
 
-    # Fallback: Scan docs directory
-    docs_dir = repo_root / "docs"
-    if docs_dir.exists():
-        md_files = list(docs_dir.rglob("*.md"))
-        print(f"🔄 Scanning {len(md_files)} docs files")
-        return [str(f) for f in md_files]
+    # Use git diff to find changed files as fallback
+    try:
+        base_commit = os.getenv('BASE_COMMIT')
+        current_commit = os.getenv('CURRENT_COMMIT')
+        
+        if base_commit and current_commit:
+            print(f"🔍 Using git diff fallback: {base_commit}...{current_commit}")
+            result = subprocess.run([
+                'git', 'diff', '--name-only', '--diff-filter=AM',
+                f'{base_commit}...{current_commit}', '--', '**/*.md'
+            ], capture_output=True, text=True, cwd=repo_root)
+            
+            if result.returncode == 0:
+                files = [line.strip() for line in result.stdout.split('\n') if line.strip()]
+                if files:
+                    print(f"� Found {len(files)} changed files via git diff")
+                    return [str(repo_root / f) for f in files]
+    except Exception as e:
+        print(f"::warning::Git diff fallback failed: {e}")
 
-    print("::error::No Markdown files found in docs/ directory")
+    print("::warning::No changed files detected, exiting successfully")
     return []
 
 def extract_changed_sql_queries(file_path, base_commit, current_commit):
