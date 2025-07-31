@@ -21,9 +21,31 @@ def debug_environment():
     print("::group::⚙️ Environment Debug")
     print(f"📂 Repo root: {repo_root}")
     print(f"📂 Working dir: {os.getcwd()}")
+    print(f"📂 BASE_COMMIT: {os.getenv('BASE_COMMIT', 'NOT SET')}")
+    print(f"📂 CURRENT_COMMIT: {os.getenv('CURRENT_COMMIT', 'NOT SET')}")
+    print(f"📂 GITHUB_EVENT_PATH: {os.getenv('GITHUB_EVENT_PATH', 'NOT SET')}")
+    
+    # Check if changed_files.txt exists and show content
+    changed_files_txt = repo_root / "changed_files.txt"
+    if changed_files_txt.exists():
+        print(f"📂 changed_files.txt exists, size: {changed_files_txt.stat().st_size} bytes")
+        try:
+            with open(changed_files_txt) as f:
+                content = f.read()
+                lines = content.strip().split('\n') if content.strip() else []
+                print(f"📂 changed_files.txt contains {len(lines)} lines")
+                if lines:
+                    print("📂 First 5 files:")
+                    for line in lines[:5]:
+                        print(f"     {line}")
+        except Exception as e:
+            print(f"📂 Error reading changed_files.txt: {e}")
+    else:
+        print("📂 changed_files.txt does not exist")
+    
     print("\n📁 Directory Structure:")
     os.system(f"find {repo_root} -maxdepth 3 -type d | sort")
-    print("\n📝 Markdown Files:")
+    print("\n📝 Markdown Files (sample):")
     os.system(f"find {repo_root} -name '*.md' | head -n 20")
     print("::endgroup::")
     return repo_root
@@ -247,7 +269,15 @@ def main():
     changed_files = get_changed_files(repo_root)
 
     if not changed_files:
-        print("::warning::No Markdown files to validate")
+        print("::warning::No Markdown files to validate - exiting successfully")
+        print("\n" + "="*60)
+        print("📊 VALIDATION SUMMARY")
+        print("="*60)
+        print("📁 Files processed: 0")
+        print("📊 Changed SQL queries: 0") 
+        print("✅ Files passed: 0")
+        print("❌ Files failed: 0")
+        print("\n🎉 No SQL query changes to validate!")
         sys.exit(0)
 
     # Get git commit information for diff-based validation
