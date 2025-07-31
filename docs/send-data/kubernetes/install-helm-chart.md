@@ -248,6 +248,12 @@ otellogs:
       changeowner:
         securityContext:
           privileged: true
+opentelemetry-operator:
+  admissionWebhooks:
+    create: false
+  manager:
+    env:
+      ENABLE_WEBHOOKS: "false"
 tailing-sidecar-operator:
   scc:
     create: true
