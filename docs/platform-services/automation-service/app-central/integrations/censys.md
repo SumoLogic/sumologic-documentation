@@ -49,4 +49,4 @@ For information about Censys, see [Censys documentation](https://docs.censys.com
 
 * January 31, 2020 - First upload
 * July 11, 2023 (v1.1) - Updated the integration with Environmental Variables
-* July 31, 2024 (v1.2) - Updated the integration logo.
+* July 31, 2025 (v1.2) - Updated the integration logo.
