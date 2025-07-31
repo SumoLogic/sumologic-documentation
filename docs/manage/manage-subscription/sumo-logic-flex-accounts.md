@@ -64,85 +64,85 @@ The following table provides a summary list of key features by Flex package acco
 
 | Feature | Free | Trial | Essentials | Enterprise Suite Flex |
 |:------- | :--- | :---- | :------------- | :------------- |
-| Advanced Span Analytics |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Anomaly Alerting |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Alert Response | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Anomaly Detection |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Anomaly Rules |  | | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| APM and Distributed Tracing |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Application Observability | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Audit Index | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Automated Log-level Detection |  | | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Automated Playbooks | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Automated Remediation |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| AWS CloudTrail and Amazon Guard Duty Threat Benchmarking | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Case Manager | |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Cloud Infrastructure Security |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Cloud Log Management | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Advanced Span Analytics |  | &#10003; | | &#10003; |
+| Anomaly Alerting |  | &#10003; | | &#10003; |
+| Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | &#10003; | &#10003; | | &#10003; |
+| Alert Response | &#10003; | &#10003; | | &#10003; |
+| Anomaly Detection |  | &#10003; | | &#10003; |
+| Anomaly Rules |  | | | &#10003; |
+| APM and Distributed Tracing |  | &#10003; | | &#10003; |
+| Application Observability | &#10003; | &#10003; | | &#10003; |
+| Audit Index | &#10003; | &#10003; | &#10003; | &#10003; |
+| Automated Log-level Detection |  | | | &#10003; |
+| Automated Playbooks | &#10003; | &#10003; | | &#10003; |
+| Automated Remediation |  | &#10003; | | &#10003; |
+| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) | &#10003; | &#10003; | | &#10003; |
+| AWS CloudTrail and Amazon Guard Duty Threat Benchmarking | | &#10003; | | &#10003; |
+| Case Manager | |  | | &#10003; |
+| Cloud Infrastructure Security |  | &#10003; | | &#10003; |
+| Cloud Log Management | &#10003; | &#10003; | | &#10003; |
 | Cloud SIEM |  |  | | Activation required* |
-| Cloud Security Posture Monitoring |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Cloud Security Posture Monitoring |  | &#10003; | | &#10003; |
 | Cloud SOAR |  |  | | Activation required* |
-| Collector Management API | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Compliance and Audit Logging |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Threat Intelligence |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Customizable Dashboards | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Data Forwarding | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Data Volume Index | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Enterprise Audit and Logging Dashboards |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Entity Normalization |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Entity Relationship Graph |  | | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Entity Timeline |  |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Field Extraction | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Geo IP Lookups | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Global Intelligence Service apps |  |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Historical and Live Streaming Dashboards | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Ingest Budgets |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Insight Global Confidence Scores |  |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Insight Rules Engine (including 900+ out-of-the-box rules) |  |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Insight Trainer |  |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Kubernetes Observability | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Live Tail for Streaming Logs | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| LogReduce©, LogCompare, and LogExplain | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Log Data Continuous Volume | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |
-| Log Data Frequent Tier Volume | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |
-| Log Data storage  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Log Search and Visualizations | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Log Search API |  |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Lookup Tables |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Management APIs | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Metrics | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Metrics based SLOs |  | | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Metrics data retention | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Metrics Predict Operators |  |  | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Metrics volume | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| MITRE ATT&CK Coverage Explorer |  | | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Monitors | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Multi-Cloud Observability (AWS, Azure GCP) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| OTel Data Onboarding | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| OTel for K8s Logs and Events |  |  | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Partitions | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| PCI Compliance Apps and Dashboards for Audit Readiness | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Playbooks (including complete Sumo Logic playbook catalog) |  |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Predictive Analytics and Outlier Detection | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Progressive Automation |  |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Real User Monitoring (RUM) |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Reliability Management (SLIs/SLOs) |  | | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Risk Assessment |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Scheduled Alert Muting | |  | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Scheduled Views | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Service Maps |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Single sign-on (SSO) with SAML | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Software Development Optimization | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Sumo Logic Apps | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Supervised Active Intelligence |  |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Support | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Traces | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/><br/>Up to 1.5GB per day* | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/><br/>Up to 5GB per day | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/><br/>5GB per day| <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/><br/>Up to 5GB per day |
-| Usage Management - Advanced |  |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Usage Management - Basic | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| User and Role APIs | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <br/>Up to 5GB per day |
-| War Room | |  | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Collector Management API | &#10003; | &#10003; | &#10003; | &#10003; |
+| Compliance and Audit Logging |  | &#10003; | | &#10003; |
+| Threat Intelligence |  | &#10003; | | &#10003; |
+| Customizable Dashboards | &#10003; | &#10003; | | &#10003; |
+| Data Forwarding | | &#10003; | &#10003; | &#10003; |
+| Data Volume Index | | &#10003; | &#10003; | &#10003; |
+| Enterprise Audit and Logging Dashboards |  | &#10003; | | &#10003; |
+| Entity Normalization |  | &#10003; | | &#10003; |
+| Entity Relationship Graph |  | | | &#10003; |
+| Entity Timeline |  |  | | &#10003; |
+| Field Extraction | &#10003; | &#10003; | &#10003; | &#10003; |
+| Geo IP Lookups | | &#10003; | | &#10003; |
+| Global Intelligence Service apps |  |  | | &#10003; |
+| Historical and Live Streaming Dashboards | &#10003; | &#10003; | | &#10003; |
+| Ingest Budgets |  | &#10003; | | &#10003; |
+| Insight Global Confidence Scores |  |  | | &#10003; |
+| Insight Rules Engine (including 900+ out-of-the-box rules) |  |  | | &#10003; |
+| Insight Trainer |  |  | | &#10003; |
+| Kubernetes Observability | &#10003; | &#10003; | | &#10003; |
+| Live Tail for Streaming Logs | &#10003; | &#10003; | | &#10003; |
+| LogReduce©, LogCompare, and LogExplain | &#10003; | &#10003; | &#10003; | &#10003; |
+| Log Data Continuous Volume | &#10003; | &#10003; | &#10003; |  |
+| Log Data Frequent Tier Volume | | &#10003; | &#10003; |  |
+| Log Data storage  | &#10003; | &#10003; | &#10003; | &#10003; |
+| Log Search and Visualizations | &#10003; | &#10003; | | &#10003; |
+| Log Search API |  |  | | &#10003; |
+| Lookup Tables |  | &#10003; | &#10003; | &#10003; |
+| Management APIs | &#10003; | &#10003; | | &#10003; |
+| Metrics | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics based SLOs |  | | | &#10003; |
+| Metrics data retention | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics Predict Operators |  |  | | &#10003; |
+| Metrics volume | &#10003; | &#10003; | &#10003; | &#10003; |
+| MITRE ATT&CK Coverage Explorer |  | | | &#10003; |
+| Monitors | &#10003; | &#10003; | &#10003; | &#10003; |
+| Multi-Cloud Observability (AWS, Azure GCP) | &#10003; | &#10003; | | &#10003; |
+| OTel Data Onboarding | &#10003; | &#10003; | | &#10003; |
+| OTel for K8s Logs and Events |  |  | | &#10003; |
+| Partitions | &#10003; | &#10003; | &#10003; | &#10003; |
+| PCI Compliance Apps and Dashboards for Audit Readiness | | &#10003; | | &#10003; |
+| Playbooks (including complete Sumo Logic playbook catalog) |  |  | | &#10003; |
+| Predictive Analytics and Outlier Detection | &#10003; | &#10003; | | &#10003; |
+| Progressive Automation |  |  | | &#10003; |
+| Real User Monitoring (RUM) |  | &#10003; | &#10003; | &#10003; |
+| Reliability Management (SLIs/SLOs) |  | | | &#10003; |
+| Risk Assessment |  | &#10003; | | &#10003; |
+| Scheduled Alert Muting | |  | | &#10003; |
+| Scheduled Views | &#10003; | &#10003; | &#10003; | &#10003; |
+| Service Maps |  | &#10003; | | &#10003; |
+| Single sign-on (SSO) with SAML | &#10003; | &#10003; | &#10003; | &#10003; |
+| Software Development Optimization | &#10003; | &#10003; | | &#10003; |
+| Sumo Logic Apps | &#10003; | &#10003; | &#10003; | &#10003; |
+| Supervised Active Intelligence |  |  | | &#10003; |
+| Support | &#10003; | &#10003; | &#10003; | &#10003; |
+| Traces | &#10003;<br/>Up to 1.5GB per day* | &#10003;<br/>Up to 5GB per day | &#10003;<br/>5GB per day| &#10003;<br/>Up to 5GB per day |
+| Usage Management - Advanced |  |  | | &#10003; |
+| Usage Management - Basic | &#10003; | &#10003; | | &#10003; |
+| User and Role APIs | &#10003; | &#10003; | &#10003; | <br/>Up to 5GB per day |
+| War Room | |  | | &#10003; |
 
 \* Contact your account manager to customize your account to meet your organization's needs.
 

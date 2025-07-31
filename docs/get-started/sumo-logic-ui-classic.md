@@ -90,14 +90,14 @@ The following table lists the options available for the Search, Metrics, and Liv
 
 | Option | Search tab  | Metrics tab  | Live Tail tab |
 |:--|:--|:--|:--|
-| Pin | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | — | — |
-| Rename | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/>  |
-| Duplicate | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/>  |
-| Open a New Browser Tab | — | — | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/>  |
-| Close | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Close Other Tabs | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/>  |
-| Close All Tabs | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/>  |
-| Close Tabs to the Right | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Pin | &#10003; | — | — |
+| Rename | &#10003; | &#10003; | &#10003;  |
+| Duplicate | &#10003; | &#10003; | &#10003;  |
+| Open a New Browser Tab | — | — | &#10003;  |
+| Close | &#10003; | &#10003; |  &#10003; |
+| Close Other Tabs | &#10003; | &#10003; | &#10003;  |
+| Close All Tabs | &#10003; | &#10003; | &#10003;  |
+| Close Tabs to the Right | &#10003; | &#10003; | &#10003; |
 
 ## Mastering everyday tasks
 

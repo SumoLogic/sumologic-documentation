@@ -4,8 +4,6 @@ title: Kubernetes Fluentd plugin
 description: Information on using the Sumo Kubernetes Fluentd plugin to collect logs from Kubernetes.
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 :::danger solution deprecated
 The configuration described on this page is deprecated. We recommend using our [comprehensive Kubernetes solution](/docs/observability/kubernetes) instead.  
 :::
@@ -129,15 +127,15 @@ Fluentd sources.
 
 | **Environment Variable** | **Containers** | **Docker** | **Kubernetes** | **Systemd** |
 |:--------------------------|:----------------|:----------------|:----------------|:-------------|
-| `EXCLUDE_CONTAINER_REGEX`  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |  |  |
-| `EXCLUDE_FACILITY_REGEX`   |  |  |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| `EXCLUDE_HOST_REGEX` | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| `EXCLUDE_NAMESPACE_REGEX`  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |
-| `EXCLUDE_PATH` | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |
-| `EXCLUDE_PRIORITY_REGEX`   |  |  |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| `EXCLUDE_POD_REGEX` | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |  |  |
-| `EXCLUDE_UNIT_REGEX` |  |  |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| `TIME_KEY` | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  |  |  |
+| `EXCLUDE_CONTAINER_REGEX`  | &#10003; |  |  |  |
+| `EXCLUDE_FACILITY_REGEX`   |  |  |  | &#10003; |
+| `EXCLUDE_HOST_REGEX` | &#10003; |  |  | &#10003; |
+| `EXCLUDE_NAMESPACE_REGEX`  | &#10003; |  | &#10003; |  |
+| `EXCLUDE_PATH` | &#10003; | &#10003; | &#10003; |  |
+| `EXCLUDE_PRIORITY_REGEX`   |  |  |  | &#10003; |
+| `EXCLUDE_POD_REGEX` | &#10003; |  |  |  |
+| `EXCLUDE_UNIT_REGEX` |  |  |  | &#10003; |
+| `TIME_KEY` | &#10003; |  |  |  |
 
 
 ### Override environment variables using annotations

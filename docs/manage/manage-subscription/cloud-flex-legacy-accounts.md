@@ -4,8 +4,6 @@ title: Cloud Flex Legacy Accounts
 description: Learn how to view information on Cloud Flex legacy accounts and intuitively monitor usage and manage account costs.
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 :::note legacy account type
 We recommend transitioning to a our newer [Flex Plan](/docs/manage/manage-subscription/sumo-logic-flex-accounts/) for the newest features and enhanced functionality.
 :::
@@ -32,30 +30,30 @@ The following table provides a summary list of key features by package accounts.
 
 | Feature | Free | Trial | Professional | Enterprise |
 |:-- | :-- | :-- | :-- | :-- |
-| Audit Index |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Audit Event Index |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| [Collector Management API](/docs/api/collector-management) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Audit Index |  | &#10003; | &#10003; | &#10003; |
+| Audit Event Index |  | &#10003; |  | &#10003; |
+| [Collector Management API](/docs/api/collector-management) | &#10003; | &#10003; | &#10003; | &#10003; |
 | Dashboards - Live Mode  | 7 days | 30 days | 30 days | 30 days |
-| [Data Forwarding](/docs/manage/data-forwarding) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| [Field Extraction](/docs/manage/field-extractions) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) |  |  |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Log Data retention (Classic Accounts) | 7 days | 30 days | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Log Data storage (Cloud Flex Accounts) | 4GB	 | 30GB | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Log Data volume | 500MB per day | 1GB per day* | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| [LogReduce](/docs/search/behavior-insights/logreduce)  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| [Data Forwarding](/docs/manage/data-forwarding) | &#10003; | &#10003; | &#10003; | &#10003; |
+| [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) | &#10003; | &#10003; | &#10003; | &#10003; |
+| [Field Extraction](/docs/manage/field-extractions) | &#10003; | &#10003; | &#10003; | &#10003; |
+| [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) |  |  |  | &#10003; |
+| Log Data retention (Classic Accounts) | 7 days | 30 days | &#10003; | &#10003; |
+| Log Data storage (Cloud Flex Accounts) | 4GB	 | 30GB | &#10003; | &#10003; |
+| Log Data volume | 500MB per day | 1GB per day* | &#10003; | &#10003; |
+| [LogReduce](/docs/search/behavior-insights/logreduce)  | &#10003; | &#10003; | &#10003; | &#10003; |
 | [Lookup Tables](/docs/search/lookup-tables) | none | Varies by the  account type being trialed | 10 tables per org | 100 tables per org |
-| Metrics |   | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Metrics data retention |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Metrics data retention |   | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| [Partitions](/docs/manage/partitions) | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| SAML |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Scheduled Views |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Search Job API |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Support |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Sumo Logic Apps | QuickStart only | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Users (Classic Accounts) | Three users | 20 users* | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| User and Role APIs | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Metrics |   | &#10003; | &#10003; | &#10003; |
+| Metrics data retention |  | &#10003; | &#10003; | &#10003; |
+| Metrics data retention |   | &#10003; | &#10003; | &#10003; |
+| [Partitions](/docs/manage/partitions) | | &#10003; | &#10003; | &#10003; |
+| SAML |  | &#10003; | &#10003; | &#10003; |
+| Scheduled Views |  | &#10003; | &#10003; | &#10003; |
+| Search Job API |  | &#10003; | &#10003; | &#10003; |
+| Support |  | &#10003; | &#10003; | &#10003; |
+| Sumo Logic Apps | QuickStart only | &#10003; | &#10003; | &#10003; |
+| Users (Classic Accounts) | Three users | 20 users* | &#10003; | &#10003; |
+| User and Role APIs | &#10003; | &#10003; | &#10003; | &#10003; |
 
 \* Contact [Sumo Logic Sales](mailto:sales@sumologic.com) to customize your account to meet your organization's needs.
 
@@ -166,7 +164,7 @@ The following visual indicators apply:
 
 To switch between views and time interval displays, do the following:
 
-1. Sign in to Sumo Logic. 
+1. Sign in to Sumo Logic.
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. <br/>The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics. <br/>![CloudFlex-AccountPage.png](/img/manage/subscriptions/pqs.png)
 1. To change the type of analytics you are viewing, in the **Usage (Daily Capacity)** panel click the arrow next to the view name and select the analytics type from the dropdown list. The display data changes accordingly. Repeat as needed to monitor all the areas of your account usage.
 1. To view data from a different billing period, click the arrow next the the **Billing period** and choose another period from the dropdown list.<br/>![CloudFlex_Usage_BillingPeriod_menu.png](/img/manage/subscriptions/uage-billing-period.png)

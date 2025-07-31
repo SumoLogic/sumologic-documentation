@@ -31,29 +31,29 @@ Cloud SOAR also offers many more features than the Automation Service, including
 
 | Feature | Automation<br/>Service | Cloud SOAR |
 | :-- | :-- | :-- |
-| App Central <br/>- Integrations <br/>- Playbooks | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Automation (full features) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | 
-|  Automation Bridge | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | 
-| Integration with Cloud SIEM and Log Analytics | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Integrations management | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Open Integration Framework (OIF)<br/>- Custom docker images for action execution<br/>- Custom integration capabilities<br/>- Integration Builder (almost no-code) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Playbooks<br/>- Execution in the cloud (without using an Automation Bridge)<br/>- Execution in local network with an Automation Bridge<br/>- Management<br/>- Slack integration for node activation | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Advanced automation capabilities <br/>- Daemons <br/>- Triggers | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Automation rule definition |  |  <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | 
-| Average Phase Duration |  | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | 
-| Cases <br/>- Attachments<br/>- Bulk actions<br/>- Cloning<br/>- Collaboration ( Notes, Slack, Task)<br/>- Contextual hints while writing a search string<br/>- Fields customization<br/>- Filters with advanced search bar<br/>- Incident attachments (files)<br/>- Label configuration<br/>- Manual creation<br/>- Online/offline search<br/>- Over time<br/>- Overview<br/>- Ownership and user group management<br/>- Selection of case properties to display<br/>- Statistics<br/>- Template<br/>- War Room | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Dashboards <br/>- Cloning<br/>- Multiple<br/>- Preview while customizing page<br/>- Public/private | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Entities<br/>- Harvesting<br/>- Manual creation | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Data can be shown with:<br/>- Filtering (with query, bookmarks, and via search bar)<br/>- Graphs<br/>- Placeholders/tags <br/>- Tables<br/>- Text | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Flexible layout with drag and drop | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Logo configuration | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Metrics for usage and adoption | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Reports<br/>- Create starting from a case list query<br/>- Customize format, margins, orientation, pages and page header/footer<br/>- Flexible layout with drag and drop<br/>- Multiple<br/>- Public/private<br/>- Realtime preview while customizing page<br/>- Scheduled | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| SecOps Dashboard | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Task Overview | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Triage <br/>- Configuration<br/>- Event management<br/>- Graphical display of the playbooks executed | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| User group management | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Widgets<br/>- Custom<br/>- Public/private<br/>- Real time preview<br/>- Textual (with placeholder and images support) | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| App Central <br/>- Integrations <br/>- Playbooks | &#10003; | &#10003; |
+| Automation (full features) | &#10003; | &#10003; | 
+|  Automation Bridge | &#10003; | &#10003; | 
+| Integration with Cloud SIEM and Log Analytics | &#10003; | &#10003; |
+| Integrations management | &#10003; | &#10003; |
+| Open Integration Framework (OIF)<br/>- Custom docker images for action execution<br/>- Custom integration capabilities<br/>- Integration Builder (almost no-code) | &#10003; | &#10003; |
+| Playbooks<br/>- Execution in the cloud (without using an Automation Bridge)<br/>- Execution in local network with an Automation Bridge<br/>- Management<br/>- Slack integration for node activation | &#10003; | &#10003; |
+| Advanced automation capabilities <br/>- Daemons <br/>- Triggers | | &#10003; |
+| Automation rule definition |  |  &#10003; | 
+| Average Phase Duration |  | &#10003; | 
+| Cases <br/>- Attachments<br/>- Bulk actions<br/>- Cloning<br/>- Collaboration ( Notes, Slack, Task)<br/>- Contextual hints while writing a search string<br/>- Fields customization<br/>- Filters with advanced search bar<br/>- Incident attachments (files)<br/>- Label configuration<br/>- Manual creation<br/>- Online/offline search<br/>- Over time<br/>- Overview<br/>- Ownership and user group management<br/>- Selection of case properties to display<br/>- Statistics<br/>- Template<br/>- War Room | | &#10003; |
+| Dashboards <br/>- Cloning<br/>- Multiple<br/>- Preview while customizing page<br/>- Public/private | | &#10003; |
+| Entities<br/>- Harvesting<br/>- Manual creation | | &#10003; |
+| Data can be shown with:<br/>- Filtering (with query, bookmarks, and via search bar)<br/>- Graphs<br/>- Placeholders/tags <br/>- Tables<br/>- Text | | &#10003; |
+| Flexible layout with drag and drop | | &#10003; |
+| Logo configuration | | &#10003; |
+| Metrics for usage and adoption | | &#10003; |
+| Reports<br/>- Create starting from a case list query<br/>- Customize format, margins, orientation, pages and page header/footer<br/>- Flexible layout with drag and drop<br/>- Multiple<br/>- Public/private<br/>- Realtime preview while customizing page<br/>- Scheduled | | &#10003; |
+| SecOps Dashboard | | &#10003; |
+| Task Overview | | &#10003; |
+| Triage <br/>- Configuration<br/>- Event management<br/>- Graphical display of the playbooks executed | | &#10003; |
+| User group management | | &#10003; |
+| Widgets<br/>- Custom<br/>- Public/private<br/>- Real time preview<br/>- Textual (with placeholder and images support) | | &#10003; |
 
 
 

@@ -19,36 +19,36 @@ Following are features available with our security solutions. If you have any qu
 
 | Feature | Logs for Security | Cloud SIEM | Cloud SOAR |
 | :-- | :-- | :-- | :-- |
-| Log collection | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| App catalog (out-of-the-box analytics) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Dashboard | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Deep search (Sumo Logic Search Query Language) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Advanced analytics with machine learning (GIS for GuardDuty and CloudTrail) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Monitoring | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Alerts | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Threat Intelligence (threat intel feed and threat analysis app) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Normalization with parsing of unstructured data and Field Extraction Rules | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Normalization with parsing, mapping, and enrichment | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Streaming processing | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Out-of-the-box detection contents | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Advanced analytics for user behavior | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Rules Engine (built-in, types, custom, criticality, Rule Expression tuning) | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Correlation of Signals to an Entity | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Insight Engine (including case management) | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Entity Types (Entity Normalization, Related Entities, Entity Criticality) | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Entity Relationship Graph | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Entity Timeline | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Machine learning capabilities (Global Confidence Score for Insights, Insight Trainer) | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Tags (MITRE ATT&CK, custom tag schema, network blocks) | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Automation Service | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Open Integration Framework (OIF) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| App Central | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Playbook |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| SecOps dashboard | | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Case Manager | | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| War Room | | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Supervised active intelligence with alert triage and playbooks suggestions | | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Progressive automation | | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Highly customizable dashboards and KPIs | | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Automatic incident reports | | | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Log collection | &#10003; | &#10003; | &#10003; |
+| App catalog (out-of-the-box analytics) | &#10003; | &#10003; | &#10003; |
+| Dashboard | &#10003; | &#10003; | &#10003; |
+| Deep search (Sumo Logic Search Query Language) | &#10003; | &#10003; | &#10003; |
+| Advanced analytics with machine learning (GIS for GuardDuty and CloudTrail) | &#10003; | &#10003; | &#10003; |
+| Monitoring | &#10003; | &#10003; | &#10003; |
+| Alerts | &#10003; | &#10003; | &#10003; |
+| Threat Intelligence (threat intel feed and threat analysis app) | &#10003; | &#10003; | &#10003; |
+| Normalization with parsing of unstructured data and Field Extraction Rules | &#10003; | &#10003; | &#10003; |
+| Normalization with parsing, mapping, and enrichment | | &#10003; | |
+| Streaming processing | | &#10003; | |
+| Out-of-the-box detection contents | | &#10003; | |
+| Advanced analytics for user behavior | | &#10003; | |
+| Rules Engine (built-in, types, custom, criticality, Rule Expression tuning) | | &#10003; | |
+| Correlation of Signals to an Entity | | &#10003; | |
+| Insight Engine (including case management) | | &#10003; | |
+| Entity Types (Entity Normalization, Related Entities, Entity Criticality) | | &#10003; | |
+| Entity Relationship Graph | | &#10003; | |
+| Entity Timeline | | &#10003; | |
+| Machine learning capabilities (Global Confidence Score for Insights, Insight Trainer) | | &#10003; | |
+| Tags (MITRE ATT&CK, custom tag schema, network blocks) | | &#10003; | |
+| Automation Service | &#10003; | &#10003; | |
+| Open Integration Framework (OIF) | &#10003; | &#10003; | &#10003; |
+| App Central | &#10003; | &#10003; | &#10003; |
+| Playbook | &#10003; | &#10003; | &#10003; |
+| SecOps dashboard | | | &#10003; |
+| Case Manager | | | &#10003; |
+| War Room | | | &#10003; |
+| Supervised active intelligence with alert triage and playbooks suggestions | | | &#10003; |
+| Progressive automation | | | &#10003; |
+| Highly customizable dashboards and KPIs | | | &#10003; |
+| Automatic incident reports | | | &#10003; |
 

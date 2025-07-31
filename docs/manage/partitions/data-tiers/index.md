@@ -56,21 +56,21 @@ How you can search and use your ingested data varies by the Data Tier it resides
 
 | Feature support | Continuous Tier | Frequent Tier | Infrequent Tier | 
 | :-- | :-- | :-- | :-- | 
-| Centralized, secure, multi-tenant cloud-native platform | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | 
-| Data replication across availability zones, data encryption | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Interactive queries (UI) | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/><br/>Partitions can be specified, but are optional. |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/><br/>Partition or `_dataTier` must be specified. |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/><br/>Partition or `_dataTier` must be specified. |
-| Support for Installed and Hosted Collectors | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| RBAC support | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Support for search operators | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Field Extraction Rules | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Logs to Metrics | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Data Forwarding | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | |
-| Live Tail | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
-| Dashboards | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | |
-| Monitors | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | |
-| Scheduled Searches | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | |
-| Scheduled Views | <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> | | |
-| API Queries |  <img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |<img src={useBaseUrl('img/reuse/check.png')} alt="green check circle.png" width="20"/> |
+| Centralized, secure, multi-tenant cloud-native platform | &#10003; | &#10003; | &#10003; | 
+| Data replication across availability zones, data encryption | &#10003; | &#10003; | &#10003; |
+| Interactive queries (UI) | &#10003;<br/>Partitions can be specified, but are optional. | &#10003;<br/>Partition or `_dataTier` must be specified. | &#10003;<br/>Partition or `_dataTier` must be specified. |
+| Support for Installed and Hosted Collectors | &#10003; | &#10003; | &#10003; |
+| RBAC support | &#10003; | &#10003; | &#10003; |
+| Support for search operators | &#10003; | &#10003; | &#10003; |
+| Field Extraction Rules | &#10003; | &#10003; | &#10003; |
+| Logs to Metrics | &#10003; | &#10003; | &#10003; |
+| Data Forwarding | &#10003; | &#10003; | |
+| Live Tail | &#10003; | &#10003; | &#10003; |
+| Dashboards | &#10003; | | |
+| Monitors | &#10003; | | |
+| Scheduled Searches | &#10003; | | |
+| Scheduled Views | &#10003; | | |
+| API Queries |  &#10003; | &#10003; | &#10003; |
 
 ## Assigning data to a Data Tier
 
