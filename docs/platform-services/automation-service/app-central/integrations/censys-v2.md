@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/censys.png')} alt="censys" width="100"/>
 
-***Version: 2.2  
-Updated: Jul 07, 2023***
+***Version: 2.3  
+Updated: Jul 31, 2024***
 
 Censys reduces your Internet attack surface by continually discovering unknown assets and helping remediate Internet facing risks.   
 
@@ -49,3 +49,4 @@ For information about Censys V2, see [Censys documentation](https://docs.censys.
 * July 7, 2023 (v2.2)
 	+ Updated the integration with Environmental Variables
 	+ Integration renamed from Censys 2.0 to Censys V2
+* July 31, 2024 (v2.3) - Updated the integration logo.
