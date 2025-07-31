@@ -25,21 +25,21 @@ Flex Pricing delivers a new financial model for log management in which you can 
 
 | Feature support | Flex Pricing |
 | :-- | :-- |
-| Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |
-| Data replication across availability zones, data encryption | ![check](/img/reuse/check.png) |
-| Interactive queries (UI) |![check](/img/reuse/check.png) |
-| Support for Installed and Hosted Collectors | ![check](/img/reuse/check.png) |
-| RBAC support | ![check](/img/reuse/check.png) |
-| Support for search operators | ![check](/img/reuse/check.png) |
-| Field Extraction Rules | ![check](/img/reuse/check.png) |
-| Logs to Metrics | ![check](/img/reuse/check.png) |
-| Data Forwarding | ![check](/img/reuse/check.png) |
-| Live Tail | ![check](/img/reuse/check.png) |
-| Dashboards | ![check](/img/reuse/check.png) |
-| Monitors | ![check](/img/reuse/check.png) |
-| Scheduled Searches | ![check](/img/reuse/check.png) |
-| Scheduled Views | ![check](/img/reuse/check.png) |
-| API Queries |  ![check](/img/reuse/check.png) |
+| Centralized, secure, multi-tenant cloud-native platform | &#10003; |
+| Data replication across availability zones, data encryption | &#10003; |
+| Interactive queries (UI) | &#10003; |
+| Support for Installed and Hosted Collectors | &#10003; |
+| RBAC support | &#10003; |
+| Support for search operators | &#10003; |
+| Field Extraction Rules | &#10003; |
+| Logs to Metrics | &#10003; |
+| Data Forwarding | &#10003; |
+| Live Tail | &#10003; |
+| Dashboards | &#10003; |
+| Monitors | &#10003; |
+| Scheduled Searches | &#10003; |
+| Scheduled Views | &#10003; |
+| API Queries |  &#10003; |
 
 ## Guides
 
