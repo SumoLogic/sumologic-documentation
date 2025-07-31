@@ -28,10 +28,9 @@ The data will be collected from the OneLogin database using the following log:
 
 The OneLogin source requires you to provide the **Account URL**, **Client ID**, and **Client Secret** to set up the integration.
 
-#### Sub Domain
+#### Subdomain
 
-The Sub Domain is the account URL used to retrieve the source data from the OneLogin API. For example, `https://{subdomain}.onelogin.com`.
-[Learn more](https://developers.onelogin.com/api-docs/2/getting-started/dev-overview) to obtain the sub domain URL.
+The subdomain is the account URL used to retrieve the source data from the OneLogin API. For example, `https://{subdomain}.onelogin.com`. [Learn more](https://developers.onelogin.com/api-docs/2/getting-started/dev-overview) to obtain the subdomain URL.
 
 #### Client ID and Client Secret
 
