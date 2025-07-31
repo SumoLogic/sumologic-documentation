@@ -112,9 +112,9 @@ The Automation Service allows us to create automations that will run whenever [C
 
 Let’s use the Automation Service to create a playbook for use in Cloud SIEM.
 1. Go to the [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/) page. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.<br/>The list of playbooks displays. You can click on any of the existing playbooks which will open the playbook diagram in the sidebar on the right. You can view here the individual nodes and sequences in the selected playbook, to give you an idea of the type of actions and structures that you can create. Playbooks can have any number of actions, as well as branching conditions to manage different sequences of actions, depending on selected criteria. You can click on any component of a playbook to see more detailed information about each node. 
-1. Let's [create a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook) of our own. 
+1. Let's [create a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook) of our own that will send an email notification when a Cloud SIEM insight is created with a high severity. 
    1. Click the plus icon near the top to create a new playbook. <br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} style={{border:'1px solid gray'}} alt="New playbook button" width="500"/>
-   1. Enter a name for the playbook. You can optionally enter a description. Select **Cloud SIEM** as the **Type** for the playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" width="400"/>
+   1. Enter a name for the playbook, such as "Send Cloud SIEM Insight Email Notification". You can optionally enter a description. Select **Cloud SIEM** as the **Type** for the playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" width="400"/>
    1. Click **Create** when finished.
    1. On the following screen you will see the starting template for your new empty playbook, with **Start** and **End** nodes. Switch to edit mode by clicking on the **Edit** (pencil) icon in the bottom toolbar.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-edit-button.png')} alt="Edit button" style={{border: '1px solid gray'}} width="300" />
    1. Before we start adding actions to our playbook, we’ll want to set up the initial configuration of the playbook so we get the proper inputs from the Cloud SIEM insight. Mouse over the **Start** node, and click the **Edit** (pencil) icon.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-start-node.png')} alt="Start node" style={{border: '1px solid gray'}} width="100" />
@@ -175,32 +175,24 @@ Let’s use the Automation Service to create a playbook for use in Cloud SIEM.
    1. For **Input** select **Insight** and in **ID** enter the insight ID. 
    1. Click **Run**.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-test-playbook.png')} alt="Test playbook" style={{border: '1px solid gray'}} width="500" />
    1. The playbook runs. If errors occur, click the nodes with errors and [troubleshoot the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#troubleshoot-playbooks).<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-test-playbook-results.png')} alt="Test playbook results" style={{border: '1px solid gray'}} width="800" />
+   1. After the playbook runs, the email recipient should get an email that looks like this:<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-test-playbook-email.png')} alt="Test playbook email" style={{border: '1px solid gray'}} width="500" />
 
 Congratulations. You have now successfully created a playbook in Sumo Logic's Automation Service.
 
-## Create a custom automation
+### Create a custom automation to run your Cloud SIEM insights playbook
  
-Automations define the conditions in which a playbook will be executed. For instance, you might want to execute a specific playbook whenever Cloud SIEM creates a new insight. Or another playbook whenever an insight is closed to create and distribute appropriate notifications or reports. In Cloud Infrastructure Security, you can set up an automation to fire when an alert is triggered. Automations can also be set to "manual execution", allowing operators to run the playbook manually when judged necessary.
+Automations define the conditions in which a playbook will be executed. For instance, you might want to execute a specific playbook whenever Cloud SIEM creates a new insight. Or another playbook whenever an insight is closed to create and distribute appropriate notifications or reports. Automations can also be set to "manual execution", allowing operators to run the playbook manually when judged necessary.
 
 This way, potentially the entire incident response cycle can now be automated: a threat is identified, an insight or alert is triggered, then a playbook is automatically deployed to perform necessary actions and email a final report for an analyst to review. 
 
-Now that we've created our own playbook, let’s use Cloud SIEM to create an automation to run it. A Cloud SIEM Automation allows you to automatically run a playbook based on a trigger, such as an insight being created or closed. 
+Now that we've created our own playbook, let’s use Cloud SIEM to create an automation to run it. A [Cloud SIEM automation](/docs/cse/automation/) allows you to automatically run a playbook based on a trigger, such as an insight being created or closed. 
 
-(Classic UI) In the top right corner, click the cog icon, then Automation.
-
-1. (New UI) In the top right corner, click the "cog" icon and select Automation (under the Cloud SIEM Integrations header).
-
- 2. Click the Create button in the upper right.
-
-  3. Select your custom playbook from the previous lab in the Playbook field. (If you do not see your playbook in the list, return to the previous lab steps and ensure your playbook was published as well as saved. You may also need to refresh your page to ensure that Cloud SIEM has updated with the recent playbook changes.)
-
-  4. For the Expects attributes for field, select "Insight".
-
-  5. Note that the checkboxes under the Executes when field show that you can trigger your automation when an insight is created or closed. For this lab, however, select "Manually Done". 
-
- 6. Click Add To List when finished.
-
-<img src={useBaseUrl('img/platform-services/automation-service/intro-new-automation.png')} alt="New automation" style={{border: '1px solid gray'}} width="400" />
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
+1. Click **+ Add Automation** in the upper right.
+1. In the **Playbook** field, select the playbook you created in the previous section [Create a playbook for Cloud SIEM insights](#create-a-playbook-for-cloud-siem-insights). (If you do not see your playbook in the list, return to the previous steps and ensure your playbook was published as well as saved. You may also need to refresh your page to ensure that Cloud SIEM has updated with the recent playbook changes.)
+1. For the **Object (expects attributes for)** field, select **Insight**.
+1. Note that the checkboxes under the **Execution** field show that you can trigger your automation when an insight is created or closed. For this exercise, however, select **Manually Done**. 
+1. Click **Save** when finished.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-new-automation.png')} alt="New automation" style={{border: '1px solid gray'}} width="400" />
 
 ### Test your automation
 
@@ -223,7 +215,7 @@ This view will show "Success" or "Completed with errors" for the results of each
 Congratulations!
 You now have a custom automation that can be manually run or attached to insight creation or closing.
 
-## Create a playbook for Alerts and Monitoring
+## Create a playbook for alerts and monitoring
 
 Cloud SIEM isn’t the only application that can use playbooks from the Automation Service. We can create another playbook that will be triggered on alerts and monitors within Sumo Logic's Log Analytics Platform.
 
