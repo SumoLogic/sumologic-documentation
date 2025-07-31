@@ -49,4 +49,4 @@ For information about Censys V2, see [Censys documentation](https://docs.censys.
 * July 7, 2023 (v2.2)
 	+ Updated the integration with Environmental Variables
 	+ Integration renamed from Censys 2.0 to Censys V2
-* July 31, 2024 (v2.3) - Updated the integration logo.
+* July 31, 2025 (v2.3) - Updated the integration logo.
