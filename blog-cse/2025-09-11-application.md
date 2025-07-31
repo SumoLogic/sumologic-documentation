@@ -10,6 +10,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Insight summary
 
-We excited to announce an AI-generated summary for each insight that describes the threat incidents that led to the creation of the insight. This speeds up understanding of the insight by security teams, helping them get started faster with response. [Learn more](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#insight-summary).
+We’re excited to announce the new insights summary pane, an AI-generated summary for each insight that describes the threat incidents that led to its creation. This helps security teams understand incidents faster and accelerate response time. [Learn more](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#insight-summary).
 
 <img src={useBaseUrl('img/cse/insight-summary-pane.png')} alt="Insight summary" style={{border: '1px solid gray'}} width="300"/>
