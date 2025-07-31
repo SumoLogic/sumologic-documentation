@@ -32,9 +32,9 @@ The OneLogin source requires you to provide the **Account URL**, **Client ID**, 
 
 The subdomain is the account URL used to retrieve the source data from the OneLogin API. For example, `https://{subdomain}.onelogin.com`. [Learn more](https://developers.onelogin.com/api-docs/2/getting-started/dev-overview) to obtain the subdomain URL.
 
-#### Client ID and Client Secret
+#### Client ID and client secret
 
-To generate the Client Id and Client Secret, see [Creating an API Credential Pair](https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials).
+To generate the client ID and client secret, see [Creating an API Credential Pair](https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials).
 
 Once you have all the required values, set up the source configuration to collect your desired log types available in the configuration section.
 
