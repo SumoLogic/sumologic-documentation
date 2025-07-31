@@ -491,6 +491,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source',

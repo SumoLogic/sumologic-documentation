@@ -2911,6 +2911,7 @@
   "/cid/21037": "/docs/integrations/google/cloud-vpn",
   "/cid/21333": "/docs/integrations/microsoft-azure/microsoft-defender-for-endpoint",
   "/cid/21039": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vectra-source",
+  "/cid/21059": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source",
   "/cid/21041": "/docs/integrations/google/cloud-security-command-center",
   "/cid/21097": "/docs/integrations/saas-cloud/confluent-cloud",
   "/cid/21040": "/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers",
