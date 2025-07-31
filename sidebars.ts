@@ -2408,6 +2408,7 @@ integrations: [
           'integrations/cloud-security-monitoring-analytics/amazon-guardduty',
           'integrations/cloud-security-monitoring-analytics/amazon-vpc-flow',
           'integrations/cloud-security-monitoring-analytics/aws-cloudtrail',
+          'integrations/cloud-security-monitoring-analytics/aws-security-hub-ocsf',
           'integrations/cloud-security-monitoring-analytics/aws-security-hub',
           'integrations/cloud-security-monitoring-analytics/aws-waf',
           'integrations/cloud-security-monitoring-analytics/linux',
