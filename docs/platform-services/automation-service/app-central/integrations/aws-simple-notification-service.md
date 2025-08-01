@@ -34,6 +34,7 @@ import IntegrationEngine from '../../../../reuse/automation-service/integration-
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
 import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
 import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import IAMConfiguration from '../../../../reuse/automation-service/iam-configuration.md';
 
 <IntegrationsAuth/>
 
@@ -50,6 +51,8 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-simple-notification-service-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Simple Notification Service configuration" width="400"/>
 
 <IntegrationsAuthAWS/>
+
+<IAMConfiguration/>
 
 For information about Amazon Simple Notification Service, see [Amazon Simple Notification Service documentation](https://docs.aws.amazon.com/sns/).
 
