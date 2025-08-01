@@ -18,7 +18,7 @@ Key features of the Mimecast app include:
 
 ## Log types
 
-The app uses Mimecast Source to collect [SIEM](https://integrations.mimecast.com/documentation/tutorials/understanding-siem-logs/) and [DLP](https://integrations.mimecast.com/documentation/endpoint-reference/logs-and-statistics/get-dlp-logs/) logs from Mimecast platform.
+The app uses [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source/) to collect [SIEM](https://developer.services.mimecast.com/siem-tutorial-cg) and [DLP](https://integrations.mimecast.com/documentation/endpoint-reference/logs-and-statistics/get-dlp-logs/) logs from Mimecast platform.
 
 ## Sample log messages
 
@@ -27,31 +27,28 @@ The app uses Mimecast Source to collect [SIEM](https://integrations.mimecast.com
 
 ```json title="SIEM Log"
 {
-  "datetime": "2023-04-28T07:20:21+0000",
-  "acc": "C0A0",
-  "aCode": "7O7I7MvGjghgfhh",
-  "IP": "89.189.94.111",
-  "Dir": "Internal",
-  "MsgId": "<messageId@messageId>",
-  "Subject": "message subject",
-  "headerFrom": "from@mimecast.com",
-  "Sender": "from@mimecast.com",
-  "Rcpt": "auser@mimecast.com",
-  "SpamInfo": "[]",
-  "Act": "Acc",
-  "TlsVer": "TLSv1",
-  "Cphr": "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
-  "SpamProcessingDetail": {
-    "spf": {
-      "info": "SPF_FAIL",
-      "allow": true
-    },
-    "dkim": {
-      "info": "DKIM_UNKNOWN",
-      "allow": true
-    }
-  },
-  "SpamScore": "1"
+   "processingId": "processingId",
+   "aggregateId": "aggregateId",
+   "spamProcessingDetail": "Spam Processing Detail",
+   "numberAttachments": "1",
+   "subject": "siem_recipient - email subject line",
+   "tlsVersion": "TLSv1.2",
+   "senderEnvelope": "auser@mimecast.com",
+   "messageId": "messageId",
+   "senderHeader": "auser@mimecast.com",
+   "rejectionType": "rejectionType",
+   "eventType": "receipt",
+   "accountId": "C0A0",
+   "recipients": "auser@mimecast.com",
+   "tlsCipher": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+   "action": "Allow",
+   "subType": "Allow",
+   "spamInfo": null,
+   "senderIp": "123.123.123.123",
+   "timestamp": 1689685338597,
+   "direction": "Inbound",
+   "spamScore": "0",
+   "spamDetectionLevel": "0"
 }
 ```
 ```json title="DLP Log"
@@ -74,18 +71,18 @@ The app uses Mimecast Source to collect [SIEM](https://integrations.mimecast.com
 <summary>View Sample Queries</summary>
 
 ```sql title="Messages Delivered Without TLS"
-_sourceCategory="mimecast_app" Delivered Dir
-| json "aCode","Delivered","UseTls" as a_code, delivered, use_tls nodrop
-| where delivered="true"
-| where use_tls="No"
-| count_distinct(a_code)
+_sourceCategory=Labs/mimecast   delivered direction
+| json "accountId","delivered","tlsUsed" as account_id, delivered, use_tls nodrop
+| where delivered="true" 
+| where use_tls="false"
+| count(account_id)
 ```
 
 ```sql title="DLP Events Over Time"
-_sourceCategory="mimecast_app" messageId policy action
+_sourceCategory=Labs/mimecast   messageId policy action
 | json "messageId","policy","action","route","recipientAddress","senderAddress" as message_id, policy, action, route, recipient, sender nodrop
 | timeslice 1d
-| count_distinct(message_id) as frequency by _timeslice
+| count(message_id) as frequency by _timeslice
 | fillmissing timeslice
 ```
 </details>
@@ -123,12 +120,12 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 ### Overview
 
-The **Mimecast - Overview** dashboard provides a comprehensive view of the message logs and related Data Loss Prevention(DLP) policies. This dashboard provides insight into the total number of messages delivered and messages delivered and received without TLS. Additionally, this dashboard enables monitoring of messages that triggered DLP policies over time, the top 10 DLP policies, and a summary of recent messages that triggered DLP.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-Overview.png')} alt="Mimecast-Overview" />
+The **Mimecast - Overview** dashboard provides a comprehensive view of the message logs and related Data Loss Prevention(DLP) policies. This dashboard provides insight into the total number of messages delivered and messages delivered and received without TLS. Additionally, this dashboard enables monitoring of messages that triggered DLP policies over time, the top 10 DLP policies, and a summary of recent messages that triggered DLP.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Mimecast/Mimecast+-+Overview+new.png' alt="Mimecast-Overview" />
 
 ### Email Activity Summary
 
-The **Mimecast - Email Activity Summary** dashboard provides a comprehensive view of the message traffic for both incoming and outgoing messages. This dashboard provides insight into the geographic locations of senders and recipients, rejection types for messages, received message status, delivered message direction, and a summary of both message types. Additionally, this dashboard displays information on the most frequently used ciphers, domains that are not using TLS, and reasons for messages being on hold.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-Email-Activity-Summary.png')} alt="Mimecast-Email-Activity-Summary"/>
+The **Mimecast - Email Activity Summary** dashboard provides a comprehensive view of the message traffic for both incoming and outgoing messages. This dashboard provides insight into the geographic locations of senders and recipients, rejection types for messages, received message status, delivered message direction, and a summary of both message types. Additionally, this dashboard displays information on the most frequently used ciphers, domains that are not using TLS, and reasons for messages being on hold.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Mimecast/Mimecast+-+Email+Activity+Summary+new.png' alt="Mimecast-Email-Activity-Summary" />
 
 ### Target Threat Protection
 
-The **Mimecast - Target Threat Protection** dashboard provides a comprehensive view of the threat protection logs resulting from any malicious activity. This dashboard provides a summary of the recent attachment threats detected, recent activity on malicious URLs, and recent blocked emails. Additionally, this dashboard provides insight into the top 10 recipients and senders of malicious attachment messages and the top 10 malicious senders and targeted recipients.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-Target-Threat-Protection.png')} alt="Mimecast-Target-Threat-Protection" width="750"/>
+The **Mimecast - Target Threat Protection** dashboard provides a comprehensive view of the threat protection logs resulting from any malicious activity. This dashboard provides a summary of the recent attachment threats detected, recent activity on malicious URLs, and recent blocked emails. Additionally, this dashboard provides insight into the top 10 recipients and senders of malicious attachment messages and the top 10 malicious senders and targeted recipients.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Mimecast/Mimecast+-+Target+Threat+Protection+new.png' alt="Mimecast-Target-Threat-Protection" />
