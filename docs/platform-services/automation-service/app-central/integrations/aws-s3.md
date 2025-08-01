@@ -41,7 +41,7 @@ import IntegrationEngine from '../../../../reuse/automation-service/integration-
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
 import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
 import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
-import IAMConfiguration from '../../../../reuse/automation-service/iam-configuration.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
 
 <IntegrationsAuth/>
 
