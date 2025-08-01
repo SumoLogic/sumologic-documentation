@@ -1,7 +1,7 @@
 ---
 id: set-up-saml
 title: Set Up SAML for Single Sign-On
-description: Enable Single Sign-On (SSO) for user access to Sumo Logic.
+description: Follow the steps to configure SAML-based single sign-on (SSO) in Sumo Logic for secure, centralized user authentication.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,7 +2,7 @@
 slug: /security/threat-intelligence/find-threats
 title: Find Threats with Log Queries
 sidebar_label: Find Threats with Log Queries
-description: Perform searches to find matches to data in threat intelligence indicators.
+description: Learn how to detect and investigate security threats using Sumo Logic threat intelligence tools and dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

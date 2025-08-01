@@ -1,7 +1,7 @@
 ---
 slug: /search
 title: Log Search
-description: Learn about the Sumo Logic search language, operators, and search features.
+description: Explore Sumo Logic’s search capabilities to analyze logs and metrics with intuitive tools and advanced query language for powerful insights.
 keywords:
   - search
   - log search

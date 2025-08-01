@@ -2,7 +2,7 @@
 id: choose-collector-source
 title: Choosing a Sumo Logic Collector and Source
 sidebar_label: Choose a Collector and Source
-description: Design a Sumo Logic deployment that's right for your organization.
+description: Choose the right data source type in Sumo Logic for collecting logs, metrics, or traces using OpenTelemetry Collectors, Installed Collectors, and Hosted Collectors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

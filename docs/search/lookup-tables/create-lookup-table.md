@@ -1,7 +1,7 @@
 ---
 id: create-lookup-table
 title: Create a Lookup Table
-description: Learn about lookup tables and how to create and manage them.
+description: Learn how to create and manage lookup tables in Sumo Logic to enrich your searches and join logs with external metadata sources efficiently.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -1,7 +1,7 @@
 ---
 slug: /search/search-query-language/parse-operators
 title: Parse Operators
-description: Sumo Logic provides a number of ways to parse fields in your log messages.
+description: Learn how to extract structured fields from raw log messages using Sumo Logic’s parse operators to enable more refined searches and analysis.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -1,7 +1,7 @@
 ---
 slug: /search/search-cheat-sheets
 title: Log Search Cheat Sheets
-description: Cheat sheets provide examples of useful log search queries for different use cases.
+description: Use these quick-reference cheat sheets to master Sumo Logic search syntax and boost your productivity when querying logs and metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

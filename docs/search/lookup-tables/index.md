@@ -1,7 +1,7 @@
 ---
 slug: /search/lookup-tables
 title: Lookup Tables
-description: Learn about Lookup tables and the search operators you can use with them.
+description: Use lookup tables in Sumo Logic to enrich your searches with external reference data for greater query flexibility and powerful log correlations.
 ---
 
 This guide has information about Lookup Tables. 

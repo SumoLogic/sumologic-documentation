@@ -2,7 +2,7 @@
 id: set-up-webhook-connections
 title: Set Up Webhook Connections
 sidebar_label: Setup and Configuration
-description: Webhook connections allow you to send Sumo Logic alerts to third-party applications.
+description: Learn how to configure webhook connections in Sumo Logic to send alerts and notifications to external services or endpoints.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

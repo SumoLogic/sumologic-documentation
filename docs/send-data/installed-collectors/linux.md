@@ -2,7 +2,7 @@
 id: linux
 title: Install a Collector on Linux
 sidebar_label: For Linux
-description: Install or uninstall a Collector on a Linux system.
+description: Deploy the Sumo Logic Installed Collector on Linux systems to collect logs and metrics and gain real-time observability into your stack.
 ---
 
 Follow the steps in this topic to install or uninstall a collector on Linux. See [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on other OSs.

@@ -1,7 +1,7 @@
 ---
 slug: /cse/records-signals-entities-insights
 title: Records, Signals, Entities, and Insights
-description: Learn about insight generation, working with entities, and how to query Cloud SIEM records.
+description: Understand how Sumo Logic Cloud SIEM uses records, signals, and entities to detect threats and generate meaningful insights.
 ---
 
 Learn about insight generation, working with entities, and how to query Cloud SIEM records. 

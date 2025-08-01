@@ -2,6 +2,7 @@
 id: sum
 title: sum Grouping Operator
 sidebar_label: sum
+description: Use the sum operator in Sumo Logic to calculate the total value of numeric fields within log data, enabling powerful aggregation and analysis.
 ---
 
 `sum` adds the values of the numerical field being evaluated within the time range analyzed.

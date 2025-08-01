@@ -1,7 +1,7 @@
 ---
 slug: /api
 title: Sumo Logic APIs
-description: Sumo Logic exposes APIs to access resources and data from third-party scripts and applications.
+description: Automate log ingestion, searches, dashboards, and more using Sumo Logic's comprehensive API for seamless integration with external systems.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

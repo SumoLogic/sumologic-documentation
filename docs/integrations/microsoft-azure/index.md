@@ -1,7 +1,7 @@
 ---
 slug: /integrations/microsoft-azure
 title: Microsoft and Azure
-description: Learn how to use the Sumo Logic apps for Microsoft and Microsoft Azure.
+description: Integrate Microsoft Azure with Sumo Logic to enable real-time monitoring, log collection, and cloud performance analytics across Azure services.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

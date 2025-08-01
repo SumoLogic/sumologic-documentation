@@ -2,7 +2,7 @@
 id: windows
 title: Install OpenTelemetry Collector on Windows
 sidebar_label: Windows
-description: Learn how to install the Sumo Logic OpenTelemetry Collector on Windows.
+description: Install the OpenTelemetry Collector on Windows to collect metrics and logs for end-to-end observability in Sumo Logic environments.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

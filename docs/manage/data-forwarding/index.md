@@ -1,7 +1,7 @@
 ---
 slug: /manage/data-forwarding
 title: Data Forwarding
-description: Data Forwarding allows you to forward selected data to an external server or Amazon S3.
+description: Configure data forwarding in Sumo Logic to send collected logs and metrics to external systems or third-party services.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

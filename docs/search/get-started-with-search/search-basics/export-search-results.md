@@ -1,7 +1,7 @@
 ---
 id: export-search-results
 title: Export Search Results
-description: Up to 100,000 rows can be exported as a CSV (comma-separated values) text file.
+description: Export your search results in Sumo Logic to CSV or other formats to share insights, report findings, or use log data outside the platform.
 ---
 
 After your search query completes, you can download up to 100,000 rows of results from your browser as a CSV (comma-separated values) text file. If your results are more than 100,000 rows, then run multiple searches with a shorter time range and export the respective search results.

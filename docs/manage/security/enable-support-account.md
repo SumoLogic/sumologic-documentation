@@ -1,7 +1,7 @@
 ---
 id: enable-support-account
 title: Enable a Support Account
-description: Support accounts help you address support issues when they arise.
+description: Enable a secure temporary support account to allow Sumo Logic engineers to troubleshoot and resolve issues directly in your environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

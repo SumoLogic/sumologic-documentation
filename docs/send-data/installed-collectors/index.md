@@ -1,7 +1,7 @@
 ---
 slug: /send-data/installed-collectors
 title: Installed Collectors
-description: Learn how to install and configure Collectors to gather and send data to Sumo Logic.
+description: Get started with Installed Collectors in Sumo Logic to collect data from servers and applications for centralized logging and analysis.
 keywords:
   - installed collector
 ---
