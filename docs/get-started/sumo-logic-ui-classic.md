@@ -242,7 +242,7 @@ To manage data in Sumo Logic, do the following:
     * **Collection.** [Manage collectors and sources](/docs/send-data/collection).
     * **Logs.** Manage [fields](/docs/manage/fields), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/alerts/webhook-connections), and [data forwarding](/docs/manage/data-forwarding).
     * **Metrics.** Manage metrics rules, [logs-to-metrics](../metrics/logs-to-metrics.md), and [metrics transformation rules](../metrics/metrics-transformation-rules.md).
-    * **Monitoring.** [Monitors](/docs/alerts/monitors), [connections](/docs/alerts/webhook-connections), and [health events](/docs/manage/health-events).
+    * **Monitoring.** [Monitors](/docs/alerts/monitors), [connections](/docs/alerts/webhook-connections), and [account events](/docs/manage/account-events).
 
 ### Admin: Manage accounts, users, and security
 

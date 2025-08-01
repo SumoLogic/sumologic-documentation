@@ -102,6 +102,6 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Manage Data - Metrics | [Metrics Rules](/docs/metrics/metric-rules-editor/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Metrics | [Metrics transformation rules](/docs/metrics/metrics-transformation-rules/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Monitoring | [Connections](/docs/alerts/webhook-connections/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
-| Manage Data - Monitoring | [Health events](/docs/manage/health-events/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
+| Manage Data - Monitoring | [Account events](/docs/manage/account-events/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Monitoring | [Monitors](/docs/alerts/monitors/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Monitoring | [SLOs](/docs/observability/reliability-management-slo/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|

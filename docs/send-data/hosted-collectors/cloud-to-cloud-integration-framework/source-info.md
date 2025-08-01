@@ -19,9 +19,9 @@ If the Source has any issues during any one of these states, it is placed in an 
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection.
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Account Events](/docs/manage/account-events.md) to investigate issues with collection.
 
-Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings. You can click on the status icon to open a Health Events panel with details on each detected issue.
+Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings. You can click on the status icon to open a Account Events panel with details on each detected issue.
 
 ## Metadata fields
 
@@ -37,7 +37,7 @@ The checkbox only shows up if you have Cloud SIEM and if the C2C already has Clo
 
 ## Error Types
 
-When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by Account Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
