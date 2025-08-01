@@ -180,12 +180,12 @@ Let’s use the Automation Service to create a playbook for use in Cloud SIEM.
 Congratulations. You have now successfully created a playbook in Sumo Logic's Automation Service.
 
 ### Create a custom automation to run your Cloud SIEM insights playbook
+
+Now that you've created a playbook as described in the [previous section](#create-a-playbook-for-cloud-siem-insights), let’s use Cloud SIEM to create an automation to run it. A [Cloud SIEM automation](/docs/cse/automation/) allows you to automatically run a playbook based on a trigger, such as an insight being created or closed. 
  
 Automations define the conditions in which a playbook will be executed. For instance, you might want to execute a specific playbook whenever Cloud SIEM creates a new insight. Or another playbook whenever an insight is closed to create and distribute appropriate notifications or reports. Automations can also be set to "manual execution", allowing operators to run the playbook manually when judged necessary.
 
 This way, potentially the entire incident response cycle can now be automated: a threat is identified, an insight or alert is triggered, then a playbook is automatically deployed to perform necessary actions and email a final report for an analyst to review. 
-
-Now that we've created our own playbook, let’s use Cloud SIEM to create an automation to run it. A [Cloud SIEM automation](/docs/cse/automation/) allows you to automatically run a playbook based on a trigger, such as an insight being created or closed. 
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
 1. Click **+ Add Automation** in the upper right.
@@ -196,24 +196,18 @@ Now that we've created our own playbook, let’s use Cloud SIEM to create an aut
 
 ### Test your automation
 
-To test your automation, navigate to the Insights page (Classic UI: click Insights from the top menu. New UI: click Cloud SIEM > Insights from the left menu)
-Select any insight from the list by clicking on its name.
-Click on the Actions menu in the left sidebar. Select your automation from the insight Automations list on top. (If you do not see your automation, you may need to leave and return to Cloud SIEM to refresh the list)
+To test the automation you created in the [previous section](#create-a-custom-automation-to-run-your-cloud-siem-insights-playbook), run it on a Cloud SIEM insight:
 
-<img src={useBaseUrl('img/platform-services/automation-service/intro-select-automation.png')} alt="Select automation" style={{border: '1px solid gray'}} width="600" />
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
+1. Since our test playbook only sends a notification for insights with high severity, you need to find an insight with high severity. In the **Filters** area at the top of the screen, search for insights with high severity. <br/><img src={useBaseUrl('img/platform-services/automation-service/intro-find-high-severity-insights.png')} alt="Find high severity insights" style={{border: '1px solid gray'}} width="400" />
+1. Select an insight from the list of filter results.
+1. Click **Actions** in the left sidebar of the insight and select your automation from the list. (If you do not see your automation, you may need to leave and return to Cloud SIEM to refresh the list.)<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-select-automation.png')} alt="Select automation" style={{border: '1px solid gray'}} width="300" />
+1. You should see a green popup at the bottom indicating that your automation was successfully submitted for execution. <br/><img src={useBaseUrl('img/platform-services/automation-service/intro-notification-box.png')} alt="Automation submitted" style={{border: '1px solid gray'}} width="300" />
+1. Click the **Automations** tab on the top of the screen to see the results of executing your automation. **Status** will display the results of the playbook's run, such as **Success** or **Completed with errors**. <br/><img src={useBaseUrl('img/platform-services/automation-service/intro-results-of-automation.png')} alt="Results of automation" style={{border: '1px solid gray'}} width="800" />
+1. Click the **View Playbook** to see more details about the playbook's execution, such as an explanation about any errors that occurred. (See [Troubleshoot playbooks](/docs/platform-services/automation-service/automation-service-playbooks/#troubleshoot-playbooks) for help if your playbook run has problems.)<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-playbook-view-of-results.png')} alt="Results of automation in the playbook view" style={{border: '1px solid gray'}} width="800" />
+1. If the automation execution was successful, and you included your email in the playbook email notification when you created, your inbox should have an email from the Cloud SIEM system with the insight details as designed in the playbook.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-test-playbook-email-2.png')} alt="Test playbook email" style={{border: '1px solid gray'}} width="500" />
 
-  4. You should see a green popup at the bottom indicating that your automation was executed successfully.
-
-  5. If you selected a high severity insight and included your email in the playbook email notification, your inbox should have an email from the Cloud SIEM system with the insight details as designed in the playbook.
-
-  6. Click on the Automations tab on the top of the screen to see the results of executing your automation. 
-
-<img src={useBaseUrl('img/platform-services/automation-service/intro-results-of-automation.png')} alt="Results of automation" style={{border: '1px solid gray'}} width="800" />
-
-This view will show "Success" or "Completed with errors" for the results of each automation. If errors occur, you can click the View Playbook link on the right side to see the Playbook view, along with any execution errors that occurred. 
-
-Congratulations!
-You now have a custom automation that can be manually run or attached to insight creation or closing.
+Congratulations! You now have a custom automation that can be manually run or attached to insight creation or closing.
 
 ## Create a playbook for alerts and monitoring
 
