@@ -2157,6 +2157,7 @@ integrations: [
         'integrations/amazon-aws/network-firewall',
         'integrations/amazon-aws/network-load-balancer',
         'integrations/amazon-aws/security-hub',
+        'integrations/cloud-security-monitoring-analytics/aws-security-hub-ocsf',
         'integrations/amazon-aws/threat-intel',
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
