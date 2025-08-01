@@ -8,6 +8,10 @@ description: Get an introduction to the Automation Service.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
+:::tip
+This section provides an introduction to the Automation Service that is structured like a class. To get the most out of it, follow the exercises from beginning to end.
+:::
+
 The Sumo Logic Automation Service is a key set of automation features integrated with Sumo Logic's Log Analytics Platform and Cloud SIEM. Automations allow you to set up actions to run automatically when certain conditions are met. Automated actions allow your organization to respond quickly and without necessarily needing human input to a wide array of security events and incidents. Automated actions can include integrations provided by Sumo Logic as well as third-party vendors. Actions can be customized, and you can create your own as well.
 
 The Automation Service is a subset of automation capabilities adapted from Sumo Logic Cloud SOAR which are available to all Sumo Logic users even if you are not a Cloud SOAR customer.
@@ -63,7 +67,7 @@ Let's check out the Automation Service UI and learn about installing and configu
 1. Navigate to the [App Central](/docs/platform-services/automation-service/automation-service-app-central/) page. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. [**New UI**](/docs/get-started/sumo-logic-ui). To access App Central, in the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.
 1. The App Central integrations page shows a long list of installed and available integrations to augment Automation Service functionality with both Sumo Logic and third-party vendor functionality. <br/><img src={useBaseUrl('img/platform-services/automation-service/intro-explore-ui-integrations.png')} alt="Integrations in App Central" style={{border: '1px solid gray'}} width="700" />
 1. Choose a sample integration from the list and click on it. A popup window will appear showing the details of the integration, including version, description, and a list of "actions" that are supported in automations.
-1. Navigate to the [Integrations](/docs/platform-services/automation-service/automation-service-integrations/) page to show installed integrations. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. 
+1. Navigate to the [Integrations](/docs/platform-services/automation-service/automation-service-integrations/) page to show installed integrations. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. 
 1. In this view, you can see the integrations that have already been installed and configured in the system. Locate an integration called [Sumo Logic Log Analytics](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics/) in the list and click on it. The panel on the right will show the integration details, including available actions. Many integrations after install will require appropriate configuration using "resources".<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-explore-ui-installed-integrations.png')} alt="Installed integrations" style={{border: '1px solid gray'}} width="600" />
 1. Move the mouse cursor over the existing resource called **Sumo Logic Log Analytics resource**, then click the "Edit" (pencil) icon. You will see a dialog showing the configuration fields for this resource.
      :::note
@@ -106,12 +110,12 @@ Before you begin creating or customizing a playbook, decide what you’d like to
 
 The Sumo Logic Automation Service contains [hundreds of pre-created playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/), so take time to search the list of playbooks to see if there's an out-of-the-box solution that works for you. In addition, you can view the structure and organization of those OOTB playbooks to give you a starting template for custom playbooks, where you can save time by modifying an existing playbook rather than starting from an empty canvas. 
 
-## Create a playbook for Cloud SIEM insights
+### Create a playbook for Cloud SIEM insights
 
 The Automation Service allows us to create automations that will run whenever [Cloud SIEM insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) are created or closed. These automations are powered through "playbooks" as discussed in the previous section, predefined actions run in an automated workflow to respond to an incident. 
 
 Let’s use the Automation Service to create a playbook for use in Cloud SIEM.
-1. Go to the [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/) page. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.<br/>The list of playbooks displays. You can click on any of the existing playbooks which will open the playbook diagram in the sidebar on the right. You can view here the individual nodes and sequences in the selected playbook, to give you an idea of the type of actions and structures that you can create. Playbooks can have any number of actions, as well as branching conditions to manage different sequences of actions, depending on selected criteria. You can click on any component of a playbook to see more detailed information about each node. 
+1. Go to the [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/) page. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.<br/>The list of playbooks displays. You can click on any of the existing playbooks which will open the playbook diagram in the sidebar on the right. You can view here the individual nodes and sequences in the selected playbook, to give you an idea of the type of actions and structures that you can create. Playbooks can have any number of actions, as well as branching conditions to manage different sequences of actions, depending on selected criteria. You can click on any component of a playbook to see more detailed information about each node. 
 1. Let's [create a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook) of our own that will send an email notification when a Cloud SIEM insight is created with a high severity. 
    1. Click the plus icon near the top to create a new playbook. <br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} style={{border:'1px solid gray'}} alt="New playbook button" width="500"/>
    1. Enter a name for the playbook, such as "Send Cloud SIEM Insight Email Notification". You can optionally enter a description. Select **Cloud SIEM** as the **Type** for the playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" width="400"/>
@@ -194,7 +198,7 @@ This way, potentially the entire incident response cycle can now be automated: a
 1. Note that the checkboxes under the **Execution** field show that you can trigger your automation when an insight is created or closed. For this exercise, however, select **Manually Done**. 
 1. Click **Save** when finished.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-new-automation.png')} alt="New automation" style={{border: '1px solid gray'}} width="400" />
 
-### Test your automation
+### Test your Cloud SIEM automation
 
 To test the automation you created in the [previous section](#create-a-custom-automation-to-run-your-cloud-siem-insights-playbook), run it on a Cloud SIEM insight:
 
@@ -207,96 +211,58 @@ To test the automation you created in the [previous section](#create-a-custom-au
 1. Click the **View Playbook** to see more details about the playbook's execution, such as an explanation about any errors that occurred. (See [Troubleshoot playbooks](/docs/platform-services/automation-service/automation-service-playbooks/#troubleshoot-playbooks) for help if your playbook run has problems.)<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-playbook-view-of-results.png')} alt="Results of automation in the playbook view" style={{border: '1px solid gray'}} width="800" />
 1. If the automation execution was successful, and you included your email in the playbook email notification when you created, your inbox should have an email from the Cloud SIEM system with the insight details as designed in the playbook.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-test-playbook-email-2.png')} alt="Test playbook email" style={{border: '1px solid gray'}} width="500" />
 
-Congratulations! You now have a custom automation that can be manually run or attached to insight creation or closing.
+Congratulations. You now have a custom automation that can be manually run or attached to insight creation or closing.
 
-## Create a playbook for alerts and monitoring
+### Create a playbook for monitoring
 
-Cloud SIEM isn’t the only application that can use playbooks from the Automation Service. We can create another playbook that will be triggered on alerts and monitors within Sumo Logic's Log Analytics Platform.
+Cloud SIEM isn’t the only application that can use playbooks from the Automation Service. You can also use [automated playbooks in monitors](/docs/alerts/monitors/use-playbooks-with-monitors/). In this section, we'll create a playbook that will be triggered when an alert is generated by a monitor within Sumo Logic's Log Analytics Platform.
 
 For this playbook let’s presume we have some AWS EC2 instances that are being monitored through Sumo Logic. We’ll create a sample playbook that upon a monitor alert will get information about our instances and reboot them as needed.
 
-1. Return to the Playbooks page:
+1. Go to the **Playbooks** page. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.
+1. Create the playbook:
+    1. Click the **+** button on the top of the playbook list.
+    1. Give your playbook a name such as "AWS EC2 alert". 
+    1. For **Type** select **Alert**.
+    1. Click **Create**.
+1. Edit the playbook:
+    1. Click the **Edit** (pencil) icon to start editing your playbook.
+    1. Click the pencil icon underneath the **Start** node.
+    1. In the **Edit node** dialog, select **Alert** as the playbook input. The dialog box will auto-populate with a number of parameters related to the source alert.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-edit-node-alert.png')} alt="Playbook edit node for an alert" style={{border: '1px solid gray'}} width="400" />
+    1. In this case, we also want to add a custom parameter to facilitate later actions. Scroll down to the bottom of the **Edit node** dialog and click **Add New Param**.
+    1. Type the following as the parameter name: `customPlaceholderMap[]."cloud.instance.id"`<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-params.png')} alt="Playbook parameters" style={{border: '1px solid gray'}} width="400" />
+1. Click **Update** when finished.
+1. Add a node to your playbook go get EC2 instance IDs:
+    1. Click the **+** symbol on the **Start** node. 
+    1. Choose the **Action** node tpe. 
+    1. Configure the node: 
+       * **Node name**. "Describe AWS Instances"
+       * **Integration**. **AWS EC2**
+       * **Type**. **Enrichment**
+       * **Action**. **Describe Instances**
+       * **Instance ID**. Click the gear icon and select **Playbook inputs** and then **customPlaceholderMap[]."cloud.instance.id"**. If you do not see this item in the list, check that you added the new parameter and saved it successfully in the previous step.
+    1. Click **Create**.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-alert-node.png')} alt="AWS instances playbook node" style={{border: '1px solid gray'}} width="600" />
+1. Add a node to reboot EC2 instances:
+    1. Click **+** on the **Describe AWS Instances** node you just created.
+    1. Choose the **Action** node tpe.
+    1. Configure the node:
+       * **Node name**. "Reboot Instances"
+       * **Integration**. **AWS EC2**
+       * **Type**. **Containment**
+       * **Action** **Reboot Instances**
+       * **Instance Id**. Click the gear icon and select **Describe AWS Instances** and then **output.Reservations.[].Instances.[].InstanceId**.
+    1. Click **Create**.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-reboot-instances-node.png')} alt="Reboot instances playbook node" style={{border: '1px solid gray'}} width="400" />
+1. Add a node to resolve the alerts:
+    1. Click **+** on the **Reboot Instances** node you just created.
+    1. Choose the **Action** node tpe.
+    1. Configure the node:
+       * **Name**: "Resolve Alert"
+       * **Integration** **Sumo Logic Log Analytics**
+       * **Type**. **Notification**
+       * **Action** **Resolve Alert**
+       * **Alert ID**: Click the gear icon and select **Playbook inputs** and then **input.Id**.
+    1. Click **Create**.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-resolve-alert-node.png')} alt="Resolve alert playbook node" style={{border: '1px solid gray'}} width="400" />
+1. Connect the **Resolve Alert** node to the **End** node. Your completed playbook will look more or less like the following:<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-alerts-playbook.png')} alt="Completed alert playbook" style={{border: '1px solid gray'}} width="700" />
+1. At the bottom of the screen, click the **Publish** (clipboard) icon next to the **Edit** (pencil) icon to publish your playbook.
 
-Classic UI: Cloud SIEM Home Page > Content > Automation > Manage Playbooks
-New UI: Left nav menu > Automation > Playbooks
-2. Create another playbook by clicking on the "+" button on the top of the playbook list.
-
-3. Name your playbook "Training Alert XXX" with your initials or numerical ID in place of the XXX. Set "Network Anomaly" as the Type. Add a short description if needed.
-
-4. Click the "Edit" (pencil) icon to start editing your playbook.
-
-5. Click the pencil icon underneath the Start node.
-
-6. Select "Alert" as the playbook input in the Edit Node dialog that follows. 
-
-The Edit Node dialog box will auto-populate with a number of parameters related to the source alert. In this case, we also want to add a custom parameter to facilitate later actions.
-
-7. Click Add New Param at the bottom of the parameter list.
-
-8. Type the following as the parameter name:  customPlaceholderMap[]."cloud.instance.id"
-
-<img src={useBaseUrl('img/platform-services/automation-service/intro-params.png')} alt="Playbook parameters" style={{border: '1px solid gray'}} width="500" />
-
-9. Click Update when finished.
-
-10. Using the method from the previous lab, add a new Action node to your playbook:
-
-Node name: "Describe AWS Instances"
-Integration: AWS EC2
-Type: Enrichment
-Action: Describe Instances
-Instance ID: (choose the cog icon > Playbook inputs > customPlaceholderMap[]."cloud.instance.id") – if you do not see this item in the list, check that you added the parameter and saved it successfully in the Start node using steps 7-9 above.
-11. Click on the ‘plus’ icon on your previous node and create a new "Action" node type.
-
-12. Configure the Action node as follows:
-
-Node name: "Reboot Instances"
-Integration: AWS EC2
-Type: Containment
-Action: Reboot Instances
-Instance Id: cog icon > Get AWS Instances > output.Reservations.[].Instances.[].InstanceId
-
-
-13. Create a new Action node after last node you created with the following parameters:
-
-Name: "Resolve Alert"
-Integration: "Sumo Logic Log Analytics"
-Type: "Notification"
-Action: "Resolve Alert"
-Alert ID: cog icon > From the Playbook inputs, select "input.Id"
-14. Connect the Resolve Alert node to the End node.
-
-Your completed playbook will look more or less like the following:
-
-<img src={useBaseUrl('img/platform-services/automation-service/intro-alerts-playbook.png')} alt="Alert playbook" style={{border: '1px solid gray'}} width="700" />
-
-Now that we have created a playbook for alerts, let’s attach it to an existing monitor.
-
-Classic UI:
-
-15. Return to the previous browser window with the main Sumo Logic web interface. (If it is not open, you can get back there by clicking on the "nine dot" Switch Apps icon in the upper right and selecting Log Analytics Platform) 
-
-15b. From the bottom left nav menu, select Manage Data > Monitoring. 
-
-New UI:
-
-15. From the left nav menu, select Alerts > Monitors.
-
-16. Select any monitor from the list: clicking on it will open a sidebar on the right with the monitor information.
-
-17. Click the Edit button on top of the sidebar.
-
-18. Scroll down to section #4: Playbooks. Here you have a section for a "text" playbook (written instructions to operators as to how to handle this alert), and also a field for "Automated Playbooks".
-
-19. Click on the Automated Playbooks field to open up the list of playbooks – you should see your "Training Alert XXX" playbook in the list, and now you can potentially add it to a monitor. Saving this monitor with this configuration will run this playbook automatically whenever the alert is triggered.
-
-20. Navigate to the Alerts page -- this page will show alerts that have already triggered, with alert details:
-
-Classic UI: click the "bell" icon in the top tab row.
-New UI: Click Alert > Alert List from the left nav menu. 
-21. Click on an alert in the list to see the alert details. 
-
-22. On the alert details page, click "Playbooks" in the upper right corner to open a sidebar listing any automated playbooks that have been attached to this monitor using the above process. If there are playbooks in the list, click on the link in the sidebar to open the playbook results page in another browser tab, showing you the results of each playbook action. (If there are no playbooks listed in the sidebar, you can return to the alert list page and choose another alert.)
-
-
-Go to results
+Now that you have created a playbook for alerts, follow the directions in [Add an automated playbook to a monitor](/docs/alerts/monitors/use-playbooks-with-monitors/#add-an-automated-playbook-to-a-monitor). Add the playbook to a monitor for AWS EC2 instances.
