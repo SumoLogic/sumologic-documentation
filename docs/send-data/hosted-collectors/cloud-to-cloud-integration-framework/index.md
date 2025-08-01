@@ -13,7 +13,7 @@ The Cloud-to-Cloud Integration Framework is a fully-managed collection system th
 * Each account is limited to 50 Cloud-to-Cloud Sources.
 * A warning is issued when you reach 80% of the limit (40 Sources).
 * You are notified when the maximum limit is reached.
-* In the [Fed deployment](/docs/api/troubleshooting#deployments-and-sumo-logic-endpoints), supported Cloud-to-Cloud Sources are limited.
+* In the [Fed deployment](/docs/api/about-apis/troubleshooting#deployments-and-sumo-logic-endpoints), supported Cloud-to-Cloud Sources are limited.
 
 ## Static IP addresses
 
@@ -436,6 +436,12 @@ In this section, we'll introduce the following concepts:
     <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source"><img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/><h4>Okta</h4></a>
     <p>Provides a secure endpoint to receive event data from the Okta System Log API and Users API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+    <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source"><img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/onelogin.png')} alt="Thumbnail icon" width="75"/><h4>OneLogin</h4></a>
+    <p>Provides a secure and centralized access to user lists from the OneLogin API.</p>
   </div>
 </div>
   <div className="box smallbox card">

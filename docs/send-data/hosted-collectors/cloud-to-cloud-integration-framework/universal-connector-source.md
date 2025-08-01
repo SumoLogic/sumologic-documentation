@@ -48,8 +48,8 @@ When you create an Universal Connector Source, you add it to a Hosted Collector.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Parser path**. If **Forward to SIEM** option is selected, provide a [parser path](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md).
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   - ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   - ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   - <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   - <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Configuration Sections**. Expand each section to learn more about the options available for configuration.
 <details>
   <summary>Authentication Configuration</summary>
@@ -464,6 +464,8 @@ The syntax for this variable requires a timestamp format as a single argument. R
 | `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}`            | `2024-03-07T20:15:56.905571Z`       |
 | `{{ .WindowEndUTC "epoch" }}`                                  | `1709842556`                        |
 | `{{ .WindowEndUTC "epochMilli" }}`                             | `1709842556000`                     |
+| `{{ .WindowEndUTC "epochNanoInt" }}`                           | `173584347745451512`                |
+| `{{ .WindowEndUTC "epochNanoFloat" }}`                         | `1735843477.45451512`               |
 | `lessThan:{{ .WindowEndUTC "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T20:15:56.905Z` |
 | `{"startTime":"{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}"}`   | `{"startTime":"{{ .WindowEndUTC "2024-03-07T20:15:56.905Z" }}"` |
 
@@ -537,6 +539,8 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 | RFC 3339 Nano Seconds | `2024-02-01T16:07:57.541468757Z` | `yyyy-MM-ddTHH:mm:ss.SSSSSSSSSZ`      |
 | Epoch                 | `1706803677`                     | `epoch`                               |
 | Epoch in Milliseconds | `1706803677000`                  | `epochMilli`                          |
+| Epoch NanoInt         | `173584347745451512`             | `epochNanoInt`                        |
+| Epoch NanoFloat       | `1735843477.454515`              | `epochNanoFloat`                      |
 
 ## FAQ
 

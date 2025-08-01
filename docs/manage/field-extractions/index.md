@@ -34,7 +34,7 @@ The Field Extraction Rules page displays the following information: 
 
 When hovering over a row in the table there are icons that appear on the far right for editing, disabling and deleting the rule.
 
-* **Status** shows a checkmark in a green circle ![check in green circle.png](/img/reuse/check-green-circle.png) to indicate if the Rule is actively being applied or an exclamation mark in a red circle ![exclamation in red circle.png](/img/reuse/exclamation-red-circle.png) to indicate if the Rule is disabled.
+* **Status** shows a checkmark in a green circle ![check in green circle.png](/img/reuse/green-check-circle.png) to indicate if the Rule is actively being applied or an exclamation mark in a red circle ![exclamation in red circle.png](/img/reuse/exclamation-red-circle.png) to indicate if the Rule is disabled.
 * **Rule Name**
 * **Applied At** indicates when the field extraction process occurs, either at Ingest or Run time.
 * **Scope** 

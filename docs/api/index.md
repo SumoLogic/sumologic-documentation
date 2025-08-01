@@ -11,8 +11,8 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 <div className="box-wrapper" markdown="1">
 <div className="box boxwidetop card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/getting-started')}><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="50"/><h4>Authentication and Endpoints</h4></a>
-  <p>Get your API credentials and endpoint URL to start using the Sumo Logic APIs.</p>
+  <a href={useBaseUrl('/docs/api/about-apis')}><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="50"/><h4>About Sumo Logic APIs</h4></a>
+  <p>Learn about Sumo Logic APIs, including endpoints and how to use them.</p>
   </div>
 </div></div>
 
@@ -257,11 +257,6 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/api/user-management')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="Thumbnail icon" width="50"/><h4>Users</h4></a>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/api/troubleshooting')}><img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="50"/><h4>Troubleshooting</h4></a>
   </div>
 </div>
 </div>
