@@ -91,7 +91,7 @@ The following table provides a summary list of key features by Flex package acco
 | Data Forwarding | | &#10003; | &#10003; | &#10003; |
 | Data Volume Index | | &#10003; | &#10003; | &#10003; |
 | Enterprise Audit and Logging Dashboards |  | &#10003; | | &#10003; |
-| Entity Normalization |  | &#10003; | | &#10003; |
+| Entity Normalization |  | &#10003; | |&#10003; |
 | Entity Relationship Graph |  | | | &#10003; |
 | Entity Timeline |  |  | | &#10003; |
 | Field Extraction | &#10003; | &#10003; | &#10003; | &#10003; |
@@ -102,7 +102,7 @@ The following table provides a summary list of key features by Flex package acco
 | Insight Global Confidence Scores |  |  | | &#10003; |
 | Insight Rules Engine (including 900+ out-of-the-box rules) |  |  | | &#10003; |
 | Insight Trainer |  |  | | &#10003; |
-| Kubernetes Observability | &#10003; | &#10003; | | &#10003; |
+| Kubernetes Observability | &#10003; | &#10003; | |&#10003; |
 | Live Tail for Streaming Logs | &#10003; | &#10003; | | &#10003; |
 | LogReduce©, LogCompare, and LogExplain | &#10003; | &#10003; | &#10003; | &#10003; |
 | Log Data Continuous Volume | &#10003; | &#10003; | &#10003; |  |
@@ -113,30 +113,29 @@ The following table provides a summary list of key features by Flex package acco
 | Lookup Tables |  | &#10003; | &#10003; | &#10003; |
 | Management APIs | &#10003; | &#10003; | | &#10003; |
 | Metrics | &#10003; | &#10003; | &#10003; | &#10003; |
-| Metrics based SLOs |  | | | &#10003; |
+| Metrics based SLOs |  | | |&#10003; |
 | Metrics data retention | &#10003; | &#10003; | &#10003; | &#10003; |
-| Metrics Predict Operators |  |  | | &#10003; |
+| Metrics Predict Operators |  |  | |&#10003; |
 | Metrics volume | &#10003; | &#10003; | &#10003; | &#10003; |
 | MITRE ATT&CK Coverage Explorer |  | | | &#10003; |
 | Monitors | &#10003; | &#10003; | &#10003; | &#10003; |
-| Multi-Cloud Observability (AWS, Azure GCP) | &#10003; | &#10003; | | &#10003; |
-| OTel Data Onboarding | &#10003; | &#10003; | | &#10003; |
-| OTel for K8s Logs and Events |  |  | | &#10003; |
+| Multi-Cloud Observability (AWS, Azure GCP) | &#10003; | &#10003; | |&#10003; |
+| OTel Data Onboarding | &#10003; | &#10003; | |&#10003; |
+| OTel for K8s Logs and Events |  |  | |&#10003; |
 | Partitions | &#10003; | &#10003; | &#10003; | &#10003; |
 | PCI Compliance Apps and Dashboards for Audit Readiness | | &#10003; | | &#10003; |
 | Playbooks (including complete Sumo Logic playbook catalog) |  |  | | &#10003; |
 | Predictive Analytics and Outlier Detection | &#10003; | &#10003; | | &#10003; |
 | Progressive Automation |  |  | | &#10003; |
-| Real User Monitoring (RUM) |  | &#10003; | &#10003; | &#10003; |
-| Reliability Management (SLIs/SLOs) |  | | | &#10003; |
-| Risk Assessment |  | &#10003; | | &#10003; |
-| Scheduled Alert Muting | |  | | &#10003; |
+| Real User Monitoring (RUM) |  | &#10003; | &#10003; |&#10003; |
+| Reliability Management (SLIs/SLOs) |  | | |&#10003; |
+| Risk Assessment |  | &#10003; | |&#10003; |
+| Scheduled Alert Muting | |  | |&#10003; |
 | Scheduled Views | &#10003; | &#10003; | &#10003; | &#10003; |
-| Service Maps |  | &#10003; | | &#10003; |
+| Service Maps |  | &#10003; | |&#10003; |
 | Single sign-on (SSO) with SAML | &#10003; | &#10003; | &#10003; | &#10003; |
 | Software Development Optimization | &#10003; | &#10003; | | &#10003; |
 | Sumo Logic Apps | &#10003; | &#10003; | &#10003; | &#10003; |
-| Supervised Active Intelligence |  |  | | &#10003; |
 | Support | &#10003; | &#10003; | &#10003; | &#10003; |
 | Traces | &#10003;<br/>Up to 1.5GB per day* | &#10003;<br/>Up to 5GB per day | &#10003;<br/>5GB per day| &#10003;<br/>Up to 5GB per day |
 | Usage Management - Advanced |  |  | | &#10003; |

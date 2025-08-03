@@ -43,12 +43,10 @@ Following are features available with our security solutions. If you have any qu
 | Automation Service | &#10003; | &#10003; | |
 | Open Integration Framework (OIF) | &#10003; | &#10003; | &#10003; |
 | App Central | &#10003; | &#10003; | &#10003; |
-| Playbook | &#10003; | &#10003; | &#10003; |
+| Playbook |&#10003; | &#10003; | &#10003; |
 | SecOps dashboard | | | &#10003; |
 | Case Manager | | | &#10003; |
 | War Room | | | &#10003; |
-| Supervised active intelligence with alert triage and playbooks suggestions | | | &#10003; |
 | Progressive automation | | | &#10003; |
 | Highly customizable dashboards and KPIs | | | &#10003; |
 | Automatic incident reports | | | &#10003; |
-
