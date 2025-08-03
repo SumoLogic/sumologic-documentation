@@ -13,7 +13,7 @@ You can configure a cloud syslog source to allow a syslog client to send [RFC 5
 
 Syslog messages must be compliant with [RFC 5424](https://tools.ietf.org/html/rfc5424) or they are dropped. Messages over 64 KB are truncated.
 
-Sumo manages an elastic scaling set of syslog servers, which scales up and down behind a set of AWS Elastic Load Balancers. The AWS ELB set can also scale up and down. For this reason, instead of IP address-based endpoints, Sumo uses endpoint hostnames in this format:
+Sumo Logic manages an elastic scaling set of syslog servers, which scales up and down behind a set of AWS Elastic Load Balancers. The AWS ELB set can also scale up and down. For this reason, instead of IP address-based endpoints, Sumo Logic uses endpoint hostnames in this format:
 
 ```
 syslog.collection.YOUR_DEPLOYMENT.sumologic.com
@@ -25,17 +25,19 @@ where `YOUR_DEPLOYMENT` is `au`, `ca`, `de`, `eu`, `fed`, `jp`, `kr`, `us1`,
 FIPS 140-2 compliance is not available for Cloud Syslog in the FedRAMP deployment. It is with great emphasis that you must recognize and understand that the responsibility to mitigate information spillage is solely yours. We have no insight into your data or how it is classified.
 :::
 
-In the procedure below, you configure a Cloud Syslog Source, this will generate a Sumo Logic token and the endpoint hostname. Then you set up TLS by downloading a cert to your server. Download the **DigiCert** certificate
-from one of the following locations:
-* [https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt](https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt)
-* [https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.pem](https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.pem)
+In the procedure below, you configure a Cloud Syslog Source. This will generate a Sumo Logic token and the endpoint hostname. 
+
+Then you set up TLS by downloading a cert to your server (see procedures for [rsyslog](/docs/send-data/hosted-collectors/cloud-syslog-source/rsyslog/#setup-tls) and [syslog-ng](/docs/send-data/hosted-collectors/cloud-syslog-source/syslog-ng/#setup-tls)). Download the DigiCert and AWS Certificate Manager (ACM) certificates from the following locations:
+* https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt
+* https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.pem
+* https://www.amazontrust.com/repository/AmazonRootCA1.cer
 
 Sumo Logic supports syslog clients, including syslog-ng and rsyslog. Follow the instructions in the appropriate section below to configure your server to send syslog data. If syslog data does not appear in Sumo Logic, refer to
 [Troubleshooting](#troubleshooting) below.
 
 ## Configure a Cloud Syslog Source
 
-Cloud syslog configuration requires a token that is automatically generated when you configure a cloud syslog source. The token allows Sumo to distinguish your log messages from those of other customers. The token is tied to the source, but not to any specific user. 
+Cloud syslog configuration requires a token that is automatically generated when you configure a cloud syslog source. The token allows Sumo Logic to distinguish your log messages from those of other customers. The token is tied to the source, but not to any specific user. 
 
 Include the token as the [Structured ID](https://tools.ietf.org/html/rfc5424#section-7) in every syslog message that is sent to Sumo Logic. The token is removed by Sumo Logic during ingestion and is not included with your syslog message in search results.
 
@@ -46,7 +48,7 @@ To configure a cloud syslog source, do the following:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 1. Select **Cloud Syslog**.
-1. Enter a **Name** to display for this source in Sumo. Description is optional.
+1. Enter a **Name** to display for this source in Sumo Logic. Description is optional.
 1. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from this source. (Category metadata is stored in a searchable field called `_sourceCategory`.)
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
@@ -57,7 +59,7 @@ To configure a cloud syslog source, do the following:
 
    * **Enable Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format**. By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
+   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
 
 1. Create any Processing Rules you'd like for the new source.
 1. Click **Save**. The token information is displayed in a read-only dialog box, shown below.
@@ -69,7 +71,7 @@ To configure a cloud syslog source, do the following:
     Token: 9HFxoa6+lXBmvSM9koPjGzvTaxXDQvJ4POE/WCURPAo+w4H7PmZm8H3mSEKxPl0Q@41123, Host: syslog.collection.YOUR_DEPLOYMENT.sumologic.com, TCP TLS Port: 6514
     ```
 
-    The number `41123` in the token is the Sumo Private Enterprise Number (PEN). There are two options for including the token. You can include it in the structured data field or in the message body.  In the following example, the token is in the structured data field. 
+    The number `41123` in the token is the Sumo Logic Private Enterprise Number (PEN). There are two options for including the token. You can include it in the structured data field or in the message body.  In the following example, the token is in the structured data field. 
 
     ```
     <165>1 2015-01-11T22:14:15.003Z mymachine.example.com evntslog - ID47 [YOUR_TOKEN] msg
@@ -120,11 +122,11 @@ If syslog messages fail to authenticate to the syslog cloud source—for example
 
 ### Troubleshooting
 
-If you encounter problems, follow the instructions below to first verify the Sumo service connection, and then check the client configuration is correct.
+If you encounter problems, follow the instructions below to first verify the Sumo Logic service connection, and then check the client configuration is correct.
 
-#### Verify connection with Sumo service
+#### Verify connection with Sumo Logic service
 
-To verify that the Sumo service can receive syslog messages, use a networking utility that supports TLS, such as nMap.org's ncat, to check that the syslog port accepts messages. 
+To verify that the Sumo Logic service can receive syslog messages, use a networking utility that supports TLS, such as nMap.org's ncat, to check that the syslog port accepts messages. 
 
 ```
 $ ncat --ssl syslog.collection.YOUR_DEPLOYMENT.sumologic.com PORT
@@ -142,7 +144,7 @@ Then, enter a test message, for example:
 <165>1 2017-10-24T06:00:15.003Z mymachine.example.com evntslog - ID47 - YOUR_TOKEN This is a message
 ```
 
-where `YOUR_TOKEN` is the token that Sumo generated when you created the Cloud Syslog Source above.
+where `YOUR_TOKEN` is the token that Sumo Logic generated when you created the Cloud Syslog Source above.
 
 #### Verify client configuration
 

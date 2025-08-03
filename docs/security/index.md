@@ -47,7 +47,6 @@ Following are features available with our security solutions. If you have any qu
 | SecOps dashboard | | | ![check](/img/reuse/check.png) |
 | Case Manager | | | ![check](/img/reuse/check.png) |
 | War Room | | | ![check](/img/reuse/check.png) |
-| Supervised active intelligence with alert triage and playbooks suggestions | | | ![check](/img/reuse/check.png) |
 | Progressive automation | | | ![check](/img/reuse/check.png) |
 | Highly customizable dashboards and KPIs | | | ![check](/img/reuse/check.png) |
 | Automatic incident reports | | | ![check](/img/reuse/check.png) |

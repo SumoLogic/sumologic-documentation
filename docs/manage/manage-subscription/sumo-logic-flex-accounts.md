@@ -136,7 +136,6 @@ The following table provides a summary list of key features by Flex package acco
 | Single sign-on (SSO) with SAML | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Software Development Optimization | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
 | Sumo Logic Apps | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Supervised Active Intelligence |  |  | | ![check](/img/reuse/check.png) |
 | Support | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Traces | ![check](/img/reuse/check.png)<br/>Up to 1.5GB per day* | ![check](/img/reuse/check.png)<br/>Up to 5GB per day | ![check](/img/reuse/check.png)<br/>5GB per day| ![check](/img/reuse/check.png)<br/>Up to 5GB per day |
 | Usage Management - Advanced |  |  | | ![check](/img/reuse/check.png) |
