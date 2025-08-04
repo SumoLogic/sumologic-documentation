@@ -1,7 +1,7 @@
 ---
 id: local-windows-event-log-source
 title: Local Windows Event Log Source
-description: You can collect local events from the Windows Events Viewer.
+description: Configure a Local Windows Event Log Source on the Installed Collector to collect and analyze critical event logs from Windows-based systems.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

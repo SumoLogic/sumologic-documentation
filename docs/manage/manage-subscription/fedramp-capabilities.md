@@ -25,7 +25,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Abilities - Solutions | [Cloud SOAR](/docs/cloud-soar/) / [Automation Service](/docs/platform-services/automation-service/) | &#10003; |
 | Abilities - Solutions | [Software Development Optimization](/docs/observability/sdo/) | &#10003; ||
 | Abilities - Solutions | [Kubernetes observability](/docs/observability/kubernetes/) | &#10003; | &#10003; |
-| Administration - Account | [Account overview](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) | &#10003; | &#10003; | 
+| Administration - Account | [Account overview](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) | &#10003; | &#10003; |
 | Administration - Account | [Data management](/docs/manage/users-roles/roles/role-capabilities/#data-management) | &#10003; | &#10003; |
 | Administration - Personal  | [Preferences](/docs/get-started/account-settings-preferences/) | &#10003; | &#10003; |
 | Administration - Security | [Access keys](/docs/manage/security/access-keys/) | &#10003; | &#10003; |
