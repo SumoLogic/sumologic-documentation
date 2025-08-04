@@ -190,10 +190,20 @@ Be sure to copy and paste your **token** in a secure location. You'll need this 
 
 **Sumo Logic SSL certificate**
 
-In the procedure below, you'll configure a Cloud Syslog Source. This will generate a Sumo Logic token and the endpoint hostname. Then you'll set up TLS by downloading a cert to your server. Download the DigiCert certificate from one of the following locations:
-* [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt)
-* [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem)
+In the procedure below, you'll configure a Cloud Syslog Source. This will generate a Sumo Logic token and the endpoint hostname. Then you'll set up TLS by downloading a cert to your server. 
 
+1. Download the DigiCert and AWS Certificate Manager (ACM) certificates from the following locations:
+   * https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt
+   * https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem
+   * https://www.amazontrust.com/repository/AmazonRootCA1.cer
+1. Run the following commands:
+   * `wget -O digicert_ca.der https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.`
+   * `openssl x509 -inform der -in digicert_ca.der -out digicert_ca.crt`
+   * `wget -O acm_ca.der https://www.amazontrust.com/repository/AmazonRootCA1.cer`
+   * `openssl x509 -inform der -in acm_ca.der -out acm_ca.crt`
+   * `cat acm_ca.crt digicert_ca.crt > digicert_acm_cas.crt`
+   * `perl -p -i -e "s/\r//g" digicert_acm_cas.crt`
+1. You'll upload the merged cert to the Acquia app when you configure Acquia log forwarding. See [Step 3: Configure logging for Acquia](#step-3-configure-logging-for-acquia).
 
 ### Configuring a cloud syslog source
 

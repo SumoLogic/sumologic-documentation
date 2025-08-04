@@ -1258,7 +1258,7 @@ Calculates and assigns the incident severity based on the highest returned sever
 
 Hunt for malicious indicators using Carbon Black.
 
-### 162 - SolarWinds Orion - Exploit Mitigation (Supervised Active Intelligence)
+### 162 - SolarWinds Orion - Exploit Mitigation
 
 *Intrusion*
 
