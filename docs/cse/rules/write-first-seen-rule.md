@@ -50,7 +50,7 @@ Watch this micro lesson to learn more about first seen rules.
 
 A first seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is simply a filter condition that defines what incoming records the rule will apply to. For each first seen rule, Cloud SIEM automatically creates a baseline model of normal behavior for a defined time period (by default for the last 90 days) evidenced by records that match the Rule Expression. The activity found during this period is considered normal behavior and will not be alerted on. 
 
-As soon as you save or update a first seen rule, the baseline is built using existing data collected. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. If the records gathered for a baseline exceed 50 million, the historical baseline capabilities become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
+As soon as you save or update a first seen rule (or disable and re-enable it), the full baseline is built using existing data collected. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. If the records gathered for a baseline exceed 50 million, the historical baseline capabilities become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
 
 Once the baseline is created, when an incoming record includes matching activity not seen during the baseline retention period, the rule creates a signal identifying the activity as *first seen*. The signal indicates that the activity is first seen:
  
@@ -86,9 +86,9 @@ The settings in the **If Triggered** section determine what records the rule wil
 
 1.  **When a Record matching the expression**. Enter an expression that matches the records that you want to rule to apply to.
 1. Click **Test Rule Expression** to test it against existing records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
-1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule.
+1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule. (If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.)
     :::note
-    If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.
+    The [baseline for a first seen rule](#baselines-for-first-seen-rules) is recalculated if a rule tuning expression that applies to the selected rule is updated. However, the baseline is not recalculated if the rule tuning expression applies to all rules.
     :::
 1. **has a new value for the field(s)**. Select the record field that will be used to build the baseline.
 1. **after building a [global | per Entity] baseline** The settings in this section define the scope of the baseline that will be built.
