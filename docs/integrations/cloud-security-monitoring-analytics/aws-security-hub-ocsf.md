@@ -203,7 +203,7 @@ Follow the below steps to configure the EventBridge API destination:
 1. In the navigation bar, click **API destinations**.
 1. Click **Create destination**.
 1. Enter a name for the API Destination.
-1. Provide the HTTP Source URL collected from the [Step 1](#step-1-create-an-http-source-in-sumo-logic).
+1. Provide the HTTP Source URL collected from [Step 1](#step-1-create-an-http-source-in-sumo-logic).
 1. Click **Create a new connection** to create a connection for the API destination.
     1. Provide a connection name.
     1. Keep the **API Type** as **Public**.
