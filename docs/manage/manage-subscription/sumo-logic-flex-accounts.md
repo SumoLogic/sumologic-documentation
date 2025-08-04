@@ -64,84 +64,84 @@ The following table provides a summary list of key features by Flex package acco
 
 | Feature | Free | Trial | Essentials | Enterprise Suite Flex |
 |:------- | :--- | :---- | :------------- | :------------- |
-| Advanced Span Analytics |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Anomaly Alerting |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Alert Response | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Anomaly Detection |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Anomaly Rules |  | | | ![check](/img/reuse/check.png) |
-| APM and Distributed Tracing |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Application Observability | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Audit Index | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Automated Log-level Detection |  | | |![check](/img/reuse/check.png) |
-| Automated Playbooks | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Automated Remediation |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| AWS CloudTrail and Amazon Guard Duty Threat Benchmarking | | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Case Manager | |  | | ![check](/img/reuse/check.png) |
-| Cloud Infrastructure Security |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Cloud Log Management | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
+| Advanced Span Analytics |  | &#10003; | | &#10003; |
+| Anomaly Alerting |  | &#10003; | | &#10003; |
+| Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | &#10003; | &#10003; | | &#10003; |
+| Alert Response | &#10003; | &#10003; | | &#10003; |
+| Anomaly Detection |  | &#10003; | | &#10003; |
+| Anomaly Rules |  | | | &#10003; |
+| APM and Distributed Tracing |  | &#10003; | | &#10003; |
+| Application Observability | &#10003; | &#10003; | | &#10003; |
+| Audit Index | &#10003; | &#10003; | &#10003; | &#10003; |
+| Automated Log-level Detection |  | | | &#10003; |
+| Automated Playbooks | &#10003; | &#10003; | | &#10003; |
+| Automated Remediation |  | &#10003; | | &#10003; |
+| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) | &#10003; | &#10003; | | &#10003; |
+| AWS CloudTrail and Amazon Guard Duty Threat Benchmarking | | &#10003; | | &#10003; |
+| Case Manager | |  | | &#10003; |
+| Cloud Infrastructure Security |  | &#10003; | | &#10003; |
+| Cloud Log Management | &#10003; | &#10003; | | &#10003; |
 | Cloud SIEM |  |  | | Activation required* |
-| Cloud Security Posture Monitoring |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
+| Cloud Security Posture Monitoring |  | &#10003; | | &#10003; |
 | Cloud SOAR |  |  | | Activation required* |
-| Collector Management API | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Compliance and Audit Logging |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Threat Intelligence |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Customizable Dashboards | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Data Forwarding | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Data Volume Index | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Enterprise Audit and Logging Dashboards |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Entity Normalization |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Entity Relationship Graph |  | | | ![check](/img/reuse/check.png) |
-| Entity Timeline |  |  | | ![check](/img/reuse/check.png) |
-| Field Extraction | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Geo IP Lookups | | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Global Intelligence Service apps |  |  | | ![check](/img/reuse/check.png) |
-| Historical and Live Streaming Dashboards | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Ingest Budgets |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Insight Global Confidence Scores |  |  | | ![check](/img/reuse/check.png) |
-| Insight Rules Engine (including 900+ out-of-the-box rules) |  |  | | ![check](/img/reuse/check.png) |
-| Insight Trainer |  |  | | ![check](/img/reuse/check.png) |
-| Kubernetes Observability | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Live Tail for Streaming Logs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| LogReduce©, LogCompare, and LogExplain | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data Continuous Volume | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
-| Log Data Frequent Tier Volume | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
-| Log Data storage  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Search and Visualizations | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Log Search API |  |  | | ![check](/img/reuse/check.png) |
-| Lookup Tables |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Management APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Metrics | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics based SLOs |  | | |![check](/img/reuse/check.png) |
-| Metrics data retention | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics Predict Operators |  |  | |![check](/img/reuse/check.png) |
-| Metrics volume | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| MITRE ATT&CK Coverage Explorer |  | | | ![check](/img/reuse/check.png) |
-| Monitors | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Multi-Cloud Observability (AWS, Azure GCP) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| OTel Data Onboarding | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| OTel for K8s Logs and Events |  |  | |![check](/img/reuse/check.png) |
-| Partitions | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| PCI Compliance Apps and Dashboards for Audit Readiness | | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Playbooks (including complete Sumo Logic playbook catalog) |  |  | | ![check](/img/reuse/check.png) |
-| Predictive Analytics and Outlier Detection | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Progressive Automation |  |  | | ![check](/img/reuse/check.png) |
-| Real User Monitoring (RUM) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Reliability Management (SLIs/SLOs) |  | | |![check](/img/reuse/check.png) |
-| Risk Assessment |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Scheduled Alert Muting | |  | |![check](/img/reuse/check.png) |
-| Scheduled Views | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Service Maps |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Single sign-on (SSO) with SAML | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Software Development Optimization | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Sumo Logic Apps | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Support | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Traces | ![check](/img/reuse/check.png)<br/>Up to 1.5GB per day* | ![check](/img/reuse/check.png)<br/>Up to 5GB per day | ![check](/img/reuse/check.png)<br/>5GB per day| ![check](/img/reuse/check.png)<br/>Up to 5GB per day |
-| Usage Management - Advanced |  |  | | ![check](/img/reuse/check.png) |
-| Usage Management - Basic | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | <br/>Up to 5GB per day |
-| War Room | |  | | ![check](/img/reuse/check.png) |
+| Collector Management API | &#10003; | &#10003; | &#10003; | &#10003; |
+| Compliance and Audit Logging |  | &#10003; | | &#10003; |
+| Threat Intelligence |  | &#10003; | | &#10003; |
+| Customizable Dashboards | &#10003; | &#10003; | | &#10003; |
+| Data Forwarding | | &#10003; | &#10003; | &#10003; |
+| Data Volume Index | | &#10003; | &#10003; | &#10003; |
+| Enterprise Audit and Logging Dashboards |  | &#10003; | | &#10003; |
+| Entity Normalization |  | &#10003; | |&#10003; |
+| Entity Relationship Graph |  | | | &#10003; |
+| Entity Timeline |  |  | | &#10003; |
+| Field Extraction | &#10003; | &#10003; | &#10003; | &#10003; |
+| Geo IP Lookups | | &#10003; | | &#10003; |
+| Global Intelligence Service apps |  |  | | &#10003; |
+| Historical and Live Streaming Dashboards | &#10003; | &#10003; | | &#10003; |
+| Ingest Budgets |  | &#10003; | | &#10003; |
+| Insight Global Confidence Scores |  |  | | &#10003; |
+| Insight Rules Engine (including 900+ out-of-the-box rules) |  |  | | &#10003; |
+| Insight Trainer |  |  | | &#10003; |
+| Kubernetes Observability | &#10003; | &#10003; | |&#10003; |
+| Live Tail for Streaming Logs | &#10003; | &#10003; | | &#10003; |
+| LogReduce©, LogCompare, and LogExplain | &#10003; | &#10003; | &#10003; | &#10003; |
+| Log Data Continuous Volume | &#10003; | &#10003; | &#10003; |  |
+| Log Data Frequent Tier Volume | | &#10003; | &#10003; |  |
+| Log Data storage  | &#10003; | &#10003; | &#10003; | &#10003; |
+| Log Search and Visualizations | &#10003; | &#10003; | | &#10003; |
+| Log Search API |  |  | | &#10003; |
+| Lookup Tables |  | &#10003; | &#10003; | &#10003; |
+| Management APIs | &#10003; | &#10003; | | &#10003; |
+| Metrics | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics based SLOs |  | | |&#10003; |
+| Metrics data retention | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics Predict Operators |  |  | |&#10003; |
+| Metrics volume | &#10003; | &#10003; | &#10003; | &#10003; |
+| MITRE ATT&CK Coverage Explorer |  | | | &#10003; |
+| Monitors | &#10003; | &#10003; | &#10003; | &#10003; |
+| Multi-Cloud Observability (AWS, Azure GCP) | &#10003; | &#10003; | |&#10003; |
+| OTel Data Onboarding | &#10003; | &#10003; | |&#10003; |
+| OTel for K8s Logs and Events |  |  | |&#10003; |
+| Partitions | &#10003; | &#10003; | &#10003; | &#10003; |
+| PCI Compliance Apps and Dashboards for Audit Readiness | | &#10003; | | &#10003; |
+| Playbooks (including complete Sumo Logic playbook catalog) |  |  | | &#10003; |
+| Predictive Analytics and Outlier Detection | &#10003; | &#10003; | | &#10003; |
+| Progressive Automation |  |  | | &#10003; |
+| Real User Monitoring (RUM) |  | &#10003; | &#10003; |&#10003; |
+| Reliability Management (SLIs/SLOs) |  | | |&#10003; |
+| Risk Assessment |  | &#10003; | |&#10003; |
+| Scheduled Alert Muting | |  | |&#10003; |
+| Scheduled Views | &#10003; | &#10003; | &#10003; | &#10003; |
+| Service Maps |  | &#10003; | |&#10003; |
+| Single sign-on (SSO) with SAML | &#10003; | &#10003; | &#10003; | &#10003; |
+| Software Development Optimization | &#10003; | &#10003; | | &#10003; |
+| Sumo Logic Apps | &#10003; | &#10003; | &#10003; | &#10003; |
+| Support | &#10003; | &#10003; | &#10003; | &#10003; |
+| Traces | &#10003;<br/>Up to 1.5GB per day* | &#10003;<br/>Up to 5GB per day | &#10003;<br/>5GB per day| &#10003;<br/>Up to 5GB per day |
+| Usage Management - Advanced |  |  | | &#10003; |
+| Usage Management - Basic | &#10003; | &#10003; | | &#10003; |
+| User and Role APIs | &#10003; | &#10003; | &#10003; | <br/>Up to 5GB per day |
+| War Room | |  | | &#10003; |
 
 \* Contact your account manager to customize your account to meet your organization's needs.
 
