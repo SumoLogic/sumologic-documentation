@@ -19,6 +19,22 @@ export const Home = () => {
         description='Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.'
         title='Home'
       >
+      {/* H1 hidden, but visible to crawlers */}
+      <Typography
+        component='h1'
+        sx={{
+          position: 'absolute',
+          width: 1,
+          height: 1,
+          p: 0,
+          m: -1,
+          overflow: 'hidden',
+          clip: 'rect(0 0 0 0)',
+          border: 0,
+        }}
+      >
+        Sumo Logic Documentation
+      </Typography>
         {/* Header */}
         <Typography
           bgcolor='#0045BE'

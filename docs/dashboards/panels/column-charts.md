@@ -1,7 +1,7 @@
 ---
 id: column-charts
 title: Column Charts
-description: Column charts are useful for visually comparing the number of events that have occurred.
+description: Learn how to create and configure column charts in dashboards to visualize log and metric trends over time.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
