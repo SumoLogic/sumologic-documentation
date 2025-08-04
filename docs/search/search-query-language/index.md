@@ -1,7 +1,7 @@
 ---
 slug: /search/search-query-language
 title: Search Query Language
-description: Master Sumo Logic’s Search Query Language to run advanced log searches, create visualizations, and unlock powerful insights from your data.
+description: Master Sumo Logic's search query language to run advanced log searches, create visualizations, and unlock powerful insights from your data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
