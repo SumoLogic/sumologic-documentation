@@ -242,7 +242,7 @@ The **AWS Security Hub - OCSF - Overview** dashboard delivers a broad, real-time
 
 These dashboard panels help you to track findings over time, analyze spikes in critical issues, and assess which accounts or regions are experiencing the most significant activity. You can also drill into findings by classification, category, type, or vendor to understand threat sources and affected services.
 
-Additionally, these dashboard highlights recently discovered findings and affected resources, helping teams quickly spot emerging risks. Use this dashboard to stay informed of your overall security posture and to surface high-priority issues that demand immediate attention.
+Additionally, this dashboard highlights recently discovered findings and affected resources, helping teams quickly spot emerging risks. Use this dashboard to stay informed of your overall security posture and to surface high-priority issues that demand immediate attention.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Security-Hub-OCSF/AWS-Security-Hub-OCSF-Overview.png')} alt="AWS Security Hub - OCSF - Overview Dashboard" style={{border: '1px solid gray'}} />
 
