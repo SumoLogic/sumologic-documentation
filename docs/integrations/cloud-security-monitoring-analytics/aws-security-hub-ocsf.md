@@ -192,7 +192,7 @@ This integration enables the ingestion of AWS Security Hub findings into Sumo Lo
 
 ### Step 1: Create an HTTP Source in Sumo Logic
 
-1. To create an HTTP source in Sumo Logic, refer to the [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+1. To create an HTTP source in Sumo Logic, refer to [Configure an HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 1. After creation, copy and save the **HTTP Source URL** and **Source Category** for further steps.
 
 ### Step 2: Configure EventBridge API destination
