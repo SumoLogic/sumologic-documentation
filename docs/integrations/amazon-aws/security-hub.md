@@ -165,14 +165,16 @@ In the case of a problem, perform the following tasks to discover the cause.
 
 ## Collecting findings for the AWS Security Hub CSPM app
 
-You can collect the AWS Security Hub CSPM logs using two methods:
+You can collect the AWS Security Hub CSPM logs using the following methods:
 
-- [Method 1: Collecting AWS Security Hub CSPM Logs using EventBridge](#method-1-collecting-aws-security-hub-cspm-logs-using-eventbridge)
-- [Method 2: Collecting Security Hub CSPM Logs using Sumo Logic HTTP endpoint](#method-2-collecting-security-hub-cspm-logs-using-sumo-logic-http-endpoint)
+- [Method 1: Using AWS EventBridge and sending the logs to Sumo Logic via an HTTP endpoint](#method-1-collecting-aws-security-hub-cspm-logs-using-aws-eventbridge-preferred)
+- [Method 2: Using AWS Lambda function and sending the logs to Sumo Logic via Amazon S3 Source](#method-2-collecting-aws-security-hub-cspm-logs-using-aws-lambda-function)
+
+For efficiency and seamless integration, Method 1 using AWS EventBridge is preferred, as it leverages native AWS services to reduce resource overhead and simplify the process.
 
 Before collecting logs, ensure that Security Hub is enabled on your AWS account. For more information, see the AWS Security Hub CSPM documentation for [Setting Up AWS Security Hub CSPM](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html).
 
-### Method 1: Collecting AWS Security Hub CSPM logs using EventBridge
+### Method 1: Collecting AWS Security Hub CSPM logs using AWS EventBridge (Preferred)
 
 This method leverages AWS EventBridge to streamline the logging process by sending data directly to Sumo Logic via an HTTP endpoint. By eliminating intermediary services such as Lambda, it offers a more straightforward and cost-effective solution.
 
@@ -183,7 +185,7 @@ To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs
 #### Step 2: Configure EventBridge API destination
 
 Follow the steps below to configure the EventBridge API destination:
-1. Sign in to your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
+1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
 1. In the navigation bar, click **API destinations**.
 1. Click **Create destination**.
 1. Enter a name for the API Destination.
@@ -197,7 +199,7 @@ Follow the steps below to configure the EventBridge API destination:
 #### Step 3: Create the EventBridge rule
 
 Follow the steps below to configure the EventBridge rule:
-1. Sign in to your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
+1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
 1. In the navigation bar, click **Rules**.
 1. Set the event source to **AWS services** and then select **Security Hub** as the AWS service.
 1. Select **All Events** in Event Type.
@@ -206,7 +208,7 @@ Follow the steps below to configure the EventBridge rule:
 1. Select **Create a new role for this specific resource** in the **Execution role**.
 1. Click **Create** to activate the rule.
 
-### Method 2: Collecting Security Hub CSPM Logs using Sumo Logic HTTP endpoint
+### Method 2: Collecting AWS Security Hub CSPM Logs using AWS Lambda function
 
 This method uses an AWS Lambda function to process, store, and forward logs to Sumo Logic. While it offers a robust solution, it introduces additional AWS resources, such as Lambda, which can increase both cost and complexity.
 
