@@ -438,6 +438,12 @@ In this section, we'll introduce the following concepts:
     <p>Provides a secure endpoint to receive event data from the Okta System Log API and Users API.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+    <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source"><img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/onelogin.png')} alt="Thumbnail icon" width="75"/><h4>OneLogin</h4></a>
+    <p>Provides a secure and centralized access to user lists from the OneLogin API.</p>
+  </div>
+</div>
   <div className="box smallbox card">
     <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source"><img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/><h4>Palo Alto Cortex XDR</h4></a>
