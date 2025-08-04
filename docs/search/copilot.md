@@ -49,7 +49,6 @@ Copilot accelerates incident response by combining prebuilt contextual insights 
 * **Auto-visualize**. Copilot automatically generates charts from search results, which you can add directly to dashboards, reducing time and effort in data interpretation.
 * **Log compatibility**. Copilot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
 * **Enhanced query experience**. Auto-complete to streamline natural language queries.
-* **Multi-turn conversations**. Ask follow-up questions without repeating yourself.
 
 ## Security and compliance
 
@@ -258,6 +257,8 @@ There are two ways to do this:
 ## Example queries
 
 ### Logs for security
+
+<!-- add micro lesson when published-->
 
 In the video, Copilot is used to investigate a security issue involving the potential leak of AWS CloudTrail access keys outside the organization.
 
