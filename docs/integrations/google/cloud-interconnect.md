@@ -15,7 +15,7 @@ Cloud Interconnect extends your external network to the Google network through a
 
 * [Google Cloud Metrics](https://cloud.google.com/monitoring/api/metrics_gcp)
 
-# Setup
+## Setup
 
 You can collect the metrics for Sumo Logic's Google Cloud Interconnect integration by following the below steps.
 
