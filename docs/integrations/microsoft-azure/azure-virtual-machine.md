@@ -36,6 +36,11 @@ import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
 <MetricsSourceBeta/>
 
+:::note
+Metric Rule `AzureObservabilityMetadataExtractionVMName` will be created automatically as a part of app installation process.
+This metric rule creates new dimension `vmname` for non scale set VMs.
+:::
+
 ### Configure logs collection
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
