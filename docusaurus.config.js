@@ -243,9 +243,9 @@ module.exports = {
     metadata: [
       { name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts' },
       { name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586' },
-      { name: 'description', content: 'Sumo Logic Docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.' },
+      { name: 'description', content: 'Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.' },
       { property: 'og:site_name', content: 'Sumo Logic Docs' },
-      { property: 'og:description', content: 'Sumo Logic Docs – real-time alerting, security, dashboards, and ML-powered analytics for logs, metrics, and traces.' },
+      { property: 'og:description', content: 'Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.' },
       { property: 'og:image', content: 'https://www.sumologic.com/wp-content/uploads/meta-HomePage_1200x628-1.png' },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '628' },
