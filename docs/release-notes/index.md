@@ -14,7 +14,7 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
 
 <div className="box smallbox card">
   <div className="container">
-    <a href="/release-notes-service">
+    <a href={useBaseUrl('release-notes-service')}>
       <img src={useBaseUrl('img/icons/manage.png')} alt="icon" width="40" />
       <h4>Service</h4>
     </a>
@@ -27,7 +27,7 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
 
 <div className="box smallbox card">
   <div className="container">
-    <a href="/release-notes-collector">
+    <a href={useBaseUrl('release-notes-collector')}>
       <img src={useBaseUrl('img/icons/data-collection.png')} alt="icon" width="40" />
       <h4>Collector</h4>
     </a>
@@ -40,7 +40,7 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
 
 <div className="box smallbox card">
   <div className="container">
-    <a href="/release-notes-cse">
+    <a href={useBaseUrl('release-notes-cse')}>
       <img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40" />
       <h4>Cloud SIEM</h4>
     </a>
@@ -53,7 +53,7 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
 
 <div className="box smallbox card">
   <div className="container">
-    <a href="/release-notes-csoar">
+    <a href={useBaseUrl('release-notes-csoar')}>
       <img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="icon" width="40" />
       <h4>Cloud SOAR</h4>
     </a>
@@ -66,7 +66,7 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
 
 <div className="box smallbox card">
   <div className="container">
-    <a href="/release-notes-developer">
+    <a href={useBaseUrl('release-notes-developer')}>
       <img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="40" />
       <h4>Developer</h4>
     </a>

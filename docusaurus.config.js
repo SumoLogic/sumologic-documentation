@@ -250,9 +250,9 @@ module.exports = {
     ],
     announcementBar: {
       id: 'domain',
-      content: 'We’ve moved! Our docs are now at [www.sumologic.com/help](https://www.sumologic.com/help). Redirects are in place, but don’t forget to update your bookmarks.',
-      backgroundColor: '#EDF2F7',
-      textColor: '#1A202C',
+      content: '<b>We’ve moved!</b> Our docs are now at <a href="https://www.sumologic.com/help">sumologic.com/help</a>. Redirects are in place, but don’t forget to update your bookmarks.',
+      backgroundColor: '#b0eefe',
+      textColor: '#091E42',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
