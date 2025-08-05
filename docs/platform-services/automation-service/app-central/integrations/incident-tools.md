@@ -48,10 +48,6 @@ Set of scripts to perform actions within Cloud SOAR.
 * **Update Incident Fields** (*Custom*) - Update multiple incident fields.
 * **Update Incident Phase** (*Custom*) Update the incident phase.
 
-## Category
-
-Supervised Active Intelligence Automation
-
 ## Configure Incident Tools in Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
