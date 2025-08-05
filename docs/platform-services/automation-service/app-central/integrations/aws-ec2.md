@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.5  
-Updated: Feb 04, 2025***
+***Version: 1.6  
+Updated: July 29, 2025***
 
 Using the integration with EC2, you can enrich incidents with specific EC2 data, create and delete snapshots, work with elastic addresses and instances, and manipulate security groups. 
 
@@ -53,6 +53,7 @@ import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-a
 import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../../../reuse/automation-service/aws/iam-role.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
@@ -64,6 +65,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * <AWSAccesskey/>
 * <AWSSecret/>
+* <AWSIAMRole/>
 * <AWSRegions/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>
@@ -85,3 +87,4 @@ For information about AWS EC2, see [EC2 documentation](https://docs.aws.amazon.c
 	+ Updated action: Describe Instances (Resolved bug related to Instance ID field)
 + February 04, 2025 (v1.5)
     + Added action: Describe Instances V2
++ July 29, 2025 (v1.6) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
