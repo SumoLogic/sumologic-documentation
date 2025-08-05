@@ -37,6 +37,13 @@ import CisNote from '../../reuse/cis-note.md';
     <div className="box smallbox card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Thumbnail icon" width="50"/>
+      <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/aws-security-hub-ocsf')}>AWS Security Hub< - OCSF</a></h4>
+      <p>A guide to the Sumo Logic app for AWS Security Hub - OCSF.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/aws-security-hub')}>AWS Security Hub</a></h4>
       <p>A guide to the Sumo Logic app for AWS Security Hub.</p>
       </div>
@@ -79,7 +86,7 @@ import CisNote from '../../reuse/cis-note.md';
     <div className="box smallbox card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10">Palo Alto Firewall 11</a></h4>
+      <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10">Palo Alto Firewall 11</a></h4>
       <p>A guide to the Sumo Logic app for Palo Alto Firewall 11.</p>
       </div>
     </div>

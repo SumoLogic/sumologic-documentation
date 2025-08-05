@@ -1,7 +1,7 @@
 ---
 slug: /search/search-query-language/group-aggregate-operators
 title: Group or Aggregate Operators
-description: Group and aggregate operators enable you to evaluate messages and place them into groups.
+description: Understand and use group and aggregate operators in Sumo Logic to summarize, transform, and visualize data from your logs and metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -1,7 +1,7 @@
 ---
 id: syslog-source
 title: Syslog Source
-description: The Syslog Source obtains syslog messages by listening on a designated port.
+description: Learn how to configure a Syslog source to collect system and application logs from network devices into Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

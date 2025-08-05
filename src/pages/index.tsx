@@ -39,6 +39,49 @@ export const Home = () => {
         description='Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.'
         title='Home'
       >
+      {/* H1 hidden, but visible to crawlers */}
+      <Typography
+        component='h1'
+        sx={{
+          position: 'absolute',
+          width: 1,
+          height: 1,
+          p: 0,
+          m: -1,
+          overflow: 'hidden',
+          clip: 'rect(0 0 0 0)',
+          border: 0,
+        }}
+      >
+        Sumo Logic Documentation
+      </Typography>
+        {/* Header */}
+        <Typography
+          bgcolor='#0045BE'
+          color='#e3e3e3'
+          fontFamily='Lab Grotesque'
+          fontSize={28}
+          fontWeight={700}
+          pt={3}
+          px={2}
+          pb={1}
+          sx={{
+            backgroundImage: 'linear-gradient(to right, rgb(0,0,153), rgb(0,70,190) 30%)',
+          }}
+          textAlign='center'
+        >
+          <Box
+            component={SumoLogicDocsLogo}
+            alt="Sumo Logic Docs logo"
+            role="<img>"
+            aria-hidden="true"
+            height={{
+              md: 36,
+              xs: 28,
+            }}
+            width='100%'
+          />
+        </Typography>
 
         <Berry mode='inline' />
 
