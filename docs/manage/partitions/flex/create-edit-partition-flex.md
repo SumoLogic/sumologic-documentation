@@ -28,7 +28,7 @@ The search modifier `dataTier` is not supported for Flex queries.
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**.
 1. Click **+ Add Partition**.
 1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/create-new-partition-flex.png')} alt="create-new-partition-flex.png"  style={{border:'1px solid gray'}} width="300"/>
-1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
+1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`) and hyphens (`-`). However, a Partition name cannot start with `sumologic_`, an underscore `_`, or a hyphen (`-`).
 1. (Optional) **Include this partition in default scope**. By default, this checkbox is selected. Deselect this checkbox if you need to exclude this partition from the [default scope in your search](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope).
     :::note
     After changing the default scope of a partition, expect a delay of 2 to 3 minutes to reflect the change in the query scope.  
