@@ -54,9 +54,9 @@ After a partition is created in a given tier, you cannot change its tier. If you
 
 How you can search and use your ingested data varies by the Data Tier it resides in, as described in the following table. 
 
-| Feature support | Continuous Tier | Frequent Tier | Infrequent Tier | 
-| :-- | :-- | :-- | :-- | 
-| Centralized, secure, multi-tenant cloud-native platform | &#10003; | &#10003; | &#10003; | 
+| Feature support | Continuous Tier | Frequent Tier | Infrequent Tier |
+| :-- | :-- | :-- | :-- |
+| Centralized, secure, multi-tenant cloud-native platform | &#10003; | &#10003; | &#10003; |
 | Data replication across availability zones, data encryption | &#10003; | &#10003; | &#10003; |
 | Interactive queries (UI) | &#10003;<br/>Partitions can be specified, but are optional. | &#10003;<br/>Partition or `_dataTier` must be specified. | &#10003;<br/>Partition or `_dataTier` must be specified. |
 | Support for Installed and Hosted Collectors | &#10003; | &#10003; | &#10003; |
@@ -94,31 +94,31 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/data-tier/create-edit-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tier/create-edit-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
   <p>Learn how to create and edit a Partition in an Index.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/data-tier/view-partition-details"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tier/view-partition-details')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
   <p>Learn how to view details about a Sumo Logic Partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/data-tiers"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers</h4></a>
   <p>Get to know about Sumo Logic's Data Tiers feature.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/data-tier/data-tiers-faqs">  <img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers FAQs</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tier/data-tiers-faqs')}>  <img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers FAQs</h4></a>
   <p>Get answers on various FAQs about Data Tiers.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/data-tier/searching-data-tiers"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Searching Data Tiers</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tier/searching-data-tiers')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Searching Data Tiers</h4></a>
   <p>Learn how to search specific Data Tiers.</p>
   </div>
 </div>

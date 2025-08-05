@@ -247,12 +247,16 @@ module.exports = {
       {
         name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
       },
+      {
+        name: 'robots',
+        content: 'noindex, nofollow',
+      },
     ],
     announcementBar: {
-      id: 'blackhat',
-      content: 'Visit Sumo Logic at Black Hat USA in Las Vegas: August 6-7, 2025 | Mandalay Bay | Booth #5812 | <a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/events/black-hat-book-meeting">Click here</a> to book a meeting with us!',
+      id: 'berry',
+      content: '<b>Heads-up</b>: You’re on our Berry AI demo site. While Berry is up to date, the docs here may be outdated or incomplete.',
       backgroundColor: '#b0eefe',
-      textColor: '#091E42',
+      textColor: '#000',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
