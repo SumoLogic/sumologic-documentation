@@ -24,9 +24,9 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
 ### Sample log messages
 
 <details>
-<summary>View sample log message</summary>
+<summary>Issue</summary>
 
-```json title="Issue"
+```json
 {
    "action": "created",
    "installation": {
@@ -96,8 +96,12 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
    }
 }
 ```
+</details>
 
-```json title="Comment"
+<details>
+<summary>Comment</summary>
+   
+```json
 {
    "action": "created",
    "installation": {
@@ -117,8 +121,12 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
    }
 }
 ```
+</details>
 
-```json title="Error"
+<details>
+<summary>Error</summary>
+   
+```json
 {
    "action": "created",
    "installation": {
@@ -507,8 +515,12 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
    }
 }
 ```
+</details>
 
-```json title="Issue Alerts"
+<details>
+<summary>Issue Alerts</summary>
+   
+```json
 {
    "action": "triggered",
    "installation": {
@@ -990,8 +1002,12 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
    }
 }
 ```
+</details>
 
-```json title="Metric Alerts"
+<details>
+<summary>Metric Alerts</summary>
+ 
+```json
 {
    "action": "warning",
    "installation": {
