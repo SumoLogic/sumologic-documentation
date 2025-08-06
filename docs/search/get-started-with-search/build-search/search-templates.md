@@ -10,6 +10,24 @@ Behind the scenes, selecting the parts of your query to use in the template is a
 
 Search templates work with [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic). They are not supported with our newer [lookup tables](/docs/search/lookup-tables).
 
+:::sumo Micro Lesson
+
+Watch this micro lesson to learn how to use search template parameters.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/ja6kruhhp3?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Using Search Template Parameters Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
+
 ## Create a general Search Template
 
 From any query you create, or an existing one you manage, you can create a search template and specify parameters.
