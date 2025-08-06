@@ -3,6 +3,7 @@ id: search-templates
 title: Search Templates
 description: Search templates narrow down your queries into a few parameters that other users can edit to find the data they need.
 ---
+import Iframe from 'react-iframe';
 
 Search templates can help you simplify searches for your users by giving them a few easy input choices. You can have search templates  replace any text in a query, including fields, keywords, and arguments to operators. You can also determine what type of information is valid such as text, strings, and keywords.
 
