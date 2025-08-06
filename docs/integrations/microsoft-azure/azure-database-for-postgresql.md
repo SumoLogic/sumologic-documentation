@@ -1,7 +1,8 @@
 ---
 id: azure-database-for-postgresql
 title: Azure Database for PostgreSQL
-description: Learn about the Sumo Logic collection process for the Azure Database for PostgreSQL service.
+keywords: [azure postgresql; postgresql azure; azure postgresql monitoring ]
+description: This document outlines what is Azure database for PostgreSQL, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -202,3 +203,8 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
+- Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)

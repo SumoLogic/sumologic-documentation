@@ -1,7 +1,8 @@
 ---
 id: azure-container-instances
 title: Azure Container Instances
-description: Learn about the Sumo Logic collection process for the Azure Container Instances service.
+keywords: [azure container instance logs; aci azure; container instances; azure container monitoring ]
+description: This document outlines what is Azure Container Instances, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -153,3 +154,9 @@ These alerts are metric based and will work for all Azure Container Instances.
 ### HTTP Logs and Metrics Source used by Azure Functions
 
 To troubleshoot metrics collection, follow the instructions in [Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection) in *Collect Metrics from Azure Monitor*.
+
+## Additional resources
+
+- Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
+- Blog: [How to Deploy and Manage a Container on Azure Container Service](https://www.sumologic.com/blog/how-to-deploy-and-manage-a-container-on-azure-container-service)
+- Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)

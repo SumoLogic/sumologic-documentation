@@ -2,7 +2,8 @@
 id: kubernetes
 title: Azure Kubernetes Service
 sidebar_label: Azure Kubernetes Service
-description: The Sumo Logic app for Azure Kubernetes Service (AKS) provides visibility into the AKS with operational insights into the Audit, API server, Scheduler, Cloud Control Manager, Kube Control Manager, Cluster Autoscalar, and worker nodes.
+keywords: [aks; aks architecture; aks integration; aks monitoring; azure kubernetes service; kubernetes  ]
+description: This document outlines what is Azure AKS, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -347,6 +348,7 @@ The **Azure Kubernetes Service - Node Memory** dashboard provides insights about
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Node-Memory.png')} alt="Azure Kubernetes Service - Node Memory" />
 
 ### Azure Kubernetes Service alerts
+
 These alerts are metric based and will work for all Azure Kubernetes Managed Clusters.
 
 | Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
@@ -355,3 +357,10 @@ These alerts are metric based and will work for all Azure Kubernetes Managed Clu
 | `Azure Kubernetes Service - Unreachable Kube Node(s)` | This alert is triggered when kube node(s) unreachable count greater than 1. | Count >= 1 | Count < 1  |
 | `Azure Kubernetes Service - High Memory Working Set` | This alert is triggered when memory working set is greater than 100%. | percentage >= 100 | percentage < 100  |
 | `Azure Kubernetes Service - High Node Disk Usage` | This alert is triggered when node disk usage is greater than 80% . Also, a warning alert will be triggered when  node disk usage is greater than 70%. | percentage >= 80  | percentage < 80   |
+
+## Additional resources
+
+- Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
+- Blog: [Comparing Kubernetes Services on AWS vs. Azure vs. GCP](https://www.sumologic.com/blog/kubernetes-aws-azure-gcp)
+- Blog: [Monitoring k8s-powered Apps with Sumo Logic](https://www.sumologic.com/blog/k8s-monitoring)
+- Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)

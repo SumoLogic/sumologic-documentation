@@ -2,7 +2,8 @@
 id: azure-functions
 title: Azure Functions
 sidebar_label: Azure Functions
-description: The Sumo Logic app for Azure Functions enables seamless integration and monitoring of Azure Functions, providing insights and analytics to optimize serverless application performance and security.
+keywords: [azure functions; azure functions app; azure functions monitoring ]
+description: This document outlines what are Azure Functions, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -271,3 +272,8 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
+- Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)
