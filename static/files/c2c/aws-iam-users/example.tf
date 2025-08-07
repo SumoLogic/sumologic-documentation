@@ -8,8 +8,8 @@ resource "sumologic_cloud_to_cloud_source" "aws-iam-users-source" {
                         "limitToRegions": ["all"],
                         "authentication": {
                                             "type": "S3BucketAuthentication",
-                                            "awsId": "AKIA88SVJKHFHI6WVRM4",
-                                            "awsKey": "LY7k0C+gIz+t4dBZLOkRarPOGQ/a8AxbPSIseBOo"
+                                            "awsId": "AKIA88SVJKHFHI6WVKL4",
+                                            "awsKey": "LY7k0C+gIz+t4dSKLOkRarPOGQ/a8AxbPSIseBOo"
                                           },
                         "pathPrefix": "/division_abc/subdivision_xyz/",
                         "pollingIntervalHour": 12
