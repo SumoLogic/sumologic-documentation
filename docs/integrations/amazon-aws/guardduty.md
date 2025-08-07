@@ -180,12 +180,12 @@ _sourceCategory=aws/guardduty
 
 You can collect the Amazon GuardDuty logs using the following methods and send them to Sumo Logic via an HTTP endpoint: 
 
-- [Method 1: Using AWS EventBridge](#method-1-collecting-amazon-guardduty-logs-using-aws-eventbridge-preferred)
-- [Method 2: Using AWS Lambda function](#method-2-collecting-amazon-guardduty-logs-using-aws-lambda-function)
+- [Method 1: GuardDuty > EventBridge > Sumo Logic via HTTP](#method-1-guardduty--eventbridge--sumo-logic-via-http-preferred)
+- [Method 2: GuardDuty > Lambda Function > Sumo Logic via HTTP](#method-2-guardduty--lambda-function--sumo-logic-via-http-alternative)
 
 For efficiency and seamless integration, Method 1 using AWS EventBridge is preferred, as it leverages native AWS services to reduce resource overhead and simplify the process.
 
-### Method 1: Collecting Amazon GuardDuty logs using AWS EventBridge (Preferred)
+### Method 1: GuardDuty > EventBridge > Sumo Logic via HTTP (Preferred)
 
 This method leverages AWS EventBridge to streamline the logging process by sending data directly to Sumo Logic via an HTTP endpoint. By eliminating intermediary services such as Lambda, it offers a more straightforward and cost-effective solution.
 
@@ -219,7 +219,7 @@ Follow the steps below to create the EventBridge rule:
 1. Select **Create a new role for this specific resource** in the **Execution role**.
 1. Click **Create** to activate the rule.
 
-### Method 2: Collecting Amazon GuardDuty logs using AWS Lambda function
+### Method 2: GuardDuty > Lambda Function > Sumo Logic via HTTP (Alternative)
 
 This method uses an AWS Lambda function to process, store, and forward logs to Sumo Logic via an HTTP endpoint. While it offers a robust solution, it introduces additional AWS resources, such as Lambda, which can increase both cost and complexity.
 

@@ -14,118 +14,7 @@ Amazon Inspector is an automated vulnerability management service that continual
 For information about integrating Amazon Inspector with Security Hub, see [Integration with AWS Security Hub](https://docs.aws.amazon.com/inspector/latest/user/securityhub-integration.html) in Amazon help.
 :::
 
-## Collecting findings for the Amazon Inspector app
-
-You can collect Security Hub logs using three methods:
-
-- [Method 1: Collecting Security Hub logs using EventBridge](#method-1-collecting-security-hub-logs-using-eventbridge)
-- [Method 2: Collect Security Hub logs using Sumo Logic HTTP endpoint](#method-2-collect-security-hub-logs-using-sumo-logic-http-endpoint)
-- [Method 3: Collect Security Hub logs using Amazon S3 source](#method-3-collect-security-hub-logs-using-amazon-s3-source)
-
-### Method 1: Collecting Security Hub logs using EventBridge
-
-This method leverages AWS EventBridge to streamline the logging process by sending data directly to Sumo Logic via an HTTP endpoint. By eliminating intermediary services such as Lambda, it offers a more straightforward and cost-effective solution.
-
-#### Step 1: Create an HTTP source in Sumo Logic
-
-To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
-
-#### Step 2: Configure EventBridge API destination
-
-Follow the steps below to configure the EventBridge API destination:
-1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
-1. In the navigation bar, click **API destinations**.
-1. Click **Create destination**.
-1. Enter a name for the API Destination.
-1. Provide the HTTP Source URL from Sumo Logic.
-1. Click **Create a new connection** to create a connection for the API destination.
-  1. Provide a connection name.
-  1. Keep the API Type as **Public**.
-  1. Select **Basic (Username/Password)** in the **Authorization type**.
-  1. Add any value of your choice for **Username** and **Password**.
-
-#### Step 3: Create the EventBridge rule
-
-Follow the steps below to create the EventBridge rule:
-1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
-1. In the navigation bar, click **Rules**.
-1. Set the event source to **AWS services** and then select **Security Hub** as the AWS service.
-1. Select **All Events** in Event Type.
-1. Under **Select targets**, choose **EventBridge API destination**.
-1. Select the API Destination created in Step 2.
-1. Select **Create a new role for this specific resource** in the **Execution role**.
-1. Click **Create** to activate the rule.
-
-### Method 2: Collect Security Hub logs using Sumo Logic HTTP endpoint
-
-This method uses an AWS Lambda function to process, store, and forward logs to Sumo Logic. While it offers a robust solution, it introduces additional AWS resources, such as Lambda, which can increase both cost and complexity.
-
-Sumo Logic provides a serverless solution for creating a CloudWatch events rule and a Lambda function (SecurityHubCollector) to extract findings from AWS Security Hub.
-
-Findings from AWS services (AWS Security Hub) are delivered to CloudWatch Events as events in near real time. The Lambda function parses those events and sends them to an S3 bucket. Sumo Logic then collects the findings data using an S3 bucket source on a Sumo Logic hosted collector. The Lambda function setup is defined using Serverless Application Model (SAM) specifications and is published in AWS Serverless Application Repository.
-
-You do not have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub app collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector) for HTTP endpoint and [Step 2: Deploy an AWS Security Hub app collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector-1) for Amazon S3 source.
-
-#### Step 1: Add a hosted collector and Sumo Logic HTTP source
-
-This section demonstrates how to add a hosted Sumo Logic collector and AWS source, to collect events for the AWS Security Hub app.
-
-**Prerequisites**
-
-An HTTP source must be associated with a Sumo Logic Hosted collector. Before creating the source, identify the Sumo Logic Hosted collector you want to use, or create a new Hosted collector as described in the following task.
-
-To add a hosted collector and HTTP source:
-
-1. To create a new Sumo Logic Hosted collector perform the steps in [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Add an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source) to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
-    1. Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
-    1. Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
-    1. Click **Add**.
-
-#### Step 2: Deploy an AWS Security Hub app collector
-
-The **AWS Security Hub app collector** transforms the received events and sends them to Sumo Logic. The AWS Security Hub app displays the results in pre-defined visual dashboards for you to analyze.
-
-To deploy an AWS Security Hub app collector:
-1. Open a browser window and enter the following URL: [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications)
-2. In the Serverless Application Repository, search for **sumologic**.
-3. Select **Show apps that create custom IAM roles or resource policies** check box.
-4. Click the **sumologic-securityhub-collector-awsorg** link, and then click **Deploy**.
-5. In the **AWS Lambda > Functions > Application Settings** panel, enter the endpoint **HTTP endpoint** of the source that you configured.
-6. Scroll to the bottom of the window and click **Deploy**.
-
-### Method 3: Collect Security Hub logs using Amazon S3 source
-
-This method uses a Lambda function to process findings, store them in an S3 bucket, and retrieve them through Sumo Logic's S3 Source. It is ideal for scenarios that require data archiving.
-
-#### Step 1: Add a hosted collector and Amazon S3 source
-
-This section demonstrates how to add a hosted Sumo Logic collector and AWS source, to collect events for the AWS Security Hub App.
-
-**Prerequisites**
-
-An AWS Source must be associated with a Sumo Logic Hosted Collector. Before creating the S3 source, identify the Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task.
-
-To add a hosted collector and Amazon S3 source:
-
-1. [Grant Access to an Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
-2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-3. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source#amazons3-source) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
-    * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
-    * Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
-    * Click **Add**.
-
-#### Step 2: Deploy an AWS Security Hub app collector
-
-The **AWS Security Hub app collector** transforms the received events and sends them to Sumo Logic. The AWS Security Hub app displays the results in pre-defined visual dashboards for you to analyze.
-
-To deploy an AWS Security Hub app collector:
-1. Open a browser window and enter the following URL: [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications)
-2. In the Serverless Application Repository, search for **sumologic**.
-3. Select **Show apps that create custom IAM roles or resource policies** check box.
-4. Click the **sumologic-securityhub-collector** link, and then click **Deploy**.
-5. In the **AWS Lambda > Functions > Application Settings** panel, enter the name of the **S3SourceBucketName** for the bucket you configured (when you defined the S3 source).
-6. Scroll to the bottom of the window and click **Deploy**.
+## Log types
 
 ### Sample log messages
 
@@ -182,6 +71,121 @@ To deploy an AWS Security Hub app collector:
 | min(severity_normalized), pct(severity_normalized,25), pct(severity_normalized,50), pct(severity_normalized,75),
   max(severity_normalized) by resource_type
 ```
+
+## Collecting logs for the Amazon Inspector app
+
+You can collect the Amazon Inspector logs using the following methods:
+
+- [Method 1: Inspector > EventBridge > Sumo Logic via HTTP](#method-1-inspector--eventbridge--sumo-logic-via-http-preferred)
+- [Method 2: Inspector > Lambda Function > Sumo Logic via HTTP](#method-2-inspector--eventbridge--sumo-logic-via-http-alternative)
+- [Method 3: Inspector > Lambda Function > Amazon S3 > Sumo Logic via S3 Source](#method-3-inspector--lambda-function--amazon-s3--sumo-logic-via-s3-source-alternative)
+
+For efficiency and seamless integration, Method 1 using AWS EventBridge is preferred, as it leverages native AWS services to reduce resource overhead and simplify the process.
+
+### Method 1: Inspector > EventBridge > Sumo Logic via HTTP (Preferred)
+
+This method leverages AWS EventBridge to streamline the logging process by sending data directly to Sumo Logic via an HTTP endpoint. By eliminating intermediary services such as Lambda, it offers a more straightforward and cost-effective solution.
+
+#### Step 1: Create an HTTP source in Sumo Logic
+
+To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+
+#### Step 2: Configure EventBridge API destination
+
+Follow the steps below to configure the EventBridge API destination:
+1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
+1. In the navigation bar, click **API destinations**.
+1. Click **Create destination**.
+1. Enter a name for the API Destination.
+1. Provide the HTTP Source URL from Sumo Logic.
+1. Click **Create a new connection** to create a connection for the API destination.
+  1. Provide a connection name.
+  1. Keep the API Type as **Public**.
+  1. Select **Basic (Username/Password)** in the **Authorization type**.
+  1. Add any value of your choice for **Username** and **Password**.
+
+#### Step 3: Create the EventBridge rule
+
+Follow the steps below to create the EventBridge rule:
+1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
+1. In the navigation bar, click **Rules**.
+1. Set the event source to **AWS services** and then select **Security Hub** as the AWS service.
+1. Select **All Events** in Event Type.
+1. Under **Select targets**, choose **EventBridge API destination**.
+1. Select the API Destination created in Step 2.
+1. Select **Create a new role for this specific resource** in the **Execution role**.
+1. Click **Create** to activate the rule.
+
+### Method 2: Inspector > EventBridge > Sumo Logic via HTTP (Alternative)
+
+This method uses an AWS Lambda function to process, store, and forward logs to Sumo Logic. While it offers a robust solution, it introduces additional AWS resources, such as Lambda, which can increase both cost and complexity.
+
+Sumo Logic provides a serverless solution for creating a CloudWatch events rule and a Lambda function (SecurityHubCollector) to extract findings from AWS Security Hub.
+
+Findings from AWS services (AWS Security Hub) are delivered to CloudWatch Events as events in near real time. The Lambda function parses those events and sends them to an S3 bucket. Sumo Logic then collects the findings data using an S3 bucket source on a Sumo Logic hosted collector. The Lambda function setup is defined using Serverless Application Model (SAM) specifications and is published in AWS Serverless Application Repository.
+
+You do not have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub app collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector) for HTTP endpoint and [Step 2: Deploy an AWS Security Hub app collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector-1) for Amazon S3 source.
+
+#### Step 1: Add a hosted collector and Sumo Logic HTTP source
+
+This section demonstrates how to add a hosted Sumo Logic collector and AWS source, to collect events for the AWS Security Hub app.
+
+**Prerequisites**
+
+An HTTP source must be associated with a Sumo Logic Hosted collector. Before creating the source, identify the Sumo Logic Hosted collector you want to use, or create a new Hosted collector as described in the following task.
+
+To add a hosted collector and HTTP source:
+
+1. To create a new Sumo Logic Hosted collector perform the steps in [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Add an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source) to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
+    1. Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
+    1. Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
+    1. Click **Add**.
+
+#### Step 2: Deploy an AWS Security Hub app collector
+
+The **AWS Security Hub app collector** transforms the received events and sends them to Sumo Logic. The AWS Security Hub app displays the results in pre-defined visual dashboards for you to analyze.
+
+To deploy an AWS Security Hub app collector:
+1. Open a browser window and enter the following URL: [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications)
+2. In the Serverless Application Repository, search for **sumologic**.
+3. Select **Show apps that create custom IAM roles or resource policies** check box.
+4. Click the **sumologic-securityhub-collector-awsorg** link, and then click **Deploy**.
+5. In the **AWS Lambda > Functions > Application Settings** panel, enter the endpoint **HTTP endpoint** of the source that you configured.
+6. Scroll to the bottom of the window and click **Deploy**.
+
+### Method 3: Inspector > Lambda Function > Amazon S3 > Sumo Logic via S3 Source (Alternative)
+
+This method uses a Lambda function to process findings, store them in an S3 bucket, and retrieve them through Sumo Logic's S3 Source. It is ideal for scenarios that require data archiving.
+
+#### Step 1: Add a hosted collector and Amazon S3 source
+
+This section demonstrates how to add a hosted Sumo Logic collector and AWS source, to collect events for the AWS Security Hub App.
+
+**Prerequisites**
+
+An AWS Source must be associated with a Sumo Logic Hosted Collector. Before creating the S3 source, identify the Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task.
+
+To add a hosted collector and Amazon S3 source:
+
+1. [Grant Access to an Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
+2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+3. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source#amazons3-source) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
+    * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
+    * Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
+    * Click **Add**.
+
+#### Step 2: Deploy an AWS Security Hub app collector
+
+The **AWS Security Hub app collector** transforms the received events and sends them to Sumo Logic. The AWS Security Hub app displays the results in pre-defined visual dashboards for you to analyze.
+
+To deploy an AWS Security Hub app collector:
+1. Open a browser window and enter the following URL: [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications)
+2. In the Serverless Application Repository, search for **sumologic**.
+3. Select **Show apps that create custom IAM roles or resource policies** check box.
+4. Click the **sumologic-securityhub-collector** link, and then click **Deploy**.
+5. In the **AWS Lambda > Functions > Application Settings** panel, enter the name of the **S3SourceBucketName** for the bucket you configured (when you defined the S3 source).
+6. Scroll to the bottom of the window and click **Deploy**.
 
 ## Installing the Amazon Inspector app
 
