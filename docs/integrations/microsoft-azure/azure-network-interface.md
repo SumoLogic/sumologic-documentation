@@ -1,7 +1,7 @@
 ---
 id: azure-network-interface
 title: Azure Network Interface
-keywords: [azure network interface; azure network interface app; nic in azure; ]
+keywords: [azure network interface, azure network interface app, nic in azure ]
 description: This document outlines what is Azure Network Interface, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
