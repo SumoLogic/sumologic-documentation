@@ -415,30 +415,8 @@ module.exports = {
           {
             position: 'right',
             className: 'support-menu-trigger',
-            to: '#',
-            type: 'dropdown',
-            items: [
-              {
-                label: 'Contact Support',
-                to: 'https://support.sumologic.com/support/s',
-                icon: 'support',
-              },
-              {
-                label: 'Request a Demo',
-                to: 'https://www.sumologic.com/demos',
-                icon: 'co_present',
-              },
-              {
-                label: 'Submit Feedback',
-                to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
-                icon: 'thumbs_up_down',
-              },
-              {
-                label: 'Contribute to Docs',
-                to: 'docs/contributing',
-                icon: 'edit_note',
-              },
-            ],
+            to: 'https://support.sumologic.com/support/s',
+            alt: 'Link to Sumo Logic Support',
           },
           {
             className: 'header-github-link',
@@ -462,8 +440,8 @@ module.exports = {
                 href: 'https://www.sumologic.com/events/',
               },
               {
-                label: 'Request a Demo',
-                href: 'https://www.sumologic.com/request-demo',
+                label: 'Sumo Logic Blog',
+                href: 'https://www.sumologic.com/blog',
               },
             ],
             title: 'Learn',
@@ -488,19 +466,19 @@ module.exports = {
           {
             items: [
               {
-                label: 'Docs GitHub',
-                href: 'https://github.com/SumoLogic/sumologic-documentation',
+                label: 'Contribute to Docs',
+                to: 'docs/contributing',
               },
               {
-                label: 'Sumo Logic GitHub',
-                href: 'https://github.com/SumoLogic',
+                label: 'Submit Feedback',
+                href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
               },
               {
-                label: 'Sumo Labs Projects',
-                href: 'https://github.com/SumoLogic-Labs',
+                label: 'Request Demo',
+                href: 'https://www.sumologic.com/request-demo',
               },
             ],
-            title: 'Open Source',
+            title: 'More',
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
