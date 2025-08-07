@@ -309,7 +309,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source"><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/github-copilot.png')} alt="Thumbnail icon" width="100"/><h4>Github Copilot</h4></a>
-  <p>Learn to collect the organization metrics and team metrics from Github Copilot platform.</p>
+  <p>Learn to collect the organization metrics and team metrics from GitHub Copilot platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
