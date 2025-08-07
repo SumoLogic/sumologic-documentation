@@ -1,18 +1,19 @@
 ---
 id: github-copilot-source
-title: Github Copilot Source
-sidebar_label: Github Copilot
+title: GitHub Copilot Source
+sidebar_label: GitHub Copilot
 tags:
   - cloud-to-cloud
   - github-copilot
-description: Learn to collect the organization metrics and team metrics from Github Copilot platform.
+  - github
+description: Learn to collect the organization metrics and team metrics from GitHub Copilot platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/github-copilot.png')} alt="Github-Copilot-icon" width="70" />
 
-Github is a web-based platform that uses Git for version control and collaboration in software development. It enables developers to create, store, manage, and share code in repositories, track changes, and collaborate on projects with features such as branches, pull requests, and issue tracking.
+GitHub is a web-based platform that uses Git for version control and collaboration in software development. It enables developers to create, store, manage, and share code in repositories, track changes, and collaborate on projects with features such as branches, pull requests, and issue tracking.
 
 Copilot is an AI-powered pair programmer that integrates with various development environments. It leverages machine learning models trained on publicly available code to provide real-time code suggestions, explanations, and even generate entire functions or tests based on context and natural language prompts. Copilot's features aim to enhance developer productivity, accelerate coding, and improve code quality.
 
@@ -27,10 +28,10 @@ Copilot is an AI-powered pair programmer that integrates with various developmen
 
 ### Vendor configuration
 
-You are required to provide the **Organization Name** and **PAT Token** to configure the Github Copilot source.
+You are required to provide the **Organization Name** and **PAT Token** to configure the GitHub Copilot source.
 
 1. **Organization Name**: Name of the organization. The name is not case sensitive.
-2. **PAT Token**: Fine-grained PAT(Personal Access Token) token of the account. Follow the steps from the [GitHub Documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) to generate the fine-grained token. Configure a never-expiring fine-grained token for smooth integration.
+2. **PAT Token**: Fine-grained PAT (Personal Access Token) token of the account. Follow the steps from the [GitHub Documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) to generate the fine-grained token. Configure a never-expiring fine-grained token for smooth integration.
 
 #### Pre-requisites
 
@@ -43,9 +44,9 @@ You are required to provide the **Organization Name** and **PAT Token** to confi
 
 ### Source configuration
 
-When you create a Github Copilot Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a GitHub Copilot Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a Github Copilot Source, follow the steps below:
+To configure a GitHub Copilot Source, follow the steps below:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Github Copilot**.
@@ -55,7 +56,7 @@ To configure a Github Copilot Source, follow the steps below:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Organization Name**. Name of the organization. The name is not case sensitive.
-1. **PAT Token**. Enter the PAT token generated from the [Github Copilot platform](#vendor-configuration).
+1. **PAT Token**. Enter the PAT token generated from the [GitHub Copilot platform](#vendor-configuration).
 1. (Optional) **Collect Team Metric Logs**. Select this checkbox to collect the team metric logs from the Copilot platform.
     1. **Team Names**. Write the team names of which you want to collect metric logs.
 1. **Metrics Period(in days)**. Specifies the number of past days for which metrics data should be collect. This is set to 1 day by default. You can adjust it based on your needs.
@@ -99,7 +100,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ## Limitations
 
-Due to the behavior of both APIs, data is only available for the previous day, there will be 24 hours latency at any given point in time. Refer to the [Github Documentation](https://docs.github.com/en/rest/copilot/copilot-metrics?apiVersion=2022-11-28#get-copilot-metrics-for-an-organization) for further details.
+Due to the behavior of both APIs, data is only available for the previous day, there will be 24 hours latency at any given point in time. Refer to the [GitHub Documentation](https://docs.github.com/en/rest/copilot/copilot-metrics?apiVersion=2022-11-28#get-copilot-metrics-for-an-organization) for further details.
 
 ## FAQ
 
