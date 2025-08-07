@@ -2,7 +2,7 @@
 id: kubernetes
 title: Azure Kubernetes Service
 sidebar_label: Azure Kubernetes Service
-keywords: [aks; aks architecture; aks integration; aks monitoring; azure kubernetes service; kubernetes  ]
+keywords: [aks, aks architecture, aks integration, aks monitoring, azure kubernetes service, kubernetes  ]
 description: This document outlines what is Azure AKS, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
