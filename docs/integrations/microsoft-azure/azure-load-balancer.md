@@ -1,7 +1,7 @@
 ---
 id: azure-load-balancer
 title: Azure Load Balancer
-keywords: [azure load balancer; load balancer ins azure; load balancer; azure load balancer monitoring; virtual load balancer; azure load balancer logs ]
+keywords: [azure load balancer, load balancer ins azure, load balancer, azure load balancer monitoring, virtual load balancer, azure load balancer logs ]
 description: This document outlines what is Azure Load Balancer, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
