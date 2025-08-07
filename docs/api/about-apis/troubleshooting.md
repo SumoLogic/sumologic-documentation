@@ -6,7 +6,7 @@ description: This guide provides information to help you troubleshoot errors you
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import ApiEndpoints from '../reuse/api-endpoints.md';
+import ApiEndpoints from '../../reuse/api-endpoints.md';
 
 <img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="50"/>
 

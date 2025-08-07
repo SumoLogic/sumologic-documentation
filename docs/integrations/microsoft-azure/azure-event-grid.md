@@ -172,6 +172,37 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureEventGrid/Azure-Event-Grid-Policy-and-Recommendations.png')} alt="Azure Event Grid - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Event Grid
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Event Grid alerts
+
+These alerts are metric based and will work for all Azure Storage.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Event Grid - Domain Dead Lettered Events` | This alert is triggered when Domain Dead Lettered Events count is greater than 0. | Count > 0 | Count < = 0 |
+| `Azure Event Grid - Domain Failed Events` | This alert is triggered when Domain Fail count is greater than 0. | Count > 0 | Count < = 0 |
+| `Azure Event Grid - Topic Dead Lettered Events` | This alert is triggered when Topic Dead Lettered Events count greater than 0. | Count > 0 | Count < = 0 |
+| `Azure Event Grid - Topic Delivery Failed` | This alert is triggered when Topic Fail count greater than 0. | Count > 0 | Count < = 0 |
+| `Azure Event Grid - Topic Dropped Events` | This alert is triggered when Dropped Event count greater than 0. | Count > 0 | Count < = 0 |
+| `Azure Event Grid - Topic Publish Failed` | This alert is triggered when Publish Fail count greater than 0. | Count > 0 | Count < = 0 |
+
+## Upgrade/Downgrade the Azure Event Grid app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Event Grid app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Troubleshooting
 
 ### HTTP Logs and Metrics Source used by Azure Functions

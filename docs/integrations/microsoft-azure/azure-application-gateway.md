@@ -158,6 +158,24 @@ The **Azure Application Gateway - Traffic** dashboard provides details into the 
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Traffic.png')} alt="Azure Application Gateway Security" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Application Gateway
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Application Gateway alerts
+
+These alerts are metric based and will work for all Azure Application Gateways.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Application Gateway - Current Capacity Units` | This alert is triggered when Average Capacity Units count is greater than 75. Also, a warning type alert will be triggered when Average Capacity Units count is greater than 65. | percentage >= 75 | percentage < 75 |
+| `Azure Application Gateway - Current Compute Units` | This alert is triggered when Average Compute Units count is greater than 75. Also, a warning type alert will be triggered when Average Compute Units count is greater than 65. | percentage >= 75 | percentage < 75 |
+| `Azure Application Gateway - Failed Requests` | This alert is triggered when Failed Requests count greater than 1. | Count >= 1 | Count < 1 |
+| `Azure Application Gateway - Healthy Host Count` | This alert is triggered when Healthy Host Count is less than 1. | Count < 1 | Count >= 1 |
+| `Azure Application Gateway - UnHealthy Host Count` | This alert is triggered when UnHealthy Host Count is greater than 1. | Count >= 1 | Count < 1 |
+
 ## Upgrade/Downgrade the Azure Application Gateway app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
@@ -169,17 +187,6 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
-
-### Azure Application Gateway alerts
-These alerts are metric based and will work for all Azure Application Gateways.
-
-| Alert Name                                           | Alert Description and Conditions                                                                                                                                                           | Alert Condition  | Recover Condition |
-|:-----------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:------------------|
-| `Azure Application Gateway - Current Capacity Units` | This alert is triggered  when Average Capacity Units count is greater than 75. Also, a warning type alert will be triggered when Average Capacity Units count is greater than 65.          | percentage >= 75 | percentage < 75   |
-| `Azure Application Gateway - Current Compute Units`  | This alert is triggered  when Average Compute Units count is greater than 75. Also, a warning type alert will be triggered when Average Compute Units count is greater than 65.            | percentage >= 75 | percentage < 75   |
-| `Azure Application Gateway - Failed Requests`        | This alert is triggered when Failed Requests count greater than 1.                                                                                                                         | Count >= 1       | Count < 1         |
-| `Azure Application Gateway - Healthy Host Count`     | This alert is triggered when Healthy Host Count is less than 1.                                                                                                                            | Count < 1        | Count >= 1        |
-| `Azure Application Gateway - UnHealthy Host Count`   | This alert is triggered when UnHealthy Host Count is greater than 1                                                                                                                        | Count >= 1       | Count < 1         |
 
 ## Troubleshooting
 

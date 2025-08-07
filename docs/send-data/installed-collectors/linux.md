@@ -2,7 +2,7 @@
 id: linux
 title: Install a Collector on Linux
 sidebar_label: For Linux
-description: Install or uninstall a Collector on a Linux system.
+description: Deploy the Sumo Logic Installed Collector on Linux systems to collect logs and metrics and gain real-time observability into your stack.
 ---
 
 Follow the steps in this topic to install or uninstall a collector on Linux. See [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on other OSs.
@@ -26,7 +26,7 @@ Download the Collector in either of the following ways.
 
 ### Via browser
 
-Open a browser and enter the static URL for your Sumo deployment. See [Which endpoint should I use?](/docs/api/getting-started/#which-endpoint-should-i-should-use) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
+Open a browser and enter the static URL for your Sumo deployment. See [Which endpoint should I use?](/docs/api/about-apis/getting-started/#which-endpoint-should-i-should-use) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
 
 ## Install Collector
 

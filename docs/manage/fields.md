@@ -2,7 +2,7 @@
 id: fields
 title: Fields
 sidebar_label: Fields
-description: Learn how to define and manage the assignment of metadata to your logs.
+description: Manage fields in Sumo Logic to control how log data is parsed and organized, improving search efficiency and enabling advanced data filtering.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -22,8 +22,7 @@ The order of precedence for field assignment from highest to lowest is:
 
 So, if you have a field defined at the Collector or Source level, and you create a FER against the same source of data with the same field name, the FER will win the field assignment.
 
-Any fields you want assigned to log data need to exist in a Fields schema. Each account has its own Fields schema that is available to manage in the Sumo web interface. When a field is defined and enabled in the Fields schema it is assigned to the appropriate log data as configured. If a field is sent to Sumo that does not exist in the Fields
-schema it is ignored, known as dropped.
+Any fields you want assigned to log data need to exist in a Fields schema. Each account has its own Fields schema that is available to manage in the Sumo web interface. When a field is defined and enabled in the Fields schema it is assigned to the appropriate log data as configured. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 Fields specified in field extraction rules are automatically added and enabled in your Fields schema.
 
@@ -60,8 +59,8 @@ Fields can be assigned to a Collector and Source using the **Fields** input ta
 1. Create or find and select the Collector or Source you want to assign fields to.
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
-    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 1. **Automatically activate all fields on save**. 
 
@@ -229,7 +228,7 @@ You need the **Manage Fields** [role capability](users-roles/roles/role-capab
 
 The Fields page displays the following information: 
 
-* **Status** shows a checkmark in a green circle ![green check circle.png](/img/reuse/green-check-circle.png) to indicate if the field is actively being applied or an exclamation mark in a red circle ![red-exclamation-circle.png](/img/fields/red-exclamation-circle.png) to indicate if the field is disabled and being dropped.
+* **Status** shows a checkmark in a green circle <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> to indicate if the field is actively being applied or an exclamation mark in a red circle ![red-exclamation-circle.png](/img/fields/red-exclamation-circle.png) to indicate if the field is disabled and being dropped.
 * **Field Name** is the name of the field, known as the key in the key-value pair.
 * **Data Type** shows the data type of the field.
 * **Field Extraction Rules** shows the number of Field Extraction Rules that reference the field.
