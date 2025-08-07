@@ -1,7 +1,7 @@
 ---
 id: azure-database-for-mysql
 title: Azure Database for MySQL
-keywords: [azure mysql; azure database for mysql; databse in azure; azure dbass; mysql microsoft; mysql; mysql database; mysql monitor; mysql integration ]
+keywords: [azure mysql, azure database for mysql, databse in azure, azure dbass, mysql microsoft, mysql, mysql database, mysql monitor, mysql integration ]
 description: This document outlines what is Azure Database for MySQL, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
