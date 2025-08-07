@@ -1,7 +1,7 @@
 ---
 id: azure-container-instances
 title: Azure Container Instances
-keywords: [azure container instance logs, aci azure, container instances, azure container monitoring ]
+keywords: [azure container instance logs, container instances, azure container monitoring ]
 description: This document outlines what is Azure Container Instances, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
