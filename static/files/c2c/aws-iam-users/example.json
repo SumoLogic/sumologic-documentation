@@ -6,7 +6,7 @@
       "limitToRegions": ["all"],
       "authentication": {
         "type": "S3BucketAuthentication",
-        "awsId": AKIA88SVJKHFHI6WVKL4",
+        "awsId": "AKIA88SVJKHFHI6WVKL4",
         "awsKey": "LY7k0C+gIz+t4dSKLOkRarPOGQ/a8AxbPSIseBOo"
       },
       "pathPrefix": "/division_abc/subdivision_xyz/",
