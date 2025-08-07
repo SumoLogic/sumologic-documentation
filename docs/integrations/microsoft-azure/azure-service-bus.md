@@ -1,7 +1,7 @@
 ---
 id: azure-service-bus
 title: Azure Service Bus
-keywords: [azure service bus; azure service bus security; azure servicebus; what is azure service bus; service bus namespace]
+keywords: [azure service bus, azure service bus security, azure servicebus, what is azure service bus, service bus namespace]
 description: This document outlines what is Azure Service Bus, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
