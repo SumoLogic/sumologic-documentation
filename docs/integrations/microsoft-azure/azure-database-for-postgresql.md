@@ -1,7 +1,7 @@
 ---
 id: azure-database-for-postgresql
 title: Azure Database for PostgreSQL
-keywords: [azure postgresql; postgresql azure; azure postgresql monitoring ]
+keywords: [azure postgresql, postgresql azure, azure postgresql monitoring ]
 description: This document outlines what is Azure database for PostgreSQL, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
