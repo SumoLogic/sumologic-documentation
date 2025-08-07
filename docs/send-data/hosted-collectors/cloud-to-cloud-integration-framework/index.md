@@ -308,6 +308,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source"><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/github-copilot.png')} alt="Thumbnail icon" width="100"/><h4>Github Copilot</h4></a>
+  <p>Learn to collect the organization metrics and team metrics from Github Copilot platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source"><img src={useBaseUrl('img/send-data/google-bigquery-icon.png ')} alt="Gmail" width="70"/><h4>Google BigQuery</h4></a>
   <p>Learn how to collect data using the BigQuery API.</p>
   </div>
