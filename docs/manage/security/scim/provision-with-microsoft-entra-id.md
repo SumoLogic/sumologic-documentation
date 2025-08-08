@@ -73,6 +73,9 @@ Create roles that the users will have in Sumo Logic (for example, `Analyst` and 
    1. Click **Test Connection**. If successful, a message like this appears: **Testing connection to `<app name>`. The supplied credentials are authorized to enable provisioning**.
 1. Set up mappings:
    1. Select **Mappings** and **Provision Microsoft Entra Users**.<br/><img src={useBaseUrl('img/security/provision-azure-mappings.png')} alt="Provision mappings" style={{border: '1px solid gray'}} width="600" />
+   1. Go to **Attribute Mapping**, select **Show advanced options**, and select **Edit attribute list for customappsso**.
+       1. For the **roles** attribute select **string** for the **Type**, and select the **Multi-Value?** checkbox to allow users to have multiple roles.<br/><img src={useBaseUrl('img/security/roles-advanced-options.png')} alt="Advanced options for the roles attribute" style={{border: '1px solid gray'}} width="600" />
+       1. Click **Save**.
    1. At the bottom of the **Attribute Mapping** dialog, select **Add New Mapping**.
    1. Fill out the **Edit Attribute** dialog:
       1. For **Mapping type** select **Expression**.
@@ -86,8 +89,6 @@ Create roles that the users will have in Sumo Logic (for example, `Analyst` and 
       * name.givenName
       * name.familyName
       * roles<br/><img src={useBaseUrl('img/security/provision-azure-attribute-mappings.png')} alt="Attribute mappings" style={{border: '1px solid gray'}} width="600" />
-   1. Select **Show Advanced Options**.
-   1. For the **roles** attribute select **string** for the **Type**, and select the **Multi-Value?** checkbox to allow users to have multiple roles.<br/><img src={useBaseUrl('img/security/roles-advanced-options.png')} alt="Advanced options for the roles attribute" style={{border: '1px solid gray'}} width="600" />
    1. Click **Save**.
 1. Click the **Home > `<app name>` | Provisioning** link in the top left corner of the screen. This returns you to the **Provisioning** tab.
 1. Test provisioning:
