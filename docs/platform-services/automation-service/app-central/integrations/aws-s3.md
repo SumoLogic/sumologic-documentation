@@ -60,6 +60,20 @@ import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-confi
 
 <IAMConfiguration/>
 
+## Required Permissions
+```
+  s3:GetBucketPolicy
+  s3:ListBucket
+  s3:ListAllMyBuckets
+  s3:GetObject
+  s3:PutObject
+  s3:CreateBucket
+  s3:DeleteBucket
+  s3:DeleteBucketPolicy
+  s3:DeleteObject
+  s3:PutBucketPolicy
+```
+
 ## Change Log
 
 * October 3, 2019 - First upload
