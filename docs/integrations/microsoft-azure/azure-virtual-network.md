@@ -300,7 +300,7 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ### App installation failed - Content Error - Invalid Field Extraction Rule
 
-This error is encountered if the app which is being installed is trying to create an FER by a name (AzureVirtualNetworkTargetResourceIdExtractionFER) which already exists in the org. This FER could have been created manually and is creating conflict with current app installation flow.
+This error occurs if the app being installed attempts to create an FER by a name (AzureVirtualNetworkTargetResourceIdExtractionFER) which already exists in the org. This FER could have been created manually and is creating conflict with current app installation flow.
 
 To resolve the issue, rename or delete the existing FER (AzureVirtualNetworkTargetResourceIdExtractionFER) and reinstall the app.
 
