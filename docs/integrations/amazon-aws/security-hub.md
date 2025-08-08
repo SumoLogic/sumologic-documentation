@@ -19,7 +19,7 @@ The Sumo Logic app for AWS Security Hub CSPM leverages findings data from Securi
 Sumo Logic provides a seamless bi-directional integration with AWS Security Hub CSPM with the following:
 
 * **[AWS Security Hub CSPM forwarder](#sending-findings-to-the-aws-security-hub-cspm-forwarder)** - This solution forwards (sends) scheduled search results and alerts (as findings) to AWS Security Hub CSPM.
-* **[AWS Security Hub CSPM collector](#collecting-findings-for-the-aws-security-hub-cspm-app)** - This solution collects findings from AWS Security Hub CSPM to Sumo Logic where they are displayed in visual pre-defined dashboards.
+* **[AWS Security Hub CSPM collector](#collecting-logs-for-the-aws-security-hub-cspm-app)** - This solution collects findings from AWS Security Hub CSPM to Sumo Logic where they are displayed in visual pre-defined dashboards.
 
 The Sumo Logic integration with AWS Security Hub CSPM extends compliance checks to other key regulatory frameworks such as PCI, GDPR, HIPAA, and others.
 
@@ -230,7 +230,7 @@ For efficiency and seamless integration, Method 1 using AWS EventBridge is prefe
 
 Before collecting logs, ensure that Security Hub is enabled on your AWS account. For more information, see the AWS Security Hub CSPM documentation for [Setting Up AWS Security Hub CSPM](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html).
 
-### Method 1: Security Hub CSPM> EventBridge > Sumo Logic via HTTP (Preferred)
+### Method 1: Security Hub CSPM > EventBridge > Sumo Logic via HTTP (Preferred)
 
 This method leverages AWS EventBridge to streamline the logging process by sending data directly to Sumo Logic via an HTTP endpoint. By eliminating intermediary services such as Lambda, it offers a more straightforward and cost-effective solution.
 
