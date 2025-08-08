@@ -73,7 +73,7 @@ To configure an Azure Event Hubs Source:
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 7. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+   * An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 8. **Azure Event Hubs Namespace**. Enter your Azure Event Hubs Namespace name.
 9. **Event Hubs Instance Name**. Enter the Azure Event Hubs Instance Name.
 10. **Shared Access Policy**. Enter your Shared Access Policy Name and Key. The Shared Access Policy requires the Listen claim.
