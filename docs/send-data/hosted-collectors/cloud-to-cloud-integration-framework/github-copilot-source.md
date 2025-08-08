@@ -11,7 +11,7 @@ description: Learn to collect the organization metrics and team metrics from Git
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/github.png')} alt="Github-Copilot-icon" width="90" />
+<img src={useBaseUrl('img/send-data/github_copilot.png')} alt="Github-Copilot-icon" width="40" />
 
 GitHub is a web-based platform that uses Git for version control and collaboration in software development. It enables developers to create, store, manage, and share code in repositories, track changes, and collaborate on projects with features such as branches, pull requests, and issue tracking.
 
