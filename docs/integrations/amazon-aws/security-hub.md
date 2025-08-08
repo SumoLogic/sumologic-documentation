@@ -223,7 +223,7 @@ In the case of a problem, perform the following tasks to discover the cause.
 
 You can collect the AWS Security Hub CSPM logs using the following methods:
 
-- [Method 1: AWS Security Hub CSPM > EventBridge > Sumo Logic via HTTP](#method-1-security-hub-cspm-eventbridge--sumo-logic-via-http-preferred)
+- [Method 1: AWS Security Hub CSPM > EventBridge > Sumo Logic via HTTP](#method-1-security-hub-cspm--eventbridge--sumo-logic-via-http-preferred)
 - [Method 2: AWS Security Hub CSPM > Lambda Function > Amazon S3 > Sumo Logic via S3 Source](#method-2-aws-security-hub-cspm--lambda-function--amazon-s3--sumo-logic-via-s3-source-alternative)
 
 For efficiency and seamless integration, Method 1 using AWS EventBridge is preferred, as it leverages native AWS services to reduce resource overhead and simplify the process.
