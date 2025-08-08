@@ -11,7 +11,7 @@ description: Learn to collect the organization metrics and team metrics from Git
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/github-copilot.png')} alt="Github-Copilot-icon" width="70" />
+<img src={useBaseUrl('img/send-data/github_copilot.png')} alt="Github-Copilot-icon" width="40" />
 
 GitHub is a web-based platform that uses Git for version control and collaboration in software development. It enables developers to create, store, manage, and share code in repositories, track changes, and collaborate on projects with features such as branches, pull requests, and issue tracking.
 
@@ -53,8 +53,8 @@ To configure a GitHub Copilot Source, follow the steps below:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Organization Name**. Name of the organization. The name is not case sensitive.
 1. **PAT Token**. Enter the PAT token generated from the [GitHub Copilot platform](#vendor-configuration).
 1. (Optional) **Collect Team Metric Logs**. Select this checkbox to collect the team metric logs from the Copilot platform.
