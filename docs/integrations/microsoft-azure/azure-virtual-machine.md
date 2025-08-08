@@ -178,3 +178,11 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Troubleshooting
+
+### App installation failed - Content install error - Rule with name AzureObservabilityMetadataExtractionVMName already exists.
+
+This error is encountered if the app which is being installed is trying to create a Metric Rule by a name which already exists as a Metric Rule in the org. This Metric Rule could have been created manually or through some other app.
+
+To resolve the problem, delete the existing Metric Rule and try reinstalling the app.
