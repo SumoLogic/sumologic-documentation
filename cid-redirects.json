@@ -2803,6 +2803,7 @@
   "/cid/17343": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source",
   "/cid/17344": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source",
   "/cid/20172": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source",
+  "/cid/20173": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-iam-users-source",
   "/cid/19880": "/docs/metrics/metrics-operators/predict",
   "/cid/19881": "/docs/metrics/metrics-operators/accum",
   "/cid/19882": "/docs/metrics/metrics-operators/along",
