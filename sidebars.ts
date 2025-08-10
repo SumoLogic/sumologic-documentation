@@ -438,6 +438,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/atlassian-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-iam-users-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',

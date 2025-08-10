@@ -122,6 +122,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-iam-users-source"><img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="icon" width="50"/><h4>AWS IAM Users</h4></a>
+  <p>Learn to collect the IAM User Inventory logs from the AWS SDK and send them to Sumo Logic for analysis.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source"><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/><h4>Azure Event Hubs</h4></a>
   <p>Provides a secure endpoint to receive data from Azure Event Hubs.</p>
   </div>
