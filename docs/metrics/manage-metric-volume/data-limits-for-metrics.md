@@ -5,6 +5,8 @@ sidebar_label: Data Limits for Metrics
 description: It is important to understand the volume of metrics that you are ingesting into Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page describes the limits Sumo Logic enforces on the metrics you ingest into Sumo Logic, including data volume limits and metadata-related limits.
 
 :::note
@@ -102,13 +104,13 @@ The value of a metadata item, whether it is a dimension, metatag, or metadata re
 
 #### Audit logging 
 
-When one of the limits described above is exceeded, Sumo Logic creates a `MetricsMetadataLimitsExceeded` Health Event for the associated Metric Source and writes an error or warning message to the Audit Event Index.
+When one of the limits described above is exceeded, Sumo Logic creates a [`MetricsMetadataLimitsExceeded`](https://service.sumologic.com/audit/docs/#operation/getMetricsMetadataLimitsExceeded) Health Event for the associated Metric Source and writes an error or warning message to the [System Event Index](/docs/manage/security/audit-indexes/system-event-index/).
 
-Here is an example of a Health Event for a Metrics Source that sent offending metrics:
+Here is an example of a [Health Event](/docs/manage/health-events) for a Metrics Source that sent offending metrics:
 
-![metadata-health-event.png](/img/metrics/metadata-health-event.png)
+<img src={useBaseUrl('/img/metrics/metadata-health-event.png')} alt="MetricsMetadataLimitsExceeded health event error" style={{border: '1px solid gray'}} width="400" />
 
-Here is an example of an Audit Event Index message generated when
+Here is an example of a System Event Index message generated when
 metrics sent to Sumo Logic exceed the metadata value limit.
 
 ```json

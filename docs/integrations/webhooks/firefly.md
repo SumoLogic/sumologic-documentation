@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Firefly's Cloud Asset Management solution enables DevOps, SREs, and platform engineering teams to control their entire cloud footprint and manage it more efficiently and consistently using Infrastructure-as-Code. You can use a webhook in the Firefly platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the system for various events including drift detection, unmanaged resource detection, ghost resource detection, and policy violations in Sumo Logic. For more details, refer to the [Firefly Documentation](https://firefly-5.gitbook.io/firefly-documentation-portal/).
 
-# Event types
+## Event types
 
 The Sumo Logic integration for Firefly ingests events into Sumo Logic through an outgoing webhook available in Firefly. The following event types are ingested through the Firefly webhook:
 - Drift Detection
@@ -17,7 +17,7 @@ The Sumo Logic integration for Firefly ingests events into Sumo Logic through an
 - Ghost resource detection
 - Policy Violation
 
-# Setup
+## Setup
 
 This section has instructions for collecting logs for the Sumo Logic Firefly webhook collection.
 
@@ -50,9 +50,10 @@ Follow the below steps to configure the Firefly webhook.
     - **Destination**. Select the webhook name created above.
 9. Click **Create**.    
 10. Verify Firefly events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
-`_sourceCategory=webhook/firefly`
-```
+    ```sql
+    _sourceCategory=webhook/firefly
+    ```
+
 
 :::info
 - For detailed information about webhook creation, refer to the [Webhook Documentation](https://firefly-5.gitbook.io/firefly-documentation-portal/user-guides/integrations/integrate-your-providers-and-tools/send-firefly-notifications-to-your-messaging-tools/send-firefly-notifications-to-webhooks) and [Notification Documentation](https://firefly-5.gitbook.io/firefly-documentation-portal/user-guides/how-to-guides/manage-notifications).

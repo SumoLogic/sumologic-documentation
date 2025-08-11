@@ -2,6 +2,7 @@
 id: count-count-distinct-and-count-frequent
 title: count, count_distinct, count_frequent Operators
 sidebar_label: count, count_distinct, count_frequent
+description: Apply aggregation operators like count, count_distinct, and count_frequent in Sumo Logic to summarize and identify frequent log events.
 ---
 
 

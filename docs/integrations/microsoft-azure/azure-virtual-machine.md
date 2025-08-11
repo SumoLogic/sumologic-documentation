@@ -30,29 +30,16 @@ You must explicitly enable diagnostic settings for each Virtual Machine you want
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/VM/ActivityLogs`, `Azure/VM/Metrics`.
 
-### Configure metric rules
-
-* **Azure Observability Metadata Extraction VMName**
-
-  In case this rule already exists, then no need to create it again.
-
-```sql
-Rule Name: AzureObservabilityMetadataExtractionVMName
-```
-
-```sql title="Metric match expression"
-tenant_name=* namespace=Microsoft.Compute/virtualMachines resource_name=*
-```
-
-| Fields extracted | Metric rule    |
-|:--|:--|
-| `vmname`  | `$resource_name._1` |
-
 ### Configure metrics collection
 
 import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
 <MetricsSourceBeta/>
+
+:::note
+Metric Rule `AzureObservabilityMetadataExtractionVMName` will be created automatically as a part of app installation process.
+This metric rule creates new dimension `vmname` for non scale set VMs.
+:::
 
 ### Configure logs collection
 
@@ -103,65 +90,65 @@ import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
 The **Azure Virtual Machine - Overview** dashboard allows you to gain insights into the performance of your VMs by monitoring and analyzing your VM's usage metrics such as VM availability, CPU usage, read/write ops, cache hits, VM usage, and average latencies.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Overview.png')} alt="Azure Key Vault - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Overview.png')} alt="Azure Virtual Machine - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### OS/Disk
 
-The **Azure VM  - OS/Disk** dashboard provides details on the operational activities and status of your Azure VM OS and Data disks.
+The **Azure Virtual Machine - OS/Disk** dashboard provides details on the operational activities and status of your Azure VM OS and Data disks.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+OS%3AData+Disk.png')} alt="Azure Key Vault  - Operations Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+OS%3AData+Disk.png')} alt="Azure Virtual Machine - OS/Disk dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Network
 
-The **Azure VM - Network** dashboard provides detailed information about VM network activities based on incoming and outgoing packets and bytes.
+The **Azure Virtual Machine - Network** dashboard provides detailed information about VM network activities based on incoming and outgoing packets and bytes.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Network.png')} alt="Azure Key Vault - Operations Detailed dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Network.png')} alt="Azure Virtual Machine - Network dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Disk
 
-The **Azure VM - Disk** dashboard provides details on the operational activities and status of your Azure VM disks and premium disks.
+The **Azure Virtual Machine - Disk** dashboard provides details on the operational activities and status of your Azure VM disks and premium disks.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Disk.png')} alt="Azure Key Vault - Errors and Failures dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Disk.png')} alt="Azure Virtual Machine - Disk dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
-The **Azure VM - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Virtual Machine resources. 
+The **Azure Virtual Machine - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Virtual Machine resources.
 
 Use this dashboard to:
 * Monitor the distribution of operation types and their success rates to ensure proper functioning of your Virtual Machine.
 * Identify potential issues by analyzing the top operations causing errors and correlating them with specific users or applications.
 * Track recent write and delete operations to maintain an audit trail of changes made to your Virtual Machine.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Administrative+Operations.png')} alt="Azure Key Vault - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Administrative+Operations.png')} alt="Azure Virtual Machine - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 
-The **Azure Virtual Machine - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Virtual Machine resources. 
+The **Azure Virtual Machine - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Virtual Machine resources.
 
 Use this dashboard to:
 * Monitor the success and failure rates of policy events to ensure proper configuration and compliance.
-* Track and analyse recent recommendations to improve the performance and security of your Vaults setup.
+* Track and analyse recent recommendations to improve the performance and security of your VM setup.
 * Identify trends in policy events and recommendations over time to proactively address potential issues.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Policy+and+Recommendations.png')} alt="Azure Key Vault - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Policy+and+Recommendations.png')} alt="Azure Virtual Machine - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### CPU
 
-The **Azure VM - CPU** dashboard provides details on the CPU metrics and usage of your Azure VM CPU.
+The **Azure Virtual Machine - CPU** dashboard provides details on the CPU metrics and usage of your Azure VM CPU.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Key Vault - Vault Health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Virtual Machine - CPU dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cache
 
-The **Azure VM - Cache** dashboard provides details on the status and usage of your Azure VM cache resources.
+The **Azure Virtual Machine - Cache** dashboard provides details on the status and usage of your Azure VM cache resources.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Cache.png')} alt="Azure Key Vault - Compliance dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Cache.png')} alt="Azure Virtual Machine - Cache dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Temp Disk
 
-The **Azure VM - Temp Disk** dashboard provides details on the operational activities and status of your Azure VM Temp Disk.
+The **Azure Virtual Machine - Temp Disk** dashboard provides details on the operational activities and status of your Azure VM Temp Disk.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Temp+Disk.png')} alt="Azure Key Vault - Compliance dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Temp+Disk.png')} alt="Azure Virtual Machine - Temp Disk dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Azure Virtual Machine app
 
@@ -191,3 +178,11 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Troubleshooting
+
+### App installation failed - Content install error - Rule with name AzureObservabilityMetadataExtractionVMName already exists.
+
+This error occurs if the app being installed attempts to create a Metric Rule by a name (AzureObservabilityMetadataExtractionVMName) which already exists in the org. This Metric Rule could have been created manually and is creating conflict with current app installation flow.
+
+To resolve the issue, delete the existing Metric Rule (AzureObservabilityMetadataExtractionVMName) and reinstall the app.
