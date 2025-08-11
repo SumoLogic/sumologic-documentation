@@ -26,13 +26,6 @@ Our Global Intelligence Service apps provide security teams with valuable real-t
   </div>
 </div>
   <div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="60"/>
-  <h4><a href="/docs/integrations/global-intelligence/kubernetes-devops">Global Intelligence for Kubernetes DevOps</a></h4>
-  <p>A guide to the Sumo Logic app for GI for Kubernetes DevOps.</p>
-  </div>
-</div>
-  <div className="box smallbox card">
     <div className="container">
     <img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="150"/>
     <h4><a href="/docs/integrations/global-intelligence/nginx">Global Intelligence for Nginx</a></h4>
