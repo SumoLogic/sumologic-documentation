@@ -55,6 +55,16 @@ import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-confi
 
 <IAMConfiguration/>
 
+## Required Permissions
+```
+  sqs:ListQueues
+  sqs:GetQueueUrl
+  sqs:CreateQueue
+  sqs:DeleteQueue
+  sqs:PurgeQueue
+  sqs:SendMessage
+```
+
 For information about AWS SQS, see [SQS documentation](https://docs.aws.amazon.com/sqs/).
 
 ## Change Log
