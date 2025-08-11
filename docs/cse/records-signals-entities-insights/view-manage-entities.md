@@ -15,7 +15,7 @@ This topic has information about the **Entities** page in Cloud SIEM UI, which l
 
 The **Entities** page is useful for monitoring entities that are close to having an insight created. On the **Entities > Details** page, you can view signals and insights for an entity, and, as desired, manually create an insight from signals associated with the entity.
 
-You can also update the [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), [suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) state, and [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) assigned to entities, as described below in the [Update multiple entities](#update-multiple-entities) section below. 
+You can also update the [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), [suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) state, and [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) assigned to entities, as described below in the [Update multiple entities](#update-multiple-entities) section. 
 
 :::sumo Micro Lesson
 
@@ -55,6 +55,10 @@ In Cloud SIEM, an entity is a unique actor that a signal fired upon. Cloud SIEM 
 You can create custom entity types as well. For more information, see [Create a Custom Entity Type](/docs/cse/records-signals-entities-insights/create-custom-entity-type/).
 
 When a signal is fired, if an entity doesn’t already exist in Cloud SIEM for the item that the signal fired on, Cloud SIEM creates an entity for it. For more information about entities and signal and insight generation, see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process).
+
+:::note
+Entity names have a limit of 512 characters. If an entity's name value is 512 characters or longer, the system discards the log, and as a result, no signal is generated.
+:::
 
 ## About the Entities list page
 
@@ -105,7 +109,7 @@ the entity appears.
 | o | **Timeline**. A timeline appears for the entity's activity over a three-day period. For more information, see [About the Entity Timeline tab](#about-the-entity-timeline-tab).|
 | p | **Related Entities**. Entities related to the current entity. |
 | q | **Automations**. [Automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) that have been run on the entity. |
-| r | **Create Insight**. You can use this option to create an insight on the entity, as described below in [Create an insight](#create-an-insight), below. |
+| r | **Create Insight**. You can use this option to create an insight on the entity, as described below in [Create an insight](#create-an-insight). |
 | s | The **Current State** section lists signals that were generated for the entity during the current [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an insight. (The detection window is the period over which Cloud SIEM evaluates signals, which is 14 days, by default. The detection window is configured on the **Custom Insights** page in the Cloud SIEM UI.) |
 
 Below the **Current State** section there may be a **Prior Activity** section. This section lists signals that were generated for the entity prior to the current detection window, and all insights for the entity. 
