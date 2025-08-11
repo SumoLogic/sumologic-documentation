@@ -3979,6 +3979,7 @@
   "/docs/observability/root-cause-explorer": "/docs/observability/root-cause-explorer-deprecation",
   "/Observability_Solution/Kubernetes_Solution/01Set_up_collection_for_Kubernetes": "/docs/observability/kubernetes/collection-setup",
   "/Observability_Solution/Kubernetes_Solution/Global_Intelligence_for_Kubernetes_DevOps_App": "/docs/integrations/global-intelligence/kubernetes-devops",
+  "/docs/integrations/global-intelligence/kubernetes-devops": "/docs/integrations/global-intelligence",
   "/Observability_Solution/Kubernetes_Solution/Navigate_your_Kubernetes_environment": "/docs/observability/kubernetes",
   "/Search/Get-Started-with-Search/How-to-Build-a-Search/Best-Practices:-7-Search-Rules-to-Live-By": "/docs/search/get-started-with-search/build-search/best-practices-search",
   "/Search/Get-Started-with-Search/How-to-Build-a-Search/Search_Templates": "/docs/search/get-started-with-search/build-search/search-templates",

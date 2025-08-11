@@ -2470,7 +2470,6 @@ integrations: [
         items: [
           'integrations/global-intelligence/apache',
           'integrations/global-intelligence/apache-tomcat',
-          'integrations/global-intelligence/kubernetes-devops',
           'integrations/global-intelligence/nginx',
           'cse/records-signals-entities-insights/global-intelligence-security-insights',
           'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
@@ -3102,7 +3101,7 @@ integrations: [
             'api/about-apis/terraform-with-sumo-logic',
             'api/about-apis/troubleshooting',
           ],
-        }, 
+        },
         'api/access-keys',
         'api/account-management',
         'api/app-management',
