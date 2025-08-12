@@ -31,7 +31,7 @@ Watch this micro lesson to learn how insights are created.
 
 ## Entities in messages are mapped to entity-type schema attributes
 
-During the next step of the [record processing flow](/docs/cse/schema/record-processing-pipeline)—log mapping—message fields are mapped to Cloud SIEM schema attributes. During this process, each entity field from a message is mapped to one of the following Cloud SIEM schema entity attributes:
+During the next step of the [record processing flow](/docs/cse/schema/record-processing-pipeline)—log mapping—message fields are mapped to Cloud SIEM schema attributes. During this process, each entity field from a message is mapped to one of the following [Cloud SIEM schema entity attributes](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md):
 
 | Entity type | Schema attributes |
 |:----- |:----- |
@@ -44,6 +44,7 @@ During the next step of the [record processing flow](/docs/cse/schema/record-pro
 | IP Address | `device_ip`, `device_natIp`, `dns_replyIp`, `dstDevice_ip`, `dstDevice_natIp`, `srcDevice_ip`, `srcDevice_natIp` |
 | MAC Address | `device_mac`, `dstDevice_mac`, `srcDevice_mac` |
 | Process | `baseImage`, `parentBaseImage` |
+| Resource | `resource` |
 | URL | `http_url` |
 | User Agent | `http_userAgent` |
 | Username | `fromUser_username`, `fromUser_username_raw`, `user_username`, `user_username_raw` |
