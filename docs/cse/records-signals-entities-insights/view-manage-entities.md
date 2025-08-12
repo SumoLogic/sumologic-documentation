@@ -37,9 +37,10 @@ Watch this micro lesson to learn more about entities.
 
 ## About entities
 
-In Cloud SIEM, an entity is a unique actor that a signal fired upon. Cloud SIEM has a number of built-in entity types:
+In Cloud SIEM, an entity is a unique actor that a signal fired upon. Cloud SIEM has a number of [built-in entity types](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md):
 
 * Command
+* Deployment
 * Domain
 * Email
 * File
@@ -47,7 +48,9 @@ In Cloud SIEM, an entity is a unique actor that a signal fired upon. Cloud SIEM 
 * Hostname
 * IP Address
 * MAC Address
+* Pod
 * Process
+* Replica Set
 * Resource
 * URL
 * User Agent
@@ -205,8 +208,8 @@ Note that:
 
 | Column | Description |
 |:--|:--|
-| `id` | **This field is required for Format 1.**<br/>To form the id field value, concatenate the entity `type` and the value of the entity, separated by a dash character (-) where the entity `type` is one of the following:<br/>`_command`<br/>`_domain`<br/>`_email`<br/>`_file`<br/>`_hash`<br/>`_hostname`<br/>`_ip`<br/>`_mac`<br/>`_process`<br/>`_resource`<br/>`_useragent`<br/>`_username`<br/>`_url`<br/>`<CustomEntityTypeId>`<br/><br/>The `id` for an IP address would look like:<br/><br/>`_ip-1.2.3.4` <br/><br/>You can optionally specify an entity’s sensor zone as a part of the `id` column, in this format:<br/><br/> `_<entity_type>-<sensor_zone>-<entity_value>`  <br/><br/>For example: <br/><br/> `_ip-zone1-172.18.20.3`|
-| `type` | **This field is required for Format 2.**<br/>Identifies the type of entity, one of:<br/>`_command`<br/>`_domain`<br/>`_email`<br/>`_file`<br/>`_hash`<br/>`_hostname`<br/>`_ip`<br/>`_mac`<br/>`_process`<br/>`_resource`<br/>`_useragent`<br/>`_username`<br/>`_url`<br/>`<CustomEntityTypeId>` |
+| `id` | **This field is required for Format 1.**<br/>To form the id field value, concatenate the entity `type` and the value of the entity, separated by a dash character (-) where the entity `type` is one of the following:<br/>`_command`<br/>`_deployment`<br/>`_domain`<br/>`_email`<br/>`_file`<br/>`_hash`<br/>`_hostname`<br/>`_ip`<br/>`_mac`<br/>`_pod`<br/>`_process`<br/>`_replicaset`<br/>`_resource`<br/>`_useragent`<br/>`_username`<br/>`_url`<br/>`<CustomEntityTypeId>`<br/><br/>The `id` for an IP address would look like:<br/><br/>`_ip-1.2.3.4` <br/><br/>You can optionally specify an entity’s sensor zone as a part of the `id` column, in this format:<br/><br/> `_<entity_type>-<sensor_zone>-<entity_value>`  <br/><br/>For example: <br/><br/> `_ip-zone1-172.18.20.3`|
+| `type` | **This field is required for Format 2.**<br/>Identifies the type of entity, one of:<br/>`_command`<br/>`_deployment`<br/>`_domain`<br/>`_email`<br/>`_file`<br/>`_hash`<br/>`_hostname`<br/>`_ip`<br/>`_mac`<br/>`_pod`<br/>`_process`<br/>`_replicaset`<br/>`_resource`<br/>`_useragent`<br/>`_username`<br/>`_url`<br/>`<CustomEntityTypeId>` |
 | `value` | **This field is required for Format 2.**<br/>The value of the entity, for example, for an IP address:<br/>`1.2.3.4` |
 | `sensor_zone` | Identifies the sensor zone for the entity. <br/><br/>Don’t include this column if you are specifying entity sensor zones in the `id` column, as described above. |
 | `suppressed` | When *true*, Cloud SIEM suppresses the entity. |
