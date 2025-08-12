@@ -441,3 +441,18 @@ Rule tuning, custom rules, and custom insights are just a taste of what you can 
 * [Match lists](/docs/cse/match-lists-suppressed-lists/)
 * [APIs](/docs/cse/administration/cse-apis/) and other [plugins](/docs/cse/integrations/)
 * How much data Cloud SIEM [ingests](/docs/cse/ingestion/)
+
+## Additional resources
+
+* Blogs:
+   * [Protecting identities with the Sumo Logic platform](https://www.sumologic.com/blog/protecting-identities-sumo-platform)
+   * [Hunt for cloud session anomalies with Cloud SIEM](https://www.sumologic.com/blog/hunt-cloud-session-anomalies)
+   * [Why your security analytics needs proactive threat hunting](https://www.sumologic.com/blog/why-proactive-threat-hunting-is-a-necessity)
+   * [Threat hunting with Sumo Logic: The Command Line](https://www.sumologic.com/blog/threat-hunting-command-line)
+   * [Responding to remote service appliance vulnerabilities with Sumo Logic](https://www.sumologic.com/blog/appliance-vulnerabilities-sumo)
+   * [Cloudy with a chance of breach: advanced threat hunting strategies for a hyperconnected and SaaSy world](https://www.sumologic.com/blog/threat-hunting-hybrid-cloud-environment)
+* Demos: 
+   * [Cloud SIEM: Complete threat detection, investigation and response demo](https://www.sumologic.com/demo/complete-threat-detection-investigation-and-response-demo)
+   * [Cloud SIEM: Heads up display (HUD)](https://www.sumologic.com/demo/heads-up-display-hud)
+   * [Cloud SIEM: Insight investigation](https://www.sumologic.com/demo/insight-investigation)
+   * [Cloud SIEM: Cloud insights triaging and investigation](https://www.sumologic.com/demo/cloud-insights)

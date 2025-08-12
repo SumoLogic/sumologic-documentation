@@ -272,3 +272,9 @@ When you select an entity on the page, the right pane displays details about tha
 
 You can access related entity information using the Cloud SIEM API. For more information, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis).
 
+## Additional resources
+
+Demos: 
+* [Cloud SIEM: Complete threat detection, investigation and response demo](https://www.sumologic.com/demo/complete-threat-detection-investigation-and-response-demo)
+* [Cloud SIEM: Insight investigation](https://www.sumologic.com/demo/insight-investigation)
+* [Cloud SIEM: Cloud insights triaging and investigation](https://www.sumologic.com/demo/cloud-insights)
