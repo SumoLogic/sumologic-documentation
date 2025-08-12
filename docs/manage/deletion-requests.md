@@ -52,7 +52,7 @@ Data cannot be recovered once it gets deleted. Ensure that you have appropriatel
    :::
 1. Select the **Time Range** when the data was ingested.
 1. When you're done, click **Save**.
-1. Your request will go to a Sumo Logic Customer Support Manager (CSM) for review and approval. You can check on your request in the **Status** column. <br/><img src={useBaseUrl('img/search/get-started-search/deletion-request-status.png')} alt="deletion request status" style={{border: '1px solid gray'}} width="400"/>
+1. Your request will go to your [Administrator for review and approval](#approve-the-deletion-request). You can check on your request in the **Status** column. <br/><img src={useBaseUrl('img/search/get-started-search/deletion-request-status.png')} alt="deletion request status" style={{border: '1px solid gray'}} width="400"/>
 
 ### From a Log Search
 
@@ -88,12 +88,28 @@ To cancel a data deletion request:
 
 <img src={useBaseUrl('img/search/get-started-search/deletion-request-cancel.png')} alt="screenshot showing how to cancel a deletion request" style={{border: '1px solid gray'}} width="800"/>
 
+## Approve the deletion request
+
+:::note
+- Ensure you have the **Administrator** access with **Review Deletion Requests** capability. By default, **Manage Deletion Requests** and **View Deletion Requests** capabilities will be added if you have the **Review Deletion Requests** capability.
+- Only **Administrator** will have the ability to view the **Approve** and **Reject** buttons.
+:::
+
+Once the deletion request is created, it will be notified to your **Administrator** for approval. To approve or reject the request, follow the steps below:
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Logs > Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select **Configuration**, and then under **Logs** select **Deletion Requests**. 
+1. Filter for the status with **Pending review**. <img src={useBaseUrl('img/search/get-started-search/pending-requests.png')} alt="filter for pending deletion requests" style={{border: '1px solid gray'}} width="800"/>
+1. Click on the deletion request to review the request.
+1. **Approve** or **Reject** the request based on your requirement.
+    - **Approve**. Enter **Delete** in the **Approve Deletion Request** pop-up to permanently delete the data, and click the **Approve Request** button. <br/><img src={useBaseUrl('img/search/get-started-search/approve-deletion-request.png')} alt="Approve deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
+    - **Reject**. Enter the reason for rejection in the **Reject Deletion Request** pop-up to help the requester understand the rejection issue to take necessary actions, and click the **Reject Request** button.<br/><img src={useBaseUrl('img/search/get-started-search/reject-deletion-request.png')} alt="Reject deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
+
 ## Limitations
 
 - Deletion requests will be processed one by one. 
 - You can create upto 100 deletion requests at a time.
 - Each deletion request can include up to 1 petabyte (PB) of scanned data.   
-- You can delete up to 1,000,000 messages per request.   
+- You can delete up to 1,000,000 messages per request. 
 - The maximum time range for each deletion request is one year.   
 - Your system can support up to 10 active concurrent deletion tasks across different customers.
 - Ensure that the requests initiated are not deleting the data prior to `1st February 2024`. Any request before this timestamp will fail in creation.
