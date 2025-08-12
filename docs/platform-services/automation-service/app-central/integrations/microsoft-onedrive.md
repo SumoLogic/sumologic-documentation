@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-onedrive.png')} alt="microsoft-onedrive" width="100"/>
 
-***Version: 1.6  
-Updated: April 25, 2025***
+***Version: 1.7  
+Updated: August 12, 2025***
 
 Utilize and manipulate files for incident investigation using OneDrive.
 
@@ -73,3 +73,4 @@ For information about Microsoft OneDrive, see [OneDrive documentation](https://l
       - Password (Delegated Context) 
       - Client Credentials (Application Context)
 * April 25, 2025 (v1.6) - Changed required=False for username and password parsers in Integration file.
+* August 12, 2025 (v1.7) - Changed required=False for username and password parsers in all the actions.
