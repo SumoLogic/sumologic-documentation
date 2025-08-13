@@ -30,7 +30,7 @@ To add a panel with a table chart:
 
     To create a metrics query utilize the [Metrics Explorer](/docs/metrics/metrics-queries).
 
-1. Once the query runs you will need to flip the chart type to **Table**.
+1. Once the query runs, you will need to flip the chart type to **Table**.
     1. (Optional) **Missing Data Display**. Enter the text that needs to be displayed when data is missing.
     1. (Optional) **Font Size**. Font size of the text displayed. By default, `12` is set as font size, you can change based on your requirement.
     1. (Optional) **Decimals**. Sets the precision of units displayed. Select the number of decimals to show with a unit, up to 10.
