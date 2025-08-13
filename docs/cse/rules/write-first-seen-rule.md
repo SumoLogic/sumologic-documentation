@@ -154,5 +154,5 @@ If you are unsure whether to use a per-entity or a global baseline, consider you
 
 ## Additional resources
 
-Blog: [From weeks to minutes: How Sumo Logic’s historic baselining supercharges UEBA](https://www.sumologic.com/blog/sumo-logic-historic-baselining)
+* Blog: [From weeks to minutes: How Sumo Logic’s historic baselining supercharges UEBA](https://www.sumologic.com/blog/sumo-logic-historic-baselining)
 * Glossary: [User entity behavior analytics (UEBA)](https://www.sumologic.com/glossary/ueba)
