@@ -3101,7 +3101,7 @@ integrations: [
             'api/about-apis/terraform-with-sumo-logic',
             'api/about-apis/troubleshooting',
           ],
-        },
+        }, 
         'api/access-keys',
         'api/account-management',
         'api/app-management',
