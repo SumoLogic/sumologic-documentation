@@ -34,8 +34,7 @@ To add a panel with a table chart:
     1. (Optional) **Missing Data Display**. Enter the text that needs to be displayed when data is missing.
     1. (Optional) **Font Size**. Font size of the text displayed. By default, `12` is set as font size, you can change based on your requirement.
     1. (Optional) **Decimals**. Sets the precision of units displayed. Select the number of decimals to show with a unit, up to 10.
-    1. (Optional) **Rows Per Page**. Set the numbers of rows that needs to be displayed in the table.
-    <img src={useBaseUrl('/img/dashboards/panels/table-charts/new-table-chart.png')} alt="new table chart" style={{border: '1px solid gray'}} width="800" />
+    1. (Optional) **Rows Per Page**. Set the numbers of rows to display in the table.<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/new-table-chart.png')} alt="new table chart" style={{border: '1px solid gray'}} width="800" />
 1. [Modify the chart](./modify-chart.md) as desired.
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
 
