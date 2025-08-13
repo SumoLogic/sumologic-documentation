@@ -36,7 +36,7 @@ The health event is named [`HighCardinalityMetricsDetected`](https://service.sum
 Following is an example of the message written to the system event index:
 
 ```json
-{"status":"UnHealthy","details":{"retention":"long","trackerId":"MetricsHighCardinalityDetected","error":"Detected high cardinality of metrics time series","description":"Approaching the limit for total number of unique time series allowed. In case of exceeding the limit some of your metrics sources would be temporary disabled."},"eventType":"Health-Change","severityLevel":"Warning","accountId":"0000000000000475","eventId":"0687c55e-0b77-44a4-9a6f-6d6d5e588244","eventName":"MetricsHighCardinalityDetected","eventTime":"2020-06-18T14:45:48.252Z","eventFormatVersion":"1.0 beta","subsystem":"Metrics","resourceIdentity":{"id":"0000000000000475","name":"stagData","type":"Organisation"}}
+{"status":"UnHealthy","details":{"retention":"long","trackerId":"HighCardinalityMetricsDetected","error":"Detected high cardinality in metrics time series","description":"Approaching the limit for total number of unique time series allowed. In case of exceeding the limit some of your metrics sources would be temporary disabled."},"eventType":"Health-Change","severityLevel":"Warning","accountId":"0000000000000475","eventId":"0687c55e-0b77-44a4-9a6f-6d6d5e588244","eventName":"HighCardinalityMetricsDetected","eventTime":"2020-06-18T14:45:48.252Z","eventFormatVersion":"1.0 beta","subsystem":"Metrics","resourceIdentity":{"id":"0000000000000475","name":"stagData","type":"Organisation"}}
 ```
 
 ### Sources are disabled when you reach the global limits
