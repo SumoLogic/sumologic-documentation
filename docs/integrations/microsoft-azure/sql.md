@@ -118,15 +118,13 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform below steps for each Azure SQL database that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select all the log types except `SQL Security Audit Event`.
-   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-
-   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Diagnostic-Logs.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="800" />
-
-3. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="400" />
+   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Diagnostic-Logs.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="800" />
+1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 :::note
 Auto Tuning logs will be collected when Auto Tuning feature is enabled in Azure SQL. Click [here](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?view=azuresql) to learn more on how to enable this feature.
 :::
+
 #### Enable SQL Security Audit logs
 In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
