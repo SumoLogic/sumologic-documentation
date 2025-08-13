@@ -57,21 +57,21 @@ The Sumo Logic app for Azure SQL app uses the following log types:
 
 ```json title="Database Wait Statistics Event"
 {
-	"LogicalServerName":"npande-test-db-server",
-	"SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a"",""ResourceGroup"":""npandeTestDBResGrp"",""time"":""2018-07-09T05":"13":34.520Z",""resourceId"":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a"/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB",
-	"category":"DatabaseWaitStatistics",
-	"operationName":"DatabaseWaitStatistcsEvent",
-	"properties":{
-		"ElasticPoolName":"",
-		"DatabaseName":"npandeTestDB",
-		"start_utc_date":"2018-07-09T05:13:34.520Z",
-		"end_utc_date":"2018-07-09T05:18:36.050Z",
-		"wait_type":"WRITELOG",
-		"delta_max_wait_time_ms":0,
-		"delta_signal_wait_time_ms":0,
-		"delta_wait_time_ms":12,
-		"delta_waiting_tasks_count":2
-	}
+  "LogicalServerName":"npande-test-db-server",
+  "SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a"",""ResourceGroup"":""npandeTestDBResGrp"",""time"":""2018-07-09T05":"13":34.520Z",""resourceId"":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a"/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB",
+  "category":"DatabaseWaitStatistics",
+  "operationName":"DatabaseWaitStatistcsEvent",
+  "properties":{
+    "ElasticPoolName":"",
+    "DatabaseName":"npandeTestDB",
+    "start_utc_date":"2018-07-09T05:13:34.520Z",
+    "end_utc_date":"2018-07-09T05:18:36.050Z",
+    "wait_type":"WRITELOG",
+    "delta_max_wait_time_ms":0,
+    "delta_signal_wait_time_ms":0,
+    "delta_wait_time_ms":12,
+    "delta_waiting_tasks_count":2
+  }
 }
 ```
 
@@ -98,6 +98,10 @@ You must explicitly enable diagnostic settings for each Azure SQL database that 
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/SQL/Logs`, `Azure/SQL/ActivityLogs`, and `Azure/SQL/Metrics`.
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure metrics collection
 
 import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
@@ -106,34 +110,31 @@ import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
 ### Configure logs collection
 
-
 #### Diagnostic logs
 
 In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform below steps for each Azure SQL database that you want to monitor.
-   * Choose `Stream to an event hub` as the destination.
-   * Select all the log types except `SQL Security Audit Event`.
-   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-
-   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Diagnostic-Logs.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="800" />
-
-3. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="400" />
+1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform below steps for each Azure SQL database that you want to monitor.
+    * Choose `Stream to an event hub` as the destination.
+    * Select all the log types except `SQL Security Audit Event`.
+    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Diagnostic-Logs.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="800" />
+1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 :::note
 Auto Tuning logs will be collected when Auto Tuning feature is enabled in Azure SQL. Click [here](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?view=azuresql) to learn more on how to enable this feature.
 :::
+
 #### Enable SQL Security Audit logs
 In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
 1. To enable the Audit logs in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/auditing-setup?view=azuresql#configure-auditing-for-your-server). Perform below steps for each Azure SQL database that you want to monitor.
-   * Choose `Event Hub` as the destination. Refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/auditing-setup?view=azuresql#audit-to-event-hubs-destination).
-   * Use the same Event hub namespace and Event hub name as configured in `Diagnostic logs` in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Auditing.png')} alt="Configure Auditing" style={{border: '1px solid gray'}} width="800" />
+    * Choose `Event Hub` as the destination. Refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/auditing-setup?view=azuresql#audit-to-event-hubs-destination).
+    * Use the same Event hub namespace and Event hub name as configured in `Diagnostic logs` in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Auditing.png')} alt="Configure Auditing" style={{border: '1px solid gray'}} width="800" />
 1. By default, auditing is enabled only for the below action groups. Refer to [Azure help](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/sql-server-audit-action-groups-and-actions) for more details on supported action groups and actions.
-   * "SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP"
-   * "FAILED_DATABASE_AUTHENTICATION_GROUP"
-   * "BATCH_COMPLETED_GROUP"
+    * "SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP"
+    * "FAILED_DATABASE_AUTHENTICATION_GROUP"
+    * "BATCH_COMPLETED_GROUP"
 
 Follow the below command to update the audit policy with new actions using Azure CLI. If you want to use any other mechanism, refer to the [Microsoft documentation](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification?view=sql-server-ver16).
 ).
@@ -387,7 +388,7 @@ For more information about the statistics presented on the QueryStoreWaitStats d
 
 **Wait Category Trend.** A stacked column chart that shows the count of wait events by category per timeslice over the last 24 hours.
 
-**Total Wait Time for Query by Wait Category**. A stacked column chart that shows, for each query, the length of time a query spent waiting in each Wait Category over the last 24 hours.  
+**Total Wait Time for Query by Wait Category**. A stacked column chart that shows, for each query, the length of time a query spent waiting in each Wait Category over the last 24 hours.
 
 **Wait Details**. The table displays wait statistics as encountered by queries on a given database, residing on a given logical server in the last 24 hours.
 
@@ -422,7 +423,7 @@ For more information about the data presented on the Timeouts dashboard, see [Ti
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Timeouts.png')} alt="Timeouts" />
 
-**Timeouts**. The count of timeouts over the last 7 days.  
+**Timeouts**. The count of timeouts over the last 7 days.
 
 **Top 10 Error States**. A table that lists the top 10 errors states that have occurred over the last 7 days and the count of errors in each state.
 
@@ -435,8 +436,8 @@ For more information about the data presented on the Timeouts dashboard, see [Ti
 The **Azure SQL - Health** dashboard provides information of any service health incidents or resource health events associated with SQL database service or resource in your azure account.
 
 Use this dashboard to:
-    * View recent resource and service health incidents.
-    * View distribution of service and resource health by incident type.
+* View recent resource and service health incidents.
+* View distribution of service and resource health by incident type.
 
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
@@ -446,11 +447,11 @@ Use this dashboard to:
 The **Azure SQL - Policy and Recommendations** dashboard provides information of all effect action operations performed by Azure Policy and recommendations events from Azure Advisor.
 
 Use this dashboard to:
-    * Monitor policy events with warnings and errors.
-    * View recent failed policy events.
-    * View total recommendation events.
-    * Identify High Impact recommendations.
-    * View recent recommendation events and navigate to the affected resource.
+* Monitor policy events with warnings and errors.
+* View recent failed policy events.
+* View total recommendation events.
+* Identify High Impact recommendations.
+* View recent recommendation events and navigate to the affected resource.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Policy-and-Recommendations.png')} alt="Azure SQL - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -460,9 +461,9 @@ Use this dashboard to:
 The **Azure SQL - Administrative Operations** dashboard provides details on read/write/delete specific changes, different operations used, top 10 operations that caused most errors, and users performing admin operations.
 
 Use this dashboard to:
-    * Identify top users performing administrative operations.
-    * View Top 10 operations that caused the most errors.
-    * View recent read, write, and delete operations.
+* Identify top users performing administrative operations.
+* View Top 10 operations that caused the most errors.
+* View recent read, write, and delete operations.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Administrative-Operations.png')} alt="Azure SQL Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -471,9 +472,9 @@ Use this dashboard to:
 The **Azure SQL - SQL Security Audit** dashboard provides audit information on server level events and database level events including DML and DDL statements executed.
 
 Use this dashboard to:
-    * Identify failed login and their geo locations.
-    * View recent DDL, DML, DQL, and TCL statements.
-    * Track who (host name, service principal, ip address) and what (object, database, server) information associated with any database operation.
+* Identify failed login and their geo locations.
+* View recent DDL, DML, DQL, and TCL statements.
+* Track who (host name, service principal, ip address) and what (object, database, server) information associated with any database operation.
 
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-SQL-Security-Audit.png')} alt="Azure SQL Security Audit dashboard" style={{border: '1px solid gray'}} width="800" />
@@ -483,9 +484,9 @@ Use this dashboard to:
 The **Azure SQL - Automatic Tuning** dashboard provides information about automatic tuning recommendations for a database.
 
 Use this dashboard to:
-    * View recent changes in tuning configuration.
-    * View create index recommendations.
-    * View drop index recommendations.
+* View recent changes in tuning configuration.
+* View create index recommendations.
+* View drop index recommendations.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Automatic-Tuning.png')} alt="Azure SQL Automated Tuning dashboard" style={{border: '1px solid gray'}} width="800" />
 

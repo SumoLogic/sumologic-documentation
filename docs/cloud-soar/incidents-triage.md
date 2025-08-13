@@ -503,3 +503,7 @@ With the **Report** option, you can create incident reports to share with others
     1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-save-report.png')} alt="Save a report" style={{border: '1px solid gray'}} width="300"/>
 1. Click **Export** to export the report to PDF.
 1. Click **Open** to open available reports.
+
+## Additional resources
+
+Blog: [Want to improve collaboration and reduce incident response time? Try Cloud SOAR War Room](https://www.sumologic.com/blog/want-to-improve-collaboration-and-reduce-incident-response-time-try-cloud-soar-war-room)
