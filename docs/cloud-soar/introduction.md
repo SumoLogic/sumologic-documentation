@@ -663,3 +663,15 @@ Let's create a custom automation rule. This rule will pull information from Clou
 1. Leave the other fields as their defaults, then click **Save**. 
 1. As a best practice, you can enable and test the new rule, but then disable it, since it can disrupt your environment. Continue testing your rule until their behavior is expected before deciding to enable it.
 
+## Additional resources
+
+* Blogs: 
+   * [Why you need both SIEM and SOAR to improve SOC efficiencies and increase effectiveness](https://www.sumologic.com/blog/why-you-need-siem-and-soar-to-improve-soc-efficiencies)
+   * [Cloud-native SOAR and SIEM solutions pave the road to the modern SOC](https://www.sumologic.com/blog/cloud-native-soar-and-siem-solutions-pave-the-road-to-the-modern-soc)
+   * [SIEM vs SOAR: Evaluating security tools for the modern SOC](https://www.sumologic.com/blog/soar-vs-siem)
+   * [Overwhelmed: Why SOAR solutions are a game changer](https://www.sumologic.com/blog/overwhelmed-why-soar-solutions-are-a-game-changer)
+   * [How to improve MTTD and MTTR with SOAR](https://www.sumologic.com/blog/how-to-improve-mttd-and-mttr-with-soar)
+   * [How to implement cybersecurity automation in SecOps with SOAR (7 simple steps)](https://www.sumologic.com/blog/how-to-implement-cyber-security-automation-in-secops-with-soar-7-simple-steps)
+* Briefs
+   * [Sumo Logic Cloud SOAR Solutions Brief](https://www.sumologic.com/briefs/sumo-logic-cloud-soar-solutions-brief)
+   * [How to calculate the ROI of Cloud SOAR](https://www.sumologic.com/briefs/how-to-calculate-roi-of-cloud-soar)
