@@ -52,6 +52,14 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuthAWS/>
 
+<IAMConfiguration/>
+
+## Required Permissions
+```
+  cloudfront:ListCloudFrontOriginAccessIdentities
+  cloudfront:GetCloudFrontOriginAccessIdentity
+```
+
 For information about AWS CloudFront, see [CloudFront documentation](https://docs.aws.amazon.com/cloudfront/).
 
 ## Change Log

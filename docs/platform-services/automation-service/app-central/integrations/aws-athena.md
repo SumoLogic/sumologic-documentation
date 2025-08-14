@@ -60,6 +60,28 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuthAWS/>
 
+<IAMConfiguration/>
+
+## Required Permissions
+```
+  athena:StartQueryExecution
+  athena:GetQueryExecution
+  athena:GetQueryResults
+  athena:StopQueryExecution
+  athena:ListDatabases
+  athena:ListWorkGroups
+  athena:ListTableMetadata
+  glue:GetDatabase
+  glue:GetDatabases
+  glue:GetTable
+  glue:GetTables
+  glue:GetTableVersion
+  glue:GetTableVersions
+  s3:GetObject
+  s3:PutObject
+  s3:ListBucket
+```
+
 For information about Amazon Athena, see [Athena documentation](https://docs.aws.amazon.com/athena/).
 
 ## External Libraries

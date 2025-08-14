@@ -74,6 +74,35 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuthAWS/>
 
+<IAMConfiguration/>
+
+## Required Permissions
+```
+  ec2:AuthorizeSecurityGroupIngress
+  ec2:CreateSnapshot
+  ec2:DeleteSecurityGroup
+  ec2:DeleteSnapshot
+  ec2:DescribeAddresses
+  ec2:DescribeInstances
+  ec2:DescribeKeyPairs
+  ec2:DescribeRegions
+  ec2:DescribeSubnets
+  ec2:DescribeSecurityGroups
+  ec2:DescribeSnapshots
+  ec2:DescribeVolumes
+  ec2:DescribeVpcs
+  ec2:DisassociateAddress
+  ec2:GetPasswordData
+  ec2:MonitorInstances
+  ec2:ReleaseAddress
+  ec2:RebootInstances
+  ec2:RevokeSecurityGroupIngress
+  ec2:StartInstances
+  ec2:StopInstances
+  ec2:TerminateInstances
+  ec2:UnmonitorInstances
+```
+
 For information about AWS EC2, see [EC2 documentation](https://docs.aws.amazon.com/ec2/).
 
 ## Change Log
