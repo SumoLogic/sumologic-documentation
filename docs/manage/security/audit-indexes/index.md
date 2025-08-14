@@ -1,7 +1,7 @@
 ---
 slug: /manage/security/audit-indexes
 title: Audit Indexes
-description: Learn how to use audit indexes to query for events in Sumo Logic.
+description: Learn about Sumo Logic audit indexes and how they track user activity, access logs, and system events for compliance.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

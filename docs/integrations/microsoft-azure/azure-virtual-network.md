@@ -95,6 +95,10 @@ You must explicitly enable diagnostic settings and network flow logs for each Vi
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/VirtualNetwork/Metrics` and `Azure/VirtualNetwork/Logs`.
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure metrics collection
 
 import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
@@ -270,12 +274,19 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureVirtualNetwork/Azure-Virtual-Network-Denied-Traffic-Flow.png')} alt="Azure Virtual Network - Denied Traffic Flow" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Virtual Network
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
 ### Azure Virtual Network alerts
+
 These alerts are metric based and will work for all Virtual Networks.
 
-| Alert Name | Description                                                                     | Alert Condition | Recover Condition |
-|:--|:--------------------------------------------------------------------------------|:----------------|:------------------|
-| `Azure Virtual Network - Under DDoS attack` | This alert is triggered when maximum DDoS attack count is greater than 1.0785.  | Count > 1.0785  | Count < = 1.0785  |
+| Alert Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Virtual Network - Under DDoS attack` | This alert is triggered when maximum DDoS attack count is greater than 1.0785. | Count > 1.0785 | Count < = 1.0785 |
 
 ## Upgrade/Downgrade the Azure Virtual Network app (optional)
 
@@ -293,9 +304,9 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ### App installation failed - Content Error - Invalid Field Extraction Rule
 
-This error is encountered if the app which is being installed is trying to create an FER by a name which already exists as an FER in the org. This FER could have been created manually or through some other app.
+This error occurs if the app being installed attempts to create an FER by a name (AzureVirtualNetworkTargetResourceIdExtractionFER) which already exists in the org. This FER could have been created manually and is creating conflict with current app installation flow.
 
-To resolve the problem, rename or delete the existing FER and try reinstalling the app.
+To resolve the issue, rename or delete the existing FER (AzureVirtualNetworkTargetResourceIdExtractionFER) and reinstall the app.
 
 ### HTTP Logs and Metrics Source used by Azure Functions
 

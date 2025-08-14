@@ -16,9 +16,25 @@ export const Home = () => {
   return (
     <ErrorBoundary>
       <Layout
-        description='Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.'
+        description='Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.'
         title='Home'
       >
+      {/* H1 hidden, but visible to crawlers */}
+      <Typography
+        component='h1'
+        sx={{
+          position: 'absolute',
+          width: 1,
+          height: 1,
+          p: 0,
+          m: -1,
+          overflow: 'hidden',
+          clip: 'rect(0 0 0 0)',
+          border: 0,
+        }}
+      >
+        Sumo Logic Documentation
+      </Typography>
         {/* Header */}
         <Typography
           bgcolor='#0045BE'
