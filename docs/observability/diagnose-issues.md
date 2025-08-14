@@ -24,7 +24,3 @@ Observe apps and microservices using [Transaction Tracing](/docs/apm/traces) and
 Easily find and visualize your metrics with the [Re-vamped Metrics Explorer](../metrics/metrics-queries/metrics-explorer.md) that comes with a new structured query builder, and an extended range of visualizations for ad hoc analysis.  Mimicking the Dashboard workflow, you now have the same unified experience in the main metrics tab.
 
 ![metrics-explorer.png](/img/observability/metrics-explorer.png)
-
-## Benchmark KPIs with the rest of the world
-
-You can isolate or detect AWS errors using [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops). The service provides comparison benchmarks that on-call engineers can use to identify abnormal patterns and issues in your AWS service compared to the rest of the world, and then take action to remediate those issues.  
