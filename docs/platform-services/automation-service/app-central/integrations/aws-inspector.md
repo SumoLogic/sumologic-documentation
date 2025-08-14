@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.2  
-Updated: Jun 15, 2023***
+***Version: 1.3  
+Updated: July 29, 2025***
 
 Amazon Inspector enables you to analyze the behavior of your AWS resources and to identify potential security issues.
 
@@ -27,6 +27,7 @@ import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-a
 import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../../../reuse/automation-service/aws/iam-role.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
@@ -38,6 +39,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * <AWSAccesskey/>
 * <AWSSecret/>
+* <AWSIAMRole/>
 * <AWSRegions/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>
@@ -53,3 +55,5 @@ For information about AWS Inspector, see [Inspector documentation](https://docs.
 * March 2, 2022 - First upload
 * March 10, 2022 - Logo
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
+* July 29, 2025 (v1.3) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+
