@@ -13,7 +13,7 @@ Sumo Logic has a host of useful APIs across all products that let you access dat
 
 This article is for users who are familiar with Sumo Logic features (collectors, queries, and security tools, for example), but new to working with APIs. You don’t need a development background to follow along. We’ll cover the basics so you can start making API calls to run queries and perform tasks.
 
-In this article, you'll learn you'll learn how to:
+In this article, you'll learn how to:
 
 * Create a Sumo Logic access ID/key.
 * Access Sumo Logic APIs.
