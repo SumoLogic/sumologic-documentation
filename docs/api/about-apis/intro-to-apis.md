@@ -101,7 +101,7 @@ As you are learning how APIs work, we recommend setting up an API test program, 
 
 You can download the OpenAPI Specification for the Sumo Logic API and import it to your API test application. This not only allows you to see the specification for all the Sumo Logic APIs, but to run them as well:
 
-1. Select the API documentation URL for your deployment from the [Documentation](/docs/api/about-apis/getting-started/#documentation) section of the *API Authentication, Endpoints, and Security* article. For instance, US users would access either https://api.sumologic.com/docs/ or https://api.us2.sumologic.com/docs/.
+1. Select the API documentation URL for your deployment from the [Documentation](/docs/api/about-apis/getting-started/#documentation) section of the *API Authentication, Endpoints, and Security* article. For instance, US users would access either https://api.sumologic.com/docs/ or https://api.us2.sumologic.com/docs/. 
 1. Click the **Download** button at the top of the page. <br/><img src={useBaseUrl('img/api/openapi-spec-download-button.png')} alt="Button to download Sumo Logic OpenAPI Specification" style={{border: '1px solid gray'}} width="600" />
 1. Import the downloaded file to your API test application. For example, to [import the file to Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/), select **File > Import**.
 1. The imported specification appears. Select any API to run it.<br/><img src={useBaseUrl('img/api/imported-api.png')} alt="Imported API specification" style={{border: '1px solid gray'}} width="500" />
