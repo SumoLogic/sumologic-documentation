@@ -230,7 +230,7 @@ In the text editor, we can make one or more changes to the configuration (even i
 
 ### Understanding ETags and object integrity
 
-We're almost ready to change our collector configuration in the API. However, we are still missing one important piece of information.
+We're almost ready to change our collector configuration in the API. However, we are still missing one important piece of information. 
 
 Many modern APIs (including Sumo Logic) provide protection against multiple sources changing object configurations at the same time. It is possible that during the brief period of time between when we executed our GET command to retrieve the current collector configuration and when we execute our PUT command to change the configuration, some other source has used the API or the website to change the collector configuration in other ways. The Sumo Logic API is configured so that you need to guarantee that the collector configuration has not changed in the interim before it will allow any new changes to be accepted.
 
