@@ -1,12 +1,16 @@
 name: deploy-to-pantheon
 
 permissions:
-  contents: read
-
+  deployments: write
+  contents: write
+  pull-requests: read
+  
 on:
   push:
     branches:
       - main
+    paths-ignore:
+      - .github/**
 
 jobs:
   build-and-deploy-to-pantheon:
@@ -37,9 +41,19 @@ jobs:
         with:
           php-version: "8.2"
       - name: Install Terminus
-        uses: pantheon-systems/terminus-github-actions@v1
-        with:
-          pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+        run: |
+          sudo apt update
+          sudo apt install -y curl php-common php-cli php-xml php-mbstring php-curl git jq
+          php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+          php -r "if (hash_file('sha384', 'composer-setup.php') === file_get_contents('https://composer.github.io/installer.sig')) { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+          php composer-setup.php
+          php -r "unlink('composer-setup.php');"
+          mv composer.phar /usr/local/bin/composer
+          export ASSET_ID="$(curl -sL -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28' https://api.github.com/repos/vfalconisumo/sumo-terminus/releases | jq -r '.[0].assets[0].id')"
+          curl -sL -H "Accept: application/octet-stream" -H "X-GitHub-Api-Version: 2022-11-28" -o terminus "https://api.github.com/repos/vfalconisumo/sumo-terminus/releases/assets/$ASSET_ID"
+          chmod +x terminus
+          mv terminus /usr/local/bin/terminus
+          terminus self:update
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -53,19 +67,44 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build the Docusaurus site
-        run: yarn build
+        run: |
+          yarn build
       - name: Pantheon, check environment and deploy helpdocs
         run: |
-          # Check for helpdocs environment in Pantheon, create one if not found
-          PANTHEON_ENV_LIST="$(terminus env:list "${{ vars.PANTHEON_SITE_ID }}" --format=list | xargs)"
-          DEV_SITE_EXISTS="$(echo "$PANTHEON_ENV_LIST" | grep "helpdocs" | wc -l | xargs)"
-          if [ "$DEV_SITE_EXISTS" -eq "0" ]; then
-            terminus multidev:create --no-interaction --no-ansi ${{ vars.PANTHEON_SITE_ID }}.dev helpdocs
-            terminus lock:enable ${{ vars.PANTHEON_SITE_ID }}.helpdocs -- "${{ secrets.PANTHEON_AUTH_USER }}" "${{ secrets.PANTHEON_AUTH_PASSWORD }}"
-          fi
-          # Put environment in SFTP mode, because we're using rsync to move files up
-          terminus connection:set ${{ vars.PANTHEON_SITE_ID }}.helpdocs sftp
-          terminus self:plugin:install terminus-rsync-plugin
-          mv ./build ./help          
-          terminus rsync ./help ${{ vars.PANTHEON_SITE_ID }}.helpdocs:code
-          terminus env:commit --message "Production build of helpdocs" --force -- ${{ vars.PANTHEON_SITE_ID }}.helpdocs
+          git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
+          git config --global user.email "${{ secrets.PANTHEON_USER_EMAIL }}"
+          git config --global user.name "GitHub workflow"
+          terminus auth:login --machine-token ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+          terminus local:clone --yes ${{ vars.PANTHEON_SITE_ID }}
+          rsync --archive ./build/ "$HOME/pantheon-local-copies/${{ vars.PANTHEON_SITE_ID }}/help/"
+          terminus local:commitAndPush --yes sumo-logic-sandbox
+          terminus workflow:wait --max=600 ${{ vars.PANTHEON_SITE_ID }}.dev
+          terminus auth:logout
+      - name: Get runner IP
+        if: always()
+        id: ip
+        uses: haythem/public-ip@v1.3
+      - name: Set env vars
+        if: always()
+        run: |
+          echo "AWS_REGION=us-east-1" >> $GITHUB_ENV
+          echo "AWS_SG_NAME=webops-sg-jenkins" >> $GITHUB_ENV
+      - name: Add runner to AWS security group ingress
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.WEBOPS_AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.WEBOPS_AWS_SECRET_KEY }}
+          AWS_DEFAULT_REGION: ${{ env.AWS_REGION }}
+        run: aws ec2 authorize-security-group-ingress --group-name ${{ env.AWS_SG_NAME }} --protocol tcp --port ${{ secrets.WEBOPS_JENKINS_PORT || '80' }} --cidr ${{ steps.ip.outputs.ipv4 }}/32
+      - name: Trigger Jenkins pipeline
+        run: |
+          curl -H 'Content-Type: application/json' \
+            -d '{ "TRIGGER_SOURCE": "${{ github.event_name }} on ${{ github.ref_name }} in ${{ github.repository }}" }' \
+            -X POST \
+            ${{ secrets.WEBOPS_JENKINS_HOST }}:${{ secrets.WEBOPS_JENKINS_PORT || '80' }}/generic-webhook-trigger/invoke?token=${{ secrets.WEBOPS_WEBHOOK_TOKEN }}
+      - name: Remove runner from AWS security group ingress
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.WEBOPS_AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.WEBOPS_AWS_SECRET_KEY }}
+          AWS_DEFAULT_REGION: ${{ env.AWS_REGION }}
+        if: always()
+        run: aws ec2 revoke-security-group-ingress --group-name ${{ env.AWS_SG_NAME }} --protocol tcp --port ${{ secrets.WEBOPS_JENKINS_PORT || '80' }} --cidr ${{ steps.ip.outputs.ipv4 }}/32
