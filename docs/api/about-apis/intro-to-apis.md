@@ -9,14 +9,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/advanced-certificates.png')} alt="Thumbnail icon" width="50"/>
 
-Sumo Logic has a host of useful APIs across all products that can add valuable functionality to any organization by providing access to data and activities without going through the website. API calls can be used for data gathering, automation of processes, and custom reports.
+Sumo Logic has a host of useful APIs across all products that let you access data and perform actions without using the Sumo Logic UI. API calls can be used for to gather data, automate processes, and create custom reports.
 
-This article presumes that you have a solid understanding of Sumo Logic functionality: collectors, queries, security offerings, etc. While APIs are typically for "power users" looking for additional customization and access to web service resources, you also don't need a computer science degree to understand and make use of API calls. This article helps walk you through the basics and get you going with important data queries through the API.
+This article is for users who are familiar with Sumo Logic features (collectors, queries, and security tools, for example), but new to working with APIs. You don’t need a development background to follow along. We’ll cover the basics so you can start making API calls to run queries and perform tasks.
 
-In this article, you'll learn about:
-* How to create a Sumo Logic access ID/key.
-* How to access Sumo Logic APIs.
-* How to use APIs with Sumo Logic's Cloud SIEM.
+In this article, you'll learn you'll learn how to:
+
+* Create a Sumo Logic access ID/key.
+* Access Sumo Logic APIs.
+* Use APIs with Sumo Logic's Cloud SIEM.
 
 ## Create an access key
 
@@ -25,7 +26,7 @@ To use the Sumo Logic APIs you need a [Sumo Logic access ID and access key](/doc
 In this section, we'll walk you through creating a personal access key that you can use to access the API in the subsequent sections.
 
 1. In the main Sumo Logic menu, select your user name and then **Preferences > Personal Access Keys**.
-1. On the **Personal Access Keys** tab, click **+Add Access Key** in the upper right.<br/><img src={useBaseUrl('img/api/create-access-key.png')} alt="Create access key" style={{border: '1px solid gray'}} width="800" /> 
+1. On the **Personal Access Keys** tab, click **+Add Access Key** in the upper right.<br/><img src={useBaseUrl('img/api/create-access-key.png')} alt="Create access key" style={{border: '1px solid gray'}} width="800" />
 1. Fill in a name for the **Access Key** on the following window.<br/><img src={useBaseUrl('img/api/add-access-key-dialog.png')} alt="Add access key" style={{border: '1px solid gray'}} width="500" /><br/>Note that the access key has the same privileges as the user creating the key. In other words, if your user account is not able to access certain products or areas of functionality in the Sumo Logic web site, you are not be able to access those functions through the API either.<br/><br/>You can reduce the privileges available to the access key by using the **Scopes** section to select a subset of the user account privileges to grant to the access key for API use. To do so, click **Custom** and select the desired set of **View** and **Manage** privileges from the list of user permissions given.
 1. Click **Save** when finished.
 1. On the following popup screen after clicking **Save**, your access ID and access key are displayed. These will not be available again once this screen is closed, so make sure you copy both the ID and key to another text file for reference before closing the popup. If you miss copying either the access values, find your access key in the list, delete it, and then recreate it.<br/><img src={useBaseUrl('img/api/access-key-success.png')} alt="Access key success" style={{border: '1px solid gray'}} width="700" />  
@@ -66,11 +67,9 @@ However, most API users do not use a traditional web browser for API calls, othe
 An open source application such as [Postman](https://www.postman.com/) can be a convenient tool for testing and developing with API calls. To use Postman, download and install the app. Then:
 1. Enter the URL for the API call.
 1. Click the **Authorization** tab.
-1. Fill in the username and password fields with your Sumo Logic access ID and access key respectively. 
+1. Fill in the username and password fields with your Sumo Logic access ID and access key, respectively.
 1. Click **Send** when finished.
-1. You see the JSON output (or error messages if there is a problem) in the bottom panel.
-
-<img src={useBaseUrl('img/api/postman-ui.png')} alt="Postman UI" style={{border: '1px solid gray'}} width="800" />  
+1. You see the JSON output (or error messages if there is a problem) in the bottom panel.<br/><img src={useBaseUrl('img/api/postman-ui.png')} alt="Postman UI" style={{border: '1px solid gray'}} width="800" />  
 
 Most programming and scripting languages provide modules and libraries for making web service and API calls in code. For instance, the following Python code can make the same "get collectors" call programmatically using the `requests` library:
 
@@ -102,7 +101,7 @@ As you are learning how APIs work, we recommend setting up an API test program, 
 
 You can download the OpenAPI Specification for the Sumo Logic API and import it to your API test application. This not only allows you to see the specification for all the Sumo Logic APIs, but to run them as well:
 
-1. Select the API documentation URL for your deployment from the [Documentation](/docs/api/about-apis/getting-started/#documentation) section of the *API Authentication, Endpoints, and Security* article. For instance, US users would access either https://api.sumologic.com/docs/ or https://api.us2.sumologic.com/docs/. 
+1. Select the API documentation URL for your deployment from the [Documentation](/docs/api/about-apis/getting-started/#documentation) section of the *API Authentication, Endpoints, and Security* article. For instance, US users would access either https://api.sumologic.com/docs/ or https://api.us2.sumologic.com/docs/.
 1. Click the **Download** button at the top of the page. <br/><img src={useBaseUrl('img/api/openapi-spec-download-button.png')} alt="Button to download Sumo Logic OpenAPI Specification" style={{border: '1px solid gray'}} width="600" />
 1. Import the downloaded file to your API test application. For example, to [import the file to Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/), select **File > Import**.
 1. The imported specification appears. Select any API to run it.<br/><img src={useBaseUrl('img/api/imported-api.png')} alt="Imported API specification" style={{border: '1px solid gray'}} width="500" />
@@ -128,7 +127,9 @@ Note the first ID from your list or the sample ID shown above from the Sumo Logi
 
 <img src={useBaseUrl('img/api/collector-id.png')} alt="Collector ID" style={{border: '1px solid gray'}} width="800" />  
 
-Note that the collector data itself also contains a helpful follow-up link to analyze the sources currently configured for our chosen collector. Follow up by clicking on (or copying into the URL field) the given URL for sources:  `https://api.sumologic.com/api/v1/collectors/<collectorID>/sources`
+Note that the collector data itself also contains a helpful follow-up link to analyze the sources currently configured for our chosen collector. Follow up by clicking on (or copying into the URL field) the given URL for sources:
+
+`https://api.sumologic.com/api/v1/collectors/<collectorID>/sources`
 
 <img src={useBaseUrl('img/api/collector-sources.png')} alt="Collector sources" style={{border: '1px solid gray'}} width="800" />  
 
@@ -190,7 +191,7 @@ You can search for entries that match specific values by including the field nam
 
 :::note
 * Not all fields in a data object are eligible to search for directly. See the [Sumo Logic API documentation](https://api.sumologic.com/docs/#section/Getting-Started/Filtering) for the fields that can be used for searching.
-* Search parameters need to use [proper HTML encoding for special characters](https://www.w3schools.com/tags/ref_urlencode.asp) including spaces. For instance, use `%20` to represent a space and `%2B` to represent a "+". 
+* Search parameters need to use [proper HTML encoding for special characters](https://www.w3schools.com/tags/ref_urlencode.asp) including spaces. For instance, use `%20` to represent a space and `%2B` to represent a "+".
 :::
 
 <img src={useBaseUrl('img/api/email.png')} alt="Email in API" style={{border: '1px solid gray'}} width="800" />
@@ -229,13 +230,13 @@ In the text editor, we can make one or more changes to the configuration (even i
 
 ### Understanding ETags and object integrity
 
-We're almost ready to change our collector configuration in the API. However, we are still missing one important piece of information. 
+We're almost ready to change our collector configuration in the API. However, we are still missing one important piece of information.
 
 Many modern APIs (including Sumo Logic) provide protection against multiple sources changing object configurations at the same time. It is possible that during the brief period of time between when we executed our GET command to retrieve the current collector configuration and when we execute our PUT command to change the configuration, some other source has used the API or the website to change the collector configuration in other ways. The Sumo Logic API is configured so that you need to guarantee that the collector configuration has not changed in the interim before it will allow any new changes to be accepted.
 
 We do this through a unique `ETag` value that is provided whenever an individual data object is retrieved using a GET command. The data object's ETag will change whenever the object configuration changes, so matching ETags between the GET and PUT commands ensures that the object has not changed in the interim.
 
-The ETag for a GET command in Postman can be found in the **Headers** section of the HTTP response, as shown in the screenshot below. If you are using other methods to make API calls, you need to access the ETag in the response object through code or script statements, or if you are using CLI commands you need to execute your GET command with the proper flags (such as `-v`) according to your CLI documentation to provide and view the ETag. 
+The ETag for a GET command in Postman can be found in the **Headers** section of the HTTP response, as shown in the screenshot below. If you are using other methods to make API calls, you need to access the ETag in the response object through code or script statements, or if you are using CLI commands you need to execute your GET command with the proper flags (such as `-v`) according to your CLI documentation to provide and view the ETag.
 
 For reference, copy the given ETag (including the double-quotes) to a separate text editor to use momentarily.
 
@@ -269,7 +270,7 @@ As an example let's look at creating a new user. We saw in an earlier section th
 
 As we've learned, we can use the same URL for multiple commands just by changing the verb. In this case, we will use the same URL to create a user, just with the POST verb instead.
 
-When we edited an existing data object, it was easiest to do a GET query and copy the exact format and fields in order to make modifications (and in addition we needed the GET ETag in order to get the system to accept our changes). 
+When we edited an existing data object, it was easiest to do a GET query and copy the exact format and fields in order to make modifications (and in addition we needed the GET ETag in order to get the system to accept our changes).
 
 When creating a new object we don't need to worry about object integrity, so ETags aren't necessary. Also, many fields in the user object (such as the ID, `createdAt`, `lastLoginTimestamp`, etc.) are created and managed by the system, and are not required (nor available) to be set by the operator. Thus when creating a new object, there are usually only a limited number of fields that need to be provided, with the system generating and updating the rest.
 
