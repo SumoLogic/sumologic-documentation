@@ -26,6 +26,10 @@ For more information on supported dimensions, refer to the [Azure documentation]
 * Set up application logs collection using fluent-bit sidecar container using the [http output plugin](https://docs.fluentbit.io/manual/1.5/pipeline/outputs/http) and the [tail input plugin](https://docs.fluentbit.io/manual/1.5/pipeline/inputs/tail). You must explicitly enable fluent-bit collection for each container group which you want to monitor.
 * Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure metrics collection
 
 import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
@@ -139,14 +143,32 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/Azure-Container-Instances-Policy-and-Recommendations.png')} alt="Azure Container Instances - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Container Instances
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
 ### Azure Container Instances alerts
 
 These alerts are metric based and will work for all Azure Container Instances.
 
-| Alert Name | Description  | Alert Condition  | Recover Condition    |
-|:-- |:-- |:--|:---------------------|
+| Alert Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
 | `Azure Container Instances - Memory Usage` | This alert is triggered when memory usage is greater than 20 MB. Also warning alert is triggered when the memory usage exceeds 15 MB. | Data volume > 20MB | Data volume < = 20MB |
-| `Azure Container Instances - CPU Usage` | This alert is triggered when CPU usage is greater than 100 milicore. Also warning alert is triggered when the CPU usage exceeds 90 millicore. | millicores > 100  | millicores < = 100    |
+| `Azure Container Instances - CPU Usage` | This alert is triggered when CPU usage is greater than 100 milicore. Also warning alert is triggered when the CPU usage exceeds 90 millicore. | millicores > 100 | millicores < = 100 |
+
+## Upgrade/Downgrade the Azure Container Instances app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Container Instances app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Troubleshooting
 

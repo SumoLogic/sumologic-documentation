@@ -65,6 +65,10 @@ You must explicitly enable diagnostic settings for each storage service (blob, q
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/Storage/Logs`, `Azure/Storage/Metrics`.
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure metrics collection
 
 import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
@@ -339,6 +343,22 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureStorage/Azure-Storage-Performance.png')} alt="Azure Storage Performance dashboard" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Storage
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Storage alerts
+These alerts are metric based and will work for all Azure Storage.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Storage - Availability` | This alert is triggered when average Availability is less than 90%. Also, a warning type alert will be triggered when average Availability is less than 95%. | Percentage < = 90 | Percentage > 90 |
+| `Azure Storage - Success E2E Latency` | This alert is triggered when Success E2E Latency is greater than 1000 MilliSeconds. | MilliSeconds > = 1000 | MilliSeconds < 1000 |
+| `Azure Storage - Success Server Latency` | This alert is triggered when Success Server Latency greater than 1000. | MilliSeconds > = 1000 | MilliSeconds < 1000 |
+| `Azure Storage - Transactions` | This alert is triggered when Transactions count greater than 500. | Count > = 500 | Count < 500 |
+| `Azure Storage - Used Capacity(GB)` | This alert is triggered when Used Capacity(GB) greater than 100. | Byted(GB) > = 100 | Byted(GB) < 100 |
 
 ## Upgrade/Downgrade the Azure Storage app (optional)
 
@@ -351,18 +371,6 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
-
-### Azure Storage alerts
-These alerts are metric based and will work for all Azure Storage.
-
-| Alert Name                                      | Alert Description and Conditions                                                                                                                             | Alert Condition       | Recover Condition   |
-|:------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------|:--------------------|
-| `Azure Storage - Availability`                  | This alert is triggered when average Availability is less than 90%. Also, a warning type alert will be triggered when average Availability is less than 95%. | Percentage < = 90     | Percentage > 90     |
-| `Azure Storage - Success E2E Latency`           | This alert is triggered  when Success E2E Latency is greater than 1000 MilliSeconds.                                                                         | MilliSeconds > = 1000 | MilliSeconds < 1000 |
-| `Azure Storage - Success Server Latency`        | This alert is triggered when Success Server Latency greater than 1000.                                                                                       | MilliSeconds > = 1000 | MilliSeconds < 1000 |
-| `Azure Storage - Transactions`                  | This alert is triggered when Transactions count greater than 500.                                                                                            | Count > = 500         | Count < 500         |
-| `Azure Storage - Used Capacity(GB)`             | This alert is triggered when Used Capacity(GB) greater than 100.                                                                                             | Byted(GB) > = 100     | Byted(GB) < 100     |
-
 
 ## Troubleshooting
 

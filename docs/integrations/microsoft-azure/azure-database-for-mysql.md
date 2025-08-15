@@ -36,6 +36,10 @@ You must explicitly enable diagnostic settings for each Azure Database for MySQL
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DatabaseForMySQL/Logs`, `Azure/DatabaseForMySQL/Metrics`.
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure metrics collection
 
 import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
@@ -178,17 +182,35 @@ The **Azure Database for Mysql - Storage Overview** dashboard provides details a
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureDatabaseForMysql/Azure-Database-for-MySQL-Storage-Overview.png')} alt="Azure Database for Mysql - Storage Overview" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Database for MySQL
 
-## Azure Database for MySQL alerts
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Database for MySQL alerts
+
 These alerts are metric based and will work for all Azure Database for MySQL.
 
 | Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Azure Database for MySQL - Active Connections`  | This alert fires when number of active connections in Azure MySQL instance is greater than a threshold value (default value 50). | connections >= 50   | connections < 50  |
-| `Azure Database for MySQL - High CPU Utilization` | This alert fires when CPU usage % on a host in a Azure MySQL instance is greater than a threshold value (default value 90) | percentage >= 90 | percentage < 90  |
-| `Azure Database for MySQL - High Memory Utilization` | This alert fires when memory % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90 | percentage < 90  |
-| `Azure Database for MySQL - High Storage IO %` | This alert fires when storage IO % on a resource in a Azure MySQL instance is greater than a threshold value (default value 80%) | percentage >= 80  | percentage < 80   |
-| `Azure Database for MySQL - High Storage Utilization` | This alert fires when storage % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90  | percentage < 90   |
+| `Azure Database for MySQL - Active Connections` | This alert fires when number of active connections in Azure MySQL instance is greater than a threshold value (default value 50). | connections >= 50 | connections < 50 |
+| `Azure Database for MySQL - High CPU Utilization` | This alert fires when CPU usage % on a host in a Azure MySQL instance is greater than a threshold value (default value 90) | percentage >= 90 | percentage < 90 |
+| `Azure Database for MySQL - High Memory Utilization` | This alert fires when memory % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90 | percentage < 90 |
+| `Azure Database for MySQL - High Storage IO %` | This alert fires when storage IO % on a resource in a Azure MySQL instance is greater than a threshold value (default value 80%) | percentage >= 80 | percentage < 80 |
+| `Azure Database for MySQL - High Storage Utilization` | This alert fires when storage % on a resource in a Azure MySQL instance is greater than a threshold value (default value 90%) | percentage >= 90  | percentage < 90 |
+
+## Upgrade/Downgrade the Azure Database for MySQL app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Database for MySQL app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Troubleshooting
 

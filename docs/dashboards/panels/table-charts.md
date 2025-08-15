@@ -11,7 +11,7 @@ For example, you'd use the following query to create a simple table chart:
 
 `(error OR fail*) AND exception | count by _sourceCategory | sort by _count`
 
-which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/AggResult.png')} alt="AggResult" style={{border: '1px solid gray'}} width="300" />
+which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/AggResult.png')} alt="AggResult" style={{border: '1px solid gray'}} width="500" />
 
 ## Create a table chart 
 
