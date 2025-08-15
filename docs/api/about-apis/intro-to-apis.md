@@ -270,7 +270,7 @@ As an example let's look at creating a new user. We saw in an earlier section th
 
 As we've learned, we can use the same URL for multiple commands just by changing the verb. In this case, we will use the same URL to create a user, just with the POST verb instead.
 
-When we edited an existing data object, it was easiest to do a GET query and copy the exact format and fields in order to make modifications (and in addition we needed the GET ETag in order to get the system to accept our changes).
+When we edited an existing data object, it was easiest to do a GET query and copy the exact format and fields in order to make modifications (and in addition we needed the GET ETag in order to get the system to accept our changes). 
 
 When creating a new object we don't need to worry about object integrity, so ETags aren't necessary. Also, many fields in the user object (such as the ID, `createdAt`, `lastLoginTimestamp`, etc.) are created and managed by the system, and are not required (nor available) to be set by the operator. Thus when creating a new object, there are usually only a limited number of fields that need to be provided, with the system generating and updating the rest.
 
