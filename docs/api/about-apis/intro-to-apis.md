@@ -9,14 +9,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/advanced-certificates.png')} alt="Thumbnail icon" width="50"/>
 
-Sumo Logic has a host of useful APIs across all products that can add valuable functionality to any organization by providing access to data and activities without going through the website. API calls can be used for data gathering, automation of processes, and custom reports.
+Sumo Logic has a host of useful APIs across all products that let you access data and perform actions without using the Sumo Logic UI. API calls can be used for to gather data, automate processes, and create custom reports.
 
-This article presumes that you have a solid understanding of Sumo Logic functionality: collectors, queries, security offerings, etc. While APIs are typically for "power users" looking for additional customization and access to web service resources, you also don't need a computer science degree to understand and make use of API calls. This article helps walk you through the basics and get you going with important data queries through the API.
+This article is for users who are familiar with Sumo Logic features (collectors, queries, and security tools, for example), but new to working with APIs. You don’t need a development background to follow along. We’ll cover the basics so you can start making API calls to run queries and perform tasks.
 
-In this article, you'll learn about:
-* How to create a Sumo Logic access ID/key.
-* How to access Sumo Logic APIs.
-* How to use APIs with Sumo Logic's Cloud SIEM.
+In this article, you'll learn how to:
+
+* Create a Sumo Logic access ID/key.
+* Access Sumo Logic APIs.
+* Use APIs with Sumo Logic's Cloud SIEM.
 
 ## Create an access key
 
@@ -66,11 +67,9 @@ However, most API users do not use a traditional web browser for API calls, othe
 An open source application such as [Postman](https://www.postman.com/) can be a convenient tool for testing and developing with API calls. To use Postman, download and install the app. Then:
 1. Enter the URL for the API call.
 1. Click the **Authorization** tab.
-1. Fill in the username and password fields with your Sumo Logic access ID and access key respectively. 
+1. Fill in the username and password fields with your Sumo Logic access ID and access key, respectively.
 1. Click **Send** when finished.
-1. You see the JSON output (or error messages if there is a problem) in the bottom panel.
-
-<img src={useBaseUrl('img/api/postman-ui.png')} alt="Postman UI" style={{border: '1px solid gray'}} width="800" />  
+1. You see the JSON output (or error messages if there is a problem) in the bottom panel.<br/><img src={useBaseUrl('img/api/postman-ui.png')} alt="Postman UI" style={{border: '1px solid gray'}} width="800" />  
 
 Most programming and scripting languages provide modules and libraries for making web service and API calls in code. For instance, the following Python code can make the same "get collectors" call programmatically using the `requests` library:
 
@@ -128,7 +127,9 @@ Note the first ID from your list or the sample ID shown above from the Sumo Logi
 
 <img src={useBaseUrl('img/api/collector-id.png')} alt="Collector ID" style={{border: '1px solid gray'}} width="800" />  
 
-Note that the collector data itself also contains a helpful follow-up link to analyze the sources currently configured for our chosen collector. Follow up by clicking on (or copying into the URL field) the given URL for sources:  `https://api.sumologic.com/api/v1/collectors/<collectorID>/sources`
+Note that the collector data itself also contains a helpful follow-up link to analyze the sources currently configured for our chosen collector. Follow up by clicking on (or copying into the URL field) the given URL for sources:
+
+`https://api.sumologic.com/api/v1/collectors/<collectorID>/sources`
 
 <img src={useBaseUrl('img/api/collector-sources.png')} alt="Collector sources" style={{border: '1px solid gray'}} width="800" />  
 
