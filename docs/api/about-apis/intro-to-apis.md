@@ -236,7 +236,7 @@ Many modern APIs (including Sumo Logic) provide protection against multiple sour
 
 We do this through a unique `ETag` value that is provided whenever an individual data object is retrieved using a GET command. The data object's ETag will change whenever the object configuration changes, so matching ETags between the GET and PUT commands ensures that the object has not changed in the interim.
 
-The ETag for a GET command in Postman can be found in the **Headers** section of the HTTP response, as shown in the screenshot below. If you are using other methods to make API calls, you need to access the ETag in the response object through code or script statements, or if you are using CLI commands you need to execute your GET command with the proper flags (such as `-v`) according to your CLI documentation to provide and view the ETag.
+The ETag for a GET command in Postman can be found in the **Headers** section of the HTTP response, as shown in the screenshot below. If you are using other methods to make API calls, you need to access the ETag in the response object through code or script statements, or if you are using CLI commands you need to execute your GET command with the proper flags (such as `-v`) according to your CLI documentation to provide and view the ETag. 
 
 For reference, copy the given ETag (including the double-quotes) to a separate text editor to use momentarily.
 
