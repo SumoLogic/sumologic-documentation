@@ -98,6 +98,18 @@ if __name__ == '__main__':
 
 As you are learning how APIs work, we recommend setting up an API test program, then follow along with the API examples shown in the following sections. To execute API commands, you can use Postman as shown above, another API test application, or set up a quick code snippet in Python or the programming language of your choice.
 
+### Download the OpenAPI Specification
+
+You can download the OpenAPI Specification for the Sumo Logic API and import it to your API test application. This not only allows you to see the specification for all the Sumo Logic APIs, but to run them as well:
+
+1. Select the API documentation URL for your deployment from the [Documentation](/docs/api/about-apis/getting-started/#documentation) section of the *API Authentication, Endpoints, and Security* article. For instance, US users would access either https://api.sumologic.com/docs/ or https://api.us2.sumologic.com/docs/. 
+1. Click the **Download** button at the top of the page. <br/><img src={useBaseUrl('img/api/openapi-spec-download-button.png')} alt="Button to download Sumo Logic OpenAPI Specification" style={{border: '1px solid gray'}} width="600" />
+1. Import the downloaded file to your API test application. For example, to [import the file to Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/), select **File > Import**.
+1. The imported specification appears. Select any API to run it.<br/><img src={useBaseUrl('img/api/imported-api.png')} alt="Imported API specification" style={{border: '1px solid gray'}} width="500" />
+1. You can also download the API specification for Cloud SIEM or Cloud SOAR from the following locations. Simply select the API documentation URL for your deployment and click the **Download** button at the top of the page:
+     * [Cloud SIEM API documentation](/docs/api/cloud-siem-enterprise/#documentation)
+     * [Cloud SOAR API documentation](/docs/api/cloud-soar/#documentation)
+
 ## Basic API GET commands
 
 Retrieving system data and configuration is one of the most common use cases for utilizing platform APIs. These data retrieval operations are generally known as GET commands in reference to the "GET" verb used by the HTTP protocol. Data retrieved through API calls can be processed by outside applications and scripts for report generation and advanced analytics, extending functionality beyond that offered by the Sumo Logic website.
