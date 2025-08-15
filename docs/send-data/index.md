@@ -1,7 +1,7 @@
 ---
 slug: /send-data
 title: Send Data
-description: Sumo Logic can ingest data from almost any kind of data source.
+description: Explore ways to send logs, metrics, and traces to Sumo Logic from a variety of sources including installed collectors, hosted collectors, and APIs.
 keywords:
   - collectors
   - collection

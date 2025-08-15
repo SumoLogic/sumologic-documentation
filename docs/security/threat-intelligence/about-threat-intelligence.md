@@ -113,3 +113,7 @@ Use a search like the following:
 _index=sumologic_audit_events _sourceCategory=threatIntelligence
 ```
 
+## Additional resources
+
+* Blog: [Threat intelligence feeds: essential arsenal in cybersecurity](https://www.sumologic.com/blog/threat-intelligence-feeds-cybersecurity)
+* Glossary: [Threat intelligence](https://www.sumologic.com/glossary/threat-intelligence)

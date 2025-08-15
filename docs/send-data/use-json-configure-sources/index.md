@@ -1,7 +1,7 @@
 ---
 slug: /send-data/use-json-configure-sources
 title: Use JSON to Configure Sources
-description: Learn how to configure sources and processing rules using JSON.
+description: Use JSON files to automate source configuration for Sumo Logic collectors, ensuring consistent setup across systems.
 ---
 
 Installed Collector and Hosted Collector sources can be configured by using UTF-8 encoded JSON files. Installed Collectors can use JSON files to configure its Sources when using [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). You can also configure Sources for Hosted and Installed Collectors with the Collector Management API.
