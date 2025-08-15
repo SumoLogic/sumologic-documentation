@@ -191,7 +191,7 @@ You can search for entries that match specific values by including the field nam
 
 :::note
 * Not all fields in a data object are eligible to search for directly. See the [Sumo Logic API documentation](https://api.sumologic.com/docs/#section/Getting-Started/Filtering) for the fields that can be used for searching.
-* Search parameters need to use [proper HTML encoding for special characters](https://www.w3schools.com/tags/ref_urlencode.asp) including spaces. For instance, use `%20` to represent a space and `%2B` to represent a "+".
+* Search parameters need to use [proper HTML encoding for special characters](https://www.w3schools.com/tags/ref_urlencode.asp) including spaces. For instance, use `%20` to represent a space and `%2B` to represent a "+". 
 :::
 
 <img src={useBaseUrl('img/api/email.png')} alt="Email in API" style={{border: '1px solid gray'}} width="800" />
