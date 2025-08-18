@@ -44,7 +44,7 @@ To create the query size limit using the **Advanced** configuration:
 It may take up to 5 minutes for a newly created budget to become active and enforceable in the system.
 :::
 
-## View details about a Scan Budget
+## View details about a scan budget
 
 To view the selected scan budget:
 
