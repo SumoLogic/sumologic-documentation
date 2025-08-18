@@ -2,7 +2,10 @@
 id: azure-functions
 title: Azure Functions
 sidebar_label: Azure Functions
-keywords: [azure functions, azure functions app, azure functions monitoring ]
+keywords: 
+ - azure functions
+ - azure functions app
+ - azure functions monitoring
 description: This document outlines what are Azure Functions, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 

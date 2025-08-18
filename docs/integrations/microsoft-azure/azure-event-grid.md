@@ -1,7 +1,10 @@
 ---
 id: azure-event-grid
 title: Azure Event Grid
-keywords: [azure event grid, event grid is azure, azure event grid monitoring ]
+keywords: 
+ - azure event grid
+ - event grid is azure
+ - azure event grid monitoring
 description: This document outlines what is Azure Event Grid, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
