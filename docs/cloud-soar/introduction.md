@@ -424,7 +424,7 @@ Fields can be used to apply advanced filters or add them as a new column in the 
 
 In this section, we’ll create a custom field to map data that’s ingested into Cloud SOAR. We'll create a standardized naming convention for source IP addresses to help organize our Cloud SOAR instance. For more information, see [Custom fields](/docs/cloud-soar/settings/#custom-fields).
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SOAR Configurations** select **Fields**. 
 1. In the **Custom Fields** menu, select **Incidents**. 
 1. Click the **+** icon.
 1. Give the field a name that designates what it is for. For example, to create a field for IPs originating from entities, enter **Source IP**.
@@ -461,7 +461,7 @@ Work with the analysts on your team to customize reports, labels, and templates 
 
 In this section, we’ll create a custom incident label. This new label will make it easier to sort and respond to incidents.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Incident Labels**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SOAR Configurations** select **Incident Labels**. 
 1. Click the **+** icon to create a new incident label. 
 1. For **Name**, enter a name that designates what the incident is for. For example, to create a label for incidents originating in Cloud SIEM, you could enter **Cloud SIEM Alert**.
 1. Optionally, you can include a short **Description**.

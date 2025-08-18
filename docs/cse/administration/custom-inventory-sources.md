@@ -51,7 +51,7 @@ In this step, you configure an HTTP Source that will receive the inventory data 
 
 In this step, you create a webhook that points to the HTTP source.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring** and select the **Connections** tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu click **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/><img src={useBaseUrl('img/cse/connections.png')} alt="Connections" style={{border: '1px solid gray'}} width="800" />
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring** and select the **Connections** tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/><img src={useBaseUrl('img/cse/connections.png')} alt="Connections" style={{border: '1px solid gray'}} width="800" />
 2. Click the plus sign (+) icon.
 3. On the **Select Connection Type** page, click **Webhook.**
 4. Give it a name and input the URL from the HTTP Endpoint as your URL.

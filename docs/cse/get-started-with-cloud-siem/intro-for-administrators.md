@@ -170,7 +170,7 @@ You can make sure these records are parsed, mapped, and enriched properly by mai
 
 In [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem), we sent a log message to Cloud SIEM, and received a "failed record" error. In this section and the next one, we'll create ingest and log mappings to ensure the custom JSON data from the log messages we send are used properly by Cloud SIEM.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then and under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Data Management**, and then and under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**. 
 1. Click **Add Ingest Mapping**.
 1. Enter the source category you used in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
 1. Select **JSON** as the **Format**. This matches the format of the log message we sent in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem).
@@ -186,7 +186,7 @@ If you need help configuring other types of ingest mappings, see [Configure a Su
 
 In this section, we'll create a log mapping to ensure the custom ingest mapping we created in [Set up an ingest mapping](#set-up-an-ingest-mapping) is used properly by Cloud SIEM.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Data Management**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.
 1. Click **Add Log Mapping**. 
 1. Click **Structured Mapping**. In Cloud SIEM, JSON data is considered to be structured data. 
 1. Give your log mapping a name.
@@ -359,7 +359,7 @@ After you and the SOC analysts on your team monitor Cloud SIEM for a period of t
 
 The **Actions** button is available in all insights in Cloud SIEM and can help you collaborate with teammates. In this section, we'll create a custom **Actions** button to alert an incident response team.  
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Data Management**, and then under **Integrations** select **Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. 
 1. On the **Actions** tab, click **+ Add Action**.
 1. Give your action a name. 
 1. Under **Action Type** select **Email**. 
@@ -450,7 +450,7 @@ Before you begin creating or customizing a playbook, decide what you'd like to a
 
 In this section, we'll create a simple playbook from scratch. This playbook will send an email with insight details.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu of Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu of Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SIEM Integrations** select **Automation**. 
 1. On the **Automation** tab, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
 1. Near the top, click the **+** icon to create a new playbook.
 1. Configure the playbook:
@@ -489,7 +489,7 @@ This way, potentially the entire incident response cycle can now be automated: C
 
 In this section, you'll create a custom automation using the playbook you created in the previous lab. 
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu in Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu in Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
 1. In the upper right of the **Automation** tab, click **+ Add Automation**.
 1. In **Playbook**, select your custom playbook created in the previous section [Create a custom playbook](#create-a-custom-playbook). (If you do not see your playbook in the list, return to the previous steps and ensure your playbook was published as well as saved.)
 1. For the **Object (expects attributes for)** field, select **Insight**.

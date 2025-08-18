@@ -10,7 +10,7 @@ Your org can use collected data to investigate issues across your deployment a
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access ServiceNow connections, in the main Sumo Logic menu select **Manage Data > Monitoring > Connections**. 
 
-<br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access ServiceNow connections, in the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
+<br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access ServiceNow connections, In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 
 From here, you can search, edit, delete, and view of the details of [ServiceNow connections](/docs/alerts/webhook-connections/servicenow/).
 

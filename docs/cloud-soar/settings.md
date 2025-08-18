@@ -108,7 +108,7 @@ Select the icon to the right of an event to trigger a notification to be sent wh
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access custom fields settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access custom field settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access custom field settings, In the main Sumo Logic menu select **Data Management**, and then under **Cloud SOAR Configurations** select **Fields**.
 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-custom-fields.png')} alt="Cloud SOAR custom fields page" style={{border: '1px solid gray'}} width="700"/>
@@ -172,7 +172,7 @@ The **Incident label** page allows you to define labels for different types of [
 
 To create an incident label:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Incident Labels**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SOAR Configurations** select **Incident Labels**.
 1. Click **+** to the left of **Incident label**. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-incident-labels.png')} alt="Cloud SOAR incident label page" style={{border: '1px solid gray'}} width="700"/>
 1. Enter the following on the **New label** dialog:
     1. **Name**. Enter a name for the label. This name will not appear in the label itself.
@@ -193,7 +193,7 @@ To create an incident label:
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access triage configuration settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Triage**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access triage configuration settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Triage**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access triage configuration settings, In the main Sumo Logic menu select **Data Management**, and then under **Cloud SOAR Configurations** select **Triage**.
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-triage-configuration.png')} alt="Cloud SOAR triage configuration page" style={{border: '1px solid gray'}} width="700"/>
 

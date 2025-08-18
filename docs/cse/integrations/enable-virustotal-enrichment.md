@@ -36,7 +36,7 @@ VirusTotal enrichments are only added to signals that are part of an insight.
 
 ## Configure VirusTotal enrichment
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Enrichment**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Enrichment**. You can also click the **Go To...** menu at the top of the screen and select **Enrichment**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Data Management**, and then under **Integrations** select **Enrichment**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SIEM Integrations** select **Enrichment**. You can also click the **Go To...** menu at the top of the screen and select **Enrichment**.  
 1. On the **Enrichment** tab, select **VirusTotal** and click the **Edit** button.
 2. On the **Edit VirusTotal** popup, enter your VirusTotal API Key, and click **Save**.
 
