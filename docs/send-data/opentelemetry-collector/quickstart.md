@@ -142,7 +142,7 @@ If you see that kind of output, the collector has successfully set up a connecti
 
 Back in the Sumo Logic UI:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. You should see a list of running collectors there. One of those will be the collector we ran in the previous step. It should have a green **Healthy** status and its **Type** should be **OT Distro**.
 1. To see the metrics data, hover over the line, and two small icons will appear next to the collector's name. Click the icon to the right, **Open in Metrics**, which looks like a small graph.
 
