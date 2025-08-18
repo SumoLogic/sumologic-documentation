@@ -44,8 +44,7 @@ The subsections that follow describe the information shown in the columns on the
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access the **Metrics Rules** page, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Rules**. 
 
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Metrics Rules** page, go to the top menu and select **Configuration**, and then under **Metrics**, select **Metrics Rules**. Alternatively, you can click the **Go To...** menu at the top of the screen and select **Metrics Rules**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Metrics Rules** page, in the main Sumo Logic menu select **Data Management**, and then under **Metrics**, select **Metrics Rules**. Alternatively, you can click the **Go To...** menu at the top of the screen and select **Metrics Rules**. 
  
 
 ### Metrics match expression

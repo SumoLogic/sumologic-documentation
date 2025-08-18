@@ -33,7 +33,7 @@ This approach uses Scheduled Searches, which are limited to 100 unique rows of d
 
 In this step, you configure an HTTP Source that will receive the inventory data from the Webhook you’ll set up later in this procedure. You can add the source to an existing Hosted Collector or configure a new collector.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu click **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="Add Source link on the Collection tab" style={{border: '1px solid gray'}} width="800" />
 4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="TTP Logs & Metrics tile on the Collection tag" style={{border: '1px solid gray'}} width="800" />

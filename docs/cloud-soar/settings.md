@@ -13,7 +13,7 @@ This article describes the various setup and configuration options for the Cloud
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access general settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access general settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access general settings, In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-general-settings.png')} alt="General Settings" style={{border: '1px solid gray'}} width="800"/>
@@ -60,7 +60,7 @@ For example, let's say that you have a team of SOC analysts that share responsib
 
 ### Create a group
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
 1. The **Groups** dialog displays. Click the **+** icon next to **Groups**. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/><br/>The **Add Groups** dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-add-group.png')} alt="Add Group dialog" style={{border: '1px solid gray'}} width="600"/>
 1. In **Name** enter a name for the group.
 1. In **Profile** select the role to assign to members of the group. These are [roles](/docs/manage/users-roles/roles/) already created in the system.
@@ -97,7 +97,7 @@ The role specified in an assigned group profile supersedes the user's [role assi
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access notification settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Notifications > Event Triggers**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access notification settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access notification settings, In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-event-triggers.png')} alt="Events Triggers dialog" style={{border: '1px solid gray'}} width="700"/>

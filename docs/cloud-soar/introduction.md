@@ -355,7 +355,7 @@ The **General** settings page includes sections for **System**, **Incidents**, a
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access general settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access general settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access general settings, In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-general-settings.png')} alt="General Settings" style={{border: '1px solid gray'}} width="800"/>
 
@@ -365,7 +365,7 @@ Basic user management and role-based access control (RBAC) is done through the m
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access groups settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access groups settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access groups settings, In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/>
 
@@ -375,7 +375,7 @@ The **Event Triggers** page contains a list of triggers where you can configure 
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access event triggers settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Notifications > Event Triggers**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access event triggers settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access event triggers settings, In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-event-triggers.png')} alt="Events Triggers dialog" style={{border: '1px solid gray'}} width="700"/>
 

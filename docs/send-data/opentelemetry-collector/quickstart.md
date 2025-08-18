@@ -41,7 +41,7 @@ In this section, you'll install Sumo Logic’s OpenTelemetry collector on your m
 
 In this section, you'll create a new [installation token](/docs/manage/security/installation-tokens), which allows the collector to talk securely to Sumo Logic API and tells it what account to send the data to. This is secure enough that you can comfortably deploy it as an environment variable or as part of a script.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Security > Installation Tokens**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account Security Settings** select **Installation Tokens**. You can also click the **Go To...** menu at the top of the screen and select **Installation Tokens**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Security > Installation Tokens**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Installation Tokens**. You can also click the **Go To...** menu at the top of the screen and select **Installation Tokens**.
 1. Click the **+ Add Token** button above the table. A panel named **Create Installation Token** appears to the right of the table.
 1. Input a unique name, then click **Save**.
 1. After you’ve created your token, don’t forget to copy it.
