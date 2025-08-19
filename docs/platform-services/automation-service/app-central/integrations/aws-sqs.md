@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
 ***Version: 1.3  
-Updated: July 29, 2025***
+Updated: August 19, 2025***
 
 Using the integration with SQS, you can gather current queues, add a new queue, delete and purge existing queues during an active investigation.
 

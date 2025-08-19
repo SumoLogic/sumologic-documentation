@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
 ***Version: 1.3  
-Updated: July 29, 2025***
+Updated: August 19, 2025***
 
 Interact with AWS CloudTrail through Trails and Events.
 
