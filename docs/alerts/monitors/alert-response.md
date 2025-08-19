@@ -69,7 +69,7 @@ The following is an example Slack payload with the variable:
 The Alert List shows all alerts triggered by your monitors within the past 30 days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time. The list displays up to 1,000 alerts.
 
 To get to your Alert List:
-* From the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts > Alert List**.
+* From the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts**.
 * From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the bell icon in the top menu.
 
 To search alerts, use the search bar and filters.<br/>![search alert list.png](/img/alerts/monitors/search-alert-list.png)
