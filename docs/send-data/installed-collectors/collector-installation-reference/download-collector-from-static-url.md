@@ -162,7 +162,7 @@ Choose one of the following:
 * Windows 32: https://collectors.us2.sumologic.com/rest/download/windows
 * Windows 64: https://collectors.us2.sumologic.com/rest/download/win64
 
-### KS Collector
+### KR Collector
 
 Choose one of the following:
 
