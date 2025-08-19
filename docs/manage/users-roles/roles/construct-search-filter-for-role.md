@@ -24,7 +24,7 @@ The sections below list search filter limitations, and describe how you can use 
 * Role filters apply to log searches, not metric searches.
 * The [_dataTier](/docs/manage/partitions/data-tiers/searching-data-tiers/) search modifier is not supported in role filters.
 * If one or more of your Field Extraction Rules (FERs) override the out-of-the-box metadata tags you use in your search filters for a role, Live Tail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
-* Use field or FERs in the role search filter to control access to data.
+* Use a field or an FER in the role search filter to control access to data.
 * If the search filter of a role is modified, the data can still be accessed in the pinned queries for up to 24 hours from the original run prior to the search filter modification.
 
 For limitations related to the use of Scheduled Views or Partitions in a search filter, refer to [Partitions](/docs/manage/partitions/#limitations) and [Scheduled Views](/docs/manage/scheduled-views).
