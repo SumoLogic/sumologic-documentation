@@ -70,6 +70,19 @@ To configure a TAXII 2 Client Source:
     1. (Optional) **Polling Interval**. Set how frequently to poll for new or updated indicators. It must be between 5 minutes and 48 hours.
 1. When you are finished configuring the Source, click **Save**.
 
+### TAXII 2 sources
+
+Sumo Logic provides the following sources based on the underlying code of our STIX/TAXII 2 Client Source, but tailored for each of the vendors to facilitate setup:
+* CISA TAXII Client
+* Dragos TAXII Client
+* Nozomi TAXII Client
+* Recorded Future TAXII Client
+* Unit42 TAXII Client
+
+When you set up a source, search for "taxii" and select the tile for the source you want to install:<br/><img src={useBaseUrl('img/security/taxii-sources.png')} alt="TAXII sources" style={{border: '1px solid gray'}} width="800" />
+
+Although we recommend these sources to get feeds from these vendors, you can instead set up JSON configurations. See [Recommended configurations](#recommended-configurations) below.
+
 ## JSON Configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
@@ -108,11 +121,11 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ### Recommended configurations
 
-Below is a list of Sumo Logic recommended configuration examples for specific threat intel vendors using TAXII 2.
+Below is a list of additional Sumo Logic recommended configuration examples for specific threat intel vendors using TAXII 2.
 
 | Vendor | Notes |
 | :-- | :-- |
-| <a href="/files/c2c/taxii-2/cisa-dhs-config.json" target="_blank">CISA DHS Automated Indicator Sharing (AIS)</a> | No authentication setup is required. Sumo Logic uses it's own certificates for authentication. |
+| <a href="/files/c2c/taxii-2/cisa-dhs-config.json" target="_blank">CISA DHS Automated Indicator Sharing (AIS)</a> | No authentication setup is required. Sumo Logic uses its own certificates for authentication. |
 | <a href="/files/c2c/taxii-2/cybersixgill-config.json" target="_blank">Cybersixgill</a> | Be sure to specify collection `102` in the configuration. |
 | <a href="/files/c2c/taxii-2/dragos-config.json" target="_blank">Dragos</a> |
 | <a href="/files/c2c/taxii-2/eclecticiq-config.json" target="_blank">Eclecticiq</a> | |
