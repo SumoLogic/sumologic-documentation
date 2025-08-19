@@ -122,3 +122,7 @@ array_contains(fieldTags["srcDevice_ip"], "DB Server")
 ## API support
 
 You can use the `/entity-group-configuration` API to create, read, update, and delete entity groups. For more information, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis).
+
+## Additional resources
+
+Blog: [Use new Cloud SIEM Entity Groups to make threat response more efficient](https://www.sumologic.com/blog/cloud-siem-entity-groups)

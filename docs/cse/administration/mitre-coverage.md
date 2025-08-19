@@ -201,7 +201,9 @@ To find the Cloud SIEM API documentation for your endpoint, see [Cloud SIEM APIs
 
 ## Additional resources
 
-* Blog: [Enhance your cloud security with MITRE ATT&CK and Sumo Logic Cloud SIEM](https://www.sumologic.com/blog/cloud-siem-mitre-attack/)
+* Blogs: 
+   * [Enhance your cloud security with MITRE ATT&CK and Sumo Logic Cloud SIEM](https://www.sumologic.com/blog/cloud-siem-mitre-attack/)
+   * [Unique approaches to MITRE ATT&CK—make the most of its potential](https://www.sumologic.com/blog/mitre-attack-how-sumo-logic-makes-it-work-for-you)
 * Glossary: [MITRE ATT&CK - definition & overview](https://www.sumologic.com/glossary/mitre-attack/)
 * Demo: [MITRE ATT&CK Coverage Explorer](https://www.sumologic.com/demo/cloud-siem-mitre-attack-coverage-explorer/)
 * Cloud SIEM Content Catalog: [Vendors](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/README.md)
