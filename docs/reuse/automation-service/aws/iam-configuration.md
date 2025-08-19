@@ -1,10 +1,10 @@
 ### AWS IAM Role-Based Access Guide
 
-To enable AWS IAM Role-based authentication without sharing their Access/Secret keys, follow the steps below.
+To enable AWS IAM Role-based authentication without sharing Access/Secret keys, follow the steps below.
 
 ---
 
-#### Customer-Side Configuration
+#### User-Side Configuration
 
 1. **Create an IAM Role** in AWS account.
 2. **Attach Required Policies** to the role depending on the AWS services they want to allow access to (e.g., `AmazonEC2ReadOnlyAccess`, `AWSWAFFullAccess`, etc.).

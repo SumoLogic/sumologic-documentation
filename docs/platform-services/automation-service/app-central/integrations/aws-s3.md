@@ -79,6 +79,6 @@ import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-confi
 * October 3, 2019 - First upload
 * June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
 * June 28, 2023 (v1.2) - Visibility of the Resource fields changed
-* July 29. 2025 (v1.3) - 
+* August 19, 2025 (v1.3) - 
   * Added IAM Role Support - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
-  * Implemented input validation in the *Download File* action.
+  * Added input validation in the *Download File* action.

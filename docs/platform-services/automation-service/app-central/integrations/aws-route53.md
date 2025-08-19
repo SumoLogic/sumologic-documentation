@@ -62,4 +62,4 @@ For information about AWS Route 53, see [Route 53 documentation](https://docs.aw
 
 * December 24, 2019 - First upload
 * June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
-* July 29. 2025 (v1.2) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+* August 19, 2025 (v1.2) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.

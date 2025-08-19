@@ -72,4 +72,4 @@ For information about AWS SQS, see [SQS documentation](https://docs.aws.amazon.c
 * January 16, 2020 - First upload
 * March 10, 2022 - Logo
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
-* July 29. 2025 (v1.3) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+* August 19, 2025 (v1.3) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
