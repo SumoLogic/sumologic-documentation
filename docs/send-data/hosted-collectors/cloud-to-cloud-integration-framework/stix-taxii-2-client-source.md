@@ -121,7 +121,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ### Recommended configurations
 
-Below is a list of additional Sumo Logic recommended configuration examples for specific threat intel vendors using TAXII 2.
+Below is a list of Sumo Logic recommended configuration examples for specific threat intel vendors using TAXII 2.
 
 | Vendor | Notes |
 | :-- | :-- |
