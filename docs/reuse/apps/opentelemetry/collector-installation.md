@@ -11,4 +11,4 @@ In this step, we'll install the collector and add a uniquely identifiable tag to
 1. After installation is complete, click **Next** to proceed.
 1. Select a source template (for example, Apache source template) to start collecting logs from all linked collectors, then proceed with the data configuration.<br/><img src="/img/send-data/source-template.png" alt="source template page" style={{border:'1px solid gray'}} width="90%" />
 
-To revisit this screen later: From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), select **Manage Data > Collection > Source Template**. From the [**New UI**](/docs/get-started/sumo-logic-ui), select **Configuration** > **Source Template**.
+To revisit this screen later: From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), select **Manage Data > Collection > Source Template**. From the [**New UI**](/docs/get-started/sumo-logic-ui), select **Data Management** and under **Data Collection** select **Source Template**.
