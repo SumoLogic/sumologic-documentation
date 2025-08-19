@@ -151,3 +151,8 @@ With a per-entity baseline, and the default baseline retention period of the las
 :::tip
 If you are unsure whether to use a per-entity or a global baseline, consider your use case. If you’re inclined to select `user_username` in the **Has a new value for the field(s)** prompt, you’re better off creating a global baseline for that behavior. Alternatively, if you want to track a new value for a non-entity record field, a per-entity baseline is appropriate.
 :::
+
+## Additional resources
+
+* Blog: [From weeks to minutes: How Sumo Logic’s historic baselining supercharges UEBA](https://www.sumologic.com/blog/sumo-logic-historic-baselining)
+* Glossary: [User entity behavior analytics (UEBA)](https://www.sumologic.com/glossary/ueba)
