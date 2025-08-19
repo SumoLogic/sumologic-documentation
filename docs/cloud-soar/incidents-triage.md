@@ -437,7 +437,7 @@ Watch the following micro lesson to learn about dashboards.
 
 You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo Logic platform. You can also [create widgets](#create-widgets) to use in the dashboards that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Go to the home screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **ecOps & Dashboard**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Go to the home screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **SecOps & Dashboard**.  
 1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" style={{border: '1px solid gray'}} width="150"/>
 1. Click the **+** icon in the upper-right corner of the UI and select **New Dashboard**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-dashboard.png')} alt="Add dashboard button" style={{border: '1px solid gray'}} width="200"/><br/>A blank dashboard screen appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-empty-dashboard.png')} alt="Empty dashboard" style={{border: '1px solid gray'}} width="700"/>
 1. Click on the name of the blank dashboard (such as **Dashboard 2** in the example), and give the dashboard a name. Click **No description available** and type a description.
@@ -452,7 +452,7 @@ You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo L
 You can create widgets as needed to help analysts and administrators quickly get the information they need. Widgets are reusable pieces that display information in different forms, such as text, pie chart, bar chart, graph, or table.
 
 1. Open the widgets panel:
-      1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Go to the home screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **ecOps & Dashboard**.  
+      1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Go to the home screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **SecOps & Dashboard**.  
       1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" style={{border: '1px solid gray'}} width="150"/>
       1. Select a dashboard.
       1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" style={{border: '1px solid gray'}} width="150"/><br/>

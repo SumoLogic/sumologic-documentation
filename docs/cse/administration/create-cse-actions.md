@@ -75,7 +75,7 @@ The notification sent by a rule action contains the name of the rule and the re
 
 ## Create an action
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Data Management**, and then under **Integrations** select **Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. 
 1. On the **Actions** tab, click **+ Add Action**.
 1. The **Add Action** popup appears. <br/><img src={useBaseUrl('img/cse/create-action-empty.png')} alt="Create action dialog" style={{border: '1px solid gray'}} width="400" />
 1. **Name**. Enter a name that communicates what the action does.

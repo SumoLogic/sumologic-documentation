@@ -18,7 +18,7 @@ To ingest Signal Sciences data into Cloud SIEM:
    1. Paste the HTTP source URL from the previous step into the **Webhook URL** field and click **Add**.
       For more information on Generic Webhooks refer to the [Generic Webhooks](https://docs.fastly.com/signalsciences/integrations/generic-webhooks/) page in Fastly help.
 1. Configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to the source. The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Data Management**, and then under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
    1. On the **Ingest Mappings** tab, click **+ Add Ingest Mapping**.
    1. On the **Add Ingest Mapping** popup:
        * **Source Category**. Enter the category you assigned to the HTTP source you created earlier. 
@@ -28,6 +28,6 @@ To ingest Signal Sciences data into Cloud SIEM:
        * **Event ID**. Enter *.\**
    1. Click **Create** to save the mapping.
 1. To verify that your logs are successfully making it into Cloud SIEM:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Data Management**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
    1. On the **Log Mappings** page search for "Signal Sciences" and check the **Records** columns. <br/><img src={useBaseUrl('img/cse/signal-sciences-record-volume.png')} alt="Signal Sciences record volume" style={{border: '1px solid gray'}} width="800"/>
    1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Signal Sciences WAF security records:<br/>`_index=sec_record* and metadata_product = "Signal Sciences"`
