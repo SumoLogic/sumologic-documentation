@@ -1595,6 +1595,23 @@ Invalid IAM role OR AccessDenied
 - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. 
 - Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues.
 
+
+### Subscription filters are not applied to newly created log groups
+### Message
+```
+This error can occur when cloudtrail is not enabled for EventBridge to capture `CreateLogGroup` events   
+```
+#### Solution
+CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail.
+
+### Access logs are not enabled for the Load Balancer
+### Message
+```
+This error can occur when cloudtrail is not enabled for EventBridge to capture `CreateLoadBalancer` events
+```
+#### Solution
+CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
+
 ### Argument named *managed_apps* is not expected
 #### Error Message
 
