@@ -42,7 +42,7 @@ Automations and playbooks can also be used within Sumo Logic's Log Analytics Pla
 
 Typically, playbooks can be used in Cloud SIEM to help partially or fully automate one or more steps of the incident response cycle: 
 
-<img src={useBaseUrl('img/cloud-soar/incident-response-cycle.png')} alt="Incident response cycle" width="600"/>
+<img src={useBaseUrl('img/cloud-soar/incident-response-cycle.png')} alt="Diagram of the incident response cycle, showing how Cloud SIEM playbooks can automate steps such as prepare, identify, contain, eradicate, recover, and lessons learned." width="600"/>
 
 See [Cloud SIEM Automation](/docs/cse/automation/).
 
