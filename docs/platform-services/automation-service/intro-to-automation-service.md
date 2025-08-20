@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
 :::tip
-This section provides an introduction to the Automation Service that is structured like a class. To get the most out of it, follow the exercises from beginning to end.
+This section introduces the Automation Service in a class-style format. For the best learning experience, follow the exercises in order from start to finish.
 :::
 
 The Sumo Logic Automation Service is a key set of automation features integrated with Sumo Logic's Log Analytics Platform and Cloud SIEM. Automations allow you to set up actions to run automatically when certain conditions are met. Automated actions allow your organization to respond quickly and without necessarily needing human input to a wide array of security events and incidents. Automated actions can include integrations provided by Sumo Logic as well as third-party vendors. Actions can be customized, and you can create your own as well.
