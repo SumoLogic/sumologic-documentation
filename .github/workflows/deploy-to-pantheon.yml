@@ -1,4 +1,4 @@
-name: deploy-to-pantheon
+name: deploy-to-pantheon-prod
 
 permissions:
   deployments: write
@@ -13,7 +13,7 @@ on:
       - .github/**
 
 jobs:
-  build-and-deploy-to-pantheon:
+  build-and-deploy-to-pantheon-prod:
     runs-on: ubuntu-latest
     environment:
       name: production
