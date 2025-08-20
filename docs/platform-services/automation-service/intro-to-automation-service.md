@@ -169,7 +169,7 @@ Now that those integrations are configured, let’s use the Automation Service t
    1. Select **Action** for this new node.
    1. For **Node name** type "Send Notification Email".
    1. . For the **Integration**, select **Basic Tools**. Set **Type** to **Notification** and **Action** to **Send Email**.
-   1. . For **Recipients**, enter an email address (real or fake). Make sure you press Enter after typing the email address to signal the **Recipients** field to parse and accept the email address.
+   1. For **Recipients**, enter an email address (real or fake). Make sure you press Enter after typing the email address to signal the **Recipients** field to parse and accept the email address.
    1. Type in in the **Subject** field "High severity insight detected".
    1. When composing content for an email notification, you have the option of using input parameters from earlier nodes in the playbook in addition to any desired custom text. Click on the **{ }** icon to add a parameter field to your **HTML Content (Body)** text.
    1. Click on the red parameter box that appears and select a source for the desired input parameter (for instance, **Get Insight Details.output.name**). The parameter box will turn green once you have selected a valid source parameter. You can add custom text before or after the source parameter. Add one or more source parameters and accompanying custom text to outline what you want the email to say. For instance, explain that a high severity insight has been detected with the following details: name, timestamp, etc.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-notification-email.png')} alt="Add notification email node" style={{border: '1px solid gray'}} width="500" />
