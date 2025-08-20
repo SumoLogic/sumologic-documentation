@@ -56,7 +56,7 @@ Strictly speaking, the Automation Service is a subset of functionality provided 
 
 <img src={useBaseUrl('img/platform-services/automation-service/intro-app-central.png')} alt="App Central screen" style={{border: '1px solid gray'}} width="800" />
 
-As a Sumo Logic administrator, you can explore App Central and install any integrations your team requests. You can also create custom integrations using APIs from the [Integrations](/docs/platform-services/automation-service/automation-service-integrations/) page. These integrations will connect Automation Service features to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, App Central can be a single, central location for orchestrating your security response. 
+As a Sumo Logic administrator, you can explore App Central and install any integrations your team requests. You can also create custom integrations using APIs from the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) page. These integrations will connect Automation Service features to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, App Central can be a single, central location for orchestrating your security response. 
 
 <img src={useBaseUrl('img/platform-services/automation-service/intro-integrations.png')} alt="Integrations screen" style={{border: '1px solid gray'}} width="800" />
 
