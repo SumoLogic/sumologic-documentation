@@ -264,9 +264,9 @@ For this playbook let’s presume we have some AWS EC2 instances that are being 
     1. Choose the **Action** node tpe.
     1. Configure the node:
        * **Name**: "Resolve Alert"
-       * **Integration**. **Sumo Logic Log Analytics**
-       * **Type**. **Notification**
-       * **Action** **Resolve Alert**
+       * **Integration**. **Sumo Logic Log Analytics**.
+       * **Type**. **Notification**.
+       * **Action** **Resolve Alert**.
        * **Alert ID**: Click the gear icon and select **Playbook inputs** and then **input.Id**.
     1. Click **Create**.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-resolve-alert-node.png')} alt="Resolve alert playbook node" style={{border: '1px solid gray'}} width="400" />
 1. Connect the **Resolve Alert** node to the **End** node. Your completed playbook will look more or less like the following:<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-alerts-playbook.png')} alt="Completed alert playbook" style={{border: '1px solid gray'}} width="700" />
