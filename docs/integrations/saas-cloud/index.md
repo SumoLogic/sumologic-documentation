@@ -419,6 +419,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/vectra"><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/vectra.png')} alt="icon" width="100"/><h4>Vectra</h4></a>
+  <p>Gain visibility into security threats detected across networks, cloud environments, and endpoints.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/vmware-workspace-one"><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="icon" width="100"/><h4>VMware Workspace ONE</h4></a>
   <p>Analyze device compliance, encryption, and security status to spot risks and keep devices secure.</p>
   </div>
