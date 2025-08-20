@@ -244,9 +244,9 @@ For this playbook let’s presume we have some AWS EC2 instances that are being 
     1. Choose the **Action** node tpe. 
     1. Configure the node: 
        * **Node name**. "Describe AWS Instances"
-       * **Integration**. **AWS EC2**
-       * **Type**. **Enrichment**
-       * **Action**. **Describe Instances**
+       * **Integration**. **AWS EC2**.
+       * **Type**. **Enrichment**.
+       * **Action**. **Describe Instances**.
        * **Instance ID**. Click the gear icon and select **Playbook inputs** and then **customPlaceholderMap[]."cloud.instance.id"**. If you do not see this item in the list, check that you added the new parameter and saved it successfully in the previous step.
     1. Click **Create**.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-alert-node.png')} alt="AWS instances playbook node" style={{border: '1px solid gray'}} width="600" />
 1. Add a node to reboot EC2 instances:
