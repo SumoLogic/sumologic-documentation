@@ -1,27 +1,27 @@
 ---
 id: extrahop-revealx-360
-title: Extrahop RevealX 360
-sidebar_label: Extrahop RevealX 360
-description: The Extrahop RevealX 360 app for Sumo Logic provides security analysts with critical visibility into your Extrahop RevealX 360 environment.
+title: ExtraHop RevealX 360
+sidebar_label: ExtraHop RevealX 360
+description: The ExtraHop RevealX 360 app for Sumo Logic provides security analysts with critical visibility into your ExtraHop RevealX 360 environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/extrahop-revealx-360-icon.png')} alt="extrahop-revealx-360-icon" width="100"/>
 
-The Extrahop RevealX 360 app offers powerful network detection and response capabilities, providing organisations with in-depth visibility into security threats throughout their environment. By centralizing detection data such as total detections, average risk scores, MITRE attack techniques, and destination device activity, this app allows security teams to quickly identify, prioritize, and investigate suspicious activities.
+The ExtraHop RevealX 360 app offers powerful network detection and response capabilities, providing organisations with in-depth visibility into security threats throughout their environment. By centralizing detection data such as total detections, average risk scores, MITRE attack techniques, and destination device activity, this app allows security teams to quickly identify, prioritize, and investigate suspicious activities.
 
 By leveraging real-time metrics and contextual threat information, the app highlights patterns of malicious behavior, high-risk destinations, and devices originating from embargoed locations. This insight helps teams monitor evolving risks, identify vulnerable assets, and understand the tactics and techniques targeting their networks.
 
-With its comprehensive detection summaries, geographical breakdowns, and detailed device-level insights, the Extrahop RevealX 360 app empowers organizations to respond effectively to emerging threats. By maintaining a clear view of their security posture, teams can act swiftly, reduce dwell time, and strengthen defenses to protect critical systems and data.
+With its comprehensive detection summaries, geographical breakdowns, and detailed device-level insights, the ExtraHop RevealX 360 app empowers organizations to respond effectively to emerging threats. By maintaining a clear view of their security posture, teams can act swiftly, reduce dwell time, and strengthen defenses to protect critical systems and data.
 
 :::info
-This app includes [built-in monitors](#extrahop-revealx-360-alerts). For details on creating custom monitors, refer to [Create monitors for Extrahop RevealX 360 app](#create-monitors-for-extrahop-revealx-360-app).
+This app includes [built-in monitors](#extrahop-revealx-360-alerts). For details on creating custom monitors, refer to [Create monitors for ExtraHop RevealX 360 app](#create-monitors-for-extrahop-revealx-360-app).
 :::
 
 ## Log types
 
-The Sumo Logic app for Extrahop RevealX 360 ingests [detection events](https://docs.extrahop.com/current/detections-create-notification-rule/) via a webhook.
+The Sumo Logic app for ExtraHop RevealX 360 ingests [detection events](https://docs.extrahop.com/current/detections-create-notification-rule/) via a webhook.
 
 ## Sample log messages
 
@@ -111,25 +111,25 @@ _sourceCategory=Labs/extraHop
 
 ### Source configuration
 
-Follow the below steps to configure the Hosted Collector to receive Extrahop RevealX 360 events:
+Follow the below steps to configure the Hosted Collector to receive ExtraHop RevealX 360 events:
 
 1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
-2. Configure **Source Category** in the HTTP source - for example, `webhook/extrahop-revealx` - for the Extrahop RevealX 360 integration.
+2. Configure **Source Category** in the HTTP source - for example, `webhook/extrahop-revealx` - for the ExtraHop RevealX 360 integration.
 3. Copy and save the endpoint URL of the source.
 
 ### Vendor configuration
 
-Configure the webhook integration in Extrahop RevealX 360 to send events to the Sumo Logic HTTP source. Once configured, it will be triggered each time the events occur within your Extrahop RevealX 360 account.
+Configure the webhook integration in ExtraHop RevealX 360 to send events to the Sumo Logic HTTP source. Once configured, it will be triggered each time the events occur within your Extrahop RevealX 360 account.
 
-To configure the Extrahop RevealX 360 webhook, refer to the [Extrahop RevealX 360 Documentation](https://docs.extrahop.com/current/detections-create-notification-rule/).
+To configure the ExtraHop RevealX 360 webhook, refer to the [ExtraHop RevealX 360 Documentation](https://docs.extrahop.com/current/detections-create-notification-rule/).
 
-### Installing the Extrahop RevealX 360 app
+### Installing the ExtraHop RevealX 360 app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Viewing Extrahop RevealX 360 dashboards​
+## Viewing ExtraHop RevealX 360 dashboards​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -143,26 +143,26 @@ This dashboard helps security teams monitor detection trends, track changes in r
 
 By consolidating these insights into a unified view, the dashboard enhances threat detection, supports more informed response actions, and strengthens defenses against evolving network-based attacks.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Extrahop+RevealX+360/Extrahop-RevealX-360-Security.png' alt="Extrahop-RevealX-360-Security" style={{border:'1px solid gray'}} />
 
-## Create monitors for Extrahop RevealX 360 app
+## Create monitors for ExtraHop RevealX 360 app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Extrahop RevealX 360 alerts
+### ExtraHop RevealX 360 alerts
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Extrahop RevealX 360 - Destination Devices from Embargoed Geo Locations` | This alert is fired when events originating from embargoed locations are detected, ensuring adherence to security restrictions and protocols. | Critical | Count > 0 | 
-| `Extrahop RevealX 360 - Critical Detections` | This alert is fired when detections are identified with a risk score greater than 70, signaling high-severity threats that require immediate investigation and remediation. | Critical | Count > 0 |
+| `ExtraHop RevealX 360 - Destination Devices from Embargoed Geo Locations` | This alert is fired when events originating from embargoed locations are detected, ensuring adherence to security restrictions and protocols. | Critical | Count > 0 | 
+| `ExtraHop RevealX 360 - Critical Detections` | This alert is fired when detections are identified with a risk score greater than 70, signaling high-severity threats that require immediate investigation and remediation. | Critical | Count > 0 |
 
-## Upgrade/Downgrade the Extrahop RevealX 360 app (Optional)
+## Upgrade/Downgrade the ExtraHop RevealX 360 app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Extrahop RevealX 360 app (Optional)
+## Uninstalling the ExtraHop RevealX 360 app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
