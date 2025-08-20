@@ -81,14 +81,14 @@ Once you’ve identified a potential security incident, you can respond to it by
 
 Custom playbooks allow you to automate any task that uses a custom API. You can also use them to automate tasks that aren’t part of the hundreds of default playbooks included in the Automation Service.
 
-Playbooks are made up of nodes which are connected together in a flowchart. Whether you’re customizing a playbook or creating one from scratch, you have several node options:
+Playbooks are built from nodes connected together in a flowchart. Whether you’re customizing a playbook or creating one from scratch, you can choose from several node types:
 * **Actions**. Enrich data, execute APIs, send notifications, or use other integrations. 
 * **Conditions**. If-then statements that allow playbooks to branch in different directions.
 * **Tasks**. Assign a manual task to another user.
 * **Filter**. Use designated criteria to filter data outputs from previous nodes.
 * **Embedded playbooks**. Run another playbook.
 
-Each of these nodes are color-coded in a playbook. The following image shows a sample playbook. Note the different actions and enrichments, along with the branches that execute different sequences of actions based on conditions.
+Each of these node types are color-coded in a playbook. The following image shows a sample playbook. Note the different actions and enrichments, along with the branches that execute different sequences of actions based on conditions.
 
 <img src={useBaseUrl('img/cse/intro-admin-playbook-example.png')} alt="Playbook example" style={{border: '1px solid gray'}} width="800"/>
 
