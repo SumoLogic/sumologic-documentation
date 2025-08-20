@@ -68,11 +68,12 @@ import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-conf
 <DataConfiguration/>
 
 :::note
-If agent crashes with the following error log
+If the agent crashes with the following error log:
 
-failed to start service: cannot start pipelines: failed to start "windowseventlog/(channel_name)" receiver: start stanza: failed to open local subscription, error: failed to subscribe to (channel_name) channel: The specified channel could not be found.; 
+`failed to start service: cannot start pipelines: failed to start "windowseventlog/(channel_name)" receiver: start stanza: failed to open local subscription, error: failed to subscribe to (channel_name) channel: The specified channel could not be found.;`
 
-It is due to a event channel name given in the custom event channel list, not existing in the remote host where the source template is pushed. This can be fixed either by removing the particular channel name from source template or upgrading your sumo opentelemetry agent to version >= 0.130.1 and upgrading your ST to version 8.0.0
+It means that the specified event channel name in the custom event channel list does not exist on the remote host where the source template is being pushed.
+To resolve this issue, you can either remove the non-existent channel name from the source template (ST) or upgrade the Sumo Logic OpenTelemetry Collector agent to version 0.130.1 or later and the ST to version 8.0.0 or later.
 :::
 
 :::info
