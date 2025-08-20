@@ -27,7 +27,7 @@ In this article, we will walk you through how the Automation Service works, and 
 
 ## Why automate?
 
-Automations are a key feature of Sumo Logic's log analytic and security products that can help manage insights and alerts without a lot of manual effort. Automations are composed of "smart actions" such as enrichments and notifications that can be automatically triggered under a set of circumstances, such as an alert firiting, or a Cloud SIEM insight being created or closed. Sumo Logic automations use playbooks, a pre-defined set of actions in a linear or branching workflow to execute when the proper circumstances arise. 
+Automations are a key feature of Sumo Logic's log analytics and security products that can help manage insights and alerts without a lot of manual effort. Automations are composed of "smart actions" such as enrichments and notifications that can be automatically triggered under a set of circumstances, such as an alert firing, or when a Cloud SIEM insight is created or closed. Sumo Logic automations are powered by playbooks, a pre-defined set of actions in a linear or branching workflow to execute when the proper circumstances arise. 
 
 There are several reasons you might want to automate some security tasks:
 * **Faster responses**. Automating parts of your SOC can mean faster response times.
