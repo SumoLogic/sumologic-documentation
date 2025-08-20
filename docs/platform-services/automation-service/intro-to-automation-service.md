@@ -150,9 +150,9 @@ Now that those integrations are configured, let’s use the Automation Service t
    1. Click **Create** to save the new action.
 1. Add another action to the playbook by clicking the **+** icon on the **Get Virus Total Info** node you just created. Use the parameters outlined below:
    * **Name**. Type "Add Entity Enrichment".
-   * **Integration**. **Sumo Logic Cloud SIEM**
-   * **Type**. **Notification**
-   * **Action**. **Add Entity Enrichment**
+   * **Integration**. **Sumo Logic Cloud SIEM**.
+   * **Type**. **Notification**.
+   * **Action**. **Add Entity Enrichment**.
    * **Entity ID**. Click the gear icon and select **Get Insight Details** and **output.entity.id**.
    * **Enrichment Title**. Type "VirusTotal IP Reputation".
    * **Enrichment**. Click the gear icon and select **Get VirusTotal Info** and **output.raw**.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-add-entity-enrichment-node.png')} alt="Add entity enrichment node" style={{border: '1px solid gray'}} width="500" />
