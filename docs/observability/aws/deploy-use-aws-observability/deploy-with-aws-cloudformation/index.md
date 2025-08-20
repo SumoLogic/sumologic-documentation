@@ -57,14 +57,14 @@ AWS Observability integrates with the [AWS Observability view](/docs/dashboards/
 
 The table below displays the response for each text box in this section.
 
-| Prompt | Guideline                                                                                                                                                                                                                                                                  |
-|:--|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, fed, kr, or us1. See [Sumo Logic Endpoints and Firewall Security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments.                                      |
-| Sumo Logic Access ID | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for more information.                                                                                                                                                                           |
-| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls.                                                                                                                                                                                                          |
-| Sumo Logic Organization ID | You can find your org on the Preferences page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.                                                                                                                        |
-| Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |
-| Send telemetry to Sumo Logic | To send solution telemetry to Sumo Logic. This will help to troubleshoot the issues occurring during solution installation. To Opt-out change this to `false`, default value is `true`                                                                                     |
+| Prompt | Guideline |
+|:--|:--|
+| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, fed, kr, or us1. See [Sumo Logic Endpoints and Firewall Security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
+| Sumo Logic Access ID | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for more information. |
+| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
+| Sumo Logic Organization ID | You can find your org on the Preferences page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |
+| Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources, and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |
+| Send telemetry to Sumo Logic | To send solution telemetry to Sumo Logic. This will help to troubleshoot the issues occurring during solution installation. To Opt-out change this to `false`, the default value is `true`. |
 
 ## Step 3: AWS account alias 
 
@@ -200,7 +200,7 @@ To debug an AWS CloudFormation installation failure, do the following:
 
 1. After the stack rollback is complete and the status is ROLLBACK_COMPLETE, go to the parent stack. In the parent stack, look for the first failure as shown in the following example. The failure can be a direct reason or can point to a nested stack.<br/><img src={useBaseUrl('img/observability/Troubleshooting_1.png')} style={{border: '1px solid gray'}} alt="Troubleshooting_1" width="700"/>
 1. Look for direct reasons for the failure that is available in the parent stack, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_2.png')} style={{border: '1px solid gray'}} alt="Troubleshooting_2" width="700"/>
-1. To find indirect reasons for the failure, go to the nested stack mentioned in the status reason, as shown in the following example. Take a note of the resources mentioned in the reason.<br/><img src={useBaseUrl('img/observability/Troubleshooting_3.png')} style={{border: '1px solid gray'}} alt="Troubleshooting_3" width="700"/>
+1. To find indirect reasons for the failure, go to the nested stack mentioned in the status reason, as shown in the following example. Take note of the resources mentioned in the reason.<br/><img src={useBaseUrl('img/observability/Troubleshooting_3.png')} style={{border: '1px solid gray'}} alt="Troubleshooting_3" width="700"/>
 1. Select the deleted option to find the nested stacks, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_4.png')} style={{border: '1px solid gray'}} alt="Troubleshooting_4" width="500"/>
 1. Go to the nested stack and look for the resource mentioned in the previous step to identify the reason, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_5.png')} style={{border: '1px solid gray'}} alt="Troubleshooting_5" width="700"/>
 
@@ -229,14 +229,14 @@ For instructions, see Create a Processing Rule. Create the following rules, sel
 
 Below are some common errors that can occur while using the CloudFormation template. 
 
-| Error                                               | Description                                                                                                                                                                                                                                             | Resolution |
-|:----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--|
+| Error | Description | Resolution |
+|:--|:--|:--|
 | The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | - Re-deploy the deployment stack without updating the stack in the template. Re-running will detect the drift and create remaining resources. <br/> - If the throttling problem persists, try to break down the multi-region deployment into parts and use distinct access IDs and access keys for each part. |
-| S3 Bucket already exists.                           | The error can occur if:<br/>- An S3 bucket with the same name exists in S3, or<br/>- The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack which created it.                                                      | - Remove the S3 bucket from S3 or select “No” in the AWS Cloudformation template for S3 bucket creation. <br/>- Remove the AWS CloudFormation Stack which references the S3 bucket. |
-| The S3 bucket you tried to delete is not empty.     | The error can occur when deleting the stack with a non-empty S3 bucket.                                                                                                                                                                                 | Delete the S3 bucket manually if you do not need the bucket or its content in the future. |
-| Invalid IAM role OR AccessDenied                    | This error can occur when Sumo Logic access keys are disabled or do not have the required permissions.                                                                                                                                                  | - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. <br/>- Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues. |
-| Subscription filters are not applied to newly created log groups.              | This error can occur when cloudtrail is not enabled for EventBridge to capture `CreateLogGroup` events                                                                                                                                               | CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail. |
-| Access logs are not enabled for the Load Balancer.                            | This error can occur when cloudtrail is not enabled for EventBridge to capture `CreateLoadBalancer` events                                                                                                                                               | CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail. |
+| S3 Bucket already exists. | The error can occur if:<br/>- An S3 bucket with the same name exists in S3, or<br/>- The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack that created it. | - Remove the S3 bucket from S3 or select “No” in the AWS CloudFormation template for S3 bucket creation. <br/>- Remove the AWS CloudFormation Stack which references the S3 bucket. |
+| The S3 bucket you tried to delete is not empty. | The error can occur when deleting the stack with a non-empty S3 bucket. | Delete the S3 bucket manually if you do not need the bucket or its content in the future. |
+| Invalid IAM role OR AccessDenied. | This error can occur when Sumo Logic access keys are disabled or do not have the required permissions. | - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. <br/>- Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues. |
+| Subscription filters are not applied to newly created log groups. | This error can occur when CloudTrail is not enabled for EventBridge to capture `CreateLogGroup` events. | CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail. |
+| Access logs are not enabled for the Load Balancer. | This error can occur when CloudTrail is not enabled for EventBridge to capture `CreateLoadBalancer` events. | CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail. |
 
 ### Rolling back the AWS Observability Solution
 
@@ -255,10 +255,10 @@ To uninstall the AWS Observability Solution:
 
 ### Remove the account from AWS Observability hierarchy
 
-AWS Observability hierarchy is auto-populated based on the metrics ingested into Sumo Logic with an account tag on the metric source. To remove any AWS account from the AWS Observability hierarchy, you need to remove the data sources ingesting metrics data or remove the account tag from the same metric source. After this, the account will be removed automatically in the next 24 hours. Follow the below the steps to remove the account from the AWS Observability hierarchy:
+AWS Observability hierarchy is auto-populated based on the metrics ingested into Sumo Logic with an account tag on the metric source. To remove any AWS account from the AWS Observability hierarchy, you need to remove the data sources ingesting metrics data or remove the account tag from the same metric source. After this, the account will be removed automatically in the next 24 hours. Follow the steps below to remove the account from the AWS Observability hierarchy:
 
 1. Identify the account that you want to remove from the AWS Observability hierarchy. For example, let's assume you want to remove `mobilebankingprod` from the hierarchy.<br/><img src={useBaseUrl('img/observability/hierarchy.png')} style={{border: '1px solid gray'}} alt="hierarchy" width="400"/>
-1. Run the required metric query to identify from which source and collector data is getting ingested. For this example, enter the below metric query:
+1. Run the required metric query to identify from which source and collector data is being ingested. For this example, enter the metric query below:
     ```sql
     account= mobilebankingprod | count by _collector , _source
     ```
