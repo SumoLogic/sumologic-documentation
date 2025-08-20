@@ -7,7 +7,7 @@ description: Changelog for Windows source template for OpenTelemetry.
 
 ## [8.0.0] - 2025-08-20
 ### Added
-- Flag for preventing shutdown of the collector when failing to open the event log channel and instead log a warning
+- Flag for preventing shutdown of the collector when failing to open the event log channel, and instead log a warning.
 
 ## [7.0.0] - 2025-04-30
 ### Fixed
