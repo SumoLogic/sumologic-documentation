@@ -2688,6 +2688,7 @@ integrations: [
           'integrations/webhooks/bugsnag',
           'integrations/webhooks/configcat',
           'integrations/webhooks/emnify',
+          'integrations/webhooks/extrahop-revealx-360',
           'integrations/webhooks/firefly',
           'integrations/webhooks/flagsmith',
           'integrations/webhooks/grafana-oncall',
