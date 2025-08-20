@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Vectra app offers comprehensive visibility into security threats detected across networks, cloud environments, and endpoints. It consolidates threat intelligence from multiple sources, categorizing detections by their severity, type, and behavior, while providing detailed contextual data to accelerate investigations. With interactive dashboards and targeted monitoring tools, security teams can track trends, pinpoint high-risk activities, and measure remediation effectiveness. By combining threat scoring, detection timelines, and enriched metadata, the app empowers proactive threat hunting, rapid incident response, and continuous improvement of security posture.
 
 :::info
-This app includes [built-in monitors](#vectra-alerts). For details on creating custom monitors, refer to the [Create monitors for vectra app](#create-monitors-for-the-vectra-app).
+This app includes [built-in monitors](#vectra-alerts). For details on creating custom monitors, refer to the [Create monitors for Vectra app](#create-monitors-for-the-vectra-app).
 :::
 
 ## Log types
