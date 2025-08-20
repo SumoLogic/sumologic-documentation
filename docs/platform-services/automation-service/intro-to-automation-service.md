@@ -254,9 +254,9 @@ For this playbook let’s presume we have some AWS EC2 instances that are being 
     1. Choose the **Action** node tpe.
     1. Configure the node:
        * **Node name**. "Reboot Instances"
-       * **Integration**. **AWS EC2**
-       * **Type**. **Containment**
-       * **Action** **Reboot Instances**
+       * **Integration**. **AWS EC2**.
+       * **Type**. **Containment**.
+       * **Action** **Reboot Instances**.
        * **Instance Id**. Click the gear icon and select **Describe AWS Instances** and then **output.Reservations.[].Instances.[].InstanceId**.
     1. Click **Create**.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-reboot-instances-node.png')} alt="Reboot instances playbook node" style={{border: '1px solid gray'}} width="400" />
 1. Add a node to resolve the alerts:
