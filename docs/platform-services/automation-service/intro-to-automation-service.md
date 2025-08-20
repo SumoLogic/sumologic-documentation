@@ -134,9 +134,9 @@ Now that those integrations are configured, let’s use the Automation Service t
    1. Choose the **Action** node tpe. 
    1. Use the following parameters to configure the node. If a field is not listed, keep the default value. Make sure you fill out the listed configuration fields in order, as some fields will only appear in the dialog box after you’ve selected fields above it.
        * **Name**. Type "Get Insight Details".
-       * **Integration**. Sumo Logic Cloud SIEM
-       * **Type**. **Enrichment**
-       * **Action**. **Get Insight**
+       * **Integration**. Sumo Logic Cloud SIEM.
+       * **Type**. **Enrichment**.
+       * **Action**. **Get Insight**.
        * **Insight ID**. Click the gear icon and select **Playbook inputs** and then **input.readableId**.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-add-node.png')} alt="Add node" style={{border: '1px solid gray'}} width="500" />
    1. Click **Create** when finished.
 1. Add another action to the playbook by hovering your mouse over the **Get Insight Details** node you just created and clicking the **+** icon. <br/><img src={useBaseUrl('img/platform-services/automation-service/intro-add-new-node.png')} alt="Add another node" style={{border: '1px solid gray'}} width="500" />
