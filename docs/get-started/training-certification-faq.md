@@ -2,7 +2,7 @@
 id: training-certification-faq
 title: Sumo Logic Training and Certifications FAQ
 sidebar_label: Training and certifications
-description: Learn more about the Sumo Logic Training and Certification Program.
+description: Find answers to frequently asked questions about Sumo Logic training, certifications, and learning resources.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -30,30 +30,30 @@ The following table provides a summary list of key features by package accounts.
 
 | Feature | Free | Trial | Professional | Enterprise |
 |:-- | :-- | :-- | :-- | :-- |
-| Audit Index |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Audit Event Index |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
-| [Collector Management API](/docs/api/collector-management) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Audit Index |  | &#10003; | &#10003; | &#10003; |
+| Audit Event Index |  | &#10003; |  | &#10003; |
+| [Collector Management API](/docs/api/collector-management) | &#10003; | &#10003; | &#10003; | &#10003; |
 | Dashboards - Live Mode  | 7 days | 30 days | 30 days | 30 days |
-| [Data Forwarding](/docs/manage/data-forwarding) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [Field Extraction](/docs/manage/field-extractions) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) |  |  |  | ![check](/img/reuse/check.png) |
-| Log Data retention (Classic Accounts) | 7 days | 30 days | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data storage (Cloud Flex Accounts) | 4GB	 | 30GB | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data volume | 500MB per day | 1GB per day* | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [LogReduce](/docs/search/behavior-insights/logreduce)  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [Data Forwarding](/docs/manage/data-forwarding) | &#10003; | &#10003; | &#10003; | &#10003; |
+| [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) | &#10003; | &#10003; | &#10003; | &#10003; |
+| [Field Extraction](/docs/manage/field-extractions) | &#10003; | &#10003; | &#10003; | &#10003; |
+| [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) |  |  |  | &#10003; |
+| Log Data retention (Classic Accounts) | 7 days | 30 days | &#10003; | &#10003; |
+| Log Data storage (Cloud Flex Accounts) | 4GB	 | 30GB | &#10003; | &#10003; |
+| Log Data volume | 500MB per day | 1GB per day* | &#10003; | &#10003; |
+| [LogReduce](/docs/search/behavior-insights/logreduce)  | &#10003; | &#10003; | &#10003; | &#10003; |
 | [Lookup Tables](/docs/search/lookup-tables) | none | Varies by the  account type being trialed | 10 tables per org | 100 tables per org |
-| Metrics |   | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics data retention |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics data retention |   | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [Partitions](/docs/manage/partitions) | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| SAML |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Scheduled Views |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Search Job API |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Support |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Sumo Logic Apps | QuickStart only | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Users (Classic Accounts) | Three users | 20 users* | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Metrics |   | &#10003; | &#10003; | &#10003; |
+| Metrics data retention |  | &#10003; | &#10003; | &#10003; |
+| Metrics data retention |   | &#10003; | &#10003; | &#10003; |
+| [Partitions](/docs/manage/partitions) | | &#10003; | &#10003; | &#10003; |
+| SAML |  | &#10003; | &#10003; | &#10003; |
+| Scheduled Views |  | &#10003; | &#10003; | &#10003; |
+| Search Job API |  | &#10003; | &#10003; | &#10003; |
+| Support |  | &#10003; | &#10003; | &#10003; |
+| Sumo Logic Apps | QuickStart only | &#10003; | &#10003; | &#10003; |
+| Users (Classic Accounts) | Three users | 20 users* | &#10003; | &#10003; |
+| User and Role APIs | &#10003; | &#10003; | &#10003; | &#10003; |
 
 \* Contact [Sumo Logic Sales](mailto:sales@sumologic.com) to customize your account to meet your organization's needs.
 
