@@ -26,6 +26,10 @@ For more information on supported dimensions, refer to the [Azure documentation]
 * Set up application logs collection using fluent-bit sidecar container using the [http output plugin](https://docs.fluentbit.io/manual/1.5/pipeline/outputs/http) and the [tail input plugin](https://docs.fluentbit.io/manual/1.5/pipeline/inputs/tail). You must explicitly enable fluent-bit collection for each container group which you want to monitor.
 * Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure metrics collection
 
 import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
