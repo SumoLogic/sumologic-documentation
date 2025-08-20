@@ -143,9 +143,9 @@ Now that those integrations are configured, let’s use the Automation Service t
    1. Choose the **Action** node tpe.
    1. In the **Add Node** dialog box, use the parameters outlined below:
       * **Name**. Type "Get VirusTotal Info".
-      * **Integration**. **VirusTotal V3**
-      * **Type**. **Enrichment**
-      * **Action**. **IP Reputation**
+      * **Integration**. **VirusTotal V3**.
+      * **Type**. **Enrichment**.
+      * **Action**. **IP Reputation**.
       * **IPs**. Click the gear icon and select **Playbook inputs** then **input.entity.value**.<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-get-virus-total-node.png')} alt="Add Virus Total node" style={{border: '1px solid gray'}} width="500" /> 
    1. Click **Create** to save the new action.
 1. Add another action to the playbook by clicking the **+** icon on the **Get Virus Total Info** node you just created. Use the parameters outlined below:
