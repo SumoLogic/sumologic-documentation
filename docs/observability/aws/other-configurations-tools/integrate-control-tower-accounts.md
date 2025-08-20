@@ -33,6 +33,10 @@ We recommend you familiarize yourself with the AWS Observability Solution. For m
 * [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability)
 * [View the AWS Observability Dashboards](../deploy-use-aws-observability/view-dashboards.md)
 
+ :::note
+  * CloudTrail must be enabled for EventBridge to capture `CreateManagedAccount`, `UpdateManagedAccount` events, since these events are recorded and delivered through CloudTrail.
+ :::
+
 ## Integrate AWS Control Tower-managed accounts with the AWS Observability solution
 
 Integrating with AWS Control Tower is a two-step process: 

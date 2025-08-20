@@ -107,6 +107,10 @@ The table below displays the response for each text box in this section.
 | AWS S3 Bucket Name | If you selected "No" to creating a new source above, skip this step. Provide a name of an existing S3 bucket name where you would like to store ALB logs. If this is empty, a new bucket will be created in the region |
 | Path Expression for the Existing  ALB logs | This is required in case the above existing bucket is already configured to receive ALB access logs. If this is blank, Sumo Logic will store logs in the path expression: `elasticloadbalancing/AWSLogs/*` |
 
+ :::note
+  * CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
+ :::
+
 ## Step 7: Sumo Logic AWS CloudTrail Source
 
 The table below displays the response for each text box in this section.
@@ -135,6 +139,7 @@ The table below displays the response for each text box in this section.
  :::note
   * Don't use forward slashes (`/`) to encapsulate the regex. While normally they are needed for raw code, it's not necessary here.
   * Use regex `.*` for auto-subscribing all log groups.
+  * CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail.
  :::
 
 ## Step 9: Sumo Logic AWS ELB Classic Log Source
@@ -148,6 +153,10 @@ The table below displays the response for each text box in this section.
 | Existing Sumo Logic ELB Classic Logs Source API URL | You must supply this URL if you are already collecting ELB Classic logs. Enter the existing Sumo Logic ELB Classic Source API URL. The account, and region fields will be added to the Source. For information on how to determine the URL, see View or Download Source JSON Configuration. |
 | AWS S3 Bucket Name | If you selected "No" to create a new source above, skip this step. Provide a name of an existing S3 bucket name where you would like to store ELB Classic logs. If this is empty, a new bucket will be created in the region. |
 | Path Expression for the Existing  ELB Classic logs | This is required in case the above existing bucket is already configured to receive ELB Classic access logs. If this is blank, Sumo Logic will store logs in the path expression: `classicloadbalancing/AWSLogs/*` |
+
+ :::note
+  * CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
+ :::
 
 ## Step 10: App Installation and Sharing
 
@@ -220,12 +229,13 @@ For instructions, see Create a Processing Rule. Create the following rules, sel
 
 Below are some common errors that can occur while using the CloudFormation template. 
 
-| Error | Description | Resolution |
-|:--|:--|:--|
+| Error                                               | Description                                                                                                                                                                                                                                             | Resolution |
+|:----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--|
 | The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | - Re-deploy the deployment stack without updating the stack in the template. Re-running will detect the drift and create remaining resources. <br/> - If the throttling problem persists, try to break down the multi-region deployment into parts and use distinct access IDs and access keys for each part. |
-| S3 Bucket already exists. | The error can occur if:<br/>- An S3 bucket with the same name exists in S3, or<br/>- The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack which created it. | - Remove the S3 bucket from S3 or select “No” in the AWS Cloudformation template for S3 bucket creation. <br/>- Remove the AWS CloudFormation Stack which references the S3 bucket. |
-| The S3 bucket you tried to delete is not empty. | The error can occur when deleting the stack with a non-empty S3 bucket. | Delete the S3 bucket manually if you do not need the bucket or its content in the future. |
-| Invalid IAM role OR AccessDenied | This error can occur when Sumo Logic access keys are disabled or do not have the required permissions. | - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. <br/>- Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues. |
+| S3 Bucket already exists.                           | The error can occur if:<br/>- An S3 bucket with the same name exists in S3, or<br/>- The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack which created it.                                                      | - Remove the S3 bucket from S3 or select “No” in the AWS Cloudformation template for S3 bucket creation. <br/>- Remove the AWS CloudFormation Stack which references the S3 bucket. |
+| The S3 bucket you tried to delete is not empty.     | The error can occur when deleting the stack with a non-empty S3 bucket.                                                                                                                                                                                 | Delete the S3 bucket manually if you do not need the bucket or its content in the future. |
+| Invalid IAM role OR AccessDenied                    | This error can occur when Sumo Logic access keys are disabled or do not have the required permissions.                                                                                                                                                  | - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. <br/>- Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues. |
+| Subscription filters are not applied to newly created log groups.              | This error can occur when cloudtrail is not enabled for EventBridge to capture `CreateLogGroup` events                                                                                                                                               | CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail. |
 
 ### Rolling back the AWS Observability Solution
 

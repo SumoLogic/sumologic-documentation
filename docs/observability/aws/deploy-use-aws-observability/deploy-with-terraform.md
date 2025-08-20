@@ -849,7 +849,7 @@ elb_source_details = {
 
 #### auto_enable_access_logs
 
-Enable Application Load Balancer (ALB)  Access logging.
+Enable Application Load Balancer (ALB) Access logging.
 
 You have the following options:
 
@@ -871,6 +871,10 @@ Example JSON for newly created ALB resources only.
 ```json
 auto_enable_access_logs = "New"
 ```
+
+ :::note
+  * CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
+ :::
 
 #### elb_log_source_url
 
@@ -999,6 +1003,11 @@ Example JSON for newly created ALB resources only.
 ```
 auto_enable_classic_lb_access_logs = "New"
 ```
+
+ :::note
+  * CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
+ :::
+
 
 #### classic_lb_log_source_url
 
@@ -1255,6 +1264,10 @@ Subscribe log groups to Sumo Logic Lambda Forwarder. You have the following opti
 ```
 auto_enable_logs_subscription="New"
 ```
+
+ :::note
+  * CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail.
+ :::
 
 ### auto_enable_logs_subscription_options
 
