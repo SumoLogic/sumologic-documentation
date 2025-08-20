@@ -108,7 +108,7 @@ Custom actions can also include trigger actions, which run based on an event typ
 
 Before you begin creating or customizing a playbook, decide what you’d like to automate. Think about what conditions you want met, and what actions or integrations you want to accomplish based on different flows. Once you have a design in mind for the flow of your playbook, you can create or customize a new one. 
 
-The Sumo Logic Automation Service contains [hundreds of pre-created playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/), so take time to search the list of playbooks to see if there's an out-of-the-box solution that works for you. In addition, you can view the structure and organization of those OOTB playbooks to give you a starting template for custom playbooks, where you can save time by modifying an existing playbook rather than starting from an empty canvas. 
+The Sumo Logic Automation Service includes hundreds of [prebuilt playbooks](/docs/platform-services/automation-service/playbooks-in-app-central). Start by searching the catalog to see if an out-of-the-box solution meets your needs. You can also use these playbooks as templates, saving time by modifying an existing playbook instead of building one from scratch.
 
 ### Create a playbook for Cloud SIEM insights
 
