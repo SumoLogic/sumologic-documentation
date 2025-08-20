@@ -13,7 +13,7 @@ This article describes the various setup and configuration options for the Cloud
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access general settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access general settings, In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access general settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-general-settings.png')} alt="General Settings" style={{border: '1px solid gray'}} width="800"/>
@@ -97,7 +97,7 @@ The role specified in an assigned group profile supersedes the user's [role assi
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access notification settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Notifications > Event Triggers**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access notification settings, In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access notification settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-event-triggers.png')} alt="Events Triggers dialog" style={{border: '1px solid gray'}} width="700"/>
@@ -108,7 +108,7 @@ Select the icon to the right of an event to trigger a notification to be sent wh
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access custom fields settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access custom field settings, In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Configurations** select **Fields**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access custom field settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Configurations** select **Fields**.
 
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-custom-fields.png')} alt="Cloud SOAR custom fields page" style={{border: '1px solid gray'}} width="700"/>
@@ -193,7 +193,7 @@ To create an incident label:
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access triage configuration settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Triage**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access triage configuration settings, In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Configurations** select **Triage**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access triage configuration settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Configurations** select **Triage**.
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-triage-configuration.png')} alt="Cloud SOAR triage configuration page" style={{border: '1px solid gray'}} width="700"/>
 

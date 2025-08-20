@@ -172,7 +172,7 @@ The Archive page provides a table of all the existing [AWS S3 Archive Sources]
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Archive page, in the main Sumo Logic menu select **Manage Data > Collection > Archive**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Archive page, In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Archive page, in the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**.
  
 
 <img src={useBaseUrl('img/archive/archive-page.png')} alt="Archive page" width="800"/>

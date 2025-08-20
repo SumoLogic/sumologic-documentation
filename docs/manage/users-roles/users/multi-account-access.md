@@ -59,7 +59,7 @@ Sumo Logic Multi-account users may have access to organizations that use differe
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Password Policy page, in the main Sumo Logic menu select **Administration > Security > Password Policy**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Password Policy page, In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Password Policy page, in the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**.
  
 
 In the Password Policy page, you can set the following account settings:

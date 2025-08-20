@@ -14,7 +14,7 @@ The **Threat Intelligence** tab shows the indicators that have been added to you
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access the **Threat Intelligence** tab, in the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. 
  
 <img src={useBaseUrl('img/security/threat-intelligence-tab.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 

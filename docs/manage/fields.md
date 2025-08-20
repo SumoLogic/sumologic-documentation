@@ -211,7 +211,7 @@ Fields in your account are manageable in the Fields page.
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Fields page, in the main Sumo Logic menu select **Manage Data > Logs > Fields**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Fields page, In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Fields page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
  
 
 To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
