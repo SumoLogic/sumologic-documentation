@@ -52,11 +52,12 @@ import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-confi
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-route53-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Route 53 configuration" width="400"/>
 
+For information about AWS Route 53, see [Route 53 documentation](https://docs.aws.amazon.com/route53/).
+
 <IntegrationsAuthAWS/>
 
+### AWS IAM role-based access
 <IAMConfiguration/>
-
-For information about AWS Route 53, see [Route 53 documentation](https://docs.aws.amazon.com/route53/).
 
 ## Change Log
 

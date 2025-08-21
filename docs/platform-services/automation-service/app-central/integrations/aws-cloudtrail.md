@@ -55,7 +55,11 @@ import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-confi
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-cloudtrail-configuration.png')} style={{border:'1px solid gray'}} alt="AWS CloudTrail configuration" width="400"/>
 
+For information about AWS CloudTrail, see [CloudTrail documentation](https://docs.aws.amazon.com/cloudtrail/).
+
 <IntegrationsAuthAWS/>
+
+### AWS IAM role-based access
 
 <IAMConfiguration/>
 
@@ -69,8 +73,6 @@ import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-confi
   cloudtrail:StopLogging
   cloudtrail:UpdateTrail
 ```
-
-For information about AWS CloudTrail, see [CloudTrail documentation](https://docs.aws.amazon.com/cloudtrail/).
 
 ## Change Log
 

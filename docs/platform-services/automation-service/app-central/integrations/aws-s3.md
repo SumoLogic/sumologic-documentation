@@ -58,6 +58,8 @@ import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-confi
 
 <IntegrationsAuthAWS/>
 
+### AWS IAM role-based access
+
 <IAMConfiguration/>
 
 ## Required Permissions
