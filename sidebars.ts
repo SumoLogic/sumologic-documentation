@@ -2605,6 +2605,7 @@ integrations: [
           'integrations/saas-cloud/tenable',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
+          'integrations/saas-cloud/vectra',
           'integrations/saas-cloud/vmware-workspace-one',
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
@@ -2687,6 +2688,7 @@ integrations: [
           'integrations/webhooks/bugsnag',
           'integrations/webhooks/configcat',
           'integrations/webhooks/emnify',
+          'integrations/webhooks/extrahop-revealx-360',
           'integrations/webhooks/firefly',
           'integrations/webhooks/flagsmith',
           'integrations/webhooks/grafana-oncall',
@@ -3194,6 +3196,7 @@ integrations: [
           link: {type: 'doc', id: 'platform-services/automation-service/index'},
           items: [
             'platform-services/automation-service/about-automation-service',
+            'platform-services/automation-service/intro-to-automation-service',
             {
               type: 'category',
               label: 'App Central',
