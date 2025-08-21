@@ -41,6 +41,16 @@ The AKS - Control Plane app collects logs for the following [Azure Kubernetes Se
 
 For more details on Azure Kubernetes Service logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference).
 
+## Setup
+
+Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs).
+
+You must explicitly enable diagnostic settings for each Kubernetes Service you want to monitor. You can forward logs to the same Event Hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
+
+Sumo Logic supports metrics collection using [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+
+When you configure the Event Hubs source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example:  `Azure/AKS/ControlPlane/Logs`.
+
 ### Sample log messages
 
 ```json title="kube-audit"
@@ -199,6 +209,10 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={
 | sort by _count
 ```
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure metrics collection
 
 import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
@@ -210,10 +224,8 @@ import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 This section walks you through the process of configuring a pipeline to send logs from Azure Monitor to Sumo Logic.
 
 1. To set up the logs collection in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-
-	 When you configure the event hubs source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AKS/ControlPlane/Logs`.
   
-   Enable the Kubernetes master node logs in Azure Kubernetes Service to send logs to an event hub created in the previous step.
+   Enable the Kubernetes master node logs in Azure Kubernetes Service to send logs to an Event Hub.
 
 2. Push logs from Azure Monitor to Event Hub.
 	1. Sign in to [Azure Portal](https://portal.azure.com/).
