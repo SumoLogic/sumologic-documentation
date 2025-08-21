@@ -1,4 +1,4 @@
-name: deploy-to-pantheon-prod
+name: deploy-to-pantheon-staging
 
 permissions:
   deployments: write
@@ -6,6 +6,7 @@ permissions:
   pull-requests: read
   
 on:
+  workflow_dispatch:
   push:
     branches:
       - staging/**
