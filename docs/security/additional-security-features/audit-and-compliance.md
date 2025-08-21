@@ -181,3 +181,4 @@ To use Sumo Logic to start an audit of AWS root for compliance, perform these st
 
 * Blog: [What to expect when you’re expecting a cybersecurity audit for compliance](https://www.sumologic.com/blog/what-to-expect-when-youre-expecting-a-cybersecurity-audit-for-compliance/)
 * Guide: [NIS2 compliance guide](https://www.sumologic.com/brief/nis2-compliance-guide/)
+* Brief: [PCI DSS Compliance](https://www.sumologic.com/briefs/pci-dss-compliance-solution)

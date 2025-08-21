@@ -15,9 +15,9 @@ Sumo Logic APIs follow Representational State Transfer (REST) patterns and are o
 
 ## Documentation
 
-To view our main docs, click the link below corresponding to your deployment. If you're not sure, see [How to determine your endpoint](#which-endpoint-should-i-should-use).
+To access our API documentation, navigate to the appropriate link based on your Sumo Logic deployment. If you're not sure, see [Which endpoint should I use?](#which-endpoint-should-i-should-use)
 
-| Deployment | API Docs URL                       |
+| Deployment | API documentation URL                       |
 |:-----------|:----------------------------------|
 | AU         | https://api.au.sumologic.com/docs/  |
 | CA         | https://api.ca.sumologic.com/docs/  |

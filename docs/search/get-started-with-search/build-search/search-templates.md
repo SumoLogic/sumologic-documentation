@@ -3,12 +3,31 @@ id: search-templates
 title: Search Templates
 description: Search templates narrow down your queries into a few parameters that other users can edit to find the data they need.
 ---
+import Iframe from 'react-iframe';
 
 Search templates can help you simplify searches for your users by giving them a few easy input choices. You can have search templates  replace any text in a query, including fields, keywords, and arguments to operators. You can also determine what type of information is valid such as text, strings, and keywords.
 
 Behind the scenes, selecting the parts of your query to use in the template is also pretty easy.  You can select which parts of your search should be available and click **Create Parameter**.
 
 Search templates work with [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic). They are not supported with our newer [lookup tables](/docs/search/lookup-tables).
+
+:::sumo Micro Lesson
+
+Watch this micro lesson to learn how to use search template parameters.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/ja6kruhhp3?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Using Search Template Parameters Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ## Create a general Search Template
 
