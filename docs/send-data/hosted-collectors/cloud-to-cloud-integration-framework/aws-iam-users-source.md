@@ -9,6 +9,7 @@ description: Learn how to collect the IAM User Inventory logs from the AWS SDK a
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 <img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="logo" width="80" />
 
