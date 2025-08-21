@@ -23,7 +23,7 @@ Now that you have created a new Dashboard, you can populate it with panels tha
 To add a panel to a new Dashboard, do the following:
 
 1. Select a panel type by clicking the corresponding icon. To know more about panels, refer to [Choosing a panel type](/docs/dashboards/panels).<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
-1. You are prompted to [provide a query](#add-log-query]). 
+1. You are prompted to [provide a query](#add-a-log-query]). 
 1. If you have selected the parent org while creating the dashboard, you will be able to select the child org under which the panel query need to run.
     :::note
     The autocomplete feature while writing the query will run with respect to the selected child org.
