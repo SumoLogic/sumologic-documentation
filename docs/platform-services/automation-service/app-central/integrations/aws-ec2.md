@@ -50,6 +50,7 @@ Using the integration with EC2, you can enrich incidents with specific EC2 data,
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
 import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
@@ -72,7 +73,11 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-ec2-configuration.png')} style={{border:'1px solid gray'}} alt="AWS EC2 configuration" width="400"/>
 
+For information about AWS EC2, see [EC2 documentation](https://docs.aws.amazon.com/ec2/).
+
 <IntegrationsAuthAWS/>
+
+### AWS IAM role-based access
 
 <IAMConfiguration/>
 
@@ -102,8 +107,6 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
   ec2:TerminateInstances
   ec2:UnmonitorInstances
 ```
-
-For information about AWS EC2, see [EC2 documentation](https://docs.aws.amazon.com/ec2/).
 
 ## Change Log
 

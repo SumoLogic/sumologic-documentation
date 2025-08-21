@@ -34,6 +34,7 @@ To [get access key and secret access key](https://docs.aws.amazon.com/athena/lat
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
 import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
@@ -58,7 +59,11 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-athena-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Athena configuration" width="400"/>
 
+For information about Amazon Athena, see [Athena documentation](https://docs.aws.amazon.com/athena/).
+
 <IntegrationsAuthAWS/>
+
+### AWS IAM role-based access
 
 <IAMConfiguration/>
 
@@ -81,8 +86,6 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
   s3:PutObject
   s3:ListBucket
 ```
-
-For information about Amazon Athena, see [Athena documentation](https://docs.aws.amazon.com/athena/).
 
 ## External Libraries
 

@@ -25,6 +25,7 @@ Amazon CloudFront integrates with AWS Identity and Access Management (IAM), a se
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
 import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
@@ -50,7 +51,11 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-cloudfront-configuration.png')} style={{border:'1px solid gray'}} alt="AWS CloudFront configuration" width="400"/>
 
+For information about AWS CloudFront, see [CloudFront documentation](https://docs.aws.amazon.com/cloudfront/).
+
 <IntegrationsAuthAWS/>
+
+### AWS IAM role-based access
 
 <IAMConfiguration/>
 
@@ -59,8 +64,6 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
   cloudfront:ListCloudFrontOriginAccessIdentities
   cloudfront:GetCloudFrontOriginAccessIdentity
 ```
-
-For information about AWS CloudFront, see [CloudFront documentation](https://docs.aws.amazon.com/cloudfront/).
 
 ## Change Log
 

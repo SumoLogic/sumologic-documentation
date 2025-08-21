@@ -24,6 +24,7 @@ Amazon Inspector enables you to analyze the behavior of your AWS resources and t
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
 import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
@@ -46,9 +47,13 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
    
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-inspector-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Inspector configuration" width="400"/>
 
+For information about AWS Inspector, see [Inspector documentation](https://docs.aws.amazon.com/inspector/).
+
 <IntegrationsAuthAWS/>
 
-For information about AWS Inspector, see [Inspector documentation](https://docs.aws.amazon.com/inspector/).
+### AWS IAM role-based access
+
+<IAMConfiguration/>
 
 ## Change Log
 
