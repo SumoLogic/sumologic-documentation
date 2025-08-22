@@ -1,7 +1,17 @@
 ---
 id: azure-database-for-mysql
 title: Azure Database for MySQL
-description: Learn about the Sumo Logic collection process for the Azure Database for MySQL service.
+keywords: 
+ - azure mysql
+ - azure database for mysql
+ - database in azure
+ - azure dbass
+ - mysql microsoft
+ - mysql
+ - mysql database
+ - mysql monitor
+ - mysql integration
+description: This document outlines what is Azure Database for MySQL, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -217,3 +227,8 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 ### HTTP Logs and Metrics Source used by Azure Functions
 
 To troubleshoot metrics collection, follow the instructions in *Collect Metrics from Azure Monitor* for [Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
+
+## Additional resources
+
+- Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
+- Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)
