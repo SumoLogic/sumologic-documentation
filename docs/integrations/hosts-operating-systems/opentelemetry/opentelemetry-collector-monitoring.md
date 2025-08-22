@@ -1,8 +1,8 @@
 ---
-id: opentelemetry-collector-monitoring
-title: OpenTelemetry Collector Monitoring
-sidebar_label: OpenTelemetry Collector Monitoring
-description: Learn about the Sumo Logic OpenTelemetry Collector Monitoring app.
+id: opentelemetry-collector-insights
+title: OpenTelemetry Collector Insights
+sidebar_label: OpenTelemetry Collector Insights
+description: Learn about the Sumo Logic OpenTelemetry Collector Insights app.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic OpenTelemetry Collector Monitoring app provides comprehensive monitoring and observability for your OpenTelemetry Collector instances. Monitor collector performance, telemetry data flow, resource utilization, and troubleshoot data collection issues with preconfigured dashboards and alerts. Track metrics and logs to ensure your telemetry pipeline is running smoothly and efficiently.
+The Sumo Logic OpenTelemetry Collector Insights app provides comprehensive monitoring and observability for your OpenTelemetry Collector instances. Monitor collector performance, telemetry data flow, resource utilization, and troubleshoot data collection issues with preconfigured dashboards and alerts. Track metrics and logs to ensure your telemetry pipeline is running smoothly and efficiently.
 
 This app supports OpenTelemetry Collector version **0.130.1-sumo-0** and later versions.
 
@@ -20,12 +20,12 @@ We use the OpenTelemetry collector's built-in internal telemetry capabilities to
 The diagram below illustrates the components of the OpenTelemetry Collector self-monitoring setup. The collector is configured to export its own telemetry data (metrics and logs) to Sumo Logic through OTLP/HTTP endpoints.
 
 :::info
-This app includes [built-in monitors](#opentelemetry-collector-monitoring-alerts). For details on creating custom monitors, refer to [Create monitors for OpenTelemetry Collector Monitoring app](#create-monitors-for-opentelemetry-collector-monitoring-app).
+This app includes [built-in monitors](#opentelemetry-collector-insights-alerts). For details on creating custom monitors, refer to [Create monitors for OpenTelemetry Collector Insights app](#create-monitors-for-opentelemetry-collector-insights-app).
 :::
 
-## Fields creation in Sumo Logic for OpenTelemetry Collector Monitoring
+## Fields creation in Sumo Logic for OpenTelemetry Collector Insights
 
-Following are the [fields](/docs/manage/fields/) which will be created as part of OpenTelemetry Collector Monitoring app installation, if not already present.
+Following are the [fields](/docs/manage/fields/) which will be created as part of OpenTelemetry Collector Insights app installation, if not already present.
 
 - **sumo.datasource**. Has fixed value of **otel_collector**.
 - **_contentType**. Has fixed value of **OpenTelemetry**.
@@ -314,7 +314,7 @@ sumo.datasource=otel_collector metric=otelcol_exporter_queue_size deployment.env
 | avg by exporter, deployment.environment
 ```
 
-## Viewing OpenTelemetry Collector Monitoring dashboards
+## Viewing OpenTelemetry Collector Insights dashboards
 
 All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
 - You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
@@ -322,7 +322,7 @@ All dashboards have a set of filters that you can apply to the entire dashboard.
 
 ### Overview
 
-The **OpenTelemetry Collector - Overview** dashboard provides a high-level view of your OpenTelemetry Collector fleet's health and performance. This is your starting point for monitoring collector instances.
+The **OpenTelemetry Collector Insights - Overview** dashboard provides a high-level view of your OpenTelemetry Collector fleet's health and performance. This is your starting point for monitoring collector instances.
 
 Use this dashboard to:
 - Monitor the overall health of your collector fleet
@@ -334,7 +334,7 @@ Use this dashboard to:
 
 ### Logs
 
-The **OpenTelemetry Collector - Logs** dashboard provides detailed insights into collector log output for root-cause analysis of errors, data dropping events, and restarts.
+The **OpenTelemetry Collector Insights - Logs** dashboard provides detailed insights into collector log output for root-cause analysis of errors, data dropping events, and restarts.
 
 Use this dashboard to:
 - Analyze error patterns and troubleshoot issues
@@ -346,7 +346,7 @@ Use this dashboard to:
 
 ### Pipeline: Receiver Health
 
-The **OpenTelemetry Collector - Pipeline: Receiver Health** dashboard focuses exclusively on the data ingestion stage of the pipeline to monitor data sources and receiver performance.
+The **OpenTelemetry Collector Insights - Pipeline: Receiver Health** dashboard focuses exclusively on the data ingestion stage of the pipeline to monitor data sources and receiver performance.
 
 Use this dashboard to:
 - Monitor receiver performance and data ingestion rates
@@ -358,7 +358,7 @@ Use this dashboard to:
 
 ### Pipeline: Processor Health
 
-The **OpenTelemetry Collector - Pipeline: Processor Health** dashboard is crucial for understanding if any processors (like batch, memory_limiter, or resourcedetection) are dropping data or causing performance issues.
+The **OpenTelemetry Collector Insights - Pipeline: Processor Health** dashboard is crucial for understanding if any processors (like batch, memory_limiter, or resourcedetection) are dropping data or causing performance issues.
 
 Use this dashboard to:
 - Monitor processor performance and throughput
@@ -370,7 +370,7 @@ Use this dashboard to:
 
 ### Pipeline: Exporter Health
 
-The **OpenTelemetry Collector - Pipeline: Exporter Health** dashboard is the most critical dashboard for diagnosing backpressure and data loss at the egress stage of the pipeline.
+The **OpenTelemetry Collector Insights - Pipeline: Exporter Health** dashboard is the most critical dashboard for diagnosing backpressure and data loss at the egress stage of the pipeline.
 
 Use this dashboard to:
 - Monitor exporter performance and success rates
@@ -382,7 +382,7 @@ Use this dashboard to:
 
 ### Resource Utilization
 
-The **OpenTelemetry Collector - Resource Utilization** dashboard provides a deep dive into the collector's own resource consumption to diagnose performance issues and plan for capacity.
+The **OpenTelemetry Collector Insights - Resource Utilization** dashboard provides a deep dive into the collector's own resource consumption to diagnose performance issues and plan for capacity.
 
 Use this dashboard to:
 - Monitor CPU, memory, and disk usage by collectors
@@ -431,20 +431,17 @@ Configure different log levels for troubleshooting:
 - **WARN**: Warning messages about potential issues
 - **ERROR**: Error conditions that need attention
 
-## Create monitors for OpenTelemetry Collector Monitoring app
+## Create monitors for OpenTelemetry Collector Insights app
 
 import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### OpenTelemetry Collector Monitoring alerts
+### OpenTelemetry Collector Insights Alerts
 
-| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+| Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `OpenTelemetry Collector - High Memory Usage Alert` | This alert gets triggered when collector memory usage exceeds 80% of available memory. | Count >= 80 | Count < 80 |
-| `OpenTelemetry Collector - High CPU Usage Alert` | This alert gets triggered when collector CPU usage exceeds 80% for more than 5 minutes. | Count >= 80 | Count < 80 |
-| `OpenTelemetry Collector - Pipeline Data Loss Alert` | This alert gets triggered when data drops are detected in the collector pipeline. | Count >= 1 | Count < 1 |
-| `OpenTelemetry Collector - Exporter Failure Alert` | This alert gets triggered when export failures exceed the acceptable threshold. | Count >= 5 | Count < 5 |
-| `OpenTelemetry Collector - Collector Down Alert` | This alert gets triggered when a collector instance stops reporting metrics. | Count >= 1 | Count < 1 |
-| `OpenTelemetry Collector - High Queue Utilization Alert` | This alert gets triggered when exporter queue utilization exceeds 90%. | Count >= 90 | Count < 90 |
-| `OpenTelemetry Collector - Receiver Refusal Rate Alert` | This alert gets triggered when receivers are refusing data at a high rate. | Count >= 10 | Count < 10 |
+| `OpenTelemetry Collector Insights - Collector Instance is Down` | This alert fires when a Collector instance stops sending telemetry for more than 10 minutes, indicating it is down or has a connectivity issue. | Missing Data | Data Found |
+| `OpenTelemetry Collector Insights - Exporter Queue Nearing Capacity` | This alert fires when an exporter's sending queue is over 90% full. This is a strong leading indicator of back pressure and imminent data loss. | Count > = 90 | Count < 90 |
+| `OpenTelemetry Collector Insights - High Memory Usage (RSS)` | This alert fires when a Collector's memory usage (RSS) exceeds 2GB. This could be an early indicator of a memory leak or an under-provisioned host. | Count > 2000000000 | Count < = 2000000000 |
+| `OpenTelemetry Collector Insights  - High Metadata Cardinality` | This alert fires when the batch processor is handling more than 1000 unique combinations of metadata. This is a known cause of performance degradation, high CPU, and high memory usage. | Count > 1000 | Count < = 1000 |
