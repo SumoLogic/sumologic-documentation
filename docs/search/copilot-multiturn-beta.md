@@ -127,6 +127,7 @@ Here are some common cases:
 * For dashboard-aware translations via RAG, support is limited to the `sourceCategory` filter (selection in the source picker) at launch. Other expressions like `_index=` or `_sourceHost=` are not yet supported.  
 * RAG only considers dashboards that have been opened in the last 90 days when interpreting your query.
 * Very large or highly complex queries may time out or trigger structured fallback responses.
+* Multi-turn Copilot is available for log-based searches only. Metrics and Metric Searches are not supported in this Beta.
 </details>
 
 ## Additional resources
