@@ -15,7 +15,7 @@ You can also view data from audit indexes in dashboards when you install these a
 * [**Sumo Logic Flex App**](/docs/integrations/sumo-apps/flex). Display data from the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index).
 
 :::note
-Availability of the indexes differs according to your account type. You can enable access to audit indexes in the **Policies** tab. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
+Availability of the indexes differs according to your account type. You can enable access to audit indexes in the **Policies** tab. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
 :::
 
 :::tip

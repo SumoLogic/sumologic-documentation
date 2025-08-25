@@ -45,7 +45,7 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 
 To configure a cloud syslog source, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 1. Select **Cloud Syslog**.
 1. Enter a **Name** to display for this source in Sumo Logic. Description is optional.

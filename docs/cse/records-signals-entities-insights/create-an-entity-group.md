@@ -46,7 +46,7 @@ It’s possible to define entity groups that overlap, in terms of the entities t
 
 Follow these instructions to create an entity group based on entity name or whether the entity is within a specified range of IP addresses.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Entities** select **Groups**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Groups**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  
 1. On the **Entity Groups** page, click **+ Add Entity Group**.
 1. The **Add Entity Group** popup appears. (In the screenshot below, values are already entered.)<br/><img src={useBaseUrl('/img/cse/create-entity-group-values.png')} alt="Create an entity group based on attributes" style={{border: '1px solid gray'}} width="400" />
 1. **Name**. Enter a name for the entity group.
@@ -81,7 +81,7 @@ Follow these instructions to create an entity group based on entity name or whet
 
 Follow these instructions to create an entity group that corresponds to a group in an inventory service in your infrastructure.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Entities** select **Groups**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Groups**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  
 1. On the **Entity Groups** page, click **+ Add Entity Group**.
 1. The **Add Entity Group** popup appears. (In the screenshot below, values are already entered.) <br/><img src={useBaseUrl('/img/cse/create-entity-group-inventory.png')} alt="Create an entity group based on inventory" style={{border: '1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the entity group.

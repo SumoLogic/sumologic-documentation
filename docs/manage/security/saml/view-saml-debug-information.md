@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the SAML page, in the main Sumo Logic menu select **Administration > Security > SAML**. 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the SAML page, in the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the SAML page, in the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
  
 
 When you select the Debug Mode option for SAML, whenever an error occurs a debug page displays. 
