@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Sumo Logic OpenTelemetry Collector Insights app provides comprehensive monitoring and observability for your OpenTelemetry Collector instances. Monitor collector performance, telemetry data flow, resource utilization, and troubleshoot data collection issues with preconfigured dashboards and alerts. Track metrics and logs to ensure your telemetry pipeline is running smoothly and efficiently.
 
-This app supports OpenTelemetry Collector version **0.130.1-sumo-0** and later versions.
+This app supports OpenTelemetry Collector version `0.130.1-sumo-0` and later versions.
 
 We use the OpenTelemetry collector's built-in internal telemetry capabilities to collect metrics and logs about the collector itself. By default, the Collector exposes its own telemetry through internal metrics (via Prometheus interface on port 8888) and logs (emitted to stderr).
 
@@ -27,24 +27,24 @@ This app includes [built-in monitors](#opentelemetry-collector-insights-alerts).
 
 Following are the [fields](/docs/manage/fields/) which will be created as part of OpenTelemetry Collector Insights app installation, if not already present.
 
-- **sumo.datasource**. Has fixed value of **otel_collector**.
-- **_contentType**. Has fixed value of **OpenTelemetry**.
-- **deployment.environment**. User configured. Enter a name to identify your deployment environment.
+- `sumo.datasource`. Has fixed value of `otel_collector`.
+- `_contentType`. Has fixed value of `OpenTelemetry`.
+- `deployment.environment`. User configured. Enter a name to identify your deployment environment.
 
 ## Prerequisites
 
-### For OTLP Endpoint Configuration
+### For OTLP endpoint configuration
 
 Before configuring the OTEL Collector integration, ensure you have the following prerequisites in place:
 
-1. **OTLP Endpoint**: You need a valid base OTLP endpoint URL. The system will automatically append `/v1/logs` for logs collection and `/v1/metrics` for metrics collection. The endpoint should be accessible from your OTEL Collector instance.
+1. **OTLP Endpoint**. You need a valid base OTLP endpoint URL. The system will automatically append `/v1/logs` for logs collection and `/v1/metrics` for metrics collection. The endpoint should be accessible from your OTEL Collector instance.
 
-2. **Network Access**: Ensure that your OTEL Collector has network access to the configured OTLP endpoint. This includes:
+2. **Network Access**. Ensure that your OTEL Collector has network access to the configured OTLP endpoint. This includes:
    - Outbound HTTPS connectivity on port 443
    - Proper firewall configurations to allow traffic to the endpoint
    - DNS resolution for the endpoint hostname
 
-3. **Authentication**: If your OTLP endpoint requires authentication, ensure you have the proper credentials or tokens configured.
+3. **Authentication**. If your OTLP endpoint requires authentication, ensure you have the proper credentials or tokens configured.
 
 ### For metrics collection
 
@@ -90,16 +90,16 @@ In this step, you will configure the OpenTelemetry Collector's built-in telemetr
 The collector's service configuration needs to be updated to enable telemetry export. Below is the required configuration that should be added to your collector's service section:
 
 **Required Inputs:**
-- **OTLP Endpoint**: Your Sumo Logic OTLP endpoint base URL
-- **Deployment Environment**: Enter a name to identify your deployment environment
+- **OTLP Endpoint**. Your Sumo Logic OTLP endpoint base URL
+- **Deployment Environment**. Enter a name to identify your deployment environment
 
 **Configuration Parameters:**
-- **Endpoint Format**: The base endpoint automatically creates:
+- **Endpoint Format**. The base endpoint automatically creates:
   - Logs endpoint: `${OTLP_ENDPOINT}/v1/logs`
   - Metrics endpoint: `${OTLP_ENDPOINT}/v1/metrics`
-- **Protocol**: HTTP/protobuf for OTLP communication
-- **Metrics level**: Set to **detailed** for comprehensive monitoring
-- **Logs level**: Set to **debug** for detailed troubleshooting information
+- **Protocol**. HTTP/protobuf for OTLP communication
+- **Metrics level**. Set to **detailed** for comprehensive monitoring
+- **Logs level**. Set to **debug** for detailed troubleshooting information
 
 ```yaml
 service:
@@ -215,11 +215,11 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 ### Validation
 
 After installation, verify that:
-1. The OTEL Collector service is running
-2. The configured base endpoint is reachable
-3. Data is being successfully sent to both the logs (`/v1/logs`) and metrics (`/v1/metrics`) endpoints
-4. Resource attributes are properly applied to the telemetry data
-5. Internal metrics are accessible at `http://localhost:8888/metrics`
+1. The OTEL Collector service is running.
+2. The configured base endpoint is reachable.
+3. Data is being successfully sent to both the logs (`/v1/logs`) and metrics (`/v1/metrics`) endpoints.
+4. Resource attributes are properly applied to the telemetry data.
+5. Internal metrics are accessible at `http://localhost:8888/metrics`.
 
 ## Sample log messages
 
@@ -325,10 +325,10 @@ All dashboards have a set of filters that you can apply to the entire dashboard.
 The **OpenTelemetry Collector Insights - Overview** dashboard provides a high-level view of your OpenTelemetry Collector fleet's health and performance. This is your starting point for monitoring collector instances.
 
 Use this dashboard to:
-- Monitor the overall health of your collector fleet
-- Identify performance bottlenecks and resource constraints
-- Track data flow and processing rates across collectors
-- Quickly spot collectors experiencing issues
+- Monitor the overall health of your collector fleet.
+- Identify performance bottlenecks and resource constraints.
+- Track data flow and processing rates across collectors.
+- Quickly spot collectors experiencing issues.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Overview.png' alt="Overview" />
 
@@ -337,10 +337,10 @@ Use this dashboard to:
 The **OpenTelemetry Collector Insights - Logs** dashboard provides detailed insights into collector log output for root-cause analysis of errors, data dropping events, and restarts.
 
 Use this dashboard to:
-- Analyze error patterns and troubleshoot issues
-- Monitor collector startup and shutdown events
-- Identify data loss or processing problems
-- Track log severity trends across your collector fleet
+- Analyze error patterns and troubleshoot issues.
+- Monitor collector startup and shutdown events.
+- Identify data loss or processing problems.
+- Track log severity trends across your collector fleet.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Logs.png' alt="Logs" />
 
@@ -349,10 +349,10 @@ Use this dashboard to:
 The **OpenTelemetry Collector Insights - Pipeline: Receiver Health** dashboard focuses exclusively on the data ingestion stage of the pipeline to monitor data sources and receiver performance.
 
 Use this dashboard to:
-- Monitor receiver performance and data ingestion rates
-- Identify issues with data sources and input connections
-- Track receiver-specific errors and failures
-- Analyze accepted vs refused data points
+- Monitor receiver performance and data ingestion rates.
+- Identify issues with data sources and input connections.
+- Track receiver-specific errors and failures.
+- Analyze accepted vs refused data points.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Pipeline-Receiver-Health.png' alt="Pipeline Receiver Health" />
 
@@ -361,10 +361,10 @@ Use this dashboard to:
 The **OpenTelemetry Collector Insights - Pipeline: Processor Health** dashboard is crucial for understanding if any processors (like batch, memory_limiter, or resourcedetection) are dropping data or causing performance issues.
 
 Use this dashboard to:
-- Monitor processor performance and throughput
-- Identify data drops or processing bottlenecks
-- Track processor-specific configurations and health
-- Analyze batch processing efficiency and triggers
+- Monitor processor performance and throughput.
+- Identify data drops or processing bottlenecks.
+- Track processor-specific configurations and health.
+- Analyze batch processing efficiency and triggers.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Pipeline-Processor-Health.png' alt="Pipeline Processor Health" />
 
@@ -373,10 +373,10 @@ Use this dashboard to:
 The **OpenTelemetry Collector Insights - Pipeline: Exporter Health** dashboard is the most critical dashboard for diagnosing backpressure and data loss at the egress stage of the pipeline.
 
 Use this dashboard to:
-- Monitor exporter performance and success rates
-- Identify backpressure issues and export failures
-- Track data delivery to downstream systems
-- Analyze queue utilization and capacity
+- Monitor exporter performance and success rates.
+- Identify backpressure issues and export failures.
+- Track data delivery to downstream systems.
+- Analyze queue utilization and capacity.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Pipeline-Exporter-Health.png' alt="Pipeline Exporter Health" />
 
@@ -385,18 +385,20 @@ Use this dashboard to:
 The **OpenTelemetry Collector Insights - Resource Utilization** dashboard provides a deep dive into the collector's own resource consumption to diagnose performance issues and plan for capacity.
 
 Use this dashboard to:
-- Monitor CPU, memory, and disk usage by collectors
-- Plan capacity and resource allocation
-- Identify resource constraints and optimization opportunities
-- Track heap allocation and garbage collection patterns
+- Monitor CPU, memory, and disk usage by collectors.
+- Plan capacity and resource allocation.
+- Identify resource constraints and optimization opportunities.
+- Track heap allocation and garbage collection patterns.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Resource-Utilization.png' alt="Resource Utilization" />
 
 ## Troubleshooting
 
-### Common Issues
+### Common issues
 
-**Collector connection failure**: If your collector fails to connect to Sumo Logic, you may need to configure proxy settings. Check the collector's logs for connection errors:
+##### Collector connection failure
+
+If your collector fails to connect to Sumo Logic, you may need to configure proxy settings. Check the collector's logs for connection errors:
 
 ```bash
 # On systemd systems
@@ -405,17 +407,21 @@ journalctl --unit otelcol-sumo
 # Look for errors like "Unable to get a heartbeat"
 ```
 
-**High queue utilization**: Monitor the `otelcol_exporter_queue_size` and `otelcol_exporter_queue_capacity` metrics. If the queue is consistently full, you may need to:
+##### High queue utilization
+
+Monitor the `otelcol_exporter_queue_size` and `otelcol_exporter_queue_capacity` metrics. If the queue is consistently full, you may need to:
 - Reduce data ingestion rate
 - Increase queue capacity
 - Scale horizontally with more collectors
 
-**Data dropping**: Watch for logs containing "Dropping data because sending_queue is full" and monitor failed enqueue metrics:
+##### Data dropping
+
+Watch for logs containing "Dropping data because sending_queue is full" and monitor failed enqueue metrics:
 - `otelcol_exporter_enqueue_failed_spans`
 - `otelcol_exporter_enqueue_failed_metric_points` 
 - `otelcol_exporter_enqueue_failed_log_records`
 
-### Accessing Collector Metrics Directly
+### Accessing collector metrics directly
 
 By default, the collector's internal metrics are available in Prometheus format at `http://localhost:8888/metrics`. You can access them using:
 
@@ -423,13 +429,13 @@ By default, the collector's internal metrics are available in Prometheus format 
 curl http://localhost:8888/metrics
 ```
 
-### Log Levels and Configuration
+### Log levels and configuration
 
 Configure different log levels for troubleshooting:
-- **DEBUG**: Most verbose, includes detailed trace information
-- **INFO**: Standard operational information (default)
-- **WARN**: Warning messages about potential issues
-- **ERROR**: Error conditions that need attention
+- **DEBUG**. Most verbose, includes detailed trace information
+- **INFO**. Standard operational information (default)
+- **WARN**. Warning messages about potential issues
+- **ERROR**. Error conditions that need attention
 
 ## Create monitors for OpenTelemetry Collector Insights app
 
