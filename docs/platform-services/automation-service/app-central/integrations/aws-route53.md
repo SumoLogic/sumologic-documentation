@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.1  
-Updated: Jun 21, 2023***
+***Version: 1.2  
+Updated: August 19, 2025***
 
 Interact with DNS records through AWS Route 53.
 
@@ -31,11 +31,13 @@ import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-a
 import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../../../reuse/automation-service/aws/iam-role.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
 import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
 import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
 
 <IntegrationsAuth/>
 
@@ -43,17 +45,22 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * **URL**. Enter your [AWS Route 53 URL](https://docs.aws.amazon.com/general/latest/gr/r53.html), for example, `route53.amazonaws.com`.
 * <AWSAccesskey/>
 * <AWSSecret/>
+* <AWSIAMRole/>
 * <AWSRegions/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-route53-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Route 53 configuration" width="400"/>
 
+For information about AWS Route 53, see [Route 53 documentation](https://docs.aws.amazon.com/route53/).
+
 <IntegrationsAuthAWS/>
 
-For information about AWS Route 53, see [Route 53 documentation](https://docs.aws.amazon.com/route53/).
+### AWS IAM role-based access
+<IAMConfiguration/>
 
 ## Change Log
 
 * December 24, 2019 - First upload
 * June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
+* August 19, 2025 (v1.2) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
