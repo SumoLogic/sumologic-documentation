@@ -2494,6 +2494,7 @@ integrations: [
               'integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry',
               'integrations/hosts-operating-systems/opentelemetry/macos-opentelemetry',
               'integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry',
+              'integrations/hosts-operating-systems/opentelemetry/opentelemetry-collector-insights',
             ],
           },
           'integrations/hosts-operating-systems/host-metrics',
