@@ -330,7 +330,7 @@ Use this dashboard to:
 - Track data flow and processing rates across collectors
 - Quickly spot collectors experiencing issues
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector/OpenTelemetry-Collector-Overview.png' alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Overview.png' alt="Overview" />
 
 ### Logs
 
@@ -342,7 +342,7 @@ Use this dashboard to:
 - Identify data loss or processing problems
 - Track log severity trends across your collector fleet
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector/OpenTelemetry-Collector-Logs.png' alt="Logs" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Logs.png' alt="Logs" />
 
 ### Pipeline: Receiver Health
 
@@ -354,7 +354,7 @@ Use this dashboard to:
 - Track receiver-specific errors and failures
 - Analyze accepted vs refused data points
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector/OpenTelemetry-Collector-Pipeline-Receiver-Health.png' alt="Pipeline Receiver Health" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Pipeline-Receiver-Health.png' alt="Pipeline Receiver Health" />
 
 ### Pipeline: Processor Health
 
@@ -366,7 +366,7 @@ Use this dashboard to:
 - Track processor-specific configurations and health
 - Analyze batch processing efficiency and triggers
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector/OpenTelemetry-Collector-Pipeline-Processor-Health.png' alt="Pipeline Processor Health" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Pipeline-Processor-Health.png' alt="Pipeline Processor Health" />
 
 ### Pipeline: Exporter Health
 
@@ -378,7 +378,7 @@ Use this dashboard to:
 - Track data delivery to downstream systems
 - Analyze queue utilization and capacity
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector/OpenTelemetry-Collector-Pipeline-Exporter-Health.png' alt="Pipeline Exporter Health" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Pipeline-Exporter-Health.png' alt="Pipeline Exporter Health" />
 
 ### Resource Utilization
 
@@ -390,7 +390,7 @@ Use this dashboard to:
 - Identify resource constraints and optimization opportunities
 - Track heap allocation and garbage collection patterns
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector/OpenTelemetry-Collector-Resource-Utilization.png' alt="Resource Utilization" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/OpenTelemetry-Collector-Resource-Utilization.png' alt="Resource Utilization" />
 
 ## Troubleshooting
 
