@@ -149,8 +149,6 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 ## R
 
-**Real Time**. As in Real Time alerts. Use two words, no hyphen. Should always be capitalized when referring to Real Time alerts, as that is a feature name. Not capitalized for a general use, as in "real time analysis".
-
 **Repo**. Short for repository. No need to spell out repository as our audience is technical enough for this to be clear.
 
 

@@ -180,3 +180,6 @@ Following is an example configuration for a case where the customer has a domain
 
 <img src={useBaseUrl('img/cse/Example_UI.png')} alt="Configuration example" style={{border: '1px solid gray'}} width="600"/>
 
+## Additional resources
+
+Blog: [What’s going on? The power of normalization in Cloud SIEM](https://www.sumologic.com/blog/whats-going-on-normalization-cloud-siem)

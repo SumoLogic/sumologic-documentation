@@ -2,7 +2,13 @@
 
 User-agent: *
 Disallow: /docs/reuse/
-Disallow: /docs/tags/
+Disallow: /tags/
+Disallow: /*?tags=
+Disallow: /adler32/
+Disallow: /deki/
+Disallow: /crc32/
+Disallow: /zlib/
+Disallow: /inffast/
 Disallow: /ja/docs/
 Disallow: /cid-redirects.json/
 Disallow: /files/

@@ -135,4 +135,3 @@ Each budget type (daily, weekly, monthly, or query) is treated independently, wi
 
 As long as you are within the limits of each budget type, usage will be attributed independently to each budget type. If you exceed any one budget type, the action for that budget will be applied. But usage will still be reported to other budgets if they have available capacity. For example, if the daily limit and monthly limit is set to 100GB and 300GB respectively, and if you have used 50 GB of your daily limit, then this usage will be reported to both the daily and monthly budgets as long as they are within their capacity. The query budget only tracks the size in GB per query, so the user will still be within the query budget if the query size limit is not breached.
 
-

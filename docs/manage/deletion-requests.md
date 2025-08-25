@@ -12,6 +12,8 @@ description: Learn how to independently and efficiently control or remove your s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<!-- Originally added as a beta article with DOCS-149. -->
+
 Deletion requests allow you to quickly and easily request the removal of ingested data from Sumo Logic. This is particularly useful for removing inadvertently ingested sensitive data.
 
 You can independently and swiftly remove sensitive data, mitigating compliance issues and potential data exposure without needing to contact Sumo Logic support.
@@ -88,9 +90,10 @@ To cancel a data deletion request:
 
 ## Limitations
 
-- You can have up to 2 active deletion requests at a time.   
+- Deletion requests will be processed one by one. 
+- You can create upto 100 deletion requests at a time.
 - Each deletion request can include up to 1 petabyte (PB) of scanned data.   
-- You can delete up to 100,000 messages per request.   
+- You can delete up to 1,000,000 messages per request.   
 - The maximum time range for each deletion request is one year.   
 - Your system can support up to 10 active concurrent deletion tasks across different customers.
 - Ensure that the requests initiated are not deleting the data prior to `1st February 2024`. Any request before this timestamp will fail in creation.

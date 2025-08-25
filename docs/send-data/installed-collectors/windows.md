@@ -2,7 +2,7 @@
 id: windows
 title: Install a Collector on Windows
 sidebar_label: For Windows
-description: Install or uninstall a Collector on a Windows system.
+description: Install and configure the Sumo Logic Installed Collector for Windows to reliably collect logs and metrics from your on-premises infrastructure.
 ---
 
 
@@ -36,7 +36,7 @@ Download the Collector in either of the following ways.
 
 ### Via browser
 
-Open a browser and enter the static URL for your Sumo deployment. See [Which endpoint should I use?](/docs/api/getting-started/#which-endpoint-should-i-should-use) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
+Open a browser and enter the static URL for your Sumo deployment. See [Which endpoint should I use?](/docs/api/about-apis/getting-started/#which-endpoint-should-i-should-use) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
 
 ## Install Collector
 

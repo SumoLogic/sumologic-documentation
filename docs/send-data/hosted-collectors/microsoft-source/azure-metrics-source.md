@@ -5,9 +5,6 @@ sidebar_label: Azure Metrics Source
 description: Learn how to collect Azure metrics.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/azure-metrics/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/azure-metrics/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
@@ -17,6 +14,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 <img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
+
+<!-- Originally added as a beta article with DOCS-460. -->
 
 Azure Metrics Source is used to collect all available metrics from Azure Monitor into Sumo Logic. To obtain a complete list of metrics that are collected using this source, refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/metrics-index#supported-metrics-and-log-categories-by-resource-type).
 
@@ -29,10 +28,10 @@ The Azure Metrics Source requires you to provide **Tenant Id**, **Client Id**
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Navigate to Sumo Logic's [Custom Deployment wizard](https://portal.azure.com/#create/Microsoft.Template/uri/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FRoleAssignmentSubscriptions.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FCreateUIDefSubscriptions.json).
 1. In the **Custom Deployment** page, under **Basics** tab, select the **Subscription**, **Resource Group**, and **Region** in which to deploy the Application, then click **Next**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/basics.png')} alt="basics" style={{border:'1px solid gray'}} width="500"/>
-1. Under the **App Registration** tab:<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/app-registration.png')} alt="app-registration" style={{border:'1px solid gray'}} width="500"/> 
+1. Under the **App Registration** tab:<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/app-registration.png')} alt="app-registration" style={{border:'1px solid gray'}} width="500"/>
     1. Select service principal type as **Create new** to create a new app.
-    1. Click **Change selection** to enter the name and select **Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)** as supported account types. Click **Register** to register the application.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/register.png')} alt="register" style={{border:'1px solid gray'}} width="400"/> 
-1. In the re-directed **Certificates & secrets** page, under **Client secrets** tab, click **+ New client secret**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/new-client-secret.png')} alt="new-client-secret" style={{border:'1px solid gray'}} width="600"/> 
+    1. Click **Change selection** to enter the name and select **Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)** as supported account types. Click **Register** to register the application.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/register.png')} alt="register" style={{border:'1px solid gray'}} width="400"/>
+1. In the re-directed **Certificates & secrets** page, under **Client secrets** tab, click **+ New client secret**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/new-client-secret.png')} alt="new-client-secret" style={{border:'1px solid gray'}} width="600"/>
         1. **Description**. Enter the description of your choice.
         1. **Expires**. From the dropdown, select the expiry time period to the secret value.
         1. Copy and save the **Value**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/client-secrets.png')} alt="client-secrets" style={{border:'1px solid gray'}} width="600"/>   
@@ -40,14 +39,14 @@ The Azure Metrics Source requires you to provide **Tenant Id**, **Client Id**
 1. Close the **Overviews** page to go back to the **Custom Deployment** page.
 1. Enter the copied **Value** in the **Client secret** section, then click **Next**. <br/><img src={useBaseUrl('img/send-data/azure-metrics-source/add-client-secret.png')} alt="add-client-secret" style={{border:'1px solid gray'}} width="500"/>  
 1. Under **Subscription** tab, select the subscriptions from which you would like to collect metrics, then click **Next**. <br/><img src={useBaseUrl('img/send-data/azure-metrics-source/subscriptions.png')} alt="subscriptions" style={{border:'1px solid gray'}} width="500"/>  
-1. Click **Review + Create**. On the **Review + Create** tab review the details and click **Create**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/create.png')} alt="create" style={{border:'1px solid gray'}} width="500"/> 
+1. Click **Review + Create**. On the **Review + Create** tab review the details and click **Create**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/create.png')} alt="create" style={{border:'1px solid gray'}} width="500"/>
 
 ### Source configuration
 
 When you create a Azure Metrics source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the Azure Metrics Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the collectors page, click **Add Source** next to a Hosted Collector.
   :::note
       Make sure the hosted collector is tagged with tenant_name field for the out of the box Azure apps to work. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
@@ -56,8 +55,8 @@ To configure the Azure Metrics Source:
 1. Enter a **Name** to display for the source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Tenant Id**. Enter the Tenant Id collected from [Azure platform](#vendor-configuration).
 1. **Client Id**. Enter the Client Id collected from [Azure platform](#vendor-configuration).
 1. **Client Secret**. Enter the Client Secret collected from [Azure platform](#vendor-configuration).
@@ -87,10 +86,10 @@ To configure the Azure Metrics Source:
 | tenantId | String | Yes | `null` | Enter the tenant Id collected from the Azure platform. | |
 | clientId | String | Yes | `null` | Enter the client Id collected from the Azure platform.| |
 | clientSecret | String | Yes | `null` | Enter the client secret collected from the Azure platform.| |
-| scanInterval | Integer | No | 1 minute | How frequently the integration should collect the metrics data from Azure. <br /> **Options**: 1m or 5m. |  |
+| scanInterval | Integer | No | 1 minute | How frequently the integration should collect the metrics data from Azure. <br/> **Options**: 1m or 5m. |  |
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/azure-metrics/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/azure-metrics/example.json
+```

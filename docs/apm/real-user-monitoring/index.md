@@ -38,19 +38,6 @@ See Real User Monitoring in action.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/3EMl3jyoZjA?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## What You'll Need

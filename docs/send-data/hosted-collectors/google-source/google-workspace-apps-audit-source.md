@@ -63,14 +63,17 @@ To configure a Google Workspace Apps Audit Source:
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   :::note
+   If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM, click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
+   :::
 1. Click **Sign in with Google** to give permission to Sumo Logic to set up watchpoints using **the Google Apps Reports API**. Click **Accept**.
 1. Click **Save**.
 
 To confirm events are being logged, you can compare the data in Sumo Logic to the data shown in **Reports** in the Google Admin console.
 
-# Google App Audit Known Issues
+## Google App Audit Known Issues
 
 A few known issues are due to limitations of the Google API and cannot be changed by Sumo Logic. 
 

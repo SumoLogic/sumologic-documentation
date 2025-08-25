@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.2  
-Updated: Jun 28, 2023***
+***Version: 1.3  
+Updated: August 19, 2025***
 
 Interact with AWS S3 buckets, objects, and policies.
 
@@ -31,11 +31,56 @@ Interact with AWS S3 buckets, objects, and policies.
 ## Configure AWS S3 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../../../reuse/automation-service/aws/iam-role.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
 
 <IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSIAMRole/>
+* <AWSRegions/>
+* **URL**. Enter your [Amazon S3 URL](https://docs.aws.amazon.com/general/latest/gr/s3.html), for example, `s3.us-east-1.amazonaws.com`.
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-s3-configuration.png')} style={{border:'1px solid gray'}} alt="AWS S3 configuration" width="400"/>
+
+<IntegrationsAuthAWS/>
+
+### AWS IAM role-based access
+
+<IAMConfiguration/>
+
+## Required Permissions
+```
+  s3:GetBucketPolicy
+  s3:ListBucket
+  s3:ListAllMyBuckets
+  s3:GetObject
+  s3:PutObject
+  s3:CreateBucket
+  s3:DeleteBucket
+  s3:DeleteBucketPolicy
+  s3:DeleteObject
+  s3:PutBucketPolicy
+```
 
 ## Change Log
 
 * October 3, 2019 - First upload
 * June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
 * June 28, 2023 (v1.2) - Visibility of the Resource fields changed
+* August 19, 2025 (v1.3) - 
+  * Added IAM Role Support - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+  * Added input validation in the *Download File* action.

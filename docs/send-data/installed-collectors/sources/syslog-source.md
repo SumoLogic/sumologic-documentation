@@ -1,9 +1,10 @@
 ---
 id: syslog-source
 title: Syslog Source
-description: The Syslog Source obtains syslog messages by listening on a designated port.
+description: Learn how to configure a Syslog source to collect system and application logs from network devices into Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Syslog Source operates like a syslog server listening on the designated port to receive syslog messages. You set your hosts or syslog-enabled devices to send syslog data to the same port you specify when you configure the Syslog Source.   
 
@@ -25,8 +26,11 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 1. **Port.** Enter the port number for the Source to listen to. If the collector runs as root (default), use 514. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
 1. **Source Category.** Enter a string to tag the collected messages with the searchable metadata field `_sourceCategory`. For example, enter **firewall** to tag all collected messages in a field called `_sourceCategory`. Enter *`_sourceCategory=firewall`* in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories).
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate; each field needs a name (key) and value. <br/>
-     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+     :::note
+     If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM, click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
+     :::
 1. Set any of the following under **Advanced**:
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.

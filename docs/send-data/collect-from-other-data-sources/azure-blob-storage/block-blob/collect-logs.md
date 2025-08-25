@@ -34,19 +34,6 @@ Watch this tutorial to learn how to collect logs from Azure Blob Storage.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/186K2d-FFoc?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Functional overview

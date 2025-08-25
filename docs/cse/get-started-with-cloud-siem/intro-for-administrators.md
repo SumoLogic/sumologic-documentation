@@ -59,7 +59,7 @@ As a Cloud SIEM admin, you'll use both the Sumo Logic UI and the Cloud SIEM UI. 
 
 | Sumo Logic UI | Cloud SIEM UI |
 | :-- | :-- |
-| <ul><li>Add collectors and data sources.</li><li>Write field extraction rues.</li><li>Configure partitions and data tiers</li><li>Forward data to Cloud SIEM.</li><li>Configure RBAC controls.</li></ul> | <ul><li>Configure log and ingest mappings.</li><li>Create custom content, such as rules, match lists, and insights.</li><li>Customize actions, context actions, and other workflows.</li></ul>|
+| <ul><li>Add collectors and data sources.</li><li>Write field extraction rules.</li><li>Configure partitions and data tiers</li><li>Forward data to Cloud SIEM.</li><li>Configure RBAC controls.</li></ul> | <ul><li>Configure log and ingest mappings.</li><li>Create custom content, such as rules, match lists, and insights.</li><li>Customize actions, context actions, and other workflows.</li></ul>|
 
 In the Sumo Logic UI, you'll add the collectors and data sources that will be used in Cloud SIEM. You can write field extraction rules, which help parse your logs so they can be better used as records in Cloud SIEM. You can also configure partitions and data tiers in Sumo Logic, and decide which data gets forwarded to Cloud SIEM. Finally, you configure users and roles for both Sumo Logic and Cloud SIEM using the Sumo Logic interface. 
 
@@ -508,3 +508,15 @@ In this section, you'll create a custom automation using the playbook you create
 1. If errors occur, you can click the **View Playbook** link on the right side to see the Playbook view, along with any execution errors that occurred. For help, see [Troubleshoot playbooks](/docs/platform-services/automation-service/automation-service-playbooks/#troubleshoot-playbooks).
 
 You now have a custom automation that can be manually run or attached to an insight upton creation or closing.
+
+## Additional resources
+
+* Blogs: 
+   * [Securing IaaS, PaaS and SaaS with a Cloud SIEM](https://www.sumologic.com/blog/securing-iaas)
+   * [How using Cloud SIEM dashboards and metrics for daily standups improves SOC efficiency](https://www.sumologic.com/blog/how-using-cloud-siem-dashboards-and-metrics-for-daily-standups-improves-soc-efficiency)
+   * [Weaponizing paranoia: developing a threat detection strategy](https://www.sumologic.com/blog/weaponizing-paranoia-developing-a-threat-detection-strategy)
+   * [Fine-tuning Cloud SIEM detections through machine learning](https://www.sumologic.com/blog/tuning-cloud-siem-machine-learning)
+* Briefs
+   * [8 reasons why you need Sumo Logic for your Cloud SIEM](https://www.sumologic.com/briefs/cloud-siem-8-reasons)
+   * [How to evolve your security with a Cloud SIEM](https://www.sumologic.com/briefs/cloud-siem-enabling-greater-security-maturity-at-every-level)
+* Demo: [Cloud SIEM: MITRE ATT&CK™ coverage explorer](https://www.sumologic.com/demo/mitre-attack-coverage-explorer)

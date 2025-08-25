@@ -24,53 +24,26 @@ For Azure Virtual Machine, you can collect the following logs and metrics:
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+* Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
 You must explicitly enable diagnostic settings for each Virtual Machine you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/VM/ActivityLogs`, `Azure/VM/Metrics`.
 
-### Configure field in field schema
+###  Configure collector
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.
-1. Search for the following fields:
-    - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-    - `location`. The region to which the resource name belongs to.
-    - `subscription_id`. ID associated with a subscription where the resource is present.
-    - `resource_group`. The resource group name where the Azure resource is present.
-    - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
-    - `resource_type`. Azure resource type (for example, storage accounts).
-    - `resource_name`. The name of the resource (for example, storage account name).
-    - `service_type`. Type of the service that can be accessed with a Azure resource.
-    - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances service is Subscriptions).
-1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
-
-### Configure metric rules
-
-* **Azure Observability Metadata Extraction VMName**
-
-  In case this rule already exists, then no need to create it again.
-
-```sql
-Rule Name: AzureObservabilityMetadataExtractionVMName
-```
-
-```sql title="Metric match expression"
-tenant_name=* namespace=Microsoft.Compute/virtualMachines resource_name=*
-```
-
-| Fields extracted | Metric rule    |
-|:--|:--|
-| `vmname`  | `$resource_name._1` |
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure metrics collection
 
-:::note
-The Sumo Logic metrics source for Azure is currently in Beta. To participate, contact your Sumo Logic account executive.
-:::
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 
-1. To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
-1. In the Sumo Logic Azure Metrics source configuration, configure namespaces as `Microsoft.Compute/virtualMachines` and `Microsoft.Compute/virtualMachineScaleSets`.
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-machine-namespaces.png')} alt="Azure Virtual Machine Namespaces" style={{border: '1px solid gray'}} width="500" />
+<MetricsSourceBeta/>
+
+:::note
+Metric Rule `AzureObservabilityMetadataExtractionVMName` will be created automatically as a part of app installation process.
+This metric rule creates new dimension `vmname` for non scale set VMs.
+:::
 
 ### Configure logs collection
 
@@ -95,79 +68,91 @@ Since this source contains logs from multiple regions, make sure that you do not
 
 ## Installing the Azure Virtual Machine app
 
-import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstallNoDataSourceV2/>
+<AppInstallIndexV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region to which the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with a Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure Virtual Machine dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/>
 
 ### Overview
 
 The **Azure Virtual Machine - Overview** dashboard allows you to gain insights into the performance of your VMs by monitoring and analyzing your VM's usage metrics such as VM availability, CPU usage, read/write ops, cache hits, VM usage, and average latencies.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Overview.png')} alt="Azure Key Vault - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Overview.png')} alt="Azure Virtual Machine - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### OS/Disk
 
-The **Azure VM  - OS/Disk** dashboard provides details on the operational activities and status of your Azure VM OS and Data disks.
+The **Azure Virtual Machine - OS/Disk** dashboard provides details on the operational activities and status of your Azure VM OS and Data disks.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+OS%3AData+Disk.png')} alt="Azure Key Vault  - Operations Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+OS%3AData+Disk.png')} alt="Azure Virtual Machine - OS/Disk dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Network
 
-The **Azure VM - Network** dashboard provides detailed information about VM network activities based on incoming and outgoing packets and bytes.
+The **Azure Virtual Machine - Network** dashboard provides detailed information about VM network activities based on incoming and outgoing packets and bytes.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Network.png')} alt="Azure Key Vault - Operations Detailed dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Network.png')} alt="Azure Virtual Machine - Network dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Disk
 
-The **Azure VM - Disk** dashboard provides details on the operational activities and status of your Azure VM disks and premium disks.
+The **Azure Virtual Machine - Disk** dashboard provides details on the operational activities and status of your Azure VM disks and premium disks.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Disk.png')} alt="Azure Key Vault - Errors and Failures dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Disk.png')} alt="Azure Virtual Machine - Disk dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
-The **Azure VM - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Virtual Machine resources. 
+The **Azure Virtual Machine - Administrative Operations** dashboard provides details on the operational activities and status of your Azure Virtual Machine resources.
 
 Use this dashboard to:
 * Monitor the distribution of operation types and their success rates to ensure proper functioning of your Virtual Machine.
 * Identify potential issues by analyzing the top operations causing errors and correlating them with specific users or applications.
 * Track recent write and delete operations to maintain an audit trail of changes made to your Virtual Machine.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Administrative+Operations.png')} alt="Azure Key Vault - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Administrative+Operations.png')} alt="Azure Virtual Machine - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 
-The **Azure Virtual Machine - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Virtual Machine resources. 
+The **Azure Virtual Machine - Policy and Recommendations** dashboard provides details on policy events and recommendations for your Azure Virtual Machine resources.
 
 Use this dashboard to:
 * Monitor the success and failure rates of policy events to ensure proper configuration and compliance.
-* Track and analyse recent recommendations to improve the performance and security of your Vaults setup.
+* Track and analyse recent recommendations to improve the performance and security of your VM setup.
 * Identify trends in policy events and recommendations over time to proactively address potential issues.
-  
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Policy+and+Recommendations.png')} alt="Azure Key Vault - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Policy+and+Recommendations.png')} alt="Azure Virtual Machine - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### CPU
 
-The **Azure VM - CPU** dashboard provides details on the CPU metrics and usage of your Azure VM CPU.
+The **Azure Virtual Machine - CPU** dashboard provides details on the CPU metrics and usage of your Azure VM CPU.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Key Vault - Vault Health dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Virtual Machine - CPU dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cache
 
-The **Azure VM - Cache** dashboard provides details on the status and usage of your Azure VM cache resources.
+The **Azure Virtual Machine - Cache** dashboard provides details on the status and usage of your Azure VM cache resources.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Cache.png')} alt="Azure Key Vault - Compliance dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Cache.png')} alt="Azure Virtual Machine - Cache dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Temp Disk
 
-The **Azure VM - Temp Disk** dashboard provides details on the operational activities and status of your Azure VM Temp Disk.
+The **Azure Virtual Machine - Temp Disk** dashboard provides details on the operational activities and status of your Azure VM Temp Disk.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Temp+Disk.png')} alt="Azure Key Vault - Compliance dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Temp+Disk.png')} alt="Azure Virtual Machine - Temp Disk dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Azure Virtual Machine app
 
@@ -186,12 +171,22 @@ These alerts are metric based and will work for all Virtual Machine.
 | `Azure Virtual Machine - Data Disk IOPs Consumed Monitor` | This alert is triggered when Data Disk IOPs consumption percentage spikes above 95% are detected for any VM. | Count > 95 | Count =< 95 |
 | `Azure Virtual Machine - OS Disk IOPs Consumed Monitor`| This alert is triggered when OS Disk IOPs consumption percentage spikes above 95% are detected for any VM. | Count > 95 | Count =< 95 |
 
-## Upgrade/Downgrade the Azure Virtual Network app (optional)
+## Upgrade/Downgrade the Azure Virtual Machine app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Azure Virtual Network app (optional)
+## Uninstalling the Azure Virtual Machine app (optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Troubleshooting
+
+### App installation failed - Content install error - Rule with name AzureObservabilityMetadataExtractionVMName already exists.
+
+This error occurs if the app being installed attempts to create a Metric Rule by a name (AzureObservabilityMetadataExtractionVMName) which already exists in the org. This Metric Rule could have been created manually and is creating conflict with current app installation flow.
+
+To resolve the issue, delete the existing Metric Rule (AzureObservabilityMetadataExtractionVMName) and reinstall the app.

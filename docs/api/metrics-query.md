@@ -13,7 +13,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 The Metrics Query API allows you to execute queries on various metrics and retrieve multiple time-series (data-points) over time from HTTP endpoints. For information about running a metrics query using the API, see [Executing a query](/docs/api/metrics/#executing-a-query) in *Metrics APIs*.
 
-Here is example content for a `v1/metricQueries` API call:
+Here is example content for a `v1/metricsQueries` API call:
 
 ``` json
 {

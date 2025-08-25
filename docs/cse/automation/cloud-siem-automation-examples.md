@@ -92,7 +92,7 @@ The following example shows how to configure a notification that sends an email 
    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. 
    1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="600"/>
-   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
    1. [Create an access key](/docs/manage/security/access-keys#create-an-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**.
    1. Select your **Time Zone**.
@@ -153,7 +153,7 @@ The following example shows how to configure a notification that sends an email 
 
 ## Advanced example: Configure a custom integration
 
-The following example shows how to create a custom integration with an action that runs a script you provide. The custom integration and action are defined by YAML files. To learn how to build your own YAML files, see [Integration framework file formats](/docs/platform-services/automation-service/automation-service-integration-framework/#integration-framework-file-formats).
+The following example shows how to create a custom integration with an action that runs a script you provide. The custom integration and action are defined by YAML files. To learn how to build your own YAML files, see [Integration framework file formats](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#integration-framework-file-formats).
 
 The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP reputation information for enrichment. (This example shows how to add enrichment to an insight. To use the same action to add enrichment to entities, see [Add entity enrichment](#add-entity-enrichment) below.)
 
@@ -283,7 +283,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. Click **Integrations** in the navigation menu.
    1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="600"/>
-   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
    1. [Create an access key](/docs/manage/security/access-keys#create-an-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**.
    1. Select your **Time Zone**.

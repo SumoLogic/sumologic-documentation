@@ -1,8 +1,8 @@
 ---
 id: role-management-v2
-title: Role Management APIs V2 (Beta)
+title: Role Management APIs V2
 sidebar_label: Roles V2
-description: Role Management APIs V2 (Beta) allow you to manage roles from HTTP endpoints.
+description: Role Management APIs V2 allow you to manage roles from HTTP endpoints.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,8 +10,6 @@ import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="icon" width="50"/>
-
-<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
 
 Roles determine the functions that users are able to perform in Sumo Logic. The Role Management API (V2) allows you to configure access on partitions and manage roles from HTTP endpoints.
 

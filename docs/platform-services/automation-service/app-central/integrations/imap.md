@@ -20,34 +20,57 @@ Allows you to connect your mailbox with Cloud SOAR and receive mail via IMAP pro
 
 * **Incoming Mail Daemon** (*Daemon*) - Automatically get emails using IMAP and save emails.
 
-## Configure IMAP in Cloud SOAR
+## Get Access Key and Access ID
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
-
-<IntegrationsAuth/>
-
-### Get Access Key and Access ID
-
-[Create an access key](/docs/manage/security/access-keys/#create-an-access-key) and copy the resulting **Access ID** and **Access Key**. Store the ID and access key (temporally) into a text editor.
+[Create a Sumo Logic access key](/docs/manage/security/access-keys/#create-an-access-key) and copy the resulting **Access ID** and **Access Key**. Store the ID and access key (temporally) into a text editor.
 
 :::note
 The ID and key won't be available again once you close the confirmation screen.
 :::
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-2.png')} style={{border:'1px solid gray'}} alt="imap" width="300"/>
-1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-3.png')} style={{border:'1px solid gray'}} alt="imap" width="200"/>
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-4.png')} style={{border:'1px solid gray'}} alt="imap" width="100"/>
-1. Populate all the required fields (\*) and then click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-5.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
-    * **IMAP Server**. For example: `Imap.gmail.com`, `Outlook.office365.com`, `Imap.mail.yahoo.com`
-    * **Mailbox Account**. Only required if the Username isn't already an email address (for example: Username: `admin`, Mailbox Account: `admin@test.com`).
-    * **Access ID**. The access ID that you copied earlier.
-    * **Access Key**. The access key that you copied earlier.
-    * **Email Fetch Type (Daemon)**.
-        * **Unseen/Unread**. Only fetch the mails which are currently UNSEEN or UNREAD.
-        * **Fetch From Latest CSOAR Mail**. Fetch all mails from the mail server which are not yet stored on Cloud SOAR. For the first time it will fetch UNSEEN mails for the second run/execution. Pre-Filtering options can be used to pre-filter emails in the mail server. Only pre-filtered emails are imported and analyzed by Cloud SOAR.
+## Configure IMAP in Cloud SOAR
 
-      **Email Fetch Type** and other filters below will be combined with the **AND** operator. Pre-filtered options:
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **IMAP Server**. Enter the IMAP server URL, for example, `Imap.gmail.com`, `Outlook.office365.com`, `Imap.mail.yahoo.com`
+
+* **Port**. Select the IMAP port, either `993 SSL/TLS` or `143`
+
+* **Username**. Enter the username of an admin user authorized to provide authentication for the integration.
+
+* **Password**. Enter the password for the admin user.
+
+* **Connection Security**. Select `SSL/TLS` or `STARTTLS`
+* <IntegrationTimeout/>
+* **Do not allow trusted certificates**. Select to allow untrusted certificates.
+
+* **Mailbox Account**. Enter the mailbox account. Only required if the username isn't already an email address (for example, when for username `admin` the mailbox account is `admin@test.com`).
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+
+* **Email Fetch Type (Daemon)**. Select either:
+   * **Unseen/Unread**. Only fetch the mails which are currently UNSEEN or UNREAD.
+   * **Fetch From Latest CSOAR Mail**. Fetch all mails from the mail server which are not yet stored on Cloud SOAR. For the first time it will fetch UNSEEN mails for the second run/execution. Pre-Filtering options can be used to pre-filter emails in the mail server. Only pre-filtered emails are imported and analyzed by Cloud SOAR. See [Email fetch (daemon)](#email-fetch-daemon) below.
+
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/imap-configuration.png')} style={{border:'1px solid gray'}} alt="IMAP configuration" width="400"/>
+
+### Email fetch (daemon)
+
+**Email Fetch Type** and other filters below will be combined with the **AND** operator. Pre-filtered options:
             * **From**. You can filter email using From or you can use the full domain name. For example, `sumologic.com, sales@sumologic.com`. Based on this example, only the mails coming from Sumo Logic domain or `sales@sumologic.com` will be fetched. This field accepts multiple values separated by a comma. Multiple values will be combined with the OR operator.
             * **To**. Indicate the receiver of the mail. This filter works the same as the From filter. This field accepts multiple values separated by a comma. Multiple values will be combined with the OR operator.
             * **Subject**. Fetch emails based on the subject. This field accepts multiple values separated by a comma. Multiple values will be combined with the OR operator.
@@ -63,12 +86,12 @@ The ID and key won't be available again once you close the confirmation screen.
             * **Not Header**
             * **Header Field Name To Search in Header**
 
-          Behaves similarly to the other pre-filter, but the email elements matching the provided conditions will not be fetched.
+          Behaves similarly to the other pre-filter, but the email elements matching the provided conditions will not be fetched. 
 
-          As specified, all filters will be combined with **AND** operator.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-6.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
+          As specified, all filters will be combined with **AND** operator.
 
-1. Click **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-8.png')} style={{border:'1px solid gray'}} alt="imap" width="100"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-9.png')} style={{border:'1px solid gray'}} alt="imap" width="300"/>
+
+## Additional configuration
 
 ### Testing incoming mail daemon
 

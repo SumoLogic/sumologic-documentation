@@ -23,6 +23,10 @@ The timestamp is the part of a log message that marks the time that an event occ
 
 When configuring a Source, you can choose to use the default timestamp parsing settings, or you can specify a custom format for us to parse timestamps in your log messages. The **Enable Timestamp Parsing** option is selected by default. If it's deselected, no timestamp information is parsed at all. Instead, we stamp logs with the time at which the messages are processed.
 
+:::note Using OpenTelemetry Remote Management (OTRM)?
+This page covers timestamp parsing for standard Sumo Logic sources. If you're using OTRM source templates, refer to [Timestamps, time zones, time ranges, and date formats for OTRM](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference) instead.
+:::
+
 ### Timestamp considerations
 
 By default, we can automatically detect timestamps in your log messages. Automatic detection identifies timestamps in common formats and prefers timestamps that appear early in the message.
@@ -273,7 +277,7 @@ They will see the same data, just displayed using their custom set time zone. Fo
 
 The **Time Range** field on the **Search** page uses the time zone that is set for the Sumo Logic user interface. This is either the default time zone used in the web browser and set by the operating system, or the **Default Timezone** setting on the **Preferences** page, if you have set this option.
 
-When you create a [Scheduled Search](/docs/alerts/scheduled-searches) or a [real-time alert](/docs/alerts/scheduled-searches/create-real-time-alert), the time range of the search that you save uses the time zone that is set for the Sumo Logic user interface. If you have changed the time zone using the **Default Timezone** setting, this time zone will be used for your Scheduled Searches and Real Time Alerts.
+When you create a [Scheduled Search](/docs/alerts/scheduled-searches), the time range of the search that you save uses the time zone that is set for the Sumo Logic user interface. If you have changed the time zone using the **Default Timezone** setting, this time zone will be used for your Scheduled Searches.
 
 :::note
 The **Default Timezone** setting does not automatically update the configurations of existing Scheduled Searches or real-time alerts. If you'd like your Scheduled Searches and real-time alerts to use the same time zone as your user interface, you'll need to edit them to do so, and save them.

@@ -82,39 +82,37 @@ The following table provides a summary list of key features by Credits package a
 
 | Feature | Free | Trial | Essentials | Enterprise Operations | Enterprise Security | Enterprise Suite |
 |:-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| Audit Index | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Audit Event Index |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Audit Index | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Audit Event Index |  | &#10003; |  | &#10003; | &#10003; | &#10003; |
 | Cloud SIEM | | | | | Activation required* | Activation required* |
 | Cloud SOAR | | | | | | Activation required* |
-| Threat Intel |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Collector Management API | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Data Forwarding |   | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Data Tiers |  |  |  |  |  | ![check](/img/reuse/check.png) |
-| Data Volume Index |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Field Extraction | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Global Intelligence |  |  |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Ingest Budgets |  |  |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data storage  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data Continuous Volume | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data Frequent Tier Volume |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| LogReduce | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Lookup Tables |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics data retention	 | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics volume | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Monitors | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Partitions | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| PCI Compliance App |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Real Time Alerts | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Real User Monitoring (RUM) | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Root Cause Explorer | | | | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| SAML | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Scheduled Views | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Search Job API |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Support |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Sumo Logic Apps | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Traces | ![check](/img/reuse/check.png)<br/>Up to 1.5GB per day* | ![check](/img/reuse/check.png)<br/>Up to 5GB per day | ![check](/img/reuse/check.png)<br/>5GB per day | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
-| User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Threat Intel |  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Collector Management API | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Data Forwarding |   | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Data Tiers |  |  |  |  |  | &#10003; |
+| Data Volume Index |  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Field Extraction | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Global Intelligence |  |  |  | &#10003; | &#10003; | &#10003; |
+| Ingest Budgets |  |  |  | &#10003; | &#10003; | &#10003; |
+| Log Data storage  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Log Data Continuous Volume | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Log Data Frequent Tier Volume |  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| LogReduce | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Lookup Tables |  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics data retention	 | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics volume | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Monitors | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Partitions | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| PCI Compliance App |  | &#10003; |  | &#10003; | &#10003; | &#10003; |
+| Real User Monitoring (RUM) | | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| SAML | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Scheduled Views | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Search Job API |  | &#10003; |  | &#10003; | &#10003; | &#10003; |
+| Support |  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Sumo Logic Apps | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Traces | &#10003;<br/>Up to 1.5GB per day* | &#10003;<br/>Up to 5GB per day | &#10003;<br/>5GB per day | &#10003; |  | &#10003; |
+| User and Role APIs | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
 
 \* Contact your account manager to customize your account to meet your organization's needs.
 

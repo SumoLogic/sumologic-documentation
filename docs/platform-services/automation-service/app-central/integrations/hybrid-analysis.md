@@ -29,19 +29,27 @@ To obtain an API Key visit your [profile page](https://www.hybrid-analysis.com/m
 ## Configure Hybrid Analysis in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Hybrid Analysis API URL, for example, `https://www.hybrid-analysis.com`
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-4.png')} style={{border:'1px solid gray'}} alt="hybrid-analysis" width="400"/>
-1. Populate all the required fields (\*) and then click Save.
-   * **Label**. The name of the resource.
-   * **Server URL**. 'https://www.hybrid-analysis.com'.
-   * **API Key**. Insert the previously copied key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-5.png')} style={{border:'1px solid gray'}} alt="hybrid-analysis" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-6.png')} style={{border:'1px solid gray'}} alt="hybrid-analysis" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-7.png')} style={{border:'1px solid gray'}} alt="hybrid-analysis" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-8.png')} style={{border:'1px solid gray'}} alt="hybrid-analysis" width="400"/>
+* **API Key**. Insert the [API key](https://www.hybrid-analysis.com/docs/api/v2) that you [previously copied](#hybrid-analysis-configuration).
+
+* **User Agent**. Enter the user agent, for example, `Falcon`.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/hybrid-analysis-configuration.png')} style={{border:'1px solid gray'}} alt="Hybrid Analysis configuration" width="400"/>
+
+For information about Hybrid Analysis, see [Hybrid Analysis documentation](https://www.hybrid-analysis.com/docs/api/v2).
 
 ## Category
 

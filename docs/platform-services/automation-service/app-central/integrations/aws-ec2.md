@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.5  
-Updated: Feb 04, 2025***
+***Version: 1.6  
+Updated: July 29, 2025***
 
 Using the integration with EC2, you can enrich incidents with specific EC2 data, create and delete snapshots, work with elastic addresses and instances, and manipulate security groups. 
 
@@ -49,8 +49,64 @@ Using the integration with EC2, you can enrich incidents with specific EC2 data,
 ## Configure AWS EC2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../../../reuse/automation-service/aws/iam-role.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSIAMRole/>
+* <AWSRegions/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-ec2-configuration.png')} style={{border:'1px solid gray'}} alt="AWS EC2 configuration" width="400"/>
+
+For information about AWS EC2, see [EC2 documentation](https://docs.aws.amazon.com/ec2/).
+
+<IntegrationsAuthAWS/>
+
+### AWS IAM role-based access
+
+<IAMConfiguration/>
+
+## Required Permissions
+```
+  ec2:AuthorizeSecurityGroupIngress
+  ec2:CreateSnapshot
+  ec2:DeleteSecurityGroup
+  ec2:DeleteSnapshot
+  ec2:DescribeAddresses
+  ec2:DescribeInstances
+  ec2:DescribeKeyPairs
+  ec2:DescribeRegions
+  ec2:DescribeSubnets
+  ec2:DescribeSecurityGroups
+  ec2:DescribeSnapshots
+  ec2:DescribeVolumes
+  ec2:DescribeVpcs
+  ec2:DisassociateAddress
+  ec2:GetPasswordData
+  ec2:MonitorInstances
+  ec2:ReleaseAddress
+  ec2:RebootInstances
+  ec2:RevokeSecurityGroupIngress
+  ec2:StartInstances
+  ec2:StopInstances
+  ec2:TerminateInstances
+  ec2:UnmonitorInstances
+```
 
 ## Change Log
 
@@ -63,3 +119,4 @@ import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 	+ Updated action: Describe Instances (Resolved bug related to Instance ID field)
 + February 04, 2025 (v1.5)
     + Added action: Describe Instances V2
++ July 29, 2025 (v1.6) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.

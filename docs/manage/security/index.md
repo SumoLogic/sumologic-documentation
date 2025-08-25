@@ -10,22 +10,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="50"/>
 
-:::tip 
+:::tip
 Looking for our security features like Cloud SIEM and Cloud SOAR? Head to [Sumo Logic Security Solutions](/docs/security).
 :::
 
 The security options are available only to administrators.
 
- [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access security options, in the main Sumo Logic menu select **Administration > Security**. 
- 
- [**New UI**](/docs/get-started/sumo-logic-ui). To access security options, in the top menu select **Administration**, and then select options under **Account Security Settings**. 
+ [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access security options, in the main Sumo Logic menu select **Administration > Security**.
+
+ [**New UI**](/docs/get-started/sumo-logic-ui). To access security options, in the top menu select **Administration**, and then select options under **Account Security Settings**.
 
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/security/about-two-step-verification"><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>About 2-Step Verification</h4></a>
+  <a href="/docs/manage/security/about-2-step-verification"><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>About 2-Step Verification</h4></a>
   <p>Learn how to enhance security and secure sensitive data stored in Sumo Logic.</p>
   </div>
 </div>

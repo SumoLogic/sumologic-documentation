@@ -18,11 +18,7 @@ Basic Tools implement some utils method to use inside Playbook
 
 ## Configure Basic Tools in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
-
-<IntegrationsAuth/>
-
-Basic Tools executes without additional authentication.
+No configuration is needed. Basic Tools executes without additional authentication.
 
 ## Change Log
 

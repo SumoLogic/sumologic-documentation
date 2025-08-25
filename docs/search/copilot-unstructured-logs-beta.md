@@ -12,6 +12,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+<!-- Originally added as a beta article with DOCS-752. -->
+
 This feature is in Beta. For more information, contact your Sumo Logic account executive.
 
 Unstructured Logs Support for [Sumo Logic Copilot](/docs/search/copilot), our AI assistant, enables it to understand and provide insights from raw, text-based logs, even if they don't follow a structured format like JSON. This means you can ask questions in plain English and get meaningful results from nearly any log data, without requiring Field Extraction Rules (FERs).
