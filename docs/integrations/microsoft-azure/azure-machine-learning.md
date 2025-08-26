@@ -44,7 +44,7 @@ import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 #### Diagnostic logs
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform the steps below for each Azure Machine Learning namespace that you want to monitor.
+1. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform the steps below for each Azure Machine Learning namespace that you want to monitor.
    1. Choose `Stream to an event hub` as the destination.
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-eventgrid-logs.png')} alt="Azure Event Grid logs" style={{border: '1px solid gray'}} width="800" />
@@ -52,7 +52,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Activity Logs
 
-To collect activity logs, refer to the [Collecting Logs for the Azure Audit App from Event Hub](/docs/integrations/microsoft-azure/audit) section in the Azure Audit documentation. Do not perform this step in case you are already collecting activity logs for a subscription.
+To collect activity logs, refer to the [Collecting Logs for the Azure Audit App from Event Hub](/docs/integrations/microsoft-azure/audit#collecting-logs-for-the-azure-audit-app-from-event-hub) section in the Azure Audit documentation. Do not perform this step in case you are already collecting activity logs for a subscription.
 :::note
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
 :::
@@ -83,19 +83,19 @@ import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
 ### Overview
 
-The **Azure Machine Learning - Overview** dashboard provides comprehensive details on events, operations and details such as overall number of runs, models deployed and quota utilization, operation types, ingress and egress of network data
+The **Azure Machine Learning - Overview** dashboard provides comprehensive information on events, operations and details such as overall number of runs, models deployed and quota utilization, operation types, ingress and egress of network data
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Overview.png')} alt="Azure Machine Learning - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Model
 
-This **Azure Machine Learning - Model** dashboard provides details on Model details related to your Azure Machine Learning.
+This **Azure Machine Learning - Model** dashboard provides information on model details related to your Azure Machine Learning.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+OS%3AData+Disk.png')} alt="Azure Machine Learning - Model dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Compute
 
-The **Azure Machine Learning - Compute** dashboard provides details on Compute operations, events and usage such as CPU, Disk or memory to your Azure Machine Learning.
+The **Azure Machine Learning - Compute** dashboard provides details on compute operations, events and usage such as CPU, Disk or memory to your Azure Machine Learning.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Network.png')} alt="Azure Machine Learning - Compute dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -129,19 +129,19 @@ Use this dashboard to:
 
 ### Jobs and Pipelines
 
-The **Azure Machine Learning - Jobs and Pipelines** dashboard provides details on Operations, events and failures in jobs and pipelines of your Azure Machine Learning.
+The **Azure Machine Learning - Jobs and Pipelines** dashboard provides details on operations, events and failures in jobs and pipelines of your Azure Machine Learning.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Machine Learning - Jobs and Pipelines dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Quota
 
-The **Azure Machine Learning - Quota** dashboard provides details on Quota related to your Azure Machine Learning such as Quota Utilization, Active Node, Active Cores, Idle Cores, etc.
+The **Azure Machine Learning - Quota** dashboard provides details on quota related to your Azure Machine Learning such as Quota Utilization, Active Node, Active Cores, Idle Cores, etc.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Cache.png')} alt="Azure Machine Learning - Quota dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Run
 
-The **Azure Machine Learning - Run** dashboard provides details on Running experiments such as failed runs, errors in runs, completed or in-progress or started run
+The **Azure Machine Learning - Run** dashboard provides details on running experiments such as failed runs, errors in runs, completed or in-progress or started run
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Temp+Disk.png')} alt="Azure Machine Learning - Run dashboard" style={{border: '1px solid gray'}} width="800" />
 
