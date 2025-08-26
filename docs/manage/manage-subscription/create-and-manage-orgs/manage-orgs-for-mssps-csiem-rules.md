@@ -2,7 +2,7 @@
 id: manage-orgs-for-mssps-csiem-rules
 title: Manage Organizations for MSSPs - CSIEM
 sidebar_label: Manage Orgs for MSSPs - CSIEM
-description: Learn how to manage organizational CSIEM rules and tuning epression for Managed Security Service Providers (MSSPs).
+description: Learn how to manage organizational CSIEM rules and rule tuning for Managed Security Service Providers (MSSPs).
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
