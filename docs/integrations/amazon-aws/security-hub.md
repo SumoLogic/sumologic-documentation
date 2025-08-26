@@ -19,7 +19,7 @@ The Sumo Logic app for AWS Security Hub CSPM leverages findings data from Securi
 Sumo Logic provides a seamless bi-directional integration with AWS Security Hub CSPM with the following:
 
 * **[AWS Security Hub CSPM forwarder](#sending-findings-to-the-aws-security-hub-cspm-forwarder)** - This solution forwards (sends) scheduled search results and alerts (as findings) to AWS Security Hub CSPM.
-* **[AWS Security Hub CSPM collector](#collecting-findings-for-the-aws-security-hub-cspm-app)** - This solution collects findings from AWS Security Hub CSPM to Sumo Logic where they are displayed in visual pre-defined dashboards.
+* **[AWS Security Hub CSPM collector](#collecting-logs-for-the-aws-security-hub-cspm-app)** - This solution collects findings from AWS Security Hub CSPM to Sumo Logic where they are displayed in visual pre-defined dashboards.
 
 The Sumo Logic integration with AWS Security Hub CSPM extends compliance checks to other key regulatory frameworks such as PCI, GDPR, HIPAA, and others.
 
@@ -28,6 +28,62 @@ For more information on AWS Security Hub CSPM, refer to the [Amazon AWS Security
 ## Log types
 
 The AWS Security Hub CSPM utilizes the [Amazon findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html) log types.
+
+### Sample log messages
+
+```json title="AWS Security Hub CSPM log"
+{
+  "SchemaVersion": "2018-10-08",
+  "ProductArn": "arn:aws:securityhub:us-west- 2:123456789012:provider:private/default",
+  "AwsAccountId": "123456789012",
+  "Id": "test_finding_123456",
+  "GeneratorId": "TestDetector",
+  "Types": [
+    "Software and Configuration Checks/Vulnerabilities/CVE"
+  ],
+  "CreatedAt": "2018-11- 06T13:22:13.933Z",
+  "UpdatedAt": "2018-11-07T14:22:13.933Z",
+  "Severity": {
+    "Product": 10,
+    "Normalized": 30
+  },
+  "Title": "Unprotected port 22 found on instance i-01234567890abcefb",
+  "Description": "Test finding was found on instance i- 01234567890afbcefa",
+  "Resources": [
+    {
+      "Type": "AwsEc2::Instance",
+      "Id": "arn:aws:ec2:us-west-2: 123456789012:instance:i- 01234567890abcefa"
+    }
+  ],
+  "SourceUrl": "http://myfp.com/recommendations/dangerous_things_and_how_to_fix_them",
+  "Process": {
+    "Name": "My Process",
+    "Path": "/Process/Path"
+  },
+  "RecordState": "ACTIVE",
+  "Note": {
+    "Text": "User1 will address this finding",
+    "UpdatedBy": "User1",
+    "UpdatedAt": "2018-11-03T13:22:13.933Z"
+  }
+}
+```
+
+### Sample queries
+
+```sql title="Findings by resource type and severity query"
+(_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")
+| json  "AwsAccountId", "Id", "GeneratorId", "ProductArn", "CreatedAt", "UpdatedAt", "Resources",
+ "Severity.Normalized", "SourceUrl",
+"Types", "Compliance.Status" as aws_account_id, finding_id, generator_id, product_arn, created_at,
+ updated_at, resources, severity_normalized, sourceurl, finding_types, compliance_status nodrop
+| parse regex field=finding_types "\"(?<finding_type>.*?)\"" multi
+| parse regex field=resources "\"Type\":\"(?<resource_type>.*?)\"" multi
+| parse regex field=resources "\"Id\":\"(?<resource_id>.*?)\"" multi
+| parse regex field=product_arn "product/(?<finding_provider>.*?)$"
+| min(severity_normalized), pct(severity_normalized,25), pct(severity_normalized,50), pct(severity_normalized,75),
+  max(severity_normalized) by resource_type
+```
 
 ## Sending findings to the AWS Security Hub CSPM forwarder
 
@@ -163,16 +219,18 @@ In the case of a problem, perform the following tasks to discover the cause.
   ```
 4. Check the CloudWatch logs for the Lambda function. Sumo Logic saves Lambda function logs to CloudWatch in a log group: `/aws/lambda/<function_name>`. Check this log for any errors during lambda execution.
 
-## Collecting findings for the AWS Security Hub CSPM app
+## Collecting logs for the AWS Security Hub CSPM app
 
-You can collect the AWS Security Hub CSPM logs using two methods:
+You can collect the AWS Security Hub CSPM logs using the following methods:
 
-- [Method 1: Collecting AWS Security Hub CSPM Logs using EventBridge](#method-1-collecting-aws-security-hub-cspm-logs-using-eventbridge)
-- [Method 2: Collecting Security Hub CSPM Logs using Sumo Logic HTTP endpoint](#method-2-collecting-security-hub-cspm-logs-using-sumo-logic-http-endpoint)
+- [Method 1: AWS Security Hub CSPM > EventBridge > Sumo Logic via HTTP](#method-1-security-hub-cspm--eventbridge--sumo-logic-via-http-preferred)
+- [Method 2: AWS Security Hub CSPM > Lambda Function > Amazon S3 > Sumo Logic via S3 Source](#method-2-aws-security-hub-cspm--lambda-function--amazon-s3--sumo-logic-via-s3-source-alternative)
+
+For efficiency and seamless integration, Method 1 using AWS EventBridge is preferred, as it leverages native AWS services to reduce resource overhead and simplify the process.
 
 Before collecting logs, ensure that Security Hub is enabled on your AWS account. For more information, see the AWS Security Hub CSPM documentation for [Setting Up AWS Security Hub CSPM](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html).
 
-### Method 1: Collecting AWS Security Hub CSPM logs using EventBridge
+### Method 1: Security Hub CSPM > EventBridge > Sumo Logic via HTTP (Preferred)
 
 This method leverages AWS EventBridge to streamline the logging process by sending data directly to Sumo Logic via an HTTP endpoint. By eliminating intermediary services such as Lambda, it offers a more straightforward and cost-effective solution.
 
@@ -183,7 +241,7 @@ To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs
 #### Step 2: Configure EventBridge API destination
 
 Follow the steps below to configure the EventBridge API destination:
-1. Sign in to your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
+1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
 1. In the navigation bar, click **API destinations**.
 1. Click **Create destination**.
 1. Enter a name for the API Destination.
@@ -197,7 +255,7 @@ Follow the steps below to configure the EventBridge API destination:
 #### Step 3: Create the EventBridge rule
 
 Follow the steps below to configure the EventBridge rule:
-1. Sign in to your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
+1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
 1. In the navigation bar, click **Rules**.
 1. Set the event source to **AWS services** and then select **Security Hub** as the AWS service.
 1. Select **All Events** in Event Type.
@@ -206,7 +264,7 @@ Follow the steps below to configure the EventBridge rule:
 1. Select **Create a new role for this specific resource** in the **Execution role**.
 1. Click **Create** to activate the rule.
 
-### Method 2: Collecting Security Hub CSPM Logs using Sumo Logic HTTP endpoint
+### Method 2: AWS Security Hub CSPM > Lambda Function > Amazon S3 > Sumo Logic via S3 Source (Alternative)
 
 This method uses an AWS Lambda function to process, store, and forward logs to Sumo Logic. While it offers a robust solution, it introduces additional AWS resources, such as Lambda, which can increase both cost and complexity.
 
@@ -243,64 +301,6 @@ To deploy an AWS Security Hub CSPM App collector:
 4. Click the **sumologic-securityhub-collector** link, and then click **Deploy**.
 5. In the **AWS Lambda > Functions > Application Settings** panel, enter the name of the **S3SourceBucketName** for the bucket you configured (when you defined the S3 source).
 6. Scroll to the bottom of the window and click **Deploy**.
-
-
-### Sample log messages
-
-```json title="AWS Security Hub CSPM log"
-{
-  "SchemaVersion": "2018-10-08",
-  "ProductArn": "arn:aws:securityhub:us-west- 2:123456789012:provider:private/default",
-  "AwsAccountId": "123456789012",
-  "Id": "test_finding_123456",
-  "GeneratorId": "TestDetector",
-  "Types": [
-    "Software and Configuration Checks/Vulnerabilities/CVE"
-  ],
-  "CreatedAt": "2018-11- 06T13:22:13.933Z",
-  "UpdatedAt": "2018-11-07T14:22:13.933Z",
-  "Severity": {
-    "Product": 10,
-    "Normalized": 30
-  },
-  "Title": "Unprotected port 22 found on instance i-01234567890abcefb",
-  "Description": "Test finding was found on instance i- 01234567890afbcefa",
-  "Resources": [
-    {
-      "Type": "AwsEc2::Instance",
-      "Id": "arn:aws:ec2:us-west-2: 123456789012:instance:i- 01234567890abcefa"
-    }
-  ],
-  "SourceUrl": "http://myfp.com/recommendations/dangerous_things_and_how_to_fix_them",
-  "Process": {
-    "Name": "My Process",
-    "Path": "/Process/Path"
-  },
-  "RecordState": "ACTIVE",
-  "Note": {
-    "Text": "User1 will address this finding",
-    "UpdatedBy": "User1",
-    "UpdatedAt": "2018-11-03T13:22:13.933Z"
-  }
-}
-```
-
-
-### Sample queries
-
-```sql title="Findings by resource type and severity query"
-(_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")
-| json  "AwsAccountId", "Id", "GeneratorId", "ProductArn", "CreatedAt", "UpdatedAt", "Resources",
- "Severity.Normalized", "SourceUrl",
-"Types", "Compliance.Status" as aws_account_id, finding_id, generator_id, product_arn, created_at,
- updated_at, resources, severity_normalized, sourceurl, finding_types, compliance_status nodrop
-| parse regex field=finding_types "\"(?<finding_type>.*?)\"" multi
-| parse regex field=resources "\"Type\":\"(?<resource_type>.*?)\"" multi
-| parse regex field=resources "\"Id\":\"(?<resource_id>.*?)\"" multi
-| parse regex field=product_arn "product/(?<finding_provider>.*?)$"
-| min(severity_normalized), pct(severity_normalized,25), pct(severity_normalized,50), pct(severity_normalized,75),
-  max(severity_normalized) by resource_type
-```
 
 ## Installing the AWS Security Hub CSPM app
 

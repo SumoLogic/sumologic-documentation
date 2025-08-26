@@ -44,6 +44,10 @@ The [time range](../../search/get-started-with-search/search-basics/time-range-e
 This setting is different than the Time Range option configured for the Saved Search. The first time range is only used when you run the Saved Search from the Library. This Time Range applies to your Scheduled Search.
 :::
 
+:::note
+The time range limitations below apply to both parent queries and subqueries in your scheduled search.
+:::
+
 Alternately, type a time range; for example, -15m to run the search against data generated in the past 15 minutes. A time range outside the maximum allowed range for a given frequency is not allowed and presents the message like this: `Invalid query. Max allowed time range for 15 minutes frequency is 1 day`.
 
 The maximum allowed time range for different Scheduled Search frequencies is as below:

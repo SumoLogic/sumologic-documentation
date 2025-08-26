@@ -147,7 +147,7 @@ The following query returns the message volume for each Source Host. The sourceh
 _index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcehost, dataTier, bytes, count
-| where sourcehost="<<sourcejost_json>>" and dataTier="<<datatier_json>>"
+| where sourcehost="<<sourcehost_json>>" and dataTier="<<datatier_json>>"
 | bytes/1Gi as gbytes
 | sum(gbytes) as gbytes by sourcehost
 | fields gbytes
@@ -161,7 +161,7 @@ The following query returns the message volume for the Default Index. The data 
 _index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcehost, dataTier, bytes, count
-| where sourcehost="<<sourcejost_json>>" and dataTier="<<datatier_json>>"
+| where sourcehost="<<sourcehost_json>>" and dataTier="<<datatier_json>>"
 | bytes/1Gi as gbytes
 | sum(gbytes) as gbytes by sourcehost
 | fields gbytes

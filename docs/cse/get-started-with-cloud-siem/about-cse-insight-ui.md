@@ -188,8 +188,9 @@ Involved entities are connected to the primary entity with dashed lines. Entitie
 It's possible for a related entity to both be involved and detected. In that case, it typically be displayed as detected unless it is in a number of the insight's signals.
 :::
 
-How does Cloud SIEM detect entity relationships outside of the insight? Within the time range of the insight, described above, Cloud SIEM searches for related entities in the following normalized record fields:
+How does Cloud SIEM detect entity relationships outside of the insight? Within the time range of the insight, described above, Cloud SIEM searches for related [entities in the following normalized record fields](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md):
 * `*_command`
+* `*_deployment`
 * `*_domain`
 * `*_email`
 * `*_file`
@@ -197,7 +198,10 @@ How does Cloud SIEM detect entity relationships outside of the insight? Within t
 * `*_hostname`
 * `*_ip`
 * `*_mac`
+* `*_pod`
 * `*_process`
+* `*_replicaset`
+* `*_resource`
 * `*_url`
 * `*_useragent`
 * `*_username`
@@ -284,3 +288,9 @@ When you select an entity on the page, the right pane displays details about tha
 
 You can access related entity information using the Cloud SIEM API. For more information, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis).
 
+## Additional resources
+
+Demos: 
+* [Cloud SIEM: Complete threat detection, investigation and response demo](https://www.sumologic.com/demo/complete-threat-detection-investigation-and-response-demo)
+* [Cloud SIEM: Insight investigation](https://www.sumologic.com/demo/insight-investigation)
+* [Cloud SIEM: Cloud insights triaging and investigation](https://www.sumologic.com/demo/cloud-insights)
