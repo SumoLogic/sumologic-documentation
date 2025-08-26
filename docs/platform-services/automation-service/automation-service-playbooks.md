@@ -281,7 +281,7 @@ It is crucial that the file names inside the tar.gz adhere to the following form
 
 The playbook **Test Node** toggle lets you test individual nodes of a playbook without needing to complete the entire flow. Testing individual nodes helps you improve your playbooks' reliability and shorten configuration time. You can provide mock values for variables used in the node, and run the results to see the output and any errors. The results provide informative messages to help you troubleshoot problems. 
 
-Keep in mind:
+When you test nodes, keep in mind:
 * Before you can test a node, any node configuration changes need to be saved to the playbook draft.
 * You can test action, condition, user choice, and task nodes. You cannot test filter, nested playbook, start, or end nodes.
 * Testing nodes counts against your [action limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit) quota.
@@ -290,8 +290,9 @@ To test a node:
 1. Select a playbook.
 1. Click the **Edit** button at the bottom of the screen to make a draft of the playbook.
 1. Click the **Edit** button on a node.
-1. Click the **Test Node** toggle at the top of the node dialog. An **Input** panel appears to the left, and an **Output** panel appears to the right. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-toggle.png')} alt="Playbook Test Node toggle" style={{border:'1px solid gray'}} width="800"/>
-1. In the **Input** panel, enter variables to test the node and then click **SAVE & RUN TEST**. Ensure that you enter valid variables for the kind of inputs you need to test. In the following example that uses input from insights, we provide an insight ID. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-variables.png')} alt="Playbook Test Node variables" style={{border:'1px solid gray'}} width="800"/>
+1. Click the **Test Node** toggle at the top of the **Edit Node** dialog. An **Input** panel appears to the left, and an **Output** panel appears to the right. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-toggle.png')} alt="Playbook Test Node toggle" style={{border:'1px solid gray'}} width="800"/>
+1. In the **Input** panel, enter variables to test the node. Ensure that you enter valid variables for the kind of inputs you need to test. In the following example that uses input from insights, we provide an insight ID.
+1. Click **SAVE & RUN TEST**. Results of the test appear in the **Output** panel.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-variables.png')} alt="Playbook Test Node variables" style={{border:'1px solid gray'}} width="800"/>
 6. The **Output** panel shows results of the test run. Examine the results and take any action needed to troubleshoot node operation:
     * Click the information button <img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-info-icon.png')} alt="Playbook Test Node JSON info button" style={{border:'1px solid gray'}} width="30"/> to see information on the test run:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-info-button.png')} alt="Playbook Test Node info" style={{border:'1px solid gray'}} width="300"/>
     * Click the **JSON details** button <img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-json-details-icon.png')} alt="Playbook Test Node JSON details button" style={{border:'1px solid gray'}} width="30"/> to see the JSON output. The button toggles to a **Table details** button <img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-table-details-icon.png')} alt="Playbook Test Node table details button" style={{border:'1px solid gray'}} width="30"/> so you can return to the table view. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-json-details.png')} alt="Playbook Test Node JSON details" style={{border:'1px solid gray'}} width="300"/>
