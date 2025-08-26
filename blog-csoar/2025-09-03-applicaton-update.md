@@ -21,7 +21,7 @@ What's new:
 * Available on action, condition, user choice, and task nodes. (It is not available on filter, nested playbook, start, or end nodes.)
 * Testing nodes counts against your [action limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit) quota.
 
-For more information, see [Test nodes in a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-nodes-in-a-playbook).
+For more information, see [Test nodes in a playbook](/docs/platform-services/automation-service/automation-service-playbooks).
 
 ### Changes and enhancements
 
