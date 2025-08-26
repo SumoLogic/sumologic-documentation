@@ -55,7 +55,7 @@ To ensure that [Library](/docs/get-started/library) content is consistent across
 
 - If an item with the same name exists in the target organization, it will be replaced.
 - Once a push is initiated, it cannot be reversed. Administrators should carefully review their selections before updating.
-- If errors occur during the push, administrators must manually re-attempt failed push. To see failed push, use [View History](#view-history).
+- If errors occur during the push, administrators must manually re-attempt failed push. To see failed push, use [View History](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules#view-history).
 - Push operations may take longer based on the volume of content being pushed.
 - Rule tuning expressions must be pushed separately from rules.
 - *Cloud SIEM Legacy Rule Type* is not supported for sync or push.
@@ -68,7 +68,7 @@ To know how to view history and view updates in the audit log​, refer to the [
 
 * **What happens when a item with the same name already exists?**<br/>It will be replaced in the child organization.
 * **What happens if an item selected for push doesn't already exist in the target organization?**<br/>The item will be created in the target organization.
-* **What if errors occur during pushing?**<br/>Affected items will be skipped. Once the rest of the content is pushed, you can review errors in [View History](#view-history) and retry.
+* **What if errors occur during pushing?**<br/>Affected items will be skipped. Once the rest of the content is pushed, you can review errors in [View History](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules#view-history) and retry.
 * **Can I roll back changes after a push operation?**<br/>No, rollback is not supported. After a push operation is initiated, changes cannot be reversed.
 * **How can I monitor push progress?**<br/>During a push, the system displays real-time status, including progress tracking, success or failure messages, and error logs.
 * **How can I view push history?**<br/>Click **View History** in the upper-right corner of the page. A query for push history will display, showing the email of the individual who performed the push and the pushed items.
