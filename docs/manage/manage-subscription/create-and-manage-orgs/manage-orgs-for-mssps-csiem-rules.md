@@ -31,27 +31,27 @@ To be able to see insights in child organizations, add child organizations that 
 
 ## Manage Cloud SIEM rules
 
-To ensure that content is consistent across child organizations, use the **Manage Content** tab to update content in target organizations with content from a source organization.
+To ensure that content is consistent across child organizations, use the **Manage Content** tab to push content in target organizations with content from a source organization.
 
-You can update the following:
+You can push the following:
 * Cloud SIEM [rules](/docs/cse/rules/)
 * Cloud SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Select the **Manage Content** tab.
-1. In the **Source Org** field, select the organization that will provide the source data to be updated in other organizations.
-1. In the **Content** bar, select the content to be updated:
+1. In the **Source Org** field, select the organization that will provide the source data to be pushed in other organizations.
+1. In the **Content** bar, select the content to be pushed:
    * **Cloud SIEM Rules**. For more information about Cloud SIEM rules, refer to the [Cloud SIEM Rules](/docs/cse/rules/).
    * **Cloud SIEM Rule Tuning**. For more information about Cloud SIEM rule tuning expressions, refer to the [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
-1. Select individual items to be updated, or all items.
-1. Click **Push to Orgs**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-csiem.png')} alt="Update Selected Items button" style={{border: '1px solid gray'}} width="800"/>
-1. On the **Push Selected Items** box, navigate to the **Destinations** section to select the organizations to update the selected items to. You can update to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2-csiem.png')} alt="Update Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
+1. Select individual items to be pushed, or all items.
+1. Click **Push to Orgs**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-csiem.png')} alt="Push Selected Items button" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Push Selected Items** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2-csiem.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Push**. A **Pushing in progress** dialog is displayed.
 
 ### Tips
 
-* If you select **All Child Organizations**, you can then select organizations to exclude, allowing you to update to all organizations except those you select:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-selected-organizations.png')} alt="Selected organizations" style={{border: '1px solid gray'}} width="300"/>
-* When you update rule tuning expressions, select **Include Associated Cloud SIEM Rules** to also update all the Cloud SIEM rules that the expressions are used on:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-associated-rules.png')} alt="Include Associated Cloud SIEM Rules checkbox" style={{border: '1px solid gray'}} width="200"/>
+* If you select **All Child Organizations**, you can then select organizations to exclude, allowing you to push to all organizations except those you select:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-selected-organizations.png')} alt="Selected organizations" style={{border: '1px solid gray'}} width="300"/>
+* When you push rule tuning expressions, select **Include Associated Cloud SIEM Rules** to push all the Cloud SIEM rules that the expressions are used on:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-associated-rules.png')} alt="Include Associated Cloud SIEM Rules checkbox" style={{border: '1px solid gray'}} width="200"/>
 
 ### Limitations
 
@@ -64,13 +64,13 @@ You can update the following:
 
 ## View history
 
-1. Click **View History** in the upper-right corner of the page. A query for update history displays:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-history-query.png')} alt="View history query" style={{border: '1px solid gray'}} width="800"/>
-1. Click the search button. <img src={useBaseUrl('img/manage/subscriptions/search-button.png')} alt="Search button" width="75"/> <br/>The update history displays. The email of the individual who performed the update appears in the **user_email** column, and the updated items appear in the **content** column. <br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-history-query-results.png')} alt="View history query results" style={{border: '1px solid gray'}} width="800"/>
-1. Investigate any updates that failed and re-run the update if needed. 
+1. Click **View History** in the upper-right corner of the page. A query for push history displays:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-history-query.png')} alt="View history query" style={{border: '1px solid gray'}} width="800"/>
+1. Click the search button. <img src={useBaseUrl('img/manage/subscriptions/search-button.png')} alt="Search button" width="75"/> <br/>The push history displays. The email of the individual who performed the push appears in the **user_email** column, and the pushed items appear in the **content** column. <br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-history-query-results.png')} alt="View history query results" style={{border: '1px solid gray'}} width="800"/>
+1. Investigate any push that failed and re-run the push if needed. 
 
-## View updates in the audit log​
+## View push in the audit log​
 
-You can view all content management updates in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) by using the following query:
+You can view all content management push in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) by using the following query:
 
 ```sql
 _index=sumologic_audit_events
@@ -100,14 +100,14 @@ _index=sumologic_audit_events
 * **What if errors occur during pushing?**<br/>Affected items will be skipped. Once the rest of the content is pushed, you can review errors in [View History](#view-history) and retry.
 * **Can I roll back changes after a push operation?**<br/>No, rollback is not supported. After a push operation is initiated, changes cannot be reversed.
 * **How can I monitor push progress?**<br/>During a push, the system displays real-time status, including progress tracking, success or failure messages, and error logs.
-* **How can I view push history?**<br/>Click **View History** in the upper-right corner of the page. A query for push history will display, showing the email of the individual who performed the push and the updated items.
+* **How can I view push history?**<br/>Click **View History** in the upper-right corner of the page. A query for push history will display, showing the email of the individual who performed the push and the pushed items.
 * **Who can I contact for additional questions or support?**<br/>Reach out to your Sumo Logic representative with any questions, issues, or feedback.
 
-#### Rules updates
+#### Pushing Cloud SIEM Rules
 
-**Are rule tuning expressions included?**<br/>No, they are not included, but can be updated separately.
+**Are rule tuning expressions included?**<br/>No, they are not included, but can be pushed separately.
 
-#### Rule tuning expressions updates
+#### Pushing Cloud SIEM Rule tuning expressions
 
 * **What happens if the source tuning expression contains Cloud SIEM rules?**<br/>If the **Include Linked Cloud SIEM Rules** option is selected, existing rules with the same name in the destination organization will be linked to match the source tuning expression.
-* **What if no matching Cloud SIEM rules are found in the destination organization?**<br/>The update will complete with a warning, and missing rules will be logged in the audit log. You can update those rules separately and re-run the tuning expression update.
+* **What if no matching Cloud SIEM rules are found in the destination organization?**<br/>Push will complete with a warning, and missing rules will be logged in the audit log. You can push those rules separately and re-run the tuning expression push.

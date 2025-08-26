@@ -30,35 +30,35 @@ You must have the following [organization role capabilities](/docs/manage/users-
 
 ## Manage content in organizations
 
-To ensure that [Library](/docs/get-started/library) content is consistent across child organizations, use the **Manage Content** tab to update content in target organizations with content from a source organization.
+To ensure that [Library](/docs/get-started/library) content is consistent across child organizations, use the **Manage Content** tab to push content in target organizations with content from a source organization.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Select the **Manage Content** tab.
-1. In the **Source Org** field, select the organization that will provide the source data to be updated in other organizations.
+1. In the **Source Org** field, select the organization that will provide the source data to be pushed in other organizations.
 1. In the **Content** bar, select **Library**. For more information about Library items, refer to the [Managing Your Sumo Logic Library](/docs/get-started/library).
-1. Select individual items to be updated, or all items.
-1. Click **Push Selected Items**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items.png')} alt="Update Selected Items button" style={{border: '1px solid gray'}} width="800"/>
-1. On the **Push Selected Content** box, navigate to the **Destinations** section to select the organizations to update the selected items to. You can update to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2.png')} alt="Update Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
+1. Select individual items to be pushed, or all items.
+1. Click **Push Selected Items**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items.png')} alt="Push Selected Items button" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Push Selected Content** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Push**. A **Pushing in progress** dialog is displayed.
 
 ### Tips
 
-* If you select **All Child Organizations**, you can then select organizations to exclude, allowing you to update to all organizations except those you select:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-selected-organizations.png')} alt="Selected organizations" style={{border: '1px solid gray'}} width="300"/>
+* If you select **All Child Organizations**, you can then select organizations to exclude, allowing you to push to all organizations except those you select:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-selected-organizations.png')} alt="Selected organizations" style={{border: '1px solid gray'}} width="300"/>
 * Selected Library items are added to the [Admin Recommended](/docs/manage/content-sharing/admin-mode/#move-important-content-to-admin-recommended) folder. Additionally, you can only select the Library contents in Source Organization under the Admin Recommended folder.
-* **Scheduled Searches Connection**. Select **Include and Update Connection** to create the scheduled searches in the target organizations if they don't already exist there. Select **Ignore Connection** only if you want to turn the added scheduled searches into saved searches.
-* **Scheduled Reports**. Select **Include and Update Scheduled Reports** to create the scheduled reports in the target organizations if they don't already exist there. Select **Ignore Scheduled Reports** only if you want to turn the added scheduled reports into saved reports. 
+* **Scheduled Searches Connection**. Select **Include Connection** to create the scheduled searches in the target organizations if they don't already exist there. Select **Ignore Connection** only if you want to turn the added scheduled searches into saved searches.
+* **Scheduled Reports**. Select **Include Scheduled Reports** to create the scheduled reports in the target organizations if they don't already exist there. Select **Ignore Scheduled Reports** only if you want to turn the added scheduled reports into saved reports. 
    :::note
-   Both **Scheduled Searches Connection** and **Scheduled Reports** will be available to update when you select a library *folder*.
+   Both **Scheduled Searches Connection** and **Scheduled Reports** will be available only when you select a library *folder*.
    :::
 
 ### Limitations
 
 - If an item with the same name exists in the target organization, it will be replaced.
-- Once an update is initiated, it cannot be reversed. Administrators should carefully review their selections before updating.
-- If errors occur during update, administrators must manually re-attempt failed updates. To see failed updates, use [View History](#view-history).
-- Update operations may take longer based on the volume of content being updated.
-- Rule tuning expressions must be updated separately from rules.
-- *Cloud SIEM Legacy Rule Type* is not supported for sync or update.
+- Once a push is initiated, it cannot be reversed. Administrators should carefully review their selections before updating.
+- If errors occur during the push, administrators must manually re-attempt failed push. To see failed push, use [View History](#view-history).
+- Push operations may take longer based on the volume of content being pushed.
+- Rule tuning expressions must be pushed separately from rules.
+- *Cloud SIEM Legacy Rule Type* is not supported for sync or push.
 
 :::info
 To know how to view history and view updates in the audit log​, refer to the [Manage Organizations for MSSPs - CSIEM](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules).
@@ -71,5 +71,5 @@ To know how to view history and view updates in the audit log​, refer to the [
 * **What if errors occur during pushing?**<br/>Affected items will be skipped. Once the rest of the content is pushed, you can review errors in [View History](#view-history) and retry.
 * **Can I roll back changes after a push operation?**<br/>No, rollback is not supported. After a push operation is initiated, changes cannot be reversed.
 * **How can I monitor push progress?**<br/>During a push, the system displays real-time status, including progress tracking, success or failure messages, and error logs.
-* **How can I view push history?**<br/>Click **View History** in the upper-right corner of the page. A query for push history will display, showing the email of the individual who performed the push and the updated items.
+* **How can I view push history?**<br/>Click **View History** in the upper-right corner of the page. A query for push history will display, showing the email of the individual who performed the push and the pushed items.
 * **Who can I contact for additional questions or support?**<br/>Reach out to your  Sumo Logic representative with any questions, issues, or feedback.
