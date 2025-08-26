@@ -47,6 +47,12 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to update org names, define subdomain names, delete orgs, and change the account owner.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Manage Organizations for MSSPs - CSIEM</h4></a>
+  <p>Learn how to manage organizational CSIEM rules and tuning epression for MSSPs.</p>
+  </div>
+</div>
 <!-- <div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Manage Orgs for MSSPs</h4></a>
