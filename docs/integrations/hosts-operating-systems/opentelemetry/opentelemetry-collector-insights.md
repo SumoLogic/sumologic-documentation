@@ -17,10 +17,6 @@ This app supports OpenTelemetry Collector version `0.130.1-sumo-0` and later ver
 
 We use the OpenTelemetry collector's built-in internal telemetry capabilities to collect metrics and logs about the collector itself. By default, the Collector exposes its own telemetry through internal metrics (via Prometheus interface on port 8888) and logs (emitted to stderr). The collector can also be configured to export its own telemetry data (metrics and logs) to Sumo Logic through OTLP/HTTP endpoints.
 
-:::info
-This app includes [built-in monitors](#opentelemetry-collector-insights-alerts). For details on creating custom monitors, refer to [Create monitors for OpenTelemetry Collector Insights app](#create-monitors-for-opentelemetry-collector-insights-app).
-:::
-
 ## Fields creation in Sumo Logic for OpenTelemetry Collector Insights
 
 Following are the [fields](/docs/manage/fields/) which will be created as part of OpenTelemetry Collector Insights app installation, if not already present.
@@ -50,8 +46,8 @@ The OpenTelemetry Collector must be configured to export its own metrics using t
 ### For logs collection
 
 The OpenTelemetry Collector must be configured to export its own logs using the built-in telemetry capabilities. This requires:
-- Collector configured with telemetry logs enabled at `debug` level
-- JSON encoding for structured log output
+- Collector configured with telemetry logs enabled at `debug` level (automatically configured in the provided template)
+- JSON encoding for structured log output (automatically configured in the provided template)
 - Access to OTLP endpoint for logs export
 
 ### System Requirements
@@ -60,9 +56,6 @@ The OpenTelemetry Collector must be configured to export its own logs using the 
 - Sufficient system resources (CPU, memory) for data processing
 - Proper permissions for the collector service to access configured resources
 
-import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
-
-<LogsCollectionPrereqisites/>
 
 ## Collection configuration and app installation
 
@@ -82,15 +75,9 @@ OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collect
 
 In this step, you will configure the OpenTelemetry Collector's built-in telemetry to monitor itself.
 
-The collector's service configuration needs to be updated to enable telemetry export. Below is the required configuration that should be added to your collector's service section:
+Below are the inputs required:
 
-**Required Inputs:**
 - **OTLP Endpoint**: Your Sumo Logic OTLP endpoint URL.
-
-**Configuration Parameters:**
-- **Endpoint Format**. The base endpoint automatically creates:
-  - Logs endpoint: `${OTLP_ENDPOINT}/v1/logs`
-  - Metrics endpoint: `${OTLP_ENDPOINT}/v1/metrics`
 
 
 ```yaml
@@ -265,21 +252,7 @@ After installation, verify that:
 
 ## Key Internal Metrics
 
-The OpenTelemetry Collector emits comprehensive internal metrics categorized by verbosity levels:
-
-### Basic Level Metrics (Essential service telemetry)
-- **Process metrics**: `otelcol_process_uptime`, `otelcol_process_cpu_seconds`, `otelcol_process_memory_rss`
-- **Receiver metrics**: `otelcol_receiver_accepted_*`, `otelcol_receiver_refused_*` 
-- **Processor metrics**: `otelcol_processor_incoming_items`, `otelcol_processor_outgoing_items`
-- **Exporter metrics**: `otelcol_exporter_sent_*`, `otelcol_exporter_send_failed_*`, `otelcol_exporter_enqueue_failed_*`
-- **Queue metrics**: `otelcol_exporter_queue_size`, `otelcol_exporter_queue_capacity`
-
-### Normal Level Metrics (Standard indicators)
-- **Batch processor metrics**: `otelcol_processor_batch_batch_send_size`, `otelcol_processor_batch_timeout_trigger_send`
-
-### Detailed Level Metrics (Most verbose)
-- **HTTP metrics**: `http.client.request.duration`, `http.server.request.duration`, `http.*.request.body.size`
-- **RPC metrics**: `rpc.client.duration`, `rpc.server.duration`, `rpc.*.request.size`, `rpc.*.response.size`
+The OpenTelemetry Collector emits comprehensive internal metrics categorized by verbosity levels. For a complete list of internal metrics and their descriptions, see the [OpenTelemetry Collector Internal Telemetry documentation](https://opentelemetry.io/docs/collector/internal-telemetry/#lists-of-internal-metrics).
 
 ## Sample queries
 
@@ -313,6 +286,8 @@ sumo.datasource=otel_collector metric=otelcol_exporter_queue_size deployment.env
 All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
 - You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
 - You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
+- **Log-based dashboards** use the `_sourceHost` filter to identify specific collector instances.
+- **Metrics-based dashboards** use the `service.instance.id` filter to identify specific collector instances.
 
 ### Overview
 
