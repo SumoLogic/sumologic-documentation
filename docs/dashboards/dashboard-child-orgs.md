@@ -77,3 +77,9 @@ You can delete a panel that you no longer need.
 ## Share a dashboard
 
 If required, toggle off the **Include current variable values in the URL** option to hide the variables and organiation details from the URL when you share the dashboard.
+
+## Limitations
+
+- Public dashboards are not supported in MSSP environments.
+- Scheduled reports are only supported at the parent organization level, not for child orgs.
+
