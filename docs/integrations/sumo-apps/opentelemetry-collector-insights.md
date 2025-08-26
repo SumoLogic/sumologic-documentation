@@ -59,13 +59,13 @@ The OpenTelemetry Collector must be configured to export its own logs using the 
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+import ConfigAppInstall from '../../reuse/apps/opentelemetry/config-app-install.md';
 
 <ConfigAppInstall/>
 
 ### Step 1: Set up collector
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+import SetupColl from '../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
@@ -109,7 +109,7 @@ service:
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo.
 
-import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
+import EnvVar from '../../reuse/apps/opentelemetry/env-var-required.md';
 
 <EnvVar/>
 
@@ -117,7 +117,7 @@ import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
 
 ### Step 3: Send logs and metrics to Sumo Logic
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+import LogsIntro from '../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 <LogsIntro/>
 
@@ -166,7 +166,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 </TabItem>
 <TabItem value="Chef">
 
-import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
+import ChefEnv from '../../reuse/apps/opentelemetry/chef-with-env.md';
 
 <ChefEnv/>
 
@@ -174,7 +174,7 @@ import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
 
 <TabItem value="Ansible">
 
-import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
+import AnsEnv from '../../reuse/apps/opentelemetry/ansible-with-env.md';
 
 <AnsEnv/>
 
@@ -182,14 +182,14 @@ import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
 
 <TabItem value="Puppet">
 
-import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
+import PuppetEnv from '../../reuse/apps/opentelemetry/puppet-with-env.md';
 
 <PuppetEnv/>
 
 </TabItem>
 </Tabs>
 
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+import LogsOutro from '../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
@@ -408,7 +408,7 @@ Configure different log levels for troubleshooting:
 
 ## Create monitors for OpenTelemetry Collector Insights app
 
-import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
