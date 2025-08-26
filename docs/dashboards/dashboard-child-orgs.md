@@ -6,7 +6,7 @@ description: Learn how to create your own custom Dashboard with a panel and quer
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Dashboard allows you to view log data on the same dashboard in an integrated and seamless view. This page demonstrates on how to create a dashboard, a panel query, and then add a panel to the dashboard at the child orgs level. 
+The **Dashboard** page allows you to view log data on the same dashboard in an integrated and seamless view. This article demonstrates on how to create a dashboard, a panel query, and then add a panel to the dashboard at the child orgs level. 
 
 ## Create a dashboard
 
