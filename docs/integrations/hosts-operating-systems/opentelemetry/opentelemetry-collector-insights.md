@@ -15,9 +15,7 @@ The Sumo Logic OpenTelemetry Collector Insights app provides comprehensive monit
 
 This app supports OpenTelemetry Collector version **0.130.1-sumo-0** and later versions.
 
-We use the OpenTelemetry collector's built-in internal telemetry capabilities to collect metrics and logs about the collector itself. By default, the Collector exposes its own telemetry through internal metrics (via Prometheus interface on port 8888) and logs (emitted to stderr).
-
-The diagram below illustrates the components of the OpenTelemetry Collector self-monitoring setup. The collector is configured to export its own telemetry data (metrics and logs) to Sumo Logic through OTLP/HTTP endpoints.
+We use the OpenTelemetry collector's built-in internal telemetry capabilities to collect metrics and logs about the collector itself. By default, the Collector exposes its own telemetry through internal metrics (via Prometheus interface on port 8888) and logs (emitted to stderr). The collector can also be configured to export its own telemetry data (metrics and logs) to Sumo Logic through OTLP/HTTP endpoints.
 
 :::info
 This app includes [built-in monitors](#opentelemetry-collector-insights-alerts). For details on creating custom monitors, refer to [Create monitors for OpenTelemetry Collector Insights app](#create-monitors-for-opentelemetry-collector-insights-app).
@@ -37,14 +35,9 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 Before configuring the OTEL Collector integration, ensure you have the following prerequisites in place:
 
-1. **OTLP Endpoint**: You need a valid base OTLP endpoint URL. The system will automatically append `/v1/logs` for logs collection and `/v1/metrics` for metrics collection. The endpoint should be accessible from your OTEL Collector instance.
+1. **Sumo Logic OTLP Source**: You need to create an OTLP source in your Sumo Logic hosted collector. The OTLP source will provide the endpoint URL that the OTEL Collector will use to send telemetry data.
 
-2. **Network Access**: Ensure that your OTEL Collector has network access to the configured OTLP endpoint. This includes:
-   - Outbound HTTPS connectivity on port 443
-   - Proper firewall configurations to allow traffic to the endpoint
-   - DNS resolution for the endpoint hostname
-
-3. **Authentication**: If your OTLP endpoint requires authentication, ensure you have the proper credentials or tokens configured.
+  **Documentation**: [Creating a Sumo Logic OTLP Source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/otlp/)
 
 ### For metrics collection
 
@@ -85,21 +78,20 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 ### Step 2: Configure integration
 
+OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) YAML file with all the details concerning the data that needs to be collected.
+
 In this step, you will configure the OpenTelemetry Collector's built-in telemetry to monitor itself.
 
 The collector's service configuration needs to be updated to enable telemetry export. Below is the required configuration that should be added to your collector's service section:
 
 **Required Inputs:**
-- **OTLP Endpoint**: Your Sumo Logic OTLP endpoint base URL
-- **Deployment Environment**: Enter a name to identify your deployment environment
+- **OTLP Endpoint**: Your Sumo Logic OTLP endpoint URL
 
 **Configuration Parameters:**
 - **Endpoint Format**: The base endpoint automatically creates:
   - Logs endpoint: `${OTLP_ENDPOINT}/v1/logs`
   - Metrics endpoint: `${OTLP_ENDPOINT}/v1/metrics`
-- **Protocol**: HTTP/protobuf for OTLP communication
-- **Metrics level**: Set to **detailed** for comprehensive monitoring
-- **Logs level**: Set to **debug** for detailed troubleshooting information
+
 
 ```yaml
 service:
@@ -133,6 +125,8 @@ You can add any custom fields which you want to tag along with the data ingested
 import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
 
 <EnvVar/>
+
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/opentelemetry-collector-insights-configure-form.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo Logic
 
