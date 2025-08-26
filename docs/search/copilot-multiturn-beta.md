@@ -88,16 +88,6 @@ You can also [edit the query logic](/docs/search/copilot/#edit-query-code), [ope
 ## FAQ
 
 <details>
-<summary>What usage data does Sumo Logic collect?</summary>
-
-We track:
-* number of multi-turn sessions started
-* average turns per session
-* RAG hits vs. misses
-* structured fallback occurrences
-</details>
-
-<details>
 <summary>Is any user or org data sent outside our environment?</summary>
 
 No. All processing happens within your region's cluster. RAG context is scoped to dashboards in your own org—no cross-org data leakage.
