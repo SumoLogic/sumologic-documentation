@@ -2674,6 +2674,7 @@ integrations: [
           'integrations/sumo-apps/infrequent-data-tier',
           'integrations/sumo-apps/kickstart-data',
           'integrations/sumo-apps/log-analysis-quickstart',
+          'integrations/sumo-apps/opentelemetry-collector-insights',
           'integrations/sumo-apps/security-analytics',
         ],
       },
