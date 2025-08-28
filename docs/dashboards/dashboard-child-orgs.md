@@ -20,7 +20,7 @@ There are two ways to create a dashboard, either by using the following method o
 
 Now that you have created a new dashboard, you can populate it with panels that visually display your data. This task shows you how to add a panel to your new dashboard and customize the display.
 
-To add a panel to a new Dashboard, do the following:
+To add a panel to a new dashboard, do the following:
 
 1. Select a panel type by clicking the corresponding icon. To know more about panels, refer to [Choosing a panel type](/docs/dashboards/panels).<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
 1. You are prompted to [provide a query](#add-a-log-query). 
