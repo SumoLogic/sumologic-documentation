@@ -55,6 +55,10 @@ For information about AWS Inspector, see [Inspector documentation](https://docs.
 
 <IAMConfiguration/>
 
+## Limitations
+
+Local Automation Bridge is not supported in this version.
+
 ## Change Log
 
 * March 2, 2022 - First upload

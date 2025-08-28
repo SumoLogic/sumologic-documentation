@@ -87,6 +87,10 @@ For information about Amazon Athena, see [Athena documentation](https://docs.aws
   s3:ListBucket
 ```
 
+## Limitations
+
+Local Automation Bridge is not supported in this version.
+
 ## External Libraries
 
 * [AWS Athena](https://github.com/boto/boto3/blob/develop/LICENSE)
