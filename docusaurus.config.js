@@ -16,9 +16,9 @@ const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString()
 module.exports = {
   title: 'Sumo Logic Docs',
   tagline: '',
-  url: process.env.HOSTNAME || "http://localhost:3000",
+  url: process.env.HOSTNAME || "http://localhost:3000", // if this fails, change to "https://www.sumologic.com"
   trailingSlash: true,
-  baseUrl: process.env.BASE_URL || "/",
+  baseUrl: process.env.BASE_URL || "/help/",
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
   favicon: 'https://www.sumologic.com/favicon.ico',
@@ -251,6 +251,12 @@ module.exports = {
       { property: 'og:image:height', content: '628' },
       { property: 'og:image:alt', content: 'Sumo Logic Docs' },
     ],
+    announcementBar: {
+      id: 'domain',
+      content: '<b>We’ve moved!</b> Our docs are now at <a href="https://www.sumologic.com/help">sumologic.com/help</a>. Redirects are in place, but don’t forget to update your bookmarks.',
+      backgroundColor: '#b0eefe',
+      textColor: '#091E42',
+    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
