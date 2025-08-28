@@ -29,7 +29,7 @@ To add a panel to a new dashboard, do the following:
     The autocomplete feature while writing the query will run with respect to the selected child org.
     :::
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  <br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
-1. Once the panel is added the the dashboard, panel query will display the results based on the [default org set for the dashboard](#set-a-default-org).
+1. Once the panel is added the the dashboard, the panel query will display the results based on the [default org set for the dashboard](#set-a-default-org).
 
 You can customize a chart on a dashboard panel in a variety of ways. To include changing the chart type to analyze the data in another format. See [Modify a Chart](./panels/modify-chart.md) for details on all the available options.
 
