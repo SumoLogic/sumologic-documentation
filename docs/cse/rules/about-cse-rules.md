@@ -46,7 +46,7 @@ Watch this micro lesson to learn more about rules.
 | b | **Filters**. Filter the list of rules by different parameters, such as name, type, severity, and so on. |
 | c | **Sort**. Sort rules by name, enabled, severity, created, updated, or signal count updated the past 7 days or 24 hours.  |
 | d | **Updated**. When the rule was last updated. |
-| e | **Staus - Type**. The [rule status](/docs/cse/rules/rules-status/) and [rule type](/docs/cse/rules/about-cse-rules/#rule-types).  |
+| e | **Status - Type**. The [rule status](/docs/cse/rules/rules-status/) and [rule type](/docs/cse/rules/about-cse-rules/#rule-types).  |
 | f | **Severity**. The rule's severity, an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). |
 | g | **Signals Fired**. The number of signals that the rule fired in the last 24 hours as well as 7 days. |
 | h | **Export as JSON**. Export the rule information as a JSON file. |
