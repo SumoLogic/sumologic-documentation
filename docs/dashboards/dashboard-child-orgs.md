@@ -10,7 +10,7 @@ The **Dashboard** page allows you to view log data on the same dashboard in an i
 
 ## Create a dashboard
 
-There are two ways to create a **Dashboard**, either by using the following method or by creating it directly from the [Log Search page](#log-search-page). Follow the steps below to create a dashboard under a selected child org:
+There are two ways to create a dashboard, either by using the following method or by creating it directly from the [Log Search page](#log-search-page). Follow the steps below to create a dashboard under a selected child org:
 
 1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**. 
 1. Select the Dashboard text field at the top of the window and enter a unique name for your new dashboard.
