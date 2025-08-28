@@ -89,7 +89,7 @@ For information about Amazon Athena, see [Athena documentation](https://docs.aws
 
 ## Limitations
 
-Local Automation Bridge is not supported in this version.
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
 
 ## External Libraries
 
