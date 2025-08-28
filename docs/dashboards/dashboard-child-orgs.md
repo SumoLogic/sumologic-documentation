@@ -18,7 +18,7 @@ There are two ways to create a dashboard, either by using the following method o
 
 ## Add a panel
 
-Now that you have created a new Dashboard, you can populate it with panels that visually display your data. This task shows you how to add a panel to your new dashboard and customize the display.
+Now that you have created a new dashboard, you can populate it with panels that visually display your data. This task shows you how to add a panel to your new dashboard and customize the display.
 
 To add a panel to a new Dashboard, do the following:
 
