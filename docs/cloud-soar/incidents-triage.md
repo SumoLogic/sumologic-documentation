@@ -357,6 +357,32 @@ Let's suppose you want to look at a pending event to determine if it needs inves
    * To convert it an incident, click the three-dot kebab button and select **Convert to Incident**. <br/><img src={useBaseUrl('img/cloud-soar/reassign-discard-convert-event.png')} alt="Reassign or convert to incident" style={{border: '1px solid gray'}} width="600"/>      
 1. When you click **Convert to Incident**, a dialog appears for you to select the conversion settings. Select the appropriate incident template, owner, and ID, then click **Apply**. The event, including all enrichment information gathered from any playbooks, will be automatically converted to an incident. <br/><img src={useBaseUrl('img/cloud-soar/convert-to-incident-dialog.png')} alt="Convert to incident dialog" style={{border: '1px solid gray'}} width="300"/>
 
+### Use automation rules to add events to triage
+
+You can create [automation rules](/docs/cloud-soar/automation/#automation-rules) to evaluate incoming data and route events to triage.
+
+1. Start by creating a custom playbook type just for use with triage:
+    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Cloud SOAR > Fields**.
+    1. In the **Custom Fields** dialog select **Incidents**.
+    1. Hover you mouse over **Type** and click the **Edit** button that appears.
+    1. In the **Values** field, create a playbook type for triage. In the following example, we created a *Custom Triage* type.<br/><img src={useBaseUrl('img/cloud-soar/triage-custom-playbook-type.png')} alt="Custom playbook type for triage" style={{border: '1px solid gray'}} width="400"/>
+    1. Click **Save**.
+1. Create an [automation rule](/docs/cloud-soar/automation/#automation-rules) that will add events to triage:
+    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.
+    1. Click **+** to the left of **Rules**.
+    1. On the **Add Automation Rule** dialog, select a name for the rule (for example, *Triage example*). Then select the daemon to use with this new rule, the resource, and fill in all the remaining parameters that you'd like this rule to use.
+    1. Click **Save**. The rule appears in the list of available automation rules.
+    1. In the **Filters** field of your triage automation rule, click the **Edit** button to add filtering. This is very important to properly evaluate the incoming data and determine when to add an event to triage.
+    1. Click **+** to the left of **Actions**.
+    1. In the **Add action** dialog, select the following:
+       1. **Action Type**. Select **Add to Triage**. This is the action that automatically adds events to the Triage page.
+       1. **Type**. Select the playbook type you added in step 1 above, for example, **Custom Triage**.
+       1. **Auto grab user**. Select a user to automatically grab the triage when it is aded to the Triage page. You can also leave this field empty if you don't want an analyst or group to automatically grab the triage event.
+       1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/triage-add-action.png')} alt="Select the 'Add to Triage' action type for an automation rule" style={{border: '1px solid gray'}} width="300"/>
+    1. When done, your automation rule should look something like this. Note that your automation rule should have the **Add to Triage** action in order to add events to triage.<br/><img src={useBaseUrl('img/cloud-soar/triage-automation-rule.png')} alt="Example automation rule for triage" style={{border: '1px solid gray'}} width="800"/>
+    1. continue here
+
+
 ### Triage field settings
 
 By default, the triage module contains two fields, `Status` and `Type`. Additional values may be added to the `Status` field; however, the `Type` field is directly linked to the incident type field and cannot be modified directly.
