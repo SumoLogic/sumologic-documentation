@@ -58,6 +58,20 @@ For information about Amazon Simple Notification Service, see [Amazon Simple Not
 
 <IAMConfiguration/>
 
+## Limitations
+
+Local Automation Bridge is not supported in this version.
+
+## Required Permissions
+```
+  sns:Publish
+  sns:ListSubscriptions
+  sns:ListTopics
+  sns:GetSubscriptionAttributes
+  sns:GetTopicAttributes
+  sns:ListSMSSandboxPhoneNumbers
+```
+
 ## External Libraries
 
 * [AWS Simple Notification Service](https://github.com/boto/boto3/blob/develop/LICENSE)

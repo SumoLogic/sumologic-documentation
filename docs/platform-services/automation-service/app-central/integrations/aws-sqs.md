@@ -59,6 +59,10 @@ For information about AWS SQS, see [SQS documentation](https://docs.aws.amazon.c
 
 <IAMConfiguration/>
 
+## Limitations
+
+Local Automation Bridge is not supported in this version.
+
 ## Required Permissions
 ```
   sqs:ListQueues

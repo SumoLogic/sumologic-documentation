@@ -59,6 +59,10 @@ For information about AWS Route 53, see [Route 53 documentation](https://docs.aw
 ### AWS IAM role-based access
 <IAMConfiguration/>
 
+## Limitations
+
+Local Automation Bridge is not supported in this version.
+
 ## Change Log
 
 * December 24, 2019 - First upload
