@@ -69,7 +69,7 @@ To create a Dashboard from the [Log Search page](/docs/search):
 
 You can delete a panel that you no longer need.
 
-1. Go to the Dashboard in Sumo Logic that has the panel you want to delete.
+1. Go to the dashboard in Sumo Logic that has the panel you want to delete.
 1. Hover the cursor over the **Details** icon to display the pop-up menu.<br/><img src={useBaseUrl('/img/dashboards/panels/delete-panel/details-option.png')} alt="details option" style={{border: '1px solid gray'}} width="700" />
 1. Select **Delete**.<br/><img src={useBaseUrl('/img/dashboards/panels/delete-panel/delete-a-panel.png')} alt="delete a panel" style={{border: '1px solid gray'}} width="700" />
 
