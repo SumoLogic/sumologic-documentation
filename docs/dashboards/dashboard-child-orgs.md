@@ -48,7 +48,7 @@ Enter your aggregate [search query](/docs/search/search-query-language/group-agg
 
 ## Set a default org
 
-Follow the below steps to change the default child org by following the below steps:
+Follow the below steps to change the default child org:
 
 1. In the **Select Org** dropdown, select the org of your choice.
 1. Click the kebab icon against the **Select Org** option, and select **Set as Default**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/set-as-default.png')} alt="set-as-default" style={{border: '1px solid gray'}} width="400" />
