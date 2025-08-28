@@ -65,7 +65,7 @@ To create a Dashboard from the [Log Search page](/docs/search):
 1. In the updated window toggle the **Create as Dashboard** option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Create-new-dashboard-new-from-search-page.png')} alt="Create new dashboard new from search page" style={{border: '1px solid gray'}} width="400" />
 1. Click **Add** and your new dashboard is created.
 
-## Delete a Panel
+## Delete a panel
 
 You can delete a panel that you no longer need.
 
