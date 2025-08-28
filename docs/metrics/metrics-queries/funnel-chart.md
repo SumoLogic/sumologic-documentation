@@ -11,7 +11,7 @@ A funnel chart visualizes categorical data. It’s useful for visualizing the st
 
 ## Create a funnel chart
 
-1. Enter and run a metrics query in the Metrics Explorer.
+1. Enter and run a metrics query in the Metrics Search.
    :::note
    Don't include the `outlier` operator in your query, as it isn't supported in this chart type.
 1. Click the **Chart** tab.
