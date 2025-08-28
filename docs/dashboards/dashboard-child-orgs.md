@@ -34,7 +34,7 @@ To add a panel to a new dashboard, do the following:
 You can customize a chart on a dashboard panel in a variety of ways. To include changing the chart type to analyze the data in another format. See [Modify a Chart](./panels/modify-chart.md) for details on all the available options.
 
 :::note
-- Currently, this capability is limited only to Log data.
+- Currently, this capability is limited only to log data.
 - We only support selecting one child org to perform the log search.
 :::
 
