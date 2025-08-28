@@ -52,17 +52,17 @@ Click on any monitor in your **Monitors** table, and the **Monitor Details** tab
 
 For logs monitors, the **View in Log Search** button opens a new **Log Search** page with the monitor’s query preloaded in the search field. You can run the query to compare the search results against the threshold values set in your monitor.
 
-### View in Metrics Explorer
+### View in Metrics Search
 
-For metrics monitors, the **View in Metrics Explorer** button opens the Metrics Explorer with the monitor’s threshold values pre-applied. This allows you to compare the set thresholds against real-time data in the Metrics Explorer graph.
+For metrics monitors, the **View in Metrics Search** button opens the Metrics Search with the monitor’s threshold values pre-applied. This allows you to compare the set thresholds against real-time data in the Metrics Search graph.
 
 1. Navigate to the **Trigger Conditions** section and note the thresholds values defined for Critical and Warning data conditions. All other parameters, such as the 15-minute window and the "at all times" option, will be set to default.<br/><img src={useBaseUrl('img/alerts/monitors/trigger-conditions.png')} alt="view-in-explorer-page" width="450" />
-1. Click **View in Metrics Explorer**. The Metrics Explorer page will display with the same threshold values applied to the panel and graph.<br/><img src={useBaseUrl('img/alerts/monitors/view-in-explorer-page.png')} alt="view-in-explorer-page" width="300" />
+1. Click **View in Metrics Search**. The Metrics Search page will display with the same threshold values applied to the panel and graph.
 1. On the **Panel settings** page, click threshold icon to view the defined threshold values for the monitor.<br/><img src={useBaseUrl('img/alerts/monitors/thresholds-icon.png')} alt="thresholds-icon" width="500" />
 1. To adjust the chart view, you may need to change the time range in the graph, as the default window is set to 15 minutes.<br/><img src={useBaseUrl('img/alerts/monitors/thresholds-graph.png')} alt="thresholds-graph" width="950" />
 
 :::note
-The same threshold translation functionality applies when [creating a monitor from Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-metrics-explorer) and when [opening the Alert Response page in Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds).
+The same threshold translation functionality applies when [creating a monitor from Metrics Search](/docs/alerts/monitors/create-monitor/#from-metrics-search) and when [opening the Alert Response page in Metrics Search](/docs/alerts/monitors/alert-response/#translating-thresholds).
 :::
 
 ### Edit a monitor

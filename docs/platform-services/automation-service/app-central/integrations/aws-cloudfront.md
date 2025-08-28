@@ -65,6 +65,10 @@ For information about AWS CloudFront, see [CloudFront documentation](https://doc
   cloudfront:GetCloudFrontOriginAccessIdentity
 ```
 
+## Limitations
+
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
+
 ## Change Log
 
 * November 10, 2022 - First upload

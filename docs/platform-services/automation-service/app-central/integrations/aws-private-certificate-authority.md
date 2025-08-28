@@ -61,6 +61,10 @@ For information about AWS Private Certificate Authority, see [AWS Private Certif
 
 ### AWS IAM role-based access
 
+## Limitations
+
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
+
 <IAMConfiguration/>
 
 ## Change Log
