@@ -61,7 +61,7 @@ To ensure that [Library](/docs/get-started/library) content is consistent across
 - *Cloud SIEM Legacy Rule Type* is not supported for sync or push.
 
 :::info
-To know how to view history and view updates in the audit log​, refer to the [Manage Organizations for MSSPs - CSIEM](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules).
+To learn how to view history and view updates in the audit log​, refer to [Manage Organizations for MSSPs - Cloud SIEM](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules).
 :::
 
 ## FAQs
