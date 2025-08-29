@@ -62,6 +62,10 @@ import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-confi
 
 <IAMConfiguration/>
 
+## Limitations
+
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
+
 ## Required Permissions
 ```
   s3:GetBucketPolicy
