@@ -196,7 +196,7 @@ If your Kafka helm chart/pod is writing the logs to standard output, then the [S
    curl http://localhost:8778/jolokia/list
    ```
 
-3. The Sumo Logic Kubernetes collection will automatically start collecting logs and metrics from the pods having the annotations and labels defined in the previous steps. Verify logs and metrics are flowing into Sumo Logic by running the following query in [Log Search](/docs/search/get-started-with-search/search-basics/about-search-basics/) and [Metrics Explorer](/docs/metrics/introduction/#metrics-queries):
+3. The Sumo Logic Kubernetes collection will automatically start collecting logs and metrics from the pods having the annotations and labels defined in the previous steps. Verify logs and metrics are flowing into Sumo Logic by running the following query in [Log Search](/docs/search/get-started-with-search/search-basics/about-search-basics/) and [Metrics Search](/docs/metrics/introduction/#metrics-queries):
    ```sql
    component="messaging" and messaging_system="kafka"
    ```
