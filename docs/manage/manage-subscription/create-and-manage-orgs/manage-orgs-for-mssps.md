@@ -35,7 +35,7 @@ To ensure that [Library](/docs/get-started/library) content is consistent across
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
 1. Select the **Manage Content** tab.
 1. In the **Source Org** field, select the organization that will provide the source data to be pushed in other organizations.
-1. In the **Content** bar, select **Library**. For more information about Library items, refer to the [Managing Your Sumo Logic Library](/docs/get-started/library).
+1. In the **Content** bar, select **Library**. For more information about Library items, refer to [Managing Your Sumo Logic Library](/docs/get-started/library).
 1. Select individual items to be pushed, or all items.
 1. Click **Push Selected Items**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items.png')} alt="Push Selected Items button" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Push Selected Content** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
