@@ -989,7 +989,6 @@ module.exports = {
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-flex',
             'manage/manage-subscription/create-and-manage-orgs/manage-org-settings',
             'manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules',
-            'manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps',
           ],
         },
         {
