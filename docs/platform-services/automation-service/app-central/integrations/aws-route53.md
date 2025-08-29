@@ -61,7 +61,7 @@ For information about AWS Route 53, see [Route 53 documentation](https://docs.aw
 
 ## Limitations
 
-Local Automation Bridge is not supported in this version.
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
 
 ## Change Log
 

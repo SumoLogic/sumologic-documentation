@@ -60,7 +60,7 @@ For information about Amazon Simple Notification Service, see [Amazon Simple Not
 
 ## Limitations
 
-Local Automation Bridge is not supported in this version.
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
 
 ## Required Permissions
 ```

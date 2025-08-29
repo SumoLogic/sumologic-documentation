@@ -64,7 +64,7 @@ import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-confi
 
 ## Limitations
 
-Local Automation Bridge is not supported in this version.
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
 
 ## Required Permissions
 ```
