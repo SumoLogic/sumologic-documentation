@@ -49,8 +49,14 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/manage-subscription/usage-management"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Usage Management</h4></a>
+  <a href="/docs/manage/manage-subscription/organization-usage-limits"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Organization Usage Limits</h4></a>
   <p>Learn to set query-level budget to define spending limits for queries.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/manage-subscription/scan-budgets"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Scan Budget</h4></a>
+  <p>Learn to set advacned query-level budget to define spending limits for queries.</p>
   </div>
 </div>
 <div className="box smallbox card">
