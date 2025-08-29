@@ -13,16 +13,20 @@ description: Learn more about the new Sumo Logic Training and Certification Prog
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/general/master-class.png')} alt="training icon" width="50"/> <img src={useBaseUrl('img/icons/general/credential.png')} alt="certification icon" width="50"/>
+:::note
+This program is in Beta. For more information, contact your Sumo Logic account representative.
+:::
 
-Sumo Logic is evolving our popular [certification program](/docs/get-started/training-certification-faq) to drive the highest possible value and experience for learners. These changes include wider enhancements to our learning program: renaming to **Sumo Logic Academy**, expanding and refining our course catalog, and introducing live remote exam proctoring and digital credentialing. These enhancements will up-level the Sumo Logic learning journey to align with industry training practices.
+We are leveling up our Sumo Logic certification program with the launch of **Sumo Logic Academy**, our new hub for training and professional development.  
+
+With Sumo Logic Academy, you’ll find an expanded and refined course catalog, live remote exam proctoring through our partner Kryterion, and industry-recognized digital badges issued by Credly. These enhancements bring our program in line with best practices across the industry, giving you credentials you can trust and proudly share with peers, employers, and the wider professional community.
 
 ## Getting started
 
 ### How do I access the Training Portal?
 
 1. Log in to Sumo Logic.
-1. From your **Home** page, click the **Learn** tab > **Learning Hub**.<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Get Certified" style={{border: '1px solid gray'}} width="700" />
+1. From your **Home** page, click the **Learn** tab > **Learning Hub**.<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Get Certified" style={{border: '1px solid gray'}} width="600" />
 
 You'll be redirected to the **Training** portal, where you can access all courses and certifications.
 
@@ -30,11 +34,13 @@ You'll be redirected to the **Training** portal, where you can access all course
 
 ### Why are you moving from a free to a paid model?
 
-By introducing our new, role-based **Sumo Logic Certified** program, candidates will gain new skills to help drive their careers forward while supplying a legitimized credential you can be proud to share with peers and your professional community. Additionally, passing the new, skills-based assessment will give you a proven, differentiated level of Sumo Logic knowledge to showcase the ability to effectively and proficiently use Sumo Logic products within your organization.
+By investing in a Sumo Logic Certified credential, you’ll gain a meaningful, industry-recognized certification that validates your real-world skills.  
 
-This is accomplished through the following:
+Unlike our previous knowledge-based quizzes, the new exams are skills-based, proctored, and credentialed. This ensures your certification carries weight and distinction, giving you a proven advantage in your career while driving adoption of advanced use cases in your organization.
 
-* **All new exams**. Exams evaluate based on skill sets, as opposed to the earlier, simple knowledge based assessments. Refer to our full [catalog](https://www.sumologic.com/learn/training/):
+Improvements include:
+
+* **All new exams**. Assessments now measure skills rather than basic knowledge checks. Refer to our [full catalog](https://www.sumologic.com/learn/training/), including:
    * *Sumo Logic Certified Fundamentals User*
    * *Sumo Logic Certified Search Mastery User*
    * *Sumo Logic Certified Admin*
@@ -42,45 +48,42 @@ This is accomplished through the following:
    * *Sumo Logic Certified Cloud SIEM Practitioner*
    * *Sumo Logic Certified Metrics Analyst*
    * *Sumo Logic Certified Observability Practitioner*
-* **Live, remote exam proctoring**. The exam is proctored through our partner testing company, Kryterion. With a live proctor, we are able to eliminate the possibility of cheating in our exams and legitimize the credential, adding robustness and trust. As a candidate, you can therefore be confident in a legitimate exam delivered in the fairest manner possible, eliminating the possibility of cheating.
-* **Digital credentialing**. Finally, after passing your exam, you will be rewarded with a digital badge issued through our partner, [Credly](https://info.credly.com/).
-
-These enhancements bring the Sumo Logic learning journey in-line with what you have come to expect from training practices common in our field.
+* **Live, remote proctoring**. Exams are administered by Kryterion with live proctors to ensure fairness and integrity.
+* **Digital badges**. After passing your exam, you’ll receive a Credly-issued badge you can share on LinkedIn, your resume, and within your organization.
 
 ### How much does it cost to get certified?
 
-The cost of the exams are $100 for Fundamentals, and $150 for others. They can be paid by credit card or by Purchase Order through your Sumo Logic account representative.
+The cost of exams is $100 for Fundamentals and $150 for advanced certifications. Payment can be made by credit card or Purchase Order through your Sumo Logic account representative.
 
-### Do I have to pay for taking training courses or just the certification?
+### Do I have to pay for training courses or just the certification?
 
-Sumo Logic training, including hands-on public virtual instructions, workshops and self-paced learning, will remain free to all our users. Alongside new certifications, private and custom training will continue to be available for purchase.
+All Sumo Logic training, including self-paced eLearning, hands-on public virtual classes, and workshops, remains free to all users. The only cost is for the certification exam itself. Private and custom training will continue to be available for purchase.
 
 ### Is a voucher included in my training class?
 
-All our training course offerings, including self-paced and public Instructor-led training (ILT), continue to be free of charge. The fee applies for the certification exam and credential only.
+No. Training remains free of charge, but a fee applies for certification exams.
 
 ### How long do I have to use my voucher?
 
-You will have one year to use the voucher from the date of issue.
-
+Vouchers are valid for one year from the date of issue.
 
 ## Certification value and renewal
 
 ### Why should I get Sumo Logic certified?
 
-Our goal is to provide you with the highest level of value to maximize your Sumo Logic investment. The new, role-based Sumo Logic Certified program will help learners gain new skills to help drive your careers forward while supplying a legitimized credential you can be proud to share with peers and your professional community. Additionally, you will have a proven, differentiated level of Sumo Logic knowledge to showcase the ability to effectively and proficiently use Sumo Logic products within your organization.
+The role-based Sumo Logic Certified program helps you grow your skills, demonstrate expertise, and earn a credential you can showcase to peers and employers. You’ll build confidence using Sumo Logic products and gain a differentiated level of knowledge to support your organization.
 
 ### If I already have Sumo Logic certifications, will I lose those?
 
-The new Sumo Logic Certified credentials replace our previous set of certifications. While the previous program is being sunset, the credential will remain valid for one year (Fundamentals courses will be valid for two years). Current exam holders are welcome to renew their credential anytime.
+The new credentials replace our previous certifications. Existing certifications remain valid until their original expiration (Fundamentals: two years; all others: one year). You’re welcome to renew under the new program at any time.
 
 ### Can I get re-certified?
 
-Current exam holders are welcome to renew their credentials anytime.
+Yes. You can renew your credential at any time by retaking the relevant exam.
 
 ### How long do certifications last?
 
-Certifications are valid for two years before they need to be renewed. This extends validity by one year compared to the previous certification model.
+Certifications are valid for two years before they need to be renewed. This is one year longer than our previous model.
 
 ### Are continuing education credits included with the certification?
 
@@ -91,42 +94,51 @@ Not at this time.
 
 ### How do I get certified and schedule my exam?
 
-Per policy, we recommend a minimum of six months hands-on experience with Sumo Logic prior to taking a certification exam. The process for scheduling the exam is simple and easy:
-* You can purchase exam credits directly online by logging into Sumo Logic, clicking the **Learn** tab > **Exam Registration**.<br/><img src={useBaseUrl('img/get-started/exam-registration.png')} alt="exam registration" style={{border: '1px solid gray'}} width="700" />
-* You will then register with our exam proctoring partner, Kryterion, after which you will be able to select and pay for the exam of your choice.
-* After taking the exam, results will be shown immediately. If passing, further instructions will follow by email for accepting the digital badge.
+We recommend at least six months of hands-on Sumo Logic experience before taking a certification exam.
 
 <!--
 Please see the following short video that walks through the workflow to register, pay, schedule and prepare for a proctored exam.
 -->
 
+The process for scheduling the exam is easy:
+1. Log in to Sumo Logic.
+1. From your **Home** page, click the **Learn** tab > **Exam Registration**.<br/><img src={useBaseUrl('img/get-started/exam-registration.png')} alt="exam registration" style={{border: '1px solid gray'}} width="600" />
+1. Purchase your exam credit and register through Kryterion, our proctoring partner.
+1. Select and schedule your exam.
+1. Results are displayed immediately after completion. If you pass, you’ll receive instructions by email to claim your badge.
+
+
 ### What are the requirements for taking an exam?
 
-After registering for the exam through our exam partner, Kryterion, you will receive a list of workspace and technical requirements to attend the live proctored exam. Please take note of these. The surrounding desk environment must be clear of all materials and will be reviewed by the proctor before the exam is allowed to proceed.
+Kryterion provides a list of technical and workspace requirements for live proctored exams. Your desk must be clear of materials and will be reviewed by the proctor before the exam begins.
 
-For full details, refer to the Kryterion’s [Online Testing Requirements](https://kryterion.my.site.com/support/s/article/Online-Testing-Requirements?language=en_US) documentation. You are responsible for meeting system requirements of online proctored exams. Lastly, please be aware that exams are no longer open book/documentation.
+For details, see [Kryterion Online Testing Requirements](https://kryterion.my.site.com/support/s/article/Online-Testing-Requirements?language=en_US).
 
-### What if I run into a technical issue while taking the test?
+:::note
+Exams are no longer open book.
+:::
 
-Kryterion support is available anytime during the test. You can use the Live Chat or web form at [Kryterion Candidate Support](https://kryterion.force.com/support/s/contactsupport?language=en_US).
+### What if I run into a technical issue during the exam?
+
+Kryterion support is available during the exam. Use Live Chat or submit a request via [Kryterion Candidate Support](https://kryterion.force.com/support/s/contactsupport?language=en_US).
 
 ### Will I see preliminary exam results on the screen upon completing my test?
 
-Yes, a Pass/Fail result will show on the screen after results have been submitted and the secure proctored exam environment has been left.
+Yes. A Pass/Fail result will appear on the screen after submission and once you exit the secure proctored environment.
 
 ### What is the retake policy? Will I have to pay again?
 
-You can retake your exam 48 hours after the previous exam attempt. A new voucher will be required for each attempt. For security and to maintain trust, we do not show which specific questions were incorrectly answered, but an overall score is displayed.
+You can retake your exam 48 hours after the previous attempt. Each retake requires a new voucher. For security, we do not share which specific questions were missed; only your overall score is shown.
 
-## Badge and community
+## Badges and community
 
 ### Where can I find my new Sumo Logic Certification digital badges?
 
-Certifications badges can be viewed from the [Credly](https://info.credly.com/) portal using the Credly account created after receiving your first certification granted. We also encourage you to join the [Sumo Logic Certification community on LinkedIn](https://www.linkedin.com/groups/13542036/) and add your badges to your profile!
+After passing your exam, you’ll receive a digital badge issued via Credly. You can manage and share your badges through the [Credly portal](https://info.credly.com/). We also encourage you to join the [Sumo Logic Certification community on LinkedIn](https://www.linkedin.com/groups/13542036/) to network and add your badges to your profile to showcase your achievement.
 
 ## Need help?
 
-Have more questions? Reach out to our training and education team at [training@sumologic.com](mailto:training@sumologic.com) and we’ll be happy to help answer any additional questions.
+Have more questions? Reach out to our training and education team at [training@sumologic.com](mailto:training@sumologic.com).  
 
 <!--
 See also the following resources:
@@ -135,6 +147,6 @@ See also the following resources:
 * Training docs site
 -->
 
-For help with registering, scheduling or taking an exam, please refer to our exam proctor, Kryterion:
+For assistance with registration, scheduling, or technical issues, contact our exam partner, Kryterion:
 * [Kryterion Candidate Support](https://kryterion.force.com/support/s/contactsupport?language=en_US)
 * [Online Testing Requirements](https://kryterion.my.site.com/support/s/article/Online-Testing-Requirements?language=en_US)
