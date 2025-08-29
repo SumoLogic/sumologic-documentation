@@ -2610,6 +2610,7 @@ integrations: [
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zendesk',
+          'integrations/saas-cloud/zimperium',
           'integrations/saas-cloud/zoom',
         ],
       },
