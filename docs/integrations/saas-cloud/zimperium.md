@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/integrations/zimperium/zimperium-logo.png')} alt="Thumbnail icon" width="80" />
 
-The Zimperium app equips security analysts with comprehensive visibility into mobile threat activity, enabling faster detection, investigation, and response to security incidents on mobile devices. Its dashboard centralizes Zimperium’s threat intelligence and device telemetry, helping identify high-risk users, compromised devices, and malicious activity targeting mobile endpoints.
+The Sumo Logic app for Zimperium equips security analysts with comprehensive visibility into mobile threat activity, enabling faster detection, investigation, and response to security incidents on mobile devices. Its dashboard centralizes Zimperium’s threat intelligence and device telemetry, helping identify high-risk users, compromised devices, and malicious activity targeting mobile endpoints.
 
 With this app, analysts can:
 - **Monitor threats by severity**. Track trends over time for critical, important, low, and hidden threats, helping prioritize investigations.
