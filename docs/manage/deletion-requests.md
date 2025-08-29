@@ -91,7 +91,7 @@ To cancel a data deletion request:
 ## Approve the deletion request
 
 :::note
-- Ensure you have the **Administrator** access with **Review Deletion Requests** capability. By default, **Manage Deletion Requests** and **View Deletion Requests** capabilities will be added if you have the **Review Deletion Requests** capability.
+- To approve or reject a request, ensure you have the **Review Deletion Requests** capability. By default, **Manage Deletion Requests** and **View Deletion Requests** capabilities will be added if you have the **Review Deletion Requests** capability.
 - Only **Administrator** will have the ability to view the **Approve** and **Reject** buttons.
 :::
 
