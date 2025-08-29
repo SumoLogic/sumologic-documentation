@@ -24,6 +24,8 @@ You may upgrade your account at any time. In these instances, an admin can reque
 
 Once a request has been submitted, a support ticket is automatically opened. A representative from Sumo Logic will respond to your request as soon as possible, generally between one and two business days. Depending on the app that's been requested, Sumo Logic may need additional information, or may need to work with your organization to change the account type to enable some apps.
 
+## Guides
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
@@ -77,6 +79,12 @@ Once a request has been submitted, a support ticket is automatically opened. A r
       <div className="container">
       <a href="/docs/integrations/sumo-apps/log-analysis-quickstart"><img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="40"/><h4>Log Analysis QuickStart</h4></a>
       <p>A guide to the Sumo Logic Log Analysis QuickStart app.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href="/docs/integrations/sumo-apps/opentelemetry-collector-insights"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>OpenTelemetry Collector Insights</h4></a>
+      <p>A guide to the Sumo Logic OpenTelemetry Collector Insights app.</p>
       </div>
     </div>
     <div className="box smallbox card">

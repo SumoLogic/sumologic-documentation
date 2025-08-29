@@ -5,6 +5,8 @@ sidebar_label: Introduction to Metrics
 description: Sumo Logic Metrics is an effective tool for monitoring, troubleshooting, and identifying the root causes of problems.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Metrics are an effective tool for monitoring, troubleshooting, and identifying the root causes of problems. This page is a high-level overview of metrics in Sumo Logic and the terminology we use to talk about metrics.
 
 
@@ -86,15 +88,16 @@ For more information, see [About Metrics Rules](/docs/metrics/metric-rules-edito
 
 ## Metrics queries
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access Metrics Explorer, go to the **Home** screen and select **Metrics**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access Metrics Search, go to the **Home** screen and select **Metrics**. 
 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access Metrics Explorer, in the main Sumo Logic menu select **Observability**, and then under **Metrics** select **Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access Metrics Search, in the main Sumo Logic menu select **Observability**, and then under **Metrics** select **Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**. 
  
 
-In the screenshot below, the Metrics Explorer shows the results of two queries.
+In the screenshot below, the Metrics Search shows the results of two queries.
 
-![two-queries.png](/img/metrics/two-queries.png)
+<img src={useBaseUrl('img/metrics/pre-join.png')} alt="Before joining queries" style={{border: '1px solid gray'}} width="800" />
+
 
 ### What’s in a metric query?
 
@@ -102,7 +105,7 @@ A metric query consists of a metric, one or more filters and optionally, one or
 
 #### Metric
 
-When you [create a metric query](/docs/metrics/metrics-queries/metrics-explorer/#create-a-metric-query) in the Metrics Explorer, the first thing you do is select a metric. When you click in the **Metrics** field, a list of metrics appears. 
+When you [create a metric query](/docs/metrics/metrics-queries/metrics-explorer/#create-a-metric-query) in the Metrics Search, the first thing you do is select a metric. When you click in the **Metrics** field, a list of metrics appears. 
 
 #### Filters  
 
@@ -119,7 +122,7 @@ For more information, see [Metrics Operators](/docs/metrics/metrics-operators).
 
 ## Creating a query
 
-For instructions on how to create a metric query, see [Metrics Explorer](../metrics-queries/metrics-explorer.md#create-a-metric-query). 
+For instructions on how to create a metric query, see [Metrics Search](../metrics-queries/metrics-explorer.md#create-a-metric-query). 
 
 ### Metricmonitors
 
