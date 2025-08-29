@@ -34,7 +34,7 @@ After a data deletion request is approved, data will be deleted from the organiz
 :::note
 - During the data deletion process, existing messages may temporarily appear duplicated for a few seconds. These duplicated messages will automatically disappear once the data deletion is complete.
 - Pinned queries may continue to display data identified for deletion for up to 24 hours from the initial run, prior to the data deletion request approval.
-- Data deletion request will be automatically cancelled after 30 days if no approval action is taken.
+- Data deletion request will be automatically cancelled after 30 days if no action is taken.
 :::
 
 :::info
@@ -100,7 +100,7 @@ Once the deletion request is created, it will be notified to the users who has t
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Logs > Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select **Configuration**, and then under **Logs** select **Deletion Requests**. 
 1. Filter for the status with **Pending review**. <img src={useBaseUrl('img/search/get-started-search/pending-requests.png')} alt="filter for pending deletion requests" style={{border: '1px solid gray'}} width="800"/>
 1. Click on the deletion request to review the request.
-1. **Approve** or **Reject** the request based on your requirement.
+1. **Approve** or **Reject** the request based on your requirement.<br/><img src={useBaseUrl('img/search/get-started-search/approve-reject-deletion-request.png')} alt="Approve/Reject deletion requests side panel" style={{border: '1px solid gray'}} width="400"/>
     - **Approve**. Enter **Delete** in the **Approve Deletion Request** pop-up to permanently delete the data, and click the **Approve Request** button. <br/><img src={useBaseUrl('img/search/get-started-search/approve-deletion-request.png')} alt="Approve deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
     - **Reject**. Enter the reason for rejection in the **Reject Deletion Request** pop-up to help the requester understand the rejection issue to take necessary actions, and click the **Reject Request** button.<br/><img src={useBaseUrl('img/search/get-started-search/reject-deletion-request.png')} alt="Reject deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
 
