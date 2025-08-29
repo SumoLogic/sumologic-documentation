@@ -23,7 +23,7 @@ With this app, analysts can:
 - **Assess device risk posture**. Review aggregated risk scores, posture issues, and affected users for incident prioritization.
 - **Track threat mitigation events**. Confirm and audit mitigated threats to ensure timely response.
  
-Use Cases for Security Analysts:
+Use cases for security analysts:
 - Proactively hunting for compromised mobile endpoints in the organization.
 - Detecting and investigating targeted phishing or malicious link-tapping events.
 - Monitoring users connecting to high-risk networks or malicious domains.
