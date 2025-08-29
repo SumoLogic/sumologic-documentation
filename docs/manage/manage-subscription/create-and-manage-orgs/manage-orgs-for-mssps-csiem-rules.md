@@ -6,7 +6,7 @@ description: Learn how to manage organizational Cloud SIEM rules and rule tuning
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to manage organizational Cloud SIEM rules and rule tuning expression for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
+This article describes how to manage Cloud SIEM rules and rule tuning expressions in organizations for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
 
 ## Considerations
 
