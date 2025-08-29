@@ -34,7 +34,7 @@ Steps to upgrade:
 
 1. Navigate to the **Manage Plan** page.
    * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. From the left navigation menu, go to **Administration > Account > Manage Plan**.  
-   * **[New UI](/docs/get-started/sumo-logic-ui)**. From the top navigation menu, go to **Administration > Account > Manage Plan**.
+   * **[New UI](/docs/get-started/sumo-logic-ui)**. In the main Sumo Logic menu select **Administration**, and then under **Account** select **Manage Plan**.
 
 1. Select your Essentials plan.
    - Choose **Troubleshoot**, **Collaborate**, or **Orchestrate** ([learn more](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#essentials)).

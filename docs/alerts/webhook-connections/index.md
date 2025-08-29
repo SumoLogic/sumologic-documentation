@@ -10,7 +10,7 @@ Our webhook connections send Sumo Logic alerts to third-party applications.
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access webhook connections, in the main Sumo Logic menu select **Manage Data > Monitoring > Connections**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access webhook connections, in the top menu select **Configuration** and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access webhook connections, in the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**.
 
 
 :::tip
