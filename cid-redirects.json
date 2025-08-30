@@ -4471,5 +4471,5 @@
   "/docs/integrations/microsoft-azure/microsoft-defender-for-cloud": "/docs/integrations/microsoft-azure/azure-security-defender-for-cloud",
   "/docs/integrations/azure": "/docs/integrations/microsoft-azure",
   "/docs/search/copilot": "/docs/search/mobot",
-  "/docs/search/copilot-unstructured-logs-beta": "/docs/search/mobot-unstructured-logs-beta",
+  "/docs/search/copilot-unstructured-logs-beta": "/docs/search/mobot-unstructured-logs-beta"
 }

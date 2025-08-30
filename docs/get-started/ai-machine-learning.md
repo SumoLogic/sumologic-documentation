@@ -97,7 +97,7 @@ Our Global Intelligence Service apps provide security teams with valuable real-t
 ## Additional resources
 
 * Guide: [Understanding artificial intelligence for log analytics](https://www.sumologic.com/guides/machine-data-analytics)
-* Blogs:
+* Blogs: 
    * [What are the differences between artificial intelligence, machine learning, deep learning and generative AI?](https://www.sumologic.com/blog/machine-learning-deep-learning)
    * [DevSecOps in an AI world requires disruptive log economics](https://www.sumologic.com/blog/devsecops-ai-disruptive-log-economics)
    * [Generative AI: The latest example of systems of insight](https://www.sumologic.com/blog/generative-ai-latest-example-systems-of-insight)
