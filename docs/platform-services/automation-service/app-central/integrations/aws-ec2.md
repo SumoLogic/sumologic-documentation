@@ -108,6 +108,10 @@ For information about AWS EC2, see [EC2 documentation](https://docs.aws.amazon.c
   ec2:UnmonitorInstances
 ```
 
+## Limitations
+
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
+
 ## Change Log
 
 * October 9, 2019 - First upload
