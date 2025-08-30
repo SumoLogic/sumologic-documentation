@@ -2,7 +2,11 @@
 id: azure-functions
 title: Azure Functions
 sidebar_label: Azure Functions
-description: The Sumo Logic app for Azure Functions enables seamless integration and monitoring of Azure Functions, providing insights and analytics to optimize serverless application performance and security.
+keywords: 
+ - azure functions
+ - azure functions app
+ - azure functions monitoring
+description: This document outlines what are Azure Functions, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -41,6 +45,10 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 You must explicitly enable diagnostic settings for each Azure Functions you want to monitor. Diagnostic Settings are not supported for function apps running on version 1.x. You can forward logs to the same Event Hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/FunctionApp/Logs`, `Azure/FunctionApp/Metrics`.
+
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure metrics collection
 
@@ -271,3 +279,8 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
+- Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)

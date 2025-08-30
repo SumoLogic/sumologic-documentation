@@ -122,6 +122,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-iam-users-source"><img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="icon" width="50"/><h4>AWS IAM Users</h4></a>
+  <p>Learn to collect the IAM User Inventory logs from the AWS SDK and send them to Sumo Logic for analysis.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source"><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/><h4>Azure Event Hubs</h4></a>
   <p>Provides a secure endpoint to receive data from Azure Event Hubs.</p>
   </div>
@@ -304,6 +310,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source"><img src={useBaseUrl('img/send-data/gmail-trace-logs-icon.svg')} alt="Gmail" width="40"/><h4>Gmail Trace Logs</h4></a>
   <p>Pulls Gmail log data using BigQuery Library APIs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source"><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/github-copilot.png')} alt="Thumbnail icon" width="100"/><h4>Github Copilot</h4></a>
+  <p>Learn to collect the organization metrics and team metrics from GitHub Copilot platform.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -357,6 +357,42 @@ Let's suppose you want to look at a pending event to determine if it needs inves
    * To convert it an incident, click the three-dot kebab button and select **Convert to Incident**. <br/><img src={useBaseUrl('img/cloud-soar/reassign-discard-convert-event.png')} alt="Reassign or convert to incident" style={{border: '1px solid gray'}} width="600"/>      
 1. When you click **Convert to Incident**, a dialog appears for you to select the conversion settings. Select the appropriate incident template, owner, and ID, then click **Apply**. The event, including all enrichment information gathered from any playbooks, will be automatically converted to an incident. <br/><img src={useBaseUrl('img/cloud-soar/convert-to-incident-dialog.png')} alt="Convert to incident dialog" style={{border: '1px solid gray'}} width="300"/>
 
+### Use automation rules to add events to triage
+
+You can create [automation rules](/docs/cloud-soar/automation/#automation-rules) to evaluate incoming data and route events to the **Triage** page. This allows you to automatically route suspicious events to triage for evaluation without turning every event into an incident, and to run other automations on the events using playbooks.
+
+Perform the following steps to:
+* Create a custom playbook type for triage.
+* Create an automation rule to add events to the **Triage** page (using the **Add to Triage** action type).
+* Create a playbook to run specifically for triage.
+
+1. Start by creating a custom playbook type just only for use with triage. This gives you greater control over the playbooks that will run for triage:
+    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Cloud SOAR > Fields**.
+    1. In the **Custom Fields** dialog select **Incidents**.
+    1. Hover you mouse over **Type** and click the **Edit** button that appears.
+    1. In the **Values** field, create a playbook type for triage. In the following example, we created a *Custom Triage* type.<br/><img src={useBaseUrl('img/cloud-soar/triage-custom-playbook-type.png')} alt="Custom playbook type for triage" style={{border: '1px solid gray'}} width="400"/>
+    1. Click **Save**. When you create a playbook later, you'll be able to select this custom playbook type. 
+1. Create an automation rule that will add events to triage:
+    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.
+    1. Click **+** to the left of **Rules**.
+    1. On the **Add Automation Rule** dialog, select a name for the rule (for example, *Triage example*). Then select the daemon to use with this new rule, the resource, and fill in all the remaining parameters that you'd like this rule to use.
+    1. Click **Save**. The rule appears in the list of available automation rules.
+    1. In the **Filters** field of your triage automation rule, make sure to click the **Edit** button to add filtering. This is very important to properly evaluate the incoming data and determine when to add an event to triage.
+    1. Click **+** to the left of **Actions**.
+    1. In the **Add action** dialog, select the following:
+       1. **Action Type**. Select **Add to Triage**. This is the action that automatically adds events to the **Triage** page.
+       1. **Type**. Select the playbook type you added in step 1 above (for example, *Custom Triage*). When the automation rule runs, it will execute all the playbooks that have this type. (While you can select one of the out-of-the-box types here, for our example select your custom type to give you more control over the playbooks that will run.) 
+       1. **Auto grab user**. Select a user to automatically grab the triage when it is added to the **Triage** page. You can also leave this field empty if you don't want an analyst or group to automatically grab the triage event.
+       1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/triage-add-action.png')} alt="Select the 'Add to Triage' action type for an automation rule" style={{border: '1px solid gray'}} width="400"/>
+    1. When done, your automation rule should look something like this. Note that your automation rule should have the **Add to Triage** action in order to add events to triage.<br/><img src={useBaseUrl('img/cloud-soar/triage-automation-rule.png')} alt="Example automation rule for triage" style={{border: '1px solid gray'}} width="800"/>
+1. Create playbooks with the custom playbook type you created in step 1 above (for example, *Custom Triage*):
+    1. [Create a new playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook). 
+    1. In the **Type** field of the **New Playbook** dialog, select the custom playbook type you created earlier (for example, *Custom Triage*).
+    1. Configure the playbook to run actions on the triage event. For example, you could add actions from the [Triage Tools](/docs/platform-services/automation-service/app-central/integrations/triage-tools/) integration to do things like discard the triage event, grab or reassign the triage event, or convert the triage to an incident. 
+    1. Enable the playbook.
+
+Once you enable the triage automation rule you created above, when a triage event is grabbed by an analyst, any playbooks defined for that type (in our example, *Custom Triage*) will be automatically executed. Because *all* playbooks for the specified playbook type are automatically executed as soon as the triage event is grabbed, we recommended that you create separate playbook types and playbooks for triage events. Keep in mind that you can nest playbooks to run specific workflows for triage.
+
 ### Triage field settings
 
 By default, the triage module contains two fields, `Status` and `Type`. Additional values may be added to the `Status` field; however, the `Type` field is directly linked to the incident type field and cannot be modified directly.
@@ -503,3 +539,7 @@ With the **Report** option, you can create incident reports to share with others
     1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-save-report.png')} alt="Save a report" style={{border: '1px solid gray'}} width="300"/>
 1. Click **Export** to export the report to PDF.
 1. Click **Open** to open available reports.
+
+## Additional resources
+
+Blog: [Want to improve collaboration and reduce incident response time? Try Cloud SOAR War Room](https://www.sumologic.com/blog/want-to-improve-collaboration-and-reduce-incident-response-time-try-cloud-soar-war-room)
