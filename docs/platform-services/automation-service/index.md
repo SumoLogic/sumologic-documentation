@@ -1,13 +1,13 @@
 ---
 slug: /platform-services/automation-service
 title: Automation Service
-sidebar_label: Automation Service 
-description: Learn how to use the Automation Service to automate actions. 
+sidebar_label: Automation Service
+description: Learn how to use the Automation Service to automate actions.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Automation Service allows you to set up actions that run automatically when certain conditions are met. These automated actions help you to respond quickly to a wide arrange of events. 
+The Automation Service allows you to set up actions that run automatically when certain conditions are met. These automated actions help you to respond quickly to a wide arrange of events.
 
 In this section, we'll introduce the following concepts:
 
@@ -16,6 +16,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href={useBaseUrl('docs/platform-services/automation-service/about-automation-service/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>About the Automation Service</h4></a>
   <p>Get an overview of how the Automation Service allows you to automate actions.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/platform-services/automation-service/intro-to-automation-service/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Introduction to the Automation Service</h4></a>
+  <p>Get an introduction to the Automation Service.</p>
   </div>
 </div>
 <div className="box smallbox card">

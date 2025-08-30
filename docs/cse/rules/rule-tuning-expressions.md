@@ -103,4 +103,6 @@ When you test a [rule expression](/docs/cse/rules/about-cse-rules#about-rule-exp
 
 <img src={useBaseUrl('img/cse/tuning-checkbox.png')} alt="Test rule" style={{border: '1px solid gray'}} width="600"/>
 
- 
+## Additional resources
+
+Blog: [Rule tuning – supercharge Cloud SIEM for better alerts](https://www.sumologic.com/blog/rule-tuning-cloud-siem-alert-fatigue)

@@ -14,8 +14,8 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/metrics/metrics-queries/metrics-explorer')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>Metrics Explorer</h4></a>
-  <p>Learn how to use the Metrics Explorer to query your metrics.</p>
+  <a href={useBaseUrl('docs/metrics/metrics-queries/metrics-explorer')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>Metrics Search</h4></a>
+  <p>Learn how to use the Metrics Search to query your metrics.</p>
   </div>
 </div>
 <div className="box smallbox card">
