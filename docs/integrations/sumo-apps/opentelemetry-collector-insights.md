@@ -385,7 +385,7 @@ Monitor the `otelcol_exporter_queue_size` and `otelcol_exporter_queue_capacity` 
 
 Watch for logs containing "Dropping data because sending_queue is full" and monitor failed enqueue metrics:
 - `otelcol_exporter_enqueue_failed_spans`
-- `otelcol_exporter_enqueue_failed_metric_points`
+- `otelcol_exporter_enqueue_failed_metric_points` 
 - `otelcol_exporter_enqueue_failed_log_records`
 
 ### Accessing collector metrics directly
