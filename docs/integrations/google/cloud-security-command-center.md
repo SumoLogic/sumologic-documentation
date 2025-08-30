@@ -288,7 +288,7 @@ This app uses the [Findings](https://cloud.google.com/security-command-center/do
 <details>
 <summary>Vulnerability</summary>
 
-```json
+```json 
 {
     "message": {
     "data": {
