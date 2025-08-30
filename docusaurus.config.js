@@ -244,7 +244,7 @@ module.exports = {
       { name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts' },
       { name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586' },
       { name: 'description', content: 'Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.' },
-      { name: 'robots', content: 'noindex, nofollow' },
+      { name: 'robots', content: 'noindex, nofollow' },   // This is just for the POC (do not merge)
       { property: 'og:site_name', content: 'Sumo Logic Docs' },
       { property: 'og:description', content: 'Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.' },
       { property: 'og:image', content: 'https://www.sumologic.com/wp-content/uploads/meta-HomePage_1200x628-1.png' },
@@ -252,7 +252,7 @@ module.exports = {
       { property: 'og:image:height', content: '628' },
       { property: 'og:image:alt', content: 'Sumo Logic Docs' },
     ],
-    announcementBar: {
+    announcementBar: {   // This is just for the POC (do not merge)
       id: 'berry',
       content: '<b>Heads-up</b>: You’re on our Berry AI demo site. While Berry is up to date, the docs here may be outdated or incomplete.',
       backgroundColor: '#b0eefe',
