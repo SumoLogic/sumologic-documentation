@@ -44,6 +44,14 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 For information about MITRE Matrix, see [MITRE Matrix documentation](https://attack.mitre.org/).
 
+## Troubleshooting
+
+You may receive the following error when you test the MITRE Matrix resource: <br/>`Error testing resource. An internal error occurred calling lambda function.`
+
+The error may be caused by a 6 MB quota that Lambda has per request. For quotas, see the AWS documentation [Lambda Quotas](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html).
+
+To work around the error, install an [automation bridge](/docs/platform-services/automation-service/automation-service-bridge/). Then in the **Automation engine** field of the MITRE Matrix integration configuration dialog, select the bridge instead of **Cloud execution**. 
+
 ## Change Log
 
 * February 3, 2021 - First upload

@@ -22,7 +22,7 @@ The diagram below illustrates the metrics collection pipeline.
 1. AWS CloudWatch Metrics are streamed at a 1-minute resolution to the Metric Stream service.
 1. The Metric Streams service delivers metrics to the Kinesis Data Firehose service.
 1. The Kinesis Data Firehose service delivers the metrics to the AWS Kinesis Firehose for Metrics source for ingestion. The metrics are in the [OpenTelemetry](https://opentelemetry.io/) format.
-1. You can query the metrics in the Sumo Logic Metrics Explorer.
+1. You can query the metrics in the Sumo Logic Metrics Search.
 1. Undelivered metrics are routed to a customer S3 bucket.
 
 How long it takes for metrics to be delivered to Sumo Logic depends on the buffering settings configured for the Firehose stream—such buffering is expressed in maximum payload size or maximum wait time, whichever is reached first. If these are set to the minimum values, which are 60 seconds and 1MB respectively, the expected latency is within 3 minutes, if the selected resources have active metric updates.

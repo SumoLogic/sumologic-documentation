@@ -96,3 +96,6 @@ The Automation Service uses the [Cloud SOAR API](/docs/api/cloud-soar/).
 
 Cloud SIEM automation data is retained in accordance with Sumo Logic's policies. For more information, see [Cloud SIEM Data Retention](/docs/cse/administration/cse-data-retention).
 
+## Additional resources
+
+Blog: [Faster security investigation with Cloud SIEM playbooks](https://www.sumologic.com/blog/faster-security-investigation-siem-playbooks)

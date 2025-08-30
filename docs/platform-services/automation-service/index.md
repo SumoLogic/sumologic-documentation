@@ -20,6 +20,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/platform-services/automation-service/intro-to-automation-service/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Introduction to the Automation Service</h4></a>
+  <p>Get an introduction to the Automation Service.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/platform-services/automation-service/app-central/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>App Central</h4></a>
   <p>Learn how to use App Central to get new applications and tools.</p>
   </div>

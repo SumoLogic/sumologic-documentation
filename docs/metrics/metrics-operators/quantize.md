@@ -29,7 +29,7 @@ To apply the quantization directly to the selector, `quantize` has to follow the
 :::
 
 :::note
-In the Metrics Explorer, you must [switch to Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer) to enter the `drop last` option.
+In the Metrics Search, you must [switch to Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer) to enter the `drop last` option.
 :::
 
 ## Examples 
