@@ -38,4 +38,4 @@ Now you can pin Copilot suggestions for easy reference. Just hover over a sugges
 * **Quick access**. Keep important suggestions handy for ongoing investigations.  
 * **Improved workflow**. No need to scroll back to find key recommendations.
 
-[Learn more](/docs/search/copilot).
+[Learn more](/docs/search/mobot).
