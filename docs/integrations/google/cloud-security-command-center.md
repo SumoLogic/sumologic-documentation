@@ -24,7 +24,7 @@ This app uses the [Findings](https://cloud.google.com/security-command-center/do
 <details>
 <summary>Misconfigurations</summary>
 
-```json 
+```json
 {
     "message": {
     "data": {
@@ -119,7 +119,7 @@ This app uses the [Findings](https://cloud.google.com/security-command-center/do
 <details>
 <summary>Threat</summary>
 
-```json 
+```json
 {
     "message": {
     "data": {
@@ -190,7 +190,7 @@ This app uses the [Findings](https://cloud.google.com/security-command-center/do
               }
             ],
             "relatedFindingUri": {
-              
+
             }
           }
         },
@@ -210,7 +210,7 @@ This app uses the [Findings](https://cloud.google.com/security-command-center/do
           "principalEmail": "service-project-175089404040@gcp-sa-ktd-hpsa.iam.gserviceaccount.com",
           "callerIp": "147.45.44.104",
           "callerIpGeo": {
-            
+
           },
           "userAgent": "Google-KTD-Control",
           "serviceName": "k8s.io",
@@ -288,7 +288,7 @@ This app uses the [Findings](https://cloud.google.com/security-command-center/do
 <details>
 <summary>Vulnerability</summary>
 
-```json 
+```json
 {
     "message": {
     "data": {
@@ -468,8 +468,8 @@ This section describes the Sumo Logic pipeline for collecting the data from Goog
 Follow the steps below to integrate the Google Cloud Security Command Center (SCC) app:
 
 1. Enable the [Security Command Center (SCC)](https://cloud.google.com/security-command-center/docs/activate-scc-overview) at the GCP console.
-1. In Sumo Logic, [configure the Google Cloud Platform source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source/#configure-agoogle-cloud-platform-source).
-1. In the GCP console, configure a Pub/Sub Topic for [GCP](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source/#configure-a-pubsub-topicfor-gcp). This topic will be used to send SCC findings from GCP to Sumo Logic.
+1. In Sumo Logic, [configure the Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source/#configure-agoogle-cloud-platform-source).
+1. In the GCP console, configure a Pub/Sub Topic for [GCP](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source/#configure-a-pubsub-topicfor-gcp). This topic will be used to send SCC findings from GCP to Sumo Logic.
 1. In the SCC blade of the GCP console, click **Continuous Exports**. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Google+Cloud+-+Security+Command+Center/step4.png')} alt="Google Cloud Storage dashboards" width="500" />
 1. In the GCP console, export the findings from SCC to the [Pub/Sub Topic](https://cloud.google.com/security-command-center/docs/how-to-export-data?_gl=1*1dt4zsw*_ga*ODU1MTc4OTQ1LjE3Mzg3ODM5NzI.*_ga_WH2QY8WWF5*czE3NDY2Mzc3MzQkbzMkZzEkdDE3NDY2MzgxNDUkajYwJGwwJGgw#configure-pubsub-exports) created above.
 
