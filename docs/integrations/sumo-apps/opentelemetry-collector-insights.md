@@ -275,7 +275,7 @@ sumo.datasource=otel_collector metric=otelcol_process_memory_rss deployment.envi
 This sample query monitors queue health from the **Exporter Queue Health** panel.
 
 ```sql
-sumo.datasource=otel_collector metric=otelcol_exporter_queue_size deployment.environment=*
+sumo.datasource=otel_collector metric=otelcol_exporter_queue_size deployment.environment=* 
 | avg by exporter, deployment.environment
 ```
 
