@@ -25,8 +25,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/copilot"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Copilot</h4></a>
-  <p>Accelerate log investigations and troubleshooting with Sumo Logic Copilot, our AI-powered assistant that enables you to ask natural language questions and get contextual suggestions, helping first responders get to answers faster.</p>
+  <a href="/docs/search/mobot"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Mobot</h4></a>
+  <p>Accelerate log investigations and troubleshooting with Sumo Logic Mobot, our AI-powered assistant that enables you to ask natural language questions and get contextual suggestions, helping first responders get to answers faster.</p>
   </div>
 </div>
 <div className="box smallbox card">
