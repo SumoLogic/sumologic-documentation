@@ -17,7 +17,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/manage/data-forwarding/installed-collectors">
+      <a href={useBaseUrl('docs/manage/data-forwarding/installed-collectors')}>
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Document with a forward symbol  icon" width="45" />
         <h4>Forward Data from an Installed Collector</h4>
       </a>
@@ -26,7 +26,7 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/manage/data-forwarding/amazon-s3-bucket">
+      <a href={useBaseUrl('docs/manage/data-forwarding/amazon-s3-bucket')}>
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Document with a forward symbol  icon" width="45" />
         <h4>Forward Data from Sumo Logic to S3</h4>
       </a>
@@ -35,7 +35,7 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/manage/data-forwarding/manage">
+      <a href={useBaseUrl('docs/manage/data-forwarding/manage')}>
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Document with a forward symbol  icon" width="45" />
         <h4>Manage Data Forwarding</h4>
       </a>
@@ -44,7 +44,7 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/manage/data-forwarding/view-list-data-forwarding/">
+      <a href={useBaseUrl('docs/manage/data-forwarding/view-list-data-forwarding/')}>
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Document with a forward symbol  icon" width="45" />
         <h4>View Information About Data Forwarding</h4>
       </a>
