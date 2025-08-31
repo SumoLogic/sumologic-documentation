@@ -1,0 +1,1 @@
+**IAM Role ARN**. Enter an AWS IAM Role ARN to provide authentication. See the AWS documentation on [IAM identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html) for more information. 
