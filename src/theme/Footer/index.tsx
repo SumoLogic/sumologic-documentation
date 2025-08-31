@@ -4,91 +4,259 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+import React, { Fragment } from 'react';
+import DocLink from '@docusaurus/Link';
+import isInternalUrl from '@docusaurus/isInternalUrl';
+import { useThemeConfig } from '@docusaurus/theme-common';
+import IconExternalLink from '@theme/Icon/ExternalLink';
+import {
+  FontAwesomeIcon,
+} from '@fortawesome/react-fontawesome';
+import {
+  faXTwitter,
+  faYoutube,
+  faLinkedinIn,
+} from '@fortawesome/free-brands-svg-icons';
+import { Stack } from '@mui/system';
+import {
+  Box,
+  Divider,
+  Grid,
+  Link,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+  Toolbar,
+  Tooltip,
+  Typography,
+} from '@mui/material';
 
-import React from 'react';
-import clsx from 'clsx';
-import LastUpdated from '@theme/LastUpdated';
-import type {Props} from '@theme/DocItem';
-import EditThisPage from '@theme/EditThisPage';
-import IconBug from '@theme/IconBug';
-import TagsListInline, {
-  type Props as TagsListInlineProps,
-} from '@theme/TagsListInline';
+export const Footer = () => {
+  const { footer } = useThemeConfig();
+  const { copyright, links = [] } = footer ?? {};
 
-import styles from './styles.module.css';
-import {ThemeClassNames} from '@docusaurus/theme-common';
-
-function TagsRow(props: TagsListInlineProps) {
-  return (
-    <div
-      className={clsx(
-        ThemeClassNames.docs.docFooterTagsRow,
-        'row margin-bottom--sm',
-      )}>
-      <div className="col">
-        <TagsListInline {...props} />
-      </div>
-    </div>
-  );
-}
-
-type EditMetaRowProps = Pick<
-  Props['content']['metadata'],
-  'editUrl' | 'lastUpdatedAt' | 'lastUpdatedBy' | 'formattedLastUpdatedAt'
->;
-function EditMetaRow({
-  editUrl,
-  lastUpdatedAt,
-  lastUpdatedBy,
-  formattedLastUpdatedAt,
-}: EditMetaRowProps) {
-  const mdPath = editUrl.substring(57, );
-  return (
-    <div className={clsx(ThemeClassNames.docs.docFooterEditMetaRow, 'row')}>
-      <div className="col">{editUrl && <EditThisPage editUrl={editUrl} />} | {mdPath && <a href={'https://github.com/SumoLogic/sumologic-documentation/issues/new?template=feedback.md&labels=type:feedback&title=Feedback-for-' + mdPath }  target="_blank">
-        <IconBug />
-        Submit an issue</a>}</div>
-
-      <div className={clsx('col', styles.lastUpdated)}>
-        {(lastUpdatedAt || lastUpdatedBy) && (
-          <LastUpdated
-            lastUpdatedAt={lastUpdatedAt}
-            formattedLastUpdatedAt={formattedLastUpdatedAt}
-            lastUpdatedBy={lastUpdatedBy}
-          />
-        )}
-      </div>
-    </div>
-  );
-}
-
-export default function DocItemFooter(props: Props): JSX.Element | null {
-  const {content: DocContent} = props;
-  const {metadata} = DocContent;
-  const {editUrl, lastUpdatedAt, formattedLastUpdatedAt, lastUpdatedBy, tags} =
-    metadata;
-
-  const canDisplayTagsRow = tags.length > 0;
-  const canDisplayEditMetaRow = !!(editUrl || lastUpdatedAt || lastUpdatedBy);
-
-  const canDisplayFooter = canDisplayTagsRow || canDisplayEditMetaRow;
-
-  if (!canDisplayFooter) {
+  if (!footer) {
     return null;
   }
 
   return (
-    <footer
-      className={clsx(ThemeClassNames.docs.docFooter, 'docusaurus-mt-lg')}>
-      {canDisplayTagsRow && <TagsRow tags={tags} />}
-      {canDisplayEditMetaRow && (
-        <EditMetaRow
-          editUrl={editUrl}
-          lastUpdatedAt={lastUpdatedAt}
-          lastUpdatedBy={lastUpdatedBy}
-          formattedLastUpdatedAt={formattedLastUpdatedAt}
-        />
-      )}
-    </footer>
+    <>
+      <Grid
+        bgcolor='#1A273F'
+        component='footer'
+        container
+        justifyContent='center'
+        mt={10}
+        px={1}
+        gap={6}
+      >
+        {!!links.length && links.map((category) => (
+          <Grid
+            item
+            component={List}
+            key={category.title}
+            py={4}
+            md='auto'
+            xs={12}
+          >
+            <ListSubheader
+              sx={{
+                bgcolor: 'transparent',
+                color: '#6c7993',
+                fontFamily: 'Lab Grotesque',
+                fontWeight: 'bold',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1rem',
+              }}
+            >
+              {category.title}
+            </ListSubheader>
+            {category.items.map(({ href, label }) => (
+              <Link
+                component={DocLink}
+                href={href}
+                key={href}
+                underline='none'
+              >
+                <ListItem sx={{ py: 0 }}>
+                  <ListItemText
+                    primaryTypographyProps={{
+                      color: '#e3e3e3',
+                      fontFamily: 'Lab Grotesque',
+                      fontSize: 16,
+                    }}
+                  >
+                    {label}
+                  </ListItemText>
+                  {!isInternalUrl(href) && (
+                    <ListItemIcon
+                      sx={{
+                        minWidth: 'auto',
+                        ml: 1,
+                        '& svg': {
+                          color: '#e3e3e3',
+                        }
+                      }}
+                    >
+                      <IconExternalLink />
+                    </ListItemIcon>
+                  )}
+                </ListItem>
+              </Link>
+            ))}
+          </Grid>
+        ))}
+      </Grid>
+      <Stack
+        alignItems='center'
+        bgcolor='#1A273F'
+        borderTop='1px solid'
+        borderColor='rgba(255,255,255,0.12)'
+        component={Toolbar}
+        direction={{
+          md: 'row',
+          xs: 'column',
+        }}
+        justifyContent='space-between'
+        py={{
+          md: 0,
+          xs: 4,
+        }}
+      >
+        <Stack
+          alignItems='center'
+          direction='row'
+          spacing={2}
+          pb={{
+            md: 0,
+            xs: 2,
+          }}
+        >
+          {[
+            {
+              alt: 'Sumo Logic YouTube',
+              color: '#e3e3e3',
+              href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
+              'aria-label': 'Sumo Logic YouTube',
+              icon: faYoutube,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
+            {
+              alt: 'Sumo Logic X (formerly known as Twitter)',
+              color: '#e3e3e3',
+              href: 'https://x.com/SumoLogic',
+              'aria-label': 'Sumo Logic X (formerly known as Twitter)',
+              icon: faXTwitter,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
+            {
+              alt: 'Sumo Logic LinkedIn',
+              color: '#e3e3e3',
+              href: 'https://www.linkedin.com/company/sumo-logic',
+              'aria-label': 'Sumo Logic LinkedIn',
+              icon: faLinkedinIn,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
+          ].map(({ alt, href, ...other }) => (
+            <Tooltip key={href} title={alt}>
+              <Link href={href} rel='noreferrer noopener'>
+                <Box
+                  component={FontAwesomeIcon}
+                  {...other}
+                />
+              </Link>
+            </Tooltip>
+          ))}
+        </Stack>
+        <Stack
+          alignItems='center'
+          direction={{
+            md: 'row',
+            xs: 'column',
+          }}
+          spacing={{
+            md: 2,
+            xs: 0.5,
+          }}
+        >
+          {[
+            {
+              label: 'Status',
+              href: 'https://status.sumologic.com',
+            },
+            {
+              label: 'Legal',
+              href: 'https://www.sumologic.com/legal',
+            },
+            {
+              label: 'Privacy Statement',
+              href: 'https://www.sumologic.com/privacy-statement',
+            },
+            {
+              label: 'Terms of Use',
+              href: 'https://www.sumologic.com/terms-conditions',
+            }].map(({ href, label }) => (
+              <Fragment key={href}>
+                <Link
+                  color='#6c7993'
+                  fontFamily='Lab Grotesque'
+                  fontSize={14}
+                  href={href}
+                >
+                  {label}
+                </Link>
+                <Divider
+                  flexItem
+                  orientation='vertical'
+                  sx={{
+                    bgcolor: '#6c7993',
+                    '&:last-of-type': {
+                      display: {
+                        md: 'block',
+                        sm: 'none',
+                        xs: 'none',
+                      }
+                    },
+                  }}
+                />
+              </Fragment>
+            ))}
+          {copyright && (
+            <Typography
+              color='#6c7993'
+              fontFamily='Lab Grotesque'
+              fontSize={14}
+              pt={{
+                md: 0,
+                xs: 1,
+              }}
+            >
+              {copyright}
+            </Typography>
+          )}
+        </Stack>
+      </Stack>
+    </>
   );
 }
+export default React.memo(Footer);
