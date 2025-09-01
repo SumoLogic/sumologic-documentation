@@ -756,3 +756,9 @@ hook:
 ```
 
 For another example YAML file of a webhook trigger, see [Trigger webhook definition file](/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/#trigger-webhook-definition-file).
+
+## Additional resources
+
+Blogs: 
+* [Uncovering the power of Cloud SOAR’s Open Integration Framework](https://www.sumologic.com/blog/uncovering-the-powers-of-cloud-soars-open-integration-framework)
+* [Daemons in Cloud SOAR: proactively enhancing SecOps](https://www.sumologic.com/blog/daemons-in-cloud-soar-proactively-enhancing-secops)
