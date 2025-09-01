@@ -1,18 +1,18 @@
 ---
 id: dashboard-child-orgs
 title: Create a Dashboard for Child Orgs (MSSPs)
-description: Learn how to create your own custom Dashboard with a panel and query to child org level, then customize a chart and add the chart to the dashboard.
+description: Learn how to create your own custom Dashboard with a panel and query to child org level, then customize a chart and the chart to the dashboard.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The **Dashboard** page allows you to view log data on the same dashboard in an integrated and seamless view. This article demonstrates on how to create a dashboard, a panel query, and then add a panel to the dashboard at the child orgs level. 
+The **Dashboard** page allows you to view log data on the same dashboard in an integrated and seamless view. This article demonstrates on how to create a dashboard, a panel query, and then add a panel to the dashboard at the child orgs level.
 
 ## Create a dashboard
 
 There are two ways to create a dashboard, either by using the following method or by creating it directly from the [Log Search page](#log-search-page). Follow the steps below to create a dashboard under a selected child org:
 
-1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**. 
+1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.
 1. Select the **Dashboard** text field at the top of the window and enter a unique name for your new dashboard.
 1. From the **Select Org** dropdown, select the child org under which you need to create the dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/select-org-for-dashboard.png')} alt="select-org-for-dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -23,12 +23,12 @@ Now that you have created a new dashboard, you can populate it with panels tha
 To add a panel to a new dashboard, do the following:
 
 1. Select a panel type by clicking the corresponding icon. To learn more about panels, refer to [Dashboard types](/docs/dashboards/panels).<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
-1. You are prompted to [provide a query](#add-a-log-query). 
+1. You are prompted to [provide a query](#add-a-log-query).
 1. If you have selected the parent org while creating the dashboard, you will be able to select the child org under which the panel query needs to run.
     :::note
     The autocomplete feature while writing the query will run with respect to the selected child org.
     :::
-1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  <br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
 1. Once the panel is added the the dashboard, the panel query will display the results based on the [default org set for the dashboard](#set-a-default-org).
 
 You can customize a chart on a dashboard panel in a variety of ways. To include changing the chart type to analyze the data in another format. See [Modify a Chart](./panels/modify-chart.md) for details on all the available options.
@@ -58,7 +58,7 @@ Follow the below steps to change the default child org:
 To create a Dashboard from the [Log Search page](/docs/search):
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Log Search** page.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs** > **Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.
-1. Click the <img src={useBaseUrl('img/search/get-started-search/search-page/child-org-select-button.png')} alt="child-org-select-button" style={{border: '1px solid gray'}} width="30"/>    button to select the child org where you want to query. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/child-org-dropdown.png')} alt="child-org-dropdown" style={{border: '1px solid gray'}} width="800"/>   
+1. Click the <img src={useBaseUrl('img/search/get-started-search/search-page/child-org-select-button.png')} alt="child-org-select-button" style={{border: '1px solid gray'}} width="30"/> button to select the child org where you want to query. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/child-org-dropdown.png')} alt="child-org-dropdown" style={{border: '1px solid gray'}} width="800"/>
 1. Enter the required query and click the search button to obtain the search results.
 1. From the Log Search page click the **Add to Dashboard** button on the **Aggregates tab** after running your aggregate query.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-dashboard-new-logs.png')} alt="Add to dashboard new logs" style={{border: '1px solid gray'}} width="700" />
 1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Enter-dashboard-new-name-logs.png')} alt="Enter dashboard new name logs" style={{border: '1px solid gray'}} width="400" />
@@ -81,4 +81,6 @@ If required, toggle off the **Include current variable values in the URL** optio
 
 - Public dashboards are not supported in MSSP environments.
 - Scheduled reports are only supported at the parent organization level, not for child orgs.
-
+- Metrics and span queries are supported only at the parent organization level, not for child organizations.
+- Panels containing metrics or span queries will display no data if you switch from the parent organization to any child organization.
+- When exporting a dashboard at the child organization level, panels with metrics or span queries will also show no data.
