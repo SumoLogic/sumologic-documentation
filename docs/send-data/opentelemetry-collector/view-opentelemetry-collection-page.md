@@ -20,13 +20,13 @@ To view details about an OpenTelemetry Collector:
           Dashed line indicates there was no data ingestion in last hour.
           :::
     - **Last Modified**. Timestamp when the collector was last modified.
-1. Click on the desired collector.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collection-details-page.png')} alt="opentelemetry-collection-details-page" style={{border:'1px solid gray'}} width="400"/>
+1. Click on the desired collector.<br/><img src={useBaseUrl('img/send-data/otel-collector-details.png')} alt="opentelemetry-collection-details-page" style={{border:'1px solid gray'}} width="400"/>
     - **Basic Info**
         - **Name**. Name of the OpenTelemetry Collector.
         - **Collector Version**. The collector version with which the collector was created.
         - **Source Templates**. Displays the number of source templte 
         - **Health**. Displays the health status of the collector.
-        - **Time Zone**. By default, time zone is set to UTC.
+        - **Time Zone**. Displays the selected time zone or the default timezone of your browser while creating or editing the collector.
         - **Collector Tags**. Displays the tags linked with the selected collector, which helps in searching and managing the collector. To add or edit the tags, refer to the [Collector Tags](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#collector-tags).
         - **Data Ingested**. Displays the histogram which shows data ingested in last hour. This histogram timeline reflects the data ingestion timestamp as closely as possible, but minor variations may occur.
             :::note
