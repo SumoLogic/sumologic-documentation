@@ -38,7 +38,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
 1. On the OpenTelemetry Collection page, click **Add Collector**.
-1. On the left panel, select **Linux** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-Linux.png')} alt="linux-terminal" style={{border: '1px solid gray'}} width="900"/>
+1. On the left panel, select **Linux** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-linux.png')} alt="linux-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
 1. Select the **Time Zone**. By default, the timezone is set to `(UTC) Etc/UTC`.
 1. (Optional) In the **Collector Settings**, select the **Ephemeral** checkbox to auto-delete your collector after 12 hours, and select the **Locally Manage Collector** checkbox if you want to configure, maintain, and monitor your collector locally.
