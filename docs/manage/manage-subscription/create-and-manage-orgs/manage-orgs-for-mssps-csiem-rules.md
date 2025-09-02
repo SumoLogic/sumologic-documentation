@@ -95,7 +95,7 @@ _index=sumologic_audit_events
 
 ## FAQs
 
-* **What happens when a item with the same name already exists?**<br/>It will be replaced in the child organization.
+* **What happens when an item with the same name already exists?**<br/>It will be replaced in the child organization.
 * **What happens if an item selected for push doesn't already exist in the target organization?**<br/>The item will be created in the target organization.
 * **What if errors occur during pushing?**<br/>Affected items will be skipped. Once the rest of the content is pushed, you can review errors in [View History](#view-history) and retry.
 * **Can I roll back changes after a push operation?**<br/>No, rollback is not supported. After a push operation is initiated, changes cannot be reversed.
