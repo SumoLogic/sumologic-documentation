@@ -210,7 +210,7 @@ This app uses the [Findings](https://cloud.google.com/security-command-center/do
           "principalEmail": "service-project-175089404040@gcp-sa-ktd-hpsa.iam.gserviceaccount.com",
           "callerIp": "147.45.44.104",
           "callerIpGeo": {
-
+            
           },
           "userAgent": "Google-KTD-Control",
           "serviceName": "k8s.io",
