@@ -14,10 +14,6 @@ Match lists are lists of important indicators and identifiers configured by a Cl
 
 Here’s a use case for using a match list to define an allow list:  Vulnerability scanners often set off false alarms in security data, as they intentionally mimic the behavior of an attacker. Given that this behavior is safe and expected, you don’t want scanner activities to fire a rule. That’s what a match list is for. You can create a match list called “vuln_scanners” that contains the IP addresses of your scanners.
 
-:::tip
-There’s no reason you can’t use a match list to define “deny lists” of items. However, Cloud SIEM’s threat intel feature is designed for exactly that purpose. Most of the time, but not always, you should use threat intel lists for negative indicators. For more information, see [Match lists or threat intel: which to use?](#match-listor-threat-intel-which-to-use).
-:::
-
 Here are some match lists in Cloud SIEM.  
 
 <img src={useBaseUrl('img/cse/example-match-lists.png')} alt="Example match list" style={{border: '1px solid gray'}} width="800"/>
@@ -53,14 +49,6 @@ In a rule, you look for matches by extending  a rule expression with an `array_
 If any of the IP addresses within the record match one of the “vuln_scanner” IPs, the `listMatches` field will have a value of `['vuln_scanners']`. Thus, the check above will effectively prevent signals from firing for those rules on the scanner IP addresses.
 
 For more information about referring to match list data in rules, see [Match lists](/docs/cse/rules/about-cse-rules#match-lists) in the *About Cloud SIEM Rules* topic.
-
-## Match list or threat intel: which to use?
-
-Cloud SIEM has another feature that is similar to match lists: threat intel. Like match lists, threat intel lists are lists of indicators and identifiers configured by a Cloud SIEM analyst. When deciding whether to put an indicator on a match list or a threat intel list, consider the following.
-
-Threat intel lists are intended specifically for negative identifiers that should definitely fire a signal. So, whenever a rule detects a record field that matches an item on a threat intel list, it *always* results in a signal. If that’s what you want to occur when a particular identifier is encountered in a record, you should put that identifier on an threat intel list. But, if you *don’t* want a match to invariably result in a signal, the item should be on a match list. For example, you might use a match list for negative indicators that should fire a signal only if a secondary condition is also met.
-
-Another difference between match lists and threat intel lists is the **Target Column** types they support. For instance, you can’t create a threat intel list that contains email addresses. So, although typically a threat intel list is what you’d use for suspicious indicators, in some cases, a match list is the answer.
 
 ## Match list limitations
 

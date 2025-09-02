@@ -13,7 +13,7 @@ A playbook is a predefined set of actions and conditional statements that run in
 
 Playbooks can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
-To run a playbook, add it to an automation. You can run playbooks in [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), and [Cloud SOAR](/docs/cloud-soar/automation/#run-playbooks-in-cloud-soar).  
+To run a playbook, add it to an automation. You can run playbooks in [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), and [Cloud SOAR](/docs/cloud-soar/automation/#run-playbooks-in-cloud-soar). Sumo Logic provides a number of out-of-the-box playbooks that you can use install to use your automations. See [Playbooks in App Central](/docs/platform-services/automation-service/playbooks-in-app-central/).
 
 :::note
 <ActionsLimit/>
@@ -21,7 +21,7 @@ To run a playbook, add it to an automation. You can run playbooks in [monitors](
 
 ## View playbooks
 
-The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install a playbook from App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-a-playbook-from-app-central).
+The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-a-playbook-from-app-central).
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>The list of playbooks displays. <br/> <img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" style={{border:'1px solid gray'}} width="700"/>
 1. Select a playbook to see the elements in the workflow.<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} style={{border:'1px solid gray'}} alt="Opened playbook" width="700"/>
@@ -29,7 +29,7 @@ The following procedure describes how to view playbooks already installed in you
 
 ## Create a new playbook
 
-Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-a-playbook-from-app-central) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
+Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-a-playbook-from-app-central) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
 
 :::tip
 The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/).
@@ -38,7 +38,7 @@ The following procedure provides a brief introduction to how to create a playboo
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>Previously-created playbooks display.
 1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} style={{border:'1px solid gray'}} alt="New playbook button" width="400"/>
 1. A new configuration box will be displayed. Name your new playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" width="400"/>
-1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **CSE**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
+1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **Cloud SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
 1. Enter a **Description** of the playbook to help others understand how to use it.
 1. Click **Create**. The new playbook appears in the list of available playbooks.
 1. To configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" style={{border:'1px solid gray'}} width="600"/>

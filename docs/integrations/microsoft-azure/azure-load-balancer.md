@@ -1,7 +1,14 @@
 ---
 id: azure-load-balancer
 title: Azure Load Balancer
-description: Learn about the Sumo Logic collection process for the Azure Load Balancer service.
+keywords: 
+ - azure load balancer
+ - load balancer ins azure
+ - load balancer
+ - azure load balancer monitoring
+ - virtual load balancer
+ - azure load balancer logs
+description: This document outlines what is Azure Load Balancer, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -32,6 +39,10 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 You must explicitly enable diagnostic settings for each Load Balancer you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example:  `Azure/LoadBalancer/Logs` and `Azure/LoadBalancer/Metrics`.
+
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure metrics collection
 
@@ -137,18 +148,43 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureLoadBalancer/Azure-Load-Balancer-Policy.png')} alt="Azure Load Balancer Policy" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Load Balancer
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
 ### Azure Load Balancer alerts
+
 These alerts are metric based and will work for all Azure Load Balancers.
 
-| Alert Name                                      | Alert Description and Conditions                                                                                                                                     | Alert Condition  | Recover Condition |
-|:------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:------------------|
-| `Azure Load Balancer - Data Path Availability`  | This alert is triggered  when Data Path Availability is less than 100%.                                                                                              | percentage < 100 | percentage >= 100 |
-| `Azure Load Balancer - Health Probe Status`     | This alert is triggered  when Health Probe Status is less than 100%.                                                                                                 | percentage < 100 | percentage >= 100 |
-| `Azure Load Balancer - SNAT Connection Count`   | This alert is triggered when SNAT Connection count less than 1000. Also Working alert is triggered when SNAT Connection count less than 800                          | Count < 1000     | Count >= 1000     |
-| `Azure Load Balancer - Used SNAT Ports`         | This alert is triggered when Used SNAT Ports count less than 900. Also Working alert is triggered when Used SNAT Ports count less than 800                           | Count < 900      | Count >= 900      |
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Load Balancer - Data Path Availability` | This alert is triggered when Data Path Availability is less than 100%. | percentage < 100 | percentage >= 100 |
+| `Azure Load Balancer - Health Probe Status` | This alert is triggered when Health Probe Status is less than 100%. | percentage < 100 | percentage >= 100 |
+| `Azure Load Balancer - SNAT Connection Count` | This alert is triggered when SNAT Connection count less than 1000. Also Working alert is triggered when SNAT Connection count less than 800. | Count < 1000 | Count >= 1000 |
+| `Azure Load Balancer - Used SNAT Ports` | This alert is triggered when Used SNAT Ports count less than 900. Also Working alert is triggered when Used SNAT Ports count less than 800. | Count < 900 | Count >= 900 |
+
+## Upgrade/Downgrade the Azure Load Balancer app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Load Balancer app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Troubleshooting
 
 ### HTTP Logs and Metrics Source used by Azure Functions
 
 To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
+
+
+## Additional resources
+
+- Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
+- Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)

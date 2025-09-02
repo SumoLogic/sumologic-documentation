@@ -1,7 +1,7 @@
 ---
 title: June 3, 2025 - Application Update
 hide_table_of_contents: true
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://help.sumologic.com/img/reuse/rss-image.jpg
 keywords:
   - automation service
   - cloud soar

@@ -94,9 +94,9 @@ _sourceCategory = Labs/artifactory/*
 
 #### Step 1: Activate the traffic.log file
 
-1. To activate the **traffic.log** file, add the following parameter to your **artifactory.system.properties** file, located under **$ARTIFACTORY/etc**:
-   ```bash
-   $JFROG_HOME/artifactory/var/etc/artifactory/artifactory.system.properties
+1. To activate the `traffic.log` file, add the following parameter to your `artifactory.system.properties` file, located under `$ARTIFACTORY/etc`:
+   ```
+   artifactory.traffic.collectionActive=true
    ```
 2. A restart is required for traffic collection to take effect.
 

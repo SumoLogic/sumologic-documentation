@@ -377,7 +377,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/sumo-collection"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="80"/><h4>Sumo Collection</h4></a>
+  <a href="/docs/integrations/saas-cloud/sumo-collection"><img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="icon" width="80"/><h4>Sumo Collection</h4></a>
   <p>Identify, manage, and monitor collectors and sources within Sumo Logic.</p>
   </div>
 </div>
@@ -419,6 +419,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/vectra"><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/vectra.png')} alt="icon" width="100"/><h4>Vectra</h4></a>
+  <p>Gain visibility into security threats detected across networks, cloud environments, and endpoints.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/vmware-workspace-one"><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="icon" width="100"/><h4>VMware Workspace ONE</h4></a>
   <p>Analyze device compliance, encryption, and security status to spot risks and keep devices secure.</p>
   </div>
@@ -439,6 +445,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/zendesk"><img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="icon" width="70"/><h4>Zendesk</h4></a>
   <p>Identify security threats by analyzing audit logs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/zimperium"><img src={useBaseUrl('img/integrations/zimperium/zimperium-logo.png')} alt="icon" width="100"/><h4>Zimperium</h4></a>
+  <p>Identify security threats and incidents on mobile devices.</p>
   </div>
 </div>
 <div className="box smallbox card">

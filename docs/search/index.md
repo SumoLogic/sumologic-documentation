@@ -1,7 +1,7 @@
 ---
 slug: /search
 title: Log Search
-description: Learn about the Sumo Logic search language, operators, and search features.
+description: Explore Sumo Logic's search capabilities to analyze logs and metrics with intuitive tools and advanced query language for powerful insights.
 keywords:
   - search
   - log search
@@ -63,6 +63,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/search/lookup-tables"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Lookup Tables</h4></a>
   <p>Learn about Lookup tables and the search operators you can use with them.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/search/query-assist"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Logs Query Assist</h4></a>
+  <p>Learn how Logs Query Assist makes it easier to discover relevant fields and minimize errors.</p>
   </div>
 </div>
 <div className="box smallbox card">
