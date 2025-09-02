@@ -63,6 +63,10 @@ For information about AWS CloudTrail, see [CloudTrail documentation](https://doc
 
 <IAMConfiguration/>
 
+## Limitations
+
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
+
 ## Required Permissions
 ```
   cloudtrail:DescribeTrails
