@@ -224,6 +224,6 @@ _view=nice_view_man | timeslice 1d | sum(_count) by _timeslice, status_code
 
 ### How to avoid negative count results?
 
-Validate if you are using the scheduled views created before August 28th, 2024. The scheduled views created before this date will use the `Int` data type for the `count` operator, inturn resulting in a negative count value after crossing the maximum integer value of `2147483647`. 
+Validate if you are using the scheduled views created before August 28, 2024. The scheduled views created before this date will use the `Int` data type for the `count` operator, inturn resulting in a negative count value after exceeding the maximum integer value of `2147483647`. 
 
 To resolve this, create a new scheduled view with the same starting date as the old scheduled view. These new scheduled views will utilize the `Long` data type for the `count` operator and will not provide negative values.
