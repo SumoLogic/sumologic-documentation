@@ -57,7 +57,7 @@ You can push the following:
 
 - If an item with the same name exists in the target organization, it will be replaced.
 - Once a push is initiated, it cannot be reversed. Administrators should carefully review their selections before updating.
-- If errors occur during the push, administrators must manually re-attempt failed push. To see failed push, use [View History](#view-history).
+- If errors occur during the push, administrators must manually re-attempt the failed push. To see failed pushes, use [View History](#view-history).
 - Push operations may take longer based on the volume of content being pushed.
 - Rule tuning expressions must be pushed separately from rules.
 - *Cloud SIEM Legacy Rule Type* is not supported for sync or push.
