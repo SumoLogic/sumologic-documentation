@@ -30,7 +30,7 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 ### For OTLP endpoint configuration
 
 
-1. **Sumo Logic OTLP Source**. You need to create an OTLP source in your Sumo Logic hosted collector. The OTLP source will provide the endpoint URL that the OTEL Collector will use to send telemetry data. Learn more at [Creating a Sumo Logic OTLP Source](/docs/send-data/hosted-collectors/http-source/otlp/).
+Before configuring the OTEL Collector integration, you need to create an OTLP source in your Sumo Logic hosted collector. The OTLP source will provide the endpoint URL that the OTEL Collector will use to send telemetry data. Learn more at [Creating a Sumo Logic OTLP Source](/docs/send-data/hosted-collectors/http-source/otlp/).
 
 ### For metrics collection
 
