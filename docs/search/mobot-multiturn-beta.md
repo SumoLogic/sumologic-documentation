@@ -15,9 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Beta. For more information, contact your Sumo Logic account executive.
 :::
 
-Our new conversational experience in Sumo Logic Mobot (formerly known as Copilot) lets you interact with queries the way you would with a chat assistant. You ask a question and can refine it with follow-ups, change units, and see the updated query and visualization without starting over. Mobot maintains your intent across turns, surfaces helpful suggestions, and makes it easy to explore related angles.
-
-This guide explains what's new in the UI, how the multi-turn flow works, and shows example workflows. The examples, such as refining a latency query for an SLO or counting warning events, are illustrative. You can apply the same interaction pattern to any log data you care about.
+Our new conversational experience in Sumo Logic Mobot (formerly known as Copilot) lets you interact with queries the way you would with a chat assistant. You ask a question and can refine it with follow-ups, change units, and see the updated query and visualization without starting over. Mobot maintains your intent across turns, surfaces helpful suggestions, and makes it easy to explore related angles. This guide explains what's new in the UI, how the multi-turn flow works, and shows example workflows.
 
 ## What's new in Beta
 
@@ -37,7 +35,7 @@ In the below example, we'll use the following key concepts:
 * **Intent card**. Visual summary of what you're asking Mobot to do in this session.  
 * **Suggestion cards**. Recommended refinements or adjacent analyses you can apply with a click.
 
-This workflow demonstrate the multi-turn interaction pattern; you can apply the same steps to other logs, events, or dimensions.
+This example workflow demonstrates the multi-turn interaction pattern; you can apply the same steps to other logs, events, or dimensions.
 
 ### Step 1: Ask your initial question  
 
@@ -86,6 +84,8 @@ You can also [edit the query logic](/docs/search/mobot/#edit-query-code), [open 
 * **Reuse history**. Open prior conversations to compare or branch analyses.
 
 ## FAQ
+
+The questions below refer specifically to the multi-turn conversion (beta) experience. For general information about Mobot, see the [Mobot FAQ](/docs/search/mobot#faq).
 
 <details>
 <summary>Is any user or org data sent outside our environment?</summary>

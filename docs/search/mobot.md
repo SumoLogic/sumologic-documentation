@@ -363,7 +363,7 @@ Mobot uses AI to interpret natural language queries and recommend search results
 <details>
 <summary>What specific types of customer data or PII does the AI process? Does it filter out PII/sensitive information?</summary>
 
-Sumo Logic Mobot processes schema and field samples to provide context to the AI. While field values can contain PII or confidential data (for example, email addresses or IP addresses), these values are used solely to enable insights and are protected under strict compliance and security reviews.
+Mobot processes schema and field samples to provide context to the AI. While field values can contain PII or confidential data (for example, email addresses or IP addresses), these values are used solely to enable insights and are protected under strict compliance and security reviews.
 </details>
 
 <details>
@@ -381,7 +381,7 @@ For example, our alerts feature log anomaly detection and build ML models from 6
 </details>
 
 <details>
-<summary>Does Sumo Logic Mobot use any open-source library, GenAI providers, or cloud providers?</summary>
+<summary>Does Mobot use any open-source library, GenAI providers, or cloud providers?</summary>
 
 For Generative AI, Mobot uses a foundation model served by Amazon Bedrock. Classical ML features leverage open-source Python libraries approved by Sumo Logic.
 </details>
@@ -389,7 +389,7 @@ For Generative AI, Mobot uses a foundation model served by Amazon Bedrock. Class
 <details>
 <summary>What is the type of AI being used?</summary>
 
-Sumo Logic Mobot is an ensemble of Generative AI (GenAI) and classical machine learning (ML) techniques. For example, classical ML is used for anomaly detection in alerts.
+Mobot is an ensemble of Generative AI (GenAI) and classical machine learning (ML) techniques. For example, classical ML is used for anomaly detection in alerts.
 </details>
 
 <details>
@@ -405,9 +405,9 @@ No. The foundation model provider used by Amazon Bedrock has no access to custom
 </details>
 
 <details>
-<summary>Do you hold any AI-specific certifications or accreditations?</summary>
+<summary>Does Sumo Logic hold any AI-specific certifications or accreditations?</summary>
 
-No, Sumo Logic does not currently hold any AI-specific certifications or accreditations.
+No, we do not currently hold any AI-specific certifications or accreditations.
 </details>
 
 <details>
@@ -419,7 +419,7 @@ Each major capability added to Mobot undergoes legal, compliance, and applicatio
 <details>
 <summary>How can I opt out of Mobot?</summary>
 
-If you prefer not to use Sumo Logic Mobot, please contact our [support team](https://support.sumologic.com/support/s/). Your account will be updated accordingly.
+If you prefer not to use Mobot, contact our [support team](https://support.sumologic.com/support/s/). Your account will be updated accordingly.
 </details>
 
 
