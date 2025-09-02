@@ -48,7 +48,7 @@ import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-confi
 * <IntegrationEngine/>
 * <IntegrationProxy/>
    
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-simple-notification-service-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Simple Notification Service configuration" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-simple-notification-service-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Simple Notification Service configuration" width="400"/>
 
 For information about Amazon Simple Notification Service, see [Amazon Simple Notification Service documentation](https://docs.aws.amazon.com/sns/).
 
@@ -57,6 +57,20 @@ For information about Amazon Simple Notification Service, see [Amazon Simple Not
 ### AWS IAM role-based access
 
 <IAMConfiguration/>
+
+## Limitations
+
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
+
+## Required Permissions
+```
+  sns:Publish
+  sns:ListSubscriptions
+  sns:ListTopics
+  sns:GetSubscriptionAttributes
+  sns:GetTopicAttributes
+  sns:ListSMSSandboxPhoneNumbers
+```
 
 ## External Libraries
 
