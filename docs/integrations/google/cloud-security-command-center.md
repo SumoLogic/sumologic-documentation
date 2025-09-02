@@ -190,7 +190,7 @@ This app uses the [Findings](https://cloud.google.com/security-command-center/do
               }
             ],
             "relatedFindingUri": {
-
+              
             }
           }
         },
