@@ -1,14 +1,9 @@
 ---
-title: Download a collector using the CDN URL (Installed Collector)
+title: Version 19.525-59 (Installed Collector)
+hide_table_of_contents: true
 image: https://help.sumologic.com/img/reuse/rss-image.jpg
-keywords:
-  - installed-collector
-  - download-collector
-hide_table_of_contents: true    
 ---
 
-We’re pleased to announce a new method for downloading the latest version of our installed collectors. While the static URL method is still available, you now have the option to use a CDN URL via UI for better performance.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::info
-This change does not affect the UI itself. The download process looks the same, but the underlying URL now uses a CDN to improve reliability and speed. 
-:::
+In this release, we've upgraded the collector JRE to **Amazon Corretto Version `8.462.08.1`** to enhance security and optimize performance for faster execution.
