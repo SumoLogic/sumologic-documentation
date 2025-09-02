@@ -1710,6 +1710,7 @@ module.exports = {
         'metrics/metrics-queries/aggregation-tips',
         'metrics/metrics-queries/metric-query-error-messages',
         'metrics/metrics-queries/share-metric-query',
+        'metrics/metrics-queries/metric-query-tips-tricks-best-practices',
       ],
     },
     {
