@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ActionsLimit from '../../reuse/actions-limit.md';
 import CartesianProduct from '../../reuse/cartesian-product.md';
 
-A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. Playbooks can allow your organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
 
 Playbooks can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
@@ -282,8 +281,8 @@ It is crucial that the file names inside the tar.gz adhere to the following form
 The playbook **Test Node** toggle lets you test individual nodes of a playbook without needing to complete the entire flow. Testing individual nodes helps you improve your playbooks' reliability and shorten configuration time. You can provide mock values for variables used in the node, and run the results to see the output and any errors. The results provide informative messages to help you troubleshoot problems. 
 
 When you test nodes, keep in mind:
-* You can test action, condition, user choice, and task nodes. You cannot test filter, nested playbook, start, or end nodes.
-* A single-node test does not execute downstream nodes. Only the selected node runs using the provided input.
+* You can test action, condition, user choice, and task nodes. You cannot test filter or nested playbook nodes.
+* A single-node test does not execute downstream nodes. Only the selected node runs using the provided input. You cannot view the previous or past test node run executions.
 * Invalid JSON or missing required fields will block the test and show an error in the **Output** panel.
 * Before you can test a node, any node configuration changes need to be saved to the playbook draft. When you test a node, clicking **SAVE & RUN TEST** saves the node configuration to the same draft before executing.
 * Testing nodes counts against your [action limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit) quota.
