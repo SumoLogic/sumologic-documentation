@@ -2,7 +2,7 @@
 id: choose-collector-source
 title: Choosing a Sumo Logic Collector and Source
 sidebar_label: Choose a Collector and Source
-description: Design a Sumo Logic deployment that's right for your organization.
+description: Choose the right data source type in Sumo Logic for collecting logs, metrics, or traces using OpenTelemetry Collectors, Installed Collectors, and Hosted Collectors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -176,19 +176,6 @@ Depending on the method you'd like to collect logs, and the types of logs you'd
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 The following table shows the major differences between them.
@@ -227,19 +214,6 @@ The maximum number of Sources allowed on a Collector is 1,000.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/CfWXz6UkpIc"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 
 :::
 

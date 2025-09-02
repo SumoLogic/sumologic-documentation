@@ -47,15 +47,21 @@ To [create service account credentials](https://developers.google.com/workspace/
 ## Configure Google Workspace IDP in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Private Key JSON**. Provide the content of the JSON file generated [above](#google-workspace-idp-configuration). Open the file and copy-paste the whole content in the field.
 
-* **Label**. The desired name for the resource.
-* **Private Key JSON**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
-* **Admin User Email**. The e-mail address of a Google Workspace admin user.
-* **Domain Name**. Enter your Google Workspace [domain](https://support.google.com/a/answer/182080?sjid=839597157220156918-NC).
-* **Automation Engine**. Select whether to use [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
-* **Proxy Options**. Select whether to use a proxy. 
+* **Admin Email**. Enter the email address of a Google Workspace admin user.
+
+* **Domain**. Enter your Google Workspace [domain](https://support.google.com/a/answer/182080?sjid=839597157220156918-NC).
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/google-workspace-idp-configuration.png')} style={{border:'1px solid gray'}} alt="Google Workspace IDP Configuration" width="400"/>
 

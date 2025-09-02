@@ -10,10 +10,10 @@ The Cloud-to-Cloud Integration Framework is a fully-managed collection system th
 
 ## Limitations
 
-* The number of Cloud-to-Cloud Sources is limited to 20 for free accounts, and 50 for all other accounts.
-* You are warned when you reach 80% of the limit (16 Sources for free accounts, and 40 Sources for other accounts).
-* You are notified when you have reached the Source limit.
-* In the [Fed deployment](/docs/api/troubleshooting#deployments-and-sumo-logic-endpoints), supported Cloud-to-Cloud Sources are limited.
+* Each account is limited to 50 Cloud-to-Cloud Sources.
+* A warning is issued when you reach 80% of the limit (40 Sources).
+* You are notified when the maximum limit is reached.
+* In the [Fed deployment](/docs/api/about-apis/troubleshooting#deployments-and-sumo-logic-endpoints), supported Cloud-to-Cloud Sources are limited.
 
 ## Static IP addresses
 
@@ -122,6 +122,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-iam-users-source"><img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="icon" width="50"/><h4>AWS IAM Users</h4></a>
+  <p>Learn to collect the IAM User Inventory logs from the AWS SDK and send them to Sumo Logic for analysis.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source"><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/><h4>Azure Event Hubs</h4></a>
   <p>Provides a secure endpoint to receive data from Azure Event Hubs.</p>
   </div>
@@ -200,7 +206,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source"><img src={useBaseUrl('img/send-data/confluent-cloud-metrics.png')} alt="icon" width="120"/><h4>Confluent Cloud Metrics</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source"><img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="icon" width="120"/><h4>Confluent Cloud Metrics</h4></a>
   <p>Learn how to collect metrics from the Confluent Cloud Metrics platform and send them to Sumo Logic.</p>
   </div>
 </div>
@@ -304,6 +310,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source"><img src={useBaseUrl('img/send-data/gmail-trace-logs-icon.svg')} alt="Gmail" width="40"/><h4>Gmail Trace Logs</h4></a>
   <p>Pulls Gmail log data using BigQuery Library APIs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source"><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/github-copilot.png')} alt="Thumbnail icon" width="100"/><h4>Github Copilot</h4></a>
+  <p>Learn to collect the organization metrics and team metrics from GitHub Copilot platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -438,6 +450,12 @@ In this section, we'll introduce the following concepts:
     <p>Provides a secure endpoint to receive event data from the Okta System Log API and Users API.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+    <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source"><img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/onelogin.png')} alt="Thumbnail icon" width="75"/><h4>OneLogin</h4></a>
+    <p>Provides a secure and centralized access to user lists from the OneLogin API.</p>
+  </div>
+</div>
   <div className="box smallbox card">
     <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source"><img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/><h4>Palo Alto Cortex XDR</h4></a>
@@ -524,7 +542,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source"><img src={useBaseUrl('img/sumo-logic-logo.png')} alt="icon" width="55"/><h4>Sumo Collection</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source"><img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="icon" width="55"/><h4>Sumo Collection</h4></a>
         <p>Learn how to collect the list of collectors and their sources using the Sumo Logic Collector API and Sources API.</p>
         </div>
       </div>
@@ -578,8 +596,14 @@ In this section, we'll introduce the following concepts:
       </div>
             <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source"><img src={useBaseUrl('img/sumo-square.png')} alt="Thumbnail icon" width="50"/><h4>Universal Connector Source</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source"><img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Thumbnail icon" width="50"/><h4>Universal Connector Source</h4></a>
         <p> Learn how to set up a Universal Connector to collect data into the Sumo Logic environment.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vectra-source"><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/vectra.png')} alt="Thumbnail icon" width="100"/><h4>Vectra</h4></a>
+        <p>Learn to collect the list of threats detected in the Vectra platform.</p>
         </div>
       </div>
       <div className="box smallbox card">
@@ -616,6 +640,12 @@ In this section, we'll introduce the following concepts:
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source"><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="45"/><h4>Zero Networks Segment</h4></a>
         <p>Learn to collect audit logs and network activity data from Zero Networks Segment.</p>
+        </div>
+      </div>
+    <div className="box smallbox card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zimperium-mtd-source"><img src={useBaseUrl('img/send-data/zimperium-mtd.png')} alt="Thumbnail icon" width="45"/><h4>Zimperium MTD Source</h4></a>
+        <p>Learn to collect the device logs from the Zimperium API and send it to Sumo Logic.</p>
         </div>
       </div>
     </div>

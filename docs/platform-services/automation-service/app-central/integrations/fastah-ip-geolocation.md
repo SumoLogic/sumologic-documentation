@@ -22,12 +22,23 @@ Sign in to [Fastah API Developer Console](https://docs.getfastah.com/docs/using-
 ## Configure Fastah IP Geolocation in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your Fastah API URL, for example, `https://ep.api.getfastah.com/whereis/v1/json`
 
-   * **Label**. The name of the resource.
-   * **Host**. `https://ep.api.getfastah.com/whereis/v1/json`.
-   * **Token**. The primary key you have copied from Fastah API Developers Console. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fastah-configuration.png')} style={{border:'1px solid gray'}} alt="Fastah IP Geolocation configuration" width="400"/>
+* **Token**. Enter the primary key you copied from the Fastah API Developers Console [above](#fastah-ip-geolocation-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fastah-configuration.png')} style={{border:'1px solid gray'}} alt="Fastah IP Geolocation configuration" width="400"/>
 
 For information about Fastah IP Geolocation, see [Fastah IP Geolocation documentation](https://docs.getfastah.com/docs/quick-start).
 

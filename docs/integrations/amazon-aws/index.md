@@ -348,8 +348,8 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         <div className="box smallbox card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/security-qs.png')} alt="Thumbnail icon" width="50"/>
-          <h4><a href="/docs/integrations/amazon-aws/security-hub">AWS Security Hub</a></h4>
-          <p>A guide to the Sumo Logic app for AWS Security Hub.</p>
+          <h4><a href="/docs/integrations/amazon-aws/security-hub">AWS Security Hub CSPM</a></h4>
+          <p>A guide to the Sumo Logic app for AWS Security Hub CSPM.</p>
           </div>
         </div>
     <div className="box smallbox card">

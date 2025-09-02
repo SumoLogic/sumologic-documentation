@@ -11,6 +11,8 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
 
+<!-- Originally added as a beta article with SUMO-124040. -->
+
 Use Metrics Search Management APIs V2 to save metrics searches in the content library, organize them in a folder hierarchy, and list metrics searches under your personal folder.
 
 ## Documentation

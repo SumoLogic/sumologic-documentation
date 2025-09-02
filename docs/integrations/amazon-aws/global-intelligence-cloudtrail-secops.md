@@ -51,7 +51,9 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
 <details>
 <summary>View the list of Scheduled Searches (<strong>click to expand</strong>)</summary>
 
-<table><small>
+<div class="responsive-table">
+
+<table>
   <tr>
     <td><strong>Folder</strong></td>
     <td><strong>Scheduled Search Name (prefixed with gis_benchmarks)</strong></td>
@@ -282,7 +284,9 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
     <td>S3_ListBuckets</td>
     <td>Counts S3 events related to listing buckets.</td>
   </tr>
-</small></table>
+</table>
+
+</div>
 
 * To reduce false positives, the benchmarks and application filter out AWS CloudTrail events from legitimate cloud services including AWS itself and CloudHealth by VMware.
 * Security posture requirements may vary between AWS accounts for a given customer. For example, development accounts might have less strict controls than production accounts. The app supports filtering findings by AWS account ID to facilitate AWS account level posture assessment.

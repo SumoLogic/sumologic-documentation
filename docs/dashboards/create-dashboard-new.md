@@ -27,19 +27,6 @@ Rather watch a short micro lesson video?
   allowfullscreen
 />
 
-<!--
-<Iframe url="https://www.youtube.com/embed/A-O_E-NbxN8"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Dashboard AutoSave
@@ -80,7 +67,7 @@ Enter your aggregate [search query](/docs/search/search-query-language/group-agg
 
 Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set to **Logs**.
 
-To create a metrics query utilize the [Metrics Explorer](../metrics/metrics-queries/metrics-explorer.md).
+To create a metrics query utilize the [Metrics Search](../metrics/metrics-queries/metrics-explorer.md).
 
 ### Multiple Query
 
@@ -117,7 +104,7 @@ To create a Dashboard from the [Log Search page](/docs/search):
 
 To create a Dashboard from the [Metrics page](/docs/metrics/metrics-queries):
 
-1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Explorer](../metrics/metrics-queries/metrics-explorer.md).<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/metrics-explorer-add-to-dashboard.png')} alt="metrics explorer add to dashboard" style={{border: '1px solid gray'}} width="800" />
+1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Search](../metrics/metrics-queries/metrics-explorer.md).<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/metrics-explorer-add-to-dashboard.png')} alt="metrics explorer add to dashboard" style={{border: '1px solid gray'}} width="800" />
 1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Enter-dashboard-new-name-logs.png')} alt="Enter dashboard new name logs" style={{border: '1px solid gray'}} width="400" />
 1. In the updated window toggle the **Create as Dashboard** option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Create-new-dashboard-new-from-search-page.png')} alt="Create new dashboard new from search page" style={{border: '1px solid gray'}} width="400" />
 1. Click **Add** and your new Dashboard is created.

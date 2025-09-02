@@ -27,24 +27,14 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  staticDirectories: ['static'],
-  webpack: {
-    jsLoader: (isServer) => ({
-      loader: require.resolve('swc-loader'),
-      options: {
-        jsc: {
-          "parser": {
-            "syntax": "typescript",
-            "tsx": true
-          },
-          target: 'es2017',
-        },
-        module: {
-          type: isServer ? 'commonjs' : 'es6',
-        }
-      },
-    }),
+  clientModules: [
+    require.resolve('./src/client-modules/trackTrialClick.js'),
+  ],
+  future: {
+    v4: true,
+    experimental_faster: true,
   },
+  staticDirectories: ['static'],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -116,6 +106,8 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    //Embed code file from GitHub repo
+    '@saucelabs/theme-github-codeblock',
     ['@docusaurus/plugin-google-tag-manager',
       {
         containerId: 'GTM-58ZK7D',
@@ -123,7 +115,7 @@ module.exports = {
     ],
     ['@docusaurus/plugin-google-gtag',
       {
-        trackingID: 'G-CVH19TBVSL',
+        trackingID: ['G-CVH19TBVSL', 'G-9FTQ9KJJBY'],
       },
     ],
     ['@docusaurus/plugin-content-docs',
@@ -217,7 +209,7 @@ module.exports = {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
-          blogDescription: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
+          blogDescription: 'Stay up to date with the latest features, improvements, and fixes in the Sumo Logic Installed Collector by reviewing the official release notes.',
           showReadingTime: false,
           onUntruncatedBlogPosts: 'ignore',
           onInlineTags: 'ignore',
@@ -249,12 +241,15 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [
-      {
-        name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts',
-      },
-      {
-        name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
-      },
+      { name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts' },
+      { name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586' },
+      { name: 'description', content: 'Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.' },
+      { property: 'og:site_name', content: 'Sumo Logic Docs' },
+      { property: 'og:description', content: 'Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.' },
+      { property: 'og:image', content: 'https://www.sumologic.com/wp-content/uploads/meta-HomePage_1200x628-1.png' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '628' },
+      { property: 'og:image:alt', content: 'Sumo Logic Docs' },
     ],
     imageZoom: {
       selector: '.markdown :not(a) > img',
@@ -272,11 +267,11 @@ module.exports = {
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
-      // Optional: path for search page that enabled by default (`false` to disable it)
-      //searchPagePath: false,
-      getMissingResultsUrl({ query }) {
-        return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
+      insights: true,
+      insightsConfig: {
+        useCookie: true, // alt to useCookie: true,
       },
+      useCookie: true,  // alt to insightsConfig: {useCookie: true,},
     },
     prism: {
       theme: lightCodeTheme,
@@ -286,8 +281,8 @@ module.exports = {
       navbar: {
         logo: {
           alt: 'Sumo Logic logo',
-          srcDark: 'img/sumo-logo.svg',
-          src: 'img/sumo-logo-dark.svg',
+          srcDark: 'img/reuse/sumo-logo.svg',
+          src: 'img/reuse/sumo-logo-dark.svg',
         },
         items: [
         // activeregex controls the top nav content

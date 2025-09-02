@@ -46,26 +46,13 @@ You define the data that will reside in a partition by defining a routing expres
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/kpQLFVT4uE8"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Limitations 
 
 * There is a limit of 50 partitions per account. (This excludes [decommissioned partitions](decommission-partition.md).)
 * Partitions cannot be deleted, although you can [decommission](decommission-partition.md) them. This is because a partition may include log messages that aren’t stored anywhere else, so if it’s deleted, messages will be lost. If you no longer need a partition, you can decommission it.
-* Partition names cannot start with `sumologic_` or an underscore `_`.
+* Partition names cannot start with `sumologic_`, an underscore `_`, or a hyphen (`-`).
 * Partition routing rule length cannot exceed 2048 characters.
 
 ## Guides

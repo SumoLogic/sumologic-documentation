@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.2  
-Updated: Jun 15, 2023***
+***Version: 1.3  
+Updated: July 29, 2025***
 
 Amazon Inspector enables you to analyze the behavior of your AWS resources and to identify potential security issues.
 
@@ -23,22 +23,46 @@ Amazon Inspector enables you to analyze the behavior of your AWS resources and t
 ## Configure AWS Inspector in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../../../reuse/automation-service/aws/iam-role.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-   * **Label**. Name of the resource.
-   * **Access Key**. Access Key of AWS EC2.
-   * **Secret Key**. Secret Key of AWS EC2.
-   * **Region**. EC2 Region. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-inspector-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Inspector configuration" width="400"/>
+* <IntegrationLabel/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSIAMRole/>
+* <AWSRegions/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-inspector-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Inspector configuration" width="400"/>
 
-import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+For information about AWS Inspector, see [Inspector documentation](https://docs.aws.amazon.com/inspector/).
 
 <IntegrationsAuthAWS/>
 
-For information about AWS Inspector, see [Inspector documentation](https://docs.aws.amazon.com/inspector/).
+### AWS IAM role-based access
+
+<IAMConfiguration/>
+
+## Limitations
+
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
 
 ## Change Log
 
 * March 2, 2022 - First upload
 * March 10, 2022 - Logo
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
+* July 29, 2025 (v1.3) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+

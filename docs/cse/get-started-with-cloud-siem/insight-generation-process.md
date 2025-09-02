@@ -27,42 +27,32 @@ Watch this micro lesson to learn how insights are created.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/MjzJlozR6mE?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Entities in messages are mapped to entity-type schema attributes
 
-During the next step of the [record processing flow](/docs/cse/schema/record-processing-pipeline)—log mapping—message fields are mapped to Cloud SIEM schema attributes. During this process, each entity field from a message is mapped to one of the following Cloud SIEM schema entity attributes:
+During the next step of the [record processing flow](/docs/cse/schema/record-processing-pipeline)—log mapping—message fields are mapped to Cloud SIEM schema attributes. During this process, each entity field from a message is mapped to one of the following [Cloud SIEM schema entity attributes](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md):
 
-| Entity type | Schema attributes |
-|:----- |:----- |
-| Command | `commandLine` |
-| Domain | `http_referer_fqdn`, `http_url_fqdn` |
-| Email | `targetUser_email`, `user_email` |
-| File | `file_path`, `file_basename` |
-| Hash | `file_hash_imphash`, `file_hash_md5`, `file_hash_pehash`, `file_hash_sha1`, `file_hash_sha256`, `file_hash_ssdeep` |
-| Hostname | `device_hostname`, `device_hostname_raw`, `dstDevice_hostname`, `dstDevice_hostname_raw`, `srcDevice_hostname`, `srcDevice_hostname_raw` |
-| IP Address | `device_ip`, `device_natIp`, `dns_replyIp`, `dstDevice_ip`, `dstDevice_natIp`, `srcDevice_ip`, `srcDevice_natIp` |
-| MAC Address | `device_mac`, `dstDevice_mac`, `srcDevice_mac` |
-| Process | `baseImage`, `parentBaseImage` |
-| URL | `http_url` |
-| User Agent | `http_userAgent` |
-| Username | `fromUser_username`, `fromUser_username_raw`, `user_username`, `user_username_raw` |
+| Entity type | Field | Schema attributes |
+|:-- |:-- |:--|
+| Command | `_command` | `commandLine` |
+| Deployment | `_deployment` | `device_k8s_normalizedDeploymentName`, `dstDevice_k8s_normalizedDeploymentName`, `srcDevice_k8s_normalizedDeploymentName` |
+| Domain | `_domain` | `http_referer_fqdn`, `http_url_fqdn` |
+| Email | `_email` | `targetUser_email`, `user_email` |
+| File | `_file` | `file_path`, `file_basename` |
+| Hash | `_hash` | `file_hash_imphash`, `file_hash_md5`, `file_hash_pehash`, `file_hash_sha1`, `file_hash_sha256`, `file_hash_ssdeep` |
+| Hostname | `_hostname` | `device_hostname`, `device_hostname_raw`, `dstDevice_hostname`, `dstDevice_hostname_raw`, `srcDevice_hostname`, `srcDevice_hostname_raw` |
+| IP Address | `_ip` | `device_ip`, `device_natIp`, `dns_replyIp`, `dstDevice_ip`, `dstDevice_natIp`, `srcDevice_ip`, `srcDevice_natIp` |
+| MAC Address | `_mac` | `device_mac`, `dstDevice_mac`, `srcDevice_mac` |
+| Pod | `_pod` | `device_k8s_normalizedPodName`, `dstDevice_k8s_normalizedPodName`, `srcDevice_k8s_normalizedPodName` |
+| Process | `_process` | `baseImage`, `parentBaseImage` |
+| Replica Set | `_replicaset` | `device_k8s_normalizedReplicaSetName`, `dstDevice_k8s_normalizedReplicaSetName`, `srcDevice_k8s_normalizedReplicaSetName` |
+| Resource | `_resource` | `resource` |
+| URL | `_url` | `http_url` |
+| User Agent | `_useragent` | `http_userAgent` |
+| Username | `_username` | `fromUser_username`, `fromUser_username_raw`, `user_username`, `user_username_raw` |
 
-Which particular attribute an entity gets mapped to depends on the [field mappings](/docs/cse/schema/create-structured-log-mapping) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
-to `srcDevice_ip`. 
+Which particular attribute an entity gets mapped to depends on the [field mappings](/docs/cse/schema/create-structured-log-mapping) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245" to `srcDevice_ip`. 
 
 ## Rules have one or more On Entity attributes
 

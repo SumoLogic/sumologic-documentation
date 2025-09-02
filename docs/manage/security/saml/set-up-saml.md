@@ -1,7 +1,7 @@
 ---
 id: set-up-saml
 title: Set Up SAML for Single Sign-On
-description: Enable Single Sign-On (SSO) for user access to Sumo Logic.
+description: Follow the steps to configure SAML-based single sign-on (SSO) in Sumo Logic for secure, centralized user authentication.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -42,7 +42,7 @@ This means that if a user has been turned off on the SSO side, their access keys
 
 ### SAML does not provide a deprovisioning mechanism 
 
-This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to login to Sumo Logic via SSO. Administrators can delete these users from the **Administration > Users and Roles > Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User](../../users-roles/users/delete-user.md).
+This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to sign in to Sumo Logic via SSO. Administrators can delete these users from the **Administration > Users and Roles > Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User](../../users-roles/users/delete-user.md).
 
 ### Only one certificate for each SAML configuration is currently supported
 
@@ -159,7 +159,7 @@ Click the **Download Metadata XML** button while you [review a SAML configuratio
 
 ### Download metadata XML with the API
 
-You can get the metadata XML for a SAML configuration using the [getSamlMetadata](https://api.sumologic.com/docs/#operation/getSamlMetadata) API in the [SAML Configuration](https://api.sumologic.com/docs/#tag/samlConfigurationManagement) resource. Run the API from your API endpoint. To find your API endpoint, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
+You can get the metadata XML for a SAML configuration using the [getSamlMetadata](https://api.sumologic.com/docs/#operation/getSamlMetadata) API in the [SAML Configuration](https://api.sumologic.com/docs/#tag/samlConfigurationManagement) resource. Run the API from your API endpoint. To find your API endpoint, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
 
 If you need to give your identity provider a URL that contains the metadata XML for a SAML configuration, run the [getIdentityProviders](https://api.sumologic.com/docs/#operation/getIdentityProviders) API. This will give you a list of all SAML configurations in your organization and includes the metadata URL for each  configuration. In the response from the API, look for `metadataURL` entries. For example:
 `"metadataUrl": "https://api.sumologic.com/api/v1/saml/identityProviders/00000000361130F7/metadata"`

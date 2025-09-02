@@ -7,16 +7,13 @@ tags:
   - cyberark-audit
 description: This integration accesses CyberArk SIEM integration API to retrieve audit events.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/cyberark-audit/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/cyberark-audit/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/cyberark-audit/example.tf';
+
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/>
 
-The CyberArk Identity Security platform is a comprehensive identity management solution that enhances enterprise security through features such as single sign-on, multi-factor authentication, and privileged access control. It streamlines identity operations while providing extensive protection against both external and internal cyber threats. 
+The CyberArk Identity Security platform is a comprehensive identity management solution that enhances enterprise security through features such as single sign-on, multi-factor authentication, and privileged access control. It streamlines identity operations while providing extensive protection against both external and internal cyber threats.
 
 The Audit service offers detailed audit trails for activities, events, and sessions conducted by any integrated service on the Shared Services platform. An audit trail is a recorded history of activities that have taken place within the system. This information can be utilized for various purposes, including security, regulatory compliance, incident response investigations, and troubleshooting.
 
@@ -30,7 +27,7 @@ The Audit service offers detailed audit trails for activities, events, and sessi
 
 ### Vendor configuration
 
-In this configuration, you will set up a CyberArk audit source and configure it to be authorized and authenticated to use CyberArk Audit SIEM API. CyberArk audit supports OAuth authentication. 
+In this configuration, you will set up a CyberArk audit source and configure it to be authorized and authenticated to use CyberArk Audit SIEM API. CyberArk audit supports OAuth authentication.
 
 Follow the instructions mentioned in the [CyberArk Documentation](https://docs.cyberark.com/audit/latest/en/content/audit/isp_siem-integration.htm?tocpath=SIEM%20integrations%7C_____1) to retrieve the following parameters to configure the CyberArk audit source.
 
@@ -46,14 +43,14 @@ Follow the instructions mentioned in the [CyberArk Documentation](https://docs.c
 When you create a CyberArk Audit Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
 To configure a CyberArk Audit source, follow the steps below:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CyberArk Audit**.
 1. **Name**. Enter a name to display for the source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Identity ID**. Enter your identity ID collected from the [Vendor configuration](#vendor-configuration) section. For example, `ac212`.
 1. **Web Application ID**. Enter your application ID collected from the [Vendor configuration](#vendor-configuration) section. For example, `sumologic`.
 1. **Username**. Enter your username(client-id) collected from the [Vendor configuration](#vendor-configuration) section. For example, `user@cyberark.cloud.1234`.
@@ -98,15 +95,16 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/cyberark-audit/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cyberark-audit/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cyberark-audit/example.tf
+```
 
-<a href="/files/c2c/cyberark-audit/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

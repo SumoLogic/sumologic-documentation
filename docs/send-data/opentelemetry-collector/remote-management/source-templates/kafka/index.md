@@ -68,9 +68,9 @@ In this step, you will configure the yaml required for Kafka collection. Below a
 - **Endpoint**. The URL of the broker endpoint (default: `localhost:9092`).
 - **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value otel/kafka user needs to provide the value for `webengine.cluster.name`.
 
-import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
+import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-<OtelLogAdvanceOption/>
+<TimestampParsing/>
 
 **Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 

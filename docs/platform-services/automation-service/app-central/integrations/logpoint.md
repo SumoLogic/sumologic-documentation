@@ -26,8 +26,22 @@ This integration has been developed using a non-standard API that involves web s
 ## Configure Logpoint in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your Logpoint hostname.
+
+* **Username**. Enter the username of a Logpoint admin user authorized to provide authentication for the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/logpoint-configuration.png')} style={{border:'1px solid gray'}} alt="Logpoint configuration" width="400"/>
 

@@ -2,7 +2,7 @@
 id: training-certification-faq
 title: Sumo Logic Training and Certifications FAQ
 sidebar_label: Training and certifications
-description: Learn more about the Sumo Logic Training and Certification Program.
+description: Find answers to frequently asked questions about Sumo Logic training, certifications, and learning resources.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -21,7 +21,7 @@ Our self-paced training, micro lessons, and scheduled instructor-led training ar
 
 ### How do I access the Training Portal?
 
-1. First, log in to Sumo Logic.
+1. Sign in to Sumo Logic.
 1. From the **Home** page, click the **Learn** tab.
 1. Click **Get Certified**. You'll be redirected to the portal page, where you can access all courses and certifications. <br/><img src={useBaseUrl('img/get-started/certifications.png')} alt="Get Certified" style={{border: '1px solid gray'}} width="500" />
 
