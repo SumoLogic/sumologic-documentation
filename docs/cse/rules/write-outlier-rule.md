@@ -160,3 +160,8 @@ This section shows how an outlier rule would function with a daily baseline.
  :::tip
  If you are unsure what to set the minimum count value to from the default value of 1, consider providing the value which is beyond the normal acceptable behavior for a given time window for a particular entity. The **Minimum Count Value** is geared towards false positive reduction and improving the fidelity of signals generated, and will vary based upon the use case and type of logs collected.
  :::
+
+## Additional resources
+
+* Blog: [From weeks to minutes: How Sumo Logic’s historic baselining supercharges UEBA](https://www.sumologic.com/blog/sumo-logic-historic-baselining)
+* Glossary: [User entity behavior analytics (UEBA)](https://www.sumologic.com/glossary/ueba)

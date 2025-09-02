@@ -9,6 +9,7 @@ description: Learn how to collect the IAM User Inventory logs from the AWS SDK a
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 <img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="logo" width="80" />
 
@@ -54,6 +55,7 @@ To configure a AWS IAM Users source:
 1. Search for and select **AWS IAM Users**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/) so it becomes part of User Inventory. <br/><ForwardToSiem/>
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
@@ -65,6 +67,14 @@ To configure a AWS IAM Users source:
 1. **Polling Interval**. The polling interval is set for 12 hours by default and can be configured from a minimum of 1 hour to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the source, click **Save**.
+
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemVendor` | `Amazon` | Set when **Forward To SIEM** is checked. |
+| `_siemProduct` | `AWS IAM User` | Set when **Forward To SIEM** is checked. |
+| `_siemDataType` | `Inventory` | Set when **Forward To SIEM** is checked and specific to the API collected. |
 
 ## JSON schema
 
