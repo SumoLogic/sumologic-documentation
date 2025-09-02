@@ -97,7 +97,7 @@
     "markdown-table": "2.0.0",
     "mdn-data": "2.0.30",
     "mdx-mermaid": "^2.0.1",
-    "mermaid": "^11.5.0",
+    "mermaid": "^11.10.0",
     "minimist": "^1.2.6",
     "nanoid": "^3.3.8",
     "node-fetch": "^2.6.7",
