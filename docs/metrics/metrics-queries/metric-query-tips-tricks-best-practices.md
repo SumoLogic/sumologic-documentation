@@ -145,7 +145,90 @@ This further complicates the quantization type.
 
 ## Quantization
 
+Quantization is at the very heart of query output for metrics. You must use the correct quantization for every use case. 
+
+Every metric series has multiple rollup types: `min`, `max`, `latest`, `avg`, `sum`, and `count`. Every metric query has auto quantize by default using `avg`, but we override with the `quantize` operator (see [quantize Metrics Operator](/docs/metrics/metrics-operators/quantize/)). The `quantize` operator has a time window (similar to the [timeslice search operator](https://help.sumologic.com/docs/search/search-query-language/search-operators/timeslice/) in logs), and a rollup type, for example, `avg` or `sum`.
+
+The following screenshot shows a query with the `quantize` type of `max` and an interval of `1h`: 
+
+<img src={useBaseUrl('img/metrics/metrics-query-quantize-example.png')} alt="Metrics query example" style={{border: '1px solid gray'}} width="600" />
+
+This screenshot shows the rollup types of `min`, `max`, `latest`, `avg`, `sum`, and `count`:
+
+<img src={useBaseUrl('img/metrics/metrics-query-quantize-results.png')} alt="Metrics query rollup types" style={{border: '1px solid gray'}} width="800" />
+
+### Pod count quantize example
+
+Suppose you want to find the latest value for total pods in a cluster regardless of the run state. 
+
+Each pod has 5 metric series (one for each possible pod state tag) with a value from 0 to *n* being the number of pods in that state:
+
+<img src={useBaseUrl('img/metrics/metrics-query-quantize-results.png')} alt="Metrics query rollup types" style={{border: '1px solid gray'}} width="800" />
+
+Note that when you sum the colums, the sum of `max` is 2, sum of `avg` would be 1.5, and the sum of `count` would be 10.
+
+The correct query is to max each series and then sum them:
+```
+cluster=prod metric=kube_pod_status_phase  
+| quantize to 1m using max drop last | sum
+```
+<img src={useBaseUrl('img/metrics/metrics-count-pods-correct.png')} alt="Correct query for pod count" style={{border: '1px solid gray'}} width="800" />
+
+The wrong approach is to average the rollup and count of metric series:
+
+<img src={useBaseUrl('img/metrics/metrics-count-pods-wrong.png')} alt="Wrong query for pod count" style={{border: '1px solid gray'}} width="800" />
+
+### Changing statistic type on a chart changes results
+
+Changing the **Statistic Type** on a chart (if that option is present) changes the output of the query that is displayed. Always consider if the default of **Average** is correct:
+
+<img src={useBaseUrl('img/metrics/metrics-quantize-statistic-type.png')} alt="Statistic Type for a chart" style={{border: '1px solid gray'}} width="300" />
+
+For example, selecting the **Average** statistic type for the following query yields a sum of `75.63`:
+<img src={useBaseUrl('img/metrics/metrics-query-average-statistics-type.png')} alt="Average statistic type for a chart" style={{border: '1px solid gray'}} width="400" />
+
+But selecting the **Sum** statistic type for the same query yields a sum of `1,739.5`:
+<img src={useBaseUrl('img/metrics/metrics-query-sum-statistic-type.png')} alt="Sum statistic type for a chart" style={{border: '1px solid gray'}} width="400" />
+
 ## Metric discovery
+
+### Autocomplete
+
+Metric and tag discovery is a key activity in creating metric queries. Metrics Search provides an autocomplete function to make it fast and easy to build out metric queries. Tag names and values are supplied in the query UI based on the current metric query scope. 
+
+Autocomplete can show you:
+* Which metrics exist for a specific scope:<br/><img src={useBaseUrl('img/metrics/metric-query-which-metrics.png')} alt="Which metrics exist for a specific scope" style={{border: '1px solid gray'}} width="600" />
+* What tag names exist for a specific metric or tag scope:<br/><img src={useBaseUrl('img/metrics/metric-query-which-tag-names.png')} alt="Which metrics exist for a specific scope" style={{border: '1px solid gray'}} width="500" />
+* What values exist for a specific tag in the current scope:<br/><img src={useBaseUrl('img/metrics/metric-query-what-values.png')} alt="What values exist for a specific tag" style={{border: '1px solid gray'}} width="300" />
+
+### Time series
+
+The **Time Series** view lets you review the metric time series and tag values when the query outputs raw metric query (with no aggregation). Use this view to understand what many metric series are in the current scope and check how many values appear in tag columns or understand higher than expected cardinality values in tags.
+
+Switch to the **Time Series** tab to see metrics, tags and tag values:
+* Use `//` to comment out the aggregate part of query to jump back to raw time series view.
+* Columns are sortable.
+* Select the ellipsis button on any tag value in the grid to quickly add filter statements.
+
+<img src={useBaseUrl('img/metrics/metric-query-time-series.png')} alt="Time series with a metric query" style={{border: '1px solid gray'}} width="800" />
+
+### Time series example
+
+In the following example, we use the comment tag `//` to view the metric query that is still raw (no aggregation) in the **Time Series** tab:
+
+```
+container="istio-proxy" node="ip-10-42-169-62.us-west-2.compute.internal" metric=container_memory_working_set_bytes cluster=prod namespace=prod-otel001 
+| quantize 1m  // | avg by container, pod | sum by pod 
+```
+<img src={useBaseUrl('img/metrics/time-series-example.png')} alt="Time series example" style={{border: '1px solid gray'}} width="800" />
+
+Notice the following:
+* The `container`, `namespace`, and `pod` labels for the metric from Kubernetes (`https://kubernetes.io/docs/reference/instrumentation/metrics/`).
+* There is one metric in scope for `cluster` and `node`.
+* There are 17 time series, so one or more tags must have unique values.
+* The `deployment` and `pod` columns both have 17 values (one per istio endpoint).
+* Use `avg` quantization (default), then `sum` for final total.
+* Don't use `sum` (total for all data points) or `count` (count of data points only).
 
 ## Charting metrics
 
