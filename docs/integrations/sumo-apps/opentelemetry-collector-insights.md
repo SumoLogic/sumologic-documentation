@@ -29,11 +29,8 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 ### For OTLP endpoint configuration
 
-Before configuring the OTEL Collector integration, ensure you have the following prerequisites in place:
 
-1. **Sumo Logic OTLP Source**: You need to create an OTLP source in your Sumo Logic hosted collector. The OTLP source will provide the endpoint URL that the OTEL Collector will use to send telemetry data.
-
-  **Documentation**: [Creating a Sumo Logic OTLP Source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/otlp/)
+Before configuring the OTEL Collector integration, you need to create an OTLP source in your Sumo Logic hosted collector. The OTLP source will provide the endpoint URL that the OTEL Collector will use to send telemetry data. Learn more at [Creating a Sumo Logic OTLP Source](/docs/send-data/hosted-collectors/http-source/otlp/).
 
 ### For metrics collection
 
@@ -77,7 +74,7 @@ In this step, you will configure the OpenTelemetry Collector's built-in telemetr
 
 Below are the inputs required:
 
-- **OTLP Endpoint**: Your Sumo Logic OTLP endpoint URL.
+- **OTLP Endpoint**. Your Sumo Logic OTLP endpoint URL.
 
 
 ```yaml
@@ -107,13 +104,13 @@ service:
       deployment.environment: ${DEPLOYMENT_ENVIRONMENT}
 ```
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo.
+You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
 
 import EnvVar from '../../reuse/apps/opentelemetry/env-var-required.md';
 
 <EnvVar/>
 
-<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/opentelemetry-collector-insights-configure-form.png' style={{border:'1px solid gray'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenTelemetry-Collector-Insights/opentelemetry-collector-insights-configure-form.png' style={{border:'1px solid gray'}} alt="YAML" width="700"/>
 
 ### Step 3: Send logs and metrics to Sumo Logic
 
@@ -137,31 +134,31 @@ import LogsIntro from '../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 1. Add the telemetry configuration to your existing collector configuration file in `/etc/otelcol-sumo/conf.d/` or directly in the main configuration file.
 2. Place Env file in the following directory:
-  ```sh
-  /etc/otelcol-sumo/env/
-  ```
+   ```sh
+   /etc/otelcol-sumo/env/
+   ```
 3. Restart the collector using:
-  ```sh
-  sudo systemctl restart otelcol-sumo
-  ```
+   ```sh
+   sudo systemctl restart otelcol-sumo
+   ```
 
 </TabItem>
 <TabItem value="Windows">
 
 1. Add the telemetry configuration to your existing collector configuration file in `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` or the main configuration file.
 2. Restart the collector using:
-  ```sh
-  Restart-Service -Name OtelcolSumo
-  ```
+   ```sh
+   Restart-Service -Name OtelcolSumo
+   ```
 
 </TabItem>
 <TabItem value="macOS">
 
 1. Add the telemetry configuration to your existing collector configuration file in `/etc/otelcol-sumo/conf.d/` or the main configuration file.
 2. Restart the otelcol-sumo process using:
-  ```sh
-  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-  ```
+   ```sh
+   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+   ```
 
 </TabItem>
 <TabItem value="Chef">
