@@ -232,6 +232,109 @@ Notice the following:
 
 ## Charting metrics
 
+### Metric chart types
+
+Unlike log searches, you often don't need to format the query output to make different types or charts. Some panels like **Single Value** do need aggregate output formatted a certain way.
+
+For metrics, the UI has a very large impact on the resulting chart (compared to log search charting). The same query can produce many types of charts even when not aggregated (unlike in logs).
+
+### Aggregate in metrics
+
+Good reasons to aggregate in metrics:
+* Better control over resulting time series from query.
+* Much easier to get the query output you want to chart.
+* Queries will scale to larger numbers of series and data points.<br/>For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries. For aggregate queries (queries that have an aggregate operator like `avg` or `max`) the limit is at least 200,000 for time ranges within last 24 hours and 50,000 otherwise.
+* For monitors it makes it easy to have alert grouping, for example, per cluster, per pod, per host.
+* In monitor payloads you can use `ResultsJson.<fieldname>` for custom alert text.
+
+### Fix "too many timeseries in the output"
+
+When you perform a metric query, you may see the following message: <br/> `There were too many timeseries in the output, showing first 1000`.
+
+<img src={useBaseUrl('img/metrics/timeseries-error-message.png')} alt="Too many timeseries message" style={{border: '1px solid gray'}} width="400" />
+
+You can't have more than 1000 groups in aggregation or raw data series. This is called the "output limit". For more information, see [Output data limit](/docs/metrics/metrics-queries/metric-query-error-messages/#output-data-limit).
+
+Try the following fixes:
+* Perform a final aggregation by a dimension with less than 1000 groups:
+    <br/>`| sum by pod | sum`
+    <br/>or
+    <br/>`| sum by namespace`
+* Use the [topk search operator](/docs/search/search-query-language/search-operators/topk/):
+    <br/>`| topk(500,latest)| sum by pod`
+* Filter to remove series using `filter` or `where` operators:
+    <br/>`| filter max > 0 `
+    <br/>or
+    <br/>`| where _value > 0`
+    <br/>or 
+    <br/>`| where max > 0`
+
+###  Metric charting options that change output
+
+Pay special attention to these UI options as they can impact your metrics chart output much more than log search does:
+* Rounding
+* Statistic type, especially for raw query
+* Stacking for some types:<br/><img src={useBaseUrl('img/metrics/metric-query-chart-tips.png')} alt="Chart tips" style={{border: '1px solid gray'}} width="300" />
+* Group or sort can be a UI setting in some charts:<br/><img src={useBaseUrl('img/metrics/metric-query-group-sort.png')} alt="Group and sort for charts" style={{border: '1px solid gray'}} width="300" />
+* Threshold chart coloring can be a UI setting:<br/><img src={useBaseUrl('img/metrics/metric-query-threshold.png')} alt="Threshold for charts" style={{border: '1px solid gray'}} width="400" />
+
+### Overrides to improve series naming
+
+Use the **Display Overrides** tab to make it easy to read alias for metric series names in legends and popups, as well as the more usual options for custom chart formatting, such as the left/right axis. For more information, see [Override dashboard displays](/docs/dashboards/panels/modify-chart/#overridedashboard-displays).
+
+Following are examples of queries without and then with override.
+
+#### Default raw series
+
+Query:
+    ```
+    metric=kube_pod_container_status_restarts_total
+    | quantize using max | delta counter
+    | topk(100,max)
+   ```
+
+Override: None
+
+Output:
+<img src={useBaseUrl('img/metrics/metric-query-default-raw.png')} alt="Default raw series output" style={{border: '1px solid gray'}} width="600" />
+
+#### Aggregated
+
+Query:
+    ```
+    metric=kube_pod_container_status_restarts_total 
+    | quantize using max | delta counter 
+    | topk(100,max) | sum by pod,cluster,namespace
+    ```
+Override: None
+
+Output:
+<img src={useBaseUrl('img/metrics/metric-query-aggregated.png')} alt="Aggregated series output" style={{border: '1px solid gray'}} width="600" />
+
+#### Aggregated with override alias on #A
+
+Now see how an override makes it easier to read output.
+
+Query:
+    ```
+    metric=kube_pod_container_status_restarts_total 
+    | quantize using max | delta counter 
+    | topk(100,max)
+    | sum by pod,cluster,namespace
+    ```
+
+Override:
+<img src={useBaseUrl('img/metrics/metric-query-display-override.png')} alt="Example of metric query display override" style={{border: '1px solid gray'}} width="400" />
+
+Output:
+<img src={useBaseUrl('img/metrics/metric-query-aggregated-with-override.png')} alt="Aggregated with override series output" style={{border: '1px solid gray'}} width="400" />
+
+## Tabular stats for time series panels
+
+Use the **Bottom** or **Right** positions with table format and include aggregates like `sum`, `avg`, and `latest` to enable summary stats in the same panel for time series charts.
+
+<img src={useBaseUrl('img/metrics/metric-query-table-display.png')} alt="Table statistics" style={{border: '1px solid gray'}} width="700" />
+
 ## Learn your ABC
 
 ## Rates and counters
