@@ -156,7 +156,7 @@ These alerts are metric based and will work for all Machine Learning.
 
 | Alert Name                                                     | Description                                                                                                     | Alert Condition | Recover Condition |
 |:---------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------|:----------------|:------------------|
-| `Azure Machine Learning - Failed Runs`                         | This alert is triggered when Failed Runs are detected in Machine Learning workspace.                            | Count > 1       | Count =< 1        |
+| `Azure Machine Learning - Failed Runs`                         | This alert is triggered when Failed Runs are detected in Machine Learning workspace.                            | Count >= 1      | Count < 1         |
 
 ## Upgrade/Downgrade the Azure Machine Learning app (optional)
 
