@@ -52,7 +52,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Activity Logs
 
-To collect activity logs, refer to the [Collecting Logs for the Azure Audit App from Event Hub](/docs/integrations/microsoft-azure/audit#collecting-logs-for-the-azure-audit-app-from-event-hub) section in the Azure Audit documentation. Do not perform this step in case you are already collecting activity logs for a subscription.
+To collect activity logs, refer to the [Collecting Logs for the Azure Audit App from Event Hub](/docs/integrations/microsoft-azure/audit#collecting-logs-for-the-azure-audit-app-from-event-hub) section in the Azure Audit documentation. If you're already collecting activity logs for a subscription, you can skip this step.
 :::note
 Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
 :::
