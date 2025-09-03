@@ -83,27 +83,27 @@ import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
 ### Overview
 
-The **Azure Machine Learning - Overview** dashboard provides comprehensive information on events, operations and details such as overall number of runs, models deployed and quota utilization, operation types, ingress and egress of network data
+The **Azure Machine Learning - Overview** dashboard provides comprehensive details on events, operations and details such as overall number of errors, failures, model usage and quota utilization, operation types, ingress and egress of network data
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Overview.png')} alt="Azure Machine Learning - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Overview.png')} alt="Azure Machine Learning - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Model
 
-This **Azure Machine Learning - Model** dashboard provides information on model details related to your Azure Machine Learning.
+The **Azure Machine Learning - Model** dashboard provides information on model details and model inference operations related to your Azure Machine Learning.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+OS%3AData+Disk.png')} alt="Azure Machine Learning - Model dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Model.png')} alt="Azure Machine Learning - Model dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Compute
 
-The **Azure Machine Learning - Compute** dashboard provides details on compute operations, events and usage such as CPU, Disk or memory to your Azure Machine Learning.
+The **Azure Machine Learning - Compute** dashboard provides details on compute operations, events and usage such as CPU, GPU, Disk or memory to your Azure Machine Learning.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Network.png')} alt="Azure Machine Learning - Compute dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Compute.png')} alt="Azure Machine Learning - Compute dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Data Events
 
-The **Azure Machine Learning - Data Events** dashboard provides details on data events and results details related to your Azure Machine Learning.
+The **Azure Machine Learning - Data Events** dashboard provides details on all Data events such as DateSet, DataStore, DataLabel read/change events with results details and also environment data events related to your Azure Machine Learning.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Disk.png')} alt="Azure Machine Learning - Data Events dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Data-Events.png')} alt="Azure Machine Learning - Data Events dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
@@ -114,7 +114,7 @@ Use this dashboard to:
 * Identify potential issues by analyzing the top operations causing errors and correlating them with specific users or applications.
 * Track recent write and delete operations to maintain an audit trail of changes made to your Machine Learning.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Administrative+Operations.png')} alt="Azure Machine Learning - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Administrative-Operations.png')} alt="Azure Machine Learning - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 
@@ -125,25 +125,25 @@ Use this dashboard to:
 * Track and analyse recent recommendations to improve the performance and security of your VM setup.
 * Identify trends in policy events and recommendations over time to proactively address potential issues.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Policy+and+Recommendations.png')} alt="Azure Machine Learning - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Policy-and-Recommendations.png')} alt="Azure Machine Learning - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Jobs and Pipelines
 
 The **Azure Machine Learning - Jobs and Pipelines** dashboard provides details on operations, events and failures in jobs and pipelines of your Azure Machine Learning.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+CPU.png')} alt="Azure Machine Learning - Jobs and Pipelines dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Jobs-and-Pipelines.png')} alt="Azure Machine Learning - Jobs and Pipelines dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Quota
 
 The **Azure Machine Learning - Quota** dashboard provides details on quota related to your Azure Machine Learning such as Quota Utilization, Active Node, Active Cores, Idle Cores, etc.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Cache.png')} alt="Azure Machine Learning - Quota dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Quota.png')} alt="Azure Machine Learning - Quota dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Run
 
 The **Azure Machine Learning - Run** dashboard provides details on running experiments such as failed runs, errors in runs, completed or in-progress or started run
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureVM/Azure+VM+-+Temp+Disk.png')} alt="Azure Machine Learning - Run dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Run.png')} alt="Azure Machine Learning - Run dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Azure Machine Learning app
 
@@ -156,11 +156,7 @@ These alerts are metric based and will work for all Machine Learning.
 
 | Alert Name                                                     | Description                                                                                                     | Alert Condition | Recover Condition |
 |:---------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------|:----------------|:------------------|
-| `Azure Machine Learning - CPU Utilization`                     | This alert is triggered when CPU usage spikes above 80% are detected for any Machine Learning CPU.              | Count >= 80     | Count < 80        |
 | `Azure Machine Learning - Failed Runs`                         | This alert is triggered when Failed Runs are detected in Machine Learning workspace.                            | Count > 1       | Count =< 1        |
-| `Azure Machine Learning - GPU Memory Utilization`              | This alert is triggered when GPU memory utilization spikes above 80% are detected for any Machine Learning GPU. | Count >= 80     | Count < 80        |
-| `Azure Machine Learning - GPU Utilization`                     | This alert is triggered when GPU  utilization spikes above 80% are detected for any Machine Learning GPU.       | Count >= 80     | Count < 80        |
-| `Azure Machine Learning - Quota Utilization`                   | This alert is triggered when consumed Quota goes above 80% for any Machine Learning workspace.                  | Count >= 80     | Count < 80        |
 
 ## Upgrade/Downgrade the Azure Machine Learning app (optional)
 
