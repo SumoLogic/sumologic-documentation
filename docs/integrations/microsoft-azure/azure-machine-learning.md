@@ -27,7 +27,7 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 
 You must explicitly enable diagnostic settings for each Machine Learning Workspace you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/KeyVault/Logs`, `Azure/KeyVault/Metrics`.
+When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/MachineLearning/Logs`, `Azure/MachineLearning/Metrics`.
 
 ###  Configure collector
 
@@ -47,7 +47,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 1. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform the steps below for each Azure Machine Learning namespace that you want to monitor.
    1. Choose `Stream to an event hub` as the destination.
    1. Select `allLogs`.
-   1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-eventgrid-logs.png')} alt="Azure Event Grid logs" style={{border: '1px solid gray'}} width="800" />
+   1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-machinelearning-logs.png')} alt="Azure Machine Learning logs" style={{border: '1px solid gray'}} width="800" />
 1. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Machine Learning Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity Logs
