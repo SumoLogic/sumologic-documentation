@@ -99,8 +99,7 @@ Generally, as the number of Sources increases, the number of threads also increa
 
 ## About Collector and Source installation and configuration
 
-This section is an overview of the multiple methods Sumo provides for
-installing and configuring Collectors and Sources.
+This section is an overview of the multiple methods Sumo provides for installing and configuring Collectors and Sources.
 
 ### Collector installation and configuration
 
@@ -118,6 +117,10 @@ After a Collector is up and running, you can change some Installed Collector con
 A few Installed Collector behaviors, such as caching, are configured in the `collector.properties` file in the Collector’s `config` directory.  
 
 You can update the configuration of an Installed Collector using the Collector Management API. For more information, see Collector API Methods and Examples.
+
+:::note
+Any collector that has been inactive for 12 months or longer will be automatically deleted. To reuse the same collector, you need to uninstall any remaining services and perform a fresh installation.
+:::
 
 ### Source configuration
 
