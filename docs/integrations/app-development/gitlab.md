@@ -112,7 +112,7 @@ Field x-gitlab-event not found, please check the spelling and try again.
 Do the following to resolve:
 
 1. Close all app dashboards.
-2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 1. Delete the **x-gitlab-event field.**
 1. Add it again using the Dropped Fields section:
     * At **Dropped Fields** dropdown, click on **x-gitlab-event**, then click **Create Field** to create the field.

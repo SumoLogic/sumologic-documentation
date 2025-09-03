@@ -51,7 +51,7 @@ Alert List shows all the Alerts from triggered Monitors within the past seven d
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Alerts list, click the bell icon in the top menu.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Alerts list, in the main Sumo Logic menu select **Alerts > Alert List**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Alerts list, in the main Sumo Logic menu select **Alerts**. You can also click the **Go To...** menu at the top of the screen and select **Alert List**.
 
 
 * Use the search bar to filter by name, severity, or status.
