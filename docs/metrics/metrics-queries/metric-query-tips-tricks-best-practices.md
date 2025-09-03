@@ -337,6 +337,72 @@ Use the **Bottom** or **Right** positions with table format and include aggregat
 
 ## Learn your ABC
 
+### ABC pattern
+
+To compute a third series C from two series A & B is the ABC pattern. Common examples are:
+* % usage where CPU, memory, or disk full % where metrics capacity and and usage are sent separately .
+* Determine usage in Kubernetes metrics sent as multiple series such as requests versus limits for pods.
+
+When using the ABC pattern, keep in mind:
+* If this is `per x` it must be grouped correctly, for example, `sum by pod`. Take careful note of quantization period and type.
+* Create a #C series with required computation.
+* Make sure the quantization period is identical for all three series, or results will be very strange. 
+* If grouping, you must include `along` in #C. See [along Metrics Statement](/docs/metrics/metrics-operators/along/) and [Join Metrics Queries](/docs/metrics/introduction/joins/).
+
+### ABC example 1 - Disk usage % top 20
+
+Say we have two metrics and want to calculate a usage % for the top 20 fullest disk volumes:
+
+```
+// metric gives us bytes size per node, mount, device
+node="ip-10-42-177-158.us-west-2.compute.internal" cluster=prod metric=node_filesystem_size_bytes !fstype=tmpfs node=* 
+| quantize to 5m using avg 
+| avg by node,mountpoint,device
+```
+
+```
+// gives use the free bytes per node,mountpoint,device
+node="ip-10-42-177-158.us-west-2.compute.internal" cluster=prod metric=node_filesystem_avail_bytes  !fstype=tmpfs node=* 
+| quantize to 5m using avg 
+| avg by node,mountpoint,device
+```
+
+Create an #A and #B series with the queries above and then add a #C series:
+```
+1 - (#B / #A) along node,mountpoint,device | eval _value * 100 | quantize to 5m using avg  
+| topk(20, latest)
+``` 
+
+<img src={useBaseUrl('img/metrics/metric-query-abc-example-1.png')} alt="ABC example 1" style={{border: '1px solid gray'}} width="800" />
+
+For our top list output we've chosen a bar chart, with only #C visible, with sort by value descending, and latest value shown. Note that `along` is very important:<br/><img src={useBaseUrl('img/metrics/metric-query-abc-example-1a.png')} alt="ABC example 1 chart" style={{border: '1px solid gray'}} width="800" />
+
+### ABC example 2 - Kubernetes memory versus limits by pod
+
+A query:
+```
+metric=container_memory_working_set_bytes 
+cluster=prod namespace=prod-otel001 
+ | quantize 1m | avg by container, pod | sum by pod 
+```
+
+B query:
+```
+metric=kube_pod_container_resource_limits resource=memory 
+cluster=prod namespace=prod-otel001 
+| quantize 1m | sum by pod
+```
+
+C query:
+```
+#A / #B * 100 along pod 
+| topk(50,max)
+```
+
+<img src={useBaseUrl('img/metrics/metric-query-abc-example-2.png')} alt="ABC example 2" style={{border: '1px solid gray'}} width="700" />
+
+<img src={useBaseUrl('img/metrics/metric-query-abc-example-2a.png')} alt="ABC example 2 chart" style={{border: '1px solid gray'}} width="800" />
+
 ## Rates and counters
 
 ## Managing DPM and high cardinality
