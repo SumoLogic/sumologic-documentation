@@ -119,7 +119,7 @@ Exams are no longer open book.
 
 ### What if I run into a technical issue during the exam?
 
-Kryterion support is available during the exam. Use Live Chat or submit a request via [Kryterion Candidate Support](https://kryterion.force.com/support/s/contactsupport?language=en_US).
+Kryterion support is available during the exam. Use Live Chat or submit a request via [Kryterion Candidate Support](https://www.kryterion.com/fast-help-current-and-future-test-candidates).
 
 ### Will I see preliminary exam results on the screen upon completing my test?
 
