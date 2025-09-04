@@ -39,7 +39,9 @@ This example workflow demonstrates the multi-turn interaction pattern; you can a
 
 ### Step 1: Ask your initial question  
 
-Start broad when you set a goal: `Show failed login attempts in the last 24 hours`. An intent card appears at the top, summarizing your goal. Mobot also surfaces suggestion cards with related refinements you can click, and gives you the option to open the query in Log Search.
+Start broad when you set a goal. We'll ask: `Show failed login attempts in the last 24 hours`.
+
+An intent card appears in the conversation pane that summarizes your goal. Mobot also surfaces suggestion cards with related refinements you can click, and gives you the option to open the query in Log Search.
 
 <img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot multi-turn conversation showing initial query, failed login attempts in the last 24 hours" width="700"/>
 

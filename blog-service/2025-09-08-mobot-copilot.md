@@ -12,13 +12,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Copilot is now Mobot
 
-We've renamed Copilot, Sumo Logic's AI-powered log search query assistant, to *Mobot*. This change is available to all customers with no additional setup required.
+We've renamed Copilot, Sumo Logic's AI-powered log search query assistant, to *Mobot*. This rename is live for all customers, with no additional setup required.  
 
 ### Multi-turn conversations (Beta)
 
-Alongside the rename, we've introduced multi-turn conversations in Beta. Multi-turn allows you to ask follow-up questions without repeating your search context, making investigations more natural and iterative.
-
-Enhancements in Beta include:  
+Alongside the rename, we've introduced multi-turn conversation functionality in Beta. If enabled, you can ask follow-up questions without repeating your search context, making investigations more natural and iterative:  
 
 * **Clarifications when needed**. If your request is ambiguous, Mobot may ask a follow-up question to narrow intent.  
 * **Smarter error handling**. Contextual error messages explain why a query failed and suggest fixes.  
