@@ -24,19 +24,6 @@ Watch this micro lesson to get an introduction to search.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/VbFsfpmP6LY?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
-
 :::
 
 In this section, we'll introduce the following concepts:

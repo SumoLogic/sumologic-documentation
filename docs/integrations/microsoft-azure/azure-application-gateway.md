@@ -40,9 +40,15 @@ You must explicitly enable diagnostic settings for each Azure Application Gatewa
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/ApplicationGateway/Logs`, `Azure/ApplicationGateway/Metrics`.
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure metrics collection
 
-To set up the Azure Metrics source in Sumo Logic, refer to [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+
+<MetricsSourceBeta/>
 
 ### Configure logs collection
 
@@ -156,6 +162,24 @@ The **Azure Application Gateway - Traffic** dashboard provides details into the 
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureApplicationGateway/Azure-Application-Gateway-Traffic.png')} alt="Azure Application Gateway Security" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Azure Application Gateway
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Application Gateway alerts
+
+These alerts are metric based and will work for all Azure Application Gateways.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Application Gateway - Current Capacity Units` | This alert is triggered when Average Capacity Units count is greater than 75. Also, a warning type alert will be triggered when Average Capacity Units count is greater than 65. | percentage >= 75 | percentage < 75 |
+| `Azure Application Gateway - Current Compute Units` | This alert is triggered when Average Compute Units count is greater than 75. Also, a warning type alert will be triggered when Average Compute Units count is greater than 65. | percentage >= 75 | percentage < 75 |
+| `Azure Application Gateway - Failed Requests` | This alert is triggered when Failed Requests count greater than 1. | Count >= 1 | Count < 1 |
+| `Azure Application Gateway - Healthy Host Count` | This alert is triggered when Healthy Host Count is less than 1. | Count < 1 | Count >= 1 |
+| `Azure Application Gateway - UnHealthy Host Count` | This alert is triggered when UnHealthy Host Count is greater than 1. | Count >= 1 | Count < 1 |
+
 ## Upgrade/Downgrade the Azure Application Gateway app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
@@ -167,17 +191,6 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
-
-### Azure Application Gateway alerts
-These alerts are metric based and will work for all Azure Application Gateways.
-
-| Alert Name                                           | Alert Description and Conditions                                                                                                                                                           | Alert Condition  | Recover Condition |
-|:-----------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:------------------|
-| `Azure Application Gateway - Current Capacity Units` | This alert is triggered  when Average Capacity Units count is greater than 75. Also, a warning type alert will be triggered when Average Capacity Units count is greater than 65.          | percentage >= 75 | percentage < 75   |
-| `Azure Application Gateway - Current Compute Units`  | This alert is triggered  when Average Compute Units count is greater than 75. Also, a warning type alert will be triggered when Average Compute Units count is greater than 65.            | percentage >= 75 | percentage < 75   |
-| `Azure Application Gateway - Failed Requests`        | This alert is triggered when Failed Requests count greater than 1.                                                                                                                         | Count >= 1       | Count < 1         |
-| `Azure Application Gateway - Healthy Host Count`     | This alert is triggered when Healthy Host Count is less than 1.                                                                                                                            | Count < 1        | Count >= 1        |
-| `Azure Application Gateway - UnHealthy Host Count`   | This alert is triggered when UnHealthy Host Count is greater than 1                                                                                                                        | Count >= 1       | Count < 1         |
 
 ## Troubleshooting
 

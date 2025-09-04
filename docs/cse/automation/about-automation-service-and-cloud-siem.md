@@ -46,7 +46,7 @@ Before you can access the Automation Service from Cloud SIEM, you must first [co
 :::
 
 1. To access the Automation Service from Cloud SIEM:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. <br/>The list of available Cloud SIEM automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. <br/>The list of available Cloud SIEM automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" style={{border: '1px solid gray'}} width="800"/>
    1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="300"/> <br/>The Automation Service screen displays: <br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" style={{border: '1px solid gray'}} width="800"/>
      :::note
      You can also launch the Automation Service by selecting **Automation** from the main menu: <br/><img src={useBaseUrl('img/cse/automation-menu-in-nav-bar.png')} alt="Automation menu option in the nav bar" style={{border: '1px solid gray'}} width="200"/> <br/>If you also have Cloud SOAR installed, a **Cloud SOAR** option appears instead, since all automation services are provided by Cloud SOAR when it installed in conjunction with Cloud SIEM.
@@ -62,7 +62,7 @@ To learn how to create automations in Cloud SIEM that run playbooks from the Aut
 ### Configure role capabilities for Cloud SIEM automation
 
 Access to the Automation Service is controlled by [role capabilities](/docs/manage/users-roles/roles/role-capabilities) in the Sumo Logic platform. 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu click **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu click **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
 1. Click the **Roles** tab. 
 1. Click **Add Role** to create a new role for users of Cloud SIEM automation. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 1. Add the following capabilities:
@@ -96,3 +96,6 @@ The Automation Service uses the [Cloud SOAR API](/docs/api/cloud-soar/).
 
 Cloud SIEM automation data is retained in accordance with Sumo Logic's policies. For more information, see [Cloud SIEM Data Retention](/docs/cse/administration/cse-data-retention).
 
+## Additional resources
+
+Blog: [Faster security investigation with Cloud SIEM playbooks](https://www.sumologic.com/blog/faster-security-investigation-siem-playbooks)

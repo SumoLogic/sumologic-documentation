@@ -45,19 +45,6 @@ Watch this micro lesson to learn how to create a match rule.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/l7xOBls1ROE?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Create a match rule

@@ -22,7 +22,7 @@ The diagram below illustrates the metrics collection pipeline.
 1. AWS CloudWatch Metrics are streamed at a 1-minute resolution to the Metric Stream service.
 1. The Metric Streams service delivers metrics to the Kinesis Data Firehose service.
 1. The Kinesis Data Firehose service delivers the metrics to the AWS Kinesis Firehose for Metrics source for ingestion. The metrics are in the [OpenTelemetry](https://opentelemetry.io/) format.
-1. You can query the metrics in the Sumo Logic Metrics Explorer.
+1. You can query the metrics in the Sumo Logic Metrics Search.
 1. Undelivered metrics are routed to a customer S3 bucket.
 
 How long it takes for metrics to be delivered to Sumo Logic depends on the buffering settings configured for the Firehose stream—such buffering is expressed in maximum payload size or maximum wait time, whichever is reached first. If these are set to the minimum values, which are 60 seconds and 1MB respectively, the expected latency is within 3 minutes, if the selected resources have active metric updates.
@@ -48,7 +48,7 @@ The AWS CloudWatch Metrics source uses AWS’s [GetMetricStatistics](https://doc
 
 In this step, you create the AWS Kinesis Firehose for Metrics source.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Add Source** next to a Hosted Collector. 
 1. Select **AWS Kinesis Firehose** for Metrics.
 1. Enter a **Name** for the source.

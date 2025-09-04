@@ -8,6 +8,8 @@ sidebar_label: Rotating Access Credentials Playbooks
   <meta name="robots" content="noindex" />
 </head>
 
+<!-- Article added by docs PR #3305. Related to ticket BUSAPPS-11825. -->
+
 :::note
 If you are rotating your access credentials due to the potential security incident announced on November 7, 2023 in our Security Response Center, and require additional information, please refer to the details listed in the [Security Response Center](https://www.sumologic.com/security-response-center/) site, or contact our Support team via opening a ticket using our [Support Console](https://support.sumologic.com/support/s/). 
 :::
@@ -51,7 +53,7 @@ Use the playbooks below to assist you in rotating any third-party credentials us
 
 ### Rotating third-party credentials used in Webhook Connections
 To properly rotate these credentials, identify the credentials that need to be retired/rotated. 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
 1. Select any Connections defined in your Sumo Logic Account.
 1. For the Connections you have defined, create new access credentials where necessary (that is, API keys, passwords, authorization headers, etc).
 1. Replace the old access credentials with the newly created access credentials.

@@ -12,6 +12,8 @@ description: Learn how to independently and efficiently control or remove your s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<!-- Originally added as a beta article with DOCS-149. -->
+
 Deletion requests allow you to quickly and easily request the removal of ingested data from Sumo Logic. This is particularly useful for removing inadvertently ingested sensitive data.
 
 You can independently and swiftly remove sensitive data, mitigating compliance issues and potential data exposure without needing to contact Sumo Logic support.
@@ -42,7 +44,7 @@ Data cannot be recovered once it gets deleted. Ensure that you have appropriatel
 
 ### From the Logs tab
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Logs > Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Deletion Requests**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Logs > Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Deletion Requests**. 
 1. Click **+ Create Deletion Request**.
 1. Fill out the **Name**, **Reason**, and **Filter Expression** fields.
    :::note

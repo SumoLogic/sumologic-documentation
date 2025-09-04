@@ -5,7 +5,7 @@ sidebar_label: Deploy with Terraform
 description: Learn how to deploy AWS Observability Solution using Terraform.
 ---
 
-These instructions help you deploy our AWS Observability Solution using a Terraform script. 
+These instructions help you deploy our AWS Observability Solution using a Terraform script. For more information about how to use Terraform in your Sumo Logic environment, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic).
 
 To set up the AWS Observability solution using Terraform, complete the following steps described in this documentation.
 
@@ -97,7 +97,7 @@ Before you run the Terraform script, perform the following actions on a server m
     Note that templates located at [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) directory contain references to files from the [sumologic-solution-templates/aws-observability] (https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability) directory.
     :::
 1. Configure the following mandatory parameters in the **main.auto.tfvars** file.
-   * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to the [Sumo Logic Deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) guide for a list of available deployments. Possible values include `au`, `ca`, `de`, `eu`, `jp`, `us2`, `fed`, `kr`, or `us1`.
+   * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to the [Sumo Logic Deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) guide for a list of available deployments. Possible values include `au`, `ca`, `de`, `eu`, `jp`, `us2`, `fed`, `kr`, or `us1`.
    * `sumologic_access_id`: This input specifies the Sumo Logic access ID that you want to use. For more information on how to obtain an access ID, refer to the [Access Keys](/docs/manage/security/access-keys) documentation.
    * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys) is used for Sumo Logic API calls.
    * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-settings-preferences.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-settings-preferences.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
@@ -849,7 +849,7 @@ elb_source_details = {
 
 #### auto_enable_access_logs
 
-Enable Application Load Balancer (ALB)  Access logging.
+Enable Application Load Balancer (ALB) Access logging.
 
 You have the following options:
 
@@ -871,6 +871,10 @@ Example JSON for newly created ALB resources only.
 ```json
 auto_enable_access_logs = "New"
 ```
+
+ :::note
+ CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
+ :::
 
 #### elb_log_source_url
 
@@ -999,6 +1003,11 @@ Example JSON for newly created ALB resources only.
 ```
 auto_enable_classic_lb_access_logs = "New"
 ```
+
+ :::note
+ CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
+ :::
+
 
 #### classic_lb_log_source_url
 
@@ -1256,6 +1265,10 @@ Subscribe log groups to Sumo Logic Lambda Forwarder. You have the following opti
 auto_enable_logs_subscription="New"
 ```
 
+ :::note
+ CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail.
+ :::
+
 ### auto_enable_logs_subscription_options
 
 * `filter`. Enter regex for matching logGroups for AWS Lambda only. The regex will check the name. See [Configuring Parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters).
@@ -1388,8 +1401,7 @@ wait_for_seconds = 180
 
 ### Override App Content Parameters
 
-As needed, override the app content parameters to configure how the AWS Observability app dashboards and alerts are installed in your Sumo Logic account. Enter the overrides in the **sumologic-solution-templates/aws-observability-terraform/main.tf**
-file. 
+As needed, override the app content parameters to configure how the AWS Observability app dashboards and alerts are installed in your Sumo Logic account. Enter the overrides in the `sumologic-solution-templates/aws-observability-terraform/main.tf` file. 
 
 The following is an example of the default value and override for app parameters:
 
@@ -1468,8 +1480,8 @@ module "sumo-module" {
 
 The following table provides a list of all source parameters and their default values. See the [sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars](http://sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars) file for complete code.
 
-| Parameter | Description                                                                                                                                                                                                                                                                        | Default |
-|:--|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--|
+| Parameter | Description | Default |
+|:--|:--|:--|
 | `access_id` | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.	                                                                                                                           | Ignore if already configured in **main.auto.tfvars** file. |
 | `access_key` | Sumo Logic Access Key. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.                                                                                                                           | Ignore if already configured in main.auto.tfvars file.
 | `environment` | Enter au, ca, de, eu, jp, us2, fed, kr, or us1. See Sumo Logic Endpoints and Firewall Security for information. Ignore this setting if you entered it in Source Parameters.                                                                                                        | Ignore if already configured in main.auto.tfvars file. |
@@ -1506,7 +1518,7 @@ python source-module/attach_fields_to_source.py
 Python: command not found
 ```
 #### Solution
-Identify and replace `python` with `python3` in [source-module/update_sources.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/AWSO_FY23Q4_Release/aws-observability-terraform/source-module/update_sources.tf#L12).
+Identify and replace `python` with `python3` in [source-module/update_sources.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/source-module/update_sources.tf#L12).
 
 ### Module not found
 #### Error Message
@@ -1550,11 +1562,11 @@ Run `terraform destroy` again.
 `"errors":[{"code":"hierarchy:duplicate","message":"hierarchy named 'AWS Observability' already exist"}]`
 #### Solution
 Delete existing hierarchy and a create new one:<br/>
-1. Get Hierarchy-id list of existing hierarchies and keep it noted. Learn [more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint. <br/>
+1. Get Hierarchy-id list of existing hierarchies and keep it noted. Learn [more](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint. <br/>
    ```sql
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
    ```
-1. Delete the existing Hierarchy. Learn [more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
+1. Delete the existing Hierarchy. Learn [more](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
    ```sql
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
    ```
@@ -1582,6 +1594,23 @@ Invalid IAM role OR AccessDenied
 
 - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. 
 - Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues.
+
+
+### Subscription filters are not applied to newly created log groups
+### Message
+```
+This error can occur when cloudtrail is not enabled for EventBridge to capture `CreateLogGroup` events   
+```
+#### Solution
+CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail.
+
+### Access logs are not enabled for the Load Balancer
+### Message
+```
+This error can occur when cloudtrail is not enabled for EventBridge to capture `CreateLoadBalancer` events
+```
+#### Solution
+CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
 
 ### Argument named *managed_apps* is not expected
 #### Error Message

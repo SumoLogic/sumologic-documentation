@@ -37,7 +37,7 @@ Follow the directions in [Configure a SAML app in OneLogin](/docs/manage/securit
 When you follow these instructions, on the **Configuration** tab you'll add the **SAML Audience URL** and **SAML Consumer URL**. Obtain these values from the assertion consumer URL and entity ID on the [SAML configuration](/docs/manage/security/saml/integrate-onelogin/#configure-saml-in-sumo) of the Sumo Logic tenant where you will provision users. <br/><img src={useBaseUrl('img/security/provision-onelogin-sumologic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
 
 :::note
-Also on the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`. You will perform additional configuration of the app later.
+Also on the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint for your deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`. You will perform additional configuration of the app later.
 :::
 
 ### Step 3: Set up roles
@@ -66,7 +66,7 @@ Also on the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint
 1. Configure the app:
    1. Enter the **SAML Audience URL** (entity ID) and **SAML Consumer URL** (assertion consumer URL) for your Sumo Logic instance:<br/><img src={useBaseUrl('img/security/provision-onelogin-configuration.png')} alt="Configuration for the app" style={{border: '1px solid gray'}} width="700" /><br/>Obtain the assertion consumer URL and entity ID from the SAML configuration of the Sumo Logic tenant where you will provision users. You set up this [SAML configuration](/docs/manage/security/saml/integrate-onelogin/#configure-saml-in-sumo) in Step 2.<br/><img src={useBaseUrl('img/security/provision-onelogin-sumologic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
    1. For **API Status**, click **Enable**.
-   1. For **SCIM Base URL**, ensure that you have entered the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`.
+   1. For **SCIM Base URL**, ensure that you have entered the [API endpoint for your deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`.
    1. For **SCIM JSON Template**, enter the following:
       ```json
       {
@@ -132,7 +132,7 @@ Users assigned to the app are provisioned into Sumo Logic.
    1. The events for provisioned users should appear. Click an event for details.
 1. Verify in Sumo Logic:
    1. Log in to the Sumo Logic instance that you linked to the provisioning app in Step 2 when you provided the Assertion Consumer URL and entity ID.
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. 
+   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. 
    1. Search for the users provisioned from OneLogin. 
    1. You should see the users listed, and with the role given to when you assigned them to the app in OneLogin.
 

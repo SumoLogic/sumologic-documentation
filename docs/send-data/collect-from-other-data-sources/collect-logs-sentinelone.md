@@ -28,13 +28,17 @@ To get a token and certificate from Sumo Logic, do the following:
 
 1. Configure a Cloud Syslog [Hosted Collector](/docs/send-data/collector-faq/#configure-limits-for-collector-caching) and [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source), and generate a Cloud Syslog source token. 
 
-1. Download the crt server certificate file from [here](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt).
+1. Download the server certificate files from https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt and https://www.amazontrust.com/repository/AmazonRootCA1.cer.
 
-1. Go to the location where the cert file is located and open a terminal window.
+1. Go to the location where the cert files are located and open a terminal window.
 
-1. Run the following two commands:
-  * `wget -O digicert_ca.der https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.`
-  * `openssl x509 -inform der -in digicert_ca.der -out digicert_ca.crt`
+1. Run the following commands:
+   * `wget -O digicert_ca.der https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.`
+   * `openssl x509 -inform der -in digicert_ca.der -out digicert_ca.crt`
+   * `wget -O acm_ca.der https://www.amazontrust.com/repository/AmazonRootCA1.cer`
+   * `openssl x509 -inform der -in acm_ca.der -out acm_ca.crt`
+   * `cat acm_ca.crt digicert_ca.crt > digicert_acm_cas.crt`
+   * `perl -p -i -e "s/\r//g" digicert_acm_cas.crt`
 
 ## Step 2. Configure syslog messages
 
@@ -54,7 +58,7 @@ To configure syslog messages, do the following:
 1. Click **SYSLOG**. The SYSLOG dialog appears.
 1. Click the toggle to **Enable SYSLOG**.
 1. Enter the **Syslog Host URL** and **port** number.
-1. Click **Use SSL secure connection**, then click **Server certificate > Upload** and browse to the location of the downloaded crt certificate file.
+1. Click **Use SSL secure connection**, then click **Server certificate > Upload** and browse to the location of the merged crt certificate file.
 1. Specify the following **Formatting** options:
 
    * **Information format**: Select **CEF2**

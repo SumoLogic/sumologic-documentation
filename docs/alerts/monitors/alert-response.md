@@ -33,19 +33,6 @@ Learn how to use alert response.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/3FHomBuFyV8?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Setting up alert response
@@ -82,7 +69,7 @@ The following is an example Slack payload with the variable:
 The Alert List shows all alerts triggered by your monitors within the past 30 days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time. The list displays up to 1,000 alerts.
 
 To get to your Alert List:
-* From the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts > Alert List**.
+* From the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts**.
 * From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the bell icon in the top menu.
 
 To search alerts, use the search bar and filters.<br/>![search alert list.png](/img/alerts/monitors/search-alert-list.png)
@@ -99,23 +86,23 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 
 ## Translating thresholds
 
-Threshold translating allows you to open the alert response page in the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Explorer chart.
+Threshold translating allows you to open the alert response page in the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer) that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Search chart.
 
-For example, when you open an alert response page in Metrics Explorer, you can see critical thresholds defined with some number. You can then see that this threshold is also applied and enabled in the Metrics Explorer view, with exactly the same number defined.<br/> <img src={useBaseUrl('img/alerts/arp-metrics-explorer.png')} alt="arp-metrics-explorer" width="800"/>
+For example, when you open an alert response page in Metrics Search, you can see critical thresholds defined with some number. You can then see that this threshold is also applied and enabled in the Metrics Search view, with exactly the same number defined.<br/> <img src={useBaseUrl('img/alerts/arp-metrics-explorer.png')} alt="arp-metrics-explorer" width="800"/>
 
-To view the alert response chart in Metrics Explorer, follow the steps below:
+To view the alert response chart in Metrics Search, follow the steps below:
 
 1. Navigate to your [Alert List](#alert-list) and select the alert for which you want to view the corresponding metrics and threshold values.
-1. Click the **View in Metrics Explorer** button for that alert. You can click on either of the two buttons, and they both function the same way.
-1. The Metrics Explorer view will open with the graph of the metric associated with the alert.
-1. In the **Threshold** section of the Metrics Explorer, you can see the same threshold values for the monitor associated with the alert.<br/> <img src={useBaseUrl('img/alerts/threshold-metrics-explorer-view.png')} alt="threshold-metrics-explorer" width="800"/>
+1. Click the **View in Metrics Search** button for that alert. You can click on either of the two buttons, and they both function the same way.
+1. The Metrics Search view will open with the graph of the metric associated with the alert.
+1. In the **Threshold** section of the Metrics Search, you can see the same threshold values for the monitor associated with the alert.<br/> <img src={useBaseUrl('img/alerts/threshold-metrics-explorer-view.png')} alt="threshold-metrics-explorer" width="800"/>
 1. The thresholds will be enabled and only the ones that are defined in the monitor will be displayed.
-   * If the alert has both critical and warning thresholds defined in the corresponding monitor, both thresholds will be displayed in the Metrics Explorer view.
-   * If the alert has only a critical threshold defined in the corresponding monitor, only the warning threshold will be displayed in the Metrics Explorer view.
-1. Use this feature to compare the threshold values set in a monitor with the data displayed in the Metrics Explorer graph and gain a better understanding of how your monitors are translating into metrics.
+   * If the alert has both critical and warning thresholds defined in the corresponding monitor, both thresholds will be displayed in the Metrics Search view.
+   * If the alert has only a critical threshold defined in the corresponding monitor, only the warning threshold will be displayed in the Metrics Search view.
+1. Use this feature to compare the threshold values set in a monitor with the data displayed in the Metrics Search graph and gain a better understanding of how your monitors are translating into metrics.
 
 :::note
-Note that the same threshold translating functionality supports to [Create Monitors from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-metrics-explorer) and [Opening a Monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
+Note that the same threshold translating functionality supports to [Create Monitors from the Metrics Search](/docs/alerts/monitors/create-monitor/#from-metrics-search) and [Opening a Monitor in the Metrics Search](/docs/alerts/monitors/settings/#view-in-metrics-search).
 :::
 
 ## Alert details

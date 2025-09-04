@@ -12,7 +12,7 @@ The page has information about viewing information about the scheduled views con
 You must have a role that grants you the View Scheduled Views [role capability](view-list-scheduled-views.md) in order to view information about scheduled views.
 :::
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. <br/><img src={useBaseUrl('/img/scheduled-views/scheduled-view-page.png')} style={{border: '1px solid gray'}} alt="scheduled-view-page" width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. <br/><img src={useBaseUrl('/img/scheduled-views/scheduled-view-page.png')} style={{border: '1px solid gray'}} alt="scheduled-view-page" width="800"/>
     * **Add a Filter**. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
         :::note 
         You can see the suggestions only if there are two or more responses for the same column or section. 
@@ -32,6 +32,7 @@ You must have a role that grants you the View Scheduled Views [role capability
     * **Retention Period**. The period of time data in the scheduled view is retained.
     * **Start Date**. Date when data was first added to the scheduled view.
     * **Lag Time**. If the scheduled view is not up-to-date, **Lag Time** contains the actual lag time. For more information, see [Scheduled View Lag Time](scheduled-view-lag-time.md).
+    * **Timezone**. Displays the selected time zone or the default timezone of your browser while creating the scheduled view.
     * **Query**. The query that returns that data to be written to the scheduled view.
     * **Data Forwarding**. If the scheduled view is configured to forward data to an S3 bucket, the name of the [data forwarding](../data-forwarding/amazon-s3-bucket.md) destination.  
     * **Created by** and **Modified by**. The user that created the view, and the user that most recently modified the view. <br/><img src={useBaseUrl('/img/scheduled-views/sched-view-details.png')} style={{border: '1px solid gray'}} alt="sched-view-details" width="400"/>

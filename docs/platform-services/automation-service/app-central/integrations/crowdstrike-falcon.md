@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.16  
-Updated: June 5, 2025***
+***Version: 1.17  
+Updated: July 4, 2025***
 
 The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
 
@@ -27,6 +27,7 @@ The CrowdStrike Falcon integration allows you to pull and update Detections/Inci
 * **Get IDP Device Info** *(Enrichment)* - Retrieve detailed information about a devices from IDP. Requires IDP rights and relevant IDP-related API scopes.
 * **Incidents CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Incidents.
 * **List Endpoints** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP.
+* **Query Devices By Filter** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP, and other criteria.
 * **Retrieve Alert Details** *(Enrichment)* - Get details for a specific CrowdStrike Alert.
 * **Search into Alerts** *(Enrichment)* - Retrieves all Alerts IDs that match a given query.
 * **Search into Detections** *(Enrichment)* - Search for Detections that match a given query.
@@ -100,3 +101,5 @@ For information about CrowdStrike Falcon, see [CrowdStrike documentation](https:
   * Resolved timeout issues across all actions, including daemons and enrichment queries, for improved stability and performance.
 * June 5, 2025 (v1.16) - Added new actions
   * Retrieve Alert Details
+* July 4, 2025 (v1.17) - Added new action
+  * Query Devices By Filter
