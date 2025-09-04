@@ -12,17 +12,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## August release
 
-### New feature: Test nodes in playbooks
-
-The new **Test Node** toggle on nodes allows you to test individual nodes in playbooks without having to run the entire playbook, offering greater control over node configuration and troubleshooting.
-
-What's new:
-* Provide mock values for variables used in the node, and run the results to see the output and any errors.
-* Available on action, condition, user choice, and task nodes. (It is not available on filter or nested playbook nodes.)
-* Testing nodes counts against your [action limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit) quota.
-
-For more information, see [Test nodes in a playbook](/docs/platform-services/automation-service/automation-service-playbooks).
-
 ### Changes and enhancements
 
 #### Platform 
