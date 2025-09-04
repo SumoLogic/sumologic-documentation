@@ -54,7 +54,7 @@ If no name normalization configuration exists, the name attribute will consist o
 
 ## Configure entity normalization
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Entities** select **Normalization**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Normalization**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.
 1. Select the **Domain** tab. (For information about the **Lookup Tables** tab, see [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/)). 
 1. You can configure just **Username Normalization**, just **Hostname Normalization**, or both. We recommend you enable both. 
 1. Under **Normalization Formats** there are configuration options to normalize names from:
@@ -180,3 +180,6 @@ Following is an example configuration for a case where the customer has a domain
 
 <img src={useBaseUrl('img/cse/Example_UI.png')} alt="Configuration example" style={{border: '1px solid gray'}} width="600"/>
 
+## Additional resources
+
+Blog: [What’s going on? The power of normalization in Cloud SIEM](https://www.sumologic.com/blog/whats-going-on-normalization-cloud-siem)

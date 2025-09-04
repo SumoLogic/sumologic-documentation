@@ -53,7 +53,3 @@ The following dashboard is an example of one of the many pre-configured app dash
 
 ![GKE_Node_Logs.png](/img/kubernetes/GKE_Node_Logs.png)
 
-
-## Global Intelligence for Kubernetes DevOps app
-
-The [Global Intelligence for Kubernetes DevOps app](/docs/integrations/global-intelligence/kubernetes-devops) helps infrastructure engineers and DevOps users benchmark the maturity of their Kubernetes adoption and minimize risk of Kubernetes infrastructure incidents by optimizing resource requests and limits for containers.

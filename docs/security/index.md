@@ -50,3 +50,15 @@ Following are features available with our security solutions. If you have any qu
 | Progressive automation | | | &#10003; |
 | Highly customizable dashboards and KPIs | | | &#10003; |
 | Automatic incident reports | | | &#10003; |
+
+## Additional resources
+
+* Blogs:
+   * [Lessons from the 2025 Security Operations Insights report](https://www.sumologic.com/blog/lessons-from-2025-security-operations-insights-report)
+   * [Balancing act: Sumo Logic vs. Splunk in the high-wire world of modern security](https://www.sumologic.com/blog/sumo-logic-cloud-siem-vs-splunk-es)
+* Demos: 
+   * [Cloud SIEM: Complete threat detection, investigation and response demo](https://www.sumologic.com/demo/complete-threat-detection-investigation-and-response-demo)
+   * [Cloud SIEM: Heads up display (HUD)](https://www.sumologic.com/demo/heads-up-display-hud)
+   * [Cloud SIEM: Insight investigation](https://www.sumologic.com/demo/insight-investigation)
+   * [Cloud SIEM: Cloud insights triaging and investigation](https://www.sumologic.com/demo/cloud-insights)
+   * [Cloud SIEM: MITRE ATT&CK™ coverage explorer](https://www.sumologic.com/demo/mitre-attack-coverage-explorer)

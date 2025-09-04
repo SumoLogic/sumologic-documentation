@@ -42,7 +42,7 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
 
 ## User interface 
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To open the MITRE ATT&CK Threat Coverage Explorer, in the top menu select **Content > MITRE ATT&CK Coverage**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To open the MITRE ATT&CK Threat Coverage Explorer, in the top Cloud SIEM menu select **Content > MITRE ATT&CK Coverage**.
 
 [**New UI**](/docs/get-started/sumo-logic-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the main Sumo Logic menu select **Cloud SIEM > MITRE ATT&CK Coverage**. You can also click the **Go To...** menu at the top of the screen and select **MITRE ATT&CK Coverage**. 
  
@@ -201,7 +201,9 @@ To find the Cloud SIEM API documentation for your endpoint, see [Cloud SIEM APIs
 
 ## Additional resources
 
-* Blog: [Enhance your cloud security with MITRE ATT&CK and Sumo Logic Cloud SIEM](https://www.sumologic.com/blog/cloud-siem-mitre-attack/)
+* Blogs: 
+   * [Enhance your cloud security with MITRE ATT&CK and Sumo Logic Cloud SIEM](https://www.sumologic.com/blog/cloud-siem-mitre-attack/)
+   * [Unique approaches to MITRE ATT&CK—make the most of its potential](https://www.sumologic.com/blog/mitre-attack-how-sumo-logic-makes-it-work-for-you)
 * Glossary: [MITRE ATT&CK - definition & overview](https://www.sumologic.com/glossary/mitre-attack/)
 * Demo: [MITRE ATT&CK Coverage Explorer](https://www.sumologic.com/demo/cloud-siem-mitre-attack-coverage-explorer/)
 * Cloud SIEM Content Catalog: [Vendors](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/README.md)

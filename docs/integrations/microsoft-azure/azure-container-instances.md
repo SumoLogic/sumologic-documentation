@@ -1,7 +1,11 @@
 ---
 id: azure-container-instances
 title: Azure Container Instances
-description: Learn about the Sumo Logic collection process for the Azure Container Instances service.
+keywords: 
+ - azure container instance logs
+ - container instances
+ - azure container monitoring
+description: This document outlines what is Azure Container Instances, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -25,6 +29,10 @@ For more information on supported dimensions, refer to the [Azure documentation]
 
 * Set up application logs collection using fluent-bit sidecar container using the [http output plugin](https://docs.fluentbit.io/manual/1.5/pipeline/outputs/http) and the [tail input plugin](https://docs.fluentbit.io/manual/1.5/pipeline/inputs/tail). You must explicitly enable fluent-bit collection for each container group which you want to monitor.
 * Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
+
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure metrics collection
 
@@ -171,3 +179,10 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 ### HTTP Logs and Metrics Source used by Azure Functions
 
 To troubleshoot metrics collection, follow the instructions in [Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection) in *Collect Metrics from Azure Monitor*.
+
+## Additional resources
+
+- Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
+- Blog: [How to Deploy and Manage a Container on Azure Container Service](https://www.sumologic.com/blog/how-to-deploy-and-manage-a-container-on-azure-container-service)
+- Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)
+

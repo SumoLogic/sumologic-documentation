@@ -80,3 +80,7 @@ The card at the top of the pane provides key information about the latest new in
 * **Global Confidence**. [Global Confidence](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight, if available.
 * **Most Active Entities**. [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/) that are currently appearing the most in activity. Hover your mouse over an entity and click **View Timeline** to see the [entity timeline](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entity-timeline-tab). 
 * **Today**. Shows changes made today, such as insights created, status changes, and comments. Items are listed in chronological order, with the newest first.
+
+## Additional resources
+
+Demo: [Cloud SIEM: Heads up display (HUD)](https://www.sumologic.com/demo/heads-up-display-hud)

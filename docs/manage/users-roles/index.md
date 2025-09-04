@@ -12,7 +12,7 @@ These topics have information about creating and managing Sumo Logic roles and u
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Users and Roles page, in the main Sumo Logic menu select **Administration > Users and Roles**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Users and Roles page, in the top menu select **Administration**, and then under **Users and Roles** select either **Users** or **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Users** or **Roles**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Users and Roles page, in the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select either **Users** or **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Users** or **Roles**. 
  
 
 :::note
