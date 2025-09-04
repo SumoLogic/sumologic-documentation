@@ -183,7 +183,7 @@ For a file source, configure a local or remote file source in one of the followi
 You can also add a wildcard to the path like /var/log/vmware/output/*evt.out for sending only the script-generated files.
 :::
 * **For a syslog source**, configure the syslog source as follows:
-  1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu, select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+  1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
   1. Click **Add Source**.
   2. Select **Syslog** for the Source type.
   3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called `_sourceName`.
