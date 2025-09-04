@@ -52,7 +52,7 @@ Improvements include:
 
 ### How much does it cost to get certified?
 
-The cost of exams is $100 for Fundamentals and $150 for advanced certifications. Payment can be made by credit card or Purchase Order through your Sumo Logic account representative.
+The cost of exams is $100 for Fundamentals and $150 for advanced certifications. Payment can be made by credit card or purchase order through your Sumo Logic account representative.
 
 ### Do I have to pay for training courses or just the certification?
 
