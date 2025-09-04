@@ -1,25 +1,24 @@
 ---
 slug: /api
 title: Sumo Logic APIs
-description: Sumo Logic exposes APIs to access resources and data from third-party scripts and applications.
+description: Automate log ingestion, searches, dashboards, and more using Sumo Logic's comprehensive API for seamless integration with external systems.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Use the Sumo Logic Application Programming Interfaces (APIs) to interact with our platform and access resources and data programmatically from third-party scripts and apps.
 
-:::sumo Get Help
-To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](http://slack.sumologic.com/).
-:::
+<div className="box-wrapper" markdown="1">
+<div className="box boxwidetop card">
+  <div className="container">
+  <a href="/docs/api/about-apis/"><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="50"/><h4>About Sumo Logic APIs</h4></a>
+  <p>Learn about Sumo Logic APIs, including endpoints and how to use them.</p>
+  </div>
+</div></div>
+
+<br/>
 
 <div className="box-wrapper" markdown="1">
-
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/api/getting-started"><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="50"/><h4>Authentication and Endpoints</h4></a>
-  <p>API authentication and the Sumo Logic endpoints to use for your API client.</p>
-  </div>
-</div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/api/access-keys"><img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/><h4>Access Keys</h4></a>
@@ -187,7 +186,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/role-management-v2"><img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="Thumbnail icon" width="50"/><h4>Roles v2 (Beta)</h4></a>  
+  <a href="/docs/api/role-management-v2"><img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="Thumbnail icon" width="50"/><h4>Roles v2</h4></a>  
   </div>
 </div>
 <div className="box smallbox card">
@@ -197,7 +196,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/scan-budget"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/><h4>Scan Budget</h4></a>
+  <a href="/docs/api/scan-budget"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Thumbnail icon" width="50"/><h4>Scan Budget</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -206,8 +205,18 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
   </div>
 </div>
 <div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/api/scim-user"><img src={useBaseUrl('img/icons/general/session.png')} alt="Thumbnail icon" width="50"/><h4>SCIM User</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
   <div className="container">  
   <a href="/docs/api/search-job"><img src={useBaseUrl('img/icons/search.png')} alt="Thumbnail icon" width="50"/><h4>Search Job</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/api/service-accounts"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="Thumbnail icon" width="50"/><h4>Service Accounts</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -250,9 +259,8 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
   <a href="/docs/api/user-management"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="Thumbnail icon" width="50"/><h4>Users</h4></a>
   </div>
 </div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/api/troubleshooting"><img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="50"/><h4>Troubleshooting</h4></a>
-  </div>
 </div>
-</div>
+
+:::sumo Get Help
+To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](http://slack.sumologic.com/).
+:::

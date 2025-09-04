@@ -15,9 +15,9 @@ You must be an account *administrator* to upgrade your Sumo Logic plan.
 
 ## Upgrade a Free or Trial Credits account to Essentials
 
-Using our self-service checkout, you can upgrade for an Essentials plan in minutes using a credit card—no need to interact with the sales team.
+With our self-service checkout, you can upgrade to an Essentials plan in just minutes using a credit card—no need to contact Sales.
 
-<img src={useBaseUrl('img/manage/subscriptions/essentials-landing-page.png')} alt="Sumo Logic Essentials upgrade plans" style={{border: '1px solid gray'}} width="700" />
+<img src={useBaseUrl('img/manage/subscriptions/essentials-landing-page.jpg')} alt="Sumo Logic Essentials upgrade plans" style={{border: '1px solid gray'}} width="700" />
 
 Essentials plans are ideal for:  
 - Small to medium-sized businesses seeking quick and independent onboarding.  
@@ -34,7 +34,7 @@ Steps to upgrade:
 
 1. Navigate to the **Manage Plan** page.
    * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. From the left navigation menu, go to **Administration > Account > Manage Plan**.  
-   * **[New UI](/docs/get-started/sumo-logic-ui)**. From the top navigation menu, go to **Administration > Account > Manage Plan**.
+   * **[New UI](/docs/get-started/sumo-logic-ui)**. In the main Sumo Logic menu select **Administration**, and then under **Account** select **Manage Plan**.
 
 1. Select your Essentials plan.
    - Choose **Troubleshoot**, **Collaborate**, or **Orchestrate** ([learn more](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#essentials)).

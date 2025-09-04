@@ -90,14 +90,14 @@ The following table lists the options available for the Search, Metrics, and Liv
 
 | Option | Search tab  | Metrics tab  | Live Tail tab |
 |:--|:--|:--|:--|
-| Pin | ![check](/img/reuse/check.png) | — | — |
-| Rename | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
-| Duplicate | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
-| Open a New Browser Tab | — | — | ![check](/img/reuse/check.png)  |
-| Close | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png) |
-| Close Other Tabs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
-| Close All Tabs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
-| Close Tabs to the Right | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Pin | &#10003; | — | — |
+| Rename | &#10003; | &#10003; | &#10003;  |
+| Duplicate | &#10003; | &#10003; | &#10003;  |
+| Open a New Browser Tab | — | — | &#10003;  |
+| Close | &#10003; | &#10003; |  &#10003; |
+| Close Other Tabs | &#10003; | &#10003; | &#10003;  |
+| Close All Tabs | &#10003; | &#10003; | &#10003;  |
+| Close Tabs to the Right | &#10003; | &#10003; | &#10003; |
 
 ## Mastering everyday tasks
 
@@ -133,11 +133,10 @@ To launch a search, metrics visualization, or live tail session, do the followin
    * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
    * [Explore](/docs/dashboards/explore-view). See an intuitive visual hierarchy of your environment.
    * [Dashboard](/docs/dashboards/). Analyze metrics and log data on the same dashboard, in a streamlined user experience.
-   * [Root Cause](/docs/observability/root-cause-explorer). Accelerate troubleshooting and isolate root causes for incidents in your apps and microservices.
 
 ### View recent dashboards and searches 
 
-You see the Home landing page when you first log in to Sumo Logic. The Home page provides an at-a-glance view of the following:
+You see the Home landing page when you first sign in to Sumo Logic. The Home page provides an at-a-glance view of the following:
 
 * Recently opened dashboards
 * Recently run searches

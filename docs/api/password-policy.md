@@ -24,7 +24,6 @@ The Password Policy Management API allows you to manage the [password policy](/d
 | DE         | https://api.de.sumologic.com/docs/#tag/passwordPolicy  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/passwordPolicy  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/passwordPolicy |
-| IN         | https://api.in.sumologic.com/docs/#tag/passwordPolicy  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/passwordPolicy  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/passwordPolicy  |
 | US1        | https://api.sumologic.com/docs/#tag/passwordPolicy     |
@@ -36,4 +35,3 @@ The Password Policy Management API allows you to manage the [password policy](/d
 
 * Security
     * Manage Password Policy
-

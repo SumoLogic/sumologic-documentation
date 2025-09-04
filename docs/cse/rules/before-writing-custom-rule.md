@@ -40,7 +40,7 @@ Let’s say you’re going to write a rule that fires every time a successful Wi
 
 To find and review a log mapping:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu click **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
 1. You can use the filter area at the top of the **Log Mappings** tab to search for a mapping by various options. The screenshot below shows the results when we enter the filter `Name matches wildcard pattern *4624`. A mapping matches. For the mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. Select the mapping. <br/><img src={useBaseUrl('img/cse/matching-mappings.png')} alt="Selected mapping" width="800"/>
 1. Once you’ve opened the mapping, you’ll see the top of the page shows the Vendor, Product, and Event ID that is written to the records produced by the mapping. <br/><img src={useBaseUrl('img/cse/selected-mapping-top.png')} alt="Mapping dialog" width="600"/>
 1. The **Fields** section of the page shows how raw message fields are mapped to Cloud SIEM schema attributes. In this mapping, `EventData.LogonProcessName` is mapped to `application`, `EventData.WorkstationName` is mapped to `device_hostname`, and so on. <br/><img src={useBaseUrl('img/cse/selected-mapping-bottom.png')} alt="Fields on the mapping" width="800"/>
@@ -51,56 +51,52 @@ Now that we understand the mapping in Cloud SIEM, we can see we will want to be 
 
 In this step, we’ll create the query that will serve as the rule expression when we create the rule.
 
-Using the attributes we discovered from looking at the log mapping, we’ll run the following query, which returns the usernames that have successfully logged on over the last week, counted by `user_username`.
+1. Using the attributes we discovered from looking at the log mapping, we’ll run the following query, which returns the usernames that have successfully logged on over the last week, counted by `user_username`:
 
-```sql
-_index=sec_record_*
-| where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624"
-| count by user_username
-```
+   ```sql
+   _index=sec_record_*
+   | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624"
+   | count by user_username
+   ```
 
-<img src={useBaseUrl('img/cse/count-by-user.png')} alt="Count by user" width="800"/>
+   <img src={useBaseUrl('img/cse/count-by-user.png')} alt="Count by user" width="800"/>
 
-The results show two of our standard username patterns: 
+   The results show two of our standard username patterns: 
 
-* The username for regular user accounts are a plain string, with no special characters, like specops and jask.
-* Machine usernames are a string, followed by a dash character, followed by a string, followed by a dollar sign, like `win10-admin$` and `win10-client$`.
+      * The username for regular user accounts are a plain string, with no special characters, like `specops` and `jask`.
+      * Machine usernames are a string, followed by a dash character, followed by a string, followed by a dollar sign, like `win10-admin$` and `win10-client$`.
 
-Now, we can refine our search to return usernames that do not comply with either of our standard patterns.
+1. Now, we can refine our search to return usernames that do not comply with either of our standard patterns:
 
-```sql
-_index=sec_record_*
-| where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$")
-| count by user_username
-```
+   ```sql
+   _index=sec_record_*
+   | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$")
+   | count by user_username
+   ```
 
-<img src={useBaseUrl('img/cse/non-matching-patterns.png')} alt="Non-matching patterns" width="800"/>
+   <img src={useBaseUrl('img/cse/non-matching-patterns.png')} alt="Non-matching patterns" width="800"/>
 
-Usernames returned include “anonymous logon”. A little [research](https://social.technet.microsoft.com/Forums/ie/en-US/dbcbb9f1-c6a7-43ea-94b8-ba72a89e2221/nt-authorityanonymous-logon?forum=winservergen) indicates that this is typically no cause for alarm, so we’ll refine our search again to exclude “anonymous logon”.
+1. Usernames returned include “anonymous logon”. A little [research](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-special-identities-groups) indicates that this is typically no cause for alarm, so we’ll refine our search again to exclude “anonymous logon”:
 
-```sql
-_index=sec_record_*
-| where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$") and user_username != "anonymous logon"
-```
+   ```sql
+   _index=sec_record_*
+   | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$") and user_username != "anonymous logon"
+   ```
 
-Now that we’ve sorted out the usernames formats and values we want to exclude, we’ve removed \| count by `user_username` from the query.
+   Now that we’ve sorted out the usernames formats and values we want to exclude, we’ve removed `| count by user_username` from the query.
 
-Let’s say there is a field of interest in our raw messages—`EventData.ProcessName`—that isn’t mapped to a Cloud SIEM schema attribute. We want to parse that field out of the message so we can use it in our logic as well. We only want our rule to fire if a user with an anomalous logon ran an .exe process after successfully logging in. You can see all of the fields in the raw message in the **Messages** tab of your search results.
+1. Now we have a query we can use as the basis of an expression for our rule. Note that when you paste it into the rules editor, you should remove the first portion of the query (`_index=sec_record_*` and `| where`), which is only necessary when you are querying records in Sumo Logic. The expression is then as follows:
 
-<img src={useBaseUrl('img/cse/messages-tab.png')} alt="Messages tab" width="800"/>
+   ```sql
+   metadata_vendor = "Microsoft" 
+   and metadata_product = "Windows" 
+   and metadata_deviceEventId = "Security-4624" 
+   and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$") 
+   and user_username != "anonymous logon" 
+   ```
 
-We update the query to parse out `EventData.ProcessName`, naming it `process_name`, and filtering to only fire on `.exe` files. 
+   Also ensure that the syntax of the expression matches what is needed by the [Cloud SIEM rules syntax](/docs/cse/rules/cse-rules-syntax/). Once you are satisfied that the expression is ready, click **Test Rule Expression** to verify that the expression returns expected results.
 
-```sql
-_index=sec_record_*
-| json field=_raw "$['EventData.ProcessName']" as process_name
-| where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$") and user_username != "anonymous logon" and process_name matches "*.exe"
-```
+   You can use an expression like this example in any rule type. Here is an example Match rule with the expression, shown in the rules editor.
 
-Now we have a query we can use as the rule expression for our rule. Note that when you paste it into the rules editor you should remove the first portion of the query, which is only necessary when you are querying records in Sumo Logic:
-
-`_index=sec_record_*`  
-
-You can use an expression like this example in any rule type. Here is an example Match rule with the expression, shown in the rules editor.
-
-<img src={useBaseUrl('img/cse/example-in-editor.png')} alt="Example in editor" width="700"/>
+   <img src={useBaseUrl('img/cse/example-in-editor.png')} alt="Example in editor" width="700"/>

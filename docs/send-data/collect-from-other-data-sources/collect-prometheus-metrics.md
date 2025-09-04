@@ -223,3 +223,9 @@ dimensions = ""
 ```
 
 **Custom dimensions.** Set a comma-separated key=value list of dimensions to apply to every metric. These dimensions allow you to query metrics a more granular level.
+
+## Additional resources
+
+* Blogs: 
+   * [Why Prometheus isn’t enough to monitor complex environments](https://www.sumologic.com/blog/prometheus-monitoring/)
+   * [Monitoring with Prometheus vs Grafana: understanding the difference](https://www.sumologic.com/blog/prometheus-vs-grafana/)

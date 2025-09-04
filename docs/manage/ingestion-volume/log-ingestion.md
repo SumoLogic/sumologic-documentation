@@ -29,7 +29,7 @@ Log data may not be kept when sent via HTTP Sources or Cloud Syslog Sources, as 
 * Sumo Logic accounts can be upgraded at any time to allow for additional quota. Contact [Sumo Logic Sales](mailto:sales@sumologic.com) to customize your account to meet your organization's needs.
 
 :::important
-Compressed files are decompressed before they are ingested, so they are ingested at the decompressed file size rate.
+[Compressed files](/docs/send-data/hosted-collectors/http-source/logs-metrics/#compressed-data) are decompressed before they are ingested, so they are ingested at the decompressed file size rate.
 :::
 
 ## Log Throttling
@@ -55,19 +55,6 @@ Watch this micro lesson to learn more about throttling.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/dlKy9DyS0W8?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
 
 :::
 

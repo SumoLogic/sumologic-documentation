@@ -55,7 +55,7 @@ which provides results like:
 | lookup raw from sumo://threat/cs on threat = hash{code}
 ```
 
-<!-- Replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+<!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
 ```sql
 *
 | limit 1

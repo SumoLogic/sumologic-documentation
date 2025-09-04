@@ -24,23 +24,36 @@ Updated: Jun 15, 2023***
 
 1. Log in to Jamf Protect.
 2. Click on Administrative on the left menu.
-3. Create API Client and click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-1.png')} style={{border:'1px solid gray'}} alt="jamf-protect" width="800"/>
-4. Copy API Client Password.
-5. Copy Client ID in API Client Configuration
+3. Select [Create API Client](https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Jamf_Protect_API.html) and click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-1.png')} style={{border:'1px solid gray'}} alt="jamf-protect" width="800"/>
+4. Copy the API Client Password.
+5. Copy the Client ID in API Client Configuration
 
-## Jamf Protect in Automation Service and Cloud SOAR
+## Configure Jamf Protect in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-4.png')} style={{border:'1px solid gray'}} alt="jamf-protect" width="400"/>
-1. Populate all the required fields (\*)
-   * **API URL**. 'https://your-tenant.protect.jamfcloud.com'.
-   * **Client ID**. Insert copied Client ID.
-   * **Password**. Insert copied Password.
-1. Click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-5.png')} style={{border:'1px solid gray'}} alt="jamf-protect" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-6.png')} style={{border:'1px solid gray'}} alt="jamf-protect" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-7.png')} style={{border:'1px solid gray'}} alt="jamf-protect" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-8.png')} style={{border:'1px solid gray'}} alt="jamf-protect" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Jamf Protect [API URL](https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Jamf_Protect_API.html), for example, `https://your-tenant.protect.jamfcloud.com`
+
+* **Client ID**. Insert the Jamf Protect [Client ID](https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Jamf_Protect_API.html) that you [copied earlier](#jamf-protect-configuration).
+
+* **Password**. Insert the password you [copied earlier](#jamf-protect-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/jamf-protect-configuration.png')} style={{border:'1px solid gray'}} alt="Jamf Protect configuration" width="400"/>
+
+For information about Jamf Protect, see [Jamf Protect documentation](https://www.jamf.com/resources/product-documentation/jamf-protect-administrators-guide/).
 
 ## Change Log
 

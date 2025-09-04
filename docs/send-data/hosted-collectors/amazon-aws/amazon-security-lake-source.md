@@ -18,7 +18,7 @@ This makes AWS log setup relatively easy. In addition, the data available from v
 To grant Sumo Logic access to the Amazon Security Lake source, you need to provide the Sumo Account ID and External ID.
 1. **Account ID**. Remember to copy and secure your `Sumo Logic ID`: `************`. You will require this ID in further steps.
 2. **External ID**. The External ID is formed from your Sumo Logic region identifier. It is a unique identifier that is used to authenticate the connection between your Sumo Logic account and your Amazon Security Lake source. The format of your Sumo Logic account identifier is: `SumoDeployment`: `SumoAccountId` where:
-   * `SumoDeployment` is your Sumo Logic deployment that has to be entered in lowercase such as `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`, `kr`, `us1`, or `us2`. To find your deployment, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/getting-started).
+   * `SumoDeployment` is your Sumo Logic deployment that has to be entered in lowercase such as `au`, `ca`, `de`, `eu`, `fed`, `jp`, `kr`, `us1`, or `us2`. To find your deployment, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started).
    * `SumoAccountId` is the Organization ID shown on your Account Overview page in the Sumo Logic UI. You can access it by navigating to the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview).
 
 After the authentication is successful, you can create the subscriber.
@@ -55,7 +55,7 @@ You're all set to add a new Amazon Security Lake Source to your Sumo Logic accou
 When you create an Amazon Security Lake source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use from the existing ones or create a new Hosted Collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To create an Amazon Security Lake Source, follow the steps below:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the **Collectors page** click **Add Source** next to a Hosted Collector.
 1. Select an existing Hosted Collector or the one you have just created.
 1. Select **Amazon Security Lake**. <br/><img src={useBaseUrl('img/send-data/aws-security-lake.png')} alt="aws-security-lake.png" width="900"/>
@@ -63,8 +63,8 @@ To create an Amazon Security Lake Source, follow the steps below:
 1. In the **Source Category**, enter any string to tag the output collected from this distinct source. (Category metadata is stored in a searchable field called **_sourceCategory**).
 7. In **Fields**. Click the **+Add Field** link to add custom log metadata fields.
 8. Enter the required fields you want to associate, each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark shows up when a field exists and is enabled in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point shows up when the field doesn't exist or is disabled in the **Fields table schema**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a checkmark shows up when a field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point shows up when the field doesn't exist or is disabled in the **Fields table schema**.
     :::important
     In this case, an option to automatically add or enable the nonexistent fields to the **Fields table schema** is provided. If a field is sent to Sumo logic that does not exist in the **Fields table schema** or is disabled, it will be ignored and known as dropped field.
     :::

@@ -5,6 +5,8 @@ sidebar_label: Troubleshooting
 description: Frequently asked questions about collecting data into Sumo Logic that provide the how-to answers you need to setup and troubleshoot collectors.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::sumo
 To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Collect Data Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTCOWA2/collectors?tabset-cabe3=2).
 :::
@@ -110,7 +112,7 @@ This is a known issue regarding upgrading a Windows collector from versions 19.6
 
 1. Restart the Sumo Logic Collector service.
 
-     1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+     1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 
      1. Click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
 
@@ -419,9 +421,15 @@ This article describes the assumptions that Sumo makes about customer data, tips
 
 See [using _format for troubleshooting](/docs/send-data/reference-information/time-reference.md) timestamps.
 
-#### Assumption: Data is less than 365 days old
+#### Assumption: Data is less than 30 days but within 365 days
 
-Sumo Logic assumes that all log message times fall within a window of -1 year through +2 days compared to the current time. Any log messages with a parsed timestamp outside of that window is automatically re-stamped with the current time.
+* To ingest historical data older than 30 days but within 365 days, you must specify a `timestamp` field using a regex locator and a valid date format.
+
+#### Assumption: Data is older than 365 days
+
+Sumo Logic assumes that all log message times fall within a window of -1 year through +2 days compared to the current time. Any log messages with a parsed timestamp outside of that window are automatically re-stamped with the current time.
+* Data older than 365 days can still be ingested. However, even if a custom timestamp is provided, it will be autocorrected to the current time unless technical support disables this function at the organization level.
+* To ingest data older than 365 days with the original timestamp intact, you'll need to contact [Support](https://support.sumologic.com/support/s) to disable the autocorrection function at the org level.
 
 #### Assumption: Data from a source will have similar timestamps
 
@@ -550,7 +558,7 @@ After installing a Collector and configuring a Source, your data should appear i
 
 You can view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Status**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Status**. You can also click the **Go To...** menu at the top of the screen and select **Status**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Status**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Status**. You can also click the **Go To...** menu at the top of the screen and select **Status**. 
 
 As long as you see that some messages are present, your Sumo Logic account is up and running. 
 
@@ -566,7 +574,7 @@ If your user account is not an administrator check your Role assignment for any
 
 #### Verify that your Collectors are running
 
-Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with ![green check circle.png](/img/reuse/green-check-circle.png). Stopped Collectors and Sources are marked with ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png). Stopped Collectors do not send any data.
+Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/>. Stopped Collectors and Sources are marked with <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/>. Stopped Collectors do not send any data.
 
 If a Collector is stopped, you can verify the Collector's status and restart it if necessary.
 
@@ -589,7 +597,7 @@ When you configure a Source, you can choose one of three timestamp options. Firs
 
 To view Source settings:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Edit** to the right of the Source's name.
 1. Under **Advanced**, choose one of the following:
 

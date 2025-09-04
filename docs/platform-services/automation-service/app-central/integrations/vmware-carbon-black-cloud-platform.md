@@ -45,25 +45,45 @@ VMware Carbon Black Cloud Platform Integration transform your security with inte
 ## VMware Carbon Black Cloud Platform configuration
 
 1. Log in to the [CBC Console](https://defense.conferdeploy.net).
-1. Navigate to the **Settings** menu, and then click on **API Access**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-1.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="300"/>
+1. Navigate to the **Settings** menu, and then click on [**API Access**](https://techdocs.broadcom.com/us/en/carbon-black/cloud/carbon-black-cloud/index/cbc-user-guide-tile/GUID-9620FAB7-FE70-45DE-9CAB-590FA358721F-en/GUID-7AA95653-EF83-4F49-B11F-F984F7D62CB8-en/GUID-F3816FB5-969F-4113-80FC-03981C65F969-en.html).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-1.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="300"/>
 1. From the **API ACCESS** page, click on Add API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-2.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="700"/>
 1. Populate the name, Access Level type, and click the Save button.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-3.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="600"/>
 1. Copy the API Credentials (API ID and API Secret Key).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-4.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="300"/>
 1. Also you will see the ORG KEY from **API Access**. You need to copy it.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-5.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="600"/>
 
-## VMware Carbon Black Cloud Platform in Automation Service and Cloud SOAR
+## Configure VMware Carbon Black Cloud Platform in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the VMware Carbon Black Cloud Platform integration and click on it. The integration details will appear. Click on the **"+"** button to add a new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-8.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="600"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
-    * **Label**. The name of the resource.
-    * **API URL**. URL to the API of the VMware Carbon Black Cloud Platform instance `https://defense.conferdeploy.net`.
-    * **Organization Key**. The Organization Key you copied earlier.
-    * **API ID / Connector ID**. The API ID that you copied earlier.
-    * **API Secret Key**. The API Secret Key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-9.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-10.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-11.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-12.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import SumoLogicAPIURL from '../../../../reuse/automation-service/sumo-logic-api-url.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. URL to the API of the VMware Carbon Black Cloud Platform instance `https://defense.conferdeploy.net`.
+
+* **Organization Key**. The [organization key](https://developer.carbonblack.com/reference/carbon-black-cloud/authentication/#org-key) you [copied earlier](#vmware-carbon-black-cloud-platform-configuration).
+
+* **API ID / Connector ID**. The [API ID](https://techdocs.broadcom.com/us/en/carbon-black/cloud/carbon-black-cloud/index/cbc-user-guide-tile/GUID-9620FAB7-FE70-45DE-9CAB-590FA358721F-en/GUID-7AA95653-EF83-4F49-B11F-F984F7D62CB8-en/GUID-F3816FB5-969F-4113-80FC-03981C65F969-en.html) that you [copied earlier](#vmware-carbon-black-cloud-platform-configuration).
+
+* **API Secret Key**. The secret for the API ID that you [copied earlier](#vmware-carbon-black-cloud-platform-configuration).
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/vmware-carbon-black-cloud-platform-configuration.png')} style={{border:'1px solid gray'}} alt="VMware Carbon Black Cloud Platform configuration" width="400"/>
+
+For information about Carbon Black Cloud, see [Carbon Black Cloud documentation](https://techdocs.broadcom.com/us/en/carbon-black/cloud.html).
 
 ## External Libraries
 

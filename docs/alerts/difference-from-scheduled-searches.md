@@ -16,7 +16,7 @@ Scheduled Searches address two primary use cases:
 
 ## Monitors
 
-Monitors are specifically designed for the first use case: alerting. They offer additional capabilities such as auto-resolution and support for multiple notification channels. Any Scheduled Searches created for alerting purposes can be moved to Monitors, including [real-time Scheduled Searches](/docs/alerts/scheduled-searches/create-real-time-alert).
+Monitors are specifically designed for the first use case: alerting. They offer additional capabilities such as auto-resolution and support for multiple notification channels. Any Scheduled Searches created for alerting purposes can be moved to Monitors.
 
 ## Feature differences
 
@@ -31,7 +31,7 @@ Beyond the differences in use cases, there are distinct feature differences betw
 | Alert disablement | No | Yes*<br/>(Disable is a manual operation. We do not support scheduled disabling of alerts.) |
 | API support | Partial*<br/>(Supported via content sync API) | Yes |
 | Terraform support | Yes<br/>(see [content API resource](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content)) | Yes |
-| Log Search operator support | Yes*<br/>(Some operators are not supported for real-time alerts) | Yes |
+| Log Search operator support | Yes | Yes |
 | Outlier-based alerts | Yes | Yes |
 | Access control | Object-Level Access Control | Object-Level Access Control (Per request - limited availability) |
 | Audit logs for CRUD and system events (e.g., notifications sent, failures) | Yes | Yes |

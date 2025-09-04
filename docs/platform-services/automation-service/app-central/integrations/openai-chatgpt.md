@@ -34,23 +34,34 @@ Because *gpt-3.5-turbo* performs at a similar capability to *text-davinci-003* b
 
 **Grab your API keys**. Log into your OpenAI [dashboard](https://platform.openai.com/account/api-keys) and click your profile icon at the top right. Go to **View API Keys** and click **Create new secret key** to generate your API secret key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-1.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="800"/>
 
-## OpenAI ChatGPT in Automation Service and Cloud SOAR
+## Configure OpenAI ChatGPT in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.   
-1. The integration details will appear. Click on the **"+"** button to add a new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-4.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="800"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
-   * **Label**. The name of the resource.
-   * **API URL**. `https://api.openai.com/`.
-   * **API Key**. Your OpenAI API Key.
-   * Disclaimer: Kindly review and acknowledge the disclaimer provided in the integration resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-5.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-6.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-7.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-8.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
- **Create Chat Completion Action:**
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your OpenAI ChatGPT API URL, for example, `https://api.openai.com/`
 
-<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-9.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
+* **API Key**. Enter the OpenAI [API key](https://platform.openai.com/docs/api-reference/admin-api-keys) you [obtained earlier](#openai-chatgpt-configuration).
+
+* **Disclaimer**. Review and acknowledge the disclaimer.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/openai-chatgpt-configuration.png')} style={{border:'1px solid gray'}} alt="OpenAI ChatGPT configuration" width="400"/>
+
+For information about OpenAI, see [OpenAI documentation](https://platform.openai.com/docs/api-reference/introduction).
+
+## Test Create Chat Completion action
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-9.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
 
 **Action Fields:**
 

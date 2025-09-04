@@ -38,6 +38,32 @@ Utilize Check Point to gather enrichment data and issue containment actions duri
 
 Network Security
 
+## Configure Check Point in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the Check Point URL.
+
+* **API Key**. Enter the [Check Point API key](https://docs.cgn.portal.checkpoint.com/reference/authentication).
+
+* **Username**. Enter the username of a Check Point admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password of the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/check-point/check-point-configuration.png')} style={{border:'1px solid gray'}} alt="Check-Point configuration" width="400"/>
+
+For information about Check Point, see [Check Point documentation](https://sc1.checkpoint.com/documents/latest/api_reference/index.html).
+
 ## Change Log
 
 * February 10, 2020 - First upload

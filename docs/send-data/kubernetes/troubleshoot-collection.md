@@ -7,6 +7,10 @@ description: Troubleshooting Collection
 
 ## Troubleshooting installation
 
+:::warning
+An incompatibility was discovered with Helm and the Sumo Logic Kubernetes Collection installation will not work with Helm `v3.18.5` or greater. We are currently working on a fix.
+:::
+
 ### Installation fails with error `function "dig" not defined`
 
 You'll need to use a more recent version of Helm. See [Minimum Requirements](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md#minimum-requirements).
@@ -521,6 +525,45 @@ kube-prometheus-stack:
 ```
 
 where `metadata.name` is the value from Argo Application manifest.
+
+### Missing metrics in dashboards
+
+Dashboards can miss many metrics from the cluster and pod level. This can occur because the `kube-state-metrics` are not scraped. For example, the `prometheus-kube-state-metrics` ServiceMonitor resource does not have the label `release: prometheus`.
+
+With the `prometheus` label added manually, the dashboards populate correctly and all data is pulled:
+
+```yaml
+serviceMonitorSelector:
+      matchLabels:
+        monitoring: prometheus
+
+kube-state-metrics:
+  prometheus:
+    monitor:
+      enabled: true
+      additionalLabels:
+        monitoring: prometheus
+```
+
+The `release:` label value must match the release name of the `kube-prometheus-stack` Helm deployment. The default should be `release: kube-prometheus-stack`.
+
+To get the release name: 
+
+```text
+pod="$(kubectl get po -n monitoring | awk '/kube-state-metrics/{ print $1 }')"
+kubectl get po -n monitoring "${pod}" -o yaml | grep release
+```
+
+Results:
+
+```yaml
+kube-state-metrics:
+  prometheus:
+    monitor:
+      enabled: true
+      additionalLabels:
+        release: kube-prometheus-stack
+```
 
 ### Check metrics content
 

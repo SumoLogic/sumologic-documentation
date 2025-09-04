@@ -33,7 +33,7 @@ Each application you want the Microsoft identity platform to perform identity an
 
 ### Register an application
 
-Registering your application establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
+[Registering your application](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-authenticate-an-ews-application-by-using-oauth) establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
 
 Follow these steps to create the app registration:
 
@@ -140,6 +140,54 @@ Once API permission are added then Admin must consent to a grant these permissio
 5. Click on the **Assign** tab.
 6. Click **+** and search for the user you want to assign the role to.
 7. Click **Save**.
+
+## Configure Microsoft EWS in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+
+:::note
+Use the information you set up [above](#microsoft-ews-configuration).
+:::
+
+* <IntegrationLabel/>
+* **Host**. Enter your Microsoft EWS host address, for example, `outlook.office365.com`
+
+* **Authentication Method**. Select the [EWS authentication](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/authentication-and-ews-in-exchange) method:
+    * **Basic**
+    * **NTLM**
+    * **OAuth 2.0**
+* **Username**. Enter the Microsoft EWS username.
+
+* **Password**. Enter the Microsoft EWS password.
+
+* **Primary SMTP Address**. Enter the [primary SMTP address](https://learn.microsoft.com/en-us/exchange/client-developer/web-service-reference/primarysmtpaddress) for the user.
+
+* **Tenant ID**. Enter the  [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) for authentication.
+
+* **Client ID**. Enter the client ID for authentication.
+
+* **Client Secret**. Enter the client secret for authentication.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-ews-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft EWS configuration" width="400"/>
+
+For information about Microsoft EWS, see [Microsoft Exchange Web Services documentation](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-authenticate-an-ews-application-by-using-oauth).
 
 
 ## Category

@@ -22,7 +22,7 @@ Google Alert Center relies on the Google Workspace Alert Center API which empowe
 
 ## Google Alert Center Configuration
 
-To create a Service Account in Google Workspace and generate the JSON file needed to configure the Google Alert Center integration, follow these steps:
+To [create a Service Account](https://developers.google.com/workspace/guides/create-credentials) in Google Workspace and generate the JSON file needed to configure the Google Alert Center integration, follow these steps:
 
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
@@ -43,11 +43,28 @@ To create a Service Account in Google Workspace and generate the JSON file neede
 	'https://www.googleapis.com/auth/apps.alerts'
 17. Click Authorize.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-alert-center/google-alert-center-10.png')} style={{border:'1px solid gray'}} alt="google-dalert-center" width="800"/>
 
-## Google Alert Center in Automation Service and Cloud SOAR
+## Configure Google Alert Center in Automation Service and Cloud SOAR
 
-* **Label**. The desired name for the resource.
-* **User Service Account JSON**. Provide the content of the JSON file generated in the previous steps. Open the file and copy-paste the whole content in the field.
-* **Admin User Email**. The e-mail address of an admin user.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **User Service Account JSON**. Provide the content of the JSON file generated in [above](#google-alert-center-configuration). Open the file and copy-paste the whole content in the field.
+
+* **Admin User Email**. Enter the email address of an admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/google-alert-center-configuration.png')} style={{border:'1px solid gray'}} alt="Google Alert Center configuration" width="400"/>
+
+For information about Google Alert Center, see [Google Alert Center documentation](https://support.google.com/a/answer/9105393?hl=en).
 
 ## Change Log
 

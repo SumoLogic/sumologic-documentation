@@ -22,7 +22,7 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 
 ## Documentation   
 
-<ApiIntro/> 
+<ApiIntro/>
 
 | Deployment | Documentation URL                                  |
 |:------------|:----------------------------------------------------|
@@ -31,7 +31,6 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 | DE         | https://api.de.sumologic.com/docs/#tag/serviceMap  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/serviceMap  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/serviceMap |
-| IN         | https://api.in.sumologic.com/docs/#tag/serviceMap  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/serviceMap  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/serviceMap  |
 | US1        | https://api.sumologic.com/docs/#tag/serviceMap     |
@@ -48,7 +47,7 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 
 Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
 
-See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
+See [Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
 An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
 

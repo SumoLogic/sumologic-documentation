@@ -5,12 +5,30 @@ description: OpenTelemetry Collector provides a unified and flexible solution fo
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 The Sumo Logic OpenTelemetry (OTel) Collector is our next-generation collector, built on OpenTelemetry, that provides a single unified agent to send logs, metrics, traces, and metadata for Observability to Sumo Logic. This can help simplify and streamline the performance and behavior monitoring of complex distributed systems, making it easier to identify and diagnose issues and improve overall system reliability and efficiency.
 
 What makes the Sumo Logic OTel Collector unique is its flexibility and scalability. It can be easily deployed as a containerized application on any cloud platform, and it supports a wide range of data sources, including AWS CloudWatch, Prometheus, and Jaeger. This means that organizations can use the collector to gain deeper visibility into their distributed systems, no matter where they are hosted.
 
 Once the data is collected, the Sumo Logic platform provides powerful analytics capabilities, enabling users to gain insights into their applications and systems, troubleshoot issues, and optimize their operations. With its user-friendly interface and powerful features, the Sumo Logic OTel Collector is an ideal choice for organizations looking to gain a deeper understanding of their distributed systems and improve their overall performance and reliability.
+
+:::sumo Micro Lesson
+Watch this micro lesson to learn more about the benefits of using OenTelemetry collector.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/c39eyz8shl?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Benefits of using OpenTelemetry collector"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ## Guides
 
@@ -30,6 +48,24 @@ In this section, we'll introduce the following concepts:
         <h4>Data Source and Configurations</h4>
       </a>
       <p>Collect logs, metrics, and tracing data, as well as how to add configurations for the OpenTelemetry collector.</p>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/remote-management/">
+        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
+        <h4>Remote Management</h4>
+      </a>
+      <p>Learn about remote management of OpenTelemetry collectors.</p>
+    </div>
+  </div>
+  <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/view-opentelemetry-collection-page">
+        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
+        <h4>View Details About an OpenTelemetry Collector</h4>
+      </a>
+      <p>Learn how to view details about an OpenTelemetry Collector.</p>
     </div>
   </div>
       <div className="box smallbox card">
@@ -62,21 +98,23 @@ In this section, we'll introduce the following concepts:
     <p>Find solutions to common issues with the OpenTelemetry collector.</p>
     </div>
   </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Sumo Logic OTel</h4></a>
+      <p>Understand the relationship between the Sumo Logic OpenTelemetry Collector and the OpenTelemetry upstream project.</p>
+    </div>
+  </div>
   <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/opentelemetry-collector/faq"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>FAQ</h4></a>
     <p>Find answers to frequently asked questions about the OpenTelemetry collector.</p>
     </div>
   </div>
-  <div className="box smallbox card">
-    <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Sumo Logic OTel</h4></a>
-      <p>Understand the relationship between the Sumo Logic OpenTelemetry Collector and the OpenTelemetry upstream project.</p>
-    </div>
-  </div>
 </div>
 
-## More information
+## Additional resources
 
-* [Sumo Logic Guide to OpenTelemetry](https://www.sumologic.com/guides/opentelemetry). Learn about the powerful observability tool OpenTelemetry and what it can provide for your business.
-* [OpenTelemetry Tutorials](https://www.sumologic.com/blog/common-opentelemetry-demo-application/). Learn how to use the common OpenTelemetry demo application with Sumo Logic.
+* Guide: [The Sumo Logic Guide to OpenTelemetry](https://www.sumologic.com/guides/opentelemetry)
+* Blogs: 
+   * [Learn how to use the common OpenTelemetry demo application with Sumo Logic](https://www.sumologic.com/blog/common-opentelemetry-demo-application/)
+   * [Take control of your OpenTelemetry Collectors with Otel Remote Management](https://www.sumologic.com/blog/otel-remote-management/)

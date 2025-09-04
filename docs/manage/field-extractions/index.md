@@ -15,7 +15,7 @@ For best practices on naming your fields, see [Field Naming Convention](field-na
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Manage Data > Logs > Field Extraction Rules**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Field Extraction Rules page, in the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.
  
 
 To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
@@ -34,7 +34,7 @@ The Field Extraction Rules page displays the following information: 
 
 When hovering over a row in the table there are icons that appear on the far right for editing, disabling and deleting the rule.
 
-* **Status** shows a checkmark in a green circle ![check in green circle.png](/img/reuse/check-green-circle.png) to indicate if the Rule is actively being applied or an exclamation mark in a red circle ![exclamation in red circle.png](/img/reuse/exclamation-red-circle.png) to indicate if the Rule is disabled.
+* **Status** shows a checkmark in a green circle ![check in green circle.png](/img/reuse/green-check-circle.png) to indicate if the Rule is actively being applied or an exclamation mark in a red circle ![exclamation in red circle.png](/img/reuse/exclamation-red-circle.png) to indicate if the Rule is disabled.
 * **Rule Name**
 * **Applied At** indicates when the field extraction process occurs, either at Ingest or Run time.
 * **Scope** 
@@ -74,26 +74,13 @@ import FerLimit from '../../reuse/fer-limitations.md';
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/Xv3pSwhVCN4"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Edit a Field Extraction Rule
 
 Changes to Field Extraction Rules are implemented immediately.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access the Field Extraction Rules page, in the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. 
 1. Find the rule in the table and click it. A window appears on the right of the table, click the **Edit** button.
 1. Make changes as needed and click **Save** when done.
 
@@ -101,7 +88,7 @@ Changes to Field Extraction Rules are implemented immediately.
 
 Deleting a Field Extraction Rule doesn't delete the fields it was parsing. You can delete any unwanted fields on the [Fields](/docs/manage/fields) page.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access the Field Extraction Rules page, in the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. 
 1. Find the rule to delete in the table and click it. A window appears on the right of the table, click the **More Actions** button, and select **Delete**.
 
 ## Guide contents

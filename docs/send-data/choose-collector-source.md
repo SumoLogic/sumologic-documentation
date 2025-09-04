@@ -2,7 +2,7 @@
 id: choose-collector-source
 title: Choosing a Sumo Logic Collector and Source
 sidebar_label: Choose a Collector and Source
-description: Design a Sumo Logic deployment that's right for your organization.
+description: Choose the right data source type in Sumo Logic for collecting logs, metrics, or traces using OpenTelemetry Collectors, Installed Collectors, and Hosted Collectors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -69,6 +69,23 @@ The Installed Collector and OpenTelemetry Collector are two popular collectors u
 **Installed Collector**. The Installed Collector is a standalone agent that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports a wide range of sources, including Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing, and many more. It also provides support for remote management and configuration, Ingest Budgets, Collector Management API, and CPU targets.
 
 **OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. However, it does not provide support for remote management or configuration, Ingest Budgets, Collector Management API, or CPU targets.
+
+:::sumo Micro Lesson
+Watch this micro lesson to learn why OpenTelemetry collector should be your first choice.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/g078z3y6ux?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Benefits of choosing OpenTelemetry collector over Installed collector"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 #### When to Choose Installed Collector vs. OpenTelemetry Collector
 
@@ -140,7 +157,6 @@ The following table shows the comparison between the Installed Collector and Ope
   </tbody>
 </table>
 
-
 ### Hosted Collectors
 
 **Hosted Collectors** reside in the Cloud allowing for seamless collection from Amazon Web Services, Google, Microsoft, and many other Cloud services.
@@ -176,19 +192,6 @@ Depending on the method you'd like to collect logs, and the types of logs you'd
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 The following table shows the major differences between them.
@@ -196,7 +199,6 @@ The following table shows the major differences between them.
 | Installed Collector | Hosted Collector |
 |:--|:--|
 | <ul><li>Installed on a system within your deployment locally or remotely.</li><li>Sources collect data available in your deployment.</li><li>Easy to troubleshoot based on Collector logs.</li><li>Supports using Local Configuration File Management so you can use JSON files to configure Sources.</li></ul> | <ul><li>Hosted by Sumo Logic. Agentless: no software to install or activate on a system in your deployment.</li><li>Hosts Sources to collect seamlessly from AWS, Google, and Microsoft products.</li><li>Can receive logs and metrics uploaded via a URL.</li></ul> |
-
 
 
 ## Sumo Logic Sources
@@ -227,19 +229,6 @@ The maximum number of Sources allowed on a Collector is 1,000.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/CfWXz6UkpIc"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 
 :::
 

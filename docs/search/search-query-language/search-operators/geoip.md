@@ -36,7 +36,7 @@ all the optional fields or choose a subset:
 * state_cf
 * city_cf
 
-Details of these data fields can be found in [Neustar's documentation](https://ipintelligence.neustar.biz/portal/#documentation) under the GeoPoint Data Glossary topic.
+Details of these data fields can be found in <a href="/files/IP-Geo-Point-Data-Glossary.pdf" target="_blank">Neustar's documentation</a> under the GeoPoint Data Glossary topic.
 
 ## Syntax to Map
 

@@ -55,7 +55,7 @@ When you create an AWS Cost Explorer collector Source, you add it to an existing
 
 ## Field-in-Field Schema
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 1. Search for the **account** and **linkedaccount** field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
@@ -70,7 +70,7 @@ Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to cr
   ```
 * **Parse Expression:** Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “securityprod” alias for an AWS account with ID "123456789" and the “infraprod” alias for an AWS account with ID "987654321", your parse expression would look like:
   ```sql
-  json "LinkedAccount"
+  | json "LinkedAccount"
   | if (LinkedAccount = "123456789",  "securityprod", LinkedAccount ) as LinkedAccount
   | if (LinkedAccount = "987654321",  "infraprod", LinkedAccount ) as LinkedAccount
   ```

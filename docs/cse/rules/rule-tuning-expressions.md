@@ -58,19 +58,6 @@ Watch this micro lesson to learn how to create a rule tuning expression.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/3BUKLtJtPI8?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Create a tuning expression
@@ -116,4 +103,6 @@ When you test a [rule expression](/docs/cse/rules/about-cse-rules#about-rule-exp
 
 <img src={useBaseUrl('img/cse/tuning-checkbox.png')} alt="Test rule" style={{border: '1px solid gray'}} width="600"/>
 
- 
+## Additional resources
+
+Blog: [Rule tuning – supercharge Cloud SIEM for better alerts](https://www.sumologic.com/blog/rule-tuning-cloud-siem-alert-fatigue)

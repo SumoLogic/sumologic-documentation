@@ -24,7 +24,6 @@ The Folder Management API allows you to add folders and subfolders to the [Libra
 | DE         | https://api.de.sumologic.com/docs/#tag/folderManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/folderManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/folderManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/folderManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/folderManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/folderManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/folderManagement     |
@@ -36,4 +35,3 @@ The Folder Management API allows you to add folders and subfolders to the [Libra
 
 * Data Management
     * Manage Content
-

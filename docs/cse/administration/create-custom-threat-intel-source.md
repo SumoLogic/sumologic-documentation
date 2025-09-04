@@ -7,10 +7,6 @@ description: Learn how to manage custom threat intelligence sources in Cloud SIE
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::info
-**You can no longer add custom threat intelligence sources in Cloud SIEM**. To create new sources, use the Sumo Logic threat intelligence framework. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence). [Contact Support](https://support.sumologic.com/support/s/) if you still need to create custom sources in Cloud SIEM.
-:::
-
 Prior to the introduction of [Sumo Logic Threat Intelligence](/docs/security/threat-intelligence), administrators created their own custom threat intelligence sources, which they manually populated as opposed to using an automatic feed. This article has information about managing these custom threat intelligence sources in Cloud SIEM. 
 
 Previously, administrators created custom threat intelligence sources interactively from the Cloud SIEM UI by uploading a .csv file, or using Cloud SIEM APIs. They populated the sources with IP addresses, domains, URLs, email addresses, and file hashes.
@@ -31,7 +27,7 @@ You can search using the same functionality available for other Cloud SIEM searc
 
 When Cloud SIEM encounters an indicator from a threat source in an incoming record, it adds relevant information to the record. Because threat intelligence information is persisted within records, you can reference it downstream in both rules and search. The built-in rules that come with Cloud SIEM automatically create a signal for records that have been enriched in this way.
 
-Rule authors can also write rules that look for threat intelligence information in records. To leverage the information in a rule, you can extend your custom rule expression, or add a rule tuning expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence Indicators in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
+Rule authors can also write rules that look for threat intelligence information in records. To leverage the information in a rule, you can extend your custom rule expression, or add a rule tuning expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
 
 ### Target fields for threat indicators
 

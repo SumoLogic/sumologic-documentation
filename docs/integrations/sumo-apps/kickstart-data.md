@@ -1,29 +1,23 @@
 ---
 id: kickstart-data
 title: Sumo Logic Kickstart Data
-sidebar_label: Sumo Logic Kickstart Data
+sidebar_label: Kickstart Data
 description: The Sumo Logic Kickstart Data app offers real-time insights for monitoring telemetry data from the OpenTelemetry Demo Astronomy application.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-<img src={useBaseUrl('img/integrations/sumo-apps/Sumo-Logic-Kickstart-Data-Icon.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/Sumo-Logic-Kickstart-Data-Icon.png')} alt="Thumbnail icon" width="100"/>
 
 The Sumo Logic Kickstart Data app offers real-time insights for monitoring telemetry data from our OpenTelemetry Demo Astronomy application. Featuring predefined searches and dashboards, this app enhances visibility into application performance and operational metrics.
 
-:::tip
-Learn more about [Kickstart Data](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
+:::info
+Kickstart Data comes preloaded for new trial users and expires automatically after 20 days or when you begin ingesting your own data—whichever comes first. [Learn more](/docs/get-started/quickstart/#getting-started-with-kickstart-data-in-your-trial).
 :::
 
 ## Application Data
 
-This app uses [Sumo Logic Kickstart Data source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source) to collect the data from OpenTelemetry Demo Astronomy Application.
+This app uses the [Sumo Logic Kickstart Data source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source) to collect the data from OpenTelemetry Demo Astronomy app.
 
 ## Installing the Sumo Logic Kickstart Data app
 
@@ -34,7 +28,7 @@ The Kickstart Data app is pre-installed for all users upon creation of a [new or
 1. Go to **What's Included > Dashboards: View content in Library** to preview the dashboards.
 
 <details>
-<summary>If you do not see the app, follow the below steps.</summary>
+<summary>If you do not see the app, follow these steps (click to expand).</summary>
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
@@ -100,3 +94,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+:::note For admins
+If you're done exploring Kickstart Data and want to purge it from your environment and Sumo Logic account, follow the steps under [How to manage or remove Kickstart Data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source#how-to-manage-or-remove-kickstart-data).
+:::

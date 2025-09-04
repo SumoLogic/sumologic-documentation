@@ -1,5 +1,5 @@
 ---
-title: Kela RaDark
+title: KELA RaDark
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,26 +16,38 @@ KELA's RADARK delivers automated threat intelligence, cultivating the targeted a
 * **List Incidents** *(Enrichment)* - Returns a list of incidents matching it.
 * **Scrolling Incidents** *(Enrichment)* - Get the next bulk of incidents from List Incidents action.
 * **Get Incident Details** *(Enrichment)* - Get a specific incident.
-* **Update Kela RaDark Incident** *(Containment)* - Updating an Incident.
+* **Update KELA RaDark Incident** *(Containment)* - Updating an Incident.
 
-## Kela RaDark configuration
+## KELA RaDark configuration
 
-1. Sign in **Kela RaDark** using your username and password.
+1. Sign in **KELA RaDark** using your username and password.
 2. The API token can be generated through the RADARK UI, under the user menu - Generate Api Key.
 3. Make sure you copy and save the api token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-1.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="600"/>
 
-## Kela RaDark in Automation Service and Cloud SOAR
+## Configure KELA RaDark in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-4.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="400"/>
-1. Populate all the required fields (\*).
-1. In the API Key field, insert the previously copied key.
-1. Click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-5.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-6.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-7.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-8.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your KELA RaDark API URL.
+
+* **API Token**. Insert the [previously copied token](#kela-radark-configuration).
+
+* **Monitor ID**. Enter the KELA RaDark monitor ID.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/kela-radark-configuration.png')} style={{border:'1px solid gray'}} alt="KELA RaDark configuration" width="400"/>
+
+For information about KELA RaDark, see [KELA documentation](https://docs.ke-la.com/kela-docs).
 
 ## Change Log
 

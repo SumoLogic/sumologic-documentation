@@ -19,7 +19,9 @@ description: Create a field extraction rule for Apache Tomcat 7 Access Logs.
 **Extraction Rule:**
 
 ```sql
-| parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}? )" | parse regex "\"(?<method>\D{1,7}? )" | parse regex "\"\D{1,7} (?<url>\S{1,2048}? )" | parse regex "\" (?<status>\d{3}? )" | parse regex "\" \d{3} (?<time_taken>\d{1,}? )" | parse regex "\" \d{3} \d{1,} (?<bytes_sent>\d{1,}?)"
+| parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}? )" 
+| parse regex "\"(?<method>\D{1,7}? )" | parse regex "\"\D{1,7} (?<url>\S{1,2048}? )" | parse regex "\" (?<status>\d{3}? )" | parse regex "\" \d{3} (?<time_taken>\d{1,}? )" 
+| parse regex "\" \d{3} \d{1,} (?<bytes_sent>\d{1,}?)"
 ```
 
 **Resulting Fields:**

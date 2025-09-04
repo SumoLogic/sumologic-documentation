@@ -161,22 +161,31 @@ import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
 import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
-<AppCollectionOPtion3/>
+## Viewing the Gmail Trace Logs dashboards
 
-## Viewing Gmail Trace Logs Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-**All dashboard have a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+<ViewDashboards/>
 
-You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
+### Security Overview
 
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
-### Security Overview Dashboard
-
-**Gmail Trace Logs - Security Overview**. This dashboard lets you monitor spam messages, malware threats, dropped messages, and rejected messages.
+The **Gmail Trace Logs - Security Overview** dashboard lets you monitor spam messages, malware threats, dropped messages, and rejected messages.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/tracelogsapp-overview.png')} alt="Gmail Trace Logs Overview" width="900"/>
 
-**CrowdStrike Analysis**. To protect your organisation from threats, the app also scans the SHA256 hash of Gmail attachments with CrowdStrike's threat detection service.
+The **CrowdStrike Analysis**. To protect your organisation from threats, the app also scans the SHA256 hash of Gmail attachments with CrowdStrike's threat detection service.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/crowdstrike-analysis.png')} alt="Crowdstrike Analysis" width="900"/>
+
+## Upgrading the Microsoft Teams app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Teams app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+

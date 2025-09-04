@@ -100,3 +100,9 @@ The kube-proxy is a network proxy that runs on each node in your cluster. The ku
 Pods reside on a given node, and a pod can contain several containers. For pods, you should monitor:
 * Scheduler health for individual pods - so they do not get stuck in a restart loop
 * Pod health - availability, resource consumption, and performance
+
+## Additional resources
+
+* Blogs: 
+   * [Kubernetes DevSecOps](https://www.sumologic.com/blog/kubernetes-devsecops/)
+   * [Logging and monitoring Kubernetes](https://www.sumologic.com/blog/kubernetes-logs/)

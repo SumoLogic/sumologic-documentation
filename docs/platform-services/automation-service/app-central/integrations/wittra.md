@@ -20,18 +20,30 @@ Wittra is hardware and software provider with patented solutions for business in
 * **Get Device** *(Enrichment)* - Retrieve data about a specific device.
 * **List Devices Telemetry** *(Enrichment)* - Retrieve telemetry for all devices in a project.
 
-## Wittra in Automation Service and Cloud SOAR
+## Configure Wittra in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-3.png')} style={{border:'1px solid gray'}} alt="wittra" width="600" />
-1. Populate all the required fields (\*) and then click **SAVE**.
-   * **Label**. The desired name for the resource.
-   * **URL**. Your Wittra URL.
-   * **API Key**. Your Wittra API Key you copied earlier from Wittra.
-   * **Organization ID**. Your Organization ID you copied earlier from Wittra.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-4.png')} style={{border:'1px solid gray'}} alt="wittra" width="400" /><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-5.png')} style={{border:'1px solid gray'}} alt="wittra" width="400" />
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-6.png')} style={{border:'1px solid gray'}} alt="wittra" width="400" />
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/wittra/wittra-7.png')} style={{border:'1px solid gray'}} alt="wittra" width="400" />
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your [Wittra URL](https://docs.wittra.io/#/howto-integrations-and-api?id=use-the-api-key), for example, `https://api.wittra.se/`.
+
+* **API Key**. Enter the [Wittra API key](https://docs.wittra.io/#/howto-integrations-and-api?id=set-up-api-key).
+
+* **Organization ID**. Enter your Wittra [organization ID](https://docs.wittra.io/#/howto-console?id=create-a-project).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/wittra-configuration.png')} style={{border:'1px solid gray'}} alt="Wittra configuration" width="400"/>
+
+For information about Wittra, see [Wittra documentation](https://docs.wittra.io/#/).
 
 ## Change Log
 

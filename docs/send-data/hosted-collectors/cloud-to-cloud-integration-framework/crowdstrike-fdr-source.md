@@ -7,10 +7,7 @@ tags:
   - crowdstrike-fdr
 description: The CrowdStrike Falcon Data Replicator (FDR) Source provides a secure endpoint to ingest Falcon Data Replicator events using the S3 ingestion capability by consumed SQS notifications of new S3 objects.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/crowdstrike-fdr/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/crowdstrike-fdr/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/crowdstrike-fdr/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
@@ -43,14 +40,14 @@ When you create a CrowdStrike FDR Source, you add it to a Hosted Collector. Bef
 
 To configure a CrowdStrike FDR Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CrowdStrike FDR**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **AWS Access Key ID**: Provide your AWS Access Key ID you copied from CrowdStrike, see the [Vendor configuration](#vendor-configuration) section.
 1. **AWS Secret Access Key**: Provide your AWS Secret Access Key you copied from CrowdStrike, see the [Vendor configuration](#vendor-configuration) section.
 1. **SQS Queue URL**. Provide your SQS Queue URL you copied from CrowdStrike, see the [Vendor configuration](#vendor-configuration) section.
@@ -59,11 +56,11 @@ To configure a CrowdStrike FDR Source:
     - By default, all messages are ingested into Sumo Logic without any filtering. However, with the appropriate configuration, customers can ensure that only the desired data within the specified time range is ingested. For instance, if you want to ingest data from the last three days only, then you should configure the source by selecting `3 Days` as the value.
     - Crowdstrike FDR will queue up to 7 days worth of data, if it's configured without any consumer ingesting the events. You should be aware that this historical data will be collected only with the C2C integration.
     - Crowdstrike FDR doesn't allow Sumo Logic to pass any parameter to collect data from a specific time range.
-1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/). 
+1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/).
 1. **Advanced Options for Logs**.
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information. 
+   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
 1. When you are finished configuring the Source, click **Save**.
 
 ## JSON schema
@@ -92,15 +89,16 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/crowdstrike-fdr/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-fdr/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-fdr/example.tf
+```
 
-<a href="/files/c2c/crowdstrike-fdr/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

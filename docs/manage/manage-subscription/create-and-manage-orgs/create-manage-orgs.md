@@ -51,19 +51,6 @@ Learn how to create a new child organization.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/omTHPAJ9dIg?si=m5dVp5oXu29wq4Pu"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 :::note
@@ -126,19 +113,6 @@ Watch this micro lesson to learn more about managing a child org.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/ni7xMZjHdQM?si=dbMnCgDtNtGLGINs"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 
 :::
 

@@ -11,6 +11,8 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
 
+<!-- Originally added as a beta article with SUMO-124040. -->
+
 Use Metrics Search Management APIs V2 to save metrics searches in the content library, organize them in a folder hierarchy, and list metrics searches under your personal folder.
 
 ## Documentation
@@ -24,7 +26,6 @@ Use Metrics Search Management APIs V2 to save metrics searches in the content li
 | DE         | https://api.de.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/metricsSearchesManagementV2 |
-| IN         | https://api.in.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
 | US1        | https://api.sumologic.com/docs/#tag/metricsSearchesManagementV2     |
@@ -35,4 +36,3 @@ Use Metrics Search Management APIs V2 to save metrics searches in the content li
 <ApiRoles/>
 
 * Metrics (all role capabilities)
-

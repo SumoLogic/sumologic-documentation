@@ -78,7 +78,7 @@ These settings apply only to your personal account and do not affect other users
 
 If you want the Sumo Logic user interface to use your local time zone, or a time zone different from the time zone used in the timestamp of your log messages, change the setting here. This is a personal setting, and does not change the time zone for anyone else in your organization.
 
-This option overrides the timezone set in your web browser, and affects all hours and minutes displayed in the user interface, including time ranges on the Search page, the Time column in the Messages pane, and in Dashboards. It does not affect the configurations of previously created Scheduled Searches or Real Time Alerts. For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
+This option overrides the timezone set in your web browser, and affects all hours and minutes displayed in the user interface, including time ranges on the Search page, the Time column in the Messages pane, and in Dashboards. It does not affect the configurations of previously created Scheduled Searches. For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
 
 #### Always show the timezone offset in displayed timestamps
 
@@ -127,6 +127,10 @@ By default, selecting a menu link in the left navigation pane opens it in a new 
 Enabling this preference hides the **Open in New Tab** button on navigation menu links.
 
 However, even when this preference is enabled, the **Open in New Tab** button remains visible for menu items with subfolders, allowing you to click the menu item to view its subfolders and open them in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button-on-folder.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="250" />
+
+### Default Starting Page
+
+Select the default page to appear when you log in to Sumo Logic. This preference applies only to users of the [**New UI**](/docs/get-started/sumo-logic-ui).
 
 ### Theme
 

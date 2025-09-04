@@ -107,8 +107,8 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
 1. **Metadata**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value.
     1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
     1. Keep in mind:
-       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+       * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+       * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 ### Collect metrics
 
@@ -118,21 +118,21 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
 1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. 
    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
    1. Keep in mind:
-      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 :::note
-Namespace for Amazon EC2 Auto-scaling Service is AWS/AutoScaling.
+Namespace for Amazon EC2 Auto Scaling Service is AWS/AutoScaling.
 :::
 
 ## Field in field schema
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 1. Search for the `autoscalinggroup` field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 ## Field Extraction Rule(s)
 
-Create a Field Extraction Rule (FER) for Amazon EC2 Auto-scaling access logs and Cloudtrail logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+Create a Field Extraction Rule (FER) for Amazon EC2 Auto Scaling access logs and Cloudtrail logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 **Amazon EC2 Auto Scaling CloudTrail logs**
 
@@ -177,8 +177,8 @@ The **Amazon EC2 Auto Scaling - CloudTrail Audit** dashboard provides a comprehe
 
 Use this dashboard for:
 * Monitoring the overall health and performance of your Amazon EC2 Auto Scaling groups
-* Identifying and troubleshooting common errors and failures in auto-scaling operations
-* Tracking user activities and potential security concerns related to auto-scaling events
+* Identifying and troubleshooting common errors and failures in auto scaling operations
+* Tracking user activities and potential security concerns related to auto scaling events
 * Analyzing trends in event types, success rates, and failure patterns over time
 
 <img src={useBaseUrl('img/integrations/02.-Amazon-EC2-Auto-Scaling-CloudTrail-Audit.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
@@ -217,3 +217,15 @@ Use this dashboard for:
 * Optimizing warm pool size and capacity to improve application responsiveness during sudden load increases
 
 <img src={useBaseUrl('img/integrations/05.-Amazon-EC2-Auto-Scaling-Warm-Pool.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+
+## Upgrade/Downgrade the Amazon EC2 Auto Scaling app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon EC2 Auto Scaling app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

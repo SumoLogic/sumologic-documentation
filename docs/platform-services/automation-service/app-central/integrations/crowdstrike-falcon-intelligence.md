@@ -48,21 +48,32 @@ Create API clients to grant various levels of API access for Falcon Intelligence
 Record your API client secret somewhere safe. After the credential window is closed, the secret is no longer visible.
 :::
 
-## CrowdStrike Falcon Intelligence in Automation Service and Cloud SOAR
+## Configure CrowdStrike Falcon Intelligence in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for **CrowdStrike Falcon Intelligence** integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-5.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-intelligence" width="600"/>
-1. Populate the resource fields as indicated.
-    * **Label**. The resource name.
-    * **API URL**. The default Crowdstrike API URL is [https://api.crowdstrike.com](https://api.crowdstrike.com/).
-    * **Client ID**. The unique identifier of the API client. The client ID is visible from the API clients table in the Falcon console.
-    * **Client Secret**. A secret code for an API client, equivalent to a password. The secret is only visible to you at the time the API client is created. After that, it is not retrievable. If your client secret is ever lost, you can reset it to generate a new one.
-    * **Member CID**. For MSSP Master CIDs, optionally lock the token to act on behalf of this member CID.
-1. Click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-6.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-intelligence" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-7.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-intelligence" width="400"/>
-1. Click **TEST SAVED SETTINGS** to test the integration connector.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-8.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-intelligence" width="400"/>
-1. You should receive a successful notification in the bottom right corner if resource was tested successfully.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-9.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-intelligence" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your CrowdStrike API URL. The default value is `https://api.crowdstrike.com`
+
+* **Client ID**. Enter the unique identifier of the API client. The client ID is visible from the API clients table in the Falcon console.
+
+* **Client Secret**. Enter the secret code for the API client, equivalent to a password. The secret is only visible to you at the time the API client is created. After that, it is not retrievable. If your client secret is ever lost, you can reset it to generate a new one.
+
+* **Member CID**. Enter the member CIS. For MSSP Master CIDs, optionally lock the token to act on behalf of this member CID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/crowdstrike-falcon-intelligence-configuration.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon Intelligence configuration" width="400"/>
+
+For information about CrowdStrike Falcon Intelligence, see [CrowdStrike documentation](https://www.crowdstrike.com/en-us/resources/guides/?lang=1).
 
 ## Change Log
 

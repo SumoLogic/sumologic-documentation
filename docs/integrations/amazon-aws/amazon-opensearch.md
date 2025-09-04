@@ -246,7 +246,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 ### Field in Field Schema
 
-1. [Classic UI](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[New UI](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.  
+1. [Classic UI](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[New UI](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.  
 2. Search for the `domainname` field.  
 3. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
 
@@ -438,3 +438,15 @@ Use this dashboard to:
 * Ability to correlate cache metrics with overall system performance.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/10.-Amazon-OpenSearch-Cache-Performance.png')} alt="Fields" />
+
+## Upgrade/Downgrade the Amazon OpenSearch app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon OpenSearch app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

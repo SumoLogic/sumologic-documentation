@@ -12,7 +12,8 @@ The scheduled report feature enables you to receive an emailed copy of a dashboa
 You can distribute the dashboard to people in your Sumo Logic organization who do not have access to the platform, enabling better information sharing. It is also useful for compliance management, as it automatically captures and archives the state of the dashboard.
 
 :::info
-If a .pdf and/or .png export fails, an error email will be sent to your email ID.
+- For PNG format export, you will receive both embedded and attached copy of the dashboard to your email.
+- If a PDF and/or PNG export fails, you’ll receive an error notification by email.
 :::
 
 ## Create a scheduled report

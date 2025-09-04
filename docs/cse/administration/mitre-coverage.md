@@ -38,24 +38,11 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/O1SmpbL4gos?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
-
 :::
 
 ## User interface 
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To open the MITRE ATT&CK Threat Coverage Explorer, in the top menu select **Content > MITRE ATT&CK Coverage**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To open the MITRE ATT&CK Threat Coverage Explorer, in the top Cloud SIEM menu select **Content > MITRE ATT&CK Coverage**.
 
 [**New UI**](/docs/get-started/sumo-logic-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the main Sumo Logic menu select **Cloud SIEM > MITRE ATT&CK Coverage**. You can also click the **Go To...** menu at the top of the screen and select **MITRE ATT&CK Coverage**. 
  
@@ -211,3 +198,12 @@ You can use the following Cloud SIEM APIs to obtain information about your MITRE
 * [MitreAttackCoverageExportJson](https://api.sumologic.com/docs/sec/#operation/MitreAttackCoverageExportJson). Get a JSON representation of the Mitre ATT&CK coverage.
 
 To find the Cloud SIEM API documentation for your endpoint, see [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/).
+
+## Additional resources
+
+* Blogs: 
+   * [Enhance your cloud security with MITRE ATT&CK and Sumo Logic Cloud SIEM](https://www.sumologic.com/blog/cloud-siem-mitre-attack/)
+   * [Unique approaches to MITRE ATT&CK—make the most of its potential](https://www.sumologic.com/blog/mitre-attack-how-sumo-logic-makes-it-work-for-you)
+* Glossary: [MITRE ATT&CK - definition & overview](https://www.sumologic.com/glossary/mitre-attack/)
+* Demo: [MITRE ATT&CK Coverage Explorer](https://www.sumologic.com/demo/cloud-siem-mitre-attack-coverage-explorer/)
+* Cloud SIEM Content Catalog: [Vendors](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/README.md)

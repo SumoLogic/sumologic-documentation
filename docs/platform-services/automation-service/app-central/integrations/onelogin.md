@@ -26,6 +26,31 @@ This integration enables user management and secure app access with MFA and even
 * **Remove a Factor** _(Containment)_ - Remove an enrolled factor from a user.
 * **Update User** _(Containment)_ - Update the attributes of a user in OneLogin.
 
+## Configure OneLogin in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your [OneLogin URL](https://support.onelogin.com/kb/4266967/onelogin-domains-and-ip-addresses).
+
+* **Client ID**. Enter a OneLogin [client ID](https://developers.onelogin.com/api-docs/1/getting-started/working-with-api-credentials).
+
+* **Client Secret**. Enter the secret corresponding to the client ID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/onelogin-configuration.png')} style={{border:'1px solid gray'}} alt="OneLogin configuration" width="400"/>
+
+For information about OneLogin, see [OneLogin documentation](https://developers.onelogin.com/quickstart).
+
 ## Change Log
 
 * March 1, 2021 - First upload

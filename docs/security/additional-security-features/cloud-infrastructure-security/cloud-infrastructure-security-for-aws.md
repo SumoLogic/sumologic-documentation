@@ -41,19 +41,6 @@ Watch the following micro lesson to learn about Cloud Infrastructure Security fo
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/JD9tNfCW7uo?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
-
 :::
 
 ## Log types
@@ -302,7 +289,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
 1. Scroll down to the **Parameters** section.
 1. In **Deployment**, enter **No** if you want to install to only one account, or **Yes** if you want to install to all accounts in your organization.
 1. In **1. Sumo Logic configuration**, you can accept the defaults. <br/>If fields are missing, or you need to change them, do the following:
-   * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
+   * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
    * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
    * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
 1. In **2. AWS Organization configuration**, enter the following. (This step is required only if you are installing the solution to all accounts in your AWS organization.)
@@ -342,7 +329,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
 1. Scroll down to the **Parameters** section.
 1. In **1. Sumo Logic Configuration**, you can accept the defaults. <br/>If fields are missing, or you need to change them, do the following:
       * **Deploy to Organization (All Accounts)**. Select **Yes** to deploy to all accounts in your AWS organization, or select **No** to deploy only to your account.
-      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
+      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
       * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
       * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
       * **Sumo Logic organization ID**. Enter your Sumo Logic organization ID, which you can find in the Sumo Logic console, under [Account](/docs/get-started/account-settings-preferences).

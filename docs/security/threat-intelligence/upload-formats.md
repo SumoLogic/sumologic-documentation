@@ -7,11 +7,17 @@ description: Learn how to format upload files containing threat intelligence ind
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Use the following formats for threat intelligence indicator files when you [add indicators in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab) or when you use the upload APIs with the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource:
+This article describes the format to use for upload files when you add threat intelligence sources by [manually uploading them in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-button) or when you use the upload APIs in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource.
+
+Following are the formats for file upload:
 
 * [Normalized JSON format](#normalized-json-format)
 * [CSV format](#csv-format)
 * [STIX 2.x JSON format](#stix-2x-json-format) (API use only)
+
+:::note
+Rather than manually uploading files, you can also add threat intelligence sources using collectors, including for [CrowdStrike](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source), [Intel471](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source), [Mandiant](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source), [STIX/TAXII 1](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source), [STIX/TAXII 2](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and [ZeroFox](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source). For more information, see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
+:::
 
 ## Normalized JSON format
 
@@ -28,7 +34,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
      "id": "0001",
      "indicator": "192.0.2.0",
      "type": "ipv4-addr",
-     "source": "TAXII2Source",
+     "source": "my_custom_source",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
      "confidence": 30,
@@ -44,7 +50,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
      "id": "0002",
      "indicator": "192.0.2.1",
      "type": "ipv4-addr",
-     "source": "TAXII2Source",
+     "source": "my_custom_source",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
      "confidence": 30,
@@ -71,14 +77,20 @@ The following attributes are required:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
-         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.<HASH-TYPE>`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
+         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
+            * `file:hashes.MD5`
+            * `file:hashes.'SHA-1'`
+            * `file:hashes.'SHA-2'`
+            * `file:hashes.'SHA-3'`
+            * `file:hashes.'SHA-256'`
+            <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
          * `process`. Process name. (Entity type in Cloud SIEM is `_process`.)
          * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
          * `user-account`. User ID. (Entity type in Cloud SIEM is `user_username`.)
-       * **source** (string). User-provided text to identify the source of the indicator. For example, `TAXII2Source`.
+       * **source** (string). User-provided text to identify the source of the indicator. For example, `my_custom_source`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
@@ -111,8 +123,8 @@ Comma-separated value (CSV) is a standard format for data upload.
 When uploading a CSV file with the UI, the format should be the same as used for a standard CSV file:
 
 ```
-0001,192.0.2.0,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
-0002,192.0.2.1,ipv4-addr,TAXII2Source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
+0001,192.0.2.0,ipv4-addr,my_custom_source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
+0002,192.0.2.1,ipv4-addr,my_custom_source,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
 ```
 
 :::tip
@@ -131,14 +143,20 @@ Columns for the following attributes are required in the upload file:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
-         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.<HASH-TYPE>`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
+         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
+            * `file:hashes.MD5`
+            * `file:hashes.'SHA-1'`
+            * `file:hashes.'SHA-2'`
+            * `file:hashes.'SHA-3'`
+            * `file:hashes.'SHA-256'`
+            <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
          * `process`. Process name. (Entity type in Cloud SIEM is `_process`.)
          * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
          * `user-account`. User ID. (Entity type in Cloud SIEM is `_username`.)
-       * **source** (string). User-provided text to identify the source of the indicator. For example, `TAXII2Source`.
+       * **source** (string). User-provided text to identify the source of the indicator. For example, `my_custom_source`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
@@ -165,7 +183,7 @@ Columns for the following attributes are required in the upload file:
 ## STIX 2.x JSON format
 
 :::note
-Use this format only with the [STIX 2.x JSON upload API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource. You cannot [add indicators in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab) using this format.
+Use this format only with the [STIX 2.x JSON upload API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource. You cannot [add indicators in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-button) using this format.
 :::
 
 STIX 2.x JSON format is a method to present JSON data according to the STIX 2.x specification.
@@ -200,7 +218,7 @@ As shown in the following example, if uploading via the API you must add the `so
 
 ```json
 {
- "source": "TAXII2Source",
+ "source": "my_custom_source",
  "indicators": [
    {
      "type": "indicator",
@@ -263,7 +281,13 @@ The following attributes are required:
        * **pattern** (string). The pattern of this indicator (as defined by [pattern in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_me3pzm77qfnf)). Following are valid values:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
-         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)<br/>If you want to add the hash algorithm, enter `file:hashes.<HASH-TYPE>`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
+         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
+            * `file:hashes.MD5`
+            * `file:hashes.'SHA-1'`
+            * `file:hashes.'SHA-2'`
+            * `file:hashes.'SHA-3'`
+            * `file:hashes.'SHA-256'`
+            <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
          * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
          * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)

@@ -24,7 +24,6 @@ The [SAML Configuration](/docs/manage/security/saml/set-up-saml) Management API 
 | DE         | https://api.de.sumologic.com/docs/#tag/samlConfigurationManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/samlConfigurationManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/samlConfigurationManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/samlConfigurationManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/samlConfigurationManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/samlConfigurationManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/samlConfigurationManagement     |
@@ -36,4 +35,3 @@ The [SAML Configuration](/docs/manage/security/saml/set-up-saml) Management API 
 
 * Security
     * Manage SAML
-

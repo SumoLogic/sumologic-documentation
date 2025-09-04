@@ -136,6 +136,10 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the YAML file.
 
+import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
+
+<EnvVarOpt/>
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-OTEL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo Logic
@@ -355,4 +359,3 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 | `ActiveMQ - No Consumers on Queues Alert` | This alert gets triggered when a ActiveMQ queue has no consumers. | Count < 1 | Count >= 1 |
 | `ActiveMQ - Node Down Alert` | This alert gets triggered when a node in the ActiveMQ cluster is down. | Count >= 1 | Count < 1 |
 | `ActiveMQ - Too Many Connections Alert` | This alert gets triggered when there are too many connections to a node in a ActiveMQ cluster. | Count >= 1000 | Count < 1000 |
-

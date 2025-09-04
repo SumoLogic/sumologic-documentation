@@ -16,7 +16,7 @@ To manage users and roles, you must have the administrator role or your role mus
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Roles page, in the main Sumo Logic menu select **Administration > Users and Roles > Roles**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Roles page, in the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Roles page, in the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
  
 
 In this section, we'll introduce the following concepts:

@@ -19,33 +19,44 @@ Cyberint offers to proactively monitor and positively impact external risk expos
 * **Search Alerts** *(Enrichment)* - Returns a list of alerts based on the search criteria.
 * **Update Alerts** *(Containment)* - Updates the status of an alert by Alert ID.
 
-## Cyberint in Automation Service and Cloud SOAR
+## Configure Cyberint in Automation Service and Cloud SOAR
 
-1. To configure the integration, log in to the application, click on the **Integrations** menu item in the left sidebar and click on the installed **Cyberint** app. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-1.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
-2. The app details will appear. Click on the **+** button to add a new **Resource** (connection configuration). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-2.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
-3. Populate all the required fields (*):
-    - **Label**. Unique name of the connection configuration.
-    - **Instance Name Url**. Domain name associated with your Cyberint instance (typically in the format `https://{instance_domain}.cyberint.io/...`).
-    - **API key**. API key associated with your Cyberint account.
-    - **Company Name**. Company (client) name associated with your Cyberint instance.
-    - (Optional) **Verify Server Certificate**. Validates a server’s SSL certificate.
-    - (Optional) **Connection Timeout (s)**. Sets the maximum amount of time an integration will wait for a server's response before terminating the connection.
-    - (Optional) **Automation engine**. Select **Cloud execution** (for this certified integration) or select a Bridge option (for custom integrations).
-    - (Optional) **Proxy Options**. Specifies the settings for routing network requests through a proxy server to manage and control internet traffic.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-3.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/>
-4. Before saving the configuration you can **TEST** the connection to validate the configuration. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-4.png')} style={{border:'1px solid gray'}} alt="cyberint" width="350"/>
-5. Click **SAVE**.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
-Before you start exploring the features of the Cyberint app, try test runs of each of the actions to learn specifics of usage.
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+*  **Instance Name Url**. Enter the domain name associated with your Cyberint instance (typically in the format `https://{instance_domain}.cyberint.io/`).
+
+* **API key**. Enter the API key associated with your Cyberint account.
+
+* **Company Name**. Enter the company (client) name associated with your Cyberint instance.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-3.png')} style={{border:'1px solid gray'}} alt="cyberint" width="400"/>
+
+For information about Cyberint, see the [Cyberint website](https://cyberint.com/).
+
+## Test actions
+
+Before you start exploring the features of the Cyberint app, try test runs of each of the actions to learn specifics of usage. For general information about testing actions, see [Test action](/docs/platform-services/automation-service/automation-service-integrations/#test-action).
 
 ### Search Alerts
-The **Search Alerts** action is designed to search for alerts using criteria (filters) such as **Severity**, **Statuses**, datetime range. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-5.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/>
+The **Search Alerts** action is designed to search for alerts using criteria (filters) such as **Severity**, **Statuses**, datetime range. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-5.png')} style={{border:'1px solid gray'}} alt="cyberint" width="400"/>
 
-The execution result displays a table with most valuable information, but also you can switch to the JSON-output mode by clicking the `{}` button. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-6.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/> <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-7.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
+The execution result displays a table with most valuable information, but also you can switch to the JSON-output mode by clicking the `{}` button. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-6.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/> <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-7.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/>
 
 ### Get Alert Details
-The **Get Alert Details** action is designed to search for alerts by unique **Alert Ref Id**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-8.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/>
+The **Get Alert Details** action is designed to search for alerts by unique **Alert Ref Id**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-8.png')} style={{border:'1px solid gray'}} alt="cyberint" width="400"/>
 
-The execution result displays a table with most valuable information, but also you can switch to the JSON-output mode by clicking the `{}` button. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-9.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/> <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-10.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
+The execution result displays a table with most valuable information, but also you can switch to the JSON-output mode by clicking the `{}` button. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-9.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/> <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-10.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/>
 
 ### Update Alerts
 The **Update Alerts** action is designed to update an alert by **Alert Ref Ids** array.
@@ -54,9 +65,9 @@ The alert information available for update is:
 
 - **Status**. Available statuses:
   - Open 
-  - Acknowledged <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-11.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/>
+  - Acknowledged <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-11.png')} style={{border:'1px solid gray'}} alt="cyberint" width="400"/>
 
-The execution result displays a message **Alerts status updated successfully**. This result means successful result of an execution. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-12.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/> <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-13.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
+The execution result displays a message **Alerts status updated successfully**. This result means successful result of an execution. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-12.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/> <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-13.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/>
 
 ### Close Alerts
 The **Close Alerts** action is designed to close an alert by **Alert Ref Ids** array with providing a Closure reason and description if applicable.
@@ -74,9 +85,9 @@ The alert information available for closing is:
   - Asm no longer detected 
   - Asm manually closed 
   - Other
-- **Closure reason description**. Can be set only if the chosen **Closure reason** is **Other**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-14.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/>
+- **Closure reason description**. Can be set only if the chosen **Closure reason** is **Other**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-14.png')} style={{border:'1px solid gray'}} alt="cyberint" width="400"/>
 
-The execution result displays a message **Alerts is closed successfully**. This result means successful result of an execution. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-15.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/> <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-16.png')} style={{border:'1px solid gray'}} alt="cyberint" width="750"/>
+The execution result displays a message **Alerts is closed successfully**. This result means successful result of an execution. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-15.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/> <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberint/cyberint-16.png')} style={{border:'1px solid gray'}} alt="cyberint" width="500"/>
 
 ## Change Log
 

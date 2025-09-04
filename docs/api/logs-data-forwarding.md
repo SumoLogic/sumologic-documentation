@@ -24,7 +24,6 @@ The Logs Data Forwarding Management API allows you to forward log data from a Pa
 | DE         | https://api.de.sumologic.com/docs/#tag/logsDataForwardingManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/logsDataForwardingManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/logsDataForwardingManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/logsDataForwardingManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/logsDataForwardingManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/logsDataForwardingManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/logsDataForwardingManagement     |

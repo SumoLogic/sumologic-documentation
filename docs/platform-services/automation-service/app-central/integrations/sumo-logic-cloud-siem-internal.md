@@ -6,10 +6,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem-internal" width="100"/>
 
-***Version: 1.15  
-Updated: Apr 5, 2024***
+***Version: 1.17  
+Updated: July 4, 2025***
 
-Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic system calls
+This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Cloud SIEM entities to correlate signals and insights through Sumo Logic system calls. Because this integration operates internally with Sumo Logic, no additional authentication is needed. (The [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/) automation integration requires additional authentication.) 
+
+For information about Cloud SIEM, see [Get Started with Cloud SIEM](/docs/cse/get-started-with-cloud-siem/).
 
 ## Actions
 
@@ -34,6 +36,10 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 * **Update Match List Item** (*Notification*) - Update Item in Match List.
 * **Verify Entity Type** (*Enrichment*) - Check the Entity Type.
 
+## Configure Sumo Logic Cloud SIEM Internal in Automation Service and Cloud SOAR
+
+No configuration is needed. Sumo Logic Cloud SIEM Internal executes without additional authentication.
+
 ## Change Log
 
 * September 20, 2023 - First Upload
@@ -43,3 +49,8 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
     + Extended output mapping for Get Signal action
 * April 5, 2024 (v1.15)
     + The integration formerly known as "CSE Tools" has been renamed to "Sumo Logic Cloud SIEM Internal"
++ July 3, 2025 (v1.16)
+    + Tested out the Insight Output Mapping action for beta change
++ July 4, 2025 (v1.17)
+    + Fixed the beta change behavior and modified the hint for Insight Output Mapping action for clarity
+

@@ -1,5 +1,7 @@
-To setup source in the existing collector and install the app, do the following:
-
+To set up the source in the existing collector and install the app, do the following:
+:::note
+    Next-Gen App: To install or update the app, you must be an account administrator or a user with Manage Apps, Manage Monitors, Manage Fields, Manage Metric Rules, and Manage Collectors capabilities depending upon the different content types part of the app.
+:::
 1. Select **App Catalog**.
 1. In the 🔎 **Search Apps** field, run a search for your desired app, then select it.
 1. Click **Install App**.
@@ -7,16 +9,14 @@ To setup source in the existing collector and install the app, do the following:
     Sometimes this button says **Add Integration**.
     :::
 1. In the **Set Up Collection** section of your respective app, select **Use an existing Collector**.
-1. From the **Select Collector** dropdown, select the collector that you want to setup your source with and click **Next**.
+1. From the **Select Collector** dropdown, select the collector that you want to set up your source with and click **Next**.
 1. Configure the source as specified in the `Info` box above, ensuring all required fields are included.
 1. In the **Configure** section of your respective app, complete the following fields.
-    1. **Key**. Select either of these options for the data source.
-        * Choose **Source Category** and select a source category from the list for **Default Value**.
-        * Choose **Custom**, and enter a custom metadata field. Insert its value in **Default Value**.
+    1. **Field Name**. If you already have collectors and sources set up, select the configured metadata field name (eg _sourcecategory) or specify other custom metadata (eg: _collector) along with its metadata **Field Value**.
 1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 **Post-installation**
 
 Once your app is installed, it will appear in your **Installed Apps** folder, and dashboard panels will start to fill automatically.
 
-Each panel slowly fills with data matching the time range query and received since the panel was created. Results will not immediately be available, but will update with full graphs and charts over time.
+Each panel slowly fills with data matching the time range query received since the panel was created. Results will not immediately be available but will be updated with full graphs and charts over time.
