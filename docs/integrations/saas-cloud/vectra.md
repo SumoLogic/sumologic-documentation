@@ -17,7 +17,7 @@ This app includes [built-in monitors](#vectra-alerts). For details on creating c
 
 ## Log types
 
-This app uses Sumo Logic’s [Vectra Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vectra-source/) to collect detections from the Vectra platform.
+This app uses Sumo Logic’s [Vectra Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vectra-source/) to collect [detections](https://vectranetworks.my.salesforce.com/sfc/p/#i0000000HOyr/a/Rg00000528gW/UZpXGNk2iGlooWdyT5HpB3eOX39csgrXRdjzKaKpJVY) from the Vectra platform.
 
 ### Sample log message
 
