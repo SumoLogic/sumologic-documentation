@@ -123,7 +123,7 @@ Kryterion support is available during the exam. Use Live Chat or submit a reques
 
 ### Will I see preliminary exam results on the screen upon completing my test?
 
-Yes. A Pass/Fail result will appear on the screen after submission and once you exit the secure proctored environment.
+Yes. A pass/fail result will appear on the screen after submission and once you exit the secure proctored environment.
 
 ### What is the retake policy? Will I have to pay again?
 
