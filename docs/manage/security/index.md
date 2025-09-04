@@ -18,7 +18,7 @@ The security options are available only to administrators.
 
  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access security options, in the main Sumo Logic menu select **Administration > Security**.
 
- [**New UI**](/docs/get-started/sumo-logic-ui). To access security options, in the top menu select **Administration**, and then select options under **Account Security Settings**.
+ [**New UI**](/docs/get-started/sumo-logic-ui). To access security options, in the main Sumo Logic menu select **Administration**, and then select options under **Account Security Settings**.
 
 In this section, we'll introduce the following concepts:
 
