@@ -253,94 +253,38 @@ html[data-theme='light'] {
 }
 
 
-/* General styling for the Support dropdown button */
+/* Styling for Support button */
 .support-menu-trigger {
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: white !important; /* Text color should be white */
+  color: white !important;
   border: 1px solid rgba(255, 255, 255, 0.2); /* Border matching the style */
   border-radius: 3px;
   padding: 5px 15px;
   font-size: 13px;
   font-weight: 600;
   background-color: #2c3e50; /* Dark background color similar to "Demo" */
-  margin-left: 8px; /* Space between text and the arrow */
+  margin-left: 8px; /* Space after "Start free trial" */
 }
 
-/* Add hover effect similar to the "Demo" button */
+/* Hover effect similar to "Demo" button */
 .support-menu-trigger:hover {
   background-color: #34495e; /* Slightly lighter on hover */
   border-color: rgba(255, 255, 255, 0.5); /* Change border color on hover */
 }
 
-/* Add the button text using ::before if not present */
 .support-menu-trigger::before {
-  content: 'Support'; /* Replace with your desired text */
+  content: 'Support';
   font-size: 13px;
-  color: white; /* Set the text color to white */
-  margin-right: 8px; /* Space between text and the arrow */
-}
-
-/* Styling the arrow (SVG) */
-.support-menu-trigger svg {
-  width: 9px;
-  height: 6px;
-  fill: none;
-  stroke: white; /* Make the arrow white by default */
-}
-
-/* Media query for light mode */
-@media (prefers-color-scheme: light) {
-  .support-menu-trigger {
-    stroke: white;
-  }
-}
-
-/* Media query for dark mode */
-@media (prefers-color-scheme: dark) {
-  .support-menu-trigger svg {
-    stroke: white; /* Ensure the arrow is white for dark mode */
-  }
-}
-
-/* Style the dropdown wrapper */
-.support-menu-wrapper {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  background-color: #34495e; /* Background color for dropdown */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  margin-top: 8px;
-}
-
-/* Show the dropdown when open */
-.support-menu[open] .support-menu-wrapper {
-  display: flex;
-}
-
-/* Dropdown option styling */
-.support-option {
-  padding: 5px 10px;
   color: white;
-  cursor: pointer;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .support-option:hover {
   background-color: #2c3e50;
 }
-
-/* SVG icon in each option */
-.support-option .support-icon svg {
-  width: 16px;
-  height: 18px;
-  fill: none;
-  stroke: white;
-  margin-right: 8px;
-}
-
 
 
 //Free Trial nav button
