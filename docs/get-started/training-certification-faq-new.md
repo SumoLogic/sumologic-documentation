@@ -147,5 +147,5 @@ See also the following resources:
 -->
 
 For assistance with registration, scheduling, or technical issues, contact our exam partner, Kryterion:
-* [Kryterion Candidate Support](https://kryterion.force.com/support/s/contactsupport?language=en_US)
+* [Kryterion Candidate Support](https://www.kryterion.com/fast-help-current-and-future-test-candidates/)
 * [Online Testing Requirements](https://kryterion.my.site.com/support/s/article/Online-Testing-Requirements?language=en_US)
