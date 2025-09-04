@@ -329,7 +329,7 @@ Override:
 Output:
 <img src={useBaseUrl('img/metrics/metric-query-aggregated-with-override.png')} alt="Aggregated with override series output" style={{border: '1px solid gray'}} width="400" />
 
-## Tabular stats for time series panels
+### Tabular stats for time series panels
 
 Use the **Bottom** or **Right** positions with table format and include aggregates like `sum`, `avg`, and `latest` to enable summary stats in the same panel for time series charts.
 
@@ -405,5 +405,92 @@ C query:
 
 ## Rates and counters
 
+Many metric values are sent as a cumulative counter, for example, `kube_pod_container_status_restarts_total`, or need to be graphed as a rate over time such as requests/sec.
+
+To graph, typically we want to calculate the rate of change and sum that in each time window using one of various possible syntaxes. A [delta operator](/docs/metrics/metrics-operators/delta/) often simplest to use, but there are lots of options for similar results:
+* Use [quantize](/docs/metrics/metrics-operators/quantize/) to calculate rates/time: `| quantize using rate`
+* Use [delta](/docs/metrics/metrics-operators/delta/) for increasing counters, for example, total restarts: `| delta counter`
+* Use [rate](/docs/metrics/metrics-operators/rate/) for increasing counter rate/time: `| rate increasing over 1m`.
+* Use [sum](/docs/metrics/metrics-operators/sum/) to turn value over X bucket into rate/time: `| sum | eval 1000 * _value / _granularity`
+
+### Counter example
+
+Following is a counter example showing pod restarts using the `kube_pod_container_status_restarts_total` metric:
+
+```
+metric=kube_pod_container_status_restarts_total 
+| quantize using max | delta counter 
+| topk(100,max) 
+| sum by pod
+```
+
+Note that:
+* `quantize` using `max` not `avg` (default), or you will get odd fractional results.
+* `delta` is the easiest operator to measure counter change. `rate` will produce fractions not integer.
+* `sum` the delta of the max rollup, and use a stacked bar for an insightful view.
+
+Following is the correct way to structure your query to show pod restarts. Use `max` with `quantize`, the `delta` operator in counter mode, and `topk` to show only 100 most restarts. The stacked chart clearly shows the restart rate by pod.<br/><img src={useBaseUrl('img/metrics/metric-query-correct-pod-restart.png')} alt="Correct query for pod restart" style={{border: '1px solid gray'}} width="800" />
+
+Following is an incorrect way to query for pod restarts. It uses `sum` over time for the cumulative total of restarts per container.<br/><img src={useBaseUrl('img/metrics/metric-query-wrong-pod-restart.png')} alt="Incorrect query for pod restart" style={{border: '1px solid gray'}} width="800" />
+
 ## Managing DPM and high cardinality
 
+### Understanding DPM drivers
+
+Metrics are billed in data points per minute (DPM), typically at a rate of 3 credits per 1000 DPM averaged over each 24 hour period. `DPM = metrics * entities * total cardinality` of all tag names/values, so sending more metric/tag combinations increases cost. 
+
+We have three tools in Sumo Logic to track DPM usage and drill down into drivers of high metric cardinality:
+* The account page shows metric consumption per day over time:<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-1.png')} alt="Account page showing data points per minute" style={{border: '1px solid gray'}} width="800" />
+* The **Metrics** dashboard in the [Data Volume app](/docs/integrations/sumo-apps/data-volume/) can track high DPM consumption per metadata fields such as `collector`, `source`, and `sourcecategory`:<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-2.png')} alt="Choosing the Metics dashboard" style={{border: '1px solid gray'}} width="600" /><br/><img src={useBaseUrl('img/metrics/metric-query-dpm-2a.png')} alt="Metics dashboard showing DPM per metadata field" style={{border: '1px solid gray'}} width="800" />
+* [Metrics Data Ingestion](/docs/metrics/metrics-dpm/) is a filterable admin UI to show detailed DPM and cardinality per metric name or tag. Advanced users can make custom log searches versus the underlying audit indexes for this source.<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-3.png')} alt="Ingestion per metric" style={{border: '1px solid gray'}} width="600" /><br/><img src={useBaseUrl('img/metrics/metric-query-dpm-3a.png')} alt="Ingest per dimension" style={{border: '1px solid gray'}} width="450" />
+
+### Metric DPM versus credits
+
+More data points require more credits, and therefore, more cost.
+
+Key factors that result in higher DPM are:
+* [Number of hosts, sources, or entities](#number-of-hosts-sources-or-entities)
+* [Increase in cardinality](#increase-in-cardinality)
+* [Increase in number of metrics](#increase-in-number-of-metrics)
+* [Frequency of data points](#frequency-of-data-points)
+
+Excessively high cardinality for a metric or single tag might trigger rate limiting or blocking of that metric. See [Disabled Metrics Sources](/docs/metrics/manage-metric-volume/disabled-metrics-sources/).
+
+#### Number of hosts, sources, or entities
+
+Having more of something sending metrics means more DPM. For example, ff you sent 50 metrics per host and have 1000 hosts, that will be 50,000 DPM.
+
+In some use cases you can filter out unwanted hosts. For example, you could filter by Kubernetes namespace or AWS tag to reduce the total number of metric entities.
+
+#### Increase in cardinality
+
+Sending dimension (tag) values for metrics with high cardinality will result in high data points per minute for that metric. Also high cardinality can make analyzing and interpreting metrics difficult.
+
+The cardinality (and hence DPM) of a single metric is the product of all possible cardinalities of tags. For example:
+
+* host x10 and service x20 = up to 200 DPM 
+* host x10 and service x20  and url_path x 5000 = up to 10,000 DPM
+* host x10 and service x20  and thread_id x1000s and customer id and x2M customers = millions (very likely to get rate limited)
+* host x10 and service x20 and epoc nano sec `1737579476122` = every data point becomes a unique time series producing millions (very likely to get rate limited)
+
+Ideally, tag value cardinality should be low (less than 100). If you need very high cardinality, logs are usually a better option. Log query engine is much more flexible and can handle very high cardinality by design.
+
+Never send high cardinality tag values where it's likely to have more than a few 1000 values per tag such as:
+* Timestamps or epoch times
+* User or customer IDs or usernames (where there could be more than 50k possible values, possibly millions)
+* Query string, for example, on a search form where any search text is a tag
+URL or paths with high cardinality such as unique per customer URLs (for example, `http://foo.bar/473639029/account`
+
+At best, metrics with 10k of tag values will be expensive to ingest and hard to query, and at worst, they will be blocked.
+
+#### Increase in number of metrics
+
+If you see an increase in the number of metric series, look for new metric sources onboarded and consider filtering the metrics sent. Most metrics pipelines offer configuration options to filter the metrics sent. For example, open source metrics systems like Telegraf offer plugin configuration to include or exclude metrics rather than send all of them, for example:
+* [Metrics filtering in a Kubernetes collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/filtering.md#metrics)
+* [Using Telegraf filtering such as `fieldpass`](https://github.com/rjury-sumo/sumo-telegraf-examples/blob/main/config/linux.telegraf.conf) to send only valuable metrics, not all metrics in the plugin (default).
+
+#### Frequency of data points
+
+Sending one data point per minute will make one DPM per entity x tag cardinality. But sending four data points per minute (every 15s) will make four DPM per entity x tag cardinality. Check the default frequency of metric sources and reduce the frequency to reduce DPM.
+
+A common use case is reducing scape interval so 1m or 2m in Kubernetes collection. Steps for Kubernetes collection v4 (OpenTelemetry) and v3 (Prometheus) can be found [here](/docs/send-data/kubernetes/best-practices/#changing-scrape-interval-for-opentelemetry-metrics-collection).
