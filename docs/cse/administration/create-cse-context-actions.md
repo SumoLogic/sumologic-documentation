@@ -56,7 +56,7 @@ Watch this micro lesson to learn more about how to use context actions.
 
 ## Configure a context action
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Context Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Context Actions**. You can also click the **Go To...** menu at the top of the screen and select **Context Actions**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Context Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Context Actions**. You can also click the **Go To...** menu at the top of the screen and select **Context Actions**.  
 1. On the **Context Actions** tab click **+ Add Context Action**.
 1. Create the context action.  <br/><img src={useBaseUrl('img/cse/configured-action.png')} alt="Configure action" style={{border: '1px solid gray'}} width="400"/>
     1. **Name**. Enter a name for the context action. 

@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To view details about an OpenTelemetry Collector:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Collection > OpenTelemetry Collector**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Collection** select **OpenTelemetry Collector**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collector**. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collection-page.png')} alt="opentelemetry-collection-page" style={{border:'1px solid gray'}} width="1000"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Collection > OpenTelemetry Collector**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Collection** select **OpenTelemetry Collector**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collector**. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collection-page.png')} alt="opentelemetry-collection-page" style={{border:'1px solid gray'}} width="1000"/>
     - **Name**. Name of the OpenTelemetry Collector.
     - **Health**. Displays the health status of the collector.
     - **Operating System**. Displays the operating system where the collector is installed.
