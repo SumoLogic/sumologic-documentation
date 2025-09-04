@@ -44,7 +44,7 @@ Improvements include:
    * *Sumo Logic Certified Fundamentals User*
    * *Sumo Logic Certified Search Mastery User*
    * *Sumo Logic Certified Admin*
-   * *Sumo Logic Certified Cloud Infrastructure Security Analyst*
+   * *Sumo Logic Certified Logs for Security Analyst*
    * *Sumo Logic Certified Cloud SIEM Practitioner*
    * *Sumo Logic Certified Metrics Analyst*
    * *Sumo Logic Certified Observability Practitioner*
