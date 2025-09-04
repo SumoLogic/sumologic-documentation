@@ -47,7 +47,6 @@ Improvements include:
    * *Sumo Logic Certified Logs for Security Analyst*
    * *Sumo Logic Certified Cloud SIEM Practitioner*
    * *Sumo Logic Certified Metrics Analyst*
-   * *Sumo Logic Certified Observability Practitioner*
 * **Live, remote proctoring**. Exams are administered by Kryterion with live proctors to ensure fairness and integrity.
 * **Digital badges**. After passing your exam, you’ll receive a Credly-issued badge you can share on LinkedIn, your resume, and within your organization.
 
