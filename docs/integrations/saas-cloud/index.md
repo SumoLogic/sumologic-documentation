@@ -449,6 +449,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/zimperium"><img src={useBaseUrl('img/integrations/zimperium/zimperium-logo.png')} alt="icon" width="100"/><h4>Zimperium</h4></a>
+  <p>Identify security threats and incidents on mobile devices.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/zoom"><img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="icon" width="50"/><h4>Zoom</h4></a>
   <p>Monitor your organization's Zoom performance, security, and user activity.</p>
   </div>
