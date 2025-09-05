@@ -93,7 +93,7 @@ When you create a Microsoft Exchange Trace Logs Source, you add it to a Hosted C
 
 To configure a Microsoft Exchange Trace Logs Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Search for and select **MS Exchange Trace Logs**.
 4. Enter a **Name** for the Source. The description is optional.

@@ -150,7 +150,7 @@ The following task shows you how to create a custom field for a collector. In 
 
 To add a custom field to a collector, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. Select the collector to which you want to add a custom key-value pair. In this example, we've selected the Falco collector.<br/> ![MM_Collection_Select_Collector.png](/img/kubernetes/MM_Collection_Select_Collector.png)<br/>
     The Edit Collector dialog appears.
 1. Click **Add Field**.<br/>  ![MM_Add-Field.png](/img/kubernetes/MM_Add-Field.png)

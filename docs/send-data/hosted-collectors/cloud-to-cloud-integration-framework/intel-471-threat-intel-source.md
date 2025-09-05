@@ -38,7 +38,7 @@ When you create an Intel471 Threat Intel source, you add it to a Hosted Collect
 
 To configure an Intel471 Threat Intel source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Intel471 Threat Intel**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
