@@ -26,7 +26,7 @@ To view details about an OpenTelemetry Collector:
         - **Collector Version**. The collector version with which the collector was created.
         - **Source Templates**. Displays the number of source templte 
         - **Health**. Displays the health status of the collector.
-        - **Time Zone**. Displays the selected time zone or the default timezone of your browser while creating or editing the collector.
+        - **Time Zone**. Displays the selected time zone or the default timezone (`(UTC) Etc/UTC`).
         - **Collector Tags**. Displays the tags linked with the selected collector, which helps in searching and managing the collector. To add or edit the tags, refer to the [Collector Tags](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#collector-tags).
         - **Data Ingested**. Displays the histogram which shows data ingested in last hour. This histogram timeline reflects the data ingestion timestamp as closely as possible, but minor variations may occur.
             :::note
