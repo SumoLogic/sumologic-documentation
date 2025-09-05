@@ -72,20 +72,17 @@ Entity names have a limit of 512 characters. If an entity's name value is 512 ch
 
 <img src={useBaseUrl('img/cse/entities-page-2.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 
-
 | Letter | Description |
 |:--|:--|
-| a | This area shows the total number of unique entities in Cloud SIEM. |
-| b | In the **Filters** area, you can filter the list of entities by activity score, hostname, IP address, username, tags, type, and suppressed. |
-| c | In this area you can sort entities by activity score, name, or type.  |
-| d | The Import Metadata option allows you to upload a .csv file of updates to entity tags, suppression state, and criticality, as described in [Update multiple entities](#update-multiple-entities). |
-| e | Shows the entity type and its value.  |
-| f | If an entity has the **Suppressed** indicator, that means that signals will not be fired on the entity. |
-| g | The **Criticality** column shows whether a [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the entity. A criticality adjusts the severity of signals for specific entities based on some risk factor or other consideration. If a criticality hasn't been assigned to an entity, the column contains "default". |
-| h | The current activity score for the entity, which by default is the sum of the severities of the signals that have fired on the entity over the previous two weeks. For more information, see [Understanding entity activity scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic. |
-| i | The total amount of signal severity for the entity. |
-
-If you see a link below the entity value, it’s a [tag](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/). You can click it to filter entities by that tag. 
+| a | **Filters**. Filter the list of entities by values such as signal severity total, activity score, criticality, indicator, sensor zone, suppressed, tags, type, and value. |
+| b | **Import Metadata**. Upload a .csv file of updates to entity tags, suppression state, and criticality, as described in [Update multiple entities](#update-multiple-entities). |
+| c | **Checkboxes**. Select checkboxes to [update multiple entities](#update-multiple-entities). 
+| d | **Entity**. Displays the entity name. |
+| e | **Entity Type**. Shows the entity type and its value.  |
+| f | **Activity Score**. The current activity score for the entity, which by default is the sum of the severities of the signals that have fired on the entity over the previous two weeks. For more information, see [Understanding entity activity scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic. |
+| g | **Signal Severity Total**. The total amount of signal severity for the entity. |
+| h | **Suppressed Lists**. If an entity is on a suppressed list, that means that signals will not be fired on the entity. |
+| i | **Criticality**. Shows whether a [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the entity. A criticality adjusts the severity of signals for specific entities based on some risk factor or other consideration. If a criticality hasn't been assigned to an entity, the column contains "default". | 
 
 ## About the entities details page
 
@@ -149,17 +146,15 @@ or criticality for one or more entities.
 ### Update entities from the UI
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  
-1. Note that there is a checkbox at the left end of each entity row, and one above the entities list. <br/><img src={useBaseUrl('img/cse/entities-page.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
-1. Click the top checkbox to select all of the entities on the page, or click the checkbox next to each entity you want to update. 
-1. Note that once you select an entity, three options appear at the top of the entities list. <br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" style={{border: '1px solid gray'}} width="800"/> 
-<br/>See the instructions for each option below:
-   * [Update tags](#update-tags)
-   * [Update suppression](#update-suppression)
-   * [Update criticality](#update-criticality)
+1. Note that there is a checkbox at the left of each entity row, and one above the entities list. Click the top checkbox to select all of the entities on the page, or click the checkbox next to each entity you want to update. 
+1. Note that once you select checkboxes for multiple entities, a box slides out showing three options above the list of selected entities. See the instructions for each option below:
+   * [Change Tags](#change-tags)
+   * [Change Suppression](#change-suppression)
+   * [Change Criticality](#change-criticality)<br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" style={{border: '1px solid gray'}} width="800"/>
 
-#### Update tags
+#### Change tags
 
-1. After selecting the entities you want to update, click **Update Tags**. 
+1. After selecting the entities you want to update, click **Change Tags**. 
 1. Click the down arrow to display the options: <br/><img src={useBaseUrl('img/cse/tag-options.png')} alt="Tag options" style={{border: '1px solid gray'}} width="400"/>
    * **Add.** Select this option to add one or more tags to the entity, without affecting any tags already assigned to the entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select  multiple tags to add.
    * **Remove**. Select his option to remove one or more tags from the entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select multiple tags to remove. If a selected entity doesn't have the specified tags, no change will be made to the entity. 
@@ -168,19 +163,17 @@ or criticality for one or more entities.
     When you use the **Replace** option, be sure to specify new tags. If you do not, the existing tags will still be removed.
     :::
 1. As you select tags, they’ll appear in the update popup. <br/><img src={useBaseUrl('img/cse/tags-to-add.png')} alt="Add tags to entities" style={{border: '1px solid gray'}} width="400"/>
-1. When you are done selecting tags, click **Update Entity Tags**.
+1. When you are done selecting tags, click **Confirm**.
 
-#### Update suppression
+#### Change suppression
 
-1. After selecting the entities you want to update, click **Update Suppression**. 
-1. The **Update Suppression** popup appears, with the suppression toggle set to **Not Suppressed**. <br/><img src={useBaseUrl('img/cse/before-suppression.png')} alt="Update suppression" style={{border: '1px solid gray'}} width="400"/>
-1. If you want to unsuppress the selected entities, click **Update Entity Suppression**. Otherwise, if you want to suppress the entity, toggle the slider to **Suppressed**, supply a comment if desired, and then click **Update Entity Suppression**. 
+1. After selecting the entities you want to update, click **Change Suppression**. A popup appears, with the suppression toggle set to **Don't Suppress**. <br/><img src={useBaseUrl('img/cse/before-suppression.png')} alt="Update suppression" style={{border: '1px solid gray'}} width="400"/>
+1. If you want to suppress the entities, toggle the slider to **Suppress**, supply a comment if desired, and then click **Confirm**. 
 
-#### Update criticality
+#### Change criticality
 
-1. After selecting the entities you want to update, click **Update Criticality**. 
-1. The **Update Criticality** popup appears. <br/><img src={useBaseUrl('img/cse/update-criticalities.png')} alt="Update criticalities" style={{border: '1px solid gray'}} width="400"/>
-1. If you want to assign default criticality to the selected entities, click **Update Entity Criticality**. Otherwise, use the down arrow to view defined Criticalities, select one, and then click **Update Entity Criticality**.
+1. After selecting the entities you want to update, click **Change Criticality**. The **Change Criticality** popup appears. <br/><img src={useBaseUrl('img/cse/update-criticalities.png')} alt="Update criticalities" style={{border: '1px solid gray'}} width="400"/>
+1. If you want to assign default criticality to the selected entities, click **Confirm**. Otherwise, use the down arrow to view defined criticalities, select one, and then click **Confirm**.
 
 ### Import entity updates from a CSV file
 
