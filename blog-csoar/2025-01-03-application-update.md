@@ -3,7 +3,7 @@ title: January 03, 2025 - Application Update
 keywords:
   - sumo logic
   - cloud soar
-image: https://www.sumologic.com/help/img/reuse/rss-image.jpg
+image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 hide_table_of_contents: true
 ---
 
