@@ -55,7 +55,7 @@ To contribute to Sumo Docs, ensure you have the following tools installed:
 
 ## Apply your changes
 
-Make edits using [Markdown syntax](https://help.sumologic.com/docs/contributing/style-guide/#markdown). Keep contributions concise, informative, and aligned with our guidelines.
+Make edits using [Markdown syntax](./docs/contributing/style-guide/#markdown). Keep contributions concise, informative, and aligned with our guidelines.
 
 Refer to our [Contributor Guidelines](https://help.sumologic.com/docs/contributing/create-edit-doc/#edit-a-doc) for more information on:
 - Markdown editing
@@ -63,6 +63,7 @@ Refer to our [Contributor Guidelines](https://help.sumologic.com/docs/contributi
 - Testing your changes
 
 All contributions must follow our [Style Guide](https://help.sumologic.com/docs/contributing/style-guide/).
+All contributions must follow our [Style Guide](/docs/contributing/style-guide/).
 
 ## Building locally
 
