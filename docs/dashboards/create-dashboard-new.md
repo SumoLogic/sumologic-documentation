@@ -1,7 +1,7 @@
 ---
 id: create-dashboard-new
 title: Create a Dashboard
-description: Learn how to create your own custom Dashboard with a panel and query, then customize a chart and add the chart to the dashboard.
+description: Learn how to create your own custom Dashboard with a panel and query, then customize a chart and the chart to the dashboard.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

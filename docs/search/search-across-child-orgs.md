@@ -6,16 +6,6 @@ description: Learn how to perform the search for the selected child org.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
- <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-:::info
-This feature is in Beta. For more information, contact your Sumo Logic account executive.
-:::
-
 You can run a log search query in the selected child org under a parent org. All the results obtained from this search will have the data identified from the selected child org.
 
 Follow the steps below to perform a child org-level search:
@@ -33,3 +23,5 @@ Follow the steps below to perform a child org-level search:
 :::
 
 For more information about the Log Search, refer to [Search Basics](/docs/search/get-started-with-search/search-basics/).
+
+To view your log data in a dashboard, refer to [Create a Dashboard for Child Orgs (MSSPs)](/docs/dashboards/dashboard-child-orgs).
