@@ -62,7 +62,6 @@ Refer to our [Contributor Guidelines](https://help.sumologic.com/docs/contributi
 - Proposing bug fixes
 - Testing your changes
 
-All contributions must follow our [Style Guide](https://help.sumologic.com/docs/contributing/style-guide/).
 All contributions must follow our [Style Guide](docs/contributing/style-guide.md).
 
 ## Building locally
