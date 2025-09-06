@@ -26,7 +26,7 @@ Logs Query Assist is also supported in [Dashboards](/docs/dashboards) and [Sched
 2. **Leverage syntax and schema suggestions**. As you type, watch for real-time suggestions for fields and operators. Use the arrow keys to navigate suggestions and press `Tab` to autocomplete.
 3. **Take advantage of predictions**. Use partial query predictions to build queries faster and more accurately.
 4. **Review and correct errors**. Address flagged errors before running your query to ensure it executes as intended.  
-5. **Edit queries with the Copilot**. If you’re using Copilot, modify your query directly in the [code editor field](/docs/search/copilot/#edit-query-code) and utilize autocomplete suggestions for further refinement.
+5. **Edit queries with Mobot**. If you’re using Mobot, modify your query directly in the [code editor field](/docs/search/mobot/#edit-query-code) and utilize autocomplete suggestions for further refinement.
 
 ## Features
 
@@ -69,7 +69,7 @@ Suggestions are predictive in nature and may not be comprehensive or completely 
 
 <!-- hold off
 ### Need more help?
-Try [Sumo Logic Copilot](/docs/search/copilot), our AI-powered assistant that helps you write and execute natural language log search queries.
+Try [Sumo Logic Mobot](/docs/search/mobot), our AI-powered assistant that helps you write and execute natural language log search queries.
 Copilot with Query Assist video: https://docs.google.com/presentation/d/1HCaXROM6zrnapLaLo3gDm-S1uQPGAS0p9AquuLwiFXA/edit#slide=id.g3145b7936cd_0_8 -->
 
 ## Turn off autocomplete
