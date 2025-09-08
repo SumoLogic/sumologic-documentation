@@ -13,7 +13,7 @@ This page has information about creating and managing custom insight statuses.
 
 To view insight statuses:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Workflow** select **Statuses**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Workflow** select **Insight Statuses**. You can also click the **Go To...** menu at the top of the screen and select **Insight Statuses**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Workflow** select **Insight Statuses**. You can also click the **Go To...** menu at the top of the screen and select **Insight Statuses**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Workflow** select **Statuses**. 
 1. This screenshot of the **Insight Statuses** tab shows the three insight statuses that are preconfigured:
     * **New**. Insights that have not been worked on yet.
     * **In Progress**. Insights that are being investigated. If you want to create custom statuses to represent different types of "in progress" states, you can click the **Enabled** toggle to disable the default **In Progress** status to reduce confusion.
@@ -25,7 +25,7 @@ Preconfigured insight statuses cannot be edited or deleted. You can however crea
 
 To create a custom insight status:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the top Cloud SIEM menu select **Configuration**, and then under **Workflow** select **Statuses**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Workflow** select **Insight Statuses**. You can also click the **Go To...** menu at the top of the screen and select **Insight Statuses**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Workflow** select **Insight Statuses**. You can also click the **Go To...** menu at the top of the screen and select **Insight Statuses**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the top Cloud SIEM menu select **Configuration**, and then under **Workflow** select **Statuses**. 
 1. On the **Insight Statuses** tab, click **+ Add Status**.
 1. On the **Add Insight Status** popup, enter a name and description for the status. 
 1. Click **Color** to select a color for the status. The color will appear on the status on the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display).
