@@ -47,9 +47,9 @@ OpenTelemetry Collectors can automatically parse most timestamps without any is
    * To edit the timestamp settings for an existing Source template, navigate to the source template. Then click **Edit** to the right of the Source name and go to Step 2.<br/><img src={useBaseUrl('img/send-data/source-template-edit.png')} alt="Screenshot showing the editing interface for a source template in Sumo Logic, highlighting the section for editing advanced options including timestamp settings" style={{border: '1px solid gray'}} width="400"/>
 1. Navigate to the **Timestamp Parsing** section and select **Specify the format** and enter the below details:
     1. **Select Time Zone**. Select the timezone of your choice from the drop-down while parsing a timestamp. By default, the timezone is set to `(UTC) Etc/UTC`. The available locations depend on the local IANA Time Zone database. For more examples, refer to the [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-edit-timezone.png')} alt="edit timezone" style={{border: '1px solid gray'}} width="400" />
-      :::note
-      Ensure that the OpenTelemetry collector is enabled to edit the timezone.
-      :::
+          :::note
+          Ensure that the OpenTelemetry collector is enabled to edit the timezone.
+          :::
     1. **Format**. Specify the exact layout of the timestamp to be parsed. For example, `- %Y-%m-%dT%H:%M:%S.%LZ`. To learn more about the formatting rules, refer to [this guide](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/internal/coreinternal/timeutils/internal/ctimefmt/ctimefmt.go#L68).
     1. **Timestamp locator**. Use a [Go regular expression](https://github.com/google/re2/wiki/Syntax) to match the timestamp in your logs. Ensure the regular expression includes a named capture group called `timestamp_field`.<br/><img src={useBaseUrl('img/send-data/st-timestamp-parsing.png')} alt="Screenshot of the Timestamp parsing section for logs in Sumo Logic, focusing on the timestamp format settings" style={{border: '1px solid gray'}} width="400" />
 
