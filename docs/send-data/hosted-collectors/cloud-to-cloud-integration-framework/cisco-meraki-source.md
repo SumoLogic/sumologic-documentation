@@ -22,6 +22,7 @@ The Cisco Meraki Source provides a secure endpoint to receive data from the Mer
 | Every 15 Minutes | [Get Organization Configuration Changes](https://developer.cisco.com/meraki/api-v1/#!get-organization-configuration-changes)       |
 | Every 15 Minutes | [Get Network Events](https://developer.cisco.com/meraki/api-v1/#!get-network-events)                           |
 | Every 15 Minutes | [Get Network Wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal)             |
+| Every 15 Minutes | [Get Network Traffic Events](https://developer.cisco.com/meraki/api-v1/get-network-traffic/)                        |
 
 ## Setup
 
@@ -62,8 +63,9 @@ To configure Cisco Meraki Source:
 1. **Base URL**. It refers to the default URL where your Meraki account is hosted. If you are located in China, you have the option to modify the base URL.
 1. **API Key**. Provide the API key you generated from your Meraki account.
 1. **Meraki Organization ID**. Provide the numeric Meraki organization ID of the Meraki org you want to collect data from. You can only provide one ID. Please create multiple sources for multiple Meraki organizations.
-1. **Network Event Collection**. Enable or disable this option to collect information about your Meraki Networks, their network events, and wireless Air Marshal events.
-1. (Optional) The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
+1. **Network Event Collection**. Enable or disable this option to collect information about your Meraki Networks, their network events, wireless Air Marshal, and network traffic events.
+1. (Optional) The **Polling Interval** is set to 900 seconds by default, you can adjust it based on your needs.
+1. (Optional) The **Infra Polling Interval** is set to 24 hours by default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
 
 ## JSON schema
@@ -87,7 +89,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | baseURL | String | Yes | `null` | Region URL of the Cisco Meraki application. |  |
 | apiSecretKey | String | Yes | `null` | Cisco Meraki API secret key. |  |
 | merakiOrg | String | Yes | `null` | Cisco Meraki Organization ID. |  |
-| pollingInterval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
+| pollingInterval | Integer | No | 900 | This sets how often the Source checks for new data. |  |
+| infraPollingInterval | Integer | No | 24 | This sets how often the Source checks for organization and network info(In Hours). |  |
+| collectSecurityEvents | Boolean | No | `True` | Specify if you need to collect the security events. |  |
+| collectOrgConfigChangesEvents | Boolean | No | `True` | Specify if you need to collect the organization config changes events. |  |
+| collectAirMarshalEvents | Boolean | No | `True` | Specify if you need to collect the wireless air marshal events. |  |
+| collectNetworkEvents | Boolean | No | `True` | Specify if you need to collect the network events. |  |
+| collectNetworkTrafficEvents | Boolean | No | `True` | Specify if you need to collect the network traffic events. |  |
 
 ## Troubleshooting
 You may receive the follow error below if you enter an invalid Cisco Meraki organization ID in your configuration. Please follow the steps in the section [Gather Meraki Organization IDs](#gather-meraki-organization-ids) to ensure you are using an ID for a Meraki organization returned in that query.
