@@ -175,19 +175,13 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 ### User Inventory
 
-The **OneLogin - User Inventory** dashboard offers a centralized view of user account lifecycle and activity within the OneLogin environment.
-
-**Centralized User Overview**. Provides a single view of user account lifecycle and activity within the OneLogin environment.
-
-**Account Provisioning Metrics**. Tracks total users, invited users, never-logged-in accounts, pending approvals, and rejections.
-
-**Risk Detection**. Highlights issues like repeated failed logins, locked or inactive accounts, and password problems.
-
-**Usage Trends**. Visualizes user status and login activity to reveal patterns in user behavior.
-
-**Security Monitoring**. Includes detailed tables on lockouts, recent invites, and accounts with unchanged passwords.
-
-**Governance & Compliance Support**. Helps ensure strong user management practices, risk awareness, and regulatory compliance.
+The **OneLogin - User Inventory** dashboard offers a centralized view of user account lifecycle and activity within the OneLogin environment:
+* **Centralized user overview**. Provides a single view of user account lifecycle and activity within the OneLogin environment.
+* **Account provisioning metrics**. Tracks total users, invited users, never-logged-in accounts, pending approvals, and rejections.
+* **Risk detection**. Highlights issues like repeated failed logins, locked or inactive accounts, and password problems.
+* **Usage trends**. Visualizes user status and login activity to reveal patterns in user behavior.
+* **Security monitoring**. Includes detailed tables on lockouts, recent invites, and accounts with unchanged passwords.
+* **Governance and compliance support**. Helps ensure strong user management practices, risk awareness, and regulatory compliance.
 
 <img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OneLogin/OneLogin+-+User+Inventory.png' alt="OneLogin - User Inventory dashboard" />
 
