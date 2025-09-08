@@ -6,10 +6,6 @@ description: Learn how to perform the search for the selected child org.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::info
-This feature is in Beta. For more information, contact your Sumo Logic account executive.
-:::
-
 You can run a log search query in the selected child org under a parent org. All the results obtained from this search will have the data identified from the selected child org.
 
 Follow the steps below to perform a child org-level search:
