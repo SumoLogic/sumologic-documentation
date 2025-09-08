@@ -53,7 +53,7 @@ Data cannot be recovered once it gets deleted. Ensure that you have appropriatel
    :::
 1. Select the **Time Range** when the data was ingested.
 1. When you're done, click **Save**.
-1. Your request will be notified via email to the [users with approval access](#approve-the-deletion-request). You can check on your request in the **Status** column. <br/><img src={useBaseUrl('img/search/get-started-search/deletion-request-status.png')} alt="deletion request status" style={{border: '1px solid gray'}} width="400"/>
+1. An email about your request will be sent to the [users with approval access](#approve-the-deletion-request). You can check on your request in the **Status** column. <br/><img src={useBaseUrl('img/search/get-started-search/deletion-request-status.png')} alt="deletion request status" style={{border: '1px solid gray'}} width="400"/>
 
 ### From a Log Search
 
