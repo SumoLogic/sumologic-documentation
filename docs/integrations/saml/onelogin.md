@@ -106,7 +106,7 @@ To install the app, do the following:
 	1. Enter values for two data sources: 
 		- **Event logs data source**
 		- **User logs data source**
-    1. **Field Name**. If you already have collectors and sources set up, select the configured metadata field name (eg _sourcecategory) or specify other custom metadata (eg: _collector) along with its metadata **Field Value**.
+    1. **Field Name**. If you already have collectors and sources set up, select the configured metadata field name (for example, `_sourcecategory`) or specify other custom metadata (for example, `_collector`) along with its metadata **Field Value**.
 1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 **Post-installation**
