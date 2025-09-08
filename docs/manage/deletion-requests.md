@@ -95,7 +95,7 @@ To cancel a data deletion request:
 - To approve or reject a request, ensure you have the **Review Deletion Requests** capability. By default, **Manage Deletion Requests** and **View Deletion Requests** capabilities will be added if you have the **Review Deletion Requests** capability.
 :::
 
-Once the deletion request is created, it will be notified to the users who has the approval access. To approve or reject the request, follow the steps below:
+Once the deletion request is created, a notification will be sent to the users who have approval access. To approve or reject the request, follow the steps below:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Logs > Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**,  and then under **Logs** select Deletion Requests**. 
 1. Filter for the status with **Pending review**. <img src={useBaseUrl('img/search/get-started-search/pending-requests.png')} alt="filter for pending deletion requests" style={{border: '1px solid gray'}} width="800"/>
