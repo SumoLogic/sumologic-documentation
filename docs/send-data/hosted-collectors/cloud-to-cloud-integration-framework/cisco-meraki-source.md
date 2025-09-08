@@ -64,11 +64,11 @@ To configure Cisco Meraki Source:
 8. **API Key**. Provide the [API key](#vendor-configuration) you generated from your Meraki account. 
 9. **Meraki Organization ID**. Provide the numeric [Meraki organization ID](#vendor-configuration) of the Meraki org you want to collect data from. You can only provide one ID. Please create multiple sources for multiple Meraki organizations.
 10. **API Collection**. Choose the APIs below to collect data. Organization and Network details are fetched by default.
-  1. **Security Event Collection**
-  2. **Organization Configuration Changes Collection**
-  3. **Network Wireless Air Marshal Events Collection**
-  4. **Network Event Collection**
-  5. **Network Traffic Event Collection**
+    - **Security Event Collection**
+    - **Organization Configuration Changes Collection**
+    - **Network Wireless Air Marshal Events Collection**
+    - **Network Event Collection**
+    - **Network Traffic Event Collection**
 11. (Optional) The **Polling Interval** is set to 900 seconds by default. You can adjust this value as needed.
 12. (Optional) The **Infra Polling Interval** is set to 24 hours by default. You can adjust this value as needed.
 13. When you are finished configuring the Source, click **Save**.
