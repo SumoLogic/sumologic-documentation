@@ -1663,6 +1663,7 @@ module.exports = {
       ],
     },
     'search/query-assist',
+    'search/search-across-child-orgs',
     'search/optimize-search-performance',
     'search/optimize-search-partitions',
     'search/subqueries',
