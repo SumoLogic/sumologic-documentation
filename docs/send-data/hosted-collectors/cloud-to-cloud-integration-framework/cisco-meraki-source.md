@@ -90,7 +90,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | apiSecretKey | String | Yes | `null` | Cisco Meraki API secret key. |  |
 | merakiOrg | String | Yes | `null` | Cisco Meraki Organization ID. |  |
 | pollingInterval | Integer | No | 900 | This sets how often the Source checks for new data. |  |
-| infraPollingInterval | Integer | No | 24 | This sets how often the Source checks for organization and network info(In Hours). |  |
+| infraPollingInterval | Integer | No | 24 | This sets how often the Source checks for organization and network info (in hours). |  |
 | collectSecurityEvents | Boolean | No | `True` | Specify if you need to collect the security events. |  |
 | collectOrgConfigChangesEvents | Boolean | No | `True` | Specify if you need to collect the organization config changes events. |  |
 | collectAirMarshalEvents | Boolean | No | `True` | Specify if you need to collect the wireless air marshal events. |  |
