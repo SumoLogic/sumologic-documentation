@@ -99,7 +99,7 @@ Once the deletion request is created, a notification will be sent to the users w
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Logs > Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**,  and then under **Logs** select Deletion Requests**. 
 1. Filter for the status with **Pending review**. <img src={useBaseUrl('img/search/get-started-search/pending-requests.png')} alt="filter for pending deletion requests" style={{border: '1px solid gray'}} width="800"/>
-1. Click on the deletion request to review the request.
+1. Click the deletion request to review it.
 1. **Approve** or **Reject** the request based on your requirement.<br/><img src={useBaseUrl('img/search/get-started-search/approve-reject-deletion-request.png')} alt="Approve/Reject deletion requests side panel" style={{border: '1px solid gray'}} width="400"/>
     - **Approve**. Enter **Delete** in the **Approve Deletion Request** pop-up to permanently delete the data, and click the **Delete Data** button. <br/><img src={useBaseUrl('img/search/get-started-search/approve-deletion-request.png')} alt="Approve deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
     - **Reject**. Enter the reason for rejection in the **Reject Deletion Request** pop-up to help the requester understand the reason for rejection and take any necessary actions, and click the **Reject Request** button.<br/><img src={useBaseUrl('img/search/get-started-search/reject-deletion-request.png')} alt="Reject deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
