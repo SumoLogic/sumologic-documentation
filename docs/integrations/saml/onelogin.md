@@ -17,9 +17,9 @@ The app provides insights into account activity and user behavior, including tot
 This app includes [built-in monitors](#onelogin-alerts). For details on creating custom monitors, refer to [Create monitors for OneLogin app](#create-monitors-for-onelogin-app).
 :::
 
-## Prerequisites
+## Setting up the collection
 
-### Configure an event broadcaster for event logs
+**Prerequisites**
 
 :::note
 To use this feature, you'll need to enable access to your OneLogin logs and ingest them into Sumo Logic.
@@ -27,13 +27,15 @@ To use this feature, you'll need to enable access to your OneLogin logs and inge
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account) at any time.
 
-* **OneLogin Enterprise** or **Unlimited** plan subscription.
-* **Configure an Event Broadcaster**
-   * Add a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) to your Sumo Logic Org.
-   * Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
-   * From OneLogin, configure a broadcaster that points to this endpoint using the instructions in the [OneLogin documentation](https://onelogin.service-now.com/support?id=kb_article&sys_id=43f95543db109700d5505eea4b961959). You must use SIEM (NDJSON) format. Use the Sumo Logic HTTP Source URL as the Listener URL, and custom header is not needed.
-* **Configure the C2C source for users' logs**
-	* Follow the instructions for setting up [Cloud-to-Cloud Integration for OneLogin App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source/) to create the source and use the same source category while installing the app.
+### Configure an event broadcaster for event logs
+
+* Add a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) to your Sumo Logic Org.
+* Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
+* From OneLogin, configure a broadcaster that points to this endpoint using the instructions in the [OneLogin documentation](https://onelogin.service-now.com/support?id=kb_article&sys_id=43f95543db109700d5505eea4b961959). You must use SIEM (NDJSON) format. Use the Sumo Logic HTTP Source URL as the Listener URL, and custom header is not needed.
+
+### Configure the C2C source for users' logs
+
+Follow the instructions for setting up [Cloud-to-Cloud Integration for OneLogin App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source/) to create the source and use the same source category while installing the app.
 
 ## Log types
 
