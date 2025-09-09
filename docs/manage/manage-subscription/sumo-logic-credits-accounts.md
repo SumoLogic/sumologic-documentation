@@ -42,10 +42,6 @@ Trial accounts allow full access all Sumo Logic features to test how Sumo Logic 
 - **Retention**: 30 days for all data.
 - **Users**: Up to 20 users.
 
-Trial accounts enable you to leverage our full suite of [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) tools:
-* [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**.
-* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Account > Data Management**.
-
 Trials are limited to 30 days. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest. If you need to extend your trial period or request a Proof of Concept (PoC), contact our [sales team](mailto:sales@sumologic.com).
 
 ### Essentials
