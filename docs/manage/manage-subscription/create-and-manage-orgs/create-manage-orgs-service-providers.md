@@ -69,7 +69,7 @@ This section has instructions for creating a POV Trial org. 
 After you create a child org, you can’t delete it.
 :::
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
 1. Click **+ Add Organization**. <br/> <img src={useBaseUrl('img/manage/subscriptions/orgs-page.png')} style={{border:'1px solid gray'}} alt="orgs-page" width="800"/>
 1. The **Create New Organization** pane appears.<br/> <img src={useBaseUrl('/img/manage/subscriptions/sp-create-new-org.png')} style={{border:'1px solid gray'}} alt="orgs-page" width="400"/>
 
@@ -101,7 +101,7 @@ After you create a child org, you can’t delete it.
 
 ## Upgrade a POV Trial org 
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
 1. Click the row for the trial org you want to upgrade.<br/> <img src={useBaseUrl('/img/manage/subscriptions/org-to-update.png')} alt="modify" style={{border:'1px solid gray'}} width="800"/>
 1. The right pane appears with information about the org. Click **Edit**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/edit-option.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
 1. In the edit pane, choose the **Enterprise plan** that appears as an option in the **Plan Type** dropdown.<br/> <img src={useBaseUrl('/img/manage/subscriptions/upgrade-plan.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
@@ -126,7 +126,7 @@ After you create a child org, you can’t delete it.
 
 If a POV trial org is not upgraded to Enterprise plan after 45 days, the org will be downgraded to the **CF Credit - Free** plan. If you need to upgrade this plan to Enterprise, follow the below steps:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
 1. Click the org with the **CF Credit - Free** plan that you want to upgrade to.
 1. The right pane appears with information about the org. Click **Upgrade**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/upgrade.png')} alt="upgrade" style={{border: '1px solid gray'}} width="400" />
 1. Click **Set Baseline**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/free-org-set-baseline.png')} alt="free-org-set-baseline" style={{border: '1px solid gray'}} width="400" />
@@ -169,7 +169,7 @@ If the org has already depleted its credits, you can see a red color warning ico
 :::
 
 To change an org's credits allocation:
-1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
+1.  [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
 1. Click the row for the org you want to edit.
 1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/manage/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
 1. Under **Modify Credit Allocation**, you can increase or decrease the credits based on your requirement.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-button.png')} style={{border:'1px solid grey'}} alt="allocation" width="450" />
@@ -192,7 +192,7 @@ To change an org's credits allocation:
 
 To deactivate a POV Trial org
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
 1. Click the row for the trial org you want to deactivate.
 1. Click the three-dot kebab menu and choose **Deactivate**.<img src={useBaseUrl('/img/manage/subscriptions/deactivate.png')} alt="deactivate" style={{border:'1px solid gray'}} />
 

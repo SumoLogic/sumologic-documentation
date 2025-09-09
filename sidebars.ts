@@ -988,7 +988,7 @@ module.exports = {
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers',
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-flex',
             'manage/manage-subscription/create-and-manage-orgs/manage-org-settings',
-            //'manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps',
+            'manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules',
           ],
         },
         {
@@ -1248,6 +1248,7 @@ module.exports = {
       items: [
         'dashboards/about',
         'dashboards/create-dashboard-new',
+        'dashboards/dashboard-child-orgs',
         'dashboards/explore-view',
         'dashboards/drill-down-to-discover-root-causes',
         {
@@ -1663,6 +1664,7 @@ module.exports = {
       ],
     },
     'search/query-assist',
+    'search/search-across-child-orgs',
     'search/optimize-search-performance',
     'search/optimize-search-partitions',
     'search/subqueries',
@@ -2546,6 +2548,7 @@ integrations: [
           'integrations/saas-cloud/asana',
           'integrations/saas-cloud/atlassian',
           'integrations/saas-cloud/automox',
+          'integrations/saas-cloud/aws-iam-users',
           'integrations/saas-cloud/bitwarden',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
