@@ -87,7 +87,7 @@ You can also [edit the query logic](/docs/search/copilot/#edit-query-code), [ope
 
 ## FAQ
 
-The questions below refer specifically to the multi-turn conversion (beta) experience. For general information about Mobot, see the [Mobot FAQ](/docs/search/mobot#faq).
+The questions below refer specifically to the multi-turn conversion (beta) experience. For general information about Mobot, see the [Mobot FAQ](/docs/search/copilot#faq).
 
 <details>
 <summary>Is any user or org data sent outside our environment?</summary>
