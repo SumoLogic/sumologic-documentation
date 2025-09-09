@@ -97,7 +97,7 @@ To approve or reject a request, ensure you have the **Review Deletion Requests**
 
 Once the deletion request is created, a notification will be sent to the users who have approval access. To approve or reject the request, follow the steps below:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Logs > Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**,  and then under **Logs** select Deletion Requests**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Logs > Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Logs** select **Deletion Requests**. 
 1. Filter for the status with **Pending review**. <img src={useBaseUrl('img/search/get-started-search/pending-requests.png')} alt="filter for pending deletion requests" style={{border: '1px solid gray'}} width="800"/>
 1. Click the deletion request to review it.
 1. **Approve** or **Reject** the request based on your requirement.<br/><img src={useBaseUrl('img/search/get-started-search/approve-reject-deletion-request.png')} alt="Approve/Reject deletion requests side panel" style={{border: '1px solid gray'}} width="400"/>
