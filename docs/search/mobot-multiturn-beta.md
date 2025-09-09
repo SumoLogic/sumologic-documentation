@@ -49,7 +49,7 @@ An intent card appears in the conversation pane that summarizes your goal. Mobot
 
 The top reason in the table is `FailedScheduling`, so we'll select a follow-up suggestion, `Show failed scheduling events`. Mobot refreshes the results and updates the intent card and query to reflect the new focus.
 
-<img src={useBaseUrl('img/search/mobot/narrow-scope.png')} alt="Mobot multi-turn conversation showing refinement, failed scheduling events" width="700"/>
+<img src={useBaseUrl('img/search/mobot/narrow-scope.png')} alt="Mobot multi-turn conversation showing refinement, failed scheduling events" style={{border: '1px solid gray'}} width="700"/>
 
 Now, refine further by typing: `Break down failed scheduling events by namespace`
 
