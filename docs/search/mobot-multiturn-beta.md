@@ -43,7 +43,7 @@ Start broad when you set a goal. We'll ask: `Show failed login attempts in the l
 
 An intent card appears in the conversation pane that summarizes your goal. Mobot also surfaces suggestion cards with related refinements you can click, and gives you the option to open the query in Log Search.
 
-<img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot multi-turn conversation showing initial query, failed login attempts in the last 24 hours" width="700"/>
+<img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot multi-turn conversation showing initial query, failed login attempts in the last 24 hours" style={{border: '1px solid gray'}} width="700"/>
 
 ### Step 2: Narrow the scope  
 
