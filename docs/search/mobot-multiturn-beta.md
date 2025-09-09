@@ -23,7 +23,7 @@ Our new conversational experience in Sumo Logic Mobot (formerly known as Copilot
 * **Improved accuracy**. Translations to Sumo Query Language are more reliable, especially for data sources with active dashboards.
 * **Clarifications when needed**. If your request is ambiguous, Mobot may ask a follow-up question to narrow intent.
 * **Smarter error handling**. Instead of generic errors, Mobot provides clearer messages and fallback suggestions for next steps.
-* **Dashboard-aware translations (via RAG)**. Mobot leverages queries from dashboards opened in your org in the last 90 days to better understand intent.
+* **Dashboard-aware translations (via Retrieval-Augmented Generation, or RAG)**. Mobot leverages queries from dashboards opened in your org in the last 90 days to better understand intent.
 * **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
 * **Integrated workflow**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
 
