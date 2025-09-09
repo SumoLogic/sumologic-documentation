@@ -23,3 +23,5 @@ Follow the steps below to perform a child org-level search:
 :::
 
 For more information about the Log Search, refer to [Search Basics](/docs/search/get-started-with-search/search-basics/).
+
+To view your log data in a dashboard, refer to [Create a Dashboard for Child Orgs (MSSPs)](/docs/dashboards/dashboard-child-orgs).
