@@ -61,7 +61,7 @@ Mobot adjusts the query, applies the refinements, and renders a visual chart.
 
 Next, type `Add error messages`. Mobot translates this into: `Add error messages to the breakdown of failed scheduling events by namespace`. The intent card expands to include the new scope, and results now show error message details.
 
-<img src={useBaseUrl('img/search/mobot/drill-causes.png')} alt="Mobot multi-turn conversation showing error messages" width="700"/>
+<img src={useBaseUrl('img/search/mobot/drill-causes.png')} alt="Mobot multi-turn conversation showing error messages" style={{border: '1px solid gray'}} width="700"/>
 
 ### Step 4: Request a trend over time
 
