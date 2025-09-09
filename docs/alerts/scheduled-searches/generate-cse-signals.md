@@ -107,7 +107,7 @@ AND _sourcecategory = "GoogleWorkspace/Groups"
 ## View signals in Cloud SIEM
 
 To view signals that were created from a scheduled search, run a keyword search on “Scheduled Search” on the **Signals** page in the Cloud SIEM UI:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**, and then select **Signals** in the top menu. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Signals**. You can also click the **Go To...** menu at the top of the screen and select **Signals**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Signals**. You can also click the **Go To...** menu at the top of the screen and select **Signals**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**, and then select **Signals** in the top menu. 
 1. Click in the **Filters** field at the top of the screen.
 1. Type **Scheduled Search** and press Enter. The keyword search returns a list of all signals created by scheduled searches.
 1. Click a signal from the list. Below is a screenshot of a signal that was created from a scheduled search. Note that:

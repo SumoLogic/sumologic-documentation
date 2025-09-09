@@ -22,7 +22,7 @@ Logs Query Assist is also supported in [Dashboards](/docs/dashboards) and [Sched
 
 ## How to get started
 
-1. **Start a log search**. From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic) or the [**New UI**](/docs/get-started/sumo-logic-ui), go to **Log Search** and begin typing your query.
+1. **Start a log search**. From the [**New UI**](/docs/get-started/sumo-logic-ui) or the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), go to **Log Search** and begin typing your query.
 2. **Leverage syntax and schema suggestions**. As you type, watch for real-time suggestions for fields and operators. Use the arrow keys to navigate suggestions and press `Tab` to autocomplete.
 3. **Take advantage of predictions**. Use partial query predictions to build queries faster and more accurately.
 4. **Review and correct errors**. Address flagged errors before running your query to ensure it executes as intended.  
@@ -74,7 +74,7 @@ Copilot with Query Assist video: https://docs.google.com/presentation/d/1HCaXROM
 
 ## Turn off autocomplete
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**. <br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences"style={{border: '1px solid gray'}}  width="300"/>
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences"style={{border: '1px solid gray'}}  width="300"/>
 1. Access your [Preferences](/docs/get-started/account-settings-preferences/#my-preferences).
 1. Navigate to **My Preferences** and uncheck the **Show search autocomplete suggestions while typing** checkbox.<br/><img src={useBaseUrl('img/get-started/turn-off_autocomplete.png')} alt="turn-off_autocomplete"style={{border: '1px solid gray'}}  width="500"/>
 
