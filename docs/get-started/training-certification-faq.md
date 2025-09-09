@@ -94,6 +94,8 @@ Yes. You can renew at any time by retaking the relevant exam.
 
 ### How do I schedule an exam?
 
+<!--Short video that walks through the workflow to register, pay, schedule and prepare for a proctored exam.-->
+
 We recommend at least six months of hands‑on Sumo Logic experience before taking an exam.
 
 1. Sign in to Sumo Logic.
@@ -104,11 +106,11 @@ We recommend at least six months of hands‑on Sumo Logic experience before taki
 
 ### What are the requirements for taking an exam?
 
-Kryterion provides technical and workspace requirements for live proctored exams. Your desk must be clear of materials and will be reviewed by the proctor before the exam begins. See **Kryterion Online Testing Requirements**.
+Kryterion provides technical and workspace requirements for live proctored exams. Your desk must be clear of materials and will be reviewed by the proctor before the exam begins. See [Kryterion Online Testing Requirements](https://kryterion.my.site.com/support/s/article/Online-Testing-Requirements?language=en_US).
 
 ### What if I run into a technical issue during the exam?
 
-Kryterion support is available during the exam. Use Live Chat or submit a request via **Kryterion Candidate Support**.
+Kryterion support is available during the exam. Use Live Chat or submit a request via [Kryterion Candidate Support](https://www.kryterion.com/fast-help-current-and-future-test-candidates/).
 
 ### Will I see preliminary results on screen when I finish?
 
