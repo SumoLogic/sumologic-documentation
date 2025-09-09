@@ -146,8 +146,8 @@ The following table provides a summary list of key features by Flex package acco
 The **Account Overview** tab provides a detailed view of your Sumo Logic account, including organization details, subscription type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.
 
 To access the **Account Overview** tab:  
-* **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
 * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or select **Account Overview** from the **Go To...** menu.
+* **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
 
 To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities/#data-management) capability.
 
