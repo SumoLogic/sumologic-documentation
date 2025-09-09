@@ -26,7 +26,7 @@ This section provides information about the baseline and throttling limits set. 
 
 To manage the query size limit follow the below steps:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Organization Usage Limits**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu, select **Administration**, and then under **Account**, select **Organization Usage Limits**. You can also click the **Go To...** menu at the top of the screen and select **Organization Usage Limits**. <br/><img src={useBaseUrl('/img/manage/account/organization-usage-limits.png')} alt="organization-usage-limits" style={{border:'1px solid gray'}} width="650"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Organization Usage Limits**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Administration**, and then under **Account**, select **Organization Usage Limits**. You can also click the **Go To...** menu at the top of the screen and select **Organization Usage Limits**. <br/><img src={useBaseUrl('/img/manage/account/organization-usage-limits.png')} alt="organization-usage-limits" style={{border:'1px solid gray'}} width="650"/>
 1. **Enable Query Limit**. Select this checkbox and enter the GB value based on your needs. Sumo Logic recommends setting a GB value per query based on the 95th percentile to stay within safe limits. You can also check the query size of the last 10 queries by clicking on **Click here** to help you determine the appropriate size limit. If you leave this checkbox unchecked, no limits will be added to the query.
 1. Click **Save Limit**.
 
