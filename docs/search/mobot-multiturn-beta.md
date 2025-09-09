@@ -53,7 +53,7 @@ The top reason in the table is `FailedScheduling`, so we'll select a follow-up s
 
 Now, refine further by typing: `Break down failed scheduling events by namespace`
 
-<img src={useBaseUrl('img/search/mobot/narrow-scope-filter.png')} alt="Mobot multi-turn conversation showing refinement, failed scheduling events by namespace" width="700"/>
+<img src={useBaseUrl('img/search/mobot/narrow-scope-filter.png')} alt="Mobot multi-turn conversation showing refinement, failed scheduling events by namespace" style={{border: '1px solid gray'}} width="700"/>
 
 Mobot adjusts the query, applies the refinements, and renders a visual chart.
 
