@@ -73,9 +73,9 @@ Mobot also presents new suggestion cards to help you pivot into related question
 
 ### Next steps
 
-As with legacy Mobot, you can adjust the [time range](/docs/search/mobot/#time-range), switch to a different [chart type](/docs/search/mobot/#chart-type), or make other refinements. For example, in the previous step, where the results appear in a table view, you can change the visualization to a time-series chart (for example, line or area) to see the trend more clearly over time.
+As with legacy Mobot, you can adjust the [time range](/docs/search/copilot/#time-range), switch to a different [chart type](/docs/search/copilot/#chart-type), or make other refinements. For example, in the previous step, where the results appear in a table view, you can change the visualization to a time-series chart (for example, line or area) to see the trend more clearly over time.
 
-You can also [edit the query logic](/docs/search/mobot/#edit-query-code), [open in Log Search](/docs/search/mobot/#step-4-open-in-log-search), or start over with a [new chat](/docs/search/mobot/#new-conversation).
+You can also [edit the query logic](/docs/search/copilot/#edit-query-code), [open in Log Search](/docs/search/copilot/#step-4-open-in-log-search), or start over with a [new chat](/docs/search/copilot/#new-conversation).
 
 ## Best practices
 
