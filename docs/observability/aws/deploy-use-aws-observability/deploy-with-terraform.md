@@ -631,11 +631,15 @@ module "collection-module" {
    }
    fields = {}
  }
-   aws_resource_tags = {
-     env = "prod"
-   }
+ aws_resource_tags = {
+   env = "prod"
+   author = "sumologic"
+ }
 }
 ```
+:::note
+aws_resource_tags is a map of tags that will be applied to all AWS resources provisioned through the AWS Observability Solution, except for SAM nested sources, which are not tagged.
+:::
 
 **Override Example 2: Override the auto_enable_access_logs parameter**
 
