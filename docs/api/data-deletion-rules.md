@@ -17,7 +17,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="50"/>
 
-The Data Deletion Rules allows you to quickly and easily request the removal of ingested data from Sumo Logic. This helps you with removal of inadvertently ingested sensitive data.
+Data Deletion Rules allow you to quickly and easily request the removal of ingested data from Sumo Logic. This helps you with removal of inadvertently ingested sensitive data.
 
 ## Documentation
 
