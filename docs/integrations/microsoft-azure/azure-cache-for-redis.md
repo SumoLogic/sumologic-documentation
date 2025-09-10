@@ -1,7 +1,7 @@
 ---
 id: azure-cache-for-redis
 title: Azure Cache for Redis
-keywords:
+keywords: 
  - azure redis
  - microsoft redis
  - azure cache redis
