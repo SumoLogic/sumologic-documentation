@@ -94,7 +94,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **AWS IAM Users - Overview** dashboard provides a clear view of user activity, status, and security within AWS IAM. It highlights key metrics such as total users, login trends, newly created accounts, and the status of active, inactive, or never-logged-in users. This centralized dashboard helps security teams monitor user activity, detect potential risks, and ensure compliance with IAM best practices—improving both security and operational efficiency.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWS-IAM-Users/AWS+IAM+Users+-+Overview.png' alt="AWS IAM Users - Overview" />
+The **AWS IAM Users - Overview** dashboard provides a clear view of user activity, status, and security within AWS IAM. It highlights key metrics such as total users, login trends, newly created accounts, and the status of active, inactive, or never-logged-in users. This centralized dashboard helps security teams monitor user activity, detect potential risks, and ensure compliance with IAM best practices—improving both security and operational efficiency.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWS-IAM-Users/AWS-IAM-Users-Overview.png' alt="AWS IAM Users - Overview" />
 
 ## Upgrading the AWS IAM Users app (Optional)
 
