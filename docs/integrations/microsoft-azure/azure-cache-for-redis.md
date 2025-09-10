@@ -5,7 +5,7 @@ keywords:
  - azure redis
  - microsoft redis
  - azure cache redis
- - azure redis monitoring
+ - azure redis monitoring 
 description: This document outlines what is Azure Cache for Redis, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
