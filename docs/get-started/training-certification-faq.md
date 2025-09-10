@@ -21,7 +21,7 @@ When you create a new Sumo Logic organization, you are logged in automatically t
 
 ### How do I verify my email address?
 
-1. **Classic UI**: In the main menu, select **Help**, then **Community**.<br/>**New UI**: In the top menu, select **Help**, then **Community**.
+1. **New UI**: In the top menu, select **Help**, then **Community**.<br/>**Classic UI**: In the main menu, select **Help**, then **Community**.
 2. Click **Send Activation/Verification Email**.
 3. Open the email and click **Verify Your Email**.
 
