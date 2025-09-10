@@ -19,8 +19,6 @@ This app includes [built-in monitors](#onelogin-alerts). For details on creating
 
 ## Setting up the collection
 
-**Prerequisites**
-
 :::note
 To use this feature, you'll need to enable access to your OneLogin logs and ingest them into Sumo Logic.
 :::
