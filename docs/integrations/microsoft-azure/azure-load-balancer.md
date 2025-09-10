@@ -62,7 +62,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
    <img src={useBaseUrl('img/send-data/azureloadbalancer-logs.png')} alt="Azure Load Balancer logs" style={{border: '1px solid gray'}} width="800" />
-3. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Load Balancer Tag Location" style={{border: '1px solid gray'}} width="500" />
+3. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Load Balancer Tag Location" style={{border: '1px solid gray'}} width="500" /> 
 
 #### Activity logs (optional)
 
