@@ -58,7 +58,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumol
 kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.16.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_targetallocators.yaml --force-conflicts
 ```
 
-Then, annotate and label these CRDs as below
+Then, annotate and label these CRDs as below.
 
 ```shell
 kubectl annotate crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io targetallocators.opentelemetry.io \
