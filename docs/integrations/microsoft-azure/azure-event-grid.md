@@ -1,7 +1,7 @@
 ---
 id: azure-event-grid
 title: Azure Event Grid
-keywords:
+keywords: 
  - azure event grid
  - event grid is azure
  - azure event grid monitoring
