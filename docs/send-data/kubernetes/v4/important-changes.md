@@ -42,7 +42,7 @@ By default, the OpenTelemetry Collector is now used for metrics collection inste
 Ensure that the following CRDs from the OpenTelemetry operator are installed and updated using the following commands.
 
 :::note
-Please follow instructions below to install the appropriate CRD versions
+Follow the instructions below to install the appropriate CRD versions.
 :::
 
 
