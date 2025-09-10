@@ -15,7 +15,11 @@ keywords:
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic Mobot (formerly known as Copilot) is our AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
+:::note Name update
+We are renaming Copilot to Mobot across the product and docs. During this transition, some UI labels and screenshots may still show "Copilot". Functionality is the same. We will update names and images as the rollout completes.
+:::
+
+Sumo Logic Mobot (formerly known as *Copilot*) is our AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
 
 With its intuitive interface, Mobot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-derived suggestions to refine your results for faster, more accurate resolutions. Overall, Mobot enhances incident resolution with expert level insights.
 
@@ -24,7 +28,7 @@ If you prefer not to use Mobot, you can opt out by contacting [Support](https://
 :::
 
 :::sumo Micro Lesson: Introduction to Mobot
-This short video introduces Mobot (formerly known as Copilot) and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
+This short video introduces Mobot (formerly known as *Copilot*) and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/o9uftxw012?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -79,7 +83,7 @@ Mobot is ideal for users of all skill levels:
 In this section, you'll learn the recommended workflow for using Mobot effectively, along with best practices to maximize its benefits.
 
 :::sumo Micro Lesson: Using Mobot
-See Mobot (formerly known as Copilot) in action with a hands-on walkthrough of the UI and prompt-based search.
+See Mobot (formerly known as *Copilot*) in action with a hands-on walkthrough of the UI and prompt-based search.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/t67ovt9hqj?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -98,9 +102,9 @@ See Mobot (formerly known as Copilot) in action with a hands-on walkthrough of t
 
 To start using Mobot:
 
-From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Mobot** in the left nav.<br/><img src={useBaseUrl('img/search/copilot/left-nav.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
+From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Mobot** in the left nav.<br/><img src={useBaseUrl('img/search/mobot/left-nav.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
 
-From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **Mobot** tab.<br/><img src={useBaseUrl('img/search/copilot/classic-ui-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
+From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **Mobot** tab.<br/><img src={useBaseUrl('img/search/mobot/classic-ui-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
 
 ### Step 2: Review and adjust the auto-selected source
 

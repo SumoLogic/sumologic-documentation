@@ -67,7 +67,7 @@ will be parsed automatically in Intelliparse mode, extracting:
 
 ## How Mobot uses Intelliparse mode
 
-Even if you don’t manually enable Intelliparse mode, you may encounter it when using [Mobot](/docs/search/mobot) (formerly known as Copilot).
+Even if you don’t manually enable Intelliparse mode, you may encounter it when using [Mobot](/docs/search/mobot) (formerly known as *Copilot*).
 
 Mobot uses Intelliparse mode in the background to:
 * Automatically parse unstructured logs for natural language queries.
