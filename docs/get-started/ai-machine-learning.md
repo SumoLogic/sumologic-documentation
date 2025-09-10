@@ -41,11 +41,11 @@ Sumo Logic AI for Observability functionality equips developers and SREs with po
 
 Through comprehensive discovery, monitoring, diagnosis, recovery, and prevention capabilities, we ensure minimized downtime, reduced false positives, faster incident resolution, and proactive issue prevention, all aimed at enhancing the overall health and performance of your applications and services. These capabilities include discovering app, service, and infrastructure stack relationships; utilizing M.E.L.T. telemetry to minimize detection time and false positives; diagnosing incidents swiftly; accelerating recovery times; and preventing future incidents.
 
-### Copilot
+### Mobot
 
-Copilot is our AI-based assistant designed that simplifies log analysis by allowing you to ask questions in plain English and provides search suggestions without the need to write log queries. Through plain English queries and automatic log query generation, Copilot simplifies the investigation process, allowing even users without extensive log analysis expertise to pinpoint anomalies and potential threats efficiently.
+Mobot is our AI-based assistant designed that simplifies log analysis by allowing you to ask questions in plain English and provides search suggestions without the need to write log queries. Through plain English queries and automatic log query generation, Mobot simplifies the investigation process, allowing even users without extensive log analysis expertise to pinpoint anomalies and potential threats efficiently.
 
-With Copilot, you can effortlessly investigate complex issues without writing intricate log queries manually. Its intuitive interface guides users through each step of the investigation, refining queries based on AI prompts and feedback. This streamlined approach accelerates the identification of security threats, empowering users to make informed decisions rapidly and proactively detect potential risks. [Learn more](/docs/search/copilot).
+With Mobot, you can effortlessly investigate complex issues without writing intricate log queries manually. Its intuitive interface guides users through each step of the investigation, refining queries based on AI prompts and feedback. This streamlined approach accelerates the identification of security threats, empowering users to make informed decisions rapidly and proactively detect potential risks. [Learn more](/docs/search/mobot).
 
 ### LogReduce
 
