@@ -1407,7 +1407,7 @@ module.exports = {
         },
       ],
     },
-    'search/copilot',
+    'search/mobot',
     {
       type: 'category',
       label: 'Search Query Language',
