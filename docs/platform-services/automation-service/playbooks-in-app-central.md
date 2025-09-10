@@ -10,7 +10,7 @@ import SamplePlaybooks from '../../reuse/automation-service/sample-playbooks.md'
 
 A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type.
 
-While [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/) in the Automation Service UI show the playbooks installed to your environment, the **Playbooks** tab in App Central shows you additional playbooks you can install.
+While [playbooks](/docs/platform-services/automation-service/playbooks/) in the Automation Service UI show the playbooks installed to your environment, the **Playbooks** tab in App Central shows you additional playbooks you can install.
 
 ### Install a playbook from App Central
 
