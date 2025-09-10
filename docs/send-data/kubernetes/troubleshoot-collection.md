@@ -7,10 +7,6 @@ description: Troubleshooting Collection
 
 ## Troubleshooting installation
 
-:::warning
-An incompatibility was discovered with Helm and the Sumo Logic Kubernetes Collection installation will not work with Helm `v3.18.5` or greater. We are currently working on a fix.
-:::
-
 ### Installation fails with error `function "dig" not defined`
 
 You'll need to use a more recent version of Helm. See [Minimum Requirements](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md#minimum-requirements).
