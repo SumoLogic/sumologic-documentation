@@ -102,9 +102,9 @@ See Mobot (formerly known as *Copilot*) in action with a hands-on walkthrough of
 
 To start using Mobot:
 
-From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Mobot** in the left nav.<br/><img src={useBaseUrl('img/search/mobot/left-nav.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
+From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** (or **Mobot**) in the left nav.
 
-From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **Mobot** tab.<br/><img src={useBaseUrl('img/search/mobot/classic-ui-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="300" />
+From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **Copilot** (or **Mobot**) tab.
 
 ### Step 2: Review and adjust the auto-selected source
 
