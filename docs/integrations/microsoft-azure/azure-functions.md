@@ -2,7 +2,7 @@
 id: azure-functions
 title: Azure Functions
 sidebar_label: Azure Functions
-keywords:
+keywords: 
  - azure functions
  - azure functions app
  - azure functions monitoring
