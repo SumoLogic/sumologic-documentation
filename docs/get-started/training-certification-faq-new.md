@@ -95,9 +95,7 @@ Not at this time.
 
 We recommend at least six months of hands-on Sumo Logic experience before taking a certification exam.
 
-<!--
-Please see the following short video that walks through the workflow to register, pay, schedule and prepare for a proctored exam.
--->
+<!--Short video that walks through the workflow to register, pay, schedule and prepare for a proctored exam.-->
 
 The process for scheduling the exam is easy:
 1. Log in to Sumo Logic.
