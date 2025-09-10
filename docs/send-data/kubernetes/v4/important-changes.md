@@ -66,6 +66,7 @@ kubectl annotate crds instrumentations.opentelemetry.io opentelemetrycollectors.
   meta.helm.sh/release-namespace=${RELEASE_NAMESPACE}
 kubectl label crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io app.kubernetes.io/managed-by=Helm
 ```
+
 #### CRDs to install (v4.12.0 to v4.15.x)
 ```shell
 kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_opampbridges.yaml --force-conflicts
