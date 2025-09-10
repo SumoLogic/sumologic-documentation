@@ -1,7 +1,7 @@
 ---
 id: azure-database-for-mysql
 title: Azure Database for MySQL
-keywords:
+keywords: 
  - azure mysql
  - azure database for mysql
  - database in azure
