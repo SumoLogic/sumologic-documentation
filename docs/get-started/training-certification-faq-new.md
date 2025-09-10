@@ -21,12 +21,18 @@ With Sumo Logic Academy, you’ll find an expanded and refined course catalog, l
 
 ## Getting started
 
-### How do I access the Training Portal?
+### How do I access the learning portal?
 
-1. Log in to Sumo Logic.
-1. From your **Home** page, click the **Learn** tab > **Learning Hub - Start Here!**.<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Get Certified" style={{border: '1px solid gray'}} width="600" />
+The learning portal is our self-paced eLearning site. It is easy to access directly from your Sumo Logic **Home** page. Just click the **Learn** tab > **Learning Hub - Start Here!**.
 
-You'll be redirected to the **Training** portal, where you can access all courses.
+<img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Open the Learning Hub from the Home page" style={{border: '1px solid gray'}} width="600" />
+
+You will land in the learning portal (self-paced portal), where you can access complimentary, on-demand courses. You will find all certification courses and workshops in a self-paced format, built to the same standard as our instructor-led offerings, ready for you to learn anytime, anywhere, at your own pace.
+
+### What is "Get Training"?
+
+[**Get Training**](https://www.sumologic.com/learn/training) links to an overview of all training resources, free live classes, micro lessons, private sessions, and more. It is a public website, not a portal, and does not require you to sign in.
+
 
 ## Cost and course availability
 
@@ -38,7 +44,7 @@ Unlike our previous knowledge-based quizzes, the new exams are skills-based, pro
 
 Improvements include:
 
-* **All new exams**. Assessments now measure skills rather than basic knowledge checks. Refer to our [full catalog](https://www.sumologic.com/learn/training/), including:
+* **All new exams**. Assessments now measure skills rather than basic knowledge checks. Refer to our [full catalog of certifications](https://www.sumologic.com/learn/training/), including, but not limited to:
    * *Sumo Logic Certified Fundamentals User*
    * *Sumo Logic Certified Search Mastery User*
    * *Sumo Logic Certified Admin*
