@@ -23,9 +23,9 @@ By using the [`along`](docs/metrics/metrics-operators/along.md) statement in joi
 
 This section explains the benefit of using `along` when you join metrics queries.
 
-In the Metrics Explorer you can run up to six separate queries and display and compare the query results on the same chart. The queries are labeled from #A to #F.
+In the Metrics Search you can run up to six separate queries and display and compare the query results on the same chart. The queries are labeled from #A to #F.
 
-<img src={useBaseUrl('img/metrics/multiple-queries.png')} alt="multiple-queries.png"/>
+<img src={useBaseUrl('img/metrics/multiple-queries.png')} alt="multiple-queries.png" style={{border: '1px solid gray'}} width="700"/>
 
 You can combine (join) the results of multiple queries, or use values from one query to filter values from another.
 
@@ -33,7 +33,7 @@ Here’s an example of a simple join that sums two metrics:
 
 `#C: #A + #B`
 
-<img src={useBaseUrl('img/metrics/simple-join.png')} alt="simple-join.png"/>
+<img src={useBaseUrl('img/metrics/simple-join.png')} alt="simple-join.png" style={{border: '1px solid gray'}} width="700"/>
 
 This join works fine, if each of the joined queries returns a single result. But, if a query contains references to multiple rows, and two or more of the referenced rows return more than one result, you need to use an `along` statement to match time series from different rows using one or more fields that you specify.
 
@@ -89,7 +89,7 @@ Query #C returns 9 result sets:
 (metric=CPU_User, account=prod) + (metric=CPU_Sys, account=prod)
 ```
 
-<img src={useBaseUrl('img/metrics/join-results-without-along.png')} alt="join-results-without-along.png"/>
+<img src={useBaseUrl('img/metrics/join-results-without-along.png')} alt="Join results without along" style={{border: '1px solid gray'}} width="800" />
 
 Including `along account` in the query ensures that only result sets in which the value of the `account` field match should be used for computation. This narrows down the result set list to the result sets expected.
 
@@ -108,7 +108,7 @@ return same result sets for row #A and #B and only three results for row #C:
 (metric=CPU_User, account=stage) + (metric=CPU_Sys, account=stage)
 (metric=CPU_User, account=prod) + (metric=CPU_Sys, account=prod)
 ```
-<img src={useBaseUrl('img/metrics/three-rows.png')} alt="three-rows.png"/>
+<img src={useBaseUrl('img/metrics/three-rows.png')} alt="Join results with along" style={{border: '1px solid gray'}} width="800"/>
 
 ## Quantization and joined queries
 
@@ -124,7 +124,7 @@ For example, consider a joined query that compares the `CPU_User` metric from tw
 
 Doing a quick comparison of metrics and average value over a short period can yield can surprising results, as the screenshot below illustrates.
 
-<img src={useBaseUrl('img/metrics/odd-join-results.png')} alt="odd-join-results.png"/>
+<img src={useBaseUrl('img/metrics/odd-join-results.png')} alt="odd-join-results.png" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 query `#C` computed the two values of the average value.

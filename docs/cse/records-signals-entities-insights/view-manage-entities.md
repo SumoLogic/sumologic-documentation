@@ -15,7 +15,7 @@ This topic has information about the **Entities** page in Cloud SIEM UI, which l
 
 The **Entities** page is useful for monitoring entities that are close to having an insight created. On the **Entities > Details** page, you can view signals and insights for an entity, and, as desired, manually create an insight from signals associated with the entity.
 
-You can also update the [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), [suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) state, and [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) assigned to entities, as described below in the [Update multiple entities](#update-multiple-entities) section below. 
+You can also update the [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), [suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) state, and [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) assigned to entities, as described below in the [Update multiple entities](#update-multiple-entities) section. 
 
 :::sumo Micro Lesson
 
@@ -60,11 +60,15 @@ You can create custom entity types as well. For more information, see [Create a 
 
 When a signal is fired, if an entity doesn’t already exist in Cloud SIEM for the item that the signal fired on, Cloud SIEM creates an entity for it. For more information about entities and signal and insight generation, see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process).
 
+:::note
+Entity names have a limit of 512 characters. If an entity's name value is 512 characters or longer, the system discards the log, and as a result, no signal is generated.
+:::
+
 ## About the Entities list page
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view entities, click **Entities** at the top of the screen. 
-
 [**New UI**](/docs/get-started/sumo-logic-ui). To view entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view entities, click **Entities** at the top of the screen. 
 
 <img src={useBaseUrl('img/cse/entities-page-2.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 
@@ -109,7 +113,7 @@ the entity appears.
 | o | **Timeline**. A timeline appears for the entity's activity over a three-day period. For more information, see [About the Entity Timeline tab](#about-the-entity-timeline-tab).|
 | p | **Related Entities**. Entities related to the current entity. |
 | q | **Automations**. [Automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) that have been run on the entity. |
-| r | **Create Insight**. You can use this option to create an insight on the entity, as described below in [Create an insight](#create-an-insight), below. |
+| r | **Create Insight**. You can use this option to create an insight on the entity, as described below in [Create an insight](#create-an-insight). |
 | s | The **Current State** section lists signals that were generated for the entity during the current [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an insight. (The detection window is the period over which Cloud SIEM evaluates signals, which is 14 days, by default. The detection window is configured on the **Custom Insights** page in the Cloud SIEM UI.) |
 
 Below the **Current State** section there may be a **Prior Activity** section. This section lists signals that were generated for the entity prior to the current detection window, and all insights for the entity. 
@@ -144,7 +148,7 @@ or criticality for one or more entities.
 
 ### Update entities from the UI
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. 
 1. Note that there is a checkbox at the left end of each entity row, and one above the entities list. <br/><img src={useBaseUrl('img/cse/entities-page.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 1. Click the top checkbox to select all of the entities on the page, or click the checkbox next to each entity you want to update. 
 1. Note that once you select an entity, three options appear at the top of the entities list. <br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" style={{border: '1px solid gray'}} width="800"/> 
