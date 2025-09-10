@@ -140,7 +140,7 @@ Use this dashboard to:
 
 The **Azure Load Balancer - Policy** dashboard provides details like total success policy events, success policy events, total failed policy events, and failed policy events.
 
-Use this dashboard to:
+Use this dashboard to: 
 - Monitor policy events with warnings and errors.
 - View recent failed policy events.
 
