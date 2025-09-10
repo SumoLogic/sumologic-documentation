@@ -1,7 +1,7 @@
 ---
 id: azure-container-instances
 title: Azure Container Instances
-keywords:
+keywords: 
  - azure container instance logs
  - container instances
  - azure container monitoring
