@@ -149,14 +149,11 @@ By default, all the tuning options are not enabled, you can enable them at the s
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Automated-Tuning.png')} alt="Configure Automated Tuning" style={{border: '1px solid gray'}} width="800" />
 
-#### Activity Logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). If you are already collecting activity logs for a subscription, do not perform this step.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
-:::
-
+<ActivityLogs/>
 
 ##### Enabling Microsoft Defender for Cloud
 For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-defender-for-sql?view=azuresql#enable-microsoft-defender-for-sql). If you have an existing settings, click **Edit Settings**.

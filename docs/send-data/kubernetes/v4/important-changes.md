@@ -42,11 +42,32 @@ By default, the OpenTelemetry Collector is now used for metrics collection inste
 Ensure that the following CRDs from the OpenTelemetry operator are installed and updated using the following commands.
 
 :::note
-Please follow instructions below to install the appropriate CRD versions
+Follow the instructions below to install the appropriate CRD versions.
 :::
 
-#### CRDs to install (v4.12.0 and later)
 
+#### CRDs to install (v4.16.0 and later)
+
+```shell
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.16.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_opampbridges.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.16.0/deploy/helm/sumologic/crds/crd-opentelemetrycollector.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.16.0/deploy/helm/sumologic/crds/crd-opentelemetryinstrumentation.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.16.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_targetallocators.yaml --force-conflicts
+```
+
+Then, annotate and label these CRDs as below.
+
+```shell
+kubectl annotate crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io targetallocators.opentelemetry.io \
+  meta.helm.sh/release-name=${RELEASE_NAME} \
+  meta.helm.sh/release-namespace=${RELEASE_NAMESPACE}
+kubectl label crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io app.kubernetes.io/managed-by=Helm
+```
+
+#### CRDs to install (v4.12.0 to v4.15.x)
 ```shell
 kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_opampbridges.yaml --force-conflicts
 

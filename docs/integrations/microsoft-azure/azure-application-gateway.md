@@ -69,13 +69,11 @@ Go to **Settings -> Configuration** to check your application gateway tier
 <img src={useBaseUrl('img/integrations/microsoft-azure/appgatway-tier-setting.png')} alt="Application Gateway Tier Settings" width="750"/>
 :::
 
-#### Activity Logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ## Installing the Azure Application Gateway app
 
