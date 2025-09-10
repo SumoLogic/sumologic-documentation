@@ -71,7 +71,7 @@ For instructions, see [Create a Lookup Table](/docs/search/lookup-tables/create-
 
 After you've [created your entity lookup table](/docs/search/lookup-tables/create-lookup-table/) in the Sumo Logic Library, you can configure it in Cloud SIEM.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Normalization**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Normalization**. 
 1. On the **Normalization** tab, click **Lookup Tables**.
 1. Select the lookup table.
 1. The **Existing Lookup Table** popup appears. Following is an example.<br/><img src={useBaseUrl('img/cse/existing-lookup-table.png')} alt="Existing lookup table dialog" style={{border: '1px solid gray'}} width="400"/>

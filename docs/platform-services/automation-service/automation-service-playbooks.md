@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ActionsLimit from '../../reuse/actions-limit.md';
 import CartesianProduct from '../../reuse/cartesian-product.md';
 
-A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. Playbooks can allow your organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
 
 Playbooks can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
@@ -23,7 +22,7 @@ To run a playbook, add it to an automation. You can run playbooks in [monitors](
 
 The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-a-playbook-from-app-central).
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>The list of playbooks displays. <br/> <img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" style={{border:'1px solid gray'}} width="700"/>
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>The list of playbooks displays. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/> <img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" style={{border:'1px solid gray'}} width="700"/>
 1. Select a playbook to see the elements in the workflow.<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} style={{border:'1px solid gray'}} alt="Opened playbook" width="700"/>
 1. Click the elements in the playbook to see their details. For example, click actions (the boxes in the flow) to see the [integration](/docs/platform-services/automation-service/automation-service-integrations/) resources that provide the actions.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} style={{border:'1px solid gray'}} alt="Action example" width="700"/>
 
@@ -35,7 +34,7 @@ Before you create your own playbook, first [view playbooks](#view-playbooks) to 
 The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/).
 :::
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>Previously-created playbooks display.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>Previously-created playbooks display.
 1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} style={{border:'1px solid gray'}} alt="New playbook button" width="400"/>
 1. A new configuration box will be displayed. Name your new playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" width="400"/>
 1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **Cloud SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
@@ -275,7 +274,38 @@ With the mechanism to import and export playbooks, you can move a playbook, alon
 
 It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
 
-## Test a playbook
+## Run tests on playbooks
+
+### Test nodes in a playbook
+
+The playbook **Test Node** toggle lets you test individual nodes of a playbook without needing to complete the entire flow. Testing individual nodes helps you improve your playbooks' reliability and shorten configuration time. You can provide mock values for variables used in the node, and run the results to see the output and any errors. The results provide informative messages to help you troubleshoot problems. 
+
+When you test nodes, keep in mind:
+* You can test action, condition, user choice, and task nodes. You cannot test filter or nested playbook nodes.
+* A single-node test does not execute downstream nodes. Only the selected node runs using the provided input. You cannot view the previous or past test node run executions.
+* Invalid JSON or missing required fields will block the test and show an error in the **Output** panel.
+* Before you can test a node, any node configuration changes need to be saved to the playbook draft. When you test a node, clicking **SAVE & RUN TEST** saves the node configuration to the same draft before executing.
+* Testing nodes counts against your [action limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit) quota.
+
+To test a node:
+1. Select a playbook.
+1. Click the **Edit** button at the bottom of the screen to make a draft of the playbook.
+1. Click the **Edit** button on a node.
+1. Click the **Test Node** toggle at the top of the **Edit Node** dialog. An **Input** panel appears to the left, and an **Output** panel appears to the right. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-toggle.png')} alt="Playbook Test Node toggle" style={{border:'1px solid gray'}} width="800"/>
+1. In the **Input** panel, enter variables to test the node. When you click **SAVE & RUN TEST**, results of the test appear in the **Output** panel.<br/>Ensure that you enter valid variables for the kind of inputs you need to test. Following are examples with different node types:
+   * **Action**<br/>In the following example that uses input from insights, we provide an insight ID. The output shows the result of the action.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-variables.png')} alt="Action node test variables" style={{border:'1px solid gray'}} width="800"/>
+   * **Condition**<br/>In the following example that uses input from reputation vendors, we provide reputation scores. The output shows the result of the condition.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-condition.png')} alt="Condition node test variables" style={{border:'1px solid gray'}} width="800"/>
+   * **User choice**<br/>In the following example that uses user input data, we provide an email address. The output provides the resulting user choice. Click the user choice options to test whether they work as expected.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-user-choice.png')} alt="User choice node test variables" style={{border:'1px solid gray'}} width="800"/>
+   * **Task**<br/>In the following example that uses incident input data, we provide a mock template name. The output provides the resulting task. Click the task options to test whether they work as expected.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-task.png')} alt="Task node test variables" style={{border:'1px solid gray'}} width="800"/>
+1. Examine the results in the **Output** panel and take any action needed to troubleshoot node operation:
+    * Click the information button <img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-info-icon.png')} alt="Playbook Test Node JSON info button" style={{border:'1px solid gray'}} width="30"/> to see information on the test run:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-info-button.png')} alt="Playbook Test Node info" style={{border:'1px solid gray'}} width="300"/>
+    * Click the **JSON details** button <img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-json-details-icon.png')} alt="Playbook Test Node JSON details button" style={{border:'1px solid gray'}} width="30"/> to see the JSON output:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-json-details.png')} alt="Playbook Test Node JSON details" style={{border:'1px solid gray'}} width="300"/>
+1. Continue testing the node and making changes as needed in the node's configuration. When done, click **Save**. 
+1. Test each node in your playbook that has the **Test Node** button (action, condition, user choice, and task). In each node, enter variables in the **Input** panel and examine the results in the **Output** panel to ensure the node works correctly.
+
+After you're done testing individual nodes,  test the entire playbook to ensure it runs end-to-end (see [Test a playbook](#test-a-playbook)).
+
+### Test a playbook
 
 You can test a playbook to verify that it works properly. The test results show the outcome as if the playbook actually ran.
 

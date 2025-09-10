@@ -37,7 +37,7 @@ You can push the following:
 * Cloud SIEM [rules](/docs/cse/rules/)
 * Cloud SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Select the **Manage Content** tab.
 1. In the **Source Org** field, select the organization that will provide the source data to be pushed in other organizations.
 1. In the **Content** bar, select the content to be pushed:

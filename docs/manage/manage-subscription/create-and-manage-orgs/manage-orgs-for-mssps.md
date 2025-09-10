@@ -32,7 +32,7 @@ You must have the following [organization role capabilities](/docs/manage/users-
 
 To ensure that [Library](/docs/get-started/library) content is consistent across child organizations, use the **Manage Content** tab to push content in target organizations with content from a source organization.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Select the **Manage Content** tab.
 1. In the **Source Org** field, select the organization that will provide the source data to be pushed in other organizations.
 1. In the **Content** bar, select **Library**. For more information about Library items, refer to [Managing Your Sumo Logic Library](/docs/get-started/library).

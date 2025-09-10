@@ -385,6 +385,7 @@
   "/05Search/Get-Started-with-Search/How-to-Build-a-Search/Best-Practices%3A-Search-Rules-to-Live-By": "/docs/search/get-started-with-search/build-search/best-practices-search",
   "/05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing": "/docs/search/get-started-with-search/build-search/dynamic-parsing",
   "/05Search/Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions": "/docs/search/get-started-with-search/build-search/keyword-search-expressions",
+  "/docs/search/get-started-with-search/build-search/intelliparse-beta": "/docs/search/get-started-with-search/build-search/dynamic-parsing",
   "/05Search/Get-Started-with-Search/How-to-Build-a-Search/Search-Syntax-Overview": "/docs/search/get-started-with-search/build-search/search-syntax-overview",
   "/05Search/Get-Started-with-Search/How-to-Build-a-Search/Search-Templates": "/docs/search/get-started-with-search/build-search/search-templates",
   "/05Search/Get-Started-with-Search/How-to-Build-a-Search/Set-the-Time-Range": "/docs/search/get-started-with-search/build-search/set-time-range",
@@ -1590,7 +1591,8 @@
   "/cid/1000": "/docs/send-data/installed-collectors/sources/local-file-source",
   "/cid/100000": "/docs/manage/deletion-requests",
   "/cid/100001": "/docs/search/get-started-with-search/build-search/search-templates",
-  "/cid/100002": "/docs/search/copilot",
+  "/cid/100002": "/docs/search/mobot",
+  "/cid/100003": "/docs/search/mobot-multiturn-beta",
   "/cid/100004": "/docs/search/get-started-with-search/build-search/keyword-search-expressions",
   "/cid/100005": "/docs/get-started/sign-up",
   "/cid/100006": "/docs/get-started/library",
@@ -4470,5 +4472,7 @@
   "/docs/manage/manage-subscription/manage-org-settings": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings",
   "/docs/integrations/amazon-aws/elastic-load-balancing": "/docs/integrations/amazon-aws/classic-load-balancer",
   "/docs/integrations/microsoft-azure/microsoft-defender-for-cloud": "/docs/integrations/microsoft-azure/azure-security-defender-for-cloud",
-  "/docs/integrations/azure": "/docs/integrations/microsoft-azure"
+  "/docs/integrations/azure": "/docs/integrations/microsoft-azure",
+  "/docs/search/copilot": "/docs/search/mobot",
+  "/docs/search/copilot-unstructured-logs-beta": "/docs/search/mobot-unstructured-logs-beta"
 }

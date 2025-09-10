@@ -235,7 +235,7 @@ To work around this, you need to delete the existing collector registration and 
 1. Delete the local collector registration file in `~/.sumologic-otel-collector/` and wait for 10 minutes for the collector to get offline.
 1. Remove the collector in Sumo Logic UI.
    1. Sign in to Sumo Logic platform.
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
    1. Find your collector.
 
 After that, the collector will register on the next run.
