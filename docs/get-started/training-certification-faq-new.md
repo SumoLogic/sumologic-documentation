@@ -28,7 +28,7 @@ With Sumo Logic Academy, you’ll find an expanded and refined course catalog, l
 1. Log in to Sumo Logic.
 1. From your **Home** page, click the **Learn** tab > **Learning Hub - Start Here!**.<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Get Certified" style={{border: '1px solid gray'}} width="600" />
 
-You'll be redirected to the **Training** portal, where you can access all courses and certifications.
+You'll be redirected to the **Training** portal, where you can access all courses.
 
 ## Cost and course availability
 
