@@ -37,7 +37,7 @@ Make sure you use the SIEM (NDJSON) format.
 
 ### Configure the C2C source for users' logs
 
-Follow the instructions for setting up [Cloud-to-Cloud Integration for OneLogin App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source/) to create the source and use the same source category while installing the app.
+Use the [Cloud-to-Cloud Integration for OneLogin](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source/) to create the source and use the same source category while installing the app.
 
 ## Log types
 
