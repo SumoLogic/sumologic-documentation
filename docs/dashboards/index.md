@@ -40,6 +40,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/dashboards/dashboard-child-orgs"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Create a Dashboard for Child Orgs (MSSPs)</h4></a>
+  <p>Create and customize dashboards with panels and queries for child orgs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/dashboards/panels"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Dashboard Panels</h4></a>
   <p>Learn about the various Dashboard panels and the types of data best suited for each.</p>
   </div>

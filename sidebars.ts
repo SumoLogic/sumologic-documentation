@@ -988,7 +988,7 @@ module.exports = {
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers',
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-flex',
             'manage/manage-subscription/create-and-manage-orgs/manage-org-settings',
-            //'manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps',
+            'manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules',
           ],
         },
         {
@@ -1248,6 +1248,7 @@ module.exports = {
       items: [
         'dashboards/about',
         'dashboards/create-dashboard-new',
+        'dashboards/dashboard-child-orgs',
         'dashboards/explore-view',
         'dashboards/drill-down-to-discover-root-causes',
         {
@@ -1406,7 +1407,7 @@ module.exports = {
         },
       ],
     },
-    'search/copilot',
+    'search/mobot',
     {
       type: 'category',
       label: 'Search Query Language',
@@ -1663,6 +1664,7 @@ module.exports = {
       ],
     },
     'search/query-assist',
+    'search/search-across-child-orgs',
     'search/optimize-search-performance',
     'search/optimize-search-partitions',
     'search/subqueries',
@@ -2546,6 +2548,7 @@ integrations: [
           'integrations/saas-cloud/asana',
           'integrations/saas-cloud/atlassian',
           'integrations/saas-cloud/automox',
+          'integrations/saas-cloud/aws-iam-users',
           'integrations/saas-cloud/bitwarden',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
@@ -2610,6 +2613,7 @@ integrations: [
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zendesk',
+          'integrations/saas-cloud/zimperium',
           'integrations/saas-cloud/zoom',
         ],
       },
@@ -2674,6 +2678,7 @@ integrations: [
           'integrations/sumo-apps/infrequent-data-tier',
           'integrations/sumo-apps/kickstart-data',
           'integrations/sumo-apps/log-analysis-quickstart',
+          'integrations/sumo-apps/opentelemetry-collector-insights',
           'integrations/sumo-apps/security-analytics',
         ],
       },
@@ -2688,6 +2693,7 @@ integrations: [
           'integrations/webhooks/bugsnag',
           'integrations/webhooks/configcat',
           'integrations/webhooks/emnify',
+          'integrations/webhooks/extrahop-revealx-360',
           'integrations/webhooks/firefly',
           'integrations/webhooks/flagsmith',
           'integrations/webhooks/grafana-oncall',
@@ -3195,6 +3201,7 @@ integrations: [
           link: {type: 'doc', id: 'platform-services/automation-service/index'},
           items: [
             'platform-services/automation-service/about-automation-service',
+            'platform-services/automation-service/intro-to-automation-service',
             {
               type: 'category',
               label: 'App Central',
