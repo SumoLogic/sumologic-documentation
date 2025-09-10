@@ -30,7 +30,7 @@ Only administrators can create service accounts. If you are unsure whether you a
 
 To configure a service account, you must first create the account and then add access keys to it. You can add multiple access keys to each service account. 
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. 
 1. On the **Service Accounts** tab, click **+ Add Service Account**.<br/><img src={useBaseUrl('/img/security/service-accounts-page.png')} alt="Service Accounts tab" style={{border: '1px solid gray'}} width="700"/>
 <br/>The **Add Service Account** window appears.<br/><img src={useBaseUrl('/img/security/add-service-account.png')} alt="Add Service Account window" style={{border: '1px solid gray'}} width="300"/>
 1. **Name**. Enter a name for your service account. Make it descriptive enough so that others will be able to tell what its purpose is.
@@ -46,7 +46,7 @@ To configure a service account, you must first create the account and then add a
 
 After you have created a service account, add access keys to the service account. The access keys are tied to the service account. When you create an access key for a service account, ensure that the scope of the key is restricted to only the rights needed for the key. 
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. 
 1. Select a service account.
 1. Click **Add Access Key**.<br/><img src={useBaseUrl('/img/security/service-account-details.png')} alt="Add Access Key button on service account details pane" style={{border: '1px solid gray'}} width="300"/>
 1. The **Add New Access Key** window appears. Add the access key information, including scopes. Follow the steps to add an access key as described in [Create an access key](/docs/manage/security/access-keys/#create-an-access-key). <br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Add New Access Key screen" style={{border: '1px solid gray'}} width="500"/>
@@ -58,7 +58,7 @@ Any access keys you add on a service account appear on the [**Access Keys** tab]
 
 ## Change a service account
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. 
 1. Hover your mouse over a service account and click the three-dot kebab icon to reveal the modification options.<br/><img src={useBaseUrl('/img/security/modify-options-for-service-accounts.png')} alt="Edit a service account" style={{border: '1px solid gray'}} width="700"/>
 
 :::warning

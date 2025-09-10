@@ -19,7 +19,7 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
     <a href="https://help.sumologic.com/release-notes-service/rss.xml">
       <img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS Feed" width="45" />
     </a>
-    <p>Get updates on features and bug fixes for alerts, apps, copilot, security, search, observability, and more.</p>
+    <p>Get updates on features and bug fixes for alerts, apps, mobot, security, search, observability, and more.</p>
   </div>
 </div>
 
