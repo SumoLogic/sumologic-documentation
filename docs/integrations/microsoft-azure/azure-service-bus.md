@@ -1,7 +1,7 @@
 ---
 id: azure-service-bus
 title: Azure Service Bus
-keywords:
+keywords: 
  - azure service bus
  - azure service bus security
  - azure servicebus
