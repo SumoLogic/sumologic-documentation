@@ -1,8 +1,6 @@
 ---
 id: training-certification-faq-new
-title: New Sumo Logic Training and Certification FAQ (Beta)
-sidebar_label: New Training and Certification
-description: Learn more about the new Sumo Logic Training and Certification Program.
+title: Sumo Logic Academy - Training and Certification FAQ (Beta)
 ---
 
 <head>
