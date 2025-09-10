@@ -16,7 +16,7 @@ For Azure Cosmos DB for PostgreSQL, you can collect the following logs and metri
 
 * **PostgreSQL Server Logs**. These logs are available for every node of a cluster and can be used to identify, troubleshoot, and repair configuration errors and suboptimal performance.
 * **Activity logs**. Provides insight into any subscription-level or management group level events that have occurred in Azure. To learn more, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
-* **Metrics**. These metrics are available in [Microsoft.DBforPostgreSQL/serverGroupsv2](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-dbforpostgresql-servergroupsv2-metrics) namespace. 
+* **Metrics**. These metrics are available in [Microsoft.DBforPostgreSQL/serverGroupsv2](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-dbforpostgresql-servergroupsv2-metrics) namespace.
 For more information on supported metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/concepts-monitoring#list-of-metrics).
 
 ## Setup
@@ -62,13 +62,11 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 4. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="400" />
 
-#### Activity Logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Skip this step if you are already collecting activity logs for a subscription.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, ensure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ## Installing the Azure Cosmos DB for PostgreSQL app
 
@@ -233,4 +231,3 @@ These alerts are metrics-based and will work for all Cosmos DB PostgreSQL instan
 ### HTTP Logs and Metrics Source used by Azure Functions
 
 To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
-

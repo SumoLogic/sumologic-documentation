@@ -1,11 +1,11 @@
 ---
 id: azure-cache-for-redis
 title: Azure Cache for Redis
-keywords: 
+keywords:
  - azure redis
  - microsoft redis
  - azure cache redis
- - azure redis monitoring 
+ - azure redis monitoring
 description: This document outlines what is Azure Cache for Redis, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
@@ -56,16 +56,14 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    1. Choose **Stream to an event hub** as the destination.
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-   <img src={useBaseUrl('img/send-data/azureredis-cache-logs.png')} alt="Azure Redis Cache logs" style={{border: '1px solid gray'}} width="800" /> 
+   <img src={useBaseUrl('img/send-data/azureredis-cache-logs.png')} alt="Azure Redis Cache logs" style={{border: '1px solid gray'}} width="800" />
 3. Tag the location field in the source with right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="500" />
 
-#### Activity Logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step if you are already collecting activity logs for a subscription.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, ensure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ## Installing the Azure Redis Cache app
 
@@ -91,7 +89,7 @@ As part of the app installation process, the following fields will be created by
 
 import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboardsIndex/> 
+<ViewDashboardsIndex/>
 
 ### Administrative Operations
 

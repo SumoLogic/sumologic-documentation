@@ -1,7 +1,7 @@
 ---
 id: azure-load-balancer
 title: Azure Load Balancer
-keywords: 
+keywords:
  - azure load balancer
  - load balancer ins azure
  - load balancer
@@ -62,15 +62,13 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    1. Select `allLogs`.
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
    <img src={useBaseUrl('img/send-data/azureloadbalancer-logs.png')} alt="Azure Load Balancer logs" style={{border: '1px solid gray'}} width="800" />
-3. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Load Balancer Tag Location" style={{border: '1px solid gray'}} width="500" /> 
+3. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Load Balancer Tag Location" style={{border: '1px solid gray'}} width="500" />
 
-#### Activity Logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step if you are already collecting activity logs for a subscription.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, ensure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ## Installing the Azure Load Balancer app
 
@@ -96,7 +94,7 @@ As part of the app installation process, the following fields will be created by
 
 import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboardsIndex/> 
+<ViewDashboardsIndex/>
 
 ### Overview
 
@@ -142,7 +140,7 @@ Use this dashboard to:
 
 The **Azure Load Balancer - Policy** dashboard provides details like total success policy events, success policy events, total failed policy events, and failed policy events.
 
-Use this dashboard to: 
+Use this dashboard to:
 - Monitor policy events with warnings and errors.
 - View recent failed policy events.
 

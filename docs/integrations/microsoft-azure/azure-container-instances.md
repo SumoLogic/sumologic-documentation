@@ -1,7 +1,7 @@
 ---
 id: azure-container-instances
 title: Azure Container Instances
-keywords: 
+keywords:
  - azure container instance logs
  - container instances
  - azure container monitoring
@@ -50,7 +50,7 @@ Use existing resource group or create a new one for deploying Azure container in
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 1. Download and update the [output_conf.yaml](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/output_conf.yaml) file with the following configurations:
-   * Inputs pipeline uses the [tail input plugin](https://docs.fluentbit.io/manual/pipeline/inputs/tail). Update the path parameter value with the pattern specifying a specific log file or multiple ones through the use of common wildcards. 
+   * Inputs pipeline uses the [tail input plugin](https://docs.fluentbit.io/manual/pipeline/inputs/tail). Update the path parameter value with the pattern specifying a specific log file or multiple ones through the use of common wildcards.
       :::info
       Multiple patterns separated by commas are also allowed.
       :::
@@ -75,13 +75,11 @@ Use existing resource group or create a new one for deploying Azure container in
    - In the `imageRegistryCredentials` property, enter your image repository server, username, and password.
 1. Deploy the [logging-sidecar-deploy.yaml](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Container-Instances/logging-sidecar-deploy.yaml) Azure template, refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-multi-container-yaml#deploy-the-container-group).
 
-#### Activity Logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Skip this step if you are already collecting activity logs for a subscription.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ## Installing the Azure Container Instances app
 
@@ -185,4 +183,3 @@ To troubleshoot metrics collection, follow the instructions in [Troubleshooting 
 - Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
 - Blog: [How to Deploy and Manage a Container on Azure Container Service](https://www.sumologic.com/blog/how-to-deploy-and-manage-a-container-on-azure-container-service)
 - Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)
-

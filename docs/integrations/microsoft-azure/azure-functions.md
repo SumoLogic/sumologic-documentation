@@ -2,7 +2,7 @@
 id: azure-functions
 title: Azure Functions
 sidebar_label: Azure Functions
-keywords: 
+keywords:
  - azure functions
  - azure functions app
  - azure functions monitoring
@@ -71,11 +71,9 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). If you are already collecting activity logs for a subscription, do not perform this step.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ##### Enabling Microsoft Defender for Cloud
 
