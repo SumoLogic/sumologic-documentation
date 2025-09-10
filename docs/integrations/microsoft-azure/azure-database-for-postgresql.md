@@ -1,7 +1,7 @@
 ---
 id: azure-database-for-postgresql
 title: Azure Database for PostgreSQL
-keywords:
+keywords: 
  - azure postgresql
  - postgresql azure
  - azure postgresql monitoring
