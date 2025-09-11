@@ -79,7 +79,7 @@ is the same as:
 
 Quantize is always applied to metrics (like time slicing in logs). Every metric series has multiple rollup types: `min`, `max`, `latest`, `avg`, `sum` and `count`. Quantize and rollup will have a very large impact on the resulting output. `avg` is the default.
 
-Pick the correct rollup for the query use case via the quantize operator. For example:
+Pick the correct rollup for the query use case via the `quantize` operator. For example:
 
 ```
 | quantize to 1m using max drop last
