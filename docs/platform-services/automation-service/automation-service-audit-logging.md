@@ -56,12 +56,12 @@ The table below shows the `_sourceCategory` that is assigned to Audit Event Inde
 | Product Feature | _sourceCategory Value |
 |:--|:--|
 | [App Central packages](/docs/platform-services/automation-service/automation-service-app-central/)  | `oarAppCentralPackages`   |
-| [Automation action](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
-| [Automation action configuration](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActionConfigurations` |
+| [Automation action](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
+| [Automation action configuration](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActionConfigurations` |
 | [Integration](/docs/platform-services/automation-service/automation-service-integrations/)   | `oarIntegrations`  |
 | [Integration resource](/docs/platform-services/automation-service/integration-framework/)   | `oarIntegrationResources` |
-| [Playbook execution](/docs/platform-services/automation-service/automation-service-playbooks/)  | `oarPlaybookExecutions`   |
-| [Playbook revision](/docs/platform-services/automation-service/automation-service-playbooks/)  | `oarPlaybookRevisions`    |
+| [Playbook execution](/docs/platform-services/automation-service/playbooks/)  | `oarPlaybookExecutions`   |
+| [Playbook revision](/docs/platform-services/automation-service/playbooks/)  | `oarPlaybookRevisions`    |
 
 ### Audit events for Cloud SOAR only
 
@@ -111,8 +111,8 @@ The table below shows the `_sourceCategory` that is assigned to System Event Ind
 
 | Product Feature | _sourceCategory Value |
 |:--|:--|
-| [Automation action](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
-| [Playbook execution](/docs/platform-services/automation-service/automation-service-playbooks/)  | `oarPlaybookExecutions`   |
+| [Automation action](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
+| [Playbook execution](/docs/platform-services/automation-service/playbooks/)  | `oarPlaybookExecutions`   |
 
 
 ### System events for Cloud SOAR only
