@@ -29,7 +29,7 @@ The learning portal is our self-paced eLearning site. It is easy to access direc
 
 You will land in the learning portal (self-paced portal), where you can access complimentary, on-demand courses. You will find all certification courses and workshops in a self-paced format, built to the same standard as our instructor-led offerings, ready for you to learn anytime, anywhere, at your own pace.
 
-### What is "Get Training"?
+### How can I join a free live class?
 
 [**Get Training**](https://www.sumologic.com/learn/training) links to an overview of all training resources, free live classes, micro lessons, private sessions, and more. It is a public website, not a portal, and does not require you to sign in.
 
