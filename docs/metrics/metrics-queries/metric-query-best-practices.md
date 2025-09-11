@@ -43,7 +43,7 @@ cluster=search metric=cpu_idle | avg by node
 ```
 
 :::note
-There are `where` filter operators, but always filter via scope whenever possible for faster query performance.
+There are [`where`](#where) filter operators, but always filter via scope whenever possible for faster query performance.
 :::
 
 ### Scope wildcards
