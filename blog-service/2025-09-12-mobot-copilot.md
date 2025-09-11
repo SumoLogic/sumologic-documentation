@@ -1,5 +1,5 @@
 ---
-title: Copilot is Now Mobot: New conversational Experience for Log Search (Beta)
+title: Copilot is Now Mobot - New Conversational Experience for Log Search (Beta)
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - mobot
