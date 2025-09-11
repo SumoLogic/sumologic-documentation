@@ -104,6 +104,9 @@ We recommend at least six months of hands-on Sumo Logic experience before taking
 The process for scheduling the exam is easy:
 1. Log in to Sumo Logic.
 1. From your **Home** page, click the **Learn** tab > **Exam Registration**.<br/><img src={useBaseUrl('img/get-started/exam-registration.png')} alt="exam registration" style={{border: '1px solid gray'}} width="600" />
+    :::note
+    You may be prompted to reenter your Sumo Logic credentials to authenticate with Kryterion.
+    :::
 1. Purchase your exam credit and register through Kryterion, our proctoring partner.
 1. Select and schedule your exam.
 1. Results are displayed immediately after completion. If you pass, you’ll receive instructions by email to claim your badge through Credly.
