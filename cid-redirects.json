@@ -1597,6 +1597,7 @@
   "/cid/100000": "/docs/manage/deletion-requests",
   "/cid/100001": "/docs/search/get-started-with-search/build-search/search-templates",
   "/cid/100002": "/docs/search/mobot",
+  "/cid/100003": "/docs/search/mobot-multiturn-beta",
   "/cid/100004": "/docs/search/get-started-with-search/build-search/keyword-search-expressions",
   "/cid/100005": "/docs/get-started/sign-up",
   "/cid/100006": "/docs/get-started/library",
@@ -2396,6 +2397,7 @@
   "/cid/5148": "/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral",
   "/cid/5150": "/",
   "/cid/5154": "/docs/manage/fields",
+  "/cid/5157": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules",
   "/cid/5155": "/docs/manage/field-extractions",
   "/cid/5156": "/docs/send-data/collection/processing-rules",
   "/cid/5162": "/docs/manage/security/access-keys",
@@ -2925,6 +2927,7 @@
   "/cid/11000": "/docs/platform-services/automation-service/automation-service-playbooks",
   "/cid/1105": "/docs/integrations/cloud-security-monitoring-analytics/aws-security-hub-ocsf",
   "/cid/1106": "/docs/integrations/sumo-apps/opentelemetry-collector-insights",
+  "/cid/1107": "/docs/integrations/saas-cloud/aws-iam-users",
   "/Cloud_SIEM_Enterprise": "/docs/cse",
   "/Cloud_SIEM_Enterprise/Administration": "/docs/cse/administration",
   "/Cloud_SIEM_Enterprise/Administration/Cloud_SIEM_Enterprise_Feature_Update_(2022)": "/docs/cse/administration",
@@ -4477,5 +4480,6 @@
   "/docs/integrations/amazon-aws/elastic-load-balancing": "/docs/integrations/amazon-aws/classic-load-balancer",
   "/docs/integrations/microsoft-azure/microsoft-defender-for-cloud": "/docs/integrations/microsoft-azure/azure-security-defender-for-cloud",
   "/docs/integrations/azure": "/docs/integrations/microsoft-azure",
-  "/docs/search/copilot": "/docs/search/mobot"
+  "/docs/search/copilot": "/docs/search/mobot",
+  "/docs/search/copilot-unstructured-logs-beta": "/docs/search/mobot-unstructured-logs-beta"
 }
