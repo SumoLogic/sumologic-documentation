@@ -400,7 +400,7 @@ In addition to settings, Cloud SOAR administrators have privileged access to the
 
 Within Automation, you’ll see subsections for:
 * [App Central](/docs/platform-services/automation-service/app-central/). A large out-of-the-box library of playbooks, integrations, and use cases for different threats to get you started with orchestrating and automating your SOC.
-* [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). Allows you to create new playbooks and edit, delete, and manage existing ones.
+* [Playbooks](/docs/platform-services/automation-service/playbooks/). Allows you to create new playbooks and edit, delete, and manage existing ones.
 * [Template](/docs/cloud-soar/automation/#incident-templates). Allows you to create new incident templates and edit, delete, and manage existing ones.
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/). Lets you connect third party tools through APIs.
 * [Rules](/docs/cloud-soar/automation/#automation-rules). Lets you create new automation rules.
@@ -531,7 +531,7 @@ Let's walk through how to install and configure useful integrations through App 
 
 #### Playbooks
 
-Once you’ve identified a potential security incident, you can respond to it in Cloud SOAR by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. The playbook can enrich data, contain threats, notify teams, and other actions with custom APIs. These actions help automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes. For more information, see [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/).
+Once you’ve identified a potential security incident, you can respond to it in Cloud SOAR by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. The playbook can enrich data, contain threats, notify teams, and other actions with custom APIs. These actions help automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes. For more information, see [Playbooks](/docs/platform-services/automation-service/playbooks/).
 
 Custom playbooks allow you to automate any task that uses a custom API. You can also use them to automate tasks that aren’t part of the hundreds of default playbooks included in Cloud SOAR.
 

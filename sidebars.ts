@@ -445,6 +445,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source',
+                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source',
@@ -3227,7 +3228,19 @@ integrations: [
                 }
               ],
             },
-            'platform-services/automation-service/automation-service-playbooks',
+            {
+              type: 'category',
+              label: 'Playbooks',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platform-services/automation-service/playbooks/index'},
+              items: [
+                'platform-services/automation-service/playbooks/create-playbooks',
+                'platform-services/automation-service/playbooks/playbook-payloads',
+                'platform-services/automation-service/playbooks/arrays-in-playbooks',
+                'platform-services/automation-service/playbooks/troubleshoot-playbooks',
+              ],
+            },
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',
             'platform-services/automation-service/automation-service-bridge',
