@@ -1,20 +1,26 @@
 ---
 id: chatgpt-compliance-source
-title: ChatGPT Compliance Source
-sidebar_label: ChatGPT Compliance
+title: ChatGPT Compliance Source (Beta)
+sidebar_label: ChatGPT Compliance (Beta)
 tags:
   - cloud-to-cloud
   - chatgpt-compliance
 description: Learn to collect the conversations from ChatGPT Compliance platform.
 ---
 
+<head>
+ <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="ChatGPT-Compliance-icon" width="40" />
 
-OpenAI: OpenAI provides advanced AI solutions for enterprises, offering secure, compliant, and customizable conversational AI capabilities to improve productivity while meeting organizational governance and regulatory needs.
+OpenAI provides advanced AI solutions for enterprises, offering secure, compliant, and customizable conversational AI capabilities to improve the productivity while meeting organizational governance and regulatory needs.
 
-ChatGPT Compliance: The Compliance API enables enterprise customers to access structured conversation logs and metadata, integrating with eDiscovery, DLP, or SIEM systems to support auditing, compliance, and security requirements.
+The ChatGPT Compliance API enables enterprise customers to access structured conversation logs and metadata, integrating with eDiscovery, DLP, or SIEM systems to support auditing, compliance, and security requirements.
 
 ## Data collected
 
@@ -28,24 +34,28 @@ ChatGPT Compliance: The Compliance API enables enterprise customers to access st
 
 You are required to provide the **Workspace ID** and **API Key** to configure the ChatGPT Compliance source.
 
-#### Pre-requisites
+- Follow the below steps to collect the **Workspace ID**:
+   1. In the OpenAI platform sidebar, go to **Settings - Workspace Settings (or General Settings)**.
+   1. Your **Workspace ID** can be found in the **About / Workspace Info** section.
 
-1. **Workspace ID**
-   - In the OpenAI platform sidebar, go to **Settings - Workspace Settings (or General Settings)**.
-   - Your **Workspace ID** can be found in the **About / Workspace Info** section.
-
-2. **API Key**
-   - Create a new key via the [OpenAI API Platform Portal](https://platform.openai.com/).
-   - Must be generated under the **correct Organization (Enterprise Workspace)**. Do not use a personal account/org.
-   - Configure with: **Default Project | All Permissions**.
-   - This must be a **fresh key**. Once Compliance API scopes are assigned, all other scopes are revoked.
-   - The API key can only be viewed/copied **once**, so ensure it is securely stored.
-   - To request Compliance API scope, email [support@openai.com](mailto:support@openai.com) with:
-     - Last 4 digits of the API key.
-     - Key Name (name assigned during creation).
-     - Created By (user who created the key).
-     - Requested scope: `read`.
-   - OpenAI’s team will review the request. Once verified, they will grant the requested Compliance API scopes to the key.
+- Follow the below steps to collect the **API Key**:
+   1. Sign in to the [OpenAI API Platform Portal](https://platform.openai.com/).
+      :::note
+      Be sure to create the API key within the same organization as your ChatGPT Enterprise workspace.
+      :::
+   1. Navigate to **API Keys** > **+ Create new secret key**.
+   1. On the pop-up window, enter the following details:
+      - Under **Owned by**, select **You**.
+      - Enter the name of the API key.
+      - Select the default project.
+      - Under **Permissions**, select **All**.
+   1. Click **Create secret key**. 
+   1. Copy and save the key.
+      :::note
+      The API key is only visible once, so be sure to copy it securely. This API key will be required when you set up the ChatGPT Enterprise instance on the Sumo Logic platform.
+      :::
+   1. Send an email to `support@openai.com` requesting access to the Compliance API. Include the last 4 characters of the API key, the name of the key, who created it, and the requested scope (read).
+   1. OpenAI team will verify the key and grant the requested Compliance API scopes.
 
 ### Source configuration
 
@@ -60,7 +70,7 @@ To configure a ChatGPT Compliance Source, follow the steps below:
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Workspace ID**. Name of the workspace ID.
+1. **Workspace ID**. Name of the workspace ID collected from the [ChatGPT platform](#vendor-configuration).
 1. **API Key**. Enter the API Key generated from the [ChatGPT platform](#vendor-configuration).
 1. **Polling Interval**. The polling interval is set for 1 hour by default and can be configured to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. When you are finished configuring the Source, click **Save**.
@@ -100,8 +110,8 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ```
 
 ## Limitations
-1. Updates to conversations after a prolonged gap may cause re-ingestion and potential duplication.  
-2. As ChatGPT continues to evolve, updates may alter conversation data or API behavior, potentially impacting integration consistency.
+- Updates to conversations after a prolonged gap may cause re-ingestion and potential duplication.  
+- As ChatGPT continues to evolve, updates may alter conversation data or API behavior, potentially impacting integration consistency.
 
 ## FAQ
 

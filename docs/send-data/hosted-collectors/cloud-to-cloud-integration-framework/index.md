@@ -164,12 +164,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source"><img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="Thumbnail icon" width="100"/><h4>ChatGPT Compliance</h4></a>
-  <p>Learn to collect the conversations from ChatGPT Compliance platform.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source"><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="90"/><h4>Cisco AMP</h4></a>
   <p>Provides a secure endpoint to receive data from the Cisco Amp System Log API.</p>
   </div>
