@@ -31,7 +31,7 @@ You will land in the learning portal (self-paced portal), where you can access c
 
 ### How can I join a free live class?
 
-[**Get Training**](https://www.sumologic.com/learn/training) links to an overview of all training resources, free live classes, micro lessons, private sessions, and more. It is a public website, not a portal, and does not require you to sign in.
+[On our website](https://www.sumologic.com/learn/training), you can find an overview of all training resources, free live classes, micro lessons, private sessions, and more. It is a public website, not a portal, and does not require you to sign in.
 
 
 ## Cost and course availability
