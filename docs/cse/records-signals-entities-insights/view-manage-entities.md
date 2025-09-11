@@ -66,9 +66,9 @@ Entity names have a limit of 512 characters. If an entity's name value is 512 ch
 
 ## About the Entities list page
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view entities, click **Entities** at the top of the screen. 
-
 [**New UI**](/docs/get-started/sumo-logic-ui). To view entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view entities, click **Entities** at the top of the screen. 
 
 <img src={useBaseUrl('img/cse/entities-page-2.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 
@@ -145,7 +145,7 @@ or criticality for one or more entities.
 
 ### Update entities from the UI
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. 
 1. Note that there is a checkbox at the left of each entity row, and one above the entities list. Click the top checkbox to select all of the entities on the page, or click the checkbox next to each entity you want to update. 
 1. Note that once you select checkboxes for multiple entities, a box slides out showing three options above the list of selected entities. See the instructions for each option below:
    * [Change Tags](#change-tags)

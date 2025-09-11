@@ -6,18 +6,6 @@ description: Enable the Use Receipt Time feature to display search results in th
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<!-- When Intelliparse goes GA, update this doc to reflect new Search Config...
-
-Parsing
-* Intelliparse
-* Auto Parse
-* Manual
-
-Timestamp
-* Message Time
-* Receipt Time
--->
-
 By default, log searches run by Message time. Enable the **Use Receipt Time** setting to run the search by Receipt time, which is the timestamp when a log message hits the Sumo Logic receivers.
 
 To search data based on the order that Collectors received the messages use **Receipt Time**. This option has the search reference the [metadata](../search-basics/built-in-metadata.md) field `_receiptTime` instead of `_messageTime`, giving you the ability to view the difference in the parsed [timestamp](/docs/send-data/reference-information/time-reference) (`_messageTime`) and receipt time (`_receiptTime`) to pinpoint Sources that may be parsing the message's timestamps incorrectly.
