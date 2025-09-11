@@ -117,7 +117,6 @@ The [`parse` operator](/docs/metrics/metrics-operators/parse/) can extract value
 For example, if the load balancer is `app/app-song-8d/4567223890123456`, the following query:
 ```
 availabilityZone=us-west-1a metric=HTTPCode_Target_5XX_Count | parse field=LoadBalancer */*/* as type, name, id | sum by name
-
 ```
 
 results in new tags: `type = app`, `name = app-song-8d`, `id = 4567223890123456`
