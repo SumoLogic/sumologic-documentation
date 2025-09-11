@@ -36,7 +36,7 @@ We are renaming *Copilot* to *Mobot*. During the transition, some UI labels and 
 In the below example, we'll use the following key concepts:
 
 * **Conversational flow**. A sequence of related instructions that retains context and incrementally updates the query and output.
-* **Intent card**. Visual summary of what you're asking Mobot to do in this session.
+* **Intent card**. Visual summary of what you're asking Mobot to do in this session.  
 * **Suggestion cards**. Recommended refinements or adjacent analyses you can apply with a click.
 
 This example demonstrates the conversational interaction pattern; you can apply the same steps to other logs, events, or dimensions.
