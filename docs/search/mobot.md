@@ -16,7 +16,7 @@ import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note Name update
-We are renaming Copilot to Mobot across the product and docs. During this transition, some UI labels and screenshots may still show "Copilot". Functionality is the same. We will update names and images as the rollout completes.
+We are renaming *Copilot* to *Mobot* across the product and docs. During this transition, some UI labels and screenshots may still show **Copilot**. Functionality is the same. We will update names and images as the rollout completes.
 :::
 
 Sumo Logic Mobot (formerly known as *Copilot*) is our AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
