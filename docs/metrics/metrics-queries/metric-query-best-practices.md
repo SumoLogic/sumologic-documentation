@@ -250,7 +250,7 @@ Try the following fixes:
     <br/>`| sum by pod | sum`
     <br/>or
     <br/>`| sum by namespace`
-* Use the [topk search operator](/docs/search/search-query-language/search-operators/topk/):
+* Use the [`topk` search operator](/docs/search/search-query-language/search-operators/topk/):
     <br/>`| topk(500,latest)| sum by pod`
 * Filter to remove series using `filter` or `where` operators:
     <br/>`| filter max > 0 `
