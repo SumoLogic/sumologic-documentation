@@ -89,13 +89,11 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 1. Tag the location field in the source with the right location value.
    <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="500" />
 
-#### Activity Logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Do not perform this step in case you are already collecting activity logs for a subscription.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions make sure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ##### Enabling Microsoft Defender for Cloud
 
