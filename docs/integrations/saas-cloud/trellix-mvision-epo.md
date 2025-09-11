@@ -158,7 +158,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 |:--|:--|:--|:--|
 | `Trellix mVision ePO - High-Severity Malware Detected` | This alert is triggered when malware with critical severity is detected. It helps prioritize threats that require immediate attention and investigation. | Critical | Count > 0 |
 | `Trellix mVision ePO – High-Severity Threat Not Remediated` | This alert is triggered when high-severity threats are detected but not successfully remediated. This alert helps you to identify persistent threats or failed containment efforts. | Critical | Count > 0|
-| `Trellix mVision ePO – Unusual Network Port Used in Malicious Activity` | This alert is triggered when high-severity threat events use unusual network ports outside standard ranges (80, 22, 443, 53, 3389). This alert helps you to detect potential covert communication channels. | Critical | Count > 0|
+| `Trellix mVision ePO – Unusual Network Port Used in Malicious Activity` | This alert is triggered when high-severity threat events use unusual network ports outside standard ranges (80, 22, 443, 53, 3389). This alert helps you detect potential covert communication channels. | Critical | Count > 0|
 | `Trellix mVision ePO - Repeated Infections on Same Host` | This alert is triggered when more than three threat events occur on the same endpoint within one hour. This alert helps you to detect repeated compromise or reinfection of a host. | Critical | Count > 0|
 | `Trellix mVision ePO - Multiple Hosts Affected by Same Threat` | This alert is triggered when the same threat indicator appears across more than five unique hosts within 30 minutes. This alert helps you to detect a widespread or rapidly propagating attack. | Critical | Count > 0|
 
