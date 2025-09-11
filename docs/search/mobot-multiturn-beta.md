@@ -27,7 +27,7 @@ Our new conversational experience in Sumo Logic Mobot (formerly known as *Copilo
 * **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
 * **Integrated workflow**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
 
-## Example workflow
+## Example workflow 1
 
 In the below example, we'll use the following key concepts:
 
@@ -70,6 +70,11 @@ Finally, type: `Show the trend over 24 hours`. Mobot translates this into: `Show
 <img src={useBaseUrl('img/search/mobot/trend-over-time.png')} alt="Mobot multi-turn conversation showing trend over time" style={{border: '1px solid gray'}} width="700"/>
 
 Mobot also presents new suggestion cards to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces.
+
+<!--More use cases
+## Example workflow 2
+## Example workflow 3
+-->
 
 ### Next steps
 
