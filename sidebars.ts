@@ -1018,7 +1018,7 @@ module.exports = {
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
         'manage/data-forwarding/installed-collectors',
-        'manage/data-forwarding/amazon-s3-bucket',
+        'manage/data-forwarding/forward-data-from-sumologic',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
       ]
