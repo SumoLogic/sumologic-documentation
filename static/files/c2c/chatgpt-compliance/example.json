@@ -1,0 +1,16 @@
+{
+    "api.version": "v1",
+    "source": {
+      "config": {
+        "name": "ChatGPT Compliance",
+        "workspaceID": "ABCD-SAMPLE-WORKSPACE-ID",
+        "apiKey": "sk-proj-XXXXXXXXX",
+        "pollingIntervalHour": "1h"
+      },
+      "schemaRef": {
+        "type": "ChatGPT Compliance"
+      },
+      "sourceType": "Universal"
+    }
+}
+  
