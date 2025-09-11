@@ -6,7 +6,6 @@ description: Learn how to handle arrays in Automation Service playbooks.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import CartesianProduct from '../../../reuse/cartesian-product.md';
 
 An array is a collection of related data values grouped together. When you are handling output from a playbook action, you may want to treat the entire array as a single item you want to pass to the next action, or you may want to treat each element in the array as a separate item. In playbooks, you can do either.
 

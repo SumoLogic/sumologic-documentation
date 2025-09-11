@@ -4393,6 +4393,8 @@
   "/docs/cse/automation-service/automation-service-automations": "/docs/cse/automation/automations-in-cloud-siem",
   "/docs/cse/automation-service/automation-service-examples": "/docs/cse/automation/cloud-siem-automation-examples",
   "/docs/cse/automation-service/automation-service-app-central": "/docs/platform-services/automation-service/automation-service-app-central",
+  "/docs/cse/automation-service/automation-service-playbooks": "/docs/platform-services/automation-service/playbooks",
+  "/docs/platform-services/automation-service/automation-service-playbooks": "/docs/platform-services/automation-service/playbooks",
   "/docs/cse/automation-service/automation-service-integrations": "/docs/platform-services/automation-service/automation-service-integrations",
   "/docs/cse/automation-service/automation-service-bridge": "/docs/platform-services/automation-service/automation-service-bridge",
   "/docs/cloud-soar/cloud-soar-bridge": "/docs/platform-services/automation-service/automation-service-bridge",

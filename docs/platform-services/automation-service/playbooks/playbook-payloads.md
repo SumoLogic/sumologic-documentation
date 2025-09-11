@@ -6,7 +6,6 @@ description: Learn about the data payloads of the different playbook types.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import ActionsLimit from '../../../reuse/actions-limit.md';
 
 When a playbook is run, a payload is passed from the initial object to the playbook (for example, from an alert, entity, or Insight). The variables in the payload can be assigned to parameters and used as inputs for different actions in the playbook. 
 
