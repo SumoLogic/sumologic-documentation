@@ -16,7 +16,7 @@ By analyzing threat categories, attack types, geolocation, and detection methods
 With comprehensive summaries, trend analysis, geographical mapping, and device-level detail, the app helps organizations prioritize threats, reduce false negatives, accelerate investigations, and strengthen endpoint protection.
 
 :::info
-This app includes [built-in monitors](#trellix-mvision-epo-alerts). For details on creating custom monitors, refer to the [Create monitors for Trellix mVision ePO app](#create-monitors-for-the-trellix-mvision-epo-app).
+This app includes [built-in monitors](#trellix-mvision-epo-alerts). For details on creating custom monitors, refer to [Create monitors for Trellix mVision ePO app](#create-monitors-for-the-trellix-mvision-epo-app).
 :::
 
 ## Log types
