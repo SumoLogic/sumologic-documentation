@@ -54,13 +54,13 @@ Improvements include:
 * **Live, remote proctoring**. Exams are administered by Kryterion with live proctors to ensure fairness and integrity.
 * **Digital badges**. After passing your exam, you’ll receive a Credly-issued badge you can share on LinkedIn, your resume, and within your organization.
 
-### How much does it cost to get certified?
-
-The cost of exams is $100 for Fundamentals and $150 for advanced certifications. Payment can be made by credit card or purchase order through your Sumo Logic account representative.
-
 ### Do I have to pay for training courses or just the certification?
 
 All Sumo Logic training, including self-paced eLearning, hands-on public virtual classes, and workshops, remains free to all users. The only cost is for the certification exam itself. Private and custom training will continue to be available for purchase.
+
+### How much does it cost to get certified?
+
+The cost of exams is $100 for Fundamentals and $150 for advanced certifications. Payment can be made by credit card or purchase order through your Sumo Logic account representative.
 
 ### Is a voucher included in my training class?
 
