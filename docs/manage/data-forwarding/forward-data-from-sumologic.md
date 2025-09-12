@@ -10,7 +10,7 @@ This document outlines the instructions that needs to be followed to forward lo
 
 To forward data to a storage bucket:
 1. [Configure forwarding destination](#configure-data-forwarding-destination).
-1. [Forward data to destination](#forward-data-to-forwarding-destination) from a partition or schedule view.
+1. [Forward data to destination](#forward-datato-forwarding-destination) from a partition or schedule view.
 
 After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your Scheduled View conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
 
@@ -90,7 +90,7 @@ Where:
 
 ## Configure data forwarding destination
 
-Before you can [forward data](#forward-data-to-forwarding-destination) from a partition or Scheduled View, you must create a destination that indicates the S3 or GCS bucket where you want to send the forwarded data.
+Before you can [forward data](#forward-datato-forwarding-destination) from a partition or Scheduled View, you must create a destination that indicates the S3 or GCS bucket where you want to send the forwarded data.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Manage Data**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. 
 1. Click **+ Add Destination** to add a new destination.
@@ -119,7 +119,7 @@ Before you can [forward data](#forward-data-to-forwarding-destination) from a pa
 1. **Active**. Select this check box to enable data forwarding for the entire bucket. To start forwarding data, you will also need to enable forwarding for the desired indexes, as described below.
 1. Click **Save**. <br/>If Sumo Logic is able to verify the credentials, the destination will be added to the list of destinations. If the destination is not added successfully, see [Error and alert conditions](#error-and-alert-conditions) for examples of errors that can occur. 
 
-Once the destination is created, you can start data forwarding for specific partitions or Scheduled Views as described in [Forward data to an forwarding destination](#forward-datato-an-s3-forwarding-destination) below. 
+Once the destination is created, you can start data forwarding for specific partitions or Scheduled Views as described in [Forward data to an forwarding destination](#forward-datato-forwarding-destination) below. 
 
 ## Forward data to forwarding destination
 
@@ -137,7 +137,7 @@ Once you [configure date forwarding destination](#configure-data-forwarding-dest
     - For **Amazon S3** as the destination type, follow the below steps:<br/><img src={useBaseUrl('img/manage/data-forwarding/specify-destination.png')} alt="Forwarding destination options" style={{border: '1px solid gray'}} width="450"/>
         1. **Forwarding Destination**. Choose one of the following:  
             * **Existing Amazon S3 Destination**. If you select this option, select the destination in the **Amazon S3 Destination** field below.
-            * **New Amazon S3 Destination**. Follow the instructions in [Configure an S3 data forwarding destination](#configure-an-s3-data-forwarding-destination) above to create a new S3 destination.
+            * **New Amazon S3 Destination**. Follow the instructions in [Configure data forwarding destination](#forward-datato-forwarding-destination) above to create a new S3 destination.
         1. **Amazon S3 Destination**. If you chose **Existing Amazon S3 Destination** for the forwarding destination, select the destination here.
     - For **Google Cloud Storage** as the destination type, follow the below steps:<br/><img src={useBaseUrl('img/manage/data-forwarding/specify-destination-gcs.png')} alt="Forwarding destination options" style={{border: '1px solid gray'}} width="450"/>
         1. **Forwarding Destination**. Choose one of the following:  
@@ -176,7 +176,7 @@ Let's suppose you have an S3 or GCS bucket named `demo-bucket1` where you want t
 1. [Create a destination](/docs/manage/data-forwarding/forward-data-from-sumologic/#configure-data-forwarding-destination) that points to the `demo-bucket1` bucket. For example, name it **Test destination**. 
 1. Open the partition or Scheduled View whose data you want to [forward data to the new destination](/docs/manage/data-forwarding/forward-data-from-sumologic/#configure-data-forwarding-destination).
 1. In the partition or Scheduled View, select **Enable Data Forwarding**, and fill out the fields that appear:
-    1. In **Destination Type** select **Amazon S3** or **Google Cloud Storage** depening on your requirement.
+    1. In **Destination Type** select **Amazon S3** or **Google Cloud Storage** depending on your requirement.
     1. In **Forwarding Destination** select any **Existing Destination**.
     1. In **Destination** select the name of the destination you created earlier, for example, **Test destination**. 
 1. Use the **Data Forwarding Configuration** section to specify whether to forward only log data, log data with metadata, or log data with metadata and enriched fields.
