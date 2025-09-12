@@ -90,7 +90,7 @@ Where:
 
 ## Configure data forwarding destination
 
-Before you can [forward data](#forward-data-to-forwarding-destination) from a partition or Scheduled View, you must create a destination that indicates the S3 bucket where you want to send the forwarded data.
+Before you can [forward data](#forward-data-to-forwarding-destination) from a partition or Scheduled View, you must create a destination that indicates the S3 or GCS bucket where you want to send the forwarded data.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Manage Data**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. 
 1. Click **+ Add Destination** to add a new destination.
