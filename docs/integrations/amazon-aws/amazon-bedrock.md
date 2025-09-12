@@ -388,6 +388,14 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
+As part of the app installation process, the following fields will be created by default:
+
+* `account`: The friendly name or alias assigned to the AWS account.
+* `region`: The geographical region where the AWS resource is located (for example, us-east-1 or eu-west-2).
+* `accountid`: The unique 12-digit identifier for the AWS account where the resource is present.
+* `namespace`: The AWS service namespace that the resource or metric belongs to (for example, AWS/EC2 or AWS/S3).
+* `modelid`: A specific identifier for the LLM Model within an AWS Bedrock.
+
 ## Viewing the Bedrock dashboards  
 
 We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
@@ -448,3 +456,18 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Create monitors for Amazon Bedrock app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon Bedrock Alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon Bedrock - Delete Action Detected` | This alert triggers when a Delete API call to the Amazon Bedrock environment is detected. | Count > 0 | Count < = 0 |
+| `Amazon Bedrock - High Model Invocation Latency` | This alert triggers when the average time to receive a response from a Bedrock model exceeds a configurable threshold in milliseconds. High latency can directly impact the user experience of your applications. | Count > 5000 | Count < = 5000 |
+| `Amazon Bedrock - High Number of Access Denied Errors` | This alert fires when there is a spike in AccessDeniedException errors in CloudTrail for the Bedrock service. This could indicate misconfigured IAM policies or a potential security threat. | Count > 5 | Count < = 5 |
+| `Amazon Bedrock - Model Invocation Server Error Detection` | This alert triggers if the number of server-side errors from model invocations increases more than configurable value (Default 5). This can indicate issues with the service, your input data, or permissions. | Count > 5 | Count < = 5 |
