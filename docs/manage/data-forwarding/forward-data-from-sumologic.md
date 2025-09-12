@@ -153,7 +153,7 @@ Once you [configure date forwarding destination](#configure-data-forwarding-dest
        * **Text**. Plain text. (Available only if you choose **Raw** above.)
        * **CSV**. Comma-separated values. (Available if you choose **Raw + Metadata** or **All** above.)
        * **JSON**. Java Script Object Notation. (Available if you choose **Raw + Metadata** or **All** above.) Select **JSON** if you want to ensure that forwarded data can be re-ingested easily.
-   1. **File Prefix**. Enter the path prefix to a directory in the S3 bucket. You can include any of the following variables:
+   1. **File Prefix**. Enter the path prefix to a directory in the S3 or GCS bucket. You can include any of the following variables:
       * `{index}` will be replaced by the name of the partition or scheduled view.
       * `{day}` will be replaced by the day of the year in the yyyy-MM-dd format.
       * `{hour}` will be replaced by the hour of the day (0-23).
@@ -169,14 +169,14 @@ For information about how the data is forwarded, see [Forwarding interval](#forw
 
 ## Data forwarding example
 
-Let's say you want to take data from Sumo Logic and run additional analysis on it in tools separate from Sumo Logic. In this example, you can forward the data from Sumo Logic to an S3 bucket where it is available for download and analysis by your tools. 
+Let's say you want to take data from Sumo Logic and run additional analysis on it in tools separate from Sumo Logic. In this example, you can forward the data from Sumo Logic to an S3 or GCS bucket where it is available for download and analysis by your tools. 
 
 Let's suppose you have an S3 or GCS bucket named `demo-bucket1` where you want to forward your Sumo Logic data. Do the following:
 
 1. [Create a destination](/docs/manage/data-forwarding/forward-data-from-sumologic/#configure-data-forwarding-destination) that points to the `demo-bucket1` bucket. For example, name it **Test destination**. 
 1. Open the partition or Scheduled View whose data you want to [forward data to the new destination](/docs/manage/data-forwarding/forward-data-from-sumologic/#configure-data-forwarding-destination).
 1. In the partition or Scheduled View, select **Enable Data Forwarding**, and fill out the fields that appear:
-    1. In **Destination Type** select **Amazon S3**.
+    1. In **Destination Type** select **Amazon S3** or **Google Cloud Storage** depening on your requirement.
     1. In **Forwarding Destination** select any **Existing Destination**.
     1. In **Destination** select the name of the destination you created earlier, for example, **Test destination**. 
 1. Use the **Data Forwarding Configuration** section to specify whether to forward only log data, log data with metadata, or log data with metadata and enriched fields.
