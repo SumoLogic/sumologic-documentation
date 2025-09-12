@@ -169,7 +169,7 @@ For information about how the data is forwarded, see [Forwarding interval](#forw
 
 ## Data forwarding example
 
-Let's say you want to take data from Sumo Logic and run additional analysis on it in tools separate from Sumo Logic. You can forward the data from Sumo Logic to an S3 bucket where it is available for download and analysis by your tools. 
+Let's say you want to take data from Sumo Logic and run additional analysis on it in tools separate from Sumo Logic. In this example, you can forward the data from Sumo Logic to an S3 bucket where it is available for download and analysis by your tools. 
 
 Let's suppose you have an S3 bucket named `demo-bucket1` where you want to forward your Sumo Logic data. Do the following:
 
