@@ -156,7 +156,7 @@ Use the information you set up [above](#microsoft-ews-configuration).
 :::
 
 * <IntegrationLabel/>
-* **Host**. Enter your Microsoft EWS host address, for example, `outlook.office365.com`
+* **Microsoft Graph URL**. Enter Microsoft Graph URL, `https://graph.microsoft.com/v1.0`
 
 * **Tenant ID**. Enter the  [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) for authentication.
 
