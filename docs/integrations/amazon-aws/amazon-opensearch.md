@@ -311,6 +311,14 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
+As part of the app installation process, the following fields will be created by default:
+
+* `account`: The friendly name or alias assigned to the AWS account.
+* `region`: The geographical region where the AWS resource is located (for example, us-east-1 or eu-west-2).
+* `accountid`: The unique 12-digit identifier for the AWS account where the resource is present.
+* `namespace`: The AWS service namespace that the resource or metric belongs to (for example, AWS/ES or AWS/OpenSearch).
+* `domainname`: A specific identifier for the OpenSearch domain within AWS OpenSearch Service.
+
 ## Viewing Amazon OpenSearch dashboards
 
 ### Overview
@@ -450,3 +458,20 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Create monitors for Amazon OpenSearch app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon OpenSearch Alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon OpenSearch - Cluster Write Operations Blocked` | This alert fires when the cluster is actively blocking write requests. This is a severe state that means applications cannot write new data to the cluster. | Count > = 1 | Count < 1 |
+| `Amazon OpenSearch - High Indexing Latency` | This alert triggers when the average indexing latency exceeds 1000ms, indicating a potential bottleneck in data ingestion pipelines. | Count > 1000 | Count < = 1000 |
+| `Amazon OpenSearch - High JVM Memory Pressure` | This alert fires when JVM Memory Pressure is consistently high, which can lead to long garbage collection pauses, slow performance, and potential out-of-memory errors. | Count > = 95 | Count < 95 |
+| `Amazon OpenSearch - Sustained High CPU Utilization` | This alert fires when CPU utilization is consistently high (>= 80%) for 15 minutes, indicating an overloaded cluster that may lead to performance degradation. | Count > = 80 | Count < 80 |
+| `Amazon OpenSearch - Unassigned Primary Shards Detected` | This alert fires when the cluster status is critical, indicating at least one primary shard and its replicas are not allocated. This signifies a non-functional cluster and potential data loss. | Count > = 1 | Count < 1 |
+| `Amazon OpenSearch - Unassigned Replica Shards Detected` | This alert fires when all primary shards are active but one or more replica shards are not allocated to a node. This compromises high availability. | Count > = 1 | Count < 1 |

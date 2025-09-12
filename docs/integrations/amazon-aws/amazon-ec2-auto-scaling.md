@@ -159,6 +159,14 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
+As part of the app installation process, the following fields will be created by default:
+
+* `account`: The friendly name or alias assigned to the AWS account.
+* `region`: The geographical region where the AWS resource is located (for example, us-east-1 or eu-west-2).
+* `accountid`: The unique 12-digit identifier for the AWS account where the resource is present.
+* `namespace`: The AWS service namespace that the resource or metric belongs to (for example, AWS/EC2 or AWS/AutoScaling).
+* `autoscalinggroup`: A specific identifier for the Auto Scaling Group within AWS EC2 Auto Scaling.
+
 ## Viewing Amazon EC2 Auto Scaling dashboards
 
 ### Amazon EC2 Autoscaling - Overview
@@ -229,3 +237,18 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Create monitors for Amazon EC2 Auto Scaling app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon EC2 Auto Scaling Alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon EC2 Auto Scaling - In-Service Capacity Below Desired` | This alert triggers when the number of healthy, active instances falls below the desired capacity. This indicates that your application may lack the capacity to handle its current load. | Count > 0 | Count < = 0 |
+| `Amazon EC2 Auto Scaling - Instance To Max Capacity Ratio` | Proactive alert that triggers when the total number of instances approaches the configured maximum size, warning of an inability to scale out further. | Count > 0.9 | Count < = 0.9 |
+| `Amazon EC2 Auto Scaling - Instances in Pending State` | This alert triggers when instances remain in a 'Pending' state for a prolonged period, indicating potential issues with instance launch or configuration. | Count > 0 | Count < = 0 |
+| `Amazon EC2 Auto Scaling - Instances in Terminating State` | This alert triggers when instances remain in a 'Terminating' state for a prolonged period, often indicating issues with lifecycle hooks. | Count > 0 | Count < = 0 |
