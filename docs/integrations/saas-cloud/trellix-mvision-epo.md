@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Trust-Login-icon" width="90" />
 
-The Trellix mVision ePO app provides centralized visibility into endpoint threats, enabling security teams to detect, analyze, and respond to risks across their environment. It aggregates data on detections, remediation failures, severity, and suspicious behaviors to highlight high-priority incidents and defense gaps.
+The Sumo Logic app for Trellix mVision ePO provides centralized visibility into endpoint threats, enabling security teams to detect, analyze, and respond to risks across their environment. It aggregates data on detections, remediation failures, severity, and suspicious behaviors to highlight high-priority incidents and defense gaps.
 
 By analyzing threat categories, attack types, geolocation, and detection methods, the app reveals patterns of malicious activity, risky endpoints, and unusual network behavior. Features such as C2 callback detection, embargoed region activity, file quarantines, and user-targeted attacks offer actionable insights into threat propagation and impacted assets.
 
@@ -21,7 +21,7 @@ This app includes [built-in monitors](#trellix-mvision-epo-alerts). For details 
 
 ## Log types
 
-This app uses Sumo Logic’s [Trellix mVision ePO Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source/) to collect events logs from the Trellix mVision ePO platform.
+This app uses Sumo Logic’s [Trellix mVision ePO Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source/) to collect event logs from the Trellix mVision ePO platform.
 
 ## Sample log message
 
