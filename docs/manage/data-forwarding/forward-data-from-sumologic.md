@@ -171,7 +171,7 @@ For information about how the data is forwarded, see [Forwarding interval](#forw
 
 Let's say you want to take data from Sumo Logic and run additional analysis on it in tools separate from Sumo Logic. In this example, you can forward the data from Sumo Logic to an S3 bucket where it is available for download and analysis by your tools. 
 
-Let's suppose you have an S3 bucket named `demo-bucket1` where you want to forward your Sumo Logic data. Do the following:
+Let's suppose you have an S3 or GCS bucket named `demo-bucket1` where you want to forward your Sumo Logic data. Do the following:
 
 1. [Create a destination](/docs/manage/data-forwarding/forward-data-from-sumologic/#configure-data-forwarding-destination) that points to the `demo-bucket1` bucket. For example, name it **Test destination**. 
 1. Open the partition or Scheduled View whose data you want to [forward data to the new destination](/docs/manage/data-forwarding/forward-data-from-sumologic/#configure-data-forwarding-destination).
