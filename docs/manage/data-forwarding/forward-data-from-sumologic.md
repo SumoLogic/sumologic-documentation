@@ -22,7 +22,6 @@ Data forwarding is not currently supported for data assigned to the Infrequent T
 
 * An administrator role on the partition where you want to set up forwarding.
 * Follow the instructions on [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to grant Sumo Logic permission to send data to the destination S3 bucket.
-**(Do we have something like this for GCP? [Ref](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source/)**
 * A partition or Scheduled View to push to Amazon S3 or Google Cloud Storage (GCS).
 
 ## Forwarding interval 
