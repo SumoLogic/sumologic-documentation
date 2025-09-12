@@ -28,7 +28,7 @@ In this section, we'll introduce the following concepts:
     <div className="container">
       <a href="/docs/manage/data-forwarding/forward-data-from-sumologic">
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Document with a forward symbol  icon" width="45" />
-        <h4>Forward Data from Sumo Logic to S3</h4>
+        <h4>Forward Data from Sumo Logic to S3 or GCS</h4>
       </a>
       <p>Learn step-by-step instructions of data forwarding from Sumo Logic to S3.</p>
     </div>
