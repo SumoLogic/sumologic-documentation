@@ -114,7 +114,7 @@ Before you can [forward data](#forward-data-to-forwarding-destination) from a pa
             :::note
             You can create only one destination with a particular bucket name.  If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
             :::
-        1. (Optional)**Description**. You can provide a meaningful description of the connection.
+        1. (Optional) **Description**. Provide a meaningful description of the connection.
         1. For **HMAC Access Key** and **HMAC Secret Key** enter the values collected from the Google platform service account. See [Manage HMAC keys for service account](https://cloud.google.com/storage/docs/authentication/managing-hmackeys#console_1) for details.
 1. **Active**. Select this check box to enable data forwarding for the entire bucket. To start forwarding data, you will also need to enable forwarding for the desired indexes, as described below.
 1. Click **Save**. <br/>If Sumo Logic is able to verify the credentials, the destination will be added to the list of destinations. If the destination is not added successfully, see [Error and alert conditions](#error-and-alert-conditions) for examples of errors that can occur. 
