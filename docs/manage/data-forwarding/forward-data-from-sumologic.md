@@ -176,7 +176,7 @@ Let's suppose you have an S3 bucket named `demo-bucket1` where you want to forwa
 1. [Create a destination](/docs/manage/data-forwarding/forward-data-from-sumologic/#configure-data-forwarding-destination) that points to the `demo-bucket1` bucket. For example, name it **Test destination**. 
 1. Open the partition or Scheduled View whose data you want to [forward data to the new destination](/docs/manage/data-forwarding/forward-data-from-sumologic/#configure-data-forwarding-destination).
 1. In the partition or Scheduled View, select **Enable Data Forwarding**, and fill out the fields that appear:
-    1. In **Destination Type** select **Amazon S3** or **Google Cloud Storage** as per your requirement.
+    1. In **Destination Type** select **Amazon S3**.
     1. In **Forwarding Destination** select any **Existing Destination**.
     1. In **Destination** select the name of the destination you created earlier, for example, **Test destination**. 
 1. Use the **Data Forwarding Configuration** section to specify whether to forward only log data, log data with metadata, or log data with metadata and enriched fields.
