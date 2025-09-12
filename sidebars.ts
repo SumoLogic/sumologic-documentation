@@ -2607,6 +2607,7 @@ integrations: [
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/sysdig-secure',
           'integrations/saas-cloud/tenable',
+          'integrations/saas-cloud/trellix-mvision-epo',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
           'integrations/saas-cloud/vectra',
