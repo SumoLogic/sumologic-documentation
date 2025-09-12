@@ -110,7 +110,7 @@ Before you can [forward data](#forward-data-to-forwarding-destination) from a pa
         1. **Enable S3 server-side encryption**. Select the check box if you want the forwarded data to be encrypted. For more information, see [Using server-side encryption with Amazon S3 managed keys (SSE-S3)](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html) in AWS help.
     - For **Google Cloud Storage** as the destination type, follow the below steps:<br/><img src={useBaseUrl('img/manage/data-forwarding/create-GCS-destination.png')} alt="Create S3 Destination popup" style={{border: '1px solid gray'}} width="450"/>
         1. **Destination Name**. Enter a name to identify the destination.
-        1. **Bucket Name**. Enter the [exact name of the GCS bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/view-bucket-properties.html).
+        1. **Bucket Name**. Enter the [exact name of the GCS bucket](https://cloud.google.com/storage/docs/buckets).
             :::note
             You can create only one destination with a particular bucket name.  If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
             :::
