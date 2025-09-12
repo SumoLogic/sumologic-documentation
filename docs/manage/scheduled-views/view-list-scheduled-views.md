@@ -21,7 +21,7 @@ You must have a role that grants you the View Scheduled Views [role capability
     * **Name**. The name assigned to the scheduled view.
     * **Storage Consumed**. The total volume of uncompressed data ingested across the duration of the retention period.
     * **Retention Period**. The number of days configured as the retention period.
-    * **Data Forwarding**. Indicates the name of the [data forwarding](../data-forwarding/forward-data-from-sumologic.md) destination if the scheduled view is configured to forward data to the S3 bucket.
+    * **Data Forwarding**. Indicates the name of the [data forwarding](../data-forwarding/forward-data-from-sumologic.md) destination if the scheduled view is configured to forward data to an S3 or GCS bucket.
 1. To view details of a scheduled view configuration, click the row containing the view. A pane will appear on the right side of the page with the following information.
     * **Name**. Displays the name of the scheduled view.
     * **Query**. The query that returns the data for the scheduled view.
