@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 An [Azure App Service Environment](https://learn.microsoft.com/en-us/azure/app-service/environment/overview) is an Azure App Service feature that provides a fully isolated and dedicated environment for running App Service apps securely at high scale. This integration helps in monitoring your environments operational events such as upgrades, scaling, and suspensions.
 
-The below instructions applies to App Service Environment v3.
+The instructions below apply to App Service Environment v3.
 
 ## Log types
 
@@ -31,12 +31,6 @@ When you configure the event hubs source or HTTP source, plan your source catego
 ###  Configure collector
 
 Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
-
-### Configure metrics collection
-
-import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
-
-<MetricsSourceBeta/>
 
 ### Configure logs collection
 
