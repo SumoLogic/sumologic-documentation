@@ -263,7 +263,7 @@ account=* region=* namespace=aws/bedrock modelid=* metric=Invocations statistic=
 
 ## Collecting logs and metrics for the Amazon Bedrock app
 
-### CloudWatch metrics collection
+### Collecting CloudWatch metrics
 
 Sumo Logic supports collecting metrics using two source types:
 
@@ -273,7 +273,7 @@ Sumo Logic supports collecting metrics using two source types:
 * Namespace for **Amazon Bedrock** Service is **AWS/Bedrock**.
    * ​​​**Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account field”.
 
-### Amazon Bedrock CloudTrail logs collection
+### Collecting Amazon Bedrock CloudTrail logs
 
 1. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to your Hosted Collector.
    * **Name**. Enter a name to display the new Source.
@@ -291,7 +291,7 @@ Sumo Logic supports collecting metrics using two source types:
    * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
-### Amazon Bedrock CloudWatch logs collection
+### Collecting Amazon Bedrock CloudWatch logs
 
 To enable Amazon Bedrock CloudWatch Logs, follow the steps mentioned in [AWS Documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html)
 
@@ -355,7 +355,7 @@ if (isEmpty(namespace),"unknown",namespace) as namespace
 | fields namespace, modelId
 ```
 
-### Centralized AWS CloudTrail logs collection
+### Collecting Centralized AWS CloudTrail logs
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
