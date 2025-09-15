@@ -43,9 +43,9 @@ Create a hosted collector if not already configured and tag the `tenant_name` fi
 
 ### Configure metrics collection
 
-import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+import MetricsSource from '../../reuse/metrics-source.md';
 
-<MetricsSourceBeta/>
+<MetricsSource/>
 
 1. To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
 1. In the Sumo Logic Azure Metrics source configuration, configure namespaces as `Microsoft.EventGrid/domains`, `Microsoft.EventGrid/systemTopics` and `Microsoft.EventGrid/topics`.

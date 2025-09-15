@@ -36,9 +36,9 @@ Create a hosted collector if not already configured and tag the `tenant_name` fi
 
 ### Configure metrics collection
 
-import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+import MetricsSource from '../../reuse/metrics-source.md';
 
-<MetricsSourceBeta/>
+<MetricsSource/>
 
 :::note
 Metric Rule `AzureObservabilityMetadataExtractionVMName` will be created automatically as a part of app installation process.
