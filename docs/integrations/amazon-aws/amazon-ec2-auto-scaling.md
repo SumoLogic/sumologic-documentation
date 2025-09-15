@@ -101,7 +101,7 @@ account=account region=region autoscalinggroupname=cartService namespace=aws/aut
 ## Collecting logs and metrics for the Amazon EC2 Auto Scaling
 When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect Cloudtrail logs
+### Collecting Cloudtrail logs
 
 1. Configure a Amazon EC2 Auto Scaling [Cloudtrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
 1. **Metadata**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate. Each field needs a name (key) and a value.
@@ -110,7 +110,7 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
        * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
        * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
-### Collect metrics
+### Collecting metrics
 
 1. Sumo Logic supports collecting metrics using two source types:
    * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
@@ -124,13 +124,13 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
 The namespace for Amazon EC2 Auto Scaling Service is AWS/AutoScaling.
 :::
 
-## Field in field schema
+## Configure field in field schema
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 1. Search for the `autoscalinggroup` field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
-## Field Extraction Rule(s)
+## Configure Field Extraction Rule(s)
 
 Create a Field Extraction Rule (FER) for Amazon EC2 Auto Scaling access logs and CloudTrail logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
