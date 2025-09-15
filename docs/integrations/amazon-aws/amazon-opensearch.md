@@ -12,7 +12,7 @@ Amazon OpenSearch Service is a managed service that makes it easy to deploy, ope
 
 The Sumo Logic app for Amazon OpenSearch collects CloudWatch logs, CloudWatch metrics, and CloudTrail logs, providing a unified logs and metrics app that provides insights into the operations and utilization of your OpenSearch service. The preconfigured dashboards help you monitor the key metrics by domain names and nodes, view the OpenSearch events for activities, and help you plan the capacity of your OpenSearch service.
 
-## Log and Metrics types
+## Log and metrics types
 
 The Sumo Logic app for Amazon OpenSearch uses:
 
@@ -194,11 +194,11 @@ account=* region=* namespace=aws/es "\"eventsource\":\"es.amazonaws.com\""
 account=* region=* namespace=aws/es domainname=* !nodeid=* metric=WriteLatency statistic = average | avg by domainname 
 ```
 
-## Collect logs and metrics for the Amazon OpenSearch app
+## Collecting logs and metrics for the Amazon OpenSearch app
 
 This section has instructions for collecting logs and metrics for the Amazon OpenSearch Service app.
 
-### Collect CloudWatch Logs
+### Collecting CloudWatch logs
 
 To enable Amazon OpenSearch CloudWatch Logs, follow the steps mentioned in [AWS Documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createdomain-configure-slow-logs.html)
 
@@ -218,7 +218,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
    <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />   
 
-### Collect CloudTrail Logs
+### Collecting CloudTrail logs
 
 1. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) to your Hosted Collector.  
    * **Name**. Enter a name to display for the new Source.  
@@ -236,7 +236,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
    * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.  
 2. Click **Save**.
 
-### Collect CloudWatch Metrics
+### Collecting CloudWatch metrics
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).  
 2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics/) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) (Recommended).  
@@ -244,13 +244,13 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 4. **Metadata**. Add an account field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. The account field allows you to query metrics.  
 5. Click **Save**.
 
-### Field in Field Schema
+### Configure field in Field Schema
 
 1. [New UI](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.  <br/>[Classic UI](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 2. Search for the `domainname` field.  
 3. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
 
-### Field Extraction Rule(s)
+### Configure Field Extraction Rule(s)
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule/).
 
@@ -285,7 +285,7 @@ account=* region=* _sourceHost=/aws/OpenSearchService/*
 | fields namespace, domainname
 ```
 
-### Centralized AWS CloudTrail Log Collection
+### Collecting Centralized AWS CloudTrail logs
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present or update it as required.
 
