@@ -241,10 +241,10 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Amazon EC2 Auto Scaling - In-Service Capacity Below Desired` | This alert triggers when the number of healthy, active instances falls below the desired capacity. This indicates that your application may lack the capacity to handle its current load. | Count > 0 | Count < = 0 |
-| `Amazon EC2 Auto Scaling - Instance To Max Capacity Ratio` | Proactive alert that triggers when the total number of instances approaches the configured maximum size, warning of an inability to scale out further. | Count > 0.9 | Count < = 0.9 |
-| `Amazon EC2 Auto Scaling - Instances in Pending State` | This alert triggers when instances remain in a 'Pending' state for a prolonged period, indicating potential issues with instance launch or configuration. | Count > 0 | Count < = 0 |
-| `Amazon EC2 Auto Scaling - Instances in Terminating State` | This alert triggers when instances remain in a 'Terminating' state for a prolonged period, often indicating issues with lifecycle hooks. | Count > 0 | Count < = 0 |
+| `Amazon EC2 Auto Scaling - In-Service Capacity Below Desired` | This alert is triggered when the number of healthy, active instances falls below the desired capacity, indicating that your application may lack the capacity to handle its current load. | Count > 0 | Count < = 0 |
+| `Amazon EC2 Auto Scaling - Instance To Max Capacity Ratio` | This alert is triggered when the total number of instances approaches the configured maximum size, warning of an inability to scale out further. | Count > 0.9 | Count < = 0.9 |
+| `Amazon EC2 Auto Scaling - Instances in Pending State` | This alert is triggered when instances remain in a 'Pending' state for a prolonged period, indicating potential issues with instance launch or configuration. | Count > 0 | Count < = 0 |
+| `Amazon EC2 Auto Scaling - Instances in Terminating State` | This alert is triggered when instances remain in a 'Terminating' state for a prolonged period, often indicating issues with lifecycle hooks. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the Amazon EC2 Auto Scaling app (Optional)
 
