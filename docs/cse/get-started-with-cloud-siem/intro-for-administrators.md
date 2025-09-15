@@ -505,7 +505,7 @@ In this section, you'll create a custom automation using the playbook you create
 1. You should see a green popup at the bottom indicating that your automation was executed successfully.
 1. If your playbook included an email notification, and the recipient is your email address, your inbox should have an email from the Cloud SIEM system with the insight details.
 1. While still on the insight details screen, click on the **Automations** tab on the top of the screen to see the results of executing your automation. This view will show the status of the automations run on that insight, such as "Running", "Success" or "Completed with errors". 1. 
-1. If errors occur, you can click the **View Playbook** link on the right side to see the Playbook view, along with any execution errors that occurred. For help, see [Troubleshoot playbooks](/docs/platform-services/automation-service/automation-service-playbooks/#troubleshoot-playbooks).
+1. If errors occur, you can click the **View Playbook** link on the right side to see the Playbook view, along with any execution errors that occurred. For help, see [Troubleshoot playbooks](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/).
 
 You now have a custom automation that can be manually run or attached to an insight upton creation or closing.
 
