@@ -547,6 +547,7 @@ module.exports = {
               collapsible: true,
               collapsed: true,
               items: [
+                'send-data/hosted-collectors/microsoft-source/azure-metrics-source',
                 'send-data/hosted-collectors/microsoft-source/ms-office-audit-source',
               ],
             },

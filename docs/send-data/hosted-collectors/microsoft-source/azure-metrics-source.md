@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
+<img src={useBaseUrl('/img/send-data/ms-azure-metrics.svg')} alt="icon" width="60"/>
 
 <!-- Originally added as a beta article with DOCS-460. -->
 
