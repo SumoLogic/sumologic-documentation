@@ -20,14 +20,14 @@ Because Cloud SOAR provides automation functionality to the [Automation Service]
 * [Automation bridge](/docs/platform-services/automation-service/automation-service-bridge)
 * [Integration framework](/docs/platform-services/automation-service/integration-framework/)
 * [Audit logging](/docs/platform-services/automation-service/automation-service-audit-logging)
-* [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). (For information specific to running playbooks in Cloud SOAR, see [Run playbooks in Cloud SOAR](#run-playbooks-in-cloud-soar) below.)
+* [Playbooks](/docs/platform-services/automation-service/playbooks/). (For information specific to running playbooks in Cloud SOAR, see [Run playbooks in Cloud SOAR](#run-playbooks-in-cloud-soar) below.)
 
 The following sections describe automation features only used in Cloud SOAR.
 
 ## Run playbooks in Cloud SOAR
 
 In Cloud SOAR, playbooks are run from [incidents](/docs/cloud-soar/incidents-triage/#incidents). To run playbooks in Cloud SOAR, perform the following steps:
-1. [Create a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook) to use in incident response. When you create the playbook, do the following:
+1. [Create a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-a-new-playbook) to use in incident response. When you create the playbook, do the following:
    1. Click the **Edit** icon on the **Start** node:<br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/>
    1. Ensure that the **Add one or more params as a playbook input** field is left blank: <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node-input.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/><br/>Do *not* click the field to show the dropdown menu: <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/><br/>The other values in the field are used for automation outside of Cloud SOAR:
       * **Insight** and **Entity** are for launching a playbook from a Cloud SIEM automation.
@@ -137,7 +137,7 @@ Automation rules allow specific data to be parsed from the incoming data sources
 
 With the Cloud SOAR Slack integration, teams can remain connected, organize conversations,  and quickly find what is needed to get the work done.
 
-With the Cloud SOAR Slack integration, you can directly manage [user choice](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-user-choice-node-to-a-playbook) actions within the playbooks from your Slack workspace.  Furthermore, for each new incident, a related conversation channel will be created within your Slack workspace, where users will correspond to investigators. Changing a user within the incident will also result in a change to the user within the conversation channel.
+With the Cloud SOAR Slack integration, you can directly manage [user choice](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-a-user-choice-node-to-a-playbook) actions within the playbooks from your Slack workspace.  Furthermore, for each new incident, a related conversation channel will be created within your Slack workspace, where users will correspond to investigators. Changing a user within the incident will also result in a change to the user within the conversation channel.
 
 :::note
 To configure Slack for use inside Cloud SOAR, you must first create a public or private channel so you can send messages or files to channels or users directly.
@@ -213,7 +213,7 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
 
 ### Use the Slack app in User Choice
 
- If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar), you can set a playbook’s [user choice](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-user-choice-node-to-a-playbook) to be answered by Slack.
+ If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar), you can set a playbook’s [user choice](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-a-user-choice-node-to-a-playbook) to be answered by Slack.
 
 1. Run a playbook with a User Choice action. The following example shows a simple playbook with two available answers: **Close Incident** and **Investigate**. Notice that the option **Answer By Slack** is enabled.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-playbook.png')} alt="Playbook with user choices" style={{border: '1px solid gray'}} width="700"/>
 <br/>In this case, the Authorizer set is just a user. If a group is chosen, a message will be sent directly from the CSOAR Bot to every available user. If a user is not selected, and the playbook is inside an incident, the message will be sent within the relevant channel in the Slack workspace, and all the users within it will be authorized to choose one of the User Choice available options.

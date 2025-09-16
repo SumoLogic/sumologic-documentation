@@ -445,6 +445,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source',
+                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source',
@@ -1019,7 +1020,7 @@ module.exports = {
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
         'manage/data-forwarding/installed-collectors',
-        'manage/data-forwarding/amazon-s3-bucket',
+        'manage/data-forwarding/forward-data-from-sumologic',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
       ]
@@ -2607,6 +2608,7 @@ integrations: [
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/sysdig-secure',
           'integrations/saas-cloud/tenable',
+          'integrations/saas-cloud/trellix-mvision-epo',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
           'integrations/saas-cloud/vectra',
@@ -3228,7 +3230,19 @@ integrations: [
                 }
               ],
             },
-            'platform-services/automation-service/automation-service-playbooks',
+            {
+              type: 'category',
+              label: 'Playbooks',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platform-services/automation-service/playbooks/index'},
+              items: [
+                'platform-services/automation-service/playbooks/create-playbooks',
+                'platform-services/automation-service/playbooks/playbook-payloads',
+                'platform-services/automation-service/playbooks/arrays-in-playbooks',
+                'platform-services/automation-service/playbooks/troubleshoot-playbooks',
+              ],
+            },
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',
             'platform-services/automation-service/automation-service-bridge',

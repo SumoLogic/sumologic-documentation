@@ -1,6 +1,6 @@
 ---
 id: mobot-multiturn-beta
-title: Sumo Logic Mobot Multi-turn Conversations (Beta)
+title: Mobot (Beta)
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -15,11 +15,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Beta. For more information, contact your Sumo Logic account executive.
 :::
 
-Our new conversational experience in Sumo Logic Mobot (formerly known as *Copilot*) lets you interact with queries the way you would with a chat assistant. You ask a question and can refine it with follow-ups, change units, and see the updated query and visualization without starting over. Mobot maintains your intent across turns, surfaces helpful suggestions, and makes it easy to explore related angles. This guide explains what's new in the UI, how the multi-turn flow works, and shows example workflows.
+Our new conversational experience in Mobot (formerly known as Copilot) lets you interact with queries the way you would with a chat assistant. You ask a question and can refine it with follow-ups, change units, and see the updated query and visualization without starting over. Mobot maintains your intent across turns, surfaces helpful suggestions, and makes it easy to explore related angles. This guide explains what's new in the UI, how the conversational flow works, and shows example workflows.
+
+:::note Name update
+We are renaming *Copilot* to *Mobot*. During the transition, some UI labels and screenshots may still show **Copilot**. Functionality is unchanged. Learn more about [Mobot](/docs/search/mobot).
+:::
 
 ## What's new in Beta
 
-* **Multi-turn conversations**. Refine queries through natural, conversational follow-up questions without losing context.
+* **Conversational flow**. Refine queries through natural, conversational follow-up questions without losing context.
 * **Improved accuracy**. Translations to Sumo Query Language are more reliable, especially for data sources with active dashboards.
 * **Clarifications when needed**. If your request is ambiguous, Mobot may ask a follow-up question to narrow intent.
 * **Smarter error handling**. Instead of generic errors, Mobot provides clearer messages and fallback suggestions for next steps.
@@ -31,11 +35,11 @@ Our new conversational experience in Sumo Logic Mobot (formerly known as *Copilo
 
 In the below example, we'll use the following key concepts:
 
-* **Multi-turn conversation**. A sequence of related instructions that retains context and incrementally updates the query and output.  
+* **Conversational flow**. A sequence of related instructions that retains context and incrementally updates the query and output.  
 * **Intent card**. Visual summary of what you're asking Mobot to do in this session.  
 * **Suggestion cards**. Recommended refinements or adjacent analyses you can apply with a click.
 
-This example workflow demonstrates the multi-turn interaction pattern; you can apply the same steps to other logs, events, or dimensions.
+This example demonstrates the conversational interaction pattern; you can apply the same steps to other logs, events, or dimensions.
 
 ### Step 1: Ask your initial question  
 
@@ -43,17 +47,17 @@ Start broad when you set a goal. We'll ask: `Show failed login attempts in the l
 
 An intent card appears in the conversation pane that summarizes your goal. Mobot also surfaces suggestion cards with related refinements you can click, and gives you the option to open the query in Log Search.
 
-<img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot multi-turn conversation showing initial query, failed login attempts in the last 24 hours" style={{border: '1px solid gray'}} width="700"/>
+<img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot conversational experience showing initial query for failed login attempts in the last 24 hours" style={{border: '1px solid gray'}} width="700"/>
 
 ### Step 2: Narrow the scope  
 
 The top reason in the table is `FailedScheduling`, so we'll select a follow-up suggestion, `Show failed scheduling events`. Mobot refreshes the results and updates the intent card and query to reflect the new focus.
 
-<img src={useBaseUrl('img/search/mobot/narrow-scope.png')} alt="Mobot multi-turn conversation showing refinement, failed scheduling events" style={{border: '1px solid gray'}} width="700"/>
+<img src={useBaseUrl('img/search/mobot/narrow-scope.png')} alt="Mobot conversational experience showing refinement to failed scheduling events" style={{border: '1px solid gray'}} width="700"/>
 
-Now, refine further by typing: `Break down failed scheduling events by namespace`
+Now, refine further by typing: `Break down failed scheduling events by namespace`.
 
-<img src={useBaseUrl('img/search/mobot/narrow-scope-filter.png')} alt="Mobot multi-turn conversation showing refinement, failed scheduling events by namespace" style={{border: '1px solid gray'}} width="700"/>
+<img src={useBaseUrl('img/search/mobot/narrow-scope-filter.png')} alt="Mobot conversational experience showing failed scheduling events broken down by namespace" style={{border: '1px solid gray'}} width="700"/>
 
 Mobot adjusts the query, applies the refinements, and renders a visual chart.
 
@@ -61,13 +65,13 @@ Mobot adjusts the query, applies the refinements, and renders a visual chart.
 
 Next, type `Add error messages`. Mobot translates this into: `Add error messages to the breakdown of failed scheduling events by namespace`. The intent card expands to include the new scope, and results now show error message details.
 
-<img src={useBaseUrl('img/search/mobot/drill-causes.png')} alt="Mobot multi-turn conversation showing error messages" style={{border: '1px solid gray'}} width="700"/>
+<img src={useBaseUrl('img/search/mobot/drill-causes.png')} alt="Mobot conversational experience showing error messages for failed scheduling events" style={{border: '1px solid gray'}} width="700"/>
 
 ### Step 4: Request a trend over time
 
 Finally, type: `Show the trend over 24 hours`. Mobot translates this into: `Show the trend of failed scheduling events by namespace with error messages over 24 hours`. The query applies a timeslice (for example, one-hour buckets) to group results over time.
 
-<img src={useBaseUrl('img/search/mobot/trend-over-time.png')} alt="Mobot multi-turn conversation showing trend over time" style={{border: '1px solid gray'}} width="700"/>
+<img src={useBaseUrl('img/search/mobot/trend-over-time.png')} alt="Mobot conversational experience showing trend over time" style={{border: '1px solid gray'}} width="700"/>
 
 Mobot also presents new suggestion cards to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces.
 
@@ -87,7 +91,7 @@ You can also [edit the query logic](/docs/search/mobot/#edit-query-code), [open 
 
 ## FAQ
 
-The questions below refer specifically to the multi-turn conversion (beta) experience. For general information about Mobot, see the [Mobot FAQ](/docs/search/mobot#faq).
+The questions below refer specifically to the conversational (Beta) experience. For general information about Mobot, see the [Mobot FAQ](/docs/search/mobot#faq).
 
 <details>
 <summary>Is any user or org data sent outside our environment?</summary>
@@ -119,7 +123,7 @@ Here are some common cases:
 * For dashboard-aware translations via RAG, support is limited to the `sourceCategory` filter (selection in the source picker) at launch. Other expressions like `_index=` or `_sourceHost=` are not yet supported.  
 * RAG only considers dashboards that have been opened in the last 90 days when interpreting your query.
 * Very large or highly complex queries may time out or trigger structured fallback responses.
-* Multi-turn Mobot is available for log-based searches only. Metrics and Metric Searches are not supported in this Beta.
+* The conversational experience is available for log-based searches only. Metrics and Metric Searches are not supported in this Beta.
 </details>
 
 ## Additional resources

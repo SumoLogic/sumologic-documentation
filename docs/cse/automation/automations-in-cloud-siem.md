@@ -37,16 +37,16 @@ The first thing you need to do is decide what actions you want to use in your pl
 
 Now that you have the names of the actions you want to use, you can add them to your playbook.
 
-1. [Create a new playbook](/docs/platform-services/automation-service/automation-service-playbooks#create-a-new-playbook). When you create a playbook, you can select the **Type** as **CSE** to indicate that the playbook will be used for a Cloud SIEM automation.
+1. [Create a new playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-a-new-playbook). When you create a playbook, you can select the **Type** as **CSE** to indicate that the playbook will be used for a Cloud SIEM automation.
 1. Click **Add Node**.
-1. Choose [**Action**](/docs/platform-services/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook) as the type of node to add.
+1. Choose [**Action**](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook) as the type of node to add.
 1. In the **Action** field, select the name an action you identified in Step 1.
 1. As soon as you choose the action, the **Resource** field displays the name of the resource. Verify that the name of the resource matches what you noted in Step 1.
 1. Fill out the rest of the fields in the **Add Node** dialog to configure the action to behave the way you want.
 1. Click **Create**. The node is added to the playbook.
 1. Repeat to add more actions to the playbook. If desired, add conditions.
 1. Click **Save** to save your changes.
-1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
+1. To [test the playbook](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
 1. When you're ready to let the playbook be used in automations, click **Publish**.
 
 ### Step 3: Add the playbook to an automation
@@ -213,7 +213,7 @@ Though you can create your own playbooks, the Automation Service provides the fo
 
 To continue getting the same behavior found in the legacy actions and enrichments, in addition to using installed playbooks, you can add the corresponding new actions to playbooks you create.
 
-For directions to add an action to a playbook, see [Add an action node to a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook). For examples, see [Cloud SIEM Automation Examples](/docs/cse/automation/cloud-siem-automation-examples/).
+For directions to add an action to a playbook, see [Add an action node to a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook). For examples, see [Cloud SIEM Automation Examples](/docs/cse/automation/cloud-siem-automation-examples/).
 
 #### Legacy actions
 
