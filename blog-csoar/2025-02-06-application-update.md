@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 🚀 **New feature release: Autosave for playbooks**
 
-We’re excited to introduce [autosave for playbooks](/docs/platform-services/automation-service/automation-service-playbooks/#autosave), a feature designed to make workflow changes seamless by automatically saving your progress as draft and preventing accidental data loss. Here's what's new:
+We’re excited to introduce [autosave for playbooks](/docs/platform-services/automation-service/playbooks/create-playbooks/#autosave), a feature designed to make workflow changes seamless by automatically saving your progress as draft and preventing accidental data loss. Here's what's new:
 * Playbooks now automatically save your changes, including node updates, connections, and position adjustments. 
 * Multiple changes made in quick succession are saved together to improve performance. 
 * Visual indicators display the saving status whether in progress, successfully saved, or failed. 
