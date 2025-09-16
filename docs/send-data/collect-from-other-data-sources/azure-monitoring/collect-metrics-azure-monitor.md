@@ -185,7 +185,7 @@ S = Scan Interval (in minutes)
 
 Understanding this rate helps you proactively configure your Sources to stay within Microsoft’s service limits and avoid interruptions due to throttling.
 
-### Common errors
+## Common errors
 
 For common error messages, refer [Event Hub export error messages](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq#event-hub-export-error-messages) section.
 
