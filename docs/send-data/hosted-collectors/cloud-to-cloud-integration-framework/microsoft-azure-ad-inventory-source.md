@@ -22,7 +22,7 @@ If you want to explicitly allow the static IP addresses used for this Source o
 | Polling Interval | Data |
 | :--- | :--- |
 | 12 hours |  [Users](https://docs.microsoft.com/en-us/graph/api/user-list?view=graph-rest-1.0) |
-| 12 hours |  [Devices](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-overview?view=graph-rest-1.0) |
+| 12 hours |  [Devices](https://learn.microsoft.com/en-us/graph/api/device-list?view=graph-rest-1.0&tabs=http) |
 
 ## Setup
 
