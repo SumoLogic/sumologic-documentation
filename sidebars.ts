@@ -1019,7 +1019,7 @@ module.exports = {
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
         'manage/data-forwarding/installed-collectors',
-        'manage/data-forwarding/amazon-s3-bucket',
+        'manage/data-forwarding/forward-data-from-sumologic',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
       ]
@@ -2607,6 +2607,7 @@ integrations: [
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/sysdig-secure',
           'integrations/saas-cloud/tenable',
+          'integrations/saas-cloud/trellix-mvision-epo',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
           'integrations/saas-cloud/vectra',
