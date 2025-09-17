@@ -142,7 +142,7 @@ The scan interval determines how often the Azure Metrics Source queries the Azur
 - Shorter scan intervals (e.g., 1 minute) result in more frequent API calls.
 - Longer scan intervals reduce the request rate, helping to avoid throttling—especially in environments with a high number of resources.
 
-### Recommended scan interval guidelines
+#### Recommended scan interval guidelines
 
 | Scan Interval | Maximum Resources per Subscription | Maximum VMs per Subscription for Virtual Machine Guest metrics |
 |:--|:--|:--|
