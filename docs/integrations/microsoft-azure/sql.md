@@ -521,3 +521,9 @@ These alerts are metrics-based and will work for Azure SQL.
 | `Azure SQL - DTU Percentage` | This monitor triggers alerts when High average DTU consumption percentage is detected in Azure SQL. | Count > 80 | Count =< 80 |
 | `Azure SQL - Tempdb Percent Log Used` | This monitor triggers alerts when High Tempdb Percent Log Usage is detected in Azure SQL. | Count > 60 | Count =< 60 |
 | `Azure SQL - High Worker Usage` | This monitor triggers alerts when High Worker Usage is detected in Azure SQL. | Count > 60 | Count =< 60 |
+
+## Troubleshooting
+
+### HTTP Logs and Metrics Source used by Azure Functions
+
+To troubleshoot metrics collection, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).

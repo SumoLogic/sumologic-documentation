@@ -152,3 +152,9 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Troubleshooting
+
+### HTTP Logs and Metrics Source used by Azure Functions
+
+To troubleshoot metrics collection, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).

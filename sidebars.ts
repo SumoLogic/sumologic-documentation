@@ -547,6 +547,7 @@ module.exports = {
               label: 'Microsoft Sources',
               collapsible: true,
               collapsed: true,
+              link: {type: 'doc', id: 'send-data/hosted-collectors/microsoft-source/index'},
               items: [
                 'send-data/hosted-collectors/microsoft-source/azure-metrics-source',
                 'send-data/hosted-collectors/microsoft-source/ms-office-audit-source',

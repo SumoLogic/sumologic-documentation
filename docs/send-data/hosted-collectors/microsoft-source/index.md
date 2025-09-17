@@ -6,9 +6,7 @@ description: Sumo Logic offers Sources to collect from many Microsoft products.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Content to be added here....
-
-Sumo Logic offers hosted Sources to collect from many Microsoft products.
+Sumo Logic offers hosted Sources to collect data from Microsoft products.
 
 ## Guide contents
 
