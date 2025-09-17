@@ -25,6 +25,10 @@ Key features:
 - **Customizable filters**. Tailor deletion to your needs.
 - **Robust auditing mechanisms**. Ensure thorough tracking.
 
+:::info
+To know about Deletion requests API, refer to the [Data Deletion Rules APIs](/docs/api/data-deletion-rules/0).
+:::
+
 ## Create a deletion request
 
 :::warning
