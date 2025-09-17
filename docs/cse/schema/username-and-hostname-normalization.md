@@ -44,7 +44,7 @@ The following fields of the schema are normalized.
 | `srcDevice_hostname` | hostname           |
 | `user_username`      | username           |
 
-When a username is normalized, the original, un-normalized name is placed in a `_raw` name attribute, for example,  `user_useraname_raw`. The normalized name is placed in the attribute field `user_username`. The rules engine allows the `_raw` username forms to be used in rule creation.
+When a username is normalized, the original, un-normalized name is placed in a `_raw` name attribute, for example,  `user_username_raw`. The normalized name is placed in the attribute field `user_username`. The rules engine allows the `_raw` username forms to be used in rule creation.
 
 If a name normalization configuration exists, the name attribute will be populated with the form `<username>:<friendly_domain>` where the `<friendly domain name>` portion is not populated for the normalized default domain.  When name normalization is enabled all name fields (not-raw) will be lowercase. For more information, see [Single domain example](#single-domain-example) and [Multiple domains example](#multiple-domains-example) below.
 
