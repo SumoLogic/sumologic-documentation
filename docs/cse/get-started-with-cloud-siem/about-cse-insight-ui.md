@@ -120,7 +120,7 @@ The insight **Summary** pane provides a concise, actionable summary of threat in
 <img src={useBaseUrl('img/cse/insight-summary-pane.png')} alt="Insight summary" style={{border: '1px solid gray'}} width="300"/>
 
 :::note
-Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide feedback on the effectiveness of the summary presented.
+Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide feedback on the effectiveness of the summary presented. Clicking the thumbs-down button gives you the opportunity to provide additional feedback.
 :::
 
 The summary is generated when an insight is created, and is regenerated whenever the insight is modified, keeping it current with added or removed signals. Summaries are not only generated for insights created by the system, but also custom insights created manually by users via the UI.
