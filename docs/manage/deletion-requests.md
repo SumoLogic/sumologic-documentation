@@ -26,7 +26,7 @@ Key features:
 - **Robust auditing mechanisms**. Ensure thorough tracking.
 
 :::info
-To know about Deletion requests API, refer to the [Data Deletion Rules APIs](/docs/api/data-deletion-rules/0).
+To know about Deletion requests API, refer to the [Data Deletion Rules APIs](/docs/api/data-deletion-rules).
 :::
 
 ## Create a deletion request
