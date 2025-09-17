@@ -19,12 +19,11 @@ This app includes [built-in monitors](#onelogin-alerts). For details on creating
 
 ## Setting up the collection
 
-:::note
-To use this feature, you'll need to enable access to your OneLogin logs and ingest them into Sumo Logic.
-:::
+**Pre-requisites**:
+- Enable access to your OneLogin logs and ingest them into Sumo Logic.
+- You must have access to **OneLogin Enterprise** or **Unlimited** plan subscription to set up OneLogin event broadcaster for events.
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to ensure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account) at any time.
-- **OneLogin Enterprise** or **Unlimited** plan subscription.
 
 ### Configure an event broadcaster for event logs
 
