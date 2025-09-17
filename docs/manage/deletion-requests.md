@@ -53,11 +53,11 @@ Data cannot be recovered once it gets deleted. Ensure that you have appropriatel
    :::
 1. Select the **Time Range** when the data was ingested.
 1. When you're done, click **Save**.
-1. An email about your request will be sent to 50 most recently active approval users with [approval access](#approve-the-deletion-request). You can check on your request in the **Status** column. 
-:::note
-If you require an approval apart from this 50 users, you can forward the deletion request approval email to the required users. 
-:::
-<br/><img src={useBaseUrl('img/search/get-started-search/deletion-request-status.png')} alt="deletion request status" style={{border: '1px solid gray'}} width="400"/>
+1. An email about your request will be sent to 50 most recently active approval users with [approval access](#approve-the-deletion-request). You can check on your request in the **Status** column.  
+    :::note
+    If you require an approval apart from this 50 users, you can forward the deletion request approval email to the required users. 
+    :::
+    <img src={useBaseUrl('img/search/get-started-search/deletion-request-status.png')} alt="deletion request status" style={{border: '1px solid gray'}} width="400"/>
 
 ### From a Log Search
 
