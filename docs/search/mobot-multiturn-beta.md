@@ -96,7 +96,7 @@ As with legacy Mobot, you can adjust the [time range](/docs/search/mobot/#time-r
 * **Talk to it like a conversation**. Layer refinements instead of rewriting the whole question.  
 * **Be specific**. Combine filters, units, and percentiles in clear language.
 * **Ask about data tied to dashboards**. Mobot works best when you reference data sources that already have dashboards built on them. Ask questions using dashboard panel names or descriptions, even if built on unstructured logs.
-* **Reuse queries from your conversation history**. Everything you ask is saved to your conversation history automatically. You can revisit, reuse, continue where you left off in prior conversations to compare or branch analyses.<br/><img src={useBaseUrl('img/search/mobot/walkthrough-convo-history.png')} alt="conversation history" style={{border: '1px solid gray'}} width="700"/>
+* **Reuse queries from your conversation history**. Everything you ask is saved to your conversation history automatically. You can revisit, reuse, continue where you left off in prior conversations to compare or branch analyses.
 * **Modify existing queries**. Add/remove fields, add `where`, `sort`, `avg()` clauses, etc.
 * **Guide Mobot with feedback**. If the result isn't right, use natural language: `Don't do X, instead do Y`.
 * **Fix broken queries**. Paste a syntactically invalid query. Mobot will correct it.
