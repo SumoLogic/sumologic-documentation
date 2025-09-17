@@ -67,7 +67,7 @@ To configure the Azure Metrics Source:
 1. **Processing Rules for Metrics (Optional)**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](/docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules).
     ![filtersprocessingrules.png](/img/send-data/filtersprocessingrules.png)
 
-## JSON configuration
+## JSON schema
 
 ### Configuration Object
 
@@ -91,3 +91,78 @@ To configure the Azure Metrics Source:
 ```json reference
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/azure-metrics/example.json
 ```
+
+## Troubleshooting
+
+### Unable to authenticate to Azure
+
+During Source creation, if you encounter errors such as `Unable to get subscriptions. Please check credentials.` or `Unable to authenticate to Azure`, please verify that your credentials are valid in the Azure portal.
+
+Follow the steps below to solve this issue:
+1. Log in to the Azure Portal.
+1. Navigate to App registrations and locate the App that was created during the **Deploy to Azure** process.
+1. Go to **Certificates & Secrets**.
+1. Ensure that a valid **Client Secret** exists. If no secret is present or the existing one has expired, create a new Client Secret.
+1. Retry the Source creation process using the updated credentials.
+
+### Subscriptions not present in the View Subscriptions list
+
+If the **View Subscriptions** list does not include expected Azure subscriptions, you can verify that the credentials have sufficient permission to read from the expected subscription. Another possible cause could be a propagation delay. After creating a new app or client secret, Azure may take up to 10 minutes to reflect the changes across its services. Please wait a few minutes and refresh the list.
+
+Follow the steps below to verify and assign proper permissions:
+1. In the Azure portal, navigate to **Subscriptions**.
+1. Select the target subscription.
+1. Go to **Access Control (IAM)** > **Role assignments**.
+1. Confirm that the App created during the **Deploy to Azure** step is listed.
+1. Ensure it is assigned the **Monitoring Reader** role.
+
+### Missing metrics in Sumo Logic
+
+Azure Monitor displays all metrics, even those without data, but Sumo Logic only collects metrics with actual datapoints.
+If you know that certain metrics in Azure contain actual data (non-empty values) and you expected those metrics to appear in Sumo Logic, but they are missing, it’s recommended to reach out to Sumo Logic Support to resolve the issue.
+
+### API throttling by Microsoft
+
+If API requests to Azure are being throttled, resulting in failed or delayed metric ingestion, please review and follow the guidance in the [Best Practices](#best-practices) section for reducing the frequency and volume of API calls.
+If you continue to experience throttling, please reach out to Sumo Logic Support for assistance.
+
+## Best practices
+
+The Sumo Logic Azure Metrics Source uses the Azure Monitor API to retrieve metrics from your Azure environment. Following the best practices below will help reduce the number of API requests, avoid hitting Microsoft’s API throttling limits, and ensure efficient and reliable metric collection.
+
+### Limit one source per subscription
+
+Microsoft enforces API throttling for each subscription. Since each Sumo Logic Azure Metrics Source sends independent requests to the Azure Monitor API, Sumo Logic strongly recommends you to use only one Azure Metrics Source per Azure subscription.
+
+note: A single Sumo Logic Source can collect metrics from multiple Azure subscriptions without issue. However, avoid assigning more than one Source to collect from the same subscription, as this may lead to throttling.
+
+### Increase the scan interval to reduce API load
+
+The scan interval determines how often the Azure Metrics Source queries the Azure Monitor API. Adjusting this interval can significantly impact API usage:
+- Shorter scan intervals (e.g., 1 minute) result in more frequent API calls.
+- Longer scan intervals reduce the request rate, helping to avoid throttling—especially in environments with a high number of resources.
+
+### Recommended scan interval guidelines
+
+| Scan Interval | Maximum Resources per Subscription | Maximum VMs per Subscription for Virtual Machine Guest metrics |
+|:--|:--|:--|
+| 1 minute | 20,000 (3,000 for users on Azure Sovereign Cloud) | 600 (80 for users on Azure Sovereign Cloud) |
+| 5 minutes | 100,000 (15,000 for users on Azure Sovereign Cloud)| 3,000 (400 for users on Azure Sovereign Cloud) |
+
+For a larger number of resources, increase the scan interval further using the Sumo Logic Source Management API.
+
+note: Increasing the scan interval does not reduce metric granularity. The frequency of data collection changes, but the resolution of data points remains unaffected.
+
+### Estimate API request rate per subscription
+
+The API request rate for the Azure Metrics Source depends on the scan interval and the number of resources in a subscription. Since Microsoft enforces API throttling per subscription, you can estimate the rate of requests made per subscription using the following formula:
+
+`(CEILING((T / 50) / N) * N * (180 / S)) + (V * (144 / S))`
+
+Where,
+T = Total number of non-VM resources  
+V = Total number of VMs (only for users collecting Virtual Machine Guest metrics)  
+N = Number of distinct namespaces with active resources  
+S = Scan Interval (in minutes)
+
+Understanding this rate helps you proactively configure your Sources to stay within Microsoft’s service limits and avoid interruptions due to throttling.
