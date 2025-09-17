@@ -165,13 +165,11 @@ Follow the steps detailed in the [Microsoft Azure Virtual Network documentation]
 
 If you have multiple virtual networks, you can configure virtual network flow logs using a [built-in policy](https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-policy#deploy-and-configure-virtual-network-flow-logs-using-a-built-in-policy) for each location and subscriptions.
 
-#### Activity logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Skip this step if you are already collecting activity logs for a subscription.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source includes logs from multiple regions, avoid tagging it with a location tag.
-:::
+<ActivityLogs/>
 
 In order to find virtual networks without any flow log resource, you can audit flow logs configuration for virtual networks using a [built-in policy](https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-policy#audit-flow-logs-configuration-for-virtual-networks-using-a-built-in-policy).
 
@@ -311,4 +309,3 @@ To resolve the issue, rename or delete the existing FER (AzureVirtualNetworkTarg
 ### HTTP Logs and Metrics Source used by Azure Functions
 
 To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
-

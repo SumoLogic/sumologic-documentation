@@ -3,7 +3,7 @@ title: February 24, 2025 - Application Update
 keywords:
   - sumo logic
   - cloud soar
-image: https://help.sumologic.com/img/reuse/rss-image.jpg
+image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 hide_table_of_contents: true
 ---
 
@@ -25,4 +25,4 @@ When selecting an array variable in the text area, you will have two options:
 
 If the iterate option is selected, an icon will appear in front of the variable inside the text area to indicate that iteration is enabled. The action will then execute as many times as there are elements in the array.
 
-[Learn more](/docs/platform-services/automation-service/automation-service-playbooks/#arrays-in-text-areas).
+[Learn more](/docs/platform-services/automation-service/playbooks/arrays-in-playbooks/).

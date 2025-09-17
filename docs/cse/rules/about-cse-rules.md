@@ -34,9 +34,9 @@ Watch this micro lesson to learn more about rules.
 
 ## Rules list view
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view rules, in the top menu select **Content > Rules**. 
-
 [**New UI**](/docs/get-started/sumo-logic-ui). To view rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view rules, in the top menu select **Content > Rules**. 
 
 <img src={useBaseUrl('img/cse/rules-list-page.png')} alt="Rules list page" style={{border: '1px solid gray'}} width="800" />
 

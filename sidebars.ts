@@ -445,6 +445,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source',
+                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source',
@@ -988,7 +989,7 @@ module.exports = {
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers',
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-flex',
             'manage/manage-subscription/create-and-manage-orgs/manage-org-settings',
-            //'manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps',
+            'manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules',
           ],
         },
         {
@@ -1018,7 +1019,7 @@ module.exports = {
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
         'manage/data-forwarding/installed-collectors',
-        'manage/data-forwarding/amazon-s3-bucket',
+        'manage/data-forwarding/forward-data-from-sumologic',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
       ]
@@ -1248,6 +1249,7 @@ module.exports = {
       items: [
         'dashboards/about',
         'dashboards/create-dashboard-new',
+        'dashboards/dashboard-child-orgs',
         'dashboards/explore-view',
         'dashboards/drill-down-to-discover-root-causes',
         {
@@ -1406,7 +1408,7 @@ module.exports = {
         },
       ],
     },
-    'search/copilot',
+    'search/mobot',
     {
       type: 'category',
       label: 'Search Query Language',
@@ -1663,6 +1665,7 @@ module.exports = {
       ],
     },
     'search/query-assist',
+    'search/search-across-child-orgs',
     'search/optimize-search-performance',
     'search/optimize-search-partitions',
     'search/subqueries',
@@ -2222,7 +2225,6 @@ integrations: [
          'integrations/microsoft-azure/azure-notification-hubs',
          'integrations/microsoft-azure/azure-public-ipAddress',
          'integrations/microsoft-azure/azure-relay',
-         'integrations/microsoft-azure/azure-security-advisor',
          'integrations/microsoft-azure/azure-service-bus',
          'integrations/microsoft-azure/azure-sql-elastic-pool',
          'integrations/microsoft-azure/azure-sql-managed-instance',
@@ -2546,6 +2548,7 @@ integrations: [
           'integrations/saas-cloud/asana',
           'integrations/saas-cloud/atlassian',
           'integrations/saas-cloud/automox',
+          'integrations/saas-cloud/aws-iam-users',
           'integrations/saas-cloud/bitwarden',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
@@ -2603,6 +2606,7 @@ integrations: [
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/sysdig-secure',
           'integrations/saas-cloud/tenable',
+          'integrations/saas-cloud/trellix-mvision-epo',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
           'integrations/saas-cloud/vectra',
@@ -3224,7 +3228,19 @@ integrations: [
                 }
               ],
             },
-            'platform-services/automation-service/automation-service-playbooks',
+            {
+              type: 'category',
+              label: 'Playbooks',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platform-services/automation-service/playbooks/index'},
+              items: [
+                'platform-services/automation-service/playbooks/create-playbooks',
+                'platform-services/automation-service/playbooks/playbook-payloads',
+                'platform-services/automation-service/playbooks/arrays-in-playbooks',
+                'platform-services/automation-service/playbooks/troubleshoot-playbooks',
+              ],
+            },
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',
             'platform-services/automation-service/automation-service-bridge',
