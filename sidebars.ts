@@ -2227,7 +2227,6 @@ integrations: [
          'integrations/microsoft-azure/azure-notification-hubs',
          'integrations/microsoft-azure/azure-public-ipAddress',
          'integrations/microsoft-azure/azure-relay',
-         'integrations/microsoft-azure/azure-security-advisor',
          'integrations/microsoft-azure/azure-service-bus',
          'integrations/microsoft-azure/azure-sql-elastic-pool',
          'integrations/microsoft-azure/azure-sql-managed-instance',
