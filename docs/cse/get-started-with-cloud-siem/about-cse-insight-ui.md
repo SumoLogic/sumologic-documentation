@@ -125,6 +125,23 @@ Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide
 
 The summary is generated when an insight is created, and is regenerated whenever the insight is modified, keeping it current with added or removed signals. Summaries are not only generated for insights created by the system, but also custom insights created manually by users via the UI.
 
+:::sumo Micro Lesson
+
+Watch this micro lesson to learn more about the insight summary.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/qpdjncnfnv?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
+
 #### FAQs about the insight summary
 
 * **How does the AI handle data privacy?**
