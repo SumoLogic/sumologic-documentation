@@ -34,62 +34,37 @@ As we transition the feature name from *Copilot* to *Mobot*, some UI labels and 
 
 The steps below outline a common conversational interaction pattern. You can apply the same approach to different logs, events, or dimensions.
 
-### Step 1: Ask your initial question  
+### Step 1: Ask your initial question
 
-Use natural language to ask what you're looking for. You can start broad when you set a goal, or, for better results, include the name of the data source you're querying, and any related field names or values.
+Use natural language to ask what you're looking for. You can start as broad as you like, or be more specific (include a data source name and any relevant fields/values).
 
-If you don't select a source, Mobot chooses one automatically based on your question. You can override it by typing the source name directly in your prompt, or by choosing it manually from the **Auto Source Selection** dropdown.
+If you don't select a source, Mobot chooses one automatically based on your question. You can override it by typing the source name directly in your prompt or by choosing it from the **Auto Source Selection** dropdown.
 
-After this, an intent card appears in the conversation pane summarizing your goal. Mobot then surfaces suggestion cards with related refinements, which you can click. You'll also see an option to open your query in Log Search.
+For example, enter a broad question: `Show me Bedrock errors`.
 
-<!-- replace
-We'll ask: `Show failed login attempts in the last 24 hours`.
-<img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot conversational experience showing initial query for failed login attempts in the last 24 hours" style={{border: '1px solid gray'}} width="700"/>
--->
+An intent card appears in the conversation pane summarizing your goal. Mobot then surfaces suggestion cards with related refinements, which you can click. You'll also see an option to open your query in Log Search.
 
-### Step 2: Narrow the scope  
+<img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot conversational experience showing initial query" style={{border: '1px solid gray'}} width="700"/>
 
-After clicking on a follow-up suggestion, Mobot refreshes the results and updates the intent card and query to reflect the new focus. With each subsequent refinement, Mobot adjusts the query, applies the refinements, and renders a visual chart.
+### Step 2: Narrow the scope and drill into causes
 
+After you click a follow-up suggestion or type a refinement, Mobot refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Mobot adjusts the query, applies the changes, and renders a visual chart.
 
-<!--
-The top reason in the table is `FailedScheduling`, so we'll select a follow-up suggestion, `Show failed scheduling events`.
-<img src={useBaseUrl('img/search/mobot/narrow-scope.png')} alt="Mobot conversational experience showing refinement to failed scheduling events" style={{border: '1px solid gray'}} width="700"/>
-Now, refine further by typing: `Break down failed scheduling events by namespace`.
+For example, clicking the suggestion `Show me trend of errors each minute` applies a timeslice to group the results over time.
 
-<img src={useBaseUrl('img/search/mobot/narrow-scope-filter.png')} alt="Mobot conversational experience showing failed scheduling events broken down by namespace" style={{border: '1px solid gray'}} width="700"/>
--->
+<img src={useBaseUrl('img/search/mobot/narrow-scope.png')} alt="Mobot conversational experience showing refinement to trend of errors each minute" style={{border: '1px solid gray'}} width="700"/>
 
-### Step 3: Drill into causes
+As you go, Mobot presents new suggestions to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces. The intent card expands each time to include the new scope, and results show additional details.
 
-As you go, Mobot presents new suggestion cards to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces.
+We'll refine further by clicking the suggestion `Show the count of error logs per minute, grouped by error code`.
 
-You can also manually type a refinement (for example, `Add error messages`). The intent card expands to include the new scope and results now show new details.
+<img src={useBaseUrl('img/search/mobot/narrow-scope-filter.png')} alt="Mobot conversational experience showing the count of error logs per minute, grouped by error code" style={{border: '1px solid gray'}} width="700"/>
 
-<!--
-Next, type `Add error messages`. Mobot translates this into: `Add error messages to the breakdown of failed scheduling events by namespace`.
-
-<img src={useBaseUrl('img/search/mobot/drill-causes.png')} alt="Mobot conversational experience showing error messages for failed scheduling events" style={{border: '1px solid gray'}} width="700"/>
--->
-
-### Step 4: Request a trend over time
-
-If you type a time period (for example, `Show the trend over 24 hours`), the query applies a timeslice (for example, one-hour buckets) to group results over time.
+From here, you can continue refining or try other options like [switching the chart type](/docs/search/mobot/#chart-type), [opening the query in Log Search](/docs/search/mobot/#step-4-open-in-log-search), [adjusting the time range](/docs/search/mobot/#time-range), [editing the query logic](/docs/search/mobot/#edit-query-code), or [starting over with a new chat](/docs/search/mobot/#new-conversation).
 
 :::tip
 Ask Mobot to change units in your query. For example, `Convert GB to bytes`.
 :::
-
-<!--
-Finally, type: `Show the trend over 24 hours`. Mobot translates this into: `Show the trend of failed scheduling events by namespace with error messages over 24 hours`.
-<img src={useBaseUrl('img/search/mobot/trend-over-time.png')} alt="Mobot conversational experience showing trend over time" style={{border: '1px solid gray'}} width="700"/>
-
-where the results appear in a table view, you can change the visualization to a time-series chart (for example, line or area) to see the trend more clearly over time.
--->
-
-### Next steps
-
-As with legacy Mobot, you can adjust the [time range](/docs/search/mobot/#time-range), switch [chart types](/docs/search/mobot/#chart-type), [edit the query logic](/docs/search/mobot/#edit-query-code), [open in Log Search](/docs/search/mobot/#step-4-open-in-log-search), or start over with a [new chat](/docs/search/mobot/#new-conversation).
 
 ## Best practices
 
@@ -97,7 +72,7 @@ As with legacy Mobot, you can adjust the [time range](/docs/search/mobot/#time-r
 * **Be specific**. Combine filters, units, and percentiles in clear language.
 * **Ask about data tied to dashboards**. Mobot works best when you reference data sources that already have dashboards built on them. Ask questions using dashboard panel names or descriptions, even if built on unstructured logs.
 * **Reuse queries from your conversation history**. Everything you ask is saved to your conversation history automatically. You can revisit, reuse, continue where you left off in prior conversations to compare or branch analyses.
-* **Modify existing queries**. Add/remove fields, add `where`, `sort`, `avg()` clauses, etc.
+* **Modify existing queries**. Add/remove fields, add `where`, `sort`, `avg()` clauses, and more.
 * **Guide Mobot with feedback**. If the result isn't right, use natural language: `Don't do X, instead do Y`.
 * **Fix broken queries**. Paste a syntactically invalid query. Mobot will correct it.
 
