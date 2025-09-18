@@ -38,7 +38,7 @@ The steps below outline a common conversational interaction pattern. You can app
 
 Use natural language to ask what you're looking for. You can start as broad as you like, or be more specific (include a data source name and any relevant fields/values).
 
-If you don't select a source, Mobot chooses one automatically based on your question. You can override it by typing the source name directly in your prompt or by choosing it from the **Auto Source Selection** dropdown.
+If you don't select a source, Mobot chooses one automatically based on your question. You can override it by typing the source name directly in your prompt (as demonstrated below) or by choosing it from the **Auto Source Selection** dropdown.
 
 For example, enter a broad question: `Show me Bedrock errors`.
 
