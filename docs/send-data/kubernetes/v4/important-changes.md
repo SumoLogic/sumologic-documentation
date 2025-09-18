@@ -11,6 +11,12 @@ This page describes the major changes and the necessary migration steps.
 
 ## Important changes
 
+## Prometheus 3.0
+
+There are a number of breaking changes in Prometheus 3.0. Learn more about those changes and migration guide in the [documentation](https://prometheus.io/docs/prometheus/latest/migration/)
+
+Please use Helm chart [v4.14.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.14.0) or later for compatibility with scrapers in Prometheus 3.0
+
 ### Kubernetes Attributes Processor support (v4.13)
 
 The [Kubernetes Attributes Processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/k8sattributesprocessor/README.md) is now supported for logs and metrics metadata enrichment. This processor is disabled by default. To enable this processor for logs, set `metadata.logs.useSumoK8sProcessor` to `false`. To enable this processor for metrics, set `metadata.metrics.useSumoK8sProcessor` to `false`.
