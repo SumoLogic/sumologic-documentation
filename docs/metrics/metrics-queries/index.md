@@ -66,4 +66,10 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to share a saved or unsaved metric query.</p>
   </div>
 </div>
+<div className="box smallbox card">
+<div className="container">
+  <a href="/docs/metrics/metrics-queries/metric-query-best-practices"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>Metric Query Best Practices</h4></a>
+  <p>Learn tips for getting the most out of your metric queries.</p>
+  </div>
+</div>
 </div>
