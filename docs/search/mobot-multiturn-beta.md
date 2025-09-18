@@ -34,7 +34,7 @@ As we transition the feature name from *Copilot* to *Mobot*, some UI labels and 
 
 The steps below outline a common conversational interaction pattern. You can apply the same approach to different logs, events, or dimensions.
 
-### Step 1: Ask your initial question
+### Step 1: Ask your initial question  
 
 Use natural language to ask what you're looking for. You can start as broad as you like, or be more specific (include a data source name and any relevant fields/values).
 
