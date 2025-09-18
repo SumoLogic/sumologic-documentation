@@ -19,7 +19,7 @@ This app includes [built-in monitors](#onelogin-alerts). For details on creating
 
 ## Setting up the collection
 
-**Pre-requisites**:
+### Prerequisites
 - Enable access to your OneLogin logs and ingest them into Sumo Logic.
 - You must have access to **OneLogin Enterprise** or **Unlimited** plan subscription to set up OneLogin event broadcaster for events.
 
