@@ -15,7 +15,7 @@ This page describes the major changes and the necessary migration steps.
 
 Prometheus 3.0 includes several breaking changes. Learn more about those changes and the migration guide in the [documentation](https://prometheus.io/docs/prometheus/latest/migration/).
 
-Use Helm chart [v4.14.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.14.0) or later to ensure compatibility with Prometheus 3.0 scrapers.
+Use Helm chart [v4.14.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.14.0) or later to ensure compatibility with Prometheus 3.0 scrapers. Note that Prometheus 3.0 is not the default in Helm chart version 4.
 
 ### Kubernetes Attributes Processor support (v4.13)
 
