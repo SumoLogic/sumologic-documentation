@@ -1,5 +1,5 @@
 ---
-title: September 11, 2025 - Application Update
+title: September 22, 2025 - Application Update
 image: https://help.sumologic.com/img/reuse/rss-image.jpg
 keywords:
   - insights
