@@ -96,18 +96,19 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ### Unable to authenticate to Azure
 
-During Source creation, if you encounter errors such as `Unable to get subscriptions. Please check credentials.` or `Unable to authenticate to Azure`, please verify that your credentials are valid in the Azure portal.
+During Source creation, if you encounter errors such as `Unable to get subscriptions. Please check credentials.` or `Unable to authenticate to Azure`. 
 
-Follow the steps below to solve this issue:
-1. Log in to the Azure Portal.
-1. Navigate to App registrations and locate the App that was created during the **Deploy to Azure** process.
+To rectify this ensure you verify your credentials are valid in the Azure portal by following the below steps:
+
+1. Sign in to the Azure portal.
+1. Navigate to app registrations and locate the app that was created during the **Deploy to Azure** process.
 1. Go to **Certificates & Secrets**.
 1. Ensure that a valid **Client Secret** exists. If no secret is present or the existing one has expired, create a new Client Secret.
 1. Retry the Source creation process using the updated credentials.
 
 ### Subscriptions not present in the View Subscriptions list
 
-If the **View Subscriptions** list does not include expected Azure subscriptions, you can verify that the credentials have sufficient permission to read from the expected subscription. Another possible cause could be a propagation delay. After creating a new app or client secret, Azure may take up to 10 minutes to reflect the changes across its services. Please wait a few minutes and refresh the list.
+If the **View Subscriptions** list does not include expected Azure subscriptions, you can verify that the credentials have sufficient permission to read from the expected subscription. Another possible cause could be a propagation delay. After creating a new app or client secret, Azure may take up to 10 minutes to reflect the changes across its services. Wait a few minutes and refresh the list.
 
 Follow the steps below to verify and assign proper permissions:
 1. In the Azure portal, navigate to **Subscriptions**.
@@ -123,8 +124,8 @@ If you know that certain metrics in Azure contain actual data (non-empty values)
 
 ### API throttling by Microsoft
 
-If API requests to Azure are being throttled, resulting in failed or delayed metric ingestion, please review and follow the guidance in the [Best Practices](#best-practices) section for reducing the frequency and volume of API calls.
-If you continue to experience throttling, please reach out to Sumo Logic Support for assistance.
+If API requests to Azure are being throttled, resulting in failed or delayed metric ingestion, review and follow the guidance in the [Best Practices](#best-practices) section for reducing the frequency and volume of API calls.
+If you continue to experience throttling, reach out to Sumo Logic Support for assistance.
 
 ## Best practices
 

@@ -75,7 +75,7 @@ The maximum number of Collectors allowed per organization is 10,000.
   <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/microsoft-source"><img src={useBaseUrl('img/send-data/microsoft.png')} alt="Thumbnail icon" width="40"/><h4>Microsoft Sources</h4></a>
-  <p>Collect data from your Microsoft Platform and other products.</p>
+  <p>Collect data from your Microsoft platform and other products.</p>
   </div>
 </div>
 <div className="box smallbox card">
