@@ -283,6 +283,12 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365"><img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-office-365.png')} alt="thumbnail icon" width="50"/><h4>Azure Security - Microsoft Defender for Office 365</h4></a>
+  <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Defender for Office 365</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-service-bus.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-service-bus">Azure Service Bus</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Service Bus.</p>
