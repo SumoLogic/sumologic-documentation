@@ -15,11 +15,11 @@ The summary is generated when an insight is created, and is regenerated whenever
 
 :::note
 Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide feedback on the effectiveness of the summary presented. Clicking the thumbs-down button gives you the opportunity to provide additional feedback.
-:::
+:::ß
 
 :::sumo Micro Lesson
 
-Watch this micro lesson to learn more about the insight summary.
+Watch this micro lesson to learn more about Sumo Logic's Summary Agent.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/qpdjncnfnv?web_component=true&seo=true&videoFoam=false"
   width="854px"
