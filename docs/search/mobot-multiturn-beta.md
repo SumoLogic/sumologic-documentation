@@ -36,7 +36,7 @@ The steps below outline a common conversational interaction pattern. You can app
 
 ### Step 1: Ask your initial question  
 
-Use natural language to ask what you're looking for. You can start as broad as you like, or be more specific (include a data source name and any relevant fields/values).
+Use natural language to ask what you're looking for. You can start broad when you set a goal, or more specific (i.e., specifying the data source and any related fields or values).
 
 If you don't select a source, Mobot chooses one automatically based on your question. You can override it by typing the source name directly in your prompt (as demonstrated below) or by choosing it from the **Auto Source Selection** dropdown.
 
