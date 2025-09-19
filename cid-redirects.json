@@ -4340,6 +4340,7 @@
   "/docs/cse/ingestion/zscaler-private-access": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/zscaler-private-access",
   "/docs/cse/administration/onboarding-checklist-cse": "/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse",
   "/docs/cse/administration/threat-intelligence": "/docs/security/threat-intelligence",
+  "/docs/security/threat-intelligence/notice-about-taxii-2": "/docs/security/threat-intelligence",
   "/docs/cse/records": "/docs/cse/records-signals-entities-insights",
   "/docs/cse/records-signals-entities-insights/about-cse-insight-ui": "/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui",
   "/docs/cse/records-signals-entities-insights/cse-heads-up-display": "/docs/cse/get-started-with-cloud-siem/cse-heads-up-display",
