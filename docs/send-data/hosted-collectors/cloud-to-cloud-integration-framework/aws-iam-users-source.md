@@ -9,6 +9,7 @@ description: Learn how to collect the IAM User Inventory logs from the AWS SDK a
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 <img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="logo" width="80" />
 
@@ -49,11 +50,12 @@ Once you have all the required values, set up the source configuration to collec
 When you create a AWS IAM Users source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a AWS IAM Users source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **AWS IAM Users**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/) so it becomes part of User Inventory. <br/><ForwardToSiem/>
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
@@ -65,6 +67,14 @@ To configure a AWS IAM Users source:
 1. **Polling Interval**. The polling interval is set for 12 hours by default and can be configured from a minimum of 1 hour to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the source, click **Save**.
+
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemVendor` | `Amazon` | Set when **Forward To SIEM** is checked. |
+| `_siemProduct` | `AWS IAM User` | Set when **Forward To SIEM** is checked. |
+| `_siemDataType` | `Inventory` | Set when **Forward To SIEM** is checked and specific to the API collected. |
 
 ## JSON schema
 

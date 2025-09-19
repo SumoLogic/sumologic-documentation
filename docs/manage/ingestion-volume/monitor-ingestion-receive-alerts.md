@@ -29,7 +29,7 @@ You must update all of the indicated fields for the search to save successfully
     X as billing_end
     X as daily_gb_limit
     ```
-    You can find the correct values on the Account page. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Account Overview**. <br/><img src={useBaseUrl('img/manage/ingestion-volume/account-overview.png')} alt="account overview" />
+    You can find the correct values on the Account page. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Account Overview**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/><img src={useBaseUrl('img/manage/ingestion-volume/account-overview.png')} alt="account overview" />
 3. (Optional)  Modify the following line if you want to change the percentage threshold for generating the alert.
     ```sql
     | where pct_used > 85
@@ -101,7 +101,7 @@ You must update the indicated field for the search to be successfully saved.
    X as daily_plan_size
    ```
    The correct value is on the Account page.
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. 
  <br/>For example, the daily plan size in the following figure is 100.<br/> ![Account](/img/manage/ingestion-volume/account-overview.png)
 
 #### Query

@@ -58,13 +58,11 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
     1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-eventgrid-logs.png')} alt="Azure Event Grid logs" style={{border: '1px solid gray'}} width="800" />
 1. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Virtual Machine Tag Location" style={{border: '1px solid gray'}} width="400" />
 
-#### Activity Logs
+#### Activity logs (optional)
 
-To collect activity logs, refer to the [Collecting Logs for the Azure Audit App from Event Hub](/docs/integrations/microsoft-azure/audit) section in the Azure Audit documentation. Do not perform this step in case you are already collecting activity logs for a subscription.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ## Installing the Azure Event Hubs app
 

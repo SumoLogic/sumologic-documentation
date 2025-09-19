@@ -25,8 +25,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/copilot"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Copilot</h4></a>
-  <p>Accelerate log investigations and troubleshooting with Sumo Logic Copilot, our AI-powered assistant that enables you to ask natural language questions and get contextual suggestions, helping first responders get to answers faster.</p>
+  <a href="/docs/search/mobot"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Mobot</h4></a>
+  <p>Accelerate log investigations and troubleshooting with Sumo Logic Mobot, our AI-powered assistant that enables you to ask natural language questions and get contextual suggestions, helping first responders get to answers faster.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -127,7 +127,7 @@ In this micro lesson, learn about the ingestion pipeline and the journey that a 
 
 Logs collected by Sumo Logic are indexed in Partitions and Scheduled Views. In addition, there are internal indexes such as Health Events, Archive, Audit, and Volume indexes.
 
-* A Partition stores your data in an index separate from the rest of your account data so you can [optimize searches](optimize-search-performance.md), [manage variable retention](/docs/manage/partitions/manage-indexes-variable-retention), and specify certain [data to forward to S3](/docs/manage/data-forwarding/amazon-s3-bucket). See how to [Run a Search Against a Partition](/docs/search/optimize-search-partitions).
+* A Partition stores your data in an index separate from the rest of your account data so you can [optimize searches](optimize-search-performance.md), [manage variable retention](/docs/manage/partitions/manage-indexes-variable-retention), and specify certain [data to forward to S3 or GCS](/docs/manage/data-forwarding/forward-data-from-sumologic). See how to [Run a Search Against a Partition](/docs/search/optimize-search-partitions).
 * Scheduled Views speed the search process subsets of your data by functioning as a pre-aggregated index. See how to [Run a Search Against a Scheduled View](/docs/manage/scheduled-views/run-search-against-scheduled-view).
 * Health Events monitor the health of your Collectors and Sources. See how to [Search Health Events](/docs/manage/health-events).
 * Archive allows you to forward log data from Installed Collectors to Amazon S3 buckets to collect at a later time. See how to [Search ingested Archive data](/docs/manage/data-archiving/archive).
