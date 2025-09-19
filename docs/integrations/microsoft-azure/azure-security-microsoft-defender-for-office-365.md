@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-office-365.png')} alt="Thumbnail icon" width="50"/>
 
-The Sumo Logic App for Azure Security – Microsoft Defender for Office 365 provides visibility into threats and alerts across Microsoft 365. It includes dashboards to monitor alert activity, geographic trends, detection sources, and user-level details, enabling quick identification of phishing, malware, and suspicious sign-ins. High-severity alerts, malicious IPs, compromised accounts, and targeted devices are highlighted to support rapid response. The app helps strengthen Office 365 security posture, prioritize incidents, and detect potential compromises across users and devices.
+The Sumo Logic app for Azure Security – Microsoft Defender for Office 365 provides visibility into threats and alerts across Microsoft 365. It includes dashboards to monitor alert activity, geographic trends, detection sources, and user-level details, enabling quick identification of phishing, malware, and suspicious sign-ins. High-severity alerts, malicious IPs, compromised accounts, and targeted devices are highlighted to support rapid response. The app helps strengthen Office 365 security posture, prioritize incidents, and detect potential compromises across users and devices.
 
 ## Log types
 
@@ -169,15 +169,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Azure Security - Microsoft Defender for Office 365 - Overview** dashboard provides 
+The **Azure Security - Microsoft Defender for Office 365 - Overview** dashboard offers a high-level summary of security alerts detected by Microsoft Defender for Office 365. It showcases key metrics such as total alert volume, geographic distribution, and breakdowns by status, detection source, determination, and classification. Security analysts can quickly spot top alert categories like phishing and malware, identify affected users, and monitor the most active analysts involved in investigations. The dashboard also features a top action plan and recent alerts panel to help prioritize response efforts and investigate high-risk activities such as anomalous sign-ins, suspicious tokens, and potential account compromises.
 
-<br/><img src='' alt="Azure Security - Microsoft Defender for Office 365 - Overview" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+-+Microsoft+Defender+for+Office+365/Azure+Security+-+Microsoft+Defender+for+Office+365+-+Overview.png' alt="Azure Security - Microsoft Defender for Office 365 - Overview" />
 
 ### Security
 
-The **Azure Security - Microsoft Defender for Office 365 - Security** dashboard provides 
+The **Azure Security - Microsoft Defender for Office 365 - Security** dashboard focuses on high-severity alerts and threats associated with risky IP addresses, suspicious geographies, and compromised accounts. It provides visibility into alerts by severity over time, helping analysts detect spikes in high-priority incidents. The dashboard also highlights countries with malicious IP verdicts, top user accounts with compromised roles, and top attacked devices along with their risk posture and health status. This view enables teams to quickly pinpoint the most critical threats targeting their Office 365 environment and take immediate mitigation steps.
 
-<br/><img src='' alt="Azure Security - Microsoft Defender for Office 365 - Security" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+-+Microsoft+Defender+for+Office+365/Azure+Security+-+Microsoft+Defender+for+Office+365+-+Security.png' alt="Azure Security - Microsoft Defender for Office 365 - Security" />
 
 ## Upgrade/Downgrade the Azure Security - Microsoft Defender for Office 365 app (Optional)
 
