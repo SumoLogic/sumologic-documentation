@@ -142,7 +142,7 @@ Microsoft enforces API throttling for each subscription. Since each Sumo Logic A
 ### Increase the scan interval to reduce API load
 
 The scan interval determines how often the Azure Metrics Source queries the Azure Monitor API. Adjusting this interval can significantly impact API usage:
-- Shorter scan intervals (e.g., 1 minute) result in more frequent API calls.
+- Shorter scan intervals (for example, 1 minute) result in more frequent API calls.
 - Longer scan intervals reduce the request rate, helping to avoid throttling—especially in environments with a high number of resources.
 
 #### Recommended scan interval guidelines
