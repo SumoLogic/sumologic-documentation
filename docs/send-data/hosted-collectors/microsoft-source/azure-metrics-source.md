@@ -155,7 +155,7 @@ The scan interval determines how often the Azure Metrics Source queries the Azur
 By default, the scan interval is set to 1 minute. For a larger number of resources, increase the scan interval further using the Sumo Logic Source Management API.
 
 :::note
-    Increasing the scan interval does not reduce metric granularity. The frequency of data collection changes, but the resolution of data points remains unaffected.
+Increasing the scan interval does not reduce metric granularity. The frequency of data collection changes, but the resolution of data points remains unaffected.
 :::
 
 ### Estimate API request rate per subscription
