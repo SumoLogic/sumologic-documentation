@@ -47,10 +47,9 @@ To configure the Snowflake SQL API Source:
    - **Basic**
     1. In **Snowflake Username**, enter your Snowflake account username.
     1. In **Snowflake Password**, enter the Snowflake account password associated with your user.
-    1. In **Snowflake Database**, enter your Snowflake database. Separate sources are required to query separate databases.
   - **Programmatic Access Token**
     1. In **Snowflake Programmatic Access Token**, enter your Programmatic Access Token collected from the [Snowflake platform](#vendor-configuration).
-    1. In **Snowflake Database**, enter your Snowflake database. Separate sources are required to query separate databases.
+1. In **Snowflake Database**, enter your Snowflake database. Separate sources are required to query separate databases.
 1. In **SQL Statement Metric Configuration**, upload a JSON file containing the SQL queries to execute, their polling interval, and additional configuration for translating the results to metrics.
 1. (Optional) In **Snowflake Role**, provide a database role if required.
 1. (Optional) In **Snowflake Warehouse**, provide a database warehouse name if required.
