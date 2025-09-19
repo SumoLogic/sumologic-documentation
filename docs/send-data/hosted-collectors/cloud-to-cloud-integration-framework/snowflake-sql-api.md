@@ -24,8 +24,9 @@ Customers can provide custom SQL queries for the source to execute and a configu
 To collect metric data from the Snowflake SQL API, you must have an authorized Snowflake account. We suggest setting up a dedicated user account with the correct permissions for accessing the SQL tables with the data you are interested in collecting.
 
 1. Create a user account with the correct permissions for accessing the SQL tables you plan to query.
-1. Take note of your admin account identifier following the instructions [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier). The identifier should look something like this: `wp00000.us-east-2.aws`.
+1. Collect your admin account identifier following the instructions mentioned in the [Snowflake Documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier). The identifier should look something like this: `wp00000.us-east-2.aws`.
 1. Take note of the database name you plan to query.
+1. Collect your Snowflake Programmatic Access Token following the instruction mentioned in the [Snowflake Documentation](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens).
 1. Optional additional information such as a role, warehouse, or schema name can also be configured with the source.
 
 ### Source configuration
@@ -41,10 +42,15 @@ To configure the Snowflake SQL API Source:
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. In **Snowflake Username**, enter your Snowflake account username.
-1. In **Snowflake Password**, enter the Snowflake account password associated with your user.
 1. In **Snowflake Account Identifier**, enter your Snowflake account identifier obtained from the vendor configuration above. The identifier should look something like this: `wp00000.us-east-2.aws`.
-1. In **Snowflake Database**, enter your Snowflake database. Separate sources are required to query separate databases.
+1. **Authentication Configuration**. Sumo Logic provides two different ways to configure: **Basic** and **Programmatic Access Token**.
+   - **Basic**
+    1. In **Snowflake Username**, enter your Snowflake account username.
+    1. In **Snowflake Password**, enter the Snowflake account password associated with your user.
+    1. In **Snowflake Database**, enter your Snowflake database. Separate sources are required to query separate databases.
+  - **Programmatic Access Token**
+    1. In **Snowflake Programmatic Access Token**, enter your Programmatic Access Token collected from the [Snowflake platform](#vendor-configuration).
+    1. In **Snowflake Database**, enter your Snowflake database. Separate sources are required to query separate databases.
 1. In **SQL Statement Metric Configuration**, upload a JSON file containing the SQL queries to execute, their polling interval, and additional configuration for translating the results to metrics.
 1. (Optional) In **Snowflake Role**, provide a database role if required.
 1. (Optional) In **Snowflake Warehouse**, provide a database warehouse name if required.
