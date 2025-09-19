@@ -46,6 +46,12 @@ This guide helps you get started using Cloud SIEM for threat hunting.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/cse/get-started-with-cloud-siem/insight-summary"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="Shield on a workflow icon" width="40"/><h4>Insight Summary</h4></a>
+  <p>Learn how the insight summary pane uses AI to provide summaries of threat incidents.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/cse/get-started-with-cloud-siem/cloud-siem-content-catalog"><img src={useBaseUrl('img/icons/security/compliance.png')} alt="Checklist icon" width="40"/><h4>Cloud SIEM Content Catalog</h4></a>
   <p>See the out-of-the-box rules, schema, mappings, and parsers for Cloud SIEM.</p>
   </div>
