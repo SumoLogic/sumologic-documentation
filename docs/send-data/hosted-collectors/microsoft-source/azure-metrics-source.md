@@ -98,7 +98,6 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 During Source creation, if you encounter errors such as `Unable to get subscriptions. Please check credentials.` or `Unable to authenticate to Azure`, please verify that your credentials are valid in the Azure portal.
 
-Follow the steps below to solve this issue:
 1. Log in to the Azure Portal.
 1. Navigate to app registrations and locate the app that was created during the **Deploy to Azure** process.
 1. Go to **Certificates & Secrets**.
