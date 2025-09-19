@@ -63,7 +63,7 @@ To configure the Azure Metrics Source:
 1. **Azure Regions**. Select **All Regions**, if you want to collect metrics from all regions. Or, click **Select Regions** to select the region of your choice from the dropdown to collect metrics.
 1. **Azure Namespaces**. Select **All Namespaces**, if you want to collect metrics with all namespaces. Or, click **Select Namespaces** to select the namespaces of your choice from the dropdown to collect metrics.
 1. **Tags Filter**. Select any tag filter from the dropdown to enforce it with the each namespace. This helps you to further fine-tune from which resources you would like to collect metrics. It only supports resource tags which are custom user-configured key-value pairs on the azure resource. This approach allows for dynamic discovery, so for example if the resources are ephemeral or if any new resources are created in the same namespace, region and namespace are tagged with same key-value pairs as configured in the source, so their metrics can be collected automatically.
-1. **Scan Interval**.  This option sets how often the source is scanned. Setting a shorter frequency increases message volume, and can cause your deployment to incur additional charges. The minimum acceptable scan interval is 1 minute.
+1. **Scan Interval**.  This option sets how often the source is scanned. By default, the scan interval is set to 1 minute. Setting a shorter frequency increases message volume, and can cause your deployment to incur additional charges. The minimum acceptable scan interval is 1 minute.
 1. **Processing Rules for Metrics (Optional)**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](/docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules).
     ![filtersprocessingrules.png](/img/send-data/filtersprocessingrules.png)
 
@@ -134,7 +134,9 @@ The Sumo Logic Azure Metrics Source uses the Azure Monitor API to retrieve metri
 
 Microsoft enforces API throttling for each subscription. Since each Sumo Logic Azure Metrics Source sends independent requests to the Azure Monitor API, Sumo Logic strongly recommends you to use only one Azure Metrics Source per Azure subscription.
 
-note: A single Sumo Logic Source can collect metrics from multiple Azure subscriptions without issue. However, avoid assigning more than one Source to collect from the same subscription, as this may lead to throttling.
+:::note
+    A single Sumo Logic Source can collect metrics from multiple Azure subscriptions without issue. However, avoid assigning more than one Source to collect from the same subscription, as this may lead to throttling.
+:::
 
 ### Increase the scan interval to reduce API load
 
@@ -149,9 +151,11 @@ The scan interval determines how often the Azure Metrics Source queries the Azur
 | 1 minute | 20,000 (3,000 for users on Azure Sovereign Cloud) | 600 (80 for users on Azure Sovereign Cloud) |
 | 5 minutes | 100,000 (15,000 for users on Azure Sovereign Cloud)| 3,000 (400 for users on Azure Sovereign Cloud) |
 
-For a larger number of resources, increase the scan interval further using the Sumo Logic Source Management API.
+By default, the scan interval is set to 1 minute. For a larger number of resources, increase the scan interval further using the Sumo Logic Source Management API.
 
-note: Increasing the scan interval does not reduce metric granularity. The frequency of data collection changes, but the resolution of data points remains unaffected.
+:::note
+    Increasing the scan interval does not reduce metric granularity. The frequency of data collection changes, but the resolution of data points remains unaffected.
+:::
 
 ### Estimate API request rate per subscription
 
