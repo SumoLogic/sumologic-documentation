@@ -1,7 +1,7 @@
 ---
 id: azure-security-microsoft-defender-for-office-365
 title: Azure Security - Microsoft Defender for Office 365
-description: Learn about the Sumo Logic collection process for the Azure Security - Defender for Cloud service.
+description: Learn how to collect alerts from the Azure Security - Microsoft Defender for Office 365 platform and send them to Sumo Logic for analysis.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
