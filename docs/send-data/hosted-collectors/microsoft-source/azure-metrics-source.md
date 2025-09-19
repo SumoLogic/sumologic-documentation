@@ -107,7 +107,7 @@ Follow the steps below to solve this issue:
 
 ### Subscriptions not present in the View Subscriptions list
 
-If the **View Subscriptions** list does not include expected Azure subscriptions, you can verify that the credentials have sufficient permission to read from the expected subscription. Another possible cause could be a propagation delay. After creating a new app or client secret, Azure may take up to 10 minutes to reflect the changes across its services. Please wait a few minutes and refresh the list.
+If the **View Subscriptions** list does not include expected Azure subscriptions, you can verify that the credentials have sufficient permission to read from the expected subscription. Another possible cause could be a propagation delay. After creating a new app or client secret, Azure may take up to 10 minutes to reflect the changes across its services. Wait a few minutes and refresh the list.
 
 Follow the steps below to verify and assign proper permissions:
 1. In the Azure portal, navigate to **Subscriptions**.
