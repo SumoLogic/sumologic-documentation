@@ -12,7 +12,7 @@ The Sumo Logic app for Azure Security – Microsoft Defender for Office 365 prov
 
 ## Log types
 
-The Azure Security – Microsoft Defender for Office 365 app uses SumoLogic’s Microsoft Graph Security source to collect [Alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) from the Microsoft Graph Security source.
+The Azure Security – Microsoft Defender for Office 365 app uses SumoLogic’s Microsoft Graph Security source to collect [alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) from the Microsoft Graph Security source.
 
 ### Sample log messages
 

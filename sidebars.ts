@@ -547,7 +547,9 @@ module.exports = {
               label: 'Microsoft Sources',
               collapsible: true,
               collapsed: true,
+              link: {type: 'doc', id: 'send-data/hosted-collectors/microsoft-source/index'},
               items: [
+                'send-data/hosted-collectors/microsoft-source/azure-metrics-source',
                 'send-data/hosted-collectors/microsoft-source/ms-office-audit-source',
               ],
             },
@@ -1019,7 +1021,7 @@ module.exports = {
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
         'manage/data-forwarding/installed-collectors',
-        'manage/data-forwarding/amazon-s3-bucket',
+        'manage/data-forwarding/forward-data-from-sumologic',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
       ]
@@ -1713,6 +1715,7 @@ module.exports = {
         'metrics/metrics-queries/aggregation-tips',
         'metrics/metrics-queries/metric-query-error-messages',
         'metrics/metrics-queries/share-metric-query',
+        'metrics/metrics-queries/metric-query-best-practices',
       ],
     },
     {
@@ -2225,7 +2228,6 @@ integrations: [
          'integrations/microsoft-azure/azure-notification-hubs',
          'integrations/microsoft-azure/azure-public-ipAddress',
          'integrations/microsoft-azure/azure-relay',
-         'integrations/microsoft-azure/azure-security-advisor',
          'integrations/microsoft-azure/azure-service-bus',
          'integrations/microsoft-azure/azure-sql-elastic-pool',
          'integrations/microsoft-azure/azure-sql-managed-instance',
@@ -2607,6 +2609,7 @@ integrations: [
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/sysdig-secure',
           'integrations/saas-cloud/tenable',
+          'integrations/saas-cloud/trellix-mvision-epo',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
           'integrations/saas-cloud/vectra',
