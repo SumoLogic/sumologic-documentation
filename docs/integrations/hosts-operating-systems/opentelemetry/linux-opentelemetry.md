@@ -71,7 +71,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-install-ui.png')} alt="linux-terminal" style={{border: '1px solid gray'}} width="900"/>
 
 ### Step 2: Configure integration
 
