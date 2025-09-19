@@ -119,7 +119,7 @@ Follow the below steps to configure the Hosted Collector to receive ExtraHop Rev
 
 ### Vendor configuration
 
-Configure the webhook integration by [Creating a Notification Rule](https://docs.extrahop.com/current/detections-create-notification-rule/) in the ExtraHop platform to send events to the Sumo Logic HTTP source.
+Configure the webhook integration by [creating a notification rule](https://docs.extrahop.com/current/detections-create-notification-rule/) in the ExtraHop platform to send events to the Sumo Logic HTTP source.
 
 Make sure you use the endpoint URL of the HTTP source copied form the Source Configuration.
 
