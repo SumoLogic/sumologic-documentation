@@ -4229,7 +4229,6 @@
   "/Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/Upload-Data-to-an-HTTP-Source": "/docs/send-data/hosted-collectors/http-source",
   "/Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/zGenerate-a-new-URL-for-an-HTTP-Source": "/docs/send-data/hosted-collectors/http-source",
   "/Send-Data/Sources/02Sources-for-Hosted-Collectors/Microsoft-Office-365-Audit-Source": "/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source",
-  "/docs/send-data/hosted-collectors/microsoft-source": "/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source",
   "/docs/send-data/hosted-collectors/ms-office-audit-source": "/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source",
   "/docs/send-data/hosted-collectors/webhook-sources": "/docs/send-data/hosted-collectors/webhook-sources/zoom",
   "/Send-Data/Sources/04Reference-Information-for-Sources": "/docs/send-data/reference-information/time-reference",
