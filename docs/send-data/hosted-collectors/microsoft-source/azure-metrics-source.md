@@ -136,7 +136,7 @@ The Sumo Logic Azure Metrics Source uses the Azure Monitor API to retrieve metri
 Microsoft enforces API throttling for each subscription. Since each Sumo Logic Azure Metrics Source sends independent requests to the Azure Monitor API, Sumo Logic strongly recommends you to use only one Azure Metrics Source per Azure subscription.
 
 :::note
-    A single Sumo Logic Source can collect metrics from multiple Azure subscriptions without issue. However, avoid assigning more than one Source to collect from the same subscription, as this may lead to throttling.
+A single Sumo Logic Source can collect metrics from multiple Azure subscriptions without issue. However, avoid assigning more than one Source to collect from the same subscription, as this may lead to throttling.
 :::
 
 ### Increase the scan interval to reduce API load
