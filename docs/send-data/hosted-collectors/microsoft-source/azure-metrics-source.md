@@ -123,7 +123,7 @@ If you know that certain metrics in Azure contain actual data (non-empty values)
 
 ### API throttling by Microsoft
 
-If API requests to Azure are being throttled, resulting in failed or delayed metric ingestion, please review and follow the guidance in the [Best Practices](#best-practices) section for reducing the frequency and volume of API calls.
+If API requests to Azure are being throttled, resulting in failed or delayed metric ingestion, review and follow the guidance in the [Best Practices](#best-practices) section for reducing the frequency and volume of API calls.
 If you continue to experience throttling, reach out to Sumo Logic Support for assistance.
 
 ## Best practices
