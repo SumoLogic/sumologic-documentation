@@ -100,7 +100,7 @@ During Source creation, if you encounter errors such as `Unable to get subscript
 
 Follow the steps below to solve this issue:
 1. Log in to the Azure Portal.
-1. Navigate to App registrations and locate the App that was created during the **Deploy to Azure** process.
+1. Navigate to app registrations and locate the app that was created during the **Deploy to Azure** process.
 1. Go to **Certificates & Secrets**.
 1. Ensure that a valid **Client Secret** exists. If no secret is present or the existing one has expired, create a new Client Secret.
 1. Retry the Source creation process using the updated credentials.
