@@ -179,7 +179,6 @@ The Amazon Bedrock app uses the following logs and metrics:
 
 ### Sample queries
 
-
 ```sql title="Successful Event Locations (CloudTrail log based)"
 account=* region=us-east-1 namespace=aws/bedrock "\"eventSource\":\"bedrock.amazonaws.com\"" !errorCode
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
@@ -264,7 +263,7 @@ account=* region=* namespace=aws/bedrock modelid=* metric=Invocations statistic=
 
 ## Collecting logs and metrics for the Amazon Bedrock app
 
-### Collect CloudWatch Metrics
+### Collecting CloudWatch metrics
 
 Sumo Logic supports collecting metrics using two source types:
 
@@ -274,7 +273,7 @@ Sumo Logic supports collecting metrics using two source types:
 * Namespace for **Amazon Bedrock** Service is **AWS/Bedrock**.
    * ​​​**Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account field”.
 
-### Collect Amazon Bedrock CloudTrail logs
+### Collecting Amazon Bedrock CloudTrail logs
 
 1. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to your Hosted Collector.
    * **Name**. Enter a name to display the new Source.
@@ -285,14 +284,14 @@ Sumo Logic supports collecting metrics using two source types:
    * **Source Category**. Enter `aws/observability/cloudtrail/logs`.
    * **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
-   * **Log File Discovery** > **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
+   * **Log File Discovery** > **Scan Interval**. Use the default of 5 minutes. Alternatively, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
    * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
    * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
    * **Timestamp Format.** Select **Automatically detect the format**.
    * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
-### Collect Amazon Bedrock CloudWatch logs
+### Collecting Amazon Bedrock CloudWatch logs
 
 To enable Amazon Bedrock CloudWatch Logs, follow the steps mentioned in [AWS Documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html)
 
@@ -302,26 +301,25 @@ Ensure that when configuring `CloudWatch Logs`, the log group name follows the p
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-Settings.png')} alt="Amazon Bedrock Setting" style={{border: '1px solid gray'}} />
 
-
 Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:
 
 - **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended); or
 - **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
-- While configuring the CloudWatch log source, following fields can be added in the source:
+- While configuring the CloudWatch log source, the following fields can be added to the source:
    - Add an **account** field and assign it a value which is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the **account** field.
    - Add a **region** field and assign it the value of the respective AWS region where the **Bedrock** exists.
-   - Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
+   - Add an **accountId** field and assign it the value of the respective AWS account ID that is being used.
 
    <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />   
 
-### Field in Field Schema
+### Configure field in field schema
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 1. Search for the `modelId` field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
-### Field Extraction Rule(s)
+### Configure Field Extraction Rule(s)
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
@@ -357,7 +355,7 @@ if (isEmpty(namespace),"unknown",namespace) as namespace
 | fields namespace, modelId
 ```
 
-### Centralized AWS CloudTrail log collection
+### Collecting Centralized AWS CloudTrail logs
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
@@ -369,11 +367,11 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 
 **Parse Expression**:
 
-Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"956882123456"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"956882123456"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
 ```sql
 | json "recipientAccountId"
-// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+// Manually map your AWS account id with the AWS account alias you set up earlier for the individual child account
 | "" as account
 | if (recipientAccountId = "956882123456",  "dev", account) as account
 | if (recipientAccountId = "567680881046",  "prod", account) as account
@@ -388,30 +386,38 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
+As part of the app installation process, the following fields will be created by default:
+
+* `account`: The friendly name or alias assigned to the AWS account.
+* `region`: The geographical region where the AWS resource is located (for example, us-east-1 or eu-west-2).
+* `accountid`: The unique 12-digit identifier for the AWS account where the resource is present.
+* `namespace`: The AWS service namespace that the resource or metric belongs to (for example, AWS/EC2 or AWS/S3).
+* `modelid`: A specific identifier for the LLM Model within an AWS Bedrock.
+
 ## Viewing the Bedrock dashboards  
 
 We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
 ### Overview
 
-The **Amazon Bedrock - Overview** dashboard provides a overall heath of Bedrock service based logs and metrics.
+The **Amazon Bedrock - Overview** dashboard provides an overall health of the Bedrock service based on logs and metrics.
 
 Use this dashboard to:
 * Monitor locations of successful and failed Amazon Bedrock user activity events.
 * Monitor all read-only and non-read-only events.
-* Monitor most active users working on Bedrock infrastructure and various events invoked on Bedrock service.
+* Monitor the most active users working on the Bedrock infrastructure and various events invoked on the Bedrock service.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-Overview.png')} alt="Amazon Bedrock dashboard" style={{border: '1px solid gray'}} />
 
 ### CloudTrail Audit Overview
 
-The **Amazon Bedrock - CloudTrail Audit Overview** dashboard provides a record of actions taken by a user, role, or an AWS service in Amazon Bedrock. CloudTrail captures all API calls for Amazon Bedrock as events.
+The **Amazon Bedrock - CloudTrail Audit Overview** dashboard provides a record of actions taken by a user, role, or AWS service in Amazon Bedrock. CloudTrail captures all API calls for Amazon Bedrock as events.
 
 Use this dashboard to:
 * Monitor Amazon Bedrock-related audit logs using CloudTrail Events.
 * Monitor locations of successful and failed Amazon Bedrock user activity events.
 * Monitor all read-only and non-read-only events.
-* Monitor most active users working on Bedrock infrastructure and various events invoked on Bedrock service.
+* Monitor the most active users working on the Bedrock infrastructure and various events invoked on the Bedrock service.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-CloudTrail-Audit-Overview.png')} alt="Amazon Bedrock dashboard" style={{border: '1px solid gray'}} />
 
@@ -422,20 +428,35 @@ The **Amazon Bedrock - Model Invocation Log Analysis** dashboard provides insigh
 Use this dashboard to:
 * Monitor Amazon Bedrock-related audit logs using CloudWatch Events.
 * Monitor operational events and the models being utilized.
-* Monitor most active users working on Bedrock service.
+* Monitor the most active users working on the Bedrock service.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-Model-Invocation-Log-Analysis.png')} alt="Amazon Bedrock dashboard" style={{border: '1px solid gray'}} />
 
 ### Runtime Performance Monitoring
 
-The **Amazon Bedrock - Runtime Performance Monitoring** dashboard provides statistical insights of runtime model invocation metrics.
+The **Amazon Bedrock - Runtime Performance Monitoring** dashboard provides statistical insights into runtime model invocation metrics.
 
 Use this dashboard to:
-* Monitor all Invocations related metrics.
-* Monitor and track of input and output tokens.
+* Monitor all invocations-related metrics.
+* Monitor and track input and output tokens.
 * Monitor and track images in the output.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-Runtime-Performance-Monitoring.png')} alt="Amazon Bedrock dashboard" style={{border: '1px solid gray'}} />
+
+## Create monitors for Amazon Bedrock app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon Bedrock alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon Bedrock - Delete Action Detected` | This alert is triggered when a Delete API call to the Amazon Bedrock environment is detected. | Count > 0 | Count < = 0 |
+| `Amazon Bedrock - High Model Invocation Latency` | This alert is triggered when the average time to receive a response from a Bedrock model exceeds a configurable threshold in milliseconds. High latency can directly impact the user experience of your applications. | Count > 5000 | Count < = 5000 |
+| `Amazon Bedrock - High Number of Access Denied Errors` | This alert is triggered when there is a spike in AccessDeniedException errors in CloudTrail for the Bedrock service. This could indicate misconfigured IAM policies or a potential security threat. | Count > 5 | Count < = 5 |
+| `Amazon Bedrock - Model Invocation Server Error Detection` | This alert is triggered when the number of server-side errors from model invocations increases more than a configurable value (Default 5). This can indicate issues with the service, your input data, or permissions. | Count > 5 | Count < = 5 |
 
 ## Upgrade/Downgrade the Amazon Bedrock app (Optional)
 

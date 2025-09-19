@@ -36,9 +36,9 @@ Create a hosted collector if not already configured and tag the `tenant_name` fi
 
 ### Configure metrics collection
 
-import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+import MetricsSource from '../../reuse/metrics-source.md';
 
-<MetricsSourceBeta/>
+<MetricsSource/>
 
 ### Configure logs collection
 
@@ -225,9 +225,8 @@ These alerts are metrics-based and will work for all Cosmos DB PostgreSQL instan
 | `Azure Cosmos DB for PostgreSQL - Memory Percentage`               | This alert is triggered when average Memory utilization spikes above 80% are detected for any Azure Cosmos DB for PostgreSQL instance. | Count > 80      | Count =< 70       |
 | `Azure Cosmos DB for PostgreSQL - Storage Percentage`              | This alert is triggered when storage percentage goes above 70% for any Azure Cosmos DB for PostgreSQL instance.                        | Count > 80      | Count =< 70       |
 
-
 ## Troubleshooting
 
-### HTTP Logs and Metrics Source used by Azure Functions
+### Metrics collection via Azure Metrics Source
 
-To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
+To troubleshoot metrics collection via Azure Metrics Source, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).
