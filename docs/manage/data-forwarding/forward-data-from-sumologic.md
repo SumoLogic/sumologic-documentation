@@ -6,8 +6,8 @@ description: Learn about how to forward data from Sumo Logic to S3 or GCS.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::
-Forward Data from Sumo Logic to GCS is not released, to get an early access contact your Sumo Logic [Support](https://support.sumologic.com/support/s/).
+:::note
+Data forwarding to Google Cloud Storage (GCS) is not yet generally available. To request early access, contact your Sumo Logic executive or [Support](https://support.sumologic.com/support/s).
 :::
 
 This document outlines the instructions that needs to be followed to forward log data from a [partition](/docs/manage/partitions) or [Scheduled View](/docs/manage/scheduled-views) to an S3 or Google Cloud Storage (GCS) bucket. Only new data is forwarded from a partition or Scheduled View once it is set to forward data. 
