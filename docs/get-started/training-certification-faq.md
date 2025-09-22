@@ -9,9 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <a href="https://www.sumologic.com/learn/training"><img src={useBaseUrl('img/get-started/sumo-academy.png')} alt="Sumo Logic Academy logo" width="150"/></a>
 
-Sumo Logic Academy is your hub for training and professional development. All courses (self‑paced eLearning, public hands‑on virtual classes, and workshops) are free. Certification exams are paid and live‑proctored through Kryterion. Successful candidates receive industry‑recognized digital badges issued by Credly.
+<!-- waiting on GA url confirmation above-->
 
-<!-- waiting on GA url confirmation -->
+Sumo Logic Academy is your hub for training and professional development. All courses (self‑paced eLearning, public hands‑on virtual classes, and workshops) are free. Certification exams are paid and live‑proctored through Kryterion. Successful candidates receive industry‑recognized digital badges issued by Credly.
 
 ## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Getting started
 
