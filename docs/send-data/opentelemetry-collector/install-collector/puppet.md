@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This documentation will guide you through the installation process using the software configuration management tool Puppet, enabling you to deploy and manage Sumo Logic collectors at scale.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. 
 2. On the OpenTelemetry Collection page, click **Add Collector**.
 3. On the left panel, select **Puppet**.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/puppet.png')} style={{border: '1px solid gray'}} alt="puppet.png" />
 4. Select/create installation token and customize your tags.
@@ -22,4 +22,4 @@ This documentation will guide you through the installation process using the sof
 6. Once steps are completed, click **Done** to review collector on OpenTelemetry Collection page.
 7. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
 
-If you choose to close this Source template creation screen, you can navigate back. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Source Template**.  
+If you choose to close this Source template creation screen, you can navigate back. [**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Source Template**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. 

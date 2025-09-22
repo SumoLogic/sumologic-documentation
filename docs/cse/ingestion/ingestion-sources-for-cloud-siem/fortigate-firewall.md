@@ -18,6 +18,6 @@ To ingest Fortigate Firewall data into Cloud SIEM:
     Cloud SIEM supports standard syslog, CEF, or JSON log formats from FortiGate. Different parsers are required for CEF and JSON format logs.
     :::
 1. To verify that your logs are successfully making it into Cloud SIEM:
-    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**.  
     1. On the **Log Mappings** tab search for "FortiGate" and check the **Records** columns. A list of mappers for FortiGate will appear and you can see if logs are coming in.
     1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for FortiGate security records:<br/>`_index=sec_record* and metadata_product = "Fortigate"`

@@ -21,11 +21,10 @@ When you create a new Sumo Logic organization, you are logged in automatically t
 
 ### How do I verify my email address?
 
-1. **Classic UI**: In the main menu, select **Help**, then **Community**.<br/>**New UI**: In the top menu, select **Help**, then **Community**.
-2. Click **Send Activation/Verification Email**.
-3. Open the email and click **Verify Your Email**.
-
-## Training portal
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help**, and then select either **Community**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help**, and then select **Community**.
+1. You will be prompted to activate your account.
+1. Click **Send Activation/Verification Email**.
+1. Open the email and click **Verify Your Email**.
 
 ### How do I access the Training portal?
 

@@ -14,9 +14,8 @@ With its intuitive interface, Span Analytics allows you to:
 * Aggregate by any custom dimension or tag to generate charts and tables.  
 
 To access span analytics:
-
-* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and click **Traces**. In the new page, click the **Traces** dropdown menu and select **Span Analytics**.
 * [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Span Analytics**. You can also click the **Go To...** menu at the top of the screen and select **Span Analytics**.
+* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and click **Traces**. In the new page, click the **Traces** dropdown menu and select **Span Analytics**.
 
 A new **Spans** page opens. Data is displayed once you run a query.
 
