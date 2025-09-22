@@ -165,7 +165,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source"><img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="Thumbnail icon" width="100"/><h4>ChatGPT Compliance</h4></a>
-  <p>Learn to collect the conversations from ChatGPT Compliance platform.</p>
+  <p>Securely collect and analyze ChatGPT Compliance platform conversation logs.</p>
   </div>
 </div>
 <div className="box smallbox card">
