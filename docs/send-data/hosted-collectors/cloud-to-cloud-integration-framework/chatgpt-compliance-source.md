@@ -1,18 +1,12 @@
 ---
 id: chatgpt-compliance-source
-title: ChatGPT Compliance Source (Beta)
-sidebar_label: ChatGPT Compliance (Beta)
+title: ChatGPT Compliance Source
+sidebar_label: ChatGPT Compliance
 tags:
   - cloud-to-cloud
   - chatgpt-compliance
 description: Learn to collect the conversations from ChatGPT Compliance platform.
 ---
-
-<head>
- <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
