@@ -198,6 +198,30 @@ A filter node filters results from the preceding action based on the condition y
    :::
 1. Click **Create**.
 
+## Action types
+
+Every integration contains actions you can perform to help with incident remediation, such as sending notifications, adding additional information (enrichment), containment, and so on. Following are the available action types:
+   * **Containment**. Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall.
+   * **Custom**. Performs an action defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
+   * **Enrichment**. Enriches data with additional information, such as adding information about a known malicious IP address.
+   * **Notification**. Sends a notification, for example, an email or a post in a messaging service.
+   * **Scheduled**. Runs an action on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed.
+
+
+If you take a look at the [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/), you'll see each has a list of available actions with the type of action listed for each. For example, here are some of the actions in the [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/) integration:
+* **Get Entity** *(Enrichment)* - Get Entity details.
+* **Add Network Block** *(Containment)* - Add an address into the Network Blocks.
+* **Add Comment To Insight** *(Notification)* - Add a comment to an existing Insight.
+* **Check Insight Status Schedule** *(Scheduled)* - Schedule action that periodically checks if the Insight is closed.
+
+### Select the action type
+
+When you [Add an action node to a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook), you select the type of action to perform from the integration. 
+
+The **Type** drop-down menu shows only the action types available in the selected integration. For example, for the Sumo Logic Cloud SIEM integration, the available action types are shown in the dropdown menu:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-types-on-cloud-siem-integration.png')} alt="Action types on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="500"/>
+
+Then when you select the action type, the available actions of that type in the integration are listed:<br/><img src={useBaseUrl('img/platform-services/automation-service/enrichment-actions-on-cloud-siem.png')} alt="Enrichment actions on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="500"/>
+
 ## Playbook versioning
 
 ### Autosave
