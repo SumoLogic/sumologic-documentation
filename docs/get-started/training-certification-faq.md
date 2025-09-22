@@ -26,6 +26,8 @@ When you create a new Sumo Logic organization, you are logged in automatically t
 1. Click **Send Activation/Verification Email**.
 1. Open the email and click **Verify Your Email**.
 
+## Training portal
+
 ### How do I access the Training portal?
 
 <!-- waiting on confirmation whether this is called Training portal or learning hub -->
