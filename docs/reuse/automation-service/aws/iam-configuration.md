@@ -10,7 +10,7 @@ To enable AWS IAM role-based authentication without sharing access keys and secr
        {
          "Effect": "Allow",
          "Principal": {
-           "AWS": "arn:aws:iam::<sumo-account-id>:root"
+           "AWS": "arn:aws:iam::926226587429:root"
          },
          "Action": "sts:AssumeRole"
        }
