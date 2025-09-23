@@ -205,7 +205,7 @@ Every [automation integration](/docs/platform-services/automation-service/app-ce
 * [**Custom**](#custom). Performs an action defined in a custom action YAML file.
 * [**Enrichment**](#enrichment). Enriches data with additional information, such as adding information about a known malicious IP address.
 * [**Notification**](#notification). Sends a notification, for example, an email or a post in a messaging service.
-* [**Scheduled**](#scheduled). Runs an action on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed.
+* [**Scheduled**](#scheduled). Runs an action on a schedule once the playbook starts.
 
 Every action in an integration is assigned an action type. If you take a look at the [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/), you'll see each has a list of available actions with the type of action listed for each. For example, here are some of the actions in the Sumo Logic Cloud SIEM integration:
 * **Get Entity** *(Enrichment)* - Get Entity details.
@@ -239,7 +239,7 @@ Containment actions perform some sort of response or remediation action, such as
 * Delete attachments
 * Disconnect devices from the network
 
-Many [integrations](/docs/platform-services/automation-service/app-central/integrations/) offer containment actions. Here are just a few:
+Many integrations offer containment actions. Here are just a few:
 * [Active Directory V2](/docs/platform-services/automation-service/app-central/integrations/active-directory-v2/)
 * [AWS IAM](/docs/platform-services/automation-service/app-central/integrations/aws-iam/)
 * [Azure AD](/docs/platform-services/automation-service/app-central/integrations/azure-ad/)
@@ -263,7 +263,7 @@ A few [integrations](/docs/platform-services/automation-service/app-central/inte
 
 Enrichment actions enrich data with additional information, such as adding information about a known malicious IP address.
 
-Many [integrations](/docs/platform-services/automation-service/app-central/integrations/) offer enrichment actions. Here are just a few:
+Many integrations offer enrichment actions. Here are just a few:
 * [Abnormal Security](/docs/platform-services/automation-service/app-central/integrations/abnormal-security/)
 * [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
 * [AWS IAM](/docs/platform-services/automation-service/app-central/integrations/aws-iam/)
@@ -281,7 +281,7 @@ Many [integrations](/docs/platform-services/automation-service/app-central/integ
 
 Notification actions send a notification, for example, an email or a post in a messaging service.
 
-Many [integrations](/docs/platform-services/automation-service/app-central/integrations/) offer notification actions. Here are just a few:
+Many integrations offer notification actions. Here are just a few:
 * [Basic Tools](/docs/platform-services/automation-service/app-central/integrations/basic-tools/)
 * [Gmail](/docs/platform-services/automation-service/app-central/integrations/gmail/)
 * [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/)
@@ -292,7 +292,7 @@ Many [integrations](/docs/platform-services/automation-service/app-central/integ
 
 Scheduled actions run on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed.
 
-Many [integrations](/docs/platform-services/automation-service/app-central/integrations/) offer scheduled actions. Here are just a few:
+Many integrations offer scheduled actions. Here are just a few:
 * [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
 * [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/)
 * [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/)
