@@ -76,12 +76,12 @@ Before you can add action nodes to a playbook, you must [configure the connectio
 1. Give a **Node name** that identifies the action being taken.
 1. Select **Manual execution** if the node will require manual intervention to run. For example, an analyst may need to add information before executing the node.
 1. Select the [**Integration**](/docs/platform-services/automation-service/automation-service-integrations/) to supply the action for the node.
-1. Select the **Type** of action:
-   * **Containment**. Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall.
-   * **Custom**. Performs an action defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
-   * **Enrichment**. Enriches data with additional information, such as adding information about a known malicious IP address.
-   * **Notification**. Sends a notification, for example, an email or a post in a messaging service.
-   * **Scheduled**. Runs an action on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed.
+1. Select the **Type** of action (see [Action types](#action-types) for more information):
+   * **Containment**
+   * **Custom**
+   * **Enrichment**
+   * **Notification**
+   * **Scheduled**
    :::note
    The **Type** drop-down menu shows only the action types available in the selected integration.
    :::
@@ -197,6 +197,109 @@ A filter node filters results from the preceding action based on the condition y
    <CartesianProduct/>
    :::
 1. Click **Create**.
+
+## Action types
+
+Every [automation integration](/docs/platform-services/automation-service/app-central/integrations/) contains different types of actions you can perform to help with incident remediation, such as sending notifications, adding additional information (enrichment), containment, and so on. Following are the different types of actions available in integrations:
+* [**Containment**](#containment). Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall.
+* [**Custom**](#custom). Performs an action defined in a custom action YAML file.
+* [**Enrichment**](#enrichment). Enriches data with additional information, such as adding information about a known malicious IP address.
+* [**Notification**](#notification). Sends a notification, for example, an email or a post in a messaging service.
+* [**Scheduled**](#scheduled). Runs an action on a schedule once the playbook starts.
+
+Every action in an integration is assigned an action type. If you take a look at the [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/), you'll see each has a list of available actions with the type of action listed for each. For example, here are some of the actions in the Sumo Logic Cloud SIEM integration:
+* **Get Entity** *(Enrichment)* - Get Entity details.
+* **Add Network Block** *(Containment)* - Add an address into the Network Blocks.
+* **Add Comment To Insight** *(Notification)* - Add a comment to an existing Insight.
+* **Check Insight Status Schedule** *(Scheduled)* - Schedule action that periodically checks if the Insight is closed.
+
+To use one of these actions, start by adding an action node to a playbook, then select the integration, the action type, and the action. See the next section to learn how.
+
+### Select the action type
+
+When you [add an action node to a playbook](#add-an-action-node-to-a-playbook), you select the type of action to perform from the integration.
+
+1. Either [create a new playbook](#create-a-new-playbook), or edit an existing playbook.
+1. Hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
+1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>
+1. Select **Action**.
+1. In the **Integration** field, select the integration you want to use. In this example, we've selected the [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/) integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/sumo-logic-cloud-siem-integration-selected.png')} alt="Sumo Logic Cloud SIEM integration selected in the Add Node dialog" style={{border:'1px solid gray'}} width="400"/>
+1. Click the **Type** field to select the type of action you want to perform. The drop-down menu shows only the types available in the selected integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-types-on-cloud-siem-integration.png')} alt="Action types on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
+1. Click the **Action** field to select the action to run in the playbook. Only actions of that type in the integration are listed:<br/><img src={useBaseUrl('img/platform-services/automation-service/enrichment-actions-on-cloud-siem.png')} alt="Enrichment actions on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
+1. Proceed with the rest of the steps to [add an action node to a playbook](#add-an-action-node-to-a-playbook).
+
+### Containment
+
+Containment actions perform some sort of response or remediation action, such as:
+* Block IPs
+* Block email senders
+* Block URLs
+* Ban hash files
+* Reset passwords and send an email with new passwords
+* Delete attachments
+* Disconnect devices from the network
+
+Many integrations offer containment actions. Here are just a few:
+* [Active Directory V2](/docs/platform-services/automation-service/app-central/integrations/active-directory-v2/)
+* [AWS IAM](/docs/platform-services/automation-service/app-central/integrations/aws-iam/)
+* [Azure AD](/docs/platform-services/automation-service/app-central/integrations/azure-ad/)
+* [Cortex XDR](/docs/platform-services/automation-service/app-central/integrations/cortex-xdr/)
+* [CrowdStrike Falcon](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/)
+* [Gmail](/docs/platform-services/automation-service/app-central/integrations/gmail/)
+* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/)
+* [Okta](/docs/platform-services/automation-service/app-central/integrations/okta/)
+* [OneLogin](/docs/platform-services/automation-service/app-central/integrations/onelogin/)
+* [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/)
+
+### Custom
+
+Custom actions perform an activity defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
+
+A few [integrations](/docs/platform-services/automation-service/app-central/integrations/) also offer actions labelled as custom types:
+* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp)
+* [Triage Tools](/docs/platform-services/automation-service/app-central/integrations/triage-tools/)
+
+### Enrichment
+
+Enrichment actions enrich data with additional information, such as adding information about a known malicious IP address.
+
+Many integrations offer enrichment actions. Here are just a few:
+* [Abnormal Security](/docs/platform-services/automation-service/app-central/integrations/abnormal-security/)
+* [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
+* [AWS IAM](/docs/platform-services/automation-service/app-central/integrations/aws-iam/)
+* [Azure AD](/docs/platform-services/automation-service/app-central/integrations/azure-ad/)
+* [Cortex XDR](/docs/platform-services/automation-service/app-central/integrations/cortex-xdr/)
+* [Criminal IP](/docs/platform-services/automation-service/app-central/integrations/criminal-ip/)
+* [CrowdStrike Falcon](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/)
+* [IP Quality Score](/docs/platform-services/automation-service/app-central/integrations/ip-quality-score/)
+* [Salesforce](/docs/platform-services/automation-service/app-central/integrations/salesforce/)
+* [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/)
+* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
+* [VirusTotal](/docs/platform-services/automation-service/app-central/integrations/virustotal/)
+
+### Notification
+
+Notification actions send a notification, for example, an email or a post in a messaging service.
+
+Many integrations offer notification actions. Here are just a few:
+* [Basic Tools](/docs/platform-services/automation-service/app-central/integrations/basic-tools/)
+* [Gmail](/docs/platform-services/automation-service/app-central/integrations/gmail/)
+* [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/)
+* [SMTP V3](/docs/platform-services/automation-service/app-central/integrations/smtp-v3/)
+* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
+
+### Scheduled
+
+Scheduled actions run on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed.
+
+Many integrations offer scheduled actions. Here are just a few:
+* [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
+* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/)
+* [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/)
+* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
+* [Sumo Logic Notifications by Microsoft](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-microsoft/)
+* [Sumo Logic Notifications](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/)
+* [VirusTotal](/docs/platform-services/automation-service/app-central/integrations/virustotal/)
 
 ## Playbook versioning
 
