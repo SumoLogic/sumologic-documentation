@@ -10,6 +10,8 @@ description: Learn about the switch of our threat intelligence vendor from Crowd
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<!-- Article added by DOCS-796. -->
+
 This article provides guidance on our switching from the legacy **_sumo_global_feed_cs** source supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/) to the **SumoLogic_ThreatIntel** source supplied by [Intel 471](https://intel471.com/).
 
 <!--

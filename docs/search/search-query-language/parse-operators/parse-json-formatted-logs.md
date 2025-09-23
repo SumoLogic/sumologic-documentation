@@ -1,7 +1,7 @@
 ---
 id: parse-json-formatted-logs
 title: Parse JSON Formatted Logs
-description: The JSON operator allows you to extract values from JSON logs with most JSONPath expressions.
+description: Use parse operators in Sumo Logic to extract fields from JSON-formatted logs, enabling precise filtering and enhanced log search performance.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

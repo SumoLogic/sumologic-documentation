@@ -1,7 +1,7 @@
 ---
 title: June 3, 2025 - Application Update
 hide_table_of_contents: true
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
   - automation service
   - cloud soar
@@ -25,7 +25,7 @@ What's new:
 * By default, playbooks with any published version are set to enabled, while those that are draft-only or have been deleted remain disabled.
 * Audit logs are generated whenever playbooks are enabled or disabled manually.
 
-For more information, see [Enable or disable playbooks](/docs/platform-services/automation-service/automation-service-playbooks/#enable-or-disable-playbooks).
+For more information, see [Enable or disable playbooks](/docs/platform-services/automation-service/playbooks/create-playbooks/#enable-or-disable-playbooks).
 
 #### Integrations
 

@@ -1,18 +1,10 @@
 ---
 id: restart-collectors
-title: Restart a Collector (Beta)
+title: Restart a Collector
 description: Learn how to restart a Collector from the Collection page.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-This feature is in Beta. To participate, contact your Sumo Logic account executive.
 
 This document explains how to initiate a request to restart an Installed
 Collector from the Collection page. The other option is to [start or stop a Collector using our provided scripts](start-stop-collector-using-scripts.md).
@@ -41,7 +33,7 @@ You cannot restart a Collector if:
 
 To restart your Installed Collector in the Sumo Logic platform:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Find the Installed Collector and click the information icon on the right of the row.
 1. The **API usage information** popup is displayed. Click the **Restart Collector** button on the bottom left.<br/>   ![restart collector button.png](/img/collector/restart-collector-button.png) 
 1. Click **Confirm **to send the restart request.<br/>   ![restart confirmation.png](/img/collector/restart-confirmation.png)

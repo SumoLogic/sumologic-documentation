@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hatching-triage.png')} alt="hatching-triage" width="100"/>
 
-***Version: 1.3  
-Updated: June 02, 2024***
+***Version: 1.4  
+Updated: August 13, 2025***
 
 Detonate files with Hatching Triage Malware Sandbox.
 
@@ -52,3 +52,5 @@ For information about Recorded Future Triage ([formerly Hatching Triage](https:/
   + Get Static Report
   + Get Triage Report
   + Get Summary Report
++ August 13, 2025 (v1.4) - Updated endpoint in action
+  + Get Summary Report 

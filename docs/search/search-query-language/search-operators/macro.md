@@ -11,6 +11,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+<!-- Originally added as a beta article with DOCS-545. -->
+
 The `macro` operator provides a means for you to reference set of query language syntax using a macro keyword across multiple queries. Additionally, if required you can include arguments and performs its respective evaluation of the arguments to this operator.
 
 
@@ -34,7 +36,7 @@ To use the `macro` operator, reference it in your query with backticks (``). Mac
 
 To create a macro, follow the steps below:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu, select **Manage Data**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.
+1.  [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. 
 1. Click **+ Add Macro**.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-logs-page.png')} alt="macro-logs-page" style={{border: '1px solid gray'}} width="800" />
 1. Or, in the log search page, select the part of search query language that needs to be reused and click on **Create Macro**.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-search-page.png')} alt="macro-search-page" style={{border: '1px solid gray'}} width="800" />
 1. **Macro Details**. Enter the name for the macro. Description is optional.
@@ -105,6 +107,6 @@ _sourceCategory=error | `timeslice_macro(<arg1_value>)`
 
 To view any existing macro, follow the steps below:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu, select **Manage Data**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Managemenu**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. 
 1. In the **Macros** page, click on any of the macros that you want to view the macro details.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/view-macro-logs-page.png')} alt="macro-logs-page" style={{border: '1px solid gray'}} width="800" />
 1. To use the selected macro in your log search query, copy the suggested **Usage** of the macro and include it in your query syntax. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/view-macro-logs-details.png')} alt="view-macro-logs-details" style={{border: '1px solid gray'}} width="400" />

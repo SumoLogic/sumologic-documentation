@@ -13,7 +13,7 @@ You can review and update your personal account settings and login credentials a
 
 ## Accessing preferences
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**.
+[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. 
 
 <img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
 
@@ -127,6 +127,10 @@ By default, selecting a menu link in the left navigation pane opens it in a new 
 Enabling this preference hides the **Open in New Tab** button on navigation menu links.
 
 However, even when this preference is enabled, the **Open in New Tab** button remains visible for menu items with subfolders, allowing you to click the menu item to view its subfolders and open them in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button-on-folder.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="250" />
+
+### Default Starting Page
+
+Select the default page to appear when you log in to Sumo Logic. This preference applies only to users of the [**New UI**](/docs/get-started/sumo-logic-ui).
 
 ### Theme
 

@@ -5,7 +5,7 @@ sidebar_label: Changelog
 description: This section provides details on the available versions of the AWS Observability CloudFormation template.
 ---
 
-This section provides details on the available versions of the AWS Observability Terraform script and CloudFormation template. The details also include all the AWS and Sumo Logic resources that will be updated and resolved bugs when upgrading the existing version of the Terraform script or CloudFormation template to the latest version.
+This section provides details on the available versions of the AWS Observability Terraform script and CloudFormation template. The details also include all the AWS and Sumo Logic resources that will be updated and resolved bugs when upgrading the existing version of the Terraform script or CloudFormation template to the latest version. For more information about how to use Terraform in your Sumo Logic environment, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic).
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
 

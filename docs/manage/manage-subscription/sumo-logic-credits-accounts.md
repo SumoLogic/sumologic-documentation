@@ -42,10 +42,6 @@ Trial accounts allow full access all Sumo Logic features to test how Sumo Logic 
 - **Retention**: 30 days for all data.
 - **Users**: Up to 20 users.
 
-Trial accounts enable you to leverage our full suite of [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) tools:
-* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Account > Data Management**.
-* [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**.
-
 Trials are limited to 30 days. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest. If you need to extend your trial period or request a Proof of Concept (PoC), contact our [sales team](mailto:sales@sumologic.com).
 
 ### Essentials
@@ -82,37 +78,37 @@ The following table provides a summary list of key features by Credits package a
 
 | Feature | Free | Trial | Essentials | Enterprise Operations | Enterprise Security | Enterprise Suite |
 |:-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| Audit Index | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Audit Event Index |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Audit Index | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Audit Event Index |  | &#10003; |  | &#10003; | &#10003; | &#10003; |
 | Cloud SIEM | | | | | Activation required* | Activation required* |
 | Cloud SOAR | | | | | | Activation required* |
-| Threat Intel |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Collector Management API | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Data Forwarding |   | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Data Tiers |  |  |  |  |  | ![check](/img/reuse/check.png) |
-| Data Volume Index |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Field Extraction | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Global Intelligence |  |  |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Ingest Budgets |  |  |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data storage  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data Continuous Volume | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data Frequent Tier Volume |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| LogReduce | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Lookup Tables |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics data retention	 | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics volume | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Monitors | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Partitions | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| PCI Compliance App |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Real User Monitoring (RUM) | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| SAML | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Scheduled Views | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Search Job API |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Support |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Sumo Logic Apps | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Traces | ![check](/img/reuse/check.png)<br/>Up to 1.5GB per day* | ![check](/img/reuse/check.png)<br/>Up to 5GB per day | ![check](/img/reuse/check.png)<br/>5GB per day | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
-| User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Threat Intel |  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Collector Management API | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Data Forwarding |   | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Data Tiers |  |  |  |  |  | &#10003; |
+| Data Volume Index |  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Field Extraction | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Global Intelligence |  |  |  | &#10003; | &#10003; | &#10003; |
+| Ingest Budgets |  |  |  | &#10003; | &#10003; | &#10003; |
+| Log Data storage  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Log Data Continuous Volume | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Log Data Frequent Tier Volume |  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| LogReduce | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Lookup Tables |  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics data retention	 | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics volume | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Monitors | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Partitions | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| PCI Compliance App |  | &#10003; |  | &#10003; | &#10003; | &#10003; |
+| Real User Monitoring (RUM) | | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| SAML | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Scheduled Views | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Search Job API |  | &#10003; |  | &#10003; | &#10003; | &#10003; |
+| Support |  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Sumo Logic Apps | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
+| Traces | &#10003;<br/>Up to 1.5GB per day* | &#10003;<br/>Up to 5GB per day | &#10003;<br/>5GB per day | &#10003; |  | &#10003; |
+| User and Role APIs | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
 
 \* Contact your account manager to customize your account to meet your organization's needs.
 
@@ -120,9 +116,9 @@ The following table provides a summary list of key features by Credits package a
 
 The **Account Overview** tab provides detailed information about your Sumo Logic organization, including account type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.  
 
-To access the **Account Overview** tab:  
+To access the **Account Overview** tab:    
+* **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or select **Account Overview** from the **Go To...** menu.
 * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
-* **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or select **Account Overview** from the **Go To...** menu.  
 
 To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) capability.  
 

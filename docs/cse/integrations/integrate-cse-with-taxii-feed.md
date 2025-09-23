@@ -26,9 +26,9 @@ Cloud SIEM supports TAXII 1.x and TAXII 2.x. 
 ## Configure the integration
 
 1. Configure the [TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source/) or [TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/), depending on which you want to use.
-1. The [ingested threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) appear on the [Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab). To access the Threat Intelligence tab:
+1. The [ingested threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) appear on the [Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab). To access the Threat Intelligence tab: 
+   * [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.
    * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. 
-   * [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. 
 1. Use the [`hasThreatMatch`](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch) Cloud SIEM rules language function to search incoming records for matches to threat intelligence indicators. When matches are found, they appear on records in Cloud SIEM.
 
 ## Leveraging indicators in rules

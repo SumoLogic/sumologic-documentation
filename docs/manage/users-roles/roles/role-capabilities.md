@@ -30,7 +30,7 @@ Following are the capabilities you can assign when you [create roles](create-man
 | View Account Overview| View the Account Overview page. | `viewAccountOverview` |
 | Manage Tokens | Manage [Installation Tokens](/docs/manage/security/installation-tokens). | `manageTokens` |
 | View Parsers | View [parsers](/docs/cse/schema/parser-editor). | `viewParsers` |
-|Download Search Results | [Export log query results](/docs/search/get-started-with-search/search-basics/export-search-results) to a .csv file. | `downloadSearchResults` |
+| Download Search Results | [Export log query results](/docs/search/get-started-with-search/search-basics/export-search-results) to a .csv file. | `downloadSearchResults` |
 
 ## Entity Management
 
@@ -166,14 +166,14 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Task Edit| Configure tasks in playbooks. | `taskEdit` |
 | Task Reassign|Assign tasks in playbooks to users. | `taskReassign` |
 | App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `appCentralAccess` |
-| App Central Export|Export integrations and playbooks from App Central. | `appCentralExport` |
+| App Central Export | Export integrations and playbooks from App Central. | `appCentralExport` |
 | Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `integrationsAccess` |
 | Integrations Configure| Create and edit integrations. | `integrationsConfigure` |
 | Playbooks Access | View playbooks. | `playbooksAccess` |
 | Playbooks Configure| Create and edit playbooks. | `playbooksConfigure` |
 | Bridge Monitoring Access |Monitor Bridge operations. | `bridgeMonitoringAccess` |
 | Observability Access | Access automation in the SaaS Log UI. | `observabilityAccess` |
-| Observability Configure | Create and edit automation in the SaaS Log UI. | `observabilityConfigure` |
+| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. | `observabilityConfigure` |
 
 ## Alerting
 
@@ -234,6 +234,58 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Capability | Description | API |
 | :-- | :-- | :-- |
 | Manage Macros | ? | ? |
+
+### Legacy Cloud SOAR role capabilities
+
+| View Cloud SOAR |  | Users with a role that grants this capability will see a **Cloud SOAR** link in the left-nav bar of the Sumo Logic UI. |
+| Incident | View | View all [incidents](/docs/cloud-soar/incidents-triage/). |
+| Incident | Access | Access your incidents. |
+| Incident | Access all | Access all incidents. |
+| Incident | Edit | Create, edit, and delete incidents. |
+| Incident | Bulk Operations | Manage incident bulk operations. |
+| Incident | Manage Investigators | Manage investigators assigned to incidents. |
+| Incident | Change Ownership | Change ownership of incidents. |
+| Triage | View | View all [triage](/docs/cloud-soar/incidents-triage/) events. |
+| Triage | Access | Access your triage events. |
+| Triage | Access all | Access all triage events. |
+| Triage | Change Ownership | Change ownership of triage events. |
+| Triage | Edit | Create, edit,and delete triage events. |
+| Triage | Bulk physical delete | Perform bulk deletion of triage events. |
+| Folders | Edit | Create, edit, and delete folders. |
+| Attachments | Access | Access all [attachments](/docs/cloud-soar/incidents-triage/#documentation-tab). |
+| Attachments | Edit | Create, edit, and delete attachments. |
+| Incident Playbook | Access | Access all [incident playbooks](/docs/cloud-soar/incidents-triage/#playbooks). |
+| Incident Playbook | Edit | Create, edit, and delete incident playbooks. |
+| Incident Playbook | Manage | Manage incident playbooks. |
+| Note | Access | Access all [notes](/docs/cloud-soar/incidents-triage/#notes). |
+| Note | Edit | Create, edit, and delete notes. |
+| War Room | Use | Be able to use the [War Room](/docs/cloud-soar/incidents-triage/#war-room).  |
+| Settings General | Configure | Configure [settings](/docs/cloud-soar/settings/). |
+| User Management | Groups | Manage [groups](/docs/cloud-soar/settings/#groups). |
+| Notification | Configure | Configure [notifications](/docs/cloud-soar/settings/#notifications). |
+| Customization | Logo | Customize the logo. |
+| Customization | Fields | Customize [fields](/docs/cloud-soar/settings/#custom-fields). |
+| Customization | Incident Labels | Customize incident labels. |
+| Customization | Triage | Customize triage. |
+| Audit and Information | License Information | View license [audit and information](/docs/cloud-soar/legacy/legacy-cloud-soar-global-functions-menu/#audit-and-information). |
+| Audit and Information | Audit Trail | View audit trail information. |
+| Audit and Information | Configure Audit Trail | Configure audit trail information. |
+| API | Use | Use [APIs](/docs/api/cloud-soar/). |
+| API | Api Admin | Have admin access to APIs. |
+| API | Email Read | Read emails. |
+| API | Email Edit | Create, edit, and delete emails. |
+| Incident Templates | Access | Access all [incident templates](/docs/cloud-soar/automation/#incident-templates). |
+| Incident Templates | Configure | Configure templates. |
+| Automation Rules | Access | Access [automation rules](/docs/cloud-soar/automation/#automation-rules). |
+| Automation Rules | Configure | Configure automation rules. |
+| Entities | Access | Access all [entities](/docs/cloud-soar/incidents-triage/#entities). |
+| Entities | Manage | Manage entities. |
+| Entities | Bulk Physical Delete | Perform bulk deletion of entities. |
+| Report | Access | Access your [reports](/docs/cloud-soar/incidents-triage/#report). |
+| Report | Access all | Access all reports. |
+| Dashboard | Access | Access your [dashboards](/docs/cloud-soar/incidents-triage/#dashboards). |
+| Dashboard | Access all | Access all dashboards. |
+| Widgets | Use all | Use all [widgets](/docs/cloud-soar/incidents-triage/#create-widgets). |
 
 
 ## Organizations

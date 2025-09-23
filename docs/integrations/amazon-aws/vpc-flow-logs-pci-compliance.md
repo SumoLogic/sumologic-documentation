@@ -37,19 +37,23 @@ json "logStream", "logGroup", "message", "direction" as logStream, logGroup, msg
 | parse field=msg "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status nodrop
 ```
 
+## Installing the PCI Compliance for Amazon VPC Flow Logs app
 
-## Installing the PCI Compliance for Amazon VPC Flow Logs App
+Now that you have set up collection, install the Sumo Logic app for PCI Compliance For Amazon VPC Flow to use the preconfigured searches and dashboards that provide insight into your data.
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and dashboards that provide insight into your data.
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstallV2/>
 
-<AppInstall/>
+## Viewing the PCI VPC dashboards
 
-## Viewing the PCI VPC Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-The Sumo Logic App for Payment Card Industry (PCI) Compliance for Amazon VPC Flow App offers dashboards to help you monitor that network traffic, network activities, and network security are within your expected ranges. The PCI Compliance for Amazon VPC Flow App covers PCI requirements 01, 02 and 04.
+<ViewDashboards/>
 
+:::note 
+The PCI Compliance for Amazon VPC Flow App covers PCI requirements 01, 02, and 04.
+:::
 
 ### PCI Req 01 - Accepted and Rejected Traffic
 

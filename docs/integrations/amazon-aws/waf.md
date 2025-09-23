@@ -105,11 +105,15 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
 
 Now that you have set up collection for AWS WAF, install the Sumo Logic app for AWS AWS to use the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
 ## Viewing AWS WAF dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### AWS WAF Overview
 

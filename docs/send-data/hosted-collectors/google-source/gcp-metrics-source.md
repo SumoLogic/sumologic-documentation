@@ -63,7 +63,7 @@ If you create and manage all service accounts in one project which is different 
 For information on available metrics, see [GCP Metrics](https://cloud.google.com/monitoring/api/metrics_gcp).
 
 1. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you would like to use, create one, using the instructions on [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+2. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 3. Click **Add Source** next to a Hosted Collector.
 4. Search for and select **GCP Metrics**. <br/><img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="gcp-icon.png" width="80"/>
 5. **Name**. Enter a name to display for the new source.
@@ -123,8 +123,8 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
   :::
 10. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions). This can be a maximum of 1,024 characters.
 11. **Fields**. Click the **+Add link** to add custom log metadata [Fields](/docs/manage/fields), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
-    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 12. **GCP Access**. Upload the JSON Google service account credentials file. This allows Sumo Logic to make API calls to Google Cloud.
 
