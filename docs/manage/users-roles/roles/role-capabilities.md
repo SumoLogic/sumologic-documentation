@@ -4,7 +4,7 @@ title: Role Capabilities
 description: Assign any of these capabilities when you create user roles.
 ---
 
-Following are the capabilities you can assign when you [create roles](create-manage-roles.md).
+Following are the capabilities you can assign when you [create roles](create-manage-roles.md), including the [APIs](/docs/api/about-apis/) available when you have the role. 
 
 ## Data Management
 
@@ -23,14 +23,23 @@ Following are the capabilities you can assign when you [create roles](create-man
 | Manage Apps |Install and manage [apps](/docs/integrations). | `manageApps` |
 | Manage Connections | Manage the [connections](/docs/alerts/webhook-connections/) that allow you to send alerts to other tools. | `manageConnections` |
 | View Connections | View [connections](/docs/alerts/webhook-connections/) on the **Connections** page. | `viewConnections` |
-| View Scheduled Views | [View Scheduled Views](/docs/manage/scheduled-views). | `viewScheduledViews` |
-| Manage Scheduled Views | View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Scheduled Views capability, users with that role will also have View Scheduled Views capability. | `manageScheduledViews` |
+| View Views | [View Scheduled Views](/docs/manage/scheduled-views). | `viewScheduledViews` |
+| Manage Views | View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Scheduled Views capability, users with that role will also have View Scheduled Views capability. | `manageScheduledViews` |
 | View Partitions | View [partitions](/docs/manage/partitions). | `viewPartitions` |
 | Manage Partitions | View, create, edit, and delete partitions. Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 Data Forwarding capabilities. | `managePartitions` |
 | View Account Overview| View the Account Overview page. | `viewAccountOverview` |
 | Manage Tokens | Manage [Installation Tokens](/docs/manage/security/installation-tokens). | `manageTokens` |
 | View Parsers | View [parsers](/docs/cse/schema/parser-editor). | `viewParsers` |
-| Download Search Results | [Export log query results](/docs/search/get-started-with-search/search-basics/export-search-results) to a .csv file. | `downloadSearchResults` |
+| Download Search Results | [Export log query results](/docs/search/get-started-with-search/search-basics/export-search-results) to a .csv file. | `downloadSearchResults` | 
+| Access Data Volume Index | Access the [`sumologic_volume` index](/docs/metrics/metrics-dpm/#query-the-sumologic_volume-index). | ? |
+
+<!-- Beta features
+| Manage Data Streams | ? | ? |
+| View Data Streams | ? | ? |
+| View Deletion Requests | View [deletion requests](/docs/manage/deletion-requests/).| `listDeletionRules` |
+| Manage Deletion Requests | Manage deletion requests. | `createDataDeletionRule` |
+| Review Deletion Requests | Provide reviews of deletion requests. | `getDataDeletionRule` |
+-->
 
 ## Entity Management
 
@@ -63,13 +72,10 @@ Following are the capabilities you can assign when you [create roles](create-man
 
 ## Dashboards
 
-<!-- UI capabilities don't match API spec capabilities -->
-
 | Capability | Description | API |
 | :-- | :-- | :-- |
 | Share Dashboards with the World | [Share dashboards](/docs/dashboards/share-dashboard-outside-org) in view-only mode with no login required. | `shareDashboardsWithTheWorld` |
-| Share Dashboards with Your Allowlist | [Share dashboards](/docs/dashboards/share-dashboard-new/) in view-only mode; viewers must be on your service allowlist. | `shareDashboardsWithYourAllowlist` |
-| Share Dashboards with Your Whitelist | ? | `shareDashboardWhitelist` |
+| Share Dashboards with the Allowlist | [Share dashboards](/docs/dashboards/share-dashboard-new/) in view-only mode; viewers must be on your service allowlist. | `shareDashboardsWithYourAllowlist` and `shareDashboardWhitelist` |
 
 ## User Management
 
@@ -78,8 +84,6 @@ Following are the capabilities you can assign when you [create roles](create-man
 | Manage Users And Roles | Access the UI pages to manage [users](/docs/manage/users-roles/users) and [roles](/docs/manage/users-roles/roles). | `manageUsersAndRoles` |
 
 ## Audit Event Management
-
-<!-- UI capabilities don't match API spec capabilities -->
 
 | Capability | Description | API |
 | :-- | :-- | :-- |
@@ -116,22 +120,20 @@ Following are the capabilities you can assign when you [create roles](create-man
 | View Muting Schedules | View [Muting Schedules](/docs/alerts/monitors/muting-schedules). | `viewMutingSchedules` |
 | Manage Muting Schedules | Create, edit, and delete Muting Schedules. | `manageMutingSchedules` |
 
+<!-- 
 ## Open Analytics
-
-<!-- UI capabilities don't match API spec capabilities -->
 
 | Capability | Description | API |
 | :-- | :-- | :-- |
 | Manage Open Analytics Endpoint | ? | ? |
+-->
 
 ## Usage Management
 
-<!-- UI capabilities don't match API spec capabilities -->
-
 | Capability | Description | API |
 | :-- | :-- | :-- |
-| View Usage Management | ? | ? |
-| Manage Usage Management | ? | ? |
+| View Usage Management | View [usage management](/docs/manage/manage-subscription/usage-management/). | `getBudgets`, `getBudget`, `getBudgetUsages`, `getBudgetUsage` |
+| Manage Usage Management | Manage usage management. | `createBudget`, `updateBudget`, `deleteBudget` |
 
 ## Reliability Management
 
@@ -142,24 +144,28 @@ Following are the capabilities you can assign when you [create roles](create-man
 
 ## Threat Intel
 
-<!-- UI capabilities don't match API spec capabilities -->
-
 | Capability | Description | API |
 | :-- | :-- | :-- |
 | View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | `viewThreatIntelDataStore` |
 | Manage Threat Intel Data Store | Create, edit, and delete threat intel sources. | `manageThreatIntelDataStore` |
 
+<!-- 
 ## Macros
-
-<!-- UI capabilities don't match API spec capabilities -->
 
 | Capability | Description | API |
 | :-- | :-- | :-- |
 | Manage Macros | ? | ? |
+-->
+
+<!-- 
+## Data Masking
+
+| Capability | Description | API |
+| :-- | :-- | :-- |
+| View Unmasked Data | ? | ? |
+-->
 
 ## Organizations
-
-<!-- UI capabilities don't match API spec capabilities -->
 
 | Capability | Description | API |
 | :-- | :-- | :-- |
@@ -177,8 +183,6 @@ Following are the capabilities you can assign when you [create roles](create-man
 :::info
 This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, see [Legacy Cloud SOAR](#legacy-cloud-soar).
 :::
-
-### SaaS Cloud SOAR
 
 | Capability category | Capability | Description| API |
 | :-- | :-- | :-- |:--|
