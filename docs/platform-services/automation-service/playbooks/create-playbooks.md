@@ -217,7 +217,7 @@ To use one of these actions, start by adding an action node to a playbook, then 
 
 ### Select the action type
 
-When you [Add an action node to a playbook](#add-an-action-node-to-a-playbook), you select the type of action to perform from the integration.
+When you [add an action node to a playbook](#add-an-action-node-to-a-playbook), you select the type of action to perform from the integration.
 
 1. Either [create a new playbook](#create-a-new-playbook), or edit an existing playbook.
 1. Hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
