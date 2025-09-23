@@ -18,7 +18,7 @@ Following are the capabilities you can assign when you [create roles](create-man
 | View Fields | View [fields](/docs/manage/fields), which are custom metadata fields you can assign to logs. | `viewFields` |
 | Manage Fields | Manage fields. Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View Field Extraction Rules capabilities. | `manageFields` |
 | Manage Field Extraction Rules | Manage [field extractions](/docs/manage/field-extractions), which speed the search process by automatically parsing fields as log messages are ingested. Note that if you grant a role the Manage Field Extraction Rules capability, users with that role will also have the Manage Fields, View Fields, and View Field Extraction Rules capabilities. | `manageFieldExtractionRules` |
-| Manage S3 Data Forwarding| Manage [S3 data forwarding](/docs/manage/data-forwarding/amazon-s3-bucket) from Sumo Logic to an S3 bucket. | `manageS3DataForwarding` |
+| Manage S3 Data Forwarding| Manage [S3 data forwarding](/docs/manage/data-forwarding/forward-data-from-sumologic) from Sumo Logic to an S3 bucket. | `manageS3DataForwarding` |
 | Manage Content| Manage the content for your organization. This provides access to [Admin Mode](/docs/manage/content-sharing/admin-mode) in the Library. | `manageContent` |
 | Manage Apps |Install and manage [apps](/docs/integrations). | `manageApps` |
 | Manage Connections | Manage the [connections](/docs/alerts/webhook-connections/) that allow you to send alerts to other tools. | `manageConnections` |
@@ -90,7 +90,7 @@ Following are the capabilities you can assign when you [create roles](create-man
 
 | Capability | Description | API |
 | :-- | :-- | :-- |
-| Task View|See tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). | `taskView` |
+| Task View|See tasks in [playbooks](/docs/platform-services/automation-service/playbooks/). | `taskView` |
 | Task Access | Access your tasks in playbooks. | `taskAccess` |
 | Task Access All| Access all user tasks in playbooks. | `taskAccessAll` |
 | Task Edit| Configure tasks in playbooks. | `taskEdit` |
