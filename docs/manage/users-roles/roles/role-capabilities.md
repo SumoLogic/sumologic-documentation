@@ -9,7 +9,7 @@ import ApiCreateRole from '../../../reuse/api-create-role.md';
 Following are the capabilities you can assign when you [create roles](create-manage-roles.md). 
 
 :::note
-If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/createRoleV2) to create a role, enter the corresponding role capability value in the `capabilities` parameter of the API.
+If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/createRoleV2) to create a role, enter the corresponding role capability value in the `capabilities` parameter of the API as indicated in the tables below.
 :::
 
 ## Data Management
@@ -18,9 +18,9 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | :-- | :-- | :-- |
 | View Collectors | View collectors and sources that have already been installed or added. | `viewCollectors` |
 | Manage Collectors | [View and manage](/docs/send-data) installed and hosted collectors as well as sources. | `manageCollectors` |
-| Manage Ingest Budgets |Allows you to manage [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different collectors, but not creating or deleting them. | `manageIngestBudgets` |
+| Manage Ingest Budgets |Allows you to manage [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different collectors, but not creating or deleting them. | `manageBudgets` |
 | Manage Data Volume Feed|Enable and manage the [data volume index](/docs/manage/ingestion-volume/data-volume-index) for your account to avoid exceeding your data limits, and to determine when you need to upgrade your account. | `manageDataVolumeFeed` |
-| View Field Extraction Rules | View [field extraction rules](/docs/manage/field-extractions/create-field-extraction-rule), which accelerate your search process by automatically parsing fields as log messages are ingested. | `viewFieldExtractionRules` |
+| View Field Extraction Rules | View [field extraction rules](/docs/manage/field-extractions/create-field-extraction-rule), which accelerate your search process by automatically parsing fields as log messages are ingested. | `viewFieldExtraction` |
 | View Fields | View [fields](/docs/manage/fields), which are custom metadata fields you can assign to logs. | `viewFields` |
 | Manage Fields | Manage fields. Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View Field Extraction Rules capabilities. | `manageFields` |
 | Manage Field Extraction Rules | Manage [field extractions](/docs/manage/field-extractions), which speed the search process by automatically parsing fields as log messages are ingested. Note that if you grant a role the Manage Field Extraction Rules capability, users with that role will also have the Manage Fields, View Fields, and View Field Extraction Rules capabilities. | `manageFieldExtractionRules` |
@@ -28,7 +28,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Manage Content| Manage the content for your organization. This provides access to [Admin Mode](/docs/manage/content-sharing/admin-mode) in the Library. | `manageContent` |
 | Manage Apps |Install and manage [apps](/docs/integrations). | `manageApps` |
 | Manage Connections | Manage the [connections](/docs/alerts/webhook-connections/) that allow you to send alerts to other tools. | `manageConnections` |
-| View Connections | View [connections](/docs/alerts/webhook-connections/) on the **Connections** page. | `viewConnections` |
+| View Connections | View [connections](/docs/alerts/webhook-connections/) on the **Connections** page. | ? |
 | View Views | [View Scheduled Views](/docs/manage/scheduled-views). | `viewScheduledViews` |
 | Manage Views | View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Scheduled Views capability, users with that role will also have View Scheduled Views capability. | `manageScheduledViews` |
 | View Partitions | View [partitions](/docs/manage/partitions). | `viewPartitions` |
@@ -37,11 +37,11 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Manage Tokens | Manage [Installation Tokens](/docs/manage/security/installation-tokens). | `manageTokens` |
 | View Parsers | View [parsers](/docs/cse/schema/parser-editor). | `viewParsers` |
 | Download Search Results | [Export log query results](/docs/search/get-started-with-search/search-basics/export-search-results) to a .csv file. | `downloadSearchResults` | 
-| Access Data Volume Index | Access the [`sumologic_volume` index](/docs/metrics/metrics-dpm/#query-the-sumologic_volume-index). | ? |
+| Access Data Volume Index | Access the [`sumologic_volume` index](/docs/metrics/metrics-dpm/#query-the-sumologic_volume-index). | `dataVolumeIndex` |
 
 <!-- Beta features
-| Manage Data Streams | ? | ? |
-| View Data Streams | ? | ? |
+| Manage Data Streams | ? | `manageDataStreams` |
+| View Data Streams | ? | `viewDataStreams` |
 | View Deletion Requests | View [deletion requests](/docs/manage/deletion-requests/).| `listDeletionRules` |
 | Manage Deletion Requests | Manage deletion requests. | `createDataDeletionRule` |
 | Review Deletion Requests | Provide reviews of deletion requests. | `getDataDeletionRule` |
@@ -51,37 +51,37 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| Manage Entity Type Configs | Reserved for internal use. | `manageEntityTypeConfigs` |
+| Manage Entity Type Configs | Reserved for internal use. | `manageEntityTypeConfig` |
 
 ## Metrics
 
 | Capability | Description | Corresponding value in the *capabilities* field of the [createRoleV2 API](https://api.sumologic.com/docs/#operation/createRoleV2) |
 | :-- | :-- | :-- |
-| Manage Metrics Transformation Rules | Create, edit, or delete [metrics transformation rules](/docs/metrics/metrics-transformation-rules). | `manageMetricsTransformationRules` |
-| Manage Logs-to-Metrics | Create, edit, or delete [Logs-to-Metrics](/docs/metrics/logs-to-metrics) rules. | `manageLogsToMetrics` |
-| Manage Metrics Rules | Create, edit, or delete [metrics rules](/docs/metrics/metric-rules-editor/). | `manageMetricsRules` |
+| Manage Metrics Transformation Rules | Create, edit, or delete [metrics transformation rules](/docs/metrics/metrics-transformation-rules). | `metricsTransformation` |
+| Manage Logs-to-Metrics | Create, edit, or delete [Logs-to-Metrics](/docs/metrics/logs-to-metrics) rules. | `metricsExtraction` |
+| Manage Metrics Rules | Create, edit, or delete [metrics rules](/docs/metrics/metric-rules-editor/). | `metricsRules` |
 
 ## Security
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
 | Manage Password Policy|Set the password policy for your Sumo Logic account. | `managePasswordPolicy` |
-|Allowlist IP Addresses | [Explicitly grant access](/docs/manage/security/create-allowlist-ip-cidr-addresses) to specific IP addresses or address ranges. | `allowlistIpAddresses` |
+|Allowlist IP Addresses | [Explicitly grant access](/docs/manage/security/create-allowlist-ip-cidr-addresses) to specific IP addresses or address ranges. | `ipAllowlisting` |
 | Create Access Keys | Create your own [access keys](/docs/manage/security/access-keys/). | `createAccessKeys` |
 | Manage Access Keys |Set up, activate, deactivate, or delete access keys for your organization. | `manageAccessKeys` |
 | Manage Support Account Access |Enable management of the Sumo Logic [support account](/docs/manage/security/enable-support-account) for your organization. | `manageSupportAccountAccess` |
 | Manage Audit Data Feed|Enable and manage the [Audit Index](/docs/manage/security/audit-indexes/audit-index), which provides information on internal events. | `manageAuditDataFeed` |
 | Manage SAML|Provision and manage [SAML](/docs/manage/security/saml) for single sign-on. | `manageSAML` |
-| Manage Share Dashboards Outside Organization | [Share a dashboard](/docs/dashboards/share-dashboard-outside-org/) with users who do not have Sumo Logic access. | `manageShareDashboardsOutsideOrganization` |
-| Manage Organization Settings | Configure concurrent session limits and the Data Access Level for Shared Dashboards security policy. | `manageOrganizationSettings` |
+| Manage Share Dashboards Outside Organization | [Share a dashboard](/docs/dashboards/share-dashboard-outside-org/) with users who do not have Sumo Logic access. | `shareDashboardOutsideOrg` |
+| Manage Organization Settings | Configure concurrent session limits and the Data Access Level for Shared Dashboards security policy. | `manageOrgSettings` |
 |Change Data Access Level|Change the [data access level](/docs/dashboards/set-data-access-level/) of dashboards or scheduled searches. | `changeDataAccessLevel` |
 
 ## Dashboards
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| Share Dashboards with the World | [Share dashboards](/docs/dashboards/share-dashboard-outside-org) in view-only mode with no login required. | `shareDashboardsWithTheWorld` |
-| Share Dashboards with the Allowlist | [Share dashboards](/docs/dashboards/share-dashboard-new/) in view-only mode; viewers must be on your service allowlist. | `shareDashboardsWithYourAllowlist` |
+| Share Dashboards with the World | [Share dashboards](/docs/dashboards/share-dashboard-outside-org) in view-only mode with no login required. | `shareDashboardWorld` |
+| Share Dashboards with the Allowlist | [Share dashboards](/docs/dashboards/share-dashboard-new/) in view-only mode; viewers must be on your service allowlist. | `shareDashboardAllowlist` |
 
 ## User Management
 
@@ -93,35 +93,35 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| Access Search Audit Events | View and download audit logs of search queries executed in the UI. | `accessSearchAuditEvents` |
-| Access Audit Events | View and download audit logs of admin and config events. | `accessAuditEvents` |
+| Access Search Audit Events | View and download audit logs of search queries executed in the UI. | `searchAuditIndex` |
+| Access Audit Events | View and download audit logs of admin and config events. | `auditEventIndex` |
 
 ## Automation Service
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| Task View|See tasks in [playbooks](/docs/platform-services/automation-service/playbooks/). | `taskView` |
-| Task Access | Access your tasks in playbooks. | `taskAccess` |
-| Task Access All| Access all user tasks in playbooks. | `taskAccessAll` |
-| Task Edit| Configure tasks in playbooks. | `taskEdit` |
-| Task Reassign|Assign tasks in playbooks to users. | `taskReassign` |
-| App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `appCentralAccess` |
-| App Central Export | Export integrations and playbooks from App Central. | `appCentralExport` |
-| Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `integrationsAccess` |
-| Integrations Configure| Create and edit integrations. | `integrationsConfigure` |
-| Playbooks Access | View playbooks. | `playbooksAccess` |
-| Playbooks Configure| Create and edit playbooks. | `playbooksConfigure` |
-| Bridge Monitoring Access |Monitor Bridge operations. | `bridgeMonitoringAccess` |
-| Observability Access | Access automation in the SaaS Log UI. | `observabilityAccess` |
-| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. | `observabilityConfigure` |
+| Task View | See tasks in [playbooks](/docs/platform-services/automation-service/playbooks/). | `cloudSoarIncidentTaskView` |
+| Task Access | Access your tasks in playbooks. | `cloudSoarIncidentTaskAccess` |
+| Task Access All| Access all user tasks in playbooks. | `cloudSoarIncidentTaskAccessAll` |
+| Task Edit| Configure tasks in playbooks. | `cloudSoarIncidentTaskEdit` |
+| Task Reassign | Assign tasks in playbooks to users. | `cloudSoarIncidentTaskReassign` |
+| App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `cloudSoarAppCentralAccess` |
+| App Central Export | Export integrations and playbooks from App Central. | `cloudSoarAppCentralExport` |
+| Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `cloudSoarIntegrationsAccess` |
+| Integrations Configure| Create and edit integrations. | `cloudSoarIntegrationsConfigure` |
+| Playbooks Access | View playbooks. | `cloudSoarPlaybooksAccess` |
+| Playbooks Configure| Create and edit playbooks. | `cloudSoarPlaybooksConfigure` |
+| Bridge Monitoring Access |Monitor Bridge operations. | `cloudSoarBridgeMonitoringAccess` |
+| Observability Access | Access automation in the SaaS Log UI. | `cloudSoarObservabilityAccess` |
+| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. | `cloudSoarObservabilityManagement` |
 
 ## Alerting
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| View Monitors |If folder perms are enabled, view folders & monitors you have access to. | `viewMonitors` |
-| Manage Monitors | Create folders & monitors, grant perms, and (with folder perms) full CRUD on folders you control. | `manageMonitors` |
-|Admin Monitors |With folder perms, full CRUD & grant on all folders & monitors. | `adminMonitors` |
+| View Monitors |If folder perms are enabled, view folders & monitors you have access to. | `viewMonitorsV2` |
+| Manage Monitors | Create folders & monitors, grant perms, and (with folder perms) full CRUD on folders you control. | `manageMonitorsV2` |
+|Admin Monitors |With folder perms, full CRUD & grant on all folders & monitors. | `adminMonitorsV2` |
 | View Alerts | View alerts on the [Alert page](/docs/alerts/monitors/alert-response). | `viewAlerts` |
 | View Muting Schedules | View [Muting Schedules](/docs/alerts/monitors/muting-schedules). | `viewMutingSchedules` |
 | Manage Muting Schedules | Create, edit, and delete Muting Schedules. | `manageMutingSchedules` |
@@ -136,33 +136,31 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 ## Usage Management
 
-<!-- `viewBudgets` is a guess. It doesn't appear in the `capabilities` parameter list. -->
-
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| View Usage Management | View [usage management](/docs/manage/manage-subscription/usage-management/). | `viewBudgets` |
+| View Usage Management | View [usage management](/docs/manage/manage-subscription/usage-management/). | ? |
 | Manage Usage Management | Manage usage management. | `manageBudgets` |
 
 ## Reliability Management
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| View SLOs | View [Service Level Objectives (SLOs)](/docs/observability/reliability-management-slo/create-slo/). | `viewSLOs` |
-| Manage SLOs | Create, edit, and delete SLOs. | `manageSLOs` |
+| View SLOs | View [Service Level Objectives (SLOs)](/docs/observability/reliability-management-slo/create-slo/). | `viewSlos` |
+| Manage SLOs | Create, edit, and delete SLOs. | `manageSlos` |
 
 ## Threat Intel
 
-| Capability | Description | <ApiCreateRole/> |
-| :-- | :-- | :-- |
-| View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | `viewThreatIntelDataStore` |
-| Manage Threat Intel Data Store | Create, edit, and delete threat intel sources. | `manageThreatIntelDataStore` |
+| Capability | Description | 
+| :-- | :-- | 
+| View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | 
+| Manage Threat Intel Data Store | Create, edit, and delete threat intel sources. | 
 
 <!-- 
 ## Macros
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| Manage Macros | ? | ? |
+| Manage Macros | Manage [macros](/docs/search/search-query-language/search-operators/macro/). | ? |
 -->
 
 <!-- 
@@ -175,14 +173,14 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 ## Organizations
 
-| Capability | Description | <ApiCreateRole/> |
-| :-- | :-- | :-- |
-| View Organizations | View the [Organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) UI. | `viewOrganizations` |
-| Create Organizations | Create and provision child organizations. | `createOrganizations` |
-|Change Credits Allocation|Change the credits allocation for a child organization. | `changeCreditsAllocation` |
-| Create Trial Organizations | Create trial organizations (Service Providers only). | `createTrialOrganizations` |
-|Upgrade Trial Organizations |Upgrade trial organizations (Service Providers only). | `upgradeTrialOrganizations` |
-|Deactivate Organizations |Deactivate trial organizations (Service Providers only). | `deactivateOrganizations` |
+| Capability | Description | 
+| :-- | :-- | 
+| View Organizations | View the [Organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) UI. | 
+| Create Organizations | Create and provision child organizations. | ? |
+|Change Credits Allocation|Change the credits allocation for a child organization. | 
+| Create Trial Organizations | Create trial organizations (Service Providers only). | 
+|Upgrade Trial Organizations |Upgrade trial organizations (Service Providers only). | 
+|Deactivate Organizations |Deactivate trial organizations (Service Providers only). | 
 
 ## Cloud SOAR
 
@@ -194,7 +192,7 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 
 | Capability category | Capability | Description| <ApiCreateRole/> |
 | :-- | :-- | :-- |:--|
-|View Cloud SOAR||Show “Cloud SOAR” link in nav.|`viewCloudSoar`|
+|View Cloud SOAR||Show “Cloud SOAR” link in nav.| `viewCloudSoar`|
 |Incident|View|View all [incidents](/docs/cloud-soar/incidents-triage/).|`cloudSoarIncidentView`|
 |Incident|Access|Access your incidents.|`cloudSoarIncidentAccess`|
 |Incident|Access All|Access all incidents.|`cloudSoarIncidentAccessAll`|
@@ -223,12 +221,12 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 |Customization|Logo|Customize logo.|`cloudSoarCustomizationLogo`|
 |Customization|Fields|Customize fields.|`cloudSoarCustomizationFields`|
 |Customization|Incident Labels|Customize incident labels.|`cloudSoarCustomizationIncidentLabels`|
-|Customization|Triage|Customize triage UI.|`cloudSoarCustomizationTriage`|
+|Customization|Triage|Customize triage UI.| `cloudSoarNotificationTriage` |
 |Audit & Info|License Information|View license audit info.|`cloudSoarAuditAndInformationLicenseInformation`|
 |Audit & Info|Audit Trail|View audit trail.|`cloudSoarAuditAndInformationAuditTrail`|
 |Audit & Info|Configure Audit Trail|Configure audit trail.|`cloudSoarAuditAndInformationConfigureAuditTrail`|
 |API|Use|Use the Cloud SOAR API.|`cloudSoarAPIUse`|
-|API|API Admin|Administer Cloud SOAR API.|`cloudSoarAPIAdmin`|
+|API|API Admin|Administer Cloud SOAR API.| ? |
 |API|Email Read|Read email artifacts.|`cloudSoarAPIEmailRead`|
 |API|Email Edit|Create, edit, delete email artifacts.|`cloudSoarAPIEmailEdit`|
 |Incident Templates|Access|View incident templates.|`cloudSoarIncidentTemplatesAccess`|
@@ -246,11 +244,11 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 
 ### Legacy Cloud SOAR
 
-| Capability | Description | <ApiCreateRole/> |
-| :-- | :-- | :-- |
-| View Cloud SOAR|Show “Cloud SOAR” link in nav (legacy URL). | `viewCloudSoarLegacy` |
-| Settings General| Configure legacy settings. | `settingsGeneralLegacy` |
-| Configure|Update legacy configuration. | `configureLegacy` |
+| Capability | Description | 
+| :-- | :-- | 
+| View Cloud SOAR|Show “Cloud SOAR” link in nav (legacy URL). | 
+| Settings General| Configure legacy settings. | 
+| Configure|Update legacy configuration. | 
 
 ## Cloud SIEM
 
@@ -298,8 +296,8 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | :-- | :-- | :-- |
 |View Mappings|View [mappings](/docs/cse/schema/create-structured-log-mapping).|`cseViewMappings`|
 |Manage Mappings|Create, edit, delete mappings.|`cseManageMappings`|
-|View Workflow|View detection settings, statuses, resolutions, tag schemas.|`cseViewTagSchemas`|
-|Manage Workflow|Create, edit, delete detection settings, statuses, resolutions, tag schemas.|`cseManageTagSchemas`|
+|View Workflow|View detection settings, statuses, resolutions, tag schemas.| ? |
+|Manage Workflow|Create, edit, delete detection settings, statuses, resolutions, tag schemas.| ? |
 |View Context Actions|View [Context Actions](/docs/cse/administration/create-cse-context-actions).|`cseViewContextActions`|
 |Manage Context Actions|Create, edit, delete Context Actions.|`cseManageContextActions`|
 |View Actions|View [Actions](/docs/cse/administration/create-cse-actions).|`cseViewActions`|
