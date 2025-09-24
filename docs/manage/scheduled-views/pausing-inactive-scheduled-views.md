@@ -5,6 +5,10 @@ description: Lean about the autopausing of scheduled views after 90 days of inac
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<head>
+ <meta name="robots" content="noindex" />
+</head>
+
 Scheduled Views accelerate searches on small and historical subsets of your data by functioning as a pre-aggregated or pre-compute index. 
 
 Starting **October 15, 2025**, Scheduled Views that have not been queried or referred for **90** consecutive days will be flagged for review. This helps with optimizing the system performance and resource usage. 
