@@ -13,7 +13,7 @@ In-app warning and email notifications will be sent to Scheduled View owners and
 
 If no action is taken, the Scheduled Views will be automatically paused on the 90th day and a final notification will be sent. To avoid pausing, make sure your Scheduled Views are regularly queried.
 
-## View AutoPause Details
+## View AutoPause details
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**.<br/> [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. 
 1. Navigate and open the required Scheduled View.
