@@ -11,7 +11,7 @@ Starting **October 15, 2025**, Scheduled Views that have not been queried or ref
 
 In-app warning and email notifications will be sent to Scheduled View owners and all active account administrators with the list of Scheduled Views that are flagged. These notifications will be sent 21 days and 7 days prior to the date of pausing. 
 
-If no action is taken, the Scheduled View(s) will be automatically paused on the 90th day and a final notification will be sent. To avoid pausing, make sure your Scheduled Views are regularly queried.
+If no action is taken, the Scheduled Views will be automatically paused on the 90th day and a final notification will be sent. To avoid pausing, make sure your Scheduled Views are regularly queried.
 
 ## View AutoPause Details
 
