@@ -195,7 +195,7 @@ To pin a search, do the following:
 1. A message appears telling you the location of your pinned search in the Library. The Pinned Search takes the name of the Search tab by default.<br/>  ![pinmessage.png](/img/get-started/ui/pinmessage.png)
 1. To change the name of a Pinned Search, double-click the Search tab and enter a new name in the name field.
 
-For information on how to manage pinned searches, see the [Pinned Searches](/docs/get-started/library#pinned-searches) page.
+For information on how to manage pinned searches, see [Pin a Search](/docs/search/get-started-with-search/search-page/pin-a-search).
 
 ### Manage your personal account preferences
 
