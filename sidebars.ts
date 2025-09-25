@@ -1354,6 +1354,7 @@ module.exports = {
           link: {type: 'doc', id: 'search/get-started-with-search/search-page/index'},
           items: [
             'search/get-started-with-search/search-page/add-saved-search-to-favorites',
+            'search/get-started-with-search/search-page/pin-a-search',
             'search/get-started-with-search/search-page/change-time-range-in-histogram',
             {
               type: 'category',
