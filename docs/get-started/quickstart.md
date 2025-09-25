@@ -164,7 +164,7 @@ Don't just learn it - master it! Get recognized as a Sumo Logic expert by comple
 * [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart)
 * [Traces Quickstart](/docs/apm/traces/quickstart)
 
-See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-training-portal).
+See more quickstart tutorials in [learning portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-learning-portal).
 
 :::sumo Need help?
 Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).
