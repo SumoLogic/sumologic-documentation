@@ -143,8 +143,9 @@ A scheduled search can be set up to send an alert when throttling occurs. See�
 
 Throttling events reported include:
 
-* **LogIngest**. Log data sent to Sumo Logic has been temporarily throttled.
-* **MetricIngest**. Metric data sent to Sumo Logic has been temporarily throttled.
+* **Log Ingest**. Log data sent to Sumo Logic has been temporarily throttled.
+* **Metric Ingest**. Metric data sent to Sumo Logic has been temporarily throttled.
+* **Traces Ingest**. Traces data sent to Sumo Logic has been temporarily throttled.
 
 Throttling events are reported in the Audit Index if the following criteria are met:
 
