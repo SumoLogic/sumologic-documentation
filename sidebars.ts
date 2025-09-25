@@ -1060,6 +1060,7 @@ module.exports = {
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
       ]
     },
+    'manage/deletion-requests',
     {
       type: 'category',
       label: 'Security',

@@ -4,12 +4,6 @@ title: Deletion Requests
 description: Learn how to independently and efficiently control or remove your sensitive data from Sumo Logic.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <!-- Originally added as a beta article with DOCS-149. -->
