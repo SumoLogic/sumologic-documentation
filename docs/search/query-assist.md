@@ -8,6 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Query Assist enhances the query-building experience in Sumo Logic by providing real-time syntax suggestions, schema prompts, and partial query predictions. These enhancements simplify the process for users at all skill levels, making it easier to write accurate and efficient queries, enabling easier discovery of relevant fields, minimizing errors, and providing intelligent assistance for query creation. The suggestions that appear comply with the user's role-based access restrictions.
 
+:::note
+If Query Assist is not enabled, you can turn it on from the [Preferences page](#turn-off-autocomplete), or simply press  **Control + Space** to activate it manually.
+:::
+
 :::info
 Logs Query Assist is also supported in [Dashboards](/docs/dashboards) and [Scheduled Searches](/docs/alerts/scheduled-searches).
 :::
