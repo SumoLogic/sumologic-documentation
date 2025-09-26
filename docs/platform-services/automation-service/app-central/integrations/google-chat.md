@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
-***Version: 2.1  
-Updated: Dec 06, 2024***
+***Version: 2.2  
+Updated: Sept 25, 2025***
 
 Google Chat is an intelligent and secure communication and collaboration tool, built for teams.
 
@@ -29,6 +29,36 @@ To send rich text messages, use the Create Message action with `Disable HTML` in
 
 ## Google Chat configuration
 
+Our Google Integrations supports two types of authentications Service Account and WIF (Workload Identity Federation).
+We Recommend to use WIF as it is more secure and easier to manage. For more information, see [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation).
+
+### Workload Identity Federation (WIF) authentication
+
+To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation-create-provider) in Google Workspace needed to configure the Google Chat app integration, follow these steps:
+1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
+2. Select a Google Cloud project (or create a new one).
+3. Go to the **API&Services** > **Credentials** page.
+4. In the same page click on **ENABLES API AND SERVICES** and search for Google Chat and enable it.
+5. Go to the **IAM & Admin** > **Service Accounts** page.
+6. Click **CREATE SERVICE ACCOUNT** [Service Account](https://cloud.google.com/iam/docs/service-accounts-create) is required to access the Google Chat API.
+7. While creating the service account, in permission add the role **Service Account Token Creator** and click on **DONE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-11.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
+8. Go to the **IAM & Admin** > **Workload Identity Federation** page. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-4.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
+9. Click **CREATE POOL** and provide the details and click on **CONTINUE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-5.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
+10. Add **Provider details** Select **AWS** as the provider type and provide the details of AWS Account ID which provided by sumo and click on **CONTINUE** and **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-6.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
+11. Now you will see the created pool and provider. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-8.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
+12. Now we have to build a principal name to configure in Sumo Logic. The format of the principal name is: `principalSet://iam.googleapis.com/projects/{YourProjectID}/locations/global/workloadIdentityPools/{YourPoolName}/attribute.aws_role/arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}/{SumoAWSLambdaFunction}`. 
+13. Go to the **IAM & Admin** > **IAM** page and click on **Grant Access** to add a new principal. 
+14. In the **New principals** field, provide the above principal name and Select the role **Workload Identity User** and click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-12.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
+15. Go to the **IAM & Admin** > **Workload Identity Federation** page and Select the Pool which created above. 
+16. Click on **Grant Access** > **Grant access using service account impersonation**. 
+17. Select the service account which created above, select the principle as aws_role and provide the arn `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}` and click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-10.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
+18. Again go to **Grant Access** > **Grant access using service account impersonation** , Select the service account which created above, select the principle as aws_role and provide the arn `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}/{SumoAWSLambdaFunction}` and click on **SAVE**. 
+19. Download the WIF conf.json file. Make sure you save it in a safe place. Use the json content to configure the Google Chat integration to use WIF bases authentication in Automation Service and Cloud SOAR. 
+20. To configure the app in Google Chat API, go to **APIs & Services**, select **Google Chat API**, and in **CONFIGURATION** provide the details and click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-10.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
+21. Go to the **Google Chat App** and add the above app in that. Also, to add above app in space, go to **space** and in **Apps & integration** add the app.
+
+
+### Service Account authentication
 To [create service account credentials](https://developers.google.com/workspace/guides/create-credentials) in Google Workspace needed to configure the Google Chat app integration, follow these steps:
 
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
@@ -84,3 +114,4 @@ Use Google Chat to receive notifications, ensuring you promptly get important up
 * August 27, 2024 (v2.0) - First upload
 * October 29, 2024 (v2.0) - Updated the docs 
 * December 06, 2024 (v2.1) - Added the Rich Text Message support in the Create Message action
+* September 25, 2025 (v2.2) - Updated the WIF configuration steps
