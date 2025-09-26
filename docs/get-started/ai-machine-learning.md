@@ -83,8 +83,13 @@ Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hu
 
 ### Cloud SIEM
 
-Sumo Logic's Cloud SIEM leverages AI-driven rules for security management, including:
+#### Insight summary
 
+Sumo Logic's Dojo AI Summary Agent, an agentic AI tool, generates a synopsis for each insight that describes the threat incidents that led to its creation. This helps security teams understand incidents faster and accelerate response time. [Learn more](/docs/cse/get-started-with-cloud-siem/insight-summary/).
+
+#### Rules
+
+Sumo Logic's Cloud SIEM rules leverage AI for the following:
 * [Insight Trainer](/docs/cse/rules/insight-trainer). Utilizes ML and AI to deliver outcome-based recommendations, reducing false positives without compromising detection value.
 * [First-seen rule](/docs/cse/rules/write-first-seen-rule). Identifies novel threats based on first occurrences.
 * [Outlier rule](/docs/cse/rules/write-outlier-rule/). Detects abnormal behavior indicating potential security breaches.
