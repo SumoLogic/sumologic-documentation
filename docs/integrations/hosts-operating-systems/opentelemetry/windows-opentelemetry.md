@@ -59,7 +59,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-install-ui.png')} alt="windows-terminal" style={{border: '1px solid gray'}} width="900"/>
 
 ### Step 2: Configure integration
 

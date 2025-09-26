@@ -38,10 +38,10 @@ You can install our OpenTelemetry Collector using one of the following methods:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. 
 1. On the OpenTelemetry Collection page, click **Add Collector**.
-1. On the left panel, select **macOS** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/macOs.png')} alt="macOs-terminal" style={{border: '1px solid gray'}} width="900"/>
+1. On the left panel, select **macOS** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-install-ui.png')} alt="macOs-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
 1. (Optional) In the **Collector Settings**, select the **Ephemeral** checkbox to auto-delete your collector after 12 hours, and select the **Locally Manage Collector** checkbox if you want to configure, maintain, and monitor your collector locally.
-1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
+1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-install-command.png')} alt="execute command in terminal" />
 1. Wait for the installation process to complete, then click **Next** to proceed.
 1. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
 
@@ -63,11 +63,11 @@ You can run the script in two ways:
 
 * By piping `curl` straight into `bash`:
    ```bash
-   sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+   sudo curl -sL https://download-otel.sumologic.com/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
    ```
 * Or by first downloading the script, inspecting its contents for security, and then running it:
    ```bash
-   curl -Lso install-otelcol-sumo.sh https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh
+   sudo curl -sL https://download-otel.sumologic.com/latest/download/install.sh
    sudo -E bash ./install-otelcol-sumo.sh -d
    ```
 
@@ -211,13 +211,13 @@ The recommended way to uninstall the OpenTelemetry Collector depends on how you 
 If you installed the Collector with the install script, you can use it to uninstall the Collector:
 
 ```bash
-sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
+sudo curl -sL https://download-otel.sumologic.com/latest/download/install.sh | sudo -E bash -s -- -u -y
 ```
 
 You can also use flag `-p` to remove all existing configurations as well:
 
 ```bash
-sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
+sudo curl -sL https://download-otel.sumologic.com/latest/download/install.sh | sudo -E bash -s -- -u -y -p
 ```
 
 You can also run the following command to clear the cache. This will remove any cached data associated with the Collector.
@@ -245,7 +245,7 @@ First, you have to upgrade the Collector's version. The way you should do it, de
 Running install script will simply upgrade collector to the latest version:
 
 ```bash
-sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo bash
+sudo curl -sL https://download-otel.sumologic.com/latest/download/install.sh | sudo bash
 ```
 
 :::note
@@ -278,7 +278,7 @@ Here are some troubleshooting steps specific to macOS.
 If you're trying to uninstall the collector on macOS, and you see an error similar to the following:
 
 ```console
-$ sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
+$ sudo curl -sL https://download-otel.sumologic.com/latest/download/install.sh | sudo -E bash -s -- -u -y -p
 Detected OS type:	darwin
 Detected architecture:	arm64
 Going to uninstall otelcol-sumo.
@@ -290,13 +290,13 @@ This means that you've installed the collector before the installation script wa
 To uninstall, use an older version of the installation script:
 
 ```shell
-sudo curl -L https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- --uninstall --purge --yes
+sudo curl -sL https://download-otel.sumologic.com/latest/download/install.sh | sudo -E bash -s -- --uninstall --purge --yes
 ```
 
 The output should be similar to this:
 
 ```console
-$ sudo curl -L https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- --uninstall --purge --yes
+$ sudo curl -sL https://download-otel.sumologic.com/latest/download/install.sh | sudo -E bash -s -- --uninstall --purge --yes
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
