@@ -41,7 +41,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 1. On the left panel, select **Linux** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-install-ui.png')} alt="linux-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
 1. (Optional) In the **Collector Settings**, select the **Ephemeral** checkbox to auto-delete your collector after 12 hours, and select the **Locally Manage Collector** checkbox if you want to configure, maintain, and monitor your collector locally.
-1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" width="900"/>
+1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-install-command.png')} alt="execute command in terminal" width="900"/>
 1. Wait for the installation process to complete, then click **Next** to proceed.
 1. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
 
