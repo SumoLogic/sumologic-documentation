@@ -170,7 +170,7 @@ When a user choice node is encountered, the execution will pause until a user se
 
 #### Example user choice node
 
-Following is an example of a user choice node. Note the the node branches to the next node depending on the user's answer. In this example, if the user selects **Yes** then the IP is blocked, but if the user selects **No** an email is sent to the SOC.
+Following is an example of a user choice node. Note the node branches to the next node depending on the user's answer. In this example, if the user selects **Yes**, then the IP is blocked, but if the user selects **No**, an email is sent to the SOC.
 
 <img src={useBaseUrl('img/cse/automations-example-user-choice-node.png')} style={{border:'1px solid gray'}} alt="Example user choice node" width="500"/>
 
