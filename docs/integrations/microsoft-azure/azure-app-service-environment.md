@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 An [Azure App Service Environment](https://learn.microsoft.com/en-us/azure/app-service/environment/overview) is an Azure App Service feature that provides a fully isolated and dedicated environment for running App Service apps securely at high scale. This integration helps in monitoring your environments operational events such as upgrades, scaling, and suspensions.
 
-The below instructions applies to App Service Environment v3.
+The instructions below apply to App Service Environment v3.
 
 ## Log types
 
