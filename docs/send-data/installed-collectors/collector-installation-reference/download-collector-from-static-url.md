@@ -40,7 +40,7 @@ Older versions of PowerShell might fail to download the installer executable wit
 
 Each Sumo Logic deployment has URLs used to download Collector software. See how to determine which endpoint to use if you are unsure.
 
-The latest release of the Sumo Logic Collector targets the Java 8 runtime. Java 6 and Java 7 are no longer supported as the Collector runtime, and Solaris is no longer supported. When you upgrade Collectors, JRE 8 or later is required. The Sumo Collector with a bundled JRE now ships with JRE 8, so in this case no action is required.
+The latest release of the Sumo Logic Collector targets the Java 17 runtime. Java runtime less than 17 are no longer supported as the Collector runtime, and Solaris is no longer supported. When you upgrade Collectors, JRE 17 or later is required. The Sumo Collector with a bundled JRE now ships with JRE 17, so in this case no action is required.
 
 ### AU Collector
 
