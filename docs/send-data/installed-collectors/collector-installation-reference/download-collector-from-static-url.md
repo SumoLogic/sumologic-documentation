@@ -15,7 +15,7 @@ This document provides static URLs to download our [Installed Collector](/docs/s
 1. Open a terminal window or command prompt, depending on your host type.
 1. Invoke a web request utility such as `wget` or `Invoke-WebRequest`. For example, if you're on a Linux 64-bit host, you can `wget` the Collector from the command line:
    ```bash
-   wget "https://download-collectors.sumologic.com/rest/download/linux/64" -O SumoCollector.sh && chmod +x SumoCollector.sh
+   wget "https://download-collector.sumologic.com/rest/download/linux/64" -O SumoCollector.sh && chmod +x SumoCollector.sh
    ```
 
    Or, if you're using PowerShell on a 64-bit Windows host, you can use Invoke-WebRequest:
@@ -27,7 +27,7 @@ This document provides static URLs to download our [Installed Collector](/docs/s
 
    # download the installer
 
-   Invoke-WebRequest 'https://download-collectors.sumologic.com/rest/download/win64' -outfile $home\Desktop\SumoCollector.exe
+   Invoke-WebRequest 'https://download-collector.sumologic.com/rest/download/win64' -outfile $home\Desktop\SumoCollector.exe
    ```
 
    Replace the `<download_path>` with the location where you want to download the Collector. For example, `C:\user\download\sumouser\SumoCollector.exe`.
@@ -48,136 +48,136 @@ The latest release of the Sumo Logic Collector targets the Java 8 runtime. Java 
 
 Choose one of the following:
 
-* Linux 64: https://download-collectors.au.sumologic.com/rest/download/linux/64
-* Linux Aarch 64: https://download-collectors.au.sumologic.com/rest/download/linux/aarch/64
-* Linux Debian: https://download-collectors.au.sumologic.com/rest/download/deb/64
-* Linux Aarch Debian: https://download-collectors.au.sumologic.com/rest/download/deb/aarch/64
-* Linux RPM: https://download-collectors.au.sumologic.com/rest/download/rpm/64
-* Linux Aarch RPM: https://download-collectors.au.sumologic.com/rest/download/rpm/aarch/64
-* macOS: https://download-collectors.au.sumologic.com/rest/download/macos
-* Tarball: https://download-collectors.au.sumologic.com/rest/download/tar
-* Windows 32: https://download-collectors.au.sumologic.com/rest/download/windows
-* Windows 64: https://download-collectors.au.sumologic.com/rest/download/win64
+* Linux 64: https://download-collector.au.sumologic.com/rest/download/linux/64
+* Linux Aarch 64: https://download-collector.au.sumologic.com/rest/download/linux/aarch/64
+* Linux Debian: https://download-collector.au.sumologic.com/rest/download/deb/64
+* Linux Aarch Debian: https://download-collector.au.sumologic.com/rest/download/deb/aarch/64
+* Linux RPM: https://download-collector.au.sumologic.com/rest/download/rpm/64
+* Linux Aarch RPM: https://download-collector.au.sumologic.com/rest/download/rpm/aarch/64
+* macOS: https://download-collector.au.sumologic.com/rest/download/macos
+* Tarball: https://download-collector.au.sumologic.com/rest/download/tar
+* Windows 32: https://download-collector.au.sumologic.com/rest/download/windows
+* Windows 64: https://download-collector.au.sumologic.com/rest/download/win64
 
 #### CA Collector
 
 Choose one of the following:
 
-* Linux 64: https://download-collectors.ca.sumologic.com/rest/download/linux/64
-* Linux Aarch 64: https://download-collectors.ca.sumologic.com/rest/download/linux/aarch/64
-* Linux Debian: https://download-collectors.ca.sumologic.com/rest/download/deb/64
-* Linux Aarch Debian: https://download-collectors.ca.sumologic.com/rest/download/deb/aarch/64
-* Linux RPM: https://download-collectors.ca.sumologic.com/rest/download/rpm/64
-* Linux Aarch RPM: https://download-collectors.ca.sumologic.com/rest/download/rpm/aarch/64
-* macOS: https://download-collectors.ca.sumologic.com/rest/download/macos
-* Tarball: https://download-collectors.ca.sumologic.com/rest/download/tar
-* Windows 32: https://download-collectors.ca.sumologic.com/rest/download/windows
-* Windows 64: https://download-collectors.ca.sumologic.com/rest/download/win64
+* Linux 64: https://download-collector.ca.sumologic.com/rest/download/linux/64
+* Linux Aarch 64: https://download-collector.ca.sumologic.com/rest/download/linux/aarch/64
+* Linux Debian: https://download-collector.ca.sumologic.com/rest/download/deb/64
+* Linux Aarch Debian: https://download-collector.ca.sumologic.com/rest/download/deb/aarch/64
+* Linux RPM: https://download-collector.ca.sumologic.com/rest/download/rpm/64
+* Linux Aarch RPM: https://download-collector.ca.sumologic.com/rest/download/rpm/aarch/64
+* macOS: https://download-collector.ca.sumologic.com/rest/download/macos
+* Tarball: https://download-collector.ca.sumologic.com/rest/download/tar
+* Windows 32: https://download-collector.ca.sumologic.com/rest/download/windows
+* Windows 64: https://download-collector.ca.sumologic.com/rest/download/win64
 
 #### DE Collector
 
 Choose one of the following:
 
-* Linux 64: https://download-collectors.de.sumologic.com/rest/download/linux/64
-* Linux Aarch 64: https://download-collectors.de.sumologic.com/rest/download/linux/aarch/64
-* Linux Debian: https://download-collectors.de.sumologic.com/rest/download/deb/64
-* Linux Aarch Debian: https://download-collectors.de.sumologic.com/rest/download/deb/aarch/64
-* Linux RPM: https://download-collectors.de.sumologic.com/rest/download/rpm/64
-* Linux Aarch RPM: https://download-collectors.de.sumologic.com/rest/download/rpm/aarch/64
-* macOS: https://download-collectors.de.sumologic.com/rest/download/macos
-* Tarball: https://download-collectors.de.sumologic.com/rest/download/tar
-* Windows 32: https://download-collectors.de.sumologic.com/rest/download/windows
-* Windows 64: https://download-collectors.de.sumologic.com/rest/download/win64
+* Linux 64: https://download-collector.de.sumologic.com/rest/download/linux/64
+* Linux Aarch 64: https://download-collector.de.sumologic.com/rest/download/linux/aarch/64
+* Linux Debian: https://download-collector.de.sumologic.com/rest/download/deb/64
+* Linux Aarch Debian: https://download-collector.de.sumologic.com/rest/download/deb/aarch/64
+* Linux RPM: https://download-collector.de.sumologic.com/rest/download/rpm/64
+* Linux Aarch RPM: https://download-collector.de.sumologic.com/rest/download/rpm/aarch/64
+* macOS: https://download-collector.de.sumologic.com/rest/download/macos
+* Tarball: https://download-collector.de.sumologic.com/rest/download/tar
+* Windows 32: https://download-collector.de.sumologic.com/rest/download/windows
+* Windows 64: https://download-collector.de.sumologic.com/rest/download/win64
 
 #### EU Collector
 
 Choose one of the following:
 
-* Linux 64: https://download-collectors.eu.sumologic.com/rest/download/linux/64
-* Linux Aarch 64: https://download-collectors.eu.sumologic.com/rest/download/linux/aarch/64
-* Linux Debian: https://download-collectors.eu.sumologic.com/rest/download/deb/64
-* Linux Aarch Debian: https://download-collectors.eu.sumologic.com/rest/download/deb/aarch/64
-* Linux RPM: https://download-collectors.eu.sumologic.com/rest/download/rpm/64
-* Linux Aarch RPM: https://download-collectors.eu.sumologic.com/rest/download/rpm/aarch/64
-* macOS: https://download-collectors.eu.sumologic.com/rest/download/macos
-* Tarball: https://download-collectors.eu.sumologic.com/rest/download/tar
-* Windows 32: https://download-collectors.eu.sumologic.com/rest/download/windows
-* Windows 64: https://download-collectors.eu.sumologic.com/rest/download/win64
+* Linux 64: https://download-collector.eu.sumologic.com/rest/download/linux/64
+* Linux Aarch 64: https://download-collector.eu.sumologic.com/rest/download/linux/aarch/64
+* Linux Debian: https://download-collector.eu.sumologic.com/rest/download/deb/64
+* Linux Aarch Debian: https://download-collector.eu.sumologic.com/rest/download/deb/aarch/64
+* Linux RPM: https://download-collector.eu.sumologic.com/rest/download/rpm/64
+* Linux Aarch RPM: https://download-collector.eu.sumologic.com/rest/download/rpm/aarch/64
+* macOS: https://download-collector.eu.sumologic.com/rest/download/macos
+* Tarball: https://download-collector.eu.sumologic.com/rest/download/tar
+* Windows 32: https://download-collector.eu.sumologic.com/rest/download/windows
+* Windows 64: https://download-collector.eu.sumologic.com/rest/download/win64
 
 #### FED Collector
 
 Choose one of the following:
 
-* Linux 64: https://download-collectors.fed.sumologic.com/rest/download/linux/64
-* Linux Aarch 64: https://download-collectors.fed.sumologic.com/rest/download/linux/aarch/64
-* Linux Debian: https://download-collectors.fed.sumologic.com/rest/download/deb/64
-* Linux Aarch Debian: https://download-collectors.fed.sumologic.com/rest/download/deb/aarch/64
-* Linux RPM: https://download-collectors.fed.sumologic.com/rest/download/rpm/64
-* Linux Aarch RPM: https://download-collectors.fed.sumologic.com/rest/download/rpm/aarch/64
-* macOS: https://download-collectors.fed.sumologic.com/rest/download/macos
-* Tarball: https://download-collectors.fed.sumologic.com/rest/download/tar
-* Windows 32: https://download-collectors.fed.sumologic.com/rest/download/windows
-* Windows 64: https://download-collectors.fed.sumologic.com/rest/download/win64
+* Linux 64: https://download-collector.fed.sumologic.com/rest/download/linux/64
+* Linux Aarch 64: https://download-collector.fed.sumologic.com/rest/download/linux/aarch/64
+* Linux Debian: https://download-collector.fed.sumologic.com/rest/download/deb/64
+* Linux Aarch Debian: https://download-collector.fed.sumologic.com/rest/download/deb/aarch/64
+* Linux RPM: https://download-collector.fed.sumologic.com/rest/download/rpm/64
+* Linux Aarch RPM: https://download-collector.fed.sumologic.com/rest/download/rpm/aarch/64
+* macOS: https://download-collector.fed.sumologic.com/rest/download/macos
+* Tarball: https://download-collector.fed.sumologic.com/rest/download/tar
+* Windows 32: https://download-collector.fed.sumologic.com/rest/download/windows
+* Windows 64: https://download-collector.fed.sumologic.com/rest/download/win64
 
 #### JP Collector
 
 Choose one of the following:
 
-* Linux 64: https://download-collectors.jp.sumologic.com/rest/download/linux/64
-* Linux Aarch 64: https://download-collectors.jp.sumologic.com/rest/download/linux/aarch/64
-* Linux Debian: https://download-collectors.jp.sumologic.com/rest/download/deb/64
-* Linux Aarch Debian: https://download-collectors.jp.sumologic.com/rest/download/deb/aarch/64
-* Linux RPM: https://download-collectors.jp.sumologic.com/rest/download/rpm/64
-* Linux Aarch RPM: https://download-collectors.jp.sumologic.com/rest/download/rpm/aarch/64
-* macOS: https://download-collectors.jp.sumologic.com/rest/download/macos
-* Tarball: https://download-collectors.jp.sumologic.com/rest/download/tar
-* Windows 32: https://download-collectors.jp.sumologic.com/rest/download/windows
-* Windows 64: https://download-collectors.jp.sumologic.com/rest/download/win64
+* Linux 64: https://download-collector.jp.sumologic.com/rest/download/linux/64
+* Linux Aarch 64: https://download-collector.jp.sumologic.com/rest/download/linux/aarch/64
+* Linux Debian: https://download-collector.jp.sumologic.com/rest/download/deb/64
+* Linux Aarch Debian: https://download-collector.jp.sumologic.com/rest/download/deb/aarch/64
+* Linux RPM: https://download-collector.jp.sumologic.com/rest/download/rpm/64
+* Linux Aarch RPM: https://download-collector.jp.sumologic.com/rest/download/rpm/aarch/64
+* macOS: https://download-collector.jp.sumologic.com/rest/download/macos
+* Tarball: https://download-collector.jp.sumologic.com/rest/download/tar
+* Windows 32: https://download-collector.jp.sumologic.com/rest/download/windows
+* Windows 64: https://download-collector.jp.sumologic.com/rest/download/win64
 
 #### US1 Collector
 
 Choose one of the following:
 
-* Linux 64: https://download-collectors.sumologic.com/rest/download/linux/64
-* Linux Aarch 64: https://download-collectors.sumologic.com/rest/download/linux/aarch/64
-* Linux Debian: https://download-collectors.sumologic.com/rest/download/deb/64
-* Linux Aarch Debian: https://download-collectors.sumologic.com/rest/download/deb/aarch/64
-* Linux RPM: https://download-collectors.sumologic.com/rest/download/rpm/64
-* Linux Aarch RPM: https://download-collectors.sumologic.com/rest/download/rpm/aarch/64
-* macOS: https://download-collectors.sumologic.com/rest/download/macos
-* Tarball: https://download-collectors.sumologic.com/rest/download/tar
-* Windows 32: https://download-collectors.sumologic.com/rest/download/windows
-* Windows 64: https://download-collectors.sumologic.com/rest/download/win64
+* Linux 64: https://download-collector.sumologic.com/rest/download/linux/64
+* Linux Aarch 64: https://download-collector.sumologic.com/rest/download/linux/aarch/64
+* Linux Debian: https://download-collector.sumologic.com/rest/download/deb/64
+* Linux Aarch Debian: https://download-collector.sumologic.com/rest/download/deb/aarch/64
+* Linux RPM: https://download-collector.sumologic.com/rest/download/rpm/64
+* Linux Aarch RPM: https://download-collector.sumologic.com/rest/download/rpm/aarch/64
+* macOS: https://download-collector.sumologic.com/rest/download/macos
+* Tarball: https://download-collector.sumologic.com/rest/download/tar
+* Windows 32: https://download-collector.sumologic.com/rest/download/windows
+* Windows 64: https://download-collector.sumologic.com/rest/download/win64
 
 #### US2 Collector
 
 Choose one of the following:
 
-* Linux 64: https://download-collectors.us2.sumologic.com/rest/download/linux/64
-* Linux Aarch 64: https://download-collectors.us2.sumologic.com/rest/download/linux/aarch/64
-* Linux Debian: https://download-collectors.us2.sumologic.com/rest/download/deb/64
-* Linux Aarch Debian: https://download-collectors.us2.sumologic.com/rest/download/deb/aarch/64
-* Linux RPM: https://download-collectors.us2.sumologic.com/rest/download/rpm/64
-* Linux Aarch RPM: https://download-collectors.us2.sumologic.com/rest/download/rpm/aarch/64
-* macOS: https://download-collectors.us2.sumologic.com/rest/download/macos
-* Tarball: https://download-collectors.us2.sumologic.com/rest/download/tar
-* Windows 32: https://download-collectors.us2.sumologic.com/rest/download/windows
-* Windows 64: https://download-collectors.us2.sumologic.com/rest/download/win64
+* Linux 64: https://download-collector.us2.sumologic.com/rest/download/linux/64
+* Linux Aarch 64: https://download-collector.us2.sumologic.com/rest/download/linux/aarch/64
+* Linux Debian: https://download-collector.us2.sumologic.com/rest/download/deb/64
+* Linux Aarch Debian: https://download-collector.us2.sumologic.com/rest/download/deb/aarch/64
+* Linux RPM: https://download-collector.us2.sumologic.com/rest/download/rpm/64
+* Linux Aarch RPM: https://download-collector.us2.sumologic.com/rest/download/rpm/aarch/64
+* macOS: https://download-collector.us2.sumologic.com/rest/download/macos
+* Tarball: https://download-collector.us2.sumologic.com/rest/download/tar
+* Windows 32: https://download-collector.us2.sumologic.com/rest/download/windows
+* Windows 64: https://download-collector.us2.sumologic.com/rest/download/win64
 
 #### KR Collector
 
 Choose one of the following:
 
-* Linux 64: https://download-collectors.kr.sumologic.com/rest/download/linux/64
-* Linux Aarch 64: https://download-collectors.kr.sumologic.com/rest/download/linux/aarch/64
-* Linux Debian: https://download-collectors.kr.sumologic.com/rest/download/deb/64
-* Linux Aarch Debian: https://download-collectors.kr.sumologic.com/rest/download/deb/aarch/64
-* Linux RPM: https://download-collectors.kr.sumologic.com/rest/download/rpm/64
-* Linux Aarch RPM: https://download-collectors.kr.sumologic.com/rest/download/rpm/aarch/64
-* macOS: https://download-collectors.kr.sumologic.com/rest/download/macos
-* Tarball: https://download-collectors.kr.sumologic.com/rest/download/tar
-* Windows 32: https://download-collectors.kr.sumologic.com/rest/download/windows
-* Windows 64: https://download-collectors.kr.sumologic.com/rest/download/win64
+* Linux 64: https://download-collector.kr.sumologic.com/rest/download/linux/64
+* Linux Aarch 64: https://download-collector.kr.sumologic.com/rest/download/linux/aarch/64
+* Linux Debian: https://download-collector.kr.sumologic.com/rest/download/deb/64
+* Linux Aarch Debian: https://download-collector.kr.sumologic.com/rest/download/deb/aarch/64
+* Linux RPM: https://download-collector.kr.sumologic.com/rest/download/rpm/64
+* Linux Aarch RPM: https://download-collector.kr.sumologic.com/rest/download/rpm/aarch/64
+* macOS: https://download-collector.kr.sumologic.com/rest/download/macos
+* Tarball: https://download-collector.kr.sumologic.com/rest/download/tar
+* Windows 32: https://download-collector.kr.sumologic.com/rest/download/windows
+* Windows 64: https://download-collector.kr.sumologic.com/rest/download/win64
 
 ### Non-CDN URL
 
