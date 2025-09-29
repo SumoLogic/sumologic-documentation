@@ -164,7 +164,7 @@ You can retake your exam 48 hours after a previous attempt. Each retake requires
 
 ### Where can I find my Sumo Logic certification digital badges?
 
-After passing an exam, you’ll receive a digital badge via Credly. Manage and share badges through the Credly portal. We encourage you to join the Sumo Logic Certification community on LinkedIn and add your badges to your profile.
+After passing an exam, you'll receive a digital badge via Credly. Manage and share badges through the Credly portal. We encourage you to join the Sumo Logic Certification community on LinkedIn and add your badges to your profile.
 
 ### My badges were issued to my work email address. Can I add a personal email address to my Credly account?
 
