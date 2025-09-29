@@ -105,7 +105,6 @@ Yes. You can renew at any time by retaking the relevant exam.
 
 ### How do I schedule an exam?
 
-<!--Short video that walks through the workflow to register, pay, schedule and prepare for a proctored exam.-->
 
 We recommend at least six months of hands‑on Sumo Logic experience before taking an exam.
 
