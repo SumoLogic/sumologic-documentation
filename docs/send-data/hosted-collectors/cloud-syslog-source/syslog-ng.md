@@ -4,22 +4,19 @@ title: syslog-ng
 description: Learn how to configure your server to send syslog data with syslog-ng.
 ---
 
-
-
 Sumo Logic supports syslog clients such as syslog-ng. This document has instructions on how to configure your server to send syslog data. If syslog data does not appear in Sumo Logic, refer to the Troubleshooting section in [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source).
 
 ## Set up TLS
 
 Set up Transport Layer Security (TLS). 
 
-Download the DigiCert and AWS Certificate Manager (ACM) certificates from https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt and 
-https://www.amazontrust.com/repository/AmazonRootCA1.cer. 
+Download the AWS Certificate Manager (ACM) certificate from https://www.amazontrust.com/repository/AmazonRootCA1.cer. 
 
 ### syslog-ng
 
-For syslog-ng, place both certificates in the configuration directory, allowing the syslog-ng client to automatically select the appropriate certificate.
+For syslog-ng place the certificates in the configuration directory and the syslog-ng client will pick up the certificates working from that directory. 
 
-To set up your DigiCert and AWS Certificate Manager (AWS) certificates, follow these steps:
+To set up yourAWS Certificate Manager (AWS) certificate, follow these steps:
 
 1. Check if you have the directory `/etc/syslog-ng/ca.d`.
 1. If you don’t, create it with this command:
@@ -29,9 +26,6 @@ To set up your DigiCert and AWS Certificate Manager (AWS) certificates, follow t
 1. Then run:
     ```bash
     $ cd /etc/syslog-ng/ca.d
-    $ sudo wget -O digicert_ca.der https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt
-    $ sudo openssl x509 -inform der -in digicert_ca.der -out digicert_ca.crt
-    $ sudo ln -s digicert_ca.crt `openssl x509 -noout -hash -in digicert_ca.crt`.0
     $ wget -O acm_ca.der https://www.amazontrust.com/repository/AmazonRootCA1.cer
     $ openssl x509 -inform der -in acm_ca.der -out acm_ca.crt
     $ ln -s acm_ca.crt `openssl x509 -noout -hash -in acm_ca.crt`.0
