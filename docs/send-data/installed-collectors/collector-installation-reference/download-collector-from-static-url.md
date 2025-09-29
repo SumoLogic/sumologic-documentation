@@ -44,7 +44,7 @@ The latest release of the Sumo Logic Collector targets the Java 8 runtime. Java 
 
 ### AU Collector
 
-| Binaries | New Download URL (CDN) | Old Download URL *(Deprecating soon)* |
+| Binaries | New Download URL (Preferred) | Old Download URL *(Deprecating soon)* |
 | :-- | :-- | :-- |
 | Linux 64 | https://download-collectors.au.sumologic.com/rest/download/linux/64 | https://collectors.au.sumologic.com/rest/download/linux/64 |
 | Linux Aarch 64 | https://download-collectors.au.sumologic.com/rest/download/linux/aarch/64 | https://collectors.au.sumologic.com/rest/download/linux/aarch/64 | 
@@ -59,7 +59,7 @@ The latest release of the Sumo Logic Collector targets the Java 8 runtime. Java 
 
 ### CA Collector
 
-| Binaries | New Download URL (CDN) | Old Download URL *(Deprecating soon)* |
+| Binaries | New Download URL (Preferred) | Old Download URL *(Deprecating soon)* |
 | :-- | :-- | :-- |
 | Linux 64 | https://download-collectors.ca.sumologic.com/rest/download/linux/64 | https://collectors.ca.sumologic.com/rest/download/linux/64 |
 | Linux Aarch 64 | https://download-collectors.ca.sumologic.com/rest/download/linux/aarch/64 | https://collectors.ca.sumologic.com/rest/download/linux/aarch/64 | 
@@ -75,7 +75,7 @@ The latest release of the Sumo Logic Collector targets the Java 8 runtime. Java 
 
 ### DE Collector
 
-| Binaries | New Download URL (CDN) | Old Download URL *(Deprecating soon)* |
+| Binaries | New Download URL (Preferred) | Old Download URL *(Deprecating soon)* |
 | :-- | :-- | :-- |
 | Linux 64 |  https://download-collectors.de.sumologic.com/rest/download/linux/64 | https://collectors.de.sumologic.com/rest/download/linux/64 |
 | Linux Aarch 64 | https://download-collectors.de.sumologic.com/rest/download/linux/aarch/64 | https://collectors.de.sumologic.com/rest/download/linux/aarch/64 | 
@@ -91,7 +91,7 @@ The latest release of the Sumo Logic Collector targets the Java 8 runtime. Java 
 
 ### EU Collector
 
-| Binaries | New Download URL (CDN) | Old Download URL *(Deprecating soon)* |
+| Binaries | New Download URL (Preferred) | Old Download URL *(Deprecating soon)* |
 | :-- | :-- | :-- |
 | Linux 64 | https://download-collectors.eu.sumologic.com/rest/download/linux/64 |https://collectors.eu.sumologic.com/rest/download/linux/64  |
 | Linux Aarch 64 | https://download-collectors.eu.sumologic.com/rest/download/linux/aarch/64 | https://collectors.eu.sumologic.com/rest/download/linux/aarch/64 | 
@@ -107,7 +107,7 @@ The latest release of the Sumo Logic Collector targets the Java 8 runtime. Java 
 
 ### FED Collector
 
-| Binaries | New Download URL (CDN) | Old Download URL *(Deprecating soon)* |
+| Binaries | New Download URL (Preferred) | Old Download URL *(Deprecating soon)* |
 | :-- | :-- | :-- |
 | Linux 64 | https://download-collectors.fed.sumologic.com/rest/download/linux/64 | https://collectors.fed.sumologic.com/rest/download/linux/64 |
 | Linux Aarch 64 | https://download-collectors.fed.sumologic.com/rest/download/linux/aarch/64 | https://collectors.fed.sumologic.com/rest/download/linux/aarch/64 | 
@@ -122,7 +122,7 @@ The latest release of the Sumo Logic Collector targets the Java 8 runtime. Java 
 
 ### JP Collector
 
-| Binaries | New Download URL (CDN) | Old Download URL *(Deprecating soon)* |
+| Binaries | New Download URL (Preferred) | Old Download URL *(Deprecating soon)* |
 | :-- | :-- | :-- |
 | Linux 64 | https://download-collectors.jp.sumologic.com/rest/download/linux/64 | https://collectors.jp.sumologic.com/rest/download/linux/64 |
 | Linux Aarch 64 | https://download-collectors.jp.sumologic.com/rest/download/linux/aarch/64 | https://collectors.jp.sumologic.com/rest/download/linux/aarch/64  | 
@@ -137,7 +137,7 @@ The latest release of the Sumo Logic Collector targets the Java 8 runtime. Java 
 
 ### US1 Collector
 
-| Binaries | New Download URL (CDN) | Old Download URL *(Deprecating soon)* |
+| Binaries | New Download URL (Preferred) | Old Download URL *(Deprecating soon)* |
 | :-- | :-- | :-- |
 | Linux 64 | https://download-collectors.sumologic.com/rest/download/linux/64 | https://collectors.sumologic.com/rest/download/linux/64 |
 | Linux Aarch 64 | https://download-collectors.sumologic.com/rest/download/linux/aarch/64 | https://collectors.sumologic.com/rest/download/linux/aarch/64 | 
@@ -153,7 +153,7 @@ The latest release of the Sumo Logic Collector targets the Java 8 runtime. Java 
 
 ### US2 Collector
 
-| Binaries | New Download URL (CDN) | Old Download URL *(Deprecating soon)* |
+| Binaries | New Download URL (Preferred) | Old Download URL *(Deprecating soon)* |
 | :-- | :-- | :-- |
 | Linux 64 | https://download-collectors.us2.sumologic.com/rest/download/linux/64 | https://collectors.us2.sumologic.com/rest/download/linux/64 |
 | Linux Aarch 64 | https://download-collectors.us2.sumologic.com/rest/download/linux/aarch/64 | https://collectors.us2.sumologic.com/rest/download/linux/aarch/64 | 
@@ -168,7 +168,7 @@ The latest release of the Sumo Logic Collector targets the Java 8 runtime. Java 
 
 ### KR Collector
 
-| Binaries | New Download URL (CDN) | Old Download URL *(Deprecating soon)* |
+| Binaries | New Download URL (Preferred) | Old Download URL *(Deprecating soon)* |
 | :-- | :-- | :-- |
 | Linux 64 | https://download-collectors.kr.sumologic.com/rest/download/linux/64 |https://collectors.kr.sumologic.com/rest/download/linux/64  |
 | Linux Aarch 64 | https://download-collectors.kr.sumologic.com/rest/download/linux/aarch/64 | https://collectors.kr.sumologic.com/rest/download/linux/aarch/64  | 
