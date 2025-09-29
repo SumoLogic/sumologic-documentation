@@ -1,5 +1,5 @@
 ---
-id: block-blob-full-vnet-integration
+id: full-vnet-integration
 title: Collect logs from Azure Blob Storage with full Virtual Network (VNet) Integration
 sidebar_label: Collect block blob with full Virtual Network integration
 description: Configure a pipeline to ship logs from the Azure Blob Storage throughout the Virtual Network and then to an HTTP source on a hosted collector in Sumo Logic.
