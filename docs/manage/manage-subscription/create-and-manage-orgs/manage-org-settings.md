@@ -113,11 +113,13 @@ You must be the account owner of the Sumo Logic account to change the account su
 
 ## Manage and view access to child org
 
-This section has instructions for managing the access for the selected child org.
+This section has instructions for managing and viewing the access for the selected child org.
 
-By default, if you are a user with **Manage Organizations** capability you will be able to see all the child orgs in your parent org and you will be able to provide child org access to the required user with **View Organizations** capability.
+By default, if you are a user with **Manage Organizations** capability you will be able to see all the child orgs in your parent org and you can configure the users to view and SSO into child organizations. This helps you to define access on a per-child-org basis and precisely control over the sign in process.
 
 But if you are user with only **View Organizations** capability you can see the child orgs with the default access and the child orgs that are assigned to you.
+
+### Manage access to child org
 
 Follow the below steps to manage access to the child org:
 
@@ -127,6 +129,8 @@ Follow the below steps to manage access to the child org:
 1. On prompt, select any of the following:
      - **All Users with View Organization Capability**. By default, users with **View Organization** capability can view the child orgs. 
      - **Only Selected Users**. Select this option if you want to restrict your child org to selected number of users. On selecting this option, you will be prompted to select the list of users on the parent org for whom you need to provide the access.<br/><img src={useBaseUrl('img/manage/subscriptions/select-users-prompt.png')} alt="Select Users Prompt" style={{border: '1px solid gray'}} width="400"/>
+
+### View access to child org
 
 Follow the below steps to view the child orgs access details:
 
