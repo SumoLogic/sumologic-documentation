@@ -6,12 +6,29 @@ description: Find answers to frequently asked questions about Sumo Logic trainin
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 <a href="https://www.sumologic.com/learn/training"><img src={useBaseUrl('img/get-started/sumo-academy.png')} alt="Sumo Logic Academy logo" width="150"/></a>
 
-<!-- waiting on GA url confirmation above-->
-
 Sumo Logic Academy is your hub for training and professional development. All courses (self‑paced eLearning, public hands‑on virtual classes, and workshops) are free. Certification exams are paid and live‑proctored through Kryterion. Successful candidates receive industry‑recognized digital badges issued by Credly.
+
+:::sumo micro lesson
+
+In this video, we'll walk through learning and certification offerings to help you maximize your investment in the Sumo Logic platform.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/35ku33znar?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Kubernetes Observability Demo - Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Getting started
 
@@ -43,8 +60,6 @@ If you're unable to access the portal, double-check that you've [verified your e
 ### Do you offer instructor-led classes?
 
 Yes. Check out our [Training website](https://www.sumologic.com/learn/training) for information on free live classes and other training options like tailored private sessions.
-
-<!-- waiting on GA url confirmation -->
 
 ## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Cost and course availability
 
@@ -87,8 +102,6 @@ Vouchers are valid for one year from the date of issue.
 
 More information [here](https://www.sumologic.com/learn/training#certified).
 
-<!-- waiting on GA url confirmation -->
-
 ### Do I have to take certifications in a specific order?
 
 No. However, we recommend passing *Fundamentals* before attempting advanced certifications.
@@ -103,8 +116,25 @@ Yes. You can renew at any time by retaking the relevant exam.
 
 ## Exam logistics
 
-### How do I schedule an exam?
+:::sumo micro lesson
 
+In this video, we'll walk you through how to register for Sumo Logic Academy certification exams.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/8i18wjmdg2?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Kubernetes Observability Demo - Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
+
+### How do I schedule an exam?
 
 We recommend at least six months of hands‑on Sumo Logic experience before taking an exam.
 
