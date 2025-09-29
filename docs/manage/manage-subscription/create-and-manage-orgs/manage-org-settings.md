@@ -126,7 +126,7 @@ Follow the below steps to manage access to the child org:
 1. In the right hand pane, click on **More Actions** dropdown and select **Manage Access**.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-manage-access-button.png')} alt="Child Org Manage Access Button" style={{border: '1px solid gray'}} width="400"/>
 1. On prompt, select any of the following:
      - **All Users with View Organization Capability**. By default, users with **View Organization** capability can view the child orgs. 
-     - **Only Selected Users**. Select this option if you want to restrict your child org to selected number of users. On selecting this option, you will be prompted to select the list of users on the parent org for whom you need to provide the access.<br/><img src={useBaseUrl('img/manage/subscriptions/select-users-prompt.png')} alt="Select Users Prompt" style={{border: '1px solid gray'}} width="400"/>
+     - **Only Selected Users**. Select this option if you want to restrict your child org to a selected number of users. On selecting this option, you will be prompted to select the list of users on the parent org for whom you need to provide the access.<br/><img src={useBaseUrl('img/manage/subscriptions/select-users-prompt.png')} alt="Select Users Prompt" style={{border: '1px solid gray'}} width="400"/>
 
 Follow the below steps to view the child orgs access details:
 
