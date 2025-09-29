@@ -10,8 +10,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Azure Security – Microsoft Defender for Identity app enhances endpoint protection by centralising alert data from various devices, enabling faster detection, investigation, and response to cyber threats. It uses advanced analytics and threat intelligence to identify malicious behaviour and high-risk activity. With detailed dashboards and visualisations, it helps security teams track recurring incidents, assess vulnerabilities, and reduce response time, offering a comprehensive view of your organisation’s endpoint security posture.
 
-::note
-This app includes [built-in monitors](#azure-security---microsoft-defender-for-identity-alerts). For details on creating custom monitors, refer to [Create monitors for Azure Security - Microsoft Defender for Identity app](#create-monitors-for-azure-security---microsoft-defender-for-identity-app)
+:::info
+This app includes [built-in monitors](#azure-security---microsoft-defender-for-identity-alerts). For details on creating custom monitors, refer to [Create monitors for Azure Security - Microsoft Defender for Identity app](#create-monitors-for-azure-security---microsoft-defender-for-identity-app).
 :::
 
 ## Log types
@@ -209,7 +209,7 @@ The **Azure Security - Microsoft Defender for Identity - Overview** dashboard pr
 Security teams can easily identify dominant alert categories, monitor the most recent alerts for immediate action, and track analyst assignments to ensure accountability. The dashboard also highlights top users associated with alerts, helping detect insider threats or compromised accounts that may require deeper investigation.
 
 Geo-location mapping adds another layer of insight by showing the origin of alerts, supporting region-specific risk assessments. By combining historical trends with real-time visibility, the dashboard enables security teams to focus on high-impact threats and improve response times.
-<br/><img src='' alt="Azure Security - Microsoft Defender for Identity - Overview" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure-Security-Microsoft-Defender-for-Identity/Azure-Security-Microsoft-Defender-for-Identity-Overview.png' alt="Azure Security - Microsoft Defender for Identity - Overview" />
 
 ### Security
 
@@ -220,7 +220,7 @@ Geo-location insights spotlight alerts originating from high-risk regions, suppo
 Additionally, it ranks the most frequently attacked devices and highlights countries linked to malicious or suspicious IP activity, offering clear insight into the most vulnerable assets and regions. This intelligence allows for more focused defences and faster, more effective threat mitigation.
 
 By integrating trend analysis, threat origin mapping, and user risk profiling, the Security dashboard empowers analysts to detect emerging patterns, respond proactively, and strengthen the organisation’s resilience against sophisticated endpoint threats.
-<br/><img src='' alt="Azure Security - Microsoft Defender for Identity - Security" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure-Security-Microsoft-Defender-for-Identity/Azure-Security-Microsoft-Defender-for-Identity-Security.png' alt="Azure Security - Microsoft Defender for Identity - Security" />
 
 ## Create monitors for Azure Security - Microsoft Defender for Identity app
 
@@ -236,13 +236,13 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `High Severity Alerts` | This alert is triggered when a high-severity threat is detected, allowing you to promptly monitor and respond to potentially harmful events that may compromise endpoint security. It ensures critical incidents are prioritised for swift investigation and mitigation. | Critical | Count > 0|
 | `Embargoed Device` | This alert is triggered when a single device generates multiple alerts, indicating potentially malicious behaviour. It helps you identify high-risk devices, monitor suspicious activity more effectively, and take swift action to prevent further compromise. | Critical | Count > 5 |
 
-## Upgrade/Downgrade the Azure Security - Microsoft Defender for Office 365 app (Optional)
+## Upgrade/Downgrade the Azure Security - Microsoft Defender for Identity app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Azure Security - Microsoft Defender for Office 365 app (Optional)
+## Uninstalling the Azure Security - Microsoft Defender for Identity app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 

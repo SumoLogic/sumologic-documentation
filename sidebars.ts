@@ -2240,7 +2240,7 @@ integrations: [
          'integrations/microsoft-azure/kubernetes',
          'integrations/microsoft-azure/azure-security-advisor',
          'integrations/microsoft-azure/azure-security-defender-for-cloud',
-         'integrations/microsoft-azure/Azure Security - Microsoft Defender for Identity',
+         'integrations/microsoft-azure/azure-security-microsoft-defender-for-identity',
          'integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365',
          'integrations/microsoft-azure/microsoft-defender-for-cloud-apps',
          'integrations/microsoft-azure/microsoft-defender-for-endpoint',
