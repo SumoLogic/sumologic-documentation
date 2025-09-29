@@ -128,7 +128,7 @@ Follow the below steps to manage access to the child org:
 1. In the right hand pane, click on **More Actions** dropdown and select **Manage Access**.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-manage-access-button.png')} alt="Child Org Manage Access Button" style={{border: '1px solid gray'}} width="400"/>
 1. On prompt, select any of the following:
      - **All Users with View Organization Capability**. By default, users with **View Organization** capability can view the child orgs. 
-     - **Only Selected Users**. Select this option if you want to restrict your child org to selected number of users. On selecting this option, you will be prompted to select the list of users on the parent org for whom you need to provide the access.<br/><img src={useBaseUrl('img/manage/subscriptions/select-users-prompt.png')} alt="Select Users Prompt" style={{border: '1px solid gray'}} width="400"/>
+     - **Only Selected Users**. Select this option if you want to restrict your child org to a selected number of users. On selecting this option, you will be prompted to select the list of users on the parent org for whom you need to provide the access.<br/><img src={useBaseUrl('img/manage/subscriptions/select-users-prompt.png')} alt="Select Users Prompt" style={{border: '1px solid gray'}} width="400"/>
 
 ### View access to child org
 
@@ -138,7 +138,7 @@ Follow the below steps to view the child orgs access details:
 1. Click the child org for which you want to view the access details.
 1. Scroll down in the right pane to the **Access Control** section. You can see one among the following:
      - **All users with view organization capability**. This will be displayed if the selected child org is configured with view for all users.
-     - **[X] users have access to this organization**. This will be displayed if the selected child org is configured only for selected number of users. **X** indicates the total number of users who has access to the selected child org. Click on this number to get a full list of users with access.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-access-control.png')} alt="Child Org Access Control" style={{border: '1px solid gray'}} width="400"/>
+     - **[X] users have access to this organization**. This will be displayed if the selected child org is configured only for selected number of users. **X** indicates the total number of users who have access to the selected child org. Click on this number to get a full list of users with access.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-access-control.png')} alt="Child Org Access Control" style={{border: '1px solid gray'}} width="400"/>
 
 ## SSO for child organizations
 
