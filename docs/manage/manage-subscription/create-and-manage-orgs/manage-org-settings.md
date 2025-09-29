@@ -111,6 +111,31 @@ You must be the account owner of the Sumo Logic account to change the account su
 1. Click **Change Subdomain** Name to update the name.
 1. You will be automatically logged out and redirected to the new subdomain login page. 
 
+## Manage and view access to child org
+
+This section has instructions for managing the access for the selected child org.
+
+By default, if you are a user with **Manage Organizations** capability you will be able to see all the child orgs in your parent org and you will be able to provide child org access to the required user with **View Organizations** capability.
+
+But if you are user with only **View Organizations** capability you can see the child orgs with the default access and the child orgs that are assigned to you.
+
+Follow the below steps to manage access to the child org:
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
+1. Click the child org for which you want to restrict the access.
+1. In the right hand pane, click on **More Actions** dropdown and select **Manage Access**.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-manage-access-button.png')} alt="Child Org Manage Access Button" style={{border: '1px solid gray'}} width="400"/>
+1. On prompt, select any of the following:
+     - **All Users with View Organization Capability**. By default, users with **View Organization** capability can view the child orgs. 
+     - **Only Selected Users**. Select this option if you want to restrict your child org to selected number of users. On selecting this option, you will be prompted to select the list of users on the parent org for whom you need to provide the access.<br/><img src={useBaseUrl('img/manage/subscriptions/select-users-prompt.png')} alt="Select Users Prompt" style={{border: '1px solid gray'}} width="400"/>
+
+Follow the below steps to view the child orgs access details:
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
+1. Click the child org for which you want to view the access details.
+1. Scroll down in the right pane to the **Access Control** section. You can see one among the following:
+     - **All users with view organization capability**. This will be displayed if the selected child org is configured with view for all users.
+     - **[X] users have access to this organization**. This will be displayed if the selected child org is configured only for selected number of users. **X** indicates the total number of users who has access to the selected child org. Click on this number to get a full list of users with access.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-access-control.png')} alt="Child Org Access Control" style={{border: '1px solid gray'}} width="400"/>
+
 ## SSO for child organizations
 
 When you create a new child organization, a subdomain is automatically created and single sign-on (SSO) is enabled, allowing you to sign in to the child organization without having to provide separate credentials. To use this feature you do not have to set up SAML for single sign-on for the child organization. 
