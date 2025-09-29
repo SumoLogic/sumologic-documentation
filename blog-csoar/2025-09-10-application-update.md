@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### New feature: Test nodes in playbooks
 
-The new **Test Node** toggle on nodes allows you to test individual nodes in playbooks without having to run the entire playbook, offering greater control over node configuration and troubleshooting.
+The new **Test Mode** toggle on nodes allows you to test individual nodes in playbooks without having to run the entire playbook, offering greater control over node configuration and troubleshooting.
 
 What's new:
 * Provide mock values for variables used in the node, and run the results to see the output and any errors.
