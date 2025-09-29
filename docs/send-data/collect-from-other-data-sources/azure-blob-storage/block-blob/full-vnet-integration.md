@@ -12,20 +12,20 @@ If you prefer to restrict access and keep your storage account behind a firewall
 
 1. Download the ARM template [https://github.com/SumoLogic/sumologic-azure-function/blob/azure\_premium\_template\_vnet\_integration/BlockBlobReader/src/blobreaderdeploywithPremiumPlan.json](https://github.com/SumoLogic/sumologic-azure-function/blob/azure_premium_template_vnet_integration/BlockBlobReader/src/blobreaderdeploywithPremiumPlan.json) that provisions the required resources, including a premium-tier Service Bus.
 2. Create the following networking resources:
-   - Virtual Network. For example, `brvnet`.
-   :::note
-   Only the Storage service endpoint associated with the functions and storage accounts is needed for the subnet.
-   :::
-   <img src={useBaseUrl('/img/send-data/blockblob/block-blob-vnet-creation.png')} alt="Virtual Network creation with storage service endpoint" style={{border: '1px solid gray'}} width="800" />
-   - Subnet. For example, `brsubnet`.
-   - Network Security Group (NSG). For example, `brnsg`.
-   :::note
-   NSG rules remain as default; no changes required.
-   :::
-   <img src={useBaseUrl('/img/send-data/blockblob/block-blob-NSG-rules.png')} alt="NSG rules configuration" style={{border: '1px solid gray'}} width="800" />
+- Virtual Network. For example, `brvnet`.
+:::note
+Only the Storage service endpoint associated with the functions and storage accounts is needed for the subnet.
+:::
+<img src={useBaseUrl('/img/send-data/blockblob/block-blob-vnet-creation.png')} alt="Virtual Network creation with storage service endpoint" style={{border: '1px solid gray'}} width="800" />
+- Subnet. For example, `brsubnet`.
+- Network Security Group (NSG). For example, `brnsg`.
+:::note
+NSG rules remain as default; no changes required.
+:::
+<img src={useBaseUrl('/img/send-data/blockblob/block-blob-NSG-rules.png')} alt="NSG rules configuration" style={{border: '1px solid gray'}} width="800" />
 3. Enable the Virtual Network integration on each function app by navigating to **Function App** > **Networking** > **Outbound Traffic Configuration**.  
-   <img src={useBaseUrl('/img/send-data/blockblob/block-blob-task-consumer-with-vnet-integration-outbound.png')} alt="TaskConsumer VNet integration outbound configuration" style={{border: '1px solid gray'}} width="800" />
-   <img src={useBaseUrl('/img/send-data/blockblob/block-blob-vnet-in-task-consumer.png')} alt="VNet integration in TaskConsumer" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('/img/send-data/blockblob/block-blob-task-consumer-with-vnet-integration-outbound.png')} alt="TaskConsumer VNet integration outbound configuration" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('/img/send-data/blockblob/block-blob-vnet-in-task-consumer.png')} alt="VNet integration in TaskConsumer" style={{border: '1px solid gray'}} width="800" />
 4. Follow the steps below to restrict access to the Storage Account storing NSG flow logs, so that only certain networks can access it:
    1. Navigate to **Storage Account** > **Networking** > **Firewalls and virtual networks**.
    2. Choose the selected networks.
@@ -62,42 +62,42 @@ If you prefer to restrict access and keep your storage account behind a firewall
    3. Configure the Event Grid subscription that uses an **Event Hub** as an endpoint and choose **System Assigned** identity for authentication.
    <img src={useBaseUrl('/img/send-data/blockblob/block-blob-event-hub-subscription-identity.png')} alt="Event Hub subscription identity configuration" style={{border: '1px solid gray'}} width="800" />
 10. Ensure your Virtual Network has service endpoints enabled for:
-   - Storage
-   - Service Bus
-   - Event Hub
-   <img src={useBaseUrl('/img/send-data/blockblob/block-blob-service-endpoint-enabling-vnet.png')} alt="Enabling service endpoints in VNet" style={{border: '1px solid gray'}} width="800" />
+- Storage
+- Service Bus
+- Event Hub
+<img src={useBaseUrl('/img/send-data/blockblob/block-blob-service-endpoint-enabling-vnet.png')} alt="Enabling service endpoints in VNet" style={{border: '1px solid gray'}} width="800" />
 11. To validate the function execution, navigate to **Function App** > **BlobTaskConsumer** > **Monitoring** > **Invocations**.
-   :::note
-   You should see the invocation logs if everything is correctly configured.
-   :::
-   <img src={useBaseUrl('/img/send-data/blockblob/block-blob-validation.png')} alt="Block blob validation logs" style={{border: '1px solid gray'}} width="800" />
+:::note
+You should see the invocation logs if everything is correctly configured.
+:::
+<img src={useBaseUrl('/img/send-data/blockblob/block-blob-validation.png')} alt="Block blob validation logs" style={{border: '1px solid gray'}} width="800" />
 12. Replace the standard Service Bus with a premium tier.
-   :::note
-   The Service Bus provisioned via the current ARM template is configured with the standard tier, which does not support Virtual Network integration. To enable Virtual Network integration, it is recommended to create a new Service Bus with the premium tier.
-   :::
-   Follow the steps below to create a new Service Bus on the premium tier:
-   a. Create a new premium Service Bus namespace:
-      1. Use the same resource group and location as the old Service Bus.
-      2. Enable partitioning.
-      3. Initially allow public access (can restrict later).
-   b. Create a new queue named `blobrangetaskqueue` with the following parameters:
-      1. Maximum queue size: 40 GB
-      2. Maximum message size: 1024 KB
-      3. Maximum delivery count: 3
-      4. Time to live: 14 days
-      5. Message lock duration: 5 minutes
-      6. Enable the dead letter queue.
-   c. Update the connection strings in all three functions (Producer, Consumer, DLQ):
-   Under **Shared access policies**, select the [RootManageSharedAccessKey](https://portal.azure.com/#) and copy the primary key from the newly created Service Bus on the premium tier as the value of `shared_access_key_value`:  
-   `Endpoint=sb://<servicebus_namespace_name>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<shared_access_key_value>`
-   d. Restrict Public Access:
-      1. Navigate to **Service Bus** > **Networking**.
-      2. Set **Public** network access to **Selected** networks.
-      3. Choose the subnet created earlier.
+:::note
+The Service Bus provisioned via the current ARM template is configured with the standard tier, which does not support Virtual Network integration. To enable Virtual Network integration, it is recommended to create a new Service Bus with the premium tier.
+:::
+Follow the steps below to create a new Service Bus on the premium tier:
+1. Create a new premium Service Bus namespace:
+   1. Use the same resource group and location as the old Service Bus.
+   2. Enable partitioning.
+   3. Initially allow public access (can restrict later).
+2. Create a new queue named `blobrangetaskqueue` with the following parameters:
+   1. Maximum queue size: 40 GB
+   2. Maximum message size: 1024 KB
+   3. Maximum delivery count: 3
+   4. Time to live: 14 days
+   5. Message lock duration: 5 minutes
+   6. Enable the dead letter queue.
+3. Update the connection strings in all three functions (Producer, Consumer, DLQ):
+Under **Shared access policies**, select the [RootManageSharedAccessKey](https://portal.azure.com/#) and copy the primary key from the newly created Service Bus on the premium tier as the value of `shared_access_key_value`:  
+`Endpoint=sb://<servicebus_namespace_name>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<shared_access_key_value>`
+4. Restrict Public Access:
+   1. Navigate to **Service Bus** > **Networking**.
+   2. Set **Public** network access to **Selected** networks.
+   3. Choose the subnet created earlier.
 
 ### References
 
-[https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-service-endpoints](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-service-endpoints)  
-[https://learn.microsoft.com/en-us/azure/azure-functions/configure-networking-how-to?tabs=portal\#3-enable-application-and-configuration-routing](https://learn.microsoft.com/en-us/azure/azure-functions/configure-networking-how-to?tabs=portal#3-enable-application-and-configuration-routing)  
-[https://learn.microsoft.com/en-us/azure/app-service/configure-vnet-integration-routing\#content-share](https://learn.microsoft.com/en-us/azure/app-service/configure-vnet-integration-routing#content-share)  
-[https://learn.microsoft.com/en-us/azure/azure-functions/functions-app-settings\#website\_contentovervnet](https://learn.microsoft.com/en-us/azure/azure-functions/functions-app-settings#website_contentovervnet)
+- [https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-service-endpoints](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-service-endpoints)  
+- [https://learn.microsoft.com/en-us/azure/azure-functions/configure-networking-how-to?tabs=portal\#3-enable-application-and-configuration-routing](https://learn.microsoft.com/en-us/azure/azure-functions/configure-networking-how-to?tabs=portal#3-enable-application-and-configuration-routing)  
+- [https://learn.microsoft.com/en-us/azure/app-service/configure-vnet-integration-routing\#content-share](https://learn.microsoft.com/en-us/azure/app-service/configure-vnet-integration-routing#content-share)  
+- [https://learn.microsoft.com/en-us/azure/azure-functions/functions-app-settings\#website\_contentovervnet](https://learn.microsoft.com/en-us/azure/azure-functions/functions-app-settings#website_contentovervnet)

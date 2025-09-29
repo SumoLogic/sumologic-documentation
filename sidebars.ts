@@ -715,7 +715,7 @@ module.exports = {
                   link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/index' },
                   items: [
                     'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs',
-                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/full-vnet-integration',
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/block-blob-full-vnet-integration',
                   ],
                 },
                 {
