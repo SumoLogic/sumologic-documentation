@@ -32,7 +32,7 @@ In this video, we'll walk through learning and certification offerings to help y
 
 ## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Getting started
 
-When you create a new Sumo Logic organization, you are logged in automatically the first time. After that, you’ll receive an activation email. Completing activation is required to:
+When you create a new Sumo Logic organization, you are logged in automatically the first time. After that, you'll receive an activation email. Completing activation is required to:
 
 * Access Sumo Logic through SAML SSO providers.
 * Log in via partner integrations (for example, the Heroku add‑on).
