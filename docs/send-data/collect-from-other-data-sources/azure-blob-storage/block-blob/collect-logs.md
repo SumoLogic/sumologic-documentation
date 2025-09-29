@@ -133,7 +133,7 @@ The following steps assume you have noted down the resource group name, storage 
 :::
 
 * [Step 1: Authorize App Service read from storage account](#step-1-authorize-app-service-to-read-from-storage-account) - Enables the Azure functions to read from the storage account.
-* [Step 2: Create an Event Grid Subscription](#step-2-create-an-event-grid-subscription) - Subscribes all blob creation events to the Event Hub created by ARM template in [Step 3](#step-3-enabling-vnet-integration-optional) above.
+* [Step 2: Create an Event Grid Subscription](#step-2-create-an-event-grid-subscription) - Subscribes all blob creation events to the Event Hub created by ARM template in [Step 3](#step-3-configure-azure-resources-using-arm-template) above.
 
 ### Step 1: Authorize App Service to read from storage account
 
@@ -227,15 +227,10 @@ This assumes that your storage account access is not public and is enabled for s
 
     ![azureblob-vnet](/img/send-data/azureblob-vnet.png)
 
-   1. Also copy the outbound ip addresses you’ll need to add it in firewall configuration of your storage account.
-
-    ![azureblob-outboundip](/img/send-data/azureblob-outboundip.png)
-
 1. Go to your storage account from where you want to collect logs from. Go to Networking and add the same Vnet and subnet.
 
     ![azureblob-storageacct](/img/send-data/azureblob-storageacct.png)
 
-1. Add the outbound ip addresses (copied in step 2.d) from both BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) functions under Firewall with each ip in a single row of Address range column.
 1. Verify by going to the subnet. You should see Subnet delegation and service endpoints as shown in the screenshot below.
 
     ![azureblob-subnet](/img/send-data/azureblob-subnet.png)
