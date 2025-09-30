@@ -6,4 +6,4 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-In this release, we've resolved the JRE upgrade issue that occurred during collector upgrades.
+In this release, we've resolved the JRE upgrade issue that occurred during [collector upgrades](/docs/send-data/collection/upgrade-collectors/).
