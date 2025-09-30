@@ -1,0 +1,41 @@
+name: Rebuild yarn.lock on Linux
+
+on:
+  workflow_dispatch: {}   # run it manually from the Actions tab
+
+permissions:
+  contents: write         # needed to push a branch/PR
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Yarn 1.x
+        run: npm i -g yarn@1.22.22
+
+      - name: Clean lock & modules
+        run: rm -rf node_modules yarn.lock
+
+      - name: Install (generate Linux lockfile)
+        run: yarn install
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: fix/linux-lockfile
+          commit-message: "chore: regenerate yarn.lock on Linux for CI compatibility"
+          title: "chore: regenerate yarn.lock on Linux"
+          body: |
+            Regenerated lockfile on Linux to avoid platform-specific @swc/* entries.
+            CI can keep using `yarn install --frozen-lockfile`.
+          delete-branch: true
