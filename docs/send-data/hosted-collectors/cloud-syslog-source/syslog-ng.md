@@ -16,7 +16,7 @@ Download the AWS Certificate Manager (ACM) certificate from https://www.amazontr
 
 For syslog-ng place the certificates in the configuration directory and the syslog-ng client will pick up the certificates working from that directory. 
 
-To set up yourAWS Certificate Manager (AWS) certificate, follow these steps:
+To set up your AWS Certificate Manager (AWS) certificate, follow these steps:
 
 1. Check if you have the directory `/etc/syslog-ng/ca.d`.
 1. If you don’t, create it with this command:
