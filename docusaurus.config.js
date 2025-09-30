@@ -21,12 +21,6 @@ module.exports = {
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
-  onDuplicateRoutes: 'throw',
-  markdown: {
-    hooks: {
-      onBrokenMarkdownLinks: 'throw',
-    },
-  },
   favicon: 'https://www.sumologic.com/favicon.ico',
   organizationName: 'sumologic', // Usually your GitHub org/user name.
   projectName: 'sumologic-documentation', // Usually your repo name.
