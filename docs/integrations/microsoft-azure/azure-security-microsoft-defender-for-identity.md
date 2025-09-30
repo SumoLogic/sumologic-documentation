@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="Thumbnail icon" width="50"/>
 
-The Azure Security – Microsoft Defender for Identity app enhances endpoint protection by centralising alert data from various devices, enabling faster detection, investigation, and response to cyber threats. It uses advanced analytics and threat intelligence to identify malicious behaviour and high-risk activity. With detailed dashboards and visualisations, it helps security teams track recurring incidents, assess vulnerabilities, and reduce response time, offering a comprehensive view of your organisation’s endpoint security posture.
+The Sumo Logic app for Azure Security – Microsoft Defender for Identity enhances endpoint protection by centralizing alert data from various devices, enabling faster detection, investigation, and response to cyber threats. It uses advanced analytics and threat intelligence to identify malicious behavior and high-risk activity. With detailed dashboards and visualizations, it helps security teams track recurring incidents, assess vulnerabilities, and reduce response time, offering a comprehensive view of your organization’s endpoint security posture.
 
 :::info
 This app includes [built-in monitors](#azure-security---microsoft-defender-for-identity-alerts). For details on creating custom monitors, refer to [Create monitors for Azure Security - Microsoft Defender for Identity app](#create-monitors-for-azure-security---microsoft-defender-for-identity-app).
