@@ -16,7 +16,7 @@ This app includes [built-in monitors](#azure-security---microsoft-defender-for-i
 
 ## Log types
 
-The Azure Security – Microsoft Defender for Identity app uses SumoLogic’s Microsoft Graph Security source to collect [alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) from the Microsoft Graph Security source.
+The Azure Security – Microsoft Defender for Identity app uses Sumo Logic’s Microsoft Graph Security source to collect [alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) from the Microsoft Graph Security source.
 
 ### Sample log messages
 
