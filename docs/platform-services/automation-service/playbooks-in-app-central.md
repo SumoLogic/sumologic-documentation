@@ -1,18 +1,18 @@
 ---
 id: playbooks-in-app-central
-title: Playbooks in App Central
-sidebar_label: Playbooks in App Central
+title: Out-of-the-Box Playbooks in App Central
+sidebar_label: Out-of-the-Box Playbooks
 description: Learn about the out-of-the-box playbooks available in App Central. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SamplePlaybooks from '../../reuse/automation-service/sample-playbooks.md';
 
-A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type.
+Sumo Logic provides hundreds of out-of-the-box playbooks in the **Playbooks** tab of [App Central](/docs/platform-services/automation-service/automation-service-app-central/). A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. These out-of-the-box playbooks can handle many different situations, such as phishing attempts, brute force attacks, ransomware, and many others. 
 
-While [playbooks](/docs/platform-services/automation-service/playbooks/) in the Automation Service UI show the playbooks installed to your environment, the **Playbooks** tab in App Central shows you additional playbooks you can install.
+First look through the out-of-the-box playbooks to find ones that could help you. Once you're identified ones you'd like to use, install them. After installation, the [installed playbooks](/docs/platform-services/automation-service/playbooks/create-playbooks/#view-playbooks) appear in the Automation Service UI. Then configure the installed out-of-the-box playbooks to run actions in the integrations you have in your environment.
 
-### Install a playbook from App Central
+### Install an out-of-the-box playbook from App Central
 
 1. Use the **Search** bar in the upper right of the **Playbooks** tab to find playbooks.
 1. Click **Install** in the corner of the playbook box.
@@ -21,23 +21,19 @@ While [playbooks](/docs/platform-services/automation-service/playbooks/) in the 
 1. Click **Close**. After installation is complete, **Installed** replaces the **Install** link in the corner of the playbook box.
 1. **IMPORTANT**: Click **Show More** in the playbook box to see if there are additional steps you need to follow to configure the installed playbook. Failure to perform these additional steps may result in the playbook not working properly.
 
-<!-- There used to be an export button, but now it's gone. Saving this text below in case it comes back.
+## Configure an out-of-the-box playbook
 
-## Export from App Central
+After you install an out-of-the-box playbook from App Central, it appears on the [**Playbooks**](/docs/platform-services/automation-service/playbooks/create-playbooks/#view-playbooks) list. Perform the following steps to configure the out-of-the-box playbook.
 
-You can export the contents of integrations and playbooks from App Central.
+1. Select the playbook from the list. In the example below, the *21 - DLP Alert* playbook is selected. <br/>All out-of-the-box playbooks are numbered. Notice the other two out-of-the-box playbooks in the list, *18 - DDoS* and *100 - Incident Enrichment and Ownership Management*. These are out-of-the-box playbooks.<br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook.png')} alt="Example out-of-the-box playbook" style={{border: '1px solid gray'}} width="700" />
+1. Click the edit button at the bottom of the screen.
+1. Hover your mouse over a node and click the edit button. The **Edit Node** dialog appears.
+1. Note the name of the node. It should tell you what action you need to connect to. In the following example, the node name is *IP reputation destination address with VirusTotal*. That tells us we need to use the *IP Reputation* action in the [VirusTotal integration](/docs/platform-services/automation-service/app-central/integrations/virustotal/).<br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook-2.png')} alt="Example out-of-the-box playbook node" style={{border: '1px solid gray'}} width="400" />
 
-1. Click the **Go to export page** button in the top right corner of the **Integrations** tab.<br/><img src={useBaseUrl('img/cse/automation-service-app-central-export-button.png')} alt="Go to the export page" style={{border: '1px solid gray'}} width="300"/>
-1. Select the items you want to export. Provide a description in the box provided. If you select more than one item, you are prompted to provide a title as well.
-1. Scroll down and click **Export** at the bottom right corner of the screen. The selections are exported in a .tar file to your downloads folder.
-1. Extract the .tar file. An archive file is extracted from the .tar file (for example, a .tar.gz file).
-1. Extract the archive file. The exported items are extracted, including any YAML files they contain.
-
--->
 
 ## Playbooks in App Central
 
-This section lists all the out-of-the-box playbooks you can install.
+This section lists all the out-of-the-box playbooks you can install from App Central.
 
 ### 1 - Basic IP Reputation
 
