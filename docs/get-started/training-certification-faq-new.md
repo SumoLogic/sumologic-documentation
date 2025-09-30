@@ -114,7 +114,6 @@ Not at this time.
 
 :::sumo micro lesson
 
-In this video, we'll walk you through how to register for Sumo Logic Academy certification exams.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/8i18wjmdg2?web_component=true&seo=true&videoFoam=false"
   width="854px"
