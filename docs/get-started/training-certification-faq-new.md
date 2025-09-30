@@ -10,6 +10,7 @@ title: Sumo Logic Academy - Training and Certification FAQ (Beta)
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 :::note
 This program is in Beta. For more information, contact your Sumo Logic account representative.
@@ -18,6 +19,22 @@ This program is in Beta. For more information, contact your Sumo Logic account r
 We are leveling up our Sumo Logic certification program with the launch of **Sumo Logic Academy**, our new hub for training and professional development.  
 
 With Sumo Logic Academy, you’ll find an expanded and refined course catalog, live remote exam proctoring through our partner Kryterion, and industry-recognized digital badges issued by Credly. These enhancements bring our program in line with best practices across the industry, giving you credentials you can trust and proudly share with peers, employers, and the wider professional community.
+
+:::sumo micro lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/35ku33znar?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Sumo Logic Academy Overview - Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ## Getting started
 
@@ -94,6 +111,24 @@ Not at this time.
 
 
 ## Exam logistics
+
+:::sumo micro lesson
+
+In this video, we'll walk you through how to register for Sumo Logic Academy certification exams.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/8i18wjmdg2?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Sumo Logic Academy certification exams - Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ### How do I get certified and schedule my exam?
 
