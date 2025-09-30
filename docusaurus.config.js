@@ -275,7 +275,7 @@ module.exports = {
       contextualSearch: false,
       insights: true,
       askAi: {
-        assistantId: 'dFgp1Fa5XLla',
+        assistantId: 'Gj8Bh1qOc2XJ',
         indexName: 'crawler_sumodocs',
         apiKey: 'fb2f4e1fb40f962900631121cb365549',
         appId: '2SJPGMLW1Q',
