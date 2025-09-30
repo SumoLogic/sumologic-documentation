@@ -11,6 +11,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## February release
 
+Following are the updates made in February.
+
 ### Changes and Enhancements
 
 #### Platform
