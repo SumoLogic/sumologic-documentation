@@ -12,7 +12,7 @@ import CisNote from '../../reuse/cis-note.md';
 
 <CisNote/>
 
-<div className="box-wrapper" >
+<div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/amazon-guardduty')}><img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/guardduty.png')} alt="Thumbnail icon" width="50"/><h4>Amazon GuardDuty</h4></a>
