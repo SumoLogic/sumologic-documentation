@@ -101,38 +101,38 @@ account=account region=region autoscalinggroupname=cartService namespace=aws/aut
 ## Collecting logs and metrics for the Amazon EC2 Auto Scaling
 When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect Cloudtrail logs
+### Collecting Cloudtrail logs
 
 1. Configure a Amazon EC2 Auto Scaling [Cloudtrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
-1. **Metadata**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value.
-    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
+1. **Metadata**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate. Each field needs a name (key) and a value.
+    1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
     1. Keep in mind:
        * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
        * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
-### Collect metrics
+### Collecting metrics
 
 1. Sumo Logic supports collecting metrics using two source types:
    * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
    * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
-1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. 
-   1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate. Each field needs a name (key) and a value. 
+   1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
    1. Keep in mind:
       * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
       * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 :::note
-Namespace for Amazon EC2 Auto Scaling Service is AWS/AutoScaling.
+The namespace for Amazon EC2 Auto Scaling Service is AWS/AutoScaling.
 :::
 
-## Field in field schema
+## Configure field in field schema
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 1. Search for the `autoscalinggroup` field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
-## Field Extraction Rule(s)
+## Configure Field Extraction Rule(s)
 
-Create a Field Extraction Rule (FER) for Amazon EC2 Auto Scaling access logs and Cloudtrail logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+Create a Field Extraction Rule (FER) for Amazon EC2 Auto Scaling access logs and CloudTrail logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 **Amazon EC2 Auto Scaling CloudTrail logs**
 
@@ -159,64 +159,92 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
+As part of the app installation process, the following fields will be created by default:
+
+* `account`: The friendly name or alias assigned to the AWS account.
+* `region`: The geographical region where the AWS resource is located (for example, us-east-1 or eu-west-2).
+* `accountid`: The unique 12-digit identifier for the AWS account where the resource is present.
+* `namespace`: The AWS service namespace that the resource or metric belongs to (for example, AWS/EC2 or AWS/AutoScaling).
+* `autoscalinggroup`: A specific identifier for the Auto Scaling Group within AWS EC2 Auto Scaling.
+
 ## Viewing Amazon EC2 Auto Scaling dashboards
 
-### Amazon EC2 Autoscaling - Overview
+### Overview
+
 The **Amazon EC2 Autoscaling - Overview** dashboard provides an overview of Amazon EC2 Autoscaling operations, offering insights into instance capacity, error messages, user agents, and disruptive events. It allows users to monitor and analyze the performance and behavior of their autoscaling groups in real-time.
 
 Use this dashboard for:
-* Monitoring the current capacity of EC2 instances, including group and warm pool instances
-* Tracking the desired capacity of autoscaling groups
-* Identifying and troubleshooting common error messages related to autoscaling operations
-* Monitoring disruptive events such as group updates, instance detachments, and policy changes
+* Monitoring the current capacity of EC2 instances, including group and warm pool instances.
+* Tracking the desired capacity of autoscaling groups.
+* Identifying and troubleshooting common error messages related to autoscaling operations.
+* Monitoring disruptive events such as group updates, instance detachments, and policy changes.
 
 <img src={useBaseUrl('img/integrations/01.-Amazon-EC2-Auto-Scaling-Overview.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
 
-### Amazon EC2 Auto Scaling - CloudTrail Audit
-The **Amazon EC2 Auto Scaling - CloudTrail Audit** dashboard provides a comprehensive overview of Amazon EC2 Auto Scaling activities and CloudTrail audit logs. The dashboard displays information on event locations, top error codes, users with highest failure rates, disruptive events, error details, successful events, event status, and active users/roles.
+### CloudTrail Audit
+
+The **Amazon EC2 Auto Scaling - CloudTrail Audit** dashboard provides a comprehensive overview of Amazon EC2 Auto Scaling activities and CloudTrail audit logs. The dashboard displays information on event locations, top error codes, users with the highest failure rates, disruptive events, error details, successful events, event status, and active users/roles.
 
 Use this dashboard for:
-* Monitoring the overall health and performance of your Amazon EC2 Auto Scaling groups
-* Identifying and troubleshooting common errors and failures in auto scaling operations
-* Tracking user activities and potential security concerns related to auto scaling events
-* Analyzing trends in event types, success rates, and failure patterns over time
+* Monitoring the overall health and performance of your Amazon EC2 Auto Scaling groups.
+* Identifying and troubleshooting common errors and failures in auto scaling operations.
+* Tracking user activities and potential security concerns related to auto scaling events.
+* Analyzing trends in event types, success rates, and failure patterns over time.
 
 <img src={useBaseUrl('img/integrations/02.-Amazon-EC2-Auto-Scaling-CloudTrail-Audit.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
 
-### Amazon EC2 Auto Scaling - Instances
+### Instances
+
 The **Amazon EC2 Auto Scaling - Instances** dashboard provides a detailed overview of Amazon EC2 Auto Scaling instance metrics, allowing users to monitor and analyze the behavior of their auto scaling groups across different autoscaling groups. It offers real-time insights into instance capacities, states, and group configurations.
 
 Use this dashboard for:
-* Tracking the desired capacity and actual in-service instances for each auto scaling group
-* Monitoring the minimum and maximum group size limits to ensure proper scaling boundaries
-* Observing the total number of instances in each group, including their various states (pending, standby, and terminating)
-* Comparing instance metrics across different auto scaling groups
+* Tracking the desired capacity and actual in-service instances for each auto scaling group.
+* Monitoring the minimum and maximum group size limits to ensure proper scaling boundaries.
+* Observing the total number of instances in each group, including their various states (pending, standby, and terminating).
+* Comparing instance metrics across different auto scaling groups.
 
 <img src={useBaseUrl('img/integrations/03.-Amazon-EC2-Auto-Scaling-Instances.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
 
-### Amazon EC2 Auto Scaling - Capacity
+### Capacity
+
 The **Amazon EC2 Auto Scaling - Capacity** dashboard provides a comprehensive view of Amazon EC2 Auto Scaling group capacity metrics, offering insights into the total, in-service, pending, standby, and terminating capacities for different autoscaling groups. It allows users to monitor and analyze the capacity fluctuations and states of their auto scaling groups over time.
 
 Use this dashboard for:
-* Tracking the total capacity of auto scaling groups across different auto scaling groups
-* Monitoring the in-service capacity to ensure adequate resources are available to handle current workloads
-* Analyzing standby capacity to understand the reserve resources available for quick scaling
-* Tracking terminating capacity to monitor the scale-in process and resource optimization
-* Detecting potential issues in the scaling process, such as instances stuck in pending or terminating states
+* Tracking the total capacity of auto scaling groups across different auto scaling groups.
+* Monitoring the in-service capacity to ensure adequate resources are available to handle current workloads.
+* Analyzing standby capacity to understand the reserve resources available for quick scaling.
+* Tracking terminating capacity to monitor the scale-in process and resource optimization.
+* Detecting potential issues in the scaling process, such as instances stuck in pending or terminating states.
 
 <img src={useBaseUrl('img/integrations/04.-Amazon-EC2-Auto-Scaling-Capacity.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
 
-### Amazon EC2 Auto Scaling - Warm Pool
+### Warm Pool
+
 The **Amazon EC2 Auto Scaling - Warm Pool** dashboard provides a detailed view of Amazon EC2 Auto Scaling Warm Pool metrics, offering insights into the capacity and state of pre-initialized instances ready to quickly respond to sudden traffic spikes or workload demands. It allows users to monitor and analyze the warm pool behavior across different autoscaling groups.
 
 Use this dashboard for:
-* Tracking the total and desired capacity of warm pools for each autoscaling group
-* Monitoring the minimum size of warm pools to ensure adequate reserve capacity
-* Observing pending capacity in warm pools to identify potential delays in instance preparation
-* Monitoring the terminating capacity in warm pools to understand instance lifecycle
-* Optimizing warm pool size and capacity to improve application responsiveness during sudden load increases
+* Tracking the total and desired capacity of warm pools for each autoscaling group.
+* Monitoring the minimum size of warm pools to ensure adequate reserve capacity.
+* Observing pending capacity in warm pools to identify potential delays in instance preparation.
+* Monitoring the terminating capacity in warm pools to understand the instance lifecycle.
+* Optimizing warm pool size and capacity to improve application responsiveness during sudden load increases.
 
 <img src={useBaseUrl('img/integrations/05.-Amazon-EC2-Auto-Scaling-Warm-Pool.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+
+## Create monitors for Amazon EC2 Auto Scaling app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon EC2 Auto Scaling alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon EC2 Auto Scaling - In-Service Capacity Below Desired` | This alert is triggered when the number of healthy, active instances falls below the desired capacity, indicating that your application may lack the capacity to handle its current load. | Count > 0 | Count < = 0 |
+| `Amazon EC2 Auto Scaling - Instance To Max Capacity Ratio` | This alert is triggered when the total number of instances approaches the configured maximum size, warning of an inability to scale out further. | Count > 0.9 | Count < = 0.9 |
+| `Amazon EC2 Auto Scaling - Instances in Pending State` | This alert is triggered when instances remain in a 'Pending' state for a prolonged period, indicating potential issues with instance launch or configuration. | Count > 0 | Count < = 0 |
+| `Amazon EC2 Auto Scaling - Instances in Terminating State` | This alert is triggered when instances remain in a 'Terminating' state for a prolonged period, often indicating issues with lifecycle hooks. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the Amazon EC2 Auto Scaling app (Optional)
 

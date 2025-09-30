@@ -104,9 +104,9 @@ Create a hosted collector if not already configured and tag the `tenant_name` fi
 
 ### Configure metrics collection
 
-import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+import MetricsSource from '../../reuse/metrics-source.md';
 
-<MetricsSourceBeta/>
+<MetricsSource/>
 
 ### Configure logs collection
 
@@ -149,14 +149,11 @@ By default, all the tuning options are not enabled, you can enable them at the s
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Automated-Tuning.png')} alt="Configure Automated Tuning" style={{border: '1px solid gray'}} width="800" />
 
-#### Activity Logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). If you are already collecting activity logs for a subscription, do not perform this step.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
-:::
-
+<ActivityLogs/>
 
 ##### Enabling Microsoft Defender for Cloud
 For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-defender-for-sql?view=azuresql#enable-microsoft-defender-for-sql). If you have an existing settings, click **Edit Settings**.
@@ -524,3 +521,9 @@ These alerts are metrics-based and will work for Azure SQL.
 | `Azure SQL - DTU Percentage` | This monitor triggers alerts when High average DTU consumption percentage is detected in Azure SQL. | Count > 80 | Count =< 80 |
 | `Azure SQL - Tempdb Percent Log Used` | This monitor triggers alerts when High Tempdb Percent Log Usage is detected in Azure SQL. | Count > 60 | Count =< 60 |
 | `Azure SQL - High Worker Usage` | This monitor triggers alerts when High Worker Usage is detected in Azure SQL. | Count > 60 | Count =< 60 |
+
+## Troubleshooting
+
+### Metrics collection via Azure Metrics Source
+
+To troubleshoot metrics collection via Azure Metrics Source, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).

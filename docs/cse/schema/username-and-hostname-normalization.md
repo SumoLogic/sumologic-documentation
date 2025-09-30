@@ -44,7 +44,7 @@ The following fields of the schema are normalized.
 | `srcDevice_hostname` | hostname           |
 | `user_username`      | username           |
 
-When a username is normalized, the original, un-normalized name is placed in a `_raw` name attribute, for example,  `user_useraname_raw`. The normalized name is placed in the attribute field `user_username`. The rules engine allows the `_raw` username forms to be used in rule creation.
+When a username is normalized, the original, un-normalized name is placed in a `_raw` name attribute, for example,  `user_username_raw`. The normalized name is placed in the attribute field `user_username`. The rules engine allows the `_raw` username forms to be used in rule creation.
 
 If a name normalization configuration exists, the name attribute will be populated with the form `<username>:<friendly_domain>` where the `<friendly domain name>` portion is not populated for the normalized default domain.  When name normalization is enabled all name fields (not-raw) will be lowercase. For more information, see [Single domain example](#single-domain-example) and [Multiple domains example](#multiple-domains-example) below.
 
@@ -54,7 +54,7 @@ If no name normalization configuration exists, the name attribute will consist o
 
 ## Configure entity normalization
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Entities** select **Normalization**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Normalization**. 
 1. Select the **Domain** tab. (For information about the **Lookup Tables** tab, see [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/)). 
 1. You can configure just **Username Normalization**, just **Hostname Normalization**, or both. We recommend you enable both. 
 1. Under **Normalization Formats** there are configuration options to normalize names from:
