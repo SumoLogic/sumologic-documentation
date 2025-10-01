@@ -32,6 +32,7 @@ You need the [Manage or View Collectors role capability](/docs/manage/users-role
 | KR         | https://api.kr.sumologic.com/docs/#tag/archiveManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/archiveManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/archiveManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/archiveManagement |
 
 ## Required role capabilities
 

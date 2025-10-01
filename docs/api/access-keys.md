@@ -28,6 +28,7 @@ The [Access Keys](/docs/manage/security/access-keys) Management API allows you t
 | KR         | https://api.kr.sumologic.com/docs/#tag/accessKeyManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/accessKeyManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/accessKeyManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/accessKeyManagement |
 
 ## Required role capabilities
 

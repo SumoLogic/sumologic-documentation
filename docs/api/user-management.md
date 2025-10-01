@@ -28,6 +28,7 @@ The User Management API allows you to [manage user accounts](/docs/manage/users-
 | KR         | https://api.kr.sumologic.com/docs/#tag/userManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/userManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/userManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/userManagement |
 
 ## Required role capabilities
 

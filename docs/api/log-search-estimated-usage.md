@@ -30,6 +30,7 @@ In the Infrequent Data Tier and Flex, you pay per query, based on the amount of 
 | KR         | https://api.kr.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
 | US1        | https://api.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType     |
 | US2        | https://api.us2.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType |
+| ZRH        | https://api.zrh.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType |
 
 ## Required role capabilities
 

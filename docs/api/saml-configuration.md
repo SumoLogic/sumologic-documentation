@@ -28,6 +28,7 @@ The [SAML Configuration](/docs/manage/security/saml/set-up-saml) Management API 
 | KR         | https://api.kr.sumologic.com/docs/#tag/samlConfigurationManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/samlConfigurationManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/samlConfigurationManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/samlConfigurationManagement |
 
 ## Required role capabilities
 

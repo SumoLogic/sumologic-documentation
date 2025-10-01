@@ -28,6 +28,7 @@ The Lookup Management API allows you to manage [Lookup Tables](/docs/search/look
 | KR         | https://api.kr.sumologic.com/docs/#tag/lookupManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/lookupManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/lookupManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/lookupManagement |
 
 ## Required role capabilities
 

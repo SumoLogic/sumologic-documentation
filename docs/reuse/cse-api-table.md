@@ -9,3 +9,4 @@
 | KR         | https://api.kr.sumologic.com/docs/sec/  |
 | US1        | https://api.sumologic.com/docs/sec/     |
 | US2        | https://api.us2.sumologic.com/docs/sec/ |
+| ZRH        | https://api.zrh.sumologic.com/docs/sec/ |

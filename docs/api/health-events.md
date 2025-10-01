@@ -28,7 +28,7 @@ The [Health Events](/docs/manage/health-events) Management API allows you to vie
 | KR         | https://api.kr.sumologic.com/docs/#tag/healthEvents  |
 | US1        | https://api.sumologic.com/docs/#tag/healthEvents     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/healthEvents |
-
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/healthEvents |
 
 ## Required role capabilities
 

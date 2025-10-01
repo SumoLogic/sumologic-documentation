@@ -36,6 +36,7 @@ Select the documentation link for your deployment:
 | KR         | https://api.kr.sumologic.com/docs/#tag/spanAnalytics  |
 | US1        | https://api.sumologic.com/docs/#tag/spanAnalytics     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/spanAnalytics |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/spanAnalytics |
 
 ## Required role capabilities
 

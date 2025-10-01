@@ -30,6 +30,7 @@ Use Metrics Search Management APIs V2 to save metrics searches in the content li
 | KR         | https://api.kr.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
 | US1        | https://api.sumologic.com/docs/#tag/metricsSearchesManagementV2     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/metricsSearchesManagementV2 |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/metricsSearchesManagementV2 |
 
 ## Required role capabilities
 

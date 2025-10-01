@@ -33,6 +33,7 @@ The Scan Budget Management APIs allows you to manage scan budgets from HTTP endp
 | KR         | https://api.kr.sumologic.com/docs/#tag/budgetManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/budgetManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/budgetManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/budgetManagement |
 
 ## Required role capabilities
 

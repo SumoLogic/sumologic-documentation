@@ -28,6 +28,7 @@ The Partitions Management API allows you to improve search performance by search
 | KR         | https://api.kr.sumologic.com/docs/#tag/partitionManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/partitionManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/partitionManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/partitionManagement |
 
 ## Required role capabilities
 

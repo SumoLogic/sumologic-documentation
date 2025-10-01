@@ -28,6 +28,7 @@ The Content Permissions API allows you to share your folders, searches, and dash
 | KR  | https://api.kr.sumologic.com/docs/#tag/contentPermissions  |
 | US1 | https://api.sumologic.com/docs/#tag/contentPermissions     |
 | US2 | https://api.us2.sumologic.com/docs/#tag/contentPermissions |
+| ZRH | https://api.zrh.sumologic.com/docs/#tag/contentPermissions |
 
 ## Required role capabilities
 
