@@ -8,28 +8,9 @@ description: Find answers to frequently asked questions about Sumo Logic trainin
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-<a href="https://www.sumologic.com/learn/training"><img src={useBaseUrl('img/get-started/sumo-academy.png')} alt="Sumo Logic Academy logo" width="150"/></a><br/>
+<a href="https://www.sumologic.com/learn/training"><img src={useBaseUrl('img/get-started/sumo-academy-light-mode.png')} alt="Sumo Logic Academy logo" className="academy-logo" width="150" /></a><br/><br/>
 
 Sumo Logic Academy is your hub for training and professional development. All courses (self‑paced eLearning, public hands‑on virtual classes, and workshops) are free. Certification exams are paid and live‑proctored through Kryterion. Successful candidates receive industry‑recognized digital badges issued by Credly.
-
-<div style={{
-  display: 'flex',
-  alignItems: 'center',
-  gap: '12px',
-  padding: '12px 14px',
-  border: '1px solid var(--ifm-color-emphasis-200)',
-  borderRadius: '12px',
-  background: 'var(--ifm-color-emphasis-0)',
-  margin: '0 0 1rem 0'
-}}>
-  <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot mascot" width="75" />
-  <div>
-    <div style={{ fontWeight: 600, marginBottom: 2 }}>Meet Mobot</div>
-    <div style={{ fontSize: '0.95rem' }}>
-      Mobot can help you navigate courses and certifications in Sumo Logic Academy.
-    </div>
-  </div>
-</div>
 
 ## Getting started
 
