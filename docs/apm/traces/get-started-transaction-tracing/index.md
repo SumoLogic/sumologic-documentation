@@ -17,19 +17,19 @@ Sumo Logic tracing supports the OpenTelemetry standard as well as other legacy o
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments')}> src='https://upload.wikimedia.org/wikipedia/commons/5/5c/Amazon_Lambda_architecture_logo.svg' alt="icon" width="40"/><h4>For AWS environments</h4></a>
+  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments')}><img src='https://upload.wikimedia.org/wikipedia/commons/5/5c/Amazon_Lambda_architecture_logo.svg' alt="icon" width="40"/><h4>For AWS environments</h4></a>
   <p>Learn how to install an OpenTelemetry Collector and collect traces in AWS environments.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments')}> src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>For Kubernetes environments</h4></a>
+  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments')}><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>For Kubernetes environments</h4></a>
   <p> Learn how to install the Sumo Logic Kubernetes Collection and send traces using OpenTelemetry.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments')}> src={useBaseUrl('img/icons/traces.png')} alt="icon" width="40"/><h4>For Other environments</h4></a>
+  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments')}><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="40"/><h4>For Other environments</h4></a>
   <p>Learn how to leverage OpenTelemetry standards and start collecting Traces.</p>
   </div>
 </div>
@@ -151,19 +151,19 @@ Setting up Tracing instrumentation for applications deployed in Kubernetes just 
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/apm/traces/advanced-configuration/filter-shape-tracing-data')}> src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Correlating Logs and Traces</h4></a>
+  <a href={useBaseUrl('docs/apm/traces/advanced-configuration/filter-shape-tracing-data')}><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Correlating Logs and Traces</h4></a>
   <p>Linking together your Sumo Logic traces and logs will provide you a broad and deep understanding of your environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/apm/traces/advanced-configuration/filter-shape-tracing-data')}> src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Filter and Shape Your Trace Data</h4></a>
+  <a href={useBaseUrl('docs/apm/traces/advanced-configuration/filter-shape-tracing-data')}><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Filter and Shape Your Trace Data</h4></a>
   <p>Learn how to create and apply custom rules to shape tracing data and specify which data to send to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/apm/traces/advanced-configuration/working-with-span-attributes')}> src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Working with Span Attributes</h4></a>
+  <a href={useBaseUrl('docs/apm/traces/advanced-configuration/working-with-span-attributes')}><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Working with Span Attributes</h4></a>
   <p>Learn how to modify span attributes to enhance diagnostic data details, remove redundant information, and mask sensitive information before they leave your site.</p>
   </div>
 </div>
