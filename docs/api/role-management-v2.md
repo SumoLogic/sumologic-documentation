@@ -30,6 +30,7 @@ To manage roles, you must have an administrator role or your role must have been
 | KR         | https://api.kr.sumologic.com/docs/#tag/roleManagementV2  |
 | US1        | https://api.sumologic.com/docs/#tag/roleManagementV2     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/roleManagementV2 |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/roleManagementV2 |
 
 ## Migrate audit logs queries from Role Management API V1 to V2
 

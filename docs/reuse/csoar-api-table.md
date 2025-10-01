@@ -8,3 +8,4 @@
 | KR         | https://api.kr.sumologic.com/docs/csoar/  |
 | US1        | https://api.sumologic.com/docs/csoar/     |
 | US2        | https://api.us2.sumologic.com/docs/csoar/ |
+| ZRH        | https://api.zrh.sumologic.com/docs/csoar/ |

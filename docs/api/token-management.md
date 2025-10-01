@@ -28,6 +28,7 @@ The Tokens Management API allows you to manage [Installation Tokens](/docs/manag
 | KR         | https://api.kr.sumologic.com/docs/#tag/tokensLibraryManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/tokensLibraryManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/tokensLibraryManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/tokensLibraryManagement |
 
 ## Required role capabilities
 

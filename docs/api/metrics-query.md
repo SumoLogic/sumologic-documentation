@@ -53,6 +53,7 @@ A metric query consists of a metric, one or more filters, and optionally, one or
 | KR         | https://api.kr.sumologic.com/docs/#tag/metricsQuery  |
 | US1        | https://api.sumologic.com/docs/#tag/metricsQuery     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/metricsQuery |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/metricsQuery |
 
 ## Required role capabilities
 

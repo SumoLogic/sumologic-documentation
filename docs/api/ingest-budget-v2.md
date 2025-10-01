@@ -39,6 +39,7 @@ Ingest Budget Management V1 APIs have been removed and are no longer supported.
 | KR         | https://api.kr.sumologic.com/docs/#tag/ingestBudgetManagementV2  |
 | US1        | https://api.sumologic.com/docs/#tag/ingestBudgetManagementV2     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/ingestBudgetManagementV2 |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/ingestBudgetManagementV2 |
 
 ## Required role capabilities
 

@@ -28,6 +28,7 @@ The [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses
 | KR         | https://api.kr.sumologic.com/docs/#tag/serviceAllowlistManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/serviceAllowlistManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/serviceAllowlistManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/serviceAllowlistManagement |
 
 ## Required role capabilities
 

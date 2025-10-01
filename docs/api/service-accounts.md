@@ -29,6 +29,7 @@ The Service Accounts API allows you to manage service accounts. [Service account
 | KR         | https://api.kr.sumologic.com/docs/#tag/serviceAccountManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/serviceAccountManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/serviceAccountManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/serviceAccountManagement |
 
 ## Required role capabilities
 

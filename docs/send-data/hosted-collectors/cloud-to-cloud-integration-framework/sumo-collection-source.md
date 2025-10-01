@@ -49,6 +49,7 @@ Identify your **Deployment** region based on your Base URL. The deployment regio
 | KR  |	`https://api.kr.sumologic.com/`  |
 | US1 |	`https://api.sumologic.com/`     |
 | US2 |	`https://api.us2.sumologic.com/` |
+| ZRH |	`https://api.zrh.sumologic.com/` |
 
 #### Access ID and Access Key
 

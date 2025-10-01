@@ -26,6 +26,7 @@ Metrics Transformation Rules APIs allow you control how long raw metrics are ret
 | KR         | https://api.kr.sumologic.com/docs/#tag/transformationRuleManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/transformationRuleManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/transformationRuleManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/transformationRuleManagement |
 
 ## Required role capabilities
 

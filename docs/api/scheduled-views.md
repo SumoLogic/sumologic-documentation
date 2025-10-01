@@ -28,6 +28,7 @@ The [Scheduled View](/docs/manage/scheduled-views) Management API allows you to 
 | KR         | https://api.kr.sumologic.com/docs/#tag/scheduledViewManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/scheduledViewManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/scheduledViewManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/scheduledViewManagement |
 
 ## Required role capabilities
 

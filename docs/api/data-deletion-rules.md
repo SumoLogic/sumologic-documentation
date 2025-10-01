@@ -34,6 +34,7 @@ Data Deletion Rules allow you to quickly and easily request the removal of inges
 |KR        |https://api.kr.sumologic.com/docs/#tag/dataDeletionRules   |
 |US1       |https://api.sumologic.com/docs/#tag/dataDeletionRules      |
 |US2       |https://api.us2.sumologic.com/docs/#tag/dataDeletionRules  |
+|ZRH       |https://api.zrh.sumologic.com/docs/#tag/dataDeletionRules  |
 
 ## Required role capabilities
 

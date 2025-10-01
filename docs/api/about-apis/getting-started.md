@@ -28,6 +28,7 @@ To access our API documentation, navigate to the appropriate link based on your 
 | KR         | https://api.kr.sumologic.com/docs/  |
 | US1        | https://api.sumologic.com/docs/     |
 | US2        | https://api.us2.sumologic.com/docs/ |
+| ZRH        | https://api.zrh.sumologic.com/docs/ |
 
 ## Authentication
 
@@ -100,12 +101,13 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
 | KR | [service.kr.sumologic.com](https://service.kr.sumologic.com) | `api.kr.sumologic.com/api/` | `collectors.kr.sumologic.com` | `syslog.collection.kr.sumologic.com` | `open-collectors.kr.sumologic.com` |
 | US1 | [service.sumologic.com](https://service.sumologic.com) | `api.sumologic.com/api/` | `collectors.sumologic.com`<br/>`endpoint1-5.collection.sumologic.com` | `syslog.collection.us1.sumologic.com` | `open-collectors.sumologic.com` |
 | US2 | [service.us2.sumologic.com](https://service.us2.sumologic.com) | `api.us2.sumologic.com/api/` | `collectors.us2.sumologic.com`<br/>`endpoint1-9.collection.us2.sumologic.com` | `syslog.collection.us2.sumologic.com` | `open-collectors.us2.sumologic.com` |
+| ZRH | [service.zrh.sumologic.com](https://service.zrh.sumologic.com) | `api.zrh.sumologic.com/api/` | `collectors.zrh.sumologic.com`<br/>`endpoint1-9.collection.zrh.sumologic.com` | `syslog.collection.zrh.sumologic.com` | `open-collectors.zrh.sumologic.com` |
 
 </div>
 
 ### Which endpoint should I should use?
 
-To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `ca`, `kr`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
+To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `ca`, `kr`, `zrh`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
 
 The specific collection endpoint will vary per account. The general format is: `endpoint[N].collection.[deploymentID].sumologic.com`.
 

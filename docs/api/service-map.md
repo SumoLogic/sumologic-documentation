@@ -35,6 +35,7 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 | KR         | https://api.kr.sumologic.com/docs/#tag/serviceMap  |
 | US1        | https://api.sumologic.com/docs/#tag/serviceMap     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/serviceMap |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/serviceMap |
 
 ## Required role capabilities
 

@@ -29,6 +29,7 @@ The SCIM User Management API allows you to provision users to Sumo Logic from [S
 | KR         | https://api.kr.sumologic.com/docs/#tag/scimUserManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/scimUserManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/scimUserManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/scimUserManagement |
 
 ## Required role capabilities
 

@@ -26,6 +26,7 @@ View and install Sumo Logic applications that deliver out-of-the-box dashboards,
 | KR         | https://api.kr.sumologic.com/docs/#tag/appManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/appManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/appManagement |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/appManagement |
 
 ## Required role capabilities
 

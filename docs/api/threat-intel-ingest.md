@@ -33,6 +33,7 @@ For more information about threat intelligence, see [About Sumo Logic Threat Int
 | JP         | https://api.jp.sumologic.com/docs/#tag/threatIntelIngest  |
 | US1        | https://api.sumologic.com/docs/#tag/threatIntelIngest     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/threatIntelIngest |
+| ZRH        | https://api.zrh.sumologic.com/docs/#tag/threatIntelIngest |
 
 ## Required role capabilities
 
