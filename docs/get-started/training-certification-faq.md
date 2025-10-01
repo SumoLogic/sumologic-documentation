@@ -1,6 +1,6 @@
 ---
 id: training-certification-faq
-title: Sumo Logic Training and Certifications FAQ
+title: Training and Certifications FAQ
 sidebar_label: Training and certifications
 description: Find answers to frequently asked questions about Sumo Logic training, certifications, and learning resources.
 ---
@@ -8,9 +8,36 @@ description: Find answers to frequently asked questions about Sumo Logic trainin
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-<a href="https://www.sumologic.com/learn/training"><img src={useBaseUrl('img/get-started/sumo-academy.png')} alt="Sumo Logic Academy logo" width="150"/></a>
+<a href="https://www.sumologic.com/learn/training"><img src={useBaseUrl('img/get-started/sumo-academy.png')} alt="Sumo Logic Academy logo" width="150"/></a><br/>
 
 Sumo Logic Academy is your hub for training and professional development. All courses (self‑paced eLearning, public hands‑on virtual classes, and workshops) are free. Certification exams are paid and live‑proctored through Kryterion. Successful candidates receive industry‑recognized digital badges issued by Credly.
+
+<div style={{
+  display: 'flex',
+  alignItems: 'center',
+  gap: '12px',
+  padding: '12px 14px',
+  border: '1px solid var(--ifm-color-emphasis-200)',
+  borderRadius: '12px',
+  background: 'var(--ifm-color-emphasis-0)',
+  margin: '0 0 1rem 0'
+}}>
+  <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot mascot" width="75" />
+  <div>
+    <div style={{ fontWeight: 600, marginBottom: 2 }}>Meet Mobot</div>
+    <div style={{ fontSize: '0.95rem' }}>
+      Mobot can help you navigate courses and certifications in Sumo Logic Academy.
+    </div>
+  </div>
+</div>
+
+## Getting started
+
+When you create a new Sumo Logic organization, you are logged in automatically the first time. After that, you'll receive an activation email. Completing activation is required to:
+
+* Access Sumo Logic through SAML SSO providers.
+* Log in via partner integrations (for example, the Heroku add‑on).
+* Use in-product services like **Self-Paced eLearning** and **Community** (third-party hosted).
 
 :::sumo micro lesson
 
@@ -30,14 +57,6 @@ In this video, we'll walk through learning and certification offerings to help y
 
 :::
 
-## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Getting started
-
-When you create a new Sumo Logic organization, you are logged in automatically the first time. After that, you'll receive an activation email. Completing activation is required to:
-
-* Access Sumo Logic through SAML SSO providers.
-* Log in via partner integrations (for example, the Heroku add‑on).
-* Use in-product services like **Self-Paced eLearning** and **Community** (third-party hosted).
-
 ### How do I verify my email address?
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the **Help** icon > **Self-Paced eLearning**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select the **Help** icon > **Self-Paced eLearning**.
@@ -45,7 +64,7 @@ When you create a new Sumo Logic organization, you are logged in automatically t
 1. Click **Send Activation/Verification Email**.
 1. Open the email and click **Verify Your Email**.
 
-## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Learning portal
+## Learning portal
 
 ### How do I access the learning portal?
 
@@ -61,7 +80,7 @@ If you're unable to access the portal, double-check that you've [verified your e
 
 Yes. Check out our [Training website](https://www.sumologic.com/learn/training) for information on free live classes and other training options like tailored private sessions.
 
-## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Cost and course availability
+## Cost and course availability
 
 ### Why are certification exams paid?
 
@@ -89,7 +108,7 @@ No. Training is free, but certification exams require payment.
 
 Vouchers are valid for one year from the date of issue.
 
-## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Certifications
+## Certifications
 
 ### What certifications does Sumo Logic offer?
 
@@ -160,7 +179,7 @@ Yes. A pass/fail result appears after submission once you exit the secure procto
 
 You can retake your exam 48 hours after a previous attempt. Each retake requires a new voucher. For security, only your overall score is shown.
 
-## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Badges and community
+## Badges and community
 
 ### Where can I find my Sumo Logic certification digital badges?
 
@@ -172,7 +191,7 @@ Yes. To add an alternative email address to your Credly profile, see [Credly Hel
 
 While we're required to issue badges to the same email you use to sign in to Sumo Logic, adding a personal email in Credly keeps your badges portable.
 
-## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Training lab environment
+## Training lab environment
 
 Use the Training Lab environment to get hands‑on practice with course exercises. This environment is curated and set up to work along with our training curriculum.
 
@@ -191,7 +210,7 @@ Credentials change monthly. Go to the [learning portal](#how-do-i-access-the-lea
 
 <img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
 
-## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Self‑paced training
+## Self‑paced training
 
 ### How do I access self‑paced training?
 
@@ -234,13 +253,13 @@ If you see an error when starting a new lesson, try these steps:
 * Try an Incognito or Private window. If it works there, a browser extension may be blocking content.
 * For `Video Error Code 232011` or `Cannot load M3U8: Crossdomain access denied`, work with your IT team to check firewall settings. Allow the header `Access-Control-Allow-Origin: *` if applicable.
 
-## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Miscellaneous
+## Miscellaneous
 
 ### Do you offer training for Sumo Logic partners?
 
 Yes. Head to [Partner Training](https://partnertraining.sumologic.com) to learn about dedicated technical training for Sumo Logic partners. To register, you'll need an access code from your Sumo Logic account representative.
 
-## <img src={useBaseUrl('img/get-started/mobot-certification.png')} alt="Mobot certification icon - robot with diploma in hand" width="22"/> Additional information
+## Additional information
 
 Have questions about courses or certifications? Contact our training and education team at [training@sumologic.com](mailto:training@sumologic.com).
 
