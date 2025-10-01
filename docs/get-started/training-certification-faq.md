@@ -156,6 +156,10 @@ Kryterion support is available during the exam. Use Live Chat or submit a reques
 
 Yes. A pass/fail result appears after submission once you exit the secure proctored environment.
 
+### What is the pass criteria for exams?
+
+You must achieve a score of 75% or higher to pass a Sumo Logic certification exam.
+
 ### What is the retake policy? Will I have to pay again?
 
 You can retake your exam 48 hours after a previous attempt. Each retake requires a new voucher. For security, only your overall score is shown.
@@ -248,3 +252,5 @@ For registration, scheduling, or technical issues during proctored exams, contac
 
 * [Kryterion Candidate Support](https://www.kryterion.com/fast-help-current-and-future-test-candidates/)
 * [Kryterion Online Testing Requirements](https://kryterion.my.site.com/support/s/article/Online-Testing-Requirements?language=en_US)
+
+<!-- add blogs links when available -->
