@@ -45,7 +45,8 @@ AWS Observability integrates with the [AWS Observability view](/docs/dashboards/
      Download this or other versions of this template from [Changelog](../changelog.md). 
      :::
      :::note
-     To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.1.0 or greater and follow the instructions in the (#modify-the-collector-name-and-source-categories) section.
+      - To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.1.0 or greater and follow the instructions in the (#modify-the-collector-name-and-source-categories) section.
+      - The Global Intelligence for AWS CloudTrail DevOps app is deprecated from CloudFormation template v2.13.0. A backup of this app will not be maintained during upgrades.     
      :::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
     :::danger
