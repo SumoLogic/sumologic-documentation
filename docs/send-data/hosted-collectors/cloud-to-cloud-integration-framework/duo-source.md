@@ -23,7 +23,7 @@ The Duo Source collects logs from multiple Duo API endpoints. It securely stores
 | 5m  | [Administrator Logs](https://duo.com/docs/adminapi#administrator-logs)|
 | 5m  | [Telephony Logs](https://duo.com/docs/adminapi#telephony-logs)|
 | 5m  | [Activity Logs](https://duo.com/docs/adminapi#activity-logs)|
-| 24h | [User Inventory Logs](https://duo.com/docs/adminapi#users). |
+| 24h | [User Inventory Logs](https://duo.com/docs/adminapi#users) |
 
 ## Setup
 
@@ -52,8 +52,8 @@ To configure a Duo Source:
 1. **Duo Domain**. Provide your **API hostname**, such as `api-********.duosecurity.com`.
 1. **Integration Key**. Provide the Duo Integration Key you want to use to authenticate collection requests.
 1. **Secret Key**. Provide the Duo Secret Key you want to use to authenticate collection requests. 
-1. **Supported APIs to Collect** Choose the API endpoints you wish to collect logs from.
-1. **Collect User Inventory Every 24h** Check this box if you want to collect user inventory every 24 hours.
+1. **Supported APIs to Collect**. Choose the API endpoints you wish to collect logs from.
+1. **Collect User Inventory Every 24h**. Check this box if you want to collect user inventory every 24 hours.
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
 1. When you are finished configuring the Source, click **Submit**.
 
@@ -88,7 +88,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | integration_key | String | Yes | `null` | Provide the Duo Integration Key you want to use to authenticate collection requests. |  |
 | secret_key | String | Yes | `null` | Provide the Duo Secret Key you want to use to authenticate collection requests. |  |
 | supported_apis| String Array| Yes | All APIs|Add an element for each of the APIs the integration should collect from.|`["authentication", "administrator", "telephony", "activity"]`|
-| collectUserInventory | Boolean | No | True| Set to true if the integration should collect user inventory logs|`True`|
+| collectUserInventory | Boolean | No | True| Set to true if the integration should collect user inventory logs. |`True`|
 | polling_interval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
 
 ### JSON example
