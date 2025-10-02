@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 \Introduction\
 
-<!-- RULE: Always start with "The Sumo Logic app for [vendor"] in both the description (frontmatter) and the intro paragraph to ensure brand visibility and consistency with "[vendor] by Sumo Logic" in the UI. The exact wording after that can be adapted. This example shows a common structure, but you may rephrase to fit the use case. -->
+<!-- RULE: Always start with "The Sumo Logic app for [vendor]" in both the description (frontmatter) and the intro paragraph to ensure brand visibility and consistency with "[vendor] by Sumo Logic" in the UI. The exact wording after that can be adapted. This example shows a common structure, but you may rephrase to fit the use case. -->
 
 The Sumo Logic app for [vendor] enables you to [monitor/analyze/collect/etc.] [data type] from [vendor]. This integration helps you [business value/security/performance outcome], providing visibility into [specific activities, events, or metrics]. With this data in Sumo Logic, you can [identify/respond to/optimize/etc.] [key use cases].
 

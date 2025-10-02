@@ -20,9 +20,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 \Introduction\
 
-<!-- RULE: Always start with "The Sumo Logic source for <vendor>" in both the description (frontmatter) and the intro paragraph. This ensures brand clarity since the UI shows only the vendor name. The exact wording after that can be adapted. This example shows a common structure, but you may rephrase to fit the use case. -->
+<!-- RULE: Always start with "The Sumo Logic source for [vendor]" in both the description (frontmatter) and the intro paragraph. This ensures brand clarity since the UI shows only the vendor name. The exact wording after that can be adapted. This example shows a common structure, but you may rephrase to fit the use case. -->
 
-Example: The Sumo Logic source for [vendor] enables you to [collect/ingest/stream/etc.] [data type] from [vendor] into Sumo Logic. This integration helps you [business value/security/observability outcome], providing visibility into [specific activities, events, or metrics]. With this data in Sumo Logic, you can [detect/respond/optimize/etc.] [key use cases].
+The Sumo Logic source for [vendor] enables you to [collect/ingest/stream/etc.] [data type] from [vendor] into Sumo Logic. This integration helps you [business value/security/observability outcome], providing visibility into [specific activities, events, or metrics]. With this data in Sumo Logic, you can [detect/respond/optimize/etc.] [key use cases].
 
 \Depending on the availability in the Fed, add the below note.\
 
