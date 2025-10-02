@@ -35,6 +35,8 @@ To search your tracing data do the following:
 
 A Keyword Search Expression defines the scope of data for the query. You need to specify `_index=_trace_spans` in the scope to reference your trace data.
 
+Keyword searching is supported for tracing indexes across all fields, unlike other indexes where only the `_raw` field is searched.
+
 #### _any option
 
 In scenarios where users are not familiar with the schema and would like to search across all the fields, `_any` modifier provides a means to search for a specified value from all of the Ingest Time Fields in your data. For example, to search for data with any field that has a value of success you would put `_any=success` in the scope of your query.
