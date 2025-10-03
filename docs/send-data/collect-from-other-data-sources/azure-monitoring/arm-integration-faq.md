@@ -371,4 +371,10 @@ To filter events by container name, do the following:
      ]
    }
    ```
+* Error in initiation of Azure functions created by ARM template with error message
+   ```System.Private.CoreLib: Access to the path 'C:\home\site\wwwroot' is denied```
+   
+   This will also result unauthorized error in error logs for azure function. 
+   Every azure function always has a storage account associated with it for dumping logs, trigger event , metadata etc. Our arm template also creates 3 azure function and a single storage account (lets call it sumoBRlogs storage account). When this storage account access is restricted (not public) then this problem occurs. 
 
+   The solution is to do a virtual network (vnet) integration of azure function and allow the access to this virtual network to the sumoBRlogs storage account. Follow these [steps](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs/#enabling-vnet-integration-optional) to do a vnet integration. And set [this environment variable](https://learn.microsoft.com/en-us/azure/azure-functions/functions-app-settings#website_contentovervnet) to 1, in all the three azure function created by ARM template - Producer, consumer and DLQ.
