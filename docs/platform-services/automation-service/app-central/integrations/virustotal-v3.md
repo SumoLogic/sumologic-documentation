@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 width="100"/>
 
 ***Version: 1.2
-Updated: September 30, 2025***
+Updated: October 3, 2025***
 
 Perform threat intelligence evidence gathering with [VirusTotal V3 API](https://docs.virustotal.com/reference/overview).
 
@@ -70,5 +70,5 @@ For information about VirusTotal v3, see [VirusTotal v3 documentation](https://d
     + It is an updated version of VirusTotal which works with V3 API.
 * July 22, 2025
     + Fixed url parsing issue in **URL Reputation** action.
-* September 30, 2025
+* October 3, 2025
     + Implemented polling mechanism (poll_analysis) in *Scan URL* action to wait until VirusTotal scan status becomes completed.
