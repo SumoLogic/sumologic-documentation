@@ -20,9 +20,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 \Introduction\
 
-The `{{source name}}` collects `{{data/event types}}` from `{{source of origin}}`. `{{What the app does}}`.
+<!-- RULE: Always start with "The Sumo Logic source for [vendor]" in both the description (frontmatter) and the intro paragraph. This ensures brand clarity since the UI shows only the vendor name. The exact wording after that can be adapted. This example shows a common structure, but you may rephrase to fit the use case. -->
 
-Example: The Microsoft Graph Security API Source provides a secure endpoint to consume alerts from the Microsoft Graph Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.
+The Sumo Logic source for [vendor] enables you to [collect/ingest/stream/etc.] [data type] from [vendor] into Sumo Logic. This integration helps you [business value/security/observability outcome], providing visibility into [specific activities, events, or metrics]. With this data in Sumo Logic, you can [detect/respond/optimize/etc.] [key use cases].
 
 \Depending on the availability in the Fed, add the below note.\
 
