@@ -93,7 +93,7 @@ Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hu
 
 ### Dojo AI (agentic AI for the SOC)
 
-Dojo AI brings governed, specialized agents into daily SOC workflows so you can cut manual triage, accelerate query-to-answer steps, and get consistent, Insight-level investigation summaries. Built and deployed on AWS, Dojo AI focuses on measurable gains in accuracy and response time with a human in the loop.
+Dojo AI brings governed, specialized agents into daily SOC workflows so you can cut manual triage, accelerate query-to-answer steps, and get consistent, insight-level investigation summaries. Built and deployed on AWS, Dojo AI focuses on measurable gains in accuracy and response time with a human in the loop.
 
 * **Query Agent**. Ask questions in plain English and get optimized Sumo queries that speed data exploration.
 * **Summary Agent**. See AI-generated summaries on Insights in Cloud SIEM to understand incidents faster.
