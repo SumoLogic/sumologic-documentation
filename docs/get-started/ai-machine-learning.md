@@ -21,7 +21,7 @@ In this document, you'll learn about Sumo Logic features that leverage artificia
 Dojo AI is our agentic AI platform for security teams. It brings specialized agents that reduce manual triage, summarize investigations at the insight level, and help analysts move from reactive to proactive workflows. Dojo AI is built and deployed on AWS and focuses on governed, context-first automation designed for enterprise SOCs.
 
 * **Query Agent**. Translate plain-English questions into efficient Sumo queries to speed exploration and scoping. Works hand in hand with Mobot to improve query quality and outcomes.
-* **Summary Agent**. Generate clear, Insight-level summaries that help teams understand incidents faster and respond with confidence. Available in Cloud SIEM.
+* **Summary Agent**. Generate clear, insight-level summaries that help teams understand incidents faster and respond with confidence. Available in Cloud SIEM.
 * **Availability**. Dojo AI is available through Sumo Logic and in AWS Marketplace.
 
 > [Sumo Logic brings agentic AI into the enterprise security stack with the launch of Dojo AI on Amazon Web Services](https://www.sumologic.com/newsroom/sumo-logic-brings-agentic-ai-into-enterprise-security-stack-with-launch-of-dojo-ai-on-amazon-web-services).
