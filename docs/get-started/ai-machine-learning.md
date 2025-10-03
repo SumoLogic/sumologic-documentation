@@ -18,13 +18,13 @@ In this document, you'll learn about Sumo Logic features that leverage artificia
 
 ## What’s new: Dojo AI for the SOC
 
-Dojo AI is our agentic AI platform for security teams. It brings specialized agents that reduce manual triage, summarize investigations at the insight level, and help analysts move from reactive to proactive workflows. Dojo AI is built and deployed on AWS and focuses on governed, context-first automation designed for enterprise SOCs.
+Sumo Logic Dojo AI is our agentic AI platform for security teams. It brings specialized agents that reduce manual triage, summarize investigations at the insight level, and help analysts move from reactive to proactive workflows. Dojo AI is built and deployed on AWS and focuses on governed, context-first automation designed for enterprise SOCs.
 
-* **Query Agent**. Translate plain-English questions into efficient Sumo queries to speed exploration and scoping. Works hand in hand with Mobot to improve query quality and outcomes.
+* **Query Agent**. Translate plain-language questions into efficient Sumo queries to speed exploration and scoping. Works hand in hand with Mobot to improve query quality and outcomes.
 * **Summary Agent**. Generate clear, insight-level summaries that help teams understand incidents faster and respond with confidence. Available in Cloud SIEM.
 * **Availability**. Dojo AI is available through Sumo Logic and in AWS Marketplace.
 
-> [Sumo Logic brings agentic AI into the enterprise security stack with the launch of Dojo AI on Amazon Web Services](https://www.sumologic.com/newsroom/sumo-logic-brings-agentic-ai-into-enterprise-security-stack-with-launch-of-dojo-ai-on-amazon-web-services).
+For more information, see: [Sumo Logic brings agentic AI into the enterprise security stack with the launch of Dojo AI on Amazon Web Services](https://www.sumologic.com/newsroom/sumo-logic-brings-agentic-ai-into-enterprise-security-stack-with-launch-of-dojo-ai-on-amazon-web-services).
 
 <details>
 <summary>What do these terms mean?</summary>
@@ -53,7 +53,7 @@ Through comprehensive discovery, monitoring, diagnosis, recovery, and prevention
 
 ### Mobot
 
-Mobot is our AI-based assistant designed that simplifies log analysis by allowing you to ask questions in plain English and provides search suggestions without the need to write log queries. Through plain English queries and automatic log query generation, Mobot simplifies the investigation process, allowing even users without extensive log analysis expertise to pinpoint anomalies and potential threats efficiently.
+Mobot is our AI-based assistant designed that simplifies log analysis by allowing you to ask questions in plain language and provides search suggestions without the need to write log queries. Through plain language queries and automatic log query generation, Mobot simplifies the investigation process, allowing even users without extensive log analysis expertise to pinpoint anomalies and potential threats efficiently.
 
 With Mobot, you can effortlessly investigate complex issues without writing intricate log queries manually. Its intuitive interface guides users through each step of the investigation, refining queries based on AI prompts and feedback. This streamlined approach accelerates the identification of security threats, empowering users to make informed decisions rapidly and proactively detect potential risks. [Learn more](/docs/search/mobot).
 
@@ -95,7 +95,7 @@ Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hu
 
 Dojo AI brings governed, specialized agents into daily SOC workflows so you can cut manual triage, accelerate query-to-answer steps, and get consistent, insight-level investigation summaries. Built and deployed on AWS, Dojo AI focuses on measurable gains in accuracy and response time with a human in the loop.
 
-* **Query Agent**. Ask questions in plain English and get optimized Sumo queries that speed data exploration.
+* **Query Agent**. Ask questions in plain language and get optimized Sumo Logic queries that speed data exploration.
 * **Summary Agent**. See AI-generated summaries on Insights in Cloud SIEM to understand incidents faster.
 * **Get it**. Available from Sumo Logic and in AWS Marketplace.
 
