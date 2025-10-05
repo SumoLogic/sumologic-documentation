@@ -10,11 +10,14 @@ import Iframe from 'react-iframe';
 
 <a href="https://www.sumologic.com/learn/training"><img src={useBaseUrl('img/get-started/sumo-academy-light-mode.png')} alt="Sumo Logic Academy logo" className="academy-logo" width="150" /></a><br/><br/>
 
-Sumo Logic Academy is your hub for training and professional development. All courses (self‑paced eLearning, public hands‑on virtual classes, and workshops) are free. Certification exams are paid and live‑proctored through Kryterion. Successful candidates receive industry‑recognized digital badges issued by Credly. Check out our certification catalog [here](https://www.sumologic.com/learn/training).
+Sumo Logic Academy is your hub for training and professional development. All courses (self‑paced eLearning, public hands‑on virtual classes, and workshops) are free, with paid private instruction offerings available.
+
+Certification exams are paid and live‑proctored through our assessment partner, Kryterion. Successful candidates receive industry‑recognized digital badges issued by Credly. Check out our certification catalog [here](https://www.sumologic.com/learn/training).
 
 * [**Sumo Logic Learning Portal**](#learning-portal), only available in-product, where you'll find our courses and certifications.
 * [**Sumo Logic Training Lab Environment**](#training-lab-environment), curated and set up to work along with our training curriculum.
 * [**Sumo Logic Partner Training**](https://partnertraining.sumologic.com), dedicated technical training for Sumo Logic partners. To sign up, you'll need an access code, which you can obtain from your account manager.
+* [Sumo Logic Certified](#certifications), our certification program for Sumo Logic Academy, allowing you to certify via proctored exam and receive a digital credential reflecting your new, proven skillset.
 
 :::sumo micro lesson
 
@@ -45,7 +48,7 @@ Improvements include:
 * **Digital badges** issued by Credly that you can share on LinkedIn and your resume.
 -->
 
-## Learning portal
+## Getting started
 
 ### How do I access the learning portal?
 
@@ -55,29 +58,9 @@ Access complimentary on-demand courses and onboarding tutorials in our self-pace
 2. From your **Home** page, click the **Learn** tab > **Learning Hub – Start Here!**.<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Learning Hub icon in UI" style={{border: '1px solid gray'}} width="700" />
 3. Explore our self-paced certification courses and workshops, built to the same standard as our instructor-led offerings, ready for you to learn anytime, anywhere, at your own pace.
 
-### Do you offer instructor-led classes?
+### How can I sign up for free live instructor-led classes?
 
-Yes. Check out our [Training website](https://www.sumologic.com/learn/training) for information on free live classes and other training options like tailored private sessions.
-
-
-## Training lab environment
-
-Use the Training Lab environment to get hands‑on practice with course exercises. This environment is curated and set up to work along with our training curriculum.
-
-### How do I access the training lab environment?
-
-1. Choose a number between 001 and 999. Use this number across your labs.
-2. Open a second browser (for example, Firefox if you are reading this in Chrome) so you can stay logged in to both your regular Sumo Logic account and the training lab at the same time.
-3. In the second browser window, go to [https://service.sumologic.com](https://service.sumologic.com).
-4. Enter the credentials posted at the top of the **Become a Sumo Expert** page in the learning portal.
-5. You will know you have access when hovering over the user profile in the upper-right corner shows **Sumo Logic Training**.
-6. Save your training username for use during training.
-
-### Where can I find the training lab credentials?
-
-Credentials change monthly. Go to the [learning portal](#how-do-i-access-the-learning-portal) > **Become a Sumo Expert**.
-
-<img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
+Check out our [Training website](https://www.sumologic.com/learn/training) for information on free live classes and to view our current schedule. Sign up for as many as you’d like! Multiple timezone options are available to meet your schedule. Other training options like tailored private sessions are also available.
 
 
 ## Self‑paced training
@@ -116,6 +99,17 @@ Complete all sections in the course.
 
 Self-paced training is free. Private and custom training is available for purchase.
 
+### How do I verify my email address?
+
+To verify your email address and activate your account:
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help**, and then select either **Community**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help**, and then select **Community**.
+1. You will be prompted to activate your account.
+1. Click **Send Activation/Verification Email**.
+1. Open the email and click **Verify Your Email**.
+
+Now that your email is verified, you'll be able access to third-party services.
+
 ### How do I fix the data pipeline error?
 
 If you see an error when starting a new lesson, try these steps:
@@ -127,12 +121,31 @@ If you see an error when starting a new lesson, try these steps:
 * Try an Incognito/Private window. If it works there, a browser extension may be blocking content.
 * For `Video Error Code 232011` or `Cannot load M3U8: Crossdomain access denied`, work with your IT team to check firewall settings. Allow the header `Access-Control-Allow-Origin: *` if applicable.
 
+## Training lab environment
+
+Use the Training Lab environment to get hands‑on practice with course exercises. This environment is curated and set up to work along with our training curriculum.
+
+### How do I access the training lab environment?
+
+1. Choose a number between 001 and 999. Use this number across your labs.
+2. Open a second browser (for example, Firefox if you are reading this in Chrome) so you can stay logged in to both your regular Sumo Logic account and the training lab at the same time.
+3. In the second browser window, go to [https://service.sumologic.com](https://service.sumologic.com).
+4. Enter the credentials posted at the top of the **Become a Sumo Expert** page in the learning portal.
+5. You will know you have access when hovering over the user profile in the upper-right corner shows **Sumo Logic Training**.
+6. Save your training username for use during training.
+
+### Where can I find the training lab credentials?
+
+Credentials change monthly. Go to the [learning portal](#how-do-i-access-the-learning-portal) > **Become a Sumo Expert**.
+
+<img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
+
 
 ## Certifications
 
 :::sumo micro lesson
 
-Sumo Logic Academy certifications use proctored, skills-based exams with digital badges issued through Credly. We recommend gaining hands-on experience before registering.
+Sumo Logic Academy certifications use proctored, skills-based exams with digital badges issued through Credly. We recommend six months of hands-on experience before registering.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/8i18wjmdg2?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -147,6 +160,17 @@ Sumo Logic Academy certifications use proctored, skills-based exams with digital
 />
 
 :::
+
+### What are the benefits of certification?
+
+By investing in a Sumo Logic Certified credential, you’ll gain a meaningful, industry-recognized certification that validates your real-world skills.
+
+Unlike our previous knowledge-based quizzes, the new exams are skills-based, proctored, and credentialed. This ensures your certification carries weight and distinction, giving you a proven advantage in your career while driving adoption of advanced use cases in your organization.
+
+Improvements include:
+* **All new exams**. Assessments now measure skills rather than basic knowledge checks. Refer to our [full catalog of certifications](https://www.sumologic.com/learn/training/).
+* **Live, remote proctoring**. Exams are administered by Kryterion with live proctors to ensure fairness and integrity.
+* **Digital badges**. After passing your exam, you’ll receive a Credly-issued badge you can share on LinkedIn, your resume, and within your organization.
 
 ### What certifications does Sumo Logic offer?
 
@@ -171,26 +195,36 @@ Certifications are valid for two years before renewal is required.
 
 Yes. You can renew at any time by retaking the relevant exam.
 
+### If I already have Sumo Logic certifications, will I lose those?
+
+The new credentials replace our previous certifications. Existing certifications remain valid until their original expiration (Fundamentals: two years; all others: one year). You’re welcome to renew under the new program at any time.
+
 ### Are there fees for certifications?
 
-While self-paced training is free, there are fees associated with certification exams.
+While self-paced and public live training options are free, there are fees associated with certification exams.
 
-The *Sumo Logic Certified Fundamentals User* certification exam fee costs $100, and all others are $150. Payment is by credit card or purchase order through your Sumo Logic account representative.
+The *Sumo Logic Certified Fundamentals User* certification exam fee costs $100, and all others are $150. Payment is by credit card or purchase order through your Sumo Logic account representative or reseller.
 
-<!-- the below two Qs sort of contradict each other -->
+### Is a voucher included in my training class? Do I have to pay for training courses or just the certification?
 
-### Is a voucher included in my training class?
-
-No. Training is free, but certification exams require payment.
+All Sumo Logic training, including self-paced eLearning, hands-on public virtual classes, and workshops, remains free to all users. A separate cost applied to the certification exam itself. Private and custom training will continue to be available for purchase.
 
 ### How long do I have to use my voucher?
 
-Vouchers are valid for one year from the date of issue.
+After purchasing a certification voucher, the exam must be taken within one year from the date of issue.
+
+## Are continuing education credits included with the certification?
+
+Not at this time.
 
 
 ## Exam logistics
 
 ### How do I schedule an exam?
+
+:::note
+We recommend at least six months of hands‑on Sumo Logic experience before taking an exam.
+:::
 
 We recommend at least six months of hands‑on Sumo Logic experience before taking an exam.
 
@@ -218,7 +252,7 @@ A score of 75% or higher is required to pass a Sumo Logic certification exam.
 
 ### What is the retake policy? Will I have to pay again?
 
-You can retake your exam 48 hours after a previous attempt. Each retake requires a new voucher. For security, only your overall score is shown.
+You can retake your exam 48 hours after a previous attempt. Each retake requires a new payment. For security, only your overall score is shown.
 
 ## Badges and community
 
