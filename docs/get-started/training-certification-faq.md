@@ -14,10 +14,10 @@ Sumo Logic Academy is your hub for training and professional development. All co
 
 Certification exams are paid and live‑proctored through our assessment partner, Kryterion. Successful candidates receive industry‑recognized digital badges issued by Credly. Check out our certification catalog [here](https://www.sumologic.com/learn/training).
 
-* [**Sumo Logic Learning Portal**](#learning-portal), only available in-product, where you'll find our courses and certifications.
+* [**Sumo Logic Learning Portal**](#how-do-i-access-the-learning-portal), only available in-product, where you'll find our courses and certifications.
 * [**Sumo Logic Training Lab Environment**](#training-lab-environment), curated and set up to work along with our training curriculum.
 * [**Sumo Logic Partner Training**](https://partnertraining.sumologic.com), dedicated technical training for Sumo Logic partners. To sign up, you'll need an access code, which you can obtain from your account manager.
-* [Sumo Logic Certified](#certifications), our certification program for Sumo Logic Academy, allowing you to certify via proctored exam and receive a digital credential reflecting your new, proven skillset.
+* [**Sumo Logic Certified**](#certifications), our certification program for Sumo Logic Academy, allowing you to certify via proctored exam and receive a digital credential reflecting your new, proven skillset.
 
 :::sumo micro lesson
 
@@ -55,7 +55,7 @@ Improvements include:
 Access complimentary on-demand courses and onboarding tutorials in our self-paced learning portal:
 
 1. Sign in to Sumo Logic.
-2. From your **Home** page, click the **Learn** tab > **Learning Hub – Start Here!**.<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Learning Hub icon in UI" style={{border: '1px solid gray'}} width="700" />
+2. From your **Home** page, click the **Learn** tab > **Learning Hub – Start Here!**<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Learning Hub icon in UI" style={{border: '1px solid gray'}} width="700" />
 3. Explore our self-paced certification courses and workshops, built to the same standard as our instructor-led offerings, ready for you to learn anytime, anywhere, at your own pace.
 
 ### How can I sign up for free live instructor-led classes?
@@ -262,7 +262,7 @@ After passing an exam, you'll receive a digital badge via Credly. Manage and sha
 
 ### My badges were issued to my work email address. Can I add a personal email address to my Credly account?
 
-Yes. To add an alternative email address to your Credly profile, see [Credly Help Center | Can I add multiple emails to my account?](https://support.credly.com/hc/en-us/articles/360021220951-Can-I-add-multiple-emails-to-my-account).
+Yes. To learn how to add an alternative email address to your Credly profile, see [Credly Help Center | Can I add multiple emails to my account?](https://support.credly.com/hc/en-us/articles/360021220951-Can-I-add-multiple-emails-to-my-account).
 
 While we're required to issue badges to the same email you use to sign in to Sumo Logic, adding a personal email in Credly keeps your badges portable.
 
