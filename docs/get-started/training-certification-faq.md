@@ -1,7 +1,6 @@
 ---
 id: training-certification-faq
 title: Training and Certifications FAQ
-sidebar_label: Training and certifications
 description: Find answers to frequently asked questions about Sumo Logic training, certifications, and learning resources.
 ---
 
@@ -268,11 +267,14 @@ While we're required to issue badges to the same email you use to sign in to Sum
 
 ## Additional information
 
-Have questions about courses or certifications? Contact our training and education team at [training@sumologic.com](mailto:training@sumologic.com).
+Have questions about training or certifications?  
+Contact the Sumo Logic Training and Education team at [training@sumologic.com](mailto:training@sumologic.com).
 
-For registration, scheduling, or technical issues during proctored exams, contact Kryterion:
+For help with exam registration, scheduling, or technical issues during proctored sessions, visit Kryterion support:
 
 * [Kryterion Candidate Support](https://www.kryterion.com/fast-help-current-and-future-test-candidates/)
 * [Kryterion Online Testing Requirements](https://kryterion.my.site.com/support/s/article/Online-Testing-Requirements?language=en_US)
 
-<!-- add blog links when available -->
+Learn more about our training programs and certification paths:  
+
+* [Introducing Sumo Logic Academy: Your new hub for learning and certifications](https://www.sumologic.com/blog/sumo-logic-academy). Overview of our hands-on learning experiences, proctored certification exams, and digital credentialing through Credly.
