@@ -56,10 +56,8 @@ You'll need the following:
 
 At the moment users have to build Collector Lambda layer by themselves, we may provide a collector Lambda layer in the future.
 
-* Download a local copy of the [opentelemetry-lambda repository from Github](https://github.com/open-telemetry/opentelemetry-lambda).
-
+* Download a local copy of the [opentelemetry-lambda repository from GitHub](https://github.com/open-telemetry/opentelemetry-lambda).
 * Configure the collector layer to send data to SumoLogic:
-
     ```yaml
     receivers:
       otlp:
@@ -82,13 +80,10 @@ At the moment users have to build Collector Lambda layer by themselves, we may p
           receivers: [otlp]
           exporters: [otlphttp]
     ```
-
-    Set the following environment variables:
-
+* Set the following environment variables:
     | Variable | Value | Purpose |
-    |----------|-------|---------|
+    |:---------|:------|:--------|
     | `SUMO_LOGIC_OTLP_ENDPOINT` | `https://your-endpoint.sumologic.net/receiver/v1/otlp/YOUR_TOKEN/v1/traces` | Sumo Logic endpoint |
-
 * Run command: `cd collector && make publish-layer` to publish OpenTelemetry Collector Lambda layer in your AWS account and get its ARN
 
 ### Configure the lambda function
@@ -96,17 +91,13 @@ At the moment users have to build Collector Lambda layer by themselves, we may p
 Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 
 * Navigate to the **Layers** section and click **Add a layer**.
-
 * In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function
-
   :::note
   Lambda layers are a regionalized resource, meaning that they can only be used in the Region in which they are published. Make sure to use the layer in the same region as your Lambda functions.
   :::
-
 * Configure the following environment variables:
-
   | Variable | Value | Purpose |
-  |----------|-------|---------|
+  |:---------|:------|:--------|
   | `OTEL_EXPORTER_OTLP_ENDPOINT` | `localhost:4318` | Collector endpoint |
   | `OTEL_EXPORTER_OTLP_PROTOCOL` | `http/protobuf` | Export protocol |
   | `AWS_LAMBDA_EXEC_WRAPPER` | `/opt/otel-instrument` | Lambda wrapper |
@@ -116,5 +107,4 @@ Your function should be successfully instrumented. Invoke the function and find 
 ## References
 
 * [OpenTelemetry Lambda Layer Documentation](https://github.com/open-telemetry/opentelemetry-lambda)
-
 * [Sumo Logic OTLP Integration](https://help.sumologic.com/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/)
