@@ -714,7 +714,8 @@ module.exports = {
                   collapsed: true,
                   link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/index' },
                   items: [
-                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs'
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs',
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/full-vnet-integration',
                   ],
                 },
                 {
@@ -1354,6 +1355,7 @@ module.exports = {
           link: {type: 'doc', id: 'search/get-started-with-search/search-page/index'},
           items: [
             'search/get-started-with-search/search-page/add-saved-search-to-favorites',
+            'search/get-started-with-search/search-page/pin-a-search',
             'search/get-started-with-search/search-page/change-time-range-in-histogram',
             {
               type: 'category',
@@ -2239,10 +2241,10 @@ integrations: [
          'integrations/microsoft-azure/kubernetes',
          'integrations/microsoft-azure/azure-security-advisor',
          'integrations/microsoft-azure/azure-security-defender-for-cloud',
+         'integrations/microsoft-azure/azure-security-microsoft-defender-for-identity',
          'integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365',
          'integrations/microsoft-azure/microsoft-defender-for-cloud-apps',
          'integrations/microsoft-azure/microsoft-defender-for-endpoint',
-         'integrations/microsoft-azure/microsoft-defender-for-identity',
          'integrations/microsoft-azure/microsoft-dynamics365-customer-insights',
          'integrations/microsoft-azure/microsoft-entra-id-protection',
          'integrations/microsoft-azure/microsoft-purview-data-loss-prevention',
