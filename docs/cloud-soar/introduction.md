@@ -5,6 +5,9 @@ sidebar_label: Introduction
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CloudSoarEndOfSale from '../reuse/cloud-soar-end-of-sale.md';
+
+<CloudSoarEndOfSale/>
 
 This article provides an introduction to Cloud SOAR for analysts and administrators. 
 

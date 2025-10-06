@@ -4,6 +4,9 @@ title: Cloud SOAR
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CloudSoarEndOfSale from '../reuse/cloud-soar-end-of-sale.md';
+
+<CloudSoarEndOfSale/>
 
 Navigate the evolving threat landscape with our best-in-class security orchestration, automation and response (SOAR) solution to streamline incident response workflows.
 
