@@ -1820,6 +1820,7 @@ module.exports = {
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/java',
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/nodejs',
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/python',
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/dotnet',
                 ],
               },
               {

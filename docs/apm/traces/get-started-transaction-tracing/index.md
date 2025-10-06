@@ -118,6 +118,12 @@ Learn how to install and configure OpenTelemetry distributed tracing for AWS Lam
     <img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Thumbnail icon" width="50"/>
     <h4><a href="/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/python">Python</a></h4>
     </div>
+  <div className="box smallbox card">
+    <div className="container">
+    <img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Thumbnail icon" width="50"/>
+    <h4><a href="/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/dotnet">Dotnet</a></h4>
+    </div>
+  </div>
   </div>
 </div>
 
