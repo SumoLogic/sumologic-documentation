@@ -52,11 +52,14 @@ You'll need the following:
 * .NET 6 SDK
 * Sumo Logic OTLP endpoint URL
 
-### Build your OpenTelemetry Collector Lambda layer
+### Configure the Collector Lambda layer
 
-At the moment users have to build Collector Lambda layer by themselves, we may provide a collector Lambda layer in the future.
+Use the following upstream [collector lambda layer](https://github.com/open-telemetry/opentelemetry-lambda/tree/main?tab=readme-ov-file#latest-layer-versions)
 
-* Download a local copy of the [opentelemetry-lambda repository from GitHub](https://github.com/open-telemetry/opentelemetry-lambda).
+* `arn:aws:lambda:<region>:184161586896:layer:opentelemetry-collector-<amd64|arm64>-<version>:1`
+
+By default, OpenTelemetry Collector Lambda layer exports telemetry data to AWS backends. To customize the collector configuration, add a collector.yaml to your function and specify its location via the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` environment file
+
 * Configure the collector layer to send data to SumoLogic:
     ```yaml
     receivers:
@@ -84,7 +87,12 @@ At the moment users have to build Collector Lambda layer by themselves, we may p
     | Variable | Value | Purpose |
     |:---------|:------|:--------|
     | `SUMO_LOGIC_OTLP_ENDPOINT` | `https://your-endpoint.sumologic.net/receiver/v1/otlp/YOUR_TOKEN/v1/traces` | Sumo Logic endpoint |
-* Run command: `cd collector && make publish-layer` to publish OpenTelemetry Collector Lambda layer in your AWS account and get its ARN
+
+    Once the file has been deployed with a Lambda, configuring the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` will tell the OpenTelemetry extension where to find the collector configuration:
+
+    ```bash
+    aws lambda update-function-configuration --function-name Function --environment Variables={OPENTELEMETRY_COLLECTOR_CONFIG_URI=/var/task/collector.yaml}
+    ```
 
 ### Configure the lambda function
 
