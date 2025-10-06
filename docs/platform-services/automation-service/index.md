@@ -56,7 +56,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/automation-service/automation-service-integration-framework/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Integration Framework</h4></a>
+  <a href="/docs/platform-services/automation-service/integration-framework/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Integration Framework</h4></a>
   <p>Learn about the framework used for integrations. </p>
   </div>
 </div>
