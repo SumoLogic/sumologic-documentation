@@ -12,6 +12,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## May release
 
+Following are the updates made in May.
+
 ### Changes and enhancements
 
 #### New feature: Enable/disable playbooks
