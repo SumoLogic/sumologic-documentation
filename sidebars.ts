@@ -445,6 +445,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source',
@@ -546,7 +547,9 @@ module.exports = {
               label: 'Microsoft Sources',
               collapsible: true,
               collapsed: true,
+              link: {type: 'doc', id: 'send-data/hosted-collectors/microsoft-source/index'},
               items: [
+                'send-data/hosted-collectors/microsoft-source/azure-metrics-source',
                 'send-data/hosted-collectors/microsoft-source/ms-office-audit-source',
               ],
             },
@@ -711,7 +714,8 @@ module.exports = {
                   collapsed: true,
                   link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/index' },
                   items: [
-                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs'
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs',
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/full-vnet-integration',
                   ],
                 },
                 {
@@ -1018,7 +1022,7 @@ module.exports = {
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
         'manage/data-forwarding/installed-collectors',
-        'manage/data-forwarding/amazon-s3-bucket',
+        'manage/data-forwarding/forward-data-from-sumologic',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
       ]
@@ -1351,6 +1355,7 @@ module.exports = {
           link: {type: 'doc', id: 'search/get-started-with-search/search-page/index'},
           items: [
             'search/get-started-with-search/search-page/add-saved-search-to-favorites',
+            'search/get-started-with-search/search-page/pin-a-search',
             'search/get-started-with-search/search-page/change-time-range-in-histogram',
             {
               type: 'category',
@@ -1712,6 +1717,7 @@ module.exports = {
         'metrics/metrics-queries/aggregation-tips',
         'metrics/metrics-queries/metric-query-error-messages',
         'metrics/metrics-queries/share-metric-query',
+        'metrics/metrics-queries/metric-query-best-practices',
       ],
     },
     {
@@ -2224,7 +2230,6 @@ integrations: [
          'integrations/microsoft-azure/azure-notification-hubs',
          'integrations/microsoft-azure/azure-public-ipAddress',
          'integrations/microsoft-azure/azure-relay',
-         'integrations/microsoft-azure/azure-security-advisor',
          'integrations/microsoft-azure/azure-service-bus',
          'integrations/microsoft-azure/azure-sql-elastic-pool',
          'integrations/microsoft-azure/azure-sql-managed-instance',
@@ -2236,10 +2241,10 @@ integrations: [
          'integrations/microsoft-azure/kubernetes',
          'integrations/microsoft-azure/azure-security-advisor',
          'integrations/microsoft-azure/azure-security-defender-for-cloud',
+         'integrations/microsoft-azure/azure-security-microsoft-defender-for-identity',
+         'integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365',
          'integrations/microsoft-azure/microsoft-defender-for-cloud-apps',
          'integrations/microsoft-azure/microsoft-defender-for-endpoint',
-         'integrations/microsoft-azure/microsoft-defender-for-identity',
-         'integrations/microsoft-azure/microsoft-defender-for-office-365',
          'integrations/microsoft-azure/microsoft-dynamics365-customer-insights',
          'integrations/microsoft-azure/microsoft-entra-id-protection',
          'integrations/microsoft-azure/microsoft-purview-data-loss-prevention',
@@ -2606,6 +2611,7 @@ integrations: [
           'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/sysdig-secure',
           'integrations/saas-cloud/tenable',
+          'integrations/saas-cloud/trellix-mvision-epo',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
           'integrations/saas-cloud/vectra',
@@ -2823,6 +2829,7 @@ integrations: [
             'cse/get-started-with-cloud-siem/cse-heads-up-display',
             'cse/get-started-with-cloud-siem/insight-generation-process',
             'cse/get-started-with-cloud-siem/about-cse-insight-ui',
+            'cse/get-started-with-cloud-siem/insight-summary',
             'cse/get-started-with-cloud-siem/cloud-siem-content-catalog',
             'cse/get-started-with-cloud-siem/onboarding-checklist-cse',
           ],
@@ -3227,7 +3234,19 @@ integrations: [
                 }
               ],
             },
-            'platform-services/automation-service/automation-service-playbooks',
+            {
+              type: 'category',
+              label: 'Playbooks',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platform-services/automation-service/playbooks/index'},
+              items: [
+                'platform-services/automation-service/playbooks/create-playbooks',
+                'platform-services/automation-service/playbooks/playbook-payloads',
+                'platform-services/automation-service/playbooks/arrays-in-playbooks',
+                'platform-services/automation-service/playbooks/troubleshoot-playbooks',
+              ],
+            },
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',
             'platform-services/automation-service/automation-service-bridge',

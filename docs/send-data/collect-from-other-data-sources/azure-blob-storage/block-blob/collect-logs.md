@@ -133,8 +133,7 @@ The following steps assume you have noted down the resource group name, storage 
 :::
 
 * [Step 1: Authorize App Service read from storage account](#step-1-authorize-app-service-to-read-from-storage-account) - Enables the Azure functions to read from the storage account.
-* [Step 2: Create an Event Grid Subscription](#step-2-create-an-event-grid-subscription) - Subscribes all blob creation events to the Event Hub created by ARM template in [Step 3](#step-3-enabling-vnet-integration-optional) above.
-* [Step 3. Enabling Vnet Integration(Optional)](#step-3-enabling-vnet-integration-optional)
+* [Step 2: Create an Event Grid Subscription](#step-2-create-an-event-grid-subscription) - Subscribes all blob creation events to the Event Hub created by ARM template in [Step 3](#step-3-configure-azure-resources-using-arm-template) above.
 
 ### Step 1: Authorize App Service to read from storage account
 
@@ -157,27 +156,21 @@ To authorize the App Service to list the Storage Account key, do the following:
 
    * **Subscription**: Choose Pay as you Go.
    * **Managed Identity**: Choose Function App.
-   * **Select**:  **Select SUMOBRDLQProcessor\<unique_prefix\>** and **SUMORTaskConsumer\<unique_prefix\>** app services which are created by the ARM template. Click **Select**.
+   * **Select**:  **Select SUMOBRDLQProcessor\<unique_prefix\>** and **SUMOBRTaskConsumer\<unique_prefix\>** app services which are created by the ARM template. Click **Select**.
 1. Click **Review + assign**
 1. Click **Save**.
 
 ### Step 2: Create an Event Grid Subscription
 
-This section provides instructions for creating an event grid subscription, that subscribes all blob creation events to the Event Hub created by ARM template in [Step 3](#step-3-enabling-vnet-integration-optional) above.
+This section provides instructions for creating an event grid subscription, that subscribes all blob creation events to the Event Hub created by ARM template in [Step 3](#step-3-configure-azure-resources-using-arm-template) above.
 
 To create an event grid subscription, do the following:
 
-1. In the left pane of Azure portal click **All Services**, then search for and click **Event Grid Subscriptions**.
+1. Go to the storage account which needs to be monitored additionally. Go under Events blade in left pane.
 
-    ![AzureBlob_EventGridSubscriptions.png](/img/send-data/AzureBlob_EventGridSubscriptions.png)
-
-1. At the top of the **Event subscriptions** page, click **+Event Subscription**.
+1. At the top of the **Event subscriptions** tab, click **+Event Subscription** to create new event subscription.
 
     ![AzureBlob_EventSubscriptionsPage.png](/img/send-data/AzureBlob_EventSubscriptionsPage.png)
-
-    The Create Event Subscription dialog appears.
-
-    ![AzureBlob_CreatEventSubscription_dialog.png](/img/send-data/AzureBlob_CreatEventSubscription_dialog.png)
 
 1. Specify the following values for **Event Subscription Details**:
 
@@ -186,24 +179,16 @@ To create an event grid subscription, do the following:
 
 1. Specify the following values for **Topic Details**:
 
-   * **Topic Type**. Select Storage Accounts.
-   * **Subscription**. Select Pay As You Go
-   * **Resource Group**. Select the Resource Group for the Storage Account to which your Azure service will export logs, from where you want to ingest logs.
-   * **Resource**. Select the Storage Account you configured, from where you want to ingest logs.
    * **System Topic Name**. Provide the topic name, if the system topic already exists then it will automatically select the existing topic.
-    :::note
-    If you do not see your configured Storage Account in the dropdown menu, make sure you met the requirements in [Requirements](#requirements) section.
-    :::
-
+    
 1. Specify the following details for Event Types:
 
-   * Uncheck the **Subscribe to all event types** box.
-   * Select **Blob Created** from the **Define Event Types** dropdown.
+   * Select **Blob Created** from the **Filter to Event Types** dropdown.
 
 1. Specify the following details for Endpoint Types:
 
    * **Endpoint Type**. Select **Event Hubs** from the dropdown.
-   * **Endpoint.**  Click on **Select an endpoint.**
+   * **Endpoint.**  Click on **Configure an endpoint.**
 
     The Select Event Hub dialog appears.
 
@@ -211,7 +196,7 @@ To create an event grid subscription, do the following:
 
 1. Specify the following Select Event Hub parameters, then click **Confirm Selection.**
 
-   * **Resource Group**. Select the resource group you created [Step 3](#step-3-enabling-vnet-integration-optional) in which all the resources created by ARM template are present.
+   * **Resource Group**. Select the resource group you created [Step 3](#step-3-configure-azure-resources-using-arm-template) in which all the resources created by ARM template are present.
    * **Event Hub Namespace**. Select **SUMOBREventHubNamespace\<*unique string*\\>**.
    * **Event Hub**. Select **blobreadereventhub** from the dropdown.
 
@@ -226,9 +211,9 @@ To create an event grid subscription, do the following:
 
 1. Verify the deployment was successful by checking **Notifications** in the top right corner of the Azure Portal.
 
-### Step 3: Enabling VNet Integration (Optional)
+## Enabling VNet Integration (Optional)
 
-Assuming you have used the modified template which uses standard/premium plan for BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) functions. This assumes that your storage account access is enabled for selected networks.
+This assumes that your storage account access is not public and is enabled for selected networks i.e. your storage account is behind a virtual network. This requires you to used the modified template which uses standard/premium plan for BlobTaskConsumer and DLQTaskConsumer functions. In case you want the whole data pipeline sending logs to sumo logic, to be under a virtual network follow the instruction [here](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/full-vnet-integration.md).
 
 1. Create a subnet in a virtual network using the instructions in the [doc](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet#add-a-subnet). If you have multiple accounts in the same region you can skip step 2 below and use the same subnet and add it to the storage account as mentioned in step 3.
 1. Perform below steps for both BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) function apps.
@@ -242,15 +227,10 @@ Assuming you have used the modified template which uses standard/premium plan fo
 
     ![azureblob-vnet](/img/send-data/azureblob-vnet.png)
 
-   1. Also copy the outbound ip addresses you’ll need to add it in firewall configuration of your storage account.
-
-    ![azureblob-outboundip](/img/send-data/azureblob-outboundip.png)
-
 1. Go to your storage account from where you want to collect logs from. Go to Networking and add the same Vnet and subnet.
 
     ![azureblob-storageacct](/img/send-data/azureblob-storageacct.png)
 
-1. Add the outbound ip addresses (copied in step 2.d) from both BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) functions under Firewall with each ip in a single row of Address range column.
 1. Verify by going to the subnet. You should see Subnet delegation and service endpoints as shown in the screenshot below.
 
     ![azureblob-subnet](/img/send-data/azureblob-subnet.png)
