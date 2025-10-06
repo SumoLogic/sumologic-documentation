@@ -162,6 +162,8 @@ You can search Cloud SIEM fields by keyword, for example:
 
 `_index=sec_record_authentication kerberos`
 
+Keyword searching is supported for security indexes across all fields, unlike other indexes where only the `_raw` field is searched.
+
 ### Referencing nested JSON fields
 
 The **Security Record Details** field contains a JSON object with all of the fields from the underlying record or signal. Some of the data is nested in one or more sub-objects, like the `fields` object for record., shown expanded in the screenshot below. The fields object contains the contents of the [fields](/docs/cse/schema/schema-attributes) field in the underlying record, which is all of the unnormalized data from the original log message before it was normalized to the Cloud SIEM schema.
