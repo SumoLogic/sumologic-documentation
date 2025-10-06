@@ -48,7 +48,7 @@ It may take up to 5 minutes for a newly created budget to become active and enfo
 
 To view the selected scan budget:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Scan Budget**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu, select **Administration**, and then under **Account**, select **Scan Budget**. You can also click the **Go To...** menu at the top of the screen and select **Scan Budget**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Scan Budget**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Administration**, and then under **Account**, select **Scan Budget**. You can also click the **Go To...** menu at the top of the screen and select **Scan Budget**.
 1. Click the scan budget which you want to view.
 1. In the details section: <br/><img src={useBaseUrl('/img/manage/account/view-scan-budget.png')} alt="view-scan-budget" style={{border:'1px solid gray'}} width="400"/>
   - **Edit**. Click the **Edit** button to open the pane for editing. Edit the required fields and click on **Save**.
