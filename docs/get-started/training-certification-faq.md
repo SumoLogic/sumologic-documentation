@@ -36,17 +36,6 @@ In this video, we'll walk through learning and certification offerings to help y
 
 :::
 
-<!-- do we still want this in the docs, or leave this just for marketing/blogs?
-
-Effective September 2025, Sumo Logic exams are skills‑based, professionally proctored, and credentialed. This ensures your certification reflects real‑world ability and carries weight with peers and employers.
-
-Improvements include:
-
-* **All‑new, skills‑based exams** that measure practical proficiency.
-* **Live remote proctoring** via Kryterion for fairness and integrity.
-* **Digital badges** issued by Credly that you can share on LinkedIn and your resume.
--->
-
 ## Getting started
 
 ### How do I access the learning portal?
