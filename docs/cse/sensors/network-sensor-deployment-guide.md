@@ -12,7 +12,7 @@ import SensorEOL from '../../reuse/cloud-siem-network-sensor-eol.md';
 <SensorEOL/>
 :::
 
-This section has instructions for deploying the Cloud SIEM Network Sensor. It covers deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands. 
+This section has instructions for deploying the Cloud SIEM Network Sensor. It covers deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands. 
 
 ## Network Sensor overview
 
@@ -32,7 +32,7 @@ The sensor uses [PF_RING](https://www.ntop.org/products/packet-capture/pf_ring/)
    1. Use the scaling guide to determine the CPU and memory requirements for the VM or hardware. Confirm that their firewall rules are in place.
    1. Confirm that there is traffic flowing on the interface.
    1. Install the sensor.
-1. Confirm the configuration and that data is flowing into the cluster. 
+1. Confirm the configuration and that data is flowing into the cluster. 
 
 ## Network Sensor positioning best practices
 
@@ -80,7 +80,7 @@ The Network Sensor logs every connection attempt observed, even those consisting
 
 #### NAT Devices
 
-Aside from the devices and configurations described above, similar challenges are presented any time a Network Sensor inspects traffic after application of Network Address Translation. (NAT). NAT may refer to port address translation (PAT), source or destination NATs. In any case that a NAT policy rewrites the source IP address of a connection, it can impact the ability for Cloud SIEM to analyze and identify affected assets and makes it difficult for operations teams to respond effectively. Sumo Logic  recommends that Network Sensors have visibility in front of NAT.
+Aside from the devices and configurations described above, similar challenges are presented any time a Network Sensor inspects traffic after application of Network Address Translation. (NAT). NAT may refer to port address translation (PAT), source or destination NATs. In any case that a NAT policy rewrites the source IP address of a connection, it can impact the ability for Cloud SIEM to analyze and identify affected assets and makes it difficult for operations teams to respond effectively. Sumo Logic  recommends that Network Sensors have visibility in front of NAT.
 
 ## Installation requirements
 
@@ -91,9 +91,9 @@ This section describes resource requirements and prerequisites for Network Senso
 We recommend installing the Network Sensor on a host with at least two interfaces - one for traffic monitoring and one for management. That way, the sensor doesn't process and upload traffic associated with sensor management for analysis.
 
 The system upon which you install the Network Sensor must have the following resources, at a minimum. Depending on expected throughput, additional core, memory, and storage resources may be required, as shown in [Throughput-dependent resource requirements](#throughput-dependent-resource-requirements)
-below. 
+below. 
 
-| Operating System                   | Cores (CPU) | Memory (RAM) | Storage (Disk) |
+| Operating System                   | Cores (CPU) | Memory (RAM) | Storage (Disk) |
 |:------------------------------------|:-------------|:--------------|:----------------|
 | CentOS 7 or Ubuntu 16, 18, 20 | 4           | 4GB          | 250GB          |
 
@@ -129,7 +129,7 @@ reboot
 
 ### Outbound firewall rules
 
-See [Securing access to Sumo Logic infrastructure via DNS name or IP address](/docs/api/about-apis/getting-started#securing-access-to-sumo-logic-infrastructure-via-dns-name-or-ip-address) for information on how to configure your firewall for outbound access to Sumo Logic.
+See [API](/docs/api/) for information on how to configure your firewall for outbound access to Sumo Logic.
 
 ### Interface considerations
 
@@ -148,7 +148,7 @@ A number of NIC offload features should be disabled on capture devices (interfac
 
 #### NIC Hardware Buffer Queue Length
 
-The default size of the ring buffer on many NICs is conservative and in high traffic, scenarios may cause some frames to be dropped before they can be processed. 
+The default size of the ring buffer on many NICs is conservative and in high traffic, scenarios may cause some frames to be dropped before they can be processed. 
 
 Verify the ring parameters for the capture interface(s). The following example shows a maximum RX value of 4096, but an effective setting of
 256.
@@ -174,7 +174,7 @@ An example interface configuration which increases the RX ring buffer size is pr
 
 #### Recommended interface configuration
 
-The following stanza can be set as an *interface (5)* configuration in Debian or Ubuntu Linux sensors. Most often the file path is `/etc/network/interfaces` (some installations may use a file in `/etc/network/interfaces.d/`). These settings configure the network interface for optimized traffic capture as described above. Similar concepts apply to Red Hat-based distributions using interface setup configurations provided by the distribution.
+The following stanza can be set as an *interface (5)* configuration in Debian or Ubuntu Linux sensors. Most often the file path is `/etc/network/interfaces` (some installations may use a file in `/etc/network/interfaces.d/`). These settings configure the network interface for optimized traffic capture as described above. Similar concepts apply to Red Hat-based distributions using interface setup configurations provided by the distribution.
 
 **/etc/network/interfaces (Debian/Ubuntu)**  
 
@@ -192,7 +192,7 @@ iface eno1 inet manual
     post-down /sbin/ethtool -A $IFACE rx on autoneg on
 ```
 
-The section below describes the settings configured above. 
+The section below describes the settings configured above. 
 
 #### Interface settings
 
@@ -224,25 +224,25 @@ Link settings
 
 ## Install the Network Sensor
 
-Download the installer using the download link for your deployment shown on [Sensor Download Locations](/docs/cse/sensors/sensor-download-locations/). Start the installer using the command provided on that page, and then respond to the prompts as described below.
+Download the installer using the download link for your deployment shown on [Sensor Download Locations](/docs/cse/sensors/sensor-download-locations/). Start the installer using the command provided on that page, and then respond to the prompts as described below.
 
 ## Uninstall the Network Sensor
 
-1. Before uninstalling the Network Sensor, make sure that the service is stopped: `sudo service trident_sensor stop`
+1. Before uninstalling the Network Sensor, make sure that the service is stopped: `sudo service trident_sensor stop`
 1. To remove the package:
 
    * On Ubuntu, using `dpkg`: `sudo dpkg -r trident-sensor`
-   * On  Ubuntu, using `apt` (removes dependencies): `sudo apt remove trident-sensor`
+   * On  Ubuntu, using `apt` (removes dependencies): `sudo apt remove trident-sensor`
    * On Centos: `sudo yum remove trident-sensor`
 
 1. Remove remaining configuration and log files: `sudo rm -rf /opt/trident/sensor`
 
 ## Network Sensor configuration settings
 
-This section describes the configuration options in the Network Sensor configuration file, ` /opt/trident/sensor/conf/trident-sensor.cfg`.
+This section describes the configuration options in the Network Sensor configuration file, ` /opt/trident/sensor/conf/trident-sensor.cfg`.
 
-We strongly recommend that you do not edit  trident-sensor.cfg manually. Instead, you should run `/opt/trident/sensor/bin/configure.sh`, which is
-the wizard that runs when you install a Network Sensor. For some configuration options, the wizard updates both `/opt/trident/sensor/conf/trident-sensor.cfg` and `node.cfg`. 
+We strongly recommend that you do not edit  trident-sensor.cfg manually. Instead, you should run `/opt/trident/sensor/bin/configure.sh`, which is
+the wizard that runs when you install a Network Sensor. For some configuration options, the wizard updates both `/opt/trident/sensor/conf/trident-sensor.cfg` and `node.cfg`. 
 
 If you do make manual updates to `trident-sensor.cfg`, you must restart the Network Sensor for the changes to take effect with this command:
 
@@ -250,7 +250,7 @@ If you do make manual updates to `trident-sensor.cfg`, you must restart the Netw
 
 ### compression
 
-**Description.** This option controls whether the sensor compresses the Bro output files stored in ` /opt/trident/sensor/output/`. By default, the sensor does compress the Bro files using gzip when the size of the Bro file exceeds the value of the `compression_threshold` option, described below. To turn compression off, set this option to “no”, or any value other than “gzip”.  Compression occurs when the parameter is missing or set to gzip and the Bro output file is above the value set in `compression_threshold`.
+**Description.** This option controls whether the sensor compresses the Bro output files stored in ` /opt/trident/sensor/output/`. By default, the sensor does compress the Bro files using gzip when the size of the Bro file exceeds the value of the `compression_threshold` option, described below. To turn compression off, set this option to “no”, or any value other than “gzip”.  Compression occurs when the parameter is missing or set to gzip and the Bro output file is above the value set in `compression_threshold`.
 
 **Default Value.** gzip
 
@@ -266,7 +266,7 @@ If you do make manual updates to `trident-sensor.cfg`, you must restart the Netw
 
 ### debug
 
-**Description.** The sensor writes messages about the upload process, that is, the process of uploading captured data to Sumo Logic. By default, this log file is `/opt/trident/sensor/logs/trident-shipper.log`. You can use the debug option to tell the sensor to write debug-level to the log file. 
+**Description.** The sensor writes messages about the upload process, that is, the process of uploading captured data to Sumo Logic. By default, this log file is `/opt/trident/sensor/logs/trident-shipper.log`. You can use the debug option to tell the sensor to write debug-level to the log file. 
 
 **Default Value**. false
 
@@ -283,7 +283,7 @@ Description. The directory to which the sensor writes files extracted from netwo
 ### extracted_file_types
 
 **Description.** In the case that the sensor detects files in network traffic, this option controls what files the sensor will extract. Files that have the MIME types specified in this parameter will be extracted.
- 
+ 
 
 **Default Value.**
 `application/x-dosexec,application/x-msdownload,application/zip,application/x-msdos-program`
@@ -300,13 +300,13 @@ Description. The directory to which the sensor writes files extracted from netwo
 
 ### filter
 
-**Description.** This option tells Bro not to capture network traffic between the sensor and the Sumo Logic. The sensor sends status reports and Bro output files to end points on the destination, which we don’t want Bro to capture. 
+**Description.** This option tells Bro not to capture network traffic between the sensor and the Sumo Logic. The sensor sends status reports and Bro output files to end points on the destination, which we don’t want Bro to capture. 
 
-This option is populated when first you install the sensor, or when you reconfigure it by running `/opt/trident/sensor/bin/configure.sh.  `
+This option is populated when first you install the sensor, or when you reconfigure it by running `/opt/trident/sensor/bin/configure.sh.  `
 
 **Default Value.** none
 
-**Configured by wizard?** No. The wizard does not prompt for this value, instead it determines the value based on the Sumo Logic HTTP Source URL you supply to the wizard. 
+**Configured by wizard?** No. The wizard does not prompt for this value, instead it determines the value based on the Sumo Logic HTTP Source URL you supply to the wizard. 
 
 ### input_directory
 
@@ -318,7 +318,7 @@ Configured by wizard? No
 
 ### installation_directory
 
-**Description**. Directory where the sensor is installed; this is used for auto updating. 
+**Description**. Directory where the sensor is installed; this is used for auto updating. 
 
 **Default Value.** `/opt/trident/sensor`
 
@@ -330,7 +330,7 @@ Configured by wizard? No
 
 **Default Value**.` /opt/trident/sensor/logs/trident-shipper.log`
 
-**Configured by wizard?** The wizard does not prompt for this value, instead it determines the value based on the Sumo Logic HTTP Source URL you supply to the wizard. 
+**Configured by wizard?** The wizard does not prompt for this value, instead it determines the value based on the Sumo Logic HTTP Source URL you supply to the wizard. 
 
 ### maximum_extracted_file_size
 
@@ -350,15 +350,15 @@ Configured by wizard? No
 
 ### no_data_restart_threshold
 
-**Description.** Number of consecutive status reports with no data that should trigger a restart of the Network Sensor. This may be enabled to handle Zeek out-of-memory issues that causes capturing to stop occasionally. Recommended number to start with is 3 (a single status report with no data is normal).
+**Description.** Number of consecutive status reports with no data that should trigger a restart of the Network Sensor. This may be enabled to handle Zeek out-of-memory issues that causes capturing to stop occasionally. Recommended number to start with is 3 (a single status report with no data is normal).
 
-**Default value.** -1 (disabled)
+**Default value.** -1 (disabled)
 
-**Configured by wizard?** No
+**Configured by wizard?** No
 
 ### proxy_https
 
-**Description**. Whether or not the configured proxy is using SSL.
+**Description**. Whether or not the configured proxy is using SSL.
 
 **Default Value**. true
 
@@ -382,7 +382,7 @@ Configured by wizard? No
 
 ### proxy_password
 
-**Description.** Password to use when authenticating to the proxy; required if `proxy_auth_required` is set to true; note: do not edit the config file directly to change this, change it by re-running the configuration wizard.
+**Description.** Password to use when authenticating to the proxy; required if `proxy_auth_required` is set to true; note: do not edit the config file directly to change this, change it by re-running the configuration wizard.
 
 **Default Value**. None
 
@@ -400,7 +400,7 @@ Configured by wizard? No
 
 **Description.** Username to use when authenticating to the proxy; required if `proxy_auth_required` is set to “true”.
 
-**Default Value.** No. 
+**Default Value.** No. 
 
 **Configured by wizard?** Yes
 
@@ -430,7 +430,7 @@ Configured by wizard? No
 
 ### set_source_category
 
-**Description.** When this option is set to "true", the value of the `_sourceCategory` metadata field assigned to the data collected by the sensor is `cse/network/<type>`. If you set the option to "false", the `_sourceCategory` value will be the same as the `_sourceCategory` assigned the Sumo Logic collector. 
+**Description.** When this option is set to "true", the value of the `_sourceCategory` metadata field assigned to the data collected by the sensor is `cse/network/<type>`. If you set the option to "false", the `_sourceCategory` value will be the same as the `_sourceCategory` assigned the Sumo Logic collector. 
 
 **Default Value**. true
 
@@ -438,7 +438,7 @@ Configured by wizard? No
 
 ### shipper_threads
 
-**Description.** The number of threads the process that sends the collected data to Sumo Logic will use to send files concurrently; setting this higher than 8 will have no impact. 
+**Description.** The number of threads the process that sends the collected data to Sumo Logic will use to send files concurrently; setting this higher than 8 will have no impact. 
 
 **Default Value.** Varies from 3 to 8; set dynamically based on the number of available CPUs.
 
@@ -446,9 +446,9 @@ Configured by wizard? No
 
 ### skipped_log_types
 
-**Description.** This option controls which log files are discarded and not uploaded by the sensor. (For a list of log files generated by Zeek, see [Log Files](https://docs.zeek.org/en/master/script-reference/log-files.html)).
+**Description.** This option controls which log files are discarded and not uploaded by the sensor. (For a list of log files generated by Zeek, see [Log Files](https://docs.zeek.org/en/master/script-reference/log-files.html)).
 
-**Example**. To filter discard `ntp.log`, add the following parameter to `trident-sensor.cfg`:  
+**Example**. To filter discard `ntp.log`, add the following parameter to `trident-sensor.cfg`:  
 
 `skipped_log_types = dpd,weird,syslog,pe,tunnel,communication,conn-summary,known_hosts,software,stdout.stderr,loaded_scripts,ntp`
 
@@ -482,9 +482,9 @@ Configured by wizard? No
 
 ## Sample configuration files
 
-This section contains examples of the `trident-sensor.cfg` and `node.cfg` files.    
+This section contains examples of the `trident-sensor.cfg` and `node.cfg` files.    
 
-### Sensor configured to use a single worker
+### Sensor configured to use a single worker
 
 This sample` /opt/trident/sensor/conf/trident-sensor.cfg` file specifies the use of a single worker.
 
@@ -514,7 +514,7 @@ workers                     = 1
 ### Sensor configured to use four workers
 
 This sample `/opt/trident/sensor/conf/trident-sensor.cfg` file specifies
-the use of four  workers.
+the use of four  workers.
 
 ```
 log_file                    = /opt/trident/sensor/logs/trident-shipper.log
@@ -538,7 +538,7 @@ cluster_config_file         = /opt/trident/sensor/bro/etc/node.cfg
 
 ### Sample node.cfg file (cluster configuration file)
 
-The `/opt/trident/sensor/bro/etc/node.cfg` file is automatically generated, based on the choices you make when running the configuration wizard at installation time. 
+The `/opt/trident/sensor/bro/etc/node.cfg` file is automatically generated, based on the choices you make when running the configuration wizard at installation time. 
 
 Typically you should not edit `node.cfg` without consulting Cloud SIEM support. Under some circumstances, edits may be necessary, for example, if you want to monitor more than one capture interface.
 
@@ -627,20 +627,20 @@ $ sudo tcpdump -c 20 -i <<interface name>>     Or    $ sudo tcpdump -c 20 -i <<i
 
 ## Troubleshooting
 
-### Interface status 
+### Interface status 
 
-If an Ubuntu VM (possibly other Linux distributions) does not show both interfaces (one for traffic monitoring and one for management) that have been assigned when using the `ifconfig` command, but does show both interfaces when running an `ip link show` then the second interface is not currently in an UP state.   
-   
-You can temporarily put the interface in the UP state, using the following command:
+If an Ubuntu VM (possibly other Linux distributions) does not show both interfaces (one for traffic monitoring and one for management) that have been assigned when using the `ifconfig` command, but does show both interfaces when running an `ip link show` then the second interface is not currently in an UP state.   
+   
+You can temporarily put the interface in the UP state, using the following command:
 
 `$ ip link set\<<interface name\>> up`  
-   
-To make the UP state persist through a reboot or service restart, edit the `/etc/network/interfaces` file with your choice of editor.  Remember to use sudo. Add the following line to this file:  
-   
+   
+To make the UP state persist through a reboot or service restart, edit the `/etc/network/interfaces` file with your choice of editor.  Remember to use sudo. Add the following line to this file:  
+   
 `auto\<<interface name\>>`  
-   
+   
 After you save this file, clear any existing IPs from the interface by running:  
-   
+   
 `$ sudo ip addr flush\<<interface name\>>`
 
 ### Troubleshoot Bro/Zeek
@@ -651,7 +651,7 @@ Diagnose issues with Bro/Zeek using the following command:
 
 The output of this command shows any fatal errors observed when one or more workers crashed.
 
-There’s also a `crash-diagscript` you can run for the node that had an issue (The output below is from intentionally crashing Bro worker-0-1 node with an invalid pcap filter):
+There’s also a `crash-diagscript` you can run for the node that had an issue (The output below is from intentionally crashing Bro worker-0-1 node with an invalid pcap filter):
 
 ```
 [root@localhost ~]# /opt/trident/sensor/bro/share/broctl/scripts/crash-diag /opt/trident/sensor/output/worker-0-1/

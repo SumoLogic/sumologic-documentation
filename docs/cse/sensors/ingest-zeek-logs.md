@@ -6,18 +6,18 @@ description: Learn how to collect Zeek (Bro) logs and ingest them to Cloud SIEM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has instructions for ingesting Zeek logs into Cloud SIEM. 
+This topic has instructions for ingesting Zeek logs into Cloud SIEM. 
 
 ## What is Zeek?
 
-Cloud SIEM uses [Zeek](https://zeek.org/) (formerly known as Bro) for network visibility. Zeek is an open source network analysis framework that organizes packets into flows, decodes common protocols, performs file extraction, SSL certificate validation, OS fingerprinting and more. Zeek can be extended through plugins for additional detection capabilities.
+Cloud SIEM uses [Zeek](https://zeek.org/) (formerly known as Bro) for network visibility. Zeek is an open source network analysis framework that organizes packets into flows, decodes common protocols, performs file extraction, SSL certificate validation, OS fingerprinting and more. Zeek can be extended through plugins for additional detection capabilities.
 
 ## Supported collection method: Sumo Logic Source
 
 If you already have a Zeek deployment, you can collect logs using a Sumo Logic Collector and Source.
 
 :::note
-This method requires that your Zeek logs are in JSON format. 
+This method requires that your Zeek logs are in JSON format. 
 :::
 
 ### Configure a Sumo Logic Source
@@ -30,7 +30,7 @@ After configuring the appropriate source, use one of the methods described in [E
 
 ### Enable parsing and mapping of Zeek logs
 
-This configuration step is required to ensure that Cloud SIEM knows how to parse incoming Zeek logs, correctly map the log fields to schema attributes, and create Cloud SIEM records. The most important bit of information is what type of data a particular log contains. Zeek has a variety of log types, for example `conn` for TCP/UDP/ICMP connections, `http` for HTTP requests and replies, and `ftp` for FTP activity.
+This configuration step is required to ensure that Cloud SIEM knows how to parse incoming Zeek logs, correctly map the log fields to schema attributes, and create Cloud SIEM records. The most important bit of information is what type of data a particular log contains. Zeek has a variety of log types, for example `conn` for TCP/UDP/ICMP connections, `http` for HTTP requests and replies, and `ftp` for FTP activity.
 
 So, how to determine whether a Zeek log is a `conn`, `http`, `ftp`, or some other log type? Zeek logs don’t contain a key that explicitly holds a value that is only the log type identifier. There are two options for dealing with this:
 
@@ -54,15 +54,15 @@ After installing the `json-streaming-logs` package, follow these instructions to
 
 ### Use FERs
 
-With this method, you use Sumo Logic Field Extraction Rules (FERs) to extract fields from each Zeek log. The fields you extract will provide the information necessary for Cloud SIEM to correctly parse and map the logs. 
+With this method, you use Sumo Logic Field Extraction Rules (FERs) to extract fields from each Zeek log. The fields you extract will provide the information necessary for Cloud SIEM to correctly parse and map the logs. 
 
-Here’s an example Bro log from the Security Onion platform. 
+Here’s an example Bro log from the Security Onion platform. 
 
 ```
 {"TAGS":".source.s_bro_conn","SOURCEIP":"127.0.0.1","PROGRAM":"bro_conn","PRIORITY":"notice","MESSAGE":"{\"ts\":\"2020-05-28T10:32:51.997054Z\",\"uid\":\"Cu3KVA2TbWqZm1Z0S6\",\"id.orig_h\":\"1.2.3.4\",\"id.orig_p\":16030,\"id.resp_h\":\"5.6.7.8\",\"id.resp_p\":161,\"proto\":\"udp\",\"duration\":30.000317811965942,\"orig_bytes\":258,\"resp_bytes\":0,\"conn_state\":\"S0\",\"local_orig\":true,\"local_resp\":true,\"missed_bytes\":0,\"history\":\"D\",\"orig_pkts\":6,\"orig_ip_bytes\":426,\"resp_pkts\":0,\"resp_ip_bytes\":0,\"sensorname\":\"test\"}","ISODATE":"2020-05-28T10:34:24+00:00","HOST_FROM":"somehost","HOST":"somehost","FILE_NAME":"/nsm/bro/logs/current/conn.log","FACILITY":"user"}
 ```
 
-In the log above, the content of the Bro log is the value of the `MESSAGE` key. Note that no key in the log explicitly states the log type, which is `conn`. 
+In the log above, the content of the Bro log is the value of the `MESSAGE` key. Note that no key in the log explicitly states the log type, which is `conn`. 
 
 To enable Cloud SIEM to successfully process the log, we need to create the following fields listed in the table below.
 
@@ -99,7 +99,7 @@ Perform these steps for each of the FERs.
 1. Click **Add Rule**.
 1. In the **Add Field Extraction Rule** pane:
    1. **Rule Name**. Enter a meaningful name for the rule.
-   1. **Applied At**. Click Ingest Time. 
+   1. **Applied At**. Click Ingest Time. 
    1. **Scope**. Click **Specific Data**.
    1. **Parse Expression**. Enter the parse expression shown in the table above for the field the rule will extract.
 1. Click **Save**.<br/><img src={useBaseUrl('img/cse/example-fer.png')} alt="Example FER" style={{border: '1px solid gray'}} width="400"/>

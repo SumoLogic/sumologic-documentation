@@ -11,7 +11,7 @@ import SensorEOL from '../../reuse/cloud-siem-network-sensor-eol.md';
 <SensorEOL/>
 :::
 
-The Cloud SIEM Network Sensor can be downloaded from a static URL that is specific to your Cloud SIEM deployment. Each Sumo Logic deployment has URLs used to download sensor software. If you are not sure which endpoint to use, see How can I determine which endpoint I should use?
+The Cloud SIEM Network Sensor can be downloaded from a static URL that is specific to your Cloud SIEM deployment. Each Sumo Logic deployment has URLs used to download sensor software. If you are not sure which endpoint to use, see How can I determine which endpoint I should use?
 
 ## Installing the Network Sensor
 
@@ -21,7 +21,7 @@ After downloading the Network Sensor appropriate for your system architecture, r
 sudo wget -q -O - <URL> | sudo /bin/bash
 ```
 
-For information about the installer prompts, see [Network Sensor Deployment Guide](/docs/cse/sensors/network-sensor-deployment-guide).
+For information about the installer prompts, see [Network Sensor Deployment Guide](/docs/cse/sensors/network-sensor-deployment-guide).
 
 ## Sensor download URLs for the AU region
 
@@ -41,7 +41,7 @@ For information about the installer prompts, see [Network Sensor Deployment Gui
 | Network Sensor CentOS7  | https://collectors.ca.sumologic.com/rest/sec/download/centos7 |
 | Network Sensor CentOS8  | https://collectors.ca.sumologic.com/rest/sec/download/centos8 |
 
-## Sensor download URLs for the US2 region
+## Sensor download URLs for the US2 region
 
 | Sensor                  | URL                                                               |
 |:-------------------------|:-------------------------------------------------------------------|

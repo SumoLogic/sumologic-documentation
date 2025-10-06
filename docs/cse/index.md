@@ -51,12 +51,6 @@ This section contains the following topics:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/sensors"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Sensors</h4></a>
-  <p>Cloud SIEM Sensors collect log and event data from your infrastructure and applications.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/cse/integrations"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Integrations</h4></a>
   <p>Cloud SIEM integration with Sumo Logic and threat intel sources, and leveraging the Cloud SIEM Insight Enrichment Server.</p>
   </div>

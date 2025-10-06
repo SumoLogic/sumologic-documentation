@@ -19,7 +19,7 @@ The Cloud SIEM Network Sensor is a flexible network security monitor that monito
 
 Various conditions may cause a network interface to drop frames. Interface counters should be monitored to identify faults.
 
-Errors may be monitored using `ip-link(8)`:  `ip -s link show`
+Errors may be monitored using `ip-link(8)`:  `ip -s link show`
 
 Confirm that the RX line shows incrementing bytes/packets but that the `errors`, `dropped` and `overrun` fields do not increment. It is useful to run the command several times with some delay in between.
 
@@ -67,7 +67,7 @@ Zeek can get into a state where it runs out of memory and stops processing traff
 
 Security monitoring can be complex. Network data capture is a system with many layers, and degradation or faults at one layer can affect the whole. Performance starts at the initial traffic acquisition source (i.e. TAPs, SPANs/port mirrors) and ends with the monitoring software itself (Bro/Zeek). Along the way a number of hardware and software components are involved, such as cabling, capture network interface cards, CPU, memory, drivers, OS kernel, memory buffers, and numerous settings. Some work fine as defaults and others must be tuned correctly. All components must be monitored and validated for proper operation. This document provides an overview of how to properly configure and monitor some of the important components in a Network Sensor deployment.
 
-Sumo Logic recommends that Network Sensor admins monitor and collect performance statistics from deployed sensors. Doing so can help with tracking and spotting faults when they occur and help plan for adequate system resources. 
+Sumo Logic recommends that Network Sensor admins monitor and collect performance statistics from deployed sensors. Doing so can help with tracking and spotting faults when they occur and help plan for adequate system resources. 
 
 In the examples below, we use `eno1` as the example interface name. Substitute the proper interface name(s) on your sensor as needed.
 
@@ -94,7 +94,7 @@ To check interface link negotiation use `ethtool`:
 The Speed and Duplex fields indicate the active link settings. For a gigabit ethernet link, those are expected to show `1000Mb/s` and `Full`.
 
 MTU (maximum transmission units) is another setting that should match up between connected devices. If all devices use the standard Ethernet MTU size of 1500 bytes, issues are unlikely. If jumbo frames are in use on the network and an upstream device is using a large MTU (e.g. 9000, 9216, etc.), the capture interface MTU should also be adjusted to
-match. 
+match. 
 
 To check the interface MTU:
 
@@ -106,7 +106,7 @@ Having verified performance of the data delivery path, the next focus area is Br
 
 ## CaptureLoss
 
-An important metric Zeek log that is collected from the Cloud SIEM Network Sensor is the notice `CaptureLoss::Too_Much_Loss`. Zeek internally tracks loss rates by observing when streams arrive with gaps indicating missing segments in the stream. Because this metric relates directly to traffic monitored by Zeek, it may either indicate packet loss in Zeek itself, or a loss condition happening elsewhere upstream from Zeek (anywhere along the line). This notice is logged on a periodic basis when a configured threshold is exceeded and is the topic of a key FAQ. https://www.zeek.org/documentation/faq.html#how-can-i-reduce-the-amount-of-captureloss-or-dropped-packets-notice It is possible to analyze occurrences of CaptureLoss notices in Cloud SIEM using the following query in an Sumo Logic log search tab.
+An important metric Zeek log that is collected from the Cloud SIEM Network Sensor is the notice `CaptureLoss::Too_Much_Loss`. Zeek internally tracks loss rates by observing when streams arrive with gaps indicating missing segments in the stream. Because this metric relates directly to traffic monitored by Zeek, it may either indicate packet loss in Zeek itself, or a loss condition happening elsewhere upstream from Zeek (anywhere along the line). This notice is logged on a periodic basis when a configured threshold is exceeded and is the topic of a key FAQ. https://www.zeek.org/documentation/faq.html#how-can-i-reduce-the-amount-of-captureloss-or-dropped-packets-notice It is possible to analyze occurrences of CaptureLoss notices in Cloud SIEM using the following query in an Sumo Logic log search tab.
 
 `_sourceCategory = "cse/network/notice" | where note = "CaptureLoss::Too_Much_Loss"`
 
@@ -139,13 +139,13 @@ Report on the overall cluster status:
 Report on the status of nodes in the cluster:
 
 `/opt/trident/sensor/bro/bin/zeekctl nodes`  
-   
+   
 **Process Overview**
 
 Report on Zeek cluster processes:
 
 `/opt/trident/sensor/bro/bin/zeekctl ps.bro`  
-   
+   
 **Process Runtime State**
 
 Show a real-time running task view of the cluster:
@@ -193,4 +193,4 @@ Several diagnostic outputs may be collected.
 * https://cromwell-intl.com/open-source/performance-tuning/ethernet.html
 * https://www.zeek.org/documentation/faq.html#capture-loss-without-dropped-packets
 * http://www.draconyx.net/articles/configuring-a-network-monitoring-system-sensor-w-pf_ring-on-ubuntu-server-1-04-part-1-interface-configuration.html   
- 
+ 
