@@ -4,7 +4,7 @@ title: Local Windows Performance Monitor Log Source
 description: Collect local performance data from the Windows Performance Monitor.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Set up a Local Windows Performance Monitor Log Source to collect performance data that you would normally see in the Windows Performance Monitor. Setting up a Local Windows Performance Monitor Log Source is a quick process. There are no prerequisites for setting up the Source, and you'll begin collecting logs within a minute or so.
 
@@ -17,7 +17,7 @@ MSDN.
 
 To configure a Local Windows Performance Monitor Log Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Find the name of the installed Collector to which you’d like to add a Source. Click **Add** and then choose **Add Source** from the menu. 
 1. Click **Windows Performance**. 
 1. Choose **Local** for the Type of **Windows Performance Source**. 
@@ -28,8 +28,8 @@ To configure a Local Windows Performance Monitor Log Source:
    * **Source Category.** Enter a string used to tag the logs collected from this Source with searchable metadata. For example, typing `web_apps` tags all the logs from this Source in the sourceCategory field, so running a search on `_sourceCategory=web_apps` would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good Source Category, Bad Source     Category](/docs/send-data/best-practices). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](local-windows-performance-monitor-log-source.md) below.
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **Processing Rules.** (Optional.) To add rules or filters click **Add Rule**. Enter a name, a filter, and select the type. Then click **Apply**.
 1. **Perfmon Queries.** Select from the provided default Perfmon Queries, or create your own custom query.
 

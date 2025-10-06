@@ -25,6 +25,7 @@ replace(<sourceString>, /<regex>/, <replaceString>) as <field>
 * Regex must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax).
 * The string is case sensitive.
 * When using multiple replace operators on the same field you must use the same alias, see an [example below](#use-the-replace-operator-on-multiple-strings-within-one-field).
+* Ensure that the output message length is less than 100k.
 
 ### Regex usage
 

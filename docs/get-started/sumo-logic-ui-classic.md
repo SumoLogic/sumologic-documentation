@@ -90,14 +90,14 @@ The following table lists the options available for the Search, Metrics, and Liv
 
 | Option | Search tab  | Metrics tab  | Live Tail tab |
 |:--|:--|:--|:--|
-| Pin | ![check](/img/reuse/check.png) | — | — |
-| Rename | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
-| Duplicate | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
-| Open a New Browser Tab | — | — | ![check](/img/reuse/check.png)  |
-| Close | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png) |
-| Close Other Tabs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
-| Close All Tabs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
-| Close Tabs to the Right | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Pin | &#10003; | — | — |
+| Rename | &#10003; | &#10003; | &#10003;  |
+| Duplicate | &#10003; | &#10003; | &#10003;  |
+| Open a New Browser Tab | — | — | &#10003;  |
+| Close | &#10003; | &#10003; |  &#10003; |
+| Close Other Tabs | &#10003; | &#10003; | &#10003;  |
+| Close All Tabs | &#10003; | &#10003; | &#10003;  |
+| Close Tabs to the Right | &#10003; | &#10003; | &#10003; |
 
 ## Mastering everyday tasks
 
@@ -195,7 +195,7 @@ To pin a search, do the following:
 1. A message appears telling you the location of your pinned search in the Library. The Pinned Search takes the name of the Search tab by default.<br/>  ![pinmessage.png](/img/get-started/ui/pinmessage.png)
 1. To change the name of a Pinned Search, double-click the Search tab and enter a new name in the name field.
 
-For information on how to manage pinned searches, see the [Pinned Searches](/docs/get-started/library#pinned-searches) page.
+For information on how to manage pinned searches, see [Pin a Search](/docs/search/get-started-with-search/search-page/pin-a-search).
 
 ### Manage your personal account preferences
 

@@ -1,7 +1,7 @@
 ---
 slug: /integrations/microsoft-azure
 title: Microsoft and Azure
-description: Learn how to use the Sumo Logic apps for Microsoft and Microsoft Azure.
+description: Integrate Microsoft Azure with Sumo Logic to enable real-time monitoring, log collection, and cloud performance analytics across Azure services.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -279,6 +279,18 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
   <div className="container">
   <a href="/docs/integrations/microsoft-azure/azure-security-defender-for-cloud"><img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-cloud.png')} alt="thumbnail icon" width="75"/><h4>Azure Security - Defender for Cloud</h4></a>
   <p>Learn about the Sumo Logic collection process for the Azure Security - Defender for Cloud service.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="thumbnail icon" width="50"/><h4>Azure Security - Microsoft Defender for Identity</h4></a>
+  <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Defender for Identity</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365"><img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-office-365.png')} alt="thumbnail icon" width="50"/><h4>Azure Security - Microsoft Defender for Office 365</h4></a>
+  <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Defender for Office 365</p>
   </div>
 </div>
 <div className="box smallbox card">

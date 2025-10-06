@@ -11,6 +11,12 @@ This page describes the major changes and the necessary migration steps.
 
 ## Important changes
 
+## Prometheus 3.0
+
+Prometheus 3.0 includes several breaking changes. Learn more about those changes and the migration guide in the [documentation](https://prometheus.io/docs/prometheus/latest/migration/).
+
+Use Helm chart [v4.14.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.14.0) or later to ensure compatibility with Prometheus 3.0 scrapers. Note that Prometheus 3.0 is not the default in Helm chart version 4.
+
 ### Kubernetes Attributes Processor support (v4.13)
 
 The [Kubernetes Attributes Processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/k8sattributesprocessor/README.md) is now supported for logs and metrics metadata enrichment. This processor is disabled by default. To enable this processor for logs, set `metadata.logs.useSumoK8sProcessor` to `false`. To enable this processor for metrics, set `metadata.metrics.useSumoK8sProcessor` to `false`.
@@ -42,11 +48,32 @@ By default, the OpenTelemetry Collector is now used for metrics collection inste
 Ensure that the following CRDs from the OpenTelemetry operator are installed and updated using the following commands.
 
 :::note
-Please follow instructions below to install the appropriate CRD versions
+Follow the instructions below to install the appropriate CRD versions.
 :::
 
-#### CRDs to install (v4.12.0 and later)
 
+#### CRDs to install (v4.16.0 and later)
+
+```shell
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.16.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_opampbridges.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.16.0/deploy/helm/sumologic/crds/crd-opentelemetrycollector.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.16.0/deploy/helm/sumologic/crds/crd-opentelemetryinstrumentation.yaml --force-conflicts
+
+kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.16.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_targetallocators.yaml --force-conflicts
+```
+
+Then, annotate and label these CRDs as below.
+
+```shell
+kubectl annotate crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io targetallocators.opentelemetry.io \
+  meta.helm.sh/release-name=${RELEASE_NAME} \
+  meta.helm.sh/release-namespace=${RELEASE_NAMESPACE}
+kubectl label crds instrumentations.opentelemetry.io opentelemetrycollectors.opentelemetry.io opampbridges.opentelemetry.io app.kubernetes.io/managed-by=Helm
+```
+
+#### CRDs to install (v4.12.0 to v4.15.x)
 ```shell
 kubectl apply --server-side -f https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/tags/v4.12.0/deploy/helm/sumologic/crds/crd-opentelemetry.io_opampbridges.yaml --force-conflicts
 

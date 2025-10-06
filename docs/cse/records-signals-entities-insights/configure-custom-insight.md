@@ -47,7 +47,7 @@ In that case, under **Strict Signal Configuration**, select **Only include the s
 
 To create a custom insight:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu, select **Content > Custom Insights**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu, select **Content > Custom Insights**. 
 1. Click **Add Custom Insight** on the **Custom Insights** page.
 1. The **Configure the Custom Insight** popup appears. <br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Configure an insight" style={{border: '1px solid gray'}} width="600"/>
 1. In the **Name** field, enter a name for the custom insight.
