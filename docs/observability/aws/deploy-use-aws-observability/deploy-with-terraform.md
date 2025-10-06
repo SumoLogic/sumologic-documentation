@@ -32,7 +32,7 @@ If you've previously set up our AWS Observability Solution with CloudFormation a
 :::
 
 :::note
-The AWS Observability Solution no longer supports the Global Intelligence for AWS CloudTrail DevOps app, which is now deprecated.
+The Global Intelligence for AWS CloudTrail DevOps app has been deprecated and consequently removed from the AWS Observability Solution.
 :::
 
 
