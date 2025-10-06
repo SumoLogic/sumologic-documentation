@@ -2,7 +2,7 @@
 id: training-certification-faq
 title: Sumo Logic Training and Certifications FAQ
 sidebar_label: Training and certifications
-description: Learn more about the Sumo Logic Training and Certification Program.
+description: Find answers to frequently asked questions about Sumo Logic training, certifications, and learning resources.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -47,7 +47,7 @@ Users that do not authenticate to Sumo Logic using a username and password are r
 
 To activate your account:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help**, and then select **Community**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help**, and then select either **Community**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help**, and then select either **Community**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help**, and then select **Community**. 
 1. You will be prompted to activate your account.
 1. Click **Send Activation/Verification Email**.
 1. Open the email and click **Verify Your Email**.

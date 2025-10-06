@@ -1,7 +1,7 @@
 ---
 slug: /integrations/microsoft-azure
 title: Microsoft and Azure
-description: Learn how to use the Sumo Logic apps for Microsoft and Microsoft Azure.
+description: Integrate Microsoft Azure with Sumo Logic to enable real-time monitoring, log collection, and cloud performance analytics across Azure services.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -283,6 +283,18 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="thumbnail icon" width="50"/><h4>Azure Security - Microsoft Defender for Identity</h4></a>
+  <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Defender for Identity</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365"><img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-office-365.png')} alt="thumbnail icon" width="50"/><h4>Azure Security - Microsoft Defender for Office 365</h4></a>
+  <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Defender for Office 365</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-service-bus.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-service-bus">Azure Service Bus</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Service Bus.</p>
@@ -335,6 +347,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
       <img src={useBaseUrl('img/integrations/microsoft-azure/k8s.png')} alt="Thumbnail icon" width="40"/>
       <h4><a href="/docs/integrations/microsoft-azure/kubernetes">Azure Kubernetes Service Control Plane</a></h4>
       <p>A guide to the Sumo Logic app for Azure Kubernetes Service Control Plane.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-identity.png')} alt="Thumbnail icon" width="40"/>
+      <h4><a href="/docs/integrations/microsoft-azure/microsoft-defender-for-endpoint">Microsoft Defender for Endpoint</a></h4>
+      <p>A guide to the Sumo Logic app for Microsoft Defender for Endpoint.</p>
       </div>
     </div>
     <div className="box smallbox card">

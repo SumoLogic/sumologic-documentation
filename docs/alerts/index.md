@@ -1,7 +1,7 @@
 ---
 slug: /alerts
 title: Alerts
-description: Create Monitors and Scheduled Searches to notify users of changing conditions.
+description: Configure alerts in Sumo Logic to monitor log data for anomalies and notify teams in real time about important system and security events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Threat intelligence indicators can be used in Cloud SIEM to find possible threat activity.
 
 :::note
-Previously, Cloud SIEM administrators could add [custom threat intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/) in Cloud SIEM. **You can no longer add custom threat intelligence sources in Cloud SIEM**. To add new sources, [ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) using the Sumo Logic threat intelligence framework. [Contact Support](https://support.sumologic.com/support/s/) if you still need to create custom sources in Cloud SIEM.
+**You can no longer add custom threat intelligence sources in Cloud SIEM**. To add new sources, [ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) using the Sumo Logic threat intelligence framework.
 :::
 
 ## hasThreatMatch Cloud SIEM rules language function
@@ -27,7 +27,7 @@ For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#has
 
 ## View threat indicator labels in the Cloud SIEM UI
 
-Entities are automatically enriched with indicator data from [custom intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/) and [sources that you add to the threat intelligence datastore](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources). (However, entities are not enriched with indicator data from the [SumoLogic_ThreatIntel and _sumo_global_feed_cs](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) threat intelligence sources.)
+Entities are automatically enriched with indicator data from all [threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources) and the legacy [custom intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/). (However, after initial enrichment, any subsequent changes to indicators in the default [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) will not be reflected in the already-enriched entities.)
 
 When a match to a threat indicator in sources is found, labels showing the entity's "reputation" will be displayed throughout the Cloud SIEM UI:
 
@@ -35,7 +35,7 @@ When a match to a threat indicator in sources is found, labels showing the entit
 |:--|:--|:--|
 | **Malicious** | <img src={useBaseUrl('img/cse/indicator-malicious-label.png')} alt="Malicious label" width="100"/> | <img src={useBaseUrl('img/cse/indicator-malicious-icon.png')} alt="Malicious icon" width="30"/> |
 | **Suspicious** | <img src={useBaseUrl('img/cse/indicator-suspicious-label.png')} alt="Suspicious label" width="110"/> | <img src={useBaseUrl('img/cse/indicator-suspicious-icon.png')} alt="Suspicious icon" width="30"/> |
-| **Not Flagged** | <img src={useBaseUrl('img/cse/indicator-notflagged-label.png')} alt="Suspicious label" width="125"/> | None |
+| **Not Flagged** | <img src={useBaseUrl('img/cse/indicator-notflagged-label.png')} alt="Not flagged label" width="125"/> | <img src={useBaseUrl('img/cse/indicator-notflagged-icon.png')} alt="Not flagged icon" width="30"/> |
 
 **Not Flagged** is not the default value (which is no indicator at all). Cloud SIEM does not automatically assign an indicator value; enrichments must explicitly define it.
 
@@ -67,7 +67,7 @@ Following is the mapping of threat type fields in indicators to reputation label
 | `compromised` |  **Malicious** |
 | `malicious-activity` | **Malicious** |
 | `attribution` |  (None) |
-| `unknown` (or not set) |  **Suspicious** |
+| Unknown (or not set) |  **Suspicious** |
 
 :::note
 If the mapping produces a threat indicator level of **Malicious**, but the confidence is less than 60, the entity's reputation will be set to **Suspicious** instead. If there are multiple reputation values for a given entity (potentially from threat intel and enrichment), Cloud SIEM will show the most severe indicator.

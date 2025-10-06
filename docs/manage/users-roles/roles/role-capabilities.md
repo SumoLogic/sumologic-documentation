@@ -19,7 +19,7 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | View Fields	| View [fields](/docs/manage/fields), which are custom metadata fields you can assign to logs.|
 | Manage Fields	| Manage fields. Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View Field Extraction Rules capabilities.|
 | Manage Field Extraction Rules	| Manage [field extractions](/docs/manage/field-extractions), which speed the search process by automatically parsing fields as log messages are ingested. Note that if you grant a role the Manage Field Extraction Rules capability, users with that role will also have the Manage Fields, View Fields, and View Field Extraction Rules capabilities.|
-| Manage S3 Data Forwarding	| Manage [S3 data forwarding](/docs/manage/data-forwarding/amazon-s3-bucket) from Sumo Logic to an S3 bucket.|
+| Manage S3 and GCS Data Forwarding	| Manage [S3 and GCS data forwarding](/docs/manage/data-forwarding/forward-data-from-sumologic) from Sumo Logic to an S3 or GCS bucket.|
 | Manage Content	| Manage the content for your organization. This provides access to [Admin Mode](/docs/manage/content-sharing/admin-mode) in the Library.|
 | Manage Apps | Install and manage [apps](/docs/integrations). |
 | Manage Connections | Manage the [connections](/docs/alerts/webhook-connections/) that allow you to send alerts to other tools. |
@@ -80,17 +80,17 @@ Following are the capabilities you can assign when you [create roles](create-ma
 
 | Capability | Description |
 | :-- | :-- |
-| Task View | See tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
-| Task Access | Access your tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/).|
-| Task Access all | Access all user tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
-| Task Edit | Configure tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
-| Task Reassign | Assign tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/) to users. |
+| Task View | See tasks in [playbooks](/docs/platform-services/automation-service/playbooks/). |
+| Task Access | Access your tasks in [playbooks](/docs/platform-services/automation-service/playbooks/).|
+| Task Access all | Access all user tasks in [playbooks](/docs/platform-services/automation-service/playbooks/). |
+| Task Edit | Configure tasks in [playbooks](/docs/platform-services/automation-service/playbooks/). |
+| Task Reassign | Assign tasks in [playbooks](/docs/platform-services/automation-service/playbooks/) to users. |
 | App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). |
 | App Central Export | Export contents of integrations and playbooks from [App Central](/docs/platform-services/automation-service/automation-service-app-central/). |
 | Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). |
 | Integrations Configure | Create and edit [integrations](/docs/platform-services/automation-service/automation-service-integrations/). |
-| Playbooks Access | View [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
-| Playbooks Configure | Create and edit [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Playbooks Access | View [playbooks](/docs/platform-services/automation-service/playbooks/). |
+| Playbooks Configure | Create and edit [playbooks](/docs/platform-services/automation-service/playbooks/). |
 | Bridge Monitoring Access | Monitor [Bridge](/docs/platform-services/automation-service/automation-service-bridge/) operations. |
 | Observability Access | [Access automation](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations) in the Sumo Logic SaaS Log Analytics Platform. |
 | Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. |
@@ -165,11 +165,11 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Note | Access | Access all [notes](/docs/cloud-soar/incidents-triage/#notes). |
 | Note | Edit | Create, edit, and delete notes. |
 | War Room | Use | Be able to use the [War Room](/docs/cloud-soar/incidents-triage/#war-room).  |
-| Settings General | Configure | Configure [settings](/docs/cloud-soar/overview/#settings). |
-| User Management | Groups | Manage [groups](/docs/cloud-soar/overview/#groups). |
-| Notification | Configure | Configure [notifications](/docs/cloud-soar/overview/#notifications). |
+| Settings General | Configure | Configure [settings](/docs/cloud-soar/settings/). |
+| User Management | Groups | Manage [groups](/docs/cloud-soar/settings/#groups). |
+| Notification | Configure | Configure [notifications](/docs/cloud-soar/settings/#notifications). |
 | Customization | Logo | Customize the logo. |
-| Customization | Fields | Customize [fields](/docs/cloud-soar/overview/#custom-fields). |
+| Customization | Fields | Customize [fields](/docs/cloud-soar/settings/#custom-fields). |
 | Customization | Incident Labels | Customize incident labels. |
 | Customization | Triage | Customize triage. |
 | Audit and Information | License Information | View license [audit and information](/docs/cloud-soar/legacy/legacy-cloud-soar-global-functions-menu/#audit-and-information). |

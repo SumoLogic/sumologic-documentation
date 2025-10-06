@@ -48,7 +48,7 @@ If it is not already set up, [set up SAML for single sign-on with Okta](/docs/ma
 1. Configure provisioning integration settings:
    1. Click the **Provisioning** tab. 
    1. Click **Integration** in the left menu, and then click **Edit**.
-   1. **SCIM connector base URL**. Enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`.
+   1. **SCIM connector base URL**. Enter the [API endpoint for your deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`.
    1. **Unique identifier field for users**. Enter `userName`.
    1. **Supported provisioning actions**. Select:
       * **Import New Users and Profile Updates**
@@ -153,7 +153,7 @@ As soon as users are assigned to the app, they are provisioned into Sumo Logic.
    1. The log should show that users you added to the app are pushed to Sumo Logic with an event info message like **Push new user to external application SUCCESS**.
 1. Verify in Sumo Logic:
    1. Log in to the Sumo Logic instance that you linked to the provisioning app in Step 2 when you provided the Assertion Consumer URL and entity ID.
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. 
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. 
    1. Search for the users provisioned from Okta. 
    1. You should see the users listed, and with the role given to when you assigned them to the app in Okta.
 

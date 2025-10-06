@@ -27,19 +27,6 @@ Share a dashboard inside your organization.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/nQOAYaMad4Q"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Sharing a dashboard within your organization

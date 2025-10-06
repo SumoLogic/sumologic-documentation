@@ -757,13 +757,13 @@ You can use a link to a file embedding the entire file, or embed a range of code
   <TabItem value="Markdown">
 
   ```md
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
+  <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
   ```
 
   </TabItem>
   <TabItem value="Result">
 
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
+  <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
 
   </TabItem>
   </Tabs>
@@ -819,13 +819,13 @@ When adding an image to a bulleted or sequential list, include the image snippet
 <TabItem value="Markdown">
 
 ```md
-1. Here is a dinosaur.<br/><img src={useBaseUrl('img/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-1. Here is a dinosaur. <br/><img src={useBaseUrl('img/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
 
 </TabItem>
 </Tabs>
@@ -1085,7 +1085,17 @@ tags: [metrics, traces]
 
 For a full list of options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
 
+### Branding and naming in app/source docs
 
+To ensure consistency between our UI and our documentation, every App and Source doc must begin by clearly identifying it as a Sumo Logic integration. The UI often shows only the vendor name (for example, "Slack", "Amazon S3"), so the documentation must reinforce that Sumo Logic is delivering the integration.
+
+* **App docs**. The `description:` frontmatter and intro paragraph must start with: "The Sumo Logic app for [vendor]..." (see [template](/docs/contributing/templates/app-template-v2)).
+* **Source docs**. The `description:` frontmatter and intro paragraph must start with: "The Sumo Logic source for [vendor]..." (see [template](/docs/contributing/templates/c2c-source)).
+
+This rule helps:
+* Align docs with UI naming ("[vendor] by Sumo Logic”).
+* Reinforce Sumo Logic as the provider of the integration.
+* Prevent ambiguity that suggests the vendor is the owner of the app/source.
 
 ## Navigation menus
 
@@ -1273,7 +1283,7 @@ To add a text-only release note:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://help.sumologic.com/img/sumo-square.png    
+    image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082    
     ---
     ```
     * `title`. Title for release note that includes product or feature name.
@@ -1301,7 +1311,7 @@ To add release notes with images:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://help.sumologic.com/img/sumo-square.png
+    image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
     ---
     ```
 1. Save the image to this folder and add them to the markdown file: `![alt text](image-name.png)`.

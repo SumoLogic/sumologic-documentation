@@ -9,12 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Creating a partition enhances search performance by narrowing down the search scope to a smaller subset of messages. Use the Partitions page to set up and manage partitions. 
 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Partitions page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Partitions page, in the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Partitions page, in the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
- 
-
-A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../data-forwarding/amazon-s3-bucket.md).
+A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3 or GCS](../data-forwarding/forward-data-from-sumologic.md).
 
 :::note
 Data stored in a partition is not stored anywhere else. 
@@ -46,26 +45,13 @@ You define the data that will reside in a partition by defining a routing expres
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/kpQLFVT4uE8"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Limitations 
 
 * There is a limit of 50 partitions per account. (This excludes [decommissioned partitions](decommission-partition.md).)
 * Partitions cannot be deleted, although you can [decommission](decommission-partition.md) them. This is because a partition may include log messages that aren’t stored anywhere else, so if it’s deleted, messages will be lost. If you no longer need a partition, you can decommission it.
-* Partition names cannot start with `sumologic_` or an underscore `_`.
+* Partition names cannot start with `sumologic_`, an underscore `_`, or a hyphen (`-`).
 * Partition routing rule length cannot exceed 2048 characters.
 
 ## Guides

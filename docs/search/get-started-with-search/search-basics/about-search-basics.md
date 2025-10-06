@@ -24,19 +24,6 @@ How to search data using the Basic Search Mode in Sumo Logic.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/Ps2YperJyZo?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 In the **Search** tab, a search query is typically formatted something like this:
@@ -45,7 +32,7 @@ In the **Search** tab, a search query is typically formatted something like th
 
 Start with a basic search:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. 
 1. Enter a simple key term like "error" in the search field, or type an asterisk wildcard (`*`) to find all messages. 
 1. Hit **Enter** or click **Start**.
 1. Sumo Logic returns all the log entries containing the search term in the **Messages** tab below the histogram.

@@ -18,7 +18,7 @@ Docs cover all product features and should be your first resource when you have 
 
 If you haven't found the answer to your question in our online help documentation:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help > Support**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help > Support**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help > Support**. <br/> [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help > Support**. 
 1. You'll be taken to Sumo Logic Support. Click **Submit a Request** to file a ticket.<br/>![Help - Support.png](/img/get-started/Help-Support.png)
 
 On this site, you can log in with your account to access resources like Sumo Logic announcements, release notes, Knowledge Base articles, and more. You can also access the Sumo Logic Community in order to ask questions of fellow users.
@@ -61,7 +61,7 @@ See [Keyboard Shortcuts](/docs/get-started/keyboard-shortcuts).
 
 To view the status of the Sumo Logic service, find information on any outages, and see Scheduled Maintenance for your deployment, go to **Help** > **Service Status**. Alternatively, you can go directly to [status.sumologic.com](http://status.sumologic.com).
 
-If there has been an outage on your [deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) (or pod), the Service Status Indicator displays:
+If there has been an outage on your [deployment](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) (or pod), the Service Status Indicator displays:
 
 1. At the top of the **Help** menu.
 1. Next to **Help** > **Service Status**.

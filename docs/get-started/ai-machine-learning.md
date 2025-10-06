@@ -16,6 +16,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this document, you'll learn about Sumo Logic features that leverage artificial intelligence (AI), machine learning (ML), and pattern recognition to support cloud security management, mitigate risks, reduce manual workloads for your team, and streamline incident response and resolution.
 
+## What’s new: Dojo AI for the SOC
+
+Sumo Logic Dojo AI is our agentic AI platform for security teams. It brings specialized agents that reduce manual triage, summarize investigations at the insight level, and help analysts move from reactive to proactive workflows. Dojo AI is built and deployed on AWS and focuses on governed, context-first automation designed for enterprise SOCs.
+
+* **Query Agent**. Translate plain-language questions into efficient Sumo queries to speed exploration and scoping. Works hand in hand with Mobot to improve query quality and outcomes.
+* **Summary Agent**. Generate clear, insight-level summaries that help teams understand incidents faster and respond with confidence. Available in Cloud SIEM.
+* **Availability**. Dojo AI is available through Sumo Logic and in AWS Marketplace.
+
+For more information, see: [Sumo Logic brings agentic AI into the enterprise security stack with the launch of Dojo AI on Amazon Web Services](https://www.sumologic.com/newsroom/sumo-logic-brings-agentic-ai-into-enterprise-security-stack-with-launch-of-dojo-ai-on-amazon-web-services).
+
 <details>
 <summary>What do these terms mean?</summary>
 
@@ -41,11 +51,11 @@ Sumo Logic AI for Observability functionality equips developers and SREs with po
 
 Through comprehensive discovery, monitoring, diagnosis, recovery, and prevention capabilities, we ensure minimized downtime, reduced false positives, faster incident resolution, and proactive issue prevention, all aimed at enhancing the overall health and performance of your applications and services. These capabilities include discovering app, service, and infrastructure stack relationships; utilizing M.E.L.T. telemetry to minimize detection time and false positives; diagnosing incidents swiftly; accelerating recovery times; and preventing future incidents.
 
-### Copilot
+### Mobot
 
-Copilot is our AI-based assistant designed that simplifies log analysis by allowing you to ask questions in plain English and provides search suggestions without the need to write log queries. Through plain English queries and automatic log query generation, Copilot simplifies the investigation process, allowing even users without extensive log analysis expertise to pinpoint anomalies and potential threats efficiently.
+Mobot is our AI-based assistant designed that simplifies log analysis by allowing you to ask questions in plain language and provides search suggestions without the need to write log queries. Through plain language queries and automatic log query generation, Mobot simplifies the investigation process, allowing even users without extensive log analysis expertise to pinpoint anomalies and potential threats efficiently.
 
-With Copilot, you can effortlessly investigate complex issues without writing intricate log queries manually. Its intuitive interface guides users through each step of the investigation, refining queries based on AI prompts and feedback. This streamlined approach accelerates the identification of security threats, empowering users to make informed decisions rapidly and proactively detect potential risks. [Learn more](/docs/search/copilot).
+With Mobot, you can effortlessly investigate complex issues without writing intricate log queries manually. Its intuitive interface guides users through each step of the investigation, refining queries based on AI prompts and feedback. This streamlined approach accelerates the identification of security threats, empowering users to make informed decisions rapidly and proactively detect potential risks. [Learn more](/docs/search/mobot).
 
 ### LogReduce
 
@@ -55,7 +65,7 @@ LogReduce&reg; utilizes AI-driven algorithms to cluster log messages based on st
 
 LogCompare simplifies log analysis by enabling easy comparison of log data from different time periods to detect changes or anomalies, facilitating troubleshooting and root cause discovery. By automatically running delta analysis, LogCompare streamlines the process, allowing users to identify significant alterations in log patterns efficiently. Utilizing baseline and target queries, LogCompare clusters logs into patterns and compares them based on the significance of change, providing insights into deviations over time. With intuitive actions like promoting, demoting, and splitting signatures, users can refine their analysis and focus on relevant patterns, ultimately enhancing decision-making and threat detection capabilities. Additionally, LogCompare supports alerts and scheduled searches to notify users of new signatures or significant changes, ensuring proactive monitoring and response to evolving log data. [Learn more](/docs/search/behavior-insights/logcompare).
 
-### AI-driven Alerts
+### AI in alerting
 
 #### Anomaly Detection
 
@@ -81,10 +91,24 @@ Sumo Logic offers seamless integrations with various AI-driven platforms to enab
 
 Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hunters to effectively safeguard their technology stack against evolving threats. By integrating advanced tools for discovery, detection, investigation, response, and protection, we minimize dwell time, reduce false positives, accelerate incident resolution, and proactively prevent future incidents, ensuring robust security and resilience for your cloud, container, and on-prem resources.
 
+### Dojo AI (agentic AI for the SOC)
+
+Dojo AI brings governed, specialized agents into daily SOC workflows so you can cut manual triage, accelerate query-to-answer steps, and get consistent, insight-level investigation summaries. Built and deployed on AWS, Dojo AI focuses on measurable gains in accuracy and response time with a human in the loop.
+
+* **Query Agent**. Ask questions in plain language and get optimized Sumo Logic queries that speed data exploration.
+* **Summary Agent**. See AI-generated summaries on insights in Cloud SIEM to understand incidents faster.
+* **Get it**. Available from Sumo Logic and in AWS Marketplace.
+
 ### Cloud SIEM
 
-Sumo Logic's Cloud SIEM leverages AI-driven rules for security management, including:
+#### Insight summary
 
+Sumo Logic's Dojo AI **Summary** Agent, an agentic AI tool, generates a synopsis for each insight that describes the threat incidents that led to its creation. This helps security teams understand incidents faster and accelerate response time. [Learn more](/docs/cse/get-started-with-cloud-siem/insight-summary/).
+
+
+#### Rules
+
+Sumo Logic's Cloud SIEM rules leverage AI for the following:
 * [Insight Trainer](/docs/cse/rules/insight-trainer). Utilizes ML and AI to deliver outcome-based recommendations, reducing false positives without compromising detection value.
 * [First-seen rule](/docs/cse/rules/write-first-seen-rule). Identifies novel threats based on first occurrences.
 * [Outlier rule](/docs/cse/rules/write-outlier-rule/). Detects abnormal behavior indicating potential security breaches.
@@ -97,15 +121,11 @@ Our Global Intelligence Service apps provide security teams with valuable real-t
 ## Additional resources
 
 * Guide: [Understanding artificial intelligence for log analytics](https://www.sumologic.com/guides/machine-data-analytics)
-* Blogs: 
+* Blogs:
+   * [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
    * [What are the differences between artificial intelligence, machine learning, deep learning and generative AI?](https://www.sumologic.com/blog/machine-learning-deep-learning)
    * [DevSecOps in an AI world requires disruptive log economics](https://www.sumologic.com/blog/devsecops-ai-disruptive-log-economics)
    * [Generative AI: The latest example of systems of insight](https://www.sumologic.com/blog/generative-ai-latest-example-systems-of-insight)
    * [Harnessing the power of artificial intelligence in log analytics](https://www.sumologic.com/blog/power-ai-log-analytics/)
    * [Reduce alert noise, automate incident response and keep coding with AI-driven alerting](https://www.sumologic.com/blog/ai-driven-low-noise-alerts/)
-
-<!--
--Bashyam's blog about how we trained our AI
--Flex Pricing? The more log data ingested, the sharper your analytics and ML/AI insights become. By eliminating ingest limitations and empowering an ML/AI-driven single source of truth for analytics, Flex enables DevOps and DevSecOps teams to troubleshoot faster, accelerate release velocity, and ensure reliable, secure digital experiences.
--Splunk-to-Sumo conversion migration tool?
--->
+* News: [Dojo AI launch announcement](https://www.sumologic.com/newsroom/sumo-logic-brings-agentic-ai-into-enterprise-security-stack-with-launch-of-dojo-ai-on-amazon-web-services)

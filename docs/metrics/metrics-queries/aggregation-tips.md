@@ -6,7 +6,7 @@ sidebar_label: Metric Aggregation Tips
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you run a metrics query that returns high cardinality results, the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer.md) displays a tip for how to use an aggregation clause to produce more readable results. An aggregation tip is displayed for a query based on the cardinality of the query. It is presented when a query’s cardinality exceeds these thresholds:
+When you run a metrics query that returns high cardinality results, the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer.md) displays a tip for how to use an aggregation clause to produce more readable results. An aggregation tip is displayed for a query based on the cardinality of the query. It is presented when a query’s cardinality exceeds these thresholds:
 
 <table>
   <tr>
@@ -27,7 +27,7 @@ When you run a metrics query that returns high cardinality results, the [Metrics
   </tr>
 </table>
 
-Aggregation tips are available in the Metrics Explorer, and in metrics queries in Dashboards.
+Aggregation tips are available in the Metrics Search, and in metrics queries in Dashboards.
 
 ## View aggregation tips
 
@@ -47,6 +47,6 @@ If you’re running multiple queries, a tip will be provided for each of the que
 
 ## Disable tips
 
-If you prefer not to see query tips, choose **Disable Query Tips** from the three-dot kebab menu in the Metrics Explorer.
+If you prefer not to see query tips, choose **Disable Query Tips** from the three-dot kebab menu in the Metrics Search.
 
 <img src={useBaseUrl('img/metrics/disable-query-tips.png')} alt="line-commented.png" />

@@ -18,9 +18,9 @@ You can observe apps and microservices at the level of individual requests to p
 
 You can access Traces if your Sumo Logic service package has been upgraded to include it.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access Traces, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access Traces, in the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**. 
 
 ## Micro lesson
 
@@ -40,18 +40,6 @@ This micro lesson can help you get started with Tracing.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/BTqufvTJ4vE"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 :::
 
 Trace data is visualized through filtered trace lists and icicle charts allowing you to find and troubleshoot faulty transactions easily. See how easy it is to [view and investigate traces](view-and-investigate-traces.md).
