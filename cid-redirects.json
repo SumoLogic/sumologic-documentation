@@ -96,6 +96,8 @@
   "/03Send-Data/01-Design-Your-Deployment": "/docs/send-data/choose-collector-source",
   "/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category": "/docs/send-data/best-practices",
   "/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Local-and-Centralized-Data-Collection": "/docs/send-data/best-practices",
+  "/03Send-Data/01-Design-Your-Deployment/Best-Practices:-Good-Source-Category,-Bad-Source-Category": "/docs/send-data/best-practices",
+  "/03Send-Data/01-Design-Your-Deployment/Best-Practices:-Local-and-Centralized-Data-Collection": "/docs/send-data/best-practices",
   "/03Send-Data/01-Design-Your-Deployment/Compare-Installed-and-Hosted-Collectors": "/docs/send-data/choose-collector-source",
   "/03Send-Data/Applications_AWS_Solution/AWS_S3_Export_App": "/docs/send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source",
   "/03Send-Data/Collect-from-Other-Data-Sources": "/docs/send-data/collect-from-other-data-sources",
