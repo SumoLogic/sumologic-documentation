@@ -116,7 +116,7 @@ There is a limit of 20 favorite items per user.
 
 ### Mark content as favorite
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. 
 1. Hover your mouse over an item in the library, and click the star icon that appears. <br/> ![StarredFolders.png](/img/get-started/library/StarredFolders.png)
 1. The star darkens, and the item now appears in **Favorites**.
 
@@ -160,7 +160,7 @@ the following prefixes:
 
 ### Search content in the library
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab.
 1. Click in the search field and select what you want to search for. <br/> <img src={useBaseUrl('img/get-started/library/SearchSuggestions.png')} alt="Search suggestions" style={{border: '1px solid gray'}} width="200" />
 1. Enter your text. You can use any of the following:
    * Keyword
