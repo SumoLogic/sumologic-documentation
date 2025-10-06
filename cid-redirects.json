@@ -1432,6 +1432,7 @@
   "/APIs/General-API-Information/API-Usage-Limits": "/docs/api/about-apis/getting-started",
   "/APIs/General_API_Information/Sumo_Logic_Endpoints": "/docs/api/about-apis/getting-started",
   "/APIs/General_API_Information/Sumo_Logic_Endpoints_and_Firewall_Security": "/docs/api/about-apis/getting-started",
+  "/docs/api/aws-region-by-sumo-deployment": "/docs/api/about-apis/getting-started",
   "/Send_Data": "/docs/send-data",
   "/Send_Data/Collector_Management_API/Sumo_Logic_Endpoints": "/docs/api/collector-management",
   "/Send_Data/Collector_Management_API/About_the_Collector_Management_API": "/docs/api/collector-management",
