@@ -58,7 +58,7 @@ Use the following upstream [collector lambda layer](https://github.com/open-tele
 
 * `arn:aws:lambda:<region>:184161586896:layer:opentelemetry-collector-<amd64|arm64>-<version>:1`
 
-   By default, OpenTelemetry Collector Lambda layer exports telemetry data to AWS backends. To customize the collector configuration, add a collector.yaml to your function and specify its location via the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` environment file
+   By default, OpenTelemetry Collector Lambda layer exports telemetry data to AWS backends. To customize the collector configuration, add a collector.yaml to your function and specify its location via the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` environment file.
 
 * Configure the collector layer to send data to SumoLogic:
     ```yaml
