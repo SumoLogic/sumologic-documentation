@@ -4517,5 +4517,6 @@
   "/docs/manage/data-forwarding/amazon-s3-bucket": "/docs/manage/data-forwarding/forward-data-from-sumologic",
   "/docs/cse/signals": "/docs/cse/records-signals-entities-insights",
   "/docs/query/query-operators/aggregation-functions": "/docs/search/search-query-language/group-aggregate-operators",
-  "/Search/Search-Query-Language/Parse-Operators": "/docs/search/search-query-language/parse-operators"
+  "/Search/Search-Query-Language/Parse-Operators": "/docs/search/search-query-language/parse-operators",
+  "/docs/get-started/training-certification-faq-new": "/docs/get-started/training-certification-faq"
 }

@@ -1,7 +1,7 @@
 ---
 id: apps-integrations
 title: Installing Apps and Integrations
-sidebar_label: Installing apps
+sidebar_label: Installing Apps
 description: Learn how to install apps to your Library and to multiple environments.
 ---
 
