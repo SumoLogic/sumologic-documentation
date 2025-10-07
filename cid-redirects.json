@@ -96,8 +96,6 @@
   "/03Send-Data/01-Design-Your-Deployment": "/docs/send-data/choose-collector-source",
   "/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category": "/docs/send-data/best-practices",
   "/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Local-and-Centralized-Data-Collection": "/docs/send-data/best-practices",
-  "/03Send-Data/01-Design-Your-Deployment/Best-Practices:-Good-Source-Category,-Bad-Source-Category": "/docs/send-data/best-practices",
-  "/03Send-Data/01-Design-Your-Deployment/Best-Practices:-Local-and-Centralized-Data-Collection": "/docs/send-data/best-practices",
   "/03Send-Data/01-Design-Your-Deployment/Compare-Installed-and-Hosted-Collectors": "/docs/send-data/choose-collector-source",
   "/03Send-Data/Applications_AWS_Solution/AWS_S3_Export_App": "/docs/send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source",
   "/03Send-Data/Collect-from-Other-Data-Sources": "/docs/send-data/collect-from-other-data-sources",
@@ -392,7 +390,6 @@
   "/05Search/Get-Started-with-Search": "/docs/search/get-started-with-search",
   "/05Search/Get-Started-with-Search/How-to-Build-a-Search": "/docs/search/get-started-with-search/build-search",
   "/05Search/Get-Started-with-Search/How-to-Build-a-Search/Best-Practices%3A-Search-Rules-to-Live-By": "/docs/search/get-started-with-search/build-search/best-practices-search",
-  "/05Search/Get-Started-with-Search/How-to-Build-a-Search/Best-Practices:-Search-Rules-to-Live-By": "/docs/search/get-started-with-search/build-search/best-practices-search",
   "/05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing": "/docs/search/get-started-with-search/build-search/dynamic-parsing",
   "/05Search/Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions": "/docs/search/get-started-with-search/build-search/keyword-search-expressions",
   "/docs/search/get-started-with-search/build-search/intelliparse-beta": "/docs/search/get-started-with-search/build-search/dynamic-parsing",
@@ -1432,6 +1429,7 @@
   "/APIs/General-API-Information/API-Usage-Limits": "/docs/api/about-apis/getting-started",
   "/APIs/General_API_Information/Sumo_Logic_Endpoints": "/docs/api/about-apis/getting-started",
   "/APIs/General_API_Information/Sumo_Logic_Endpoints_and_Firewall_Security": "/docs/api/about-apis/getting-started",
+  "/docs/api/aws-region-by-sumo-deployment": "/docs/api/about-apis/getting-started",
   "/Send_Data": "/docs/send-data",
   "/Send_Data/Collector_Management_API/Sumo_Logic_Endpoints": "/docs/api/collector-management",
   "/Send_Data/Collector_Management_API/About_the_Collector_Management_API": "/docs/api/collector-management",
@@ -4520,5 +4518,6 @@
   "/docs/manage/data-forwarding/amazon-s3-bucket": "/docs/manage/data-forwarding/forward-data-from-sumologic",
   "/docs/cse/signals": "/docs/cse/records-signals-entities-insights",
   "/docs/query/query-operators/aggregation-functions": "/docs/search/search-query-language/group-aggregate-operators",
-  "/Search/Search-Query-Language/Parse-Operators": "/docs/search/search-query-language/parse-operators"
+  "/Search/Search-Query-Language/Parse-Operators": "/docs/search/search-query-language/parse-operators",
+  "/docs/get-started/training-certification-faq-new": "/docs/get-started/training-certification-faq"
 }

@@ -26,6 +26,7 @@ module.exports = {
         'get-started/sign-up',
         'get-started/quickstart',
         'get-started/onboarding-checklists',
+        'get-started/training-certification-faq',
         'get-started/account-settings-preferences',
         'get-started/sumo-logic-ui',
         'get-started/sumo-logic-ui-classic',
@@ -34,7 +35,6 @@ module.exports = {
         'get-started/system-requirements',
         'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
-        'get-started/training-certification-faq',
         'get-started/help',
         'get-started/faq',
       ],
@@ -714,7 +714,8 @@ module.exports = {
                   collapsed: true,
                   link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/index' },
                   items: [
-                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs'
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs',
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/full-vnet-integration',
                   ],
                 },
                 {
