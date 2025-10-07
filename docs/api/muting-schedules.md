@@ -30,6 +30,7 @@ The Muting Schedules Management API allows you to pause alert notifications from
 | US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 | ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 
+
 ## Required role capabilities
 
 <ApiRoles/>
