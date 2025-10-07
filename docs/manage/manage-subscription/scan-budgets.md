@@ -1,7 +1,7 @@
 ---
 id: scan-budgets
 title: Scan Budget
-description: Learn to set advacned query limits to define spending limits for queries. 
+description: Learn to set advanced query limits to define spending limits for queries. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
