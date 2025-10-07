@@ -17,19 +17,18 @@ The Service Accounts API allows you to manage service accounts. [Service account
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                                  |
-|:------------|:--------------------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/serviceAccountManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/serviceAccountManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/serviceAccountManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/serviceAccountManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/serviceAccountManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/serviceAccountManagement  |
-| JP         | https://api.jp.sumologic.com/docs/#tag/serviceAccountManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/serviceAccountManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/serviceAccountManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/serviceAccountManagement |
-| ZRH        | https://api.zrh.sumologic.com/docs/#tag/serviceAccountManagement |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/serviceAccountManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/serviceAccountManagement   |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/serviceAccountManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/serviceAccountManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/serviceAccountManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/serviceAccountManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/serviceAccountManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/serviceAccountManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/serviceAccountManagement  |
+| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/serviceAccountManagement  |
 
 ## Required role capabilities
 

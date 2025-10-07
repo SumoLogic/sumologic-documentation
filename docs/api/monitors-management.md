@@ -17,18 +17,18 @@ The Monitor Management API allows you to manage Monitors from HTTP endpoints. Mo
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                                 |
-|:------------|:-------------------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/monitorsLibraryManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/monitorsLibraryManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/monitorsLibraryManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/monitorsLibraryManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/monitorsLibraryManagement |
-| JP         | https://api.jp.sumologic.com/docs/#tag/monitorsLibraryManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/monitorsLibraryManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/monitorsLibraryManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/monitorsLibraryManagement |
-| ZRH        | https://api.zrh.sumologic.com/docs/#tag/monitorsLibraryManagement |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/monitorsLibraryManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/monitorsLibraryManagement   |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/monitorsLibraryManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/monitorsLibraryManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/monitorsLibraryManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/monitorsLibraryManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/monitorsLibraryManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/monitorsLibraryManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/monitorsLibraryManagement  |
+| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/monitorsLibraryManagement  |
 
 ## Required role capabilities
 

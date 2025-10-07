@@ -19,18 +19,18 @@ To manage roles, you must have an administrator role or your role must have been
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                      |
-|:------------|:--------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/roleManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/roleManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/roleManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/roleManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/roleManagement |
-| JP         | https://api.jp.sumologic.com/docs/#tag/roleManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/roleManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/roleManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/roleManagement |
-| ZRH        | https://api.zrh.sumologic.com/docs/#tag/roleManagement |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/roleManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/roleManagement   |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/roleManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/roleManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/roleManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/roleManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/roleManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/roleManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/roleManagement  |
+| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/roleManagement  |
 
 ## Required role capabilities
 

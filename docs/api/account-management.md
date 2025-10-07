@@ -17,19 +17,18 @@ The Account Management API allows you to manage the custom subdomain for the URL
 
 <ApiIntro/>
 
-
-| Deployment | Documentation URL                                         |
-|:------------|:-----------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/accountManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/accountManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/accountManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/accountManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/accountManagement |
-| JP         | https://api.jp.sumologic.com/docs/#tag/accountManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/accountManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/accountManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/accountManagement |
-| ZRH        | https://api.zrh.sumologic.com/docs/#tag/accountManagement |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/accountManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/accountManagement   |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/accountManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/accountManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/accountManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/accountManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/accountManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/accountManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/accountManagement  |
+| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/accountManagement  |
 
 ## Required role capabilities
 

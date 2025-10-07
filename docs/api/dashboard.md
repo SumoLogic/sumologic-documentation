@@ -17,18 +17,18 @@ The Dashboard Management APIs allow you to create, retrieve, update, and delete 
 
 <ApiIntro/>
 
-|Deployment|Documentation URL                |
-|:----------|:-------------------|
-|AU        |https://api.au.sumologic.com/docs/#tag/dashboardManagement   |
-|CA        |https://api.ca.sumologic.com/docs/#tag/dashboardManagement   |
-|DE        |https://api.de.sumologic.com/docs/#tag/dashboardManagement   |
-|EU        |https://api.eu.sumologic.com/docs/#tag/dashboardManagement   |
-|FED       |https://api.fed.sumologic.com/docs/#tag/dashboardManagement  |
-|JP        |https://api.jp.sumologic.com/docs/#tag/dashboardManagement   |
-|KR        |https://api.kr.sumologic.com/docs/#tag/dashboardManagement   |
-|US1       |https://api.sumologic.com/docs/#tag/dashboardManagement      |
-|US2       |https://api.us2.sumologic.com/docs/#tag/dashboardManagement  |
-|ZRH       |https://api.zrh.sumologic.com/docs/#tag/dashboardManagement  |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/dashboardManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/dashboardManagement   |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/dashboardManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/dashboardManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/dashboardManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/dashboardManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/dashboardManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/dashboardManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/dashboardManagement  |
+| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/dashboardManagement  |
 
 ## Required role capabilities
 

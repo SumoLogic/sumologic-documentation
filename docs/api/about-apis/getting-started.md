@@ -17,18 +17,18 @@ Sumo Logic APIs follow Representational State Transfer (REST) patterns and are o
 
 To access our API documentation, navigate to the appropriate link based on your Sumo Logic deployment. If you're not sure, see [Which endpoint should I use?](#which-endpoint-should-i-should-use)
 
-| Deployment | API documentation URL                       |
-|:-----------|:----------------------------------|
-| AU         | https://api.au.sumologic.com/docs/  |
-| CA         | https://api.ca.sumologic.com/docs/  |
-| DE         | https://api.de.sumologic.com/docs/  |
-| EU         | https://api.eu.sumologic.com/docs/  |
-| FED        | https://api.fed.sumologic.com/docs/ |
-| JP         | https://api.jp.sumologic.com/docs/  |
-| KR         | https://api.kr.sumologic.com/docs/  |
-| US1        | https://api.sumologic.com/docs/     |
-| US2        | https://api.us2.sumologic.com/docs/ |
-| ZRH        | https://api.zrh.sumologic.com/docs/ |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/   |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/  |
+| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/  |
 
 ## Authentication
 

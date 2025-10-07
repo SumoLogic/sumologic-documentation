@@ -17,18 +17,19 @@ The [Access Keys](/docs/manage/security/access-keys) Management API allows you t
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                           |
-|:------------|:------------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/accessKeyManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/accessKeyManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/accessKeyManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/accessKeyManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/accessKeyManagement |
-| JP         | https://api.jp.sumologic.com/docs/#tag/accessKeyManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/accessKeyManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/accessKeyManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/accessKeyManagement |
-| ZRH        | https://api.zrh.sumologic.com/docs/#tag/accessKeyManagement |
+
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/accessKeyManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/accessKeyManagement   |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/accessKeyManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/accessKeyManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/accessKeyManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/accessKeyManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/accessKeyManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/accessKeyManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/accessKeyManagement  |
+| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/accessKeyManagement  |
 
 ## Required role capabilities
 

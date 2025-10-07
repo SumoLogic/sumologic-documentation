@@ -17,18 +17,18 @@ The Content Management API allows you to manage content in your organization’s
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                          |
-|:------------|:------------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/contentManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/contentManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/contentManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/contentManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/contentManagement |
-| JP         | https://api.jp.sumologic.com/docs/#tag/contentManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/contentManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/contentManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/contentManagement |
-| ZRH        | https://api.zrh.sumologic.com/docs/#tag/contentManagement |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/contentManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/contentManagement   |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/contentManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/contentManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/contentManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/contentManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/contentManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/contentManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/contentManagement  |
+| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/contentManagement  |
 
 ## Required role capabilities
 

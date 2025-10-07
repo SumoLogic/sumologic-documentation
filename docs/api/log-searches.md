@@ -19,18 +19,18 @@ Whether you're running ad hoc searches during a forensic investigation or runnin
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                        |
-|:------------|:--------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/logSearchesManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/logSearchesManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/logSearchesManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/logSearchesManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/logSearchesManagement |
-| JP         | https://api.jp.sumologic.com/docs/#tag/logSearchesManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/logSearchesManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/logSearchesManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/logSearchesManagement |
-| ZRH        | https://api.zrh.sumologic.com/docs/#tag/logSearchesManagement |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/logSearchesManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/logSearchesManagement   |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/logSearchesManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/logSearchesManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/logSearchesManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/logSearchesManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/logSearchesManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/logSearchesManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/logSearchesManagement  |
+| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/logSearchesManagement  |
 
 ## Required role capabilities
 

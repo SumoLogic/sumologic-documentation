@@ -1,17 +1,17 @@
 The following table describes the AWS regions used by each Sumo Logic deployment. See the [AWS page on regions and endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html) for more information.
 
-| Sumo Logic Deployment | AWS Region Name | AWS Region |
+| Region code | Region name | AWS region |
 |:---|:---|:---|
-| AU | Asia Pacific (Sydney) | ap-southeast-2 |
-| CA | Canada (Central) | ca-central-1 |
-| DE | EU (Frankfurt) | eu-central-1 |
-| EU | EU (Ireland) | eu-west-1 |
-| FED | US East (N. Virginia) | us-east-1 |
-| JP | Asia Pacific (Tokyo) | ap-northeast-1 |
-| KR | Asia Pacific (Seoul) | ap-northeast-2 |
-| US1 | US East (N. Virginia) | us-east-1 |
-| US2 | US West (Oregon) | us-west-2 |
-| ZRH | Swizerland (Zurich) | zrh-east-1 |
+| AU  | Asia Pacific (Sydney) | ap-southeast-2 |
+| CA  | Canada (Central)      | ca-central-1   |
+| DE  | EU (Frankfurt)        | eu-central-1   |
+| EU  | EU (Ireland)          | eu-west-1      |
+| FED | US East (N. Virginia) | us-east-1      |
+| JP  | Asia Pacific (Tokyo)  | ap-northeast-1 |
+| KR  | Asia Pacific (Seoul)  | ap-northeast-2 |
+| US1 | US East (N. Virginia) | us-east-1      |
+| US2 | US West (Oregon)      | us-west-2      |
+| ZRH | Swizerland (Zurich)   | zrh-east-1     |
 
 [This link](https://ip-ranges.amazonaws.com/ip-ranges.json) provides the complete current list of AWS IP ranges or subnets or prefixes. You can limit the number of entries in a firewall by using just the IP prefixes against the AWS region that your account's Sumo Logic deployment uses, as shown in the table.
 
