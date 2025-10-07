@@ -63,7 +63,7 @@ At this time we have only announced an end-of-sale of Cloud SOAR as a separate p
 
 #### What will happen when an existing Cloud SOAR license is up for renewal? 
 
-Renewals are allowed currently as Cloud SOAR is not under end-of-support or end-of-life. We highly recommend planning a conversion to using the Automation Service already provided within the log management and Cloud SIEM products and discontinuing use of the standalone Cloud SOAR system before the renewal is required.
+Renewals are allowed currently as Cloud SOAR is not under end-of-support or end-of-life. We highly recommend planning a transition to the Automation Service already provided within the log management and Cloud SIEM products and discontinuing use of the standalone Cloud SOAR system before the renewal is required.
 
 #### How long will existing Cloud SOAR implementations continue to be supported? 
 
@@ -121,7 +121,7 @@ The Automation Service is included in our core platform offerings. However, you 
 
 #### Will my current third-party integrations continue to work? 
 
-Yes, the Automation Service support the same integrations as Cloud SOAR. Your existing third-party tool connections and APIs will continue to function after migration.
+Yes, the Automation Service supports the same integrations as Cloud SOAR. Your existing third-party tool connections and APIs will continue to function after migration.
 
 #### What happens to my historical data and case information? 
 
