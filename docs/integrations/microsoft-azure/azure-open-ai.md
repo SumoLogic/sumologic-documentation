@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-openai.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/overview) is a fully managed platform that provides access to cutting-edge generative AI models developed by OpenAI, such as GPT, Codex, and Embeddings, through Azure’s secure, enterprise-grade environment. It integrates seamlessly with Azure services like Cognitive Search, Machine Learning, and Logic Apps, as well as external applications and data sources, enabling powerful natural language, code generation, and reasoning capabilities. This integration enables the monitoring of key operational and performance metrics, including request volume, token usage, response latency, and error rates, ensuring efficient model utilization and reliable AI-driven application performance.
+[Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/overview) is a fully managed platform that provides access to advanced generative AI models from OpenAI, such as GPT, Codex, and Embeddings, within Azure’s secure, enterprise-grade environment. It integrates seamlessly with Azure services like Cognitive Search, Machine Learning, and Logic Apps, as well as with external applications and data sources, enabling powerful capabilities in natural language processing, code generation, and reasoning. The platform also supports monitoring of key performance metrics, including request volume, token usage, response latency, and error rates, to ensure efficient model utilization and reliable AI-driven application performance.
 
 ## Log and metric types
 
