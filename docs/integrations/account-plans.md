@@ -35,14 +35,6 @@ Use this page to determine which apps are available based on your account plan.
    <td>&#10003; </td>
   </tr>
   <tr>
-   <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops">Global Intelligence for AWS CloudTrail DevOps</a></td>
-   <td>&#10003;</td>
-   <td>    </td>
-   <td>&#10003;</td>
-   <td> </td>
-   <td>&#10003;</td>
-  </tr>
-  <tr>
    <td><a href="/docs/integrations/sumo-apps/enterprise-audit">Enterprise Audit Apps</a></td>
    <td> &#10003;</td>
    <td> </td>
@@ -98,12 +90,6 @@ Use this page to determine which apps are available based on your account plan.
    <td>  &#10003;</td>
    <td>    </td>
    <td>  &#10003;</td>
-  </tr>
-  <tr>
-   <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops">Global Intelligence for AWS CloudTrail DevOps</a></td>
-   <td>  &#10003;</td>
-   <td>  </td>
-   <td> &#10003;</td>
   </tr>
   <tr>
    <td><a href="/docs/integrations/sumo-apps/enterprise-audit">Enterprise Audit Apps</a>  </td>
