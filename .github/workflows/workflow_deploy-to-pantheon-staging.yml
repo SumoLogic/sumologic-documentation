@@ -1,0 +1,47 @@
+name: Deploy to staging environment
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - staging/**
+    paths-ignore:
+      - .github/**
+
+jobs:
+  build-site:
+    uses: ./.github/workflows/job_build-site.yml
+  deploy-to-pantheon:
+    needs: build-site
+    uses: ./.github/workflows/job_pantheon.yml
+    with:
+      PANTHEON_DESTINATION: staging
+      SITE_PATH: help/
+      PANTHEON_SITE_ID: ${{ vars.PANTHEON_SITE_ID }}
+      PANTHEON_STAGING_ENV_NAME: helpdocs
+    secrets:
+      PANTHEON_AUTH_PASSWORD: ${{ secrets.PANTHEON_AUTH_PASSWORD }}
+      PANTHEON_AUTH_USER: ${{ secrets.PANTHEON_AUTH_USER }}
+      PANTHEON_KNOWN_HOSTS: ${{ secrets.PANTHEON_KNOWN_HOSTS }}
+      PANTHEON_MACHINE_TOKEN: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+      PANTHEON_SSH_KEY: ${{ secrets.PANTHEON_SSH_KEY }}
+      PANTHEON_USER_EMAIL: ${{ secrets.PANTHEON_USER_EMAIL }}
+  notify-channel-failure:
+    needs: [build-site,deploy-to-pantheon]
+    if: ${{ failure() }}
+    uses: ./.github/workflows/job_slack-notification.yml
+    with:
+      SLACK_MESSAGE: ":red_circle: helpdocs workflow failed [<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|details>]"
+    secrets:
+      SLACK_URL: ${{ secrets.WEBOPS_SLACK_URL }}
+  notify-channel-success:
+    needs: [build-site,deploy-to-pantheon]
+    if: ${{ success() }}
+    uses: ./.github/workflows/job_slack-notification.yml
+    with:
+      SLACK_MESSAGE: ":large_green_circle: helpdocs <https://helpdocs-${{ vars.PANTHEON_SITE_ID }}.pantheonsite.io/help/|staging site> deployed"
+    secrets:
+      SLACK_URL: ${{ secrets.WEBOPS_SLACK_URL }}
