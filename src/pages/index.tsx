@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
@@ -9,9 +9,29 @@ import SumoLogicDocsLogo from '../../static/img/reuse/sumo-logic-docs.svg';
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import ErrorBoundary from '../components/ErrorBoundary';
+import Berry from '../components/Berry';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
+
+  const questions = [
+    '✨ timestamps',
+    '✨ how do you write a log search query?',
+    '✨ how do I set up alerts?',
+    '✨ what types of logs can I analyze?',
+    '✨ what is copilot?',
+    '✨ cloud siem',
+    '✨ how do I change my password?',
+    '✨ what is the parse operator?'
+  ];
+
+  const handleQuestionClick = (question) => {
+    if (window.Berry) {
+      if (window.Berry.sendMessage) {
+        window.Berry.sendMessage(question);
+      }
+    }
+  };
 
   return (
     <ErrorBoundary>
@@ -63,6 +83,64 @@ export const Home = () => {
           />
         </Typography>
 
+        <Berry mode='inline' />
+
+        {/* Suggested Questions */}
+        <Box sx={{ width: '100%', background: '#2a2a2a', color: '#fff', py: 4 }}>
+
+          <Container maxWidth="md" sx={{ textAlign: 'center' }}>
+          <Typography variant="h4" fontWeight={600} mt={1} mb={3}>
+            Sumo Logic Documentation
+          </Typography>
+            <Typography variant="h5" fontFamily="Lab Grotesque" fontWeight={300} mb={2} sx={{ background: 'linear-gradient(90deg, #9900ED, #C04CF4, #00C8E0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Our Docs Assistant is here to help!
+            </Typography>
+            <Typography fontFamily="Lab Grotesque" fontSize={13} fontWeight={300} mb={2}>
+              Ask me anything! You can type full questions, sentences, or just keywords, and I'll help you find the information you need. Try these to get started:
+            </Typography>
+            <Stack
+            direction="row"
+            spacing={1} // Reduced horizontal spacing between buttons
+            justifyContent="center"
+            flexWrap="wrap"
+            rowGap={1} // Reduced vertical spacing between rows
+            >
+
+    {questions.map((question, index) => (
+      <Button
+        key={index}
+        onClick={() => handleQuestionClick(question)}
+        variant="outlined"
+        sx={{
+          bgcolor: 'transparent',
+          color: '#DDDDDD',
+          fontFamily: 'Lab Grotesque',
+          borderColor: '#808080',
+          borderRadius: '5px',
+          textTransform: 'lowercase',
+          fontSize: '12px',
+          fontWeight: '300',
+          padding: '4px 6px',
+          minWidth: 'auto',
+          '&:hover': {
+            bgcolor: '#2a2a2a',
+            color: '#DDDDDD',
+          },
+        }}
+      >
+        {question}
+      </Button>
+    ))}
+  </Stack>
+          </Container>
+
+          <Container maxWidth="lg">
+            {/* Inline Chatbot Container */}
+            <Box id="inline-berry-chatbot-container" sx={{ my: 4, py: 2, margin: '0 auto', textAlign: 'center' }}>
+            {/* The chatbot will render here */}
+            </Box>
+          </Container>
+        </Box>
         {/* Hero */}
         <Stack
           sx={{
