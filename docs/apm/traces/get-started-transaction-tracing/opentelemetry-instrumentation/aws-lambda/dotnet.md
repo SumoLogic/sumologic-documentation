@@ -52,7 +52,7 @@ You'll need the following:
 * .NET 6 SDK
 * Sumo Logic OTLP endpoint URL
 
-### Configure the Collector Lambda layer
+### OpenTelemetry Collector Lambda layer
 
 Use the following upstream [collector lambda layer](https://github.com/open-telemetry/opentelemetry-lambda/tree/main?tab=readme-ov-file#latest-layer-versions)
 
@@ -61,6 +61,7 @@ Use the following upstream [collector lambda layer](https://github.com/open-tele
    By default, OpenTelemetry Collector Lambda layer exports telemetry data to AWS backends. To customize the collector configuration, add a collector.yaml to your function and specify its location via the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` environment file.
 
 * Configure the collector layer to send data to SumoLogic:
+
     ```yaml
     receivers:
       otlp:
@@ -83,10 +84,6 @@ Use the following upstream [collector lambda layer](https://github.com/open-tele
           receivers: [otlp]
           exporters: [otlphttp]
     ```
-* Set the following environment variables:
-    | Variable | Value | Purpose |
-    |:---------|:------|:--------|
-    | `SUMO_LOGIC_OTLP_ENDPOINT` | `https://your-endpoint.sumologic.net/receiver/v1/otlp/YOUR_TOKEN/v1/traces` | Sumo Logic endpoint |
 
     Once the file has been deployed with a Lambda, configuring the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` will tell the OpenTelemetry extension where to find the collector configuration:
 
@@ -104,11 +101,18 @@ Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions)�
   Lambda layers are a regionalized resource, meaning that they can only be used in the Region in which they are published. Make sure to use the layer in the same region as your Lambda functions.
   :::
 * Configure the following environment variables:
+
+  Navigate to the **Configuration > Environment variables** section and ensure that the following  environment variables are setup:
+
   | Variable | Value | Purpose |
   |:---------|:------|:--------|
   | `OTEL_EXPORTER_OTLP_ENDPOINT` | `localhost:4318` | Collector endpoint |
   | `OTEL_EXPORTER_OTLP_PROTOCOL` | `http/protobuf` | Export protocol |
   | `AWS_LAMBDA_EXEC_WRAPPER` | `/opt/otel-instrument` | Lambda wrapper |
+  | `SUMO_LOGIC_OTLP_ENDPOINT` | `https://your-endpoint.sumologic.net/receiver/v1/otlp/YOUR_TOKEN/v1/traces` | Sumo Logic endpoint |
+  | `OPENTELEMETRY_COLLECTOR_CONFIG_URI` | `/var/task/collector.yaml` | Collector configuration |
+
+Any other environment variables like `OTEL_RESOURCE_ATTRIBUTES` or `OTEL_SERVICE_NAME` could also be configured.
 
 Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces)
 
