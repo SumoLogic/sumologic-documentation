@@ -31,6 +31,11 @@ If you've previously set up our AWS Observability Solution with CloudFormation a
 
 :::
 
+:::note
+The Global Intelligence for AWS CloudTrail DevOps app is planned for deprecation in the near future and has therefore been removed from the AWS Observability Solution. With this removal, the app will no longer be backed up or maintained during future solution upgrades.
+:::
+
+
 For this setup, complete the following:
 
 1. Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
@@ -406,6 +411,7 @@ Configure providers for collection using the Terraform source-module.
     #  access_id                 = var.sumologic_access_id
     #  access_key                = var.sumologic_access_key
     #  environment               = var.sumologic_environment  
+    #  aws_resource_tags         = var.aws_resource_tags
     #}
     ```
 
@@ -440,6 +446,7 @@ Configure providers for collection using the Terraform source-module.
     access_id    = var.sumologic_access_id
     access_key   = var.sumologic_access_key
     environment  = var.sumologic_environment
+    aws_resource_tags  = var.aws_resource_tags
 
     }
     ```
@@ -462,6 +469,7 @@ module "production-us-east-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 
 module "production-us-east-2" {
@@ -472,7 +480,8 @@ module "production-us-east-2" {
   sumologic_organization_id = var.sumologic_organization_id
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
-  environment  = var.sumologic_environment  
+  environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags  
 
 # Use the same collector created for the first region of the production account.
   sumologic_existing_collector_details = {
@@ -502,6 +511,7 @@ module "production-us-east-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 
 module "production-us-east-2" {
@@ -513,6 +523,7 @@ module "production-us-east-2" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 
 # Use the same collector created for the first region of the production account.
   sumologic_existing_collector_details = {
@@ -530,6 +541,7 @@ module "development-us-west-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
@@ -592,6 +604,7 @@ module "collection-module" {
  access_id    = var.sumologic_access_id
  access_key   = var.sumologic_access_key
  environment  = var.sumologic_environment
+ aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
@@ -623,8 +636,15 @@ module "collection-module" {
    }
    fields = {}
  }
+ aws_resource_tags = {
+   env = "prod"
+   author = "sumologic"
+ }
 }
 ```
+:::note
+`aws_resource_tags` is a map of tags that will be applied to all AWS resources provisioned through the AWS Observability Solution, except for SAM nested sources, which are not tagged.
+:::
 
 **Override Example 2: Override the auto_enable_access_logs parameter**
 
@@ -639,6 +659,7 @@ module "collection-module" {
  access_key   = var.sumologic_access_key
  environment  = var.sumologic_environment
  auto_enable_access_logs = None
+ aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
