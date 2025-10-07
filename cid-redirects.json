@@ -2943,6 +2943,7 @@
   "/cid/1108": "/docs/integrations/saas-cloud/trellix-mvision-epo",
   "/cid/1110": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity",
   "/docs/integrations/microsoft-azure/microsoft-defender-for-identity/": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity",
+  "/cid/1111": "/docs/integrations/microsoft-azure/azure-open-ai",
   "/Cloud_SIEM_Enterprise": "/docs/cse",
   "/Cloud_SIEM_Enterprise/Administration": "/docs/cse/administration",
   "/Cloud_SIEM_Enterprise/Administration/Cloud_SIEM_Enterprise_Feature_Update_(2022)": "/docs/cse/administration",
