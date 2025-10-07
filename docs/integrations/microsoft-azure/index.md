@@ -263,6 +263,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-openai.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-open-ai">Azure OpenAI</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure OpenAI.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-relay.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-relay">Azure Relay</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Relay.</p>

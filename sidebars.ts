@@ -2228,6 +2228,7 @@ integrations: [
          'integrations/microsoft-azure/azure-machine-learning',
          'integrations/microsoft-azure/azure-network-interface',
          'integrations/microsoft-azure/azure-notification-hubs',
+         'integrations/microsoft-azure/azure-open-ai',
          'integrations/microsoft-azure/azure-public-ipAddress',
          'integrations/microsoft-azure/azure-relay',
          'integrations/microsoft-azure/azure-service-bus',
