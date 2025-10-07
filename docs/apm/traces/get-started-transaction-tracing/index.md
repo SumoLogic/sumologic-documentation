@@ -66,7 +66,7 @@ Learn how to collect telemetry data from applications written in the following p
   <div className="box smallbox card">
     <div className="container">
     <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png' alt="Thumbnail icon" width="55"/>
-    <h4><a href="/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net">.NET</a></h4>
+    <h4><a href="/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/dotnet">.NET</a></h4>
     </div>
   </div>
   <div className="box smallbox card">
@@ -118,12 +118,12 @@ Learn how to install and configure OpenTelemetry distributed tracing for AWS Lam
     <img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Thumbnail icon" width="50"/>
     <h4><a href="/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/python">Python</a></h4>
     </div>
+  </div>    
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Thumbnail icon" width="50"/>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png' alt="Thumbnail icon" width="55"/>
     <h4><a href="/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/dotnet">Dotnet</a></h4>
     </div>
-  </div>
   </div>
 </div>
 
