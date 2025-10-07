@@ -8,27 +8,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-openai.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure OpenAI](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about) is a fully managed platform that provides access to cutting-edge generative AI models developed by OpenAI, such as GPT, Codex, and Embeddings, through Azure’s secure, enterprise-grade environment. It integrates seamlessly with Azure services like Cognitive Search, Machine Learning, and Logic Apps, as well as external applications and data sources, enabling powerful natural language, code generation, and reasoning capabilities. This integration allows monitoring of key operational and performance metrics such as request volume, token usage, response latency, and error rates, ensuring efficient model utilization and reliable AI-driven application performance.
+[Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/overview) is a fully managed platform that provides access to cutting-edge generative AI models developed by OpenAI, such as GPT, Codex, and Embeddings, through Azure’s secure, enterprise-grade environment. It integrates seamlessly with Azure services like Cognitive Search, Machine Learning, and Logic Apps, as well as external applications and data sources, enabling powerful natural language, code generation, and reasoning capabilities. This integration allows monitoring of key operational and performance metrics such as request volume, token usage, response latency, and error rates, ensuring efficient model utilization and reliable AI-driven application performance.
 
 ## Log and metric types
 
 For Azure OpenAI, you can collect the following logs and metrics:
 
-* **Resource logs**. To learn more about the different resource log category types and schemas collected for Azure OpenAI, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/event-hubs/monitor-event-hubs-reference#resource-logs).
+* **Resource logs**. To learn more about the different resource log category types and schemas collected for Azure OpenAI, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/monitor-openai-reference#resource-logs).
 
 * **Platform Metrics for Azure OpenAI**. These metrics are available in the namespaces below:
     * [Microsoft.CognitiveServices/accounts](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/monitor-openai-reference#supported-metrics-for-microsoftcognitiveservicesaccounts)
 
-For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/event-hubs/monitor-event-hubs-reference#metrics).
+For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/monitor-openai-reference#metrics).
 
 ## Setup
 
-Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
+Azure services sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 * Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
-You must explicitly enable diagnostic settings for each OpenAI resource you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
+You must explicitly enable diagnostic settings for each OpenAI resource you want to monitor. You can forward logs to the same Event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/OpenAI/Logs`, `Azure/OpenAI/Metrics`.
 
@@ -48,7 +48,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Diagnostic logs
 
-1. To set up the Azure Event Hubs source in Sumo Logic, refer to the  [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 1. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform the steps below for each Azure Event Hubs namespace that you want to monitor.
     1. Choose `Stream to an event hub` as the destination.
     1. Select `allLogs`.
@@ -92,28 +92,28 @@ The **Azure OpenAI - Overview** dashboard provides a high‑level view of the ov
 
 ### Models
 
-The **Azure OpenAI - Models** dashboard Enables deep dive into individual model performance, usage, and health. Tracks model availability, request rates, operations, latency, throughput (tokens per second), and usage split by deployment, model name, and resources
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Models.png')} alt="Azure OpenAI - Operations" style={{border: '1px solid gray'}} width="800" />
+The **Azure OpenAI - Models** dashboard enables deep dive into individual model performance, usage, and health. Tracks model availability, request rates, operations, latency, throughput (tokens per second), and usage split by deployment, model name, and resources
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Models.png')} alt="Azure OpenAI - Models" style={{border: '1px solid gray'}} width="800" />
 
 ### Performance and Latency
 
 The **Azure OpenAI - Performance and Latency** dashboard focuses on the responsiveness of Azure OpenAI APIs and models. It tracks time-to-first-byte (TTFB), time-to-response, time-between-tokens for streaming performance, tokens-per-second speed, and time-to-last-byte. Use this dashboard to identify latency bottlenecks across models, deployments, and to compare streaming vs non-streaming performance trends.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Performance-and-Latency.png')} alt="Azure OpenAI - Performance" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Performance-and-Latency.png')} alt="Azure OpenAI - Performance and Latency" style={{border: '1px solid gray'}} width="800" />
 
 ### Reliability and Availability
 
 The **Azure OpenAI - Reliability and Availability** dashboard provides visibility into the operational health of Azure OpenAI across deployments and models. It highlights metrics that track overall API availability, request success vs client/server errors, and throttled calls (429). Use this dashboard to quickly identify availability degradation, error spikes, or throttling events that may affect your applications.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Reliability-and-Availability.png')} alt="Azure OpenAI - Network" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Reliability-and-Availability.png')} alt="Azure OpenAI - Reliability and Availability" style={{border: '1px solid gray'}} width="800" />
 
 ### Usage and Token Consumption
 
 The **Azure OpenAI - Usage and Token Consumption** dashboard provides details on model utilization and token consumption across deployments. The dashboard surfaces prompt tokens (input), generated tokens (output), total tokens processed, and cache match rates. Use this dashboard for cost optimization, and understanding workload trends across different models and regions.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Usage-and-Token-Consumption.png')} alt="Azure OpenAI - Kafka Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Usage-and-Token-Consumption.png')} alt="Azure OpenAI - Usage and Token Consumption" style={{border: '1px solid gray'}} width="800" />
 
 ### Content Safety
 
 The **Azure OpenAI - Content Safety** dashboard provides metrics on responsible AI policies and content safety enforcement. It monitors harmful content detected, requests blocked by filters, abusive user identification, and system safety events. Use this dashboard for compliance, RAI monitoring, and auditing risky behaviors across workloads.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Content-Safety.png')} alt="Azure OpenAI - Kafka Errors" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Content-Safety.png')} alt="Azure OpenAI - Content Safety" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
@@ -124,7 +124,7 @@ Use this dashboard to:
 * Identify potential issues by analyzing the top operations causing errors and correlating them with specific users or applications.
 * Track recent write and delete operations to maintain an audit trail of changes made to your OpenAI.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Administrative-Operations.png')} alt="Azure OpenAI - Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Administrative-Operations.png')} alt="Azure OpenAI - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Policy and Recommendations
 
@@ -132,10 +132,10 @@ The **Azure OpenAI - Policy and Recommendations** dashboard provides details on 
 
 Use this dashboard to:
 * Monitor the success and failure rates of policy events to ensure proper configuration and compliance.
-* Track and analyse recent recommendations to improve the performance and security of your OpenAI setup.
+* Track and analyze recent recommendations to improve the performance and security of your OpenAI setup.
 * Identify trends in policy events and recommendations over time to proactively address potential issues.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Policy-and-Recommendations.png')} alt="Azure OpenAI - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureOpenAI/Azure-OpenAI-Policy-and-Recommendations.png')} alt="Azure OpenAI - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Azure OpenAI
 
@@ -147,10 +147,10 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 These alerts are metric based and will work for all Azure Storage.
 
-| Alert Name                                            | Alert Description and Conditions                                                               | Alert Condition     | Recover Condition         |
-|:------------------------------------------------------|:-----------------------------------------------------------------------------------------------|:--------------------|:--------------------------|
-| `Azure OpenAI - Availability`                         | This alert is triggered when availability of resource drops below 100% .                       | Count < 100         | Count > = 100             |
-| `Azure OpenAI - Processed Inference Tokens`           | This alert is triggered when inference token consumption crosses the value of 1000000 tokens.  | Count > 1000000     | Count < = 1000000         |
+| Alert Name                                            | Alert Description and Conditions                                                               | Alert Condition     | Recover Condition |
+|:------------------------------------------------------|:-----------------------------------------------------------------------------------------------|:--------------------|:------------------|
+| `Azure OpenAI - Availability`                         | This alert is triggered when availability of resource drops below 100% .                       | Count < 100         | Count = 100       |
+| `Azure OpenAI - Processed Inference Tokens`           | This alert is triggered when inference token consumption crosses the value of 1000000 tokens.  | Count > 1000000     | Count < = 1000000 |
 
 ## Upgrade/Downgrade the Azure OpenAI app (optional)
 
