@@ -148,8 +148,8 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 These alerts are metric-based and will work for all Azure Storage.
 
 | Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
-|:--|:--|:--|:--|
-| `Azure OpenAI - Availability` | This alert is triggered when the availability of the resource drops below 100%. | Count < 100 | Count = 100 |
+|:--|:--|:--|:------------------|
+| `Azure OpenAI - Availability` | This alert is triggered when the availability of the resource drops below 100%. | Count < 100 | Count > = 100     |
 | `Azure OpenAI - Processed Inference Tokens` | This alert is triggered when inference token consumption crosses the value of 1000000 tokens. | Count > 1000000 | Count < = 1000000 |
 
 ## Upgrade/Downgrade the Azure OpenAI app (optional)
