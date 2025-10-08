@@ -36,7 +36,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build the Docusaurus site
         run: yarn build
-      # --- NEW: Disallowed character checks for Pantheon ---
+      # --- Disallowed character checks for Pantheon ---
       # 1) Fail if any file path in the build output contains disallowed characters
       - name: Check build artifact paths for disallowed characters
         env:
@@ -55,14 +55,14 @@ jobs:
             while IFS= read -r p; do
               rel="${p#$(pwd)/}"
               [ "$rel" = "$p" ] && rel="$p"
-              # Detect and print which character(s) caused it
               badchars=$(echo "$rel" | grep -oE '[":<>|*?]' | tr -d '\n')
               echo "::error file=${rel}::Disallowed character(s) found in build artifact path: [${badchars}] (Pantheon rejects paths containing any of: \" : < > | * ?)"
             done <<< "$OFFENDERS"
             exit 1
           fi
           echo "✅ No disallowed characters found in build artifact paths."
-      # 2) Fail if any Markdown/MDX link target contains disallowed characters (excluding external links)
+      # 2) Fail if any Markdown/MDX link target contains disallowed characters (excluding external links).
+      #    Ignores fenced code blocks (```/~~~) and inline code (`...`) to avoid false positives from code samples.
       - name: Check Markdown/MDX links for disallowed characters
         shell: bash
         run: |
@@ -73,28 +73,43 @@ jobs:
           fi
           BAD_LINKS=$(
             awk '
+              BEGIN { in_code=0 }
               {
-                line=$0
-                while (match(line, /\]\(([^)]+)\)/, m)) {
+                raw=$0
+
+                # Toggle fenced code blocks starting with ``` or ~~~
+                if (match(raw, /^\s*(```|~~~)/)) { in_code = !in_code; next }
+                if (in_code) { next }
+
+                # Strip inline code spans so patterns inside don’t trigger
+                line = raw
+                gsub(/`[^`]*`/, "", line)
+
+                # Find real Markdown links: [text](url)
+                while (match(line, /\[[^]]+\]\(([^)]+)\)/, m)) {
                   url=m[1]
-                  # skip external schemes
+
+                  # Skip external schemes
                   if (url ~ /^(https?:|mailto:|tel:)/) { line=substr(line, RSTART+RLENGTH); continue }
-                  # drop query + fragment
+
+                  # Drop query + fragment
                   sub(/\?.*$/, "", url)
                   sub(/#.*/, "", url)
-                  # flag if contains disallowed characters: " : < > | * ?
+
+                  # Disallowed characters in relative link targets: " : < > | * ?
                   if (url ~ /[":<>|*?]/) {
                     printf("%s\t%d\t%s\n", FILENAME, FNR, m[0])
                   }
+
                   line=substr(line, RSTART+RLENGTH)
                 }
               }
             ' $FILES
           )
+
           if [ -n "$BAD_LINKS" ]; then
             echo "❌ Disallowed characters found in Markdown/MDX link targets:"
             echo "$BAD_LINKS"
-            # Emit GitHub annotations for each finding (including exact bad char(s))
             while IFS=$'\t' read -r file line match; do
               [ -z "$file" ] && continue
               badchars=$(echo "$match" | grep -oE '[":<>|*?]' | tr -d '\n')
