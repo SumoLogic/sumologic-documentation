@@ -52,13 +52,21 @@ You'll need the following:
 * .NET 6 SDK
 * Sumo Logic OTLP endpoint URL
 
-### OpenTelemetry Collector Lambda layer
+### Configure the lambda function
 
-Use the following upstream [collector lambda layer](https://github.com/open-telemetry/opentelemetry-lambda/tree/main?tab=readme-ov-file#latest-layer-versions)
+Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 
-* `arn:aws:lambda:<region>:184161586896:layer:opentelemetry-collector-<amd64|arm64>-<version>:1`
+* Navigate to the **Layers** section and click **Add a layer**.
+  Use the following upstream [collector lambda layer](https://github.com/open-telemetry/opentelemetry-lambda/tree/main?tab=readme-ov-file#latest-layer-versions)
 
-   By default, OpenTelemetry Collector Lambda layer exports telemetry data to AWS backends. To customize the collector configuration, add a collector.yaml to your function and specify its location via the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` environment file.
+  * `arn:aws:lambda:<region>:184161586896:layer:opentelemetry-collector-<amd64|arm64>-<version>:1`
+
+* In the **Choose a layer** menu, select **Specify an ARN** and paste the above ARN ID for your Lambda function
+  :::note
+  Lambda layers are a regionalized resource, meaning that they can only be used in the Region in which they are published. Make sure to use the layer in the same region as your Lambda functions.
+  :::
+
+  By default, OpenTelemetry Collector Lambda layer exports telemetry data to AWS backends. To customize the collector configuration, add a collector.yaml to your function and specify its location via the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` environment file.
 
 * Configure the collector layer to send data to SumoLogic:
 
@@ -91,15 +99,6 @@ Use the following upstream [collector lambda layer](https://github.com/open-tele
     aws lambda update-function-configuration --function-name Function --environment Variables={OPENTELEMETRY_COLLECTOR_CONFIG_URI=/var/task/collector.yaml}
     ```
 
-### Configure the lambda function
-
-Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
-
-* Navigate to the **Layers** section and click **Add a layer**.
-* In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function
-  :::note
-  Lambda layers are a regionalized resource, meaning that they can only be used in the Region in which they are published. Make sure to use the layer in the same region as your Lambda functions.
-  :::
 * Configure the following environment variables:
 
   Navigate to the **Configuration > Environment variables** section and ensure that the following  environment variables are setup:
