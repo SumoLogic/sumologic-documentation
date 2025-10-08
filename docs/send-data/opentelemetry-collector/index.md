@@ -37,14 +37,13 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/install-collector"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Install Collector</h4></a>
+      <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/install-collector')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Install Collector</h4></a>
       <p>Step-by-step instructions for installing the OpenTelemetry collector on Linux, Windows, macOS, and more.</p>
     </div>
   </div>
     <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/data-source-configurations">
-        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
+      <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/data-source-configurations')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
         <h4>Data Source and Configurations</h4>
       </a>
       <p>Collect logs, metrics, and tracing data, as well as how to add configurations for the OpenTelemetry collector.</p>
@@ -52,8 +51,7 @@ In this section, we'll introduce the following concepts:
   </div>
     <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/remote-management/">
-        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
+      <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/remote-management/')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
         <h4>Remote Management</h4>
       </a>
       <p>Learn about remote management of OpenTelemetry collectors.</p>
@@ -61,8 +59,7 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/view-opentelemetry-collection-page">
-        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
+      <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/view-opentelemetry-collection-page')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
         <h4>View Details About an OpenTelemetry Collector</h4>
       </a>
       <p>Learn how to view details about an OpenTelemetry Collector.</p>
@@ -70,8 +67,7 @@ In this section, we'll introduce the following concepts:
   </div>
       <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/auto-discovery">
-        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
+      <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/auto-discovery')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/>
         <h4>Auto Discovery</h4>
       </a>
       <p>Enable Auto Discovery to detect services that are installed on the server on which the collector is running.</p>
@@ -79,14 +75,13 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href="/docs/send-data/opentelemetry-collector/performance-benchmarks"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Performance Benchmarks</h4></a>
+    <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/performance-benchmarks')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Performance Benchmarks</h4></a>
     <p>Collect data to establish performance benchmarks.</p>
     </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-    <a href="/docs/send-data/opentelemetry-collector/data-transformations">
-      <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25" />
+    <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/data-transformations')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25" />
       <h4>String Hashing and Masking</h4>
     </a>
     <p>Perform string hashing and masking operations using the Transform Processor and OTTL in OpenTelemetry.</p>
@@ -94,19 +89,19 @@ In this section, we'll introduce the following concepts:
 </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href="/docs/send-data/opentelemetry-collector/troubleshooting"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Troubleshooting</h4></a>
+    <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/troubleshooting')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Troubleshooting</h4></a>
     <p>Find solutions to common issues with the OpenTelemetry collector.</p>
     </div>
   </div>
     <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Sumo Logic OTel</h4></a>
+      <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Sumo Logic OTel</h4></a>
       <p>Understand the relationship between the Sumo Logic OpenTelemetry Collector and the OpenTelemetry upstream project.</p>
     </div>
   </div>
   <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/opentelemetry-collector/faq"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>FAQ</h4></a>
+  <a href={useBaseUrl('/docs/send-data/opentelemetry-collector/faq')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>FAQ</h4></a>
     <p>Find answers to frequently asked questions about the OpenTelemetry collector.</p>
     </div>
   </div>
