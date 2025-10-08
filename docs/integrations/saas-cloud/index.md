@@ -95,6 +95,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/carbon-black-inventory"><img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="icon" width="80"/><h4>Carbon Black Inventory</h4></a>
+  <p>Gain insight into endpoint assets and their security status in your environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/cato-networks"><img src={useBaseUrl('/img/send-data/cato-logo.png')} alt="icon" width="80"/><h4>Cato Networks</h4></a>
   <p>Gain insight into the events and identify potential security threats with admin activities.</p>
   </div>
