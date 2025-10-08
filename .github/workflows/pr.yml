@@ -48,7 +48,7 @@ jobs:
             exit 0
           fi
           # Disallowed chars: " : < > | * ?
-          OFFENDERS="$(find "$BUILD_DIR" -type f | grep -E '[" :<>|*?]')" || true
+          OFFENDERS="$(find "$BUILD_DIR" -type f | grep -E '[":<>|*?]')" || true
           if [ -n "$OFFENDERS" ]; then
             echo "❌ Disallowed characters found in build artifact paths:"
             echo "$OFFENDERS"
@@ -56,7 +56,7 @@ jobs:
               rel="${p#$(pwd)/}"
               [ "$rel" = "$p" ] && rel="$p"
               # Detect and print which character(s) caused it
-              badchars=$(echo "$rel" | grep -oE '[" :<>|*?]' | tr -d '\n')
+              badchars=$(echo "$rel" | grep -oE '[":<>|*?]' | tr -d '\n')
               echo "::error file=${rel}::Disallowed character(s) found in build artifact path: [${badchars}] (Pantheon rejects paths containing any of: \" : < > | * ?)"
             done <<< "$OFFENDERS"
             exit 1
@@ -83,7 +83,7 @@ jobs:
                   sub(/\?.*$/, "", url)
                   sub(/#.*/, "", url)
                   # flag if contains disallowed characters: " : < > | * ?
-                  if (url ~ /[" :<>|*?]/) {
+                  if (url ~ /[":<>|*?]/) {
                     printf("%s\t%d\t%s\n", FILENAME, FNR, m[0])
                   }
                   line=substr(line, RSTART+RLENGTH)
@@ -97,7 +97,7 @@ jobs:
             # Emit GitHub annotations for each finding (including exact bad char(s))
             while IFS=$'\t' read -r file line match; do
               [ -z "$file" ] && continue
-              badchars=$(echo "$match" | grep -oE '[" :<>|*?]' | tr -d '\n')
+              badchars=$(echo "$match" | grep -oE '[":<>|*?]' | tr -d '\n')
               echo "::error file=${file},line=${line}::Disallowed character(s) in Markdown link target: [${badchars}] ${match} (Not allowed: \" : < > | * ?)"
             done <<< "$BAD_LINKS"
             exit 1
