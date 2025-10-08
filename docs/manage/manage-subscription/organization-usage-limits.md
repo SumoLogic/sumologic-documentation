@@ -14,7 +14,7 @@ This page provides information about the query budget usage limits, which allows
 Only **Administrator** have the access to view the **Ingestion - Throttling Limits** section.
 :::
 
-This section provides information about the baseline and throttling limits set. Click **View Usage and Throttling Limits** button to view the logs, traces, and traces ingestion rate over the selected time range. With [View Recent Breaches](/docs/manage/security/audit-indexes/audit-index/#throttling-events) button you can view recent throttling limit breaches.
+This section provides information about the baseline and throttling limits set. Click **View Usage and Throttling Limits** button to view the logs, metrics, and traces ingestion rate over the selected time range. With [View Recent Breaches](/docs/manage/security/audit-indexes/audit-index/#throttling-events) button you can view recent throttling limit breaches.
 
 ### Enable Ingestion Throttling Notifications
 
