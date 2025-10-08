@@ -291,13 +291,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         </div>
         <div className="box smallbox card">
           <div className="container">
-          <img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Thumbnail icon" width="50"/>
-          <h4><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops">GI for AWS CloudTrail DevOps</a></h4>
-          <p>A guide to the GI for AWS CloudTrail DevOps app.</p>
-          </div>
-        </div>
-        <div className="box smallbox card">
-          <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/pci-icon.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/cloudtrail-pci-compliance">PCI Compliance - CloudTrail</a></h4>
           <p>A guide to our PCI CloudTrail app.</p>
