@@ -46,7 +46,7 @@ If the query editor mode cannot be adjusted, it is changed to advanced mode so t
 
 ## Create a metric query
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Metrics**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Metrics > Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Metrics > Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Metrics**. 
 1. The Metrics Search page opens. Click the **Metric** field. A list of metrics appears. You can scroll through the list, or begin typing to dynamically narrow the list. Click the desired metric.
 
     <img src={useBaseUrl('img/metrics/click-in-metrici-area.png')} alt="Select metric" style={{border: '1px solid gray'}} width="800" />

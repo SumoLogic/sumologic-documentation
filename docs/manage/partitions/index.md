@@ -9,12 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Creating a partition enhances search performance by narrowing down the search scope to a smaller subset of messages. Use the Partitions page to set up and manage partitions. 
 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Partitions page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Partitions page, in the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Partitions page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
- 
-
-A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../data-forwarding/amazon-s3-bucket.md).
+A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3 or GCS](../data-forwarding/forward-data-from-sumologic.md).
 
 :::note
 Data stored in a partition is not stored anywhere else. 

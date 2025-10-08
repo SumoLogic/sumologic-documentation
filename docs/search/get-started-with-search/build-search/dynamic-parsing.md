@@ -6,18 +6,6 @@ description: Dynamic Parsing (Auto Parse Mode) allows you to configure automatic
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<!-- When Intelliparse goes GA, add a note here and in that doc differentiating it from Auto Parse.
-Logs currently have two parsing modes:
-Manual mode:
-Nothing is automatically parsed
-Autoparse mode:
-Json blocks within logs are automatically parsed
-We’re adding a third mode:
-Intelliparse Mode:
-Json blocks within logs are automatically parsed
-Unstructured logs are parsed via pre-discovered parsers
--->
-
 Dynamic Parsing (Auto Parse Mode) allows automatic field extraction from your JSON log messages when you run a search. This allows you to view fields from JSON logs without having to manually specify parsing logic.
 
 ## How Dynamic Parsing works
@@ -59,7 +47,7 @@ To optimize search performance you can manually set up Dynamic Parsing by defin
 
 Run Time FERs have a scope, exactly like an Ingest Time FER, that defines which searches are applicable to Dynamic Parsing **Auto Parse Mode**. For Dynamic Parsing to work your query needs to have a scope that is defined in a Run Time FER, otherwise **Auto Parse Mode** will not be applicable.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**.
 1. Click **+ Add** at top right of the table to create an FER.<br/>  ![Create Field extraction rule with dynamic parsing.png](/img/search/get-started-search/build-search/dynamic-parsing/create-FER-dynamic-parsing.png)
 1. Enter the following options:
    * **Rule Name**. Type a name that makes it easy to identify the rule.
@@ -108,7 +96,7 @@ The [field browser](/docs/search/get-started-with-search/search-page/field-brows
 
 ## Using Manual mode
 
-When **Auto Parse Mode** is disabled, you'll be in manual mode, meaning:
+When **Auto Parse Mode** is disabled, you'll be in manual parsing mode, meaning:
 * Fields won't be parsed automatically unless defined by an Ingest-Time FER.
 * You'll need to add parsing logic manually.
 * This mode is best suited for advanced users who want full control and optimized performance.

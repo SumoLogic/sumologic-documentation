@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The page talks about viewing information about the data forwarding configured for your organization.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. <br/><img src={useBaseUrl('/img/manage/data-forwarding/data_forwarding.png')} alt="Data_Forwarding" style={{border:'1px solid gray'}} width="800"/>
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <br/><img src={useBaseUrl('/img/manage/data-forwarding/data_forwarding.png')} alt="Data_Forwarding" style={{border:'1px solid gray'}} width="800"/>
 1. Once you're in the **Data Forwarding** tab, apply the following settings:
     * **Add a filter**. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
         :::note

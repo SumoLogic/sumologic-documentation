@@ -25,6 +25,10 @@ Key features:
 - **Customizable filters**. Tailor deletion to your needs.
 - **Robust auditing mechanisms**. Ensure thorough tracking.
 
+:::info
+To know about Deletion requests API, refer to the [Data Deletion Rules APIs](/docs/api/data-deletion-rules).
+:::
+
 ## Create a deletion request
 
 :::warning
@@ -34,6 +38,7 @@ After a data deletion request is approved, data will be deleted from the organiz
 :::note
 - During the data deletion process, existing messages may temporarily appear duplicated for a few seconds. These duplicated messages will automatically disappear once the data deletion is complete.
 - Pinned queries may continue to display data identified for deletion for up to 24 hours from the initial run, prior to the data deletion request approval.
+- Data deletion requests are automatically canceled after 30 days if no action is taken.
 :::
 
 :::info
@@ -52,7 +57,11 @@ Data cannot be recovered once it gets deleted. Ensure that you have appropriatel
    :::
 1. Select the **Time Range** when the data was ingested.
 1. When you're done, click **Save**.
-1. Your request will go to a Sumo Logic Customer Support Manager (CSM) for review and approval. You can check on your request in the **Status** column. <br/><img src={useBaseUrl('img/search/get-started-search/deletion-request-status.png')} alt="deletion request status" style={{border: '1px solid gray'}} width="400"/>
+1. An email about your request will be sent to 50 most recently active approval users with [approval access](#approve-the-deletion-request). You can check on your request in the **Status** column.  
+    :::note
+    If you require an approval apart from this 50 users, you can forward the deletion request approval email to the required users. 
+    :::
+    <img src={useBaseUrl('img/search/get-started-search/deletion-request-status.png')} alt="deletion request status" style={{border: '1px solid gray'}} width="400"/>
 
 ### From a Log Search
 
@@ -88,12 +97,27 @@ To cancel a data deletion request:
 
 <img src={useBaseUrl('img/search/get-started-search/deletion-request-cancel.png')} alt="screenshot showing how to cancel a deletion request" style={{border: '1px solid gray'}} width="800"/>
 
+## Approve the deletion request
+
+:::note
+To approve or reject a request, ensure you have the **Review Deletion Requests** [role capability](/docs/manage/users-roles/roles/role-capabilities/). By default, **Manage Deletion Requests** and **View Deletion Requests** capabilities will be added if you have the **Review Deletion Requests** capability.
+:::
+
+Once the deletion request is created, an email notification will be sent to the users who have approval access. To approve or reject the request, follow the steps below:
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Logs > Deletion Requests**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Logs** select **Deletion Requests**. 
+1. Filter for the status with **Pending review**. <img src={useBaseUrl('img/search/get-started-search/pending-requests.png')} alt="filter for pending deletion requests" style={{border: '1px solid gray'}} width="800"/>
+1. Click the deletion request to review it.
+1. **Approve** or **Reject** the request based on your requirement.<br/><img src={useBaseUrl('img/search/get-started-search/approve-reject-deletion-request.png')} alt="Approve/Reject deletion requests side panel" style={{border: '1px solid gray'}} width="400"/>
+    - **Approve**. Enter **Delete** in the **Approve Deletion Request** pop-up to permanently delete the data, and click the **Delete Data** button. <br/><img src={useBaseUrl('img/search/get-started-search/approve-deletion-request.png')} alt="Approve deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
+    - **Reject**. Enter the reason for rejection in the **Reject Deletion Request** pop-up to help the requester understand the reason for rejection and take any necessary actions, and click the **Reject Request** button.<br/><img src={useBaseUrl('img/search/get-started-search/reject-deletion-request.png')} alt="Reject deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
+
 ## Limitations
 
 - Deletion requests will be processed one by one. 
 - You can create upto 100 deletion requests at a time.
 - Each deletion request can include up to 1 petabyte (PB) of scanned data.   
-- You can delete up to 1,000,000 messages per request.   
+- You can delete up to 1,000,000 messages per request. 
 - The maximum time range for each deletion request is one year.   
 - Your system can support up to 10 active concurrent deletion tasks across different customers.
 - Ensure that the requests initiated are not deleting the data prior to `1st February 2024`. Any request before this timestamp will fail in creation.
@@ -106,7 +130,7 @@ Customers must manage the future ingestion of sensitive data using [processing r
 
 ### Deletion scope
 
-Deletion is restricted to partitions and the default view (sumologic_default) in Sumo Logic. Deletion is currently not supported for other view types, such as [Scheduled Views](/docs/manage/scheduled-views) or ad hoc views created using the save view operator. Sensitive data may still be present in these unsupported views.
+Deletion is restricted to [Partitions](/docs/manage/partitions/), Default view (sumologic_default), [Scheduled Views](/docs/manage/scheduled-views), [Scheduled Search](/docs/alerts/scheduled-searches/), and ad hoc views in Sumo Logic. Deletion is currently not supported for audit indexes, security indexes, and other view types. Sensitive data may still be present in these unsupported views.
 
 ### Supported operators
 

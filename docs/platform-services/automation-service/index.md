@@ -32,7 +32,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/automation-service/automation-service-playbooks/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Playbooks</h4></a>
+  <a href="/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Playbooks</h4></a>
   <p>Learn about playbooks. A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type.</p>
   </div>
 </div>
