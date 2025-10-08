@@ -2945,7 +2945,7 @@
   "/cid/1108": "/docs/integrations/saas-cloud/trellix-mvision-epo",
   "/cid/1110": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity",
   "/docs/integrations/microsoft-azure/microsoft-defender-for-identity/": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity",
-  "/cid/1112": "/docs/integrations/saas-cloud/carbon-black-inventory/",  
+  "/cid/1112": "/docs/integrations/saas-cloud/carbon-black-inventory/",
   "/cid/1111": "/docs/integrations/microsoft-azure/azure-open-ai",
   "/Cloud_SIEM_Enterprise": "/docs/cse",
   "/Cloud_SIEM_Enterprise/Administration": "/docs/cse/administration",
@@ -4521,5 +4521,6 @@
   "/docs/cse/signals": "/docs/cse/records-signals-entities-insights",
   "/docs/query/query-operators/aggregation-functions": "/docs/search/search-query-language/group-aggregate-operators",
   "/Search/Search-Query-Language/Parse-Operators": "/docs/search/search-query-language/parse-operators",
-  "/docs/get-started/training-certification-faq-new": "/docs/get-started/training-certification-faq"
+  "/docs/get-started/training-certification-faq-new": "/docs/get-started/training-certification-faq",
+  "/01Start-Here/Quick-Start-Tutorials/Using-Sumo-Logic-Tutorial/Lab-1:Viewing-Data": "/docs/get-started/training-certification-faq"
 }

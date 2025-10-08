@@ -48,16 +48,16 @@ jobs:
             exit 0
           fi
           # Disallowed chars: " : < > | * ?
-          OFFENDERS="$(find "$BUILD_DIR" -type f | grep -E '[\":<>|*?]')" || true
+          OFFENDERS="$(find "$BUILD_DIR" -type f | grep -E '[" :<>|*?]')" || true
           if [ -n "$OFFENDERS" ]; then
             echo "❌ Disallowed characters found in build artifact paths:"
             echo "$OFFENDERS"
-            # Annotate each offending path; show relative path from repo root
             while IFS= read -r p; do
-              # Normalize to repo-relative path
               rel="${p#$(pwd)/}"
               [ "$rel" = "$p" ] && rel="$p"
-              echo "::error file=${rel}::Disallowed character found in build artifact path (Pantheon rejects paths containing any of: \" : < > | * ?)"
+              # Detect and print which character(s) caused it
+              badchars=$(echo "$rel" | grep -oE '[" :<>|*?]' | tr -d '\n')
+              echo "::error file=${rel}::Disallowed character(s) found in build artifact path: [${badchars}] (Pantheon rejects paths containing any of: \" : < > | * ?)"
             done <<< "$OFFENDERS"
             exit 1
           fi
@@ -94,10 +94,11 @@ jobs:
           if [ -n "$BAD_LINKS" ]; then
             echo "❌ Disallowed characters found in Markdown/MDX link targets:"
             echo "$BAD_LINKS"
-            # Emit GitHub annotations for each finding
+            # Emit GitHub annotations for each finding (including exact bad char(s))
             while IFS=$'\t' read -r file line match; do
               [ -z "$file" ] && continue
-              echo "::error file=${file},line=${line}::Disallowed character in Markdown link target: ${match}  (Not allowed: \" : < > | * ?)"
+              badchars=$(echo "$match" | grep -oE '[" :<>|*?]' | tr -d '\n')
+              echo "::error file=${file},line=${line}::Disallowed character(s) in Markdown link target: [${badchars}] ${match} (Not allowed: \" : < > | * ?)"
             done <<< "$BAD_LINKS"
             exit 1
           fi
