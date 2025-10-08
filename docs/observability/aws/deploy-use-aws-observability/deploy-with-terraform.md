@@ -31,6 +31,11 @@ If you've previously set up our AWS Observability Solution with CloudFormation a
 
 :::
 
+:::note
+The Global Intelligence for AWS CloudTrail DevOps app is planned for deprecation in the near future and has therefore been removed from the AWS Observability Solution. With this removal, the app will no longer be backed up or maintained during future solution upgrades.
+:::
+
+
 For this setup, complete the following:
 
 1. Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
@@ -406,6 +411,7 @@ Configure providers for collection using the Terraform source-module.
     #  access_id                 = var.sumologic_access_id
     #  access_key                = var.sumologic_access_key
     #  environment               = var.sumologic_environment  
+    #  aws_resource_tags         = var.aws_resource_tags
     #}
     ```
 
@@ -440,6 +446,7 @@ Configure providers for collection using the Terraform source-module.
     access_id    = var.sumologic_access_id
     access_key   = var.sumologic_access_key
     environment  = var.sumologic_environment
+    aws_resource_tags  = var.aws_resource_tags
 
     }
     ```
@@ -462,6 +469,7 @@ module "production-us-east-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 
 module "production-us-east-2" {
@@ -472,7 +480,8 @@ module "production-us-east-2" {
   sumologic_organization_id = var.sumologic_organization_id
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
-  environment  = var.sumologic_environment  
+  environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags  
 
 # Use the same collector created for the first region of the production account.
   sumologic_existing_collector_details = {
@@ -502,6 +511,7 @@ module "production-us-east-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 
 module "production-us-east-2" {
@@ -513,6 +523,7 @@ module "production-us-east-2" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 
 # Use the same collector created for the first region of the production account.
   sumologic_existing_collector_details = {
@@ -530,6 +541,7 @@ module "development-us-west-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
@@ -592,6 +604,7 @@ module "collection-module" {
  access_id    = var.sumologic_access_id
  access_key   = var.sumologic_access_key
  environment  = var.sumologic_environment
+ aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
@@ -623,8 +636,15 @@ module "collection-module" {
    }
    fields = {}
  }
+ aws_resource_tags = {
+   env = "prod"
+   author = "sumologic"
+ }
 }
 ```
+:::note
+`aws_resource_tags` is a map of tags that will be applied to all AWS resources provisioned through the AWS Observability Solution, except for SAM nested sources, which are not tagged.
+:::
 
 **Override Example 2: Override the auto_enable_access_logs parameter**
 
@@ -639,6 +659,7 @@ module "collection-module" {
  access_key   = var.sumologic_access_key
  environment  = var.sumologic_environment
  auto_enable_access_logs = None
+ aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
@@ -849,7 +870,7 @@ elb_source_details = {
 
 #### auto_enable_access_logs
 
-Enable Application Load Balancer (ALB)  Access logging.
+Enable Application Load Balancer (ALB) Access logging.
 
 You have the following options:
 
@@ -871,6 +892,10 @@ Example JSON for newly created ALB resources only.
 ```json
 auto_enable_access_logs = "New"
 ```
+
+ :::note
+ CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
+ :::
 
 #### elb_log_source_url
 
@@ -999,6 +1024,11 @@ Example JSON for newly created ALB resources only.
 ```
 auto_enable_classic_lb_access_logs = "New"
 ```
+
+ :::note
+ CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
+ :::
+
 
 #### classic_lb_log_source_url
 
@@ -1256,6 +1286,10 @@ Subscribe log groups to Sumo Logic Lambda Forwarder. You have the following opti
 auto_enable_logs_subscription="New"
 ```
 
+ :::note
+ CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail.
+ :::
+
 ### auto_enable_logs_subscription_options
 
 * `filter`. Enter regex for matching logGroups for AWS Lambda only. The regex will check the name. See [Configuring Parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters).
@@ -1467,8 +1501,8 @@ module "sumo-module" {
 
 The following table provides a list of all source parameters and their default values. See the [sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars](http://sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars) file for complete code.
 
-| Parameter | Description                                                                                                                                                                                                                                                                        | Default |
-|:--|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--|
+| Parameter | Description | Default |
+|:--|:--|:--|
 | `access_id` | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.	                                                                                                                           | Ignore if already configured in **main.auto.tfvars** file. |
 | `access_key` | Sumo Logic Access Key. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.                                                                                                                           | Ignore if already configured in main.auto.tfvars file.
 | `environment` | Enter au, ca, de, eu, jp, us2, fed, kr, or us1. See Sumo Logic Endpoints and Firewall Security for information. Ignore this setting if you entered it in Source Parameters.                                                                                                        | Ignore if already configured in main.auto.tfvars file. |
@@ -1581,6 +1615,23 @@ Invalid IAM role OR AccessDenied
 
 - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. 
 - Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues.
+
+
+### Subscription filters are not applied to newly created log groups
+### Message
+```
+This error can occur when cloudtrail is not enabled for EventBridge to capture `CreateLogGroup` events   
+```
+#### Solution
+CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail.
+
+### Access logs are not enabled for the Load Balancer
+### Message
+```
+This error can occur when cloudtrail is not enabled for EventBridge to capture `CreateLoadBalancer` events
+```
+#### Solution
+CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
 
 ### Argument named *managed_apps* is not expected
 #### Error Message

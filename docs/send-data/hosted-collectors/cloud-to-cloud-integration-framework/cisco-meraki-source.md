@@ -15,13 +15,14 @@ The Cisco Meraki Source provides a secure endpoint to receive data from the Mer
 ## Data collected
 
 | Polling Interval | Data |
-|:------------------|:----------------------------------------------|
-| Every 12 Hours   | [Get Organizations](https://developer.cisco.com/meraki/api-latest/#!get-organizations)                            |
-| Every 12 Hours   | [Get Organization Networks](https://developer.cisco.com/meraki/api-latest/#!get-organization-networks)                    |
-| Every 15 Minutes | [Get Organization Appliance Security Events](https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-security-events)  |
-| Every 15 Minutes | [Get Organization Configuration Changes](https://developer.cisco.com/meraki/api-v1/#!get-organization-configuration-changes)       |
-| Every 15 Minutes | [Get Network Events](https://developer.cisco.com/meraki/api-v1/#!get-network-events)                           |
-| Every 15 Minutes | [Get Network Wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal)             |
+|:--|:--|
+| Every 12 Hours   | [Get Organizations](https://developer.cisco.com/meraki/api-latest/#!get-organizations) |
+| Every 12 Hours   | [Get Organization Networks](https://developer.cisco.com/meraki/api-latest/#!get-organization-networks) |
+| Every 15 Minutes | [Get Organization Appliance Security Events](https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-security-events) |
+| Every 15 Minutes | [Get Organization Configuration Changes](https://developer.cisco.com/meraki/api-v1/#!get-organization-configuration-changes) |
+| Every 15 Minutes | [Get Network Events](https://developer.cisco.com/meraki/api-v1/#!get-network-events) |
+| Every 15 Minutes | [Get Network Wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal) |
+| Every 15 Minutes | [Get Network Traffic Events](https://developer.cisco.com/meraki/api-v1/get-network-traffic/) |
 
 ## Setup
 
@@ -51,7 +52,7 @@ curl --location 'https://api.meraki.com/api/v1/organizations' --header 'X-Cisco-
 When you create an Cisco Meraki Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector). You will need to create a new Cisco Meraki source for every Cisco Meraki organization you want to collect data from.
 
 To configure Cisco Meraki Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a **Hosted Collector**.
 1. Search for and select **Cisco Meraki**.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
@@ -59,12 +60,18 @@ To configure Cisco Meraki Source:
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
-1. **Base URL**. It refers to the default URL where your Meraki account is hosted. If you are located in China, you have the option to modify the base URL.
-1. **API Key**. Provide the API key you generated from your Meraki account.
-1. **Meraki Organization ID**. Provide the numeric Meraki organization ID of the Meraki org you want to collect data from. You can only provide one ID. Please create multiple sources for multiple Meraki organizations.
-1. **Network Event Collection**. Enable or disable this option to collect information about your Meraki Networks, their network events, and wireless Air Marshal events.
-1. (Optional) The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
-1. When you are finished configuring the Source, click **Save**.
+7. **Base URL**. It refers to the default URL where your Meraki account is hosted. If you are located in China, you have the option to modify the base URL.
+8. **API Key**. Provide the [API key](#vendor-configuration) you generated from your Meraki account. 
+9. **Meraki Organization ID**. Provide the numeric [Meraki organization ID](#vendor-configuration) of the Meraki org you want to collect data from. You can only provide one ID. Please create multiple sources for multiple Meraki organizations.
+10. **API Collection**. Choose the APIs below to collect data. Organization and Network details are fetched by default.
+    - **Security Event Collection**
+    - **Organization Configuration Changes Collection**
+    - **Network Wireless Air Marshal Events Collection**
+    - **Network Event Collection**
+    - **Network Traffic Event Collection**
+11. (Optional) The **Polling Interval** is set to 900 seconds by default. You can adjust this value as needed.
+12. (Optional) The **Infra Polling Interval** is set to 24 hours by default. You can adjust this value as needed.
+13. When you are finished configuring the Source, click **Save**.
 
 ## JSON schema
 
@@ -85,9 +92,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | baseURL | String | Yes | `null` | Region URL of the Cisco Meraki application. |  |
-| apiSecretKey | String | Yes | `null` | Cisco Meraki API secret key. |  |
-| merakiOrg | String | Yes | `null` | Cisco Meraki Organization ID. |  |
-| pollingInterval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
+| apiKey | String | Yes | `null` | Cisco Meraki API secret key used for authentication. |  |
+| organizationID | String | Yes | `null` | Cisco Meraki Organization ID you want to collect events from. |  |
+| collectSecurityEvents | Boolean | No | `True` | Specify if you need to collect the security events. |  |
+| collectOrgConfigChangesEvents | Boolean | No | `True` | Specify if you need to collect the organization config changes events. |  |
+| collectAirMarshalEvents | Boolean | No | `True` | Specify if you need to collect the wireless air marshal events. |  |
+| collectNetworkEvents | Boolean | No | `True` | Specify if you need to collect the network events. |  |
+| collectNetworkTrafficEvents | Boolean | No | `True` | Specify if you need to collect the network traffic events. |  |
+| pollingInterval | Integer | No | 900 | This sets how often the Source checks for new data. |  |
+| infraPollingInterval | Integer | No | 24 | This sets how often the Source checks for organization and network info (in hours). |  |
 
 ## Troubleshooting
 You may receive the follow error below if you enter an invalid Cisco Meraki organization ID in your configuration. Please follow the steps in the section [Gather Meraki Organization IDs](#gather-meraki-organization-ids) to ensure you are using an ID for a Meraki organization returned in that query.

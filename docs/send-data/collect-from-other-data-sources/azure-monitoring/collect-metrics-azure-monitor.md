@@ -70,11 +70,11 @@ Follow these steps to export metrics for a resource to Event Hub.
         * Select an event hub policy name. You can use the default policy **RootManageSharedAccessKey**.
     1. Save the **Diagnostic settings**.<br/><img src={useBaseUrl('/img/send-data/azure-metrics/diagnosticsetting.png')} alt="Diagnostic setting" style={{border: '1px solid gray'}} width="800" />
 
-### Troubleshooting metrics collection
+## Troubleshooting metrics collection
 
 If metrics are not flowing into Sumo Logic, follow the steps below to investigate the problem.
 
-#### Verify Configurations
+### Verify Configurations
 
 First, make sure that the resources you created above were successfully created.
 
@@ -82,7 +82,7 @@ Go to **Resource groups**, and select the resource group you created or selected
 
 <img src={useBaseUrl('/img/send-data/azure-metrics/resource.png')} alt="Resource" style={{border: '1px solid gray'}} width="800" />
 
-#### Verify Event Hub is receiving metrics
+### Verify Event Hub is receiving metrics
 
 To verify that events are appearing in your event hub:
 
@@ -92,7 +92,7 @@ To verify that events are appearing in your event hub:
 
 <img src={useBaseUrl('/img/send-data/azure-metrics/event-hub-messages.png')} alt="Event hub messages" style={{border: '1px solid gray'}} width="800" />
 
-#### Verify the Event hub trigger configuration
+### Verify the Event hub trigger configuration
 
 1. Go to **Resource groups**, and select the resource group you created or selected in [Step 2. Configure Azure resources using ARM Template](#step-2-configure-azure-resources-using-arm-template). Search for `SMFuncApp`. You should find the `SMFuncApp<random-string>` Function App. Click it.
 1. Under the **Functions** tab, click **EventHubs_Metrics**.
@@ -100,7 +100,7 @@ To verify that events are appearing in your event hub:
 
 <img src={useBaseUrl('/img/send-data/azure-metrics/azure-triggers.png')} alt="Triggers" style={{border: '1px solid gray'}} width="800" />
 
-#### Verify Sumo Logic HTTP source URL.
+### Verify Sumo Logic HTTP source URL.
 
 1. Go to **Resource groups**, and select the resource group you created or selected in [Step 2. Configure Azure resources using ARM Template](#step-2-configure-azure-resources-using-arm-template). Search for `SMFuncApp`. You should find the `SMFuncApp<random-string>` Function App. Click it.
 1. Click on **Configuration** under **Settings** in the left panel. Click on `SumoLabsMetricEndpoint`. Check that the value of the **SumoLabsMetricEndpoint** field matches the HTTP source URL.<br/><img src={useBaseUrl('/img/send-data/azure-metrics/sumolabsmetricendpoint.png')} alt="Application settings" style={{border: '1px solid gray'}} width="800" />
@@ -110,7 +110,7 @@ To verify that events are appearing in your event hub:
 1. Go to **Resource groups**, and select the resource group you created or selected in [Step 2. Configure Azure resources using ARM Template](#step-2-configure-azure-resources-using-arm-template). Search for `SMAppInsights`. You should find the `SMAppInsights<random-string>` Application Insights. Click it.
 1. In the left panel under **Investigate** click on **Failures**. Click on **Count** column on the rightmost panel, it will take you to the trace, select any trace and see the exception message.<br/><img src={useBaseUrl('/img/send-data/azure-metrics/smappinsightfailures.png')} alt="Application insights" style={{border: '1px solid gray'}} width="800" />
 
-### Common errors
+## Common errors
 
 For common error messages, refer [Event Hub export error messages](/docs/send-data/collect-from-other-data-sources/azure-monitoring/arm-integration-faq#event-hub-export-error-messages) section.
 

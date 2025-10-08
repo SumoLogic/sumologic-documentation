@@ -65,7 +65,7 @@ If you do not use the `quantize to INTERVAL` in your metric query, Sumo automati
 
 The age of the metrics in the time range governs the minimum quantization interval (based on what rollups are available for the query time range). Sumo retains only the last 30 days of raw metric data. So, when you query metrics that are more than 30 days old, Sumo must quantize the data to at least 1 hour, because that’s the minimum resolution rollup available given the age of the data.
 
-If you want, you can override the automatic quantization interval. In the Metrics Explorer’s basic mode you can set the quantization interval in the row creator in the UI. In advanced mode, use the `quantize` operator and specify the interval that fits your need
+If you want, you can override the automatic quantization interval. In the Metrics Search’s basic mode you can set the quantization interval in the row creator in the UI. In advanced mode, use the `quantize` operator and specify the interval that fits your need
 
 Sumo Logic sets the actual quantization interval to be as close to your selection as possible. If it is not possible to set the actual interval to the targeted interval—typically because too many buckets would be produced to reasonably show on the chart—Sumo displays a message like the following:
 

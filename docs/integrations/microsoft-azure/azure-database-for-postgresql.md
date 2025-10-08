@@ -1,7 +1,11 @@
 ---
 id: azure-database-for-postgresql
 title: Azure Database for PostgreSQL
-description: Learn about the Sumo Logic collection process for the Azure Database for PostgreSQL service.
+keywords: 
+ - azure postgresql
+ - postgresql azure
+ - azure postgresql monitoring
+description: This document outlines what is Azure database for PostgreSQL, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -38,9 +42,9 @@ Create a hosted collector if not already configured and tag the `tenant_name` fi
 
 ### Configure metrics collection
 
-import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+import MetricsSource from '../../reuse/metrics-source.md';
 
-<MetricsSourceBeta/>
+<MetricsSource/>
 
 ### Configure logs collection
 
@@ -63,13 +67,11 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 4. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Redis Cache Tag Location" style={{border: '1px solid gray'}} width="400" />
 
-#### Activity logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Skip this step if you are already collecting activity logs for a subscription.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, ensure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ## Installing the Azure Flexible Database for PostgreSQL app
 
@@ -210,6 +212,11 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Troubleshooting
 
-### HTTP Logs and Metrics Source used by Azure Functions
+### Metrics collection via Azure Metrics Source
 
-To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
+To troubleshoot metrics collection via Azure Metrics Source, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).
+
+## Additional resources
+
+- Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
+- Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)
