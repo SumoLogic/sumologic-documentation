@@ -37,13 +37,7 @@ You'll need the following:
 
 ### Overview
 
-```text
-┌─────────────────────┐    OTLP     ┌──────────────────────┐    HTTP     ┌─────────────┐
-│   .NET Lambda       │ ────────►   │ Collector Layer      │ ────────►   │ Sumo Logic  │
-│   Function          │  (default)  │ (Lambda Extension)   │ (protobuf)  │ OTLP Endpoint│
-│   (Function.cs)     │             │ localhost:4318       │             │             │
-└─────────────────────┘             └──────────────────────┘             └─────────────┘
-```
+<img src={useBaseUrl('img/apm/traces/lambda-dotnet-overview.png')} alt=".NET Lambda Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Prerequisites
 
