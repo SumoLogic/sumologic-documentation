@@ -42,4 +42,4 @@ The Scan Budget Management APIs allows you to manage scan budgets from HTTP endp
     * View Usage Management
     * Manage Usage Management
 
-To manage scan budgets, you must have the **Manage Scan Budget** role capability. Enabling this will also automatically enable the **View Scan Budget** capability.
+To manage scan budgets, you must have the **Manage Usage Management** role capability. Enabling this will also automatically enable the **View Usage Management** capability.
