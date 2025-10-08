@@ -112,4 +112,4 @@ Your function should be successfully instrumented. Invoke the function and find 
 ## References
 
 * [OpenTelemetry Lambda Layer Documentation](https://github.com/open-telemetry/opentelemetry-lambda)
-* [Sumo Logic OTLP Integration](https://help.sumologic.com/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/)
+* [Sumo Logic OTLP Integration](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/otlp/)
