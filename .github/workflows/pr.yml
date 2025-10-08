@@ -36,9 +36,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build the Docusaurus site
         run: yarn build
-
-      # --- NEW: Disallowed character checks ---
-
+      # --- NEW: Disallowed character checks for Pantheon ---
       # 1) Fail if any file path in the build output contains disallowed characters
       - name: Check build artifact paths for disallowed characters
         env:
@@ -49,17 +47,21 @@ jobs:
             echo "No $BUILD_DIR directory found; skipping path check."
             exit 0
           fi
-
           # Disallowed chars: " : < > | * ?
           OFFENDERS="$(find "$BUILD_DIR" -type f | grep -E '[\":<>|*?]')" || true
           if [ -n "$OFFENDERS" ]; then
             echo "❌ Disallowed characters found in build artifact paths:"
             echo "$OFFENDERS"
+            # Annotate each offending path; show relative path from repo root
+            while IFS= read -r p; do
+              # Normalize to repo-relative path
+              rel="${p#$(pwd)/}"
+              [ "$rel" = "$p" ] && rel="$p"
+              echo "::error file=${rel}::Disallowed character found in build artifact path (Pantheon rejects paths containing any of: \" : < > | * ?)"
+            done <<< "$OFFENDERS"
             exit 1
           fi
-
           echo "✅ No disallowed characters found in build artifact paths."
-
       # 2) Fail if any Markdown/MDX link target contains disallowed characters (excluding external links)
       - name: Check Markdown/MDX links for disallowed characters
         shell: bash
@@ -69,7 +71,6 @@ jobs:
             echo "No Markdown/MDX files found; skipping link check."
             exit 0
           fi
-
           BAD_LINKS=$(
             awk '
               {
@@ -83,22 +84,24 @@ jobs:
                   sub(/#.*/, "", url)
                   # flag if contains disallowed characters: " : < > | * ?
                   if (url ~ /[" :<>|*?]/) {
-                    printf("%s:%d: %s\n", FILENAME, FNR, m[0])
+                    printf("%s\t%d\t%s\n", FILENAME, FNR, m[0])
                   }
                   line=substr(line, RSTART+RLENGTH)
                 }
               }
             ' $FILES
           )
-
           if [ -n "$BAD_LINKS" ]; then
             echo "❌ Disallowed characters found in Markdown/MDX link targets:"
             echo "$BAD_LINKS"
+            # Emit GitHub annotations for each finding
+            while IFS=$'\t' read -r file line match; do
+              [ -z "$file" ] && continue
+              echo "::error file=${file},line=${line}::Disallowed character in Markdown link target: ${match}  (Not allowed: \" : < > | * ?)"
+            done <<< "$BAD_LINKS"
             exit 1
           fi
-
           echo "✅ No disallowed characters found in Markdown/MDX link targets."
-
   spellcheck:
     runs-on: ubuntu-latest
     steps:
