@@ -102,7 +102,7 @@ Navigate toÂ [functions](https://console.aws.amazon.com/lambda/home#/functions)Â
   | `OTEL_EXPORTER_OTLP_ENDPOINT` | `localhost:4318` | Collector endpoint |
   | `OTEL_EXPORTER_OTLP_PROTOCOL` | `http/protobuf` | Export protocol |
   | `AWS_LAMBDA_EXEC_WRAPPER` | `/opt/otel-instrument` | Lambda wrapper |
-  | `SUMO_LOGIC_OTLP_ENDPOINT` | `https://your-endpoint.sumologic.net/receiver/v1/otlp/YOUR_TOKEN/v1/traces` | Sumo Logic endpoint |
+  | `SUMO_LOGIC_OTLP_ENDPOINT` | `https://your-endpoint.sumologic.net/receiver/v1/otlp/YOUR_TOKEN` | Sumo Logic endpoint |
   | `OPENTELEMETRY_COLLECTOR_CONFIG_URI` | `/var/task/collector.yaml` | Collector configuration |
 
 Any other environment variables like `OTEL_RESOURCE_ATTRIBUTES` or `OTEL_SERVICE_NAME` could also be configured.
