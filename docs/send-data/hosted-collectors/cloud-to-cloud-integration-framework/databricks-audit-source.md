@@ -13,9 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/collector/databricks-icon.png')} alt="icon" width="80"/>
 
-Databricks is a unified data platform that supports data engineering, machine learning, and analytics in a collaborative environment. It offers enterprise-grade security, compliance, and governance for data workflows.
-
-The Audit Logs API enables you to capture structured records of user and system activities within the Databricks workspace, including SQL queries, job executions, cluster events, and workspace changes. These logs facilitate auditing, security monitoring, and regulatory compliance.
+The Sumo Logic source for Databricks enables you to collect audit logs from Databricks into Sumo Logic. This integration helps you to capture structured records of user and system activities within the Databricks workspace, including SQL queries, job executions, cluster events, and workspace changes. These logs facilitate auditing, security monitoring, and regulatory compliance.
 
 ## Data collected
 
