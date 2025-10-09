@@ -272,6 +272,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/databricks-audit-source"><img src={useBaseUrl('img/send-data/cybereason-logo.png')} alt="icon" width="60"/><h4>Databricks Audit</h4></a>
+  <p>Track user and system activities to support governance and compliance using Databricks Audit logs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source"><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Thumbnail icon" width="45"/><h4>Digital Guardian</h4></a>
   <p>Learn how to collect export data from the Digital Guardian and send it to Sumo Logic.</p>
   </div>
