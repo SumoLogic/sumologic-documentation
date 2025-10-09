@@ -252,9 +252,9 @@ export const Home = () => {
                   sx: {
                     display: {
                       sm: 'none',
-                      xs: 'none'
-                    }
-                  }
+                      xs: 'none',
+                    },
+                  },
                 }}
                 value={tab}
               >
