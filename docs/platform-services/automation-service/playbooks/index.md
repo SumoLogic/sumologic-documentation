@@ -19,25 +19,25 @@ To run a playbook, add it to an automation. You can run playbooks in [monitors](
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/automation-service/playbooks/create-playbooks/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Create Playbooks</h4></a>
+  <a href={useBaseUrl('/docs/platform-services/automation-service/playbooks/create-playbooks/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Create Playbooks</h4></a>
   <p>Learn how to create playbooks in the Automation Service to run automated actions.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/automation-service/playbooks/playbook-payloads/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Playbook Payloads</h4></a>
+  <a href={useBaseUrl('/docs/platform-services/automation-service/playbooks/playbook-payloads/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Playbook Payloads</h4></a>
   <p> Learn about the data payloads of the different playbook types.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/automation-service/playbooks/arrays-in-playbooks/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Arrays in Playbooks</h4></a>
+  <a href={useBaseUrl('/docs/platform-services/automation-service/playbooks/arrays-in-playbooks/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Arrays in Playbooks</h4></a>
   <p>Learn how to handle arrays in Automation Service playbooks </p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Troubleshoot Playbooks</h4></a>
+  <a href={useBaseUrl('/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Troubleshoot Playbooks</h4></a>
   <p>Learn how to test playbooks and troubleshoot playbook problems.</p>
   </div>
 </div>

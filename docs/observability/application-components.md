@@ -81,22 +81,22 @@ By default, all other parameters are set up to automatically collect logs and me
 
 **Parameter**: `sumologic_environment`<br/>
 **Required**: Yes <br/>
-**Description**: This is your Sumo Logic Deployment. Enter au, ca, de, eu, jp, us2, fed, or us1. See <a href="/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security">Sumo Logic Endpoints</a> for more information.
+**Description**: This is your Sumo Logic Deployment. Enter au, ca, de, eu, jp, us2, fed, or us1. See Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information.
 
 ---
 **Parameter**: `sumologic_access_id`<br/>
 **Required**: Yes <br/>
-**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/security/access-keys#create-an-access-key">Create an access key</a> for more information.
+**Description**: Your Sumo Logic Access ID. See [Create an access key](/docs/manage/security/access-keys#create-an-access-key) for more information.
 
 ---
 **Parameter**: `sumologic_access_key`<br/>
 **Required**: Yes <br/>
-**Description**: Your Sumo Logic Access Key, which is used for Sumo Logic API calls. See <a href="/docs/manage/security/access-keys">Sumo Logic Access Key</a> for more information.
+**Description**: Your Sumo Logic Access Key, which is used for Sumo Logic API calls. See [Sumo Logic Access Key](/docs/manage/security/access-keys) for more information.
 
 ---  
 **Parameter**: `sumologic_organization_id`<br/>
 **Required**: Yes <br/>
-**Description**: Your Sumo Logic Organization ID. You can find your org on the Preferences page in the Sumo Logic UI. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. For more information, see <a href="/docs/get-started/sumo-logic-ui">Preferences Page</a>.
+**Description**: Your Sumo Logic Organization ID. You can find your org on the Preferences page in the Sumo Logic UI. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. For more information, see [Preferences Page](/docs/get-started/sumo-logic-ui).
 
 
 
@@ -152,7 +152,7 @@ email_notifications_critical = [
 ---
 **Parameters**: `connection_notifications_critical`, `connection_notifications_warning`, `connection_notifications_missingdata` <br/>
 **Required**: No <br/>
-**Description**: To configure notification via pagerduty or webhook set these parameters for critical, warning and missing data monitors respectively. See this <a href="/docs/alerts/webhook-connections/set-up-webhook-connections">document</a> for creating payloads with other connection types.
+**Description**: To configure notification via pagerduty or webhook set these parameters for critical, warning and missing data monitors respectively. See this [document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
 ```json
 connection_notifications_critical = [
     {
