@@ -20,7 +20,7 @@ If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/
 
 A chain rule is similar to a threshold rule. A threshold rule fires when one rule expression is matched at least a certain number times during a specified length of time. In a chain rule you configure two more rule expressions, and for each expression, the number of matches that are required for the rule to fire a signal. The interval you define within which the matches must occur applies to all of the rule expressions in the rule.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn how to create a chain rule.
 

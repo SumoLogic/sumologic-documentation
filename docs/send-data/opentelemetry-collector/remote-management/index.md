@@ -9,7 +9,7 @@ import Iframe from 'react-iframe'; 
 
 The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) simplifies remote management of data collection by enabling setup and configuration from the Sumo Logic UI, deploying to multiple collectors at once, data filtering with remote processing rules, and centralized management of data configurations using source templates.
 
-:::sumo Micro lesson
+:::note Micro lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/o7g9pe3c4t?web_component=true&seo=true&videoFoam=false"
   width="854px"

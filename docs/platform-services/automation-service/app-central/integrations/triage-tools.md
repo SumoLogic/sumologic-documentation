@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: Nov 07, 2023***
 
-:::sumo Cloud SOAR
+:::note Cloud SOAR
 This integration is only for Cloud SOAR.
 :::
 

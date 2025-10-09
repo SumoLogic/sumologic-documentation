@@ -57,7 +57,7 @@ _index=sumologic_search_usage_per_query analytics_tier = "Infrequent" !(user_nam
 
 ## Prerequisites
 
-:::sumo availability
+:::note availability
 
 Sumo Logic Infrequent Data Tier App is only available for Enterprise Suite customers.
 

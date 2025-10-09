@@ -147,7 +147,7 @@ If a POV trial org is not upgraded to Enterprise plan after 45 days, the org wil
 
 ## Update an org's credits allocation
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Watch this micro lesson to learn more about managing a child org.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/cijbsnbz65?web_component=true&seo=true&videoFoam=false"

@@ -239,7 +239,7 @@ In addition, the following can appear in the graph:
 * **Threat indicators**. Any entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the entity will be highlighted in red or yellow accordingly. For more information about threat indicators, see [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).
 * **Hover**. If you hover over an entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn more about the entity relationship graph.
 

@@ -29,7 +29,7 @@ metadata_vendor = 'Amazon AWS' AND metadata_product = 'CloudTrail' AND metadata_
 
 This rule fires a signal each time a UserPoolClient, which has permission to call unauthenticated API operations, is created.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn how to create a match rule.
 

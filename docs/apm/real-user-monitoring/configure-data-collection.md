@@ -11,7 +11,7 @@ import Iframe from 'react-iframe';
 
 To collect [traces](/docs/apm/traces) and RUM metrics from a browser, you'll first need to create a RUM HTTP Traces Source. The source will have an endpoint URL that you'll put in a script that sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol. Alternatively, you can also use an intermediary OTel collector, if you require data to flow over your infrastructure rather than directly to Sumo Logic. Note however this will disable automatic geo-location recognition capabilities.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Using the RUM HTTP Traces App for Manual Testing.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/qmxk5wxqu5?web_component=true&seo=true&videoFoam=false"

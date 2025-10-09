@@ -7,7 +7,7 @@ description: Frequently asked questions about collecting data into Sumo Logic th
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::sumo
+:::note
 To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Collect Data Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTCOWA2/collectors?tabset-cabe3=2).
 :::
 

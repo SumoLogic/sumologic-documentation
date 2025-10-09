@@ -26,7 +26,7 @@ Use Sumo Logic’s [monitoring](/docs/alerts/monitors/) to receive alerts from t
 * If you have already installed the [Amazon Security Quickstart](/docs/integrations/amazon-aws/security-quickstart/), collectors may be duplicated to collect from the same sources. To prevent this, use the existing source category for collection.
 :::
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Watch the following micro lesson to learn about Cloud Infrastructure Security for AWS.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/uxt8gony8i?web_component=true&seo=true&videoFoam=false"

@@ -13,7 +13,7 @@ The LogReduce&reg; algorithm uses fuzzy logic to cluster messages together based
 The `summarize` operator has been renamed to `logreduce` to match the **LogReduce** button on the **Messages** tab. Both operators will continue to work in search queries as synonyms for a limited time. We recommend that you rewrite saved queries replacing summarize with LogReduce.
 :::
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch our video on LogReduce. 
 

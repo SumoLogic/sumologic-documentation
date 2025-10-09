@@ -15,7 +15,7 @@ When performing **Log Search** queries, you can visualize and filter log-level d
 * Navigate through a large volume of logs
 * Filter the relevant logs in their troubleshooting workflows
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Watch the following micro lesson to learn about log level detection.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/mvutc9bmtg?web_component=true&seo=true&videoFoam=false"

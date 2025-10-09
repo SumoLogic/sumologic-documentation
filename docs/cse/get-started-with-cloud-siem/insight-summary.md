@@ -17,7 +17,7 @@ The summary is generated when an insight is created, and is regenerated whenever
 Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide feedback on the effectiveness of the summary presented. Clicking the thumbs-down button gives you the opportunity to provide additional feedback.
 :::
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn more about Sumo Logic's Dojo AI Summary Agent.
 

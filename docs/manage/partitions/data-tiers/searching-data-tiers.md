@@ -9,7 +9,7 @@ This page has information about how to search different Data Tiers, and when yo
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/5qgw3qizmv?web_component=true&seo=true&videoFoam=false"
   width="854px"

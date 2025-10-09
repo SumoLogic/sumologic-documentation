@@ -84,6 +84,6 @@ Example:
 concat(<field1>, <field2>[, <field3>, ...]) as <field>
 ```
 
-:::sumo
+:::note
 For a collection of customer-created search queries and their use cases, see the [Community Query Library](https://support.sumologic.com/support/s/topiccatalog).
 :::

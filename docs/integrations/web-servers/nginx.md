@@ -19,7 +19,7 @@ This app is tested with the following Nginx versions:
 
 import Iframe from 'react-iframe';
 
-:::sumo Tutorial
+:::note Tutorial
 Learn to set up NGINX for non-Kubernetes Sources.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/scxk3myspn?web_component=true&seo=true&videoFoam=false"

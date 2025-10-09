@@ -28,7 +28,7 @@ First seen rules allow you to generate a signal when behavior by an entity (such
 * High severity EDR alert seen for the first time
 * MFA acceptance from first seen device
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn more about first seen rules.
 

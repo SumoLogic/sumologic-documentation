@@ -27,7 +27,7 @@ With its intuitive interface, Mobot automatically generates log searches from na
 If you prefer not to use Mobot, you can opt out by contacting [Support](https://support.sumologic.com/support/s/).
 :::
 
-:::sumo Micro Lesson: Introduction to Mobot
+:::note Micro Lesson: Introduction to Mobot
 This short video introduces Mobot (formerly known as *Copilot*) and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/o9uftxw012?web_component=true&seo=true&videoFoam=false"
@@ -82,7 +82,7 @@ Mobot is ideal for users of all skill levels:
 
 In this section, you'll learn the recommended workflow for using Mobot effectively, along with best practices to maximize its benefits.
 
-:::sumo Micro Lesson: Using Mobot
+:::note Micro Lesson: Using Mobot
 See Mobot (formerly known as *Copilot*) in action with a hands-on walkthrough of the UI and prompt-based search.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/t67ovt9hqj?web_component=true&seo=true&videoFoam=false"

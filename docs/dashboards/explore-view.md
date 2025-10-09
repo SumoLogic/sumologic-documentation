@@ -161,7 +161,7 @@ https://service.us2.sumologic.com/ui/#/explore/@1601092800000,1601389990282@clus
 
 Navigation capabilities allow you to quickly locate the object that needs debugging in a physical stack. This section walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
-:::sumo micro lesson
+:::note micro lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/6kfzt3kzos?web_component=true&seo=true&videoFoam=false"
   width="854px"

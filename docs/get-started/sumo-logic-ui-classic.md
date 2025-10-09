@@ -227,7 +227,7 @@ Whenever you have a question, there are a number of ways in which you can get 
 * Contact [**Support**](https://support.sumologic.com/)
 * Try our **Customer Slack** channel
 
-:::sumo Getting Help
+:::note Getting Help
 See [Getting Help and Contacts](/docs/get-started/help) for full information.
 :::
 

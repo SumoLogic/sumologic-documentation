@@ -16,7 +16,7 @@ By assembling relevant context from prior alerts and by analyzing patterns in lo
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Learn how to use alert response.
 

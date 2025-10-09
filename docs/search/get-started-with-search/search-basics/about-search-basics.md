@@ -8,7 +8,7 @@ Our Search Syntax is based on a funnel or "pipeline" concept. The wide mouth of 
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 How to search data using the Basic Search Mode in Sumo Logic.
 

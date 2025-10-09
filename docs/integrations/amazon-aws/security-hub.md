@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/security-qs.png')} alt="Thumbnail icon" width="50"/>
 
-:::sumo Coming soon: New integration with AWS Security Hub CSPM public preview
+:::note Coming soon: New integration with AWS Security Hub CSPM public preview
 In order to give our shared clients even more context-rich and prioritized security discoveries, Sumo Logic is expanding its integration as a launch partner for the new AWS Security Hub CSPM. This new feature will enable security teams to concentrate on the most important threats to their cloud environments by enabling Sumo Logic to immediately ingest prioritized security results from AWS Security Hub CSPM.
 :::
 

@@ -9,7 +9,7 @@ import Iframe from 'react-iframe';
 
 [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) allow you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/6kfzt3kzos?web_component=true&seo=true&videoFoam=false"
   width="854px"

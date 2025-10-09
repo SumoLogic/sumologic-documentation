@@ -24,7 +24,7 @@ You can access Traces if your Sumo Logic service package has been upgraded to in
 
 ## Micro lesson
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 This micro lesson can help you get started with Tracing.
 

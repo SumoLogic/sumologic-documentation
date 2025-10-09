@@ -23,7 +23,7 @@ This data is gathered directly from your end-user devices and displayed as indiv
 
 All data collected is compatible with OpenTelemetry and doesn't use proprietary vendor code. Real user monitoring supports document load actions as well as XHR communication and route changes for single-page app navigation. The full list of functionalities and configuration is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 See Real User Monitoring in action.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/jfptjgwql1?web_component=true&seo=true&videoFoam=false"

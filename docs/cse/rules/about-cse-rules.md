@@ -14,7 +14,7 @@ A Cloud SIEM rule is logic that fires based on information in incoming records. 
 For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
 :::
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn more about rules.
 

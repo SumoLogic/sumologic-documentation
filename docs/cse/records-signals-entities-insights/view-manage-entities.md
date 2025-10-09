@@ -17,7 +17,7 @@ The **Entities** page is useful for monitoring entities that are close to having
 
 You can also update the [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), [suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) state, and [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) assigned to entities, as described below in the [Update multiple entities](#update-multiple-entities) section. 
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn more about entities.
 

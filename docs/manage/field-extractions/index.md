@@ -59,7 +59,7 @@ import FerLimit from '../../reuse/fer-limitations.md';
 
 ## Micro lesson: Field extraction rules basics
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/1uxjrbva9m?web_component=true&seo=true&videoFoam=false"
   width="854px"

@@ -42,7 +42,7 @@ Here’s what the example tuning expression looks like in the Cloud SIEM UI.
 
 Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#about-rule-expressions).
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn how to create a rule tuning expression.
 

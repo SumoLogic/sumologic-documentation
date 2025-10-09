@@ -40,7 +40,7 @@ Part of managing spikes in activity is properly slowing the rate of ingestion wh
 All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers).
 :::
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn more about throttling.
 

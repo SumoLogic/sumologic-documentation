@@ -17,7 +17,7 @@ If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/a
 
 A threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. 
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn how to create a threshold rule.
 

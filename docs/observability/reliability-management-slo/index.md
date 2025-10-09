@@ -16,7 +16,7 @@ A reliable end user experience is the key goal for observability. In complex sys
 
 This guide provides an overview of Sumo Logic Reliability Management using Service-Level Objectives (SLO). This feature helps site reliability engineers (SREs) and product teams define and monitor SLOs through alerts and dashboards.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/3rztup8x53?web_component=true&seo=true&videoFoam=false"
   width="854px"

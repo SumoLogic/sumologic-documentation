@@ -11,7 +11,7 @@ This page demonstrates how to create a Dashboard, add a query, and then add the
 
 Dashboard allows you to view logs and metrics data on the same dashboard in an integrated and seamless view. This gives you the same control over how your metrics and log data are visualized. Dashboard template capabilities provide for easier data scoping and intuitive chart creation.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Rather watch a short micro lesson video?
 

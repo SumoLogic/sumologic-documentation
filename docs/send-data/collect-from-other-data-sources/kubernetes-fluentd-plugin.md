@@ -17,7 +17,7 @@ This page describes the Sumo Kubernetes Fluentd plugin, available at https://git
 
 The plugin runs as a Kubernetes DaemonSet; it runs an instance of the plugin on each host in a cluster. Each plugin instance pulls system, kubelet, docker daemon, and container logs from the host and sends them, in JSON or text format, to an HTTP endpoint on a hosted collector in the Sumo service.
 
-:::sumo
+:::note
 This integration is supported by Sumo Logic, with the help of a community of open source developers. For support, add a request at https://github.com/SumoLogic/fluentd-kubernetes-sumologic/issues. This will allow the community to participate in support and further improvement of the integration. 
 :::
 

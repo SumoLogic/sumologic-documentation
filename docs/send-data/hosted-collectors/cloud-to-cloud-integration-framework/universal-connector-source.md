@@ -427,7 +427,7 @@ The syntax for this function requires a timestamp format as a single argument. S
 
 This variable is the same as [WindowStartUTC](#windowstartutc) except it has an additional argument to specify the timezone location.
 
-:::sumo[Best Practice]
+:::note[Best Practice]
 We strongly recommend you always use `WindowStartUTC` instead of `WindowStartLocation`. Most vendors support and expect UTC timestamps when using their APIs.
 :::
 
@@ -473,7 +473,7 @@ The syntax for this variable requires a timestamp format as a single argument. R
 
 This variable is the same as [WindowEndUTC](#windowendutc) except it has an additional argument to specify the timezone location.
 
-:::sumo[Best Practice]
+:::note[Best Practice]
 We strongly recommend you always use `WindowEndUTC` instead of `WindowEndLocation`. Most vendors support and expect UTC timestamps when using their APIs.
 :::
 
@@ -496,7 +496,7 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 
 The source uses the [Go programming language timestamp formatting](https://go.dev/src/time/format.go) and the Human-readable timestamp formatting. See the table below for references and examples.
 
-:::sumo[Best Practice]
+:::note[Best Practice]
 We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO) as a quick way to locally test timestamp parsing with a format before configuring the source.
 :::
 

@@ -66,7 +66,7 @@ const AdmonitionConfigs = {
     label: (
       <Translate
         id="theme.admonition.sumo"
-        description="The default label used for the Sumo admonition (:::sumo)">
+        description="The default label used for the Sumo admonition (:::note)">
         sumo
       </Translate>
     ),

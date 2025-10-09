@@ -44,7 +44,7 @@ You can configure what data is to be displayed on the **Incidents** screen by ad
 <img src={useBaseUrl('img/cloud-soar/filter-incidents.png')} alt="Filter incidents" width="800"/>
 
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Watch this micro lesson to learn more about incidents in Cloud SOAR.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/faxotvoq3j?web_component=true&seo=true&videoFoam=false"
@@ -449,7 +449,7 @@ To explore entities:
 
 Cloud SOAR's **Dashboards** section highlights the most important pieces of data to the user or investigator who is logged into the platform. This data is presented through the use of multiple widgets that you can add, remove, and customize to include all data relevant to your job functions and duties.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch the following micro lesson to learn about dashboards.
 

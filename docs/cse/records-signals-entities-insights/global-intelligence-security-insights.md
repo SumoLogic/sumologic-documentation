@@ -9,7 +9,7 @@ import Iframe from 'react-iframe';
 
 This page describes Global Intelligence for security insights, implemented in Cloud SIEM as Global Confidence scores. This feature helps security analysts triage and prioritize insights.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn more about Global Intelligence for insights.
 

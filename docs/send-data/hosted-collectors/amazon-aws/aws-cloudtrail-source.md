@@ -16,7 +16,7 @@ AWS CloudTrail records API calls made to AWS. This includes calls made using the
 You need to know where your CloudTrail log files are stored so you can provide the path to the AWS CloudTrail Source. Refer to AWS Documentation for [finding your CloudTrail log files](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html).
 :::
 
-:::sumo Tutorial
+:::note Tutorial
 
 <Iframe url="https://fast.wistia.net/embed/iframe/inopluxjef?web_component=true&seo=true&videoFoam=false"
   width="854px"

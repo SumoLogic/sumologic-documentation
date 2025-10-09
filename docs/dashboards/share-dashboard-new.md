@@ -11,7 +11,7 @@ Currently, you can only share a dashboard within your organization.
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Share a dashboard inside your organization.
 

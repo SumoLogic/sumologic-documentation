@@ -175,7 +175,7 @@ This could note important and problematic information.
 This action is dangerous and could result in data loss.
 :::
 
-:::sumo Best Practice
+:::note Best Practice
 Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
 :::
 
@@ -204,7 +204,7 @@ This could note important and problematic information.
 This action is dangerous and could result in data loss.
 :::
 
-:::sumo Best Practice
+:::note Best Practice
 Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
 :::
 
@@ -1538,7 +1538,7 @@ For clarity and search engine discoverability:
 * H3 and H4 headers do not impact SEO as much. Use short, meaningful titles for readability and search.
    * Example: _System architecture and monitoring_.
 
-:::sumo For internal contributors
+:::note For internal contributors
 * If you change a URL, set up a [redirect](/docs/contributing/remove-doc#step-1-create-a-301-redirect) so that users don’t get a 404 page.
 * Use Google Analytics to make data-driven decisions.
 :::

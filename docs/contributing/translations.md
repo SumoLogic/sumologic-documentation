@@ -13,7 +13,7 @@ description: Learn about our doc translation process.
 
 All content in /docs folder is the English language documentation, the source of truth for all content. For full information on translations and commands, see [Docusaurus i18n](https://docusaurus.io/docs/i18n/introduction).
 
-:::sumo Doc Team Support
+:::note Doc Team Support
 The Sumo Logic documentation team will help with all translation efforts and tracking. Always make note of translation needs in the PR. These will be a source of truth for changes made, translations required, and updates completed in all supported languages.
 :::
 

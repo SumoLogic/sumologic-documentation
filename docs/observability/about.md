@@ -11,7 +11,7 @@ For our purposes, Observability is the ability to observe an application from th
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 This video explains Observability and how it's different from monitoring. It also explains how Sumo Logic's Observability Solution helps in all the stages of the incident remediation process to ensure the production apps are functioning reliably.
 

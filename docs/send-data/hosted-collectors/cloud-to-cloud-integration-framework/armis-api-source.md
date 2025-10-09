@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Armis API is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business. The Source integration ingests alert and device data from the Armis platform.
 
-:::sumo Best Practice
+:::note Best Practice
 Armis and Sumo Logic recommend using the Armis SIEM Integration, which pushes logs from Armis to a Sumo Logic HTTP source. There is a known limitation with the Armis API’s time query parameters, which can result in missing logs when using the Cloud-to-Cloud source. To avoid this, we advise using the Armis-side integration instead.
 :::
 

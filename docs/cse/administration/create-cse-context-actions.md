@@ -36,7 +36,7 @@ In the screenshot below, context actions are listed below the built-in **Add to 
 
 If an action name is shown in red font, that indicates that the action depends on a record field that doesn’t exist.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn more about how to use context actions.
 

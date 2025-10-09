@@ -30,7 +30,7 @@ You can use Cloud SIEM actions to issue a notification to another service when c
 
 An action can be configured for insight-related activity as described below in [Insight actions](#insight-actions). You can also configure an action to be run when a rule is automatically disabled, as described below in [Rule actions](#rule-actions).
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn how to configure an action.
 

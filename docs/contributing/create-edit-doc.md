@@ -28,7 +28,7 @@ Before submitting an issue, you can browse our [existing GitHub issues](https://
 
 Submitting a minor fix, such as correcting a typo, is very easy and can be done quickly without having to clone or fork your GitHub repository locally. Check out the instructions below.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Check out this brief tutorial on how to submit a basic change to our docs.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/83p9f6qa6n?web_component=true&seo=true&videoFoam=false"

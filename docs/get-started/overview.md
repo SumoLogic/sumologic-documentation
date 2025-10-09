@@ -17,7 +17,7 @@ Visual displays of real-time data allow you to monitor the health, fitness, and 
 
 ## Overview
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Get to know Sumo Logic through our video, "Introduction to Sumo Logic".
 
 <Iframe url="https://fast.wistia.net/embed/iframe/pfps97emeh?web_component=true&seo=true&videoFoam=false"
@@ -40,7 +40,7 @@ Sumo Logic helps businesses build, run, and secure modern applications through f
 
 There are various factors to consider when implementing a Sumo Logic solution in your organization, based on the different collection strategies.
 
-:::sumo micro lesson
+:::note micro lesson
 Get to know more about the benefits of using Sumo Logic.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/w9h0my941q?web_component=true&seo=true&videoFoam=false"
@@ -101,7 +101,7 @@ This section describes local collection, centralized collection, and data collec
 * [Local Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review local collection and its pros and cons. Local collector installation is the concept of installing a collector agent onto each and every target machine (a 1-to-1 relationship between collectors and hosts). This concept is usually accomplished using some level of automation tooling (Chef, Puppet, Terraform, Ansible, Shell Scripting, etc.). The collectors will use the compute and memory resources from their host machines and will require outbound internet access in order to send the logs to Sumo Logic.
 * [Centralized Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review centralized collection and its pros and cons. Centralized collector installation involves dedicated collection machines that run the collector agent and collect logs from many different target machines at once (a 1-to-many relationship between collectors and hosts). This concept prevents resource usage on the target machines and removes the need for outbound internet access on the target machines.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Get to know the collection process through our video, "Data Collection Strategy".
 
 <Iframe url="https://fast.wistia.net/embed/iframe/w03b0igi54?web_component=true&seo=true&videoFoam=false"

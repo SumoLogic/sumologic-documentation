@@ -9,7 +9,7 @@ import Iframe from 'react-iframe';
 
 Learn how to build and run searches, review logs, and more.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Watch this micro lesson to get an introduction to search.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/i6vvbcw1fb?web_component=true&seo=true&videoFoam=false"

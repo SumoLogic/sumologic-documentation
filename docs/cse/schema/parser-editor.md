@@ -21,7 +21,7 @@ See additional articles for more information about the Sumo Logic Cloud SIEM par
 The instructions that follow assume that you have already written your parser code.
 :::
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch the following micro lesson to learn how to apply parsers to Cloud SIEM data sets.
 
@@ -230,7 +230,7 @@ We provide a number of parsers to extract data for normalization (see [Parsers](
 
 The parser templates cover common log formats and scenarios. Each template has two versions, one with verbose commentary on each component of the parser, and another without commentary that you can duplicate and use to quickly start creating a custom parser.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch the following video for a walkthrough of the parser templates.
 

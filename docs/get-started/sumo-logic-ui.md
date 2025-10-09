@@ -25,7 +25,7 @@ With the new UI, you'll benefit from:
 * **Pick up where you left off**. Stateful URLs automatically save your session, making it easy to resume work after logging in.
 * **Find what you need instantly**. Use-case-driven navigation helps you locate key features without digging through menus.
 
-:::sumo quickstart
+:::note quickstart
 Watch this quick overview video to explore the key features of the New UI.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/ydmxwi7ndm?web_component=true&seo=true&videoFoam=false"

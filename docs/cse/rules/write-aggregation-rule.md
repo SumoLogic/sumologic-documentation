@@ -38,7 +38,7 @@ The screenshot below shows the **If Triggered** configuration for the example ru
 
 <img src={useBaseUrl('img/cse/agg-rule.png')} alt="If Triggered section of an aggregation rule" style={{border: '1px solid gray'}} width="400"/>
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn how to create an aggregation rule.
 

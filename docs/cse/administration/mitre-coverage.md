@@ -22,7 +22,7 @@ Coverage data is updated on the page once a day. To determine your coverage, the
 * To run APIs to get information on coverage, see [MITRE ATT&CK coverage APIs](#mitre-attck-coverage-apis).
 :::
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer.
 

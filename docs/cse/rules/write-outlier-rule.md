@@ -31,7 +31,7 @@ For each outlier rule, you create a filter condition to look for out-of-the-ordi
 * Spike in EC2 instance creation
 * Abnormal volume of data sent to third-party storage
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn more about outlier rules.
 

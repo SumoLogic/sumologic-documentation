@@ -97,7 +97,7 @@ Leverage machine learning to identify unusual behavior and suspicious patterns b
 * **Auto-diagnosis and recovery**. The Automation Service handles diagnosis and resolution, closing the loop from alert to recovery.
 * **Customizable detection**. Use advanced rules like "Cluster anomalies" to detect multiple data points exceeding thresholds within a set timeframe.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Watch this micro lesson to learn about anomaly monitors.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/8z9b2zqtc3?web_component=true&seo=true&videoFoam=false"

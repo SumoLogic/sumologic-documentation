@@ -15,7 +15,7 @@ You need the **Manage field extraction rules** [role capability](../users-roles
 Fields specified in field extraction rules are automatically added and enabled in your [Fields](/docs/manage/fields) table schema.
 :::
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Learn how to create a FER through our video, "Creating a Field Extraction Rule".
 
@@ -59,7 +59,7 @@ To create a Field Extraction Rule:
     Always set up JSON auto extraction (Run Time field extraction) on a specific Partition name (recommended) or a particular Source. Failing to do so might cause the auto parsing logic to run on data sources where it is not applicable and will add additional overhead that might deteriorate the performance of your queries.
     :::
 
-    :::sumo Best Practices
+    :::note Best Practices
     If you are not using Partitions we recommend using [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.
 
     We recommend creating a separate Partition for your JSON dataset and use that Partition as the scope for run time field extraction. For example, let's say you have AWS CloudTrail logs, and they are stored in `_view=cloudtrail` Partition in Sumo. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate Partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary Partitions.

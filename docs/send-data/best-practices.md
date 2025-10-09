@@ -34,7 +34,7 @@ Following the naming convention described previously, you could set the followin
 
 While the components at the beginning of the value do not add any obvious value, they do provide a high-level grouping of this data. This allows us to fulfill the three purposes of Source Categories.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/wihnfxauzh?web_component=true&seo=true&videoFoam=false"
   width="854px"

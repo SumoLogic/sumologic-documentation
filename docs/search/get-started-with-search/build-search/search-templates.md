@@ -11,7 +11,7 @@ Behind the scenes, selecting the parts of your query to use in the template is a
 
 Search templates work with [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic). They are not supported with our newer [lookup tables](/docs/search/lookup-tables).
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn how to use search template parameters.
 

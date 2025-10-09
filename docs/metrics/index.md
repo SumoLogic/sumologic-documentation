@@ -76,6 +76,6 @@ Metrics are an effective tool for monitoring, troubleshooting, and identifying t
 
 <br/>
 
-:::sumo
+:::note
 To interact with other Sumo Logic users, post feedback, or ask a question about metrics, visit the [Sumo Logic Community](https://community.sumologic.com/s/topic/0TOE0000000gA6tOAE/Unified%20Logs%20and%20Metrics). 
 :::

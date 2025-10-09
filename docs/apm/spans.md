@@ -31,7 +31,7 @@ Tracing must be enabled in your account to use this functionality. Contact your 
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 This micro lesson provides an overview of Span Analytics, and describes the term *span* in the distributed tracing and the benefits of Span Analytics. It also explains how to perform Span Analytics in Sumo Logic UI.
 

@@ -70,7 +70,7 @@ The Installed Collector and OpenTelemetry Collector are two popular collectors u
 
 **OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. However, it does not provide support for remote management or configuration, Ingest Budgets, Collector Management API, or CPU targets.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Watch this micro lesson to learn why OpenTelemetry collector should be your first choice.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/g078z3y6ux?web_component=true&seo=true&videoFoam=false"
@@ -178,7 +178,7 @@ If you have additional questions, a [Sumo Logic sales representative](https://w
 
 Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from. Learn how to choose your collector that's right for your environment through our video, "Choosing Your Collector Type".
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/iac5fqlnk4?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -216,7 +216,7 @@ When registering a Collector, you also have the option of [configuring the Coll
 The maximum number of Sources allowed on a Collector is 1,000.
 :::
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/tzmrnrx0cf?web_component=true&seo=true&videoFoam=false"
   width="854px"

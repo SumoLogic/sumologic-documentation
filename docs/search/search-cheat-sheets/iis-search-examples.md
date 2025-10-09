@@ -19,7 +19,7 @@ The examples use this sample Access log message where applicable:
 | Look for errors in sshd logs. AND is assumed. Case insensitive, unless double-quoted. | `sshd (fail* OR error OR allowed OR identity)` |
 | Look for general authorization failures excluding router messages. | `(fail* OR error?) NOT _source=routers` |
 
-:::sumo More Info
+:::note More Info
 For more information, see [Keyword Search Expressions](../get-started-with-search/build-search/keyword-search-expressions.md).
 :::
 
@@ -90,7 +90,7 @@ For more information, see [Keyword Search Expressions](../get-started-with-sear
   </tr>
 </table>
 
-:::sumo More Info
+:::note More Info
 For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent), and [Top](/docs/search/search-query-language/search-operators/top).
 :::
 
@@ -158,7 +158,7 @@ For more information, see [Timeslice](/docs/search/search-query-language/search
   </tr>
 </table>
 
-:::sumo More Info
+:::note More Info
 For more information, see [Where](/docs/search/search-query-language/search-operators/where) and [If](/docs/search/search-query-language/search-operators/if). 
 :::
 

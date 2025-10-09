@@ -105,7 +105,7 @@ See the following table for commands:
 
 We recommend you follow these best practices when upgrading Installed Collectors.
 
-:::sumo Community Script
+:::note Community Script
 There is a community supported script available on GitHub that uses the Collector API to conduct bulk actions to Collectors, see [Collector Management Script](https://github.com/SumoLogic/collector-management-client).
 :::
 

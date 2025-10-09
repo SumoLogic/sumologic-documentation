@@ -17,7 +17,7 @@ In this section, we'll introduce the following concepts:
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch a micro lesson on deploying the AWS Observability Solution. 
 

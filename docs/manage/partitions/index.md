@@ -31,7 +31,7 @@ You define the data that will reside in a partition by defining a routing expres
 
 ## Micro Lesson: Partitions basics
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/p0xs5l91jq?web_component=true&seo=true&videoFoam=false"
   width="854px"

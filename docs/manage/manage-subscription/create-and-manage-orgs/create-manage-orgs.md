@@ -36,7 +36,7 @@ Users that have the required role capabilities (described in the following secti
 
 This section has instructions for creating a new org.
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Learn how to create a new child organization.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/hdr7wf9hin?web_component=true&seo=true&videoFoam=false"
@@ -99,7 +99,7 @@ After you create a new org, you can’t delete it.
 
 ## Update an org's credits allocation
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Watch this micro lesson to learn more about managing a child org.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/cijbsnbz65?web_component=true&seo=true&videoFoam=false"

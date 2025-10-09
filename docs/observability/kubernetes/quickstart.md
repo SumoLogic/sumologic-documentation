@@ -23,7 +23,7 @@ As an alternative to this quickstart, you can use our in-product onboarding to a
 <img src={useBaseUrl('img/observability/k8s-onboarding.png')} alt="k8s-onboarding" />
 :::
 
-:::sumo Micro lesson
+:::note Micro lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/8yo13sfpl2?web_component=true&seo=true&videoFoam=false"
   width="854px"

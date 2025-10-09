@@ -14,7 +14,7 @@ This topic has instructions for creating a Cloud SIEM ingest mapping for a data 
 The use of ingest mappings is recommended only if there is no Sumo Logic parser or Cloud-to-Cloud connector for the target data source. For more information, see [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/).
 :::
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 
 Watch this micro lesson to learn more about ingest mapping for Cloud SIEM:
 

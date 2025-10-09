@@ -261,6 +261,6 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 </div>
 </div>
 
-:::sumo Get Help
+:::note Get Help
 To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](http://slack.sumologic.com/).
 :::

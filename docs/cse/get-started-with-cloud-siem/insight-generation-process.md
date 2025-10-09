@@ -12,7 +12,7 @@ This page explains Cloud SIEM's insight generation process. 
 
 The concept of an *entity* is central to the process Cloud SIEM uses to correlate signals and create insights. So, what is an entity? In Cloud SIEM, an entity is a actor, for example, a  hostname, username, or MAC address encountered in an incoming message. For more information about entities and entity types, see [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities).
 
-:::sumo Micro Lesson
+:::note Micro Lesson
 Watch this micro lesson to learn how insights are created.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/5un1z2hwoe?web_component=true&seo=true&videoFoam=false"

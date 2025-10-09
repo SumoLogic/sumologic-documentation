@@ -297,7 +297,7 @@
   },
   "theme.admonition.sumo": {
     "message": "sumo",
-    "description": "The default label used for the Sumo admonition (:::sumo)"
+    "description": "The default label used for the Sumo admonition (:::note)"
   },
   "theme.admonition.note": {
     "message": "note",

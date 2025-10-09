@@ -34,7 +34,7 @@ Look for general authorization failures excluding router messages.
 auth* AND (fail* OR error?) NOT _sourceCategory=routers
 ```
 
-:::sumo More Info
+:::note More Info
 For more information, see [Keyword Search Expressions](../get-started-with-search/build-search/keyword-search-expressions.md).
 :::
 
@@ -147,7 +147,7 @@ _sourceCategory=apache 
 | top 100 src_ip by _count
 ```
 
-:::sumo More Info
+:::note More Info
 For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent), and [Top](/docs/search/search-query-language/search-operators/top).
 :::
 
@@ -207,7 +207,7 @@ if(status_code matches "50*","500s","Other")))) as status_code_group
 | transpose row _timeslice column status_code_group
 ```
 
-:::sumo More Info
+:::note More Info
 For more information, see [`timeslice` operator](/docs/search/search-query-language/search-operators/timeslice) and [`transpose` operator](/docs/search/search-query-language/search-operators/transpose).
 :::
 
@@ -254,7 +254,7 @@ Find version numbers that match numeric values 2, 3 or 1. Use the num operator t
 | where number in (2,3,6)
 ```
 
-:::sumo More Info
+:::note More Info
 For more information, see [`where` operator](/docs/search/search-query-language/search-operators/where) and [`if` operator](/docs/search/search-query-language/search-operators/if).
 :::
 
@@ -267,7 +267,7 @@ exception* or fail* or error* or fatal*
 | logreduce
 ```
 
-:::sumo More Info
+:::note More Info
 For more information, see [LogReduce](/docs/search/behavior-insights/logreduce).
 :::
 
