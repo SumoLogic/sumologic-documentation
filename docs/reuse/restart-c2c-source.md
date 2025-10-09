@@ -1,3 +1,5 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 If your Source encounters VendorConfig errors, you can restart it from either the Sumo Logic UI or Sumo Logic API.
 
 #### UI

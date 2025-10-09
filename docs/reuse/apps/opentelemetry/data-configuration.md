@@ -1,3 +1,5 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::info
 A new source template will always be created with the latest version of the source template.
 :::

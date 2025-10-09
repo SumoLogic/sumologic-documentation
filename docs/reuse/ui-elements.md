@@ -1,3 +1,4 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [**New UI**](/docs/get-started/sumo-logic-ui)
 

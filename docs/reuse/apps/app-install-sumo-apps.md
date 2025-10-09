@@ -1,3 +1,5 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 To install the app:
 
 1. Select **App Catalog**.
