@@ -9,7 +9,7 @@ To restart your source in the Sumo Logic platform, follow the steps below:
 2. Select the source and click the **information** icon on the right side of the row.
 3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left.<br/> <img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button" width="500" />
 4. Click **Confirm** to send the restart request.<br/> <img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm" width="500" />
-5. The bottom left of the platform will provide a notification informing you the request was successful.<br/>   <img src={useBaseUrl('img/send-data/restart-source-initiated.png" alt="restart-source-initiated')} width="400" />
+5. The bottom left of the platform will provide a notification informing you the request was successful.<br/>   <img src={useBaseUrl('img/send-data/restart-source-initiated.png')} alt="restart-source-initiated" width="400" />
 
 
 #### API
