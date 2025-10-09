@@ -94,25 +94,25 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/manage/partitions/data-tiers/create-edit-partition/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers/create-edit-partition/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
   <p>Learn how to create and edit a Partition in an Index.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/manage/partitions/data-tiers/view-partition-details/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers/view-partition-details/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
   <p>Learn how to view details about a Sumo Logic Partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/manage/partitions/data-tiers/searching-data-tiers/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Searching Data Tiers</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers/searching-data-tiers/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Searching Data Tiers</h4></a>
   <p>Learn how to search specific Data Tiers.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/manage/partitions/data-tiers/faq/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers FAQs</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers/faq/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers FAQs</h4></a>
   <p>Get answers on various FAQs about Data Tiers.</p>
   </div>
 </div>

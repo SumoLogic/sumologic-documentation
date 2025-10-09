@@ -8,7 +8,7 @@ description: Learn how to independently and efficiently control or remove your s
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('/docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

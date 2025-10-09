@@ -262,7 +262,7 @@ To format a closed beta release:
       <meta name="robots" content="noindex" />
      </head>
 
-     <p><a href={useBaseUrl('/docs/beta')}><span className="beta">Beta</span></a></p>
+     <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
      First paragraph goes here...
      ```
@@ -282,7 +282,7 @@ To format an open beta release:
    description: The XYZ Source provides a secure endpoint to receive  event data.
    ---
 
-   <p><a href={useBaseUrl('/docs/beta')}><span className="beta">Beta</span></a></p>
+   <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
    First paragraph goes here...
    ```
