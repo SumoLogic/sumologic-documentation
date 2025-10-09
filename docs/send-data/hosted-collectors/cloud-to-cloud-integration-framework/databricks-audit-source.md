@@ -62,7 +62,7 @@ To configure Databricks Audit Source:
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. Enter the [Base URL](#base-url) of your account.
-1. Enter the [Warehouse ID](#warehouse-id) to fetch audit logs.
+1. Enter the [Warehouse ID](#warehouse-id) collected from the [vendor configuration](#vendor-configuration] to fetch audit logs.
 1. Enter the [Client ID and Client Secret](#client-id-and-client-secret) to authorize access to your Databricks resources.
 1. The **Polling Interval** is set for 5 minutes hours by default. You can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
