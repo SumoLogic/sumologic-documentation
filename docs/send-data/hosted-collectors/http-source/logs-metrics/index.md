@@ -25,7 +25,7 @@ As a best practice, Sumo Logic recommends batching data into each POST request t
 
 To configure an HTTP Logs and Metrics Source:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
 1. Enter a **Name** to display for the Source in the Sumo web application. Description is optional.
@@ -33,7 +33,7 @@ To configure an HTTP Logs and Metrics Source:
 1. **Forward to SIEM**. This option is present if [Cloud SIEM](/docs/cse/) is enabled. Click the checkbox to send the logs collected by the source to Cloud SIEM.
 1. **Fields/Metadata.** Click the **+Add** link to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**. 
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **Advanced Options for Logs.** Advanced options do *not* apply to uploaded metrics.<br/><img src={useBaseUrl('img/send-data/HTTP-source-advanced-options-for-logs.png')} alt="A screenshot of the 'Advanced Options for Logs' settings in Sumo Logic. The options include 'Extract timestamp information from log file entries' (checked), 'Default Time Zone' with options to 'Use time zone from log file. If not detected, use default time zone' (selected) and 'Ignore time zone from log file and instead use default time zone'. The 'Timestamp Format' settings offer 'Automatically detect the format' (selected) and 'Specify a format'. The 'Message Processing' section has 'Multiline Processing' checked. The 'Infer Message Boundaries' options include 'Detect Automatically' (selected) and 'Add Boundary Regex'. Finally, there is an unchecked option for 'One Message Per Request', which notes that each request will be treated as a single message, ignoring line breaks." width="400"/>
    * **Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
      * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
@@ -79,7 +79,7 @@ Below are the key benefits that you can obtain by sending compressed data:
 - **Faster message delivery**. Improved efficiency ensures messages are received more quickly at Sumo Logic.
 
 :::important
-- Compressed data can only be sent with the POST method. 
+- Compressed data can only be sent with the POST method.
 - Compressed files are decompressed before they are ingested, so they are ingested at the decompressed file size rate. 
 :::
 
@@ -105,6 +105,6 @@ Also, in your HTTP Source configuration, make sure that the check box **Enable O
 
 Sumo expects that the entire content of an individual log message will be sent to Sumo within the same HTTP request. Multiline processing rules are only applied within the bounds of the data sent within a single HTTP request. This means that a multiline log that is sent to Sumo across multiple HTTP requests will not be detected as a single message. It will be broken into separate log messages. Sumo does not currently have the ability to detect and thread together a distinct log message that has been sent via multiple HTTP requests. 
 
-For tools to help you batch messages, see [Sumo Logic .NET Appenders]( https://github.com/SumoLogic/sumologic-net-appenders).
+For tools to help you batch messages, see [Sumo Logic .NET Appenders](https://github.com/SumoLogic/sumologic-net-appenders).
 
 For details on how the Collector processes multiline logs, see [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs).
