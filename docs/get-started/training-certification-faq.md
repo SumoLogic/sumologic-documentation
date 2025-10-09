@@ -7,7 +7,7 @@ description: Find answers to frequently asked questions about Sumo Logic trainin
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-<a href="https://www.sumologic.com/learn/training"><img src={useBaseUrl('img/get-started/sumo-academy-light-mode.png')} alt="Sumo Logic Academy logo" className="academy-logo" width="150" /></a><br/><br/>
+<img src={useBaseUrl('img/get-started/sumo-academy.png')} alt="sumo logic academy" width="200"/><br/><br/>
 
 Sumo Logic Academy is your hub for training and professional development. All courses (self‑paced eLearning, public hands‑on virtual classes, and workshops) are free, with paid private instruction offerings available.
 

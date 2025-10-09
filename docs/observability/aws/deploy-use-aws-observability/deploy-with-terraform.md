@@ -71,7 +71,7 @@ Before you run the Terraform script, perform the following actions on a server m
 
 1. Install [Terraform](https://www.terraform.io/) version [1.6.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
     ```bash
-    $ terraform --version
+    terraform --version
     ```
 1. Install the latest version of [curl](https://curl.haxx.se/download.html). To check the installed curl version, run the following command:
     ```bash
@@ -91,11 +91,11 @@ Before you run the Terraform script, perform the following actions on a server m
 
 1. Clone the repository https://github.com/SumoLogic/sumologic-solution-templates:
     ```bash
-    $ git clone https://github.com/SumoLogic/sumologic-solution-templates
+    git clone https://github.com/SumoLogic/sumologic-solution-templates
     ```
 1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) and running:
     ```bash
-    $ terraform init
+    terraform init
     ```
     This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/null/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
     :::note
@@ -120,7 +120,7 @@ Before you run the Terraform script, perform the following actions on a server m
     Provide your Sumo Logic deployment for the SUMOLOGIC_ENV variable. For example: au, ca, de, eu, jp, us2, fed, kr, or us1. For more information on Sumo Logic deployments, see *Sumo Logic Endpoints and Firewall Security*. 
    * Run fields.sh using this command:
       ```bash
-      $ sh fields.sh
+      sh fields.sh
       ```
 
 :::important
@@ -560,9 +560,9 @@ Before you run these commands, make sure you have configured your AWS profiles o
 :::
 
 ```terminal
-$ terraform validate
-$ terraform plan
-$ terraform apply
+terraform validate
+terraform plan
+terraform apply
 ```
 
 ## Uninstalling the Solution
@@ -570,7 +570,7 @@ $ terraform apply
 To uninstall the AWS Observability solution deployed using Terraform, navigate to the directory **sumologic-solution-templates/aws-observability-terraform** and execute the command:
 
 ```terminal
-$ terraform destroy
+terraform destroy
 ```
 
 This will destroy all [resources](resources.md) and configuration previously set up.
