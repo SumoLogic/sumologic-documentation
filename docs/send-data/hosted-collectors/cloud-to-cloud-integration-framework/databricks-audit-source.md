@@ -11,7 +11,7 @@ description: Learn how to collect Databricks Audit logs and send them to Sumo Lo
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/collector/databricks-icon.png')} alt="icon" width="50"/>
 
 Databricks is a unified data platform that supports data engineering, machine learning, and analytics in a collaborative environment. It offers enterprise-grade security, compliance, and governance for data workflows.
 
@@ -32,13 +32,13 @@ The Databricks Audit source requires you to provide the Databricks Audit Base UR
 #### Base URL
 
 Follow the below steps to get the Base URL for user configuration: 
-1. [Log in]() to your **Databricks** workspace.
+1. [Log in](https://accounts.cloud.databricks.com/login?tuuid=ee23ab7a-a2b9-4512-8973-fc787eb3c01e) to your **Databricks** workspace.
 2. The Base URL is visible in your browser’s address bar after login. For example, `https://YOUR-INSTANCE.databricks.com`.
 
 #### Warehouse ID
 
 The Warehouse ID is required to query Databricks SQL and fetch audit logs. Follow the below steps to get the Warehouse ID for user configuration:
-1. Log in to your **Databricks** workspace.
+1. [Log in](https://accounts.cloud.databricks.com/login?tuuid=ee23ab7a-a2b9-4512-8973-fc787eb3c01e) to your **Databricks** workspace.
 2. Navigate to **SQL Warehouses** in the sidebar.
 3. Click the warehouse name you want to use.
 4. On the warehouse **details page**, select the **Properties** tab.

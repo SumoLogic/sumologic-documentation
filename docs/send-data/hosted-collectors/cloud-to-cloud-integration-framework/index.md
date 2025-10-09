@@ -272,7 +272,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/databricks-audit-source"><img src={useBaseUrl('img/send-data/cybereason-logo.png')} alt="icon" width="60"/><h4>Databricks Audit</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/databricks-audit-source"><img src={useBaseUrl('img/collector/databricks-icon.png')} alt="icon" width="60"/><h4>Databricks Audit</h4></a>
   <p>Track user and system activities to support governance and compliance using Databricks Audit logs.</p>
   </div>
 </div>
