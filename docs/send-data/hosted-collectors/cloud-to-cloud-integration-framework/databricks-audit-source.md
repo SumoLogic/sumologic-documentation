@@ -42,7 +42,7 @@ The Warehouse ID is required to query Databricks SQL and fetch audit logs. Follo
 2. Navigate to **SQL Warehouses** in the sidebar.
 3. Click the warehouse name you want to use.
 4. On the warehouse **details page**, select the **Properties** tab.
-5. Locate and copy the **Warehouse ID**.
+5. Locate and copy the **Warehouse ID**. For example, `bd4dc8ef7e54782c`.
 
 #### Client ID and Client Secret
 
