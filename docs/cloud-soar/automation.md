@@ -10,10 +10,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **Automation** section contains configuration tools for Cloud SOAR's automation and orchestration features.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**.
-
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access Automation, in the main Sumo Logic menu select **Automation**.
- 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**.
 
 Because Cloud SOAR provides automation functionality to the [Automation Service](/docs/platform-services/automation-service/), many features are identical between Cloud SOAR and the Automation Service. Therefore, for information about the following Cloud SOAR features, see the Automation Service articles:
 * [App Central](/docs/platform-services/automation-service/app-central/)
@@ -21,14 +20,14 @@ Because Cloud SOAR provides automation functionality to the [Automation Service]
 * [Automation bridge](/docs/platform-services/automation-service/automation-service-bridge)
 * [Integration framework](/docs/platform-services/automation-service/integration-framework/)
 * [Audit logging](/docs/platform-services/automation-service/automation-service-audit-logging)
-* [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). (For information specific to running playbooks in Cloud SOAR, see [Run playbooks in Cloud SOAR](#run-playbooks-in-cloud-soar) below.)
+* [Playbooks](/docs/platform-services/automation-service/playbooks/). (For information specific to running playbooks in Cloud SOAR, see [Run playbooks in Cloud SOAR](#run-playbooks-in-cloud-soar) below.)
 
 The following sections describe automation features only used in Cloud SOAR.
 
 ## Run playbooks in Cloud SOAR
 
 In Cloud SOAR, playbooks are run from [incidents](/docs/cloud-soar/incidents-triage/#incidents). To run playbooks in Cloud SOAR, perform the following steps:
-1. [Create a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook) to use in incident response. When you create the playbook, do the following:
+1. [Create a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-a-new-playbook) to use in incident response. When you create the playbook, do the following:
    1. Click the **Edit** icon on the **Start** node:<br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/>
    1. Ensure that the **Add one or more params as a playbook input** field is left blank: <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node-input.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/><br/>Do *not* click the field to show the dropdown menu: <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/><br/>The other values in the field are used for automation outside of Cloud SOAR:
       * **Insight** and **Entity** are for launching a playbook from a Cloud SIEM automation.
@@ -47,7 +46,7 @@ Incident templates define the way in which incidents will be created for a speci
 
 ### Create a new incident template
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Incident templates** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Template**. You can also click the **Go To...** menu at the top of the screen and select **Template**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Template**. You can also click the **Go To...** menu at the top of the screen and select **Template**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Incident templates** in the left nav bar.
 1. Click **+** to the left of **Template**.<br/><img src={useBaseUrl('img/cloud-soar/incident-templates.png')} alt="Add template" style={{border: '1px solid gray'}} width="800"/>
 1. Define the template: <br/><img src={useBaseUrl('img/cloud-soar/create-incident-template.png')} alt="Create incident template dialog" style={{border: '1px solid gray'}} width="400"/>
    1. **Template name**. Enter a name that is easily identifiable and related to the activity it is developed for.
@@ -68,7 +67,7 @@ Incident templates define the way in which incidents will be created for a speci
 
 You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-soar/) to allow you to send an alert from a scheduled search to Sumo Logic Cloud SOAR using an incident template.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**.
 1. Click **+** and choose **Cloud SOAR** as the connection type. The **Create Cloud SOAR Connection** dialog is displayed.<br/><img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid gray'}} width="600"/>
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. The **URL** field shows your [Sumo Logic API endpoint](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) followed by `/csoar/v3/incidents/`. For example, `https://api.us2.sumologic.com/api/csoar/v3/incidents/`
@@ -116,7 +115,7 @@ Automation rules allow specific data to be parsed from the incoming data sources
 
 ### Create an automation rule
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <br/>
 1. Click **+** to the left of **Rules**.
 1. Select a name for the rule, then select the daemon to use with this new rule, the resource, and fill in all the remaining parameters. <br/><img src={useBaseUrl('img/cloud-soar/add-automation-rule.png')} alt="Add automation rule"  style={{border: '1px solid gray'}} width="400"/>
 1. Click **Save**. The new rule is displayed. <br/><img src={useBaseUrl('img/cloud-soar/sample-automation-rule.png')} alt="Sample automation rule"  style={{border: '1px solid gray'}} width="700"/>
@@ -138,7 +137,7 @@ Automation rules allow specific data to be parsed from the incoming data sources
 
 With the Cloud SOAR Slack integration, teams can remain connected, organize conversations,  and quickly find what is needed to get the work done.
 
-With the Cloud SOAR Slack integration, you can directly manage [user choice](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-user-choice-node-to-a-playbook) actions within the playbooks from your Slack workspace.  Furthermore, for each new incident, a related conversation channel will be created within your Slack workspace, where users will correspond to investigators. Changing a user within the incident will also result in a change to the user within the conversation channel.
+With the Cloud SOAR Slack integration, you can directly manage [user choice](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-a-user-choice-node-to-a-playbook) actions within the playbooks from your Slack workspace.  Furthermore, for each new incident, a related conversation channel will be created within your Slack workspace, where users will correspond to investigators. Changing a user within the incident will also result in a change to the user within the conversation channel.
 
 :::note
 To configure Slack for use inside Cloud SOAR, you must first create a public or private channel so you can send messages or files to channels or users directly.
@@ -196,7 +195,7 @@ After you create a Slack app, you must add the appropriate permissions for use w
 Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth Token and Signing Secret you saved in the previous step. These tokens will give the Slack integration the permissions it needs to perform the tasks in the scopes you set up.
 
 1. Add resources for the tokens:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
+   1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar.
    1. Select the Slack integration. The integration's resources appear.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-in-list.png')} alt="Select the Slack integration" style={{border: '1px solid gray'}} width="800"/>
    1. Click **+** to add a new Resource.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resources.png')} alt="Add a resource" style={{border: '1px solid gray'}} width="500"/>
    1. Name the resource "Bot User OAuth Access Token".
@@ -204,7 +203,7 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
    1. Click **TEST** to verify configuration.
    1. Once you have filled in all the required fields, click **SAVE**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-2.png')} alt="Bot resource" style={{border: '1px solid gray'}} width="400"/>
 1. Configure instant messaging:
-    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**. 
+    1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
     1. Scroll down and open **Instant Messaging**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-instant-messaging-delivery2.png')} alt="Instant Messaging configuration dialog" style={{border: '1px solid gray'}} width="400"/>
     1. For **Integration** select Slack.
     1. Paste your previously saved Bot User OAuth Access Token to the **Bot OAuth** field.
@@ -214,7 +213,7 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
 
 ### Use the Slack app in User Choice
 
- If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar), you can set a playbook’s [user choice](/docs/platform-services/automation-service/automation-service-playbooks/#add-a-user-choice-node-to-a-playbook) to be answered by Slack.
+ If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar), you can set a playbook’s [user choice](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-a-user-choice-node-to-a-playbook) to be answered by Slack.
 
 1. Run a playbook with a User Choice action. The following example shows a simple playbook with two available answers: **Close Incident** and **Investigate**. Notice that the option **Answer By Slack** is enabled.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-playbook.png')} alt="Playbook with user choices" style={{border: '1px solid gray'}} width="700"/>
 <br/>In this case, the Authorizer set is just a user. If a group is chosen, a message will be sent directly from the CSOAR Bot to every available user. If a user is not selected, and the playbook is inside an incident, the message will be sent within the relevant channel in the Slack workspace, and all the users within it will be authorized to choose one of the User Choice available options.

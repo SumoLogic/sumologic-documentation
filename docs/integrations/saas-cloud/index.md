@@ -77,6 +77,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/aws-iam-users"><img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="aws-iam-users-logo" width="60" /><h4>AWS IAM Users</h4></a>
+  <p>Gain insights into AWS IAM Users events to enhance user activity and security within your AWS environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/bitwarden"><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="bitwarden-icon.png" width="100" /><h4>Bitwarden</h4></a>
   <p>Gain insights into user activity, security events, and administrative changes within your Bitwarden environment.</p>
   </div>
@@ -85,6 +91,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/box"><img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="icon" width="80"/><h4>Box</h4></a>
   <p>Gain insight into user behavior patterns and resources.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/carbon-black-inventory"><img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="icon" width="80"/><h4>Carbon Black Inventory</h4></a>
+  <p>Gain insight into endpoint assets and their security status in your environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -403,6 +415,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/tenable"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="140"/><h4>Tenable</h4></a>
   <p>Gain comprehensive visibility and actionable insights into your organization's security posture.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/trellix-mvision-epo"><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="icon" width="100"/><h4>Trellix mVision ePO</h4></a>
+  <p>Detect, analyze, and respond faster to threats with Trellix mVision ePO for Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">

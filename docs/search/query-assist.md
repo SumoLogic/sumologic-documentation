@@ -8,6 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Query Assist enhances the query-building experience in Sumo Logic by providing real-time syntax suggestions, schema prompts, and partial query predictions. These enhancements simplify the process for users at all skill levels, making it easier to write accurate and efficient queries, enabling easier discovery of relevant fields, minimizing errors, and providing intelligent assistance for query creation. The suggestions that appear comply with the user's role-based access restrictions.
 
+:::note
+By default, Query Assist will be enabled in the **Preferences** page. If it is not enabled, you can turn it on from the [Preferences page](#turn-off-autocomplete), or simply press **Control + Space** to activate it manually.
+:::
+
 :::info
 Logs Query Assist is also supported in [Dashboards](/docs/dashboards) and [Scheduled Searches](/docs/alerts/scheduled-searches).
 :::
@@ -22,11 +26,11 @@ Logs Query Assist is also supported in [Dashboards](/docs/dashboards) and [Sched
 
 ## How to get started
 
-1. **Start a log search**. From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic) or the [**New UI**](/docs/get-started/sumo-logic-ui), go to **Log Search** and begin typing your query.
+1. **Start a log search**. From the [**New UI**](/docs/get-started/sumo-logic-ui) or the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), go to **Log Search** and begin typing your query.
 2. **Leverage syntax and schema suggestions**. As you type, watch for real-time suggestions for fields and operators. Use the arrow keys to navigate suggestions and press `Tab` to autocomplete.
 3. **Take advantage of predictions**. Use partial query predictions to build queries faster and more accurately.
 4. **Review and correct errors**. Address flagged errors before running your query to ensure it executes as intended.  
-5. **Edit queries with the Copilot**. If you’re using Copilot, modify your query directly in the [code editor field](/docs/search/copilot/#edit-query-code) and utilize autocomplete suggestions for further refinement.
+5. **Edit queries with Mobot**. If you’re using Mobot, modify your query directly in the [code editor field](/docs/search/mobot/#edit-query-code) and utilize autocomplete suggestions for further refinement.
 
 ## Features
 
@@ -69,12 +73,12 @@ Suggestions are predictive in nature and may not be comprehensive or completely 
 
 <!-- hold off
 ### Need more help?
-Try [Sumo Logic Copilot](/docs/search/copilot), our AI-powered assistant that helps you write and execute natural language log search queries.
+Try [Sumo Logic Mobot](/docs/search/mobot), our AI-powered assistant that helps you write and execute natural language log search queries.
 Copilot with Query Assist video: https://docs.google.com/presentation/d/1HCaXROM6zrnapLaLo3gDm-S1uQPGAS0p9AquuLwiFXA/edit#slide=id.g3145b7936cd_0_8 -->
 
 ## Turn off autocomplete
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**. <br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences"style={{border: '1px solid gray'}}  width="300"/>
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences"style={{border: '1px solid gray'}}  width="300"/>
 1. Access your [Preferences](/docs/get-started/account-settings-preferences/#my-preferences).
 1. Navigate to **My Preferences** and uncheck the **Show search autocomplete suggestions while typing** checkbox.<br/><img src={useBaseUrl('img/get-started/turn-off_autocomplete.png')} alt="turn-off_autocomplete"style={{border: '1px solid gray'}}  width="500"/>
 
