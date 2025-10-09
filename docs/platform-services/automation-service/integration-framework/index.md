@@ -14,25 +14,25 @@ Because the Automation Service is a subset of automation capabilities adapted fr
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/platform-services/automation-service/integration-framework/about-integration-framework/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>About the Integraton Framework</h4></a>
+  <a href={useBaseUrl('docs/platform-services/automation-service/integration-framework/about-integration-framework/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>About the Integraton Framework</h4></a>
   <p>Get an overview of how the integration framework works.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Example Files for the Integration Framework</h4></a>
+  <a href={useBaseUrl('docs/platform-services/automation-service/integration-framework/example-files-integration-framework/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Example Files for the Integration Framework</h4></a>
   <p>See example files for the integration framework.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/platform-services/automation-service/integration-framework/integration-framework-output/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Integration Framework Output</h4></a>
+  <a href={useBaseUrl('docs/platform-services/automation-service/integration-framework/integration-framework-output/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Integration Framework Output</h4></a>
   <p>Learn how to work with output from the integration framework. </p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/platform-services/automation-service/integration-framework/docker-integration-framework/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Using Docker with the Integration Framework for Cloud SOAR</h4></a>
+  <a href={useBaseUrl('docs/platform-services/automation-service/integration-framework/docker-integration-framework/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Using Docker with the Integration Framework for Cloud SOAR</h4></a>
   <p>Learn how to use Docker with the integration framework for Cloud SOAR.</p>
   </div>
 </div>
