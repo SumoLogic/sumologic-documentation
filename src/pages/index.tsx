@@ -245,7 +245,7 @@ export const Home = () => {
                     justifyContent: {
                       sm: 'center',
                       xs: 'center',
-                    },
+                    }
                   },
                 }}
                 TabIndicatorProps={{
