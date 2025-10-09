@@ -27,7 +27,7 @@ The Audit Logs API enables you to capture structured records of user and system 
 
 ### Vendor configuration
 
-The Databricks Audit source requires you to provide the Databricks Audit Base URL (API Gateway URL), Warehouse ID, Client ID, and Client Secret to export to configure the source. Follow the below steps to generate the required values:
+The Databricks Audit source requires you to provide the Databricks Audit Base URL (API Gateway URL), Warehouse ID, Client ID, and Client Secret to configure the source. Follow the below steps to generate the required values:
 
 #### Base URL
 
