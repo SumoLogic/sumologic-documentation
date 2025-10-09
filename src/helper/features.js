@@ -90,34 +90,6 @@ export const features2 = [
     </Translate>),
     link: 'docs/observability/kubernetes',
   },
-  {
-    title: translate({
-      id: 'landing.feature.rce.title',
-      message: 'Root Cause Explorer',
-      description: 'Title for Root Cause Explorer',
-    }),
-    imageUrl: 'img/icons/observe.png',
-    description: (<Translate
-      id='landing.feature.rce.desc'
-      description='Root Cause Explorer description'>
-      Accelerate app troubleshooting and root cause isolation.
-    </Translate>),
-    link: 'docs/observability/root-cause-explorer',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.sensu.title',
-      message: 'Sensu',
-      description: 'Title for Sensu',
-    }),
-    imageUrl: 'img/icons/observe.png',
-    description: (<Translate
-      id='landing.feature.sensu.desc'
-      description='Root Cause Explorer description'>
-      Visibility into apps, containers, traditional servers, and more.
-    </Translate>),
-    link: 'https://docs.sensu.io/sensu-go/latest',
-  },
 ];
 
 
