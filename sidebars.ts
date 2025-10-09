@@ -1817,7 +1817,9 @@ module.exports = {
                 label: 'AWS Lambda',
                 collapsible: true,
                 collapsed: true,
+                link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/index'},
                 items: [
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/dotnet',
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/java',
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/nodejs',
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/python',
@@ -1862,8 +1864,8 @@ module.exports = {
                 collapsible: true,
                 collapsed: true,
                 items: [
-                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/index',
-                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/traceid-spanid-injection-into-logs',
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/dotnet/index',
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/dotnet/traceid-spanid-injection-into-logs',
                 ],
               },
               {
@@ -3117,7 +3119,7 @@ integrations: [
             'api/about-apis/terraform-with-sumo-logic',
             'api/about-apis/troubleshooting',
           ],
-        }, 
+        },
         'api/access-keys',
         'api/account-management',
         'api/app-management',
