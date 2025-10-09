@@ -197,6 +197,7 @@ export const Home = () => {
 
         {/* Main */}
         <Container maxWidth='xl'>
+
           {/* Product Guides */}
           <Stack
             alignItems='center'
@@ -237,8 +238,14 @@ export const Home = () => {
                 onChange={(_, newTab) => setTab(newTab)}
                 sx={{
                   '& .MuiTabs-flexContainer': {
-                    flexWrap: { sm: 'wrap', xs: 'wrap' },
-                    justifyContent: { sm: 'center', xs: 'center' },
+                    flexWrap: {
+                      sm: 'wrap',
+                      xs: 'wrap',
+                    },
+                    justifyContent: {
+                      sm: 'center',
+                      xs: 'center',
+                    },
                   },
                 }}
                 TabIndicatorProps={{ sx: { display: { sm: 'none', xs: 'none' } } }}
