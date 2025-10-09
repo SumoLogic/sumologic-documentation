@@ -1837,7 +1837,7 @@
     fs-extra "^11.1.1"
     tslib "^2.6.0"
 
-"@docusaurus/bundler@3.9.1":
+"@docusaurus/bundler@3.9.1", "@docusaurus/bundler@^3.9.1":
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/bundler/-/bundler-3.9.1.tgz#6b78c152cf364d706249f6978f8e3fedf576b118"
   integrity sha512-E1c9DgNmAz4NqbNtiJVp4UgjLtr8O01IgtXD/NDQ4PZaK8895cMiTOgb3k7mN0qX8A3lb8vqyrPJ842+yMpuUg==
@@ -1867,7 +1867,7 @@
     webpack "^5.95.0"
     webpackbar "^6.0.1"
 
-"@docusaurus/core@3.9.1":
+"@docusaurus/core@3.9.1", "@docusaurus/core@^3.9.1":
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/core/-/core-3.9.1.tgz#be4d859464fee8889794d8527f884e931d591f2e"
   integrity sha512-FWDk1LIGD5UR5Zmm9rCrXRoxZUgbwuP6FBA7rc50DVfzqDOMkeMe3NyJhOsA2dF0zBE3VbHEIMmTjKwTZJwbaA==
@@ -1915,7 +1915,7 @@
     webpack-dev-server "^5.2.2"
     webpack-merge "^6.0.1"
 
-"@docusaurus/cssnano-preset@3.9.1":
+"@docusaurus/cssnano-preset@3.9.1", "@docusaurus/cssnano-preset@^3.9.1":
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/cssnano-preset/-/cssnano-preset-3.9.1.tgz#fa57c81a3f41e4d118115f86c85a71aed6b90f49"
   integrity sha512-2y7+s7RWQMqBg+9ejeKwvZs7Bdw/hHIVJIodwMXbs2kr+S48AhcmAfdOh6Cwm0unJb0hJUshN0ROwRoQMwl3xg==
@@ -1925,7 +1925,7 @@
     postcss-sort-media-queries "^5.2.0"
     tslib "^2.6.0"
 
-"@docusaurus/faster@3.9.1":
+"@docusaurus/faster@^3.9.1":
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/faster/-/faster-3.9.1.tgz#bd53c6e478f2224f12ba68af469491aabbb24d0f"
   integrity sha512-zJIrIv+R/IN5TTLV9L+SvO3hwz62L6pO/L16k+b2nC3to3Gn01cnEGHL6doTGAezuPwTSmteJl+kzaoOf+znzg==
@@ -1991,7 +1991,7 @@
     react-helmet-async "npm:@slorber/react-helmet-async@1.3.0"
     react-loadable "npm:@docusaurus/react-loadable@6.0.0"
 
-"@docusaurus/plugin-client-redirects@3.9.1":
+"@docusaurus/plugin-client-redirects@^3.9.1":
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-client-redirects/-/plugin-client-redirects-3.9.1.tgz#06e07487f1596c62536d50afac81535d5fe60a20"
   integrity sha512-+1InCGvAnw46H+TnVqxaYlJC0qy9AY5gTMgTx2ZFryjAsImJNs3i1pEYW/iUTVbOdtWRj3E/87E4ehbBIaA1TA==
