@@ -81,7 +81,7 @@ By default, all other parameters are set up to automatically collect logs and me
 
 **Parameter**: `sumologic_environment`<br/>
 **Required**: Yes <br/>
-**Description**: This is your Sumo Logic Deployment. Enter au, ca, de, eu, jp, us2, fed, or us1. See Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information.
+**Description**: This is your Sumo Logic Deployment. Enter au, ca, de, eu, jp, us2, fed, or us1. See [Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information.
 
 ---
 **Parameter**: `sumologic_access_id`<br/>
