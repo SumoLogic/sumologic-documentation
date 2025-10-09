@@ -248,7 +248,14 @@ export const Home = () => {
                     },
                   },
                 }}
-                TabIndicatorProps={{ sx: { display: { sm: 'none', xs: 'none' } } }}
+                TabIndicatorProps={{
+                  sx: {
+                    display: {
+                      sm: 'none',
+                      xs: 'none'
+                    }
+                  }
+                }}
                 value={tab}
               >
                 {[
