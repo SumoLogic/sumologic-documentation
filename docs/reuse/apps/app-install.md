@@ -15,7 +15,7 @@ To install the app:
    * **Folder Name**. You can retain the existing name or enter a custom name of your choice for the app.
    * **All Folders** (optional). The default location is the **Personal** folder in your **Library**. If desired, you can choose a different location and/or click **New Folder** to add it to a new folder.
 1. Click **Next**.
-1. Look for the dialog confirming that your app was installed successfully.<br/><img src="/img/get-started/library/app-success.png" alt="app-success.png" width="80%" />
+1. Look for the dialog confirming that your app was installed successfully.<br/><img src={useBaseUrl('img/get-started/library/app-success.png')} alt="app-success.png" width="80%" />
 
 **Post-installation**
 
