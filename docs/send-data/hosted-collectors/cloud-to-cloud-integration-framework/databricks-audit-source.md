@@ -38,7 +38,7 @@ Follow the below steps to get the Base URL for user configuration:
 #### Warehouse ID
 
 The Warehouse ID is required to query Databricks SQL and fetch audit logs. Follow the below steps to get the Warehouse ID for user configuration:
-1. [Log in](https://accounts.cloud.databricks.com/login?tuuid=ee23ab7a-a2b9-4512-8973-fc787eb3c01e) to your **Databricks** workspace.
+1. [Sign in](https://accounts.cloud.databricks.com/login?tuuid=ee23ab7a-a2b9-4512-8973-fc787eb3c01e) to your **Databricks** workspace.
 2. Navigate to **SQL Warehouses** in the sidebar.
 3. Click the warehouse name you want to use.
 4. On the warehouse **details page**, select the **Properties** tab.
