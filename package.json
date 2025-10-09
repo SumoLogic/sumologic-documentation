@@ -39,7 +39,7 @@
     "@docusaurus/cssnano-preset": "3.9.1",
     "@docusaurus/faster": "3.9.1",
     "@docusaurus/plugin-client-redirects": "3.9.1",
-    "@docusaurus/plugin-content-blog": "^3.9.1",
+    "@docusaurus/plugin-content-blog": "3.9.1",
     "@docusaurus/plugin-css-cascade-layers": "3.9.1",
     "@docusaurus/plugin-debug": "3.9.1",
     "@docusaurus/plugin-google-analytics": "3.9.1",
