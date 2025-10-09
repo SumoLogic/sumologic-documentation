@@ -62,7 +62,7 @@ To configure Databricks Audit Source:
 1. Enter the [Base URL](#base-url) of your account.
 1. Enter the [Warehouse ID](#warehouse-id) collected from the [vendor configuration](#vendor-configuration] to fetch audit logs.
 1. Enter the [Client ID and Client Secret](#client-id-and-client-secret) collected from the [vendor configuration](#vendor-configuration] to authorize access to your Databricks resources.
-1. The **Polling Interval** is set for 5 minutes hours by default. You can adjust it based on your needs.
+1. The **Polling Interval** is set for 5 minutes by default. You can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
 
 ## JSON schema
