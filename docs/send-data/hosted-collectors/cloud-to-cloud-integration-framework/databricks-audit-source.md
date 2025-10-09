@@ -11,7 +11,7 @@ description: Learn how to collect Databricks Audit logs and send them to Sumo Lo
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/collector/databricks-icon.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/collector/databricks-icon.png')} alt="icon" width="80"/>
 
 Databricks is a unified data platform that supports data engineering, machine learning, and analytics in a collaborative environment. It offers enterprise-grade security, compliance, and governance for data workflows.
 
