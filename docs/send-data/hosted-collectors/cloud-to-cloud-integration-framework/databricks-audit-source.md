@@ -32,7 +32,7 @@ The Databricks Audit source requires you to provide the Databricks Audit Base UR
 #### Base URL
 
 Follow the below steps to get the Base URL for user configuration: 
-1. [Log in](https://accounts.cloud.databricks.com/login?tuuid=ee23ab7a-a2b9-4512-8973-fc787eb3c01e) to your **Databricks** workspace.
+1. [Sign in](https://accounts.cloud.databricks.com/login?tuuid=ee23ab7a-a2b9-4512-8973-fc787eb3c01e) to your **Databricks** workspace.
 2. The Base URL is visible in your browser’s address bar after login. For example, `https://YOUR-INSTANCE.databricks.com`.
 
 #### Warehouse ID
