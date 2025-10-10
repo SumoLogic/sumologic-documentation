@@ -5,7 +5,7 @@ sidebar_label: Varonis
 tags:
   - cloud-to-cloud
   - varonis
-description: Learn how to collect Varonis alerts and their detailed information and send them to Sumologic.
+description: Learn how to collect Varonis alerts with their detailed information and send them to Sumo Logic.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
