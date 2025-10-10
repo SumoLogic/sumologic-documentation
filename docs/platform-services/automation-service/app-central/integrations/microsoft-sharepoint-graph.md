@@ -65,7 +65,7 @@ The client secret, known also as an application password, is a string value of y
 1. Select your application in **App registrations** in the Azure portal.
 2. Select **API permissions > Add a permission**.
 3. Application permissions are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
-4. Select **Add a permission**, and add the following permissions: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/microsoft-ews-5.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
+4. Select **Add a permission**, and add the following permissions: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-sharepoint/microsoft-sharepoint-graph.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
 #### Microsoft Sharepoint (Graph) API to be configured for these permissions
 
@@ -107,7 +107,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 * **Client Secret**. Enter the client secret for authentication.
 
-* **Microsoft SharePoint Name**. Enter the Microsoft Sharepoint Site Name.
+* **Microsoft SharePoint Site Name.**. Enter the Microsoft Sharepoint Site Name.
 
 * **Microsoft SharePoint HostName**. Enter the Microsoft Sharepoint HostName.
 
