@@ -122,7 +122,7 @@ Learn how to install and configure OpenTelemetry distributed tracing for AWS Lam
   <div className="box smallbox card">
     <div className="container">
     <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png' alt="Thumbnail icon" width="55"/>
-    <h4><a href={useBaseUrl('/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/dotnet')}>Dotnet</a></h4>
+    <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/dotnet')}>Dotnet</a></h4>
     </div>
   </div>
 </div>

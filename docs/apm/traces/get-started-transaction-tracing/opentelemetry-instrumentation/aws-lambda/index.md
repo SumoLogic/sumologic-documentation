@@ -14,22 +14,22 @@ In this section, you'll learn how to install and configure OpenTelemetry distrib
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/dotnet')}><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png' alt="Thumbnail icon" width="55"/><h4>.NET</h4></a>
+  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/dotnet')}><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png' alt="Thumbnail icon" width="55"/><h4>.NET</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/java')}><img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="Thumbnail icon" width="30"/><h4>Java</h4></a>
+  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/java')}><img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="Thumbnail icon" width="30"/><h4>Java</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/nodejs')}><img src='https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg' alt="Thumbnail icon" width="95"/><h4>Node.js</h4></a>
+  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/nodejs')}><img src='https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg' alt="Thumbnail icon" width="95"/><h4>Node.js</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/python')}><img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Thumbnail icon" width="50"/><h4>Python</h4></a>
+  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/python')}><img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Thumbnail icon" width="50"/><h4>Python</h4></a>
   </div>
 </div>
 </div>
