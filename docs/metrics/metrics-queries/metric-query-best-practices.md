@@ -63,7 +63,7 @@ For example, use `!tag=value*` or `not tag=value*` or `!(tag=value)`
 
 ### Space
 
-A space implies an `AND`. The use of `AND` and `OR ()` is similar to log search. Always bracket `() OR` for correct scope.
+A space implies an `AND`. The use of `AND` and `OR ()` is similar to log search. Always bracket `() OR` for correct scope. 
 
 For example,
 ```
@@ -87,15 +87,15 @@ Pick the correct rollup for the query use case via the `quantize` operator. For 
 
 ### Rates
 
-Rates over time display via an ascending counter. Many metric values are ascending counters so you must measure a delta or "rate over time". Use either the [`delta`](/docs/metrics/metrics-operators/delta/) or [`rate`](/docs/metrics/metrics-operators/rate/) operators.
+Rates over time display via an ascending counter. Many metric values are ascending counters so you must measure a delta or "rate over time". Use either the [`delta`](/docs/metrics/metrics-operators/delta/) or [`rate`](/docs/metrics/metrics-operators/rate/) operators. 
 
-Think carefully about the rollup dimension you are using in the output.
+Think carefully about the rollup dimension you are using in the output. 
 The typical pattern is extract `rate`/ `delta` then `sum` in each quantized time range.
-The `delta` operator is easier to understand and graph.
+The `delta` operator is easier to understand and graph. 
 
 ### #A #B #C pattern
 
-Use the `#A` `#B` `#C` pattern with the [`along` operator](/docs/metrics/metrics-operators/along/) when you need to compute a value from two series. For example:
+Use the `#A` `#B` `#C` pattern with the [`along` operator](/docs/metrics/metrics-operators/along/) when you need to compute a value from two series. For example: 
 
 ```
 #A: metric=Net_InBytes account=* | avg by account
@@ -104,10 +104,10 @@ Use the `#A` `#B` `#C` pattern with the [`along` operator](/docs/metrics/metrics
 ```
 ### eval
 
-It's often necessary to use math on a metric value via the [`eval` operator](/docs/metrics/metrics-operators/eval/). For example:
+It's often necessary to use math on a metric value via the [`eval` operator](/docs/metrics/metrics-operators/eval/). For example: 
 
 ```
-metric=CPU_Idle | filter max > .3  | eval 100 * (1 - _value) | avg by hostname
+metric=CPU_Idle | filter max > .3  | eval 100 * (1 - _value) | avg by hostname 
 ```
 
 ### parse
@@ -141,11 +141,11 @@ This further complicates the quantization type.
 
 ## Quantization
 
-Quantization is at the very heart of query output for metrics. You must use the correct quantization for every use case.
+Quantization is at the very heart of query output for metrics. You must use the correct quantization for every use case. 
 
 Every metric series has multiple rollup types: `min`, `max`, `latest`, `avg`, `sum`, and `count`. Every metric query has auto quantize by default using `avg`, but we override with the [`quantize` operator](/docs/metrics/metrics-operators/quantize/). The `quantize` operator has a time window (similar to the [`timeslice` search operator](/docs/search/search-query-language/search-operators/timeslice/) in logs), and a rollup type, for example, `avg` or `sum`.
 
-The following screenshot shows a query with the `quantize` type of `max` and an interval of `1h`:
+The following screenshot shows a query with the `quantize` type of `max` and an interval of `1h`: 
 
 <img src={useBaseUrl('img/metrics/metrics-query-quantize-example.png')} alt="Metrics query example" style={{border: '1px solid gray'}} width="600" />
 
@@ -208,7 +208,7 @@ In the following example, we use the comment tag `//` to view the metric query t
 
 ```
 container="istio-proxy" node="ip-10-42-169-62.us-west-2.compute.internal" metric=container_memory_working_set_bytes cluster=prod namespace=prod-otel001
-| quantize 1m  // | avg by container, pod | sum by pod
+| quantize 1m  // | avg by container, pod | sum by pod 
 ```
 <img src={useBaseUrl('img/metrics/time-series-example.png')} alt="Time series example" style={{border: '1px solid gray'}} width="800" />
 
@@ -256,7 +256,7 @@ Try the following fixes:
     <br/>`| filter max > 0 `
     <br/>or
     <br/>`| where _value > 0`
-    <br/>or
+    <br/>or 
     <br/>`| where max > 0`
 
 ###  Metric charting options that change output
@@ -278,8 +278,8 @@ Following are examples of queries with and without override.
 
 Query:
     ```
-    metric=kube_pod_container_status_restarts_total
-    | quantize using max | delta counter
+    metric=kube_pod_container_status_restarts_total 
+    | quantize using max | delta counter 
     | topk(100,max)
    ```
 
@@ -292,8 +292,8 @@ Output:
 
 Query:
     ```
-    metric=kube_pod_container_status_restarts_total
-    | quantize using max | delta counter
+    metric=kube_pod_container_status_restarts_total 
+    | quantize using max | delta counter 
     | topk(100,max) | sum by pod,cluster,namespace
     ```
 Override: None
@@ -307,8 +307,8 @@ Now see how an override makes it easier to read output.
 
 Query:
     ```
-    metric=kube_pod_container_status_restarts_total
-    | quantize using max | delta counter
+    metric=kube_pod_container_status_restarts_total 
+    | quantize using max | delta counter 
     | topk(100,max)
     | sum by pod,cluster,namespace
     ```
@@ -336,7 +336,7 @@ To compute a third series C from two series A & B is the ABC pattern. Common exa
 When using the ABC pattern, keep in mind:
 * If this is `per x` it must be grouped correctly, for example, `sum by pod`. Take careful note of quantization period and type.
 * Create a #C series with required computation.
-* Make sure the quantization period is identical for all three series, or results will be very strange.
+* Make sure the quantization period is identical for all three series, or results will be very strange. 
 * If grouping, you must include [`along`](/docs/metrics/metrics-operators/along/) in #C. For an example, see [Join Metrics Queries](/docs/metrics/introduction/joins/).
 
 ### ABC example 1 - Disk usage % top 20
@@ -345,15 +345,15 @@ Say we have two metrics and want to calculate a usage % for the top 20 fullest d
 
 ```
 // metric gives us bytes size per node, mount, device
-node="ip-10-42-177-158.us-west-2.compute.internal" cluster=prod metric=node_filesystem_size_bytes !fstype=tmpfs node=*
-| quantize to 5m using avg
+node="ip-10-42-177-158.us-west-2.compute.internal" cluster=prod metric=node_filesystem_size_bytes !fstype=tmpfs node=* 
+| quantize to 5m using avg 
 | avg by node,mountpoint,device
 ```
 
 ```
 // gives use the free bytes per node,mountpoint,device
 node="ip-10-42-177-158.us-west-2.compute.internal" cluster=prod metric=node_filesystem_avail_bytes  !fstype=tmpfs node=*
-| quantize to 5m using avg
+| quantize to 5m using avg 
 | avg by node,mountpoint,device
 ```
 
@@ -361,7 +361,7 @@ Create an #A and #B series with the queries above and then add a #C series:
 ```
 1 - (#B / #A) along node,mountpoint,device | eval _value * 100 | quantize to 5m using avg  
 | topk(20, latest)
-```
+``` 
 
 <img src={useBaseUrl('img/metrics/metric-query-abc-example-1.png')} alt="ABC example 1" style={{border: '1px solid gray'}} width="800" />
 
@@ -371,21 +371,21 @@ For our top list output we've chosen a bar chart, with only #C visible, with sor
 
 A query:
 ```
-metric=container_memory_working_set_bytes
-cluster=prod namespace=prod-otel001
- | quantize 1m | avg by container, pod | sum by pod
+metric=container_memory_working_set_bytes 
+cluster=prod namespace=prod-otel001 
+ | quantize 1m | avg by container, pod | sum by pod 
 ```
 
 B query:
 ```
-metric=kube_pod_container_resource_limits resource=memory
-cluster=prod namespace=prod-otel001
+metric=kube_pod_container_resource_limits resource=memory 
+cluster=prod namespace=prod-otel001 
 | quantize 1m | sum by pod
 ```
 
 C query:
 ```
-#A / #B * 100 along pod
+#A / #B * 100 along pod 
 | topk(50,max)
 ```
 
@@ -408,9 +408,9 @@ To graph, typically we want to calculate the rate of change and sum that in each
 Following is a counter example showing pod restarts using the `kube_pod_container_status_restarts_total` metric:
 
 ```
-metric=kube_pod_container_status_restarts_total
-| quantize using max | delta counter
-| topk(100,max)
+metric=kube_pod_container_status_restarts_total 
+| quantize using max | delta counter 
+| topk(100,max) 
 | sum by pod
 ```
 
@@ -427,7 +427,7 @@ Following is an incorrect way to query for pod restarts. It uses `sum` over time
 
 ### Understanding DPM drivers
 
-Metrics are billed in data points per minute (DPM), typically at a rate of 3 credits per 1000 DPM averaged over each 24 hour period. `DPM = metrics * entities * total cardinality` of all tag names/values, so sending more metric/tag combinations increases cost.
+Metrics are billed in data points per minute (DPM), typically at a rate of 3 credits per 1000 DPM averaged over each 24 hour period. `DPM = metrics * entities * total cardinality` of all tag names/values, so sending more metric/tag combinations increases cost. 
 
 We have three tools in Sumo Logic to track DPM usage and drill down into drivers of high metric cardinality:
 * The account page shows metric consumption per day over time:<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-1.png')} alt="Account page showing data points per minute" style={{border: '1px solid gray'}} width="800" />
@@ -458,7 +458,7 @@ Sending dimension (tag) values for metrics with high cardinality will result in 
 
 The cardinality (and hence DPM) of a single metric is the product of all possible cardinalities of tags. For example:
 
-* host x10 and service x20 = up to 200 DPM
+* host x10 and service x20 = up to 200 DPM 
 * host x10 and service x20  and url_path x 5000 = up to 10,000 DPM
 * host x10 and service x20  and thread_id x1000s and customer id and x2M customers = millions (very likely to get rate limited)
 * host x10 and service x20 and epoc nano sec `1737579476122` = every data point becomes a unique time series producing millions (very likely to get rate limited)
