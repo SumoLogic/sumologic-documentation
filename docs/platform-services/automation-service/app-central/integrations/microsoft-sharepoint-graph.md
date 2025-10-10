@@ -25,7 +25,7 @@ Utilize Microsoft SharePoint lists, files, and folders during incident investiga
 
 ### Register an application
 
-**Registering your application** establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional. Your app trusts the Microsoft identity platform, and not the other way around.
+Registering your application establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional. Your app trusts the Microsoft identity platform, and not the other way around.
 
 Follow these steps to create the app registration:
 
@@ -39,7 +39,7 @@ Follow these steps to create the app registration:
 
 When registration completes, the Azure portal displays the app registration's **Overview** pane, which includes its Application (client) ID. Also referred to as just client ID, this value uniquely identifies your application in the Microsoft identity platform.
 
-The client ID as one aspect in validating the security tokens it receives from the identity platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/microsoft-ews-3.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
+The client ID is one aspect in validating the security tokens it receives from the identity platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/microsoft-ews-3.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
 ### Add credentials
 
@@ -47,7 +47,7 @@ Credentials are used by confidential client applications that access an API. Exa
 
 You can add client secrets (a string) as credentials to your confidential client app registration.
 
-<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/microsoft-ews-4.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/microsoft-ews-4.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
 ### Add a client secret
 
@@ -58,13 +58,13 @@ The client secret, known also as an application password, is a string value of y
 3. Add a description for your client secret.
 4. Select a duration.
 5. Select **Add**.
-6. Record the secret's value for use in your client application code - it's never displayed again after you leave this page.
+6. Record the secret's value for use in your client application code. It's never displayed again after you leave this page.
 
 ### Add permissions to API
 
 1. Select your application in **App registrations** in the Azure portal.
 2. Select **API permissions > Add a permission**.
-3. Application permissions are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
+3. Application permissions are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent, unless you've defined application roles for your API.
 4. Select **Add a permission**, and add the following permissions: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-sharepoint/microsoft-sharepoint-graph.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
 #### Microsoft Sharepoint (Graph) API to be configured for these permissions
