@@ -33,6 +33,7 @@ The **Domain URL** will be the endpoint URL of the Varonis console taken from so
 
 #### API Key
 
+To collect the API Key, follow the below steps:
 1. [Sign in](https://loginx.varonis.com/) to your **Varonis** workspace.
 2. Navigate to **Configuration** > **API Keys** and create an API key with the **Threat Detection Integrator** role.
 
