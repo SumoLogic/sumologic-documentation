@@ -4,6 +4,8 @@ title: geoip Search Operator
 sidebar_label: geoip
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to its geographical location on a [map chart](/docs/dashboards/panels/map-charts). To create the map, the `geoip` operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
 
 Any IP addresses that do not have a location, such as internal addresses, will return null values.
@@ -36,7 +38,7 @@ all the optional fields or choose a subset:
 * state_cf
 * city_cf
 
-Details of these data fields can be found in <a href="/files/IP-Geo-Point-Data-Glossary.pdf" target="_blank">Neustar's documentation</a> under the GeoPoint Data Glossary topic.
+Details of these data fields can be found in <a href={useBaseUrl('/files/IP-Geo-Point-Data-Glossary.pdf')} target="_blank">Neustar's documentation</a> under the GeoPoint Data Glossary topic.
 
 ## Syntax to Map
 
