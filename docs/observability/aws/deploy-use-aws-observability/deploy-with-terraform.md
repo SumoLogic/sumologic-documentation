@@ -31,6 +31,11 @@ If you've previously set up our AWS Observability Solution with CloudFormation a
 
 :::
 
+:::note
+The Global Intelligence for AWS CloudTrail DevOps app is planned for deprecation in the near future and has therefore been removed from the AWS Observability Solution. With this removal, the app will no longer be backed up or maintained during future solution upgrades.
+:::
+
+
 For this setup, complete the following:
 
 1. Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
@@ -66,7 +71,7 @@ Before you run the Terraform script, perform the following actions on a server m
 
 1. Install [Terraform](https://www.terraform.io/) version [1.6.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
     ```bash
-    $ terraform --version
+    terraform --version
     ```
 1. Install the latest version of [curl](https://curl.haxx.se/download.html). To check the installed curl version, run the following command:
     ```bash
@@ -86,11 +91,11 @@ Before you run the Terraform script, perform the following actions on a server m
 
 1. Clone the repository https://github.com/SumoLogic/sumologic-solution-templates:
     ```bash
-    $ git clone https://github.com/SumoLogic/sumologic-solution-templates
+    git clone https://github.com/SumoLogic/sumologic-solution-templates
     ```
 1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) and running:
     ```bash
-    $ terraform init
+    terraform init
     ```
     This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/null/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
     :::note
@@ -115,7 +120,7 @@ Before you run the Terraform script, perform the following actions on a server m
     Provide your Sumo Logic deployment for the SUMOLOGIC_ENV variable. For example: au, ca, de, eu, jp, us2, fed, kr, zrh, or us1. For more information on Sumo Logic deployments, see *Sumo Logic Endpoints and Firewall Security*. 
    * Run fields.sh using this command:
       ```bash
-      $ sh fields.sh
+      sh fields.sh
       ```
 
 :::important
@@ -406,6 +411,7 @@ Configure providers for collection using the Terraform source-module.
     #  access_id                 = var.sumologic_access_id
     #  access_key                = var.sumologic_access_key
     #  environment               = var.sumologic_environment  
+    #  aws_resource_tags         = var.aws_resource_tags
     #}
     ```
 
@@ -440,6 +446,7 @@ Configure providers for collection using the Terraform source-module.
     access_id    = var.sumologic_access_id
     access_key   = var.sumologic_access_key
     environment  = var.sumologic_environment
+    aws_resource_tags  = var.aws_resource_tags
 
     }
     ```
@@ -462,6 +469,7 @@ module "production-us-east-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 
 module "production-us-east-2" {
@@ -472,7 +480,8 @@ module "production-us-east-2" {
   sumologic_organization_id = var.sumologic_organization_id
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
-  environment  = var.sumologic_environment  
+  environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags  
 
 # Use the same collector created for the first region of the production account.
   sumologic_existing_collector_details = {
@@ -502,6 +511,7 @@ module "production-us-east-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 
 module "production-us-east-2" {
@@ -513,6 +523,7 @@ module "production-us-east-2" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 
 # Use the same collector created for the first region of the production account.
   sumologic_existing_collector_details = {
@@ -530,6 +541,7 @@ module "development-us-west-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
@@ -548,9 +560,9 @@ Before you run these commands, make sure you have configured your AWS profiles o
 :::
 
 ```terminal
-$ terraform validate
-$ terraform plan
-$ terraform apply
+terraform validate
+terraform plan
+terraform apply
 ```
 
 ## Uninstalling the Solution
@@ -558,7 +570,7 @@ $ terraform apply
 To uninstall the AWS Observability solution deployed using Terraform, navigate to the directory **sumologic-solution-templates/aws-observability-terraform** and execute the command:
 
 ```terminal
-$ terraform destroy
+terraform destroy
 ```
 
 This will destroy all [resources](resources.md) and configuration previously set up.
@@ -592,6 +604,7 @@ module "collection-module" {
  access_id    = var.sumologic_access_id
  access_key   = var.sumologic_access_key
  environment  = var.sumologic_environment
+ aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
@@ -623,8 +636,15 @@ module "collection-module" {
    }
    fields = {}
  }
+ aws_resource_tags = {
+   env = "prod"
+   author = "sumologic"
+ }
 }
 ```
+:::note
+`aws_resource_tags` is a map of tags that will be applied to all AWS resources provisioned through the AWS Observability Solution, except for SAM nested sources, which are not tagged.
+:::
 
 **Override Example 2: Override the auto_enable_access_logs parameter**
 
@@ -639,6 +659,7 @@ module "collection-module" {
  access_key   = var.sumologic_access_key
  environment  = var.sumologic_environment
  auto_enable_access_logs = None
+ aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
