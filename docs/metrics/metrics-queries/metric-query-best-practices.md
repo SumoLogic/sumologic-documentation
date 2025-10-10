@@ -123,7 +123,7 @@ results in new tags: `type = app`, `name = app-song-8d`, `id = 4567223890123456`
 
 ### where
 
-The [`where`](/docs/metrics/metrics-operators/where/) and older [`filter`](/docs/metrics/metrics-operators/filter/) operators are best used for value-based filtering, not scope of query. You can use the `where` operator to filter out either entire time series, or individual data points within a time series. Supported reducer functions are:
+The [`where`](/docs/metrics/metrics-operators/where/) and older [`filter`](/docs/metrics/metrics-operators/filter/) operators are best used for value-based filtering, not scope of query. You can use the `where` operator to filter out either entire time series, or individual data points within a time series. Supported reducer functions are: 
 * `avg`, `min`, `max`, `sum`, `count`
 * `pct(n)` (he nth percentile of the values in the time series)
 * `latest` (the last data point in the time series)
@@ -184,7 +184,7 @@ But selecting the **Sum** statistic type for the same query yields a sum of `1,7
 
 ### Autocomplete
 
-Metric and tag discovery is a key activity in creating metric queries. [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/) provides an autocomplete function to make it fast and easy to build out metric queries. Tag names and values are supplied in the query UI based on the current metric query scope.
+Metric and tag discovery is a key activity in creating metric queries. [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/) provides an autocomplete function to make it fast and easy to build out metric queries. Tag names and values are supplied in the query UI based on the current metric query scope. 
 
 Autocomplete can show you:
 * Which metrics exist for a specific scope:<br/><img src={useBaseUrl('img/metrics/metric-query-which-metrics.png')} alt="Which metrics exist for a specific scope" style={{border: '1px solid gray'}} width="600" />
