@@ -18,7 +18,7 @@ module.exports = {
   tagline: '',
   url: process.env.HOSTNAME || "http://localhost:3000",
   trailingSlash: true,
-  baseUrl: process.env.BASE_URL || "/help/",
+  baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
   onDuplicateRoutes: 'throw',
