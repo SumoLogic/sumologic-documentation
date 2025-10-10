@@ -113,8 +113,8 @@ This section describes how to push logs from a network security group into Azure
 * Login to the Azure Portal.
 * Click **Network security groups > Select a network security group**.
 * Click on **NSG flow logs** when you see it under **Monitoring**, and click **Create**.
-* Click on **Select resource** and choose a NSG that is present in the same region as the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs#step-1-configure-azure-storage-account">Step 1</a>.
-* Under **Subscription > Storage Accounts**, select the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs#step-1-configure-azure-storage-account">Step 1</a>.
+* Click on **Select resource** and choose a NSG that is present in the same region as the storage account configured in [Step 1](#step-1-configure-azure-storage-account).
+* Under **Subscription > Storage Accounts**, select the storage account configured in [Step 1](#step-1-configure-azure-storage-account).
 * Specify the **Retention (days)** and click **Review + create**. <br/><img src={useBaseUrl('/img/send-data/review+create.png')} alt="review+create" width="700"/>
 * Review the configuration of the flow log and click **Create**. <br/><img src={useBaseUrl('/img/send-data/review-configuration.png')} alt="review-configuration" width="600"/>
 
