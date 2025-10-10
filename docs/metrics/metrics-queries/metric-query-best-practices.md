@@ -352,7 +352,7 @@ node="ip-10-42-177-158.us-west-2.compute.internal" cluster=prod metric=node_file
 
 ```
 // gives use the free bytes per node,mountpoint,device
-node="ip-10-42-177-158.us-west-2.compute.internal" cluster=prod metric=node_filesystem_avail_bytes  !fstype=tmpfs node=*
+node="ip-10-42-177-158.us-west-2.compute.internal" cluster=prod metric=node_filesystem_avail_bytes  !fstype=tmpfs node=* 
 | quantize to 5m using avg 
 | avg by node,mountpoint,device
 ```
