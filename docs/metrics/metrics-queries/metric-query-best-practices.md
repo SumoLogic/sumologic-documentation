@@ -278,8 +278,8 @@ Following are examples of queries with and without override.
 
 Query:
     ```
-    metric=kube_pod_container_status_restarts_total 
-    | quantize using max | delta counter 
+    metric=kube_pod_container_status_restarts_total
+    | quantize using max | delta counter
     | topk(100,max)
    ```
 
