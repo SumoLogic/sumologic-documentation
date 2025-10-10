@@ -39,6 +39,7 @@ export const Home = () => {
         <Typography
           bgcolor='#0045BE'
           color='#e3e3e3'
+          fontFamily='Lab Grotesque'
           fontSize={28}
           fontWeight={700}
           pt={3}
@@ -46,15 +47,14 @@ export const Home = () => {
           pb={1}
           sx={{
             backgroundImage: 'linear-gradient(to right, rgb(0,0,153), rgb(0,70,190) 30%)',
-            fontFamily:
-              'var(--ifm-font-family-headings, var(--ifm-font-family-base, "Lab Grotesque", "Segoe UI", Roboto, Helvetica, Arial, sans-serif))',
           }}
           textAlign='center'
         >
           <Box
             component={SumoLogicDocsLogo}
-            role='img'
-            aria-label='Sumo Logic Docs logo'
+            alt="Sumo Logic Docs logo"
+            role="<img>"
+            aria-hidden="true"
             height={{
               md: 36,
               xs: 28,
@@ -78,8 +78,6 @@ export const Home = () => {
               md: '100% 200%',
               xs: '100% 100%',
             },
-            fontFamily:
-              'var(--ifm-font-family-base, "Lab Grotesque", "Segoe UI", Roboto, Helvetica, Arial, sans-serif)',
           }}
           height={{
             md: 'auto',
@@ -113,23 +111,19 @@ export const Home = () => {
                 >
                   <Typography
                     color='white'
+                    fontFamily='Lab Grotesque'
                     fontSize={32}
                     fontWeight={700}
                     variant='h2'
-                    sx={{
-                      fontFamily:
-                        'var(--ifm-font-family-headings, var(--ifm-font-family-base, "Lab Grotesque", "Segoe UI", Roboto, Helvetica, Arial, sans-serif))',
-                    }}
                   >
                     New to Sumo?
                   </Typography>
                   <Typography
                     color='#e3e3e3'
+                    fontFamily='Lab Grotesque'
                     pb={2}
                     textAlign='left'
-                    component='p'
-                    variant='body1'
-                    sx={{ fontFamily: 'inherit' }}
+                    variant='p'
                   >
                     Get started quickly with our search, visualization, analytics, and security capabilities.
                   </Typography>
@@ -157,12 +151,12 @@ export const Home = () => {
                           border: '.5px solid',
                           borderColor: '#e3e3e3',
                           borderRadius: 2,
+                          fontFamily: 'Lab Grotesque',
                           textTransform: 'none',
                           width: {
                             md: 'auto',
                             xs: '100%',
                           },
-                          fontFamily: 'inherit',
                           '&:hover': {
                             bgcolor: '#0045BE',
                             borderColor: '#0045BE',
@@ -207,6 +201,7 @@ export const Home = () => {
           >
             <Typography
               component='h2'
+              fontFamily='Lab Grotesque'
               fontWeight={900}
               mb={{
                 md: 'inherit',
@@ -215,19 +210,15 @@ export const Home = () => {
               }}
               textAlign='center'
               variant='h4'
-              sx={{
-                fontFamily:
-                  'var(--ifm-font-family-headings, var(--ifm-font-family-base, "Lab Grotesque", "Segoe UI", Roboto, Helvetica, Arial, sans-serif))',
-              }}
             >
               Explore our product guides
             </Typography>
             <Typography
               component='p'
+              fontFamily='Lab Grotesque'
               mb={4}
               textAlign='center'
               variant='subtitle1'
-              sx={{ fontFamily: 'inherit' }}
             >
               Ensure app reliability and security with modern cloud-native monitoring and observability.
             </Typography>
@@ -277,31 +268,46 @@ export const Home = () => {
                   {
                     label: 'Other Solutions',
                   },
-                ].map(({ label }, index) => (
+                ].map(({ label, ...rest }, index) => (
                   <Tab
                     key={label}
-                    value={String(index)}
                     label={label}
                     sx={{
                       color: 'grey.700',
+                      fontFamily: 'Lab Grotesque',
                       fontWeight: 'bold',
-                      fontFamily:
-                        'var(--ifm-font-family-headings, var(--ifm-font-family-base, "Lab Grotesque", "Segoe UI", Roboto, Helvetica, Arial, sans-serif))',
                     }}
+                    value={String(index)}
+                    {...rest}
                   />
                 ))}
               </Tabs>
-
-              {features.map((feature, index) => (
-                <TabPanel key={index} value={String(index)} sx={{ px: 0 }}>
-                  <Grid container direction="row" justifyContent="center" spacing={4} py={6}>
-                    {feature.map((config) => (
-                      <Grid item key={config.link} lg={4} md={6} xs={12}>
-                        <Feature length={feature.length} {...config} />
-                      </Grid>
-                    ))}
-                  </Grid>
-                </TabPanel>
+              {features.map((feature, index) => tab === String(index) && (
+                <Grid
+                  component={TabPanel}
+                  container
+                  direction='row'
+                  justifyContent='center'
+                  key={index}
+                  py={6}
+                  spacing={4}
+                  value={String(index)}
+                >
+                  {feature.map((config) => (
+                    <Grid
+                      item
+                      key={config.link}
+                      lg={4}
+                      md={6}
+                      xs={12}
+                    >
+                      <Feature
+                        length={feature.length}
+                        {...config}
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
               ))}
             </TabContext>
           </Stack>
