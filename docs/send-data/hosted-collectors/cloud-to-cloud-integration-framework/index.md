@@ -609,7 +609,7 @@ In this section, we'll introduce the following concepts:
       <div className="box smallbox card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/varonis-source"><img src={useBaseUrl('img/integrations/misc/varonis-logo.png')} alt="Thumbnail icon" width="100"/><h4>Varonis</h4></a>
-        <p>Learn to collect alerts from the Varonis platform and send them to Sumo Logic..</p>
+        <p>Learn to collect alerts from the Varonis platform and send them to Sumo Logic.</p>
         </div>
       </div>
       <div className="box smallbox card">
