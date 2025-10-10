@@ -28,7 +28,7 @@ The Folder Management API allows you to add folders and subfolders to the [Libra
 | KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/folderManagement   |
 | US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/folderManagement      |
 | US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/folderManagement  |
-| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/folderManagement  |
+| ZRH | Switzerland (Zurich)   | eu-central-2   | https://api.zrh.sumologic.com/docs/#tag/folderManagement  |
 
 ## Required role capabilities
 

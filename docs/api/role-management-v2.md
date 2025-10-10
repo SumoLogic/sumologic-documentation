@@ -30,7 +30,7 @@ To manage roles, you must have an administrator role or your role must have been
 | KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/roleManagementV2   |
 | US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/roleManagementV2      |
 | US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/roleManagementV2  |
-| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/roleManagementV2  |
+| ZRH | Switzerland (Zurich)   | eu-central-2   | https://api.zrh.sumologic.com/docs/#tag/roleManagementV2  |
 
 ## Migrate audit logs queries from Role Management API V1 to V2
 

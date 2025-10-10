@@ -28,7 +28,7 @@ The Dashboard Management APIs allow you to create, retrieve, update, and delete 
 | KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/dashboardManagement   |
 | US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/dashboardManagement      |
 | US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/dashboardManagement  |
-| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/dashboardManagement  |
+| ZRH | Switzerland (Zurich)   | eu-central-2   | https://api.zrh.sumologic.com/docs/#tag/dashboardManagement  |
 
 ## Required role capabilities
 

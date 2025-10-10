@@ -28,7 +28,7 @@ The Dynamic Parsing Management API allows you to configure Run Time Field Extrac
 | KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/dynamicParsingRuleManagement   |
 | US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/dynamicParsingRuleManagement      |
 | US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/dynamicParsingRuleManagement  |
-| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#tag/dynamicParsingRuleManagement  |
+| ZRH | Switzerland (Zurich)   | eu-central-2   | https://api.zrh.sumologic.com/docs/#tag/dynamicParsingRuleManagement  |
 
 ## Required role capabilities
 

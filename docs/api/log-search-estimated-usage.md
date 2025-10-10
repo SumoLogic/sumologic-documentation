@@ -30,7 +30,7 @@ In the Infrequent Data Tier and Flex, you pay per query, based on the amount of 
 | KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType   |
 | US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType      |
 | US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
-| ZRH | Switzerland (Zurich)   |                | https://api.zrh.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
+| ZRH | Switzerland (Zurich)   | eu-central-2   | https://api.zrh.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
 
 ## Required role capabilities
 
