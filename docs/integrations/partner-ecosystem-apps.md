@@ -37,6 +37,6 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [StackRox](https://cdn.stackrox.io/integrations/sumologic-stackrox-app.pdf)
 * [Tessian](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
 * [Votiro](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Votiro)
-* <a href={useBaseUrl('/files/zerofox-integrations.pdf')} target="_blank">ZeroFox</a> ([blog](https://www.zerofox.com/blog/sumo-logic-and-zerofox-join-forces-to-protect-your-public-attack-surface/))
+* <a href={useBaseUrl('files/zerofox-integrations.pdf')} target="_blank">ZeroFox</a> ([blog](https://www.zerofox.com/blog/sumo-logic-and-zerofox-join-forces-to-protect-your-public-attack-surface/))
 
 For any questions on these applications, contact our partners.
