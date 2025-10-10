@@ -56,7 +56,7 @@ function WarningIcon() {
 }
 function SumoIcon() {
   return (
-    <img src={useBaseUrl('img/reuse/sumo-square.png')} width="25"/>
+    <img src={useBaseUrl('img/reuse/sumo-square.png')} width="25"/> 
   )
 }
 // eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
