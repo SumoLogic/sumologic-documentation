@@ -207,7 +207,7 @@ Switch to the **Time Series** tab to see metrics, tags and tag values:
 In the following example, we use the comment tag `//` to view the metric query that is still raw (no aggregation) in the **Time Series** tab:
 
 ```
-container="istio-proxy" node="ip-10-42-169-62.us-west-2.compute.internal" metric=container_memory_working_set_bytes cluster=prod namespace=prod-otel001
+container="istio-proxy" node="ip-10-42-169-62.us-west-2.compute.internal" metric=container_memory_working_set_bytes cluster=prod namespace=prod-otel001 
 | quantize 1m  // | avg by container, pod | sum by pod 
 ```
 <img src={useBaseUrl('img/metrics/time-series-example.png')} alt="Time series example" style={{border: '1px solid gray'}} width="800" />
