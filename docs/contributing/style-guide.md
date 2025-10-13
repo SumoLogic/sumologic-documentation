@@ -262,7 +262,7 @@ To format a closed beta release:
       <meta name="robots" content="noindex" />
      </head>
 
-     <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+     <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
      First paragraph goes here...
      ```
@@ -282,7 +282,7 @@ To format an open beta release:
    description: The XYZ Source provides a secure endpoint to receive  event data.
    ---
 
-   <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+   <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
    First paragraph goes here...
    ```
@@ -566,13 +566,13 @@ To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 <TabItem value="Markdown">
 
 ```md
-<a href="/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+<a href={useBaseUrl('files/domainCollector.ps1')} target="_blank">domainCollector.ps1</a>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-<a href="/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+<a href={useBaseUrl('files/domainCollector.ps1')} target="_blank">domainCollector.ps1</a>
 
 </TabItem>
 </Tabs>
