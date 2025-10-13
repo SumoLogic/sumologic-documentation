@@ -20,7 +20,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/manage/data-archiving/archive">
+      <a href={useBaseUrl('docs/manage/data-archiving/archive')}>
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />
         <h4>Archive Log Data to S3</h4>
       </a>
