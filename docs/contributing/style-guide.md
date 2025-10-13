@@ -566,13 +566,13 @@ To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 <TabItem value="Markdown">
 
 ```md
-<a href="/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+<a href={useBaseUrl('files/domainCollector.ps1')} target="_blank">domainCollector.ps1</a>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-<a href="/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+<a href={useBaseUrl('files/domainCollector.ps1')} target="_blank">domainCollector.ps1</a>
 
 </TabItem>
 </Tabs>
