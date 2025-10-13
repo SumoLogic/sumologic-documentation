@@ -28,7 +28,7 @@ To collect metric data from the Snowflake SQL API, you must have an authorized S
 1. Take note of the database name you plan to query.
 1. Collect your Snowflake Programmatic Access Token following the instructions in the [Snowflake documentation](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens).
   :::note
-  Starting November 2025, Snowflake will block single-factor authentication (password-only sign-ins) as part of their enhanced security protocols. Sumo Logic recommends you to update your integration to [Programmatic Access Tokens (PATs)](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens) before 1st November 2025 to ensure continued access.
+  Starting November 2025, Snowflake will block single-factor authentication (password-only sign-ins) as part of their enhanced security protocols. Sumo Logic recommends that you update your integration to [Programmatic Access Tokens (PATs)](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens) before 1st November 2025 to ensure continued access.
   :::
 1. Optional additional information such as a role, warehouse, or schema name can also be configured with the source.
 
