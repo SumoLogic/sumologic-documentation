@@ -23,6 +23,7 @@ These changes are designed to strengthen Snowflake’s overall security posture 
 ### Next steps
 
 As an interim measure, Sumo Logic recommends you to use the Programmatic Access Tokens (PATs) to authenticate your Sumo Logic integration with Snowflake before 1st November 2025. This ensures continued access and seamless data collection from the Snowflake platform.
+
 Refer to [Using programmatic access tokens for authentication](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens) for step-by-step instructions to authenticate the integration with Snowflake.
 
 :::note
