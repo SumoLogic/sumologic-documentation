@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Starting November 2025, Snowflake will block single-factor authentication (password-only sign-ins) as part of their enhanced security protocols.
 
-Snowflake has signed the CISA **Secure by Design** pledge and is committed to adopting security best practices, including:
+Snowflake has signed the CISA *Secure by Design* pledge and is committed to adopting security best practices, including:
 - Eliminating high-risk authentication methods (e.g., password-only access)
 - Enforcing multi-factor authentication (MFA)
 - Reducing the risk of credential theft and unauthorized access
