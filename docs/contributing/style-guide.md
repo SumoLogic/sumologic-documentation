@@ -262,7 +262,7 @@ To format a closed beta release:
       <meta name="robots" content="noindex" />
      </head>
 
-     <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+     <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
      First paragraph goes here...
      ```
@@ -282,7 +282,7 @@ To format an open beta release:
    description: The XYZ Source provides a secure endpoint to receive  event data.
    ---
 
-   <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+   <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
    First paragraph goes here...
    ```
@@ -566,13 +566,13 @@ To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 <TabItem value="Markdown">
 
 ```md
-<a href="/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+<a href={useBaseUrl('files/domainCollector.ps1')} target="_blank">domainCollector.ps1</a>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-<a href="/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+<a href={useBaseUrl('files/domainCollector.ps1')} target="_blank">domainCollector.ps1</a>
 
 </TabItem>
 </Tabs>
@@ -1085,7 +1085,17 @@ tags: [metrics, traces]
 
 For a full list of options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
 
+### Branding and naming in app/source docs
 
+To ensure consistency between our UI and our documentation, every App and Source doc must begin by clearly identifying it as a Sumo Logic integration. The UI often shows only the vendor name (for example, "Slack", "Amazon S3"), so the documentation must reinforce that Sumo Logic is delivering the integration.
+
+* **App docs**. The `description:` frontmatter and intro paragraph must start with: "The Sumo Logic app for [vendor]..." (see [template](/docs/contributing/templates/app-template-v2)).
+* **Source docs**. The `description:` frontmatter and intro paragraph must start with: "The Sumo Logic source for [vendor]..." (see [template](/docs/contributing/templates/c2c-source)).
+
+This rule helps:
+* Align docs with UI naming ("[vendor] by Sumo Logic”).
+* Reinforce Sumo Logic as the provider of the integration.
+* Prevent ambiguity that suggests the vendor is the owner of the app/source.
 
 ## Navigation menus
 

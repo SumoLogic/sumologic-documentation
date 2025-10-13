@@ -9,7 +9,7 @@ description: Learn how to manage library content for Managed Security Service Pr
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
