@@ -37,6 +37,9 @@ The Snowflake Logs source requires you to provide the following data to setup th
 - **Account Identifier**. An account identifier uniquely identifies a Snowflake account within your organization, as well as throughout the global network of Snowflake-supported cloud platforms and cloud regions. For more information, see [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier).
 - **Username**. Snowflake account's login username. For example, `SUMOLOGIC`.
 - **Password**. Snowflake account's login password. For example, `yufncixxxxxxxxxp55hbdy7`.
+  :::note
+  Starting November 2025, Snowflake will block single-factor authentication (password-only sign-ins) as part of their enhanced security protocols. Sumo Logic recommends you to update your integration to [Programmatic Access Tokens (PATs)](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens) before 1st November 2025 to ensure continued access.
+  :::
 
 Once you have all the required values, set up the source configuration to collect your desired log types available in the configuration section.
 
