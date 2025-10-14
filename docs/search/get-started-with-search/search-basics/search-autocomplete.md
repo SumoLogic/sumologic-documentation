@@ -10,7 +10,7 @@ On the **Search** page, as you begin typing to enter a query in the search tex
 
 RBAC limitations prevent you from seeing options that you are not permitted to see. 
 
-In the first part of a query, search autocomplete suggests common default queries, keywords, and [metadata](built-in-metadata.md "Search Metadata") terms. It also offers the names of Collectors, Sources, and Partitions, which are automatically configured in your system when you create them.
+In the first part of a query, search autocomplete suggests common default queries, keywords, and [metadata](built-in-metadata.md) terms. It also offers the names of Collectors, Sources, and Partitions, which are automatically configured in your system when you create them.
 
 ![autocomplete search](/img/search/get-started-search/search-basics/autocomplete-search.png)
 
