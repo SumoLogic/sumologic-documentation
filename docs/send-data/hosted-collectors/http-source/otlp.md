@@ -36,6 +36,11 @@ To configure an OTLP/HTTP Source:
    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
 1. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the OTLP/HTTP Source. <br/>  ![OTLP processing rules.png](/img/send-data/OTLP-processing-rules.png)
 1. When you are finished configuring the Source, click **Save**.
+1. In the **HTTP Source Address** dialog box, select one of the following to copy the URL where the source data will be stored:
+   * **Presigned URL**. Select to copy a presigned URL with embedded authentication.<br/><img src={useBaseUrl('img/send-data/http-source-address-otlp.png')} alt="HTTP Source Address with presigned URL" style={{border: '1px solid gray'}} width="600"/>
+   * **Auth Header**. Select to copy the URL, as well as a separate authorization header that contains an authentication token. This option provides greater security than a presigned URL because placing the authentication token in the authorization header of a request prevents the token from being exposed in the URL.<br/><img src={useBaseUrl('img/send-data/http-source-address-otlp-auth.png')} alt="HTTP Source Address with authorization header" style={{border: '1px solid gray'}} width="600"/>
+1. Copy the URL (and header if applicable) and keep in a safe place. You will use the URL in the next step: [Using the OTLP/HTTP Source](#using-the-otlphttp-source).
+1. Click **Done**.
 
 :::note
 * Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to OTLP Endpoint have appropriate timestamps.
@@ -53,6 +58,7 @@ If you need to access the Source's URL again, click **Show URL**.
 ### Data differentiation
 
 When you set up an OTLP/HTTP Source, a unique URL is assigned to the Source. The exporter automatically appends the specific signal type when sending the data, as described by [OpenTelemetry Protocol Exporter specification](https://github.com/open-telemetry/opentelemetry-specification/blob/v1.10.0/specification/protocol/exporter.md).
+
 The following table shows the URL format based on data types.
 
 | Data Type | URL Format                |
@@ -64,7 +70,7 @@ The following table shows the URL format based on data types.
 
 ### OTLP/HTTP Exporter
 
-To use the URL, include the url in otlphttp exporter of OpenTelemetry Collector and refer it in the pipelines, as needed. The exporter will automatically attach the signal type suffix:
+To use the URL, include the URL in otlphttp exporter of OpenTelemetry Collector and refer it in the pipelines, as needed. The exporter will automatically attach the signal type suffix:
 
 ```
 exporters:
