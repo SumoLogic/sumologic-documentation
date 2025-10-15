@@ -67,7 +67,8 @@ The Field Browser is limited for aggregate queries in the following ways:
 * Field counts (item G above) are not displayed for aggregate queries. 
 * Field counts—If messages returned are less than or equal to 2500 messages, then an exact calculation is shown. If more than 2500 messages are returned, an approximation is shown.
 * The **Approximate Count** displays the count of the field values for the field. This does not display complete field values count for that field but it's just to calculate average, minimum, maximum, and standard deviation values from the first 100,000 raw messages. The field values will be skipped if the 100,000 raw messages limit is exceeded.
-
+* The system limits the number of fields extracted for display in the field browser. Use the [`fields` Operator](/docs/search/search-query-language/search-operators/fields) to control which exact fields are retrieved.
+  
 ## Guide contents
 
 In this section, we'll introduce the following concepts:
@@ -75,13 +76,13 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/search-page/field-browser/search-from-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search from the Field Browser</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/search-from-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search from the Field Browser</h4></a>
   <p>Drilling down into a field from the Field Browser is seamless for non-aggregate queries.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Show and Hide Fields in the Field Browser</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Show and Hide Fields in the Field Browser</h4></a>
   <p>Change the fields that are displayed in search results by showing or hiding in the Field Browser.</p>
   </div>
 </div>

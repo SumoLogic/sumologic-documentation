@@ -192,7 +192,7 @@ You must start a search for the **Pin** option to appear. To pin a search, do t
 
 Once a search is pinned, it cannot be unpinned, but you can remove it from the **Pinned Searches** tab. You can pin up to 10 searches at a time. Queries that use the [`save` operator](/docs/search/search-query-language/search-operators/save) cannot be pinned.
 
-For more information, see [Pinned Searches](/docs/get-started/library/#pinned-searches).
+For more information, see [Pin a Search](/docs/search/get-started-with-search/search-page/pin-a-search).
 
 
 ## Administrator tasks

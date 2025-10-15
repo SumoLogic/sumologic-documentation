@@ -143,7 +143,7 @@ This further complicates the quantization type.
 
 Quantization is at the very heart of query output for metrics. You must use the correct quantization for every use case. 
 
-Every metric series has multiple rollup types: `min`, `max`, `latest`, `avg`, `sum`, and `count`. Every metric query has auto quantize by default using `avg`, but we override with the [`quantize` operator](/docs/metrics/metrics-operators/quantize/). The `quantize` operator has a time window (similar to the [`timeslice` search operator](https://help.sumologic.com/docs/search/search-query-language/search-operators/timeslice/) in logs), and a rollup type, for example, `avg` or `sum`.
+Every metric series has multiple rollup types: `min`, `max`, `latest`, `avg`, `sum`, and `count`. Every metric query has auto quantize by default using `avg`, but we override with the [`quantize` operator](/docs/metrics/metrics-operators/quantize/). The `quantize` operator has a time window (similar to the [`timeslice` search operator](/docs/search/search-query-language/search-operators/timeslice/) in logs), and a rollup type, for example, `avg` or `sum`.
 
 The following screenshot shows a query with the `quantize` type of `max` and an interval of `1h`: 
 

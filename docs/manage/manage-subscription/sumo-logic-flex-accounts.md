@@ -134,8 +134,8 @@ The following table provides a summary list of key features by Flex package acco
 | Sumo Logic Apps | &#10003; | &#10003; | &#10003; | &#10003; |
 | Support | &#10003; | &#10003; | &#10003; | &#10003; |
 | Traces | &#10003;<br/>Up to 1.5GB per day* | &#10003;<br/>Up to 5GB per day | &#10003;<br/>5GB per day| &#10003;<br/>Up to 5GB per day |
-| Usage Management - Advanced |  |  | | &#10003; |
-| Usage Management - Basic | &#10003; | &#10003; | | &#10003; |
+| Scan Budget |  |  | | &#10003; |
+| Organization Usage Limits | &#10003; | &#10003; | | &#10003; |
 | User and Role APIs | &#10003; | &#10003; | &#10003; | <br/>Up to 5GB per day |
 | War Room | |  | | &#10003; |
 

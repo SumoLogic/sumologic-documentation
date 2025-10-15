@@ -116,7 +116,7 @@ The following table lists the API response fields for installed and hosted Colle
    <td>Boolean</td>
    <td>Yes</td>
    <td></td>
-   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see <a href="/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral">Setting a Collector as Ephemeral</a>.</td>
+   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see [Setting a Collector as Ephemeral](/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral).</td>
    <td>Modifiable</td>
   </tr>
   <tr>
@@ -124,7 +124,7 @@ The following table lists the API response fields for installed and hosted Colle
    <td>JSON Object</td>
    <td>No</td>
    <td> </td>
-   <td>JSON map of key-value <a href="/docs/manage/fields">fields</a> (metadata) to apply to the Collector. To assign an <a href="/docs/manage/ingestion-volume/ingest-budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:
+   <td>JSON map of key-value [fields](/docs/manage/fields) (metadata) to apply to the Collector. To assign an [Ingest Budget](/docs/manage/ingestion-volume/ingest-budgets) to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:
    <p><code>fields=_budget=Dev_20GB</code></p></td>
    <td>Modifiable</td>
   </tr>
@@ -167,7 +167,7 @@ The following table lists the API response fields for installed and hosted Colle
    <td>UI</td>
    <td>For installed Collectors, whether the Collector is using local source configuration management (using a <code>JSON</code> file), or cloud management (using the <code>UI</code>)</td>
    <td>Modifiable
-   <p>To assign to <code>JSON</code>, <a href="/docs/send-data/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources">learn more</a>.</p></td>
+   <p>To assign to <code>JSON</code>, [learn more](/docs/send-data/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources).</p></td>
   </tr>
   <tr>
    <td>timeZone</td>
@@ -182,7 +182,7 @@ The following table lists the API response fields for installed and hosted Colle
    <td>Long</td>
    <td>No</td>
    <td>Null</td>
-   <td>When CPU utilization exceeds this threshold, the Collector will slow down its rate of ingestion to lower its CPU utilization. Currently only Local and Remote File Sources are supported. The value must be expressed as a whole number percentage. The collector will adjust resources to attempt to limit the CPU usage to at most 20%. For more information, see <a href="/docs/send-data/collection/set-collector-cpu-usage-target">Set the Collector CPU Usage Target</a>.</td>
+   <td>When CPU utilization exceeds this threshold, the Collector will slow down its rate of ingestion to lower its CPU utilization. Currently only Local and Remote File Sources are supported. The value must be expressed as a whole number percentage. The collector will adjust resources to attempt to limit the CPU usage to at most 20%. For more information, see [Set the Collector CPU Usage Target](/docs/send-data/collection/set-collector-cpu-usage-target).</td>
    <td>Modifiable</td>
   </tr>
 </table>

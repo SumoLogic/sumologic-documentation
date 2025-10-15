@@ -1,7 +1,7 @@
 ---
 id: library
 title: Managing Your Sumo Logic Library
-sidebar_label: Managing your Library
+sidebar_label: Managing Your Library
 description: Managing your Library in Sumo Logic.
 ---
 
@@ -9,9 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can save, share, and manage log searches, dashboards, apps, and other Sumo Logic content in your library. The library also allows you to launch searches and dashboards with a single click, speeding up access to the searches you find yourself running consistently. Additionally, you can use the content that others in your organization have already developed to continually discover new insights in your data.
 
-Open the **Library** page to expose additional search options and to organize and manage library contents. 
+Open the **Library** page to expose additional search options and to organize and manage library contents.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab.
 1. You'll see two **View as** options:
     * **Me**. See your own saved searches and dashboards.
     * **Content Administrator**. Available if you have a Sumo Logic role that grants you [Manage Content capability](/docs/manage/users-roles/roles/role-capabilities/#data-management), this option turns off your personal content in the library and allows you to see the entire Sumo file tree. In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. For more information, see Admin Mode. <br/><img src={useBaseUrl('img/get-started/view-as.png')} alt="View As" style={{border: '1px solid gray'}} width="200" />
@@ -19,7 +19,7 @@ Open the **Library** page to expose additional search options and to organize an
 
 ## Explore the library
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab.
 1. Select **Personal** to select your own saved searches and dashboards or **Org** to select those shared by others in your organization.
 1. Search for items:
    * Enter a search string to display matching search results.<br/>![search-string.png](/img/get-started/library/search-string.png)  
@@ -78,8 +78,8 @@ When your content is moved, you’ll need to click the new folder location to vi
 
 To add a folder to the library:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. 
-1. Click **Add New > New Folder**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab.
+1. Click **Add New > New Folder**.
 1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/>![folder](/img/get-started/library/AddFolder.png)
 1. The new folder is added to the folder list in alphabetical order.
 
@@ -160,7 +160,7 @@ the following prefixes:
 
 ### Search content in the library
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab.
 1. Click in the search field and select what you want to search for. <br/> <img src={useBaseUrl('img/get-started/library/SearchSuggestions.png')} alt="Search suggestions" style={{border: '1px solid gray'}} width="200" />
 1. Enter your text. You can use any of the following:
    * Keyword
@@ -179,63 +179,9 @@ The Home page lists all currently running searches and any searches performed ov
 
 ### Pinned searches
 
-The **Pinned Search** feature allows you to start a search, then “pin” it, so it will continue running in the background independent of the browser session. Then, you can close the Search tab or log out and find your results later in the library on the [Recent](#recent-searches) tab in a folder named Pinned Searches.
+The *pinned search* feature allows you to start a search, then "pin" it, so it will continue running in the background independent of the browser session. Then, you can close the **Search** page or log out and find your results later.
 
-Once pinned, a search will run in the background for up to 24 hours. If it has not finished by then, it will be paused. There is no notification when your search is paused, but you can just restart the search to continue the query. Search results are available for three days.
-
-There is a limit of ten pinned searches per user. Also, queries that use the [save operator](/docs/search/search-query-language/search-operators/save) cannot be pinned.
-
-A search must be started in order for the pin button to show up in the Search tab. Once a search is pinned, you can easily unpin it, or remove it from the Pinned Searches tab. In the Pinned Searches folder, you can view the **Name**, **Status**, **Elapsed Time**, and monitor the **Progress** of each search.
-
-There is a known issue that may cause Pinned Searches to be lost when Sumo Logic performs an upgrade. For information on Scheduled Maintenance for your deployment, see [Sumo Logic Status](http://status.sumologic.com). 
-
-#### Pin and unpin a search
-
-1. Enter a query in the search box and click **Start**.
-1. Click the three-dot kebab icon and click **Pin** from the provided options. <br/> <img src={useBaseUrl('img/get-started/library/pin-search-option.png')} alt="pin-search-option.png" width="325"/>
-1. A message displays that tells you where you can find it later in the library. The Pinned Search is named by default with the name of the search tab. <br/>![pinmessage.png](/img/get-started/library/pinmessage.png)
-1. To change the name of the pinned search, double-click the **Search** tab to activate the name field and enter a new name.
-1. To preserve the pinned search, follow the steps in Save a pinned search.
-1. To unpin the search, click **Unpin** in the menu bar. <br/><img src={useBaseUrl('img/get-started/library/unpin-search-option.png')} alt="pin-search-option.png" width="300"/>
-
-#### Save a pinned search
-
-When you save a pinned search, it appears in your personal folder in the left navigation bar.
-
-1. Click the name of the search to open it in the **Search** tab.
-1. In the **Search** tab, click the three-vertical dot icon and click **Save As** from the provided options. The Save Item dialog appears.
-1. Enter a unique **Name** in the text field. In our example below, we entered Invoke Frequency.
-1. Optionally, enter a **Description**.
-1. Click **Save**. <br/>![Save_As_Search_dialog.png](/img/get-started/library/Save_As_Search_dialog.png)
-
-The search is saved to your **Personal** folder.
-
-#### Manage pinned searches
-
-This section shows you how to open previously pinned searches, rename a pinned search, and remove a search from the pinned search list,
-
-To open a previously pinned search:
-
-1. In the **Pinned Searches** tab, click the name of the search.
-1. The search query and any existing results are displayed in the **Search** tab.
-1. To run a new instance of the search, change the Time Range Expression, and click **Start**.
-
-To rename a pinned search:
-
-1. In the **Pinned Searches** tab, click the name of the search.
-1. The search query and any existing results are displayed in the **Search** tab.
-1. Double-click the **Search** tab to reactivate the name field.
-1. Enter a new name and press **Enter**.
-
-To remove a search from the pinned search List:
-
-1. Hover over the search, then click the three-dot kebab menu icon to the right of the name.
-1. Click **Unpin**. 
-1. In the **Confirm** dialog, click **OK**.
-
-The search is removed from the list of Pinned Searches.
-
-Removing an instance of a Saved Search from the list in the Pinned Searches tab does not delete the Saved Search from your Personal folder.
+For more information, see [Pin a Search](/docs/search/get-started-with-search/search-page/pin-a-search).
 
 ### Share a saved search from the library
 
