@@ -9,4 +9,4 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We’re excited to introduce **Conditional Thresholds** to table dashboards, helping you to configure the type of visibility and color you need once the condition is breached. Additionally, you can configure the appropriate comparator and threshold values. [Learn more](/docs/dashboards/panels/modify-chart/#modify-the-thresholds). 
+We’re excited to introduce **Conditional** thresholds to table dashboards, helping you to configure the type of visibility and color you need once the condition is breached. Additionally, you can configure the appropriate comparator and threshold values. [Learn more](/docs/dashboards/panels/modify-chart/#modify-the-thresholds). 
