@@ -1,1 +1,1 @@
-Value in *capabilities* parameter of [createRoleV2 API](https://api.sumologic.com/docs/#operation/createRoleV2)
+Value in `capabilities` parameter of [createRoleV2 API](https://api.sumologic.com/docs/#operation/createRoleV2)
