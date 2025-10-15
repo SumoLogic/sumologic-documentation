@@ -39,7 +39,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Download Search Results | [Export log query results](/docs/search/get-started-with-search/search-basics/export-search-results) to a .csv file. | `downloadSearchResults` | 
 | Access Data Volume Index | Access the [`sumologic_volume` index](/docs/metrics/metrics-dpm/#query-the-sumologic_volume-index). | `dataVolumeIndex` |
 
-<!-- Beta features
+<!-- Beta features to be added to Data Management
 | Manage Data Streams | ? | `manageDataStreams` |
 | View Data Streams | ? | `viewDataStreams` |
 | View Deletion Requests | View [deletion requests](/docs/manage/deletion-requests/).| `listDeletionRules` |
@@ -138,7 +138,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| View Usage Management | View [usage management](/docs/manage/manage-subscription/usage-management/). | `viewUsageManagement` |
+| View Usage Management | View [usage management](/docs/manage/manage-subscription/scan-budgets/). | `viewUsageManagement` |
 | Manage Usage Management | Manage usage management. | `manageBudgets` |
 
 ## Reliability Management
