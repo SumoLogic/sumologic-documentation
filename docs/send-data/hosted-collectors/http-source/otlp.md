@@ -76,6 +76,8 @@ To use the URL, include the URL in otlphttp exporter of OpenTelemetry Collector 
 exporters:
   otlphttp:
     endpoint: <source_url>
+    headers:
+      Authorization: "x-sumo-token: [TokenString]"
 
 ...
 
@@ -92,6 +94,10 @@ service:
       exporters: [otlphttp]
 ```
 
+:::note
+In the above example, the authorization header value is obtained when you select **Auth Header** when you [Create an OTLP/HTTP Source](#create-an-otlphttpsource), or when you [regenerate the URL](/docs/send-data/hosted-collectors/http-source/generate-new-url/).
+:::
+
 ### Alternative
 
 It is also possible to optionally configure per-signal URL, e.g.
@@ -102,6 +108,8 @@ exporters:
     traces_endpoint: <source_url>/v1/traces
     metrics_endpoint: <source_url>/v1/metrics
     logs_endpoint: <source_url>/v1/logs
+    headers:
+      Authorization: "x-sumo-token: [TokenString]"
 
 ...
 
