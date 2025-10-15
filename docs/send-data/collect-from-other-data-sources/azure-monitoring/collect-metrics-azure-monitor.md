@@ -7,6 +7,10 @@ description: Instructions for configuring a pipeline for shipping metrics availa
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::note
+The method of collecting metrics using Azure Resource Manager (ARM) described in this document, has been deprecated and is no longer supported. Refer to the updated approach using [Azure Metric Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/), which offers improved functionality and ongoing support.
+:::
+
 This section has instructions for configuring a pipeline for shipping metrics available from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. Azure Monitor collects metrics and well as logs. The pipeline described below is for metrics, not logs. 
 
 For information about Azure metrics, see [Overview of metrics in Microsoft Azure in Azure](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-metrics) help.
