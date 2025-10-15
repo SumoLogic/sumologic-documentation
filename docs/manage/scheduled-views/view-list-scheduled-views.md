@@ -37,7 +37,7 @@ You must have a role that grants you the View Scheduled Views [role capability
     * **Lag Time**. If the scheduled view is not up-to-date, **Lag Time** contains the actual lag time. For more information, see [Scheduled View Lag Time](scheduled-view-lag-time.md).
     * **Timezone**. Displays the selected time zone or the default timezone of your browser while creating the scheduled view.
     * **Last Accessed**. Displays the timestamp of when the Scheduled View was last accessed.
-    * **AutoPause Status**. Indicates whether Auto-Pause is currently enabled or disabled for the Scheduled View. This will be enabled by default. To disable, refer to [Disable the AutoPause](#disable-the-autopause).
+    * **AutoPause Status**. Indicates whether Auto-Pause is currently enabled or disabled for the Scheduled View. This will be enabled by default. To disable, refer to [Disable the AutoPause](/docs/manage/scheduled-views/pause-disable-scheduled-views/#disable-the-autopause).
     * **Scheduled AutoPause Date**. Displays when the selected Scheduled View is scheduled to be auto-paused.
     * **Query**. The query that returns that data to be written to the scheduled view.
     * **Data Forwarding**. If the scheduled view is configured to forward data to an S3 or GCS bucket, the name of the [data forwarding](../data-forwarding/forward-data-from-sumologic.md) destination.  
