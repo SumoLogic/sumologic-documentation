@@ -6,7 +6,7 @@ description: Learn about pausing and disabling the Scheduled Views.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page outlines the procedures for pausing a scheduled view - manually or automatically, which stops new data from being indexed. It also details the steps to restart a paused scheduled view and to permanently disable a scheduled view when it is no longer required.
+This page outlines the procedures for pausing a scheduled view, manually or automatically, which stops new data from being indexed. It also details the steps to restart a paused scheduled view and to permanently disable a scheduled view when it is no longer required.
 
 ## AutoPause a Scheduled View
 
