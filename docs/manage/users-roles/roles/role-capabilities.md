@@ -28,7 +28,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Manage Content| Manage the content for your organization. This provides access to [Admin Mode](/docs/manage/content-sharing/admin-mode) in the Library. | `manageContent` |
 | Manage Apps |Install and manage [apps](/docs/integrations). | `manageApps` |
 | Manage Connections | Manage the [connections](/docs/alerts/webhook-connections/) that allow you to send alerts to other tools. | `manageConnections` |
-| View Connections | View [connections](/docs/alerts/webhook-connections/) on the **Connections** page. | ? |
+| View Connections | View [connections](/docs/alerts/webhook-connections/) on the **Connections** page. | `viewConnections` |
 | View Views | [View Scheduled Views](/docs/manage/scheduled-views). | `viewScheduledViews` |
 | Manage Views | View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Scheduled Views capability, users with that role will also have View Scheduled Views capability. | `manageScheduledViews` |
 | View Partitions | View [partitions](/docs/manage/partitions). | `viewPartitions` |
@@ -138,7 +138,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| View Usage Management | View [usage management](/docs/manage/manage-subscription/usage-management/). | ? |
+| View Usage Management | View [usage management](/docs/manage/manage-subscription/usage-management/). | `viewUsageManagement` |
 | Manage Usage Management | Manage usage management. | `manageBudgets` |
 
 ## Reliability Management
@@ -150,12 +150,12 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 ## Threat Intel
 
-| Capability | Description | 
-| :-- | :-- | 
-| View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | 
-| Manage Threat Intel Data Store | Create, edit, and delete threat intel sources. | 
+| Capability | Description | <ApiCreateRole/> |
+| :-- | :-- | :-- |
+| View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | `viewThreatIntelDataStore` |
+| Manage Threat Intel Data Store | Create, edit, and delete threat intel sources. | `manageThreatIntelDataStore` |
 
-<!-- 
+<!-- beta feature
 ## Macros
 
 | Capability | Description | <ApiCreateRole/> |
@@ -163,7 +163,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Manage Macros | Manage [macros](/docs/search/search-query-language/search-operators/macro/). | ? |
 -->
 
-<!-- 
+<!-- beta feature
 ## Data Masking
 
 | Capability | Description | <ApiCreateRole/> |
@@ -173,14 +173,14 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 ## Organizations
 
-| Capability | Description | 
-| :-- | :-- | 
-| View Organizations | View the [Organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) UI. | 
-| Create Organizations | Create and provision child organizations. | ? |
-|Change Credits Allocation|Change the credits allocation for a child organization. | 
-| Create Trial Organizations | Create trial organizations (Service Providers only). | 
-|Upgrade Trial Organizations |Upgrade trial organizations (Service Providers only). | 
-|Deactivate Organizations |Deactivate trial organizations (Service Providers only). | 
+| Capability | Description | <ApiCreateRole/> |
+| :-- | :-- | :-- | 
+| View Organizations | View the [Organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) UI. | `viewOrganizations` |
+| Create Organizations | Create and provision child organizations. | `createOrganizations` |
+| Change Credits Allocation | Change the credits allocation for a child organization. | `changeCreditsAllocation` |
+| Create Trial Organizations | Create trial organizations (Service Providers only). | `createTrialOrganizations` |
+| Upgrade Trial Organizations | Upgrade trial organizations (Service Providers only). | `upgradeTrialOrganizations` |
+| Deactivate Organizations | Deactivate trial organizations (Service Providers only). | `deactivateOrganizations` |
 
 ## Cloud SOAR
 
@@ -226,7 +226,7 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 |Audit & Info|Audit Trail|View audit trail.|`cloudSoarAuditAndInformationAuditTrail`|
 |Audit & Info|Configure Audit Trail|Configure audit trail.|`cloudSoarAuditAndInformationConfigureAuditTrail`|
 |API|Use|Use the Cloud SOAR API.|`cloudSoarAPIUse`|
-|API|API Admin|Administer Cloud SOAR API.| ? |
+|API|API Admin|Administer Cloud SOAR API.| `cloudSoarAPIAdmin` |
 |API|Email Read|Read email artifacts.|`cloudSoarAPIEmailRead`|
 |API|Email Edit|Create, edit, delete email artifacts.|`cloudSoarAPIEmailEdit`|
 |Incident Templates|Access|View incident templates.|`cloudSoarIncidentTemplatesAccess`|
@@ -296,8 +296,8 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | :-- | :-- | :-- |
 |View Mappings|View [mappings](/docs/cse/schema/create-structured-log-mapping).|`cseViewMappings`|
 |Manage Mappings|Create, edit, delete mappings.|`cseManageMappings`|
-|View Workflow|View detection settings, statuses, resolutions, tag schemas.| ? |
-|Manage Workflow|Create, edit, delete detection settings, statuses, resolutions, tag schemas.| ? |
+|View Workflow|View detection settings, statuses, resolutions, tag schemas.| `cseViewCustomInsightStatuses` |
+|Manage Workflow|Create, edit, delete detection settings, statuses, resolutions, tag schemas.| `cseManageCustomInsightStatuses` |
 |View Context Actions|View [Context Actions](/docs/cse/administration/create-cse-context-actions).|`cseViewContextActions`|
 |Manage Context Actions|Create, edit, delete Context Actions.|`cseManageContextActions`|
 |View Actions|View [Actions](/docs/cse/administration/create-cse-actions).|`cseViewActions`|
