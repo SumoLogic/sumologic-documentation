@@ -18,7 +18,7 @@ You must have a role that grants you the View Scheduled Views [role capability
         You can see the suggestions only if there are two or more responses for the same column or section.
         :::
         :::info
-        To refine the table with Scheduled Views that are scheduled to be paused in the next 7 days, select **Views to be AutoPaused in 7 days** option from the dropdown.
+        To refine the table with Scheduled Views that are scheduled to be paused in the next 21 days, select **Views to be AutoPaused in 21 days** option from the dropdown.
         :::
     * **Status**. Indicates whether the scheduled view is currently Completed, Failed, Not Started, Filling, or Paused.
     * **Name**. The name assigned to the scheduled view.
