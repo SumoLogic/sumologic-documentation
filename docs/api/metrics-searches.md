@@ -35,4 +35,4 @@ Use Metrics Search Management APIs to save metrics searches in your content libr
 
 <ApiRoles/>
 
-* Metrics (all role capabilities)
+* [Metrics](/docs/manage/users-roles/roles/role-capabilities/#metrics) (all role capabilities)
