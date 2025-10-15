@@ -95,7 +95,7 @@ The ability to modify the threshold allows you to define warning and critical th
 
 1. Click the Thresholds icon in the far right menu bar.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/Threshold_icon.png')} style={{border: '1px solid gray'}} alt="Threshold_icon" width="400"/>
 1. Click the toggle in the **Thresholds** pane.<br/><img src={useBaseUrl('/img/metrics/thresholds-toggle.png')} style={{border: '1px solid gray'}} alt="Thresholds_icon" width="400"/>
-1. You can set the thresolds in two ways, **Classic** or **Conditional**:
+1. You can set the thresholds in two ways, **Classic** or **Conditional**:
     - **Classic:**
         1. Configure the appropriate comparator and threshold values, based on your data and requirements. You can choose from the following comparators.
             - **greater than**. Any value greater than the value you specify will violate the threshold.
