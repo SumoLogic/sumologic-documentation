@@ -6,6 +6,9 @@ sidebar_label: Settings
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import StaticIpAddresses from '../reuse/static-ips-automation-service.md';
+import CloudSoarEndOfSale from '../reuse/cloud-soar-end-of-sale.md';
+
+<CloudSoarEndOfSale/>
 
 This article describes the various setup and configuration options for the Cloud SOAR platform. Although initial configuration can be performed in any order, the sections are presented in the suggested order for initial configuration.
 
