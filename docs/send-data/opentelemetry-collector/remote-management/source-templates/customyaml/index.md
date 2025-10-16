@@ -12,6 +12,9 @@ import TabItem from '@theme/TabItem';
 
 The Custom Yaml source template creates an OpenTelemetry configuration based on a provided Opentelemetry config yaml, that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). It lets you directly define and manage collector configurations in YAML format for more flexibility. By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can collect telemetry data to send to Sumo Logic.
 
+:::note
+This source template works with sumo remotely managed opentelemetry collector version >= 0.136.0
+:::
 
 ## Configuring the source template
 
