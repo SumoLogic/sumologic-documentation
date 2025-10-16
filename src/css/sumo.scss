@@ -1532,13 +1532,3 @@ article header h2[class*='title_'] {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
-/* Default: light mode */
-html[data-theme='light'] .academy-logo {
-  content: url('/img/get-started/sumo-academy-light-mode.png');
-}
-
-/* Dark mode */
-html[data-theme='dark'] .academy-logo {
-  content: url('/img/get-started/sumo-academy-dark-mode.png');
-}

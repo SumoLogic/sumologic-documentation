@@ -33,4 +33,4 @@ The User Management API allows you to [manage user accounts](/docs/manage/users-
 
 <ApiRoles/>
 
-* User Management (all role capabilities)
+* [User Management](/docs/manage/users-roles/roles/role-capabilities/#user-management) (all role capabilities)

@@ -144,7 +144,7 @@ json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name",
 |"" as namespace
 | where event_source = "elasticloadbalancing.amazonaws.com" and api_version matches "2015-12-01" 
 | parse field=loadbalancerarn ":loadbalancer/*/*/*" as balancertype, loadbalancer, f1 nodrop
-| if(loadbalancertype matches "network", "aws/nlb", if(balancertype matches "net", "aws/nlb", namespace)) as namespace
+| if(loadbalancertype matches "network", "aws/networkelb", if(balancertype matches "net", "aws/networkelb", namespace)) as namespace
 | if(loadbalancertype matches "application", "aws/applicationelb", if(balancertype matches "app", "aws/applicationelb", namespace)) as namespace
 | where namespace="aws/applicationelb" or isEmpty(namespace)
 | toLowerCase(loadbalancer) as loadbalancer  
