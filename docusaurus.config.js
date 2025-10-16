@@ -398,23 +398,8 @@ module.exports = {
             to: '/docs/release-notes',
           },
           {
-            type: 'search',
+            label: 'Support',
             position: 'left',
-          },
-          {
-            type: 'html',
-            position: 'right',
-            value: 'google_translate',
-          },
-          {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'header-trial',
-            alt: 'Sign up for a Sumo Logic free trial',
-          },
-          {
-            position: 'right',
-            className: 'support-menu-trigger',
             to: '#',
             type: 'dropdown',
             items: [
@@ -441,10 +426,25 @@ module.exports = {
             ],
           },
           {
+            type: 'html',
+            position: 'right',
+            value: 'google_translate',
+          },
+          {
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-trial',
+            alt: 'Sign up for a Sumo Logic free trial',
+          },
+          {
             className: 'header-github-link',
             to: 'https://github.com/SumoLogic/sumologic-documentation',
             position: 'right',
             alt: 'Link to Sumo Logic Docs GitHub repository',
+          },
+          {
+            type: 'search',
+            position: 'right',
           },
         ],
       },
