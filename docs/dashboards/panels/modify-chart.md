@@ -88,7 +88,7 @@ To override select dashboard displays, do the following:
 ## Modify the thresholds
 
 :::note
-This feature is only applicable for [table charts](/docs/dashboards/panels/table-charts.md).
+This feature is only applicable for [table charts](/docs/dashboards/panels/table-charts).
 :::
 
 The ability to modify the threshold allows you to define warning and critical thresholds. 
