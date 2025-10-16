@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Azure Security – Microsoft Entra ID Protection application strengthens identity security within Azure environments by proactively detecting, investigating, and mitigating identity-related risks. It helps organizations safeguard user accounts and credentials against potential compromise, ensuring secure access to critical cloud resources
 
-The Sumo Logic app for Azure Security - Microsoft Entra ID Protection provides interactive dashboards and visual tools, the app supports incident identification, user activity tracking, and access monitoring for sensitive data. These features allow for faster response times and more agile decision-making, helping organizations improve their overall security posture. By delivering a comprehensive view of cloud app security, the app empowers you to manage threats efficiently and ensures robust protection of critical Azure-based assets.
+The Sumo Logic app for Azure Security - Microsoft Entra ID Protection provides interactive dashboards and visual tools. The app supports incident identification, user activity tracking, and access monitoring for sensitive data. These features enable faster response times and more agile decision-making, ultimately helping organizations enhance their overall security posture. By delivering a comprehensive view of cloud app security, the app empowers you to manage threats efficiently and ensures robust protection of critical Azure-based assets.
 
 ## Log Types
 
@@ -174,14 +174,14 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 The **Azure Security - Microsoft Entra ID Protection - Overview** dashboard  provides a comprehensive view of identity-related security risks and anomalies detected across Azure environments. It enables analysts to monitor risky sign-ins, user risk levels, and identity protection trends, ensuring timely detection and mitigation of potential account compromises.
 
 With features like geo-location mapping and top user alerts, the dashboard supports regional risk assessment and detection of insider threats. By combining real-time insights with historical trends, it enhances situational awareness and strengthens incident response strategies.
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+-Security-Microsoft-Entra-Id-Protection/Azure+Security+-+Microsoft+Entra+Id+Protection+-+Overview.png' alt="Azure Security - Microsoft Entra ID Protection - Overview" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure-Security-Microsoft-Entra+-ID-Protection/Azure+Security+-+Microsoft+Entra+ID+Protection+-+Overview.png' alt="Azure Security - Microsoft Entra ID Protection - Overview" />
 
 ### Security
 
 The **Azure Security - Microsoft Entra ID Protection - Security** dashboard provides a comprehensive overview of identity-related threats within the organization, enabling teams to pinpoint where identity risks are concentrated and how they evolve over time. Visual trend panels display fluctuations in user and sign-in risk levels, helping analysts assess whether identity-based attacks are increasing and prioritize mitigation accordingly.
 
 Key insights include compromised user accounts, frequently attacked devices, and countries linked to malicious IPs, enabling targeted defense strategies. By combining trend analysis with threat origins and user risk data, the dashboard empowers proactive threat response and strengthens overall security posture.
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+-Security-Microsoft-Entra-Id-Protection/Azure+Security+-+Microsoft+Entra+Id+Protection+-+Security.png' alt="Azure Security - Microsoft Entra ID Protection  - Security" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure-Security-Microsoft-Entra+-ID-Protection/Azure+Security+-+Microsoft+Entra+ID+Protection+-+Security.png' alt="Azure Security - Microsoft Entra ID Protection  - Security" />
 
 ## Upgrade/Downgrade the Azure Security - Microsoft Entra ID Protection app (Optional)
 
