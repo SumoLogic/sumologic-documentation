@@ -2948,6 +2948,10 @@
   "/docs/integrations/microsoft-azure/microsoft-defender-for-identity/": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity",
   "/cid/1112": "/docs/integrations/saas-cloud/carbon-black-inventory/",  
   "/cid/1111": "/docs/integrations/microsoft-azure/azure-open-ai",
+  "/cid/1115": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps",
+  "/docs/integrations/microsoft-azure/microsoft-defender-for-cloud-apps/": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps",
+  "/cid/1116": "/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection",
+  "/docs/integrations/microsoft-azure/microsoft-entra-id-protection/": "/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection",
   "/cid/1113": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/databricks-audit-source/",
   "/Cloud_SIEM_Enterprise": "/docs/cse",
   "/Cloud_SIEM_Enterprise/Administration": "/docs/cse/administration",
@@ -4519,7 +4523,7 @@
   "/docs/manage/manage-subscription/manage-org-settings": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings",
   "/docs/integrations/amazon-aws/elastic-load-balancing": "/docs/integrations/amazon-aws/classic-load-balancer",
   "/docs/integrations/microsoft-azure/microsoft-defender-for-cloud": "/docs/integrations/microsoft-azure/azure-security-defender-for-cloud",
-  "/docs/integrations/microsoft-azure/microsoft-defender-for-office-365": "/docs/integrations/microsoft-azure/microsoft-defender-for-cloud-apps",
+  "/docs/integrations/microsoft-azure/microsoft-defender-for-office-365": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps",
   "/docs/integrations/azure": "/docs/integrations/microsoft-azure",
   "/docs/search/copilot": "/docs/search/mobot",
   "/docs/search/copilot-unstructured-logs-beta": "/docs/search/mobot-unstructured-logs-beta",
@@ -4528,5 +4532,6 @@
   "/docs/query/query-operators/aggregation-functions": "/docs/search/search-query-language/group-aggregate-operators",
   "/Search/Search-Query-Language/Parse-Operators": "/docs/search/search-query-language/parse-operators",
   "/docs/search/get-started-with-search-language/parsing-operators": "/docs/search/search-query-language/parse-operators",
-  "/docs/get-started/training-certification-faq-new": "/docs/get-started/training-certification-faq"
+  "/docs/get-started/training-certification-faq-new": "/docs/get-started/training-certification-faq",
+  "/docs/manage/scheduled-views/pausing-inactive-scheduled-views": "/docs/manage/scheduled-views/pause-disable-scheduled-views"
 }
