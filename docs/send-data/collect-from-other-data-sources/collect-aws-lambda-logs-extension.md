@@ -99,7 +99,8 @@ To package the Sumo Logic Lambda Extension with the AWS Lambda function created 
 1. In your AWS Lambda container image Dockerfile, add the command below.
 
    ```bash
-   ADD <Location-where-you-downloaded-the-tar-file>/sumologic-extension-<architecture>.tar.gz /opt/
+   RUN mkdir -p /opt/extensions
+   ADD <Location-where-you-downloaded-the-tar-file>/sumologic-extension-<architecture>.tar.gz /opt/extensions
    ```
 
 1. Validate if the extension is added to the directory and execute the below command.
