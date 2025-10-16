@@ -46,7 +46,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **Private Key Json**. Provide the content of the JSON file generated [above](#google-Firestore-configuration). Open the file and copy-paste the whole content in the field.
+* **Private Key Json**. Provide the content of the JSON file generated [above](#google-firestore-configuration). Open the file and copy-paste the whole content in the field.
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
