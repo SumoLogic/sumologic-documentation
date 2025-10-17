@@ -4531,5 +4531,6 @@
   "/Search/Search-Query-Language/Parse-Operators": "/docs/search/search-query-language/parse-operators",
   "/docs/search/get-started-with-search-language/parsing-operators": "/docs/search/search-query-language/parse-operators",
   "/docs/get-started/training-certification-faq-new": "/docs/get-started/training-certification-faq",
-  "/docs/manage/scheduled-views/pausing-inactive-scheduled-views": "/docs/manage/scheduled-views/pause-disable-scheduled-views"
+  "/docs/manage/scheduled-views/pausing-inactive-scheduled-views": "/docs/manage/scheduled-views/pause-disable-scheduled-views",
+  "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules"
 }

@@ -1,12 +1,12 @@
 ---
 id: manage-orgs-for-mssps-csiem-rules
-title: Manage Organizations for MSSPs - Cloud SIEM
-sidebar_label: Manage Orgs for MSSPs - Cloud SIEM
-description: Learn how to manage organizational Cloud SIEM rules and rule tuning for Managed Security Service Providers (MSSPs).
+title: Manage Organizations for MSSPs
+sidebar_label: Manage Orgs for MSSPs
+description: Learn how to manage organizational Cloud SIEM rules, rule tuning expressions, and organizational library content for Managed Security Service Providers (MSSPs).
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to manage Cloud SIEM rules and rule tuning expressions in organizations for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
+This article describes how to manage Cloud SIEM rules, rule tuning expressions, and organizational library content for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
 
 ## Considerations
 
@@ -23,11 +23,9 @@ You must have the following [organization role capabilities](/docs/manage/users-
 
 If you are logged in to a parent organization with child organizations that also use Cloud SIEM, the insights list page in Cloud SIEM allows you to [view insights in child organizations](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#view-insights-in-child-organizations). 
 
-<!-- After this article is no longer beta, show the following text:
 This multi-insights list page (also known as a "federated" page) shows insights just as in a normal insights list page. When you click an insight on the page, you are automatically signed in to the child organization (if SSO is enabled for the child organization), and the insight's details open in the child organization's UI. You can also use the board view on the multi-insights page to move insights to different statuses.
 
 To be able to see insights in child organizations, add child organizations that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list.
--->
 
 ## Manage Cloud SIEM rules
 
@@ -36,6 +34,7 @@ To ensure that content is consistent across child organizations, use the **Manag
 You can push the following:
 * Cloud SIEM [rules](/docs/cse/rules/)
 * Cloud SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
+* [Library](/docs/get-started/library)
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Select the **Manage Content** tab.
@@ -43,15 +42,22 @@ You can push the following:
 1. In the **Content** bar, select the content to be pushed:
    * **Cloud SIEM Rules**. For more information about Cloud SIEM rules, refer to [Cloud SIEM Rules](/docs/cse/rules/).
    * **Cloud SIEM Rule Tuning**. For more information about Cloud SIEM rule tuning expressions, refer to [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
+   * **Library**. For more information about Library items, refer to [Managing Your Sumo Logic Library](/docs/get-started/library).
 1. Select individual items to be pushed, or all items.
 1. Click **Push to Orgs**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-csiem.png')} alt="Push Selected Items button" style={{border: '1px solid gray'}} width="800"/>
-1. On the **Push Selected Items** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2-csiem.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
+1. On the **Push Selected Content** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2-csiem.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Push**. A **Pushing in progress** dialog is displayed.
 
 ### Tips
 
 * If you select **All Child Organizations**, you can then select organizations to exclude, allowing you to push to all organizations except those you select:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-selected-organizations.png')} alt="Selected organizations" style={{border: '1px solid gray'}} width="300"/>
 * When you push rule tuning expressions, select **Include Associated Cloud SIEM Rules** to push all the Cloud SIEM rules that the expressions are used on:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-associated-rules.png')} alt="Include Associated Cloud SIEM Rules checkbox" style={{border: '1px solid gray'}} width="200"/>
+* Selected Library items are added to the [Admin Recommended](/docs/manage/content-sharing/admin-mode/#move-important-content-to-admin-recommended) folder. Additionally, you can only select the Library contents in Source Organization under the Admin Recommended folder.
+* **Scheduled Searches Connection**. Select **Include Connection** to create the scheduled searches in the target organizations if they don't already exist there. Select **Ignore Connection** only if you want to turn the added scheduled searches into saved searches.
+* **Scheduled Reports**. Select **Include Scheduled Reports** to create the scheduled reports in the target organizations if they don't already exist there. Select **Ignore Scheduled Reports** only if you want to turn the added scheduled reports into saved reports. 
+   :::note
+   Both **Scheduled Searches Connection** and **Scheduled Reports** will be available only when you select a library *folder*.
+   :::
 
 ### Limitations
 
