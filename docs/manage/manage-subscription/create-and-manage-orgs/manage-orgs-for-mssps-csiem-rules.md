@@ -67,6 +67,8 @@ You can push the following:
 - Push operations may take longer based on the volume of content being pushed.
 - Rule tuning expressions must be pushed separately from rules.
 - *Cloud SIEM Legacy Rule Type* is not supported for sync or push.
+- For library content, breaching 15000 cap (Items selected in one job X Child orgs targeted in one job) would fail the sync job.
+- 
 
 ## View history
 
