@@ -273,6 +273,8 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
     },
     algolia: {
       appId: '2SJPGMLW1Q',
