@@ -196,7 +196,7 @@ The equal to (=) function returns “true” if the expressions are equal, or 
    `null = null`
 
 :::note
- The `=` and `==` functions don’t match against a regular expression or pattern. Instead, use the [`like`](#like) function.
+The `=` and `==` functions do not match against a regular expression or pattern. Instead, use the [`like`](#like) function.
 :::
 
 ### ==
