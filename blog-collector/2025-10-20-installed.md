@@ -6,7 +6,7 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic is making two important updates to Installed Collectors to enhance performance, security, and ensure long-term support:
+In this release, we've added two important updates to Installed Collectors to enhance performance, security, and ensure long-term support:
 
 ### Java upgrade and end of support for legacy versions
 
