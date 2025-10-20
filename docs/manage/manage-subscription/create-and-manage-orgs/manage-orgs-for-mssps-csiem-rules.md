@@ -67,8 +67,15 @@ You can push the following:
 - Push operations may take longer based on the volume of content being pushed.
 - Rule tuning expressions must be pushed separately from rules.
 - *Cloud SIEM Legacy Rule Type* is not supported for sync or push.
-- For library content, breaching 15000 cap (Items selected in one job X Child orgs targeted in one job) would fail the sync job.
-- 
+- For library content, breaching 15,000 cap (Items selected in one job X Child orgs targeted in one job) would fail the sync job.
+- The maximum runtime for jobs below 1200 requests (Items selected in one job X Child orgs targeted in one job) is less than or equal to 2 mins. Linear increase beyond 1200 request would take more runtime, for example, 15,201 would nearly take 30 mins.
+- For CSIEM rules and tuning expression (Rule or Tuning Exp × child-orgs):
+   - Expected runtime for less than or equal to 300 async calls is under 2 mins. 
+   - Expected runtime for nearly 1500 async calls is 5-7 mins.
+   - Expected runtime for nearly 3000 async calls is 15 mins.
+   - Make sure you keep the Child orgs per job less than or equal to 3 when you push more than 250 rules for a faster runtime.
+   - Make sure you keep the rule or tuning expressions per job less than or equal to 500 for a faster runtime
+
 
 ## View history
 
