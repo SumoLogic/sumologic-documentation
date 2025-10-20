@@ -6,7 +6,7 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-In this release, we've added two important updates to Installed Collectors to enhance performance, security, and ensure long-term support:
+In this release, we've added two important updates to Installed Collectors to enhance performance, security, and ensure long-term support.
 
 :::note
 Starting January 31, 2026, Sumo Logic will no longer support the collectors using Java Runtime Environment (JRE) versions older than 17 and will end support for Installed Collectors running on WIN 32 machines.
