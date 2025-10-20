@@ -309,6 +309,12 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection"><img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection.png')} alt="thumbnail icon" width="55"/><h4>Azure Security - Microsoft Entra ID Protection</h4></a>
+  <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Entra ID Protection.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-service-bus.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-service-bus')}>Azure Service Bus</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Service Bus.</p>
