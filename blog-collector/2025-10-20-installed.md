@@ -18,7 +18,7 @@ To ensure continued compatibility and support, upgrade your collectors to JRE 17
 
 With Java 8 reaching its end of public updates in January 2019, and with newer Java versions offering significant improvements in both performance and security, we are upgrading our Installed Collectors to Java 17. This change applies differently depending on how your collectors are configured:
 
-- **For collectors using default Sumo Logic bundled Corretto JRE**. This deprecation will not affect you as the upgrade to JRE 17 happens automatically when you update your collector to version 19.533-5. No immediate action is required.
+- **For collectors using default Sumo Logic bundled Corretto JRE**. This deprecation will not affect you as the upgrade to JRE 17 happens automatically when you update your collector to version 19.533-5. *No immediate action is required*.
 - **For collectors with custom JRE setups**. If you're using a custom JRE configuration, including binary installer-based deployments, custom deployment scripts, or containerized collectors with JRE 8 or 11, you must manually upgrade to JRE 17 to maintain compatibility and support. After January 31, 2026, your existing collectors will continue to run. However, you will not be able to upgrade or download new collector versions using JRE 8 or 11.
 
 ## End of support for Windows 32-bit (WIN 32) systems
