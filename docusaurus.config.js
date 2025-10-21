@@ -21,6 +21,12 @@ module.exports = {
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
+  onDuplicateRoutes: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
   favicon: 'https://www.sumologic.com/favicon.ico',
   organizationName: 'sumologic', // Usually your GitHub org/user name.
   projectName: 'sumologic-documentation', // Usually your repo name.
@@ -251,6 +257,12 @@ module.exports = {
       { property: 'og:image:height', content: '628' },
       { property: 'og:image:alt', content: 'Sumo Logic Docs' },
     ],
+    announcementBar: {
+      id: 'domain',
+      content: '<b>We’ve moved!</b> Our docs are now at <a href="https://www.sumologic.com/help">sumologic.com/help</a>. Redirects are in place, but don’t forget to update your bookmarks.',
+      backgroundColor: '#b0eefe',
+      textColor: '#091E42',
+    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -261,6 +273,8 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
     },
     algolia: {
       appId: '2SJPGMLW1Q',
