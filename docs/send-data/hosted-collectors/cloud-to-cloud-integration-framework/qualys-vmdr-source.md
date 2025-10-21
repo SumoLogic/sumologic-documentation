@@ -84,7 +84,7 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
   <tr>
    <td>Computer Inventory</td>
    <td><code>/rest/2.0/search/am/asset/</code></td>
-   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as <a href="/docs/cse/administration/inventory-sources-and-data">inventory data</a>.<br />
+   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as [inventory data](/docs/cse/administration/inventory-sources-and-data).<br />
    Permissions - User must have the <code>GAV/CSAM</code> module and the <code>App API Enabled</code> option enabled for that role. Additionally, the user must have the <code>Allow user view access to all objects</code> checkbox enabled under <strong>Roles And Scopes</strong> within the user settings.<br/>
    API details are on page 27 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.</td>
   </tr>

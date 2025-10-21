@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
 :::info
 This feature is in Beta. For more information, contact your Sumo Logic account executive.
@@ -136,6 +136,7 @@ Here are some common cases:
 * RAG only considers dashboards that have been opened in the last 90 days when interpreting your query.
 * Very large or highly complex queries may time out or trigger structured fallback responses.
 * The conversational experience is available for log-based searches only. Metrics and Metric Searches are not supported in this Beta.
+* Mobot cannot currently refer to the output of a log search directly in subsequent queries. Each follow-up must be expressed in terms of query refinements rather than referencing previous results. This is an important limitation to be aware of when constructing multi-turn conversations.
 </details>
 
 ## Additional resources
