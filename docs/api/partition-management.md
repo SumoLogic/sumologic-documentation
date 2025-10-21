@@ -34,6 +34,6 @@ The Partitions Management API allows you to improve search performance by search
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Partitions
     * View Partitions

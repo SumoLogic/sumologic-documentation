@@ -290,6 +290,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps"><img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps.png')} alt="thumbnail icon" width="55"/><h4>Azure Security - Microsoft Defender for Cloud Apps</h4></a>
+  <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Defender for Cloud Apps.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="thumbnail icon" width="50"/><h4>Azure Security - Microsoft Defender for Identity</h4></a>
   <a href={useBaseUrl('docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity')}><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="thumbnail icon" width="50"/><h4>Azure Security - Microsoft Defender for Identity</h4></a>
   <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Defender for Identity</p>
   </div>
@@ -298,6 +305,12 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
   <div className="container">
   <a href={useBaseUrl('docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365')}><img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-office-365.png')} alt="thumbnail icon" width="50"/><h4>Azure Security - Microsoft Defender for Office 365</h4></a>
   <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Defender for Office 365</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection"><img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection.png')} alt="thumbnail icon" width="55"/><h4>Azure Security - Microsoft Entra ID Protection</h4></a>
+  <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Entra ID Protection.</p>
   </div>
 </div>
 <div className="box smallbox card">

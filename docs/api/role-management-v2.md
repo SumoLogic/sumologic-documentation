@@ -76,4 +76,4 @@ For example, consider you are interested in querying upon audit logs with change
 
 <ApiRoles/>
 
-* User Management (all role capabilities)
+* [User Management](/docs/manage/users-roles/roles/role-capabilities/#user-management) (all role capabilities)

@@ -38,6 +38,6 @@ You need the [Manage or View Collectors role capability](/docs/manage/users-role
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Collectors
     * View Collectors

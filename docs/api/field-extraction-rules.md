@@ -34,7 +34,7 @@ The Field Extraction Rules (FER) Management API allows you to configure FERs fro
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Field Extraction Rules
     * Manage Fields
     * View Field Extraction Rules

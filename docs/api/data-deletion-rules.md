@@ -40,6 +40,7 @@ Data Deletion Rules allow you to quickly and easily request the removal of inges
 
 <ApiRoles/>
 
-* Review Deletion Requests
-* Manage Deletion Requests
-* View Deletion Requests
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
+   * Review Deletion Requests
+   * Manage Deletion Requests
+   * View Deletion Requests

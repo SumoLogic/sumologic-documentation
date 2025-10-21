@@ -34,7 +34,7 @@ The Field Management API allows you to configure fields from HTTP endpoints. Fie
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Field Extraction Rules
     * Manage Fields
     * View Field Extraction Rules

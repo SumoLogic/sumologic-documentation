@@ -36,7 +36,7 @@ In the Infrequent Data Tier and Flex, you pay per query, based on the amount of 
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Download Search Results
     * Manage Data Volume Feed
     * View Collectors

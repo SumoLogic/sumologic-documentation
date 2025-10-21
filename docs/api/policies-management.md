@@ -34,4 +34,4 @@ The Policies Management API allows you to control the security and share setting
 
 <ApiRoles/>
 
-* Security (all role capabilities)
+* [Security](/docs/manage/users-roles/roles/role-capabilities/#security) (all role capabilities)

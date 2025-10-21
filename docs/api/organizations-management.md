@@ -36,4 +36,4 @@ With the Organizations Management API, you can get the credits usage details of 
 
 <ApiRoles/>
 
-* Organizations (all role capabilities)
+* [Organizations](/docs/manage/users-roles/roles/role-capabilities/#organizations) (all role capabilities)

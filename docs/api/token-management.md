@@ -34,5 +34,5 @@ The Tokens Management API allows you to manage [Installation Tokens](/docs/manag
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Tokens

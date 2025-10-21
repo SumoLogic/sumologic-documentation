@@ -34,7 +34,7 @@ The Dynamic Parsing Management API allows you to configure Run Time Field Extrac
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Field Extraction Rules
     * Manage Fields
     * View Field Extraction Rules

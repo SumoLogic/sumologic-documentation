@@ -34,6 +34,6 @@ With the SLO Management API, you can monitor and set up alerts on KPIs for your 
 
 <ApiRoles/>
 
-* Reliability Management
+* [Reliability Management](/docs/manage/users-roles/roles/role-capabilities/#reliability-management)
     * Manage SLOs
     * View SLOs

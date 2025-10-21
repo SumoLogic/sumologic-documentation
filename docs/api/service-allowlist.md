@@ -34,5 +34,5 @@ The [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses
 
 <ApiRoles/>
 
-* Security
+* [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Allowlist IP Addresses

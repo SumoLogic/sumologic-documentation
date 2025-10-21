@@ -42,7 +42,7 @@ Select the documentation link for your deployment:
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Download Search Results
     * View Collectors
 

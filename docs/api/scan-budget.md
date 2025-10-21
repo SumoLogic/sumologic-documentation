@@ -39,7 +39,7 @@ The Scan Budget Management APIs allows you to manage scan budgets from HTTP endp
 
 <ApiRoles/>
 
-* Usage Management
+* [Usage Management](/docs/manage/users-roles/roles/role-capabilities/#usage-management)
     * View Usage Management
     * Manage Usage Management
 

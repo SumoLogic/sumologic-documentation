@@ -34,5 +34,5 @@ The Content Management API allows you to manage content in your organization’s
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Content

@@ -34,4 +34,4 @@ The Monitor Management API allows you to manage Monitors from HTTP endpoints. Mo
 
 <ApiRoles/>
 
-* Alerting (all role capabilities)
+* [Alerting](/docs/manage/users-roles/roles/role-capabilities/#alerting) (all role capabilities)

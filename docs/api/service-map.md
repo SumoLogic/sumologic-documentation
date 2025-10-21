@@ -41,7 +41,7 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 
 <ApiRoles/>
 
-* Security
+* [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Allowlist IP Addresses
 
 ## Endpoints for API access  
