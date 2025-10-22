@@ -7,6 +7,9 @@ description: Automated real-time incident management and threat response.
 
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CloudSoarEndOfSale from '../reuse/cloud-soar-end-of-sale.md';
+
+<CloudSoarEndOfSale/>
 
 ## SecOps and Dashboard
 
