@@ -294,7 +294,7 @@ The collector retains the previous name from the local credentials file and does
 To apply the new collector name after modifying the configuration:
 
 1. **Stop** the collector.
-2. **Delete** the local credentials file (path differs by OS).
+2. **Delete all files in the local credentials directory** (path differs by OS).
 3. **Start** the collector again.
 
 ---
