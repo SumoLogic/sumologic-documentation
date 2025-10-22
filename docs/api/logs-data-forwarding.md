@@ -33,7 +33,7 @@ The Logs Data Forwarding Management API allows you to forward log data from a Pa
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Partitions
     * Manage S3 Data Forwarding
     * Manage Scheduled Views
