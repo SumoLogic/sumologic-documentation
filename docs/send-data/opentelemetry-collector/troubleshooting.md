@@ -316,7 +316,9 @@ sudo rm /var/lib/otelcol-sumo/credentials/*
 sudo systemctl start otelcol-sumo
 ```
 
-##### Windows
+</TabItem>
+
+<TabItem value="Windows">
 ```powershell
 net stop otelcol-sumo
 Remove-Item "C:\ProgramData\Sumo Logic\OpenTelemetry Collector\data\credentials\*" -Force
