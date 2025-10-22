@@ -38,7 +38,7 @@ module.exports = {
   ],
   future: {
     v4: true,
-    experimental_faster: true,
+    experimental_faster: false,
   },
   staticDirectories: ['static'],
   presets: [
