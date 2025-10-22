@@ -283,7 +283,7 @@ There is currently no workaround for this.
 
 [filelogreceiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.71.0/receiver/filelogreceiver/README.md
 
-### Collector Name Not Updating After Configuration Change for Locally Managed Collectors
+### Collector name not updating after configuration change for locally managed collectors
 
 Starting from **Sumo Logic OpenTelemetry Collector version `0.137.0-sumo-0`**, changing the `extensions.sumologic.collector.name` property in the configuration file **does not automatically update** the locally managed collector name upon restart.
 
