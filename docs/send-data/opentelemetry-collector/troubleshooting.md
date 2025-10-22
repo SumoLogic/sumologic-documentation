@@ -323,7 +323,9 @@ Remove-Item "C:\ProgramData\Sumo Logic\OpenTelemetry Collector\data\credentials\
 net start otelcol-sumo
 ```
 
-##### MacOS
+</TabItem>
+
+<TabItem value="macOS">
 ```bash
 sudo launchctl unload /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist
 sudo rm /var/lib/otelcol-sumo/credentials/*
