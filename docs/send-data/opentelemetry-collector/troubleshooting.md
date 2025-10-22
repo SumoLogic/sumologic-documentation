@@ -297,10 +297,19 @@ To apply the new collector name after modifying the configuration:
 2. **Delete all files in the local credentials directory** (path differs by OS).
 3. **Start** the collector again.
 
----
 
 #### Example commands
-##### Linux 
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'Windows', value: 'Windows'},
+    {label: 'macOS', value: 'macOS'}
+  ]}>
+
+<TabItem value="Linux">
 ```bash
 sudo systemctl stop otelcol-sumo
 sudo rm /var/lib/otelcol-sumo/credentials/*
