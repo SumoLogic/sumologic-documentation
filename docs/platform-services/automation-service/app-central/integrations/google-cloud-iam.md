@@ -33,7 +33,7 @@ Our Google Cloud IAM integration support two types of authentication, Service Ac
 ## Required AWS details from Sumo Logic
 
 To configure the Google Cloud IAM integration using WIF authentication, you need the following AWS details from Sumo Logic. These details are essential for setting up the Workload Identity Federation (WIF) credentials in Google Workspace:
-Deployment name is the unique name of your Sumo Logic deployment, e.g dub,fra etc. [Deployments](https://www.sumologic.com/help/docs/api/about-apis/getting-started/#documentation)
+* Deployment name is the unique name of your Sumo Logic [deployment](/docs/api/about-apis/getting-started/#documentation), for example, `dub`, `fra`, etc. 
 * Sumo Logic AWS account ID: `926226587429`
 * Sumo Logic AWS role: `<deployment_name>-csoar-automation-gcpiam`
 * Sumo Logic AWS Lambda function: `<deployment_name>-csoar-automation-gcpiam`
