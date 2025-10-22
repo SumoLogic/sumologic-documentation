@@ -282,3 +282,41 @@ The other problem is that it is not currently possible for Filelog receiver to s
 There is currently no workaround for this.
 
 [filelogreceiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.71.0/receiver/filelogreceiver/README.md
+
+### Collector Name Not Updating After Configuration Change
+
+Starting from **Sumo Logic OpenTelemetry Collector version `0.137.0-sumo-0`**, changing the `extensions.sumologic.collector.name` property in the configuration file **does not automatically update** the locally managed collector name upon restart.
+
+#### Cause
+The collector retains the previous name from the local credentials file and does not regenerate it unless the credentials are removed.
+
+#### Resolution
+To apply the new collector name after modifying the configuration:
+
+1. **Stop** the collector.
+2. **Delete** the local credentials file (path differs by OS).
+3. **Start** the collector again.
+
+---
+
+#### Example commands
+##### Linux 
+```bash
+sudo systemctl stop otelcol-sumo
+sudo rm /var/lib/otelcol-sumo/credentials/*
+sudo systemctl start otelcol-sumo
+```
+
+##### Windows
+```powershell
+net stop otelcol-sumo
+Remove-Item "C:\ProgramData\Sumo Logic\OpenTelemetry Collector\data\credentials\*" -Force
+net start otelcol-sumo
+```
+
+##### MacOS
+```bash
+sudo launchctl unload /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist
+sudo rm /var/lib/otelcol-sumo/credentials/*
+sudo launchctl load /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist
+```
