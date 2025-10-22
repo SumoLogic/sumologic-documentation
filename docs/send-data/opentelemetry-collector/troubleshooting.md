@@ -310,6 +310,7 @@ To apply the new collector name after modifying the configuration:
   ]}>
 
 <TabItem value="Linux">
+  
 ```bash
 sudo systemctl stop otelcol-sumo
 sudo rm /var/lib/otelcol-sumo/credentials/*
@@ -319,6 +320,7 @@ sudo systemctl start otelcol-sumo
 </TabItem>
 
 <TabItem value="Windows">
+  
 ```powershell
 net stop otelcol-sumo
 Remove-Item "C:\ProgramData\Sumo Logic\OpenTelemetry Collector\data\credentials\*" -Force
@@ -328,8 +330,13 @@ net start otelcol-sumo
 </TabItem>
 
 <TabItem value="macOS">
+  
 ```bash
 sudo launchctl unload /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist
 sudo rm /var/lib/otelcol-sumo/credentials/*
 sudo launchctl load /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist
 ```
+
+</TabItem>
+
+</Tabs>
