@@ -31,4 +31,4 @@ Metrics Transformation Rules APIs allow you control how long raw metrics are ret
 
 <ApiRoles/>
 
-* Metrics (all role capabilities)
+* [Metrics](/docs/manage/users-roles/roles/role-capabilities/#metrics) (all role capabilities)
