@@ -112,7 +112,7 @@ To package the Sumo Logic Lambda Extension with the AWS Lambda function created 
    :::note
    Any file placed under /opt/extensions is treated as an executable. Hidden files (such as ._filename) or non-binary files in this directory may also be executed, potentially causing unexpected behavior.
    :::
-1. Validate if the extension is added to the directory and execute the below command.
+1. Validate if the extension is added to the directory and execute the command below.
 
    ```bash
    docker run -it --entrypoint sh <ImageName>:<ImageTag>
