@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="60"/>
 
-Sumo Logic's security solutions support the entire spectrum of security use cases, from security analytics to SIEM and SOAR:
+Sumo Logic security solutions support the entire spectrum of security use cases, from security analytics to SIEM and SOAR:
 * **[Logs for Security](/docs/security/additional-security-features/)**<br/>Provides enhanced insight for security analysts into threat activity via logs. Collect security log and event data from your infrastructure and applications, on-premises and in-cloud. Analyze your security data with pre-built and custom dashboards, out-of-the-box security apps, and robust queries.
 * **Threat detection, investigation, and response**<br/>After you have collected logs for security, you can use them with the following solutions for threat detection, investigation, and response:
    * **[Cloud SIEM](/docs/cse/)**<br/>Gives SOC (security operations center) analysts prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions.
