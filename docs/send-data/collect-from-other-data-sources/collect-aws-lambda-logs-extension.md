@@ -97,12 +97,21 @@ To package the Sumo Logic Lambda Extension with the AWS Lambda function created 
      ```
 
 1. In your AWS Lambda container image Dockerfile, add the command below.
-
+   ##### Create the target directory for extensions
    ```bash
    RUN mkdir -p /opt/extensions
+   ```
+   ##### Create the target directory for extensions
+   ```bash
    ADD <Location-where-you-downloaded-the-tar-file>/sumologic-extension-<architecture>.tar.gz /opt/extensions
    ```
-
+   ##### Clean up any hidden files from the extracted content 
+   ```bash
+   RUN find /opt/extensions -type f -name ".*" -delete
+   ```
+   :::note
+   Any file placed under /opt/extensions is treated as an executable. Hidden files (such as ._filename) or non-binary files in this directory may also be executed, potentially causing unexpected behavior.
+   :::
 1. Validate if the extension is added to the directory and execute the below command.
 
    ```bash
