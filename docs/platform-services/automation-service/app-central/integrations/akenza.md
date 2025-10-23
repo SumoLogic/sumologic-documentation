@@ -51,7 +51,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationProxy/>
 
 <!-- missing - ask John --> 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/Akenza-configuration.png')} style={{border:'1px solid gray'}} alt="Akenza configuration" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/akenza-configuration.png')} style={{border:'1px solid gray'}} alt="Akenza configuration" width="400"/>
 
 For information about Akenza, see [Akenza documentation](https://docs.akenza.io/akenza.io/get-started/reference/api-documentation).
 
