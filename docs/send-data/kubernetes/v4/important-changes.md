@@ -17,13 +17,12 @@ Prometheus 3.0 includes several breaking changes. Learn more about those changes
 
 Use Helm chart [v4.14.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.14.0) or later to ensure compatibility with Prometheus 3.0 scrapers. Note that Prometheus 3.0 is not the default in Helm chart version 4.
 
-### Kubernetes Attributes Processor support (v4.13)
+### Kubernetes Attributes Processor support ( alpha/development )
 
 The [Kubernetes Attributes Processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/k8sattributesprocessor/README.md) is now supported for logs and metrics metadata enrichment. This processor is disabled by default. To enable this processor for logs, set `metadata.logs.useSumoK8sProcessor` to `false`. To enable this processor for metrics, set `metadata.metrics.useSumoK8sProcessor` to `false`.
 
 :::note
-The Service name is part of the metadata enrichment with this processor in v4.15.0. Refer to the [OpenTelemetry service name calculation documentation](https://opentelemetry.io/docs/specs/semconv/non-normative/k8s-attributes/#how-servicename-should-be-calculated) to understand how the service name is calculated.
-:::
+The Service name is part of the metadata enrichment with this processor in v4.15.0. Refer to the [OpenTelemetry service name calculation documentation](https://opentelemetry.io/docs/specs/semconv/non-normative/k8s-attributes/#how-servicename-should-be-calculated) to understand how the service name is calculated. Initially switching to this processor from the existing k8s_tagger processor, may cause an incorrect asscoiation of logs with k8s metadata for a certain period of time.
 
 ### Remove Fluent Bit and Fluentd
 
