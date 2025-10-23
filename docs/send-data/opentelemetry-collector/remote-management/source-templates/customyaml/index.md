@@ -5,6 +5,12 @@ sidebar_label: Custom Yaml
 description: Learn about the Sumo Logic Custom Yaml source template for OpenTelemetry.
 ---
 
+<head>
+ <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
