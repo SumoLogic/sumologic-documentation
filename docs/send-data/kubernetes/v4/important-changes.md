@@ -22,7 +22,7 @@ Use Helm chart [v4.14.0](https://github.com/SumoLogic/sumologic-kubernetes-colle
 The [Kubernetes Attributes Processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/k8sattributesprocessor/README.md) is now supported for logs and metrics metadata enrichment. This processor is disabled by default. To enable this processor for logs, set `metadata.logs.useSumoK8sProcessor` to `false`. To enable this processor for metrics, set `metadata.metrics.useSumoK8sProcessor` to `false`.
 
 :::note
-The service name is part of the metadata enrichment with this processor in v4.15.0. Refer to the [OpenTelemetry service name calculation documentation](https://opentelemetry.io/docs/specs/semconv/non-normative/k8s-attributes/#how-servicename-should-be-calculated) to understand how the service name is calculated. Initially switching to this processor from the existing `k8s_tagger` processor may cause an incorrect asscoiation of logs with Kubernetes metadata for a certain period of time.
+The service name is part of the metadata enrichment with this processor in v4.15.0. Refer to the [OpenTelemetry service name calculation documentation](https://opentelemetry.io/docs/specs/semconv/non-normative/k8s-attributes/#how-servicename-should-be-calculated) to understand how the service name is calculated. Initially switching to this processor from the existing `k8s_tagger` processor may cause an incorrect association of logs with Kubernetes metadata for a certain period of time.
 :::
 
 ### Remove Fluent Bit and Fluentd
