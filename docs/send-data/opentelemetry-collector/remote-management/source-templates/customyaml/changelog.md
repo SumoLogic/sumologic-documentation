@@ -11,6 +11,8 @@ description: Changelog for Custom Yaml source template for OpenTelemetry.
 
 <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## [1.0.0] - 2025-10-24
 
 ### Added 
