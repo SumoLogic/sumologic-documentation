@@ -1,8 +1,8 @@
 ---
 slug: /send-data/opentelemetry-collector/remote-management/source-templates/customyaml
-title: Custom Yaml Source Template
-sidebar_label: Custom Yaml
-description: Learn about the Sumo Logic Custom Yaml source template for OpenTelemetry.
+title: Custom YAML Source Template
+sidebar_label: Custom YAML
+description: Learn about the Sumo Logic Custom YAML source template for OpenTelemetry.
 ---
 
 <head>
@@ -16,10 +16,10 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-The Custom Yaml source template creates an OpenTelemetry configuration based on a provided Opentelemetry config yaml, that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). It lets you directly define and manage collector configurations in YAML format for more flexibility. By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can collect telemetry data to send to Sumo Logic.
+The Custom YAML source template creates an OpenTelemetry configuration based on a provided OpenTelemetry config YAML, that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). It lets you directly define and manage collector configurations in YAML format for more flexibility. By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can collect telemetry data to send to Sumo Logic.
 
 :::note
-This source template works with sumo remotely managed opentelemetry collector version >= 0.136.0
+This source template works with sumo remotely managed OpenTelemetry collector version >= 0.136.0
 :::
 
 ## Configuring the source template
@@ -34,11 +34,11 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Apache Collection. Below are the inputs required for configuration:
+In this step, you will configure the YAML required for Apache Collection. Below are the inputs required for configuration:
 
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
-- **YAML Configuration**. You can directly provide your Opentelemetry configurations in YAML format.
+- **YAML Configuration**. You can directly provide your OpenTelemetry configurations in YAML format.
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
