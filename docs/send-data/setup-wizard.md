@@ -17,7 +17,7 @@ Before you begin, [sign up](/docs/get-started/sign-up.md) for a Sumo Logic accou
 
 To open the Setup Wizard, in the [Classic UI](/docs/get-started/sumo-logic-ui-classic/) select **Manage Data > Collection > Collection**, and then click the **Setup Wizard** link on the top right of the Collection page.
 
-<img src={useBaseUrl('img/get-started/setup-wizard.png')} alt="setup-wizard" />
+<img src={useBaseUrl('img/get-started/setup-wizard.png')} alt="Setup Wizard" style={{border: '1px solid gray'}} width="700" />
 
 :::note
 Keyboard shortcuts are not available when the Setup Wizard is open.
@@ -54,7 +54,7 @@ The following file types are **not** supported:
 
 To register an Installed Collector with the Setup Wizard:
 
-1. Select the **Setup Wizard Token** authentication option. The Setup Wizard does not provide an option for Installation Tokens.<br/> ![wizard authentication step.png](/img/security/installation-tokens/wizard-authentication.png)
+1. Select the **Setup Wizard Token** authentication option. The Setup Wizard does not provide an option for Installation Tokens.<br/><img src={useBaseUrl('img/security/installation-tokens/wizard-authentication.png')} alt="Wizard authentication step" style={{border: '1px solid gray'}} width="600" />
 1. Click next.
 1. In the input box, enter the **Token String** you want to use to register the Collector for a one-time token.
 1. Continue with the installation steps.

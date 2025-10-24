@@ -106,7 +106,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 After configuring your Source, you should check the status of the source in the **Collectors** page >  **Status** column. If the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
 
-![troubleshooting.jpg](/img/send-data/1password-troubleshooting.jpg)
+<img src={useBaseUrl('img/send-data/1password-troubleshooting.jpg')} alt="Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 
 To resolve these errors:
 - Make sure the Base URL matches your domain.

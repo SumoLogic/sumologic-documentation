@@ -45,7 +45,7 @@ To configure an HTTP Logs and Metrics Source:
        * **One Message Per Request.** Select this option if you'll be sending a single message with each HTTP request. For more information, see [Multiline options in HTTP sources](#multiline-options-in-http-sources). 
 1. **Processing Rules.** Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule. Processing rules are applied to log data, but not to metric data.
 1. When you are finished configuring the Source, click **Save**.
-1. When the URL associated with the source is displayed, copy the URL so you can use it to upload data.<br/> ![A screenshot showing the 'HTTP Source Address' dialog in Sumo Logic. The dialog instructs to use the given address to send data to the Collector and warns to keep this address private since anyone can use it to send data. The URL provided starts with 'https://collectors.sumologic.com/receiver/v1/http/...'. There is an 'OK' button at the bottom right.](/img/send-data/http-source-address.png)
+1. When the URL associated with the source is displayed, copy the URL so you can use it to upload data.<br/><img src={useBaseUrl('img/send-data/http-source-address.png')} alt="HTTP Source Address dialog " style={{border: '1px solid gray'}} width="500" />
 
 :::note
 * Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to HTTP Endpoint have appropriate timestamps.
@@ -87,7 +87,7 @@ Below are the key benefits that you can obtain by sending compressed data:
 
 If you need to access the Source's URL again, click **Show URL**.
 
-![A screenshot of the Sumo Logic interface showing 'Apache Tomcat' collector details. It is hosted with a green status, source category 'Labs/Tomcat', 3 sources in the last hour, and no messages. Actions include 'Add Source', 'Edit', 'Delete', 'Regenerate URL', and 'Show URL' (highlighted in red).](/img/send-data/show-url.png)
+<img src={useBaseUrl('img/send-data/show-url.png')} alt="Show URL link" style={{border: '1px solid gray'}} width="800" />
 
 The Source's `url` can be viewed by sending a GET request to the Collector Management API for the Source's JSON configuration.
 
@@ -97,7 +97,7 @@ The HTTP Logs and Metrics Source isn't designed to support large numbers of c
 
 To increase throughput, batch multiple log messages in a single request to the Source. If any of those logs can contain multiline messages, like stack traces, activate **Enable Multiline Processing**. 
 
-![A screenshot of the Sumo Logic 'Enable Multiline Processing' settings. The options include 'Detect messages spanning multiple lines' (checked), 'Infer Boundaries - Detect message boundaries automatically' (selected), and 'Boundary Regex - Expression to match message boundary' with an example expression provided. There is a note indicating that 'Infer Boundaries may not be accurate for all log types'.](/img/send-data/multiline.png)
+<img src={useBaseUrl('img/send-data/multiline.png')} alt="Enable Multiline Processing" style={{border: '1px solid gray'}} width="600" />
 
 For basic multiline processing, select **Infer Boundaries**; if this leads to malformed messages, you can instead specify a regular expression to determine the multiline boundary.
 

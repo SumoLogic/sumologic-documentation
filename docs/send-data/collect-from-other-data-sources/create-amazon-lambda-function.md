@@ -5,6 +5,8 @@ sidebar_label: AWS Lambda - Create Function
 description: Sumo Logic has created an Amazon Lambda function that you can use with AWS.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Sumo provides a Lambda function for use with Amazon Web Services (AWS). It collects AWS Lambda logs using CloudWatch Logs and it extracts and adds a `RequestId` field to each log line to make correlation easier. 
 
 **To add an Amazon Lambda function:**
@@ -16,7 +18,7 @@ Sumo provides a Lambda function for use with Amazon Web Services (AWS). It coll
 1. Select sumologic-process-logs.   The **Create Function** page appears.
 1. In the **Basic information** section:
 
-    ![lambda4.png](/img/send-data/lambda4.png)
+    <img src={useBaseUrl('img/send-data/lambda4.png')} alt="Lambda function" style={{border: '1px solid gray'}} width="800" />
 
     1. **Name.** Enter a name for the function.
     1. **Role.** Choose one of the following options:
@@ -30,7 +32,7 @@ Sumo provides a Lambda function for use with Amazon Web Services (AWS). It coll
 
 1. In the **cloudwatch-logs** section, you can create a trigger now, or click **Remove** if you prefer to create it later. To create the trigger:
 
-    ![trigger.png](/img/send-data/trigger.png)
+    <img src={useBaseUrl('img/send-data/trigger.png')} alt="Trigger" style={{border: '1px solid gray'}} width="800" />
 
     1. **Log Group.** Select the log group that serves as the event source. Events sent to the log source will trigger your Lambda function. 
     1. **Filter Name.** Enter a filter name, even if you do not use a Filter Pattern. You can enter any placeholder. 1. **Filter Pattern.** (Optional) For information about AWS filter patterns, see [Filter and Pattern Syntax](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) in AWS help.
@@ -44,7 +46,7 @@ Sumo provides a Lambda function for use with Amazon Web Services (AWS). It coll
 
 1. On the **Environment Variables** page, create an environment variable named SUMO_ENDPOINT. Set the value of the variable to the URL of the HTTP source to which your logs will be sent. In addition, you can set any of the following optional variables:
 
-    ![lambda6.png](/img/send-data/lambda6.png)
+    <img src={useBaseUrl('img/send-data/lambda6.png')} alt="Environment variables" style={{border: '1px solid gray'}} width="800" />
 
     * `ENCODING` (Optional)—Encoding to use when decoding CloudWatch log events. Default is utf-1.
     * `SOURCE_CATEGORY_OVERRIDE` (Optional)—Override _sourceCategory value configured for the HTTP source.

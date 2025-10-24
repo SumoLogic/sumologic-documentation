@@ -47,9 +47,7 @@ Tags are returned in your search results and can be referenced in queries. For i
    * **Tag Filters.** Leave this field blank to collect all tags configured for the EC2 instance. To collect a subset of tags, follow the instructions in [Define EC2 tag filters](#define-ec2-tag-filters). Review the above [Metrics](#metrics) and [Logs](#logs) sections for important information.
    * **AWS Access.** Choose between two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in step 1, see [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md).
 
-     * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role. 
-
-        ![Role based access input roleARN.png](/img/send-data/Role-based-access-input-roleARN.png)
+     * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role. <br/><img src={useBaseUrl('img/send-data/Role-based-access-input-roleARN.png')} alt="AWS access role ARN" style={{border: '1px solid gray'}} width="500" />
      * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 
 1. Click **Save**.
