@@ -59,9 +59,7 @@ To configure a cloud syslog source, do the following:
    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
 
 1. Create any Processing Rules you'd like for the new source.
-1. Click **Save**. The token information is displayed in a read-only dialog box, shown below.
-
-    ![syslog-token.png](/img/send-data/syslog-token.png)    
+1. Click **Save**. The token information is displayed in a read-only dialog box, shown below.<br/><img src={useBaseUrl('img/send-data/syslog-token.png')} alt="Syslog token" style={{border: '1px solid gray'}} width="500" />    
 1. Click **Copy** to copy the information for use in the syslog client. The information is copied in the following format:
 
     ```
@@ -102,7 +100,7 @@ Syslog messages must be in RFC 5424-compliant form or they are dropped. Messages
 
 This diagram shows the RFC 5424 format:
 
-![Cloud Syslog - RFC 5424.png](/img/send-data/Cloud-Syslog-RFC-5424.png)
+<img src={useBaseUrl('img/send-data/Cloud-Syslog-RFC-5424.png')} alt="Cloud Syslog - RFC 5424" style={{border: '1px solid gray'}} width="800" />
 
 ### Known issues
 
