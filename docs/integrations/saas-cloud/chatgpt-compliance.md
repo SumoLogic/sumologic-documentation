@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="Carbon Black Inventory icon" width="50" />
 
-The Sumo Logic app for ChatGPT Compliance enables you to uphold security, transparency, and accountability in your use of AI-powered conversations across teams and departments by centralising compliance and audit data from ChatGPT Workspace environments. You can monitor the usage, review conversation activity, and ensure adherence to corporate governance and data protection standards.
+The Sumo Logic app for ChatGPT Compliance enables you to uphold security, transparency, and accountability in your use of AI-powered conversations across teams and departments by centralizing compliance and audit data from ChatGPT Workspace environments. You can monitor the usage, review conversation activity, and ensure adherence to corporate governance and data protection standards.
 
-This app provides visibility into how ChatGPT is used across your organisation, identifying interaction patterns, data-sharing behaviours, and potential policy or compliance risks by leveraging detailed metadata, content insights, and audit trails. This transparency supports proactive oversight, risk mitigation, and regulatory alignment.
+This app provides visibility into how ChatGPT is used across your organization, identifying interaction patterns, data-sharing behaviors, and potential policy or compliance risks by leveraging detailed metadata, content insights, and audit trails. This transparency supports proactive oversight, risk mitigation, and regulatory alignment.
 
-Comprehensive dashboards and visualisations provide a holistic view of your organisation’s AI interaction posture, highlighting activity trends, message-level insights, and data sensitivity indicators, to help compliance teams detect irregularities, enforce responsible AI policies, and protect proprietary information, while enabling leadership to strengthen governance, safeguard data integrity, and maintain trust in responsible technology use.
+Comprehensive dashboards and visualizations provide a holistic view of your organization’s AI interaction posture, highlighting activity trends, message-level insights, and data sensitivity indicators, to help compliance teams detect irregularities, enforce responsible AI policies, and protect proprietary information, while enabling leadership to strengthen governance, safeguard data integrity, and maintain trust in responsible technology use.
 
 ## Log types
 
@@ -38,7 +38,7 @@ This app uses Sumo Logic’s [ChatGPT Compliance Source](/docs/send-data/hosted-
     "content": {
       "annotations": [],
       "type": "text",
-      "value": "he didnt get the siding permit yet, but have started working on it."
+      "value": "he didn't get the siding permit yet, but has started working on it."
     },
     "created_at": 1760411119.881,
     "files": {
@@ -163,11 +163,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Security
 
-The **ChatGPT Compliance – Security** dashboard offers a comprehensive view of ChatGPT usage and interaction patterns across your organisation, enabling compliance and security teams to monitor activity, assess AI adoption, and uphold responsible data governance. Interactive visualisations surface key metrics such as active users, model utilisation, message volume, and content types.
+The **ChatGPT Compliance – Security** dashboard offers a comprehensive view of ChatGPT usage and interaction patterns across your organization, enabling compliance and security teams to monitor activity, assess AI adoption, and uphold responsible data governance. Interactive visualizations reveal key metrics, including active users, model utilization, message volume, and content types.
 
-Panels like *Top 10 Users by Conversations* and *Top 10 Users by Messages* highlight the most active participants, enabling administrators to identify behavioural trends and usage patterns, supporting policy alignment and informed decisions on model governance and optimisation. Time-series views like the *Messages Over Time* panel track engagement over time to detect spikes or anomalies, while *File Uploads*, *Conversations Summaries*, and *Messages Summaries* centralise interaction metrics for streamlined monitoring and audit readiness. The *Content Sensitivity Scan* further strengthens oversight by flagging messages with potentially sensitive or regulated data for prompt risk mitigation.
+Panels like *Top 10 Users by Conversations* and *Top 10 Users by Messages* highlight the most active participants, enabling administrators to identify behavioral trends and usage patterns, supporting policy alignment and informed decisions on model governance and optimization. Time-series views, such as the *Messages Over Time* panel, track engagement over time to detect spikes or anomalies. Meanwhile, *File Uploads*, *Conversations Summaries*, and *Messages Summaries* centralize interaction metrics for streamlined monitoring and audit readiness. The *Content Sensitivity Scan* further strengthens oversight by flagging messages with potentially sensitive or regulated data for prompt risk mitigation.
 
-By unifying user activity, data sensitivity, and model usage insights in a single dynamic interface, this dashboard delivers the visibility and control needed to ensure transparency, responsible AI use, and compliance across your organisation.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/chatgpt-compliance/ChatGPT+Compliance+-+Security.png' alt="ChatGPT-Complianc-Security-Dashboard" />
+By unifying user activity, data sensitivity, and model usage insights in a single dynamic interface, this dashboard delivers the visibility and control needed to ensure transparency, responsible AI use, and compliance across your organization.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/chatgpt-compliance/ChatGPT+Compliance+-+Security.png' alt="ChatGPT-Compliance-Security-Dashboard" />
 
 ## Upgrading/Downgrading the ChatGPT Compliance app (Optional)
 
