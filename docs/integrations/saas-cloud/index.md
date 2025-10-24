@@ -107,6 +107,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/chatgpt-compliance')}><img src={useBaseUrl('/img/send-data/chatgpt-compliance.png')} alt="icon" width="80"/><h4>ChatGPT Compliance</h4></a>
+  <p>Monitor how ChatGPT is used across your organisation to ensure adherence to corporate governance and data protection standards.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/cisco-amp')}><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="70"/><h4>Cisco AMP</h4></a>
   <p>Monitor and analyze the host activity status and file types implicated in cybersecurity incidents.</p>
   </div>
