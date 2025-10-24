@@ -7,7 +7,7 @@ description: The Sumo Logic app for ChatGPT Compliance gives you a unified view 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="Carbon Black Inventory icon" width="90" />
+<img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="Carbon Black Inventory icon" width="50" />
 
 The Sumo Logic app for ChatGPT Compliance enables you to uphold security, transparency, and accountability in your use of AI-powered conversations across teams and departments by centralising compliance and audit data from ChatGPT Workspace environments. You can monitor the usage, review conversation activity, and ensure adherence to corporate governance and data protection standards.
 
