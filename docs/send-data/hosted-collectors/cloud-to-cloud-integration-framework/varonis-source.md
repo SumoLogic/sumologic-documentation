@@ -1,11 +1,11 @@
 ---
 id: varonis-source
-title: Varonis Source
-sidebar_label: Varonis
+title: Varonis Alerts Source
+sidebar_label: Varonis Alerts
 tags:
   - cloud-to-cloud
-  - varonis
-description: Learn how to collect Varonis alerts with their detailed information and send them to Sumo Logic.
+  - varonis-alerts
+description: Learn how to collect Varonis Alerts with their detailed information and send them to Sumo Logic.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/misc/varonis-logo.png')} alt="icon" width="100"/>
 
-The Sumo Logic source for Varonis enables you to collect alerts from Varonis into Sumo Logic. This integration helps you to collect real-time intelligent alerts about suspicious activity across your files, emails, and data stores. Powered by advanced threat detection and behavioral analytics, these alerts help security teams quickly identify insider threats, ransomware, and data breaches. With clear context and actionable insights, Varonis alerts enable faster response and stronger protection of your most sensitive information.
+The Sumo Logic source for Varonis Alerts enables you to collect alerts from Varonis into Sumo Logic. This integration helps you to collect real-time intelligent alerts about suspicious activity across your files, emails, and data stores. Powered by advanced threat detection and behavioral analytics, these alerts help security teams quickly identify insider threats, ransomware, and data breaches. With clear context and actionable insights, Varonis Alerts enable faster response and stronger protection of your most sensitive information.
 
 ## Data collected
 
@@ -25,7 +25,7 @@ The Sumo Logic source for Varonis enables you to collect alerts from Varonis int
 
 ### Vendor configuration
 
-The Varonis source requires you to provide the Varonis **Domain URL** and **API Key** to configure the source.
+The Varonis Alerts source requires you to provide the Varonis **Domain URL** and **API Key** to configure the source.
 
 #### Domain URL
 
@@ -39,12 +39,12 @@ To collect the API Key, follow the below steps:
 
 ### Source configuration
 
-When you create a Varonis Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Varonis Alerts Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure Varonis Source:
+To configure Varonis Alerts Source:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Search for and select the **Varonis** icon.
+1. Search for and select the **Varonis Alerts** icon.
 1. Enter a **Name** to display for the Source in Sumo Logic. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
