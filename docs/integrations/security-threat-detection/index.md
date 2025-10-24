@@ -15,7 +15,7 @@ import CisNote from '../../reuse/cis-note.md';
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/security-threat-detection/akamai-security-events')}><img src={useBaseUrl('img/integrations/security-threat-detection/Akamai_logo.png')} alt="icon" width="90"/><h4>Akamai Security Events</h4></a>
+  <a href={useBaseUrl('docs/integrations/security-threat-detection/akamai-security-events')}><img src={useBaseUrl('img/integrations/security-threat-detection/akamai_logo.png')} alt="icon" width="90"/><h4>Akamai Security Events</h4></a>
   <p>A guide to the Sumo Logic app for Akamai Security Events.</p>
   </div>
 </div>

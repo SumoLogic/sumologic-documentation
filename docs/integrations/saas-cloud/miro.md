@@ -7,7 +7,7 @@ description: The Sumo Logic app for Miro offers functionality for monitoring and
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="40" />
+<img src={useBaseUrl('img/send-data/miro-logo.png')} alt="icon" width="40" />
 
 The Sumo Logic app for Miro provides visibility into Miro audit logs to ensure the security and compliance of your Miro environment. The app leverages the [Miro cloud-to-cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source) to collect audit log data and provides pre-built dashboards and visualizations to enable security teams to easily monitor and investigate potential security threats.
 
