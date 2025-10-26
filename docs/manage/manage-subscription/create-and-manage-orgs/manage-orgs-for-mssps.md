@@ -1,5 +1,5 @@
 ---
-id: manage-orgs-for-mssps-csiem-rules
+id: manage-orgs-for-mssps
 title: Manage Organizations for MSSPs
 sidebar_label: Manage Orgs for MSSPs
 description: Learn how to manage organizational Cloud SIEM rules, rule tuning expressions, and organizational library content for Managed Security Service Providers (MSSPs).
@@ -74,7 +74,7 @@ You can push the following:
    - Expected runtime for nearly 1500 async calls is 5-7 mins.
    - Expected runtime for nearly 3000 async calls is 15 mins.
    - Make sure you keep the Child orgs per job less than or equal to 3 when you push more than 250 rules for a faster runtime.
-   - Make sure you keep the rule or tuning expressions per job less than or equal to 500 for a faster runtime
+   - Make sure you keep the rule or tuning expressions per job less than or equal to 500 for a faster runtime.
 
 
 ## View history

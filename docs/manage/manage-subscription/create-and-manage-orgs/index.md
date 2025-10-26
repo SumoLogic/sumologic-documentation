@@ -49,7 +49,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules')}><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Manage Organizations for MSSPs - Cloud SIEM</h4></a>
+  <a href={useBaseUrl('docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps')}><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Manage Organizations for MSSPs - Cloud SIEM</h4></a>
   <p>Learn how to manage organizations for Managed Security Service Providers (MSSPs).</p>
   </div>
 </div>
