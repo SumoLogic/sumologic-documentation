@@ -27,7 +27,7 @@ This multi-insights list page (also known as a "federated" page) shows insights 
 
 To be able to see insights in child organizations, add child organizations that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list.
 
-## Manage Cloud SIEM rules
+## Manage content
 
 To ensure that content is consistent across child organizations, use the **Manage Content** tab to push content in target organizations with content from a source organization.
 
