@@ -38,7 +38,7 @@ Before submitting an issue or pull request, we recommend reviewing the sections 
 
 To contribute to Sumo Docs, ensure you have the following tools installed:
 
-- [Node.js](https://nodejs.org/en/download/) version 18 or higher
+- [Node.js](https://nodejs.org/en/download/) version 20 or higher
 - [Yarn](https://yarnpkg.com/en/), installable via [Homebrew](https://brew.sh/) (`brew install yarn`)
 
 ## Installation
