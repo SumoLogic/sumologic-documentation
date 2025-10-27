@@ -254,7 +254,7 @@ You'll need to restart the collector process manually in order to apply changes.
 :::
 
 :::note
-For running multiple collectors on the same host, you need to set `collector_credentials_directory` in sumologic extension configuration to different directories for each collector, so that they do not share the same credentials. see [sumologic extension documentation](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.137.0/extension/sumologicextension)
+For running multiple collectors on the same host, you must configure each collector to use a unique credentials directory. To do this, set the `collector_credentials_directory` field in the Sumo Logic extension configuration to a different directory for each collector. This ensures that collectors do not share the same credentials. For more details, refer to the [Sumo Logic extension documentation](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.137.0/extension/sumologicextension).
 :::
 
 #### Manual step-by-step installation
