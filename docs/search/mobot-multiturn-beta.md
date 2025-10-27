@@ -19,7 +19,13 @@ Our new conversational experience in Mobot (formerly known as Copilot) lets you 
 
 As we transition the feature name from *Copilot* to *Mobot*, some UI labels and screenshots may still show **Copilot**. Functionality is unchanged.
 
-## What's new in Beta
+## Logs Agent
+
+Select **Logs Agent** to get help with Sumo Logic queries.
+
+<img src={useBaseUrl('img/search/mobot/mobot-logs-agent-button.png')} alt="Logs Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
+
+### What's new in Beta
 
 * **Conversational flow**. Refine queries through natural, conversational follow-up questions without losing context. A sequence of related instructions that retains context and incrementally updates the query and output.
 * **Automatic source detection**. Have Mobot choose a data source automatically based on your question or enter one yourself.
@@ -30,11 +36,11 @@ As we transition the feature name from *Copilot* to *Mobot*, some UI labels and 
 * **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
 * **Integrated workflow**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
 
-## Typical workflow
+### Typical workflow
 
 The steps below outline a common conversational interaction pattern. You can apply the same approach to different logs, events, or dimensions.
 
-### Step 1: Ask your initial question  
+#### Step 1: Ask your initial question  
 
 Use natural language to ask what you're looking for. You can start broad when you set a goal, or, for better results, include the name of the data source you're querying, and any related field names or values.
 
@@ -47,7 +53,7 @@ We'll ask: `Show failed login attempts in the last 24 hours`.
 <img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot conversational experience showing initial query for failed login attempts in the last 24 hours" style={{border: '1px solid gray'}} width="700"/>
 -->
 
-### Step 2: Narrow the scope  
+#### Step 2: Narrow the scope  
 
 After clicking on a follow-up suggestion, Mobot refreshes the results and updates the intent card and query to reflect the new focus. With each subsequent refinement, Mobot adjusts the query, applies the refinements, and renders a visual chart.
 
@@ -60,7 +66,7 @@ Now, refine further by typing: `Break down failed scheduling events by namespace
 <img src={useBaseUrl('img/search/mobot/narrow-scope-filter.png')} alt="Mobot conversational experience showing failed scheduling events broken down by namespace" style={{border: '1px solid gray'}} width="700"/>
 -->
 
-### Step 3: Drill into causes
+#### Step 3: Drill into causes
 
 As you go, Mobot presents new suggestion cards to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces.
 
@@ -72,7 +78,7 @@ Next, type `Add error messages`. Mobot translates this into: `Add error messages
 <img src={useBaseUrl('img/search/mobot/drill-causes.png')} alt="Mobot conversational experience showing error messages for failed scheduling events" style={{border: '1px solid gray'}} width="700"/>
 -->
 
-### Step 4: Request a trend over time
+#### Step 4: Request a trend over time
 
 If you type a time period (for example, `Show the trend over 24 hours`), the query applies a timeslice (for example, one-hour buckets) to group results over time.
 
@@ -87,11 +93,11 @@ Finally, type: `Show the trend over 24 hours`. Mobot translates this into: `Show
 where the results appear in a table view, you can change the visualization to a time-series chart (for example, line or area) to see the trend more clearly over time.
 -->
 
-### Next steps
+#### Next steps
 
 As with legacy Mobot, you can adjust the [time range](/docs/search/mobot/#time-range), switch [chart types](/docs/search/mobot/#chart-type), [edit the query logic](/docs/search/mobot/#edit-query-code), [open in Log Search](/docs/search/mobot/#step-4-open-in-log-search), or start over with a [new chat](/docs/search/mobot/#new-conversation).
 
-## Best practices
+### Best practices
 
 * **Talk to it like a conversation**. Layer refinements instead of rewriting the whole question.  
 * **Be specific**. Combine filters, units, and percentiles in clear language.
@@ -101,7 +107,7 @@ As with legacy Mobot, you can adjust the [time range](/docs/search/mobot/#time-r
 * **Guide Mobot with feedback**. If the result isn't right, use natural language: `Don't do X, instead do Y`.
 * **Fix broken queries**. Paste a syntactically invalid query. Mobot will correct it.
 
-## FAQ
+### FAQ
 
 The questions below refer specifically to the conversational (Beta) experience. For general information about Mobot, see the [Mobot FAQ](/docs/search/mobot#faq).
 
@@ -138,6 +144,16 @@ Here are some common cases:
 * The conversational experience is available for log-based searches only. Metrics and Metric Searches are not supported in this Beta.
 * Mobot cannot currently refer to the output of a log search directly in subsequent queries. Each follow-up must be expressed in terms of query refinements rather than referencing previous results. This is an important limitation to be aware of when constructing multi-turn conversations.
 </details>
+
+## Knowledge Agent
+
+Select **Knowledge Agent** to get help using Sumo Logic.
+
+<img src={useBaseUrl('img/search/mobot/mobot-knowledge-agent-button.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
+
+Enter a question about Sumo Logic, such as *"How do I add a collector for AWS CloudTrail?"*, *"What are the API endpoints for Sumo Logic?"*, or anything else you need help with. The Knowledge agent returns an answer, including steps if needed.
+
+When you enter a question to the The Knowledge Agent, it returns an answer using [Sumo Logic documentation](https://www.sumologic.com/help/). Click **Source** in the response to see the help articles that served as the basis for the response.
 
 ## Additional resources
 
