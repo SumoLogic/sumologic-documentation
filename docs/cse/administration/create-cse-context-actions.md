@@ -87,6 +87,8 @@ When you save the action, the URL template will be populated with your Sumo Logi
 
 `{{sumobaseurl}}/ui/#/search/@{{timestamp[ms]-30m}}@_index=sec_record* AND user_username = {{value}}`
 
+The `{{sumobaseurl}}` parameter applies to context actions that run a Sumo Logic log search. Assuming your Cloud SIEM instance is configured to communicate with the Sumo Logic platform, when you create an action that runs a Sumo Logic search, Cloud SIEM will automatically insert this placeholder in your URL template—you don’t need to explicitly insert `{{sumobaseurl}} `placeholder yourself.
+
 ### Create an URL to an external service
 
 To create a URL to be sent to an external service, enter the URL in the format required by the external service, and use the `{{value}}` parameter placeholder for the target entity, record field, or IOC. 
@@ -120,12 +122,6 @@ The table below defines the parameters you can use in the URL template for a con
 ### Record value
 
 You can insert any field from the target of a context action into the action URL with the `{{field_name}}` placeholder. For example, you could include `device_ip` in the URL with `{{device_ip}}`.  
-
-### Sumo Logic Base URL
-
-The `{{sumobaseurl}}` parameter applies to context actions that run a Sumo Logic log search.
-
-Assuming your Cloud SIEM instance is configured to communicate with the Sumo Logic platform, when you create an action that runs a Sumo Logic search, Cloud SIEM will automatically insert this placeholder in your URL template—you don’t need to explicitly insert `{{sumobaseurl}} `placeholder yourself.
 
 ### Timestamp
 
