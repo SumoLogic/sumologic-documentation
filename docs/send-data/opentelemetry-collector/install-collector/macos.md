@@ -253,6 +253,10 @@ sudo curl -sL https://download-otel.sumologic.com/latest/download/install.sh | s
 You'll need to restart the collector process manually in order to apply changes.
 :::
 
+:::note
+For running multiple collectors on the same host, you need to set `collector_credentials_directory` in sumologic extension configuration to different directories for each collector, so that they do not share the same credentials. see [sumologic extension documentation](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.137.0/extension/sumologicextension)
+:::
+
 #### Manual step-by-step installation
 
 If you installed the Collector manually, the simplest way to upgrade is to follow these steps:
