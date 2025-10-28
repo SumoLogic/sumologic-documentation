@@ -38,6 +38,6 @@ For more information about threat intelligence, see [About Sumo Logic Threat Int
 
 <ApiRoles/>
 
-* Threat Intel
+* [Threat Intel](/docs/manage/users-roles/roles/role-capabilities/#threat-intel)
    * View Threat Intel Data Store
    * Manage Threat Intel Data Store
