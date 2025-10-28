@@ -26,6 +26,7 @@ There can be two possible errors while running the multi-child org queries:
 - All the searches that run via the child org in the parent org would be billed under the child org account.
 - Audit logs for the completed searches would appear under the child org logs.
 - Raw messages and facets are supported only for one child org query and not for multiple chid orgs query.
+- To manage a parent org user’s access within a child org, the child org administrator can modify the parent org user’s role and RBAC (role-based access control) configurations in the child org.
 :::
 
 For more information about the Log Search, refer to [Search Basics](/docs/search/get-started-with-search/search-basics/).
