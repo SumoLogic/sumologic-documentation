@@ -21,6 +21,7 @@ The Muting Schedules Management API allows you to pause alert notifications from
 |:----|:----|:---|:-----|
 | AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
@@ -28,7 +29,6 @@ The Muting Schedules Management API allows you to pause alert notifications from
 | KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
 | US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement      |
 | US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
-| ZRH | Switzerland (Zurich)   | eu-central-2   | https://api.zrh.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 
 
 ## Required role capabilities

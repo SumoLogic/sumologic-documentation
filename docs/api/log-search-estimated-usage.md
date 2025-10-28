@@ -23,6 +23,7 @@ In the Infrequent Data Tier and Flex, you pay per query, based on the amount of 
 |:----|:----|:---|:-----|
 | AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType   |
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType   |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
@@ -30,7 +31,6 @@ In the Infrequent Data Tier and Flex, you pay per query, based on the amount of 
 | KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType   |
 | US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType      |
 | US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
-| ZRH | Switzerland (Zurich)   | eu-central-2   | https://api.zrh.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
 
 ## Required role capabilities
 

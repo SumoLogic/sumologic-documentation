@@ -27,6 +27,7 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 |:----|:----|:---|:-----|
 | AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/traces   |
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/traces   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/traces   |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/traces   |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/traces   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/traces  |
@@ -34,7 +35,6 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 | KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/traces   |
 | US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/traces      |
 | US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/traces  |
-| ZRH | Switzerland (Zurich)   | eu-central-2   | https://api.zrh.sumologic.com/docs/#tag/traces  |
 
 ## Required role capabilities
 

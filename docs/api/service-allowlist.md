@@ -21,6 +21,7 @@ The [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses
 |:----|:----|:---|:-----|
 | AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/serviceAllowlistManagement   |
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/serviceAllowlistManagement   |
+| CH  | Switzerland (Zurich)   | eu-central-2   |https://api.ch.sumologic.com/docs/#tag/serviceAllowlistManagement  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/serviceAllowlistManagement   |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/serviceAllowlistManagement   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/serviceAllowlistManagement  |
@@ -28,7 +29,6 @@ The [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses
 | KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/serviceAllowlistManagement   |
 | US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/serviceAllowlistManagement      |
 | US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/serviceAllowlistManagement  |
-| ZRH | Switzerland (Zurich)   | eu-central-2   |https://api.zrh.sumologic.com/docs/#tag/serviceAllowlistManagement  |
 
 ## Required role capabilities
 

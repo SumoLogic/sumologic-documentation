@@ -21,6 +21,7 @@ With the SLO Management API, you can monitor and set up alerts on KPIs for your 
 |:----|:----|:---|:-----|
 | AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/slosLibraryManagement   |
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/slosLibraryManagement   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/slosLibraryManagement  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/slosLibraryManagement   |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/slosLibraryManagement   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/slosLibraryManagement  |
@@ -28,7 +29,6 @@ With the SLO Management API, you can monitor and set up alerts on KPIs for your 
 | KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/slosLibraryManagement   |
 | US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/slosLibraryManagement      |
 | US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/slosLibraryManagement  |
-| ZRH | Switzerland (Zurich)   | eu-central-2   | https://api.zrh.sumologic.com/docs/#tag/slosLibraryManagement  |
 
 ## Required role capabilities
 

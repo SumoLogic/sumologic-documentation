@@ -4,6 +4,7 @@ The following table describes the AWS regions used by each Sumo Logic deployment
 |:----|:----|:---|:-----|
 | AU | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/api/   |
 | CA | Canada (Central) | ca-central-1 | https://api.ca.sumologic.com/api/   |
+| CH | Swizerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/api/ |
 | DE | EU (Frankfurt)  | eu-central-1 | https://api.de.sumologic.com/api/   |
 | EU | EU (Ireland)    | eu-west-1  | https://api.eu.sumologic.com/api/   |
 | FED | US East (N. Virginia) | us-east-1  | https://api.fed.sumologic.com/api/  |
@@ -12,7 +13,6 @@ The following table describes the AWS regions used by each Sumo Logic deployment
 | KR | Asia Pacific (Seoul) | ap-northeast-2 | https://api.kr.sumologic.com/api/  |
 | US1 | US East (N. Virginia) | us-east-1  | https://api.sumologic.com/api/|
 | US2 | US West (Oregon)| us-west-2 | https://api.us2.sumologic.com/api/ |
-| ZRH | Swizerland (Zurich)   | eu-central-2   | https://api.zrh.sumologic.com/api/ |
 
 See the [AWS IP ranges JSON file](https://ip-ranges.amazonaws.com/ip-ranges.json) for the current list of AWS IP ranges or subnets or prefixes. To simplify firewall configuration, you can use only the IP prefixes for the AWS region associated with your Sumo Logic deployment, as shown in the table.
 

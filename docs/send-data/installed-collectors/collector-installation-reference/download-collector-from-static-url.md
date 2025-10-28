@@ -72,6 +72,20 @@ The latest release of the Sumo Logic Collector targets the Java 17 runtime. Java
 | Windows 32 | https://download-collector.ca.sumologic.com/rest/download/windows | https://collectors.ca.sumologic.com/rest/download/windows |
 | Windows 64 | https://download-collector.ca.sumologic.com/rest/download/win64 | https://collectors.ca.sumologic.com/rest/download/win64 |
 
+### CH Collector
+
+| Binaries | New Download URL (Preferred) | Old Download URL (Deprecating soon) |
+| :-- | :-- | :-- |
+| Linux 64 | https://download-collector.ch.sumologic.com/rest/download/linux/64 |https://collectors.ch.sumologic.com/rest/download/linux/64  |
+| Linux Aarch 64 | https://download-collector.ch.sumologic.com/rest/download/linux/aarch/64 | https://collectors.ch.sumologic.com/rest/download/linux/aarch/64  | 
+| Linux Debian | https://download-collector.ch.sumologic.com/rest/download/deb/64  | https://collectors.ch.sumologic.com/rest/download/deb/64 |
+| Linux Aarch Debian |  https://download-collector.ch.sumologic.com/rest/download/deb/aarch/64 | https://collectors.ch.sumologic.com/rest/download/deb/aarch/64 |
+| Linux RPM | https://download-collector.ch.sumologic.com/rest/download/rpm/64 | https://collectors.ch.sumologic.com/rest/download/rpm/64 |
+| Linux Aarch RPM | https://download-collector.ch.sumologic.com/rest/download/rpm/aarch/64 | https://collectors.ch.sumologic.com/rest/download/rpm/aarch/64 |
+| macOS | https://download-collector.ch.sumologic.com/rest/download/macos | https://collectors.ch.sumologic.com/rest/download/macos  |
+| Tarball | https://download-collector.ch.sumologic.com/rest/download/tar | https://collectors.ch.sumologic.com/rest/download/tar |
+| Windows 32 | https://download-collector.ch.sumologic.com/rest/download/windows | https://collectors.ch.sumologic.com/rest/download/windows |
+| Windows 64 | https://download-collector.ch.sumologic.com/rest/download/win64 | https://collectors.ch.sumologic.com/rest/download/win64 |
 
 ### DE Collector
 
@@ -180,21 +194,6 @@ The latest release of the Sumo Logic Collector targets the Java 17 runtime. Java
 | Tarball | https://download-collector.us2.sumologic.com/rest/download/tar | https://collectors.us2.sumologic.com/rest/download/tar |
 | Windows 32 | https://download-collector.us2.sumologic.com/rest/download/windows | https://collectors.us2.sumologic.com/rest/download/windows |
 | Windows 64 | https://download-collector.us2.sumologic.com/rest/download/win64 | https://collectors.us2.sumologic.com/rest/download/win64 |
-
-### ZRH Collector
-
-| Binaries | New Download URL (Preferred) | Old Download URL (Deprecating soon) |
-| :-- | :-- | :-- |
-| Linux 64 | https://download-collector.zrh.sumologic.com/rest/download/linux/64 |https://collectors.zrh.sumologic.com/rest/download/linux/64  |
-| Linux Aarch 64 | https://download-collector.zrh.sumologic.com/rest/download/linux/aarch/64 | https://collectors.zrh.sumologic.com/rest/download/linux/aarch/64  | 
-| Linux Debian | https://download-collector.zrh.sumologic.com/rest/download/deb/64  | https://collectors.zrh.sumologic.com/rest/download/deb/64 |
-| Linux Aarch Debian |  https://download-collector.zrh.sumologic.com/rest/download/deb/aarch/64 | https://collectors.zrh.sumologic.com/rest/download/deb/aarch/64 |
-| Linux RPM | https://download-collector.zrh.sumologic.com/rest/download/rpm/64 | https://collectors.zrh.sumologic.com/rest/download/rpm/64 |
-| Linux Aarch RPM | https://download-collector.zrh.sumologic.com/rest/download/rpm/aarch/64 | https://collectors.zrh.sumologic.com/rest/download/rpm/aarch/64 |
-| macOS | https://download-collector.zrh.sumologic.com/rest/download/macos | https://collectors.zrh.sumologic.com/rest/download/macos  |
-| Tarball | https://download-collector.zrh.sumologic.com/rest/download/tar | https://collectors.zrh.sumologic.com/rest/download/tar |
-| Windows 32 | https://download-collector.zrh.sumologic.com/rest/download/windows | https://collectors.zrh.sumologic.com/rest/download/windows |
-| Windows 64 | https://download-collector.zrh.sumologic.com/rest/download/win64 | https://collectors.zrh.sumologic.com/rest/download/win64 |
 
 ## Download older versions
 

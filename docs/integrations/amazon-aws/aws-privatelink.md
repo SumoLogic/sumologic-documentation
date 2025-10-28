@@ -51,7 +51,7 @@ Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend 
 | KR         | `collectors.kr.sumologic.com` | `open-collectors.kr.sumologic.com` | `ap-northeast-2` |
 | US1        | `collectors.sumologic.com`<br/>`endpoint1.collection.sumologic.com`<br/>`endpoint2.collection.sumologic.com`<br/>`endpoint3.collection.sumologic.com`<br/>`endpoint4.collection.sumologic.com`<br/>`endpoint5.collection.sumologic.com` | `open-collectors.sumologic.com` | `us-east-1` |
 | US2        | `collectors.us2.sumologic.com`<br/>`endpoint1.collection.us2.sumologic.com`<br/>`endpoint2.collection.us2.sumologic.com`<br/>`endpoint3.collection.us2.sumologic.com`<br/>`endpoint4.collection.us2.sumologic.com`<br/>`endpoint5.collection.us2.sumologic.com`<br/>`endpoint6.collection.us2.sumologic.com`<br/>`endpoint7.collection.us2.sumologic.com`<br/>`endpoint8.collection.us2.sumologic.com`<br/>`endpoint9.collection.us2.sumologic.com` | `open-collectors.us2.sumologic.com` | `us-west-2` |
-| ZRH         | `collectors.zrh.sumologic.com` | `open-collectors.zrh.sumologic.com` | `eu-central-2` |
+| CH         | `collectors.ch.sumologic.com` | `open-collectors.ch.sumologic.com` | `eu-central-2` |
 
 </div>
 
