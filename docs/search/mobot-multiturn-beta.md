@@ -153,7 +153,7 @@ Select **Knowledge Agent** to get help using Sumo Logic.
 
 Enter a question about Sumo Logic, such as *"How do I add a collector for AWS CloudTrail?"*, *"What are the API endpoints for Sumo Logic?"*, or anything else you need help with. The Knowledge agent returns an answer, including steps if needed.
 
-When you enter a question to the The Knowledge Agent, it returns an answer using [Sumo Logic documentation](https://www.sumologic.com/help/). Click **Source** in the response to see the help articles that served as the basis for the response.
+When you enter a question to the Knowledge Agent, it returns an answer using [Sumo Logic documentation](/docs/get-started). Click **Source** in the response to see the help articles that served as the basis for the response.
 
 ## Additional resources
 
