@@ -23,7 +23,7 @@ To [create service account credentials](https://developers.google.com/workspace/
 
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
-3. Go to the **API&Services** > **Credentials** page.
+3. Go to the **API & Services** > **Credentials** page.
 4. In the same page click on **ENABLES API AND SERVICES** and search for Google Firestore and enable it.
 5. Click **CREATE CREDENTIALS** and select **Service Account**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-1.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
 6. Enter a service account name to display in the Google Cloud console. The Google Cloud console generates a service account ID based on this name.
