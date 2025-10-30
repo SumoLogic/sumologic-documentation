@@ -1,6 +1,6 @@
 ---
 id: ai-investigation-of-insights
-title: AI Investigation of Cloud SIEM Insights
+title: AI Investigation of Insights
 sidebar_label: AI Investigation of Insights
 description: Learn how to perform investigations of a Cloud SIEM insights assisted by Sumo Logic artificial intelligence tools.
 ---
@@ -21,11 +21,10 @@ reasoning to determine whether the insights are malicious, suspicious, or benign
 * **Investigation**. Supports analysts with a hypothesis-driven approach to assess
 the scope, context, and likely impact of an event.
 
-## View the AI Investigation tab of an insight
+## View the AI Investigation tab
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen.  
-1. In the insight list page, note that the **AI Verdit** column shows the results of the AI analysis.<br/><img src={useBaseUrl('img/cse/insight-ai-verdict-column.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="800" />
-1. Click an insight.
+1. On the insights list page, click an insight.
 1. The insight details are displayed. The **AI Investigation** tab for the insight shows the results of the AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-investigation-tab.png')} alt="Insight AI Investigation tab" style={{border: '1px solid gray'}} width="800" />
    1. **Severity Verdict**. Details about the insight's severity analysis:
       * **Current Severity**. The severity of the insight as set by the cumulative activity score for the insight. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#about-insight-severity).
@@ -44,7 +43,13 @@ the scope, context, and likely impact of an event.
    1. **Key Findings**. The main points uncovered by AI analysis. Details about these findings can be found in the signals that fired for the insight.
    1. **Ask Mobot**. Click to send the AI analysis of the insight to Sumo Logic Mobot for further investigation.
 
-## Investigate the Insight in Sumo Logic Mobot
+### Filter for AI verdicts
+
+In the insight list page, that the **AI Verdit** column shows the results of the AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-verdict-column.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="800" />
+
+Click in the **Filters** area near the top of the insights page and select **AI Verdict** to search for insights based on the verdict they are assigned (Benign, Inconclusive, In Progress, Malicious, Suspicious). See [Filtering insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#filtering-insights) for more information about filtering.
+
+## Investigate the insight in Mobot
 
 1. From the insight's details page, click **Ask Mobot** to open the AI investigation in [Sumo Logic Mobot](/docs/search/mobot/).<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" /> 
 1. Details about the AI investigation appear in the Sumo Logic Investigation Agent, an AI agentic tool. The entire context of the AI investigation is brought into Mobot so you can quickly drill down for more information about the insight.<br/><img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot Investigation Agent" style={{border: '1px solid gray'}} width="600" />
