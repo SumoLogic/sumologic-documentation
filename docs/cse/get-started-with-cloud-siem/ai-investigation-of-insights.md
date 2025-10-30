@@ -1,5 +1,5 @@
 ---
-id: ai-investigation-for-insights
+id: ai-investigation-of-insights
 title: AI Investigation of Cloud SIEM Insights
 sidebar_label: AI Investigation of Insights
 description: Learn how to perform investigations of a Cloud SIEM insights assisted by Sumo Logic artificial intelligence tools.
@@ -46,13 +46,13 @@ the scope, context, and likely impact of an event.
 
 ## Investigate the Insight in Sumo Logic Mobot
 
-1. From the insight's details page, click **Ask Mobot** to open the AI investigation in [Sumo Logic Mobot](https://www.sumologic.com/help/docs/search/mobot/).<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" /> 
+1. From the insight's details page, click **Ask Mobot** to open the AI investigation in [Sumo Logic Mobot](/docs/search/mobot/).<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" /> 
 1. Details about the AI investigation appear in the Sumo Logic Investigation Agent, an AI agentic tool. The entire context of the AI investigation is brought into Mobot so you can quickly drill down for more information about the insight.<br/><img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot Investigation Agent" style={{border: '1px solid gray'}} width="600" />
 1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** section above. For example, you could ask to see logs about the entities mentioned in the text (that is, hosts, users, IP addresses, file hashes, and so on).<br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Investigation Agent query" style={{border: '1px solid gray'}} width="600" />
 1. Click **Search** <img src={useBaseUrl('img/cse/search-button-in-mobot.png')} alt="Search button in Mobot" width="30" />. The Investigation Agrent analyzes your request and fashions a query based on it.
 1. Click **View Results** to see the results of your request in the logs query UI. You can also click the suggestions provided to drill down farther. As you ask questions, Mobot retains the context of your conversation about the insight, allowing you to more easily obtain detail. <br/><img src={useBaseUrl('img/cse/investigation-agent-results.png')} alt="Investigation Agent query results" style={{border: '1px solid gray'}} width="600" />
 
-## Start a new investigation
+### Start a new investigation
 
 To clear the context and start a new investigation, click **New Conversation** in the upper-right corner of the screen. To start investigation on another insight, navigate back to Cloud SIEM, select another insight, and click **Ask Mobot**.
 
@@ -60,17 +60,17 @@ To clear the context and start a new investigation, click **New Conversation** i
 
 ### What is the Sumo Logic SOC Analyst Agent?
 
-The SOC Analyst Agent is part of the Sumo Logic [Dojo AI](/docs/get-started/ai-machine-learning/#whats-new-dojo-ai-for-the-soc). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. When deeper analysis is required, the same agent supports hypothesis-based investigation to map relationships, connect entities, and summarize findings.
+The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#whats-new-dojo-ai-for-the-soc). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. When deeper analysis is required, the same agent supports hypothesis-based investigation to map relationships, connect entities, and summarize findings.
 
-### What are the benefits of the SOC Analyst Agent?
+### What are the benefits of the agent?
 
 Security teams spend too much time validating false positives and performing repetitive investigative steps. By embedding reasoning and context-awareness directly into Cloud SIEM, the SOC Analyst Agent eliminates noise, standardizes outcomes, and accelerates time to resolution.
 
-### Will the SOC Analyst Agent increase scanning or data-processing costs?
+### Will the agent increase scanning or data-processing costs?
 
 No. The agent analyzes existing data already ingested into Cloud SIEM. It performs reasoning on metadata and contextual signals rather than initiating new scans.
 
-### How does the SOC Analyst Agent differ from Cloud SIEM correlation or automation rules?
+### How does the aAgent differ from Cloud SIEM correlation or automation rules?
 
 Unlike traditional correlation logic, which is static, the SOC Analyst Agent applies agentic reasoning. It adapts based on insight context, recent analyst actions, and environmental signals, producing contextual, explainable decisions rather than fixed pattern matches.
 
