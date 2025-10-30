@@ -78,13 +78,11 @@ Fields can be assigned to a Collector and Source using the **Fields** input ta
 
 1. Click **Save**.
 
-![edit collector fields name.png](/img/fields/edit-collector-fields-name.png)
+  <img src={useBaseUrl('/img/fields/edit-collector-fields-name.png')} alt="edit-collector-fields-name" style={{border:'1px solid gray'}} width="500"/>
 
 In the above example, we have created a new field called `cluster` and set the value to `k8s.dev`. With this configuration, any logs sent to this Collector will now have this key-value pair associated with it.
 
-With this association, you can search for `cluster=k8s.dev` to return your logs.
-
-![collector field search results.png](/img/fields/collector-field-search-results.png)
+With this association, you can search for `cluster=k8s.dev` to return your logs. <br/><img src={useBaseUrl('/img/fields/collector-field-search-results.png')} alt="collector-field-search-results" style={{border:'1px solid gray'}} width="800"/>
 
 ### Using Collector API
 
@@ -173,7 +171,7 @@ curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt <HTT
 
 When creating or editing your HTTP Source that will receive log data add the field `_convertHeadersToFields` with a value of `true`. This field needs to be added to your Fields schema to work.
 
-![convertHeadersToFields.png](/img/fields/convertHeadersToFields.png)
+  <img src={useBaseUrl('/img/fields/convertHeadersToFields.png')} alt="convertHeadersToFields" style={{border:'1px solid gray'}} width="500"/>
 
 With this field set on your Source, headers are processed as metadata fields. For example, a cURL command posting data with custom fields would look like:
 
@@ -255,8 +253,6 @@ When hovering over a row in the table there are icons that appear on the far ri
 
 For the fields listed, select a row to view its details. A details pane appears to the right of the table where you can disable and delete the field.<br/><img src={useBaseUrl('/img/fields/selected-field-details-pane.png')} alt="Manage Fields" style={{border:'1px solid gray'}} width="450"/>
 
-![selected field details pane.png](/img/fields/selected-field-details-pane.png)
-
 #### Add field
 
 Adding a field will define it in the Fields schema allowing it to be assigned as metadata to your logs.
@@ -264,7 +260,7 @@ Adding a field will define it in the Fields schema allowing it to be assigned a
 1. Click the **+ Add** button on the top right of the table. A panel named **Add Field** appears to the right of the fields table.
 1. Input a field name and click **Save**.
 
-![add field input.png](/img/fields/add-field-input.png)
+<img src={useBaseUrl('/img/fields/add-field-input.png')} alt="add-field-input" style={{border:'1px solid gray'}} width="400"/>
 
 #### Disable field
 
@@ -300,11 +296,11 @@ Built-in fields cannot be deleted.
 
 For example, if the field is used by a Field Extraction Rule, you must first delete the Field Extraction Rule before you can delete the field.
 
-![field cannot delete.png](/img/fields/field-cannot-delete.png)
+<img src={useBaseUrl('/img/fields/field-cannot-delete.png')} alt="field-cannot-delete" style={{border:'1px solid gray'}} width="400"/>
 
 If the field is not used by those features you will see the following prompt.
 
-![delete field confirm.png](/img/fields/delete-field-confirm.png)
+<img src={useBaseUrl('/img/fields/delete-field-confirm.png')} alt="delete-field-confirm" style={{border:'1px solid gray'}} width="400"/>
 
 #### View dropped fields
 
