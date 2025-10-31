@@ -9,13 +9,13 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-### AI tools for insight investigation (beta)
+### AI tools for insight investigation (Beta)
 
-We're excited to announce two new powerful AI capabilities to assist in your Security Operation Center (SOC) team's investigation of Cloud SIEM insights:
-* SOC Analyst Agent in Cloud SIEM
-* Investigation Agent in Mobot
+We're excited to announce two new AI tools to assist in your Security Operation Center (SOC) team's investigation of Cloud SIEM insights:
+* SOC Analyst Agent
+* Investigation Agent
 
-These powerful AI tools will improve the speed and accuracy of your SOC team to investigate threats.
+These powerful AI tools are designed to improve the speed and accuracy of your SOC team's threat investigations.
 
 #### SOC Analyst Agent
 
@@ -23,9 +23,9 @@ A new **AI Investigation** tab in Cloud SIEM provides an AI-generated analysis o
 
 <img src={useBaseUrl('img/cse/ai-investigations-tab-in-release-note.png')} alt="Insight AI Investigation tab" style={{border: '1px solid gray'}} width="800" />
 
-####  Investigation Agent in Mobot
+####  Investigation Agent
 
-When you select the **Ask Mobot** button on the new **AI Investigation** tab, the insight's AI-generated information is launched in Sumo Logic Mobot. There you can use the Sumo Logic Investigation Agent to drill down into the insight for greater detail.
+When you select the **Ask Mobot** button on the new **AI Investigation** tab in Cloud SIEM, the insight's AI-generated information is launched in Sumo Logic Mobot. There you can use Sumo Logic's Investigation Agent to drill down into the insight for greater detail.
 
 <img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot Investigation Agent" style={{border: '1px solid gray'}} width="600" />
 
