@@ -185,6 +185,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/databricks-audit')}><img src={useBaseUrl('img/collector/databricks-icon.png')} alt="icon" width="70"/><h4>Databricks Audit</h4></a>
+  <p>Analyze your organization's security practices to identify emerging threats and compliance risks.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/digital-guardian-arc')}><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Thumbnail icon" width="40"/><h4>Digital Guardian ARC</h4></a>
   <p>Monitor, detect, and respond to critical events.</p>
   </div>
