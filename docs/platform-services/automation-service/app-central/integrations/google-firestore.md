@@ -47,6 +47,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 <IntegrationsAuth/>
 * <IntegrationLabel/>
 * **Private Key Json**. Provide the content of the JSON file generated [above](#google-firestore-configuration). Open the file and copy-paste the whole content in the field.
+* **Database ID**. Enter the Firestore database ID. For default databases, use `(default)`.
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
