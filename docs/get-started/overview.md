@@ -61,7 +61,7 @@ Get to know more about the benefits of using Sumo Logic.
 
 A Collector is a small application that gathers log data from your servers and sends it to the cloud. Using Sumo Logic, you can interact with and analyze your data in the Sumo Logic Cloud in real time.
 
-![Collectors M.png](/img/get-started/CollectorsM.png)
+<img src={useBaseUrl('img/get-started/CollectorsM.png')} alt="Collectors flow diagram" style={{border: '1px solid gray'}} width="800" />
 
 ### (A) Sumo Logic Collectors and Sources
 
