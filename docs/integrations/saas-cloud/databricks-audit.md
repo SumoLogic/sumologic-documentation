@@ -156,7 +156,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
 | `Databricks Audits - Audits from Embargoed Geo Locations` | This alert is triggered when audit logs are generated from sanctioned or embargoed regions, helping you to maintain compliance with legal and regulatory requirements. | Critical | Count > 0 | 
-| `Users with Failed Login` | This alert is triggered when a user has more than three failed login attempts, supporting early detection of potential unauthorized access attempts. | Critical | Count > 3 |
+| `Users with Failed Login` | This alert is triggered when there are more than three failed login attempts, supporting you to early detect the potential unauthorized access attempts. | Critical | Count > 3 |
 
 ## Upgrading the Databricks Audit app (Optional)
 
