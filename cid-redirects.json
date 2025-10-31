@@ -2958,6 +2958,7 @@
   "/docs/integrations/microsoft-azure/microsoft-entra-id-protection/": "/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection",
   "/cid/1113": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/databricks-audit-source/",
   "/cid/1117": "/docs/integrations/saas-cloud/chatgpt-compliance",
+  "/cid/1118": "/docs/integrations/saas-cloud/databricks-audit",
   "/Cloud_SIEM_Enterprise": "/docs/cse",
   "/Cloud_SIEM_Enterprise/Administration": "/docs/cse/administration",
   "/Cloud_SIEM_Enterprise/Administration/Cloud_SIEM_Enterprise_Feature_Update_(2022)": "/docs/cse/administration",
