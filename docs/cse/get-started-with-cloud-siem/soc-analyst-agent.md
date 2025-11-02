@@ -50,7 +50,7 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
 
 ### Filter for AI verdicts
 
-In the insight list page, that the **AI Verdit** column shows the results of the AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-verdict-column.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="800" />
+In the insight list page, that the **AI Verdict** column shows the results of the AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-verdict-column.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="800" />
 
 Click in the **Filters** area near the top of the insights page and select **AI Verdict** to search for insights based on the verdict they are assigned (Benign, Inconclusive, In Progress, Malicious, Suspicious). See [Filtering insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#filtering-insights) for more information about filtering.
 
