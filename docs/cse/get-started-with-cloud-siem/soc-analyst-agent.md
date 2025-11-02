@@ -80,7 +80,7 @@ Security teams spend too much time validating false positives and performing rep
 
 No. The agent analyzes existing data already ingested into Cloud SIEM. It performs reasoning on metadata and contextual signals rather than initiating new scans.
 
-### How does the aAgent differ from Cloud SIEM correlation or automation rules?
+### How does the agent differ from Cloud SIEM correlation or automation rules?
 
 Unlike traditional correlation logic, which is static, the SOC Analyst Agent applies agentic reasoning. It adapts based on insight context, recent analyst actions, and environmental signals, producing contextual, explainable decisions rather than fixed pattern matches.
 
