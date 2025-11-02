@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### SOC Analyst Agent (Beta)
 
-We're excited to announce Sumo Logic's SOC Analyst Agent, a powerful agentic AI tool designed to improve the speed and accuracy of your Security Operation Center (SOC) team's threat investigations.
+We're excited to announce Sumo Logic's SOC Analyst Agent, a powerful agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations.
 
 The SOC Analyst Agent provides the following new functionality:
 * AI Investigation tab in Cloud SIEM
