@@ -134,7 +134,7 @@ _sourceCategory=aws/vpc
 
 The output looks like:
 
-<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/ParseRegexMulti.png')} alt="creenshot of Sumo Logic log search results. The table has columns for IP address, raw message data, and count. Each row contains detailed log information in JSON format, including fields like ingestion time, timestamp, message, event ID, and log group." style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/ParseRegexMulti.png')} alt="Screenshot of Sumo Logic log search results. The table has columns for IP address, raw message data, and count. Each row contains detailed log information in JSON format, including fields like ingestion time, timestamp, message, event ID, and log group." style={{border: '1px solid gray'}} width="800" />
 
 ### Case insensitive parse regex
 
