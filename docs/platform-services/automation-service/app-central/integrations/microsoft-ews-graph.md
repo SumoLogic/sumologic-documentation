@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews.png')} alt="microsoft-ews" width="100"/>
 
-***Version: 1.1
+***Version: 1.1  
 Updated: Oct 31, 2025***
 
 Perform actions on Microsoft EWS mailboxes and accounts using Graph API. 
@@ -72,7 +72,7 @@ The client secret, known also as an application password, is a string value of y
 
 1. Select your application in **App registrations** in the Azure portal.
 2. Select **API permissions > Add a permission**.
-3. And add below **permissions**: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/MS-ews-graph.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
+3. Add the following permissions: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/MS-ews-graph.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
 #### API / Permissions
 
