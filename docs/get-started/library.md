@@ -15,16 +15,16 @@ Open the **Library** page to expose additional search options and to organize an
 1. You'll see two **View as** options:
     * **Me**. See your own saved searches and dashboards.
     * **Content Administrator**. Available if you have a Sumo Logic role that grants you [Manage Content capability](/docs/manage/users-roles/roles/role-capabilities/#data-management), this option turns off your personal content in the library and allows you to see the entire Sumo file tree. In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. For more information, see Admin Mode. <br/><img src={useBaseUrl('img/get-started/view-as.png')} alt="View As" style={{border: '1px solid gray'}} width="200" />
-1. Once you've made your choice of what you want to see, you can enter a string in the **Search** bar to display matching search results. <br/>![search select](/img/get-started/library/library-preview.png)
+1. Once you've made your choice of what you want to see, you can enter a string in the **Search** bar to display matching search results. <br/><img src={useBaseUrl('img/get-started/library/library-preview.png')} alt="Library preview" style={{border: '1px solid gray'}} width="300" />
 
 ## Explore the library
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab.
 1. Select **Personal** to select your own saved searches and dashboards or **Org** to select those shared by others in your organization.
 1. Search for items:
-   * Enter a search string to display matching search results.<br/>![search-string.png](/img/get-started/library/search-string.png)  
-   * Narrow your search by selecting an option for **Created by** or **Shared with**. As you make your selections, the constructed query is entered into the search field and additional options are presented. <br/>![create-by](/img/get-started/library/create-by.png)  
-   * Select a **Quick Search** option to perform a quick search for log searches, folders, or dashboards. As you make your selections, the query you have constructed is entered into the search field. <br/> ![quick-search](/img/get-started/library/quick-search.png)
+   * Enter a search string to display matching search results.<br/><img src={useBaseUrl('img/get-started/library/search-string.png')} alt="Search string" style={{border: '1px solid gray'}} width="200" />  
+   * Narrow your search by selecting an option for **Created by** or **Shared with**. As you make your selections, the constructed query is entered into the search field and additional options are presented. <br/><img src={useBaseUrl('img/get-started/library/create-by.png')} alt="Created by and shared with" style={{border: '1px solid gray'}} width="600" />  
+   * Select a **Quick Search** option to perform a quick search for log searches, folders, or dashboards. As you make your selections, the query you have constructed is entered into the search field. <br/><img src={useBaseUrl('img/get-started/library/quick-search.png')} alt="Quick search option" style={{border: '1px solid gray'}} width="500" />
 
 The left nav also includes shortcuts to other convenient features:
 * Click **Recent** to list all currently running searches and any searches performed over the last three hours. Pinned Searches are also listed.
@@ -43,7 +43,7 @@ To create a new folder, click **Add New > New Folder**, enter the folder name a
 
 To get information on items in the library, click an item in the library to open an information panel. If you click a folder in the library, information about the folder is shown in the information panel. Double-click the folder to list the items that it contains.
 
-![get-info](/img/get-started/library/get-info.png)
+<img src={useBaseUrl('img/get-started/library/get-info.png')} alt="Information panel" style={{border: '1px solid gray'}} width="800" />
 
 Do any of the following from the information panel in the library:
 
@@ -65,11 +65,11 @@ In the **Library**, your **Personal** folder is the root folder for all your s
 
 You can organize your saved content into subfolders in your Personal Folder.
 
-1. Mouse over the icon next to a library item you want to move to display the checkbox. <br/><img src={useBaseUrl('img/get-started/library/checkbox.png')} alt="checkbox.png" width="<insert-pixel-number>"/>
+1. Mouse over the icon next to a library item you want to move to display the checkbox. <br/><img src={useBaseUrl('img/get-started/library/checkbox.png')} alt="Checkbox" style={{border: '1px solid gray'}} width="800"/>
 1. Click the checkbox to select the item.
 1. Select other items as desired.
-1. After selecting the content you want to move, click the three-dot kebab menu and select the **Move** option.<br/><img src={useBaseUrl('img/get-started/library/move-option.png')} alt="move-option.png" width="<insert-pixel-number>"/>
-1. In the **Move Item** dialog, select the location you want to move the content to, and click **Move**.<br/><img src={useBaseUrl('img/get-started/library/select-folder.png')} alt="select-folder.png" width="<insert-pixel-number>"/>
+1. After selecting the content you want to move, click the three-dot kebab menu and select the **Move** option.<br/><img src={useBaseUrl('img/get-started/library/move-option.png')} alt="Move option" style={{border: '1px solid gray'}} width="300"/>
+1. In the **Move Item** dialog, select the location you want to move the content to, and click **Move**.<br/><img src={useBaseUrl('img/get-started/library/select-folder.png')} alt="Select folder" style={{border: '1px solid gray'}} width="500"/>
 1. The item(s) will be moved and appear in the new location.
 
 When your content is moved, you’ll need to click the new folder location to view its contents in the list on the right.
@@ -80,7 +80,7 @@ To add a folder to the library:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab.
 1. Click **Add New > New Folder**.
-1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/>![folder](/img/get-started/library/AddFolder.png)
+1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/><img src={useBaseUrl('img/get-started/library/AddFolder.png')} alt="Add Folder dialog" style={{border: '1px solid gray'}} width="400" />
 1. The new folder is added to the folder list in alphabetical order.
 
 ### Add Subfolders
@@ -117,7 +117,7 @@ There is a limit of 20 favorite items per user.
 ### Mark content as favorite
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab. 
-1. Hover your mouse over an item in the library, and click the star icon that appears. <br/> ![StarredFolders.png](/img/get-started/library/StarredFolders.png)
+1. Hover your mouse over an item in the library, and click the star icon that appears. <br/><img src={useBaseUrl('img/get-started/library/StarredFolders.png')} alt="Starred folders" style={{border: '1px solid gray'}} width="800" />
 1. The star darkens, and the item now appears in **Favorites**.
 
 ### Unfavorite content
@@ -175,7 +175,7 @@ Recent Searches that are still running are paused after 15 minutes. If not reope
 
 The Home page lists all currently running searches and any searches performed over the last three hours:
 
-![recent searched](/img/get-started/library/RecentlyRunSearches.png)
+<img src={useBaseUrl('img/get-started/library/RecentlyRunSearches.png')} alt="Recently searched" style={{border: '1px solid gray'}} width="500" />
 
 ### Pinned searches
 
@@ -200,18 +200,18 @@ Searches and dashboards can be shared and unshared at any time. Additionally, o
 
 #### Share
 
-1. In your **Personal** folder, highlight a search and click the share icon. <br/>![Share](/img/get-started/library/share-icon.png)
-1. On the sharing popup, click in the **Share this content...** field. <br/> ![share-with-users-roles.png](/img/get-started/library/share-with-users-roles.png)
-1. You can share the search with **Your Entire Organization**, or any combination of roles and users. <br/>![roles-users-list.png](/img/get-started/library/roles-users-list.png)
-1. The default permission level is **Edit**. Use the **Access** pull-down to select a different permission level. For information about permission levels and advanced options, see [Available Permission Levels](/docs/manage/content-sharing#available-permission-levels). <br/> ![permission-levels.png](/img/get-started/library/permission-levels.png)
+1. In your **Personal** folder, highlight a search and click the share icon. <br/><img src={useBaseUrl('img/get-started/library/share-icon.png')} alt="Share icon" style={{border: '1px solid gray'}} width="800" />
+1. On the sharing popup, click in the **Share this content...** field. <br/><img src={useBaseUrl('img/get-started/library/share-with-users-roles.png')} alt="Share this content" style={{border: '1px solid gray'}} width="800" />
+1. You can share the search with **Your Entire Organization**, or any combination of roles and users. <br/><img src={useBaseUrl('img/get-started/library/roles-users-list.png')} alt="Search entire org" style={{border: '1px solid gray'}} width="400" />
+1. The default permission level is **Edit**. Use the **Access** pull-down to select a different permission level. For information about permission levels and advanced options, see [Available Permission Levels](/docs/manage/content-sharing#available-permission-levels). <br/><img src={useBaseUrl('img/get-started/library/permission-levels.png')} alt="Edit permission level" style={{border: '1px solid gray'}} width="600" />
 1. You can share the search with a different set of users and roles, and different permission level. To do so, click **Add users with another access level**, and repeat steps 3 and 4.
 1. Click **Share**. 
 
 #### Unshare
 
-1. In the library, highlight a search and click the share icon. <br/>![Unshare.png](/img/get-started/library/share-icon.png)
-1. Click **See who has access**.<br/>![Only Me.png](/img/get-started/library/who-has-access.png)
-1. Click the trash can icon to unshare the search with a user or role.<br/>![unshare.png](/img/get-started/library/unshare.png)
+1. In the library, highlight a search and click the share icon. <br/><img src={useBaseUrl('img/get-started/library/share-icon.png')} alt="Share icon" style={{border: '1px solid gray'}} width="800" />
+1. Click **See who has access**.<br/><img src={useBaseUrl('img/get-started/library/who-has-access.png')} alt="See who has access" style={{border: '1px solid gray'}} width="600" />
+1. Click the trash can icon to unshare the search with a user or role.<br/><img src={useBaseUrl('img/get-started/library/unshare.png')} alt="Unshare search" style={{border: '1px solid gray'}} width="600" />
 1. Click **Save**.
 
 
