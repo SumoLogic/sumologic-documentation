@@ -4,6 +4,8 @@ title: Parse Variable Patterns Using Regex
 description: The Parse Regex operator enables you to extract nested fields and other complex data from log lines.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Parse Regex operator (also called the `extract` operator) enables users comfortable with regular expression syntax to extract more complex data from log lines. Parse regex can be used, for example, to extract nested fields.
 
 User added fields, such as extracted or parsed fields, can be named using alphanumeric characters as well as underscores (`_`). They must start and end with an alphanumeric character.
@@ -132,7 +134,7 @@ _sourceCategory=aws/vpc
 
 The output looks like:
 
-![Screenshot of Sumo Logic log search results. The table has columns for IP address, raw message data, and count. Each row contains detailed log information in JSON format, including fields like ingestion time, timestamp, message, event ID, and log group.](/img/search/searchquerylanguage/parse-operators/ParseRegexMulti.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/ParseRegexMulti.png')} alt="creenshot of Sumo Logic log search results. The table has columns for IP address, raw message data, and count. Each row contains detailed log information in JSON format, including fields like ingestion time, timestamp, message, event ID, and log group." style={{border: '1px solid gray'}} width="800" />
 
 ### Case insensitive parse regex
 

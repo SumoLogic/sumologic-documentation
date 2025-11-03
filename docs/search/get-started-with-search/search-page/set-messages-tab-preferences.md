@@ -12,13 +12,13 @@ You can change how messages are displayed on the **Messages** tab.
 
 To set Messages tab preferences, do the following:
 
-1. In the **Messages** tab, click the Settings gear icon in the upper right.<br/>![gear icon 2021.png](/img/search/get-started-search/search-page/gear-menu.png)    
+1. In the **Messages** tab, click the Settings gear icon in the upper right.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/gear-menu.png')} alt="Messages tab" style={{border: '1px solid gray'}} width="800" />
 1. Click **Display Message Preferences** to open the **Message Display Preferences** window.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/message-display-preferences.png')} alt="message-display-preferences.png" width="450"/>
 1. You have the following options:
     * **Sort by.** You can order messages by most recent or oldest.
     * **View n messages per page**. You can set the number of messages per page to a value between 15 and 500.
     * **Expand each message.** You can increase the number of lines that are displayed for each message. By default, this option is set to 10.
-    * **Show Metadata Fields.** When selected, metadata field names are displayed below each log message.<br/>![metadata fields in messages tab.png](/img/search/get-started-search/search-page/metadata-fields.png)
+    * **Show Metadata Fields.** When selected, metadata field names are displayed below each log message.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/metadata-fields.png')} alt="Metadata fields in messages tab" style={{border: '1px solid gray'}} width="800" />
     * **Show URI-decoded format.** By default, UTF characters in JSON are automatically decoded. Toggle this off if you want to intentionally include these when viewing JSON log messages in the UI.
     * **Dictionary Term Highlighting.** When selected, the terms "error" and "exception" are displayed in red text.
     * **Recent Messages First / Oldest Messages First.** By default, **Recent Messages First** is selected, but if you'd prefer to view oldest log messages at the top of the Messages pane, select **Oldest Messages First**.
