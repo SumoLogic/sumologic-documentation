@@ -106,13 +106,9 @@ This section provides instructions on authorizing the App Service to list the st
 
 To authorize the App Service to list the storage account key, do the following:
 
-1. Go to **Storage accounts** and click **Access control (IAM)**.
+1. Go to **Storage accounts** and click **Access control (IAM)**.<br/><img src={useBaseUrl('img/send-data/AzureBlob_AccessControl_IAM.png')} alt="Azure Blob Access Control IAM" style={{border: '1px solid gray'}} width="400" />
 
-    ![AzureBlob_AccessControl_IAM.png](/img/send-data/AzureBlob_AccessControl_IAM.png)
-
-1. Click the **Add** **+** at the top of the page.
-
-    ![AzureBlob_IAM_Add.png](/img/send-data/AzureBlob_IAM_Add.png)
+1. Click the **Add** **+** at the top of the page.<br/><img src={useBaseUrl('img/send-data/AzureBlob_IAM_Add.png')} alt="Azure Blob IAM add" style={{border: '1px solid gray'}} width="800" />
 
 1. Select **Add role assignment** from dropdown.
 1. In the **Add role assignment** window, go to **Role** tab and choose **Storage Blob Data Reader**. Click **Next**. <br/><img src={useBaseUrl('/img/send-data/storage-blob-data-reader.png')} alt="storage-blob-data-reader" width="800"/>
@@ -131,17 +127,11 @@ This section provides instructions for creating an event grid subscription that 
 
 To create an event grid subscription, do the following:
 
-1. In the left pane of the Azure portal click **All Services**, then search for and click **Event Grid Subscriptions**.
+1. In the left pane of the Azure portal click **All Services**, then search for and click **Event Grid Subscriptions**.<br/><img src={useBaseUrl('img/send-data/AzureBlob_EventGridSubscriptions.png')} alt="Azure Blob Event Grid Subscriptions" style={{border: '1px solid gray'}} width="600" />
 
-    ![AzureBlob_EventGridSubscriptions.png](/img/send-data/AzureBlob_EventGridSubscriptions.png)
+1. At the top of the **Event Subscriptions** page, click **+Event Subscription**.<br/><img src={useBaseUrl('img/send-data/AzureBlob_EventSubscriptionsPage.png')} alt="Azure Blob Event Subscription" style={{border: '1px solid gray'}} width="700" />
 
-1. At the top of the **Event Subscriptions** page, click **+Event Subscription**.
-
-    ![AzureBlob_EventSubscriptionsPage.png](/img/send-data/AzureBlob_EventSubscriptionsPage.png)
-
-    The Create Event Subscription dialog appears.
-
-    ![AzureBlob_CreatEventSubscription_dialog.png](/img/send-data/AzureBlob_CreatEventSubscription_dialog.png)
+    The Create Event Subscription dialog appears.<br/><img src={useBaseUrl('img/send-data/AzureBlob_CreatEventSubscription_dialog.png')} alt="Azure Blob Create Event Subscription dialog" style={{border: '1px solid gray'}} width="800" />
 
 1. Specify the following values for **Event Subscription Details**:
 
@@ -169,9 +159,7 @@ To create an event grid subscription, do the following:
    * **Endpoint Type**. Select **Event Hubs** from the dropdown.
    * **Endpoint.**  Click on **Select an endpoint.**
 
-    The Select Event Hub dialog appears.
-
-    ![AzureBlob_SelectEventHub-EventGrid.png](/img/send-data/AzureBlob_SelectEventHub-EventGrid.png)
+    The Select Event Hub dialog appears.<br/><img src={useBaseUrl('img/send-data/AzureBlob_SelectEventHub-EventGrid.png')} alt="Select Event Hub dialog" style={{border: '1px solid gray'}} width="400" />
 
 1. Specify the following Select Event Hub parameters, then click **Confirm Selection.**
 
@@ -182,9 +170,7 @@ To create an event grid subscription, do the following:
 1. Specify the following Filters tab options(Optional):
 
    * Check **Enable subject filtering**.
-   * To filter events by a container name, enter the following in the **Subject Begins With** field, replacing `<container_name>` with the name of the container from where you want to export logs: `/blobServices/default/containers/<container_name>/`
-
-   ![img](/img/send-data/AzureBlob_FiltersDialog.png)
+   * To filter events by a container name, enter the following in the **Subject Begins With** field, replacing `<container_name>` with the name of the container from where you want to export logs: `/blobServices/default/containers/<container_name>/`<br/><img src={useBaseUrl('img/send-data/AzureBlob_FiltersDialog.png')} alt="Create Event Subscription dialog" style={{border: '1px solid gray'}} width="800" />
 
 1. Click **Create**.
 
@@ -197,21 +183,18 @@ This assumes that your storage account access is enabled for selected networks.
 1. Create a subnet in a virtual network using the instructions in the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet#add-a-subnet). If you have multiple accounts in the same region, you can skip step 2 given below and use the same subnet and add it to the storage account as mentioned in step 3.
 1. Perform the steps below for BlobTaskConsumer function app:
    1. Go to **Function App > Settings > Networking**.
-   1. Under Outbound traffic, click on Vnet Integration. <br/>![azureblob-outbound](/img/send-data/appendblob/azureappendblob-outbound.png)
-   1. Add the Vnet and subnet created in Step 1. <br/>![azureblob-vnet](/img/send-data/azureblob-vnet.png)
-   1. Also copy the outbound IP addresses you’ll need to add in the firewall configuration of your storage account. <br/> ![azureblob-outboundip](/img/send-data/azureblob-outboundip.png)
-1. Go to your storage account from where you want to collect logs from. Go to Networking and add the same Vnet and subnet. <br/>![azureblob-storageacct](/img/send-data/azureblob-storageacct.png)
+   1. Under Outbound traffic, click on Vnet Integration. <br/><img src={useBaseUrl('img/send-data/appendblob/azureappendblob-outbound.png')} alt="Azure blob outbound" style={{border: '1px solid gray'}} width="600" />
+   1. Add the Vnet and subnet created in Step 1. <br/><img src={useBaseUrl('img/send-data/azureblob-vnet.png')} alt="Azure Blob Vnet" style={{border: '1px solid gray'}} width="800" />
+   1. Also copy the outbound IP addresses you’ll need to add in the firewall configuration of your storage account. <br/><img src={useBaseUrl('img/send-data/azureblob-outboundip.png')} alt="Azure Blob outbound" style={{border: '1px solid gray'}} width="800" />
+1. Go to your storage account from where you want to collect logs from. Go to Networking and add the same Vnet and subnet. <br/><img src={useBaseUrl('img/send-data/azureblob-storageacct.png')} alt="Azure Blob Storage account" style={{border: '1px solid gray'}} width="800" />
 1. Add the outbound IP addresses (copied in step 2.iv) from both BlobTaskConsumer functions under Firewall with each IP in a single row of Address range column.
-1. Verify by going to the subnet. You should see Subnet delegation and service endpoints as shown in the screenshot below. <br/>![azureblob-subnet](/img/send-data/azureblob-subnet.png)
+1. Verify by going to the subnet. You should see Subnet delegation and service endpoints as shown in the screenshot below. <br/><img src={useBaseUrl('img/send-data/azureblob-subnet.png')} alt="Azure Blob subnet" style={{border: '1px solid gray'}} width="800" />
 
 ## Upgrading Azure Functions
 
-1. Go to the resource group where the ARM template was deployed and go to each of the function apps.
-    ![azurefunctionapp-list](/img/send-data/azure_functionapp.png)
-1. Go to `Deployment -> Deployment Center` and click on `Sync`.
-    ![azurefunctionapp-sync](/img/send-data/azure_upgrade_sync.png)
-1. Go to `Logs` tab and check the `Status` column, it should show `Success`.
-    ![azurefunctionapp-status](/img/send-data/azure_upgrade_status.png)
+1. Go to the resource group where the ARM template was deployed and go to each of the function apps.<br/><img src={useBaseUrl('img/send-data/azure_functionapp.png')} alt="Azure function apps" style={{border: '1px solid gray'}} width="800" />
+1. Go to `Deployment -> Deployment Center` and click on `Sync`.<br/><img src={useBaseUrl('img/send-data/azure_upgrade_sync.png')} alt="Azure function app sync" style={{border: '1px solid gray'}} width="800" />
+1. Go to `Logs` tab and check the `Status` column, it should show `Success`.<br/><img src={useBaseUrl('img/send-data/azure_upgrade_status.png')} alt="Azure function app status" style={{border: '1px solid gray'}} width="800" />
 
 ## Azure Append Blob Limitations
 
