@@ -511,7 +511,7 @@ Compares two IPv4 addresses and returns true if the network prefixes match.
 
 The following expression returns "true":
 
-`compareCIDRPprefix("10.10.1.35", "10.10.1.100", "24")`
+`compareCIDRPrefix("10.10.1.35", "10.10.1.100", "24")`
 
 ### concat
 
