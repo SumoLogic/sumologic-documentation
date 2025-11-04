@@ -9,7 +9,6 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import TerraformLink from '../../../reuse/terraform-link.md';
 
 ## Availability
 
@@ -84,8 +83,10 @@ When you use custom subdomains in combination with SAML integrations [configured
 * Custom subdomains are not currently available for Sumo Logic accounts created through third-party integrations that require authentication using those integrations, such as Heroku and Jfrog.
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
 :::tip
-You can use Terraform to manage subdomains with the [sumologic_subdomain](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/subdomain) resource. 
+You can use Terraform to manage subdomains with the [`sumologic_subdomain`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/subdomain) resource. 
 
 <TerraformLink/>
 :::

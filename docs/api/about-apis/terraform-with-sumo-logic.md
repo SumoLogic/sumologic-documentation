@@ -28,7 +28,6 @@ You can use Terraform resources to manage all sorts of Sumo Logic components. Fo
 * Cloud SIEM
    * [Automation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_automation)
    * [Context actions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_context_action)
-   * [Custom insights](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_insight)
    * Entities
       * [Custom entity types](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_entity_type)
       * [Entity criticality](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_criticality_config)
@@ -37,6 +36,7 @@ You can use Terraform resources to manage all sorts of Sumo Logic components. Fo
       * [Inventory entity groups](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_inventory_entity_group_configuration)
    * Insights
       * [Configuration](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_configuration)
+      * [Custom insights](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_insight)
       * [Resolution](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_resolution)
       * [Status](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_status)
    * [Log mapping](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_log_mapping)

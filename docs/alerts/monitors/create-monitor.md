@@ -13,6 +13,14 @@ Our alerts use machine learning to analyze historical data, establish baselines,
 
 Integrated playbooks automate incident response by gathering diagnostics, notifying teams, triggering recovery actions, and streamlining workflows to improve response times. You can link playbooks to monitors to automate tasks such as restarting services or scaling infrastructure, ensuring swift and efficient anomaly resolution.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage monitors with the [`sumologic_monitor`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) and [`sumologic_monitor_folder`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor_folder) resources.
+
+<TerraformLink/>
+:::
+
 ## Open the New Monitor window
 
 There are several ways to create a new monitor, depending on where you are in Sumo Logic.
