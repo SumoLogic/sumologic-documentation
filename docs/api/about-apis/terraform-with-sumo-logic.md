@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Sumo Logic Terraform resources
 
-You can use Terraform to manage all sorts of Sumo Logic resources. Following are some examples.
+You can use Terraform resources to manage all sorts of Sumo Logic components. Following are some examples.
 <details>
 
 <summary>Resources</summary>
@@ -116,7 +116,7 @@ You can use Terraform to manage all sorts of Sumo Logic resources. Following are
 
 ## Sumo Logic Terraform data sources
 
-Use the following data sources to retrieve Sumo Logic data from your Terraform configuration.
+You can use Teraform data sources to to retrieve Sumo Logic data from your Terraform configuration. Following are some examples.
 
 <details>
 
