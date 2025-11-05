@@ -259,7 +259,7 @@ module.exports = {
     ],
     announcementBar: {
       id: 'domain',
-      content: '<b>We’ve moved!</b> Our docs are now at <a href="https://www.sumologic.com/help">sumologic.com/help</a>. Redirects are in place, but don’t forget to update your bookmarks.',
+      content: '🚀 Join us at <a href="https://www.sumologic.com/events/aws-reinvent">AWS re:Invent 2025 in Las Vegas, Dec 1-5</a>! Stop by Booth #1329 to see Sumo Logic Dojo AI in action and connect with our experts.',
       backgroundColor: '#b0eefe',
       textColor: '#091E42',
     },
