@@ -16,6 +16,14 @@ One Amazon S3 Source can collect data from a single S3 bucket. However, you c
 
 For information on S3 performance optimization, see [Request Rate and Performance Considerations](http://docs.aws.amazon.com/AmazonS3/latest/dev/request-rate-perf-considerations.html). 
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an S3 source with the [`sumologic_s3_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/s3_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Compressed data
 
 An S3 Source can collect either plain text or gzip-compressed text. Zip files are not supported.

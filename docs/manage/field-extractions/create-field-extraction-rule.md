@@ -15,6 +15,14 @@ You need the **Manage field extraction rules** [role capability](../users-roles
 Fields specified in field extraction rules are automatically added and enabled in your [Fields](/docs/manage/fields) table schema.
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a field extraction rule with the [`sumologic_field_extraction_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/field_extraction_rule) resource.
+
+<TerraformLink/>
+:::
+
 :::sumo Micro Lesson
 
 Learn how to create a FER through our video, "Creating a Field Extraction Rule".

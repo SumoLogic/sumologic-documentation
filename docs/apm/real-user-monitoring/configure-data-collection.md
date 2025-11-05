@@ -33,6 +33,14 @@ To utilize XHR and navigation/route changes, and errors collection, you must use
 
 For full end-to-end visibility, we recommended supplementing your RUM browser auto-instrumentation with the appropriate [back-end tracing instrumentation](/docs/apm/traces/get-started-transaction-tracing).
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a RUM source with the [`sumologic_rum_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/rum_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Step 1: Create a RUM HTTP Traces Source
 
 To configure a RUM HTTP Traces source:
