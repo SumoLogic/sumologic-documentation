@@ -16,7 +16,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/field-extractions/fer-templates/akamai-cloud-monitor')}><img src={useBaseUrl('img/integrations/security-threat-detection/Akamai_logo.png')} alt="icon" width="40"/><h4>Akamai Cloud Monitor</h4></a>
+  <a href={useBaseUrl('docs/manage/field-extractions/fer-templates/akamai-cloud-monitor')}><img src={useBaseUrl('img/integrations/security-threat-detection/akamai_logo.png')} alt="icon" width="40"/><h4>Akamai Cloud Monitor</h4></a>
   <p>Learn how to parse the common fields in your Akamai Cloud Monitor log.</p>
   </div>
 </div>
