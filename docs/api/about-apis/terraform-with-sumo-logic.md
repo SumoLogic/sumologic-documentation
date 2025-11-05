@@ -132,7 +132,7 @@ You can use Terraform data sources to retrieve Sumo Logic data from your Terrafo
 * [Partitions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/partitions)
    * [Partition details](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/partition)
 * [Personal folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/personal_folder)
-* [Roles](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/personal_folder)
+* [Roles](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/role)
    * [Roles v2](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/role_v2)
 * [Users](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/user)
 
