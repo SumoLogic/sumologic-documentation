@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<img src={useBaseUrl('path-to-your-icon.png')} alt="Thumbnail icon" width="45"/>
+`<img src={useBaseUrl('path-to-your-icon.png')} alt="Thumbnail icon" width="45"/>`
 
 \Introduction\
 
