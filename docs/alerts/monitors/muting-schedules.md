@@ -11,6 +11,14 @@ Setting a **Muting Schedule** allows you to pause alert notifications from monit
 * **Planned System Maintenance**. During system maintenance, notifications can get triggered because your application and infrastructure are being brought up or turned off. Such notifications are known false alarms and should be ignored.
 * **Off-Business Hours**. If your monitors reflect performance thresholds that are only applicable during business hours, such monitors might generate false alarms during off-business hours.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage muting schedules with the [`sumologic_muting_schedule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/muting_schedule) resource.
+
+<TerraformLink/>
+:::
+
 ## Prerequisites
 Make sure you've enabled the [**View Muting Schedules**](/docs/manage/users-roles/roles/role-capabilities/#alerting) and [**Manage Muting Schedules**](/docs/manage/users-roles/roles/role-capabilities/#alerting) user permissions, which allow you to define and edit a muting schedule.
 

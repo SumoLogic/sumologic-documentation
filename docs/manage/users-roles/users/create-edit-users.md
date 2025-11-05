@@ -8,6 +8,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This section has instructions for creating and editing users in Sumo Logic. For information about deleting a user, see [Delete a User](delete-user.md).
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a user with the [`sumologic_user`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/user) resource.
+
+<TerraformLink/>
+:::
+
 ## Create a user
 
 To create a user:

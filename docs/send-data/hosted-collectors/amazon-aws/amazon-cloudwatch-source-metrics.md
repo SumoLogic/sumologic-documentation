@@ -15,6 +15,14 @@ A Sumo Logic CloudWatch Source allows you to gather metrics data from an Amazon 
 We recommend using the newer AWS Kinesis Firehose for Metrics Source to collect CloudWatch metrics. For more information, see [Which to use: Kinesis Firehose source or CloudWatch source?](aws-kinesis-firehose-metrics-source.md)
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an Amazon CloudWatch source with the [`sumologic_cloudwatch_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudwatch_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Supported AWS metrics
 
 A Sumo CloudWatch Source only supports CloudWatch metrics that are emitted at a regular interval. It cannot ingest metrics that are emitted with significant latency, such as Amazon S3 Daily Storage Metrics or AWS Billing metrics, or at sporadic intervals, such as Amazon DynamoDB throttled events.

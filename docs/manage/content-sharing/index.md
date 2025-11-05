@@ -12,6 +12,14 @@ You can share apps, log searches, metric searches, dashboards, and folders with 
 
 <img src={useBaseUrl('img/content-sharing/ShareSearchPrime.png')} alt="Share dialog"  style={{border: '1px solid gray'}} width="700"/>
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage content sharing permissions with the [`sumologic_content_permission`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content_permission) resource.
+
+<TerraformLink/>
+:::
+
 ## Share from any location
 
 You can share content from the following locations:
