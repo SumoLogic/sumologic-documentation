@@ -15,6 +15,14 @@ A Sumo Logic AWS Metadata Source allows you to collect tags from EC2 instances r
 Collecting AWS Metadata requires [Collector](/docs/send-data/installed-collectors/sources) version 19.162+.
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an AWS Metadata Source with the [`sumologic_metadata_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/metadata_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Metrics
 
 Tags are automatically applied to:
