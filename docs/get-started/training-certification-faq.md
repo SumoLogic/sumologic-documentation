@@ -7,7 +7,7 @@ description: Find answers to frequently asked questions about Sumo Logic trainin
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-<a href="https://www.sumologic.com/learn/training"><img src={useBaseUrl('img/get-started/sumo-academy-light-mode.png')} alt="Sumo Logic Academy logo" className="academy-logo" width="150" /></a><br/><br/>
+<img src={useBaseUrl('img/get-started/sumo-academy.png')} alt="sumo logic academy" width="200"/><br/><br/>
 
 Sumo Logic Academy is your hub for training and professional development. All courses (self‑paced eLearning, public hands‑on virtual classes, and workshops) are free, with paid private instruction offerings available.
 
@@ -67,7 +67,7 @@ Self‑paced training is available in our [learning portal](#how-do-i-access-the
 
 Navigate to the course and click **Register**.
 
-![Steps showing how to register for a Sumo Logic course](/img/get-started/register.gif)
+<img src={useBaseUrl('img/get-started/register.gif')} alt="Steps showing how to register for a Sumo Logic course" style={{border: '1px solid gray'}} width="800" />
 
 ### How do I navigate inside a self‑paced course?
 
@@ -77,7 +77,7 @@ Navigate to the course and click **Register**.
 4. At the end of a section, click **Go to results**, then **Submit Results** and rate the section.
 5. Verify that a blue checkmark appears next to the completed section. Continue until all sections are complete.
 
-![Navigating sections and submitting results in a self-paced course](/img/get-started/exam-navigate.gif)
+<img src={useBaseUrl('img/get-started/exam-navigate.gif')} alt="Navigating sections and submitting results in a self-paced course" style={{border: '1px solid gray'}} width="800" />
 
 ### How do I complete a course?
 
@@ -201,7 +201,7 @@ All Sumo Logic training, including self-paced eLearning, hands-on public virtual
 
 After purchasing a certification voucher, the exam must be taken within one year from the date of issue.
 
-## Are continuing education credits included with the certification?
+### Are continuing education credits included with the certification?
 
 Not at this time.
 
@@ -247,6 +247,21 @@ You can retake your exam 48 hours after a previous attempt. Each retake requires
 ### Where can I find my Sumo Logic certification digital badges?
 
 After passing an exam, you'll receive a digital badge via Credly. Manage and share badges through the Credly portal. We encourage you to join the Sumo Logic Certification community on LinkedIn and add your badges to your profile.
+
+### How do I post my certification on LinkedIn?
+
+After earning a Sumo Logic Academy certification, you can share your achievement directly from Credly to LinkedIn.  
+
+1. Log in into your LinkedIn account.
+1. Log in into to your Credly account and open your profile.
+1. Find the certification badge you want to share and select it.
+1. Click **Share Badge** in the lower-right corner.
+1. Under the **Promote** section, click the **LinkedIn** option.
+1. In the panel that appears, keep both **Add to Profile** and **Share to Feed** checked, then click **Share to LinkedIn**.
+1. LinkedIn will open a confirmation panel displaying your certification details. Click **Save** on the lower right corner.
+1. When prompted with **Certification added**, click **Skip** to avoid posting a duplicate entry.
+
+Your new Sumo Logic certification will now appear under the **Licenses & certifications** section on your LinkedIn profile.
 
 ### My badges were issued to my work email address. Can I add a personal email address to my Credly account?
 

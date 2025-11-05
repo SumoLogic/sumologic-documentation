@@ -39,7 +39,7 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Download Search Results
     * View Collectors
 

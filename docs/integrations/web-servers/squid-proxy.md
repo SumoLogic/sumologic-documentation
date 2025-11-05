@@ -652,7 +652,7 @@ Use this dashboard to:
 * Get insights into information about the Uptime and bandwidth of Squid Proxy servers.
 * Get insights into information about the web browsing behavior of users using Top accessed URLs, denied URLs, 4xx errors URLs, 5xx errors URLs, and top remote hosts.
 
-<img src={useBaseUrl('img/integrations/web-servers/squid-proxy-Overview.png')} alt="Squid Proxy" />
+<img src={useBaseUrl('img/integrations/web-servers/squid-proxy-overview.png')} alt="Squid Proxy" />
 
 ### Protocol
 
@@ -715,7 +715,7 @@ Use this dashboard to:
 * To identify locations with slow average request response times.
 * Gain insights into the response times according to HTTP actions.
 
-<img src={useBaseUrl('img/integrations/web-servers/Squid-Proxy-Quality-of-Service.png')} alt="Squid Proxy" />
+<img src={useBaseUrl('img/integrations/web-servers/squid-proxy-quality-of-service.png')} alt="Squid Proxy" />
 
 ## Create monitors for Squid Proxy app
 

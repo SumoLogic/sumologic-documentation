@@ -257,6 +257,12 @@ module.exports = {
       { property: 'og:image:height', content: '628' },
       { property: 'og:image:alt', content: 'Sumo Logic Docs' },
     ],
+    announcementBar: {
+      id: 'domain',
+      content: '<b>We’ve moved!</b> Our docs are now at <a href="https://www.sumologic.com/help">sumologic.com/help</a>. Redirects are in place, but don’t forget to update your bookmarks.',
+      backgroundColor: '#b0eefe',
+      textColor: '#091E42',
+    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -267,6 +273,8 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
     algolia: {
       appId: '2SJPGMLW1Q',
@@ -274,12 +282,13 @@ module.exports = {
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
       insights: true,
-      askAi: {
-        assistantId: 'Gj8Bh1qOc2XJ',
-        indexName: 'crawler_sumodocs',
-        apiKey: 'fb2f4e1fb40f962900631121cb365549',
-        appId: '2SJPGMLW1Q',
-      },
+      // Testing AskAI in Algolia portal
+//    askAi: {
+//      assistantId: 'Gj8Bh1qOc2XJ',
+//      indexName: 'crawler_sumodocs',
+//      apiKey: 'fb2f4e1fb40f962900631121cb365549',
+//      appId: '2SJPGMLW1Q',
+//    },
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
       },

@@ -12,6 +12,14 @@ You can share apps, log searches, metric searches, dashboards, and folders with 
 
 <img src={useBaseUrl('img/content-sharing/ShareSearchPrime.png')} alt="Share dialog"  style={{border: '1px solid gray'}} width="700"/>
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage content sharing permissions with the [`sumologic_content_permission`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content_permission) resource.
+
+<TerraformLink/>
+:::
+
 ## Share from any location
 
 You can share content from the following locations:
@@ -89,19 +97,19 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/content-sharing/admin-mode"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Admin Mode</h4></a>
+  <a href={useBaseUrl('docs/manage/content-sharing/admin-mode')}><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Admin Mode</h4></a>
   <p>Learn how to control your content and add important items to the Admin Recommended folder.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/content-sharing/changing-alerts"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Changing Other Alerts</h4></a>
+  <a href={useBaseUrl('docs/manage/content-sharing/changing-alerts')}><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Changing Other Alerts</h4></a>
   <p>Learn how to modify or turn off alerts created by another user.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/content-sharing/content-sharing-faq"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>FAQ</h4></a>
+  <a href={useBaseUrl('docs/manage/content-sharing/content-sharing-faq')}><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>FAQ</h4></a>
   <p>Get to know the answers to basic questions around Content Sharing.</p>
   </div>
 </div>

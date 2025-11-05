@@ -25,6 +25,14 @@ Each laptop in the “laptops” group will automatically inherit the criticalit
 
 Note that when an insight is created, any tags that are assigned to the primary entity in the insight are automatically inherited by the insight. So, tags that an entity inherits from an entity group will also be inherited by insights that fire on the entity. (Such inheritance is not retro-active: insights that fired on an entity prior to the entity being tagged won’t be tagged.)
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage entity groups with the [`cse_entity_entity_group_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_entity_group_configuration) and [`cse_inventory_entity_group_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_inventory_entity_group_configuration) resources.
+
+<TerraformLink/>
+:::
+
 ## Entity group limits
 
 The number of entity groups you can configure per org varies by the type of the group:

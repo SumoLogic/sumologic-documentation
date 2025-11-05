@@ -21,32 +21,32 @@ You can also explore more Sumo Logic open-source projects on our [GitHub site](h
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/contributing/create-edit-doc"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Create or Edit a New Doc</h4></a>
+  <a href={useBaseUrl('docs/contributing/create-edit-doc')}><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Create or Edit a New Doc</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/contributing/remove-doc"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Delete a Doc</h4></a>
+  <a href={useBaseUrl('docs/contributing/remove-doc')}><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Delete a Doc</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/contributing/style-guide"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Style Guide</h4></a>
+  <a href={useBaseUrl('docs/contributing/style-guide')}><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Style Guide</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/contributing/glossary"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Glossary</h4></a>
+  <a href={useBaseUrl('docs/contributing/glossary')}><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Glossary</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/contributing/code-of-conduct"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Code of Conduct</h4></a>
+  <a href={useBaseUrl('docs/contributing/code-of-conduct')}><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Code of Conduct</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/contributing/word-list"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Word List</h4></a>
+  <a href={useBaseUrl('docs/contributing/word-list')}><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Word List</h4></a>
   </div>
 </div>
 </div>

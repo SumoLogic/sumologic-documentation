@@ -5,6 +5,8 @@ sidebar_label: Upgrade a Collector
 description: When you upgrade a Collector, the upgrade file is automatically downloaded and executed from Sumo Logic. You can also download the latest Collector version and upgrade your installed Collector using operating system commands.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Deploying an upgrade to one or more collectors can be done through Sumo Logic. When you initiate a collector upgrade, the installed collector downloads the upgrade package directly from the Sumo Logic service. We recommend you follow our [best practices](#collector-upgrade-best-practices) when you upgrade your Collectors.
 
 You can also downgrade a collector to a previous version, as described in this topic.
@@ -17,7 +19,7 @@ An upgrade requested through the web application uses HTTPS (port 443) to upgra
 
 When one or more collectors in your Sumo Logic account are eligible for an upgrade, you'll be notified through the collectors page of the Sumo Logic web application:
 
-![Upgrade collectors](/img/collector/upgrade-collectors-icon.png)
+<img src={useBaseUrl('img//collector/upgrade-collectors-icon.png')} alt="Upgrade collectors" style={{border: '1px solid gray'}} width="800" />
 
 :::important
 The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](/docs/api/collector-management/upgrade-downgrade-collectors).
@@ -35,16 +37,27 @@ To install an upgrade on one or more collectors:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Click the **Upgrade Collectors** link.
-1. Determine if you'd like to install the upgrade on individual collectors or on all collectors simultaneously. Then, choose one of the following:
-    * Click **Update** next to the name of a collector to install the upgrade just on that specific collector. This option can be used if a policy prevents you from upgrading every collector at the same time of day, or if you cannot deploy the upgrade all at once. Any collectors you choose not to upgrade will remain available in the upgrade dialog box so you can install the upgrade at a later time.
-    * If you can safely upgrade all collectors, click **Update All.**
-    :::note
-    We strongly advise you to validate collector upgrades on non-production hosts before upgrading production collectors.
-    :::
+1. Determine your collector's JRE version and then choose one of the following:
+  - **If your collector is already on the latest JRE version**:
+    
+    For collectors running on the latest JRE version, you have two ways to proceed with the upgrade:
+    - **Upgrade individual collectors**. Click **Upgrade** next to the name of a collector to install the upgrade just on that specific collector. This option can be used if a policy prevents you from upgrading every collector at the same time of day, or if you cannot deploy the upgrade all at once. Any collectors you choose not to upgrade will remain available in the upgrade dialog box so you can install the upgrade at a later time.
+    - **Upgrade all collectors at once**. If you can safely upgrade all collectors, click **Upgrade All.**
+        :::note
+        We strongly advise you to validate collector upgrades on non-production hosts before upgrading production collectors.
+        :::
+      <img src={useBaseUrl('/img/send-data/upgrade-collectors.png')} alt="icon" />
 
-![Upgrade collectors](/img/collector/upgrade-collectors-1.png)
+  - **If your collector is on the deprecated JRE version**:
+  
+    This section lists all collectors currently using a deprecated JRE version. To proceed with upgrading these collectors, you must first update their JRE to the latest version. Once that is done, you'll be able to upgrade the collectors themselves.
+    JRE upgrade options:
+    - **Upgrade individual collectors**. Click **Upgrade** next to the collector's name to update its JRE to the latest version.
+    - **Upgrade all collectors at once**. If you can safely upgrade all collectors, click **Upgrade All.**
+    
+    After the JRE is upgraded, the collectors will automatically move to the list of collectors running the latest JRE. From there, you can proceed to upgrade the collector itself.
 
-The upgrade process begins immediately after you click **Update** or **Update All**; the file is automatically downloaded and installed. You'll be notified when the upgrade has completed successfully.
+The upgrade process begins immediately after you click **Upgrade** or **Upgrade All**; the file is automatically downloaded and installed. You'll be notified when the upgrade has completed successfully.
 
 Collectors that are offline or that have already been upgraded aren't eligible for upgrade and won't be included in the list of available collectors in the upgrade collectors dialog box.
 
@@ -60,7 +73,7 @@ To downgrade one or more collectors to an earlier build:
 
 The upgrade/downgrade process begins immediately after you click a build.
 
-![Downgrade collector](/img/collector/change-version.png)
+<img src={useBaseUrl('img/collector/change-version.png')} alt="Downgrade collector" style={{border: '1px solid gray'}} width="600" />
 
 ### Troubleshooting upgrade failures
 
@@ -68,7 +81,7 @@ If collector upgrade fails, the existing version will continue running on that
 
 Click **Retry** to start the process over.
 
-![Retry collector upgrade](/img/collector/upgrade-collectors-troubleshoot.png)
+<img src={useBaseUrl('img/collector/upgrade-collectors-troubleshoot.png')} alt="Retry collector upgrade" style={{border: '1px solid gray'}} width="600" />
 
 Failure can occur for any of the following reasons:
 
@@ -117,7 +130,7 @@ While we make every effort to keep backwards compatibility for collectors, many 
 
 When one or more of your Collectors are eligible for an upgrade, you'll be notified through the collectors page in our UI. Follow the [instructions](upgrade-collectors.md) to upgrade (or downgrade) as needed.
 
-![Upgrade collectors with search](/img/collector/upgrade-collectors-icon.png)
+<img src={useBaseUrl('img/collector/upgrade-collectors-icon.png')} alt="Upgrade collectors with search" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 If you are performing a manual upgrade, make sure that you backup your `/<sumo_home>/config` directory before you upgrade because it stores the current source information. If any issues occur during upgrade that leave the Collector unable to connect to the service, or result in missing sources, you can restore this directory and restart the Collector to address the problem.

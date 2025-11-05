@@ -29,10 +29,8 @@ For Azure Cosmos DB, you can collect the following logs and metrics:
 
 * **Resource logs**. To learn more about the different resource log category types and schemas collected for Azure Cosmos DB, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#resource-logs).
 
-* **Platform Metrics for Azure Cosmos DB**. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#metrics). These metrics are available in the following namespaces:
-   * `Microsoft.DocumentDB/applicationGateways`
-   * `Microsoft.DocumentDB/cassandraClusters`
-   * `Microsoft.DocumentDB/mongoClusters`
+* **Platform Metrics for Azure Cosmos DB**. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#metrics). These metrics are available within the namespace `Microsoft.DocumentDB/DatabaseAccounts`
+
 * **Activity logs**. Provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 
 ## Setup

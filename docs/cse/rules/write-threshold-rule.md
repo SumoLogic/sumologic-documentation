@@ -13,6 +13,14 @@ This topic has information about the threshold rules and how to create them in t
 
 If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage threshold rules with the [`sumologic_cse_threshold_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_threshold_rule) resource.
+
+<TerraformLink/>
+:::
+
 ## About threshold rules
 
 A threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. 
