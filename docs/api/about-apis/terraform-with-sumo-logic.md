@@ -19,6 +19,7 @@ You can use Terraform to manage all sorts of Sumo Logic resources. Here are some
 * [Manage monitors](https://www.sumologic.com/blog/terraform-sumo-logic)
 * [Manage collectors, users, and roles](https://www.sumologic.com/blog/terraform-provider-hosted)
 * [Deploy solutions (like AWS Observability)](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/)
+* [Manage Cloud SIEM rules](https://www.sumologic.com/guides/detections-as-code-setup)
 
 ## Prerequisites
 
@@ -241,5 +242,6 @@ The state file is used by Terraform to track the current infrastructure state in
 * Blogs:
       * [How to Use the New Sumo Logic Terraform Provider for Hosted Collectors](https://www.sumologic.com/blog/terraform-provider-hosted)
       * [Terraform and Sumo Logic – Build Monitoring into your Cloud Infrastructure](https://www.sumologic.com/blog/terraform-sumo-logic)
+      * [Build a detection-as-code pipeline: Your guide to managing Sumo Logic Cloud SIEM rules in GitHub](https://www.sumologic.com/guides/detections-as-code-setup)
 * Terraform resource: [Sumo Logic Provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs)
 * GitHub: [terraform-provider-sumologic](https://github.com/SumoLogic/terraform-provider-sumologic)

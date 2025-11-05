@@ -505,11 +505,11 @@ In this scenario, there is no time zone in the sample message at all. However, t
 
 If you are experiencing apparent delays during ingest (receiving data), select the "Use Receipt Time" check box under the time picker. This will present data in the order in which it was received by Sumo, as well as display the timestamp that has been detected/applied.
 
-![UseReceiptTime_chekcbox.png](/img/send-data/UseReceiptTime_chekcbox.png)
+<img src={useBaseUrl('img/send-data/UseReceiptTime_chekcbox.png')} alt="Use receipt time checkbox" style={{border: '1px solid gray'}} width="800" />
 
 A gap between the two values indicates a potential misconfiguration of the time zone setting, particularly when the gap is (nearly) a multiple of hours, such as in the following example.
 
-![TimeDiscrepancy.png](/img/send-data/TimeDiscrepancy.png)
+<img src={useBaseUrl('img/send-data/TimeDiscrepancy.png')} alt="Time discrepancy" style={{border: '1px solid gray'}} width="500" />
 
 Review your time zone settings, and apply a time zone on the Source that reflects what the time zone is of the sending application. For example, if your application is sending events with a UTC timestamp, you can specify this in the Source configuration.
 
@@ -601,7 +601,7 @@ To view Source settings:
 1. Click **Edit** to the right of the Source's name.
 1. Under **Advanced**, choose one of the following:
 
-    ![img](/img/send-data/timezone_parsing_options.png)
+    <img src={useBaseUrl('img/send-data/timezone_parsing_options.png')} alt="Time zone parsing options" style={{border: '1px solid gray'}} width="500" />
 
    * Extract timestamp information from log file entries. Select this option if you'd like Sumo Logic to always extract timestamps from log messages. If no timestamp is detected, Sumo Logic uses the time when the data is received. Generally, this is the best option (it's also selected by default).
    * Use time zone from log file. Choose a time zone that Sumo Logic can use if log files do not have a time stamp. If a Collector is running on a computer set to the UTC time zone without an offset, Sumo Logic will use this time zone.

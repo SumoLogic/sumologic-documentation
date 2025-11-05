@@ -107,6 +107,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/chatgpt-compliance')}><img src={useBaseUrl('/img/send-data/chatgpt-compliance.png')} alt="icon" width="50"/><h4>ChatGPT Compliance</h4></a>
+  <p>Monitor how ChatGPT is used across your organization to ensure adherence to corporate governance and data protection standards.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/cisco-amp')}><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="70"/><h4>Cisco AMP</h4></a>
   <p>Monitor and analyze the host activity status and file types implicated in cybersecurity incidents.</p>
   </div>
@@ -175,6 +181,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/cyberark-audit')}><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk Audit</h4></a>
   <p>Gather information about your organization's cybersecurity practices to strengthen security.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/databricks-audit')}><img src={useBaseUrl('img/collector/databricks-icon.png')} alt="icon" width="70"/><h4>Databricks Audit</h4></a>
+  <p>Analyze your organization's security practices to identify emerging threats and compliance risks.</p>
   </div>
 </div>
 <div className="box smallbox card">
