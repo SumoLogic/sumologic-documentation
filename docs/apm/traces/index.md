@@ -32,7 +32,7 @@ This guide provides information to work with your tracing data.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/apm/services-list-map')}><img src={useBaseUrl('img/apm/traces/services-map.png')} alt="icon" width="33"/><h4>Services List and Services Map</h4></a>
+  <a href={useBaseUrl('docs/apm/services-list-map')}><img src={useBaseUrl('img/apm/services-map-icon.png')} alt="icon" width="33"/><h4>Services List and Services Map</h4></a>
   <p>View your application topology and investigate microservice interactions.</p>
   </div>
 </div>
