@@ -29,8 +29,15 @@ In the procedure below, you configure a Cloud Syslog Source. This will generate 
 
 Then you set up TLS by downloading a cert to your server (see procedures for [rsyslog](/docs/send-data/hosted-collectors/cloud-syslog-source/rsyslog/#setup-tls) and [syslog-ng](/docs/send-data/hosted-collectors/cloud-syslog-source/syslog-ng/#setup-tls)). Download the AWS Certificate Manager (ACM) certificate from the following location: https://www.amazontrust.com/repository/AmazonRootCA1.cer.
 
-Sumo Logic supports syslog clients, including syslog-ng and rsyslog. Follow the instructions in the appropriate section below to configure your server to send syslog data. If syslog data does not appear in Sumo Logic, refer to
-[Troubleshooting](#troubleshooting) below.
+Sumo Logic supports syslog clients, including syslog-ng and rsyslog. Follow the instructions in the appropriate section below to configure your server to send syslog data. If syslog data does not appear in Sumo Logic, refer to [Troubleshooting](#troubleshooting) below.
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a Cloud Syslog source with the [`sumologic_cloudsyslog_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudsyslog_source) resource.
+
+<TerraformLink/>
+:::
 
 ## Configure a Cloud Syslog Source
 

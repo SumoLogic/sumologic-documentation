@@ -15,6 +15,14 @@ Local Windows Events Sources can only be configured on systems running Windows S
 
 Local Windows Event Log Sources are only for collecting Windows Event Logs. All other types of log Sources need to be configured either as a Remote File Source or as a Local File Source.
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a Local Windows Event Log Source with the [`sumologic_local_windows_event_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/local_windows_event_source) resource.
+
+<TerraformLink/>
+:::
+
 To configure a Local Windows Event Log Source:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 

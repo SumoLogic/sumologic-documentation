@@ -13,6 +13,14 @@ Source templates provide a powerful mechanism to simplify and standardize data c
 Source templates are not available for locally managed collectors.
 :::
 
+import TerraformLink from '../../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a source template with the [`sumologic_source_template`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/source_template) resource.
+
+<TerraformLink/>
+:::
+
 ## Benefits of source templates
 
 * **Efficiency**. Create a template once and apply it to multiple collectors.
