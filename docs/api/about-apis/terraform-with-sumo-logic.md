@@ -116,7 +116,7 @@ You can use Terraform resources to manage all sorts of Sumo Logic components. Fo
 
 ## Sumo Logic Terraform data sources
 
-You can use Teraform data sources to to retrieve Sumo Logic data from your Terraform configuration. Following are some examples.
+You can use Terraform data sources to to retrieve Sumo Logic data from your Terraform configuration. Following are some examples.
 
 <details>
 
