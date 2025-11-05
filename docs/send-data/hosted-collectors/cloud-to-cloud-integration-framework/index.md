@@ -7,7 +7,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud-to-Cloud Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. This data often includes custom events and user data critical for operations monitoring, security, and compliance use cases. As a fully managed collection system, integrations running within the Cloud-to-Cloud Integration Framework provide a secure endpoint to receive event data in your account. Integration authentication, scheduling, and state tracking are all managed by the framework.
 
-
 ## Limitations
 
 * Each account is limited to 50 Cloud-to-Cloud Sources.
@@ -44,6 +43,14 @@ For the Federal environments, a different set of Static IPs is available for eac
 ## Integrations
 
 The topics below are the available integrations. In Sumo Logic these are called Sources. Check out the Sources we have available in beta.
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a cloud-to-cloud source with the [`sumologic_cloud_to_cloud_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloud_to_cloud_source) resource.
+
+<TerraformLink/>
+:::
 
 ## Versions
 

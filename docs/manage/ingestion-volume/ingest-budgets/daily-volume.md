@@ -10,6 +10,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 If you want to use APIs to manage ingest budgeting, you must use [Ingest Budget Management V2 APIs](/docs/api/ingest-budget-v2/). Ingest Budget Management V1 APIs have been removed and are no longer supported.
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage ingest budgets with the [`sumologic_ingest_budget_v2`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/ingest_budget_v2) resource.
+
+<TerraformLink/>
+:::
+
 Ingest budgets control the daily volume of log data sent to Sumo Logic. Log data can be assigned to an ingest budget that defines a daily log capacity limit. The capacity is tracked based on the combined volume from all sources of log data. When an ingest budget's capacity is reached you can have Sumo Logic stop collecting the log data assigned to it to control costs.
 
 Ingest budgets automatically reset their capacity utilization tracking every 24 hours based on the time and time zone you specify. For example, you can schedule an ingest budget to refresh every day at 02:00 in the America/Los_Angeles time zone. You can manually [reset an ingest budget](#reset-ingest-budget) at any time.

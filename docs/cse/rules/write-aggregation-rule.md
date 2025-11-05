@@ -12,8 +12,17 @@ import Iframe from 'react-iframe';
 
 This topic has information about Cloud SIEM aggregation rules and how to write them.
 
-:::tip
+:::info
 If you are new to writing your own Cloud SIEM rules, see [Before You Write a Custom Rule](/docs/cse/rules/before-writing-custom-rule) for tips and techniques that are useful for getting started.
+:::
+
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage aggregation rules with the [`sumologic_cse_aggregation_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_aggregation_rule) resource.
+
+<TerraformLink/>
 :::
 
 ## About aggregation rules

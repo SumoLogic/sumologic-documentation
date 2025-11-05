@@ -15,6 +15,14 @@ Log data for Google Cloud Platform (GCP) services is collected and exposed thro
 Google no longer requires a pub/sub domain to be [verified](https://cloud.google.com/pubsub/docs/push). You no longer have to set up domain verification with your GCP Source endpoint.
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a Google Cloud Platform source with the [`sumologic_gcp_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/gcp_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Configure a Google Cloud Platform Source
 
 The Google Cloud Platform (GCP) Source receives log data from Google Pub/Sub.

@@ -20,6 +20,14 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 
 For details on the limitations of Installed Collectors and how they work see About Installed Collectors.
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a local file source with the [`sumologic_local_file_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/local_file_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Supported encoding for local file sources
 
 Local File Sources can collect logs that use the following encoding:

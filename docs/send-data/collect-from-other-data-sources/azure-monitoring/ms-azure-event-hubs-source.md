@@ -10,6 +10,14 @@ import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an Azure Event Hubs source with the [`sumologic_azure_event_hub_log_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/azure_event_hub_log_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Data collected
 
 The Azure platform can be configured to export logs to one or more Event Hub destinations. Platform logs include:

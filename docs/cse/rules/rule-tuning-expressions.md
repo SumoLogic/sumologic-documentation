@@ -38,6 +38,16 @@ Here’s what the example tuning expression looks like in the Cloud SIEM UI.
 
 <img src={useBaseUrl('img/cse/example-expression.png')} alt="Example expression" style={{border: '1px solid gray'}} width="700"/>
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage rule tuning expressions with the [`rule_tuning_expression`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_rule_tuning_expression) resource.
+
+<TerraformLink/>
+:::
+
+
+
 ## Writing a tuning expression
 
 Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#about-rule-expressions).
