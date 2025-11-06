@@ -76,7 +76,7 @@ Each health event log has common keys that categorize it to a product area and p
 
 ## Configure Scheduled Search
 
-Configuring the scheduled search for the selected health event will help you with timely alerts to all the recepients when the health event is triggered everytime. To configure, follow the below steps:
+Configuring the scheduled search for the selected health event will help you with timely alerts to all the recipients when the health event is triggered every time. To configure, follow the below steps:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Monitoring > Health Events**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Health Events**. <br/><img src={useBaseUrl('/img/health-events/health-events-table.png')} alt="health-events-table" style={{border: '1px solid gray'}} width="800"/>
 1. Click on the required row to view the details of a health event. <br/><img src={useBaseUrl('/img/health-events/health-event-detail.png')} alt="health-events-detial" style={{border: '1px solid gray'}} width="400"/>
@@ -129,7 +129,7 @@ It may take up to 15 minutes for a 90% usage breach for Lookup Tables, Partition
     - **Service**. Displays the specific resource or service affected by the event. 
     - **Error Code**. A numeric code associated with the error, that provides a quick reference for troubleshooting or mapping to known issue types.
     - **Error Info**. Detailed information about the event. This may include error context and suggested corrective actions.
-    - **Minutes Since Last Heatbeat**. The number of minutes that have elapsed since the system last received a heartbeat signal from the resource. A higher number may indicate the resource is offline or unresponsive. This field is only available for *Collector* resource type.
+    - **Minutes Since Last Heartbeat**. The number of minutes that have elapsed since the system last received a heartbeat signal from the resource. A higher number may indicate the resource is offline or unresponsive. This field is only available for *Collector* resource type.
 
 ## View Health Events in Collection page
 
@@ -158,6 +158,6 @@ Creating a query that defines built-in metadata field values in the scope can he
 
 | **Metadata Field** | **Assignment Description** |
 |:--|:--|
-| _sourceCategory | Value of the [common parameter](#common-parameters), `subsystem`. |
-| _sourceName | Value of the [common parameter](#common-parameters), `eventName`. |
+| _sourceCategory | Value of the [common parameter](#parameters-table), `subsystem`. |
+| _sourceName | Value of the [common parameter](#parameters-table), `eventName`. |
 | _sourceHost | The remote IP address of the host that made the request. If not available the value will be `no_sourceHost`. |
