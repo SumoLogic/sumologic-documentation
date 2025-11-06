@@ -42,7 +42,7 @@ On the health events table, you can search, filter, and sort incidents by ke
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the health events table, in the main Sumo Logic menu select **Manage Data > Monitoring > Health Events**. 
 
-<img src={useBaseUrl('img/health-events/health-events-table.png')} alt="Health events tabl" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/health-events/health-events-table.png')} alt="Health events table" style={{border: '1px solid gray'}} width="800" />
 
 Click on a row to view the details of a health event.
 
