@@ -23,7 +23,7 @@ Our Google Firestore integration support two types of authentication, Service Ac
 
 ## Required AWS details from Sumo Logic
 
-To configure the Google Cloud IAM integration using WIF authentication, you need the following AWS details from Sumo Logic. These details are essential for setting up the Workload Identity Federation (WIF) credentials in Google Workspace:
+To configure the Google Firestore integration using WIF authentication, you need the following AWS details from Sumo Logic. These details are essential for setting up the Workload Identity Federation (WIF) credentials in Google Workspace:
 * Deployment name is the unique name of your Sumo Logic [deployment](/docs/api/about-apis/getting-started/#documentation), for example, `dub`, `fra`, etc. 
 * Sumo Logic AWS account ID: `926226587429`
 * Sumo Logic AWS role: `<deployment_name>-csoar-automation-gcpiam`
@@ -33,13 +33,13 @@ To configure the Google Cloud IAM integration using WIF authentication, you need
 
 ### Workload Identity Federation (WIF) authentication
 
-To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation) in Google Workspace needed to configure the Google Cloud IAM integration, follow these steps:
+To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation) in Google Workspace needed to configure the Google Firestore integration, follow these steps:
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
 3. Go to the **API&Services**
-4. In the same page click on **ENABLED API AND SERVICES** and search for Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API and enable it all.
+4. In the same page click on **ENABLED API AND SERVICES** and search for Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API, Google Firestore API and enable it all.
 5. Go to the **IAM & Admin** > **Service Accounts** page.
-6. Click **CREATE SERVICE ACCOUNT** [Service Account](https://cloud.google.com/iam/docs/service-accounts-create) is required to access the Google Cloud IAM.
+6. Click **CREATE SERVICE ACCOUNT** [Service Account](https://cloud.google.com/iam/docs/service-accounts-create) is required to access the Google Firestore.
 7. While creating the service account, in **Permissions** add the role **Service Account Token Creator** and click on **DONE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-11.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
 8. Go to the **IAM & Admin** > **Workload Identity Federation** page. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-4.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
 9. Click **CREATE POOL**, provide the details, and click on **CONTINUE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-5.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
@@ -52,7 +52,7 @@ To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-
 16. Click on **Grant Access** > **Grant access using service account impersonation**. 
 17. Select the service account which created above, select the principle as aws_role and provide the arn `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}` and click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-10.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
 18. Again go to **Grant Access** > **Grant access using service account impersonation**. Select the service account which was created above. Select the principle as `aws_role` and provide the arn `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}/{SumoAWSLambdaFunction}`. Click on **SAVE**. 
-19. Download the WIF `conf.json` file. Make sure you save it in a safe place. Use the JSON content to configure the Google Cloud IAM integration to use WIF authentication in Automation Service and Cloud SOAR. 
+19. Download the WIF `conf.json` file. Make sure you save it in a safe place. Use the JSON content to configure the Google Firestore integration to use WIF authentication in Automation Service and Cloud SOAR.
 
 ### Service Account authentication
 
