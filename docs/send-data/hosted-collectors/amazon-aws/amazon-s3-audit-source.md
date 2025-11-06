@@ -20,3 +20,11 @@ To configure an Amazon S3 Audit Source:
 1. **Optional:** Install the Sumo Logic App for S3 Audit.
 
 See [AWS Sources](aws-sources.md) for full details on setting up and configuring.
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an S3 audit source with the [`sumologic_s3_audit_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/s3_audit_source) resource.
+
+<TerraformLink/>
+:::

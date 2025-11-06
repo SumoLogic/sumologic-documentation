@@ -16,6 +16,14 @@ Opposed to [Access Keys](access-keys.md), you can embed your Installation Tokens
 Multiple collectors can use the installation token. Additionally, installation tokens are only used to initially register the collectors to the account, and are not used by the collector after that point. 
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a token with the [`sumologic_token`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/token) resource.
+
+<TerraformLink/>
+:::
+
 ## Limitations
 
 * Your account can have up to 100 Installation Tokens, active and inactive.

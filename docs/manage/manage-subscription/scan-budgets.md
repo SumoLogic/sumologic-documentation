@@ -8,6 +8,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Scan budget allows you to configure limits for individual users and helps admins assign roles for easier group selection. This method provides flexibility in your actions when the budget limit is reached.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a scan budget with the [`sumologic_scan_budget`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/scan_budget) resource.
+
+<TerraformLink/>
+:::
+
 ## Availability
 
 | Account Type | Account Level |

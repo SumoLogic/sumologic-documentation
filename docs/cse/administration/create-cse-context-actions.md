@@ -26,6 +26,14 @@ An authorized user can configure context actions and assign them to particular e
 
 The context actions menu will be available for any of these types, wherever they appear in the Cloud SIEM UI.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage context actions with the [`sumologic_cse_context_action`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_context_action) resource.
+
+<TerraformLink/>
+:::
+
 ## How a user accesses context actions
 
 A user runs a context action by clicking the context action icon <img src={useBaseUrl('img/cse/context-action-icon.png')} alt="Context action icon" style={{border: '1px solid gray'}} width="20"/> next to an entity, record field, or IOC and choosing an action from the list that appears. The icon appears when you hover over the value of the item.

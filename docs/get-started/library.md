@@ -54,6 +54,13 @@ Do any of the following from the information panel in the library:
 * Click **Share** or **Unshare** to change the sharing settings for the item.
 * Click **Move** to move the item to another folder in the library. Select the new location, and click **Move**.
 
+import TerraformLink from '../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage content such as intems in your personal folder with the [`sumologic_content`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content) resource.
+
+<TerraformLink/>
+:::
 
 ## Personal Folder
 
@@ -82,6 +89,12 @@ To add a folder to the library:
 1. Click **Add New > New Folder**.
 1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/><img src={useBaseUrl('img/get-started/library/AddFolder.png')} alt="Add Folder dialog" style={{border: '1px solid gray'}} width="400" />
 1. The new folder is added to the folder list in alphabetical order.
+
+:::tip
+You can use Terraform to manage folders with the [`sumologic_folder`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/folder) resource.
+
+<TerraformLink/>
+:::
 
 ### Add Subfolders
 

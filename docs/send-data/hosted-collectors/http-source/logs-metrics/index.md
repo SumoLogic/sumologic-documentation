@@ -15,6 +15,14 @@ With an HTTP Logs and Metrics Source you can upload logs and metrics from data s
 
 When you set up an HTTP Logs and Metrics Source, a unique URL is assigned to that source. The generated URL is a long string of letters and numbers. You can generate a new URL at any time. For more information, see [Generating a new URL](../generate-new-url.md).
 
+import TerraformLink from '../../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an HTTP source with the [`sumologic_http_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/http_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Data payload considerations
 
 We recommend that the data payload of a POST request have a size, before compression, of 100KB to 1MB.

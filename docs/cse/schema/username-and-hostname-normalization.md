@@ -73,6 +73,13 @@ Following is an example configuration:
 
 If no name normalization is configured, the system will continue to operate as it does today.  If normalization is then enabled, any signals already created in the system will use the non-normalized form of the name.  Any new signals will use the normalized name.  This means there is potential for insights to be uncorrelated between the two different name forms for one insight window.  This is especially true as all usernames will now be lowercase.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage entity normalization with the [`sumologic_cse_entity_normalization_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_normalization_configuration) resource.
+
+<TerraformLink/>
+:::
 
 ## Domain normalization
 
