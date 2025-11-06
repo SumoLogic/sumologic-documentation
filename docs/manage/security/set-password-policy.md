@@ -10,13 +10,21 @@ Account admins with the Manage Password Policy capability can set the account's 
 
 For details on password policies and Multi-account Access, see [Multi-Account Access](../users-roles/users/multi-account-access.md). 
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to set the password policy with the [`sumologic_password_policy`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/password_policy) resource.
+
+<TerraformLink/>
+:::
+
 ## Changing the password policy
 
 Admins with Manage Password Policy capability can make changes at any time for users in their organization. The updated settings are applied to each user's account the next time he or she changes their password.
 
 To change the password policy:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Password Policy**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Password Policy**. 
 2. Change any of the following: <br/><img src={useBaseUrl('img/security/Set_Passwod_Policy.png')} alt="Password Policy tab" style={{border: '1px solid gray'}} width="600" />
 
     * **Passwords expire in.** This setting allows an admin to set the number of days after a user’s password was last changed to when the user is forced to change their password. The minimum is **30 days**.

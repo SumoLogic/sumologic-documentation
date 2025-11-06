@@ -21,7 +21,7 @@ Just as for entities of built-in types listed above—IP addresses, MAC addresse
 
 To create a custom entity type:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Custom Types**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Custom Types**. You can also click the **Go To...** menu at the top of the screen and select **Custom Types**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Custom Types**. You can also click the **Go To...** menu at the top of the screen and select **Custom Types**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Custom Types**. 
 1. On the **Custom Entity Types** tab click **+ Add Custom Type**. 
 2. The **Add Custom Entity Type** popup appears. <br/><img src={useBaseUrl('img/cse/create-custom-entity-type.png')} alt="Create custom entity type" style={{border: '1px solid gray'}} width="400"/>
 3. **Name**. Enter a meaningful name for the custom entity type. The name can include alphanumeric characters and spaces. The name you enter will appear as the **Name** of the custom entity type on the **Custom Entity Type** page. 
@@ -31,3 +31,11 @@ To create a custom entity type:
     :::
 5. **Fields**. Use the dropdown list to select the schema attribute or attributes you want to associate with the custom entity type.
 6. Click **Save**.
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage custom entity types with the [`sumologic_cse_custom_entity_type`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_entity_type) resource.
+
+<TerraformLink/>
+:::

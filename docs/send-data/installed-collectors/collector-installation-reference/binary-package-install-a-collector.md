@@ -13,11 +13,11 @@ This procedure is for Collector version 19.137 and later. If you have Collecto
 
 Before you begin:
 
-* Install the version of JRE you want to use. The binary installation process does not include JRE installation. Download the JRE here: https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.htm
+* Install the version of JRE you want to use. The binary installation process does not include JRE installation. Download the JRE here: https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html
 * Download the binary file from either of these locations:  
 
   * Binary package
-     1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+     1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
      1. Click **Add Collector > Installed Collector > Install a Binary Package**.
   * Static download link: https://collectors.sumologic.com/rest/download/tar
 

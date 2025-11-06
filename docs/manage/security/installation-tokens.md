@@ -16,6 +16,14 @@ Opposed to [Access Keys](access-keys.md), you can embed your Installation Tokens
 Multiple collectors can use the installation token. Additionally, installation tokens are only used to initially register the collectors to the account, and are not used by the collector after that point. 
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a token with the [`sumologic_token`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/token) resource.
+
+<TerraformLink/>
+:::
+
 ## Limitations
 
 * Your account can have up to 100 Installation Tokens, active and inactive.
@@ -24,12 +32,11 @@ Multiple collectors can use the installation token. Additionally, installation t
 
 ## Manage Installation Tokens
 
-Installation Tokens in your account are manageable on the Installation Tokens page.
-
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Installation Tokens page, in the main Sumo Logic menu select **Administration > Security > Installation Tokens**. 
+Installation Tokens in your account are manageable on the Installation Tokens page. 
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the Installation Tokens page, in the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Installation Tokens**. You can also click the **Go To...** menu at the top of the screen and select **Installation Tokens**. 
  
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Installation Tokens page, in the main Sumo Logic menu select **Administration > Security > Installation Tokens**.
 
 Managing Installation Tokens requires the **Manage Tokens** role capability.
 

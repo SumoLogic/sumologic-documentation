@@ -37,7 +37,7 @@ You need to have a Symantec Web Security Service username and password. To creat
 
 1. Navigate to **Account Configuration > API Credentials**.
 1. Click **Add API Credentials**.
-1. WSS displays the **Add API Credential** dialog, which contains the random characters **Username** and **Password**.<br/> ![Symantec generate api creds.png](/img/send-data/Symantec-generate-api-creds.png)
+1. WSS displays the **Add API Credential** dialog, which contains the random characters **Username** and **Password**.<br/><img src={useBaseUrl('img/send-data/Symantec-generate-api-creds.png')} alt="Symantec generate api creds" style={{border: '1px solid gray'}} width="400" />
    1. Copy the **Username** and **Password** keys into a text file.
    1. Select the API **Expiry** you'd like to set.
       * Time-based—You define the date and time when this token expires.
@@ -53,10 +53,10 @@ When you create a Symantec Web Security Service Source, you add it to a Hosted 
 
 To configure a Symantec Web Security Service Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Select **Symantec Web Security Service**.<br/> ![symantec source icon.png](/img/send-data/symantec-source-icon.png)
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/> ![Symantec WSS version 1.2.3.png](/img/send-data/Symantec-WSS.png)
+1. Select **Symantec Web Security Service**.<br/><img src={useBaseUrl('img/send-data/symantec-source-icon.png')} alt="Symantec source icon" style={{border: '1px solid gray'}} width="100" />
+1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/><img src={useBaseUrl('img/send-data/Symantec-WSS.png')} alt="Symantec WSS version 1.2.3" style={{border: '1px solid gray'}} width="400" />
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.

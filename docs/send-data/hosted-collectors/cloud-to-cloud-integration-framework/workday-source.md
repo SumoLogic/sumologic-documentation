@@ -128,7 +128,7 @@ When you create a Citrix Cloud Source, you add it to a Hosted Collector. Before 
 
 To configure a Workday Source, follow the steps below:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select for and select **Workday**.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The **description** is optional.
@@ -209,7 +209,7 @@ source in the Collectors page.
 
 If the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
 
-![troubleshooting.png](/img/send-data/workday-troubleshooting.png)
+<img src={useBaseUrl('img/send-data/workday-troubleshooting.png')} alt="Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 
 The following section details how you can resolve various errors.
 

@@ -5,7 +5,7 @@ sidebar_label: Duo
 tags:
   - cloud-to-cloud
   - duo
-description: The Duo Source provides a secure endpoint to receive authentication logs from the Duo Authentication Logs API.
+description: The Duo Source provides a secure endpoint to receive logs from multiple API endpoints.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
@@ -13,13 +13,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="55"/>
 
-The Duo Source provides a secure endpoint to receive authentication logs from the Duo [Authentication Logs API](https://duo.com/docs/adminapi#logs). It securely stores the required authentication, scheduling, and state tracking information.
+The Duo Source collects logs from multiple Duo API endpoints. It securely stores the required authentication, scheduling, and state tracking information.
 
 ## Data collected
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Authentication Logs](https://duo.com/docs/adminapi#logs) |
+| 5m  | [Authentication Logs](https://duo.com/docs/adminapi#logs)   |
+| 5m  | [Administrator Logs](https://duo.com/docs/adminapi#administrator-logs)|
+| 5m  | [Telephony Logs](https://duo.com/docs/adminapi#telephony-logs)|
+| 5m  | [Activity Logs](https://duo.com/docs/adminapi#activity-logs)|
+| 24h | [User Inventory Logs](https://duo.com/docs/adminapi#users) |
 
 ## Setup
 
@@ -33,7 +37,7 @@ When you create a Duo Source, you add it to a Hosted Collector. Before creating
 
 To configure a Duo Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Duo**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
@@ -48,6 +52,8 @@ To configure a Duo Source:
 1. **Duo Domain**. Provide your **API hostname**, such as `api-********.duosecurity.com`.
 1. **Integration Key**. Provide the Duo Integration Key you want to use to authenticate collection requests.
 1. **Secret Key**. Provide the Duo Secret Key you want to use to authenticate collection requests. 
+1. **Supported APIs to Collect**. Choose the API endpoints you wish to collect logs from.
+1. **Collect User Inventory Every 24h**. Check this box if you want to collect user inventory every 24 hours.
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
 1. When you are finished configuring the Source, click **Submit**.
 
@@ -81,6 +87,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | domain | String | Yes | `null`  | Provide your API hostname, such as api-********.duosecurity.com.| |
 | integration_key | String | Yes | `null` | Provide the Duo Integration Key you want to use to authenticate collection requests. |  |
 | secret_key | String | Yes | `null` | Provide the Duo Secret Key you want to use to authenticate collection requests. |  |
+| supported_apis| String Array| Yes | All APIs|Add an element for each of the APIs the integration should collect from.|`["authentication", "administrator", "telephony", "activity"]`|
+| collectUserInventory | Boolean | No | True| Set to true if the integration should collect user inventory logs. |`True`|
 | polling_interval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
 
 ### JSON example

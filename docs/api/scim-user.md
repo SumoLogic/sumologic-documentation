@@ -34,5 +34,5 @@ The SCIM User Management API allows you to provision users to Sumo Logic from [S
 
 <ApiRoles/>
 
-* User Management (all role capabilities)
+* [User Management](/docs/manage/users-roles/roles/role-capabilities/#user-management) (all role capabilities)
 

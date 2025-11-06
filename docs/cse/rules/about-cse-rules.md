@@ -34,9 +34,9 @@ Watch this micro lesson to learn more about rules.
 
 ## Rules list view
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view rules, in the top menu select **Content > Rules**. 
-
 [**New UI**](/docs/get-started/sumo-logic-ui). To view rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view rules, in the top menu select **Content > Rules**. 
 
 <img src={useBaseUrl('img/cse/rules-list-page.png')} alt="Rules list page" style={{border: '1px solid gray'}} width="800" />
 
@@ -211,4 +211,5 @@ Threat Intelligence sources are used at the time of record ingestion. When a rec
 * Blogs: 
    * [Secure your CI/CD pipelines from supply chain attacks with Sumo Logic’s Cloud SIEM rules](https://www.sumologic.com/blog/secure-azure-devops-github-supply-chain-attacks/)
    * [Rule tuning – supercharge Cloud SIEM for better alerts](https://www.sumologic.com/blog/rule-tuning-cloud-siem-alert-fatigue/)
+   * [Build a detection-as-code pipeline: Your guide to managing Sumo Logic Cloud SIEM rules in GitHub](https://www.sumologic.com/guides/detections-as-code-setup)
 * Cloud SIEM Content Catalog: [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md)

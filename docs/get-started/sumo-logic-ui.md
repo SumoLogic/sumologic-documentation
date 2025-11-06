@@ -155,7 +155,7 @@ You can create a list of favorite dashboards and log searches that appear in th
 
 To add a dashboard to your Favorites:
 1. Open any dashboard.
-1. Click the three-dot kebab icon at the top right of the menu bar, then select **Favorite** from the dropdown list. <br/> ![WTS_UI_Add-dashboard-to-Favorites.png](/img/get-started/WTS_UI_Add-dashboard-to-Favorites.png)
+1. Click the three-dot kebab icon at the top right of the menu bar, then select **Favorite** from the dropdown list. <br/><img src={useBaseUrl('img/get-started/ui/WTS_UI_Add-dashboard-to-Favorites.png')} alt="Add dashboard to favorites list" style={{border: '1px solid gray'}} width="800" />
 
 To add a log search to your Favorites:
 1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**. Then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
@@ -176,7 +176,7 @@ For walkthrough instructions, go to the [Share Content](/docs/manage/content-sh
 To see dashboards, searches, and folders that have been shared with you, do the following:
 
 1. From the left-side nav, click **Recent**.<br/><img src={useBaseUrl('img/get-started/recent.png')} alt="recent.png" width="400"/>
-1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.<br/> ![Dash3.png](/img/get-started/Dash3.png)
+1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.<br/><img src={useBaseUrl('img/get-started/ui/Dash3.png')} alt="Dropdown menu with Recently Opened By and Recently Shared With Me options" width="200"/>
 
 ### Pin and manage searches
 
@@ -192,7 +192,7 @@ You must start a search for the **Pin** option to appear. To pin a search, do t
 
 Once a search is pinned, it cannot be unpinned, but you can remove it from the **Pinned Searches** tab. You can pin up to 10 searches at a time. Queries that use the [`save` operator](/docs/search/search-query-language/search-operators/save) cannot be pinned.
 
-For more information, see [Pinned Searches](/docs/get-started/library/#pinned-searches).
+For more information, see [Pin a Search](/docs/search/get-started-with-search/search-page/pin-a-search).
 
 
 ## Administrator tasks

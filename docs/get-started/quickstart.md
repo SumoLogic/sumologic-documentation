@@ -91,7 +91,7 @@ OpenTelemetry is our preferred collector unless you're configuring security data
 #### Installed and Hosted Collector
 
 1. Sign in to Sumo Logic.
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Select **Add Collector**.<br/><img src={useBaseUrl('img/get-started/WTS_Collector_page.png')} alt="Add Collector" />
 1. Choose from our [Hosted Collector](/docs/send-data/hosted-collectors) (web-hosted) or [Installed Collector](/docs/send-data/installed-collectors) (locally installed on your machine).
 
@@ -105,7 +105,7 @@ See [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector
 
 #### Installed and Hosted Collector
 
-1. Find your Collector in the Collection page table and select **Add** > **Add Source**. <br/>![WTS_Collection_Page](/img/get-started/WTS_Collection_Page.png)
+1. Find your Collector in the Collection page table and select **Add** > **Add Source**. <br/><img src={useBaseUrl('img/get-started/WTS_Collection_Page.png')} alt="Add source" style={{border: '1px solid gray'}} width="800" />
 1. Follow the prompts to set up your desired Source. For more information on configuring specific sources, see [Installed Collector Sources](/docs/send-data/installed-collectors/sources/) and [Configure a Hosted Collector Source](/docs/send-data/hosted-collectors/configure-hosted-collector/#step-2-configure-a-source).
 
 ## Step 2: Search and analyze your data
@@ -122,19 +122,19 @@ Not sure how to use your data to monitor and and troubleshoot your environment? 
 
 You can **browse our library of available apps** by selecting **App Catalog**, then scrolling through the library or entering a name in the search field. For more information, see [Apps and Integrations](/docs/get-started/apps-integrations/).
 
-![Apps Catalog](/img/get-started/WTS_Apps-Catalog.png)
+<img src={useBaseUrl('img/get-started/WTS_Apps-Catalog.png')} alt="App Catalog" style={{border: '1px solid gray'}} width="800" />
 
 ### Dashboards
 
 You can **view your data with predefined searches and dashboards** that facilitate monitoring and troubleshooting. For more information, see [Get Started with Metrics](/docs/metrics/introduction/get-started-metrics/).
 
-![View Dashboards](/img/get-started/WTS_View-Dashboards.png)
+<img src={useBaseUrl('img/get-started/WTS_View-Dashboards.png')} alt="View dashboards" style={{border: '1px solid gray'}} width="800" />
 
 ## Step 4: Share your findings with your team
 
 You have downloaded an app and analyzed your data with searches and dashboards. You may even have [modified your dashboards](/docs/dashboards/panels/modify-chart), and now you want to share your findings with your team. You can easily share a dashboard by clicking the share icon in the top menu bar.
 
-![Share Dashboard](/img/get-started/WTS_Share-dashboard.png)
+<img src={useBaseUrl('img/get-started/WTS_Share-dashboard.png')} alt="Share dashboard" style={{border: '1px solid gray'}} width="800" />
 
 You have the ability to share with individual users and groups with specific roles, setting the specific access permissions. You can edit the sharing permissions at any time, and share and revoke permissions as needed. For more information, see [Content Sharing in Sumo Logic](/docs/manage/content-sharing).
 
@@ -164,7 +164,7 @@ Don't just learn it - master it! Get recognized as a Sumo Logic expert by comple
 * [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart)
 * [Traces Quickstart](/docs/apm/traces/quickstart)
 
-See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-training-portal).
+See more quickstart tutorials in [learning portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-learning-portal).
 
 :::sumo Need help?
 Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).

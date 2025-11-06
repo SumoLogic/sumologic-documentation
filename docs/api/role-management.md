@@ -35,4 +35,4 @@ To manage roles, you must have an administrator role or your role must have been
 
 <ApiRoles/>
 
-* User Management (all role capabilities)
+* [User Management](/docs/manage/users-roles/roles/role-capabilities/#user-management) (all role capabilities)

@@ -15,6 +15,14 @@ A Sumo Logic CloudWatch Source allows you to gather metrics data from an Amazon 
 We recommend using the newer AWS Kinesis Firehose for Metrics Source to collect CloudWatch metrics. For more information, see [Which to use: Kinesis Firehose source or CloudWatch source?](aws-kinesis-firehose-metrics-source.md)
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an Amazon CloudWatch source with the [`sumologic_cloudwatch_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudwatch_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Supported AWS metrics
 
 A Sumo CloudWatch Source only supports CloudWatch metrics that are emitted at a regular interval. It cannot ingest metrics that are emitted with significant latency, such as Amazon S3 Daily Storage Metrics or AWS Billing metrics, or at sporadic intervals, such as Amazon DynamoDB throttled events.
@@ -39,15 +47,15 @@ Here’s how tag filtering works:
 * If you specify a single `tag = value` pair for a namespace, the source will collect metrics from resources with that tag value.  
 * If you specify multiple values for a specific tag for a namespace, as shown below, the filters are OR’ed. For example, with the following setting, the source will collect metrics from resources in the AWS/DynamoDB namespace whose `owner` tag is *either* “Veronica” or “Bryan”.   
 
-   ![same-namespace-same-line.png](/img/send-data/same-namespace-same-line.png)
+   <img src={useBaseUrl('img/send-data/same-namespace-same-line.png')} alt="Same namespace same line" style={{border: '1px solid gray'}} width="500" />
 
 * You can use multiple lines to define filters for different tags in the same namespace. Filters on the same namespace but in different lines are AND’ed together. For example, with the following setting the source will collect metrics from resources in the AWS/DynamoDB namespace whose whose `owner` tag is “Veronica” *and* `Env` tag is = “prod”.   
 
-   ![same-namespace-mult-lines.png](/img/send-data/same-namespace-mult-lines.png)
+   <img src={useBaseUrl('img/send-data/same-namespace-mult-lines.png')} alt="Same namespace multi-line" style={{border: '1px solid gray'}} width="500" />
 
 * Filters on different namespaces are UNION’ed together. For example, with the following setting the source will collect metrics from resources in the AWS/DynamoDB namespace whose `owner` tag is “Veronica”, and also from resources in the AWS/Redshift namespace whose `Env` tag is “prod”.   
 
-   ![diff-namespaces.png](/img/send-data/diff-namespaces.png)
+   <img src={useBaseUrl('img/send-data/diff-namespaces.png')} alt="Different namespaces" style={{border: '1px solid gray'}} width="500" />
 
 Tag filters will not be applied to previously ingested data, and can take a few minutes to apply to existing data.
 
@@ -96,11 +104,9 @@ AWS tag filtering is supported for the following AWS namespaces.
 ## Set up an Amazon CloudWatch source
 
 1. Before you begin, grant permission for Sumo Logic to list available metrics and get metric data points. See [Grant Access to an AWS Product](grant-access-aws-product.md) for details.
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Click **Add Source** next to a Hosted Collector.
-1. Select **AWS CloudWatch Metrics**. 
-
-   ![cloudwatch metrics configure.png](/img/send-data/cloudwatch-metrics-configure.png)
+1. Select **AWS CloudWatch Metrics**. <br/><img src={useBaseUrl('img/send-data/cloudwatch-metrics-configure.png')} alt="CloudwWtch metrics configure" style={{border: '1px solid gray'}} width="500" />
 
 1. **Name**. Enter a name to display for the new source.
 1. **Description.** Optional description.
@@ -111,9 +117,7 @@ AWS tag filtering is supported for the following AWS namespaces.
    If you change the namespace selection, there may be a delay of as much as 15 minutes before the change is reflected in the available options for metrics queries.
    :::
 
-1. **AWS Tag Filters**. This setting is visible only if you selected one or more of the namespaces listed in [About AWS tag filtering](#about-aws-tag-filtering).
-
-   ![aws-tag-filters.png](/img/send-data/aws-tag-filters.png)
+1. **AWS Tag Filters**. This setting is visible only if you selected one or more of the namespaces listed in [About AWS tag filtering](#about-aws-tag-filtering).<br/><img src={useBaseUrl('img/send-data/aws-tag-filters.png')} alt="AWS tag filters" style={{border: '1px solid gray'}} width="500" />
 
    Tag filters allow you to filter the CloudWatch metrics you collect by the AWS tags you have assigned to your AWS resources. You can define tag filters for each supported namespace. If you do not define any tag filters, all metrics will be collected for the regions and namespaces you configured for the source above:
 
@@ -140,7 +144,7 @@ AWS tag filtering is supported for the following AWS namespaces.
 
 Sometime after you configure the AWS access method for the source, the source configuration UI will start to display the number of unique time series for each namespace configured for the source.
 
-![cloudwatch-metrics-by-namespace.png](/img/send-data/cloudwatch-metrics-by-namespace.png)
+<img src={useBaseUrl('img/send-data/cloudwatch-metrics-by-namespace.png')} alt="CloudWatch metrics by namespace" style={{border: '1px solid gray'}} width="600" />
 
 ## CloudWatch metric visibility
 

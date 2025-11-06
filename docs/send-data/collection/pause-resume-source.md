@@ -4,6 +4,7 @@ title: Pause and Resume a Source
 description: You can pause a cloud polling Source at any time to stop the Source from sending data from the Source to Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can pause some types of Sources to stop them from sending data to Sumo Logic, and then resume at a later time.
 
@@ -14,11 +15,9 @@ The following Sources can use pause/resume:
 
 To pause a Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Locate the Source.
-1. Click **Pause**. Click the **Resume** link when you are ready for the source to start sending data again.
-
-![Pause resume](/img/collector/pause-resume.png)
+1. Click **Pause**. Click the **Resume** link when you are ready for the source to start sending data again.<br/><img src={useBaseUrl('img/collector/pause-resume.png')} alt="Pause resume" style={{border: '1px solid gray'}} width="800" />
 
 ## S3 Source rules
 

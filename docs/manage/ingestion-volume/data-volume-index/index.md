@@ -37,7 +37,7 @@ Granular Data Tracking is a part of usage management that allows you to proactiv
 
 ### Disable Granular Data Tracking
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account**. 
 1. Click the gear icon <img src={useBaseUrl('/img/manage/account/gear-icon-accounts-page.png')} alt="gear-icon-accounts-page" width="40"/> in the top left panel of the **Account Overview** page.
 1. Click **Disable Granular Data Tracking**.<br/><img src={useBaseUrl('/img/manage/account/disable-granular-data-tracking.png')} alt="Disable Granular Data Tracking" style={{border:'1px solid gray'}} width="700"/> 
 
@@ -48,13 +48,13 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Log and Tracing Data Volume Index</h4></a>
+  <a href={useBaseUrl('docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index')}><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Log and Tracing Data Volume Index</h4></a>
   <p>Get to know how much data your account is ingesting.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Metrics Data Volume Index</h4></a>
+  <a href={useBaseUrl('docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index')}><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Metrics Data Volume Index</h4></a>
   <p>Get to know the volume of metric data points your account is ingesting.</p>
   </div>
 </div>

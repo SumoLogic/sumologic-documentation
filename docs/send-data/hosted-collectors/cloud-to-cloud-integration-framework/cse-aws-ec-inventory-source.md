@@ -17,6 +17,14 @@ The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive ev
 
 For information on how inventory data is used in Cloud SIEM, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an AWS inventory source with the [`sumologic_aws_inventory_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/aws_inventory_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -47,7 +55,7 @@ When you create a Cloud SIEM AWS EC2 Inventory Source, you add it to a Hosted C
 
 To configure a Cloud SIEM AWS EC2 Inventory Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **AWS EC2 Inventory**.
 1. Enter a **Name** for the Source. The description is optional.

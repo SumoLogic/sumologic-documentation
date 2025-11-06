@@ -26,6 +26,14 @@ An authorized user can configure context actions and assign them to particular e
 
 The context actions menu will be available for any of these types, wherever they appear in the Cloud SIEM UI.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage context actions with the [`sumologic_cse_context_action`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_context_action) resource.
+
+<TerraformLink/>
+:::
+
 ## How a user accesses context actions
 
 A user runs a context action by clicking the context action icon <img src={useBaseUrl('img/cse/context-action-icon.png')} alt="Context action icon" style={{border: '1px solid gray'}} width="20"/> next to an entity, record field, or IOC and choosing an action from the list that appears. The icon appears when you hover over the value of the item.
@@ -56,7 +64,7 @@ Watch this micro lesson to learn more about how to use context actions.
 
 ## Configure a context action
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Context Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Context Actions**. You can also click the **Go To...** menu at the top of the screen and select **Context Actions**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Context Actions**. You can also click the **Go To...** menu at the top of the screen and select **Context Actions**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Context Actions**. 
 1. On the **Context Actions** tab click **+ Add Context Action**.
 1. Create the context action.  <br/><img src={useBaseUrl('img/cse/configured-action.png')} alt="Configure action" style={{border: '1px solid gray'}} width="400"/>
     1. **Name**. Enter a name for the context action. 
@@ -86,6 +94,8 @@ To create an URL for a Sumo Logic search, you enter a Sumo Logic search query as
 When you save the action, the URL template will be populated with your Sumo Logic base URL, and the time range you selected, either `-30m` or `+30m`.
 
 `{{sumobaseurl}}/ui/#/search/@{{timestamp[ms]-30m}}@_index=sec_record* AND user_username = {{value}}`
+
+The `{{sumobaseurl}}` parameter applies to context actions that run a Sumo Logic log search. Assuming your Cloud SIEM instance is configured to communicate with the Sumo Logic platform, when you create an action that runs a Sumo Logic search, Cloud SIEM will automatically insert this placeholder in your URL template—you don’t need to explicitly insert `{{sumobaseurl}}` placeholder yourself.
 
 ### Create an URL to an external service
 
@@ -120,12 +130,6 @@ The table below defines the parameters you can use in the URL template for a con
 ### Record value
 
 You can insert any field from the target of a context action into the action URL with the `{{field_name}}` placeholder. For example, you could include `device_ip` in the URL with `{{device_ip}}`.  
-
-### Sumo Logic Base URL
-
-The `{{sumobaseurl}}` parameter applies to context actions that run a Sumo Logic log search.
-
-Assuming your Cloud SIEM instance is configured to communicate with the Sumo Logic platform, when you create an action that runs a Sumo Logic search, Cloud SIEM will automatically insert this placeholder in your URL template—you don’t need to explicitly insert `{{sumobaseurl}} `placeholder yourself.
 
 ### Timestamp
 

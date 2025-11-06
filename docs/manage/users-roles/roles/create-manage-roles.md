@@ -7,7 +7,15 @@ description: You can create custom roles for your users.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import RoleStacking from '../../../reuse/role-stacking-tip.md';
 
-This section has instructions for creating and managing Sumo Logic roles. The roles you assign to a user control what Sumo Logic capabilities are available to the user and what log data the user can access. This functionality is referred to as role-based access control.  
+This section has instructions for creating and managing Sumo Logic roles. The roles you assign to a user control what Sumo Logic capabilities are available to the user and what log data the user can access. This functionality is referred to as role-based access control.
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage roles with the [`sumologic_role_v2`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/role_v2) resource.
+
+<TerraformLink/>
+::: 
 
 ## Built-in Administrator and Analyst roles
 
@@ -21,7 +29,7 @@ Users with the Analyst role have a single capability: View Collectors. Its role 
 
 To create a role:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. 
 1. Click **+ Add Role** on the upper right side of the page.
 1. The **Create New Role** pane appears on the right side of the page.<br/><img src={useBaseUrl('img/users-roles/create-new-role.png')} alt="Create a new role" style={{border: '1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the role. 
@@ -85,14 +93,14 @@ However, if a user is assigned multiple roles that each have different Index Acc
 
 To test a role to see if it displays the expected log access behavior, select a role and click **Emulate log search**. (You can also test a user. See [Test a user's log access rights](/docs/manage/users-roles/users/create-edit-users/#test-a-users-log-access-rights).)
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. 
 1. Select a role. 
 1. Click **Emulate log search**. The search will be emulated for the permissions of the role, including the filtering defined in the role. (In the example below, an index access filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index filter" style={{border: '1px solid black'}} width="400"/>
 1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid black'}} width="800"/>
 
 ## Add a user to a role
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. 
 1. Navigate to the role and click the number in the **Users** column.<br/><img src={useBaseUrl('img/users-roles/user-in-role-count.png')} alt="User in role count" width="800"/>
 1. A list of users currently assigned to the role appears.<br/><img src={useBaseUrl('img/users-roles/users-assigned-to-role.png')} alt="Users assigned to role" width="350"/>
 1. Click the **Assign Users** field. A list of users that are not currently assigned to the role appears. Click a user’s name to add the user to the role. 
@@ -105,7 +113,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ## Remove a user from a role
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. 
 1. Navigate to the role and click the number in the **Users** column.<br/><img src={useBaseUrl('img/users-roles/role-list.png')} alt="Role list" width="800"/>
 1. A list of users currently assigned to the role appears. 
 1. Navigate to the user you want to remove from the role, and click the trash can icon in that row.<br/><img src={useBaseUrl('img/users-roles/delete-user-from-role.png')} alt="Remove user from a role" width="350"/>
@@ -117,14 +125,14 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ## See which users are assigned to a role
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. <br/><img src={useBaseUrl('img/users-roles/user-in-role-count.png')} alt="Count of users in a role" width="800"/>
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/><img src={useBaseUrl('img/users-roles/user-in-role-count.png')} alt="Count of users in a role" width="800"/>
 1. Navigate to the role and click the number in the **Users** column to see a list of users assigned to the role.
 
 ## Edit a role
 
 To edit a role:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. 
 1. Click the row for the role you want to edit.
 1. The current configuration of the role appears in a pane on the right side of the page.
 1. Click **Edit** at the top of the right side of the page.
@@ -137,7 +145,7 @@ You can only delete a role to which no users are assigned. Before deleting a rol
 
 To delete a role:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. 
 1. Click the row for the role you want to delete.
 1. The current configuration of the role appears in a pane on the right side of the page.
 1. Click **Delete** at the top of the right side of the page.

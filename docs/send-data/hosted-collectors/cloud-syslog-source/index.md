@@ -27,13 +27,17 @@ FIPS 140-2 compliance is not available for Cloud Syslog in the FedRAMP deploymen
 
 In the procedure below, you configure a Cloud Syslog Source. This will generate a Sumo Logic token and the endpoint hostname. 
 
-Then you set up TLS by downloading a cert to your server (see procedures for [rsyslog](/docs/send-data/hosted-collectors/cloud-syslog-source/rsyslog/#setup-tls) and [syslog-ng](/docs/send-data/hosted-collectors/cloud-syslog-source/syslog-ng/#setup-tls)). Download the DigiCert and AWS Certificate Manager (ACM) certificates from the following locations:
-* https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt
-* https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.pem
-* https://www.amazontrust.com/repository/AmazonRootCA1.cer
+Then you set up TLS by downloading a cert to your server (see procedures for [rsyslog](/docs/send-data/hosted-collectors/cloud-syslog-source/rsyslog/#setup-tls) and [syslog-ng](/docs/send-data/hosted-collectors/cloud-syslog-source/syslog-ng/#setup-tls)). Download the AWS Certificate Manager (ACM) certificate from the following location: https://www.amazontrust.com/repository/AmazonRootCA1.cer.
 
-Sumo Logic supports syslog clients, including syslog-ng and rsyslog. Follow the instructions in the appropriate section below to configure your server to send syslog data. If syslog data does not appear in Sumo Logic, refer to
-[Troubleshooting](#troubleshooting) below.
+Sumo Logic supports syslog clients, including syslog-ng and rsyslog. Follow the instructions in the appropriate section below to configure your server to send syslog data. If syslog data does not appear in Sumo Logic, refer to [Troubleshooting](#troubleshooting) below.
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a Cloud Syslog source with the [`sumologic_cloudsyslog_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudsyslog_source) resource.
+
+<TerraformLink/>
+:::
 
 ## Configure a Cloud Syslog Source
 
@@ -45,7 +49,7 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 
 To configure a cloud syslog source, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 1. Select **Cloud Syslog**.
 1. Enter a **Name** to display for this source in Sumo Logic. Description is optional.
@@ -62,9 +66,7 @@ To configure a cloud syslog source, do the following:
    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
 
 1. Create any Processing Rules you'd like for the new source.
-1. Click **Save**. The token information is displayed in a read-only dialog box, shown below.
-
-    ![syslog-token.png](/img/send-data/syslog-token.png)    
+1. Click **Save**. The token information is displayed in a read-only dialog box, shown below.<br/><img src={useBaseUrl('img/send-data/syslog-token.png')} alt="Syslog token" style={{border: '1px solid gray'}} width="500" />    
 1. Click **Copy** to copy the information for use in the syslog client. The information is copied in the following format:
 
     ```
@@ -105,7 +107,7 @@ Syslog messages must be in RFC 5424-compliant form or they are dropped. Messages
 
 This diagram shows the RFC 5424 format:
 
-![Cloud Syslog - RFC 5424.png](/img/send-data/Cloud-Syslog-RFC-5424.png)
+<img src={useBaseUrl('img/send-data/Cloud-Syslog-RFC-5424.png')} alt="Cloud Syslog - RFC 5424" style={{border: '1px solid gray'}} width="800" />
 
 ### Known issues
 

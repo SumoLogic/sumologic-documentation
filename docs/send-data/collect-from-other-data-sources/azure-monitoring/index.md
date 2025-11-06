@@ -4,6 +4,8 @@ title: Azure Monitoring
 description: Overview of strategy for collecting application and infrastructure data (logs and metrics) for Azure services using Azure Monitor.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page has information about Sumo’s solution for obtaining application and infrastructure data (logs and metrics) for Azure services using Azure Monitor. This solution enables you to collect following data:
 
 * **Activity Logs**. Activity Logs are subscription-level logs that provide insight into the operations performed on resources in your subscription, for example, creating a virtual machine or deleting a logic app.
@@ -25,7 +27,7 @@ For a general discussion of Microsoft’s approach to sharing monitoring data fr
 
 The diagram below illustrates the Azure-Sumo pipelines for Azure log and metric collection. [Monitoring data flow](#monitoring-data-flow) describes the flow of data from Azure services to Sumo Logic. [Pipeline Components](#pipeline-components) describes the actors in the flow.
 
-![azure-overview.png](/img/send-data/azure-overview.png)
+<img src={useBaseUrl('img/send-data/azure-overview.png')} alt="Azure overview" style={{border: '1px solid gray'}} width="800" />
 
 ## Monitoring data flow
 

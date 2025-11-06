@@ -13,7 +13,6 @@ The Sumo Logic App for Acquia provides visibility into the key components of the
 
 Sumo Logic provides instant visibility across the critical components of the Acquia Platform, helping organizations become more proactive in their site monitoring as well as reducing the mean time to identify and resolve issues.
 
-
 ## Log types
 
 Sumo Logic analyzes the following required Acquia data for more efficient monitoring:
@@ -150,7 +149,7 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 
 To create a new Sumo Logic hosted collector, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. Click **Add Collector**.
 3. Click **Hosted Collector**.
 4. Provide a **Name** for the Collector.
@@ -192,18 +191,13 @@ Be sure to copy and paste your **token** in a secure location. You'll need this 
 
 In the procedure below, you'll configure a Cloud Syslog Source. This will generate a Sumo Logic token and the endpoint hostname. Then you'll set up TLS by downloading a cert to your server. 
 
-1. Download the DigiCert and AWS Certificate Manager (ACM) certificates from the following locations:
-   * https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt
-   * https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem
-   * https://www.amazontrust.com/repository/AmazonRootCA1.cer
+1. Download the AWS Certificate Manager (ACM) certificate from the following location: https://www.amazontrust.com/repository/AmazonRootCA1.cer
 1. Run the following commands:
-   * `wget -O digicert_ca.der https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.`
-   * `openssl x509 -inform der -in digicert_ca.der -out digicert_ca.crt`
-   * `wget -O acm_ca.der https://www.amazontrust.com/repository/AmazonRootCA1.cer`
-   * `openssl x509 -inform der -in acm_ca.der -out acm_ca.crt`
-   * `cat acm_ca.crt digicert_ca.crt > digicert_acm_cas.crt`
-   * `perl -p -i -e "s/\r//g" digicert_acm_cas.crt`
-1. You'll upload the merged cert to the Acquia app when you configure Acquia log forwarding. See [Step 3: Configure logging for Acquia](#step-3-configure-logging-for-acquia).
+    ```bash
+    wget -O acm_ca.der https://www.amazontrust.com/repository/AmazonRootCA1.cer
+    openssl x509 -inform der -in acm_ca.der -out acm_ca.crt
+    ```
+1. You'll upload the downloaded cert to the Acquia app when you configure Acquia log forwarding. See [Step 3: Configure logging for Acquia](#step-3-configure-logging-for-acquia).
 
 ### Configuring a cloud syslog source
 
@@ -214,7 +208,7 @@ Include the token as the [Structured ID](https://tools.ietf.org/html/rfc5424#sec
 The token is deleted if you delete the source. To change a token, use the **Regenerate Token** option as described in the following procedure.
 
 To configure a cloud syslog source, do the following:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 3. Select **Cloud Syslog**.
 4. Enter a **Name** to display for this source in Sumo. Description is optional.

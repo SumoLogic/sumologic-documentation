@@ -1,6 +1,6 @@
 ---
 title: New in Copilot - Dynamic Titles, Alert Troubleshooting, and Pinned Suggestions (Copilot)
-image: https://help.sumologic.com/img/reuse/rss-image.jpg
+image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
   - copilot
   - log-search
@@ -38,4 +38,4 @@ Now you can pin Copilot suggestions for easy reference. Just hover over a sugges
 * **Quick access**. Keep important suggestions handy for ongoing investigations.  
 * **Improved workflow**. No need to scroll back to find key recommendations.
 
-[Learn more](/docs/search/copilot).
+[Learn more](/docs/search/mobot).

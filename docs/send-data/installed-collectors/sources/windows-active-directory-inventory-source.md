@@ -36,7 +36,7 @@ Install a single Active Directory Source to collect inventory data from your ent
 
 To configure a Windows Active Directory Inventory Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To..**. menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To..**. menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Find the Installed Collector you'd like to add the Source to. Click **Add** and then choose **Add Source** from the pop-up menu.
 1. Click **Windows Active Directory Inventory**.<br/><img src={useBaseUrl('/img/send-data/windows-ad-inventory-source-icon.png')} alt="Windows Active Directory Inventory icon" width="125"/>
 1. Set the following:  <br/><img src={useBaseUrl('img/send-data/windows-ad-source-input.png')} alt="Windows Active Directory Inventory Source" style={{border: '1px solid gray'}} width="600" />
@@ -94,7 +94,7 @@ You can use multiple variables, for example:
 {{sys.PATH}}-{{sys.YourEnvVar}}
 ```
 
-![img](/img/send-data/environment-variable-usage.png)
+<img src={useBaseUrl('img/send-data/environment-variable-usage.png')} alt="Multiple variables" style={{border: '1px solid gray'}} width="500" />
 
 :::tip
 The example above uses a hyphen (`-`) character to separate variable components. Separator characters are not required. Curly brackets and spaces are not allowed. Underscores and hyphens are recommended.

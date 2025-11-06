@@ -25,6 +25,14 @@ Each laptop in the “laptops” group will automatically inherit the criticalit
 
 Note that when an insight is created, any tags that are assigned to the primary entity in the insight are automatically inherited by the insight. So, tags that an entity inherits from an entity group will also be inherited by insights that fire on the entity. (Such inheritance is not retro-active: insights that fired on an entity prior to the entity being tagged won’t be tagged.)
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage entity groups with the [`cse_entity_entity_group_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_entity_group_configuration) and [`cse_inventory_entity_group_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_inventory_entity_group_configuration) resources.
+
+<TerraformLink/>
+:::
+
 ## Entity group limits
 
 The number of entity groups you can configure per org varies by the type of the group:
@@ -46,7 +54,7 @@ It’s possible to define entity groups that overlap, in terms of the entities t
 
 Follow these instructions to create an entity group based on entity name or whether the entity is within a specified range of IP addresses.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Groups**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Groups**. 
 1. On the **Entity Groups** page, click **+ Add Entity Group**.
 1. The **Add Entity Group** popup appears. (In the screenshot below, values are already entered.)<br/><img src={useBaseUrl('/img/cse/create-entity-group-values.png')} alt="Create an entity group based on attributes" style={{border: '1px solid gray'}} width="400" />
 1. **Name**. Enter a name for the entity group.
@@ -81,7 +89,7 @@ Follow these instructions to create an entity group based on entity name or whet
 
 Follow these instructions to create an entity group that corresponds to a group in an inventory service in your infrastructure.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Groups**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Groups**. 
 1. On the **Entity Groups** page, click **+ Add Entity Group**.
 1. The **Add Entity Group** popup appears. (In the screenshot below, values are already entered.) <br/><img src={useBaseUrl('/img/cse/create-entity-group-inventory.png')} alt="Create an entity group based on inventory" style={{border: '1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the entity group.

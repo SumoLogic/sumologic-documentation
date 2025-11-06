@@ -4,7 +4,7 @@ title: Advanced - Using a CRON Expression
 description: Set up a CRON job to collect data on a specified schedule.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 If you're configuring a Script Source and need to specify a frequency that's different than any existing option, you can specify a CRON expression to collect data at a custom frequency.
 
@@ -16,38 +16,20 @@ Sumo Logic supports the Quartz CRON framework.
 
 To use a CRON Expression in a Script Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Click **Add Source** for the Collector you choose.
 1. Select **Script** for the Source type.
 1. Enter the source name, description (optional), source host, and source category.
-1. For Frequency, choose **Other (CRON Expression)**, then type the expression.
-
-    ![img](/img/send-data/other-cron-1.png)
-
+1. For Frequency, choose **Other (CRON Expression)**, then type the expression.<br/><img src={useBaseUrl('img/send-data/other-cron-1.png')} alt="Choose Other (CRON Expression)" style={{border: '1px solid gray'}} width="600" />
 1. If you'd like to set a timeout for your script, select **Specify a timeout for your command**. If you do not need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected. Learn more in [Configuring a Script Source](/docs/send-data/installed-collectors/sources/script-source).
 1. For Command, choose the type of command you're going to use. The options in this menu depend on the type of Collector you're using:
-
-    * Mac/Linux Command options.
-
-        ![img](/img/send-data/Script_Source_Mac_Commands.png)
-
-    * Windows Command options.
-
-        ![img](/img/send-data/Script_Source_Win_Commands.png)
-
+    * Mac/Linux Command options.<br/><img src={useBaseUrl('img/send-data/Script_Source_Mac_Commands.png')} alt="Mac/Linux Command option" style={{border: '1px solid gray'}} width="500" />
+    * Windows Command options.<br/><img src={useBaseUrl('img/send-data/Script_Source_Win_Commands.png')} alt="Windows Command options" style={{border: '1px solid gray'}} width="500" />
 1. For Script, do one of the following:
-
-   * Choose **Type a path to the script to execute** if you have the script saved to a file location. For example:
-
-    ![img](/img/send-data/script-path.png)
-
-   * Choose **Type the script to execute** if you'd like to enter the script directly in Logic. Then type the script in the text box. For example:        
-
-    ![img](/img/send-data/script.png)
-
+   * Choose **Type a path to the script to execute** if you have the script saved to a file location. For example:<br/><img src={useBaseUrl('img/send-data/script-path.png')} alt="Type a path to the script to execute" style={{border: '1px solid gray'}} width="600" />
+   * Choose **Type the script to execute** if you'd like to enter the script directly in Logic. Then type the script in the text box. For example:<br/><img src={useBaseUrl('img/send-data/script.png')} alt="Type the script to execute" style={{border: '1px solid gray'}} width="600" />
 1. For Working Directory, you'll only need to enter a path if your script refers to a file indirectly. So, enter the path of the file you'd like to collect if required; otherwise this option can remain blank.
 1. Click **Advanced** to see options regarding timestamps and time zones:
-
    * **Timestamp Parsing**. By default **Extract timestamp information from log file entries** is selected, meaning that Sumo Logic will use the timestamp information from the data you collect. Deselecting this option turns off all timestamp parsing.
    * **Time Zone.** Select an option under **Use time zone from log file, but if none present use**. Or, if you'd like to override all time zones from data you collect, choose an option under **Ignore time zone and instead use**.
 1. For **Multiline Processing**, by default only Boundary Regex is selected. To make any changes to this setting, select **Detect messages spanning multiple lines** only if the type of data you're collecting is suited to being collected as multiline log messages.

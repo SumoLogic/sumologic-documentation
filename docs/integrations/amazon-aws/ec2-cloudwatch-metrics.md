@@ -154,7 +154,7 @@ To configure a CloudTrail Source, perform these steps:
 
 ### Field in Field Schema
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 1. Search for the “**instanceid**” field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
@@ -237,8 +237,7 @@ Use this dashboard to:
 * Identify count of Status checks
 * Observe all relevant metrics for CPU, Internal Disk Store, Network utilization per instance type
 
-![EC2-CW-Overview](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/1.1.-AWS-EC2-Overview-CloudWatch-Metrics.png)
-
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/1.1.-AWS-EC2-Overview-CloudWatch-Metrics.png' alt="AWS EC2 Overview (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Summary (CloudWatch Metrics)
 
@@ -251,8 +250,7 @@ Use this dashboard to:
 * Observe Instance Disk Store (Disk Read/Write - Bytes & ops) for EC2 instance.
 * Monitor Network usage metrics (Network in/out - Byes & packets) for EC2 instance
 
-![EC2-CW-Summary](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/1.1.-AWS-EC2-Summary-CloudWatch-Metrics.png)
-
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/1.1.-AWS-EC2-Summary-CloudWatch-Metrics.png' alt="AWS EC2 Summary (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Events  
 
@@ -265,8 +263,7 @@ Use this dashboard to:
 * Monitor top IAM Users, Assumed Role Users, and User agents
 * Monitor distribution of Successful and failed events with the list of latest events.
 
-![EC2-CW-Events](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/2.1-AWS-EC2-Events.png)
-
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/2.1-AWS-EC2-Events.png' alt="AWS EC2 - Events (CloudTrail) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### CPU (CloudWatch Metrics)
 
@@ -277,7 +274,7 @@ Use this dashboard to:
 * Observe CPU Credits metrics (Usage and balance) over time.
 * Identify CPU Surplus Credits (Charged and Balance) over time.
 
-![EC2-CW-CPU](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/2.1.-AWS-EC2-CPU-CloudWatch-Metrics.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/2.1.-AWS-EC2-CPU-CloudWatch-Metrics.png' alt="AWS EC2 CPU (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### EBS (CloudWatch Metrics)
 
@@ -288,8 +285,7 @@ Use this dashboard to:
 * Monitor EBS read and write ops over time
 * EBS IO balance and Byte Balance % metric over time for Ec2 instances.
 
-![EC2-CW-EBS](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/3.1.-AWS-EC2-EBS-CloudWatch-Metrics.png)
-
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/3.1.-AWS-EC2-EBS-CloudWatch-Metrics.png' alt="AWS EC2 EBS (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Disk (CloudWatch Metrics)
 
@@ -300,8 +296,7 @@ Use this dashboard to:
 * Monitor instance store - Disk metrics like Disk read/write Bytes and Byte rate
 * Monitor instance store - Disk netrucs like Disk read/write Operations and Operation rate.
 
-![EC2-CW-Disc](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/4.1.-AWS-EC2-Disk-CloudWatch-Metrics.png)
-
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/4.1.-AWS-EC2-Disk-CloudWatch-Metrics.png' alt="AWS EC2 Disk (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Network (CloudWatch Metrics)
 
@@ -312,7 +307,7 @@ Use this dashboard to:
 * Monitor imported network metrics like - Byte rate for input and out put and Bytes going in and out of Ec2 instances
 * Observe network metrics for Ec2 for packet in/out and  rate of the packets.
 
-![EC2-CW-Network](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/5.1.-AWS-EC2-Network-CloudWatch-Metrics.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/5.1.-AWS-EC2-Network-CloudWatch-Metrics.png' alt="AWS EC2 Network (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Status Check (CloudWatch Metrics)
 
@@ -323,4 +318,4 @@ Use this dashboard to:
 * Monitor if the instance has passed the status check at last minute
 * Monitor if an instance has passed the system status check at last minute
 
-![EC2-CW-Status](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/6.1.-AWS-EC2-Status-Check-CloudWatch-Metrics.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/6.1.-AWS-EC2-Status-Check-CloudWatch-Metrics.png' alt="AWS EC2 Status Check (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
