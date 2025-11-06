@@ -259,9 +259,9 @@ module.exports = {
     ],
     announcementBar: {
       id: 'domain',
-      content: '<b>We’ve moved!</b> Our docs are now at <a href="https://www.sumologic.com/help">sumologic.com/help</a>. Redirects are in place, but don’t forget to update your bookmarks.',
-      backgroundColor: '#b0eefe',
-      textColor: '#091E42',
+      content: '🚀 <a href="https://www.sumologic.com/events/aws-reinvent">Join us at AWS re:Invent 2025 in Las Vegas, Dec 1-5</a>! Stop by Booth #1329 to see Sumo Logic Dojo AI in action and connect with our experts.',
+      backgroundColor: '#e4b0d1',
+      textColor: '#000',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
@@ -274,7 +274,7 @@ module.exports = {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
-      respectPrefersColorScheme: false,
+      respectPrefersColorScheme: true,
     },
     algolia: {
       appId: '2SJPGMLW1Q',

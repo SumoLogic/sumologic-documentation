@@ -305,7 +305,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/miro')}><img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="40"/><h4>Miro</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/miro')}><img src={useBaseUrl('img/send-data/miro-logo.png')} alt="icon" width="40"/><h4>Miro</h4></a>
   <p>Monitoring and investigate Miro potential security threats.</p>
   </div>
 </div>

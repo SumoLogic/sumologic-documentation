@@ -12,6 +12,14 @@ import Iframe from 'react-iframe';
 
 Log Search allows you to query and analyze log data sent to Sumo Logic. There are many features to help you use our robust Search Query Language, such as LogCompare, LogReduce, LogExplain, Lookup Tables, Subqueries, and Time Compare. See [Get Started with Search](/docs/search/get-started-with-search) to begin exploring your data in Sumo Logic.
 
+import TerraformLink from '../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a search with the [`sumologic_log_search`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/log_search) resource.
+
+<TerraformLink/>
+:::
+
 ## Guides
 
 In this section, we'll introduce the following concepts:

@@ -23,6 +23,14 @@ Most services with a REST API should allow you to create a connection using the
 If a scheduled search fails or times out, no data will be sent via webhook. In this case, you won’t see any notifications in the app you’ve configured to receive data.
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage webhook connections with the [`sumologic_connection`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/connection) resource.
+
+<TerraformLink/>
+:::
+
 ## Set up a webhook connection
 
 The first step in integrating webhooks with Sumo Logic is to configure one or more connections, which are HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections, depending on your organization's needs.

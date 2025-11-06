@@ -28,6 +28,14 @@ Fields specified in field extraction rules are automatically added and enabled i
 
 Field management is important to ensure search performance is maintained and you continue to have meaningful fields assigned to your data. You can manage fields defined through any of these methods at any time, to include deleting unneeded fields, see [manage fields](#manage-fields) for details.
 
+import TerraformLink from '../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a field with the [`sumologic_field`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/field) resource.
+
+<TerraformLink/>
+:::
+
 ## About metrics sources, fields, and metadata
 
 Sumo Logic metrics sources also support tagging with fields defined in your Fields schema or other metadata that hasn’t been added to your schema. Here’s how it works:
