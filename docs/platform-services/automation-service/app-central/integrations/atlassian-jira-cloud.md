@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="Atlassian logo" width="80"/>
 
-***Version: 1.3
+***Version: 1.3  
 Updated: Nov 6, 2025***
 
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
@@ -86,7 +86,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 For information about Atlassian Jira Cloud, see [Jira Cloud documentation](https://support.atlassian.com/jira-software-cloud/resources/). For the REST API v3, see the [REST API v3 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/).
 
-### API Base URLs to Use
+### API base URLs to use
 
 Depending on the type of API token you created, use one of the following URL formats as the API Base URL in the integration configuration:
 
@@ -94,12 +94,12 @@ Depending on the type of API token you created, use one of the following URL for
 Use the standard Jira Cloud domain-based URL format:
 `https://<domain>.atlassian.net`
 
-* **For Scoped API token:**
-Use the Atlassian API gateway format, which includes cloudId:
+* **For scoped API token:**
+Use the Atlassian API gateway format, which includes cloud ID:
 `https://api.atlassian.com/ex/jira/{cloudId}`
 
-* **How to Find Your cloudId:**
-Using browser endpoint
+* **How to find your cloud ID:**
+Using browser endpoint:
 `https://<domain>.atlassian.net/_edge/tenant_info`
 
 ## Category
