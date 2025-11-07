@@ -28,7 +28,7 @@ To add a Sumo Logic integration in Opsgenie, do the following:
 
 Your final configurations at Opsgenie should look like this:
 
-<img src={useBaseUrl('img/connection-and-integration/opsgenie-legacy.png')} alt="Webhook intergration example" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/connection-and-integration/opsgenie-legacy.png')} alt="Webhook integration example" style={{border: '1px solid gray'}} width="800" />
 
 ## Configuration on Sumo Logic
 
