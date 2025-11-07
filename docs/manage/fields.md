@@ -179,7 +179,7 @@ curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt <HTT
 
 When creating or editing your HTTP Source that will receive log data add the field `_convertHeadersToFields` with a value of `true`. This field needs to be added to your Fields schema to work.
 
-<img src={useBaseUrl('/img/fields/convertHeadersToFields.png')} alt="convertHeadersToFields" style={{border:'1px solid gray'}} width="500"/>
+<img src={useBaseUrl('img/fields/convertHeadersToFields.png')} alt="Convert headers to fields" style={{border: '1px solid gray'}} width="500" />
 
 With this field set on your Source, headers are processed as metadata fields. For example, a cURL command posting data with custom fields would look like:
 
