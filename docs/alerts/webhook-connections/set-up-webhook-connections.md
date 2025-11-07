@@ -278,7 +278,7 @@ After configuring the connection, click the **Test Connection** button at the 
 
 This test does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 
-![test connection button.png](/img/connection-and-integration/test-connection-button.png)
+<img src={useBaseUrl('img/connection-and-integration/test-connection-button.png')} alt="Test connection button" style={{border: '1px solid gray'}} width="600" />
 
 If the connection is successful, you'll see a message appearing in the third-party tool. This won't contain any information from the scheduled search, it will just have the text in the payload.
 
