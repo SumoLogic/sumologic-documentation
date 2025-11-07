@@ -44,7 +44,7 @@ Managing Installation Tokens requires the **Manage Tokens** role capability.
 
 The Installation Tokens page displays the following information: 
 
-* **Status** shows a green checkmark ![Green checkmark.png](/img/security/installation-tokens/green-checkmark.png) to indicate if the Installation Token is active and available for use or an exclamation mark in a red circle ![Red circle with a white exclamation mark.png](/img/security/installation-tokens/red-circle-white-exclamation.png) to indicate if the Installation Token is deactivated and not available for use.
+* **Status** shows a green checkmark <img src={useBaseUrl('img/security/installation-tokens/green-checkmark.png')} alt="Green checkmark" width="25" /> to indicate if the Installation Token is active and available for use or an exclamation mark in a red circle <img src={useBaseUrl('img/security/installation-tokens/red-circle-white-exclamation.png')} alt="Red circle with a white exclamation mark" width="25" /> to indicate if the Installation Token is deactivated and not available for use.
 * **Token Name** is the name of the Installation Token, these must be unique.
 * **Description** shows the optional description of the Installation Token.
 
