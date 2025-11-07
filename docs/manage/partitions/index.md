@@ -9,15 +9,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Creating a partition enhances search performance by narrowing down the search scope to a smaller subset of messages. Use the Partitions page to set up and manage partitions. 
 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Partitions page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Partitions page, in the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Partitions page, in the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
- 
-
-A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../data-forwarding/amazon-s3-bucket.md).
+A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3 or GCS](../data-forwarding/forward-data-from-sumologic.md).
 
 :::note
 Data stored in a partition is not stored anywhere else. 
+:::
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a partition with the [`sumologic_partition`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/partition) resource.
+
+<TerraformLink/>
 :::
 
 ## About Partitions
@@ -52,7 +59,7 @@ You define the data that will reside in a partition by defining a routing expres
 
 * There is a limit of 50 partitions per account. (This excludes [decommissioned partitions](decommission-partition.md).)
 * Partitions cannot be deleted, although you can [decommission](decommission-partition.md) them. This is because a partition may include log messages that aren’t stored anywhere else, so if it’s deleted, messages will be lost. If you no longer need a partition, you can decommission it.
-* Partition names cannot start with `sumologic_` or an underscore `_`.
+* Partition names cannot start with `sumologic_`, an underscore `_`, or a hyphen (`-`).
 * Partition routing rule length cannot exceed 2048 characters.
 
 ## Guides
@@ -62,25 +69,25 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/run-search-against-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/run-search-against-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
   <p>Learn how to run a search against data in a Partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/edit-data-forwarding-destinations-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/edit-data-forwarding-destinations-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
   <p>Learn how to specify Data Forwarding settings for a Partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/manage-indexes-variable-retention"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Retention</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/manage-indexes-variable-retention')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Retention</h4></a>
   <p>Learn how to create Index Partitions and Scheduled Views to store your data.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/decommission-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Decommission a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/decommission-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Decommission a Partition</h4></a>
   <p>Learn how to decommission a Partition to keep it from being started.</p>
   </div>
 </div>

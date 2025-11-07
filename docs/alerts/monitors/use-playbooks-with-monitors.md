@@ -8,7 +8,7 @@ description: Learn how to use Automation Service playbooks with monitors.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This article describes how to configure automated playbooks in monitors. An *automated playbook* is a [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/), and is a predefined set of actions and conditional statements that run in an automated workflow to respond to an event. For example, suppose that a monitor detects suspicious behavior that could indicate a security problem. When the monitor sends the alert, it could also run an automated playbook to respond to the event.
+This article describes how to configure automated playbooks in monitors. An *automated playbook* is a [playbook in the Automation Service](/docs/platform-services/automation-service/playbooks), and is a predefined set of actions and conditional statements that run in an automated workflow to respond to an event. For example, suppose that a monitor detects suspicious behavior that could indicate a security problem. When the monitor sends the alert, it could also run an automated playbook to respond to the event.
 
 To add an automated playbook to a monitor, see [Add an automated playbook to a monitor](#add-an-automated-playbook-to-a-monitor) below.
 
@@ -40,7 +40,7 @@ For more information, see [View automated playbooks for an alert](#view-automate
 
 ### From the main navigation menu
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**.  
 1. The Automation Service screen opens on the **Playbook** tab.
 
 For more information, see [About the Automation Service](/docs/platform-services/automation-service/about-automation-service/).
@@ -49,7 +49,7 @@ For more information, see [About the Automation Service](/docs/platform-services
 
 1. [Open the **New Monitor** window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window).
 1. Perform [Step 1](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), [Step 2](/docs/alerts/monitors/create-monitor/#step-2-advanced-settings-optional), and [Step 3](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional) in the **New Monitor** window.
-1. In [Step 4: Playbook](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional), click the field under **Automated Playbooks** to select a [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/) to run when an alert is fired. <br/><img src={useBaseUrl('img/alerts/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid gray'}} width="800" />
+1. In [Step 4: Playbook](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional), click the field under **Automated Playbooks** to select a [playbook in the Automation Service](/docs/platform-services/automation-service/playbooks/) to run when an alert is fired. <br/><img src={useBaseUrl('img/alerts/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid gray'}} width="800" />
 1.  (Optional) Click **Manage Playbooks** to see playbooks in the Automation Service. From here you can view the playbook you selected above and look at its details in the Automation Service to determine if it is the one you want to run when the alert is triggered. You can also edit the playbook, or if you want, create a new playbook in the Automation Service to use in the monitor.
 
 After you add playbooks to the monitor, when the monitor triggers an alert, the selected playbooks run automatically.
@@ -69,7 +69,7 @@ Once a monitor triggers an alert with one or more attached playbooks, you can vi
    | <img src={useBaseUrl('img/alerts/monitors/playbook-completed-icon.png')} alt="Completed icon" width="30" /> | Completed |
    | <img src={useBaseUrl('img/alerts/monitors/playbook-completed-with-errors-icon.png')} alt="Completed icon" width="30" /> | Completed with errors |
 
-1. Click the playbook name to open the [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/). <br/>The playbook shows the status of each action in the playbook that ran for the alert. For example, **Success** displays at the bottom of actions that have successfully completed, **Failed** for actions that did not complete, or **Waiting Owner** for actions that need user interaction. <br/><img src={useBaseUrl('img/alerts/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" style={{border: '1px solid gray'}} width="800" />
+1. Click the playbook name to open the [playbook in the Automation Service](//docs/platform-services/automation-service/playbooks/). <br/>The playbook shows the status of each action in the playbook that ran for the alert. For example, **Success** displays at the bottom of actions that have successfully completed, **Failed** for actions that did not complete, or **Waiting Owner** for actions that need user interaction. <br/><img src={useBaseUrl('img/alerts/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" style={{border: '1px solid gray'}} width="800" />
 1. Click an action to view more about its status. Status information opens in a box to the left. <br/>In the following example of an action whose status is **Waiting Owner**, an **Action Task** appears in the box that describes user interaction required to complete the task. <br/><img src={useBaseUrl('img/alerts/monitors/playbook-waiting-owner.png')} alt="Playbook awaiting user interaction" style={{border: '1px solid gray'}} width="800" />
 1. If you have an action marked as **Waiting Owner**, perform the steps needed to complete the **Action Task**. When done, click the appropriate button at the bottom of the **Waiting Owner** action box (**Approve**, **Approve & Close**, or **Reject**). The action completes, and the subsequent remaining actions in the playbook run.<br/><img src={useBaseUrl('img/alerts/monitors/playbook-complete-task.png')} alt="Playbook awaiting user interaction" style={{border: '1px solid gray'}} width="300" />
 1. Address any other actions in the playbook that need attention. For example, click and open any failed actions to see why they failed and to determine what you need to do to get them to complete successfully.
@@ -136,7 +136,7 @@ Sample playbooks to attach to monitors include:
 
 ### Create playbooks for monitors
 
-To create a playbook so you can add it to a monitor, see [Create a new playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook). As a best practice, whenever you want to create a new playbook, select an existing playbook to serve as the template for the new playbook and click the **Duplicate** button to copy it.
+To create a playbook so you can add it to a monitor, see [Create a new playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-a-new-playbook). As a best practice, whenever you want to create a new playbook, select an existing playbook to serve as the template for the new playbook and click the **Duplicate** button to copy it.
 
 <img src={useBaseUrl('img/alerts/monitors/playbook-duplicate-button.png')} alt="Duplicate button" style={{border: '1px solid gray'}} width="300" />
 
@@ -157,7 +157,7 @@ Some integrations that have useful actions for monitors include:
 
 ### Pass custom fields from a monitor to playbooks
 
-Results from an alert query are passed to a playbook through the [alert payload](/docs/platform-services/automation-service/automation-service-playbooks/#alert-payload). The variables from the payload can be used as inputs for different nodes in the playbook after they are defined as parameters in the start node.
+Results from an alert query are passed to a playbook through the [alert payload](/docs/platform-services/automation-service/playbooks/playbook-payloads/#alert-payload). The variables from the payload can be used as inputs for different nodes in the playbook after they are defined as parameters in the start node.
 
 :::note
 You must use [alert grouping](/docs/alerts/monitors/alert-grouping/) in the monitor configuration to pass fields from the query to the playbook.
@@ -167,12 +167,12 @@ You must use [alert grouping](/docs/alerts/monitors/alert-grouping/) in the moni
 
 1. Click **Edit** on the Start Node.
 1. Select **Alert** from the dropdown. <br/><img src={useBaseUrl('img/alerts/parse_from_alert.png')} alt="Payload parameters from an alert" style={{border: '1px solid gray'}} width="700" />
-1. The parameters from the default [alert payload variables](/docs/platform-services/automation-service/automation-service-playbooks/#alert-payload) will be defined, along with some placeholders for custom fields that may be passed from the alert query. To reference a field passed from the alert query, use `customPlaceholderMap[].FIELDNAME`.
+1. The parameters from the default [alert payload variables](/docs/platform-services/automation-service/playbooks/playbook-payloads/#alert-payload-variables) will be defined, along with some placeholders for custom fields that may be passed from the alert query. To reference a field passed from the alert query, use `customPlaceholderMap[].FIELDNAME`.
 
 #### Configure parameters from a JSON payload
 
 1. Click **Edit** on the Start Node.
 1. Select **Parse from Json** from the dropdown. <br/><img src={useBaseUrl('img/alerts/parse_from_json.png')} alt="Payload parameters from a Json payload" style={{border: '1px solid gray'}} width="700" />
-1. Copy the payload from a previously triggered automation. You can view the playbook payload of a previously triggered alert by following the steps [here](/docs/platform-services/automation-service/automation-service-playbooks/#alert-payload).
+1. Copy the payload from a previously triggered automation. You can view the playbook payload of a previously triggered alert by following the steps [here](/docs/platform-services/automation-service/playbooks/playbook-payloads/#view-an-alert-payload).
 1. Paste the payload into the **Enter Json payload** text box and click **Parse**. The fields from the payload will be auto parsed to parameters. <br/><img src={useBaseUrl('img/alerts/parse_from_json_payload.png')} alt="Parse from Json payload" style={{border: '1px solid gray'}} width="700" />
 1. Add or remove parameters based on the playbook requirements and click **Update**. <br/><img src={useBaseUrl('img/alerts/parse_from_json_parameters.png')} alt="Json Payload parameters" style={{border: '1px solid gray'}} width="700" />

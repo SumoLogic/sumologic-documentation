@@ -62,7 +62,7 @@ We recommend creating a Slack App for each Slack Workspace you want to monitor. 
 
 #### Create Slack App with Permissions
 1. Navigate to the [Slack Apps](https://api.slack.com/apps) page.
-2. Click **Create New App**. <br/><img src={useBaseUrl('img/send-data/slack-create-app-button.png')} alt="Create a new Slack app button]" width="<insert-pixel-number>"/>
+2. Click **Create New App**. <br/><img src={useBaseUrl('img/send-data/slack-create-app-button.png')} alt="Create a new Slack app button]" width="500"/>
 3. Select **From scratch** if asked how you would like to configure your Slack app. <br/><img src={useBaseUrl('img/send-data/slack-create-app-from-scratch.png')} alt="From Scratch App]" width="450"/>
 4. Provide a **App Name** for your Slack App and select the Workspace you want to monitor and install the Slack App in.
 The Sumo Logic collector will monitor logs from your workspace you select here. If you want to install the app on the
@@ -102,9 +102,9 @@ section. A Slack Enterprise Grid account is required.
 **I’ve reviewed and removed any hard-coded information** checkbox. Click the **Activate Public Distribution** button. <br/><img src={useBaseUrl('img/send-data/slack-activate-public-distro.png')} alt="Activate Public Distribution" width="550"/>
 5. Copy the shareable link and ensure the permissions are correct from the prior table.
 6. Open a new tab in your browser, paste the URL and press Enter.
-7. Select the dropdown menu in the upper right corner and choose the correct organization. <br/><img src={useBaseUrl('img/send-data/slack-select-org-menu.png')} alt="Select Org Menu" width="<insert-pixel-number>"/>
+7. Select the dropdown menu in the upper right corner and choose the correct organization. <br/><img src={useBaseUrl('img/send-data/slack-select-org-menu.png')} alt="Select Org Menu" width="800"/>
 8. Click **Allow**.
-9. Ignore the error message and copy the **Code in the URL** field, as shown in the following example. <br/><img src={useBaseUrl('img/send-data/slack-copy-url-code.png')} alt="Copy URL code" width="<insert-pixel-number>"/>
+9. Ignore the error message and copy the **Code in the URL** field, as shown in the following example. <br/><img src={useBaseUrl('img/send-data/slack-copy-url-code.png')} alt="Copy URL code" width="800"/>
 10. Get the client ID and client secret from the Basic information of your Slack app. Replace the `<CODE>`, `<CLIENT_ID>`
 and `<CLIENT_SECRET>` variables in the following URL. <br/> `https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>`
 11. Open a new browser tab and paste the URL from the previous step into the URL field, then press Enter.
@@ -116,7 +116,7 @@ When you create a Slack Source, you add it to a Hosted Collector. Before creati
 
 To configure a Slack Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Slack**.
 1. Enter a **Name** for the Source. The **Description** is optional.

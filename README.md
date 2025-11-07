@@ -1,11 +1,11 @@
-<img src="https://help.sumologic.com/img/reuse/sumo-docs-readme.png" width="400"/>
+<img src="https://www.sumologic.com/help/img/reuse/sumo-docs-readme.png" width="400"/>
 
 <p>
   <a href="https://github.com/SumoLogic/sumologic-documentation/blob/main/.github/workflows/production.yml"><img src="https://github.com/SumoLogic/sumologic-documentation/actions/workflows/production.yml/badge.svg" alt="GitHub Actions status"></a>
-  <a href="https://help.sumologic.com/docs/contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+  <a href="https://www.sumologic.com/help/docs/contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>
   <a href="https://x.com/SumoLogic"><img src="https://img.shields.io/twitter/follow/sumologic.svg?style=social" alt="Twitter Follow" /></a>
-  <a href="https://help.sumologic.com/release-notes-service"><img src="https://img.shields.io/badge/RSS-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Follow" width="50"/></a>
+  <a href="https://www.sumologic.com/help/release-notes-service"><img src="https://img.shields.io/badge/RSS-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Follow" width="50"/></a>
 </p>
 
 Sumo Docs is the open-source documentation site for Sumo Logic, an all-in-one cloud data analytics platform built to support security, operations, and business intelligence use cases. Sumo Logic empowers users to monitor, analyze, troubleshoot, and visualize data from their applications and network environments in real time. Its elastic processing capabilities enable seamless log data collection and management from various sources, regardless of type, volume, or location. Learn more at [sumologic.com](https://www.sumologic.com).
@@ -38,7 +38,7 @@ Before submitting an issue or pull request, we recommend reviewing the sections 
 
 To contribute to Sumo Docs, ensure you have the following tools installed:
 
-- [Node.js](https://nodejs.org/en/download/) version 18 or higher
+- [Node.js](https://nodejs.org/en/download/) version 20 or higher
 - [Yarn](https://yarnpkg.com/en/), installable via [Homebrew](https://brew.sh/) (`brew install yarn`)
 
 ## Installation
@@ -55,14 +55,14 @@ To contribute to Sumo Docs, ensure you have the following tools installed:
 
 ## Apply your changes
 
-Make edits using [Markdown syntax](https://help.sumologic.com/docs/contributing/style-guide/#markdown). Keep contributions concise, informative, and aligned with our guidelines.
+Make edits using [Markdown syntax](https://www.sumologic.com/help/docs/contributing/style-guide/#markdown). Keep contributions concise, informative, and aligned with our guidelines.
 
-Refer to our [Contributor Guidelines](https://help.sumologic.com/docs/contributing/create-edit-doc/#edit-a-doc) for more information on:
+Refer to our [Contributor Guidelines](https://www.sumologic.com/help/docs/contributing/create-edit-doc/#edit-a-doc) for more information on:
 - Markdown editing
 - Proposing bug fixes
 - Testing your changes
 
-All contributions must follow our [Style Guide](https://help.sumologic.com/docs/contributing/style-guide/).
+All contributions must follow our [Style Guide](https://www.sumologic.com/help/docs/contributing/style-guide/).
 
 ## Building locally
 

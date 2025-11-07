@@ -20,8 +20,8 @@ You can see a rule's status while viewing the rule:
 
 ## Search for rules by status
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.
-1. Click **Filters** at the top of the **Rules** screen.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.
+1. Click **Filters** at the top of the **Rules** screen.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. Select the **Status** field.<br/><img src={useBaseUrl('img/cse/filter-on-rule-status-1.png')} alt="Filter on rule status" style={{border: '1px solid gray'}} width="300"/>
 1. For **Operator** select **is**.
 1. Select a status.<br/><img src={useBaseUrl('img/cse/filter-on-rule-status-2.png')} alt="Select status to filter on" style={{border: '1px solid gray'}} width="400"/><br/>

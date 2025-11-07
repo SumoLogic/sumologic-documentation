@@ -36,18 +36,12 @@ The user creating the service application does not need to be an administrator.�
 Use the following steps to create a service application:
 
 1. Log in to the [Azure Active Directory Portal](https://aad.portal.azure.com/)
-1. Then select **Azure Active Directory** in the left menu.
-    ![Azure AD step 2.png](/img/send-data/Azure-AD-step-2.png)
-1. Then select **App Registrations**.<br/>
-    ![Azure AD step 3 red box.png](/img/send-data/Azure-AD-step-3-red-box.png)
-1. Then select **New Registration**. Go through the registration process, providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.
-    ![Azure new registration in step 4.png](/img/send-data/Azure-new-registration-in-step-4.png)
-1. After the Application is registered (created), be sure to copy the **Application (client) ID** and the **Directory (tenant) ID**. These are used later as configuration parameters in Sumo Logic when creating the Microsoft Graph Identity Protection Source.
-    ![Azure created app in step 5.png](/img/send-data/Azure-created-app-in-step-5.png)
-1. Within the Application configuration page, select **Certificates and Secrets** to create an Application Client Secret Key.
-    ![Azure AD step 6.png](/img/send-data/Azure-AD-step-6.png)
-1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Graph Identity Protection Source.
-    ![Azure AD step 7.png](/img/send-data/Azure-AD-step-7.png)
+1. Then select **Azure Active Directory** in the left menu.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-2.png')} alt="Select Azure Active Directory" style={{border: '1px solid gray'}} width="800" />
+1. Then select **App Registrations**.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-3-red-box.png')} alt="Select App Registrations" style={{border: '1px solid gray'}} width="300" />
+1. Then select **New Registration**. Go through the registration process, providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.<br/><img src={useBaseUrl('img/send-data/Azure-new-registration-in-step-4.png')} alt="Select new registration" style={{border: '1px solid gray'}} width="800" />
+1. After the Application is registered (created), be sure to copy the **Application (client) ID** and the **Directory (tenant) ID**. These are used later as configuration parameters in Sumo Logic when creating the Microsoft Graph Identity Protection Source.<br/><img src={useBaseUrl('img/send-data/Azure-created-app-in-step-5.png')} alt="Copy IDs" style={{border: '1px solid gray'}} width="800" />
+1. Within the Application configuration page, select **Certificates and Secrets** to create an Application Client Secret Key.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-6.png')} alt="Certificates and Secrets" style={{border: '1px solid gray'}} width="800" />
+1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Graph Identity Protection Source.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-7.png')} alt="Client Secret Value" style={{border: '1px solid gray'}} width="800" />
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**. From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function.
 
 | API |  Account Type |  Permissions |
@@ -58,7 +52,8 @@ Use the following steps to create a service application:
 | Risky User     | Delegated (work or school account)     | IdentityRiskyUser.Read.All |
 | Risky User     | Delegated (personal Microsoft account) | Not supported.             |
 | Risky User     | Application                            | IdentityRiskyUser.Read.All |
-![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
+
+<img src={useBaseUrl('img/send-data/azure-ad-step-8.png')} alt="Request API permissions" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
 
 ### Source configuration
 
@@ -66,7 +61,7 @@ When you create a Microsoft Graph Identity Protection Source, you add it to a H
 
 To configure a Microsoft Graph Identity Protection Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Microsoft Graph Identity Protection Source**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.

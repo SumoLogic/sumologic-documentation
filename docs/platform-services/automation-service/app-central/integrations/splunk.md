@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/splunk.png')} alt="splunk" width="70"/>
 
-***Version: 1.2  
-Updated: Jul 13, 2023***
+***Version: 1.3
+Updated: Sep 18, 2025***
 
 Search and send events with Splunk.
 
@@ -78,3 +78,6 @@ For information about Splunk, see [Splunk documentation](https://docs.splunk.com
 	+ Integration renamed from Splunk OIF to Splunk
 	+ Changed fields visibility
 	+ Changed Daemon compatibility (Splunk Alerts Daemon)
+* September 18, 2025 (v1.3)
+    + Improved timezone handling in alert queries.
+    + Improved URL encoding to handle reserved characters.

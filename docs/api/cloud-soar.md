@@ -38,4 +38,4 @@ For more information, see [Legacy Cloud SOAR APIs](/docs/cloud-soar/legacy/legac
 
 <ApiRoles/>
 
-* Cloud SOAR (all role capabilities)
+* [Cloud SOAR](/docs/manage/users-roles/roles/role-capabilities/#cloud-soar) (all role capabilities)

@@ -27,15 +27,94 @@ jobs:
         with:
           node-version: '20.x'
           cache: 'yarn'
-      - name: Docusaurus Webpack cache
-        uses: actions/cache@v3
-        with:
-          path: node_modules/.cache
-          key: ${{ runner.os }}-webpack-cache-${{ hashFiles('yarn.lock') }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+      - name: Clean Docusaurus cache
+        run: rm -rf .docusaurus build
       - name: Build the Docusaurus site
         run: yarn build
+      # --- Disallowed character checks for Pantheon ---
+      # 1) Fail if any file path in the build output contains disallowed characters
+      - name: Check build artifact paths for disallowed characters
+        env:
+          BUILD_DIR: build
+        shell: bash
+        run: |
+          if [ ! -d "$BUILD_DIR" ]; then
+            echo "No $BUILD_DIR directory found; skipping path check."
+            exit 0
+          fi
+          # Disallowed chars: " : < > | * ?
+          OFFENDERS="$(find "$BUILD_DIR" -type f | grep -E '[":<>|*?]')" || true
+          if [ -n "$OFFENDERS" ]; then
+            echo "❌ Disallowed characters found in build artifact paths:"
+            echo "$OFFENDERS"
+            while IFS= read -r p; do
+              rel="${p#$(pwd)/}"
+              [ "$rel" = "$p" ] && rel="$p"
+              badchars=$(echo "$rel" | grep -oE '[":<>|*?]' | tr -d '\n')
+              echo "::error file=${rel}::Disallowed character(s) found in build artifact path: [${badchars}] (Pantheon rejects paths containing any of: \" : < > | * ?)"
+            done <<< "$OFFENDERS"
+            exit 1
+          fi
+          echo "✅ No disallowed characters found in build artifact paths."
+      # 2) Fail if any Markdown/MDX link target contains disallowed characters (excluding external links).
+      #    Ignores fenced code blocks (```/~~~) and inline code (`...`) to avoid false positives from code samples.
+      - name: Check Markdown/MDX links for disallowed characters
+        shell: bash
+        run: |
+          FILES="$(git ls-files '*.md' '*.mdx' 2>/dev/null || true)"
+          if [ -z "$FILES" ]; then
+            echo "No Markdown/MDX files found; skipping link check."
+            exit 0
+          fi
+          BAD_LINKS=$(
+            awk '
+              BEGIN { in_code=0 }
+              {
+                raw=$0
+
+                # Toggle fenced code blocks starting with ``` or ~~~
+                if (match(raw, /^\s*(```|~~~)/)) { in_code = !in_code; next }
+                if (in_code) { next }
+
+                # Strip inline code spans so patterns inside don’t trigger
+                line = raw
+                gsub(/`[^`]*`/, "", line)
+
+                # Find real Markdown links: [text](url)
+                while (match(line, /\[[^]]+\]\(([^)]+)\)/, m)) {
+                  url=m[1]
+
+                  # Skip external schemes
+                  if (url ~ /^(https?:|mailto:|tel:)/) { line=substr(line, RSTART+RLENGTH); continue }
+
+                  # Drop query + fragment
+                  sub(/\?.*$/, "", url)
+                  sub(/#.*/, "", url)
+
+                  # Disallowed characters in relative link targets: " : < > | * ?
+                  if (url ~ /[":<>|*?]/) {
+                    printf("%s\t%d\t%s\n", FILENAME, FNR, m[0])
+                  }
+
+                  line=substr(line, RSTART+RLENGTH)
+                }
+              }
+            ' $FILES
+          )
+
+          if [ -n "$BAD_LINKS" ]; then
+            echo "❌ Disallowed characters found in Markdown/MDX link targets:"
+            echo "$BAD_LINKS"
+            while IFS=$'\t' read -r file line match; do
+              [ -z "$file" ] && continue
+              badchars=$(echo "$match" | grep -oE '[":<>|*?]' | tr -d '\n')
+              echo "::error file=${file},line=${line}::Disallowed character(s) in Markdown link target: [${badchars}] ${match} (Not allowed: \" : < > | * ?)"
+            done <<< "$BAD_LINKS"
+            exit 1
+          fi
+          echo "✅ No disallowed characters found in Markdown/MDX link targets."
   spellcheck:
     runs-on: ubuntu-latest
     steps:

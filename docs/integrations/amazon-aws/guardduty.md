@@ -178,12 +178,14 @@ _sourceCategory=aws/guardduty
 
 ## Collecting logs for the Amazon GuardDuty app
 
-You can collect the Amazon GuardDuty logs using two methods: 
+You can collect the Amazon GuardDuty logs using the following methods and send them to Sumo Logic via an HTTP endpoint: 
 
-- [Method 1: Collecting Amazon GuardDuty logs using EventBridge](#method-1-collecting-amazon-guardduty-logs-using-eventbridge)
-- [Method 2: Collecting Amazon GuardDuty logs using Sumo Logic HTTP endpoint](#method-2-collecting-amazon-guardduty-logs-using-sumo-logic-http-endpoint)
+- [Method 1: GuardDuty > EventBridge > Sumo Logic via HTTP](#method-1-guardduty--eventbridge--sumo-logic-via-http-preferred)
+- [Method 2: GuardDuty > Lambda Function > Sumo Logic via HTTP](#method-2-guardduty--lambda-function--sumo-logic-via-http-alternative)
 
-### Method 1: Collecting Amazon GuardDuty logs using EventBridge
+For efficiency and seamless integration, Method 1 using AWS EventBridge is preferred, as it leverages native AWS services to reduce resource overhead and simplify the process.
+
+### Method 1: GuardDuty > EventBridge > Sumo Logic via HTTP (Preferred)
 
 This method leverages AWS EventBridge to streamline the logging process by sending data directly to Sumo Logic via an HTTP endpoint. By eliminating intermediary services such as Lambda, it offers a more straightforward and cost-effective solution.
 
@@ -194,7 +196,7 @@ To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs
 #### Step 2: Configure EventBridge API destination
 
 Follow the steps below to configure the EventBridge API destination:
-1. Sign in to your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
+1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
 1. In the navigation bar, click **API destinations**.
 1. Click **Create destination**.
 1. Enter a name for the API Destination.
@@ -208,7 +210,7 @@ Follow the steps below to configure the EventBridge API destination:
 #### Step 3: Create the EventBridge rule
 
 Follow the steps below to create the EventBridge rule:
-1. Sign in to your [Amazon EventBridge Console](https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/).
+1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
 1. In the navigation bar, click **Rules**.
 1. Set the event source to **AWS services** and then select **Security Hub** as the AWS service.
 1. Select **All Events** in Event Type.
@@ -217,9 +219,9 @@ Follow the steps below to create the EventBridge rule:
 1. Select **Create a new role for this specific resource** in the **Execution role**.
 1. Click **Create** to activate the rule.
 
-### Method 2: Collecting Amazon GuardDuty logs using Sumo Logic HTTP endpoint
+### Method 2: GuardDuty > Lambda Function > Sumo Logic via HTTP (Alternative)
 
-This method uses an AWS Lambda function to process, store, and forward logs to Sumo Logic. While it offers a robust solution, it introduces additional AWS resources, such as Lambda, which can increase both cost and complexity.
+This method uses an AWS Lambda function to process, store, and forward logs to Sumo Logic via an HTTP endpoint. While it offers a robust solution, it introduces additional AWS resources, such as Lambda, which can increase both cost and complexity.
 
 - Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
 - A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo `CloudWatchEventFunction` Lambda function.

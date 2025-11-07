@@ -195,6 +195,10 @@ The equal to (=) function returns “true” if the expressions are equal, or 
 
    `null = null`
 
+:::note
+The `=` and `==` functions do not match against a regular expression or pattern. Instead, use the [`like`](#like) function.
+:::
+
 ### ==
 
 The double equal sign (==) function returns “true” if the two expressions are equal. The two expressions must be the same type, and must be a type that can be used in an equality comparison. For complex types such as array and struct, the data types of fields must be orderable.
@@ -507,7 +511,7 @@ Compares two IPv4 addresses and returns true if the network prefixes match.
 
 The following expression returns "true":
 
-`compareCIDRPprefix("10.10.1.35", "10.10.1.100", "24")`
+`compareCIDRPrefix("10.10.1.35", "10.10.1.100", "24")`
 
 ### concat
 

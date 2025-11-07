@@ -12,9 +12,9 @@ The **Threat Intelligence** tab shows the indicators that have been added to you
 
 ## Threat Intelligence tab
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access the **Threat Intelligence** tab, in the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access the **Threat Intelligence** tab, in the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. 
  
 <img src={useBaseUrl('img/security/threat-intelligence-tab.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
@@ -37,7 +37,7 @@ You can add threat intelligence indicators with the **Add Indicators** button in
 
 <CloudSIEMThreatIntelNote/>
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/).In the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/).In the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. 
 1. Click **+ Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/security/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
 1. Select the format of the file to be uploaded (see [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use in the file):
     * **Normalized JSON**. A normalized JSON file. 
@@ -52,7 +52,7 @@ When you add indicators, the event is recorded in the Audit Event Index. See [Au
 
 ## Delete threat intelligence indicators
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. 
 1. Select a source in the list of sources. Details of the source appear in a sidebar.
 1. Click the **Delete Indicators** button. 
 <!-- 1. When the following dialog appears, select which indicators you'd like to delete from the source:<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
@@ -68,10 +68,10 @@ When you remove indicators, the event is recorded in the Audit Event Index. See 
 
 Indicators are deemed valid until they reach the date set by their "valid until" attribute (`validUntil` for [normalized JSON](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) and [CSV](/docs/security/threat-intelligence/upload-formats/#csv-format), and `valid_until` for [STIX](/docs/security/threat-intelligence/upload-formats/#stix-2x-json-format)). After that date, they are considered expired.
 
-Expired indicators are retained until they reach the end of the retention period. At the end of the retention period, expired indicators are automatically deleted. Between the time they expire and are deleted, the indicators are still in the system, and you can search against them if you want.
+Expired indicators are retained until they reach the end of the retention period. At the end of the retention period, expired indicators are automatically deleted. Between the time they expire and are deleted, the indicators are still in the system, and you can still use them to find threats.
 
 By default, expired indicators are retained for 180 days. To change the retention period:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/).In the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/).In the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. 
 1. Click the three-dot button in the upper-right corner of the page.
 1. Click **Edit Retention Period**. 
 1. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180. 

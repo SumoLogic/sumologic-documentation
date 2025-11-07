@@ -21,6 +21,12 @@ module.exports = {
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
+  onDuplicateRoutes: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
   favicon: 'https://www.sumologic.com/favicon.ico',
   organizationName: 'sumologic', // Usually your GitHub org/user name.
   projectName: 'sumologic-documentation', // Usually your repo name.
@@ -252,10 +258,10 @@ module.exports = {
       { property: 'og:image:alt', content: 'Sumo Logic Docs' },
     ],
     announcementBar: {
-      id: 'blackhat',
-      content: 'Visit Sumo Logic at Black Hat USA in Las Vegas: August 6-7, 2025 | Mandalay Bay | Booth #5812 | <a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/events/black-hat-book-meeting">Click here</a> to book a meeting with us!',
-      backgroundColor: '#b0eefe',
-      textColor: '#091E42',
+      id: 'domain',
+      content: '🚀 <a href="https://www.sumologic.com/events/aws-reinvent">Join us at AWS re:Invent 2025 in Las Vegas, Dec 1-5</a>! Stop by Booth #1329 to see Sumo Logic Dojo AI in action and connect with our experts.',
+      backgroundColor: '#e4b0d1',
+      textColor: '#000',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
@@ -267,6 +273,8 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
     algolia: {
       appId: '2SJPGMLW1Q',

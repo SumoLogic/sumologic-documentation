@@ -4,6 +4,8 @@ title: sort Search Operator
 sidebar_label: sort
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `sort` operator orders aggregated search results. The default sort order is descending. Then you can use the top or limit operators to reduce the number of sorted results returned.
 
 The `order` operator is synonymous with the `sort` operator. You can use them interchangeably in your queries.
@@ -73,6 +75,6 @@ _sourceCategory=Labs/Apache/Access
 
 which provides results like:
 
-![sort](/img/reuse/query-search/sort_operator_example.png)
+<img src={useBaseUrl('img/reuse/query-search/sort_operator_example.png')} alt="Sort" style={{border: '1px solid gray'}} width="300" />
 
 For more information, see [Top](top.md) operator or [Limit](limit.md) operator.

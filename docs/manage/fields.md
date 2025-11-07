@@ -28,6 +28,14 @@ Fields specified in field extraction rules are automatically added and enabled i
 
 Field management is important to ensure search performance is maintained and you continue to have meaningful fields assigned to your data. You can manage fields defined through any of these methods at any time, to include deleting unneeded fields, see [manage fields](#manage-fields) for details.
 
+import TerraformLink from '../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a field with the [`sumologic_field`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/field) resource.
+
+<TerraformLink/>
+:::
+
 ## About metrics sources, fields, and metadata
 
 Sumo Logic metrics sources also support tagging with fields defined in your Fields schema or other metadata that hasn’t been added to your schema. Here’s how it works:
@@ -55,7 +63,7 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
 
 Fields can be assigned to a Collector and Source using the **Fields** input table in the Sumo user interface when creating or editing a Collector or Source.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.  
 1. Create or find and select the Collector or Source you want to assign fields to.
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
@@ -209,10 +217,9 @@ Fields cannot be used with [Live Tail](/docs/search/live-tail).
 
 Fields in your account are manageable in the Fields page.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Fields page, in the main Sumo Logic menu select **Manage Data > Logs > Fields**. 
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Fields page, in the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Fields page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
  
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Fields page, in the main Sumo Logic menu select **Manage Data > Logs > Fields**. 
 
 To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
 
