@@ -84,7 +84,10 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 <IntegrationsAuth/>
 * <IntegrationLabel/>
 * **Private Key Json**. Provide the content of the JSON file generated [above](#google-firestore-configuration). Open the file and copy-paste the whole content in the field.
+* **WIF Private Key Json**. Provide the content of the Workload Identity Federation JSON file generated [above](#google-firestore-configuration). Open the file and copy-paste the whole content in the field.
+* **scopes**. Default scope is already added as `https://www.googleapis.com/auth/datastore`, if not then add this scope.
 * **Database ID**. Enter the Firestore database ID. For default databases, use `(default)`.
+* **Project ID**. Provide the Google Firestore Project ID where the firestore actions will be performed.
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
