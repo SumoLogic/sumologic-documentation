@@ -4,6 +4,8 @@ title: LogReduce Operator
 description: The LogReduce Operator allows you to quickly assess activity patterns for things like a range of devices or traffic on a website.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::important
 The summarize operator has been renamed the LogReduce operator, to match the **LogReduce** button on the **Messages** tab. Both operators will continue to work in search queries as synonyms for a limited time. We recommend that you rewrite saved queries replacing summarize with logreduce.
 :::
@@ -22,10 +24,7 @@ For information on how to interpret and influence the outcome of LogReduce resul
 When you've already run a search query with non-aggregate results, you can use the **LogReduce** button in the **Messages** tab to automatically apply the LogReduce operator to the current results.
 
 1. Run a search query with non-aggregate results.
-1. In the **Messages** tab, the **LogReduce** button displays. Click it to automatically apply the LogReduce operator to your results.  
-
-    ![button](/img/search/logreduce/logreduce-button.png)
-     
+1. In the **Messages** tab, the **LogReduce** button displays. Click it to automatically apply the LogReduce operator to your results.<br/><img src={useBaseUrl('img/search/logreduce/logreduce-button.png')} alt="Button" style={{border: '1px solid gray'}} width="400" />
 1. The **Signatures** tab is displayed with your results. 
 
 ### Rules
@@ -52,7 +51,7 @@ After running a LogReduce operation, from the **Signatures** tab, you can view
 * Click the number in the **Count** column for a signature.
 * Check the checkboxes in the **Select** column for any number of signatures and click the **View Details** button on the top right of the table.
 
-![logreduce details option.png](/img/search/logreduce/logreduce-details-option.png)
+<img src={useBaseUrl('img/search/logreduce/logreduce-details-option.png')} alt="LogReduce details option" style={{border: '1px solid gray'}} width="800" />
 
 Details option syntax:
 

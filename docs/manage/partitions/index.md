@@ -19,6 +19,14 @@ A partition stores your data in an index separate from the rest of your account'
 Data stored in a partition is not stored anywhere else. 
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a partition with the [`sumologic_partition`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/partition) resource.
+
+<TerraformLink/>
+:::
+
 ## About Partitions
 
 Partitions route your data to an index becoming a separate subset of data in your account. Creating smaller and separate subsets of data is central to search optimization. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.

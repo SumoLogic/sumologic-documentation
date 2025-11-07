@@ -28,6 +28,14 @@ Fields specified in field extraction rules are automatically added and enabled i
 
 Field management is important to ensure search performance is maintained and you continue to have meaningful fields assigned to your data. You can manage fields defined through any of these methods at any time, to include deleting unneeded fields, see [manage fields](#manage-fields) for details.
 
+import TerraformLink from '../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a field with the [`sumologic_field`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/field) resource.
+
+<TerraformLink/>
+:::
+
 ## About metrics sources, fields, and metadata
 
 Sumo Logic metrics sources also support tagging with fields defined in your Fields schema or other metadata that hasn’t been added to your schema. Here’s how it works:
@@ -225,7 +233,7 @@ You need the **Manage Fields** [role capability](users-roles/roles/role-capab
 
 The Fields page displays the following information: 
 
-* **Status** shows a checkmark in a green circle <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> to indicate if the field is actively being applied or an exclamation mark in a red circle ![red-exclamation-circle.png](/img/fields/red-exclamation-circle.png) to indicate if the field is disabled and being dropped.
+* **Status** shows a checkmark in a green circle <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> to indicate if the field is actively being applied or an exclamation mark in a red circle <img src={useBaseUrl('img/fields/red-exclamation-circle.png')} alt="Red exclamation circle" width="20" /> to indicate if the field is disabled and being dropped.
 * **Field Name** is the name of the field, known as the key in the key-value pair.
 * **Data Type** shows the data type of the field.
 * **Field Extraction Rules** shows the number of Field Extraction Rules that reference the field.
@@ -278,7 +286,7 @@ In the details pane of the field, click the **Disable** button.<br/><img src={u
 Deleting a field does not delete historical data assigned with that field. If you delete a field by mistake and one or more of those dependencies break, you can re-add the field to get things working properly again. You should always disable a field and ensure things are behaving as expected before deleting a field.
 :::
 
-Select the **Delete** button in the details pane of the field. To delete a field you need to remove any references to it from some features. If the field is used by any of the following
+Select the **Delete** button in the details pane of the field. To delete a field you need to remove any references to it from some features if the field is used by any of the following:
 
 * Field Extraction Rule
 * Role
@@ -286,7 +294,7 @@ Select the **Delete** button in the details pane of the field. To delete a field
 * Collector
 * Source
 
-<br/><img src={useBaseUrl('/img/fields/delete-icon.png')} alt="delete-icon" style={{border:'1px solid gray'}} width="450"/>
+<img src={useBaseUrl('/img/fields/delete-icon.png')} alt="delete-icon" style={{border:'1px solid gray'}} width="300"/>
 
 You will see the following prompt and you must remove the field reference before you can delete it.
 

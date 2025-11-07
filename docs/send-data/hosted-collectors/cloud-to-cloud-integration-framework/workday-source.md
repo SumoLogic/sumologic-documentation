@@ -209,7 +209,7 @@ source in the Collectors page.
 
 If the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
 
-![troubleshooting.png](/img/send-data/workday-troubleshooting.png)
+<img src={useBaseUrl('img/send-data/workday-troubleshooting.png')} alt="Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 
 The following section details how you can resolve various errors.
 
