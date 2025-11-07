@@ -274,7 +274,6 @@ module.exports = {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
-      respectPrefersColorScheme: true,
     },
     algolia: {
       appId: '2SJPGMLW1Q',
@@ -444,12 +443,12 @@ module.exports = {
             className: 'header-trial',
             alt: 'Sign up for a Sumo Logic free trial',
           },
-          {
-            className: 'header-github-link',
-            to: 'https://github.com/SumoLogic/sumologic-documentation',
-            position: 'right',
-            alt: 'Link to Sumo Logic Docs GitHub repository',
-          },
+        //{
+          //className: 'header-github-link',
+          //to: 'https://github.com/SumoLogic/sumologic-documentation',
+          //position: 'right',
+          //alt: 'Link to Sumo Logic Docs GitHub repository',
+        //},
           {
             type: 'search',
             position: 'right',
