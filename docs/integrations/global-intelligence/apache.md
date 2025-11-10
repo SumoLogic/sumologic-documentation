@@ -55,13 +55,13 @@ Follow the steps in [Sumo Logic Apache Logs](/docs/integrations/web-servers/apac
 
 ### Golden Signals
 
-[Golden signals](https://landing.google.com/sre/sre-book/chapters/preface/) of load, bottleneck, latency, errors and throughput help identify the flow of causation between benchmark signals. In a nutshell, load spikes lead to either latency or error spikes; latency and error spikes lead to a drop in throughput as shown in the figure below. The signals and contributing factors are organized based on Golden Signal analysis
+[Golden signals](https://landing.google.com/sre/sre-book/chapters/preface/) of load, bottleneck, latency, errors and throughput help identify the flow of causation between benchmark signals. In a nutshell, load spikes lead to either latency or error spikes; latency and error spikes lead to a drop in throughput as shown in the figure below. The signals and contributing factors are organized based on Golden Signal analysis.
 
-![Apache Golden signals.png](/img/global-intelligence/apache-golden-signals.png)
+<img src={useBaseUrl('img/global-intelligence/apache-golden-signals.png')} alt="Apache Golden signals" style={{border: '1px solid gray'}} width="800" />
 
 ### Distance: Quantifying Similarity of Server Time Series to Benchmark
 
-Distance, between 0 and 1, is a statistical measure of how similar a given entity is to other entities based on a given signal. A distance of 0 signifies entities that are behaving identical to the population of entities, for the given signal. Sudden increases in distance coupled with sudden increases compared to benchmark values indicate entities that are either the cause of an incident or are affected by upstream
+Distance, between 0 and 1, is a statistical measure of how similar a given entity is to other entities based on a given signal. A distance of 0 signifies entities that are behaving identical to the population of entities, for the given signal. Sudden increases in distance coupled with sudden increases compared to benchmark values indicate entities that are either the cause of an incident or are affected by upstream.
 issues.
 
 For each Apache server, hourly signals for the past 7 days are used to construct the benchmark distribution for a given signal such as requests per second. A given server’s hourly readings for each day are compared with the benchmark signals to determine the daily distance from the benchmark. If a server is consistently different from the benchmark, such a server is behaving differently from the population for a given signal. Changes, such as a sudden increase in distance between days, are more significant than the absolute value of distance on any given day.
@@ -86,7 +86,7 @@ Use this dashboard to:
 
 * Analyze unusual load spikes and the reasons for them. Load on an Apache server is measured by Requests per Second. Apache [request rate](https://httpd.apache.org/docs/trunk/misc/perf-scaling.html) is affected by connection rate, requests per connection, data transferred (GB/request), BOT activity, and HTTP verb mix. In addition [configuration factors](https://www.liquidweb.com/kb/apache-optimization/) such as the use of HTTPs and CPU/Memory allocation also affect Apache request rate. Assess if your Apache request rates are significantly lower for a given server compared to other Apache servers. If so, consult these correlates to verify if any of these factors might be the cause. To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark.
 
-![GI-Apache-01-Load-Signals-and-Contributing-Factors.png](/img/global-intelligence/GI-Apache-01-Load-Signals-and-Contributing-Factors.png)
+<img src={useBaseUrl('img/global-intelligence/GI-Apache-01-Load-Signals-and-Contributing-Factors.png')} alt="GI Apache - 01. Load Signals and Contributing Factors" style={{border: '1px solid gray'}} width="800" />
 
 ### Throughput Signals and Contributing Factors
 
@@ -98,7 +98,7 @@ Use this dashboard to:
 
 * Assess if your Apache throughput is significantly lower for a given server compared to other Apache servers. If so, analyze the request rate, GB per request, and server errors to verify if any of these factors might be the cause. To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark. Sudden increases in distance coupled with sudden increases compared to benchmark values indicate entities that are either the cause of an incident or are affected by upstream issues.
 
-![GI-Apache-02-Throughput-Signals-and-Contributing-Factors.png](/img/global-intelligence/GI-Apache-02-Throughput-Signals-and-Contributing-Factors.png)
+<img src={useBaseUrl('img/global-intelligence/GI-Apache-02-Throughput-Signals-and-Contributing-Factors.png')} alt="GI Apache - 01. Throughput Signals and Contributing Factors" style={{border: '1px solid gray'}} width="800" />
 
 ### Errors and Contributing Factors
 
@@ -108,7 +108,7 @@ Use this dashboard to:
 
 * Assess unusual increases in error rate and the reasons for them. Apache errors may be caused by high request rate, high request rate or large data transfer in GB per request.  Analyze the request rate, GB per request and server errors to verify if any of these factors might be the cause. To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark. Sudden increases in distance coupled with sudden increases compared to benchmark values indicate entities that are either the cause of an incident or are affected by upstream issues.
 
-![GI-Apache-03-Errors-and-Contributing-Factors.png](/img/global-intelligence/GI-Apache-03-Errors-and-Contributing-Factors.png)
+<img src={useBaseUrl('img/global-intelligence/GI-Apache-03-Errors-and-Contributing-Factors.png')} alt="GI Apache - 03. Errors and Contributing Factors" style={{border: '1px solid gray'}} width="800" />
 
 ### Latency Signals and Contributing Factors
 
@@ -118,7 +118,7 @@ Use this dashboard to:
 
 * Assess unusual latency increases and the reasons for them such as increased load. Analyze the request rate and HTTP POST/DELETE mix of requests to verify if any of these factors might be the cause. To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark. Sudden increases in distance coupled with sudden increases compared to benchmark values indicate entities that are either the cause of an incident or are affected by upstream issues.
 
-![GI-Apache-04-Latency-Signals-and-Contributing-Factors.png](/img/global-intelligence/GI-Apache-04-Latency-Signals-and-Contributing-Factors.png)
+<img src={useBaseUrl('img/global-intelligence/GI-Apache-04-Latency-Signals-and-Contributing-Factors.png')} alt="GI Apache - 04. Latency Signals and Contributing Factors" style={{border: '1px solid gray'}} width="800" />
 
 ### Visitor Benchmarks
 
@@ -132,7 +132,7 @@ Use this dashboard to:
 * Understand your mix of clients (desktop versus mobile, desktop OS versions, mobile OS versions) to diagnose unusual levels of certain error codes observed in **GI Apache - 01. Load Signals and Contributing Factors**. See [this](https://stackoverflow.com/questions/27828200/why-does-nginx-give-a-502-error-only-for-mobile-devices) example.
 * Diagnose deviations of your company compared to the benchmark by using the trend line panels for your company’s Apache servers.
 
-![GI-Apache-05-Visitor-Benchmarks.png](/img/global-intelligence/GI-Apache-05-Visitor-Benchmarks.png)
+<img src={useBaseUrl('img/global-intelligence/GI-Apache-05-Visitor-Benchmarks.png')} alt="GI Apache - 05. Visitor" style={{border: '1px solid gray'}} width="800" />
 
 ## Upgrade/Downgrade the Global Intelligence for Apache app (Optional)
 

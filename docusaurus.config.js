@@ -259,9 +259,10 @@ module.exports = {
     ],
     announcementBar: {
       id: 'domain',
-      content: '<b>We’ve moved!</b> Our docs are now at <a href="https://www.sumologic.com/help">sumologic.com/help</a>. Redirects are in place, but don’t forget to update your bookmarks.',
-      backgroundColor: '#b0eefe',
-      textColor: '#091E42',
+      content: 'Google Translate is down for maintenance.',
+      // content: '🚀 <a href="https://www.sumologic.com/events/aws-reinvent">Join us at AWS re:Invent 2025 in Las Vegas, Dec 1-5</a>! Stop by Booth #1329 to see Sumo Logic Dojo AI in action and connect with our experts.',
+      backgroundColor: '#e4b0d1',
+      textColor: '#000',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
@@ -274,7 +275,6 @@ module.exports = {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
-      respectPrefersColorScheme: false,
     },
     algolia: {
       appId: '2SJPGMLW1Q',
@@ -406,23 +406,8 @@ module.exports = {
             to: '/docs/release-notes',
           },
           {
-            type: 'search',
+            label: 'Support',
             position: 'left',
-          },
-          {
-            type: 'html',
-            position: 'right',
-            value: 'google_translate',
-          },
-          {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'header-trial',
-            alt: 'Sign up for a Sumo Logic free trial',
-          },
-          {
-            position: 'right',
-            className: 'support-menu-trigger',
             to: '#',
             type: 'dropdown',
             items: [
@@ -448,11 +433,26 @@ module.exports = {
               },
             ],
           },
+          // {
+          //  type: 'html',
+          //  position: 'right',
+          //  value: 'google_translate',
+          // },
           {
-            className: 'header-github-link',
-            to: 'https://github.com/SumoLogic/sumologic-documentation',
+            to: 'https://www.sumologic.com/sign-up',
             position: 'right',
-            alt: 'Link to Sumo Logic Docs GitHub repository',
+            className: 'header-trial',
+            alt: 'Sign up for a Sumo Logic free trial',
+          },
+        //{
+          //className: 'header-github-link',
+          //to: 'https://github.com/SumoLogic/sumologic-documentation',
+          //position: 'right',
+          //alt: 'Link to Sumo Logic Docs GitHub repository',
+        //},
+          {
+            type: 'search',
+            position: 'right',
           },
         ],
       },
