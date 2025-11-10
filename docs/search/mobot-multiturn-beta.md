@@ -19,11 +19,14 @@ Our new conversational experience in Mobot (formerly known as Copilot) lets you 
 
 As we transition the feature name from *Copilot* to *Mobot*, some UI labels and screenshots may still show **Copilot**. Functionality is unchanged.
 
-## Logs Agent
+<!-- What is Mobot? consists of query agent which does xxxx and knowledge agent which does xxx -->
 
-Select **Logs Agent** to get help with Sumo Logic queries.
 
-<img src={useBaseUrl('img/search/mobot/mobot-logs-agent-button.png')} alt="Logs Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
+## Query Agent
+
+Select **Query Agent** to get help with Sumo Logic queries.
+
+<img src={useBaseUrl('img/search/mobot/mobot-logs-agent-button.png')} alt="Query Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
 
 ### What's new in Beta
 
@@ -154,6 +157,10 @@ Select **Knowledge Agent** to get help using Sumo Logic.
 Enter a question about Sumo Logic, such as *"How do I add a collector for AWS CloudTrail?"*, *"What are the API endpoints for Sumo Logic?"*, or anything else you need help with. The Knowledge agent returns an answer, including steps if needed.
 
 When you enter a question to the Knowledge Agent, it returns an answer using [Sumo Logic documentation](/docs/get-started). Click links in the response to see the help articles that served as the basis for the response.
+
+Knowledge Agent retains your conversation context for 24 hours from the time you ask your first question. After 24 hours, the session resets and prior context is no longer available. However, any new question will begin a new 24-hour session with its own preserved context. For example, if you ask a question and follow up with a related question within 24 hours, Mobot will still remember and continue the conversation seamlessly.
+
+
 
 ## Additional resources
 
