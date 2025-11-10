@@ -16,15 +16,15 @@ function HtmlNavbarItem({ position, value, className }) {
     className
   );
 
-  return (
-    <div className={classNames}>
-      {value === 'google_translate' ? (
-        <GoogleTranslateNavbarItem />
-      ) : (
-        <div dangerouslySetInnerHTML={{ __html: value }} />
-      )}
-    </div>
-  );
+ // return (
+ //   <div className={classNames}>
+ //     {value === 'google_translate' ? (
+ //       <GoogleTranslateNavbarItem />
+ //     ) : (
+ //       <div dangerouslySetInnerHTML={{ __html: value }} />
+ //     )}
+ //   </div>
+ // );
 }
 
 export default HtmlNavbarItem;

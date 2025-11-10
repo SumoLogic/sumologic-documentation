@@ -432,11 +432,11 @@ module.exports = {
               },
             ],
           },
-          {
-            type: 'html',
-            position: 'right',
-            value: 'google_translate',
-          },
+          // {
+          //  type: 'html',
+          //  position: 'right',
+          //  value: 'google_translate',
+          // },
           {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
