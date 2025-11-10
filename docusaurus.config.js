@@ -259,7 +259,8 @@ module.exports = {
     ],
     announcementBar: {
       id: 'domain',
-      content: '🚀 <a href="https://www.sumologic.com/events/aws-reinvent">Join us at AWS re:Invent 2025 in Las Vegas, Dec 1-5</a>! Stop by Booth #1329 to see Sumo Logic Dojo AI in action and connect with our experts.',
+      content: 'Google Translate is down for maintenance.',
+      // content: '🚀 <a href="https://www.sumologic.com/events/aws-reinvent">Join us at AWS re:Invent 2025 in Las Vegas, Dec 1-5</a>! Stop by Booth #1329 to see Sumo Logic Dojo AI in action and connect with our experts.',
       backgroundColor: '#e4b0d1',
       textColor: '#000',
     },
