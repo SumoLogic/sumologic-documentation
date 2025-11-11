@@ -4,6 +4,14 @@ title: threatlookup Search Operator
 sidebar_label: threatlookup
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<head>
+ <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+
 The `threatlookup` search operator allows you to search logs for matches in [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/), providing security analytics to help you to detect threats in your environment.
 
 :::note
