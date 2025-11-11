@@ -9,6 +9,7 @@ import SumoLogicDocsLogo from '../../static/img/reuse/sumo-logic-docs.svg';
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import ErrorBoundary from '../components/ErrorBoundary';
+import GoogleTranslateNavbarItem from '../theme/NavbarItem/GoogleTranslateNavbarItem';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -61,6 +62,7 @@ export const Home = () => {
             }}
             width='100%'
           />
+        <GoogleTranslateNavbarItem/>
         </Typography>
 
         {/* Hero */}
