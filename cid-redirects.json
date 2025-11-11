@@ -3727,7 +3727,7 @@
   "/docs/apm/opentelemetry-collector": "/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation",
   "/Traces/Service_Map_and_Dashboards": "/docs/apm/services-list-map",
   "/Traces/View_and_investigate_traces": "/docs/apm/traces/view-and-investigate-traces",
-  "Using_sumo.conf": "/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors",
+  "/Using_sumo.conf": "/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors",
   "/Visualizations-and-Alerts": "/docs/alerts",
   "/Visualizations-and-Alerts/Alerts": "/docs/alerts",
   "/Visualizations-and-Alerts/Alerts/02-Schedule-a-Search": "/docs/alerts/scheduled-searches",
