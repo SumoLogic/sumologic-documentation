@@ -994,7 +994,7 @@ module.exports = {
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers',
             'manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-flex',
             'manage/manage-subscription/create-and-manage-orgs/manage-org-settings',
-            'manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules',
+            'manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps',
           ],
         },
         {
@@ -2623,6 +2623,7 @@ integrations: [
           'integrations/saas-cloud/trellix-mvision-epo',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
+          'integrations/saas-cloud/varonis',
           'integrations/saas-cloud/vectra',
           'integrations/saas-cloud/vmware-workspace-one',
           'integrations/saas-cloud/webex',
