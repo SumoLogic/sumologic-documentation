@@ -51,7 +51,7 @@ Mobot accelerates incident response by combining prebuilt contextual insights wi
 * **Log compatibility**. Mobot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
 * **Enhanced query experience**. Auto-complete to streamline natural language queries.
 
-<!-- 
+<!-- Intelliparse is still on hold - don't include that
 * **Multi-turn conversations**. Ask follow-up questions without repeating yourself.
 
 ## Support for unstructured logs
